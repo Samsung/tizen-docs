@@ -564,8 +564,8 @@ To apply an image from a file to a surface as a texture:
 
            gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
        }
-    </script>
-    ```
+   </script>
+   ```
 
 The following figure shows the result as it is displayed on the screen.
 

@@ -96,8 +96,8 @@ To enable or disable the NFC service:
 1. To get the default NFC adapter, use the `getDefaultAdapter()` method and prepare an `ApplicationControl` object (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl) and [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl) applications) to request the NFC switching operation:
 
    ```
-    var nfcSwitchAppControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting/nfc');
-    var adapter = tizen.nfc.getDefaultAdapter();
+   var nfcSwitchAppControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/setting/nfc');
+   var adapter = tizen.nfc.getDefaultAdapter();
    ```
 
 2. Define the event listener for the `launchAppControl()` method:

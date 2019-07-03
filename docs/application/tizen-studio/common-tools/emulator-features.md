@@ -75,7 +75,8 @@ You can also add a shared directory in the Emulator Control Panel (ECP):
 3. Select the **Host Directory Sharing** tab.
 4. Add or remove the host computer directory.
 
-> **Note**  
+> **Note**
+>
 > You must have read/write permissions for the directory you want to share.
 
 <a name="camera"></a>
@@ -93,12 +94,13 @@ Before running the application, install a USB-connected Webcam or embedded Webca
 $ dpkg -l | grep libv4l-0
 ```
 
-> **Note**  
-> The Webcam must support video4linux2. (Currently, only `/dev/video0` is supported.)
+> **Note**
+> 
+> - The Webcam must support video4linux2. (Currently, only `/dev/video0` is supported.)
 >
-> Multiple instances of the emulator can be launched, but only a single emulator instance can use the camera feature.
+> - Multiple instances of the emulator can be launched, but only a single emulator instance can use the camera feature.
 >
-> Depending on the Webcam in use, the emulator camera feature may not work properly.
+> - Depending on the Webcam in use, the emulator camera feature may not work properly.
 
 The following table lists the host Webcam features.
 
@@ -107,10 +109,10 @@ The following table lists the host Webcam features.
 | Feature              | Detail                                   | Notes                                    |
 |----------------------|------------------------------------------|------------------------------------------|
 | FPS                  | 30 fps                                   | -                                        |
-| Preview image format | YUYV<br> I420<br> YV12                   |                                          |
-| Capture image format | YUYV<br> I420<br> YV12<br> JPEG          |                                          |
-| Preview resolution   | QSIF: 160 x 120<br> QCIF: 176 x 144<br> QVGA: 320 x 240<br> CIF: 352 x 288<br> VGA: 640 x 480 |                                          |
-| Capture resolution   | QSIF: 160 x 120<br> QCIF: 176 x 144<br> QVGA: 320 x 240<br> CIF: 352 x 288<br> VGA: 640 x 480 |                                          |
+| Preview image format | YUYV<br> I420<br> YV12                   | -                                        |
+| Capture image format | YUYV<br> I420<br> YV12<br> JPEG          | -                                        |
+| Preview resolution   | QSIF: 160 x 120<br> QCIF: 176 x 144<br> QVGA: 320 x 240<br> CIF: 352 x 288<br> VGA: 640 x 480 | -                                        |
+| Capture resolution   | QSIF: 160 x 120<br> QCIF: 176 x 144<br> QVGA: 320 x 240<br> CIF: 352 x 288<br> VGA: 640 x 480 | -                                        |
 | Attributes           | Brightness<br> Contrast                  | Unsupported attributes can return an error. For example, the `camera_start_focusing()` method returns an error. |
 
 <a name="net"></a>
@@ -128,7 +130,8 @@ The emulator provides 3 methods of proxy configuration. They can be configured i
 - **Use host proxy**: sets the same proxy value that the host uses.
 - **Use manual proxy**: sets manually a proxy value different from the host.
 
-> **Note**  
+> **Note**
+>
 > The following preallocated addresses are not supported as a manual proxy:
 > - Localhost
 > - 127.0.0.1/8
@@ -170,7 +173,7 @@ Inbound connections from external to the emulator fail in the NAT backend. If yo
   -netdev user,id=net0,hostfwd=[tcp|udp]:[<hostaddr>]:<hostport>-[<guestaddr>]:<guestport>
   ```
 
-  Redirect incoming TCP or UDP connections to the <hostport> host port to the <guestaddr> guest IP address on the <guestport> guest port. If the <guestaddr> is not specified, its value is 10.0.2.15 (default first address given by the built-in DHCP server).
+  Redirect incoming TCP or UDP connections to the \<hostport\> host port to the \<guestaddr\> guest IP address on the \<guestport\> guest port. If the \<guestaddr\> is not specified, its value is 10.0.2.15 (default first address given by the built-in DHCP server).
 
   You can also connect one emulator instance with another by using redirection. To set up redirection (where A and B are emulator instances):
 
@@ -178,7 +181,8 @@ Inbound connections from external to the emulator fail in the NAT backend. If yo
   2. On A, append the `,hostfwd tcp:127.0.0.1:<B's localPort>-:<A's serverPort>` redirection option in the `vm_launch.conf` file.
   3. On B, let the client connect to `10.0.2.2:<B's localPort>`.
 
-  > **Note**  
+  > **Note**
+  >
   > The appending value of the configuration file is removed when the user changes the VM setting on the Emulator Manager.
 
 ### Bridge (Bridged Network)
@@ -194,7 +198,8 @@ The bridge backend requires a dedicated IP for the emulator and you can communic
 
 ![Emulator bridged network architecture](./media/emulator_feature_bridge_architecture.png)
 
-> **Note**  
+> **Note**
+> 
 > - Network bridging does not work when the underlying physical network device is a wireless device.
 > - On macOS, only a physical network device named `en0` can be used for bridging.
 
@@ -282,7 +287,8 @@ To create your own skin layout:
 
    The image defined in your modified XML meta file is displayed when the emulator is launched.
 
-> **Note**  
+> **Note**
+> 
 > If you reinstall the Tizen Studio, the custom skin folders are reset.
 
 <a name="eventcast"></a>
@@ -300,7 +306,7 @@ EventCast provides the following features:
 
 - Touch: Maximum number of touch points is 10
 - Sensors: Accelerometer, gyroscope, geo-magnetic, proximity, and light
-- Display: Getting media of the emulator and drawing them when using touch features
+- Display: Getting images of the emulator and drawing them when using touch features
 
 ### Prerequisites
 
@@ -336,7 +342,8 @@ To connect the EventCaster application to the emulator:
 
      On Android 4.0 and newer, it is in **Settings > Developer options**.
 
-     > **Note**  
+     > **Note**
+     >
      > On Android 4.2 and newer, the developer options are hidden by default. To make them available, go to **Settings > About phone** and tap **Build number** 7 times. Return to the previous screen to find the developer options.
 
   2. Enable USB debugging.
@@ -367,7 +374,9 @@ To connect the EventCaster application to the emulator:
 
   2. Connect the Android device to a network where you also have a computer running the emulator.
 
-  3. Launch EventCaster and click **Read WiFi**.The application gets the IP address of the connected network.
+  3. Launch EventCaster and click **Read WiFi**.
+
+     The application gets the IP address of the connected network.
 
   4. Click **Start Server**.
 
@@ -436,7 +445,7 @@ network_proxy="http_proxy=1.2.3.4:123 https_proxy=1.2.3.4:123 ftp_proxy=1.2.3.4:
 bios_path="/home/user/tizen-studio/platforms/tizen-2.4/common/emulator/data/bios"
 kernel="/home/user/tizen-studio/platforms/tizen-2.4/common/emulator/data/kernel/bzImage.${image_arch}"
 kernel_log="${vms_path}/${vm_name}/logs/emulator.klog"
-virt_cam_img_path0="/home/user/tizen-studio/tools/emulator/media/default-image2.gif"
+virt_cam_img_path0="/home/user/tizen-studio/tools/emulator/images/default-image2.gif"
 wsi=vigs_wsi
 host_ip=10.0.2.2
 image_ver=1.0.4
@@ -508,10 +517,10 @@ The following table describes the content of the emulator directory, located in 
 | `bin/emulator-control-panel-cli.jar` | ECP CLI (Command Line Interface)         |
 | `bin/libecp.jar`                     | Profile-independent library for ECP      |
 | `bin/<LIBRARIES>`                    | Third party libraries, such as JNA, Protobuf, ARGS4J, JSON-simple, and JLINE |
-| `storages/sdcard/sdcard_xxx.img`     | `.img` files (base sdcard media) specific to the data size used by the Emulator Manager |
+| `storages/sdcard/sdcard_xxx.img`     | `.img` files (base sdcard images) specific to the data size used by the Emulator Manager |
 | `storages/swap/swap.img`             | Disk image for swap                      |
 
-The following table describes the platform image directories that are located in the `<TIZEN_STUDIO>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-media` folder.
+The following table describes the platform image directories that are located in the `<TIZEN_STUDIO>/platforms/<PLATFORM_VERSION>/<PROFILE>/emulator-images` folder.
 
 **Table: Platform image directory content**
 
@@ -543,7 +552,7 @@ The following table describes the platform resource directories that are located
 | `plugins/ecp-plugin-<PROFILE>-<VERSION>.jar` | Plugin for the ECP                       |
 | `plugins/ecp-plugin-<PROFILE>-<VERSION>.xml` | XML file for the `ecp-plugin-<PROFILE>-<VERSION>.jar` file configuration |
 | `plugins/em-plugin-<PROFILE>.jar`        | Plugin for the Emulator Manager          |
-| `skins/`                                 | Emulator skin media specific to the emulator resolution, and icons for the emulator option button and shortcut |
+| `skins/`                                 | Emulator skin images specific to the emulator resolution, and icons for the emulator option button and shortcut |
 | `skins/<SKIN_NAME>/info.ini`             | File for specifying emulator skin information |
 | `skins/<SKIN_NAME>/layout.xml`           | Metafile for the emulator skin layout    |
 | `template/<IMAGE_NAME>.xml`              | XML file for default configuration of the virtual machine created by the Emulator Manager |
@@ -559,7 +568,7 @@ The following table describes the directory structure of the user-specific files
 | `.tizen-em-info`                         | Configuration file for the Emulator Manager |
 | `emulator-manager.log`                   | Emulator Manager log file                |
 | `last-created_<PROFILE>.xml`             | File for saving the VM properties that the user created last. When user creates a new VM next time, properties in this file are displayed as default. |
-| `<VM_NAME>/`                             | Target-specific media                    |
+| `<VM_NAME>/`                             | Target-specific images                    |
 | `<VM_NAME>/emulimg-<VM_NAME>.<ARCHITECTURE>` | Writable `<VM_NAME>` image file          |
 | `<VM_NAME>/gui.property`                 | Hidden data for the emulator GUI         |
 | `<VM_NAME>/logs/`                        | Log files (emulator and kernel logs)     |

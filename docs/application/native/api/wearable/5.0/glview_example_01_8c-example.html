@@ -90,7 +90,319 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">glview_example_01.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment">
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+<span class="preprocessor">#include &lt;Evas_GL.h&gt;</span>
+<span class="preprocessor">#include &lt;stdio.h&gt;</span>
+
+<span class="keyword">typedef</span> <span class="keyword">struct </span>_GLData GLData;
+
+<span class="comment">// GL related data here..</span>
+<span class="keyword">struct </span>_GLData
+{
+   <a name="_a0"></a><a class="code" href="struct__Evas__GL__API.html" title="The Evas GL API This structure contains function pointers to the available GL functions. Some of these functions may be wrapped internally by Evas GL.">Evas_GL_API</a> *glapi;
+   GLuint       program;
+   GLuint       vtx_shader;
+   GLuint       fgmt_shader;
+   GLuint       vbo;
+   <span class="keywordtype">int</span>          initialized : 1;
+};
+
+<span class="keyword">static</span> <span class="keywordtype">float</span> red = 1.0;
+
+<span class="comment">//--------------------------------//</span>
+<span class="comment">// a helper function to load shaders from a shader source</span>
+<span class="keyword">static</span> GLuint
+load_shader( GLData *gld, GLenum type, <span class="keyword">const</span> <span class="keywordtype">char</span> *shader_src )
+{
+   <a class="code" href="struct__Evas__GL__API.html" title="The Evas GL API This structure contains function pointers to the available GL functions. Some of these functions may be wrapped internally by Evas GL.">Evas_GL_API</a> *gl = gld-&gt;glapi;
+   GLuint shader;
+   GLint compiled;
+
+   <span class="comment">// Create the shader object</span>
+   shader = gl-&gt;<a name="a1"></a>glCreateShader(type);
+   <span class="keywordflow">if</span> (shader==0)
+     <span class="keywordflow">return</span> 0;
+
+   <span class="comment">// Load/Compile shader source</span>
+   gl-&gt;<a name="a2"></a>glShaderSource(shader, 1, &amp;shader_src, NULL);
+   gl-&gt;<a name="a3"></a>glCompileShader(shader);
+   gl-&gt;<a name="a4"></a>glGetShaderiv(shader, GL_COMPILE_STATUS, &amp;compiled);
+
+   <span class="keywordflow">if</span> (!compiled)
+     {
+        GLint info_len = 0;
+        gl-&gt;glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &amp;info_len);
+        <span class="keywordflow">if</span> (info_len &gt; 1)
+          {
+             <span class="keywordtype">char</span>* info_log = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * info_len);
+
+             gl-&gt;<a name="a5"></a>glGetShaderInfoLog(shader, info_len, NULL, info_log);
+             printf(<span class="stringliteral">&quot;Error compiling shader:\n%s\n======\n%s\n======\n&quot;</span>, info_log, shader_src );
+             free(info_log);
+          }
+        gl-&gt;<a name="a6"></a>glDeleteShader(shader);
+        <span class="keywordflow">return</span> 0;
+     }
+
+   <span class="keywordflow">return</span> shader;
+}
+
+<span class="comment">// Initialize the shader and program object</span>
+<span class="keyword">static</span> <span class="keywordtype">int</span>
+init_shaders(GLData *gld)
+{
+   <a class="code" href="struct__Evas__GL__API.html" title="The Evas GL API This structure contains function pointers to the available GL functions. Some of these functions may be wrapped internally by Evas GL.">Evas_GL_API</a> *gl = gld-&gt;glapi;
+   GLbyte vShaderStr[] =
+      <span class="stringliteral">&quot;attribute vec4 vPosition;    \n&quot;</span>
+      <span class="stringliteral">&quot;void main()                  \n&quot;</span>
+      <span class="stringliteral">&quot;{                            \n&quot;</span>
+      <span class="stringliteral">&quot;   gl_Position = vPosition;  \n&quot;</span>
+      <span class="stringliteral">&quot;}                            \n&quot;</span>;
+
+   GLbyte fShaderStr[] =
+      <span class="stringliteral">&quot;#ifdef GL_ES                                 \n&quot;</span>
+      <span class="stringliteral">&quot;precision mediump float;                     \n&quot;</span>
+      <span class="stringliteral">&quot;#endif                                       \n&quot;</span>
+      <span class="stringliteral">&quot;void main()                                  \n&quot;</span>
+      <span class="stringliteral">&quot;{                                            \n&quot;</span>
+      <span class="stringliteral">&quot;  gl_FragColor = vec4 ( 1.0, 0.0, 0.0, 1.0 );\n&quot;</span>
+      <span class="stringliteral">&quot;}                                            \n&quot;</span>;
+
+   GLint linked;
+
+   <span class="comment">// Load the vertex/fragment shaders</span>
+   gld-&gt;vtx_shader  = load_shader(gld, GL_VERTEX_SHADER, (<span class="keyword">const</span> <span class="keywordtype">char</span>*)vShaderStr);
+   gld-&gt;fgmt_shader = load_shader(gld, GL_FRAGMENT_SHADER, (<span class="keyword">const</span> <span class="keywordtype">char</span>*)fShaderStr);
+
+   <span class="comment">// Create the program object</span>
+   gld-&gt;program = gl-&gt;<a name="a7"></a>glCreateProgram( );
+   <span class="keywordflow">if</span> (gld-&gt;program==0)
+     <span class="keywordflow">return</span> 0;
+
+   gl-&gt;<a name="a8"></a>glAttachShader(gld-&gt;program, gld-&gt;vtx_shader);
+   gl-&gt;glAttachShader(gld-&gt;program, gld-&gt;fgmt_shader);
+
+   gl-&gt;<a name="a9"></a>glBindAttribLocation(gld-&gt;program, 0, <span class="stringliteral">&quot;vPosition&quot;</span>);
+   gl-&gt;<a name="a10"></a>glLinkProgram(gld-&gt;program);
+   gl-&gt;<a name="a11"></a>glGetProgramiv(gld-&gt;program, GL_LINK_STATUS, &amp;linked);
+
+   <span class="keywordflow">if</span> (!linked)
+     {
+        GLint info_len = 0;
+        gl-&gt;glGetProgramiv(gld-&gt;program, GL_INFO_LOG_LENGTH, &amp;info_len);
+        <span class="keywordflow">if</span> (info_len &gt; 1)
+          {
+             <span class="keywordtype">char</span>* info_log = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * info_len);
+
+             gl-&gt;<a name="a12"></a>glGetProgramInfoLog(gld-&gt;program, info_len, NULL, info_log);
+             printf(<span class="stringliteral">&quot;Error linking program:\n%s\n&quot;</span>, info_log);
+             free(info_log);
+          }
+        gl-&gt;<a name="a13"></a>glDeleteProgram(gld-&gt;program);
+        <span class="keywordflow">return</span> 0;
+     }
+   <span class="keywordflow">return</span> 1;
+}
+
+<span class="comment">// Callbacks</span>
+<span class="comment">// intialize callback that gets called once for intialization</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_init_gl(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)
+{
+   GLData *gld = <a name="a14"></a><a class="code" href="group__Evas__Object__Group__Extras.html#gafbad43015793eda4ae50202c0ce0e652">evas_object_data_get</a>(obj, <span class="stringliteral">&quot;gld&quot;</span>);
+   <a class="code" href="struct__Evas__GL__API.html" title="The Evas GL API This structure contains function pointers to the available GL functions. Some of these functions may be wrapped internally by Evas GL.">Evas_GL_API</a> *gl = gld-&gt;glapi;
+   GLfloat vVertices[] = {
+        0.0f,  0.5f, 0.0f,
+        -0.5f, -0.5f, 0.0f,
+        0.5f, -0.5f, 0.0f };
+
+   <span class="keywordflow">if</span> (!init_shaders(gld))
+     {
+        printf(<span class="stringliteral">&quot;Error Initializing Shaders\n&quot;</span>);
+        <span class="keywordflow">return</span>;
+     }
+
+   gl-&gt;<a name="a15"></a>glGenBuffers(1, &amp;gld-&gt;vbo);
+   gl-&gt;<a name="a16"></a>glBindBuffer(GL_ARRAY_BUFFER, gld-&gt;vbo);
+   gl-&gt;<a name="a17"></a>glBufferData(GL_ARRAY_BUFFER, 3 * 3 * 4, vVertices, GL_STATIC_DRAW);
+}
+
+<span class="comment">// delete callback gets called when glview is deleted</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_del_gl(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)
+{
+   GLData *gld = <a class="code" href="group__Evas__Object__Group__Extras.html#gafbad43015793eda4ae50202c0ce0e652">evas_object_data_get</a>(obj, <span class="stringliteral">&quot;gld&quot;</span>);
+   <span class="keywordflow">if</span> (!gld)
+     {
+        printf(<span class="stringliteral">&quot;Unable to get GLData. \n&quot;</span>);
+        <span class="keywordflow">return</span>;
+     }
+   <a class="code" href="struct__Evas__GL__API.html" title="The Evas GL API This structure contains function pointers to the available GL functions. Some of these functions may be wrapped internally by Evas GL.">Evas_GL_API</a> *gl = gld-&gt;glapi;
+
+   gl-&gt;glDeleteShader(gld-&gt;vtx_shader);
+   gl-&gt;glDeleteShader(gld-&gt;fgmt_shader);
+   gl-&gt;glDeleteProgram(gld-&gt;program);
+   gl-&gt;<a name="a18"></a>glDeleteBuffers(1, &amp;gld-&gt;vbo);
+
+   <a name="a19"></a><a class="code" href="group__Evas__Object__Group__Extras.html#gabcd8fb64a5133c6be642fd8770c8a5c9">evas_object_data_del</a>((<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>*)obj, <span class="stringliteral">&quot;..gld&quot;</span>);
+   free(gld);
+}
+
+<span class="comment">// resize callback gets called every time object is resized</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_resize_gl(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)
+{
+   <span class="keywordtype">int</span> w, h;
+   GLData *gld = <a class="code" href="group__Evas__Object__Group__Extras.html#gafbad43015793eda4ae50202c0ce0e652">evas_object_data_get</a>(obj, <span class="stringliteral">&quot;gld&quot;</span>);
+   <a class="code" href="struct__Evas__GL__API.html" title="The Evas GL API This structure contains function pointers to the available GL functions. Some of these functions may be wrapped internally by Evas GL.">Evas_GL_API</a> *gl = gld-&gt;glapi;
+
+   <a name="a20"></a><a class="code" href="group__Elm__GLView.html#ga58a8ed33d880aaad30a52aad3b221d9b">elm_glview_size_get</a>(obj, &amp;w, &amp;h);
+
+   <span class="comment">// GL Viewport stuff. you can avoid doing this if viewport is all the</span>
+   <span class="comment">// same as last frame if you want</span>
+   gl-&gt;<a name="a21"></a>glViewport(0, 0, w, h);
+}
+
+<span class="comment">// draw callback is where all the main GL rendering happens</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_draw_gl(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)
+{
+   <a class="code" href="struct__Evas__GL__API.html" title="The Evas GL API This structure contains function pointers to the available GL functions. Some of these functions may be wrapped internally by Evas GL.">Evas_GL_API</a> *gl = elm_glview_gl_api_get(obj);
+   GLData *gld = <a class="code" href="group__Evas__Object__Group__Extras.html#gafbad43015793eda4ae50202c0ce0e652">evas_object_data_get</a>(obj, <span class="stringliteral">&quot;gld&quot;</span>);
+   <span class="keywordflow">if</span> (!gld) <span class="keywordflow">return</span>;
+   <span class="keywordtype">int</span> w, h;
+
+   <a class="code" href="group__Elm__GLView.html#ga58a8ed33d880aaad30a52aad3b221d9b">elm_glview_size_get</a>(obj, &amp;w, &amp;h);
+
+   gl-&gt;glViewport(0, 0, w, h);
+   gl-&gt;<a name="a22"></a>glClearColor(red,0.8,0.3,1);
+   gl-&gt;<a name="a23"></a>glClear(GL_COLOR_BUFFER_BIT);
+
+   <span class="comment">// Draw a Triangle</span>
+   gl-&gt;<a name="a24"></a>glEnable(GL_BLEND);
+
+   gl-&gt;<a name="a25"></a>glUseProgram(gld-&gt;program);
+
+   gl-&gt;glBindBuffer(GL_ARRAY_BUFFER, gld-&gt;vbo);
+   gl-&gt;<a name="a26"></a>glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE,
+                             0, 0);
+   gl-&gt;<a name="a27"></a>glEnableVertexAttribArray(0);
+
+   gl-&gt;<a name="a28"></a>glDrawArrays(GL_TRIANGLES, 0, 3);
+
+   <span class="comment">// Optional - Flush the GL pipeline</span>
+   gl-&gt;<a name="a29"></a>glFinish();
+
+   red -= 0.1;
+   <span class="keywordflow">if</span> (red &lt; 0.0) red = 1.0;
+}
+
+<span class="comment">// just need to notify that glview has changed so it can render</span>
+<span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
+_anim(<span class="keywordtype">void</span> *data)
+{
+   <a name="a30"></a><a class="code" href="group__Elm__GLView.html#ga1e1544c2e0a7531f07e8cae105c38e3b">elm_glview_changed_set</a>(data);
+   <span class="keywordflow">return</span> <a name="a31"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_on_done(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj <a name="a32"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a name="a33"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>((<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>*)data);
+   <a name="a34"></a><a class="code" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit</a>();
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_del(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *evas EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   Ecore_Animator *ani = <a class="code" href="group__Evas__Object__Group__Extras.html#gafbad43015793eda4ae50202c0ce0e652">evas_object_data_get</a>(obj, <span class="stringliteral">&quot;ani&quot;</span>);
+   <a name="a35"></a><a class="code" href="group__Ecore__Animator__Group.html#gaadfa590f3c1638035393ed9d7aa10e2f" title="Deletes the specified animator from the animator list.">ecore_animator_del</a>(ani);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *bx, *bt, *gl;
+   Ecore_Animator *ani;
+   GLData *gld = NULL;
+
+   <span class="keywordflow">if</span> (!(gld = calloc(1, <span class="keyword">sizeof</span>(GLData)))) <span class="keywordflow">return</span> 1;
+
+   <a name="a36"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a37"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;glview simple&quot;</span>, <span class="stringliteral">&quot;GLView Simple&quot;</span>);
+   <a name="a38"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   bx = <a name="a39"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a40"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
+   <a name="a41"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
+
+   <span class="comment">//-//-//-// THIS IS WHERE GL INIT STUFF HAPPENS (ALA EGL)</span>
+   <span class="comment">//-//</span>
+   <span class="comment">// create a new glview object</span>
+   gl = <a name="a42"></a><a class="code" href="group__Elm__GLView.html#ga2ab32b7aee3433992b3f0edba5909a42">elm_glview_add</a>(win);
+   gld-&gt;glapi = elm_glview_gl_api_get(gl);
+   evas_object_size_hint_align_set(gl, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   evas_object_size_hint_weight_set(gl, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <span class="comment">// mode is simply for supporting alpha, depth buffering, and stencil</span>
+   <span class="comment">// buffering.</span>
+   elm_glview_mode_set(gl, <a name="a43"></a><a class="code" href="group__Elm__GLView.html#gga4d0a2281e13c66d7274987ef24e7abe7a00c61dd95cd14bfb20b575e85913990a">ELM_GLVIEW_ALPHA</a> | <a name="a44"></a><a class="code" href="group__Elm__GLView.html#gga4d0a2281e13c66d7274987ef24e7abe7ae9ce1787f812b721ab0403ebaad3e442">ELM_GLVIEW_DEPTH</a>);
+   <span class="comment">// resize policy tells glview what to do with the surface when it</span>
+   <span class="comment">// resizes.  ELM_GLVIEW_RESIZE_POLICY_RECREATE will tell it to</span>
+   <span class="comment">// destroy the current surface and recreate it to the new size</span>
+   elm_glview_resize_policy_set(gl, ELM_GLVIEW_RESIZE_POLICY_RECREATE);
+   <span class="comment">// render policy tells glview how it would like glview to render</span>
+   <span class="comment">// gl code. ELM_GLVIEW_RENDER_POLICY_ON_DEMAND will have the gl</span>
+   <span class="comment">// calls called in the pixel_get callback, which only gets called</span>
+   <span class="comment">// if the object is visible, hence ON_DEMAND.  ALWAYS mode renders</span>
+   <span class="comment">// it despite the visibility of the object.</span>
+   elm_glview_render_policy_set(gl, ELM_GLVIEW_RENDER_POLICY_ON_DEMAND);
+   <span class="comment">// initialize callback function gets registered here</span>
+   elm_glview_init_func_set(gl, _init_gl);
+   <span class="comment">// delete callback function gets registered here</span>
+   <a name="a45"></a><a class="code" href="group__Elm__GLView.html#gae6bc093d6804c3131df752e80aca724c">elm_glview_del_func_set</a>(gl, _del_gl);
+   <a name="a46"></a><a class="code" href="group__Elm__GLView.html#ga4f3cc094a7f467595c6c5d4ebb8a02cd">elm_glview_resize_func_set</a>(gl, _resize_gl);
+   <a name="a47"></a><a class="code" href="group__Elm__GLView.html#ga0a2bcda5d7e37ed2dbfd43da47046f05">elm_glview_render_func_set</a>(gl, _draw_gl);
+   <span class="comment">//-//</span>
+   <span class="comment">//-//-//-// END GL INIT BLOB</span>
+
+   <a name="a48"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, gl);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(gl);
+
+   <a name="a49"></a><a class="code" href="group__Elm__Focus.html#ga05e39b5e60ad861c63100c811855ef55">elm_object_focus_set</a>(gl, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   <span class="comment">// animating - just a demo. as long as you trigger an update on the image</span>
+   <span class="comment">// object via elm_glview_changed_set() it will be updated.</span>
+   <span class="comment">//</span>
+   <span class="comment">// NOTE: if you delete gl, this animator will keep running trying to access</span>
+   <span class="comment">// gl so you&#39;d better delete this animator with ecore_animator_del().</span>
+   ani = <a name="a50"></a><a class="code" href="group__Ecore__Animator__Group.html#gaa1e33b8be9117a26918823c535e429ea" title="Adds an animator to call func at every animation tick during main loop execution.">ecore_animator_add</a>(_anim, gl);
+
+   <a name="a51"></a><a class="code" href="group__Evas__Object__Group__Extras.html#ga70134a7068c9bff4107a761abe0a2ad4">evas_object_data_set</a>(gl, <span class="stringliteral">&quot;ani&quot;</span>, ani);
+   <a class="code" href="group__Evas__Object__Group__Extras.html#ga70134a7068c9bff4107a761abe0a2ad4">evas_object_data_set</a>(gl, <span class="stringliteral">&quot;gld&quot;</span>, gld);
+   <a name="a52"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(gl, EVAS_CALLBACK_DEL, _del, gl);
+
+   <span class="comment">// add an &#39;OK&#39; button to end the program</span>
+   bt = <a name="a53"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;OK&quot;</span>);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   evas_object_size_hint_weight_set(bt, EVAS_HINT_EXPAND, 0.0);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a name="a54"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _on_done, win);
+
+   evas_object_resize(win, 320, 480);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <span class="comment">// run the mainloop and process events and callbacks</span>
+   <a name="a55"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a56"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

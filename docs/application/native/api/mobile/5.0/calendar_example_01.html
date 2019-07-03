@@ -91,8 +91,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>As a first example, let's just display a calendar in our window, explaining all steps required to do so.</p>
-<p>First you should declare objects we intend to use: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Then a window is created, a title is set and its set to be autodeleted. More details can be found on windows examples: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>First you should declare objects we intend to use: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *cal;
+</pre></div></p>
+<p>Then a window is created, a title is set and its set to be autodeleted. More details can be found on windows examples: <div class="fragment"><pre class="fragment">
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;calendar&quot;</span>, <span class="stringliteral">&quot;Calendar Creation Example&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
 <p>Next a simple background is placed on our windows. More details on <a class="el" href="bg_01_example_page.html">elm_bg - Plain color background.</a> : <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Now, the exciting part, let's add the calendar with <a class="el" href="group__Elm__Calendar.html#gae893c6a3465db10d322ff937be4b0854">elm_calendar_add()</a>, passing our window object as parent. <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>To conclude our example, we should show the window and run elm mainloop: <div class="fragment"><pre class="fragment"></pre></div></p>

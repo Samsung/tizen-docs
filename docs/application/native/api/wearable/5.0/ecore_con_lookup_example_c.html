@@ -90,11 +90,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Ecore_Con - DNS lookup </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This is a very simple example that shows how to make a simple DNS lookup using ecore_con_lookup().</p>
+<div class="textblock"><p>This is a very simple example that shows how to make a simple DNS lookup using <a class="el" href="group__Ecore__Con__Lib__Group.html#gaa06a9321ba2f71f55736086bdd1bd4fa" title="Do an asynchronous DNS lookup.">ecore_con_lookup()</a>.</p>
 <p>It's possible to see in the beginning of the main function that we are using the arguments passed via command line. This is the address that we are going to make the DNS lookup on.</p>
-<p>The next step is to initialize the libraries, and just call ecore_con_lookup(). This function will get the string that contains the address to be resolved as first parameter, then a callback that will be called when the resolve stage is done, and finally a data pointer that will be passed to the callback.</p>
-<p>This function is asynchronous, and the callback will be called only on success. If there was an error during the resolve stage, there's no way to know about that. It's only possible to know about errors when setting up the lookup, by looking at the return code of the ecore_con_lookup() function.</p>
-<p>The callback <code>_lookup_done_cb</code> passed as argument to ecore_con_lookup() just prints the resolved canonical name, IP, address of the sockaddr structure, and the length of the socket address (in bytes).</p>
+<p>The next step is to initialize the libraries, and just call <a class="el" href="group__Ecore__Con__Lib__Group.html#gaa06a9321ba2f71f55736086bdd1bd4fa" title="Do an asynchronous DNS lookup.">ecore_con_lookup()</a>. This function will get the string that contains the address to be resolved as first parameter, then a callback that will be called when the resolve stage is done, and finally a data pointer that will be passed to the callback.</p>
+<p>This function is asynchronous, and the callback will be called only on success. If there was an error during the resolve stage, there's no way to know about that. It's only possible to know about errors when setting up the lookup, by looking at the return code of the <a class="el" href="group__Ecore__Con__Lib__Group.html#gaa06a9321ba2f71f55736086bdd1bd4fa" title="Do an asynchronous DNS lookup.">ecore_con_lookup()</a> function.</p>
+<p>The callback <code>_lookup_done_cb</code> passed as argument to <a class="el" href="group__Ecore__Con__Lib__Group.html#gaa06a9321ba2f71f55736086bdd1bd4fa" title="Do an asynchronous DNS lookup.">ecore_con_lookup()</a> just prints the resolved canonical name, IP, address of the sockaddr structure, and the length of the socket address (in bytes).</p>
 <p>Finally, we start the main loop, and after that we finalize the libraries and exit.</p>
 <p>This is the code for this simple example:</p>
 <div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
@@ -124,7 +124,7 @@ main(<span class="keywordtype">int</span> argc, <span class="keyword">const</spa
 
    <a class="code" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init</a>();
 
-   <span class="keywordflow">if</span> (!ecore_con_lookup(argv[1], _lookup_done_cb, NULL))
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Ecore__Con__Lib__Group.html#gaa06a9321ba2f71f55736086bdd1bd4fa" title="Do an asynchronous DNS lookup.">ecore_con_lookup</a>(argv[1], _lookup_done_cb, NULL))
      {
         printf(<span class="stringliteral">&quot;error when trying to start lookup for %s\n&quot;</span>, argv[1]);
         <span class="keywordflow">goto</span> end;

@@ -108,6 +108,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#ga88cf8cbf6c65aa37227c90ed63a8db1c">elm_config_profile_save</a> (const char *profile)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#gae65dd9ed2cd9a110163eb3bf15729e66">elm_config_profile_derived_add</a> (const char *profile, const char *derive_options)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#ga616fc7d537fbf1a2f1078cba84cf94ce">elm_config_profile_derived_del</a> (const char *profile)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#ga89ae7eb05eb82a00408e3d6142e4eb73">elm_profile_all_set</a> (const char *profile)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gae65dd9ed2cd9a110163eb3bf15729e66"></a><!-- doxytag: member="elm_config.h::elm_config_profile_derived_add" ref="gae65dd9ed2cd9a110163eb3bf15729e66" args="(const char *profile, const char *derive_options)" -->
@@ -404,6 +405,32 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga89ae7eb05eb82a00408e3d6142e4eb73"></a><!-- doxytag: member="elm_removed.h::elm_profile_all_set" ref="ga89ae7eb05eb82a00408e3d6142e4eb73" args="(const char *profile)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Profile.html#ga89ae7eb05eb82a00408e3d6142e4eb73">elm_profile_all_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>profile</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set Elementary's profile.</p>
+<p>This sets the global profile that is applied to all Elementary applications. All running Elementary windows will be affected.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profile</td><td>The profile's name </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000398">Deprecated:</a></b></dt><dd>Use elm_profile_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></dd></dl>
 
 </div>
 </div>

@@ -329,9 +329,7 @@ Typedefs</h2></td></tr>
 <p>Iterates through available media folders with optional <em>filter</em> from the media database. </p>
 <p>This function gets the media folder meeting the given <em>filter</em>. The <em>callback</em> function will be invoked for every retrieved folder. If <code>NULL</code> is passed to the <em>filter</em>, no filtering is applied.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Do not call updating DB function like <a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html#ga7e9eb7aa58e87625ef3c64eb17084497" title="Updates the media folder to the media database.">media_folder_update_to_db()</a> in your callback function, your callback function is invoked as inline function.<br/>
- So, your callback function is in read state in SQLite. When you are in read state, sometimes you do not update DB. <br/>
- We do not recommend you call updating DB function in callback of foreach function.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>We do not recommend you call updating DB function in callback of foreach function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>The handle to the media filter </td></tr>
@@ -403,7 +401,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <p>Iterates through the media files with an optional <em>filter</em> in the given <em>folder_id</em> from the media database. </p>
 <p>This function gets all media files associated with the given folder and meeting desired filter option and calls <em>callback</em> for every retrieved media item. If <code>NULL</code> is passed to the <em>filter</em>, no filtering is applied.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Do not call updating DB function like <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga825c97b7f53ba73953ecef585db6a2ff" title="Updates the media info to the media database.">media_info_update_to_db()</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga5f5872e7fc5c37f43311cc577fac443a" title="Refreshes the media metadata to the media database.">media_info_refresh_metadata_to_db()</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__AUDIO__META__MODULE.html#gaf53c69745949a48c0336d6f8ea28476e" title="Updates an audio metadata with modified attributes in the media database.">audio_meta_update_to_db()</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga6f2fb33613a582b8cfe4150957b17e1e" title="Updates the image to the media database.">image_meta_update_to_db()</a> and <a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html#ga4dbdfffbdc78e7ca3322407f915b9447" title="Updates an video metadata with modified attributes in the media database.">video_meta_update_to_db()</a> in your callback function, your callback function is invoked as inline function. <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Do not call updating DB function like <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga825c97b7f53ba73953ecef585db6a2ff" title="Updates the media info to the media database.">media_info_update_to_db()</a> in your callback function, your callback function is invoked as inline function. <br/>
  So, your callback function is in read state in SQLite. When you are in read state, sometimes you do not update DB. <br/>
  We do not recommend you call updating DB function in callback of foreach function.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -667,7 +665,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Gets the modified date of the folder. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000401">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000480">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -760,7 +758,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Gets the folder viewing order. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000404">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000483">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
  This function does not guarantee order independence between applications. It is recommended that the viewing order is managed by the application.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -808,7 +806,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Gets the parent folder ID. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000400">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000479">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>parent_folder_id</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -902,7 +900,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Gets the storage id of the folder. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000403">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000482">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>storage_id</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -950,7 +948,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Gets the folder storage type. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000402">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gaa94ac8120da755db0e781ca7fa2a5913" title="Gets the type and the kind of external device for the given storage id.">storage_get_type_dev()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000481">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gaa94ac8120da755db0e781ca7fa2a5913" title="Gets the type and the kind of external device for the given storage id.">storage_get_type_dev()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -996,7 +994,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Sets the folder name. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000405">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gaf3c65c5fe726e752bd9d3814ccf63ee7" title="Requests to scan a media folder, asynchronously.">media_content_scan_folder()</a> or <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gab4815cade6080c30f753adf1e9952145" title="Moves the media info to the given destination path in the media database.">media_info_move_to_db()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000484">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gaf3c65c5fe726e752bd9d3814ccf63ee7" title="Requests to scan a media folder, asynchronously.">media_content_scan_folder()</a> or <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gab4815cade6080c30f753adf1e9952145" title="Moves the media info to the given destination path in the media database.">media_info_move_to_db()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1044,7 +1042,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Sets the folder viewing order. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000406">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000485">Deprecated:</a></b></dt><dd>Deprecated since 4.0. <br/>
  This function does not guarantee order independence between applications. It is recommended that the viewing order is managed by the application. </dd></dl>
 <p>If you set the order value for each folder, you can sort in ascending or descending order as the set order values using the filter. <br/>
  Moreover, more detailed settings are possible when used with the filter. <br/>
@@ -1086,7 +1084,7 @@ A filter handle has to be created by calling <a class="el" href="group__CAPI__CO
 <div class="memdoc">
 
 <p>Updates the media folder to the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000407">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Related setter functions are deprecated, therefore this function is not needed anymore. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000486">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Related setter functions are deprecated, therefore this function is not needed anymore. </dd></dl>
 <p>The function updates the given media folder in the media database. The function should be called after any change in folder attributes, to be updated to the media database.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>

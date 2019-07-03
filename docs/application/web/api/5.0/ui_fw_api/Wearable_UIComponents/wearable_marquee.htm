@@ -6,11 +6,15 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css" />
 	<title>Marquee</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>Marquee</h1>
 
 <p>The Marquee component shows moving HTML element.<br>
 It makes &lt;div&gt; element (has some child nodes such as text and img) move horizontally like legacy &lt;marquee&gt; tag.</p>
+
+<video autoplay muted loop controls>
+	<source src="https://developer.tizen.org/sites/default/files/documentation/marquee.mp4">
+</video>
 
 <table class="note">
 	<tbody>
@@ -57,6 +61,7 @@ It makes &lt;div&gt; element (has some child nodes such as text and img) move ho
 <p>If you want to create Marquee component, you have to declare &quot;ui-marquee&quot; in &lt;div&gt; element and make Marquee component in JS code.
 <br>To use a Marquee component in your application, please refer following code and marquee options:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;div class=&quot;ui-page ui-page-active&quot; id=&quot;marqueePage&quot; &gt;
    &lt;header class=&quot;ui-header&quot;&gt;
@@ -68,15 +73,16 @@ It makes &lt;div&gt; element (has some child nodes such as text and img) move ho
       &lt;/ul&gt;
    &lt;/div&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var page = document.querySelector(&quot;#marqueePage&quot;);
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var page = document.querySelector(&quot;#marqueePage&quot;);
 
-   page.addEventListener(&quot;pagebeforeshow&quot;, function()
-   {
-      var marqueeEl = document.getElementById("marquee"),
-      marqueeWidget = new tau.widget.Marquee(marqueeEl, {marqueeStyle: "scroll", delay: "3"});
-   });
-&lt;/script&gt;
+page.addEventListener(&quot;pagebeforeshow&quot;, function()
+{
+   var marqueeEl = document.getElementById("marquee"),
+   marqueeWidget = new tau.widget.Marquee(marqueeEl, {marqueeStyle: "scroll", delay: "3"});
+});
 </pre>
 
 
@@ -236,15 +242,17 @@ It makes &lt;div&gt; element (has some child nodes such as text and img) move ho
 			<div class="example">
 							<span class="example"><p>Code
 								example:</p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;div class="ui-marquee" id="marquee"&gt;
    &lt;p&gt;MarqueeTEST TEST message TEST for marquee&lt;/p&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var marqueeWidget = tau.widget.Marquee(document.getElementById("marquee"));
-   marqueeWidget.start();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var marqueeWidget = tau.widget.Marquee(document.getElementById("marquee"));
+marqueeWidget.start();
 </pre>
 			</div>
 
@@ -279,15 +287,17 @@ It makes &lt;div&gt; element (has some child nodes such as text and img) move ho
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p></span>
+							<p>HTML code</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;div class="ui-marquee" id="marquee"&gt;
    &lt;p&gt;MarqueeTEST TEST message TEST for marquee&lt;/p&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var marqueeWidget = tau.widget.Marquee(document.getElementById("marquee"));
-   marqueeWidget.stop();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var marqueeWidget = tau.widget.Marquee(document.getElementById("marquee"));
+marqueeWidget.stop();
 </pre>
 						</div>
 
@@ -324,15 +334,17 @@ It makes &lt;div&gt; element (has some child nodes such as text and img) move ho
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;div class="ui-marquee" id="marquee"&gt;
    &lt;p&gt;MarqueeTEST TEST message TEST for marquee&lt;/p&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var marqueeWidget = tau.widget.Marquee(document.getElementById("marquee"));
-   marqueeWidget.reset();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var marqueeWidget = tau.widget.Marquee(document.getElementById("marquee"));
+marqueeWidget.reset();
 </pre>
 						</div>
 
@@ -350,5 +362,10 @@ It makes &lt;div&gt; element (has some child nodes such as text and img) move ho
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

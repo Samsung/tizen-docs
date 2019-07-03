@@ -98,8 +98,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <span class="preprocessor">#define BUFFER_SIZE 1024</span>
 <span class="preprocessor"></span>
+<span class="preprocessor">#ifdef _WIN32</span>
+<span class="preprocessor"></span><span class="preprocessor">#define HANDLER_TYPE Ecore_Win32_Handler</span>
+<span class="preprocessor"></span><span class="preprocessor">#else</span>
+<span class="preprocessor"></span><span class="preprocessor">#define HANDLER_TYPE Ecore_Fd_Handler</span>
+<span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
 <span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
-_fd_handler_cb(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Ecore__FD__Handler__Group.html#ga225121ed2123da4b52b76aa08d78c220">Ecore_Fd_Handler</a> *fd_handler EINA_UNUSED)
+_fd_handler_cb(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, HANDLER_TYPE *fd_handler EINA_UNUSED)
 {
    <span class="keyword">static</span> <span class="keywordtype">int</span> numberOfMessages = 0;
    <span class="keywordtype">char</span> message[BUFFER_SIZE];
@@ -111,13 +117,13 @@ _fd_handler_cb(<span class="keywordtype">void</span> *data <a name="a0"></a><a c
 
    <span class="keywordflow">if</span> (numberOfMessages &lt; 3)
      {
-        fprintf(stdout, <span class="stringliteral">&quot;My father sent this message to me:%s\n&quot;</span>, message);
+        printf(<span class="stringliteral">&quot;My father sent this message to me:%s\n&quot;</span>, message);
         fflush(stdout);
         <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#ga1ee9db07f9a46a8b20fb83e1c6dbed09">ECORE_CALLBACK_RENEW</a>;
      }
    <span class="keywordflow">else</span>
      {
-        fprintf(stdout, <span class="stringliteral">&quot;quit\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;quit\n&quot;</span>);
         fflush(stdout);
         <a name="a2"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
         <span class="keywordflow">return</span> <a name="a3"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga780091d7d49a4bb6cb753f12e1a3b19d">ECORE_CALLBACK_DONE</a>;
@@ -130,11 +136,23 @@ main(<span class="keywordtype">void</span>)
    <span class="keywordflow">if</span> (!<a name="a4"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>())
      <span class="keywordflow">goto</span> error;
 
-   <a name="a5"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ga832e68eb7f15912abeadef816bb5d2f5" title="Adds a callback for activity on the given file descriptor.">ecore_main_fd_handler_add</a>(STDIN_FILENO,
+<span class="preprocessor">#ifdef _WIN32</span>
+<span class="preprocessor"></span>   <span class="comment">/* note that stdin fd&#39;s on windows don&#39;t work the same</span>
+<span class="comment">    * as on unixes. this uses stdin just as a quick</span>
+<span class="comment">    * example that&#39;s simple instead of a more complex</span>
+<span class="comment">    * one, so this won&#39;t actually work on windows unless</span>
+<span class="comment">    * you use a fd that comes from somewhere that is</span>
+<span class="comment">    * select()able. */</span>
+   ecore_main_win32_handler_add(GetStdHandle(STD_INPUT_HANDLE),
+                                _fd_handler_cb,
+                                NULL);
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>   <a name="a5"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ga832e68eb7f15912abeadef816bb5d2f5" title="Adds a callback for activity on the given file descriptor.">ecore_main_fd_handler_add</a>(STDIN_FILENO,
                              <a name="a6"></a><a class="code" href="group__Ecore__FD__Handler__Group.html#ggab5644f471dfa3bd182619601d9b60608a1699f804eccf88e7e169a4a20f1d44e7">ECORE_FD_READ</a>,
                              _fd_handler_cb,
                              NULL, NULL, NULL);
-   <a name="a7"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>   <a name="a7"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
    <a name="a8"></a><a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
 

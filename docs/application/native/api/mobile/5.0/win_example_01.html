@@ -92,19 +92,341 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>For most users of the Elementary API, the <a class="el" href="group__Elm__Win.html">Win</a> widget has a lot more functions than what they need.</p>
 <p>In general, a developer will create a window, set some content on it and forget about it for the rest of its program's life, letting whatever Window Manager is there to handle the window. Here, however, we are going to show how to generally manage a window.</p>
-<p>We'll have a bit more than the usual includes here, since part of the example requires some low level fiddling.  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>We'll have a bit more than the usual includes here, since part of the example requires some low level fiddling.  <div class="fragment"><pre class="fragment"><span class="preprocessor">#ifdef HAVE_ELEMENTARY_X</span>
+<span class="preprocessor"></span><span class="preprocessor"># include &lt;Ecore_X.h&gt;</span>
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+</pre></div></p>
 <p>The program then, consists of one window with two lists of buttons, each of which operates on another two windows. One of them is a normal window, the other has the <code>override</code> flag set so the Window Manager ignores it.</p>
-<p>Pressing each button will call the corresponding function to act on the corresponding window. These are pretty self explanatory, so we'll show them in one batch. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Next, we handle the main window closing. We have a <code>"delete,request"</code> callback set to ask if really want to quit. If so, we end the main loop, otherwise just delete the popup message and continue running normally. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The non-managed window, being completely ignored by the Window Manager, is likely to never receive keyboard focus, even if we click on its entry to write something. So we have a button on it that will forcefully focus it by using some lower level functions to act directly on the X window. Then, each time one of the window is focused, we print some message on a console to show this more clearly. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Pressing each button will call the corresponding function to act on the corresponding window. These are pretty self explanatory, so we'll show them in one batch. <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_activate_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   elm_win_activate(data);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_lower_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Win.html#ga783b1f5e121fccff51ee08de951ca62c" title="Sets the override state of a window.">elm_win_lower</a>(data);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_raise_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   elm_win_raise(data);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_borderless_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> flag = elm_win_borderless_get(data);
+   elm_win_borderless_set(data, !flag);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_shaped_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> flag = elm_win_shaped_get(data);
+   elm_win_shaped_set(data, !flag);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_alpha_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> flag = elm_win_alpha_get(data);
+   elm_win_alpha_set(data, !flag);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_fullscreen_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> flag = elm_win_fullscreen_get(data);
+   elm_win_fullscreen_set(data, !flag);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_maximized_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> flag = elm_win_maximized_get(data);
+   elm_win_maximized_set(data, !flag);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_iconified_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> flag = elm_win_iconified_get(data);
+   elm_win_iconified_set(data, !flag);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_rotation_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> angle = <a class="code" href="group__Elm__Win.html#ga3f74e0155f762d4ede7389bb3cf35d60" title="Gets the rotation of the window.">elm_win_rotation_get</a>(data);
+   angle = (angle + 90) % 360;
+   <a class="code" href="group__Elm__Win.html#ga8bdcc59faebaaa0a1dc308fd7931142e" title="Sets the rotation of the window.">elm_win_rotation_set</a>(data, angle);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_rotation_resize_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> angle = <a class="code" href="group__Elm__Win.html#ga3f74e0155f762d4ede7389bb3cf35d60" title="Gets the rotation of the window.">elm_win_rotation_get</a>(data);
+   angle = (angle + 90) % 360;
+   <a class="code" href="group__Elm__Win.html#ga79098822fdda439719019e534d12304b" title="Rotates the window and resizes it.">elm_win_rotation_with_resize_set</a>(data, angle);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_sticky_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> flag = elm_win_sticky_get(data);
+   elm_win_sticky_set(data, !flag);
+}
+</pre></div></p>
+<p>Next, we handle the main window closing. We have a <code>"delete,request"</code> callback set to ask if really want to quit. If so, we end the main loop, otherwise just delete the popup message and continue running normally. <div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_yes_quit_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit</a>();
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_no_quit_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(data);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_main_win_del_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *msg, *box, *box2, *btn, *lbl, *sep;
+
+   msg = <a class="code" href="group__Elm__Notify.html#ga3b3eb10c622de79e55539aeb84e538a3" title="Add a new notify to the parent.">elm_notify_add</a>(obj);
+   <a class="code" href="group__Elm__Notify.html#ga5ae77afb4efaeae7952268ca7aac89d1" title="Set the alignment of the notify object.">elm_notify_align_set</a>(msg, 0.5, 0.5);
+   <a class="code" href="group__Elm__Notify.html#ga9fd7a70a7f98228ff2180f266caa2765" title="Sets whether events should be passed to by a click outside its area.">elm_notify_allow_events_set</a>(msg, EINA_FALSE);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(msg);
+
+   box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(obj);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   elm_object_content_set(msg, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   lbl = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(obj);
+   elm_object_text_set(lbl, <span class="stringliteral">&quot;Really want quit?&quot;</span>);
+   evas_object_size_hint_weight_set(lbl, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(lbl, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, lbl);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(lbl);
+
+   sep = elm_separator_add(obj);
+   elm_separator_horizontal_set(sep, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, sep);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sep);
+
+   box2 = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(obj);
+   <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(box2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_size_hint_weight_set(box2, EVAS_HINT_EXPAND, 0.0);
+   evas_object_size_hint_align_set(box2, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, box2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box2);
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(obj);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Yes&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _yes_quit_cb, NULL);
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(obj);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;No&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box2, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _no_quit_cb, msg);
+}
+</pre></div></p>
+<p>The non-managed window, being completely ignored by the Window Manager, is likely to never receive keyboard focus, even if we click on its entry to write something. So we have a button on it that will forcefully focus it by using some lower level functions to act directly on the X window. Then, each time one of the window is focused, we print some message on a console to show this more clearly. <div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_force_focus_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+<span class="preprocessor">#ifdef HAVE_ELEMENTARY_X</span>
+<span class="preprocessor"></span>   Ecore_X_Window xwin = elm_win_xwindow_get(data);
+   ecore_x_window_focus(xwin);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_win_focused_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *name = data;
+   printf(<span class="stringliteral">&quot;Window focused: %s\n&quot;</span>, name);
+}
+</pre></div></p>
 <p>And to finalize, the main function creates a window to hold all the action buttons and another two to show how (and what) works on each of them.</p>
-<p>First, the main window will be a normal window, we'll enable the focus highlight regardless of how it is configured so it's easier to navigate the window with the keyboard. Then we hook our focus and delete callbacks and set up the rest of the window's content. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The first of our sub-windows is the managed one. We'll create it as a dialog, which should make the Window Manager treat it as a non-resizable window. We are also setting the window to be auto-deleted when the close button in the titlebar is pressed. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>First, the main window will be a normal window, we'll enable the focus highlight regardless of how it is configured so it's easier to navigate the window with the keyboard. Then we hook our focus and delete callbacks and set up the rest of the window's content. <div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
+key_down()
+{
+   elm_win_fullscreen_set(win2, 0);
+
+   <span class="keywordflow">return</span> <a class="code" href="group__Ecore__Main__Loop__Group.html#ga6a2922b8aa10c60f27c8ab49d84d75f2">ECORE_CALLBACK_PASS_ON</a>;
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *bigbox, *box, *btn, *o;
+   <span class="keywordtype">char</span> buf[256];
+
+   <a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;images/logo.png&quot;</span>);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;win-example&quot;</span>, <span class="stringliteral">&quot;Elm_Win Example&quot;</span>);
+   elm_win_focus_highlight_enabled_set(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;focus,in&quot;</span>, _win_focused_cb, <span class="stringliteral">&quot;mainwin&quot;</span>);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, _main_win_del_cb,
+                                  NULL);
+
+   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a class="code" href="group__Ecore__Input__Group.html#ga8897187d63d554c5780cb66892503526">ECORE_EVENT_KEY_DOWN</a>, key_down, NULL);
+
+   bigbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(bigbox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_size_hint_weight_set(bigbox, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bigbox);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bigbox);
+
+   box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bigbox, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+</pre></div></p>
+<p>The first of our sub-windows is the managed one. We'll create it as a dialog, which should make the Window Manager treat it as a non-resizable window. We are also setting the window to be auto-deleted when the close button in the titlebar is pressed. <div class="fragment"><pre class="fragment">
+   win2 = <a class="code" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;sub-win-example&quot;</span>, ELM_WIN_DIALOG_BASIC);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Win.html#ga0e0b613ac6b5d1e0e71f2ec17e80cb07" title="Sets the shaped state of a window.">elm_win_title_set</a>(win2, <span class="stringliteral">&quot;Managed window&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win2);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win2, <span class="stringliteral">&quot;focus,in&quot;</span>, _win_focused_cb, <span class="stringliteral">&quot;managed&quot;</span>);
+
+   o = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win2);
+   sprintf(buf, <span class="stringliteral">&quot;%s/images/logo.png&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   <a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(o, buf, NULL);
+   <a class="code" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set</a>(o, EINA_FALSE, EINA_FALSE);
+   <a class="code" href="group__Elm__Image.html#ga1fad143fc34d81e888e3c5f85c6005db" title="Control scaling behaviour of this object.">elm_image_no_scale_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win2, o);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+</pre></div></p>
 <p>Now, we added an icon to the window as a resize object. We also set this icon to not scale, and no weight size hints have been set for it. This way, even if we hadn't created the window as a dialog, it would still not be resizable. The window size is defined by its content, so it would never be smaller than the smallest of its resize objects, and for it to be resizable, all of those objects have to allow it.</p>
-<p>Next, we add the buttons with the actions to perform on this window. Using a macro saves us typing and makes the world a happier place. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Next, we add the buttons with the actions to perform on this window. Using a macro saves us typing and makes the world a happier place. <div class="fragment"><pre class="fragment">
+   o = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(o, <span class="stringliteral">&quot;&lt;b&gt;Managed Window&lt;/b&gt;&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, o);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+<span class="preprocessor">#define WIN_ACTION(name) \</span>
+<span class="preprocessor">   do { \</span>
+<span class="preprocessor">        btn = elm_button_add(win); \</span>
+<span class="preprocessor">        elm_object_text_set(btn, #name); \</span>
+<span class="preprocessor">        elm_box_pack_end(box, btn); \</span>
+<span class="preprocessor">        evas_object_show(btn); \</span>
+<span class="preprocessor">        evas_object_smart_callback_add(btn, &quot;clicked&quot;, _btn_##name##_cb, win2); \</span>
+<span class="preprocessor">   } while (0)</span>
+<span class="preprocessor"></span>
+   WIN_ACTION(activate);
+   WIN_ACTION(lower);
+   WIN_ACTION(<span class="keyword">raise</span>);
+   WIN_ACTION(borderless);
+   WIN_ACTION(shaped);
+   WIN_ACTION(alpha);
+   WIN_ACTION(fullscreen);
+   WIN_ACTION(maximized);
+   WIN_ACTION(iconified);
+   WIN_ACTION(rotation);
+   WIN_ACTION(rotation_resize);
+   WIN_ACTION(sticky);
+</pre></div></p>
 <p>The maximize one is likely to not work, because the Window Manager will probably not enforce it upon a window that states its maximum size, much less a dialog. But that can be changed by editting the example to use #ELM_WIN_BASIC when creating the window and adding the following line to the icon set as content </p>
-<div class="fragment"><pre class="fragment"> <a class="code" href="group__Evas__Object__Group__Size__Hints.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-</pre></div><p>Lastly, the second sub-window will have it's override flag set. In it we have a label with some text, and entry and a button. The entry can be clicked normally to set focus on it, but whether it actually gets keyboard input will also depend on the window getting focus, and since the window is an override one, it will probably not gain it by normal means. The button is there to force the focus at the X level to go to our window. And to finish, another list of buttons with actions to perform on this last window. Remember that most of them are requests or hints for the Window Manager, so they are likely to do nothing on this window. Similarly, there won't be any way to move it or resize it, because we haven't implemented that kind of control on this example and that's something controlled by Window Managers on windows they are tracking, which is not the case with this one. <div class="fragment"><pre class="fragment"></pre></div></p>
+<div class="fragment"><pre class="fragment"> evas_object_size_hint_weight_set(o, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+</pre></div><p>Lastly, the second sub-window will have it's override flag set. In it we have a label with some text, and entry and a button. The entry can be clicked normally to set focus on it, but whether it actually gets keyboard input will also depend on the window getting focus, and since the window is an override one, it will probably not gain it by normal means. The button is there to force the focus at the X level to go to our window. And to finish, another list of buttons with actions to perform on this last window. Remember that most of them are requests or hints for the Window Manager, so they are likely to do nothing on this window. Similarly, there won't be any way to move it or resize it, because we haven't implemented that kind of control on this example and that's something controlled by Window Managers on windows they are tracking, which is not the case with this one. <div class="fragment"><pre class="fragment">
+   box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bigbox, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   win2 = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;sub-win-example2&quot;</span>, <span class="stringliteral">&quot;Non-managed window&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_win_override_set(win2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win2);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win2, <span class="stringliteral">&quot;focus,in&quot;</span>, _win_focused_cb,
+                                  <span class="stringliteral">&quot;override&quot;</span>);
+
+   bigbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win2);
+   evas_object_size_hint_weight_set(bigbox, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win2, bigbox);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bigbox);
+
+   o = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win2);
+   elm_object_text_set(o, <span class="stringliteral">&quot;This window should have no borders or titlebar.&lt;ps&gt;&quot;</span>
+                       <span class="stringliteral">&quot;It was set in override mode, so the Window Manager&lt;ps&gt;&quot;</span>
+                       <span class="stringliteral">&quot;should ignore everything about it.&lt;ps&gt;&quot;</span>
+                       <span class="stringliteral">&quot;It&#39;s up to the program to handle it properly, and some&quot;</span>
+                       <span class="stringliteral">&quot;of the actions performed on it may not have any effect.&quot;</span>
+                      );
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bigbox, o);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+   o = <a class="code" href="group__Elm__Entry.html#ga9b6db43001f1f765aa38f8805411b822">elm_entry_add</a>(win2);
+   elm_object_text_set(o, <span class="stringliteral">&quot;See if you can focus me&quot;</span>);
+   <a class="code" href="group__Elm__Entry.html#ga96e162d7def2bbba34c5449d51f87fdd" title="Sets the entry to single line mode.">elm_entry_single_line_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Entry.html#ga5eeb0097491a8a5e9413427ba27199d4" title="Enable or disable scrolling in entry.">elm_entry_scrollable_set</a>(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_size_hint_weight_set(o, EVAS_HINT_EXPAND, 0.0);
+   evas_object_size_hint_align_set(o, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bigbox, o);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+   o = elm_separator_add(win2);
+   elm_separator_horizontal_set(o, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bigbox, o);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+   o = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win2);
+   elm_object_text_set(o, <span class="stringliteral">&quot;Focus me&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bigbox, o);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _force_focus_cb, win2);
+
+   o = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(o, <span class="stringliteral">&quot;&lt;b&gt;Override Window&lt;/b&gt;&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, o);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+
+   WIN_ACTION(activate);
+   WIN_ACTION(lower);
+   WIN_ACTION(<span class="keyword">raise</span>);
+   WIN_ACTION(borderless);
+   WIN_ACTION(shaped);
+   WIN_ACTION(alpha);
+   WIN_ACTION(fullscreen);
+   WIN_ACTION(maximized);
+   WIN_ACTION(iconified);
+   WIN_ACTION(rotation);
+   WIN_ACTION(rotation_resize);
+   WIN_ACTION(sticky);
+
+   evas_object_resize(win, 400, 400);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div></p>
 <p>The full code listing of this example can be found at <a class="el" href="win_example_8c-example.html">win_example.c</a>. </p>
 </div></div><!-- contents -->
 </div>

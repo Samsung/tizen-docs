@@ -86,7 +86,6 @@ function func2() {
     /* When the foo function is called, the foo function is not clear */
     foo();
 }
-
 ```
 
 The JSA displays the following message:
@@ -106,14 +105,12 @@ function func() {
     /* 'arguments' has been predefined as a reserved keyword */
     var arguments = [];
 }
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Coding Rule] Do not declare arguments Array as variables in functions.
-
 ```
 
 #### Rule 3. Do Not Capture Variables in Functions
@@ -153,7 +150,6 @@ test();
 
 /* Third return */
 test();
-
 ```
 
 The JSA displays the following message:
@@ -186,7 +182,6 @@ The JSA displays the following message:
 
 ```
 [Coding Rule] Do not use extra semicolons.
-
 ```
 
 #### Rule 5. Do Not Use the Delete Keyword
@@ -205,19 +200,17 @@ var obj = new Obj();
 
 /* Deleting properties of objects can make the performance of the program worse */
 delete obj.value;
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Coding Rule] Use var to declare the variable value.
-
 ```
 
 #### Rule 6. Do Not Use Multi-line Literals
 
-Using multi-line string literals can cause unexpected operation of the program because of the whitespace at the beginning of each line and after the backslash (\).
+Using multi-line string literals can cause unexpected operation of the program because of the whitespace at the beginning of each line and after the backslash (\\).
 
 This rule is introduced by the Google JavaScript Style Guide. They say that "The whitespace at the beginning of each line can't be safely stripped at compile time; whitespace after the slash will result in tricky errors; and while most script engines support this, it is not part of ECMAScript."
 
@@ -225,14 +218,12 @@ This rule is introduced by the Google JavaScript Style Guide. They say that "The
 /* Multi-line string literals can create a problem */
 var str = 'The Test String \
     for Positive TC';
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Coding Rule] Do not use multi-line string literals.
-
 ```
 
 #### Rule 7. Do Not Use Array or Object Constructors
@@ -251,14 +242,12 @@ var arr1 = new Array(x);
 
 /* The array arr2 is the array which has 3 values, 1, 2, and 3 */
 var arr2 = new Array(1, 2, 3);
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Coding Rule] Do not use constructors for an Array.
-
 ```
 
 #### Rule 8. Do Not Modify the Prototypes of Built-in Objects
@@ -274,14 +263,12 @@ This rule is introduced by the Google Javascript Style Guide. They say that "Mod
 Object.prototype.create = function() {
     alert('Warning!');
 };
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Coding Rule] Do not modify the prototype of a built-in object Object.
-
 ```
 
 #### Rule 9. Do Not Convert Wrapper Objects to Primitives
@@ -302,14 +289,12 @@ if (bool) {
 } else {
     alert('false');
 }
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Coding Rule] Do not convert a wrapper object Boolean to a primitive value.
-
 ```
 
 #### Rule 10. Do Not Use the `for-in` Structure with Arrays
@@ -333,7 +318,6 @@ The JSA displays the following message:
 
 ```
 [Coding Rule] Do not use for-in with arrays.
-
 ```
 
 #### Rule 11. Do Not Use Unclosed Braces
@@ -346,14 +330,12 @@ In the following example, the `temp()` function needs a closing brace to indicat
 /* The temp function needs the closing brace */
 function temp() {
     var a = 'ddd';
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Syntax Error]Missing closing brace } character.
-
 ```
 
 #### Rule 12. Do Not Use Unclosed Comments
@@ -370,14 +352,12 @@ for (var i = 0; i < b; i++) {
     a += i;
     /* init i;
 }
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Syntax Error]Missing closing comment "*/".
-
 ```
 
 #### Rule 13. Do Not Use Unclosed Strings
@@ -392,14 +372,12 @@ var MAX = 20;
 for (var i = 0; i < 10; i++) {
     MAX = 'tt;
 }
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Syntax Error]Missing closing single-quote ' character.
-
 ```
 
 #### Rule 14. Do Not Omit Semicolons
@@ -413,14 +391,12 @@ In the following example, the variable `a` is declared in the `tempx()` function
 function tempx() {
     var a = 'ddd'
 }
-
 ```
 
 The JSA displays the following message:
 
 ```
 [CodingRule] Do not omit semicolon at the end of a declaration.
-
 ```
 
 #### Rule 15. Do Not Begin With Operators
@@ -435,14 +411,12 @@ var variable_sum = 1;
 var b = 2;
 var abc
     = 10 + variable_sum + b;
-
 ```
 
 The JSA displays the following message:
 
 ```
 [CodingRule] Do not begin a line with the operator =.
-
 ```
 
 #### Rule 16. Do Not Use Double-quoted Strings
@@ -455,14 +429,12 @@ In the following example, "aa" must be 'aa'. The JSA detects it and raises an al
 if (true) {
     var a = "aa";
 }
-
 ```
 
 The JSA displays the following message:
 
 ```
 [CodingRule] Do not use double-quotes instead of single-quotes for string.
-
 ```
 
 #### Rule 17. Do Not End With Commas In Literals
@@ -473,14 +445,12 @@ In the following example, the last ',' must be removed. The JSA detects it and r
 
 ```
 var abc = [1, 2, 3,];
-
 ```
 
 The JSA displays the following message:
 
 ```
 [CodingRule] Do not use extra comma at the end of object/array literals.
-
 ```
 
 #### Rule 18. Do Not Use Wrong Opening Brace
@@ -501,7 +471,6 @@ The JSA displays the following message:
 
 ```
 [CodingRule] Opening brace '{' character should appear in the same line with the statement.
-
 ```
 
 <a name="api"></a>
@@ -518,7 +487,6 @@ In the following example, the `tizen.alarm.gett()` function does not exist in th
 ```
 /* Mistyping get as gett */
 var alarm = tizen.alarm.gett(abs_alarm.id);
-
 ```
 
 The JSA displays the following message:
@@ -526,7 +494,6 @@ The JSA displays the following message:
 ```
 [Web API Rule] Name gett is not found in the API AlarmManager.
 [Web API Rule] Reading absent property 'gett' of object 'tizen.alarm'.
-
 ```
 
 #### Rule 2. Wrong Argument Number
@@ -539,14 +506,12 @@ In the following example, the `tizen.filesystem.resolve()` function needs more t
 /* The number of arguments is wrong (2 or more arguments required) */
 tizen.filesystem.resolve('images'
                          /* Missing error callback arguments */);
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Web API Rule] Number of the arguments to tizen.filesystem.resolve is 1; provide arguments of size from 2 to 4.
-
 ```
 
 #### Rule 3. Missing Error Handling
@@ -561,14 +526,12 @@ tizen.filesystem.resolve('images', function(dir) {
 }
 /* Error callback required as the third argument */
 );
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Web API Rule] Call to tizen.filesystem.resolve is missing an error callback; provide an error callback.
-
 ```
 
 #### Rule 4. Missing Exception Handling
@@ -583,14 +546,12 @@ In the following example, the `tizen.calendar.getCalendars()` function can throw
    so it should be wrapped in a try-catch statement
 */
 tizen.calendar.getCalendars('EVENT', calendarListCallback, errorCallback);
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Web API Rule] Function CalendarManager.prototype.getCalendars may raise an exception; call the function inside the try statement.
-
 ```
 
 #### Rule 5. Wrong Argument Type
@@ -610,7 +571,6 @@ try {
 } catch (e) {
     /* Error handling */
 }
-
 ```
 
 The JSA displays the following message:
@@ -618,7 +578,6 @@ The JSA displays the following message:
 ```
 [Web API Rule] Argument #1 of the function ContactManager.prototype.getAddressBooks is wrong; the expected type is AddressBookArraySuccessCallback.
 [Web API Rule] Argument #2 of the function ContactManager.prototype.getAddressBooks is wrong; the expected type is ErrorCallback.
-
 ```
 
 #### Rule 6. Wrong Dictionary Type
@@ -650,7 +609,6 @@ The JSA displays the following message:
 
 ```
 [Web API Rule] The property foo is not a member of the dictionary ContactNameInit.
-
 ```
 
 #### Rule 7. API Version Compatibility
@@ -672,14 +630,12 @@ try {
 } catch (e) {
     /* ... */
 }
-
 ```
 
 The JSA displays the following message:
 
 ```
 [Web API Rule] Tizen Wearable-2.3 API not support "open" API. It is defined in Tizen mobile-2.3.
-
 ```
 
 #### Rule 8. API Privilege Missing
@@ -701,7 +657,6 @@ The JSA displays the following message:
 
 ```
 [Web API Rule] Tizen tizen.application.launch API need "http://tizen.org/privilege/application.launch" privilege in 'config.xml'.
-
 ```
 
 ## Using the Stale Object Checker<a name="stalechecker"></a>
@@ -796,7 +751,6 @@ function exitApp() {
 function runtime() {
     exitApp(); /* Add the function call for memory leak */
 }
-
 ```
 
 After testing the source code, the following figure shows the result. It indicates that a memory leak occurred at the "js/main_orig_.js:39:42" site. Click the site to retrieve details about the leak.
@@ -840,6 +794,7 @@ var init = function() {
 
 function command(num) {
     init(); /* Add the function call for memory leak */
+}
 ```
 
 ## Related information

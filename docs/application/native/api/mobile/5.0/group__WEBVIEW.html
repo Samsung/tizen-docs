@@ -104,7 +104,7 @@ Overview</h2>
 <h2><a class="anchor" id="WEBVIEW_SMART_OBJECT"></a>
 Smart object</h2>
 <p>It is Chromium main smart object. This object provides view related APIs of Chromium to EFL object.<br/>
- The following signals (see <a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a>) are emitted: </p>
+ The following signals (see <a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a>) are emitted: </p>
 <table class="doxtable">
 <tr>
 <th>Signals  </th><th>Type  </th><th>Description   </th></tr>
@@ -429,7 +429,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests to set the user agent string.  <a href="#ga99a9003f865791e69ffc9611872970c0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga1e31ba3d5aac2347cb41345a56377518">ewk_view_user_agent_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the user agent string.  <a href="#ga1e31ba3d5aac2347cb41345a56377518"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga48fffebe16f56c1fd9d95c17b6735097">ewk_view_contents_size_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *width, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *height)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga48fffebe16f56c1fd9d95c17b6735097">ewk_view_contents_size_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, Evas_Coord *width, Evas_Coord *height)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last known content's size.  <a href="#ga48fffebe16f56c1fd9d95c17b6735097"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga0b6cc39a80fbbb7440ace5a406ee6eb9">ewk_view_script_execute</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, const char *script, <a class="el" href="group__WEBVIEW.html#ga5337cd670493dbff950526ecfdfd1504">Ewk_View_Script_Execute_Cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the execution of the given script.  <a href="#ga0b6cc39a80fbbb7440ace5a406ee6eb9"></a><br/></td></tr>
@@ -6102,13 +6102,13 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>width</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>height</em>&#160;</td>
         </tr>
         <tr>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Tizen Native API: 3x3 Matrices in floating point</title>
+<title>Tizen Native API: 3x3 floating point matrices</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <link href="doxygen_html_stylesheet.css" rel="stylesheet" type="text/css" />
@@ -91,11 +91,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#define-members">Defines</a>  </div>
   <div class="headertitle">
-<div class="title">3x3 Matrices in floating point</div>  </div>
+<div class="title">3x3 floating point matrices</div>  </div>
 <div class="ingroups"><a class="el" href="group__Eina__Matrix__Group.html">Matrix</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>Matrix definition and operations. </p>
+<p>Definition and operations for 3x3 matrices. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -110,43 +110,51 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#gaddca6060f811e2e54c2a4463a489f562">eina_matrix3_matrix3_f16p16_to</a> (const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, <a class="el" href="structEina__Matrix3__F16p16.html">Eina_Matrix3_F16p16</a> *fm)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms the given floating point matrix to the given fixed point matrix.  <a href="#gaddca6060f811e2e54c2a4463a489f562"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#gae17ded59d27ebc9de70d7c3fc4b60cd9">eina_matrix3_equal</a> (const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m1, const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m2)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the two given matrices are equal or not.  <a href="#gae17ded59d27ebc9de70d7c3fc4b60cd9"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the two matrices are equivalent.  <a href="#gae17ded59d27ebc9de70d7c3fc4b60cd9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#gafb247ad2d00d9ca118e1a5e66081175b">eina_matrix3_compose</a> (const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m1, const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m2, <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *dst)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets dst as the matrix multiplication (composition) of two matrices.  <a href="#gafb247ad2d00d9ca118e1a5e66081175b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga1851b5ecde69c55fc17dd652ad277804">eina_matrix3_translate</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *t, double tx, double ty)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the matrix values for a translation.  <a href="#ga1851b5ecde69c55fc17dd652ad277804"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the matrix values for a translation operation.  <a href="#ga1851b5ecde69c55fc17dd652ad277804"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga309f9c25d35c27f54e78f79e025cba72">eina_matrix3_scale</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *t, double sx, double sy)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the matrix values for a scale.  <a href="#ga309f9c25d35c27f54e78f79e025cba72"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the matrix values for a scaling operation.  <a href="#ga309f9c25d35c27f54e78f79e025cba72"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga3a466030fa6fb2a0dcab5b97258532b8">eina_matrix3_rotate</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *t, double rad)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the matrix values for a rotation.  <a href="#ga3a466030fa6fb2a0dcab5b97258532b8"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the matrix values for a rotation operation.  <a href="#ga3a466030fa6fb2a0dcab5b97258532b8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#gad590d9a2cfb2408135d5decd39982ef5">eina_matrix3_identity</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *t)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the given floating point matrix to the identity matrix.  <a href="#gad590d9a2cfb2408135d5decd39982ef5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga89bae0174615d096b40e0b56600fb3af">eina_matrix3_determinant</a> (const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the determinant of the given matrix.  <a href="#ga89bae0174615d096b40e0b56600fb3af"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the determinant of the given matrix.  <a href="#ga89bae0174615d096b40e0b56600fb3af"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga50f4cec7c36f27debc54784366119ad9">eina_matrix3_divide</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, double scalar)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides the given matrix by the given scalar.  <a href="#ga50f4cec7c36f27debc54784366119ad9"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides the given matrix by a scalar number.  <a href="#ga50f4cec7c36f27debc54784366119ad9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga2829c4e4f4697cf83dde4a0818871d96">eina_matrix3_inverse</a> (const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m2)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the inverse of the given matrix.  <a href="#ga2829c4e4f4697cf83dde4a0818871d96"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#gacd98030058191df8442bf4a0acdc3df5">eina_matrix3_transpose</a> (const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the transpose of the given matrix.  <a href="#gacd98030058191df8442bf4a0acdc3df5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#gad5d339e01c63db1e81ee9bdfd5ac8f12">eina_matrix3_cofactor</a> (const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cofactor of the given matrix.  <a href="#gad5d339e01c63db1e81ee9bdfd5ac8f12"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga7634198d262398a8fdb1d0e734e58d26">eina_matrix3_adjoint</a> (const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the adjoint of the given matrix.  <a href="#ga7634198d262398a8fdb1d0e734e58d26"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#gac0a681d6b7fb71c16eefc5557e9709c3">eina_matrix3_point_transform</a> (const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, double x, double y, double *xr, double *yr)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the transform of a 2D point using the given matrix.  <a href="#gac0a681d6b7fb71c16eefc5557e9709c3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga7a4de4c7ee8e3d97621382497bb5dd23">eina_matrix3_rectangle_transform</a> (const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, const <a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a> *r, const <a class="el" href="group__Eina__Quad__Group.html#gad1216c445ce98862b68ba588f9635b0f">Eina_Quad</a> *q)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the transformation of a rectangle using the given matrix.  <a href="#ga7a4de4c7ee8e3d97621382497bb5dd23"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga7786bb597f5622d27c018c3c68448dd1">eina_matrix3_quad_quad_map</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, const <a class="el" href="group__Eina__Quad__Group.html#gad1216c445ce98862b68ba588f9635b0f">Eina_Quad</a> *src, const <a class="el" href="group__Eina__Quad__Group.html#gad1216c445ce98862b68ba588f9635b0f">Eina_Quad</a> *dst)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a projective matrix that maps a quadrangle to a quadrangle.  <a href="#ga7786bb597f5622d27c018c3c68448dd1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga7e9028b2971abceef83f8bc97dea58e1">eina_matrix3_square_quad_map</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, const <a class="el" href="group__Eina__Quad__Group.html#gad1216c445ce98862b68ba588f9635b0f">Eina_Quad</a> *q)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a matrix for unit-square to quad mapping.  <a href="#ga7e9028b2971abceef83f8bc97dea58e1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga69309f8c3c1821b8329804f2f7dacfa1">eina_matrix3_quad_square_map</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, const <a class="el" href="group__Eina__Quad__Group.html#gad1216c445ce98862b68ba588f9635b0f">Eina_Quad</a> *q)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a matrix for mapping squares to match quad.  <a href="#ga69309f8c3c1821b8329804f2f7dacfa1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga3cc344111120f62bb33036a08a1996ad">eina_matrix3_array_set</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m, const double *v)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets array to matrix.  <a href="#ga3cc344111120f62bb33036a08a1996ad"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets matrix values using an array.  <a href="#ga3cc344111120f62bb33036a08a1996ad"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga4540eb5b348e3294c192abe49c0fa277">eina_matrix3_copy</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *dst, const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *src)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies matrix.  <a href="#ga4540eb5b348e3294c192abe49c0fa277"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies a matrix.  <a href="#ga4540eb5b348e3294c192abe49c0fa277"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga5fd26a794eab0a1cb74d05ba0c693eab">eina_matrix3_multiply</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *out, const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *mat_a, const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *mat_b)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies two matrix.  <a href="#ga5fd26a794eab0a1cb74d05ba0c693eab"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies two matrices.  <a href="#ga5fd26a794eab0a1cb74d05ba0c693eab"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga25ac1af16f1f72a28c65916f035b2e0f">eina_matrix3_multiply_copy</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *out, const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *mat_a, const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *mat_b)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies two matrix.  <a href="#ga25ac1af16f1f72a28c65916f035b2e0f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies two matrices without overwriting them.  <a href="#ga25ac1af16f1f72a28c65916f035b2e0f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga9539aaf6d8202888163c2ee2daf34b9e">eina_matrix3_scale_transform_set</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *out, double s_x, double s_y)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms scale of matrix.  <a href="#ga9539aaf6d8202888163c2ee2daf34b9e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the scale parameters (XX, YY) of a matrix.  <a href="#ga9539aaf6d8202888163c2ee2daf34b9e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga45b5d65dd8a495d7dd655cc341ce9fea">eina_matrix3_position_transform_set</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *out, const double p_x, const double p_y)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Transforms position of matrix.  <a href="#ga45b5d65dd8a495d7dd655cc341ce9fea"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the positional parameters (XZ, YZ) of a matrix.  <a href="#ga45b5d65dd8a495d7dd655cc341ce9fea"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#gac85fc600ff04f7eaf9c9592437190e1b">eina_normal3_matrix_get</a> (<a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *out, const <a class="el" href="structEina__Matrix4.html">Eina_Matrix4</a> *m)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets normal of the given matrix.  <a href="#gac85fc600ff04f7eaf9c9592437190e1b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Matrix3__Group.html#ga68de476b0caadb49b1b5ae7db62db1d5">eina_matrix3_matrix4_to</a> (<a class="el" href="structEina__Matrix4.html">Eina_Matrix4</a> *m4, const <a class="el" href="group__Eina__Matrix3__Group.html#ga8c3fb1203ec3bcfdcde63d76caedc375">Eina_Matrix3</a> *m3)</td></tr>
@@ -206,7 +214,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Floating point matrix3 handler </p>
+<p>A 3x3 floating point matrix. </p>
 
 </div>
 </div>
@@ -235,8 +243,18 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+<p>Computes the adjoint of the given matrix. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The matrix to be adjointed. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>The adjoint matrix.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function finds the adjoint of the matrix <code>m</code> and stores the result in <code>a</code>. No check is done on <code>m</code> or <code>a</code>. The adjoint of a matrix3 is effectively the transpose of its cofactor.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -265,17 +283,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets array to matrix. </p>
+<p>Sets matrix values using an array. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The result matrix </td></tr>
-    <tr><td class="paramname">v</td><td>The the array[9] for set</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The result matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>The array[9] of values.</td></tr>
   </table>
   </dd>
 </dl>
-<p>Set to matrix first 9 elements from array</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>Uses the first 9 elements in the given C array <code>v</code> to set the values in the matrix <code>m</code>. The values will be set in the order of the elements in the Eina_Matrix3 structure.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -303,8 +321,18 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+<p>Computes the cofactor of the given matrix. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The source matrix. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>The cofactored matrix.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function cofactors the matrix <code>m</code> and stores the result in <code>a</code>. No check is done on <code>m</code> or <code>a</code>. The cofactor of a matrix3 at row i, column j is computed by taking the determinant of the submatrix formed by deleting the i-th row and j-th column, and then multiplying by (-1)^(i+j).</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -338,8 +366,19 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+<p>Sets dst as the matrix multiplication (composition) of two matrices. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m1</td><td>The first matrix. Must be non-NULL. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m2</td><td>The second matrix. Must be non-NULL. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>The results matrix.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>In matrix multiplication, AB, the resultant matrix is created from the rows of A multiplied against the columns of B and summed. This is not commutative; i.e. AB != BA, so the ordering of arguments <code>m1</code> and <code>m2</code> matters.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -368,16 +407,16 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Copies matrix. </p>
+<p>Copies a matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">dst</td><td>The matrix copy </td></tr>
-    <tr><td class="paramname">src</td><td>The matrix for copy.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>Copy of the matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The matrix to copy.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -396,17 +435,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Returns the determinant of the given matrix. </p>
+<p>Calculates the determinant of the given matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The matrix. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The determinant.</dd></dl>
 <p>This function returns the determinant of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -435,17 +474,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Divides the given matrix by the given scalar. </p>
+<p>Divides the given matrix by a scalar number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The matrix. </td></tr>
-    <tr><td class="paramname">scalar</td><td>The scalar number.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">m</td><td>The matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scalar</td><td>The scalar number.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function divides the matrix <code>m</code> by <code>scalar</code>. No check is done on <code>m</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -474,18 +513,18 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Checks whether the two given matrices are equal or not. </p>
+<p>Checks whether the two matrices are equivalent. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m1</td><td>The first matrix. </td></tr>
-    <tr><td class="paramname">m2</td><td>The second matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m1</td><td>The first matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m2</td><td>The second matrix. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if the two matrices are equal, <code>0</code> otherwise.</dd></dl>
-<p>This function return EINA_TRUE if thematrices <code>m1</code> and <code>m2</code> are equal, EINA_FALSE otherwise. No check is done on the matrices.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the two matrices are equal, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<p>This function returns <code>EINA_TRUE</code> if the matrices <code>m1</code> and <code>m2</code> are equal, <code>EINA_FALSE</code> otherwise. No check is done on the matrices.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -565,23 +604,23 @@ Defines</h2></td></tr>
 <p>Gets the values of the coefficients of the given fixed point matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The fixed point matrix. </td></tr>
-    <tr><td class="paramname">xx</td><td>The first coefficient value. </td></tr>
-    <tr><td class="paramname">xy</td><td>The second coefficient value. </td></tr>
-    <tr><td class="paramname">xz</td><td>The third coefficient value. </td></tr>
-    <tr><td class="paramname">yx</td><td>The fourth coefficient value. </td></tr>
-    <tr><td class="paramname">yy</td><td>The fifth coefficient value. </td></tr>
-    <tr><td class="paramname">yz</td><td>The sixth coefficient value. </td></tr>
-    <tr><td class="paramname">zx</td><td>The seventh coefficient value. </td></tr>
-    <tr><td class="paramname">zy</td><td>The heighth coefficient value. </td></tr>
-    <tr><td class="paramname">zz</td><td>The nineth coefficient value.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The fixed point matrix. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">xx</td><td>The first coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">xy</td><td>The second coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">xz</td><td>The third coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">yx</td><td>The fourth coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">yy</td><td>The fifth coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">yz</td><td>The sixth coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zx</td><td>The seventh coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zy</td><td>The eighth coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zz</td><td>The nine-th coefficient value.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function gets the values of the coefficients of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Matrix3__Group.html#ga5a918521e09f28a4d7920adb90eb5e38" title="Sets the values of the coefficients of the given floating point matrix.">eina_matrix3_values_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -603,13 +642,13 @@ Defines</h2></td></tr>
 <p>Sets the given floating point matrix to the identity matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">t</td><td>The floating point matrix to set</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The matrix to set to identity.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function sets <code>m</code> to the identity matrix. No check is done on <code>m</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -641,14 +680,14 @@ Defines</h2></td></tr>
 <p>Computes the inverse of the given matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The matrix to inverse. </td></tr>
-    <tr><td class="paramname">m2</td><td>The inverse matrix.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The source matrix. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m2</td><td>The inverse matrix.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function inverse the matrix <code>m</code> and stores the result in <code>m2</code>. No check is done on <code>m</code> or <code>m2</code>. If <code>m</code> can not be invertible, then <code>m2</code> is set to the identity matrix.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function inverts the matrix <code>m</code> and stores the result in <code>m2</code>. No check is done on <code>m</code> or <code>m2</code>. If <code>m</code> cannot be inverted, then <code>m2</code> is set to the identity matrix.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -680,14 +719,14 @@ Defines</h2></td></tr>
 <p>Transforms the given floating point matrix to the given fixed point matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The floating point matrix. </td></tr>
-    <tr><td class="paramname">fm</td><td>The fixed point matrix.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The floating point matrix. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">fm</td><td>The fixed point matrix.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function transforms the floating point matrix <code>m</code> to a fixed point matrix and store the coefficients into the fixed point matrix <code>fm</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function transforms the floating point matrix <code>m</code> to a fixed point matrix and stores the coefficients into the fixed point matrix <code>fm</code>.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -719,13 +758,13 @@ Defines</h2></td></tr>
 <p>Converts an Eina_Matrix3 into an <a class="el" href="structEina__Matrix4.html">Eina_Matrix4</a>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m3</td><td>The destination Eina_Matrix3. </td></tr>
-    <tr><td class="paramname">m4</td><td>The source <a class="el" href="structEina__Matrix4.html">Eina_Matrix4</a>.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m3</td><td>The destination Eina_Matrix3. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m4</td><td>The source <a class="el" href="structEina__Matrix4.html">Eina_Matrix4</a>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -760,17 +799,18 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Multiplies two matrix. </p>
+<p>Multiplies two matrices. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>The resulting matrix </td></tr>
-    <tr><td class="paramname">a</td><td>The first member of the multiplication </td></tr>
-    <tr><td class="paramname">b</td><td>The second member of the multiplication</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The resulting matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat_a</td><td>The first member of the multiplication. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat_b</td><td>The second member of the multiplication.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p><code>out</code> must not point to the same structure as <code>mat_a</code> or <code>mat_b</code>, else the calculation results will be incorrect. Use <a class="el" href="group__Eina__Matrix3__Group.html#ga25ac1af16f1f72a28c65916f035b2e0f" title="Multiplies two matrices without overwriting them.">eina_matrix3_multiply_copy()</a> instead in this case.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -805,17 +845,18 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Multiplies two matrix. </p>
+<p>Multiplies two matrices without overwriting them. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>The resulting matrix </td></tr>
-    <tr><td class="paramname">a</td><td>The first member of the multiplication </td></tr>
-    <tr><td class="paramname">b</td><td>The second member of the multiplication</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The resulting matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat_a</td><td>The first member of the multiplication. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mat_b</td><td>The second member of the multiplication.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>Safely multiplies <code>mat_a</code> and <code>mat_b</code> by checking if the <code>out</code> parameter points to either of them, and if so uses a temporary matrix for the intermediary calculations.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -861,8 +902,21 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+<p>Computes the transform of a 2D point using the given matrix. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The transformation matrix to apply. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>The x point to be transformed. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>The y point to be transformed. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">xr</td><td>The transformed x point. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">yr</td><td>The transformed y point.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Applies the transformation matrix <code>m</code> to the point (x,y), and stores the result in (*xr,*yr). No check is done on <code>m</code>; <code>xr</code> and <code>yr</code> must point to valid memory. A fast-path is included for if the zx and zy components of the matrix are zero.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -897,17 +951,18 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Transforms position of matrix. </p>
+<p>Sets the positional parameters (XZ, YZ) of a matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>The resulting matrix </td></tr>
-    <tr><td class="paramname">p_x</td><td>The position value for x </td></tr>
-    <tr><td class="paramname">p_y</td><td>The position value for y</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The resulting matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p_x</td><td>The position value for x. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">p_y</td><td>The position value for y.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>Sets only the XZ and YZ components of the matrix, leaving the rest of the matrix as it was.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -943,7 +998,17 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates a projective matrix that maps a quadrangle to a quadrangle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The transformation matrix to create. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The source quadrangle. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dst</td><td>The destination quadrangle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if matrix could be successfully created, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<p>Calculates a matrix <code>m</code> that can be used to transform from an arbitrary source quadrangle <code>src</code> to another arbitrary quadrangle <code>dst</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -971,8 +1036,19 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+<p>Creates a matrix for mapping squares to match quad. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The transformation matrix to create. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">q</td><td>The source quadrangle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_FALSE</code> on successful transform creation, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<p>Calculates a matrix <code>m</code> that can be used to transform a square to fit a given quadrangle. The created matrix will always have its zz element equal to 1.0. The <code>m</code> matrix and <code>q</code> quad must be valid memory.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1006,8 +1082,19 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+<p>Computes the transformation of a rectangle using the given matrix. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The transformation matrix to apply. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>The rectangle to be transformed. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">q</td><td>The resultant transformed points.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Performs a point transformation of each corner of the rectangle <code>r</code>, and stores the result in the quadrangle <code>q</code>. No checks are done on the inputs, and <code>q</code> must point to valid memory.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1036,16 +1123,16 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets the matrix values for a rotation. </p>
+<p>Sets the matrix values for a rotation operation. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The matrix to set the rotation values </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rad</td><td>The radius to rotate the matrix</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">t</td><td>The matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rad</td><td>The number of radians to rotate.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1080,17 +1167,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets the matrix values for a scale. </p>
+<p>Sets the matrix values for a scaling operation. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The matrix to set the scale values </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sx</td><td>The X coordinate scale </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">sy</td><td>The Y coordinate scale</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sx</td><td>The X coordinate scaling factor. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">sy</td><td>The Y coordinate scaling factor.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1125,17 +1212,18 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Transforms scale of matrix. </p>
+<p>Sets the scale parameters (XX, YY) of a matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>The resulting matrix </td></tr>
-    <tr><td class="paramname">s_x</td><td>The scale value for x </td></tr>
-    <tr><td class="paramname">s_y</td><td>The scale value for y</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The resulting matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s_x</td><td>The scale value for x. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">s_y</td><td>The scale value for y.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>Sets only the XX and YY components of the matrix, leaving the rest of the matrix as it was.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1163,8 +1251,19 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+<p>Creates a matrix for unit-square to quad mapping. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The transformation matrix to create. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">q</td><td>The source quadrangle. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if matrix could be successfully created, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<p>Calculates a matrix <code>m</code> that can be used to transform an arbitrary quadrangle <code>q</code> into a square. If <code>q</code> is a parallelogram, then a fast path affine transformation is used, otherwise it computes the matrix using a full projective transformation operation. No other checks are done on <code>m</code> or <code>q</code>.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1199,17 +1298,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets the matrix values for a translation. </p>
+<p>Sets the matrix values for a translation operation. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>The matrix to set the translation values </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">tx</td><td>The X coordinate translate </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ty</td><td>The Y coordinate translate</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tx</td><td>The X coordinate translation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ty</td><td>The Y coordinate translation.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1237,8 +1336,18 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+<p>Computes the transpose of the given matrix. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The source matrix. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>The transposed matrix.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function transposes the matrix <code>m</code> and stores the result in <code>a</code>. No check is done on <code>m</code> or <code>a</code>. The transpose of a matrix essentially flips a matrix over its diagonal.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1260,14 +1369,14 @@ Defines</h2></td></tr>
 <p>Returns the type of the given floating point matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The floating point matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The floating point matrix. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The type of the matrix.</dd></dl>
 <p>This function returns the type of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1347,23 +1456,23 @@ Defines</h2></td></tr>
 <p>Gets the values of the coefficients of the given floating point matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The floating point matrix. </td></tr>
-    <tr><td class="paramname">xx</td><td>The first coefficient value. </td></tr>
-    <tr><td class="paramname">xy</td><td>The second coefficient value. </td></tr>
-    <tr><td class="paramname">xz</td><td>The third coefficient value. </td></tr>
-    <tr><td class="paramname">yx</td><td>The fourth coefficient value. </td></tr>
-    <tr><td class="paramname">yy</td><td>The fifth coefficient value. </td></tr>
-    <tr><td class="paramname">yz</td><td>The sixth coefficient value. </td></tr>
-    <tr><td class="paramname">zx</td><td>The seventh coefficient value. </td></tr>
-    <tr><td class="paramname">zy</td><td>The heighth coefficient value. </td></tr>
-    <tr><td class="paramname">zz</td><td>The nineth coefficient value.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The floating point matrix. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">xx</td><td>The first coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">xy</td><td>The second coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">xz</td><td>The third coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">yx</td><td>The fourth coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">yy</td><td>The fifth coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">yz</td><td>The sixth coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zx</td><td>The seventh coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zy</td><td>The eighth coefficient value. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">zz</td><td>The ninth coefficient value.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function gets the values of the coefficients of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Matrix3__Group.html#ga5a918521e09f28a4d7920adb90eb5e38" title="Sets the values of the coefficients of the given floating point matrix.">eina_matrix3_values_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1443,23 +1552,23 @@ Defines</h2></td></tr>
 <p>Sets the values of the coefficients of the given floating point matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The floating point matrix. </td></tr>
-    <tr><td class="paramname">xx</td><td>The first coefficient value. </td></tr>
-    <tr><td class="paramname">xy</td><td>The second coefficient value. </td></tr>
-    <tr><td class="paramname">xz</td><td>The third coefficient value. </td></tr>
-    <tr><td class="paramname">yx</td><td>The fourth coefficient value. </td></tr>
-    <tr><td class="paramname">yy</td><td>The fifth coefficient value. </td></tr>
-    <tr><td class="paramname">yz</td><td>The sixth coefficient value. </td></tr>
-    <tr><td class="paramname">zx</td><td>The seventh coefficient value. </td></tr>
-    <tr><td class="paramname">zy</td><td>The heighth coefficient value. </td></tr>
-    <tr><td class="paramname">zz</td><td>The nineth coefficient value.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">m</td><td>The floating point matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xx</td><td>The first coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xy</td><td>The second coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">xz</td><td>The third coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yx</td><td>The fourth coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yy</td><td>The fifth coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">yz</td><td>The sixth coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zx</td><td>The seventh coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zy</td><td>The eighth coefficient value. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">zz</td><td>The ninth coefficient value.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function sets the values of the coefficients of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Matrix3__Group.html#gad3272b8f27748b0858cc7ee7777f457f" title="Gets the values of the coefficients of the given floating point matrix.">eina_matrix3_values_get()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1491,13 +1600,13 @@ Defines</h2></td></tr>
 <p>Sets normal of the given matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">out</td><td>The result mtrix of normal </td></tr>
-    <tr><td class="paramname">m</td><td>The matrix</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>The resulting matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The matrix.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

@@ -2814,7 +2814,7 @@
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>External plug/socket infrastructure to remote canvases</Name>
+                  <Name>External plug/socket infrastructure for remote canvases</Name>
                   <Path>group__Ecore__Evas__Extn.html</Path>
                   <Subnodes>
                   </Subnodes>
@@ -2901,7 +2901,7 @@
                </Node>
                <Node>
                 <Name>Edje Object</Name>
-                <Path>group__Edje__Object.html</Path>
+                <Path>group__Edje__Object__Group.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>Edje Class: Color</Name>
@@ -3158,6 +3158,12 @@
                       </Subnodes>
                      </Node>
                      <Node>
+                      <Name>Generic Value Optional management</Name>
+                      <Path>group__Eina__Value__Optional__Group.html</Path>
+                      <Subnodes>
+                      </Subnodes>
+                     </Node>
+                     <Node>
                       <Name>Generic Value Struct management</Name>
                       <Path>group__Eina__Value__Struct__Group.html</Path>
                       <Subnodes>
@@ -3204,6 +3210,12 @@
                    <Node>
                     <Name>Red-Black tree</Name>
                     <Path>group__Eina__Rbtree__Group.html</Path>
+                    <Subnodes>
+                    </Subnodes>
+                   </Node>
+                   <Node>
+                    <Name>Safe Pointer</Name>
+                    <Path>group__Eina__Safepointer__Group.html</Path>
                     <Subnodes>
                     </Subnodes>
                    </Node>
@@ -3262,7 +3274,7 @@
                     </Subnodes>
                    </Node>
                    <Node>
-                    <Name>3x3 Matrices in floating point</Name>
+                    <Name>3x3 floating point matrices</Name>
                     <Path>group__Eina__Matrix3__Group.html</Path>
                     <Subnodes>
                     </Subnodes>
@@ -3273,6 +3285,12 @@
                     <Subnodes>
                     </Subnodes>
                    </Node>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Memory Slices</Name>
+                  <Path>group__Eina__Slice__Group.html</Path>
+                  <Subnodes>
                   </Subnodes>
                  </Node>
                  <Node>
@@ -3332,8 +3350,20 @@
                 </Subnodes>
                </Node>
                <Node>
+                <Name>Free Queue Group</Name>
+                <Path>group__Eina__FreeQ__Group.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>Mmap Group</Name>
                 <Path>group__Eina__Mmap__Group.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Short lived strings</Name>
+                <Path>group__Eina__Slstr.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>
@@ -3500,6 +3530,12 @@
                 </Subnodes>
                </Node>
                <Node>
+                <Name>Eio file management API.</Name>
+                <Path>group__Eio__Management.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>Eio manipulation of eXtended attribute.</Name>
                 <Path>group__Eio__Xattr.html</Path>
                 <Subnodes>
@@ -3514,42 +3550,156 @@
               </Subnodes>
              </Node>
              <Node>
-              <Name>Eldbus</Name>
-              <Path>group__Eldbus.html</Path>
-              <Subnodes>
-              </Subnodes>
-             </Node>
-             <Node>
               <Name>Elementary</Name>
               <Path>group__Elementary.html</Path>
               <Subnodes>
                <Node>
-                <Name>Elementary Containers</Name>
-                <Path>group__elm__container__group.html</Path>
+                <Name>AT-SPI2 Accessibility</Name>
+                <Path>group__ATSPI.html</Path>
                 <Subnodes>
-                 <Node>
-                  <Name>Box</Name>
-                  <Path>group__Elm__Box.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Grid</Name>
-                  <Path>group__Elm__Grid.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Table</Name>
-                  <Path>group__Elm__Table.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Elementary Infrastructure</Name>
-                <Path>group__elm__infra__group.html</Path>
+                <Name>Actionslider</Name>
+                <Path>group__Elm__Actionslider.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>App</Name>
+                <Path>group__Elm__App.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Background</Name>
+                <Path>group__Elm__Bg.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Box</Name>
+                <Path>group__Elm__Box.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Bubble</Name>
+                <Path>group__Elm__Bubble.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Button</Name>
+                <Path>group__Elm__Button.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Caches</Name>
+                <Path>group__Elm__Caches.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Calendar</Name>
+                <Path>group__Elm__Calendar.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Check</Name>
+                <Path>group__Elm__Check.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Clock</Name>
+                <Path>group__Elm__Clock.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Colorselector</Name>
+                <Path>group__Elm__Colorselector.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Combobox</Name>
+                <Path>group__Elm__Combobox.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Conformant</Name>
+                <Path>group__Elm__Conformant.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>CopyPaste</Name>
+                <Path>group__CopyPaste.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Ctxpopup</Name>
+                <Path>group__Elm__Ctxpopup.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Cursors</Name>
+                <Path>group__Elm__Cursors.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Datetime</Name>
+                <Path>group__Elm__Datetime.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Dayselector</Name>
+                <Path>group__Elm__Dayselector.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Debug</Name>
+                <Path>group__Elm__Debug.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Diskselector</Name>
+                <Path>group__Elm__Diskselector.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Efl_ui_clock</Name>
+                <Path>group__efl__ui__clock.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Elementary Config</Name>
+                <Path>group__Elm__Config.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Elementary Containers</Name>
+                <Path>group__elm__container__group.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Elementary Engine</Name>
+                <Path>group__Elm__Engine.html</Path>
                 <Subnodes>
                  <Node>
                   <Name>AT-SPI2 Accessibility</Name>
@@ -3557,6 +3707,18 @@
                   <Subnodes>
                   </Subnodes>
                  </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Elementary Fonts</Name>
+                <Path>group__Elm__Fonts.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Elementary Infrastructure</Name>
+                <Path>group__elm__infra__group.html</Path>
+                <Subnodes>
                  <Node>
                   <Name>Accessibility</Name>
                   <Path>group__elm__accessibility__group.html</Path>
@@ -3588,140 +3750,8 @@
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>App</Name>
-                  <Path>group__Elm__App.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Caches</Name>
-                  <Path>group__Elm__Caches.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>CopyPaste</Name>
-                  <Path>group__CopyPaste.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Cursors</Name>
-                  <Path>group__Elm__Cursors.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Debug</Name>
-                  <Path>group__Elm__Debug.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Elementary Config</Name>
-                  <Path>group__Elm__Config.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Elementary Engine</Name>
-                  <Path>group__Elm__Engine.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>AT-SPI2 Accessibility</Name>
-                    <Path>group__ATSPI.html</Path>
-                    <Subnodes>
-                    </Subnodes>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Elementary Fonts</Name>
-                  <Path>group__Elm__Fonts.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Elementary Gen Item</Name>
-                  <Path>group__elm__gen__group.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Elementary Profile</Name>
-                  <Path>group__Elm__Profile.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Elementary Scrolling</Name>
-                  <Path>group__Elm__Scrolling.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Fingers</Name>
-                  <Path>group__Elm__Fingers.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Focus</Name>
-                  <Path>group__Elm__Focus.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>General</Name>
-                  <Path>group__Elm__General.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Gesture Layer</Name>
-                  <Path>group__Elm__Gesture__Layer.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Mirroring</Name>
-                  <Path>group__Elm__Mirroring.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Password show last</Name>
-                  <Path>group__Elm__Password__last__show.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Scrollhints</Name>
-                  <Path>group__Elm__Scrollhints.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
                   <Name>Styles</Name>
                   <Path>group__Elm__Styles.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Theme</Name>
-                  <Path>group__Elm__Theme.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Transit</Name>
-                  <Path>group__Elm__Transit.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Widget Scaling</Name>
-                  <Path>group__Elm__Scaling.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -3734,264 +3764,420 @@
                 </Subnodes>
                </Node>
                <Node>
+                <Name>Elementary Profile</Name>
+                <Path>group__Elm__Profile.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Elementary Scrolling</Name>
+                <Path>group__Elm__Scrolling.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Elementary Store</Name>
+                <Path>group__Store.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>Elementary Widgets</Name>
                 <Path>group__elm__widget__group.html</Path>
                 <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Entry</Name>
+                <Path>group__Elm__Entry.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>File Selector</Name>
+                <Path>group__Elm__Fileselector.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>File Selector Button</Name>
+                <Path>group__Elm__File__Selector__Button.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>File Selector Entry</Name>
+                <Path>group__Elm__File__Selector__Entry.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Fingers</Name>
+                <Path>group__Elm__Fingers.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Flip</Name>
+                <Path>group__Elm__Flip.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Flip Selector</Name>
+                <Path>group__Elm__Flipselector.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Focus</Name>
+                <Path>group__Elm__Focus.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Frame</Name>
+                <Path>group__Elm__Frame.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>GLView</Name>
+                <Path>group__Elm__GLView.html</Path>
+                <Subnodes>
                  <Node>
-                  <Name>Background</Name>
-                  <Path>group__Elm__Bg.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Button</Name>
-                  <Path>group__Elm__Button.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Calendar</Name>
-                  <Path>group__Elm__Calendar.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Check</Name>
-                  <Path>group__Elm__Check.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Colorselector</Name>
-                  <Path>group__Elm__Colorselector.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Conformant</Name>
-                  <Path>group__Elm__Conformant.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Ctxpopup</Name>
-                  <Path>group__Elm__Ctxpopup.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Datetime</Name>
-                  <Path>group__Elm__Datetime.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Entry</Name>
-                  <Path>group__Elm__Entry.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Flip</Name>
-                  <Path>group__Elm__Flip.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Flip Selector</Name>
-                  <Path>group__Elm__Flipselector.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>GLView</Name>
-                  <Path>group__Elm__GLView.html</Path>
+                  <Name>Elementary GL Helper functions</Name>
+                  <Path>group__Elementary__GL__Helpers.html</Path>
                   <Subnodes>
                    <Node>
-                    <Name>Elementary GL Helper functions</Name>
+                    <Name>OpenGL with Elementary</Name>
                     <Path>group__Elementary__GL__Helpers.html</Path>
-                    <Subnodes>
-                     <Node>
-                      <Name>OpenGL with Elementary</Name>
-                      <Path>group__Elementary__GL__Helpers.html</Path>
-                      <Anchor>elm_opengl_page</Anchor>
-                     </Node>
-                    </Subnodes>
+                    <Anchor>elm_opengl_page</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>General</Name>
+                <Path>group__Elm__General.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Gengrid (Generic grid)</Name>
+                <Path>group__Elm__Gengrid.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Genlist (Generic list)</Name>
+                <Path>group__Elm__Genlist.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Gesture Layer</Name>
+                <Path>group__Elm__Gesture__Layer.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Getting Started</Name>
+                <Path>group__Elm__Start.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Grid</Name>
+                <Path>group__Elm__Grid.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Helper</Name>
+                <Path>group__Helper.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Hover</Name>
+                <Path>group__Elm__Hover.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Hoversel</Name>
+                <Path>group__Elm__Hoversel.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Icon</Name>
+                <Path>group__Elm__Icon.html</Path>
+                <Subnodes>
                  <Node>
-                  <Name>Gengrid (Generic grid)</Name>
-                  <Path>group__Elm__Gengrid.html</Path>
+                  <Name>Password show last</Name>
+                  <Path>group__Elm__Password__last__show.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Image</Name>
+                <Path>group__Elm__Image.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Index</Name>
+                <Path>group__Elm__Index.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Label</Name>
+                <Path>group__Elm__Label.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Layout</Name>
+                <Path>group__Elm__Layout.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>List</Name>
+                <Path>group__Elm__List.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Longpress</Name>
+                <Path>group__longpress__group.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Map</Name>
+                <Path>group__Elm__Map.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Mapbuf</Name>
+                <Path>group__Elm__Mapbuf.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Menu</Name>
+                <Path>group__Elm__Menu.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Mirroring</Name>
+                <Path>group__Elm__Mirroring.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Multibuttonentry</Name>
+                <Path>group__Multibuttonentry.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Naviframe</Name>
+                <Path>group__Elm__Naviframe.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Notify</Name>
+                <Path>group__Elm__Notify.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Nstate</Name>
+                <Path>group__Elm__Nstate.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Panel</Name>
+                <Path>group__Elm__Panel.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Panes</Name>
+                <Path>group__Elm__Panes.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Password show last</Name>
+                <Path>group__Elm__Password__last__show.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Photo</Name>
+                <Path>group__Elm__Photo.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Photocam</Name>
+                <Path>group__Elm__Photocam.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Plug</Name>
+                <Path>group__Plug.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Popup</Name>
+                <Path>group__Elm__Popup.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Progress bar</Name>
+                <Path>group__Elm__Progressbar.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Radio</Name>
+                <Path>group__Elm__Radio.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Route</Name>
+                <Path>group__Elm__Route.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Scroller</Name>
+                <Path>group__Elm__Scroller.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Scrollhints</Name>
+                <Path>group__Elm__Scrollhints.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>SegmentControl</Name>
+                <Path>group__Elm__Segment__Control.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Separator</Name>
+                <Path>group__Elm__Separator.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Slider</Name>
+                <Path>group__Elm__Slider.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Slideshow</Name>
+                <Path>group__Elm__Slideshow.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>SotfCursor</Name>
+                <Path>group__softcursor__group.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Spinner</Name>
+                <Path>group__Elm__Spinner.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Table</Name>
+                <Path>group__Elm__Table.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Theme</Name>
+                <Path>group__Elm__Theme.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Thumbnail</Name>
+                <Path>group__Elm__Thumb.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Toolbar</Name>
+                <Path>group__Elm__Toolbar.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Tooltips</Name>
+                <Path>group__Elm__Tooltips.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Transit</Name>
+                <Path>group__Elm__Transit.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Video</Name>
+                <Path>group__Efl__Ui__Video.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Web</Name>
+                <Path>group__Elm__Web.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Widget Scaling</Name>
+                <Path>group__Elm__Scaling.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Win</Name>
+                <Path>group__Elm__Win.html</Path>
+                <Subnodes>
                  <Node>
-                  <Name>Genlist (Generic list)</Name>
-                  <Path>group__Elm__Genlist.html</Path>
+                  <Name>Inwin</Name>
+                  <Path>group__Elm__Inwin.html</Path>
                   <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Hoversel</Name>
-                  <Path>group__Elm__Hoversel.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Icon</Name>
-                  <Path>group__Elm__Icon.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Image</Name>
-                  <Path>group__Elm__Image.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Index</Name>
-                  <Path>group__Elm__Index.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Label</Name>
-                  <Path>group__Elm__Label.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Layout</Name>
-                  <Path>group__Elm__Layout.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>List</Name>
-                  <Path>group__Elm__List.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Map</Name>
-                  <Path>group__Elm__Map.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Mapbuf</Name>
-                  <Path>group__Elm__Mapbuf.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Multibuttonentry</Name>
-                  <Path>group__Multibuttonentry.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Naviframe</Name>
-                  <Path>group__Elm__Naviframe.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Notify</Name>
-                  <Path>group__Elm__Notify.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Panel</Name>
-                  <Path>group__Elm__Panel.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Panes</Name>
-                  <Path>group__Elm__Panes.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Photocam</Name>
-                  <Path>group__Elm__Photocam.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Plug</Name>
-                  <Path>group__Plug.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Popup</Name>
-                  <Path>group__Elm__Popup.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Progress bar</Name>
-                  <Path>group__Elm__Progressbar.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Radio</Name>
-                  <Path>group__Elm__Radio.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Scroller</Name>
-                  <Path>group__Elm__Scroller.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>SegmentControl</Name>
-                  <Path>group__Elm__SegmentControl.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Slider</Name>
-                  <Path>group__Elm__Slider.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Spinner</Name>
-                  <Path>group__Elm__Spinner.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Toolbar</Name>
-                  <Path>group__Elm__Toolbar.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Tooltips</Name>
-                  <Path>group__Elm__Tooltips.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>Win</Name>
-                  <Path>group__Elm__Win.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>Inwin</Name>
-                    <Path>group__Elm__Inwin.html</Path>
-                    <Subnodes>
-                    </Subnodes>
-                   </Node>
                   </Subnodes>
                  </Node>
                 </Subnodes>
@@ -4099,9 +4285,21 @@
                 </Subnodes>
                </Node>
                <Node>
+                <Name>Evas_Object_Vg</Name>
+                <Path>group__Evas__Object__Vg.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
                 <Name>General Utilities</Name>
                 <Path>group__Evas__Utils.html</Path>
                 <Subnodes>
+                 <Node>
+                  <Name>Key Input Functions</Name>
+                  <Path>group__Evas__Keys.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
                 </Subnodes>
                </Node>
                <Node>
@@ -4148,6 +4346,24 @@
                   <Name>UV Mapping (Rotation, Perspective, 3D...)</Name>
                   <Path>group__Evas__Object__Group__Map.html</Path>
                   <Subnodes>
+                  </Subnodes>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Shared Image Cache Server</Name>
+                <Path>group__Evas__Cserve.html</Path>
+                <Subnodes>
+                 <Node>
+                  <Name>General Utilities</Name>
+                  <Path>group__Evas__Utils.html</Path>
+                  <Subnodes>
+                   <Node>
+                    <Name>Key Input Functions</Name>
+                    <Path>group__Evas__Keys.html</Path>
+                    <Subnodes>
+                    </Subnodes>
+                   </Node>
                   </Subnodes>
                  </Node>
                 </Subnodes>

@@ -36,8 +36,8 @@ permission by adding the following privileges to the
 `tizen-manifest.xml` file in the application package:  
 > ```xml
 > <privileges>
->   <privilege>http://tizen.org/privilege/contact.read</privilege>
->   <privilege>http://tizen.org/privilege/contact.write</privilege>
+>    <privilege>http://tizen.org/privilege/contact.read</privilege>
+>    <privilege>http://tizen.org/privilege/contact.write</privilege>
 > </privileges>
 > ```
 

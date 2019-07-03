@@ -90,7 +90,154 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Fileselector entry example </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="fragment"><pre class="fragment"></pre></div> </div></div><!-- contents -->
+<div class="textblock"><div class="fragment"><pre class="fragment">
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="comment">/* hook on the file,chosen smart callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_file_chosen(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+             <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+             <span class="keywordtype">void</span>        *event_info)
+{
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *file = event_info;
+
+   <span class="keywordflow">if</span> (file)
+     printf(<span class="stringliteral">&quot;File chosen: %s\n&quot;</span>, file);
+   <span class="keywordflow">else</span>
+     printf(<span class="stringliteral">&quot;File selection canceled.\n&quot;</span>);
+}
+
+<span class="comment">/* toggle inwin mode */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_inwin_mode_toggle(<span class="keywordtype">void</span>        *data,
+                   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                   <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *fs_entry = data;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> old_val = elm_fileselector_entry_inwin_mode_get(fs_entry);
+
+   elm_fileselector_entry_inwin_mode_set(fs_entry, !old_val);
+   printf(<span class="stringliteral">&quot;Inwin mode set to: %s\n&quot;</span>, old_val ? <span class="stringliteral">&quot;false&quot;</span> : <span class="stringliteral">&quot;true&quot;</span>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_current_sel_toggle(<span class="keywordtype">void</span>        *data,
+                    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                    <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *fs_entry = data;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> old_val = elm_fileselector_is_save_get(fs_entry);
+   elm_fileselector_is_save_set(fs_entry, !old_val);
+
+   printf(<span class="stringliteral">&quot;%s text entry with selected item&#39;s name\n&quot;</span>,
+          old_val ? <span class="stringliteral">&quot;Disabling&quot;</span> : <span class="stringliteral">&quot;Enabling&quot;</span>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_folder_only_toggle(<span class="keywordtype">void</span>        *data,
+                    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                    <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *fs_entry = data;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> old_val = elm_fileselector_folder_only_get(fs_entry);
+   elm_fileselector_folder_only_set(fs_entry, !old_val);
+
+   printf(<span class="stringliteral">&quot;Folder only mode set to: %s\n&quot;</span>, old_val ? <span class="stringliteral">&quot;false&quot;</span> : <span class="stringliteral">&quot;true&quot;</span>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_expandable_toggle(<span class="keywordtype">void</span>        *data,
+                   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                   <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *fs_entry = data;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> old_val = elm_fileselector_expandable_get(fs_entry);
+   elm_fileselector_expandable_set(fs_entry, !old_val);
+
+   printf(<span class="stringliteral">&quot;Expandable folders mode set to: %s\n&quot;</span>, old_val ? <span class="stringliteral">&quot;false&quot;</span> : <span class="stringliteral">&quot;true&quot;</span>);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
+         <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *vbox, *hbox, *ic, *ck, *fs_entry, *sep;
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;fileselector-entry&quot;</span>, <span class="stringliteral">&quot;File Selector Entry Example&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   vbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(vbox, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, vbox);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(vbox);
+
+   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;file&quot;</span>);
+   evas_object_size_hint_aspect_set(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+
+   <span class="comment">/* file selector entry */</span>
+   fs_entry = elm_fileselector_entry_add(win);
+   evas_object_size_hint_align_set(fs_entry, EVAS_HINT_FILL, 0);
+   elm_fileselector_path_set(fs_entry, <span class="stringliteral">&quot;/tmp&quot;</span>);
+   elm_object_text_set(fs_entry, <span class="stringliteral">&quot;Select a file&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(fs_entry, <span class="stringliteral">&quot;button icon&quot;</span>, ic);
+
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, fs_entry);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fs_entry);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ic);
+
+   <span class="comment">/* attribute setting knobs */</span>
+   sep = elm_separator_add(win);
+   elm_separator_horizontal_set(sep, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, sep);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sep);
+
+   hbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(vbox, hbox);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hbox);
+
+   ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(ck, <span class="stringliteral">&quot;editable selection&quot;</span>);
+   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, elm_fileselector_is_save_get(fs_entry));
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _current_sel_toggle, fs_entry);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+
+   ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(ck, <span class="stringliteral">&quot;\&quot;inwin\&quot; mode&quot;</span>);
+   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, elm_fileselector_entry_inwin_mode_get(fs_entry));
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _inwin_mode_toggle, fs_entry);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+
+   ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(ck, <span class="stringliteral">&quot;folders only&quot;</span>);
+   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, elm_fileselector_folder_only_get(fs_entry));
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _folder_only_toggle, fs_entry);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+
+   ck = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(ck, <span class="stringliteral">&quot;expandable&quot;</span>);
+   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(ck, elm_fileselector_expandable_get(fs_entry));
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(ck, <span class="stringliteral">&quot;changed&quot;</span>, _expandable_toggle, fs_entry);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, ck);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ck);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(fs_entry, <span class="stringliteral">&quot;file,chosen&quot;</span>, _file_chosen, NULL);
+
+   evas_object_resize(win, 400, 400);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

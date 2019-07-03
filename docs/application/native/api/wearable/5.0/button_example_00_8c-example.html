@@ -90,7 +90,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">button_example_00.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">/*</span>
+<span class="comment"> * gcc -o button_example_00 button_example_00.c `pkg-config --cflags --libs elementary`</span>
+<span class="comment"> */</span>
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+on_click(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+         <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit</a>();
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win = NULL;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *btn = NULL;
+
+   <a name="a2"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   <span class="comment">/* Create an win, associate it with a canvas and */</span>
+   <span class="comment">/* turn it visible on WM (Window Manager).       */</span>
+   win = <a name="a3"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;Greetings&quot;</span>, <span class="stringliteral">&quot;Hello, World!&quot;</span>);
+   <a name="a4"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a5"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   <span class="comment">/* Create a btn, associate to a function, associate */</span>
+   <span class="comment">/* to win,  give a dimension and position.          */</span>
+   btn = <a name="a6"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Good-Bye, World!&quot;</span>);
+   <a name="a7"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, on_click, NULL);
+   evas_object_resize(btn, 120, 30);
+   evas_object_move(btn, 60, 15);
+   <a name="a8"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   evas_object_resize(win, 240, 60);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a9"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a10"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

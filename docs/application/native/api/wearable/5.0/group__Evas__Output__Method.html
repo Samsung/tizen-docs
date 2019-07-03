@@ -100,19 +100,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <span class="keyword">extern</span> Display *display;
  <span class="keyword">extern</span> Window win;
 
- <a class="code" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init</a>();
+ <a class="code" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
 
  evas = <a class="code" href="group__Evas__Canvas.html#ga67e8eb17d2a676bfdfb8794fc5f72bc0">evas_new</a>();
- <a class="code" href="group__Evas__Canvas.html#ga17f2ac9f3bef135cd825774c33762ef2" title="Sets the output engine for the given evas.">evas_output_method_set</a>(evas, <a class="code" href="group__Evas__Output__Method.html#ga9f9871fdcc40ce1062d6565308020eb8">evas_render_method_lookup</a>(<span class="stringliteral">&quot;software_x11&quot;</span>));
- <a class="code" href="group__Evas__Canvas.html#ga681f2af7d325735af201e18f56f6ef61" title="Sets the output size of the render engine of the given evas.">evas_output_size_set</a>(evas, 640, 480);
- <a class="code" href="group__Evas__Canvas.html#ga0a14db31aa30b701688caf67a4649239" title="Sets the output viewport of the given evas in evas units.">evas_output_viewport_set</a>(evas, 0, 0, 640, 480);
- einfo = (Evas_Engine_Info_Software_X11 *)<a class="code" href="group__Evas__Canvas.html#ga33a6cd095bc7499dbfcb39ad253607b1" title="Retrieves the current render engine info struct from the given evas.">evas_engine_info_get</a>(evas);
+ <a class="code" href="group__Evas__Canvas.html#ga15b85dc673baa6aa40f91f8bfcd3cbaa" title="Sets the output engine for the given evas.">evas_output_method_set</a>(evas, <a class="code" href="group__Evas__Output__Method.html#ga9f9871fdcc40ce1062d6565308020eb8">evas_render_method_lookup</a>(<span class="stringliteral">&quot;software_x11&quot;</span>));
+ <a class="code" href="group__Evas__Canvas.html#gaf6478cb249ed09fa0fe961085773fe1e" title="Sets the output size of the render engine of the given evas.">evas_output_size_set</a>(evas, 640, 480);
+ <a class="code" href="group__Evas__Canvas.html#ga6dcd13997f7825f03807dc0ec38dd38e" title="Sets the output viewport of the given evas in evas units.">evas_output_viewport_set</a>(evas, 0, 0, 640, 480);
+ einfo = (Evas_Engine_Info_Software_X11 *)<a class="code" href="group__Evas__Canvas.html#gaf396b44e1b97ec0d9dce49fcf9ad54b7" title="Retrieves the current render engine info struct from the given evas.">evas_engine_info_get</a>(evas);
  einfo-&gt;info.display = display;
  einfo-&gt;info.visual = DefaultVisual(display, DefaultScreen(display));
  einfo-&gt;info.colormap = DefaultColormap(display, DefaultScreen(display));
  einfo-&gt;info.drawable = win;
  einfo-&gt;info.depth = DefaultDepth(display, DefaultScreen(display));
- <a class="code" href="group__Evas__Canvas.html#ga7244385cf5bad0591ab82e4437c4694b" title="Applies the engine settings for the given evas from the given Evas_Engine_Info structure.">evas_engine_info_set</a>(evas, (<a class="code" href="struct__Evas__Engine__Info.html">Evas_Engine_Info</a> *)einfo);
+ <a class="code" href="group__Evas__Canvas.html#gae917a8b0d52df622498bbf55357c1af3" title="Applies the engine settings for the given evas from the given Evas_Engine_Info structure.">evas_engine_info_set</a>(evas, (<a class="code" href="struct__Evas__Engine__Info.html">Evas_Engine_Info</a> *)einfo);
 </pre></div> <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -152,7 +152,7 @@ Functions</h2></td></tr>
  <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(engine_list, l, engine_name)
    printf(&quot;%s\n&quot;, engine_name);
  <a class="code" href="group__Evas__Output__Method.html#ga5bcc5a2165647f855c389bd58e77f608">evas_render_method_list_free</a>(engine_list);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-init-shutdown_8c-example.html#a2">evas-init-shutdown.c</a>.</dd>
 </dl>
 </div>
@@ -193,7 +193,7 @@ Functions</h2></td></tr>
  <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(engine_list, l, engine_name)
    printf(&quot;%s\n&quot;, engine_name);
  <a class="code" href="group__Evas__Output__Method.html#ga5bcc5a2165647f855c389bd58e77f608">evas_render_method_list_free</a>(engine_list);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-init-shutdown_8c-example.html#a4">evas-init-shutdown.c</a>.</dd>
 </dl>
 </div>
@@ -222,12 +222,12 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A numeric (opaque) ID for the rendering engine</dd></dl>
 <p>This function looks up a numeric return value for the named engine in the string <code>name</code>. This is a normal C string, NUL byte terminated. The name is case sensitive. If the rendering engine is available, a numeric ID for that engine is returned that is not 0. If the engine is not available, 0 is returned, indicating an invalid engine.</p>
 <p>The programmer should NEVER rely on the numeric ID of an engine unless it is returned by this function. Programs should NOT be written accessing render method ID's directly, without first obtaining it from this function.</p>
-<dl class="attention"><dt><b>Attention:</b></dt><dd>it is mandatory that one calls <a class="el" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init()</a> before looking up the render method.</dd></dl>
+<dl class="attention"><dt><b>Attention:</b></dt><dd>it is mandatory that one calls <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> before looking up the render method.</dd></dl>
 <p>Example: </p>
 <div class="fragment"><pre class="fragment"> <span class="keywordtype">int</span> engine_id;
  <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *evas;
 
- <a class="code" href="group__Evas__Main__Group.html#ga65b3f060b6dd9e488afd0b8cbe101869">evas_init</a>();
+ <a class="code" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init</a>();
 
  evas = <a class="code" href="group__Evas__Canvas.html#ga67e8eb17d2a676bfdfb8794fc5f72bc0">evas_new</a>();
  <span class="keywordflow">if</span> (!evas)
@@ -241,9 +241,9 @@ Functions</h2></td></tr>
      fprintf(stderr, <span class="stringliteral">&quot;ERROR: Requested rendering engine is absent.\n&quot;</span>);
      exit(-1);
    }
- <a class="code" href="group__Evas__Canvas.html#ga17f2ac9f3bef135cd825774c33762ef2" title="Sets the output engine for the given evas.">evas_output_method_set</a>(evas, engine_id);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a7">evas-buffer-simple.c</a>.</dd>
+ <a class="code" href="group__Evas__Canvas.html#ga15b85dc673baa6aa40f91f8bfcd3cbaa" title="Sets the output engine for the given evas.">evas_output_method_set</a>(evas, engine_id);
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-buffer-simple_8c-example.html#a5">evas-buffer-simple.c</a>.</dd>
 </dl>
 </div>
 </div>

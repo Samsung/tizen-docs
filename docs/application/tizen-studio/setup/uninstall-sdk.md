@@ -25,24 +25,27 @@ To uninstall the Tizen Studio:
    > **Note**  
    > Before proceeding, back up all data and files that you want to keep. Once started, uninstallation cannot be canceled and removed files cannot be restored.
 
-3. To remove all installed platforms and tools, as well as user-created data and files, click **Uninstall**.If you have selected to uninstall the SDK data or KeyStore components, they are also removed.  
-![Uninstallation in progress](./media/uninstall_sdk_progress.png)
+3. To remove all installed platforms and tools, as well as user-created data and files, click **Uninstall**.
+
+   If you have selected to uninstall the SDK data or KeyStore components, they are also removed.
+
+   ![Uninstallation in progress](./media/uninstall_sdk_progress.png)
 
 ## Uninstalling with CLI
 
 Run the CLI Package Manager with the `uninstall` command using the following syntax:
 
 ```
-package-manager-cli uninstall [-p <password>] <package name>[,…] | [--all]
+package-manager-cli uninstall [-p <password>] <package name>[,...] | [--all]
 ```
 
 **Table: Uninstall command parameters**
 
 | Parameter                   | Description                              |
 |---------------------------|----------------------------------------|
-| `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
+| `-p, --password <password>` | Administrator (sudo) password for authentication.<br>Ubuntu only. |
 | `--all`                     | Uninstalls the entire Tizen Studio with tools and platforms, including user-created data, emulator images, and settings. |
-| `<package name>[,…]`        | Name of the package you want to uninstall. You can enter multiple package names (such as **NativeIDE** and **Emulator**).To retrieve the names of uninstallable packages, use the following command:`package-manager-cli show-pkgs` |
+| `<package name>[,...]`        | Name of the package you want to uninstall. You can enter multiple package names (such as **NativeIDE** and **Emulator**).<br>To retrieve the names of uninstallable packages, use the following command:<br>`package-manager-cli show-pkgs` |
 
 ## Related Information
 * Dependencies

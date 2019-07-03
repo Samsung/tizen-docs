@@ -25,21 +25,21 @@ To enable your application to use the media controller functionality:
 
 1. The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-   - To use the [Tizen.Multimedia.Remoting.MediaController](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaController.html) class
+   - To use the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class
        ```
        <privileges>
           <privilege>http://tizen.org/privilege/mediacontroller.client</privilege>
        </privileges>
        ```
 
-   - To use the [Tizen.Multimedia.Remoting.MediaControlServer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class
+   - To use the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class
        ```
        <privileges>
           <privilege>http://tizen.org/privilege/mediacontroller.server</privilege>
        </privileges>
        ```
 
-2. To use the methods and properties of the [Tizen.Multimedia.Remoting.MediaController](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaController.html), [Tizen.Multimedia.Remoting.MediaControllerManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControllerManager.html), and `Tizen.Multimedia.Remoting.MediaControlServer` classes, include the [Tizen.Multimedia.Remoting](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.html) namespace in your application:
+2. To use the methods and properties of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html), [Tizen.Multimedia.Remoting.MediaControllerManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html), and `Tizen.Multimedia.Remoting.MediaControlServer` classes, include the [Tizen.Multimedia.Remoting](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.html) namespace in your application:
 
     ```
     using Tizen.Multimedia.Remoting;
@@ -51,7 +51,7 @@ To enable your application to use the media controller functionality:
 To update the metadata and playback information on the server side, and to retrieve it on the client side:
 
 -   To update the metadata and playback information on the server side:
-    1.  Start the media control server using the `Start()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+    1.  Start the media control server using the `Start()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
         ```
         MediaControlServer.Start();
@@ -70,7 +70,7 @@ To update the metadata and playback information on the server side, and to retri
         ```
 
 - To retrieve the metadata and playback information on the client side:
-    1.  Create a new instance of the [Tizen.Multimedia.Remoting.MediaControllerManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControllerManager.html) class:
+    1.  Create a new instance of the [Tizen.Multimedia.Remoting.MediaControllerManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html) class:
 
         ```
         var mediaControllerManager = new MediaControllerManager();
@@ -95,13 +95,13 @@ To update the metadata and playback information on the server side, and to retri
 
 To send a command from the client and to process it on the server side:
 
-1.  To send a command on the client side, use the `SendPlaybackCommand()` method of the [Tizen.Multimedia.Remoting.MediaController](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+1.  To send a command on the client side, use the `SendPlaybackCommand()` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```
     controller.SendPlaybackCommand(MediaControlPlaybackCommand.Pause);
     ```
 
-2. To process the received command on the server side, add an event handler to the `PlaybackCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+2. To process the received command on the server side, add an event handler to the `PlaybackCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```
     MediaControlServer.PlaybackCommandReceived += OnPlaybackCommandReceived;

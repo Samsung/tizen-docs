@@ -95,17 +95,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__Eina__Data__Types__Group.html">Data Types</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>These functions provide unicode string buffers management. </p>
-<p>The Unicode String Buffer data type is designed to be a mutable string, allowing to append, prepend or insert a string to a buffer. </p>
+<p>These functions provide unicode string buffer management. </p>
+<p>The Unicode String Buffer data type is designed to be a mutable string, allowing the appending, prepending or insertion of a string to a buffer. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gae65fd48114aef5426d50784d46014d30">eina_ustrbuf_new</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string buffer.  <a href="#gae65fd48114aef5426d50784d46014d30"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new unicode string buffer.  <a href="#gae65fd48114aef5426d50784d46014d30"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gac82867081a70ee01519a84edff5fd22f">eina_ustrbuf_manage_new</a> (<a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *str)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string buffer using the passed string. The passed string is used directly as the buffer, it's somehow the opposite function of <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga400816da7f9b4bd4cfa0a8192920b383">eina_ustrbuf_string_steal</a> . The passed string must be malloced.  <a href="#gac82867081a70ee01519a84edff5fd22f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string buffer using the passed string.  <a href="#gac82867081a70ee01519a84edff5fd22f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga3fe5948e0a957065a11084f43dfcee53">eina_ustrbuf_manage_new_length</a> (<a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *str, size_t length)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string buffer using the passed string. The passed string is used directly as the buffer, it's somehow the opposite function of <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga400816da7f9b4bd4cfa0a8192920b383">eina_ustrbuf_string_steal</a> . The passed string must be malloced.  <a href="#ga3fe5948e0a957065a11084f43dfcee53"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string buffer using the passed string.  <a href="#ga3fe5948e0a957065a11084f43dfcee53"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gabe1f60b2fae2b2880ab35a62724606d6">eina_ustrbuf_free</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees a string buffer.  <a href="#gabe1f60b2fae2b2880ab35a62724606d6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gace4cd475062194c019ea5224bf2ab931">eina_ustrbuf_reset</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf)</td></tr>
@@ -119,7 +119,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaff83e13c989c6c704b805e0c032dc2eb">eina_ustrbuf_append_length</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf, const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *str, size_t length) 2)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a string of exact length to a buffer, reallocating as necessary.  <a href="#gaff83e13c989c6c704b805e0c032dc2eb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1a9ae6645fb473c28cd810ca3c1191de">eina_ustrbuf_append_char</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf, <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> c)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a character to a string buffer, reallocating as necessary.  <a href="#ga1a9ae6645fb473c28cd810ca3c1191de"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a slice to a buffer, reallocating as necessary.  <a href="#ga1a9ae6645fb473c28cd810ca3c1191de"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1b96679ce0b5d564430d8a1162c66c53">eina_ustrbuf_insert</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf, const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *str, size_t pos) 2)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a string to a buffer, reallocating as necessary.  <a href="#ga1b96679ce0b5d564430d8a1162c66c53"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaa04195119386fad9451f0f88e9e06448">eina_ustrbuf_insert_escaped</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf, const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *str, size_t pos) 2)</td></tr>
@@ -129,9 +129,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga5b7218bd0d9ad631903347a8027cbb72">eina_ustrbuf_insert_length</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf, const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *str, size_t length, size_t pos) 2)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a string of exact length to a buffer, reallocating as necessary.  <a href="#ga5b7218bd0d9ad631903347a8027cbb72"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gacd082fde0314e40ea0751b6414fe6d45">eina_ustrbuf_insert_char</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf, <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> c, size_t pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a character to a string buffer, reallocating as necessary.  <a href="#gacd082fde0314e40ea0751b6414fe6d45"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a slice to a buffer, reallocating as necessary.  <a href="#gacd082fde0314e40ea0751b6414fe6d45"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga6fdf161dc3be55146d266de92878fe45">eina_ustrbuf_remove</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf, size_t start, size_t end)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a slice of the given string buffer.  <a href="#ga6fdf161dc3be55146d266de92878fe45"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a section of the given string buffer.  <a href="#ga6fdf161dc3be55146d266de92878fe45"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gafb195dbff55306b5255153927be941cd">eina_ustrbuf_string_get</a> (const <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a pointer to the contents of a string buffer.  <a href="#gafb195dbff55306b5255153927be941cd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Unicode__String.html#ga00d6dbe6710822ef81e9539fc57c4b12">Eina_Unicode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga400816da7f9b4bd4cfa0a8192920b383">eina_ustrbuf_string_steal</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf)</td></tr>
@@ -139,22 +139,22 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga82cc368e0e2e597f2db9fbae6404b3bf">eina_ustrbuf_string_free</a> (<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the contents of a string buffer but not the buffer.  <a href="#ga82cc368e0e2e597f2db9fbae6404b3bf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaa47c70e6012f47eeae4860be27b2005e">eina_ustrbuf_length_get</a> (const <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a> *buf)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the length of the string buffer content.  <a href="#gaa47c70e6012f47eeae4860be27b2005e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the length of the string buffer's content.  <a href="#gaa47c70e6012f47eeae4860be27b2005e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Eina_Strbuf&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1eafaa2e98b141efc47bc19d892da81b">Eina_UStrbuf</a></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga2df89d90d995cdcd94006fb0d9015b2e">eina_ustrbuf_prepend</a>(buf, str)&#160;&#160;&#160;<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1b96679ce0b5d564430d8a1162c66c53">eina_ustrbuf_insert</a>(buf, str, 0)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends the given string to the given buffer.  <a href="#ga2df89d90d995cdcd94006fb0d9015b2e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends a string to the given buffer.  <a href="#ga2df89d90d995cdcd94006fb0d9015b2e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga74f79468f265edb54c88737c5ce34d89">eina_ustrbuf_prepend_escaped</a>(buf, str)&#160;&#160;&#160;<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaa04195119386fad9451f0f88e9e06448">eina_ustrbuf_insert_escaped</a>(buf, str, 0)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends the given escaped string to the given buffer.  <a href="#ga74f79468f265edb54c88737c5ce34d89"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends an escaped string to the given buffer.  <a href="#ga74f79468f265edb54c88737c5ce34d89"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gac9c2670138e359fb589070a3022c029b">eina_ustrbuf_prepend_n</a>(buf, str, maxlen)&#160;&#160;&#160;<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga35304b776ce77c3ab799000c3dcc9ff7">eina_ustrbuf_insert_n</a>(buf, str, maxlen, 0)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends the given escaped string to the given buffer.  <a href="#gac9c2670138e359fb589070a3022c029b"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends an escaped string to the given buffer.  <a href="#gac9c2670138e359fb589070a3022c029b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga506aeb220292c78e6e5c0fc3c77241cd">eina_ustrbuf_prepend_length</a>(buf, str, length)&#160;&#160;&#160;<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga5b7218bd0d9ad631903347a8027cbb72">eina_ustrbuf_insert_length</a>(buf, str, length, 0)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends the given escaped string to the given buffer.  <a href="#ga506aeb220292c78e6e5c0fc3c77241cd"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends an escaped string to the given buffer.  <a href="#ga506aeb220292c78e6e5c0fc3c77241cd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga948150887ad0c0d563c8272951be909d">eina_ustrbuf_prepend_char</a>(buf, c)&#160;&#160;&#160;<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gacd082fde0314e40ea0751b6414fe6d45">eina_ustrbuf_insert_char</a>(buf, c, 0)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends the given unicode character to the given buffer.  <a href="#ga948150887ad0c0d563c8272951be909d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepends a unicode character to the given buffer.  <a href="#ga948150887ad0c0d563c8272951be909d"></a><br/></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ga2df89d90d995cdcd94006fb0d9015b2e"></a><!-- doxytag: member="eina_ustrbuf.h::eina_ustrbuf_prepend" ref="ga2df89d90d995cdcd94006fb0d9015b2e" args="(buf, str)" -->
@@ -182,16 +182,16 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Prepends the given string to the given buffer. </p>
+<p>Prepends a string to the given buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to prepend to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to prepend. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to prepend. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This macro is calling <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1b96679ce0b5d564430d8a1162c66c53" title="Inserts a string to a buffer, reallocating as necessary.">eina_ustrbuf_insert()</a> at position 0.If <code>buf</code> can't prepend it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be prepended.</dd></dl>
+<p>This macro simply calls <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1b96679ce0b5d564430d8a1162c66c53" title="Inserts a string to a buffer, reallocating as necessary.">eina_ustrbuf_insert()</a> with position 0. </p>
 
 </div>
 </div>
@@ -220,16 +220,16 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Prepends the given unicode character to the given buffer. </p>
+<p>Prepends a unicode character to the given buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to prepend to. </td></tr>
-    <tr><td class="paramname">c</td><td>The Eina_Unicode character to prepend. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>The Eina_Unicode character to prepend. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This macro is calling eina_ustrbuf_insert_Eina_Unicode *() at position 0. If <code>buf</code> can't prepend it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>c</code> could not be prepended.</dd></dl>
+<p>This macro is calling eina_ustrbuf_insert_Eina_Unicode() at position 0. </p>
 
 </div>
 </div>
@@ -258,16 +258,16 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Prepends the given escaped string to the given buffer. </p>
+<p>Prepends an escaped string to the given buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to prepend to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to prepend. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to prepend. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This macro is calling <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaa04195119386fad9451f0f88e9e06448" title="Inserts an escaped string to a buffer, reallocating as necessary.">eina_ustrbuf_insert_escaped()</a> at position 0. If <code>buf</code> can't prepend it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be prepended.</dd></dl>
+<p>This macro simply calls <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaa04195119386fad9451f0f88e9e06448" title="Inserts an escaped string to a buffer, reallocating as necessary.">eina_ustrbuf_insert_escaped()</a> with position 0. </p>
 
 </div>
 </div>
@@ -302,17 +302,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Prepends the given escaped string to the given buffer. </p>
+<p>Prepends an escaped string to the given buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to prepend to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to prepend. </td></tr>
-    <tr><td class="paramname">length</td><td>The exact length to use. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to prepend. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The exact length to use. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This macro is calling <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga5b7218bd0d9ad631903347a8027cbb72" title="Inserts a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_insert_length()</a> at position 0. If <code>buf</code> can't prepend it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be prepended.</dd></dl>
+<p>This macro simply calls <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga5b7218bd0d9ad631903347a8027cbb72" title="Inserts a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_insert_length()</a> with position 0. </p>
 
 </div>
 </div>
@@ -347,17 +347,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Prepends the given escaped string to the given buffer. </p>
+<p>Prepends an escaped string to the given buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to prepend to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to prepend. </td></tr>
-    <tr><td class="paramname">maxlen</td><td>The maximum number of Eina_Unicode *s to prepend. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to prepend. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maxlen</td><td>The maximum number of Eina_Unicode *s to prepend. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This macro is calling <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga35304b776ce77c3ab799000c3dcc9ff7" title="Inserts a string to a buffer, reallocating as necessary. Limited by maxlen.">eina_ustrbuf_insert_n()</a> at position 0. If <code>buf</code> can't prepend it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if  could not be prepended.</dd></dl>
+<p>This macro simply calls <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga35304b776ce77c3ab799000c3dcc9ff7" title="Inserts a string to a buffer, reallocating as necessary. Limited by maxlen.">eina_ustrbuf_insert_n()</a> with position 0. </p>
 
 </div>
 </div>
@@ -372,7 +372,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Type for a string buffer. </p>
+<p>Type for a unicode string buffer. </p>
 
 </div>
 </div>
@@ -405,16 +405,16 @@ Defines</h2></td></tr>
 <p>Appends a string to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to append to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to append. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to append. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function appends <code>str</code> to <code>buf</code>. It computes the length of <code>str</code>, so is slightly slower than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaff83e13c989c6c704b805e0c032dc2eb" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_append_length()</a>. If the length is known beforehand, consider using that variant. If <code>buf</code> can't append it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure such as if <code>str</code> could not be appended.</dd></dl>
+<p>This function appends <code>str</code> to <code>buf</code>. It computes the length of <code>str</code>, so is slightly slower than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaff83e13c989c6c704b805e0c032dc2eb" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_append_length()</a>. If the length is known beforehand, consider using that variant.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga0518bd42b2789ca09242b8640c88814f" title="Appends a string to a buffer, reallocating as necessary.">eina_ustrbuf_append()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaff83e13c989c6c704b805e0c032dc2eb" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_append_length()</a></dd></dl>
+<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaff83e13c989c6c704b805e0c032dc2eb" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_append_length()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -444,16 +444,26 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Appends a character to a string buffer, reallocating as necessary. </p>
+<p>Appends a slice to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to append to. </td></tr>
-    <tr><td class="paramname">c</td><td>The char to append. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slice</td><td>The slice to append. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function inserts <code>c</code> to <code>buf</code>. If it can not insert it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be appended.</dd></dl>
+<p>This function appends <code>slice</code> to <code>buf</code>.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Appends a character to a string buffer, reallocating as necessary.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>The char to append. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>c</code> could not be appended.</dd></dl>
+<p>This function appends <code>c</code> to <code>buf</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -486,13 +496,13 @@ Defines</h2></td></tr>
 <p>Appends an escaped string to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to append to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to append. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to append. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function appends the escaped string <code>str</code> to <code>buf</code>. If <code>str</code> can not be appended, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be appended.</dd></dl>
+<p>This function appends the escaped string <code>str</code> to <code>buf</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -531,19 +541,19 @@ Defines</h2></td></tr>
 <p>Appends a string of exact length to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to append to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to append. </td></tr>
-    <tr><td class="paramname">length</td><td>The exact length to use. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to append. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The exact length to use. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function appends <code>str</code> to <code>buf</code>. <code>str</code> must be of size at most <code>length</code>. It is slightly faster than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga0518bd42b2789ca09242b8640c88814f" title="Appends a string to a buffer, reallocating as necessary.">eina_ustrbuf_append()</a> as it does not compute the size of <code>str</code>. It is useful when dealing with strings of known size, such as eina_strngshare. If <code>buf</code> can't append it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be appended.</dd></dl>
+<p>This function appends <code>str</code> to <code>buf</code>. <code>str</code> must be of size at most <code>length</code>. It is slightly faster than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga0518bd42b2789ca09242b8640c88814f" title="Appends a string to a buffer, reallocating as necessary.">eina_ustrbuf_append()</a> as it does not compute the size of <code>str</code>. It is useful when dealing with strings of known size, such as eina_stringshare.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>eina_stringshare_length() </dd>
 <dd>
 <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga0518bd42b2789ca09242b8640c88814f" title="Appends a string to a buffer, reallocating as necessary.">eina_ustrbuf_append()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gad199a586736d0ee5c7f4fb9ae7abafc4" title="Appends a string to a buffer, reallocating as necessary, limited by the given length.">eina_ustrbuf_append_n()</a></dd></dl>
+<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gad199a586736d0ee5c7f4fb9ae7abafc4" title="Appends a string to a buffer, reallocating as necessary, limited by the given length.">eina_ustrbuf_append_n()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -582,17 +592,17 @@ Defines</h2></td></tr>
 <p>Appends a string to a buffer, reallocating as necessary, limited by the given length. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to append to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to append. </td></tr>
-    <tr><td class="paramname">maxlen</td><td>The maximum number of characters to append. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to append. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maxlen</td><td>The maximum number of characters to append. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function appends at most <code>maxlen</code> characters of <code>str</code> to <code>buf</code>. It can't appends more than the length of <code>str</code>. It computes the length of <code>str</code>, so is slightly slower than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaff83e13c989c6c704b805e0c032dc2eb" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_append_length()</a>. If the length is known beforehand, consider using that variant (<code>maxlen</code> should then be checked so that it is greater than the size of <code>str</code>). If <code>str</code> can not be appended, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be appended.</dd></dl>
+<p>This function appends at most <code>maxlen</code> characters of <code>str</code> to <code>buf</code>. It can't append more than the length of <code>str</code>. It computes the length of <code>str</code>, so is slightly slower than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaff83e13c989c6c704b805e0c032dc2eb" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_append_length()</a>. If the length is known beforehand, consider using that variant (<code>maxlen</code> should then be checked so that it is greater than the size of <code>str</code>).</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga0518bd42b2789ca09242b8640c88814f" title="Appends a string to a buffer, reallocating as necessary.">eina_ustrbuf_append()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaff83e13c989c6c704b805e0c032dc2eb" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_append_length()</a></dd></dl>
+<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gaff83e13c989c6c704b805e0c032dc2eb" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_append_length()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -615,11 +625,11 @@ Defines</h2></td></tr>
 <p>Frees a string buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to free.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer to free.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function frees the memory of <code>buf</code>. <code>buf</code> must have been created by <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gae65fd48114aef5426d50784d46014d30" title="Creates a new string buffer.">eina_ustrbuf_new()</a>.</p>
+<p>This function frees the memory of <code>buf</code>. <code>buf</code> must have been created by <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gae65fd48114aef5426d50784d46014d30" title="Creates a new unicode string buffer.">eina_ustrbuf_new()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -658,14 +668,14 @@ Defines</h2></td></tr>
 <p>Inserts a string to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to insert. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to insert. </td></tr>
-    <tr><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function inserts <code>str</code> to <code>buf</code> at position <code>pos</code>. It computes the length of <code>str</code>, so is slightly slower than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga5b7218bd0d9ad631903347a8027cbb72" title="Inserts a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_insert_length()</a>. If the length is known beforehand, consider using that variant. If <code>buf</code> can't insert it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be inserted.</dd></dl>
+<p>This function inserts <code>str</code> to <code>buf</code> at position <code>pos</code>. It computes the length of <code>str</code>, so is slightly slower than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga5b7218bd0d9ad631903347a8027cbb72" title="Inserts a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_insert_length()</a>. If the length is known beforehand, consider using that variant. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -701,17 +711,28 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Inserts a character to a string buffer, reallocating as necessary. </p>
+<p>Inserts a slice to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to insert to. </td></tr>
-    <tr><td class="paramname">c</td><td>The char to insert. </td></tr>
-    <tr><td class="paramname">pos</td><td>The position to insert the char. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slice</td><td>The slice to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function inserts <code>c</code> to <code>buf</code> at position <code>pos</code>. If <code>buf</code> can't append it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be inserted.</dd></dl>
+<p>This function inserts <code>slice</code> to <code>buf</code> at position <code>pos</code>.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Inserts a character to a string buffer, reallocating as necessary.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>The char to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>The position to insert the char. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>c</code> could not be inserted.</dd></dl>
+<p>This function inserts <code>c</code> to <code>buf</code> at position <code>pos</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -750,14 +771,14 @@ Defines</h2></td></tr>
 <p>Inserts an escaped string to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to insert to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to insert. </td></tr>
-    <tr><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function inserts the escaped string <code>str</code> to <code>buf</code> at position <code>pos</code>. If <code>buf</code> can't insert <code>str</code>, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be inserted.</dd></dl>
+<p>This function inserts the escaped string <code>str</code> to <code>buf</code> at position <code>pos</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -802,20 +823,20 @@ Defines</h2></td></tr>
 <p>Inserts a string of exact length to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to insert to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to insert. </td></tr>
-    <tr><td class="paramname">length</td><td>The exact length to use. </td></tr>
-    <tr><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The exact length to use. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function inserts <code>str</code> to <code>buf</code>. <code>str</code> must be of size at most <code>length</code>. It is slightly faster than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1b96679ce0b5d564430d8a1162c66c53" title="Inserts a string to a buffer, reallocating as necessary.">eina_ustrbuf_insert()</a> as it does not compute the size of <code>str</code>. It is useful when dealing with strings of known size, such as eina_strngshare. If <code>buf</code> can't insert it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be inserted.</dd></dl>
+<p>This function inserts <code>str</code> into <code>buf</code>. <code>str</code> must be no longer than <code>length</code>. It is slightly faster than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1b96679ce0b5d564430d8a1162c66c53" title="Inserts a string to a buffer, reallocating as necessary.">eina_ustrbuf_insert()</a> as it does not compute the size of <code>str</code>. It is useful when dealing with strings of known size, such as eina_stringshare.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>eina_stringshare_length() </dd>
 <dd>
 <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga1b96679ce0b5d564430d8a1162c66c53" title="Inserts a string to a buffer, reallocating as necessary.">eina_ustrbuf_insert()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga35304b776ce77c3ab799000c3dcc9ff7" title="Inserts a string to a buffer, reallocating as necessary. Limited by maxlen.">eina_ustrbuf_insert_n()</a></dd></dl>
+<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga35304b776ce77c3ab799000c3dcc9ff7" title="Inserts a string to a buffer, reallocating as necessary. Limited by maxlen.">eina_ustrbuf_insert_n()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -860,15 +881,15 @@ Defines</h2></td></tr>
 <p>Inserts a string to a buffer, reallocating as necessary. Limited by maxlen. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to insert to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to insert. </td></tr>
-    <tr><td class="paramname">maxlen</td><td>The maximum number of chars to insert. </td></tr>
-    <tr><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maxlen</td><td>The maximum number of chars to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function inserts <code>str</code> ot <code>buf</code> at position <code>pos</code>, with at most <code>maxlen</code> bytes. The number of inserted characters can not be greater than the length of <code>str</code>. It computes the length of <code>str</code>, so is slightly slower than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga5b7218bd0d9ad631903347a8027cbb72" title="Inserts a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_insert_length()</a>. If the length is known beforehand, consider using that variant (<code>maxlen</code> should then be checked so that it is greater than the size of <code>str</code>). If <code>str</code> can not be inserted, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be inserted.</dd></dl>
+<p>This function inserts <code>str</code> into <code>buf</code> at position <code>pos</code>, with at most <code>maxlen</code> bytes. The number of inserted characters cannot be greater than the length of <code>str</code>. It computes the length of <code>str</code>, so is slightly slower than <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga5b7218bd0d9ad631903347a8027cbb72" title="Inserts a string of exact length to a buffer, reallocating as necessary.">eina_ustrbuf_insert_length()</a>. If the length is known beforehand, consider using that variant (<code>maxlen</code> should then be checked so that it is greater than the size of <code>str</code>). </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -888,15 +909,15 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Retrieves the length of the string buffer content. </p>
+<p>Retrieves the length of the string buffer's content. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current length of the string, in bytes.</dd></dl>
-<p>This function returns the length of <code>buf</code>.</p>
+<p>This function returns the length of <code>buf</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -916,21 +937,21 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Creates a new string buffer using the passed string. The passed string is used directly as the buffer, it's somehow the opposite function of <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga400816da7f9b4bd4cfa0a8192920b383">eina_ustrbuf_string_steal</a> . The passed string must be malloced. </p>
+<p>Creates a new string buffer using the passed string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The string to manage </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to manage. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance</dd></dl>
-<p>This function creates a new string buffer. On error, <code>NULL</code> is returned. To free the resources, use <a class="el" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free()</a>.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance, or <code>NULL</code> on error.</dd></dl>
+<p>This function creates a new unicode string buffer. The passed string is used directly as the buffer, it's effectively the inverse of <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga400816da7f9b4bd4cfa0a8192920b383" title="Steals the contents of a string buffer.">eina_ustrbuf_string_steal()</a>. The passed string must be malloc'd. To free the resources, use <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gabe1f60b2fae2b2880ab35a62724606d6" title="Frees a string buffer.">eina_ustrbuf_free()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gabe1f60b2fae2b2880ab35a62724606d6" title="Frees a string buffer.">eina_ustrbuf_free()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga0518bd42b2789ca09242b8640c88814f" title="Appends a string to a buffer, reallocating as necessary.">eina_ustrbuf_append()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gafb195dbff55306b5255153927be941cd" title="Retrieves a pointer to the contents of a string buffer.">eina_ustrbuf_string_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gafb195dbff55306b5255153927be941cd" title="Retrieves a pointer to the contents of a string buffer.">eina_ustrbuf_string_get()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -960,18 +981,18 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Creates a new string buffer using the passed string. The passed string is used directly as the buffer, it's somehow the opposite function of <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga400816da7f9b4bd4cfa0a8192920b383">eina_ustrbuf_string_steal</a> . The passed string must be malloced. </p>
+<p>Creates a new string buffer using the passed string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The string to manage </td></tr>
-    <tr><td class="paramname">length</td><td>The length of the string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to manage. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance.</dd></dl>
-<p>This function creates a new string buffer. On error, <code>NULL</code> is returned. To free the resources, use <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gabe1f60b2fae2b2880ab35a62724606d6" title="Frees a string buffer.">eina_ustrbuf_free()</a>.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gac82867081a70ee01519a84edff5fd22f" title="Creates a new string buffer using the passed string. The passed string is used directly as the buffer...">eina_ustrbuf_manage_new()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance, or <code>NULL</code> on error.</dd></dl>
+<p>This function creates a new string buffer. The passed string is used directly as the buffer, it's effectively the inverse of <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga400816da7f9b4bd4cfa0a8192920b383" title="Steals the contents of a string buffer.">eina_ustrbuf_string_steal()</a>. The passed string must be malloc'd. To free the resources, use <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gabe1f60b2fae2b2880ab35a62724606d6" title="Frees a string buffer.">eina_ustrbuf_free()</a>.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gac82867081a70ee01519a84edff5fd22f" title="Creates a new string buffer using the passed string.">eina_ustrbuf_manage_new()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -991,14 +1012,14 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Creates a new string buffer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance.</dd></dl>
-<p>This function creates a new string buffer. On error, <code>NULL</code> is returned. To free the resources, use <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gabe1f60b2fae2b2880ab35a62724606d6" title="Frees a string buffer.">eina_ustrbuf_free()</a>.</p>
+<p>Creates a new unicode string buffer. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance, or <code>NULL</code> on error.</dd></dl>
+<p>This function creates a new string buffer. To free the resources, use <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gabe1f60b2fae2b2880ab35a62724606d6" title="Frees a string buffer.">eina_ustrbuf_free()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gabe1f60b2fae2b2880ab35a62724606d6" title="Frees a string buffer.">eina_ustrbuf_free()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga0518bd42b2789ca09242b8640c88814f" title="Appends a string to a buffer, reallocating as necessary.">eina_ustrbuf_append()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gafb195dbff55306b5255153927be941cd" title="Retrieves a pointer to the contents of a string buffer.">eina_ustrbuf_string_get()</a></dd></dl>
+<a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gafb195dbff55306b5255153927be941cd" title="Retrieves a pointer to the contents of a string buffer.">eina_ustrbuf_string_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -1034,17 +1055,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Removes a slice of the given string buffer. </p>
+<p>Removes a section of the given string buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to remove a slice. </td></tr>
-    <tr><td class="paramname">start</td><td>The initial (inclusive) slice position to start removing, in bytes. </td></tr>
-    <tr><td class="paramname">end</td><td>The final (non-inclusive) slice position to finish removing, in bytes. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer to remove a slice. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>The initial (inclusive) slice position to start removing, in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>The final (non-inclusive) slice position to finish removing, in bytes. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function removes a slice of <code>buf</code>, starting at <code>start</code> (inclusive) and ending at <code>end</code> (non-inclusive). Both values are in bytes. It returns <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> otherwise.</p>
+<p>This function removes a slice of <code>buf</code>, starting at <code>start</code> (inclusive) and ending at <code>end</code> (non-inclusive). Both values are in bytes. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -1067,11 +1088,11 @@ Defines</h2></td></tr>
 <p>Resets a string buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to reset.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function reset <code>buf:</code> the buffer len is set to 0, and the string is set to '\0'. No memory is free'd.</p>
+<p>This function resets <code>buf:</code> the buffer len is set to 0, and the string data is set to '\0'. No memory is freed. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -1094,11 +1115,11 @@ Defines</h2></td></tr>
 <p>Frees the contents of a string buffer but not the buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to free the string of.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function frees the string contained in <code>buf</code> without freeing <code>buf</code>.</p>
+<p>This function frees the string contained in <code>buf</code> without freeing <code>buf</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -1121,13 +1142,13 @@ Defines</h2></td></tr>
 <p>Retrieves a pointer to the contents of a string buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current string in the string buffer.</dd></dl>
-<p>This function returns the string contained in <code>buf</code>. The returned value must not be modified and will no longer be valid if <code>buf</code> is modified. In other words, any <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga0518bd42b2789ca09242b8640c88814f" title="Appends a string to a buffer, reallocating as necessary.">eina_ustrbuf_append()</a> or similar will make that pointer invalid.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga400816da7f9b4bd4cfa0a8192920b383" title="Steals the contents of a string buffer.">eina_ustrbuf_string_steal()</a></dd></dl>
+<p>This function returns the string contained in <code>buf</code>. The returned value must not be modified and will no longer be valid if <code>buf</code> is modified. In other words, calling <a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga0518bd42b2789ca09242b8640c88814f" title="Appends a string to a buffer, reallocating as necessary.">eina_ustrbuf_append()</a> or similar functions will make this pointer invalid.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#ga400816da7f9b4bd4cfa0a8192920b383" title="Steals the contents of a string buffer.">eina_ustrbuf_string_steal()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -1150,13 +1171,13 @@ Defines</h2></td></tr>
 <p>Steals the contents of a string buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to steal. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The current string in the string buffer.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The string that was contained in <code>buf</code>.</dd></dl>
 <p>This function returns the string contained in <code>buf</code>. <code>buf</code> is then initialized and does not own the returned string anymore. The caller must release the memory of the returned string by calling free().</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gafb195dbff55306b5255153927be941cd" title="Retrieves a pointer to the contents of a string buffer.">eina_ustrbuf_string_get()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Unicode__String__Buffer__Group.html#gafb195dbff55306b5255153927be941cd" title="Retrieves a pointer to the contents of a string buffer.">eina_ustrbuf_string_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>

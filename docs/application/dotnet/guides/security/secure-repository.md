@@ -51,13 +51,13 @@ The key manager provides 2 types of operations:
 
 All data stored in the secure repository is saved under an alias, which is a text string that must conform to certain conditions:
 -   The format of an alias is "&lt;package\_id&gt; &lt;name&gt;" and the name cannot contain any white space characters.
--   If the client does not provide the package ID, the `CreateFullAlias()` method of the [Tizen.Security.SecureRepository.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Manager.html) class adds the client package ID to the name internally.
+-   If the client does not provide the package ID, the `CreateFullAlias()` method of the [Tizen.Security.SecureRepository.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Manager.html) class adds the client package ID to the name internally.
 -   The client can only specify its own package ID in the alias when storing a key, certificate, or data.
 -   The client must specify the package ID of the owner in the alias to retrieve a key, certificate, or data shared by other applications.
 
 ## Prerequisites
 
-To use the methods and properties of the [Tizen.Security.SecureRepository](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.html) namespace, include it in your application:
+To use the methods and properties of the [Tizen.Security.SecureRepository](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.html) namespace, include it in your application:
 
 ```
 using Tizen.Security.SecureRepository;
@@ -67,7 +67,7 @@ using Tizen.Security.SecureRepository;
 ## Saving, Getting, or Removing a Key
 
 To store, retrieve, or remove a client's keys from the key manager:
--   Save a new key by using the `Save()` method of the [Tizen.Security.SecureRepository.KeyManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.KeyManager.html) class:
+-   Save a new key by using the `Save()` method of the [Tizen.Security.SecureRepository.KeyManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class:
 
     ```
     using System;
@@ -187,7 +187,7 @@ To store, retrieve, or remove a client's keys from the key manager:
 
 To store, retrieve, or remove a client's certificates from the key manager:
 
--   Save a new certificate by using the `Save()` method of the [Tizen.Security.SecureRepository.CertificateManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
+-   Save a new certificate by using the `Save()` method of the [Tizen.Security.SecureRepository.CertificateManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
 
     ```
     using System.Text;
@@ -281,7 +281,7 @@ To store, retrieve, or remove a client's certificates from the key manager:
 
 To store, retrieve, or remove a client's data from the key manager:
 
--   Save new data using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.DataManager.html) class:
+-   Save new data using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.DataManager.html) class:
 
     ```
     using System;
@@ -349,7 +349,7 @@ To store, retrieve, or remove a client's data from the key manager:
 <a name="creating_keys"></a>
 ## Creating Keys
 
-You can create 4 kinds of keys or key pairs with the [Tizen.Security.SecureRepository.KeyManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.KeyManager.html) class: RSA, ECDSA, DSA, and AES.
+You can create 4 kinds of keys or key pairs with the [Tizen.Security.SecureRepository.KeyManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class: RSA, ECDSA, DSA, and AES.
 
 To create keys:
 
@@ -431,7 +431,7 @@ To create keys:
 
 To create and verify a signature:
 
-1.  Create an RSA key pair with the `CreateRsaKeyPair()` method of the [Tizen.Security.SecureRepository.KeyManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.KeyManager.html) class:
+1.  Create an RSA key pair with the `CreateRsaKeyPair()` method of the [Tizen.Security.SecureRepository.KeyManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.KeyManager.html) class:
 
     ```
     string aliasPrivate = "C#API_KEY_PRIVATE";
@@ -450,7 +450,7 @@ To create and verify a signature:
     }
     ```
 
-2.  Create the signature as a new instance of the [Tizen.Security.SecureRepository.Crypto.Signature](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Crypto.Signature.html) class:
+2.  Create the signature as a new instance of the [Tizen.Security.SecureRepository.Crypto.Signature](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Crypto.Signature.html) class:
 
     ```
     using System;
@@ -495,7 +495,7 @@ The certificate manager verifies a certificate chain and returns it. The trusted
 
 To handle certificate chains:
 
--   Verify and return a certificate chain using the `GetCertificateChain()` method of the [Tizen.Security.SecureRepository.CertificateManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
+-   Verify and return a certificate chain using the `GetCertificateChain()` method of the [Tizen.Security.SecureRepository.CertificateManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.CertificateManager.html) class:
 
     ```
     string certPath = "/tmp/ckmc_leaf_cert.pem";
@@ -548,7 +548,7 @@ You can load a certificate from a file in the DER or PEM formats. The secure rep
 
 To load files:
 
--   Load a certificate from an external file with the `Load()` method of the [Tizen.Security.SecureRepository.Certificate](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Certificate.html) class:
+-   Load a certificate from an external file with the `Load()` method of the [Tizen.Security.SecureRepository.Certificate](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Certificate.html) class:
 
     ```
     string certPath = "/tmp/ckmc_test_cert.pem";
@@ -563,7 +563,7 @@ To load files:
     }
     ```
 
--   Load keys, certificates, or certificate chains from a PKCS\#12 file by using the `Load()` method of the [Tizen.Security.SecureRepository.Pkcs12](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Pkcs12.html) class:
+-   Load keys, certificates, or certificate chains from a PKCS\#12 file by using the `Load()` method of the [Tizen.Security.SecureRepository.Pkcs12](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Pkcs12.html) class:
 
     ```
     string p12Path = "/tmp/ckmc_test_pkcs.p12";
@@ -590,7 +590,7 @@ Each client can adjust access control rules for their own data, certificates, an
 
 To implement access control rules:
 
-1.  Store the data for which you want to define access control rules by using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.DataManager.html) class:
+1.  Store the data for which you want to define access control rules by using the `Save()` method of the [Tizen.Security.SecureRepository.DataManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.DataManager.html) class:
 
     ```
     using System;
@@ -612,7 +612,7 @@ To implement access control rules:
     ```
 
 2.  Set access control rules:
-    -   Set a rule for a client application with the "other\_package\_id" package ID to give it permission to read or remove the data. Use the `SetPermission()` method of the [Tizen.Security.SecureRepository.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Manager.html) class, and define the permissions in the third parameter by using the [Tizen.Security.SecureRepository.Permission](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.SecureRepository.Permission.html) enumeration values:
+    -   Set a rule for a client application with the "other\_package\_id" package ID to give it permission to read or remove the data. Use the `SetPermission()` method of the [Tizen.Security.SecureRepository.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Manager.html) class, and define the permissions in the third parameter by using the [Tizen.Security.SecureRepository.Permission](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.SecureRepository.Permission.html) enumeration values:
 
         ```
         try

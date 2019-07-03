@@ -36,7 +36,7 @@ To enable your application to use the Cairo functionality:
 1. Before using the Cairo library in Tizen:
    - You must understand the basic concepts of Cairo. For more information, see the [Cairo Tutorial in cairographics.org](http://www.cairographics.org/tutorial/).
    - In the Tizen framework, Cairo can use 2 different backends: image backend and Evas GL backend. You must check which backend is suitable for your work. For more information, see the [Creating a Cairo Surface Linked with an Evas Object](#create).
-   - In creating native UI applications in Tizen, make sure you understand [EFL and its features](../ui/efl/introduction-n.md).
+   - In creating native UI applications in Tizen, make sure you understand [EFL and its features](../ui/efl/index.md).
 2. To use the functions and data types of the Cairo image and GL backends, include the `<cairo.h>` header file in your application. For the Cairo GL backend, you also need the `<cairo-evas-gl.h>`, and `<Evas_GL.h>` header files.
 
     ```
@@ -126,13 +126,13 @@ To create the image surface:
 
 ### Creating a Cairo GL Surface in the Evas GL Backend
 
-With the Cairo GL backend, you can create a Cairo surface using OpenGL&reg;. For more information on OpenGL&reg;, see the [OpenGL&reg; ES](opengl-n.md) guide.
+With the Cairo GL backend, you can create a Cairo surface using OpenGL&reg;. For more information on OpenGL&reg;, see the [OpenGL&reg; ES](opengl.md) guide.
 
 To create the GL surface:
 
 1. Since an application utilizing the Cairo GL backend in Tizen is based on Evas GL, an Evas GL handler must be created with the `evas_gl_new()` function during the initial stage.
 
-   Afterwards, the `evas_gl_config`, `evas_gl_surface`, and `evas_gl_context` instances are created in that order. For more information on using Evas GL, see [Creating OpenGL&reg; ES Applications](creating-opengles-n.md) and the [OpenGL&reg; ES](opengl-n.md) guide.
+   Afterwards, the `evas_gl_config`, `evas_gl_surface`, and `evas_gl_context` instances are created in that order. For more information on using Evas GL, see [Creating OpenGL&reg; ES Applications](creating-opengles.md) and the [OpenGL&reg; ES](opengl.md) guide.
 
     ```
     Evas_Object *win = elm_win_util_standard_add("Cairo GL Backend guide", " Cairo GL Backend guide");
@@ -252,8 +252,7 @@ After the image file reading is complete, you can create a Cairo surface for the
 
 ```
 src_buffer = (unsigned char *)evas_object_image_data_get(decoded_img, EINA_TRUE);
-cairo_surface_t *source = cairo_image_surface_create_for_data(src_buffer, CAIRO_FORMAT_ARGB32, w, h,
-                                                              evas_object_image_stride_get(decoded_img));
+cairo_surface_t *source = cairo_image_surface_create_for_data(src_buffer, CAIRO_FORMAT_ARGB32, w, h, evas_object_image_stride_get(decoded_img));
 cairo_set_source_surface(cr, source, 0, 0);
 cairo_paint(cr);
 

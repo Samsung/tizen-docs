@@ -1,81 +1,62 @@
 # Checking Logs with Log View
 
-This topic explains how to insert logging methods to your code and check the logs of your application in the **Log** view.
+You can insert logging methods to your code and check the logs of your application in the **Log** view.
 
-## Viewing Logs in Log Tabs
-
-By default, the **Log** view is located at the bottom of the **Native** perspective. If you want to open the **Log** view manually, go to **Window > Show View > Other > Log** in the Tizen Studio menu.
-
-The **Log** view helps you debug your application by capturing all the events logged by the platform and your application. The **Log** view shows the logs through the [dlog logging service](../../native/guides/error/system-logs.md). The service consists of the dlogutil and dlog library. You can also see logs with the `dlogutil` command in the CLI environment, and create log entries with the dlog library.
+When a device is connected, a device log tab is automatically created in the **Log** view. You can create additional tabs for a device, and you can set different filters for each tab. Tabs for disconnected devices are shown as inactive, and are reactivated when the device is reconnected.
 
 **Figure: Log view**
 
 ![Log view](./media/log_view.png)
 
-### Creating a Log Message
+Each log tab contains a toolbar and a log table. The log table lists log messages in chronological order, and this order cannot be modified. Each log message contains the **Time**, **Level** (priority level of the log message), **Pid** (process ID), **Tid** (thread ID), **Tag** (identification of the log message source), and **Message** fields, and you can create filters for each field.
 
-You can create a log message in your application with the dlog library. Before using the dlog library, make sure you know which priorities and tags to use and how to send the message to the log device. With appropriate properties and tags, it is easy to filter and check messages.
+You can perform a variety of actions in the **Log** view:
 
-For more information, see the [System Logs](../../native/guides/error/system-logs.md) guide.
+- Creating a new log tab
 
-### Adding and Removing the Log Tab
+   You can create a new log tab in 2 ways:
 
-Each device has at least 1 default log tab associated with it. If a device is connected, the default log tab is not editable or removable. However, you can add a new log tab with more filtering options. The added log tabs are editable and removable.
+   - Right-click a device in the Device Manager and select **Add log tab**. Enter a name for the tab and click **OK**.
 
-- Adding a log tab:
+   - Select a device in the Device Manager and click **+** in the **Log** view. Enter a name for the tab and click **OK**.
 
-  1. Click the **Add LogTab** button (![Add LogTab icon](./media/log_view_icon.png)).
+- Editing a log tab name
 
-  2. Enter the tab name in the **Name** field and select a device in the **Device** list.
+   When a device is connected and a log tab is automatically created, the default name of the new tab is the device ID. You can edit that name, and the names of the tabs you have manually created yourself.
 
-  3. Enter the search keywords in the **Tag**, **Pid**, and **Message** fields.
+   To edit the log tab name, click the **Edit Tab** button (![Edit Tab](./media/log_view_edit_tab_icon.png)). Enter a new name for the tab and click **OK**.
 
-  4. Click **OK**.
+- Removing a log tab
 
-     ![Adding a log tab](./media/log_view_add_tab.png)
+   You can either delete a single tab, or delete all tabs related to a device.
 
-- Removing a log tab:
+   - To delete a single tab, click the **X** next to the log tab name.
 
-  1. Click the log tab to be removed.
+   - To delete all tabs for a device, right-click the device in the Device Manager and select **Delete log tabs**. Confirm the deletion by clicking **OK**.
 
-  2. Click the **Remove LogTab** button (![Remove LogTab icon](./media/log_view_icon_remove_tab.png)).
+   > **Note**
+   >
+   > Any filters created for a log tab are deleted when the tab is removed.
 
-## Understanding and Filtering Logs
+- Filtering a log messages
 
-The log table consists of the following fields:
+   You can filter log messages based on the table columns:
 
-- **Time**: log time
-- **Level**: priority level indicates the urgency of the log message
-- **Pid**: process ID
-- **Tid**: thread ID
-- **Tag**: identification of the log message source
-- **Message**: log message
+   - To filter log messages based on the **Level**, **Pid**, **Tid**, or **Tag** columns, click the ![Down arrow](./media/device_manager_downarrow_icon.png) icon next to the column name, select 1 or more values you want to show, and click **OK**.
 
-**Figure: Log table fields**
+   - To filter log messages based on the **Message** column, enter the **Message** field string you want to search for to the input field at top of the **Log** view.
 
-![Log view](./media/log_view_fields.png)
+- Clearing logs
 
-In the log table, you have the following options and functions:
+   To clear all log messages from a tab, click the **Clear Logs** button (![Clear Logs](./media/log_view_clear_logs_icon.png)).
 
-- Log level filtering option
+- Exporting logs
 
-  In the **Log** view, you can filter the log messages using the **V** (verbose), **D** (debug), **I** (info), **W** (warning), **E** (error), and **F** (fatal) buttons to show the log messages matching the selected type.
+   To export logs to a file, click the **Export Logs** button (![Export Logs](./media/log_view_export_logs_icon.png)), select the file storage location and file name for the exported log, and click **OK**.
 
-- Keyword filtering option
-
-  You can filter the log messages by selecting one of the **PID**, **Tag**, and **Message** options, or entering keywords in the bottom of the **Log** view. The keywords must be separated by a space or a comma.
-
-- Scroll lock
-
-  The log table shows the latest logs by default. While the application is running, the log table scrolls as new logs are added to the table. To stop the table from scrolling while you are checking a specific log, click the **Scroll Lock** button (![Scroll lock button](./media/log_view_icon_lock.png)).
-
-- Clearing the table
-
-  You can remove all log messages from the log tab by clicking the **Clear the log** button (![Clear the log button](./media/log_view_icon_clear.png)).
-
-- Exporting logs to a file
-
-  You can export the current log messages in the log tab and save them as a log file by clicking the **Export the log** button (![Export the log button](./media/log_view_icon_export.png)).
+   > **Note**
+   >
+   > If you have filters applied to a log tab, only messages that match those filters are exported. If you want to export the complete log, remove all filters before exporting.
 
 ## Related information
 * Dependencies  

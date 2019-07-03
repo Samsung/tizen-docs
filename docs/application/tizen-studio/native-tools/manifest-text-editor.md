@@ -44,6 +44,8 @@ The Tizen native application manifest file consists of XML elements organized in
 |              |                         | `<metadata>`            |                  |
 |              |                         | `<datacontrol>`         |                  |
 |              |                         | `<background-category>` |                  |
+|              |                         | `<splash-screens>`      |                  |
+|              |                         |                         | `<splash-screen>`|
 |              | `<service-application>` |                         |                  |
 |              |                         | `<label>`               |                  |
 |              |                         | `<icon>`                |                  |
@@ -96,17 +98,17 @@ For more information on the relationship between the elements, see the [element 
 |-----------------------|--------------------|
 | `<author>`              | 1 (optional)         |
 | `<description>`         | 1 or more (optional) |
-| `<profile>`             |                      |
+| `<profile>`             | 1 or more (optional) |
 | `<ui-application>`      | 1 (optional)         |
-| `<service-application>` |                      |
-| `<watch-application>`   |                      |
-| `<widget-application>`  |                      |
-| `<shortcut-list>`       |                      |
-| `<account>`             |                      |
-| `<privileges>`          |                      |
+| `<service-application>` | 1 (optional)         |
+| `<watch-application>`   | 1 (optional)         |
+| `<widget-application>`  | 1 (optional)         |
+| `<shortcut-list>`       | 1 (optional)         |
+| `<account>`             | 1 (optional)         |
+| `<privileges>`          | 1 (optional)         |
 | `<feature>`             | 1 or more (optional) |
 
-**Figure: Editing the <manifest> element in the manifest editor**
+**Figure: Editing the \<manifest\> element in the manifest editor**
 
 ![Editing the manifest element in the manifest editor](./media/manifest.png)
 
@@ -250,11 +252,12 @@ For more information on the relationship between the elements, see the [element 
 | Child element           | Occurrences          |
 |-----------------------|--------------------|
 | `<label>`               | 1 or more (optional) |
-| `<icon>`                |                      |
-| `<app-control>`         |                      |
-| `<metadata>`            |                      |
-| `<datacontrol>`         |                      |
-| `<background-category>` |                      |
+| `<icon>`                | 1 or more (optional) |
+| `<app-control>`         | 1 or more (optional) |
+| `<metadata>`            | 1 or more (optional) |
+| `<datacontrol>`         | 1 or more (optional) |
+| `<background-category>` | 1 or more (optional) |
+| `<splash-screens>`      | 1 or more (optional) |
 
 **Attributes:**
 
@@ -262,9 +265,9 @@ For more information on the relationship between the elements, see the [element 
 
   Application unique ID (string)
 
-  This can be used for launching or terminating the application explicitly.
+  You can use the a\~z, A\~Z, 0\~9, ".", "-", and "\_" characters, and the value must be shorter than 50 characters.
 
-  You can use the a~z, A~Z, 0~9, ".", "-", and "_" characters, and the value must be shorter than 50 characters.
+  This can be used for launching or terminating the application explicitly.
 
 - `exec`
 
@@ -289,9 +292,18 @@ For more information on the relationship between the elements, see the [element 
   > **Note**
   >
   > This attribute is read-only. Do not attempt to modify it.
-- `nodisplay`Indicates whether the application is shown in the app tray (available values: `true`, `false`)
-- `taskmanage`Indicates whether the application is shown in the task manager (available values: `true`, `false`)
-- `type`Tizen application type (available values: `capp`, `c++app`, `webapp`)
+
+- `nodisplay`
+
+  Indicates whether the application is shown in the app tray (available values: `true`, `false`)
+
+- `taskmanage`
+
+  Indicates whether the application is shown in the task manager (available values: `true`, `false`)
+
+- `type`
+
+  Tizen application type (available values: `capp`, `c++app`, `webapp`)
   > **Note**
   >
   > This attribute is read-only. Do not attempt to modify it.
@@ -311,6 +323,9 @@ For more information on the relationship between the elements, see the [element 
    <metadata key="testkey" value="testvalue"/>
    <datacontrol access="ReadOnly"
                 providerid="http://uiapp.com/datacontrol/provider/uiapp" type="Sql"/>
+   <splash-screens>
+      <splash-screen src="uiapp.jpg" type="img" dpi="hdpi" orientation="portrait" indicator-display="true"/>
+   </splash-screens>
 </ui-application>
 ```
 
@@ -351,9 +366,9 @@ For more information on the relationship between the elements, see the [element 
 
   If the value is not defined, `false` is used.
 
- > **Note**
- >
- > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
+  > **Note**
+  >
+  > This attribute is not supported on Tizen wearable devices. Since Tizen 2.4, this attribute is not supported on all Tizen devices.
 
 - `exec`
 
@@ -407,6 +422,8 @@ For more information on the relationship between the elements, see the [element 
 </service-application>
 ```
 
+<a name="watch_app"></a>
+
 ### \<watch-application\> Element
 
 This element contains the settings for a watch application.
@@ -436,7 +453,7 @@ For more information on the relationship between the elements, see the [element 
 
   Watch application unique ID (string)
 
-- `exec
+- `exec`
 
   Watch application executable file path (string)
 
@@ -529,6 +546,10 @@ For more information on the relationship between the elements, see the [element 
 
   Multiples of 1800 only allowed
 
+- `setup-appid`
+
+  Widget application setup application ID (string)
+
 - `max-instance`
 
   Indicates the maximum number of widget instances that can be created in the widget application
@@ -536,7 +557,7 @@ For more information on the relationship between the elements, see the [element 
 **For example:**
 
 ```xml
-<widget-application appid="org.tizen.test" exec="test" main="true" update-period="0" max-instance="5">
+<widget-application appid="org.tizen.test" exec="test" main="true" update-period="0" max-instance="5" setup-appid="org.tizen.widget-setting">
    <label>.....</label>
    <icon>.....</icon>
    <support-size>.....</support-size>
@@ -634,12 +655,18 @@ This element contains the settings for the widget class. After adding this eleme
 
 - `update-period`
 
-  Indicates the update period in seconds (available values: time in seconds)Multiples of 1800 only allowed
+  Indicates the update period in seconds (available values: time in seconds)
+
+  Multiples of 1800 only allowed
+
+- `setup-appid`
+
+  Widget application setup application ID (string)
 
 **For example:**
 
 ```xml
-<widget-class classid="class1" update-period="0">
+<widget-class classid="class1" update-period="0" setup-appid="org.tizen.widget-setting">
    <label>.....</label>
    <icon>.....</icon>
    <support-size>.....</support-size>
@@ -820,7 +847,7 @@ Applications that use sensitive APIs must declare the required privileges in the
 
 Click **+** to open the **Add Privilege** dialog.
 
-**Figure: Editing the <privileges> element in the manifest editor**
+**Figure: Editing the \<privileges\> element in the manifest editor**
 
 ![Editing the privileges element in the manifest editor](./media/manifest_privilege.png)
 
@@ -834,7 +861,7 @@ For more information on the relationship between the elements, see the [element 
 
 | Child element             | Occurrences          |
 |---------------------------|----------------------|
-| `privilege`               | 1 or more (optional) |
+| `<privilege>`             | 1 or more (optional) |
 
 **For example:**
 
@@ -878,7 +905,7 @@ This element contains a list of required features for feature-based filtering in
 
 The element is used to define the hardware and software components for the Tizen application. In order to use or access an API that is specialized for each vendor or platform, the feature must be declared. This element has no child elements.
 
-**Figure: Editing the <feature> element in the manifest editor**
+**Figure: Editing the \<feature\> element in the manifest editor**
 
 ![Editing the feature element in the manifest editor](./media/manifest_features.png)
 

@@ -166,12 +166,12 @@ Typedefs</h2></td></tr>
 <p>Removes element at given position in value of hash type. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>value object. </td></tr>
-    <tr><td class="paramname">key</td><td>key to find the member </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>value object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>key to find the member </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 
 </div>
@@ -210,8 +210,9 @@ Typedefs</h2></td></tr>
 <p>Gets the generic value from an hash member. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">key</td><td>Key to find the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key to find the member </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">...</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -219,6 +220,8 @@ Typedefs</h2></td></tr>
 <p>The value is returned in the variable argument parameter, the actual value is type-dependent, but usually it will be what is stored inside the object. There shouldn't be any memory allocation, thus the contents should <b>not</b> be freed.</p>
 <p>The variable argument is dependent on chosen subtype. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -236,7 +239,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Hash__Group.html#gafbb30853d8db3752714847ff5cd802e5" title="Creates generic value storage of type hash.">eina_value_hash_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
      <span class="keywordtype">int</span> x;
@@ -281,20 +285,20 @@ Typedefs</h2></td></tr>
 <p>Creates generic value storage of type hash. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">subtype</td><td>How to manage this hash members. </td></tr>
-    <tr><td class="paramname">buckets_power_size</td><td>How to allocate hash buckets (2 ^ buckets_power_size), if zero then a sane value is chosen. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">subtype</td><td>How to manage this hash members. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buckets_power_size</td><td>How to allocate hash buckets (2 ^ buckets_power_size), if zero then a sane value is chosen. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new value, or <code>NULL</code> on failure.</dd></dl>
-<p>Create a new generic value storage of type hash. The members are managed using the description specified by <em>subtype</em>.</p>
+<p>Creates a new generic value storage of type hash. The members are managed using the description specified by <em>subtype</em>.</p>
 <p>On failure, <code>NULL</code> is returned.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>this creates from mempool and then uses <a class="el" href="group__Eina__Value__Hash__Group.html#ga712d1d68686e99abaccbb830734688e4" title="Initializes generic value storage of type hash.">eina_value_hash_setup()</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Value__Hash__Group.html#ga712d1d68686e99abaccbb830734688e4" title="Initializes generic value storage of type hash.">eina_value_hash_setup()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -332,9 +336,9 @@ Typedefs</h2></td></tr>
 <p>Gets the generic value to pointer from an hash member. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">key</td><td>Key to find the member </td></tr>
-    <tr><td class="paramname">ptr</td><td>Pointer to receive the contents. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key to find the member </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ptr</td><td>Pointer to receive the contents. </td></tr>
   </table>
   </dd>
 </dl>
@@ -342,6 +346,8 @@ Typedefs</h2></td></tr>
 <p>The value is returned in pointer contents, the actual value is type-dependent, but usually it will be what is stored inside the object. There shouldn't be any memory allocation, thus the contents should <b>not</b> be freed.</p>
 <p>The pointer type is dependent on chosen value type. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -359,7 +365,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Hash__Group.html#gafbb30853d8db3752714847ff5cd802e5" title="Creates generic value storage of type hash.">eina_value_hash_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
      <span class="keywordtype">int</span> x;
@@ -394,11 +401,11 @@ Typedefs</h2></td></tr>
 <p>Queries number of elements in value of hash type. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>value object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>value object. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>number of child elements. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>number of child elements.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 
 </div>
@@ -437,15 +444,17 @@ Typedefs</h2></td></tr>
 <p>Sets the generic value in an hash member from pointer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">key</td><td>Key to find the member </td></tr>
-    <tr><td class="paramname">ptr</td><td>Pointer to specify the contents. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key to find the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>Pointer to specify the contents. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The pointer type is dependent on chosen value type. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value* </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error* </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char* </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short* </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int* </li>
@@ -463,7 +472,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash* </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <dl class="note"><dt><b>Note:</b></dt><dd>the pointer contents are written using the size defined by type. It can be larger than void* or uint64_t.</dd></dl>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Hash__Group.html#gafbb30853d8db3752714847ff5cd802e5" title="Creates generic value storage of type hash.">eina_value_hash_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
@@ -515,14 +525,17 @@ Typedefs</h2></td></tr>
 <p>Sets the generic value in an hash member. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">key</td><td>Key to find the member </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key to find the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>Variable arguments of data to set </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>The variable argument is dependent on chosen subtype. The list for basic types:</p>
 <ul>
+<li>EINA_VALUE_TYPE_VALUE: Eina_Value </li>
+<li>EINA_VALUE_TYPE_ERROR: Eina_Error </li>
 <li>EINA_VALUE_TYPE_UCHAR: unsigned char </li>
 <li>EINA_VALUE_TYPE_USHORT: unsigned short </li>
 <li>EINA_VALUE_TYPE_UINT: unsigned int </li>
@@ -540,7 +553,8 @@ Typedefs</h2></td></tr>
 <li>EINA_VALUE_TYPE_HASH: Eina_Value_Hash </li>
 <li>EINA_VALUE_TYPE_TIMEVAL: struct timeval* </li>
 <li>EINA_VALUE_TYPE_BLOB: Eina_Value_Blob* </li>
-<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct*</li>
+<li>EINA_VALUE_TYPE_STRUCT: Eina_Value_Struct* </li>
+<li>EINA_VALUE_TYPE_TM: struct tm*</li>
 </ul>
 <div class="fragment"><pre class="fragment">     <a class="code" href="struct__Eina__Value.html">Eina_Value</a> *value = <a class="code" href="group__Eina__Value__Hash__Group.html#gafbb30853d8db3752714847ff5cd802e5" title="Creates generic value storage of type hash.">eina_value_hash_new</a>(<a class="code" href="group__Eina__Value__Group.html#ga17974fd9ab773a3efefd591ffde58f77">EINA_VALUE_TYPE_INT</a>, 0);
      <span class="keywordtype">int</span> x;
@@ -593,9 +607,9 @@ Typedefs</h2></td></tr>
 <p>Initializes generic value storage of type hash. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Value object </td></tr>
-    <tr><td class="paramname">subtype</td><td>How to manage this hash members. </td></tr>
-    <tr><td class="paramname">buckets_power_size</td><td>How to allocate hash buckets (2 ^ buckets_power_size), if zero then a sane value is chosen. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">subtype</td><td>How to manage this hash members. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buckets_power_size</td><td>How to allocate hash buckets (2 ^ buckets_power_size), if zero then a sane value is chosen. </td></tr>
   </table>
   </dd>
 </dl>
@@ -643,9 +657,9 @@ Typedefs</h2></td></tr>
 <p>Gets the generic value from an hash member. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">key</td><td>Key to find the member </td></tr>
-    <tr><td class="paramname">args</td><td>Variable argument </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key to find the member </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">args</td><td>Variable argument </td></tr>
   </table>
   </dd>
 </dl>
@@ -694,13 +708,13 @@ Typedefs</h2></td></tr>
 <p>Sets the generic value in an hash member. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">value</td><td>Source value object </td></tr>
-    <tr><td class="paramname">key</td><td>Key to find the member </td></tr>
-    <tr><td class="paramname">args</td><td>Variable argument </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Key to find the member </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>Variable argument </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Hash__Group.html#ga949a995459d191bfc9a88e4173d25b5e" title="Sets the generic value in an hash member.">eina_value_hash_set()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Value__Hash__Group.html#ga854b308b7fab1f9e2ecdd41fa9d9770c" title="Gets the generic value from an hash member.">eina_value_hash_get()</a> </dd>

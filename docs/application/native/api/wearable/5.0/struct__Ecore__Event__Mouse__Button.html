@@ -107,15 +107,15 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#aad3cc96fdd25d4a7d7f6bb5464d9da2e">x</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#a800d218319cb6f610d4eae2909cd1729">y</a></td></tr>
 <tr><td class="memItemLeft" >struct {</td></tr>
-<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#a37a743ffbfde8289e9235cafffe9cf10">root</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Ecore_Device *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#ae68444f1f47ac2d143199ed95503d3bd">dev</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#a974f475935ee7dcbb39e3d9ff8f35779">root</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Eo *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#a899746f767bbef0304a31caaf27f18e3">dev</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#a5822693739286e14532685fd9c01c5ef">device</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#afff8876e2204d939ae755751240be7e1">radius_y</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#a248cda8dfb1c412b2a00cae885e88aee">pressure</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#a1ec21b94bfc341e5e7bfee46e6d6ed13">angle</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#a1f465dbb97481a6ab665a068c0d3cbfe">y</a></td></tr>
 <tr><td class="memItemLeft" >struct {</td></tr>
-<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#aa170fad0a1d5e3cde0cd8f4a5627b686">root</a></td></tr>
+<tr><td class="memItemLeft" valign="top">}&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Ecore__Event__Mouse__Button.html#afc71dd82f24b857c5d21ff92d840ddf6">root</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Contains information about an Ecore mouse button event. </p>
@@ -148,18 +148,18 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ae68444f1f47ac2d143199ed95503d3bd"></a><!-- doxytag: member="_Ecore_Event_Mouse_Button::dev" ref="ae68444f1f47ac2d143199ed95503d3bd" args="" -->
+<a class="anchor" id="a899746f767bbef0304a31caaf27f18e3"></a><!-- doxytag: member="_Ecore_Event_Mouse_Button::dev" ref="a899746f767bbef0304a31caaf27f18e3" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Ecore_Device* <a class="el" href="struct__Ecore__Event__Mouse__Button.html#ae68444f1f47ac2d143199ed95503d3bd">_Ecore_Event_Mouse_Button::dev</a></td>
+          <td class="memname">Eo* <a class="el" href="struct__Ecore__Event__Mouse__Button.html#a899746f767bbef0304a31caaf27f18e3">_Ecore_Event_Mouse_Button::dev</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>source device object associated with an Ecore_Event_Mouse_Button </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
+<p>The Efl_Input_Device that originated the event </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
 
 </div>
 </div>
@@ -215,7 +215,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The combination of modifiers key (SHIT,CTRL,ALT,..) </p>
+<p>The combination of modifiers key (SHIFT,CTRL,ALT,..) </p>
 
 </div>
 </div>
@@ -247,12 +247,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a37a743ffbfde8289e9235cafffe9cf10"></a><!-- doxytag: member="_Ecore_Event_Mouse_Button::root" ref="a37a743ffbfde8289e9235cafffe9cf10" args="" -->
+<a class="anchor" id="a974f475935ee7dcbb39e3d9ff8f35779"></a><!-- doxytag: member="_Ecore_Event_Mouse_Button::root" ref="a974f475935ee7dcbb39e3d9ff8f35779" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct { ... }   <a class="el" href="struct__Ecore__Event__Mouse__Button.html#a37a743ffbfde8289e9235cafffe9cf10">_Ecore_Event_Mouse_Button::root</a></td>
+          <td class="memname">struct { ... }   <a class="el" href="struct__Ecore__Event__Mouse__Button.html#a974f475935ee7dcbb39e3d9ff8f35779">_Ecore_Event_Mouse_Button::root</a></td>
         </tr>
       </table>
 </div>
@@ -261,12 +261,12 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aa170fad0a1d5e3cde0cd8f4a5627b686"></a><!-- doxytag: member="_Ecore_Event_Mouse_Button::root" ref="aa170fad0a1d5e3cde0cd8f4a5627b686" args="" -->
+<a class="anchor" id="afc71dd82f24b857c5d21ff92d840ddf6"></a><!-- doxytag: member="_Ecore_Event_Mouse_Button::root" ref="afc71dd82f24b857c5d21ff92d840ddf6" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct { ... }   <a class="el" href="struct__Ecore__Event__Mouse__Button.html#a37a743ffbfde8289e9235cafffe9cf10">_Ecore_Event_Mouse_Button::root</a></td>
+          <td class="memname">struct { ... }   <a class="el" href="struct__Ecore__Event__Mouse__Button.html#a974f475935ee7dcbb39e3d9ff8f35779">_Ecore_Event_Mouse_Button::root</a></td>
         </tr>
       </table>
 </div>

@@ -31,7 +31,7 @@ _animation = new Animation
 
 Some view properties are `animatable`, such as `Position`, `Orientation`, `Scale`, and `Color`.
 
-The controls class is derived from the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class and set the property to be *animatable*. For standard controls, you can query whether a property is animatable (using the `IsPropertyAnimatable()` method of the [Tizen.NUI.Animatable](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Animatable.html) class), but cannot change the animatable state.
+The controls class is derived from the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class and set the property to be *animatable*. For standard controls, you can query whether a property is animatable (using the `IsPropertyAnimatable()` method of the [Tizen.NUI.Animatable](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Animatable.html) class), but cannot change the animatable state.
 
 To animate a property in NUI, you can use two distinct methods:
 
@@ -124,7 +124,7 @@ During the playback, you can receive notifications at various stages of the anim
 <a name="alphafunctions"></a>
 ## Alpha Functions
 
-In animations, alpha functions are used to specify the animation parameter's rate of change over time. This allows the animation to be, for example, accelerated, decelerated, repeated, or bounced. The [Tizen.NUI.AlphaFunction.BuiltinFunctions](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.AlphaFunction.BuiltinFunctions.html) enumeration lists the built-in alpha functions.
+In animations, alpha functions are used to specify the animation parameter's rate of change over time. This allows the animation to be, for example, accelerated, decelerated, repeated, or bounced. The [Tizen.NUI.AlphaFunction.BuiltinFunctions](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.AlphaFunction.BuiltinFunctions.html) enumeration lists the built-in alpha functions.
 
 You can specify a different alpha function for each animator in an animation object:
 

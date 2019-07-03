@@ -91,10 +91,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary index widget on a window, indexing grid items. The items are placed so that their labels <b>don't</b> follow any order, but the index itself is ordered (through <a class="el" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639" title="Insert a new item into the given index widget, using cmp_func function to sort items (by item handles...">elm_index_item_sorted_insert()</a>). This is a complement to to <a class="el" href="index_example_01.html">the first example on indexes</a>.</p>
-<p>Here's the list of item labels to be used on the grid (in that order):  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>In the interesting part of the code, here, we first instantiate the grid (more on grids on their examples) and, after creating our index, for each grid item we also create an index one to reference it:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The order in which they'll appear in the index, though, is <b>alphabetical</b>, becase of <a class="el" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639" title="Insert a new item into the given index widget, using cmp_func function to sort items (by item handles...">elm_index_item_sorted_insert()</a> usage together with the comparing function, where we take the letters of each index item to base our ordering on. The parameters on <code>_index_cmp</code> have to be declared as void pointers because of the <code>Eina_Compare_Cb</code> prototype requisition, but in this case we know they'll be index item(<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a>)'s:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The last interesting bit is the callback in the <code>"delay,changed"</code> smart event, which will bring the given grid item to the grid's visible area:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Here's the list of item labels to be used on the grid (in that order):  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *items[] =
+{
+   <span class="stringliteral">&quot;Judith&quot;</span>,
+   <span class="stringliteral">&quot;Paulina&quot;</span>,
+   <span class="stringliteral">&quot;Cathy&quot;</span>,
+   <span class="stringliteral">&quot;Vendella&quot;</span>,
+   <span class="stringliteral">&quot;Naomi&quot;</span>,
+   <span class="stringliteral">&quot;Ashley&quot;</span>,
+   <span class="stringliteral">&quot;Stacey&quot;</span>,
+   <span class="stringliteral">&quot;Gail&quot;</span>
+};
+</pre></div></p>
+<p>In the interesting part of the code, here, we first instantiate the grid (more on grids on their examples) and, after creating our index, for each grid item we also create an index one to reference it:  <div class="fragment"><pre class="fragment">   grid = <a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
+   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 150, 150);
+
+   gic.item_style = <span class="stringliteral">&quot;default&quot;</span>;
+   gic.func.text_get = _grid_label_get;
+   gic.func.content_get = _grid_content_get;
+   gic.func.state_get = NULL;
+   gic.func.del = NULL;
+
+   evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, grid);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(grid);
+
+   idx = <a class="code" href="group__Elm__Index.html#gaf7fda3a54ca154cdc754326137f3737e">elm_index_add</a>(win);
+   evas_object_size_hint_weight_set(idx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, idx);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(idx);
+
+   <span class="keywordflow">for</span> (i = 0; i &lt; (<span class="keyword">sizeof</span>(items) / <span class="keyword">sizeof</span>(items[0])); i++)
+     {
+        <span class="keywordtype">char</span> buf[32];
+
+        gg_it = <a class="code" href="group__Elm__Gengrid.html#gaa62e4e2954dcf86aa4f5e028654eb6e5" title="Append a new item in a given gengrid widget.">elm_gengrid_item_append</a>(grid, &amp;gic, (<span class="keywordtype">void</span> *)(uintptr_t)i, NULL, NULL);
+
+        <span class="comment">/* indexing by first letters */</span>
+        snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%c&quot;</span>, items[i][0]);
+        <a class="code" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639" title="Insert a new item into the given index widget, using cmp_func function to sort items (by item handles...">elm_index_item_sorted_insert</a>(idx, buf, NULL, gg_it, _index_icmp, NULL);
+     }
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(idx, <span class="stringliteral">&quot;delay,changed&quot;</span>, _index_changed, NULL);
+</pre></div></p>
+<p>The order in which they'll appear in the index, though, is <b>alphabetical</b>, becase of <a class="el" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639" title="Insert a new item into the given index widget, using cmp_func function to sort items (by item handles...">elm_index_item_sorted_insert()</a> usage together with the comparing function, where we take the letters of each index item to base our ordering on. The parameters on <code>_index_cmp</code> have to be declared as void pointers because of the <code>Eina_Compare_Cb</code> prototype requisition, but in this case we know they'll be index item(<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a>)'s:  <div class="fragment"><pre class="fragment"><span class="comment">/* ordering alphabetically */</span>
+<span class="keyword">static</span> <span class="keywordtype">int</span>
+_index_icmp(<span class="keyword">const</span> <span class="keywordtype">void</span> *data1,
+            <span class="keyword">const</span> <span class="keywordtype">void</span> *data2)
+{
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *label1, *label2;
+
+   <span class="keyword">const</span> <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *index_it1 = data1;
+   <span class="keyword">const</span> <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *index_it2 = data2;
+
+   label1 = elm_index_item_letter_get(index_it1);
+   label2 = elm_index_item_letter_get(index_it2);
+
+   <span class="keywordflow">return</span> strcasecmp(label1, label2);
+}
+</pre></div></p>
+<p>The last interesting bit is the callback in the <code>"delay,changed"</code> smart event, which will bring the given grid item to the grid's visible area:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_index_changed(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+               <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+               <span class="keywordtype">void</span>        *event_info)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *item = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(event_info);
+   elm_gengrid_item_bring_in(item, ELM_GENGRID_ITEM_SCROLLTO_IN);
+}
+</pre></div></p>
 <p>Note how the grid will move kind of randomly while you move your mouse pointer held over the index from top to bottom -- that's because of the the random order the items have in the grid itself.</p>
 <p>This is how the example program's window looks like: </p>
 <div class="image">

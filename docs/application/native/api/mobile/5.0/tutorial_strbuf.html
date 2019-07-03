@@ -96,18 +96,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Next we initialize eina and create a string buffer to play with: <div class="fragment"><pre class="fragment">
 <span class="keywordtype">int</span> main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
 {
-   <a class="code" href="group__Eina__String__Buffer__Group.html#ga467437cff14cf09945351b739abf702c">Eina_Strbuf</a> *buf;
+   <a class="code" href="group__Eina__String__Buffer__Group.html#ga467437cff14cf09945351b739abf702c">Eina_Strbuf</a> *buf, *substr;
 
    <a class="code" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init</a>();
 
    buf = <a class="code" href="group__Eina__String__Buffer__Group.html#ga6f3c9ce942e61364a10ec7c0ea01cedc" title="Creates a new string buffer.">eina_strbuf_new</a>();
 </pre></div></p>
 <p>Here you can see two different ways of creating a buffer with the same contents. We could create them in simpler ways, but this gives us an opportunity to demonstrate several functions in action: <div class="fragment"><pre class="fragment">
-   <a class="code" href="group__Eina__String__Buffer__Group.html#gaad4f562f3a36881f12a4df5154e04b26" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_strbuf_append_length</a>(buf, <span class="stringliteral">&quot;buffe&quot;</span>, 5);
-   <a class="code" href="group__Eina__String__Buffer__Group.html#ga8afef8fb6f9aedcd6a81603bef0c7f86" title="Appends a character to a string buffer, reallocating as necessary.">eina_strbuf_append_char</a>(buf, <span class="charliteral">&#39;r&#39;</span>);
+   <a class="code" href="group__Eina__String__Buffer__Group.html#gaad4f562f3a36881f12a4df5154e04b26" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_strbuf_append_length</a>(buf, <span class="stringliteral">&quot;BUFFE&quot;</span>, 5);
+   <a class="code" href="group__Eina__String__Buffer__Group.html#ga8afef8fb6f9aedcd6a81603bef0c7f86" title="Appends a character to a string buffer, reallocating as necessary.">eina_strbuf_append_char</a>(buf, <span class="charliteral">&#39;R&#39;</span>);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
 
-   <a class="code" href="group__Eina__String__Buffer__Group.html#ga04719a5613488bbbd17f9eb75933d2c1" title="Inserts an escaped string to a buffer, reallocating as necessary.">eina_strbuf_insert_escaped</a>(buf, <span class="stringliteral">&quot;my &quot;</span>, 0);
+   <a class="code" href="group__Eina__String__Buffer__Group.html#gaa6fbcb0fdebd3e8ec9ba466c2c7b3aaa" title="Converts the string to lower case.">eina_strbuf_tolower</a>(buf);
+   printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
+
+   substr = eina_strbuf_substr_get(buf, 3, 2);
+   printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(substr));
+   <a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(substr);
+
+   <a class="code" href="group__Eina__String__Buffer__Group.html#ga04719a5613488bbbd17f9eb75933d2c1" title="Inserts an escaped string into a buffer, reallocating as necessary.">eina_strbuf_insert_escaped</a>(buf, <span class="stringliteral">&quot;my &quot;</span>, 0);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
    <a class="code" href="group__Eina__String__Buffer__Group.html#ga9f3435de2169ee40306c0111fa1a60b6" title="Resets a string buffer.">eina_strbuf_reset</a>(buf);
 
@@ -115,18 +122,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
    <a class="code" href="group__Eina__String__Buffer__Group.html#ga9f3435de2169ee40306c0111fa1a60b6" title="Resets a string buffer.">eina_strbuf_reset</a>(buf);
 </pre></div></p>
-<p>Next we use the printf family of functions to create a formated string, add, remove and replace some content: <div class="fragment"><pre class="fragment">
-   <a class="code" href="group__Eina__String__Buffer__Group.html#ga534c489bfd0e82776ff43a4aff82d1a8" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append_printf</a>(buf, <span class="stringliteral">&quot;%s%c&quot;</span>, <span class="stringliteral">&quot;buffe&quot;</span>, <span class="charliteral">&#39;r&#39;</span>);
-   <a class="code" href="group__Eina__String__Buffer__Group.html#ga5f43a53c89886f4eeeaa38bf8e964626" title="Inserts a string to a buffer, reallocating as necessary.">eina_strbuf_insert_printf</a>(buf, <span class="stringliteral">&quot; %s: %d&quot;</span>, 6, <span class="stringliteral">&quot;length&quot;</span>, (<span class="keywordtype">int</span>)<a class="code" href="group__Eina__String__Buffer__Group.html#gaa6ef2a1cb7f79070508e6bf158caeccc" title="Retrieves the length of the string buffer content.">eina_strbuf_length_get</a>(buf));
+<p>Next we use the printf family of functions to create a formatted string, add, remove and replace some content: <div class="fragment"><pre class="fragment">
+   <a class="code" href="group__Eina__String__Buffer__Group.html#ga534c489bfd0e82776ff43a4aff82d1a8" title="Appends data elements to a buffer using printf-style formatting.">eina_strbuf_append_printf</a>(buf, <span class="stringliteral">&quot;%s%c&quot;</span>, <span class="stringliteral">&quot;buffe&quot;</span>, <span class="charliteral">&#39;r&#39;</span>);
+   <a class="code" href="group__Eina__String__Buffer__Group.html#ga5f43a53c89886f4eeeaa38bf8e964626" title="Inserts data elements into a buffer using printf-style formatting.">eina_strbuf_insert_printf</a>(buf, <span class="stringliteral">&quot; %s: %d&quot;</span>, 6, <span class="stringliteral">&quot;length&quot;</span>, (<span class="keywordtype">int</span>)<a class="code" href="group__Eina__String__Buffer__Group.html#gaa6ef2a1cb7f79070508e6bf158caeccc" title="Retrieves the length of the string buffer&#39;s content.">eina_strbuf_length_get</a>(buf));
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
 
-   <a class="code" href="group__Eina__String__Buffer__Group.html#gac7ead92f4ce23c16b7a33d40ce3bf5cd" title="Removes a slice of the given string buffer.">eina_strbuf_remove</a>(buf, 0, 7);
+   <a class="code" href="group__Eina__String__Buffer__Group.html#gac7ead92f4ce23c16b7a33d40ce3bf5cd" title="Removes a section from the given string buffer.">eina_strbuf_remove</a>(buf, 0, 7);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
 
-   <a class="code" href="group__Eina__String__Buffer__Group.html#gab86cdc70b13b7f6b1c168ed2b563d600" title="Replaces all strings with an other string.">eina_strbuf_replace_all</a>(buf, <span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;size&quot;</span>);
+   <a class="code" href="group__Eina__String__Buffer__Group.html#gab86cdc70b13b7f6b1c168ed2b563d600" title="Replaces all matching substrings with another string.">eina_strbuf_replace_all</a>(buf, <span class="stringliteral">&quot;length&quot;</span>, <span class="stringliteral">&quot;size&quot;</span>);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
 </pre></div></p>
-<p>Once done we free our string buffer, shut down Eina and end the application: <div class="fragment"><pre class="fragment">
+<p>Once done we free our string buffer, shut down Eina and end the application: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf);
+
+   buf = <a class="code" href="group__Eina__String__Buffer__Group.html#ga5ae85082ac2f6a00621b4a5703850759" title="Creates a new string buffer using the passed string.">eina_strbuf_manage_read_only_new_length</a>(<span class="stringliteral">&quot;Example string&quot;</span>, 14);
+   printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
+
+   <a class="code" href="group__Eina__String__Buffer__Group.html#ga8afef8fb6f9aedcd6a81603bef0c7f86" title="Appends a character to a string buffer, reallocating as necessary.">eina_strbuf_append_char</a>(buf, <span class="charliteral">&#39;.&#39;</span>);
+   printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
+
+   <a class="code" href="group__Eina__String__Buffer__Group.html#gaad4f562f3a36881f12a4df5154e04b26" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_strbuf_append_length</a>(buf, <span class="stringliteral">&quot;Another string.&quot;</span>, 15);
+   printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get</a>(buf));
+
    <a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf);
    <a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
 

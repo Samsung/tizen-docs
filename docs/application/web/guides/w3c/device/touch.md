@@ -94,12 +94,12 @@ Learning how to handle touch events improves the user interaction of your applic
 >
 >```
 ><script>
->    touchable.addEventListener('touchmove', function(e) {
->        if (event.touches.length >= 1) {
->            log.innerHTML += '<p>Touch Event: touchmove</p>';
->            e.preventDefault(); /* Prevent default scroll action */
->        }
->    }, false);
+>     touchable.addEventListener('touchmove', function(e) {
+>         if (event.touches.length >= 1) {
+>             log.innerHTML += '<p>Touch Event: touchmove</p>';
+>             e.preventDefault(); /* Prevent default scroll action */
+>         }
+>     }, false);
 ></script>
 >```
 

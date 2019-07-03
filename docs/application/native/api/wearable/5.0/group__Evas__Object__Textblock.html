@@ -105,9 +105,9 @@ Introduction</h3>
 <h3><a class="anchor" id="textblock_cursors"></a>
 Textblock Object Cursors</h3>
 <p>A textblock Cursor is data type that represents a position in a textblock. Each cursor contains information about the paragraph it points to, the position in that paragraph and the object itself. Cursors register to textblock objects upon creation, this means that once you created a cursor, it belongs to a specific obj and you can't for example copy a cursor "into" a cursor of a different object. Registered cursors also have the added benefit of updating automatically upon textblock changes, this means that if you have a cursor pointing to a specific character, it'll still point to it even after you change the whole object completely (as long as the char was not deleted), this is not possible without updating, because as mentioned, each cursor holds a character position. There are many functions that handle cursors, just check out the evas_textblock_cursor* functions. For creation and deletion of cursors check out: </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_textblock_cursor_new() </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#ga3689177b714bfd62242826525fcc0def">evas_object_textblock_cursor_new()</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free()</a> </dd></dl>
+<a class="el" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free()</a> </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Cursors are generally the correct way to handle text in the textblock object, and there are enough functions to do everything you need with them (no need to get big chunks of text and processing them yourself).</dd></dl>
 <h3><a class="anchor" id="textblock_paragraphs"></a>
 Textblock Object Paragraphs</h3>
@@ -168,17 +168,10 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gafdc12ce69d5b4ccf1f8434d1555faee1">evas_textblock_style_free</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a> *ts)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gaf536f7e63f652e36a125006e31cf5457">evas_textblock_style_set</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a> *ts, const char *text)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga78006060e85f5ed03edddd66528c831c">evas_textblock_style_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a> *ts)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gaa97aaef2ad0653782c7ad1ca30bcb3cb">evas_object_textblock_text_markup_prepend</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, const char *text)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga27621ffac25b8542464c27f12e12572e">evas_textblock_cursor_paragraph_first</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga92e6a2f9aac93282506835e92a06dbbc">evas_textblock_cursor_paragraph_last</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga50c581abc364afaff44a86fd919d3a84">evas_textblock_cursor_paragraph_next</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gab8936b73670c805b198c5985db519a0a">evas_textblock_cursor_paragraph_prev</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <br class="typebreak"/>
 <a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga2b24d80e44cac89d2f048e158e07f93e">evas_textblock_node_format_next_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a> *n)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <br class="typebreak"/>
 <a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga0ac4a6e25756e6b35ad54f2956facbc5">evas_textblock_node_format_prev_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a> *n)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gaa86497751bf74b60391aa9d8cfdacd53">evas_textblock_cursor_set_at_format</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, const <a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a> *n)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <br class="typebreak"/>
 <a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga1776c92dfd333151300b3249346c8b81">evas_textblock_cursor_format_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gac7453960100227964987b1a8cf240b52">evas_textblock_node_format_text_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a> *fnode)</td></tr>
@@ -187,24 +180,10 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gaeafbb15af723e5f1475cf9f3030a45d4">evas_textblock_cursor_format_next</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga63ce0fd8273f7a19f455252016cc516f">evas_textblock_cursor_format_prev</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga900e91fec4b6afcceb64bf19a8710a8c">evas_textblock_cursor_is_format</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga07105f75b9cc3c6e8dfb9695d06b76b6">evas_textblock_cursor_char_next</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga73f736bddac5cd29419493b6628e18c7">evas_textblock_cursor_char_prev</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga73fe5f0707968e37570157cdd557f7e9">evas_textblock_cursor_word_start</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga30bfc9115e3424eb0fdbb5a20d90006d">evas_textblock_cursor_word_end</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gae0f1d5d336098ffa2f20cc88cc5f0b4f">evas_textblock_cursor_paragraph_char_first</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga483f4bd347c49a69188cf0e48a53c8db">evas_textblock_cursor_paragraph_char_last</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gadb340d948cabaaa37ece1aa2adaa4c11">evas_textblock_cursor_line_char_first</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gacb06bc09fd1b4b5fe5dcbcfc592f5c97">evas_textblock_cursor_line_char_last</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga26f34e45c5694208a640d1edbe1645c7">evas_textblock_cursor_pos_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gab4c4175469da1aac05b9a94352cede66">evas_textblock_cursor_pos_set</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, int pos)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga938b483be71d402a5193fb0bbe112094">evas_textblock_cursor_line_set</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, int line)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gacc51709ebde1d12e3fc43d1235048791">evas_textblock_cursor_compare</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur1, const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga7fc4731e670d010ac17af02bd88bd9ef">evas_textblock_cursor_copy</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur_dest)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gaa5005d19ed7a4527fc48ff1e179d5fb4">evas_textblock_cursor_text_append</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, const char *text)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga58beea9e502648ddd60a0de514424f93">evas_textblock_cursor_text_prepend</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, const char *text)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gae57007011f8585b841652819c389719b">evas_textblock_cursor_format_append</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, const char *format)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga8ea86312e1c124724979443f256c6830">evas_textblock_cursor_format_prepend</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, const char *format)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga89cb7b380acc84797b2ef8cb9ae22b09">evas_textblock_cursor_char_delete</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gad863c689181a25bbfd6cdc24f5452585">evas_textblock_cursor_range_delete</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur1, <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gad18404fa73fd6101619f28862d7b0524">evas_textblock_cursor_paragraph_text_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gadc09c6f9fd042cfd595ad0dbb7942008">evas_textblock_cursor_paragraph_text_length_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
@@ -212,32 +191,44 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gae165b82003593dd65e0c8a24fc40cf92">evas_textblock_cursor_range_formats_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur1, const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gacdda3c9b1ad1c9a5b16394bb6b1b68b6">evas_textblock_cursor_range_text_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur1, const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur2, <a class="el" href="group__Evas__Object__Textblock.html#ga6da153edb48c3c613ea5bb0999c7d9c2">Evas_Textblock_Text_Type</a> format)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga0c9f707f2b0ee70ceeaf7eb0a3fdd5b8">evas_textblock_cursor_content_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga8aeed68bb3c37c6c97ec1f58c9e4f084">evas_textblock_cursor_geometry_bidi_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cx, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cy, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cw, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *ch, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cx2, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cy2, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cw2, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *ch2, <a class="el" href="group__Evas__Object__Textblock.html#ga9ebe8db5023d238f6af6a27e8ca4bd5f">Evas_Textblock_Cursor_Type</a> ctype)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gad25d397f7c5b988300cff3ae21748c9a">evas_textblock_cursor_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cx, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cy, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cw, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *ch, Evas_BiDi_Direction *dir, <a class="el" href="group__Evas__Object__Textblock.html#ga9ebe8db5023d238f6af6a27e8ca4bd5f">Evas_Textblock_Cursor_Type</a> ctype)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gae386a550c8f5a19abc3fa5099a1501ad">evas_textblock_cursor_char_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cx, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cy, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cw, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *ch)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga7ba7d90d0f53ef7b04eb2beb1a9296ef">evas_textblock_cursor_pen_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cpen_x, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cy, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cadv, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *ch)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga9d97db2790587d07b40bcbaa5ab2cd79">evas_textblock_cursor_line_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cx, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cy, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cw, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *ch)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga2b4555e8cf8066d845824c3c97ef2a06">evas_textblock_cursor_char_coord_set</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> x, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> y)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gad9aad5c6bc696fe4ae8b2f648b46c2ca">evas_textblock_cursor_line_coord_set</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> y)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga8aeed68bb3c37c6c97ec1f58c9e4f084">evas_textblock_cursor_geometry_bidi_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch, Evas_Coord *cx2, Evas_Coord *cy2, Evas_Coord *cw2, Evas_Coord *ch2, <a class="el" href="group__Evas__Object__Textblock.html#ga9ebe8db5023d238f6af6a27e8ca4bd5f">Evas_Textblock_Cursor_Type</a> ctype)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gad25d397f7c5b988300cff3ae21748c9a">evas_textblock_cursor_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch, Evas_BiDi_Direction *dir, <a class="el" href="group__Evas__Object__Textblock.html#ga9ebe8db5023d238f6af6a27e8ca4bd5f">Evas_Textblock_Cursor_Type</a> ctype)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gae386a550c8f5a19abc3fa5099a1501ad">evas_textblock_cursor_char_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga7ba7d90d0f53ef7b04eb2beb1a9296ef">evas_textblock_cursor_pen_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, Evas_Coord *cpen_x, Evas_Coord *cy, Evas_Coord *cadv, Evas_Coord *ch)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga9d97db2790587d07b40bcbaa5ab2cd79">evas_textblock_cursor_line_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gad9aad5c6bc696fe4ae8b2f648b46c2ca">evas_textblock_cursor_line_coord_set</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, Evas_Coord y)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gaedca521ccf9134a83d4665acae6a7981">evas_textblock_cursor_range_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur1, const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur2)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga3660e3e1429daadf8172e013cfb0b85d">evas_textblock_cursor_range_simple_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur1, const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur2)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga117d60cdd26bfb5e6c56299a206b3f14">evas_textblock_cursor_format_item_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cx, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cy, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *cw, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *ch)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga117d60cdd26bfb5e6c56299a206b3f14">evas_textblock_cursor_format_item_geometry_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gae6a912d9bf5ecbc09f26395a36fa0f46">evas_textblock_cursor_eol_get</a> (const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *cur)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga02b7a75dc3ca5518acbe795988fa44a9">evas_textblock_cursor_char_prev</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the cursor one char backwards.  <a href="#ga02b7a75dc3ca5518acbe795988fa44a9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gacc5c8fb9b155e9b7c166ca2df75ac064">evas_textblock_cursor_char_next</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the cursor one char forward.  <a href="#gacc5c8fb9b155e9b7c166ca2df75ac064"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gab1f84ac1a501feb4bb12ba6052392ff9">evas_textblock_cursor_paragraph_next</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the cursor one grapheme cluster backwards.  <a href="#gab1f84ac1a501feb4bb12ba6052392ff9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga02f6a91c13e23026c76dfff0e84f6198">evas_textblock_cursor_paragraph_prev</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances to the end of the previous text node.  <a href="#ga02f6a91c13e23026c76dfff0e84f6198"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga266aba002c9f4c4912c85e2d0f61763c">evas_textblock_cursor_word_start</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the cursor to the start of the word under the cursor.  <a href="#ga266aba002c9f4c4912c85e2d0f61763c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga4d3df78ec381786c384f20bc400b2089">evas_textblock_cursor_word_end</a> (<a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the cursor to the end of the word under the cursor.  <a href="#ga4d3df78ec381786c384f20bc400b2089"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
-_Evas_Textblock_Style&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a></td></tr>
+_Efl_Canvas_Text_Style&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
-_Evas_Textblock_Cursor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a></td></tr>
+_Efl_Text_Cursor_Cursor&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
 _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#gada1b444fd959eb66c20459de51393918">Evas_Textblock_Rectangle</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <br class="typebreak"/>
 <a class="el" href="group__Evas__Object__Textblock.html#gad9b01d9ab970b5c8bedb29333b7f2fa9">_Evas_Textblock_Text_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga6da153edb48c3c613ea5bb0999c7d9c2">Evas_Textblock_Text_Type</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <br class="typebreak"/>
 <a class="el" href="group__Evas__Object__Textblock.html#gaba40faa1b6a6dcd55193db1e3ca31476">_Evas_Textblock_Cursor_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Textblock.html#ga9ebe8db5023d238f6af6a27e8ca4bd5f">Evas_Textblock_Cursor_Type</a></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="gadcd2409468741c89d607f06e17da1f64"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Textblock_Node_Format" ref="gadcd2409468741c89d607f06e17da1f64" args="" -->
+<a class="anchor" id="gadcd2409468741c89d607f06e17da1f64"></a><!-- doxytag: member="evas_textblock_legacy.h::Evas_Object_Textblock_Node_Format" ref="gadcd2409468741c89d607f06e17da1f64" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -252,7 +243,7 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a class="anchor" id="ga0b6c2d49d4271badfa08e89a53a1dd12"></a><!-- doxytag: member="Evas_Common.h::Evas_Textblock_Cursor" ref="ga0b6c2d49d4271badfa08e89a53a1dd12" args="" -->
+<a class="anchor" id="ga0b6c2d49d4271badfa08e89a53a1dd12"></a><!-- doxytag: member="evas_textblock_legacy.h::Evas_Textblock_Cursor" ref="ga0b6c2d49d4271badfa08e89a53a1dd12" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -263,11 +254,11 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 </div>
 <div class="memdoc">
 <p>A textblock cursor object, used to maipulate the cursor of an evas textblock </p>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_textblock_cursor_new </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#ga3689177b714bfd62242826525fcc0def">evas_object_textblock_cursor_new</a> </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga9ebe8db5023d238f6af6a27e8ca4bd5f"></a><!-- doxytag: member="Evas_Common.h::Evas_Textblock_Cursor_Type" ref="ga9ebe8db5023d238f6af6a27e8ca4bd5f" args="" -->
+<a class="anchor" id="ga9ebe8db5023d238f6af6a27e8ca4bd5f"></a><!-- doxytag: member="evas_textblock_legacy.h::Evas_Textblock_Cursor_Type" ref="ga9ebe8db5023d238f6af6a27e8ca4bd5f" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -281,7 +272,36 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a class="anchor" id="ga0936b029caf5493691f7fd523f8b885c"></a><!-- doxytag: member="Evas_Common.h::Evas_Textblock_Style" ref="ga0936b029caf5493691f7fd523f8b885c" args="" -->
+<a class="anchor" id="ga44f118ded0ae0ec5f1891513ab9ca712"></a><!-- doxytag: member="evas_textblock_legacy.h::Evas_Textblock_Node_Format" ref="ga44f118ded0ae0ec5f1891513ab9ca712" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct _Evas_Textblock_Node_Format <a class="el" href="group__Evas__Object__Textblock.html#ga44f118ded0ae0ec5f1891513ab9ca712">Evas_Textblock_Node_Format</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>A format node.</p>
+<p>XXX: Adapter for legacy. </p>
+
+</div>
+</div>
+<a class="anchor" id="gada1b444fd959eb66c20459de51393918"></a><!-- doxytag: member="evas_textblock_legacy.h::Evas_Textblock_Rectangle" ref="gada1b444fd959eb66c20459de51393918" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Evas__Object__Textblock.html#gada1b444fd959eb66c20459de51393918">Evas_Textblock_Rectangle</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>General-purpose rectangle that represents some geometry in this object. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga0936b029caf5493691f7fd523f8b885c"></a><!-- doxytag: member="evas_textblock_legacy.h::Evas_Textblock_Style" ref="ga0936b029caf5493691f7fd523f8b885c" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -300,7 +320,7 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a class="anchor" id="ga6da153edb48c3c613ea5bb0999c7d9c2"></a><!-- doxytag: member="Evas_Common.h::Evas_Textblock_Text_Type" ref="ga6da153edb48c3c613ea5bb0999c7d9c2" args="" -->
+<a class="anchor" id="ga6da153edb48c3c613ea5bb0999c7d9c2"></a><!-- doxytag: member="evas_textblock_legacy.h::Evas_Textblock_Text_Type" ref="ga6da153edb48c3c613ea5bb0999c7d9c2" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -315,7 +335,7 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 </div>
 </div>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="gaba40faa1b6a6dcd55193db1e3ca31476"></a><!-- doxytag: member="Evas_Common.h::_Evas_Textblock_Cursor_Type" ref="gaba40faa1b6a6dcd55193db1e3ca31476" args="" -->
+<a class="anchor" id="gaba40faa1b6a6dcd55193db1e3ca31476"></a><!-- doxytag: member="evas_textblock_legacy.h::_Evas_Textblock_Cursor_Type" ref="gaba40faa1b6a6dcd55193db1e3ca31476" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -339,7 +359,7 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a class="anchor" id="gad9b01d9ab970b5c8bedb29333b7f2fa9"></a><!-- doxytag: member="Evas_Common.h::_Evas_Textblock_Text_Type" ref="gad9b01d9ab970b5c8bedb29333b7f2fa9" args="" -->
+<a class="anchor" id="gad9b01d9ab970b5c8bedb29333b7f2fa9"></a><!-- doxytag: member="evas_textblock_legacy.h::_Evas_Textblock_Text_Type" ref="gad9b01d9ab970b5c8bedb29333b7f2fa9" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -367,7 +387,7 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga5059cda84291080e59bcc72ead81ca93"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_textblock_add" ref="ga5059cda84291080e59bcc72ead81ca93" args="(Evas *e)" -->
+<a class="anchor" id="ga5059cda84291080e59bcc72ead81ca93"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_add" ref="ga5059cda84291080e59bcc72ead81ca93" args="(Evas *e)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -388,13 +408,13 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new textblock object.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new textblock object. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a65">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a64">ecore_imf_example.c</a>, and <a class="el" href="evas-images2_8c-example.html#a41">evas-images2.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga672bf225c5842f7f1284d730584b79fc"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_textblock_clear" ref="ga672bf225c5842f7f1284d730584b79fc" args="(Evas_Object *obj)" -->
+<a class="anchor" id="ga672bf225c5842f7f1284d730584b79fc"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_clear" ref="ga672bf225c5842f7f1284d730584b79fc" args="(Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -416,44 +436,98 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>nothing.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>nothing. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga1b9c7f105ec2ea165477e36ce1ab304b"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_textblock_ellipsis_disabled_get" ref="ga1b9c7f105ec2ea165477e36ce1ab304b" args="(Evas_Object *eo_obj)" -->
+<a class="anchor" id="ga64f70b8bdf0d6a52dc8cd412735020a0"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_cursor_get" ref="ga64f70b8bdf0d6a52dc8cd412735020a0" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga1b9c7f105ec2ea165477e36ce1ab304b">evas_object_textblock_ellipsis_disabled_get</a> </td>
+          <td class="memname"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a>* <a class="el" href="group__Evas__Object__Textblock.html#ga64f70b8bdf0d6a52dc8cd412735020a0">evas_object_textblock_cursor_get</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>eo_obj</em></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>TIZEN_ONLY(20161011): add ellipsis_disabled_set/get APIs </p>
+<p>Get the object's main cursor. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga63ed9bdd6e88959d32b8e23bb7df1c10"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_textblock_ellipsis_disabled_set" ref="ga63ed9bdd6e88959d32b8e23bb7df1c10" args="(Evas_Object *eo_obj, Eina_Bool disabled)" -->
+<a class="anchor" id="ga3689177b714bfd62242826525fcc0def"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_cursor_new" ref="ga3689177b714bfd62242826525fcc0def" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#ga63ed9bdd6e88959d32b8e23bb7df1c10">evas_object_textblock_ellipsis_disabled_set</a> </td>
+          <td class="memname"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a>* <a class="el" href="group__Evas__Object__Textblock.html#ga3689177b714bfd62242826525fcc0def">evas_object_textblock_cursor_new</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>eo_obj</em>, </td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Create a new cursor, associate it to the obj and init it to point to the start of the textblock.</p>
+<p>Association to the object means the cursor will be updated when the object will change.</p>
+<p>Note: if you need speed and you know what you are doing, it's slightly faster to just allocate the cursor yourself and not associate it. (only people developing the actual object, and not users of the object).</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The textblock to which the new cursor will associate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns a new cursor associated with the given textblock object. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a31">ecore_imf_example.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga3bdcea22170cca11b3b7c462db594a09"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_line_number_geometry_get" ref="ga3bdcea22170cca11b3b7c462db594a09" args="(const Evas_Object *obj, int line, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga3bdcea22170cca11b3b7c462db594a09">evas_object_textblock_line_number_geometry_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
-          <td class="paramname"><em>disabled</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
+          <td class="paramname"><em>cx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
+          <td class="paramname"><em>cy</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
+          <td class="paramname"><em>cw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
+          <td class="paramname"><em>ch</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -463,43 +537,55 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
       </table>
 </div>
 <div class="memdoc">
-<p>TIZEN_ONLY(20161011): add ellipsis_disabled_set/get APIs </p>
+<p>Gets the geometry of the line specified by its number.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The textblock object to query. </td></tr>
+    <tr><td class="paramname">line</td><td>the line number of the queried line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga48799208b22ad7ae4bf354eb33aff7ef"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_textblock_ellipsis_get" ref="ga48799208b22ad7ae4bf354eb33aff7ef" args="(const Evas_Object *eo_obj)" -->
+<a class="anchor" id="gaf741afcea26a54b01fd24f04ad1bca5d"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_replace_char_get" ref="gaf741afcea26a54b01fd24f04ad1bca5d" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="group__Evas__Object__Textblock.html#ga48799208b22ad7ae4bf354eb33aff7ef">evas_object_textblock_ellipsis_get</a> </td>
+          <td class="memname">const char* <a class="el" href="group__Evas__Object__Textblock.html#gaf741afcea26a54b01fd24f04ad1bca5d">evas_object_textblock_replace_char_get</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>eo_obj</em></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>TIZEN_ONLY(20170703): Add ellipsize feature and refactory fade_ellipsis, marquee features. </p>
+
+<p>The "replacement character" to use for the given textblock object. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The charset name. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga3cab7034357e20e1e97d94fb51241028"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_textblock_ellipsis_set" ref="ga3cab7034357e20e1e97d94fb51241028" args="(Evas_Object *eo_obj, double ellipsis)" -->
+<a class="anchor" id="gaaa92786365fdba3a73746022b63c43b8"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_replace_char_set" ref="gaaa92786365fdba3a73746022b63c43b8" args="(Evas_Object *obj, const char *ch)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#ga3cab7034357e20e1e97d94fb51241028">evas_object_textblock_ellipsis_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#gaaa92786365fdba3a73746022b63c43b8">evas_object_textblock_replace_char_set</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>eo_obj</em>, </td>
+          <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>ellipsis</em>&#160;</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ch</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -509,29 +595,205 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
       </table>
 </div>
 <div class="memdoc">
-<p>TIZEN_ONLY(20170703): Add ellipsize feature and refactory fade_ellipsis, marquee features. </p>
+
+<p>The "replacement character" to use for the given textblock object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ch</td><td>The charset name. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gabdf6d0ec994b92f8778143c29ed48325"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_textblock_ellipsis_status_get" ref="gabdf6d0ec994b92f8778143c29ed48325" args="(const Evas_Object *eo_obj)" -->
+<a class="anchor" id="ga75d9551a3b549a057acb2412134ef520"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_style_get" ref="ga75d9551a3b549a057acb2412134ef520" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#gabdf6d0ec994b92f8778143c29ed48325">evas_object_textblock_ellipsis_status_get</a> </td>
+          <td class="memname"><a class="el" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a>* <a class="el" href="group__Evas__Object__Textblock.html#ga75d9551a3b549a057acb2412134ef520">evas_object_textblock_style_get</a> </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>eo_obj</em></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>TIZEN_ONLY(20160920): Add fade_ellipsis feature to TEXTBLOCK, TEXT part. </p>
+<p>Gets the object's current style.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>the object to get the style from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the current active style. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_textblock_style_user_peek() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaa97aaef2ad0653782c7ad1ca30bcb3cb"></a><!-- doxytag: member="Evas_Common.h::evas_object_textblock_text_markup_prepend" ref="gaa97aaef2ad0653782c7ad1ca30bcb3cb" args="(Evas_Textblock_Cursor *cur, const char *text)" -->
+<a class="anchor" id="ga14c222cd68f4c101dc9e52361c47c35e"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_style_set" ref="ga14c222cd68f4c101dc9e52361c47c35e" args="(Evas_Object *obj, const Evas_Textblock_Style *ts)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#ga14c222cd68f4c101dc9e52361c47c35e">evas_object_textblock_style_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a> *&#160;</td>
+          <td class="paramname"><em>ts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sets object's style to given style.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>the object we set the style on </td></tr>
+    <tr><td class="paramname">ts</td><td>the style to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_textblock_style_user_push() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a67">ecore_imf_example.c</a>, and <a class="el" href="evas-images2_8c-example.html#a45">evas-images2.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gad10f767d7d8c3d345763cb91a2f986d0"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_style_user_peek" ref="gad10f767d7d8c3d345763cb91a2f986d0" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a>* <a class="el" href="group__Evas__Object__Textblock.html#gad10f767d7d8c3d345763cb91a2f986d0">evas_object_textblock_style_user_peek</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Peeks at the user-styles stack</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>the object to get the style from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the user style at the top of the user style stack. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_textblock_style_user_pop() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6f29bfb6f82565d8143a41fa247337ea"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_style_user_pop" ref="ga6f29bfb6f82565d8143a41fa247337ea" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#ga6f29bfb6f82565d8143a41fa247337ea">evas_object_textblock_style_user_pop</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Removes the style at the top of the user-style stack</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>the object to remove the style from. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_textblock_style_user_peek() </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa45f53eac72648636aaa14669504381a"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_style_user_push" ref="gaa45f53eac72648636aaa14669504381a" args="(Evas_Object *obj, Evas_Textblock_Style *ts)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#gaa45f53eac72648636aaa14669504381a">evas_object_textblock_style_user_push</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a> *&#160;</td>
+          <td class="paramname"><em>ts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Pushes ts to the top of the user style stack.</p>
+<p>FIXME: API is solid but currently only supports 1 style in the stack.</p>
+<p>The user style overrides the corresponding elements of the regular style. This is the proper way to do theme overrides in code.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>the object to push the style. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>also <a class="el" href="group__Evas__Object__Textblock.html#gaf536f7e63f652e36a125006e31cf5457">evas_textblock_style_set()</a>.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga958d72110ffb13d78e63a4ca9981412c"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_text_markup_get" ref="ga958d72110ffb13d78e63a4ca9981412c" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Evas__Object__Textblock.html#ga958d72110ffb13d78e63a4ca9981412c">evas_object_textblock_text_markup_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets the current markup text of the textblock object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>the textblock object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the current markup text. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a29">ecore_imf_example.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gaa97aaef2ad0653782c7ad1ca30bcb3cb"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_text_markup_prepend" ref="gaa97aaef2ad0653782c7ad1ca30bcb3cb" args="(Evas_Textblock_Cursor *cur, const char *text)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -564,13 +826,113 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Return no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Return no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a34">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a35">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga81b98c8e5cc57edc08333abea11a4b2d"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_at_format_set" ref="ga81b98c8e5cc57edc08333abea11a4b2d" args="(Evas_Textblock_Cursor *cur, const Evas_Object_Textblock_Node_Format *fmt)" -->
+<a class="anchor" id="gac35fdf7b795b08a884f62cf479b9901b"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_text_markup_set" ref="gac35fdf7b795b08a884f62cf479b9901b" args="(Evas_Object *obj, const char *text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#gac35fdf7b795b08a884f62cf479b9901b">evas_object_textblock_text_markup_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sets given text as markup for the textblock object.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>assumes text does not include the unicode object replacement char (0xFFFC)</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>the textblock object. </td></tr>
+    <tr><td class="paramname">text</td><td>the markup text to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-images2_8c-example.html#a42">evas-images2.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga4738e3de546cb90256622cf65e135ec1"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_valign_get" ref="ga4738e3de546cb90256622cf65e135ec1" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="group__Evas__Object__Textblock.html#ga4738e3de546cb90256622cf65e135ec1">evas_object_textblock_valign_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The vertical alignment of text within the textblock object as a whole. </p>
+<p>Normally alignment is 0.0 (top of object). Values given should be between 0.0 and 1.0 (1.0 bottom of object, 0.5 being vertically centered etc.).</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The alignment set for the object.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad9fb017a4a458018ed8c2bb6fd2d45e4"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_object_textblock_valign_set" ref="gad9fb017a4a458018ed8c2bb6fd2d45e4" args="(Evas_Object *obj, double align)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#gad9fb017a4a458018ed8c2bb6fd2d45e4">evas_object_textblock_valign_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>align</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The vertical alignment of text within the textblock object as a whole. </p>
+<p>Normally alignment is 0.0 (top of object). Values given should be between 0.0 and 1.0 (1.0 bottom of object, 0.5 being vertically centered etc.).</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">align</td><td>The alignment set for the object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga81b98c8e5cc57edc08333abea11a4b2d"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_at_format_set" ref="ga81b98c8e5cc57edc08333abea11a4b2d" args="(Evas_Textblock_Cursor *cur, const Evas_Object_Textblock_Node_Format *fmt)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -598,7 +960,7 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">cur</td><td>the cursor to update </td></tr>
-    <tr><td class="paramname">fmt</td><td>the format to update according to.</td></tr>
+    <tr><td class="paramname">fmt</td><td>the format to update according to. </td></tr>
   </table>
   </dd>
 </dl>
@@ -606,26 +968,26 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 
 </div>
 </div>
-<a class="anchor" id="ga2b4555e8cf8066d845824c3c97ef2a06"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_char_coord_set" ref="ga2b4555e8cf8066d845824c3c97ef2a06" args="(Evas_Textblock_Cursor *cur, Evas_Coord x, Evas_Coord y)" -->
+<a class="anchor" id="gae14aea1491690a1c0b1b575e9b892518"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_char_coord_set" ref="gae14aea1491690a1c0b1b575e9b892518" args="(Evas_Textblock_Cursor *obj, Evas_Coord x, Evas_Coord y)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga2b4555e8cf8066d845824c3c97ef2a06">evas_textblock_cursor_char_coord_set</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#gae14aea1491690a1c0b1b575e9b892518">evas_textblock_cursor_char_coord_set</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *&#160;</td>
-          <td class="paramname"><em>cur</em>, </td>
+          <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
@@ -636,21 +998,20 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
       </table>
 </div>
 <div class="memdoc">
-<p>Set the position of the cursor according to the X and Y coordinates.</p>
+
+<p>Sets the position of the cursor according to the X and Y coordinates. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cur</td><td>the cursor to set. </td></tr>
-    <tr><td class="paramname">x</td><td>coord to set by. </td></tr>
-    <tr><td class="paramname">y</td><td>coord to set by. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y coord to set by.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga89cb7b380acc84797b2ef8cb9ae22b09"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_char_delete" ref="ga89cb7b380acc84797b2ef8cb9ae22b09" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga89cb7b380acc84797b2ef8cb9ae22b09"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_char_delete" ref="ga89cb7b380acc84797b2ef8cb9ae22b09" args="(Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -664,20 +1025,20 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
       </table>
 </div>
 <div class="memdoc">
-<p>Delete the character at the location of the cursor. If there's a format pointing to this position, delete it as well.</p>
+<p>Deletes a single character from position pointed by given cursor.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cur</td><td>the cursor pointing to the current location. </td></tr>
+    <tr><td class="paramname">cur</td><td>the cursor to update. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a53">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a54">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gae386a550c8f5a19abc3fa5099a1501ad"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_char_geometry_get" ref="gae386a550c8f5a19abc3fa5099a1501ad" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch)" -->
+<a class="anchor" id="gae386a550c8f5a19abc3fa5099a1501ad"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_char_geometry_get" ref="gae386a550c8f5a19abc3fa5099a1501ad" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -690,25 +1051,25 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>ch</em>&#160;</td>
         </tr>
         <tr>
@@ -730,65 +1091,55 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>line number of the char on success, -1 on error.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>line number of the char on success, -1 on error. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga07105f75b9cc3c6e8dfb9695d06b76b6"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_char_next" ref="ga07105f75b9cc3c6e8dfb9695d06b76b6" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="gacc5c8fb9b155e9b7c166ca2df75ac064"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_char_next" ref="gacc5c8fb9b155e9b7c166ca2df75ac064" args="(Evas_Textblock_Cursor *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga07105f75b9cc3c6e8dfb9695d06b76b6">evas_textblock_cursor_char_next</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#gacc5c8fb9b155e9b7c166ca2df75ac064">evas_textblock_cursor_char_next</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *&#160;</td>
-          <td class="paramname"><em>cur</em></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Advances 1 char forward.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cur</td><td>the cursor to advance. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success <code>EINA_FALSE</code> otherwise.</dd></dl>
+
+<p>Advances the cursor one char forward. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga73f736bddac5cd29419493b6628e18c7"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_char_prev" ref="ga73f736bddac5cd29419493b6628e18c7" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga02b7a75dc3ca5518acbe795988fa44a9"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_char_prev" ref="ga02b7a75dc3ca5518acbe795988fa44a9" args="(Evas_Textblock_Cursor *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga73f736bddac5cd29419493b6628e18c7">evas_textblock_cursor_char_prev</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga02b7a75dc3ca5518acbe795988fa44a9">evas_textblock_cursor_char_prev</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *&#160;</td>
-          <td class="paramname"><em>cur</em></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Advances 1 char backward.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cur</td><td>the cursor to advance. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success <code>EINA_FALSE</code> otherwise.</dd></dl>
+
+<p>Advances the cursor one char backwards. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a44">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a45">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gacc51709ebde1d12e3fc43d1235048791"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_compare" ref="gacc51709ebde1d12e3fc43d1235048791" args="(const Evas_Textblock_Cursor *cur1, const Evas_Textblock_Cursor *cur2)" -->
+<a class="anchor" id="gacc51709ebde1d12e3fc43d1235048791"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_compare" ref="gacc51709ebde1d12e3fc43d1235048791" args="(const Evas_Textblock_Cursor *cur1, const Evas_Textblock_Cursor *cur2)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -820,13 +1171,13 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>-1 if cur1 &lt; cur2, 0 if cur1 == cur2 and 1 otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>-1 if cur1 &lt; cur2, 0 if cur1 == cur2 and 1 otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a26">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a25">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga0c9f707f2b0ee70ceeaf7eb0a3fdd5b8"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_content_get" ref="ga0c9f707f2b0ee70ceeaf7eb0a3fdd5b8" args="(const Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga0c9f707f2b0ee70ceeaf7eb0a3fdd5b8"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_content_get" ref="ga0c9f707f2b0ee70ceeaf7eb0a3fdd5b8" args="(const Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -848,12 +1199,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the text in the range, terminated by a nul byte (may be utf8).</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the text in the range, terminated by a nul byte (may be utf8). </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga7fc4731e670d010ac17af02bd88bd9ef"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_copy" ref="ga7fc4731e670d010ac17af02bd88bd9ef" args="(const Evas_Textblock_Cursor *cur, Evas_Textblock_Cursor *cur_dest)" -->
+<a class="anchor" id="ga7fc4731e670d010ac17af02bd88bd9ef"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_copy" ref="ga7fc4731e670d010ac17af02bd88bd9ef" args="(const Evas_Textblock_Cursor *cur, Evas_Textblock_Cursor *cur_dest)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -885,13 +1236,13 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a43">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a44">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gae6a912d9bf5ecbc09f26395a36fa0f46"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_eol_get" ref="gae6a912d9bf5ecbc09f26395a36fa0f46" args="(const Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="gae6a912d9bf5ecbc09f26395a36fa0f46"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_eol_get" ref="gae6a912d9bf5ecbc09f26395a36fa0f46" args="(const Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -912,12 +1263,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if true, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if true, <code>EINA_FALSE</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gae57007011f8585b841652819c389719b"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_format_append" ref="gae57007011f8585b841652819c389719b" args="(Evas_Textblock_Cursor *cur, const char *format)" -->
+<a class="anchor" id="gae57007011f8585b841652819c389719b"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_format_append" ref="gae57007011f8585b841652819c389719b" args="(Evas_Textblock_Cursor *cur, const char *format)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -959,12 +1310,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the cursor points to the terminating null, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the cursor points to the terminating null, <code>EINA_FALSE</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga1776c92dfd333151300b3249346c8b81"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_format_get" ref="ga1776c92dfd333151300b3249346c8b81" args="(const Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga1776c92dfd333151300b3249346c8b81"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_format_get" ref="ga1776c92dfd333151300b3249346c8b81" args="(const Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -978,7 +1329,16 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
       </table>
 </div>
 <div class="memdoc">
-<p>Return the format node at the position pointed by cur.</p>
+<p>Sets the cursor to point to the place where format points to.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cur</td><td>the cursor to update. </td></tr>
+    <tr><td class="paramname">n</td><td>the format node to update according. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000333">Deprecated:</a></b></dt><dd>duplicate of evas_textblock_cursor_at_format_set </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 Return the format node at the position pointed by cur.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">cur</td><td>the position to look at. </td></tr>
@@ -986,12 +1346,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the format node if found, <code>NULL</code> otherwise. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#ga11e20ff8787ab159708f020f114e0b2a">evas_textblock_cursor_format_is_visible_get()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#ga11e20ff8787ab159708f020f114e0b2a">evas_textblock_cursor_format_is_visible_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga11e20ff8787ab159708f020f114e0b2a"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_format_is_visible_get" ref="ga11e20ff8787ab159708f020f114e0b2a" args="(const Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga11e20ff8787ab159708f020f114e0b2a"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_format_is_visible_get" ref="ga11e20ff8787ab159708f020f114e0b2a" args="(const Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1013,12 +1373,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the cursor points to a visible format, <code>EINA_FALSE</code> otherwise. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#ga1776c92dfd333151300b3249346c8b81">evas_textblock_cursor_format_get()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#ga1776c92dfd333151300b3249346c8b81">evas_textblock_cursor_format_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga117d60cdd26bfb5e6c56299a206b3f14"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_format_item_geometry_get" ref="ga117d60cdd26bfb5e6c56299a206b3f14" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch)" -->
+<a class="anchor" id="ga117d60cdd26bfb5e6c56299a206b3f14"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_format_item_geometry_get" ref="ga117d60cdd26bfb5e6c56299a206b3f14" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1031,25 +1391,25 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>ch</em>&#160;</td>
         </tr>
         <tr>
@@ -1064,15 +1424,15 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">cur</td><td>one side of the range. </td></tr>
-    <tr><td class="paramname">cur2</td><td>other side of the range.</td></tr>
+    <tr><td class="paramname">cur2</td><td>other side of the range. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaeafbb15af723e5f1475cf9f3030a45d4"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_format_next" ref="gaeafbb15af723e5f1475cf9f3030a45d4" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="gaeafbb15af723e5f1475cf9f3030a45d4"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_format_next" ref="gaeafbb15af723e5f1475cf9f3030a45d4" args="(Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1093,12 +1453,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success <code>EINA_FALSE</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga8ea86312e1c124724979443f256c6830"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_format_prepend" ref="ga8ea86312e1c124724979443f256c6830" args="(Evas_Textblock_Cursor *cur, const char *format)" -->
+<a class="anchor" id="ga8ea86312e1c124724979443f256c6830"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_format_prepend" ref="ga8ea86312e1c124724979443f256c6830" args="(Evas_Textblock_Cursor *cur, const char *format)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1133,12 +1493,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns true if a visible format was added, false otherwise. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#ga8ea86312e1c124724979443f256c6830">evas_textblock_cursor_format_prepend()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#ga8ea86312e1c124724979443f256c6830">evas_textblock_cursor_format_prepend()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga63ce0fd8273f7a19f455252016cc516f"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_format_prev" ref="ga63ce0fd8273f7a19f455252016cc516f" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga63ce0fd8273f7a19f455252016cc516f"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_format_prev" ref="ga63ce0fd8273f7a19f455252016cc516f" args="(Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1159,12 +1519,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success <code>EINA_FALSE</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga601d0627d1eeddf9a0309ee9b8ccbdf8"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_free" ref="ga601d0627d1eeddf9a0309ee9b8ccbdf8" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga601d0627d1eeddf9a0309ee9b8ccbdf8"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_free" ref="ga601d0627d1eeddf9a0309ee9b8ccbdf8" args="(Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1178,7 +1538,15 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
       </table>
 </div>
 <div class="memdoc">
-<p>Free the cursor and unassociate it from the object. </p>
+
+<p>Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>y coord to set by.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise. Free the cursor and unassociate it from the object. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>do not use it to free unassociated cursors.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1186,13 +1554,13 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a28">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a27">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga8aeed68bb3c37c6c97ec1f58c9e4f084"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_geometry_bidi_get" ref="ga8aeed68bb3c37c6c97ec1f58c9e4f084" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch, Evas_Coord *cx2, Evas_Coord *cy2, Evas_Coord *cw2, Evas_Coord *ch2, Evas_Textblock_Cursor_Type ctype)" -->
+<a class="anchor" id="ga8aeed68bb3c37c6c97ec1f58c9e4f084"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_geometry_bidi_get" ref="ga8aeed68bb3c37c6c97ec1f58c9e4f084" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch, Evas_Coord *cx2, Evas_Coord *cy2, Evas_Coord *cw2, Evas_Coord *ch2, Evas_Textblock_Cursor_Type ctype)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1205,49 +1573,49 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>ch</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cx2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cy2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cw2</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>ch2</em>, </td>
         </tr>
         <tr>
@@ -1282,12 +1650,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> for split cursor, <code>EINA_FALSE</code> otherwise </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gad25d397f7c5b988300cff3ae21748c9a"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_geometry_get" ref="gad25d397f7c5b988300cff3ae21748c9a" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch, Evas_BiDi_Direction *dir, Evas_Textblock_Cursor_Type ctype)" -->
+<a class="anchor" id="gad25d397f7c5b988300cff3ae21748c9a"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_geometry_get" ref="gad25d397f7c5b988300cff3ae21748c9a" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch, Evas_BiDi_Direction *dir, Evas_Textblock_Cursor_Type ctype)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1300,25 +1668,25 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>ch</em>, </td>
         </tr>
         <tr>
@@ -1355,13 +1723,13 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>line number of the char on success, -1 on error.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>line number of the char on success, -1 on error. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a20">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a19">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga900e91fec4b6afcceb64bf19a8710a8c"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_is_format" ref="ga900e91fec4b6afcceb64bf19a8710a8c" args="(const Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga900e91fec4b6afcceb64bf19a8710a8c"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_is_format" ref="ga900e91fec4b6afcceb64bf19a8710a8c" args="(const Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1382,12 +1750,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if a cursor points to a format <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if a cursor points to a format <code>EINA_FALSE</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gadb340d948cabaaa37ece1aa2adaa4c11"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_line_char_first" ref="gadb340d948cabaaa37ece1aa2adaa4c11" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="gadb340d948cabaaa37ece1aa2adaa4c11"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_line_char_first" ref="gadb340d948cabaaa37ece1aa2adaa4c11" args="(Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1401,19 +1769,29 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
       </table>
 </div>
 <div class="memdoc">
-<p>Go to the start of the current line</p>
+
+<p>Checks if two cursors are equal. </p>
+<p>This is faster than <a class="el" href="group__Evas__Object__Textblock.html#gacc51709ebde1d12e3fc43d1235048791">evas_textblock_cursor_compare</a> so it should be used if all we care about is equality.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cur</td><td>The second cursor.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if equal</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Go to the start of the current line</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">cur</td><td>the cursor to update. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gacb06bc09fd1b4b5fe5dcbcfc592f5c97"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_line_char_last" ref="gacb06bc09fd1b4b5fe5dcbcfc592f5c97" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="gacb06bc09fd1b4b5fe5dcbcfc592f5c97"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_line_char_last" ref="gacb06bc09fd1b4b5fe5dcbcfc592f5c97" args="(Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1434,12 +1812,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gad9aad5c6bc696fe4ae8b2f648b46c2ca"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_line_coord_set" ref="gad9aad5c6bc696fe4ae8b2f648b46c2ca" args="(Evas_Textblock_Cursor *cur, Evas_Coord y)" -->
+<a class="anchor" id="gad9aad5c6bc696fe4ae8b2f648b46c2ca"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_line_coord_set" ref="gad9aad5c6bc696fe4ae8b2f648b46c2ca" args="(Evas_Textblock_Cursor *cur, Evas_Coord y)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1452,7 +1830,7 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
@@ -1471,12 +1849,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the line number found, -1 on error.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the line number found, -1 on error. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga9d97db2790587d07b40bcbaa5ab2cd79"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_line_geometry_get" ref="ga9d97db2790587d07b40bcbaa5ab2cd79" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch)" -->
+<a class="anchor" id="ga9d97db2790587d07b40bcbaa5ab2cd79"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_line_geometry_get" ref="ga9d97db2790587d07b40bcbaa5ab2cd79" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cx, Evas_Coord *cy, Evas_Coord *cw, Evas_Coord *ch)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1489,25 +1867,25 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cx</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cw</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>ch</em>&#160;</td>
         </tr>
         <tr>
@@ -1529,12 +1907,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>line number of the line on success, -1 on error.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>line number of the line on success, -1 on error. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga938b483be71d402a5193fb0bbe112094"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_line_set" ref="ga938b483be71d402a5193fb0bbe112094" args="(Evas_Textblock_Cursor *cur, int line)" -->
+<a class="anchor" id="ga938b483be71d402a5193fb0bbe112094"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_line_set" ref="ga938b483be71d402a5193fb0bbe112094" args="(Evas_Textblock_Cursor *cur, int line)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1566,12 +1944,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on error.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on error. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gae0f1d5d336098ffa2f20cc88cc5f0b4f"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_paragraph_char_first" ref="gae0f1d5d336098ffa2f20cc88cc5f0b4f" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="gae0f1d5d336098ffa2f20cc88cc5f0b4f"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_paragraph_char_first" ref="gae0f1d5d336098ffa2f20cc88cc5f0b4f" args="(Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1592,12 +1970,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga483f4bd347c49a69188cf0e48a53c8db"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_paragraph_char_last" ref="ga483f4bd347c49a69188cf0e48a53c8db" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga483f4bd347c49a69188cf0e48a53c8db"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_paragraph_char_last" ref="ga483f4bd347c49a69188cf0e48a53c8db" args="(Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1618,30 +1996,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gad89ba84aed4b2e882923b683f6bc8aac"></a><!-- doxytag: member="Evas_Legacy.h::evas_textblock_cursor_paragraph_direction_get" ref="gad89ba84aed4b2e882923b683f6bc8aac" args="(const Evas_Textblock_Cursor *cur)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Evas_BiDi_Direction <a class="el" href="group__Evas__Object__Textblock.html#gad89ba84aed4b2e882923b683f6bc8aac">evas_textblock_cursor_paragraph_direction_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *&#160;</td>
-          <td class="paramname"><em>cur</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>TIZEN_ONLY(20170703): Add ellipsize feature and refactory fade_ellipsis, marquee features. </p>
-
-</div>
-</div>
-<a class="anchor" id="ga27621ffac25b8542464c27f12e12572e"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_paragraph_first" ref="ga27621ffac25b8542464c27f12e12572e" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga27621ffac25b8542464c27f12e12572e"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_paragraph_first" ref="ga27621ffac25b8542464c27f12e12572e" args="(Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1662,12 +2022,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga92e6a2f9aac93282506835e92a06dbbc"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_paragraph_last" ref="ga92e6a2f9aac93282506835e92a06dbbc" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga92e6a2f9aac93282506835e92a06dbbc"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_paragraph_last" ref="ga92e6a2f9aac93282506835e92a06dbbc" args="(Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1688,64 +2048,58 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga50c581abc364afaff44a86fd919d3a84"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_paragraph_next" ref="ga50c581abc364afaff44a86fd919d3a84" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="gab1f84ac1a501feb4bb12ba6052392ff9"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_paragraph_next" ref="gab1f84ac1a501feb4bb12ba6052392ff9" args="(Evas_Textblock_Cursor *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga50c581abc364afaff44a86fd919d3a84">evas_textblock_cursor_paragraph_next</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#gab1f84ac1a501feb4bb12ba6052392ff9">evas_textblock_cursor_paragraph_next</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *&#160;</td>
-          <td class="paramname"><em>cur</em></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Advances to the start of the next text node</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cur</td><td>the cursor to update </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it managed to advance a paragraph, <code>EINA_FALSE</code> otherwise.</dd></dl>
+
+<p>Advances the cursor one grapheme cluster backwards. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise. Advances the cursor one grapheme cluster forward.</dd>
+<dd>
+<code>true</code> on success, <code>false</code> otherwise. Advances to the start of the next text node</dd>
+<dd>
+<code>true</code> if managed to advance, <code>false</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gab8936b73670c805b198c5985db519a0a"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_paragraph_prev" ref="gab8936b73670c805b198c5985db519a0a" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga02f6a91c13e23026c76dfff0e84f6198"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_paragraph_prev" ref="ga02f6a91c13e23026c76dfff0e84f6198" args="(Evas_Textblock_Cursor *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#gab8936b73670c805b198c5985db519a0a">evas_textblock_cursor_paragraph_prev</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga02f6a91c13e23026c76dfff0e84f6198">evas_textblock_cursor_paragraph_prev</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *&#160;</td>
-          <td class="paramname"><em>cur</em></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Advances to the end of the previous text node</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cur</td><td>the cursor to update </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it managed to advance a paragraph, <code>EINA_FALSE</code> otherwise.</dd></dl>
+
+<p>Advances to the end of the previous text node. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if managed to advance, <code>false</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gad18404fa73fd6101619f28862d7b0524"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_paragraph_text_get" ref="gad18404fa73fd6101619f28862d7b0524" args="(const Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="gad18404fa73fd6101619f28862d7b0524"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_paragraph_text_get" ref="gad18404fa73fd6101619f28862d7b0524" args="(const Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1766,12 +2120,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the text on success, <code>NULL</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the text on success, <code>NULL</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gadc09c6f9fd042cfd595ad0dbb7942008"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_paragraph_text_length_get" ref="gadc09c6f9fd042cfd595ad0dbb7942008" args="(const Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="gadc09c6f9fd042cfd595ad0dbb7942008"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_paragraph_text_length_get" ref="gadc09c6f9fd042cfd595ad0dbb7942008" args="(const Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1785,19 +2139,19 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
       </table>
 </div>
 <div class="memdoc">
-<p>Return the length of the paragraph, cheaper the eina_unicode_strlen()</p>
+<p>Return the length of the paragraph, cheaper the <a class="el" href="group__Eina__Unicode__String.html#ga3c7f181ddc8beae9854cadfe0610b11f">eina_unicode_strlen()</a></p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">cur</td><td>the position of the paragraph. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the length of the paragraph on success, -1 otehrwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the length of the paragraph on success, -1 otehrwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga7ba7d90d0f53ef7b04eb2beb1a9296ef"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_pen_geometry_get" ref="ga7ba7d90d0f53ef7b04eb2beb1a9296ef" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cpen_x, Evas_Coord *cy, Evas_Coord *cadv, Evas_Coord *ch)" -->
+<a class="anchor" id="ga7ba7d90d0f53ef7b04eb2beb1a9296ef"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_pen_geometry_get" ref="ga7ba7d90d0f53ef7b04eb2beb1a9296ef" args="(const Evas_Textblock_Cursor *cur, Evas_Coord *cpen_x, Evas_Coord *cy, Evas_Coord *cadv, Evas_Coord *ch)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1810,25 +2164,25 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cpen_x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cy</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>cadv</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>ch</em>&#160;</td>
         </tr>
         <tr>
@@ -1850,12 +2204,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>line number of the char on success, -1 on error.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>line number of the char on success, -1 on error. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga26f34e45c5694208a640d1edbe1645c7"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_pos_get" ref="ga26f34e45c5694208a640d1edbe1645c7" args="(const Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga26f34e45c5694208a640d1edbe1645c7"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_pos_get" ref="ga26f34e45c5694208a640d1edbe1645c7" args="(const Evas_Textblock_Cursor *cur)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1876,18 +2230,18 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the position or -1 on error</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the position or -1 on error </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a22">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a21">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gab4c4175469da1aac05b9a94352cede66"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_pos_set" ref="gab4c4175469da1aac05b9a94352cede66" args="(Evas_Textblock_Cursor *cur, int pos)" -->
+<a class="anchor" id="gaa2be92d419712069399b4dfacada0125"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_pos_set" ref="gaa2be92d419712069399b4dfacada0125" args="(Evas_Textblock_Cursor *cur, int _pos)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#gab4c4175469da1aac05b9a94352cede66">evas_textblock_cursor_pos_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#gaa2be92d419712069399b4dfacada0125">evas_textblock_cursor_pos_set</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *&#160;</td>
           <td class="paramname"><em>cur</em>, </td>
@@ -1896,7 +2250,7 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>pos</em>&#160;</td>
+          <td class="paramname"><em>_pos</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1910,16 +2264,16 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">cur</td><td>the cursor to be set. </td></tr>
-    <tr><td class="paramname">pos</td><td>the pos to set.</td></tr>
+    <tr><td class="paramname">pos</td><td>the pos to set. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a31">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a32">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gad863c689181a25bbfd6cdc24f5452585"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_range_delete" ref="gad863c689181a25bbfd6cdc24f5452585" args="(Evas_Textblock_Cursor *cur1, Evas_Textblock_Cursor *cur2)" -->
+<a class="anchor" id="gad863c689181a25bbfd6cdc24f5452585"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_range_delete" ref="gad863c689181a25bbfd6cdc24f5452585" args="(Evas_Textblock_Cursor *cur1, Evas_Textblock_Cursor *cur2)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1951,13 +2305,13 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a27">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a26">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gae165b82003593dd65e0c8a24fc40cf92"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_range_formats_get" ref="gae165b82003593dd65e0c8a24fc40cf92" args="(const Evas_Textblock_Cursor *cur1, const Evas_Textblock_Cursor *cur2)" -->
+<a class="anchor" id="gae165b82003593dd65e0c8a24fc40cf92"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_range_formats_get" ref="gae165b82003593dd65e0c8a24fc40cf92" args="(const Evas_Textblock_Cursor *cur1, const Evas_Textblock_Cursor *cur2)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -1990,12 +2344,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the foramt nodes in the range. You have to free it. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaedca521ccf9134a83d4665acae6a7981"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_range_geometry_get" ref="gaedca521ccf9134a83d4665acae6a7981" args="(const Evas_Textblock_Cursor *cur1, const Evas_Textblock_Cursor *cur2)" -->
+<a class="anchor" id="gaedca521ccf9134a83d4665acae6a7981"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_range_geometry_get" ref="gaedca521ccf9134a83d4665acae6a7981" args="(const Evas_Textblock_Cursor *cur1, const Evas_Textblock_Cursor *cur2)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2027,12 +2381,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>a list of Rectangles representing the geometry of the range.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a list of Rectangles representing the geometry of the range. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga3660e3e1429daadf8172e013cfb0b85d"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_range_simple_geometry_get" ref="ga3660e3e1429daadf8172e013cfb0b85d" args="(const Evas_Textblock_Cursor *cur1, const Evas_Textblock_Cursor *cur2)" -->
+<a class="anchor" id="ga3660e3e1429daadf8172e013cfb0b85d"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_range_simple_geometry_get" ref="ga3660e3e1429daadf8172e013cfb0b85d" args="(const Evas_Textblock_Cursor *cur1, const Evas_Textblock_Cursor *cur2)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2065,12 +2419,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>an iterator of rectangles representing the geometry of the range.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>an iterator of rectangles representing the geometry of the range. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gacdda3c9b1ad1c9a5b16394bb6b1b68b6"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_range_text_get" ref="gacdda3c9b1ad1c9a5b16394bb6b1b68b6" args="(const Evas_Textblock_Cursor *cur1, const Evas_Textblock_Cursor *cur2, Evas_Textblock_Text_Type format)" -->
+<a class="anchor" id="gacdda3c9b1ad1c9a5b16394bb6b1b68b6"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_range_text_get" ref="gacdda3c9b1ad1c9a5b16394bb6b1b68b6" args="(const Evas_Textblock_Cursor *cur1, const Evas_Textblock_Cursor *cur2, Evas_Textblock_Text_Type format)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2110,49 +2464,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the text in the range </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Entry.html#ga392b880bf54069ebb4425918ca573748">elm_entry_markup_to_utf8()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Entry.html#ga392b880bf54069ebb4425918ca573748">elm_entry_markup_to_utf8()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaa86497751bf74b60391aa9d8cfdacd53"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_set_at_format" ref="gaa86497751bf74b60391aa9d8cfdacd53" args="(Evas_Textblock_Cursor *cur, const Evas_Object_Textblock_Node_Format *n)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Evas__Object__Textblock.html#gaa86497751bf74b60391aa9d8cfdacd53">evas_textblock_cursor_set_at_format</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *&#160;</td>
-          <td class="paramname"><em>cur</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a> *&#160;</td>
-          <td class="paramname"><em>n</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Sets the cursor to point to the place where format points to.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cur</td><td>the cursor to update. </td></tr>
-    <tr><td class="paramname">n</td><td>the format node to update according.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000256">Deprecated:</a></b></dt><dd>Use evas_textblock_cursor_at_format_set instead Deprecated since Tizen 2.4 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaa5005d19ed7a4527fc48ff1e179d5fb4"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_text_append" ref="gaa5005d19ed7a4527fc48ff1e179d5fb4" args="(Evas_Textblock_Cursor *cur, const char *text)" -->
+<a class="anchor" id="gaa5005d19ed7a4527fc48ff1e179d5fb4"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_text_append" ref="gaa5005d19ed7a4527fc48ff1e179d5fb4" args="(Evas_Textblock_Cursor *cur, const char *text)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2185,12 +2502,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns the len of the text added. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#ga58beea9e502648ddd60a0de514424f93">evas_textblock_cursor_text_prepend()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#ga58beea9e502648ddd60a0de514424f93">evas_textblock_cursor_text_prepend()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga58beea9e502648ddd60a0de514424f93"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_text_prepend" ref="ga58beea9e502648ddd60a0de514424f93" args="(Evas_Textblock_Cursor *cur, const char *text)" -->
+<a class="anchor" id="ga58beea9e502648ddd60a0de514424f93"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_text_prepend" ref="ga58beea9e502648ddd60a0de514424f93" args="(Evas_Textblock_Cursor *cur, const char *text)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2223,12 +2540,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Returns the len of the text added. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#gaa5005d19ed7a4527fc48ff1e179d5fb4">evas_textblock_cursor_text_append()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Textblock.html#gaa5005d19ed7a4527fc48ff1e179d5fb4">evas_textblock_cursor_text_append()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga85c1d3a7fa73337c06e3f93018aac70f"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_visible_range_get" ref="ga85c1d3a7fa73337c06e3f93018aac70f" args="(Evas_Textblock_Cursor *start, Evas_Textblock_Cursor *end)" -->
+<a class="anchor" id="ga85c1d3a7fa73337c06e3f93018aac70f"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_visible_range_get" ref="ga85c1d3a7fa73337c06e3f93018aac70f" args="(Evas_Textblock_Cursor *start, Evas_Textblock_Cursor *end)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2261,66 +2578,54 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga30bfc9115e3424eb0fdbb5a20d90006d"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_word_end" ref="ga30bfc9115e3424eb0fdbb5a20d90006d" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga4d3df78ec381786c384f20bc400b2089"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_word_end" ref="ga4d3df78ec381786c384f20bc400b2089" args="(Evas_Textblock_Cursor *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga30bfc9115e3424eb0fdbb5a20d90006d">evas_textblock_cursor_word_end</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga4d3df78ec381786c384f20bc400b2089">evas_textblock_cursor_word_end</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *&#160;</td>
-          <td class="paramname"><em>cur</em></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Moves the cursor to the end of the word under the cursor.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cur</td><td>the cursor to move. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success <code>EINA_FALSE</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
+
+<p>Moves the cursor to the end of the word under the cursor. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga73fe5f0707968e37570157cdd557f7e9"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_cursor_word_start" ref="ga73fe5f0707968e37570157cdd557f7e9" args="(Evas_Textblock_Cursor *cur)" -->
+<a class="anchor" id="ga266aba002c9f4c4912c85e2d0f61763c"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_cursor_word_start" ref="ga266aba002c9f4c4912c85e2d0f61763c" args="(Evas_Textblock_Cursor *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga73fe5f0707968e37570157cdd557f7e9">evas_textblock_cursor_word_start</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Textblock.html#ga266aba002c9f4c4912c85e2d0f61763c">evas_textblock_cursor_word_start</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#ga0b6c2d49d4271badfa08e89a53a1dd12">Evas_Textblock_Cursor</a> *&#160;</td>
-          <td class="paramname"><em>cur</em></td><td>)</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Moves the cursor to the start of the word under the cursor.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cur</td><td>the cursor to move. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success <code>EINA_FALSE</code> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
+
+<p>Moves the cursor to the start of the word under the cursor. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gac061056160387d944cfb5cd06e1f0ed2"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_escape_string_get" ref="gac061056160387d944cfb5cd06e1f0ed2" args="(const char *escape)" -->
+<a class="anchor" id="gac061056160387d944cfb5cd06e1f0ed2"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_escape_string_get" ref="gac061056160387d944cfb5cd06e1f0ed2" args="(const char *escape)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2341,12 +2646,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the unescaped version of escape</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the unescaped version of escape </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gab3fba1153f4fb4a9ad58ed6611f78579"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_escape_string_range_get" ref="gab3fba1153f4fb4a9ad58ed6611f78579" args="(const char *escape_start, const char *escape_end)" -->
+<a class="anchor" id="gab3fba1153f4fb4a9ad58ed6611f78579"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_escape_string_range_get" ref="gab3fba1153f4fb4a9ad58ed6611f78579" args="(const char *escape_start, const char *escape_end)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2378,12 +2683,101 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the unescaped version of the range</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the unescaped version of the range </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga2b24d80e44cac89d2f048e158e07f93e"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_node_format_next_get" ref="ga2b24d80e44cac89d2f048e158e07f93e" args="(const Evas_Object_Textblock_Node_Format *n)" -->
+<a class="anchor" id="gae635d9cae9ffbc6d7f6d8f36755e19b6"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_node_format_first_get" ref="gae635d9cae9ffbc6d7f6d8f36755e19b6" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a>* <a class="el" href="group__Evas__Object__Textblock.html#gae635d9cae9ffbc6d7f6d8f36755e19b6">evas_textblock_node_format_first_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets the first format node</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The textblock object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the first format node. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga48b5c291af321e37bc854acffc83c273"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_node_format_last_get" ref="ga48b5c291af321e37bc854acffc83c273" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a>* <a class="el" href="group__Evas__Object__Textblock.html#ga48b5c291af321e37bc854acffc83c273">evas_textblock_node_format_last_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets the last format node</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The textblock object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the first format node. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga56a56d89d0b03735cc340b1eb393d9d2"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_node_format_list_get" ref="ga56a56d89d0b03735cc340b1eb393d9d2" args="(const Evas_Object *obj, const char *anchor)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a>* <a class="el" href="group__Evas__Object__Textblock.html#ga56a56d89d0b03735cc340b1eb393d9d2">evas_textblock_node_format_list_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>anchor</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets a list of format nodes that match given format.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The textblock object to query. </td></tr>
+    <tr><td class="paramname">anchor</td><td>The format to find in the textblock. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns a list of format nodes that match the given format. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2b24d80e44cac89d2f048e158e07f93e"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_node_format_next_get" ref="ga2b24d80e44cac89d2f048e158e07f93e" args="(const Evas_Object_Textblock_Node_Format *n)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2404,12 +2798,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the next format node, may be null.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the next format node, may be null. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga0ac4a6e25756e6b35ad54f2956facbc5"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_node_format_prev_get" ref="ga0ac4a6e25756e6b35ad54f2956facbc5" args="(const Evas_Object_Textblock_Node_Format *n)" -->
+<a class="anchor" id="ga0ac4a6e25756e6b35ad54f2956facbc5"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_node_format_prev_get" ref="ga0ac4a6e25756e6b35ad54f2956facbc5" args="(const Evas_Object_Textblock_Node_Format *n)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2430,12 +2824,49 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the prev format node, may be null.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns the prev format node, may be null. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gac7453960100227964987b1a8cf240b52"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_node_format_text_get" ref="gac7453960100227964987b1a8cf240b52" args="(const Evas_Object_Textblock_Node_Format *fnode)" -->
+<a class="anchor" id="gafdc85032b029c7e9622c714e3ab5e1d4"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_node_format_remove_pair" ref="gafdc85032b029c7e9622c714e3ab5e1d4" args="(Evas_Object *obj, Evas_Object_Textblock_Node_Format *n)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Textblock.html#gafdc85032b029c7e9622c714e3ab5e1d4">evas_textblock_node_format_remove_pair</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Textblock.html#gadcd2409468741c89d607f06e17da1f64">Evas_Object_Textblock_Node_Format</a> *&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Removes format node and its matching format node.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The textblock object. </td></tr>
+    <tr><td class="paramname">n</td><td>The format node to remove. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac7453960100227964987b1a8cf240b52"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_node_format_text_get" ref="gac7453960100227964987b1a8cf240b52" args="(const Evas_Object_Textblock_Node_Format *fnode)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2456,12 +2887,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the textual format of the format node.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the textual format of the format node. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga5b48e6443ca36d06e876032096e8b3de"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_string_escape_get" ref="ga5b48e6443ca36d06e876032096e8b3de" args="(const char *string, int *len_ret)" -->
+<a class="anchor" id="ga5b48e6443ca36d06e876032096e8b3de"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_string_escape_get" ref="ga5b48e6443ca36d06e876032096e8b3de" args="(const char *string, int *len_ret)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2493,12 +2924,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the escaped string.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the escaped string. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gafdc12ce69d5b4ccf1f8434d1555faee1"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_style_free" ref="gafdc12ce69d5b4ccf1f8434d1555faee1" args="(Evas_Textblock_Style *ts)" -->
+<a class="anchor" id="gafdc12ce69d5b4ccf1f8434d1555faee1"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_style_free" ref="gafdc12ce69d5b4ccf1f8434d1555faee1" args="(Evas_Textblock_Style *ts)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2515,16 +2946,16 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 <p>Destroys a textblock style. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">ts</td><td>The textblock style to free.</td></tr>
+    <tr><td class="paramname">ts</td><td>The textblock style to free. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a84">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a78">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga78006060e85f5ed03edddd66528c831c"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_style_get" ref="ga78006060e85f5ed03edddd66528c831c" args="(const Evas_Textblock_Style *ts)" -->
+<a class="anchor" id="ga78006060e85f5ed03edddd66528c831c"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_style_get" ref="ga78006060e85f5ed03edddd66528c831c" args="(const Evas_Textblock_Style *ts)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2545,12 +2976,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the text of the style or null on error.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the text of the style or null on error. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga5047d80b99150342ce3cd5518b474df8"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_style_new" ref="ga5047d80b99150342ce3cd5518b474df8" args="(void)" -->
+<a class="anchor" id="ga5047d80b99150342ce3cd5518b474df8"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_style_new" ref="ga5047d80b99150342ce3cd5518b474df8" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2565,13 +2996,13 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
 </div>
 <div class="memdoc">
 <p>Creates a new textblock style. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new textblock style.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new textblock style. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a66">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a65">ecore_imf_example.c</a>, and <a class="el" href="evas-images2_8c-example.html#a43">evas-images2.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gaf536f7e63f652e36a125006e31cf5457"></a><!-- doxytag: member="Evas_Common.h::evas_textblock_style_set" ref="gaf536f7e63f652e36a125006e31cf5457" args="(Evas_Textblock_Style *ts, const char *text)" -->
+<a class="anchor" id="gaf536f7e63f652e36a125006e31cf5457"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_style_set" ref="gaf536f7e63f652e36a125006e31cf5457" args="(Evas_Textblock_Style *ts, const char *text)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2603,13 +3034,13 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Returns no value. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a67">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a66">ecore_imf_example.c</a>, and <a class="el" href="evas-images2_8c-example.html#a44">evas-images2.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga40c0111a6637ceee072e9f60a604a5c5"></a><!-- doxytag: member="Evas_Legacy.h::evas_textblock_text_markup_to_utf8" ref="ga40c0111a6637ceee072e9f60a604a5c5" args="(const Evas_Object *obj, const char *text)" -->
+<a class="anchor" id="ga40c0111a6637ceee072e9f60a604a5c5"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_text_markup_to_utf8" ref="ga40c0111a6637ceee072e9f60a604a5c5" args="(const Evas_Object *obj, const char *text)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2646,12 +3077,12 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An allocated plain text version of the markup. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gad6a66ad9bc1127a20494d7d22880ba4f"></a><!-- doxytag: member="Evas_Legacy.h::evas_textblock_text_utf8_to_markup" ref="gad6a66ad9bc1127a20494d7d22880ba4f" args="(const Evas_Object *obj, const char *text)" -->
+<a class="anchor" id="gad6a66ad9bc1127a20494d7d22880ba4f"></a><!-- doxytag: member="evas_textblock_legacy.h::evas_textblock_text_utf8_to_markup" ref="gad6a66ad9bc1127a20494d7d22880ba4f" args="(const Evas_Object *obj, const char *text)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -2685,7 +3116,7 @@ _Evas_Textblock_Node_Format&#160;</td><td class="memItemRight" valign="bottom"><
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An allocated markup version of the plain text. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>

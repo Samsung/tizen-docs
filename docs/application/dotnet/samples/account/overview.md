@@ -26,14 +26,14 @@ for TD:
 			<td><img alt="" height="267" src="media/m39oauth2sample.png" width="150"/></td>
 			<td>
 			<p><strong>(M) OAuth2Sample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to manage access code and token using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.OAuth2.html" target="_blank">Tizen.Account.OAuth2 C# API</a>.</p>
+			<p>This sample application demonstrates how to manage access code and token using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.html" target="_blank">Tizen.Account.OAuth2</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m21sampleaccount2.png" width="150"/></td>
 			<td>
-			<p><strong>(M) SampleAccount</strong> [In progress]</p>
-			<p>This sample application demonstrates how to implement an account provider, which adds and configures an account.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Accounts" target="_blank"><strong>(M) SampleAccount</strong></a></p>
+			<p>This sample application demonstrates how to implement an account provider, which adds and configures an account using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Account.AccountManager.html" target="_blank">Tizen.Account.AccountManager</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -54,7 +54,7 @@ for TD:
 			<td><img alt="" height="180" src="media/waccounts.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Accounts" target="_blank"><strong>(W) Accounts</strong></a></p>
-			<p>This sample application demonstrates how to implement an account provider, which can add and configure an account. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to implement an account provider, which adds and configures an account using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Account.AccountManager.html" target="_blank">Tizen.Account.AccountManager</a>. It also demonstrates how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 		<tr>

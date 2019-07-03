@@ -104,10 +104,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="#a5566e46b659c5e88baa50ee78c6932fd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1TouchEvent.html#a26786bdba9949208868b29a5bd8c7952">~TouchEvent</a> () DALI_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a26786bdba9949208868b29a5bd8c7952"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1TouchEvent.html#a788f58b6015dd051947cdc0ea2c87f29">GetPointCount</a> () const DALI_DEPRECATED_API</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of points in this <a class="el" href="structDali_1_1TouchEvent.html" title="Touch events are a collection of touch points at a specific moment in time.">TouchEvent</a>.  <a href="#a788f58b6015dd051947cdc0ea2c87f29"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDali_1_1TouchPoint.html">TouchPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1TouchEvent.html#aaebf942ba1bc68aecc746f702631705f">GetPoint</a> (unsigned int point) const DALI_DEPRECATED_API</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a touch point at the index requested.  <a href="#aaebf942ba1bc68aecc746f702631705f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1TouchEvent.html#a90cc6f6729e08cff0d17cdfa59fc6520">GetPointCount</a> () const DALI_DEPRECATED_API</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of points in this <a class="el" href="structDali_1_1TouchEvent.html" title="Touch events are a collection of touch points at a specific moment in time.">TouchEvent</a>.  <a href="#a90cc6f6729e08cff0d17cdfa59fc6520"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structDali_1_1TouchPoint.html">TouchPoint</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1TouchEvent.html#a7345a88647a01cfb3dd833130a9fdb78">GetPoint</a> (uint32_t point) const DALI_DEPRECATED_API</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a touch point at the index requested.  <a href="#a7345a88647a01cfb3dd833130a9fdb78"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__dali__core__events.html#ga0b7a02bd217232f3f0ec953a3995b186">TouchPointContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structDali_1_1TouchEvent.html#a20019fb15a0856e34ad8ecf366bad3ae">points</a></td></tr>
@@ -189,14 +189,14 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
-<a class="anchor" id="aaebf942ba1bc68aecc746f702631705f"></a><!-- doxytag: member="Dali::TouchEvent::GetPoint" ref="aaebf942ba1bc68aecc746f702631705f" args="(unsigned int point) const DALI_DEPRECATED_API" -->
+<a class="anchor" id="a7345a88647a01cfb3dd833130a9fdb78"></a><!-- doxytag: member="Dali::TouchEvent::GetPoint" ref="a7345a88647a01cfb3dd833130a9fdb78" args="(uint32_t point) const DALI_DEPRECATED_API" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="structDali_1_1TouchPoint.html">TouchPoint</a>&amp; <a class="el" href="structDali_1_1TouchEvent.html#aaebf942ba1bc68aecc746f702631705f">Dali::TouchEvent::GetPoint</a> </td>
+          <td class="memname">const <a class="el" href="structDali_1_1TouchPoint.html">TouchPoint</a>&amp; <a class="el" href="structDali_1_1TouchEvent.html#a7345a88647a01cfb3dd833130a9fdb78">Dali::TouchEvent::GetPoint</a> </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>point</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -215,16 +215,16 @@ Public Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Point requested </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>"point" should be less than the value returned by <a class="el" href="structDali_1_1TouchEvent.html#a788f58b6015dd051947cdc0ea2c87f29" title="Returns the total number of points in this TouchEvent.">GetPointCount()</a>. If out of range, then program asserts. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>"point" should be less than the value returned by <a class="el" href="structDali_1_1TouchEvent.html#a90cc6f6729e08cff0d17cdfa59fc6520" title="Returns the total number of points in this TouchEvent.">GetPointCount()</a>. If out of range, then program asserts. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a788f58b6015dd051947cdc0ea2c87f29"></a><!-- doxytag: member="Dali::TouchEvent::GetPointCount" ref="a788f58b6015dd051947cdc0ea2c87f29" args="() const DALI_DEPRECATED_API" -->
+<a class="anchor" id="a90cc6f6729e08cff0d17cdfa59fc6520"></a><!-- doxytag: member="Dali::TouchEvent::GetPointCount" ref="a90cc6f6729e08cff0d17cdfa59fc6520" args="() const DALI_DEPRECATED_API" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="structDali_1_1TouchEvent.html#a788f58b6015dd051947cdc0ea2c87f29">Dali::TouchEvent::GetPointCount</a> </td>
+          <td class="memname">uint32_t <a class="el" href="structDali_1_1TouchEvent.html#a90cc6f6729e08cff0d17cdfa59fc6520">Dali::TouchEvent::GetPointCount</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

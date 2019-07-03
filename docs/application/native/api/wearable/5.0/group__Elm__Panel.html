@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Panel</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>A panel is an animated side-panel that contains a sub-object. It can be expanded or contracted by clicking the button on its edge. </p>
@@ -103,13 +103,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
  <p>Orientations are as follows: </p>
 <ul>
-<li>#ELM_PANEL_ORIENT_TOP </li>
+<li><a class="el" href="group__Elm__Panel.html#gga5bde2896bce9792babf57a8373796bc4a39eacc76270ea5367e7d2fa7d31e9c42">ELM_PANEL_ORIENT_TOP</a> </li>
 <li><a class="el" href="group__Elm__Panel.html#gga5bde2896bce9792babf57a8373796bc4a73e1b30712af90246f64c4b771156c8f">ELM_PANEL_ORIENT_LEFT</a> </li>
 <li><a class="el" href="group__Elm__Panel.html#gga5bde2896bce9792babf57a8373796bc4a036d49b9f166a357ab475d4d0e71a615">ELM_PANEL_ORIENT_RIGHT</a> </li>
 <li><a class="el" href="group__Elm__Panel.html#gga5bde2896bce9792babf57a8373796bc4ae7d5669b38a83624b13c47a18ee41ef5">ELM_PANEL_ORIENT_BOTTOM</a></li>
 </ul>
-<p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for panel objects (since 1.8).</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout: </p>
+<p>This widget inherits from the Layout one, so that all the functions acting on it also work for panel objects (since 1.8).</p>
+<p>This widget emits the following signals, besides the ones sent from Layout: </p>
 <ul>
 <li><code>"toggled"</code> : When the panel has been toggled. (since 1.18) </li>
 <li><code>"scroll"</code> : When the content has been scrolled (moved). (since 1.10) This signal is emitted only when the panel is scrollable. Elm_Panel_Scroll_Info will be passed by <code>event_info</code> argument. </li>
@@ -138,9 +138,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the state of the scrollability.  <a href="#ga464c1bdbd1f52980bc07347616d2103f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Panel.html#ga81fa92a2e93ac3194ae079c405397dfc">elm_panel_scrollable_content_size_set</a> (Elm_Panel *obj, double ratio)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the size of the scrollable panel.  <a href="#ga81fa92a2e93ac3194ae079c405397dfc"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Panel.html#ga9a131a010bd735022a1bf44f1cad757a">elm_panel_scrollable_content_size_get</a> (const Elm_Panel *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Panel.html#ga05f58bdb38c6714e015442c3f2ae524c">elm_panel_toggle</a> (Elm_Panel *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle the hidden state of the panel from code.  <a href="#ga05f58bdb38c6714e015442c3f2ae524c"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the size of the scrollable panel.  <a href="#ga05f58bdb38c6714e015442c3f2ae524c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Panel.html#ga952990e3a7e7b13a9dab33f189de0783">elm_panel_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a panel object.  <a href="#ga952990e3a7e7b13a9dab33f189de0783"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -177,14 +176,17 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 <p>Panel orientation mode </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga5bde2896bce9792babf57a8373796bc4ae7d5669b38a83624b13c47a18ee41ef5"></a><!-- doxytag: member="ELM_PANEL_ORIENT_BOTTOM" ref="gga5bde2896bce9792babf57a8373796bc4ae7d5669b38a83624b13c47a18ee41ef5" args="" -->ELM_PANEL_ORIENT_BOTTOM</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="gga5bde2896bce9792babf57a8373796bc4a39eacc76270ea5367e7d2fa7d31e9c42"></a><!-- doxytag: member="ELM_PANEL_ORIENT_TOP" ref="gga5bde2896bce9792babf57a8373796bc4a39eacc76270ea5367e7d2fa7d31e9c42" args="" -->ELM_PANEL_ORIENT_TOP</em>&nbsp;</td><td>
 <p>Panel (dis)appears from the top </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga5bde2896bce9792babf57a8373796bc4a73e1b30712af90246f64c4b771156c8f"></a><!-- doxytag: member="ELM_PANEL_ORIENT_LEFT" ref="gga5bde2896bce9792babf57a8373796bc4a73e1b30712af90246f64c4b771156c8f" args="" -->ELM_PANEL_ORIENT_LEFT</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="gga5bde2896bce9792babf57a8373796bc4ae7d5669b38a83624b13c47a18ee41ef5"></a><!-- doxytag: member="ELM_PANEL_ORIENT_BOTTOM" ref="gga5bde2896bce9792babf57a8373796bc4ae7d5669b38a83624b13c47a18ee41ef5" args="" -->ELM_PANEL_ORIENT_BOTTOM</em>&nbsp;</td><td>
 <p>Panel (dis)appears from the bottom </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5bde2896bce9792babf57a8373796bc4a73e1b30712af90246f64c4b771156c8f"></a><!-- doxytag: member="ELM_PANEL_ORIENT_LEFT" ref="gga5bde2896bce9792babf57a8373796bc4a73e1b30712af90246f64c4b771156c8f" args="" -->ELM_PANEL_ORIENT_LEFT</em>&nbsp;</td><td>
+<p>Panel (dis)appears from the left </p>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga5bde2896bce9792babf57a8373796bc4a036d49b9f166a357ab475d4d0e71a615"></a><!-- doxytag: member="ELM_PANEL_ORIENT_RIGHT" ref="gga5bde2896bce9792babf57a8373796bc4a036d49b9f166a357ab475d4d0e71a615" args="" -->ELM_PANEL_ORIENT_RIGHT</em>&nbsp;</td><td>
-<p>Panel (dis)appears from the left Panel (dis)appears from the right </p>
+<p>Panel (dis)appears from the right </p>
 </td></tr>
 </table>
 </dd>
@@ -215,9 +217,10 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The panel object, or NULL on failure</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The panel object, or NULL on failure </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a10">panel_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga4a22dfc575fe35ded998ae4ec2fd925d"></a><!-- doxytag: member="elm_panel.eo.legacy.h::elm_panel_hidden_get" ref="ga4a22dfc575fe35ded998ae4ec2fd925d" args="(const Elm_Panel *obj)" -->
@@ -236,14 +239,14 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the state of the panel. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>If true, the panel will run the animation to disappear. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the panel will run the animation to disappear. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -273,15 +276,16 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Set the state of the panel. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">hidden</td><td>If true, the panel will run the animation to disappear. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">hidden</td><td>If <code>true</code>, the panel will run the animation to disappear. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a17">panel_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga80bcd85c526a31b4257efae3518ea4aa"></a><!-- doxytag: member="elm_panel.eo.legacy.h::elm_panel_orient_get" ref="ga80bcd85c526a31b4257efae3518ea4aa" args="(const Elm_Panel *obj)" -->
@@ -300,7 +304,6 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the orientation of the panel. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -308,6 +311,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The panel orientation. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -338,7 +342,6 @@ Typedefs</h2></td></tr>
 
 <p>Set the orientation of the panel. </p>
 <p>Set from where the panel will (dis)appear.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -346,26 +349,9 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="ga9a131a010bd735022a1bf44f1cad757a"></a><!-- doxytag: member="elm_panel.eo.legacy.h::elm_panel_scrollable_content_size_get" ref="ga9a131a010bd735022a1bf44f1cad757a" args="(const Elm_Panel *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">double <a class="el" href="group__Elm__Panel.html#ga9a131a010bd735022a1bf44f1cad757a">elm_panel_scrollable_content_size_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const Elm_Panel *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get the size of the scrollable panel.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a11">panel_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga81fa92a2e93ac3194ae079c405397dfc"></a><!-- doxytag: member="elm_panel.eo.legacy.h::elm_panel_scrollable_content_size_set" ref="ga81fa92a2e93ac3194ae079c405397dfc" args="(Elm_Panel *obj, double ratio)" -->
@@ -394,14 +380,14 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Set the size of the scrollable panel. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">ratio</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ratio</td><td>Size ratio </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -421,7 +407,6 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the state of the scrollability. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -430,6 +415,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The scrollable state.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -459,7 +445,6 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Set the scrollability of the panel. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -467,6 +452,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -485,15 +471,18 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Toggle the hidden state of the panel from code. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<p>Get the size of the scrollable panel. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="return"><dt><b>Returns:</b></dt><dd>Size ratio</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Toggle the hidden state of the panel from code </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panel_example_01_8c-example.html#a13">panel_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

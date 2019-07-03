@@ -723,7 +723,7 @@ By default, <em>makeParents</em> is equal to <var>true</var>.
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-  console.log("An error occured, during directory creation: " + error.message);
+  console.log("An error occurred, during directory creation: " + error.message);
 }
 
 function successCallback(path)
@@ -814,7 +814,7 @@ NotFoundError, if the <em>path</em> does not point to an existing file.         
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-  console.log("An error occured, during file deletion: " + error.message);
+  console.log("An error occurred, during file deletion: " + error.message);
 }
 
 function successCallback(path)
@@ -910,7 +910,7 @@ By default, <em>recursive</em> is equal to <var>true</var>.
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-  console.log("An error occured, during directory deletion: " + error.message);
+  console.log("An error occurred, during directory deletion: " + error.message);
 }
 
 function successCallback(path)
@@ -1013,7 +1013,7 @@ By default, <em>overwrite</em> is equal to <var>false</var>.
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-  console.log("An error occured, during copy operation: " + error.message);
+  console.log("An error occurred, during copy operation: " + error.message);
 }
 
 function successCallback(path)
@@ -1121,7 +1121,7 @@ By default, <em>overwrite</em> is equal to <var>false</var>.
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-  console.log("An error occured, during copy operation: " + error.message);
+  console.log("An error occurred, during copy operation: " + error.message);
 }
 
 function successCallback(path)
@@ -1148,7 +1148,7 @@ catch (error)
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-  console.log("An error occured: " + error.message);
+  console.log("An error occurred: " + error.message);
 }
 
 function createFooDirCallback()
@@ -1286,7 +1286,7 @@ By default, <em>overwrite</em> is equal to <var>false</var>.
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-  console.log("An error occured, during move operation: " + error.message);
+  console.log("An error occurred, during move operation: " + error.message);
 }
 
 function successCallback(path)
@@ -1394,7 +1394,7 @@ By default, <em>overwrite</em> is equal to <var>false</var>.
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-  console.log("An error occured, during move operation: " + error.message);
+  console.log("An error occurred, during move operation: " + error.message);
 }
 
 function successCallback(path)
@@ -1489,7 +1489,7 @@ NotFoundError, if the <em>path</em> does not point to an existing file or direct
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-  console.log("An error occured, during rename operation: " + error.message);
+  console.log("An error occurred, during rename operation: " + error.message);
 }
 
 function successCallback(path)
@@ -1590,7 +1590,7 @@ NotFoundError, if the <em>path</em> does not point to an existing directory.    
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function errorCallback(error)
 {
-  console.log("An error occured, during directory listing: " + error.message);
+  console.log("An error occurred, during directory listing: " + error.message);
 }
 
 function successCallback(files, path)
@@ -6494,7 +6494,7 @@ It is used in asynchronous operations, such as FileSystemManager.listStorages().
 <div class="interface" id="FileSystemStorageSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Filesystem::FileSystemStorageSuccessCallback"></a><h3>2.10. FileSystemStorageSuccessCallback</h3>
 <div class="brief">
- The FileSystemStorageSuccessCallback callback interface specifies a success callback with a <em>FileSystmeStorage </em>object as input argument.
+ The FileSystemStorageSuccessCallback callback interface specifies a success callback with a <em>FileSystemStorage </em>object as input argument.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileSystemStorageSuccessCallback {
     void onsuccess(<a href="#FileSystemStorage">FileSystemStorage</a> storage);

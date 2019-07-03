@@ -194,8 +194,8 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the user_data passed to both callback.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.4</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.2.4</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -223,8 +223,8 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if there is some data pending inside, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <p>Eet_Connection buffer data until the received data can be unserialized correctly. This function let you know if there is some data inside that buffer waiting for more data to be received before being processed.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.7</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -270,8 +270,8 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> on failure, or a valid Eet_Connection handler.</dd></dl>
 <p>For every connection to track you will need a separate Eet_Connection provider.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.4</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.2.4</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -317,9 +317,9 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the data where correctly send, <code>EINA_FALSE</code> if they don't.</dd></dl>
 <p>This function serialize node, assemble the packet and call Eet_Write_Cb when ready. The data passed Eet_Write_Cb are temporary allocated and will vanish just after the return of the callback.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Node__Group.html#gaeba60eb09d9611a68b3f3cd1471df4c0">eet_data_node_encode_cipher</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.4</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Node__Group.html#gaeba60eb09d9611a68b3f3cd1471df4c0" title="Encodes node data using a cipher.">eet_data_node_encode_cipher</a></dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.2.4</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -365,8 +365,8 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on complete success, any other value indicate where in the stream it got wrong (It could be before that packet).</dd></dl>
 <p>Every time you receive a packet related to your connection, you should pass it to that function so that it could process and assemble packet has you receive it. It will automatically call Eet_Read_Cb when one is fully received.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.4</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.2.4</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -420,8 +420,8 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the data where correctly send, <code>EINA_FALSE</code> if they don't.</dd></dl>
 <p>This function serialize data_in with edd, assemble the packet and call Eet_Write_Cb when ready. The data passed Eet_Write_Cb are temporary allocated and will vanish just after the return of the callback.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__Data__Cipher__Group.html#gaa9b982653191d61177a8b805ad4c17d1" title="Encodes a data struct to memory and return that encoded data using a cipher.">eet_data_descriptor_encode_cipher</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.4</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.2.4</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>

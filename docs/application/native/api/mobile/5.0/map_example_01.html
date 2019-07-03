@@ -91,15 +91,72 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary map widget on a window, to exemplify part of the widget's API.</p>
-<p>Let's start adding a map to our window:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>It's enough to display a world map inside our window. But usually you'll need to let user interact with the map. We need to place some buttons, so the user could control the map. It's done on the following code. If you don't know about boxes, or buttons, check their examples, <a class="el" href="box_example_01.html">Box Example 1</a> and <a class="el" href="button_example_01.html">Button Example 1</a>. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We are adding callback functions that will be called when the user clicks over these buttons. Let's study such functions, starting from the function that will zoom in the map:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Let's start adding a map to our window:  <div class="fragment"><pre class="fragment">   map = <a class="code" href="group__Elm__Map.html#ga509621f20872fe3ef3418919f7fda396">elm_map_add</a>(win);
+   evas_object_size_hint_weight_set(map, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, map);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(map);
+</pre></div></p>
+<p>It's enough to display a world map inside our window. But usually you'll need to let user interact with the map. We need to place some buttons, so the user could control the map. It's done on the following code. If you don't know about boxes, or buttons, check their examples, <a class="el" href="box_example_01.html">Box Example 1</a> and <a class="el" href="button_example_01.html">Button Example 1</a>. <div class="fragment"><pre class="fragment">   box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;+&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_in, map);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;-&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_out, map);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;X&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_fit, map);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;#&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_fill, map);
+</pre></div></p>
+<p>We are adding callback functions that will be called when the user clicks over these buttons. Let's study such functions, starting from the function that will zoom in the map:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_bt_zoom_in(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> zoom;
+   <a class="code" href="group__Elm__Map.html#gaacec2a1019adf71a9b7e3b5fa011c90e" title="Set the zoom mode used by the map object.">elm_map_zoom_mode_set</a>(data, <a class="code" href="group__Elm__Map.html#ggae60f2343c0e098264c246d7e2679abe5a35d8c2519926ab59a7bd5835739cd9b7">ELM_MAP_ZOOM_MODE_MANUAL</a>);
+   zoom = <a class="code" href="group__Elm__Map.html#ga8e5d0739948105e07d77a00013831f6c" title="Get the zoom level of the map.">elm_map_zoom_get</a>(data);
+   <a class="code" href="group__Elm__Map.html#ga6869a7b99657ee01b0ee19c68c47fc0a" title="Set the zoom level of the map.">elm_map_zoom_set</a>(data, zoom + 1);
+}
+</pre></div></p>
 <p>First thing done is assure zoom mode is set to manual. It's the default mode, but the other buttons will change this, so before setting a new zoom value, we need to change the zoom mode.</p>
 <p>Then, we get the current zoom value, increment that, and set the new value to the map. If it's bigger than max zoom value allowed, it will remain on the maximum allowed, nothing bad will happen. This way we don't need to check first if it won't be bigger than max.</p>
-<p>Zoom out function is basically the same thing, but zoom will be decremented instead of incremented: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The "X" button, when pressed, will call a function that will zoom the map until it fits inside the scroll frame with no pixels outside this area: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And the "#" button, will call a function that will zoom until map fills scroll, ensuring no pixels are left unfilled: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>But we can also set map to show something different from default world map, changing the zoom level and region shown. Let's pick a wonderful city coordinates, one placed at <code> 43 20 S, 22 90 W </code>. Since map uses double variables to represent latitude and longitude, to represent north or east, we should represent it as positive values, and south or west as negative. Also, the value will be represented as degree.min. So, for example, our longitude <code> 43 20 S </code> will be represented by the value <code> -43.20 </code>. A zoom set to <code>12</code> should be enough to show a city. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Zoom out function is basically the same thing, but zoom will be decremented instead of incremented: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_bt_zoom_out(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> zoom;
+   <a class="code" href="group__Elm__Map.html#gaacec2a1019adf71a9b7e3b5fa011c90e" title="Set the zoom mode used by the map object.">elm_map_zoom_mode_set</a>(data, <a class="code" href="group__Elm__Map.html#ggae60f2343c0e098264c246d7e2679abe5a35d8c2519926ab59a7bd5835739cd9b7">ELM_MAP_ZOOM_MODE_MANUAL</a>);
+   zoom = <a class="code" href="group__Elm__Map.html#ga8e5d0739948105e07d77a00013831f6c" title="Get the zoom level of the map.">elm_map_zoom_get</a>(data);
+   <a class="code" href="group__Elm__Map.html#ga6869a7b99657ee01b0ee19c68c47fc0a" title="Set the zoom level of the map.">elm_map_zoom_set</a>(data, zoom - 1);
+}
+</pre></div></p>
+<p>The "X" button, when pressed, will call a function that will zoom the map until it fits inside the scroll frame with no pixels outside this area: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_bt_zoom_fit(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Map.html#gaacec2a1019adf71a9b7e3b5fa011c90e" title="Set the zoom mode used by the map object.">elm_map_zoom_mode_set</a>(data, <a class="code" href="group__Elm__Map.html#ggae60f2343c0e098264c246d7e2679abe5a2146e83a3cb0809732a6643a765b6e21">ELM_MAP_ZOOM_MODE_AUTO_FIT</a>);
+}
+</pre></div></p>
+<p>And the "#" button, will call a function that will zoom until map fills scroll, ensuring no pixels are left unfilled: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_bt_zoom_fill(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Map.html#gaacec2a1019adf71a9b7e3b5fa011c90e" title="Set the zoom mode used by the map object.">elm_map_zoom_mode_set</a>(data, <a class="code" href="group__Elm__Map.html#ggae60f2343c0e098264c246d7e2679abe5a380228deffe851d3598cd2b0e22948ad">ELM_MAP_ZOOM_MODE_AUTO_FILL</a>);
+}
+</pre></div></p>
+<p>But we can also set map to show something different from default world map, changing the zoom level and region shown. Let's pick a wonderful city coordinates, one placed at <code> 43 20 S, 22 90 W </code>. Since map uses double variables to represent latitude and longitude, to represent north or east, we should represent it as positive values, and south or west as negative. Also, the value will be represented as degree.min. So, for example, our longitude <code> 43 20 S </code> will be represented by the value <code> -43.20 </code>. A zoom set to <code>12</code> should be enough to show a city. <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Map.html#gac18d4869797cf49e4fa2e50a3de592f3" title="Show the given coordinates at the center of the map, immediately.">elm_map_region_show</a>(map, -43.2, -22.9);
+</pre></div></p>
 <p>See <a class="el" href="map_example_01_8c-example.html">map_example_01.c</a> for full source, whose window should look like this picture:</p>
 <div class="image">
 <img src="screenshots/map_example_01.png" alt="map_example_01.png"/>

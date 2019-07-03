@@ -91,13 +91,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Most of setters explained on previous examples have associated getters. That's the subject of this example. We'll add a callback to display all calendar information every time user interacts with the calendar.</p>
-<p>Let's check our callback function: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>To get selected day, we need to call elm_calendar_selected_time_get(), but to assure nothing wrong happened, we must check for function return. It'll return <code>EINA_FALSE</code> if fail. Otherwise we can use time set to our structure <code>stime</code>. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Next we'll get information from calendar and place on declared vars: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Let's check our callback function: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_print_cal_info_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+                   <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> year_min, year_max;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> sel_enabled;
+   <span class="keyword">const</span> <span class="keywordtype">char</span> **wds;
+   <span class="keyword">struct </span>tm sel_time;
+   <span class="keywordtype">double</span> interval;
+</pre></div></p>
+<p>To get selected day, we need to call <a class="el" href="group__Elm__Calendar.html#ga2ccddd1e99f2a1cc0873313b2bc2c516" title="Get selected date.">elm_calendar_selected_time_get()</a>, but to assure nothing wrong happened, we must check for function return. It'll return <code>EINA_FALSE</code> if fail. Otherwise we can use time set to our structure <code>stime</code>. <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (!<a class="code" href="group__Elm__Calendar.html#ga2ccddd1e99f2a1cc0873313b2bc2c516" title="Get selected date.">elm_calendar_selected_time_get</a>(obj, &amp;sel_time))
+     <span class="keywordflow">return</span>;
+</pre></div></p>
+<p>Next we'll get information from calendar and place on declared vars: <div class="fragment"><pre class="fragment">   interval = <a class="code" href="group__Elm__Calendar.html#ga6deb506b41f20743d3bced3e0463e80f" title="The interval on time updates for an user mouse button hold on calendar widgets&#39; month/year selection...">elm_calendar_interval_get</a>(obj);
+   elm_calendar_min_max_year_get(obj, &amp;year_min, &amp;year_max);
+   sel_enabled = (<a class="code" href="group__Elm__Calendar.html#ga1ec056753815c8899304d6a85fcec0a9" title="Select day mode to use.">elm_calendar_select_mode_get</a>(obj) != ELM_CALENDAR_SELECT_MODE_NONE);
+   wds = <a class="code" href="group__Elm__Calendar.html#ga319701dddd905946dd00801ddc4c7bf9" title="Weekdays names to be displayed by the calendar.">elm_calendar_weekdays_names_get</a>(obj);
+</pre></div></p>
 <p>The only tricky part is that last line gets an array of strings (char arrays), one for each weekday.</p>
-<p>Then we can simple print that to stdin: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Then we can simple print that to stdin: <div class="fragment"><pre class="fragment">   printf(<span class="stringliteral">&quot;Day: %i, Mon: %i, Year %i, WeekDay: %i&lt;br&gt;\n&quot;</span>
+          <span class="stringliteral">&quot;Interval: %0.2f, Year_Min: %i, Year_Max %i, Sel Enabled : %i&lt;br&gt;\n&quot;</span>
+          <span class="stringliteral">&quot;Weekdays: %s, %s, %s, %s, %s, %s, %s&lt;br&gt;\n\n&quot;</span>,
+          sel_time.tm_mday, sel_time.tm_mon, sel_time.tm_year + 1900, sel_time.tm_wday,
+          interval, year_min, year_max, sel_enabled,
+          wds[0], wds[1], wds[2], wds[3], wds[4], wds[5], wds[6]);
+}
+</pre></div></p>
 <p><code> struct tm </code> is declared on <code>time.h</code>. You can check <code>ctime</code> manpage to read about it.</p>
-<p>To register this callback, that will be called every time user selects a day or goes to next or previous month, just add a callback for signal <b>changed</b>. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>To register this callback, that will be called every time user selects a day or goes to next or previous month, just add a callback for signal <b>changed</b>. <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cal, <span class="stringliteral">&quot;changed&quot;</span>, _print_cal_info_cb, NULL);
+</pre></div></p>
 <p>Our example will look like this:</p>
 <div class="image">
 <img src="screenshots/calendar_example_05.png" alt="calendar_example_05.png"/>

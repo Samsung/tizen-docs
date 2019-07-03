@@ -90,7 +90,135 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">hoversel_example_01.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o hoversel_example_01 hoversel_example_01.c -g `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keywordtype">void</span> _print_items(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info);
+<span class="keyword">static</span> <span class="keywordtype">void</span> _free(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info);
+<span class="keyword">static</span> <span class="keywordtype">void</span> _add_item(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info);
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_clear_btn_clicked_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keywordflow">if</span> (!data) <span class="keywordflow">return</span>;
+   <a name="a1"></a><a class="code" href="group__Elm__Hoversel.html#gaa45a57220fb8873aa584a3bf32be753b" title="This will remove all the children items from the hoversel.">elm_hoversel_clear</a>((<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *)data);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_reverse_btn_clicked_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keywordflow">if</span> (!data) <span class="keywordflow">return</span>;
+   <a name="a2"></a><a class="code" href="group__Elm__Mirroring.html#ga61a0d796057a69e646e7d7e5e118de1e">elm_object_mirrored_set</a>(data, !<a name="a3"></a><a class="code" href="group__Elm__Mirroring.html#ga083dcc9ad694046b7bd8500e5dc0a884">elm_object_mirrored_get</a> (data));
+   printf(<span class="stringliteral">&quot;\nMirrored mode is now %s&quot;</span>, <a class="code" href="group__Elm__Mirroring.html#ga083dcc9ad694046b7bd8500e5dc0a884">elm_object_mirrored_get</a>(data) ? <span class="stringliteral">&quot;ON&quot;</span> : <span class="stringliteral">&quot;OFF&quot;</span> );
+   fflush(stdout);
+}
+
+<a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> is_eng = <a name="a4"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_arabic_btn_clicked_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keywordflow">if</span> (!data) <span class="keywordflow">return</span>;
+   is_eng = !is_eng;
+   elm_object_text_set(data, is_eng ?
+                       <span class="stringliteral">&quot;Enable Arabic for new items&quot;</span> :
+                       <span class="stringliteral">&quot;Enable English for new items&quot;</span>);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *rect, *hoversel, *btn = NULL;
+
+   <a name="a5"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a6"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;hoversel&quot;</span>, <span class="stringliteral">&quot;Hoversel&quot;</span>);
+   <a name="a7"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   rect = <a name="a8"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
+   <a name="a9"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(rect, 255, 0, 0, 255);
+   <a name="a10"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rect);
+
+   hoversel = <a name="a11"></a><a class="code" href="group__Elm__Hoversel.html#ga29e3a4b0e5216857ee2943063f7473e5" title="Add a new Hoversel object.">elm_hoversel_add</a>(win);
+   <a name="a12"></a><a class="code" href="group__Elm__Hoversel.html#gadc23a6d706c57743a2e792241662ffbb" title="Control the hover parent.">elm_hoversel_hover_parent_set</a>(hoversel, win);
+   <a name="a13"></a><a class="code" href="group__Elm__Hoversel.html#ga1953166e4c745a82c1510b934db10152" title="Control if the hoversel should expand horizontally.">elm_hoversel_horizontal_set</a>(hoversel, <a name="a14"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   elm_object_text_set(hoversel, <span class="stringliteral">&quot;Add an item to Hoversel&quot;</span>);
+   <a name="a15"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(hoversel, <span class="stringliteral">&quot;icon&quot;</span>, rect);
+   <a name="a16"></a><a class="code" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14" title="Add an item to the hoversel button.">elm_hoversel_item_add</a>(hoversel, <span class="stringliteral">&quot;Print items&quot;</span>, NULL, <a name="a17"></a><a class="code" href="group__Elm__Icon.html#gga82fc56134deed3954cd03b8a1e2f843ba2809a9f4565e01b4ac6ff57e3b8b7679">ELM_ICON_NONE</a>,
+                         _print_items, NULL);
+   <a class="code" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14" title="Add an item to the hoversel button.">elm_hoversel_item_add</a>(hoversel, <span class="stringliteral">&quot;Option 2&quot;</span>, <span class="stringliteral">&quot;home&quot;</span>, <a name="a18"></a><a class="code" href="group__Elm__Icon.html#gga82fc56134deed3954cd03b8a1e2f843ba55f34f8ab84c88c43c2a025b60947daf">ELM_ICON_STANDARD</a>, NULL,
+                         NULL);
+   <a name="a19"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(hoversel, <span class="stringliteral">&quot;clicked&quot;</span>, _add_item, NULL);
+
+   evas_object_resize(hoversel, 180, 30);
+   evas_object_move(hoversel, 10, 10);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hoversel);
+
+   btn = <a name="a20"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Clear all Items&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _clear_btn_clicked_cb, hoversel);
+   evas_object_resize(btn, 180, 30);
+   evas_object_move(btn, 10, 50);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Change Mirror Mode&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _reverse_btn_clicked_cb, hoversel);
+   evas_object_resize(btn, 180, 30);
+   evas_object_move(btn, 10, 90);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Enable Arabic for new items&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _arabic_btn_clicked_cb, btn);
+   evas_object_resize(btn, 180, 30);
+   evas_object_move(btn, 10, 130);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   evas_object_resize(win, 200, 300);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a21"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a22"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+
+static <span class="keywordtype">void</span>
+_print_items(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keyword">const</span> <a name="_a23"></a><a class="code" href="struct__Eina__List.html">Eina_List</a> *items = <a name="a24"></a><a class="code" href="group__Elm__Hoversel.html#ga2f177e2bbae3a1eef2072c7c411239f5" title="Get the list of items within the given hoversel.">elm_hoversel_items_get</a>(obj);
+   <span class="keyword">const</span> <a class="code" href="struct__Eina__List.html">Eina_List</a> *l;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *hoversel_it;
+
+   <a name="a25"></a><a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(items, l, hoversel_it)
+     printf(&quot;%s\n&quot;, elm_object_item_text_get(hoversel_it));
+}
+
+static <span class="keywordtype">void</span>
+_add_item(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keyword">static</span> <span class="keywordtype">int</span> num = 0;
+   <span class="keywordtype">char</span> *str = malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span>) * 11);
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *hoversel_it;
+
+   <span class="keywordflow">if</span>(is_eng)
+     snprintf(str, 11, <span class="stringliteral">&quot;item %d&quot;</span>, ++num);
+   <span class="keywordflow">else</span>
+     snprintf(str, 11, <span class="stringliteral">&quot;بند %d&quot;</span>, ++num);
+
+   hoversel_it = <a class="code" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14" title="Add an item to the hoversel button.">elm_hoversel_item_add</a>(obj, str, NULL, <a class="code" href="group__Elm__Icon.html#gga82fc56134deed3954cd03b8a1e2f843ba2809a9f4565e01b4ac6ff57e3b8b7679">ELM_ICON_NONE</a>, NULL,
+                                       str);
+   <a name="a26"></a><a class="code" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set</a>(hoversel_it, _free);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_free(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   free(data);
+}
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

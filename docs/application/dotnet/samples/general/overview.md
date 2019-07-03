@@ -26,7 +26,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m37weather.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Weather" target="_blank"><strong>(M) Weather</strong></a></p>
-			<p>This sample application demonstrates how to obtain the data provided by the RESTful API using <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap API</a>.</p>
+			<p>This sample application demonstrates how to obtain the data provided by the RESTful API using <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a>.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -40,8 +40,8 @@ for TD:
 			<td><img alt="" height="180" src="media/wplayingwithhwInputs.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/PlayingWithHWInputs" target="_blank"><strong>(W) PlayingWithHWInputs</strong></a></p>
-			<p>This sample application demonstrates how to handle rotary events from bezel of a wearable device and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>. In addition, it shows the way how to detect when the back button is pressed.</p>
-			<p>This application uses Tizen.Wearable.CircularUI API.<br>
+			<p>This sample application demonstrates how to handle rotary events from bezel of a wearable device and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>. In addition, it demonstrates how to use the rotating bezel.</p>
+			<p>This application uses <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.<br>
 			<ul>
 				<li><a href="https://samsung.github.io/Tizen.CircularUI/api/Tizen.Wearable.CircularUI.Forms.IRotaryEventReceiver.html" target="_blank">Interface IRotaryEventReceiver</a></li>
 			</ul></p>
@@ -69,7 +69,7 @@ for TD:
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SQLite.NET.Sample" target="_blank"><strong>(W) SQLite.Net.Sample</strong></a></p>
 			<p>This sample application demonstrates how to create and connect to an SQLite database and use it in Tizen .Net application.</p>
-			<p>This application uses Tizen.Application API.<br>
+			<p>This application uses <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.<br>
 			<ul>
 				<li>Create and connect to an SQLite database</li>
 				<li>Create and modify a DB table</li>
@@ -84,12 +84,12 @@ for TD:
 			</td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/VoiceMemo" target="_blank"><strong>(W) VoiceMemo</strong></a></p>
-			<p>This sample application demonstrates how to create an application using Xamarin.Forms, <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>, SQLite, and Tizen FX (Tizen.Applications, Tizen.Content.MediaContent, Tizen.Multimedia, Tizen.System, Tizen.Uix.Stt, Tizen.Security, and so on).</p>
+			<p>This sample application demonstrates how to create an application using Xamarin.Forms, <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>, SQLite, and Tizen FX (Tizen.Applications, Tizen.Content.MediaContent, Tizen.Multimedia, Tizen.System, Tizen.Uix.Stt, Tizen.Security, and so on).</p>
 			<p>The sample requires network connection (for example, Wi-Fi) at runtime.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/ko/development/sample/native/UI/%28Circle%29_Voice_Memo" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/ko/development/sample/web/UI/Voice_Memo_UI" target="_blank">Web version</a></li>
+				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Voice_Memo" target="_blank">Native version</a></li>
+				<li><a href="https://developer.tizen.org/development/sample/web/UI/Voice_Memo_UI" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -99,7 +99,7 @@ for TD:
 			</td>
 			<td>
 			<p><strong>(W) Weather</strong> [In progress]</p>
-			<p>This sample application demonstrates how to obtain the data provided by the RESTful API using <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to obtain the data provided by the RESTful API using <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a> and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 		<tr>

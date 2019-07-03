@@ -92,10 +92,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary toolbar widget on a window, to exemplify part of the widget's API.</p>
 <p>Toolbar widgets has support to items with states. Each state can have it's own label, icon, and callback function.</p>
-<p>Let's start populating a toolbar with some regular items. If you don't know how to do that, see <a class="el" href="toolbar_example_01.html">Toolbar Example 1</a>.  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The only difference here is that we set shrink mode to <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000aa33e0a0bc69a6c153e027a5772a07bf3">ELM_TOOLBAR_SHRINK_HIDE</a>, that won't display items that doesn't fit to the window.</p>
-<p>Now, let's add an item with states. First, add the item just as any other. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>After that states can be added to this item: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Let's start populating a toolbar with some regular items. If you don't know how to do that, see <a class="el" href="toolbar_example_01.html">Toolbar Example 1</a>.  <div class="fragment"><pre class="fragment">   tb = <a class="code" href="group__Elm__Toolbar.html#ga0c0841ae232ebd6a9628b868d4e95b6f">elm_toolbar_add</a>(win);
+   <a class="code" href="group__Elm__Toolbar.html#ga31deb1999afd41648100d3e816c69553" title="Control the item displaying mode of a given toolbar widget obj.">elm_toolbar_shrink_mode_set</a>(tb, ELM_TOOLBAR_SHRINK_HIDE);
+   evas_object_size_hint_weight_set(tb, 0.0, 0.0);
+   evas_object_size_hint_align_set(tb, EVAS_HINT_FILL, 0.0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(tb);
+
+   <a class="code" href="group__Elm__Toolbar.html#ga0c0738e7d5aba471520113b15184be6e" title="Append item to the toolbar.">elm_toolbar_item_append</a>(tb, <span class="stringliteral">&quot;document-print&quot;</span>, <span class="stringliteral">&quot;Print&quot;</span>, NULL, NULL);
+   <a class="code" href="group__Elm__Toolbar.html#ga0c0738e7d5aba471520113b15184be6e" title="Append item to the toolbar.">elm_toolbar_item_append</a>(tb, <span class="stringliteral">&quot;folder-new&quot;</span>, <span class="stringliteral">&quot;Folder&quot;</span>, NULL, NULL);
+   <a class="code" href="group__Elm__Toolbar.html#ga0c0738e7d5aba471520113b15184be6e" title="Append item to the toolbar.">elm_toolbar_item_append</a>(tb, <span class="stringliteral">&quot;clock&quot;</span>, <span class="stringliteral">&quot;Clock&quot;</span>, NULL, NULL);
+   <a class="code" href="group__Elm__Toolbar.html#ga0c0738e7d5aba471520113b15184be6e" title="Append item to the toolbar.">elm_toolbar_item_append</a>(tb, <span class="stringliteral">&quot;refresh&quot;</span>, <span class="stringliteral">&quot;Update&quot;</span>, NULL, NULL);
+</pre></div></p>
+<p>The only difference here is that we set shrink mode to #ELM_TOOLBAR_SHRINK_HIDE, that won't display items that doesn't fit to the window.</p>
+<p>Now, let's add an item with states. First, add the item just as any other. <div class="fragment"><pre class="fragment">   tb_it = <a class="code" href="group__Elm__Toolbar.html#ga0c0738e7d5aba471520113b15184be6e" title="Append item to the toolbar.">elm_toolbar_item_append</a>(tb, <span class="stringliteral">&quot;mail-send&quot;</span>, <span class="stringliteral">&quot;Send Mail&quot;</span>,
+                                   _item_pressed, NULL);
+</pre></div></p>
+<p>After that states can be added to this item: <div class="fragment"><pre class="fragment">   elm_toolbar_item_state_add(tb_it, <span class="stringliteral">&quot;emptytrash&quot;</span>, <span class="stringliteral">&quot;Empty Trash&quot;</span>,
+                              _item_pressed, NULL);
+   elm_toolbar_item_state_add(tb_it, <span class="stringliteral">&quot;trashcan_full&quot;</span>, <span class="stringliteral">&quot;Full Trash&quot;</span>,
+                              _item_pressed, NULL);
+</pre></div></p>
 <p>The both states and the item are using the same callback function, that will cycle between states and unselect the item. Unseleting is required because it won't call the callback if an user clicks over an item already selected:  <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>On our example, some items are hidden because we set the window to be small. But if an item should be displayed anyway, is needed to set its priority to be higher than others. Any positive value will be enough in our case. Let's force the item with multiple states to be displayed. <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>See <a class="el" href="toolbar_example_02_8c-example.html">toolbar_example_02.c</a>, whose window should look like this picture:</p>

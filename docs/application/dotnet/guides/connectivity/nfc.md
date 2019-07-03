@@ -74,7 +74,7 @@ The card emulation mode can be broadly divided into 2 categories:
 
 To enable your application to use the NFC functionality:
 
-1.  To use the [Tizen.Network.Nfc](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Network.Nfc](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -105,7 +105,7 @@ To activate and deactivate NFC:
     > **Note**   
 	> To be able to use this privilege, your application must be signed with a platform-level certificate.
 
-2.  To activate NFC, use the `SetActivationAsync()` method of the [Tizen.Network.Nfc.NfcManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcManager.html) class with the `true` parameter:
+2.  To activate NFC, use the `SetActivationAsync()` method of the [Tizen.Network.Nfc.NfcManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class with the `true` parameter:
 
     ```
     NfcManager.SetActivationAsync(true);
@@ -132,7 +132,7 @@ To monitor NFC state changes using event handlers:
     }
     ```
 
-2.  Register the event handler for the `ActivationChanged` event of the [Tizen.Network.Nfc.NfcManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcManager.html) class:
+2.  Register the event handler for the `ActivationChanged` event of the [Tizen.Network.Nfc.NfcManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class:
 
     ```
     NfcManager.ActivationChanged += ActivationStatusChanged;
@@ -147,7 +147,7 @@ To monitor NFC state changes using event handlers:
 <a name="manager_get_adapters"></a>
 ## Retrieving the Connection Adapter
 
-Before any NFC operations, retrieve the appropriate connection adapter with the corresponding `GetXXXAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcManager.html) class.
+Before any NFC operations, retrieve the appropriate connection adapter with the corresponding `GetXXXAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class.
 
 For example, to retrieve the NFC tag mode adapter, use the `GetTagAdapter()` method:
 
@@ -169,7 +169,7 @@ public static void GetTagAdapter_RETURN_VALUE()
 ## Creating NDEF Records and Messages
 To create an NDEF record and attach it to an NDEF message:
 
-1.  To create an NDEF record, create a new instance of the [Tizen.Network.Nfc.NfcNdefRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcNdefRecord.html) class and give it the required values.
+1.  To create an NDEF record, create a new instance of the [Tizen.Network.Nfc.NfcNdefRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefRecord.html) class and give it the required values.
 
     In the following example, a record is created with 3 bytes of binary data as a payload.
 
@@ -188,7 +188,7 @@ To create an NDEF record and attach it to an NDEF message:
 
     You can also create NDEF records to store different kinds of data, such as text or images, by using different parameters when creating the `Tizen.Network.Nfc.NfcNdefRecord` instance.
 
-2.  Create the NDEF message as a new instance of the [Tizen.Network.Nfc.NfcNdefMessage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcNdefMessage.html) class and add the record to it using the `AppendRecord()` method:
+2.  Create the NDEF message as a new instance of the [Tizen.Network.Nfc.NfcNdefMessage](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefMessage.html) class and add the record to it using the `AppendRecord()` method:
 
     ```
             NfcNdefMessage msg = new NfcNdefMessage();
@@ -222,7 +222,7 @@ To keep track of NFC tag events through event handlers:
     }
     ```
 
-2.  Register the event handler for the `TagDiscovered` event of the [Tizen.Network.Nfc.NfcTagAdapter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcTagAdapter.html) class:
+2.  Register the event handler for the `TagDiscovered` event of the [Tizen.Network.Nfc.NfcTagAdapter](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcTagAdapter.html) class:
 
     ```
     public static async Task TagDiscovered_EVENT_LISTEN()
@@ -259,7 +259,7 @@ To keep track of NFC tag events through event handlers:
         catch (NotSupportedException)
         {
             Assert.IsTrue(_nfcFeature == false || _tagFeature == false,
-                          "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
+                "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
         }
     }
     ```
@@ -285,7 +285,7 @@ To read NDEF messages from an NFC tag and write them to a tag:
                 _tagAdapter.TagDiscovered += TagDiscoveredCallback;
         ```
 
-    2.  Once the tag is discovered, read the message with the `ReadNdefMessageAsync()` method of the [Tizen.Network.Nfc.NfcTag](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcTag.html) class:
+    2.  Once the tag is discovered, read the message with the `ReadNdefMessageAsync()` method of the [Tizen.Network.Nfc.NfcTag](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcTag.html) class:
 
         ```
                 /// Test code
@@ -311,7 +311,7 @@ To read NDEF messages from an NFC tag and write them to a tag:
             catch (NotSupportedException)
             {
                 Assert.IsTrue(_nfcFeature == false || _tagFeature == false,
-                              "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
+                    "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
             }
         }
         ```
@@ -332,7 +332,7 @@ To read NDEF messages from an NFC tag and write them to a tag:
                 _tagAdapter.TagDiscovered += TagDiscoveredCallback;
         ```
 
-    2.  Once the tag is discovered, create a new NDEF message as an instance of the [Tizen.Network.Nfc.NfcNdefMessage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcNdefMessage.html) class and a new NDEF record as an instance of the [Tizen.Network.Nfc.NfcNdefRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcNdefRecord.html) class. Then append the record into the message with the `AppendRecord()` method of the `Tizen.Network.Nfc.NfcNdefMessage` class:
+    2.  Once the tag is discovered, create a new NDEF message as an instance of the [Tizen.Network.Nfc.NfcNdefMessage](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefMessage.html) class and a new NDEF record as an instance of the [Tizen.Network.Nfc.NfcNdefRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefRecord.html) class. Then append the record into the message with the `AppendRecord()` method of the `Tizen.Network.Nfc.NfcNdefMessage` class:
 
         ```
                 /// Test code
@@ -366,7 +366,7 @@ To read NDEF messages from an NFC tag and write them to a tag:
             catch (NotSupportedException)
             {
                 Assert.IsTrue(_nfcFeature == false || _tagFeature == false,
-                              "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
+                    "Method throws the NotSupportedException, but Tizen supports the NFC Tag operation");
             }
         }
         ```
@@ -385,7 +385,7 @@ To keep track of P2P events through event handlers:
     }
     ```
 
-2.  Register the event handler for the `P2pTargetDiscovered` event of the [Tizen.Network.Nfc.NfcP2pAdapter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcP2pAdapter.html) class:
+2.  Register the event handler for the `P2pTargetDiscovered` event of the [Tizen.Network.Nfc.NfcP2pAdapter](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcP2pAdapter.html) class:
 
     ```
     public static async Task P2pTargetDiscovered_EVENT_LISTEN()
@@ -421,7 +421,7 @@ To keep track of P2P events through event handlers:
         catch (NotSupportedException)
         {
             Assert.IsTrue(_nfcFeature == false || _p2pFeature == false,
-                          "Method throws the NotSupportedException, but Tizen supports the NFC P2P operation");
+                "Method throws the NotSupportedException, but Tizen supports the NFC P2P operation");
         }
     }
     ```
@@ -447,7 +447,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
                 _p2pAdapter.P2pTargetDiscovered += P2pTargetDiscoveredCallback;
         ```
 
-    2.  Create a new NDEF message as an instance of the [Tizen.Network.Nfc.NfcNdefMessage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcNdefMessage.html) class and a new NDEF record as an instance of the [Tizen.Network.Nfc.NfcNdefRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcNdefRecord.html) class. Then append the record into the message with the `AppendRecord()` method of the `Tizen.Network.Nfc.NfcNdefMessage` class.
+    2.  Create a new NDEF message as an instance of the [Tizen.Network.Nfc.NfcNdefMessage](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefMessage.html) class and a new NDEF record as an instance of the [Tizen.Network.Nfc.NfcNdefRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcNdefRecord.html) class. Then append the record into the message with the `AppendRecord()` method of the `Tizen.Network.Nfc.NfcNdefMessage` class.
 
         ```
                 /// Test code
@@ -464,7 +464,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
                 ndefMessage.AppendRecord(ndefRecord);
         ```
 
-    3.  Send the NDEF message with the `SendNdefMessageAsync()` method of the [Tizen.Network.Nfc.NfcP2p](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcP2p.html) class:
+    3.  Send the NDEF message with the `SendNdefMessageAsync()` method of the [Tizen.Network.Nfc.NfcP2p](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcP2p.html) class:
 
         ```
                 NfcError nfcError = await currentP2p.SendNdefMessageAsync(ndefMessage);
@@ -484,7 +484,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
             catch (NotSupportedException)
             {
                 Assert.IsTrue(_nfcFeature == false || _p2pFeature == false,
-                              "Method throws the NotSupportedException, but Tizen supports the NFC P2P operation");
+                    "Method throws the NotSupportedException, but Tizen supports the NFC P2P operation");
             }
         }
         ```
@@ -499,7 +499,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
         }
         ```
 
-    2.  Once a P2P connection has been made, retrieve the connected P2P target with the `GetConnectedTarget()` method of the [Tizen.Network.Nfc.NfcP2pAdapter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcP2pAdapter.html) class, and add the new event handler for the `P2pDataReceived` event of the newly-created instance of the [Tizen.Network.Nfc.NfcP2p](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcP2p.html) class:
+    2.  Once a P2P connection has been made, retrieve the connected P2P target with the `GetConnectedTarget()` method of the [Tizen.Network.Nfc.NfcP2pAdapter](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcP2pAdapter.html) class, and add the new event handler for the `P2pDataReceived` event of the newly-created instance of the [Tizen.Network.Nfc.NfcP2p](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcP2p.html) class:
 
         ```
         public static async Task NdefMessage_READ_ONLY()
@@ -521,7 +521,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
                 p2pTarget.P2pDataReceived += P2pDataReceivedCallback;
         ```
 
-    3.  The received NDEF message can be read through the newly-created instance of the [Tizen.Network.Nfc.P2pDataReceivedEventArgs](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.P2pDataReceivedEventArgs.html) class:
+    3.  The received NDEF message can be read through the newly-created instance of the [Tizen.Network.Nfc.P2pDataReceivedEventArgs](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.P2pDataReceivedEventArgs.html) class:
 
         ```
                 await WaitDataReceived();
@@ -546,7 +546,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
             catch (NotSupportedException)
             {
                 Assert.IsTrue(_nfcFeature == false || _p2pFeature == false,
-                              "Method throws the NotSupportedException, but Tizen supports the Nfc P2P operation");
+                    "Method throws the NotSupportedException, but Tizen supports the Nfc P2P operation");
             }
         }
         ```
@@ -556,7 +556,7 @@ You can both send and receive NDEF devices between peer devices in P2P mode.
 
 To enable and disable the smart card emulation mode:
 
-1.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcManager.html) class:
+1.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class:
 
     ```
     public static void EnableCardEmulation_CHECK_CARD_EMULATION_STATUS()
@@ -566,7 +566,7 @@ To enable and disable the smart card emulation mode:
             NfcCardEmulationAdapter ceAdapter = NfcManager.GetCardEmulationAdapter();
     ```
 
-2.  Enable and disable the card emulation mode with the `EnableCardEmulation()` and `DisableCardEmulation()` methods of the [Tizen.Network.Nfc.NfcCardEmulationAdapter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcCardEmulationAdapter.html) class:
+2.  Enable and disable the card emulation mode with the `EnableCardEmulation()` and `DisableCardEmulation()` methods of the [Tizen.Network.Nfc.NfcCardEmulationAdapter](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcCardEmulationAdapter.html) class:
 
     ```
             ceAdapter.DisableCardEmulation();
@@ -588,7 +588,7 @@ To enable and disable the smart card emulation mode:
 
 To register an AID value:
 
-1.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcManager.html) class:
+1.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class:
 
     ```
     public static void RegisterAid_METHOD_CALL_WITH_HCE_PAYMENT()
@@ -598,7 +598,7 @@ To register an AID value:
             NfcCardEmulationAdapter ceAdapter = NfcManager.GetCardEmulationAdapter();
     ```
 
-2.  Register the AID with the `RegisterAid()` method of the [Tizen.Network.Nfc.NfcCardEmulationAdapter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcCardEmulationAdapter.html) class:
+2.  Register the AID with the `RegisterAid()` method of the [Tizen.Network.Nfc.NfcCardEmulationAdapter](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcCardEmulationAdapter.html) class:
 
     ```
             ceAdapter.RegisterAid(NfcSecureElementType.Hce, NfcCardEmulationCategoryType.Payment, "325041592E5359532E4444463031");
@@ -624,7 +624,7 @@ To manage secure element (SE) events:
     }
     ```
 
-2.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcManager.html) class, and register the SE event handler for its `SecureElementEvent` event:
+2.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class, and register the SE event handler for its `SecureElementEvent` event:
 
     ```
     public static async Task SecureElementEvent()
@@ -661,7 +661,7 @@ To manage secure element (SE) events:
         catch (NotSupportedException)
         {
             Assert.IsTrue(_nfcFeature == false || _ceFeature == false || _hceFeature == false,
-                          "Method throws the NotSupportedException, but Tizen supports the NFC card emulation operation");
+                "Method throws the NotSupportedException, but Tizen supports the NFC card emulation operation");
         }
     }
     ```
@@ -680,7 +680,7 @@ To manage HCE events from the NFC reader:
     }
     ```
 
-2.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcManager.html) class, and register the HCE event handler for its `HostCardEmulationEvent` event:
+2.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class, and register the HCE event handler for its `HostCardEmulationEvent` event:
 
     ```
     public static async Task HostCardEmulationEvent_HOST_CARD_EMULATION_EVENT_LISTEN_TYPE_ACTIVATED()
@@ -717,7 +717,7 @@ To manage HCE events from the NFC reader:
         catch (NotSupportedException)
         {
             Assert.IsTrue(_nfcFeature == false || _ceFeature == false || _hceFeature == false,
-                          "Method throws the NotSupportedException, but Tizen supports the NFC host card emulation operation");
+                "Method throws the NotSupportedException, but Tizen supports the NFC host card emulation operation");
         }
     }
     ```
@@ -727,7 +727,7 @@ To manage HCE events from the NFC reader:
 
 To send HCE responses to the NFC reader:
 
-1.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcManager.html) class, and register the HCE event handler for its `HostCardEmulationEvent` event:
+1.  Retrieve the card emulation adapter with the `GetCardEmulationAdapter()` method of the [Tizen.Network.Nfc.NfcManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcManager.html) class, and register the HCE event handler for its `HostCardEmulationEvent` event:
 
     ```
     public static async Task HceSendApduResponse_METHOD_RETURN()
@@ -742,7 +742,7 @@ To send HCE responses to the NFC reader:
             _cardEmulationAdapter.HostCardEmulationEvent += HostCardEmulationCallback;
     ```
 
-2.  Once the HCE event triggers, send the response with the `HceSendApduResponse()` method of the [Tizen.Network.Nfc.NfcSecureElement](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Nfc.NfcSecureElement.html) class:
+2.  Once the HCE event triggers, send the response with the `HceSendApduResponse()` method of the [Tizen.Network.Nfc.NfcSecureElement](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Nfc.NfcSecureElement.html) class:
 
     ```
             /// Test code
@@ -768,7 +768,7 @@ To send HCE responses to the NFC reader:
         catch (NotSupportedException)
         {
             Assert.IsTrue(_nfcFeature == false || _ceFeature == false || _hceFeature == false,
-                          "Method throws the NotSupportedException, but Tizen supports the NFC host card emulation operation");
+                "Method throws the NotSupportedException, but Tizen supports the NFC host card emulation operation");
         }
     }
     ```

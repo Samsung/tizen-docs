@@ -91,11 +91,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places two Elementary dayselector widgets on a window, each of them exemplifying the different widget styles.</p>
-<p>The first of them is the dayselector in default style:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>The first of them is the dayselector in default style:  <div class="fragment"><pre class="fragment">   <span class="comment">/* add a dayselector widget showing weekdays starting from Sunday */</span>
+   dayselector = elm_dayselector_add(win);
+   evas_object_size_hint_weight_set(dayselector, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(dayselector, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(dayselector, <span class="stringliteral">&quot;dayselector,changed&quot;</span>, _changed_cb, NULL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, dayselector);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(dayselector);
+</pre></div></p>
 <p>As you see, the default style displays the weekdays starting from Sunday.</p>
 <p>One can select/unselect a day just by clicking on the day object. The selection toggles once it is being pressed.</p>
-<p>For showing weekdays starting from Monday, see the second dayselector:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The following code exemplifies the selection APIs of Dayselector:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>For showing weekdays starting from Monday, see the second dayselector:  <div class="fragment"><pre class="fragment">   <span class="comment">/* add a dayselector widget showing weekdays starting from Monday */</span>
+   dayselector = elm_dayselector_add(win);
+   evas_object_size_hint_weight_set(dayselector, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(dayselector, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(dayselector, <span class="stringliteral">&quot;dayselector,changed&quot;</span>, _changed_cb, NULL);
+   <a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(dayselector, <span class="stringliteral">&quot;mon_first&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, dayselector);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(dayselector);
+</pre></div></p>
+<p>The following code exemplifies the selection APIs of Dayselector:  <div class="fragment"><pre class="fragment"><span class="comment">/* Callback function when a day is clicked. */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span> _changed_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+                        <span class="keywordtype">void</span> *event_info)
+{
+   <span class="keywordtype">char</span> buf[256];
+   <a class="code" href="group__Elm__Dayselector.html#ga2243570a7323b433c8fb2824abfb30cf" title="Identifies the day of the week. API can call the selection/unselection of day with this as a paramete...">Elm_Dayselector_Day</a> day;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> selected;
+
+   <span class="comment">/* get which day&#39;s state is changed */</span>
+   day = (<a class="code" href="group__Elm__Dayselector.html#ga2243570a7323b433c8fb2824abfb30cf" title="Identifies the day of the week. API can call the selection/unselection of day with this as a paramete...">Elm_Dayselector_Day</a>) event_info;
+   <span class="comment">/* get the state of corresponding day&#39;s check object */</span>
+   selected = elm_dayselector_day_selected_get(obj, day);
+   <span class="keywordflow">switch</span>(day)
+     {
+      <span class="keywordflow">case</span> <a class="code" href="group__Elm__Dayselector.html#gga2243570a7323b433c8fb2824abfb30cfa2d250724d6a6027c5fb1fac54b8ffd44">ELM_DAYSELECTOR_SUN</a>: snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;Sun&quot;</span>);   <span class="keywordflow">break</span>;
+      <span class="keywordflow">case</span> <a class="code" href="group__Elm__Dayselector.html#gga2243570a7323b433c8fb2824abfb30cfa6b268da18d8a630aff369aa063b7f923">ELM_DAYSELECTOR_MON</a>: snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;Mon&quot;</span>);   <span class="keywordflow">break</span>;
+      <span class="keywordflow">case</span> <a class="code" href="group__Elm__Dayselector.html#gga2243570a7323b433c8fb2824abfb30cfa2c77b598175dfab6f6765ba854783da3">ELM_DAYSELECTOR_TUE</a>: snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;Tue&quot;</span>);   <span class="keywordflow">break</span>;
+      <span class="keywordflow">case</span> <a class="code" href="group__Elm__Dayselector.html#gga2243570a7323b433c8fb2824abfb30cfa2b2376f3a0c2582f1fe7dbe339c8ee85">ELM_DAYSELECTOR_WED</a>: snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;Wed&quot;</span>);   <span class="keywordflow">break</span>;
+      <span class="keywordflow">case</span> <a class="code" href="group__Elm__Dayselector.html#gga2243570a7323b433c8fb2824abfb30cfaf2f9af7ac1cf5ebcec93c6bcb8b725cb">ELM_DAYSELECTOR_THU</a>: snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;Thu&quot;</span>);   <span class="keywordflow">break</span>;
+      <span class="keywordflow">case</span> <a class="code" href="group__Elm__Dayselector.html#gga2243570a7323b433c8fb2824abfb30cfa71f84995a0e465abca8721aa87dc906a">ELM_DAYSELECTOR_FRI</a>: snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;Fri&quot;</span>);   <span class="keywordflow">break</span>;
+      <span class="keywordflow">case</span> <a class="code" href="group__Elm__Dayselector.html#gga2243570a7323b433c8fb2824abfb30cfa326f661b30c28e393020c08959f8a8af">ELM_DAYSELECTOR_SAT</a>: snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;Sat&quot;</span>);   <span class="keywordflow">break</span>;
+      <span class="keywordflow">default</span>: snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s&quot;</span>, <span class="stringliteral">&quot;???&quot;</span>); <span class="keywordflow">break</span>;
+     }
+   fprintf(stderr, <span class="stringliteral">&quot;%s state is %d\n&quot;</span>, buf, selected);
+}
+<span class="comment">/* End of clicked callback */</span>
+</pre></div></p>
 <p>See the full <a class="el" href="dayselector_example_8c-example.html">example</a>, whose window should look like this picture:</p>
 <div class="image">
 <img src="screenshots/dayselector_example.png" alt="dayselector_example.png"/>

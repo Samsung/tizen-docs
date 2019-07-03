@@ -31,11 +31,11 @@ The `project_def.prop` file describes the project properties, such as project ty
 
 | Property               | Value                                    |
 |----------------------|----------------------------------------|
-| `APPNAME`              | Application name, which must be given in lowercase letters. </br>For example: `APPNAME = test` |
+| `APPNAME`              | Application name, which must be given in lowercase letters.</br>For example: `APPNAME = test` |
 | `type`                 | Application type, which can be app, sharedLib, or staticLib.</br>For example: `type = app`</br>This is a **readonly** property; do not edit it. |
-| `profile`              | Profile with a version. </br>For example: `profile = mobile-2.3` |
+| `profile`              | Profile with a version.</br>For example: `profile = mobile-2.3` |
 | `USER_SRCS`            | List of `.c` and `.cpp` source files in the current project.</br>The list can be used with wildcard characters: *.</br>If there are more than 2 files, a white-space character separator is used.</br>For example: `USER_SRCS = src/*.c` |
-| `USER_DEFS`            | List of user-defined C files added to the compilation process.The list must be used without the `-D` characters for the C compiler.</br>For example: `USER_DEFS = ABC DEF` |
+| `USER_DEFS`            | List of user-defined C files added to the compilation process.</br>The list must be used without the `-D` characters for the C compiler.</br>For example: `USER_DEFS = ABC DEF` |
 | `USER_UNDEFS`          | List of user-defined C files excluded from the compilation process.</br>The list must be used without the `-U` characters for the C compiler. |
 | `USER_CPP_DEFS`        | List of user-defined C++ files added to the compilation process.</br>The list must be used without the `-D` characters for the C++ compiler. |
 | `USER_CPP_UNDEFS`      | List of user-defined C++ files excluded from the compilation process.</br>The list must be used without the `-U` characters for the C++ compiler. |
@@ -45,7 +45,7 @@ The `project_def.prop` file describes the project properties, such as project ty
 | `USER_INC_FILES`       | List of `.h` file paths for C.</br>The list must be used without the `-include` characters. An absolute path can be available. |
 | `USER_CPP_INC_FILES`   | List of `.h` file paths for C++.</br>The list must be used without the `-include` characters. An absolute path can be available. |
 | `USER_LIB_DIRS`        | List of reference paths for the library linking.</br>The list must be used without the `-L` characters. An absolute path can be available. |
-| `USER_EDCS`            | List of `.edc` file paths.</br>The list can be used with wildcard characters, such as `*`.</br>If there are more than 2 files, a white-space character separator is used.</br>For example: `USER_EDCS = res/edje/*.edc` |
+| `USER_EDCS`            | List of `.edc` file paths.</br>The list can be used with wildcard characters, such as *.</br>If there are more than 2 files, a white-space character separator is used.</br>For example: `USER_EDCS = res/edje/*.edc` |
 | `USER_EDCS_IMAGE_DIRS` | List of EDC reference paths for compiling, such as the `-id` option of the Tizen Studio. </br>An absolute path can be available. |
 | `USER_EDCS_SOUND_DIRS` | List of EDC reference paths for compiling, such as the `-sd` option of the Tizen Studio. </br>An absolute path can be available. |
 | `USER_EDCS_FONT_DIRS`  | List of EDC reference paths for compiling, such as the `-fd` option of the Tizen Studio. </br>An absolute path can be available. |

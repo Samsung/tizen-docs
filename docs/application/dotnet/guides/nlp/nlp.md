@@ -5,7 +5,7 @@ NLP is a subset of Natural Language Toolkit that specifies an interface and a pr
 
 The main features of the Tizen.Nlp namespace include:
 
--   Word Tokenize suppport
+-   Word Tokenize support
 
     You can get tokens from a sentence, the type of return is [WordTokenizeResult](#wordtokenize). 
     This method breaks up the sentence into words and punctuation.
@@ -27,7 +27,7 @@ The main features of the Tizen.Nlp namespace include:
 
 To enable your application to use the NLP functionality:
 
-1.  To use the [Tizen.Nlp](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Nlp.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Nlp](https://samsung.github.io/TizenFX/latest/api/Tizen.Nlp.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>

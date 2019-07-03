@@ -90,7 +90,163 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">bg_example_03.c </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="fragment"><pre class="fragment"></pre></div> </div></div><!-- contents -->
+<div class="textblock"><div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o bg_example_03 bg_example_03.c -g `pkg-config --cflags --libs elementary`</span>
+<span class="comment">//where directory is the a path where images/plant_01.jpg can be found.</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_cb_radio_changed(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o_bg = data;
+
+   <a class="code" href="group__Elm__Bg.html#ga2ed059b3cf946d10a12182fedc3125f9" title="Sets the mode of display for a given background widget&#39;s image.">elm_bg_option_set</a>(o_bg, <a class="code" href="group__Elm__Radio.html#gab56d65001a82eea600b41e4873a772e6" title="Get the value of the radio group.">elm_radio_value_get</a>((<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *)obj));
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_cb_overlay_changed(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o_bg = data;
+
+   <span class="keywordflow">if</span> (<a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj))
+     {
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent, *over;
+        <span class="keywordtype">char</span> buff[PATH_MAX];
+
+        snprintf(buff, <span class="keyword">sizeof</span>(buff), <span class="stringliteral">&quot;%s/objects/test.edj&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+        parent = <a class="code" href="group__Elm__WidgetNavigation.html#ga0b5f83c403948f1418e434f3ed94973f">elm_object_parent_widget_get</a>(o_bg);
+        over = edje_object_add(evas_object_evas_get(parent));
+        edje_object_file_set(over, buff, <span class="stringliteral">&quot;bg_overlay&quot;</span>);
+        <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(o_bg, <span class="stringliteral">&quot;overlay&quot;</span>, over);
+     }
+   <span class="keywordflow">else</span>
+     <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(o_bg, <span class="stringliteral">&quot;overlay&quot;</span>, NULL);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_cb_color_changed(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o_bg = data;
+   <span class="keywordtype">double</span> val = 0.0;
+
+   val = <a class="code" href="group__Elm__Spinner.html#ga0f93a325d38ad9a249994a7dc4ea4f1b" title="Control the value the spinner displays.">elm_spinner_value_get</a>(obj);
+   <span class="keywordflow">if</span> (val == 1.0)
+     <a class="code" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8" title="Sets the color on a given background widget.">elm_bg_color_set</a>(o_bg, 255, 255, 255);
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (val == 2.0)
+     <a class="code" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8" title="Sets the color on a given background widget.">elm_bg_color_set</a>(o_bg, 255, 0, 0);
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (val == 3.0)
+     <a class="code" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8" title="Sets the color on a given background widget.">elm_bg_color_set</a>(o_bg, 0, 0, 255);
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (val == 4.0)
+     <a class="code" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8" title="Sets the color on a given background widget.">elm_bg_color_set</a>(o_bg, 0, 255, 0);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *box, *hbox, *o_bg;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *rd, *rdg;
+   <span class="keywordtype">char</span> buf[PATH_MAX];
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;objects/test.edj&quot;</span>);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;bg-options&quot;</span>, <span class="stringliteral">&quot;Bg Options&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   o_bg = <a class="code" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add</a>(win);
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/plant_01.jpg&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   <a class="code" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c" title="Sets the file (image or edje collection) to give life for the background.">elm_bg_file_set</a>(o_bg, buf, NULL);
+   evas_object_size_hint_weight_set(o_bg, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(o_bg, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, o_bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o_bg);
+
+   hbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_size_hint_weight_set(hbox, EVAS_HINT_EXPAND, EVAS_HINT_FILL);
+   evas_object_size_hint_align_set(hbox, EVAS_HINT_FILL, EVAS_HINT_FILL);
+
+   rd = <a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_radio_state_value_set(rd, <a class="code" href="group__Elm__Bg.html#ggac13a24993e39fac3484bd29a9bfeea26a59df3d0f575cd2bc133c367beca423dc">ELM_BG_OPTION_CENTER</a>);
+   elm_object_text_set(rd, <span class="stringliteral">&quot;Center&quot;</span>);
+   evas_object_size_hint_weight_set(rd, EVAS_HINT_EXPAND, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(rd, <span class="stringliteral">&quot;changed&quot;</span>, _cb_radio_changed, o_bg);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, rd);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rd);
+   rdg = rd;
+
+   rd = <a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_radio_state_value_set(rd, <a class="code" href="group__Elm__Bg.html#ggac13a24993e39fac3484bd29a9bfeea26a02ef6a9e93a4d4fe3a5a69bdc94b9261">ELM_BG_OPTION_SCALE</a>);
+   elm_radio_group_add(rd, rdg);
+   elm_object_text_set(rd, <span class="stringliteral">&quot;Scale&quot;</span>);
+   evas_object_size_hint_weight_set(rd, EVAS_HINT_EXPAND, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(rd, <span class="stringliteral">&quot;changed&quot;</span>, _cb_radio_changed, o_bg);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, rd);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rd);
+
+   rd = <a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_radio_state_value_set(rd, <a class="code" href="group__Elm__Bg.html#ggac13a24993e39fac3484bd29a9bfeea26ab6da4402f66e31e15d30b7b79bf7478b">ELM_BG_OPTION_STRETCH</a>);
+   elm_radio_group_add(rd, rdg);
+   elm_object_text_set(rd, <span class="stringliteral">&quot;Stretch&quot;</span>);
+   evas_object_size_hint_weight_set(rd, EVAS_HINT_EXPAND, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(rd, <span class="stringliteral">&quot;changed&quot;</span>, _cb_radio_changed, o_bg);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, rd);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rd);
+
+   rd = <a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_radio_state_value_set(rd, <a class="code" href="group__Elm__Bg.html#ggac13a24993e39fac3484bd29a9bfeea26a95d3970cc20d64547bf76b9aba606002">ELM_BG_OPTION_TILE</a>);
+   elm_radio_group_add(rd, rdg);
+   elm_object_text_set(rd, <span class="stringliteral">&quot;Tile&quot;</span>);
+   evas_object_size_hint_weight_set(rd, EVAS_HINT_EXPAND, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(rd, <span class="stringliteral">&quot;changed&quot;</span>, _cb_radio_changed, o_bg);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, rd);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rd);
+
+   <a class="code" href="group__Elm__Radio.html#ga7e41ff1e8ad492f99f44efdbcc1fa1cc" title="Set the value of the radio group.">elm_radio_value_set</a>(rdg, <a class="code" href="group__Elm__Bg.html#ggac13a24993e39fac3484bd29a9bfeea26a02ef6a9e93a4d4fe3a5a69bdc94b9261">ELM_BG_OPTION_SCALE</a>);
+
+   rd = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(rd, <span class="stringliteral">&quot;Show Overlay&quot;</span>);
+   evas_object_size_hint_weight_set(rd, EVAS_HINT_EXPAND, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(rd, <span class="stringliteral">&quot;changed&quot;</span>, _cb_overlay_changed, o_bg);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, rd);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rd);
+
+   <span class="comment">/* color choices ... this is ghetto, but we don&#39;t have a &#39;colorpicker&#39;</span>
+<span class="comment">    * widget yet :( */</span>
+   rd = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   <a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(rd, <span class="stringliteral">&quot;vertical&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(rd, 1, 4);
+   <a class="code" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2" title="Control the format string of the displayed label.">elm_spinner_label_format_set</a>(rd, <span class="stringliteral">&quot;%.0f&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga871836a2a99838adf161ea3397f8de5b" title="Control whether the spinner can be directly edited by the user or not.">elm_spinner_editable_set</a>(rd, EINA_FALSE);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(rd, 1, <span class="stringliteral">&quot;White&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(rd, 2, <span class="stringliteral">&quot;Red&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(rd, 3, <span class="stringliteral">&quot;Blue&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(rd, 4, <span class="stringliteral">&quot;Green&quot;</span>);
+   evas_object_size_hint_weight_set(rd, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(rd, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(rd, <span class="stringliteral">&quot;changed&quot;</span>, _cb_color_changed, o_bg);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, rd);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rd);
+
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, hbox);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hbox);
+
+   evas_object_resize(win, 460, 320);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

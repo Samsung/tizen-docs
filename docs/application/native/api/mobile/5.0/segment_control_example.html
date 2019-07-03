@@ -91,15 +91,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places an Elementary segment control widgets on a window, to exemplify part of the widget's API.</p>
-<p>Let's start adding a segment control to our window:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Now will add an item only with label: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Really simple. To add an item with only an icon, the icon needs to be created first, them added with this same function: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>If an item with label and icon is required, it can be done as well. In this case, instead of a label (or icon) centered, the item will display an icon at left and the label at right: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>But, if you need to add some items that can have or not a label, but want that all of them looks the same way, with icon at left, just add an empty string label. It's done on our example to illustrate that: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>So far, all the item were added to the last position of the widget, but if something different is required, it can be done using another insertion function. Let's suppose we want to put an item just before the last item: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>There are two ways to delete items. Using the item handle, like: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Or using item's index: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>To set properties of an item already added to the widget, you just need to get the item and set icon or label, as the following code shows: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Let's start adding a segment control to our window:  <div class="fragment"><pre class="fragment">   sc = <a class="code" href="group__Elm__Segment__Control.html#ga6c0d5f4de78c9c66b4a09680d3c85f46">elm_segment_control_add</a>(win);
+   evas_object_size_hint_weight_set(sc, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, sc);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sc);
+</pre></div></p>
+<p>Now will add an item only with label: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Segment__Control.html#ga7767abc050569aa7ca1b6e51ce8fd547" title="Append a new item to the segment control object.">elm_segment_control_item_add</a>(sc, NULL, <span class="stringliteral">&quot;only text&quot;</span>);
+</pre></div></p>
+<p>Really simple. To add an item with only an icon, the icon needs to be created first, them added with this same function: <div class="fragment"><pre class="fragment">   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;close&quot;</span>);
+   <a class="code" href="group__Elm__Segment__Control.html#ga7767abc050569aa7ca1b6e51ce8fd547" title="Append a new item to the segment control object.">elm_segment_control_item_add</a>(sc, ic, NULL);
+</pre></div></p>
+<p>If an item with label and icon is required, it can be done as well. In this case, instead of a label (or icon) centered, the item will display an icon at left and the label at right: <div class="fragment"><pre class="fragment">   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;home&quot;</span>);
+   <a class="code" href="group__Elm__Segment__Control.html#ga7767abc050569aa7ca1b6e51ce8fd547" title="Append a new item to the segment control object.">elm_segment_control_item_add</a>(sc, ic, <span class="stringliteral">&quot;Home&quot;</span>);
+</pre></div></p>
+<p>But, if you need to add some items that can have or not a label, but want that all of them looks the same way, with icon at left, just add an empty string label. It's done on our example to illustrate that: <div class="fragment"><pre class="fragment">   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;close&quot;</span>);
+   <a class="code" href="group__Elm__Segment__Control.html#ga7767abc050569aa7ca1b6e51ce8fd547" title="Append a new item to the segment control object.">elm_segment_control_item_add</a>(sc, ic, <span class="stringliteral">&quot;&quot;</span>);
+</pre></div></p>
+<p>So far, all the item were added to the last position of the widget, but if something different is required, it can be done using another insertion function. Let's suppose we want to put an item just before the last item: <div class="fragment"><pre class="fragment">   count = <a class="code" href="group__Elm__Segment__Control.html#gadf14b4eaadddf9f0c8067b65f4b8c112" title="Get the Segment items count from segment control.">elm_segment_control_item_count_get</a>(sc);
+   <a class="code" href="group__Elm__Segment__Control.html#ga63df627766288f71485646c43ab9c31d" title="Insert a new item to the segment control object at specified position.">elm_segment_control_item_insert_at</a>(sc, NULL, <span class="stringliteral">&quot;Inserted at&quot;</span>, count - 1);
+</pre></div></p>
+<p>There are two ways to delete items. Using the item handle, like: <div class="fragment"><pre class="fragment">   seg_it = <a class="code" href="group__Elm__Segment__Control.html#ga63df627766288f71485646c43ab9c31d" title="Insert a new item to the segment control object at specified position.">elm_segment_control_item_insert_at</a>(sc, NULL, <span class="stringliteral">&quot;To be deleted&quot;</span>, 2);
+   <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(seg_it);
+</pre></div></p>
+<p>Or using item's index: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Segment__Control.html#ga63df627766288f71485646c43ab9c31d" title="Insert a new item to the segment control object at specified position.">elm_segment_control_item_insert_at</a>(sc, NULL, <span class="stringliteral">&quot;To be deleted&quot;</span>, 2);
+   <a class="code" href="group__Elm__Segment__Control.html#ga44300d1dbb7cf7d8fd1fbfde94dea38d" title="Remove a segment control item at given index from its parent, deleting it.">elm_segment_control_item_del_at</a>(sc, 2);
+</pre></div></p>
+<p>To set properties of an item already added to the widget, you just need to get the item and set icon or label, as the following code shows: <div class="fragment"><pre class="fragment">   seg_it = <a class="code" href="group__Elm__Segment__Control.html#ga8da9b9092ec3e015afe36d55cf657d61" title="Get the item placed at specified index.">elm_segment_control_item_get</a>(sc, 0);
+</pre></div></p>
 <p>Finally, it's possible to select an item from the code, and also get the selected item. We will select the item at the center of the widget and print its position. <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>See the full <a class="el" href="segment_control_example_8c-example.html">example</a>, whose window should look like this picture:</p>
 <div class="image">
