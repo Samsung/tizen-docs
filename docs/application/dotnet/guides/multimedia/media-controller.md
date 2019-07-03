@@ -21,7 +21,7 @@ The main media controller features include:
 
 ## Prerequisites
 
-To enable your application to use the media controller functionality:
+To enable your application to use the media controller functionality, follow these steps:
 
 1. The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
@@ -47,9 +47,9 @@ To enable your application to use the media controller functionality:
 
 ## Updating and Retrieving Information
 
-To update the metadata and playback information on the server side, and to retrieve it on the client side:
+To update the metadata and playback information on the server side, and to retrieve it on the client side, follow these steps:
 
--   To update the metadata and playback information on the server side:
+-   To update the metadata and playback information on the server side
     1.  Start the media control server using the `Start()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
         ```
@@ -68,7 +68,7 @@ To update the metadata and playback information on the server side, and to retri
         MediaControlServer.Stop();
         ```
 
-- To retrieve the metadata and playback information on the client side:
+- To retrieve the metadata and playback information on the client side, follow these steps:
     1.  Create a new instance of the [Tizen.Multimedia.Remoting.MediaControllerManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html) class:
 
         ```
@@ -89,9 +89,37 @@ To update the metadata and playback information on the server side, and to retri
         Tizen.Log.info(LogTag, $"Playback state is {controller.GetPlaybackState()}");
         ```
 
+## Updating and Retrieving Playlist
+
+To create a playlist from the server side, create a new instance of the [Tizen.Multimedia.Remoting.MediaControlPlaylist](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlPlaylist.html) class:
+
+    ```
+    var playlist = new MediaControlPlaylist("MyFavorite");
+    ```
+
+You can also create playlist with Metadata using the following code:
+
+    ```
+    var playlist = new MediaControlPlaylist("MyFavoriate",
+        new Dictionary<string, MediaControlMetadata>()
+        {
+            {"Song1", new MediaControlMetadata() {Author = "Someone"} },
+            {"Song2", new MediaControlMetadata()}
+        }
+    );
+    ```
+
+To retrieve the playlist and metadata information on the client side:
+    ```
+        controller.PlaylistUpdated += (s, e) =>
+        {
+            Tizen.Log.Info(LogTag, $"Updated mode : {e.Mode}, Name : {e.Name}, The title of first song : {e.Playlist.GetMetadata("IDX1").Title}");
+        };
+    ````
+
 ## Sending and Processing Commands
 
-To send a command from the client and to process it on the server side:
+To send a command from the client and to process it on the server side, follow these steps:
 
 1.  To send a command on the client side, use the `SendPlaybackCommand()` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
@@ -110,39 +138,9 @@ To send a command from the client and to process it on the server side:
     }
     ```
 
-## Updating and Retreiving Playlist
-
-To create a playlist from the server side:
-
-1. Create a new instance of the [Tizen.Multimedia.Remoting.MediaControlPlaylist](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlPlaylist.html) class:
-
-    ```
-    var playlist = new MediaControlPlaylist("MyFavorite");
-    ```
-
-You can create playlist with Metadata also like below code.
-
-    ```
-	var playlist = new MediaControlPlaylist("MyFavoriate",
-		new Dictionary<string, MediaControlMetadata>()
-		{
-			{"Song1", new MediaControlMetadata() {Author = "Someone"} },
-			{"Song2", new MediaControlMetadata()}
-		}
-    );
-	```
-
-To retrieve the playlist and metadata information on the client side:
-    ```
-	    controller.PlaylistUpdated += (s, e) =>
-		{
-		    Tizen.Log.Info(LogTag, $"Updated mode : {e.Mode}, Name : {e.Name}, The title of first song : {e.Playlist.GetMetadata("IDX1").Title}");
-		};
-	````
-
 ## Setting and Getting Playback Capability
 
-To get playback capability from the client and to set it on the server side:
+To get playback capability from the client and to set it on the server side, follow these steps:
 
 1. To set playback capability on the server side, use the `SetPlaybackCapability` method of the  [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
