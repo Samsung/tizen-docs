@@ -1,7 +1,8 @@
 # Uninstall Tizen Studio
 
-This page explains how to uninstall Tizen Studio. Tizen Studio uninstaller removes all Tizen platforms and the tools that you have installed.
-You can uninstall Tizen Studio in one of the following methods: 
+This page explains how to uninstall Tizen Studio from your system. The Tizen Studio uninstaller removes all the installed Tizen platforms and the tools. During the uninstallation procedure, all the data stored in the installation directory is removed, including any customizations or any other data you have stored within that directory. Make a back up of any data you want to keep prior to performing the uninstallation procedure.
+
+You can uninstall Tizen Studio in one of the following ways: 
 - Using GUI uninstaller
 - Using CLI uninstaller
 
@@ -9,19 +10,18 @@ You can uninstall Tizen Studio in one of the following methods:
 >  
 > For more information on how to remove a single package or multiple packages, see [Updating Tizen Studio](update-sdk.md).
 
-You can uninstall Tizen Studio either using the GUI uninstaller or using the CLI Package Manager.
-
 ## GUI Uninstaller
+
+With an intuitive interface, the GUI uninstaller simplifies the uninstallation process. You can easily uninstall Tizen Studio and the related platforms and packages. 
 
 To uninstall Tizen Studio using GUI uninstaller, follow these steps:
 
-1. You have to back up all the data and the files in case you want to keep them for future reference. 
+1. Back up all the data and the files in case you want to keep them for future reference. 
    > **Note**
    >
-   > Once you start uninstallation process, the process is irreversible. You cannot restore the removed files.
-2. Launch Tizen Studio uninstaller.
-
-3. Select the components to uninstall. 
+   > Once you start the uninstallation process, the process is irreversible. You cannot restore the removed files.
+2. Launch Tizen Studio uninstaller, click the **uninstaller icon.**
+3. Check the following section to make a choice of components that you want to uninstall. 
 
    - **SDK data**  
    The SDK data directory typically contains user-created data files, including emulator images, log files, and tool configuration files.
@@ -31,25 +31,27 @@ To uninstall Tizen Studio using GUI uninstaller, follow these steps:
 
      > **Note**  
      > 
-     > If you do not select SDK data or KeyStore components, you can keep the SDK data or KeyStore files in their directories for future re-use.
+     > If you do not select SDK data or KeyStore components, you can keep the SDK data or KeyStore files in their directories for future        re-use.
 
-3. To remove the installed platforms and the tools, and the user-created data and the files, click **Uninstall**.
+4. To remove all the installed platforms, packages, tools, and the user-created data and the files, click **Uninstall**.
 
    ![Uninstaller selections](./media/uninstall_sdk_selection.png)
 
-4. If you have selected to uninstall the SDK data or the KeyStore components, they are removed in the uninstalling process.
+5. If you click the **checkbox** to uninstall the SDK data or the KeyStore components, they get uninstalled during the process. In case you want to keep one of them, uncheck the respective **checkbox**.
 
    ![Uninstallation in progress](./media/uninstall_sdk_progress.png)
 
 ## CLI Uninstaller
 
-Run the CLI Package Manager with the `uninstall` command using the following syntax:
+For advanced users, Tizen Studio provides a CLI uninstaller. The following procedure facilitates removing Tizen Studio and the related platforms and packages. 
 
-```
-package-manager-cli uninstall [-p <password>] <package name>[,...] | [--all]
-```
+To uninstall Tizen Studio using the CLI uninstaller, run th eCLI Package Manager with `uninstall` command using the following syntax:
 
-The following table explains various command parameters to uninstall:
+   ```
+   package-manager-cli uninstall [-p <password>] <package name>[,...] | [--all]
+   ```
+
+The following table explains various command parameters to perform uninstallation tasks:
 
 **Table: Uninstall command parameters**
 
