@@ -14,6 +14,10 @@ To launch Package Manager on your preferred operating system, follow these steps
 
 - Ubuntu: Click **Dashboard Home > Package Manager**.
 
+>Note: 
+>
+> Before launching the Package Manager, ensure you close all Tizen Studio programs.
+
 ## Package Manager Components 
 
 The Package Manager window is made up of the following logical areas as identified in the following figure:
