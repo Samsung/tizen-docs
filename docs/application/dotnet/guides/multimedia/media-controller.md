@@ -180,7 +180,7 @@ To get metadata from the client and to set it on the server side, follow these s
     });
     ```
 
-2. To get playback capability on the client side, use the `GetMetadata` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+2. To get metadata on the client side, use the `GetMetadata` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
     var metadata = controller.GetMetadata();
