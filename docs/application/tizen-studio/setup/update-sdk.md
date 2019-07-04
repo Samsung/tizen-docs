@@ -2,9 +2,11 @@
 
 This page explains how to install, update, and remove packages using Package Manager tool, and also guides advanced users to manage packages with the CLI version of the tool. Tizen Studio primarily consists of collections of packages with necessary files, metadata, installation, and removal scripts. Most of the packages have interdependencies. 
 
-Package Manager is a comprehensive package management tool included with Tizen Studio to manage various processes like installation, updation, uninstallation of packages and platforms using GUI or CLI versions of the tool. The Package Manager offers a simple way to manage packages without getting into the complicated package dependencies.
+Package Manager is a comprehensive package management tool included with Tizen Studio to manage various processes like installation, updation, uninstallation of packages and platforms using GUI or CLI versions of the tool. 
 
-## Start Package Manager
+## Launch Package Manager
+
+The Package Manager offers a simple way to manage packages without getting into the complicated package dependencies.
 
 To launch Package Manager on your preferred operating system, follow these steps: 
 
@@ -72,10 +74,12 @@ To update the currently installed packages, click **Updates available**.
 
 ### Update Packages Offline
 
+The Package Manager also facilitates offline upgrades with an update image for all the existing installed packages.
+
 To install the packages with an image file, follow these steps:
 
-1.  In Package Manager, click **Configuration** (![Configuration icon](./media/updating_sdk_icon_config.png))
-2. In the Configuration window that appears, enter the full path of the image file in Package Repository. Alternatively, to select the image file,  click **...** next to the combo box. 
+1. In Package Manager, click **Configuration** (![Configuration icon](./media/updating_sdk_icon_config.png))
+2. In the Configuration window that appears, enter the full path of the image file in Package Repository. Alternatively, to select the image file,  click **...** next to the **combo box**. 
 3. To close the dialog, click **Open**.
 
     >**Note:**
@@ -97,8 +101,8 @@ Package Manager installs all packages that are required for that platform or too
 
 To install individual packages for a particular platform or tool, follow these steps: 
  
- 1. Click on **collapsible** icon located on the left of the main area for each platform or tool to view more packages and tools.
- 2. Click **install** next to the package to install it.
+ 1. Click on **collapsible** icon located on the left of the main area of the window for each platform or tool to view more packages and tools.
+ 2. Click **install** next to the package to install that package.
 
   **Figure: Install platform packages**
 
@@ -106,7 +110,7 @@ To install individual packages for a particular platform or tool, follow these s
 
 ## Cancel Installation
 
-To cancel the installation process, click the **x** button on **Progress** tab next to the package. 
+To cancel the installation process, click the **X** button on **Progress** tab next to the package. 
 
 >**Note:** 
 >
@@ -122,18 +126,18 @@ To retry a cancelled or failed installation, click **retry** (![Retry icon](./me
 
 >**Note:**
 >
->Due to package dependencies, retrying the installation of a single package may also cause the installation of other packages.
+>Due to package interdependencies, retrying the installation of a single package may also cause the installation of other packages.
 
 ## Remove Packages
 
-Package manager is a comprehensive tool that manages all the package removal tasks effortlessly. 
+The package manager is a comprehensive tool and provides an intuitive user experience that helps you to remove any package, platform or tool with ease. 
 
 To remove a package, click **delete** located next to the respective package. 
 
 >**Note:**
 >
->- Due to package dependencies, removing a single package may also cause other packages to be removed. 
->- To ensure system integrity across all installed Tizen Studio packages, package removal cannot be cancelled while removal process is in progress.
+>- Due to package interdependencies, removing a single package may also cause other packages to be removed. 
+>- To ensure system integrity across all installed Tizen Studio packages, package removal process cannot be cancelled while the process is in progress.
 
   **Figure: Remove packages**
 
@@ -141,7 +145,7 @@ To remove a package, click **delete** located next to the respective package.
 
 ## Monitor Progress
 
-Tizen Studio provides a progress bar where you can monitor the installation, update, or removal progress. This intuitive progress bar appears on the header area and helps in checking the overall progress of a respective process.  Also, to monitor the progress of specific installation, uninstallation, or update, as well as view the expected time of completion, use the **Progress** tab.
+Tizen Studio provides a progress bar where you can monitor the installation, update, or removal progress. This progress bar appears on the header area and helps in checking the overall progress of a respective process.  Also, to monitor the progress of specific installation, uninstallation, or update, as well as view the expected time of completion, the Package manager provides respective progress bars for each package or tool.
 
   **Figure: Progress tab**
 
@@ -149,7 +153,7 @@ Tizen Studio provides a progress bar where you can monitor the installation, upd
 
 ## Update using CLI Package Manager
 
-For advanced users, Tizen Studio provides command line version of package manager tool. It can be used to install, update, remove packages and platform tools respectively.  
+For advanced users, Tizen Studio provides command line version of package manager tool. It can be used to install, update, remove packages and platform tools respectively using terminal or console window. 
 
 To Run the CLI version of Package Manager with the `update` command, use the following syntax:
 
@@ -164,10 +168,10 @@ The following table lists various options you can append to the syntax for the d
 |---------------------------|----------------------------------------|
 | `--accept-license`          | Accepts the license terms.               |
 | `--no-java-check`           | Skips the Java version check.            |
-| `--proxy <value>`           | Proxy configuration value. You can use one of the following values: **direct**, **auto**, or **ip:port**. |
+| `--proxy <value>`           | Represents proxy configuration value. You can use one of the following values: **direct**, **auto**, or **ip:port**. |
 | `-f, --file <file path>`    | If you want to install packages from a local SDK image, specify the full path of the SDK image file. |
-| `-p, --password <password>` |specifies Administrator (sudo) password for authentication. Ubuntu only. |
-| `--latest`                  | specifies the option for updating the Tizen Studio to the latest version, assuming that you have downgraded it manually to an earlier version. Otherwise, the Package Manager updates it to the latest version with or without this option. |
+| `-p, --password <password>` | Specifies Administrator (sudo) password for authentication. (Ubuntu only) |
+| `--latest`                  | Specifies the option for updating the Tizen Studio to the latest version, assuming that you have downgraded it manually to an earlier version. Otherwise, the Package Manager updates it to the latest version with or without this option. |
 
 ## Related Information
 - Dependencies
