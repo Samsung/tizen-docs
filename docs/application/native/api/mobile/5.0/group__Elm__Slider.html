@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Slider</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -102,9 +102,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <p>The slider adds a draggable “slider” widget for selecting the value of something within a range.</p>
 <p>A slider can be horizontal or vertical. It can contain an Icon and has a primary label as well as a units label (that is formatted with floating point values and thus accepts a printf-style format string, like “%1.2f units”. There is also an indicator string that may be somewhere else (like on the slider itself) that also accepts a format string like units. Label, Icon Unit and Indicator strings/objects are optional.</p>
 <p>A slider may be inverted which means values invert, with high vales being on the left or top and low values on the right or bottom (as opposed to normally being low on the left or top and high on the bottom and right).</p>
-<p>The slider should have its minimum and maximum values set by the application with <a class="el" href="group__Elm__Slider.html#ga35755a9bce16705534369b6ede21e514" title="Set the minimum and maximum values for the slider.">elm_slider_min_max_set()</a> and value should also be set by the application before use with <a class="el" href="group__Elm__Slider.html#gad7e0b31e735300032fb16c43c571407f" title="Set the value the slider displays.">elm_slider_value_set()</a>. The span of the slider is its length (horizontally or vertically). This will be scaled by the object or applications scaling factor. At any point code can query the slider for its value with <a class="el" href="group__Elm__Slider.html#gacbf914e6ebce5e0dd4f522a51965d354" title="Get the value displayed by the slider.">elm_slider_value_get()</a>.</p>
-<p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for slider objects.</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout:</p>
+<p>The slider should have its minimum and maximum values set by the application with <a class="el" href="group__Elm__Slider.html#ga5368bb23df3d5253ab388195812e792b" title="Set the minimum and maximum values for the slider.">elm_slider_min_max_set()</a> and value should also be set by the application before use with <a class="el" href="group__Elm__Slider.html#ga74e14a46f516a1505242bddc434f938d" title="Set the value the slider displays.">elm_slider_value_set()</a>. The span of the slider is its length (horizontally or vertically). This will be scaled by the object or applications scaling factor. At any point code can query the slider for its value with <a class="el" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" title="Get the value displayed by the slider.">elm_slider_value_get()</a>.</p>
+<p>This widget inherits from the Layout one, so that all the functions acting on it also work for slider objects.</p>
+<p>This widget emits the following signals, besides the ones sent from Layout:</p>
 <ul>
 <li><code>"changed"</code> - Whenever the slider value is changed by the user.</li>
 <li><code>"slider,drag,start"</code> - dragging the slider indicator around has started.</li>
@@ -144,97 +144,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gac83f2a799d832f1070010a303d5cac36">elm_config_slider_indicator_visible_mode_set</a> (<a class="el" href="group__Elm__Slider.html#gad033108965430057cfcd75f9edbebc6a">Elm_Slider_Indicator_Visible_Mode</a> mode)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__Slider.html#gad033108965430057cfcd75f9edbebc6a">Elm_Slider_Indicator_Visible_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga1d78d9bfd9427cf46c573294b29229cc">elm_config_slider_indicator_visible_mode_get</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga884ab054cf92e3ed2ea917a6c9aa6078">elm_slider_horizontal_set</a> (Elm_Slider *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> horizontal)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the orientation of a given slider widget.  <a href="#ga884ab054cf92e3ed2ea917a6c9aa6078"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gae9aa8cbfd0950e51a1f5fb72eb5bac45">elm_slider_horizontal_get</a> (const Elm_Slider *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the orientation of a given slider widget.  <a href="#gae9aa8cbfd0950e51a1f5fb72eb5bac45"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gad7e0b31e735300032fb16c43c571407f">elm_slider_value_set</a> (Elm_Slider *obj, double val)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value the slider displays.  <a href="#gad7e0b31e735300032fb16c43c571407f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gacbf914e6ebce5e0dd4f522a51965d354">elm_slider_value_get</a> (const Elm_Slider *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value displayed by the slider.  <a href="#gacbf914e6ebce5e0dd4f522a51965d354"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga9b371db7f4edbcf40f349f3125e999d2">elm_slider_indicator_format_set</a> (Elm_Slider *obj, const char *indicator)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the format string for the indicator label.  <a href="#ga9b371db7f4edbcf40f349f3125e999d2"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga1aaa8aaa44f7070df6c0af0ea1f14fde">elm_slider_indicator_format_get</a> (const Elm_Slider *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the indicator label format of the slider.  <a href="#ga1aaa8aaa44f7070df6c0af0ea1f14fde"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga3fbaccaf7830cd54f0b66d19b7283127">elm_slider_inverted_set</a> (Elm_Slider *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> inverted)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert a given slider widget's displaying values order.  <a href="#ga3fbaccaf7830cd54f0b66d19b7283127"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga315fd8705e065f5b19331c0e90550989">elm_slider_inverted_get</a> (const Elm_Slider *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a given slider widget's displaying values are inverted or not.  <a href="#ga315fd8705e065f5b19331c0e90550989"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga0ed7c5bfecd828666de36e3fd1c9c338">elm_slider_indicator_show_set</a> (Elm_Slider *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> show)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether to enlarge slider indicator (augmented knob) or not.  <a href="#ga0ed7c5bfecd828666de36e3fd1c9c338"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gaf4dd6f3a935205f2e6eb9374a1467103">elm_slider_indicator_show_get</a> (const Elm_Slider *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a given slider widget's enlarging indicator or not.  <a href="#gaf4dd6f3a935205f2e6eb9374a1467103"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga35755a9bce16705534369b6ede21e514">elm_slider_min_max_set</a> (Elm_Slider *obj, double min, double max)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the minimum and maximum values for the slider.  <a href="#ga35755a9bce16705534369b6ede21e514"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga23ce13dc95a77322dd293ed827c2b98a">elm_slider_min_max_get</a> (const Elm_Slider *obj, double *min, double *max)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the minimum and maximum values of the slider.  <a href="#ga23ce13dc95a77322dd293ed827c2b98a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gaf2adcb92b62abac4a939def61b5f08e8">elm_slider_unit_format_set</a> (Elm_Slider *obj, const char *units)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the format string for the unit label.  <a href="#gaf2adcb92b62abac4a939def61b5f08e8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gae91ccf7ebcee75f11b316e9943e6ce02">elm_slider_unit_format_get</a> (const Elm_Slider *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the unit label format of the slider.  <a href="#gae91ccf7ebcee75f11b316e9943e6ce02"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga07303a9fc05de815d9b423bf13d60418">elm_slider_indicator_show_on_focus_set</a> (Elm_Slider *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> flag)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Show the indicator of slider on focus.  <a href="#ga07303a9fc05de815d9b423bf13d60418"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gab0d914bd31c9409fa3efdd01cb9631fd">elm_slider_indicator_show_on_focus_get</a> (const Elm_Slider *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether the indicator of the slider is set or not.  <a href="#gab0d914bd31c9409fa3efdd01cb9631fd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga2e8d48d04724bced6cb904d026bad4b4">elm_slider_span_size_set</a> (Elm_Slider *obj, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> size)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the (exact) length of the bar region of a given slider widget.  <a href="#ga2e8d48d04724bced6cb904d026bad4b4"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga9fd151bae16bcbae6605414cb243c859">elm_slider_span_size_get</a> (const Elm_Slider *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length set for the bar region of a given slider widget.  <a href="#ga9fd151bae16bcbae6605414cb243c859"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga3b70dc7c816d399e3bbf449ae885068c">elm_slider_step_set</a> (Elm_Slider *obj, double step)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the step by which slider indicator will move.  <a href="#ga3b70dc7c816d399e3bbf449ae885068c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gae846a01358a3d7805b6a72cce7b79d3d">elm_slider_step_get</a> (const Elm_Slider *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the step by which slider indicator moves.  <a href="#gae846a01358a3d7805b6a72cce7b79d3d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga2c5edefb6e38cb17d6e3a9d93d4a9c13">elm_slider_indicator_visible_mode_set</a> (Elm_Slider *obj, <a class="el" href="group__Elm__Slider.html#gad033108965430057cfcd75f9edbebc6a">Elm_Slider_Indicator_Visible_Mode</a> indicator_visible_mode)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the visible mode of indicator.  <a href="#ga2c5edefb6e38cb17d6e3a9d93d4a9c13"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__Slider.html#gad033108965430057cfcd75f9edbebc6a">Elm_Slider_Indicator_Visible_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga3749c60762c2b3f370d2b1f5acba6641">elm_slider_indicator_visible_mode_get</a> (const Elm_Slider *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the visible mode of indicator.  <a href="#ga3749c60762c2b3f370d2b1f5acba6641"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gac725492a95973b30680597d57d9b1154">elm_slider_indicator_format_function_set</a> (Elm_Slider *obj, slider_func_type func, slider_freefunc_type free_func)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the format function pointer for the indicator label.  <a href="#gac725492a95973b30680597d57d9b1154"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga44ae29568122f5891f9353b060559847">elm_slider_units_format_function_set</a> (Elm_Slider *obj, slider_func_type func, slider_freefunc_type free_func)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the format function pointer for the units label.  <a href="#ga44ae29568122f5891f9353b060559847"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gac83f2a799d832f1070010a303d5cac36">elm_config_slider_indicator_visible_mode_set</a> (Elm_Slider_Indicator_Visible_Mode mode)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Elm_Slider_Indicator_Visible_Mode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga1d78d9bfd9427cf46c573294b29229cc">elm_config_slider_indicator_visible_mode_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga15ade2fc52942975429bb3c864a8a258">elm_slider_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gab59b52f2d676ebd59f301ce9e34eaa17">elm_slider_horizontal_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> horizontal)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the orientation of a given slider widget.  <a href="#gab59b52f2d676ebd59f301ce9e34eaa17"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga31e7fdc8022f404ad149cdf0d1558c68">elm_slider_horizontal_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga74e14a46f516a1505242bddc434f938d">elm_slider_value_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double val)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value the slider displays.  <a href="#ga74e14a46f516a1505242bddc434f938d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d">elm_slider_value_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value displayed by the slider.  <a href="#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gafb58be6aec6660c443263e6381e49a2b">elm_slider_inverted_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> inverted)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Invert a given slider widget's displaying values order.  <a href="#gafb58be6aec6660c443263e6381e49a2b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gaf779ad8604635d4828d64ae267ab26dd">elm_slider_inverted_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a given slider widget's displaying values are inverted or not.  <a href="#gaf779ad8604635d4828d64ae267ab26dd"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742">elm_slider_span_size_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Evas_Coord size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the (exact) length of the bar region of a given slider widget.  <a href="#ga96b5e8176a6bdb4e932e32329e6fa742"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Evas_Coord&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gad0a9a60dcec079e6910a97299bbf6922">elm_slider_span_size_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length set for the bar region of a given slider widget.  <a href="#gad0a9a60dcec079e6910a97299bbf6922"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gaa58c280b3916b35f52db525d3d921004">elm_slider_unit_format_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *units)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the format string for the unit label.  <a href="#gaa58c280b3916b35f52db525d3d921004"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gae8a9d06d761f891b753098dd36fb9616">elm_slider_unit_format_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the unit label format of the slider.  <a href="#gae8a9d06d761f891b753098dd36fb9616"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gac585e368ccd913851e480433e3029dcc">elm_slider_units_format_function_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, slider_func_type func, slider_freefunc_type free_func)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the format function pointer for the units label.  <a href="#gac585e368ccd913851e480433e3029dcc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga5368bb23df3d5253ab388195812e792b">elm_slider_min_max_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double min, double max)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the minimum and maximum values for the slider.  <a href="#ga5368bb23df3d5253ab388195812e792b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gae5971afb572975a6d8ace1c81890e577">elm_slider_min_max_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double *min, double *max)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the minimum and maximum values of the slider.  <a href="#gae5971afb572975a6d8ace1c81890e577"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2">elm_slider_indicator_format_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *indicator)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This enables two indicators in slider.  <a href="#ga8d90d63bc776df76676b2d4efde094a2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gac9eef3c0693bea42e0a265a7a18ea980">elm_slider_indicator_format_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the indicator label format of the slider.  <a href="#gac9eef3c0693bea42e0a265a7a18ea980"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gaf34f35f4dcc1eff5c0bf303500045aaa">elm_slider_indicator_format_function_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, slider_func_type func, slider_freefunc_type free_func)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the format function pointer for the indicator label.  <a href="#gaf34f35f4dcc1eff5c0bf303500045aaa"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gad251f2ff0bc1f84811fa17d5250a0077">elm_slider_indicator_show_on_focus_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> flag)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Show the indicator of slider on focus.  <a href="#gad251f2ff0bc1f84811fa17d5250a0077"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga979a92d03e1f9e38584694c668c82d0a">elm_slider_indicator_show_on_focus_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether the indicator of the slider is set or not.  <a href="#ga979a92d03e1f9e38584694c668c82d0a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga32babe75d4ffd02e4c92ec3b66c5c8fc">elm_slider_indicator_show_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> show)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether to enlarge slider indicator (augmented knob) or not.  <a href="#ga32babe75d4ffd02e4c92ec3b66c5c8fc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gab0c569ffadecdf3da88dc786a745f99d">elm_slider_indicator_show_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a given slider widget's enlarging indicator or not.  <a href="#gab0c569ffadecdf3da88dc786a745f99d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga64eade1830d74b5a84e88a1f9ef9fad0">elm_slider_indicator_visible_mode_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_Slider_Indicator_Visible_Mode indicator_visible_mode)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Get the visible mode of indicator.  <a href="#ga64eade1830d74b5a84e88a1f9ef9fad0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Elm_Slider_Indicator_Visible_Mode&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gac75d732d01b22fd9638099084c07821e">elm_slider_indicator_visible_mode_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set/Get the visible mode of indicator.  <a href="#gac75d732d01b22fd9638099084c07821e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#gaa5b21faa04211cdfbea70c5b0311d190">elm_slider_step_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the step by which slider indicator moves.  <a href="#gaa5b21faa04211cdfbea70c5b0311d190"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Slider.html#ga66c822ea8948bd5c8bcdb969102a63ee">elm_slider_step_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double step)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the step by which slider indicator will move.  <a href="#ga66c822ea8948bd5c8bcdb969102a63ee"></a><br/></td></tr>
 </table>
-<hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="gad033108965430057cfcd75f9edbebc6a"></a><!-- doxytag: member="elm_config.h::Elm_Slider_Indicator_Visible_Mode" ref="gad033108965430057cfcd75f9edbebc6a" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__Elm__Slider.html#gad033108965430057cfcd75f9edbebc6a">Elm_Slider_Indicator_Visible_Mode</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Slider's indicator visiblity mode.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggad033108965430057cfcd75f9edbebc6aa1df354e52f81a8df27909d778073b5c3"></a><!-- doxytag: member="ELM_SLIDER_INDICATOR_VISIBLE_MODE_DEFAULT" ref="ggad033108965430057cfcd75f9edbebc6aa1df354e52f81a8df27909d778073b5c3" args="" -->ELM_SLIDER_INDICATOR_VISIBLE_MODE_DEFAULT</em>&nbsp;</td><td>
-<p>show indicator on mouse down or change in slider value </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad033108965430057cfcd75f9edbebc6aa61646bdd3bbc4e801393cb1b92bfc8e6"></a><!-- doxytag: member="ELM_SLIDER_INDICATOR_VISIBLE_MODE_ALWAYS" ref="ggad033108965430057cfcd75f9edbebc6aa61646bdd3bbc4e801393cb1b92bfc8e6" args="" -->ELM_SLIDER_INDICATOR_VISIBLE_MODE_ALWAYS</em>&nbsp;</td><td>
-<p>Always show the indicator. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad033108965430057cfcd75f9edbebc6aa199574b4ca392781f5edc1244d336750"></a><!-- doxytag: member="ELM_SLIDER_INDICATOR_VISIBLE_MODE_ON_FOCUS" ref="ggad033108965430057cfcd75f9edbebc6aa199574b4ca392781f5edc1244d336750" args="" -->ELM_SLIDER_INDICATOR_VISIBLE_MODE_ON_FOCUS</em>&nbsp;</td><td>
-<p>Show the indicator on focus </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad033108965430057cfcd75f9edbebc6aa18605b03fcf653cb719fd111175a30c2"></a><!-- doxytag: member="ELM_SLIDER_INDICATOR_VISIBLE_MODE_NONE" ref="ggad033108965430057cfcd75f9edbebc6aa18605b03fcf653cb719fd111175a30c2" args="" -->ELM_SLIDER_INDICATOR_VISIBLE_MODE_NONE</em>&nbsp;</td><td>
-<p>Never show the indicator </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga1d78d9bfd9427cf46c573294b29229cc"></a><!-- doxytag: member="elm_config.h::elm_config_slider_indicator_visible_mode_get" ref="ga1d78d9bfd9427cf46c573294b29229cc" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Elm__Slider.html#gad033108965430057cfcd75f9edbebc6a">Elm_Slider_Indicator_Visible_Mode</a> <a class="el" href="group__Elm__Slider.html#ga1d78d9bfd9427cf46c573294b29229cc">elm_config_slider_indicator_visible_mode_get</a> </td>
+          <td class="memname">Elm_Slider_Indicator_Visible_Mode <a class="el" href="group__Elm__Slider.html#ga1d78d9bfd9427cf46c573294b29229cc">elm_config_slider_indicator_visible_mode_get</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -251,8 +218,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>ELM_SLIDER_INDICATOR_VISIBLE_MODE_DEFAULT</code> if not set anything by the user. <code>ELM_SLIDER_INDICATOR_VISIBLE_MODE_ALWAYS</code>, ELM_SLIDER_INDICATOR_VISIBLE_MODE_ON_FOCUS, ELM_SLIDER_INDICATOR_VISIBLE_MODE_NONE if any of the above is set by user.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -263,7 +230,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="group__Elm__Slider.html#gac83f2a799d832f1070010a303d5cac36">elm_config_slider_indicator_visible_mode_set</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Elm__Slider.html#gad033108965430057cfcd75f9edbebc6a">Elm_Slider_Indicator_Visible_Mode</a>&#160;</td>
+          <td class="paramtype">Elm_Slider_Indicator_Visible_Mode&#160;</td>
           <td class="paramname"><em>mode</em></td><td>)</td>
           <td></td>
         </tr>
@@ -278,8 +245,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -305,45 +272,39 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new slider widget handle or <code>NULL</code>, on errors.</dd></dl>
-<p>This function inserts a new slider widget on the canvas.</p>
+<p>This function inserts a new slider widget on the canvas. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a30">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a56">gengrid_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a14">photocam_example_01.c</a>, and <a class="el" href="slider_example_8c-example.html#a9">slider_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gae9aa8cbfd0950e51a1f5fb72eb5bac45"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_horizontal_get" ref="gae9aa8cbfd0950e51a1f5fb72eb5bac45" args="(const Elm_Slider *obj)" -->
+<a class="anchor" id="ga31e7fdc8022f404ad149cdf0d1558c68"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_horizontal_get" ref="ga31e7fdc8022f404ad149cdf0d1558c68" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Slider.html#gae9aa8cbfd0950e51a1f5fb72eb5bac45">elm_slider_horizontal_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Slider.html#ga31e7fdc8022f404ad149cdf0d1558c68">elm_slider_horizontal_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-
 <p>Get the orientation of a given slider widget. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
-<a class="anchor" id="ga884ab054cf92e3ed2ea917a6c9aa6078"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_horizontal_set" ref="ga884ab054cf92e3ed2ea917a6c9aa6078" args="(Elm_Slider *obj, Eina_Bool horizontal)" -->
+<a class="anchor" id="gab59b52f2d676ebd59f301ce9e34eaa17"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_horizontal_set" ref="gab59b52f2d676ebd59f301ce9e34eaa17" args="(Evas_Object *obj, Eina_Bool horizontal)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga884ab054cf92e3ed2ea917a6c9aa6078">elm_slider_horizontal_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#gab59b52f2d676ebd59f301ce9e34eaa17">elm_slider_horizontal_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -364,25 +325,25 @@ Functions</h2></td></tr>
 <p>Set the orientation of a given slider widget. </p>
 <p>Use this function to change how your slider is to be disposed: vertically or horizontally.</p>
 <p>By default it's displayed horizontally.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">horizontal</td><td></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slider_example_8c-example.html#a22">slider_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gac725492a95973b30680597d57d9b1154"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_indicator_format_function_set" ref="gac725492a95973b30680597d57d9b1154" args="(Elm_Slider *obj, slider_func_type func, slider_freefunc_type free_func)" -->
+<a class="anchor" id="gaf34f35f4dcc1eff5c0bf303500045aaa"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_indicator_format_function_set" ref="gaf34f35f4dcc1eff5c0bf303500045aaa" args="(Evas_Object *obj, slider_func_type func, slider_freefunc_type free_func)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#gac725492a95973b30680597d57d9b1154">elm_slider_indicator_format_function_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#gaf34f35f4dcc1eff5c0bf303500045aaa">elm_slider_indicator_format_function_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -408,7 +369,6 @@ Functions</h2></td></tr>
 
 <p>Set the format function pointer for the indicator label. </p>
 <p>Set the callback function to format the indicator string.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -417,17 +377,19 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slider_example_8c-example.html#a23">slider_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="ga1aaa8aaa44f7070df6c0af0ea1f14fde"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_indicator_format_get" ref="ga1aaa8aaa44f7070df6c0af0ea1f14fde" args="(const Elm_Slider *obj)" -->
+<a class="anchor" id="gac9eef3c0693bea42e0a265a7a18ea980"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_indicator_format_get" ref="gac9eef3c0693bea42e0a265a7a18ea980" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* <a class="el" href="group__Elm__Slider.html#ga1aaa8aaa44f7070df6c0af0ea1f14fde">elm_slider_indicator_format_get</a> </td>
+          <td class="memname">const char* <a class="el" href="group__Elm__Slider.html#gac9eef3c0693bea42e0a265a7a18ea980">elm_slider_indicator_format_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -437,7 +399,6 @@ Functions</h2></td></tr>
 
 <p>Get the indicator label format of the slider. </p>
 <p>The slider may display its value somewhere else then unit label, for example, above the slider knob that is dragged around. This function gets the format string used for this.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -445,17 +406,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The format string for the indicator display. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga9b371db7f4edbcf40f349f3125e999d2"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_indicator_format_set" ref="ga9b371db7f4edbcf40f349f3125e999d2" args="(Elm_Slider *obj, const char *indicator)" -->
+<a class="anchor" id="ga8d90d63bc776df76676b2d4efde094a2"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_indicator_format_set" ref="ga8d90d63bc776df76676b2d4efde094a2" args="(Evas_Object *obj, const char *indicator)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga9b371db7f4edbcf40f349f3125e999d2">elm_slider_indicator_format_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2">elm_slider_indicator_format_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -473,12 +435,36 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the format string for the indicator label. </p>
+<p>This enables two indicators in slider. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">enable</td><td><code>true</code> if two indicators are enabled, <code>false</code> otherwise</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 This enables two indicators in slider.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if two indicators are enabled, <code>false</code> otherwise</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Sets up a start and end range point for the slider</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">from</td><td>Range minimum value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">to</td><td>Range maximum value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Sets up a start and end range point for the slider</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">from</td><td>Range minimum value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">to</td><td>Range maximum value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Set the format string for the indicator label.</dd></dl>
 <p>The slider may display its value somewhere else then unit label, for example, above the slider knob that is dragged around. This function sets the format string used for this.</p>
 <p>If <code>null</code>, indicator label won't be visible. If not it sets the format string for the label text. To the label text is provided a floating point value, so the label text can display up to 1 floating point value. Note that this is optional.</p>
 <p>Use a format string such as "%1.2f meters" for example, and it will display values like: "3.14 meters" for a value equal to 3.14159.</p>
 <p>Default is indicator label disabled.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -486,17 +472,19 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a33">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a58">gengrid_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a20">slider_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gaf4dd6f3a935205f2e6eb9374a1467103"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_indicator_show_get" ref="gaf4dd6f3a935205f2e6eb9374a1467103" args="(const Elm_Slider *obj)" -->
+<a class="anchor" id="gab0c569ffadecdf3da88dc786a745f99d"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_indicator_show_get" ref="gab0c569ffadecdf3da88dc786a745f99d" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Slider.html#gaf4dd6f3a935205f2e6eb9374a1467103">elm_slider_indicator_show_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Slider.html#gab0c569ffadecdf3da88dc786a745f99d">elm_slider_indicator_show_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -505,7 +493,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get whether a given slider widget's enlarging indicator or not. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -513,17 +500,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> will make it enlarge, <code>false</code> will let the knob always at default size. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gab0d914bd31c9409fa3efdd01cb9631fd"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_indicator_show_on_focus_get" ref="gab0d914bd31c9409fa3efdd01cb9631fd" args="(const Elm_Slider *obj)" -->
+<a class="anchor" id="ga979a92d03e1f9e38584694c668c82d0a"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_indicator_show_on_focus_get" ref="ga979a92d03e1f9e38584694c668c82d0a" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Slider.html#gab0d914bd31c9409fa3efdd01cb9631fd">elm_slider_indicator_show_on_focus_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Slider.html#ga979a92d03e1f9e38584694c668c82d0a">elm_slider_indicator_show_on_focus_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -532,24 +520,25 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get whether the indicator of the slider is set or not. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if indicator is shown on focus, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga07303a9fc05de815d9b423bf13d60418"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_indicator_show_on_focus_set" ref="ga07303a9fc05de815d9b423bf13d60418" args="(Elm_Slider *obj, Eina_Bool flag)" -->
+<a class="anchor" id="gad251f2ff0bc1f84811fa17d5250a0077"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_indicator_show_on_focus_set" ref="gad251f2ff0bc1f84811fa17d5250a0077" args="(Evas_Object *obj, Eina_Bool flag)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga07303a9fc05de815d9b423bf13d60418">elm_slider_indicator_show_on_focus_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#gad251f2ff0bc1f84811fa17d5250a0077">elm_slider_indicator_show_on_focus_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -568,25 +557,25 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Show the indicator of slider on focus. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flag</td><td><code>true</code> if indicator is shown on focus, <code>false</code> otherwise </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga0ed7c5bfecd828666de36e3fd1c9c338"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_indicator_show_set" ref="ga0ed7c5bfecd828666de36e3fd1c9c338" args="(Elm_Slider *obj, Eina_Bool show)" -->
+<a class="anchor" id="ga32babe75d4ffd02e4c92ec3b66c5c8fc"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_indicator_show_set" ref="ga32babe75d4ffd02e4c92ec3b66c5c8fc" args="(Evas_Object *obj, Eina_Bool show)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga0ed7c5bfecd828666de36e3fd1c9c338">elm_slider_indicator_show_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga32babe75d4ffd02e4c92ec3b66c5c8fc">elm_slider_indicator_show_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -606,8 +595,6 @@ Functions</h2></td></tr>
 
 <p>Set whether to enlarge slider indicator (augmented knob) or not. </p>
 <p>By default, indicator will be bigger while dragged by the user.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>It won't display values set with <a class="el" href="group__Elm__Slider.html#ga9b371db7f4edbcf40f349f3125e999d2">elm_slider_indicator_format_set</a> if you disable indicator.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -615,17 +602,18 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga3749c60762c2b3f370d2b1f5acba6641"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_indicator_visible_mode_get" ref="ga3749c60762c2b3f370d2b1f5acba6641" args="(const Elm_Slider *obj)" -->
+<a class="anchor" id="gac75d732d01b22fd9638099084c07821e"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_indicator_visible_mode_get" ref="gac75d732d01b22fd9638099084c07821e" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Elm__Slider.html#gad033108965430057cfcd75f9edbebc6a">Elm_Slider_Indicator_Visible_Mode</a> <a class="el" href="group__Elm__Slider.html#ga3749c60762c2b3f370d2b1f5acba6641">elm_slider_indicator_visible_mode_get</a> </td>
+          <td class="memname">Elm_Slider_Indicator_Visible_Mode <a class="el" href="group__Elm__Slider.html#gac75d732d01b22fd9638099084c07821e">elm_slider_indicator_visible_mode_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -633,8 +621,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get the visible mode of indicator. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<p>Set/Get the visible mode of indicator. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -642,23 +629,24 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The indicator visible mode. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga2c5edefb6e38cb17d6e3a9d93d4a9c13"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_indicator_visible_mode_set" ref="ga2c5edefb6e38cb17d6e3a9d93d4a9c13" args="(Elm_Slider *obj, Elm_Slider_Indicator_Visible_Mode indicator_visible_mode)" -->
+<a class="anchor" id="ga64eade1830d74b5a84e88a1f9ef9fad0"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_indicator_visible_mode_set" ref="ga64eade1830d74b5a84e88a1f9ef9fad0" args="(Evas_Object *obj, Elm_Slider_Indicator_Visible_Mode indicator_visible_mode)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga2c5edefb6e38cb17d6e3a9d93d4a9c13">elm_slider_indicator_visible_mode_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga64eade1830d74b5a84e88a1f9ef9fad0">elm_slider_indicator_visible_mode_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Elm__Slider.html#gad033108965430057cfcd75f9edbebc6a">Elm_Slider_Indicator_Visible_Mode</a>&#160;</td>
+          <td class="paramtype">Elm_Slider_Indicator_Visible_Mode&#160;</td>
           <td class="paramname"><em>indicator_visible_mode</em>&#160;</td>
         </tr>
         <tr>
@@ -670,8 +658,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the visible mode of indicator. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<p>Set/Get the visible mode of indicator. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -679,17 +666,18 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga315fd8705e065f5b19331c0e90550989"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_inverted_get" ref="ga315fd8705e065f5b19331c0e90550989" args="(const Elm_Slider *obj)" -->
+<a class="anchor" id="gaf779ad8604635d4828d64ae267ab26dd"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_inverted_get" ref="gaf779ad8604635d4828d64ae267ab26dd" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Slider.html#ga315fd8705e065f5b19331c0e90550989">elm_slider_inverted_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Slider.html#gaf779ad8604635d4828d64ae267ab26dd">elm_slider_inverted_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -698,25 +686,19 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get whether a given slider widget's displaying values are inverted or not. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Use <code>true</code> to make <code>obj</code> inverted, <code>false</code> to bring it back to default, non-inverted values. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga3fbaccaf7830cd54f0b66d19b7283127"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_inverted_set" ref="ga3fbaccaf7830cd54f0b66d19b7283127" args="(Elm_Slider *obj, Eina_Bool inverted)" -->
+<a class="anchor" id="gafb58be6aec6660c443263e6381e49a2b"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_inverted_set" ref="gafb58be6aec6660c443263e6381e49a2b" args="(Evas_Object *obj, Eina_Bool inverted)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga3fbaccaf7830cd54f0b66d19b7283127">elm_slider_inverted_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#gafb58be6aec6660c443263e6381e49a2b">elm_slider_inverted_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -736,25 +718,25 @@ Functions</h2></td></tr>
 
 <p>Invert a given slider widget's displaying values order. </p>
 <p>A slider may be inverted, in which state it gets its values inverted, with high vales being on the left or top and low values on the right or bottom, as opposed to normally have the low values on the former and high values on the latter, respectively, for horizontal and vertical modes.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">inverted</td><td>Use <code>true</code> to make <code>obj</code> inverted, <code>false</code> to bring it back to default, non-inverted values. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slider_example_8c-example.html#a21">slider_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="ga23ce13dc95a77322dd293ed827c2b98a"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_min_max_get" ref="ga23ce13dc95a77322dd293ed827c2b98a" args="(const Elm_Slider *obj, double *min, double *max)" -->
+<a class="anchor" id="gae5971afb572975a6d8ace1c81890e577"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_min_max_get" ref="gae5971afb572975a6d8ace1c81890e577" args="(const Evas_Object *obj, double *min, double *max)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga23ce13dc95a77322dd293ed827c2b98a">elm_slider_min_max_get</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#gae5971afb572975a6d8ace1c81890e577">elm_slider_min_max_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -780,26 +762,25 @@ Functions</h2></td></tr>
 
 <p>Get the minimum and maximum values of the slider. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If only one value is needed, the other pointer can be passed as <code>null</code>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">min</td><td>The minimum value. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">max</td><td>The maximum value. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga35755a9bce16705534369b6ede21e514"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_min_max_set" ref="ga35755a9bce16705534369b6ede21e514" args="(Elm_Slider *obj, double min, double max)" -->
+<a class="anchor" id="ga5368bb23df3d5253ab388195812e792b"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_min_max_set" ref="ga5368bb23df3d5253ab388195812e792b" args="(Evas_Object *obj, double min, double max)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga35755a9bce16705534369b6ede21e514">elm_slider_min_max_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga5368bb23df3d5253ab388195812e792b">elm_slider_min_max_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -825,29 +806,29 @@ Functions</h2></td></tr>
 
 <p>Set the minimum and maximum values for the slider. </p>
 <p>Define the allowed range of values to be selected by the user.</p>
-<p>If actual value is less than <code>min</code>, it will be updated to <code>min</code>. If it is bigger then <code>max</code>, will be updated to <code>max</code>. Actual value can be get with <a class="el" href="group__Elm__Slider.html#gacbf914e6ebce5e0dd4f522a51965d354">elm_slider_value_get</a>,get.</p>
+<p>If actual value is less than <code>min</code>, it will be updated to <code>min</code>. If it is bigger then <code>max</code>, will be updated to <code>max</code>. Actual value can be get with Efl::Ui::Progress::progress_value::get</p>
 <p>By default, min is equal to 0.0, and max is equal to 1.0.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>maximum must be greater than minimum, otherwise behavior is undefined.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">min</td><td>The minimum value. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>The maximum value. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a31">general_funcs_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a19">slider_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="ga9fd151bae16bcbae6605414cb243c859"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_span_size_get" ref="ga9fd151bae16bcbae6605414cb243c859" args="(const Elm_Slider *obj)" -->
+<a class="anchor" id="gad0a9a60dcec079e6910a97299bbf6922"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_span_size_get" ref="gad0a9a60dcec079e6910a97299bbf6922" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> <a class="el" href="group__Elm__Slider.html#ga9fd151bae16bcbae6605414cb243c859">elm_slider_span_size_get</a> </td>
+          <td class="memname">Evas_Coord <a class="el" href="group__Elm__Slider.html#gad0a9a60dcec079e6910a97299bbf6922">elm_slider_span_size_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -856,32 +837,26 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the length set for the bar region of a given slider widget. </p>
-<p>If that size was not set previously, with <a class="el" href="group__Elm__Slider.html#ga2e8d48d04724bced6cb904d026bad4b4">elm_slider_span_size_set</a>, this call will return $0.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>If that size was not set previously, with <a class="el" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742">elm_slider_span_size_set</a>, this call will return $0.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The length of the slider's bar region. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga2e8d48d04724bced6cb904d026bad4b4"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_span_size_set" ref="ga2e8d48d04724bced6cb904d026bad4b4" args="(Elm_Slider *obj, Evas_Coord size)" -->
+<a class="anchor" id="ga96b5e8176a6bdb4e932e32329e6fa742"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_span_size_set" ref="ga96b5e8176a6bdb4e932e32329e6fa742" args="(Evas_Object *obj, Evas_Coord size)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga2e8d48d04724bced6cb904d026bad4b4">elm_slider_span_size_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga96b5e8176a6bdb4e932e32329e6fa742">elm_slider_span_size_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">Evas_Coord&#160;</td>
           <td class="paramname"><em>size</em>&#160;</td>
         </tr>
         <tr>
@@ -896,25 +871,25 @@ Functions</h2></td></tr>
 <p>Set the (exact) length of the bar region of a given slider widget. </p>
 <p>This sets the minimum width (when in horizontal mode) or height (when in vertical mode) of the actual bar area of the slider <code>obj</code>. This in turn affects the object's minimum size. Use this when you're not setting other size hints expanding on the given direction (like weight and alignment hints) and you would like it to have a specific size.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Icon, end, label, indicator and unit text around <code>obj</code> will require their own space, which will make <code>obj</code> to require more the <code>size</code>, actually.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The length of the slider's bar region. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a57">gengrid_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a17">slider_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gae846a01358a3d7805b6a72cce7b79d3d"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_step_get" ref="gae846a01358a3d7805b6a72cce7b79d3d" args="(const Elm_Slider *obj)" -->
+<a class="anchor" id="gaa5b21faa04211cdfbea70c5b0311d190"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_step_get" ref="gaa5b21faa04211cdfbea70c5b0311d190" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="group__Elm__Slider.html#gae846a01358a3d7805b6a72cce7b79d3d">elm_slider_step_get</a> </td>
+          <td class="memname">double <a class="el" href="group__Elm__Slider.html#gaa5b21faa04211cdfbea70c5b0311d190">elm_slider_step_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -923,7 +898,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the step by which slider indicator moves. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -932,17 +906,18 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The step value.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga3b70dc7c816d399e3bbf449ae885068c"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_step_set" ref="ga3b70dc7c816d399e3bbf449ae885068c" args="(Elm_Slider *obj, double step)" -->
+<a class="anchor" id="ga66c822ea8948bd5c8bcdb969102a63ee"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_step_set" ref="ga66c822ea8948bd5c8bcdb969102a63ee" args="(Evas_Object *obj, double step)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga3b70dc7c816d399e3bbf449ae885068c">elm_slider_step_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga66c822ea8948bd5c8bcdb969102a63ee">elm_slider_step_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -961,8 +936,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Set the step by which slider indicator will move. </p>
-<p>This value is used when draggable object is moved automatically i.e., in case of key event when up/down/left/right key is pressed or in case when accessibility is set and flick event is used to inc/dec slider values. By default step value is equal to 0.05.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This value is used when a draggable object is moved automatically such as when key events like the up/down/left/right key are pressed or in case accessibility is set and flick event is used to inc/dec slider values. By default step value is 0.05.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -971,17 +945,18 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gae91ccf7ebcee75f11b316e9943e6ce02"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_unit_format_get" ref="gae91ccf7ebcee75f11b316e9943e6ce02" args="(const Elm_Slider *obj)" -->
+<a class="anchor" id="gae8a9d06d761f891b753098dd36fb9616"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_unit_format_get" ref="gae8a9d06d761f891b753098dd36fb9616" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* <a class="el" href="group__Elm__Slider.html#gae91ccf7ebcee75f11b316e9943e6ce02">elm_slider_unit_format_get</a> </td>
+          <td class="memname">const char* <a class="el" href="group__Elm__Slider.html#gae8a9d06d761f891b753098dd36fb9616">elm_slider_unit_format_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -991,25 +966,19 @@ Functions</h2></td></tr>
 
 <p>Get the unit label format of the slider. </p>
 <p>Unit label is displayed all the time, if set, after slider's bar. In horizontal mode, at right and in vertical mode, at bottom.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The format string for the unit display. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaf2adcb92b62abac4a939def61b5f08e8"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_unit_format_set" ref="gaf2adcb92b62abac4a939def61b5f08e8" args="(Elm_Slider *obj, const char *units)" -->
+<a class="anchor" id="gaa58c280b3916b35f52db525d3d921004"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_unit_format_set" ref="gaa58c280b3916b35f52db525d3d921004" args="(Evas_Object *obj, const char *units)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#gaf2adcb92b62abac4a939def61b5f08e8">elm_slider_unit_format_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#gaa58c280b3916b35f52db525d3d921004">elm_slider_unit_format_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -1032,25 +1001,25 @@ Functions</h2></td></tr>
 <p>If <code>null</code>, unit label won't be visible. If not it sets the format string for the label text. To the label text is provided a floating point value, so the label text can display up to 1 floating point value. Note that this is optional.</p>
 <p>Use a format string such as "%1.2f meters" for example, and it will display values like: "3.14 meters" for a value equal to 3.14159.</p>
 <p>Default is unit label disabled.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">units</td><td>The format string for the unit display. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a32">general_funcs_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a18">slider_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="ga44ae29568122f5891f9353b060559847"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_units_format_function_set" ref="ga44ae29568122f5891f9353b060559847" args="(Elm_Slider *obj, slider_func_type func, slider_freefunc_type free_func)" -->
+<a class="anchor" id="gac585e368ccd913851e480433e3029dcc"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_units_format_function_set" ref="gac585e368ccd913851e480433e3029dcc" args="(Evas_Object *obj, slider_func_type func, slider_freefunc_type free_func)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga44ae29568122f5891f9353b060559847">elm_slider_units_format_function_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#gac585e368ccd913851e480433e3029dcc">elm_slider_units_format_function_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -1076,26 +1045,25 @@ Functions</h2></td></tr>
 
 <p>Set the format function pointer for the units label. </p>
 <p>Set the callback function to format the units string.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>The units format function. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">free_func</td><td>The freeing function for the format string. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gacbf914e6ebce5e0dd4f522a51965d354"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_value_get" ref="gacbf914e6ebce5e0dd4f522a51965d354" args="(const Elm_Slider *obj)" -->
+<a class="anchor" id="ga2dd3f70cdbcb4a81b5d7a08a18afaa1d"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_value_get" ref="ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="group__Elm__Slider.html#gacbf914e6ebce5e0dd4f522a51965d354">elm_slider_value_get</a> </td>
+          <td class="memname">double <a class="el" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d">elm_slider_value_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Slider *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1104,25 +1072,20 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the value displayed by the slider. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The value to be displayed. </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a7">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a34">gengrid_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a20">photocam_example_01.c</a>, and <a class="el" href="slider_example_8c-example.html#a1">slider_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gad7e0b31e735300032fb16c43c571407f"></a><!-- doxytag: member="elm_slider.eo.legacy.h::elm_slider_value_set" ref="gad7e0b31e735300032fb16c43c571407f" args="(Elm_Slider *obj, double val)" -->
+<a class="anchor" id="ga74e14a46f516a1505242bddc434f938d"></a><!-- doxytag: member="elm_slider_legacy.h::elm_slider_value_set" ref="ga74e14a46f516a1505242bddc434f938d" args="(Evas_Object *obj, double val)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Slider.html#gad7e0b31e735300032fb16c43c571407f">elm_slider_value_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Slider.html#ga74e14a46f516a1505242bddc434f938d">elm_slider_value_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Slider *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -1141,17 +1104,17 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Set the value the slider displays. </p>
-<p>Value will be presented on the unit label following format specified with <a class="el" href="group__Elm__Slider.html#gaf2adcb92b62abac4a939def61b5f08e8">elm_slider_unit_format_set</a> and on indicator with <a class="el" href="group__Elm__Slider.html#ga9b371db7f4edbcf40f349f3125e999d2">elm_slider_indicator_format_set</a>.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>The value must to be between min and max values. This values are set by <a class="el" href="group__Elm__Slider.html#ga35755a9bce16705534369b6ede21e514">elm_slider_min_max_set</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>Value will be presented on the unit label following format specified with <a class="el" href="group__Elm__Slider.html#gaa58c280b3916b35f52db525d3d921004">elm_slider_unit_format_set</a> and on indicator with <a class="el" href="group__Elm__Slider.html#ga8d90d63bc776df76676b2d4efde094a2">elm_slider_indicator_format_set</a>.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>The value must to be between min and max values. This values are set by <a class="el" href="group__Elm__Slider.html#ga5368bb23df3d5253ab388195812e792b">elm_slider_min_max_set</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The value to be displayed. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a59">gengrid_example.c</a>, and <a class="el" href="slider_example_8c-example.html#a16">slider_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

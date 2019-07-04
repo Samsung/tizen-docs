@@ -16,7 +16,7 @@ The main uncompressed audio management features are:
 <a name="play_pcm"></a>
 ## Audio Output
 
-The [Tizen.Multimedia.AudioPlayback](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioPlayback.html) class enables your application to play uncompressed audio. You can [play audio synchronously](#simple_playback), or [do it asynchronously](#async_playback).
+The [Tizen.Multimedia.AudioPlayback](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioPlayback.html) class enables your application to play uncompressed audio. You can [play audio synchronously](#simple_playback), or [do it asynchronously](#async_playback).
 
 Your application must define the following PCM data settings:
 
@@ -60,7 +60,7 @@ To support various low-end Tizen devices, the application must follow certain gu
 <a name="record_pcm"></a>
 ## Audio Input
 
-You can enable your application to record uncompressed audio from a microphone-type input device. You can [record audio synchronously](#simple_recording) with the [Tizen.Multimedia.AudioCapture](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioCapture.html) class, or [do it asynchronously](#async_recording) with the [Tizen.Multimedia.AsyncAudioCapture](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AsyncAudioCapture.html) class.
+You can enable your application to record uncompressed audio from a microphone-type input device. You can [record audio synchronously](#simple_recording) with the [Tizen.Multimedia.AudioCapture](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioCapture.html) class, or [do it asynchronously](#async_recording) with the [Tizen.Multimedia.AsyncAudioCapture](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AsyncAudioCapture.html) class.
 
 Audio data is captured periodically. To receive the audio PCM data from the input device, you must implement the audio capture interface to notify the application of audio data events, such as when the audio data buffer is full.
 
@@ -82,7 +82,7 @@ Because the synchronous playback process blocks other processes running in the s
 
 To play audio:
 
-1.  Prepare the audio output device and start the playback process using the `Prepare()` method of the [Tizen.Multimedia.AudioPlayback](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioPlayback.html) class:
+1.  Prepare the audio output device and start the playback process using the `Prepare()` method of the [Tizen.Multimedia.AudioPlayback](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioPlayback.html) class:
 
     ```
     var audioPlayback = new AudioPlayback(44100, AudioChannel.Mono, AudioSampleType.S16Le);
@@ -110,7 +110,7 @@ To play audio:
 <a name="async_playback"></a>
 ## Managing Asynchronous Playback
 
-The asynchronous playback process uses the `BufferAvailable` event of the [Tizen.Multimedia.AudioPlayback](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioPlayback.html) class to play the recorded audio. The event is raised for each recorded audio chunk. In the following example, the audio data is read from a stream.
+The asynchronous playback process uses the `BufferAvailable` event of the [Tizen.Multimedia.AudioPlayback](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioPlayback.html) class to play the recorded audio. The event is raised for each recorded audio chunk. In the following example, the audio data is read from a stream.
 
 To start playing the recorded audio:
 
@@ -177,7 +177,7 @@ To calculate and set the required buffer size, use one of the following options:
 
 -   Calculate the buffer size based on the recommendation of the sound server, such as PulseAudio:
 
-    1.  Retrieve the recommended buffer size using the `GetBufferSize()` method of the [Tizen.Multimedia.AudioCapture](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioCapture.html) class:
+    1.  Retrieve the recommended buffer size using the `GetBufferSize()` method of the [Tizen.Multimedia.AudioCapture](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioCapture.html) class:
 
         ```
         var audioCapture = new AudioCapture(44100, AudioChannel.Mono, AudioSampleType.S16Le);
@@ -244,7 +244,7 @@ The asynchronous recording process uses an event to store the audio recorded by 
 
 To start recording audio:
 
-1.  Add an event handler for the `DataAvailable` event of the [Tizen.Multimedia.AsyncAudioCapture](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AsyncAudioCapture.html) class:
+1.  Add an event handler for the `DataAvailable` event of the [Tizen.Multimedia.AsyncAudioCapture](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AsyncAudioCapture.html) class:
 
     ```
     var asyncAudioCapture = new AsyncAudioCapture(44100, AudioChannel.Mono, AudioSampleType.S16Le);

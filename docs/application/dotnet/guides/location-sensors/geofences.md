@@ -15,7 +15,7 @@ The main features of the Tizen.Location.Geofence namespace include:
 
 -   Managing the geofence service
 
-    You can allow the user to [manage the geofence places and fences](#settings) through My places.
+    You can allow the user to [manage the geofence places and fences](#settings) through My Places.
 
 **Figure: Geofence architecture**
 
@@ -34,37 +34,37 @@ With the geofence service, you can:
 
 -   [Retrieve information about created geofences](#info)
 
-The device can receive alerts about the geofence when a particular geofence service is started using the `Start()` method of the [Tizen.Location.Geofence.GeofenceManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceManager.html) class.
+The device can receive alerts about the geofence when a particular geofence service is started using the `Start()` method of the [Tizen.Location.Geofence.GeofenceManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class.
 
 If the user revokes permission to use the location information, an `UnauthorizedAccessException` is returned to the application attempting to use the geofence service.
 
-Asynchronous geofence-related alerts (in or out) and event handling (a fence added or removed) are implemented with event handlers. Geofence alerts are received using the values of the [Tizen.Location.Geofence.GeofenceState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceState.html) enumeration.
+Asynchronous geofence-related alerts (in or out) and event handling (a fence added or removed) are implemented with event handlers. Geofence alerts are received using the values of the [Tizen.Location.Geofence.GeofenceState](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceState.html) enumeration.
 
 <a name="definition"></a>
 ## Geofence Definition
 
-Geofence definition refers to defining an instance of the [Tizen.Location.Geofence.Fence](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.Fence.html) class.
+Geofence definition refers to defining an instance of the [Tizen.Location.Geofence.Fence](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.Fence.html) class.
 
-The 3 types of available geofences are geopoint, Wi-Fi, and Bluetooth. When creating the geofence, define the type using the values of the [Tizen.Location.Geofence.FenceType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.FenceType.html) enumeration.
+The 3 types of available geofences are geopoint, Wi-Fi, and Bluetooth. When creating the geofence, define the type using the values of the [Tizen.Location.Geofence.FenceType](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.FenceType.html) enumeration.
 
 Creating a geopoint geofence requires a geopoint and a radius, whereas Wi-Fi and Bluetooth geofences require a MAC address. Based on the defined geofence type, the geofence manager creates the fence for the particular application.
 
 <a name="settings"></a>
 ## Geofence Management through My Places
 
-Tizen provides the user a way of managing geofence places and fences through the My places application. The following figure shows the default places and supported fence types.
+Tizen provides the user a way of managing geofence places and fences through the My Places application. The following figure shows the default places and supported fence types.
 
-**Figure: My places**
+**Figure: My Places**
 
 ![My places](./media/geofence_setting.png)
 
-My places controls the adding, removing, and updating of places and fences. **Home**, **Office**, and **Car** are the default places. **Map**, **Wi-Fi**, and **Bluetooth** are the supported fence methods. **Car** supports only Wi-Fi and Bluetooth as fence methods.
+My Places controls the adding, removing, and updating of places and fences. **Home**, **Office**, and **Car** are the default places. **Map**, **Wi-Fi**, and **Bluetooth** are the supported fence methods. **Car** supports only Wi-Fi and Bluetooth as fence methods.
 
 
 ## Prerequisites
 
 
-To use the methods and properties of the [Tizen.Location.Geofence](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.html) namespace, include it in your application:
+To use the methods and properties of the [Tizen.Location.Geofence](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.html) namespace, include it in your application:
 
 ```
 using Tizen.Location.Geofence;
@@ -75,7 +75,7 @@ using Tizen.Location.Geofence;
 
 To start the geofence service:
 
-1.  Create a [Tizen.Location.Geofence.GeofenceManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceManager.html) object:
+1.  Create a [Tizen.Location.Geofence.GeofenceManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) object:
 
     ```
     GeofenceManager manager = new GeofenceManager();
@@ -146,7 +146,7 @@ To start the geofence service:
 <a name="status"></a>
 ## Monitoring Geofence State Changes
 
-To track the state of the geofence, use the `GeofenceEventChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceManager.html) class. An event handler is invoked whenever there is a request from the user, such as to add a geofence or to start a geofence service.
+To track the state of the geofence, use the `GeofenceEventChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class. An event handler is invoked whenever there is a request from the user, such as to add a geofence or to start a geofence service.
 
 1.  Add the event handler for the `GeofenceEventChanged` event:
 
@@ -186,7 +186,7 @@ To get information about whether the user has crossed the boundary of the geofen
         EventHandler<GeofenceStateEventArgs> handler = (object sender, GeofenceStateEventArgs args) => {};
         ```
 
-    2.  Register the handler using the `StateChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceManager.html) class.
+    2.  Register the handler using the `StateChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class.
 
         ```
         manager.StateChanged += handler;
@@ -196,7 +196,7 @@ To get information about whether the user has crossed the boundary of the geofen
 
     You can get the current state of the user with respect to a geofence, such as their in or out state and the duration of the current state.
 
-    1.  Create a [Tizen.Location.Geofence.FenceStatus](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.FenceStatus.html) instance:
+    1.  Create a [Tizen.Location.Geofence.FenceStatus](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.FenceStatus.html) instance:
 
         ```
         FenceStatus status = new FenceStatus(fenceId);
@@ -228,7 +228,7 @@ To get information about the user's proximity to a geofence, use an event handle
     EventHandler<ProximityStateEventArgs> handler = (object sender, ProximityStateEventArgs args) => {};
     ```
 
-2.  Register the handler using the `ProximityChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.GeofenceManager.html) class.
+2.  Register the handler using the `ProximityChanged` event of the [Tizen.Location.Geofence.GeofenceManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.GeofenceManager.html) class.
 
     ```
     manager.ProximityChanged += handler;

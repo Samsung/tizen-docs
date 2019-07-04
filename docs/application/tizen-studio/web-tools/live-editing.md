@@ -18,9 +18,9 @@ Live editing is disabled by default.
 
 To enable live editing in the Tizen Studio:
 
-1. In the menu, go to **Run > Run Configuration > Tizen Web Application > <PROJECT NAME>**.
+1. In the menu, go to **Run > Run Configuration > Tizen Web Application > \<PROJECT NAME>**.
 
-   Alternatively, right-click the project in the **Project Explorer** view and select **Run As > Run Configuration > Tizen Web Application > <PROJECT NAME>**.
+   Alternatively, right-click the project in the **Project Explorer** view and select **Run As > Run Configuration > Tizen Web Application > \<PROJECT NAME>**.
 
 2. Select the **Enable live editing** check box in the run configuration.
 

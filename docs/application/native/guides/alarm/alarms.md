@@ -29,8 +29,8 @@ To enable your application to use the alarm functionality:
 
 1. To use the Alarm API (in [mobile](../../api/mobile/latest/group__CAPI__ALARM__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__ALARM__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 ```
-<privileges>  
-	<privilege>http://tizen.org/privilege/alarm.get</privilege>   
+<privileges>
+    <privilege>http://tizen.org/privilege/alarm.get</privilege>
     <privilege>http://tizen.org/privilege/alarm.set</privilege>
 </privileges>
 ```

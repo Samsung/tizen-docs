@@ -142,7 +142,7 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
       </table>
 </div>
 <div class="memdoc">
-<p>This is a uni-directional zero-copy thread message queue specifically designed with the idea of sending large volumes of messages with no copies from one thread to another (or from/to the mainloop). The idea is that a thread queue is created and then one or more threads send messages in one end and fetch messages on the other end. If you set a parent message queue to 1 or more queues, then this parent will wake up with a sub queue message, indicating which child queue woke up. This can be used to implement the ability to listen to multiple queues at once.</p>
+<p>This is a uni-directional zero-copy thread message queue specifically designed with the idea of sending large volumes of messages with no copies from one thread to another (or from/to the mainloop). The idea is that a thread queue is created and then one or more threads send messages in one end and fetch messages off the other end. If you set a parent message queue to 1 or more queues, then this parent will wake up with a sub queue message, indicating which child queue woke up. This can be used to implement the ability to listen to multiple queues at once.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
 
 </div>
@@ -196,15 +196,15 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Gets the file descriptor written to on message sends. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue to get the file descriptor of </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">thq</td><td>The thread queue to get the file descriptor of </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The file descriptor set (or -1 if none is set).</dd></dl>
 <p>This returns the file descriptor set by <a class="el" href="group__Eina__Thread__Queue__Group.html#gae776bfd1d50f9a591ef6230316c4d72e" title="Sets a file descriptor to write a byte to on a message send.">eina_thread_queue_fd_set()</a> and by default returns -1 (no fd set).</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Thread__Queue__Group.html#gae776bfd1d50f9a591ef6230316c4d72e" title="Sets a file descriptor to write a byte to on a message send.">eina_thread_queue_fd_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -236,15 +236,15 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Sets a file descriptor to write a byte to on a message send. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue to set the file descriptor of </td></tr>
-    <tr><td class="paramname">fd</td><td>The fd to set, or -1 to unset it</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">thq</td><td>The thread queue to set the file descriptor of </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>The fd to set, or -1 to unset it</td></tr>
   </table>
   </dd>
 </dl>
 <p>This sets a file descriptor to write to when a message is written to the thread queue. This can be used to glue a thread queue to something like an Ecore_Pipe that can wake up the mainloop and call a callback whenever data is available on the pipe. The number of bytes available will be the number of messages to fetch from the associated thread queue.</p>
 <p>You should set this up before anything writes to or reads from this thread queue.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -267,12 +267,12 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>This frees a thread queue. It must no longer be in use by anything waiting on messages or sending them. Any pending messages will be freed without being processed by a listener.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue to free</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">thq</td><td>The thread queue to free</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -293,8 +293,8 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 
 <p>Creates a new thread queue. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A valid new thread queue, or NULL on failure</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -316,15 +316,15 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Gets the parent of a thread queue. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue to get the parent of </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">thq</td><td>The thread queue to get the parent of </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The parent thread queue</dd></dl>
 <p>This gets the parent set by <a class="el" href="group__Eina__Thread__Queue__Group.html#gadb13e550bc7899e83a98b225986d4406" title="Gets the parent of a thread queue.">eina_thread_queue_parent_get()</a>. If no parent is set, NULL is returned.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Thread__Queue__Group.html#gad0903fc27ff93c55b0b432dbbf53491d" title="Sets the parent of a thread queue (make this one a child).">eina_thread_queue_parent_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -356,14 +356,14 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Sets the parent of a thread queue (make this one a child). </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue to alter the parent of </td></tr>
-    <tr><td class="paramname">thq_parent</td><td>The new parent to set</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">thq</td><td>The thread queue to alter the parent of </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">thq_parent</td><td>The new parent to set</td></tr>
   </table>
   </dd>
 </dl>
 <p>This sets the parent queue where messages will be reported to. This is how you can listen to multiple queues at once - set multiple queues to have the same parent and then just wait on that one parent. This should be done before any messages are read from or written to the queue. To unset a parent, just set the parent to NULL.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -385,14 +385,14 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Gets the number of messages on a queue as yet unfetched. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue to query for pending count </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">thq</td><td>The thread queue to query for pending count </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of messages waiting to be fetched</dd></dl>
 <p>This returns the number of messages waiting to be fetched with <a class="el" href="group__Eina__Thread__Queue__Group.html#gad25bf389aa93c3f7f814ff2015eb27ce" title="Fetches a message from a thread queue.">eina_thread_queue_wait()</a> or <a class="el" href="group__Eina__Thread__Queue__Group.html#ga4b9f65958da9fee0e59106d8faf31390" title="Fetches a message from a thread queue, but return immediately if there is none with NULL...">eina_thread_queue_poll()</a>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -424,16 +424,16 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Fetches a message from a thread queue, but return immediately if there is none with NULL. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue to fetch the message from </td></tr>
-    <tr><td class="paramname">allocref</td><td>A pointer to store a general reference handle for the message </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">thq</td><td>The thread queue to fetch the message from </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">allocref</td><td>A pointer to store a general reference handle for the message </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the message data</dd></dl>
 <p>This is the same as <a class="el" href="group__Eina__Thread__Queue__Group.html#gad25bf389aa93c3f7f814ff2015eb27ce" title="Fetches a message from a thread queue.">eina_thread_queue_wait()</a>, but if no messages are available for reading, it immediately returns NULL to the caller, without waiting for a new message to arrive.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Thread__Queue__Group.html#gad25bf389aa93c3f7f814ff2015eb27ce" title="Fetches a message from a thread queue.">eina_thread_queue_wait()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -471,16 +471,16 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Allocates a message to send down a thread queue. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue to allocate the message on </td></tr>
-    <tr><td class="paramname">size</td><td>The size, in bytes, of the message, including standard header </td></tr>
-    <tr><td class="paramname">allocref</td><td>A pointer to store a general reference handle for the message </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">thq</td><td>The thread queue to allocate the message on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The size, in bytes, of the message, including standard header </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">allocref</td><td>A pointer to store a general reference handle for the message </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the message data to fill in</dd></dl>
 <p>This allocates space for a new message on the message queue, but does not actually trigger the send. For that you will need to call <a class="el" href="group__Eina__Thread__Queue__Group.html#ga338ae6b9a613eb3e227cbab06c94ab4f" title="Finishes sending the allocated message.">eina_thread_queue_send_done()</a> to complete the send and trigger the other side. Every message must at least be a Eina_Thread_Queue_Msg in size and have this structure as the first member (first N bytes) of the message.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -512,14 +512,14 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Finishes sending the allocated message. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue the message was placed on </td></tr>
-    <tr><td class="paramname">allocref</td><td>The allocref returned by <a class="el" href="group__Eina__Thread__Queue__Group.html#ga44e757fc9b6566f5d209f09a800aa638" title="Allocates a message to send down a thread queue.">eina_thread_queue_send()</a></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">thq</td><td>The thread queue the message was placed on </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">allocref</td><td>The allocref returned by <a class="el" href="group__Eina__Thread__Queue__Group.html#ga44e757fc9b6566f5d209f09a800aa638" title="Allocates a message to send down a thread queue.">eina_thread_queue_send()</a></td></tr>
   </table>
   </dd>
 </dl>
 <p>This completes the send and triggers the thread queue to wake up any listeners.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -551,15 +551,15 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Fetches a message from a thread queue. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue to fetch the message from </td></tr>
-    <tr><td class="paramname">allocref</td><td>A pointer to store a general reference handle for the message </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">thq</td><td>The thread queue to fetch the message from </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">allocref</td><td>A pointer to store a general reference handle for the message </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the message data</dd></dl>
 <p>This will fetch the next message to read from the thread queue and return a pointer to it. The message is guaranteed to have an initial Eina_Thread_Queue_Msg member that will indicate size of the message as a whole. This function will wait, if no messages are available to read and block until a new message comes in, then return. When the message is finished with, the caller must use <a class="el" href="group__Eina__Thread__Queue__Group.html#ga1ccc3cfbf71e80596f9825d6c6fd6135" title="Finishes fetching a message from a thread queue.">eina_thread_queue_wait_done()</a> to indicate they are done.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -591,14 +591,14 @@ _Eina_Thread_Queue_Msg_Sub&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Finishes fetching a message from a thread queue. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">thq</td><td>The thread queue the message was fetched from </td></tr>
-    <tr><td class="paramname">allocref</td><td>The allocref returned by <a class="el" href="group__Eina__Thread__Queue__Group.html#gad25bf389aa93c3f7f814ff2015eb27ce" title="Fetches a message from a thread queue.">eina_thread_queue_wait()</a></td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">thq</td><td>The thread queue the message was fetched from </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">allocref</td><td>The allocref returned by <a class="el" href="group__Eina__Thread__Queue__Group.html#gad25bf389aa93c3f7f814ff2015eb27ce" title="Fetches a message from a thread queue.">eina_thread_queue_wait()</a></td></tr>
   </table>
   </dd>
 </dl>
 <p>This should be used after <a class="el" href="group__Eina__Thread__Queue__Group.html#gad25bf389aa93c3f7f814ff2015eb27ce" title="Fetches a message from a thread queue.">eina_thread_queue_wait()</a> or <a class="el" href="group__Eina__Thread__Queue__Group.html#ga4b9f65958da9fee0e59106d8faf31390" title="Fetches a message from a thread queue, but return immediately if there is none with NULL...">eina_thread_queue_poll()</a> to indicate the caller is done with the message.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

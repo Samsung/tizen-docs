@@ -123,20 +123,23 @@ main(<span class="keywordtype">void</span>)
 
         <span class="keywordflow">if</span> ((buffer = malloc(size)))
           {
-             fread(buffer, 1, size, file);
+             <span class="keywordflow">if</span> (fread(buffer, 1, size, file) != size)
+               {
+                  <a name="a3"></a><a class="code" href="group__Eina__Log__Group.html#ga2e33caeeeb6051526c01b7fea4d6c91b">EINA_LOG_ERR</a>(<span class="stringliteral">&quot;Can&#39;t read chat.xml&quot;</span>);
+               }
 
-             array = <a name="a3"></a><a class="code" href="group__Eina__Array__Group.html#gad671e356ded4049ccff24cc46f6f6f43" title="Creates a new array.">eina_array_new</a>(10);
-             <a name="a4"></a><a class="code" href="group__Eina__Simple__XML__Group.html#gacbbb2b975f6f3e1d0a3d2215cc37da82" title="Parses a section of XML string text.">eina_simple_xml_parse</a>(buffer, size, <a name="a5"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>,
+             array = <a name="a4"></a><a class="code" href="group__Eina__Array__Group.html#gad671e356ded4049ccff24cc46f6f6f43" title="Creates a new array.">eina_array_new</a>(10);
+             <a name="a5"></a><a class="code" href="group__Eina__Simple__XML__Group.html#gacbbb2b975f6f3e1d0a3d2215cc37da82" title="Parses a section of XML string text.">eina_simple_xml_parse</a>(buffer, size, <a name="a6"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>,
                                    _xml_tag_cb, array);
 
-             <a name="a6"></a><a class="code" href="group__Eina__Array__Group.html#ga8de2d191a0fffceb5bdc6376540b8db1" title="Provides a safe way to iterate over an array.">eina_array_foreach</a>(array, _print, NULL);
+             <a name="a7"></a><a class="code" href="group__Eina__Array__Group.html#ga8de2d191a0fffceb5bdc6376540b8db1" title="Iterates over an array using a callback function.">eina_array_foreach</a>(array, _print, NULL);
         
-             <a name="a7"></a><a class="code" href="group__Eina__Array__Group.html#gaee9eb6a413ab294a5d69771f14cf3543" title="Frees an array.">eina_array_free</a>(array);
+             <a name="a8"></a><a class="code" href="group__Eina__Array__Group.html#gaee9eb6a413ab294a5d69771f14cf3543" title="Frees an array.">eina_array_free</a>(array);
              free(buffer);
           }
         <span class="keywordflow">else</span>
           {
-             <a name="a8"></a><a class="code" href="group__Eina__Log__Group.html#ga2e33caeeeb6051526c01b7fea4d6c91b">EINA_LOG_ERR</a>(<span class="stringliteral">&quot;Can&#39;t allocate memory!&quot;</span>);
+             <a class="code" href="group__Eina__Log__Group.html#ga2e33caeeeb6051526c01b7fea4d6c91b">EINA_LOG_ERR</a>(<span class="stringliteral">&quot;Can&#39;t allocate memory!&quot;</span>);
           }
         fclose(file);
      }
@@ -155,7 +158,7 @@ _xml_tag_cb(<span class="keywordtype">void</span> *data, Eina_Simple_XML_Type ty
 {
    <span class="keywordtype">char</span> buffer[length+1];
    <a class="code" href="struct__Eina__Array.html">Eina_Array</a> *array = data;
-   <span class="keywordtype">char</span> str[512];
+   <span class="keywordtype">char</span> str[512] = {<span class="charliteral">&#39;\0&#39;</span>};
 
    <span class="keywordflow">if</span> (type == <a name="a11"></a><a class="code" href="group__Eina__Simple__XML__Group.html#ggad43c24562b801f797d8f7cb8b3fe2d4ca5be26ebfdfdefbc411adde618c4c2dd4">EINA_SIMPLE_XML_OPEN</a>)
      {
@@ -179,18 +182,18 @@ _xml_tag_cb(<span class="keywordtype">void</span> *data, Eina_Simple_XML_Type ty
      {
         <span class="keywordflow">if</span> (tag_login == <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>)
           {
-             snprintf(buffer, <span class="keyword">sizeof</span>(buffer), content);
-             strncat(str, <span class="stringliteral">&quot;&lt;&quot;</span>, 1);
-             strncat(str, buffer, <span class="keyword">sizeof</span>(buffer));
-             strncat(str, <span class="stringliteral">&quot;&gt; &quot;</span>, 2);
+             <a name="a15"></a><a class="code" href="group__Eina__String__Group.html#ga73466cfd3c7d64608d77706e4bc43e25" title="Copies a c-string to another.">eina_strlcpy</a>(buffer, content, <span class="keyword">sizeof</span>(buffer));
+             <a name="a16"></a><a class="code" href="group__Eina__String__Group.html#ga3172a47b021bb56263a591e2fefdc729" title="Appends a c-string.">eina_strlcat</a>(str, <span class="stringliteral">&quot;&lt;&quot;</span>, 1);
+             <a class="code" href="group__Eina__String__Group.html#ga3172a47b021bb56263a591e2fefdc729" title="Appends a c-string.">eina_strlcat</a>(str, buffer, <span class="keyword">sizeof</span>(str));
+             <a class="code" href="group__Eina__String__Group.html#ga3172a47b021bb56263a591e2fefdc729" title="Appends a c-string.">eina_strlcat</a>(str, <span class="stringliteral">&quot;&gt; &quot;</span>, 2);
              tag_login = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
           }
         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tag_message == <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>)
           {
-             snprintf(buffer, <span class="keyword">sizeof</span>(buffer), content);
-             strncat(str, buffer, <span class="keyword">sizeof</span>(buffer));
+             <a class="code" href="group__Eina__String__Group.html#ga73466cfd3c7d64608d77706e4bc43e25" title="Copies a c-string to another.">eina_strlcpy</a>(buffer, content, <span class="keyword">sizeof</span>(buffer));
+             <a class="code" href="group__Eina__String__Group.html#ga3172a47b021bb56263a591e2fefdc729" title="Appends a c-string.">eina_strlcat</a>(str, buffer, <span class="keyword">sizeof</span>(str));
              tag_message = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
-             <a name="a15"></a><a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data to an array.">eina_array_push</a>(array, strdup(str));
+             <a name="a17"></a><a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data item to an array.">eina_array_push</a>(array, strdup(str));
           }
      }
 

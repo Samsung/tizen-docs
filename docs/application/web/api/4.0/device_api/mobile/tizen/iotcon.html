@@ -836,14 +836,14 @@ watchId = tizen.iotcon.addGeneratedPinListener(RandomPinSuccess);
 <ul>
           <li class="param">
 <span class="name">watchId</span>:
- The watchID identifier returned by the addGeneratedPinListener() method.
+ The watchId identifier returned by the addGeneratedPinListener() method.
                 </li>
         </ul>
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type AbortError, If the operation has been stopped.
+ with error type AbortError, if the operation has been stopped or there is no listener with given watchId.
                 </p></li></ul>
 </li></ul>
         </div>
@@ -1141,7 +1141,7 @@ Resource type: oic.wk.ad
  with error type SecurityError, if the application does not have the privilege to call this method.
                 </p></li>
 <li class="list"><p>
- with error type AbortError, if the operation has been stopped.
+ with error type AbortError, if the operation has been stopped or listener for given watchId was not found.
                 </p></li>
 </ul>
 </li></ul>
@@ -2713,6 +2713,11 @@ catch (err)
 <p><span class="version">Since: </span>
  3.0
             </p>
+<div class="description">
+            <p>
+Calling this function has no effect if listener is not set.
+            </p>
+           </div>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -3539,6 +3544,11 @@ catch (err)
 <p><span class="version">Since: </span>
  3.0
             </p>
+<div class="description">
+            <p>
+Calling this function has no effect if listener was not set.
+            </p>
+           </div>
 <p><span class="remark">Remark: </span>
  Example of using can be find at <a href="iotcon.html#Resource::setRequestListener">setRequestListener</a> code example.
             </p>

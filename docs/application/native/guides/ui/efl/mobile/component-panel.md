@@ -1,6 +1,6 @@
 # Panel
 
-The panel UI component can contain subobjects. It can be expanded or collapsed by clicking on the button on its edge. The panel component inherits from the [layout](container-layout.md) component, which means that layout functions can be used on the panel component. For more information, see the [Panel](../../../../api/mobile/latest/group__Elm__Panel.html) API.
+The panel UI component can contain subobjects. It can be expanded or collapsed by clicking on the button on its edge. The panel component inherits from the [layout](../container-layout.md) component, which means that layout functions can be used on the panel component. For more information, see the [Panel](../../../../api/mobile/latest/group__Elm__Panel.html) API.
 
 This feature is supported in mobile applications only.
 

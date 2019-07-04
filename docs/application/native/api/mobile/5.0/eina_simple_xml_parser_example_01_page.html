@@ -112,14 +112,14 @@ main(<span class="keywordtype">void</span>)
 
         <span class="keywordflow">if</span> ((buffer = malloc(size)))
           {
-             fread(buffer, 1, size, file);
+             <span class="keywordflow">if</span> (fread(buffer, 1, size, file) != size)
 </pre></div></p>
 <p>We will use an Eina_Array to store the data: <div class="fragment"><pre class="fragment">             array = <a class="code" href="group__Eina__Array__Group.html#gad671e356ded4049ccff24cc46f6f6f43" title="Creates a new array.">eina_array_new</a>(10);
 </pre></div></p>
 <p>Here we call <a class="el" href="group__Eina__Simple__XML__Group.html#gacbbb2b975f6f3e1d0a3d2215cc37da82" title="Parses a section of XML string text.">eina_simple_xml_parse()</a>. We pass the buffer with data, its size, we ask to strip leading and trailing whitespace, we give the callback function and the array to store the formatted data: <div class="fragment"><pre class="fragment">             <a class="code" href="group__Eina__Simple__XML__Group.html#gacbbb2b975f6f3e1d0a3d2215cc37da82" title="Parses a section of XML string text.">eina_simple_xml_parse</a>(buffer, size, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>,
                                    _xml_tag_cb, array);
 </pre></div></p>
-<p>This will loop over the array and print the data using _print callback: <div class="fragment"><pre class="fragment">             <a class="code" href="group__Eina__Array__Group.html#ga8de2d191a0fffceb5bdc6376540b8db1" title="Provides a safe way to iterate over an array.">eina_array_foreach</a>(array, _print, NULL);
+<p>This will loop over the array and print the data using _print callback: <div class="fragment"><pre class="fragment">             <a class="code" href="group__Eina__Array__Group.html#ga8de2d191a0fffceb5bdc6376540b8db1" title="Iterates over an array using a callback function.">eina_array_foreach</a>(array, _print, NULL);
 </pre></div></p>
 <p>This is the main XML parser callback, it will check for known tags and get the corresponding values: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
 _xml_tag_cb(<span class="keywordtype">void</span> *data, Eina_Simple_XML_Type type, <span class="keyword">const</span> <span class="keywordtype">char</span> *content,
@@ -127,7 +127,7 @@ _xml_tag_cb(<span class="keywordtype">void</span> *data, Eina_Simple_XML_Type ty
 {
    <span class="keywordtype">char</span> buffer[length+1];
    <a class="code" href="struct__Eina__Array.html">Eina_Array</a> *array = data;
-   <span class="keywordtype">char</span> str[512];
+   <span class="keywordtype">char</span> str[512] = {<span class="charliteral">&#39;\0&#39;</span>};
 </pre></div></p>
 <p>We first check for opening tag: <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (type == <a class="code" href="group__Eina__Simple__XML__Group.html#ggad43c24562b801f797d8f7cb8b3fe2d4ca5be26ebfdfdefbc411adde618c4c2dd4">EINA_SIMPLE_XML_OPEN</a>)
 </pre></div></p>
@@ -154,20 +154,20 @@ _xml_tag_cb(<span class="keywordtype">void</span> *data, Eina_Simple_XML_Type ty
      {
         <span class="keywordflow">if</span> (tag_login == <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>)
           {
-             snprintf(buffer, <span class="keyword">sizeof</span>(buffer), content);
-             strncat(str, <span class="stringliteral">&quot;&lt;&quot;</span>, 1);
-             strncat(str, buffer, <span class="keyword">sizeof</span>(buffer));
-             strncat(str, <span class="stringliteral">&quot;&gt; &quot;</span>, 2);
+             <a class="code" href="group__Eina__String__Group.html#ga73466cfd3c7d64608d77706e4bc43e25" title="Copies a c-string to another.">eina_strlcpy</a>(buffer, content, <span class="keyword">sizeof</span>(buffer));
+             <a class="code" href="group__Eina__String__Group.html#ga3172a47b021bb56263a591e2fefdc729" title="Appends a c-string.">eina_strlcat</a>(str, <span class="stringliteral">&quot;&lt;&quot;</span>, 1);
+             <a class="code" href="group__Eina__String__Group.html#ga3172a47b021bb56263a591e2fefdc729" title="Appends a c-string.">eina_strlcat</a>(str, buffer, <span class="keyword">sizeof</span>(str));
+             <a class="code" href="group__Eina__String__Group.html#ga3172a47b021bb56263a591e2fefdc729" title="Appends a c-string.">eina_strlcat</a>(str, <span class="stringliteral">&quot;&gt; &quot;</span>, 2);
              tag_login = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
 </pre></div></p>
 <p>We are doing the formatting in same time and put all the &lt;post&gt; children in str. <div class="fragment"><pre class="fragment">          }
         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (tag_message == <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>)
           {
-             snprintf(buffer, <span class="keyword">sizeof</span>(buffer), content);
-             strncat(str, buffer, <span class="keyword">sizeof</span>(buffer));
+             <a class="code" href="group__Eina__String__Group.html#ga73466cfd3c7d64608d77706e4bc43e25" title="Copies a c-string to another.">eina_strlcpy</a>(buffer, content, <span class="keyword">sizeof</span>(buffer));
+             <a class="code" href="group__Eina__String__Group.html#ga3172a47b021bb56263a591e2fefdc729" title="Appends a c-string.">eina_strlcat</a>(str, buffer, <span class="keyword">sizeof</span>(str));
              tag_message = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
 </pre></div></p>
-<p>Finally, we store our string in the array: <div class="fragment"><pre class="fragment">             <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data to an array.">eina_array_push</a>(array, strdup(str));
+<p>Finally, we store our string in the array: <div class="fragment"><pre class="fragment">             <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data item to an array.">eina_array_push</a>(array, strdup(str));
 </pre></div></p>
 <p>This is the callback to parse the attributes, we check for key name and keep the value: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
 _xml_attr_cb(<span class="keywordtype">void</span> *data, <span class="keyword">const</span> <span class="keywordtype">char</span> *key, <span class="keyword">const</span> <span class="keywordtype">char</span> *value)

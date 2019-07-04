@@ -7,7 +7,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Search Input</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 <h1>Search Input</h1>
 
@@ -26,6 +26,8 @@
 	</tr>
 	</tbody>
 </table>
+
+<img src="../../images/mobile_searchInput.png" width="15%">
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -54,24 +56,25 @@
 
 <p>To manually create a SearchInput component, use the component constructor from the <code>tau</code> namespace.</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;input type=&quot;search&quot; id=&quot;search-test&quot;/&gt;
-&lt;script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
 var searchEl = document.getElementById(&quot;search-test&quot;),
     searchWidget = tau.widget.SearchInput(searchEl);
-&lt;/script&gt;
 </pre>
 
 <h2><a id="methods0.952881425851956"></a>Methods</h2>
 
 <p>To call a method on the component, please refer the following:</p>
 
-<pre class="prettyprint">&lt;script&gt;
-   var searchInputElement = document.getElementById(&#39;search-test&#39;),
-       searchInput = tau.widget.SearcnInput(searchInputElement);
+<pre class="prettyprint">
+var searchInputElement = document.getElementById(&#39;search-test&#39;),
+    searchInput = tau.widget.SearcnInput(searchInputElement);
 
-   searchInput.methodName(methodArgument1, methodArgument2, ...);
-&lt;/script&gt;
+searchInput.methodName(methodArgument1, methodArgument2, ...);
 </pre>
 
 	<h3>Summary</h3>
@@ -85,14 +88,14 @@ var searchEl = document.getElementById(&quot;search-test&quot;),
 		<tbody>
 				<tr>
 					<td>
-						<pre class="intable prettyprint"><a href="#method-disable">disable</a>() </pre>
+						<pre class="intable prettyprint"><a href="#method-disable">SearchInput disable</a>() </pre>
 					</td>
 					<td><p>Disable the SearchInput.</p></td>
 				</tr>
 
 				<tr>
 					<td>
-						<pre class="intable prettyprint"><a href="#method-enable">enable</a>() </pre>
+						<pre class="intable prettyprint"><a href="#method-enable">SearchInput enable</a>() </pre>
 					</td>
 					<td><p>Enable the SearchInput.</p></td>
 				</tr>
@@ -108,7 +111,7 @@ var searchEl = document.getElementById(&quot;search-test&quot;),
 						<p>Disable the SearchInput.</p>
 					</div>
 					<div class="synopsis">
-						<pre class="signature prettyprint">disable() </pre>
+						<pre class="signature prettyprint">SearchInput disable() </pre>
 					</div>
 
 					<div class="description">
@@ -141,12 +144,10 @@ var searchEl = document.getElementById(&quot;search-test&quot;),
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
 							prettyprint">
-&lt;script&gt;
-   var element = document.getElementById(&quot;searchinput&quot;),
-       searchInputWidget = tau.widget.SearchInput(element);
+var element = document.getElementById(&quot;searchinput&quot;),
+    searchInputWidget = tau.widget.SearchInput(element);
 
-   searchInputWidget.disable();
-&lt;/script&gt;
+searchInputWidget.disable();
 </pre>
 						</div>
 				</dd>
@@ -158,7 +159,7 @@ var searchEl = document.getElementById(&quot;search-test&quot;),
 						<p>Enable the SearchInput.</p>
 					</div>
 					<div class="synopsis">
-						<pre class="signature prettyprint">enable() </pre>
+						<pre class="signature prettyprint">SearchInput enable() </pre>
 					</div>
 
 					<div class="description">
@@ -189,12 +190,10 @@ var searchEl = document.getElementById(&quot;search-test&quot;),
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
 							prettyprint">
-&lt;script&gt;
-   var element = document.getElementById(&quot;searchinput&quot;),
-       searchInputWidget = tau.widget.SearchInput(element);
+var element = document.getElementById(&quot;searchinput&quot;),
+    searchInputWidget = tau.widget.SearchInput(element);
 
-   searchInputWidget.enable();
-&lt;/script&gt;
+searchInputWidget.enable();
 </pre>
 						</div>
 
@@ -212,5 +211,10 @@ var searchEl = document.getElementById(&quot;search-test&quot;),
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

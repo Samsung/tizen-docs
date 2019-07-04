@@ -42,7 +42,7 @@ The application package manager module is expandable to support various types of
 Tizen supports both Web application packages and hybrid application packages, which combine a Web application and one or more native service applications. Applications in the same package follow the same installation life-cycle, handled by the application package manager.
 
 
-## Related Infromation
+## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable

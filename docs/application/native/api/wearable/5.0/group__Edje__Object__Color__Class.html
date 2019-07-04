@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Edje Class: Color</div>  </div>
-<div class="ingroups"><a class="el" href="group__Edje__Object.html">Edje Object</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Edje__Object__Group.html">Edje Object</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions that deal with Color Classes. </p>
@@ -276,7 +276,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if found or <code>EINA_FALSE</code> if not found and all values are zeroed.</dd></dl>
-<p>This function gets the color values for a process level color class. This value is the globally set and not per-object, that is, the value that would be used by objects if they did not override with <a class="el" href="group__Edje__Object.html#gaf9c0cfc3e7a572ad9eaa0aacb7ac94e3" title="Sets the object color class.">edje_object_color_class_set()</a>.</p>
+<p>This function gets the color values for a process level color class. This value is the globally set and not per-object, that is, the value that would be used by objects if they did not override with edje_object_color_class_set().</p>
 <p>The first color is the object, the second is the text outline, and the third is the text shadow. (Note that the second two only apply to text parts).</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Color__Class.html#ga684435de625bdbb996e405e3eaaa54ad" title="Sets Edje color class.">edje_color_class_set()</a>.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Unlike Evas, Edje colors are <b>not</b> pre-multiplied. That is, half-transparent white is 255 255 255 128.</dd></dl>
@@ -418,14 +418,14 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This function sets the color values for a process level color class. This will cause all edje parts in the current process that have the specified color class to have their colors multiplied by these values. (Object level color classes set by <a class="el" href="group__Edje__Object.html#gaf9c0cfc3e7a572ad9eaa0aacb7ac94e3" title="Sets the object color class.">edje_object_color_class_set()</a> will override the values set by this function).</p>
+<p>This function sets the color values for a process level color class. This will cause all edje parts in the current process that have the specified color class to have their colors multiplied by these values. (Object level color classes set by edje_object_color_class_set() will override the values set by this function).</p>
 <p>The first color is the object, the second is the text outline, and the third is the text shadow. (Note that the second two only apply to text parts).</p>
 <p>Setting color emits a signal "color_class,set" with source being the given color class in all objects.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Color__Class.html#ga684435de625bdbb996e405e3eaaa54ad" title="Sets Edje color class.">edje_color_class_set()</a>.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Unlike Evas, Edje colors are <b>not</b> pre-multiplied. That is, half-transparent white is 255 255 255 128.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Eina_Bool, <code>EINA_TRUE</code> on success and <code>EINA_FALSE</code> on failure.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-color-class_8c-example.html#a28">edje-color-class.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-color-class_8c-example.html#a23">edje-color-class.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -445,6 +445,12 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Iterates over all the color class provided by an Edje file. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td>The mapped edje file.</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>an iterator of Edje_Color_Class provided by the Edje file.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>

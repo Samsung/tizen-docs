@@ -108,19 +108,87 @@ Creating items on EPC file</h2>
 <h2><a class="anchor" id="prefs-c-03"></a>
 Handling items on C File</h2>
 <p>Now we're handling the .C file and first we'll create a layout setting the edje file to after a prefs item swallows it.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   layout = <a class="code" href="group__Elm__Layout.html#gaca5aee4ad4d92c68f13d1080c70baf8b">elm_layout_add</a>(win);
+   <a class="code" href="group__Elm__Layout.html#ga8d1105463d52787a7b0ca8d7402cd3ea">elm_layout_file_set</a>(layout, <span class="stringliteral">&quot;prefs_example_03.edj&quot;</span>, <span class="stringliteral">&quot;prefs_edje&quot;</span>);
+</pre></div></p>
 <p>Here we create the prefs widget, add smart callbacks and create the prefs data handle.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   prefs = elm_prefs_add(win);
+   evas_object_size_hint_weight_set(prefs, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_resize(prefs, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(prefs);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,loaded&quot;</span>, _page_loaded_cb,
+                                  layout);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;item,changed&quot;</span>, _item_changed_cb,
+                                  layout);
+
+   elm_prefs_autosave_set(prefs, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   prefs_data =
+      elm_prefs_data_new(<span class="stringliteral">&quot;./prefs_example_03.cfg&quot;</span>, NULL, <a class="code" href="group__Eet__File__Group.html#ggaa8e1a7af50fefaf15eb2f69543d24998a763d29c19960a4e0d4eb7bc7bb512481">EET_FILE_MODE_READ_WRITE</a>);
+
+   elm_prefs_file_set(prefs, <span class="stringliteral">&quot;prefs_example_03.epb&quot;</span>, NULL);
+   elm_prefs_data_set(prefs, prefs_data);
+</pre></div></p>
 <p>Now we "swallow" the layout into the SWALLOW item of the prefs widget.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   elm_prefs_item_swallow(prefs, <span class="stringliteral">&quot;main:swal&quot;</span>, layout);
+</pre></div></p>
 <p>Page loaded and item changed callbacks will call update functions.</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment">_page_loaded_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *layout = data;
+
+   _update(obj, layout);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_item_changed_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info)
+{
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *item = event_info;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *layout = data;
+
+   <span class="keywordflow">if</span> (!strcmp(item, <span class="stringliteral">&quot;main:config:options:animation_time&quot;</span>))
+     _update_animation_time(obj, layout);
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(item, <span class="stringliteral">&quot;main:config:options:animation&quot;</span>))
+     _update_animation(obj, layout);
+}
+</pre></div></p>
 <p>These update functions will be called in order to get the new value from the items and pass it as signal to edje handle it and affects on animation.</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment">_update(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *prefs, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *layout)
+{
+   _update_animation(prefs, layout);
+   _update_animation_time(prefs, layout);
+}
+</pre></div></p>
 <p>In this function we'll get the checkbox (bool) value and start or stop the animation on edje.</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment">_update_animation(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *prefs, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *layout)
+{
+   <a class="code" href="struct__Eina__Value.html">Eina_Value</a> value;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> animation;
+
+   elm_prefs_item_value_get(prefs, <span class="stringliteral">&quot;main:config:options:animation&quot;</span>, &amp;value);
+   <a class="code" href="group__Eina__Value__Value__Group.html#ga6f088fe6c6127d808cdf214b355cbdeb" title="Gets the generic value.">eina_value_get</a>(&amp;value, &amp;animation);
+   <span class="keywordflow">if</span> (animation)
+     <a class="code" href="group__Elm__Layout.html#gaa39b36a49850270dd692ce135b2979f3" title="Send a (Edje) signal to a given layout widget&#39;s underlying Edje object.">elm_layout_signal_emit</a>(layout, <span class="stringliteral">&quot;start&quot;</span>, <span class="stringliteral">&quot;animation&quot;</span>);
+   <span class="keywordflow">else</span>
+     <a class="code" href="group__Elm__Layout.html#gaa39b36a49850270dd692ce135b2979f3" title="Send a (Edje) signal to a given layout widget&#39;s underlying Edje object.">elm_layout_signal_emit</a>(layout, <span class="stringliteral">&quot;stop&quot;</span>, <span class="stringliteral">&quot;animation&quot;</span>);
+}
+</pre></div></p>
 <p>In this function we'll get the slider (float item) value and send it as animation time to edje.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">_update_animation_time(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *prefs, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *layout)
+{
+   <a class="code" href="struct__Eina__Value.html">Eina_Value</a> value;
+   <span class="keywordtype">float</span> animation_time;
+   <a class="code" href="struct__Edje__Message__Float.html">Edje_Message_Float</a> msg;
+
+   elm_prefs_item_value_get(prefs, <span class="stringliteral">&quot;main:config:options:animation_time&quot;</span>, &amp;value);
+   <a class="code" href="group__Eina__Value__Value__Group.html#ga6f088fe6c6127d808cdf214b355cbdeb" title="Gets the generic value.">eina_value_get</a>(&amp;value, &amp;animation_time);
+   <span class="keywordflow">if</span> (animation_time &lt; 0.01) animation_time = 0.01;
+   msg.<a class="code" href="struct__Edje__Message__Float.html#a6f297371783ce318fa8d153b634a2b3e">val</a> = animation_time;
+   edje_object_message_send(<a class="code" href="group__Elm__Layout.html#gac16e9590a879f644aa5c3bf87c28b03e" title="Get the edje layout.">elm_layout_edje_get</a>(layout), EDJE_MESSAGE_FLOAT,
+                            MSG_ID_VEL, &amp;msg);
+}
+</pre></div></p>
 <p>Here we finish the example. The full source code can be found on <a class="el" href="prefs_example_03_c.html">prefs_example_03.c</a>, <a class="el" href="prefs_example_03_epc.html">prefs_example_03.epc</a> and <a class="el" href="prefs_example_03_edc.html">prefs_example_03.edc</a> </p>
 </div></div><!-- contents -->
 </div>

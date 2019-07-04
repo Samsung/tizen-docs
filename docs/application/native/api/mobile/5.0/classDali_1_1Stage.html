@@ -145,10 +145,10 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size of the <a class="el" href="classDali_1_1Stage.html" title="The Stage is a top-level object used for displaying a tree of Actors.">Stage</a> in pixels as a <a class="el" href="classDali_1_1Vector.html" title="Vector class with minimum space allocation when it&#39;s empty.">Vector</a>.  <a href="#ab211a4c76ad18c28d35598cb19cc7af9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1RenderTaskList.html">RenderTaskList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Stage.html#a08466772d98bfb56fa00e456913414e6">GetRenderTaskList</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the list of render-tasks.  <a href="#a08466772d98bfb56fa00e456913414e6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Stage.html#a7b710d9bbbfc7d6fcde08f9ec3a86c93">GetLayerCount</a> () const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the number of on-stage layers.  <a href="#a7b710d9bbbfc7d6fcde08f9ec3a86c93"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Layer.html">Layer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Stage.html#a64fed6c1d21b2879970a958478f06c7b">GetLayer</a> (unsigned int depth) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the layer at a specified depth.  <a href="#a64fed6c1d21b2879970a958478f06c7b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Stage.html#a3228c259d7420e2a5aa7f017939604dc">GetLayerCount</a> () const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries the number of on-stage layers.  <a href="#a3228c259d7420e2a5aa7f017939604dc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Layer.html">Layer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Stage.html#a21f90680deba522ed9518fdea0f75258">GetLayer</a> (uint32_t depth) const </td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the layer at a specified depth.  <a href="#a21f90680deba522ed9518fdea0f75258"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="classDali_1_1Layer.html">Layer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Stage.html#a0cb9df50b77f0c069101c3c359c5a5cb">GetRootLayer</a> () const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classDali_1_1Stage.html" title="The Stage is a top-level object used for displaying a tree of Actors.">Stage</a>'s Root <a class="el" href="classDali_1_1Layer.html" title="Layers provide a mechanism for overlaying groups of actors on top of each other.">Layer</a>.  <a href="#a0cb9df50b77f0c069101c3c359c5a5cb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1Stage.html#a4494c61f1015506a6b7b3740ffbe0ace">SetBackgroundColor</a> (<a class="el" href="structDali_1_1Vector4.html">Vector4</a> color)</td></tr>
@@ -537,14 +537,14 @@ The actor does not have a parent. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a64fed6c1d21b2879970a958478f06c7b"></a><!-- doxytag: member="Dali::Stage::GetLayer" ref="a64fed6c1d21b2879970a958478f06c7b" args="(unsigned int depth) const " -->
+<a class="anchor" id="a21f90680deba522ed9518fdea0f75258"></a><!-- doxytag: member="Dali::Stage::GetLayer" ref="a21f90680deba522ed9518fdea0f75258" args="(uint32_t depth) const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classDali_1_1Layer.html">Layer</a> <a class="el" href="classDali_1_1Stage.html#a64fed6c1d21b2879970a958478f06c7b">Dali::Stage::GetLayer</a> </td>
+          <td class="memname"><a class="el" href="classDali_1_1Layer.html">Layer</a> <a class="el" href="classDali_1_1Stage.html#a21f90680deba522ed9518fdea0f75258">Dali::Stage::GetLayer</a> </td>
           <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramtype">uint32_t&#160;</td>
           <td class="paramname"><em>depth</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -561,16 +561,16 @@ The actor does not have a parent. </dd></dl>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The layer found at the given depth </dd></dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>Depth is less than layer count; see <a class="el" href="classDali_1_1Stage.html#a7b710d9bbbfc7d6fcde08f9ec3a86c93" title="Queries the number of on-stage layers.">GetLayerCount()</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Depth is less than layer count; see <a class="el" href="classDali_1_1Stage.html#a3228c259d7420e2a5aa7f017939604dc" title="Queries the number of on-stage layers.">GetLayerCount()</a>. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="a7b710d9bbbfc7d6fcde08f9ec3a86c93"></a><!-- doxytag: member="Dali::Stage::GetLayerCount" ref="a7b710d9bbbfc7d6fcde08f9ec3a86c93" args="() const " -->
+<a class="anchor" id="a3228c259d7420e2a5aa7f017939604dc"></a><!-- doxytag: member="Dali::Stage::GetLayerCount" ref="a3228c259d7420e2a5aa7f017939604dc" args="() const " -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="classDali_1_1Stage.html#a7b710d9bbbfc7d6fcde08f9ec3a86c93">Dali::Stage::GetLayerCount</a> </td>
+          <td class="memname">uint32_t <a class="el" href="classDali_1_1Stage.html#a3228c259d7420e2a5aa7f017939604dc">Dali::Stage::GetLayerCount</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

@@ -75,10 +75,10 @@ To display visually-edited views (created in the UI Builder) and code-based user
 
 | Name       | Type                                     | Description                              |
 |------------|------------------------------------------|------------------------------------------|
-| window     | Elementary window (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Win.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Win.html) applications) | Forms the first window of the application. |
-| bg         | Background (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Bg.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Bg.html) applications) | Sets a background for a window or any container object. |
-| conformant | Conformant (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Conformant.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Conformant.html) applications) | Provides space for indicators, virtual keypads, and softkey windows. |
-| naviframe  | Naviframe (in [mobile](../../../org.tizen.native.mobile.apireference/group__Elm__Naviframe.html) and [wearable](../../../org.tizen.native.wearable.apireference/group__Elm__Naviframe.html) applications) | Manages UI Builder views.                |
+| window     | Elementary window (in [mobile](../../../native/api/mobile/latest/group__Elm__Win.html) and [wearable](../../../native/api/wearable/latest/group__Elm__Win.html) applications) | Forms the first window of the application. |
+| bg         | Background (in [mobile](../../../native/api/mobile/latest/group__Elm__Bg.html) and [wearable](../../../native/api/wearable/latest/group__Elm__Bg.html) applications) | Sets a background for a window or any container object. |
+| conformant | Conformant (in [mobile](../../../native/api/mobile/latest/group__Elm__Conformant.html) and [wearable](../../../native/api/wearable/latest/group__Elm__Conformant.html) applications) | Provides space for indicators, virtual keypads, and softkey windows. |
+| naviframe  | Naviframe (in [mobile](../../../native/api/mobile/latest/group__Elm__Naviframe.html) and [wearable](../../../native/api/wearable/latest/group__Elm__Naviframe.html) applications) | Manages UI Builder views.                |
 
 ## Converting to a UI Builder Project
 

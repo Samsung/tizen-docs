@@ -93,7 +93,7 @@ To quickly manage resources in the Tizen Studio:
 
 4. Check the `res.xml` file content.![Check the res.xml file](./media/resource_manager_check_res_xml.png)
 
-5. Add code for loading alternative resources by using the Resource Manager API (in [mobile](../../../org.tizen.native.mobile.apireference/group__CAPI__RESOURCE__MANAGER__MODULE.html) applications).![Load resources](./media/resource_manager_add_code.png)
+5. Add code for loading alternative resources by using the Resource Manager API (in [mobile](../../native/api/mobile/latest/group__CAPI__RESOURCE__MANAGER__MODULE.html) applications).![Load resources](./media/resource_manager_add_code.png)
 
 6. Build and run the project.
 

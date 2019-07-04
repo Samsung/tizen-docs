@@ -95,9 +95,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <!-- doxytag: class="_Evas_Event_Mouse_Wheel" --><table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Event__Mouse__Wheel.html#a1b2b656820a32561ed0b28128bee0306">direction</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Event__Mouse__Wheel.html#a52fe769b9b48aeb166b203090bcd624c">z</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Evas__Point.html">Evas_Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Event__Mouse__Wheel.html#a384abb82f88ec82608477c298fed6e70">output</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Evas__Coord__Point.html">Evas_Coord_Point</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Event__Mouse__Wheel.html#ad0129fef6447ab970e45496e53bbf48f">canvas</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Event__Mouse__Wheel.html#a954f4312096f34e812e9c6f4aad347b4">modifiers</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__Event__Mouse__Wheel.html#a954f4312096f34e812e9c6f4aad347b4">modifiers</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Wheel event </p>
@@ -116,12 +118,26 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a1b2b656820a32561ed0b28128bee0306"></a><!-- doxytag: member="_Evas_Event_Mouse_Wheel::direction" ref="a1b2b656820a32561ed0b28128bee0306" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct__Evas__Event__Mouse__Wheel.html#a1b2b656820a32561ed0b28128bee0306">_Evas_Event_Mouse_Wheel::direction</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Axis of screen wheel - 0 = default up/down wheel, 1 = horizontal left/right wheel </p>
+
+</div>
+</div>
 <a class="anchor" id="a954f4312096f34e812e9c6f4aad347b4"></a><!-- doxytag: member="_Evas_Event_Mouse_Wheel::modifiers" ref="a954f4312096f34e812e9c6f4aad347b4" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Evas.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a>* <a class="el" href="struct__Evas__Event__Mouse__Wheel.html#a954f4312096f34e812e9c6f4aad347b4">_Evas_Event_Mouse_Wheel::modifiers</a></td>
+          <td class="memname"><a class="el" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a>* <a class="el" href="struct__Evas__Event__Mouse__Wheel.html#a954f4312096f34e812e9c6f4aad347b4">_Evas_Event_Mouse_Wheel::modifiers</a></td>
         </tr>
       </table>
 </div>
@@ -141,6 +157,20 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>The X/Y location of the cursor </p>
+
+</div>
+</div>
+<a class="anchor" id="a52fe769b9b48aeb166b203090bcd624c"></a><!-- doxytag: member="_Evas_Event_Mouse_Wheel::z" ref="a52fe769b9b48aeb166b203090bcd624c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="struct__Evas__Event__Mouse__Wheel.html#a52fe769b9b48aeb166b203090bcd624c">_Evas_Event_Mouse_Wheel::z</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The step for the wheel movement relative to the direction above...,-2,-1 = down, 1,2,... = up </p>
 
 </div>
 </div>

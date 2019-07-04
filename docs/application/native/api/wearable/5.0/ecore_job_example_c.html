@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ecore_job - Queuing tasks </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>This example shows how an <a class="el" href="group__Ecore__Job__Group.html#ga2942e879ec428e9f5156a4ba688217ed">Ecore_Job</a> can be added, how it can be deleted, and that they always execute in the added order.</p>
+<div class="textblock"><p>This example shows how an <a class="el" href="group__Ecore__Job__Group.html#ga51a4bfa938b1205aead7d0dd2dae83db">Ecore_Job</a> can be added, how it can be deleted, and that they always execute in the added order.</p>
 <p>First, 2 callback functions are declared, one that prints strings passed to it in the <code>data</code> pointer, and another one that quits the main loop. In the <code>main</code> function, 3 jobs are added using the first callback, and another one is added using the second one.</p>
 <p>Then the second added job is deleted just to demonstrate the usage of <a class="el" href="group__Ecore__Job__Group.html#ga0fe8d42a1b07963b48d7bb175ee39558">ecore_job_del()</a>, and the main loop is finally started. Run this example to see that <code>job1</code>, <code>job3</code> and <code>job_quit</code> are ran, in this order.</p>
 <div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
@@ -116,7 +116,7 @@ _job_quit_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 <span class="keywordtype">int</span>
 main(<span class="keywordtype">void</span>)
 {
-   <a class="code" href="group__Ecore__Job__Group.html#ga2942e879ec428e9f5156a4ba688217ed">Ecore_Job</a> *job1, *job2, *job3, *job_quit;
+   <a class="code" href="group__Ecore__Job__Group.html#ga51a4bfa938b1205aead7d0dd2dae83db">Ecore_Job</a> *job1, *job2, *job3, *job_quit;
    <span class="keywordtype">char</span> *str1 = <span class="stringliteral">&quot;Job 1 started.&quot;</span>;
    <span class="keywordtype">char</span> *str2 = <span class="stringliteral">&quot;Job 2 started.&quot;</span>;
    <span class="keywordtype">char</span> *str3 = <span class="stringliteral">&quot;Job 3 started.&quot;</span>;

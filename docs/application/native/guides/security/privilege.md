@@ -12,7 +12,7 @@ With the Privilege Info API, you can [retrieve the following privilege informati
 Since Tizen 3.0, some privileges are categorized as privacy-related. The user can switch those privileges on and off as needed by changing certain privileges' status to allow or deny them at runtime. This means that the application calling a privileged API can be prevented from using it even if the required privilege is declared in its manifest file. Specific APIs can be used to check the privacy-related privilege's current status and get the display name of the privacy that includes the privilege. For example, you can use the APIs to check the privilege's current status before entering a function that requires the privilege, and if the status is off, display a guide message to the user to ask them to go to the device settings and switch the required privacy on.
 
 > **Note**  
-> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../requesting-permissions.md) using the Privacy Privilege Manager API (in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) applications).
+> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](privacy-related-permissions.md) using the Privacy Privilege Manager API (in [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) applications).
 
 ## Prerequisites
 

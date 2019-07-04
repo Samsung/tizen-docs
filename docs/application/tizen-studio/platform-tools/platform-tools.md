@@ -58,7 +58,7 @@ On both tabs:
 
 ## Specfile Editor
 
-The Specfile Editor Plug-in for the Eclipse provides useful features to help you manage `.spec` files. The plug-in allows you to leverage several Eclipse GUI features in editing the `.spec` files, including an outline view in the editor, auto-completion, highlighting, file hyperlinks, and folding.
+The Specfile Editor Plug-in for Eclipse provides useful features to help you manage `.spec` files. The plug-in allows you to leverage several Eclipse GUI features in editing the `.spec` files, including an outline view in the editor, auto-completion, highlighting, file hyperlinks, and folding.
 
 > **Note**  
 > The Tizen platform IDE does not support features relevant to **rpmlint** and **createrepo**.
@@ -71,7 +71,7 @@ To set the Specfile Editor configuration, go to **Window > Preferences > Others 
 
 ## Content Assist
 
-The Tizen Platform IDE provides the API assist and API hover features to make writing content in the Platform editor quick and efficient:
+The Tizen Platform IDE provides the API assist and API hover features to make writing content in the Platform editor fast and efficient:
 
 - API assist
 

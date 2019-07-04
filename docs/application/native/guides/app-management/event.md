@@ -19,8 +19,8 @@ The main features of the Event API are:
 
 The application can be suspended while in the background, causing a pause in event handling. Since the application cannot receive events in the suspended state, they are all delivered in series after the application exits the suspended state. Consider how to manage this situation and prevent the application from being flooded with events:
 
-- To handle events in the background without going to a suspended state, [declare a background category](efl-ui-app.md#allow_bg).
-- To avoid receiving any events that are triggered while the application is suspended, remove the event handler before entering the suspended state and add it back after exiting the suspended state. You can [manage the event handler](efl-ui-app.md#callback) addition and removal in the `APP_EVENT_SUSPENDED_STATE_CHANGED` event callback, which is triggered each time the application enters and exist the suspended state.
+- To handle events in the background without going to a suspended state, [declare a background category](../applications/efl-ui-app.md#allow_bg).
+- To avoid receiving any events that are triggered while the application is suspended, remove the event handler before entering the suspended state and add it back after exiting the suspended state. You can [manage the event handler](../applications/efl-ui-app.md#callback) addition and removal in the `APP_EVENT_SUSPENDED_STATE_CHANGED` event callback, which is triggered each time the application enters and exist the suspended state.
 
 ## Prerequisites
 

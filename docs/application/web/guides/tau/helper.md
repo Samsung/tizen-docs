@@ -115,15 +115,15 @@ You can use the following methods with the SnapListMarqueeStyle:
   
     ```
     <ul class="ui-listview ui-snap-listview" id="snapList">
-       <li>some element or text</li>
+        <li>some element or text</li>
     </ul>
 
     <script>
-       var list = document.getElementById('snapList'),
-           listHelper;
+        var list = document.getElementById('snapList'),
+            listHelper;
 
-       /* Create the helper */
-       listHelper = tau.helper.SnapListMarqueeStyle.create(list, {marqueeDelay: 1000});
+        /* Create the helper */
+        listHelper = tau.helper.SnapListMarqueeStyle.create(list, {marqueeDelay: 1000});
     </script>
     ```
 

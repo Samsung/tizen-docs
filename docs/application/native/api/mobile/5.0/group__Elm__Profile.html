@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Elementary Profile</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__infra__group.html">Elementary Infrastructure</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Profiles are pre-set options that affect the whole look-and-feel of Elementary-based applications. There are, for example, profiles aimed at desktop computer applications and others aimed at mobile, touchscreen-based ones. You most probably don't want to use the functions in this group unless you're writing an elementary configuration manager. </p>
@@ -101,82 +101,10 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#gaded09ffdb2cf409f2c1d84811b15a2c3">elm_config_profile_dir_get</a> (const char *profile, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> is_user)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#gab26c330a4eae7e190984cc1638947341">elm_config_profile_dir_free</a> (const char *p_dir)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#ga17d23afcf0e30b1844513405fc9ae81f">elm_config_profile_list_get</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#ga57997abf5620597b6d439c63d91901bb">elm_config_profile_list_full_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#gae312204c4dd4ec927748665b784b621b">elm_config_profile_list_free</a> (<a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *l)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#ga68e7d7f56eefe7f4b15f5bb3b4aa6c96">elm_config_profile_exists</a> (const char *profile)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#gafedf998f8887c1b51b2ea9a969dbad8c">elm_config_profile_set</a> (const char *profile)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#ga88cf8cbf6c65aa37227c90ed63a8db1c">elm_config_profile_save</a> (const char *profile)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#gae65dd9ed2cd9a110163eb3bf15729e66">elm_config_profile_derived_add</a> (const char *profile, const char *derive_options)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Profile.html#ga616fc7d537fbf1a2f1078cba84cf94ce">elm_config_profile_derived_del</a> (const char *profile)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="gae65dd9ed2cd9a110163eb3bf15729e66"></a><!-- doxytag: member="elm_config.h::elm_config_profile_derived_add" ref="gae65dd9ed2cd9a110163eb3bf15729e66" args="(const char *profile, const char *derive_options)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Profile.html#gae65dd9ed2cd9a110163eb3bf15729e66">elm_config_profile_derived_add</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>profile</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>derive_options</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Add a new profile of the given name to be derived from the current profile</p>
-<p>This creates a new profile of name <code>profile</code> that will be derived from the currently used profile using the modification commands encoded in the <code>derive_options</code> string.</p>
-<p>At this point it is not expected that anyone would generally use this API except if you are a destktop environment and so the user base of this API will be enlightenment itself.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">profile</td><td>The new profile's name </td></tr>
-    <tr><td class="paramname">derive_options</td><td>A string of derive options detailing how to modify</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Profile.html#ga616fc7d537fbf1a2f1078cba84cf94ce">elm_config_profile_derived_del</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga616fc7d537fbf1a2f1078cba84cf94ce"></a><!-- doxytag: member="elm_config.h::elm_config_profile_derived_del" ref="ga616fc7d537fbf1a2f1078cba84cf94ce" args="(const char *profile)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Profile.html#ga616fc7d537fbf1a2f1078cba84cf94ce">elm_config_profile_derived_del</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>profile</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Deletes a profile that is derived from the current one</p>
-<p>This deletes a derived profile added by <a class="el" href="group__Elm__Profile.html#gae65dd9ed2cd9a110163eb3bf15729e66">elm_config_profile_derived_add()</a>. This will delete the profile of the given name <code>profile</code> that is derived from the current profile.</p>
-<p>At this point it is not expected that anyone would generally use this API except if you are a destktop environment and so the user base of this API will be enlightenment itself.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">profile</td><td>The profile's name that is to be deleted</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Profile.html#gae65dd9ed2cd9a110163eb3bf15729e66">elm_config_profile_derived_add</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="gab26c330a4eae7e190984cc1638947341"></a><!-- doxytag: member="elm_config.h::elm_config_profile_dir_free" ref="gab26c330a4eae7e190984cc1638947341" args="(const char *p_dir)" -->
 <div class="memitem">
 <div class="memproto">
@@ -194,7 +122,7 @@ Functions</h2></td></tr>
 <p>Free an Elementary's profile directory path, as returned by <a class="el" href="group__Elm__Profile.html#gaded09ffdb2cf409f2c1d84811b15a2c3">elm_config_profile_dir_get()</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">p_dir</td><td>The profile's path</td></tr>
+    <tr><td class="paramname">p_dir</td><td>The profile's path </td></tr>
   </table>
   </dd>
 </dl>
@@ -235,34 +163,8 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The profile's directory path.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>You must free it with <a class="el" href="group__Elm__Profile.html#gab26c330a4eae7e190984cc1638947341">elm_config_profile_dir_free()</a>.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>You must free it with <a class="el" href="group__Elm__Profile.html#gab26c330a4eae7e190984cc1638947341">elm_config_profile_dir_free()</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga68e7d7f56eefe7f4b15f5bb3b4aa6c96"></a><!-- doxytag: member="elm_config.h::elm_config_profile_exists" ref="ga68e7d7f56eefe7f4b15f5bb3b4aa6c96" args="(const char *profile)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Profile.html#ga68e7d7f56eefe7f4b15f5bb3b4aa6c96">elm_config_profile_exists</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>profile</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Return if a profile of the given name exists</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if the profile exists, or EINA_FALSE if not </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">profile</td><td>The profile's name</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
 
 </div>
 </div>
@@ -282,7 +184,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Get Elementary's profile in use.</p>
 <p>This gets the global profile that is applied to all Elementary applications.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The profile's name</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The profile's name </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -301,36 +203,18 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Free Elementary's list of available profiles.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">l</td><td>The profiles list, as returned by <a class="el" href="group__Elm__Profile.html#ga17d23afcf0e30b1844513405fc9ae81f">elm_config_profile_list_get()</a>.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga57997abf5620597b6d439c63d91901bb"></a><!-- doxytag: member="elm_config.h::elm_config_profile_list_full_get" ref="ga57997abf5620597b6d439c63d91901bb" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a>* <a class="el" href="group__Elm__Profile.html#ga57997abf5620597b6d439c63d91901bb">elm_config_profile_list_full_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
 <p>Get Elementary's list of available profiles including hidden ones.</p>
 <p>This gets a full list of profiles even with hidden names that should not be user-visible.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The profiles list. List node data are the profile name strings.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>One must free this list, after usage, with the function <a class="el" href="group__Elm__Profile.html#gae312204c4dd4ec927748665b784b621b">elm_config_profile_list_free()</a>. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 Free Elementary's list of available profiles.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>The profiles list, as returned by <a class="el" href="group__Elm__Profile.html#ga17d23afcf0e30b1844513405fc9ae81f">elm_config_profile_list_get()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -350,34 +234,8 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Get Elementary's list of available profiles.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The profiles list. List node data are the profile name strings.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>One must free this list, after usage, with the function <a class="el" href="group__Elm__Profile.html#gae312204c4dd4ec927748665b784b621b">elm_config_profile_list_free()</a>.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>One must free this list, after usage, with the function <a class="el" href="group__Elm__Profile.html#gae312204c4dd4ec927748665b784b621b">elm_config_profile_list_free()</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga88cf8cbf6c65aa37227c90ed63a8db1c"></a><!-- doxytag: member="elm_config.h::elm_config_profile_save" ref="ga88cf8cbf6c65aa37227c90ed63a8db1c" args="(const char *profile)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Profile.html#ga88cf8cbf6c65aa37227c90ed63a8db1c">elm_config_profile_save</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>profile</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Take the current config and write it out to the named profile</p>
-<p>This will take the current in-memory config and write it out to the named profile specified by <code>profile</code>. This will not change profile for the application or make other processes switch profile.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">profile</td><td>The profile's name</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
 
 </div>
 </div>
@@ -395,11 +253,19 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Set Elementary's profile.</p>
-<p>This sets the global profile that is applied to Elementary applications. Just the process the call comes from will be affected.</p>
+<p>Return if a profile of the given name exists</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if the profile exists, or EINA_FALSE if not </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">profile</td><td>The profile's name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 Set Elementary's profile.</dd></dl>
+<p>This sets the global profile that is applied to Elementary applications. Just the process the call comes from will be affected.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profile</td><td>The profile's name </td></tr>
   </table>
   </dd>
 </dl>

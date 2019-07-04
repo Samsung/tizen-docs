@@ -7,13 +7,14 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Toggle Switch</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 
 <h1>Toggle Switch</h1>
 
 <p>The ToggleSwitch component is used as 2-state switch for on/off or true/false data input.</p>
 
+<img src="../../images/mobile_toggleSwitch.png" width="15%">
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -79,12 +80,14 @@
 
 <p>To manually create a toggle switch component, use the component constructor from the <strong>tau</strong> namespace:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;input type=&quot;checkbox&quot; name=&quot;toggle-1&quot; id=&quot;toggle-1&quot; class=&quot;ui-toggleswitch&quot;/&gt;
 
-&lt;script&gt;
-   var toggleComponent = tau.widget.ToggleSwitch(document.getElementById(&quot;toggle-1&quot;));
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var toggleComponent = tau.widget.ToggleSwitch(document.getElementById(&quot;toggle-1&quot;));
 </pre>
 
 	<h2><a id="methods-list"></a>Methods</h2>
@@ -101,21 +104,21 @@
 
 				<tr>
 					<td>
-						<pre class="intable prettyprint"><a href="#method-disable">disable</a>() </pre>
+						<pre class="intable prettyprint"><a href="#method-disable">ToggleSwitch disable</a>() </pre>
 					</td>
 					<td><p>Disables the toggle switch.</p></td>
 				</tr>
 
 				<tr>
 					<td>
-						<pre class="intable prettyprint"><a href="#method-enable">enable</a>() </pre>
+						<pre class="intable prettyprint"><a href="#method-enable">ToggleSwitch enable</a>() </pre>
 					</td>
 					<td><p>Enables the toggle switch.</p></td>
 				</tr>
 
 				<tr>
 					<td>
-						<pre class="intable prettyprint"><a href="#method-value">value</a>() </pre>
+						<pre class="intable prettyprint"><a href="#method-value">number value</a>() </pre>
 					</td>
 					<td><p>Gets toggleswitch state value.</p></td>
 				</tr>
@@ -170,17 +173,19 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;select name=&quot;flip-1&quot; id=&quot;flip-1&quot; class=&quot;ui-toggleswitch&quot;&gt;
    &lt;option value=&quot;off&quot;&gt;&lt;/option&gt;
    &lt;option value=&quot;on&quot;&gt;&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var toggle = document.getElementById(&quot;flip-11&quot;),
-       toggleWidget = tau.widget.ToggleSwitch(toggle);
-   toggleWidget.disable();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var toggle = document.getElementById(&quot;flip-11&quot;),
+    toggleWidget = tau.widget.ToggleSwitch(toggle);
+toggleWidget.disable();
 </pre>
 						</div>
 
@@ -235,17 +240,19 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;select name=&quot;flip-1&quot; id=&quot;flip-1&quot; class=&quot;ui-toggleswitch&quot;&gt;
    &lt;option value=&quot;off&quot;&gt;&lt;/option&gt;
    &lt;option value=&quot;on&quot;&gt;&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var toggle = document.getElementById(&quot;flip-11&quot;),
-       toggleWidget = tau.widget.ToggleSwitch(toggle);
-   toggleWidget.enable();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var toggle = document.getElementById(&quot;flip-11&quot;),
+    toggleWidget = tau.widget.ToggleSwitch(toggle);
+toggleWidget.enable();
 </pre>
 						</div>
 
@@ -259,7 +266,7 @@
 						<p>Gets a value of toggle switch.</p>
 					</div>
 					<div class="synopsis">
-						<pre class="signature prettyprint">Number value() </pre>
+						<pre class="signature prettyprint">number value() </pre>
 					</div>
 
 						<p><span class="version">Since: </span>
@@ -288,7 +295,7 @@
 									<th>Description</th>
 								</tr>
 								<tr>
-									<td>Number</td>
+									<td>number</td>
 									<td>Returns the value (0 or 1) of element.</td>
 								</tr>
 								</tbody>
@@ -300,18 +307,20 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;select name=&quot;flip-1&quot; id=&quot;flip-1&quot; class=&quot;ui-toggleswitch&quot;&gt;
    &lt;option value=&quot;off&quot;&gt;&lt;/option&gt;
    &lt;option value=&quot;on&quot;&gt;&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var toggle = document.getElementById(&quot;flip-11&quot;),
-       toggleWidget = tau.widget.ToggleSwitch(toggle),
-       toggleState = toggleWidget.value();
-   console.log(toggleState);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var toggle = document.getElementById(&quot;flip-11&quot;),
+    toggleWidget = tau.widget.ToggleSwitch(toggle),
+    toggleState = toggleWidget.value();
+console.log(toggleState);
 </pre>
 						</div>
 
@@ -330,5 +339,10 @@
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

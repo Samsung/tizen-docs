@@ -98,7 +98,169 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>blend over two objects. This kind of transition effect is used to make one object disappear and another one appear on its place.</li>
 </ul>
 <p>You can mix more than one effect of this type on the same objects, and the transition will apply both.</p>
-<div class="fragment"><pre class="fragment"></pre></div> </div></div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o transit_example_04 transit_example_04.c `pkg-config --cflags --libs elementary` -DDATA_DIR=&quot;\&quot;&lt;directory&gt;\&quot;&quot;</span>
+<span class="comment">//where directory is the a path where images/icon_07.png can be found.</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_transit_flip(<a class="code" href="group__Elm__Transit.html#gafe0d442717e75c75819e59e0870b2278">Elm_Transit</a> *trans)
+{
+   <a class="code" href="group__Elm__Transit.html#ga987a44f9b863b4c9551aa0c5d2c1a53b">elm_transit_effect_flip_add</a>(trans, <a class="code" href="group__Elm__Transit.html#gga07bc98f9f13ac0f50c195c1a1674c23aac3d4ce7dde5239aaf7d0f0390606457a">ELM_TRANSIT_EFFECT_FLIP_AXIS_X</a>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_transit_blend(<a class="code" href="group__Elm__Transit.html#gafe0d442717e75c75819e59e0870b2278">Elm_Transit</a> *trans)
+{
+   <a class="code" href="group__Elm__Transit.html#gac268b25e138647cf2ce1a82d373bb0e1">elm_transit_effect_blend_add</a>(trans);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_transit_fade(<a class="code" href="group__Elm__Transit.html#gafe0d442717e75c75819e59e0870b2278">Elm_Transit</a> *trans)
+{
+   <a class="code" href="group__Elm__Transit.html#gafed4a1a212118922f38ad0881827ec4f">elm_transit_effect_fade_add</a>(trans);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_transit_resizable_flip(<a class="code" href="group__Elm__Transit.html#gafe0d442717e75c75819e59e0870b2278">Elm_Transit</a> *trans)
+{
+   <a class="code" href="group__Elm__Transit.html#ga157ce514bf4ab17414e6736cca7d861e">elm_transit_effect_resizable_flip_add</a>(
+      trans, <a class="code" href="group__Elm__Transit.html#gga07bc98f9f13ac0f50c195c1a1674c23aa9ce269a5525f3fdb63f6474504798140">ELM_TRANSIT_EFFECT_FLIP_AXIS_Y</a>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+
+<span class="keyword">static</span> <span class="keyword">struct </span>{
+     <span class="keyword">const</span> <span class="keywordtype">char</span> *label;
+     void (*transition_add_cb)(<a class="code" href="group__Elm__Transit.html#gafe0d442717e75c75819e59e0870b2278">Elm_Transit</a> *);
+     <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> checked;
+} _transitions[] = {
+       { <span class="stringliteral">&quot;Flip&quot;</span>, _transit_flip, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> },
+       { <span class="stringliteral">&quot;Blend&quot;</span>, _transit_blend, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> },
+       { <span class="stringliteral">&quot;Fade&quot;</span>, _transit_fade, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> },
+       { <span class="stringliteral">&quot;Resizable Flip&quot;</span>, _transit_resizable_flip, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> },
+       { NULL, NULL, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> }
+};
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_checkbox_transition_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *box, <span class="keyword">const</span> <span class="keywordtype">char</span> *label, <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> *checked)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *check = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(box);
+   evas_object_size_hint_weight_set(check, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(check, 0.0, 0.0);
+   elm_object_text_set(check, label);
+   <a class="code" href="group__Elm__Check.html#gaca05f511b004338c4d7fb35c8ec0d826" title="Set a convenience pointer to a boolean to change.">elm_check_state_pointer_set</a>(check, checked);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, check);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(check);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_transit_start(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Transit.html#gafe0d442717e75c75819e59e0870b2278">Elm_Transit</a> *trans = NULL;
+   <a class="code" href="struct__Eina__List.html">Eina_List</a> *objs = data, *l;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj;
+   <span class="keywordtype">int</span> i;
+
+   trans = <a class="code" href="group__Elm__Transit.html#ga814caf6c5377dd6c4078110437400e0a">elm_transit_add</a>();
+   <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(objs, l, obj)
+     <a class="code" href="group__Elm__Transit.html#gab4e46606ff9cf54591289bffe193c03b">elm_transit_object_add</a>(trans, obj);
+
+   <span class="comment">// FIXME: Should check if there&#39;s another transit going before starting a new</span>
+   <span class="comment">// one</span>
+
+   for (i = 0; _transitions[i].label; i++)
+     {
+        <span class="keywordflow">if</span> (_transitions[i].checked)
+          _transitions[i].transition_add_cb(trans);
+     }
+
+   <a class="code" href="group__Elm__Transit.html#ga7e853e074b16f9a9473ad2456bee1f8d">elm_transit_duration_set</a>(trans, 2.0);
+   <a class="code" href="group__Elm__Transit.html#ga5d600d1d615b5136b99a180d256cb147">elm_transit_go</a>(trans);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *icon, *box, *hbox, *btn, *rect;
+   <a class="code" href="struct__Eina__List.html">Eina_List</a> *objs = NULL;
+   <span class="keywordtype">char</span> buf[PATH_MAX];
+   <span class="keywordtype">int</span> i;
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;images/icon_07.png&quot;</span>);
+
+   <span class="comment">/* add a window */</span>
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;transit&quot;</span>, <span class="stringliteral">&quot;Transit Example&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   <span class="comment">/* add an object that we are going to play with */</span>
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, 0.0);
+   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, 0.0);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Transformed object!&quot;</span>);
+   icon = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/icon_07.png&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   <a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(icon, buf, NULL);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(btn, <span class="stringliteral">&quot;icon&quot;</span>, icon);
+   evas_object_move(btn, 50, 50);
+   evas_object_resize(btn, 200, 50);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   objs = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(objs, btn);
+
+   <span class="comment">/* add another object that we are going to play with */</span>
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, 0.0);
+   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, 0.0);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Another object!&quot;</span>);
+   icon = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/icon_08.png&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   <a class="code" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set</a>(icon, buf, NULL);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(btn, <span class="stringliteral">&quot;icon&quot;</span>, icon);
+   evas_object_move(btn, 50, 50);
+   evas_object_resize(btn, 200, 50);
+
+   objs = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(objs, btn);
+
+   hbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(hbox, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_size_hint_weight_set(hbox, EVAS_HINT_EXPAND, 0.0);
+   evas_object_size_hint_align_set(hbox, EVAS_HINT_FILL, 0.0);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, hbox);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(hbox);
+
+   <span class="keywordflow">for</span> (i = 0; _transitions[i].label; i++)
+     _checkbox_transition_add(hbox, _transitions[i].label, &amp;_transitions[i].checked);
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Transit!&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(hbox, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _transit_start, objs);
+
+   rect = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(rect, 0, 0, 0, 0);
+   evas_object_size_hint_weight_set(rect, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(rect, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, rect);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rect);
+
+   evas_object_resize(win, 300, 100);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

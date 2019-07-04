@@ -47,17 +47,17 @@ To execute operations, such as copying, moving, creating new resources, and comp
 	</thead>
 	<tbody>
 		<tr>
-			<td align="center"><img alt="Collapse all" src="/sites/default/files/images/proj_explorer_collapse.png" /></td>
+			<td align="center"><img alt="Collapse all" src="./media/proj_explorer_collapse.png" /></td>
 			<td><strong>Collapse all</strong></td>
 			<td>Collapses the tree expansion state of all resources in the view.</td>
 		</tr>
 		<tr>
-			<td align="center"><img alt="Link with editor" src="/sites/default/files/images/proj_explorer_link.png" /></td>
+			<td align="center"><img alt="Link with editor" src="./media/proj_explorer_link.png" /></td>
 			<td><strong>Link with editor</strong></td>
 			<td>Toggles whether the view selection is linked to the active editor. When this option is selected, changing the active editor automatically updates the selection to the resource being edited.</td>
 		</tr>
 		<tr>
-			<td align="center"><img alt="Menu" src="/sites/default/files/images/proj_explorer_menu.png" /></td>
+			<td align="center"><img alt="Menu" src="./media/proj_explorer_menu.png" /></td>
 			<td><strong>Menu</strong></td>
 			<td>Click the icon to open a menu of items specific to the view:
 			<ul>

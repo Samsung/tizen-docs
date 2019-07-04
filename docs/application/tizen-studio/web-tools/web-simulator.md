@@ -87,7 +87,7 @@ You can modify the following configuration settings in the Web Simulator configu
 
 - System settings
 
-  The Tizen System Information API (for [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html) applications) is used to retrieve device and network-related information. Use the **SYSTEM SETTINGS** tab to set the device status and to test whether your application can retrieve the current device status. You can also test the application listener functions for status change notifications.
+  The Tizen System Information API (for [mobile](../../web/api/latest/device_api/mobile/tizen/systeminfo.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/systeminfo.html) applications) is used to retrieve device and network-related information. Use the **SYSTEM SETTINGS** tab to set the device status and to test whether your application can retrieve the current device status. You can also test the application listener functions for status change notifications.
 
   You can modify the following system configuration settings on the **SYSTEM SETTINGS** tab:
 
@@ -153,6 +153,7 @@ Enter the full directory path for the simulator to store user preferences and We
 In this section, you can modify simulator-related preferences:
 
 - **Simulator location**
+
   Set whether to use the default version of the simulator, or a custom version.
   - Internal: Use the simulator that is part of the Tizen Studio.
   - External: Use a custom build or other simulator version. Enter the full path to the `index.html` file for the version you want to use.
@@ -161,36 +162,36 @@ In this section, you can modify simulator-related preferences:
 <a name="api"></a>
 ## Tizen API Coverage
 
-Below is a summary of the Tizen APIs supported in this release. Some APIs are supported with a JavaScript backend and others are provided by the Google Chrome&trade; browser. Tizen also supports [W3C/HTML5 Specifications](#spec).
+Below is a summary of the Tizen APIs supported in this release. Some APIs are supported with a JavaScript backend and others are provided by Google Chrome&trade;. Tizen also supports [W3C/HTML5 Specifications](#spec).
 
 <a name="support"></a>
 ### Supported Tizen Web Device API
 
 The following APIs are implemented by the simulator in JavaScript:
 
-- Tizen (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/tizen.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/tizen.html) applications)
-- Alarm (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/alarm.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/alarm.html) applications)
-- Application (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/application.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/application.html) applications)
-- Bluetooth (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/bluetooth.html) applications)
-- Bookmark (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/bookmark.html) applications)
-- Calendar (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/calendar.html) applications)
-- Call History (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/callhistory.html) applications)
-- Contact (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/contact.html) applications)
-- Content (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/content.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/content.html) applications)
-- Data Control (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/datacontrol.html) applications)
-- Data Synchronization (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/datasync.html) applications)
-- Download (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/download.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/download.html) applications)
-- Filesystem (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/filesystem.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/filesystem.html) applications)
-- Messaging (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/messaging.html) applications)
-- Network Bearer Selection (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/networkbearerselection.html) applications)
-- NFC (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/nfc.html) applications)
-- Notification (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/notification.html) applications)
-- Package (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/package.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/package.html) applications)
-- Power (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/power.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/power.html) applications)
-- Push (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/push.html) applications)
-- System Information (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/systeminfo.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/systeminfo.html) applications)
-- System Setting (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/systemsetting.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/systemsetting.html) applications)
-- Time (in [mobile](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/mobile/tizen/time.html) and [wearable](https://developer.tizen.org/dev-guide/latest/org.tizen.web.apireference/html/device_api/wearable/tizen/time.html) applications)
+- Tizen (in [mobile](../../web/api/latest/device_api/mobile/tizen/tizen.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/tizen.html) applications)
+- Alarm (in [mobile](../../web/api/latest/device_api/mobile/tizen/alarm.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/alarm.html) applications)
+- Application (in [mobile](../../web/api/latest/device_api/mobile/tizen/application.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/application.html) applications)
+- Bluetooth (in [mobile](../../web/api/latest/device_api/mobile/tizen/bluetooth.html) applications)
+- Bookmark (in [mobile](../../web/api/latest/device_api/mobile/tizen/bookmark.html) applications)
+- Calendar (in [mobile](../../web/api/latest/device_api/mobile/tizen/calendar.html) applications)
+- Call History (in [mobile](../../web/api/latest/device_api/mobile/tizen/callhistory.html) applications)
+- Contact (in [mobile](../../web/api/latest/device_api/mobile/tizen/contact.html) applications)
+- Content (in [mobile](../../web/api/latest/device_api/mobile/tizen/content.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/content.html) applications)
+- Data Control (in [mobile](../../web/api/latest/device_api/mobile/tizen/datacontrol.html) applications)
+- Data Synchronization (in [mobile](../../web/api/latest/device_api/mobile/tizen/datasync.html) applications)
+- Download (in [mobile](../../web/api/latest/device_api/mobile/tizen/download.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/download.html) applications)
+- Filesystem (in [mobile](../../web/api/latest/device_api/mobile/tizen/filesystem.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/filesystem.html) applications)
+- Messaging (in [mobile](../../web/api/latest/device_api/mobile/tizen/messaging.html) applications)
+- Network Bearer Selection (in [mobile](../../web/api/latest/device_api/mobile/tizen/networkbearerselection.html) applications)
+- NFC (in [mobile](../../web/api/latest/device_api/mobile/tizen/nfc.html) applications)
+- Notification (in [mobile](../../web/api/latest/device_api/mobile/tizen/notification.html) applications)
+- Package (in [mobile](../../web/api/latest/device_api/mobile/tizen/package.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/package.html) applications)
+- Power (in [mobile](../../web/api/latest/device_api/mobile/tizen/power.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/power.html) applications)
+- Push (in [mobile](../../web/api/latest/device_api/mobile/tizen/push.html) applications)
+- System Information (in [mobile](../../web/api/latest/device_api/mobile/tizen/systeminfo.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/systeminfo.html) applications)
+- System Setting (in [mobile](../../web/api/latest/device_api/mobile/tizen/systemsetting.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/systemsetting.html) applications)
+- Time (in [mobile](../../web/api/latest/device_api/mobile/tizen/time.html) and [wearable](../../web/api/latest/device_api/wearable/tizen/time.html) applications)
 
 <a name="non_support"></a>
 ### Non-supported Tizen Web Device API

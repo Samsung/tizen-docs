@@ -86,10 +86,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Panes</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
+<hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
 <img src="panes_inheritance_tree.png" alt="panes_inheritance_tree.png"/>
 </div>
@@ -101,8 +104,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
  <p>The panes widget adds a draggable bar between two contents. When dragged this bar will resize contents' size.</p>
 <p>Panes can be split vertically or horizontally, and contents size proportion can be customized (homogeneous by default).</p>
-<p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for panes objects.</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout:</p>
+<p>This widget inherits from the Layout one, so that all the functions acting on it also work for panes objects.</p>
+<p>This widget emits the following signals, besides the ones sent from Layout:</p>
 <ul>
 <li><code>"press"</code> - The panes has been pressed (button wasn't released yet).</li>
 <li><code>"unpress"</code> - The panes was released after being pressed.</li>
@@ -131,6 +134,106 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <ul>
 <li><a class="el" href="panes_example.html">Panes widget example</a> </li>
 </ul>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Panes.html#gaa4d51c6b525408873cb867485b80f35b">elm_panes_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Panes.html#gabb2bcec90bebe89dc77de7c630a8908c">elm_panes_horizontal_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> horizontal)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set how to split and dispose each content.  <a href="#gabb2bcec90bebe89dc77de7c630a8908c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Panes.html#ga02c6e167973144e39037e60b25eaf32c">elm_panes_horizontal_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get how to split and dispose each content.  <a href="#ga02c6e167973144e39037e60b25eaf32c"></a><br/></td></tr>
+</table>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gaa4d51c6b525408873cb867485b80f35b"></a><!-- doxytag: member="elm_panes_legacy.h::elm_panes_add" ref="gaa4d51c6b525408873cb867485b80f35b" args="(Evas_Object *parent)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__Panes.html#gaa4d51c6b525408873cb867485b80f35b">elm_panes_add</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>parent</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Add a new panes widget to the given parent Elementary (container) object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>The parent object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>a new panes widget handle or <code>NULL</code>, on errors.</dd></dl>
+<p>This function inserts a new panes widget on the canvas. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panes_example_8c-example.html#a5">panes_example.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga02c6e167973144e39037e60b25eaf32c"></a><!-- doxytag: member="elm_panes_legacy.h::elm_panes_horizontal_get" ref="ga02c6e167973144e39037e60b25eaf32c" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Panes.html#ga02c6e167973144e39037e60b25eaf32c">elm_panes_horizontal_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get how to split and dispose each content. </p>
+<p>Use this function to change how your panes is to be disposed: vertically or horizontally. Horizontal panes have "top" and "bottom" contents, vertical panes have "left" and "right" contents.</p>
+<p>By default panes is in a vertical mode.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Use <code>true</code> to make <code>obj</code> to split panes horizontally ("top" and "bottom" contents). <code>false</code> to make it vertically ("left" and "right" contents). </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gabb2bcec90bebe89dc77de7c630a8908c"></a><!-- doxytag: member="elm_panes_legacy.h::elm_panes_horizontal_set" ref="gabb2bcec90bebe89dc77de7c630a8908c" args="(Evas_Object *obj, Eina_Bool horizontal)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Panes.html#gabb2bcec90bebe89dc77de7c630a8908c">elm_panes_horizontal_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>horizontal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set how to split and dispose each content. </p>
+<p>Use this function to change how your panes is to be disposed: vertically or horizontally. Horizontal panes have "top" and "bottom" contents, vertical panes have "left" and "right" contents.</p>
+<p>By default panes is in a vertical mode.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">horizontal</td><td>Use <code>true</code> to make <code>obj</code> to split panes horizontally ("top" and "bottom" contents). <code>false</code> to make it vertically ("left" and "right" contents). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="panes_example_8c-example.html#a10">panes_example.c</a>.</dd>
+</dl>
+</div>
+</div>
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

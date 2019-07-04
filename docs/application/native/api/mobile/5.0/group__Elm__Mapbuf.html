@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Mapbuf</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -132,9 +132,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Mapbuf.html#gae69da3f5d6417ab8ae258a4e77bea872">elm_mapbuf_enabled_get</a> (const Elm_Mapbuf *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value whether map is enabled or not.  <a href="#gae69da3f5d6417ab8ae258a4e77bea872"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Mapbuf.html#ga6dda7a8322ebaffc287a20c58026464e">elm_mapbuf_point_color_set</a> (Elm_Mapbuf *obj, int idx, int r, int g, int b, int a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the color of a vertex in the mapbuf.  <a href="#ga6dda7a8322ebaffc287a20c58026464e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Mapbuf.html#ga53ff978e5c544bec74b16f41ba29d774">elm_mapbuf_point_color_get</a> (Elm_Mapbuf *obj, int idx, int *r, int *g, int *b, int *a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the color set on a vertex in the mapbuf.  <a href="#ga53ff978e5c544bec74b16f41ba29d774"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The color of a point (vertex) in the mapbuf.  <a href="#ga6dda7a8322ebaffc287a20c58026464e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Mapbuf.html#gad777031eb7b672173b42785f6e33d891">elm_mapbuf_point_color_get</a> (const Elm_Mapbuf *obj, int idx, int *r, int *g, int *b, int *a)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The color of a point (vertex) in the mapbuf.  <a href="#gad777031eb7b672173b42785f6e33d891"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Mapbuf.html#gaed8b665e2ac7557abc645503327700fd">elm_mapbuf_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
@@ -160,9 +160,10 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new mapbuf widget handle or <code>NULL</code>, on errors.</dd></dl>
-<p>This function inserts a new mapbuf widget on the canvas.</p>
+<p>This function inserts a new mapbuf widget on the canvas. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="mapbuf_example_8c-example.html#a12">mapbuf_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gae5eb35909c38472bab65764a568947d8"></a><!-- doxytag: member="elm_mapbuf.eo.legacy.h::elm_mapbuf_alpha_get" ref="gae5eb35909c38472bab65764a568947d8" args="(const Elm_Mapbuf *obj)" -->
@@ -181,7 +182,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get a value whether alpha blending is enabled or not. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -189,6 +189,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The alpha state. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -220,7 +221,6 @@ Functions</h2></td></tr>
 <p>Set or unset alpha flag for map rendering. </p>
 <p>This sets alpha flag for map rendering. If the object is a type that has its own alpha settings, then this will take precedence. Only image objects have this currently. It stops alpha blending of the map area, and is useful if you know the object and/or all sub-objects is 100% solid.</p>
 <p>Alpha is enabled by default.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -228,7 +228,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="mapbuf_example_8c-example.html#a3">mapbuf_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga7beb6e4c2d3927034072fa4425eccf75"></a><!-- doxytag: member="elm_mapbuf.eo.legacy.h::elm_mapbuf_auto_get" ref="ga7beb6e4c2d3927034072fa4425eccf75" args="(const Elm_Mapbuf *obj)" -->
@@ -247,7 +249,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get a value whether auto mode is enabled or not. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -255,6 +256,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The auto mode state. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -286,7 +288,6 @@ Functions</h2></td></tr>
 <p>Set or unset auto flag for map rendering. </p>
 <p>When a ampbuf object has "auto mode" enabled, then it will enable and disable map mode based on current visibility. Mapbuf will track if you show or hide it AND if the object is inside the canvas viewport or not when it is moved or resized. Note that if you turn automode off, then map mode will be in a disabled state at this point. When you turn it on for the first time, the current state will be evaluated base on current properties of the mapbuf object.</p>
 <p>Auto mode is disabled by default.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -294,6 +295,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -313,7 +315,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get a value whether map is enabled or not. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -321,6 +322,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The enabled state. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -354,7 +356,6 @@ Functions</h2></td></tr>
 <p>Also, when enabled, alpha and smooth states will be used, so if the content isn't solid, alpha should be enabled, for example, otherwise a black rectangle will fill the content.</p>
 <p>When disabled, the stored map will be freed and geometry prior to enabling the map will be restored.</p>
 <p>It's disabled by default.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -362,17 +363,19 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="mapbuf_example_8c-example.html#a1">mapbuf_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="ga53ff978e5c544bec74b16f41ba29d774"></a><!-- doxytag: member="elm_mapbuf.eo.legacy.h::elm_mapbuf_point_color_get" ref="ga53ff978e5c544bec74b16f41ba29d774" args="(Elm_Mapbuf *obj, int idx, int *r, int *g, int *b, int *a)" -->
+<a class="anchor" id="gad777031eb7b672173b42785f6e33d891"></a><!-- doxytag: member="elm_mapbuf.eo.legacy.h::elm_mapbuf_point_color_get" ref="gad777031eb7b672173b42785f6e33d891" args="(const Elm_Mapbuf *obj, int idx, int *r, int *g, int *b, int *a)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Mapbuf.html#ga53ff978e5c544bec74b16f41ba29d774">elm_mapbuf_point_color_get</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Mapbuf.html#gad777031eb7b672173b42785f6e33d891">elm_mapbuf_point_color_get</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Mapbuf *&#160;</td>
+          <td class="paramtype">const Elm_Mapbuf *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -414,21 +417,21 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get the color set on a vertex in the mapbuf. </p>
-<p>This gets the color set by <a class="el" href="group__Elm__Mapbuf.html#ga6dda7a8322ebaffc287a20c58026464e">elm_mapbuf_point_color_set</a> on the given vertex of the mapbuf.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>The color of a point (vertex) in the mapbuf. </p>
+<p>This represents the color of the vertex in the mapbuf. Colors will be linearly interpolated between vertex points through the mapbuf. Color will multiply the "texture" pixels (like GL_MODULATE in OpenGL). The default color of a vertex in a mapbuf is white solid (255, 255, 255, 255) which means it will have no effect on modifying the texture pixels.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Index of point get. Must be smaller than map size. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">r</td><td>Pointer to red return. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">g</td><td>Pointer to green return. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">b</td><td>Pointer to blue return. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>Pointer to alpha return.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Index of point to change, from 0 to 3. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">r</td><td>Red (0 - 255) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">g</td><td>Green (0 - 255) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">b</td><td>Blue (0 - 255) </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">a</td><td>Alpha (0 - 255)</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -481,13 +484,12 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the color of a vertex in the mapbuf. </p>
-<p>This sets the color of the vertex in the mapbuf. Colors will be linearly interpolated between vertex points through the mapbuf. Color will multiply the "texture" pixels (like GL_MODULATE in OpenGL). The default color of a vertex in a mapbuf is white solid (255, 255, 255, 255) which means it will have no affect on modifying the texture pixels.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>The color of a point (vertex) in the mapbuf. </p>
+<p>This represents the color of the vertex in the mapbuf. Colors will be linearly interpolated between vertex points through the mapbuf. Color will multiply the "texture" pixels (like GL_MODULATE in OpenGL). The default color of a vertex in a mapbuf is white solid (255, 255, 255, 255) which means it will have no effect on modifying the texture pixels.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Index of point to change. Must be smaller than mapbuf size. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">idx</td><td>Index of point to change, from 0 to 3. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>Red (0 - 255) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">g</td><td>Green (0 - 255) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Blue (0 - 255) </td></tr>
@@ -496,6 +498,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -515,7 +518,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get a value whether smooth map rendering is enabled or not. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -523,6 +525,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The smooth mode state. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -554,7 +557,6 @@ Functions</h2></td></tr>
 <p>Enable or disable smooth map rendering. </p>
 <p>This sets smoothing for map rendering. If the object is a type that has its own smoothing settings, then both the smooth settings for this object and the map must be turned off.</p>
 <p>By default smooth maps are enabled.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -562,7 +564,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="mapbuf_example_8c-example.html#a4">mapbuf_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

@@ -90,11 +90,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Some more image object functions examples (2nd block) </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>In this example, we have three images on the canvas, but one of them is special -- we're using it as a <b>proxy image object</b>. It will mirror the contents of the other two images (which are the ones on the top of the canvas), one at a time: <div class="fragment"><pre class="fragment">   d.proxy_img = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
+<div class="textblock"><p>In this example, we have three images on the canvas, but one of them is special -- we're using it as a <b>proxy image object</b>. It will mirror the contents of the other two images (which are the ones on the top of the canvas), one at a time: <div class="fragment"><pre class="fragment">   d.proxy_img = evas_object_image_filled_add(d.evas);
    evas_object_image_source_set(d.proxy_img, d.logo);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.proxy_img, WIDTH / 4, HEIGHT / 2);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.proxy_img, WIDTH / 2, HEIGHT / 2);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.proxy_img);
+   evas_object_move(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   evas_object_resize(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.proxy_img);
 </pre></div> As in other examples, we have a command line interface on it.  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *commands = \
   <span class="stringliteral">&quot;commands are:\n&quot;</span>
   <span class="stringliteral">&quot;\tp - change proxy image&#39;s source\n&quot;</span>
@@ -108,60 +108,61 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *source = evas_object_image_source_get(d.proxy_img);
 
         <span class="keywordflow">if</span> (source == d.logo) source = d.noise_img;
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (source == d.noise_img) source = d.text_obj;
         <span class="keywordflow">else</span> source = d.logo;
 
         evas_object_image_source_set(d.proxy_img, source);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Proxy image&#39;s source changed\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;Proxy image&#39;s source changed\n&quot;</span>);
 
         <span class="keywordflow">return</span>;
      }
 </pre></div> Note the top right image, the smaller one:  <div class="fragment"><pre class="fragment">   d.noise_img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
-   <a class="code" href="group__Evas__Object__Image.html#ga369c3638028094b1d66bd482778eb6b2">evas_object_image_size_set</a>(d.noise_img, WIDTH / 4, HEIGHT / 4);
+   evas_object_image_size_set(d.noise_img, WIDTH / 4, HEIGHT / 4);
    evas_object_image_data_set(d.noise_img, pixels);
-   evas_object_image_filled_set(d.noise_img, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.noise_img, (WIDTH * 3) / 4, 0);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.noise_img, WIDTH / 4, HEIGHT / 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.noise_img);
-</pre></div> Since we are creating the data for its pixel buffer ourselves, we have to set its size with <a class="el" href="group__Evas__Object__Image.html#ga369c3638028094b1d66bd482778eb6b2">evas_object_image_size_set()</a>, first. We set our data with the function evas_object_image_data_set(), where the second argument is a buffer with random data. There's a last command to print it's <b>stride</b> value. Since its created with one quarter of the canvas's original width  <div class="fragment"><pre class="fragment"><span class="preprocessor">#define WIDTH  (320)</span>
+   evas_object_image_filled_set(d.noise_img, EINA_TRUE);
+   evas_object_move(d.noise_img, (WIDTH * 5) / 8, HEIGHT / 8);
+   evas_object_resize(d.noise_img, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.noise_img);
+</pre></div> Since we are creating the data for its pixel buffer ourselves, we have to set its size with evas_object_image_size_set(), first. We set our data with the function evas_object_image_data_set(), where the second argument is a buffer with random data. There's a last command to print it's <b>stride</b> value. Since its created with one quarter of the canvas's original width  <div class="fragment"><pre class="fragment"><span class="preprocessor">#define WIDTH  (320)</span>
 <span class="preprocessor">#define HEIGHT (240)</span>
 </pre></div> you can check this value.</p>
-<p>The image on the top left also has a subtlety: it is <b>pre-loaded</b> on this example.  <div class="fragment"><pre class="fragment">   d.logo = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
+<p>The image on the top left also has a subtlety: it is <b>pre-loaded</b> on this example.  <div class="fragment"><pre class="fragment">   d.logo = evas_object_image_filled_add(d.evas);
 
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
-       d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a5cd5ca5f4dcd51dd2429f020cb2dfa9e">EVAS_CALLBACK_IMAGE_PRELOADED</a>, _on_preloaded, NULL);
-   <a class="code" href="group__Evas__Object__Image.html#gae314b3d41feb8c395854d8f03cb1d6b2">evas_object_image_preload</a>(d.logo, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+       d.logo, EVAS_CALLBACK_IMAGE_PRELOADED, _on_preloaded, NULL);
+   evas_object_image_preload(d.logo, EINA_TRUE);
 
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.logo, img_path, NULL);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.logo, WIDTH / 2, HEIGHT / 2);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a9fa52651ccf7e47cd3b7785fc4cf393f">EVAS_CALLBACK_MOUSE_DOWN</a>, _mouse_down, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a23fb97fb7cbccded54ccf3fc4e1dab8a">EVAS_CALLBACK_MOUSE_MOVE</a>, _mouse_move, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a8c1b22c99dd0231cd9ba1fecbffffac7">EVAS_CALLBACK_MOUSE_UP</a>, _mouse_up, 0);
+   evas_object_image_file_set(d.logo, img_path, NULL);
+   evas_object_resize(d.logo, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_DOWN, _mouse_down, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_MOVE, _mouse_move, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_UP, _mouse_up, 0);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_IN, _mouse_in, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a91aaa30a57047d0ee8a734e603751c25">EVAS_CALLBACK_MOUSE_OUT</a>, _mouse_out, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ab5bb0de31eaeed655255e71ffe518b80">EVAS_CALLBACK_MULTI_DOWN</a>, _multi_down, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a4328f52cfb700b5c705edf7173afdd94">EVAS_CALLBACK_MULTI_UP</a>, _multi_up, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a6d0ade7e69dc62f728fa2e29168e923f">EVAS_CALLBACK_MULTI_MOVE</a>, _multi_move, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a585e05307b99c361e54df68a4f341a85">EVAS_CALLBACK_HOLD</a>, _hold, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_OUT, _mouse_out, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MULTI_DOWN, _multi_down, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MULTI_UP, _multi_up, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MULTI_MOVE, _multi_move, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_HOLD, _hold, 0);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.logo);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.logo);
 </pre></div> On real use cases we wouldn't be just printing something like this  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
 _mouse_down(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
             <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="struct__Evas__Event__Mouse__Down.html">Evas_Event_Mouse_Down</a> *ev = event_info;
-   printf(<span class="stringliteral">&quot;Mouse Down - obj(%p), coords(%d %d)\n&quot;</span>, obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Down.html#adcaa4cd5eadd8c04cc5510a5b2514eb5">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>,
-          ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Down.html#adcaa4cd5eadd8c04cc5510a5b2514eb5">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
+   printf(<span class="stringliteral">&quot;Mouse Down - obj(%p), coords(%d %d)\n&quot;</span>,
+          obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Down.html#adcaa4cd5eadd8c04cc5510a5b2514eb5">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Down.html#adcaa4cd5eadd8c04cc5510a5b2514eb5">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
 }
 </pre></div> naturally.</p>
 <p>The 's' command will save one of the images on the disk, in the png format:  <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;a&quot;</span>) == 0) <span class="comment">/* save noise image to disk */</span>
      {
-        <span class="keywordflow">if</span> (!<a class="code" href="group__Evas__Object__Image.html#ga8bd6201d1b5c5f0e65600b491c6557e4">evas_object_image_save</a>(d.noise_img, file_path, NULL, quality_str))
+        <span class="keywordflow">if</span> (!evas_object_image_save(d.noise_img, file_path, NULL, quality_str))
           fprintf(stderr, <span class="stringliteral">&quot;Cannot save image to &#39;%s&#39; (flags &#39;%s&#39;)\n&quot;</span>,
                   file_path, quality_str);
         <span class="keywordflow">else</span>
-          fprintf(stdout, <span class="stringliteral">&quot;Image saved to &#39;%s&#39; (flags &#39;%s&#39;), check it out with &quot;</span>
-                          <span class="stringliteral">&quot;an image viewer\n&quot;</span>, file_path, quality_str);
+          printf(<span class="stringliteral">&quot;Image saved to &#39;%s&#39; (flags &#39;%s&#39;), check it out with &quot;</span>
+                 <span class="stringliteral">&quot;an image viewer\n&quot;</span>, file_path, quality_str);
 
         <span class="keywordflow">return</span>;
      }
@@ -200,7 +201,7 @@ _mouse_down(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="c
 {
    Ecore_Evas  *ee;
    <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a>        *evas;
-   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *logo, *noise_img, *proxy_img, *bg;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *logo, *noise_img, *proxy_img, *text_obj, *bg;
 };
 
 <span class="keyword">static</span> <span class="keyword">struct </span>test_data d = {0};
@@ -210,8 +211,8 @@ _mouse_down(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="c
             <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="struct__Evas__Event__Mouse__Down.html">Evas_Event_Mouse_Down</a> *ev = event_info;
-   printf(<span class="stringliteral">&quot;Mouse Down - obj(%p), coords(%d %d)\n&quot;</span>, obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Down.html#adcaa4cd5eadd8c04cc5510a5b2514eb5">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>,
-          ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Down.html#adcaa4cd5eadd8c04cc5510a5b2514eb5">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
+   printf(<span class="stringliteral">&quot;Mouse Down - obj(%p), coords(%d %d)\n&quot;</span>,
+          obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Down.html#adcaa4cd5eadd8c04cc5510a5b2514eb5">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Down.html#adcaa4cd5eadd8c04cc5510a5b2514eb5">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -219,8 +220,8 @@ _mouse_move(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="c
             <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="struct__Evas__Event__Mouse__Move.html">Evas_Event_Mouse_Move</a> *ev = event_info;
-   printf(<span class="stringliteral">&quot;Mouse Move - obj(%p), coords(%d %d)\n&quot;</span>, obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Move.html#a652812079b71cc4c52053a75c4b574e2">cur</a>.<a class="code" href="struct__Evas__Position.html#a7e8e1417868ef65b1c2cee1f9f02e4eb">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>,
-          ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Move.html#a652812079b71cc4c52053a75c4b574e2">cur</a>.<a class="code" href="struct__Evas__Position.html#a7e8e1417868ef65b1c2cee1f9f02e4eb">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
+   printf(<span class="stringliteral">&quot;Mouse Move - obj(%p), coords(%d %d)\n&quot;</span>,
+          obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Move.html#a652812079b71cc4c52053a75c4b574e2">cur</a>.<a class="code" href="struct__Evas__Position.html#a7e8e1417868ef65b1c2cee1f9f02e4eb">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Move.html#a652812079b71cc4c52053a75c4b574e2">cur</a>.<a class="code" href="struct__Evas__Position.html#a7e8e1417868ef65b1c2cee1f9f02e4eb">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -228,8 +229,8 @@ _mouse_up(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="cod
           <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="struct__Evas__Event__Mouse__Up.html">Evas_Event_Mouse_Up</a> *ev = event_info;
-   printf(<span class="stringliteral">&quot;Mouse Up - obj(%p), coords(%d %d)\n&quot;</span>, obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Up.html#a6da4d82e2ec11b37fe971b17c5ac01dc">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>,
-          ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Up.html#a6da4d82e2ec11b37fe971b17c5ac01dc">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
+   printf(<span class="stringliteral">&quot;Mouse Up - obj(%p), coords(%d %d)\n&quot;</span>,
+          obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Up.html#a6da4d82e2ec11b37fe971b17c5ac01dc">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Up.html#a6da4d82e2ec11b37fe971b17c5ac01dc">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -237,8 +238,8 @@ _multi_down(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="c
             <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="struct__Evas__Event__Multi__Down.html">Evas_Event_Multi_Down</a> *ev = event_info;
-   printf(<span class="stringliteral">&quot;Multi Down - obj(%p), coords(%d %d)\n&quot;</span>, obj, ev-&gt;canvas.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a8cab3483eece4600b298d56f4a46fc60">x</a>,
-          ev-&gt;canvas.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a76cb7d78f6840bcad39739cbe26227d2">y</a>);
+   printf(<span class="stringliteral">&quot;Multi Down - obj(%p), coords(%d %d)\n&quot;</span>,
+          obj, ev-&gt;canvas.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a8cab3483eece4600b298d56f4a46fc60">x</a>, ev-&gt;canvas.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a76cb7d78f6840bcad39739cbe26227d2">y</a>);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -246,8 +247,8 @@ _multi_move(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="c
              <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="struct__Evas__Event__Multi__Move.html">Evas_Event_Multi_Move</a> *ev = event_info;
-   printf(<span class="stringliteral">&quot;Multi Move - obj(%p), coords(%d %d)\n&quot;</span>, obj, ev-&gt;cur.<a class="code" href="struct__Evas__Precision__Position.html#a4ee2ba8991b6657d668397b75f939eb7">canvas</a>.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a8cab3483eece4600b298d56f4a46fc60">x</a>,
-          ev-&gt;cur.<a class="code" href="struct__Evas__Precision__Position.html#a4ee2ba8991b6657d668397b75f939eb7">canvas</a>.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a76cb7d78f6840bcad39739cbe26227d2">y</a>);
+   printf(<span class="stringliteral">&quot;Multi Move - obj(%p), coords(%d %d)\n&quot;</span>,
+          obj, ev-&gt;cur.<a class="code" href="struct__Evas__Precision__Position.html#a4ee2ba8991b6657d668397b75f939eb7">canvas</a>.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a8cab3483eece4600b298d56f4a46fc60">x</a>, ev-&gt;cur.<a class="code" href="struct__Evas__Precision__Position.html#a4ee2ba8991b6657d668397b75f939eb7">canvas</a>.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a76cb7d78f6840bcad39739cbe26227d2">y</a>);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -255,8 +256,8 @@ _multi_up(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="cod
           <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="struct__Evas__Event__Multi__Up.html">Evas_Event_Multi_Up</a> *ev = event_info;
-   printf(<span class="stringliteral">&quot;Multi Up - obj(%p), coords(%d %d)\n&quot;</span>, obj, ev-&gt;canvas.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a8cab3483eece4600b298d56f4a46fc60">x</a>,
-          ev-&gt;canvas.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a76cb7d78f6840bcad39739cbe26227d2">y</a>);
+   printf(<span class="stringliteral">&quot;Multi Up - obj(%p), coords(%d %d)\n&quot;</span>,
+          obj, ev-&gt;canvas.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a8cab3483eece4600b298d56f4a46fc60">x</a>, ev-&gt;canvas.<a class="code" href="struct__Evas__Coord__Precision__Point.html#a76cb7d78f6840bcad39739cbe26227d2">y</a>);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -264,8 +265,8 @@ _mouse_in(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="cod
           <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="struct__Evas__Event__Mouse__In.html">Evas_Event_Mouse_In</a> *ev = event_info;
-   printf(<span class="stringliteral">&quot;Mouse In - obj(%p), coords(%d %d)\n&quot;</span>, obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__In.html#a8b899409a50a9caf027cb195bf68683f">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>,
-          ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__In.html#a8b899409a50a9caf027cb195bf68683f">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
+   printf(<span class="stringliteral">&quot;Mouse In - obj(%p), coords(%d %d)\n&quot;</span>,
+          obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__In.html#a8b899409a50a9caf027cb195bf68683f">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__In.html#a8b899409a50a9caf027cb195bf68683f">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -273,8 +274,8 @@ _mouse_out(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="co
            <span class="keywordtype">void</span> *event_info)
 {
    <a class="code" href="struct__Evas__Event__Mouse__Out.html">Evas_Event_Mouse_Out</a> *ev = event_info;
-   printf(<span class="stringliteral">&quot;Mouse Out - obj(%p), coords(%d %d)\n&quot;</span>, obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Out.html#abd681a1b6fc7f555c30ac86c664de696">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>,
-          ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Out.html#abd681a1b6fc7f555c30ac86c664de696">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
+   printf(<span class="stringliteral">&quot;Mouse Out - obj(%p), coords(%d %d)\n&quot;</span>,
+          obj, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Out.html#abd681a1b6fc7f555c30ac86c664de696">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad809771faf3700a1492e4465336e6b1e">x</a>, ev-&gt;<a class="code" href="struct__Evas__Event__Mouse__Out.html#abd681a1b6fc7f555c30ac86c664de696">canvas</a>.<a class="code" href="struct__Evas__Coord__Point.html#ad7450d6ad43e6a7394af6807721144f7">y</a>);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -291,7 +292,7 @@ _on_preloaded(<span class="keywordtype">void</span>        *data EINA_UNUSED,
               <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
               <span class="keywordtype">void</span>        *event_info EINA_UNUSED)
 {
-    fprintf(stdout, <span class="stringliteral">&quot;Image has been pre-loaded!\n&quot;</span>);
+    printf(<span class="stringliteral">&quot;Image has been pre-loaded!\n&quot;</span>);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -300,15 +301,14 @@ _on_destroy(Ecore_Evas *ee EINA_UNUSED)
    <a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
 }
 
-<span class="comment">/* here just to keep our example&#39;s window size and background image&#39;s</span>
-<span class="comment"> * size in synchrony */</span>
+<span class="comment">/* Keep the example&#39;s window size in sync with the background image&#39;s size */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _canvas_resize_cb(Ecore_Evas *ee)
 {
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
+   evas_object_resize(d.bg, w, h);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -329,8 +329,8 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
      {
         <span class="keywordtype">int</span> stride = evas_object_image_stride_get(d.noise_img);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Image has row stride value of %d, which accounts&quot;</span>
-                        <span class="stringliteral">&quot; for %d pixels\n&quot;</span>, stride, stride / 4);
+        printf(<span class="stringliteral">&quot;Image has row stride value of %d, which accounts&quot;</span>
+               <span class="stringliteral">&quot; for %d pixels\n&quot;</span>, stride, stride / 4);
 
         <span class="keywordflow">return</span>;
      }
@@ -340,23 +340,24 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
         <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *source = evas_object_image_source_get(d.proxy_img);
 
         <span class="keywordflow">if</span> (source == d.logo) source = d.noise_img;
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (source == d.noise_img) source = d.text_obj;
         <span class="keywordflow">else</span> source = d.logo;
 
         evas_object_image_source_set(d.proxy_img, source);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Proxy image&#39;s source changed\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;Proxy image&#39;s source changed\n&quot;</span>);
 
         <span class="keywordflow">return</span>;
      }
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;a&quot;</span>) == 0) <span class="comment">/* save noise image to disk */</span>
      {
-        <span class="keywordflow">if</span> (!<a class="code" href="group__Evas__Object__Image.html#ga8bd6201d1b5c5f0e65600b491c6557e4">evas_object_image_save</a>(d.noise_img, file_path, NULL, quality_str))
+        <span class="keywordflow">if</span> (!evas_object_image_save(d.noise_img, file_path, NULL, quality_str))
           fprintf(stderr, <span class="stringliteral">&quot;Cannot save image to &#39;%s&#39; (flags &#39;%s&#39;)\n&quot;</span>,
                   file_path, quality_str);
         <span class="keywordflow">else</span>
-          fprintf(stdout, <span class="stringliteral">&quot;Image saved to &#39;%s&#39; (flags &#39;%s&#39;), check it out with &quot;</span>
-                          <span class="stringliteral">&quot;an image viewer\n&quot;</span>, file_path, quality_str);
+          printf(<span class="stringliteral">&quot;Image saved to &#39;%s&#39; (flags &#39;%s&#39;), check it out with &quot;</span>
+                 <span class="stringliteral">&quot;an image viewer\n&quot;</span>, file_path, quality_str);
 
         <span class="keywordflow">return</span>;
      }
@@ -382,6 +383,7 @@ main(<span class="keywordtype">void</span>)
 {
    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> pixels[(WIDTH / 4) * (HEIGHT / 4)];
+   <a class="code" href="group__Evas__Object__Textblock.html#ga0936b029caf5493691f7fd523f8b885c">Evas_Textblock_Style</a> *st;
 
    srand(time(NULL));
 
@@ -390,7 +392,7 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   d.ee = ecore_evas_new(NULL, 10, 10, WIDTH, HEIGHT, NULL);
+   d.ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 10, 10, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!d.ee)
      <span class="keywordflow">goto</span> error;
 
@@ -402,54 +404,63 @@ main(<span class="keywordtype">void</span>)
    d.evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(d.ee);
 
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   evas_object_move(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   evas_object_resize(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
-   evas_object_focus_set(d.bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_focus_set(d.bg, EINA_TRUE);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
-     d.bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_keydown, NULL);
+     d.bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
 
-   d.logo = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
+   d.logo = evas_object_image_filled_add(d.evas);
 
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
-       d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a5cd5ca5f4dcd51dd2429f020cb2dfa9e">EVAS_CALLBACK_IMAGE_PRELOADED</a>, _on_preloaded, NULL);
-   <a class="code" href="group__Evas__Object__Image.html#gae314b3d41feb8c395854d8f03cb1d6b2">evas_object_image_preload</a>(d.logo, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+       d.logo, EVAS_CALLBACK_IMAGE_PRELOADED, _on_preloaded, NULL);
+   evas_object_image_preload(d.logo, EINA_TRUE);
 
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.logo, img_path, NULL);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.logo, WIDTH / 2, HEIGHT / 2);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a9fa52651ccf7e47cd3b7785fc4cf393f">EVAS_CALLBACK_MOUSE_DOWN</a>, _mouse_down, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a23fb97fb7cbccded54ccf3fc4e1dab8a">EVAS_CALLBACK_MOUSE_MOVE</a>, _mouse_move, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a8c1b22c99dd0231cd9ba1fecbffffac7">EVAS_CALLBACK_MOUSE_UP</a>, _mouse_up, 0);
+   evas_object_image_file_set(d.logo, img_path, NULL);
+   evas_object_resize(d.logo, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_DOWN, _mouse_down, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_MOVE, _mouse_move, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_UP, _mouse_up, 0);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_IN, _mouse_in, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a91aaa30a57047d0ee8a734e603751c25">EVAS_CALLBACK_MOUSE_OUT</a>, _mouse_out, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ab5bb0de31eaeed655255e71ffe518b80">EVAS_CALLBACK_MULTI_DOWN</a>, _multi_down, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a4328f52cfb700b5c705edf7173afdd94">EVAS_CALLBACK_MULTI_UP</a>, _multi_up, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a6d0ade7e69dc62f728fa2e29168e923f">EVAS_CALLBACK_MULTI_MOVE</a>, _multi_move, 0);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a585e05307b99c361e54df68a4f341a85">EVAS_CALLBACK_HOLD</a>, _hold, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MOUSE_OUT, _mouse_out, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MULTI_DOWN, _multi_down, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MULTI_UP, _multi_up, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_MULTI_MOVE, _multi_move, 0);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(d.logo, EVAS_CALLBACK_HOLD, _hold, 0);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.logo);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.logo);
 
    <span class="comment">/* creating noise image */</span>
    <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(pixels) / <span class="keyword">sizeof</span>(pixels[0]); i++)
      pixels[i] = rand();
 
    d.noise_img = <a class="code" href="group__Evas__Object__Image.html#gadd901a6b181c38dc040537b3fd76fcc6">evas_object_image_add</a>(d.evas);
-   <a class="code" href="group__Evas__Object__Image.html#ga369c3638028094b1d66bd482778eb6b2">evas_object_image_size_set</a>(d.noise_img, WIDTH / 4, HEIGHT / 4);
+   evas_object_image_size_set(d.noise_img, WIDTH / 4, HEIGHT / 4);
    evas_object_image_data_set(d.noise_img, pixels);
-   evas_object_image_filled_set(d.noise_img, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.noise_img, (WIDTH * 3) / 4, 0);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.noise_img, WIDTH / 4, HEIGHT / 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.noise_img);
-   fprintf(stdout, <span class="stringliteral">&quot;Creating noise image with size %d, %d\n&quot;</span>,
-           WIDTH / 4, HEIGHT / 4);
+   evas_object_image_filled_set(d.noise_img, EINA_TRUE);
+   evas_object_move(d.noise_img, (WIDTH * 5) / 8, HEIGHT / 8);
+   evas_object_resize(d.noise_img, WIDTH / 4, HEIGHT / 4);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.noise_img);
+   printf(<span class="stringliteral">&quot;Creating noise image with size %d, %d\n&quot;</span>,
+          WIDTH / 4, HEIGHT / 4);
 
-   d.proxy_img = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
+   d.text_obj = <a class="code" href="group__Evas__Object__Textblock.html#ga5059cda84291080e59bcc72ead81ca93">evas_object_textblock_add</a>(d.evas);
+   <a class="code" href="group__Evas__Object__Textblock.html#gac35fdf7b795b08a884f62cf479b9901b">evas_object_textblock_text_markup_set</a>(d.text_obj, <span class="stringliteral">&quot;Hello world! :)&quot;</span>);
+   st = <a class="code" href="group__Evas__Object__Textblock.html#ga5047d80b99150342ce3cd5518b474df8">evas_textblock_style_new</a>();
+   <a class="code" href="group__Evas__Object__Textblock.html#gaf536f7e63f652e36a125006e31cf5457">evas_textblock_style_set</a>(st, <span class="stringliteral">&quot;DEFAULT=&#39;font=Sans font_size=16 color=#114 wrap=word&#39;&quot;</span>);
+   <a class="code" href="group__Evas__Object__Textblock.html#ga14c222cd68f4c101dc9e52361c47c35e">evas_object_textblock_style_set</a>(d.text_obj, st);
+   evas_object_move(d.text_obj, WIDTH / 16, HEIGHT * 9 / 16);
+   evas_object_resize(d.text_obj, WIDTH / 4, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text_obj);
+
+   d.proxy_img = evas_object_image_filled_add(d.evas);
    evas_object_image_source_set(d.proxy_img, d.logo);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.proxy_img, WIDTH / 4, HEIGHT / 2);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.proxy_img, WIDTH / 2, HEIGHT / 2);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.proxy_img);
+   evas_object_move(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   evas_object_resize(d.proxy_img, WIDTH / 2, HEIGHT / 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.proxy_img);
 
    puts(commands);
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
@@ -459,8 +470,8 @@ main(<span class="keywordtype">void</span>)
    <span class="keywordflow">return</span> 0;
 
 error:
-   fprintf(stderr, <span class="stringliteral">&quot;you got to have at least one evas engine built and linked&quot;</span>
-                   <span class="stringliteral">&quot; up to ecore-evas for this example to run properly.\n&quot;</span>);
+   fprintf(stderr, <span class="stringliteral">&quot;error: Requires at least one Evas engine built and linked&quot;</span>
+                   <span class="stringliteral">&quot; to ecore-evas for this example to run properly.\n&quot;</span>);
    <a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
    <span class="keywordflow">return</span> -1;
 }

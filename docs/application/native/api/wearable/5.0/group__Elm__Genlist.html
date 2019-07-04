@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Genlist (Generic list)</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -99,14 +99,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <div class="image">
 <img src="genlist.png" alt="genlist.png"/>
 </div>
- <p>This widget aims to have more expansive list than the simple list in Elementary that could have more flexible items and allow many more entries while still being fast and low on memory usage. At the same time it was also made to be able to do tree structures. But the price to pay is more complexity when it comes to usage. If all you want is a simple list with icons and a single text, use the normal <a class="el" href="group__Elm__List.html">List</a> object.</p>
+ <p>This widget aims to have more expansive list than the simple list in Elementary that could have more flexible items and allow many more entries while still being fast and low on memory usage. At the same time it was also made to be able to do tree structures. But the price to pay is more complexity when it comes to usage. If all you want is a simple list with icons and a single text, use the normal List object.</p>
 <p>Genlist has a fairly large API, mostly because it's relatively complex, trying to be both expansive, powerful and efficient. First we will begin an overview on the theory behind genlist.</p>
-<p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for genlist objects.</p>
+<p>This widget inherits from the Layout one, so that all the functions acting on it also work for genlist objects.</p>
 <p>This widget implements the <b></b>  elm-scrollable-interface interface, so that all (non-deprecated) functions for the base Scroller widget also work for genlists.</p>
 <p>Some calls on the genlist's API are marked as <b>deprecated</b>, as they just wrap the scrollable widgets counterpart functions. Use the ones we point you to, for each case of deprecation here, instead -- eventually the deprecated ones will be discarded (next major release).</p>
 <h2><a class="anchor" id="Genlist_Item_Class"></a>
 Genlist item classes - creating items</h2>
-<p>In order to have the ability to add and delete items on the fly, genlist implements a class (callback) system where the application provides a structure with information about that type of item (genlist may contain multiple different items with different classes, states and styles). Genlist will call the functions in this struct (methods) when an item is "realized" (i.e., created dynamically, while the user is scrolling the list). All objects will simply be deleted when no longer needed with <a class="el" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a>. The #Elm_Genlist_Item_Class structure contains the following members:</p>
+<p>In order to have the ability to add and delete items on the fly, genlist implements a class (callback) system where the application provides a structure with information about that type of item (genlist may contain multiple different items with different classes, states and styles). Genlist will call the functions in this struct (methods) when an item is "realized" (i.e., created dynamically, while the user is scrolling the list). All objects will simply be deleted when no longer needed with <a class="el" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del()</a>. The #Elm_Genlist_Item_Class structure contains the following members:</p>
 <ul>
 <li><code>item_style</code> - This is a constant string and simply defines the name of the item style. It <b>must</b> be specified and the default should be <code>"default"</code>.</li>
 <li><code>decorate_item_style</code> - This is a constant string and simply defines the name of the decorate mode item style. It is used to specify decorate mode item style. It can be used when you call elm_genlist_item_decorate_mode_set().</li>
@@ -130,27 +130,27 @@ Genlist item classes - creating items</h2>
 <li>one_icon - Only 1 icon (left) (since 1.7)</li>
 <li>end_icon - Only 1 icon (at end/right) (since 1.7)</li>
 <li>no_icon - No icon (at end/right) (since 1.7)</li>
-<li>full - Only 1 icon, elm.swallow.content, which consumes whole area of genlist itemj (since 1.7)</li>
+<li>full - Only 1 icon, elm.swallow.content, which consumes whole area of genlist item (since 1.7)</li>
 </ul>
 <p>If one wants to use more icons and texts than are offered in theme, there are two solutions. One is to use 'full' style that has one big swallow part. You can swallow anything there. The other solution is to customize genlist item style in application side by using <a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a> and its own edc. Please refer <a class="el" href="theme_example_01.html">Theme - Using extensions</a> for that.</p>
 <h2><a class="anchor" id="Genlist_Items"></a>
 Structure of items</h2>
 <p>An item in a genlist can have 0 or more texts (they can be regular text or textblock Evas objects - that's up to the style to determine), 0 or more contents (which are simply objects swallowed into the genlist item's theming Edje object) and 0 or more <b>boolean states</b>, which have the behavior left to the user to define. The Edje part names for each of these properties will be looked up, in the theme file for the genlist, under the Edje (string) data items named <code>"labels"</code>, <code>"contents"</code> and <code>"states"</code>, respectively. For each of those properties, if more than one part is provided, they must have names listed separated by spaces in the data fields. For the default genlist item theme, we have <b>one</b> text part (<code>"elm.text"</code>), <b>two</b> content parts (<code>"elm.swallow.icon"</code> and <code>"elm.swallow.end"</code>) and <b>no</b> state parts.</p>
-<p>A genlist item may be at one of several styles. Elementary provides one by default - "default", but this can be extended by system or application custom themes/overlays/extensions (see <a class="el" href="group__Elm__Theme.html">themes</a> for more details).</p>
+<p>A genlist item may be at one of several styles. Elementary provides one by default - "default", but this can be extended by system or application custom themes/overlays/extensions (see themes for more details).</p>
 <h2><a class="anchor" id="Genlist_Manipulation"></a>
 Editing and Navigating</h2>
 <p>Items can be added by several calls. All of them return a <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> handle that is an internal member inside the genlist. They all take a data parameter that is meant to be used for a handle to the applications internal data (eg. the struct with the original item data). The parent parameter is the parent genlist item this belongs to if it is a tree or an indexed group, and NULL if there is no parent. The flags can be a bitmask of #ELM_GENLIST_ITEM_NONE, #ELM_GENLIST_ITEM_TREE and #ELM_GENLIST_ITEM_GROUP. If #ELM_GENLIST_ITEM_TREE is set then this item is displayed as an item that is able to expand and have child items. If #ELM_GENLIST_ITEM_GROUP is set then this item is group index item that is displayed at the top until the next group comes. The func parameter is a convenience callback that is called when the item is selected and the data parameter will be the func_data parameter, <code>obj</code> be the genlist object and event_info will be the genlist item.</p>
 <p><a class="el" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append()</a> adds an item to the end of the list, or if there is a parent, to the end of all the child items of the parent. <a class="el" href="group__Elm__Genlist.html#gad1cc07925e962db462a82e34e91653ac" title="Prepend a new item in a given genlist widget.">elm_genlist_item_prepend()</a> is the same but adds to the beginning of the list or children list. <a class="el" href="group__Elm__Genlist.html#ga5eba74e22dd1537550bf8b548fa55a41" title="Insert an item before another in a genlist widget.">elm_genlist_item_insert_before()</a> inserts at item before another item and <a class="el" href="group__Elm__Genlist.html#ga35b7c5a1d022c927a589b84ccf969562" title="Insert an item after another in a genlist widget.">elm_genlist_item_insert_after()</a> inserts after the indicated item.</p>
-<p>The application can clear the list with <a class="el" href="group__Elm__Genlist.html#gae34f19c00f7da8de682aba1a2669766e" title="Remove all items from a given genlist widget.">elm_genlist_clear()</a> which deletes all the items in the list and elm_object_item_del() will delete a specific item. elm_genlist_item_subitems_clear() will clear all items that are children of the indicated parent item.</p>
+<p>The application can clear the list with <a class="el" href="group__Elm__Genlist.html#gae34f19c00f7da8de682aba1a2669766e" title="Remove all items from a given genlist widget.">elm_genlist_clear()</a> which deletes all the items in the list and <a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a> will delete a specific item. elm_genlist_item_subitems_clear() will clear all items that are children of the indicated parent item.</p>
 <p>To help inspect list items you can jump to the item at the top of the list with <a class="el" href="group__Elm__Genlist.html#gaeacd0a63ec1cbe4c1d21c9350b17cc32" title="Get the first item in the genlist.">elm_genlist_first_item_get()</a> which will return the item pointer, and similarly <a class="el" href="group__Elm__Genlist.html#ga8caa57c4765c7f333ffa69aeefdbb380" title="Get the last item in the genlist.">elm_genlist_last_item_get()</a> gets the item at the end of the list. elm_genlist_item_next_get() and elm_genlist_item_prev_get() get the next and previous items respectively relative to the indicated item. Using these calls you can walk the entire item list/tree. Note that as a tree the items are flattened in the list, so elm_genlist_item_parent_get() will let you know which item is the parent (and thus know how to skip them if wanted).</p>
 <h2><a class="anchor" id="Genlist_Multi_Selection"></a>
 Multi-selection</h2>
 <p>If the application wants multiple items to be able to be selected, <a class="el" href="group__Elm__Genlist.html#gaa59068079de22ed91758085dae25367b" title="Enable or disable multi-selection in the genlist.">elm_genlist_multi_select_set()</a> can enable this. If the list is single-selection only (the default), then <a class="el" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get()</a> will return the selected item, if any, or NULL if none is selected. If the list is multi-select then <a class="el" href="group__Elm__Genlist.html#ga9068ee98b3ec68d0ca056572a5410462" title="Get a list of selected items in the genlist.">elm_genlist_selected_items_get()</a> will return a list (that is only valid as long as no items are modified (added, deleted, selected or unselected)).</p>
 <h2><a class="anchor" id="Genlist_Usage_Hints"></a>
 Usage hints</h2>
-<p>There are also convenience functions. elm_object_item_widget_get() will return the genlist object the item belongs to. elm_genlist_item_show() will make the scroller scroll to show that specific item so its visible. <a class="el" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get()</a> returns the data pointer set by the item creation functions.</p>
+<p>There are also convenience functions. <a class="el" href="group__Elm__General.html#ga6fe693f0d12167a5a98695a5360565c0" title="Get the widget object&#39;s handle which contains a given item.">elm_object_item_widget_get()</a> will return the genlist object the item belongs to. elm_genlist_item_show() will make the scroller scroll to show that specific item so its visible. <a class="el" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get()</a> returns the data pointer set by the item creation functions.</p>
 <p>If an item changes (state of boolean changes, text or contents change), then use elm_genlist_item_update() to have genlist update the item with the new state. Genlist will re-realize the item and thus call the functions in the _Elm_Genlist_Item_Class for that item.</p>
-<p>To programmatically (un)select an item use elm_genlist_item_selected_set(). To get its selected state use elm_genlist_item_selected_get(). Similarly to expand/contract an item and get its expanded state, use elm_genlist_item_expanded_set() and elm_genlist_item_expanded_get(). And again to make an item disabled (unable to be selected and appear differently) use elm_object_item_disabled_set() to set this and elm_object_item_disabled_get() to get the disabled state.</p>
+<p>To programmatically (un)select an item use elm_genlist_item_selected_set(). To get its selected state use elm_genlist_item_selected_get(). Similarly to expand/contract an item and get its expanded state, use elm_genlist_item_expanded_set() and elm_genlist_item_expanded_get(). And again to make an item disabled (unable to be selected and appear differently) use <a class="el" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set()</a> to set this and <a class="el" href="group__Elm__General.html#ga6c8e825bd196185a7851db289e2b061c" title="Control the disabled state of a widget item.">elm_object_item_disabled_get()</a> to get the disabled state.</p>
 <p>In general to indicate how the genlist should expand items horizontally to fill the list area, use <a class="el" href="group__Elm__Genlist.html#ga7749546e6666dd50ab7d1b8a4dbb99ad" title="This sets the horizontal stretching mode.">elm_genlist_mode_set()</a>. Valid modes are ELM_LIST_LIMIT, ELM_LIST_COMPRESS and ELM_LIST_SCROLL. The default is ELM_LIST_SCROLL. This mode means that if items are too wide to fit, the scroller will scroll horizontally. Otherwise items are expanded to fill the width of the viewport of the scroller. If it is ELM_LIST_LIMIT, items will be expanded to the viewport width if larger than the item, but genlist widget witdh is limited to the largest item. Do not use ELM_LIST_LIMIT mode with homogeneous mode turned on. ELM_LIST_COMPRESS can be combined with a different style that uses edjes' ellipsis feature (cutting text off like this: "tex...").</p>
 <p>Items will call their selection func and callback only once when first becoming selected. Any further clicks will do nothing, unless you enable always select with <a class="el" href="group__Elm__Genlist.html#gaf037c92717b93ea122ae26c757a23c65" title="Set the genlist select mode.">elm_genlist_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_ALWAYS. This means even if selected, every click will make the selected callbacks be called. <a class="el" href="group__Elm__Genlist.html#gaf037c92717b93ea122ae26c757a23c65" title="Set the genlist select mode.">elm_genlist_select_mode_set()</a> as ELM_OBJECT_SELECT_MODE_NONE will turn off the ability to select items entirely and they will neither appear selected nor call selected callback functions.</p>
 <p>Remember that you can create new styles and add your own theme augmentation per application with <a class="el" href="group__Elm__Theme.html#ga71d7575c05248a5c6d7ae3b525e964cc">elm_theme_extension_add()</a>. If you absolutely must have a specific style that overrides any theme the user or system sets up you can use <a class="el" href="group__Elm__Theme.html#ga6c9e97741f3893e14508ec5e4410b4f0">elm_theme_overlay_add()</a> to add such a file.</p>
@@ -160,7 +160,7 @@ Implementation</h2>
 <p>Genlist also implements a tree structure for items, but it does so with callbacks to the application, with the application filling in tree structures when requested (allowing for efficient building of a very deep tree that could even be used for file-management). See the above smart signal callbacks for details.</p>
 <h2><a class="anchor" id="Genlist_Smart_Events"></a>
 Genlist smart events</h2>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout:</p>
+<p>This widget emits the following signals, besides the ones sent from Layout:</p>
 <ul>
 <li><code>"activated"</code> - The user has double-clicked or pressed (enter|return|spacebar) on an item. The <code>event_info</code> parameter is the item that was activated.</li>
 <li><code>"pressed"</code> - The user pressed an item. The <code>event_info</code> parameter is the item that was pressed.</li>
@@ -213,17 +213,17 @@ Genlist smart events</h2>
 </ul>
 <p>Supported elm_object_item common APIs </p>
 <ul>
-<li>elm_object_item_part_content_get </li>
-<li>elm_object_item_part_text_get </li>
-<li>elm_object_item_disabled_set </li>
-<li>elm_object_item_disabled_get </li>
-<li>elm_object_item_signal_emit</li>
+<li><a class="el" href="group__Elm__General.html#ga6e788b7ffc86e16c4357b47636bae792">elm_object_item_part_content_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga7281194331b5beb5460f56020b428a51">elm_object_item_part_text_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2">elm_object_item_disabled_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga6c8e825bd196185a7851db289e2b061c">elm_object_item_disabled_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#gabdb3e5328a1e3c367c3fc3536e4a2e5c">elm_object_item_signal_emit</a></li>
 </ul>
 <p>Unsupported elm_object_item common APIs due to the genlist concept. Genlist fills content/text according to the appropriate callback functions. Please use elm_genlist_item_update() or elm_genlist_item_fields_update() instead. </p>
 <ul>
-<li>elm_object_item_part_content_set </li>
-<li>elm_object_item_part_content_unset </li>
-<li>elm_object_item_part_text_set</li>
+<li><a class="el" href="group__Elm__General.html#ga79ff1bf2d04a5a730fdca21ccc2067c1">elm_object_item_part_content_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga305f11f3107a5775449e474edd59c329">elm_object_item_part_content_unset</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga990f25208c4ef0e5c9c404cfb482d813">elm_object_item_part_text_set</a></li>
 </ul>
 <h2><a class="anchor" id="Genlist_Examples"></a>
 Examples</h2>
@@ -263,45 +263,50 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga5fafc8d05f8b63a25bebde898f227699">elm_genlist_block_count_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum number of items within an item block.  <a href="#ga5fafc8d05f8b63a25bebde898f227699"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gac6e75a54b1cd55a40195a4d62e1a0930">elm_genlist_highlight_mode_set</a> (Elm_Genlist *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> highlight)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set whether the genlist items should be highlighted on item selection.  <a href="#gac6e75a54b1cd55a40195a4d62e1a0930"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control genlist tree effect.  <a href="#gac6e75a54b1cd55a40195a4d62e1a0930"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga4657078dc149b79ca01498d8e1afb4de">elm_genlist_highlight_mode_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether the genlist items' should be highlighted when item selected.  <a href="#ga4657078dc149b79ca01498d8e1afb4de"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga7749546e6666dd50ab7d1b8a4dbb99ad">elm_genlist_mode_set</a> (Elm_Genlist *obj, <a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428">Elm_List_Mode</a> mode)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This sets the horizontal stretching mode.  <a href="#ga7749546e6666dd50ab7d1b8a4dbb99ad"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428">Elm_List_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gab2f9072ed9b28ce2a1f23290e4870f42">elm_genlist_mode_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the horizontal stretching mode.  <a href="#gab2f9072ed9b28ce2a1f23290e4870f42"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a">elm_genlist_selected_item_get</a> (const Elm_Genlist *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a">elm_genlist_selected_item_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected item in the genlist.  <a href="#ga97abf26033fe2041450aa26b6f138c8a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gaeacd0a63ec1cbe4c1d21c9350b17cc32">elm_genlist_first_item_get</a> (const Elm_Genlist *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gaeacd0a63ec1cbe4c1d21c9350b17cc32">elm_genlist_first_item_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first item in the genlist.  <a href="#gaeacd0a63ec1cbe4c1d21c9350b17cc32"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gaee137527ef5b6e64f811ffbfa51aae58">elm_genlist_realized_items_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of realized items in genlist.  <a href="#gaee137527ef5b6e64f811ffbfa51aae58"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga9068ee98b3ec68d0ca056572a5410462">elm_genlist_selected_items_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of selected items in the genlist.  <a href="#ga9068ee98b3ec68d0ca056572a5410462"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga8caa57c4765c7f333ffa69aeefdbb380">elm_genlist_last_item_get</a> (const Elm_Genlist *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga8caa57c4765c7f333ffa69aeefdbb380">elm_genlist_last_item_get</a> (const Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the last item in the genlist.  <a href="#ga8caa57c4765c7f333ffa69aeefdbb380"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga5eba74e22dd1537550bf8b548fa55a41">elm_genlist_item_insert_before</a> (Elm_Genlist *obj, const <a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, Elm_Widget_Item *parent, Elm_Widget_Item *before_it, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga5eba74e22dd1537550bf8b548fa55a41">elm_genlist_item_insert_before</a> (Elm_Genlist *obj, const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *parent, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *before_it, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert an item before another in a genlist widget.  <a href="#ga5eba74e22dd1537550bf8b548fa55a41"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga2a5a48241e3fc59c0ee75fc85a014df7">elm_genlist_realized_items_update</a> (Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the contents of all realized items.  <a href="#ga2a5a48241e3fc59c0ee75fc85a014df7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga35b7c5a1d022c927a589b84ccf969562">elm_genlist_item_insert_after</a> (Elm_Genlist *obj, const <a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, Elm_Widget_Item *parent, Elm_Widget_Item *after_it, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga35b7c5a1d022c927a589b84ccf969562">elm_genlist_item_insert_after</a> (Elm_Genlist *obj, const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *parent, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *after_it, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert an item after another in a genlist widget.  <a href="#ga35b7c5a1d022c927a589b84ccf969562"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gae7c77c2433babbdb9b97c3aad94e07b3">elm_genlist_at_xy_item_get</a> (const Elm_Genlist *obj, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> x, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> y, int *posret)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the item that is at the x, y canvas coords.  <a href="#gae7c77c2433babbdb9b97c3aad94e07b3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gaca055a0caf396d79a412975e2421cb1e">elm_genlist_at_xy_item_get</a> (const Elm_Genlist *obj, int x, int y, int *posret)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the item that is at the x, y canvas coords.  <a href="#gaca055a0caf396d79a412975e2421cb1e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gad5ae7658e5cb2ff1f301cde4e2eeba22">elm_genlist_items_count</a> (const Elm_Genlist *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return how many items are currently in a list.  <a href="#gad5ae7658e5cb2ff1f301cde4e2eeba22"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gad1cc07925e962db462a82e34e91653ac">elm_genlist_item_prepend</a> (Elm_Genlist *obj, const <a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, Elm_Widget_Item *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return how many items have passed the filter currently.  <a href="#gad5ae7658e5cb2ff1f301cde4e2eeba22"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gad1cc07925e962db462a82e34e91653ac">elm_genlist_item_prepend</a> (Elm_Genlist *obj, const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepend a new item in a given genlist widget.  <a href="#gad1cc07925e962db462a82e34e91653ac"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gae34f19c00f7da8de682aba1a2669766e">elm_genlist_clear</a> (Elm_Genlist *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all items from a given genlist widget.  <a href="#gae34f19c00f7da8de682aba1a2669766e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f">elm_genlist_item_append</a> (Elm_Genlist *obj, const <a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, Elm_Widget_Item *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f">elm_genlist_item_append</a> (Elm_Genlist *obj, const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a new item in a given genlist widget.  <a href="#ga845c3e247cd8eae4114f98d59f42be2f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga020dc0ac9d7214d5634ad3314fe41d73">elm_genlist_item_sorted_insert</a> (Elm_Genlist *obj, const <a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, Elm_Widget_Item *parent, Elm_Genlist_Item_Type type, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> comp, Evas_Smart_Cb func, const void *func_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga020dc0ac9d7214d5634ad3314fe41d73">elm_genlist_item_sorted_insert</a> (Elm_Genlist *obj, const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc, const void *data, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *parent, Elm_Genlist_Item_Type type, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> comp, Evas_Smart_Cb func, const void *func_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item into the sorted genlist object.  <a href="#ga020dc0ac9d7214d5634ad3314fe41d73"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga8e37216e69847bdaf86f1628ae59b27e">elm_genlist_item_class_free</a> (<a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gac14b2ff85dbedb18bc6fd4c893f3b971">elm_genlist_item_class_ref</a> (<a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga62c988b7f5a2ebff6784b9f870ba96e9">elm_genlist_item_class_unref</a> (<a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a> (void)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga8e37216e69847bdaf86f1628ae59b27e">elm_genlist_item_class_free</a> (<a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gac14b2ff85dbedb18bc6fd4c893f3b971">elm_genlist_item_class_ref</a> (<a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga62c988b7f5a2ebff6784b9f870ba96e9">elm_genlist_item_class_unref</a> (<a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *itc)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga4bf41b2e5d267396bc5a12c726ad20dc">elm_genlist_item_tooltip_text_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, const char *text)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga7b90f94f0d8088d13487c4206a028ecc">elm_genlist_item_tooltip_content_cb_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, <a class="el" href="group__Elm__Tooltips.html#ga61723c10b93bab2d0138f675b5581c6c">Elm_Tooltip_Item_Content_Cb</a> func, const void *data, Evas_Smart_Cb del_cb)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gaa1806ac47475245baf2743b320fdaae9">elm_genlist_item_tooltip_unset</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#gae1716dcc97ecc7c326ae798408a1737d">elm_genlist_item_tooltip_style_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, const char *style)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga3fbfe4fd7fa89ba4abc470b980761eb4">elm_genlist_item_tooltip_style_get</a> (const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga3f78a8100e3c5d8253784b201b3fde93">elm_genlist_item_cursor_set</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, const char *cursor)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga82ecf674f2f9f0feb6f681adf64588e1">elm_genlist_item_cursor_get</a> (const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Genlist.html#ga727b88b630447eda54370a119a2466da">elm_genlist_item_cursor_unset</a> (<a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it)</td></tr>
@@ -337,19 +342,20 @@ Functions</h2></td></tr>
 <p>This function inserts a new genlist widget on the canvas.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append()</a> </dd>
 <dd>
-elm_object_item_del() </dd>
+<a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Genlist.html#gae34f19c00f7da8de682aba1a2669766e" title="Remove all items from a given genlist widget.">elm_genlist_clear()</a></dd></dl>
+<a class="el" href="group__Elm__Genlist.html#gae34f19c00f7da8de682aba1a2669766e" title="Remove all items from a given genlist widget.">elm_genlist_clear()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_01_8c-example.html#a15">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a22">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a5">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a30">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a36">genlist_example_05.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gae7c77c2433babbdb9b97c3aad94e07b3"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_at_xy_item_get" ref="gae7c77c2433babbdb9b97c3aad94e07b3" args="(const Elm_Genlist *obj, Evas_Coord x, Evas_Coord y, int *posret)" -->
+<a class="anchor" id="gaca055a0caf396d79a412975e2421cb1e"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_at_xy_item_get" ref="gaca055a0caf396d79a412975e2421cb1e" args="(const Elm_Genlist *obj, int x, int y, int *posret)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Genlist.html#gae7c77c2433babbdb9b97c3aad94e07b3">elm_genlist_at_xy_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Genlist.html#gaca055a0caf396d79a412975e2421cb1e">elm_genlist_at_xy_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Genlist *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -357,13 +363,13 @@ elm_object_item_del() </dd>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>y</em>, </td>
         </tr>
         <tr>
@@ -394,7 +400,8 @@ elm_object_item_del() </dd>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Item at position </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a13">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga5fafc8d05f8b63a25bebde898f227699"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_block_count_get" ref="ga5fafc8d05f8b63a25bebde898f227699" args="(const Elm_Genlist *obj)" -->
@@ -421,7 +428,8 @@ elm_object_item_del() </dd>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Maximum number of items within an item block. Default is 32. </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a38">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gac233431ab16f68d8602940cef5c4a7dc"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_block_count_set" ref="gac233431ab16f68d8602940cef5c4a7dc" args="(Elm_Genlist *obj, int count)" -->
@@ -461,7 +469,8 @@ elm_object_item_del() </dd>
   </table>
   </dd>
 </dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a49">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gae34f19c00f7da8de682aba1a2669766e"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_clear" ref="gae34f19c00f7da8de682aba1a2669766e" args="(Elm_Genlist *obj)" -->
@@ -496,7 +505,7 @@ elm_object_item_del() </dd>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Genlist.html#gaeacd0a63ec1cbe4c1d21c9350b17cc32">elm_genlist_first_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Genlist.html#gaeacd0a63ec1cbe4c1d21c9350b17cc32">elm_genlist_first_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Genlist *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -508,6 +517,7 @@ elm_object_item_del() </dd>
 
 <p>Get the first item in the genlist. </p>
 <p>This returns the first item in the list.</p>
+<p>If filter is set on genlist, it returns the first filtered item in the list.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -516,7 +526,8 @@ elm_object_item_del() </dd>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The first item or <code>null</code>. </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a10">genlist_example_04.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga4657078dc149b79ca01498d8e1afb4de"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_highlight_mode_get" ref="ga4657078dc149b79ca01498d8e1afb4de" args="(const Elm_Genlist *obj)" -->
@@ -571,7 +582,16 @@ elm_object_item_del() </dd>
 </div>
 <div class="memdoc">
 
-<p>Set whether the genlist items should be highlighted on item selection. </p>
+<p>Control genlist tree effect. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enabled</td><td>The tree effect status. Control genlist tree effect.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The tree effect status. Set whether the genlist items should be highlighted on item selection.</dd></dl>
 <p>This will turn on/off the highlight effect on item selection. The selected and clicked callback functions will still be called.</p>
 <p>Highlight is enabled by default.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
@@ -609,7 +629,8 @@ elm_object_item_del() </dd>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Assume the items within the genlist are of the same height and width. Default is <code>false</code>. </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a33">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gae988081f5d93d0916cd659395dec07c9"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_homogeneous_set" ref="gae988081f5d93d0916cd659395dec07c9" args="(Elm_Genlist *obj, Eina_Bool homogeneous)" -->
@@ -648,7 +669,8 @@ elm_object_item_del() </dd>
   </table>
   </dd>
 </dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a40">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga845c3e247cd8eae4114f98d59f42be2f"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_item_append" ref="ga845c3e247cd8eae4114f98d59f42be2f" args="(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Widget_Item *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)" -->
@@ -656,7 +678,7 @@ elm_object_item_del() </dd>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f">elm_genlist_item_append</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f">elm_genlist_item_append</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Genlist *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -664,7 +686,7 @@ elm_object_item_del() </dd>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
           <td class="paramname"><em>itc</em>, </td>
         </tr>
         <tr>
@@ -676,7 +698,7 @@ elm_object_item_del() </dd>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
@@ -722,7 +744,8 @@ elm_object_item_del() </dd>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Handle to appended item </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="combobox_example_01_8c-example.html#a21">combobox_example_01.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a16">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a50">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a9">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a5">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a10">genlist_example_05.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga8e37216e69847bdaf86f1628ae59b27e"></a><!-- doxytag: member="elm_genlist_common.h::elm_genlist_item_class_free" ref="ga8e37216e69847bdaf86f1628ae59b27e" args="(Elm_Genlist_Item_Class *itc)" -->
@@ -732,7 +755,7 @@ elm_object_item_del() </dd>
         <tr>
           <td class="memname">void <a class="el" href="group__Elm__Genlist.html#ga8e37216e69847bdaf86f1628ae59b27e">elm_genlist_item_class_free</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
           <td class="paramname"><em>itc</em></td><td>)</td>
           <td></td>
         </tr>
@@ -751,7 +774,7 @@ elm_object_item_del() </dd>
 <dd>
 <a class="el" href="group__Elm__Genlist.html#gac14b2ff85dbedb18bc6fd4c893f3b971">elm_genlist_item_class_ref()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Genlist.html#ga62c988b7f5a2ebff6784b9f870ba96e9">elm_genlist_item_class_unref()</a></dd></dl>
+<a class="el" href="group__Elm__Genlist.html#ga62c988b7f5a2ebff6784b9f870ba96e9">elm_genlist_item_class_unref()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -761,7 +784,7 @@ elm_object_item_del() </dd>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a>* <a class="el" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a> </td>
+          <td class="memname"><a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a>* <a class="el" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a> </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -775,9 +798,10 @@ elm_object_item_del() </dd>
 <p>This adds genlist item class for the genlist widget. When adding an item, genlist_item_{append, prepend, insert} function needs item class of the item. Given callback parameters are used at retrieving {text, content} of added item. Set as NULL if it's not used. If there's no available memory, return can be NULL.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga8e37216e69847bdaf86f1628ae59b27e">elm_genlist_item_class_free()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append()</a></dd></dl>
+<a class="el" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="combobox_example_01_8c-example.html#a13">combobox_example_01.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a8">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a23">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a17">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a23">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a29">genlist_example_05.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gac14b2ff85dbedb18bc6fd4c893f3b971"></a><!-- doxytag: member="elm_genlist_common.h::elm_genlist_item_class_ref" ref="gac14b2ff85dbedb18bc6fd4c893f3b971" args="(Elm_Genlist_Item_Class *itc)" -->
@@ -787,7 +811,7 @@ elm_object_item_del() </dd>
         <tr>
           <td class="memname">void <a class="el" href="group__Elm__Genlist.html#gac14b2ff85dbedb18bc6fd4c893f3b971">elm_genlist_item_class_ref</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
           <td class="paramname"><em>itc</em></td><td>)</td>
           <td></td>
         </tr>
@@ -802,7 +826,7 @@ elm_object_item_del() </dd>
   </dd>
 </dl>
 <p>This API just increases its reference count for item class management.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga62c988b7f5a2ebff6784b9f870ba96e9">elm_genlist_item_class_unref()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga62c988b7f5a2ebff6784b9f870ba96e9">elm_genlist_item_class_unref()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -814,7 +838,7 @@ elm_object_item_del() </dd>
         <tr>
           <td class="memname">void <a class="el" href="group__Elm__Genlist.html#ga62c988b7f5a2ebff6784b9f870ba96e9">elm_genlist_item_class_unref</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
           <td class="paramname"><em>itc</em></td><td>)</td>
           <td></td>
         </tr>
@@ -831,7 +855,7 @@ elm_object_item_del() </dd>
 <p>This API just decreases its reference count for item class management. Reference count can't be less than 0.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#gac14b2ff85dbedb18bc6fd4c893f3b971">elm_genlist_item_class_ref()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Genlist.html#ga8e37216e69847bdaf86f1628ae59b27e">elm_genlist_item_class_free()</a></dd></dl>
+<a class="el" href="group__Elm__Genlist.html#ga8e37216e69847bdaf86f1628ae59b27e">elm_genlist_item_class_free()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -858,7 +882,7 @@ elm_object_item_del() </dd>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if cursors are being looked for only on those provided by the rendering engine, <code>EINA_FALSE</code> if they are being searched on the widget's theme, as well.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga068c39e34211e2b4ffd9087f2b88c9d6">elm_genlist_item_cursor_engine_only_set()</a>, for more details</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga068c39e34211e2b4ffd9087f2b88c9d6">elm_genlist_item_cursor_engine_only_set()</a>, for more details </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -897,7 +921,7 @@ elm_object_item_del() </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This call is of use only if you've set a custom cursor for genlist items, with <a class="el" href="group__Elm__Genlist.html#ga3f78a8100e3c5d8253784b201b3fde93">elm_genlist_item_cursor_set()</a>.</dd>
 <dd>
-By default, cursors will only be looked for between those provided by the rendering engine.</dd></dl>
+By default, cursors will only be looked for between those provided by the rendering engine. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -924,11 +948,11 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the cursor type's name or <code>NULL</code>, if no custom cursors were set to <code>item</code> (and on errors)</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Cursors.html#ga5f373305b277fbcdcbbb4845fe67477d">elm_object_cursor_get()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_object_cursor_get() </dd>
 <dd>
 <a class="el" href="group__Elm__Genlist.html#ga3f78a8100e3c5d8253784b201b3fde93">elm_genlist_item_cursor_set()</a> for more details </dd>
 <dd>
-<a class="el" href="group__Elm__Genlist.html#ga727b88b630447eda54370a119a2466da">elm_genlist_item_cursor_unset()</a></dd></dl>
+<a class="el" href="group__Elm__Genlist.html#ga727b88b630447eda54370a119a2466da">elm_genlist_item_cursor_unset()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -965,13 +989,13 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
-<p>This function works analogously as <a class="el" href="group__Elm__Cursors.html#ga184fcbba5e5767af38018a14c91bd027">elm_object_cursor_set()</a>, but here the cursor's changing area is restricted to the item's area, and not the whole widget's. Note that that item cursors have precedence over widget cursors, so that a mouse over <code>item</code> will always show cursor <code>type</code>.</p>
+<p>This function works analogously as elm_object_cursor_set(), but here the cursor's changing area is restricted to the item's area, and not the whole widget's. Note that that item cursors have precedence over widget cursors, so that a mouse over <code>item</code> will always show cursor <code>type</code>.</p>
 <p>If this function is called twice for an object, a previously set cursor will be unset on the second call.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Cursors.html#ga184fcbba5e5767af38018a14c91bd027">elm_object_cursor_set()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_object_cursor_set() </dd>
 <dd>
 <a class="el" href="group__Elm__Genlist.html#ga82ecf674f2f9f0feb6f681adf64588e1">elm_genlist_item_cursor_get()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Genlist.html#ga727b88b630447eda54370a119a2466da">elm_genlist_item_cursor_unset()</a></dd></dl>
+<a class="el" href="group__Elm__Genlist.html#ga727b88b630447eda54370a119a2466da">elm_genlist_item_cursor_unset()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -998,7 +1022,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>style the cursor style in use. If the object does not have a cursor set, then <code>NULL</code> is returned.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga5f747c0a6c7aafe7fee9d38432623d72">elm_genlist_item_cursor_style_set()</a> for more details</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga5f747c0a6c7aafe7fee9d38432623d72">elm_genlist_item_cursor_style_set()</a> for more details </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1035,11 +1059,11 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
-<p>This function only makes sense when one is using custom mouse cursor decorations <b>defined in a theme file</b> , which can have, given a cursor name/type, <b>alternate styles</b> on it. It works analogously as <a class="el" href="group__Elm__Cursors.html#ga3ce9ab46838d54c86eb9aa55eef2f3e1">elm_object_cursor_style_set()</a>, but here applied only to genlist item objects.</p>
+<p>This function only makes sense when one is using custom mouse cursor decorations <b>defined in a theme file</b> , which can have, given a cursor name/type, <b>alternate styles</b> on it. It works analogously as elm_object_cursor_style_set(), but here applied only to genlist item objects.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Before you set a cursor style you should have defined a custom cursor previously on the item, with <a class="el" href="group__Elm__Genlist.html#ga3f78a8100e3c5d8253784b201b3fde93">elm_genlist_item_cursor_set()</a></dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga068c39e34211e2b4ffd9087f2b88c9d6">elm_genlist_item_cursor_engine_only_set()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Genlist.html#gac547a7d3cee1b96eedc327003a624e1b">elm_genlist_item_cursor_style_get()</a></dd></dl>
+<a class="el" href="group__Elm__Genlist.html#gac547a7d3cee1b96eedc327003a624e1b">elm_genlist_item_cursor_style_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1068,7 +1092,7 @@ By default, cursors will only be looked for between those provided by the render
 <p>Use this call to undo any custom settings on this item's cursor decoration, bringing it back to defaults (no custom style set).</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Cursors.html#ga1c97e902d92b738ddb6dda541ede562f">elm_object_cursor_unset()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Genlist.html#ga3f78a8100e3c5d8253784b201b3fde93">elm_genlist_item_cursor_set()</a> for more details</dd></dl>
+<a class="el" href="group__Elm__Genlist.html#ga3f78a8100e3c5d8253784b201b3fde93">elm_genlist_item_cursor_set()</a> for more details </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1078,7 +1102,7 @@ By default, cursors will only be looked for between those provided by the render
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Genlist.html#ga35b7c5a1d022c927a589b84ccf969562">elm_genlist_item_insert_after</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Genlist.html#ga35b7c5a1d022c927a589b84ccf969562">elm_genlist_item_insert_after</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Genlist *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -1086,7 +1110,7 @@ By default, cursors will only be looked for between those provided by the render
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
           <td class="paramname"><em>itc</em>, </td>
         </tr>
         <tr>
@@ -1098,13 +1122,13 @@ By default, cursors will only be looked for between those provided by the render
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>after_it</em>, </td>
         </tr>
         <tr>
@@ -1151,7 +1175,8 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Handle to inserted item </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a9">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a12">genlist_example_05.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga5eba74e22dd1537550bf8b548fa55a41"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_item_insert_before" ref="ga5eba74e22dd1537550bf8b548fa55a41" args="(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Widget_Item *parent, Elm_Widget_Item *before_it, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)" -->
@@ -1159,7 +1184,7 @@ By default, cursors will only be looked for between those provided by the render
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Genlist.html#ga5eba74e22dd1537550bf8b548fa55a41">elm_genlist_item_insert_before</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Genlist.html#ga5eba74e22dd1537550bf8b548fa55a41">elm_genlist_item_insert_before</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Genlist *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -1167,7 +1192,7 @@ By default, cursors will only be looked for between those provided by the render
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
           <td class="paramname"><em>itc</em>, </td>
         </tr>
         <tr>
@@ -1179,13 +1204,13 @@ By default, cursors will only be looked for between those provided by the render
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>before_it</em>, </td>
         </tr>
         <tr>
@@ -1232,7 +1257,8 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Handle to inserted item </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a8">genlist_example_04.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gad1cc07925e962db462a82e34e91653ac"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_item_prepend" ref="gad1cc07925e962db462a82e34e91653ac" args="(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Widget_Item *parent, Elm_Genlist_Item_Type type, Evas_Smart_Cb func, const void *func_data)" -->
@@ -1240,7 +1266,7 @@ By default, cursors will only be looked for between those provided by the render
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Genlist.html#gad1cc07925e962db462a82e34e91653ac">elm_genlist_item_prepend</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Genlist.html#gad1cc07925e962db462a82e34e91653ac">elm_genlist_item_prepend</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Genlist *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -1248,7 +1274,7 @@ By default, cursors will only be looked for between those provided by the render
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
           <td class="paramname"><em>itc</em>, </td>
         </tr>
         <tr>
@@ -1260,7 +1286,7 @@ By default, cursors will only be looked for between those provided by the render
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
@@ -1306,7 +1332,8 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Handle to prepended item </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a6">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a13">genlist_example_05.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga020dc0ac9d7214d5634ad3314fe41d73"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_item_sorted_insert" ref="ga020dc0ac9d7214d5634ad3314fe41d73" args="(Elm_Genlist *obj, const Elm_Genlist_Item_Class *itc, const void *data, Elm_Widget_Item *parent, Elm_Genlist_Item_Type type, Eina_Compare_Cb comp, Evas_Smart_Cb func, const void *func_data)" -->
@@ -1314,7 +1341,7 @@ By default, cursors will only be looked for between those provided by the render
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Genlist.html#ga020dc0ac9d7214d5634ad3314fe41d73">elm_genlist_item_sorted_insert</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Genlist.html#ga020dc0ac9d7214d5634ad3314fe41d73">elm_genlist_item_sorted_insert</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Genlist *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -1322,7 +1349,7 @@ By default, cursors will only be looked for between those provided by the render
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="structElm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *&#160;</td>
           <td class="paramname"><em>itc</em>, </td>
         </tr>
         <tr>
@@ -1334,7 +1361,7 @@ By default, cursors will only be looked for between those provided by the render
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>parent</em>, </td>
         </tr>
         <tr>
@@ -1390,6 +1417,189 @@ By default, cursors will only be looked for between those provided by the render
 
 </div>
 </div>
+<a class="anchor" id="ga7b90f94f0d8088d13487c4206a028ecc"></a><!-- doxytag: member="elm_genlist_common.h::elm_genlist_item_tooltip_content_cb_set" ref="ga7b90f94f0d8088d13487c4206a028ecc" args="(Elm_Object_Item *it, Elm_Tooltip_Item_Content_Cb func, const void *data, Evas_Smart_Cb del_cb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Genlist.html#ga7b90f94f0d8088d13487c4206a028ecc">elm_genlist_item_tooltip_content_cb_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Elm__Tooltips.html#ga61723c10b93bab2d0138f675b5581c6c">Elm_Tooltip_Item_Content_Cb</a>&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Smart_Cb&#160;</td>
+          <td class="paramname"><em>del_cb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the content to be shown in a given genlist item's tooltips</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>The genlist item. </td></tr>
+    <tr><td class="paramname">func</td><td>The function returning the tooltip contents. </td></tr>
+    <tr><td class="paramname">data</td><td>What to provide to <em>func</em> as callback data/context. </td></tr>
+    <tr><td class="paramname">del_cb</td><td>Called when data is not needed anymore, either when another callback replaces <code>func</code>, the tooltip is unset with <a class="el" href="group__Elm__Genlist.html#gaa1806ac47475245baf2743b320fdaae9">elm_genlist_item_tooltip_unset()</a> or the owner <code>item</code> dies. This callback receives as its first parameter the given <code>data</code>, being <code>event_info</code> the item handle.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This call will setup the tooltip's contents to <code>item</code> (analogous to <a class="el" href="group__Elm__Tooltips.html#ga162248c0ccf5f9d79f6363d47c64c986" title="Set the content to be shown in the tooltip object.">elm_object_tooltip_content_cb_set()</a>, but being item tooltips with higher precedence than object tooltips). It can have only one tooltip at a time, so any previous tooltip content will get removed. <code>func</code> (with <code>data</code>) will be called every time Elementary needs to show the tooltip and it should return a valid Evas object, which will be fully managed by the tooltip system, getting deleted when the tooltip is gone.</p>
+<p>In order to set just a text as a tooltip, look at <a class="el" href="group__Elm__Genlist.html#ga4bf41b2e5d267396bc5a12c726ad20dc">elm_genlist_item_tooltip_text_set()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3fbfe4fd7fa89ba4abc470b980761eb4"></a><!-- doxytag: member="elm_genlist_common.h::elm_genlist_item_tooltip_style_get" ref="ga3fbfe4fd7fa89ba4abc470b980761eb4" args="(const Elm_Object_Item *it)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Elm__Genlist.html#ga3fbfe4fd7fa89ba4abc470b980761eb4">elm_genlist_item_tooltip_style_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the style set a given genlist item's tooltip.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>genlist item with tooltip already set on. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>style the theme style in use, which defaults to "default". If the object does not have a tooltip set, then <code>NULL</code> is returned.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#gae1716dcc97ecc7c326ae798408a1737d">elm_genlist_item_tooltip_style_set()</a> for more details </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae1716dcc97ecc7c326ae798408a1737d"></a><!-- doxytag: member="elm_genlist_common.h::elm_genlist_item_tooltip_style_set" ref="gae1716dcc97ecc7c326ae798408a1737d" args="(Elm_Object_Item *it, const char *style)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Genlist.html#gae1716dcc97ecc7c326ae798408a1737d">elm_genlist_item_tooltip_style_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>style</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set a different <b>style</b> for a given genlist item's tooltip.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>genlist item with tooltip set </td></tr>
+    <tr><td class="paramname">style</td><td>the <b>theme style</b> to use on tooltips (e.g. <code>"default"</code>, <code>"transparent"</code>, etc)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Tooltips can have <b>alternate styles</b> to be displayed on, which are defined by the theme set on Elementary. This function works analogously as <a class="el" href="group__Elm__Tooltips.html#gaeda013d8330b2d394155b809f77869d6" title="Set a different style for this object tooltip.">elm_object_tooltip_style_set()</a>, but here applied only to genlist item objects. The default style for tooltips is <code>"default"</code>.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>before you set a style you should define a tooltip with <a class="el" href="group__Elm__Genlist.html#ga7b90f94f0d8088d13487c4206a028ecc">elm_genlist_item_tooltip_content_cb_set()</a> or <a class="el" href="group__Elm__Genlist.html#ga4bf41b2e5d267396bc5a12c726ad20dc">elm_genlist_item_tooltip_text_set()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga3fbfe4fd7fa89ba4abc470b980761eb4">elm_genlist_item_tooltip_style_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4bf41b2e5d267396bc5a12c726ad20dc"></a><!-- doxytag: member="elm_genlist_common.h::elm_genlist_item_tooltip_text_set" ref="ga4bf41b2e5d267396bc5a12c726ad20dc" args="(Elm_Object_Item *it, const char *text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Genlist.html#ga4bf41b2e5d267396bc5a12c726ad20dc">elm_genlist_item_tooltip_text_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the text to be shown in a given genlist item's tooltips.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>The genlist item </td></tr>
+    <tr><td class="paramname">text</td><td>The text to set in the content</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This call will setup the text to be used as tooltip to that item (analogous to <a class="el" href="group__Elm__Tooltips.html#ga0a85fa92cd8ddcf9e7fdd13aac978af1" title="Set the text to be displayed inside the tooltip.">elm_object_tooltip_text_set()</a>, but being item tooltips with higher precedence than object tooltips). It can have only one tooltip at a time, so any previous tooltip data will get removed.</p>
+<p>In order to set a content or something else as a tooltip, look at <a class="el" href="group__Elm__Genlist.html#ga7b90f94f0d8088d13487c4206a028ecc">elm_genlist_item_tooltip_content_cb_set()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa1806ac47475245baf2743b320fdaae9"></a><!-- doxytag: member="elm_genlist_common.h::elm_genlist_item_tooltip_unset" ref="gaa1806ac47475245baf2743b320fdaae9" args="(Elm_Object_Item *it)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Genlist.html#gaa1806ac47475245baf2743b320fdaae9">elm_genlist_item_tooltip_unset</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td>
+          <td class="paramname"><em>it</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Unset a tooltip from a given genlist item</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>genlist item to remove a previously set tooltip from.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This call removes any tooltip set on <code>item</code>. The callback provided as <code>del_cb</code> to <a class="el" href="group__Elm__Genlist.html#ga7b90f94f0d8088d13487c4206a028ecc">elm_genlist_item_tooltip_content_cb_set()</a> will be called to notify it is not used anymore (and have resources cleaned, if need be).</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Genlist.html#ga7b90f94f0d8088d13487c4206a028ecc">elm_genlist_item_tooltip_content_cb_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gad5ae7658e5cb2ff1f301cde4e2eeba22"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_items_count" ref="gad5ae7658e5cb2ff1f301cde4e2eeba22" args="(const Elm_Genlist *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1405,7 +1615,16 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 
-<p>Return how many items are currently in a list. </p>
+<p>Return how many items have passed the filter currently. </p>
+<p>This behaviour is O(1) and returns the count of items which are currently passed by the filter. After "filter,done", the call returns total count of the filtered items.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Count of items passing the filter</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Return how many items are currently in a list.</dd></dl>
 <p>This behavior is O(1) and includes items which may or may not be realized.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1414,7 +1633,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Count of items passing the filter </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Item in list </dd></dl>
 
 </div>
 </div>
@@ -1423,7 +1642,7 @@ By default, cursors will only be looked for between those provided by the render
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Genlist.html#ga8caa57c4765c7f333ffa69aeefdbb380">elm_genlist_last_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Genlist.html#ga8caa57c4765c7f333ffa69aeefdbb380">elm_genlist_last_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Genlist *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -1435,6 +1654,7 @@ By default, cursors will only be looked for between those provided by the render
 
 <p>Get the last item in the genlist. </p>
 <p>This returns the last item in the list.</p>
+<p>If filter is set to genlist, it returns last filtered item in the list.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1443,7 +1663,8 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Last item in list </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_04_8c-example.html#a12">genlist_example_04.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gac53b32aa31c3722776bb8a045427159f"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_longpress_timeout_get" ref="gac53b32aa31c3722776bb8a045427159f" args="(const Elm_Genlist *obj)" -->
@@ -1470,7 +1691,8 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Timeout in seconds. Default is elm config value (1.0). </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a35">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga794379f1622c52fb7815afe89559ffa6"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_longpress_timeout_set" ref="ga794379f1622c52fb7815afe89559ffa6" args="(Elm_Genlist *obj, double timeout)" -->
@@ -1509,7 +1731,8 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a48">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gab2f9072ed9b28ce2a1f23290e4870f42"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_mode_get" ref="gab2f9072ed9b28ce2a1f23290e4870f42" args="(const Elm_Genlist *obj)" -->
@@ -1536,7 +1759,8 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The mode to use (one of <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a> or <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a>). </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a34">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga7749546e6666dd50ab7d1b8a4dbb99ad"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_mode_set" ref="ga7749546e6666dd50ab7d1b8a4dbb99ad" args="(Elm_Genlist *obj, Elm_List_Mode mode)" -->
@@ -1565,10 +1789,10 @@ By default, cursors will only be looked for between those provided by the render
 <div class="memdoc">
 
 <p>This sets the horizontal stretching mode. </p>
-<p>This sets the mode used for sizing items horizontally. Valid modes are <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a>, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>, and #ELM_LIST_COMPRESS. The default is <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>. This mode means that if items are too wide to fit, the scroller will scroll horizontally. Otherwise items are expanded to fill the width of the viewport of the scroller. If it is <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a>, items will be expanded to the viewport width and limited to that size. If it is #ELM_LIST_COMPRESS, the item width will be fixed (restricted to a minimum of) to the list width when calculating its size in order to allow the height to be calculated based on it. This allows, for instance, text block to wrap lines if the Edje part is configured with "text.min: 0 1".</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>#ELM_LIST_COMPRESS will make list resize slower as it will have to recalculate every item height again whenever the list width changes!</dd>
+<p>This sets the mode used for sizing items horizontally. Valid modes are <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a>, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>, and <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497">ELM_LIST_COMPRESS</a>. The default is <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>. This mode means that if items are too wide to fit, the scroller will scroll horizontally. Otherwise items are expanded to fill the width of the viewport of the scroller. If it is <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a>, items will be expanded to the viewport width and limited to that size. If it is <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497">ELM_LIST_COMPRESS</a>, the item width will be fixed (restricted to a minimum of) to the list width when calculating its size in order to allow the height to be calculated based on it. This allows, for instance, text block to wrap lines if the Edje part is configured with "text.min: 0 1".</p>
+<dl class="note"><dt><b>Note:</b></dt><dd><a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497">ELM_LIST_COMPRESS</a> will make list resize slower as it will have to recalculate every item height again whenever the list width changes!</dd>
 <dd>
-Homogeneous mode is for that all items in the genlist same width/height. With #ELM_LIST_COMPRESS, it makes genlist items to fast initializing. However there's no sub-objects in genlist which can be on the flying resizable (such as TEXTBLOCK). If then, some dynamic esizable objects in genlist would not diplayed properly.</dd></dl>
+Homogeneous mode is for that all items in the genlist same width/height. With <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497">ELM_LIST_COMPRESS</a>, it makes genlist items to fast initializing. However there's no sub-objects in genlist which can be on the flying resizable (such as TEXTBLOCK). If then, some dynamic esizable objects in genlist would not diplayed properly.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1577,7 +1801,8 @@ Homogeneous mode is for that all items in the genlist same width/height. With #E
   </table>
   </dd>
 </dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a41">genlist_example_02.c</a>, and <a class="el" href="genlist_example_03_8c-example.html#a24">genlist_example_03.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga9ff764e454179692d1d573adb9d885fd"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_multi_select_get" ref="ga9ff764e454179692d1d573adb9d885fd" args="(const Elm_Genlist *obj)" -->
@@ -1604,7 +1829,8 @@ Homogeneous mode is for that all items in the genlist same width/height. With #E
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Multi-select enable/disable. Default is disabled. </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a36">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gaa59068079de22ed91758085dae25367b"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_multi_select_set" ref="gaa59068079de22ed91758085dae25367b" args="(Elm_Genlist *obj, Eina_Bool multi)" -->
@@ -1642,7 +1868,8 @@ Homogeneous mode is for that all items in the genlist same width/height. With #E
   </table>
   </dd>
 </dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a43">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gaee137527ef5b6e64f811ffbfa51aae58"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_realized_items_get" ref="gaee137527ef5b6e64f811ffbfa51aae58" args="(const Elm_Genlist *obj)" -->
@@ -1670,7 +1897,8 @@ Homogeneous mode is for that all items in the genlist same width/height. With #E
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>List of realized items </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a10">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga2a5a48241e3fc59c0ee75fc85a014df7"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_realized_items_update" ref="ga2a5a48241e3fc59c0ee75fc85a014df7" args="(Elm_Genlist *obj)" -->
@@ -1698,7 +1926,8 @@ Homogeneous mode is for that all items in the genlist same width/height. With #E
   </table>
   </dd>
 </dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a14">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga333707e0bad4960efc8231431c66cca7"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_reorder_mode_get" ref="ga333707e0bad4960efc8231431c66cca7" args="(const Elm_Genlist *obj)" -->
@@ -1790,7 +2019,8 @@ Homogeneous mode is for that all items in the genlist same width/height. With #E
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The select mode. </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a31">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gaf037c92717b93ea122ae26c757a23c65"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_select_mode_set" ref="gaf037c92717b93ea122ae26c757a23c65" args="(Elm_Genlist *obj, Elm_Object_Select_Mode mode)" -->
@@ -1828,7 +2058,8 @@ Homogeneous mode is for that all items in the genlist same width/height. With #E
   </table>
   </dd>
 </dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a44">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga97abf26033fe2041450aa26b6f138c8a"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_selected_item_get" ref="ga97abf26033fe2041450aa26b6f138c8a" args="(const Elm_Genlist *obj)" -->
@@ -1836,7 +2067,7 @@ Homogeneous mode is for that all items in the genlist same width/height. With #E
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a">elm_genlist_selected_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a">elm_genlist_selected_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Genlist *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -1857,7 +2088,8 @@ Homogeneous mode is for that all items in the genlist same width/height. With #E
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The selected item, or <code>null</code> if none is selected. </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a5">genlist_example_02.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a7">genlist_example_04.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a7">genlist_example_05.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga9068ee98b3ec68d0ca056572a5410462"></a><!-- doxytag: member="elm_genlist.eo.legacy.h::elm_genlist_selected_items_get" ref="ga9068ee98b3ec68d0ca056572a5410462" args="(const Elm_Genlist *obj)" -->
@@ -1886,7 +2118,8 @@ Homogeneous mode is for that all items in the genlist same width/height. With #E
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>List of selected items </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_02_8c-example.html#a7">genlist_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

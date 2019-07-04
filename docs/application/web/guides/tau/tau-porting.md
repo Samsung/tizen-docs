@@ -28,7 +28,8 @@ If you want to use deprecated components, you can import those files. See the fo
 </html>
 ```
 
-> **Note**  
+> **Note**
+>
 > The `tau.support-2.3` file is only for backward compatibility. The above components are **DEPRECATED since Tizen 2.4** and are deleted in Tizen 3.0.
 
 ## Component Definitions
@@ -145,7 +146,7 @@ For more information on deprecated components, see the [Mobile Component API Ref
 
 If your application used the above deprecated components, see the following examples for successful migration:
 
-- **CheckboxRadio**            
+- **CheckboxRadio**
 
   Before:
 
@@ -161,7 +162,7 @@ If your application used the above deprecated components, see the following exam
 
       checkboxWidget.enable();
       radioWidget.disable();
-  </script>            
+  </script>
   ```
 
   After:
@@ -178,10 +179,10 @@ If your application used the above deprecated components, see the following exam
 
       checkboxWidget.enable();
       radioWidget.disable();
-  </script>        
+  </script>
   ```
 
-- **Collapsible**            
+- **Collapsible**
 
   Before:
 
@@ -203,7 +204,7 @@ If your application used the above deprecated components, see the following exam
   <script>
       var collapsibleElement = document.getElementById('collapsible'),
           collapsible = tau.widget.Collapsible(collapsibleElement);
-  </script>            
+  </script>
   ```
 
   After:
@@ -217,10 +218,10 @@ If your application used the above deprecated components, see the following exam
   <script>
       var expandableEl = document.getElementById('expandable'),
           expandableWidget = tau.widget.Expandable(expandableEl);
-  </script>       
+  </script>
   ```
 
-- **Fast Scroll**            
+- **Fast Scroll**
 
   Before:
 
@@ -240,7 +241,7 @@ If your application used the above deprecated components, see the following exam
 
   <script>
       var fastscroll = tau.widget.FastScroll(document.getElementById('list'));
-  </script>            
+  </script>
   ```
 
   After:
@@ -262,10 +263,10 @@ If your application used the above deprecated components, see the following exam
 
   <script>
       var isb = tau.widget.IndexScrollbar(document.getElementById('indexscrollbar'));
-  </script>        
+  </script>
   ```
 
-- **Gallery**            
+- **Gallery**
 
   Before:
 
@@ -281,7 +282,7 @@ If your application used the above deprecated components, see the following exam
       galleryWidget.add('./images/02.jpg');
       galleryWidget.add('./images/03.jpg');
       galleryWidget.refresh(1);
-  </script>            
+  </script>
   ```
 
   After:
@@ -307,10 +308,10 @@ If your application used the above deprecated components, see the following exam
       sectionsParentNode.appendChild(newSectionElement);
       sectionChangerWidget.refresh();
       sectionChangerWidget.setActiveSection(1);
-  </script>       
+  </script>
   ```
 
-- **List Divider**            
+- **List Divider**
 
   Before:
 
@@ -320,7 +321,7 @@ If your application used the above deprecated components, see the following exam
      <li><a href="#">Normal lists</a></li>
      <li><a href="#">Normal lists</a></li>
      <li><a href="#">Normal lists</a></li>
-  </ul>           
+  </ul>
   ```
 
   After:
@@ -331,10 +332,10 @@ If your application used the above deprecated components, see the following exam
      <li class="ui-li-anchor"><a href="#">Normal lists</a></li>
      <li class="ui-li-anchor"><a href="#">Normal lists</a></li>
      <li class="ui-li-anchor"><a href="#">Normal lists</a></li>
-  </ul>       
+  </ul>
   ```
 
-- **Notification**            
+- **Notification**
 
   Before:
 
@@ -358,7 +359,7 @@ If your application used the above deprecated components, see the following exam
       buttonEl.addEventListener('vclick', function() {
           notification.open();
       });
-  </script>            
+  </script>
   ```
 
   After:
@@ -379,10 +380,10 @@ If your application used the above deprecated components, see the following exam
       btn.addEventListener('vclick', function() {
           tau.openPopup('#popup_toast');
       });
-  </script>       
+  </script>
   ```
 
-- **Progress Bar**            
+- **Progress Bar**
 
   Before:
 
@@ -393,7 +394,7 @@ If your application used the above deprecated components, see the following exam
       var progressbarWidget = tau.widget.ProgressBar(document.getElementById('progressbar'));
 
       progressbarWidget.value(30);
-  </script>           
+  </script>
   ```
 
   After:
@@ -405,10 +406,10 @@ If your application used the above deprecated components, see the following exam
       var progressWidget = tau.widget.Progress(document.getElementById('progressbar'));
 
       progressWidget.value(30);
-  </script>       
+  </script>
   ```
 
-- **Search Bar**            
+- **Search Bar**
 
   Before:
 
@@ -420,7 +421,7 @@ If your application used the above deprecated components, see the following exam
           searchBarWidget = tau.widget.SearchBar(searchBarElement);
 
       value = searchBarWidget.disable();
-  </script>           
+  </script>
   ```
 
   After:
@@ -433,10 +434,10 @@ If your application used the above deprecated components, see the following exam
           searchWidget = tau.widget.SearchInput(searchEl);
 
       searchInputWidget.disable();
-  </script>       
+  </script>
   ```
 
-- **Select Menu**            
+- **Select Menu**
 
   Before:
 
@@ -453,7 +454,7 @@ If your application used the above deprecated components, see the following exam
           widget = tau.widget.SelectMenu(element);
 
       widget.open();
-  </script>            
+  </script>
   ```
 
   After:
@@ -471,10 +472,10 @@ If your application used the above deprecated components, see the following exam
           widget = tau.widget.DropdownMenu(element);
 
       widget.open();
-  </script>       
+  </script>
   ```
 
-- **Tab Bar**            
+- **Tab Bar**
 
   Before:
 
@@ -491,7 +492,7 @@ If your application used the above deprecated components, see the following exam
 
   <script>
       var tabBar = tau.widget.TabBar(document.getElementById('tab-bar'));
-  </script>           
+  </script>
   ```
 
   After:
@@ -526,10 +527,10 @@ If your application used the above deprecated components, see the following exam
           tabs = tau.widget.Tabs(tabsElement);
 
       tabs.setIndex(1);
-  </script>       
+  </script>
   ```
 
-- **Token Text Area**            
+- **Token Text Area**
 
   Before:
 
@@ -540,7 +541,7 @@ If your application used the above deprecated components, see the following exam
       var tokenWidget = tau.widget.TokenTextarea(document.getElementById('tokentext'));
 
       tokenWidget.add('foobar');
-  </script>           
+  </script>
   ```
 
   After:
@@ -553,14 +554,14 @@ If your application used the above deprecated components, see the following exam
           textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
 
       textEnveloper.add('hello');
-  </script>       
+  </script>
   ```
 
 ## Event Handling
 
 Some events have changed. The following examples illustrate how to handle events:
 
-- Swipe event    
+- Swipe event
 
   In the previous version, the `swipe` event was triggered in every area in the page automatically, but since 2.4, for efficient trigger and handling, the `swipe` event is only triggered when the Gesture event is created.
 
@@ -602,7 +603,7 @@ Some events have changed. The following examples illustrate how to handle events
 
   For more information, see the [Gesture Event API](../../api/latest/ui_fw_api/Gesture_Events/gesture.htm).
 
-- Tap event    
+- Tap event
 
   Since 2.4, the `tap` event has been deprecated. Use the `click` event instead.
 

@@ -91,15 +91,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This example shows how one can use the <a class="el" href="group__Elm__Layout.html">Layout</a> with a predefined theme layout to add a back and next button to a simple window. The full source code for this example can be found at <a class="el" href="layout_example_02_c.html">layout_example_02.c</a>.</p>
-<p>After setting up the window and background, we add the layout widget to the window. But instead of using <a class="el" href="group__Elm__Layout.html#ga8d1105463d52787a7b0ca8d7402cd3ea">elm_layout_file_set()</a> to load its theme from a custom theme file, we can use <a class="el" href="group__Elm__Layout.html#ga5df9427bcf7a424dc3f56dff8d21c239" title="Set the edje group from the elementary theme that will be used as layout.">elm_layout_theme_set()</a> to load one of the predefined layouts that come with elementary. Particularly on this example, we load the them of class "layout", group "application" and style "content-back-next" (since we want the back and next buttons).</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>After setting up the window and background, we add the layout widget to the window. But instead of using <a class="el" href="group__Elm__Layout.html#ga8d1105463d52787a7b0ca8d7402cd3ea">elm_layout_file_set()</a> to load its theme from a custom theme file, we can use <a class="el" href="group__Elm__Layout.html#ga8f28efed82872f5c57a61db5c81d4eb3" title="Set the edje group from the elementary theme that will be used as layout.">elm_layout_theme_set()</a> to load one of the predefined layouts that come with elementary. Particularly on this example, we load the them of class "layout", group "application" and style "content-back-next" (since we want the back and next buttons).</p>
+ <div class="fragment"><pre class="fragment">   layout = <a class="code" href="group__Elm__Layout.html#gaca5aee4ad4d92c68f13d1080c70baf8b">elm_layout_add</a>(win);
+   evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, layout);
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Elm__Layout.html#ga8f28efed82872f5c57a61db5c81d4eb3" title="Set the edje group from the elementary theme that will be used as layout.">elm_layout_theme_set</a>(
+         layout, <span class="stringliteral">&quot;layout&quot;</span>, <span class="stringliteral">&quot;application&quot;</span>, <span class="stringliteral">&quot;content-back-next&quot;</span>))
+     fprintf(stderr, <span class="stringliteral">&quot;Failed to set layout&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(layout);
+</pre></div></p>
 <p>This default theme contains only a "content" area named "elm.swallow.content", where we can add any widget (it can be even a container widget, like a box, frame, list, or even another layout). Since we just want to show the resulting layout, we add a simple icon to it:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>This default layout also provides some signals when the next and prev buttons are clicked. We can register callbacks to them with the <a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add()</a> function:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>In the <a class="el" href="layout_example_03.html">Layout - Signals and Size Changed</a> you can see how to send signals to the layout with <a class="el" href="group__Elm__General.html#ga1beada7edf5d714c0dba5459bcc993fc">elm_object_signal_emit()</a>.</p>
 <p>Now our callback just changes the picture being displayed when one of the buttons are clicked:</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *images[] = { <span class="stringliteral">&quot;home&quot;</span>, <span class="stringliteral">&quot;close&quot;</span>, <span class="stringliteral">&quot;arrow_up&quot;</span>, <span class="stringliteral">&quot;arrow_down&quot;</span>, NULL };
+
+<span class="keyword">struct </span>_App {
+     <span class="keywordtype">int</span> current;
+};
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_signal_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, <span class="keyword">const</span> <span class="keywordtype">char</span> *emission, <span class="keyword">const</span> <span class="keywordtype">char</span> *source EINA_UNUSED)
+{
+   <span class="keyword">struct </span>_App *app = data;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *icon = <a class="code" href="group__Elm__General.html#ga32413f4d59d8232cd362a922a281abf1">elm_object_part_content_get</a>(o, <span class="stringliteral">&quot;elm.swallow.content&quot;</span>);
+
+   printf(<span class="stringliteral">&quot;signal received\n&quot;</span>);
+
+   <span class="keywordflow">if</span> (!strcmp(<span class="stringliteral">&quot;elm,action,back&quot;</span>, emission))
+     app-&gt;current--;
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(<span class="stringliteral">&quot;elm,action,next&quot;</span>, emission))
+     app-&gt;current++;
+
+   <span class="keywordflow">if</span> (app-&gt;current &lt; 0)
+     app-&gt;current = (<span class="keyword">sizeof</span>(images) / <span class="keyword">sizeof</span>(images[0])) - 2;
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (images[app-&gt;current] == NULL)
+     app-&gt;current = 0;
+
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(icon, images[app-&gt;current]);
+}
+</pre></div></p>
 <p>It's possible to see that it gets the name of the image being shown from the array of image names, going forward on this array when "next" is clicked and backward when "back" is clicked.</p>
 <p>A screenshot of this example can be seen on:</p>
 <div class="image">

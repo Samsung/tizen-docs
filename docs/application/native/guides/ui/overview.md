@@ -2,7 +2,7 @@
 
 The user interface features introduce how you can create a visual outlook for the UI application to ensure the best possible user experience.
 
-The UI framework is a universal, reusable software environment that provides the essential building blocks as part of the Tizen platform to facilitate the development of Tizen native applications. The framework provides the window, UI components, and scene-based graphic rendering architecture needed to manage your application user interface. In addition, the framework provides animations and effects needed to make your application more fresh and vivid, event handling and the main loop to interact with the user and system, and other features, such as scalability and font setting. The Tizen platform provides the EFL and DALi UI toolkit frameworks.
+The UI framework is a universal, reusable software environment that provides the essential building blocks as part of the Tizen platform to facilitate the development of Tizen native applications. The framework provides the window, UI components, and scene-based graphic rendering architecture needed to manage your application user interface. In addition, the framework provides animations and effects needed to make your application more fresh and vivid, event handling and the main loop to interact with the user and system, and other features, such as scalability and font setting. The Tizen platform provides the EFL, DALi UI toolkit frameworks and the Tizen window system shell.
 
 You can use the following user interface features in your native applications:
 
@@ -22,6 +22,10 @@ You can use the following user interface features in your native applications:
   - Maps
   - Homescreens / launch pads
   - Advanced watch faces for wearable devices
+
+- [Tizen Window System Shell (TZSH)](tizen-ws-shell.md)
+
+  You can use the TZSH to manipulate the windows of the system graphical user interfaces (GUI) services such as the quickpanel. It allows you to control the windows of system GUI services and get notifications about the state changes of each window within an application. Not all applications require to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service's window.
 
 ## Related Information
 - Dependencies

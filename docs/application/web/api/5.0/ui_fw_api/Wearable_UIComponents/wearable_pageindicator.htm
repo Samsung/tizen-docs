@@ -7,7 +7,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Page Indicator</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>Page Indicator</h1>
 
 <p>Page indicator component presents as a dot-typed indicator.</p>
@@ -15,6 +15,7 @@
 <p>According to option, the maximum number of dots and the number of pages to be linked can be set.</p>
 <p>If the number of linked pages is more than dots which can be displayed, a central dot is assigned to multiple pages.</p>
 
+<img src="../../images/PageIndicator.png" alt="photo of Page Indicator element in TIZEN">
 <table class="note">
 	<tbody>
 	<tr>
@@ -62,20 +63,23 @@ var elPageIndicator = document.getElementById("pageindicator"),
 
 <p>To add an page indicator component to the application, use the following code:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;div id=&quot;pageIndicator&quot; class=&quot;ui-page-indicator&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var elPageIndicator = document.getElementById(&quot;pageIndicator&quot;),
-       pageIndicator =  tau.widget.PageIndicator(elPageIndicator, {numberOfPages: 5}),
-       index = 1;
-   pageIndicator.setActive(index);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var elPageIndicator = document.getElementById(&quot;pageIndicator&quot;),
+    pageIndicator =  tau.widget.PageIndicator(elPageIndicator, {numberOfPages: 5}),
+    index = 1;
+pageIndicator.setActive(index);
 </pre>
 
 <p>index value means index of active page.</p>
 
 <p>In the following example, the change of page is indicated in page indicator component by using page indicator with <a href="wearable_sectionchanger.htm">section changer</a> component.</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;div id=&quot;pageIndicatorPage&quot; class=&quot;ui-page&quot;&gt;
    &lt;header class=&quot;ui-header&quot;&gt;
@@ -101,7 +105,10 @@ var elPageIndicator = document.getElementById("pageindicator"),
          &lt;/section&gt;
       &lt;/div&gt;
    &lt;/div&gt;
-   &lt;script&gt;
+&lt;/div&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
       (function()
       {
          var self = this,
@@ -141,8 +148,6 @@ var elPageIndicator = document.getElementById("pageindicator"),
          /* Bind the callback */
          changer.addEventListener(&quot;sectionchange&quot;, pageIndicatorHandler, false);
       })();
-   &lt;/script&gt;
-&lt;/div&gt;
 </pre>
 
 <p>If you use the following statement when you create page indicator component, a central dot is assigned to multiple pages.</p>
@@ -303,5 +308,10 @@ For example, in the situation that the value of numberOfPages is "6", and the va
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

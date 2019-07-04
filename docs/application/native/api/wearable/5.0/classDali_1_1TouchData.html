@@ -140,8 +140,6 @@ Public Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device class type the mouse/touch event originated from.  <a href="#a3da8026635186ecfd231db987ded7e42"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDali_1_1Device_1_1Subclass.html#afdd68e44ba893835ead779d5e0efe859">Device::Subclass::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TouchData.html#af86c544d20767513d4b4e656f6356ae6">GetDeviceSubclass</a> (std::size_t point) const </td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the device subclass type the mouse/touch event originated from.  <a href="#af86c544d20767513d4b4e656f6356ae6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceDali_1_1MouseButton.html#a572a83f304cfc8f770deb4ba0fe6bcef">MouseButton::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1TouchData.html#ae55a1f5c103edf374f463911e47f2603">GetMouseButton</a> (std::size_t point) const </td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get mouse device's button value (ex: right/left button)  <a href="#ae55a1f5c103edf374f463911e47f2603"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Touch events are a collection of points at a specific moment in time. </p>
@@ -415,33 +413,6 @@ Public Member Functions</h2></td></tr>
 If you require the local coordinates of another actor (e.g the parent of the hit actor), then you should use <a class="el" href="classDali_1_1Actor.html#a1237311ba8e6a569facd002b606047a1" title="Converts screen coordinates into the actor&#39;s coordinate system using the default camera.">Actor::ScreenToLocal()</a>. </dd>
 <dd>
 If point is greater than <a class="el" href="classDali_1_1TouchData.html#ad7d9c4fbe0e1fa080d2a3dd226248143" title="Returns the total number of points in this TouchData.">GetPointCount()</a> then this method will return <a class="el" href="structDali_1_1Vector2.html#a91bacc8982168435b18720248d433dd2" title="(0.0f, 0.0f)">Vector2::ZERO</a>. </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ae55a1f5c103edf374f463911e47f2603"></a><!-- doxytag: member="Dali::TouchData::GetMouseButton" ref="ae55a1f5c103edf374f463911e47f2603" args="(std::size_t point) const " -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="namespaceDali_1_1MouseButton.html#a572a83f304cfc8f770deb4ba0fe6bcef">MouseButton::Type</a> <a class="el" href="classDali_1_1TouchData.html#ae55a1f5c103edf374f463911e47f2603">Dali::TouchData::GetMouseButton</a> </td>
-          <td>(</td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>point</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get mouse device's button value (ex: right/left button) </p>
-<dl class="user"><dt><b>Since:</b></dt><dd>5.0, DALi version 1.3.31 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">point</td><td>The point required </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The mouse button value </dd></dl>
 
 </div>
 </div>

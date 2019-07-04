@@ -91,7 +91,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places seven Elementary spinner widgets on a window, each of them exemplifying a part of the widget's API.</p>
-<p>The first of them is the default spinner:  <div class="fragment"><pre class="fragment"></pre></div> As you see, the defaults for a spinner are: </p>
+<p>The first of them is the default spinner:  <div class="fragment"><pre class="fragment">   sp = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
+   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
+</pre></div> As you see, the defaults for a spinner are: </p>
 <ul>
 <li>no wrap </li>
 <li>min value set to 0 </li>
@@ -99,13 +104,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>step value set to 1 </li>
 <li>label format set to "%0.f"</li>
 </ul>
-<p>If another format is required, see the second spinner. It will put a text before and after the value, and also format value to display two decimals: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The third one will use a customized step, define new minimum and maximum values and enable wrap, so when value reaches minimum it jumps to maximum, or jumps to minimum after maximum value is reached. Format is set to display a decimal: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The fourth uses <code>vertical</code> style, so instead of left and right arrows, top and bottom are displayed. Also the change interval is reduced, so user can change value faster. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>In the fifth the user won't be allowed to set value directly, i.e., will be obligate change value only using arrows: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The sixth widget will receive a lot of special values, so instead of reading numeric values, user will see labels for each one. Also direct edition is disabled, otherwise users would see the numeric value on edition mode. User will be able to select a month in this widget: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Finally the last widget will exemplify how to listen for widget's signals, <code> changed </code> and <code> delay,changed </code>. First we need to implement callback functions that will simply print spinner's value:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The first callback function should be called everytime value changes, the second one only after user stops to increment or decrement. Try to keep arrows pressed and check the difference. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>If another format is required, see the second spinner. It will put a text before and after the value, and also format value to display two decimals: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2" title="Control the format string of the displayed label.">elm_spinner_label_format_set</a>(sp, <span class="stringliteral">&quot;Percentage %%%1.2f something&quot;</span>);
+</pre></div></p>
+<p>The third one will use a customized step, define new minimum and maximum values and enable wrap, so when value reaches minimum it jumps to maximum, or jumps to minimum after maximum value is reached. Format is set to display a decimal: <div class="fragment"><pre class="fragment">   sp = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   <a class="code" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2" title="Control the format string of the displayed label.">elm_spinner_label_format_set</a>(sp, <span class="stringliteral">&quot;%1.1f units&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#gad145d4c85ed9bb10512999f5e3acd740" title="Control the step used to increment or decrement the spinner value.">elm_spinner_step_set</a>(sp, 1.5);
+   <a class="code" href="group__Elm__Spinner.html#gac24e7133ec989eb5ba20e087a0921d16" title="Control whether the spinner should wrap when it reaches its minimum or maximum value.">elm_spinner_wrap_set</a>(sp, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(sp, -50.0, 250.0);
+   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
+   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
+</pre></div></p>
+<p>The fourth uses <code>vertical</code> style, so instead of left and right arrows, top and bottom are displayed. Also the change interval is reduced, so user can change value faster. <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(sp, <span class="stringliteral">&quot;vertical&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga61529b6a5bc0204a471b8f9f96248bd2" title="Control the interval on time updates for an user mouse button hold on spinner widgets&#39; arrows...">elm_spinner_interval_set</a>(sp, 0.2);
+</pre></div></p>
+<p>In the fifth the user won't be allowed to set value directly, i.e., will be obligate change value only using arrows: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Spinner.html#ga871836a2a99838adf161ea3397f8de5b" title="Control whether the spinner can be directly edited by the user or not.">elm_spinner_editable_set</a>(sp, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+</pre></div></p>
+<p>The sixth widget will receive a lot of special values, so instead of reading numeric values, user will see labels for each one. Also direct edition is disabled, otherwise users would see the numeric value on edition mode. User will be able to select a month in this widget: <div class="fragment"><pre class="fragment">   sp = <a class="code" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a>(win);
+   <a class="code" href="group__Elm__Spinner.html#ga871836a2a99838adf161ea3397f8de5b" title="Control whether the spinner can be directly edited by the user or not.">elm_spinner_editable_set</a>(sp, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set</a>(sp, 1, 12);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 1, <span class="stringliteral">&quot;January&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 2, <span class="stringliteral">&quot;February&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 3, <span class="stringliteral">&quot;March&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 4, <span class="stringliteral">&quot;April&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 5, <span class="stringliteral">&quot;May&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 6, <span class="stringliteral">&quot;June&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 7, <span class="stringliteral">&quot;July&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 8, <span class="stringliteral">&quot;August&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 9, <span class="stringliteral">&quot;September&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 10, <span class="stringliteral">&quot;October&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 11, <span class="stringliteral">&quot;November&quot;</span>);
+   <a class="code" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add</a>(sp, 12, <span class="stringliteral">&quot;December&quot;</span>);
+   evas_object_size_hint_align_set(sp, EVAS_HINT_FILL, 0.5);
+   evas_object_size_hint_weight_set(sp, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, sp);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(sp);
+</pre></div></p>
+<p>Finally the last widget will exemplify how to listen for widget's signals, <code> changed </code> and <code> delay,changed </code>. First we need to implement callback functions that will simply print spinner's value:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_delay_changed_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;Value delay changed to %0.f\n&quot;</span>, <a class="code" href="group__Elm__Spinner.html#ga0f93a325d38ad9a249994a7dc4ea4f1b" title="Control the value the spinner displays.">elm_spinner_value_get</a>(obj));
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_focused_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;spinner focused\n&quot;</span>);
+}
+</pre></div></p>
+<p>The first callback function should be called everytime value changes, the second one only after user stops to increment or decrement. Try to keep arrows pressed and check the difference. <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;focused&quot;</span>, _focused_cb, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(sp, <span class="stringliteral">&quot;unfocused&quot;</span>, _unfocused_cb, NULL);
+</pre></div></p>
 <p>See the full <a class="el" href="spinner_example_8c-example.html">example</a>, whose window should look like this picture:</p>
 <div class="image">
 <img src="screenshots/spinner_example.png" alt="spinner_example.png"/>

@@ -91,10 +91,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This code places three Elementary Datetime widgets on a window, each of them exemplifying the widget's different usage.</p>
-<p>The first of them is <b>"only Date display"</b>:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>For <b>"only Time display"</b>, see the second datetime:  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>The first of them is <b>"only Date display"</b>:  <div class="fragment"><pre class="fragment">   <span class="comment">//datetime showing only DATE</span>
+   datetime = <a class="code" href="group__Elm__Datetime.html#ga3dac2d32e2137fac111d91dc15fcc270" title="Adds a new datetime Widget.">elm_datetime_add</a>(bx);
+   evas_object_size_hint_weight_set(datetime, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(datetime, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Elm__Datetime.html#ga835e428d8876df70aba140f5d5cc7a58" title="Set a field to be visible or not.">elm_datetime_field_visible_set</a>(datetime, <a class="code" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6ac439cdfe1224fd9a51e5eaf0d0977f87">ELM_DATETIME_HOUR</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Datetime.html#ga835e428d8876df70aba140f5d5cc7a58" title="Set a field to be visible or not.">elm_datetime_field_visible_set</a>(datetime, <a class="code" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a1a06797eb5657a0da15560dbb9603ee9">ELM_DATETIME_MINUTE</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Datetime.html#ga835e428d8876df70aba140f5d5cc7a58" title="Set a field to be visible or not.">elm_datetime_field_visible_set</a>(datetime, <a class="code" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6ac003bb01ee1993ace1e29026a674f37a">ELM_DATETIME_AMPM</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, datetime);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(datetime);
+</pre></div></p>
+<p>For <b>"only Time display"</b>, see the second datetime:  <div class="fragment"><pre class="fragment">   <span class="comment">//datetime showing only TIME</span>
+   datetime = <a class="code" href="group__Elm__Datetime.html#ga3dac2d32e2137fac111d91dc15fcc270" title="Adds a new datetime Widget.">elm_datetime_add</a>(bx);
+   evas_object_size_hint_weight_set(datetime, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(datetime, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Elm__Datetime.html#ga835e428d8876df70aba140f5d5cc7a58" title="Set a field to be visible or not.">elm_datetime_field_visible_set</a>(datetime, <a class="code" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5">ELM_DATETIME_YEAR</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Datetime.html#ga835e428d8876df70aba140f5d5cc7a58" title="Set a field to be visible or not.">elm_datetime_field_visible_set</a>(datetime, <a class="code" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a57f9a51d3c792a9ecd58c26ef610ff28">ELM_DATETIME_MONTH</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Datetime.html#ga835e428d8876df70aba140f5d5cc7a58" title="Set a field to be visible or not.">elm_datetime_field_visible_set</a>(datetime, <a class="code" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6ac974324f9e139812cffca7419d7dd71c">ELM_DATETIME_DATE</a>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, datetime);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(datetime);
+</pre></div></p>
 <p>The third one will display datetime shows both <b>Date and Time</b>, corresponding format will be taken from system <b>locale</b>. Note, besides, that the strings are different for different language settings.</p>
-<p><b>Datetime format</b> can be programmatically set by using <a class="el" href="group__Elm__Datetime.html#gaf6cde8a45b91c2b1613d8cdf04bb76fd" title="Set the datetime format. Format is a combination of allowed Libc date format specifiers like: &quot;%b %d...">elm_datetime_format_set()</a>:  <div class="fragment"><pre class="fragment"></pre></div> The default format of any locale consists:</p>
+<p><b>Datetime format</b> can be programmatically set by using <a class="el" href="group__Elm__Datetime.html#ga75def6ec9fd0ee435c809ddf187c9bac" title="Set the datetime format. Format is a combination of allowed Libc date format specifiers like: &quot;%b %d...">elm_datetime_format_set()</a>:  <div class="fragment"><pre class="fragment">   <span class="comment">//datetime showing both DATE and TIME</span>
+   datetime = <a class="code" href="group__Elm__Datetime.html#ga3dac2d32e2137fac111d91dc15fcc270" title="Adds a new datetime Widget.">elm_datetime_add</a>(bx);
+   evas_object_size_hint_weight_set(datetime, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(datetime, EVAS_HINT_FILL, 0.5);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, datetime);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(datetime);
+</pre></div> The default format of any locale consists:</p>
 <ul>
 <li>Year Field</li>
 <li>Month Field</li>

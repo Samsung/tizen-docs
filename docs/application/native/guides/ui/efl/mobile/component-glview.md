@@ -4,7 +4,7 @@ This feature is supported in mobile applications only.
 
 The GLView component renders OpenGL&reg; in an Elementary object, which hides Evas GL complexity.
 
-For more information, see the [OpenGL&reg; ES](../../graphics/opengl.md) guide and the [GLView](../../../../api/mobile/latest/group__Elm__GLView.html) API.
+For more information, see the [OpenGL&reg; ES](../../../graphics/opengl.md) guide and the [GLView](../../../../api/mobile/latest/group__Elm__GLView.html) API.
 
 **Figure: GLView component**
 
@@ -39,7 +39,7 @@ To create a GLView component:
 
 To configure the GLView:
 
-- Enable the appropriate GLView rendering modes. The [Elm_GLView_Mode](../../../../api/mobile/latest/group__GLView.html#ga4d0a2281e13c66d7274987ef24e7abe7) enumerator defines the available modes.
+- Enable the appropriate GLView rendering modes. The [Elm_GLView_Mode](../../../../api/mobile/latest/group__Elm__GLView.html#ga4d0a2281e13c66d7274987ef24e7abe7) enumerator defines the available modes.
 
   To enable the alpha channel and depth buffer rendering modes:
 

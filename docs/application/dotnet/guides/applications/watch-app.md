@@ -29,7 +29,7 @@ When a watch application is successfully installed on a device, its UI is visibl
 
 To enable your application to use the watch functionality:
 
-1.  To use the `OnAmbientTick()` method of the [Tizen.Applications.WatchApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchApplication.html) class in the ambient mode, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the `OnAmbientTick()` method of the [Tizen.Applications.WatchApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class in the ambient mode, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -37,7 +37,7 @@ To enable your application to use the watch functionality:
     </privileges>
     ```
 
-2.  To use the method and properties of the `Tizen.Applications.WatchApplication` class, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application:
+2.  To use the method and properties of the `Tizen.Applications.WatchApplication` class, include the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html) namespace in your application:
 
     ```
     using Tizen.Applications;
@@ -49,7 +49,7 @@ To enable your application to use the watch functionality:
 ## Managing the Application Life-cycle
 
 
-You can create and initialize a watch application with the [Tizen.Applications.WatchApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchApplication.html) class. To start an event loop, use the class's `Run()` method.
+You can create and initialize a watch application with the [Tizen.Applications.WatchApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class. To start an event loop, use the class's `Run()` method.
 
 To manage the application state changes, override the following methods of the `Tizen.Applications.WatchApplication` class:
 
@@ -112,7 +112,7 @@ To manage the application state changes, override the following methods of the `
     }
     ```
 
--   The `OnTick()` method is triggered at least once per second. The watch application can get the current time from the `time` time handle of the [Tizen.Applications.WatchTime](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchTime.html) class to draw a normal watch. Platform can call this method even in the background state. So even if your watch app is in the background if this method is called, you need to update the UI.
+-   The `OnTick()` method is triggered at least once per second. The watch application can get the current time from the `time` time handle of the [Tizen.Applications.WatchTime](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class to draw a normal watch. Platform can call this method even in the background state. So even if your watch app is in the background if this method is called, you need to update the UI.
 
     ```
     protected override void OnTick(TimeEventArgs time)
@@ -126,7 +126,7 @@ To manage the application state changes, override the following methods of the `
 <a name="systemrelated"></a>
 ## Managing System-related Events
 
-To manage events related to system status changes, override the following methods of the [Tizen.Applications.WatchApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchApplication.html) class:
+To manage events related to system status changes, override the following methods of the [Tizen.Applications.WatchApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class:
 
 -   `OnLocaleChanged()`: Triggered when the system language changes and the messages are translated.
 -   `OnRegionFormatChanged()`: Triggered when the time zone changes.
@@ -165,9 +165,9 @@ protected override void OnLowMemory(LowMemoryEventArgs e)
 <a name="timehandle"></a>
 ## Drawing the Watch UI
 
-To draw an accurate clock in various formats on the screen, use the [Tizen.Applications.WatchApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchApplication.html) class getter methods with the [Tizen.Applications.WatchTime](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchTime.html) class. You can get the `Tizen.Applications.WatchTime` instance with the `GetCurrentTime()` method.
+To draw an accurate clock in various formats on the screen, use the [Tizen.Applications.WatchApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class getter methods with the [Tizen.Applications.WatchTime](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class. You can get the `Tizen.Applications.WatchTime` instance with the `GetCurrentTime()` method.
 
-With the `Tizen.Applications.WatchTime` class, you can draw the UI for your watch application by getting the window object with the [ElmSharp](https://developer.tizen.org/dev-guide/csapi/api/ElmSharp.html) methods:
+With the `Tizen.Applications.WatchTime` class, you can draw the UI for your watch application by getting the window object with the [ElmSharp](https://samsung.github.io/TizenFX/latest/api/ElmSharp.html) methods:
 
 ```
 private static Label _time;
@@ -207,7 +207,7 @@ protected override void OnCreate()
 <a name="current"></a>
 ## Getting the Current Time
 
-You can get the current local time in various formats using the `GetCurrentTime()` method of the [Tizen.Applications.WatchApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchApplication.html) class and the properties of the [Tizen.Applications.WatchTime](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchTime.html) class.
+You can get the current local time in various formats using the `GetCurrentTime()` method of the [Tizen.Applications.WatchApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class and the properties of the [Tizen.Applications.WatchTime](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class.
 
 ```
     WatchTime wt = GetCurrentTime();
@@ -228,11 +228,11 @@ The details of the limited UI drawn in the ambient mode depend on the device. In
 
 Some devices introduce a high color mode for the ambient mode. In the high color mode, you can use more colors (usually, 24-bit color) for drawing the ambient mode UI.
 
-Override the ambient mode methods of the [Tizen.Applications.WatchApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchApplication.html) class to use the ambient mode:
+Override the ambient mode methods of the [Tizen.Applications.WatchApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WatchApplication.html) class to use the ambient mode:
 
 -   The `OnAmbientChanged()` method is triggered when the ambient mode is enabled or disabled on the device. You can use the method to initialize your ambient mode UI.
 
--   The `OnAmbientTick()` method is triggered when the device enters the ambient mode and every minute while the device is in the ambient mode. You can use the method to get the current time from the [Tizen.Applications.WatchTime](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.WatchTime.html) class and draw the ambient mode watch. In this method, do not perform time-consuming tasks and always update the UI as quickly as possible. The platform can put the device to sleep shortly after the ambient tick expires.
+-   The `OnAmbientTick()` method is triggered when the device enters the ambient mode and every minute while the device is in the ambient mode. You can use the method to get the current time from the [Tizen.Applications.WatchTime](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.WatchTime.html) class and draw the ambient mode watch. In this method, do not perform time-consuming tasks and always update the UI as quickly as possible. The platform can put the device to sleep shortly after the ambient tick expires.
 
 ```
 protected override void OnAmbientTick(TimeEventArgs time)

@@ -39,7 +39,7 @@
         | Delayed start | Delay start of profiling. To start profiling it is need to click **Start** button in the **Profiling Progress** window | off | off | off |
 
     - Click **Ok** button.
-    - **Output** window (highlighted with orange rectanlge, also be sure that window shows output from Tizen (green highlight)) and **Profiling Progress** window (red highlight) will be being shown during profiling.
+    - **Output** window (highlighted with orange rectangle, also be sure that window shows output from Tizen (green highlight)) and **Profiling Progress** window (red highlight) will be being shown during profiling.
 
       ![Profiling Default Workspace](media/profiler_workspace.png)
 
@@ -122,7 +122,7 @@
 
   ![Profile Session](media/profile_session_viewer.png)
 
-  The window wll be automatically shown during profiling or live profiling.
+  The window will be automatically shown during profiling or live profiling.
 
   To open it manually select in the menu **Tools > Tizen > Profiler > Profiling Progress**.
 

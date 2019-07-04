@@ -87,7 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#define-members">Defines</a>  </div>
   <div class="headertitle">
 <div class="title">Tools</div>  </div>
 <div class="ingroups"><a class="el" href="group__Eina.html">Eina</a></div></div><!--header-->
@@ -102,8 +103,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the content of the environment referred by HOME on this system.  <a href="#gaaa4c9c9269f1cc1508ca0a785dec8c1c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#ga6f462dce106714a3ba29f63deea61be2">eina_environment_tmp_get</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the content of the environment referred as TMPDIR on this system.  <a href="#ga6f462dce106714a3ba29f63deea61be2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#ga2eff9dff88bf972e43961d1a746fe7c4">eina_dbl_exact</a> (double a, double b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Warningless comparison of doubles using ==.  <a href="#ga2eff9dff88bf972e43961d1a746fe7c4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#ga067b67f9f7a9c83f26abd15a45203c33">eina_flt_exact</a> (float a, float b)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Warningless comparison of floats using ==.  <a href="#ga067b67f9f7a9c83f26abd15a45203c33"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#gab4b78765b76587efa12b1533e997d2c3">eina_xattr_ls</a> (const char *file)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an iterator that list all extended attribute of a file.  <a href="#gab4b78765b76587efa12b1533e997d2c3"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an iterator that lists all extended attribute of a file.  <a href="#gab4b78765b76587efa12b1533e997d2c3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#ga4fe5e7cc6c21565c371f0fd03ee0e20d">eina_xattr_value_ls</a> (const char *file)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an iterator that list all extended attribute value related to a fd.  <a href="#ga4fe5e7cc6c21565c371f0fd03ee0e20d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#ga1883ef0dd41d89a2d067ec071b2c84bb">eina_xattr_fd_ls</a> (int fd)</td></tr>
@@ -138,7 +143,148 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an int as a extended attribute properties.  <a href="#ga3058f8d45fecf39e41a8212605fd84ba"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#gad66b42746d425cfd30da37b1a5b6231b">eina_xattr_int_get</a> (const char *file, const char *attribute, int *value)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a int from an extended attribute properties.  <a href="#gad66b42746d425cfd30da37b1a5b6231b"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#ga67d74b61939da29afc78e0100a2bb534">EINA_FLT_EQ</a>(a, b)&#160;&#160;&#160;(!!(fabsf((float)a - (float)b) &lt;= FLT_EPSILON))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe comparison of float.  <a href="#ga67d74b61939da29afc78e0100a2bb534"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#gad4eb3fc9655b9ceb274dd8b0a7baa5d7">EINA_FLT_NONZERO</a>(a)&#160;&#160;&#160;(!!(fpclassify((float)(a)) != FP_ZERO))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a float is not zero.  <a href="#gad4eb3fc9655b9ceb274dd8b0a7baa5d7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#ga6bee37244b675b83d6a4f044a7a3d1e8">EINA_DBL_EQ</a>(a, b)&#160;&#160;&#160;(!!(fabs((double)a - (double)b) &lt;= DBL_EPSILON))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Safe comparison of double.  <a href="#ga6bee37244b675b83d6a4f044a7a3d1e8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Tools__Group.html#gacff7543938fee3ca0ad4caf78bb561bd">EINA_DBL_NONZERO</a>(a)&#160;&#160;&#160;(!!(fpclassify((double)(a)) != FP_ZERO))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if a double is not zero.  <a href="#gacff7543938fee3ca0ad4caf78bb561bd"></a><br/></td></tr>
 </table>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="ga6bee37244b675b83d6a4f044a7a3d1e8"></a><!-- doxytag: member="eina_util.h::EINA_DBL_EQ" ref="ga6bee37244b675b83d6a4f044a7a3d1e8" args="(a, b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Tools__Group.html#ga6bee37244b675b83d6a4f044a7a3d1e8">EINA_DBL_EQ</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(!!(fabs((double)a - (double)b) &lt;= DBL_EPSILON))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Safe comparison of double. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>First member to compare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Second member to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if two double match </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gacff7543938fee3ca0ad4caf78bb561bd"></a><!-- doxytag: member="eina_util.h::EINA_DBL_NONZERO" ref="gacff7543938fee3ca0ad4caf78bb561bd" args="(a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Tools__Group.html#gacff7543938fee3ca0ad4caf78bb561bd">EINA_DBL_NONZERO</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a</td><td>)</td>
+          <td>&#160;&#160;&#160;(!!(fpclassify((double)(a)) != FP_ZERO))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Determines if a double is not zero. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The double</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if double is not zero </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga67d74b61939da29afc78e0100a2bb534"></a><!-- doxytag: member="eina_util.h::EINA_FLT_EQ" ref="ga67d74b61939da29afc78e0100a2bb534" args="(a, b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Tools__Group.html#ga67d74b61939da29afc78e0100a2bb534">EINA_FLT_EQ</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(!!(fabsf((float)a - (float)b) &lt;= FLT_EPSILON))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Safe comparison of float. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>First member to compare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Second member to compare </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if two floats match </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad4eb3fc9655b9ceb274dd8b0a7baa5d7"></a><!-- doxytag: member="eina_util.h::EINA_FLT_NONZERO" ref="gad4eb3fc9655b9ceb274dd8b0a7baa5d7" args="(a)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Tools__Group.html#gad4eb3fc9655b9ceb274dd8b0a7baa5d7">EINA_FLT_NONZERO</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a</td><td>)</td>
+          <td>&#160;&#160;&#160;(!!(fpclassify((float)(a)) != FP_ZERO))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Determines if a float is not zero. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The float</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if float is not zero </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
+</div>
+</div>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="ga016f6b7c97a22104a6ba6d1b042548c8"></a><!-- doxytag: member="eina_xattr.h::Eina_Xattr_Flags" ref="ga016f6b7c97a22104a6ba6d1b042548c8" args="" -->
 <div class="memitem">
@@ -154,7 +300,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga016f6b7c97a22104a6ba6d1b042548c8ad35191dac37d61fc7c2801fad48ff557"></a><!-- doxytag: member="EINA_XATTR_INSERT" ref="gga016f6b7c97a22104a6ba6d1b042548c8ad35191dac37d61fc7c2801fad48ff557" args="" -->EINA_XATTR_INSERT</em>&nbsp;</td><td>
-<p>This is the default behaviour, it will either create or replace the extended attribute </p>
+<p>This is the default behavior, it will either create or replace the extended attribute </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga016f6b7c97a22104a6ba6d1b042548c8ace44490bfe4f7e023f0756874dd9286e"></a><!-- doxytag: member="EINA_XATTR_REPLACE" ref="gga016f6b7c97a22104a6ba6d1b042548c8ace44490bfe4f7e023f0756874dd9286e" args="" -->EINA_XATTR_REPLACE</em>&nbsp;</td><td>
 <p>This will only succeed if the extended attribute previously existed </p>
@@ -169,6 +315,44 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga2eff9dff88bf972e43961d1a746fe7c4"></a><!-- doxytag: member="eina_util.h::eina_dbl_exact" ref="ga2eff9dff88bf972e43961d1a746fe7c4" args="(double a, double b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Eina__Tools__Group.html#ga2eff9dff88bf972e43961d1a746fe7c4">eina_dbl_exact</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Warningless comparison of doubles using ==. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>First member to compare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Second member to compare</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if two doubles match </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaaa4c9c9269f1cc1508ca0a785dec8c1c"></a><!-- doxytag: member="eina_util.h::eina_environment_home_get" ref="gaaa4c9c9269f1cc1508ca0a785dec8c1c" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -185,10 +369,10 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Returns the content of the environment referred by HOME on this system. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A temporary string to the content refered by HOME on this system.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A temporary string to the content referred by HOME on this system.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The result of this call is highly system dependent and you better use it instead of the naive getenv("HOME").</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -208,10 +392,48 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Returns the content of the environment referred as TMPDIR on this system. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A temporary string to the content refered by TMPDIR on this system.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A temporary string to the content referred by TMPDIR on this system.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The result of this call is highly system dependent and you better use it instead of the naive getenv("TMPDIR").</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga067b67f9f7a9c83f26abd15a45203c33"></a><!-- doxytag: member="eina_util.h::eina_flt_exact" ref="ga067b67f9f7a9c83f26abd15a45203c33" args="(float a, float b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Eina__Tools__Group.html#ga067b67f9f7a9c83f26abd15a45203c33">eina_flt_exact</a> </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Warningless comparison of floats using ==. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>First member to compare </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>Second member to compare</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if two floats match </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
 
 </div>
 </div>
@@ -243,15 +465,15 @@ Functions</h2></td></tr>
 <p>Copies the extended attribute from one file to another. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">src</td><td>source file to use as input. </td></tr>
-    <tr><td class="paramname">dst</td><td>destination file to use as output. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>source file to use as input. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dst</td><td>destination file to use as output. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tools__Group.html#ga4a390793e982c9e95a2e2507d1a63286" title="Copies the extended attribute from one file descriptor to another.">eina_xattr_fd_copy()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tools__Group.html#ga4a390793e982c9e95a2e2507d1a63286" title="Copies the extended attribute from one file descriptor to another.">eina_xattr_fd_copy()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -283,14 +505,14 @@ Functions</h2></td></tr>
 <p>Deletes (removes) an extended attribute from a file. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The file to del the extended attribute from. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The attribute to del. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to del the extended attribute from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The attribute to del. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -328,15 +550,15 @@ Functions</h2></td></tr>
 <p>Gets a double from an extended attribute properties. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The file to get the string from. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The attribute to get. </td></tr>
-    <tr><td class="paramname">value</td><td>Where to put the extracted value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to get the string from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The attribute to get. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Where to put the extracted value </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This call check that the double is correctly set.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -381,15 +603,15 @@ Functions</h2></td></tr>
 <p>Sets a double as a extended attribute properties. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The file to set the double to. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The attribute to set. </td></tr>
-    <tr><td class="paramname">value</td><td>The NULL-terminated double to set. </td></tr>
-    <tr><td class="paramname">flags</td><td>Define the set policy. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to set the double to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The attribute to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The NULL-terminated double to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>Define the set policy. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -422,15 +644,15 @@ Functions</h2></td></tr>
 <p>Copies the extended attribute from one file descriptor to another. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">src</td><td>source file descriptor to use as input. </td></tr>
-    <tr><td class="paramname">dst</td><td>destination file descriptor to use as output. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>source file descriptor to use as input. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">dst</td><td>destination file descriptor to use as output. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tools__Group.html#ga9fd3fd84d94a22238cea988b1f4ee569" title="Copies the extended attribute from one file to another.">eina_xattr_copy()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tools__Group.html#ga9fd3fd84d94a22238cea988b1f4ee569" title="Copies the extended attribute from one file to another.">eina_xattr_copy()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -462,14 +684,14 @@ Functions</h2></td></tr>
 <p>Deletes (removes) an extended attribute from a file descriptor. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">fd</td><td>The file descriptor to del the extended attribute from. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The attribute to del. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>The file descriptor to del the extended attribute from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The attribute to del. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -507,16 +729,16 @@ Functions</h2></td></tr>
 <p>Retrieves an extended attribute from a file descriptor. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">fd</td><td>The file descriptor to retrieve the extended attribute from. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The extended attribute name to retrieve. </td></tr>
-    <tr><td class="paramname">size</td><td>The size of the retrieved extended attribute. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>The file descriptor to retrieve the extended attribute from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The extended attribute name to retrieve. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>The size of the retrieved extended attribute. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the allocated data that hold the extended attribute value.</dd></dl>
 <p>It will return <code>NULL</code> and *size will be <code>0</code> if it fails.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -538,13 +760,13 @@ Functions</h2></td></tr>
 <p>Gets an iterator that list all extended attribute related to a fd. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">fd</td><td>The file descriptor to retrieve the extended attribute list from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>The file descriptor to retrieve the extended attribute list from. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>an iterator.</dd></dl>
 <p>The iterator will not allocate any data during the iteration step, so you need to copy them yourself if you need.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -595,17 +817,17 @@ Functions</h2></td></tr>
 <p>Sets an extended attribute on a file descriptor. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">fd</td><td>The file descriptor to set the extended attribute to. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The attribute to set. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to set. </td></tr>
-    <tr><td class="paramname">length</td><td>The length of the data to set. </td></tr>
-    <tr><td class="paramname">flags</td><td>Define the set policy. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>The file descriptor to set the extended attribute to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The attribute to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the data to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>Define the set policy. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -643,15 +865,15 @@ Functions</h2></td></tr>
 <p>Retrieves an extended attribute from a file. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The file to retrieve the extended attribute from. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The extended attribute name to retrieve. </td></tr>
-    <tr><td class="paramname">size</td><td>The size of the retrieved extended attribute. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to retrieve the extended attribute from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The extended attribute name to retrieve. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>The size of the retrieved extended attribute. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the allocated data that hold the extended attribute value.</dd></dl>
 <p>It will return <code>NULL</code> and *size will be <code>0</code> if it fails.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -690,15 +912,15 @@ Functions</h2></td></tr>
 <p>Gets a int from an extended attribute properties. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The file to get the string from. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The attribute to get. </td></tr>
-    <tr><td class="paramname">value</td><td>Where to put the extracted value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to get the string from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The attribute to get. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Where to put the extracted value </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This call check that the int is correctly set.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -743,15 +965,15 @@ Functions</h2></td></tr>
 <p>Sets an int as a extended attribute properties. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The file to set the int to. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The attribute to set. </td></tr>
-    <tr><td class="paramname">value</td><td>The NULL-terminated int to set. </td></tr>
-    <tr><td class="paramname">flags</td><td>Define the set policy. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to set the int to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The attribute to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The NULL-terminated int to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>Define the set policy. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -771,16 +993,16 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets an iterator that list all extended attribute of a file. </p>
+<p>Gets an iterator that lists all extended attribute of a file. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The filename to retrieve the extended attribute list from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The filename to retrieve the extended attribute list from. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>an iterator.</dd></dl>
 <p>The iterator will not allocate any data during the iteration step, so you need to copy them yourself if you need.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -831,16 +1053,16 @@ Functions</h2></td></tr>
 <p>Sets an extended attribute on a file. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The file to set the extended attribute to. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The attribute to set. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to set. </td></tr>
-    <tr><td class="paramname">length</td><td>The length of the data to set. </td></tr>
-    <tr><td class="paramname">flags</td><td>Define the set policy. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to set the extended attribute to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The attribute to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the data to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>Define the set policy. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -873,14 +1095,14 @@ Functions</h2></td></tr>
 <p>Gets a string from an extended attribute properties. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The file to get the string from. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The attribute to get. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to get the string from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The attribute to get. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A valid string on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This call check that the string is properly NULL-terminated before returning it.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -925,15 +1147,15 @@ Functions</h2></td></tr>
 <p>Sets a string as a extended attribute properties. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The file to set the string to. </td></tr>
-    <tr><td class="paramname">attribute</td><td>The attribute to set. </td></tr>
-    <tr><td class="paramname">data</td><td>The NULL-terminated string to set. </td></tr>
-    <tr><td class="paramname">flags</td><td>Define the set policy. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file to set the string to. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">attribute</td><td>The attribute to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The NULL-terminated string to set. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>Define the set policy. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE on success, EINA_FALSE otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -956,13 +1178,13 @@ Functions</h2></td></tr>
 <p>Gets an iterator that list all extended attribute value related to a fd. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">fd</td><td>The file descriptor to retrieve the extended attribute list from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>The file descriptor to retrieve the extended attribute list from. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An iterator.</dd></dl>
 <p>The iterator will not allocate any data during the iteration step, so you need to copy them yourself if you need. The iterator will provide an Eina_Xattr structure.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -985,13 +1207,13 @@ Functions</h2></td></tr>
 <p>Gets an iterator that list all extended attribute value related to a fd. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">file</td><td>The filename to retrieve the extended attribute list from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The filename to retrieve the extended attribute list from. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An iterator.</dd></dl>
 <p>The iterator will not allocate any data during the iteration step, so you need to copy them yourself if you need. The iterator will provide an Eina_Xattr structure.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>

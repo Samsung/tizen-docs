@@ -27,7 +27,7 @@ To create an application that displays the "Hello World" text label:
     namespace HelloTest
     ```
 
-3.  Derive the application from the [Tizen.NUI.NUIApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.NUIApplication.html) class:
+3.  Derive the application from the [Tizen.NUI.NUIApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.NUIApplication.html) class:
 
     ```
     class Example : NUIApplication
@@ -46,11 +46,11 @@ To create an application that displays the "Hello World" text label:
     ```
 
     > **Note**  
-    > To invoke the `Created` event of the [Tizen.Applications.CoreApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.CoreApplication.html) class, you must call the `base.OnCreate()` method inside the override.
+    > To invoke the `Created` event of the [Tizen.Applications.CoreApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class, you must call the `base.OnCreate()` method inside the override.
 
 5.  Within the `Initialize()` method, set the text label properties:
 
-    1.  Create the text label object from the [Tizen.NUI.BaseComponents.TextLabel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
+    1.  Create the text label object from the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
 
         ```
         _text = new TextLabel("Hello World");
@@ -83,7 +83,7 @@ To create an application that displays the "Hello World" text label:
     For more information on the key properties of the `Tizen.NUI.BaseComponents.TextLabel` class, see [TextLabel](textlabel.md).
 
 6.  Implement the main application window:
-    1.  Create the window and add an event handler for the `TouchEvent` event of the [Tizen.NUI.Window](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Window.html) class. This event handler is invoked whenever the application window is clicked.
+    1.  Create the window and add an event handler for the `TouchEvent` event of the [Tizen.NUI.Window](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html) class. This event handler is invoked whenever the application window is clicked.
 
         ```
         Window window = Window.Instance;

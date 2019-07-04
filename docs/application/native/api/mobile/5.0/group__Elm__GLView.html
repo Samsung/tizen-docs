@@ -90,14 +90,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">GLView</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
 <img src="glview_inheritance_tree.png" alt="glview_inheritance_tree.png"/>
 </div>
  <p>A GLView widget allows for simple GL rendering in elementary environment. GLView hides all the complicated evas_gl details so that the user only has to deal with registering a few callback functions for rendering to a surface using OpenGL APIs.</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_GLView:</p>
+<p>This widget emits the following signals, besides the ones sent from GLView:</p>
 <ul>
 <li><code>"focused"</code> - when glview has received focus.</li>
 <li><code>"unfocused"</code> - when glview has lost focus.</li>
@@ -108,9 +108,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__GLView.html#ga2ab32b7aee3433992b3f0edba5909a42">elm_glview_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__GLView.html#ga1e1544c2e0a7531f07e8cae105c38e3b">elm_glview_changed_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__GLView.html#ga58a8ed33d880aaad30a52aad3b221d9b">elm_glview_size_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int *w, int *h)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__GLView.html#gac83858022b266b1ac0026b51616cf2fc">elm_glview_size_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int w, int h)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__GLView.html#gae6bc093d6804c3131df752e80aca724c">elm_glview_del_func_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_GLView_Func_Cb func)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__GLView.html#ga4f3cc094a7f467595c6c5d4ebb8a02cd">elm_glview_resize_func_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_GLView_Func_Cb func)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__GLView.html#ga0a2bcda5d7e37ed2dbfd43da47046f05">elm_glview_render_func_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_GLView_Func_Cb func)</td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="ga4d0a2281e13c66d7274987ef24e7abe7"></a><!-- doxytag: member="elm_glview_common.h::Elm_GLView_Mode" ref="ga4d0a2281e13c66d7274987ef24e7abe7" args="" -->
+<a class="anchor" id="ga4d0a2281e13c66d7274987ef24e7abe7"></a><!-- doxytag: member="elm_glview.eo.legacy.h::Elm_GLView_Mode" ref="ga4d0a2281e13c66d7274987ef24e7abe7" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -122,12 +128,13 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Selects the target surface properties. </p>
-<p>An OR combination of <code>Elm_GLView_Mode</code> values should be passed to elm_glview_mode_set when setting up a GL widget. These flags will specify the properties of the rendering target surface; in particular, the mode can request the surface to support alpha, depth and stencil buffers.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd><code>ELM_GLVIEW_CLIENT_SIDE_ROTATION</code> is a special value that indicates to EFL that the application will handle the view rotation when the device is rotated. This is needed only when the application requests direct rendering. Please refer to <a class="el" href="group__Evas__GL.html">Rendering GL on Evas</a> for more information about direct rendering.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>elm_glview_mode_set </dd>
-<dd>
-<a class="el" href="group__Elementary__GL__Helpers.html">OpenGL with Elementary</a> </dd></dl>
+<p>An OR combination of Elm_GLView_Mode values should be passed to elm_glview_mode_set when setting up a GL widget. These flags will specify the properties of the rendering target surface; in particular, the mode can request the surface to support alpha, depth and stencil buffers.</p>
+<p>ELM_GLVIEW_CLIENT_SIDE_ROTATION is a special value that indicates to EFL that the application will handle the view rotation when the device is rotated. This is needed only when the application requests direct rendering. Please refer to Evas_GL for more information about direct rendering.</p>
+<p>See elm_glview_mode_set See elm_opengl_page </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga4d0a2281e13c66d7274987ef24e7abe7a3bafbbb22e18367dbe7d9095384f3b19"></a><!-- doxytag: member="ELM_GLVIEW_NONE" ref="gga4d0a2281e13c66d7274987ef24e7abe7a3bafbbb22e18367dbe7d9095384f3b19" args="" -->ELM_GLVIEW_NONE</em>&nbsp;</td><td>
+<p>Default mode </p>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga4d0a2281e13c66d7274987ef24e7abe7a00c61dd95cd14bfb20b575e85913990a"></a><!-- doxytag: member="ELM_GLVIEW_ALPHA" ref="gga4d0a2281e13c66d7274987ef24e7abe7a00c61dd95cd14bfb20b575e85913990a" args="" -->ELM_GLVIEW_ALPHA</em>&nbsp;</td><td>
 <p>Alpha channel enabled rendering mode </p>
 </td></tr>
@@ -185,58 +192,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gab0c73016c3466ad45c58814aae34ddd7"></a><!-- doxytag: member="elm_glview_common.h::Elm_GLView_Render_Policy" ref="gab0c73016c3466ad45c58814aae34ddd7" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__Elm__GLView.html#gab0c73016c3466ad45c58814aae34ddd7">Elm_GLView_Render_Policy</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Defines a policy for gl rendering.</p>
-<p>The rendering policy tells glview where to run the gl rendering code. ELM_GLVIEW_RENDER_POLICY_ON_DEMAND tells glview to call the rendering calls on demand, which means that the rendering code gets called only when it is visible.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Default is ELM_GLVIEW_RENDER_POLICY_ON_DEMAND </dd></dl>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggab0c73016c3466ad45c58814aae34ddd7a17ebe10e3b42f7668727e5ee4f9a382a"></a><!-- doxytag: member="ELM_GLVIEW_RENDER_POLICY_ON_DEMAND" ref="ggab0c73016c3466ad45c58814aae34ddd7a17ebe10e3b42f7668727e5ee4f9a382a" args="" -->ELM_GLVIEW_RENDER_POLICY_ON_DEMAND</em>&nbsp;</td><td>
-<p>Render only when there is a need for redrawing </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggab0c73016c3466ad45c58814aae34ddd7a8753d328ffccbe05bb656ab5d94cf6f8"></a><!-- doxytag: member="ELM_GLVIEW_RENDER_POLICY_ALWAYS" ref="ggab0c73016c3466ad45c58814aae34ddd7a8753d328ffccbe05bb656ab5d94cf6f8" args="" -->ELM_GLVIEW_RENDER_POLICY_ALWAYS</em>&nbsp;</td><td>
-<p>Render always even when it is not visible </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga9c04014df286723f9716e974d9bb7912"></a><!-- doxytag: member="elm_glview_common.h::Elm_GLView_Resize_Policy" ref="ga9c04014df286723f9716e974d9bb7912" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="group__Elm__GLView.html#ga9c04014df286723f9716e974d9bb7912">Elm_GLView_Resize_Policy</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Defines a policy for the glview resizing.</p>
-<p>The resizing policy tells glview what to do with the underlying surface when resize happens. ELM_GLVIEW_RESIZE_POLICY_RECREATE will destroy the current surface and recreate the surface to the new size. ELM_GLVIEW_RESIZE_POLICY_SCALE will instead keep the current surface but only display the result at the desired size scaled.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Default is ELM_GLVIEW_RESIZE_POLICY_RECREATE </dd></dl>
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga9c04014df286723f9716e974d9bb7912a47c5f63726f7746784449b3025facf16"></a><!-- doxytag: member="ELM_GLVIEW_RESIZE_POLICY_RECREATE" ref="gga9c04014df286723f9716e974d9bb7912a47c5f63726f7746784449b3025facf16" args="" -->ELM_GLVIEW_RESIZE_POLICY_RECREATE</em>&nbsp;</td><td>
-<p>Resize the internal surface along with the image </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga9c04014df286723f9716e974d9bb7912a837f5662af71d4399b4af3dee43ff2b7"></a><!-- doxytag: member="ELM_GLVIEW_RESIZE_POLICY_SCALE" ref="gga9c04014df286723f9716e974d9bb7912a837f5662af71d4399b4af3dee43ff2b7" args="" -->ELM_GLVIEW_RESIZE_POLICY_SCALE</em>&nbsp;</td><td>
-<p>Only resize the internal image and not the surface </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga2ab32b7aee3433992b3f0edba5909a42"></a><!-- doxytag: member="elm_glview_legacy.h::elm_glview_add" ref="ga2ab32b7aee3433992b3f0edba5909a42" args="(Evas_Object *parent)" -->
 <div class="memitem">
@@ -259,7 +214,232 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="glview_example_01_8c-example.html#a42">glview_example_01.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga1e1544c2e0a7531f07e8cae105c38e3b"></a><!-- doxytag: member="elm_glview_legacy.h::elm_glview_changed_set" ref="ga1e1544c2e0a7531f07e8cae105c38e3b" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__GLView.html#ga1e1544c2e0a7531f07e8cae105c38e3b">elm_glview_changed_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Notifies that there has been changes in the GLView.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The GLView object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="glview_example_01_8c-example.html#a30">glview_example_01.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gae6bc093d6804c3131df752e80aca724c"></a><!-- doxytag: member="elm_glview_legacy.h::elm_glview_del_func_set" ref="gae6bc093d6804c3131df752e80aca724c" args="(Evas_Object *obj, Elm_GLView_Func_Cb func)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__GLView.html#gae6bc093d6804c3131df752e80aca724c">elm_glview_del_func_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Elm_GLView_Func_Cb&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the delete function that runs in the main loop.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The GLView object </td></tr>
+    <tr><td class="paramname">func</td><td>The callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="glview_example_01_8c-example.html#a45">glview_example_01.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga0a2bcda5d7e37ed2dbfd43da47046f05"></a><!-- doxytag: member="elm_glview_legacy.h::elm_glview_render_func_set" ref="ga0a2bcda5d7e37ed2dbfd43da47046f05" args="(Evas_Object *obj, Elm_GLView_Func_Cb func)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__GLView.html#ga0a2bcda5d7e37ed2dbfd43da47046f05">elm_glview_render_func_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Elm_GLView_Func_Cb&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the render function that runs in the main loop.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The GLView object </td></tr>
+    <tr><td class="paramname">func</td><td>The callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="glview_example_01_8c-example.html#a47">glview_example_01.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga4f3cc094a7f467595c6c5d4ebb8a02cd"></a><!-- doxytag: member="elm_glview_legacy.h::elm_glview_resize_func_set" ref="ga4f3cc094a7f467595c6c5d4ebb8a02cd" args="(Evas_Object *obj, Elm_GLView_Func_Cb func)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__GLView.html#ga4f3cc094a7f467595c6c5d4ebb8a02cd">elm_glview_resize_func_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Elm_GLView_Func_Cb&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the resize function that gets called when resize happens.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The GLView object </td></tr>
+    <tr><td class="paramname">func</td><td>The callback function </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="glview_example_01_8c-example.html#a46">glview_example_01.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga58a8ed33d880aaad30a52aad3b221d9b"></a><!-- doxytag: member="elm_glview_legacy.h::elm_glview_size_get" ref="ga58a8ed33d880aaad30a52aad3b221d9b" args="(const Evas_Object *obj, int *w, int *h)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__GLView.html#ga58a8ed33d880aaad30a52aad3b221d9b">elm_glview_size_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Gets the size of the GLView.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The GLView object </td></tr>
+    <tr><td class="paramname">w</td><td>pointer of int width </td></tr>
+    <tr><td class="paramname">h</td><td>pointer of int height </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="glview_example_01_8c-example.html#a20">glview_example_01.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gac83858022b266b1ac0026b51616cf2fc"></a><!-- doxytag: member="elm_glview_legacy.h::elm_glview_size_set" ref="gac83858022b266b1ac0026b51616cf2fc" args="(Evas_Object *obj, int w, int h)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__GLView.html#gac83858022b266b1ac0026b51616cf2fc">elm_glview_size_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Sets the size of the GLView.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The GLView object </td></tr>
+    <tr><td class="paramname">w</td><td>width of GLView </td></tr>
+    <tr><td class="paramname">h</td><td>height of GLView </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>

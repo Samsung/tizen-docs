@@ -6,7 +6,7 @@ The segmentcontrol component consists of several segment items. A segment item i
 
 The segmentcontrol component inherits from the layout component, which means that layout functions can be used on the segmentcontrol component.
 
-For more information, see the [SegmentControl](../../../../api/mobile/latest/group__Elm__SegmentControl.html) API.
+For more information, see the [SegmentControl](../../../../api/mobile/latest/group__Elm__Segment__Control.html) API.
 
 **Figure: Segmentcontrol component (with text on left and with icons on right)**
 

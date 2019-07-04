@@ -30,7 +30,7 @@ The sent status of the SMS and MMS messages can be checked asynchronously. You r
 
 To enable your application to use the messaging functionality:
 
-1.  To use the [Tizen.Messaging.Messages](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Messaging.Messages](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Messages.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -59,7 +59,7 @@ To manage events related to messages:
     }
     ```
 
-2.  Register the event handler for the `MessageReceived` event of the [Tizen.Messaging.Messages.MessagesManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesManager.html) class:
+2.  Register the event handler for the `MessageReceived` event of the [Tizen.Messaging.Messages.MessagesManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Messages.MessagesManager.html) class:
 
     ```
     MessagesManager.MessageReceived += EventHandlerMessageReceived;
@@ -78,7 +78,7 @@ You can send SMS (Short Message Service) messages and MMS (Multimedia Message Se
 
 To send a message:
 
-1.  Create a message by creating an instance of the [Tizen.Messaging.Messages.SmsMessage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.SmsMessage.html) or [Tizen.Messaging.Messages.MmsMessage](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MmsMessage.html) class.
+1.  Create a message by creating an instance of the [Tizen.Messaging.Messages.SmsMessage](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Messages.SmsMessage.html) or [Tizen.Messaging.Messages.MmsMessage](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Messages.MmsMessage.html) class.
 
     The following example creates an MMS message:
 
@@ -86,7 +86,7 @@ To send a message:
     var msg = new MmsMessage();
     ```
 
-2.  Define the recipient, as a new instance of the [Tizen.Messaging.Messages.MessagesAddress](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesAddress.html) class, and add the message body and SIM slot ID into the `Tizen.Messaging.Messages.MmsMessage` instance:
+2.  Define the recipient, as a new instance of the [Tizen.Messaging.Messages.MessagesAddress](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Messages.MessagesAddress.html) class, and add the message body and SIM slot ID into the `Tizen.Messaging.Messages.MmsMessage` instance:
 
     ```
     var address = new MessagesAddress("1234567890");
@@ -102,14 +102,14 @@ To send a message:
         msg.Subject = "Tizen C# test subject";
         ```
 
-    -   Add attachments using their absolute path in the device file system. Before adding an attachment, create it as a new instance of the [Tizen.Messaging.Messages.MessagesAttachment](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesAttachment.html) class and give it the appropriate attachment type by using values of the [Tizen.Messaging.Messages.MediaType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MediaType.html) enumeration.
+    -   Add attachments using their absolute path in the device file system. Before adding an attachment, create it as a new instance of the [Tizen.Messaging.Messages.MessagesAttachment](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Messages.MessagesAttachment.html) class and give it the appropriate attachment type by using values of the [Tizen.Messaging.Messages.MediaType](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Messages.MediaType.html) enumeration.
 
         ```
         var attachment = new MessagesAttachment(MediaType.Image, "/path/to/image/file");
         msg.Attachments.Add(attachment);
         ```
 
-4.  Send the message with the `SendMessageAsync()` method of the [Tizen.Messaging.Messages.MessagesManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesManager.html) class:
+4.  Send the message with the `SendMessageAsync()` method of the [Tizen.Messaging.Messages.MessagesManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Messages.MessagesManager.html) class:
 
     ```
     var result = await MessagesManager.SendMessageAsync(msg, false);
@@ -117,9 +117,9 @@ To send a message:
 
 <a name="fetching"></a>
 ## Fetching Messages from a Specified Message Box
-To fetch messages from a message box, use the `SearchMessageAsync()` method of the [Tizen.Messaging.Messages.MessagesManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesManager.html) class with an appropriate filter:
+To fetch messages from a message box, use the `SearchMessageAsync()` method of the [Tizen.Messaging.Messages.MessagesManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Messages.MessagesManager.html) class with an appropriate filter:
 
-1.  Create a new filter as an instance of the [Tizen.Messaging.Messages.MessagesSearchFilter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Messages.MessagesSearchFilter.html) class:
+1.  Create a new filter as an instance of the [Tizen.Messaging.Messages.MessagesSearchFilter](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Messages.MessagesSearchFilter.html) class:
 
     ```
     var filter = new MessagesSearchFilter();

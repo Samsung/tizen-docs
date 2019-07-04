@@ -90,7 +90,192 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">map_example_03.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment">
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">typedef</span> <span class="keyword">struct </span>_Example_Data
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *map, *entry;
+   <a class="code" href="group__Elm__Map.html#ga055f1e71930a7b906ddc03b180cf3d73">Elm_Map_Route</a> *route;
+   <span class="keywordtype">double</span> start_lon, start_lat, dest_lon, dest_lat;
+   <a class="code" href="group__Elm__Map.html#ga73173d5c600925adcbaac5c55f5462d3">Elm_Map_Name</a> *name;
+   <a class="code" href="group__Elm__Map.html#ga6b75280d64c71af38288849960d572fe">Elm_Map_Overlay</a> *route_ovl;
+} Example_Data;
+
+<span class="keyword">static</span> Example_Data example_data;
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_route_loaded(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *ev <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>)
+{
+   Example_Data *exam_data = data;
+
+   exam_data-&gt;route_ovl = <a name="a1"></a><a class="code" href="group__Elm__Map.html#ga8c5cba6c4ff67c11035d36e67e6d8803" title="Add a new route overlay to the map object. This overlay has a route type.">elm_map_overlay_route_add</a>(obj, exam_data-&gt;route);
+   <a name="a2"></a><a class="code" href="group__Elm__Map.html#ga2ef4c31306107b391f13e965813f60cd">elm_map_overlay_color_set</a>(exam_data-&gt;route_ovl, 0, 255, 0, 255);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_name_loaded(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *ev <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>)
+{
+   Example_Data *exam_data = data;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *map = obj;
+
+   <span class="keywordflow">if</span> (exam_data-&gt;route)
+     <a name="a3"></a><a class="code" href="group__Elm__Map.html#gaf3eeb8329e577c8b7c08c9ddc656df77">elm_map_route_del</a>(exam_data-&gt;route);
+
+   <a name="a4"></a><a class="code" href="group__Elm__Map.html#gae5c6d7cfa664af6387d73637953b196e">elm_map_name_region_get</a>(exam_data-&gt;name, &amp;(exam_data-&gt;dest_lon),
+                           &amp;(exam_data-&gt;dest_lat));
+
+   exam_data-&gt;route = <a name="a5"></a><a class="code" href="group__Elm__Map.html#ga64d63aafc59938f16f7ab731c134446f" title="Add a new route to the map object.">elm_map_route_add</a>(map, <a name="a6"></a><a class="code" href="group__Elm__Map.html#gga475f32243c8d8fcb3081b80194f8fe27a6433a84142f9bb8eb914ae9f482cdb95">ELM_MAP_ROUTE_TYPE_FOOT</a>,
+                                        <a name="a7"></a><a class="code" href="group__Elm__Map.html#ggaaa4a6dd08f05a645f2c963c05e1c1186ab0b4e63fbeac790d7e1769695b17910b">ELM_MAP_ROUTE_METHOD_SHORTEST</a>,
+                                        exam_data-&gt;start_lon, exam_data-&gt;start_lat,
+                                        exam_data-&gt;dest_lon, exam_data-&gt;dest_lat,
+                                        NULL, NULL);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_bt_route(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   Example_Data *exam_data = data;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *map;
+   <span class="keywordtype">char</span> *address;
+
+   map = exam_data-&gt;map;
+   address = (<span class="keywordtype">char</span> *)elm_object_text_get(exam_data-&gt;entry);
+
+   exam_data-&gt;name = <a name="a8"></a><a class="code" href="group__Elm__Map.html#ga809e58db6acec246dfd6825e919f10db" title="Request a address or geographic coordinates(longitude, latitude) from a given address or geographic c...">elm_map_name_add</a>(map, address, 0, 0, NULL, NULL);
+
+   <a name="a9"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(map, <span class="stringliteral">&quot;name,loaded&quot;</span>, _name_loaded, data);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(map, <span class="stringliteral">&quot;route,loaded&quot;</span>, _route_loaded, data);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_bt_zoom_in(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> zoom;
+   <a name="a10"></a><a class="code" href="group__Elm__Map.html#gaacec2a1019adf71a9b7e3b5fa011c90e" title="Set the zoom mode used by the map object.">elm_map_zoom_mode_set</a>(data, <a name="a11"></a><a class="code" href="group__Elm__Map.html#ggae60f2343c0e098264c246d7e2679abe5a35d8c2519926ab59a7bd5835739cd9b7">ELM_MAP_ZOOM_MODE_MANUAL</a>);
+   zoom = <a name="a12"></a><a class="code" href="group__Elm__Map.html#ga8e5d0739948105e07d77a00013831f6c" title="Get the zoom level of the map.">elm_map_zoom_get</a>(data);
+   <a name="a13"></a><a class="code" href="group__Elm__Map.html#ga6869a7b99657ee01b0ee19c68c47fc0a" title="Set the zoom level of the map.">elm_map_zoom_set</a>(data, zoom + 1);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_bt_zoom_out(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *ev EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> zoom;
+   <a class="code" href="group__Elm__Map.html#gaacec2a1019adf71a9b7e3b5fa011c90e" title="Set the zoom mode used by the map object.">elm_map_zoom_mode_set</a>(data, <a class="code" href="group__Elm__Map.html#ggae60f2343c0e098264c246d7e2679abe5a35d8c2519926ab59a7bd5835739cd9b7">ELM_MAP_ZOOM_MODE_MANUAL</a>);
+   zoom = <a class="code" href="group__Elm__Map.html#ga8e5d0739948105e07d77a00013831f6c" title="Get the zoom level of the map.">elm_map_zoom_get</a>(data);
+   <a class="code" href="group__Elm__Map.html#ga6869a7b99657ee01b0ee19c68c47fc0a" title="Set the zoom level of the map.">elm_map_zoom_set</a>(data, zoom - 1);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_bt_zoom_fit(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Map.html#gaacec2a1019adf71a9b7e3b5fa011c90e" title="Set the zoom mode used by the map object.">elm_map_zoom_mode_set</a>(data, <a name="a14"></a><a class="code" href="group__Elm__Map.html#ggae60f2343c0e098264c246d7e2679abe5a2146e83a3cb0809732a6643a765b6e21">ELM_MAP_ZOOM_MODE_AUTO_FIT</a>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_bt_zoom_fill(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Map.html#gaacec2a1019adf71a9b7e3b5fa011c90e" title="Set the zoom mode used by the map object.">elm_map_zoom_mode_set</a>(data, <a name="a15"></a><a class="code" href="group__Elm__Map.html#ggae60f2343c0e098264c246d7e2679abe5a380228deffe851d3598cd2b0e22948ad">ELM_MAP_ZOOM_MODE_AUTO_FILL</a>);
+}
+
+<span class="comment">/* FIXME: it shouldn&#39;t be required. For unknown reason map won&#39;t call</span>
+<span class="comment"> * pan_calculate until shot delay time, but then it will take a screenshot</span>
+<span class="comment"> * when the map isn&#39;t loaded yet (actually it won&#39;t be downloaded, because</span>
+<span class="comment"> * after the SS it will kill the example). */</span>
+<span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
+_nasty_hack(<span class="keywordtype">void</span> *data)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o = data;
+   <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e = evas_object_evas_get(o);
+   <a name="a16"></a><a class="code" href="group__Evas__Canvas.html#ga0cfa7df81a1c781997f7cdcb8aa4f69e">evas_smart_objects_calculate</a>(e);
+   <span class="keywordflow">return</span> <a name="a17"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gae0c653baad8836232c0dc27f91f875d6">ECORE_CALLBACK_CANCEL</a>;
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *map, *box, *bt, *entry;
+
+   <a name="a18"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a19"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;map&quot;</span>, <span class="stringliteral">&quot;Map Route Example&quot;</span>);
+   <a name="a20"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a21"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   map = <a name="a22"></a><a class="code" href="group__Elm__Map.html#ga509621f20872fe3ef3418919f7fda396">elm_map_add</a>(win);
+   evas_object_size_hint_weight_set(map, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a23"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, map);
+   <a name="a24"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(map);
+
+   box = <a name="a25"></a><a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a name="a26"></a><a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(box, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   bt = <a name="a27"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;+&quot;</span>);
+   <a name="a28"></a><a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_in, map);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, 0);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;-&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_out, map);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, 0);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;X&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_fit, map);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, 0);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;#&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_zoom_fill, map);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, 0);
+
+   entry = <a name="a29"></a><a class="code" href="group__Elm__Entry.html#ga9b6db43001f1f765aa38f8805411b822">elm_entry_add</a>(win);
+   <a name="a30"></a><a class="code" href="group__Elm__Entry.html#ga5eeb0097491a8a5e9413427ba27199d4" title="Enable or disable scrolling in entry.">elm_entry_scrollable_set</a>(entry, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a31"></a><a class="code" href="group__Elm__Entry.html#ga96e162d7def2bbba34c5449d51f87fdd" title="Sets the entry to single line mode.">elm_entry_single_line_set</a>(entry, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_object_text_set(entry, <span class="stringliteral">&quot;Jockey Club Brasileiro&quot;</span>);
+   evas_object_size_hint_weight_set(entry, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(entry, EVAS_HINT_FILL, 0);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, entry);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(entry);
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;Route&quot;</span>);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, _bt_route, &amp;example_data);
+   evas_object_size_hint_align_set(bt, EVAS_HINT_FILL, 0);
+
+   example_data.map = map;
+   example_data.entry = entry;
+   example_data.route = NULL;
+   example_data.start_lon = -43.175;
+   example_data.start_lat = -22.97;
+
+   <a class="code" href="group__Elm__Map.html#ga6869a7b99657ee01b0ee19c68c47fc0a" title="Set the zoom level of the map.">elm_map_zoom_set</a>(map, 12);
+   <a name="a32"></a><a class="code" href="group__Elm__Map.html#gac18d4869797cf49e4fa2e50a3de592f3" title="Show the given coordinates at the center of the map, immediately.">elm_map_region_show</a>(map, example_data.start_lon, example_data.start_lat);
+
+   evas_object_resize(win, 512, 512);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a33"></a><a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(0.5, _nasty_hack, win);
+
+   <a name="a34"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a35"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

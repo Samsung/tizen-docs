@@ -7,13 +7,18 @@
 	 <link href="../snippet.css" rel="StyleSheet" type="text/css" />
 	 <title>Section Changer</title>
  </head>
- <body onload="prettyPrint()" id="content">
+ <body id="content">
 
 <h1>Section Changer</h1>
 
 <p>The section changer component provides an application architecture, which has multiple sections on one page.<br>
 With Section changer on one page, you can scroll the <span style="font-family: Courier New,Courier,monospace">&lt;section&gt;</span> elements horizontally or vertically without changing current page to another.</p><p>
 It gets to have a virtue of needlessness of changing page and the existance of same header within multiple <span style="font-family: Courier New,Courier,monospace">&lt;section&gt;</span> elements.</p>
+
+<video autoplay muted loop controls>
+	<source src="https://developer.tizen.org/sites/default/files/documentation/sectionchanger.mp4">
+</video>
+
 <h2>Table of Contents</h2>
 <ol class="toc">
 
@@ -48,7 +53,8 @@ It gets to have a virtue of needlessness of changing page and the existance of s
 <h2 id="manual-constructor">How to Create Section Changer</h2>
 
 <p>To add a section changer component to the application, use the following code:</p>
-<pre class="prettyprint"><pre class="prettyprint lang-html" style="border:0px; margin:0px">
+<p>HTML code:</p>
+<pre class="prettyprint">
 &lt;div id=&quot;hasSectionchangerPage&quot; class=&quot;ui-page&quot;&gt;
    &lt;header class=&quot;ui-header&quot;&gt;
       &lt;h2 class=&quot;ui-title&quot;&gt;SectionChanger&lt;/h2&gt;
@@ -67,7 +73,11 @@ It gets to have a virtue of needlessness of changing page and the existance of s
          &lt;/section&gt;
       &lt;/div&gt;
    &lt;/div&gt;
-&lt;/div&gt;</pre><pre class="prettyprint lang-js" style="border:0px; margin:0px">(function()
+&lt;/div&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+(function()
 {
    var page = document.getElementById(&quot;hasSectionchangerPage&quot;),
        element = document.getElementById(&quot;sectionchanger&quot;),
@@ -90,7 +100,7 @@ It gets to have a virtue of needlessness of changing page and the existance of s
       sectionChanger.destroy();
    });
 })();
-</pre></pre>
+</pre>
 
 
 <h2 id="options-list">Options</h2>
@@ -198,7 +208,7 @@ It gets to have a virtue of needlessness of changing page and the existance of s
 				</tr>
 				<tr>
 					<td>
-						<pre class="intable prettyprint"><a href="#method-getActiveSectionIndex">getActiveSectionIndex</a>() </pre>
+						<pre class="intable prettyprint"><a href="#method-getActiveSectionIndex">number getActiveSectionIndex</a>() </pre>
 					</td>
 					<td><p>Gets the currently active section element&#39;s index.
 		<br>The return value is a number (<span style="font-family: Courier New,Courier,monospace">activeIndex</span>).</p></td>
@@ -282,7 +292,7 @@ It gets to have a virtue of needlessness of changing page and the existance of s
 		<br>The return value is a number (<span style="font-family: Courier New,Courier,monospace">activeIndex</span>).</p>
 					</div>
 					<div class="synopsis">
-						<pre class="signature prettyprint">getActiveSectionIndex() </pre>
+						<pre class="signature prettyprint">number getActiveSectionIndex() </pre>
 					</div>
 
 					<div class="description">
@@ -362,5 +372,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 })();
 </script>
 
- </body>
+ <script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
+</body>
 </html>

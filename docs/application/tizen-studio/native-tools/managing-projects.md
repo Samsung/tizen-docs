@@ -16,7 +16,7 @@ The Tizen Studio provides the following set of tools to help you create and mana
 
 - [Device Manager](../common-tools/device-manager.md) **(Monitoring Devices with the Device Manager)**
 
-  The Device Manager tool is used to connect and manage devices on which you want to run your application.
+  The Device Manager tool is used to connect and manage devices on which you want to run your application. It also allows you to access the internal file systems and logs in the connected devices.
 
 ## Related Information
 - Dependencies

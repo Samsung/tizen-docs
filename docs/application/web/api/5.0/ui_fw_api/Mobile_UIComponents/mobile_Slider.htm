@@ -7,12 +7,14 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Slider</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 
 <h1>Slider</h1>
 
 <p>The slider component changes the range-type browser input to sliders.</p>
+
+<img src="../../images/mobile_slider.png" width="15%">
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -48,11 +50,13 @@
 
 <p>To manually create a slider component, use the component constructor from the <code>tau</code> namespace</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">&lt;input id=&quot;slider&quot;/&gt;
-&lt;script&gt;
-   var sliderElement = document.getElementById(&quot;slider&quot;),
-       slider = tau.widget.Slider(sliderElement);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var sliderElement = document.getElementById(&quot;slider&quot;),
+    slider = tau.widget.Slider(sliderElement);
 </pre>
 
 <p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
@@ -105,17 +109,19 @@
 
 <p>To call a method on the component, use one of the existing APIs:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">&lt;input id=&quot;slider&quot; type=&quot;range&quot; name=&quot;slider&quot; value=&quot;60&quot; min=&quot;0&quot; max=&quot;100&quot;/&gt;
-&lt;script&gt;
-   var slider = document.getElementById(&quot;slider&quot;),
-       slider = tau.widget.Slider(slider);
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var slider = document.getElementById(&quot;slider&quot;),
+    slider = tau.widget.Slider(slider);
 
-   /*
-      slider.methodName(methodArgument1, methodArgument2, ...);
-      For example:
-   */
-   var value = slider.value(5);
-&lt;/script&gt;
+/*
+   slider.methodName(methodArgument1, methodArgument2, ...);
+   For example:
+*/
+var value = slider.value(5);
 </pre>
 
 	<h3>Summary</h3>
@@ -206,14 +212,16 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input id=&quot;mySlider1&quot; name=&quot;mySlider1&quot; data-popup=&#39;false&#39; type=&quot;range&quot; value=&quot;5&quot; min=&quot;0&quot; max=&quot;10&quot;/&gt;
-&lt;script&gt;
-   var slider = document.getElementById(&quot;mySlider1&quot;),
-       sliderWidget = tau.widget.Slider(slider);
-   sliderWidget.disable();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var slider = document.getElementById(&quot;mySlider1&quot;),
+    sliderWidget = tau.widget.Slider(slider);
+sliderWidget.disable();
 </pre>
 						</div>
 
@@ -260,14 +268,16 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example :</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input id=&quot;mySlider1&quot; name=&quot;mySlider1&quot; data-popup=&#39;false&#39; type=&quot;range&quot; value=&quot;5&quot; min=&quot;0&quot; max=&quot;10&quot;/&gt;
-&lt;script&gt;
-   var slider = document.getElementById(&quot;mySlider1&quot;),
-       sliderWidget = tau.widget.Slider(slider);
-   sliderWidget.enable();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var slider = document.getElementById(&quot;mySlider1&quot;),
+    sliderWidget = tau.widget.Slider(slider);
+sliderWidget.enable();
 </pre>
 						</div>
 
@@ -319,14 +329,16 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example :</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input id=&quot;mySlider1&quot; name=&quot;mySlider1&quot; data-popup=&#39;false&#39; type=&quot;range&quot; value=&quot;5&quot; min=&quot;0&quot; max=&quot;10&quot;/&gt;
-&lt;script&gt;
-   var slider = document.getElementById(&quot;mySlider1&quot;),
-       sliderWidget = tau.widget.Slider(slider);
-   sliderWidget.refresh();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var slider = document.getElementById(&quot;mySlider1&quot;),
+     sliderWidget = tau.widget.Slider(slider);
+sliderWidget.refresh();
 </pre>
 						</div>
 
@@ -381,17 +393,19 @@
 						<div class="example">
 							<span class="example"><p>Code
 								example :</p><p></p></span>
+							<p>HTML code:</p>
 							<pre name="code" class="examplecode
 							prettyprint">
 &lt;input id=&quot;mySlider1&quot; name=&quot;mySlider1&quot; data-popup=&#39;false&#39; type=&quot;range&quot; value=&quot;5&quot; min=&quot;0&quot; max=&quot;10&quot;/&gt;
-&lt;script&gt;
-   var slider = document.getElementById(&quot;mySlider1&quot;),
-       sliderWidget = tau.widget.Slider(slider);
-   /* Value contains index of select tag */
-   value = sliderWidget.value();
-   /* Sets the index for the slider */
-   sliderWidget.value(&quot;1&quot;);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var slider = document.getElementById(&quot;mySlider1&quot;),
+    sliderWidget = tau.widget.Slider(slider);
+/* Value contains index of select tag */
+value = sliderWidget.value();
+/* Sets the index for the slider */
+sliderWidget.value(&quot;1&quot;);
 </pre>
 						</div>
 
@@ -409,5 +423,10 @@
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

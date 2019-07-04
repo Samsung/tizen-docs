@@ -25,7 +25,7 @@ You can use InMobi Tizen Ads in Tizen Web applications, native applications, and
 
 To get started with the InMobi Tizen Ad SDK, read the following guide:
 
-- [InMobi Tizen Ad SDK Programming Guide](inmovi.md)
+- [InMobi Tizen Ad SDK Programming Guide](inmobi.md)
 
 
 **VMAX Tizen Ad SDK**
@@ -34,7 +34,7 @@ VMAX&trade; is the one-stop solution that gives you complete control over your a
 
 VMAX provides support for Ads in Tizen Native, Unity and Web applications.
 
-- Native SDK: It is for the Application developers who want to build Tizen Native App, utilizing EFL (Enlightenment Foundation Libraries) for the UI. Among the other SDK’s available, Native SDK allows building Native feature-rich app.
+- Native SDK: It is for the Application developers who want to build Tizen Native App, utilizing EFL (Enlightenment Foundation Libraries) for the UI. Among the other SDK's available, Native SDK allows building Native feature-rich app.
 - Unity SDK: Game developers can utilize this SDK to monetize various in-game ad placements.
 - Webapp SDK: Web application developers can use this SDK for applications using web technologies (HTML, CSS & Javascript).
 
