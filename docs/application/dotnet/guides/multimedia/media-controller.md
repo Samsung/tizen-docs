@@ -122,7 +122,8 @@ To retrieve the playlist and metadata information on the client side, use the fo
     ```csharp
         controller.PlaylistUpdated += (s, e) =>
         {
-            Tizen.Log.Info(LogTag, $"Updated mode : {e.Mode}, Name : {e.Name}, The title of first song : {e.Playlist.GetMetadata("IDX1").Title}");
+            Tizen.Log.Info(LogTag, $"Updated mode : {e.Mode}, Name : {e.Name},
+			    The title of first song : {e.Playlist.GetMetadata("IDX1").Title}");
         };
     ```
 
