@@ -19,9 +19,7 @@ The main media controller features include:
 
 - Sending and processing commands
 
-    You can [send a command](#sending-and-processing-commands) to the server from the client side, and then process the command on the server side.
-
-    The client can request server state or [metadata](#media-control-metadata-properties) information from the server, and receive it through an event handler.
+    You can [send a command](#sending-and-processing-commands) on the client side, and then process the command on the server side.
 
 - Setting and Getting Playback Capability
 
@@ -113,20 +111,21 @@ You can also create playlist with Metadata using the following code:
 
 ```csharp
 var playlist = new MediaControlPlaylist("MyFavoriate",xx
-	new Dictionary<string, MediaControlMetadata>()
-	{
-		{"Song1", new MediaControlMetadata() {Author = "Someone"} },
-		{"Song2", new MediaControlMetadata()}
-	}
+    new Dictionary<string, MediaControlMetadata>()
+    {
+        {"Song1", new MediaControlMetadata() {Author = "Someone"} },
+        {"Song2", new MediaControlMetadata()}
+    }
 );
 ```
 
 To retrieve the playlist and metadata information on the client side, use the following code:
 ```csharp
-	controller.PlaylistUpdated += (s, e) =>
-	{
-		Tizen.Log.Info(LogTag, $"Updated mode : {e.Mode}, Name : {e.Name}, Title : {e.Playlist.GetMetadata("IDX1").Title}");
-	};
+controller.PlaylistUpdated += (s, e) =>
+{
+    Tizen.Log.Info(LogTag, $"Updated mode : {e.Mode}, Name : {e.Name}, Title :
+{e.Playlist.GetMetadata("IDX1").Title}");
+};
 ```
 
 ## Sending and Processing Commands
@@ -163,7 +162,7 @@ To get playback capability from the client and to set it on the server side, fol
 2. To get playback capability on the client side, use the `GetPlaybackCapability` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
-    var playCommandCapability = controller.GetPlaybackCapability((MediaControlPlaybackCommand.Play);
+    var playCommandCapability = controller.GetPlaybackCapability(MediaControlPlaybackCommand.Play);
     ```
 
 ## Media Control Metadata Properties
