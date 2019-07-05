@@ -1,8 +1,12 @@
 # Update Tizen Studio
+
 This page explains how to install, update, and remove packages using the Package Manager tool, and also guides advanced users to manage packages with the CLI version of the tool. At its core, Tizen Studio primarily comprises of various packages that comprises of necessary files, metadata, installation, and removal scripts, and these packages have interdependencies. 
+
 Once you install Tizen Studio, it is easy to keep the packages, platforms and other tools up to date with automatic updates. Tizen Studio includes a comprehensive package management tool to manage the processes, such as installing, uninstalling, and updating packages, platforms, and other related tools.
+
 ## Launch Package Manager
-The Package Manager offers a simple way to manage packages without getting into the complicated package dependencies.
+
+Package Manager offers a simple way to manage packages without getting into the complicated package dependencies.
 
 To launch Package Manager on your preferred operating system, follow these steps: 
 
@@ -26,26 +30,27 @@ The Package Manager window consists of the following logical areas:
 
 1. **Header area** comprises of the following elements:
 
-    - **Trouble Shooting** (![Inside Trouble Shooting icon](./media/updating_sdk_icon_troubleshoot.png)): You can  access troubleshooting guides that help you resolve the  common issues related to Package Manager.
-    - **Configuration** (![Configuration icon](./media/updating_sdk_icon_config.png)): Lets you change the Package Manager configurations and other related settings, such as package repository locations and proxy options etc.
-    - **Information** (![Information icon](./media/updating_sdk_icon_info.png)): You can access the details of Package Manager, such as version number, installation path, package repository URL, distribution name, and package snapshot.
+    - **Trouble Shooting** ![Inside Trouble Shooting icon](./media/updating_sdk_icon_troubleshoot.png): You can  access troubleshooting guides that help you resolve the  common issues related to Package Manager.
+    - **Configuration** ![Configuration icon](./media/updating_sdk_icon_config.png): Lets you change the Package Manager configurations and other related settings, such as package repository locations and proxy options etc.
+    - **Information** ![Information icon](./media/updating_sdk_icon_info.png): You can access the details of Package Manager, such as version number, installation path, package repository URL, distribution name, and package snapshot.
 
 2. **Main area** comprises of the following elements:
 
     - **Main SDK** tab: It enables you to install, remove packages, platforms and tools. In addition, the filter buttons narrows down the choice of the package list display based on the selected profiles.
     - **Extension SDK** tab: It enables you to install or remove extension tools and packages, such as Samsung Certificate Extension etc.
     - **Progress** tab: It facilitates you to see the packages that are being installed or removed.
-  In the **Main SDK** and the **Extension SDK** tab, you can also list the installed packages by selecting the **View installed packages** check box.
+  
+In the **Main SDK** and the **Extension SDK** tab, you can also list the installed packages by selecting the **View installed packages** check box.
 
-**Figure: Package list**
+  **Figure: Package list**
 
-[Package list](./media/updating_sdk_main_area.png)
+   ![Package list](./media/updating_sdk_main_area.png)
 
 3. **Description area**: shows detailed description of each package or platform that is currently selected on the list in the main area.
 
-  **Figure: Description area**
+    **Figure: Description area**
 
-   ![Description area](./media/updating_sdk_description.png)
+    ![Description area](./media/updating_sdk_description.png)
 
 ## Update Packages
 
@@ -90,8 +95,8 @@ To install the packages with an image file, follow these steps:
 
 ## Install Additional Packages
 
-Package manager simplifies the process to install packages, platforms and tools. You can install any platform or tool which are listed under the Main SDK and Extension tabs.
-In Main SDK and Extension SDK tab, click **install** next to the desired platform or tool in the list that you want to install. 
+Package manager simplifies the process to install packages, platforms and tools. You can install any platform or tool that are listed under the Main SDK and Extension tabs.
+In Main SDK and Extension SDK tab, click **install** next to any desired platform or tool in the list that you want to install. 
 
 >**Note:**
 >
@@ -110,7 +115,7 @@ To install individual packages for a particular platform or tool, follow these s
 
 ## Cancel Installation
 
-To cancel the installation process, click the **X** on **Progress** tab next to the corresponding package. 
+To cancel the installation process, click **X** on **Progress** tab next to the respective package. 
 
 >**Note:** 
 >
@@ -130,7 +135,7 @@ To retry a cancelled or failed installation, click ![Retry icon](./media/updatin
 
 ## Remove Packages
 
-The package manager is a comprehensive tool and provides an intuitive user experience that helps you to remove any package, platform or tool with ease. 
+The package manager tool also provides an intuitive user interface that helps you to remove any package, platform or tool with ease. 
 
 To remove a package, click **delete** located next to the respective package. 
 
