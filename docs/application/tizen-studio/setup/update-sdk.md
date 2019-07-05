@@ -1,8 +1,7 @@
 # Update Tizen Studio
 
-This page explains how to install, update, and remove packages using the Package Manager tool, and also guides advanced users to manage packages with the CLI version of the tool. Tizen Studio primarily consists of collections of packages with necessary files, metadata, installation, and removal scripts. Most of the packages have interdependencies. 
-
-Package Manager is a comprehensive package management tool included with Tizen Studio to manage various processes like installation, updation, uninstallation of packages and platforms using GUI or CLI versions of the tool. 
+This page explains how to install, update, and remove packages using the Package Manager tool, and also guides advanced users to manage packages with the CLI version of the tool. At its core, Tizen Studio primarily comprises of various packages that comprises of necessary files, metadata, installation, and removal scripts, and these packages have interdependencies. 
+Once you install Tizen Studio, it's easy to keep the packages, platforms and other tools up to date with automatic updates. Tizen Studio includes a comprehensive package management tool to manage the processes, such as installing, uninstalling, and updating packages, platforms, and other related tools.
 
 ## Launch Package Manager
 
