@@ -1,23 +1,18 @@
 # Update Tizen Studio
-
 This page explains how to install, update, and remove packages using the Package Manager tool, and also guides advanced users to manage packages with the CLI version of the tool. At its core, Tizen Studio primarily comprises of various packages that comprises of necessary files, metadata, installation, and removal scripts, and these packages have interdependencies. 
-Once you install Tizen Studio, it's easy to keep the packages, platforms and other tools up to date with automatic updates. Tizen Studio includes a comprehensive package management tool to manage the processes, such as installing, uninstalling, and updating packages, platforms, and other related tools.
-
+Once you install Tizen Studio, it is easy to keep the packages, platforms and other tools up to date with automatic updates. Tizen Studio includes a comprehensive package management tool to manage the processes, such as installing, uninstalling, and updating packages, platforms, and other related tools.
 ## Launch Package Manager
-
 The Package Manager offers a simple way to manage packages without getting into the complicated package dependencies.
 
 To launch Package Manager on your preferred operating system, follow these steps: 
 
 - Windows: Click **Start > All Programs > Tizen Studio > Tools > Package Manager**.
-
 - MacOS: Click **Launchpad > Package Manager**.
-
 - Ubuntu: Click **Dashboard Home > Package Manager**.
 
 >Note: 
 >
-> Before launching the Package Manager, ensure you close all Tizen Studio programs.
+> Before you launch the Package Manager, ensure to close all the Tizen Studio programs.
 
 ## Package Manager Components 
 
@@ -40,12 +35,11 @@ The Package Manager window consists of the following logical areas:
   - **Main SDK** tab: It enables you to install, remove packages, platforms and tools. In addition, the filter buttons narrows down the choice of the package list display based on the selected profiles.
   - **Extension SDK** tab: It enables you to install or remove extension tools and packages, such as Samsung Certificate Extension etc.
   - **Progress** tab: It facilitates you to see the packages that are being installed or removed.
-
-  In the **Main SDK** and the **Extension SDK** tabs, you can also list the installed packages by selecting the **View installed packages** check box.
+  In the **Main SDK** and the **Extension SDK** tab, you can also list the installed packages by selecting the **View installed packages** check box.
 
   **Figure: Package list**
 
-     ![Package list](./media/updating_sdk_main_area.png)
+   ![Package list](./media/updating_sdk_main_area.png)
 
 - **Description area**: shows detailed description of each package or platform that is currently selected on the list in the main area.
 
@@ -54,15 +48,13 @@ The Package Manager window consists of the following logical areas:
     ![Description area](./media/updating_sdk_description.png)
 
 ## Update Packages
-
-Package Manager makes it effortless to update your packages and platforms. You can use the Package Manager tool to locate and install updates and new features for the packages that are installed. 
+Package Manager makes it easy to update your packages and platforms. You can use the Package Manager tool to locate and install updates and new features for the packages that are already installed. 
 >**Note:**
 - Before you begin to update a package, ensure that the Package Manager has access to the repository that contains the packages and you have access to Internet. 
-- If the updates are available for your existing Tizen Studio packages and platforms, the **Updates available** button appears in the Package Manager window. 
-
-To update the currently installed packages, click **Updates available**.
+Tizen Studio notifies you with a **Updates available** button that appears in the Package Manager window, if new updates are available for your existing Tizen Studio packages and platforms.
+To update the existing packages, click **Updates available**.
     
-  **Figure: Updates available**
+  **Figure: Updates available button**
 
   ![Updates available button](./media/updating_sdk_updates.png)
 
@@ -73,43 +65,41 @@ To update the currently installed packages, click **Updates available**.
 
 ### Update Packages Offline
 
-The Package Manager also facilitates offline upgrades with an update image for all the existing installed packages.
-
+The Package Manager also facilitates offline upgrade with an update image for all the existing packages.
 To install the packages with an image file, follow these steps:
-
 1. In Package Manager, click ![Configuration icon](./media/updating_sdk_icon_config.png).
-2. In the Configuration window that appears, enter the full path of the image file in Package Repository. Alternatively, to select the image file,  click **...** next to the **combo box**. 
+2. In the Configuration window that appears, enter the full path of the image file in Package Repository. Alternatively, to select the image file, click **...** next to the **combo box**. 
 3. To close the dialog, click **Open**.
 
     >**Note:**
     >
     >If the image file is valid, detailed information about the image is displayed below the combo box.
-
 4. To close the **Configuration** dialog, click **OK**. The **Update available** button appears.
 5. To update and install additional platforms and tools with the image file, click **Update available**.
 
-    >**Note:**  
+    > **Note**  
     > 
-    >Ensure that the image file includes a newer Tizen Studio version than your installed version before updating or installing with the image file.
+    > Ensure that the image file includes a newer version of Tizen Studio than your installed version before updating or installing with the image file.
 
 ## Install Additional Packages
 
-To install a specific platform or tool, using the **Main SDK** and **Extension SDK** tabs, click **install** next to that platform or tool in the list.
-
-Package Manager installs all packages that are required for that platform or tool.
-
+Package manager simplifies the process to install packages, platforms and tools. You can install any platform or tool which are listed under the Main SDK and Extension tabs.
+In Main SDK and Extension SDK tab, click **install** next to the desired platform or tool in the list that you want to install. 
+>**Note:**
+>
+>Package Manager installs all packages that are required for that platform or tool.
+Package Manager also provides you the flexibility to install even an individual preferred package for a particular platform or tool.
 To install individual packages for a particular platform or tool, follow these steps: 
- 
- 1. Click on **collapsible** icon located on the left of the main area of the window for each platform or tool to view more packages and tools.
+  1. Click on **collapsible** icon located on the left of the main area of the window for each platform or tool to view more packages and tools.
  2. Click **install** next to the package to install that package.
-
+ 
   **Figure: Install platform packages**
 
   ![Installing platform packages](./media/updating_sdk_install_platform.png)
 
 ## Cancel Installation
 
-To cancel the installation process, click **X** on **Progress** tab next to the package. 
+To cancel the installation process, click the **X** on **Progress** tab next to the corresponding package. 
 
 >**Note:** 
 >
