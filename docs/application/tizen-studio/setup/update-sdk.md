@@ -62,7 +62,7 @@ Package Manager makes it effortless to update your packages and platforms. You c
 
 To update the currently installed packages, click **Updates available**.
     
-  **Figure: Updates available button**
+  **Figure: Updates available**
 
   ![Updates available button](./media/updating_sdk_updates.png)
 
@@ -77,7 +77,7 @@ The Package Manager also facilitates offline upgrades with an update image for a
 
 To install the packages with an image file, follow these steps:
 
-1. In Package Manager, click **Configuration** (![Configuration icon](./media/updating_sdk_icon_config.png))
+1. In Package Manager, click ![Configuration icon](./media/updating_sdk_icon_config.png).
 2. In the Configuration window that appears, enter the full path of the image file in Package Repository. Alternatively, to select the image file,  click **...** next to the **combo box**. 
 3. To close the dialog, click **Open**.
 
@@ -109,7 +109,7 @@ To install individual packages for a particular platform or tool, follow these s
 
 ## Cancel Installation
 
-To cancel the installation process, click the **X** button on **Progress** tab next to the package. 
+To cancel the installation process, click **X** on **Progress** tab next to the package. 
 
 >**Note:** 
 >
@@ -121,7 +121,7 @@ To cancel the installation process, click the **X** button on **Progress** tab n
 
 ## Retry Cancelled Installation 
 
-To retry a cancelled or failed installation, click **retry** (![Retry icon](./media/updating_sdk_icon_retry.png)). 
+To retry a cancelled or failed installation, click ![Retry icon](./media/updating_sdk_icon_retry.png). 
 
 >**Note:**
 >
