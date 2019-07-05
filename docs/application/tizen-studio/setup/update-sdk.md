@@ -88,9 +88,9 @@ To install the packages with an image file, follow these steps:
 4. To close the **Configuration** dialog, click **OK**. The **Update available** button appears.
 5. To update and install additional platforms and tools with the image file, click **Update available**.
 
-    > **Note**  
+    >**Note:**  
     > 
-    > Make sure that the image file includes a newer Tizen Studio version than your installed version before updating or installing with the image file.
+    >Ensure that the image file includes a newer Tizen Studio version than your installed version before updating or installing with the image file.
 
 ## Install Additional Packages
 
