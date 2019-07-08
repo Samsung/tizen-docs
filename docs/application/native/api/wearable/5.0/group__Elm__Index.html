@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Index</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -98,9 +98,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
  <p>An index widget gives you an index for quick access to whichever group of other UI items one might have. It's a list of text items (usually letters, for alphabetically ordered access).</p>
 <p>Index widgets are by default hidden and just appear when the user clicks over it's reserved area in the canvas. In its default theme, it's an area one <a class="el" href="group__Elm__Fingers.html">finger</a> wide on the right side of the index widget's container.</p>
-<p>When items on the index are selected, smart callbacks get called, so that its user can make other container objects to show a given area or child object depending on the index item selected. You'd probably be using an index together with lists, <a class="el" href="group__Elm__Genlist.html">generic lists</a> or <a class="el" href="group__Elm__Gengrid.html">general grids</a>.</p>
+<p>When items on the index are selected, smart callbacks get called, so that its user can make other container objects to show a given area or child object depending on the index item selected. You'd probably be using an index together with <a class="el" href="group__Elm__List.html">lists</a>, <a class="el" href="group__Elm__Genlist.html">generic lists</a> or <a class="el" href="group__Elm__Gengrid.html">general grids</a>.</p>
 <p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for index objects.</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout:</p>
+<p>This widget emits the following signals, besides the ones sent from <a class="el" href="group__Elm__Layout.html">Layout</a> :</p>
 <ul>
 <li><code>"changed"</code> - When the selected index item changes. <code>event_info</code> is the selected item's data pointer.</li>
 <li><code>"delay,changed"</code> - When the selected index item changes, but after a small idling period. <code>event_info</code> is the selected item's data pointer.</li>
@@ -118,16 +118,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </ul>
 <p>Here are some examples on its usage: </p>
 <ul>
-<li>index_example_01 </li>
-<li>index_example_02 </li>
+<li><a class="el" href="index_example_01.html">Index widget example 1</a> </li>
+<li><a class="el" href="index_example_02.html">Index widget example 2</a> </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gaac0c210b89b85472d3e83aada4ec6120">elm_index_priority_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int priority)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control standard_priority group of index. Priority group will be shown as many items as it can, and other group will be shown one character only.  <a href="#gaac0c210b89b85472d3e83aada4ec6120"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga21daa38e7c53e8f9401c6e782d74d063">elm_index_priority_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control standard_priority group of index. Priority group will be shown as many items as it can, and other group will be shown one character only.  <a href="#ga21daa38e7c53e8f9401c6e782d74d063"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga6569179b38d11fb5fb1286815cf846fb">elm_index_autohide_disabled_set</a> (Elm_Index *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disabled)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable auto hiding feature for a given index widget.  <a href="#ga6569179b38d11fb5fb1286815cf846fb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga4b1a080a5ddba56e53d16f97cdcfb3a1">elm_index_autohide_disabled_get</a> (const Elm_Index *obj)</td></tr>
@@ -140,10 +136,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control standard_priority group of index. Priority group will be shown as many items as it can, and other group will be shown one character only.  <a href="#ga0c27483ff337d64c1d5b00186c49b2c5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga73bf1861c030a56a28f130640851814d">elm_index_standard_priority_get</a> (const Elm_Index *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control standard_priority group of index. Priority group will be shown as many items as it can, and other group will be shown one character only.  <a href="#ga73bf1861c030a56a28f130640851814d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gab692af2d53bdfb5d043fccb84a0fc681">elm_index_horizontal_set</a> (Elm_Index *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> horizontal)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable horizontal mode on the index object.  <a href="#gab692af2d53bdfb5d043fccb84a0fc681"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gaf48b49e2ad3fe94ab8dfbe01d8b4fe77">elm_index_horizontal_get</a> (const Elm_Index *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable horizontal mode on the index object.  <a href="#gaf48b49e2ad3fe94ab8dfbe01d8b4fe77"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gaf4ee573a9b2bce298115ea65cacd2d0c">elm_index_delay_change_time_set</a> (Elm_Index *obj, double dtime)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a delay change time for index object.  <a href="#gaf4ee573a9b2bce298115ea65cacd2d0c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga462ca31df319b26068c3a3bd719b12a1">elm_index_delay_change_time_get</a> (const Elm_Index *obj)</td></tr>
@@ -158,23 +150,27 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the items level for a given index widget.  <a href="#ga545438c3478927e96e168c04df253477"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga3bb92a868f63463403668a4bbcda21d1">elm_index_level_go</a> (Elm_Index *obj, int level)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Flush the changes made to the index items so they work correctly.  <a href="#ga3bb92a868f63463403668a4bbcda21d1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga98009bab1fdc7077ea92f499d308603d">elm_index_item_prepend</a> (Elm_Index *obj, const char *letter, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga98009bab1fdc7077ea92f499d308603d">elm_index_item_prepend</a> (Elm_Index *obj, const char *letter, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Prepend a new item on a given index widget.  <a href="#ga98009bab1fdc7077ea92f499d308603d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga9c0c1ff500522b62a674b36beafe7a19">elm_index_item_clear</a> (Elm_Index *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all items from a given index widget.  <a href="#ga9c0c1ff500522b62a674b36beafe7a19"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gafc063edee10679485013ac27a9eec7e5">elm_index_item_insert_after</a> (Elm_Index *obj, Elm_Widget_Item *after, const char *letter, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gafc063edee10679485013ac27a9eec7e5">elm_index_item_insert_after</a> (Elm_Index *obj, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *after, const char *letter, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item into the index object after item <code>after</code>.  <a href="#gafc063edee10679485013ac27a9eec7e5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga2a9bccce5e3aa9a6928fb9aa74bf6579">elm_index_item_find</a> (Elm_Index *obj, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga2a9bccce5e3aa9a6928fb9aa74bf6579">elm_index_item_find</a> (Elm_Index *obj, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a given index widget's item, using item data.  <a href="#ga2a9bccce5e3aa9a6928fb9aa74bf6579"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga8def0c0405b8799adc9fe58018a8d00c">elm_index_item_insert_before</a> (Elm_Index *obj, Elm_Widget_Item *before, const char *letter, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga8def0c0405b8799adc9fe58018a8d00c">elm_index_item_insert_before</a> (Elm_Index *obj, <a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *before, const char *letter, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item into the index object before item <code>before</code>.  <a href="#ga8def0c0405b8799adc9fe58018a8d00c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gae1ed71ea2b43737af0c348d3ae9b0524">elm_index_item_append</a> (Elm_Index *obj, const char *letter, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gae1ed71ea2b43737af0c348d3ae9b0524">elm_index_item_append</a> (Elm_Index *obj, const char *letter, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a new item on a given index widget.  <a href="#gae1ed71ea2b43737af0c348d3ae9b0524"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gada78a8c8a3908f9ce8e97c3aa03e0db0">elm_index_selected_item_get</a> (const Elm_Index *obj, int level)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gada78a8c8a3908f9ce8e97c3aa03e0db0">elm_index_selected_item_get</a> (const Elm_Index *obj, int level)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the last selected item, for a given index widget.  <a href="#gada78a8c8a3908f9ce8e97c3aa03e0db0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639">elm_index_item_sorted_insert</a> (Elm_Index *obj, const char *letter, Evas_Smart_Cb func, const void *data, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> cmp_func, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> cmp_data_func)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639">elm_index_item_sorted_insert</a> (Elm_Index *obj, const char *letter, Evas_Smart_Cb func, const void *data, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> cmp_func, <a class="el" href="group__Eina__Types__Group.html#ga1b31ffcc0d46eed63a2381c5a011b486">Eina_Compare_Cb</a> cmp_data_func)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item into the given index widget, using <code>cmp_func</code> function to sort items (by item handles).  <a href="#gab62ded1b310fde295a3d59ea5172e639"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#gaf7fda3a54ca154cdc754326137f3737e">elm_index_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga76c1e93e0541bf3ec6b110207c875c59">elm_index_horizontal_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> horizontal)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable horizontal mode on the index object.  <a href="#ga76c1e93e0541bf3ec6b110207c875c59"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Index.html#ga715ba58294eb478c0f15e1153d44dd7b">elm_index_horizontal_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get enable or disable status of horizontal mode on the index object.  <a href="#ga715ba58294eb478c0f15e1153d44dd7b"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gaf7fda3a54ca154cdc754326137f3737e"></a><!-- doxytag: member="elm_index_legacy.h::elm_index_add" ref="gaf7fda3a54ca154cdc754326137f3737e" args="(Evas_Object *parent)" -->
@@ -199,9 +195,10 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new index widget handle or <code>NULL</code>, on errors</dd></dl>
-<p>This function inserts a new index widget on the canvas.</p>
+<p>This function inserts a new index widget on the canvas. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="index_example_01_8c-example.html#a17">index_example_01.c</a>, and <a class="el" href="index_example_02_8c-example.html#a21">index_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga4b1a080a5ddba56e53d16f97cdcfb3a1"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_autohide_disabled_get" ref="ga4b1a080a5ddba56e53d16f97cdcfb3a1" args="(const Elm_Index *obj)" -->
@@ -220,7 +217,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Enable or disable auto hiding feature for a given index widget. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -228,7 +224,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to disable auto hiding, <code>false</code> to enable </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="index_example_01_8c-example.html#a6">index_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga6569179b38d11fb5fb1286815cf846fb"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_autohide_disabled_set" ref="ga6569179b38d11fb5fb1286815cf846fb" args="(Elm_Index *obj, Eina_Bool disabled)" -->
@@ -257,7 +255,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Enable or disable auto hiding feature for a given index widget. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -265,7 +262,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="index_example_01_8c-example.html#a7">index_example_01.c</a>, and <a class="el" href="index_example_02_8c-example.html#a25">index_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga462ca31df319b26068c3a3bd719b12a1"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_delay_change_time_get" ref="ga462ca31df319b26068c3a3bd719b12a1" args="(const Elm_Index *obj)" -->
@@ -285,7 +284,6 @@ Functions</h2></td></tr>
 
 <p>Set a delay change time for index object. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>delay time is 0.2 sec by default.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -293,6 +291,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The delay change time to set. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -323,7 +322,6 @@ Functions</h2></td></tr>
 
 <p>Set a delay change time for index object. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>delay time is 0.2 sec by default.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -331,17 +329,18 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaf48b49e2ad3fe94ab8dfbe01d8b4fe77"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_horizontal_get" ref="gaf48b49e2ad3fe94ab8dfbe01d8b4fe77" args="(const Elm_Index *obj)" -->
+<a class="anchor" id="ga715ba58294eb478c0f15e1153d44dd7b"></a><!-- doxytag: member="elm_index_legacy.h::elm_index_horizontal_get" ref="ga715ba58294eb478c0f15e1153d44dd7b" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Index.html#gaf48b49e2ad3fe94ab8dfbe01d8b4fe77">elm_index_horizontal_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Index.html#ga715ba58294eb478c0f15e1153d44dd7b">elm_index_horizontal_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Index *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -349,28 +348,22 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Enable or disable horizontal mode on the index object. </p>
+<p>Get enable or disable status of horizontal mode on the index object. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Vertical mode is set by default.</dd></dl>
-<p>On horizontal mode items are displayed on index from left to right, instead of from top to bottom. Also, the index will scroll horizontally.</p>
+<p>Returns the current status of horizontal mode on index object. On horizontal mode items are displayed on index from left to right, instead of from top to bottom. Also, the index will scroll horizontally.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Current status of horizontal mode on index object. <code>true</code> if horizontal mode is enabled or <code>false</code> if disabled. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to enable horizontal or <code>false</code> to disable it, i.e., to enable vertical mode. it's an area one Fingers "finger" wide on the bottom side of the index widget's container. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gab692af2d53bdfb5d043fccb84a0fc681"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_horizontal_set" ref="gab692af2d53bdfb5d043fccb84a0fc681" args="(Elm_Index *obj, Eina_Bool horizontal)" -->
+<a class="anchor" id="ga76c1e93e0541bf3ec6b110207c875c59"></a><!-- doxytag: member="elm_index_legacy.h::elm_index_horizontal_set" ref="ga76c1e93e0541bf3ec6b110207c875c59" args="(Evas_Object *obj, Eina_Bool horizontal)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Index.html#gab692af2d53bdfb5d043fccb84a0fc681">elm_index_horizontal_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Index.html#ga76c1e93e0541bf3ec6b110207c875c59">elm_index_horizontal_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Index *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -391,14 +384,13 @@ Functions</h2></td></tr>
 <p>Enable or disable horizontal mode on the index object. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Vertical mode is set by default.</dd></dl>
 <p>On horizontal mode items are displayed on index from left to right, instead of from top to bottom. Also, the index will scroll horizontally.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">horizontal</td><td><code>true</code> to enable horizontal or <code>false</code> to disable it, i.e., to enable vertical mode. it's an area one Fingers "finger" wide on the bottom side of the index widget's container. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -419,7 +411,6 @@ Functions</h2></td></tr>
 
 <p>Control the indicator as to be disabled. </p>
 <p>In Index widget, Indicator notes popup text, which shows a letter has been selecting.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -427,6 +418,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to disable it, <code>false</code> to enable it </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -457,7 +449,6 @@ Functions</h2></td></tr>
 
 <p>Control the indicator as to be disabled. </p>
 <p>In Index widget, Indicator notes popup text, which shows a letter has been selecting.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -465,6 +456,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -473,7 +465,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Index.html#gae1ed71ea2b43737af0c348d3ae9b0524">elm_index_item_append</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Index.html#gae1ed71ea2b43737af0c348d3ae9b0524">elm_index_item_append</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Index *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -508,7 +500,6 @@ Functions</h2></td></tr>
 <p>Append a new item on a given index widget. </p>
 <p>Despite the most common usage of the <code>letter</code> argument is for single char strings, one could use arbitrary strings as index entries.</p>
 <p><code>item</code> will be the pointer returned back on $"changed", "delay,changed" and $"selected" smart events.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -519,7 +510,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>NULL</code>, on errors </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="index_example_01_8c-example.html#a19">index_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga9c0c1ff500522b62a674b36beafe7a19"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_item_clear" ref="ga9c0c1ff500522b62a674b36beafe7a19" args="(Elm_Index *obj)" -->
@@ -538,15 +531,16 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Removes all items from a given index widget. </p>
-<p>If deletion callbacks are set, via elm_object_item_del_cb_set(), that callback function will be called for each item in <code>obj</code>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<p>If deletion callbacks are set, via <a class="el" href="group__Elm__General.html#ga2e17c3f1030712f3175f5b7812ada9a0" title="Set the function to be called when an item from the widget is freed.">elm_object_item_del_cb_set()</a>, that callback function will be called for each item in <code>obj</code>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="index_example_01_8c-example.html#a5">index_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga2a9bccce5e3aa9a6928fb9aa74bf6579"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_item_find" ref="ga2a9bccce5e3aa9a6928fb9aa74bf6579" args="(Elm_Index *obj, const void *data)" -->
@@ -554,7 +548,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Index.html#ga2a9bccce5e3aa9a6928fb9aa74bf6579">elm_index_item_find</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Index.html#ga2a9bccce5e3aa9a6928fb9aa74bf6579">elm_index_item_find</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Index *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -575,7 +569,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Find a given index widget's item, using item data. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -584,7 +577,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The index item handle, if found, or <code>NULL</code> otherwise </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="index_example_01_8c-example.html#a20">index_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gafc063edee10679485013ac27a9eec7e5"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_item_insert_after" ref="gafc063edee10679485013ac27a9eec7e5" args="(Elm_Index *obj, Elm_Widget_Item *after, const char *letter, Evas_Smart_Cb func, const void *data)" -->
@@ -592,7 +587,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Index.html#gafc063edee10679485013ac27a9eec7e5">elm_index_item_insert_after</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Index.html#gafc063edee10679485013ac27a9eec7e5">elm_index_item_insert_after</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Index *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -600,7 +595,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>after</em>, </td>
         </tr>
         <tr>
@@ -633,8 +628,7 @@ Functions</h2></td></tr>
 <p>Insert a new item into the index object after item <code>after</code>. </p>
 <p>Despite the most common usage of the <code>letter</code> argument is for single char strings, one could use arbitrary strings as index entries.</p>
 <p><code>item</code> will be the pointer returned back on $"changed", "delay,changed" and $"selected" smart events.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>If <code>relative</code> is <code>NULL</code> this function will behave as <a class="el" href="group__Elm__Index.html#gae1ed71ea2b43737af0c348d3ae9b0524" title="Append a new item on a given index widget.">elm_index_item_append()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If <code>after</code> is <code>NULL</code> this function will behave as <a class="el" href="group__Elm__Index.html#gae1ed71ea2b43737af0c348d3ae9b0524" title="Append a new item on a given index widget.">elm_index_item_append()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -646,6 +640,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>NULL</code>, on errors </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -654,7 +649,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Index.html#ga8def0c0405b8799adc9fe58018a8d00c">elm_index_item_insert_before</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Index.html#ga8def0c0405b8799adc9fe58018a8d00c">elm_index_item_insert_before</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Index *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -662,7 +657,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Widget_Item *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td>
           <td class="paramname"><em>before</em>, </td>
         </tr>
         <tr>
@@ -695,8 +690,7 @@ Functions</h2></td></tr>
 <p>Insert a new item into the index object before item <code>before</code>. </p>
 <p>Despite the most common usage of the <code>letter</code> argument is for single char strings, one could use arbitrary strings as index entries.</p>
 <p><code>item</code> will be the pointer returned back on $"changed", "delay,changed" and $"selected" smart events.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>If <code>relative</code> is <code>NULL</code> this function will behave as <a class="el" href="group__Elm__Index.html#ga98009bab1fdc7077ea92f499d308603d" title="Prepend a new item on a given index widget.">elm_index_item_prepend()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If <code>before</code> is <code>NULL</code> this function will behave as <a class="el" href="group__Elm__Index.html#ga98009bab1fdc7077ea92f499d308603d" title="Prepend a new item on a given index widget.">elm_index_item_prepend()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -708,6 +702,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>NULL</code>, on errors </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -728,7 +723,6 @@ Functions</h2></td></tr>
 
 <p>Set the items level for a given index widget. </p>
 <p>See: <a class="el" href="group__Elm__Index.html#ga545438c3478927e96e168c04df253477" title="Set the items level for a given index widget.">elm_index_item_level_get()</a></p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -736,6 +730,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>$0 or $1, the currently implemented levels. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -766,7 +761,6 @@ Functions</h2></td></tr>
 
 <p>Set the items level for a given index widget. </p>
 <p>See: <a class="el" href="group__Elm__Index.html#ga545438c3478927e96e168c04df253477" title="Set the items level for a given index widget.">elm_index_item_level_get()</a></p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -774,6 +768,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -782,7 +777,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Index.html#ga98009bab1fdc7077ea92f499d308603d">elm_index_item_prepend</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Index.html#ga98009bab1fdc7077ea92f499d308603d">elm_index_item_prepend</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Index *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -817,7 +812,6 @@ Functions</h2></td></tr>
 <p>Prepend a new item on a given index widget. </p>
 <p>Despite the most common usage of the <code>letter</code> argument is for single char strings, one could use arbitrary strings as index entries.</p>
 <p><code>item</code> will be the pointer returned back on $"changed", "delay,changed" and $"selected" smart events.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -828,6 +822,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>NULL</code>, on errors </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -836,7 +831,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639">elm_index_item_sorted_insert</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639">elm_index_item_sorted_insert</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Index *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -883,7 +878,6 @@ Functions</h2></td></tr>
 <p>Insert a new item into the given index widget, using <code>cmp_func</code> function to sort items (by item handles). </p>
 <p>Despite the most common usage of the <code>letter</code> argument is for single char strings, one could use arbitrary strings as index entries.</p>
 <p><code>item</code> will be the pointer returned back on $"changed", "delay,changed" and $"selected" smart events.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -896,7 +890,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>NULL</code>, on errors </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="index_example_02_8c-example.html#a23">index_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga3bb92a868f63463403668a4bbcda21d1"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_level_go" ref="ga3bb92a868f63463403668a4bbcda21d1" args="(Elm_Index *obj, int level)" -->
@@ -927,7 +923,6 @@ Functions</h2></td></tr>
 <p>Flush the changes made to the index items so they work correctly. </p>
 <p>This flushes any changes made to items indicating the object is ready to go. You should call this before any changes you expect to work. This is similar to <a class="el" href="group__Elm__List.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go()</a>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>If not called, it won't display the index properly.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -935,7 +930,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="index_example_01_8c-example.html#a4">index_example_01.c</a>, and <a class="el" href="index_example_02_8c-example.html#a27">index_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga53c51630158c198ada3463a046e11bf3"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_omit_enabled_get" ref="ga53c51630158c198ada3463a046e11bf3" args="(const Elm_Index *obj)" -->
@@ -954,7 +951,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Enable or disable omit feature for a given index widget. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -963,6 +959,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to enable omit feature, <code>false</code> to disable</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -992,7 +989,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Enable or disable omit feature for a given index widget. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -1001,65 +997,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga21daa38e7c53e8f9401c6e782d74d063"></a><!-- doxytag: member="elm_deprecated.h::elm_index_priority_get" ref="ga21daa38e7c53e8f9401c6e782d74d063" args="(const Evas_Object *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> int <a class="el" href="group__Elm__Index.html#ga21daa38e7c53e8f9401c6e782d74d063">elm_index_priority_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Control standard_priority group of index. Priority group will be shown as many items as it can, and other group will be shown one character only. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>priority</code> target priority value in index</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>Use <a class="el" href="group__Elm__Index.html#ga73bf1861c030a56a28f130640851814d" title="Control standard_priority group of index. Priority group will be shown as many items as it can...">elm_index_standard_priority_get()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaac0c210b89b85472d3e83aada4ec6120"></a><!-- doxytag: member="elm_deprecated.h::elm_index_priority_set" ref="gaac0c210b89b85472d3e83aada4ec6120" args="(Evas_Object *obj, int priority)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Index.html#gaac0c210b89b85472d3e83aada4ec6120">elm_index_priority_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>priority</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Control standard_priority group of index. Priority group will be shown as many items as it can, and other group will be shown one character only. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">priority</td><td><code>priority</code> target priority value in index</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>Use <a class="el" href="group__Elm__Index.html#ga0c27483ff337d64c1d5b00186c49b2c5" title="Control standard_priority group of index. Priority group will be shown as many items as it can...">elm_index_standard_priority_set()</a> instead. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1068,7 +1006,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Index.html#gada78a8c8a3908f9ce8e97c3aa03e0db0">elm_index_selected_item_get</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Index.html#gada78a8c8a3908f9ce8e97c3aa03e0db0">elm_index_selected_item_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Index *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -1089,7 +1027,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Returns the last selected item, for a given index widget. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -1098,7 +1035,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The last item selected on <code>obj</code> (or <code>NULL</code>, on errors). </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="index_example_01_8c-example.html#a2">index_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga73bf1861c030a56a28f130640851814d"></a><!-- doxytag: member="elm_index.eo.legacy.h::elm_index_standard_priority_get" ref="ga73bf1861c030a56a28f130640851814d" args="(const Elm_Index *obj)" -->
@@ -1117,7 +1056,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Control standard_priority group of index. Priority group will be shown as many items as it can, and other group will be shown one character only. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -1126,6 +1064,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>priority</code> target priority value in index</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1155,7 +1094,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Control standard_priority group of index. Priority group will be shown as many items as it can, and other group will be shown one character only. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -1164,6 +1102,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

@@ -86,7 +86,7 @@ An EFL function has its own range of effects and you can tell the range by its n
   - `elm_scroller_region_bring_in()`
   - `elm_scroller_gravity_set()`
 
-  For more information, see the Scroller API (in [mobile](../../../api/mobile/latest/group__Scroller.html) and [wearable](../../../api/wearable/latest/group__Scroller.html) applications).
+  For more information, see the Scroller API (in [mobile](../../../api/mobile/latest/group__Elm__Scroller.html) and [wearable](../../../api/wearable/latest/group__Elm__Scroller.html) applications).
 
 ## Related Information
 - Dependencies

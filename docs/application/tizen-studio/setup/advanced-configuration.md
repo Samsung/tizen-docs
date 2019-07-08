@@ -29,7 +29,9 @@ To set the package repository:
 
 To install or update packages with the SDK image:
 
-1. Enter the full path of the SDK image file in the **Package Repository** box, or click ![Browse](./media/advanced_conf_browse.png) next to the combo box to open the file browser.In the file browser, select the SDK image file, and click **OK**. When you select the image file, the image's origin repository information is displayed below the combo box.
+1. Enter the full path of the SDK image file in the **Package Repository** box, or click ![Browse](./media/advanced_conf_browse.png) next to the combo box to open the file browser.
+
+   In the file browser, select the SDK image file, and click **OK**. When you select the image file, the image's origin repository information is displayed below the combo box.
 2. Click **OK** to confirm your setting.
 
 > **Note**  

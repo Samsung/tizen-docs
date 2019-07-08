@@ -217,7 +217,8 @@ To rotate an image:
    > **Note**
    >
    > - The image format has no effect on the transformation.
-   > - If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
+   > - If the color space is YUV, the target image width and height must be multiples of 8. This restriction does not apply to RGB images.
+   > - If hardware acceleration is enabled, you can execute 2 more image transformations using the same transformation handle.
 
 4. Handle the transformation results in the `image_util_transform_completed_cb()` callback, which is invoked after the transformation is complete.
 

@@ -28,8 +28,8 @@ Cordova defines a common interface for success and error callbacks:
 > document.addEventListener('deviceready', onDeviceReady, false);
 >
 > function onDeviceReady() {
->    console.log('Cordova features now available');
->    console.log('Connection type: ' + navigator.connection.type);
+>     console.log('Cordova features now available');
+>     console.log('Connection type: ' + navigator.connection.type);
 > }
 > ```
 

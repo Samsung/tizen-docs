@@ -27,7 +27,7 @@ You can only have one radio instance active at a time. Radio playback can be int
 
 To enable your application to use the radio functionality:
 
-1.  To use the methods and properties of the [Tizen.Multimedia.Radio](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Radio.html) class, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) namespace in your application:
+1.  To use the methods and properties of the [Tizen.Multimedia.Radio](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
 
     ```
     using Tizen.Multimedia;
@@ -65,7 +65,7 @@ To enable your application to use the radio functionality:
 
 To scan for all available radio frequencies:
 
-1.  Register and define event handlers for the events of the [Tizen.Multimedia.Radio](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Radio.html) class:
+1.  Register and define event handlers for the events of the [Tizen.Multimedia.Radio](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class:
     -   To receive a notification each time the scan finds a new frequency, register an event handler for the `ScanUpdated` event. The event provides the kHz value of the found frequency.
 
         ```
@@ -110,7 +110,7 @@ To scan for all available radio frequencies:
 
 To select and start playing a frequency:
 
-1.  Set the frequency you want to play using the `Frequency` property of the [Tizen.Multimedia.Radio](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Radio.html) class:
+1.  Set the frequency you want to play using the `Frequency` property of the [Tizen.Multimedia.Radio](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class:
 
     ```
     radio.Frequency = newFrequncey;
@@ -127,7 +127,7 @@ To select and start playing a frequency:
 <a name="seek"></a>
 ## Searching for an Adjacent Channel
 
-To search for and tune in to an adjacent channel, use the `SeekUpAsync()` and `SeekDownAsync()` methods of the [Tizen.Multimedia.Radio](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Radio.html) class. This is similar to the scanning operation, but only the nearest active frequency is searched for. Once the maximum frequency is reached in either direction, the search ends, and the radio is set to that frequency.
+To search for and tune in to an adjacent channel, use the `SeekUpAsync()` and `SeekDownAsync()` methods of the [Tizen.Multimedia.Radio](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Radio.html) class. This is similar to the scanning operation, but only the nearest active frequency is searched for. Once the maximum frequency is reached in either direction, the search ends, and the radio is set to that frequency.
 
 For example, to seek down, use the `SeekDownAsync()` method:
 

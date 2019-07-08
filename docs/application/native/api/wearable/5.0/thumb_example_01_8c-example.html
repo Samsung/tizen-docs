@@ -90,7 +90,73 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">thumb_example_01.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -g thumb_example_01.c -o thumb_example_01 `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_generation_started_cb(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED,
+                       <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;thumbnail generation started.\n&quot;</span>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_generation_finished_cb(<span class="keywordtype">void</span> *data <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED,
+                        <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;thumbnail generation finished.\n&quot;</span>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_generation_error_cb(<span class="keywordtype">void</span> *data <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED,
+                     <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;thumbnail generation error.\n&quot;</span>);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *thumb;
+   <span class="keywordtype">char</span> buf[PATH_MAX];
+
+   elm_need_ethumb();
+
+   <a name="a1"></a><a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;images/plant_01.jpg&quot;</span>);
+   <a name="a2"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a3"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;thumb&quot;</span>, <span class="stringliteral">&quot;Thumbnailer&quot;</span>);
+   <a name="a4"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a5"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   thumb = elm_thumb_add(win);
+
+   <a name="a6"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(thumb, <span class="stringliteral">&quot;generate,start&quot;</span>, _generation_started_cb, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(thumb, <span class="stringliteral">&quot;generate,stop&quot;</span>, _generation_finished_cb, NULL);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(thumb, <span class="stringliteral">&quot;generate,error&quot;</span>, _generation_error_cb, NULL);
+
+   elm_thumb_size_set(thumb, 160, 160);
+   elm_thumb_editable_set(thumb, <a name="a7"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/plant_01.jpg&quot;</span>, <a name="a8"></a><a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   elm_thumb_file_set(thumb, buf, NULL);
+   elm_thumb_reload(thumb);
+
+   evas_object_size_hint_weight_set(thumb, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a name="a9"></a><a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, thumb);
+   <a name="a10"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(thumb);
+
+   evas_object_resize(win, 320, 320);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a11"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>(); <span class="comment">/* and run the program now, starting to handle all</span>
+<span class="comment">               * events, etc. */</span>
+   <span class="comment">/* exit code */</span>
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a12"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

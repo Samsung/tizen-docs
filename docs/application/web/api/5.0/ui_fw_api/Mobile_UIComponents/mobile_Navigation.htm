@@ -7,7 +7,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Navigation</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>Navigation</h1>
 
 
@@ -24,6 +24,7 @@
 	</tbody>
 </table>
 
+<img src="../../images/mobile_navigationBar.png" width="15%">
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -260,9 +261,19 @@
                 </table>
             </div>
 
+            <div class="returntype">
+                <p><span class="return">Return value:</span></p>
+
+
+                No return value
+
+            </div>
+
             <div class="example">
                             <span class="example"><p>Code
                                 example:</p><p></p></span>
+
+                            <p>HTML code:</p>
                             <pre name="code" class="examplecode
                                 prettyprint">&lt;div class=&quot;ui-header&quot; data-position=&quot;fixed&quot;&gt;
    &lt;h1&gt;Navigation&lt;/h1&gt;
@@ -276,12 +287,16 @@
       &lt;/div&gt;
    &lt;/div&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var navigation = page.querySelector(&quot;#navigation&quot;),
-       activePanel = page.querySelector(&quot;.ui-panel-active&quot;),
-       navigationComponent = tau.widget.Navigation(navigation);
-   navigationComponent.push(activePanel.id);
-&lt;/script&gt;</pre>
+</pre>
+
+                            <p>JS code:</p>
+                            <pre name="code" class="examplecode
+                                prettyprint">
+var navigation = page.querySelector(&quot;#navigation&quot;),
+    activePanel = page.querySelector(&quot;.ui-panel-active&quot;),
+    navigationComponent = tau.widget.Navigation(navigation);
+navigationComponent.push(activePanel.id);
+</pre>
             </div>
 
 
@@ -302,21 +317,37 @@
                 <pre class="signature prettyprint">pop() </pre>
             </div>
 
+            <div class="returntype">
+                <p><span class="return">Return value:</span></p>
+
+
+                No return value
+
+            </div>
 
             <div class="example">
                                 <span class="example"><p>Code
                                     example:</p><p></p></span>
+
+<p>HTML code:</p>
+
 <pre name="code" class="examplecode prettyprint">&lt;div class=&quot;ui-header&quot; data-position=&quot;fixed&quot;&gt;
    &lt;h1&gt;Navigation&lt;/h1&gt;
    &lt;nav id=&quot;navigation&quot; class=&quot;ui-navigation&quot;&gt;
    &lt;/nav&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var navigation = page.querySelector(&quot;#navigation&quot;),
-       navigationComponent = tau.widget.Navigation(navigation);
+</pre>
+            </div>
 
-   navigationComponent.pop();
-&lt;/script&gt;
+            <div class="example">
+
+<p>JS code:</p>
+
+<pre name="code" class="examplecode prettyprint">
+var navigation = page.querySelector(&quot;#navigation&quot;),
+    navigationComponent = tau.widget.Navigation(navigation);
+
+navigationComponent.pop();
 </pre>
             </div>
 
@@ -335,5 +366,10 @@
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

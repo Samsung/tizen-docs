@@ -7,12 +7,14 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Button</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 
 <h1>Button</h1>
 
 <p>The button component changes the default browser buttons to special buttons with additional configuration options, such as an icon, corners, and a shadow.</p>
+
+<img src="../../images/mobile_button.png" width="15%">
 
 <h2>Table of Contents</h2>
 
@@ -39,11 +41,13 @@ In addition, all elements with the <code>class=&quot;ui-btn&quot;</code> and <co
 
 <p>To manually create a button component, use the component constructor from the <code>tau</code> namespace:</p>
 
-<pre class="prettyprint">&lt;div id=&quot;button&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var buttonElement = document.getElementById(&quot;button&quot;),
-       button = tau.widget.Button(buttonElement);
-&lt;/script&gt;
+<p>HTML code:</p>
+<pre class="prettyprint">&lt;div class=&quot;ui-btn&quot; id=&quot;button&quot;&gt;&lt;/div&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var buttonElement = document.getElementById(&quot;button&quot;),
+    button = tau.widget.Button(buttonElement);
 </pre>
 
 <p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
@@ -172,17 +176,19 @@ In addition, all elements with the <code>class=&quot;ui-btn&quot;</code> and <co
 
 <p>To call a method on the component, use one of the existing APIs:</p>
 
-<pre class="prettyprint">&lt;div id=&quot;button&quot; class=&quot;ui-btn&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var buttonElement = document.getElementById(&quot;button&quot;),
-       button = tau.widget.Button(buttonElement);
+<p>HTML code:</p>
+<pre class="prettyprint">&lt;div class=&quot;ui-btn&quot; id=&quot;button&quot;&gt;&lt;/div&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var buttonElement = document.getElementById(&quot;button&quot;),
+    button = tau.widget.Button(buttonElement);
 
-   /*
-      button.methodName(methodArgument1, methodArgument2, ...);
-      For example:
-   */
-   button.value(&quot;text&quot;);
-&lt;/script&gt;
+/*
+    button.methodName(methodArgument1, methodArgument2, ...);
+    For example:
+*/
+button.value(&quot;text&quot;);
 </pre>
 
 	<h3>Summary</h3>
@@ -280,14 +286,15 @@ In addition, all elements with the <code>class=&quot;ui-btn&quot;</code> and <co
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
-							<pre name="code" class="examplecode
-							prettyprint">
-&lt;div class=&quot;ui-btn&quot; id=&quot;button&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;button&quot;),
-       buttonWidget = tau.widget.Button(element);
-   buttonWidget.disable();
-&lt;/script&gt;
+<p>HTML code:</p>
+<pre class="prettyprint">&lt;div class=&quot;ui-btn&quot; id=&quot;button&quot;&gt;&lt;/div&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById(&quot;button&quot;),
+    buttonWidget = tau.widget.Button(element);
+
+buttonWidget.disable();
 </pre>
 						</div>
 
@@ -337,14 +344,14 @@ In addition, all elements with the <code>class=&quot;ui-btn&quot;</code> and <co
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
-							<pre name="code" class="examplecode
-							prettyprint">
-&lt;div class=&quot;ui-btn&quot; id=&quot;button&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;button&quot;),
-       buttonWidget = tau.widget.Button(element);
-   buttonWidget.enable();
-&lt;/script&gt;
+<p>HTML code:</p>
+<pre class="prettyprint">&lt;div class=&quot;ui-btn&quot; id=&quot;button&quot;&gt;&lt;/div&gt;</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById(&quot;button&quot;),
+    buttonWidget = tau.widget.Button(element);
+
+buttonWidget.enable();
 </pre>
 						</div>
 
@@ -397,14 +404,14 @@ In addition, all elements with the <code>class=&quot;ui-btn&quot;</code> and <co
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
-							<pre name="code" class="examplecode
-							prettyprint">
-&lt;div class=&quot;ui-btn&quot; id=&quot;button&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;button&quot;),
-       buttonWidget = tau.widget.Button(element);
-   buttonWidget.refresh();
-&lt;/script&gt;
+<p>HTML code:</p>
+<pre class="prettyprint">&lt;div class=&quot;ui-btn&quot; id=&quot;button&quot;&gt;&lt;/div&gt;</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById(&quot;button&quot;),
+    buttonWidget = tau.widget.Button(element);
+
+buttonWidget.refresh();
 </pre>
 						</div>
 
@@ -484,18 +491,18 @@ In addition, all elements with the <code>class=&quot;ui-btn&quot;</code> and <co
 						<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
-							<pre name="code" class="examplecode
-							prettyprint">
-&lt;div class=&quot;ui-btn&quot; id=&quot;button&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;button&quot;),
-       buttonWidget = tau.widget.Button(element),
-       /* Value contains inner text of button */
-       value = buttonWidget.value();
+<p>HTML code:</p>
+<pre class="prettyprint">&lt;div class=&quot;ui-btn&quot; id=&quot;button&quot;&gt;&lt;/div&gt;</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById(&quot;button&quot;),
+    buttonWidget = tau.widget.Button(element),
 
-   /* &quot;New text&quot; will be text of button */
-   buttonWidget.value(&quot;New text&quot;);
-&lt;/script&gt;
+    /* Value contains inner text of button */
+    value = buttonWidget.value();
+
+/* &quot;New text&quot; will be text of button */
+buttonWidget.value(&quot;New text&quot;);
 </pre>
 						</div>
 				</dd>
@@ -511,5 +518,10 @@ In addition, all elements with the <code>class=&quot;ui-btn&quot;</code> and <co
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

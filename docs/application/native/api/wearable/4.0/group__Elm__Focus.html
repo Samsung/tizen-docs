@@ -96,8 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>An Elementary application has, at all times, one (and only one) <b>focused</b> object. This is what determines where the input events go to within the application's window. Also, focused objects can be decorated differently, in order to signal to the user where the input is, at a given moment.</p>
 <p>Elementary applications also have the concept of <b>focus chain</b>: one can cycle through all the windows' focusable objects by input (tab key) or programmatically. The default focus chain for an application is the one define by the order in which the widgets where added in code. One will cycle through top level widgets, and, for each one containing sub-objects, cycle through them all, before returning to the level above. Elementary also allows one to set <b>custom</b> focus chains for their applications.</p>
 <p>Besides the focused decoration a widget may exhibit, when it gets focus, Elementary has a <b>global</b> focus highlight object that can be enabled for a window. If one chooses to do so, this extra highlight effect will surround the current focused object, too.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Some Elementary widgets are <b>unfocusable</b>, after creation, by their very nature: they are not meant to be interacted with input events, but are there just for visual purposes.</dd></dl>
-<p><a class="el" href="general_functions_example_page.html">This</a> example contemplates some of these functions. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Some Elementary widgets are <b>unfocusable</b>, after creation, by their very nature: they are not meant to be interacted with input events, but are there just for visual purposes. </dd></dl>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -141,6 +140,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Focus.html#ga7917a05a9a04b2acdef1b8483e182259">elm_object_focused_item_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Focus.html#ga79cf3266a10aa2b9006fc73d2114f0ae">elm_object_focus_next_item_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_Focus_Direction dir)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Focus.html#gab100f2dfc9fb108e901511707830c8cb">elm_object_focus_next_item_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *next_item, Elm_Focus_Direction dir)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Focus.html#ga9bba23f36329b57d978b3a71a446c578">elm_object_focus</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Focus.html#ga62d5d94680bd567608b4293b7c424530">elm_object_unfocus</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Focus.html#gaceecdca9ab7d02f19f21b52a0083fa33">elm_object_focus_direction_go</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int x, int y)</td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="ga62c4bec2f0402bd043da4e97edef9e7b"></a><!-- doxytag: member="elm_config.h::Elm_Focus_Autoscroll_Mode" ref="ga62c4bec2f0402bd043da4e97edef9e7b" args="" -->
@@ -573,6 +575,33 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga9bba23f36329b57d978b3a71a446c578"></a><!-- doxytag: member="elm_removed.h::elm_object_focus" ref="ga9bba23f36329b57d978b3a71a446c578" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Focus.html#ga9bba23f36329b57d978b3a71a446c578">elm_object_focus</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Make a given Elementary object the focused one.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The Elementary object to make focused.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This object, if it can handle focus, will take the focus away from the one who had it previously and will, for now on, be the one receiving input events.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Focus.html#gad2e04b8263454b9186959375f58a9660">elm_object_focus_get()</a> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000510">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__Focus.html#ga05e39b5e60ad861c63100c811855ef55">elm_object_focus_set()</a> instead.</dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga10daa6ff109afb1b09a646df8a5b2666"></a><!-- doxytag: member="elm_focus.h::elm_object_focus_allow_get" ref="ga10daa6ff109afb1b09a646df8a5b2666" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -816,6 +845,50 @@ On focus cycle, only will be evaluated children of this container.</dd></dl>
 </dl>
 <p>Any focus chain previously set on <code>obj</code> (for its child objects) is removed entirely after this call.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaceecdca9ab7d02f19f21b52a0083fa33"></a><!-- doxytag: member="elm_removed.h::elm_object_focus_direction_go" ref="gaceecdca9ab7d02f19f21b52a0083fa33" args="(Evas_Object *obj, int x, int y)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Focus.html#gaceecdca9ab7d02f19f21b52a0083fa33">elm_object_focus_direction_go</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Give focus to near object in one direction.</p>
+<p>Give focus to near object in direction of one object. If none focusable object in given direction, the focus will not change.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The reference object </td></tr>
+    <tr><td class="paramname">x</td><td>Horizontal component of direction to focus </td></tr>
+    <tr><td class="paramname">y</td><td>Vertical component of direction to focus</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000512">Deprecated:</a></b></dt><dd>Support it later.</dd></dl>
 
 </div>
 </div>
@@ -1481,6 +1554,33 @@ On focus cycle, only will be evaluated children of this container.</dd></dl>
 <p>This sets whether the object <code>obj</code> and its children objects are able to take focus or not. If the tree is set as unfocusable, newest focused object which is not in this tree will get focus. This API can be helpful for an object to be deleted. When an object will be deleted soon, it and its children may not want to get focus (by focus reverting or by other focus controls). Then, just use this API before deleting.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Focus.html#gacb1db3f6318c0f8f6850e38692ebd1c2">elm_object_tree_focus_allow_get()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga62d5d94680bd567608b4293b7c424530"></a><!-- doxytag: member="elm_removed.h::elm_object_unfocus" ref="ga62d5d94680bd567608b4293b7c424530" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Focus.html#ga62d5d94680bd567608b4293b7c424530">elm_object_unfocus</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Remove the focus from an Elementary object</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The Elementary to take focus from</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This removes the focus from <code>obj</code>, passing it back to the previous element in the focus chain list.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Focus.html#ga9bba23f36329b57d978b3a71a446c578">elm_object_focus()</a> and <a class="el" href="group__Elm__Focus.html#ga001412f48de5682cc9a3ac052feac5bf">elm_object_focus_custom_chain_get()</a> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000511">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__Focus.html#ga05e39b5e60ad861c63100c811855ef55">elm_object_focus_set()</a> instead.</dd></dl>
 
 </div>
 </div>

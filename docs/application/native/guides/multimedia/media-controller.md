@@ -35,9 +35,9 @@ The main features of the Media Controller API include:
 
 - Sending and processing a custom event
 
-  You can [send a custom event](#sending-and-processing-a-custom-event) to the client from the server side and then process the event on the client side.
+  You can [send a custom event](#sending-and-processing-a-custom-event) to the client from the server side, and then process the event on the client side.
 
-  You can [send a reply of the custom event](#send_event_reply) to the server from the client side and then receive the reply on the server side.
+  You can [send a reply of the custom event](#send_event_reply) to the server from the client side, and then receive the reply on the server side.
 
   > **Note**
   >
@@ -102,9 +102,9 @@ To update the metadata and playback information on the server side:
    ret = mc_server_create(&g_server_h);
    ```
 
-2. Set the metadata or playback information to be updated using the corresponding `mc_server_set_XXX()` and then update the metadata or playback information using the corresponding `mc_server_update_XXX()`.
+2. Set the metadata or playback information to be updated using the corresponding `mc_server_set_XXX()`, and then update the metadata or playback information using the corresponding `mc_server_update_XXX()`.
 
-   For example, to update the playback state information, set the information to be updated using the `mc_server_set_playback_state()` and then update the information using the `mc_server_update_playback_info()`:
+   For example, to update the playback state information, set the information to be updated using the `mc_server_set_playback_state()`, and then update the information using the `mc_server_update_playback_info()`:
 
    ```
    ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
@@ -175,7 +175,7 @@ To update the playlist and metadata information on the server side:
 
    ret = mc_server_create_playlist(g_server_h, "playlist", &playlist_h);
    ```
-3. Set the metadata information in the playlist handle to be updated using the corresponding `mc_server_add_item_to_playlist()` and then update the playlist using the corresponding `mc_server_update_playlist_done()`:
+3. Set the metadata information in the playlist handle to be updated using the corresponding `mc_server_add_item_to_playlist()`, and then update the playlist using the corresponding `mc_server_update_playlist_done()`:
 
    ```
    mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_TITLE, "title_1");

@@ -99,8 +99,6 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a0bc6515cb6ccc7ac4a2dfb7918291937">subs</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a76b1731ec4829adb00a0ffb08b2a9c3a">edje_signals</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a58f847ab9be7b013e39a15849ff3f50b">parts_cursors</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a60cd8eb85cd48910fb59f54b3ac08253">klass</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#ac71e715319498cf2f17a550c7fd0ae3e">group</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a8fde24358eba08707c1ef1dec33db7ea">frozen</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a09347544d2c6d4b38c3723ddbd8e13c9">needs_size_calc</a>: 1</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a1ee5f6a65db482d357cba5a6a6b355b1">restricted_calc_w</a>: 1</td></tr>
@@ -108,6 +106,10 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#ae76082aeae1d723c68642be6eb911e59">can_access</a>: 1</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#ae6ca2e91974def2e30b0ac55410f3aa3">destructed_is</a>: 1</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a1271b1b1587abbef8abe5cbef7c448b9">file_set</a>: 1</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a3a1472ffc00360bcda761171adc1a1f8">properties</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#ab5151360ab0c80313ada90f201a92e09">signals</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a543a72f92c64585fbeca7495d049f160">factories</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Efl_Model *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Elm__Layout__Smart__Data.html#a79b4a9535a633122ba553a92fcefb737">model</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Base widget smart data extended with layout instance data. </p>
@@ -136,7 +138,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This flag indicates if Elm_Layout destructor was called. This is needed to avoid unnecessary calculation of subobject deletion during layout object's deletion. </p>
+<p>This flag indicates if Efl.Ui.Layout destructor was called. This is needed to avoid unnecessary calculation of subobject deletion during layout object's deletion. </p>
 
 </div>
 </div>
@@ -154,6 +156,20 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a543a72f92c64585fbeca7495d049f160"></a><!-- doxytag: member="_Elm_Layout_Smart_Data::factories" ref="a543a72f92c64585fbeca7495d049f160" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a>* <a class="el" href="struct__Elm__Layout__Smart__Data.html#a543a72f92c64585fbeca7495d049f160">_Elm_Layout_Smart_Data::factories</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The hash with parts connected to factories. </p>
+
+</div>
+</div>
 <a class="anchor" id="a1271b1b1587abbef8abe5cbef7c448b9"></a><!-- doxytag: member="_Elm_Layout_Smart_Data::file_set" ref="a1271b1b1587abbef8abe5cbef7c448b9" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -164,7 +180,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>This flag indicates if Elm_Layout source is set from a file </p>
+<p>This flag indicates if Efl.Ui.Layout source is set from a file </p>
 
 </div>
 </div>
@@ -182,31 +198,17 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ac71e715319498cf2f17a550c7fd0ae3e"></a><!-- doxytag: member="_Elm_Layout_Smart_Data::group" ref="ac71e715319498cf2f17a550c7fd0ae3e" args="" -->
+<a class="anchor" id="a79b4a9535a633122ba553a92fcefb737"></a><!-- doxytag: member="_Elm_Layout_Smart_Data::model" ref="a79b4a9535a633122ba553a92fcefb737" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* <a class="el" href="struct__Elm__Layout__Smart__Data.html#ac71e715319498cf2f17a550c7fd0ae3e">_Elm_Layout_Smart_Data::group</a></td>
+          <td class="memname">Efl_Model* <a class="el" href="struct__Elm__Layout__Smart__Data.html#a79b4a9535a633122ba553a92fcefb737">_Elm_Layout_Smart_Data::model</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>2nd identifier of an edje object group which is used in theme_set. klass and group are used together. </p>
-
-</div>
-</div>
-<a class="anchor" id="a60cd8eb85cd48910fb59f54b3ac08253"></a><!-- doxytag: member="_Elm_Layout_Smart_Data::klass" ref="a60cd8eb85cd48910fb59f54b3ac08253" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* <a class="el" href="struct__Elm__Layout__Smart__Data.html#a60cd8eb85cd48910fb59f54b3ac08253">_Elm_Layout_Smart_Data::klass</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>1st identifier of an edje object group which is used in theme_set. klass and group are used together. </p>
+<p>The model </p>
 
 </div>
 </div>
@@ -252,6 +254,20 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a3a1472ffc00360bcda761171adc1a1f8"></a><!-- doxytag: member="_Elm_Layout_Smart_Data::properties" ref="a3a1472ffc00360bcda761171adc1a1f8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a>* <a class="el" href="struct__Elm__Layout__Smart__Data.html#a3a1472ffc00360bcda761171adc1a1f8">_Elm_Layout_Smart_Data::properties</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The list of properties connected to layout parts. </p>
+
+</div>
+</div>
 <a class="anchor" id="a795e136ebb7f39d6564033c7ac594152"></a><!-- doxytag: member="_Elm_Layout_Smart_Data::restricted_calc_h" ref="a795e136ebb7f39d6564033c7ac594152" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -277,6 +293,20 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>This is a flag to support edje restricted_calc in w axis. </p>
+
+</div>
+</div>
+<a class="anchor" id="ab5151360ab0c80313ada90f201a92e09"></a><!-- doxytag: member="_Elm_Layout_Smart_Data::signals" ref="ab5151360ab0c80313ada90f201a92e09" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a>* <a class="el" href="struct__Elm__Layout__Smart__Data.html#ab5151360ab0c80313ada90f201a92e09">_Elm_Layout_Smart_Data::signals</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>The list of signals connected. </p>
 
 </div>
 </div>

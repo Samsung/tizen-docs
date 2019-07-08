@@ -65,7 +65,7 @@ The following steps illustrate a typical scenario for using the push messaging s
 
 To enable your application to use the push functionality:
 
-1.  To use the [Tizen.Messaging.Push](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Push.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Messaging.Push](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Push.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -125,7 +125,7 @@ To manage push service connections:
     };
     ```
 
-2.  Register the event handlers for the `StateChanged` and `NotificationReceived` events of the [Tizen.Messaging.Push.PushClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Push.PushClient.html) class and connect to the push service with the `PushServiceConnect()` method:
+2.  Register the event handlers for the `StateChanged` and `NotificationReceived` events of the [Tizen.Messaging.Push.PushClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Push.PushClient.html) class and connect to the push service with the `PushServiceConnect()` method:
 
     ```
     try
@@ -222,7 +222,7 @@ To register with the push server:
 
 1.  Request registration.
 
-    After connecting to the push service, request registration using the `PushServerRegister()` method of the [Tizen.Messaging.Push.PushClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Messaging.Push.PushClient.html) class.
+    After connecting to the push service, request registration using the `PushServerRegister()` method of the [Tizen.Messaging.Push.PushClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Messaging.Push.PushClient.html) class.
 
     ```
     public static void OnStateUnregistered()

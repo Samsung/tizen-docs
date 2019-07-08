@@ -86,33 +86,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
-  <div class="summary">
-<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Object Method Interceptors</div>  </div>
 <div class="ingroups"><a class="el" href="group__Evas__Object__Group.html">Generic Object Functions</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Evas provides a way to intercept method calls. The interceptor callback may opt to completely deny the call, or may check and change the parameters before continuing. The continuation of an intercepted call is done by calling the intercepted call again, from inside the interceptor callback. </p>
-<table class="memberdecls">
-<tr><td colspan="2"><h2><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga6b409df6cc6b00705438b71f521f1981">Evas_Object_Intercept_Show_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#gaca49c2f3c21726679f1936329187585c">Evas_Object_Intercept_Hide_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga68ccfa9c5753372d3b8ef5db9dc59ce6">Evas_Object_Intercept_Move_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> x, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> y)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga1b856c4fdf8fad3b5331f781bbb5c7ca">Evas_Object_Intercept_Resize_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> w, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> h)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga4323716bbef40e7fab4af0466dd1df5f">Evas_Object_Intercept_Raise_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga0780dfed5f1e0c5bcce3694fa624d308">Evas_Object_Intercept_Lower_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga1519c7d4d3be291c5f8cc362f291bd05">Evas_Object_Intercept_Stack_Above_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *above)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#gadc0372daf0151043a72cbe46b084b870">Evas_Object_Intercept_Stack_Below_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *above)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga4343dbba845421489b8a3bafb89d0199">Evas_Object_Intercept_Layer_Set_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int l)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga0813a8b9e76f633215c78f2cf0a90c1e">Evas_Object_Intercept_Focus_Set_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> focus)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga3b7928465e1e0f3a0b9a715b05452245">Evas_Object_Intercept_Color_Set_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int r, int g, int b, int a)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#gad128f8a435916691d4fc182f2b1dec03">Evas_Object_Intercept_Clip_Set_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *clip)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga0a65d3ddfd1499c5ac7adb924bc3924c">Evas_Object_Intercept_Clip_Unset_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
-</table>
 <hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="gad128f8a435916691d4fc182f2b1dec03"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Clip_Set_Cb" ref="gad128f8a435916691d4fc182f2b1dec03" args=")(void *data, Evas_Object *obj, Evas_Object *clip)" -->
+<a class="anchor" id="gad128f8a435916691d4fc182f2b1dec03"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Clip_Set_Cb" ref="gad128f8a435916691d4fc182f2b1dec03" args=")(void *data, Evas_Object *obj, Evas_Object *clip)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -137,7 +118,7 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga0a65d3ddfd1499c5ac7adb924bc3924c"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Clip_Unset_Cb" ref="ga0a65d3ddfd1499c5ac7adb924bc3924c" args=")(void *data, Evas_Object *obj)" -->
+<a class="anchor" id="ga0a65d3ddfd1499c5ac7adb924bc3924c"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Clip_Unset_Cb" ref="ga0a65d3ddfd1499c5ac7adb924bc3924c" args=")(void *data, Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -161,7 +142,7 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga3b7928465e1e0f3a0b9a715b05452245"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Color_Set_Cb" ref="ga3b7928465e1e0f3a0b9a715b05452245" args=")(void *data, Evas_Object *obj, int r, int g, int b, int a)" -->
+<a class="anchor" id="ga3b7928465e1e0f3a0b9a715b05452245"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Color_Set_Cb" ref="ga3b7928465e1e0f3a0b9a715b05452245" args=")(void *data, Evas_Object *obj, int r, int g, int b, int a)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -189,7 +170,34 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga0813a8b9e76f633215c78f2cf0a90c1e"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Focus_Set_Cb" ref="ga0813a8b9e76f633215c78f2cf0a90c1e" args=")(void *data, Evas_Object *obj, Eina_Bool focus)" -->
+<a class="anchor" id="ga489d568d3ee2dd51d991e36bfef24964"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Device_Focus_Set_Cb" ref="ga489d568d3ee2dd51d991e36bfef24964" args=")(void *data, Evas_Object *obj, Eina_Bool focus, Eo *seat)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(* <a class="el" href="group__Evas__Object__Group__Interceptors.html#ga489d568d3ee2dd51d991e36bfef24964">Evas_Object_Intercept_Device_Focus_Set_Cb</a>)(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> focus, Eo *seat)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Function signature for the focus set event of an evas object with seat info</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>the pointer passed through the callback. </td></tr>
+    <tr><td class="paramname">obj</td><td>the object being focused </td></tr>
+    <tr><td class="paramname">focus</td><td>the focus value, EINA_TRUE if the object is focused, EINA_FALSE otherwise </td></tr>
+    <tr><td class="paramname">seat</td><td>the seat for which focus is being set</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_object_intercept_device_focus_set_callback_add() </dd>
+<dd>
+evas_object_intercept_device_focus_set_callback_del()</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.20 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0813a8b9e76f633215c78f2cf0a90c1e"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Focus_Set_Cb" ref="ga0813a8b9e76f633215c78f2cf0a90c1e" args=")(void *data, Evas_Object *obj, Eina_Bool focus)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -214,7 +222,7 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gaca49c2f3c21726679f1936329187585c"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Hide_Cb" ref="gaca49c2f3c21726679f1936329187585c" args=")(void *data, Evas_Object *obj)" -->
+<a class="anchor" id="gaca49c2f3c21726679f1936329187585c"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Hide_Cb" ref="gaca49c2f3c21726679f1936329187585c" args=")(void *data, Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -238,7 +246,7 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga4343dbba845421489b8a3bafb89d0199"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Layer_Set_Cb" ref="ga4343dbba845421489b8a3bafb89d0199" args=")(void *data, Evas_Object *obj, int l)" -->
+<a class="anchor" id="ga4343dbba845421489b8a3bafb89d0199"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Layer_Set_Cb" ref="ga4343dbba845421489b8a3bafb89d0199" args=")(void *data, Evas_Object *obj, int l)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -263,7 +271,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga0780dfed5f1e0c5bcce3694fa624d308"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Lower_Cb" ref="ga0780dfed5f1e0c5bcce3694fa624d308" args=")(void *data, Evas_Object *obj)" -->
+<a class="anchor" id="ga0780dfed5f1e0c5bcce3694fa624d308"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Lower_Cb" ref="ga0780dfed5f1e0c5bcce3694fa624d308" args=")(void *data, Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -287,12 +295,12 @@ evas_object_intercept_layer_callback_del() </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga68ccfa9c5753372d3b8ef5db9dc59ce6"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Move_Cb" ref="ga68ccfa9c5753372d3b8ef5db9dc59ce6" args=")(void *data, Evas_Object *obj, Evas_Coord x, Evas_Coord y)" -->
+<a class="anchor" id="ga68ccfa9c5753372d3b8ef5db9dc59ce6"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Move_Cb" ref="ga68ccfa9c5753372d3b8ef5db9dc59ce6" args=")(void *data, Evas_Object *obj, Evas_Coord x, Evas_Coord y)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="group__Evas__Object__Group__Interceptors.html#ga68ccfa9c5753372d3b8ef5db9dc59ce6">Evas_Object_Intercept_Move_Cb</a>)(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> x, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> y)</td>
+          <td class="memname">typedef void(* <a class="el" href="group__Evas__Object__Group__Interceptors.html#ga68ccfa9c5753372d3b8ef5db9dc59ce6">Evas_Object_Intercept_Move_Cb</a>)(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Evas_Coord x, Evas_Coord y)</td>
         </tr>
       </table>
 </div>
@@ -313,7 +321,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga4323716bbef40e7fab4af0466dd1df5f"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Raise_Cb" ref="ga4323716bbef40e7fab4af0466dd1df5f" args=")(void *data, Evas_Object *obj)" -->
+<a class="anchor" id="ga4323716bbef40e7fab4af0466dd1df5f"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Raise_Cb" ref="ga4323716bbef40e7fab4af0466dd1df5f" args=")(void *data, Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -337,12 +345,12 @@ evas_object_intercept_layer_callback_del() </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga1b856c4fdf8fad3b5331f781bbb5c7ca"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Resize_Cb" ref="ga1b856c4fdf8fad3b5331f781bbb5c7ca" args=")(void *data, Evas_Object *obj, Evas_Coord w, Evas_Coord h)" -->
+<a class="anchor" id="ga1b856c4fdf8fad3b5331f781bbb5c7ca"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Resize_Cb" ref="ga1b856c4fdf8fad3b5331f781bbb5c7ca" args=")(void *data, Evas_Object *obj, Evas_Coord w, Evas_Coord h)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(* <a class="el" href="group__Evas__Object__Group__Interceptors.html#ga1b856c4fdf8fad3b5331f781bbb5c7ca">Evas_Object_Intercept_Resize_Cb</a>)(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> w, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> h)</td>
+          <td class="memname">typedef void(* <a class="el" href="group__Evas__Object__Group__Interceptors.html#ga1b856c4fdf8fad3b5331f781bbb5c7ca">Evas_Object_Intercept_Resize_Cb</a>)(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Evas_Coord w, Evas_Coord h)</td>
         </tr>
       </table>
 </div>
@@ -363,7 +371,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga6b409df6cc6b00705438b71f521f1981"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Show_Cb" ref="ga6b409df6cc6b00705438b71f521f1981" args=")(void *data, Evas_Object *obj)" -->
+<a class="anchor" id="ga6b409df6cc6b00705438b71f521f1981"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Show_Cb" ref="ga6b409df6cc6b00705438b71f521f1981" args=")(void *data, Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -387,7 +395,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga1519c7d4d3be291c5f8cc362f291bd05"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Stack_Above_Cb" ref="ga1519c7d4d3be291c5f8cc362f291bd05" args=")(void *data, Evas_Object *obj, Evas_Object *above)" -->
+<a class="anchor" id="ga1519c7d4d3be291c5f8cc362f291bd05"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Stack_Above_Cb" ref="ga1519c7d4d3be291c5f8cc362f291bd05" args=")(void *data, Evas_Object *obj, Evas_Object *above)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -412,7 +420,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gadc0372daf0151043a72cbe46b084b870"></a><!-- doxytag: member="Evas_Common.h::Evas_Object_Intercept_Stack_Below_Cb" ref="gadc0372daf0151043a72cbe46b084b870" args=")(void *data, Evas_Object *obj, Evas_Object *above)" -->
+<a class="anchor" id="gadc0372daf0151043a72cbe46b084b870"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Object_Intercept_Stack_Below_Cb" ref="gadc0372daf0151043a72cbe46b084b870" args=")(void *data, Evas_Object *obj, Evas_Object *above)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -478,8 +486,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a clip set event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga133e2af548a944644a5640e2a92073e8">evas_object_intercept_clip_set_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga133e2af548a944644a5640e2a92073e8">evas_object_intercept_clip_set_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -516,8 +523,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a clip set event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga1519e5d53ab213474a1ea285f8920efa">evas_object_intercept_clip_set_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga1519e5d53ab213474a1ea285f8920efa">evas_object_intercept_clip_set_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -561,8 +567,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a clip unset event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gadba2207efa5f14a6f3a208f98e5a076a">evas_object_intercept_clip_unset_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gadba2207efa5f14a6f3a208f98e5a076a">evas_object_intercept_clip_unset_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -599,8 +604,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a clip unset event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga287cda0003703925760eaf037cf89f14">evas_object_intercept_clip_unset_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga287cda0003703925760eaf037cf89f14">evas_object_intercept_clip_unset_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -644,8 +648,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a color set event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga36e20e80c7ae9e410d41217b579fee7c">evas_object_intercept_color_set_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga36e20e80c7ae9e410d41217b579fee7c">evas_object_intercept_color_set_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -682,8 +685,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a color set event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gab3e6bb14b7bcb0e278290b7e10e72a85">evas_object_intercept_color_set_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gab3e6bb14b7bcb0e278290b7e10e72a85">evas_object_intercept_color_set_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -727,8 +729,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a focus set event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga7acc0bc99542d043f27b106d42951b4f">evas_object_intercept_focus_set_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga7acc0bc99542d043f27b106d42951b4f">evas_object_intercept_focus_set_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -765,8 +766,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a focus set event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gaca7f4c087e26eb7de392aa9fa1238f75">evas_object_intercept_focus_set_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gaca7f4c087e26eb7de392aa9fa1238f75">evas_object_intercept_focus_set_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -810,8 +810,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a hide event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga5b7c4142e3b7b00c4a482d4d1ceb4d40">evas_object_intercept_hide_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga5b7c4142e3b7b00c4a482d4d1ceb4d40">evas_object_intercept_hide_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -848,8 +847,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a hide event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga5e551dca891de1d4c755ca8317150078">evas_object_intercept_hide_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga5e551dca891de1d4c755ca8317150078">evas_object_intercept_hide_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -893,8 +891,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a layer set event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga1b818e01e97b1b32b7499744470a6628">evas_object_intercept_layer_set_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga1b818e01e97b1b32b7499744470a6628">evas_object_intercept_layer_set_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -931,8 +928,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a layer set event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga5ef8f030f66e171bc64444a3af1897eb">evas_object_intercept_layer_set_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga5ef8f030f66e171bc64444a3af1897eb">evas_object_intercept_layer_set_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -976,8 +972,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a lower event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga88670250386787cf44ee1b8b2aca6364">evas_object_intercept_lower_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga88670250386787cf44ee1b8b2aca6364">evas_object_intercept_lower_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1014,8 +1009,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a lower event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gaf2a76d793d6adf22525c44e21277590d">evas_object_intercept_lower_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gaf2a76d793d6adf22525c44e21277590d">evas_object_intercept_lower_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1059,8 +1053,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a move event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga1c4cbc38fefc3a02f1cc88afe2ed8dc1">evas_object_intercept_move_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga1c4cbc38fefc3a02f1cc88afe2ed8dc1">evas_object_intercept_move_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1097,8 +1090,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a move event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga8c8c00f6b2a856f6beec8c54581f60fe">evas_object_intercept_move_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga8c8c00f6b2a856f6beec8c54581f60fe">evas_object_intercept_move_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1142,8 +1134,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a raise event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gac082d76756535dae8907a84c85d948de">evas_object_intercept_raise_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gac082d76756535dae8907a84c85d948de">evas_object_intercept_raise_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1180,8 +1171,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a raise event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga6e00ed7580fb2708312bd1be30cc3d54">evas_object_intercept_raise_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga6e00ed7580fb2708312bd1be30cc3d54">evas_object_intercept_raise_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1225,8 +1215,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a resize event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gad4a339e97e134c652bb80e942d7a889c">evas_object_intercept_resize_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gad4a339e97e134c652bb80e942d7a889c">evas_object_intercept_resize_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1263,8 +1252,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a resize event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga7feb511de3156a0a15c2654c383ed472">evas_object_intercept_resize_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga7feb511de3156a0a15c2654c383ed472">evas_object_intercept_resize_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1308,8 +1296,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a show event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga416172e52f395d95405c5dc8fcd7d091">evas_object_intercept_show_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga416172e52f395d95405c5dc8fcd7d091">evas_object_intercept_show_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1346,8 +1333,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a show event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga0160f5d06784c7c090ff706e7c3abcf8">evas_object_intercept_show_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga0160f5d06784c7c090ff706e7c3abcf8">evas_object_intercept_show_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1391,8 +1377,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a stack above event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gac7183303e490742da6a4b2114897e850">evas_object_intercept_stack_above_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gac7183303e490742da6a4b2114897e850">evas_object_intercept_stack_above_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1429,8 +1414,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a stack above event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gae8915bb7e9b30e9010db7f01a9668fad">evas_object_intercept_stack_above_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#gae8915bb7e9b30e9010db7f01a9668fad">evas_object_intercept_stack_above_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1474,8 +1458,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a stack below event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga724c3d8fe953556e1c5bcd04a08079bf">evas_object_intercept_stack_below_callback_del()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga724c3d8fe953556e1c5bcd04a08079bf">evas_object_intercept_stack_below_callback_del()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1512,8 +1495,7 @@ evas_object_intercept_layer_callback_del() </dd></dl>
   </dd>
 </dl>
 <p>This function sets a callback function to intercepts a stack below event of a canvas object.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga763a0425fa7890422688d0794a61a834">evas_object_intercept_stack_below_callback_add()</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Interceptors.html#ga763a0425fa7890422688d0794a61a834">evas_object_intercept_stack_below_callback_add()</a>.  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

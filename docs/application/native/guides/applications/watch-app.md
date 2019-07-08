@@ -92,83 +92,83 @@ To manage the life-cycle callbacks:
 
 1. Register the necessary callbacks:
    - The `create` event is triggered before the application main loop starts. In this callback, you can initialize the application resources, such as create windows and data structures.
-   ```
-   bool
-    app_create(int width, int height, void* user_data)
-    {
-        /* Hook to take necessary actions before the main event loop starts */
-        /* This usually means initializing the UI and application data */
+     ```
+     bool
+     app_create(int width, int height, void* user_data)
+     {
+         /* Hook to take necessary actions before the main event loop starts */
+         /* This usually means initializing the UI and application data */
 
-        return true;
-    }
-   ```
+         return true;
+     }
+     ```
    - The `app_control` event is triggered when another application sends a launch request to the application.
-   ```
-    void
-    app_control(app_control_h app_control, void* user_data)
-    {
-        /* Handle the launch request */
-        /* Show the user the task requested through the "app_control" parameter */
-    }
-   ```
+     ```
+     void
+     app_control(app_control_h app_control, void* user_data)
+     {
+         /* Handle the launch request */
+         /* Show the user the task requested through the "app_control" parameter */
+     }
+     ```
    - The `pause` event is triggered when the application is completely obscured by another application and becomes invisible.
-   ```
-    void
-    app_pause(void* user_data)
-    {
-        /* Take necessary actions when application becomes invisible */
-        /* Release the resources needed to draw the normal watch */
-    }
-   ```
+     ```
+     void
+     app_pause(void* user_data)
+     {
+         /* Take necessary actions when application becomes invisible */
+         /* Release the resources needed to draw the normal watch */
+     }
+     ```
    - The `resume` event is triggered when the application becomes visible.
-   ```
-    void
-    app_resume(void* user_data)
-    {
-        /* Take the necessary actions when application becomes visible */
-        /* Acquire the resources needed to draw the normal watch */
-    }
-   ```
+     ```
+     void
+     app_resume(void* user_data)
+     {
+         /* Take the necessary actions when application becomes visible */
+         /* Acquire the resources needed to draw the normal watch */
+     }
+     ```
    - The `terminate` event is triggered when the application main loop exits.
-   ```
-    void
-    app_terminate(void* user_data)
-    {
-        /* Release all resources */
-    }
-   ```
+     ```
+     void
+     app_terminate(void* user_data)
+     {
+         /* Release all resources */
+     }
+     ```
    - The `time_tick` event is triggered at least once per second. The watch applications can get the current time from the `watch_time` time handle to draw a normal watch. Platform can invoke this event even in the background state. So even if your watch app is in the background if this event is invoked, you need to update the UI.
-   ```
-    void
-    app_time_tick(watch_time_h watch_time, void* user_data)
-    {
-        /* Called at least once per second */
-        /* Draw a normal watch with the hour, minute, and second */
-    }
-   ```
+     ```
+     void
+     app_time_tick(watch_time_h watch_time, void* user_data)
+     {
+         /* Called at least once per second */
+         /* Draw a normal watch with the hour, minute, and second */
+     }
+     ```
 2. Set the life-cycle callbacks in the `watch_app_lifecycle_callback_s` structure, and pass the structure to the `watch_app_main()` function that starts the watch application event loop:
-```
-int
-main(int argc, char* argv[])
-{
-    appdata ad = {0,};
-    watch_app_lifecycle_callback_s callback = {0,};
+   ```
+   int
+   main(int argc, char* argv[])
+   {
+       appdata ad = {0,};
+       watch_app_lifecycle_callback_s callback = {0,};
 
-    callback.create = app_create;
-    callback.app_control = app_control;
-    callback.terminate = app_terminate;
-    callback.pause = app_pause;
-    callback.resume = app_resume;
-    callback.time_tick = app_time_tick;
-    /* Ambient mode callbacks */
+       callback.create = app_create;
+       callback.app_control = app_control;
+       callback.terminate = app_terminate;
+       callback.pause = app_pause;
+       callback.resume = app_resume;
+       callback.time_tick = app_time_tick;
+       /* Ambient mode callbacks */
 
-    int ret = watch_app_main(argc, argv, &callback, &ad);
-    if (ret != APP_ERROR_NONE)
-        dlog_print(DLOG_ERROR, LOG_TAG, "watch_app_main() failed. err = %d", ret);
+       int ret = watch_app_main(argc, argv, &callback, &ad);
+       if (ret != APP_ERROR_NONE)
+           dlog_print(DLOG_ERROR, LOG_TAG, "watch_app_main() failed. err = %d", ret);
 
-    return ret;
-}
-```
+       return ret;
+   }
+   ```
 
 <a name="systemrelated"></a>
 ## Managing System-related Callbacks

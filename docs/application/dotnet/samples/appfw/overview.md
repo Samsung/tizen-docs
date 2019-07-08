@@ -26,14 +26,14 @@ for TD:
 			<td><img alt="" height="267" src="media/m40alarms.png" width="150"/></td>
 			<td>
 			<p><strong>(M) Alarms</strong> [In progress]</p>
-			<p>This sample application demonstrates how to schedule start of application at specified date and time or after delay using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a>.</p>
+			<p>This sample application demonstrates how to schedule start of an application at a specified date and time or after a delay using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m1appcommon.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/UI/AppCommon" target="_blank"><strong>(M) App-common</strong></a></p>
-			<p>This sample application demonstrates how to work with app-common APIs to obtain application-specific information.</p>
+			<p>This sample application demonstrates how to work with <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a> and <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.System.html" target="_blank">Tizen.System</a> to obtain application-specific information.</p>
 			</td>
 		</tr>
 		<tr>
@@ -47,7 +47,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m36badges.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Badges" target="_blank"><strong>(M) Badges</strong></a></p>
-			<p>This sample application demonstrates how to manage the application badge counter using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a>.</p>
+			<p>This sample application demonstrates how to manage the application badge counter using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.</p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/Badges" target="_blank">Native version</a></li>
@@ -58,14 +58,14 @@ for TD:
 			<td><img alt="" height="267" src="media/m47notificationmanager.png" width="150"/></td>
 			<td>
 			<p><strong>(M) NotificationManager</strong> [In progress]</p>
-			<p>This sample application demonstrates how to create and manage notifications using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Notifications.html" target="_blank">Tizen.Applications.Notifications C# API</a>.</p>
+			<p>This sample application demonstrates how to create and manage notifications using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Notifications.html" target="_blank">Tizen.Applications.Notifications</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m31preference.png" width="150"/></td>
 			<td>
-			<p><strong>(M) Preference</strong> [In progress]</p>
-			<p>This sample application demonstrates how to store and retrieve application specific data and preferences using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Preference" target="_blank"><strong>(M) Preference</strong></a></p>
+			<p>This sample application demonstrates how to store and retrieve application specific data and preferences using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference</a>.</p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/Preference" target="_blank">Native version</a></li>
@@ -83,7 +83,7 @@ for TD:
 			<td><img alt="" height="180" src="media/walarm_list.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Alarm" target="_blank"><strong>(W) Alarm</strong></a></p>
-			<p>This sample application demonstrates how to create and manage several alarms and save the alarm data. It also demonstrates how to create an application using Xamarin.Forms and <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to create and manage several alarms and save the alarm data. It also demonstrates how to create an application using Xamarin.Forms and <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Alarm" target="_blank">Native version</a></li>
@@ -95,16 +95,16 @@ for TD:
 			<td><img alt="" height="180" src="media/wappcontrol.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppControl" target="_blank"><strong>(W) AppControl</strong></a></p>
-			<p>This sample application demonstrates how to launch an application, get a result for the launch request, and create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>. When you press <strong>Launch</strong> button, AppInformation sample application will be launched.</p>
+			<p>This sample application demonstrates how to launch an application, get a result for the launch request, and create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>. When you press <strong>Launch</strong>, the AppInformation sample application will be launched.</p>
 			<p><strong>Prerequisites</strong><br>
 			First of all, you need to install <a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppInformation" target="_blank">AppInformation sample application</a> because it is what would be launched by AppControl sample application.
 			You can install it by using Visual Studio or the sdb command line as follows:<br>
 			<code>$ sdb install org.tizen.example.AppInformation-1.0.0.tpk</code>
 			</p>
-			<p>This application uses Tizen.Application API.<br>
+			<p>This application uses <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html" target="_blank">Class AppControl</a></li>
-				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControlLaunchMode.html" target="_blank">Class AppControlLaunchMode</a></li>
+				<li><a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html" target="_blank">Class AppControl</a></li>
+				<li><a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControlLaunchMode.html" target="_blank">Class AppControlLaunchMode</a></li>
 			</ul></p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
@@ -117,11 +117,11 @@ for TD:
 			<td><img alt="" height="180" src="media/wappinformation.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AppInformation" target="_blank"><strong>(W) AppInformation</strong></a></p>
-			<p>This sample application demonstrates how to get the specific information such as AppId, Package ID, and shared directory path. It also demonstrates how to get the directory information such as resource, cache, app data and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
-			<p>This application uses Tizen.Application API.<br>
+			<p>This sample application demonstrates how to get the specific information such as AppId, Package ID, and shared directory path. It also demonstrates how to get the directory information such as resource, cache, and app data and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
+			<p>This application uses <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationInfo.html" target="_blank">Class ApplicationInfo</a></li>
-				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.DirectoryInfo.html" target="_blank">Class DirectoryInfo</a></li>
+				<li><a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html" target="_blank">Class ApplicationInfo</a></li>
+				<li><a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.DirectoryInfo.html" target="_blank">Class DirectoryInfo</a></li>
 			</ul></p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
@@ -133,7 +133,7 @@ for TD:
 			<td><img alt="" height="180" src="media/wbadgecounter.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/BadgeCounter" target="_blank"><strong>(W) BadgeCounter</strong></a></p>
-			<p>This sample application demonstrates how to manage badge counter of the application using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to manage badge counter of the application using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a> and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>In addition, there is similar web sample application.<br>
 			<ul>
 				<li><a href="https://developer.tizen.org/development/sample/web/Application/Badges" target="_blank">Web version</a></li>
@@ -144,14 +144,14 @@ for TD:
 			<td><img alt="" height="180" src="media/wbadges.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Badges" target="_blank"><strong>(W) Badges</strong></a></p>
-			<p>This sample application demonstrates how to use application badge and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to use application badge and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wmessageport.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/MessagePortSampleApp" target="_blank"><strong>(W) MessagePortSampleApp</strong></a></p>
-			<p>This sample application demonstrates how to send and receive messages between applications and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to send and receive messages between applications and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>
 			<ul>
 				<li>Send a message to Tizen .Net Service sample application when <strong>Send a message</strong> button is clicked.</li>
@@ -162,13 +162,12 @@ for TD:
 			You can install it by using Visual Studio or the sdb command line as follows:<br>
 			<code>$ sdb install org.tizen.example.ServiceApp-1.0.0.tpk</code><br>
 			<code>$ sdb shell</code><br>
-			<code>$ app_launcher -s org.tizen.example.ServiceApp
-			</code><br>
-			If you do not install Tizen .Net service application, an exception occurs when you press <strong>Send a message</strong> button.
+			<code>$ app_launcher -s org.tizen.example.ServiceApp</code><br>
+			If you do not install the Tizen .Net service application, an exception occurs when you press <strong>Send a message</strong>.
 			</p>
-			<p>This application uses Tizen.Application.Messages API.<br>
+			<p>This application uses <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.html" target="_blank">Tizen.Applications.Messages</a>.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Messages.MessagePort.html" target="_blank">Class MessagePort</a></li>
+				<li><a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.MessagePort.html" target="_blank">Class MessagePort</a></li>
 			</ul></p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
@@ -180,17 +179,19 @@ for TD:
 			<td><img alt="" height="180" src="media/wpreference.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Preference" target="_blank"><strong>(W) Preference</strong></a></p>
-			<p>This sample application demonstrates how to use <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a> and how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to use <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference</a> and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
 		<tr>
-			<td><img alt="" height="180" src="media/wserviceapp.png" width="180"/></td>
+			<td>
+			<p>Service application - no UI</p>
+			</td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ServiceApp" target="_blank"><strong>(W) ServiceApp</strong></a></p>
 			<p>This sample application demonstrates how to create a service application which has no UI.</p>
-			<p>This application uses Tizen.Application API.<br>
+			<p>This application uses <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ServiceApplication.html" target="_blank">Class ServiceApplication</a></li>
+				<li><a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ServiceApplication.html" target="_blank">Class ServiceApplication</a></li>
 			</ul></p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
@@ -226,8 +227,40 @@ for TD:
 			<p><img alt="" height="225" src="media/tv18appinfo.png" width="400" /></p>
 			</td>
 			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AppInfo" target="_blank"><strong>(T) AppInfo</strong></a></p>
-			<p>This sample application demonstrates how to obtain information about installed applications using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html" target="_blank">Tizen.Applications C# API</a>.</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/AppInfo" target="_blank"><strong>(T) AppInfo</strong></a></p>
+			<p>This sample application demonstrates how to obtain information about installed applications using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Service application - no UI</p>
+			</td>
+			<td>
+			<p><strong>(T) MessagePortMiami</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.html" target="_blank">Tizen.Applications.Messages</a> to communicate between applications and services.</p>
+			<p>The MessagePortMiami service cannot be tested as a standalone application. It is one of the applications available in the set of three sample applications:
+			<ul>
+				<li>MessagePort application - Web application (available in Tizen Studio) that shows the graphical interface and handles the Havana port communications.</li>
+				<li>MessagePortNassau service - C# service application that handles the Nassau port communications.</li>
+				<li>MessagePortMiami service - C# service application that handles the Miami port communications.</li>
+			</ul>
+			</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Service application - no UI</p>
+			</td>
+			<td>
+			<p><strong>(T) MessagePortNassau</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Messages.html" target="_blank">Tizen.Applications.Messages</a> to communicate between applications and services.</p>
+			<p>The MessagePortNassau service cannot be tested as a standalone application. It is one of the applications available in the set of three sample applications:
+			<ul>
+				<li>MessagePort application - Web application (available in Tizen Studio) that shows the graphical interface and handles the Havana port communications.</li>
+				<li>MessagePortNassau service - C# service application that handles the Nassau port communications.</li>
+				<li>MessagePortMiami service - C# service application that handles the Miami port communications.</li>
+			</ul>
+			</p>
 			</td>
 		</tr>
 		<tr>
@@ -236,7 +269,7 @@ for TD:
 			</td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/Preference" target="_blank"><strong>(T) Preference</strong></a></p>
-			<p>This sample application demonstrates how to store and retrieve an application specific data and preference using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference C# API</a>.</p>
+			<p>This sample application demonstrates how to store and retrieve an application specific data and preference using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference</a>.</p>
 			</td>
 		</tr>
 	</tbody>

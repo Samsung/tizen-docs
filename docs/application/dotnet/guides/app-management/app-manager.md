@@ -167,5 +167,5 @@ To get information on the current application, follow these steps:
 
 
 ## Related Information
-  - Dependencies
+  * Dependencies
     -   Tizen 4.0 and Higher

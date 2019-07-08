@@ -44,7 +44,7 @@ A record represents an actual record in the internal database, but you can consi
 
 A record has many properties, for example, a todo record has the todo description, priority, progress, creation time, last modified and completed time, and many other properties. A record can also contain an identifier field, which holds an ID of another record. Setting this field's value establishes a relation between the records, for example, a calendar event contains the ID of a calendar book to which it belongs.
 
-Records are stored as instances of the [Tizen.Pims.Calendar.CalendarRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarRecord.html) class. The following examples illustrate creating a new record and retrieving an existing record by using its ID:
+Records are stored as instances of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class. The following examples illustrate creating a new record and retrieving an existing record by using its ID:
 
 -   Creating a new record:
 
@@ -59,11 +59,11 @@ Records are stored as instances of the [Tizen.Pims.Calendar.CalendarRecord](http
     var record = manager.Get(CalendarViews.Event.Uri, eventId);
     ```
 
-To manage the record, you can use the classes of the [Tizen.Pims.Calendar.CalendarViews](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarViews.html) namespace and the [Tizen.Pims.Calendar.CalendarTypes](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarTypes.html) class:
+To manage the record, you can use the classes of the [Tizen.Pims.Calendar.CalendarViews](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarViews.html) namespace and the [Tizen.Pims.Calendar.CalendarTypes](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarTypes.html) class:
 
 -   URI
 
-    A record type is identified by a structure called the view. For example, the [Tizen.Pims.Calendar.CalendarViews.Event](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarViews.Event.html) class describes the properties of the calendar event record. Every class in the Tizen.Pims.Calendar.CalendarViews namespace has a `Uri` field that uniquely identifies the view. In many cases, you must provide the `Uri` value to indicate what type of record you want to create or operate on.
+    A record type is identified by a structure called the view. For example, the [Tizen.Pims.Calendar.CalendarViews.Event](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarViews.Event.html) class describes the properties of the calendar event record. Every class in the Tizen.Pims.Calendar.CalendarViews namespace has a `Uri` field that uniquely identifies the view. In many cases, you must provide the `Uri` value to indicate what type of record you want to create or operate on.
 
     ```
     var record = new CalendarRecord(CalendarViews.Event.Uri);
@@ -90,7 +90,7 @@ To manage the record, you can use the classes of the [Tizen.Pims.Calendar.Calend
     | `Tizen.Pims.Calendar.CalendarViews.UpdatedInfo` | This view has properties to use when identifying record changes depending on the version. |
     | `Tizen.Pims.Calendar.CalendarViews.Extended` | This view has the key/value properties to add extended data. |
 
-- The calendar service uses a version system. Whenever modifications are made in the database, the version number is increased. If sync applications, such as Google or Facebook, sync at version 13 and try to sync again every 1 minute, they want to get the changes from version 14 to the current version. To get the current version, use the `Version` property of the [Tizen.Pims.Calendar.CalendarDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarDatabase.html) class. You can retrieve the modified record list with the `GetChangesByVersion()` method.
+- The calendar service uses a version system. Whenever modifications are made in the database, the version number is increased. If sync applications, such as Google or Facebook, sync at version 13 and try to sync again every 1 minute, they want to get the changes from version 14 to the current version. To get the current version, use the `Version` property of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class. You can retrieve the modified record list with the `GetChangesByVersion()` method.
 
     ```
     var manager = new CalendarManager();
@@ -260,7 +260,7 @@ If 1 instance of a recurring event is modified (such as its summary or date) or 
 | Event                                    | Instances          | Exceptions         |
 |----------------------------------------|------------------|------------------|
 | Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-09 Tuesday |                    |
-| Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 |                    | 2012-10-17 Tuesday |
+| Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-16 Tuesday \> modified | 2012-10-17 Tuesday |
 | Recurrence rules:<br>Start date on 2012-10-09 (Tuesday)<br>Frequency set to WEEKLY<br>Interval set to 1<br>Count set to 3 | 2012-10-22 Tuesday |                    |
 
 <a name="remind"></a>
@@ -418,13 +418,13 @@ To enable your application to use the calendar functionality:
     </privileges>
     ```
 
-2. To use the methods and properties of the [Tizen.Pims.Calendar](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.html) namespace, include it in your application:
+2. To use the methods and properties of the [Tizen.Pims.Calendar](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.html) namespace, include it in your application:
 
     ```
     using Tizen.Pims.Calendar;
     ```
 
-3. To access the calendar database, create a new instance of the [Tizen.Pims.Calendar.CalendarManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarManager.html) class:
+3. To access the calendar database, create a new instance of the [Tizen.Pims.Calendar.CalendarManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) class:
 
     ```
     var manager = new CalendarManager();
@@ -439,7 +439,7 @@ Some event properties are defined as child records that are associated with the 
 
 To create a new event:
 
-1.  Create the event as an instance of the [Tizen.Pims.Calendar.CalendarRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarRecord.html) class, with the `CalendarViews.Event.Uri` property as a parameter:
+1.  Create the event as an instance of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class, with the `CalendarViews.Event.Uri` property as a parameter:
 
     ```
     var record = new CalendarRecord(CalendarViews.Event.Uri);
@@ -513,7 +513,7 @@ To create a new event:
         record.AddChild(CalendarViews.Event.Alarm, alarm);
         ```
 
-        The [Tizen.Pims.Calendar.CalendarTypes.TickUnit](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarTypes.TickUnit.html) enumeration defines the available alarm tick units.
+        The [Tizen.Pims.Calendar.CalendarTypes.TickUnit](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarTypes.TickUnit.html) enumeration defines the available alarm tick units.
 
         > **Note**   
 		> If you use `Tizen.Pims.Calendar.CalendarTypes.TickUnit.Specific` as a tick unit, specify the alarm time in Unix time.
@@ -533,7 +533,7 @@ To create a new event:
 
     Set other event properties similarly, as needed.
 
-3. Insert the event into the calendar database using the `Insert()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarDatabase.html) class. All child records added to the event are inserted automatically along with the parent.
+3. Insert the event into the calendar database using the `Insert()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class. All child records added to the event are inserted automatically along with the parent.
 
     The system assigns a unique ID to the event, and the method returns it.
 
@@ -547,14 +547,14 @@ To create a new event:
 
 To retrieve a single event:
 
-1.  Retrieve an event record using the `Get()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
+1.  Retrieve an event record using the `Get()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
 
     ```
     var manager = new CalendarManager();
     var record = manager.Database.Get(CalendarViews.Event.Uri, eventId);
     ```
 
-2. When no longer needed, destroy the event instance and release all its resources using the `Dispose()` method of the [Tizen.Pims.Calendar.CalendarRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarRecord.html) class:
+2. When no longer needed, destroy the event instance and release all its resources using the `Dispose()` method of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class:
 
     ```
     record.Dispose();
@@ -571,13 +571,13 @@ To retrieve multiple events:
         ```
 
     - To retrieve a filtered list of events:
-        1.  Create a query as an instance of the [Tizen.Pims.Calendar.CalendarQuery](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarQuery.html) class:
+        1.  Create a query as an instance of the [Tizen.Pims.Calendar.CalendarQuery](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarQuery.html) class:
 
             ```
             var query = new CalendarQuery(CalendarViews.Event.Uri)
             ```
 
-        2. Create a filter using the [Tizen.Pims.Calendar.CalendarFilter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarFilter.html) class and adding conditions.
+        2. Create a filter using the [Tizen.Pims.Calendar.CalendarFilter](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarFilter.html) class and adding conditions.
 
             The following example adds a string-based filtering condition that retrieves the events whose summary field contains the string "summary to find":
 
@@ -625,7 +625,7 @@ To retrieve multiple events:
 
 2. Use a loop to iterate through the list and retrieve the event details.
 
-    Move forward and backward within the event list using the `MovePrevious()` and `MoveNext()` methods of the [Tizen.Pims.Calendar.CalendarList](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarList.html) class, and retrieve the current event with the `GetCurrentRecord()` method.
+    Move forward and backward within the event list using the `MovePrevious()` and `MoveNext()` methods of the [Tizen.Pims.Calendar.CalendarList](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarList.html) class, and retrieve the current event with the `GetCurrentRecord()` method.
 
     The following example iterates through the list and retrieves the summary of each event:
 
@@ -652,7 +652,7 @@ To retrieve multiple events:
 
 To update event details:
 
-1.  Retrieve the event you want to update using the `Get()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
+1.  Retrieve the event you want to update using the `Get()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
 
     ```
     var manager = new CalendarManager();
@@ -676,7 +676,7 @@ To update event details:
     manager.Database.Update(record);
     ```
 
-4. When no longer needed, destroy the event and database manager instances and release all their resources using the `Dispose()` methods of the [Tizen.Pims.Calendar.CalendarRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarRecord.html) and [Tizen.Pims.Calendar.CalendarManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarManager.html) classes, respectively:
+4. When no longer needed, destroy the event and database manager instances and release all their resources using the `Dispose()` methods of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) and [Tizen.Pims.Calendar.CalendarManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) classes, respectively:
 
     ```
     record.Dispose();
@@ -686,7 +686,7 @@ To update event details:
     <a name="delete_event"></a>
 ## Deleting an Event
 
-To delete an event, use the `Delete()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
+To delete an event, use the `Delete()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class, with the event ID as the second parameter:
 
 ```
 var manager = new CalendarManager();
@@ -757,7 +757,7 @@ To remove an event instance from a recurring event:
 To add an exception to a recurring event:
 
 1.  Make sure you have an existing recurring event.
-2. Clone the existing event with the `Clone()` method of the [Tizen.Pims.Calendar.CalendarRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarRecord.html) class.
+2. Clone the existing event with the `Clone()` method of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class.
 
     Cloning means that the new event initially has the same properties as the original event. In vCalendar 2.0 (RFC 2445), the recurrence ID is used to identify the modified instance (exception).
 
@@ -768,7 +768,7 @@ To add an exception to a recurring event:
     ```
 
 3. Modify or add event properties to create the exception.
-4. Insert the exception into the calendar database using the `Insert()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
+4. Insert the exception into the calendar database using the `Insert()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
 
     ```
     var manager = new CalendarManager();
@@ -783,7 +783,7 @@ To add an exception to a recurring event:
 
 To receive a notification whenever an event changes:
 
-1.  Register an event handler using the `AddDBChangedDelegate()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
+1.  Register an event handler using the `AddDBChangedDelegate()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
 
     ```
     var manager = new CalendarManager();
@@ -804,18 +804,18 @@ To receive a notification whenever an event changes:
 
 Creating a new todo involves creating a todo instance, setting its properties, and inserting it into the calendar database.
 
-Some todo properties are defined as child records that are associated with the parent record. For a detailed list of the todo properties, see the [Tizen.Pims.Calendar.CalendarViews.Todo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarViews.Todo.html) view description. If the property type is `child list`, the property is defined as a child record.
+Some todo properties are defined as child records that are associated with the parent record. For a detailed list of the todo properties, see the [Tizen.Pims.Calendar.CalendarViews.Todo](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarViews.Todo.html) view description. If the property type is `child list`, the property is defined as a child record.
 
 To create a new todo:
 
-1.  Create the todo as an instance of the [Tizen.Pims.Calendar.CalendarRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarRecord.html) class, with the `Uri` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as a parameter:
+1.  Create the todo as an instance of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class, with the `Uri` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as a parameter:
 
     ```
     var record = new CalendarRecord(CalendarViews.Todo.Uri);
     ```
 
     > **Note**   
-	> Records created as instances of the `Tizen.Pims.Calendar.CalendarRecord` class are memory objects. If you change these objects, the changes are not reflected in the calendar database until you explicitly insert or update the objects to the database using the `Insert()` or `Update()` methods of the [Tizen.Pims.Calendar.CalendarDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarDatabase.html) class.
+	> Records created as instances of the `Tizen.Pims.Calendar.CalendarRecord` class are memory objects. If you change these objects, the changes are not reflected in the calendar database until you explicitly insert or update the objects to the database using the `Insert()` or `Update()` methods of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class.
 
 2. Set the todo properties:
 
@@ -846,7 +846,7 @@ To create a new todo:
 
     - Set the status.
 
-        To set the status for the todo, use the `Set<int>()` with the `Status` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as the first parameter. The [Tizen.Pims.Calendar.Calendar​Types.​Todo​Status](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarTypes.TodoStatus.html) enumeration defines the possible status values.
+        To set the status for the todo, use the `Set<int>()` with the `Status` property of the `Tizen.Pims.Calendar.CalendarDatabase` class as the first parameter. The [Tizen.Pims.Calendar.Calendar​Types.​Todo​Status](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarTypes.TodoStatus.html) enumeration defines the possible status values.
 
         ```
         record.Set<int>(CalendarViews.Todo.Status, CalendarTypes.TodoStatus.NeedAction);
@@ -861,7 +861,7 @@ To create a new todo:
     int todoId = manager.Database.Insert(record);
     ```
 
-4. When no longer needed, destroy the todo and database manager instances and release all their resources using the `Dispose()` methods of the `Tizen.Pims.Calendar.CalendarRecord` and [Tizen.Pims.Calendar.CalendarManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarManager.html) classes, respectively:
+4. When no longer needed, destroy the todo and database manager instances and release all their resources using the `Dispose()` methods of the `Tizen.Pims.Calendar.CalendarRecord` and [Tizen.Pims.Calendar.CalendarManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) classes, respectively:
 
     ```
     record.Dispose();
@@ -873,7 +873,7 @@ To create a new todo:
 
 To retrieve a single todo:
 
-1.  Retrieve a todo record using the `Get()` method of the [Tizen.Pims.Calendar.CalendarRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarRecord.html) class with the todo ID as the second parameter:
+1.  Retrieve a todo record using the `Get()` method of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) class with the todo ID as the second parameter:
 
     ```
     var manager = new CalendarManager();
@@ -889,7 +889,7 @@ To retrieve a single todo:
 To retrieve multiple todos:
 
 1.  Retrieve a list of all todos, or retrieve a filtered list of todos:
-    -   To retrieve a list of all todos, use the `GetAll()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
+    -   To retrieve a list of all todos, use the `GetAll()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
 
         ```
         var manager = new CalendarManager();
@@ -897,13 +897,13 @@ To retrieve multiple todos:
         ```
 
     - To retrieve a filtered list of todos:
-        1.  Create a query as an instance of the [Tizen.Pims.Calendar.CalendarQuery](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarQuery.html) class:
+        1.  Create a query as an instance of the [Tizen.Pims.Calendar.CalendarQuery](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarQuery.html) class:
 
             ```
             var query = new CalendarQuery(CalendarViews.Todo.Uri)
             ```
 
-        2. Create a filter using the [Tizen.Pims.Calendar.CalendarFilter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarFilter.html) class and adding conditions.
+        2. Create a filter using the [Tizen.Pims.Calendar.CalendarFilter](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarFilter.html) class and adding conditions.
 
             The following example adds a string-based filtering condition that retrieves the todos whose summary field contains the string "summary to find":
 
@@ -950,7 +950,7 @@ To retrieve multiple todos:
 
 2. Use a loop to iterate through the list and retrieve the todo details.
 
-    Move forward and backward within the event list using the `MovePrevious()` and `MoveNext()` methods of the [Tizen.Pims.Calendar.CalendarList](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarList.html) class, and retrieve the current event using the `GetCurrentRecord()` method.
+    Move forward and backward within the event list using the `MovePrevious()` and `MoveNext()` methods of the [Tizen.Pims.Calendar.CalendarList](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarList.html) class, and retrieve the current event using the `GetCurrentRecord()` method.
 
     The following example iterates through the list and retrieves the summary of each todo:
 
@@ -966,7 +966,7 @@ To retrieve multiple todos:
     }
     ```
 
-3. When no longer needed, destroy the list instance and release all its resources using the `Dispose()` method of the [Tizen.Pims.Calendar.CalendarList](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarList.html) class:
+3. When no longer needed, destroy the list instance and release all its resources using the `Dispose()` method of the [Tizen.Pims.Calendar.CalendarList](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarList.html) class:
 
     ```
     list.Dispose();
@@ -977,7 +977,7 @@ To retrieve multiple todos:
 
 To update todo details:
 
-1.  Retrieve the todo you want to update using the `Get()` method of the [Tizen.Pims.Calendar.CalendarManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarManager.html) class with the todo ID as the second parameter:
+1.  Retrieve the todo you want to update using the `Get()` method of the [Tizen.Pims.Calendar.CalendarManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) class with the todo ID as the second parameter:
 
     ```
     var manager = new CalendarManager();
@@ -1001,7 +1001,7 @@ To update todo details:
     manager.Database.Update(record);
     ```
 
-4. When no longer needed, destroy the todo and database manager instances and release all their resources using the `Dispose()` methods of the [Tizen.Pims.Calendar.CalendarRecord](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarRecord.html) and `Tizen.Pims.Calendar.CalendarManager` classes, respectively:
+4. When no longer needed, destroy the todo and database manager instances and release all their resources using the `Dispose()` methods of the [Tizen.Pims.Calendar.CalendarRecord](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarRecord.html) and `Tizen.Pims.Calendar.CalendarManager` classes, respectively:
 
     ```
     record.Dispose();
@@ -1011,7 +1011,7 @@ To update todo details:
     <a name="delete"></a>
 ## Deleting a Todo
 
-To delete a todo, use the `Delete()` method of the [Tizen.Pims.Calendar.CalendarManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarManager.html) class, with the todo ID as the second parameter:
+To delete a todo, use the `Delete()` method of the [Tizen.Pims.Calendar.CalendarManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarManager.html) class, with the todo ID as the second parameter:
 
 ```
 var manager = new CalendarManager();
@@ -1023,7 +1023,7 @@ manager.Database.Delete(CalendarViews.Todo.Uir, todoId);
 
 To receive a notification whenever a todo changes:
 
-1.  Register an event handler using the `AddDBChangedDelegate()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
+1.  Register an event handler using the `AddDBChangedDelegate()` method of the [Tizen.Pims.Calendar.CalendarDatabase](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarDatabase.html) class:
 
     ```
     var manager = new CalendarManager();
@@ -1071,7 +1071,7 @@ To create a vCalendar stream from an event:
 
 To parse a vCalendar from a file and insert its content into the calendar database:
 
-1.  Parse the vCalendar stream using the `Parse()` method of the [Tizen.Pims.Calendar.CalendarVcalendar](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Pims.Calendar.CalendarVcalendar.html) class:
+1.  Parse the vCalendar stream using the `Parse()` method of the [Tizen.Pims.Calendar.CalendarVcalendar](https://samsung.github.io/TizenFX/latest/api/Tizen.Pims.Calendar.CalendarVcalendar.html) class:
 
     ```
     string stream = "BEGIN:VCALENDAR\r\n"

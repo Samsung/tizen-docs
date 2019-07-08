@@ -370,7 +370,9 @@ typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/haptic </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>feedback</em> level is reserved for auto changing to save variable in the settings. </dd>
 <dd>
-<em>effect_handle</em> effect_handle value can be <code>0</code>(zero). </dd></dl>
+<em>effect_handle</em> effect_handle value can be <code>0</code>(zero). </dd>
+<dd>
+To prevent unexpected sleep (suspend) during vibration, please use <a class="el" href="group__CAPI__SYSTEM__DEVICE__POWER__MODULE.html">Power</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">device_handle</td><td>The device handle from <a class="el" href="group__CAPI__SYSTEM__DEVICE__HAPTIC__MODULE.html#ga0b35198edecd7255abdf0fac89857cca" title="Opens a haptic-vibration device.">device_haptic_open()</a> </td></tr>

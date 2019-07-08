@@ -7,16 +7,16 @@
 	 <link href="../snippet.css" rel="StyleSheet" type="text/css" />
 	 <title>Processing</title>
  </head>
- <body onload="prettyPrint()" id="content">
+ <body id="content">
 
 <h1>Processing</h1>
 
 <p>The processing component shows on the screen that an operation is in progress.</p>
 <p>Two size of processing components are supported by TAU. please refer this document.</p>
 
-
-
-
+<video autoplay muted loop controls>
+	<source src="https://developer.tizen.org/sites/default/files/documentation/processing.mp4">
+</video>
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -82,5 +82,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 })();
 </script>
 
- </body>
+ <script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
+</body>
 </html>

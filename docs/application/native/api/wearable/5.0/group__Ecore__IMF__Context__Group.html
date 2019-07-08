@@ -94,6 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__Ecore__IMF__Lib__Group.html">Ecore_IMF - Ecore Input Method Library Functions</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
+<h2><a class="anchor" id="intro"></a>
+Introduction</h2>
 <p>Functions that operate on Ecore Input Method Context objects.</p>
 <p>Ecore Input Method Context Function defines the interface for EFL input methods. An input method is used by EFL text input widgets like elm_entry (based on edje_entry) to map from key events to Unicode character strings.</p>
 <p>The default input method can be set through setting the ECORE_IMF_MODULE environment variable. eg) export ECORE_IMF_MODULE=xim (or scim or ibus)</p>
@@ -101,11 +103,42 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Immodule is plugin to connect your application and input method framework such as SCIM, ibus, and so on.<br/>
  <a class="el" href="group__Ecore__IMF__Lib__Group.html#ga4b6b1ee4bad8f54f5f0e24abd740ab2f" title="Initialises the Ecore_IMF library.">ecore_imf_init()</a> should be called to initialize and load immodule.<br/>
  <a class="el" href="group__Ecore__IMF__Lib__Group.html#ga1ef1f781b4048e3f6ce4412a9ad4092c" title="Shuts down the Ecore_IMF library.">ecore_imf_shutdown()</a> is used for shutdowning and unloading immodule.</p>
-<p>An example of usage of these functions can be found at: </p>
+<h2><a class="anchor" id="how-to-compose"></a>
+How to process key event for composition or prediction</h2>
+<p>To input Chinese, Japanese, Korean and other complex languages, the editor widget (as known as entry) should be connected with input method framework.<br/>
+ Each editor widget should have each input context to connect with input service framework.<br/>
+ Key event is processed by input method engine. The result is notified to application through ECORE_IMF_CALLBACK_PREEDIT_CHANGED and ECORE_IMF_CALLBACK_COMMIT event.<br/>
+ <br/>
+ The following example demonstrates how to connect input method framework and handle preedit and commit string from input method framework. </p>
 <ul>
-<li><a class="el" href="ecore_imf_example_c.html">ecore_imf - How to handle preedit and commit string from Input Method Framework</a> </li>
+<li><a class="el" href="ecore_imf_example_c.html">ecore_imf - How to handle preedit and commit string from Input Method Framework</a></li>
 </ul>
-<table class="memberdecls">
+<h2><a class="anchor" id="media-content"></a>
+How to receive media contents from input method editor</h2>
+<p>Users sometimes wants to send images and other rich content with their input method editor (as known as virtual keyboard or soft keyboard).<br/>
+ According to this requirement, the way to receive the media content URI such as images and other rich content as well as text have been provided since 1.20.<br/>
+ <br/>
+ The following code shows how to receive the media content URI.</p>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;glib.h&gt;</span>
+
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
+ _imf_event_commit_content_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> *ctx, <span class="keywordtype">void</span> *event_info)
+ {
+    <a class="code" href="struct__Ecore__IMF__Event__Commit__Content.html" title="The structure type used with the Commit_Content Input Method event.">Ecore_IMF_Event_Commit_Content</a> *commit_content = (<a class="code" href="struct__Ecore__IMF__Event__Commit__Content.html" title="The structure type used with the Commit_Content Input Method event.">Ecore_IMF_Event_Commit_Content</a> *)event_info;
+    <span class="keywordflow">if</span> (!commit_content) <span class="keywordflow">return</span>;
+
+    <span class="comment">// convert URI to filename</span>
+    gchar *filepath = g_filename_from_uri(commit_content-&gt;<a class="code" href="struct__Ecore__IMF__Event__Commit__Content.html#a87c945f38284b770f7620548cf281254">content_uri</a>, NULL, NULL);
+    printf(<span class="stringliteral">&quot;filepath : %s, description : %s, mime types : %s\n&quot;</span>, filepath, commit_content-&gt;<a class="code" href="struct__Ecore__IMF__Event__Commit__Content.html#add28cdad2d3b906d10be8e071636e13f">description</a>, commit_content-&gt;<a class="code" href="struct__Ecore__IMF__Event__Commit__Content.html#a7507e1f5b9e55ec0fb01f16b322d0619">mime_types</a>);
+
+    <span class="comment">// do something to use filepath</span>
+
+    <span class="keywordflow">if</span> (filepath)
+       g_free(filepath);
+ }
+
+ <a class="code" href="group__Ecore__IMF__Context__Group.html#ga0ac23c29d99cd88539a99937e61897bc" title="Adds (registers) a callback function to a given context event.">ecore_imf_context_event_callback_add</a>(en-&gt;imf_context, <a class="code" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa1c61657f76f3782ae2b30f0ad4818187">ECORE_IMF_CALLBACK_COMMIT_CONTENT</a>, _imf_event_commit_content_cb, data);
+</pre></div> <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__IMF__Context__Group.html#ga6bae0dba0cc6fd64f9669fae05e481ba">ecore_imf_context_available_ids_get</a> (void)</td></tr>
@@ -250,6 +283,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the allowed MIME type to deliver to the input panel.  <a href="#gad9e176fdfab308d90c1b4947a803c427"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__IMF__Context__Group.html#gaab8b785673836e358f84e52c84f9345a">ecore_imf_context_input_panel_position_set</a> (<a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> *ctx, int x, int y)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the x,y coordinates of the input panel. This API can be used in floating mode.  <a href="#gaab8b785673836e358f84e52c84f9345a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__IMF__Context__Group.html#ga34550ac7950f88f3e2a4f54920173725">ecore_imf_context_prediction_hint_hash_set</a> (<a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> *ctx, const char *key, const char *value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the prediction hint data at the specified key.  <a href="#ga34550ac7950f88f3e2a4f54920173725"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__IMF__Context__Group.html#ga77551a3529aa7b315951d12dd009a9a6">ecore_imf_context_prediction_hint_hash_del</a> (<a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> *ctx, const char *key)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the prediction hint data identified by a key.  <a href="#ga77551a3529aa7b315951d12dd009a9a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__IMF__Context__Group.html#ga1c07a64f7debeab997749c41eb96d71a">ecore_imf_context_prediction_hint_hash_get</a> (<a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> *ctx)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the hash table of prediction hint data.  <a href="#ga1c07a64f7debeab997749c41eb96d71a"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Ecore_IMF_Context&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a></td></tr>
@@ -354,93 +393,6 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="ga4f126a0a9b1d8c6a8f46a051ef8830bb"></a><!-- doxytag: member="Ecore_IMF.h::@90" ref="ga4f126a0a9b1d8c6a8f46a051ef8830bb" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">anonymous enum</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga4f126a0a9b1d8c6a8f46a051ef8830bbaf04f900eeaeb4c433b64cd615a4bb972"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL" ref="gga4f126a0a9b1d8c6a8f46a051ef8830bbaf04f900eeaeb4c433b64cd615a4bb972" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL</em>&nbsp;</td><td>
-<p>The plain normal layout </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga4f126a0a9b1d8c6a8f46a051ef8830bba1de021be19f1497ab3567907b48fe4b4"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME" ref="gga4f126a0a9b1d8c6a8f46a051ef8830bba1de021be19f1497ab3567907b48fe4b4" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME</em>&nbsp;</td><td>
-<p>Filename layout. Symbols such as '/' should be disabled. </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga4f126a0a9b1d8c6a8f46a051ef8830bba6fd1483de768047f64601a50029a33cc"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME" ref="gga4f126a0a9b1d8c6a8f46a051ef8830bba6fd1483de768047f64601a50029a33cc" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME</em>&nbsp;</td><td>
-<p>The name of a person. </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gadbaf9202177df73e6880eab6e6aab329"></a><!-- doxytag: member="Ecore_IMF.h::@91" ref="gadbaf9202177df73e6880eab6e6aab329" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">anonymous enum</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggadbaf9202177df73e6880eab6e6aab329ac6b2c834286f68904390b9373dcae7b7"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL" ref="ggadbaf9202177df73e6880eab6e6aab329ac6b2c834286f68904390b9373dcae7b7" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL</em>&nbsp;</td><td>
-<p>The plain normal number layout </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggadbaf9202177df73e6880eab6e6aab329a26b6ec160cbe7d5bd4300785ffa84019"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED" ref="ggadbaf9202177df73e6880eab6e6aab329a26b6ec160cbe7d5bd4300785ffa84019" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED</em>&nbsp;</td><td>
-<p>The number layout to allow a positive or negative sign at the start </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggadbaf9202177df73e6880eab6e6aab329a99f2540ef767a77107bc0b72e7032668"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL" ref="ggadbaf9202177df73e6880eab6e6aab329a99f2540ef767a77107bc0b72e7032668" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL</em>&nbsp;</td><td>
-<p>The number layout to allow decimal point to provide fractional value </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggadbaf9202177df73e6880eab6e6aab329a82534340ec2deb73ce148c1421fdd9af"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL" ref="ggadbaf9202177df73e6880eab6e6aab329a82534340ec2deb73ce148c1421fdd9af" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL</em>&nbsp;</td><td>
-<p>The number layout to allow decimal point and negative sign </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga7495a48740c9d555f7fbcb48246dbd93"></a><!-- doxytag: member="Ecore_IMF.h::@92" ref="ga7495a48740c9d555f7fbcb48246dbd93" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">anonymous enum</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga7495a48740c9d555f7fbcb48246dbd93a37a1ffd5bc7189f06267c918f8ec3914"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL" ref="gga7495a48740c9d555f7fbcb48246dbd93a37a1ffd5bc7189f06267c918f8ec3914" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL</em>&nbsp;</td><td>
-<p>The normal password layout </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="gga7495a48740c9d555f7fbcb48246dbd93aad4bbba47d25bf7f183e1b53a210b33c"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY" ref="gga7495a48740c9d555f7fbcb48246dbd93aad4bbba47d25bf7f183e1b53a210b33c" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY</em>&nbsp;</td><td>
-<p>The password layout to allow only number </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="ga5c56c5f94e74fe445c5093d5b6c0912c"></a><!-- doxytag: member="Ecore_IMF.h::_Ecore_IMF_Device_Class" ref="ga5c56c5f94e74fe445c5093d5b6c0912c" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -451,6 +403,9 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Enumeration for defining the types of Ecore_IMF_Device_Class. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga5c56c5f94e74fe445c5093d5b6c0912ca940d7ea5468a08d90a20a18a0ff77daf"></a><!-- doxytag: member="ECORE_IMF_DEVICE_CLASS_NONE" ref="gga5c56c5f94e74fe445c5093d5b6c0912ca940d7ea5468a08d90a20a18a0ff77daf" args="" -->ECORE_IMF_DEVICE_CLASS_NONE</em>&nbsp;</td><td>
 <p>Not a device </p>
@@ -500,6 +455,9 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
+<p>Enumeration for defining the types of Ecore_IMF_Device_Subclass. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggaa3a69cae02c91cad284024e1b094527aa264d1d6e798d0cf03fc7d6db03458946"></a><!-- doxytag: member="ECORE_IMF_DEVICE_SUBCLASS_NONE" ref="ggaa3a69cae02c91cad284024e1b094527aa264d1d6e798d0cf03fc7d6db03458946" args="" -->ECORE_IMF_DEVICE_SUBCLASS_NONE</em>&nbsp;</td><td>
 <p>Not a device </p>
@@ -670,6 +628,17 @@ Typedefs</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga06aadd645f11ba5c8d00943aa327be5aa1c61657f76f3782ae2b30f0ad4818187"></a><!-- doxytag: member="ECORE_IMF_CALLBACK_COMMIT_CONTENT" ref="gga06aadd645f11ba5c8d00943aa327be5aa1c61657f76f3782ae2b30f0ad4818187" args="" -->ECORE_IMF_CALLBACK_COMMIT_CONTENT</em>&nbsp;</td><td>
 <p>"COMMIT_CONTENT" is called when the input method commits content such as an image </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga06aadd645f11ba5c8d00943aa327be5aa32ffb4d06e2390bd8350590bddac95d0"></a><!-- doxytag: member="ECORE_IMF_CALLBACK_TRANSACTION_START" ref="gga06aadd645f11ba5c8d00943aa327be5aa32ffb4d06e2390bd8350590bddac95d0" args="" -->ECORE_IMF_CALLBACK_TRANSACTION_START</em>&nbsp;</td><td>
+<p>"TRANSACTION_START" is called when a new transaction sequence starts. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga06aadd645f11ba5c8d00943aa327be5aa012c74820b145392c9a9fd0c062bf894"></a><!-- doxytag: member="ECORE_IMF_CALLBACK_TRANSACTION_END" ref="gga06aadd645f11ba5c8d00943aa327be5aa012c74820b145392c9a9fd0c062bf894" args="" -->ECORE_IMF_CALLBACK_TRANSACTION_END</em>&nbsp;</td><td>
+<p>"TRANSACTION_END" is called when a new transaction sequence starts. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 </td></tr>
 </table>
 </dd>
@@ -776,6 +745,61 @@ Typedefs</h2></td></tr>
 <p>Multiline text </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3bafc1c52290802c891a35ef6e171f494d5"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_DATE" ref="ggab8f296178c600724936fc01e0ede8c3bafc1c52290802c891a35ef6e171f494d5" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_DATE</em>&nbsp;</td><td>
+<p>Autofill hint for a credit card expiration date </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3bab16c169b8f0318ef06cc6cd028ebf75e"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_DAY" ref="ggab8f296178c600724936fc01e0ede8c3bab16c169b8f0318ef06cc6cd028ebf75e" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_DAY</em>&nbsp;</td><td>
+<p>Autofill hint for a credit card expiration day </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3ba3002ff25569b5f05256baf3a7332c60f"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_MONTH" ref="ggab8f296178c600724936fc01e0ede8c3ba3002ff25569b5f05256baf3a7332c60f" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_MONTH</em>&nbsp;</td><td>
+<p>Autofill hint for a credit card expiration month </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3ba2288effaa3500ff4076a62deab90bef7"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_YEAR" ref="ggab8f296178c600724936fc01e0ede8c3ba2288effaa3500ff4076a62deab90bef7" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_EXPIRATION_YEAR</em>&nbsp;</td><td>
+<p>Autofill hint for a credit card expiration year </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3bad85c4fb9529d31f0e294339879744aeb"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_NUMBER" ref="ggab8f296178c600724936fc01e0ede8c3bad85c4fb9529d31f0e294339879744aeb" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_CREDIT_CARD_NUMBER</em>&nbsp;</td><td>
+<p>Autofill hint for a credit card number </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3ba5d19b02fe0ebbba972989437dfa0d3a7"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_EMAIL_ADDRESS" ref="ggab8f296178c600724936fc01e0ede8c3ba5d19b02fe0ebbba972989437dfa0d3a7" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_EMAIL_ADDRESS</em>&nbsp;</td><td>
+<p>Autofill hint for an email address </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3ba07e326d83fe9e301df425c9907edb3ea"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_NAME" ref="ggab8f296178c600724936fc01e0ede8c3ba07e326d83fe9e301df425c9907edb3ea" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_NAME</em>&nbsp;</td><td>
+<p>Autofill hint for a user's real name </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3ba2332d636c44a56f85f49df8c9f8220f5"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_PHONE" ref="ggab8f296178c600724936fc01e0ede8c3ba2332d636c44a56f85f49df8c9f8220f5" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_PHONE</em>&nbsp;</td><td>
+<p>Autofill hint for a phone number </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3ba5706dc63c5d945043a397a5e99b1cffd"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_POSTAL_ADDRESS" ref="ggab8f296178c600724936fc01e0ede8c3ba5706dc63c5d945043a397a5e99b1cffd" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_POSTAL_ADDRESS</em>&nbsp;</td><td>
+<p>Autofill hint for a postal address </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3ba02c5fe6486fe5538e571e0aeefb05b60"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_POSTAL_CODE" ref="ggab8f296178c600724936fc01e0ede8c3ba02c5fe6486fe5538e571e0aeefb05b60" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_POSTAL_CODE</em>&nbsp;</td><td>
+<p>Autofill hint for a postal code </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggab8f296178c600724936fc01e0ede8c3bab83b326ba48d7e73ee71409a887a81f7"></a><!-- doxytag: member="ECORE_IMF_INPUT_HINT_AUTOFILL_ID" ref="ggab8f296178c600724936fc01e0ede8c3bab83b326ba48d7e73ee71409a887a81f7" args="" -->ECORE_IMF_INPUT_HINT_AUTOFILL_ID</em>&nbsp;</td><td>
+<p>Autofill hint for a user's ID </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+</td></tr>
 </table>
 </dd>
 </dl>
@@ -835,7 +859,6 @@ Typedefs</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggabf7e55f01b90c3e60ebcd0c2d877f014a3636d60fa3eec19bfdec7f489b465df0"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_KEYBOARD_MODE_EVENT" ref="ggabf7e55f01b90c3e60ebcd0c2d877f014a3636d60fa3eec19bfdec7f489b465df0" args="" -->ECORE_IMF_INPUT_PANEL_KEYBOARD_MODE_EVENT</em>&nbsp;</td><td>
 <p>called when the keyboard mode state of the input panel is changed </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 </td></tr>
 </table>
 </dd>
@@ -854,7 +877,6 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Enum containing keyboard mode states. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga70c64fe80c44e7855cbd3f7511f34b9aa1be4d5ae439de2dcc00a9ef71a2ae55d"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_HW_KEYBOARD_MODE" ref="gga70c64fe80c44e7855cbd3f7511f34b9aa1be4d5ae439de2dcc00a9ef71a2ae55d" args="" -->ECORE_IMF_INPUT_PANEL_HW_KEYBOARD_MODE</em>&nbsp;</td><td>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
@@ -958,6 +980,103 @@ Typedefs</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga7df11437c6ef486fe84fea981b99598ca7f24e1597916d9303e2f0b0fafc8e878"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_VOICE" ref="gga7df11437c6ef486fe84fea981b99598ca7f24e1597916d9303e2f0b0fafc8e878" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_VOICE</em>&nbsp;</td><td>
 <p>Voice layout, but if the IME does not support voice layout, then normal layout will be shown </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga908415a6318e9d2d6f4e8dd905ab806e"></a><!-- doxytag: member="Ecore_IMF.h::Ecore_IMF_Input_Panel_Layout_Normal_Variation" ref="ga908415a6318e9d2d6f4e8dd905ab806e" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__Ecore__IMF__Context__Group.html#ga908415a6318e9d2d6f4e8dd905ab806e">Ecore_IMF_Input_Panel_Layout_Normal_Variation</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for defining the types of Ecore_IMF Input Panel layout for normal variation. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga908415a6318e9d2d6f4e8dd905ab806eaf04f900eeaeb4c433b64cd615a4bb972"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL" ref="gga908415a6318e9d2d6f4e8dd905ab806eaf04f900eeaeb4c433b64cd615a4bb972" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_NORMAL</em>&nbsp;</td><td>
+<p>The plain normal layout </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga908415a6318e9d2d6f4e8dd905ab806ea1de021be19f1497ab3567907b48fe4b4"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME" ref="gga908415a6318e9d2d6f4e8dd905ab806ea1de021be19f1497ab3567907b48fe4b4" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_FILENAME</em>&nbsp;</td><td>
+<p>Filename layout. Symbols such as '/' should be disabled. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga908415a6318e9d2d6f4e8dd905ab806ea6fd1483de768047f64601a50029a33cc"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME" ref="gga908415a6318e9d2d6f4e8dd905ab806ea6fd1483de768047f64601a50029a33cc" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL_VARIATION_PERSON_NAME</em>&nbsp;</td><td>
+<p>The name of a person. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga192adb615492703ac20238e13a6ee6e0"></a><!-- doxytag: member="Ecore_IMF.h::Ecore_IMF_Input_Panel_Layout_Numberonly_Variation" ref="ga192adb615492703ac20238e13a6ee6e0" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__Ecore__IMF__Context__Group.html#ga192adb615492703ac20238e13a6ee6e0">Ecore_IMF_Input_Panel_Layout_Numberonly_Variation</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for defining the types of Ecore_IMF Input Panel layout for numberonly variation. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga192adb615492703ac20238e13a6ee6e0ac6b2c834286f68904390b9373dcae7b7"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL" ref="gga192adb615492703ac20238e13a6ee6e0ac6b2c834286f68904390b9373dcae7b7" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_NORMAL</em>&nbsp;</td><td>
+<p>The plain normal number layout </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga192adb615492703ac20238e13a6ee6e0a26b6ec160cbe7d5bd4300785ffa84019"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED" ref="gga192adb615492703ac20238e13a6ee6e0a26b6ec160cbe7d5bd4300785ffa84019" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED</em>&nbsp;</td><td>
+<p>The number layout to allow a positive or negative sign at the start </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga192adb615492703ac20238e13a6ee6e0a99f2540ef767a77107bc0b72e7032668"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL" ref="gga192adb615492703ac20238e13a6ee6e0a99f2540ef767a77107bc0b72e7032668" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_DECIMAL</em>&nbsp;</td><td>
+<p>The number layout to allow decimal point to provide fractional value </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga192adb615492703ac20238e13a6ee6e0a82534340ec2deb73ce148c1421fdd9af"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL" ref="gga192adb615492703ac20238e13a6ee6e0a82534340ec2deb73ce148c1421fdd9af" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_NUMBERONLY_VARIATION_SIGNED_AND_DECIMAL</em>&nbsp;</td><td>
+<p>The number layout to allow decimal point and negative sign </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga590833337f41a497a6c67cc7aa0310ca"></a><!-- doxytag: member="Ecore_IMF.h::Ecore_IMF_Input_Panel_Layout_Password_Variation" ref="ga590833337f41a497a6c67cc7aa0310ca" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__Ecore__IMF__Context__Group.html#ga590833337f41a497a6c67cc7aa0310ca">Ecore_IMF_Input_Panel_Layout_Password_Variation</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for defining the types of Ecore_IMF Input Panel layout for password variation. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga590833337f41a497a6c67cc7aa0310caa37a1ffd5bc7189f06267c918f8ec3914"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL" ref="gga590833337f41a497a6c67cc7aa0310caa37a1ffd5bc7189f06267c918f8ec3914" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NORMAL</em>&nbsp;</td><td>
+<p>The normal password layout </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga590833337f41a497a6c67cc7aa0310caaad4bbba47d25bf7f183e1b53a210b33c"></a><!-- doxytag: member="ECORE_IMF_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY" ref="gga590833337f41a497a6c67cc7aa0310caaad4bbba47d25bf7f183e1b53a210b33c" args="" -->ECORE_IMF_INPUT_PANEL_LAYOUT_PASSWORD_VARIATION_NUMBERONLY</em>&nbsp;</td><td>
+<p>The password layout to allow only number </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 </td></tr>
 </table>
 </dd>
@@ -1242,7 +1361,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A newly allocated Input Method Context; on failure it returns NULL.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A newly allocated Input Method Context; on failure it returns NULL. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a69">ecore_imf_example.c</a>.</dd>
 </dl>
@@ -1271,7 +1390,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The autocapital type being used by <code>ctx</code>. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1310,7 +1429,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Default type is ECORE_IMF_AUTOCAPITAL_TYPE_SENTENCE. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1338,7 +1457,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Return an Eina_List of strings; on failure it returns NULL.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Return an Eina_List of strings; on failure it returns NULL. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1360,7 +1479,7 @@ Typedefs</h2></td></tr>
 
 <p>Gets the list of the available Input Method Context ids. </p>
 <p>Note that the caller is responsible for freeing the Eina_List when finished with it. There is no need to finish the list strings.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Return an Eina_List of strings; on failure it returns NULL.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Return an Eina_List of strings; on failure it returns NULL. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1388,7 +1507,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The direction mode</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The direction mode </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1423,12 +1542,12 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">direction</td><td>The direction mode</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">direction</td><td>The direction mode </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a25">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a24">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1486,7 +1605,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1515,7 +1634,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Return the client canvas. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1549,7 +1668,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>. </td></tr>
-    <tr><td class="paramname">canvas</td><td>The client canvas. This may be <code>NULL</code> to indicate that the previous client canvas no longer exists.</td></tr>
+    <tr><td class="paramname">canvas</td><td>The client canvas. This may be <code>NULL</code> to indicate that the previous client canvas no longer exists. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1582,7 +1701,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Return the client window. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1616,7 +1735,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>. </td></tr>
-    <tr><td class="paramname">window</td><td>The client window. This may be <code>NULL</code> to indicate that the previous client window no longer exists.</td></tr>
+    <tr><td class="paramname">window</td><td>The client window. This may be <code>NULL</code> to indicate that the previous client window no longer exists. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1646,7 +1765,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1673,7 +1792,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1732,9 +1851,9 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a24">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a23">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1768,12 +1887,12 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>. </td></tr>
-    <tr><td class="paramname">cursor_pos</td><td>New cursor position in characters.</td></tr>
+    <tr><td class="paramname">cursor_pos</td><td>New cursor position in characters. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a23">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a22">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1799,7 +1918,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Return a string containing the id of the default Input Method Context; on failure it returns NULL.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Return a string containing the id of the default Input Method Context; on failure it returns NULL. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1820,7 +1939,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the id of the default Input Method Context. The id may to used to create a new instance of an Input Method Context object. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Return a string containing the id of the default Input Method Context; on failure it returns NULL.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Return a string containing the id of the default Input Method Context; on failure it returns NULL. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a68">ecore_imf_example.c</a>.</dd>
 </dl>
@@ -1844,12 +1963,12 @@ Typedefs</h2></td></tr>
 <p>Deletes the given Input Method Context and free its memory. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>.</td></tr>
+    <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a86">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a79">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1892,7 +2011,7 @@ Typedefs</h2></td></tr>
 
 <p>Adds (registers) a callback function to a given context event. </p>
 <p>This function adds a function callback to the context <code>ctx</code> when the event of type <code>type</code> occurs on it. The function pointer is <code>func</code>.</p>
-<p>The event type <code>type</code> to trigger the function may be one of <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa83bc3784126bad868488e9bfe106474d">ECORE_IMF_CALLBACK_PREEDIT_START</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa3a6ee4354685a90c9f62b54bc5a13ce9">ECORE_IMF_CALLBACK_PREEDIT_END</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa9e354e49b61f3e67c4210cc85478975e">ECORE_IMF_CALLBACK_PREEDIT_CHANGED</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa9d05d645b3c1edde3b959fee4cd87dec">ECORE_IMF_CALLBACK_COMMIT</a> and <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa696bc156e7efd93c83128fc2e18bfeba">ECORE_IMF_CALLBACK_DELETE_SURROUNDING</a>.</p>
+<p>The event type <code>type</code> to trigger the function may be one of <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa83bc3784126bad868488e9bfe106474d">ECORE_IMF_CALLBACK_PREEDIT_START</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa3a6ee4354685a90c9f62b54bc5a13ce9">ECORE_IMF_CALLBACK_PREEDIT_END</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa9e354e49b61f3e67c4210cc85478975e">ECORE_IMF_CALLBACK_PREEDIT_CHANGED</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa9d05d645b3c1edde3b959fee4cd87dec">ECORE_IMF_CALLBACK_COMMIT</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa696bc156e7efd93c83128fc2e18bfeba">ECORE_IMF_CALLBACK_DELETE_SURROUNDING</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa7e16ebcbaad8b536501281dc00565cd1">ECORE_IMF_CALLBACK_SELECTION_SET</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa9831b2c25c17f45afe336978458ca589">ECORE_IMF_CALLBACK_PRIVATE_COMMAND_SEND</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa1c61657f76f3782ae2b30f0ad4818187">ECORE_IMF_CALLBACK_COMMIT_CONTENT</a>, <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa32ffb4d06e2390bd8350590bddac95d0">ECORE_IMF_CALLBACK_TRANSACTION_START</a>, and <a class="el" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa012c74820b145392c9a9fd0c062bf894">ECORE_IMF_CALLBACK_TRANSACTION_END</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>Ecore_IMF_Context to attach a callback to. </td></tr>
@@ -1904,7 +2023,10 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
 <p>Example </p>
-<div class="fragment"><pre class="fragment"> <span class="keyword">static</span> <span class="keywordtype">void</span>
+<div class="fragment"><pre class="fragment"><span class="preprocessor"> #include &lt;glib.h&gt;</span>
+
+ <span class="comment">// example for handling commit event from input framework</span>
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
  _imf_event_commit_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> *ctx, <span class="keywordtype">void</span> *event_info)
  {
     <span class="keywordtype">char</span> *commit_str = event_info;
@@ -1912,8 +2034,30 @@ Typedefs</h2></td></tr>
  }
 
  <a class="code" href="group__Ecore__IMF__Context__Group.html#ga0ac23c29d99cd88539a99937e61897bc" title="Adds (registers) a callback function to a given context event.">ecore_imf_context_event_callback_add</a>(en-&gt;imf_context, <a class="code" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa9d05d645b3c1edde3b959fee4cd87dec">ECORE_IMF_CALLBACK_COMMIT</a>, _imf_event_commit_cb, data);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a79">ecore_imf_example.c</a>.</dd>
+
+ <span class="comment">// example for receiving media content URI from input framework</span>
+ @code
+<span class="preprocessor"> #include &lt;glib.h&gt;</span>
+
+ <span class="keyword">static</span> <span class="keywordtype">void</span>
+ _imf_event_commit_content_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> *ctx, <span class="keywordtype">void</span> *event_info)
+ {
+    <a class="code" href="struct__Ecore__IMF__Event__Commit__Content.html" title="The structure type used with the Commit_Content Input Method event.">Ecore_IMF_Event_Commit_Content</a> *commit_content = (<a class="code" href="struct__Ecore__IMF__Event__Commit__Content.html" title="The structure type used with the Commit_Content Input Method event.">Ecore_IMF_Event_Commit_Content</a> *)event;
+    <span class="keywordflow">if</span> (!commit_content) <span class="keywordflow">return</span>;
+
+    <span class="comment">// convert URI to filename</span>
+    gchar *filepath = g_filename_from_uri(commit_content-&gt;<a class="code" href="struct__Ecore__IMF__Event__Commit__Content.html#a87c945f38284b770f7620548cf281254">content_uri</a>, NULL, NULL);
+    printf(<span class="stringliteral">&quot;filepath : %s, description : %s, mime types : %s\n&quot;</span>, filepath, commit_content-&gt;<a class="code" href="struct__Ecore__IMF__Event__Commit__Content.html#add28cdad2d3b906d10be8e071636e13f">description</a>, commit_content-&gt;<a class="code" href="struct__Ecore__IMF__Event__Commit__Content.html#a7507e1f5b9e55ec0fb01f16b322d0619">mime_types</a>);
+
+    <span class="comment">// do something to use filepath</span>
+
+    <span class="keywordflow">if</span> (filepath)
+       g_free(filepath);
+ }
+
+ <a class="code" href="group__Ecore__IMF__Context__Group.html#ga0ac23c29d99cd88539a99937e61897bc" title="Adds (registers) a callback function to a given context event.">ecore_imf_context_event_callback_add</a>(en-&gt;imf_context, <a class="code" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa1c61657f76f3782ae2b30f0ad4818187">ECORE_IMF_CALLBACK_COMMIT_CONTENT</a>, _imf_event_commit_content_cb, data);
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a73">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1960,10 +2104,9 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the data pointer </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a85">ecore_imf_example.c</a>.</dd>
-</dl>
+
 </div>
 </div>
 <a class="anchor" id="ga1dc1fcdfc71b567661e207cacc947493"></a><!-- doxytag: member="Ecore_IMF.h::ecore_imf_context_filter_event" ref="ga1dc1fcdfc71b567661e207cacc947493" args="(Ecore_IMF_Context *ctx, Ecore_IMF_Event_Type type, Ecore_IMF_Event *event)" -->
@@ -2026,8 +2169,8 @@ Typedefs</h2></td></tr>
       }
  }
 
- <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(obj, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _key_down_cb, data);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+ <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(obj, EVAS_CALLBACK_KEY_DOWN, _key_down_cb, data);
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a4">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
@@ -2062,9 +2205,9 @@ Typedefs</h2></td></tr>
     <a class="code" href="group__Ecore__IMF__Context__Group.html#ga25dcaf997f9aa15807c6af815590fa51" title="Notifies the Input Method Context that the widget to which its correspond has gained focus...">ecore_imf_context_focus_in</a>(imf_context);
  }
 
- <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(obj, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a819cf61e9d11012b7402338c2ccb7b97">EVAS_CALLBACK_FOCUS_IN</a>, _focus_in_cb, imf_context);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a15">ecore_imf_example.c</a>.</dd>
+ <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(obj, EVAS_CALLBACK_FOCUS_IN, _focus_in_cb, imf_context);
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a14">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2099,9 +2242,9 @@ Typedefs</h2></td></tr>
     <a class="code" href="group__Ecore__IMF__Context__Group.html#ga7274646acd202e99112b668ea7ace7b3" title="Notifies the Input Method Context that the widget to which its correspond has lost focus...">ecore_imf_context_focus_out</a>(imf_context);
  }
 
- <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(obj, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ab26a0af7efaa8b77e996bd438accf8d3">EVAS_CALLBACK_FOCUS_OUT</a>, _focus_out_cb, ed);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a16">ecore_imf_example.c</a>.</dd>
+ <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(obj, EVAS_CALLBACK_FOCUS_OUT, _focus_out_cb, ed);
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a15">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2123,7 +2266,7 @@ Typedefs</h2></td></tr>
 <p>Asks the Input Method Context to hide itself. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>.</td></tr>
+    <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2176,7 +2319,7 @@ Typedefs</h2></td></tr>
              }
         }
    }
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2202,7 +2345,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Return a <a class="el" href="group__Ecore__IMF__Context__Group.html#gab5f507760f027154e3449444d85ab35e">Ecore_IMF_Context_Info</a> for the given Input Method Context; on failure it returns NULL.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Return a <a class="el" href="group__Ecore__IMF__Context__Group.html#gab5f507760f027154e3449444d85ab35e">Ecore_IMF_Context_Info</a> for the given Input Method Context; on failure it returns NULL. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2230,7 +2373,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The value of input hint </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2269,7 +2412,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The default input hint is <code>ECORE_IMF_INPUT_HINT_AUTO_COMPLETE</code>. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2297,7 +2440,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The input mode being used by <code>ctx</code>.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The input mode being used by <code>ctx</code>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2332,7 +2475,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>. </td></tr>
-    <tr><td class="paramname">input_mode</td><td>The input mode to be used by <code>ctx</code>.</td></tr>
+    <tr><td class="paramname">input_mode</td><td>The input mode to be used by <code>ctx</code>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2363,7 +2506,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the caps lock is turned on. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2401,7 +2544,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2429,7 +2572,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Return the attribute to show the input panel automatically </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2467,7 +2610,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2519,7 +2662,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2564,7 +2707,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2592,7 +2735,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2637,7 +2780,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2696,7 +2839,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2723,7 +2866,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2768,7 +2911,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2813,7 +2956,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2842,7 +2985,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Ecore_IMF_Input_Panel_Lang </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2881,7 +3024,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2919,7 +3062,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2947,7 +3090,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>layout see <a class="el" href="group__Ecore__IMF__Context__Group.html#ga7df11437c6ef486fe84fea981b99598c">Ecore_IMF_Input_Panel_Layout</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -2986,7 +3129,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Default layout type is ECORE_IMF_INPUT_PANEL_LAYOUT_NORMAL. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3014,7 +3157,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the layout variation </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3053,7 +3196,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Default layout variation type is NORMAL. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3095,11 +3238,10 @@ Typedefs</h2></td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> </td></tr>
     <tr><td class="paramdir"></td><td class="paramname">x</td><td>top-left x coordinate of the input panel </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">y</td><td>top-left y coordinate of the input panel</td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">y</td><td>top-left y coordinate of the input panel </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 
 </div>
 </div>
@@ -3126,7 +3268,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it should be disabled. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3164,7 +3306,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3193,7 +3335,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The type of "return" key on the input panel </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3234,7 +3376,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Default type is ECORE_IMF_INPUT_PANEL_RETURN_KEY_TYPE_DEFAULT. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3261,7 +3403,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3289,7 +3431,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the input panel will be shown in case of only Mouse up event. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3327,7 +3469,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3355,7 +3497,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The state of input panel. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.3 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3383,8 +3525,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the keyboard mode</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the keyboard mode </dd></dl>
 
 </div>
 </div>
@@ -3425,8 +3566,7 @@ Typedefs</h2></td></tr>
 <p>Example </p>
 <div class="fragment"><pre class="fragment"> <span class="keyword">const</span> <span class="keywordtype">char</span> *mime_type = <span class="stringliteral">&quot;text/plain,image/png,application/pdf&quot;</span>;
  <a class="code" href="group__Ecore__IMF__Context__Group.html#gad9e176fdfab308d90c1b4947a803c427" title="Sets the allowed MIME type to deliver to the input panel.">ecore_imf_context_mime_type_accept_set</a>(imf_context, mime_type);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
-
+</pre></div> 
 </div>
 </div>
 <a class="anchor" id="ga3e4e35d8c69a6ac39ec177d8b5f1f937"></a><!-- doxytag: member="Ecore_IMF.h::ecore_imf_context_prediction_allow_get" ref="ga3e4e35d8c69a6ac39ec177d8b5f1f937" args="(Ecore_IMF_Context *ctx)" -->
@@ -3452,7 +3592,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it allows to use the text prediction, otherwise <code>EINA_FALSE</code>. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3491,8 +3631,123 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Default value is EINA_TRUE. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga77551a3529aa7b315951d12dd009a9a6"></a><!-- doxytag: member="Ecore_IMF.h::ecore_imf_context_prediction_hint_hash_del" ref="ga77551a3529aa7b315951d12dd009a9a6" args="(Ecore_IMF_Context *ctx, const char *key)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__IMF__Context__Group.html#ga77551a3529aa7b315951d12dd009a9a6">ecore_imf_context_prediction_hint_hash_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Removes the prediction hint data identified by a key. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">key</td><td>The key of the prediction hint </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
+<p>This function removes the entry identified by <code>key</code> from the hash associated <code>ctx</code>.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1c07a64f7debeab997749c41eb96d71a"></a><!-- doxytag: member="Ecore_IMF.h::ecore_imf_context_prediction_hint_hash_get" ref="ga1c07a64f7debeab997749c41eb96d71a" args="(Ecore_IMF_Context *ctx)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a>* <a class="el" href="group__Ecore__IMF__Context__Group.html#ga1c07a64f7debeab997749c41eb96d71a">ecore_imf_context_prediction_hint_hash_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the hash table of prediction hint data. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The prediction hint hash table</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga34550ac7950f88f3e2a4f54920173725"></a><!-- doxytag: member="Ecore_IMF.h::ecore_imf_context_prediction_hint_hash_set" ref="ga34550ac7950f88f3e2a4f54920173725" args="(Ecore_IMF_Context *ctx, const char *key, const char *value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__IMF__Context__Group.html#ga34550ac7950f88f3e2a4f54920173725">ecore_imf_context_prediction_hint_hash_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> *&#160;</td>
+          <td class="paramname"><em>ctx</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the prediction hint data at the specified key. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21.0</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">key</td><td>The key of the prediction hint </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">data</td><td>The data to replace </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise</dd></dl>
+<p>This function modifies the data of <code>key</code> with <code>data</code> in the hash associated <code>ctx</code>. If no entry is found, <code>data</code> is added to the hash associated <code>ctx</code> with the key <code>key</code>. On success this function returns EINA_TRUE, otherwise it returns <code>EINA_FALSE</code>.</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 
 </div>
 </div>
@@ -3522,16 +3777,15 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Set the prediction hint string to deliver to the input panel. </p>
-<p>This API can be used when you want to set prediction hint to use an intelligent reply suggestion service. An intelligent reply suggestion service generates reply candidates for given prediction hint. Example prediction hint: How are you? -&gt; result: I'm fine, Not bad, I'm all right.</p>
+<p>This API can be used when you want to set prediction hint to use intelligent reply suggestion service. The intelligent reply suggestion service generates reply candidates for given prediction hint. Example prediction hint: How are you? -&gt; result: I'm fine, Not bad, I'm all right.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">prediction_hint</td><td>The prediction hint string.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prediction_hint</td><td>The prediction hint string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 
 </div>
 </div>
@@ -3571,7 +3825,7 @@ Typedefs</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>. </td></tr>
     <tr><td class="paramname">str</td><td>Location to store the retrieved string. The string retrieved must be freed with free(). </td></tr>
-    <tr><td class="paramname">cursor_pos</td><td>Location to store position of cursor (in characters) within the preedit string.</td></tr>
+    <tr><td class="paramname">cursor_pos</td><td>Location to store position of cursor (in characters) within the preedit string. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3663,9 +3917,9 @@ Typedefs</h2></td></tr>
  <a class="code" href="group__Eina__List__Group.html#gae27a2c686a0a11693f9b06957c9bba83" title="Definition for the macro to remove each list node while having access to each node&#39;s data...">EINA_LIST_FREE</a>(attrs, attr) free(attr);
 
  free(preedit_string);
-</pre></div> <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+</pre></div> <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a37">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a38">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3702,8 +3956,8 @@ Typedefs</h2></td></tr>
     <a class="code" href="group__Ecore__IMF__Context__Group.html#ga7274646acd202e99112b668ea7ace7b3" title="Notifies the Input Method Context that the widget to which its correspond has lost focus...">ecore_imf_context_focus_out</a>(imf_context);
  }
 
- <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(obj, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ab26a0af7efaa8b77e996bd438accf8d3">EVAS_CALLBACK_FOCUS_OUT</a>, _focus_out_cb, imf_context);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+ <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(obj, EVAS_CALLBACK_FOCUS_OUT, _focus_out_cb, imf_context);
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a7">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
@@ -3749,7 +4003,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -3796,7 +4050,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a78">ecore_imf_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a72">ecore_imf_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3818,7 +4072,7 @@ Typedefs</h2></td></tr>
 <p>Asks the Input Method Context to show itself. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>.</td></tr>
+    <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3855,11 +4109,82 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">ctx</td><td>An <a class="el" href="group__Ecore__IMF__Context__Group.html#gab990e052e8501815371d7289dfd4a017">Ecore_IMF_Context</a>. </td></tr>
-    <tr><td class="paramname">use_preedit</td><td>Whether the IM context should use the preedit string.</td></tr>
+    <tr><td class="paramname">use_preedit</td><td>Whether the IM context should use the preedit string. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="ga057d9fe5e470c618321b8a3c56cc0932"></a><!-- doxytag: member="Ecore_IMF.h::ECORE_IMF_EVENT_COMMIT" ref="ga057d9fe5e470c618321b8a3c56cc0932" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__IMF__Context__Group.html#ga057d9fe5e470c618321b8a3c56cc0932">ECORE_IMF_EVENT_COMMIT</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga61585a0471022c6913117f42f3cd079c"></a><!-- doxytag: member="Ecore_IMF.h::ECORE_IMF_EVENT_DELETE_SURROUNDING" ref="ga61585a0471022c6913117f42f3cd079c" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__IMF__Context__Group.html#ga61585a0471022c6913117f42f3cd079c">ECORE_IMF_EVENT_DELETE_SURROUNDING</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2a8f93b5f98297a82d6f6aeb98ef3a9a"></a><!-- doxytag: member="Ecore_IMF.h::ECORE_IMF_EVENT_PREEDIT_CHANGED" ref="ga2a8f93b5f98297a82d6f6aeb98ef3a9a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__IMF__Context__Group.html#ga2a8f93b5f98297a82d6f6aeb98ef3a9a">ECORE_IMF_EVENT_PREEDIT_CHANGED</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0cf1025d314358b5f76a3be821fc58ae"></a><!-- doxytag: member="Ecore_IMF.h::ECORE_IMF_EVENT_PREEDIT_END" ref="ga0cf1025d314358b5f76a3be821fc58ae" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__IMF__Context__Group.html#ga0cf1025d314358b5f76a3be821fc58ae">ECORE_IMF_EVENT_PREEDIT_END</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac344e37eb083f411d19fdc344804546a"></a><!-- doxytag: member="Ecore_IMF.h::ECORE_IMF_EVENT_PREEDIT_START" ref="gac344e37eb083f411d19fdc344804546a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__IMF__Context__Group.html#gac344e37eb083f411d19fdc344804546a">ECORE_IMF_EVENT_PREEDIT_START</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

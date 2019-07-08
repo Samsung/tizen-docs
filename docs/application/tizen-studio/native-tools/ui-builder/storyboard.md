@@ -36,9 +36,7 @@ The **Layout** editor offers 3 ways to add a new view:
 
 -   Right-click the editor, select **Add View**, and select the applicable view.
 
-**Figure: Adding a new view**
-
-![Adding a new view](media/storyboard_new_view.png)
+    ![Adding a new view](media/storyboard_new_view.png)
 
 -   In the **Outline** view, click the **Empty View** icon in the toolbar (marked by a red circle in the following figure), or right-click the **Outline** view area and select **Add View** and the applicable view.
 

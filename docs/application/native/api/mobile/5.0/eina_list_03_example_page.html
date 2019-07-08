@@ -118,8 +118,8 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
 <p>Removing elements from a list can be done with ease: <div class="fragment"><pre class="fragment">
    list = <a class="code" href="group__Eina__List__Group.html#ga7c0c6e07aa592a1cb2e010049a718035" title="Removes the first instance of the specified data from the given list.">eina_list_remove</a>(list, <span class="stringliteral">&quot;sagitarius&quot;</span>);
 </pre></div></p>
-<p>To replace an element in the list it is not necessary to remove it and then add with the new value, it is possible to just change the value of a node: <div class="fragment"><pre class="fragment">
-   l = <a class="code" href="group__Eina__List__Group.html#ga860144725b63d93b8f84cdf1d816bda8" title="Finds a member of a list and return the list node containing that member.">eina_list_data_find_list</a>(list, <span class="stringliteral">&quot;aerilon&quot;</span>);
+<p>To replace an element in the list it is not necessary to remove it and then re-add with the new value, it is possible to just change the value of a node: <div class="fragment"><pre class="fragment">
+   l = <a class="code" href="group__Eina__List__Group.html#ga860144725b63d93b8f84cdf1d816bda8" title="Finds a member of a list and returns it as a list node.">eina_list_data_find_list</a>(list, <span class="stringliteral">&quot;aerilon&quot;</span>);
    <a class="code" href="group__Eina__List__Group.html#ga213776ffa28b780440da26f673917687" title="Sets the list node data member.">eina_list_data_set</a>(l, <span class="stringliteral">&quot;aquarius&quot;</span>);
 </pre></div></p>
 <p>We will now take a peek to see if the list still has the right number of elements: <div class="fragment"><pre class="fragment">
@@ -128,8 +128,8 @@ main(<span class="keywordtype">int</span> argc, <span class="keywordtype">char</
 <p>Now that the list is in alphabetical order let's create a copy of it in reverse order and print every element to see if worked as expected: <div class="fragment"><pre class="fragment">
    r_list = <a class="code" href="group__Eina__List__Group.html#ga67cb29eef0bf0a3cb2cc160ae506a07f" title="Clones (copies) all the elements in the list in reverse order.">eina_list_reverse_clone</a>(list);
 
-   itr = <a class="code" href="group__Eina__List__Group.html#gabcfb6a861aa7c0db0ee36252ac2a254d" title="Returns a new iterator associated to a list.">eina_list_iterator_new</a>(r_list);
-   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(itr, list_data)
+   itr = <a class="code" href="group__Eina__List__Group.html#gabcfb6a861aa7c0db0ee36252ac2a254d" title="Returns a new iterator associated with a list.">eina_list_iterator_new</a>(r_list);
+   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(itr, list_data)
      printf(&quot;%s\n&quot;, (<span class="keywordtype">char</span>*)list_data);
    <a class="code" href="group__Eina__Iterator__Group.html#gaf9261991a4b05dc63e3401278a3281f8" title="Frees an iterator.">eina_iterator_free</a>(itr);
 </pre></div> </p>

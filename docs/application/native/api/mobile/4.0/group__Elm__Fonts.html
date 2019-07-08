@@ -110,6 +110,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Fonts.html#ga1b538ca2669bfa253f07f6e56117b443">elm_font_fontconfig_name_free</a> (char *name)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Fonts.html#gab7664f78372fa1954ad360931b4c888c">elm_font_available_hash_add</a> (<a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *list)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Fonts.html#gafecc23df30e5aa9c0daabba22588bace">elm_font_available_hash_del</a> (<a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *hash)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Fonts.html#ga90391abc311c7c3fce5d22c354b68987">elm_font_overlay_all_apply</a> (void)</td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga6e9292c8c16c57de938ad1aabf2d7a03"></a><!-- doxytag: member="elm_config.h::elm_config_font_hint_type_set" ref="ga6e9292c8c16c57de938ad1aabf2d7a03" args="(int type)" -->
@@ -417,6 +418,26 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the font name and style string</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>The reverse translation can be achieved with <a class="el" href="group__Elm__Fonts.html#gaf6e0e227201a26697a2680865061ced5">elm_font_properties_get()</a>, for one style only (single font instance, not family).</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga90391abc311c7c3fce5d22c354b68987"></a><!-- doxytag: member="elm_removed.h::elm_font_overlay_all_apply" ref="ga90391abc311c7c3fce5d22c354b68987" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Fonts.html#ga90391abc311c7c3fce5d22c354b68987">elm_font_overlay_all_apply</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Apply the changes made with elm_font_overlay_set() and elm_font_overlay_unset() on all Elementary application windows.</p>
+<p>This applies all font overlays set to all objects in the UI. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000421">Deprecated:</a></b></dt><dd>Use elm_font_overlay_apply and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a> </dd></dl>
 
 </div>
 </div>

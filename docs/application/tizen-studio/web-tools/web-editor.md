@@ -78,11 +78,11 @@ The advanced content assist has the following features:
   - List of HTML files included in the project
 - Proposes code completion of the `src` attribute value of the `<img>` element:
   - List of image files included in the project
-- Proposes code completion of `id` or `class` attribute values of all elements: `id`:
-  - List of ID selectors of linked CSS files
+- Proposes code completion of `id` or `class` attribute values of all elements:
+  - `id`: List of ID selectors of linked CSS files
   - `class`: List of class selectors of linked CSS files
 
-**Figure: Content assist with the <img> element**
+**Figure: Content assist with the \<img> element**
 
 ![Content assist with the img element](./media/web_editor_img.png)
 
@@ -111,7 +111,7 @@ The advanced content hover has the following features:
 - Supports a preview of the image file at the `src` attribute value of the `<img>` element.
 - Support a preview of the CSS rule at the `id` or `class` attribute value of all elements, if the selector (that is made by the `id` or `class` value) exists.
 
-**Figure: Content hover with the <link> element**
+**Figure: Content hover with the \<link> element**
 
 ![Content hover with the link element](./media/web_editor_hover.png)
 

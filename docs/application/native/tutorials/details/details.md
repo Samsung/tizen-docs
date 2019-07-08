@@ -4,6 +4,7 @@ When designing Tizen native applications, you need to take into account the foll
 
 - [Application Filtering](app-filtering.md)
 - [Security and API Privileges](sec-privileges.md)
+- [Security and API Privileges for Apps with API Version 4.0 or Earlier](old-versioned-sec-privileges.md)
 - [Event Handling](event-handling.md)
 - [Error Handling](error-handling.md)
 - [File System Directory Hierarchy](io-overview.md)

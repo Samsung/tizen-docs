@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Spinner</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -103,8 +103,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>By default the spinner will not wrap and has a label of "%.0f" (just showing the integer value of the double).</p>
 <p>A spinner has a label that is formatted with floating point values and thus accepts a printf-style format string, like “%1.2f units”.</p>
 <p>It also allows specific values to be replaced by pre-defined labels.</p>
-<p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for spinner objects.</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout:</p>
+<p>This widget inherits from the Layout one, so that all the functions acting on it also work for spinner objects.</p>
+<p>This widget emits the following signals, besides the ones sent from Layout:</p>
 <ul>
 <li><code>"changed"</code> - Whenever the spinner value is changed.</li>
 <li><code>"delay,changed"</code> - A short time after the value is changed by the user. This will be called only when the user stops dragging for a very short period or when they release their finger/mouse, so it avoids possibly expensive reactions to the value change.</li>
@@ -131,14 +131,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga9f5049e1e041da55adb65ddbf89a1a45">elm_spinner_min_max_set</a> (Elm_Spinner *obj, double min, double max)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the minimum and maximum values for the spinner.  <a href="#ga9f5049e1e041da55adb65ddbf89a1a45"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#gaccea2614db66f270b509123f9e5e737c">elm_spinner_min_max_get</a> (const Elm_Spinner *obj, double *min, double *max)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the minimum and maximum values for the spinner.  <a href="#gaccea2614db66f270b509123f9e5e737c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga9c403c1f29a59a13f75d6c74efd88713">elm_spinner_step_set</a> (Elm_Spinner *obj, double step)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the step used to increment or decrement the spinner value.  <a href="#ga9c403c1f29a59a13f75d6c74efd88713"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#gaa2fba3172074f65a3b7a82934b3d356f">elm_spinner_step_get</a> (const Elm_Spinner *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the step used to increment or decrement the spinner value.  <a href="#gaa2fba3172074f65a3b7a82934b3d356f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#gac24e7133ec989eb5ba20e087a0921d16">elm_spinner_wrap_set</a> (Elm_Spinner *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> wrap)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control whether the spinner should wrap when it reaches its minimum or maximum value.  <a href="#gac24e7133ec989eb5ba20e087a0921d16"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#gac289f5e7c59a3db1856369ca0b213f92">elm_spinner_wrap_get</a> (const Elm_Spinner *obj)</td></tr>
@@ -159,10 +151,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the base for rounding.  <a href="#ga069307c3cd14616ac4ab4e215efb1320"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga2f7a548c9f976221017292950ef9c32b">elm_spinner_base_get</a> (const Elm_Spinner *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the base for rounding.  <a href="#ga2f7a548c9f976221017292950ef9c32b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga8f90df6f1d6944c20adb6443ad4f0938">elm_spinner_value_set</a> (Elm_Spinner *obj, double val)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the value the spinner displays.  <a href="#ga8f90df6f1d6944c20adb6443ad4f0938"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#gac2a9d4a2e05073be0495e3323f52b7ab">elm_spinner_value_get</a> (const Elm_Spinner *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the value the spinner displays.  <a href="#gac2a9d4a2e05073be0495e3323f52b7ab"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga7a0e836516e3517c26ee3f2d44a77cb2">elm_spinner_label_format_set</a> (Elm_Spinner *obj, const char *fmt)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the format string of the displayed label.  <a href="#ga7a0e836516e3517c26ee3f2d44a77cb2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga4ecba31f3874799d43825bb9d37ffbf0">elm_spinner_label_format_get</a> (const Elm_Spinner *obj)</td></tr>
@@ -172,6 +160,18 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga5faa31fa6b9b5ccd0b3657ac013e641c">elm_spinner_special_value_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double value)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga88fdf2be4a61e6312dac6d0ece11b088">elm_spinner_special_value_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double value)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91">elm_spinner_min_max_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double min, double max)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the minimum and maximum values for the spinner.  <a href="#gac8893709e98b174504bc86e8413d3a91"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga966a354e4d61d73da44bed563813ca1c">elm_spinner_min_max_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double *min, double *max)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the minimum and maximum values for the spinner.  <a href="#ga966a354e4d61d73da44bed563813ca1c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#gad145d4c85ed9bb10512999f5e3acd740">elm_spinner_step_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double step)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the step used to increment or decrement the spinner value.  <a href="#gad145d4c85ed9bb10512999f5e3acd740"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga9c24cde2d4483a06400719745d9c26a3">elm_spinner_step_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the step used to increment or decrement the spinner value.  <a href="#ga9c24cde2d4483a06400719745d9c26a3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#gaeaf35dbd89a82d08fa81666cd7590765">elm_spinner_value_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, double val)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the value the spinner displays.  <a href="#gaeaf35dbd89a82d08fa81666cd7590765"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Spinner.html#ga0f93a325d38ad9a249994a7dc4ea4f1b">elm_spinner_value_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the value the spinner displays.  <a href="#ga0f93a325d38ad9a249994a7dc4ea4f1b"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gac259ed8ba5d597ceb982cc0170c37a63"></a><!-- doxytag: member="elm_spinner_legacy.h::elm_spinner_add" ref="gac259ed8ba5d597ceb982cc0170c37a63" args="(Evas_Object *parent)" -->
@@ -196,9 +196,10 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new spinner widget handle or <code>NULL</code>, on errors.</dd></dl>
-<p>This function inserts a new spinner widget on the canvas.</p>
+<p>This function inserts a new spinner widget on the canvas. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a29">bg_example_03.c</a>, <a class="el" href="gengrid_example_8c-example.html#a49">gengrid_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a31">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a9">spinner_example.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a44">transit_example_03.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga2f7a548c9f976221017292950ef9c32b"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_base_get" ref="ga2f7a548c9f976221017292950ef9c32b" args="(const Elm_Spinner *obj)" -->
@@ -223,7 +224,6 @@ Functions</h2></td></tr>
 <p>This means that things will be rounded to increments (or decrements) of "round" starting from value <code>base</code>. The default base for rounding is 0.</p>
 <p>Example: round = 3, base = 2 Values: ..., -2, 0, 2, 5, 8, 11, 14, ...</p>
 <p>Example: round = 2, base = 5.5 Values: ..., -0.5, 1.5, 3.5, 5.5, 7.5, 9.5, 11.5, ...</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -231,6 +231,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The base value </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -266,7 +267,6 @@ Functions</h2></td></tr>
 <p>This means that things will be rounded to increments (or decrements) of "round" starting from value <code>base</code>. The default base for rounding is 0.</p>
 <p>Example: round = 3, base = 2 Values: ..., -2, 0, 2, 5, 8, 11, 14, ...</p>
 <p>Example: round = 2, base = 5.5 Values: ..., -0.5, 1.5, 3.5, 5.5, 7.5, 9.5, 11.5, ...</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -274,6 +274,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -295,7 +296,6 @@ Functions</h2></td></tr>
 <p>Control whether the spinner can be directly edited by the user or not. </p>
 <p>Spinner objects can have edition disabled, in which state they will be changed only by arrows. Useful for contexts where you don't want your users to interact with it writing the value. Specially when using special values, the user can see real value instead of special label on edition.</p>
 <p>It's enabled by default.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -303,6 +303,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to allow users to edit it or <code>false</code> to don't allow users to edit it directly. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -334,7 +335,6 @@ Functions</h2></td></tr>
 <p>Control whether the spinner can be directly edited by the user or not. </p>
 <p>Spinner objects can have edition disabled, in which state they will be changed only by arrows. Useful for contexts where you don't want your users to interact with it writing the value. Specially when using special values, the user can see real value instead of special label on edition.</p>
 <p>It's enabled by default.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -342,7 +342,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a33">bg_example_03.c</a>, <a class="el" href="spinner_example_8c-example.html#a17">spinner_example.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a48">transit_example_03.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gaef9615492a58110ca00fde860479d723"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_interval_get" ref="gaef9615492a58110ca00fde860479d723" args="(const Elm_Spinner *obj)" -->
@@ -365,7 +367,6 @@ Functions</h2></td></tr>
 <p>This helps the user to get to a given value distant from the current one easier/faster, as it will start to change quicker and quicker on mouse button holds.</p>
 <p>The calculation for the next change interval value, starting from the one set with this call, is the previous interval divided by $1.05, so it decreases a little bit.</p>
 <p>The default starting interval value for automatic changes is $0.85 seconds.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -373,6 +374,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The (first) interval value in seconds. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -406,7 +408,6 @@ Functions</h2></td></tr>
 <p>This helps the user to get to a given value distant from the current one easier/faster, as it will start to change quicker and quicker on mouse button holds.</p>
 <p>The calculation for the next change interval value, starting from the one set with this call, is the previous interval divided by $1.05, so it decreases a little bit.</p>
 <p>The default starting interval value for automatic changes is $0.85 seconds.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -414,7 +415,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="spinner_example_8c-example.html#a16">spinner_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga4ecba31f3874799d43825bb9d37ffbf0"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_label_format_get" ref="ga4ecba31f3874799d43825bb9d37ffbf0" args="(const Elm_Spinner *obj)" -->
@@ -436,7 +439,6 @@ Functions</h2></td></tr>
 <p>If <code>NULL</code>, this sets the format to "%.0f". If not it sets the format string for the label text. The label text is provided a floating point value, so the label text can display up to 1 floating point value. Note that this is optional.</p>
 <p>Use a format string such as "%1.2f meters" for example, and it will display values like: "3.14 meters" for a value equal to 3.14159.</p>
 <p>Default is "%0.f".</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -444,6 +446,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The format string for the label display. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -476,7 +479,6 @@ Functions</h2></td></tr>
 <p>If <code>NULL</code>, this sets the format to "%.0f". If not it sets the format string for the label text. The label text is provided a floating point value, so the label text can display up to 1 floating point value. Note that this is optional.</p>
 <p>Use a format string such as "%1.2f meters" for example, and it will display values like: "3.14 meters" for a value equal to 3.14159.</p>
 <p>Default is "%0.f".</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -484,17 +486,19 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a32">bg_example_03.c</a>, <a class="el" href="gengrid_example_8c-example.html#a52">gengrid_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a32">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a11">spinner_example.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a47">transit_example_03.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gaccea2614db66f270b509123f9e5e737c"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_min_max_get" ref="gaccea2614db66f270b509123f9e5e737c" args="(const Elm_Spinner *obj, double *min, double *max)" -->
+<a class="anchor" id="ga966a354e4d61d73da44bed563813ca1c"></a><!-- doxytag: member="elm_spinner_legacy.h::elm_spinner_min_max_get" ref="ga966a354e4d61d73da44bed563813ca1c" args="(const Evas_Object *obj, double *min, double *max)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Spinner.html#gaccea2614db66f270b509123f9e5e737c">elm_spinner_min_max_get</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Spinner.html#ga966a354e4d61d73da44bed563813ca1c">elm_spinner_min_max_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Spinner *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -520,29 +524,28 @@ Functions</h2></td></tr>
 
 <p>Control the minimum and maximum values for the spinner. </p>
 <p>Define the allowed range of values to be selected by the user.</p>
-<p>If actual value is less than <code>min</code>, it will be updated to <code>min</code>. If it is bigger then <code>max</code>, will be updated to <code>max</code>. Actual value can be get with <a class="el" href="group__Elm__Spinner.html#gac2a9d4a2e05073be0495e3323f52b7ab">elm_spinner_value_get</a>.</p>
+<p>If actual value is less than <code>min</code>, it will be updated to <code>min</code>. If it is bigger then <code>max</code>, will be updated to <code>max</code>. Actual value can be get with elm_obj_spinner_value_get.</p>
 <p>By default, min is equal to 0, and max is equal to 100.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Maximum must be greater than minimum.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">min</td><td>The minimum value. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">max</td><td>The maximum value. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga9f5049e1e041da55adb65ddbf89a1a45"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_min_max_set" ref="ga9f5049e1e041da55adb65ddbf89a1a45" args="(Elm_Spinner *obj, double min, double max)" -->
+<a class="anchor" id="gac8893709e98b174504bc86e8413d3a91"></a><!-- doxytag: member="elm_spinner_legacy.h::elm_spinner_min_max_set" ref="gac8893709e98b174504bc86e8413d3a91" args="(Evas_Object *obj, double min, double max)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Spinner.html#ga9f5049e1e041da55adb65ddbf89a1a45">elm_spinner_min_max_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91">elm_spinner_min_max_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Spinner *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -568,19 +571,19 @@ Functions</h2></td></tr>
 
 <p>Control the minimum and maximum values for the spinner. </p>
 <p>Define the allowed range of values to be selected by the user.</p>
-<p>If actual value is less than <code>min</code>, it will be updated to <code>min</code>. If it is bigger then <code>max</code>, will be updated to <code>max</code>. Actual value can be get with <a class="el" href="group__Elm__Spinner.html#gac2a9d4a2e05073be0495e3323f52b7ab">elm_spinner_value_get</a>.</p>
+<p>If actual value is less than <code>min</code>, it will be updated to <code>min</code>. If it is bigger then <code>max</code>, will be updated to <code>max</code>. Actual value can be get with elm_obj_spinner_value_get.</p>
 <p>By default, min is equal to 0, and max is equal to 100.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Maximum must be greater than minimum.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">min</td><td>The minimum value. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>The maximum value. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a31">bg_example_03.c</a>, <a class="el" href="gengrid_example_8c-example.html#a50">gengrid_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a34">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a14">spinner_example.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a46">transit_example_03.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gaaef0dcd12c7f6e6f04b52718e1cd1fc4"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_round_get" ref="gaaef0dcd12c7f6e6f04b52718e1cd1fc4" args="(const Elm_Spinner *obj)" -->
@@ -600,7 +603,6 @@ Functions</h2></td></tr>
 
 <p>Control the round value for rounding. </p>
 <p>Sets the rounding value used for value rounding in the spinner.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -608,6 +610,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The rounding value </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -638,7 +641,6 @@ Functions</h2></td></tr>
 
 <p>Control the round value for rounding. </p>
 <p>Sets the rounding value used for value rounding in the spinner.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -646,6 +648,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -683,7 +686,6 @@ Functions</h2></td></tr>
 <p>Control special string to display in the place of the numerical value. </p>
 <p>It's useful for cases when a user should select an item that is better indicated by a label than a value. For example, weekdays or months.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If another label was previously set to <code>value</code>, it will be replaced by the new label.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -692,7 +694,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a35">bg_example_03.c</a>, <a class="el" href="spinner_example_8c-example.html#a19">spinner_example.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a49">transit_example_03.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga5faa31fa6b9b5ccd0b3657ac013e641c"></a><!-- doxytag: member="elm_spinner_legacy.h::elm_spinner_special_value_del" ref="ga5faa31fa6b9b5ccd0b3657ac013e641c" args="(Evas_Object *obj, double value)" -->
@@ -729,7 +733,7 @@ Functions</h2></td></tr>
 </dl>
 <p>It will remove a previously added special value. After this, the spinner will display the value itself instead of a label.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add()</a> for more details.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -768,19 +772,19 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The used label.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Spinner.html#ga1ff25983507022abbfd089ce3a4ffde1" title="Control special string to display in the place of the numerical value.">elm_spinner_special_value_add()</a> for more details.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaa2fba3172074f65a3b7a82934b3d356f"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_step_get" ref="gaa2fba3172074f65a3b7a82934b3d356f" args="(const Elm_Spinner *obj)" -->
+<a class="anchor" id="ga9c24cde2d4483a06400719745d9c26a3"></a><!-- doxytag: member="elm_spinner_legacy.h::elm_spinner_step_get" ref="ga9c24cde2d4483a06400719745d9c26a3" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="group__Elm__Spinner.html#gaa2fba3172074f65a3b7a82934b3d356f">elm_spinner_step_get</a> </td>
+          <td class="memname">double <a class="el" href="group__Elm__Spinner.html#ga9c24cde2d4483a06400719745d9c26a3">elm_spinner_step_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Spinner *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -790,27 +794,21 @@ Functions</h2></td></tr>
 
 <p>Control the step used to increment or decrement the spinner value. </p>
 <p>This value will be incremented or decremented to the displayed value. It will be incremented while the user keep right or top arrow pressed, and will be decremented while the user keep left or bottom arrow pressed.</p>
-<p>The interval to increment / decrement can be set with <a class="el" href="group__Elm__Spinner.html#ga61529b6a5bc0204a471b8f9f96248bd2">elm_spinner_interval_set</a>.</p>
+<p>The interval to increment / decrement can be set with elm_obj_spinner_interval_set.</p>
 <p>By default step value is equal to 1.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The step value. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga9c403c1f29a59a13f75d6c74efd88713"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_step_set" ref="ga9c403c1f29a59a13f75d6c74efd88713" args="(Elm_Spinner *obj, double step)" -->
+<a class="anchor" id="gad145d4c85ed9bb10512999f5e3acd740"></a><!-- doxytag: member="elm_spinner_legacy.h::elm_spinner_step_set" ref="gad145d4c85ed9bb10512999f5e3acd740" args="(Evas_Object *obj, double step)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Spinner.html#ga9c403c1f29a59a13f75d6c74efd88713">elm_spinner_step_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Spinner.html#gad145d4c85ed9bb10512999f5e3acd740">elm_spinner_step_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Spinner *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -830,27 +828,27 @@ Functions</h2></td></tr>
 
 <p>Control the step used to increment or decrement the spinner value. </p>
 <p>This value will be incremented or decremented to the displayed value. It will be incremented while the user keep right or top arrow pressed, and will be decremented while the user keep left or bottom arrow pressed.</p>
-<p>The interval to increment / decrement can be set with <a class="el" href="group__Elm__Spinner.html#ga61529b6a5bc0204a471b8f9f96248bd2">elm_spinner_interval_set</a>.</p>
+<p>The interval to increment / decrement can be set with elm_obj_spinner_interval_set.</p>
 <p>By default step value is equal to 1.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">step</td><td>The step value. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="slideshow_example_8c-example.html#a33">slideshow_example.c</a>, and <a class="el" href="spinner_example_8c-example.html#a12">spinner_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gac2a9d4a2e05073be0495e3323f52b7ab"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_value_get" ref="gac2a9d4a2e05073be0495e3323f52b7ab" args="(const Elm_Spinner *obj)" -->
+<a class="anchor" id="ga0f93a325d38ad9a249994a7dc4ea4f1b"></a><!-- doxytag: member="elm_spinner_legacy.h::elm_spinner_value_get" ref="ga0f93a325d38ad9a249994a7dc4ea4f1b" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="group__Elm__Spinner.html#gac2a9d4a2e05073be0495e3323f52b7ab">elm_spinner_value_get</a> </td>
+          <td class="memname">double <a class="el" href="group__Elm__Spinner.html#ga0f93a325d38ad9a249994a7dc4ea4f1b">elm_spinner_value_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Spinner *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -860,26 +858,21 @@ Functions</h2></td></tr>
 
 <p>Control the value the spinner displays. </p>
 <p>Value will be presented on the label following format specified with elm_spinner_format_set().</p>
-<p>Warning The value must to be between min and max values. This values are set by <a class="el" href="group__Elm__Spinner.html#ga9f5049e1e041da55adb65ddbf89a1a45" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set()</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Warning The value must to be between min and max values. This values are set by <a class="el" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set()</a>.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The value to be displayed. </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a7">bg_example_03.c</a>, <a class="el" href="gengrid_example_8c-example.html#a25">gengrid_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a4">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a1">spinner_example.c</a>, and <a class="el" href="transit_example_03_8c-example.html#a24">transit_example_03.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="ga8f90df6f1d6944c20adb6443ad4f0938"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_value_set" ref="ga8f90df6f1d6944c20adb6443ad4f0938" args="(Elm_Spinner *obj, double val)" -->
+<a class="anchor" id="gaeaf35dbd89a82d08fa81666cd7590765"></a><!-- doxytag: member="elm_spinner_legacy.h::elm_spinner_value_set" ref="gaeaf35dbd89a82d08fa81666cd7590765" args="(Evas_Object *obj, double val)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Spinner.html#ga8f90df6f1d6944c20adb6443ad4f0938">elm_spinner_value_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Spinner.html#gaeaf35dbd89a82d08fa81666cd7590765">elm_spinner_value_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Spinner *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -899,16 +892,16 @@ Functions</h2></td></tr>
 
 <p>Control the value the spinner displays. </p>
 <p>Value will be presented on the label following format specified with elm_spinner_format_set().</p>
-<p>Warning The value must to be between min and max values. This values are set by <a class="el" href="group__Elm__Spinner.html#ga9f5049e1e041da55adb65ddbf89a1a45" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set()</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>Warning The value must to be between min and max values. This values are set by <a class="el" href="group__Elm__Spinner.html#gac8893709e98b174504bc86e8413d3a91" title="Control the minimum and maximum values for the spinner.">elm_spinner_min_max_set()</a>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The value to be displayed. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="gengrid_example_8c-example.html#a51">gengrid_example.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a35">slideshow_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gac289f5e7c59a3db1856369ca0b213f92"></a><!-- doxytag: member="elm_spinner.eo.legacy.h::elm_spinner_wrap_get" ref="gac289f5e7c59a3db1856369ca0b213f92" args="(const Elm_Spinner *obj)" -->
@@ -931,7 +924,6 @@ Functions</h2></td></tr>
 <p>When wrap is enabled, when the user tries to increment the value, but displayed value plus step value is bigger than maximum value, the new value will be the minimum value. When the the user tries to decrement it, but the value less step is less than minimum value, the new displayed value will be the maximum value.</p>
 <p>E.g.: <code>min</code> = 10 <code>max</code> = 50 <code>step</code> = 20 <code>displayed</code> = 20</p>
 <p>When the user decrement value (using left or bottom arrow), it will displays $50.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -939,6 +931,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> to enable wrap or <code>false</code> to disable it. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -972,7 +965,6 @@ Functions</h2></td></tr>
 <p>When wrap is enabled, when the user tries to increment the value, but displayed value plus step value is bigger than maximum value, the new value will be the minimum value. When the the user tries to decrement it, but the value less step is less than minimum value, the new displayed value will be the maximum value.</p>
 <p>E.g.: <code>min</code> = 10 <code>max</code> = 50 <code>step</code> = 20 <code>displayed</code> = 20</p>
 <p>When the user decrement value (using left or bottom arrow), it will displays $50.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -980,7 +972,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="spinner_example_8c-example.html#a13">spinner_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

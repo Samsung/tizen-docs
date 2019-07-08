@@ -210,8 +210,8 @@ Defines</h2></td></tr>
                                                   <a class="code" href="group__Eina__Inline__List__Group.html#ga537030c4eea1e4d7cfccd5f4a5c48707">_EINA_INLIST_OFFSET</a>(ref))
 </pre></div><dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">ref</td><td>The reference to be used. </td></tr>
-    <tr><td class="paramname">ptr</td><td>The pointer to be used. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ref</td><td>The reference to be used. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">ptr</td><td>The pointer to be used. </td></tr>
   </table>
   </dd>
 </dl>
@@ -234,7 +234,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">ref</td><td>The reference to be used. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">ref</td><td>The reference to be used. </td></tr>
   </table>
   </dd>
 </dl>
@@ -280,7 +280,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<b>Value:</b><div class="fragment"><pre class="fragment">((type *)((<span class="keywordtype">char</span> *)ptr - \
+<b>Value:</b><div class="fragment"><pre class="fragment">((type *)(<span class="keywordtype">void</span> *)((<span class="keywordtype">char</span> *)ptr - \
                                                   offsetof(type, __in_list)))
 </pre></div><p>Utility macro to get the container object of an inlist </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a2">eina_inlist_01.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a14">eina_inlist_02.c</a>, and <a class="el" href="eina_inlist_03_8c-example.html#a10">eina_inlist_03.c</a>.</dd>
@@ -315,8 +315,8 @@ Defines</h2></td></tr>
        it = (<a class="code" href="group__Eina__Inline__List__Group.html#ga5bc991428e75557c6195f6b9e38321fb">EINA_INLIST_GET</a>(it)-&gt;next ? <a class="code" href="group__Eina__Inline__List__Group.html#ga02aaf0449fa7b4e296ebd00005fa1334">_EINA_INLIST_CONTAINER</a>(it, <a class="code" href="group__Eina__Inline__List__Group.html#ga5bc991428e75557c6195f6b9e38321fb">EINA_INLIST_GET</a>(it)-&gt;next) : NULL))
 </pre></div><dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The list to iterate on. </td></tr>
-    <tr><td class="paramname">it</td><td>The pointer to the list item, i.e. a pointer to each item that is part of the list. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The list to iterate on. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">it</td><td>The pointer to the list item, i.e. a pointer to each item that is part of the list. </td></tr>
   </table>
   </dd>
 </dl>
@@ -359,9 +359,9 @@ Defines</h2></td></tr>
         it = NULL, it = list2 ? <a class="code" href="group__Eina__Inline__List__Group.html#ga02aaf0449fa7b4e296ebd00005fa1334">_EINA_INLIST_CONTAINER</a>(it, list2) : NULL, list2 = list2 ? list2-&gt;next : NULL)
 </pre></div><dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The list to iterate on. </td></tr>
-    <tr><td class="paramname">list2</td><td>Auxiliary Eina_Inlist variable so we can save the pointer to the next element, allowing us to free/remove the current one. Note that this macro is only safe if the next element is not removed. Only the current one is allowed to be removed. </td></tr>
-    <tr><td class="paramname">it</td><td>The pointer to the list item, i.e. a pointer to each item that is part of the list. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The list to iterate on. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">list2</td><td>Auxiliary Eina_Inlist variable so we can save the pointer to the next element, allowing us to free/remove the current one. Note that this macro is only safe if the next element is not removed. Only the current one is allowed to be removed. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">it</td><td>The pointer to the list item, i.e. a pointer to each item that is part of the list. </td></tr>
   </table>
   </dd>
 </dl>
@@ -394,8 +394,8 @@ Defines</h2></td></tr>
 <div class="memdoc">
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The list to free. </td></tr>
-    <tr><td class="paramname">it</td><td>The pointer to the list item, i.e. a pointer to each item that is part of the list.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The list to free. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>The pointer to the list item, i.e. a pointer to each item that is part of the list.</td></tr>
   </table>
   </dd>
 </dl>
@@ -451,8 +451,8 @@ Defines</h2></td></tr>
        it; it = (<a class="code" href="group__Eina__Inline__List__Group.html#ga5bc991428e75557c6195f6b9e38321fb">EINA_INLIST_GET</a>(it)-&gt;prev ? <a class="code" href="group__Eina__Inline__List__Group.html#ga02aaf0449fa7b4e296ebd00005fa1334">_EINA_INLIST_CONTAINER</a>(it, <a class="code" href="group__Eina__Inline__List__Group.html#ga5bc991428e75557c6195f6b9e38321fb">EINA_INLIST_GET</a>(it)-&gt;prev) : NULL))
 </pre></div><dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The list to traversed in reverse order. </td></tr>
-    <tr><td class="paramname">it</td><td>The pointer to the list item, i.e. a pointer to each item that is part of the list. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The list to traverse in reverse order. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">it</td><td>The pointer to the list item, i.e. a pointer to each item that is part of the list. </td></tr>
   </table>
   </dd>
 </dl>
@@ -487,12 +487,12 @@ Defines</h2></td></tr>
        it; it = (<a class="code" href="group__Eina__Inline__List__Group.html#ga5bc991428e75557c6195f6b9e38321fb">EINA_INLIST_GET</a>(it)-&gt;prev ? <a class="code" href="group__Eina__Inline__List__Group.html#ga02aaf0449fa7b4e296ebd00005fa1334">_EINA_INLIST_CONTAINER</a>(it, <a class="code" href="group__Eina__Inline__List__Group.html#ga5bc991428e75557c6195f6b9e38321fb">EINA_INLIST_GET</a>(it)-&gt;prev) : NULL))
 </pre></div><dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The last list to traversed in reverse order. </td></tr>
-    <tr><td class="paramname">it</td><td>The pointer to the list item, i.e. a pointer to each item that is part of the list. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The last list to traverse in reverse order. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>The pointer to the list item, i.e. a pointer to each item that is part of the list. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Inline__List__Group.html#gafa10a318f6f3c5e734e08bb4d48ca3f6">EINA_INLIST_REVERSE_FOREACH()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Inline__List__Group.html#gafa10a318f6f3c5e734e08bb4d48ca3f6">EINA_INLIST_REVERSE_FOREACH()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
 <p><a class="el" href="group__Eina__Inline__List__Group.html#gafa10a318f6f3c5e734e08bb4d48ca3f6">EINA_INLIST_REVERSE_FOREACH()</a> starts from last list of the given list. This starts from given list, not the last one. </p>
 
@@ -546,12 +546,12 @@ Defines</h2></td></tr>
 <p>Returns a new accessor associated to a list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_list</td><td>The list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_list</td><td>The list. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new accessor.</dd></dl>
-<p>This function returns a newly allocated accessor associated to <code>in_list</code>. If <code>in_list</code> is <code>NULL</code> or the count member of <code>in_list</code> is less or equal than <code>0</code>, this function returns <code>NULL</code>. If the memory can not be allocated, <code>NULL</code> is returned and Otherwise, a valid accessor is returned.</p>
+<p>This function returns a newly allocated accessor associated to <code>in_list</code>. If <code>in_list</code> is <code>NULL</code> or the count member of <code>in_list</code> is less or equal than <code>0</code>, this function returns <code>NULL</code>. If the memory can not be allocated, <code>NULL</code> is returned and Otherwise, a valid accessor is returned. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -587,8 +587,8 @@ Defines</h2></td></tr>
 <em>in_item</em> is considered to be in no list. If it was in another list before, <a class="el" href="group__Eina__Inline__List__Group.html#gacb43e626d6c2da5270bc19f713676fe1" title="Removes node from list.">eina_inlist_remove()</a> it before adding. No check of <em>new_l</em> prev and next pointers is done, so it's safe to have them uninitialized.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
-    <tr><td class="paramname">in_item</td><td>New list node, must not be <code>NULL</code>.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">in_list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_item</td><td>New list node, must not be <code>NULL</code>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -637,13 +637,13 @@ Defines</h2></td></tr>
 <em>in_relative</em> is considered to be inside <em>in_list</em>, no checks are done to confirm that and giving nodes from different lists will lead to problems. Giving NULL <em>in_relative</em> is the same as <a class="el" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
-    <tr><td class="paramname">in_item</td><td>New list node, must not be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">in_relative</td><td>Reference node, <em>in_item</em> will be added after it.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">in_list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_item</td><td>New list node, must not be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_relative</td><td>Reference node, <em>in_item</em> will be added after it.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>list</em> anymore.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>list</em> anymore. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a9">eina_inlist_01.c</a>.</dd>
 </dl>
@@ -667,13 +667,13 @@ Defines</h2></td></tr>
 <p>Gets the count of the number of items in a list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The list whose count to return. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list whose count to return. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of members in the list.</dd></dl>
 <p>This function returns how many members <code>list</code> contains. If the list is <code>NULL</code>, <code>0</code> is returned.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>This is an order-N operation and so the time will depend on the number of elements on the list, so, it might become slow for big lists!</dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is an order-N operation and so the time will depend on the number of elements on the list, so, it might become slow for big lists! </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_02_8c-example.html#a9">eina_inlist_02.c</a>, and <a class="el" href="eina_inlist_03_8c-example.html#a7">eina_inlist_03.c</a>.</dd>
 </dl>
@@ -710,8 +710,8 @@ Defines</h2></td></tr>
 <em>item</em> is considered to be inside <em>list</em>. No checks are done to confirm this, and giving nodes from different lists will lead to problems.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
-    <tr><td class="paramname">item</td><td>List node to move to end (tail), must not be <code>NULL</code>.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">item</td><td>List node to move to end (tail), must not be <code>NULL</code>.</td></tr>
   </table>
   </dd>
 </dl>
@@ -750,12 +750,12 @@ Defines</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is an expensive call and has O(n) cost, possibly walking the whole list.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_list</td><td>Existing list to search <em>in_item</em> in, must not be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">in_item</td><td>What to search for, must not be <code>NULL</code>.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_list</td><td>Existing list to search <em>in_item</em> in, must not be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_item</td><td>What to search for, must not be <code>NULL</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><em>in_item</em> if found, <code>NULL</code> if not.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><em>in_item</em> if found, <code>NULL</code> if not. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a12">eina_inlist_01.c</a>.</dd>
 </dl>
@@ -779,7 +779,7 @@ Defines</h2></td></tr>
 <p>Gets the first list node in the list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The list to get the first list node from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to get the first list node from. </td></tr>
   </table>
   </dd>
 </dl>
@@ -808,14 +808,14 @@ Defines</h2></td></tr>
 <p>Returns a new iterator associated to <em>list</em>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_list</td><td>The list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_list</td><td>The list. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new iterator.</dd></dl>
 <p>This function returns a newly allocated iterator associated to <code>in_list</code>. If <code>in_list</code> is <code>NULL</code> or the count member of <code>in_list</code> is less or equal than 0, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>, thus keeping API sane.</p>
 <p>If the memory can not be allocated, <code>NULL</code> is returned. Otherwise, a valid iterator is returned.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>if the list structure changes then the iterator becomes invalid, and if you add or remove nodes iterator behavior is undefined, and your program may crash!</dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>if the list structure changes then the iterator becomes invalid, and if you add or remove nodes iterator behavior is undefined, and your program may crash! </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -838,7 +838,7 @@ Defines</h2></td></tr>
 <p>Gets the last list node in the list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The list to get the last list node from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to get the last list node from. </td></tr>
   </table>
   </dd>
 </dl>
@@ -880,12 +880,12 @@ Defines</h2></td></tr>
 <em>new_l</em> is considered to be in no list. If it was in another list before, <a class="el" href="group__Eina__Inline__List__Group.html#gacb43e626d6c2da5270bc19f713676fe1" title="Removes node from list.">eina_inlist_remove()</a> it before adding. No check of <em>new_l</em> prev and next pointers is done, so it's safe to have them uninitialized.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
-    <tr><td class="paramname">in_item</td><td>New list node, must not be <code>NULL</code>.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">in_list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_item</td><td>New list node, must not be <code>NULL</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>in_list</em> anymore.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>in_list</em> anymore. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a6">eina_inlist_01.c</a>, and <a class="el" href="eina_inlist_03_8c-example.html#a5">eina_inlist_03.c</a>.</dd>
 </dl>
@@ -930,9 +930,9 @@ Defines</h2></td></tr>
 <em>in_relative</em> is considered to be inside <em>in_list</em>, no checks are done to confirm that and giving nodes from different lists will lead to problems. Giving NULL <em>in_relative</em> is the same as <a class="el" href="group__Eina__List__Group.html#ga9f35bfc7c5b798014c3e0a74bc6f39ad" title="Prepends the given data to the given linked list.">eina_list_prepend()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
-    <tr><td class="paramname">in_item</td><td>New list node, must not be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">in_relative</td><td>Reference node, <em>in_item</em> will be added before it.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">in_list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_item</td><td>New list node, must not be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_relative</td><td>Reference node, <em>in_item</em> will be added before it.</td></tr>
   </table>
   </dd>
 </dl>
@@ -972,12 +972,12 @@ Defines</h2></td></tr>
 <em>item</em> is considered to be inside <em>list</em>. No checks are done to confirm this, and giving nodes from different lists will lead to problems.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
-    <tr><td class="paramname">item</td><td>List node to move to beginning (head), must not be <code>NULL</code>.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>Existing list head or <code>NULL</code> to create a new list. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">item</td><td>List node to move to beginning (head), must not be <code>NULL</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>list</em> anymore.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>list</em> anymore. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a8">eina_inlist_01.c</a>.</dd>
 </dl>
@@ -1014,12 +1014,12 @@ Defines</h2></td></tr>
 <em>in_item</em> is considered to be inside <em>in_list</em>, no checks are done to confirm that and giving nodes from different lists will lead to problems, especially if <em>in_item</em> is the head since it will be different from <em>list</em> and the wrong new head will be returned.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">in_list</td><td>Existing list head, must not be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">in_item</td><td>Existing list node, must not be <code>NULL</code>.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">in_list</td><td>Existing list head, must not be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in_item</td><td>Existing list node, must not be <code>NULL</code>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>list</em> anymore.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new list head. Use it and not <em>list</em> anymore. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a13">eina_inlist_01.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a15">eina_inlist_02.c</a>, and <a class="el" href="eina_inlist_03_8c-example.html#a9">eina_inlist_03.c</a>.</dd>
 </dl>
@@ -1053,8 +1053,8 @@ Defines</h2></td></tr>
 <p>Sorts a list according to the ordering func will return. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">head</td><td>The list handle to sort. </td></tr>
-    <tr><td class="paramname">func</td><td>A function pointer that can handle comparing the list data nodes. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">head</td><td>The list handle to sort. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>A function pointer that can handle comparing the list data nodes. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1085,7 +1085,7 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
  <span class="keyword">extern</span> <a class="code" href="struct__Eina__Inlist.html">Eina_Inlist</a> *list;
 
  list = <a class="code" href="group__Eina__Inline__List__Group.html#gac1132bfed4e77a5b63b0fb81d46f20c9" title="Sorts a list according to the ordering func will return.">eina_inlist_sort</a>(list, sort_cb);
-</pre></div><dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_inlist_01_8c-example.html#a11">eina_inlist_01.c</a>.</dd>
 </dl>
 </div>
@@ -1124,16 +1124,16 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <p>Inserts a new node into a sorted list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The given linked list, <b>must</b> be sorted. </td></tr>
-    <tr><td class="paramname">item</td><td>List node to insert, must not be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">func</td><td>The function called for the sort. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The given linked list, <b>must</b> be sorted. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">item</td><td>List node to insert, must not be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>The function called for the sort. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A list pointer. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A list pointer.</dd></dl>
 <p>This function inserts item into a linked list assuming it was sorted and the result will be sorted. If <code>list</code> is <code>NULL</code>, item is returned. On success, a new list pointer that should be used in place of the one given to this function is returned. Otherwise, the old pointer is returned.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>O(log2(n)) comparisons (calls to <code>func</code>) average/worst case performance. As said in <a class="el" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data is in the sorted list.">eina_list_search_sorted_near_list()</a>, lists do not have O(1) access time, so walking to the correct node can be costly, consider worst case to be almost O(n) pointer dereference (list walk).</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>O(log2(n)) comparisons (calls to <code>func</code>) average/worst case performance. As said in <a class="el" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data from the sorted list.">eina_list_search_sorted_near_list()</a>, lists do not have O(1) access time, so walking to the correct node can be costly, consider worst case to be almost O(n) pointer dereference (list walk).</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1156,12 +1156,12 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <p>Frees an Eina_Inlist_Sorted_State. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">state</td><td>The state to destroy </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">state</td><td>The state to destroy</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
-<p>See <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> for more information.</p>
+<p>See <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> for more information. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1194,14 +1194,14 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <p>Forces an Eina_Inlist_Sorted_State to match the content of a list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">state</td><td>The state to update </td></tr>
-    <tr><td class="paramname">list</td><td>The list to match </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">state</td><td>The state to update </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to match </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The number of item in the actually in the list </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The number of item in the actually in the list</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
-<p>See <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> for more information. This function is useful if you didn't use <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> at some point, but still think you have a sorted list. It will only correctly work on a sorted list.</p>
+<p>See <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> for more information. This function is useful if you didn't use <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> at some point, but still think you have a sorted list. It will only correctly work on a sorted list. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1246,17 +1246,17 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <p>Inserts a new node into a sorted list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The given linked list, <b>must</b> be sorted. </td></tr>
-    <tr><td class="paramname">item</td><td>list node to insert, must not be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">func</td><td>The function called for the sort. </td></tr>
-    <tr><td class="paramname">state</td><td>The current array for initial dichotomic search </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The given linked list, <b>must</b> be sorted. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">item</td><td>list node to insert, must not be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>The function called for the sort. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">state</td><td>The current array for initial dichotomic search </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A list pointer. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
-<p>This function inserts item into a linked list assuming <code>state</code> match the exact content order of the list. It use <code>state</code> to do a fast first step dichotomic search before starting to walk the inlist itself. This make this code much faster than <a class="el" href="group__Eina__Inline__List__Group.html#ga6a31dd5fecf6d60c07d07f027ee924fa" title="Inserts a new node into a sorted list.">eina_inlist_sorted_insert()</a> as it doesn't need to walk the list at all. The result is of course a sorted list with an updated state.. If <code>list</code> is <code>NULLL</code>, item is returned. On success, a new list pointer that should be used in place of the one given to this function is returned. Otherwise, the old pointer is returned.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>O(log2(n)) comparisons (calls to <code>func</code>) average/worst case performance. As said in <a class="el" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data is in the sorted list.">eina_list_search_sorted_near_list()</a>, lists do not have O(1) access time, so walking to the correct node can be costly, but this version try to minimize that by making it a O(log2(n)) for number small number. After n == 256, it start to add a linear cost again. Consider worst case to be almost O(n) pointer dereference (list walk).</dd></dl>
+<p>This function inserts item into a linked list assuming <code>state</code> matches the exact content order of the list. It uses <code>state</code> to do a fast first step dichotomic search before starting to walk the inlist itself. This makes this code much faster than <a class="el" href="group__Eina__Inline__List__Group.html#ga6a31dd5fecf6d60c07d07f027ee924fa" title="Inserts a new node into a sorted list.">eina_inlist_sorted_insert()</a> as it doesn't need to walk the list at all. The result is of course a sorted list with an updated state. If <code>list</code> is <code>NULL</code>, item is returned. On success, a new list pointer that should be used in place of the one given to this function is returned. Otherwise, the old pointer is returned.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>O(log2(n)) comparisons (calls to <code>func</code>) average/worst case performance. As said in <a class="el" href="group__Eina__List__Group.html#ga44af3419fd1f66ffefc4998e54c4ca70" title="Returns node nearest to data from the sorted list.">eina_list_search_sorted_near_list()</a>, lists do not have O(1) access time, so walking to the correct node can be costly, but this version tries to minimize that by making it a O(log2(n)) for number small number. After n == 256, it starts to add a linear cost again. Consider worst case to be almost O(n) pointer dereference (list walk). </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1277,9 +1277,9 @@ Worst case is O(n * log2(n)) comparisons (calls to func()). That means that for 
 <div class="memdoc">
 
 <p>Creates state with valid data in it. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>A valid Eina_Inlist_Sorted_State. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A valid Eina_Inlist_Sorted_State.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
-<p>See <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> for more information.</p>
+<p>See <a class="el" href="group__Eina__Inline__List__Group.html#ga81dc1fd407fb491fb69b144890414b6d" title="Inserts a new node into a sorted list.">eina_inlist_sorted_state_insert()</a> for more information. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>

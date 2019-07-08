@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Hoversel</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -100,13 +100,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="img/widget/hoversel/preview-00.png" alt="preview-00.png"/>
 </div>
  <p>A hoversel is a button that pops up a list of items (automatically choosing the direction to display) that have a label and, optionally, an icon to select from. It is a convenience widget to avoid the need to do all the piecing together yourself. It is intended for a small number of items in the hoversel menu (no more than 8), though is capable of many more.</p>
-<p>This widget inherits from the <a class="el" href="group__Elm__Button.html">Button</a> one, so that all the functions acting on it also work for hoversel objects.</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Button:</p>
+<p>This widget inherits from the Button one, so that all the functions acting on it also work for hoversel objects.</p>
+<p>This widget emits the following signals, besides the ones sent from Button:</p>
 <ul>
 <li><code>"clicked"</code> - the user clicked the hoversel button and popped up the sel</li>
 <li><code>"selected"</code> - an item in the hoversel list is selected. event_info is the selected item</li>
 <li><code>"dismissed"</code> - the hover is dismissed</li>
-<li><code>"expanded"</code> - This is called on clicking hoversel and <a class="el" href="group__Elm__Hoversel.html#ga25be61c5143b87ed83ad48cf65965021" title="This triggers the hoversel popup from code, the same as if the user had clicked the button...">elm_hoversel_hover_begin()</a>.</li>
+<li><code>"expanded"</code> - This is called on clicking hoversel and <a class="el" href="group__Elm__Hoversel.html#ga25be61c5143b87ed83ad48cf65965021">elm_hoversel_hover_begin()</a>.</li>
 <li><code>"language,changed"</code> - the program's language changed (since 1.9)</li>
 <li><code>"item,focused"</code> - When the hoversel item has received focus. (since 1.10)</li>
 <li><code>"item,unfocused"</code> - When the hoversel item has lost focus. (since 1.10)</li>
@@ -148,10 +148,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control if the hoversel should expand horizontally.  <a href="#ga1953166e4c745a82c1510b934db10152"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#ga1a9fa75867179756c26d5e65c3bacc0f">elm_hoversel_horizontal_get</a> (const Elm_Hoversel *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control if the hoversel should expand horizontally.  <a href="#ga1a9fa75867179756c26d5e65c3bacc0f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#ga93b9cdedf32728735a008efc7281588b">elm_hoversel_hover_parent_set</a> (Elm_Hoversel *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the hover parent.  <a href="#ga93b9cdedf32728735a008efc7281588b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#gac15acce374cad661d49c76a645685c15">elm_hoversel_hover_parent_get</a> (const Elm_Hoversel *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the hover parent.  <a href="#gac15acce374cad661d49c76a645685c15"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#gadc23a6d706c57743a2e792241662ffbb">elm_hoversel_hover_parent_set</a> (Elm_Hoversel *obj, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *parent)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the hover parent.  <a href="#gadc23a6d706c57743a2e792241662ffbb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#ga05e1c519f6dbf6faa6bec373aa6b3da2">elm_hoversel_hover_parent_get</a> (const Elm_Hoversel *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the hover parent.  <a href="#ga05e1c519f6dbf6faa6bec373aa6b3da2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#ga60c953ca8d1c121e8eb4975edc25e483">elm_hoversel_expanded_get</a> (const Elm_Hoversel *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the hoversel is expanded.  <a href="#ga60c953ca8d1c121e8eb4975edc25e483"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#ga2f177e2bbae3a1eef2072c7c411239f5">elm_hoversel_items_get</a> (const Elm_Hoversel *obj)</td></tr>
@@ -161,12 +161,10 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#ga8e16ff65aba4602cb93c61cfbdf67239">elm_hoversel_auto_update_get</a> (const Elm_Hoversel *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Update icon and text of hoversel same to those of selected item automatically.  <a href="#ga8e16ff65aba4602cb93c61cfbdf67239"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#ga25be61c5143b87ed83ad48cf65965021">elm_hoversel_hover_begin</a> (Elm_Hoversel *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This triggers the hoversel popup from code, the same as if the user had clicked the button.  <a href="#ga25be61c5143b87ed83ad48cf65965021"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#gaa45a57220fb8873aa584a3bf32be753b">elm_hoversel_clear</a> (Elm_Hoversel *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This will remove all the children items from the hoversel.  <a href="#gaa45a57220fb8873aa584a3bf32be753b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#ga8be3e0b5efe45ff480150e76442807a8">elm_hoversel_hover_end</a> (Elm_Hoversel *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This dismisses the hoversel popup as if the user had clicked outside the hover.  <a href="#ga8be3e0b5efe45ff480150e76442807a8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14">elm_hoversel_item_add</a> (Elm_Hoversel *obj, const char *label, const char *icon_file, Elm_Icon_Type icon_type, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14">elm_hoversel_item_add</a> (Elm_Hoversel *obj, const char *label, const char *icon_file, <a class="el" href="group__Elm__Icon.html#ga82fc56134deed3954cd03b8a1e2f843b">Elm_Icon_Type</a> icon_type, Evas_Smart_Cb func, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add an item to the hoversel button.  <a href="#gac562187f8203a09d11c438204b5d8b14"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
@@ -192,9 +190,10 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a11">hoversel_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a27">slideshow_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga8e16ff65aba4602cb93c61cfbdf67239"></a><!-- doxytag: member="elm_hoversel.eo.legacy.h::elm_hoversel_auto_update_get" ref="ga8e16ff65aba4602cb93c61cfbdf67239" args="(const Elm_Hoversel *obj)" -->
@@ -213,7 +212,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Update icon and text of hoversel same to those of selected item automatically. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -221,6 +219,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if hoversel is updated automatically or <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -250,7 +249,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Update icon and text of hoversel same to those of selected item automatically. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -258,6 +256,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -277,15 +276,16 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>This will remove all the children items from the hoversel. </p>
-<p>Warning Should *not* be called while the hoversel is active; use <a class="el" href="group__Elm__Hoversel.html#ga60c953ca8d1c121e8eb4975edc25e483">elm_hoversel_expanded_get</a> to check first.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<p>Warning Should *not* be called while the hoversel is active; use <a class="el" href="group__Elm__Hoversel.html#ga60c953ca8d1c121e8eb4975edc25e483">elm_hoversel_expanded_get</a> to check first. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a1">hoversel_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga60c953ca8d1c121e8eb4975edc25e483"></a><!-- doxytag: member="elm_hoversel.eo.legacy.h::elm_hoversel_expanded_get" ref="ga60c953ca8d1c121e8eb4975edc25e483" args="(const Elm_Hoversel *obj)" -->
@@ -304,7 +304,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Returns whether the hoversel is expanded. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -312,6 +311,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the hoversel is expanded or <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -332,7 +332,6 @@ Functions</h2></td></tr>
 
 <p>Control if the hoversel should expand horizontally. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>The initial button will display horizontally regradless of this setting.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -340,6 +339,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, the hover will expand horizontally to the right. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -370,7 +370,6 @@ Functions</h2></td></tr>
 
 <p>Control if the hoversel should expand horizontally. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>The initial button will display horizontally regradless of this setting.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -378,7 +377,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a13">hoversel_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga25be61c5143b87ed83ad48cf65965021"></a><!-- doxytag: member="elm_hoversel.eo.legacy.h::elm_hoversel_hover_begin" ref="ga25be61c5143b87ed83ad48cf65965021" args="(Elm_Hoversel *obj)" -->
@@ -395,15 +396,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
 <p>This triggers the hoversel popup from code, the same as if the user had clicked the button. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -421,24 +415,17 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
 <p>This dismisses the hoversel popup as if the user had clicked outside the hover. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
-<a class="anchor" id="gac15acce374cad661d49c76a645685c15"></a><!-- doxytag: member="elm_hoversel.eo.legacy.h::elm_hoversel_hover_parent_get" ref="gac15acce374cad661d49c76a645685c15" args="(const Elm_Hoversel *obj)" -->
+<a class="anchor" id="ga05e1c519f6dbf6faa6bec373aa6b3da2"></a><!-- doxytag: member="elm_hoversel.eo.legacy.h::elm_hoversel_hover_parent_get" ref="ga05e1c519f6dbf6faa6bec373aa6b3da2" args="(const Elm_Hoversel *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__Hoversel.html#gac15acce374cad661d49c76a645685c15">elm_hoversel_hover_parent_get</a> </td>
+          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a>* <a class="el" href="group__Elm__Hoversel.html#ga05e1c519f6dbf6faa6bec373aa6b3da2">elm_hoversel_hover_parent_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Hoversel *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -450,7 +437,6 @@ Functions</h2></td></tr>
 
 <p>Control the hover parent. </p>
 <p>Sets the hover parent object, the area that will be darkened when the hoversel is clicked. Should probably be the window that the hoversel is in.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -458,15 +444,16 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The parent to use </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga93b9cdedf32728735a008efc7281588b"></a><!-- doxytag: member="elm_hoversel.eo.legacy.h::elm_hoversel_hover_parent_set" ref="ga93b9cdedf32728735a008efc7281588b" args="(Elm_Hoversel *obj, Evas_Object *parent)" -->
+<a class="anchor" id="gadc23a6d706c57743a2e792241662ffbb"></a><!-- doxytag: member="elm_hoversel.eo.legacy.h::elm_hoversel_hover_parent_set" ref="gadc23a6d706c57743a2e792241662ffbb" args="(Elm_Hoversel *obj, Efl_Canvas_Object *parent)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Hoversel.html#ga93b9cdedf32728735a008efc7281588b">elm_hoversel_hover_parent_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Hoversel.html#gadc23a6d706c57743a2e792241662ffbb">elm_hoversel_hover_parent_set</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Hoversel *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -474,7 +461,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td>
           <td class="paramname"><em>parent</em>&#160;</td>
         </tr>
         <tr>
@@ -488,7 +475,6 @@ Functions</h2></td></tr>
 
 <p>Control the hover parent. </p>
 <p>Sets the hover parent object, the area that will be darkened when the hoversel is clicked. Should probably be the window that the hoversel is in.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -496,7 +482,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a12">hoversel_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a28">slideshow_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gac562187f8203a09d11c438204b5d8b14"></a><!-- doxytag: member="elm_hoversel.eo.legacy.h::elm_hoversel_item_add" ref="gac562187f8203a09d11c438204b5d8b14" args="(Elm_Hoversel *obj, const char *label, const char *icon_file, Elm_Icon_Type icon_type, Evas_Smart_Cb func, const void *data)" -->
@@ -504,7 +492,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14">elm_hoversel_item_add</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Hoversel.html#gac562187f8203a09d11c438204b5d8b14">elm_hoversel_item_add</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Hoversel *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -524,7 +512,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Icon_Type&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__Icon.html#ga82fc56134deed3954cd03b8a1e2f843b">Elm_Icon_Type</a>&#160;</td>
           <td class="paramname"><em>icon_type</em>, </td>
         </tr>
         <tr>
@@ -549,8 +537,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Add an item to the hoversel button. </p>
-<p>This adds an item to the hoversel to show when it is clicked. Note: if you need to use an icon from an edje file then use Elm.Hoversel_Item.icon.set right after this function, and set icon_file to <code>null</code> here.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<p>This adds an item to the hoversel to show when it is clicked. Note: if you need to use an icon from an edje file then use Elm.Hoversel.Item.icon.set right after this function, and set icon_file to <code>null</code> here.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -563,7 +550,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the added item. </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a16">hoversel_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a29">slideshow_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga2f177e2bbae3a1eef2072c7c411239f5"></a><!-- doxytag: member="elm_hoversel.eo.legacy.h::elm_hoversel_items_get" ref="ga2f177e2bbae3a1eef2072c7c411239f5" args="(const Elm_Hoversel *obj)" -->
@@ -582,14 +571,16 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the list of items within the given hoversel. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="return"><dt><b>Returns:</b></dt><dd>List of items </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="hoversel_example_01_8c-example.html#a24">hoversel_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

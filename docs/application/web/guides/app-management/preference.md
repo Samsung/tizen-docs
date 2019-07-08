@@ -42,7 +42,7 @@ To retrieve preference values:
 - To get the value of a preference with a given key, use the `getValue()` method:
 
    ```
-   var currentValue = tizen.preference.getValue('key1');   
+   var currentValue = tizen.preference.getValue('key1');
    console.log('The current value of the preference key1 is: ' + currentValue);
    ```
 

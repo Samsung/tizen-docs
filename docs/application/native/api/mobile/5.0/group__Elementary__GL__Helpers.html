@@ -120,7 +120,7 @@ Porting a native EGL+OpenGL-ES2 application to EFL</h2>
 <ul>
 <li><a class="el" href="group__Elementary__GL__Helpers.html#elm_opengl_foreword">Foreword</a> </li>
 <li><a class="el" href="group__Elementary__GL__Helpers.html#elm_opengl_why">Why all the trouble?</a> </li>
-<li><a class="el" href="group__Elementary__GL__Helpers.html#elm_opengl_evasglexample">Evas GL initialiation with GLView</a> </li>
+<li><a class="el" href="group__Elementary__GL__Helpers.html#elm_opengl_evasglexample">Evas GL initialization with GLView</a> </li>
 <li><a class="el" href="group__Elementary__GL__Helpers.html#elm_opengl_direct_rendering">Direct rendering with Evas GL</a> </li>
 <li><a class="el" href="group__Elementary__GL__Helpers.html#elm_opengl_gles1">OpenGL-ES 1.1 support in EFL</a> </li>
 <li><a class="el" href="group__Elementary__GL__Helpers.html#elm_opengl_otheregl">Other uses of EGL and their Evas GL equivalents</a></li>
@@ -137,7 +137,7 @@ Why all the trouble?</h3>
 <p>On top of this, an Evas GL surface can be stacked within a GUI layout just like any other widget, and will support transparency, direct rendering, and various other features. For these reasons, it is not possible to directly expose lower level APIs like OpenGL or EGL and interact with Evas as the same time.</p>
 <p>The following sections should provide developers guides on how to use OpenGL-ES in an EFL application.</p>
 <h3><a class="anchor" id="elm_opengl_evasglexample"></a>
-Evas GL initialiation with GLView</h3>
+Evas GL initialization with GLView</h3>
 <p>When using <a class="el" href="group__Elm__GLView.html">GLView</a>, EFL will take care of the tedious creation of all the surfaces and contexts. Also, EFL hides the underlying display system so there is no way to get a direct handle to</p>
 <p>Here is a demo using EFL with OpenGL:</p>
 <div class="fragment"><pre class="fragment"><span class="comment">// gcc `pkg-config --cflags --libs elementary` glview.c -o glview</span>
@@ -156,7 +156,7 @@ Evas GL initialiation with GLView</h3>
    <a class="code" href="group__Elementary__GL__Helpers.html#ga5d4feb845f477a9a4afb5d96850ce497" title="Convenience macro to insert at the beginning of every function calling OpenGL with GLView...">ELEMENTARY_GLVIEW_USE</a>(obj);
    <span class="keywordtype">int</span> w, h;
 
-   elm_glview_size_get(obj, &amp;w, &amp;h);
+   <a class="code" href="group__Elm__GLView.html#ga58a8ed33d880aaad30a52aad3b221d9b">elm_glview_size_get</a>(obj, &amp;w, &amp;h);
    glViewport(0, 0, w, h);
 }
 
@@ -166,30 +166,30 @@ Evas GL initialiation with GLView</h3>
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *glview;
 
    glview = <a class="code" href="group__Elm__GLView.html#ga2ab32b7aee3433992b3f0edba5909a42">elm_glview_add</a>(win);
-   <a class="code" href="group__Elm__Win.html#gacdfbf68cb25f78e2884c2886ecb829dd" title="Add subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, glview);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, glview);
    elm_glview_mode_set(glview, <a class="code" href="group__Elm__GLView.html#gga4d0a2281e13c66d7274987ef24e7abe7a00c61dd95cd14bfb20b575e85913990a">ELM_GLVIEW_ALPHA</a> | <a class="code" href="group__Elm__GLView.html#gga4d0a2281e13c66d7274987ef24e7abe7ae9ce1787f812b721ab0403ebaad3e442">ELM_GLVIEW_DEPTH</a> | <a class="code" href="group__Elm__GLView.html#gga4d0a2281e13c66d7274987ef24e7abe7aa211a5cc15ed45dd9e3fcbd82d53e9ba">ELM_GLVIEW_STENCIL</a>);
-   elm_glview_resize_policy_set(glview, <a class="code" href="group__Elm__GLView.html#gga9c04014df286723f9716e974d9bb7912a47c5f63726f7746784449b3025facf16">ELM_GLVIEW_RESIZE_POLICY_RECREATE</a>);
-   elm_glview_render_policy_set(glview, <a class="code" href="group__Elm__GLView.html#ggab0c73016c3466ad45c58814aae34ddd7a17ebe10e3b42f7668727e5ee4f9a382a">ELM_GLVIEW_RENDER_POLICY_ON_DEMAND</a>);
+   elm_glview_resize_policy_set(glview, ELM_GLVIEW_RESIZE_POLICY_RECREATE);
+   elm_glview_render_policy_set(glview, ELM_GLVIEW_RENDER_POLICY_ON_DEMAND);
    <span class="comment">//elm_glview_init_func_set(glview, _init_gl);</span>
    <span class="comment">//elm_glview_del_func_set(glview, _del_gl);</span>
-   elm_glview_render_func_set(glview, _draw_gl);
-   elm_glview_resize_func_set(glview, _resize_gl);
-   <a class="code" href="group__Evas__Object__Group__Size__Hints.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(glview, 250, 250);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(glview);
+   <a class="code" href="group__Elm__GLView.html#ga0a2bcda5d7e37ed2dbfd43da47046f05">elm_glview_render_func_set</a>(glview, _draw_gl);
+   <a class="code" href="group__Elm__GLView.html#ga4f3cc094a7f467595c6c5d4ebb8a02cd">elm_glview_resize_func_set</a>(glview, _resize_gl);
+   evas_object_size_hint_min_set(glview, 250, 250);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(glview);
 
    <span class="keywordflow">return</span> glview;
 }
 
-<a class="code" href="group__Eina__Types__Group.html#ga3db3556eec8ef18cb8ddb43816974ac8" title="Used to export functions(by changing visibility).">EAPI</a> <span class="keywordtype">int</span> elm_main(<span class="keywordtype">int</span> argc <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
-{
-   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win;
+<span class="comment">//EAPI int elm_main(int argc EINA_UNUSED, char **argv EINA_UNUSED)</span>
+<span class="comment">//{</span>
+<span class="comment">//   Evas_Object *win;</span>
 
    <span class="comment">// Set the acceleration preference to 3d</span>
    <a class="code" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set</a>(<span class="stringliteral">&quot;3d&quot;</span>);
 
    <span class="comment">// Create a window</span>
    win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;glview&quot;</span>, <span class="stringliteral">&quot;GLView&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <span class="comment">// Setup our GLView</span>
    glview_create(win);
@@ -295,7 +295,7 @@ Other uses of EGL and their Evas GL equivalents</h3>
 <tr>
 <td><code>eglReleaseTexImage</code>  </td><td>N/A  </td><td>Not available, use FBOs   </td></tr>
 <tr>
-<td><code>eglGetProcAddress</code>  </td><td><a class="el" href="group__Evas__GL.html#gac033b6a97f0f913986ef69a4ae63d8c1" title="The structure type of the Evas GL API object that contains the GL APIs to be used in Evas GL...">Evas_GL_API</a>: <a class="el" href="group__Evas__GL.html#ga5b6e0dd030469751b00ac76e5a2f9ec1" title="Returns a extension function from the Evas_GL glue layer.">evas_gl_proc_address_get</a>  </td><td>Provides extra Evas GL extensions (not EGL)   </td></tr>
+<td><code>eglGetProcAddress</code>  </td><td><a class="el" href="group__Evas__GL.html#gac033b6a97f0f913986ef69a4ae63d8c1" title="The structure type of the Evas GL API object that contains the GL APIs to be used in Evas GL...">Evas_GL_API</a>: <a class="el" href="group__Evas__GL.html#ga5b6e0dd030469751b00ac76e5a2f9ec1" title="Returns a extension function from OpenGL or the Evas_GL glue layer.">evas_gl_proc_address_get</a>  </td><td>Provides extra Evas GL extensions (not EGL)   </td></tr>
 <tr>
 <td><code>eglCreateImageKHR</code>  </td><td><a class="el" href="group__Evas__GL.html#gac033b6a97f0f913986ef69a4ae63d8c1" title="The structure type of the Evas GL API object that contains the GL APIs to be used in Evas GL...">Evas_GL_API</a>: <a class="el" href="struct__Evas__GL__API.html#evasglCreateImageForContext">evasglCreateImageForContext</a>  </td><td>Extension   </td></tr>
 <tr>
@@ -483,13 +483,13 @@ glview_create(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f
    <a class="code" href="group__Elementary__GL__Helpers.html#ga9f004b13bcd4439ec4a4b09ade91a3a9" title="Convenience macro to use the GL helpers in simple applications: use.">ELEMENTARY_GLVIEW_GLOBAL_USE</a>(glview);
 
    elm_glview_mode_set(glview, <a class="code" href="group__Elm__GLView.html#gga4d0a2281e13c66d7274987ef24e7abe7a00c61dd95cd14bfb20b575e85913990a">ELM_GLVIEW_ALPHA</a> | <a class="code" href="group__Elm__GLView.html#gga4d0a2281e13c66d7274987ef24e7abe7ae9ce1787f812b721ab0403ebaad3e442">ELM_GLVIEW_DEPTH</a> | <a class="code" href="group__Elm__GLView.html#gga4d0a2281e13c66d7274987ef24e7abe7aa211a5cc15ed45dd9e3fcbd82d53e9ba">ELM_GLVIEW_STENCIL</a>);
-   elm_glview_resize_policy_set(glview, <a class="code" href="group__Elm__GLView.html#gga9c04014df286723f9716e974d9bb7912a47c5f63726f7746784449b3025facf16">ELM_GLVIEW_RESIZE_POLICY_RECREATE</a>);
-   elm_glview_render_policy_set(glview, <a class="code" href="group__Elm__GLView.html#ggab0c73016c3466ad45c58814aae34ddd7a17ebe10e3b42f7668727e5ee4f9a382a">ELM_GLVIEW_RENDER_POLICY_ON_DEMAND</a>);
+   elm_glview_resize_policy_set(glview, ELM_GLVIEW_RESIZE_POLICY_RECREATE);
+   elm_glview_render_policy_set(glview, ELM_GLVIEW_RENDER_POLICY_ON_DEMAND);
 
    elm_glview_init_func_set(glview, _init_gl);
-   elm_glview_del_func_set(glview, _del_gl);
-   elm_glview_resize_func_set(glview, _resize_gl);
-   elm_glview_render_func_set(glview, _draw_gl);
+   <a class="code" href="group__Elm__GLView.html#gae6bc093d6804c3131df752e80aca724c">elm_glview_del_func_set</a>(glview, _del_gl);
+   <a class="code" href="group__Elm__GLView.html#ga4f3cc094a7f467595c6c5d4ebb8a02cd">elm_glview_resize_func_set</a>(glview, _resize_gl);
+   <a class="code" href="group__Elm__GLView.html#ga0a2bcda5d7e37ed2dbfd43da47046f05">elm_glview_render_func_set</a>(glview, _draw_gl);
 
    <span class="keywordflow">return</span> glview;
 }

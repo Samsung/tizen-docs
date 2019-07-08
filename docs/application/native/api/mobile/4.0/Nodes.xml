@@ -2208,6 +2208,12 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>Dlog</Name>
+            <Path>group__CAPI__SYSTEM__DLOG.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
             <Name>Feedback</Name>
             <Path>group__CAPI__SYSTEM__FEEDBACK__MODULE.html</Path>
             <Subnodes>
@@ -2319,12 +2325,6 @@
               <Subnodes>
               </Subnodes>
              </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>dlog</Name>
-            <Path>group__CAPI__SYSTEM__DLOG.html</Path>
-            <Subnodes>
             </Subnodes>
            </Node>
           </Subnodes>
@@ -3663,6 +3663,12 @@
                     <Subnodes>
                     </Subnodes>
                    </Node>
+                   <Node>
+                    <Name>Atspi Text</Name>
+                    <Path>group__Elm__Interface__Atspi__Text.html</Path>
+                    <Subnodes>
+                    </Subnodes>
+                   </Node>
                   </Subnodes>
                  </Node>
                  <Node>
@@ -3762,6 +3768,12 @@
                   </Subnodes>
                  </Node>
                  <Node>
+                  <Name>Longpress</Name>
+                  <Path>group__longpress__group.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
+                 <Node>
                   <Name>Mirroring</Name>
                   <Path>group__Elm__Mirroring.html</Path>
                   <Subnodes>
@@ -3776,6 +3788,12 @@
                  <Node>
                   <Name>Scrollhints</Name>
                   <Path>group__Elm__Scrollhints.html</Path>
+                  <Subnodes>
+                  </Subnodes>
+                 </Node>
+                 <Node>
+                  <Name>Sotfcursor</Name>
+                  <Path>group__softcursor__group.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -3966,7 +3984,7 @@
                  </Node>
                  <Node>
                   <Name>Multibuttonentry</Name>
-                  <Path>group__Multibuttonentry.html</Path>
+                  <Path>group__Elm__Multibuttonentry.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -4002,7 +4020,7 @@
                  </Node>
                  <Node>
                   <Name>Plug</Name>
-                  <Path>group__Plug.html</Path>
+                  <Path>group__Elm__Plug.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>
@@ -4032,7 +4050,7 @@
                  </Node>
                  <Node>
                   <Name>SegmentControl</Name>
-                  <Path>group__Elm__SegmentControl.html</Path>
+                  <Path>group__Elm__Segment__Control.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>

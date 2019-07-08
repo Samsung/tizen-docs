@@ -98,23 +98,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>These functions are a shortcut to make it easy to perform http requests (POST, GET, etc).</p>
 <p>Brief usage: 1. Create an Ecore_Con_Url object with ecore_con_url_new(url); 2. Register to receive the <a class="el" href="group__Ecore__Con__Events__Group.html#gadd78afe6a12c9bcb6bc57a1a96913f64">ECORE_CON_EVENT_URL_COMPLETE</a> event (and optionally the <a class="el" href="group__Ecore__Con__Events__Group.html#gae7b3a53ead72f458acc53b107ddcaeed">ECORE_CON_EVENT_URL_DATA</a> and <a class="el" href="group__Ecore__Con__Events__Group.html#ga118bdea6a989e9b5e3bd99ec5c3c4ad8">ECORE_CON_EVENT_URL_PROGRESS</a> event to receive the response, e.g. for HTTP/FTP downloads) 3. Perform the operation with ecore_con_url_get(...);</p>
 <p>Note that it is good to reuse <a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> objects wherever possible, but bear in mind that each one can only perform one operation at a time. You need to wait for the <a class="el" href="group__Ecore__Con__Events__Group.html#gadd78afe6a12c9bcb6bc57a1a96913f64">ECORE_CON_EVENT_URL_COMPLETE</a> event before re-using or destroying the object.</p>
-<p>If it's necessary to change the <a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> object url, use <a class="el" href="group__Ecore__Con__Url__Group.html#ga1145cd777f6bee750943f2b2100478d3" title="Controls the URL to send the request to.">ecore_con_url_url_set()</a>.</p>
+<p>If it's necessary to change the <a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> object url, use <a class="el" href="group__Ecore__Con__Url__Group.html#gac61c8f51d5a78d599949cf0a07b93aad" title="Change the URL assigned to this handle.">ecore_con_url_url_set()</a>.</p>
 <p>Simple Usage 1 (HTTP GET): </p>
-<div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Con__Url__Group.html#ga1145cd777f6bee750943f2b2100478d3" title="Controls the URL to send the request to.">ecore_con_url_url_set</a>(url_con, <span class="stringliteral">&quot;http://www.google.com&quot;</span>);
+<div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Con__Url__Group.html#gac61c8f51d5a78d599949cf0a07b93aad" title="Change the URL assigned to this handle.">ecore_con_url_url_set</a>(url_con, <span class="stringliteral">&quot;http://www.google.com&quot;</span>);
    <a class="code" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get</a>(url_con);
 </pre></div><p>Simple usage 2 (HTTP POST): </p>
-<div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Con__Url__Group.html#ga1145cd777f6bee750943f2b2100478d3" title="Controls the URL to send the request to.">ecore_con_url_url_set</a>(url_con, <span class="stringliteral">&quot;http://www.example.com/post_handler.cgi&quot;</span>);
+<div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Con__Url__Group.html#gac61c8f51d5a78d599949cf0a07b93aad" title="Change the URL assigned to this handle.">ecore_con_url_url_set</a>(url_con, <span class="stringliteral">&quot;http://www.example.com/post_handler.cgi&quot;</span>);
    <a class="code" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post</a>(url_con, data, data_length, <span class="stringliteral">&quot;multipart/form-data&quot;</span>);
 </pre></div><p>Simple Usage 3 (FTP download): </p>
 <div class="fragment"><pre class="fragment">   fd = creat(filename, 0644)
-   <a class="code" href="group__Ecore__Con__Url__Group.html#ga1145cd777f6bee750943f2b2100478d3" title="Controls the URL to send the request to.">ecore_con_url_url_set</a>(url_con, &quot;ftp:<span class="comment">//ftp.example.com/pub/myfile&quot;);</span>
+   <a class="code" href="group__Ecore__Con__Url__Group.html#gac61c8f51d5a78d599949cf0a07b93aad" title="Change the URL assigned to this handle.">ecore_con_url_url_set</a>(url_con, &quot;ftp:<span class="comment">//ftp.example.com/pub/myfile&quot;);</span>
    <a class="code" href="group__Ecore__Con__Url__Group.html#ga2a90cd0cfbc4d94aa5f4d2ec853b9e06" title="Sets up a file for receiving response data.">ecore_con_url_fd_set</a>(url_con, fd);
    <a class="code" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get</a>(url_con);
 </pre></div><p>Simple Usage 4 (FTP upload as <a href="ftp://ftp.example.com/file">ftp://ftp.example.com/file</a>): </p>
-<div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Con__Url__Group.html#ga1145cd777f6bee750943f2b2100478d3" title="Controls the URL to send the request to.">ecore_con_url_url_set</a>(url_con, <span class="stringliteral">&quot;ftp://ftp.example.com&quot;</span>);
+<div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Con__Url__Group.html#gac61c8f51d5a78d599949cf0a07b93aad" title="Change the URL assigned to this handle.">ecore_con_url_url_set</a>(url_con, <span class="stringliteral">&quot;ftp://ftp.example.com&quot;</span>);
    <a class="code" href="group__Ecore__Con__Url__Group.html#gac24d2bdcdcf73dcfb576bd3e34957d87" title="Uploads a file to an ftp site.">ecore_con_url_ftp_upload</a>(url_con, <span class="stringliteral">&quot;/tmp/file&quot;</span>, <span class="stringliteral">&quot;user&quot;</span>, <span class="stringliteral">&quot;pass&quot;</span>, NULL);
 </pre></div><p>Simple Usage 5 (FTP upload as <a href="ftp://ftp.example.com/dir/file">ftp://ftp.example.com/dir/file</a>): </p>
-<div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Con__Url__Group.html#ga1145cd777f6bee750943f2b2100478d3" title="Controls the URL to send the request to.">ecore_con_url_url_set</a>(url_con, <span class="stringliteral">&quot;ftp://ftp.example.com&quot;</span>);
+<div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Con__Url__Group.html#gac61c8f51d5a78d599949cf0a07b93aad" title="Change the URL assigned to this handle.">ecore_con_url_url_set</a>(url_con, <span class="stringliteral">&quot;ftp://ftp.example.com&quot;</span>);
    <a class="code" href="group__Ecore__Con__Url__Group.html#gac24d2bdcdcf73dcfb576bd3e34957d87" title="Uploads a file to an ftp site.">ecore_con_url_ftp_upload</a>(url_con, <span class="stringliteral">&quot;/tmp/file&quot;</span>, <span class="stringliteral">&quot;user&quot;</span>, <span class="stringliteral">&quot;pass&quot;</span>,<span class="stringliteral">&quot;dir&quot;</span>);
 </pre></div><p>These are complete examples for the API: </p>
 <ul>
@@ -136,6 +136,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Is HTTP 1.1 pipelining enable ?  <a href="#ga6eb93b3af907011d216a9b9e78d43f8d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033">ecore_con_url_new</a> (const char *url)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and initializes a new Ecore_Con_Url connection object.  <a href="#ga33fda26e303bc0eacc3823b908221033"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gac61c8f51d5a78d599949cf0a07b93aad">ecore_con_url_url_set</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con, const char *url)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the URL assigned to this handle.  <a href="#gac61c8f51d5a78d599949cf0a07b93aad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gac4fb7cc5fd30a629c1b8d68fe1c9cf08">ecore_con_url_url_get</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieve the URL assigned to this handle.  <a href="#gac4fb7cc5fd30a629c1b8d68fe1c9cf08"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gac64aa0a045c1f0eb46c7489ec2456d09">ecore_con_url_custom_new</a> (const char *url, const char *custom_request)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a custom connection object.  <a href="#gac64aa0a045c1f0eb46c7489ec2456d09"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga276545b915a8adf226e9407165e09173">ecore_con_url_free</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con)</td></tr>
@@ -184,6 +188,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the name of the file to which all current cookies will be written when either cookies are flushed or Ecore_Con is shut down.  <a href="#ga5be3eadea97987953bc8cd3038dfd8d8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga5776168771246f117c38bb2f1bc2fff4">ecore_con_url_cookies_jar_write</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes all current cookies to the cookie jar immediately.  <a href="#ga5776168771246f117c38bb2f1bc2fff4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga6f90e0fe01a0bef115c78a2663c1e36a">ecore_con_url_ssl_verify_peer_set</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> verify)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gae7f6a971171dd1480f496ac214b4465a">ecore_con_url_ssl_ca_set</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con, const char *ca_path)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga3b86e2c66147baabe3b3c4144973de78">ecore_con_url_proxy_set</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con, const char *proxy)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets HTTP proxy to use.  <a href="#ga3b86e2c66147baabe3b3c4144973de78"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga8beee51138dce0e1abe3d243640a80b4">ecore_con_url_proxy_username_set</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con, const char *username)</td></tr>
@@ -194,19 +200,19 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets timeout in seconds.  <a href="#ga80baddbe3508b0693c188fec4a541875"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gaf795bbaa387627621635bf74fdeb4192">ecore_con_url_status_code_get</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the returned HTTP STATUS code.  <a href="#gaf795bbaa387627621635bf74fdeb4192"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga1145cd777f6bee750943f2b2100478d3">ecore_con_url_url_set</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *obj, const char *url)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls the URL to send the request to.  <a href="#ga1145cd777f6bee750943f2b2100478d3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga5a8c04643aa2001ab2ae0c40f8c57289">ecore_con_url_url_get</a> (const <a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Controls the URL to send the request to.  <a href="#ga5a8c04643aa2001ab2ae0c40f8c57289"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga4a5e937a832ade749ee3400cdd1c10e1">ecore_con_url_limit_upload_speed</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_obj, off_t max_speed)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a maximum upload speed.  <a href="#ga4a5e937a832ade749ee3400cdd1c10e1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gaaa0d0829d5a57adeb81e6b18bfa29402">ecore_con_url_limit_download_speed</a> (<a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_obj, off_t max_speed)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a maximum download speed.  <a href="#gaaa0d0829d5a57adeb81e6b18bfa29402"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Ecore__Con__Url.html">_Ecore_Con_Url</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
 <a class="el" href="struct__Ecore__Con__Event__Url__Data.html">_Ecore_Con_Event_Url_Data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga4a852b5c3b987f7121335a65edb57e30">Ecore_Con_Event_Url_Data</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
 <a class="el" href="struct__Ecore__Con__Event__Url__Complete.html">_Ecore_Con_Event_Url_Complete</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gab9574a94d94e0666014017da95859101">Ecore_Con_Event_Url_Complete</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
 <a class="el" href="struct__Ecore__Con__Event__Url__Progress.html">_Ecore_Con_Event_Url_Progress</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#ga747059128eafe43198aca46022d24d07">Ecore_Con_Event_Url_Progress</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef Eo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="gab9574a94d94e0666014017da95859101"></a><!-- doxytag: member="Ecore_Con.h::Ecore_Con_Event_Url_Complete" ref="gab9574a94d94e0666014017da95859101" args="" -->
@@ -251,7 +257,7 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gad928193ae403bd05c1ce5ba48a1d52ea"></a><!-- doxytag: member="Ecore_Con_Legacy.h::Ecore_Con_Url" ref="gad928193ae403bd05c1ce5ba48a1d52ea" args="" -->
+<a class="anchor" id="gad928193ae403bd05c1ce5ba48a1d52ea"></a><!-- doxytag: member="Ecore_Con.h::Ecore_Con_Url" ref="gad928193ae403bd05c1ce5ba48a1d52ea" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -261,9 +267,7 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Used to provide legacy API/ABI compatibility with non-Eo applications.</p>
-<p>WEARABLE </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>Used to provide legacy API/ABI compatibility with non-Eo applications. </p>
 
 </div>
 </div>
@@ -369,9 +373,9 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga08093990f8f829fac78673c53e8ee1ae" title="Cleans additional headers.">ecore_con_url_additional_headers_clear()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a20">ecore_con_url_cookies_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a21">ecore_con_url_headers_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Url__Group.html#ga08093990f8f829fac78673c53e8ee1ae" title="Cleans additional headers.">ecore_con_url_additional_headers_clear()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a21">ecore_con_url_cookies_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a22">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -402,8 +406,8 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<a class="el" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -435,9 +439,9 @@ Typedefs</h2></td></tr>
 The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#ga0e45149c704e5303b1aecb29066c1454" title="Adds a file to the list of files from which to load cookies.">ecore_con_url_cookies_file_add()</a> aren't loaded immediately, just when the request is started. Thus, if you ask to clear the cookies, but has a file already set by that function, the cookies will then be loaded and you will have old cookies set. In order to don't have any old cookie set, you need to don't call <a class="el" href="group__Ecore__Con__Url__Group.html#ga0e45149c704e5303b1aecb29066c1454" title="Adds a file to the list of files from which to load cookies.">ecore_con_url_cookies_file_add()</a> ever on the <code>url_con</code> handler, and call this function to clear any cookie set by a previous request on this handler.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga1313aef4b39ef417e648c25e099d705c" title="Clears currently loaded session cookies.">ecore_con_url_cookies_session_clear()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga2849116f723e3a9469d1f8756d1f2cca" title="Controls whether session cookies from previous sessions shall be loaded.">ecore_con_url_cookies_ignore_old_session_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a24">ecore_con_url_cookies_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Url__Group.html#ga2849116f723e3a9469d1f8756d1f2cca" title="Controls whether session cookies from previous sessions shall be loaded.">ecore_con_url_cookies_ignore_old_session_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a25">ecore_con_url_cookies_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -484,9 +488,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <dl class="note"><dt><b>Note:</b></dt><dd>This function will initialize the cookie engine if it has not been initialized yet.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga2849116f723e3a9469d1f8756d1f2cca" title="Controls whether session cookies from previous sessions shall be loaded.">ecore_con_url_cookies_ignore_old_session_set()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga5be3eadea97987953bc8cd3038dfd8d8" title="Sets the name of the file to which all current cookies will be written when either cookies are flushe...">ecore_con_url_cookies_jar_file_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a22">ecore_con_url_cookies_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Url__Group.html#ga5be3eadea97987953bc8cd3038dfd8d8" title="Sets the name of the file to which all current cookies will be written when either cookies are flushe...">ecore_con_url_cookies_jar_file_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a23">ecore_con_url_cookies_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -526,9 +530,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <p>Session cookies are cookies with no expire date set, which usually means they are removed after the current session is closed.</p>
 <p>By default, when Ecore_Con_Url loads cookies from a file, all cookies are loaded, including session cookies, which, most of the time, were supposed to be loaded and valid only for that session.</p>
 <p>If <code>ignore</code> is set to <code>EINA_TRUE</code>, when Ecore_Con_Url loads cookies from the files passed to <code><a class="el" href="group__Ecore__Con__Url__Group.html#ga0e45149c704e5303b1aecb29066c1454" title="Adds a file to the list of files from which to load cookies.">ecore_con_url_cookies_file_add()</a></code>, session cookies will not be loaded.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga0e45149c704e5303b1aecb29066c1454" title="Adds a file to the list of files from which to load cookies.">ecore_con_url_cookies_file_add()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a26">ecore_con_url_cookies_example.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga0e45149c704e5303b1aecb29066c1454" title="Adds a file to the list of files from which to load cookies.">ecore_con_url_cookies_file_add()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a27">ecore_con_url_cookies_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -555,9 +559,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
   </dd>
 </dl>
 <p>After this function is called, cookies set by the server in HTTP responses will be parsed and stored, as well as sent back to the server in new HTTP requests.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Even though this function is called <code><a class="el" href="group__Ecore__Con__Url__Group.html#ga75188398a164ec1ee57c2bf9195d6a8b" title="Enables the cookie engine for subsequent HTTP requests.">ecore_con_url_cookies_init()</a></code>, there is no symmetrical shutdown operation.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a21">ecore_con_url_cookies_example.c</a>.</dd>
+<dl class="note"><dt><b>Note:</b></dt><dd>Even though this function is called <code><a class="el" href="group__Ecore__Con__Url__Group.html#ga75188398a164ec1ee57c2bf9195d6a8b" title="Enables the cookie engine for subsequent HTTP requests.">ecore_con_url_cookies_init()</a></code>, there is no symmetrical shutdown operation. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a22">ecore_con_url_cookies_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -598,9 +602,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <p>Cookies are written following Netscape/Mozilla's data format, also known as cookie-jar.</p>
 <p>Cookies will only be <b>saved</b> to this file. If you need to read cookies from a file, use <a class="el" href="group__Ecore__Con__Url__Group.html#ga0e45149c704e5303b1aecb29066c1454" title="Adds a file to the list of files from which to load cookies.">ecore_con_url_cookies_file_add()</a> instead.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function will initialize the cookie engine if it has not been initialized yet.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga5776168771246f117c38bb2f1bc2fff4" title="Writes all current cookies to the cookie jar immediately.">ecore_con_url_cookies_jar_write()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a23">ecore_con_url_cookies_example.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga5776168771246f117c38bb2f1bc2fff4" title="Writes all current cookies to the cookie jar immediately.">ecore_con_url_cookies_jar_write()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a24">ecore_con_url_cookies_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -628,8 +632,8 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 </dl>
 <p>A cookie-jar file must have been previously set by <code>ecore_con_url_jar_file_set</code>, otherwise nothing will be done.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function will initialize the cookie engine if it has not been initialized yet.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga5be3eadea97987953bc8cd3038dfd8d8" title="Sets the name of the file to which all current cookies will be written when either cookies are flushe...">ecore_con_url_cookies_jar_file_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga5be3eadea97987953bc8cd3038dfd8d8" title="Sets the name of the file to which all current cookies will be written when either cookies are flushe...">ecore_con_url_cookies_jar_file_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a11">ecore_con_url_cookies_example.c</a>.</dd>
 </dl>
 </div>
@@ -663,9 +667,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#ga0e45149c704e5303b1aecb29066c1454" title="Adds a file to the list of files from which to load cookies.">ecore_con_url_cookies_file_add()</a> aren't loaded immediately, just when the request is started. Thus, if you ask to clear the session cookies, but has a file already set by that function, the session cookies will then be loaded and you will have old cookies set. In order to don't have any old session cookie set, you need to don't call <a class="el" href="group__Ecore__Con__Url__Group.html#ga0e45149c704e5303b1aecb29066c1454" title="Adds a file to the list of files from which to load cookies.">ecore_con_url_cookies_file_add()</a> ever on the <code>url_con</code> handler, and call this function to clear any session cookie set by a previous request on this handler. An easier way to don't use old session cookies is by using the function <a class="el" href="group__Ecore__Con__Url__Group.html#ga2849116f723e3a9469d1f8756d1f2cca" title="Controls whether session cookies from previous sessions shall be loaded.">ecore_con_url_cookies_ignore_old_session_set()</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga4afcd3abe8e99acb3d0c2745c6953aac" title="Clears currently loaded cookies.">ecore_con_url_cookies_clear()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga2849116f723e3a9469d1f8756d1f2cca" title="Controls whether session cookies from previous sessions shall be loaded.">ecore_con_url_cookies_ignore_old_session_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a25">ecore_con_url_cookies_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Url__Group.html#ga2849116f723e3a9469d1f8756d1f2cca" title="Controls whether session cookies from previous sessions shall be loaded.">ecore_con_url_cookies_ignore_old_session_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a26">ecore_con_url_cookies_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -706,9 +710,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <p>Create and initialize a new Ecore_Con_Url for a custom request (e.g. HEAD, SUBSCRIBE and other obscure HTTP requests). This object should be used like one created with <a class="el" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033" title="Creates and initializes a new Ecore_Con_Url connection object.">ecore_con_url_new()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033" title="Creates and initializes a new Ecore_Con_Url connection object.">ecore_con_url_new()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga1145cd777f6bee750943f2b2100478d3" title="Controls the URL to send the request to.">ecore_con_url_url_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a17">ecore_con_url_headers_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Url__Group.html#gac61c8f51d5a78d599949cf0a07b93aad" title="Change the URL assigned to this handle.">ecore_con_url_url_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a18">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -736,8 +740,8 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Data associated with the given object.</dd></dl>
 <p>Retrieve data associated with a Ecore_Con_Url connection object (previously set with <a class="el" href="group__Ecore__Con__Url__Group.html#ga2c4dbab13700f3ba590abb7cf7e6a73b" title="Associates data with a connection object.">ecore_con_url_data_set()</a>).</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga2c4dbab13700f3ba590abb7cf7e6a73b" title="Associates data with a connection object.">ecore_con_url_data_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga2c4dbab13700f3ba590abb7cf7e6a73b" title="Associates data with a connection object.">ecore_con_url_data_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_download_example_8c-example.html#a4">ecore_con_url_download_example.c</a>.</dd>
 </dl>
 </div>
@@ -776,9 +780,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
   </dd>
 </dl>
 <p>Associate data with a connection object, which can be retrieved later with <a class="el" href="group__Ecore__Con__Url__Group.html#ga03b59201f1ab1c828bc1b4edd7bcedb8" title="Retrieves data associated with a Ecore_Con_Url connection object.">ecore_con_url_data_get()</a>).</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga03b59201f1ab1c828bc1b4edd7bcedb8" title="Retrieves data associated with a Ecore_Con_Url connection object.">ecore_con_url_data_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_download_example_8c-example.html#a17">ecore_con_url_download_example.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga03b59201f1ab1c828bc1b4edd7bcedb8" title="Retrieves data associated with a Ecore_Con_Url connection object.">ecore_con_url_data_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_download_example_8c-example.html#a19">ecore_con_url_download_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -816,9 +820,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
   </dd>
 </dl>
 <p>Set up a file to have response data written into. Note that ECORE_CON_EVENT_URL_DATA events will not be emitted if a file has been set to receive the response data.</p>
-<p>This call can be used to easily setup a file where the downloaded data will be saved.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_download_example_8c-example.html#a18">ecore_con_url_download_example.c</a>.</dd>
+<p>This call can be used to easily setup a file where the downloaded data will be saved. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_download_example_8c-example.html#a20">ecore_con_url_download_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -844,9 +848,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033" title="Creates and initializes a new Ecore_Con_Url connection object.">ecore_con_url_new()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a29">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_download_example_8c-example.html#a24">ecore_con_url_download_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a30">ecore_con_url_headers_example.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033" title="Creates and initializes a new Ecore_Con_Url connection object.">ecore_con_url_new()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a30">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_download_example_8c-example.html#a26">ecore_con_url_download_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a31">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -906,7 +910,7 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <p>Upload <code>filename</code> to an ftp server set in <code>url_con</code> using <code>user</code> and <code>pass</code> to directory <code>upload_dir</code> </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -939,11 +943,11 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">url_con</td><td>The Ecore_Con_Url instance which will be acted upon. </td></tr>
-    <tr><td class="paramname">use_epsv</td><td>Boolean to enable/disable the EPSV extension.</td></tr>
+    <tr><td class="paramname">use_epsv</td><td>Boolean to enable/disable the EPSV extension. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -985,9 +989,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <dd>
 <a class="el" href="group__Ecore__Con__Url__Group.html#ga3196f2a5ccc1fe4889cca5419b2d664c" title="Sets whether HTTP requests should be conditional, dependent on modification time.">ecore_con_url_time()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a27">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_download_example_8c-example.html#a22">ecore_con_url_download_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a27">ecore_con_url_headers_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a28">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_download_example_8c-example.html#a24">ecore_con_url_download_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a28">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1026,8 +1030,8 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <a class="el" href="group__Ecore__Con__Url__Group.html#ga3196f2a5ccc1fe4889cca5419b2d664c" title="Sets whether HTTP requests should be conditional, dependent on modification time.">ecore_con_url_time()</a> </dd>
 <dd>
 <a class="el" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1066,8 +1070,8 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on failure to change version. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga6eb93b3af907011d216a9b9e78d43f8d" title="Is HTTP 1.1 pipelining enable ?">ecore_con_url_pipeline_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga6eb93b3af907011d216a9b9e78d43f8d" title="Is HTTP 1.1 pipelining enable ?">ecore_con_url_pipeline_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1119,9 +1123,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on error.</dd></dl>
-<dl class="attention"><dt><b>Attention:</b></dt><dd>Require libcurl &gt;= 7.19.1 to work, otherwise will always return <code>0</code>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a23">ecore_con_url_headers_example.c</a>.</dd>
+<dl class="attention"><dt><b>Attention:</b></dt><dd>Require libcurl &gt;= 7.19.1 to work, otherwise will always return <code>0</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a24">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1142,10 +1146,82 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 
 <p>Initializes the Ecore_Con_Url library. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of times the library has been initialised without being shut down.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>This function doesn't call <a class="el" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init()</a>. You still need to call it explicitly before calling this one.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a15">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_download_example_8c-example.html#a15">ecore_con_url_download_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a14">ecore_con_url_headers_example.c</a>.</dd>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function doesn't call <a class="el" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init()</a>. You still need to call it explicitly before calling this one. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a16">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_download_example_8c-example.html#a17">ecore_con_url_download_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a15">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="gaaa0d0829d5a57adeb81e6b18bfa29402"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_limit_download_speed" ref="gaaa0d0829d5a57adeb81e6b18bfa29402" args="(Ecore_Con_Url *url_obj, off_t max_speed)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Con__Url__Group.html#gaaa0d0829d5a57adeb81e6b18bfa29402">ecore_con_url_limit_download_speed</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
+          <td class="paramname"><em>url_obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">off_t&#160;</td>
+          <td class="paramname"><em>max_speed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a maximum download speed. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url_con</td><td>Connection object </td></tr>
+    <tr><td class="paramname">max_speed</td><td>Maximum download speed, in bytes per second </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4a5e937a832ade749ee3400cdd1c10e1"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_limit_upload_speed" ref="ga4a5e937a832ade749ee3400cdd1c10e1" args="(Ecore_Con_Url *url_obj, off_t max_speed)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Con__Url__Group.html#ga4a5e937a832ade749ee3400cdd1c10e1">ecore_con_url_limit_upload_speed</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
+          <td class="paramname"><em>url_obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">off_t&#160;</td>
+          <td class="paramname"><em>max_speed</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets a maximum upload speed. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url_con</td><td>Connection object </td></tr>
+    <tr><td class="paramname">max_speed</td><td>Maximum upload speed, in bytes per second </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ga33fda26e303bc0eacc3823b908221033"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_new" ref="ga33fda26e303bc0eacc3823b908221033" args="(const char *url)" -->
@@ -1174,9 +1250,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <p>Create and initialize a new Ecore_Con_Url connection object that can be used for sending requests.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#gac64aa0a045c1f0eb46c7489ec2456d09" title="Creates a custom connection object.">ecore_con_url_custom_new()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga1145cd777f6bee750943f2b2100478d3" title="Controls the URL to send the request to.">ecore_con_url_url_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a16">ecore_con_url_cookies_example.c</a>, and <a class="el" href="ecore_con_url_download_example_8c-example.html#a16">ecore_con_url_download_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Url__Group.html#gac61c8f51d5a78d599949cf0a07b93aad" title="Change the URL assigned to this handle.">ecore_con_url_url_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a17">ecore_con_url_cookies_example.c</a>, and <a class="el" href="ecore_con_url_download_example_8c-example.html#a18">ecore_con_url_download_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1197,9 +1273,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 
 <p>Is HTTP 1.1 pipelining enable ? </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it is enable.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga97c9bfa9ffefccc7ed0016202aeefd75" title="Enables or disable HTTP 1.1 pipelining.">ecore_con_url_pipeline_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a15">ecore_con_url_headers_example.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga97c9bfa9ffefccc7ed0016202aeefd75" title="Enables or disable HTTP 1.1 pipelining.">ecore_con_url_pipeline_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a16">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1228,9 +1304,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <p>Pipelining allows to send one request after another one, without having to wait for the reply of the first request. The respective replies are received in the order that the requests were sent.</p>
 <p>Enabling this feature will be valid for all requests done using <code>ecore_con_url</code>.</p>
 <p>See <a href="http://en.wikipedia.org/wiki/HTTP_pipelining">http://en.wikipedia.org/wiki/HTTP_pipelining</a> for more info.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga6eb93b3af907011d216a9b9e78d43f8d" title="Is HTTP 1.1 pipelining enable ?">ecore_con_url_pipeline_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a16">ecore_con_url_headers_example.c</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga6eb93b3af907011d216a9b9e78d43f8d" title="Is HTTP 1.1 pipelining enable ?">ecore_con_url_pipeline_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a17">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1298,9 +1374,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <dd>
 <a class="el" href="group__Ecore__Con__Url__Group.html#ga3196f2a5ccc1fe4889cca5419b2d664c" title="Sets whether HTTP requests should be conditional, dependent on modification time.">ecore_con_url_time()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a28">ecore_con_url_headers_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a29">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1340,8 +1416,8 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on error.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga3b86e2c66147baabe3b3c4144973de78" title="Sets HTTP proxy to use.">ecore_con_url_proxy_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1375,13 +1451,13 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">url_con</td><td>Connection object that will use the proxy. </td></tr>
-    <tr><td class="paramname">proxy</td><td>Porxy string or <code>NULL</code> to disable</td></tr>
+    <tr><td class="paramname">proxy</td><td>Proxy string or <code>NULL</code> to disable</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on error. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1421,8 +1497,8 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on error.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga3b86e2c66147baabe3b3c4144973de78" title="Sets HTTP proxy to use.">ecore_con_url_proxy_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1452,9 +1528,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of bytes received on request.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_download_example_8c-example.html#a10">ecore_con_url_download_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_download_example_8c-example.html#a11">ecore_con_url_download_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1481,8 +1557,8 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
   </dd>
 </dl>
 <p>Retrieve a list containing the response headers. This function should be used after an ECORE_CON_EVENT_URL_COMPLETE event (headers should normally be ready at that time).</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>List of response headers. This list must not be modified by the user.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>List of response headers. This list must not be modified by the user. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a8">ecore_con_url_cookies_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a8">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
@@ -1504,10 +1580,87 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 
 <p>Shuts down the Ecore_Con_Url library. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of calls that still uses Ecore_Con_Url</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>This function doesn't call <a class="el" href="group__Ecore__Con__Lib__Group.html#ga8187590df065383594b3e7f67abbc512" title="Shuts down the Ecore_Con library.">ecore_con_shutdown()</a>. You still need to call it explicitly after calling this one.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a30">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_download_example_8c-example.html#a25">ecore_con_url_download_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a31">ecore_con_url_headers_example.c</a>.</dd>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function doesn't call <a class="el" href="group__Ecore__Con__Lib__Group.html#ga8187590df065383594b3e7f67abbc512" title="Shuts down the Ecore_Con library.">ecore_con_shutdown()</a>. You still need to call it explicitly after calling this one. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_cookies_example_8c-example.html#a31">ecore_con_url_cookies_example.c</a>, <a class="el" href="ecore_con_url_download_example_8c-example.html#a27">ecore_con_url_download_example.c</a>, and <a class="el" href="ecore_con_url_headers_example_8c-example.html#a32">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="gae7f6a971171dd1480f496ac214b4465a"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_ssl_ca_set" ref="gae7f6a971171dd1480f496ac214b4465a" args="(Ecore_Con_Url *url_con, const char *ca_path)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Ecore__Con__Url__Group.html#gae7f6a971171dd1480f496ac214b4465a">ecore_con_url_ssl_ca_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
+          <td class="paramname"><em>url_con</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ca_path</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set a custom CA to trust for SSL/TLS connections.</p>
+<p>Specify the path of a file (in PEM format) containing one or more CA certificate(s) to use for the validation of the server certificate.</p>
+<p>This function can also disable CA validation if <code>ca_path</code> is <code>NULL</code>. However, the server certificate still needs to be valid for the connection to succeed (i.e., the certificate must concern the server the connection is made to).</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url_con</td><td>Connection object that will use the custom CA. </td></tr>
+    <tr><td class="paramname">ca_path</td><td>Path to a CA certificate(s) file or <code>NULL</code> to disable CA validation.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success. When cURL is used, non-zero return values are equal to cURL error codes. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6f90e0fe01a0bef115c78a2663c1e36a"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_ssl_verify_peer_set" ref="ga6f90e0fe01a0bef115c78a2663c1e36a" args="(Ecore_Con_Url *url_con, Eina_Bool verify)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Con__Url__Group.html#ga6f90e0fe01a0bef115c78a2663c1e36a">ecore_con_url_ssl_verify_peer_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
+          <td class="paramname"><em>url_con</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>verify</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Toggle libcurl's verify peer's certificate option.</p>
+<p>If <code>verify</code> is <code>EINA_TRUE</code>, libcurl will verify the authenticity of the peer's certificate, otherwise it will not. Default behavior of libcurl is to check peer's certificate.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">url_con</td><td>Ecore_Con_Url instance which will be acted upon. </td></tr>
+    <tr><td class="paramname">verify</td><td>Whether or not libcurl will check peer's certificate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="gaf795bbaa387627621635bf74fdeb4192"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_status_code_get" ref="gaf795bbaa387627621635bf74fdeb4192" args="(Ecore_Con_Url *url_con)" -->
@@ -1534,9 +1687,10 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A valid HTTP STATUS code, or 0 on failure</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_download_example_8c-example.html#a7">ecore_con_url_download_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga3196f2a5ccc1fe4889cca5419b2d664c"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_time" ref="ga3196f2a5ccc1fe4889cca5419b2d664c" args="(Ecore_Con_Url *url_con, Ecore_Con_Url_Time time_condition, double timestamp)" -->
@@ -1582,9 +1736,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 <p>This function may set the header "If-Modified-Since" or "If-Unmodified-Since", depending on the value of <code>time_condition</code>, with the value <code>timestamp</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a25">ecore_con_url_headers_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a26">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1623,47 +1777,47 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Url__Group.html#ga5be3eadea97987953bc8cd3038dfd8d8" title="Sets the name of the file to which all current cookies will be written when either cookies are flushe...">ecore_con_url_cookies_jar_file_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga5a8c04643aa2001ab2ae0c40f8c57289"></a><!-- doxytag: member="Ecore_Con_Legacy.h::ecore_con_url_url_get" ref="ga5a8c04643aa2001ab2ae0c40f8c57289" args="(const Ecore_Con_Url *obj)" -->
+<a class="anchor" id="gac4fb7cc5fd30a629c1b8d68fe1c9cf08"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_url_get" ref="gac4fb7cc5fd30a629c1b8d68fe1c9cf08" args="(Ecore_Con_Url *url_con)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* <a class="el" href="group__Ecore__Con__Url__Group.html#ga5a8c04643aa2001ab2ae0c40f8c57289">ecore_con_url_url_get</a> </td>
+          <td class="memname">const char* <a class="el" href="group__Ecore__Con__Url__Group.html#gac4fb7cc5fd30a629c1b8d68fe1c9cf08">ecore_con_url_url_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
+          <td class="paramname"><em>url_con</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
-<p>Controls the URL to send the request to. </p>
+<p>Retrieve the URL assigned to this handle. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The given object </td></tr>
+    <tr><td class="paramname">url_con</td><td>the Connection object to retrieve URL. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> on error, read-only URL string on success.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> on error, read-only URL string on success. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga1145cd777f6bee750943f2b2100478d3"></a><!-- doxytag: member="Ecore_Con_Legacy.h::ecore_con_url_url_set" ref="ga1145cd777f6bee750943f2b2100478d3" args="(Ecore_Con_Url *obj, const char *url)" -->
+<a class="anchor" id="gac61c8f51d5a78d599949cf0a07b93aad"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_url_url_set" ref="gac61c8f51d5a78d599949cf0a07b93aad" args="(Ecore_Con_Url *url_con, const char *url)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Con__Url__Group.html#ga1145cd777f6bee750943f2b2100478d3">ecore_con_url_url_set</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Con__Url__Group.html#gac61c8f51d5a78d599949cf0a07b93aad">ecore_con_url_url_set</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
+          <td class="paramname"><em>url_con</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1680,16 +1834,16 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
 </div>
 <div class="memdoc">
 
-<p>Controls the URL to send the request to. </p>
+<p>Change the URL assigned to this handle. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The Given object </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">url</td><td>the new URL </td></tr>
+    <tr><td class="paramname">url_con</td><td>Connection object to change URL. </td></tr>
+    <tr><td class="paramname">url</td><td>the new URL. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1726,9 +1880,9 @@ The cookie files set by <a class="el" href="group__Ecore__Con__Url__Group.html#g
   </table>
   </dd>
 </dl>
-<p>If <code>verbose</code> is <code>EINA_TRUE</code>, libcurl will output a lot of verbose information about its operations, which is useful for debugging. The verbose information will be sent to stderr.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a22">ecore_con_url_headers_example.c</a>.</dd>
+<p>If <code>verbose</code> is <code>EINA_TRUE</code>, libcurl will output a lot of verbose information about its operations, which is useful for debugging. The verbose information will be sent to stderr. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_url_headers_example_8c-example.html#a23">ecore_con_url_headers_example.c</a>.</dd>
 </dl>
 </div>
 </div>

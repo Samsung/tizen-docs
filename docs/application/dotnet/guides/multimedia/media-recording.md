@@ -39,7 +39,7 @@ To enable your application to use the media recording functionality:
     </privileges>
     ```
 
-2.  To use the methods and properties of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) and [Tizen.Multimedia.Recorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Recorder.html) classes, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) namespace in your application:
+2.  To use the methods and properties of the [Tizen.Multimedia.Camera](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Camera.html) and [Tizen.Multimedia.Recorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) classes, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
 
     ```
     using Tizen.Multimedia;
@@ -48,9 +48,9 @@ To enable your application to use the media recording functionality:
 <a name="prepare_audio"></a>
 ## Preparing the Audio Recorder
 
-1.  Create an instance of the [Tizen.Multimedia.AudioRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioRecorder.html) class, and pass the audio codec and file format of the recording as parameters.
+1.  Create an instance of the [Tizen.Multimedia.AudioRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioRecorder.html) class, and pass the audio codec and file format of the recording as parameters.
 
-    The possible audio codec values are defined in the [Tizen.Multimedia.RecorderAudioCodec](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderAudioCodec.html) enumeration, and the possible file format values in the [Tizen.Multimedia.RecorderFileFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
+    The possible audio codec values are defined in the [Tizen.Multimedia.RecorderAudioCodec](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderAudioCodec.html) enumeration, and the possible file format values in the [Tizen.Multimedia.RecorderFileFormat](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
 
     Set the correct file format based on the audio codec. For example, if you set the codec to `RecorderAudioCodec.Aac`, set the file format to `RecorderFileFormat.ThreeGp`.
 
@@ -122,7 +122,7 @@ To enable your application to use the media recording functionality:
 
 To record audio:
 
-1.  Prepare the audio recorder by calling the `Prepare()` method of the [Tizen.Multimedia.Recorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Recorder.html) class:
+1.  Prepare the audio recorder by calling the `Prepare()` method of the [Tizen.Multimedia.Recorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) class:
 
     ```
     audioRecorder.Prepare();
@@ -190,14 +190,14 @@ To record audio:
 
 To initialize the video recorder for use:
 
-1.  Create an instance of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class.
+1.  Create an instance of the [Tizen.Multimedia.Camera](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class.
     ```
     var camera = new Camera(CameraDevice.Rear);
     ```
 
 2. To set the display on which the video is recorded, use the `Display` property of the `Tizen.Multimedia.Camera` class.
 
-    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(For example. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
+    For example, to set the display on a Xamarin-based application, first create an instance of the custom renderer(For example. VideoView) based on VisualElementRenderer class, cast it to an instance of the [Tizen.Multimedia.MediaView](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaView.html) class, and finally set that instance as the `Display` property:
 
     ```
     var mediaView = new VideoView();
@@ -210,15 +210,15 @@ To initialize the video recorder for use:
 
 3.  Check which video codecs and file formats the device supports:
 
-    -   To check which video codecs the device supports, use the `GetSupportedVideoCodecs()` method of the [Tizen.Multimedia.Recorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Recorder.html) class. The possible video codec values are defined in the [Tizen.Multimedia.RecorderVideoCodec](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderVideoCodec.html) enumeration.
-    -   To check which file formats the device supports, use the `GetSupportedFileFormats()` method of the `Tizen.Multimedia.Recorder` class. The possible file format values are defined in the [Tizen.Multimedia.RecorderFileFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
+    -   To check which video codecs the device supports, use the `GetSupportedVideoCodecs()` method of the [Tizen.Multimedia.Recorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) class. The possible video codec values are defined in the [Tizen.Multimedia.RecorderVideoCodec](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderVideoCodec.html) enumeration.
+    -   To check which file formats the device supports, use the `GetSupportedFileFormats()` method of the `Tizen.Multimedia.Recorder` class. The possible file format values are defined in the [Tizen.Multimedia.RecorderFileFormat](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
 
     ```
     var videoCodec = VideoRecorder.GetSupportedVideoCodecs().FirstOrDefault();
     var fileFormat = VideoRecorder.GetSupportedFileFormats().FirstOrDefault();
     ```
 
-4.  Create an instance of the [Tizen.Multimedia.VideoRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.VideoRecorder.html) class by passing the `Tizen.Multimedia.Camera` instance, and the video codec and file format of the recording to the class constructor.
+4.  Create an instance of the [Tizen.Multimedia.VideoRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.VideoRecorder.html) class by passing the `Tizen.Multimedia.Camera` instance, and the video codec and file format of the recording to the class constructor.
 
     Make sure the file format matches the video codec.
 
@@ -273,7 +273,7 @@ To initialize the video recorder for use:
 
 To record video:
 
-1.  Prepare the video recorder by calling the `Prepare()` method of the [Tizen.Multimedia.Recorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Recorder.html) class:
+1.  Prepare the video recorder by calling the `Prepare()` method of the [Tizen.Multimedia.Recorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Recorder.html) class:
 
     ```
     videoRecorder.Prepare();

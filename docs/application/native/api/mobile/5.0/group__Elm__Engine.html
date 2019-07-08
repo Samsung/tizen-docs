@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Elementary Engine</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__infra__group.html">Elementary Infrastructure</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>These are functions setting and querying which rendering engine Elementary will use for drawing its windows' pixels.</p>
@@ -101,16 +101,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>"ews" (Ecore + Evas Single Process Windowing System) </li>
 <li>NULL - no engine config</li>
 </ul>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000232">Deprecated:</a></b></dt><dd>Please use <a class="el" href="group__Elm__Engine.html#ga2b9d7e5e9e0422ce9484ffaacf8effc4">elm_config_accel_preference_override_set()</a> instead</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000239">Deprecated:</a></b></dt><dd>Please use <a class="el" href="group__Elm__Engine.html#ga2b9d7e5e9e0422ce9484ffaacf8effc4">elm_config_accel_preference_override_set()</a> instead</dd></dl>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#gae9f7c2e3c779979aea49b6e4976698b3">elm_config_engine_get</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Elementary's rendering engine in use.  <a href="#gae9f7c2e3c779979aea49b6e4976698b3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#ga53d9907f253d19ee00a77d77c3586993">elm_config_engine_set</a> (const char *engine)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Elementary's rendering engine for use.  <a href="#ga53d9907f253d19ee00a77d77c3586993"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#ga03706d172d5927c144b5dbd4ded171dc">elm_config_preferred_engine_get</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Elementary's preferred engine to use.  <a href="#ga03706d172d5927c144b5dbd4ded171dc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Elementary's rendering engine in use.  <a href="#ga03706d172d5927c144b5dbd4ded171dc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#ga4e860a14f77f1dadbf8c83197cd2491f">elm_config_preferred_engine_set</a> (const char *engine)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Elementary's preferred rendering engine for use.  <a href="#ga4e860a14f77f1dadbf8c83197cd2491f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d">elm_config_accel_preference_get</a> (void)</td></tr>
@@ -138,8 +134,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#gafda7d23c0f1b32f7e363593600ac8307">elm_config_window_auto_focus_enable_set</a> (<a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> enable)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#gab9e4f154c716ffb50ca18055429a552a">elm_config_window_auto_focus_animate_get</a> (void)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#ga0bad46ccd37974b56d9a4834611045dc">elm_config_window_auto_focus_animate_set</a> (<a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> enable)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#ga6008495f0d1995dd906a02a2c374f1cd">elm_config_popup_scrollable_get</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#gac2d6a49ce169a4400e89039de8a1f31e">elm_config_popup_scrollable_set</a> (<a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> scrollable)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#ga68eb46ace488739412de2ef2b95f25f6">elm_config_transition_duration_factor_set</a> (double factor)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Engine.html#ga7eadedd37f08f0a7085eb69ff4a1c1f3">elm_config_transition_duration_factor_get</a> (void)</td></tr>
 </table>
@@ -164,7 +158,7 @@ Functions</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>there's no need to free the returned string, here.</dd></dl>
 <p>See <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a> for more information, but this simply returns what was set by this call, nothing more.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -183,10 +177,19 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the acceleration override preference flag</p>
+<p>Get the configure flag that will define if a window agressively drop its ressource when minimized.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>if it does.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Set the configure flag that will make a window agressively drop its ressource when minimized.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enabled</td><td>This should be <code>EINA_TRUE</code> if enabled, or <code>EINA_FALSE</code> if not. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Get the acceleration override preference flag</dd></dl>
 <p>This gets the acceleration override preference. This is a flag that has the global system acceleration preference configuration forcibly override whatever acceleration preference the application may want.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If acceleration override is enabled</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -214,7 +217,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -251,7 +254,7 @@ Functions</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Engine.html#ga2b9d7e5e9e0422ce9484ffaacf8effc4">elm_config_accel_preference_override_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -271,8 +274,14 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Free Elementary's list of supported color classes.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">list</td><td>The list of color classes to freed</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#ga6ace19c2aac5e254975bf2dae73d4d31">elm_config_color_classes_list_get()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#ga6ace19c2aac5e254975bf2dae73d4d31">elm_config_color_classes_list_get()</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -294,7 +303,7 @@ Functions</h2></td></tr>
 <p>Get Elementary's list of supported color classes.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The color classes list, with <code>Elm_Color_Class</code> blobs as data.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10</dd></dl>
-<p>Release the list with elm_color_classes_list_free().</p>
+<p>Release the list with elm_color_classes_list_free(). </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -315,7 +324,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Apply the changes made with <a class="el" href="group__Elm__Engine.html#gada3d6c3c4595c903d9afe5d6db7a4c4f">elm_config_color_overlay_set()</a> and <a class="el" href="group__Elm__Engine.html#gab88692c21e20ffac9d70615edc22960a">elm_config_color_overlay_unset()</a> on the current Elementary window.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10</dd></dl>
-<p>This applies all color overlays set to all objects in the UI.</p>
+<p>This applies all color overlays set to all objects in the UI. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -340,7 +349,7 @@ Functions</h2></td></tr>
 <p>For each color class, one can set a <b>color overlay</b> for it, overriding the default color properties for that class coming from the theme in use. There is no need to free this list.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#gada3d6c3c4595c903d9afe5d6db7a4c4f">elm_config_color_overlay_set()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Engine.html#gab88692c21e20ffac9d70615edc22960a">elm_config_color_overlay_unset()</a>.</dd></dl>
+<a class="el" href="group__Elm__Engine.html#gab88692c21e20ffac9d70615edc22960a">elm_config_color_overlay_unset()</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -463,7 +472,7 @@ Functions</h2></td></tr>
 <a class="el" href="group__Elm__Engine.html#gab88692c21e20ffac9d70615edc22960a">elm_config_color_overlay_unset()</a> </dd>
 <dd>
 <a class="el" href="group__Edje__Object__Color__Class.html#ga684435de625bdbb996e405e3eaaa54ad" title="Sets Edje color class.">edje_color_class_set()</a></dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>unlike Evas, Edje colors are <b>not</b> pre-multiplied. That is, half-transparent white is 255 255 255 128.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>unlike Evas, Edje colors are <b>not</b> pre-multiplied. That is, half-transparent white is 255 255 255 128. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -490,61 +499,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10</dd></dl>
-<p>This will bring back color elements belonging to color class <code>color_class</code> back to their default color settings.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gae9f7c2e3c779979aea49b6e4976698b3"></a><!-- doxytag: member="elm_config.h::elm_config_engine_get" ref="gae9f7c2e3c779979aea49b6e4976698b3" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> const char* <a class="el" href="group__Elm__Engine.html#gae9f7c2e3c779979aea49b6e4976698b3">elm_config_engine_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get Elementary's rendering engine in use. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000233">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a>. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The rendering engine's name </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>there's no need to free the returned string, here.</dd></dl>
-<p>This gets the global rendering engine that is applied to all Elementary applications.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#ga53d9907f253d19ee00a77d77c3586993" title="Set Elementary&#39;s rendering engine for use.">elm_config_engine_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga53d9907f253d19ee00a77d77c3586993"></a><!-- doxytag: member="elm_config.h::elm_config_engine_set" ref="ga53d9907f253d19ee00a77d77c3586993" args="(const char *engine)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Engine.html#ga53d9907f253d19ee00a77d77c3586993">elm_config_engine_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>engine</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set Elementary's rendering engine for use. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000234">Deprecated:</a></b></dt><dd>Deprecated since 2.4. Use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a>. </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">engine</td><td>The rendering engine's name</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Note that it will take effect only to Elementary windows created after this is called.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a></dd></dl>
+<p>This will bring back color elements belonging to color class <code>color_class</code> back to their default color settings. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -563,15 +518,19 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the indicator service name according to the rotation degree.</p>
+<p>Get the clouseau state. <code>EINA_TRUE</code> if clouseau was tried to be run.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if clouseau was tried to run, <code>EINA_FALSE</code> otherwise Get the clouseau state. <code>EINA_TRUE</code> if clouseau should be attempted to be run.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
+    <tr><td class="paramname">enabled</td><td><code>EINA_TRUE</code> to try and run clouseau, <code>EINA_FALSE</code> otherwise. Get the indicator service name according to the rotation degree.</td></tr>
     <tr><td class="paramname">rotation</td><td>The rotation which related with the indicator service name, in degrees (0-360),</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The indicator service name according to the rotation degree. The indicator service name can be either <code>"elm_indicator_portrait"</code> or <code>"elm_indicator_landscape"</code>.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Do not free the return string.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Do not free the return string. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -636,7 +595,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Get the system mirrored mode. This determines the default mirrored mode of widgets.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if mirrored is set, <code>EINA_FALSE</code> otherwise</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if mirrored is set, <code>EINA_FALSE</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -658,58 +617,11 @@ Functions</h2></td></tr>
 <p>Set the system mirrored mode. This determines the default mirrored mode of widgets.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">mirrored</td><td><code>EINA_TRUE</code> to set mirrored mode, <code>EINA_FALSE</code> to unset it.</td></tr>
+    <tr><td class="paramname">mirrored</td><td><code>EINA_TRUE</code> to set mirrored mode, <code>EINA_FALSE</code> to unset it. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga6008495f0d1995dd906a02a2c374f1cd"></a><!-- doxytag: member="elm_config.h::elm_config_popup_scrollable_get" ref="ga6008495f0d1995dd906a02a2c374f1cd" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Engine.html#ga6008495f0d1995dd906a02a2c374f1cd">elm_config_popup_scrollable_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Get the popup scrollable flag</p>
-<p>If scrollable is true, popup's contents is wrapped in a scroller container in order to popup shouldn't be larger than its parent.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The enabled state for popup scroll </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac2d6a49ce169a4400e89039de8a1f31e"></a><!-- doxytag: member="elm_config.h::elm_config_popup_scrollable_set" ref="gac2d6a49ce169a4400e89039de8a1f31e" args="(Eina_Bool scrollable)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Engine.html#gac2d6a49ce169a4400e89039de8a1f31e">elm_config_popup_scrollable_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
-          <td class="paramname"><em>scrollable</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Set the popup scrollable flag</p>
-<p>If scrollable is true, popup's contents is wrapped in a scroller container in order to popup shouldn't be larger than its parent.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">enable</td><td>the popup scroll </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
 
 </div>
 </div>
@@ -728,11 +640,27 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Get Elementary's preferred engine to use. </p>
+<p>Get Elementary's rendering engine in use. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The rendering engine's name </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>there's no need to free the returned string, here.</dd></dl>
+<p>This gets the global rendering engine that is applied to all Elementary applications.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_config_engine_set() </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000240">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 Set Elementary's rendering engine for use.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engine</td><td>The rendering engine's name</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Note that it will take effect only to Elementary windows created after this is called.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000241">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 Get Elementary's preferred engine to use.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The rendering engine's name </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>there's no need to free the returned string, here.</dd></dl>
 <p>This gets the global rendering engine that is applied to all Elementary applications and is PREFERRED by the application. This can (and will) override the engine configured for all applications which. It is rare to explicitly ask for an engine (likely need is the buffer engine and not much more), so use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> and <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a> normally.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#ga4e860a14f77f1dadbf8c83197cd2491f" title="Set Elementary&#39;s preferred rendering engine for use.">elm_config_preferred_engine_set()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#ga4e860a14f77f1dadbf8c83197cd2491f" title="Set Elementary&#39;s preferred rendering engine for use.">elm_config_preferred_engine_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -764,7 +692,7 @@ Functions</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a> </dd>
 <dd>
-<a class="el" href="group__Elm__Engine.html#ga53d9907f253d19ee00a77d77c3586993" title="Set Elementary&#39;s rendering engine for use.">elm_config_engine_set()</a></dd></dl>
+elm_config_engine_set() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -783,10 +711,22 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get whether selection should be cleared when entry widget is unfocused.</p>
+<p>Get access mode</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the access mode bouncing state</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_config_access_set() Set access mode</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">is_access</td><td>If <code>EINA_TRUE</code>, enables access mode</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Elementary objects may have information (e.g. label on the elm_button) to be read. This information is read by access module when an object receives EVAS_CALLBACK_MOUSE_IN event</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_config_access_get() Get whether selection should be cleared when entry widget is unfocused.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>if the selection would be cleared on unfocus.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#gad53f7f8a081e692ef55c18d6f53deadd">elm_config_selection_unfocused_clear_set()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#gad53f7f8a081e692ef55c18d6f53deadd">elm_config_selection_unfocused_clear_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -813,7 +753,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#gad3effaf33ef4800c0107e70e44181f91">elm_config_selection_unfocused_clear_get()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#gad3effaf33ef4800c0107e70e44181f91">elm_config_selection_unfocused_clear_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -834,8 +774,8 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Get the duration factor of transitions</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The duration factor of transition in edje</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -863,8 +803,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This value affect duration of transitions in edje</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>edje_transition_duration_set() for more details</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>edje_transition_duration_set() for more details </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -885,8 +825,8 @@ Functions</h2></td></tr>
 <p>Get the configured vsync flag</p>
 <p>This gets the globally configured vsync flag that asks some backend engines to use vsync display if possible.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If vsync is enabled</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -912,8 +852,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -934,8 +874,8 @@ Functions</h2></td></tr>
 <p>Get the auto focus animate flag</p>
 <p>If auto focus - see <a class="el" href="group__Elm__Engine.html#gafda7d23c0f1b32f7e363593600ac8307">elm_config_window_auto_focus_enable_set()</a> , is enabled then this will determine if the focus display will be animated or not.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The enabled state for auto focus animation </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -961,8 +901,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -980,11 +920,45 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the auto focus enable flag</p>
+<p>Get the magnifier enabled state for entries</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The enabled state for magnifier </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Set the magnifier enabled state for entires</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">enable</td><td>The magnifier config state </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Get the amount of scaling the magnifer does</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The scaling amount (1.0 is none, 2.0 is twice as big etc.) </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Set the amount of scaling the magnifier does</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">scale</td><td>The scaling amount for magnifiers </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Get the mute state of an audio channel for effects</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>The channel to get the mute state of </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The mute state </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Set the mute state of the specified channel</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">channel</td><td>The channel to set the mute state of </td></tr>
+    <tr><td class="paramname">mute</td><td>The mute state to set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Get the auto focus enable flag</dd></dl>
 <p>This determines if elementary will show a focus box indicating the focused widget automatically if keyboard controls like "Tab" are used to switch focus between widgets. Mouse or touch control will hide this auto shown focus, unless focus display has been expliccitly forced on for the window.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The enabled state for auto focus display </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1010,8 +984,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

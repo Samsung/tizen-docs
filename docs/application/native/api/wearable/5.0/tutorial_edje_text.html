@@ -91,20 +91,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This example shows how to manipulate TEXT and TEXTBLOCK parts from code.</p>
-<p>The very first we are going to do is register a callback to react to changes in the text of our parts:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Edje__Object.html#gadbf0ce18b5fb3b1e31bd2615de393722" title="Sets the object text callback.">edje_object_text_change_cb_set</a>(edje_obj, _on_text_change, NULL);
+<p>The very first we are going to do is register a callback to react to changes in the text of our parts:  <div class="fragment"><pre class="fragment">   edje_object_text_change_cb_set(edje_obj, _on_text_change, NULL);
 </pre></div></p>
  <div class="fragment"><pre class="fragment">_on_text_change(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
 </pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Since edje_obj represent a group we'll be notified whenever any part's text in that group changes.</dd></dl>
-<p>We now set the text for two our two parts:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Edje__Object.html#ga740c552d558c1550c4afd436e06cf7af" title="Sets the text for an object part.">edje_object_part_text_set</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>, <span class="stringliteral">&quot;&lt;b&gt;Click here&quot;</span>);
+<p>We now set the text for two our two parts:  <div class="fragment"><pre class="fragment">   edje_object_part_text_set(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>, <span class="stringliteral">&quot;&lt;b&gt;Click here&quot;</span>);
 </pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Since the "part_two" part is a TEXTBLOCK we can use formatting such as &lt;b&gt;</dd></dl>
-<p>And we now move on to selection issues, first thing we do is make sure the user can select text:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Edje__Object.html#ga388d81ee5cb911d497ab1d9332dfb823" title="Enables selection if the entry is an EXPLICIT selection mode type.">edje_object_part_text_select_allow_set</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+<p>And we now move on to selection issues, first thing we do is make sure the user can select text:  <div class="fragment"><pre class="fragment">   edje_object_part_text_select_allow_set(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 </pre></div></p>
-<p>We then select the entire text, and print the selected text:  <div class="fragment"><pre class="fragment">   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga72e400d5ee8d671743e5dc0ef8911f22" title="Returns the selection text of the object part.">edje_object_part_text_selection_get</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>));
+<p>We then select the entire text, and print the selected text:  <div class="fragment"><pre class="fragment">   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, edje_object_part_text_selection_get(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>));
 </pre></div></p>
-<p>We now unselect the entire text(set selection to none), and print the selected text:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Edje__Object.html#gab6d55e244838d6e00768132aee3eb5ba" title="Sets the selection to be none.">edje_object_part_text_select_none</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>);
-   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga72e400d5ee8d671743e5dc0ef8911f22" title="Returns the selection text of the object part.">edje_object_part_text_selection_get</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>));
+<p>We now unselect the entire text(set selection to none), and print the selected text:  <div class="fragment"><pre class="fragment">   edje_object_part_text_select_none(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>);
+   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, edje_object_part_text_selection_get(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>));
 </pre></div></p>
 <p>Our example will look like this:</p>
 <div class="image">
@@ -147,18 +147,18 @@ _on_delete(Ecore_Evas *ee EINA_UNUSED)
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _on_text_change(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
 {
-   printf(<span class="stringliteral">&quot;text: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga38497e2f48785e6b9f8e957715195309" title="Returns the text of the object part, without escaping.">edje_object_part_text_unescaped_get</a>(obj, part));
+   printf(<span class="stringliteral">&quot;text: %s\n&quot;</span>, edje_object_part_text_unescaped_get(obj, part));
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
-_on_mouse_down(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+_on_mouse_down(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
    <span class="keywordtype">char</span> *env;
    lang_idx = (lang_idx + 1) % (<span class="keyword">sizeof</span> (lang) / <span class="keyword">sizeof</span> (lang[0]));
    fprintf(stderr, <span class="stringliteral">&quot;Setting lang of this edje object to &#39;%s&#39;\n&quot;</span>, lang[lang_idx]);
    env = getenv(<span class="stringliteral">&quot;LANGUAGE&quot;</span>);
    setenv(<span class="stringliteral">&quot;LANGUAGE&quot;</span>, lang[lang_idx], 1);
-   eo_do(o, edje_obj_language_set(lang[lang_idx]));
+   edje_object_language_set(o, lang[lang_idx]);
    setenv(<span class="stringliteral">&quot;LANGUAGE&quot;</span>, env, 1);
 }
 
@@ -190,81 +190,81 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> shutdown_edje;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_delete);
-   <a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Edje text Example&quot;</span>);
+   <a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Edje Text Example&quot;</span>);
 
    evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
-   ecore_evas_object_associate(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   evas_object_move(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+   <a class="code" href="group__Ecore__Evas__Group.html#ga52ddd7e1011746cca7915af6e38b1f0b" title="Associates the given object to this ecore evas.">ecore_evas_object_associate</a>(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
 
    edje_obj = edje_object_add(evas);
    edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;example_group&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 0, 20);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, WIDTH - 40, HEIGHT - 40);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
+   evas_object_move(edje_obj, 0, 20);
+   evas_object_resize(edje_obj, WIDTH - 40, HEIGHT - 40);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
    setenv(<span class="stringliteral">&quot;LANGUAGE&quot;</span>, <span class="stringliteral">&quot;en_IN&quot;</span>, 1);
-   eo_do(edje_obj, edje_obj_language_set(<span class="stringliteral">&quot;en_IN&quot;</span>));
-   <a class="code" href="group__Edje__Object.html#gadbf0ce18b5fb3b1e31bd2615de393722" title="Sets the object text callback.">edje_object_text_change_cb_set</a>(edje_obj, _on_text_change, NULL);
-   <a class="code" href="group__Edje__Object.html#ga740c552d558c1550c4afd436e06cf7af" title="Sets the text for an object part.">edje_object_part_text_set</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>, <span class="stringliteral">&quot;&lt;b&gt;Click here&quot;</span>);
-   <a class="code" href="group__Edje__Object.html#ga388d81ee5cb911d497ab1d9332dfb823" title="Enables selection if the entry is an EXPLICIT selection mode type.">edje_object_part_text_select_allow_set</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Edje__Object.html#ga8b2ad5055e7fc978067eb9d6f7367915" title="Sets the selection to be everything.">edje_object_part_text_select_all</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>);
-   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga72e400d5ee8d671743e5dc0ef8911f22" title="Returns the selection text of the object part.">edje_object_part_text_selection_get</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>));
-   <a class="code" href="group__Edje__Object.html#gab6d55e244838d6e00768132aee3eb5ba" title="Sets the selection to be none.">edje_object_part_text_select_none</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>);
-   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga72e400d5ee8d671743e5dc0ef8911f22" title="Returns the selection text of the object part.">edje_object_part_text_selection_get</a>(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>));
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a9fa52651ccf7e47cd3b7785fc4cf393f">EVAS_CALLBACK_MOUSE_DOWN</a>, _on_mouse_down, NULL);
+   edje_object_language_set(edje_obj, <span class="stringliteral">&quot;en_IN&quot;</span>);
+   edje_object_text_change_cb_set(edje_obj, _on_text_change, NULL);
+   edje_object_part_text_set(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>, <span class="stringliteral">&quot;&lt;b&gt;Click here&quot;</span>);
+   edje_object_part_text_select_allow_set(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   edje_object_part_text_select_all(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>);
+   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, edje_object_part_text_selection_get(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>));
+   edje_object_part_text_select_none(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>);
+   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, edje_object_part_text_selection_get(edje_obj, <span class="stringliteral">&quot;part_two&quot;</span>));
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj, EVAS_CALLBACK_MOUSE_DOWN, _on_mouse_down, NULL);
 
    edje_obj_one = edje_object_add(evas);
    edje_object_file_set(edje_obj_one, edje_file, <span class="stringliteral">&quot;example_group1&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj_one, 0, 50);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj_one, WIDTH - 40, HEIGHT - 40);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj_one);
-   eo_do(edje_obj_one, edje_obj_language_set(<span class="stringliteral">&quot;en_IN&quot;</span>));
-   <a class="code" href="group__Edje__Object.html#gadbf0ce18b5fb3b1e31bd2615de393722" title="Sets the object text callback.">edje_object_text_change_cb_set</a>(edje_obj_one, _on_text_change, NULL);
-   <a class="code" href="group__Edje__Object.html#ga740c552d558c1550c4afd436e06cf7af" title="Sets the text for an object part.">edje_object_part_text_set</a>(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>, <span class="stringliteral">&quot;&lt;b&gt;Click here&quot;</span>);
-   <a class="code" href="group__Edje__Object.html#ga388d81ee5cb911d497ab1d9332dfb823" title="Enables selection if the entry is an EXPLICIT selection mode type.">edje_object_part_text_select_allow_set</a>(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Edje__Object.html#ga8b2ad5055e7fc978067eb9d6f7367915" title="Sets the selection to be everything.">edje_object_part_text_select_all</a>(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>);
-   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga72e400d5ee8d671743e5dc0ef8911f22" title="Returns the selection text of the object part.">edje_object_part_text_selection_get</a>(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>));
-   <a class="code" href="group__Edje__Object.html#gab6d55e244838d6e00768132aee3eb5ba" title="Sets the selection to be none.">edje_object_part_text_select_none</a>(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>);
-   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga72e400d5ee8d671743e5dc0ef8911f22" title="Returns the selection text of the object part.">edje_object_part_text_selection_get</a>(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>));
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj_one, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a9fa52651ccf7e47cd3b7785fc4cf393f">EVAS_CALLBACK_MOUSE_DOWN</a>, _on_mouse_down, NULL);
+   evas_object_move(edje_obj_one, 0, 50);
+   evas_object_resize(edje_obj_one, WIDTH - 40, HEIGHT - 40);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj_one);
+   edje_object_language_set(edje_obj_one, <span class="stringliteral">&quot;en_IN&quot;</span>);
+   edje_object_text_change_cb_set(edje_obj_one, _on_text_change, NULL);
+   edje_object_part_text_set(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>, <span class="stringliteral">&quot;&lt;b&gt;Click here&quot;</span>);
+   edje_object_part_text_select_allow_set(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   edje_object_part_text_select_all(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>);
+   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, edje_object_part_text_selection_get(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>));
+   edje_object_part_text_select_none(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>);
+   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, edje_object_part_text_selection_get(edje_obj_one, <span class="stringliteral">&quot;part_two&quot;</span>));
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj_one, EVAS_CALLBACK_MOUSE_DOWN, _on_mouse_down, NULL);
 
    <span class="comment">//Generic Language change</span>
    edje_obj_two = edje_object_add(evas);
    edje_object_file_set(edje_obj_two, edje_file, <span class="stringliteral">&quot;example_group2&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj_two, 0, 250);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj_two, WIDTH - 40, HEIGHT - 40);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj_two);
+   evas_object_move(edje_obj_two, 0, 250);
+   evas_object_resize(edje_obj_two, WIDTH - 40, HEIGHT - 40);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj_two);
    <a class="code" href="group__Edje__Object__Animation.html#gaff680b06e1e14e848f9f0028b1e521ba" title="Sets Edje language.">edje_language_set</a>(<span class="stringliteral">&quot;en_IN&quot;</span>);
-   <a class="code" href="group__Edje__Object.html#gadbf0ce18b5fb3b1e31bd2615de393722" title="Sets the object text callback.">edje_object_text_change_cb_set</a>(edje_obj_two, _on_text_change, NULL);
-   <a class="code" href="group__Edje__Object.html#ga740c552d558c1550c4afd436e06cf7af" title="Sets the text for an object part.">edje_object_part_text_set</a>(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>, <span class="stringliteral">&quot;&lt;b&gt;Click here&quot;</span>);
-   <a class="code" href="group__Edje__Object.html#ga388d81ee5cb911d497ab1d9332dfb823" title="Enables selection if the entry is an EXPLICIT selection mode type.">edje_object_part_text_select_allow_set</a>(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Edje__Object.html#ga8b2ad5055e7fc978067eb9d6f7367915" title="Sets the selection to be everything.">edje_object_part_text_select_all</a>(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>);
-   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga72e400d5ee8d671743e5dc0ef8911f22" title="Returns the selection text of the object part.">edje_object_part_text_selection_get</a>(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>));
-   <a class="code" href="group__Edje__Object.html#gab6d55e244838d6e00768132aee3eb5ba" title="Sets the selection to be none.">edje_object_part_text_select_none</a>(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>);
-   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga72e400d5ee8d671743e5dc0ef8911f22" title="Returns the selection text of the object part.">edje_object_part_text_selection_get</a>(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>));
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj_two, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a9fa52651ccf7e47cd3b7785fc4cf393f">EVAS_CALLBACK_MOUSE_DOWN</a>, _on_mouse_down_text, NULL);
+   edje_object_text_change_cb_set(edje_obj_two, _on_text_change, NULL);
+   edje_object_part_text_set(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>, <span class="stringliteral">&quot;&lt;b&gt;Click here&quot;</span>);
+   edje_object_part_text_select_allow_set(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   edje_object_part_text_select_all(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>);
+   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, edje_object_part_text_selection_get(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>));
+   edje_object_part_text_select_none(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>);
+   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, edje_object_part_text_selection_get(edje_obj_two, <span class="stringliteral">&quot;part_two&quot;</span>));
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj_two, EVAS_CALLBACK_MOUSE_DOWN, _on_mouse_down_text, NULL);
 
    edje_obj_three = edje_object_add(evas);
    edje_object_file_set(edje_obj_three, edje_file, <span class="stringliteral">&quot;example_group3&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj_three, 0, 350);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj_three, WIDTH - 40, HEIGHT - 40);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj_three);
-   <a class="code" href="group__Edje__Object.html#gadbf0ce18b5fb3b1e31bd2615de393722" title="Sets the object text callback.">edje_object_text_change_cb_set</a>(edje_obj_three, _on_text_change, NULL);
-   <a class="code" href="group__Edje__Object.html#ga740c552d558c1550c4afd436e06cf7af" title="Sets the text for an object part.">edje_object_part_text_set</a>(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>, <span class="stringliteral">&quot;&lt;b&gt;Click here&quot;</span>);
-   <a class="code" href="group__Edje__Object.html#ga388d81ee5cb911d497ab1d9332dfb823" title="Enables selection if the entry is an EXPLICIT selection mode type.">edje_object_part_text_select_allow_set</a>(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Edje__Object.html#ga8b2ad5055e7fc978067eb9d6f7367915" title="Sets the selection to be everything.">edje_object_part_text_select_all</a>(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>);
-   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga72e400d5ee8d671743e5dc0ef8911f22" title="Returns the selection text of the object part.">edje_object_part_text_selection_get</a>(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>));
-   <a class="code" href="group__Edje__Object.html#gab6d55e244838d6e00768132aee3eb5ba" title="Sets the selection to be none.">edje_object_part_text_select_none</a>(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>);
-   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga72e400d5ee8d671743e5dc0ef8911f22" title="Returns the selection text of the object part.">edje_object_part_text_selection_get</a>(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>));
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj_three, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a9fa52651ccf7e47cd3b7785fc4cf393f">EVAS_CALLBACK_MOUSE_DOWN</a>, _on_mouse_down_text, NULL);
+   evas_object_move(edje_obj_three, 0, 350);
+   evas_object_resize(edje_obj_three, WIDTH - 40, HEIGHT - 40);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj_three);
+   edje_object_text_change_cb_set(edje_obj_three, _on_text_change, NULL);
+   edje_object_part_text_set(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>, <span class="stringliteral">&quot;&lt;b&gt;Click here&quot;</span>);
+   edje_object_part_text_select_allow_set(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   edje_object_part_text_select_all(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>);
+   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, edje_object_part_text_selection_get(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>));
+   edje_object_part_text_select_none(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>);
+   printf(<span class="stringliteral">&quot;selection: %s\n&quot;</span>, edje_object_part_text_selection_get(edje_obj_three, <span class="stringliteral">&quot;part_two&quot;</span>));
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj_three, EVAS_CALLBACK_MOUSE_DOWN, _on_mouse_down_text, NULL);
 
    <a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee);
 

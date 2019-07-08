@@ -330,13 +330,13 @@ The following commands are the most useful when controlling the Dynamic Analyzer
   For example:
   ```
   $ ./dacli.jar apps emulator-26101
-  List of installed applications:  
-	  <Application ID>               : <Package ID>             : <Application Name>  
-      org.tizen.camera-app           : org.tizen.camera-app     : Camera  
-      org.tizen.calendar             : org.tizen.calendar       : Calendar  
-      org.tizen.contacts             : org.tizen.contacts       : Contacts  
-      org.tizen.gallery              : org.tizen.gallery        : Gallery  
-      org.tizen.browser              : org.tizen.browser        : Internet
+  List of installed applications:
+    <Application ID>               : <Package ID>             : <Application Name>
+    org.tizen.camera-app           : org.tizen.camera-app     : Camera
+    org.tizen.calendar             : org.tizen.calendar       : Calendar
+    org.tizen.contacts             : org.tizen.contacts       : Contacts
+    org.tizen.gallery              : org.tizen.gallery        : Gallery
+    org.tizen.browser              : org.tizen.browser        : Internet
   ```
   Take note of your application identifier. It is used to specify the application in other Dynamic Analyzer CLI commands. If you cannot find your application, make sure it has been installed (for example, from the Tizen Studio). The application ID can differ from the package ID.
 

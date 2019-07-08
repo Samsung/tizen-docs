@@ -1,6 +1,6 @@
 # Tizen Studio 1.3 Release Notes
 
--   Release Date: Sep 11, 2017
+-   Release Date: Oct 11, 2017
 
 
 ## IDE and Tools
@@ -56,7 +56,7 @@
         -   Close some other programs and try to launch the emulator again.
         -   If the RAM size is set to 768 or 1024 MB for the VM in the Emulator Manager, change it to 512 MB.
         -   Increase the user area of the virtual memory in the system to 3 GB by entering the `bcdedit /set increaseuserva 3072` command on the console with administrator rights (Windows&reg; 7 only), and reboot.
-    -   If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, when you execute the emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
+    -   If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, when you execute the emulator with the **OpenGL ES v1.1 & v2.0** option, the emulator can be unexpectedly terminated. Use the **OpenGL ES v2.0 & v3.0** option.
     -   When you launch the Emulator Manager in the Tizen IDE, the Emulator Manager shortcut image is not exposed properly.
     -   Basic Web applications do not install on SD cards.
 -   CLI and SDB

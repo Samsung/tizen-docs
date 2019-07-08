@@ -83,7 +83,7 @@ The `<variation>` element is placed as a child of the `<UI component>` element. 
 |------------------------------------------|------------------------------------------|
 | `config_ref`                             | Screen configuration ID                  |
 | `visible`                                | `true` or `false`                        |
-| `pack_x, pack_y, pack_w, pack_h`         | Absolute coordinates when the parent container is a grid.0 ~ |
+| `pack_x, pack_y, pack_w, pack_h`         | Absolute coordinates when the parent container is a grid.<br>0 ~ |
 | `pack_col, pack_row, row_span, col_span` | Position when the parent container is a table.<br> `pack_col/pack_row`: 0 ~<br> `row_span/col_span`: 1 ~ |
 | `pack`                                   | Position when the parent container is a pane.<br> `left` or `right` |
 
@@ -139,7 +139,7 @@ The following attributes are used for all `<event>` elements.
 | Attribute            | Value                                    |
 |----------------------|------------------------------------------|
 | `function_name`      | Name of the function                     |
-| `signal`             | Unique component signal. See the component documentation for details |
+| `signal`             | Unique component signal. See the component documentation for details. |
 | `source`             | Source of accepted signal. Only used for the custom UI component. |
 | `connection_wrapper` | Connection wrapper function&apos;s name       |
 | `target`             | Target view ID to transform              |
@@ -664,7 +664,7 @@ The following attributes are used for the hoversel component.
 | `id`      | Automatically incrementing and editable. Duplicates are not allowed. | `elm_hoversel_add()`        |
 | `text`    | `#string`                                | `elm_object_text_set()`     |
 | `disable` | `true` or `false`                        | `elm_object_disabled_set()` |
-| `visible` | `true` or `false`                        | `elm_object_disabled_set()` |
+| `visible` | `true` or `false`                        | `evas_object_show()` |
 
 ### Hoverselitem in Mobile Applications
 

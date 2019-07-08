@@ -93,17 +93,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>The full code for this example can be found at <a class="el" href="bg_example_02_c.html">bg_example_02.c</a>, in the function <code>test_bg_image</code>. It's part of the <code>elementary_test</code> suite, and thus has the code for the three examples referenced by this documentation.</p>
 <p>This is the second example, and shows how to use the Elementary background object to set an image as background of your application.</p>
 <p>We start this example exactly in the same way as the previous one, even when creating the background object:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *bg;
+   <span class="keywordtype">char</span> buf[PATH_MAX];
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;images/plant_01.jpg&quot;</span>);
+
+   win = <a class="code" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;bg-image&quot;</span>, ELM_WIN_BASIC);
+   <a class="code" href="group__Elm__Win.html#ga0e0b613ac6b5d1e0e71f2ec17e80cb07" title="Sets the shaped state of a window.">elm_win_title_set</a>(win, <span class="stringliteral">&quot;Bg Image&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   bg = <a class="code" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add</a>(win);
+</pre></div></p>
 <p>Now it's the different part.</p>
 <p>Our background will have an image, that will be displayed over the background color. Before loading the image, we set the load size of the image. The load size is a hint about the size that we want the image displayed in the screen. It's not the exact size that the image will have, but usually a bit bigger. The background object can still be scaled to a size bigger than the one set here. Setting the image load size to something smaller than its real size will reduce the memory used to keep the pixmap representation of the image, and the time to load it. Here we set the load size to 20x20 pixels, but the image is loaded with a size bigger than that (since it's just a hint):</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And set our background image to be centered, instead of stretched or scaled, so the effect of the <a class="el" href="group__Elm__Bg.html#ga6828b88b1b5fe31bbb94d48d77362b34" title="Sets the size of the pixmap representation of the image set on a given background widget...">elm_bg_load_size_set()</a> can be easily understood:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Bg.html#ga6aef5e17ed70d3391401f0395fda06e9" title="Sets the size of the pixmap representation of the image set on a given background widget...">elm_bg_load_size_set</a>(bg, 20, 20);
+</pre></div></p>
+<p>And set our background image to be centered, instead of stretched or scaled, so the effect of the <a class="el" href="group__Elm__Bg.html#ga6aef5e17ed70d3391401f0395fda06e9" title="Sets the size of the pixmap representation of the image set on a given background widget...">elm_bg_load_size_set()</a> can be easily understood:</p>
+<p><div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Bg.html#ga2ed059b3cf946d10a12182fedc3125f9" title="Sets the mode of display for a given background widget&#39;s image.">elm_bg_option_set</a>(bg, <a class="code" href="group__Elm__Bg.html#ggac13a24993e39fac3484bd29a9bfeea26a59df3d0f575cd2bc133c367beca423dc">ELM_BG_OPTION_CENTER</a>);
+</pre></div></p>
 <p>We need a filename to set, so we get one from the previous installed images in the <code>PACKAGE_DATA_DIR</code>, and write its full path to a buffer. Then we use this buffer to set the filename in the background object:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Notice that the third argument of the <a class="el" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c">elm_bg_file_set()</a> function is <code>NULL</code>, since we are setting an image to this background. This function also supports setting an edje group as background, in which case the <code>group</code> parameter wouldn't be <code>NULL</code>, but be the name of the group instead.</p>
+<p><div class="fragment"><pre class="fragment">   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/plant_01.jpg&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   <a class="code" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c" title="Sets the file (image or edje collection) to give life for the background.">elm_bg_file_set</a>(bg, buf, NULL);
+</pre></div></p>
+<p>Notice that the third argument of the <a class="el" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c" title="Sets the file (image or edje collection) to give life for the background.">elm_bg_file_set()</a> function is <code>NULL</code>, since we are setting an image to this background. This function also supports setting an edje group as background, in which case the <code>group</code> parameter wouldn't be <code>NULL</code>, but be the name of the group instead.</p>
 <p>Finally, we can set the size hints, add the background as a resize object, and resize the window, exactly the same thing we do in the <a class="el" href="bg_01_example_page.html">elm_bg - Plain color background.</a> example:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   evas_object_size_hint_weight_set(bg, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+
+   evas_object_resize(win, 320, 320);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+</pre></div></p>
 <p>And this is the end of this example.</p>
 <p>This example will look like this:</p>
 <div class="image">

@@ -105,11 +105,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Magic__Group.html#gaec80eb137d23153cbdbec0d4c400e399">eina_magic_string_get</a> (<a class="el" href="group__Eina__Magic__Group.html#ga979d40af6182a8ec32890ba85df88f1d">Eina_Magic</a> magic)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the string associated to the given magic identifier.  <a href="#gaec80eb137d23153cbdbec0d4c400e399"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the string associated with the given magic identifier.  <a href="#gaec80eb137d23153cbdbec0d4c400e399"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Magic__Group.html#ga0d77e61edf5b7b6c276a382d6bf191e7">eina_magic_string_set</a> (<a class="el" href="group__Eina__Magic__Group.html#ga979d40af6182a8ec32890ba85df88f1d">Eina_Magic</a> magic, const char *magic_name)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the string associated to the given magic identifier.  <a href="#ga0d77e61edf5b7b6c276a382d6bf191e7"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the string associated with the given magic identifier.  <a href="#ga0d77e61edf5b7b6c276a382d6bf191e7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Magic__Group.html#ga5d202c69f78f9cb078efd3e798cb5a53">eina_magic_string_static_set</a> (<a class="el" href="group__Eina__Magic__Group.html#ga979d40af6182a8ec32890ba85df88f1d">Eina_Magic</a> magic, const char *magic_name)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the string associated to the given magic identifier.  <a href="#ga5d202c69f78f9cb078efd3e798cb5a53"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the string associated with the given magic identifier.  <a href="#ga5d202c69f78f9cb078efd3e798cb5a53"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Magic__Group.html#ga1b837f53d9fbb370b29b0818d6c94a10">eina_magic_fail</a> (void *d, <a class="el" href="group__Eina__Magic__Group.html#ga979d40af6182a8ec32890ba85df88f1d">Eina_Magic</a> m, <a class="el" href="group__Eina__Magic__Group.html#ga979d40af6182a8ec32890ba85df88f1d">Eina_Magic</a> req_m, const char *file, const char *fnc, int line)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a message or aborts if a magic check failed.  <a href="#ga1b837f53d9fbb370b29b0818d6c94a10"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -340,8 +340,8 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>You should <b>strongly</b> consider using <a class="el" href="group__Eina__Magic__Group.html#gad7411adf9ff7121ad2004046f1b08408">EINA_MAGIC_FAIL(d, m)</a> instead.</dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>If the environment variable EINA_LOG_ABORT is set, abort() is called and the program stops. It is useful for debugging programs with gdb.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If the environment variable EINA_LOG_ABORT is set, abort() is called and the program stops. It is useful for debugging programs with gdb. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -360,7 +360,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets the string associated to the given magic identifier. </p>
+<p>Gets the string associated with the given magic identifier. </p>
 <p>This function returns the string associated to <code>magic</code>. Even if none are found this function still returns non <code>NULL</code>, in this case an identifier such as "(none)", "(undefined)", or "(unknown)".</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -375,8 +375,8 @@ Defines</h2></td></tr>
 <li>(undefined): Magic is registered and found, but no string is associated.</li>
 <li>(unknown): Magic is not found in the registry.</li>
 </ul>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>The returned value must not be freed.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>The returned value must not be freed. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -405,18 +405,18 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets the string associated to the given magic identifier. </p>
+<p>Sets the string associated with the given magic identifier. </p>
 <p>This function sets the string <code>magic_name</code> to <code>magic</code>. It is not checked if number or string are already set, in which case you end with duplicates. Internally, eina makes a copy of <code>magic_name</code>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">magic</td><td>The magic identifier </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">magic_name</td><td>The string associated to the identifier, must not be <code>NULL</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">magic_name</td><td>The string associated with the identifier, must not be <code>NULL</code> </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, otherwise <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Magic__Group.html#ga5d202c69f78f9cb078efd3e798cb5a53" title="Sets the string associated to the given magic identifier.">eina_magic_string_static_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Magic__Group.html#ga5d202c69f78f9cb078efd3e798cb5a53" title="Sets the string associated with the given magic identifier.">eina_magic_string_static_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_magic_01_8c-example.html#a7">eina_magic_01.c</a>.</dd>
 </dl>
 </div>
@@ -446,18 +446,18 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Sets the string associated to the given magic identifier. </p>
+<p>Sets the string associated with the given magic identifier. </p>
 <p>This function sets the string <code>magic_name</code> to <code>magic</code>. It is not checked if number or string are already set, in which case you might end with duplicates. Eina does <b>not</b> make a copy of <code>magic_name</code>, this means that <code>magic_name</code> has to be a valid pointer for as long as <code>magic</code> is used.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">magic</td><td>The magic identifier </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">magic_name</td><td>The string associated to the identifier, must not be <code>NULL</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">magic_name</td><td>The string associated with the identifier, must not be <code>NULL</code> </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, otherwise <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Magic__Group.html#ga0d77e61edf5b7b6c276a382d6bf191e7" title="Sets the string associated to the given magic identifier.">eina_magic_string_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Magic__Group.html#ga0d77e61edf5b7b6c276a382d6bf191e7" title="Sets the string associated with the given magic identifier.">eina_magic_string_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_magic_01_8c-example.html#a8">eina_magic_01.c</a>.</dd>
 </dl>
 </div>
@@ -475,7 +475,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>The error identifier corresponding to the magic check failure. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

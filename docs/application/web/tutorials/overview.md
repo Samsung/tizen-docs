@@ -10,6 +10,8 @@ The introduction to Web applications documentation provides overall information 
 
 - [Security and API Privileges](sec-privileges.md)
 
+- [Security and API Privileges for Apps with API Version 4.0 or Earlier](old-versioned-sec-privileges.md)
+
 - [Web Runtime](web-runtime.md)
 
 - [Event Handling](event-handling.md) (in **wearable applications only**)

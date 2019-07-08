@@ -95,7 +95,102 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><a class="el" href="efl_thread_4.html">EFL Threading example 4</a></p>
 <p><a class="el" href="efl_thread_5.html">EFL Threading example 5</a></p>
 <p><a class="el" href="efl_thread_6.html">EFL Threading example 6</a></p>
-<div class="fragment"><pre class="fragment"></pre></div> </div></div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o efl_thread_2 efl_thread_2.c -g `pkg-config --cflags --libs elementary`</span>
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+<span class="preprocessor">#include &lt;pthread.h&gt;</span>
+
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win = NULL;
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *rect = NULL;
+
+<span class="keyword">struct </span>info
+{
+   <span class="keywordtype">double</span> x, y;
+};
+
+<span class="keyword">static</span> <span class="keywordtype">void</span> *my_thread_mainloop_code(<span class="keywordtype">void</span> *data);
+
+<span class="keyword">static</span> pthread_t thread_id;
+
+<span class="comment">// BEGIN - code running in my custom pthread instance</span>
+<span class="comment">//</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span> *
+my_thread_run(<span class="keywordtype">void</span> *arg EINA_UNUSED)
+{
+   <span class="keywordtype">double</span> t = 0.0;
+
+   <span class="keywordflow">for</span> (;;)
+     {
+        <span class="keyword">struct </span>info *inf = malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> info));
+
+        <span class="keywordflow">if</span> (inf)
+          {
+             inf-&gt;x = 200 + (200 * sin(t));
+             inf-&gt;y = 200 + (200 * cos(t));
+             <a class="code" href="group__Ecore__Main__Loop__Group.html#ga0df1b736c7f358c1df054c126d8dbc00" title="Calls callback synchronously in the main loop.">ecore_main_loop_thread_safe_call_sync</a>
+                (my_thread_mainloop_code, inf);
+          }
+        <span class="comment">// and sleep and loop</span>
+        usleep(1000);
+        t += 0.02;
+     }
+   <span class="keywordflow">return</span> NULL;
+}
+<span class="comment">//</span>
+<span class="comment">// END - code running in my custom pthread instance</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+my_thread_new(<span class="keywordtype">void</span>)
+{
+   pthread_attr_t attr;
+
+   <span class="keywordflow">if</span> (pthread_attr_init(&amp;attr) != 0)
+     perror(<span class="stringliteral">&quot;pthread_attr_init&quot;</span>);
+   <span class="keywordflow">if</span> (pthread_create(&amp;thread_id, &amp;attr, my_thread_run, NULL) != 0)
+     perror(<span class="stringliteral">&quot;pthread_create&quot;</span>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span> *
+my_thread_mainloop_code(<span class="keywordtype">void</span> *data)
+{
+   <span class="keyword">struct </span>info *inf = data;
+   evas_object_move(rect, inf-&gt;x - 50, inf-&gt;y - 50);
+   free(inf);
+   <span class="keywordflow">return</span> NULL;
+}
+
+<span class="comment">// on window delete - cancel thread then delete window and exit mainloop</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+del(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   exit(0);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o;
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;efl-thread-2&quot;</span>, <span class="stringliteral">&quot;EFL Thread 2&quot;</span>);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(win, <span class="stringliteral">&quot;delete,request&quot;</span>, del, NULL);
+
+   o = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 50, 80, 180, 255);
+   evas_object_resize(o, 100, 100);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+   rect = o;
+
+   <span class="comment">// create custom thread to do some &quot;work on the side&quot;</span>
+   my_thread_new();
+
+   evas_object_resize(win, 400, 400);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

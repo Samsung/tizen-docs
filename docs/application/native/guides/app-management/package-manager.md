@@ -100,7 +100,9 @@ To retrieve all package information for installed packages:
 
 To retrieve specific package information:
 
-1. Use the `package_manager_get_package_info()` function. This function fills the second parameter with the package information handle, which is then used with the following `package_info_get_*()` functions to retrieve the specific information:
+1. Use the `package_manager_get_package_info()` function.
+
+   This function fills the second parameter with the package information handle, which is then used with the following `package_info_get_*()` functions to retrieve the specific information:
    - package_info_get_label()
    - package_info_get_icon()
    - package_info_get_version()

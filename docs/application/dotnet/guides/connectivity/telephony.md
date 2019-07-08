@@ -7,17 +7,17 @@ The main Tizen.Telephony namespace features are:
 
 -   Telephony manager
 
-    You can manage the initialization and deinitialization of the telephony slot handle with the [Tizen.Telephony.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Manager.html) class. The handle is used to create instances of the [Tizen.Telephony.Call](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Call.html), [Tizen.Telephony.Sim](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Sim.html), [Tizen.Telephony.Network](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Network.html), and [Tizen.Telephony.Modem](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Modem.html) classes, which allow you to access telephony information. If a dual-SIM device is used, you have a separate slot handle for each SIM card.
+    You can manage the initialization and deinitialization of the telephony slot handle with the [Tizen.Telephony.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Manager.html) class. The handle is used to create instances of the [Tizen.Telephony.Call](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Call.html), [Tizen.Telephony.Sim](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Sim.html), [Tizen.Telephony.Network](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Network.html), and [Tizen.Telephony.Modem](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Modem.html) classes, which allow you to access telephony information. If a dual-SIM device is used, you have a separate slot handle for each SIM card.
 
     You can also access the current telephony state of the device, and monitor the state change events.
 
-    By using the [Tizen.Telephony.SlotHandle](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.SlotHandle.html) class to register for specific notification IDs, you can receive notifications for various information change events related to call, SIM card, network, and modem information. Register for the notifications with the `SetNotificationId()` method, by specifying the notification ID. The available notification IDs are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
+    By using the [Tizen.Telephony.SlotHandle](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.SlotHandle.html) class to register for specific notification IDs, you can receive notifications for various information change events related to call, SIM card, network, and modem information. Register for the notifications with the `SetNotificationId()` method, by specifying the notification ID. The available notification IDs are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
 
 -   Call information
 
     You can [retrieve information about the current call](#call_use) by using the `Tizen.Telephony.Call` class to retrieve a list of current call handles. You can also access voice and video call states, and use the state information in call-related actions.
 
-    The call handles are instances of the [Tizen.Telephony.CallHandle](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.CallHandle.html) class, which allows you to access the number, type, and status of the call. You can also determine the call direction (mobile-originated or mobile-terminated) and whether the call is a conference call.
+    The call handles are instances of the [Tizen.Telephony.CallHandle](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.CallHandle.html) class, which allows you to access the number, type, and status of the call. You can also determine the call direction (mobile-originated or mobile-terminated) and whether the call is a conference call.
 
 -   SIM information
 
@@ -43,7 +43,7 @@ The main Tizen.Telephony namespace features are:
 
 To enable your application to use the telephony functionality:
 
-1.  To use the [Tizen.Telephony](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Telephony](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -52,7 +52,7 @@ To enable your application to use the telephony functionality:
     </privileges>
     ```
 
-2.  Retrieve the slot handle with the `Init()` method of the [Tizen.Telephony.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Manager.html) class.
+2.  Retrieve the slot handle with the `Init()` method of the [Tizen.Telephony.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Manager.html) class.
 
     In a dual-SIM scenario, the method returns a separate handle for each SIM card. The `handle[0]` instance means the primary SIM and `handle[1]` means the secondary SIM. To send call, network, modem, or SIM card requests to a specific subscription (SIM card), use the applicable handle.
 
@@ -74,7 +74,7 @@ To enable your application to use the telephony functionality:
 <a name="call_use"></a>
 ## Retrieving Call Information
 
-To get information about the current call and monitor when the user makes a voice or video call or hangs up the phone, use the [Tizen.Telephony.Call](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Call.html) class:
+To get information about the current call and monitor when the user makes a voice or video call or hangs up the phone, use the [Tizen.Telephony.Call](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Call.html) class:
 
 -   Get the current call information:
     1.  To get the current call list, retrieve the current call handle with the `GetCallHandleList()` method:
@@ -100,9 +100,9 @@ To get information about the current call and monitor when the user makes a voic
         ```
 
 -   Monitor call state changes:
-    1.  To receive call state change notifications asynchronously, register a callback with the `SetNotificationId()` method of the [Tizen.Telephony.SlotHandle](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.SlotHandle.html) class.
+    1.  To receive call state change notifications asynchronously, register a callback with the `SetNotificationId()` method of the [Tizen.Telephony.SlotHandle](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.SlotHandle.html) class.
 
-        You must register the callback separately for each call state, using the applicable `VoiceCallXXX` or `VideoCallXXX` notification value in the `SetNotificationID()` method parameter. The available values are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
+        You must register the callback separately for each call state, using the applicable `VoiceCallXXX` or `VideoCallXXX` notification value in the `SetNotificationID()` method parameter. The available values are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
 
         ```
         void RegisterCallbackNotification()
@@ -162,7 +162,7 @@ To get information about the current call and monitor when the user makes a voic
 <a name="sim_use"></a>
 ## Retrieving SIM Card Information
 
-To retrieve information from a SIM card and monitor when the SIM state changes, use the [Tizen.Telephony.Sim](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Sim.html) class.
+To retrieve information from a SIM card and monitor when the SIM state changes, use the [Tizen.Telephony.Sim](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Sim.html) class.
 
 
 > **Note**   
@@ -170,7 +170,7 @@ To retrieve information from a SIM card and monitor when the SIM state changes, 
 
 
 -   Get SIM card details:
-    1.  Retrieve the SIM card state with the `CurrentState` property of the `Tizen.Telephony.Sim` class. It returns the SIM state using the values of the [Tizen.Telephony.Sim.State](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Sim.State.html) enumeration.
+    1.  Retrieve the SIM card state with the `CurrentState` property of the `Tizen.Telephony.Sim` class. It returns the SIM state using the values of the [Tizen.Telephony.Sim.State](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Sim.State.html) enumeration.
 
         ```
         IEnumerable<SlotHandle> simList = Manager.Init();
@@ -185,9 +185,9 @@ To retrieve information from a SIM card and monitor when the SIM state changes, 
         ```
 
 -   Monitor SIM state changes:
-    1.  To receive SIM state change notifications asynchronously, register a callback with the `SetNotificationId()` method of the [Tizen.Telephony.SlotHandle](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.SlotHandle.html) class.
+    1.  To receive SIM state change notifications asynchronously, register a callback with the `SetNotificationId()` method of the [Tizen.Telephony.SlotHandle](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.SlotHandle.html) class.
 
-        You must register the callback separately for each SIM state, using the applicable `SimXXX` notification value in the `SetNotificationID()` method parameter. The available values are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
+        You must register the callback separately for each SIM state, using the applicable `SimXXX` notification value in the `SetNotificationID()` method parameter. The available values are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
 
         ```
         void RegisterCallbackNotification()
@@ -217,7 +217,7 @@ To retrieve information from a SIM card and monitor when the SIM state changes, 
 <a name="network_use"></a>
 ## Retrieving Network Information
 
-To retrieve current cellular network and telephony service details, and monitor when the network service state changes, use the [Tizen.Telephony.Network](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Network.html) class.
+To retrieve current cellular network and telephony service details, and monitor when the network service state changes, use the [Tizen.Telephony.Network](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Network.html) class.
 
 
 
@@ -227,7 +227,7 @@ To retrieve current cellular network and telephony service details, and monitor 
 
 
 -   Get network details:
-    1.  Retrieve the network state with the `NetworkServiceState` property of the `Tizen.Telephony.Network` class. It returns the network service state using the values of the [Tizen.Telephony.Network.ServiceState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Network.ServiceState.html) enumeration.
+    1.  Retrieve the network state with the `NetworkServiceState` property of the `Tizen.Telephony.Network` class. It returns the network service state using the values of the [Tizen.Telephony.Network.ServiceState](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Network.ServiceState.html) enumeration.
 
         ```
         IEnumerable<SlotHandle> simList = Manager.Init();
@@ -243,9 +243,9 @@ To retrieve current cellular network and telephony service details, and monitor 
         ```
 
 -   Monitor network state changes:
-    1.  To receive network service state change notifications asynchronously, register a callback with the `SetNotificationId()` method of the [Tizen.Telephony.SlotHandle](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.SlotHandle.html) class.
+    1.  To receive network service state change notifications asynchronously, register a callback with the `SetNotificationId()` method of the [Tizen.Telephony.SlotHandle](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.SlotHandle.html) class.
 
-        You must register the callback separately for each service state, using the applicable `NetworkXXX` notification value in the `SetNotificationID()` method parameter. The available values are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
+        You must register the callback separately for each service state, using the applicable `NetworkXXX` notification value in the `SetNotificationID()` method parameter. The available values are defined in the [Tizen.Telephony.ChangeNotificationEventArgs.Notification](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.ChangeNotificationEventArgs.Notification.html) enumeration.
 
         ```
         void RegisterCallbackNotification()
@@ -275,7 +275,7 @@ To retrieve current cellular network and telephony service details, and monitor 
 <a name="modem_use"></a>
 ## Retrieving Modem Information
 
-To access information about the modem, such as its IMEI, use the [Tizen.Telephony.Modem](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Telephony.Modem.html) class:
+To access information about the modem, such as its IMEI, use the [Tizen.Telephony.Modem](https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.Modem.html) class:
 
 ```
 IEnumerable<SlotHandle> simList = Manager.Init();

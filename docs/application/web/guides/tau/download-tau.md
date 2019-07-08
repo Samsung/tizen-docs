@@ -14,7 +14,7 @@ To download and build TAU from Git:
    a. Clone a copy of the master branch in the TAU Git repository:
 
       ```
-      git clone git://git.tizen.org/platform/framework/web/tau
+      git clone git@github.com:Samsung/TAU.git
       ```
 
    b. Change to the `tau` directory:

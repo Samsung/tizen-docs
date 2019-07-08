@@ -1,6 +1,6 @@
 # Tizen Studio 2.0 Release Notes
 
--   Release Date: Oct 25, 2017
+-   Release Date: Nov 1, 2017
 
 
 ## IDE and Tools
@@ -65,6 +65,8 @@
 -   Common
     -   The Java Development Kit (JDK) 9 is not supported.
     -   If you install the Tizen Studio in a directory that requires administrator privileges for access, such as `C:\Program Files`, administrator privileges are required to run the Tizen SDK tools. The Tizen Installer and Baseline SDK Installer alert you if you try to install into such a directory.
+    -   If you meet unexpected error on opening Tizen Studio, please change your workspace folder.
+    -   DALi template is not supported for Tizen 4.0. It will be added in the next official version.
 - Web and Native IDE
     -   Since Tizen Studio 2.0, the Connection Explorer has been replaced with the Device Manager, which can cause errors in the Connection Explorer view. You can fix this in 2 ways:
         -   Reset the perspective.
@@ -112,3 +114,7 @@
     -   Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
 - Web Inspector
     -   If your Google Chrome&trade; browser version is higher than 54, the Web Inspector console and some other functions do not work properly due to Web core compatibility issues.
+- Device Manager
+    -   If you install Tizen Studio 2.0 or update it from the previous version, you do not have the Device Manager.
+
+        The issue will be fixed on the next release.

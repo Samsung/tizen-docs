@@ -90,7 +90,82 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">label_example_01.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o label_example_01 label_example_01.c -g `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *label, *label2, *label3, *label4, *label5, *label6;
+
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a2"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;label&quot;</span>, <span class="stringliteral">&quot;Label&quot;</span>);
+   <a name="a3"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a4"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   label = <a name="a5"></a><a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label, <span class="stringliteral">&quot;Some long text for our label, that is long but &quot;</span>
+                       <span class="stringliteral">&quot;not too long.&quot;</span>);
+   <a name="a6"></a><a class="code" href="group__Elm__Label.html#ga6c89f8dfb03ae06797708b90d7926f01" title="Control the slide duration of the label.">elm_label_slide_duration_set</a>(label, 3);
+   <a name="a7"></a><a class="code" href="group__Elm__Label.html#ga6cad055d2cd4ea72f9d6c9ce8bd68421" title="Control the slide mode of the label widget.">elm_label_slide_mode_set</a>(label, <a name="a8"></a><a class="code" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">ELM_LABEL_SLIDE_MODE_ALWAYS</a>);
+   <a name="a9"></a><a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(label, <span class="stringliteral">&quot;slide_bounce&quot;</span>);
+   evas_object_move(label, 0, 10);
+   evas_object_resize(label, 200, 15);
+   <a name="a10"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label);
+
+   label2 = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label2, <span class="stringliteral">&quot;This is the text for our second label, which is&quot;</span>
+                       <span class="stringliteral">&quot; much longer than the previous one, maybe even &quot;</span>
+                       <span class="stringliteral">&quot;too long, but maybe not.&quot;</span>);
+   <a name="a11"></a><a class="code" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set</a>(label2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_resize(label2, 200, 15);
+   evas_object_move(label2, 0, 30);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label2);
+
+   label3 = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label3, <span class="stringliteral">&quot;Some more long text much as before, long but &quot;</span>
+                       <span class="stringliteral">&quot;not too long.&quot;</span>);
+   <a name="a12"></a><a class="code" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set</a>(label3, ELM_WRAP_CHAR);
+   <a class="code" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set</a>(label3, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_resize(label3, 200, 15);
+   evas_object_move(label3, 0, 50);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label3);
+
+   label4 = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label4, <span class="stringliteral">&quot;And for this label we choose a different text, &quot;</span>
+                       <span class="stringliteral">&quot;for no reason other than that we can.&quot;</span>);
+   <a class="code" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set</a>(label4, ELM_WRAP_CHAR);
+   evas_object_resize(label4, 200, 30);
+   evas_object_move(label4, 0, 80);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label4);
+
+   label5 = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label5, <span class="stringliteral">&quot;And for this label we choose a different text, &quot;</span>
+                       <span class="stringliteral">&quot;for no reason other than that we can.&quot;</span>);
+   <a class="code" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set</a>(label5, ELM_WRAP_WORD);
+   evas_object_resize(label5, 200, 40);
+   evas_object_move(label5, 0, 110);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label5);
+
+   label6 = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label6, <span class="stringliteral">&quot;Short text&quot;</span>);
+   <a class="code" href="group__Elm__Styles.html#ga7fc2d1f9ba723470da7a05799c49f7fe">elm_object_style_set</a>(label6, <span class="stringliteral">&quot;marker&quot;</span>);
+   <a name="a13"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(label6, 255, 0, 0, 255);
+   evas_object_resize(label6, 200, 15);
+   evas_object_move(label6, 0, 140);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label6);
+
+   evas_object_resize(win, 200, 170);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a14"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a15"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

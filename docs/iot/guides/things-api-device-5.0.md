@@ -13,9 +13,9 @@ Master JSON file can represent device and configuration for thing agent.
   * ***nick***[string] : (Optional) Nick name
 * ***configuration***[object] : Define OTM, certificate type, and easy-setup information.
   * ***otm***[int] : Ownership Transfer Method: b0001 (Random PIN-based), b0010 (UserConfirm-based), b0100 (Preconfigured PIN) The default value is 2
-  * ***crtType***[int] : Certificate type: 1(Test Certificate), 2(Artik Certificate), 3(Custom) To use test certificate as described in ["Getting Started"](../getting_started/overview.md), the value should be 1
+  * ***crtType***[int] : Certificate type: 1(Test Certificate), 2(Artik Certificate), 3(Custom) To use test certificate as described in ["Get Started"](../get-started/overview.md), the value should be 1
   * ***easySetup***[object] : Easy-setup information
-    * ***mode***[string] : Easy-setup mode: 1(SoftAP), 2(Custom) To use Soft AP as described in "Getting Started", the value should be 1
+    * ***mode***[string] : Easy-setup mode: 1(SoftAP), 2(Custom) To use Soft AP as described in "Get Started", the value should be 1
     * ***setupId***[string] : Setup Identifier. Onboarding ID registered in DevWorkSpace
 
 ### Sample Master JSON File

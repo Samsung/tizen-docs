@@ -97,9 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="list_inheritance_tree.png" alt="list_inheritance_tree.png"/>
 </div>
  <div class="image">
-<img src="img/widget/list/preview-00.png" alt="preview-00.png"/>
-</div>
- <div class="image">
 <img src="list.png" alt="list.png"/>
 </div>
  <p>A list widget is a container whose children are displayed vertically or horizontally, in order, and can be selected. The list can accept only one or multiple item selections. Also has many modes of items displaying.</p>
@@ -151,13 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>elm_object_item_signal_emit</li>
 </ul>
 <p>This widget implements the <b></b>  elm-scrollable-interface interface, so that all (non-deprecated) functions for the base Scroller widget also work for lists.</p>
-<p>Some calls on the list's API are marked as <b>deprecated</b>, as they just wrap the scrollable widgets counterpart functions. Use the ones we point you to, for each case of deprecation here, instead -- eventually the deprecated ones will be discarded (next major release).</p>
-<p>List of examples: </p>
-<ul>
-<li><a class="el" href="list_example_01.html">List widget example</a> </li>
-<li><a class="el" href="list_example_02.html">List widget example</a> </li>
-<li><a class="el" href="list_example_03.html">List - Items management</a> </li>
-</ul>
+<p>Some calls on the list's API are marked as <b>deprecated</b>, as they just wrap the scrollable widgets counterpart functions. Use the ones we point you to, for each case of deprecation here, instead -- eventually the deprecated ones will be discarded (next major release). </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -230,17 +221,20 @@ Functions</h2></td></tr>
 <p>Values here don't work as bitmasks -- only one can be chosen at a time.</p>
 <p>See also <a class="el" href="group__Elm__List.html#ga8de4384bc5c40089644ecab6a7e005c8">elm_list_mode_set</a>, <a class="el" href="group__Elm__List.html#gae27f6dde507d2915b7bca4a5de7ad8be">elm_list_mode_get</a>. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f"></a><!-- doxytag: member="ELM_LIST_SCROLL" ref="ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f" args="" -->ELM_LIST_SCROLL</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497"></a><!-- doxytag: member="ELM_LIST_COMPRESS" ref="ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497" args="" -->ELM_LIST_COMPRESS</em>&nbsp;</td><td>
 <p>The list won't set any of its size hints to inform how a possible container should resize it. Then, if it's not created as a "resize object", it might end with zeroed dimensions. The list will respect the container's geometry and, if any of its items won't fit into its transverse axis, one won't be able to scroll it in that direction. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1"></a><!-- doxytag: member="ELM_LIST_LIMIT" ref="ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1" args="" -->ELM_LIST_LIMIT</em>&nbsp;</td><td>
-<p>Default value. This is the same as #ELM_LIST_COMPRESS, with the exception that if any of its items won't fit into its transverse axis, one will be able to scroll it in that direction. </p>
+<tr><td valign="top"><em><a class="anchor" id="ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f"></a><!-- doxytag: member="ELM_LIST_SCROLL" ref="ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f" args="" -->ELM_LIST_SCROLL</em>&nbsp;</td><td>
+<p>Default value. This is the same as <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497">ELM_LIST_COMPRESS</a>, with the exception that if any of its items won't fit into its transverse axis, one will be able to scroll it in that direction. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggad05499f0b0c907a953ef8650823ae428a6a72b4bafeb272051715a97fa7c186de"></a><!-- doxytag: member="ELM_LIST_EXPAND" ref="ggad05499f0b0c907a953ef8650823ae428a6a72b4bafeb272051715a97fa7c186de" args="" -->ELM_LIST_EXPAND</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1"></a><!-- doxytag: member="ELM_LIST_LIMIT" ref="ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1" args="" -->ELM_LIST_LIMIT</em>&nbsp;</td><td>
 <p>Sets a minimum size hint on the list object, so that containers may respect it (and resize itself to fit the child properly). More specifically, a minimum size hint will be set for its transverse axis, so that the largest item in that direction fits well. This is naturally bound by the list object's maximum size hints, set externally. </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad05499f0b0c907a953ef8650823ae428a6a72b4bafeb272051715a97fa7c186de"></a><!-- doxytag: member="ELM_LIST_EXPAND" ref="ggad05499f0b0c907a953ef8650823ae428a6a72b4bafeb272051715a97fa7c186de" args="" -->ELM_LIST_EXPAND</em>&nbsp;</td><td>
+<p>Besides setting a minimum size on the transverse axis, just like on <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">Elm_List_Mode::ELM_LIST_LIMIT</a>, the list will set a minimum size on th longitudinal axis, trying to reserve space to all its children to be visible at a time. . This is naturally bound by the list object's maximum size hints, set externally. </p>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggad05499f0b0c907a953ef8650823ae428a2b4014f48a6ef7471e6d3b90584c0b7b"></a><!-- doxytag: member="ELM_LIST_LAST" ref="ggad05499f0b0c907a953ef8650823ae428a2b4014f48a6ef7471e6d3b90584c0b7b" args="" -->ELM_LIST_LAST</em>&nbsp;</td><td>
-<p>Besides setting a minimum size on the transverse axis, just like on <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">Elm_List_Mode::ELM_LIST_LIMIT</a>, the list will set a minimum size on th longitudinal axis, trying to reserve space to all its children to be visible at a time. . This is naturally bound by the list object's maximum size hints, set externally. Indicates error if returned by <a class="el" href="group__Elm__List.html#gae27f6dde507d2915b7bca4a5de7ad8be" title="Control which mode to use for the list object.">elm_list_mode_get()</a>. </p>
+<p>Indicates error if returned by <a class="el" href="group__Elm__List.html#gae27f6dde507d2915b7bca4a5de7ad8be" title="Control which mode to use for the list object.">elm_list_mode_get()</a>. </p>
 </td></tr>
 </table>
 </dd>
@@ -1003,7 +997,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>One of <a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428" title="Set list&#39;s resizing behavior, transverse axis scrolling and items cropping. See each mode&#39;s descripti...">Elm_List_Mode</a>: #ELM_LIST_COMPRESS, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a> or <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a6a72b4bafeb272051715a97fa7c186de">ELM_LIST_EXPAND</a>. </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>One of <a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428" title="Set list&#39;s resizing behavior, transverse axis scrolling and items cropping. See each mode&#39;s descripti...">Elm_List_Mode</a>: <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497">ELM_LIST_COMPRESS</a>, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a> or <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a6a72b4bafeb272051715a97fa7c186de">ELM_LIST_EXPAND</a>. </dd></dl>
 
 </div>
 </div>
@@ -1041,7 +1035,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>One of <a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428" title="Set list&#39;s resizing behavior, transverse axis scrolling and items cropping. See each mode&#39;s descripti...">Elm_List_Mode</a>: #ELM_LIST_COMPRESS, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a> or <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a6a72b4bafeb272051715a97fa7c186de">ELM_LIST_EXPAND</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>One of <a class="el" href="group__Elm__List.html#gad05499f0b0c907a953ef8650823ae428" title="Set list&#39;s resizing behavior, transverse axis scrolling and items cropping. See each mode&#39;s descripti...">Elm_List_Mode</a>: <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428ae56e6756bfcf33e3a53fb14acf8d3497">ELM_LIST_COMPRESS</a>, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a66e50ab227b49eaecd5512fbf6cd4b5f">ELM_LIST_SCROLL</a>, <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a9d8b034ab975f9a14d542069271408a1">ELM_LIST_LIMIT</a> or <a class="el" href="group__Elm__List.html#ggad05499f0b0c907a953ef8650823ae428a6a72b4bafeb272051715a97fa7c186de">ELM_LIST_EXPAND</a>. </td></tr>
   </table>
   </dd>
 </dl>

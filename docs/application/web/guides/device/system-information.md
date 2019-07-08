@@ -234,6 +234,29 @@ To receive notifications on property value changes:
    var id = tizen.systeminfo.addPropertyValueArrayChangeListener('SIM', successCallback);
    ```
 
+
+> **Note**  
+> In case of `WIFI_NETWORK` property, value change listener is triggered on `ipAddress` and `ip6Address` properties change in the network layer. These changes are not consistent with the `status` or `signalStrength` properties of a physical adapter in physical layer.  
+According to the previous constraints, in a specific situation, the listener could be triggered just before network adapter shutdown. In this case, the value of `status` returned by the listener will be outdated.
+
+To ensure receiving proper values, use the following code example:
+
+```
+function errorCallback(err) {
+    console.log('Error occurred ' + err.code)
+};
+
+function successCallback() {
+    setTimeout(function() {
+        tizen.systeminfo.getPropertyValue('WIFI_NETWORK', function(wifi) {
+            console.log("Wi-Fi status: " + wifi.status);
+        }, errorCallback);
+    }, 500);
+};
+
+tizen.systeminfo.addPropertyValueChangeListener('WIFI_NETWORK', successCallback, errorCallback);
+```
+
 <a name="property"></a>
 ## System Information Properties
 

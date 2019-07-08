@@ -101,7 +101,7 @@ Required Header</h2>
 <h2><a class="anchor" id="CAPI_MEDIA_CONTROLLER_CLIENT_MODULE_OVERVIEW"></a>
 Overview</h2>
 <p>The <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html">Media Controller Client</a> API allows you to check the activated server status (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaeb8b2bb1db1c9ce8063d7a3a42f55186" title="Sets the callback for monitoring status of the media controller server.">mc_client_set_server_updated_cb()</a>), the playback info (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga1c5a287814920e223e834bc7b4741686" title="Sets the callback for monitoring playback status of the media controller server.">mc_client_set_playback_updated_cb()</a>), the metadata (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga662816917c82d04f301443ebb63b508c" title="Sets the callback for monitoring metadata status of the media controller server.">mc_client_set_metadata_updated_cb()</a>) or the playlist(<a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga1bf906a3e3c07b8fd66f34324a83936c" title="Sets the callback for monitoring playlist status of the media controller server.">mc_client_set_playlist_updated_cb()</a>). <br/>
- And client can send the custom command to server(<a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga5bb8f85187dccf555e95b15197e7e4ea" title="Sends the custom command to server.">mc_client_send_custom_command()</a>). <br/>
+ And client can send the custom command to server(<a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gabe2001b434f82f4931926b3f8b5903ec" title="Sends the custom command to server.">mc_client_send_custom_cmd()</a>). <br/>
  Before doing those things you should create handle(<a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga9da7f1ab103ed4bcda2453a8005d07c9" title="Creates a media controller client.">mc_client_create()</a>). And if you don't use handle anymore, you have to destroy it(<a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga17982b30df83659216d9ed9ad9b36705" title="Destroys client.">mc_client_destroy()</a>). If there is no the activated server, you can get the latest server information by using <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaedb77a0863a1015fea16c5848c5d9a1a" title="Gets the latest media controller server info.">mc_client_get_latest_server_info()</a>. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -382,7 +382,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when receiving the command processing result from the server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000269">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga5d5aac76ba266e34bc33f7c2785478be" title="Called when the result of the command from the server is received.">mc_cmd_reply_received_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000353">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga5d5aac76ba266e34bc33f7c2785478be" title="Called when the result of the command from the server is received.">mc_cmd_reply_received_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The callback is called in the dbus event loop. <em>data</em> should be released using <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#ga21054ad876bff896d38a08ebdc14a1b1" title="Frees the given bundle object with key-value pairs in it.">bundle_free()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -569,7 +569,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when updating the repeat mode of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000268">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaf93aa117208379e0d0c7a4c3fe758782" title="Called when updating the repeat mode of the media controller server.">mc_repeat_mode_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000352">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaf93aa117208379e0d0c7a4c3fe758782" title="Called when updating the repeat mode of the media controller server.">mc_repeat_mode_updated_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The callback is called in the dbus event loop.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -681,7 +681,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when updating the shuffle mode of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000267">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga853019c6d25d75bd2504ac781d6ad969" title="Called when updating the shuffle mode of the media controller server.">mc_shuffle_mode_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000351">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga853019c6d25d75bd2504ac781d6ad969" title="Called when updating the shuffle mode of the media controller server.">mc_shuffle_mode_updated_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The callback is called in the dbus event loop.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -849,7 +849,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Destroys metadata. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000282">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__METADATA__MODULE.html#gac8fb1f3b20b2da96862dddac9028f1e4" title="Destroys a media controller metadata handle.">mc_metadata_destroy()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000366">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__METADATA__MODULE.html#gac8fb1f3b20b2da96862dddac9028f1e4" title="Destroys a media controller metadata handle.">mc_metadata_destroy()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1249,7 +1249,7 @@ Subscribe the media controller server for monitoring status by calling <a class=
 <div class="memdoc">
 
 <p>Gets the metadata. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000281">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__METADATA__MODULE.html#ga1d2ea760ba7c526429edfcaa578a4300" title="Gets the metadata.">mc_metadata_get()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000365">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__METADATA__MODULE.html#ga1d2ea760ba7c526429edfcaa578a4300" title="Gets the metadata.">mc_metadata_get()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>metadata</em> should be released using <code><a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga5eb346756f1571dfeb3914020c4e0ac8" title="Destroys metadata.">mc_client_destroy_metadata()</a></code>. <br/>
  And also The <em>value</em> should be released using free(). If the attribute value of the metadata is empty, return value is NULL.</dd></dl>
@@ -1451,7 +1451,7 @@ Subscribe the media controller server for monitoring status by calling <a class=
 <div class="memdoc">
 
 <p>Gets the index of the media in playlist. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000280">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga7ee6c8278eda2943a1e92ec4700db6ef" title="Gets the playlist name and index of the media in playlist.">mc_client_get_playlist_item_info()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000364">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga7ee6c8278eda2943a1e92ec4700db6ef" title="Gets the playlist name and index of the media in playlist.">mc_client_get_playlist_item_info()</a> instead. </dd></dl>
 <p>Gets the index of the current playing media in a playlist. If the media controller server didn't set the index, the value is NULL. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -2173,7 +2173,7 @@ Get a server name handle by calling <a class="el" href="group__CAPI__MEDIA__CONT
 <div class="memdoc">
 
 <p>Sends the custom command to server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000284">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gabe2001b434f82f4931926b3f8b5903ec" title="Sends the custom command to server.">mc_client_send_custom_cmd()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000368">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gabe2001b434f82f4931926b3f8b5903ec" title="Sends the custom command to server.">mc_client_send_custom_cmd()</a> instead. </dd></dl>
 <p>If there is the result for command from server, the media controller client will get the result of the custom command by <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga1ac698b2b90d08def825662f8e0c3702" title="Called when receiving the command processing result from the server.">mc_command_reply_received_cb()</a> callback. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -2458,7 +2458,7 @@ Get a server name handle by calling <a class="el" href="group__CAPI__MEDIA__CONT
 <div class="memdoc">
 
 <p>Sends the playback state command to server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000283">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga9068b1d2a12c1f21f1feb7eb4ed474b9" title="Sends the playback action command to server.">mc_client_send_playback_action_cmd()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000367">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga9068b1d2a12c1f21f1feb7eb4ed474b9" title="Sends the playback action command to server.">mc_client_send_playback_action_cmd()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.client</dd></dl>
@@ -2959,7 +2959,7 @@ Create search handle and set data by calling <a class="el" href="group__CAPI__ME
 <div class="memdoc">
 
 <p>Sets the callback for monitoring metadata status of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000274">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga662816917c82d04f301443ebb63b508c" title="Sets the callback for monitoring metadata status of the media controller server.">mc_client_set_metadata_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000358">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga662816917c82d04f301443ebb63b508c" title="Sets the callback for monitoring metadata status of the media controller server.">mc_client_set_metadata_updated_cb()</a> instead. </dd></dl>
 <p>The media controller client which calls this function will receive notifications from all media controller servers. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -3144,7 +3144,7 @@ Create search handle and set data by calling <a class="el" href="group__CAPI__ME
 <div class="memdoc">
 
 <p>Sets the callback for monitoring playback status of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000272">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga1c5a287814920e223e834bc7b4741686" title="Sets the callback for monitoring playback status of the media controller server.">mc_client_set_playback_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000356">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga1c5a287814920e223e834bc7b4741686" title="Sets the callback for monitoring playback status of the media controller server.">mc_client_set_playback_updated_cb()</a> instead. </dd></dl>
 <p>The media controller client which calls this function will receive notifications from all media controller servers. <br/>
  </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
@@ -3397,7 +3397,7 @@ Create search handle and set data by calling <a class="el" href="group__CAPI__ME
 <div class="memdoc">
 
 <p>Sets the callback for monitoring repeat mode of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000278">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga63594bd12a7ae59724143a3479821187" title="Sets the callback for monitoring repeat mode of the media controller server.">mc_client_set_repeat_mode_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000362">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga63594bd12a7ae59724143a3479821187" title="Sets the callback for monitoring repeat mode of the media controller server.">mc_client_set_repeat_mode_updated_cb()</a> instead. </dd></dl>
 <p>The media controller client which calls this function will receive notifications from all media controller servers. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -3520,7 +3520,7 @@ Create search handle and set data by calling <a class="el" href="group__CAPI__ME
 <div class="memdoc">
 
 <p>Sets the callback for monitoring status of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000270">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaeb8b2bb1db1c9ce8063d7a3a42f55186" title="Sets the callback for monitoring status of the media controller server.">mc_client_set_server_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000354">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaeb8b2bb1db1c9ce8063d7a3a42f55186" title="Sets the callback for monitoring status of the media controller server.">mc_client_set_server_updated_cb()</a> instead. </dd></dl>
 <p>The media controller client which calls this function will receive notifications from all media controller servers. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -3705,7 +3705,7 @@ Create search handle and set data by calling <a class="el" href="group__CAPI__ME
 <div class="memdoc">
 
 <p>Sets the callback for monitoring shuffle mode of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000276">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gac99e3edf97eaeb948b0a2eb658cd5e59" title="Sets the callback for monitoring shuffle mode of the media controller server.">mc_client_set_shuffle_mode_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000360">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gac99e3edf97eaeb948b0a2eb658cd5e59" title="Sets the callback for monitoring shuffle mode of the media controller server.">mc_client_set_shuffle_mode_updated_cb()</a> instead. </dd></dl>
 <p>The media controller client which calls this function will receive notifications from all media controller servers. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -3973,7 +3973,7 @@ Set the callback for monitoring status of the media controller server </dd></dl>
 <div class="memdoc">
 
 <p>Unsets the callback for monitoring metadata status of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000275">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga9523c79eb4fc009a44800cd1b851b36c" title="Unsets the callback for monitoring metadata status of the media controller server.">mc_client_unset_metadata_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000359">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga9523c79eb4fc009a44800cd1b851b36c" title="Unsets the callback for monitoring metadata status of the media controller server.">mc_client_unset_metadata_updated_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.client</dd></dl>
@@ -4099,7 +4099,7 @@ Set the callback for monitoring status of the media controller server </dd></dl>
 <div class="memdoc">
 
 <p>Unsets the callback for monitoring playback status of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000273">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gab39bf11704ec9c3f7f7db97b9b66587b" title="Unsets the callback for monitoring playback status of the media controller server.">mc_client_unset_playback_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000357">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gab39bf11704ec9c3f7f7db97b9b66587b" title="Unsets the callback for monitoring playback status of the media controller server.">mc_client_unset_playback_updated_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.client</dd></dl>
@@ -4269,7 +4269,7 @@ Set the callback for monitoring status of the media controller server </dd></dl>
 <div class="memdoc">
 
 <p>Unsets the callback for monitoring repeat mode of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000279">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gae9a8c5880c81529097dba752fab305f4" title="Unsets the callback for monitoring repeat mode of the media controller server.">mc_client_unset_repeat_mode_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000363">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gae9a8c5880c81529097dba752fab305f4" title="Unsets the callback for monitoring repeat mode of the media controller server.">mc_client_unset_repeat_mode_updated_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.client</dd></dl>
@@ -4353,7 +4353,7 @@ Set the callback for monitoring status of the media controller server </dd></dl>
 <div class="memdoc">
 
 <p>Unsets the callback for monitoring status of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000271">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga0f1c7ae7bde27b655c5ec9cb5aaac94a" title="Unsets the callback for monitoring status of the media controller server.">mc_client_unset_server_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000355">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#ga0f1c7ae7bde27b655c5ec9cb5aaac94a" title="Unsets the callback for monitoring status of the media controller server.">mc_client_unset_server_updated_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.client</dd></dl>
@@ -4479,7 +4479,7 @@ Set the callback for monitoring status of the media controller server </dd></dl>
 <div class="memdoc">
 
 <p>Unsets the callback for monitoring shuffle mode of the media controller server. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000277">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaede694529c4842f5ea51a5751b5fd9e0" title="Unsets the callback for monitoring shuffle mode of the media controller server.">mc_client_unset_shuffle_mode_updated_cb()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000361">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html#gaede694529c4842f5ea51a5751b5fd9e0" title="Unsets the callback for monitoring shuffle mode of the media controller server.">mc_client_unset_shuffle_mode_updated_cb()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.client</dd></dl>

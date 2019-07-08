@@ -59,7 +59,7 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
      The HW virtualization feature can also be disabled on the BIOS setting. Check the setting and enable it if you need the feature.
 
-   - In Windows&reg;
+   - In Windows&reg;:
 
      To use HAX, you need an Intel VT-x-supported CPU, and you must enable the NX-related setting in the PC BIOS.
 
@@ -513,10 +513,10 @@ The following tables describe the differences between a real target device and t
 
 **Table: Telephony differences**
 
-| Category  |               | Physical target                    | Emulator                               |
-|-----------|---------------|------------------------------------|----------------------------------------|
-| Telephony | Call            | Calls and video calls are supported. | Call waiting, outgoing call barring, and voice calls with the Emulator Control Panel are supported. <br>Video calls, call forwarding, incoming call barring, and emulator-to-emulator calls are not supported. |
-| Telephony | SMS             | SMS messaging is supported.          | SMS messaging with the Emulator Control Panel is supported. <br>Sending emulator-to-emulator SMS messages is not supported. |
+| Category  | Physical target                    | Emulator                               |
+|-----------|------------------------------------|----------------------------------------|
+| Call      | Calls and video calls are supported. | Call waiting, outgoing call barring, and voice calls with the Emulator Control Panel are supported. <br>Video calls, call forwarding, incoming call barring, and emulator-to-emulator calls are not supported. |
+| SMS       | SMS messaging is supported.          | SMS messaging with the Emulator Control Panel is supported. <br>Sending emulator-to-emulator SMS messages is not supported. |
 
 <a name="power"></a>
 #### Power Management

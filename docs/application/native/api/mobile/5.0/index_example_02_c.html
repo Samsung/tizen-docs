@@ -90,7 +90,136 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">Index example </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="fragment"><pre class="fragment"></pre></div> </div></div><!-- contents -->
+<div class="textblock"><div class="fragment"><pre class="fragment">
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *items[] =
+{
+   <span class="stringliteral">&quot;Judith&quot;</span>,
+   <span class="stringliteral">&quot;Paulina&quot;</span>,
+   <span class="stringliteral">&quot;Cathy&quot;</span>,
+   <span class="stringliteral">&quot;Vendella&quot;</span>,
+   <span class="stringliteral">&quot;Naomi&quot;</span>,
+   <span class="stringliteral">&quot;Ashley&quot;</span>,
+   <span class="stringliteral">&quot;Stacey&quot;</span>,
+   <span class="stringliteral">&quot;Gail&quot;</span>
+};
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_index_changed(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+               <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+               <span class="keywordtype">void</span>        *event_info)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *item = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(event_info);
+   elm_gengrid_item_bring_in(item, ELM_GENGRID_ITEM_SCROLLTO_IN);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">char</span> *
+_grid_label_get(<span class="keywordtype">void</span>        *data,
+                <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                <span class="keyword">const</span> <span class="keywordtype">char</span>  *part EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> idx = (int)(uintptr_t)data;
+   <span class="keywordflow">return</span> strdup(items[idx]);
+}
+
+<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
+_grid_content_get(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+                  <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+                  <span class="keyword">const</span> <span class="keywordtype">char</span>  *part)
+{
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.icon&quot;</span>))
+     {
+        <span class="keywordtype">char</span> buf[PATH_MAX];
+        snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/%s&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>(),
+                 <span class="stringliteral">&quot;sky_01.jpg&quot;</span>);
+
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *icon = <a class="code" href="group__Elm__Bg.html#gaeec8f79ac62ce0cf607cfe330008a63f" title="Adds a new background to the parent.">elm_bg_add</a>(obj);
+        <a class="code" href="group__Elm__Bg.html#ga0b11c11879de61126414adfbfe3e431c" title="Sets the file (image or edje collection) to give life for the background.">elm_bg_file_set</a>(icon, buf, NULL);
+        evas_object_size_hint_aspect_set(icon, EVAS_ASPECT_CONTROL_VERTICAL, 1,
+                                         1);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
+        <span class="keywordflow">return</span> icon;
+     }
+
+   <span class="keywordflow">return</span> NULL;
+}
+
+<span class="comment">/* ordering alphabetically */</span>
+<span class="keyword">static</span> <span class="keywordtype">int</span>
+_index_icmp(<span class="keyword">const</span> <span class="keywordtype">void</span> *data1,
+            <span class="keyword">const</span> <span class="keywordtype">void</span> *data2)
+{
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *label1, *label2;
+
+   <span class="keyword">const</span> <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *index_it1 = data1;
+   <span class="keyword">const</span> <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *index_it2 = data2;
+
+   label1 = elm_index_item_letter_get(index_it1);
+   label2 = elm_index_item_letter_get(index_it2);
+
+   <span class="keywordflow">return</span> strcasecmp(label1, label2);
+}
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span>    argc EINA_UNUSED,
+         <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *grid, *idx;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *gg_it;
+   <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i;
+
+   <a class="code" href="struct__Elm__Gen__Item__Class.html">Elm_Gengrid_Item_Class</a> gic;
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;images&quot;</span>);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;index&quot;</span>, <span class="stringliteral">&quot;Index Example&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   grid = <a class="code" href="group__Elm__Gengrid.html#ga9ab2e5b38433f1021c01d0f71397266c">elm_gengrid_add</a>(win);
+   <a class="code" href="group__Elm__Gengrid.html#gadea5cce647305f0a8f7bca8778131754" title="Set the Gengrid reorder type.">elm_gengrid_item_size_set</a>(grid, 150, 150);
+
+   gic.<a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;default&quot;</span>;
+   gic.<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = _grid_label_get;
+   gic.<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a796220b356374cd6395bcd2c3668f8d8">content_get</a> = _grid_content_get;
+   gic.<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a23a335ae22003578adc536313f21e6e5">state_get</a> = NULL;
+   gic.<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a29069fe3b82c13e822a3ce515e12dac0">del</a> = NULL;
+
+   evas_object_size_hint_weight_set(grid, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, grid);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(grid);
+
+   idx = <a class="code" href="group__Elm__Index.html#gaf7fda3a54ca154cdc754326137f3737e">elm_index_add</a>(win);
+   evas_object_size_hint_weight_set(idx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, idx);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(idx);
+
+   <span class="keywordflow">for</span> (i = 0; i &lt; (<span class="keyword">sizeof</span>(items) / <span class="keyword">sizeof</span>(items[0])); i++)
+     {
+        <span class="keywordtype">char</span> buf[32];
+
+        gg_it = <a class="code" href="group__Elm__Gengrid.html#gaa62e4e2954dcf86aa4f5e028654eb6e5" title="Append a new item in a given gengrid widget.">elm_gengrid_item_append</a>(grid, &amp;gic, (<span class="keywordtype">void</span> *)(uintptr_t)i, NULL, NULL);
+
+        <span class="comment">/* indexing by first letters */</span>
+        snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%c&quot;</span>, items[i][0]);
+        <a class="code" href="group__Elm__Index.html#gab62ded1b310fde295a3d59ea5172e639" title="Insert a new item into the given index widget, using cmp_func function to sort items (by item handles...">elm_index_item_sorted_insert</a>(idx, buf, NULL, gg_it, _index_icmp, NULL);
+     }
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(idx, <span class="stringliteral">&quot;delay,changed&quot;</span>, _index_changed, NULL);
+
+   <a class="code" href="group__Elm__Index.html#ga6569179b38d11fb5fb1286815cf846fb" title="Enable or disable auto hiding feature for a given index widget.">elm_index_autohide_disabled_set</a>(idx, EINA_FALSE);
+   <a class="code" href="group__Elm__Index.html#ga3bb92a868f63463403668a4bbcda21d1" title="Flush the changes made to the index items so they work correctly.">elm_index_level_go</a>(idx, 0);
+
+   evas_object_resize(win, 320, 300);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
     <ul>

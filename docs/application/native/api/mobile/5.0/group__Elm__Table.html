@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Table</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__container__group.html">Elementary Containers</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -100,11 +100,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The row and column count is not fixed. The table widget adjusts itself when subobjects are added to it dynamically.</p>
 <p>The most common way to use a table is: </p>
 <div class="fragment"><pre class="fragment"> table = <a class="code" href="group__Elm__Table.html#gabb4d507c8b02acd001e998ae424335f4" title="Add a new table to the parent.">elm_table_add</a>(win);
- <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(table);
- <a class="code" href="group__Elm__Table.html#ga8ce7bb29e61217c075a1f6a93f807c7e" title="Set padding between cells. Default value is 0.">elm_table_padding_set</a>(table, space_between_columns, space_between_rows);
- <a class="code" href="group__Elm__Table.html#gaab5d72e0425d3aa4530dbad0985ca8f4" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, table_content_object, column, row, colspan, rowspan);
- <a class="code" href="group__Elm__Table.html#gaab5d72e0425d3aa4530dbad0985ca8f4" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, table_content_object, next_column, next_row, colspan, rowspan);
- <a class="code" href="group__Elm__Table.html#gaab5d72e0425d3aa4530dbad0985ca8f4" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, table_content_object, other_column, other_row, colspan, rowspan);
+ <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(table);
+ <a class="code" href="group__Elm__Table.html#ga6e3265352d1c692d0d4e746814d7deb7" title="Set padding between cells. Default value is 0.">elm_table_padding_set</a>(table, space_between_columns, space_between_rows);
+ <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, table_content_object, column, row, colspan, rowspan);
+ <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, table_content_object, next_column, next_row, colspan, rowspan);
+ <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, table_content_object, other_column, other_row, colspan, rowspan);
 </pre></div><p>The following are examples of how to use a table: </p>
 <ul>
 <li><a class="el" href="tutorial_table_01.html">tutorial_table_01</a> </li>
@@ -117,22 +117,22 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the homogenous state in a table.  <a href="#ga08704fb2725f0beeef6e44a340b6608c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga766f4382093640ef53f5898fd8e2b537">elm_table_homogeneous_get</a> (const Elm_Table *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the homogenous state in a table.  <a href="#ga766f4382093640ef53f5898fd8e2b537"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga8ce7bb29e61217c075a1f6a93f807c7e">elm_table_padding_set</a> (Elm_Table *obj, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> horizontal, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> vertical)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set padding between cells. Default value is 0.  <a href="#ga8ce7bb29e61217c075a1f6a93f807c7e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#gab81447a3d40713721fa7d58e753bd3f2">elm_table_padding_get</a> (const Elm_Table *obj, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *horizontal, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *vertical)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get padding between cells.  <a href="#gab81447a3d40713721fa7d58e753bd3f2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga6e3265352d1c692d0d4e746814d7deb7">elm_table_padding_set</a> (Elm_Table *obj, int horizontal, int vertical)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set padding between cells. Default value is 0.  <a href="#ga6e3265352d1c692d0d4e746814d7deb7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga43207c6c48c9f9c838e2bede2e295292">elm_table_padding_get</a> (const Elm_Table *obj, int *horizontal, int *vertical)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get padding between cells.  <a href="#ga43207c6c48c9f9c838e2bede2e295292"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga5b8fccd2ed133f6bfe8fc3d77b45a120">elm_table_align_set</a> (Elm_Table *obj, double horizontal, double vertical)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set alignment of table. Default value is 0.5.  <a href="#ga5b8fccd2ed133f6bfe8fc3d77b45a120"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga600925e3b558888fcf9f012f3f5a7bf2">elm_table_align_get</a> (const Elm_Table *obj, double *horizontal, double *vertical)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get alignment of table.  <a href="#ga600925e3b558888fcf9f012f3f5a7bf2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga521ce72d07b98f49dc25229242bc0f9b">elm_table_clear</a> (Elm_Table *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> clear)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Faster way to remove all child objects from a table object.  <a href="#ga521ce72d07b98f49dc25229242bc0f9b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga02a6c16d7a8ef3b395ebf2e57008210e">elm_table_child_get</a> (const Elm_Table *obj, int col, int row)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get child object of table at given coordinates.  <a href="#ga02a6c16d7a8ef3b395ebf2e57008210e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga2b413a8ac7f9a3e5092277ffabdb2eff">elm_table_unpack</a> (Elm_Table *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *subobj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove child from table.  <a href="#ga2b413a8ac7f9a3e5092277ffabdb2eff"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#gaab5d72e0425d3aa4530dbad0985ca8f4">elm_table_pack</a> (Elm_Table *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *subobj, int column, int row, int colspan, int rowspan)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a subobject on the table with the coordinates passed.  <a href="#gaab5d72e0425d3aa4530dbad0985ca8f4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#gae41a512be012ce042dc6d033c26d6192">elm_table_child_get</a> (const Elm_Table *obj, int col, int row)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get child object of table at given coordinates.  <a href="#gae41a512be012ce042dc6d033c26d6192"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga5dd84389e4df541ddc6a27b7c4fb4c50">elm_table_unpack</a> (Elm_Table *obj, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *subobj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove child from table.  <a href="#ga5dd84389e4df541ddc6a27b7c4fb4c50"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388">elm_table_pack</a> (Elm_Table *obj, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *subobj, int column, int row, int colspan, int rowspan)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a subobject on the table with the coordinates passed.  <a href="#ga7bdb25e5bf48d7d8101379600fcfa388"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#gabb4d507c8b02acd001e998ae424335f4">elm_table_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new table to the parent.  <a href="#gabb4d507c8b02acd001e998ae424335f4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Table.html#gac4604f1d9855a680a240e4c5d9a85032">elm_table_pack_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *subobj, int col, int row, int colspan, int rowspan)</td></tr>
@@ -163,9 +163,10 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="mapbuf_example_8c-example.html#a14">mapbuf_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a5">table_example_01.c</a>, and <a class="el" href="table_example_02_8c-example.html#a5">table_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga600925e3b558888fcf9f012f3f5a7bf2"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_align_get" ref="ga600925e3b558888fcf9f012f3f5a7bf2" args="(const Elm_Table *obj, double *horizontal, double *vertical)" -->
@@ -200,7 +201,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get alignment of table. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -210,6 +210,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -245,7 +246,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Set alignment of table. Default value is 0.5. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -255,15 +255,16 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga02a6c16d7a8ef3b395ebf2e57008210e"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_child_get" ref="ga02a6c16d7a8ef3b395ebf2e57008210e" args="(const Elm_Table *obj, int col, int row)" -->
+<a class="anchor" id="gae41a512be012ce042dc6d033c26d6192"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_child_get" ref="gae41a512be012ce042dc6d033c26d6192" args="(const Elm_Table *obj, int col, int row)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__Table.html#ga02a6c16d7a8ef3b395ebf2e57008210e">elm_table_child_get</a> </td>
+          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a>* <a class="el" href="group__Elm__Table.html#gae41a512be012ce042dc6d033c26d6192">elm_table_child_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Table *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -290,7 +291,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get child object of table at given coordinates. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -300,6 +300,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Child of object if find if not return <code>null</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -329,14 +330,14 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Faster way to remove all child objects from a table object. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">clear</td><td>If true, will delete children, else just remove from table. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">clear</td><td>If <code>true</code>, will delete children, else just remove from table. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -356,7 +357,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Control the homogenous state in a table. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -364,6 +364,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A boolean to set if the layout is homogeneous in the table. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -393,7 +394,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Control the homogenous state in a table. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -401,15 +401,17 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="table_example_01_8c-example.html#a9">table_example_01.c</a>, and <a class="el" href="table_example_02_8c-example.html#a8">table_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gaab5d72e0425d3aa4530dbad0985ca8f4"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_pack" ref="gaab5d72e0425d3aa4530dbad0985ca8f4" args="(Elm_Table *obj, Evas_Object *subobj, int column, int row, int colspan, int rowspan)" -->
+<a class="anchor" id="ga7bdb25e5bf48d7d8101379600fcfa388"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_pack" ref="ga7bdb25e5bf48d7d8101379600fcfa388" args="(Elm_Table *obj, Efl_Canvas_Object *subobj, int column, int row, int colspan, int rowspan)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Table.html#gaab5d72e0425d3aa4530dbad0985ca8f4">elm_table_pack</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388">elm_table_pack</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Table *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -417,7 +419,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td>
           <td class="paramname"><em>subobj</em>, </td>
         </tr>
         <tr>
@@ -457,19 +459,20 @@ Functions</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>All positioning inside the table is relative to rows and columns, so a value of 0 for x and y, means the top left cell of the table, and a value of 1 for w and h means <code>subobj</code> only takes that 1 cell.</dd>
 <dd>
 Columns and rows only guarantee 16bit unsigned values at best. That means that col + colspan AND row + rowspan must fit inside 16bit unsigned values cleanly. You will be warned once values exceed 15bit storage, and attempting to use values not able to fit in 16bits will result in failure.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">subobj</td><td>The subobject to be added to the table. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">column</td><td>Column number. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">row</td><td>Row number. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">colspan</td><td></td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rowspan</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">colspan</td><td>Columns span. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rowspan</td><td>Rows span. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="mapbuf_example_8c-example.html#a19">mapbuf_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a11">table_example_01.c</a>, and <a class="el" href="table_example_02_8c-example.html#a12">table_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga76a90f70d22abe84c65ef3293c7450ee"></a><!-- doxytag: member="elm_table_legacy.h::elm_table_pack_get" ref="ga76a90f70d22abe84c65ef3293c7450ee" args="(Evas_Object *subobj, int *col, int *row, int *colspan, int *rowspan)" -->
@@ -526,7 +529,7 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Table.html#gac4604f1d9855a680a240e4c5d9a85032" title="Set the packing location of an existing child of the table.">elm_table_pack_set()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Table.html#gac4604f1d9855a680a240e4c5d9a85032" title="Set the packing location of an existing child of the table.">elm_table_pack_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -586,17 +589,17 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
   </dd>
 </dl>
 <p>Modifies the position of an object already in the table.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>All positioning inside the table is relative to rows and columns, so a value of 0 for col and row, means the top left cell of the table, and a value of 1 for colspan and rowspan means <code>subobj</code> only takes that 1 cell.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>All positioning inside the table is relative to rows and columns, so a value of 0 for col and row, means the top left cell of the table, and a value of 1 for colspan and rowspan means <code>subobj</code> only takes that 1 cell. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gab81447a3d40713721fa7d58e753bd3f2"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_padding_get" ref="gab81447a3d40713721fa7d58e753bd3f2" args="(const Elm_Table *obj, Evas_Coord *horizontal, Evas_Coord *vertical)" -->
+<a class="anchor" id="ga43207c6c48c9f9c838e2bede2e295292"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_padding_get" ref="ga43207c6c48c9f9c838e2bede2e295292" args="(const Elm_Table *obj, int *horizontal, int *vertical)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Table.html#gab81447a3d40713721fa7d58e753bd3f2">elm_table_padding_get</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Table.html#ga43207c6c48c9f9c838e2bede2e295292">elm_table_padding_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Table *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -604,13 +607,13 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>horizontal</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">int *&#160;</td>
           <td class="paramname"><em>vertical</em>&#160;</td>
         </tr>
         <tr>
@@ -623,7 +626,6 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
 <div class="memdoc">
 
 <p>Get padding between cells. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -632,15 +634,16 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga8ce7bb29e61217c075a1f6a93f807c7e"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_padding_set" ref="ga8ce7bb29e61217c075a1f6a93f807c7e" args="(Elm_Table *obj, Evas_Coord horizontal, Evas_Coord vertical)" -->
+<a class="anchor" id="ga6e3265352d1c692d0d4e746814d7deb7"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_padding_set" ref="ga6e3265352d1c692d0d4e746814d7deb7" args="(Elm_Table *obj, int horizontal, int vertical)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Table.html#ga8ce7bb29e61217c075a1f6a93f807c7e">elm_table_padding_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Table.html#ga6e3265352d1c692d0d4e746814d7deb7">elm_table_padding_set</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Table *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -648,13 +651,13 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>horizontal</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>vertical</em>&#160;</td>
         </tr>
         <tr>
@@ -667,7 +670,6 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
 <div class="memdoc">
 
 <p>Set padding between cells. Default value is 0. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -676,15 +678,17 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="table_example_01_8c-example.html#a8">table_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="ga2b413a8ac7f9a3e5092277ffabdb2eff"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_unpack" ref="ga2b413a8ac7f9a3e5092277ffabdb2eff" args="(Elm_Table *obj, Evas_Object *subobj)" -->
+<a class="anchor" id="ga5dd84389e4df541ddc6a27b7c4fb4c50"></a><!-- doxytag: member="elm_table.eo.legacy.h::elm_table_unpack" ref="ga5dd84389e4df541ddc6a27b7c4fb4c50" args="(Elm_Table *obj, Efl_Canvas_Object *subobj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Table.html#ga2b413a8ac7f9a3e5092277ffabdb2eff">elm_table_unpack</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Table.html#ga5dd84389e4df541ddc6a27b7c4fb4c50">elm_table_unpack</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Table *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -692,7 +696,7 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td>
           <td class="paramname"><em>subobj</em>&#160;</td>
         </tr>
         <tr>
@@ -705,7 +709,6 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
 <div class="memdoc">
 
 <p>Remove child from table. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -713,6 +716,7 @@ Columns and rows only guarantee 16bit unsigned values at best. That means that c
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

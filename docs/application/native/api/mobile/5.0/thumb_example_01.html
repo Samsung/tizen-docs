@@ -92,7 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This example shows how to create a simple thumbnail object with Elementary. The full source code can be found at <a class="el" href="thumb_example_01_c.html">thumb_example_01.c</a></p>
 <p>Everything is very simple. First we need to tell elementary that we need Ethumb to generate the thumbnails:</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment">   elm_need_ethumb();
+</pre></div></p>
 <p>Then, after creating the window and background, we setup our client to generate images of 160x160:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>After that, we can start creating thumbnail objects. They are very similar to image or icon objects:</p>
