@@ -1927,7 +1927,7 @@ The ErrorCallback is launched with these error types:
   };
 
   var classOfInstruction = 0x00;   /* No SM or no SM indication. */
-  var instructionCode = 0xA4;      /* Select File. */
+  var instructionCode = 0xa4;      /* Select File. */
   var firstParam = 0x04;           /* Direct selection by DF name. */
   var secondParam = 0x00;          /* First record. */
   var dataFieldLength = 0x03;      /* Variable length 1 or 3 bytes. */
@@ -1936,7 +1936,8 @@ The ErrorCallback is launched with these error types:
 
   var apdu_response = [];
   apdu_response = apdu_response.concat([classOfInstruction], [instructionCode], [firstParam],
-      [secondParam], [dataFieldLength], bytes, [maxBytesExpected]);  /* Sets apdu response. */
+      [secondParam], [dataFieldLength], bytes,
+      [maxBytesExpected]);  /* Sets apdu response. */
   adapter.sendHostAPDUResponse(apdu_response, successCB, errorCB);
 }
 catch (err)
@@ -3236,9 +3237,10 @@ catch (err)
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
-  var type = new Array(255), var payload = new Array(256), var recordId = [155, 150],
-      var newRecord =
-          new tizen.NDEFRecord(tizen.nfc.NFC_RECORD_TNF_UNKNOWN, type, payload, recordId);
+  var type = new Array(255);
+  var payload = new Array(256);
+  var recordId = [155, 150];
+  var newRecord = new tizen.NDEFRecord(tizen.nfc.NFC_RECORD_TNF_UNKNOWN, type, payload, recordId);
 }
 catch (err)
 {
