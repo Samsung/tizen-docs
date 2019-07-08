@@ -147,13 +147,9 @@ _feedback_job(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
    time_t t;
    <span class="keywordtype">int</span> i, count;
    Feedback_Thread_Data *ftd = NULL;
-<span class="preprocessor">#ifdef _WIN32</span>
-<span class="preprocessor"></span>   HANDLE h;
-   WIN32_FIND_DATA fd;
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>   DIR *dir;
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>   App_Msg *msg;
+   <a class="code" href="struct__Eina__Iterator.html">Eina_Iterator</a> *it;
+   App_Msg *msg;
+   <span class="keywordtype">char</span> *name;
 
    count = (int)(uintptr_t)<a class="code" href="group__Ecore__Thread__Group.html#ga011eeb2f99aaa950089ddc6ea989da29">ecore_thread_global_data_find</a>(<span class="stringliteral">&quot;count&quot;</span>);
    <span class="keywordflow">for</span> (i = 0; i &lt; count; i++)
@@ -171,39 +167,20 @@ _feedback_job(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class=
    <span class="keywordflow">if</span> (!ftd)
      <span class="keywordflow">return</span>;
 
-<span class="preprocessor">#ifdef _WIN32</span>
-<span class="preprocessor"></span>   h = FindFirstFile(ftd-&gt;base, &amp;fd);
-   <span class="keywordflow">if</span> (h == INVALID_HANDLE_VALUE)
+   it = <a class="code" href="group__Eina__File__Group.html#ga8f4aba4de6c0ff63268071c9afe7cf3a" title="Gets an iterator to list the content of a directory.">eina_file_ls</a>(ftd-&gt;base);
+   <span class="keywordflow">if</span> (!it)
      <span class="keywordflow">goto</span> the_end;
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>   dir = opendir(ftd-&gt;base);
-   <span class="keywordflow">if</span> (!dir)
-     <span class="keywordflow">goto</span> the_end;
-<span class="preprocessor">#endif</span>
-<span class="preprocessor"></span>
+
    msg = calloc(1, <span class="keyword">sizeof</span>(App_Msg));
 
    t = time(NULL);
-   <span class="keywordflow">while</span> (time(NULL) &lt; t + 2)
+   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(it, name)
      {
-<span class="preprocessor">#ifdef _WIN32</span>
-<span class="preprocessor"></span>        <span class="keywordflow">if</span> (strlen(fd.cFileName) &gt;= 10)
-          msg-&gt;list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(msg-&gt;list,
-                                       strdup(fd.cFileName));
-        FindNextFile(h, &amp;fd);
-<span class="preprocessor">#else</span>
-<span class="preprocessor"></span>        <span class="keyword">struct </span>dirent entry, *result;
-
-        <span class="keywordflow">if</span> (readdir_r(dir, &amp;entry, &amp;result))
-          <span class="keywordflow">break</span>;
-        <span class="keywordflow">if</span> (!result)
-          <span class="keywordflow">break</span>;
-
-        <span class="keywordflow">if</span> (strlen(result-&gt;d_name) &gt;= 10)
-          msg-&gt;list = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(msg-&gt;list,
-                                       strdup(result-&gt;d_name));
-<span class="preprocessor">#endif</span>
-<span class="preprocessor">     }</span>
+        <span class="keywordflow">if</span> (time(NULL) &gt;= (t + 2))
+          {
+             <a class="code" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del</a>(name);
+             <span class="keywordflow">break</span>;
+          }
 </pre></div></p>
 <p>Finally, one more feedback job, but this one will be running outside of Ecore's pool, so we can use the pool for real work and keep this very light function unchecked. All it does is check if some condition is met and send a message to the main loop telling it it's time to close. <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
 _out_of_pool_job(<span class="keywordtype">void</span> *data, <a class="code" href="group__Ecore__Thread__Group.html#ga0c2e1f8d562ccf80ecc0009ada72496f">Ecore_Thread</a> *th)
@@ -340,18 +317,30 @@ _cancel_timer_cb(<span class="keywordtype">void</span> *data)
         <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(<span class="stringliteral">&quot;count&quot;</span>, (<span class="keywordtype">void</span> *)3, NULL, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
         ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
         ftd-&gt;name = strdup(<span class="stringliteral">&quot;data0&quot;</span>);
-        ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/bin&quot;</span>);
-        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+<span class="preprocessor">#ifdef _WIN32</span>
+<span class="preprocessor"></span>        ftd-&gt;base = strdup(<span class="stringliteral">&quot;c:/windows/System32&quot;</span>);
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>        ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/bin&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
         <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
         ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
         ftd-&gt;name = strdup(<span class="stringliteral">&quot;data1&quot;</span>);
-        ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/lib&quot;</span>);
-        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+<span class="preprocessor">#ifdef _WIN32</span>
+<span class="preprocessor"></span>        ftd-&gt;base = strdup(<span class="stringliteral">&quot;c:/windows/Fonts&quot;</span>);
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>        ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/lib&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
         <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
         ftd = calloc(1, <span class="keyword">sizeof</span>(Feedback_Thread_Data));
         ftd-&gt;name = strdup(<span class="stringliteral">&quot;data2&quot;</span>);
-        ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/share&quot;</span>);
-        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
+<span class="preprocessor">#ifdef _WIN32</span>
+<span class="preprocessor"></span>        ftd-&gt;base = strdup(<span class="stringliteral">&quot;c:/windows/Help&quot;</span>);
+<span class="preprocessor">#else</span>
+<span class="preprocessor"></span>        ftd-&gt;base = strdup(<span class="stringliteral">&quot;/usr/lib&quot;</span>);
+<span class="preprocessor">#endif</span>
+<span class="preprocessor"></span>        <a class="code" href="group__Eina__Lock__Group.html#ga8dda398c1db315582a80640c7f78f648" title="Initializes a new #Eina_Lock.">eina_lock_new</a>(&amp;ftd-&gt;mutex);
         <a class="code" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add</a>(ftd-&gt;name, ftd, NULL, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
      }
    <span class="keywordflow">else</span>

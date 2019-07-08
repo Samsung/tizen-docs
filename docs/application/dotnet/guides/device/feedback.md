@@ -7,7 +7,7 @@ The main features of the `Tizen.System.Feedback` class are:
 
 -   Playing a specific feedback pattern
 
-    You can [play a sound or vibrate with a specific pattern](#playtype), or both. For a list of supported feedback patterns, see the [Tizen.System.Feedback](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Feedback.html) class reference.
+    You can [play a sound or vibrate with a specific pattern](#playtype), or both. For a list of supported feedback patterns, see the [Tizen.System.Feedback](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Feedback.html) class reference.
 
 -   Checking for pattern support
 
@@ -25,7 +25,7 @@ To enable your application to use the feedback functionality:
     </privileges>
     ```
 
-2.  To use the methods and properties of the `Tizen.System.Feedback` class, include the [Tizen.System](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html) namespace in your application:
+2.  To use the methods and properties of the `Tizen.System.Feedback` class, include the [Tizen.System](https://samsung.github.io/TizenFX/latest/api/Tizen.System.html) namespace in your application:
 
     ```
     using Tizen.System;
@@ -36,13 +36,13 @@ To enable your application to use the feedback functionality:
 
 To play a specific feedback pattern with a specific feedback type:
 
-1.  Create a new instance of the [Tizen.System.Feedback](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Feedback.html) class:
+1.  Create a new instance of the [Tizen.System.Feedback](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Feedback.html) class:
 
     ```
     Feedback feedback = new Feedback();
     ```
 
-2.  Play the feedback with the `Play()` method of the `Tizen.System.Feedback` class. As parameters, enter the feedback type (defined by the [Tizen.System.FeedbackType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.FeedbackType.html) enumeration), and a string to denote the pattern to be played:
+2.  Play the feedback with the `Play()` method of the `Tizen.System.Feedback` class. As parameters, enter the feedback type (defined by the [Tizen.System.FeedbackType](https://samsung.github.io/TizenFX/latest/api/Tizen.System.FeedbackType.html) enumeration), and a string to denote the pattern to be played:
 
     ```
     feedback.Play(FeedbackType.Sound, "Tap");
@@ -57,7 +57,7 @@ To play a specific feedback pattern with a specific feedback type:
 <a name="support"></a>
 ## Checking for Pattern Support
 
-To determine whether a specific pattern is supported for a specific feedback type, use the `IsSupportedPattern()` method of the [Tizen.System.Feedback](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Feedback.html) class:
+To determine whether a specific pattern is supported for a specific feedback type, use the `IsSupportedPattern()` method of the [Tizen.System.Feedback](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Feedback.html) class:
 
 ```
 bool support;

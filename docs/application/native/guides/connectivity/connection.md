@@ -45,7 +45,7 @@ The main features of the Connection API include:
 <a name="socket"></a>
 ## IP Sockets
 
-The Connection Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) applications) is related to [libcurl](http://curl.haxx.se/libcurl/) (see the [Curl](curl_n.htm) guide) and sockets. After a network connection is established, you can create a socket on the kernel Linux stack to be used directly or by libcurl or any other network library. If you want to create a socket directly without libcurl, you must check whether you are using the IPv4 or IPv6 environment, and create an applicable IP socket.
+The Connection Manager API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__MANAGER__MODULE.html) applications) is related to [libcurl](http://curl.haxx.se/libcurl/) (see the [Curl](curl.md) guide) and sockets. After a network connection is established, you can create a socket on the kernel Linux stack to be used directly or by libcurl or any other network library. If you want to create a socket directly without libcurl, you must check whether you are using the IPv4 or IPv6 environment, and create an applicable IP socket.
 
 To manage IP sockets, you can:
 

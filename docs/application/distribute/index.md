@@ -4,7 +4,7 @@
 
 - Tizen Store is an app store designed specifically for Tizen apps. It provides users in over 180 countries with apps optimized for Tizen devices. Users who have just purchased their first Tizen devices are able to visit Tizen Store, download the apps they want for their Tizen devices, and customize their new devices. But it's not just for new users. Those who have used their Tizen devices for a long time, and have grown familiar with them, also frequently check Tizen Store for new apps to download.
 - Several developers are already providing a wide range of apps on Tizen Store, hoping that their apps will add value to Tizen devices and enrich the lives of Tizen users. Now, you too can take the opportunity to join them on Tizen Store, meeting Tizen users all over the world and presenting them with apps that they will love.
-- Tizen Store web page([http://www.tizenstore.com/](http://www.tizenstore.com/)) is used for providing various service informations such as Tizen Store introduction and recommended contents collection. Also, support menu from web site provides link to Samsung CS site which user can get FAQ and ask question in 1 on 1 inquiry.
+- Tizen Store web page([http://www.tizenstore.com/](http://www.tizenstore.com/)) is used for providing various service information such as Tizen Store introduction and recommended contents collection. Also, support menu from web site provides link to Samsung CS site which user can get FAQ and ask question in 1 on 1 inquiry.
 - Tizen Store is currently available on Tizen Mobile Z devices.
 
  

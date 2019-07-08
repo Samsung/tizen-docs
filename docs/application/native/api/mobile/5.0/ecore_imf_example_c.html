@@ -157,7 +157,7 @@ _mouse_up_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
    <a class="code" href="struct__Evas__Event__Mouse__Up.html">Evas_Event_Mouse_Up</a> *ev = event_info;
    <span class="keywordflow">if</span> (!en) <span class="keywordflow">return</span>;
 
-   <span class="keywordflow">if</span> (ev-&gt;event_flags &amp; <a class="code" href="group__Evas.html#gga3574f51401b0d7cc6e27e8d30f74fbaca2370cbd360270536042b7cfd8c7fcd83">EVAS_EVENT_FLAG_ON_HOLD</a>)
+   <span class="keywordflow">if</span> (ev-&gt;event_flags &amp; EVAS_EVENT_FLAG_ON_HOLD)
      {
         _imf_cursor_info_set(en);
         <span class="keywordflow">return</span>;
@@ -216,7 +216,7 @@ _entry_focus_out_cb(<span class="keywordtype">void</span> *data, <a class="code"
 _canvas_focus_in_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
    Entry *en;
-   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj = <a class="code" href="group__Evas__Canvas.html#gaf5a6ebc4c45f1297e816ff809e5d7d0c" title="Retrieve the object that currently has focus.">evas_focus_get</a>(e);
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj = <a class="code" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a" title="Retrieve the object focused by the default seat.">evas_focus_get</a>(e);
    <span class="keywordflow">if</span> (!obj) <span class="keywordflow">return</span>;
 
    en = <a class="code" href="group__Evas__Object__Group__Extras.html#gafbad43015793eda4ae50202c0ce0e652">evas_object_data_get</a>(obj, <span class="stringliteral">&quot;Entry&quot;</span>);
@@ -228,7 +228,7 @@ _canvas_focus_in_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a 
 _canvas_focus_out_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
 {
    Entry *en;
-   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj = <a class="code" href="group__Evas__Canvas.html#gaf5a6ebc4c45f1297e816ff809e5d7d0c" title="Retrieve the object that currently has focus.">evas_focus_get</a>(e);
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj = <a class="code" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a" title="Retrieve the object focused by the default seat.">evas_focus_get</a>(e);
    <span class="keywordflow">if</span> (!obj) <span class="keywordflow">return</span>;
 
    en = <a class="code" href="group__Evas__Object__Group__Extras.html#gafbad43015793eda4ae50202c0ce0e652">evas_object_data_get</a>(obj, <span class="stringliteral">&quot;Entry&quot;</span>);
@@ -239,8 +239,8 @@ _canvas_focus_out_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _imf_cursor_info_set(Entry *en)
 {
-   <a class="code" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> x, y, w, h;
-   <a class="code" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> cx, cy, cw, ch; <span class="comment">// cursor geometry</span>
+   Evas_Coord x, y, w, h;
+   Evas_Coord cx, cy, cw, ch; <span class="comment">// cursor geometry</span>
    <span class="keywordtype">int</span> cursor_pos; <span class="comment">// cursor position in chars (Not bytes)</span>
    Evas_BiDi_Direction dir;
 
@@ -248,7 +248,7 @@ _imf_cursor_info_set(Entry *en)
 
    <span class="comment">// get cursor geometry</span>
    <span class="keywordflow">if</span> (en-&gt;txt_obj)
-     <a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(en-&gt;txt_obj, &amp;x, &amp;y, &amp;w, &amp;h);
+     <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(en-&gt;txt_obj, &amp;x, &amp;y, &amp;w, &amp;h);
 
    <span class="keywordflow">if</span> (en-&gt;cursor &amp;&amp; en-&gt;imf_context)
      {
@@ -279,13 +279,13 @@ _preedit_clear(Entry *en)
 {
    <span class="keywordflow">if</span> (en-&gt;preedit_start)
      {
-        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(en-&gt;preedit_start);
+        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_start);
         en-&gt;preedit_start = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;preedit_end)
      {
-        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(en-&gt;preedit_end);
+        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_end);
         en-&gt;preedit_end = NULL;
      }
 
@@ -301,7 +301,7 @@ _ecore_imf_retrieve_surrounding_cb(<span class="keywordtype">void</span> *data, 
 
    <span class="keywordflow">if</span> (!en) <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
 
-   str = evas_object_textblock_text_markup_get(en-&gt;txt_obj);
+   str = <a class="code" href="group__Evas__Object__Textblock.html#ga958d72110ffb13d78e63a4ca9981412c">evas_object_textblock_text_markup_get</a>(en-&gt;txt_obj);
 
    <span class="keywordflow">if</span> (text)
      *text = str ? strdup(str) : strdup(<span class="stringliteral">&quot;&quot;</span>);
@@ -328,18 +328,18 @@ _ecore_imf_event_delete_surrounding_cb(<span class="keywordtype">void</span> *da
    cursor_pos = <a class="code" href="group__Evas__Object__Textblock.html#ga26f34e45c5694208a640d1edbe1645c7">evas_textblock_cursor_pos_get</a>(en-&gt;cursor);
 
    <span class="comment">// start cursor position to be deleted</span>
-   del_start = evas_object_textblock_cursor_new(en-&gt;txt_obj);
-   <a class="code" href="group__Evas__Object__Textblock.html#gab4c4175469da1aac05b9a94352cede66">evas_textblock_cursor_pos_set</a>(del_start, cursor_pos + ev-&gt;offset);
+   del_start = <a class="code" href="group__Evas__Object__Textblock.html#ga3689177b714bfd62242826525fcc0def">evas_object_textblock_cursor_new</a>(en-&gt;txt_obj);
+   <a class="code" href="group__Evas__Object__Textblock.html#gaa2be92d419712069399b4dfacada0125">evas_textblock_cursor_pos_set</a>(del_start, cursor_pos + ev-&gt;offset);
 
    <span class="comment">// end cursor position to be deleted</span>
-   del_end = evas_object_textblock_cursor_new(en-&gt;txt_obj);
-   <a class="code" href="group__Evas__Object__Textblock.html#gab4c4175469da1aac05b9a94352cede66">evas_textblock_cursor_pos_set</a>(del_end, cursor_pos + ev-&gt;offset + ev-&gt;n_chars);
+   del_end = <a class="code" href="group__Evas__Object__Textblock.html#ga3689177b714bfd62242826525fcc0def">evas_object_textblock_cursor_new</a>(en-&gt;txt_obj);
+   <a class="code" href="group__Evas__Object__Textblock.html#gaa2be92d419712069399b4dfacada0125">evas_textblock_cursor_pos_set</a>(del_end, cursor_pos + ev-&gt;offset + ev-&gt;n_chars);
 
    <span class="comment">// implement function to delete character(s) from &#39;cursor_pos+ev-&gt;offset&#39; cursor position to &#39;cursor_pos + ev-&gt;offset + ev-&gt;n_chars&#39;</span>
    <a class="code" href="group__Evas__Object__Textblock.html#gad863c689181a25bbfd6cdc24f5452585">evas_textblock_cursor_range_delete</a>(del_start, del_end);
 
-   <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(del_start);
-   <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(del_end);
+   <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(del_start);
+   <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(del_end);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -420,25 +420,25 @@ _ecore_imf_event_preedit_changed_cb(<span class="keywordtype">void</span> *data,
      {
         <span class="comment">// set preedit start cursor</span>
         <span class="keywordflow">if</span> (!en-&gt;preedit_start)
-          en-&gt;preedit_start = evas_object_textblock_cursor_new(en-&gt;txt_obj);
+          en-&gt;preedit_start = <a class="code" href="group__Evas__Object__Textblock.html#ga3689177b714bfd62242826525fcc0def">evas_object_textblock_cursor_new</a>(en-&gt;txt_obj);
         <a class="code" href="group__Evas__Object__Textblock.html#ga7fc4731e670d010ac17af02bd88bd9ef">evas_textblock_cursor_copy</a>(en-&gt;cursor, en-&gt;preedit_start);
 
         <span class="comment">// set preedit end cursor</span>
         <span class="keywordflow">if</span> (!en-&gt;preedit_end)
-          en-&gt;preedit_end = evas_object_textblock_cursor_new(en-&gt;txt_obj);
+          en-&gt;preedit_end = <a class="code" href="group__Evas__Object__Textblock.html#ga3689177b714bfd62242826525fcc0def">evas_object_textblock_cursor_new</a>(en-&gt;txt_obj);
         <a class="code" href="group__Evas__Object__Textblock.html#ga7fc4731e670d010ac17af02bd88bd9ef">evas_textblock_cursor_copy</a>(en-&gt;cursor, en-&gt;preedit_end);
 
         preedit_end_pos = <a class="code" href="group__Evas__Object__Textblock.html#ga26f34e45c5694208a640d1edbe1645c7">evas_textblock_cursor_pos_get</a>(en-&gt;cursor);
 
         <span class="keywordflow">for</span> (i = 0; i &lt; (preedit_end_pos - preedit_start_pos); i++)
           {
-             <a class="code" href="group__Evas__Object__Textblock.html#ga73f736bddac5cd29419493b6628e18c7">evas_textblock_cursor_char_prev</a>(en-&gt;preedit_start);
+             <a class="code" href="group__Evas__Object__Textblock.html#ga02b7a75dc3ca5518acbe795988fa44a9" title="Advances the cursor one char backwards.">evas_textblock_cursor_char_prev</a>(en-&gt;preedit_start);
           }
 
         en-&gt;have_preedit = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
 
         <span class="comment">// set cursor position</span>
-        <a class="code" href="group__Evas__Object__Textblock.html#gab4c4175469da1aac05b9a94352cede66">evas_textblock_cursor_pos_set</a>(en-&gt;cursor, preedit_start_pos + cursor_pos);
+        <a class="code" href="group__Evas__Object__Textblock.html#gaa2be92d419712069399b4dfacada0125">evas_textblock_cursor_pos_set</a>(en-&gt;cursor, preedit_start_pos + cursor_pos);
      }
 
    <span class="comment">// notify the cursor information</span>
@@ -476,7 +476,7 @@ _key_down_cb(<span class="keywordtype">void</span> *data, <a class="code" href="
 
    <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;BackSpace&quot;</span>))
      {
-        <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Object__Textblock.html#ga73f736bddac5cd29419493b6628e18c7">evas_textblock_cursor_char_prev</a>(en-&gt;cursor))
+        <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Object__Textblock.html#ga02b7a75dc3ca5518acbe795988fa44a9" title="Advances the cursor one char backwards.">evas_textblock_cursor_char_prev</a>(en-&gt;cursor))
           {
              <a class="code" href="group__Evas__Object__Textblock.html#ga89cb7b380acc84797b2ef8cb9ae22b09">evas_textblock_cursor_char_delete</a>(en-&gt;cursor);
              <span class="comment">// notify the cursor information</span>
@@ -562,7 +562,7 @@ _key_up_cb(<span class="keywordtype">void</span> *data, <a class="code" href="gr
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
-create_input_field(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *evas, Entry *en, <a class="code" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> x, <a class="code" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> y, <a class="code" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> w, <a class="code" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> h)
+create_input_field(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *evas, Entry *en, Evas_Coord x, Evas_Coord y, Evas_Coord w, Evas_Coord h)
 {
    <span class="keywordflow">if</span> (!en) <span class="keywordflow">return</span>;
 
@@ -572,19 +572,19 @@ create_input_field(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
 
    <span class="comment">// create the background for text input field</span>
    en-&gt;rect = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(en-&gt;rect, 150, 150, 150, 255); <span class="comment">// gray color</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(en-&gt;rect, x, y);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(en-&gt;rect, w, h);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(en-&gt;rect);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(en-&gt;rect, 150, 150, 150, 255); <span class="comment">// gray color</span>
+   evas_object_move(en-&gt;rect, x, y);
+   evas_object_resize(en-&gt;rect, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(en-&gt;rect);
    <a class="code" href="group__Evas__Object__Group__Extras.html#ga70134a7068c9bff4107a761abe0a2ad4">evas_object_data_set</a>(en-&gt;rect, <span class="stringliteral">&quot;Entry&quot;</span>, en);
 
    <span class="comment">// create text object for displaying text</span>
    en-&gt;txt_obj = <a class="code" href="group__Evas__Object__Textblock.html#ga5059cda84291080e59bcc72ead81ca93">evas_object_textblock_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(en-&gt;txt_obj, 0, 0, 0, 255);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(en-&gt;txt_obj, 0, 0, 0, 255);
    evas_object_pass_events_set(en-&gt;txt_obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(en-&gt;txt_obj, x, y);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(en-&gt;txt_obj, w, h);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(en-&gt;txt_obj);
+   evas_object_move(en-&gt;txt_obj, x, y);
+   evas_object_resize(en-&gt;txt_obj, w, h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(en-&gt;txt_obj);
 
    <span class="comment">// set style on textblock</span>
    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *style_buf =
@@ -593,10 +593,10 @@ create_input_field(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
       <span class="stringliteral">&quot;b=&#39;+ font=Sans:style=bold&#39;&quot;</span>;
    en-&gt;txt_style = <a class="code" href="group__Evas__Object__Textblock.html#ga5047d80b99150342ce3cd5518b474df8">evas_textblock_style_new</a>();
    <a class="code" href="group__Evas__Object__Textblock.html#gaf536f7e63f652e36a125006e31cf5457">evas_textblock_style_set</a>(en-&gt;txt_style, style_buf);
-   evas_object_textblock_style_set(en-&gt;txt_obj, en-&gt;txt_style);
+   <a class="code" href="group__Evas__Object__Textblock.html#ga14c222cd68f4c101dc9e52361c47c35e">evas_object_textblock_style_set</a>(en-&gt;txt_obj, en-&gt;txt_style);
 
    <span class="comment">// create cursor</span>
-   en-&gt;cursor = evas_object_textblock_cursor_new(en-&gt;txt_obj);
+   en-&gt;cursor = <a class="code" href="group__Evas__Object__Textblock.html#ga3689177b714bfd62242826525fcc0def">evas_object_textblock_cursor_new</a>(en-&gt;txt_obj);
 
    <span class="comment">// create input context</span>
    <span class="keyword">const</span> <span class="keywordtype">char</span> *default_id = <a class="code" href="group__Ecore__IMF__Context__Group.html#ga230b14472bba4ba838240092ec3af6b7" title="Gets the id of the default Input Method Context. The id may to used to create a new instance of an In...">ecore_imf_context_default_id_get</a>();
@@ -610,16 +610,16 @@ create_input_field(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
    <a class="code" href="group__Ecore__IMF__Context__Group.html#ga19c04fab704e0b01324c51499b09e5cb" title="Sets the client canvas for the Input Method Context; this is the canvas in which the input appears...">ecore_imf_context_client_canvas_set</a>(en-&gt;imf_context, evas);
 
    <span class="comment">// register key event handler</span>
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _key_down_cb, en);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ac436b50ad665089f8a24b0fb827cec5f">EVAS_CALLBACK_KEY_UP</a>, _key_up_cb, en);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, EVAS_CALLBACK_KEY_DOWN, _key_down_cb, en);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, EVAS_CALLBACK_KEY_UP, _key_up_cb, en);
 
    <span class="comment">// register mouse event handler</span>
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a9fa52651ccf7e47cd3b7785fc4cf393f">EVAS_CALLBACK_MOUSE_DOWN</a>, _mouse_down_cb, en);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a8c1b22c99dd0231cd9ba1fecbffffac7">EVAS_CALLBACK_MOUSE_UP</a>, _mouse_up_cb, en);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, EVAS_CALLBACK_MOUSE_DOWN, _mouse_down_cb, en);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, EVAS_CALLBACK_MOUSE_UP, _mouse_up_cb, en);
 
    <span class="comment">// register focus event handler</span>
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a819cf61e9d11012b7402338c2ccb7b97">EVAS_CALLBACK_FOCUS_IN</a>, _entry_focus_in_cb, en);
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ab26a0af7efaa8b77e996bd438accf8d3">EVAS_CALLBACK_FOCUS_OUT</a>, _entry_focus_out_cb, en);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, EVAS_CALLBACK_FOCUS_IN, _entry_focus_in_cb, en);
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(en-&gt;rect, EVAS_CALLBACK_FOCUS_OUT, _entry_focus_out_cb, en);
 
    <span class="comment">// register retrieve surrounding callback</span>
    <a class="code" href="group__Ecore__IMF__Context__Group.html#ga928432cb836fce5ae932cec34bae54d7" title="Sets the callback to be used on surrounding_get request.">ecore_imf_context_retrieve_surrounding_callback_set</a>(en-&gt;imf_context, _ecore_imf_retrieve_surrounding_cb, en);
@@ -641,31 +641,31 @@ delete_input_field(Entry *en)
 
    <span class="keywordflow">if</span> (en-&gt;rect)
      {
-        <a class="code" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(en-&gt;rect);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(en-&gt;rect);
         en-&gt;rect = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;cursor)
      {
-        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(en-&gt;cursor);
+        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;cursor);
         en-&gt;cursor = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;preedit_start)
      {
-        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(en-&gt;preedit_start);
+        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_start);
         en-&gt;preedit_start = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;preedit_end)
      {
-        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8">evas_textblock_cursor_free</a>(en-&gt;preedit_end);
+        <a class="code" href="group__Evas__Object__Textblock.html#ga601d0627d1eeddf9a0309ee9b8ccbdf8" title="Sets the position of the cursor according to the X and Y coordinates and grapheme clusters of text...">evas_textblock_cursor_free</a>(en-&gt;preedit_end);
         en-&gt;preedit_end = NULL;
      }
 
    <span class="keywordflow">if</span> (en-&gt;txt_obj)
      {
-        <a class="code" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(en-&gt;txt_obj);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(en-&gt;txt_obj);
         en-&gt;txt_obj = NULL;
      }
 
@@ -674,10 +674,6 @@ delete_input_field(Entry *en)
         <a class="code" href="group__Evas__Object__Textblock.html#gafdc12ce69d5b4ccf1f8434d1555faee1">evas_textblock_style_free</a>(en-&gt;txt_style);
         en-&gt;txt_style = NULL;
      }
-
-   <a class="code" href="group__Ecore__IMF__Context__Group.html#ga5740dff1b491fa45a8192e112d4dd681" title="Deletes (unregisters) a callback function registered to a given context event.">ecore_imf_context_event_callback_del</a>(en-&gt;imf_context, <a class="code" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa9d05d645b3c1edde3b959fee4cd87dec">ECORE_IMF_CALLBACK_COMMIT</a>, _ecore_imf_event_commit_cb);
-   <a class="code" href="group__Ecore__IMF__Context__Group.html#ga5740dff1b491fa45a8192e112d4dd681" title="Deletes (unregisters) a callback function registered to a given context event.">ecore_imf_context_event_callback_del</a>(en-&gt;imf_context, <a class="code" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa9e354e49b61f3e67c4210cc85478975e">ECORE_IMF_CALLBACK_PREEDIT_CHANGED</a>, _ecore_imf_event_preedit_changed_cb);
-   <a class="code" href="group__Ecore__IMF__Context__Group.html#ga5740dff1b491fa45a8192e112d4dd681" title="Deletes (unregisters) a callback function registered to a given context event.">ecore_imf_context_event_callback_del</a>(en-&gt;imf_context, <a class="code" href="group__Ecore__IMF__Context__Group.html#gga06aadd645f11ba5c8d00943aa327be5aa696bc156e7efd93c83128fc2e18bfeba">ECORE_IMF_CALLBACK_DELETE_SURROUNDING</a>, _ecore_imf_event_delete_surrounding_cb);
 
    <span class="keywordflow">if</span> (en-&gt;imf_context)
      {
@@ -702,7 +698,7 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="group__Ecore__IMF__Lib__Group.html#ga4b6b1ee4bad8f54f5f0e24abd740ab2f" title="Initialises the Ecore_IMF library.">ecore_imf_init</a>();
 
    <span class="comment">// create a new window, with size=WIDTHxHEIGHT and default engine</span>
-   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
 
    <span class="keywordflow">if</span> (!ee)
      {
@@ -722,14 +718,14 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">// create input field rectangle</span>
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+   evas_object_move(bg, 0, 0);
+   evas_object_resize(bg, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
    <span class="comment">// register canvas focus in/out event handler</span>
-   <a class="code" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a>(evas, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ac3a1defaffac4dcb6fe9e568919c45d1">EVAS_CALLBACK_CANVAS_FOCUS_IN</a>, _canvas_focus_in_cb, NULL);
-   <a class="code" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a>(evas, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a444e79ca91d910d500dc26f71cf0518f">EVAS_CALLBACK_CANVAS_FOCUS_OUT</a>, _canvas_focus_out_cb, NULL);
+   evas_event_callback_add(evas, EVAS_CALLBACK_CANVAS_FOCUS_IN, _canvas_focus_in_cb, NULL);
+   evas_event_callback_add(evas, EVAS_CALLBACK_CANVAS_FOCUS_OUT, _canvas_focus_out_cb, NULL);
 
    memset(&amp;en1, 0, <span class="keyword">sizeof</span>(en1));
    memset(&amp;en2, 0, <span class="keyword">sizeof</span>(en2));
@@ -748,8 +744,8 @@ main(<span class="keywordtype">void</span>)
    delete_input_field(&amp;en1); <span class="comment">// delete input field 1</span>
    delete_input_field(&amp;en2); <span class="comment">// delete input field 2</span>
 
-   <a class="code" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a>(evas, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968ac3a1defaffac4dcb6fe9e568919c45d1">EVAS_CALLBACK_CANVAS_FOCUS_IN</a>, _canvas_focus_in_cb, NULL);
-   <a class="code" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a>(evas, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a444e79ca91d910d500dc26f71cf0518f">EVAS_CALLBACK_CANVAS_FOCUS_OUT</a>, _canvas_focus_out_cb, NULL);
+   evas_event_callback_del_full(evas, EVAS_CALLBACK_CANVAS_FOCUS_IN, _canvas_focus_in_cb, NULL);
+   evas_event_callback_del_full(evas, EVAS_CALLBACK_CANVAS_FOCUS_OUT, _canvas_focus_out_cb, NULL);
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(ee);
 

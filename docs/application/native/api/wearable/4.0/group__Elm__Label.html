@@ -97,9 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="label_inheritance_tree.png" alt="label_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/label/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>The Label widget <b>doesn't</b> allow text to overflow its boundaries, if the text doesn't fit the geometry of the label it will be ellipsized or be cut. Elementary provides several styles for this widget: </p>
 <ul>
 <li>default - No animation </li>
@@ -161,11 +158,14 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Slide mode of a label widget </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268"></a><!-- doxytag: member="ELM_LABEL_SLIDE_MODE_AUTO" ref="gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268" args="" -->ELM_LABEL_SLIDE_MODE_AUTO</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="gga6a12dc6d96304f9f757d85eb73d21acea50192bb15aa945a2b59ae188ff58c3a8"></a><!-- doxytag: member="ELM_LABEL_SLIDE_MODE_NONE" ref="gga6a12dc6d96304f9f757d85eb73d21acea50192bb15aa945a2b59ae188ff58c3a8" args="" -->ELM_LABEL_SLIDE_MODE_NONE</em>&nbsp;</td><td>
 <p>No slide effect. </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268"></a><!-- doxytag: member="ELM_LABEL_SLIDE_MODE_AUTO" ref="gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268" args="" -->ELM_LABEL_SLIDE_MODE_AUTO</em>&nbsp;</td><td>
+<p>Slide only if the label area is bigger than the text width length. </p>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243"></a><!-- doxytag: member="ELM_LABEL_SLIDE_MODE_ALWAYS" ref="gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243" args="" -->ELM_LABEL_SLIDE_MODE_ALWAYS</em>&nbsp;</td><td>
-<p>Slide only if the label area is bigger than the text width length. Slide always. </p>
+<p>Slide always. </p>
 </td></tr>
 </table>
 </dd>
@@ -444,7 +444,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Control the slide mode of the label widget. </p>
-<p>By default, slide mode is none. Possible values for <code>mode</code> are: Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_NONE - no slide effect <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a> - slide only if the label area is bigger than the text width length <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> - slide always</p>
+<p>By default, slide mode is none. Possible values for <code>mode</code> are: <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea50192bb15aa945a2b59ae188ff58c3a8">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_NONE</a> - no slide effect <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a> - slide only if the label area is bigger than the text width length <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> - slide always</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> only work with the themes "slide_short", "slide_long" and "slide_bounce". Warning: <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> don't work if the line wrap(<a class="el" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set()</a>) or ellipsis(<a class="el" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set()</a>) is set.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -484,7 +484,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Control the slide mode of the label widget. </p>
-<p>By default, slide mode is none. Possible values for <code>mode</code> are: Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_NONE - no slide effect <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a> - slide only if the label area is bigger than the text width length <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> - slide always</p>
+<p>By default, slide mode is none. Possible values for <code>mode</code> are: <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea50192bb15aa945a2b59ae188ff58c3a8">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_NONE</a> - no slide effect <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a> - slide only if the label area is bigger than the text width length <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> - slide always</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> only work with the themes "slide_short", "slide_long" and "slide_bounce". Warning: <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> don't work if the line wrap(<a class="el" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set()</a>) or ellipsis(<a class="el" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set()</a>) is set.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

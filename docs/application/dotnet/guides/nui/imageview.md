@@ -11,7 +11,7 @@ An image view is a NUI control that displays an image. It is implemented through
 
 To create an image view:
 
-1.  Create an instance of the [Tizen.NUI.BaseComponents.ImageView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.ImageView.html) class and define the image file as a parameter:
+1.  Create an instance of the [Tizen.NUI.BaseComponents.ImageView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.ImageView.html) class and define the image file as a parameter:
 
     ```
     imageView = new ImageView(DirectoryInfo.Resource + "images/gallery-3.jpg");
@@ -33,7 +33,7 @@ To create an image view:
 <a name="properties"></a>
 ## Image View Properties
 
-The following table defines the [Tizen.NUI.BaseComponents.ImageView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.ImageView.html) class control properties.
+The following table defines the [Tizen.NUI.BaseComponents.ImageView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.ImageView.html) class control properties.
 
 **Table: Image view control properties**
 

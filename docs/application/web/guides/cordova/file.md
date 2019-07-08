@@ -103,7 +103,7 @@ To resolve the initial root for other filesystem operations:
     The following output is shown in the system log:
 
     ```
-    Entry name example.txt   
+    Entry name example.txt
     ```
 
 ## Operating on Directories

@@ -148,7 +148,11 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
   Exit the emulator.
 
 > **Note**  
-> In Ubuntu, you must change a global GNOME setting to view the menu icons:In the command console, execute the `gconf-editor` command.In the tree, navigate to `desktop > gnome > interface`.Enable the `menus_have_icons` option.
+> In Ubuntu, you must change a global GNOME setting to view the menu icons:
+>
+> 1. In the command console, execute the `gconf-editor` command.
+> 2. In the tree, navigate to `desktop > gnome > interface`.
+> 3. Enable the `menus_have_icons` option.
 
 ## Using the Control Panel
 
@@ -391,7 +395,9 @@ In the control panel, you can model user actions, such as shaking, throwing, and
 
   - GUI
 
-    In the **GUI** tab, you can select an active sensor and move the 3D model of the emulator instance with the 3 axis sliders or the direction buttons (**Portrait**, **Landscape**, **Reverse Portrait**, and **Reverse Landscape**). The instance monitor displays the acceleration, magnetic, and gyro values.To better control the movement, select the **With axis** checkbox to see the axes in the emulator image. You can also fix the Y or Z axis by selecting the **X/Z** or **X/Y** radio button, respectively. To change the emulator accelerator value in the direction of the movement, select the **Move** radio button.
+    In the **GUI** tab, you can select an active sensor and move the 3D model of the emulator instance with the 3 axis sliders or the direction buttons (**Portrait**, **Landscape**, **Reverse Portrait**, and **Reverse Landscape**). The instance monitor displays the acceleration, magnetic, and gyro values.
+
+    To better control the movement, select the **With axis** checkbox to see the axes in the emulator image. You can also fix the Y or Z axis by selecting the **X/Z** or **X/Y** radio button, respectively. To change the emulator accelerator value in the direction of the movement, select the **Move** radio button.
 
   - Acceleration
 
@@ -410,7 +416,9 @@ You can simulate a single event on the individual sensor, or use sensor data fil
 timestamp, x, y, z
 ```
   When you add the event files and click **Start**, the predefined events are simulated at their specified relative timestamp. The timestamp unit is 0.01 seconds. Some events can be discarded, if they exceed certain limits of performance, resource, or logic.
-- In the **Light** card, you can simulate ambient light conditions using the **Lux** slider. The range of this value is from 0 Lux to 65635 Lux.If automatic screen brightness is activated in the device settings, the display changes based on the simulated light value.
+- In the **Light** card, you can simulate ambient light conditions using the **Lux** slider. The range of this value is from 0 Lux to 65635 Lux.
+
+   If automatic screen brightness is activated in the device settings, the display changes based on the simulated light value.
 - In the **Proximity** card, you can set the proximity sensor state to **Far** or **Near**.
 - In the **Pressure** card, you can control the pressure sensor using the **hPa** slider. The range of this value is from 260 hPa to 1260 hPa (hectopascals).
 - In the **Ultraviolet** card, you can control the ultraviolet sensor using the **Index** slider. The unit is UV index and the range of this value is from 0 to 15.0.
@@ -437,7 +445,9 @@ In the **Telephony** card, you can generate incoming calls and messages:
 
   1. In the **MT Call** section, enter the phone number you want to imitate the call from.
   2. Click **Connect**.
-  3. To hide the phone number on the emulator, select the **Hidden** option.The caller ID on the emulator is set to "Unknown".
+  3. To hide the phone number on the emulator, select the **Hidden** option.
+
+     The caller ID on the emulator is set to "Unknown".
 
   To make an MO call:
 
@@ -481,7 +491,7 @@ You can control and monitor the Tizen emulator by using the Emulator Control Pan
 
   `<TIZEN_STUDIO>/tools/emulator/bin/ecp-cli`
 
-- Windows&reg;
+- Windows&reg;:
 
   `<TIZEN_STUDIO>\tools\emulator\bin\ecp-cli.bat`
 

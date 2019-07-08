@@ -1,49 +1,480 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html>
- <head>
-     <script type="text/javascript" src="../snippet.js"></script>
-     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-     <link href="../styles.css" rel="StyleSheet" type="text/css" />
-     <link href="../snippet.css" rel="StyleSheet" type="text/css" />
-     <title>Slider</title>
- </head>
- <body onload="prettyPrint()" id="content">
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Slider</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
 
 <h1>Slider</h1>
 
-<p>The slider component shows on the screen a control that you can use to change values by dragging a handle on a horizontal scale.</p>
+<p>The slider component shows on the screen a control that you can use to change values by dragging a handle on a circular scale.</p>
 
-<p>To add a slider component to the application, use the following code:</p>
+<video autoplay muted loop controls>
+       <source src="https://developer.tizen.org/sites/default/files/documentation/slider.mp4">
+</video>
+
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+
+		<li><a href="#manual-constructor0.6728984923101962">Manual Constructor</a>
+
+		</li>
+
+		<li><a href="#html-examples0.5146947458852082">HTML Examples</a>
+						</li>
+
+		<li><a href="#options-list">Options</a>
+
+		</li>
+
+		<li><a href="#methods0.2250751326791942">Methods</a>
+
+		</li>
+
+</ol>
+
+<h2><a id="default-selectors0.42985791829414666"></a>Default Selectors</h2>
+
+<p>By default, all <code>&lt;input&gt;</code> elements with the <code>type=&quot;range&quot;</code> attribute and <code>data-type=&quot;range&quot;</code> and <code>data-role=&quot;slider&quot;</code> are displayed as Tizen Web UI sliders.</p>
+
+
+
+<h2><a id="manual-constructor0.6728984923101962"></a>Manual Constructor</h2>
+
+<p>To manually create a slider component, use the component constructor from the <code>tau</code> namespace</p>
+
+<p>HTML code:</p>
+
+<pre class="prettyprint">&lt;input id=&quot;slider&quot;/&gt;
+</pre>
+
+<p>JS code:</p>
 
 <pre class="prettyprint">
-&lt;div class=&quot;ui-page&quot;&gt;
-   &lt;header class=&quot;ui-header&quot;&gt;
-      &lt;h2 class=&quot;ui-title&quot;&gt;Slider&lt;/h2&gt;
-   &lt;/header&gt;
-   &lt;div class=&quot;ui-content content-padding&quot;&gt;
-      Slider length can be modified by the width style.
-      &lt;input type=&quot;range&quot;/&gt;
-   &lt;/div&gt;
-&lt;/div&gt;
+var sliderElement = document.getElementById(&quot;slider&quot;),
+    slider = tau.widget.Slider(sliderElement);
 </pre>
-<p>If you want to modify the width of the slider,please change the length with width style.</p>
+
+<p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+
+<h2><a id="html-examples0.5146947458852082"></a>HTML Examples</h2>
+
+<p>To create slider input:</p>
+
+<pre class="prettyprint">&lt;input type=&quot;range&quot; name=&quot;slider-1&quot; id=&quot;slider&quot; value=&quot;60&quot; min=&quot;0&quot; max=&quot;100&quot;/&gt;
+</pre>
+
+	<h2><a id="options-list"></a>Options</h2>
+    <p>The following table lists the options for the slider component.</p>
+	<table>
+		<tbody>
+			<tr>
+				<th>Option</th>
+				<th>Input type</th>
+				<th>Default value</th>
+				<th>Description</th>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">bgcolor</span></td>
+				<td class="option">string</td>
+				<td class="option">&quot;rgba(61, 185, 204, 0.4)&quot;</td>
+				<td class="option">Background color for inactive slider line.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">buttons</span></td>
+				<td class="option">boolean</td>
+				<td class="option">false</td>
+				<td class="option">Enable additional + / - buttons</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">containerClassName</span></td>
+				<td class="option">string</td>
+				<td class="option">null</td>
+				<td class="option">Sets the class name of CircleProgressBar container.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">endPoint</span></td>
+				<td class="option">boolean</td>
+				<td class="option">true</td>
+				<td class="option">Indicator of current slider position.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">margin</span></td>
+				<td class="option">number</td>
+				<td class="option">7</td>
+				<td class="option">In circle slider define size of margin.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">size</span></td>
+				<td class="option">number | &quot;full&quot; | &quot;large&quot; | &quot;medium&quot; | &quot;small&quot; | null</td>
+				<td class="option">&quot;full&quot;</td>
+				<td class="option">Sets the size of CircleProgressBar.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">thickness</span></td>
+				<td class="option">number</td>
+				<td class="option">8</td>
+				<td class="option">Sets the border width of CircleProgressBar.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">touchableWidth</span></td>
+				<td class="option">number</td>
+				<td class="option">50</td>
+				<td class="option">In circle slider define size of touchable area on border.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">type</span></td>
+				<td class="option">&quot;circle&quot; | &quot;normal&quot;</td>
+				<td class="option">&quot;circle&quot;</td>
+				<td class="option">Sets type of slider.</td>
+			</tr>
+
+		</tbody>
+	</table>
 
 
- <div id="footer">
-   <hr size="1" />
-   <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
-  </div>
 
-  <script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-25976949-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-</script>
+<h2><a id="methods0.2250751326791942"></a>Methods</h2>
 
- </body>
+<p>To call a method on the component, use one of the existing APIs:</p>
+
+<p>HTML code:</p>
+
+<pre class="prettyprint">&lt;input id=&quot;slider&quot; type=&quot;range&quot; name=&quot;slider-1&quot; value=&quot;60&quot; min=&quot;0&quot; max=&quot;100&quot;/&gt;
+</pre>
+
+<p>JS code:</p>
+
+<pre class="prettyprint">
+var slider = document.getElementById(&quot;slider&quot;),
+    slider = tau.widget.Slider(slider);
+
+/*
+   slider.methodName(methodArgument1, methodArgument2, ...);
+   For example:
+*/
+var value = slider.value();
+</pre>
+
+	<h3>Summary</h3>
+	<table class="informaltable">
+		<thead>
+		<tr>
+			<th>Method</th>
+			<th>Description</th>
+		</tr>
+		</thead>
+		<tbody>
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Slider <a href="#method-disable">disable</a>() </pre>
+					</td>
+					<td><p>Disables the slider.</p></td>
+				</tr>
+
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Slider <a href="#method-enable">enable</a>() </pre>
+					</td>
+					<td><p>Enables the slider.</p></td>
+				</tr>
+
+
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">Slider <a href="#method-refresh">refresh</a>() </pre>
+					</td>
+					<td><p>Refreshes a slider markup.</p></td>
+				</tr>
+
+
+
+
+				<tr>
+					<td>
+						<pre class="intable prettyprint">number <a href="#method-value">value</a>() </pre>
+					</td>
+					<td><p>Gets or sets a value.</p></td>
+				</tr>
+
+
+		</tbody>
+	</table>
+	<dl>
+
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-disable">disable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Disables the slider.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Slider disable() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+							<p>The method sets the disabled attribute for the slider and changes the look of the slider to the disabled state.</p>
+
+						</p>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Slider</td>
+									<td>Returns this.</td>
+								</tr>
+								</tbody>
+							</table>
+					</div>
+						<div class="example">
+							<span class="example"><p>Code
+								example:</p><p></p></span>
+							<p>HTML code:</p>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;input id=&quot;Slider&quot; name=&quot;slider-1&quot; type=&quot;range&quot; value=&quot;5&quot; min=&quot;0&quot; max=&quot;10&quot;/&gt;
+</pre>
+							<p>JS code:</p>
+							<pre name="code" class="examplecode
+							prettyprint">
+var slider = document.getElementById(&quot;Slider&quot;),
+    sliderWidget = tau.widget.Slider(slider);
+sliderWidget.disable();
+</pre>
+						</div>
+
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-enable">enable</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Enables the slider.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Slider enable() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+							<p>The method removes the disabled attribute from the slider and changes the look of the slider to the enabled state.</p>
+
+
+
+
+						</p>
+					</div>
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Slider</td>
+									<td>Returns this.</td>
+								</tr>
+								</tbody>
+							</table>
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example :</p><p></p></span>
+							<p>HTML code:</p>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;input id=&quot;Slider&quot; name=&quot;slider-1&quot; type=&quot;range&quot; value=&quot;5&quot; min=&quot;0&quot; max=&quot;10&quot;/&gt;
+</pre>
+
+							<p>JS code:</p>
+							<pre name="code" class="examplecode
+							prettyprint">
+var slider = document.getElementById(&quot;Slider&quot;),
+    sliderWidget = tau.widget.Slider(slider);
+sliderWidget.enable();
+</pre>
+						</div>
+
+				</dd>
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-refresh">refresh</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Refreshes a slider markup.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">Slider refresh() </pre>
+					</div>
+
+					<div class="description">
+						<p>
+							<p>The method rebuilds the DOM structure of the slider component. It must be called after you manually change the HTML attributes of the component&#39;s DOM structure.</p>
+
+<p>The method is called automatically after any component option is changed.</p>
+
+
+
+
+						</p>
+					</div>
+
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>Slider</td>
+									<td>Returns this.</td>
+								</tr>
+								</tbody>
+							</table>
+
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example :</p><p></p></span>
+							<p>HTML code:</p>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;input id=&quot;Slider&quot; name=&quot;slider-1&quot; type=&quot;range&quot; value=&quot;5&quot; min=&quot;0&quot; max=&quot;10&quot;/&gt;
+</pre>
+							<p>JS code:</p>
+							<pre name="code" class="examplecode
+							prettyprint">
+var slider = document.getElementById(&quot;Slider&quot;),
+    sliderWidget = tau.widget.Slider(slider);
+sliderWidget.refresh();
+</pre>
+						</div>
+
+				</dd>
+
+
+				<dt class="method" id="addidp28072"><code><b><span class="methodName"
+																   id="method-value">value</span></b></code></dt>
+				<dd>
+					<div class="brief">
+						<p>Gets or sets a value.</p>
+					</div>
+					<div class="synopsis">
+						<pre class="signature prettyprint">number value() </pre>
+					</div>
+
+						<p><span class="version">Since: </span>
+							2.3
+						</p>
+
+					<div class="description">
+						<p>
+							<p>The method returns the element value or sets the element value.</p>
+
+
+
+
+						</p>
+					</div>
+
+
+
+					<div class="returntype">
+						<p><span class="return">Return value:</span></p>
+
+							<table>
+								<tbody>
+								<tr>
+									<th>Type</th>
+									<th>Description</th>
+								</tr>
+								<tr>
+									<td>number</td>
+									<td>In the get mode, returns the element value.</td>
+								</tr>
+								</tbody>
+							</table>
+
+
+					</div>
+
+						<div class="example">
+							<span class="example"><p>Code
+								example :</p><p></p></span>
+							<p>HTML code:</p>
+							<pre name="code" class="examplecode
+							prettyprint">
+&lt;input id=&quot;Slider&quot; name=&quot;slider-1&quot; type=&quot;range&quot; value=&quot;5&quot; min=&quot;0&quot; max=&quot;10&quot;/&gt;
+</pre>
+
+							<p>JS code:</p>
+							<pre name="code" class="examplecode
+							prettyprint">
+var slider = document.getElementById(&quot;Slider&quot;),
+    sliderWidget = tau.widget.Slider(slider);
+/* Get the slider value */
+value = sliderWidget.value();
+/* Set the value for the slider */
+sliderWidget.value(&quot;1&quot;);
+</pre>
+						</div>
+
+				</dd>
+
+
+	</dl>
+
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
 </html>

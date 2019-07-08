@@ -121,9 +121,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </pre></div></p>
 <p>After this point, what we have are two distinct lists that share some elements. The first list (inlist) is defined by the pointers inside the elements data structure, while the second list (normal list) has its own node data structure that is kept outside of the elements.</p>
 <p>The two lists, sharing some elements, can be represented by the following picture:</p>
- 
- <img src="eina_inlist-node_eg2-list-inlist.png" style="max-width: 100%;"/>
-   <p>Accessing both lists is done normally, as if they didn't have any elements in common:</p>
+<div class="image">
+<img src="eina_inlist-node_eg2-list-inlist.png" alt="eina_inlist-node_eg2-list-inlist.png"/>
+</div>
+  <p>Accessing both lists is done normally, as if they didn't have any elements in common:</p>
 <p><div class="fragment"><pre class="fragment">   printf(<span class="stringliteral">&quot;inlist=%p\n&quot;</span>, inlist);
    <a class="code" href="group__Eina__Inline__List__Group.html#ga65e496b9b16d527d23c1d735652b4e62">EINA_INLIST_FOREACH</a>(inlist, cur)
      printf(&quot;\ta=%d, b=%d\n&quot;, cur-&gt;a, cur-&gt;b);

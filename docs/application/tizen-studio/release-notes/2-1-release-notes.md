@@ -1,6 +1,6 @@
 # Tizen Studio 2.1 Release Notes
 
--   Release Date: Dec 21, 2017
+-   Release Date: Jan 3, 2018
 
 
 ## IDE and Tools

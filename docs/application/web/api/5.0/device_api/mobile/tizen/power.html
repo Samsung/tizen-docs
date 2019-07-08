@@ -46,7 +46,9 @@ For more information on the Power features, see <a href="https://developer.tizen
 </li>
 </ul>
 </li>
-<li>3. <a href="#full-webidl">Full WebIDL</a>
+<li>3. <a href="#api-features">Related Feature</a>
+</li>
+<li>4. <a href="#full-webidl">Full WebIDL</a>
 </li>
 </ul>
 <hr>
@@ -393,6 +395,11 @@ tizen.power.setScreenStateChangeListener(onScreenStateChanged);
 <p><span class="version">Since: </span>
  2.0
             </p>
+<div class="description">
+            <p>
+Calling this function has no effect if listener is not set.
+            </p>
+           </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -713,7 +720,21 @@ tizen.power.turnScreenOff();
 </div>
 </div>
 </div>
-<h2 id="full-webidl">3. Full WebIDL</h2>
+<h2 id="api-features">3. Related Feature</h2>
+<div id="def-api-features" class="def-api-features">
+        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+                    <div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the application runs on a device which allows screen state changing, declare the following feature requirement in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/display.state</li>
+</div>
+<p></p>
+                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+</div>
+<h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Power {
   enum PowerResource { "SCREEN", "CPU" };
   enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL", "SCREEN_BRIGHT" };

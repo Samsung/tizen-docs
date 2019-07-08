@@ -91,15 +91,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>In this example we will have a photocam and a couple of buttons and slider to control the photocam. To avoid cluttering we'll only show the parts of the example that relate to the photocam, the full source code can be seen <a class="el" href="photocam_example_01_8c-example.html">here</a>.</p>
-<p>Creating a photocam is as easy as creating any other widget: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>A photocam is only useful if we have a image on it, so lets set a file for it to work with: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We now set the photocam to not bounce horizontally: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And we want to know when the photocam has finished loading the image so: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The reason to know when the image is loaded is so that we can bring the center of the image into view: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>As mentioned we have 2 buttons in this example, the "Fit" one will cause the photocam to go in to a zoom mode that makes the image fit inside the photocam. Tough this has no effect on the image we also print what region was being viewed before setting the zoom mode: <div class="fragment"><pre class="fragment"></pre></div> </p>
+<p>Creating a photocam is as easy as creating any other widget: <div class="fragment"><pre class="fragment">   photocam = <a class="code" href="group__Elm__Photocam.html#gabd50b6fda6afe732478a33e4999a1386" title="Add a new Photocam object.">elm_photocam_add</a>(win);
+</pre></div></p>
+<p>A photocam is only useful if we have a image on it, so lets set a file for it to work with: <div class="fragment"><pre class="fragment">   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/images/insanely_huge_test_image.jpg&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   <a class="code" href="group__Elm__Photocam.html#gaa4cb6e360aab7307380ac92de4e04dd2" title="Set the photo file to be shown.">elm_photocam_file_set</a>(photocam, buf);
+</pre></div></p>
+<p>We now set the photocam to not bounce horizontally: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set</a>(photocam, EINA_FALSE, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
+<p>And we want to know when the photocam has finished loading the image so: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(photocam, <span class="stringliteral">&quot;loaded,detail&quot;</span>, _bring_in, NULL);
+</pre></div></p>
+<p>The reason to know when the image is loaded is so that we can bring the center of the image into view: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_bring_in(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> w, h;
+   <a class="code" href="group__Elm__Photocam.html#gae578f8117d96e92a27037947fabd3d15" title="Get the current image pixel width and height.">elm_photocam_image_size_get</a>(obj, &amp;w, &amp;h);
+   <a class="code" href="group__Elm__Photocam.html#ga51a9dd5b4e7c6593e9734d1838e11266" title="Bring in the viewed portion of the image.">elm_photocam_image_region_bring_in</a>(obj, w/2, h/2, 500, 400);
+}
+</pre></div></p>
+<p>As mentioned we have 2 buttons in this example, the "Fit" one will cause the photocam to go in to a zoom mode that makes the image fit inside the photocam. Tough this has no effect on the image we also print what region was being viewed before setting the zoom mode: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_fit(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> x, y, w, h;
+   elm_photocam_image_region_get(data, &amp;x, &amp;y, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;region: {%d, %d, %d, %d}\n&quot;</span>, x, y, w, h);
+</pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>When in fit mode our slider(explained below) won't work.</dd></dl>
-<p>The second button("Unfit") will bring the photocam back into manual zoom mode: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Our slider controls the level of zoom of the photocam: <div class="fragment"><pre class="fragment"></pre></div> </p>
+<p>The second button("Unfit") will bring the photocam back into manual zoom mode: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_unfit(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Photocam.html#ga36acb49e545f2426115f74f4b33eb67f" title="Set the zoom mode.">elm_photocam_zoom_mode_set</a>(data, ELM_PHOTOCAM_ZOOM_MODE_MANUAL);
+}
+</pre></div></p>
+<p>Our slider controls the level of zoom of the photocam: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_zoom(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <span class="keywordtype">double</span> z = <a class="code" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" title="Get the value displayed by the slider.">elm_slider_value_get</a>(obj) * 8;
+   <a class="code" href="group__Elm__Photocam.html#ga2f63118a574a0c42a615c0da60cf622a" title="Set the zoom level of the photo.">elm_photocam_zoom_set</a>(data, z);
+}
+</pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>It is important to note that this only works when in manual zoom mode.</dd></dl>
 <p>Our example will initially look like this:</p>
 <div class="image">

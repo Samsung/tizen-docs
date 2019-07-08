@@ -87,7 +87,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Ecore Idle functions</div>  </div>
@@ -106,28 +105,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><a class="el" href="ecore_idler_example_c.html">ecore idle state - Idlers, enterers and exiters</a> </li>
 </ul>
 <table class="memberdecls">
-<tr><td colspan="2"><h2><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Idle__Group.html#ga2cc50b0957bf0eaf0c024a7c053fa1dc">Ecore_Idler</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#ga048ed35688c416f1f495912a900e9297">ecore_idler_add</a> (<a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a> func, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#gaf7b5ec4cc0d26179c1b5e3ee907e5d58">ecore_idler_del</a> (<a class="el" href="group__Ecore__Idle__Group.html#ga2cc50b0957bf0eaf0c024a7c053fa1dc">Ecore_Idler</a> *idler)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Idle__Group.html#ga361e0801c2d510e54e92b54968863ca3">Ecore_Idle_Enterer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#ga0805b9840716bd08ae44956dba8de3e6">ecore_idle_enterer_add</a> (<a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a> func, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Idle__Group.html#ga361e0801c2d510e54e92b54968863ca3">Ecore_Idle_Enterer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#ga6aa00afaecb0a5a29add3bb92f534a0d">ecore_idle_enterer_before_add</a> (<a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a> func, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#ga7e1106729c49d0cd714ef58e0343470c">ecore_idle_enterer_del</a> (<a class="el" href="group__Ecore__Idle__Group.html#ga361e0801c2d510e54e92b54968863ca3">Ecore_Idle_Enterer</a> *idle_enterer)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Idle__Group.html#ga0481e5c5dda1fa73f4e0296ef069692b">Ecore_Idle_Exiter</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#ga4bbd02660dd2b36a2da262a9bda3dfb4">ecore_idle_exiter_add</a> (<a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a> func, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#ga89b7d6e94230fcbc331258f7aedf6010">ecore_idle_exiter_del</a> (<a class="el" href="group__Ecore__Idle__Group.html#ga0481e5c5dda1fa73f4e0296ef069692b">Ecore_Idle_Exiter</a> *idle_exiter)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef Eo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#ga2cc50b0957bf0eaf0c024a7c053fa1dc">Ecore_Idler</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef Eo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#ga361e0801c2d510e54e92b54968863ca3">Ecore_Idle_Enterer</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef Eo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#ga0481e5c5dda1fa73f4e0296ef069692b">Ecore_Idle_Exiter</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+_Ecore_Factorized_Idle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#gae4e7f2215a6e8cff3e2eab2582b5868e">Ecore_Idler</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+_Ecore_Factorized_Idle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#gadc4e81cb020047be0f8f36db6d942ed3">Ecore_Idle_Enterer</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+_Ecore_Factorized_Idle&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Idle__Group.html#gaa07d755d135454aa97625464aab4adf8">Ecore_Idle_Exiter</a></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
-<a class="anchor" id="ga361e0801c2d510e54e92b54968863ca3"></a><!-- doxytag: member="Ecore_Common.h::Ecore_Idle_Enterer" ref="ga361e0801c2d510e54e92b54968863ca3" args="" -->
+<a class="anchor" id="gadc4e81cb020047be0f8f36db6d942ed3"></a><!-- doxytag: member="Ecore_Common.h::Ecore_Idle_Enterer" ref="gadc4e81cb020047be0f8f36db6d942ed3" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Eo <a class="el" href="group__Ecore__Idle__Group.html#ga361e0801c2d510e54e92b54968863ca3">Ecore_Idle_Enterer</a></td>
+          <td class="memname">typedef struct _Ecore_Factorized_Idle <a class="el" href="group__Ecore__Idle__Group.html#gadc4e81cb020047be0f8f36db6d942ed3">Ecore_Idle_Enterer</a></td>
         </tr>
       </table>
 </div>
@@ -136,12 +129,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga0481e5c5dda1fa73f4e0296ef069692b"></a><!-- doxytag: member="Ecore_Common.h::Ecore_Idle_Exiter" ref="ga0481e5c5dda1fa73f4e0296ef069692b" args="" -->
+<a class="anchor" id="gaa07d755d135454aa97625464aab4adf8"></a><!-- doxytag: member="Ecore_Common.h::Ecore_Idle_Exiter" ref="gaa07d755d135454aa97625464aab4adf8" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Eo <a class="el" href="group__Ecore__Idle__Group.html#ga0481e5c5dda1fa73f4e0296ef069692b">Ecore_Idle_Exiter</a></td>
+          <td class="memname">typedef struct _Ecore_Factorized_Idle <a class="el" href="group__Ecore__Idle__Group.html#gaa07d755d135454aa97625464aab4adf8">Ecore_Idle_Exiter</a></td>
         </tr>
       </table>
 </div>
@@ -150,12 +143,12 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga2cc50b0957bf0eaf0c024a7c053fa1dc"></a><!-- doxytag: member="Ecore_Common.h::Ecore_Idler" ref="ga2cc50b0957bf0eaf0c024a7c053fa1dc" args="" -->
+<a class="anchor" id="gae4e7f2215a6e8cff3e2eab2582b5868e"></a><!-- doxytag: member="Ecore_Common.h::Ecore_Idler" ref="gae4e7f2215a6e8cff3e2eab2582b5868e" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef Eo <a class="el" href="group__Ecore__Idle__Group.html#ga2cc50b0957bf0eaf0c024a7c053fa1dc">Ecore_Idler</a></td>
+          <td class="memname">typedef struct _Ecore_Factorized_Idle <a class="el" href="group__Ecore__Idle__Group.html#gae4e7f2215a6e8cff3e2eab2582b5868e">Ecore_Idler</a></td>
         </tr>
       </table>
 </div>
@@ -170,7 +163,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Ecore__Idle__Group.html#ga361e0801c2d510e54e92b54968863ca3">Ecore_Idle_Enterer</a>* <a class="el" href="group__Ecore__Idle__Group.html#ga0805b9840716bd08ae44956dba8de3e6">ecore_idle_enterer_add</a> </td>
+          <td class="memname"><a class="el" href="group__Ecore__Idle__Group.html#gadc4e81cb020047be0f8f36db6d942ed3">Ecore_Idle_Enterer</a>* <a class="el" href="group__Ecore__Idle__Group.html#ga0805b9840716bd08ae44956dba8de3e6">ecore_idle_enterer_add</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a>&#160;</td>
           <td class="paramname"><em>func</em>, </td>
@@ -198,7 +191,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the idle enterer callback if successful. Otherwise, <code>NULL</code> is returned. </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>The function func will be called every time the main loop is entering idle state, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idle enterer.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The function func will be called every time the main loop is entering idle state, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idle enterer. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_idler_example_8c-example.html#a11">ecore_idler_example.c</a>.</dd>
 </dl>
@@ -209,7 +202,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Ecore__Idle__Group.html#ga361e0801c2d510e54e92b54968863ca3">Ecore_Idle_Enterer</a>* <a class="el" href="group__Ecore__Idle__Group.html#ga6aa00afaecb0a5a29add3bb92f534a0d">ecore_idle_enterer_before_add</a> </td>
+          <td class="memname"><a class="el" href="group__Ecore__Idle__Group.html#gadc4e81cb020047be0f8f36db6d942ed3">Ecore_Idle_Enterer</a>* <a class="el" href="group__Ecore__Idle__Group.html#ga6aa00afaecb0a5a29add3bb92f534a0d">ecore_idle_enterer_before_add</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a>&#160;</td>
           <td class="paramname"><em>func</em>, </td>
@@ -237,7 +230,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the idle enterer callback if successful. Otherwise, <code>NULL</code> is returned. </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>The function func will be called every time the main loop is entering idle state, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idle enterer.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The function func will be called every time the main loop is entering idle state, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idle enterer. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -249,7 +242,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="memname">void* <a class="el" href="group__Ecore__Idle__Group.html#ga7e1106729c49d0cd714ef58e0343470c">ecore_idle_enterer_del</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Ecore__Idle__Group.html#ga361e0801c2d510e54e92b54968863ca3">Ecore_Idle_Enterer</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Idle__Group.html#gadc4e81cb020047be0f8f36db6d942ed3">Ecore_Idle_Enterer</a> *&#160;</td>
           <td class="paramname"><em>idle_enterer</em></td><td>)</td>
           <td></td>
         </tr>
@@ -263,7 +256,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer passed to the idler enterer callback on success. <code>NULL</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer passed to the idler enterer callback on success. <code>NULL</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_idler_example_8c-example.html#a3">ecore_idler_example.c</a>.</dd>
 </dl>
@@ -274,7 +267,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Ecore__Idle__Group.html#ga0481e5c5dda1fa73f4e0296ef069692b">Ecore_Idle_Exiter</a>* <a class="el" href="group__Ecore__Idle__Group.html#ga4bbd02660dd2b36a2da262a9bda3dfb4">ecore_idle_exiter_add</a> </td>
+          <td class="memname"><a class="el" href="group__Ecore__Idle__Group.html#gaa07d755d135454aa97625464aab4adf8">Ecore_Idle_Exiter</a>* <a class="el" href="group__Ecore__Idle__Group.html#ga4bbd02660dd2b36a2da262a9bda3dfb4">ecore_idle_exiter_add</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a>&#160;</td>
           <td class="paramname"><em>func</em>, </td>
@@ -302,7 +295,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the idle exiter callback on success. <code>NULL</code> otherwise. </dd></dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>The function func will be called every time the main loop is exiting idle state, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idle exiter.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The function func will be called every time the main loop is exiting idle state, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idle exiter. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_idler_example_8c-example.html#a12">ecore_idler_example.c</a>.</dd>
 </dl>
@@ -315,7 +308,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="memname">void* <a class="el" href="group__Ecore__Idle__Group.html#ga89b7d6e94230fcbc331258f7aedf6010">ecore_idle_exiter_del</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Ecore__Idle__Group.html#ga0481e5c5dda1fa73f4e0296ef069692b">Ecore_Idle_Exiter</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Idle__Group.html#gaa07d755d135454aa97625464aab4adf8">Ecore_Idle_Exiter</a> *&#160;</td>
           <td class="paramname"><em>idle_exiter</em></td><td>)</td>
           <td></td>
         </tr>
@@ -329,7 +322,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer that was being being passed to the handler if successful. <code>NULL</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer that was being being passed to the handler if successful. <code>NULL</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_idler_example_8c-example.html#a4">ecore_idler_example.c</a>.</dd>
 </dl>
@@ -340,7 +333,7 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Ecore__Idle__Group.html#ga2cc50b0957bf0eaf0c024a7c053fa1dc">Ecore_Idler</a>* <a class="el" href="group__Ecore__Idle__Group.html#ga048ed35688c416f1f495912a900e9297">ecore_idler_add</a> </td>
+          <td class="memname"><a class="el" href="group__Ecore__Idle__Group.html#gae4e7f2215a6e8cff3e2eab2582b5868e">Ecore_Idler</a>* <a class="el" href="group__Ecore__Idle__Group.html#ga048ed35688c416f1f495912a900e9297">ecore_idler_add</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a>&#160;</td>
           <td class="paramname"><em>func</em>, </td>
@@ -369,7 +362,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A idler handle if successfully added, <code>NULL</code> otherwise.</dd></dl>
 <p>Add an idler handle to the event loop, returning a handle on success and <code>NULL</code> otherwise. The function <code>func</code> will be called repeatedly while no other events are ready to be processed, as long as it returns <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>). A return of <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>) deletes the idler.</p>
-<p>Idlers are useful for progressively processing data without blocking.</p>
+<p>Idlers are useful for progressively processing data without blocking. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_idler_example_8c-example.html#a13">ecore_idler_example.c</a>.</dd>
 </dl>
@@ -382,7 +375,7 @@ Typedefs</h2></td></tr>
         <tr>
           <td class="memname">void* <a class="el" href="group__Ecore__Idle__Group.html#gaf7b5ec4cc0d26179c1b5e3ee907e5d58">ecore_idler_del</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Ecore__Idle__Group.html#ga2cc50b0957bf0eaf0c024a7c053fa1dc">Ecore_Idler</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Idle__Group.html#gae4e7f2215a6e8cff3e2eab2582b5868e">Ecore_Idler</a> *&#160;</td>
           <td class="paramname"><em>idler</em></td><td>)</td>
           <td></td>
         </tr>
@@ -396,7 +389,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer passed to the idler callback on success, <code>NULL</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer passed to the idler callback on success, <code>NULL</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>

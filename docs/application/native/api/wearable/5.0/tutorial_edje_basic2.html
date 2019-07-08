@@ -101,20 +101,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>To load our edje file we will use this command, we do just like the last example (Basic example):</p>
 <p><div class="fragment"><pre class="fragment">  <span class="keywordflow">if</span>(!edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;image_group&quot;</span>))
   {
-    <span class="keywordtype">int</span> err = <a class="code" href="group__Edje__Object.html#ga20a6e01d3a62e04d0d85bd8c673601cf" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje_obj);
-    <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a class="code" href="group__Edje__Object__File.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
+    <span class="keywordtype">int</span> err = edje_object_load_error_get(edje_obj);
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
     fprintf(stderr, <span class="stringliteral">&quot;Could not load the edje file - reason:%s\n&quot;</span>, errmsg);
     <span class="keywordflow">goto</span> shutdown_edje;
   }
 
-  <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 50, 50);
-  <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, 64, 64);
-  <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
+  evas_object_move(edje_obj, 50, 50);
+  evas_object_resize(edje_obj, 64, 64);
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
 </pre></div></p>
 <p>If we want to move our image, we need to add a callback to be able to do this, so we define:</p>
-<p><div class="fragment"><pre class="fragment">  <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_key_down, edje_obj);
+<p><div class="fragment"><pre class="fragment">  <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_key_down, edje_obj);
 </pre></div></p>
-<p>To get the position of the image we use this:  <div class="fragment"><pre class="fragment">  <a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(edje_obj, &amp;x, &amp;y, NULL, NULL);
+<p>To get the position of the image we use this:  <div class="fragment"><pre class="fragment">  <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(edje_obj, &amp;x, &amp;y, NULL, NULL);
 </pre></div></p>
 <p>Now we use the if's to check in what direction the user wants to move the image then we move it:</p>
 <p><div class="fragment"><pre class="fragment">  <span class="keywordflow">if</span>(strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>,<span class="stringliteral">&quot;Escape&quot;</span>) == 0)
@@ -139,11 +139,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   }
   <span class="keywordflow">else</span>
   {
-     fprintf(stdout, <span class="stringliteral">&quot;Key %s not supported.\nCommands:%s&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, commands);
+     printf(<span class="stringliteral">&quot;Key %s not supported.\nCommands:%s&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, commands);
      <span class="keywordflow">return</span>;
   }
 
-  <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, x, y);
+  evas_object_move(edje_obj, x, y);
 </pre></div></p>
 <p>The example's window should look like this picture:</p>
 <div class="image">
@@ -190,7 +190,7 @@ _on_key_down(<span class="keywordtype">void</span> *data,
   ev = (<a class="code" href="struct__Evas__Event__Key__Down.html">Evas_Event_Key_Down</a> *)einfo;
   edje_obj = (<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *)data;
 
-  <a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(edje_obj, &amp;x, &amp;y, NULL, NULL);
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(edje_obj, &amp;x, &amp;y, NULL, NULL);
 
   <span class="keywordflow">if</span>(strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>,<span class="stringliteral">&quot;Escape&quot;</span>) == 0)
   {
@@ -214,11 +214,11 @@ _on_key_down(<span class="keywordtype">void</span> *data,
   }
   <span class="keywordflow">else</span>
   {
-     fprintf(stdout, <span class="stringliteral">&quot;Key %s not supported.\nCommands:%s&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, commands);
+     printf(<span class="stringliteral">&quot;Key %s not supported.\nCommands:%s&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, commands);
      <span class="keywordflow">return</span>;
   }
 
-  <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, x, y);
+  evas_object_move(edje_obj, x, y);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -242,7 +242,7 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
   <span class="keywordflow">if</span>(!<a class="code" href="group__Edje__General__Group.html#ga1c9c6594f38023c29fbfb2d0c8c675db" title="Initializes the Edje library.">edje_init</a>())
     <span class="keywordflow">goto</span> shutdown_ecore_evas;
 
-  ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+  ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
 
   <span class="keywordflow">if</span>(!ee) <span class="keywordflow">goto</span> shutdown_edje;
 
@@ -252,33 +252,33 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
   evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
 
   bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-  <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">//White</span>
-  <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">//orign</span>
-  <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">//cover the window</span>
-  <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+  <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">//White</span>
+  evas_object_move(bg, 0, 0); <span class="comment">//orign</span>
+  evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">//cover the window</span>
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
-  ecore_evas_object_associate(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
+  <a class="code" href="group__Ecore__Evas__Group.html#ga52ddd7e1011746cca7915af6e38b1f0b" title="Associates the given object to this ecore evas.">ecore_evas_object_associate</a>(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
   evas_object_focus_set(bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
   edje_obj = edje_object_add(evas);
 
   <span class="keywordflow">if</span>(!edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;image_group&quot;</span>))
   {
-    <span class="keywordtype">int</span> err = <a class="code" href="group__Edje__Object.html#ga20a6e01d3a62e04d0d85bd8c673601cf" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje_obj);
-    <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a class="code" href="group__Edje__Object__File.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
+    <span class="keywordtype">int</span> err = edje_object_load_error_get(edje_obj);
+    <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
     fprintf(stderr, <span class="stringliteral">&quot;Could not load the edje file - reason:%s\n&quot;</span>, errmsg);
     <span class="keywordflow">goto</span> shutdown_edje;
   }
 
-  <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 50, 50);
-  <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, 64, 64);
-  <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
+  evas_object_move(edje_obj, 50, 50);
+  evas_object_resize(edje_obj, 64, 64);
+  <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
 
-  <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_key_down, edje_obj);
+  <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_key_down, edje_obj);
 
   <a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee);
 
-  fprintf(stdout, <span class="stringliteral">&quot;%s&quot;</span>, commands);
+  printf(<span class="stringliteral">&quot;%s&quot;</span>, commands);
 
   <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 

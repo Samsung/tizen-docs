@@ -7,13 +7,7 @@ For developing the OpenGL&reg; app using C# on the Tizen platform, an app develo
 
 Besides the OpenGL&reg; ES APIs, OpenTK also provides several utility libraries including a math or linear algebra package, windowing system, and input handling for application developers.
 
-After setting up the OpenTK development environment, you can quickly create graphic applications with the OpenGL&reg; ES 2.0, such as:
-
--   Ambient app
--   Game
--   Dynamic partial
--   Physics effect
-
+After setting up the OpenTK development environment, you can quickly create graphic applications with the OpenGL&reg; ES 2.0, such as ambient applications, games, dynamic partial, physics effect.
 
 The OpenTK app offers the following features:
 
@@ -26,43 +20,32 @@ The OpenTK app offers the following features:
 
 ## Key Concepts
 
-To use OpenTK in your application, you must familiarize yourself with the following OpenTK key concepts:
+To use OpenTK in your application, understand the following OpenTK key concepts:
 
--   `TizenGameApplication`: It is the application lifecycle manager and base class of OpenTK app for Tizen. `TizenGameApplication` is integrated with the Tizen Application Framework. Therefore, you can get the events from the Tizen Application Framework.
-    The OpenTK app implements virtual lifecycle functions to customize their own app flow.
-    For example, `OnCreate`, `OnPause`, `OnResume`, `OnTerminate`, `OnAppControlReceived`, `OnDeviceOrientationChanged`, and so on. 
-    
+-   `TizenGameApplication`: The application lifecycle manager and base class of OpenTK app for Tizen.
+
+    `TizenGameApplication` is integrated with the Tizen Application Framework. Therefore, you can get the events from the Tizen Application Framework. The OpenTK app implements virtual lifecycle functions to customize their own app flow.  For example, `OnCreate`, `OnPause`, `OnResume`, `OnTerminate`, `OnAppControlReceived`, `OnDeviceOrientationChanged`, and so on.
+
     For more information, see [Applications](../applications/ui-app.md).
-    
--   `Window`: It is an attribute of TizenGameApplication, and provides window related attributes, which include `X`, `Y`, `Width`, `Height`, `Title`, `WindowInfo`, and so on. 
 
-    It also provides **Events** and **OpenGL** context related functions, which includes the following:
-    
+-   `Window`: An attribute of `TizenGameApplication`. It provides window related attributes, which include `X`, `Y`, `Width`, `Height`, `Title`, `WindowInfo`, and so on.
+
+    It also provides **Events** and **OpenGL** context related functions:
+
     **Events**
-    
+
     -   `Load`
     -   `Unload`
     -   `UpdateFrame`
     -   `RenderFrame`
-    
+
     **OpenGL&reg; context related functions**
-    
+
     -   `MakeCurrent`
     -   `Run`
     -   `SwapBuffers`
-    
--   `WindowAttributes`: It is an attribute of `TizenGameApplication`, and provides window-controlling attributes, which includes the following:
 
-    -   `IsFocusAllowed`
-    -   `WindowOpacity`
-    
-    It also provides a method `AddAuxiliaryHint`.
-
-## Prerequisites
-
-- Visual Studio 2017
-- [Visual Studio Tools for Tizen](../../../vstools/install.md)
-- Tizen emulator image (supports version Tizen 5.0 and higher)
+-   `WindowAttributes`: An attribute of `TizenGameApplication`.  It provides window-controlling attributes, such as `IsFocusAllowed` and `WindowOpacity`. It also provides a method `AddAuxiliaryHint`.
 
 ## Related Information
 - Dependencies

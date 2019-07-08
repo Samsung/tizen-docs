@@ -108,7 +108,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the path being watched by the given Eio_Monitor.  <a href="#ga4d986a80e062e82c685f3b4eac8abb0f"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga3acbc014c793f051c39a2216a0481757"></a><!-- doxytag: member="Eio.h::eio_monitor_add" ref="ga3acbc014c793f051c39a2216a0481757" args="(const char *path)" -->
+<a class="anchor" id="ga3acbc014c793f051c39a2216a0481757"></a><!-- doxytag: member="Eio_Legacy.h::eio_monitor_add" ref="ga3acbc014c793f051c39a2216a0481757" args="(const char *path)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -131,12 +131,12 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>NULL in case of a failure or a pointer to the monitor in case of success.</dd></dl>
-<p>This function will add the given path to its internal list of files to monitor. It utilizes the inotify mechanism introduced in kernel 2.6.13 for passive monitoring.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function will add the given path to its internal list of files to monitor. It utilizes the inotify mechanism introduced in kernel 2.6.13 for passive monitoring. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gac143993ba6cb830098550961c38dbb81"></a><!-- doxytag: member="Eio.h::eio_monitor_del" ref="gac143993ba6cb830098550961c38dbb81" args="(Eio_Monitor *monitor)" -->
+<a class="anchor" id="gac143993ba6cb830098550961c38dbb81"></a><!-- doxytag: member="Eio_Legacy.h::eio_monitor_del" ref="gac143993ba6cb830098550961c38dbb81" args="(Eio_Monitor *monitor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -154,15 +154,15 @@ Functions</h2></td></tr>
 <p>Deletes a path from the “watched” list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">monitor</td><td>The Eio_Monitor you want to stop watching. It can only be an Eio_Monitor returned to you from calling <a class="el" href="group__Eio__Monitor.html#ga3acbc014c793f051c39a2216a0481757" title="Adds a file/directory to monitor (inotify mechanism)">eio_monitor_add()</a> or <a class="el" href="group__Eio__Monitor.html#ga20ca8e21e13a119e0359e227d7cb2249" title="Adds a file/directory to monitor.">eio_monitor_stringshared_add()</a></td></tr>
+    <tr><td class="paramname">monitor</td><td>The Eio_Monitor you want to stop watching. It can only be an Eio_Monitor returned to you from calling <a class="el" href="group__Eio__Monitor.html#ga3acbc014c793f051c39a2216a0481757" title="Adds a file/directory to monitor (inotify mechanism)">eio_monitor_add()</a> or <a class="el" href="group__Eio__Monitor.html#ga20ca8e21e13a119e0359e227d7cb2249" title="Adds a file/directory to monitor.">eio_monitor_stringshared_add()</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga4d986a80e062e82c685f3b4eac8abb0f"></a><!-- doxytag: member="Eio.h::eio_monitor_path_get" ref="ga4d986a80e062e82c685f3b4eac8abb0f" args="(Eio_Monitor *monitor)" -->
+<a class="anchor" id="ga4d986a80e062e82c685f3b4eac8abb0f"></a><!-- doxytag: member="Eio_Legacy.h::eio_monitor_path_get" ref="ga4d986a80e062e82c685f3b4eac8abb0f" args="(Eio_Monitor *monitor)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -185,11 +185,11 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The stringshared path belonging to <code>monitor</code> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga20ca8e21e13a119e0359e227d7cb2249"></a><!-- doxytag: member="Eio.h::eio_monitor_stringshared_add" ref="ga20ca8e21e13a119e0359e227d7cb2249" args="(const char *path)" -->
+<a class="anchor" id="ga20ca8e21e13a119e0359e227d7cb2249"></a><!-- doxytag: member="Eio_Legacy.h::eio_monitor_stringshared_add" ref="ga20ca8e21e13a119e0359e227d7cb2249" args="(const char *path)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -213,13 +213,13 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>NULL in case of a failure or a pointer to the monitor in case of success. </dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Do NOT pass non-stringshared strings to this function! If you don't know what this means, use <a class="el" href="group__Eio__Monitor.html#ga3acbc014c793f051c39a2216a0481757" title="Adds a file/directory to monitor (inotify mechanism)">eio_monitor_add()</a>.</dd></dl>
-<p>This fuction is just like <a class="el" href="group__Eio__Monitor.html#ga3acbc014c793f051c39a2216a0481757" title="Adds a file/directory to monitor (inotify mechanism)">eio_monitor_add()</a>, however the string passed by argument must be created using <a class="el" href="group__Eina__Stringshare__Group.html#ga5293082680141132ffcacc28866ef0ef" title="Retrieves an instance of a string for use in a program.">eina_stringshare_add()</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This fuction is just like <a class="el" href="group__Eio__Monitor.html#ga3acbc014c793f051c39a2216a0481757" title="Adds a file/directory to monitor (inotify mechanism)">eio_monitor_add()</a>, however the string passed by argument must be created using <a class="el" href="group__Eina__Stringshare__Group.html#ga5293082680141132ffcacc28866ef0ef" title="Retrieves an instance of a string for use in a program.">eina_stringshare_add()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
 <hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="ga61ffeb02418656b5888563425881c9c3"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_DIRECTORY_CLOSED" ref="ga61ffeb02418656b5888563425881c9c3" args="" -->
+<a class="anchor" id="ga61ffeb02418656b5888563425881c9c3"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_DIRECTORY_CLOSED" ref="ga61ffeb02418656b5888563425881c9c3" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -229,11 +229,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>A directory has been closed in a watched directory. This event is never sent on Windows and OSX </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) A directory has been closed in a watched directory. This event is never sent on Windows and OSX, or for non-fallback monitors </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gab0bec26c342c93f009e66430601cebfa"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_DIRECTORY_CREATED" ref="gab0bec26c342c93f009e66430601cebfa" args="" -->
+<a class="anchor" id="gab0bec26c342c93f009e66430601cebfa"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_DIRECTORY_CREATED" ref="gab0bec26c342c93f009e66430601cebfa" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -243,11 +243,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>A new directory was created in a watched directory </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) A new directory was created in a watched directory </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gab63fc52bd5e7c638dd45340cb1f87f27"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_DIRECTORY_DELETED" ref="gab63fc52bd5e7c638dd45340cb1f87f27" args="" -->
+<a class="anchor" id="gab63fc52bd5e7c638dd45340cb1f87f27"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_DIRECTORY_DELETED" ref="gab63fc52bd5e7c638dd45340cb1f87f27" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -257,11 +257,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>A directory has been deleted: this can be either a watched directory or one of its subdirectories </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) A directory has been deleted: this can be either a watched directory or one of its subdirectories </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga26ed0b188e69ffd38ff00b2c696ffa75"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_DIRECTORY_MODIFIED" ref="ga26ed0b188e69ffd38ff00b2c696ffa75" args="" -->
+<a class="anchor" id="ga26ed0b188e69ffd38ff00b2c696ffa75"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_DIRECTORY_MODIFIED" ref="ga26ed0b188e69ffd38ff00b2c696ffa75" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -271,11 +271,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>A directory has been modified in a watched directory </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) A directory has been modified in a watched directory </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gab1fcb7bd226b288352b2482d4e0c655c"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_ERROR" ref="gab1fcb7bd226b288352b2482d4e0c655c" args="" -->
+<a class="anchor" id="gab1fcb7bd226b288352b2482d4e0c655c"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_ERROR" ref="gab1fcb7bd226b288352b2482d4e0c655c" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -285,11 +285,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>During operation the monitor failed and will no longer work. eio_monitor_del must be called on it. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) During operation the monitor failed and will no longer work. eio_monitor_del must be called on it. </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga6883e9d26906ab7f8dd7af582c93100d"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_FILE_CLOSED" ref="ga6883e9d26906ab7f8dd7af582c93100d" args="" -->
+<a class="anchor" id="ga6883e9d26906ab7f8dd7af582c93100d"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_FILE_CLOSED" ref="ga6883e9d26906ab7f8dd7af582c93100d" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -299,11 +299,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>A file was closed in a watched directory. This event is never sent on Windows and OSX </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) A file was closed in a watched directory. This event is never sent on Windows and OSX, or for non-fallback monitors </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga93ca339388870305d6a1e35aa35f0fc5"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_FILE_CREATED" ref="ga93ca339388870305d6a1e35aa35f0fc5" args="" -->
+<a class="anchor" id="ga93ca339388870305d6a1e35aa35f0fc5"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_FILE_CREATED" ref="ga93ca339388870305d6a1e35aa35f0fc5" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -313,11 +313,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>A new file was created in a watched directory </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) A new file was created in a watched directory </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gac41279fb25e0995a99327a2eaac9e672"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_FILE_DELETED" ref="gac41279fb25e0995a99327a2eaac9e672" args="" -->
+<a class="anchor" id="gac41279fb25e0995a99327a2eaac9e672"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_FILE_DELETED" ref="gac41279fb25e0995a99327a2eaac9e672" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -327,11 +327,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>A watched file was deleted, or a file in a watched directory was deleted </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) A watched file was deleted, or a file in a watched directory was deleted </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gafdc00b88fb71d255c1244643bf238f78"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_FILE_MODIFIED" ref="gafdc00b88fb71d255c1244643bf238f78" args="" -->
+<a class="anchor" id="gafdc00b88fb71d255c1244643bf238f78"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_FILE_MODIFIED" ref="gafdc00b88fb71d255c1244643bf238f78" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -341,11 +341,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>A file was modified in a watched directory </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) A file was modified in a watched directory </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga2b6c952c0fbd601a59caf7bff350c992"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_SELF_DELETED" ref="ga2b6c952c0fbd601a59caf7bff350c992" args="" -->
+<a class="anchor" id="ga2b6c952c0fbd601a59caf7bff350c992"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_SELF_DELETED" ref="ga2b6c952c0fbd601a59caf7bff350c992" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -355,11 +355,11 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The monitored path has been removed. This event is never sent on OSX </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) The monitored path has been removed. This event is never sent on OSX </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gacfec4e7ed521e04030e198667a1d3d92"></a><!-- doxytag: member="Eio.h::EIO_MONITOR_SELF_RENAME" ref="gacfec4e7ed521e04030e198667a1d3d92" args="" -->
+<a class="anchor" id="gacfec4e7ed521e04030e198667a1d3d92"></a><!-- doxytag: member="Eio_Legacy.h::EIO_MONITOR_SELF_RENAME" ref="gacfec4e7ed521e04030e198667a1d3d92" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -369,7 +369,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>The monitored path has been renamed, an error could happen just after if the renamed path doesn't exist. This event is never sent on OSX </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) The monitored path has been renamed, an error could happen just after if the renamed path doesn't exist. This event is never sent on OSX, or for non-fallback monitors </dd></dl>
 
 </div>
 </div>

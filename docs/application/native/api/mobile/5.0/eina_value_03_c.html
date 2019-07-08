@@ -254,15 +254,16 @@ _tz_convert_to(<span class="keyword">const</span> <a class="code" href="struct__
    <a class="code" href="group__Eina__Value__Value__Group.html#ga9a1407c953694c3d6f40ab01ebe9a294" title="Sets the generic value.">eina_value_set</a>(&amp;vtv, tv);
    <a class="code" href="group__Eina__Value__Value__Group.html#ga9a1407c953694c3d6f40ab01ebe9a294" title="Sets the generic value.">eina_value_set</a>(&amp;vtz, tz);
 
-   s = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string</a>(&amp;vtv);
+   s = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string</a>(&amp;vtv);
    printf(<span class="stringliteral">&quot;time: %s\n&quot;</span>, s);
    free(s);
-   s = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string</a>(&amp;vtz);
+   s = <a class="code" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string</a>(&amp;vtz);
    printf(<span class="stringliteral">&quot;timezone: %s\n&quot;</span>, s);
    free(s);
 
-   <a class="code" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush</a>(&amp;vtz);
-   <a class="code" href="group__Eina__Value__Value__Group.html#ga940660709a2862bafac92f47bb721a68" title="Creates generic value storage.">eina_value_flush</a>(&amp;vtv);
+   <a class="code" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free</a>(&amp;vtz);
+   <a class="code" href="group__Eina__Value__Value__Group.html#gaa2aa7ac9d1fcd7c4497cf104cb374a52" title="Frees value and its data.">eina_value_free</a>(&amp;vtv);
+   <a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
 }
 </pre></div> </div></div><!-- contents -->
 </div>

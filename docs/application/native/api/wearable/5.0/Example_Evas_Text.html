@@ -103,12 +103,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       .glow2 = {WHITE, RED, BLUE, GREEN}
    };
 </pre></div></p>
-<p>Then, we set the text string itself, on it, with <a class="el" href="group__Evas__Object__Text.html#gabe57fc428ee4db9e9d7feb9e3a108fb3">evas_object_text_text_set()</a>. We set an explicit size of 30 points for our font, as you could see, what we check back with the getter <a class="el" href="group__Evas__Object__Text.html#ga2a13b7617af385b847d133da15357c13">evas_object_text_font_get()</a>.</p>
+<p>Then, we set the text string itself, on it, with evas_object_text_text_set(). We set an explicit size of 30 points for our font, as you could see, what we check back with the getter evas_object_text_font_get().</p>
 <p>Look at how it translates to code:  <div class="fragment"><pre class="fragment">   d.text = <a class="code" href="group__Evas__Object__Text.html#ga72224822cf1772ef16b1554f0a6205d5">evas_object_text_add</a>(d.evas);
    evas_object_text_style_set(d.text, EVAS_TEXT_STYLE_PLAIN);
 
-   <span class="comment">/* let the pre-set thingies be enforced */</span>
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
+   <span class="comment">/* let the pre-set things be enforced */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
      d.text, d.t_data.text_ptr-&gt;r, d.t_data.text_ptr-&gt;g,
      d.t_data.text_ptr-&gt;b, d.t_data.text_ptr-&gt;a);
 
@@ -128,15 +128,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      d.text, d.t_data.shadow_ptr-&gt;r, d.t_data.shadow_ptr-&gt;g,
      d.t_data.shadow_ptr-&gt;b, d.t_data.shadow_ptr-&gt;a);
 
-   <a class="code" href="group__Evas__Object__Text.html#ga1813cea2c010c923d31787caec5dc857">evas_object_text_font_set</a>(d.text, *d.t_data.font_ptr, 30);
-   <a class="code" href="group__Evas__Object__Text.html#gabe57fc428ee4db9e9d7feb9e3a108fb3">evas_object_text_text_set</a>(d.text, <span class="stringliteral">&quot;sample text&quot;</span>);
+   evas_object_text_font_set(d.text, *d.t_data.font_ptr, 30);
+   evas_object_text_text_set(d.text, <span class="stringliteral">&quot;sample text&quot;</span>);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.text, (3 * WIDTH) / 4, HEIGHT / 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.text, WIDTH / 8, (3 * HEIGHT) / 8);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text);
+   evas_object_resize(d.text, (3 * WIDTH) / 4, HEIGHT / 4);
+   evas_object_move(d.text, WIDTH / 8, (3 * HEIGHT) / 8);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text);
 
-   <a class="code" href="group__Evas__Object__Text.html#ga2a13b7617af385b847d133da15357c13">evas_object_text_font_get</a>(d.text, &amp;font, &amp;size);
-   fprintf(stdout, <span class="stringliteral">&quot;Adding text object with font %s, size %d\n&quot;</span>, font, size);
+   evas_object_text_font_get(d.text, &amp;font, &amp;size);
+   printf(<span class="stringliteral">&quot;Adding text object with font %s, size %d\n&quot;</span>, font, size);
+
+   <span class="comment">/* this is a border around the text object above, here just to</span>
+<span class="comment">    * emphasize its geometry */</span>
+   d.border = evas_object_image_filled_add(d.evas);
+   evas_object_image_file_set(d.border, border_img_path, NULL);
+   evas_object_image_border_set(d.border, 3, 3, 3, 3);
+   evas_object_image_border_center_fill_set(d.border, EVAS_BORDER_FILL_NONE);
+
+   evas_object_resize(d.border, ((3 * WIDTH) / 4) + 3, (HEIGHT / 4) + 3);
+   evas_object_move(d.border, (WIDTH / 8) - 3, ((3 * HEIGHT) / 8) - 3);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
+
+   printf(<span class="stringliteral">&quot;%s&quot;</span>, commands);
+   <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+
+   <a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(d.ee);
+   <a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
+   <span class="keywordflow">return</span> 0;
+
+error:
+   fprintf(stderr, <span class="stringliteral">&quot;error: Requires at least one Evas engine built and linked&quot;</span>
 </pre></div></p>
 <p>Like in other Evas examples, one interacts with it by means of key commands:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *commands = \
   <span class="stringliteral">&quot;commands are:\n&quot;</span>
@@ -150,9 +171,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <span class="stringliteral">&quot;\tg - change text&#39;s \&#39;glow 2\&#39; color\n&quot;</span>
   <span class="stringliteral">&quot;\th - print help\n&quot;</span>;
 </pre></div></p>
-<p>Use the 't' key to exercise the evas_object_text_style_set() function on the text -- it will cycle through all styles on <a class="el" href="group__Evas.html#ga6b48c195b58fbe30ca8180e7451ad817">Evas_Text_Style_Type</a> (note we start on #EVAS_TEXT_STYLE_PLAIN, thus with no effects on it) and, with other keys, you'll be able to set properties applicable to individual styles on the text object.</p>
+<p>Use the 't' key to exercise the evas_object_text_style_set() function on the text -- it will cycle through all styles on #Evas_Text_Style_Type (note we start on #EVAS_TEXT_STYLE_PLAIN, thus with no effects on it) and, with other keys, you'll be able to set properties applicable to individual styles on the text object.</p>
 <p>The 'z' key will change the text's <b>size</b>, keeping the font family for it. Use 'f' to change the font, keeping the last size set. There are three font families the example will cycle through:</p>
-<p>The 'b' command shows us that <a class="el" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set()</a>, on a given text object, will change the text's <b>base</b> color. Experiment with it, which will cycle through the colors in the <code>.text</code> list in <code>init_data</code>.</p>
+<p>The 'b' command shows us that <a class="el" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set()</a>, on a given text object, will change the text's <b>base</b> color. Experiment with it, which will cycle through the colors in the <code>.text</code> list in <code>init_data</code>.</p>
 <p>The 's', 'o', 'w' and 'g' keys will make the text object to cycle to the preset values on colors for shadow, outline, glow and 'glow 2' effects, respectively. Naturally, they will only take effect on the text styles which resemble them.</p>
 <p>The full example follows.</p>
 <div class="fragment"><pre class="fragment">
@@ -242,50 +263,49 @@ _on_destroy(Ecore_Evas *ee EINA_UNUSED)
    <a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
 }
 
-<span class="comment">/* here just to keep our example&#39;s window size and background image&#39;s</span>
-<span class="comment"> * size in synchrony */</span>
+<span class="comment">/* Keep the example&#39;s window size in sync with the background image&#39;s size */</span>
 <span class="keyword">static</span> <span class="keywordtype">void</span>
 _canvas_resize_cb(Ecore_Evas *ee)
 {
    <span class="keywordtype">int</span> w, h;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
+   evas_object_resize(d.bg, w, h);
 }
 
 <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *
-_text_style_type_to_str(<a class="code" href="group__Evas.html#ga6b48c195b58fbe30ca8180e7451ad817">Evas_Text_Style_Type</a> mode)
+_text_style_type_to_str(Evas_Text_Style_Type mode)
 {
    <span class="keywordflow">switch</span> (mode)
      {
       <span class="keywordflow">case</span> EVAS_TEXT_STYLE_PLAIN:
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;plain&quot;</span>;
 
-      <span class="keywordflow">case</span> <a class="code" href="group__Evas.html#gga6b48c195b58fbe30ca8180e7451ad817ad8982ee65d30fbf666261fd1990c4a6f">EVAS_TEXT_STYLE_SHADOW</a>:
+      <span class="keywordflow">case</span> EVAS_TEXT_STYLE_SHADOW:
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;shadow&quot;</span>;
 
-      <span class="keywordflow">case</span> <a class="code" href="group__Evas.html#gga6b48c195b58fbe30ca8180e7451ad817a66399bfe91951039c91ebdee89639d86">EVAS_TEXT_STYLE_OUTLINE</a>:
+      <span class="keywordflow">case</span> EVAS_TEXT_STYLE_OUTLINE:
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;outline&quot;</span>;
 
-      <span class="keywordflow">case</span> <a class="code" href="group__Evas.html#gga6b48c195b58fbe30ca8180e7451ad817a370e3941067f77326acb76fb174e0d93">EVAS_TEXT_STYLE_SOFT_OUTLINE</a>:
+      <span class="keywordflow">case</span> EVAS_TEXT_STYLE_SOFT_OUTLINE:
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;soft outline&quot;</span>;
 
-      <span class="keywordflow">case</span> <a class="code" href="group__Evas.html#gga6b48c195b58fbe30ca8180e7451ad817ad42b9d71564c7983f28e9524bafff6d2">EVAS_TEXT_STYLE_GLOW</a>:
+      <span class="keywordflow">case</span> EVAS_TEXT_STYLE_GLOW:
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;glow&quot;</span>;
 
-      <span class="keywordflow">case</span> <a class="code" href="group__Evas.html#gga6b48c195b58fbe30ca8180e7451ad817a41d98859fcb308553d839efb2589bb90">EVAS_TEXT_STYLE_OUTLINE_SHADOW</a>:
+      <span class="keywordflow">case</span> EVAS_TEXT_STYLE_OUTLINE_SHADOW:
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;outline shadow&quot;</span>;
 
-      <span class="keywordflow">case</span> <a class="code" href="group__Evas.html#gga6b48c195b58fbe30ca8180e7451ad817a392c2d181f5d12df34c8d8c8d8977d8c">EVAS_TEXT_STYLE_FAR_SHADOW</a>:
+      <span class="keywordflow">case</span> EVAS_TEXT_STYLE_FAR_SHADOW:
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;far shadow&quot;</span>;
 
-      <span class="keywordflow">case</span> <a class="code" href="group__Evas.html#gga6b48c195b58fbe30ca8180e7451ad817a7583f30324e938dbcf2d5089de09a5a0">EVAS_TEXT_STYLE_OUTLINE_SOFT_SHADOW</a>:
+      <span class="keywordflow">case</span> EVAS_TEXT_STYLE_OUTLINE_SOFT_SHADOW:
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;outline soft shadow&quot;</span>;
 
-      <span class="keywordflow">case</span> <a class="code" href="group__Evas.html#gga6b48c195b58fbe30ca8180e7451ad817a5675086aa98175b86803dc515972737f">EVAS_TEXT_STYLE_SOFT_SHADOW</a>:
+      <span class="keywordflow">case</span> EVAS_TEXT_STYLE_SOFT_SHADOW:
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;soft shadow&quot;</span>;
 
-      <span class="keywordflow">case</span> <a class="code" href="group__Evas.html#gga6b48c195b58fbe30ca8180e7451ad817a7ef1a030ee4fe4ee7782528e6ffb38b1">EVAS_TEXT_STYLE_FAR_SOFT_SHADOW</a>:
+      <span class="keywordflow">case</span> EVAS_TEXT_STYLE_FAR_SOFT_SHADOW:
         <span class="keywordflow">return</span> <span class="stringliteral">&quot;far soft shadow&quot;</span>;
 
       <span class="keywordflow">default</span>:
@@ -303,20 +323,20 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>) == 0) <span class="comment">/* print help */</span>
      {
-        fprintf(stdout, commands);
+        printf(<span class="stringliteral">&quot;%s&quot;</span>, commands);
         <span class="keywordflow">return</span>;
      }
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;t&quot;</span>) == 0) <span class="comment">/* change text&#39;s current style */</span>
      {
-        <a class="code" href="group__Evas.html#ga6b48c195b58fbe30ca8180e7451ad817">Evas_Text_Style_Type</a> type = evas_object_text_style_get(d.text);
+        Evas_Text_Style_Type type = evas_object_text_style_get(d.text);
 
         type = (type + 1) % 10;
 
         evas_object_text_style_set(d.text, type);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing text&#39;s style to \&#39;%s\&#39;\n&quot;</span>,
-                _text_style_type_to_str(type));
+        printf(<span class="stringliteral">&quot;Changing text&#39;s style to \&#39;%s\&#39;\n&quot;</span>,
+               _text_style_type_to_str(type));
 
         <span class="keywordflow">return</span>;
      }
@@ -327,13 +347,14 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
         (d.t_data.font_ptr)++;
 
-        <a class="code" href="group__Evas__Object__Text.html#ga2a13b7617af385b847d133da15357c13">evas_object_text_font_get</a>(d.text, NULL, &amp;sz);
+        evas_object_text_font_get(d.text, NULL, &amp;sz);
 
         POINTER_CYCLE(d.t_data.font_ptr, d.t_data.font);
 
-        <a class="code" href="group__Evas__Object__Text.html#ga1813cea2c010c923d31787caec5dc857">evas_object_text_font_set</a>(d.text, *d.t_data.font_ptr, sz);
+        evas_object_text_font_set(d.text, *d.t_data.font_ptr, sz);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing text&#39;s font to %s\n&quot;</span>, *d.t_data.font_ptr);
+        printf(<span class="stringliteral">&quot;Changing text&#39;s font to %s\n&quot;</span>,
+               *d.t_data.font_ptr);
 
         <span class="keywordflow">return</span>;
      }
@@ -344,13 +365,13 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
 
         POINTER_CYCLE(d.t_data.text_ptr, d.t_data.text);
 
-        <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
+        <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
           d.text, d.t_data.text_ptr-&gt;r, d.t_data.text_ptr-&gt;g,
           d.t_data.text_ptr-&gt;b, d.t_data.text_ptr-&gt;a);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing base color for text to (%d, %d, %d, %d)\n&quot;</span>,
-                d.t_data.text_ptr-&gt;r, d.t_data.text_ptr-&gt;g,
-                d.t_data.text_ptr-&gt;b, d.t_data.text_ptr-&gt;a);
+        printf(<span class="stringliteral">&quot;Changing base color for text to (%d, %d, %d, %d)\n&quot;</span>,
+               d.t_data.text_ptr-&gt;r, d.t_data.text_ptr-&gt;g,
+               d.t_data.text_ptr-&gt;b, d.t_data.text_ptr-&gt;a);
 
         <span class="keywordflow">return</span>;
      }
@@ -365,9 +386,9 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
           d.text, d.t_data.glow2_ptr-&gt;r, d.t_data.glow2_ptr-&gt;g,
           d.t_data.glow2_ptr-&gt;b, d.t_data.glow2_ptr-&gt;a);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing glow 2 color for text to (%d, %d, %d, %d)\n&quot;</span>,
-                d.t_data.glow2_ptr-&gt;r, d.t_data.glow2_ptr-&gt;g,
-                d.t_data.glow2_ptr-&gt;b, d.t_data.glow2_ptr-&gt;a);
+        printf(<span class="stringliteral">&quot;Changing glow 2 color for text to (%d, %d, %d, %d)\n&quot;</span>,
+               d.t_data.glow2_ptr-&gt;r, d.t_data.glow2_ptr-&gt;g,
+               d.t_data.glow2_ptr-&gt;b, d.t_data.glow2_ptr-&gt;a);
 
         <span class="keywordflow">return</span>;
      }
@@ -382,9 +403,9 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
           d.text, d.t_data.glow_ptr-&gt;r, d.t_data.glow_ptr-&gt;g,
           d.t_data.glow_ptr-&gt;b, d.t_data.glow_ptr-&gt;a);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing glow color for text to (%d, %d, %d, %d)\n&quot;</span>,
-                d.t_data.glow_ptr-&gt;r, d.t_data.glow_ptr-&gt;g,
-                d.t_data.glow_ptr-&gt;b, d.t_data.glow_ptr-&gt;a);
+        printf(<span class="stringliteral">&quot;Changing glow color for text to (%d, %d, %d, %d)\n&quot;</span>,
+               d.t_data.glow_ptr-&gt;r, d.t_data.glow_ptr-&gt;g,
+               d.t_data.glow_ptr-&gt;b, d.t_data.glow_ptr-&gt;a);
 
         <span class="keywordflow">return</span>;
      }
@@ -399,9 +420,9 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
           d.text, d.t_data.outline_ptr-&gt;r, d.t_data.outline_ptr-&gt;g,
           d.t_data.outline_ptr-&gt;b, d.t_data.outline_ptr-&gt;a);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing outline color for text to (%d, %d, %d, %d)\n&quot;</span>,
-                d.t_data.outline_ptr-&gt;r, d.t_data.outline_ptr-&gt;g,
-                d.t_data.outline_ptr-&gt;b, d.t_data.outline_ptr-&gt;a);
+        printf(<span class="stringliteral">&quot;Changing outline color for text to (%d, %d, %d, %d)\n&quot;</span>,
+               d.t_data.outline_ptr-&gt;r, d.t_data.outline_ptr-&gt;g,
+               d.t_data.outline_ptr-&gt;b, d.t_data.outline_ptr-&gt;a);
 
         <span class="keywordflow">return</span>;
      }
@@ -416,9 +437,9 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
           d.text, d.t_data.shadow_ptr-&gt;r, d.t_data.shadow_ptr-&gt;g,
           d.t_data.shadow_ptr-&gt;b, d.t_data.shadow_ptr-&gt;a);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing shadow color for text to (%d, %d, %d, %d)\n&quot;</span>,
-                d.t_data.shadow_ptr-&gt;r, d.t_data.shadow_ptr-&gt;g,
-                d.t_data.shadow_ptr-&gt;b, d.t_data.shadow_ptr-&gt;a);
+        printf(<span class="stringliteral">&quot;Changing shadow color for text to (%d, %d, %d, %d)\n&quot;</span>,
+               d.t_data.shadow_ptr-&gt;r, d.t_data.shadow_ptr-&gt;g,
+               d.t_data.shadow_ptr-&gt;b, d.t_data.shadow_ptr-&gt;a);
 
         <span class="keywordflow">return</span>;
      }
@@ -428,14 +449,14 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
         <span class="keyword">const</span> <span class="keywordtype">char</span> *font;
         <span class="keywordtype">int</span> size;
 
-        <a class="code" href="group__Evas__Object__Text.html#ga2a13b7617af385b847d133da15357c13">evas_object_text_font_get</a>(d.text, &amp;font, &amp;size);
+        evas_object_text_font_get(d.text, &amp;font, &amp;size);
 
         size = (size + 10) % 50;
         <span class="keywordflow">if</span> (!size) size = 10;
 
-        <a class="code" href="group__Evas__Object__Text.html#ga1813cea2c010c923d31787caec5dc857">evas_object_text_font_set</a>(d.text, font, size);
+        evas_object_text_font_set(d.text, font, size);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Changing text&#39;s font size to %d\n&quot;</span>, size);
+        printf(<span class="stringliteral">&quot;Changing text&#39;s font size to %d\n&quot;</span>, size);
 
         <span class="keywordflow">return</span>;
      }
@@ -472,7 +493,7 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   d.ee = ecore_evas_new(NULL, 10, 10, WIDTH, HEIGHT, NULL);
+   d.ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 10, 10, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!d.ee)
      <span class="keywordflow">goto</span> error;
 
@@ -484,20 +505,20 @@ main(<span class="keywordtype">void</span>)
    d.evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(d.ee);
 
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   evas_object_move(d.bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   evas_object_resize(d.bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
-   evas_object_focus_set(d.bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_focus_set(d.bg, EINA_TRUE);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
-     d.bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_keydown, NULL);
+     d.bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
 
    d.text = <a class="code" href="group__Evas__Object__Text.html#ga72224822cf1772ef16b1554f0a6205d5">evas_object_text_add</a>(d.evas);
    evas_object_text_style_set(d.text, EVAS_TEXT_STYLE_PLAIN);
 
-   <span class="comment">/* let the pre-set thingies be enforced */</span>
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
+   <span class="comment">/* let the pre-set things be enforced */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
      d.text, d.t_data.text_ptr-&gt;r, d.t_data.text_ptr-&gt;g,
      d.t_data.text_ptr-&gt;b, d.t_data.text_ptr-&gt;a);
 
@@ -517,28 +538,28 @@ main(<span class="keywordtype">void</span>)
      d.text, d.t_data.shadow_ptr-&gt;r, d.t_data.shadow_ptr-&gt;g,
      d.t_data.shadow_ptr-&gt;b, d.t_data.shadow_ptr-&gt;a);
 
-   <a class="code" href="group__Evas__Object__Text.html#ga1813cea2c010c923d31787caec5dc857">evas_object_text_font_set</a>(d.text, *d.t_data.font_ptr, 30);
-   <a class="code" href="group__Evas__Object__Text.html#gabe57fc428ee4db9e9d7feb9e3a108fb3">evas_object_text_text_set</a>(d.text, <span class="stringliteral">&quot;sample text&quot;</span>);
+   evas_object_text_font_set(d.text, *d.t_data.font_ptr, 30);
+   evas_object_text_text_set(d.text, <span class="stringliteral">&quot;sample text&quot;</span>);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.text, (3 * WIDTH) / 4, HEIGHT / 4);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.text, WIDTH / 8, (3 * HEIGHT) / 8);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text);
+   evas_object_resize(d.text, (3 * WIDTH) / 4, HEIGHT / 4);
+   evas_object_move(d.text, WIDTH / 8, (3 * HEIGHT) / 8);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text);
 
-   <a class="code" href="group__Evas__Object__Text.html#ga2a13b7617af385b847d133da15357c13">evas_object_text_font_get</a>(d.text, &amp;font, &amp;size);
-   fprintf(stdout, <span class="stringliteral">&quot;Adding text object with font %s, size %d\n&quot;</span>, font, size);
+   evas_object_text_font_get(d.text, &amp;font, &amp;size);
+   printf(<span class="stringliteral">&quot;Adding text object with font %s, size %d\n&quot;</span>, font, size);
 
    <span class="comment">/* this is a border around the text object above, here just to</span>
 <span class="comment">    * emphasize its geometry */</span>
-   d.border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.border, border_img_path, NULL);
+   d.border = evas_object_image_filled_add(d.evas);
+   evas_object_image_file_set(d.border, border_img_path, NULL);
    evas_object_image_border_set(d.border, 3, 3, 3, 3);
    evas_object_image_border_center_fill_set(d.border, EVAS_BORDER_FILL_NONE);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.border, ((3 * WIDTH) / 4) + 3, (HEIGHT / 4) + 3);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.border, (WIDTH / 8) - 3, ((3 * HEIGHT) / 8) - 3);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
+   evas_object_resize(d.border, ((3 * WIDTH) / 4) + 3, (HEIGHT / 4) + 3);
+   evas_object_move(d.border, (WIDTH / 8) - 3, ((3 * HEIGHT) / 8) - 3);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
 
-   fprintf(stdout, commands);
+   printf(<span class="stringliteral">&quot;%s&quot;</span>, commands);
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(d.ee);
@@ -546,12 +567,11 @@ main(<span class="keywordtype">void</span>)
    <span class="keywordflow">return</span> 0;
 
 error:
-   fprintf(stderr, <span class="stringliteral">&quot;you got to have at least one evas engine built and linked&quot;</span>
-                   <span class="stringliteral">&quot; up to ecore-evas for this example to run properly.\n&quot;</span>);
+   fprintf(stderr, <span class="stringliteral">&quot;error: Requires at least one Evas engine built and linked&quot;</span>
+                   <span class="stringliteral">&quot; to ecore-evas for this example to run properly.\n&quot;</span>);
    <a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
    <span class="keywordflow">return</span> -1;
 }
-
 </pre></div> </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

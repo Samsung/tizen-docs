@@ -1,16 +1,16 @@
-# [IoT and Tizen IoT](/iot/index.md)
+# [IoT extension SDK](/iot/index.md)
 
-# Getting Started
-## [Tizen IoT](/iot/getting-started/overview.md)
+# Get Started
+## [Tizen IoT](/iot/get-started/overview.md)
 ## Setting up Board
-### [Overview](/iot/getting-started/setting-up-board.md)
-### [ARTIK530/ARTIK530S with no SD card based](/iot/getting-started/artik-no-sd-5.0.md)
-### [ARTIK530/ARTIK530S with SD card based](/iot/getting-started/artik-sd-5.0.md)
-### [Raspberry Pi3](/iot/getting-started/rpi3-5.0.md)
+### [Overview](/iot/get-started/setting-up-board.md)
+### [ARTIK530/ARTIK530S with no SD card based](/iot/get-started/artik-no-sd-5.0.md)
+### [ARTIK530/ARTIK530S with SD card based](/iot/get-started/artik-sd-5.0.md)
+### [Raspberry Pi3](/iot/get-started/rpi3-5.0.md)
 ## Developing Applications
-### [Developing Applications with Things SDK API](/iot/getting-started/things-app-development-5.0.md)
-### [Setting up Smartthings Cloud](/iot/getting-started/things-cloud-setup.md)
-### [Testing with Smartthings App](/iot/getting-started/cloud-app-test.md)
+### [Developing Applications with Things SDK API](/iot/get-started/things-app-development-5.0.md)
+### [Setting up Smartthings Cloud](/iot/get-started/things-cloud-setup.md)
+### [Testing with Smartthings App](/iot/get-started/cloud-app-test.md)
 
 # API Guides
 ## [Overview](/iot/guides/iot-api.md)
@@ -69,3 +69,5 @@
 
 ## Samples
 ### [Network Audio Sample Overview](/iot/preview2/sample/iot-sample.md)
+
+# [IoT Partners](/iot/iot-partners/index.md)

@@ -87,7 +87,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Ecore Connection Client Functions</div>  </div>
 <div class="ingroups"><a class="el" href="group__Ecore__Con__Group.html">Ecore_Con - Connection functions</a></div></div><!--header-->
@@ -103,31 +104,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga50369a811bc465c1816375b51610fbb5">ecore_con_client_send</a> (Ecore_Con_Client *cl, const void *data, int size)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga50369a811bc465c1816375b51610fbb5">ecore_con_client_send</a> (<a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl, const void *data, int size)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends the given data to the given client.  <a href="#ga50369a811bc465c1816375b51610fbb5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga219c48a51b66300f46c3699eb6292f89">ecore_con_client_del</a> (Ecore_Con_Client *cl)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga219c48a51b66300f46c3699eb6292f89">ecore_con_client_del</a> (<a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the connection and free memory allocated to the given client.  <a href="#ga219c48a51b66300f46c3699eb6292f89"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga06559d231bd1f75ec6236398a0605d3d">ecore_con_client_data_set</a> (Ecore_Con_Client *cl, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga06559d231bd1f75ec6236398a0605d3d">ecore_con_client_data_set</a> (<a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl, const void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the data associated with the given client to <code>data</code>.  <a href="#ga06559d231bd1f75ec6236398a0605d3d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga0c61a144ad908187122144f58b58fb5a">ecore_con_client_data_get</a> (Ecore_Con_Client *cl)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga0c61a144ad908187122144f58b58fb5a">ecore_con_client_data_get</a> (<a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the data associated with the given client.  <a href="#ga0c61a144ad908187122144f58b58fb5a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga320dcc4c7370731f8676cf84a223dc21">ecore_con_client_ip_get</a> (const Ecore_Con_Client *cl)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga320dcc4c7370731f8676cf84a223dc21">ecore_con_client_ip_get</a> (const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the IP address of a client that has connected.  <a href="#ga320dcc4c7370731f8676cf84a223dc21"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga9a117cad0d888cf2f55dc0ff4d268b7d">ecore_con_client_flush</a> (Ecore_Con_Client *cl)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga9a117cad0d888cf2f55dc0ff4d268b7d">ecore_con_client_flush</a> (<a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes all pending data to the given client.  <a href="#ga9a117cad0d888cf2f55dc0ff4d268b7d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#gaa2e41cada91ff44847e3d8d45c9a1edf">ecore_con_client_uptime_get</a> (const Ecore_Con_Client *cl)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#gaa2e41cada91ff44847e3d8d45c9a1edf">ecore_con_client_uptime_get</a> (const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks how long a client has been connected.  <a href="#gaa2e41cada91ff44847e3d8d45c9a1edf"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga7b82ee76e6fc4ba9c65dbd8493646ae0">ecore_con_client_timeout_get</a> (const Ecore_Con_Client *cl)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga7b82ee76e6fc4ba9c65dbd8493646ae0">ecore_con_client_timeout_get</a> (const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the default time after which the client will be disconnected when inactive.  <a href="#ga7b82ee76e6fc4ba9c65dbd8493646ae0"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#gae7a9b17f228933fdadbfc7423683ae68">ecore_con_client_timeout_set</a> (Ecore_Con_Client *cl, double timeout)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#gae7a9b17f228933fdadbfc7423683ae68">ecore_con_client_timeout_set</a> (<a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl, double timeout)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the time after which the client will be disconnected when inactive.  <a href="#gae7a9b17f228933fdadbfc7423683ae68"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#gadd393b1a3b1407af2e0e778a3a0bfb7d">ecore_con_client_connected_get</a> (const Ecore_Con_Client *cl)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#gadd393b1a3b1407af2e0e778a3a0bfb7d">ecore_con_client_connected_get</a> (const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the client is still connected.  <a href="#gadd393b1a3b1407af2e0e778a3a0bfb7d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#gaba3cd4f92dab4d4bc810bc34c7cce845">ecore_con_client_port_get</a> (const Ecore_Con_Client *cl)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#gaba3cd4f92dab4d4bc810bc34c7cce845">ecore_con_client_port_get</a> (const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the port that the client has connected to.  <a href="#gaba3cd4f92dab4d4bc810bc34c7cce845"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Con__Server__Group.html#ga80f90f9716013d6104624c2e606f8915">Ecore_Con_Server</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#ga5a0e383e625c1a8da7b1a110481ec5d1">ecore_con_client_server_get</a> (const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *cl)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The server the client is connected to.  <a href="#ga5a0e383e625c1a8da7b1a110481ec5d1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#gad4bee2f2470aad9991bcf999627c54be">ecore_ipc_ssl_available_get</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if SSL support is available.  <a href="#gad4bee2f2470aad9991bcf999627c54be"></a><br/></td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Ecore__Con__Client.html">_Ecore_Con_Client</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a></td></tr>
 </table>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="gae9afe250f5420f4731d1a94050275756"></a><!-- doxytag: member="Ecore_Con.h::Ecore_Con_Client" ref="gae9afe250f5420f4731d1a94050275756" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Used to provide legacy API/ABI compatibility with non-Eo applications. </p>
+
+</div>
+</div>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gadd393b1a3b1407af2e0e778a3a0bfb7d"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_client_connected_get" ref="gadd393b1a3b1407af2e0e778a3a0bfb7d" args="(const Ecore_Con_Client *cl)" -->
 <div class="memitem">
@@ -136,7 +157,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Con__Client__Group.html#gadd393b1a3b1407af2e0e778a3a0bfb7d">ecore_con_client_connected_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Ecore_Con_Client *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em></td><td>)</td>
           <td></td>
         </tr>
@@ -151,9 +172,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if connected, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a6">ecore_con_server_simple_example.c</a>.</dd>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if connected, <code>EINA_FALSE</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a8">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -164,7 +185,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void* <a class="el" href="group__Ecore__Con__Client__Group.html#ga0c61a144ad908187122144f58b58fb5a">ecore_con_client_data_get</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Con_Client *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em></td><td>)</td>
           <td></td>
         </tr>
@@ -179,9 +200,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The data associated with <code>cl</code>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a14">ecore_con_server_simple_example.c</a>.</dd>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data associated with <code>cl</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a18">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -192,7 +213,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="group__Ecore__Con__Client__Group.html#ga06559d231bd1f75ec6236398a0605d3d">ecore_con_client_data_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Con_Client *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em>, </td>
         </tr>
         <tr>
@@ -214,12 +235,12 @@ Functions</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">cl</td><td>The given client. </td></tr>
-    <tr><td class="paramname">data</td><td>What to set the data to.</td></tr>
+    <tr><td class="paramname">data</td><td>What to set the data to. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a10">ecore_con_server_simple_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a12">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -230,7 +251,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void* <a class="el" href="group__Ecore__Con__Client__Group.html#ga219c48a51b66300f46c3699eb6292f89">ecore_con_client_del</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Con_Client *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em></td><td>)</td>
           <td></td>
         </tr>
@@ -245,9 +266,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Data associated with the client.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a16">ecore_con_server_simple_example.c</a>.</dd>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Data associated with the client. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a20">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -258,7 +279,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="group__Ecore__Con__Client__Group.html#ga9a117cad0d888cf2f55dc0ff4d268b7d">ecore_con_client_flush</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Con_Client *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em></td><td>)</td>
           <td></td>
         </tr>
@@ -276,9 +297,9 @@ Functions</h2></td></tr>
 <p>This function will block until all data is sent to the server.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Client__Group.html#ga50369a811bc465c1816375b51610fbb5" title="Sends the given data to the given client.">ecore_con_client_send()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Server__Group.html#ga582b956b0b3e072c0caa406c3fe6b06b" title="Flushes all pending data to the given server.">ecore_con_server_flush()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a8">ecore_con_server_simple_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Server__Group.html#ga582b956b0b3e072c0caa406c3fe6b06b" title="Flushes all pending data to the given server.">ecore_con_server_flush()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a10">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -289,7 +310,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">const char* <a class="el" href="group__Ecore__Con__Client__Group.html#ga320dcc4c7370731f8676cf84a223dc21">ecore_con_client_ip_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Ecore_Con_Client *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em></td><td>)</td>
           <td></td>
         </tr>
@@ -305,9 +326,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an internal string that contains the IP address of the connected client in the form "XXX.YYY.ZZZ.AAA" IP notation.</dd></dl>
-<p>The returned string should not be modified, freed or trusted to stay valid after deletion for the <code>cl</code> object. If no IP is known <code>NULL</code> is returned.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a3">ecore_con_server_simple_example.c</a>.</dd>
+<p>The returned string should not be modified, freed or trusted to stay valid after deletion for the <code>cl</code> object. If no IP is known <code>NULL</code> is returned. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a5">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -318,7 +339,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int <a class="el" href="group__Ecore__Con__Client__Group.html#gaba3cd4f92dab4d4bc810bc34c7cce845">ecore_con_client_port_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Ecore_Con_Client *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em></td><td>)</td>
           <td></td>
         </tr>
@@ -333,9 +354,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The port that <code>cl</code> has connected to, or <code>-1</code> on error Use this function to return the port on which a given client has connected.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a5">ecore_con_server_simple_example.c</a>.</dd>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The port that <code>cl</code> has connected to, or <code>-1</code> on error Use this function to return the port on which a given client has connected. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a7">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -346,7 +367,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int <a class="el" href="group__Ecore__Con__Client__Group.html#ga50369a811bc465c1816375b51610fbb5">ecore_con_client_send</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Con_Client *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em>, </td>
         </tr>
         <tr>
@@ -383,9 +404,37 @@ Functions</h2></td></tr>
 <p>This function will send the given data to the client as soon as the program is back to the main loop. Thus, this function returns immediately (non-blocking). If the data needs to be sent <b>now</b>, call <a class="el" href="group__Ecore__Con__Client__Group.html#ga9a117cad0d888cf2f55dc0ff4d268b7d" title="Flushes all pending data to the given client.">ecore_con_client_flush()</a> after this one.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Server__Group.html#gadc54105adc673a41731b18a804c97cd9" title="Sends the given data to the given server.">ecore_con_server_send()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Client__Group.html#ga9a117cad0d888cf2f55dc0ff4d268b7d" title="Flushes all pending data to the given client.">ecore_con_client_flush()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a7">ecore_con_server_simple_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Client__Group.html#ga9a117cad0d888cf2f55dc0ff4d268b7d" title="Flushes all pending data to the given client.">ecore_con_client_flush()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a9">ecore_con_server_simple_example.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga5a0e383e625c1a8da7b1a110481ec5d1"></a><!-- doxytag: member="Ecore_Con.h::ecore_con_client_server_get" ref="ga5a0e383e625c1a8da7b1a110481ec5d1" args="(const Ecore_Con_Client *cl)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Ecore__Con__Server__Group.html#ga80f90f9716013d6104624c2e606f8915">Ecore_Con_Server</a>* <a class="el" href="group__Ecore__Con__Client__Group.html#ga5a0e383e625c1a8da7b1a110481ec5d1">ecore_con_client_server_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
+          <td class="paramname"><em>cl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The server the client is connected to. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cl</td><td>The client </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The server the client is connected to. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a13">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -396,7 +445,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">double <a class="el" href="group__Ecore__Con__Client__Group.html#ga7b82ee76e6fc4ba9c65dbd8493646ae0">ecore_con_client_timeout_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Ecore_Con_Client *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em></td><td>)</td>
           <td></td>
         </tr>
@@ -413,8 +462,8 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The timeout, in seconds, to disconnect after.</dd></dl>
 <p>This function is used to get the idle timeout for a client. A value of &lt; 1 means the idle timeout is disabled.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Client__Group.html#gae7a9b17f228933fdadbfc7423683ae68" title="Sets the time after which the client will be disconnected when inactive.">ecore_con_client_timeout_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Client__Group.html#gae7a9b17f228933fdadbfc7423683ae68" title="Sets the time after which the client will be disconnected when inactive.">ecore_con_client_timeout_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -425,7 +474,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void <a class="el" href="group__Ecore__Con__Client__Group.html#gae7a9b17f228933fdadbfc7423683ae68">ecore_con_client_timeout_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Ecore_Con_Client *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em>, </td>
         </tr>
         <tr>
@@ -455,9 +504,9 @@ Functions</h2></td></tr>
 <p>This timeout is not affected by the one set by <a class="el" href="group__Ecore__Con__Server__Group.html#gabcfc2fa5861fa9831bcd99ffdc27e88c" title="Sets the default time after which an inactive client will be disconnected.">ecore_con_server_timeout_set()</a>. A client will be disconnected whenever the client or the server timeout is reached. That means, the lower timeout value will be used for that client if <a class="el" href="group__Ecore__Con__Server__Group.html#gabcfc2fa5861fa9831bcd99ffdc27e88c" title="Sets the default time after which an inactive client will be disconnected.">ecore_con_server_timeout_set()</a> is used on the server.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Con__Client__Group.html#ga7b82ee76e6fc4ba9c65dbd8493646ae0" title="Gets the default time after which the client will be disconnected when inactive.">ecore_con_client_timeout_get()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Con__Server__Group.html#gabcfc2fa5861fa9831bcd99ffdc27e88c" title="Sets the default time after which an inactive client will be disconnected.">ecore_con_server_timeout_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a9">ecore_con_server_simple_example.c</a>.</dd>
+<a class="el" href="group__Ecore__Con__Server__Group.html#gabcfc2fa5861fa9831bcd99ffdc27e88c" title="Sets the default time after which an inactive client will be disconnected.">ecore_con_server_timeout_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a11">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -468,7 +517,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">double <a class="el" href="group__Ecore__Con__Client__Group.html#gaa2e41cada91ff44847e3d8d45c9a1edf">ecore_con_client_uptime_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Ecore_Con_Client *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Ecore__Con__Client__Group.html#gae9afe250f5420f4731d1a94050275756">Ecore_Con_Client</a> *&#160;</td>
           <td class="paramname"><em>cl</em></td><td>)</td>
           <td></td>
         </tr>
@@ -484,9 +533,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The total time, in seconds, that the client has been connected to the server</dd></dl>
-<p>This function is used to find out how long a client has been connected for.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a15">ecore_con_server_simple_example.c</a>.</dd>
+<p>This function is used to find out how long a client has been connected for. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a19">ecore_con_server_simple_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -506,8 +555,10 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Returns if SSL support is available. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>1 if SSL is available, 0 if it is not.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>1 if SSL is available, 0 if it is not.</dd>
+<dd>
+1 if SSL is available, 0 if it is not. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

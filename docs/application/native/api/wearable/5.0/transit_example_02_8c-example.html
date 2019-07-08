@@ -90,7 +90,87 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">transit_example_02.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o transit_example_02 transit_example_02.c `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *bt, *bt2, *bt3, *bt4;
+   <a class="code" href="group__Elm__Transit.html#gafe0d442717e75c75819e59e0870b2278">Elm_Transit</a> *trans, *trans2, *trans3, *trans4;
+
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a2"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;transit9&quot;</span>, <span class="stringliteral">&quot;Transit 9&quot;</span>);
+   <a name="a3"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a4"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   bt = <a name="a5"></a><a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt, <span class="stringliteral">&quot;Chain 1&quot;</span>);
+   evas_object_resize(bt, 100, 100);
+   evas_object_move(bt, 0, 0);
+   <a name="a6"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   bt2 = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt2, <span class="stringliteral">&quot;Chain 2&quot;</span>);
+   evas_object_resize(bt2, 100, 100);
+   evas_object_move(bt2, 300, 0);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt2);
+
+   bt3 = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt3, <span class="stringliteral">&quot;Chain 3&quot;</span>);
+   evas_object_resize(bt3, 100, 100);
+   evas_object_move(bt3, 300, 300);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt3);
+
+   bt4 = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(bt4, <span class="stringliteral">&quot;Chain 4&quot;</span>);
+   evas_object_resize(bt4, 100, 100);
+   evas_object_move(bt4, 0, 300);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt4);
+
+   trans = <a name="a7"></a><a class="code" href="group__Elm__Transit.html#ga814caf6c5377dd6c4078110437400e0a">elm_transit_add</a>();
+   <a name="a8"></a><a class="code" href="group__Elm__Transit.html#ga14fe8effd24591d0f895d92ab920e72c">elm_transit_tween_mode_set</a>(trans, <a name="a9"></a><a class="code" href="group__Elm__Transit.html#gga954ecd9ba6266a18a0bde0e5861ccc53a799a4fdf2c9e1bfcd6d102b57f22c040">ELM_TRANSIT_TWEEN_MODE_ACCELERATE</a>);
+   <a name="a10"></a><a class="code" href="group__Elm__Transit.html#gaad4f0c161702521b658629aa9d548d8d">elm_transit_effect_translation_add</a>(trans, 0, 0, 300, 0);
+   <a name="a11"></a><a class="code" href="group__Elm__Transit.html#gab4e46606ff9cf54591289bffe193c03b">elm_transit_object_add</a>(trans, bt);
+   <a name="a12"></a><a class="code" href="group__Elm__Transit.html#ga7e853e074b16f9a9473ad2456bee1f8d">elm_transit_duration_set</a>(trans, 1);
+   <a name="a13"></a><a class="code" href="group__Elm__Transit.html#ga467a0a6cacc6aaee93e33f8a964ad944">elm_transit_objects_final_state_keep_set</a>(trans, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a14"></a><a class="code" href="group__Elm__Transit.html#ga5d600d1d615b5136b99a180d256cb147">elm_transit_go</a>(trans);
+
+   trans2 = <a class="code" href="group__Elm__Transit.html#ga814caf6c5377dd6c4078110437400e0a">elm_transit_add</a>();
+   <a class="code" href="group__Elm__Transit.html#ga14fe8effd24591d0f895d92ab920e72c">elm_transit_tween_mode_set</a>(trans2, <a class="code" href="group__Elm__Transit.html#gga954ecd9ba6266a18a0bde0e5861ccc53a799a4fdf2c9e1bfcd6d102b57f22c040">ELM_TRANSIT_TWEEN_MODE_ACCELERATE</a>);
+   <a class="code" href="group__Elm__Transit.html#gaad4f0c161702521b658629aa9d548d8d">elm_transit_effect_translation_add</a>(trans2, 0, 0, 0, 300);
+   <a class="code" href="group__Elm__Transit.html#gab4e46606ff9cf54591289bffe193c03b">elm_transit_object_add</a>(trans2, bt2);
+   <a class="code" href="group__Elm__Transit.html#ga7e853e074b16f9a9473ad2456bee1f8d">elm_transit_duration_set</a>(trans2, 1);
+   <a class="code" href="group__Elm__Transit.html#ga467a0a6cacc6aaee93e33f8a964ad944">elm_transit_objects_final_state_keep_set</a>(trans2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a15"></a><a class="code" href="group__Elm__Transit.html#ga4e6f191c415b31c0f3a19505e144e390">elm_transit_chain_transit_add</a>(trans, trans2);
+
+   trans3 = <a class="code" href="group__Elm__Transit.html#ga814caf6c5377dd6c4078110437400e0a">elm_transit_add</a>();
+   <a class="code" href="group__Elm__Transit.html#ga14fe8effd24591d0f895d92ab920e72c">elm_transit_tween_mode_set</a>(trans3, <a class="code" href="group__Elm__Transit.html#gga954ecd9ba6266a18a0bde0e5861ccc53a799a4fdf2c9e1bfcd6d102b57f22c040">ELM_TRANSIT_TWEEN_MODE_ACCELERATE</a>);
+   <a class="code" href="group__Elm__Transit.html#gaad4f0c161702521b658629aa9d548d8d">elm_transit_effect_translation_add</a>(trans3, 0, 0, -300, 0);
+   <a class="code" href="group__Elm__Transit.html#gab4e46606ff9cf54591289bffe193c03b">elm_transit_object_add</a>(trans3, bt3);
+   <a class="code" href="group__Elm__Transit.html#ga7e853e074b16f9a9473ad2456bee1f8d">elm_transit_duration_set</a>(trans3, 1);
+   <a class="code" href="group__Elm__Transit.html#ga467a0a6cacc6aaee93e33f8a964ad944">elm_transit_objects_final_state_keep_set</a>(trans3, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Transit.html#ga4e6f191c415b31c0f3a19505e144e390">elm_transit_chain_transit_add</a>(trans2, trans3);
+
+   trans4 = <a class="code" href="group__Elm__Transit.html#ga814caf6c5377dd6c4078110437400e0a">elm_transit_add</a>();
+   <a class="code" href="group__Elm__Transit.html#ga14fe8effd24591d0f895d92ab920e72c">elm_transit_tween_mode_set</a>(trans4, <a class="code" href="group__Elm__Transit.html#gga954ecd9ba6266a18a0bde0e5861ccc53a799a4fdf2c9e1bfcd6d102b57f22c040">ELM_TRANSIT_TWEEN_MODE_ACCELERATE</a>);
+   <a class="code" href="group__Elm__Transit.html#gaad4f0c161702521b658629aa9d548d8d">elm_transit_effect_translation_add</a>(trans4, 0, 0, 0, -300);
+   <a class="code" href="group__Elm__Transit.html#gab4e46606ff9cf54591289bffe193c03b">elm_transit_object_add</a>(trans4, bt4);
+   <a class="code" href="group__Elm__Transit.html#ga7e853e074b16f9a9473ad2456bee1f8d">elm_transit_duration_set</a>(trans4, 1);
+   <a class="code" href="group__Elm__Transit.html#ga467a0a6cacc6aaee93e33f8a964ad944">elm_transit_objects_final_state_keep_set</a>(trans4, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Transit.html#ga4e6f191c415b31c0f3a19505e144e390">elm_transit_chain_transit_add</a>(trans3, trans4);
+
+   evas_object_resize(win, 400, 400);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a16"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a17"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

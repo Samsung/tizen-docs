@@ -7,12 +7,14 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Grid View</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>Grid View</h1>
 
 <p>Grid View components provides a list of grid-type and presents contents that are easily identified as images.</p>
 <p>You can adjust the number of columns of grid using a pinch gesture. In reorder mode, you can move each item.</p>
 <p>Grid view can have labels and set type of the labels.</p>
+
+<img src="../../images/mobile_gridView.png" width="15%">
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -35,6 +37,7 @@
 <h2><a id="manual-constructor"></a>Manual Constructor</h2>
 <p>To manually create a grid view component, use the component constructor from the <code>tau</code> namespace:</p>
 <p>The constructor requires an <code>HTMLElement</code> parameter to create the component, and you can get it with the <code>document.getElementById()</code> method. The constructor can also take a second parameter, which is an object defining the configuration options for the component.</p>
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;ul id=&quot;gridview&quot; class=&quot;ui-gridview&quot;&gt;
    &lt;li class=&quot;ui-gridview-item&quot;&gt;
@@ -54,10 +57,12 @@
       &lt;div class=&quot;ui-gridview-handler&quot;&gt;&lt;/div&gt;
    &lt;/li&gt;
 &lt;/ul&gt;
-&lt;script&gt;
-   var elGridView = document.getElementById(&quot;gridview&quot;),
-       gridView = tau.widget.GridView(elGridView);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var elGridView = document.getElementById(&quot;gridview&quot;),
+    gridView = tau.widget.GridView(elGridView);
+
 </pre>
 
 <h2><a id="options-list"></a>Options</h2>
@@ -206,13 +211,11 @@ gridView.methodName(methodArgument1, methodArgument2, ...);
 	                            example:</p><p></p></span>
                             <pre name="code" class="examplecode
                             prettyprint">
-&lt;script&gt;
-   var elGridView = document.getElementById("gridview"),
-       gridView = tau.widget.GridView(elGridView),
-       item;
+var elGridView = document.getElementById("gridview"),
+    gridView = tau.widget.GridView(elGridView),
+    item;
 
-   gridView.addItem(item);
-&lt;/script&gt;
+gridView.addItem(item);
 </pre>
 		</div>
 	</dd>
@@ -265,13 +268,11 @@ gridView.methodName(methodArgument1, methodArgument2, ...);
 	                            example:</p><p></p></span>
                             <pre name="code" class="examplecode
                             prettyprint">
-&lt;script&gt;
-   var elGridView = document.getElementById("gridview"),
-       gridView = tau.widget.GridView(elGridView),
-       item;
+var elGridView = document.getElementById("gridview"),
+    gridView = tau.widget.GridView(elGridView),
+    item;
 
-   gridView.removeItem(item);
-&lt;/script&gt;
+gridView.removeItem(item);
 </pre>
 		</div>
 	</dd>
@@ -288,5 +289,10 @@ gridView.methodName(methodArgument1, methodArgument2, ...);
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

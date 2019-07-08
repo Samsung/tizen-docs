@@ -91,7 +91,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This example explains how to set max and min year to be displayed by a calendar object. This means that user won't be able to see or select a date before and after selected years. By default, limits are 1902 and maximum value will depends on platform architecture (year 2037 for 32 bits); You can read more about time functions on <code>ctime</code> manpage.</p>
-<p>Straigh to the point, to set it is enough to call elm_calendar_min_max_year_set(). First value is minimum year, second is maximum. If first value is negative, it won't apply limit for min year, if the second one is negative, won't apply for max year. Setting both to negative value will clear limits (default state): <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>Straigh to the point, to set it is enough to call elm_calendar_min_max_year_set(). First value is minimum year, second is maximum. If first value is negative, it won't apply limit for min year, if the second one is negative, won't apply for max year. Setting both to negative value will clear limits (default state): <div class="fragment"><pre class="fragment">   elm_calendar_min_max_year_set(cal, 2020, 2022);
+</pre></div></p>
 <p>Our example will look like this:</p>
 <div class="image">
 <img src="screenshots/calendar_example_03.png" alt="calendar_example_03.png"/>

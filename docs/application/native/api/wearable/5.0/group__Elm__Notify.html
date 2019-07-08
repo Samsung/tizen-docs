@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Notify</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -99,7 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <div class="image">
 <img src="img/widget/notify/preview-00.png" alt="preview-00.png"/>
 </div>
- <p>Display a container in a particular region of the parent(top, bottom, etc). A timeout can be set to automatically hide the notify. This is so that, after an <a class="el" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show()</a> on a notify object, if a timeout was set on it, it will <b>automatically</b> get hidden after that time.</p>
+ <p>Display a container in a particular region of the parent(top, bottom, etc). A timeout can be set to automatically hide the notify. This is so that, after an <a class="el" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show()</a> on a notify object, if a timeout was set on it, it will <b>automatically</b> get hidden after that time.</p>
 <p>Signals that you can add callbacks for are: </p>
 <ul>
 <li>"timeout" - when timeout happens on notify and it's hidden </li>
@@ -132,7 +132,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Notify.html#gae0e77b123c4269d9d23b7db244a137e0">elm_notify_timeout_get</a> (const Elm_Notify *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the timeout value (in seconds)  <a href="#gae0e77b123c4269d9d23b7db244a137e0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Notify.html#gafd1a55079b82e85ef7c94c5d403d703b">elm_notify_dismiss</a> (Elm_Notify *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dismiss a notify object.  <a href="#gafd1a55079b82e85ef7c94c5d403d703b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Notify.html#ga3b3eb10c622de79e55539aeb84e538a3">elm_notify_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new notify to the parent.  <a href="#ga3b3eb10c622de79e55539aeb84e538a3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Notify.html#ga4a1e2dceb12f4c74ce30ed85ca1e566d">elm_notify_parent_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
@@ -163,9 +162,10 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="notify_example_01_8c-example.html#a11">notify_example_01.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a15">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a15">prefs_example_02.c</a>, <a class="el" href="slideshow_example_8c-example.html#a19">slideshow_example.c</a>, and <a class="el" href="win_example_8c-example.html#a7">win_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga8b40340ab87bbea04840d73edc100915"></a><!-- doxytag: member="elm_notify.eo.legacy.h::elm_notify_align_get" ref="ga8b40340ab87bbea04840d73edc100915" args="(const Elm_Notify *obj, double *horizontal, double *vertical)" -->
@@ -200,7 +200,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the alignment of the notify object. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -210,6 +209,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -247,7 +247,6 @@ Functions</h2></td></tr>
 <p>Set the alignment of the notify object. </p>
 <p>Sets the alignment in which the notify will appear in its parent.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>To fill the notify box in the parent area, please pass the ELM_NOTIFY_ALIGN_FILL to horizontal and vertical.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -257,7 +256,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="notify_example_01_8c-example.html#a16">notify_example_01.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a16">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a16">prefs_example_02.c</a>, <a class="el" href="slideshow_example_8c-example.html#a20">slideshow_example.c</a>, and <a class="el" href="win_example_8c-example.html#a8">win_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gab5ceb6baf98a6ea617bbac2787208ca4"></a><!-- doxytag: member="elm_notify.eo.legacy.h::elm_notify_allow_events_get" ref="gab5ceb6baf98a6ea617bbac2787208ca4" args="(const Elm_Notify *obj)" -->
@@ -276,14 +277,14 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Return true if events are allowed below the notify object. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>true if events are allowed, otherwise false </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if events are allowed, <code>false</code> otherwise </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -315,15 +316,16 @@ Functions</h2></td></tr>
 <p>Sets whether events should be passed to by a click outside its area. </p>
 <p>When true if the user clicks outside the window the events will be caught by the others widgets, else the events are blocked.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>The default value is true.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">allow</td><td>true if events are allowed, otherwise false </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">allow</td><td><code>true</code> if events are allowed, <code>false</code> otherwise </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="notify_example_01_8c-example.html#a12">notify_example_01.c</a>, and <a class="el" href="win_example_8c-example.html#a9">win_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gafd1a55079b82e85ef7c94c5d403d703b"></a><!-- doxytag: member="elm_notify.eo.legacy.h::elm_notify_dismiss" ref="gafd1a55079b82e85ef7c94c5d403d703b" args="(Elm_Notify *obj)" -->
@@ -340,15 +342,9 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
-<p>Dismiss a notify object. </p>
+<p>Dismiss a notify object.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -375,7 +371,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The parent</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Notify.html#ga4a1e2dceb12f4c74ce30ed85ca1e566d" title="Set the notify parent.">elm_notify_parent_set()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Notify.html#ga4a1e2dceb12f4c74ce30ed85ca1e566d" title="Set the notify parent.">elm_notify_parent_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -413,7 +409,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>Once the parent object is set, a previously set one will be disconnected and replaced.</p>
+<p>Once the parent object is set, a previously set one will be disconnected and replaced. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -434,7 +430,6 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Return the timeout value (in seconds) </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -442,6 +437,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The timeout in seconds </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -471,11 +467,10 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Set the time interval after which the notify window is going to be hidden. </p>
-<p>This function sets a timeout and starts the timer controlling when the notify is hidden. Since calling <a class="el" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show()</a> on a notify restarts the timer controlling when the notify is hidden, setting this before the notify is shown will in effect mean starting the timer when the notify is shown.</p>
+<p>This function sets a timeout and starts the timer controlling when the notify is hidden. Since calling <a class="el" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show()</a> on a notify restarts the timer controlling when the notify is hidden, setting this before the notify is shown will in effect mean starting the timer when the notify is shown.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Set a value &lt;= 0.0 to disable a running timer.</dd>
 <dd>
 If the value &gt; 0.0 and the notify is previously visible, the timer will be started with this value, canceling any running timer.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -483,7 +478,9 @@ If the value &gt; 0.0 and the notify is previously visible, the timer will be st
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="notify_example_01_8c-example.html#a13">notify_example_01.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a17">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a17">prefs_example_02.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a3">slideshow_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

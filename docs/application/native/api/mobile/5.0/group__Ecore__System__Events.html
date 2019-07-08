@@ -96,7 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Ecore is aware of some system events that one may be interested, they are described below:</p>
 <ul>
 <li><a class="el" href="group__Ecore__Event__Group.html#ga95e027b2b9f5817cfa57505cc9990f5a">ECORE_EVENT_MEMORY_STATE</a> indicates system changed its free memory status, going to or being back from "low memory" state. When going to low memory state the libraries and applications may help the system by reducing memory usage, dropping caches and unused resources. The event carries no information, the current state should be queried with ecore_low_memory_get(). </li>
-<li><a class="el" href="group__Ecore__Event__Group.html#gaf3f2a9900d5e256ab709f7e17ef0e377">ECORE_EVENT_POWER_STATE</a> indicates system changed its battery level, going to or being back from "low battery" state. When going to low battery state the libraries and applications may help the system by reducing number of wake ups and processing, increasing <a class="el" href="group__Ecore__Animator__Group.html#gaeb096f0da5f8f0fb3e9498a560d3b59c">Ecore_Animator</a> frame time values, reducing the number of <a class="el" href="group__Ecore__Timer__Group.html#gaf96ffb609956658ec038e54bd39f46f0">Ecore_Timer</a> and <a class="el" href="group__Ecore__Idle__Group.html#ga2cc50b0957bf0eaf0c024a7c053fa1dc">Ecore_Idler</a> or even going to extreme of trading quality over speed to finish tasks sooner. The event carries no information, the current state should be queried with ecore_low_battery_get(). </li>
+<li><a class="el" href="group__Ecore__Event__Group.html#gaf3f2a9900d5e256ab709f7e17ef0e377">ECORE_EVENT_POWER_STATE</a> indicates system changed its battery level, going to or being back from "low battery" state. When going to low battery state the libraries and applications may help the system by reducing number of wake ups and processing, increasing Ecore_Animator frame time values, reducing the number of <a class="el" href="group__Ecore__Timer__Group.html#gaf96ffb609956658ec038e54bd39f46f0">Ecore_Timer</a> and <a class="el" href="group__Ecore__Idle__Group.html#gae4e7f2215a6e8cff3e2eab2582b5868e">Ecore_Idler</a> or even going to extreme of trading quality over speed to finish tasks sooner. The event carries no information, the current state should be queried with ecore_low_battery_get(). </li>
 <li><a class="el" href="group__Ecore__Event__Group.html#gaa598cc77cba5cbed8ecc617b4b842180">ECORE_EVENT_LOCALE_CHANGED</a> indicates the system locale and/or language changed. This event carries no information and there is no ecore specific call to get the new locale. It is advised that the emitter of this event to set the new locale, for instance in POSIX one should call setlocale() before adding the event. Libraries and applications should then reload their resources and reformat their strings to use the new values. </li>
 <li><a class="el" href="group__Ecore__Event__Group.html#ga55026160dc580bf7f9df3584cb28a403">ECORE_EVENT_HOSTNAME_CHANGED</a> indicates the system hostname changed. This event carries no information and the new value should be queried with platform specific calls, such as gethostname() on POSIX. </li>
 <li><a class="el" href="group__Ecore__Event__Group.html#ga040ac4c1a598c01996403da7a8c6fd4b">ECORE_EVENT_SYSTEM_TIMEDATE_CHANGED</a> indicates the system time or date changed. This may happen as result of Daylight Saving changes, NTP fixing the clock, changing timezones or user setting a new date manually. This event carries no information and the new value should be queried with <a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get()</a> or platform specific such as gettimeofday() </li>
@@ -185,8 +185,8 @@ Functions</h2></td></tr>
 
 <p>Gets the current status of memory on the system. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current memory state for the system as a whole. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -214,8 +214,8 @@ Functions</h2></td></tr>
 </dl>
 <p>This function will store information about the current memory state and if it changed will automatically create an <a class="el" href="group__Ecore__Event__Group.html#ga95e027b2b9f5817cfa57505cc9990f5a">ECORE_EVENT_MEMORY_STATE</a> event.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function should not be called by user, instead a monitoring entity that is system dependent. Usually an ecore module that is platform-specific.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -236,8 +236,8 @@ Functions</h2></td></tr>
 
 <p>Gets the current power state. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current power state for the system. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -265,8 +265,8 @@ Functions</h2></td></tr>
 </dl>
 <p>This function will store information about the current power state and if it changed will automatically create an <a class="el" href="group__Ecore__Event__Group.html#gaf3f2a9900d5e256ab709f7e17ef0e377">ECORE_EVENT_POWER_STATE</a> event.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function should not be called by user, instead a monitoring entity that is system dependent. Usually an ecore module that is platform-specific.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

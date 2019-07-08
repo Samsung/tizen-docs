@@ -20,11 +20,11 @@ The following API references provide descriptions of all the APIs that can be us
 
 ## Versions
 <ul>
-  <li><a href="5.0/index.htm" target="_blank">5.0</a></li>
-  <li><a href="4.0/index.htm" target="_blank">4.0</a></li>
-  <li><a href="3.0/index.htm" target="_blank">3.0</a></li>
-  <li><a href="2.4/index.htm" target="_blank">2.4</a></li>
-  <li><a href="2.3.2/index.htm" target="_blank">2.3.2</a></li>
+  <li><a href="5.0/device_api/mobile/index.html" target="_blank">5.0</a></li>
+  <li><a href="4.0/device_api/mobile/index.html" target="_blank">4.0</a></li>
+  <li><a href="3.0/device_api/mobile/index.html" target="_blank">3.0</a></li>
+  <li><a href="2.4/device_api/mobile/index.html" target="_blank">2.4</a></li>
+  <li><a href="2.3.2/device_api/wearable/index.html" target="_blank">2.3.2</a></li>
   <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3.1/org.tizen.native.mobile.apireference/index.html" target="api">2.3.1</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3.1 on Tizen Developer Site(https://developer.tizen.org)</strong></li>
   <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3/org.tizen.native.mobile.apireference/index.html" target="api">2.3</a>&nbsp;&nbsp;&nbsp;<strong>You can see 2.3 on Tizen Developer Site(https://developer.tizen.org)</strong></li>
 </ul>

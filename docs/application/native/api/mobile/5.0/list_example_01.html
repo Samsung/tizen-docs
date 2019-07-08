@@ -92,16 +92,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This code places a single Elementary list widgets on a window, just to exemplify the more simple and common use case: a list will be created and populated with a few items.</p>
 <p>To keep it simple, we won't show how to customize the list, for this check <a class="el" href="list_example_02.html">List widget example</a>. Also, we won't focus on items management on this example. For an example about this subject, check <a class="el" href="list_example_03.html">List - Items management</a>.</p>
-<p>To add a list widget.  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>To add a list widget.  <div class="fragment"><pre class="fragment">   li = <a class="code" href="group__Elm__List.html#ga626e858fcd7c66bac06fa5a645e6a948">elm_list_add</a>(win);
+</pre></div></p>
 <p>We are just adding the list, so as you can see, defaults for it are: </p>
 <ul>
 <li>Items are displayed vertically. </li>
 <li>Only one item can be selected. </li>
 <li>The list doesn't bounce.</li>
 </ul>
-<p>To add items, we are just appending it on a loop, using function <a class="el" href="group__Elm__List.html#ga7cc4072fe5d3cb57cc1e8328e72060ca" title="Append a new item to the list object.">elm_list_item_append()</a>, that will be better explained on items management example.  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>To add items, we are just appending it on a loop, using function <a class="el" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append()</a>, that will be better explained on items management example.  <div class="fragment"><pre class="fragment">   <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *lbl[] =
+     {
+        <span class="stringliteral">&quot;Sunday&quot;</span>,
+        <span class="stringliteral">&quot;Monday&quot;</span>,
+        <span class="stringliteral">&quot;Tuesday&quot;</span>,
+        <span class="stringliteral">&quot;Wednesday&quot;</span>,
+        <span class="stringliteral">&quot;Thursday&quot;</span>,
+        <span class="stringliteral">&quot;Friday&quot;</span>,
+        <span class="stringliteral">&quot;Saturday&quot;</span>
+     };
+   <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)
+     <a class="code" href="group__Elm__List.html#ga94298fe7d5cf13a923bc8fd217b6023a" title="Append a new item to the list object.">elm_list_item_append</a>(li, lbl[i], NULL, NULL, NULL, NULL);
+</pre></div></p>
 <p>After we just want to show the list. But first we need to start the widget. It was done this way to improve widget's performance. So, always remember that: </p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>Call elm_list_go before showing the object <div class="fragment"><pre class="fragment"></pre></div></dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>Call elm_list_go before showing the object <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__List.html#ga016361621126444b003a71dc8ff75627" title="Starts the list.">elm_list_go</a>(li);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+</pre></div></dd></dl>
 <p>See the full <a class="el" href="list_example_01_8c-example.html">list_example_01.c</a> code, whose window should look like this picture:</p>
 <div class="image">
 <img src="screenshots/list_example_01.png" alt="list_example_01.png"/>

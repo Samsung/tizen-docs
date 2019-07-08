@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Tooltips</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>The Tooltip is an (internal, for now) smart object used to show a content in a frame on mouse hover of objects(or widgets), with tips/information about them. </p>
@@ -105,6 +105,25 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the orientation of the tooltip around the owner region.  <a href="#ga85453f33dca60be547e2e740be46691e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__Tooltips.html#ga51c005a31986572036ded62db5afa8d5">Elm_Tooltip_Orient</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#ga318befad82fc1187ba247cb4ea598b34">elm_object_tooltip_orient_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the orientation of Tooltip.  <a href="#ga318befad82fc1187ba247cb4ea598b34"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#ga3f149b8e14145969da9827f98558b797">elm_object_tooltip_show</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Force show tooltip of object.  <a href="#ga3f149b8e14145969da9827f98558b797"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#ga981fb2ffbee17aaa399e962edcd8cd21">elm_object_tooltip_hide</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Force hide tooltip of object.  <a href="#ga981fb2ffbee17aaa399e962edcd8cd21"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#ga0a85fa92cd8ddcf9e7fdd13aac978af1">elm_object_tooltip_text_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *text)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the text to be displayed inside the tooltip.  <a href="#ga0a85fa92cd8ddcf9e7fdd13aac978af1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#ga6734f7df1364b6836471ee644f9f80d7">elm_object_tooltip_domain_translatable_text_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *domain, const char *text)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#ga162248c0ccf5f9d79f6363d47c64c986">elm_object_tooltip_content_cb_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__Tooltips.html#gac5f0b5d4148f18b50b58f4766778cfea">Elm_Tooltip_Content_Cb</a> func, const void *data, Evas_Smart_Cb del_cb)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the content to be shown in the tooltip object.  <a href="#ga162248c0ccf5f9d79f6363d47c64c986"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#gaecec7457f4f229ac403ebc028b428c5e">elm_object_tooltip_unset</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unset tooltip from object.  <a href="#gaecec7457f4f229ac403ebc028b428c5e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#gaeda013d8330b2d394155b809f77869d6">elm_object_tooltip_style_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *style)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a different style for this object tooltip.  <a href="#gaeda013d8330b2d394155b809f77869d6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#ga689b4374c6cfa0085d911116549ffc58">elm_object_tooltip_style_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the style for this object tooltip.  <a href="#ga689b4374c6cfa0085d911116549ffc58"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#ga80c2ff9caef20371c7cc12d3f09612a2">elm_object_tooltip_window_mode_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disable)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable size restrictions on an object's tooltip.  <a href="#ga80c2ff9caef20371c7cc12d3f09612a2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#ga0014899c363e973ebc4d8bd0b34ddbe3">elm_object_tooltip_window_mode_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get size restriction state of an object's tooltip.  <a href="#ga0014899c363e973ebc4d8bd0b34ddbe3"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Tooltips.html#gac5f0b5d4148f18b50b58f4766778cfea">Elm_Tooltip_Content_Cb</a> )(void *data, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *tooltip)</td></tr>
@@ -124,7 +143,7 @@ Typedefs</h2></td></tr>
 <p>Called back when a widget's tooltip is activated and needs content. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>user-data given to elm_object_tooltip_content_cb_set() </td></tr>
+    <tr><td class="paramname">data</td><td>user-data given to <a class="el" href="group__Elm__Tooltips.html#ga162248c0ccf5f9d79f6363d47c64c986" title="Set the content to be shown in the tooltip object.">elm_object_tooltip_content_cb_set()</a> </td></tr>
     <tr><td class="paramname">obj</td><td>owner widget. </td></tr>
     <tr><td class="paramname">tooltip</td><td>The tooltip object (affix content to this!) </td></tr>
   </table>
@@ -146,7 +165,7 @@ Typedefs</h2></td></tr>
 <p>Called back when a widget's item tooltip is activated and needs content. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>user-data given to elm_object_tooltip_content_cb_set() </td></tr>
+    <tr><td class="paramname">data</td><td>user-data given to <a class="el" href="group__Elm__Tooltips.html#ga162248c0ccf5f9d79f6363d47c64c986" title="Set the content to be shown in the tooltip object.">elm_object_tooltip_content_cb_set()</a> </td></tr>
     <tr><td class="paramname">obj</td><td>owner widget. </td></tr>
     <tr><td class="paramname">tooltip</td><td>The tooltip object (affix content to this!) </td></tr>
     <tr><td class="paramname">item</td><td>context dependent item. As an example, if tooltip was set on elm_list item, then it is of this type. </td></tr>
@@ -211,6 +230,159 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga70fd5c066b8f07e3b42605a16a015cce"></a><!-- doxytag: member="elm_config.h::elm_config_tooltip_delay_get" ref="ga70fd5c066b8f07e3b42605a16a015cce" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="group__Elm__Tooltips.html#ga70fd5c066b8f07e3b42605a16a015cce">elm_config_tooltip_delay_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the duration after which tooltip will be shown.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Duration after which tooltip will be shown. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1f3f127822274931e6db81edde9e815e"></a><!-- doxytag: member="elm_config.h::elm_config_tooltip_delay_set" ref="ga1f3f127822274931e6db81edde9e815e" args="(double delay)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Tooltips.html#ga1f3f127822274931e6db81edde9e815e">elm_config_tooltip_delay_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>delay</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set the duration after which tooltip will be shown.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if value is set. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga162248c0ccf5f9d79f6363d47c64c986"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_content_cb_set" ref="ga162248c0ccf5f9d79f6363d47c64c986" args="(Evas_Object *obj, Elm_Tooltip_Content_Cb func, const void *data, Evas_Smart_Cb del_cb)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Tooltips.html#ga162248c0ccf5f9d79f6363d47c64c986">elm_object_tooltip_content_cb_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Elm__Tooltips.html#gac5f0b5d4148f18b50b58f4766778cfea">Elm_Tooltip_Content_Cb</a>&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Smart_Cb&#160;</td>
+          <td class="paramname"><em>del_cb</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the content to be shown in the tooltip object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object being attached a tooltip. </td></tr>
+    <tr><td class="paramname">func</td><td>The function used to create the tooltip contents. </td></tr>
+    <tr><td class="paramname">data</td><td>What to provide to <em>func</em> as callback data/context. </td></tr>
+    <tr><td class="paramname">del_cb</td><td>Function called when data is not needed anymore, either when another callback replaces <code>func</code>, the tooltip is unset with <a class="el" href="group__Elm__Tooltips.html#gaecec7457f4f229ac403ebc028b428c5e" title="Unset tooltip from object.">elm_object_tooltip_unset()</a> or the owner object <em>obj</em> dies. This callback receives as the first parameter the given <em>data</em>, and <code>event_info</code> is NULL.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Setup the tooltip to object. The object can have only one tooltip, so any previous tooltip data is removed. <code>func</code>(with <code>data</code>) will be called every time that need show the tooltip and it should return a valid Evas_Object. This object is then managed fully by tooltip system and is deleted when the tooltip is gone. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6734f7df1364b6836471ee644f9f80d7"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_domain_translatable_text_set" ref="ga6734f7df1364b6836471ee644f9f80d7" args="(Evas_Object *obj, const char *domain, const char *text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Tooltips.html#ga6734f7df1364b6836471ee644f9f80d7">elm_object_tooltip_domain_translatable_text_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>domain</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga981fb2ffbee17aaa399e962edcd8cd21"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_hide" ref="ga981fb2ffbee17aaa399e962edcd8cd21" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Tooltips.html#ga981fb2ffbee17aaa399e962edcd8cd21">elm_object_tooltip_hide</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Force hide tooltip of object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Target object</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Force hide the tooltip and (re)enable future mouse interations. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaae06ce15e4a8f95162d7b97a9562ef4d"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_move_freeze_get" ref="gaae06ce15e4a8f95162d7b97a9562ef4d" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -225,8 +397,8 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get the movement freeze by 1</p>
-<p>This gets the movement freeze count by one.</p>
+<p>Get the movement freeze count</p>
+<p>This gets the movement freeze count.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The tooltip's anchor object </td></tr>
@@ -235,8 +407,8 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The movement freeze count</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Tooltips.html#gac8fab714fa7110e66791a3060174bb71">elm_object_tooltip_move_freeze_push()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -262,8 +434,8 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Tooltips.html#gac8fab714fa7110e66791a3060174bb71">elm_object_tooltip_move_freeze_push()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -291,8 +463,8 @@ Typedefs</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Tooltips.html#gaaf65ce259cc76c946144258dfa71cbbb">elm_object_tooltip_move_freeze_pop()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Tooltips.html#gaae06ce15e4a8f95162d7b97a9562ef4d">elm_object_tooltip_move_freeze_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -319,8 +491,8 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The orientation of the tooltip</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Tooltips.html#ga85453f33dca60be547e2e740be46691e" title="Sets the orientation of the tooltip around the owner region.">elm_object_tooltip_orient_set()</a> <a class="el" href="group__Elm__Tooltips.html#ga51c005a31986572036ded62db5afa8d5">Elm_Tooltip_Orient</a> for possible values.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Tooltips.html#ga85453f33dca60be547e2e740be46691e" title="Sets the orientation of the tooltip around the owner region.">elm_object_tooltip_orient_set()</a> <a class="el" href="group__Elm__Tooltips.html#ga51c005a31986572036ded62db5afa8d5">Elm_Tooltip_Orient</a> for possible values. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -359,8 +531,232 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Tooltips.html#ga51c005a31986572036ded62db5afa8d5" title="Possible orient values for tooltip.">Elm_Tooltip_Orient</a> for possible values. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3f149b8e14145969da9827f98558b797"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_show" ref="ga3f149b8e14145969da9827f98558b797" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Tooltips.html#ga3f149b8e14145969da9827f98558b797">elm_object_tooltip_show</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Force show tooltip of object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Target object</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Force show the tooltip and disable hide on mouse_out. If another content is set as tooltip, the visible tooltip will be hidden and showed again with new content. This can force show more than one tooltip at a time. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga689b4374c6cfa0085d911116549ffc58"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_style_get" ref="ga689b4374c6cfa0085d911116549ffc58" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Elm__Tooltips.html#ga689b4374c6cfa0085d911116549ffc58">elm_object_tooltip_style_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the style for this object tooltip. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>an object with tooltip already set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>style the theme style in use, defaults to "default". If the object does not have a tooltip set, then NULL is returned. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaeda013d8330b2d394155b809f77869d6"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_style_set" ref="gaeda013d8330b2d394155b809f77869d6" args="(Evas_Object *obj, const char *style)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Tooltips.html#gaeda013d8330b2d394155b809f77869d6">elm_object_tooltip_style_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>style</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set a different style for this object tooltip. </p>
+<dl class="note"><dt><b>Note:</b></dt><dd>before you set a style you should define a tooltip with <a class="el" href="group__Elm__Tooltips.html#ga162248c0ccf5f9d79f6363d47c64c986" title="Set the content to be shown in the tooltip object.">elm_object_tooltip_content_cb_set()</a> or <a class="el" href="group__Elm__Tooltips.html#ga0a85fa92cd8ddcf9e7fdd13aac978af1" title="Set the text to be displayed inside the tooltip.">elm_object_tooltip_text_set()</a>.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>an object with tooltip already set. </td></tr>
+    <tr><td class="paramname">style</td><td>the theme style to use (default, transparent, ...) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0a85fa92cd8ddcf9e7fdd13aac978af1"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_text_set" ref="ga0a85fa92cd8ddcf9e7fdd13aac978af1" args="(Evas_Object *obj, const char *text)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Tooltips.html#ga0a85fa92cd8ddcf9e7fdd13aac978af1">elm_object_tooltip_text_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set the text to be displayed inside the tooltip. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The tooltip object. </td></tr>
+    <tr><td class="paramname">text</td><td>The text to be displayed. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaecec7457f4f229ac403ebc028b428c5e"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_unset" ref="gaecec7457f4f229ac403ebc028b428c5e" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Tooltips.html#gaecec7457f4f229ac403ebc028b428c5e">elm_object_tooltip_unset</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Unset tooltip from object. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>Target object</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Remove tooltip from object. The callback provided as del_cb to <a class="el" href="group__Elm__Tooltips.html#ga162248c0ccf5f9d79f6363d47c64c986" title="Set the content to be shown in the tooltip object.">elm_object_tooltip_content_cb_set()</a> will be called to notify it is not used anymore.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Tooltips.html#ga162248c0ccf5f9d79f6363d47c64c986" title="Set the content to be shown in the tooltip object.">elm_object_tooltip_content_cb_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0014899c363e973ebc4d8bd0b34ddbe3"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_window_mode_get" ref="ga0014899c363e973ebc4d8bd0b34ddbe3" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Tooltips.html#ga0014899c363e973ebc4d8bd0b34ddbe3">elm_object_tooltip_window_mode_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get size restriction state of an object's tooltip. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The tooltip's anchor object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If <code>EINA_TRUE</code>, size restrictions are disabled</dd></dl>
+<p>This function returns whether a tooltip is allowed to expand beyond its parent window's canvas. It will instead be limited only by the size of the display. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga80c2ff9caef20371c7cc12d3f09612a2"></a><!-- doxytag: member="elm_tooltip.h::elm_object_tooltip_window_mode_set" ref="ga80c2ff9caef20371c7cc12d3f09612a2" args="(Evas_Object *obj, Eina_Bool disable)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Tooltips.html#ga80c2ff9caef20371c7cc12d3f09612a2">elm_object_tooltip_window_mode_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>disable</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Disable size restrictions on an object's tooltip. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The tooltip's anchor object </td></tr>
+    <tr><td class="paramname">disable</td><td>If <code>EINA_TRUE</code>, size restrictions are disabled </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_FALSE</code> on failure, <code>EINA_TRUE</code> on success</dd></dl>
+<p>This function allows a tooltip to expand beyond its parent window's canvas. It will instead be limited only by the size of the display. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>

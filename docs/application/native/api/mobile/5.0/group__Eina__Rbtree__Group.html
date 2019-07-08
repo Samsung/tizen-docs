@@ -95,8 +95,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__Eina__Containers__Group.html">Containers</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>These functions provide Red-Black trees management. </p>
-<p>For a brief description look at <a href="http://en.wikipedia.org/wiki/Red-black_tree">http://en.wikipedia.org/wiki/Red-black_tree</a> . This code is largely inspired from a tutorial written by Julienne Walker at : <a href="http://eternallyconfuzzled.com/tuts/datastructures/jsw_tut_rbtree.aspx">http://eternallyconfuzzled.com/tuts/datastructures/jsw_tut_rbtree.aspx</a> . The main difference is that this set of function never allocate any data, making them particularly useful for memory management. </p>
+<p>These functions provide Red-Black tree management. </p>
+<p>For a brief description look at <a href="http://en.wikipedia.org/wiki/Red-black_tree">http://en.wikipedia.org/wiki/Red-black_tree</a> . This code is largely inspired from a tutorial written by Julienne Walker at : <a href="http://eternallyconfuzzled.com/tuts/datastructures/jsw_tut_rbtree.aspx">http://eternallyconfuzzled.com/tuts/datastructures/jsw_tut_rbtree.aspx</a> . The main difference is that this set of functions never allocate any data, making them particularly useful for memory management. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -106,12 +106,14 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a node from an existing red black tree.  <a href="#ga5f908888587facf1af373ff0484a81ad"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rbtree__Group.html#gac27dbcc7fc8196c00a7c93dbae58f329">eina_rbtree_delete</a> (<a class="el" href="group__Eina__Rbtree__Group.html#gafa6fe42bbf09c210d2ad96b6141bedb0">Eina_Rbtree</a> *root, <a class="el" href="group__Eina__Rbtree__Group.html#gafb59812628d25dc6b904438312e6051b">Eina_Rbtree_Free_Cb</a> func, void *data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all nodes from a valid red black tree.  <a href="#gac27dbcc7fc8196c00a7c93dbae58f329"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Rbtree__Group.html#gafa6fe42bbf09c210d2ad96b6141bedb0">Eina_Rbtree</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rbtree__Group.html#gac309abaa1e268cc67279443068311fde">eina_rbtree_inline_lookup</a> (const <a class="el" href="group__Eina__Rbtree__Group.html#gafa6fe42bbf09c210d2ad96b6141bedb0">Eina_Rbtree</a> *root, const void *key, int length, <a class="el" href="group__Eina__Rbtree__Group.html#gae9b8fb600f7cd10a6e3a4a2def10ae0c">Eina_Rbtree_Cmp_Key_Cb</a> cmp, const void *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches tree for a key using a comparison function.  <a href="#gac309abaa1e268cc67279443068311fde"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rbtree__Group.html#ga5f6b5907defe228cc6995e6594aee55b">eina_rbtree_iterator_prefix</a> (const <a class="el" href="group__Eina__Rbtree__Group.html#gafa6fe42bbf09c210d2ad96b6141bedb0">Eina_Rbtree</a> *root)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new prefix iterator associated to a rbtree.  <a href="#ga5f6b5907defe228cc6995e6594aee55b"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new prefix iterator associated with a rbtree.  <a href="#ga5f6b5907defe228cc6995e6594aee55b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rbtree__Group.html#ga3ac2c32d8c63ace63d0d75d20dec8ccd">eina_rbtree_iterator_infix</a> (const <a class="el" href="group__Eina__Rbtree__Group.html#gafa6fe42bbf09c210d2ad96b6141bedb0">Eina_Rbtree</a> *root)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new prefix iterator associated to a rbtree.  <a href="#ga3ac2c32d8c63ace63d0d75d20dec8ccd"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new prefix iterator associated with a rbtree.  <a href="#ga3ac2c32d8c63ace63d0d75d20dec8ccd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rbtree__Group.html#gade021eeec2b67bdaf5b63744dbca9012">eina_rbtree_iterator_postfix</a> (const <a class="el" href="group__Eina__Rbtree__Group.html#gafa6fe42bbf09c210d2ad96b6141bedb0">Eina_Rbtree</a> *root)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new prefix iterator associated to a rbtree.  <a href="#gade021eeec2b67bdaf5b63744dbca9012"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new prefix iterator associated with a rbtree.  <a href="#gade021eeec2b67bdaf5b63744dbca9012"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Eina_Rbtree&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rbtree__Group.html#gafa6fe42bbf09c210d2ad96b6141bedb0">Eina_Rbtree</a></td></tr>
@@ -208,7 +210,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>find back the container of an red black tree. </p>
+<p>find back the container of a red black tree. </p>
 
 </div>
 </div>
@@ -287,7 +289,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Function used compare two nodes and see which direction to navigate. </p>
+<p>Function used to compare two nodes and see which direction to navigate. </p>
 
 </div>
 </div>
@@ -301,7 +303,7 @@ Defines</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Function used free a node. </p>
+<p>Function used to free a node. </p>
 
 </div>
 </div>
@@ -369,9 +371,9 @@ Defines</h2></td></tr>
 <p>Deletes all nodes from a valid red black tree. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">root</td><td>The root of a valid red black tree. </td></tr>
-    <tr><td class="paramname">func</td><td>The callback that will free each node. </td></tr>
-    <tr><td class="paramname">data</td><td>Private data to help the compare function.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">root</td><td>The root of a valid red black tree. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>The callback that will free each node. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Private data to help the compare function. </td></tr>
   </table>
   </dd>
 </dl>
@@ -419,16 +421,74 @@ Defines</h2></td></tr>
 <p>Inserts a new node inside an existing red black tree. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">root</td><td>The root of an existing valid red black tree. </td></tr>
-    <tr><td class="paramname">node</td><td>The new node to insert. </td></tr>
-    <tr><td class="paramname">cmp</td><td>The callback that is able to compare two nodes. </td></tr>
-    <tr><td class="paramname">data</td><td>Private data to help the compare function. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">root</td><td>The root of an existing valid red black tree. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>The new node to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmp</td><td>The callback that is able to compare two nodes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Private data to help the compare function. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new root of the red black tree.</dd></dl>
-<p>This function insert a new node in a valid red black tree. <code>NULL</code> is an empty valid red black tree. The resulting new tree is a valid red black tree. This function doesn't allocate any data.</p>
+<p>This function inserts a new node in a valid red black tree. <code>NULL</code> is an empty valid red black tree. The resulting new tree is a valid red black tree. This function doesn't allocate any data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac309abaa1e268cc67279443068311fde"></a><!-- doxytag: member="eina_rbtree.h::eina_rbtree_inline_lookup" ref="gac309abaa1e268cc67279443068311fde" args="(const Eina_Rbtree *root, const void *key, int length, Eina_Rbtree_Cmp_Key_Cb cmp, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="group__Eina__Rbtree__Group.html#gafa6fe42bbf09c210d2ad96b6141bedb0">Eina_Rbtree</a>* <a class="el" href="group__Eina__Rbtree__Group.html#gac309abaa1e268cc67279443068311fde">eina_rbtree_inline_lookup</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Eina__Rbtree__Group.html#gafa6fe42bbf09c210d2ad96b6141bedb0">Eina_Rbtree</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Rbtree__Group.html#gae9b8fb600f7cd10a6e3a4a2def10ae0c">Eina_Rbtree_Cmp_Key_Cb</a>&#160;</td>
+          <td class="paramname"><em>cmp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Searches tree for a key using a comparison function. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">root</td><td>The root of a valid red black tree. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key value to search for. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the specified key. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmp</td><td>Callback routine to compare two nodes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Private data to help the compare function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The first matching node found in the red black tree, or <code>root</code> if nothing was found. </dd></dl>
 
 </div>
 </div>
@@ -472,15 +532,15 @@ Defines</h2></td></tr>
 <p>Removes a node from an existing red black tree. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">root</td><td>The root of a valid red black tree. </td></tr>
-    <tr><td class="paramname">node</td><td>The node to remove from the tree. </td></tr>
-    <tr><td class="paramname">cmp</td><td>The callback that is able to compare two nodes. </td></tr>
-    <tr><td class="paramname">data</td><td>Private data to help the compare function. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">root</td><td>The root of a valid red black tree. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">node</td><td>The node to remove from the tree. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmp</td><td>The callback that is able to compare two nodes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Private data to help the compare function. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new root of the red black tree.</dd></dl>
-<p>This function remove a new node in a valid red black tree that should contain the node that you are removing. This function will return <code>NULL</code> when the red black tree got empty. This function doesn't free any data.</p>
+<p>This function removes a new node in a valid red black tree that should contain the node that you are removing. This function will return <code>NULL</code> when the red black tree got empty. This function doesn't free any data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -500,17 +560,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Returns a new prefix iterator associated to a rbtree. </p>
+<p>Returns a new prefix iterator associated with a rbtree. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">root</td><td>The root of rbtree. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">root</td><td>The root of rbtree. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new iterator.</dd></dl>
-<p>This function returns a newly allocated iterator associated to <code>root</code>. It will iterate the tree using infix walk. If <code>root</code> is <code>NULL</code>, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>, thus keeping API sane.</p>
-<p>If the memory can not be allocated, <code>NULL</code> is returned. Otherwise, a valid iterator is returned.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>if the rbtree structure changes then the iterator becomes invalid! That is, if you add or remove nodes this iterator behavior is undefined and your program may crash!</dd></dl>
+<p>This function returns a newly allocated iterator associated with <code>root</code>. It will iterate the tree using infix walk. If <code>root</code> is <code>NULL</code>, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>, thus keeping API sane.</p>
+<p>If the memory cannot be allocated, <code>NULL</code> is returned. Otherwise, a valid iterator is returned.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>if the rbtree structure changes then the iterator becomes invalid! That is, if you add or remove nodes this iterator behavior is undefined and your program may crash! </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -530,17 +590,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Returns a new prefix iterator associated to a rbtree. </p>
+<p>Returns a new prefix iterator associated with a rbtree. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">root</td><td>The root of rbtree. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">root</td><td>The root of rbtree. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new iterator.</dd></dl>
-<p>This function returns a newly allocated iterator associated to <code>root</code>. It will iterate the tree using postfix walk. If <code>root</code> is <code>NULL</code>, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>, thus keeping API sane.</p>
-<p>If the memory can not be allocated, <code>NULL</code> is returned. Otherwise, a valid iterator is returned.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>if the rbtree structure changes then the iterator becomes invalid! That is, if you add or remove nodes this iterator behavior is undefined and your program may crash!</dd></dl>
+<p>This function returns a newly allocated iterator associated with <code>root</code>. It will iterate the tree using postfix walk. If <code>root</code> is <code>NULL</code>, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>, thus keeping API sane.</p>
+<p>If the memory cannot be allocated, <code>NULL</code> is returned. Otherwise, a valid iterator is returned.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>if the rbtree structure changes then the iterator becomes invalid! That is, if you add or remove nodes this iterator behavior is undefined and your program may crash! </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -560,17 +620,17 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Returns a new prefix iterator associated to a rbtree. </p>
+<p>Returns a new prefix iterator associated with a rbtree. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">root</td><td>The root of rbtree. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">root</td><td>The root of rbtree. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new iterator.</dd></dl>
-<p>This function returns a newly allocated iterator associated to <code>root</code>. It will iterate the tree using prefix walk. If <code>root</code> is <code>NULL</code>, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>, thus keeping API sane.</p>
-<p>If the memory can not be allocated, <code>NULL</code> is returned. Otherwise, a valid iterator is returned.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>if the rbtree structure changes then the iterator becomes invalid! That is, if you add or remove nodes this iterator behavior is undefined and your program may crash!</dd></dl>
+<p>This function returns a newly allocated iterator associated with <code>root</code>. It will iterate the tree using prefix walk. If <code>root</code> is <code>NULL</code>, this function still returns a valid iterator that will always return false on <a class="el" href="group__Eina__Iterator__Group.html#ga83346e93c32dbebc8fd66e4f278140c5" title="Returns the value of the current element and go to the next one.">eina_iterator_next()</a>, thus keeping API sane.</p>
+<p>If the memory cannot be allocated, <code>NULL</code> is returned. Otherwise, a valid iterator is returned.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>if the rbtree structure changes then the iterator becomes invalid! That is, if you add or remove nodes this iterator behavior is undefined and your program may crash! </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>

@@ -17,8 +17,8 @@ You can control debug execution in various ways. After a break point suspends th
 | Button                                   | Keyboard shortcut | Description                              |
 |----------------------------------------|-----------------|----------------------------------------|
 | ![Resume](./media/debug_view_resume.png) | **F8**            | Resumes a suspended thread.              |
-| ![Step Into](./media/debug_view_stepinto.png) | **F5**            | Steps into the highlighted statement.Executes the current line, and if the line contains a method, steps into the method. |
-| ![Step Over](./media/debug_view_stepover.png) | **F6**            | Steps over the highlighted statement.Executes the current line, and if the line contains a method, executes the method without entering it. |
+| ![Step Into](./media/debug_view_stepinto.png) | **F5**            | Steps into the highlighted statement.</br>Executes the current line, and if the line contains a method, steps into the method. |
+| ![Step Over](./media/debug_view_stepover.png) | **F6**            | Steps over the highlighted statement.</br>Executes the current line, and if the line contains a method, executes the method without entering it. |
 | ![Step Return](./media/debug_view_stepreturn.png) | **F7**            | Step out of the current method.          |
 | ![Suspend](./media/debug_view_suspend.png) | -                 | Suspends the selected thread.            |
 | ![Terminate](./media/debug_view_terminate.png) | **Ctrl + F2**     | Terminates the selected debug target.    |

@@ -91,13 +91,58 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>This example will show 2 checkboxes, one with just a label and the second one with both a label and an icon. This example also illustrates how to have the checkbox change the value of a variable and how to react to those changes.</p>
-<p>We will start with the usual setup code: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And now we create our first checkbox, set its label, tell it to change the value of <code>value</code> when the checkbox stats is changed and ask to be notified of state changes: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>For our second checkbox we are going to set an icon so we need to create and icon: <div class="fragment"><pre class="fragment"></pre></div> </p>
+<p>We will start with the usual setup code: <div class="fragment"><pre class="fragment">EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *cb, *cb2, *icon;
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> value;
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;check&quot;</span>, <span class="stringliteral">&quot;Check&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
+<p>And now we create our first checkbox, set its label, tell it to change the value of <code>value</code> when the checkbox stats is changed and ask to be notified of state changes: <div class="fragment"><pre class="fragment">
+   cb = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(cb, <span class="stringliteral">&quot;checkbox&quot;</span>);
+   <a class="code" href="group__Elm__Check.html#gaca05f511b004338c4d7fb35c8ec0d826" title="Set a convenience pointer to a boolean to change.">elm_check_state_pointer_set</a>(cb, &amp;value);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(cb, <span class="stringliteral">&quot;changed&quot;</span>, _print, &amp;value);
+   evas_object_move(cb, 10, 10);
+   evas_object_resize(cb, 200, 30);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(cb);
+</pre></div></p>
+<p>For our second checkbox we are going to set an icon so we need to create and icon: <div class="fragment"><pre class="fragment">
+   icon = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(icon, 0, 255, 0, 255);
+   evas_object_resize(icon, 20, 20);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(icon);
+</pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>For simplicity we are using a rectangle as icon, but any evas object can be used.</dd></dl>
-<p>And for our second checkbox we set the label, icon and state to true: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We now do some more setup: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And finally implement the callback that will be called when the first checkbox's state changes. This callback will use <code>data</code> to print a message:  <div class="fragment"><pre class="fragment"></pre></div> </p>
+<p>And for our second checkbox we set the label, icon and state to true: <div class="fragment"><pre class="fragment">
+   cb2 = <a class="code" href="group__Elm__Check.html#ga252b43966ad9bbe0634c4619cac1e3e7" title="Add a new Check object.">elm_check_add</a>(win);
+   elm_object_text_set(cb2, <span class="stringliteral">&quot;another checkbox&quot;</span>);
+   <a class="code" href="group__Elm__Check.html#gaa011e6d86f82142698760cf0cc4fd0a4" title="Set the on/off state of the check object.">elm_check_state_set</a>(cb2, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(cb2, <span class="stringliteral">&quot;icon&quot;</span>, icon);
+   evas_object_move(cb2, 10, 50);
+   evas_object_resize(cb2, 200, 30);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(cb2);
+</pre></div></p>
+<p>We now do some more setup: <div class="fragment"><pre class="fragment">
+   evas_object_resize(win, 200, 100);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div></p>
+<p>And finally implement the callback that will be called when the first checkbox's state changes. This callback will use <code>data</code> to print a message:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_print(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;check %smarked\n&quot;</span>, *((<a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>*)data) ? <span class="stringliteral">&quot;&quot;</span> : <span class="stringliteral">&quot;un&quot;</span>);
+}
+</pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This work because <code>data</code> is <code>value(from the main function)</code> and <code>value</code> is changed when the checkbox is changed.</dd></dl>
 <p>Our example will look like this:</p>
 <div class="image">

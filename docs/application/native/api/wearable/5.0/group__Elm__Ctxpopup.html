@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Ctxpopup</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Context popup widget. </p>
@@ -100,55 +100,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  <div class="image">
 <img src="img/widget/ctxpopup/preview-00.png" alt="preview-00.png"/>
 </div>
- <p>A ctxpopup is a widget that, when shown, pops up a list of items. It automatically chooses an area inside its parent object's view (set via <a class="el" href="group__Elm__Ctxpopup.html#gae1ad10d2c5153a5f009c23b83e71b251" title="Add a new Ctxpopup object to the parent.">elm_ctxpopup_add()</a> and <a class="el" href="group__Elm__Ctxpopup.html#ga9dd899aad33e1580b76b37a38ca5638c" title="Set the Ctxpopup&#39;s parent.">elm_ctxpopup_hover_parent_set()</a>) to optimally fit into it. In the default theme, it will also point an arrow to it's top left position at the time one shows it. Ctxpopup items have a label and/or an icon. It is intended for a small number of items (hence the use of list, not genlist).</p>
+ <p>A ctxpopup is a widget that, when shown, pops up a list of items. It automatically chooses an area inside its parent object's view (set via <a class="el" href="group__Elm__Ctxpopup.html#gae1ad10d2c5153a5f009c23b83e71b251" title="Add a new Ctxpopup object to the parent.">elm_ctxpopup_add()</a> and <a class="el" href="group__Elm__Ctxpopup.html#ga89691176e34a784a7bb248bcc47f648f" title="Get ctxpopup auto hide mode triggered by ctxpopup policy.">elm_ctxpopup_hover_parent_set()</a>) to optimally fit into it. In the default theme, it will also point an arrow to it's top left position at the time one shows it. Ctxpopup items have a label and/or an icon. It is intended for a small number of items (hence the use of list, not genlist).</p>
 <p>This widget inherits from the Layout one, so that all the functions acting on it also work for context popup objects (since 1.8).</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout:</p>
+<p>This widget emits the following signals, besides the ones sent from Layout:</p>
 <ul>
 <li><code>"dismissed"</code> - This is called when 1. the outside of ctxpopup was clicked or 2. its parent area is changed or 3. the language is changed and also when 4. the parent object is resized due to the window rotation. Then ctxpopup is dismissed.</li>
 <li><code>"language,changed"</code> - This is called when the program's language is changed.</li>
 <li><code>"focused"</code> - When the ctxpopup has received focus. (since 1.8)</li>
-<li><code>"unfocused"</code> - When the ctxpopup has lost focus. (since 1.8) Default content parts of the ctxpopup widget that you can use for are: <ul>
+<li><code>"unfocused"</code> - When the ctxpopup has lost focus. (since 1.8)</li>
+<li><code>"geometry,update"</code> - When the ctxpopup geometry is updated. This smart event passes the ctxpopup geometry information with the given event_info argument which type is Evas_Coord_Rectangle. (since 1.18)</li>
+</ul>
+<p>Default content parts of the ctxpopup widget that you can use for are: </p>
+<ul>
 <li>"default" - A content of the ctxpopup</li>
 </ul>
-Default content parts of the ctxpopup items that you can use for are: <ul>
+<p>Default content parts of the ctxpopup items that you can use for are: </p>
+<ul>
 <li>"icon" - An icon in the title area</li>
 </ul>
-Default text parts of the ctxpopup items that you can use for are: <ul>
+<p>Default text parts of the ctxpopup items that you can use for are: </p>
+<ul>
 <li>"default" - A title label in the title area</li>
 </ul>
-Supported elm_object common APIs. <ul>
+<p>Supported elm_object common APIs. </p>
+<ul>
 <li><a class="el" href="group__Elm__General.html#ga6849a57df3316eabad5bec443bf87597">elm_object_disabled_set</a> </li>
 <li><a class="el" href="group__Elm__General.html#ga3ecb0d6b4e76ff39006f218942c7950d">elm_object_disabled_get</a></li>
 </ul>
-Supported elm_object_item common APIs. <ul>
-<li>elm_object_item_del </li>
-<li>elm_object_item_disabled_set </li>
-<li>elm_object_item_disabled_get </li>
-<li>elm_object_item_part_text_set </li>
-<li>elm_object_item_part_text_get </li>
-<li>elm_object_item_part_content_set </li>
-<li>elm_object_item_part_content_get </li>
-<li>elm_object_item_signal_emit </li>
-<li>elm_object_item_focus_set </li>
-<li>elm_object_item_focus_get</li>
+<p>Supported elm_object_item common APIs. </p>
+<ul>
+<li><a class="el" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2">elm_object_item_disabled_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga6c8e825bd196185a7851db289e2b061c">elm_object_item_disabled_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga990f25208c4ef0e5c9c404cfb482d813">elm_object_item_part_text_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga7281194331b5beb5460f56020b428a51">elm_object_item_part_text_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga79ff1bf2d04a5a730fdca21ccc2067c1">elm_object_item_part_content_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#ga6e788b7ffc86e16c4357b47636bae792">elm_object_item_part_content_get</a> </li>
+<li><a class="el" href="group__Elm__General.html#gabdb3e5328a1e3c367c3fc3536e4a2e5c">elm_object_item_signal_emit</a> </li>
+<li><a class="el" href="group__Elm__General.html#gad23386a546cfa39d930fd2fa0c0bc3ce">elm_object_item_focus_set</a> </li>
+<li><a class="el" href="group__Elm__General.html#gaaaf6cd58dd816422e1c623ba00d593df">elm_object_item_focus_get</a></li>
 </ul>
-<a class="el" href="tutorial_ctxpopup.html">Ctxpopup example</a> shows the usage of a good deal of the API. </li>
-</ul>
+<p><a class="el" href="tutorial_ctxpopup.html">Ctxpopup example</a> shows the usage of a good deal of the API. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#gae1ad10d2c5153a5f009c23b83e71b251">elm_ctxpopup_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new Ctxpopup object to the parent.  <a href="#gae1ad10d2c5153a5f009c23b83e71b251"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#gadd4a37e0d12fd11feccaee777e67f933">elm_ctxpopup_horizontal_set</a> (Elm_Ctxpopup *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> horizontal)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Change the ctxpopup's orientation to horizontal or vertical.  <a href="#gadd4a37e0d12fd11feccaee777e67f933"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected item in the widget.  <a href="#gadd4a37e0d12fd11feccaee777e67f933"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga3758fb46a6c4da8edc6da2328f0fe9cd">elm_ctxpopup_horizontal_get</a> (const Elm_Ctxpopup *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of current ctxpopup object's orientation.  <a href="#ga3758fb46a6c4da8edc6da2328f0fe9cd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga24b2d6caab900b2beb82548ba1c9f01b">elm_ctxpopup_auto_hide_disabled_set</a> (Elm_Ctxpopup *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> disabled)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set ctxpopup auto hide mode triggered by ctxpopup policy.  <a href="#ga24b2d6caab900b2beb82548ba1c9f01b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga9dd899aad33e1580b76b37a38ca5638c">elm_ctxpopup_hover_parent_set</a> (Elm_Ctxpopup *obj, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Ctxpopup's parent.  <a href="#ga9dd899aad33e1580b76b37a38ca5638c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#gad5887c6f1bdb35b471b4f0c042e4604f">elm_ctxpopup_hover_parent_get</a> (const Elm_Ctxpopup *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Ctxpopup's parent.  <a href="#gad5887c6f1bdb35b471b4f0c042e4604f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga89691176e34a784a7bb248bcc47f648f">elm_ctxpopup_hover_parent_set</a> (Elm_Ctxpopup *obj, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *parent)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get ctxpopup auto hide mode triggered by ctxpopup policy.  <a href="#ga89691176e34a784a7bb248bcc47f648f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga55558d3832a6c925987c90cc5c2d4960">elm_ctxpopup_hover_parent_get</a> (const Elm_Ctxpopup *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Ctxpopup's parent.  <a href="#ga55558d3832a6c925987c90cc5c2d4960"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#gaaf9891a5e65da808a431068448f34f65">elm_ctxpopup_direction_priority_set</a> (Elm_Ctxpopup *obj, Elm_Ctxpopup_Direction first, Elm_Ctxpopup_Direction second, Elm_Ctxpopup_Direction third, Elm_Ctxpopup_Direction fourth)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the direction priority of a ctxpopup.  <a href="#gaaf9891a5e65da808a431068448f34f65"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga1637af7102c1d5531a4e360e4d9a4ac8">elm_ctxpopup_direction_priority_get</a> (const Elm_Ctxpopup *obj, Elm_Ctxpopup_Direction *first, Elm_Ctxpopup_Direction *second, Elm_Ctxpopup_Direction *third, Elm_Ctxpopup_Direction *fourth)</td></tr>
@@ -158,10 +165,10 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#gaa6826507fd3ebb99c480832808f4b3a6">elm_ctxpopup_dismiss</a> (Elm_Ctxpopup *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dismiss a ctxpopup object.  <a href="#gaa6826507fd3ebb99c480832808f4b3a6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga570cc816c88f072dc198c3bbefef3608">elm_ctxpopup_clear</a> (Elm_Ctxpopup *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear all items in the given ctxpopup object.  <a href="#ga570cc816c88f072dc198c3bbefef3608"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">Elm_Widget_Item *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga9f8915c02b2500623dbce48d63bc4f3f">elm_ctxpopup_item_append</a> (Elm_Ctxpopup *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *icon, Evas_Smart_Cb func, const void *data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new item to a ctxpopup object.  <a href="#ga9f8915c02b2500623dbce48d63bc4f3f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga641e4779f030e4bb294483db9c5851d7">elm_ctxpopup_direction_available_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_Ctxpopup_Direction direction)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga68372686c35c7790c769f44ca39119ec">elm_ctxpopup_item_append</a> (Elm_Ctxpopup *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, Evas_Smart_Cb func, const void *data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a new item to a ctxpopup object before item <code>before</code>.  <a href="#ga68372686c35c7790c769f44ca39119ec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3db3556eec8ef18cb8ddb43816974ac8">EAPI</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Ctxpopup.html#ga64c2600069747d86de8e887e97405f4a">elm_win_type_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_Win_Type type)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set slide effect of label widget.  <a href="#ga64c2600069747d86de8e887e97405f4a"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gae1ad10d2c5153a5f009c23b83e71b251"></a><!-- doxytag: member="elc_ctxpopup_legacy.h::elm_ctxpopup_add" ref="gae1ad10d2c5153a5f009c23b83e71b251" args="(Evas_Object *parent)" -->
@@ -186,9 +193,10 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>New object or <code>NULL</code>, if it cannot be created</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>New object or <code>NULL</code>, if it cannot be created </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a7">ctxpopup_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga24b2d6caab900b2beb82548ba1c9f01b"></a><!-- doxytag: member="elm_ctxpopup.eo.legacy.h::elm_ctxpopup_auto_hide_disabled_set" ref="ga24b2d6caab900b2beb82548ba1c9f01b" args="(Elm_Ctxpopup *obj, Eina_Bool disabled)" -->
@@ -220,15 +228,15 @@ Functions</h2></td></tr>
 <p>Use this function when user wants ctxpopup not to hide automatically. By default, ctxpopup is dismissed whenever mouse clicked its background area, language is changed, and its parent geometry is updated(changed). Not to hide ctxpopup automatically, disable auto hide function by calling this API, then ctxpopup won't be dismissed in those scenarios.</p>
 <p>Default value of disabled is <code>false</code>.</p>
 <p>See also elm_ctxpopup_auto_hide_disabled_get.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">disabled</td><td>auto hide enable/disable.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">disabled</td><td>Auto hide enable/disable.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -246,43 +254,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-
 <p>Clear all items in the given ctxpopup object. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga641e4779f030e4bb294483db9c5851d7"></a><!-- doxytag: member="elm_deprecated.h::elm_ctxpopup_direction_available_get" ref="ga641e4779f030e4bb294483db9c5851d7" args="(Evas_Object *obj, Elm_Ctxpopup_Direction direction)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Ctxpopup.html#ga641e4779f030e4bb294483db9c5851d7">elm_ctxpopup_direction_available_get</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Elm_Ctxpopup_Direction&#160;</td>
-          <td class="paramname"><em>direction</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000224">Deprecated:</a></b></dt><dd>Deprecated since 2.4.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -304,13 +276,14 @@ Functions</h2></td></tr>
 
 <p>Get the current direction of a ctxpopup. </p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Once the ctxpopup showed up, the direction would be determined</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
   </table>
   </dd>
 </dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Direction </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -359,7 +332,6 @@ Functions</h2></td></tr>
 
 <p>Get the direction priority of a ctxpopup. </p>
 <p>See also <a class="el" href="group__Elm__Ctxpopup.html#gaaf9891a5e65da808a431068448f34f65">elm_ctxpopup_direction_priority_set</a> for more information.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -370,6 +342,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -419,7 +392,6 @@ Functions</h2></td></tr>
 <p>Set the direction priority of a ctxpopup. </p>
 <p>This functions gives a chance to user to set the priority of ctxpopup showing direction. This doesn't guarantee the ctxpopup will appear in the requested direction.</p>
 <p>See also Elm_Ctxpopup_Direction.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -430,6 +402,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -449,14 +422,14 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Dismiss a ctxpopup object. </p>
-<p>Use this function to simulate clicking outside of the ctxpopup to dismiss it. In this way, the ctxpopup will be hidden and the "clicked" signal will be emitted.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<p>Use this function to simulate clicking outside of the ctxpopup to dismiss it. In this way, the ctxpopup will be hidden and the "clicked" signal will be emitted. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -477,7 +450,6 @@ Functions</h2></td></tr>
 
 <p>Get the value of current ctxpopup object's orientation. </p>
 <p>See also <a class="el" href="group__Elm__Ctxpopup.html#gadd4a37e0d12fd11feccaee777e67f933">elm_ctxpopup_horizontal_set</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -485,6 +457,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> for horizontal mode, <code>false</code> for vertical. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -513,8 +486,35 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Change the ctxpopup's orientation to horizontal or vertical. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<p>Get the selected item in the widget. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The selected item or <code>null</code>. Get the first item in the widget.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The first item or <code>null</code>. Get the last item in the widget.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The last item or <code>null</code>. Returns a list of the widget item.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>const list to widget items Change the ctxpopup's orientation to horizontal or vertical.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -522,15 +522,17 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a13">ctxpopup_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gad5887c6f1bdb35b471b4f0c042e4604f"></a><!-- doxytag: member="elm_ctxpopup.eo.legacy.h::elm_ctxpopup_hover_parent_get" ref="gad5887c6f1bdb35b471b4f0c042e4604f" args="(const Elm_Ctxpopup *obj)" -->
+<a class="anchor" id="ga55558d3832a6c925987c90cc5c2d4960"></a><!-- doxytag: member="elm_ctxpopup.eo.legacy.h::elm_ctxpopup_hover_parent_get" ref="ga55558d3832a6c925987c90cc5c2d4960" args="(const Elm_Ctxpopup *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__Ctxpopup.html#gad5887c6f1bdb35b471b4f0c042e4604f">elm_ctxpopup_hover_parent_get</a> </td>
+          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a>* <a class="el" href="group__Elm__Ctxpopup.html#ga55558d3832a6c925987c90cc5c2d4960">elm_ctxpopup_hover_parent_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Ctxpopup *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -541,8 +543,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the Ctxpopup's parent. </p>
-<p>See also <a class="el" href="group__Elm__Ctxpopup.html#ga9dd899aad33e1580b76b37a38ca5638c">elm_ctxpopup_hover_parent_set</a> for more information</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<p>See also <a class="el" href="group__Elm__Ctxpopup.html#ga89691176e34a784a7bb248bcc47f648f">elm_ctxpopup_hover_parent_set</a> for more information</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -550,15 +551,16 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The parent to use. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga9dd899aad33e1580b76b37a38ca5638c"></a><!-- doxytag: member="elm_ctxpopup.eo.legacy.h::elm_ctxpopup_hover_parent_set" ref="ga9dd899aad33e1580b76b37a38ca5638c" args="(Elm_Ctxpopup *obj, Evas_Object *parent)" -->
+<a class="anchor" id="ga89691176e34a784a7bb248bcc47f648f"></a><!-- doxytag: member="elm_ctxpopup.eo.legacy.h::elm_ctxpopup_hover_parent_set" ref="ga89691176e34a784a7bb248bcc47f648f" args="(Elm_Ctxpopup *obj, Efl_Canvas_Object *parent)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Ctxpopup.html#ga9dd899aad33e1580b76b37a38ca5638c">elm_ctxpopup_hover_parent_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Ctxpopup.html#ga89691176e34a784a7bb248bcc47f648f">elm_ctxpopup_hover_parent_set</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Ctxpopup *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -566,7 +568,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td>
           <td class="paramname"><em>parent</em>&#160;</td>
         </tr>
         <tr>
@@ -578,11 +580,19 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Set the Ctxpopup's parent. </p>
+<p>Get ctxpopup auto hide mode triggered by ctxpopup policy. </p>
+<p>See also <a class="el" href="group__Elm__Ctxpopup.html#ga24b2d6caab900b2beb82548ba1c9f01b">elm_ctxpopup_auto_hide_disabled_set</a> for more information.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Auto hide enable/disable.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 Set the Ctxpopup's parent</dd></dl>
 <p>Set the parent object.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd><a class="el" href="group__Elm__Ctxpopup.html#gae1ad10d2c5153a5f009c23b83e71b251">elm_ctxpopup_add</a> will automatically call this function with its <code>parent</code> argument.</dd></dl>
 <p>See also <a class="el" href="group__Elm__Ctxpopup.html#gae1ad10d2c5153a5f009c23b83e71b251">elm_ctxpopup_add</a>, elm_hover_parent_set.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -590,15 +600,16 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga9f8915c02b2500623dbce48d63bc4f3f"></a><!-- doxytag: member="elm_ctxpopup.eo.legacy.h::elm_ctxpopup_item_append" ref="ga9f8915c02b2500623dbce48d63bc4f3f" args="(Elm_Ctxpopup *obj, const char *label, Evas_Object *icon, Evas_Smart_Cb func, const void *data)" -->
+<a class="anchor" id="ga68372686c35c7790c769f44ca39119ec"></a><!-- doxytag: member="elm_ctxpopup.eo.legacy.h::elm_ctxpopup_item_append" ref="ga68372686c35c7790c769f44ca39119ec" args="(Elm_Ctxpopup *obj, const char *label, Efl_Canvas_Object *icon, Evas_Smart_Cb func, const void *data)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Elm_Widget_Item* <a class="el" href="group__Elm__Ctxpopup.html#ga9f8915c02b2500623dbce48d63bc4f3f">elm_ctxpopup_item_append</a> </td>
+          <td class="memname"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a>* <a class="el" href="group__Elm__Ctxpopup.html#ga68372686c35c7790c769f44ca39119ec">elm_ctxpopup_item_append</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Ctxpopup *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -612,7 +623,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *&#160;</td>
           <td class="paramname"><em>icon</em>, </td>
         </tr>
         <tr>
@@ -636,10 +647,37 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Add a new item to a ctxpopup object. </p>
+<p>Insert a new item to a ctxpopup object before item <code>before</code>. </p>
+<p>See also elm_object_content_set.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">before</td><td>The ctxpopup item to insert before. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The Label of the new item </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">icon</td><td>Icon to be set on new item </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>Convenience function called when item selected </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Data passed to <code>func</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>null</code>, on errors.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Insert a new item to a ctxpopup object after item <code>after</code>.</dd></dl>
+<p>See also elm_object_content_set.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">after</td><td>The ctxpopup item to insert after. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">label</td><td>The Label of the new item </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">icon</td><td>Icon to be set on new item </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>Convenience function called when item selected </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Data passed to <code>func</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>null</code>, on errors.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Add a new item to a ctxpopup object.</dd></dl>
 <p>Warning:Ctxpopup can't hold both an item list and a content at the same time. When an item is added, any previous content will be removed.</p>
 <p>See also elm_object_content_set.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -651,6 +689,768 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A handle to the item added or <code>null</code>, on errors. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a6">ctxpopup_example_01.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga64c2600069747d86de8e887e97405f4a"></a><!-- doxytag: member="elm_deprecated.h::elm_win_type_set" ref="ga64c2600069747d86de8e887e97405f4a" args="(Evas_Object *obj, Elm_Win_Type type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3db3556eec8ef18cb8ddb43816974ac8">EAPI</a> void <a class="el" href="group__Elm__Win.html#ga89a87576c2d1e4c2dcf3afefdcb2ad7f">elm_win_type_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Elm_Win_Type&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Set slide effect of label widget. </p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000236">Deprecated:</a></b></dt><dd>Use elm_notify_align_set instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000237">Deprecated:</a></b></dt><dd>Use elm_notify_align_get instead. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The label object </td></tr>
+    <tr><td class="paramname">slide</td><td>If true, slide effect will be shown</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>If set to true, the text of the label will slide/scroll through the length of label.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This only works with the themes "slide_short", "slide_long" and "slide_bounce". </dd>
+<dd>
+This doesn't work if the line wrap(<a class="el" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set()</a>) or ellipsis(<a class="el" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set()</a>) is set.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000238">Deprecated:</a></b></dt><dd>see <a class="el" href="group__Elm__Label.html#ga6cad055d2cd4ea72f9d6c9ce8bd68421" title="Control the slide mode of the label widget.">elm_label_slide_mode_set()</a> instead.</dd></dl>
+<p>Get whether slide effect is shown or not.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The label object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If true, slide effect is shown.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_label_slide_set()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000239">Deprecated:</a></b></dt><dd>see <a class="el" href="group__Elm__Label.html#ga99df8331829b61807db79100c1179afe" title="Control the slide mode of the label widget.">elm_label_slide_mode_get()</a> instead.</dd></dl>
+<p>Set the text for an object's part, marking it as translatable.</p>
+<p>The string to set as <code>text</code> must be the original one. Do not pass the return of <code>gettext()</code> here. Elementary will translate the string internally and set it on the object using <a class="el" href="group__Elm__General.html#ga9c088563c442670796564d2e5158f154">elm_object_part_text_set()</a>, also storing the original string so that it can be automatically translated when the language is changed with <a class="el" href="group__Elm__General.html#ga6b94ddc6b63885d4f4c5aa039589c96c">elm_language_set()</a>.</p>
+<p>The <code>domain</code> will be stored along to find the translation in the correct catalog. It can be NULL, in which case it will use whatever domain was set by the application with <code>textdomain()</code>. This is useful in case you are building a library on top of Elementary that will have its own translatable strings, that should not be mixed with those of programs using the library.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object containing the text part </td></tr>
+    <tr><td class="paramname">part</td><td>The name of the part to set </td></tr>
+    <tr><td class="paramname">domain</td><td>The translation domain to use </td></tr>
+    <tr><td class="paramname">text</td><td>The original, non-translated text to set</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000240">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__General.html#ga0371c50c867eb1104d41677488b4b087">elm_object_domain_translatable_part_text_set()</a> instead.</dd></dl>
+<p>Get the original string set as translatable for an object</p>
+<p>When setting translated strings, the function <a class="el" href="group__Elm__General.html#ga965e34858eb4b80b7a4b5feda732bf27">elm_object_part_text_get()</a> will return the translation returned by <code>gettext()</code>. To get the original string use this function.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The object </td></tr>
+    <tr><td class="paramname">part</td><td>The name of the part that was set</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The original, untranslated string</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000241">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__General.html#gadf27d81b4dae29cc2474a4556b23dc66">elm_object_translatable_part_text_get()</a> instead.</dd></dl>
+<p>Show/Hide the title area</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>The naviframe item </td></tr>
+    <tr><td class="paramname">visible</td><td>If <code>EINA_TRUE</code>, title area will be visible, hidden otherwise</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>When the title area is invisible, then the controls would be hidden so as to expand the content area to full-size.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000242">Deprecated:</a></b></dt><dd>Use elm_naviframe_item_title_enabled_set() instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>also elm_naviframe_item_title_visible_get() </dd>
+<dd>
+also elm_naviframe_item_title_enabled_get() Get a value whether title area is visible or not.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">it</td><td>The naviframe item </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>If <code>EINA_TRUE</code>, title area is visible</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000243">Deprecated:</a></b></dt><dd>Use elm_naviframe_item_title_enabled_get() instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>also elm_naviframe_item_title_visible_set() Enable/disable horizontal and vertical bouncing effect.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The genlist object </td></tr>
+    <tr><td class="paramname">h_bounce</td><td>Allow bounce horizontally (<code>EINA_TRUE</code> = on, <code>EINA_FALSE</code> = off). Default is <code>EINA_FALSE</code>. </td></tr>
+    <tr><td class="paramname">v_bounce</td><td>Allow bounce vertically (<code>EINA_TRUE</code> = on, <code>EINA_FALSE</code> = off). Default is <code>EINA_TRUE</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This will enable or disable the scroller bouncing effect for the genlist. See <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> for details.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000244">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> </dd>
+<dd>
+elm_genlist_bounce_get() Get whether the horizontal and vertical bouncing effect is enabled.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The genlist object </td></tr>
+    <tr><td class="paramname">h_bounce</td><td>Pointer to a bool to receive if the bounce horizontally option is set. </td></tr>
+    <tr><td class="paramname">v_bounce</td><td>Pointer to a bool to receive if the bounce vertically option is set.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000245">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> </dd>
+<dd>
+elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The genlist object </td></tr>
+    <tr><td class="paramname">policy_h</td><td>Horizontal scrollbar policy. </td></tr>
+    <tr><td class="paramname">policy_v</td><td>Vertical scrollbar policy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This sets the scrollbar visibility policy for the given genlist scroller. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars. Default is <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a></p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000246">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> Get the scrollbar policy</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The genlist object </td></tr>
+    <tr><td class="paramname">policy_h</td><td>Pointer to store the horizontal scrollbar policy. </td></tr>
+    <tr><td class="paramname">policy_v</td><td>Pointer to store the vertical scrollbar policy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000247">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> This sets the entry's scrollbar policy (i.e. enabling/disabling them).</dd></dl>
+<p>Setting an entry to single-line mode with <a class="el" href="group__Elm__Entry.html#ga96e162d7def2bbba34c5449d51f87fdd" title="Sets the entry to single line mode.">elm_entry_single_line_set()</a> will automatically disable the display of scrollbars when the entry moves inside its scroller.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The entry object </td></tr>
+    <tr><td class="paramname">h</td><td>The horizontal scrollbar policy to apply </td></tr>
+    <tr><td class="paramname">v</td><td>The vertical scrollbar policy to apply</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000248">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
+<p>This enables/disables bouncing within the entry.</p>
+<p>This function sets whether the entry will bounce when scrolling reaches the end of the contained entry.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The entry object </td></tr>
+    <tr><td class="paramname">h_bounce</td><td>The horizontal bounce state </td></tr>
+    <tr><td class="paramname">v_bounce</td><td>The vertical bounce state</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000249">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
+<p>Get the bounce mode</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The Entry object </td></tr>
+    <tr><td class="paramname">h_bounce</td><td>Allow bounce horizontally </td></tr>
+    <tr><td class="paramname">v_bounce</td><td>Allow bounce vertically</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000250">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
+<p>Set the photocam scrolling bouncing.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The photocam object </td></tr>
+    <tr><td class="paramname">h_bounce</td><td>set this to <code>EINA_TRUE</code> for horizontal bouncing </td></tr>
+    <tr><td class="paramname">v_bounce</td><td>set this to <code>EINA_TRUE</code> for vertical bouncing</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000251">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
+<p>Get the photocam scrolling bouncing.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The photocam object </td></tr>
+    <tr><td class="paramname">h_bounce</td><td>horizontal bouncing </td></tr>
+    <tr><td class="paramname">v_bounce</td><td>vertical bouncing</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_photocam_bounce_set()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000252">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
+<p>Set bouncing behaviour when the scrolled content reaches an edge.</p>
+<p>Tell the internal scroller object whether it should bounce or not when it reaches the respective edges for each axis.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The list object </td></tr>
+    <tr><td class="paramname">h_bounce</td><td>Whether to bounce or not in the horizontal axis. </td></tr>
+    <tr><td class="paramname">v_bounce</td><td>Whether to bounce or not in the vertical axis.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000253">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> Get the bouncing behaviour of the internal scroller.</dd></dl>
+<p>Get whether the internal scroller should bounce when the edge of each axis is reached scrolling.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The list object. </td></tr>
+    <tr><td class="paramname">h_bounce</td><td>Pointer to store the bounce state of the horizontal axis. </td></tr>
+    <tr><td class="paramname">v_bounce</td><td>Pointer to store the bounce state of the vertical axis.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000254">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> </dd>
+<dd>
+elm_list_bounce_set() Set the scrollbar policy.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The list object </td></tr>
+    <tr><td class="paramname">policy_h</td><td>Horizontal scrollbar policy. </td></tr>
+    <tr><td class="paramname">policy_v</td><td>Vertical scrollbar policy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This sets the scrollbar visibility policy for the given scroller. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars.</p>
+<p>The both are disabled by default, i.e., are set to <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a>.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000255">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
+<p>Get the scrollbar policy.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_list_scroller_policy_get() for details.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The list object. </td></tr>
+    <tr><td class="paramname">policy_h</td><td>Pointer to store horizontal scrollbar policy. </td></tr>
+    <tr><td class="paramname">policy_v</td><td>Pointer to store vertical scrollbar policy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000256">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</dd></dl>
+<p>Set custom theme elements for the scroller</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The scroller object </td></tr>
+    <tr><td class="paramname">widget</td><td>The widget name to use (default is "scroller") </td></tr>
+    <tr><td class="paramname">base</td><td>The base name to use (default is "base")</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000257">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Layout.html#ga8f28efed82872f5c57a61db5c81d4eb3" title="Set the edje group from the elementary theme that will be used as layout.">elm_layout_theme_set()</a> instead.</dd></dl>
+<p>Set bouncing behaviour when the scrolled content reaches an edge.</p>
+<p>Tell the internal scroller object whether it should bounce or not when it reaches the respective edges for each axis.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The diskselector object. </td></tr>
+    <tr><td class="paramname">h_bounce</td><td>Whether to bounce or not in the horizontal axis. </td></tr>
+    <tr><td class="paramname">v_bounce</td><td>Whether to bounce or not in the vertical axis.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000258">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> Get the bouncing behaviour of the internal scroller.</dd></dl>
+<p>Get whether the internal scroller should bounce when the edge of each axis is reached scrolling.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The diskselector object. </td></tr>
+    <tr><td class="paramname">h_bounce</td><td>Pointer to store the bounce state of the horizontal axis. </td></tr>
+    <tr><td class="paramname">v_bounce</td><td>Pointer to store the bounce state of the vertical axis.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000259">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> </dd>
+<dd>
+elm_diskselector_bounce_set() Get the scrollbar policy.</dd>
+<dd>
+elm_diskselector_scroller_policy_get() for details.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The diskselector object. </td></tr>
+    <tr><td class="paramname">policy_h</td><td>Pointer to store horizontal scrollbar policy. </td></tr>
+    <tr><td class="paramname">policy_v</td><td>Pointer to store vertical scrollbar policy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000260">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> Set the scrollbar policy.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The diskselector object. </td></tr>
+    <tr><td class="paramname">policy_h</td><td>Horizontal scrollbar policy. </td></tr>
+    <tr><td class="paramname">policy_v</td><td>Vertical scrollbar policy.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This sets the scrollbar visibility policy for the given scroller. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars.</p>
+<p>The both are disabled by default, i.e., are set to <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a>.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000261">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> Set the file that will be used as icon.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">file</td><td>The path to file that will be used as icon image </td></tr>
+    <tr><td class="paramname">group</td><td>The group that the icon belongs to an edje file</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>(<code>EINA_TRUE</code> = success, <code>EINA_FALSE</code> = error)</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The icon image set by this function can be changed by <a class="el" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_file_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000262">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set()</a> instead.</dd></dl>
+<p>Set a location in memory to be used as an icon</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">img</td><td>The binary data that will be used as an image </td></tr>
+    <tr><td class="paramname">size</td><td>The size of binary data <code>img</code> </td></tr>
+    <tr><td class="paramname">format</td><td>Optional format of <code>img</code> to pass to the image loader </td></tr>
+    <tr><td class="paramname">key</td><td>Optional key of <code>img</code> to pass to the image loader (eg. if <code>img</code> is an edje file)</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The <code>format</code> string should be something like "png", "jpg", "tga", "tiff", "bmp" etc. if it is provided (NULL if not). This improves the loader performance as it tries the "correct" loader first before trying a range of other possible loaders until one succeeds.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>(<code>EINA_TRUE</code> = success, <code>EINA_FALSE</code> = error)</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>The icon image set by this function can be changed by <a class="el" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set()</a>.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000263">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga1cf2802a24888d6622652c4a6a262d2e" title="Set a location in memory to be used as an image object&#39;s source bitmap.">elm_image_memfile_set()</a> instead.</dd></dl>
+<p>Get the file that will be used as icon.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">file</td><td>The path to file that will be used as the icon image </td></tr>
+    <tr><td class="paramname">group</td><td>The group that the icon belongs to, in edje file</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Image.html#gad1a96ede5f513042cef3c1dac4572f73">elm_image_file_set()</a></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000264">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga2457a336d2123a8074725e814e459cba">elm_image_file_get()</a> instead.</dd></dl>
+<p>Set the smooth scaling for an icon object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">smooth</td><td><code>EINA_TRUE</code> if smooth scaling should be used, <code>EINA_FALSE</code> otherwise. Default is <code>EINA_TRUE</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Set the scaling algorithm to be used when scaling the icon image. Smooth scaling provides a better resulting image, but is slower.</p>
+<p>The smooth scaling should be disabled when making animations that change the icon size, since they will be faster. Animations that don't require resizing of the icon can keep the smooth scaling enabled (even if the icon is already scaled, since the scaled icon image will be cached).</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_smooth_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000265">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga9b8c946f4abbcd09f0b9de0b9026505f" title="Control the smooth effect for an image.">elm_image_smooth_set()</a> instead.</dd></dl>
+<p>Get whether smooth scaling is enabled for an icon object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if smooth scaling is enabled, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_smooth_set()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000266">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gad621f51d6679dec8ecdf4ad72c249705" title="Get the smooth effect for an image.">elm_image_smooth_get()</a> instead.</dd></dl>
+<p>Disable scaling of this object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object. </td></tr>
+    <tr><td class="paramname">no_scale</td><td><code>EINA_TRUE</code> if the object is not scalable, <code>EINA_FALSE</code> otherwise. Default is <code>EINA_FALSE</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function disables scaling of the icon object through the function <a class="el" href="group__Elm__Scaling.html#ga1606f51f88c4d0b58544d36225420a37">elm_object_scale_set()</a>. However, this does not affect the object size/resize in any way. For that effect, take a look at elm_icon_resizable_set().</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_no_scale_get() </dd>
+<dd>
+elm_icon_resizable_set() </dd>
+<dd>
+<a class="el" href="group__Elm__Scaling.html#ga1606f51f88c4d0b58544d36225420a37">elm_object_scale_set()</a></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000267">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga1fad143fc34d81e888e3c5f85c6005db" title="Control scaling behaviour of this object.">elm_image_no_scale_set()</a> instead.</dd></dl>
+<p>Get whether scaling is disabled on the object.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if scaling is disabled, <code>EINA_FALSE</code> otherwise</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_no_scale_set()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000268">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga89f4f52a43166a9b0abc4565c1b3e416" title="Control scaling behaviour of this object.">elm_image_no_scale_get()</a> instead.</dd></dl>
+<p>Set if the object is (up/down) resizable.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">size_up</td><td>A bool to set if the object is resizable up. Default is <code>EINA_TRUE</code>. </td></tr>
+    <tr><td class="paramname">size_down</td><td>A bool to set if the object is resizable down. Default is <code>EINA_TRUE</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function limits the icon object resize ability. If <code>size_up</code> is set to <code>EINA_FALSE</code>, the object can't have its height or width resized to a value higher than the original icon size. Same is valid for <code>size_down</code>.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_resizable_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000269">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga6a389436a18e590fff5b6f6b81c72722" title="Control if the object is (up/down) resizable.">elm_image_resizable_set()</a> instead.</dd></dl>
+<p>Get if the object is (up/down) resizable.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">size_up</td><td>A bool to set if the object is resizable up </td></tr>
+    <tr><td class="paramname">size_down</td><td>A bool to set if the object is resizable down</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_resizable_set()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000270">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gadfcb334fcad98c447d32b205ddcfd6ba" title="Control if the object is (up/down) resizable.">elm_image_resizable_get()</a> instead.</dd></dl>
+<p>Get the object's image size</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">w</td><td>A pointer to store the width in </td></tr>
+    <tr><td class="paramname">h</td><td>A pointer to store the height in</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000271">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gaf49c5f8eb4011eb9be89bc13a123e598" title="Get the current size of the image.">elm_image_object_size_get()</a> instead.</dd></dl>
+<p>Set if the icon fill the entire object area.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">fill_outside</td><td><code>EINA_TRUE</code> if the object is filled outside, <code>EINA_FALSE</code> otherwise. Default is <code>EINA_FALSE</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>When the icon object is resized to a different aspect ratio from the original icon image, the icon image will still keep its aspect. This flag tells how the image should fill the object's area. They are: keep the entire icon inside the limits of height and width of the object (<code>fill_outside</code> is <code>EINA_FALSE</code>) or let the extra width or height go outside of the object, and the icon will fill the entire object (<code>fill_outside</code> is <code>EINA_TRUE</code>).</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Unlike <a class="el" href="group__Evas__Object__Group__Map.html#Image">mapping</a>, there's no option in icon to set the aspect ratio retain property to false. Thus, the icon image will always keep its original aspect ratio.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_fill_outside_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000272">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga4c6c2fe6f609406329e2be2011574f94" title="Control if the image fills the entire object area, when keeping the aspect ratio.">elm_image_fill_outside_set()</a> instead.</dd></dl>
+<p>Get if the object is filled outside.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the object is filled outside, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_fill_outside_set()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000273">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gae672e27e3f90abec30b080710ae3aab5" title="Control if the image fills the entire object area, when keeping the aspect ratio.">elm_image_fill_outside_get()</a> instead.</dd></dl>
+<p>Set the prescale size for the icon.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">size</td><td>The prescale size. This value is used for both width and height.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function sets a new size for pixmap representation of the given icon. It allows the icon to be loaded already in the specified size, reducing the memory usage and load time when loading a big icon with load size set to a smaller size.</p>
+<p>It's equivalent to the <a class="el" href="group__Elm__Bg.html#ga6aef5e17ed70d3391401f0395fda06e9" title="Sets the size of the pixmap representation of the image set on a given background widget...">elm_bg_load_size_set()</a> function for bg.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>this is just a hint, the real size of the pixmap may differ depending on the type of icon being loaded, being bigger than requested.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_prescale_get() </dd>
+<dd>
+<a class="el" href="group__Elm__Bg.html#ga6aef5e17ed70d3391401f0395fda06e9" title="Sets the size of the pixmap representation of the image set on a given background widget...">elm_bg_load_size_set()</a></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000274">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gafb6dd2b235e25b2bd0b93d82e205a4f6">elm_image_prescale_set()</a> instead.</dd></dl>
+<p>Get the prescale size for the icon.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The prescale size</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_prescale_set()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000275">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga1aeca8dbe2367d817492099887ca8f2d">elm_image_prescale_get()</a> instead.</dd></dl>
+<p>Get the image object of the icon. DO NOT MODIFY THIS.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The internal icon object</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000276">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga8ce28a819fb1f1f47eb4f0dd38a99f23" title="Get the inlined image object of the image widget.">elm_image_object_get()</a> instead.</dd></dl>
+<p>Enable or disable preloading of the icon</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">disabled</td><td>If EINA_TRUE, preloading will be disabled</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000277">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga34277f0638fdb99ac8d866149c6ec095" title="Enable or disable preloading of the image.">elm_image_preload_disabled_set()</a> instead.</dd></dl>
+<p>Get if the icon supports animation or not.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the icon supports animation, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<p>Return if this elm icon's image can be animated. Currently Evas only supports gif animation. If the return value is EINA_FALSE, other elm_icon_animated_xxx APIs won't work.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000278">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga1f61c469baddcaed97ab9846ea294594">elm_image_animated_available_get()</a> instead.</dd></dl>
+<p>Set animation mode of the icon.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">animated</td><td><code>EINA_TRUE</code> if the object do animation job, <code>EINA_FALSE</code> otherwise. Default is <code>EINA_FALSE</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Since the default animation mode is set to EINA_FALSE, the icon is shown without animation. Files like animated GIF files can animate, and this is supported if you enable animated support on the icon. Set it to EINA_TRUE when the icon needs to be animated.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000279">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gafb3915f863b15be7e5d41d80a6bf3a08">elm_image_animated_set()</a> instead.</dd></dl>
+<p>Get animation mode of the icon.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The animation mode of the icon object </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_animated_set</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000280">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gaba9148979630af8ab6351ccfa7f6156a">elm_image_animated_get()</a> instead.</dd></dl>
+<p>Set animation play mode of the icon.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+    <tr><td class="paramname">play</td><td><code>EINA_TRUE</code> the object play animation images, <code>EINA_FALSE</code> otherwise. Default is <code>EINA_FALSE</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>To play elm icon's animation, set play to EINA_TRUE. For example, you make gif player using this set/get API and click event. This literally lets you control current play or paused state. To have this work with animated GIF files for example, you first, before setting the file have to use elm_icon_animated_set() to enable animation at all on the icon.</p>
+<p>1. Click event occurs 2. Check play flag using elm_icon_animated_play_get 3. If elm icon was playing, set play to EINA_FALSE. Then animation will be stopped and vice versa</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000281">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gac4d8f9a8c756e478c0b31bb1371dee46">elm_image_animated_play_set()</a> instead.</dd></dl>
+<p>Get animation play mode of the icon.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The play mode of the icon object</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_animated_play_get</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000282">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gafc3120f2ff8cc7403238783b8561bf55">elm_image_animated_play_get()</a> instead.</dd></dl>
+<p>Set whether the original aspect ratio of the icon should be kept on resize.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object. </td></tr>
+    <tr><td class="paramname">fixed</td><td><code>EINA_TRUE</code> if the icon should retain the aspect, <code>EINA_FALSE</code> otherwise.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The original aspect ratio (width / height) of the icon is usually distorted to match the object's size. Enabling this option will retain this original aspect, and the way that the icon is fit into the object's area depends on the option set by elm_icon_fill_outside_set().</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_icon_aspect_fixed_get() </dd>
+<dd>
+elm_icon_fill_outside_set()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000283">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#gadd748c70384fb332aba9d0f3a9da2a50" title="Control whether the internal image&#39;s aspect ratio is fixed to the original image&#39;s aspect ratio...">elm_image_aspect_fixed_set()</a> instead.</dd></dl>
+<p>Get if the object retains the original aspect ratio.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The icon object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the object keeps the original aspect, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000284">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Image.html#ga5cb21727ba0b8c1d9a2a381e51871874" title="Get whether the internal image&#39;s aspect ratio is fixed to the original image&#39;s.">elm_image_aspect_fixed_get()</a> instead.</dd></dl>
+<p>Set the initial file system path for a given file selector button widget</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector button widget </td></tr>
+    <tr><td class="paramname">path</td><td>The path string</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>It must be a <b>directory</b> path, which will have the contents displayed initially in the file selector's view, when invoked from <code>obj</code>. The default initial path is the <code>"HOME"</code> environment variable's value.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_path_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000285">Deprecated:</a></b></dt><dd>Use elm_fileselector_path_set() instead.</dd></dl>
+<p>Get the initial file system path set for a given file selector button widget</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector button widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>path The path string</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_path_set() for more details</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000286">Deprecated:</a></b></dt><dd>Use elm_fileselector_path_get() instead.</dd></dl>
+<p>Enable/disable a tree view in the given file selector button widget's internal file selector</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector button widget </td></tr>
+    <tr><td class="paramname">value</td><td><code>EINA_TRUE</code> to enable tree view, <code>EINA_FALSE</code> to disable</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This has the same effect as elm_fileselector_expandable_set(), but now applied to a file selector button's internal file selector.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>There's no way to put a file selector button's internal file selector in "grid mode", as one may do with "pure" file selectors.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_expandable_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000287">Deprecated:</a></b></dt><dd>Use elm_fileselector_expandable_set() instead.</dd></dl>
+<p>Get whether tree view is enabled for the given file selector button widget's internal file selector</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector button widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>obj</code> widget's internal file selector is in tree view, <code>EINA_FALSE</code> otherwise (and or errors)</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_expandable_set() for more details</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000288">Deprecated:</a></b></dt><dd>Use elm_fileselector_expandable_get() instead.</dd></dl>
+<p>Set whether a given file selector button widget's internal file selector is to display folders only or the directory contents, as well.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector button widget </td></tr>
+    <tr><td class="paramname">value</td><td><code>EINA_TRUE</code> to make <code>obj</code> widget's internal file selector only display directories, <code>EINA_FALSE</code> to make files to be displayed in it too</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This has the same effect as elm_fileselector_folder_only_set(), but now applied to a file selector button's internal file selector.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_folder_only_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000289">Deprecated:</a></b></dt><dd>Use elm_fileselector_folder_only_set() instead.</dd></dl>
+<p>Get whether a given file selector button widget's internal file selector is displaying folders only or the directory contents, as well.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector button widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>obj</code> widget's internal file selector is only displaying directories, <code>EINA_FALSE</code> if files are being displayed in it too (and on errors)</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_folder_only_set() for more details</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000290">Deprecated:</a></b></dt><dd>Use elm_fileselector_folder_only_get() instead.</dd></dl>
+<p>Enable/disable the file name entry box where the user can type in a name for a file, in a given file selector button widget's internal file selector.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector button widget </td></tr>
+    <tr><td class="paramname">value</td><td><code>EINA_TRUE</code> to make <code>obj</code> widget's internal file selector a "saving dialog", <code>EINA_FALSE</code> otherwise</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This has the same effect as elm_fileselector_is_save_set(), but now applied to a file selector button's internal file selector.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_is_save_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000291">Deprecated:</a></b></dt><dd>Use elm_fileselector_is_save_set() instead.</dd></dl>
+<p>Get whether the given file selector button widget's internal file selector is in "saving dialog" mode</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector button widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if <code>obj</code> widget's internal file selector is in "saving dialog" mode, <code>EINA_FALSE</code> otherwise (and on errors)</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_is_save_set() for more details</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000292">Deprecated:</a></b></dt><dd>Use elm_fileselector_is_save_get() instead.</dd></dl>
+<p>Set the initial file system path and the entry's path string for a given file selector entry widget</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector entry widget </td></tr>
+    <tr><td class="paramname">path</td><td>The path string</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>It must be a <b>directory</b> path, which will have the contents displayed initially in the file selector's view, when invoked from <code>obj</code>. The default initial path is the <code>"HOME"</code> environment variable's value.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_path_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000293">Deprecated:</a></b></dt><dd>Use elm_fileselector_path_set() instead.</dd></dl>
+<p>Get the entry's path string for a given file selector entry widget</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector entry widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>path The path string</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_path_set() for more details</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000294">Deprecated:</a></b></dt><dd>Use elm_fileselector_path_get() instead.</dd></dl>
+<p>Enable/disable a tree view in the given file selector entry widget's internal file selector</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector entry widget </td></tr>
+    <tr><td class="paramname">value</td><td><code>EINA_TRUE</code> to enable tree view, <code>EINA_FALSE</code> to disable</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This has the same effect as elm_fileselector_expandable_set(), but now applied to a file selector entry's internal file selector.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>There's no way to put a file selector entry's internal file selector in "grid mode", as one may do with "pure" file selectors.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_expandable_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000295">Deprecated:</a></b></dt><dd>Use elm_fileselector_expandable_set() instead.</dd></dl>
+<p>Get whether tree view is enabled for the given file selector entry widget's internal file selector</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector entry widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>obj</code> widget's internal file selector is in tree view, <code>EINA_FALSE</code> otherwise (and or errors)</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_expandable_set() for more details</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000296">Deprecated:</a></b></dt><dd>Use elm_fileselector_expandable_get() instead.</dd></dl>
+<p>Set whether a given file selector entry widget's internal file selector is to display folders only or the directory contents, as well.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector entry widget </td></tr>
+    <tr><td class="paramname">value</td><td><code>EINA_TRUE</code> to make <code>obj</code> widget's internal file selector only display directories, <code>EINA_FALSE</code> to make files to be displayed in it too</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This has the same effect as elm_fileselector_folder_only_set(), but now applied to a file selector entry's internal file selector.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_folder_only_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000297">Deprecated:</a></b></dt><dd>Use elm_fileselector_folder_only_set() instead.</dd></dl>
+<p>Get whether a given file selector entry widget's internal file selector is displaying folders only or the directory contents, as well.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector entry widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>obj</code> widget's internal file selector is only displaying directories, <code>EINA_FALSE</code> if files are being displayed in it too (and on errors)</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_folder_only_set() for more details</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000298">Deprecated:</a></b></dt><dd>Use elm_fileselector_folder_only_get() instead.</dd></dl>
+<p>Enable/disable the file name entry box where the user can type in a name for a file, in a given file selector entry widget's internal file selector.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector entry widget </td></tr>
+    <tr><td class="paramname">value</td><td><code>EINA_TRUE</code> to make <code>obj</code> widget's internal file selector a "saving dialog", <code>EINA_FALSE</code> otherwise</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This has the same effect as elm_fileselector_is_save_set(), but now applied to a file selector entry's internal file selector.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_is_save_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000299">Deprecated:</a></b></dt><dd>Use elm_fileselector_is_save_set() instead.</dd></dl>
+<p>Get whether the given file selector entry widget's internal file selector is in "saving dialog" mode</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector entry widget </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if <code>obj</code> widget's internal file selector is in "saving dialog" mode, <code>EINA_FALSE</code> otherwise (and on errors)</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_is_save_set() for more details</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000300">Deprecated:</a></b></dt><dd>Use elm_fileselector_is_save_get() instead.</dd></dl>
+<p>Set the initial file system path for a given file selector entry widget</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector entry widget </td></tr>
+    <tr><td class="paramname">path</td><td>The path string</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>It must be a <b>directory</b> path, which will have the contents displayed initially in the file selector's view, when invoked from <code>obj</code>. The default initial path is the <code>"HOME"</code> environment variable's value.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_path_get()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000301">Deprecated:</a></b></dt><dd>Use elm_fileselector_selected_set() instead.</dd></dl>
+<p>Get the parent directory's path to the latest file selection on a given filer selector entry widget</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The file selector object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The (full) path of the directory of the last selection on <code>obj</code> widget, a <b>stringshared</b> string</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>elm_fileselector_path_set()</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000302">Deprecated:</a></b></dt><dd>Use elm_fileselector_selected_get() instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000303">Deprecated:</a></b></dt><dd>Deprecated since 2.4.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">direction</td><td>The direction to check available to show ctxpopup.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if object is available to show with <code>direction</code>.</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>

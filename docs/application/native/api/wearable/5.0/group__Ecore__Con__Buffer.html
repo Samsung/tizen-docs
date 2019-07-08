@@ -110,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
          <span class="comment">// Also don&#39;t worry about size, expanding, reallocing etc.</span>
          <span class="comment">// just keep appending - size is automatically handled.</span>
  
-         <a class="code" href="group__Eina__Binary__Buffer__Group.html#ga0f4c2dad6d375ce65bf71b26793b61b4" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_binbuf_append_length</a>(data, url_data-&gt;<a class="code" href="struct__Ecore__Con__Event__Url__Data.html#aaa4c4dbc6575b071164f8152a7808268">data</a>, url_data-&gt;<a class="code" href="struct__Ecore__Con__Event__Url__Data.html#a1d4725aa77f3875cc3405597a5fbff91">size</a>);
+         <a class="code" href="group__Eina__Binary__Buffer__Group.html#ga0f4c2dad6d375ce65bf71b26793b61b4" title="Expands a buffer, making room for at least minimum_unused_space.">eina_binbuf_append_length</a>(data, url_data-&gt;<a class="code" href="struct__Ecore__Con__Event__Url__Data.html#aaa4c4dbc6575b071164f8152a7808268">data</a>, url_data-&gt;<a class="code" href="struct__Ecore__Con__Event__Url__Data.html#a1d4725aa77f3875cc3405597a5fbff91">size</a>);
  
          fprintf(stderr, <span class="stringliteral">&quot;Appended %d \n&quot;</span>, url_data-&gt;<a class="code" href="struct__Ecore__Con__Event__Url__Data.html#a1d4725aa77f3875cc3405597a5fbff91">size</a>);
       }
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
  
     <span class="comment">// get the data back from Eina_Binbuf</span>
     <span class="keywordtype">char</span> *ptr = <a class="code" href="group__Eina__Binary__Buffer__Group.html#ga6dd556787568e0f9eac446ae7d1b5fdd" title="Retrieves a pointer to the contents of a string buffer.">eina_binbuf_string_get</a>(data);
-    <span class="keywordtype">size_t</span> size = <a class="code" href="group__Eina__Binary__Buffer__Group.html#gac3b5a05306bf9face35e44c1f5e0a4bd" title="Retrieves the length of the string buffer content.">eina_binbuf_length_get</a>(data);
+    <span class="keywordtype">size_t</span> size = <a class="code" href="group__Eina__Binary__Buffer__Group.html#gac3b5a05306bf9face35e44c1f5e0a4bd" title="Retrieves the length of the string buffer&#39;s content.">eina_binbuf_length_get</a>(data);
  
     <span class="comment">// process data as required (write to file)</span>
     fprintf(stderr, <span class="stringliteral">&quot;Size of data = %d bytes\n&quot;</span>, size);
@@ -156,8 +156,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    
  
     <span class="comment">// This is single additional line to manage dynamic network data.</span>
-    <a class="code" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *data = <a class="code" href="group__Eina__Binary__Buffer__Group.html#gadbe23382e953ee1952de77242ddf767c" title="Creates a new string buffer.">eina_binbuf_new</a>();
-    <a class="code" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *url_con = <a class="code" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033" title="Creates and initializes a new Ecore_Con_Url connection object.">ecore_con_url_new</a>(url);
+    <a class="code" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *data = <a class="code" href="group__Eina__Binary__Buffer__Group.html#gadbe23382e953ee1952de77242ddf767c" title="Creates a new binary string buffer.">eina_binbuf_new</a>();
+    <a class="code" href="struct__Ecore__Con__Url.html">Ecore_Con_Url</a> *url_con = <a class="code" href="group__Ecore__Con__Url__Group.html#ga33fda26e303bc0eacc3823b908221033" title="Creates and initializes a new Ecore_Con_Url connection object.">ecore_con_url_new</a>(url);
  
     <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a class="code" href="group__Ecore__Con__Events__Group.html#gadd78afe6a12c9bcb6bc57a1a96913f64">ECORE_CON_EVENT_URL_COMPLETE</a>,
                                                        completion_callback,

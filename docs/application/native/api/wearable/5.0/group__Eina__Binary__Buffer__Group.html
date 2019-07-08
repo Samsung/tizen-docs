@@ -94,31 +94,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__Eina__Data__Types__Group.html">Data Types</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>These functions provide string buffers management. </p>
-<p>The Binary Buffer data type is designed to be a mutable string, allowing to append, prepend or insert a string to a buffer. </p>
+<p>These functions provide string buffer management. </p>
+<p>The Binary Buffer data type is designed to be a mutable string, allowing the appending, prepending or insertion of a string to a buffer. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#gadbe23382e953ee1952de77242ddf767c">eina_binbuf_new</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string buffer.  <a href="#gadbe23382e953ee1952de77242ddf767c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga78d6d29bb1e60f067a65479322de884a">eina_binbuf_manage_new_length</a> (unsigned char *str, size_t length)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string buffer using the passed string. The passed string is used directly as the buffer, it's somehow the opposite function of <a class="el" href="group__Eina__Binary__Buffer__Group.html#gace73f825f4e00b7084918d10b370b658">eina_binbuf_string_steal</a> . The passed string must be malloced.  <a href="#ga78d6d29bb1e60f067a65479322de884a"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new binary string buffer.  <a href="#gadbe23382e953ee1952de77242ddf767c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#gafe47f9bb1c5b8a6cb9077a10d264eebf">eina_binbuf_manage_new</a> (const unsigned char *str, size_t length, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> ro)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string buffer using the passed string. The passed string is used directly as the buffer, it's somehow the opposite function of <a class="el" href="group__Eina__Binary__Buffer__Group.html#gace73f825f4e00b7084918d10b370b658">eina_binbuf_string_steal</a> .  <a href="#gafe47f9bb1c5b8a6cb9077a10d264eebf"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string buffer using the passed string.  <a href="#gafe47f9bb1c5b8a6cb9077a10d264eebf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga78d6d29bb1e60f067a65479322de884a">eina_binbuf_manage_new_length</a> (unsigned char *str, size_t length)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new string buffer using the passed string.  <a href="#ga78d6d29bb1e60f067a65479322de884a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#gad2a923d52d52c688eb5e30caeed69b3c">eina_binbuf_free</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees a string buffer.  <a href="#gad2a923d52d52c688eb5e30caeed69b3c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga80a246ff449826331576ea45abf7520b">eina_binbuf_reset</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets a string buffer.  <a href="#ga80a246ff449826331576ea45abf7520b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga0f4c2dad6d375ce65bf71b26793b61b4">eina_binbuf_append_length</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, const unsigned char *str, size_t length)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a string of exact length to a buffer, reallocating as necessary.  <a href="#ga0f4c2dad6d375ce65bf71b26793b61b4"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Expands a buffer, making room for at least <code>minimum_unused_space</code>.  <a href="#ga0f4c2dad6d375ce65bf71b26793b61b4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga7676aafe0dfbef14efd8fa510c817030">eina_binbuf_append_buffer</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, const <a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends an Eina_Binbuf to a buffer, reallocating as necessary.  <a href="#ga7676aafe0dfbef14efd8fa510c817030"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a slice to a buffer, reallocating as necessary.  <a href="#ga7676aafe0dfbef14efd8fa510c817030"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#gaf2b36050dfae36c18a58c946afc9eb7e">eina_binbuf_append_char</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, unsigned char c)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a character to a string buffer, reallocating as necessary.  <a href="#gaf2b36050dfae36c18a58c946afc9eb7e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga6981e778633f66cc4bbfebb25f7ab149">eina_binbuf_insert_length</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, const unsigned char *str, size_t length, size_t pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a string of exact length to a buffer, reallocating as necessary.  <a href="#ga6981e778633f66cc4bbfebb25f7ab149"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a string of exact length into a buffer, reallocating as necessary.  <a href="#ga6981e778633f66cc4bbfebb25f7ab149"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga572a69eb0a69f65e0def50e962c0f6f6">eina_binbuf_insert_char</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, unsigned char c, size_t pos)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a character to a string buffer, reallocating as necessary.  <a href="#ga572a69eb0a69f65e0def50e962c0f6f6"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a slice into a buffer, reallocating as necessary.  <a href="#ga572a69eb0a69f65e0def50e962c0f6f6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga0fe8871c4e701bb32a38386c32bb11bb">eina_binbuf_remove</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf, size_t start, size_t end)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a slice of the given string buffer.  <a href="#ga0fe8871c4e701bb32a38386c32bb11bb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga6dd556787568e0f9eac446ae7d1b5fdd">eina_binbuf_string_get</a> (const <a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf)</td></tr>
@@ -128,7 +128,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga438e250ba6d171bac1ee1677f24e2fc8">eina_binbuf_string_free</a> (<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees the contents of a string buffer but not the buffer.  <a href="#ga438e250ba6d171bac1ee1677f24e2fc8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#gac3b5a05306bf9face35e44c1f5e0a4bd">eina_binbuf_length_get</a> (const <a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a> *buf)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the length of the string buffer content.  <a href="#gac3b5a05306bf9face35e44c1f5e0a4bd"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the length of the string buffer's content.  <a href="#gac3b5a05306bf9face35e44c1f5e0a4bd"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Eina_Strbuf&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga914e43cfe068d65db0dd3fbb80bcfd2a">Eina_Binbuf</a></td></tr>
@@ -144,7 +144,7 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Type for a string buffer. </p>
+<p>Type for a binary string buffer. </p>
 
 </div>
 </div>
@@ -174,23 +174,33 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Appends an Eina_Binbuf to a buffer, reallocating as necessary. </p>
+<p>Appends a slice to a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to append to. </td></tr>
-    <tr><td class="paramname">data</td><td>The string buffer to append. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slice</td><td>The slice to append. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function appends <code>data</code> to <code>buf</code>. <code>data</code> must be allocated and different from <code>NULL</code>. It is slightly faster than eina_binbuf_append() as it does not compute the size of <code>str</code>. If <code>buf</code> can't append it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be appended.</dd></dl>
+<p>This function appends <code>slice</code> to <code>buf</code>.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Appends an Eina_Binbuf to a buffer, reallocating as necessary.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The string buffer to append. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>data</code> could not be appended.</dd></dl>
+<p>This function appends <code>data</code> to <code>buf</code>. <code>data</code> must be allocated and different from <code>NULL</code>. It is slightly faster than eina_binbuf_append() as it does not compute the size of <code>data</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>eina_binbuf_append() </dd>
 <dd>
 eina_binbuf_append_n() </dd>
 <dd>
-<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga0f4c2dad6d375ce65bf71b26793b61b4" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_binbuf_append_length()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga0f4c2dad6d375ce65bf71b26793b61b4" title="Expands a buffer, making room for at least minimum_unused_space.">eina_binbuf_append_length()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -222,13 +232,13 @@ eina_binbuf_append_n() </dd>
 <p>Appends a character to a string buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to append to. </td></tr>
-    <tr><td class="paramname">c</td><td>The char to append. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>The char to append. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function inserts <code>c</code> to <code>buf</code>. If it can not insert it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>c</code> could not be inserted.</dd></dl>
+<p>This function appends <code>c</code> to <code>buf</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -264,22 +274,47 @@ eina_binbuf_append_n() </dd>
 </div>
 <div class="memdoc">
 
-<p>Appends a string of exact length to a buffer, reallocating as necessary. </p>
+<p>Expands a buffer, making room for at least <code>minimum_unused_space</code>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to append to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to append. </td></tr>
-    <tr><td class="paramname">length</td><td>The exact length to use. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The Buffer to expand. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">minimum_unused_space</td><td>The minimum unused allocated space, in bytes, at the end of the buffer. Zero can be used to query the available slice of unused bytes. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function appends <code>str</code> to <code>buf</code>. <code>str</code> must be of size at most <code>length</code>. It is slightly faster than eina_binbuf_append() as it does not compute the size of <code>str</code>. It is useful when dealing with strings of known size, such as eina_strngshare. If <code>buf</code> can't append it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The slice of unused bytes. The slice length may be zero if <code>minimum_unused_space</code> couldn't be allocated, otherwise it will be at least <code>minimum_unused_space</code>. After bytes are used, mark them as such using eina_binbuf_use().</dd></dl>
+<p>One of the properties of the buffer is that it may overallocate space, thus it may have more than <a class="el" href="group__Eina__Binary__Buffer__Group.html#gac3b5a05306bf9face35e44c1f5e0a4bd" title="Retrieves the length of the string buffer&#39;s content.">eina_binbuf_length_get()</a> bytes allocated. How much depends on the buffer growth logic, but this function allows requesting a minimum amount of bytes to be allocated at the end of the buffer.</p>
+<p>This is particularly useful to write directly to buffer's memory (i.e.: a call to read(2)). After the bytes are used call eina_binbuf_use() to mark them as such, so <a class="el" href="group__Eina__Binary__Buffer__Group.html#gac3b5a05306bf9face35e44c1f5e0a4bd" title="Retrieves the length of the string buffer&#39;s content.">eina_binbuf_length_get()</a> will account for the new bytes.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>eina_binbuf_rw_slice_get() </dd>
+<dd>
+eina_binbuf_use()</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Marks more bytes as used.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">extra_bytes</td><td>the number of bytes to be considered used, must be between zero and the length of the slice returned by eina_binbuf_expand(). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure, such as <code>extra_bytes</code> is too big or <em>buf</em> is NULL.</dd></dl>
+<p>This function should be used after eina_binbuf_expand(), marking the extra bytes returned there as used, then they will be taken into account by other functions, such as <a class="el" href="group__Eina__Binary__Buffer__Group.html#gac3b5a05306bf9face35e44c1f5e0a4bd" title="Retrieves the length of the string buffer&#39;s content.">eina_binbuf_length_get()</a>.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>eina_binbuf_expand()</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Appends a string of exact length to a buffer, reallocating as necessary.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to append. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The exact length to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be appended.</dd></dl>
+<p>This function appends <code>str</code> to <code>buf</code>. <code>str</code> must be of size at most <code>length</code>. It is slightly faster than eina_binbuf_append() as it does not compute the size of <code>str</code>. It is useful when dealing with strings of known size, such as eina_stringshare.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>eina_stringshare_length() </dd>
 <dd>
 eina_binbuf_append() </dd>
 <dd>
-eina_binbuf_append_n()</dd></dl>
+eina_binbuf_append_n() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -302,11 +337,11 @@ eina_binbuf_append_n()</dd></dl>
 <p>Frees a string buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to free.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function frees the memory of <code>buf</code>. <code>buf</code> must have been created by <a class="el" href="group__Eina__Binary__Buffer__Group.html#gadbe23382e953ee1952de77242ddf767c" title="Creates a new string buffer.">eina_binbuf_new()</a>.</p>
+<p>This function frees the memory of <code>buf</code>. <code>buf</code> must have been created by <a class="el" href="group__Eina__Binary__Buffer__Group.html#gadbe23382e953ee1952de77242ddf767c" title="Creates a new binary string buffer.">eina_binbuf_new()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -342,17 +377,28 @@ eina_binbuf_append_n()</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Inserts a character to a string buffer, reallocating as necessary. </p>
+<p>Inserts a slice into a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to insert to. </td></tr>
-    <tr><td class="paramname">c</td><td>The char to insert. </td></tr>
-    <tr><td class="paramname">pos</td><td>The position to insert the char. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slice</td><td>The slice to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function inserts <code>c</code> to <code>buf</code> at position <code>pos</code>. If <code>buf</code> can't append it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be inserted.</dd></dl>
+<p>This function inserts <code>slice</code> into <code>buf</code> at position <code>pos</code>.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Inserts a character into a string buffer, reallocating as necessary.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">c</td><td>The char to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>The position to insert the char. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>c</code> could not be inserted.</dd></dl>
+<p>This function inserts <code>c</code> to <code>buf</code> at position <code>pos</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -394,23 +440,23 @@ eina_binbuf_append_n()</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Inserts a string of exact length to a buffer, reallocating as necessary. </p>
+<p>Inserts a string of exact length into a buffer, reallocating as necessary. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to insert to. </td></tr>
-    <tr><td class="paramname">str</td><td>The string to insert. </td></tr>
-    <tr><td class="paramname">length</td><td>The exact length to use. </td></tr>
-    <tr><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to insert. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The exact length to use. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>The position to insert the string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function inserts <code>str</code> to <code>buf</code>. <code>str</code> must be of size at most <code>length</code>. It is slightly faster than eina_binbuf_insert() as it does not compute the size of <code>str</code>. It is useful when dealing with strings of known size, such as eina_strngshare. If <code>buf</code> can't insert it, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned, otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned.</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be inserted.</dd></dl>
+<p>This function inserts <code>str</code> into <code>buf</code>. <code>str</code> must be no longer than <code>length</code>. It is slightly faster than eina_binbuf_insert() as it does not compute the size of <code>str</code>. It is useful when dealing with strings of known size, such as eina_stringshare.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>eina_stringshare_length() </dd>
 <dd>
 eina_binbuf_insert() </dd>
 <dd>
-eina_binbuf_insert_n()</dd></dl>
+eina_binbuf_insert_n() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -430,15 +476,15 @@ eina_binbuf_insert_n()</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Retrieves the length of the string buffer content. </p>
+<p>Retrieves the length of the string buffer's content. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current length of the string, in bytes.</dd></dl>
-<p>This function returns the length of <code>buf</code>.</p>
+<p>This function returns the length of <code>buf</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -474,24 +520,26 @@ eina_binbuf_insert_n()</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Creates a new string buffer using the passed string. The passed string is used directly as the buffer, it's somehow the opposite function of <a class="el" href="group__Eina__Binary__Buffer__Group.html#gace73f825f4e00b7084918d10b370b658">eina_binbuf_string_steal</a> . </p>
+<p>Creates a new string buffer using the passed string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The string to start from. </td></tr>
-    <tr><td class="paramname">length</td><td>The length of the string. </td></tr>
-    <tr><td class="paramname">ro</td><td>The passed string will not be touched if set to EINA_TRUE. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to manage. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ro</td><td>The passed string will not be touched if set to <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance.</dd></dl>
-<p>This function creates a new string buffer. On error, <code>NULL</code> is returned. To free the resources, use <a class="el" href="group__Eina__Binary__Buffer__Group.html#gad2a923d52d52c688eb5e30caeed69b3c" title="Frees a string buffer.">eina_binbuf_free()</a>. It will not touch the buffer if ro is set to <code>EINA_TRUE</code>, but it will also not copy it. If ro is set to <code>EINA_TRUE</code> any change operation will create a fresh new memory, copy old data there and starting modifying that one.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#gafe47f9bb1c5b8a6cb9077a10d264eebf" title="Creates a new string buffer using the passed string. The passed string is used directly as the buffer...">eina_binbuf_manage_new()</a> </dd>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance, or <code>NULL</code> on error.</dd></dl>
+<p>This function creates a new binary string buffer. The passed string is used directly as the buffer, it's effectively the inverse of <a class="el" href="group__Eina__Binary__Buffer__Group.html#gace73f825f4e00b7084918d10b370b658" title="Steals the contents of a string buffer.">eina_binbuf_string_steal()</a>.</p>
+<p>If <code>ro</code> is <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, then <code>str</code> will be treated as read-only. Other routines using this buffer that would normally modify the string, will instead create a separate copy to modify and return.</p>
+<p>To free the resources, use <a class="el" href="group__Eina__Binary__Buffer__Group.html#gad2a923d52d52c688eb5e30caeed69b3c" title="Frees a string buffer.">eina_binbuf_free()</a>.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#gafe47f9bb1c5b8a6cb9077a10d264eebf" title="Creates a new string buffer using the passed string.">eina_binbuf_manage_new()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga78d6d29bb1e60f067a65479322de884a" title="Creates a new string buffer using the passed string. The passed string is used directly as the buffer...">eina_binbuf_manage_new_length()</a> </dd>
+<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga78d6d29bb1e60f067a65479322de884a" title="Creates a new string buffer using the passed string.">eina_binbuf_manage_new_length()</a> </dd>
 <dd>
 eina_binbuf_manage_read_only_new_length()</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -520,18 +568,18 @@ eina_binbuf_manage_read_only_new_length()</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Creates a new string buffer using the passed string. The passed string is used directly as the buffer, it's somehow the opposite function of <a class="el" href="group__Eina__Binary__Buffer__Group.html#gace73f825f4e00b7084918d10b370b658">eina_binbuf_string_steal</a> . The passed string must be malloced. </p>
+<p>Creates a new string buffer using the passed string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The string to manage. </td></tr>
-    <tr><td class="paramname">length</td><td>The length of the string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to manage. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of the string. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance.</dd></dl>
-<p>This function creates a new string buffer. On error, <code>NULL</code> is returned. To free the resources, use <a class="el" href="group__Eina__Binary__Buffer__Group.html#gad2a923d52d52c688eb5e30caeed69b3c" title="Frees a string buffer.">eina_binbuf_free()</a>.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#gafe47f9bb1c5b8a6cb9077a10d264eebf" title="Creates a new string buffer using the passed string. The passed string is used directly as the buffer...">eina_binbuf_manage_new()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance, or <code>NULL</code> on error.</dd></dl>
+<p>This function creates a new string buffer. To free the resources, use <a class="el" href="group__Eina__Binary__Buffer__Group.html#gad2a923d52d52c688eb5e30caeed69b3c" title="Frees a string buffer.">eina_binbuf_free()</a>.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#gafe47f9bb1c5b8a6cb9077a10d264eebf" title="Creates a new string buffer using the passed string.">eina_binbuf_manage_new()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -551,14 +599,14 @@ eina_binbuf_manage_read_only_new_length()</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Creates a new string buffer. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance.</dd></dl>
-<p>This function creates a new string buffer. On error, <code>NULL</code> is returned. To free the resources, use <a class="el" href="group__Eina__Binary__Buffer__Group.html#gad2a923d52d52c688eb5e30caeed69b3c" title="Frees a string buffer.">eina_binbuf_free()</a>.</p>
+<p>Creates a new binary string buffer. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated string buffer instance, or <code>NULL</code> on error.</dd></dl>
+<p>This function creates a new string buffer. To free the resources, use <a class="el" href="group__Eina__Binary__Buffer__Group.html#gad2a923d52d52c688eb5e30caeed69b3c" title="Frees a string buffer.">eina_binbuf_free()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#gad2a923d52d52c688eb5e30caeed69b3c" title="Frees a string buffer.">eina_binbuf_free()</a> </dd>
 <dd>
 eina_binbuf_append() </dd>
 <dd>
-<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga6dd556787568e0f9eac446ae7d1b5fdd" title="Retrieves a pointer to the contents of a string buffer.">eina_binbuf_string_get()</a></dd></dl>
+<a class="el" href="group__Eina__Binary__Buffer__Group.html#ga6dd556787568e0f9eac446ae7d1b5fdd" title="Retrieves a pointer to the contents of a string buffer.">eina_binbuf_string_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -597,14 +645,14 @@ eina_binbuf_append() </dd>
 <p>Removes a slice of the given string buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to remove a slice. </td></tr>
-    <tr><td class="paramname">start</td><td>The initial (inclusive) slice position to start removing, in bytes. </td></tr>
-    <tr><td class="paramname">end</td><td>The final (non-inclusive) slice position to finish removing, in bytes. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">start</td><td>The initial (inclusive) slice position to start removing, in bytes. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">end</td><td>The final (non-inclusive) slice position to finish removing, in bytes. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
-<p>This function removes a slice of <code>buf</code>, starting at <code>start</code> (inclusive) and ending at <code>end</code> (non-inclusive). Both values are in bytes. It returns <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> otherwise.</p>
+<p>This function removes a slice of <code>buf</code>, starting at <code>start</code> (inclusive) and ending at <code>end</code> (non-inclusive). Both values are in bytes. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -627,11 +675,11 @@ eina_binbuf_append() </dd>
 <p>Resets a string buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to reset.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function reset <code>buf:</code> the buffer len is set to 0, and the string is set to '\0'. No memory is free'd.</p>
+<p>This function resets <code>buf:</code> the buffer len is set to 0, and the string is set to '\0'. No memory is freed. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -654,11 +702,11 @@ eina_binbuf_append() </dd>
 <p>Frees the contents of a string buffer but not the buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to free the string of.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function frees the string contained in <code>buf</code> without freeing <code>buf</code>.</p>
+<p>This function frees the string contained in <code>buf</code> without freeing <code>buf</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -681,13 +729,13 @@ eina_binbuf_append() </dd>
 <p>Retrieves a pointer to the contents of a string buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The current string in the string buffer.</dd></dl>
-<p>This function returns the string contained in <code>buf</code>. The returned value must not be modified and will no longer be valid if <code>buf</code> is modified. In other words, any eina_binbuf_append() or similar will make that pointer invalid.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#gace73f825f4e00b7084918d10b370b658" title="Steals the contents of a string buffer.">eina_binbuf_string_steal()</a></dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The string that is contained in <code>buf</code>.</dd></dl>
+<p>This function returns the string contained in <code>buf</code>. The returned value must not be modified and will no longer be valid if <code>buf</code> is modified. In other words, calling eina_binbuf_append() or similar functions will make the pointer invalid.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#gace73f825f4e00b7084918d10b370b658" title="Steals the contents of a string buffer.">eina_binbuf_string_steal()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -710,13 +758,13 @@ eina_binbuf_append() </dd>
 <p>Steals the contents of a string buffer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">buf</td><td>The string buffer to steal. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The current string in the string buffer.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The string that was contained in <code>buf</code>.</dd></dl>
 <p>This function returns the string contained in <code>buf</code>. <code>buf</code> is then initialized and does not own the returned string anymore. The caller must release the memory of the returned string by calling free().</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga6dd556787568e0f9eac446ae7d1b5fdd" title="Retrieves a pointer to the contents of a string buffer.">eina_binbuf_string_get()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binary__Buffer__Group.html#ga6dd556787568e0f9eac446ae7d1b5fdd" title="Retrieves a pointer to the contents of a string buffer.">eina_binbuf_string_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>

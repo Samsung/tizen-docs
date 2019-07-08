@@ -90,7 +90,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">General (top-level) functions example </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>As told in their documentation blocks, the elm_app_compile_*_dir_set() family of functions have to be called before <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a>: <div class="fragment"><pre class="fragment"></pre></div></p>
+<div class="textblock"><p>As told in their documentation blocks, the elm_app_compile_*_dir_set() family of functions have to be called before <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a>: <div class="fragment"><pre class="fragment">   <span class="comment">/* tell elm about our app so it can figure out where to get files */</span>
+   <a class="code" href="group__Elm__App.html#gaedf0adf5c965a79a28f43b9c4cb49762">elm_app_compile_bin_dir_set</a>(BIN_DIR);
+   <a class="code" href="group__Elm__App.html#ga4e875d27efb02b4c425619957c0ae7c7">elm_app_compile_data_dir_set</a>(DATA_DIR);
+   <a class="code" href="group__Elm__App.html#ga9e553b1adb80795b58e101c28fc0adef">elm_app_compile_lib_dir_set</a>(LIB_DIR);
+   <a class="code" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set</a>(elm_main, <span class="stringliteral">&quot;elementary&quot;</span>, <span class="stringliteral">&quot;images/logo.png&quot;</span>);
+</pre></div></p>
 <p>We are here setting the fallback paths to the compiling time target paths, naturally. If you're building the example out of the project's build system, we're assuming they are the canonical ones.</p>
 <p>After the program starts, <a class="el" href="group__Elm__App.html#ga0cefb59efb95841232561d67e34d9909">elm_app_info_set()</a> will actually run and then you'll see an intrincasy: Elementary does the prefix lookup <b>twice</b>. This is so because of the quicklaunch infrastructure in Elementary (Start), which will register a predefined prefix for possible users of the launch schema. We're not hooking into a quick launch, so this first call can't be avoided.</p>
 <p>If you ran this example from your "bindir" installation directory, no output will emerge from these both attempts -- it will find the "magic" file there registered and set the prefixes silently. Otherwise, you could get something like: </p>
@@ -111,19 +116,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
          ELM_DATA_DIR   - provide a specific data directory
          ELM_LOCALE_DIR - provide a specific locale directory
  </pre></div><p> if you also didn't change those environment variables (remember they are also a valid way of communicating your prefix to the binary) - this is the scenario where it fallbacks to the paths set for compile time.</p>
-<p>Then, you can check the prefixes set on the standard output: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>In the fragment <div class="fragment"><pre class="fragment"></pre></div> we demonstrate the use of Elementary policies. The policy defining under which circumstances our application should quit automatically is set to when its last window is closed (this one has just one window, though). This will save us from having to set a callback ourselves on the window, like done in <a class="el" href="bg_example_01_c.html">this</a> example. Note that we need to tell the window to delete itself's object on a request to destroy the canvas coming, with <a class="el" href="group__Elm__Win.html#ga741d0ff352cb891268407c5287b56712" title="Set the window&#39;s autodel state.">elm_win_autodel_set()</a>.</p>
+<p>Then, you can check the prefixes set on the standard output: <div class="fragment"><pre class="fragment">   printf(<span class="stringliteral">&quot;prefix was set to: %s\n&quot;</span>, <a class="code" href="group__Elm__App.html#gaff335edd418543d7fba447757c1da585">elm_app_prefix_dir_get</a>());
+   printf(<span class="stringliteral">&quot;data directory is: %s\n&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   printf(<span class="stringliteral">&quot;library directory is: %s\n&quot;</span>, <a class="code" href="group__Elm__App.html#gaebb58baebbfa5cc79ec0668293ee3623">elm_app_lib_dir_get</a>());
+   printf(<span class="stringliteral">&quot;locale directory is: %s\n&quot;</span>, <a class="code" href="group__Elm__App.html#ga387d986f89742ea5d5ee6453ba60996e">elm_app_locale_dir_get</a>());
+</pre></div></p>
+<p>In the fragment <div class="fragment"><pre class="fragment">   <span class="comment">/* by using this policy value, we avoid having to</span>
+<span class="comment">    * evas_object_smart_callback_add(win, &quot;delete,request&quot;, _on_exit, NULL),</span>
+<span class="comment">    * calling elm_exit() on that callback ourselves.</span>
+<span class="comment">    */</span>
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div> we demonstrate the use of Elementary policies. The policy defining under which circumstances our application should quit automatically is set to when its last window is closed (this one has just one window, though). This will save us from having to set a callback ourselves on the window, like done in <a class="el" href="bg_example_01_c.html">this</a> example. Note that we need to tell the window to delete itself's object on a request to destroy the canvas coming, with <a class="el" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set()</a>.</p>
 <p>What follows is some boilerplate code, creating a frame with a <b>button</b>, our object of interest, and, below, widgets to change the button's behavior and exemplify the group of functions in question.</p>
- We enabled the focus highlight object for this window, so that you can keep track of the current focused object better: <div class="fragment"><pre class="fragment"></pre></div> Use the tab key to navigate through the focus chain.</p>
+ We enabled the focus highlight object for this window, so that you can keep track of the current focused object better: <div class="fragment"><pre class="fragment">   elm_win_focus_highlight_enabled_set(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+</pre></div> Use the tab key to navigate through the focus chain.</p>
  While creating the button, we exemplify how to use Elementary's finger size information to scale our UI: <div class="fragment"><pre class="fragment"></pre></div></p>
- The first checkbox's callback is: <div class="fragment"><pre class="fragment"></pre></div> When unsetting the checkbox, we disable the button, which will get a new decoration (greyed out) and stop receiving events. The focus chain will also ignore it.</p>
-<p>Following, there are 2 more buttons whose actions are focus/unfocus the top button, respectively: <div class="fragment"><pre class="fragment"></pre></div> and <div class="fragment"><pre class="fragment"></pre></div> Note the situations in which they won't take effect:</p>
+ The first checkbox's callback is: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_btn_enabled_cb(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+                <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                <span class="keywordtype">void</span>        *event EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__General.html#ga6849a57df3316eabad5bec443bf87597">elm_object_disabled_set</a>(d.btn, !d.btn_enabled);
+}
+</pre></div> When unsetting the checkbox, we disable the button, which will get a new decoration (greyed out) and stop receiving events. The focus chain will also ignore it.</p>
+<p>Following, there are 2 more buttons whose actions are focus/unfocus the top button, respectively: <div class="fragment"><pre class="fragment"><span class="comment">/* focus callback */</span>
+_btn_focus_cb(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+              <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+              <span class="keywordtype">void</span>        *event EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Focus.html#ga05e39b5e60ad861c63100c811855ef55">elm_object_focus_set</a>(d.btn, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+</pre></div> and <div class="fragment"><pre class="fragment"><span class="comment">/* unfocus callback */</span>
+_btn_unfocus_cb(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+                <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                <span class="keywordtype">void</span>        *event EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Focus.html#ga05e39b5e60ad861c63100c811855ef55">elm_object_focus_set</a>(d.btn, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+}
+</pre></div> Note the situations in which they won't take effect:</p>
 <ul>
 <li>the button is not allowed to get focus or</li>
 <li>the button is disabled</li>
 </ul>
-<p>The first restriction above you'll get by a second checkbox, whose callback is: <div class="fragment"><pre class="fragment"></pre></div> Note that the button will still get mouse events, though.</p>
-<p>Next, there's a slider controlling the button's scale: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>The first restriction above you'll get by a second checkbox, whose callback is: <div class="fragment"><pre class="fragment"><span class="comment">/* focus allow callback */</span>
+_btn_focus_allow_cb(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+                    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED,
+                    <span class="keywordtype">void</span>        *event EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Focus.html#gaab06e876ce12b5f52c8e88615850c6f9">elm_object_focus_allow_set</a>(d.btn, d.btn_gets_focus);
+}
+</pre></div> Note that the button will still get mouse events, though.</p>
+<p>Next, there's a slider controlling the button's scale: <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span> <span class="comment">/* scaling callback */</span>
+_btn_scale_cb(<span class="keywordtype">void</span>        *data EINA_UNUSED,
+              <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj,
+              <span class="keywordtype">void</span>        *event EINA_UNUSED)
+{
+   <a class="code" href="group__Elm__Scaling.html#ga1606f51f88c4d0b58544d36225420a37">elm_object_scale_set</a>(d.btn, <a class="code" href="group__Elm__Slider.html#ga2dd3f70cdbcb4a81b5d7a08a18afaa1d" title="Get the value displayed by the slider.">elm_slider_value_get</a>(obj));
+}
+</pre></div></p>
 <p>Experiment with it, so you understand the effect better. If you change its value, it will mess with the button's original size, naturally.</p>
 <p>The full code for this example can be found <a class="el" href="general_functions_example_c.html">here</a>. </p>
 </div></div><!-- contents -->

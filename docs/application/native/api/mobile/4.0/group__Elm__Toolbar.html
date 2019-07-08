@@ -98,9 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="toolbar_inheritance_tree.png" alt="toolbar_inheritance_tree.png"/>
 </div>
  <div class="image">
-<img src="img/widget/toolbar/preview-00.png" alt="preview-00.png"/>
-</div>
- <div class="image">
 <img src="toolbar.png" alt="toolbar.png"/>
 </div>
  <p>A toolbar is a widget that displays a list of items inside a box. It can be scrollable, show a menu with items that don't fit to toolbar size or even crop them.</p>
@@ -139,17 +136,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>elm_object_item_part_content_get </li>
 <li>elm_object_item_part_content_unset </li>
 <li>elm_object_item_focus_set </li>
-<li>elm_object_item_focus_get</li>
-</ul>
-<p>List of examples: </p>
-<ul>
-<li><a class="el" href="toolbar_example_01.html">Toolbar Example - Simple Items</a> </li>
-<li><a class="el" href="toolbar_example_02.html">Toolbar Example - Items with States</a> </li>
-<li><a class="el" href="toolbar_example_03.html">Toolbar Example - Items with Menus</a> </li>
+<li>elm_object_item_focus_get </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Toolbar.html#ga92a21e68ba875e9c5f364936c785003a">elm_toolbar_always_select_mode_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> always_select)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Toolbar.html#gadebb10672d7de37bd864a7dd33a4e455">elm_toolbar_always_select_mode_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Toolbar.html#ga3544da13a8707caa12274f663996d2a7">elm_toolbar_no_select_mode_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> no_select)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Toolbar.html#ga707ba8d2036ae11fcf8566e8114c585d">elm_toolbar_no_select_mode_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Toolbar.html#ga094182b18f7eec5181dc1448ca292406">elm_toolbar_homogeneous_set</a> (Elm_Toolbar *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> homogeneous)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control homogeneous mode.  <a href="#ga094182b18f7eec5181dc1448ca292406"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Toolbar.html#ga50ae8c800aa4c9879114bac8a513fef0">elm_toolbar_homogeneous_get</a> (const Elm_Toolbar *obj)</td></tr>
@@ -249,20 +244,23 @@ _Elm_Toolbar_Item_State&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <p>Values don't work as bitmask, only one can be chosen.</p>
 <p>See also <a class="el" href="group__Elm__Toolbar.html#ga31deb1999afd41648100d3e816c69553">elm_toolbar_shrink_mode_set</a>, <a class="el" href="group__Elm__Toolbar.html#ga3863cb4120f0837b57f575aa3de95c91">elm_toolbar_shrink_mode_get</a>. </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggaf2f77232958c97f74744538e5bb4e000aa33e0a0bc69a6c153e027a5772a07bf3"></a><!-- doxytag: member="ELM_TOOLBAR_SHRINK_HIDE" ref="ggaf2f77232958c97f74744538e5bb4e000aa33e0a0bc69a6c153e027a5772a07bf3" args="" -->ELM_TOOLBAR_SHRINK_HIDE</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaf2f77232958c97f74744538e5bb4e000a16c3b5618d6f3954fd0b050cfb69ab3e"></a><!-- doxytag: member="ELM_TOOLBAR_SHRINK_NONE" ref="ggaf2f77232958c97f74744538e5bb4e000a16c3b5618d6f3954fd0b050cfb69ab3e" args="" -->ELM_TOOLBAR_SHRINK_NONE</em>&nbsp;</td><td>
 <p>Set toolbar minimum size to fit all the items. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaf2f77232958c97f74744538e5bb4e000ac92ed2c562dbe4a52f1120b8b6dfdcba"></a><!-- doxytag: member="ELM_TOOLBAR_SHRINK_SCROLL" ref="ggaf2f77232958c97f74744538e5bb4e000ac92ed2c562dbe4a52f1120b8b6dfdcba" args="" -->ELM_TOOLBAR_SHRINK_SCROLL</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaf2f77232958c97f74744538e5bb4e000aa33e0a0bc69a6c153e027a5772a07bf3"></a><!-- doxytag: member="ELM_TOOLBAR_SHRINK_HIDE" ref="ggaf2f77232958c97f74744538e5bb4e000aa33e0a0bc69a6c153e027a5772a07bf3" args="" -->ELM_TOOLBAR_SHRINK_HIDE</em>&nbsp;</td><td>
 <p>Hide exceeding items. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaf2f77232958c97f74744538e5bb4e000a9d028aff831758201d109b7a0d086725"></a><!-- doxytag: member="ELM_TOOLBAR_SHRINK_MENU" ref="ggaf2f77232958c97f74744538e5bb4e000a9d028aff831758201d109b7a0d086725" args="" -->ELM_TOOLBAR_SHRINK_MENU</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaf2f77232958c97f74744538e5bb4e000ac92ed2c562dbe4a52f1120b8b6dfdcba"></a><!-- doxytag: member="ELM_TOOLBAR_SHRINK_SCROLL" ref="ggaf2f77232958c97f74744538e5bb4e000ac92ed2c562dbe4a52f1120b8b6dfdcba" args="" -->ELM_TOOLBAR_SHRINK_SCROLL</em>&nbsp;</td><td>
 <p>Allow accessing exceeding items through a scroller. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaf2f77232958c97f74744538e5bb4e000af44bd4f256b1fc67a857ecd2c0591947"></a><!-- doxytag: member="ELM_TOOLBAR_SHRINK_EXPAND" ref="ggaf2f77232958c97f74744538e5bb4e000af44bd4f256b1fc67a857ecd2c0591947" args="" -->ELM_TOOLBAR_SHRINK_EXPAND</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaf2f77232958c97f74744538e5bb4e000a9d028aff831758201d109b7a0d086725"></a><!-- doxytag: member="ELM_TOOLBAR_SHRINK_MENU" ref="ggaf2f77232958c97f74744538e5bb4e000a9d028aff831758201d109b7a0d086725" args="" -->ELM_TOOLBAR_SHRINK_MENU</em>&nbsp;</td><td>
 <p>Inserts a button to pop up a menu with exceeding items. </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaf2f77232958c97f74744538e5bb4e000af44bd4f256b1fc67a857ecd2c0591947"></a><!-- doxytag: member="ELM_TOOLBAR_SHRINK_EXPAND" ref="ggaf2f77232958c97f74744538e5bb4e000af44bd4f256b1fc67a857ecd2c0591947" args="" -->ELM_TOOLBAR_SHRINK_EXPAND</em>&nbsp;</td><td>
+<p>Expand all items according the size of the toolbar. </p>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggaf2f77232958c97f74744538e5bb4e000a31e82e784b2d333210cbf20a1c031a13"></a><!-- doxytag: member="ELM_TOOLBAR_SHRINK_LAST" ref="ggaf2f77232958c97f74744538e5bb4e000a31e82e784b2d333210cbf20a1c031a13" args="" -->ELM_TOOLBAR_SHRINK_LAST</em>&nbsp;</td><td>
-<p>Expand all items according the size of the toolbar. Indicates error if returned by <a class="el" href="group__Elm__Toolbar.html#ga3863cb4120f0837b57f575aa3de95c91" title="Control the item displaying mode of a given toolbar widget obj.">elm_toolbar_shrink_mode_get()</a> </p>
+<p>Indicates error if returned by <a class="el" href="group__Elm__Toolbar.html#ga3863cb4120f0837b57f575aa3de95c91" title="Control the item displaying mode of a given toolbar widget obj.">elm_toolbar_shrink_mode_get()</a> </p>
 </td></tr>
 </table>
 </dd>
@@ -363,6 +361,70 @@ _Elm_Toolbar_Item_State&#160;</td><td class="memItemRight" valign="bottom"><a cl
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a class="anchor" id="gadebb10672d7de37bd864a7dd33a4e455"></a><!-- doxytag: member="elm_removed.h::elm_toolbar_always_select_mode_get" ref="gadebb10672d7de37bd864a7dd33a4e455" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Toolbar.html#gadebb10672d7de37bd864a7dd33a4e455">elm_toolbar_always_select_mode_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get whether the toolbar should always have an item selected.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The toolbar object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> means an item will always be selected, <code>EINA_FALSE</code> indicates that it is possible to have no items selected. If <code>obj</code> is <code>NULL</code>, <code>EINA_FALSE</code> is returned.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Toolbar.html#ga92a21e68ba875e9c5f364936c785003a">elm_toolbar_always_select_mode_set()</a> for details. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga92a21e68ba875e9c5f364936c785003a"></a><!-- doxytag: member="elm_removed.h::elm_toolbar_always_select_mode_set" ref="ga92a21e68ba875e9c5f364936c785003a" args="(Evas_Object *obj, Eina_Bool always_select)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Toolbar.html#ga92a21e68ba875e9c5f364936c785003a">elm_toolbar_always_select_mode_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>always_select</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set whether the toolbar should always have an item selected.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The toolbar object. </td></tr>
+    <tr><td class="paramname">always_select</td><td><code>EINA_TRUE</code> to enable always-select mode or <code>EINA_FALSE</code> to disable it.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This will cause the toolbar to always have an item selected, and clicking the selected item will not cause a selected event to be emitted. Enabling this mode will immediately select the first toolbar item.</p>
+<p>Always-selected is disabled by default.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Toolbar.html#gadebb10672d7de37bd864a7dd33a4e455">elm_toolbar_always_select_mode_get()</a>. </dd></dl>
 
 </div>
 </div>
@@ -1154,6 +1216,70 @@ _Elm_Toolbar_Item_State&#160;</td><td class="memItemRight" valign="bottom"><a cl
 
 </div>
 </div>
+<a class="anchor" id="ga707ba8d2036ae11fcf8566e8114c585d"></a><!-- doxytag: member="elm_removed.h::elm_toolbar_no_select_mode_get" ref="ga707ba8d2036ae11fcf8566e8114c585d" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Toolbar.html#ga707ba8d2036ae11fcf8566e8114c585d">elm_toolbar_no_select_mode_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set whether the toolbar items' should be selected by the user or not.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The toolbar object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> means items can be selected. <code>EINA_FALSE</code> indicates they can't. If <code>obj</code> is <code>NULL</code>, <code>EINA_FALSE</code> is returned.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Toolbar.html#ga3544da13a8707caa12274f663996d2a7">elm_toolbar_no_select_mode_set()</a> for details. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga3544da13a8707caa12274f663996d2a7"></a><!-- doxytag: member="elm_removed.h::elm_toolbar_no_select_mode_set" ref="ga3544da13a8707caa12274f663996d2a7" args="(Evas_Object *obj, Eina_Bool no_select)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Toolbar.html#ga3544da13a8707caa12274f663996d2a7">elm_toolbar_no_select_mode_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>no_select</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set whether the toolbar items' should be selected by the user or not.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The toolbar object. </td></tr>
+    <tr><td class="paramname">no_select</td><td><code>EINA_TRUE</code> to disable selection or <code>EINA_FALSE</code> to enable it.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This will turn off the ability to select items entirely and they will neither appear selected nor emit selected signals. The clicked callback function will still be called.</p>
+<p>Selection is enabled by default.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Toolbar.html#ga707ba8d2036ae11fcf8566e8114c585d">elm_toolbar_no_select_mode_get()</a>. </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaa8df55e22fadb6ba9cb9c3c37435ce12"></a><!-- doxytag: member="elm_toolbar_legacy.h::elm_toolbar_reorder_mode_get" ref="gaa8df55e22fadb6ba9cb9c3c37435ce12" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1327,7 +1453,7 @@ _Elm_Toolbar_Item_State&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div class="memdoc">
 
 <p>Control the item displaying mode of a given toolbar widget <code>obj</code>. </p>
-<p>The toolbar won't scroll under #ELM_TOOLBAR_SHRINK_NONE mode, but it will enforce a minimum size, so that all the items will fit inside it. It won't scroll and won't show the items that don't fit under <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000aa33e0a0bc69a6c153e027a5772a07bf3">ELM_TOOLBAR_SHRINK_HIDE</a> mode. Finally, it'll scroll under <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000ac92ed2c562dbe4a52f1120b8b6dfdcba">ELM_TOOLBAR_SHRINK_SCROLL</a> mode, and it will create a button to aggregate items which didn't fit with the <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000a9d028aff831758201d109b7a0d086725">ELM_TOOLBAR_SHRINK_MENU</a> mode.</p>
+<p>The toolbar won't scroll under <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000a16c3b5618d6f3954fd0b050cfb69ab3e">ELM_TOOLBAR_SHRINK_NONE</a> mode, but it will enforce a minimum size, so that all the items will fit inside it. It won't scroll and won't show the items that don't fit under <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000aa33e0a0bc69a6c153e027a5772a07bf3">ELM_TOOLBAR_SHRINK_HIDE</a> mode. Finally, it'll scroll under <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000ac92ed2c562dbe4a52f1120b8b6dfdcba">ELM_TOOLBAR_SHRINK_SCROLL</a> mode, and it will create a button to aggregate items which didn't fit with the <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000a9d028aff831758201d109b7a0d086725">ELM_TOOLBAR_SHRINK_MENU</a> mode.</p>
 <p>If shrink mode is changed, Toolbar will send one of the following signal to each item for informing the current shrink mode. "elm,state,shrink,default" "elm,state,shrink,hide" "elm,state,shrink,scroll" "elm,state,shrink,menu" "elm,state,shrink,expand"</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This function's behavior will clash with those of <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a>, so use either one of them, but not both.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
@@ -1367,7 +1493,7 @@ _Elm_Toolbar_Item_State&#160;</td><td class="memItemRight" valign="bottom"><a cl
 <div class="memdoc">
 
 <p>Control the item displaying mode of a given toolbar widget <code>obj</code>. </p>
-<p>The toolbar won't scroll under #ELM_TOOLBAR_SHRINK_NONE mode, but it will enforce a minimum size, so that all the items will fit inside it. It won't scroll and won't show the items that don't fit under <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000aa33e0a0bc69a6c153e027a5772a07bf3">ELM_TOOLBAR_SHRINK_HIDE</a> mode. Finally, it'll scroll under <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000ac92ed2c562dbe4a52f1120b8b6dfdcba">ELM_TOOLBAR_SHRINK_SCROLL</a> mode, and it will create a button to aggregate items which didn't fit with the <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000a9d028aff831758201d109b7a0d086725">ELM_TOOLBAR_SHRINK_MENU</a> mode.</p>
+<p>The toolbar won't scroll under <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000a16c3b5618d6f3954fd0b050cfb69ab3e">ELM_TOOLBAR_SHRINK_NONE</a> mode, but it will enforce a minimum size, so that all the items will fit inside it. It won't scroll and won't show the items that don't fit under <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000aa33e0a0bc69a6c153e027a5772a07bf3">ELM_TOOLBAR_SHRINK_HIDE</a> mode. Finally, it'll scroll under <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000ac92ed2c562dbe4a52f1120b8b6dfdcba">ELM_TOOLBAR_SHRINK_SCROLL</a> mode, and it will create a button to aggregate items which didn't fit with the <a class="el" href="group__Elm__Toolbar.html#ggaf2f77232958c97f74744538e5bb4e000a9d028aff831758201d109b7a0d086725">ELM_TOOLBAR_SHRINK_MENU</a> mode.</p>
 <p>If shrink mode is changed, Toolbar will send one of the following signal to each item for informing the current shrink mode. "elm,state,shrink,default" "elm,state,shrink,hide" "elm,state,shrink,scroll" "elm,state,shrink,menu" "elm,state,shrink,expand"</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This function's behavior will clash with those of <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a>, so use either one of them, but not both.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>

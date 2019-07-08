@@ -15,9 +15,10 @@ The main features of the `Tizen.Multimedia.Camera` class include:
 
 -   Setting the display for the camera preview
 
-    You can preview images in real time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class. The feature provides:
+    You can preview images in real time with the `StartPreview()` method of the `Tizen.Multimedia.Camera` class.
+    Camera provides support for the following features:
 
-    -   Support for several pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, and YUV420P
+    -   Pixel formats, such as NV12, NV12T, NV16, NV21, YUYV, UYVY, YUV420P, I420, Yv12, Rgb565, Rgb888, Rgba, Argb, Jpeg, H264 and Invz
     -   Preview at the frame rate, which you can set by `PreviewFps` property.
     -   Rotation and flip of the preview
 
@@ -45,9 +46,9 @@ The main features of the `Tizen.Multimedia.Camera` class include:
     -   Scene mode, HDR, theater
     -   Image quality
 
-    Depending on the camera device type, the device supports different orientations, resolutions, or preview and capture formats. You can obtain this information from the device using the `SupportedPreviewResolutions`, `SupportedCapturePixelFormats`, or other `SupportedXXX` properties of the [Tizen.Multimedia.CameraCapabilities](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraCapabilities.html) class.
+    Depending on the camera device type, the device supports different orientations, resolutions, or preview and capture formats. You can obtain this information from the device using the `SupportedPreviewResolutions`, `SupportedCapturePixelFormats`, or other `SupportedXXX` properties of the [Tizen.Multimedia.CameraCapabilities](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraCapabilities.html) class.
 
-    Since devices can have multiple camera sensors with different capabilities, create a `Tizen.Multimedia.Camera` instance with a proper [Tizen.Multimedia.CameraDevice](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraDevice.html) enumeration value, determining which camera sensor is used. Usually the primary sensor is located on the back side and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
+    Since devices can have multiple camera sensors with different capabilities, create a `Tizen.Multimedia.Camera` instance with a proper [Tizen.Multimedia.CameraDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration value, determining which camera sensor is used. Usually the primary sensor is located on the back side and the secondary sensor on the front side of the device. Once the camera sensor is selected, the selected sensor starts working.
 
     > **Note**
     >
@@ -83,9 +84,9 @@ To enable your application to use the camera functionality:
     }
     ```
 
-    The `CameraDevice.Rear` parameter means that the currently activated device camera is the primary camera. You can select between the rear (primary) and front (secondary) camera. The available parameter values are defined in the [Tizen.Multimedia.CameraDevice](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraDevice.html) enumeration.
+    The `CameraDevice.Rear` parameter means that the currently activated device camera is the primary camera. You can select between the rear (primary) and front (secondary) camera. The available parameter values are defined in the [Tizen.Multimedia.CameraDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration.
 
-2.  Check the current state of the camera using the `State` property of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
+2.  Check the current state of the camera using the `State` property of the [Tizen.Multimedia.Camera](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
 
     ```
     CameraState state;
@@ -94,7 +95,7 @@ To enable your application to use the camera functionality:
     state = camera.State;
     ```
 
-    The returned state is one of the values defined in the [Tizen.Multimedia.CameraState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraState.html) enumeration. If the state is not `Created`, re-initialize the camera by recreating the instance.
+    The returned state is one of the values defined in the [Tizen.Multimedia.CameraState](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraState.html) enumeration. If the state is not `Created`, re-initialize the camera by recreating the instance.
 
 ## Configuring the Camera
 
@@ -102,7 +103,7 @@ After setting up the necessary prerequisites, configure the camera and set the c
 
 To configure the camera:
 
-1.  Set the image quality using the `ImageQuality` property of the [Tizen.Multimedia.CameraSettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraSettings.html) class:
+1.  Set the image quality using the `ImageQuality` property of the [Tizen.Multimedia.CameraSettings](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraSettings.html) class:
 
     ```
     camera.Settings.ImageQuality = 100;
@@ -110,7 +111,7 @@ To configure the camera:
 
     The image quality value can range from 1 (lowest quality) to 100 (highest quality).
 
-2.  Set the display for showing preview images by using the `Display` property of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class with 1 of the camera display types (`ElmSharp.Window` overlay or `Tizen.Multimedia.MediaView` EVAS surface).
+2.  Set the display for showing preview images by using the `Display` property of the [Tizen.Multimedia.Camera](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class with 1 of the camera display types (`ElmSharp.Window` overlay or `Tizen.Multimedia.MediaView` EVAS surface).
 
     The following examples set the display according to the display types. The camera state must be in the `Created`:
 
@@ -124,7 +125,7 @@ To configure the camera:
 
 3.  Set the camera preview resolution using the `PreviewResolution` property of the `Tizen.Multimedia.CameraSettings` class. You must set this property before previewing.
 
-    To find out which resolutions can be set for the camera preview on a specific device, use the `SupportedPreviewResolutions` property of the [Tizen.Multimedia.CameraCapabilities](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraCapabilities.html) class. This property returns an `IEnumerable` variable.
+    To find out which resolutions can be set for the camera preview on a specific device, use the `SupportedPreviewResolutions` property of the [Tizen.Multimedia.CameraCapabilities](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraCapabilities.html) class. This property returns an `IEnumerable` variable.
 
     The following example sets the camera preview resolution to the first found supported resolution:
 
@@ -143,7 +144,7 @@ To configure the camera:
     camera.Settings.CapturePixelFormat = CameraPixelFormat.Jpeg;
     ```
 
-    The [Tizen.Multimedia.CameraPixelFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraPixelFormat.html) enumeration defines the available capture formats.
+    The [Tizen.Multimedia.CameraPixelFormat](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraPixelFormat.html) enumeration defines the available capture formats.
 
 5.  Register event handlers for managing various events of the `Tizen.Multimedia.Camera` class, related to the camera preview, autofocus, and capturing:
     -   <a name="callbacks_preview"></a>To handle the camera preview, register an event handler for the `Preview` event. The event handler is invoked once per frame during a preview.
@@ -219,7 +220,7 @@ To customize the display settings:
 
     Before you can correctly customize the display settings, you need to know which camera is active (front or back) and at what angle the physical camera is being held (orientation):
 
-    -   To determine the active camera, check the [Tizen.Multimedia.CameraDevice](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraDevice.html) enumeration value:
+    -   To determine the active camera, check the [Tizen.Multimedia.CameraDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraDevice.html) enumeration value:
 
         ```
         public enum CameraDevice
@@ -231,7 +232,7 @@ To customize the display settings:
 
         The rear camera is usually the primary camera, and the front camera is usually the secondary camera. If, for example, you created the camera instance for the primary camera, the camera preview shows the rear camera view.
 
-    -   To determine the current camera angle, use the `LensOrientation` property of the [Tizen.Multimedia.CameraSettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraSettings.html) class:
+    -   To determine the current camera angle, use the `LensOrientation` property of the [Tizen.Multimedia.CameraSettings](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraSettings.html) class:
 
         ```
         int angle = camera.Settings.LensOrientation;
@@ -245,7 +246,7 @@ To customize the display settings:
 
 -   Display rotation
 
-    The display rotation setting is preset to a default value for each camera. Before changing the display rotation value, retrieve the default value using the `Rotation` property of the [Tizen.Multimedia.CameraDisplaySettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraDisplaySettings.html) class:
+    The display rotation setting is preset to a default value for each camera. Before changing the display rotation value, retrieve the default value using the `Rotation` property of the [Tizen.Multimedia.CameraDisplaySettings](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraDisplaySettings.html) class:
 
     ```
     Rotation rotation = camera.DisplaySettings.Rotation;
@@ -336,7 +337,7 @@ To customize the display settings:
 
 To take a photo:
 
-1.  [After configuring the camera](#configuring-the-camera), start the camera preview using the `StartPreview()` method of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
+1.  [After configuring the camera](#configuring-the-camera), start the camera preview using the `StartPreview()` method of the [Tizen.Multimedia.Camera](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
 
     ```
     camera.StartPreview();
@@ -360,7 +361,7 @@ To take a photo:
 
 ## Setting Camera Attributes
 
-You can set various camera attributes with the [Tizen.Multimedia.CameraSettings](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.CameraSettings.html) class.
+You can set various camera attributes with the [Tizen.Multimedia.CameraSettings](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.CameraSettings.html) class.
 
 To set some attributes:
 
@@ -400,7 +401,7 @@ To set some attributes:
 
 After you have finished working with the camera, stop the camera and clean up the application environment:
 
-1.  If autofocus is switched on, switch if off using the `StopFocusing()` method of the [Tizen.Multimedia.Camera](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Camera.html) class:
+1.  If autofocus is switched on, switch if off using the `StopFocusing()` method of the [Tizen.Multimedia.Camera](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Camera.html) class:
 
     ```
     camera.StopFocusing();

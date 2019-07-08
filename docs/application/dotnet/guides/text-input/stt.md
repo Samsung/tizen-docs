@@ -49,7 +49,7 @@ You can set the following parameters about STT:
 
 -   Credential
 
-    The credential is a key to verify the authorization for using the STT engine. The necessity of the credential depends on the STT engine. If the STT engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Stt.SttClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SttClient.html) class.
+    The credential is a key to verify the authorization for using the STT engine. The necessity of the credential depends on the STT engine. If the STT engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Stt.SttClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class.
 
 -   Private data
 
@@ -62,7 +62,7 @@ You can get the following information about STT:
 
 -   [Get the current STT state](#get). The state is also applied as a precondition for each method.
 -   Get the default language.
-    -   You can start recognition with the language that you want as a parameter of the `Start()` method of the [Tizen.Uix.Stt.SttClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SttClient.html) class. However, if you do not set a specific language, STT starts recording and uses the default language for recognition.
+    -   You can start recognition with the language that you want as a parameter of the `Start()` method of the [Tizen.Uix.Stt.SttClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class. However, if you do not set a specific language, STT starts recording and uses the default language for recognition.
     -   The user can change the default language in the device settings, by modifying the display language or the STT default language status. If the display language is changed to a non-supported one, the STT language is changed to UK English.
 -   Get a list of the supported languages to check whether the language you want is supported.
 -   Get a list of the supported engines and the selection of current engines. Additional features, such as silence detection and partial result, are provided by specific engines.
@@ -73,13 +73,13 @@ You can get the following information about STT:
 
 To enable your application to use the STT functionality:
 
-1.  To use the methods and properties of the [Tizen.Uix.Stt](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.html) namespace, include it in your application:
+1.  To use the methods and properties of the [Tizen.Uix.Stt](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.html) namespace, include it in your application:
 
     ```
     using Tizen.Uix.Stt;
     ```
 
-2.  To use the STT library and create an STT handle, create a new instance of the [Tizen.Uix.Stt.SttClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SttClient.html) class.
+2.  To use the STT library and create an STT handle, create a new instance of the [Tizen.Uix.Stt.SttClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class.
 
     The instance is used to launch other STT methods. After the instance has been created, the STT state changes to `Created`.
 
@@ -127,7 +127,7 @@ STT provides event handlers to get various information, such as the recognition 
 
 You can only register event handlers when the STT state is `Created`.
 
-Event handlers can be set for the following events of the [Tizen.Uix.Stt.SttClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SttClient.html) class:
+Event handlers can be set for the following events of the [Tizen.Uix.Stt.SttClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class:
 
 -   State changed
 
@@ -274,7 +274,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Stt.SttClie
 
 To obtain the current STT state, the list of supported languages, and the current language:
 
--   Retrieve the current STT state by using the `CurrentState` property of the [Tizen.Uix.Stt.SttClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SttClient.html) class.
+-   Retrieve the current STT state by using the `CurrentState` property of the [Tizen.Uix.Stt.SttClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class.
 
     The STT state is changed by various STT methods, and it is applied as a precondition for each method.
 
@@ -360,7 +360,7 @@ To obtain the current STT state, the list of supported languages, and the curren
     }
     ```
 
--   Check whether a recognition type is supported by the current engine, by using the `IsRecognitionTypeSupported()` method of the `Tizen.Uix.Stt.SttClient` class. Use the values of the [Tizen.Uix.Stt.RecognitionType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.RecognitionType.html) enumeration as a parameter.
+-   Check whether a recognition type is supported by the current engine, by using the `IsRecognitionTypeSupported()` method of the `Tizen.Uix.Stt.SttClient` class. Use the values of the [Tizen.Uix.Stt.RecognitionType](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.RecognitionType.html) enumeration as a parameter.
 
     The normal recognition type, `Stt.RecognitionType.Free`, means that the whole recognition result is sent at the end of the recognition process. The `Stt.RecognitionType.Partial` recognition type is used to get a partial recognition result.
 
@@ -385,7 +385,7 @@ To obtain the current STT state, the list of supported languages, and the curren
 
 To operate STT:
 
-1.  After you have initialized STT by creating the [Tizen.Uix.Stt.SttClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SttClient.html) class instance, connect the background STT daemon with the `Prepare()` method of that class.
+1.  After you have initialized STT by creating the [Tizen.Uix.Stt.SttClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class instance, connect the background STT daemon with the `Prepare()` method of that class.
 
     The method is asynchronous and the STT state changes to `Ready`.
 
@@ -429,7 +429,7 @@ To set and get STT engine options:
 
 -   Set the credential.
 
-    The credential is a key to verify the authorization for using the STT engine. The necessity of the credential depends on the engine. If the engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Stt.SttClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SttClient.html) class:
+    The credential is a key to verify the authorization for using the STT engine. The necessity of the credential depends on the engine. If the engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Stt.SttClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class:
 
     ```
     void SetCredential(string credential)
@@ -492,9 +492,9 @@ To set the STT options and control recording:
 
 -   Set the silence detection.
 
-    After STT starts recognizing sound, some STT engines can detect silence when the sound input from the user ends. If the silence detection is enabled, the STT library stops recognition automatically and sends the result. Otherwise, you can manually stop the recognition process using the `Stop()` method of the [Tizen.Uix.Stt.SttClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SttClient.html) class.
+    After STT starts recognizing sound, some STT engines can detect silence when the sound input from the user ends. If the silence detection is enabled, the STT library stops recognition automatically and sends the result. Otherwise, you can manually stop the recognition process using the `Stop()` method of the [Tizen.Uix.Stt.SttClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.SttClient.html) class.
 
-    To set the silence detection state, use the `SetSilenceDetection()` method, using values of the [Tizen.Uix.Stt.SilenceDetection](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Stt.SilenceDetection.html) enumeration as a parameter. If you set the silence detection as `SilenceDetection.Auto`, STT works according to the global STT setting. This option must be set when STT is in the `Ready` state.
+    To set the silence detection state, use the `SetSilenceDetection()` method, using values of the [Tizen.Uix.Stt.SilenceDetection](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.SilenceDetection.html) enumeration as a parameter. If you set the silence detection as `SilenceDetection.Auto`, STT works according to the global STT setting. This option must be set when STT is in the `Ready` state.
 
     ```
     void SetSilenceDetection(SilenceDetection type)

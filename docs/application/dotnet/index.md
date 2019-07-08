@@ -1,39 +1,71 @@
-# Introduction to Tizen .NET Application
+# Tizen .NET Application
 
 Tizen .NET is an exciting new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs, wearables, mobile phones, and many other IoT devices around the world.
 
-The existing Tizen frameworks are either C-based with no advantages of a managed runtime, or HTML5-based with fewer features and lower performance than the C-based solution. With Tizen .NET, you can use the C# programming language, the Common Language Infrastructure standards, and benefits from a managed runtime for faster application development and code execution, which is efficient and secure.
+The existing Tizen frameworks are either C-based with no advantages of a managed runtime, or HTML5-based with fewer features and lower performance than the C-based solution. With Tizen .NET, you can use the C# programming language and the Common Language Infrastructure standards, and have benefits from a managed runtime for faster application development and code execution that is efficient and secure.
 
-The introduction to .Net applications documentation provides the overall information on .NET applications:
+To start developing Tizen applications using .NET, see [Creating Your First Tizen .NET Application with Visual Studio](get-started/mobile/first-app.md).
 
-- [Getting Started](getting-started/overview.md)
+## Managed Runtime Advantages
 
-  Demonstrates how you can create your first simple .NET application.
+Managed runtime offers the following advantages to your application development:
 
-- [Tizen .NET Features and Components](tutorials/details/features.md)
+- **Faster development**
 
-  Introduces .NET Core, Xamarin.Forms and TizenFX API.
+  Application development is accelerated as the managed runtime handles many functions that otherwise have to be coded into the application. The Tizen Native API and Tizen Web API already provides this benefit.
 
-- [Managed Runtime Advantages](tutorials/details/runtime.md)
+- **Safer code**
 
-  Introduces the various advantages provided by managed runtime.
+  Managed runtime can handle bound checking, type safety, garbage collection, memory protection services, and objects that are invoked directly. The Tizen Web API already provides some of the benefits mentioned, but does not provide type safety, as JavaScript is not a strongly typed language.
 
-- [Getting the Certificates](tutorials/certificates/getting-the-certificates.md)
+- **Lower deployment costs**
 
-  Demonstrates how to get the certificates you need to install a Tizen wearable .NET application on your wearable device like the Samsung Gear.
+  Component-based architecture makes it easier and faster to deploy applications in an enterprise environment characterized by multiple platforms, devices, and legacy systems.
 
-- [Testing Your App on Gear](tutorials/test/testing-your-app-on-gear.md)
+- **Better quality software**
 
-  Demonstrates how to test Tizen .NET application on the Samsung Gear.
+  Managed runtime helps you to focus on the business logic and the code specific to the application, while reducing the number of errors in the code.
 
-- [Packaging a .NET and Web Hybrid Application](tutorials/hybrid/create-dotnet-hybrid-package.md)
+- **Cross-platform support**
 
-  Demonstrates how to package your .NET and web hybrid application.
+  The managed code is portable. Tizen .NET applications can have large portions of their logic applied to other systems supported by the .NET Core and Xamarin.Forms.
 
-- [Third Party Libraries for Tizen .NET Application](tutorials/library/library-list.md)
+## Tizen .NET Features and Components
 
-  Introduces several third party libraries that  are used to develop .NET applications. It is classified according to the use and according to the purpose of use.
+Tizen .NET enables you to build .NET applications with Xamarin.Forms and the Tizen .NET framework. Xamarin.Forms allows you to easily create a user interface, and the TizenFX API provides numerous interfaces to much of the hardware that is found in modern TV, mobile, wearable, and IoT devices.
 
-### Visual Studio Tools for Tizen [![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen)
+**Figure: Tizen .NET architecture**
 
-For more information, see [Learn more &gt;](../vstools/index.md)
+![Tizen .NET architecture](media/cs_overview.png)
+
+Tizen .NET consists of the following main components:
+
+- **.NET Core**
+
+  [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) is an [open-source](https://github.com/dotnet/coreclr/blob/master/LICENSE.TXT), general-purpose development platform maintained by Microsoft and the .NET community on [GitHub](https://github.com/dotnet/core). It's cross-platform (supporting Windows, macOS, and Linux) and can be used to build device, cloud, and IoT applications.
+
+  See [About .NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) to learn more about .NET Core, including its characteristics, supported languages and frameworks, and key APIs.
+
+- **Xamarin.Forms**
+
+  [Xamarin.Forms](https://developer.xamarin.com/guides/xamarin-forms/getting-started/) provides cross-platform APIs, which allow you to create user interfaces that can be shared across platforms. The Visual Studio Tools for Tizen enables Tizen support for Xamarin.Forms.
+
+- **Tizen.Wearable.CircularUI**
+
+  [Tizen.Wearable.CircularUI](https://samsung.github.io/Tizen.CircularUI/index.html) provides Tizen wearable-specific user interfaces. It is a set of extension APIs of Xamarin.Forms. Tizen.Wearable.CircularUI APIs are supported only on Tizen wearable devices with Tizen .NET support, unlike the Xamarin.Forms which support cross platforms.
+
+- **TizenFX API**
+
+  [TizenFX API](api/overview.md) allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
+
+  TizenFX supports C# APIs, which expose Tizen-specific features such as Tizen application framework, account management, location services, media services, and connectivity.
+
+### Visual Studio Tools for Tizen
+
+Visual Studio Tools for Tizen provides Tizen-specific tools to improve your productivity.
+
+You can create a Tizen .NET application project with the Project Wizard in Visual Studio Tools for Tizen. When you create a new project with a specific template, the Project Wizard uses it to automatically create basic functionalities and default project files and folders for the application.
+
+[![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen){:target="_blank"} The Visual Studio Tools for Tizen extension is registered in the Visual Studio Marketplace. You can [install the extension](../vstools/install.md) from the Visual Studio Marketplace in the Visual Studio IDE.
+
+For more information, see [the guides of Visual Studio Tools for Tizen](../vstools/index.md)

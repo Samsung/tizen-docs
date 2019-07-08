@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Label</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Widget to display text, with simple html-like markup. </p>
@@ -109,8 +109,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>slide_bounce - The text appears in the left of the label and slides to the right to show the overflow. When all of the text has been shown the animation reverses, moving the text to the left.</li>
 </ul>
 <p>Custom themes can of course invent new markup tags and style them any way they like.</p>
-<p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for label objects.</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout: </p>
+<p>This widget inherits from the Layout one, so that all the functions acting on it also work for label objects.</p>
+<p>This widget emits the following signals, besides the ones sent from Layout: </p>
 <ul>
 <li><code>"language,changed"</code>: The program's language changed. </li>
 <li><code>"slide,end"</code>: The slide is end.</li>
@@ -119,10 +119,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Label.html#gaf3fcce941524367572c5e4233895029a">elm_label_wrap_width_set</a> (Elm_Label *obj, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> w)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control wrap width of the label.  <a href="#gaf3fcce941524367572c5e4233895029a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Label.html#ga32f37972856198f400d810125d446e96">elm_label_wrap_width_get</a> (const Elm_Label *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control wrap width of the label.  <a href="#ga32f37972856198f400d810125d446e96"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Label.html#ga04adabe19c81cc4dde59ba9f11f2190b">elm_label_wrap_width_set</a> (Elm_Label *obj, int w)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control wrap width of the label.  <a href="#ga04adabe19c81cc4dde59ba9f11f2190b"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Label.html#ga7246aaea4891f8c777f1c3c7760ffb62">elm_label_wrap_width_get</a> (const Elm_Label *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control wrap width of the label.  <a href="#ga7246aaea4891f8c777f1c3c7760ffb62"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Label.html#gad4c630057998769bdcd8f71bc4694959">elm_label_slide_speed_set</a> (Elm_Label *obj, double speed)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the slide speed of the label.  <a href="#gad4c630057998769bdcd8f71bc4694959"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Label.html#ga237f9c6b7ae3bd60b43a5a28b9631abd">elm_label_slide_speed_get</a> (const Elm_Label *obj)</td></tr>
@@ -161,11 +161,14 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Slide mode of a label widget </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268"></a><!-- doxytag: member="ELM_LABEL_SLIDE_MODE_AUTO" ref="gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268" args="" -->ELM_LABEL_SLIDE_MODE_AUTO</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="gga6a12dc6d96304f9f757d85eb73d21acea50192bb15aa945a2b59ae188ff58c3a8"></a><!-- doxytag: member="ELM_LABEL_SLIDE_MODE_NONE" ref="gga6a12dc6d96304f9f757d85eb73d21acea50192bb15aa945a2b59ae188ff58c3a8" args="" -->ELM_LABEL_SLIDE_MODE_NONE</em>&nbsp;</td><td>
 <p>No slide effect. </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268"></a><!-- doxytag: member="ELM_LABEL_SLIDE_MODE_AUTO" ref="gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268" args="" -->ELM_LABEL_SLIDE_MODE_AUTO</em>&nbsp;</td><td>
+<p>Slide only if the label area is bigger than the text width length. </p>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243"></a><!-- doxytag: member="ELM_LABEL_SLIDE_MODE_ALWAYS" ref="gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243" args="" -->ELM_LABEL_SLIDE_MODE_ALWAYS</em>&nbsp;</td><td>
-<p>Slide only if the label area is bigger than the text width length. Slide always. </p>
+<p>Slide always. </p>
 </td></tr>
 </table>
 </dd>
@@ -196,9 +199,10 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bubble_example_01_8c-example.html#a6">bubble_example_01.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a16">fileselector_button_example.c</a>, <a class="el" href="inwin_example_8c-example.html#a12">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a5">label_example_01.c</a>, <a class="el" href="location_example_01_8c-example.html#a9">location_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a7">map_example_02.c</a>, <a class="el" href="notify_example_01_8c-example.html#a10">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a15">panel_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a5">popup_example_01.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a14">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a14">prefs_example_02.c</a>, <a class="el" href="progressbar_example_8c-example.html#a27">progressbar_example.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a5">scroller_example_01.c</a>, <a class="el" href="table_example_01_8c-example.html#a10">table_example_01.c</a>, and <a class="el" href="win_example_8c-example.html#a13">win_example.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga7b9953950e9ce71f1db3d8c2f5188f4b"></a><!-- doxytag: member="elm_label.eo.legacy.h::elm_label_ellipsis_get" ref="ga7b9953950e9ce71f1db3d8c2f5188f4b" args="(const Elm_Label *obj)" -->
@@ -219,7 +223,6 @@ Functions</h2></td></tr>
 <p>Control the ellipsis behavior of the label. </p>
 <p>If set to true and the text doesn't fit in the label an ellipsis("...") will be shown at the end of the widget.</p>
 <p>Warning This doesn't work with slide(elm_label_slide_set()) or if the chosen wrap method was <code>ELM_WRAP_WORD</code>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -227,6 +230,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>To ellipsis text or not </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -258,7 +262,6 @@ Functions</h2></td></tr>
 <p>Control the ellipsis behavior of the label. </p>
 <p>If set to true and the text doesn't fit in the label an ellipsis("...") will be shown at the end of the widget.</p>
 <p>Warning This doesn't work with slide(elm_label_slide_set()) or if the chosen wrap method was <code>ELM_WRAP_WORD</code>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -266,7 +269,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="label_example_01_8c-example.html#a11">label_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga9cdce40620ae6033790d839ca8b0a7ea"></a><!-- doxytag: member="elm_label.eo.legacy.h::elm_label_line_wrap_get" ref="ga9cdce40620ae6033790d839ca8b0a7ea" args="(const Elm_Label *obj)" -->
@@ -286,7 +291,6 @@ Functions</h2></td></tr>
 
 <p>Control the wrapping behavior of the label. </p>
 <p>By default no wrapping is done. Possible values for <code>wrap</code> are: <code>ELM_WRAP_NONE</code> - No wrapping <code>ELM_WRAP_CHAR</code> - wrap between characters <code>ELM_WRAP_WORD</code> - wrap between words <code>ELM_WRAP_MIXED</code> - Word wrap, and if that fails, char wrap</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -294,6 +298,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>To wrap text or not </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -324,7 +329,6 @@ Functions</h2></td></tr>
 
 <p>Control the wrapping behavior of the label. </p>
 <p>By default no wrapping is done. Possible values for <code>wrap</code> are: <code>ELM_WRAP_NONE</code> - No wrapping <code>ELM_WRAP_CHAR</code> - wrap between characters <code>ELM_WRAP_WORD</code> - wrap between words <code>ELM_WRAP_MIXED</code> - Word wrap, and if that fails, char wrap</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -332,7 +336,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="label_example_01_8c-example.html#a12">label_example_01.c</a>, and <a class="el" href="location_example_01_8c-example.html#a10">location_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gaff572ee7c58b387abfd27b8e1c33a606"></a><!-- doxytag: member="elm_label.eo.legacy.h::elm_label_slide_duration_get" ref="gaff572ee7c58b387abfd27b8e1c33a606" args="(const Elm_Label *obj)" -->
@@ -352,7 +358,6 @@ Functions</h2></td></tr>
 
 <p>Control the slide duration of the label. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If you set the speed of the slide using <a class="el" href="group__Elm__Label.html#gad4c630057998769bdcd8f71bc4694959">elm_label_slide_speed_set</a> you cannot get the correct duration using this function until the label is actually rendered and resized.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -360,6 +365,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The duration in seconds in moving text from slide begin position to slide end position </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -390,7 +396,6 @@ Functions</h2></td></tr>
 
 <p>Control the slide duration of the label. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If you set the speed of the slide using <a class="el" href="group__Elm__Label.html#gad4c630057998769bdcd8f71bc4694959">elm_label_slide_speed_set</a> you cannot get the correct duration using this function until the label is actually rendered and resized.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -398,7 +403,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="label_example_01_8c-example.html#a6">label_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga6fcf605ac3c54480af166f93836142d7"></a><!-- doxytag: member="elm_label.eo.legacy.h::elm_label_slide_go" ref="ga6fcf605ac3c54480af166f93836142d7" args="(Elm_Label *obj)" -->
@@ -417,14 +424,14 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Start slide effect. </p>
-<p>See <a class="el" href="group__Elm__Label.html#ga6cad055d2cd4ea72f9d6c9ce8bd68421">elm_label_slide_mode_set</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>See <a class="el" href="group__Elm__Label.html#ga6cad055d2cd4ea72f9d6c9ce8bd68421">elm_label_slide_mode_set</a>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -444,9 +451,8 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Control the slide mode of the label widget. </p>
-<p>By default, slide mode is none. Possible values for <code>mode</code> are: Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_NONE - no slide effect <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a> - slide only if the label area is bigger than the text width length <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> - slide always</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd><a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> only work with the themes "slide_short", "slide_long" and "slide_bounce". Warning: <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> don't work if the line wrap(<a class="el" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set()</a>) or ellipsis(<a class="el" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set()</a>) is set.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>By default, slide mode is none. Possible values for <code>mode</code> are: <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea50192bb15aa945a2b59ae188ff58c3a8">ELM_LABEL_SLIDE_MODE_NONE</a> - no slide effect <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">ELM_LABEL_SLIDE_MODE_AUTO</a> - slide only if the label area is bigger than the text width length <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">ELM_LABEL_SLIDE_MODE_ALWAYS</a> - slide always</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd><a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">ELM_LABEL_SLIDE_MODE_ALWAYS</a> only work with the themes "slide_short", "slide_long" and "slide_bounce". Warning: <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">ELM_LABEL_SLIDE_MODE_ALWAYS</a> don't work if the line wrap(<a class="el" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set()</a>) or ellipsis(<a class="el" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set()</a>) is set.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -455,6 +461,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The slide mode</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
@@ -484,9 +491,8 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Control the slide mode of the label widget. </p>
-<p>By default, slide mode is none. Possible values for <code>mode</code> are: Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_NONE - no slide effect <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a> - slide only if the label area is bigger than the text width length <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> - slide always</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd><a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> only work with the themes "slide_short", "slide_long" and "slide_bounce". Warning: <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">Elm_Label_Slide_Mode::ELM_LABEL_SLIDE_MODE_ALWAYS</a> don't work if the line wrap(<a class="el" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set()</a>) or ellipsis(<a class="el" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set()</a>) is set.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>By default, slide mode is none. Possible values for <code>mode</code> are: <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea50192bb15aa945a2b59ae188ff58c3a8">ELM_LABEL_SLIDE_MODE_NONE</a> - no slide effect <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">ELM_LABEL_SLIDE_MODE_AUTO</a> - slide only if the label area is bigger than the text width length <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">ELM_LABEL_SLIDE_MODE_ALWAYS</a> - slide always</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd><a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">ELM_LABEL_SLIDE_MODE_ALWAYS</a> only work with the themes "slide_short", "slide_long" and "slide_bounce". Warning: <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea0fd9ca46972f3bd28ba45c37b9739268">ELM_LABEL_SLIDE_MODE_AUTO</a>, <a class="el" href="group__Elm__Label.html#gga6a12dc6d96304f9f757d85eb73d21acea069cdd23117efca1a5c984fab3c02243">ELM_LABEL_SLIDE_MODE_ALWAYS</a> don't work if the line wrap(<a class="el" href="group__Elm__Label.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set()</a>) or ellipsis(<a class="el" href="group__Elm__Label.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set()</a>) is set.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -495,7 +501,9 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="label_example_01_8c-example.html#a7">label_example_01.c</a>, and <a class="el" href="location_example_01_8c-example.html#a11">location_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga237f9c6b7ae3bd60b43a5a28b9631abd"></a><!-- doxytag: member="elm_label.eo.legacy.h::elm_label_slide_speed_get" ref="ga237f9c6b7ae3bd60b43a5a28b9631abd" args="(const Elm_Label *obj)" -->
@@ -516,7 +524,6 @@ Functions</h2></td></tr>
 <p>Control the slide speed of the label. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If you set the duration of the slide using <a class="el" href="group__Elm__Label.html#ga6c89f8dfb03ae06797708b90d7926f01">elm_label_slide_duration_set</a> you cannot get the correct speed using this function until the label is actually rendered and resized.</dd></dl>
 <p>See <a class="el" href="group__Elm__Label.html#ga6c89f8dfb03ae06797708b90d7926f01">elm_label_slide_duration_set</a></p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -524,6 +531,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The speed of the slide animation in px per seconds </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -555,7 +563,6 @@ Functions</h2></td></tr>
 <p>Control the slide speed of the label. </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If you set the duration of the slide using <a class="el" href="group__Elm__Label.html#ga6c89f8dfb03ae06797708b90d7926f01">elm_label_slide_duration_set</a> you cannot get the correct speed using this function until the label is actually rendered and resized.</dd></dl>
 <p>See <a class="el" href="group__Elm__Label.html#ga6c89f8dfb03ae06797708b90d7926f01">elm_label_slide_duration_set</a></p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -563,15 +570,16 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga32f37972856198f400d810125d446e96"></a><!-- doxytag: member="elm_label.eo.legacy.h::elm_label_wrap_width_get" ref="ga32f37972856198f400d810125d446e96" args="(const Elm_Label *obj)" -->
+<a class="anchor" id="ga7246aaea4891f8c777f1c3c7760ffb62"></a><!-- doxytag: member="elm_label.eo.legacy.h::elm_label_wrap_width_get" ref="ga7246aaea4891f8c777f1c3c7760ffb62" args="(const Elm_Label *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> <a class="el" href="group__Elm__Label.html#ga32f37972856198f400d810125d446e96">elm_label_wrap_width_get</a> </td>
+          <td class="memname">int <a class="el" href="group__Elm__Label.html#ga7246aaea4891f8c777f1c3c7760ffb62">elm_label_wrap_width_get</a> </td>
           <td>(</td>
           <td class="paramtype">const Elm_Label *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
@@ -582,26 +590,25 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Control wrap width of the label. </p>
-<p>This function sets the minimum and the maximum width size hint of the label.</p>
-<p>When the width is set to 0, there will be no size hint for both the minimum and the maximum width.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>This is only relevant if the label is inside a container. When a wrap mode is disabled, only the minimum size hint will be decided. That is, with this case, the maximum size hint does not be used.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This function sets the maximum width size hint of the label.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is only relevant if the label is inside a container.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The wrap width in pixels where words need to wrap </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The wrap width in pixels at a minimum where words need to wrap </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaf3fcce941524367572c5e4233895029a"></a><!-- doxytag: member="elm_label.eo.legacy.h::elm_label_wrap_width_set" ref="gaf3fcce941524367572c5e4233895029a" args="(Elm_Label *obj, Evas_Coord w)" -->
+<a class="anchor" id="ga04adabe19c81cc4dde59ba9f11f2190b"></a><!-- doxytag: member="elm_label.eo.legacy.h::elm_label_wrap_width_set" ref="ga04adabe19c81cc4dde59ba9f11f2190b" args="(Elm_Label *obj, int w)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Label.html#gaf3fcce941524367572c5e4233895029a">elm_label_wrap_width_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Label.html#ga04adabe19c81cc4dde59ba9f11f2190b">elm_label_wrap_width_set</a> </td>
           <td>(</td>
           <td class="paramtype">Elm_Label *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -609,7 +616,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a>&#160;</td>
+          <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>w</em>&#160;</td>
         </tr>
         <tr>
@@ -622,17 +629,16 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Control wrap width of the label. </p>
-<p>This function sets the minimum and the maximum width size hint of the label.</p>
-<p>When the width is set to 0, there will be no size hint for both the minimum and the maximum width.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>This is only relevant if the label is inside a container. When a wrap mode is disabled, only the minimum size hint will be decided. That is, with this case, the maximum size hint does not be used.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>This function sets the maximum width size hint of the label.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is only relevant if the label is inside a container.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The wrap width in pixels where words need to wrap </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>The wrap width in pixels at a minimum where words need to wrap </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

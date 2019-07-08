@@ -110,7 +110,7 @@ newMap.Insert( "volumeRight", 0.5f );
 mView.SetProperty( VideoView::Property::VOLUME, newMap );
 ```
 
-To change the display mode, use the `PLAYER_DISPLAY_MODE` enums (in [mobile](../../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) applications) .
+To change the display mode, use the `PLAYER_DISPLAY_MODE` enums (in [mobile](../../../api/mobile/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__MEDIA__PLAYER__DISPLAY__MODULE.html) applications).
 
 - `LETTER_BOX`
 - `ORIGIN_SIZE`
