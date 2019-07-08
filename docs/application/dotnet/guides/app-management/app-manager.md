@@ -15,7 +15,7 @@ The main features of the `Tizen.Applications.ApplicationManager` class include:
 
 -   Getting information on the current application
 
-    For current applications, you can retrieve information using the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) class. You can use the retrieved information to [manage the current application](#manage_current).
+    For current applications, you can [retrieve information](#manage_current) using the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) class. You can use the retrieved information to manage the current application.
 
 
 Iterator methods are used to travel through a list of applications. The `GetRunningApplicationsAsync()` method of the `Tizen.Applications.ApplicationManager` class is used for running applications and the `GetInstalledApplicationsAsync()` method is used for installed applications.
