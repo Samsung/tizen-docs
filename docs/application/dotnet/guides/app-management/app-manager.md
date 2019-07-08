@@ -52,7 +52,7 @@ To get the context, create an instance of the [Tizen.Applications.ApplicationRun
     string applicationId = ApplicationManager.GetAppId(Your PID);
     ```
 
-    When an application is not running, it is impossible to get its context.
+    When an application is not running, it is impossible to get its context:
 
     ```
     ApplicationRunningContext appRunningContext = new ApplicationRunningContext(Your App ID);
