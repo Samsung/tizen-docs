@@ -96,7 +96,7 @@ To update the metadata and playback information on the server side, and to retri
         For example, to retrieve the playback state from the server:
 
         ```csharp
-        Tizen.Log.info(LogTag, $"Playback state is {controller.GetPlaybackState()}");
+        Log.info("MC", $"Playback state is {controller.GetPlaybackState()}");
         ```
 
 ## Updating and Retrieving Playlist
@@ -123,8 +123,7 @@ To retrieve the playlist and metadata information on the client side, use the fo
 ```csharp
 controller.PlaylistUpdated += (s, e) =>
 {
-    Tizen.Log.Info(LogTag, $"Updated mode : {e.Mode}, Name : {e.Name}, Title :
-{e.Playlist.GetMetadata("IDX1").Title}");
+    Log.Info("MC", $"Updated mode : {e.Mode}, Name : {e.Name}, Title : {e.Playlist.GetMetadata("IDX1").Title}");
 };
 ```
 
@@ -145,7 +144,7 @@ To send a command from the client and to process it on the server side, follow t
 
     void OnPlaybackCommandReceived(object sender, PlaybackCommandReceivedEventArgs e)
     {
-        Tizen.Log.Info(LogTag, $"Received command is {e.Command} from {e.ClientAppId}");
+        Log.Info("MC", $"Received command is {e.Command} from {e.ClientAppId}");
     }
     ```
 
