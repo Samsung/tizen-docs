@@ -58,7 +58,7 @@ To get the context, create an instance of the [Tizen.Applications.ApplicationRun
     ApplicationRunningContext appRunningContext = new ApplicationRunningContext(Your App ID);
     ```
 
-2.  Operate on the application information:
+2.  Operate on the application context:
     -   Get the application ID, package ID, and process ID from the context:
 
         ```
@@ -167,5 +167,5 @@ To get information on the current application, follow these steps:
 
 
 ## Related Information
-  * Dependencies
+  - Dependencies
     -   Tizen 4.0 and Higher
