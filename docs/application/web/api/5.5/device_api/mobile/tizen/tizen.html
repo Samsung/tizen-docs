@@ -34,13 +34,19 @@ For more information on the Tizen features, see <a href="https://developer.tizen
 <ul class="toc">
 <li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc">
 <li>
-                    1.1. <a href="#FilterMatchFlag">FilterMatchFlag</a>
+                    1.1. <a href="#ByteStream">ByteStream</a>
 </li>
 <li>
-                    1.2. <a href="#SortModeOrder">SortModeOrder</a>
+                    1.2. <a href="#FilterMatchFlag">FilterMatchFlag</a>
 </li>
 <li>
-                    1.3. <a href="#CompositeFilterType">CompositeFilterType</a>
+                    1.3. <a href="#SortModeOrder">SortModeOrder</a>
+</li>
+<li>
+                    1.4. <a href="#CompositeFilterType">CompositeFilterType</a>
+</li>
+<li>
+                    1.5. <a href="#BundleValueType">BundleValueType</a>
 </li>
 </ul>
 </li>
@@ -49,25 +55,29 @@ For more information on the Tizen features, see <a href="https://developer.tizen
 </li>
 <li>2.2. <a href="#Tizen">Tizen</a>
 </li>
-<li>2.3. <a href="#AbstractFilter">AbstractFilter</a>
+<li>2.3. <a href="#Bundle">Bundle</a>
 </li>
-<li>2.4. <a href="#AttributeFilter">AttributeFilter</a>
+<li>2.4. <a href="#AbstractFilter">AbstractFilter</a>
 </li>
-<li>2.5. <a href="#AttributeRangeFilter">AttributeRangeFilter</a>
+<li>2.5. <a href="#AttributeFilter">AttributeFilter</a>
 </li>
-<li>2.6. <a href="#CompositeFilter">CompositeFilter</a>
+<li>2.6. <a href="#AttributeRangeFilter">AttributeRangeFilter</a>
 </li>
-<li>2.7. <a href="#SortMode">SortMode</a>
+<li>2.7. <a href="#CompositeFilter">CompositeFilter</a>
 </li>
-<li>2.8. <a href="#SimpleCoordinates">SimpleCoordinates</a>
+<li>2.8. <a href="#SortMode">SortMode</a>
 </li>
-<li>2.9. <a href="#WebAPIException">WebAPIException</a>
+<li>2.9. <a href="#SimpleCoordinates">SimpleCoordinates</a>
 </li>
-<li>2.10. <a href="#WebAPIError">WebAPIError</a>
+<li>2.10. <a href="#WebAPIException">WebAPIException</a>
 </li>
-<li>2.11. <a href="#SuccessCallback">SuccessCallback</a>
+<li>2.11. <a href="#WebAPIError">WebAPIError</a>
 </li>
-<li>2.12. <a href="#ErrorCallback">ErrorCallback</a>
+<li>2.12. <a href="#SuccessCallback">SuccessCallback</a>
+</li>
+<li>2.13. <a href="#ErrorCallback">ErrorCallback</a>
+</li>
+<li>2.14. <a href="#BundleItemCallback">BundleItemCallback</a>
 </li>
 </ul>
 </li>
@@ -89,6 +99,18 @@ For more information on the Tizen features, see <a href="https://developer.tizen
 <tr>
 <td><a href="#Tizen">Tizen</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="#Bundle">Bundle</a></td>
+<td>
+<div>any <a href="#Bundle::get">get</a> (DOMString key)</div>
+<div>void <a href="#Bundle::set">set</a> (DOMString key, any value)</div>
+<div>
+<a href="#BundleValueType">BundleValueType</a> <a href="#Bundle::typeOf">typeOf</a> (DOMString key)</div>
+<div>void <a href="#Bundle::forEach">forEach</a> (<a href="#BundleItemCallback">BundleItemCallback</a> callback)</div>
+<div>object <a href="#Bundle::toJSON">toJSON</a> ()</div>
+<div>DOMString <a href="#Bundle::toString">toString</a> ()</div>
+</td>
 </tr>
 <tr>
 <td><a href="#AbstractFilter">AbstractFilter</a></td>
@@ -130,12 +152,29 @@ For more information on the Tizen features, see <a href="https://developer.tizen
 <td><a href="#ErrorCallback">ErrorCallback</a></td>
 <td><div>void <a href="#ErrorCallback::onerror">onerror</a> (<a href="#WebAPIError">WebAPIError</a> error)</div></td>
 </tr>
+<tr>
+<td><a href="#BundleItemCallback">BundleItemCallback</a></td>
+<td><div>void <a href="#BundleItemCallback::onitem">onitem</a> (DOMString key, any value, <a href="#BundleValueType">BundleValueType</a> type)</div></td>
+</tr>
 </tbody>
 </table>
 <div class="typedefs" id="typedefs-section">
 <h2>1. Type Definitions</h2>
+<div class="typedef" id="ByteStream">
+<a class="backward-compatibility-anchor" name="::Tizen::ByteStream"></a><h3>1.1. ByteStream</h3>
+<div class="brief">
+ Representation of raw data as a sequence of values in range 0 - 255.
+          </div>
+<pre class="webidl prettyprint">  typedef octet[] ByteStream;</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<p><span class="remark">Remark: </span>
+ This is equivalent to Uint8Array in JavaScript.
+          </p>
+</div>
 <div class="enum" id="FilterMatchFlag">
-<a class="backward-compatibility-anchor" name="::Tizen::FilterMatchFlag"></a><h3>1.1. FilterMatchFlag</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::FilterMatchFlag"></a><h3>1.2. FilterMatchFlag</h3>
 <div class="brief">
  Filter match flags.
           </div>
@@ -166,7 +205,7 @@ EXISTS - Indicates that a filter comparison should match if the specified attrib
          </div>
 </div>
 <div class="enum" id="SortModeOrder">
-<a class="backward-compatibility-anchor" name="::Tizen::SortModeOrder"></a><h3>1.2. SortModeOrder</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::SortModeOrder"></a><h3>1.3. SortModeOrder</h3>
 <div class="brief">
  An enumerator that indicates the sorting order.
           </div>
@@ -187,7 +226,7 @@ DESC - Indicates that the sorting order is descending            </li>
          </div>
 </div>
 <div class="enum" id="CompositeFilterType">
-<a class="backward-compatibility-anchor" name="::Tizen::CompositeFilterType"></a><h3>1.3. CompositeFilterType</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::CompositeFilterType"></a><h3>1.4. CompositeFilterType</h3>
 <div class="brief">
  An enumerator that indicates the type of composite filter.
           </div>
@@ -206,6 +245,34 @@ UNION - Indicates that the composite is a union of filters ("OR" operator)      
 INTERSECTION - Indicates that the composite is an intersection of filters ("AND" operator)            </li>
           </ul>
          </div>
+</div>
+<div class="enum" id="BundleValueType">
+<a class="backward-compatibility-anchor" name="::Tizen::BundleValueType"></a><h3>1.5. BundleValueType</h3>
+<div class="brief">
+ <a href="#Bundle">Bundle</a> item value types.
+          </div>
+<pre class="webidl prettyprint">  enum BundleValueType { "STRING", "STRING_ARRAY", "BYTES", "BYTES_ARRAY" };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="description">
+          <p>
+The following value types are supported by <a href="#Bundle">Bundle</a> objects:
+          </p>
+          <ul>
+            <li>
+STRING - string value type            </li>
+            <li>
+STRING_ARRAY - array of strings value type            </li>
+            <li>
+BYTES - <a href="#ByteStream">ByteStream</a>            </li>
+            <li>
+BYTES_ARRAY - array of <a href="#ByteStream">ByteStream</a>            </li>
+          </ul>
+         </div>
+<p><span class="remark">Remark: </span>
+ Empty array will be assigned STRING_ARRAY type.
+          </p>
 </div>
 </div>
 <div class="interfaces" id="interfaces-section">
@@ -257,8 +324,311 @@ It is a property of the ECMAScript global object, as specified by the <em>TizenO
           </p>
          </div>
 </div>
+<div class="interface" id="Bundle">
+<a class="backward-compatibility-anchor" name="::Tizen::Bundle"></a><h3>2.3. Bundle</h3>
+<div class="brief">
+ Key-value pair container.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(optional object? json)]
+  interface Bundle {
+    any get(DOMString key) raises(<a href="#WebAPIException">WebAPIException</a>);
+    void set(DOMString key, any value);
+    <a href="#BundleValueType">BundleValueType</a> typeOf(DOMString key) raises(<a href="#WebAPIException">WebAPIException</a>);
+    void forEach(<a href="#BundleItemCallback">BundleItemCallback</a> callback);
+    object toJSON();
+    DOMString toString();
+  };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="description">
+          <p>
+Bundle keys are always strings.
+All supported value types are specified in the BundleValueType enum.
+          </p>
+         </div>
+<div class="constructors">
+<h4 id="Bundle::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">Bundle(optional object? json);</pre></dl>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="Bundle::get">
+<a class="backward-compatibility-anchor" name="::Tizen::Bundle::get"></a><code><b><span class="methodName">get</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets value stored under given key.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">any get(DOMString key);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ Bundle entry key.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">any:
+                  </span>
+ Bundle entry value for a given key.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type NotFoundError, if the key could not be found.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bundle = new tizen.Bundle();
+bundle.set("array", ["hello", "world"]);
+console.log(bundle.get("array"));
+
+try
+{
+  bundle.get("unknownKey");
+}
+catch (err)
+{
+  console.log(err.name);
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>["hello", "world"]
+NotFoundError
+</pre>
+</div>
+</dd>
+<dt class="method" id="Bundle::set">
+<a class="backward-compatibility-anchor" name="::Tizen::Bundle::set"></a><code><b><span class="methodName">set</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Inserts the key-value pair.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void set(DOMString key, any value);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<p><span class="remark">Remark: </span>
+ Any value type not specified in the BundleValueType enum will be converted to a string.
+            </p>
+<p><span class="remark">Remark: </span>
+ Empty array value will be treated like STRING_ARRAY.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ Entry key.
+                </li>
+          <li class="param">
+<span class="name">value</span>:
+ Entry value.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bundle = new tizen.Bundle();
+
+bundle.set("array", ["hello", "world"]);
+bundle.set("empty", []);
+
+console.log(bundle.get("array"));
+console.log(bundle.get("empty"));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>["hello", "world"]
+[]
+</pre>
+</div>
+</dd>
+<dt class="method" id="Bundle::typeOf">
+<a class="backward-compatibility-anchor" name="::Tizen::Bundle::typeOf"></a><code><b><span class="methodName">typeOf</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets type of the value for a given key.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#BundleValueType">BundleValueType</a> typeOf(DOMString key);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<p><span class="remark">Remark: </span>
+ If the value for the given key is an empty array this function returns STRING_ARRAY.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ Entry key.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">BundleValueType:
+                  </span>
+ Entry value type.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type NotFoundError, if the key could not be found.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bundle = new tizen.Bundle();
+
+bundle.set("string", "hello, world");
+bundle.set("string-array", ["hello", "world"]);
+bundle.set("bytes", new Uint8Array([1, 2, 3]));
+bundle.set("bytes-array", [new Uint8Array([1, 2, 3]), new Uint8Array([4, 5, 6])]);
+bundle.set("empty-array", []);
+
+console.log(bundle.typeOf("string"));
+console.log(bundle.typeOf("string-array"));
+console.log(bundle.typeOf("bytes"));
+console.log(bundle.typeOf("bytes-array"));
+console.log(bundle.typeOf("empty-array"));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>STRING
+STRING_ARRAY
+BYTES
+BYTES_ARRAY
+STRING_ARRAY
+</pre>
+</div>
+</dd>
+<dt class="method" id="Bundle::forEach">
+<a class="backward-compatibility-anchor" name="::Tizen::Bundle::forEach"></a><code><b><span class="methodName">forEach</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Calls the callback function for each item stored in the bundle.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void forEach(<a href="#BundleItemCallback">BundleItemCallback</a> callback);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="description">
+            <p>
+If bundle is empty the callback function will not be called.
+            </p>
+           </div>
+<p><span class="remark">Remark: </span>
+ Empty arrays are treated like string arrays.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">callback</span>:
+ Function to be called for each entry.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bundle = new tizen.Bundle();
+bundle.set("string-array", ["hello", "world"]);
+bundle.set("string", "hello, world");
+
+/* order in which items will be printed is unspecified. */
+bundle.forEach(function(key, value, type)
+{
+  console.log("key: " + key);
+  console.log("value: " + value);
+  console.log("type: " + type);
+  console.log("---");
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>key: string-array
+value: ["hello", "world"]
+type: STRING_ARRAY
+---
+key: string
+value: "hello, world"
+type: STRING
+---
+</pre>
+</div>
+</dd>
+<dt class="method" id="Bundle::toJSON">
+<a class="backward-compatibility-anchor" name="::Tizen::Bundle::toJSON"></a><code><b><span class="methodName">toJSON</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts bundle to JSON-compatible object.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">object toJSON();</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">object:
+                  </span>
+ JSON-compatible object.
+              </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bundle = new tizen.Bundle({"array": ["hello", "world"]});
+var json = bundle.toJSON();
+console.log(JSON.stringify(json));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>{"array": ["hello", "world"]}
+</pre>
+</div>
+</dd>
+<dt class="method" id="Bundle::toString">
+<a class="backward-compatibility-anchor" name="::Tizen::Bundle::toString"></a><code><b><span class="methodName">toString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns string representation of the bundle's data.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString toString();</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">DOMString:
+                  </span>
+ JSON string representation of the bundle's data.
+              </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 <div class="interface" id="AbstractFilter">
-<a class="backward-compatibility-anchor" name="::Tizen::AbstractFilter"></a><h3>2.3. AbstractFilter</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::AbstractFilter"></a><h3>2.4. AbstractFilter</h3>
 <div class="brief">
  This is a common interface used by different types of
 object filters.
@@ -276,7 +646,7 @@ such as <em>AttributeFilter</em>, <em>AttributeRangeFilter</em>, and <em>Composi
          </div>
 </div>
 <div class="interface" id="AttributeFilter">
-<a class="backward-compatibility-anchor" name="::Tizen::AttributeFilter"></a><h3>2.4. AttributeFilter</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::AttributeFilter"></a><h3>2.5. AttributeFilter</h3>
 <div class="brief">
  This interface represents a set of filters.
           </div>
@@ -379,7 +749,7 @@ By default, this attribute is set to <var>null</var>.
 </div>
 </div>
 <div class="interface" id="AttributeRangeFilter">
-<a class="backward-compatibility-anchor" name="::Tizen::AttributeRangeFilter"></a><h3>2.5. AttributeRangeFilter</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::AttributeRangeFilter"></a><h3>2.6. AttributeRangeFilter</h3>
 <div class="brief">
  <em>AttributeRangeFilter</em> represents a filter based on an object attribute
 which has values that are within a particular range.
@@ -477,7 +847,7 @@ By default, this attribute is set to <var>null</var>.
 </div>
 </div>
 <div class="interface" id="CompositeFilter">
-<a class="backward-compatibility-anchor" name="::Tizen::CompositeFilter"></a><h3>2.6. CompositeFilter</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::CompositeFilter"></a><h3>2.7. CompositeFilter</h3>
 <div class="brief">
  <em>CompositeFilter</em> represents a set of filters.
           </div>
@@ -571,7 +941,7 @@ tizen.content.find(findCB, errorCB, null, filter, null, count, offset);
 </div>
 </div>
 <div class="interface" id="SortMode">
-<a class="backward-compatibility-anchor" name="::Tizen::SortMode"></a><h3>2.7. SortMode</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::SortMode"></a><h3>2.8. SortMode</h3>
 <div class="brief">
  <em>SortMode</em> is a common interface used for sorting of queried data.
           </div>
@@ -656,7 +1026,7 @@ By default, this attribute is set to <var>ASC</var>.
 </div>
 </div>
 <div class="interface" id="SimpleCoordinates">
-<a class="backward-compatibility-anchor" name="::Tizen::SimpleCoordinates"></a><h3>2.8. SimpleCoordinates</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::SimpleCoordinates"></a><h3>2.9. SimpleCoordinates</h3>
 <div class="brief">
  <em>SimpleCoordinates</em> represents a point (latitude and longitude) in the map coordinate system.
           </div>
@@ -727,7 +1097,7 @@ catch (err)
 </div>
 </div>
 <div class="interface" id="WebAPIException">
-<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException"></a><h3>2.9. WebAPIException</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIException"></a><h3>2.10. WebAPIException</h3>
 <div class="brief">
  Generic exception interface.
           </div>
@@ -1066,7 +1436,7 @@ This attribute is mainly intended to be used for developers rather than end user
 </div>
 </div>
 <div class="interface" id="WebAPIError">
-<a class="backward-compatibility-anchor" name="::Tizen::WebAPIError"></a><h3>2.10. WebAPIError</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::WebAPIError"></a><h3>2.11. WebAPIError</h3>
 <div class="brief">
  Generic error interface.
           </div>
@@ -1148,7 +1518,7 @@ as it is mainly intended to be useful for developers rather than end users.
 </div>
 </div>
 <div class="interface" id="SuccessCallback">
-<a class="backward-compatibility-anchor" name="::Tizen::SuccessCallback"></a><h3>2.11. SuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::SuccessCallback"></a><h3>2.12. SuccessCallback</h3>
 <div class="brief">
  This interface is used in methods that do not require any return value in the success callback.
           </div>
@@ -1198,7 +1568,7 @@ tizen.application.launch(otherAppID, onSuccess);
 </div>
 </div>
 <div class="interface" id="ErrorCallback">
-<a class="backward-compatibility-anchor" name="::Tizen::ErrorCallback"></a><h3>2.12. ErrorCallback</h3>
+<a class="backward-compatibility-anchor" name="::Tizen::ErrorCallback"></a><h3>2.13. ErrorCallback</h3>
 <div class="brief">
  This interface is used in methods that require only an error as an input parameter in the error callback.
           </div>
@@ -1262,17 +1632,99 @@ tizen.application.launch(bogusAppID, onSuccess, onError);
 </dl>
 </div>
 </div>
+<div class="interface" id="BundleItemCallback">
+<a class="backward-compatibility-anchor" name="::Tizen::BundleItemCallback"></a><h3>2.14. BundleItemCallback</h3>
+<div class="brief">
+ Callback for <a href="#Bundle::forEach">Bundle.forEach()</a> method.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly] interface BundleItemCallback {
+    void onitem(DOMString key, any value, <a href="#BundleValueType">BundleValueType</a> type);
+  };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="BundleItemCallback::onitem">
+<a class="backward-compatibility-anchor" name="::Tizen::BundleItemCallback::onitem"></a><code><b><span class="methodName">onitem</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Callback for <a href="#Bundle::forEach">Bundle.forEach()</a> method.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onitem(DOMString key, any value, <a href="#BundleValueType">BundleValueType</a> type);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">key</span>:
+ Bundle item key.
+                </li>
+          <li class="param">
+<span class="name">value</span>:
+ Bundle item value.
+                </li>
+          <li class="param">
+<span class="name">type</span>:
+ Bundle item type.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bundle = new tizen.Bundle();
+bundle.set("string-array", ["hello", "world"]);
+bundle.set("string", "hello, world");
+
+/* order in which items will be printed is unspecified. */
+bundle.forEach(function(key, value, type)
+{
+  console.log("key: " + key);
+  console.log("value: " + value);
+  console.log("type: " + type);
+  console.log("---");
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>key: string-array
+value: ["hello", "world"]
+type: STRING_ARRAY
+---
+key: string
+value: "hello, world"
+type: STRING
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Tizen {
+  typedef octet[] ByteStream;
   enum FilterMatchFlag { "EXACTLY", "FULLSTRING", "CONTAINS", "STARTSWITH", "ENDSWITH", "EXISTS" };
   enum SortModeOrder { "ASC", "DESC" };
   enum CompositeFilterType { "UNION", "INTERSECTION" };
+  enum BundleValueType { "STRING", "STRING_ARRAY", "BYTES", "BYTES_ARRAY" };
   [NoInterfaceObject] interface TizenObject {
     readonly attribute <a href="#Tizen">Tizen</a> tizen;
   };
   Window implements <a href="#TizenObject">TizenObject</a>;
   [NoInterfaceObject] interface Tizen {
+  };
+  [Constructor(optional object? json)]
+  interface Bundle {
+    any get(DOMString key) raises(<a href="#WebAPIException">WebAPIException</a>);
+    void set(DOMString key, any value);
+    <a href="#BundleValueType">BundleValueType</a> typeOf(DOMString key) raises(<a href="#WebAPIException">WebAPIException</a>);
+    void forEach(<a href="#BundleItemCallback">BundleItemCallback</a> callback);
+    object toJSON();
+    DOMString toString();
   };
   [NoInterfaceObject] interface AbstractFilter {
   };
@@ -1347,6 +1799,9 @@ tizen.application.launch(bogusAppID, onSuccess, onError);
   [Callback=FunctionOnly, NoInterfaceObject]
   interface ErrorCallback {
     void onerror(<a href="#WebAPIError">WebAPIError</a> error);
+  };
+  [Callback=FunctionOnly] interface BundleItemCallback {
+    void onitem(DOMString key, any value, <a href="#BundleValueType">BundleValueType</a> type);
   };
 };</pre>
 </div>
