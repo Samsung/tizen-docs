@@ -63,3 +63,176 @@ init(const char *name)
    /* Do Something Creative */
 ```
 
+## Show or Hide Softkey Window
+
+To show or hide softkey window when your applications's window is activated, call the following functions:
+
+```
+   int ret;
+
+   if (show)
+   {
+      ret = tzsh_softkey_global_show(tzsh_sk); /* To show softkey window */
+      if (ret != TZSH_ERROR_NONE)
+      {
+         /* error */
+      }
+   }
+   else
+   {
+      ret = tzsh_softkey_global_hide(tzsh_sk); /* To hide softkey window */
+      if (ret != TZSH_ERROR_NONE)
+      {
+         /* error */
+      }
+   }
+```
+
+## Get Visibility Status of Softkey Window
+
+To know the state of current visibility of softkey service's window, call the `tzsh_softkey_global_visible_get` function. The softkey service's window may be visible or invisible on the screen.
+
+```
+   int ret;
+   tzsh_softkey_state_visible_e state;
+
+   ret = tzsh_softkey_global_visible_state_get(tzsh_sk, &state);
+   if (ret != TZSH_ERROR_NONE)
+   {
+      /* error */
+   }
+   if (state == TZSH_SOFTKEY_STATE_VISIBLE_SHOW)
+   {
+      /* visible state */
+   }
+   else if (state == TZSH_SOFTKEY_STATE_VISIBLE_HIDE)
+   {
+      /* invisible state */
+   }
+   else
+   {
+      /* error */
+   }
+```
+
+## Set Expandable Status of Softkey Window
+
+To make the softkey service's window can expandable or not, call the `tzsh_softkey_global_expand_state_set` function:
+
+```
+   int ret;
+
+   if (expandable)
+   {
+      ret = tzsh_softkey_global_expand_state_set(tzsh_sk, TZSH_SOFTKEY_STATE_EXPAND_ON);
+      if (ret)
+      {
+         /* error */
+      }
+   }
+   else
+   {
+      ret = tzsh_softkey_global_expand_state_set(tzsh_sk, TZSH_SOFTKEY_STATE_EXPAND_OFF);
+      if (ret)
+      {
+         /* error */
+      }
+   }
+```
+
+## Get Expandable Status of Softkey Window
+
+To know the state of current expandable state of softkey service's window, call the `tzsh_softkey_global_expand_state_get` function. The softkey services's window may be expandable or inexpandable
+
+```
+   int ret;
+   tzsh_softkey_expand_state_e state;
+
+   ret = tzsh_softkey_global_expand_state_get(tzsh_sk, &state);
+   if (ret != TZSH_ERROR_NONE)
+   {
+      /* error */
+   }
+   if (state == TZSH_SOFTKEY_STATE_EXPAND_ON)
+   {
+      /* expand state */
+   }
+   else if (state == TZSH_SOFTKEY_STATE_EXPAND_OFF)
+   {
+      /* inexpand state */
+   }
+   else
+   {
+      /* error */
+   }
+```
+
+## Set Opacity State of Softkey Window
+
+To make the softkey service's window to be opaque or transparent, call the `tzsh_softkey_global_opacity_state_set` function:
+
+```
+   int ret;
+
+   if (opaque)
+   {
+      ret = tzsh_softkey_global_opacity_state_set(tzsh_sk, TZSH_SOFTKEY_STATE_OPACITY_OPAQUE);
+      if (ret != TZSH_ERROR_NONE)
+      {
+         /* error */
+      }
+   }
+   else
+   {
+      ret = tzsh_softkey_global_opacity_state_set(tzsh_sk, TZSH_SOFTKEY_STATE_OPACITY_TRANSPARENT);
+      if (ret != TZSH_ERROR_NONE)
+      {
+         /* error */
+      }
+   }
+```
+
+## Get Opacity State of Softkey Window
+
+To know the current opacity state of softkey service's window, call the `tzsh_softkey_global_opacity_state_get` function:
+
+```
+   int ret;
+   tzsh_softkey_opacity_state_e state;
+
+   ret = tzsh_softkey_global_opacity_state_get(tzsh_sk, &state);
+   if (ret != TZSH_ERROR_NONE)
+   {
+      /* error */
+   }
+   if (state == TZSH_SOFTKEY_STATE_OPACITY_OPAQUE)
+   {
+      /* opaque state */
+   }
+   else if (state == TZSH_SOFTKEY_STATE_OPACITY_TRANSPARENT)
+   {
+      /* transparent state */
+   }
+   else
+   {
+      /* error */
+   }
+```
+
+## Destroy the TZSH Softkey
+
+When TZSH quickpanel and TZSH structures are no longer needed, free the structures as follows:
+
+```
+   static void
+   deinit(void)
+   {
+      tzsh_softkey_destroy(tzsh_sk);
+      tzsh_destroy(tzsh);
+   }
+```
+
+## Related Information
+ - Dependencies
+   - Tizen 5.5 and Higher for Mobile
+   - Tizen 5.5 and Higher for Wearable
