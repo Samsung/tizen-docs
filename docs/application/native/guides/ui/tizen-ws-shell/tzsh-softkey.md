@@ -1,7 +1,7 @@
 # TZSH-Softkey
 
 
-tzsh-softkey is library for control a softkey service window which shows the software buttons such as back and home buttons. You can use the tzsh-softkey to manipulate softkey service window's visible state, expandable state and opacity state.
+TZSH-Softkey is library for control a softkey service window which shows the software buttons such as back and home buttons. You can use the tzsh-softkey to manipulate softkey service window's visible state, expandable state and opacity state.
 Each of states are have following properties.
 
 - **Visible State**: You can show or hide the softkey service window. If you set it as show, the softkey service window will appear. Else if you set it as hide, the softkey service window will be disappear.

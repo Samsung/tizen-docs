@@ -1,9 +1,8 @@
-# TZSH-quickpanel
+# TZSH-Quickpanel
 
 
-tzsh-quickpanel is library for control quickpanel service window which shows notifications and system setup widgets. You can use the tzsh-quickpanel to get various information from quickpanel service window.
-
-Not all applications require to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service's window. For example, media player application needs to close the quickpanel window during playback of video. In this case, you can use the tzsh-quickpanel library.
+TZSH-Quickpanel is library for control quickpanel service window which shows notifications and system setup widgets. You can use the tzsh-quickpanel to get various information from quickpanel service window.
+For example, media player application needs to close the quickpanel window during playback of video. In this case, you can use the tzsh-quickpanel library.
 
 
 ## Prerequisites
