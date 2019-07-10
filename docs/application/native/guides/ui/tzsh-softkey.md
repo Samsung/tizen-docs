@@ -1,19 +1,19 @@
 # TZSH-Softkey
 
 
-tzsh-softkey is library for control the softkey window which shows the software buttons such as back and home buttons. You can manipulate the tzsh-softkey manipulate softkey window's visible state, expandable state and opacity state.
-Each of states are taking following properties.
+tzsh-softkey is library for control a softkey service window which shows the software buttons such as back and home buttons. You can use the tzsh-softkey to manipulate softkey service window's visible state, expandable state and opacity state.
+Each of states are have following properties.
 
-- **Visible State**: You can show or hide the softkey window. If show, the softkey window will appear. And hide, the softkey window will be hidden.
+- **Visible State**: You can show or hide the softkey service window. If you set it as show, the softkey service window will appear. Else if you set it as hide, the softkey service window will be disappear.
 
-- **Expandable State**: You can control expandable state of the softkey window.
-If you set expand on, then expandable button of the softkey window will be shown like below.
+- **Expandable State**: You can control expandable state of the softkey service window.
+If you set expand on, then expandable button of the softkey service window will be shown like below.
 ![Expand On Transparent](./media/tzsh_softkey_expand_on_transparent.png)
    Or, if you set expand off, then expandable button disppear.
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
 
-- **Opacity State**: You can manipulate opaque state of the softkey window.
-      if you set opacity opaque, background of the softkey window turns 24bit color opaque window like below.
+- **Opacity State**: You can manipulate opaque state of the softkey service window.
+      if you set opacity opaque, background of the softkey service window turns 24bit color opaque window like below.
 ![Expand Off Opaque](./media/tzsh_softkey_expand_off_opaque.png)
    Or, if you set opacity transparent, background will turn to 32bit colored transparent window.
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
@@ -65,14 +65,14 @@ init(const char *name)
 
 ## Show or Hide Softkey Window
 
-To show or hide softkey window when your applications's window is activated, call the following functions:
+To show or hide softkey service window when your applications's window is activated, call the following functions:
 
 ```
    int ret;
 
    if (show)
    {
-      ret = tzsh_softkey_global_show(tzsh_sk); /* To show softkey window */
+      ret = tzsh_softkey_global_show(tzsh_sk); /* To show softkey service window */
       if (ret != TZSH_ERROR_NONE)
       {
          /* error */
@@ -80,7 +80,7 @@ To show or hide softkey window when your applications's window is activated, cal
    }
    else
    {
-      ret = tzsh_softkey_global_hide(tzsh_sk); /* To hide softkey window */
+      ret = tzsh_softkey_global_hide(tzsh_sk); /* To hide softkey service window */
       if (ret != TZSH_ERROR_NONE)
       {
          /* error */
