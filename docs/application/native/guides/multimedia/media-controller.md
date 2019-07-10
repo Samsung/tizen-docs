@@ -5,9 +5,18 @@ You can establish communication between a media controller server and a media co
 
 The main features of the Media Controller API include:
 
-- Updating and retrieving information
+- Retrieving Application list
 
-  You can [update the metadata and playback information](#updating-and-retrieving-information) on the server side, and then retrieve the metadata and playback information on the client side.
+  You can get activated server and client applications.(#retrieving-application-list) So by this you can conmunicate with applications you want.
+  And client can get the latest server information even though the application is not activated currently. The last server which changed state to "MC_PLAYBACK_STATE_PLAYING" become the latest server.
+
+  > **Note**
+  >
+  > Retrieving client list supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
+
+- Updating and Retrieving Playback
+
+  You can [update the playback information](#updating-and-retrieving-playback) on the server side, and then retrieve the playback information on the client side.
 
   The media controller server provides current information about the registered application that you can send to the client.
 
@@ -92,9 +101,82 @@ To enable your application to use the media controller functionality:
      This guide uses a global variable for the handle.
 
 
-## Updating and Retrieving Information
+## Retrieving Application list
 
-To update the metadata and playback information on the server side:
+To retrieve the latest server information on the client side:
+
+1. Create the media controller client handle using the `mc_client_create()`:
+
+   ```
+   ret = mc_client_create(&g_client_h);
+   ```
+
+2. Retrieve the server name using the `mc_client_get_latest_server_info()`:
+
+   ```
+   char *server_name = NULL;
+   mc_server_state_e server_state;
+
+   ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
+   dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
+   ```
+To retrieve the server list on the client side:
+
+1. Create the media controller client handle using the `mc_client_create()`:
+
+   ```
+   ret = mc_client_create(&g_client_h);
+   ```
+
+2. Retrieve the server list using the `mc_client_foreach_server()`:
+
+   ```
+   bool
+   activated_server_cb(const char *server_name, void *user_data)
+   {
+     GList **server_list = (GList **)user_data;
+
+     if (!server_list || !server_name) return FALSE;
+     *server_list = g_list_append(*server_list, g_strdup(server_name));
+
+     return TRUE;
+   }
+
+   GList *server_list = NULL;
+
+   ret = mc_client_foreach_server(g_client_h, activated_server_cb, &server_list);
+   ```
+
+To retrieve the client list on the server side:
+
+1. Create the media controller server handle using the `mc_server_create()`:
+
+   ```
+   ret = mc_server_create(&g_server_h);
+   ```
+2. Retrieve the client list using the `mc_server_foreach_client()`:
+
+   ```
+   bool
+   activated_client_cb(const char *client_name, void *user_data)
+   {
+     GList **client_list = (GList **)user_data;
+
+     if (!client_list || !client_name) return FALSE;
+     *client_list = g_list_append(*client_list, g_strdup(client_name));
+
+     return TRUE;
+   }
+
+   GList *client_list = NULL;
+
+   ret = mc_server_foreach_client(g_server_h, activated_client_cb, &client_list);
+   ```
+
+
+## Updating and Retrieving Playback
+
+To update the playback information on the server side:
 
 1. Create the media controller server handle using the `mc_server_create()`:
 
@@ -102,12 +184,26 @@ To update the metadata and playback information on the server side:
    ret = mc_server_create(&g_server_h);
    ```
 
-2. Set the metadata or playback information to be updated using the corresponding `mc_server_set_XXX()`, and then update the metadata or playback information using the corresponding `mc_server_update_XXX()`.
+2. Set the playback information to be updated using the corresponding `mc_server_set_XXX()`, and then update the playback information using the corresponding `mc_server_update_playback_info()`.
 
    For example, to update the playback state information, set the information to be updated using the `mc_server_set_playback_state()`, and then update the information using the `mc_server_update_playback_info()`:
 
    ```
    ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
+
+   ret = mc_server_update_playback_info(g_mc_server);
+   ```
+
+   Below APIs are set at the same time.
+
+   ```
+   ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
+   ret = mc_server_set_playback_position(g_mc_server, 150);
+   ret = mc_server_set_playlist_item_index(g_mc_server, 10);	//only Tizen 4.0 for Mobile
+   or
+   ret = mc_server_set_playlist_item_info(g_mc_server, "my_favoriates", 10);	//since Tizen 5.0
+   ret = mc_server_set_playback_content_type(g_mc_server, MC_CONTENT_TYPE_MUSIC);	//since Tizen 5.0
+   ret = mc_server_set_content_age_rating(g_mc_server, MC_CONTENT_RATING_7_PLUS);	//since Tizen 5.0
 
    ret = mc_server_update_playback_info(g_mc_server);
    ```
@@ -118,7 +214,7 @@ To update the metadata and playback information on the server side:
    mc_server_destroy(g_server_h);
    ```
 
-To retrieve the metadata and playback information on the client side:
+To retrieve the playback information on the client side:
 
 1. Create the media controller client handle using the `mc_client_create()`:
 
@@ -136,21 +232,34 @@ To retrieve the metadata and playback information on the client side:
    dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
    ```
 
-3. Retrieve the metadata or playback information from the server using the corresponding `mc_client_get_server_XXX()`. Use the server name retrieved in the previous step to identify the server.
+3. Retrieve the playback information from the server using the corresponding `mc_client_get_server_XXX()`. Use the server name retrieved in the previous step to identify the server.
 
-   For example, to retrieve the playback information from the server, use the `mc_client_get_server_playback_info()`:
+   To retrieve the playback information from the server, use the `mc_client_get_server_playback_info()`:
 
    ```
    mc_playback_h playback = NULL;
    mc_playback_states_e playback_state;
+   unsigned long long position = 0;
+   char *playlist_name = NULL;
+   char *index = NULL;
+   mc_content_type_e content_type;
+   mc_content_age_rating_e age_rating;
+
 
    ret = mc_client_get_server_playback_info(g_client_h, server_name, &playback);
 
    ret = mc_client_get_playback_state(playback, &playback_state);
-   dlog_print(DLOG_DEBUG, LOG_TAG, "Playback State: %d\n", playback_state);
-   ```
 
-   The `mc_client_get_playback_state()` retrieves the playback state from the playback information returned by the `mc_client_get_server_playback_info()`.
+   ret = mc_client_get_playback_position(playback, &position);
+
+   ret = mc_client_get_playlist_item_index(playback, &index);	//only Tizen 4.0 for Mobile
+
+   ret = mc_client_get_playlist_item_info(playback, &playlist_name, &index);	//since Tizen 5.0
+
+   ret = mc_client_get_playback_content_type(playback, &content_type);	//since Tizen 5.0
+
+   ret = mc_client_get_age_rating(playback, &age_rating);	//since Tizen 5.0
+   ```
 
 4. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
 
