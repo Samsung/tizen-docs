@@ -90,7 +90,7 @@ To show or hide softkey service window when your applications's window is activa
 
 ## Get Visibility Status of Softkey Window
 
-To know the current visible state of softkey service's window, call the `tzsh_softkey_global_visible_get` function. The softkey service's window may be visible or invisible on the screen.
+To know the current visible state of softkey service's window, call the `tzsh_softkey_global_visible_get` function. The softkey service's window will be visible or invisible depend on visible state.
 
 ```
    int ret;
@@ -142,7 +142,7 @@ To make the softkey service's window can expandable or not, call the `tzsh_softk
 
 ## Get Expandable Status of Softkey Window
 
-To know the state of current expandable state of softkey service's window, call the `tzsh_softkey_global_expand_state_get` function. The softkey service's window may be expandable or inexpandable.
+To know the state of current expandable state of softkey service's window, call the `tzsh_softkey_global_expand_state_get` function. The softkey service's window will be expandable or inexpandable depend on expandable state.
 
 ```
    int ret;
@@ -194,7 +194,7 @@ To make the softkey service's window to be opaque or transparent, call the `tzsh
 
 ## Get Opacity State of Softkey Window
 
-To know the current opacity state of softkey service's window, call the `tzsh_softkey_global_opacity_state_get` function. The softkey service's window may be opaque or transparent.
+To know the current opacity state of softkey service's window, call the `tzsh_softkey_global_opacity_state_get` function. The softkey service's window will be opaque or transparent depend on opacity state.
 
 ```
    int ret;
