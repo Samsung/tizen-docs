@@ -528,7 +528,7 @@
 ###### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
 #### Tizen Window System Shell
-##### [Overview](/application/native/guides/ui/tizen-ws-shell/overview.md)
+##### [Overview](/application/native/guides/ui/tizen-ws-shell/index.md)
 ##### [TZSH-Quickpanel](/application/native/guides/ui/tizen-ws-shell/tzsh-quickpanel.md)
 ##### [TZSH-Softkey](/application/native/guides/ui/tizen-ws-shell/tzsh-softkey.md)
 
