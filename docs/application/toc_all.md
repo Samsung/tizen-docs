@@ -527,7 +527,10 @@
 ###### [Properties](/application/native/guides/ui/dali/properties.md)
 ###### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
-#### [Tizen Window System Shell](/application/native/guides/ui/tizen-ws-shell.md)
+#### Tizen Window System Shell
+##### [Overview](/application/native/guides/ui/tizen-ws-shell/overview.md)
+##### [TZSH-Quickpanel](/application/native/guides/ui/tizen-ws-shell/tzsh-quickpanel.md)
+##### [TZSH-Softkey](/application/native/guides/ui/tizen-ws-shell/tzsh-softkey.md)
 
 ### Localization
 #### [Overview](/application/native/guides/internationalization/overview.md)

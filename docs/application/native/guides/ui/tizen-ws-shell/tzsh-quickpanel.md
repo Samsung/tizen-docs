@@ -1,26 +1,14 @@
-# Tizen Window System Shell
+# TZSH-quickpanel
 
 
-The TZSH is an interface for manipulating windows of the system GUI services such as the quickpanel and the softkey. It provides C libraries that allow you to control windows of system GUI services and get notifications about the state changes of each window within an application.
-
-Since, the system GUI service runs different process, all of operations of the TZSH are performed using the inter-process communication (IPC). It is needed to enable communication between system GUI service processes and separated user application process using the display server. The following figure illustrates a simple software architecture of the TZSH:
-
-**Figure: Layer diagram for the Tizen window system shell**
-
-![Layer diagram for the Tizen window system shell](./media/tzsh_arch.png)
-
-To support each system GUI service in Tizen, the TZSH provides the following libraries:
-
-- **tzsh-quickpanel**: For the quickpanel window which shows notifications and system setup widgets.
-
-- **tzsh-softkey**: For the softkey window which shows the device back and home buttons.
+tzsh-quickpanel is library for control quickpanel service window which shows notifications and system setup widgets. You can use the tzsh-quickpanel to get various information from quickpanel service window.
 
 Not all applications require to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service's window. For example, media player application needs to close the quickpanel window during playback of video. In this case, you can use the tzsh-quickpanel library.
 
 
 ## Prerequisites
 
-To use the functions and structures of the TZSH quickpanel API (in [mobile](../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) and [wearable](../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) applications), include the `<tzsh_quickpanel.h>` header file in your application:
+To use the functions and structures of the TZSH quickpanel API (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) applications), include the `<tzsh_quickpanel.h>` header file in your application:
 
 ```
 #include <tzsh_quickpanel.h>
@@ -28,7 +16,7 @@ To use the functions and structures of the TZSH quickpanel API (in [mobile](../.
 
 
 ## Create TZSH Quickpanel Handler
-Once you have created the main window for your application, call the `tzsh_quickpanel_create_with_type` function with a native window ID to create `tzsh_quickpanel_h` structure (in [mobile](../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac) and [wearable](../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac) applications).
+Once you have created the main window for your application, call the `tzsh_quickpanel_create_with_type` function with a native window ID to create `tzsh_quickpanel_h` structure (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac) applications).
 
 ```
 #include <Elementary.h>
@@ -125,8 +113,8 @@ init(Evas_Object *main_win)
 ```
 
 
-## Destroy TZSH Quickpanel and TZSH Structures
-When TZSH quickpanel and TZSH structures are no longer needed, free the structures as follows:
+## Destroy TZSH Quickpanel
+When TZSH quickpanel are no longer needed, free the structures as follows:
 
 ```
 static void
