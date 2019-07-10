@@ -194,7 +194,7 @@ To update the playback information on the server side:
    ret = mc_server_update_playback_info(g_mc_server);
    ```
 
-   Below APIs are set at the same time.
+   Below APIs can be set at the same time.
 
    ```
    ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
@@ -222,7 +222,9 @@ To retrieve the playback information on the client side:
    ret = mc_client_create(&g_client_h);
    ```
 
-2. Retrieve the server name using the `mc_client_get_latest_server_info()`:
+2. Retrieve the [server name](#retrieving-application-list)
+
+   For example, get the latest server name using the `mc_client_get_latest_server_info()`:
 
    ```
    char *server_name = NULL;
