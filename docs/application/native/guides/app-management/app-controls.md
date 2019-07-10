@@ -675,9 +675,7 @@ You can define and handle each application control action.
 
 - Defining the application control action
 
-  From Tizen 5.5, the `id` attribute is added on the `<app-control>` element. You can define the name of the application control action using the `id` attribute of the `<app-control>` element.
-
-  For example:
+  From Tizen 5.5, the `id` attribute is added on the `<app-control>` element. You can define the name of the application control action using the `id` attribute of the `<app-control>` element, for example:
   ```
   <ui-application appid="org.tizen.hello" exec="uiapp" hw-acceleration="on" launch_mode="single" multiple="false" nodisplay="false" taskmanage="true" type="capp">
     <label>UI Application</label>
@@ -702,7 +700,7 @@ You can define and handle each application control action.
    > The `app_control_action_cb()` callback function is called. And then, the `app_control_cb()` callback function is called.
 
 
-In this use case, the application registers the application control action handle based on the content:
+To register the application control action handle based on the content use following code:
 
 ```
 #include <app.h>
