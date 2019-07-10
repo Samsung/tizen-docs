@@ -70,19 +70,14 @@ To show or hide softkey service window when your applications's window is activa
 ```
    int ret;
 
-   if (show)
-   {
+   if (show) {
       ret = tzsh_softkey_global_show(tzsh_sk); /* To show softkey service window */
-      if (ret != TZSH_ERROR_NONE)
-      {
+      if (ret != TZSH_ERROR_NONE) {
          /* error */
       }
-   }
-   else
-   {
+   } else {
       ret = tzsh_softkey_global_hide(tzsh_sk); /* To hide softkey service window */
-      if (ret != TZSH_ERROR_NONE)
-      {
+      if (ret != TZSH_ERROR_NONE) {
          /* error */
       }
    }
@@ -97,20 +92,15 @@ To know the current visible state of softkey service's window, call the `tzsh_so
    tzsh_softkey_state_visible_e state;
 
    ret = tzsh_softkey_global_visible_state_get(tzsh_sk, &state);
-   if (ret != TZSH_ERROR_NONE)
-   {
+   if (ret != TZSH_ERROR_NONE) {
       /* error */
    }
-   if (state == TZSH_SOFTKEY_STATE_VISIBLE_SHOW)
-   {
+
+   if (state == TZSH_SOFTKEY_STATE_VISIBLE_SHOW) {
       /* visible state */
-   }
-   else if (state == TZSH_SOFTKEY_STATE_VISIBLE_HIDE)
-   {
+   } else if (state == TZSH_SOFTKEY_STATE_VISIBLE_HIDE) {
       /* invisible state */
-   }
-   else
-   {
+   } else {
       /* error */
    }
 ```
@@ -122,19 +112,14 @@ To make the softkey service's window can expandable or not, call the `tzsh_softk
 ```
    int ret;
 
-   if (expandable)
-   {
+   if (expandable) {
       ret = tzsh_softkey_global_expand_state_set(tzsh_sk, TZSH_SOFTKEY_STATE_EXPAND_ON);
-      if (ret)
-      {
+      if (ret) {
          /* error */
       }
-   }
-   else
-   {
+   } else {
       ret = tzsh_softkey_global_expand_state_set(tzsh_sk, TZSH_SOFTKEY_STATE_EXPAND_OFF);
-      if (ret)
-      {
+      if (ret) {
          /* error */
       }
    }
@@ -149,20 +134,15 @@ To know the state of current expandable state of softkey service's window, call 
    tzsh_softkey_expand_state_e state;
 
    ret = tzsh_softkey_global_expand_state_get(tzsh_sk, &state);
-   if (ret != TZSH_ERROR_NONE)
-   {
+   if (ret != TZSH_ERROR_NONE) {
       /* error */
    }
-   if (state == TZSH_SOFTKEY_STATE_EXPAND_ON)
-   {
+
+   if (state == TZSH_SOFTKEY_STATE_EXPAND_ON) {
       /* expand state */
-   }
-   else if (state == TZSH_SOFTKEY_STATE_EXPAND_OFF)
-   {
+   } else if (state == TZSH_SOFTKEY_STATE_EXPAND_OFF) {
       /* inexpand state */
-   }
-   else
-   {
+   } else {
       /* error */
    }
 ```
@@ -174,19 +154,14 @@ To make the softkey service's window to be opaque or transparent, call the `tzsh
 ```
    int ret;
 
-   if (opaque)
-   {
+   if (opaque) {
       ret = tzsh_softkey_global_opacity_state_set(tzsh_sk, TZSH_SOFTKEY_STATE_OPACITY_OPAQUE);
-      if (ret != TZSH_ERROR_NONE)
-      {
+      if (ret != TZSH_ERROR_NONE) {
          /* error */
       }
-   }
-   else
-   {
+   } else {
       ret = tzsh_softkey_global_opacity_state_set(tzsh_sk, TZSH_SOFTKEY_STATE_OPACITY_TRANSPARENT);
-      if (ret != TZSH_ERROR_NONE)
-      {
+      if (ret != TZSH_ERROR_NONE) {
          /* error */
       }
    }
@@ -201,20 +176,15 @@ To know the current opacity state of softkey service's window, call the `tzsh_so
    tzsh_softkey_opacity_state_e state;
 
    ret = tzsh_softkey_global_opacity_state_get(tzsh_sk, &state);
-   if (ret != TZSH_ERROR_NONE)
-   {
+   if (ret != TZSH_ERROR_NONE) {
       /* error */
    }
-   if (state == TZSH_SOFTKEY_STATE_OPACITY_OPAQUE)
-   {
+
+   if (state == TZSH_SOFTKEY_STATE_OPACITY_OPAQUE) {
       /* opaque state */
-   }
-   else if (state == TZSH_SOFTKEY_STATE_OPACITY_TRANSPARENT)
-   {
+   } else if (state == TZSH_SOFTKEY_STATE_OPACITY_TRANSPARENT) {
       /* transparent state */
-   }
-   else
-   {
+   } else {
       /* error */
    }
 ```
