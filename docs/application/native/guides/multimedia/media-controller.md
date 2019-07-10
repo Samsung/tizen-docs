@@ -7,7 +7,7 @@ The main features of the Media Controller API include:
 
 - Retrieving Application list
 
-  You can get activated server and client applications.(#retrieving-application-list) So by this you can conmunicate with applications you want.
+  You can [get activated server and client applications.](#retrieving-application-list) So by this you can conmunicate with applications you want.
   And client can get the latest server information even though the application is not activated currently. The last server which changed state to "MC_PLAYBACK_STATE_PLAYING" become the latest server.
 
   > **Note**
