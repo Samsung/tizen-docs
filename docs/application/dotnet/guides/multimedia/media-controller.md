@@ -5,6 +5,10 @@ You can establish communication between a media control server and a media contr
 
 The main media controller features include:
 
+- Updating and Retrieving Playlist
+
+    You can [create a playlist](#updating-and-retrieving-playlist) on the server side, and then retrieve that information on the client side.
+
 -   Updating and retrieving information
 
     You can [update the playback information](#updating-and-retrieving-information) on the server side, and then retrieve that information on the client side.
@@ -12,10 +16,6 @@ The main media controller features include:
     The media control server provides current information about the registered application that you can send to the client.
 
     When the client requests the information, the media control server updates the state information of an active application before transferring the data. If the application is not running when the client request arrives, the media control server transfers the latest information.
-
-- Updating and Retrieving Playlist
-
-    You can [create a playlist](#updating-and-retrieving-playlist) on the server side, and then retrieve that information on the client side.
 
 - Sending and processing commands
 
