@@ -628,7 +628,7 @@ To send a search command to the server from the client side:
      GList **server_list = (GList **)user_data;
 
      if (!server_list || !server_name) return FALSE;
-     *server_list = g_list_append(*client_list, g_strdup(server_name));
+     *server_list = g_list_append(*server_list, g_strdup(server_name));
 
      return TRUE;
    }
