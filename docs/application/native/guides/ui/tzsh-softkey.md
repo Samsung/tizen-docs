@@ -1,7 +1,7 @@
 # TZSH-Softkey
 
 
-tzsh-softkey is library for control the softkey window which shows the software buttons such as back and home buttons. You can use the tzsh-softkey manipulate softkey window's visible state, expandable state and opacity state.
+tzsh-softkey is library for control the softkey window which shows the software buttons such as back and home buttons. You can manipulate the tzsh-softkey manipulate softkey window's visible state, expandable state and opacity state.
 Each of states are taking following properties.
 
 - **Visible State**: You can show or hide the softkey window. If show, the softkey window will appear. And hide, the softkey window will be hidden.
@@ -13,7 +13,7 @@ If you set expand on, then expandable button of the softkey window will be shown
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
 
 - **Opacity State**: You can manipulate opaque state of the softkey window.
-      if you set opacity_opaque, background of the softkey window turns 24bit color opaque window like below.
+      if you set opacity opaque, background of the softkey window turns 24bit color opaque window like below.
 ![Expand Off Opaque](./media/tzsh_softkey_expand_off_opaque.png)
    Or, if you set opacity transparent, background will turn to 32bit colored transparent window.
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
@@ -28,7 +28,7 @@ To use the functions and structures of the TZSH softkey API (in mobile and weara
 
 ## Create TZSH Softkey Handler
 
-Once you have created the main window for your application, call the `tzsh_create and tzsh_softkey_create` function with a native window ID to create `tzsh_softkey_h` structure (in mobile and wearable applications).
+Once you have create the main window for your application, call the `tzsh_create and tzsh_softkey_create` function with a native window ID to create `tzsh_softkey_h` structure (in mobile and wearable applications).
 	
 ```
 #include <Elementary.h>
@@ -90,7 +90,7 @@ To show or hide softkey window when your applications's window is activated, cal
 
 ## Get Visibility Status of Softkey Window
 
-To know the state of current visibility of softkey service's window, call the `tzsh_softkey_global_visible_get` function. The softkey service's window may be visible or invisible on the screen.
+To know the current visible state of softkey service's window, call the `tzsh_softkey_global_visible_get` function. The softkey service's window may be visible or invisible on the screen.
 
 ```
    int ret;
@@ -142,7 +142,7 @@ To make the softkey service's window can expandable or not, call the `tzsh_softk
 
 ## Get Expandable Status of Softkey Window
 
-To know the state of current expandable state of softkey service's window, call the `tzsh_softkey_global_expand_state_get` function. The softkey services's window may be expandable or inexpandable
+To know the state of current expandable state of softkey service's window, call the `tzsh_softkey_global_expand_state_get` function. The softkey service's window may be expandable or inexpandable.
 
 ```
    int ret;
@@ -194,7 +194,7 @@ To make the softkey service's window to be opaque or transparent, call the `tzsh
 
 ## Get Opacity State of Softkey Window
 
-To know the current opacity state of softkey service's window, call the `tzsh_softkey_global_opacity_state_get` function:
+To know the current opacity state of softkey service's window, call the `tzsh_softkey_global_opacity_state_get` function. The softkey service's window may be opaque or transparent.
 
 ```
    int ret;
