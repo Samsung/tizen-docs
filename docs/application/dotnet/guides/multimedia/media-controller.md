@@ -7,7 +7,7 @@ The main media controller features include:
 
 -   Updating and retrieving information
 
-    You can [update the metadata and playback information](#updating-and-retrieving-information) on the server side, and then retrieve that information on the client side.
+    You can [update the playback information](#updating-and-retrieving-information) on the server side, and then retrieve that information on the client side.
 
     The media control server provides current information about the registered application that you can send to the client.
 
@@ -27,7 +27,7 @@ The main media controller features include:
 
  - Media Control Metadata Properties
 
-     You can [set the metadata](#media-control-metadata-properties) on the server side, and then get that metadata on the client side.
+     You can [set the metadata](#setting-and-getting-media-control-metadata) on the server side, and then get that metadata on the client side.
 
 ## Prerequisites
 
@@ -35,14 +35,14 @@ To enable your application to use the media controller functionality:
 
 1. The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-   - To use the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class
+   - To use the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
        ```
        <privileges>
           <privilege>http://tizen.org/privilege/mediacontroller.client</privilege>
        </privileges>
        ```
 
-   - To use the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class
+   - To use the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
        ```
        <privileges>
           <privilege>http://tizen.org/privilege/mediacontroller.server</privilege>
@@ -66,7 +66,7 @@ To update the playback information on the server side, and to retrieve it on the
         MediaControlServer.Start();
         ```
 
-    2. Update the playback information using the `SetPlaybackState()` methods:
+    2. Update the playback information using the `SetPlaybackState()` method:
 
         ```csharp
         MediaControlServer.SetPlaybackState(MediaControlPlaybackState.Playing, currentPosition);
@@ -165,7 +165,7 @@ To get playback capability from the client and to set it on the server side, fol
     var playCommandCapability = mediaController.GetPlaybackCapability(MediaControlPlaybackCommand.Play);
     ```
 
-## Media Control Metadata Properties
+## Setting and Getting Media Control Metadata
 
 To get metadata from the client and to set it on the server side, follow these steps:
 
@@ -185,7 +185,7 @@ To get metadata from the client and to set it on the server side, follow these s
     var metadata = mediaController.GetMetadata();
     ```
 
-The following table lists all the media control metadata properties the client can request from the server.
+The following table lists all the media control metadata properties the client can request from the server:
 
 **Table: Media control metadata properties**
 
@@ -208,5 +208,5 @@ The following table lists all the media control metadata properties the client c
 
 
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher
