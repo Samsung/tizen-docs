@@ -22,6 +22,16 @@ The main features of the Media Controller API include:
 
   When the client requests the information, the media controller server updates the state information of an active application before transferring the data. If the application is not running when the client request arrives, the media controller server transfers the latest information.
 
+- Updating and retrieving metadata
+
+  You can [update the metadata](#updateing-and-retrieving-metadata) on the server side, and then retrieve the metadata on the client side.
+  
+  The media controller server can provide metadata of current playing content.
+  
+  > **Note**
+  >
+  > Since Tizen 5.5 Season, Episode and Resolution support
+
 - Updating and retrieving playlist
 
   You can [update the playlist information](#updating-and-retrieving-playlist) on the server side, and then retrieve the playlist information on the client side.
@@ -184,7 +194,7 @@ To update the playback information on the server side:
    ret = mc_server_create(&g_server_h);
    ```
 
-2. Set the playback information to be updated using the corresponding `mc_server_set_XXX()`, and then update the playback information using the corresponding `mc_server_update_playback_info()`.
+2. Set the playback information to be updated using the corresponding `mc_server_set_XXX()`, and then update the playback information using the `mc_server_update_playback_info()`.
 
    For example, to update the playback state information, set the information to be updated using the `mc_server_set_playback_state()`, and then update the information using the `mc_server_update_playback_info()`:
 
@@ -270,9 +280,160 @@ To retrieve the playback information on the client side:
    ```
 
 
+## Updating and Retrieving Metadata
+
+To update the metadata information on the server side:
+
+1. Create the media controller server handle using the `mc_server_create()`:
+
+   ```
+   ret = mc_server_create(&g_server_h);
+   ```
+
+2. Set the metadata to be updated using `mc_server_set_metadata()` and then update the metadata using the `mc_server_update_metadata()`.
+
+   ```
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_TITLE, "title_1");
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_ARTIST, "artist_1");
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_ALBUM, "album_1");
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_AUTHOR, "author_1");
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_GENRE, "genre_1");
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_DURATION, "duration_1");
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_DATE, "date_1");
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_COPYRIGHT, "copyright_1");
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_DESCRIPTION, "desc_1");
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_TRACK_NUM, "tracknum_1");
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_PICTURE, "picture_1");
+   
+   ret = mc_server_update_metadata(g_server_h);
+   ```
+   
+   You should encode the values for the MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, MC_META_MEDIA_RESOLUTION. 
+   To set the proper information, you should encode the metadata values using the corresponding `mc_metadata_encode_XXX()`.
+   
+   ```
+   char *encoded_meta = NULL;
+   
+   //set season
+   mc_metadata_encode_season(8, "season_8", &encoded_meta);
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_SEASON, encoded_meta);
+   free(encoded_meta);
+   
+   //set episode
+   mc_metadata_encode_season(5, "episode_5", &encoded_meta);
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_EPISODE, encoded_meta);
+   free(encoded_meta);
+   
+   //set resolution
+   mc_metadata_encode_resolution(1920, 1280, &encoded_meta);
+   mc_server_set_metadata(g_server_h, MC_META_MEDIA_RESOLUTION, encoded_meta);
+   free(encoded_meta);
+   ```
+   
+  > **Note**
+  >
+  > MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, MC_META_MEDIA_RESOLUTION support Tizen 5.5 and Higher.
+  
+3. Destroy the media controller server handle using the `mc_server_destroy()`, when media controller server handle is no longer needed:
+
+   ```
+   mc_server_destroy(g_server_h);
+   ```
+   
+To retrieve the metadata on the client side:
+
+1. Create the media controller client handle using the `mc_client_create()`:
+
+   ```
+   ret = mc_client_create(&g_client_h);
+   ```
+
+2. Retrieve the [server name](#retrieving-application-list)
+
+   For example, get the latest server name using the `mc_client_get_latest_server_info()`:
+
+   ```
+   char *server_name = NULL;
+   mc_server_state_e server_state;
+
+   ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
+   dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
+   ```
+
+3. Retrieve the metadata from the server using the `mc_client_get_server_metadata()`. Use the server name retrieved in the previous step to identify the server.
+
+   To retrieve the playback information from the server, use the `mc_client_get_server_playback_info()`:
+
+   ```
+   mc_metadata_h metadata_h = NULL;
+   char *value = NULL;
+   int i = 0;
+   
+   ret = mc_client_get_server_metadata(g_client_h, server_name, &metadata_h);
+   
+   for (i = MC_META_MEDIA_TITLE; i <=  MC_META_MEDIA_PICTURE; i++) {
+      mc_metadata_get(metadata_h, i, &value);
+      ...
+      free(value);
+   }
+   ```
+
+   You can get encoded value for the MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, MC_META_MEDIA_RESOLUTION. 
+   To get the proper information, you should decode the metadata values using the corresponding `mc_metadata_decode_XXX()`.
+   
+   ```
+   mc_metadata_h metadata_h = NULL;
+   char *value = NULL;
+   int num = 0;
+   char *title = NULL;
+   unsigned int width = 0;
+   unsigned int height = 0;
+   
+   ret = mc_client_get_server_metadata(g_client_h, server_name, &metadata_h);
+   
+   //get season
+   ret = mc_metadata_get(metadata_h, MC_META_MEDIA_SEASON, &value);
+   
+   mc_metadata_decode_season(value, &num, &title);
+   ...
+   free(title);
+   free(value);
+   
+   //get episode
+   ret = mc_metadata_get(metadata_h, MC_META_MEDIA_EPISODE, &value);
+   
+   mc_metadata_decode_episode(value, &num, &title);
+   ...
+   free(title);
+   free(value);
+   
+   //get resolution
+   ret = mc_metadata_get(metadata_h, MC_META_MEDIA_RESOLUTION, &value);
+   mc_metadata_decode_resolution(value, &width, &height);
+   ...
+   
+   free(value);
+   ```
+   
+  > **Note**
+  >
+  > MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, MC_META_MEDIA_RESOLUTION support Tizen 5.5 and Higher.
+  
+4. Destroy the metadata handle using the `mc_metadata_destroy()`, when metadata handle is no longer needed:
+
+   ```
+   mc_metadata_destroy(metadata_h);
+   ```
+
+5. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
+
+   ```
+   mc_client_destroy(g_client_h);
+   ```
+
 ## Updating and Retrieving Playlist
 
-To update the playlist and metadata information on the server side:
+To update the playlist and item's metadata information on the server side:
 
 1. Create the media controller server handle using the `mc_server_create()`:
 
@@ -303,11 +464,12 @@ To update the playlist and metadata information on the server side:
 
    ret = mc_server_update_playlist_done(g_server_h, playlist_h);
    ```
-4. When no longer needed, destroy the playlist handle using the `mc_playlist_destroy()`:
+4. Destroy the playlist handle using the `mc_playlist_destroy()`, when playlist handle is no longer needed:
 
    ```
    mc_playlist_destroy(playlist_h);
    ```
+
 5. Destroy the media controller server handle using the `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
