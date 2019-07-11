@@ -33,7 +33,7 @@ The main media controller features include:
 
 To enable your application to use the media controller functionality:
 
-1. The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+- The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    - To use the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
        ```
@@ -49,26 +49,26 @@ To enable your application to use the media controller functionality:
        </privileges>
        ```
 
-2. To use the methods and properties of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html), [Tizen.Multimedia.Remoting.MediaControllerManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html), and `Tizen.Multimedia.Remoting.MediaControlServer` classes, include the [Tizen.Multimedia.Remoting](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.html) namespace in your application:
+- To use the methods and properties of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html), [Tizen.Multimedia.Remoting.MediaControllerManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html), and [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) classes, include the [Tizen.Multimedia.Remoting](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.html) namespace in your application:
 
     ```csharp
     using Tizen.Multimedia.Remoting;
     ```
 
-3.  Start the media control server using the `Start()` methods of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+-  Start the media control server using the `Start()` methods of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
     MediaControlServer.Start();
     ```
 
-4. Create a new instance of the [Tizen.Multimedia.Remoting.MediaControllerManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html) class and retrieve the currently-active controllers and select one:
+- Create a new instance of the [Tizen.Multimedia.Remoting.MediaControllerManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControllerManager.html) class and retrieve the currently-active controllers and select one:
 
     ```csharp
     var mediaControllerManager = new MediaControllerManager();
     var mediaController = mediaControllerManager.GetActiveControllers().First();
     ```
 
-5. When server is no longer needed, stop the media control server using the `Stop()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class::
+- When server is no longer needed, stop the media control server using the `Stop()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class::
 
     ```csharp
     MediaControlServer.Stop();
@@ -96,7 +96,7 @@ To create a playlist from the server side and retrieve it on the client side, fo
     );
     ```
 
-2. To retrieve the playlist and metadata information on the client side, use the following code:
+2. To retrieve the playlist and [metadata](#setting-and-getting-media-control-metadata) information on the client side, use the following code:
 
     ```csharp
     mediaController.PlaylistUpdated += (s, e) =>
