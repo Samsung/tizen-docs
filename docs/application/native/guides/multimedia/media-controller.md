@@ -24,7 +24,7 @@ The main features of the Media Controller API include:
 
 - Updating and retrieving metadata
 
-  You can [update the metadata](#updateing-and-retrieving-metadata) on the server side, and then retrieve the metadata on the client side.
+  You can [update the metadata](#updating-and-retrieving-metadata) on the server side, and then retrieve the metadata on the client side.
   
   The media controller server can provide metadata of current playing content.
   
@@ -42,9 +42,9 @@ The main features of the Media Controller API include:
   >
   > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
-- Sending and processing commands to receive replies
+- Sending and Processing Commands
 
-  You can [send a command](#sending-and-processing-commands-to-receive-replies) to the server from the client side, and then process the command on the server side.
+  You can [send a command](#sending-and-processing-commands) to the server from the client side, and then process the command on the server side.
 
   You can [send a reply of the command](#send_command_reply) to the client from the server side, and then receive the reply on the client side.
 
@@ -52,7 +52,7 @@ The main features of the Media Controller API include:
   >
   > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
-- Sending and processing a custom event
+- Sending a custom event to the client
 
   You can [send a custom event](#sending-and-processing-a-custom-event) to the client from the server side, and then process the event on the client side.
 
@@ -424,7 +424,6 @@ To retrieve the metadata on the client side:
    ```
    mc_metadata_destroy(metadata_h);
    ```
-
 5. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
 
    ```
@@ -542,7 +541,7 @@ To retrieve the playlist and metadata information on the client side:
 > This feature supports Tizen 4.0 and Higher for Mobile.
 
 
-## Sending and Processing Commands to Receive Replies
+## sending and processing commands
 
 To send a command to the server from the client side:
 
@@ -552,8 +551,9 @@ To send a command to the server from the client side:
    ret = mc_client_create(&g_client_h);
    ```
 
-2. Retrieve the server name using the `mc_client_get_latest_server_info()`:
+2. Retrieve the [server name](#retrieving-application-list)
 
+   For example, get the latest server name using the `mc_client_get_latest_server_info()`:
    ```
    char *server_name = NULL;
    mc_server_state_e server_state;
@@ -562,6 +562,15 @@ To send a command to the server from the client side:
    dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
    ```
 
+3. Set the callback function if you want to get the result of your sent command from the server using the `mc_client_set_cmd_reply_received_cb()`.
+
+   ```
+   mc_playback_action_e playback_action = MC_PLAYBACK_ACTION_PLAY;
+   char *request_id = NULL;
+
+   ret = mc_client_set_cmd_reply_received_cb(g_client_h, server_name, playback_action, &request_id);
+   ```
+   
 3. Send the command to the server using the corresponding `mc_client_send_XXX_cmd()`. Use the server name retrieved in the previous step to identify the server.
 
    For example, to send a playback action change command to the server, use the `mc_client_send_playback_action_cmd()` with the new action defined in the third parameter:
@@ -570,12 +579,36 @@ To send a command to the server from the client side:
    mc_playback_action_e playback_action = MC_PLAYBACK_ACTION_PLAY;
    char *request_id = NULL;
 
+   //If you want to receive reply
    ret = mc_client_send_playback_action_cmd(g_client_h, server_name, playback_action, &request_id);
+   
+   //If you don't want to receive reply
+   ret = mc_client_send_playback_action_cmd(g_client_h, server_name, playback_action, NULL);
+   ```
+ 
+   Plus, you can send various commands using below APIs.
+   ```
+   char *request_id = NULL; //If you want to receive reply, set this
+   
+   mc_client_send_playback_position_cmd(g_client_h, server_name, 15000, NULL);
+   mc_client_send_shuffle_mode_cmd(g_client_h, server_name, MC_SHUFFLE_MODE_ON, NULL);
+   mc_client_send_repeat_mode_cmd(g_client_h, server_name, MC_REPEAT_MODE_OFF, NULL);
+   mc_client_send_playlist_cmd(g_client_h, server_name, "my_favorite", "1", MC_PLAYBACK_ACTION_PLAY, 0, NULL);
+   ```
+   
+   If you want to define your own commands to send to the server, use the `mc_client_send_custom_cmd()`.
+   ```
+   bundle *bundle_data = NULL;
+   
+   bundle_data = bundle_create();
+	 bundle_add_str(bundle_data, "key", "val");
+   
+   mc_client_send_custom_cmd(g_client_h, server_name, "custom_key", bundle_data, NULL);
+   bundle_free(bundle_data);
    ```
 
-   If you want to define your own commands to send to the server, use the `mc_client_send_custom_cmd()`.
-   The request_id will be passed to the `mc_client_cmd_reply_recieved_cb()`.
-
+  You can send search command as well. Please refer to [it](#sending-and-processing-a-search-command).
+   
 4. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
 
    ```
@@ -590,7 +623,7 @@ To process the received command on the server side:
    ret = mc_server_create(&g_server_h);
    ```
 
-2. Define the callback that is invoked when the server receives the command.
+2. Define and register the callback that is invoked when the server receives the command.
 
    For example, to define a callback for playback state change commands:
 
@@ -600,9 +633,9 @@ To process the received command on the server side:
    {
        dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request Id: %s, Playback action: %d\n", client_name, request_id, action);
    }
+   
+   ret = mc_server_set_playback_action_cmd_received_cb(g_mc_server, playback_action_cmd_received_cb, NULL);
    ```
-
-3. Register the callback:
 
    - To register a callback for playback state change commands, use the `mc_server_set_playback_action_cmd_received_cb()`.
    - To register a callback for playback position change commands, use the `mc_server_set_playback_position_cmd_received_cb()`.
@@ -611,13 +644,7 @@ To process the received command on the server side:
    - To register a callback for played item, playback state and playback position change commands in playlist, use the `mc_server_set_playlist_cmd_received_cb()`.
    - To register a callback for a custom command, use the `mc_server_set_custom_cmd_received_cb()`.
 
-   For example, to register a callback for playback state change commands:
-
-   ```
-   ret = mc_server_set_playback_action_cmd_received_cb(g_mc_server, playback_action_cmd_received_cb, NULL);
-   ```
-
-4. Destroy the media controller server handle using the `mc_server_destroy()`, when media controller server handle is no longer needed:
+3. Destroy the media controller server handle using the `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
    mc_server_destroy(g_server_h);
@@ -636,7 +663,7 @@ To send the reply of completed command on the server side:
 <a name="send_command_reply"></a>
 To receive the reply of completed command on the client side:
 
-1. Define the callback that is invoked when the client receives the reply:
+1. Define and register the callback that is invoked when the client receives the reply:
 
    ```
    void
@@ -644,11 +671,7 @@ To receive the reply of completed command on the client side:
    {
        dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Request Id: %s, Result Code: %d\n", server_name, request_id, result_code);
    }
-   ```
-
-2. Register the callback:
-
-   ```
+   
    ret = mc_client_set_cmd_reply_received_cb(g_client_h, cmd_reply_received_cb, NULL);
    ```
 
