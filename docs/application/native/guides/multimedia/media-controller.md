@@ -5,7 +5,7 @@ You can establish communication between a media controller server and a media co
 
 The main features of the Media Controller API include:
 
-- Retrieving Application list
+- Retrieving application list
 
   You can [retrieve the server and the client application list](#retrieving-application-list) to communicate with
 the applications you want.
@@ -31,7 +31,7 @@ the applications you want.
   
   > **Note**
   >
-  > Since Tizen 5.5 Season, Episode and Resolution support
+  > Since Tizen 5.5 Season, Episode, and Resolution are supported.
 
 - Updating and retrieving playlist
 
@@ -112,7 +112,7 @@ To enable your application to use the media controller functionality:
      This guide uses a global variable for the handle.
 
 
-## Retrieving Application list
+## Retrieving Application List
 
 To retrieve the latest server information on the client side, follow these steps:
 
@@ -205,7 +205,7 @@ To update the playback information on the server side, follow these steps:
    ret = mc_server_update_playback_info(g_mc_server);
    ```
 
-   Below APIs can be set at the same time.
+   The following APIs can be set at the same time:
 
    ```
    ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
