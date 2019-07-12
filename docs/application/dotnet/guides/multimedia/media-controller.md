@@ -5,7 +5,7 @@ You can establish communication between a media control server and a media contr
 
 The main media controller features include:
 
-- Updating and Retrieving Playlist
+- Updating and retrieving playlist
 
     You can [create a playlist](#updating-and-retrieving-playlist) on the server side, and then retrieve that information on the client side.
 
@@ -21,11 +21,11 @@ The main media controller features include:
 
     You can [send a command](#sending-and-processing-commands) on the client side, and then process the command on the server side.
 
-- Setting and Getting Playback Capability
+- Setting and getting playback capability
 
     You can [set the playback capability](#setting-and-getting-playback-capability) on the server side, and then get that capability on the client side.
 
- - Media Control Metadata Properties
+ - Media control metadata properties
 
      You can [set the metadata](#setting-and-getting-media-control-metadata) on the server side, and then get that metadata on the client side.
 
@@ -68,7 +68,7 @@ To enable your application to use the media controller functionality:
     var mediaController = mediaControllerManager.GetActiveControllers().First();
     ```
 
-- When server is no longer needed, stop the media control server using the `Stop()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class::
+- When server is no longer needed, stop the media control server using the `Stop()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
 
     ```csharp
     MediaControlServer.Stop();
