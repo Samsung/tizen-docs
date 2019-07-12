@@ -31,7 +31,7 @@ the applications you want.
   
   > **Note**
   >
-  > Since Tizen 5.5 Season, Episode, and Resolution are supported.
+  > Since Tizen 5.5 metadata for Season, Episode, and Resolution are supported.
 
 - Updating and retrieving playlist
 
@@ -43,7 +43,7 @@ the applications you want.
   >
   > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
-- Sending and Processing Commands
+- Sending and processing Commands
 
   You can [send a command](#sending-and-processing-commands) to the server from the client side, and then process the command on the server side.
 
