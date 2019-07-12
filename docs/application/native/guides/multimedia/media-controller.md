@@ -310,6 +310,7 @@ To update the metadata information on the server side, follow these steps:
    ```
    
    You must encode the values for the MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, MC_META_MEDIA_RESOLUTION. 
+   
    To set the proper information, you must encode the metadata values using the corresponding `mc_metadata_encode_XXX()` function.
    
    ```
