@@ -378,6 +378,7 @@ To retrieve the metadata on the client side, follow these steps:
    ```
 
    You can get the encoded values for MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE and MC_META_MEDIA_RESOLUTION as shown in the following code snippet. 
+   
    To get the proper information, you must decode the metadata values using the corresponding `mc_metadata_decode_XXX()` function.
    
    ```
