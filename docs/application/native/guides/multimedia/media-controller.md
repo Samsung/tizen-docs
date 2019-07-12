@@ -377,7 +377,7 @@ To retrieve the metadata on the client side, follow these steps:
    }
    ```
 
-   You can get the encoded values for MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE and MC_META_MEDIA_RESOLUTION as above. 
+   You can get the encoded values for MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE and MC_META_MEDIA_RESOLUTION as shown in the following code snippet. 
    To get the proper information, you must decode the metadata values using the corresponding `mc_metadata_decode_XXX()` function.
    
    ```
@@ -540,7 +540,7 @@ To retrieve the playlist and metadata information on the client side, follow the
 > This feature supports Tizen 4.0 and Higher for Mobile.
 
 
-## Sending and Processing commands
+## Sending and Processing Commands
 
 To send a command to the server from the client side, follow these steps:
 
@@ -640,7 +640,7 @@ To process the received command on the server side, follow these steps:
    - To register a callback for playback position change commands, use `mc_server_set_playback_position_cmd_received_cb()`.
    - To register a callback for shuffle mode change commands, use `mc_server_set_shuffle_mode_cmd_received_cb()`.
    - To register a callback for repeat mode change commands, use `mc_server_set_repeat_mode_cmd_received_cb()`.
-   - To register a callback for played item, playback state and playback position change commands in playlist, use  `mc_server_set_playlist_cmd_received_cb()`.
+   - To register a callback for played item, playback state, and playback position change commands in playlist, use  `mc_server_set_playlist_cmd_received_cb()`.
    - To register a callback for a custom command, use `mc_server_set_custom_cmd_received_cb()`.
 
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
@@ -710,7 +710,7 @@ To send a custom event to the client from the server side, follow these steps:
 
 3. Send the event to the client using `mc_server_send_custom_event()`. Use the client name retrieved in the previous step to identify the client.
 
-   For example, to send a your own event to the client, use `mc_server_send_custom_event()` with the event as the third parameter:
+   For example, to send a custom event to the client, use `mc_server_send_custom_event()` with the event as the third parameter:
 
    ```
    char *request_id = NULL;
@@ -746,7 +746,7 @@ To process the received event on the client side, follow these steps:
 
 3. Register the callback:
 
-   - To register a callback for a custom events, use `mc_client_set_custom_event_received_cb()`.
+   - To register a callback for custom events, use `mc_client_set_custom_event_received_cb()`.
 
       For example, to register a callback for a custom event:
 
