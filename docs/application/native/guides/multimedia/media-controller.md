@@ -15,7 +15,7 @@ the applications you want.
   >
   > This feature supports Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable.
 
-- Updating and retrieving Playback
+- Updating and retrieving playback
 
   You can [update the playback information](#updating-and-retrieving-playback) on the server side, and then retrieve the playback information on the client side.
 
