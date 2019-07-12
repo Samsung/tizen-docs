@@ -233,7 +233,7 @@ To retrieve the playback information on the client side, follow these steps:
    ret = mc_client_create(&g_client_h);
    ```
 
-2. Retrieve the [server name](#retrieving-application-list)
+2. Retrieve the [server name.](#retrieving-application-list)
 
    For example, get the latest server name using `mc_client_get_latest_server_info()`:
 
@@ -247,7 +247,7 @@ To retrieve the playback information on the client side, follow these steps:
 
 3. Retrieve the playback information from the server using the corresponding `mc_client_get_server_XXX()` function. Use the server name retrieved in the previous step to identify the server.
 
-   To retrieve the playback information from the server, use the `mc_client_get_server_playback_info()`:
+   To retrieve the playback information from the server, use `mc_client_get_server_playback_info()`:
 
    ```
    mc_playback_h playback = NULL;
@@ -333,7 +333,7 @@ To update the metadata information on the server side, follow these steps:
    
   > **Note**
   >
-  > MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, MC_META_MEDIA_RESOLUTION support Tizen 5.5 and Higher.
+  > The MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, and MC_META_MEDIA_RESOLUTION features support Tizen 5.5 and Higher.
   
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
@@ -377,7 +377,7 @@ To retrieve the metadata on the client side, follow these steps:
    }
    ```
 
-   You can get encoded values for the MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE and MC_META_MEDIA_RESOLUTION as above. 
+   You can get the encoded values for MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE and MC_META_MEDIA_RESOLUTION as above. 
    To get the proper information, you must decode the metadata values using the corresponding `mc_metadata_decode_XXX()` function.
    
    ```
@@ -416,7 +416,7 @@ To retrieve the metadata on the client side, follow these steps:
    
   > **Note**
   >
-  > MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, MC_META_MEDIA_RESOLUTION feature support Tizen 5.5 and Higher.
+  > MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, MC_META_MEDIA_RESOLUTION features support Tizen 5.5 and Higher.
   
 4. Destroy the metadata handle using `mc_metadata_destroy()`, when metadata handle is no longer needed:
 
@@ -540,7 +540,7 @@ To retrieve the playlist and metadata information on the client side, follow the
 > This feature supports Tizen 4.0 and Higher for Mobile.
 
 
-## sending and processing commands
+## Sending and Processing commands
 
 To send a command to the server from the client side, follow these steps:
 
@@ -550,7 +550,7 @@ To send a command to the server from the client side, follow these steps:
    ret = mc_client_create(&g_client_h);
    ```
 
-2. Retrieve the [server name](#retrieving-application-list)
+2. Retrieve the [server name.](#retrieving-application-list)
 
    For example, get the latest server name using `mc_client_get_latest_server_info()`:
    ```
@@ -572,7 +572,7 @@ To send a command to the server from the client side, follow these steps:
    
 3. Send the command to the server using the corresponding `mc_client_send_XXX_cmd()` function. Use the server name retrieved in the previous step to identify the server.
 
-   For example, to send a playback action change command to the server, use the `mc_client_send_playback_action_cmd()` with the new action defined in the third parameter:
+   For example, to send a playback action change command to the server, use `mc_client_send_playback_action_cmd()` with the new action defined as the third parameter:
 
    ```
    mc_playback_action_e playback_action = MC_PLAYBACK_ACTION_PLAY;
@@ -595,7 +595,7 @@ To send a command to the server from the client side, follow these steps:
    mc_client_send_playlist_cmd(g_client_h, server_name, "my_favorite", "1", MC_PLAYBACK_ACTION_PLAY, 0, NULL);
    ```
    
-   If you want to define your own commands to send to the server, use the `mc_client_send_custom_cmd()`.
+   If you want to define your own commands to send to the server, use `mc_client_send_custom_cmd()`.
    ```
    bundle *bundle_data = NULL;
    
@@ -606,7 +606,7 @@ To send a command to the server from the client side, follow these steps:
    bundle_free(bundle_data);
    ```
 
-  You can send search command as well. Please refer to [it](#sending-and-processing-a-search-command).
+  You can also send a search command. For more information, see [Sending and Processing a Search Command](#sending-and-processing-a-search-command).
    
 4. Destroy the media controller client handle using `mc_client_destroy()`, when media controller client handle is no longer needed:
 
@@ -630,18 +630,18 @@ To process the received command on the server side, follow these steps:
    void
    playback_action_cmd_received_cb(const char* client_name, const char *request_id, mc_playback_action_e action, void *user_data)
    {
-       dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request Id: %s, Playback action: %d\n", client_name, request_id, action);
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request ID: %s, Playback action: %d\n", client_name, request_id, action);
    }
    
    ret = mc_server_set_playback_action_cmd_received_cb(g_mc_server, playback_action_cmd_received_cb, NULL);
    ```
 
-   - To register a callback for playback state change commands, use the `mc_server_set_playback_action_cmd_received_cb()`.
-   - To register a callback for playback position change commands, use the `mc_server_set_playback_position_cmd_received_cb()`.
-   - To register a callback for shuffle mode change commands, use the `mc_server_set_shuffle_mode_cmd_received_cb()`.
-   - To register a callback for repeat mode change commands, use the `mc_server_set_repeat_mode_cmd_received_cb()`.
-   - To register a callback for played item, playback state and playback position change commands in playlist, use the `mc_server_set_playlist_cmd_received_cb()`.
-   - To register a callback for a custom command, use the `mc_server_set_custom_cmd_received_cb()`.
+   - To register a callback for playback state change commands, use `mc_server_set_playback_action_cmd_received_cb()`.
+   - To register a callback for playback position change commands, use `mc_server_set_playback_position_cmd_received_cb()`.
+   - To register a callback for shuffle mode change commands, use `mc_server_set_shuffle_mode_cmd_received_cb()`.
+   - To register a callback for repeat mode change commands, use `mc_server_set_repeat_mode_cmd_received_cb()`.
+   - To register a callback for played item, playback state and playback position change commands in playlist, use  `mc_server_set_playlist_cmd_received_cb()`.
+   - To register a callback for a custom command, use `mc_server_set_custom_cmd_received_cb()`.
 
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
@@ -651,7 +651,7 @@ To process the received command on the server side, follow these steps:
 
 To send the reply of completed command on the server side, follow these steps:
 
-1. Send the reply of completed command using `mc_server_send_cmd_reply()` with the request id of the command in the third parameter and the result of the command in fourth parameter:
+1. Send the reply of completed command using `mc_server_send_cmd_reply()` with the request ID of the command as the third parameter, and the result of the command as the fourth parameter:
 
    ```
    int result_code = 0;
@@ -668,7 +668,7 @@ To receive the reply of completed command on the client side, follow these steps
    void
    cmd_reply_received_cb(const char *server_name, const char *request_id, int result_code, bundle *data, void *user_data)
    {
-       dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Request Id: %s, Result Code: %d\n", server_name, request_id, result_code);
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Request ID: %s, Result Code: %d\n", server_name, request_id, result_code);
    }
    
    ret = mc_client_set_cmd_reply_received_cb(g_client_h, cmd_reply_received_cb, NULL);
@@ -710,7 +710,7 @@ To send a custom event to the client from the server side, follow these steps:
 
 3. Send the event to the client using `mc_server_send_custom_event()`. Use the client name retrieved in the previous step to identify the client.
 
-   For example, to send a your own event to the client, use the `mc_server_send_custom_event()` with the event in the third parameter:
+   For example, to send a your own event to the client, use `mc_server_send_custom_event()` with the event as the third parameter:
 
    ```
    char *request_id = NULL;
@@ -740,13 +740,13 @@ To process the received event on the client side, follow these steps:
    void
    event_received_cb(const char* server_name, const char *request_id, const char *event, bundle *data, void *user_data)
    {
-       dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Request id: %s, Event: %s\n", server_name, request_id, event);
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Request ID: %s, Event: %s\n", server_name, request_id, event);
    }
    ```
 
 3. Register the callback:
 
-   - To register a callback for a custom events, use the `mc_client_set_custom_event_received_cb()`.
+   - To register a callback for a custom events, use `mc_client_set_custom_event_received_cb()`.
 
       For example, to register a callback for a custom event:
 
@@ -764,7 +764,7 @@ To process the received event on the client side, follow these steps:
 <a name="send_event_reply"></a>
 To send the reply of completed custom event on the client side, follow these steps:
 
-1. Send the reply of completed custom event using `mc_client_send_event_reply()` with the request id of the custom event in the third parameter and the result of the custom event in fourth parameter:
+1. Send the reply of completed custom event using `mc_client_send_event_reply()` with the request ID of the custom event as the third parameter and the result of the custom event as the fourth parameter:
 
    ```
    int result_code = 0;
@@ -780,7 +780,7 @@ To receive the reply of processing command on the server side, follow these step
    void
    event_reply_received_cb(const char *client_name, const char *request_id, int result_code, bundle *data, void *user_data)
    {
-       dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request Id: %s, Result Code: %d\n", client_name, request_id, result_code);
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request ID: %s, Result Code: %d\n", client_name, request_id, result_code);
    }
    ```
 
@@ -830,14 +830,14 @@ To send a search command to the server from the client side, follow these steps:
    ret = mc_search_create(&g_search_h);
    ```
 
-4. Set the condition with a [content type](#media-controller-content-type-attributes), a [search category](#media-controller-search-category-attributes) and a search keyword using `mc_search_set_condition()`:
+4. Set the condition with a [content type](#media-controller-content-type-attributes), a [search category](#media-controller-search-category-attributes), and a search keyword using `mc_search_set_condition()`:
 
    ```
    ret = mc_search_set_condition(g_search_h, MC_CONTENT_TYPE_MUSIC, MC_SEARCH_TITLE, "keyword", NULL);
    ```
 
 5. Send the search command to the server using `mc_client_send_search_cmd()`. Use the server name retrieved in the previous step to identify the server.
-For example, to send the search command to the server, use the `mc_client_send_search_cmd()` with the search handle in the third parameter:
+For example, to send the search command to the server, use `mc_client_send_search_cmd()` with the search handle as the third parameter:
 
    ```
    char *request_id = NULL;
@@ -874,14 +874,14 @@ To process the received search command on the server side, follow these steps:
    search_command_received_cb(const char* client_name, const char *request_id, mc_search_h search, void *user_data)
    {
       mc_search_h *get_search = mc_search_h *(user_data);
-      dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request id: %s\n", client_name, request_id);
+      dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request ID: %s\n", client_name, request_id);
       ret = mc_search_clone(search, get_search);
    }
    ```
 
 3. Register the callback:
 
-   - To register a callback for a search command, use the `mc_server_set_search_cmd_received_cb()`.
+   - To register a callback for a search command, use `mc_server_set_search_cmd_received_cb()`.
 
       For example, to register a callback for a search command:
 
