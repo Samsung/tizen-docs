@@ -669,7 +669,7 @@ create_base_gui(appdata_s *ad)
    ```
 
 <a name="action"></a>
-## Handling application control actions
+## Handle application control actions
 
 You can define and handle each application control action.
 
@@ -692,12 +692,11 @@ You can define and handle each application control action.
   ```
 - Handling each application control action
 
-  You can handle each application control action using the `app_control_add_action_handler()` function. The `app_control_action_cb()` callback function will be invoked if you register the action handler using the `app_control_add_action_handler()` function.
+  You can handle each application control action using `app_control_add_action_handler()`. The `app_control_action_cb()` callback function will be invoked if you register the action handler using `app_control_add_action_handler()`.
 
    > **Note**
    >
-   > If a matched action exists when a implicit launch request is received, the order of function calls is as follows:
-   > The `app_control_action_cb()` callback function is called. And then, the `app_control_cb()` callback function is called.
+   > If a matched action exists when an implicit launch request is received, `app_control_action_cb()` and `app_control_cb()` callback functions are called sequentially.
 
 
 To register the application control action handle based on the content use following code:
