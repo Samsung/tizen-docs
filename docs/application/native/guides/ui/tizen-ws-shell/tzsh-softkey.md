@@ -1,34 +1,33 @@
 # TZSH-Softkey
 
+TZSH-Softkey is a library to control a Softkey service window that shows the software buttons such as back button and home button. You can use TZSH-Softkey to control the Softkey service window's visible state, expandable state and opacity state.
+Each of states are have following properties:
 
-TZSH-Softkey is library for control a softkey service window which shows the software buttons such as back and home buttons. You can use the tzsh-softkey to manipulate softkey service window's visible state, expandable state and opacity state.
-Each of states are have following properties.
+- **Visible State**: You can show or hide the Softkey service window. If you set it as show, the Softkey service window appears. Else if you set it as hide, the Softkey service window disappears.
 
-- **Visible State**: You can show or hide the softkey service window. If you set it as show, the softkey service window will appear. Else if you set it as hide, the softkey service window will be disappear.
-
-- **Expandable State**: You can control expandable state of the softkey service window.
-If you set expand on, then expandable button of the softkey service window will be shown like below.
+- **Expandable State**: You can control expandable state of the Softkey service window.
+If you set the expand state to on, then expandable button of the Softkey service window appears as follows:
 ![Expand On Transparent](./media/tzsh_softkey_expand_on_transparent.png)
-   Or, if you set expand off, then expandable button disppear.
+if you set the expand state to off, then expandable button disppears as follows:
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
 
-- **Opacity State**: You can manipulate opaque state of the softkey service window.
-      if you set opacity opaque, background of the softkey service window turns 24bit color opaque window like below.
+- **Opacity State**: You can control the opacity state of the Softkey service window.
+If you set the opacity state to opaque, the background of the Softkey service window changes to 24-bit color opaque window as follows:
 ![Expand Off Opaque](./media/tzsh_softkey_expand_off_opaque.png)
-   Or, if you set opacity transparent, background will turn to 32bit colored transparent window.
+if you set the opacity state to transparent, the background changes to 32-bit colored transparent window as follows:
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
 
 ## Prerequisites
 
-To use the functions and structures of the TZSH softkey API (in mobile and wearable applications), include the `<tzsh_softkey.h>` header file in your application:
+To use the functions and structures of the TZSH-Softkey API (in mobile and wearable applications), include the `<tzsh_softkey.h>` header file in your application:
 
 ```
 #include <tzsh_softkey.h>
 ```
 
-## Create TZSH Softkey Handler
+## Create TZSH-Softkey Handler
 
-Once you have create the main window for your application, call the `tzsh_create and tzsh_softkey_create` function with a native window ID to create `tzsh_softkey_h` structure (in mobile and wearable applications).
+After you have created the main window of your application, call `tzsh_create and tzsh_softkey_create` with a native window ID to create the `tzsh_softkey_h` structure (in mobile and wearable applications).
 	
 ```
 #include <Elementary.h>
@@ -65,7 +64,7 @@ init(const char *name)
 
 ## Show or Hide Softkey Window
 
-To show or hide softkey service window when your applications's window is activated, call the following functions:
+To show or hide Softkey service window when your application's window is activated, call the following functions:
 
 ```
    int ret;
@@ -85,7 +84,7 @@ To show or hide softkey service window when your applications's window is activa
 
 ## Get Visibility Status of Softkey Window
 
-To know the current visible state of softkey service's window, call the `tzsh_softkey_global_visible_get` function. The softkey service's window will be visible or invisible depend on visible state.
+To get the current visible state of Softkey service window, call `tzsh_softkey_global_visible_get`. The Softkey service window will be visible or invisible depending on the visible state.
 
 ```
    int ret;
@@ -107,7 +106,7 @@ To know the current visible state of softkey service's window, call the `tzsh_so
 
 ## Set Expandable Status of Softkey Window
 
-To make the softkey service's window can expandable or not, call the `tzsh_softkey_global_expand_state_set` function:
+To make the Softkey service window can expandable or not, call `tzsh_softkey_global_expand_state_set` as follows:
 
 ```
    int ret;
@@ -127,7 +126,7 @@ To make the softkey service's window can expandable or not, call the `tzsh_softk
 
 ## Get Expandable Status of Softkey Window
 
-To know the state of current expandable state of softkey service's window, call the `tzsh_softkey_global_expand_state_get` function. The softkey service's window will be expandable or inexpandable depend on expandable state.
+To get the current expandable state of the Softkey service window, call `tzsh_softkey_global_expand_state_get`. The Softkey service window will expandable or inexpandable depend on expandable state.
 
 ```
    int ret;
@@ -149,7 +148,7 @@ To know the state of current expandable state of softkey service's window, call 
 
 ## Set Opacity State of Softkey Window
 
-To make the softkey service's window to be opaque or transparent, call the `tzsh_softkey_global_opacity_state_set` function:
+To make the Softkey service window opaque or transparent, call `tzsh_softkey_global_opacity_state_set` as follows:
 
 ```
    int ret;
@@ -169,7 +168,7 @@ To make the softkey service's window to be opaque or transparent, call the `tzsh
 
 ## Get Opacity State of Softkey Window
 
-To know the current opacity state of softkey service's window, call the `tzsh_softkey_global_opacity_state_get` function. The softkey service's window will be opaque or transparent depend on opacity state.
+To get the current opacity state of Softkey service window, call `tzsh_softkey_global_opacity_state_get`. The Softkey service window will be opaque or transparent depend on the opacity state.
 
 ```
    int ret;
@@ -189,9 +188,9 @@ To know the current opacity state of softkey service's window, call the `tzsh_so
    }
 ```
 
-## Destroy the TZSH Softkey
+## Destroy TZSH-Softkey
 
-When TZSH quickpanel and TZSH structures are no longer needed, free the structures as follows:
+When TZSH-Softkey and TZSH structures are no longer needed, destroy the structures as follows:
 
 ```
    static void

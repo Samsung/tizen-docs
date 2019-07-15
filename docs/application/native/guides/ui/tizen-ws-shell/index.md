@@ -1,34 +1,32 @@
 # Tizen Window System Shell
 
+The Tizen Window System Shell (TZSH) is an interface for manipulating windows of the system Graphical User Interface (GUI) services such as the Quickpanel and the Softkey. It provides C libraries that allow you to control windows of system GUI services and get notifications about the state changes of each window within an application.
 
-The TZSH is an interface for manipulating windows of the system GUI services such as the quickpanel and the softkey. It provides C libraries that allow you to control windows of system GUI services and get notifications about the state changes of each window within an application.
-
-Since, the system GUI service runs different process, all of operations of the TZSH are performed using the inter-process communication (IPC). It is needed to enable communication between system GUI service processes and separated user application process using the display server. The following figure illustrates a simple software architecture of the TZSH:
+The system GUI service runs different processes. Therefore, all the operations of TZSH are performed using the inter-process communication (IPC). It is needed to enable communication between system GUI service processes and separated user application process using the display server. The following figure illustrates a simple software architecture of the TZSH:
 
 **Figure: Layer diagram for the Tizen window system shell**
 
 ![Layer diagram for the Tizen window system shell](./media/tzsh_arch.png)
 
-To support each system GUI service in Tizen, the TZSH provides the following libraries:
+To support each system GUI service in Tizen, TZSH provides the following libraries:
 
-- **[tzsh-quickpanel](./tzsh-quickpanel.md)**: For the quickpanel window which shows notifications and system setup widgets.
+- **[TZSH-Quickpanel](./tzsh-quickpanel.md)**: For the Quickpanel window that shows notifications and system setup widgets.
 
-- **[tzsh-softkey](./tzsh-softkey.md)**: For the softkey window which shows the device back and home buttons.
+- **[TZSH-Softkey](./tzsh-softkey.md)**: For the Softkey window that shows the device back and home buttons.
 
-Not all applications require to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service's window. For example, media player application needs to close the quickpanel window during playback of video. In this case, you can use the tzsh-quickpanel library.
+All applications do not need to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service window. For example, media player application needs to close the Quickpanel window during playback of video. In this case, you can use the TZSH-Quickpanel library.
 
 
 ## Prerequisites
 
-To use the functions and structures of the TZSH API include the `<tzsh.h>` header file in your application:
+To use the functions and structures of the TZSH API, include the `<tzsh.h>` header file in your application:
 
 ```
 #include <tzsh.h>
 ```
 
-
 ## Create TZSH Structures
-Once you have created the main window for your application, call the `tzsh_create` function with a native window ID to create `tzsh_h` structure.
+After you have created the main window of your application, call `tzsh_create` with a native window ID to create the `tzsh_h` structure.
 
 ```
 #include <Elementary.h>
@@ -61,7 +59,7 @@ init(const char *name)
 
 
 ## Destroy TZSH Structures
-When TZSH structures are no longer needed, free the structures as follows:
+When TZSH structures are no longer needed, destroy the structures as follows:
 
 ```
 static void
