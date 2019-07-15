@@ -587,7 +587,7 @@ To send a command to the server from the client side, follow these steps:
    ret = mc_client_send_playback_action_cmd(g_client_h, server_name, playback_action, NULL);
    ```
  
-   You can send various commands using the following APIs.
+   You can send various commands using the following APIs:
    ```
    char *request_id = NULL; //If you want to receive reply, set this
    
