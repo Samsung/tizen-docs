@@ -291,7 +291,7 @@ To update the metadata information on the server side, follow these steps:
    ret = mc_server_create(&g_server_h);
    ```
 
-2. Set the metadata to be updated using `mc_server_set_metadata()` and then update the metadata using `mc_server_update_metadata()`.
+2. Set the metadata to be updated using `mc_server_set_metadata()` and then update the metadata using `mc_server_update_metadata()`:
 
    ```
    mc_server_set_metadata(g_server_h, MC_META_MEDIA_TITLE, "title_1");
@@ -311,7 +311,7 @@ To update the metadata information on the server side, follow these steps:
    
    You must encode the values for MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, and MC_META_MEDIA_RESOLUTION. 
    
-   To set the proper information, you must encode the metadata values using the corresponding `mc_metadata_encode_XXX()` function.
+   To set the proper information, you must encode the metadata values using the corresponding `mc_metadata_encode_XXX()` function:
    
    ```
    char *encoded_meta = NULL;
@@ -362,7 +362,7 @@ To retrieve the metadata on the client side, follow these steps:
    dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
    ```
 
-3. Retrieve the encoded metadata from the server using `mc_client_get_server_metadata()`. Use the server name retrieved in the previous step to identify the server.
+3. Retrieve the encoded metadata from the server using `mc_client_get_server_metadata()`. Use the server name retrieved in the previous step to identify the server:
 
       ```
    mc_metadata_h metadata_h = NULL;
@@ -380,7 +380,7 @@ To retrieve the metadata on the client side, follow these steps:
 
    You can get the encoded values for MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE and MC_META_MEDIA_RESOLUTION as shown in the following code snippet. 
    
-   To get the proper information, you must decode the metadata values using the corresponding `mc_metadata_decode_XXX()` function.
+   To get the proper information, you must decode the metadata values using the corresponding `mc_metadata_decode_XXX()` function:
    
    ```
    mc_metadata_h metadata_h = NULL;
@@ -563,7 +563,7 @@ To send a command to the server from the client side, follow these steps:
    dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
    ```
 
-3. Set the callback function if you want to get the result of your sent command from the server using `mc_client_set_cmd_reply_received_cb()`.
+3. Set the callback function if you want to get the result of your sent command from the server using `mc_client_set_cmd_reply_received_cb()`:
 
    ```
    mc_playback_action_e playback_action = MC_PLAYBACK_ACTION_PLAY;
@@ -597,7 +597,7 @@ To send a command to the server from the client side, follow these steps:
    mc_client_send_playlist_cmd(g_client_h, server_name, "my_favorite", "1", MC_PLAYBACK_ACTION_PLAY, 0, NULL);
    ```
    
-   If you want to define custom commands, that you can send to the server, use `mc_client_send_custom_cmd()`.
+   If you want to define custom commands, that you can send to the server, use `mc_client_send_custom_cmd()`:
    ```
    bundle *bundle_data = NULL;
    
@@ -881,7 +881,7 @@ To process the received search command on the server side, follow these steps:
    }
    ```
 
-3. Register the callback:
+3. Register the callback.
 
    - To register a callback for a search command, use `mc_server_set_search_cmd_received_cb()`.
 
