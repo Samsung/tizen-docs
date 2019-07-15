@@ -587,7 +587,7 @@ To send a command to the server from the client side, follow these steps:
    ret = mc_client_send_playback_action_cmd(g_client_h, server_name, playback_action, NULL);
    ```
  
-   Plus, you can send various commands using below APIs.
+   You can send various commands using the following APIs.
    ```
    char *request_id = NULL; //If you want to receive reply, set this
    
@@ -597,7 +597,7 @@ To send a command to the server from the client side, follow these steps:
    mc_client_send_playlist_cmd(g_client_h, server_name, "my_favorite", "1", MC_PLAYBACK_ACTION_PLAY, 0, NULL);
    ```
    
-   If you want to define your own commands to send to the server, use `mc_client_send_custom_cmd()`.
+   If you want to define custom commands, that you can send to the server, use `mc_client_send_custom_cmd()`.
    ```
    bundle *bundle_data = NULL;
    
