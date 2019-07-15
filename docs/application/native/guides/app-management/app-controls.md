@@ -671,7 +671,7 @@ create_base_gui(appdata_s *ad)
 <a name="action"></a>
 ## Handle Application Control Actions
 
-You can define and handle each application control action.
+You can define and handle each application control action:
 
 - Defining the application control action
 
