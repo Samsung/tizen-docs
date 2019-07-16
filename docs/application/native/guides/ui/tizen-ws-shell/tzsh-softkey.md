@@ -6,9 +6,9 @@ Each state has the following properties:
 - **Visible State**: You can show or hide the Softkey service window. If you set the visible state to show, the Softkey service window appears. If you set it to hide, the Softkey service window disappears.
 
 - **Expandable State**: You can control the expandable state of the Softkey service window.
-If you set the expand state to on, then expandable button of the Softkey service window appears as follows:
+If you set the expand state to on, then the expandable button of the Softkey service window appears as follows:
 ![Expand On Transparent](./media/tzsh_softkey_expand_on_transparent.png)
-If you set the expand state to off, then expandable button disappears as follows:
+If you set the expand state to off, then the expandable button disappears as follows:
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
 
 - **Opacity State**: You can control the opacity state of the Softkey service window.
