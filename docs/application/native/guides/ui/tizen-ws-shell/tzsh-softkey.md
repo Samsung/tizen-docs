@@ -19,7 +19,7 @@ If you set the opacity state to transparent, the background changes to 32-bit co
 
 ## Prerequisites
 
-To use the functions and structures of the TZSH-Softkey API (in mobile and wearable applications), include the `<tzsh_softkey.h>` header file in your application:
+To use the functions and structures of the TZSH-Softkey API (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html) applications), include the `<tzsh_softkey.h>` header file in your application:
 
 ```
 #include <tzsh_softkey.h>
@@ -27,7 +27,7 @@ To use the functions and structures of the TZSH-Softkey API (in mobile and weara
 
 ## Create TZSH-Softkey Handler
 
-After you have created the main window of your application, call `tzsh_create()` and `tzsh_softkey_create()` with a native window ID to create the `tzsh_softkey_h` structure (in mobile and wearable applications):
+After you have created the main window of your application, call `tzsh_create()` and `tzsh_softkey_create()` with a native window ID to create the `tzsh_softkey_h` structure (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html) applications):
 	
 ```
 #include <Elementary.h>
@@ -84,7 +84,7 @@ To show or hide the Softkey service window when your application's window is act
 
 ## Get Visibility Status of Softkey Window
 
-To get the current visible state of the Softkey service window, call `tzsh_softkey_global_visible_get()`. The Softkey service window will be visible or invisible depending on the visible state:
+To get the current visible state of the Softkey service window, call `tzsh_softkey_global_visible_state_get()`. The Softkey service window will be visible or invisible depending on the visible state:
 
 ```
    int ret;
