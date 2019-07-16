@@ -29,7 +29,7 @@ The main App Control API features are:
 
   You can [set the launch mode](#group) when launching an application through an application control. The launch mode determines whether the application is launched in its own group, or as a sub application within an existing group.
 
-- Handle application control actions
+- Handling application control actions
 
   You can [handle each application control action](#action) when getting a launch request.
 
@@ -669,7 +669,7 @@ create_base_gui(appdata_s *ad)
    ```
 
 <a name="action"></a>
-## Handle Application Control Actions
+## Handlng Application Control Actions
 
 You can define and handle each application control action:
 
