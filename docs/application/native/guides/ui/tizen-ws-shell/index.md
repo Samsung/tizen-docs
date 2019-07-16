@@ -16,7 +16,6 @@ To support each system GUI service in Tizen, TZSH provides the following librari
 
 All applications do not need to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service window. For example, media player application needs to close the Quickpanel window during playback of video. In this case, you can use the TZSH-Quickpanel library.
 
-
 ## Prerequisites
 
 To use the functions and structures of the TZSH API, include the `<tzsh.h>` header file in your application:
@@ -57,7 +56,6 @@ init(const char *name)
    /* Do Something with TZSH */
 ```
 
-
 ## Destroy TZSH Structures
 When TZSH structures are no longer needed, destroy the structures as follows:
 
@@ -68,7 +66,6 @@ deinit(void)
    tzsh_destroy(tzsh);
 }
 ```
-
 
 ## Related Information
 - Dependencies

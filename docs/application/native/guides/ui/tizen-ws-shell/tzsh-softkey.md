@@ -8,13 +8,13 @@ Each of states are have following properties:
 - **Expandable State**: You can control expandable state of the Softkey service window.
 If you set the expand state to on, then expandable button of the Softkey service window appears as follows:
 ![Expand On Transparent](./media/tzsh_softkey_expand_on_transparent.png)
-if you set the expand state to off, then expandable button disppears as follows:
+If you set the expand state to off, then expandable button disppears as follows:
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
 
 - **Opacity State**: You can control the opacity state of the Softkey service window.
 If you set the opacity state to opaque, the background of the Softkey service window changes to 24-bit color opaque window as follows:
 ![Expand Off Opaque](./media/tzsh_softkey_expand_off_opaque.png)
-if you set the opacity state to transparent, the background changes to 32-bit colored transparent window as follows:
+If you set the opacity state to transparent, the background changes to 32-bit colored transparent window as follows:
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
 
 ## Prerequisites
@@ -27,7 +27,7 @@ To use the functions and structures of the TZSH-Softkey API (in mobile and weara
 
 ## Create TZSH-Softkey Handler
 
-After you have created the main window of your application, call `tzsh_create and tzsh_softkey_create` with a native window ID to create the `tzsh_softkey_h` structure (in mobile and wearable applications).
+After you have created the main window of your application, call `tzsh_create` and `tzsh_softkey_create` with a native window ID to create the `tzsh_softkey_h` structure (in mobile and wearable applications).
 	
 ```
 #include <Elementary.h>

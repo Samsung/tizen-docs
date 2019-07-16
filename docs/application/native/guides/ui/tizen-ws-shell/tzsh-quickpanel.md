@@ -3,7 +3,6 @@
 TZSH-Quickpanel is a library to control the Quickpanel service window that shows notifications and system setup widgets. You can use TZSH-Quickpanel to get various information from the Quickpanel service window.
 For example, media player application needs to close the Quickpanel window during playback of video. In this case, you can use the TZSH-Quickpanel library.
 
-
 ## Prerequisites
 
 To use the functions and structures of the TZSH-Quickpanel API (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html) applications), include the `<tzsh_quickpanel.h>` header file in your application:
@@ -11,7 +10,6 @@ To use the functions and structures of the TZSH-Quickpanel API (in [mobile](../.
 ```
 #include <tzsh_quickpanel.h>
 ```
-
 
 ## Create TZSH-Quickpanel Handler
 After you have created the main window of your application, call `tzsh_quickpanel_create_with_type` with a native window ID to create the `tzsh_quickpanel_h` structure (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#gaaa00e8e25b43c9538ca188bc43bdb3ac) applications).
@@ -46,7 +44,6 @@ init(const char *name)
    tzsh_qp = tzsh_quickpanel_create_with_type(tzsh, tz_win, TZSH_QUICKPANEL_TYPE_SYSTEM_DEFAULT);
 ```
 
-
 ## Show or Hide Quickpanel Window
 
 To show or hide Quickpanel window when your application's window is activated, call the following functions:
@@ -74,7 +71,6 @@ To know the state of current visibility of Quickpanel service window, call the `
    }
 
 ```
-
 
 ## Register a Changed Event for Quickpanel Window
 To be notified about the state changes, implement the appropriate event callback function and call the `tzsh_quickpanel_event_handler_add` function with that. If you want to change your application's behavior to match visibility of the quicknapel service window, you need to handle state change event as follows:
@@ -110,7 +106,6 @@ init(Evas_Object *main_win)
 }
 ```
 
-
 ## Destroy TZSH-Quickpanel
 When TZSH-Quickpanel is no longer needed, destroy the structures as follows:
 
@@ -123,7 +118,6 @@ deinit(void)
    tzsh_destroy(tzsh);
 }
 ```
-
 
 ## Related Information
 - Dependencies
