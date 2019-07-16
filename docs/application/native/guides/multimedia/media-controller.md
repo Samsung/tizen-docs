@@ -31,7 +31,7 @@ the applications you want.
   
   > **Note**
   >
-  > Since Tizen 5.5 metadata for Season, Episode, and Resolution are supported.
+  > Since Tizen 5.5, metadata for Season, Episode, and Resolution are supported.
 
 - Updating and retrieving playlist
 
@@ -200,21 +200,17 @@ To update the playback information on the server side, follow these steps:
    For example, to update the playback state information, set the information to be updated using `mc_server_set_playback_state()`, and then update the information using `mc_server_update_playback_info()`:
 
    ```
-   ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
-
-   ret = mc_server_update_playback_info(g_mc_server);
-   ```
-
-   The following APIs can be set at the same time:
-
-   ```
+   /* The following APIs can be set at the same time */
    ret = mc_server_set_playback_state(g_mc_server, MC_PLAYBACK_STATE_PLAYING);
    ret = mc_server_set_playback_position(g_mc_server, 150);
-   ret = mc_server_set_playlist_item_index(g_mc_server, 10);	//only Tizen 4.0 for Mobile
-   or
-   ret = mc_server_set_playlist_item_info(g_mc_server, "my_favoriates", 10);	//since Tizen 5.0
-   ret = mc_server_set_playback_content_type(g_mc_server, MC_CONTENT_TYPE_MUSIC);	//since Tizen 5.0
-   ret = mc_server_set_content_age_rating(g_mc_server, MC_CONTENT_RATING_7_PLUS);	//since Tizen 5.0
+   
+   /* Only Tizen 4.0 for Mobile */ 
+   ret = mc_server_set_playlist_item_index(g_mc_server, 10);
+   
+   /* Since Tizen 5.0, following APIs are supported */ 
+   ret = mc_server_set_playlist_item_info(g_mc_server, "my_favoriates", 10);
+   ret = mc_server_set_playback_content_type(g_mc_server, MC_CONTENT_TYPE_MUSIC);
+   ret = mc_server_set_content_age_rating(g_mc_server, MC_CONTENT_RATING_7_PLUS);
 
    ret = mc_server_update_playback_info(g_mc_server);
    ```
@@ -235,16 +231,6 @@ To retrieve the playback information on the client side, follow these steps:
 
 2. Retrieve the [server name.](#retrieving-application-list)
 
-   For example, get the latest server name using `mc_client_get_latest_server_info()`:
-
-   ```
-   char *server_name = NULL;
-   mc_server_state_e server_state;
-
-   ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
-   dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
-   ```
-
 3. Retrieve the playback information from the server using the corresponding `mc_client_get_server_XXX()` function. Use the server name retrieved in the previous step to identify the server.
 
    To retrieve the playback information from the server, use `mc_client_get_server_playback_info()`:
@@ -258,20 +244,17 @@ To retrieve the playback information on the client side, follow these steps:
    mc_content_type_e content_type;
    mc_content_age_rating_e age_rating;
 
-
    ret = mc_client_get_server_playback_info(g_client_h, server_name, &playback);
-
    ret = mc_client_get_playback_state(playback, &playback_state);
-
    ret = mc_client_get_playback_position(playback, &position);
 
-   ret = mc_client_get_playlist_item_index(playback, &index);	//only Tizen 4.0 for Mobile
+   /* Only Tizen 4.0 for Mobile */ 
+   ret = mc_client_get_playlist_item_index(playback, &index);
 
-   ret = mc_client_get_playlist_item_info(playback, &playlist_name, &index);	//since Tizen 5.0
-
-   ret = mc_client_get_playback_content_type(playback, &content_type);	//since Tizen 5.0
-
-   ret = mc_client_get_age_rating(playback, &age_rating);	//since Tizen 5.0
+    /* Since Tizen 5.0, following APIs are supported */ 
+   ret = mc_client_get_playlist_item_info(playback, &playlist_name, &index);
+   ret = mc_client_get_playback_content_type(playback, &content_type);
+   ret = mc_client_get_age_rating(playback, &age_rating);
    ```
 
 4. Destroy the media controller client handle using `mc_client_destroy()`, when media controller client handle is no longer needed:
@@ -311,22 +294,22 @@ To update the metadata information on the server side, follow these steps:
    
    You must encode the values for MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, and MC_META_MEDIA_RESOLUTION. 
    
-   To set the proper information, you must encode the metadata values using the corresponding `mc_metadata_encode_XXX()` function:
+   To set the proper information, encode the metadata values using the corresponding `mc_metadata_encode_XXX()` function:
    
    ```
    char *encoded_meta = NULL;
    
-   //set season
+   /* set season */
    mc_metadata_encode_season(8, "season_8", &encoded_meta);
    mc_server_set_metadata(g_server_h, MC_META_MEDIA_SEASON, encoded_meta);
    free(encoded_meta);
    
-   //set episode
-   mc_metadata_encode_season(5, "episode_5", &encoded_meta);
+   /* set episode */
+   mc_metadata_encode_episode(5, "episode_5", &encoded_meta);
    mc_server_set_metadata(g_server_h, MC_META_MEDIA_EPISODE, encoded_meta);
    free(encoded_meta);
    
-   //set resolution
+   /* set resolution */
    mc_metadata_encode_resolution(1920, 1280, &encoded_meta);
    mc_server_set_metadata(g_server_h, MC_META_MEDIA_RESOLUTION, encoded_meta);
    free(encoded_meta);
@@ -352,16 +335,6 @@ To retrieve the metadata on the client side, follow these steps:
 
 2. Retrieve the [server name.](#retrieving-application-list)
 
-   For example, get the latest server name using `mc_client_get_latest_server_info()`:
-
-   ```
-   char *server_name = NULL;
-   mc_server_state_e server_state;
-
-   ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
-   dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
-   ```
-
 3. Retrieve the encoded metadata from the server using `mc_client_get_server_metadata()`. Use the server name retrieved in the previous step to identify the server:
 
       ```
@@ -378,9 +351,9 @@ To retrieve the metadata on the client side, follow these steps:
    }
    ```
 
-   You can get the encoded values for MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE and MC_META_MEDIA_RESOLUTION as shown in the following code snippet. 
-   
-   To get the proper information, you must decode the metadata values using the corresponding `mc_metadata_decode_XXX()` function:
+   To get the proper information, you must decode the metadata values using the corresponding `mc_metadata_decode_XXX()` function.
+
+   You can get the encoded values for  MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE and MC_META_MEDIA_RESOLUTION using the following code:
    
    ```
    mc_metadata_h metadata_h = NULL;
@@ -392,7 +365,7 @@ To retrieve the metadata on the client side, follow these steps:
    
    ret = mc_client_get_server_metadata(g_client_h, server_name, &metadata_h);
    
-   //get season
+   /* get season */
    ret = mc_metadata_get(metadata_h, MC_META_MEDIA_SEASON, &value);
    
    mc_metadata_decode_season(value, &num, &title);
@@ -400,7 +373,7 @@ To retrieve the metadata on the client side, follow these steps:
    free(title);
    free(value);
    
-   //get episode
+   /* get episode */
    ret = mc_metadata_get(metadata_h, MC_META_MEDIA_EPISODE, &value);
    
    mc_metadata_decode_episode(value, &num, &title);
@@ -408,7 +381,7 @@ To retrieve the metadata on the client side, follow these steps:
    free(title);
    free(value);
    
-   //get resolution
+   /* get resolution */
    ret = mc_metadata_get(metadata_h, MC_META_MEDIA_RESOLUTION, &value);
    mc_metadata_decode_resolution(value, &width, &height);
    ...
@@ -554,15 +527,6 @@ To send a command to the server from the client side, follow these steps:
 
 2. Retrieve the [server name.](#retrieving-application-list)
 
-   For example, get the latest server name using `mc_client_get_latest_server_info()`:
-   ```
-   char *server_name = NULL;
-   mc_server_state_e server_state;
-
-   ret = mc_client_get_latest_server_info(g_mc_client, &server_name, &server_state);
-   dlog_print(DLOG_DEBUG, LOG_TAG, "Server Name: %s, Server state: %d\n", server_name, server_state);
-   ```
-
 3. Set the callback function if you want to get the result of your sent command from the server using `mc_client_set_cmd_reply_received_cb()`:
 
    ```
@@ -572,7 +536,7 @@ To send a command to the server from the client side, follow these steps:
    ret = mc_client_set_cmd_reply_received_cb(g_client_h, server_name, playback_action, &request_id);
    ```
    
-3. Send the command to the server using the corresponding `mc_client_send_XXX_cmd()` function. Use the server name retrieved in the previous step to identify the server.
+4. Send the command to the server using the corresponding `mc_client_send_XXX_cmd()` function. Use the server name retrieved in the previous step to identify the server.
 
    For example, to send a playback action change command to the server, use `mc_client_send_playback_action_cmd()` with the new action defined as the third parameter:
 
@@ -580,16 +544,16 @@ To send a command to the server from the client side, follow these steps:
    mc_playback_action_e playback_action = MC_PLAYBACK_ACTION_PLAY;
    char *request_id = NULL;
 
-   //If you want to receive reply
+   /* If you want to receive reply */
    ret = mc_client_send_playback_action_cmd(g_client_h, server_name, playback_action, &request_id);
    
-   //If you don't want to receive reply
+   /* If you don't want to receive reply */
    ret = mc_client_send_playback_action_cmd(g_client_h, server_name, playback_action, NULL);
    ```
  
    You can send various commands using the following APIs:
    ```
-   char *request_id = NULL; //If you want to receive reply, set this
+   char *request_id = NULL; /* If you want to receive reply, set this */
    
    mc_client_send_playback_position_cmd(g_client_h, server_name, 15000, NULL);
    mc_client_send_shuffle_mode_cmd(g_client_h, server_name, MC_SHUFFLE_MODE_ON, NULL);
@@ -610,7 +574,7 @@ To send a command to the server from the client side, follow these steps:
 
   You can also send a search command. For more information, see [Sending and Processing a Search Command](#sending-and-processing-a-search-command).
    
-4. Destroy the media controller client handle using `mc_client_destroy()`, when media controller client handle is no longer needed:
+5. Destroy the media controller client handle using `mc_client_destroy()`, when media controller client handle is no longer needed:
 
    ```
    mc_client_destroy(g_client_h);
