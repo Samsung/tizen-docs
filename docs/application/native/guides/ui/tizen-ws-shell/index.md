@@ -1,8 +1,8 @@
 # Tizen Window System Shell
 
-The Tizen Window System Shell (TZSH) is an interface for manipulating windows of the system Graphical User Interface (GUI) services such as the Quickpanel and the Softkey. It provides C libraries that allow you to control windows of system GUI services and get notifications about the state changes of each window within an application.
+The Tizen Window System Shell (TZSH) is an interface for manipulating windows of the system Graphical User Interface (GUI) services such as Quickpanel and Softkey. It provides C libraries that allow you to control windows of system GUI services and get notifications about the state changes of each window within an application.
 
-The system GUI service runs different processes. Therefore, all the operations of TZSH are performed using the inter-process communication (IPC). It is needed to enable communication between system GUI service processes and separated user application process using the display server. The following figure illustrates a simple software architecture of the TZSH:
+The system GUI service runs different processes. Therefore, all the operations of TZSH are performed using the inter-process communication (IPC). It is needed to enable communication between the system GUI service processes and separated user application process using the display server. The following figure illustrates a simple software architecture of the TZSH:
 
 **Figure: Layer diagram for the Tizen window system shell**
 
@@ -25,7 +25,7 @@ To use the functions and structures of the TZSH API, include the `<tzsh.h>` head
 ```
 
 ## Create TZSH Structures
-After you have created the main window of your application, call `tzsh_create` with a native window ID to create the `tzsh_h` structure.
+After you have created the main window of your application, call `tzsh_create` with a native window ID to create the `tzsh_h` structure as follows:
 
 ```
 #include <Elementary.h>

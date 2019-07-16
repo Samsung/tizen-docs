@@ -1,7 +1,7 @@
 # TZSH-Quickpanel
 
 TZSH-Quickpanel is a library to control the Quickpanel service window that shows notifications and system setup widgets. You can use TZSH-Quickpanel to get various information from the Quickpanel service window.
-For example, media player application needs to close the Quickpanel window during playback of video. In this case, you can use the TZSH-Quickpanel library.
+For example, media player application needs to close the Quickpanel service window during playback of video. In this case, you can use the TZSH-Quickpanel library.
 
 ## Prerequisites
 
@@ -46,7 +46,7 @@ init(const char *name)
 
 ## Show or Hide Quickpanel Window
 
-To show or hide Quickpanel window when your application's window is activated, call the following functions:
+To show or hide the Quickpanel service window when your application's window is activated, call the following functions:
 
 ```
    if (show)
@@ -56,7 +56,7 @@ To show or hide Quickpanel window when your application's window is activated, c
 ```
 
 ## Get Visibility Status of Quickpanel Window
-To know the state of current visibility of Quickpanel service window, call the `tzsh_quickpanel_visible_get` function. The Quickpanel service window may be visible or invisible on the screen.
+To get the current visibility of the Quickpanel service window, call `tzsh_quickpanel_visible_get`. The Quickpanel service window will be visible or invisible depending on the visible state:
 
 ```
    tzsh_quickpanel_state_visible_e state;
@@ -73,7 +73,7 @@ To know the state of current visibility of Quickpanel service window, call the `
 ```
 
 ## Register a Changed Event for Quickpanel Window
-To be notified about the state changes, implement the appropriate event callback function and call the `tzsh_quickpanel_event_handler_add` function with that. If you want to change your application's behavior to match visibility of the quicknapel service window, you need to handle state change event as follows:
+To get notified about the state changes, implement the appropriate event callback function and call `tzsh_quickpanel_event_handler_add` with that event callback function. If you want to change your application's behavior to match the visibility of the Quicknapel service window, you need to handle the state change event as follows:
 
 ```
 static tzsh_quickpanel_event_handler_h handler;

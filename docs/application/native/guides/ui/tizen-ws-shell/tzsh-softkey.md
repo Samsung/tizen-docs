@@ -1,11 +1,11 @@
 # TZSH-Softkey
 
-TZSH-Softkey is a library to control a Softkey service window that shows the software buttons such as back button and home button. You can use TZSH-Softkey to control the Softkey service window's visible state, expandable state and opacity state.
-Each of states are have following properties:
+TZSH-Softkey is a library to control a the Softkey service window that shows the software buttons such as back button and home button. You can use TZSH-Softkey to control the Softkey service window's visible state, expandable state and opacity state.
+Each of states are has following properties:
 
-- **Visible State**: You can show or hide the Softkey service window. If you set it as show, the Softkey service window appears. Else if you set it as hide, the Softkey service window disappears.
+- **Visible State**: You can show or hide the Softkey service window. If you set the visible state to show, the Softkey service window appears. If you set it to hide, the Softkey service window disappears.
 
-- **Expandable State**: You can control expandable state of the Softkey service window.
+- **Expandable State**: You can control the expandable state of the Softkey service window.
 If you set the expand state to on, then expandable button of the Softkey service window appears as follows:
 ![Expand On Transparent](./media/tzsh_softkey_expand_on_transparent.png)
 If you set the expand state to off, then expandable button disppears as follows:
@@ -27,7 +27,7 @@ To use the functions and structures of the TZSH-Softkey API (in mobile and weara
 
 ## Create TZSH-Softkey Handler
 
-After you have created the main window of your application, call `tzsh_create` and `tzsh_softkey_create` with a native window ID to create the `tzsh_softkey_h` structure (in mobile and wearable applications).
+After you have created the main window of your application, call `tzsh_create` and `tzsh_softkey_create` with a native window ID to create the `tzsh_softkey_h` structure (in mobile and wearable applications):
 	
 ```
 #include <Elementary.h>
@@ -64,7 +64,7 @@ init(const char *name)
 
 ## Show or Hide Softkey Window
 
-To show or hide Softkey service window when your application's window is activated, call the following functions:
+To show or hide the Softkey service window when your application's window is activated, call the following functions:
 
 ```
    int ret;
@@ -84,7 +84,7 @@ To show or hide Softkey service window when your application's window is activat
 
 ## Get Visibility Status of Softkey Window
 
-To get the current visible state of Softkey service window, call `tzsh_softkey_global_visible_get`. The Softkey service window will be visible or invisible depending on the visible state.
+To get the current visible state of the Softkey service window, call `tzsh_softkey_global_visible_get`. The Softkey service window will be visible or invisible depending on the visible state:
 
 ```
    int ret;
@@ -126,7 +126,7 @@ To make the Softkey service window can expandable or not, call `tzsh_softkey_glo
 
 ## Get Expandable Status of Softkey Window
 
-To get the current expandable state of the Softkey service window, call `tzsh_softkey_global_expand_state_get`. The Softkey service window will expandable or inexpandable depend on expandable state.
+To get the current expandable state of the Softkey service window, call `tzsh_softkey_global_expand_state_get`. The Softkey service window will expandable or inexpandable depend on expandable state:
 
 ```
    int ret;
@@ -168,7 +168,7 @@ To make the Softkey service window opaque or transparent, call `tzsh_softkey_glo
 
 ## Get Opacity State of Softkey Window
 
-To get the current opacity state of Softkey service window, call `tzsh_softkey_global_opacity_state_get`. The Softkey service window will be opaque or transparent depend on the opacity state.
+To get the current opacity state of the Softkey service window, call `tzsh_softkey_global_opacity_state_get`. The Softkey service window will be opaque or transparent depend on the opacity state:
 
 ```
    int ret;
