@@ -132,6 +132,7 @@
 ###  Connectivity and Wireless
 #### [Overview](/application/dotnet/guides/connectivity/overview.md)
 #### [Connection Management](/application/dotnet/guides/connectivity/connection.md)
+#### [WebView](/application/dotnet/guides/connectivity/webview.md)
 #### [Network Service Discovery](/application/dotnet/guides/connectivity/nsd.md)
 #### [Wi-Fi](/application/dotnet/guides/connectivity/wifi.md)
 #### [Wi-Fi Direct®](/application/dotnet/guides/connectivity/wifi-direct.md)
@@ -1176,4 +1177,8 @@
 
 
 
-# [Visual Studio Code Extension for Tizen](/application/vscode-ext/index.md)
+# Visual Studio Code Extension for Tizen
+
+## [Prerequisites](/application/vscode-ext/index.md)
+## [Tizen .NET](/application/vscode-ext/dotnet.md)
+## [Tizen Web](/application/vscode-ext/web.md)

@@ -25,7 +25,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m16lescanner.jpg" width="150"/></td>
 			<td>
-			<p><strong>(M) Lescanner</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Lescanner" target="_blank"><strong>(M) Lescanner</strong></a></p>
 			<p>This sample application demonstrates how to scan the Bluetooth Low Energy (BLE) devices.</p>
 			</td>
 		</tr>

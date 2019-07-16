@@ -39,7 +39,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m48mediacontent.png" width="150"/></td>
 			<td>
-			<p><strong>(M) MediaContent</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/MediaContent" target="_blank"><strong>(M) MediaContent</strong></a></p>
 			<p>This sample application demonstrates how to obtain and filter media content information from internal and external storages using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MediaContent.html" target="_blank">Tizen.Content.MediaContent﻿</a>.</p>
 			</td>
 		</tr>
