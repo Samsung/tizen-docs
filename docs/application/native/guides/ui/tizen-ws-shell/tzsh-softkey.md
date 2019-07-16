@@ -27,7 +27,7 @@ To use the functions and structures of the TZSH-Softkey API (in mobile and weara
 
 ## Create TZSH-Softkey Handler
 
-After you have created the main window of your application, call `tzsh_create` and `tzsh_softkey_create` with a native window ID to create the `tzsh_softkey_h` structure (in mobile and wearable applications):
+After you have created the main window of your application, call `tzsh_create()` and `tzsh_softkey_create()` with a native window ID to create the `tzsh_softkey_h` structure (in mobile and wearable applications):
 	
 ```
 #include <Elementary.h>
@@ -84,7 +84,7 @@ To show or hide the Softkey service window when your application's window is act
 
 ## Get Visibility Status of Softkey Window
 
-To get the current visible state of the Softkey service window, call `tzsh_softkey_global_visible_get`. The Softkey service window will be visible or invisible depending on the visible state:
+To get the current visible state of the Softkey service window, call `tzsh_softkey_global_visible_get()`. The Softkey service window will be visible or invisible depending on the visible state:
 
 ```
    int ret;
@@ -106,7 +106,7 @@ To get the current visible state of the Softkey service window, call `tzsh_softk
 
 ## Set Expandable Status of Softkey Window
 
-To make the Softkey service window can expandable or not, call `tzsh_softkey_global_expand_state_set` as follows:
+To make the Softkey service window can expandable or not, call `tzsh_softkey_global_expand_state_set()` as follows:
 
 ```
    int ret;
@@ -126,7 +126,7 @@ To make the Softkey service window can expandable or not, call `tzsh_softkey_glo
 
 ## Get Expandable Status of Softkey Window
 
-To get the current expandable state of the Softkey service window, call `tzsh_softkey_global_expand_state_get`. The Softkey service window will expandable or inexpandable depend on expandable state:
+To get the current expandable state of the Softkey service window, call `tzsh_softkey_global_expand_state_get()`. The Softkey service window will expandable or inexpandable depend on expandable state:
 
 ```
    int ret;
@@ -148,7 +148,7 @@ To get the current expandable state of the Softkey service window, call `tzsh_so
 
 ## Set Opacity State of Softkey Window
 
-To make the Softkey service window opaque or transparent, call `tzsh_softkey_global_opacity_state_set` as follows:
+To make the Softkey service window opaque or transparent, call `tzsh_softkey_global_opacity_state_set()` as follows:
 
 ```
    int ret;
@@ -168,7 +168,7 @@ To make the Softkey service window opaque or transparent, call `tzsh_softkey_glo
 
 ## Get Opacity State of Softkey Window
 
-To get the current opacity state of the Softkey service window, call `tzsh_softkey_global_opacity_state_get`. The Softkey service window will be opaque or transparent depend on the opacity state:
+To get the current opacity state of the Softkey service window, call `tzsh_softkey_global_opacity_state_get()`. The Softkey service window will be opaque or transparent depend on the opacity state:
 
 ```
    int ret;
