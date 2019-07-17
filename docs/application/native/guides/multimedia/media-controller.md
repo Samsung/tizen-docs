@@ -464,7 +464,7 @@ To retrieve the playlist and metadata on the client side, follow these steps:
 
    If you want to use playlist handle outside, make a copy using `mc_playlist_clone()`.
 
-3. Register the callback using `mc_client_set_playlist_updated_cb()`:
+3. Register a callback using `mc_client_set_playlist_updated_cb()`:
 
    ```
    ret = mc_client_set_playlist_updated_cb(g_client_h, playlist_updated_cb, NULL);
@@ -481,7 +481,7 @@ To retrieve the playlist and metadata on the client side, follow these steps:
 
    If you want to use metadata handle outside, make a copy using `mc_metadata_clone()`.
 
-5. Register the callback using `mc_playlist_foreach_item()`:
+5. Register a callback using `mc_playlist_foreach_item()`:
 
    ```
    ret = mc_playlist_foreach_item(playlist_h, playlist_item_cb, NULL);
@@ -706,15 +706,11 @@ To process the received event on the client side, follow these steps:
    }
    ```
 
-3. Register the callback:
+3. Register a callback for custom event, use `mc_client_set_custom_event_received_cb()`: 
 
-   - To register a callback for custom events, use `mc_client_set_custom_event_received_cb()`.
-
-      For example, to register a callback for a custom event:
-
-      ```
-      ret = mc_client_set_custom_event_received_cb(g_client_h, event_received_cb, NULL);
-      ```
+   ```
+   ret = mc_client_set_custom_event_received_cb(g_client_h, event_received_cb, NULL);
+   ```
 
 4. Destroy the media controller client handle using `mc_client_destroy()`, when media controller client handle is no longer needed:
 
@@ -746,7 +742,7 @@ To receive the reply of processing command on the server side, follow these step
    }
    ```
 
-2. Register the callback:
+2. Register a callback:
 
    ```
    ret = mc_server_set_event_reply_received_cb(g_server_h, event_reply_received_cb, NULL);
@@ -841,16 +837,12 @@ To process the received search command on the server side, follow these steps:
    }
    ```
 
-3. Register the callback.
+3. Register a callback for search command, use `mc_server_set_search_cmd_received_cb():
 
-   - To register a callback for a search command, use `mc_server_set_search_cmd_received_cb()`.
-
-      For example, to register a callback for a search command:
-
-      ```
-      mc_search_h g_search_h = NULL;
-      ret = mc_server_set_search_cmd_received_cb(g_server_h, search_command_received_cb, &g_search);
-      ```
+   ```
+   mc_search_h g_search_h = NULL;
+   ret = mc_server_set_search_cmd_received_cb(g_server_h, search_command_received_cb, &g_search);
+   ```
 
 4. Retrieve the search condition using `mc_search_foreach_condition()`:
 
@@ -925,7 +917,7 @@ The following table lists all the playback action attributes the client can send
 
 > **Note**
 >
-> This Attributes support Tizen 4.0 and Higher for Mobile.
+> These Attributes support Tizen 4.0 and Higher for Mobile.
 
 
 ## Media Controller Shuffle Mode Attributes
@@ -990,7 +982,7 @@ The following table lists all the playlist update mode attributes the client can
 
 > **Note**
 >
-> This Attributes support Tizen 4.0 and Higher for Mobile.
+> These Attributes support Tizen 4.0 and Higher for Mobile.
 
 ## Media Controller Content Type Attributes
 
@@ -1009,7 +1001,7 @@ The following table lists all the content type attributes the server can receive
 
 > **Note**
 >
-> This Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+> These Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
 
 ## Media Controller Search Category Attributes
 
@@ -1029,7 +1021,7 @@ The following table lists all the search category attributes the server can rece
 
 > **Note**
 >
-> This Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+> These Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
 
 ## Related Information
 - Dependencies
