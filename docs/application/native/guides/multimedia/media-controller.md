@@ -265,9 +265,6 @@ To retrieve the playback information on the client side, follow these steps:
 
 
 ## Updating and Retrieving Metadata
-  > **Note**
-  >
-  > The MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, and MC_META_MEDIA_RESOLUTION features support Tizen 5.5 and Higher.
   
 To update the metadata on the server side, follow these steps:
 
@@ -399,9 +396,13 @@ To retrieve the metadata on the client side, follow these steps:
    mc_client_destroy(g_client_h);
    ```
 
+  > **Note**
+  >
+  > The MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, and MC_META_MEDIA_RESOLUTION features support Tizen 5.5 and Higher.
+  
 ## Updating and Retrieving Playlist
 
-To update the playlist and item's metadata information on the server side, follow these steps:
+To update the playlist and item's metadata on the server side, follow these steps:
 
 1. Create the media controller server handle using `mc_server_create()`:
 
@@ -415,7 +416,7 @@ To update the playlist and item's metadata information on the server side, follo
 
    ret = mc_server_create_playlist(g_server_h, "playlist", &playlist_h);
    ```
-3. Set the metadata information in the playlist handle to be updated using `mc_server_add_item_to_playlist()`, and then update the playlist using `mc_server_update_playlist_done()`:
+3. Set the metadata in the playlist handle to be updated using `mc_server_add_item_to_playlist()`, and then update the playlist using `mc_server_update_playlist_done()`:
 
    ```
    mc_server_add_item_to_playlist(g_server_h, playlist_h, "1", MC_META_MEDIA_TITLE, "title_1");
@@ -444,7 +445,7 @@ To update the playlist and item's metadata information on the server side, follo
    mc_server_destroy(g_server_h);
    ```
 
-To retrieve the playlist and metadata information on the client side, follow these steps:
+To retrieve the playlist and metadata on the client side, follow these steps:
 
 1. Create the media controller client handle using `mc_client_create()`:
 
@@ -486,7 +487,7 @@ To retrieve the playlist and metadata information on the client side, follow the
    ret = mc_playlist_foreach_item(playlist_h, playlist_item_cb, NULL);
    ```
 
-6. Retrieve the metadata information from the metadata handle using `mc_metadata_get()`:
+6. Retrieve the metadata from the metadata handle using `mc_metadata_get()`:
 
    ```
    char *title = NULL;
