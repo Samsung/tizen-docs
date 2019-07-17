@@ -37,7 +37,7 @@ To enable your application to use the phonenumber utils functionality:
 
    To ensure that a Phonenumber utils function has been executed properly, make sure that the return is equal to `PHONE_NUMBER_ERROR_NONE`.
 
-3. To connect to the phonenumber utils service to access the service features, use the `phone_number_connect()` function:
+3. To connect to the Phonenumber utils service and to access the service features, use `phone_number_connect()`:
 
    ```
    int error_code;
