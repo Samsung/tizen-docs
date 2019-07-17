@@ -64,7 +64,7 @@ init(const char *name)
 
 ## Show or Hide Softkey Window
 
-To show or hide the Softkey service window when your application's window is activated, call the following functions:
+To show or hide the Softkey service window when your application's window is activated, use the following code:
 
 ```
    int ret;
@@ -126,7 +126,7 @@ To make the Softkey service window can expandable or not, call `tzsh_softkey_glo
 
 ## Get Expandable Status of Softkey Window
 
-To get the current expandable state of the Softkey service window, call `tzsh_softkey_global_expand_state_get()`. The Softkey service window will expandable or inexpandable depend on expandable state:
+To get the current expandable state of the Softkey service window, call `tzsh_softkey_global_expand_state_get()`. The Softkey service window will expand or collapse depending on expandable state:
 
 ```
    int ret;
