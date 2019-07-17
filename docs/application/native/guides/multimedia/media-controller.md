@@ -265,8 +265,11 @@ To retrieve the playback information on the client side, follow these steps:
 
 
 ## Updating and Retrieving Metadata
-
-To update the metadata information on the server side, follow these steps:
+  > **Note**
+  >
+  > The MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, and MC_META_MEDIA_RESOLUTION features support Tizen 5.5 and Higher.
+  
+To update the metadata on the server side, follow these steps:
 
 1. Create the media controller server handle using `mc_server_create()`:
 
@@ -314,11 +317,7 @@ To update the metadata information on the server side, follow these steps:
    mc_server_set_metadata(g_server_h, MC_META_MEDIA_RESOLUTION, encoded_meta);
    free(encoded_meta);
    ```
-   
-  > **Note**
-  >
-  > The MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, and MC_META_MEDIA_RESOLUTION features support Tizen 5.5 and Higher.
-  
+    
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
@@ -388,10 +387,6 @@ To retrieve the metadata on the client side, follow these steps:
    
    free(value);
    ```
-   
-  > **Note**
-  >
-  > MC_META_MEDIA_SEASON, MC_META_MEDIA_EPISODE, MC_META_MEDIA_RESOLUTION features support Tizen 5.5 and Higher.
   
 4. Destroy the metadata handle using `mc_metadata_destroy()`, when metadata handle is no longer needed:
 
