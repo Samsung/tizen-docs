@@ -568,7 +568,7 @@ To send a command to the server from the client side, follow these steps:
    bundle_free(bundle_data);
    ```
 
-  You can also send a search command. For more information, see [Sending and Processing a Search Command](#sending-and-processing-a-search-command).
+   You can also send a search command. For more information, see [Sending and Processing a Search Command](#sending-and-processing-a-search-command).
    
 5. Destroy the media controller client handle using `mc_client_destroy()`, when media controller client handle is no longer needed:
 
