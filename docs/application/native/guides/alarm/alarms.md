@@ -139,15 +139,19 @@ ret = alarm_schedule_with_recurrence_week_flag(app_control, &date,
 ```
 
 <a name="scenario_4"></a>
-## Listing All Scheduled Alarms and Canceling an Alarm
+## Listing All Scheduled Alarms and Canceling an Alarm and Updating an Alarm
 
 To list all scheduled alarms, use the `alarm_foreach_registered_alarm()` function.
 
 To cancel a specific scheduled alarm, use the `alarm_cancel()` function with the alarm ID. To cancel all alarms registered by the application, use the `alarm_cancel_all()` function.
 
+To update a specific scheduled alarm, use the 'alarm_update_delay()', 'alarm_update_date()', 'alarm_update_period()' and 'alarm_update_week_flag() functions with the alarm ID and proper update value.
+
 The following code implements the callback for the `alarm_foreach_registered_alarm()` function. It lists all registered alarms and alarm recurrence days. At the end of the function, the `alarm_cancel()` function is called to cancel every scheduled alarm.
 
 ```
+static int to_update_alarm_id;
+
 static bool
 on_foreach_registered_alarm(int alarm_id, void *user_data)
 {
@@ -182,10 +186,17 @@ on_foreach_registered_alarm(int alarm_id, void *user_data)
             dlog_print(DLOG_INFO, TAG, "Alarm Recurrence on SATURDAY \n");
     }
 
-    /* Cancel scheduled alarms */
-    ret = alarm_cancel(alarm_id);
-    if (ret != ALARM_ERROR_NONE)
-        dlog_print(DLOG_ERROR, TAG, "Cancel Error: %d ", ret);
+	if (alarm_id == to_update_alarm_id) {
+		/* Update scheduled alarms */
+		ret = alarm_update_period(alarm_id, 1000);
+		if (ret != ALARM_ERROR_NONE)
+			dlog_print(DLOG_ERROR, TAG, "Update Error: %d ", ret);
+	} else {
+		/* Cancel scheduled alarms */
+		ret = alarm_cancel(alarm_id);
+		if (ret != ALARM_ERROR_NONE)
+			dlog_print(DLOG_ERROR, TAG, "Cancel Error: %d ", ret);
+	}
 
     return true;
 }
