@@ -73,7 +73,7 @@ To get the current visibility of the Quickpanel service window, call `tzsh_quick
 ```
 
 ## Register a Changed Event for Quickpanel Window
-To get notified about the state changes, implement the appropriate event callback function and call `tzsh_quickpanel_event_handler_add()` with that event callback function. If you want to change your application's behavior to match the visibility of the Quicknapel service window, you need to handle the state change event as follows:
+To get notified about the state changes, implement the appropriate event callback function and call `tzsh_quickpanel_event_handler_add()` with that event callback function. If you want to change your application's behavior to match the visibility of the Quickpanel service window, you need to handle the state change event as follows:
 
 ```
 static tzsh_quickpanel_event_handler_h handler;

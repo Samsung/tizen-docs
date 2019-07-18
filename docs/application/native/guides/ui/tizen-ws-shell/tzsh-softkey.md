@@ -1,11 +1,11 @@
 # TZSH-Softkey
 
-TZSH-Softkey is a library to control a the Softkey service window that shows the software buttons such as back button and home button. You can use TZSH-Softkey to control the Softkey service window's visible state, expandable state and opacity state.
+TZSH-Softkey is a library to control the Softkey service window that shows the software buttons such as back button and home button. You can use TZSH-Softkey to control the Softkey service window's visible state, expandable state and opacity state.
 Each state has the following properties:
 
 - **Visible State**: You can show or hide the Softkey service window. If you set the visible state to show, the Softkey service window appears. If you set it to hide, the Softkey service window disappears.
 
-- **Expandable State**: You can control the expandable state of the Softkey service window.
+- **Expandable State**: You can control expandable state of the Softkey service window.
 If you set the expand state to on, then the expandable button of the Softkey service window appears as follows:
 ![Expand On Transparent](./media/tzsh_softkey_expand_on_transparent.png)
 If you set the expand state to off, then the expandable button disappears as follows:
@@ -106,7 +106,7 @@ To get the current visible state of the Softkey service window, call `tzsh_softk
 
 ## Set Expandable Status of Softkey Window
 
-To make the Softkey service window can expandable or not, call `tzsh_softkey_global_expand_state_set()` as follows:
+To set expandable state of the Softkey service window, call `tzsh_softkey_global_expand_state_set()` as follows:
 
 ```
    int ret;
