@@ -14,7 +14,7 @@ To support each system GUI service in Tizen, TZSH provides the following librari
 
 - **[TZSH-Softkey](./tzsh-softkey.md)**: For the Softkey window that shows the device back and home buttons.
 
-All applications do not need to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service window. For example, media player application needs to close the Quickpanel window during playback of video. In this case, you can use the TZSH-Quickpanel library.
+Most applications do not need to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service window. For example, media player application needs to close the Quickpanel window during playback of video. In this case, you can use the TZSH-Quickpanel library.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ To use the functions and structures of the TZSH API, include the `<tzsh.h>` head
 ```
 
 ## Create TZSH Structures
-After you have created the main window of your application, call `tzsh_create()` with a native window ID to create the `tzsh_h` structure as follows:
+After you have created the main window of your application, call `tzsh_create()` with a native window ID to create the `tzsh_h` structure as the following code:
 
 ```
 #include <Elementary.h>
@@ -57,7 +57,7 @@ init(const char *name)
 ```
 
 ## Destroy TZSH Structures
-When TZSH structures are no longer needed, destroy the structures as follows:
+When TZSH structures are no longer needed, destroy the structures as the following code:
 
 ```
 static void

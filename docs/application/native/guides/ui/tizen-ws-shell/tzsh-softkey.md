@@ -112,7 +112,7 @@ To get the current visible state of the Softkey service window, call `tzsh_softk
 
 ## Set Expandable Status of Softkey Window
 
-To set expandable state of the Softkey service window, call `tzsh_softkey_global_expand_state_set()` as follows:
+To set expandable state of the Softkey service window, call `tzsh_softkey_global_expand_state_set()` as the following code:
 
 ```
     int ret;
@@ -154,7 +154,7 @@ To get the current expandable state of the Softkey service window, call `tzsh_so
 
 ## Set Opacity State of Softkey Window
 
-To make the Softkey service window opaque or transparent, call `tzsh_softkey_global_opacity_state_set()` as follows:
+To make the Softkey service window opaque or transparent, call `tzsh_softkey_global_opacity_state_set()` as the following code:
 
 ```
     int ret;
@@ -196,7 +196,7 @@ To get the current opacity state of the Softkey service window, call `tzsh_softk
 
 ## Destroy TZSH-Softkey
 
-When TZSH-Softkey and TZSH structures are no longer needed, destroy the structures as follows:
+When TZSH-Softkey and TZSH structures are no longer needed, destroy the structures as the following code:
 
 ```
     static void
