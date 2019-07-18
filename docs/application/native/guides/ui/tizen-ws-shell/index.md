@@ -34,26 +34,26 @@ After you have created the main window of your application, call `tzsh_create()`
 static void
 init(const char *name)
 {
-   Evas_Object *main_win;
+    Evas_Object *main_win;
 
-   /* create main window for the application */
-   main_win = elm_win_util_standard_add(name, name);
+    /* create main window for the application */
+    main_win = elm_win_util_standard_add(name, name);
 
-   /* set up main window */
-   ...
-   evas_object_show(main_win);
+    /* set up main window */
+    ...
+    evas_object_show(main_win);
 
 
-   tzsh_h tzsh;
-   tzsh_window tz_win;
+    tzsh_h tzsh;
+    tzsh_window tz_win;
 
-   /* Get native window ID of main window */
-   tz_win = elm_win_window_id_get(main_win);
+    /* Get native window ID of main window */
+    tz_win = elm_win_window_id_get(main_win);
 
-   /* Create tzsh_h structure */
-   tzsh = tzsh_create(TZSH_TOOLKIT_TYPE_EFL);
+    /* Create tzsh_h structure */
+    tzsh = tzsh_create(TZSH_TOOLKIT_TYPE_EFL);
 
-   /* Do Something with TZSH */
+    /* Do Something with TZSH */
 ```
 
 ## Destroy TZSH Structures
@@ -63,7 +63,7 @@ When TZSH structures are no longer needed, destroy the structures as follows:
 static void
 deinit(void)
 {
-   tzsh_destroy(tzsh);
+    tzsh_destroy(tzsh);
 }
 ```
 

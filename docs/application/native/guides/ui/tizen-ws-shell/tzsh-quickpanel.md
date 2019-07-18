@@ -20,28 +20,28 @@ After you have created the main window of your application, call `tzsh_quickpane
 static void
 init(const char *name)
 {
-   Evas_Object *main_win;
+    Evas_Object *main_win;
 
-   /* create main window for the application */
-   main_win = elm_win_util_standard_add(name, name);
+    /* create main window for the application */
+    main_win = elm_win_util_standard_add(name, name);
 
-   /* set up main window */
-   ...
-   evas_object_show(main_win);
+    /* set up main window */
+    ...
+    evas_object_show(main_win);
 
 
-   tzsh_h tzsh;
-   tzsh_quickpanel_h tzsh_qp;
-   tzsh_window tz_win;
+    tzsh_h tzsh;
+    tzsh_quickpanel_h tzsh_qp;
+    tzsh_window tz_win;
 
-   /* Get native window ID of main window */
-   tz_win = elm_win_window_id_get(main_win);
+    /* Get native window ID of main window */
+    tz_win = elm_win_window_id_get(main_win);
 
-   /* Create tzsh_h structure */
-   tzsh = tzsh_create(TZSH_TOOLKIT_TYPE_EFL);
+    /* Create tzsh_h structure */
+    tzsh = tzsh_create(TZSH_TOOLKIT_TYPE_EFL);
 
-   /* Create tzsh_quickpanel_h structure */
-   tzsh_qp = tzsh_quickpanel_create_with_type(tzsh, tz_win, TZSH_QUICKPANEL_TYPE_SYSTEM_DEFAULT);
+    /* Create tzsh_quickpanel_h structure */
+    tzsh_qp = tzsh_quickpanel_create_with_type(tzsh, tz_win, TZSH_QUICKPANEL_TYPE_SYSTEM_DEFAULT);
 ```
 
 ## Show or Hide Quickpanel Window
@@ -49,26 +49,26 @@ init(const char *name)
 To show or hide the Quickpanel service window when your application's window is activated, call the following functions:
 
 ```
-   if (show)
-     tzsh_quickpanel_show(tzsh_qp); /* To show quickpanel window */
-   else
-     tzsh_quickpanel_hide(tzsh_qp); /* To hide quickpanel window */
+    if (show)
+        tzsh_quickpanel_show(tzsh_qp); /* To show quickpanel window */
+    else
+        tzsh_quickpanel_hide(tzsh_qp); /* To hide quickpanel window */
 ```
 
 ## Get Visibility Status of Quickpanel Window
 To get the current visibility of the Quickpanel service window, call `tzsh_quickpanel_visible_get()`. The Quickpanel service window will be visible or invisible depending on the visible state:
 
 ```
-   tzsh_quickpanel_state_visible_e state;
+    tzsh_quickpanel_state_visible_e state;
 
-   tzsh_quickpanel_visible_get(tzsh_qp, &state);
-   if (state == TZSH_QUICKPANEL_STATE_VISIBLE_SHOWN) {
-     /* visible state */
-   } else if (state == TZSH_QUICKPANEL_STATE_VISIBLE_HIDDEN) {
-     /* invisible state */
-   } else {
-     /* error */
-   }
+    tzsh_quickpanel_visible_get(tzsh_qp, &state);
+    if (state == TZSH_QUICKPANEL_STATE_VISIBLE_SHOWN) {
+        /* visible state */
+    } else if (state == TZSH_QUICKPANEL_STATE_VISIBLE_HIDDEN) {
+        /* invisible state */
+    } else {
+        /* error */
+    }
 
 ```
 
@@ -81,28 +81,28 @@ static tzsh_quickpanel_event_handler_h handler;
 static void
 ev_callback(int type, tzsh_quickpanel_event_info_h ev_info, void *data)
 {
-   tzsh_quickpanel_state_visible_e state;
+    tzsh_quickpanel_state_visible_e state;
 
-   if (type != TZSH_QUICKPANEL_EVENT_VISIBLE)
-     return;
+    if (type != TZSH_QUICKPANEL_EVENT_VISIBLE)
+        return;
 
-   tzsh_quickpanel_event_visible_get(ev_info, &state);
-   if (state == TZSH_QUICKPANEL_STATE_VISIBLE_SHOWN) {
-     /* visible state */
-   } else if (state == TZSH_QUICKPANEL_STATE_VISIBLE_HIDDEN) {
-     /* invisible state */
-   } else {
-     /* error */
-   }
+    tzsh_quickpanel_event_visible_get(ev_info, &state);
+    if (state == TZSH_QUICKPANEL_STATE_VISIBLE_SHOWN) {
+        /* visible state */
+    } else if (state == TZSH_QUICKPANEL_STATE_VISIBLE_HIDDEN) {
+        /* invisible state */
+    } else {
+        /* error */
+    }
 }
 
 static void
 init(Evas_Object *main_win)
 {
-   ...
+    ...
 
-   /* register event callback */
-   handler = tzsh_quickpanel_event_handler_add(tzsh_qp, TZSH_QUICKPANEL_EVENT_VISIBLE, ev_callback, NULL);
+    /* register event callback */
+    handler = tzsh_quickpanel_event_handler_add(tzsh_qp, TZSH_QUICKPANEL_EVENT_VISIBLE, ev_callback, NULL);
 }
 ```
 
@@ -113,9 +113,9 @@ When TZSH-Quickpanel is no longer needed, destroy the structures as follows:
 static void
 deinit(void)
 {
-   tzsh_quickpanel_event_handler_del(tzsh_qp, handler);
-   tzsh_quickpanel_destroy(tzsh_qp);
-   tzsh_destroy(tzsh);
+    tzsh_quickpanel_event_handler_del(tzsh_qp, handler);
+    tzsh_quickpanel_destroy(tzsh_qp);
+    tzsh_destroy(tzsh);
 }
 ```
 
