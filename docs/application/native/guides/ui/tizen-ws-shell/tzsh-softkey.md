@@ -17,6 +17,12 @@ If you set the opacity state to opaque, the background of the Softkey service wi
 If you set the opacity state to transparent, the background changes to 32-bit colored transparent window as follows:
 ![Expand Off Transparent](./media/tzsh_softkey_expand_off_transparent.png)
 
+> **Note**
+>
+> Each state can present differently depending on implementation of the Softkey service.
+> Therefore, preceding example is not represent all of the Softkey service window.
+>
+
 ## Prerequisites
 
 To use the functions and structures of the TZSH-Softkey API (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html) applications), include the `<tzsh_softkey.h>` header file in your application:
