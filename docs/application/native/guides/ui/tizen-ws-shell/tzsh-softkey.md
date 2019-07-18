@@ -33,7 +33,7 @@ To use the functions and structures of the TZSH-Softkey API (in [mobile](../../.
 
 ## Create TZSH-Softkey Handler
 
-After you have created the main window of your application, call `tzsh_create()` and `tzsh_softkey_create()` with a native window ID to create the `tzsh_softkey_h` structure (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html) applications):
+After you have created the main window of your application, call `tzsh_create()` and `tzsh_softkey_create()` with a native window ID to create the `tzsh_softkey_h` structure (in [mobile](../../../api/mobile/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html#ga2ee6e5dec1081136fe1139d6a611e58d) and [wearable](../../../api/wearable/latest/group__TIZEN__WS__SHELL__SOFTKEY__MODULE.html#ga2ee6e5dec1081136fe1139d6a611e58d) applications):
 	
 ```
 #include <Elementary.h>
