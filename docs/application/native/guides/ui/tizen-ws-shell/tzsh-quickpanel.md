@@ -46,7 +46,7 @@ init(const char *name)
 
 ## Show or Hide Quickpanel Window
 
-To show or hide the Quickpanel service window when your application's window is activated, call the following functions:
+To show or hide the Quickpanel service window when your application's window is activated, use the following functions:
 
 ```
     if (show)
