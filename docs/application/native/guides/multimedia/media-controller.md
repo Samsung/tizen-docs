@@ -145,12 +145,12 @@ To retrieve the server list on the client side, follow these steps:
    bool
    activated_server_cb(const char *server_name, void *user_data)
    {
-     GList **server_list = (GList **)user_data;
+       GList **server_list = (GList **)user_data;
 
-     if (!server_list || !server_name) return FALSE;
-     *server_list = g_list_append(*server_list, g_strdup(server_name));
+       if (!server_list || !server_name) return FALSE;
+       *server_list = g_list_append(*server_list, g_strdup(server_name));
 
-     return TRUE;
+       return TRUE;
    }
 
    GList *server_list = NULL;
@@ -171,12 +171,12 @@ To retrieve the client list on the server side, follow these steps:
    bool
    activated_client_cb(const char *client_name, void *user_data)
    {
-     GList **client_list = (GList **)user_data;
+       GList **client_list = (GList **)user_data;
 
-     if (!client_list || !client_name) return FALSE;
-     *client_list = g_list_append(*client_list, g_strdup(client_name));
+       if (!client_list || !client_name) return FALSE;
+       *client_list = g_list_append(*client_list, g_strdup(client_name));
 
-     return TRUE;
+       return TRUE;
    }
 
    GList *client_list = NULL;
@@ -251,7 +251,7 @@ To retrieve the playback information on the client side, follow these steps:
    /* Only Tizen 4.0 for Mobile */ 
    ret = mc_client_get_playlist_item_index(playback, &index);
 
-    /* Since Tizen 5.0, following APIs are supported */ 
+   /* Since Tizen 5.0, following APIs are supported */ 
    ret = mc_client_get_playlist_item_info(playback, &playlist_name, &index);
    ret = mc_client_get_playback_content_type(playback, &content_type);
    ret = mc_client_get_age_rating(playback, &age_rating);
@@ -314,7 +314,7 @@ To update the metadata on the server side, follow these steps:
    mc_server_set_metadata(g_server_h, MC_META_MEDIA_RESOLUTION, encoded_meta);
    free(encoded_meta);
    ```
-    
+
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
@@ -333,7 +333,7 @@ To retrieve the metadata on the client side, follow these steps:
 
 3. Retrieve the encoded metadata from the server using `mc_client_get_server_metadata()`. Use the server name retrieved in the previous step to identify the server:
 
-      ```
+   ```
    mc_metadata_h metadata_h = NULL;
    char *value = NULL;
    int i = 0;
@@ -341,9 +341,9 @@ To retrieve the metadata on the client side, follow these steps:
    ret = mc_client_get_server_metadata(g_client_h, server_name, &metadata_h);
    
    for (i = MC_META_MEDIA_TITLE; i <=  MC_META_MEDIA_PICTURE; i++) {
-      mc_metadata_get(metadata_h, i, &value);
-      ...
-      free(value);
+       mc_metadata_get(metadata_h, i, &value);
+       ...
+       free(value);
    }
    ```
 
@@ -475,7 +475,7 @@ To retrieve the playlist and metadata on the client side, follow these steps:
    bool
    playlist_item_cb(const char *index, mc_metadata_h metadata, void *user_data)
    {
-     dlog_print(DLOG_DEBUG, LOG_TAG, "Index: %s\n", index);
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Index: %s\n", index);
    }
    ```
 
@@ -562,7 +562,7 @@ To send a command to the server from the client side, follow these steps:
    bundle *bundle_data = NULL;
    
    bundle_data = bundle_create();
-	 bundle_add_str(bundle_data, "key", "val");
+   bundle_add_str(bundle_data, "key", "val");
    
    mc_client_send_custom_cmd(g_client_h, server_name, "custom_key", bundle_data, NULL);
    bundle_free(bundle_data);
@@ -657,12 +657,12 @@ To send a custom event to the client from the server side, follow these steps:
    bool
    activated_client_cb(const char *client_name, void *user_data)
    {
-     GList **client_list = (GList **)user_data;
+       GList **client_list = (GList **)user_data;
 
-     if (!client_list || !client_name) return FALSE;
-     *client_list = g_list_append(*client_list, g_strdup(client_name));
+       if (!client_list || !client_name) return FALSE;
+       *client_list = g_list_append(*client_list, g_strdup(client_name));
 
-     return TRUE;
+       return TRUE;
    }
 
    GList *client_list = NULL;
@@ -769,12 +769,12 @@ To send a search command to the server from the client side, follow these steps:
    bool
    activated_server_cb(const char *server_name, void *user_data)
    {
-     GList **server_list = (GList **)user_data;
+       GList **server_list = (GList **)user_data;
 
-     if (!server_list || !server_name) return FALSE;
-     *server_list = g_list_append(*server_list, g_strdup(server_name));
+       if (!server_list || !server_name) return FALSE;
+       *server_list = g_list_append(*server_list, g_strdup(server_name));
 
-     return TRUE;
+       return TRUE;
    }
 
    GList *server_list = NULL;
@@ -831,13 +831,13 @@ To process the received search command on the server side, follow these steps:
    void
    search_command_received_cb(const char* client_name, const char *request_id, mc_search_h search, void *user_data)
    {
-      mc_search_h *get_search = mc_search_h *(user_data);
-      dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request ID: %s\n", client_name, request_id);
-      ret = mc_search_clone(search, get_search);
+       mc_search_h *get_search = mc_search_h *(user_data);
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Client Name: %s, Request ID: %s\n", client_name, request_id);
+       ret = mc_search_clone(search, get_search);
    }
    ```
 
-3. Register a callback for search command, use `mc_server_set_search_cmd_received_cb():
+3. Register a callback for search command, use `mc_server_set_search_cmd_received_cb()`:
 
    ```
    mc_search_h g_search_h = NULL;
@@ -850,9 +850,9 @@ To process the received search command on the server side, follow these steps:
    bool
    search_condition_cb(mc_content_type_e content_type, mc_search_category_e category, const char *search_keyword, bundle *data, void *user_data)
    {
-      dlog_print(DLOG_DEBUG, LOG_TAG, "Content Type: %d, Search Category: %d, Search Keyword: %s\n", content_type, category, search_keyword);
+       dlog_print(DLOG_DEBUG, LOG_TAG, "Content Type: %d, Search Category: %d, Search Keyword: %s\n", content_type, category, search_keyword);
 
-      return TRUE;
+       return TRUE;
    }
 
    ret = mc_search_foreach_condition(g_search_h, search_condition_cb, NULL);
