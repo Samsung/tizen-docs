@@ -5045,6 +5045,8 @@
 									</topic>
 									<topic label="Signal" href="group__dali__core__signals.html">
 									</topic>
+									<topic label="Size Negotiation" href="group__dali__core__size__negotiation.html">
+									</topic>
 								</topic>
 								<topic label="DALi Toolkit" href="group__dali__toolkit.html">
 									<topic label="Controls" href="group__dali__toolkit__controls.html">
@@ -5078,6 +5080,8 @@
 										</topic>
 										<topic label="Video View" href="group__dali__toolkit__controls__video__view.html">
 										</topic>
+									</topic>
+									<topic label="Image Loader" href="group__dali__toolkit__image__loader.html">
 									</topic>
 									<topic label="Managers" href="group__dali__toolkit__managers.html">
 									</topic>
@@ -6799,6 +6803,8 @@
 									</topic>
 									<topic label="Signal" href="group__dali__core__signals.html">
 									</topic>
+									<topic label="Size Negotiation" href="group__dali__core__size__negotiation.html">
+									</topic>
 								</topic>
 								<topic label="DALi Toolkit" href="group__dali__toolkit.html">
 									<topic label="Controls" href="group__dali__toolkit__controls.html">
@@ -6832,6 +6838,8 @@
 										</topic>
 										<topic label="Video View" href="group__dali__toolkit__controls__video__view.html">
 										</topic>
+									</topic>
+									<topic label="Image Loader" href="group__dali__toolkit__image__loader.html">
 									</topic>
 									<topic label="Managers" href="group__dali__toolkit__managers.html">
 									</topic>
