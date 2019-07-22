@@ -1,6 +1,6 @@
 # Tizen Studio 3.3 Release Notes
 
--   Release Date: July 26, 2019
+-   Release Date: July 24, 2019
 
 
 ## IDE and Tools
@@ -8,11 +8,12 @@
 
 ### Fixed Bugs
 -   Device Manager
-	-   Fixed the issue with logs not shown for Raspberry Pi board.
+	-   The issue of logs not being displayed for the Raspberry Pi board has been fixed.
 -   IDE
-	-   Fixed the log view to work with TV devices in Tizen IDE.
-	-   App signing command incorrectly asking for Author and Distributor passwords has been fixed.
-	-   Running an application on emulator now launches the emulator if not in launched state already.
+	-   The issue of the log view for TV devices in the Tizen IDE has been fixed.
+	-   The issue of the app signing command incorrectly asking for the author and the distributor passwords has been fixed.
+	-   Running an application on the emulator now launches the emulator automatically if the emulator is not in the launched state.
+	-   The launch_screen element to platform schema for the web applications has been added.
 
 ### Known Issues
 -	Tizen Studio
