@@ -82,7 +82,7 @@ To enable your application to use the image util functionality:
 <a name="image_colorspace"></a>
 ## Converting Image Color Space
 
-To convert an image from one color space of an image to another:
+To convert one color space of an image to another:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -126,7 +126,7 @@ To convert an image from one color space of an image to another:
 <a name="mediapacket_colorspace"></a>
 ## Converting Media Packet Color Space
 
-To convert an image from one color space of a media packet to another:
+To convert one color space of a media packet to another:
 
 1. Create a transformation handle using `image_util_transform_create()`:
 
@@ -332,7 +332,7 @@ To crop an image:
    ret = image_util_transform_set_crop_area(transform_h, start_x, start_y, end_x, end_y);
    ```
 
-3. Execute the transformation using `image_util_transform_run()`:
+3. Execute the transformation using `image_util_transform_run2()` or `image_util_transform_run2_async()`:
 
    ```
    ret = image_util_transform_run2_async(transform_h, src_image,
@@ -418,7 +418,7 @@ To decode a JPEG, PNG, GIF, or BMP image:
 
    > **Note**
    >
-   > Due to the encoder limitations, the color space setting is only supported for encoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. Execute the decoding using `image_util_decode_run2()` or `image_util_decode_run_async2()`:
 
@@ -448,17 +448,17 @@ To encode a raw image:
 2. Additionally, you can set the JPEG quality or PNG compression using `image_util_encode_set_quality()` or `image_util_encode_set_png_compression()`:
 
    ```
-   ret = image_util_encode_set_jpeg_downscale(decode_h, IMAGE_UTIL_DOWNSCALE_1_1);
+   ret = image_util_encode_set_quality(decode_h, 100);
    ```
 
    > **Note**
    >
-   > Due to the encoder limitations, the quality setting is only supported for encoding the JPEG images, and compression is only supported for the PNG images. The default JPEG quality is 75. The default PNG compression is `IMAGE_UTIL_PNG_COMPRESSION_6`.
+   > The compression is only supported for the PNG images. The default JPEG quality is 75. The default PNG compression is `IMAGE_UTIL_PNG_COMPRESSION_6`.
 
 3. Execute the encoding using `image_util_encode_run_to_file()` or `image_util_encode_run_to_buffer()`:
 
    ```
-   ret = image_util_encode_run(encode_h, decoded_image, file);
+   ret = image_util_encode_run_to_file(encode_h, decoded_image, file);
    ```
    > **Note**
    >
@@ -494,7 +494,7 @@ To encode an animated GIF image:
    ret = image_util_agif_encode_save_to_file(agif_encode_h, path);
    ```
 
-4. After the encoding is complete, destroy the encoding handle using `image_util_encode_destroy()`:
+4. After the encoding is complete, destroy the encoding handle using `image_util_agif_encode_destroy()`:
 
    ```
    ret = image_util_agif_encode_destroy(agif_encode_h);
