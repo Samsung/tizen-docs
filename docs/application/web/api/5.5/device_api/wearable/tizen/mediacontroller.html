@@ -33,16 +33,19 @@ For more information on the Media Controller features, see <a href="https://deve
                     1.1. <a href="#MediaControllerServerState">MediaControllerServerState</a>
 </li>
 <li>
-                    1.2. <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a>
+                    1.2. <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a>
 </li>
 <li>
-                    1.3. <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a>
+                    1.3. <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a>
 </li>
 <li>
-                    1.4. <a href="#MediaControllerContentType">MediaControllerContentType</a>
+                    1.4. <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a>
 </li>
 <li>
-                    1.5. <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a>
+                    1.5. <a href="#MediaControllerContentType">MediaControllerContentType</a>
+</li>
+<li>
+                    1.6. <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a>
 </li>
 </ul>
 </li>
@@ -67,23 +70,31 @@ For more information on the Media Controller features, see <a href="https://deve
 </li>
 <li>2.10. <a href="#MediaControllerPlaylist">MediaControllerPlaylist</a>
 </li>
-<li>2.11. <a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a>
+<li>2.11. <a href="#MediaControllerSearchFilter">MediaControllerSearchFilter</a>
 </li>
-<li>2.12. <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a>
+<li>2.12. <a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a>
 </li>
-<li>2.13. <a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a>
+<li>2.13. <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a>
 </li>
-<li>2.14. <a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a>
+<li>2.14. <a href="#MediaControllerRequestReply">MediaControllerRequestReply</a>
 </li>
-<li>2.15. <a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a>
+<li>2.15. <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a>
 </li>
-<li>2.16. <a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a>
+<li>2.16. <a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a>
 </li>
-<li>2.17. <a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a>
+<li>2.17. <a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a>
 </li>
-<li>2.18. <a href="#MediaControllerPlaylistUpdatedCallback">MediaControllerPlaylistUpdatedCallback</a>
+<li>2.18. <a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a>
 </li>
-<li>2.19. <a href="#MediaControllerGetItemsSuccessCallback">MediaControllerGetItemsSuccessCallback</a>
+<li>2.19. <a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a>
+</li>
+<li>2.20. <a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a>
+</li>
+<li>2.21. <a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a>
+</li>
+<li>2.22. <a href="#MediaControllerPlaylistUpdatedCallback">MediaControllerPlaylistUpdatedCallback</a>
+</li>
+<li>2.23. <a href="#MediaControllerGetItemsSuccessCallback">MediaControllerGetItemsSuccessCallback</a>
 </li>
 </ul>
 </li>
@@ -124,6 +135,8 @@ For more information on the Media Controller features, see <a href="https://deve
 <div>void <a href="#MediaControllerServer::updateMetadata">updateMetadata</a> (<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata)</div>
 <div>long <a href="#MediaControllerServer::addChangeRequestPlaybackInfoListener">addChangeRequestPlaybackInfoListener</a> (<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener)</div>
 <div>void <a href="#MediaControllerServer::removeChangeRequestPlaybackInfoListener">removeChangeRequestPlaybackInfoListener</a> (long watchId)</div>
+<div>void <a href="#MediaControllerServer::setSearchRequestListener">setSearchRequestListener</a> (<a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a> listener)</div>
+<div>void <a href="#MediaControllerServer::unsetSearchRequestListener">unsetSearchRequestListener</a> ()</div>
 <div>long <a href="#MediaControllerServer::addCommandListener">addCommandListener</a> (<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener)</div>
 <div>void <a href="#MediaControllerServer::removeCommandListener">removeCommandListener</a> (long watchId)</div>
 <div>
@@ -149,6 +162,7 @@ For more information on the Media Controller features, see <a href="https://deve
 <div>void <a href="#MediaControllerServerInfo::sendPlaybackPosition">sendPlaybackPosition</a> (unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#MediaControllerServerInfo::sendShuffleMode">sendShuffleMode</a> (boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#MediaControllerServerInfo::sendRepeatState">sendRepeatState</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#MediaControllerServerInfo::sendSearchRequest">sendSearchRequest</a> (<a href="#MediaControllerSearchFilter">MediaControllerSearchFilter</a>[] request, <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a> replyCallback)</div>
 <div>void <a href="#MediaControllerServerInfo::sendCommand">sendCommand</a> (DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>long <a href="#MediaControllerServerInfo::addServerStatusChangeListener">addServerStatusChangeListener</a> (<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener)</div>
 <div>void <a href="#MediaControllerServerInfo::removeServerStatusChangeListener">removeServerStatusChangeListener</a> (long watchId)</div>
@@ -184,12 +198,24 @@ For more information on the Media Controller features, see <a href="https://deve
 </td>
 </tr>
 <tr>
+<td><a href="#MediaControllerSearchFilter">MediaControllerSearchFilter</a></td>
+<td></td>
+</tr>
+<tr>
 <td><a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a></td>
 <td><div>void <a href="#MediaControllerServerInfoArraySuccessCallback::onsuccess">onsuccess</a> (<a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>[] servers)</div></td>
 </tr>
 <tr>
 <td><a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a></td>
 <td><div>void <a href="#MediaControllerSendCommandSuccessCallback::onsuccess">onsuccess</a> (object? data)</div></td>
+</tr>
+<tr>
+<td><a href="#MediaControllerRequestReply">MediaControllerRequestReply</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a></td>
+<td><div>void <a href="#MediaControllerSearchRequestReplyCallback::onreply">onreply</a> (<a href="#MediaControllerRequestReply">MediaControllerRequestReply</a>? reply)</div></td>
 </tr>
 <tr>
 <td><a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a></td>
@@ -207,6 +233,11 @@ For more information on the Media Controller features, see <a href="https://deve
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatstatechanged">onrepeatstatechanged</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state)</div>
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onmetadatachanged">onmetadatachanged</a> (<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata)</div>
 </td>
+</tr>
+<tr>
+<td><a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a></td>
+<td><div>
+<a href="#MediaControllerRequestReply">MediaControllerRequestReply</a>? <a href="#MediaControllerSearchRequestCallback::onrequest">onrequest</a> (<a href="application.html#ApplicationId">ApplicationId</a> clientName, <a href="#MediaControllerSearchFilter">MediaControllerSearchFilter</a>[] request)</div></td>
 </tr>
 <tr>
 <td><a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a></td>
@@ -255,8 +286,34 @@ INACTIVE - Corresponds to inactive server state.            </li>
           </ul>
          </div>
 </div>
+<div class="enum" id="MediaControllerSearchCategory">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchCategory"></a><h3>1.2. MediaControllerSearchCategory</h3>
+<div class="brief">
+ Search category.
+          </div>
+<pre class="webidl prettyprint">  enum MediaControllerSearchCategory { "NO_CATEGORY", "TITLE", "ARTIST", "ALBUM", "GENRE", "TPO" };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="description">
+          <ul>
+            <li>
+NO_CATEGORY - No search category.            </li>
+            <li>
+TITLE - Search by title.            </li>
+            <li>
+ARTIST - Search by artist.            </li>
+            <li>
+ALBUM - Search by album.            </li>
+            <li>
+GENRE - Search by genre.            </li>
+            <li>
+TPO - Search by Time Place Occasion.            </li>
+          </ul>
+         </div>
+</div>
 <div class="enum" id="MediaControllerPlaybackState">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackState"></a><h3>1.2. MediaControllerPlaybackState</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackState"></a><h3>1.3. MediaControllerPlaybackState</h3>
 <div class="brief">
  Defines media playback state.
           </div>
@@ -284,7 +341,7 @@ REWIND - Corresponds to rewind media controller playback state.            </li>
          </div>
 </div>
 <div class="enum" id="MediaControllerRepeatState">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerRepeatState"></a><h3>1.3. MediaControllerRepeatState</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerRepeatState"></a><h3>1.4. MediaControllerRepeatState</h3>
 <div class="brief">
  Defines states for repeating media.
           </div>
@@ -307,7 +364,7 @@ REPEAT_ALL - repeating all media.            </li>
          </div>
 </div>
 <div class="enum" id="MediaControllerContentType">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerContentType"></a><h3>1.4. MediaControllerContentType</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerContentType"></a><h3>1.5. MediaControllerContentType</h3>
 <div class="brief">
  Content type.
           </div>
@@ -331,7 +388,7 @@ UNDECIDED - content type for unspecified media types.            </li>
          </div>
 </div>
 <div class="enum" id="MediaControllerContentAgeRating">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerContentAgeRating"></a><h3>1.5. MediaControllerContentAgeRating</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerContentAgeRating"></a><h3>1.6. MediaControllerContentAgeRating</h3>
 <div class="brief">
  Media Controller content age rating.
           </div>
@@ -520,6 +577,8 @@ catch (err)
     void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeRequestPlaybackInfoListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setSearchRequestListener(<a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unsetSearchRequestListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addCommandListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeCommandListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#MediaControllerPlaylist">MediaControllerPlaylist</a> createPlaylist(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -1088,6 +1147,82 @@ mcServer.removeChangeRequestPlaybackInfoListener(watcherId);
 </pre>
 </div>
 </dd>
+<dt class="method" id="MediaControllerServer::setSearchRequestListener">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::setSearchRequestListener"></a><code><b><span class="methodName">setSearchRequestListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the listener for receiving search requests from a client.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setSearchRequestListener(<a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a> listener);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">listener</span>:
+ Function to be called for each search command received.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any of the arguments has invalid type.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.mediacontroller.createServer();
+function searchRequestListener(clientName, request)
+{
+  console.log("search command received.");
+}
+server.setSearchRequestListener(searchRequestListener);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MediaControllerServer::unsetSearchRequestListener">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::unsetSearchRequestListener"></a><code><b><span class="methodName">unsetSearchRequestListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unsets search request listener.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetSearchRequestListener();</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="description">
+            <p>
+Calling this function has no effect if the listener was not set.
+            </p>
+           </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if unknown error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.mediacontroller.createServer();
+function searchRequestListener(clientName, request)
+{
+  console.log("search command received.");
+}
+server.setSearchRequestListener(searchRequestListener);
+server.unsetSearchRequestListener();
+</pre>
+</div>
+</dd>
 <dt class="method" id="MediaControllerServer::addCommandListener">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::addCommandListener"></a><code><b><span class="methodName">addCommandListener</span></b></code>
 </dt>
@@ -1377,7 +1512,7 @@ The <em>errorCallback</em> may be triggered for one of the following errors:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = mediacontroller.createServer();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.mediacontroller.createServer();
 var playlist = server.createPlaylist("testPlaylistName");
 function deleteSuccess()
 {
@@ -1436,7 +1571,7 @@ server.savePlaylist(playlist, saveSuccess);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = mediacontroller.createServer();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.mediacontroller.createServer();
 var playlist = server.createPlaylist("testPlaylistName");
 var metadata =
 {
@@ -1453,10 +1588,12 @@ var metadata =
   picture: "testPicture"
 };
 playlist.addItem("index1", metadata);
-server.savePlaylist(playlist);
-server.updatePlaybackItem("testPlaylistName", "index1");
-console.log("Current playlist: " + server.playbackInfo.playlistName);
-console.log("Current index: " + server.playbackInfo.index);
+server.savePlaylist(playlist, function()
+{
+  server.updatePlaybackItem("testPlaylistName", "index1");
+  console.log("Current playlist: " + server.playbackInfo.playlistName);
+  console.log("Current index: " + server.playbackInfo.index);
+});
 </pre>
 </div>
 <div class="output">
@@ -1517,26 +1654,25 @@ var playlist = server.createPlaylist("testPlaylist");
 function saveSuccess()
 {
   console.log("savePlaylist successful");
+  function successCallback(playlists)
+  {
+    playlists.forEach(function(playlist)
+    {
+      console.log("Playlist name: " + playlist.name);
+    });
+  }
+  function errorCallback(error)
+  {
+    console.log("getAllPlaylists failed with error: " + error);
+  }
+  server.getAllPlaylists(successCallback, errorCallback);
 }
 function saveError(error)
 {
   console.log("savePlaylist failed with error: " + error);
 }
 
-server.savePlaylist(saveSuccess, saveError);
-
-function successCallback(playlists)
-{
-  playlists.forEach(function(playlist)
-  {
-    console.log("Playlist name: " + playlist.name);
-  });
-}
-function errorCallback(error)
-{
-  console.log("getAllPlaylists failed with error: " + error);
-}
-server.getAllPlaylists(successCallback, errorCallback);
+server.savePlaylist(playlist, saveSuccess, saveError);
 </pre>
 </div>
 <div class="output">
@@ -1694,6 +1830,8 @@ Provides methods to send commands to server and listen for server status change.
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendSearchRequest(<a href="#MediaControllerSearchFilter">MediaControllerSearchFilter</a>[] request, <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a> replyCallback)
+                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -2074,6 +2212,84 @@ mcServerInfo.sendRepeatState("REPEAT_ALL",
 </pre>
 </div>
 </dd>
+<dt class="method" id="MediaControllerServerInfo::sendSearchRequest">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendSearchRequest"></a><code><b><span class="methodName">sendSearchRequest</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sends a search request to the media controller server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void sendSearchRequest(<a href="#MediaControllerSearchFilter">MediaControllerSearchFilter</a>[] request, <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a> replyCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<p><span class="remark">Remark: </span>
+ Search request handler should be specified on the server using
+<a href="#MediaControllerServer::setSearchRequestListener">setSearchRequestListener()</a> method.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">request</span>:
+ A collection of up to 20 MediaControllerSearchFilter objects.
+                </li>
+          <li class="param">
+<span class="name">replyCallback</span>:
+ Method to be invoked when server reply is received.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if request parameter has too many filters.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Server-side code */
+var server = tizen.mediacontroller.createServer();
+function searchRequestListener(clientName, request)
+{
+  console.log("search command received");
+  return new MediaControllerRequestReply(0, new tizen.Bundle({"key": "value"}));
+}
+server.setSearchRequestListener(searchRequestListener);
+server.updatePlaybackState("PLAY");
+
+/* Client-side code */
+var client = tizen.mediacontroller.getClient();
+var sinfo = client.getLatestServerInfo();
+
+var query = [
+  new tizen.MediaControllerSearchFilter("MUSIC", "GENRE", "rock"),
+  new tizen.MediaControllerSearchFilter(
+      "MUSIC", "GENRE", "pop", new tizen.Bundle({"releasedAfter": "1993"}))
+];
+
+sinfo.sendSearchRequest(query, function(reply)
+{
+  console.log("reply status: " + reply.code);
+  console.log("reply data: " + reply.data);
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>search command received
+reply status: 0
+reply data: {"key": "value"}
+</pre>
+</div>
+</dd>
 <dt class="method" id="MediaControllerServerInfo::sendCommand">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendCommand"></a><code><b><span class="methodName">sendCommand</span></b></code>
 </dt>
@@ -2434,26 +2650,26 @@ var playlist = server.createPlaylist("testPlaylist");
 function saveSuccess()
 {
   console.log("savePlaylist successful");
+  function successCallback(playlists)
+  {
+    playlists.forEach(function(playlist)
+    {
+      console.log("Playlist name: " + playlist.name);
+    });
+  }
+  function errorCallback(error)
+  {
+    console.log("getAllPlaylists failed with error: " + error);
+  }
+  serverInfo.getAllPlaylists(successCallback, errorCallback);
 }
+
 function saveError(error)
 {
   console.log("savePlaylist failed with error: " + error);
 }
 
-server.savePlaylist(saveSuccess, saveError);
-
-function successCallback(playlists)
-{
-  playlists.forEach(function(playlist)
-  {
-    console.log("Playlist name: " + playlist.name);
-  });
-}
-function errorCallback(error)
-{
-  console.log("getAllPlaylists failed with error: " + error);
-}
-serverInfo.getAllPlaylists(successCallback, errorCallback);
+server.savePlaylist(playlist, saveSuccess, saveError);
 </pre>
 </div>
 <div class="output">
@@ -2559,7 +2775,7 @@ var listener =
 {
   onplaylistupdated: function(playlist)
   {
-    console.log("updated playlist " + playlist.name);
+    console.log("updated playlist " + playlist);
   },
   onplaylistdeleted: function(playlistName)
   {
@@ -3035,7 +3251,7 @@ function errorCallback(error)
 {
   console.log("savePlaylist failed with error: " + error);
 }
-server.savePlaylist(successCallback, errorCallback);
+server.savePlaylist(playlist, successCallback, errorCallback);
 </pre>
 </div>
 <div class="output">
@@ -3117,8 +3333,69 @@ playlist.getItems(successCallback, errorCallback);
 </dl>
 </div>
 </div>
+<div class="interface" id="MediaControllerSearchFilter">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchFilter"></a><h3>2.11. MediaControllerSearchFilter</h3>
+<div class="brief">
+ Search filter representation.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category="NO_CATEGORY",
+               optional DOMString? keyword=null, optional <a href="tizen.html#Bundle">Bundle</a>? extraData=null)]
+  interface MediaControllerSearchFilter {
+    attribute <a href="#MediaControllerContentType">MediaControllerContentType</a> contentType;
+    attribute <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category;
+    attribute DOMString? keyword;
+    attribute <a href="tizen.html#Bundle">Bundle</a>? extraData;
+  };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="constructors">
+<h4 id="MediaControllerSearchFilter::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">MediaControllerSearchFilter(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> categoryoptional DOMString? keywordoptional <a href="tizen.html#Bundle">Bundle</a>? extraData);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="MediaControllerSearchFilter::contentType">
+<span class="attrName"><span class="type">MediaControllerContentType </span><span class="name">contentType</span></span><div class="brief">
+ Specifies filter's content type parameter.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerSearchFilter::category">
+<span class="attrName"><span class="type">MediaControllerSearchCategory </span><span class="name">category</span></span><div class="brief">
+ Specifies filter's search category parameter.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerSearchFilter::keyword">
+<span class="attrName"><span class="type">DOMString </span><span class="name">keyword</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Specifies filter's search keyword parameter.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<p><span class="remark">Remark: </span>
+ Keyword can only be null or empty if the search category is set to NO_CATEGORY.
+            </p>
+</li>
+<li class="attribute" id="MediaControllerSearchFilter::extraData">
+<span class="attrName"><span class="type">Bundle </span><span class="name">extraData</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Additional application-dependent search parameters.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+</ul>
+</div>
+</div>
 <div class="interface" id="MediaControllerServerInfoArraySuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfoArraySuccessCallback"></a><h3>2.11. MediaControllerServerInfoArraySuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfoArraySuccessCallback"></a><h3>2.12. MediaControllerServerInfoArraySuccessCallback</h3>
 <div class="brief">
  The MediaControllerServerInfoArraySuccessCallback interface that defines the success method
 for <em>MediaControllerClient.findServers()</em>.
@@ -3157,7 +3434,7 @@ for <em>MediaControllerClient.findServers()</em>.
 </div>
 </div>
 <div class="interface" id="MediaControllerSendCommandSuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSendCommandSuccessCallback"></a><h3>2.12. MediaControllerSendCommandSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSendCommandSuccessCallback"></a><h3>2.13. MediaControllerSendCommandSuccessCallback</h3>
 <div class="brief">
  The MediaControllerSendCommandSuccessCallback interface that defines the success method
 for <em>MediaControllerServerInfo.sendCommand()</em>.
@@ -3195,8 +3472,91 @@ for <em>MediaControllerServerInfo.sendCommand()</em>.
 </dl>
 </div>
 </div>
+<div class="interface" id="MediaControllerRequestReply">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerRequestReply"></a><h3>2.14. MediaControllerRequestReply</h3>
+<div class="brief">
+ Representation of server's response to a search request.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(long code, <a href="tizen.html#Bundle">Bundle</a>? data)]
+  interface MediaControllerRequestReply {
+    attribute long code;
+    attribute <a href="tizen.html#Bundle">Bundle</a>? data;
+  };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="constructors">
+<h4 id="MediaControllerRequestReply::constructor">Constructors</h4>
+<dl><pre class="webidl prettyprint">MediaControllerRequestReply(long code, <a href="tizen.html#Bundle">Bundle</a>? data);</pre></dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="MediaControllerRequestReply::code">
+<span class="attrName"><span class="type">long </span><span class="name">code</span></span><div class="brief">
+ Response status code.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerRequestReply::data">
+<span class="attrName"><span class="type">Bundle </span><span class="name">data</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Response data bundle.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="MediaControllerSearchRequestReplyCallback">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestReplyCallback"></a><h3>2.15. MediaControllerSearchRequestReplyCallback</h3>
+<div class="brief">
+ The MediaControllerSearchRequestReplyCallback interface defines reply callback for
+<em>MediaControllerServerInfo.sendSearchRequest()</em>.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSearchRequestReplyCallback {
+    void onreply(<a href="#MediaControllerRequestReply">MediaControllerRequestReply</a>? reply);
+  };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MediaControllerSearchRequestReplyCallback::onreply">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestReplyCallback::onreply"></a><code><b><span class="methodName">onreply</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Function called when search request has been processed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onreply(<a href="#MediaControllerRequestReply">MediaControllerRequestReply</a>? reply);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="description">
+            <p>
+Interpretation of status and data parameters depends on the server implementation.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">reply</span><span class="optional"> [nullable]</span>:
+ Reply object returned by request handler.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 <div class="interface" id="MediaControllerReceiveCommandCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerReceiveCommandCallback"></a><h3>2.13. MediaControllerReceiveCommandCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerReceiveCommandCallback"></a><h3>2.16. MediaControllerReceiveCommandCallback</h3>
 <div class="brief">
  The MediaControllerReceiveCommandCallback interface that defines the listener
 for custom commands from client in <em>MediaControllerServer.addCommandListener()</em>.
@@ -3255,7 +3615,7 @@ See <em>MediaControllerSendCommandSuccessCallback</em> interface.
 </div>
 </div>
 <div class="interface" id="MediaControllerServerStatusChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerStatusChangeCallback"></a><h3>2.14. MediaControllerServerStatusChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerStatusChangeCallback"></a><h3>2.17. MediaControllerServerStatusChangeCallback</h3>
 <div class="brief">
  The MediaControllerServerStatusChangeCallback interface that defines the listener
 for media controller server status changes.
@@ -3294,7 +3654,7 @@ for media controller server status changes.
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaybackInfoChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback"></a><h3>2.15. MediaControllerPlaybackInfoChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback"></a><h3>2.18. MediaControllerPlaybackInfoChangeCallback</h3>
 <div class="brief">
  The MediaControllerPlaybackInfoChangeCallback interface that defines the listeners
 object for receiving media controller playback info changes from server.
@@ -3436,8 +3796,59 @@ will be invoked after the <a href="#MediaControllerPlaybackInfoChangeCallback::o
 </dl>
 </div>
 </div>
+<div class="interface" id="MediaControllerSearchRequestCallback">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestCallback"></a><h3>2.19. MediaControllerSearchRequestCallback</h3>
+<div class="brief">
+ Server search request listener interface.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSearchRequestCallback {
+    <a href="#MediaControllerRequestReply">MediaControllerRequestReply</a>? onrequest(<a href="application.html#ApplicationId">ApplicationId</a> clientName, <a href="#MediaControllerSearchFilter">MediaControllerSearchFilter</a>[] request);
+  };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MediaControllerSearchRequestCallback::onrequest">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestCallback::onrequest"></a><code><b><span class="methodName">onrequest</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Function called on the server when it receives a search request from a client.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#MediaControllerRequestReply">MediaControllerRequestReply</a>? onrequest(<a href="application.html#ApplicationId">ApplicationId</a> clientName, <a href="#MediaControllerSearchFilter">MediaControllerSearchFilter</a>[] request);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">clientName</span>:
+ Request sender name.
+                </li>
+          <li class="param">
+<span class="name">request</span>:
+ Request collection of search filters.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">MediaControllerRequestReply:
+                  </span>
+ MediaControllerRequestReply object with status code and reply data bundle.
+It will be passed to the replyCallback of <a href="#MediaControllerServerInfo::sendSearchRequest">sendSearchRequest()</a>.
+              </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 <div class="interface" id="MediaControllerChangeRequestPlaybackInfoCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback"></a><h3>2.16. MediaControllerChangeRequestPlaybackInfoCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback"></a><h3>2.20. MediaControllerChangeRequestPlaybackInfoCallback</h3>
 <div class="brief">
  The MediaControllerChangeRequestPlaybackInfoCallback interface that defines the listeners
 object for receiving playback info change requests from client.
@@ -3648,7 +4059,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerGetAllPlaylistsSuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetAllPlaylistsSuccessCallback"></a><h3>2.17. MediaControllerGetAllPlaylistsSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetAllPlaylistsSuccessCallback"></a><h3>2.21. MediaControllerGetAllPlaylistsSuccessCallback</h3>
 <div class="brief">
  Interface for success callback for <em>getAllPlaylists</em> function.
           </div>
@@ -3686,7 +4097,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaylistUpdatedCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistUpdatedCallback"></a><h3>2.18. MediaControllerPlaylistUpdatedCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistUpdatedCallback"></a><h3>2.22. MediaControllerPlaylistUpdatedCallback</h3>
 <div class="brief">
  Interface for specific playlist update events (including deletion).
           </div>
@@ -3754,7 +4165,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerGetItemsSuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetItemsSuccessCallback"></a><h3>2.19. MediaControllerGetItemsSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetItemsSuccessCallback"></a><h3>2.23. MediaControllerGetItemsSuccessCallback</h3>
 <div class="brief">
  Interface for success callback for <em>getItems</em> function.
           </div>
@@ -3795,6 +4206,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module MediaController {
   enum MediaControllerServerState { "ACTIVE", "INACTIVE" };
+  enum MediaControllerSearchCategory { "NO_CATEGORY", "TITLE", "ARTIST", "ALBUM", "GENRE", "TPO" };
   enum MediaControllerPlaybackState { "PLAY", "PAUSE", "STOP", "NEXT", "PREV", "FORWARD", "REWIND" };
   enum MediaControllerRepeatState { "REPEAT_OFF", "REPEAT_ONE", "REPEAT_ALL" };
   enum MediaControllerContentType { "IMAGE", "MUSIC", "VIDEO", "OTHER", "UNDECIDED" };
@@ -3821,6 +4233,8 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeRequestPlaybackInfoListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setSearchRequestListener(<a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unsetSearchRequestListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addCommandListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeCommandListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#MediaControllerPlaylist">MediaControllerPlaylist</a> createPlaylist(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -3850,6 +4264,8 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void sendSearchRequest(<a href="#MediaControllerSearchFilter">MediaControllerSearchFilter</a>[] request, <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a> replyCallback)
+                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -3910,11 +4326,27 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     void getItems(<a href="#MediaControllerGetItemsSuccessCallback">MediaControllerGetItemsSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
+  [Constructor(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category="NO_CATEGORY",
+               optional DOMString? keyword=null, optional <a href="tizen.html#Bundle">Bundle</a>? extraData=null)]
+  interface MediaControllerSearchFilter {
+    attribute <a href="#MediaControllerContentType">MediaControllerContentType</a> contentType;
+    attribute <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category;
+    attribute DOMString? keyword;
+    attribute <a href="tizen.html#Bundle">Bundle</a>? extraData;
+  };
   [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerInfoArraySuccessCallback {
     void onsuccess(<a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>[] servers);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSendCommandSuccessCallback {
     void onsuccess(object? data);
+  };
+  [Constructor(long code, <a href="tizen.html#Bundle">Bundle</a>? data)]
+  interface MediaControllerRequestReply {
+    attribute long code;
+    attribute <a href="tizen.html#Bundle">Bundle</a>? data;
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSearchRequestReplyCallback {
+    void onreply(<a href="#MediaControllerRequestReply">MediaControllerRequestReply</a>? reply);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
     object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
@@ -3927,6 +4359,9 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     void onshufflemodechanged(boolean mode);
     void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
     void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSearchRequestCallback {
+    <a href="#MediaControllerRequestReply">MediaControllerRequestReply</a>? onrequest(<a href="application.html#ApplicationId">ApplicationId</a> clientName, <a href="#MediaControllerSearchFilter">MediaControllerSearchFilter</a>[] request);
   };
   [Callback, NoInterfaceObject] interface MediaControllerChangeRequestPlaybackInfoCallback {
     void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
