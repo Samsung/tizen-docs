@@ -90,7 +90,7 @@ To show or hide the Softkey service window when your application's window is act
 
 ## Get Visibility Status of Softkey Window
 
-To get the current visible state of the Softkey service window, call `tzsh_softkey_global_visible_state_get()`. The Softkey service window will be visible or invisible depending on the visible state:
+To get the current visible state of the Softkey service window, call `tzsh_softkey_global_visible_state_get()`. The Softkey service window will be visible or invisible depending on the visibility state:
 
 ```
     int ret;

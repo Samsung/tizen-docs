@@ -46,7 +46,7 @@ init(const char *name)
 
 ## Show or Hide Quickpanel Window
 
-To show or hide the Quickpanel service window when your application's window is activated, use the following functions:
+To show or hide the Quickpanel service window when your application's window is activated, use the following code:
 
 ```
     if (show)
@@ -56,7 +56,7 @@ To show or hide the Quickpanel service window when your application's window is 
 ```
 
 ## Get Visibility Status of Quickpanel Window
-To get the current visibility of the Quickpanel service window, call `tzsh_quickpanel_visible_get()`. The Quickpanel service window will be visible or invisible depending on the visible state:
+To get the current visibility status of the Quickpanel service window, call `tzsh_quickpanel_visible_get()`. The Quickpanel service window will be visible or invisible depending on the visible state:
 
 ```
     tzsh_quickpanel_state_visible_e state;
