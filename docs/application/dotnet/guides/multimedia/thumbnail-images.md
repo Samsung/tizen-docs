@@ -7,7 +7,7 @@ The main features of the `Tizen.Multimedia.Util.ThumbnailExtractor` class includ
 
 -   Video and image thumbnails
 
-    You can [create thumbnails](#get_thumbnail) from video and image files. Audio files are not supported.
+    You can [create thumbnails](#extracting-a-thumbnail) from video and image files. Audio files are not supported.
 
 -   Custom size
 
@@ -27,17 +27,43 @@ using Tizen.Multimedia.Util;
 > **Note**   
 > The input media file can be common content in the device storage (internal or external) or private content in your application data.
 
-<a name="get_thumbnail"></a>
+
 ## Extracting a Thumbnail
 
 To extract a thumbnail from a file, use the `ExtractAsync()` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
 
 ```
-async Task Extract(string testImagePath)
+async Task ExtractAsync(string testImagePath, Size size)
 {
-    ThumbnailExtractionResult result = await ThumbnailExtractor.ExtractAsync(testImagePath, new Size(512, 288));
+    ThumbnailExtractionResult result = await ThumbnailExtractor.ExtractAsync(testImagePath, size);
 
-    Tizen.Log.Info("Data size is " + result.RawData.Length);
+    Log.Info("Util", "Data size is " + result.RawData.Length);
+}
+```
+
+## Extracting a Thumbnail synchronously
+
+To extract synchronously a thumbnail from a file, use the `Extract(string path, Size size)` or `Extract(string path)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+
+```
+void Extract(string testImagePath, Size size)
+{
+    ThumbnailExtractionResult result = ThumbnailExtractor.Extract(testImagePath, size);
+
+    Log.Info("Util", "Data size is " + result.RawData.Length);
+}
+```
+
+To extract synchronously a thumbnail from a file and save it to file, use the `Extract(string path, Size size, string resultThumbnailPath)` or `Extract(string path, string resultThumbnailPath)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+```
+void Extract(string testImagePath, string resultPath, size)
+{
+    ThumbnailExtractor.Extract(testImagePath, resultPath, size);
+
+    if (File.Exists(resultPath))
+    {
+        Log.Error("Util", "Failed to extract thumbnail image");
+    }
 }
 ```
 
