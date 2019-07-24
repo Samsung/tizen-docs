@@ -331,9 +331,9 @@ It is a property of the ECMAScript global object, as specified by the <em>TizenO
           </div>
 <pre class="webidl prettyprint">  [Constructor(optional object? json)]
   interface Bundle {
-    any get(DOMString key) raises(<a href="#WebAPIException">WebAPIException</a>);
+    any get(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void set(DOMString key, any value);
-    <a href="#BundleValueType">BundleValueType</a> typeOf(DOMString key) raises(<a href="#WebAPIException">WebAPIException</a>);
+    <a href="#BundleValueType">BundleValueType</a> typeOf(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void forEach(<a href="#BundleItemCallback">BundleItemCallback</a> callback);
     object toJSON();
     DOMString toString();
@@ -377,8 +377,7 @@ All supported value types are specified in the BundleValueType enum.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">any:
-                  </span>
+<span class="return">any:</span>
  Bundle entry value for a given key.
               </ul>
 </div>
@@ -482,8 +481,7 @@ console.log(bundle.get("empty"));
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BundleValueType:
-                  </span>
+<span class="return">BundleValueType:</span>
  Entry value type.
               </ul>
 </div>
@@ -588,8 +586,7 @@ type: STRING
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">object:
-                  </span>
+<span class="return">object:</span>
  JSON-compatible object.
               </ul>
 </div>
@@ -618,8 +615,7 @@ console.log(JSON.stringify(json));
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  JSON string representation of the bundle's data.
               </ul>
 </div>
@@ -1101,27 +1097,23 @@ catch (err)
 <div class="brief">
  Generic exception interface.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject]
-  interface WebAPIException {
-    readonly attribute unsigned short code;
-    readonly attribute DOMString name;
-    readonly attribute DOMString message;
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface WebAPIException {
     const unsigned short INDEX_SIZE_ERR = 1;
-    const unsigned short DOMSTRING_SIZE_ERR = 2; 
+    const unsigned short DOMSTRING_SIZE_ERR = 2;
     const unsigned short HIERARCHY_REQUEST_ERR = 3;
     const unsigned short WRONG_DOCUMENT_ERR = 4;
     const unsigned short INVALID_CHARACTER_ERR = 5;
-    const unsigned short NO_DATA_ALLOWED_ERR = 6; 
+    const unsigned short NO_DATA_ALLOWED_ERR = 6;
     const unsigned short NO_MODIFICATION_ALLOWED_ERR = 7;
     const unsigned short NOT_FOUND_ERR = 8;
     const unsigned short NOT_SUPPORTED_ERR = 9;
-    const unsigned short INUSE_ATTRIBUTE_ERR = 10; 
+    const unsigned short INUSE_ATTRIBUTE_ERR = 10;
     const unsigned short INVALID_STATE_ERR = 11;
     const unsigned short SYNTAX_ERR = 12;
     const unsigned short INVALID_MODIFICATION_ERR = 13;
     const unsigned short NAMESPACE_ERR = 14;
     const unsigned short INVALID_ACCESS_ERR = 15;
-    const unsigned short VALIDATION_ERR = 16; 
+    const unsigned short VALIDATION_ERR = 16;
     const unsigned short TYPE_MISMATCH_ERR = 17;
     const unsigned short SECURITY_ERR = 18;
     const unsigned short NETWORK_ERR = 19;
@@ -1131,6 +1123,9 @@ catch (err)
     const unsigned short TIMEOUT_ERR = 23;
     const unsigned short INVALID_NODE_TYPE_ERR = 24;
     const unsigned short DATA_CLONE_ERR = 25;
+    readonly attribute unsigned short code;
+    readonly attribute DOMString name;
+    readonly attribute DOMString message;
   };</pre>
 <p><span class="version">Since: </span>
  2.0
@@ -1440,8 +1435,7 @@ This attribute is mainly intended to be used for developers rather than end user
 <div class="brief">
  Generic error interface.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject]
-  interface WebAPIError {
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface WebAPIError {
     readonly attribute unsigned short code;
     readonly attribute DOMString name;
     readonly attribute DOMString message;
@@ -1522,8 +1516,7 @@ as it is mainly intended to be useful for developers rather than end users.
 <div class="brief">
  This interface is used in methods that do not require any return value in the success callback.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
-  interface SuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SuccessCallback {
     void onsuccess();
   };</pre>
 <p><span class="version">Since: </span>
@@ -1572,8 +1565,7 @@ tizen.application.launch(otherAppID, onSuccess);
 <div class="brief">
  This interface is used in methods that require only an error as an input parameter in the error callback.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
-  interface ErrorCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
     void onerror(<a href="#WebAPIError">WebAPIError</a> error);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1719,9 +1711,9 @@ type: STRING
   };
   [Constructor(optional object? json)]
   interface Bundle {
-    any get(DOMString key) raises(<a href="#WebAPIException">WebAPIException</a>);
+    any get(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void set(DOMString key, any value);
-    <a href="#BundleValueType">BundleValueType</a> typeOf(DOMString key) raises(<a href="#WebAPIException">WebAPIException</a>);
+    <a href="#BundleValueType">BundleValueType</a> typeOf(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void forEach(<a href="#BundleItemCallback">BundleItemCallback</a> callback);
     object toJSON();
     DOMString toString();
@@ -1755,27 +1747,23 @@ type: STRING
     attribute double latitude;
     attribute double longitude;
   };
-  [NoInterfaceObject]
-  interface WebAPIException {
-    readonly attribute unsigned short code;
-    readonly attribute DOMString name;
-    readonly attribute DOMString message;
+  [NoInterfaceObject] interface WebAPIException {
     const unsigned short INDEX_SIZE_ERR = 1;
-    const unsigned short DOMSTRING_SIZE_ERR = 2; 
+    const unsigned short DOMSTRING_SIZE_ERR = 2;
     const unsigned short HIERARCHY_REQUEST_ERR = 3;
     const unsigned short WRONG_DOCUMENT_ERR = 4;
     const unsigned short INVALID_CHARACTER_ERR = 5;
-    const unsigned short NO_DATA_ALLOWED_ERR = 6; 
+    const unsigned short NO_DATA_ALLOWED_ERR = 6;
     const unsigned short NO_MODIFICATION_ALLOWED_ERR = 7;
     const unsigned short NOT_FOUND_ERR = 8;
     const unsigned short NOT_SUPPORTED_ERR = 9;
-    const unsigned short INUSE_ATTRIBUTE_ERR = 10; 
+    const unsigned short INUSE_ATTRIBUTE_ERR = 10;
     const unsigned short INVALID_STATE_ERR = 11;
     const unsigned short SYNTAX_ERR = 12;
     const unsigned short INVALID_MODIFICATION_ERR = 13;
     const unsigned short NAMESPACE_ERR = 14;
     const unsigned short INVALID_ACCESS_ERR = 15;
-    const unsigned short VALIDATION_ERR = 16; 
+    const unsigned short VALIDATION_ERR = 16;
     const unsigned short TYPE_MISMATCH_ERR = 17;
     const unsigned short SECURITY_ERR = 18;
     const unsigned short NETWORK_ERR = 19;
@@ -1785,19 +1773,19 @@ type: STRING
     const unsigned short TIMEOUT_ERR = 23;
     const unsigned short INVALID_NODE_TYPE_ERR = 24;
     const unsigned short DATA_CLONE_ERR = 25;
-  };
-  [NoInterfaceObject]
-  interface WebAPIError {
     readonly attribute unsigned short code;
     readonly attribute DOMString name;
     readonly attribute DOMString message;
   };
-  [Callback=FunctionOnly, NoInterfaceObject]
-  interface SuccessCallback {
+  [NoInterfaceObject] interface WebAPIError {
+    readonly attribute unsigned short code;
+    readonly attribute DOMString name;
+    readonly attribute DOMString message;
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface SuccessCallback {
     void onsuccess();
   };
-  [Callback=FunctionOnly, NoInterfaceObject]
-  interface ErrorCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
     void onerror(<a href="#WebAPIError">WebAPIError</a> error);
   };
   [Callback=FunctionOnly] interface BundleItemCallback {

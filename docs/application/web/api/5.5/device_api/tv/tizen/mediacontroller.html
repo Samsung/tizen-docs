@@ -414,8 +414,7 @@ There is a <em>tizen.mediacontroller</em> object that allows access to the Media
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">MediaControllerClient:
-                  </span>
+<span class="return">MediaControllerClient:</span>
  The <em>MediaController Client</em> object.
               </ul>
 </div>
@@ -467,8 +466,7 @@ and is controlled by Client.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">MediaControllerServer:
-                  </span>
+<span class="return">MediaControllerServer:</span>
  The <em>MediaController Server</em> object.
               </ul>
 </div>
@@ -516,7 +514,8 @@ catch (err)
     void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackContentType(<a href="#MediaControllerContentType">MediaControllerContentType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateShuffleMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+<span class="nocode deprecated">    void updateRepeatMode(boolean mode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>    void updateRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateMetadata(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addChangeRequestPlaybackInfoListener(<a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeRequestPlaybackInfoListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -968,8 +967,7 @@ requests from client.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -1112,8 +1110,7 @@ See <em>MediaControllerServerInfo</em> to check how to send custom commands from
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -1228,8 +1225,7 @@ mcServer.removeCommandListener(watcherId);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">MediaControllerPlaylist:
-                  </span>
+<span class="return">MediaControllerPlaylist:</span>
  New empty <em>MediaControllerPlaylist</em> object with given name.
               </ul>
 </div>
@@ -1258,7 +1254,7 @@ var playlist = server.createPlaylist("testPlaylistName");
 <div class="brief">
  Saves playlist in local database.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void savePlaylist(<a href="#MediaControllerPlaylist">MediaControllerPlaylist</a> playlist, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void savePlaylist(<a href="#MediaControllerPlaylist">MediaControllerPlaylist</a> playlist, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                   optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.5
@@ -1377,7 +1373,7 @@ The <em>errorCallback</em> may be triggered for one of the following errors:
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = mediacontroller.createServer();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.mediacontroller.createServer();
 var playlist = server.createPlaylist("testPlaylistName");
 function deleteSuccess()
 {
@@ -1436,7 +1432,7 @@ server.savePlaylist(playlist, saveSuccess);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = mediacontroller.createServer();
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.mediacontroller.createServer();
 var playlist = server.createPlaylist("testPlaylistName");
 var metadata =
 {
@@ -1453,10 +1449,12 @@ var metadata =
   picture: "testPicture"
 };
 playlist.addItem("index1", metadata);
-server.savePlaylist(playlist);
-server.updatePlaybackItem("testPlaylistName", "index1");
-console.log("Current playlist: " + server.playbackInfo.playlistName);
-console.log("Current index: " + server.playbackInfo.index);
+server.savePlaylist(playlist, function()
+{
+  server.updatePlaybackItem("testPlaylistName", "index1");
+  console.log("Current playlist: " + server.playbackInfo.playlistName);
+  console.log("Current index: " + server.playbackInfo.index);
+});
 </pre>
 </div>
 <div class="output">
@@ -1517,26 +1515,25 @@ var playlist = server.createPlaylist("testPlaylist");
 function saveSuccess()
 {
   console.log("savePlaylist successful");
+  function successCallback(playlists)
+  {
+    playlists.forEach(function(playlist)
+    {
+      console.log("Playlist name: " + playlist.name);
+    });
+  }
+  function errorCallback(error)
+  {
+    console.log("getAllPlaylists failed with error: " + error);
+  }
+  server.getAllPlaylists(successCallback, errorCallback);
 }
 function saveError(error)
 {
   console.log("savePlaylist failed with error: " + error);
 }
 
-server.savePlaylist(saveSuccess, saveError);
-
-function successCallback(playlists)
-{
-  playlists.forEach(function(playlist)
-  {
-    console.log("Playlist name: " + playlist.name);
-  });
-}
-function errorCallback(error)
-{
-  console.log("getAllPlaylists failed with error: " + error);
-}
-server.getAllPlaylists(successCallback, errorCallback);
+server.savePlaylist(playlist, saveSuccess, saveError);
 </pre>
 </div>
 <div class="output">
@@ -1651,8 +1648,7 @@ mcClient.findServers(successCallback, errorCallback);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">MediaControllerServerInfo:
-                  </span>
+<span class="return">MediaControllerServerInfo<span class="optional"> [nullable]</span>:</span>
  Server info or <var>null</var>.
               </ul>
 </div>
@@ -1692,7 +1688,9 @@ Provides methods to send commands to server and listen for server status change.
                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendShuffleMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+<span class="nocode deprecated">    void sendRepeatMode(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                        raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>    void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -1788,7 +1786,7 @@ console.log(sinfo.iconURI);
 <div class="brief">
  Allows to change playback state of media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1845,7 +1843,7 @@ mcServerInfo.sendPlaybackState("STOP",
 <div class="brief">
  Allows to change playback position of media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -2020,7 +2018,7 @@ mcServerInfo.sendRepeatMode(false,
 <div class="brief">
  Allows to change repeat state of media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void sendRepeatState(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.5
@@ -2081,7 +2079,7 @@ mcServerInfo.sendRepeatState("REPEAT_ALL",
 <div class="brief">
  Allows to send custom command to media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -2163,8 +2161,7 @@ mcServerInfo.sendCommand("myPlaylistFilter", exampleCustomCommandData,
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -2264,8 +2261,7 @@ mcServerInfo.removeServerStatusChangeListener(watcherId);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -2434,26 +2430,26 @@ var playlist = server.createPlaylist("testPlaylist");
 function saveSuccess()
 {
   console.log("savePlaylist successful");
+  function successCallback(playlists)
+  {
+    playlists.forEach(function(playlist)
+    {
+      console.log("Playlist name: " + playlist.name);
+    });
+  }
+  function errorCallback(error)
+  {
+    console.log("getAllPlaylists failed with error: " + error);
+  }
+  serverInfo.getAllPlaylists(successCallback, errorCallback);
 }
+
 function saveError(error)
 {
   console.log("savePlaylist failed with error: " + error);
 }
 
-server.savePlaylist(saveSuccess, saveError);
-
-function successCallback(playlists)
-{
-  playlists.forEach(function(playlist)
-  {
-    console.log("Playlist name: " + playlist.name);
-  });
-}
-function errorCallback(error)
-{
-  console.log("getAllPlaylists failed with error: " + error);
-}
-serverInfo.getAllPlaylists(successCallback, errorCallback);
+server.savePlaylist(playlist, saveSuccess, saveError);
 </pre>
 </div>
 <div class="output">
@@ -2534,8 +2530,7 @@ serverInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -2559,7 +2554,7 @@ var listener =
 {
   onplaylistupdated: function(playlist)
   {
-    console.log("updated playlist " + playlist.name);
+    console.log("updated playlist " + playlist);
   },
   onplaylistdeleted: function(playlistName)
   {
@@ -2628,7 +2623,8 @@ serverInfo.removePlaylistUpdatedListener(listenerId);
     readonly attribute <a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> ageRating;
     readonly attribute <a href="#MediaControllerContentType">MediaControllerContentType</a> contentType;
     readonly attribute boolean shuffleMode;
-    readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
+<span class="nocode deprecated">    readonly attribute boolean repeatMode;
+</span>    readonly attribute <a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> repeatState;
     readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
     readonly attribute DOMString? index;
     readonly attribute DOMString? playlistName;
@@ -3035,7 +3031,7 @@ function errorCallback(error)
 {
   console.log("savePlaylist failed with error: " + error);
 }
-server.savePlaylist(successCallback, errorCallback);
+server.savePlaylist(playlist, successCallback, errorCallback);
 </pre>
 </div>
 <div class="output">
@@ -3245,8 +3241,7 @@ See <em>MediaControllerSendCommandSuccessCallback</em> interface.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">object:
-                  </span>
+<span class="return">object<span class="optional"> [nullable]</span>:</span>
  Data object which should be send with reply to the client.
               </ul>
 </div>
@@ -3302,7 +3297,8 @@ object for receiving media controller playback info changes from server.
 <pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface MediaControllerPlaybackInfoChangeCallback {
     void onplaybackchanged(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);
     void onshufflemodechanged(boolean mode);
-    void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
+<span class="nocode deprecated">    void onrepeatmodechanged(boolean mode);
+</span>    void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
     void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
   };</pre>
 <p><span class="version">Since: </span>
@@ -3446,7 +3442,8 @@ object for receiving playback info change requests from client.
     void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
     void onplaybackpositionrequest(unsigned long long position, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
     void onshufflemoderequest(boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
-    void onrepeatstaterequest(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
+<span class="nocode deprecated">    void onrepeatmoderequest(boolean mode, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
+</span>    void onrepeatstaterequest(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
     void onplaybackitemrequest(DOMString playlistName, DOMString index, <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state,
                                unsigned long long position, <a href="application.html#ApplicationId">ApplicationId</a> clientName);
   };</pre>
@@ -3613,7 +3610,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 <div class="brief">
  Called when client request change of playback item.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onplaybackitemrequest(DOMString playlistName, DOMString index, <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, 
+<div class="synopsis"><pre class="signature prettyprint">void onplaybackitemrequest(DOMString playlistName, DOMString index, <a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state,
                            unsigned long long position, <a href="application.html#ApplicationId">ApplicationId</a> clientName);</pre></div>
 <p><span class="version">Since: </span>
  5.5
@@ -3798,8 +3795,21 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
   enum MediaControllerPlaybackState { "PLAY", "PAUSE", "STOP", "NEXT", "PREV", "FORWARD", "REWIND" };
   enum MediaControllerRepeatState { "REPEAT_OFF", "REPEAT_ONE", "REPEAT_ALL" };
   enum MediaControllerContentType { "IMAGE", "MUSIC", "VIDEO", "OTHER", "UNDECIDED" };
-  enum MediaControllerContentAgeRating { "ALL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
-    "17", "18", "19" };
+  enum MediaControllerContentAgeRating { "ALL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "14", "15", "16", "17", "18", "19" };
+  dictionary MediaControllerMetadataInit {
+    DOMString title;
+    DOMString artist;
+    DOMString album;
+    DOMString author;
+    DOMString genre;
+    DOMString duration;
+    DOMString date;
+    DOMString copyright;
+    DOMString description;
+    DOMString trackNum;
+    DOMString picture;
+  };
   [NoInterfaceObject] interface MediaControllerObject {
     readonly attribute <a href="#MediaControllerManager">MediaControllerManager</a> mediacontroller;
   };
@@ -3890,19 +3900,6 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
   [NoInterfaceObject] interface MediaControllerPlaylistItem {
     readonly attribute DOMString index;
     readonly attribute <a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata;
-  };
-  dictionary MediaControllerMetadataInit {
-    DOMString title;
-    DOMString artist;
-    DOMString album;
-    DOMString author;
-    DOMString genre;
-    DOMString duration;
-    DOMString date;
-    DOMString copyright;
-    DOMString description;
-    DOMString trackNum;
-    DOMString picture;
   };
   [NoInterfaceObject] interface MediaControllerPlaylist {
     readonly attribute DOMString name;

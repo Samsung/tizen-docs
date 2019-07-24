@@ -451,7 +451,7 @@ catch (error)
 <div class="brief">
  Changes channel up.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void tuneUp(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode, 
+<div class="synopsis"><pre class="signature prettyprint">void tuneUp(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode,
             optional <a href="tvwindow.html#WindowType">WindowType</a>? type);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -543,7 +543,7 @@ catch (error)
 <div class="brief">
  Changes channel down.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void tuneDown(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode, 
+<div class="synopsis"><pre class="signature prettyprint">void tuneDown(<a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? tuneMode,
               optional <a href="tvwindow.html#WindowType">WindowType</a>? type);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -724,7 +724,7 @@ catch (error)
 <div class="brief">
  Gets the TV channel list.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getChannelList(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? mode, 
+<div class="synopsis"><pre class="signature prettyprint">void getChannelList(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#TuneMode">TuneMode</a>? mode,
                     optional long? nStart, optional long? number);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -885,8 +885,7 @@ catch (error)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ChannelInfo:
-                  </span>
+<span class="return">ChannelInfo:</span>
  ChannelInfo the current channel information.
               </ul>
 </div>
@@ -927,7 +926,7 @@ catch (error)
  Gets a list of programs for a specific channel within a specified time duration.
 If this method is invoked without the <var>duration</var> parameter, all available program informations are retrieved.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getProgramList(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="time.html#TZDate">TZDate</a> startTime, <a href="#ProgramListSuccessCallback">ProgramListSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void getProgramList(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="time.html#TZDate">TZDate</a> startTime, <a href="#ProgramListSuccessCallback">ProgramListSuccessCallback</a> successCallback,
                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional unsigned long? duration);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -1050,8 +1049,7 @@ If there is no TV program data grabbed from broadcaster, it will return <var>nul
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ProgramInfo:
-                  </span>
+<span class="return">ProgramInfo<span class="optional"> [nullable]</span>:</span>
  ProgramInfo the information of television program.
               </ul>
 </div>
@@ -1116,8 +1114,7 @@ catch (error)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  long The identifier to clear the watch subscription for channel changes.
               </ul>
 </div>
@@ -1236,8 +1233,7 @@ Calling this function has no effect if there is no listener with given id.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  long The identifier to clear the watch subscription for signal state changes.
               </ul>
 </div>
@@ -1343,8 +1339,7 @@ The returned array will contain at least one <a href="#FavoriteList">FavoriteLis
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">FavoriteList[]:
-                  </span>
+<span class="return">FavoriteList[]:</span>
  FavoriteList[] The array of favorite lists.
               </ul>
 </div>
@@ -1431,7 +1426,7 @@ console.log("Video standard: " + res);
 <div class="brief">
  This interface invokes the success callback that is invoked when the list of TV program informations is successfully retrieved.
           </div>
-<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface ProgramListSuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ProgramListSuccessCallback {
     void onsuccess(<a href="#ProgramInfo">ProgramInfo</a>[] programInfos);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1469,7 +1464,7 @@ console.log("Video standard: " + res);
 <div class="brief">
  The interface invokes the success callback that is invoked when all available channels are searched.
           </div>
-<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface FindChannelSuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FindChannelSuccessCallback {
     void onsuccess(<a href="#ChannelInfo">ChannelInfo</a>[] channelInfos);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1507,7 +1502,7 @@ console.log("Video standard: " + res);
 <div class="brief">
  The interface defines a channel change callback for getting notified information about the channel changes.
           </div>
-<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface ChannelChangeCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ChannelChangeCallback {
     void onchanged(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="tvwindow.html#WindowType">WindowType</a> type);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1549,7 +1544,7 @@ console.log("Video standard: " + res);
 <div class="brief">
  The interface defines a signal state change callback for getting notified information about signal state changes.
           </div>
-<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface SignalStateChangeCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SignalStateChangeCallback {
     void onchanged(<a href="#SignalState">SignalState</a> state);
   };</pre>
 <p><span class="version">Since: </span>
@@ -2224,7 +2219,7 @@ catch (error)
 <div class="brief">
  Gets the list of TV channels in a specific favorite list.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getChannels(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? nStart, 
+<div class="synopsis"><pre class="signature prettyprint">void getChannels(<a href="#FindChannelSuccessCallback">FindChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? nStart,
                  optional long? number);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -2340,6 +2335,16 @@ To guarantee the running of this application on a device with a tuner, define th
     "DVB_SERVICE_TYPE_TELETEXT", "DVB_SERVICE_TYPE_NVOD_REF", "DVB_SERVICE_TYPE_NVOD_SHIFT", "DVB_SERVICE_TYPE_MOSAIC",
     "DVB_SERVICE_TYPE_PAL", "DVB_SERVICE_TYPE_SECAM", "DVB_SERVICE_TYPE_D_D2_MAC", "DVB_SERVICE_TYPE_FM_RADIO", "DVB_SERVICE_TYPE_NTSC",
     "DVB_SERVICE_TYPE_DATA", "DVB_SERVICE_TYPE_RCS_MAP", "DVB_SERVICE_TYPE_RCS_FLS", "DVB_SERVICE_TYPE_MHP", "DVB_SERVICE_TYPE_HD" };
+  dictionary TuneOption {
+    long? major;
+    long? minor;
+    long? sourceID;
+    long? programNumber;
+    long? transportStreamID;
+    long? ptc;
+    long? originalNetworkID;
+    DOMString? providerMBR;
+  };
   [NoInterfaceObject] interface TVChannelManager {
     readonly attribute <a href="#ChannelManager">ChannelManager</a> tvchannel;
   };
@@ -2366,32 +2371,22 @@ To guarantee the running of this application on a device with a tuner, define th
     <a href="#FavoriteList">FavoriteList</a>[] getFavorites() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BroadcastStandard">BroadcastStandard</a> getBroadcastStandard(optional <a href="tvwindow.html#WindowType">WindowType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  [Callback = FunctionOnly, NoInterfaceObject] interface ProgramListSuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface ProgramListSuccessCallback {
     void onsuccess(<a href="#ProgramInfo">ProgramInfo</a>[] programInfos);
   };
-  [Callback = FunctionOnly, NoInterfaceObject] interface FindChannelSuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface FindChannelSuccessCallback {
     void onsuccess(<a href="#ChannelInfo">ChannelInfo</a>[] channelInfos);
   };
-  [Callback = FunctionOnly, NoInterfaceObject] interface ChannelChangeCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface ChannelChangeCallback {
     void onchanged(<a href="#ChannelInfo">ChannelInfo</a> channelInfo, <a href="tvwindow.html#WindowType">WindowType</a> type);
   };
-  [Callback = FunctionOnly, NoInterfaceObject] interface SignalStateChangeCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface SignalStateChangeCallback {
     void onchanged(<a href="#SignalState">SignalState</a> state);
   };
   [Callback, NoInterfaceObject] interface TuneCallback {
     void onsuccess(<a href="#ChannelInfo">ChannelInfo</a> channel, <a href="tvwindow.html#WindowType">WindowType</a> type);
     void onnosignal();
     void onprograminforeceived(<a href="#ProgramInfo">ProgramInfo</a> program, <a href="tvwindow.html#WindowType">WindowType</a> type);
-  };
-  dictionary TuneOption {
-    long? major;
-    long? minor;
-    long? sourceID;
-    long? programNumber;
-    long? transportStreamID;
-    long? ptc;
-    long? originalNetworkID;
-    DOMString? providerMBR;
   };
   [NoInterfaceObject] interface ChannelInfo {
     readonly attribute long major;

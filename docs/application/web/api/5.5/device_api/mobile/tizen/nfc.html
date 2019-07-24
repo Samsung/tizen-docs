@@ -561,8 +561,7 @@ It provides access to the API functionalities through the tizen.nfc interface.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">NFCAdapter:
-                  </span>
+<span class="return">NFCAdapter:</span>
  The default NFCAdapter object.
               </ul>
 </div>
@@ -666,7 +665,9 @@ catch (err)
     readonly attribute boolean powered;
     attribute <a href="#CardEmulationMode">CardEmulationMode</a> cardEmulationMode raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     attribute <a href="#SecureElementType">SecureElementType</a>? activeSecureElement raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void setTagListener(<a href="#NFCTagDetectCallback">NFCTagDetectCallback</a> detectCallback, optional <a href="#NFCTagType">NFCTagType</a>[]? tagFilter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+<span class="nocode deprecated">    void setPowered(boolean state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>    void setTagListener(<a href="#NFCTagDetectCallback">NFCTagDetectCallback</a> detectCallback, optional <a href="#NFCTagType">NFCTagType</a>[]? tagFilter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setPeerListener(<a href="#NFCPeerDetectCallback">NFCPeerDetectCallback</a> detectCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetTagListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetPeerListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -1242,8 +1243,7 @@ adapter.setPeerListener(onSuccessCB);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Subscription identifier.
               </ul>
 </div>
@@ -1373,8 +1373,7 @@ Such an event may indicate initiating a financial transaction using the device.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Subscription identifier.
               </ul>
 </div>
@@ -1498,8 +1497,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Subscription identifier.
               </ul>
 </div>
@@ -1621,8 +1619,7 @@ should be returned.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">NDEFMessage:
-                  </span>
+<span class="return">NDEFMessage<span class="optional"> [nullable]</span>:</span>
  The NDEF Message that was last read.
               </ul>
 </div>
@@ -1751,8 +1748,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Subscription identifier.
               </ul>
 </div>
@@ -1984,8 +1980,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if current application is activated handler for the AID.
               </ul>
 </div>
@@ -2061,8 +2056,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if current application is activated handler for the category.
               </ul>
 </div>
@@ -2245,7 +2239,7 @@ catch (err)
 <div class="brief">
  Retrieves AIDs that were previously registered for a specific card emulation category and secure element type. An application can only retrieve the AIDs which it registered.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getAIDsForCategory(<a href="#SecureElementType">SecureElementType</a> type, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category, <a href="#AIDArraySuccessCallback">AIDArraySuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void getAIDsForCategory(<a href="#SecureElementType">SecureElementType</a> type, <a href="#CardEmulationCategoryType">CardEmulationCategoryType</a> category, <a href="#AIDArraySuccessCallback">AIDArraySuccessCallback</a> successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -3179,8 +3173,7 @@ If the operation completes successfully, it returns the serial byte array of the
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:
-                  </span>
+<span class="return">byte[]:</span>
  The raw data in the NDEFMessage.
               </ul>
 </div>
@@ -3485,7 +3478,7 @@ var newRecord = new tizen.NDEFRecordMedia("text/plain", myData);
 <div class="brief">
  The HCEEventData interface represents HCE event data.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface  HCEEventData {
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface HCEEventData {
     readonly attribute <a href="#HCEEventType">HCEEventType</a> eventType;
     readonly attribute byte[] apdu;
     readonly attribute long length;
@@ -3535,10 +3528,10 @@ var newRecord = new tizen.NDEFRecordMedia("text/plain", myData);
 <div class="brief">
  The AID data interface represents registered AID data
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface  AIDData{
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface AIDData {
     readonly attribute <a href="#SecureElementType">SecureElementType</a> type;
     readonly attribute <a href="#AID">AID</a> aid;
-    readonly attribute boolean  readOnly;
+    readonly attribute boolean readOnly;
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -4258,14 +4251,15 @@ To guarantee that the NFC host-based card emulation application runs on a device
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module NFC {
+  typedef DOMString AID;
   enum NDEFRecordTextEncoding { "UTF8", "UTF16" };
   enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A", "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K",
-    "MIFARE_ULTRA", "MIFARE_DESFIRE", "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693", "UNKNOWN_TARGET" };
+    "MIFARE_ULTRA", "MIFARE_DESFIRE", "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693",
+    "UNKNOWN_TARGET" };
   enum CardEmulationMode { "ALWAYS_ON", "OFF" };
   enum SecureElementType { "ESE", "UICC", "HCE" };
   enum CardEmulationCategoryType { "PAYMENT", "OTHER" };
   enum HCEEventType { "DEACTIVATED", "ACTIVATED", "APDU_RECEIVED" };
-  typedef DOMString AID;
   [NoInterfaceObject] interface NFCManagerObject {
     readonly attribute <a href="#NFCManager">NFCManager</a> nfc;
   };
@@ -4358,15 +4352,15 @@ To guarantee that the NFC host-based card emulation application runs on a device
   interface NDEFRecordMedia : <a href="#NDEFRecord">NDEFRecord</a> {
     readonly attribute DOMString mimeType;
   };
-  [NoInterfaceObject] interface  HCEEventData {
+  [NoInterfaceObject] interface HCEEventData {
     readonly attribute <a href="#HCEEventType">HCEEventType</a> eventType;
     readonly attribute byte[] apdu;
     readonly attribute long length;
   };
-  [NoInterfaceObject] interface  AIDData{
+  [NoInterfaceObject] interface AIDData {
     readonly attribute <a href="#SecureElementType">SecureElementType</a> type;
     readonly attribute <a href="#AID">AID</a> aid;
-    readonly attribute boolean  readOnly;
+    readonly attribute boolean readOnly;
   };
   [Callback, NoInterfaceObject] interface NFCTagDetectCallback {
     void onattach(<a href="#NFCTag">NFCTag</a> nfcTag);

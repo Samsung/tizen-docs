@@ -472,7 +472,9 @@ There is a <em>tizen.filesystem </em>object that allows accessing the functional
     boolean isDirectory(<a href="#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     boolean pathExists(<a href="#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString getDirName(DOMString path);
-    void getStorage(DOMString label, <a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
+<span class="nocode deprecated">    void resolve(DOMString location, <a href="#FileSuccessCallback">FileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional <a href="#FileMode">FileMode</a>? mode)
+                 raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>    void getStorage(DOMString label, <a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void listStorages(<a href="#FileSystemStorageArraySuccessCallback">FileSystemStorageArraySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addStorageStateChangeListener(<a href="#FileSystemStorageSuccessCallback">FileSystemStorageSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror)
@@ -596,8 +598,7 @@ By default, <em>makeParents</em> is equal to <var>true</var>. Its value is ignor
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">FileHandle:
-                  </span>
+<span class="return">FileHandle:</span>
  Object representing open file.
               </ul>
 </div>
@@ -652,7 +653,7 @@ File content: Lorem ipsum dolor sit amet...
 <div class="brief">
  Creates directory pointed by <em>path</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void createDirectory(<a href="#Path">Path</a> path, optional boolean makeParents, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void createDirectory(<a href="#Path">Path</a> path, optional boolean makeParents, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -840,7 +841,7 @@ catch (error)
 <div class="brief">
  Deletes directory or directory tree under the current directory pointed by <em>path</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void deleteDirectory(<a href="#Path">Path</a> path, optional boolean recursive, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void deleteDirectory(<a href="#Path">Path</a> path, optional boolean recursive, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -936,7 +937,7 @@ catch (error)
 <div class="brief">
  Copies file from location pointed by <em>sourcePath</em> to <em>destinationPath</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void copyFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void copyFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1040,7 +1041,7 @@ catch (error)
 <div class="brief">
  Recursively copies directory pointed by <em>sourcePath</em> to <em>destinationPath</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void copyDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, 
+<div class="synopsis"><pre class="signature prettyprint">void copyDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite,
                    optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1209,7 +1210,7 @@ file
 <div class="brief">
  Moves file pointed by <em>sourcePath</em> to <em>destinationPath</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void moveFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void moveFile(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback,
               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1314,7 +1315,7 @@ catch (error)
 <div class="brief">
  Recursively moves directory pointed by <em>sourcePath</em> to <em>destinationPath</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void moveDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite, 
+<div class="synopsis"><pre class="signature prettyprint">void moveDirectory(<a href="#Path">Path</a> sourcePath, <a href="#Path">Path</a> destinationPath, optional boolean overwrite,
                    optional <a href="#PathSuccessCallback">PathSuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1515,7 +1516,7 @@ catch (error)
 <div class="brief">
  Lists directory content located in <em>path</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void listDirectory(<a href="#Path">Path</a> path, <a href="#ListDirectorySuccessCallback">ListDirectorySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void listDirectory(<a href="#Path">Path</a> path, <a href="#ListDirectorySuccessCallback">ListDirectorySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                    optional <a href="#FileFilter">FileFilter</a>? filter);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1645,8 +1646,7 @@ foo_dir_a
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  <a href="https://tools.ietf.org/html/rfc8089">File URI</a> for given path.
               </ul>
 </div>
@@ -1709,8 +1709,7 @@ file:///opt/media/USBDriveA1/Documents/directory/file
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if <em>path</em> points to a file, <var>false</var> otherwise.
               </ul>
 </div>
@@ -1771,8 +1770,7 @@ file:///opt/media/USBDriveA1/Documents/directory/file
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if <em>path</em> points to a directory, <var>false</var> otherwise.
               </ul>
 </div>
@@ -1833,8 +1831,7 @@ file:///opt/media/USBDriveA1/Documents/directory/file
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if <em>path</em> points to a existing element, <var>false</var> otherwise.
               </ul>
 </div>
@@ -1894,8 +1891,7 @@ Strips trailing '/', then breaks <em>path</em> into two components by last <em>p
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  Path to directory for given path.
               </ul>
 </div>
@@ -2225,8 +2221,7 @@ The watch operation must continue until the removeStorageStateChangeListener() m
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Subscription identifier.
               </ul>
 </div>
@@ -2465,8 +2460,7 @@ Note, that current position indicator value, can be obtained by calling <var>see
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long long:
-                  </span>
+<span class="return">long long:</span>
  File position indicator.
               </ul>
 </div>
@@ -2521,7 +2515,7 @@ Bytes between: 44,55,66
 <div class="brief">
  Sets position indicator in file stream to <var>offset</var>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void seekNonBlocking(long long offset, optional <a href="#SeekSuccessCallback">SeekSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+<div class="synopsis"><pre class="signature prettyprint">void seekNonBlocking(long long offset, optional <a href="#SeekSuccessCallback">SeekSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
                      optional <a href="#BaseSeekPosition">BaseSeekPosition</a> whence);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -2708,8 +2702,7 @@ Reads given number of characters.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  String with data read from file.
               </ul>
 </div>
@@ -2764,7 +2757,7 @@ File content: Lorem ipsum dolor sit amet...
 <div class="brief">
  Reads file content as string.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void readStringNonBlocking(optional <a href="#ReadStringSuccessCallback">ReadStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+<div class="synopsis"><pre class="signature prettyprint">void readStringNonBlocking(optional <a href="#ReadStringSuccessCallback">ReadStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
                            optional long long count, optional DOMString inputEncoding);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -2909,8 +2902,7 @@ Sets file handle position indicator at the end of written data.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long long:
-                  </span>
+<span class="return">long long:</span>
  Number of bytes written (can be more than <em>inputString</em> length for multibyte encodings and will never be less)
               </ul>
 </div>
@@ -2959,7 +2951,7 @@ File content: Lorem ipsum dolor sit amet...
 <div class="brief">
  Writes <var>inputString</var> content to a file.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void writeStringNonBlocking(DOMString inputString, optional <a href="#WriteStringSuccessCallback">WriteStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+<div class="synopsis"><pre class="signature prettyprint">void writeStringNonBlocking(DOMString inputString, optional <a href="#WriteStringSuccessCallback">WriteStringSuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
                             optional DOMString outputEncoding);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -3095,8 +3087,7 @@ Sets file handle position indicator at the end of read data.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Blob:
-                  </span>
+<span class="return">Blob:</span>
  Blob object with file content.
               </ul>
 </div>
@@ -3479,8 +3470,7 @@ Sets file handle position indicator at the end of read data.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Uint8Array:
-                  </span>
+<span class="return">Uint8Array:</span>
  Read data as Uint8Array.
               </ul>
 </div>
@@ -4283,8 +4273,36 @@ File handle closed
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
           </p>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface File {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface File {
+<span class="nocode deprecated">    readonly attribute <a href="#File">File</a>? parent;
+</span><span class="nocode deprecated">    readonly attribute boolean readOnly;
+</span><span class="nocode deprecated">    readonly attribute boolean isFile;
+</span><span class="nocode deprecated">    readonly attribute boolean isDirectory;
+</span><span class="nocode deprecated">    readonly attribute Date? created;
+</span><span class="nocode deprecated">    readonly attribute Date? modified;
+</span><span class="nocode deprecated">    readonly attribute DOMString path;
+</span><span class="nocode deprecated">    readonly attribute DOMString name;
+</span><span class="nocode deprecated">    readonly attribute DOMString fullPath;
+</span><span class="nocode deprecated">    readonly attribute unsigned long long fileSize;
+</span><span class="nocode deprecated">    readonly attribute long length;
+</span><span class="nocode deprecated">    DOMString toURI() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void listFiles(<a href="#FileArraySuccessCallback">FileArraySuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional <a href="#FileFilter">FileFilter</a>? filter)
+                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void openStream(<a href="#FileMode">FileMode</a> mode, <a href="#FileStreamSuccessCallback">FileStreamSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional DOMString? encoding)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void readAsText(<a href="#FileStringSuccessCallback">FileStringSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional DOMString? encoding)
+                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void copyTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
+                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void moveTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
+                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    <a href="#File">File</a> createDirectory(DOMString dirPath) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    <a href="#File">File</a> createFile(DOMString relativeFilePath) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    <a href="#File">File</a> resolve(DOMString filePath) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void deleteDirectory(DOMString directoryPath, boolean recursive, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void deleteFile(DOMString filePath, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -4719,8 +4737,7 @@ These URIs must not be accessible to other widgets, apart from the one invoking 
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  URI that identifies the file or <var>null</var> if an error occurs.
               </ul>
 </div>
@@ -5075,7 +5092,7 @@ directory from a specified location to another specified location.
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void copyTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, 
+<div class="synopsis"><pre class="signature prettyprint">void copyTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -5194,7 +5211,7 @@ This operation is different from instantiating copyTo() and then deleting the or
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void moveTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, 
+<div class="synopsis"><pre class="signature prettyprint">void moveTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -5352,8 +5369,7 @@ In case the directory cannot be created, an error must be thrown with the approp
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">File:
-                  </span>
+<span class="return">File:</span>
  File handle of the new directory.
 The new <em>File </em>object has "rw" access rights, as it inherits this from the <em>File </em>object on which the createDirectory() method is called.
               </ul>
@@ -5429,8 +5445,7 @@ In case the file cannot be created, an error must be thrown with the appropriate
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">File:
-                  </span>
+<span class="return">File:</span>
  File handle for the new empty file.
 The new <em>File </em>object has "rw" access rights, as it inherits this from the <em>File </em>object on which the createFile() method is
 called.
@@ -5502,8 +5517,7 @@ The encoding of file paths is <a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">File:
-                  </span>
+<span class="return">File:</span>
  File handle of the file.
 The new <em>File </em>object inherits its access rights from the <em>File </em>object on which this resolve() method is called.
               </ul>
@@ -5559,7 +5573,7 @@ tizen.filesystem.resolve("documents",
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void deleteDirectory(DOMString directoryPath, boolean recursive, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, 
+<div class="synopsis"><pre class="signature prettyprint">void deleteDirectory(DOMString directoryPath, boolean recursive, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -5923,8 +5937,18 @@ Read and write operations are performed relative to a position attribute, which 
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
           </p>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface FileStream {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface FileStream {
+<span class="nocode deprecated">    readonly attribute boolean eof;
+</span><span class="nocode deprecated">    attribute long position;
+</span><span class="nocode deprecated">    readonly attribute long bytesAvailable;
+</span><span class="nocode deprecated">    void close();
+</span><span class="nocode deprecated">    DOMString read(long charCount) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    octet[] readBytes(long byteCount) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    DOMString readBase64(long byteCount) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void write(DOMString stringData) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void writeBytes(octet[] byteData) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void writeBase64(DOMString base64Data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -6086,8 +6110,7 @@ The resulting string length might be shorter than <em>charCount </em>if EOF is <
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  Array of read characters as a string.
               </ul>
 </div>
@@ -6147,8 +6170,7 @@ stream.close();
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">octet[]:
-                  </span>
+<span class="return">octet[]:</span>
  Result of read bytes as a byte (or number) array.
               </ul>
 </div>
@@ -6212,8 +6234,7 @@ for (var i = 0; i &lt; raw.length; i++)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  Array of read characters as base64 encoding string.
               </ul>
 </div>
@@ -6405,8 +6426,9 @@ output.writeBase64(base64);
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
           </p>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileSuccessCallback {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface FileSuccessCallback {
+<span class="nocode deprecated">    void onsuccess(<a href="#File">File</a> file);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -6797,8 +6819,9 @@ It is used in asynchronous operation FileHandle.readDataNonBlocking().
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
           </p>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileStringSuccessCallback {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface FileStringSuccessCallback {
+<span class="nocode deprecated">    void onsuccess(DOMString fileStr);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -6845,8 +6868,9 @@ It is used in asynchronous operation File.readAsText().
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
           </p>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileStreamSuccessCallback {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface FileStreamSuccessCallback {
+<span class="nocode deprecated">    void onsuccess(<a href="#FileStream">FileStream</a> filestream);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -6940,8 +6964,9 @@ This callback interface specifies a success callback with a function taking an a
 <p class="deprecated"><b>Deprecated.</b>
  Since 5.0
           </p>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileArraySuccessCallback {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface FileArraySuccessCallback {
+<span class="nocode deprecated">    void onsuccess(<a href="#File">File</a>[] files);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -6984,11 +7009,20 @@ This callback interface specifies a success callback with a function taking an a
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Filesystem {
   typedef DOMString Path;
+  typedef <a href="#Blob">Blob</a> Blob;
   enum FileMode { "a", "r", "rw", "rwo", "w" };
   enum FileSystemStorageType { "INTERNAL", "EXTERNAL" };
   enum FileSystemStorageState { "MOUNTED", "REMOVED", "UNMOUNTABLE" };
-  typedef <a href="#Blob">Blob</a> Blob;
   enum BaseSeekPosition { "BEGIN", "CURRENT", "END" };
+  dictionary FileFilter {
+    DOMString name;
+    boolean isFile;
+    boolean isDirectory;
+    Date startModified;
+    Date endModified;
+    Date startCreated;
+    Date endCreated;
+  };
   [NoInterfaceObject] interface FileSystemManagerObject {
     readonly attribute <a href="#FileSystemManager">FileSystemManager</a> filesystem;
   };
@@ -7060,15 +7094,6 @@ This callback interface specifies a success callback with a function taking an a
     void syncNonBlocking(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void closeNonBlocking(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  dictionary FileFilter {
-    DOMString name;
-    boolean isFile;
-    boolean isDirectory;
-    Date startModified;
-    Date endModified;
-    Date startCreated;
-    Date endCreated;
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface FileSystemStorageArraySuccessCallback {
     void onsuccess(<a href="#FileSystemStorage">FileSystemStorage</a>[] storages);
