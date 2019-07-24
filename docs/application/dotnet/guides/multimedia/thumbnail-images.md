@@ -41,9 +41,9 @@ async Task ExtractAsync(string testImagePath, Size size)
 }
 ```
 
-## Extracting a Thumbnail synchronously
+## Extracting a Thumbnail Synchronously
 
-To extract synchronously a thumbnail from a file, use the `Extract(string path, Size size)` or `Extract(string path)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+To extract a thumbnail synchronously from a file, use the `Extract(string path, Size size)` or `Extract(string path)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
 
 ```
 void Extract(string testImagePath, Size size)
