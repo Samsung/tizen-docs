@@ -215,7 +215,9 @@ There will be a <em>tizen.power </em>object that allows accessing of a functiona
     void setScreenBrightness(double brightness) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     boolean isScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void restoreScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+<span class="nocode deprecated">    void turnScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void turnScreenOff() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>  };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -430,8 +432,7 @@ tizen.power.unsetScreenStateChangeListener();
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">double:
-                  </span>
+<span class="return">double:</span>
  Current screen brightness value.
               </ul>
 </div>
@@ -527,8 +528,7 @@ tizen.power.setScreenBrightness(1);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if screen is on, otherwise <var>false</var> if the screen is off.
               </ul>
 </div>
@@ -720,10 +720,10 @@ tizen.power.turnScreenOff();
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Power {
-  enum PowerResource { "SCREEN", "CPU" };
-  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL", "SCREEN_BRIGHT" };
-  enum PowerCpuState { "CPU_AWAKE" };
   typedef (<a href="#PowerScreenState">PowerScreenState</a> or <a href="#PowerCpuState">PowerCpuState</a>) PowerState;
+  enum PowerResource { "SCREEN", "CPU" };
+  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL" };
+  enum PowerCpuState { "CPU_AWAKE" };
   [NoInterfaceObject] interface PowerManagerObject {
     readonly attribute <a href="#PowerManager">PowerManager</a> power;
   };

@@ -158,8 +158,7 @@ The <em>tizen.messageport</em> object allows access to the functionality of the 
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">LocalMessagePort:
-                  </span>
+<span class="return">LocalMessagePort:</span>
  LocalMessagePort instance.
               </ul>
 </div>
@@ -212,8 +211,7 @@ Trusted local message port can communicate with applications that are signed wit
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">LocalMessagePort:
-                  </span>
+<span class="return">LocalMessagePort:</span>
  Trusted LocalMessagePort instance.
               </ul>
 </div>
@@ -270,8 +268,7 @@ If the message port name and application ID are the same, the platform returns t
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">RemoteMessagePort:
-                  </span>
+<span class="return">RemoteMessagePort:</span>
  RemoteMessagePort instance.
               </ul>
 </div>
@@ -332,8 +329,7 @@ Trusted remote message port can communicate with applications that are signed wi
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">RemoteMessagePort:
-                  </span>
+<span class="return">RemoteMessagePort:</span>
  Trusted RemoteMessagePort instance.
               </ul>
 </div>
@@ -431,8 +427,7 @@ var remoteMsgPort =
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  ID of the listener that is later used to remove the listener.
               </ul>
 </div>
@@ -699,6 +694,10 @@ var watchId = localMsgPort.addMessagePortListener(onreceived);
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module MessagePort {
+  dictionary MessagePortDataItem {
+    DOMString key;
+    DOMString value;
+  };
   [NoInterfaceObject] interface MessagePortManagerObject {
     readonly attribute <a href="#MessagePortManager">MessagePortManager</a> messageport;
   };
@@ -720,10 +719,6 @@ var watchId = localMsgPort.addMessagePortListener(onreceived);
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> appId;
     readonly attribute boolean isTrusted;
     void sendMessage(<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, optional <a href="#LocalMessagePort">LocalMessagePort</a>? localMessagePort) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  dictionary MessagePortDataItem {
-    DOMString key;
-    DOMString value;
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MessagePortCallback {
     void onreceived(<a href="#MessagePortDataItem">MessagePortDataItem</a>[] data, <a href="#RemoteMessagePort">RemoteMessagePort</a>? remoteMessagePort);

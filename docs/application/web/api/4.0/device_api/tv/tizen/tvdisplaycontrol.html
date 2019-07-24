@@ -235,8 +235,7 @@ For example, Display Control API provides whether your device supports 3D.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Display3DEffectMode:
-                  </span>
+<span class="return">Display3DEffectMode:</span>
  Display3DEffectMode The current mode of 3D effect.
               </ul>
 </div>
@@ -288,8 +287,7 @@ catch (error)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Display3DModeState:
-                  </span>
+<span class="return">Display3DModeState:</span>
  Display3DModeState The current state to display 3D contents.
               </ul>
 </div>
@@ -463,8 +461,8 @@ To guarantee the running of this application on a device with a TV display contr
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVDisplayControl {
-  enum Display3DEffectMode { "OFF", "TOP_BOTTOM", "SIDE_BY_SIDE", "LINE_BY_LINE", "VERTICAL_STRIPE", "FRAME_SEQUENCE", "CHECKER_BD",
-    "FROM_2D_TO_3D" };
+  enum Display3DEffectMode { "OFF", "TOP_BOTTOM", "SIDE_BY_SIDE", "LINE_BY_LINE", "VERTICAL_STRIPE", "FRAME_SEQUENCE",
+    "CHECKER_BD", "FROM_2D_TO_3D" };
   enum Display3DModeState { "NOT_CONNECTED", "NOT_SUPPORTED", "READY" };
   [NoInterfaceObject] interface DisplayControlManagerObject {
     readonly attribute <a href="#DisplayControlManager">DisplayControlManager</a> tvdisplaycontrol;

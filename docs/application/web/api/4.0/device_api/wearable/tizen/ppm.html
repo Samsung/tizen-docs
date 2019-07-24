@@ -199,8 +199,7 @@ For privileges not listed in application's <em>config.xml</em> file (or not priv
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">PermissionType:
-                  </span>
+<span class="return">PermissionType:</span>
  State of user's permission for using specified privilege.
               </ul>
 </div>
@@ -316,8 +315,7 @@ tizen.ppm.requestPermission(
 <div class="brief">
  The PermissionSuccessCallback interface that implements the success callback used in the asynchronous operation for requesting permission for using privilege.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PermissionSuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionSuccessCallback {
     void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);
   };</pre>
 <p><span class="version">Since: </span>
@@ -381,8 +379,7 @@ tizen.ppm.requestPermission("http://tizen.org/privilege/callhistory.read", permi
     void requestPermission(DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                            raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PermissionSuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionSuccessCallback {
     void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);
   };
 };</pre>

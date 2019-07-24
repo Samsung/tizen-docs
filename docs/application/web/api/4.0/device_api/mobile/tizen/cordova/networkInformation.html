@@ -375,8 +375,7 @@ checkConnection();
 <div class="brief">
  Callback for the event when an application goes online, and the device becomes connected to the Internet.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface OnlineEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface OnlineEventCallback {
     void online();
   };</pre>
 <p><span class="version">Since: </span>
@@ -412,8 +411,7 @@ function onOnline()
 <div class="brief">
  Callback for the event when an application goes offline, and the device is not connected to the Internet.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface OfflineEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface OfflineEventCallback {
     void offline();
   };</pre>
 <p><span class="version">Since: </span>
@@ -478,12 +476,10 @@ To guarantee that the NetworkInformation application runs on a device with the N
     readonly attribute DOMString CELL;
     readonly attribute DOMString NONE;
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface OnlineEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface OnlineEventCallback {
     void online();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface OfflineEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface OfflineEventCallback {
     void offline();
   };
 };</pre>

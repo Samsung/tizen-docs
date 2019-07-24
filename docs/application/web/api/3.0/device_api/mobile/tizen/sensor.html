@@ -422,8 +422,7 @@ The supported sensor types are hardware-dependent. <br><br>To check if the given
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Sensor:
-                  </span>
+<span class="return">Sensor:</span>
  Default sensor object.
               </ul>
 </div>
@@ -476,8 +475,7 @@ else
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SensorType[]:
-                  </span>
+<span class="return">SensorType[]:</span>
  All available sensor types.
               </ul>
 </div>
@@ -2401,7 +2399,7 @@ For more information about sensor, see <a href="https://developer.tizen.org/deve
 <div class="brief">
  The SensorHardwareInfoSuccessCallback callback interface specifies a success callback with SensorHardwareInfo object as an input argument.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SensorHardwareInfoSuccessCallback{
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SensorHardwareInfoSuccessCallback {
     void onsuccess(<a href="#SensorHardwareInfo">SensorHardwareInfo</a> hardwareInfo);
   };</pre>
 <p><span class="version">Since: </span>
@@ -2525,8 +2523,8 @@ To guarantee that the UV sensor application runs on a device with a UV sensor, d
 <pre class="webidl prettyprint">module Sensor {
   enum MagneticSensorAccuracy { "ACCURACY_UNDEFINED", "ACCURACY_BAD", "ACCURACY_NORMAL", "ACCURACY_GOOD", "ACCURACY_VERYGOOD" };
   enum ProximityState { "FAR", "NEAR" };
-  enum SensorType { "GRAVITY", "GYROSCOPE", "GYROSCOPE_ROTATION_VECTOR", "HRM_RAW", "LIGHT", "LINEAR_ACCELERATION", "MAGNETIC",
-    "PRESSURE", "PROXIMITY", "ULTRAVIOLET" };
+  enum SensorType { "GRAVITY", "GYROSCOPE", "GYROSCOPE_ROTATION_VECTOR", "HRM_RAW", "LIGHT", "LINEAR_ACCELERATION",
+    "MAGNETIC", "PRESSURE", "PROXIMITY", "ULTRAVIOLET" };
   [NoInterfaceObject] interface SensorServiceManagerObject {
     readonly attribute <a href="#SensorService">SensorService</a> sensorservice;
   };
@@ -2641,7 +2639,7 @@ To guarantee that the UV sensor application runs on a device with a UV sensor, d
   [Callback=FunctionOnly, NoInterfaceObject] interface SensorDataSuccessCallback {
     void onsuccess(optional <a href="#SensorData">SensorData</a>? sensorData);
   };
-  [Callback=FunctionOnly, NoInterfaceObject] interface SensorHardwareInfoSuccessCallback{
+  [Callback=FunctionOnly, NoInterfaceObject] interface SensorHardwareInfoSuccessCallback {
     void onsuccess(<a href="#SensorHardwareInfo">SensorHardwareInfo</a> hardwareInfo);
   };
 };</pre>

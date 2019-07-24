@@ -942,8 +942,7 @@ advertise.manufacturerData = manufacture;
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothAdapter:
-                  </span>
+<span class="return">BluetoothAdapter:</span>
  The local <em>BluetoothAdapter </em>object.
               </ul>
 </div>
@@ -994,8 +993,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothLEAdapter:
-                  </span>
+<span class="return">BluetoothLEAdapter:</span>
  The local <em>BluetoothLEAdapter </em>object.
               </ul>
 </div>
@@ -2076,7 +2074,7 @@ adapter.getDevice(deviceAddress, gotDevice, function(e)
 <div class="brief">
  Registers a service record in the device service record database with the specified <em>uuid</em>, <em>name</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback,
                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -2229,8 +2227,7 @@ function unregisterChatService()
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothProfileHandler:
-                  </span>
+<span class="return">BluetoothProfileHandler:</span>
  Represents the Bluetooth profile handle.
               </ul>
 </div>
@@ -2414,8 +2411,8 @@ adapter.startScan(function onsuccess(device)
 <div class="brief">
  Starts advertising for Low Energy Devices.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void startAdvertise(<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType, 
-                    <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void startAdvertise(<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType,
+                    <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>? mode, optional boolean? connectable);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -2991,8 +2988,7 @@ adapter.startScan(function onsuccess(device)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watchID to be used to unregister the listener.
               </ul>
 </div>
@@ -3638,7 +3634,7 @@ adapter.getDevice("11:22:33:44:55:66", function(device)
 <div class="brief">
  Connects to a specified service identified by <em>uuid</em> on this remote device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -4232,8 +4228,7 @@ adapter.startScan(onDeviceFound, onerror);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothGATTService:
-                  </span>
+<span class="return">BluetoothGATTService:</span>
  Retrieved service for the given UUID.
               </ul>
 </div>
@@ -4305,8 +4300,7 @@ adapter.startScan(onDeviceFound, onerror);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watchID to be used to unregister the listener.
               </ul>
 </div>
@@ -4532,8 +4526,7 @@ By default, this attribute is set to null.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  The number of bytes actually sent.
               </ul>
 </div>
@@ -4678,8 +4671,7 @@ This method should be called only in the <em>BluetoothSocket.onmessage</em> hand
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:
-                  </span>
+<span class="return">byte[]:</span>
  The sequence of bytes successfully read.
               </ul>
 </div>
@@ -4916,7 +4908,7 @@ else
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothClass {
     readonly attribute octet major;
     readonly attribute octet minor;
-    readonly attribute unsigned short [] services;
+    readonly attribute unsigned short[] services;
     boolean hasService(unsigned short service) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -5046,8 +5038,7 @@ values.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var>, if given service exists in the <em>services</em>.
               </ul>
 </div>
@@ -5490,7 +5481,7 @@ The BluetoothHealthProfileHandler object is created by <em>BluetoothAdapter.getB
 <div class="brief">
  Registers an application for the Sink role.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback,
                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5572,7 +5563,7 @@ healthProfileHandler.registerSinkApplication(
 <div class="brief">
  Connects to the health device which acts as the Source role.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application, 
+<div class="synopsis"><pre class="signature prettyprint">void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application,
                      <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -6050,8 +6041,7 @@ healthProfileHandler.registerSinkApplication(
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  Number of bytes actually sent.
               </ul>
 </div>
@@ -6778,13 +6768,22 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
 <pre class="webidl prettyprint">module Bluetooth {
   typedef DOMString BluetoothAddress;
   typedef DOMString BluetoothUUID;
+  typedef DOMString BluetoothLESolicitationUUID;
   enum BluetoothSocketState { "CLOSED", "OPEN" };
   enum BluetoothProfileType { "HEALTH" };
   enum BluetoothHealthChannelType { "RELIABLE", "STREAMING" };
-  typedef DOMString BluetoothLESolicitationUUID;
   enum BluetoothAdvertisePacketType { "ADVERTISE", "SCAN_RESPONSE" };
   enum BluetoothAdvertisingState { "STARTED", "STOPPED" };
   enum BluetoothAdvertisingMode { "BALANCED", "LOW_LATENCY", "LOW_ENERGY" };
+  dictionary BluetoothLEAdvertiseDataInit {
+    boolean? includeName;
+    <a href="#BluetoothUUID">BluetoothUUID</a>[]? uuids;
+    <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
+    unsigned long? appearance;
+    boolean? includeTxPowerLevel;
+    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
+    <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
+  };
   [NoInterfaceObject] interface BluetoothManagerObject {
     readonly attribute <a href="#BluetoothManager">BluetoothManager</a> bluetooth;
   };
@@ -6798,15 +6797,6 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   interface BluetoothLEManufacturerData {
     attribute DOMString id;
     attribute DOMString data;
-  };
-  dictionary BluetoothLEAdvertiseDataInit {
-    boolean? includeName;
-    <a href="#BluetoothUUID">BluetoothUUID</a>[]? uuids;
-    <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
-    unsigned long? appearance;
-    boolean? includeTxPowerLevel;
-    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
-    <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
   };
   [Constructor(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init)]
   interface BluetoothLEAdvertiseData {
@@ -6935,7 +6925,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   [NoInterfaceObject] interface BluetoothClass {
     readonly attribute octet major;
     readonly attribute octet minor;
-    readonly attribute unsigned short [] services;
+    readonly attribute unsigned short[] services;
     boolean hasService(unsigned short service) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothClassDeviceMajor {

@@ -489,8 +489,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Notification:
-                  </span>
+<span class="return">Notification:</span>
  Notification posted previously by the current application.
               </ul>
 </div>
@@ -535,8 +534,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Notification[]:
-                  </span>
+<span class="return">Notification[]:</span>
  All notifications previously been posted by the current application.
               </ul>
 </div>
@@ -1022,6 +1020,24 @@ If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare t
   enum NotificationType { "STATUS" };
   enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };
   enum NotificationProgressType { "PERCENTAGE", "BYTE" };
+  dictionary StatusNotificationInit {
+    DOMString? content;
+    DOMString? iconPath;
+    DOMString? soundPath;
+    boolean? vibration;
+    <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
+    <a href="application.html#ApplicationId">ApplicationId</a>? appId;
+    <a href="#NotificationProgressType">NotificationProgressType</a>? progressType;
+    unsigned long? progressValue;
+    long? number;
+    DOMString? subIconPath;
+    <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
+    DOMString? ledColor;
+    unsigned long ledOnPeriod;
+    unsigned long ledOffPeriod;
+    DOMString? backgroundImagePath;
+    DOMString[]? thumbnails;
+  };
   [NoInterfaceObject] interface NotificationObject {
     readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
   };
@@ -1040,24 +1056,6 @@ If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare t
     readonly attribute Date postedTime;
     attribute DOMString title;
     attribute DOMString? content;
-  };
-  dictionary StatusNotificationInit {
-    DOMString? content;
-    DOMString? iconPath;
-    DOMString? soundPath;
-    boolean? vibration;
-    <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
-    <a href="application.html#ApplicationId">ApplicationId</a>? appId;
-    <a href="#NotificationProgressType">NotificationProgressType</a>? progressType;
-    unsigned long? progressValue;
-    long? number;
-    DOMString? subIconPath;
-    <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
-    DOMString? ledColor;
-    unsigned long ledOnPeriod;
-    unsigned long ledOffPeriod;
-    DOMString? backgroundImagePath;
-    DOMString[]? thumbnails;
   };
   [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
   interface StatusNotification : <a href="#Notification">Notification</a> {

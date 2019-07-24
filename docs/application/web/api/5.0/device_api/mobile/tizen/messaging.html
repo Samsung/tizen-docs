@@ -692,8 +692,7 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB);
 <div class="brief">
  The dictionary providing specific message attributes for message creation.
           </div>
-<pre class="webidl prettyprint">  dictionary MessageInit
-  {
+<pre class="webidl prettyprint">  dictionary MessageInit {
     DOMString subject;
     DOMString[] to;
     DOMString[] cc;
@@ -1056,7 +1055,7 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB, errorCallback
 <div class="brief">
  Gets the messaging service of a given type for a given account, or all existing services supporting the given type, if <em>serviceId </em>is not given.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void getMessageServices(<a href="#MessageServiceTag">MessageServiceTag</a> messageServiceType, <a href="#MessageServiceArraySuccessCallback">MessageServiceArraySuccessCallback</a> successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -1170,6 +1169,7 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB, errorCallba
     readonly attribute DOMString id;
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
     readonly attribute DOMString name;
+    readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                      optional long? simIndex) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void loadMessageBody(<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
@@ -1181,7 +1181,6 @@ tizen.messaging.getMessageServices("messaging.email", serviceListCB, errorCallba
     long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopSync(long opId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  1.0
@@ -1289,7 +1288,7 @@ If the backend does not support <em>MessageStorage </em>for this messaging servi
 <div class="brief">
  Sends a specified message.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                  optional long? simIndex);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -1522,7 +1521,7 @@ service.messageStorage.findMessages(
 <div class="brief">
  Loads a specified message attachment.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void loadMessageAttachment(<a href="#MessageAttachment">MessageAttachment</a> attachment, <a href="#MessageAttachmentSuccessCallback">MessageAttachmentSuccessCallback</a> successCallback,
                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -1666,8 +1665,7 @@ The errorCallback is launched with these error types:
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Identifier which can be used to stop initiated sync operation.
               </ul>
 </div>
@@ -1711,7 +1709,7 @@ tizen.messaging.getMessageServices("messaging.email", servicesListSuccessCB);
 <div class="brief">
  Synchronizes the folder content with an external mail server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+<div class="synopsis"><pre class="signature prettyprint">long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                 optional unsigned long? limit);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -1781,8 +1779,7 @@ The errorCallback is launched with these error types:
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Identifier which can be used to stop initiated sync operation.
               </ul>
 </div>
@@ -2127,7 +2124,7 @@ tizen.messaging.getMessageServices("messaging.sms", serviceListCB);
 <div class="brief">
  Finds messages from <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void findMessages(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageArraySuccessCallback">MessageArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                   optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, optional unsigned long? offset);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -2418,8 +2415,8 @@ messageStorage.findMessages(filter, messageArrayCB);
 <div class="brief">
  Finds conversations from <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback, 
-                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit, 
+<div class="synopsis"><pre class="signature prettyprint">void findConversations(<a href="tizen.html#AbstractFilter">AbstractFilter</a> filter, <a href="#MessageConversationArraySuccessCallback">MessageConversationArraySuccessCallback</a> successCallback,
+                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortMode">SortMode</a>? sort, optional unsigned long? limit,
                        optional unsigned long? offset);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -2517,7 +2514,7 @@ messageStorage.findConversations(filter, conversationsArrayCB, errorCallback);
 <div class="brief">
  Removes conversations from <em>MessageStorage</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void removeConversations(<a href="#MessageConversation">MessageConversation</a>[] conversations, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -2735,8 +2732,7 @@ The errorCallback is launched with these error types:
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Subscription identifier.
               </ul>
 </div>
@@ -2786,7 +2782,7 @@ messageStorage.addMessagesChangeListener(messageChangeCallback);
 <div class="brief">
  Adds a listener to subscribe to notifications for MessageConversation changes.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addConversationsChangeListener(<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback, 
+<div class="synopsis"><pre class="signature prettyprint">long addConversationsChangeListener(<a href="#MessageConversationsChangeCallback">MessageConversationsChangeCallback</a> conversationsChangeCallback,
                                     optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -2824,8 +2820,7 @@ The errorCallback is launched with these error types:
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Subscription identifier.
               </ul>
 </div>
@@ -2912,8 +2907,7 @@ The errorCallback is launched with these error types:
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Subscription identifier.
               </ul>
 </div>
@@ -3813,15 +3807,24 @@ To guarantee that the mms application runs on a device with MMS feature, define 
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Messaging {
-  [NoInterfaceObject] interface MessageManagerObject {
-    readonly attribute <a href="#Messaging">Messaging</a> messaging;
-  };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;
-  enum MessageServiceTag { "messaging.sms", "messaging.mms", "messaging.email" };
   typedef DOMString MessageId;
   typedef DOMString MessageAttachmentId;
   typedef DOMString MessageConvId;
   typedef DOMString MessageFolderId;
+  enum MessageServiceTag { "messaging.sms", "messaging.mms", "messaging.email" };
+  dictionary MessageInit {
+    DOMString subject;
+    DOMString[] to;
+    DOMString[] cc;
+    DOMString[] bcc;
+    DOMString plainBody;
+    DOMString htmlBody;
+    boolean isHighPriority;
+  };
+  [NoInterfaceObject] interface MessageManagerObject {
+    readonly attribute <a href="#Messaging">Messaging</a> messaging;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;
   [Constructor(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict)]
   interface Message {
     readonly attribute <a href="#MessageId">MessageId</a>? id;
@@ -3841,16 +3844,6 @@ To guarantee that the mms application runs on a device with MMS feature, define 
     readonly attribute <a href="#MessageId">MessageId</a>? inResponseTo;
     readonly attribute DOMString messageStatus;
     attribute <a href="#MessageAttachment">MessageAttachment</a>[] attachments;
-  };
-  dictionary MessageInit
-  {
-    DOMString subject;
-    DOMString[] to;
-    DOMString[] cc;
-    DOMString[] bcc;
-    DOMString plainBody;
-    DOMString htmlBody;
-    boolean isHighPriority;
   };
   [NoInterfaceObject] interface MessageBody {
     readonly attribute <a href="#MessageId">MessageId</a> messageId;
@@ -3877,6 +3870,7 @@ To guarantee that the mms application runs on a device with MMS feature, define 
     readonly attribute DOMString id;
     readonly attribute <a href="#MessageServiceTag">MessageServiceTag</a> type;
     readonly attribute DOMString name;
+    readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendMessage(<a href="#Message">Message</a> message, optional <a href="#MessageRecipientsCallback">MessageRecipientsCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                      optional long? simIndex) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void loadMessageBody(<a href="#Message">Message</a> message, <a href="#MessageBodySuccessCallback">MessageBodySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
@@ -3888,7 +3882,6 @@ To guarantee that the mms application runs on a device with MMS feature, define 
     long syncFolder(<a href="#MessageFolder">MessageFolder</a> folder, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional unsigned long? limit) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopSync(long opId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    readonly attribute <a href="#MessageStorage">MessageStorage</a> messageStorage getraises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MessageRecipientsCallback {
     void onsuccess(DOMString[] recipients);

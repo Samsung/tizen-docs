@@ -286,8 +286,7 @@ window.addEventListener("keydown", function(keyEvent)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">InputDeviceKey:
-                  </span>
+<span class="return">InputDeviceKey<span class="optional"> [nullable]</span>:</span>
  InputDeviceKey InputDeviceKey object for the given key name, or null if the key is not supported.
               </ul>
 </div>
@@ -425,7 +424,7 @@ for (i = 0; i &lt; keys.length; i++)
 <div class="brief">
  Registers a batch of input device keys to receive DOM keyboard events when any of them is pressed or released.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -511,7 +510,7 @@ tizen.tvinputdevice.registerKeyBatch(keys, successCB, errorCB);
 <div class="brief">
  Unregisters a batch of input device keys.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4

@@ -345,8 +345,8 @@ Adding call history is owned by the back-end. Filtering is supported for all fie
 <div class="brief">
  Finds and returns call history.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#CallHistoryEntryArraySuccessCallback">CallHistoryEntryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
-          optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode, optional unsigned long? limit, 
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#CallHistoryEntryArraySuccessCallback">CallHistoryEntryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+          optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode, optional unsigned long? limit,
           optional unsigned long? offset);</pre></div>
 <p><span class="version">Since: </span>
  2.0
@@ -694,8 +694,7 @@ UnknownError - If any other error occurs.              </li>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  A handle which can be used for unregistering.
               </ul>
 </div>
@@ -860,8 +859,7 @@ For example code, see <em>CallHistory </em>interface.
  This is a callback interface of <em> CallHistory </em>operations.
 For example code, see <em>CallHistory </em>interface.
           </div>
-<pre class="webidl prettyprint">  [Callback, NoInterfaceObject]
-  interface CallHistoryChangeCallback {
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface CallHistoryChangeCallback {
     void onadded(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] newItems);
     void onchanged(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] changedItems);
     void onremoved(DOMString[] removedItems);
@@ -987,8 +985,7 @@ To guarantee that the call log application runs on a device with the telephony f
   [Callback=FunctionOnly, NoInterfaceObject] interface CallHistoryEntryArraySuccessCallback {
     void onsuccess(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries);
   };
-  [Callback, NoInterfaceObject]
-  interface CallHistoryChangeCallback {
+  [Callback, NoInterfaceObject] interface CallHistoryChangeCallback {
     void onadded(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] newItems);
     void onchanged(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] changedItems);
     void onremoved(DOMString[] removedItems);

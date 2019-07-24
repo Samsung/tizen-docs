@@ -227,8 +227,7 @@ Data Control API.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DataControlConsumerObject:
-                  </span>
+<span class="return">DataControlConsumerObject:</span>
  The local <em>DataControlConsumerObject</em>.
               </ul>
 </div>
@@ -358,7 +357,7 @@ The string consists of one or more components, separated by a slash("/").
 <div class="brief">
  Inserts new rows into a table owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void insert(unsigned long reqId, <a href="#RowData">RowData</a> insertionData, optional <a href="#DataControlInsertSuccessCallback">DataControlInsertSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void insert(unsigned long reqId, <a href="#RowData">RowData</a> insertionData, optional <a href="#DataControlInsertSuccessCallback">DataControlInsertSuccessCallback</a>? successCallback,
             optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -446,7 +445,7 @@ catch (err)
 <div class="brief">
  Updates values of a table owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void update(unsigned long reqId, <a href="#RowData">RowData</a> updateData, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void update(unsigned long reqId, <a href="#RowData">RowData</a> updateData, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
             optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -538,7 +537,7 @@ catch (err)
 <div class="brief">
  Delete rows from a table that is owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void remove(unsigned long reqId, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void remove(unsigned long reqId, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
             optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -624,8 +623,8 @@ catch (err)
 <div class="brief">
  Selects the specified columns to be queried. The result set of the specified columns is retrieved from a table owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void select(unsigned long reqId, DOMString[] columns, DOMString where, <a href="#DataControlSelectSuccessCallback">DataControlSelectSuccessCallback</a> successCallback, 
-            optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback, optional unsigned long? page, 
+<div class="synopsis"><pre class="signature prettyprint">void select(unsigned long reqId, DOMString[] columns, DOMString where, <a href="#DataControlSelectSuccessCallback">DataControlSelectSuccessCallback</a> successCallback,
+            optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback, optional unsigned long? page,
             optional unsigned long? maxNumberPerPage);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -763,7 +762,7 @@ catch (err)
 <div class="brief">
  Adds the value associated with the specified key to a key-values map owned by a MAP-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void addValue(unsigned long reqId, DOMString key, DOMString value, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void addValue(unsigned long reqId, DOMString key, DOMString value, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
               optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -853,7 +852,7 @@ catch (err)
 <div class="brief">
  Removes the value associated with the specified key from a key-values map owned by a MAP-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeValue(unsigned long reqId, DOMString key, DOMString value, <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void removeValue(unsigned long reqId, DOMString key, DOMString value, <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback,
                  optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -946,7 +945,7 @@ catch (err)
 <div class="brief">
  Gets the value associated with the specified key, from a key-values map owned by a MAP-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getValue(unsigned long reqId, DOMString key, <a href="#DataControlGetValueSuccessCallback">DataControlGetValueSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void getValue(unsigned long reqId, DOMString key, <a href="#DataControlGetValueSuccessCallback">DataControlGetValueSuccessCallback</a> successCallback,
               optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -1035,7 +1034,7 @@ catch (err)
 <div class="brief">
  Sets the value associated with the specified key to a new value.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void updateValue(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue, 
+<div class="synopsis"><pre class="signature prettyprint">void updateValue(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue,
                  <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -1374,6 +1373,10 @@ catch (err)
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module DataControl {
   enum DataType { "MAP", "SQL" };
+  dictionary RowData {
+    DOMString[] columns;
+    DOMString[] values;
+  };
   [NoInterfaceObject] interface DataControlManagerObject {
     readonly attribute <a href="#DataControlManager">DataControlManager</a> datacontrol;
   };
@@ -1422,10 +1425,6 @@ catch (err)
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface DataControlGetValueSuccessCallback {
     void onsuccess(DOMString[] values, unsigned long reqid);
-  };
-  dictionary RowData {
-    DOMString[] columns;
-    DOMString[] values;
   };
 };</pre>
 </div>

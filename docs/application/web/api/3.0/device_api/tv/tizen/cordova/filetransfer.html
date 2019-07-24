@@ -214,7 +214,7 @@ Sent = 1024
 <div class="constructors">
 <h4 id="FileUploadOptions::constructor">Constructors</h4>
 <dl>
-<pre class="webidl prettyprint">FileUploadOptions(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers, 
+<pre class="webidl prettyprint">FileUploadOptions(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers,
                   DOMString httpMethod);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a FileUploadOptions objects */
@@ -336,7 +336,7 @@ var options = new FileUploadOptions("file", "doc.txt", "text/plain", null, null,
     attribute long bytesSent;
     attribute long responseCode;
     attribute DOMString response;
-    attribute <a href="#HeaderFields">HeaderFields</a>  headers;
+    attribute <a href="#HeaderFields">HeaderFields</a> headers;
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -415,17 +415,17 @@ var options = new FileUploadOptions("file", "doc.txt", "text/plain", null, null,
  A FileTransferError object is passed to an error callback when an error occurs.
           </div>
 <pre class="webidl prettyprint">  interface FileTransferError {
+    const short FILE_NOT_FOUND_ERR = 1;
+    const short INVALID_URL_ERR = 2;
+    const short CONNECTION_ERR = 3;
+    const short ABORT_ERR = 4;
+    const short NOT_MODIFIED_ERR = 5;
     attribute short code;
     attribute DOMString source;
     attribute DOMString target;
     attribute long http_status;
     attribute DOMString body;
     attribute DOMString _exception;
-    const short FILE_NOT_FOUND_ERR = 1;
-    const short INVALID_URL_ERR = 2;
-    const short CONNECTION_ERR = 3;
-    const short ABORT_ERR = 4;
-    const short NOT_MODIFIED_ERR = 5;
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -671,8 +671,8 @@ Success. File uploaded
 <div class="brief">
  Sends a file to a server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback, 
-            optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options, 
+<div class="synopsis"><pre class="signature prettyprint">void upload(DOMString fileURL, DOMString server, optional <a href="#FileUploadSuccessCallback">FileUploadSuccessCallback</a>? successCallback,
+            optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional <a href="#FileUploadOptions">FileUploadOptions</a>? options,
             optional boolean? trustAllHosts);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -750,8 +750,8 @@ Sent = 1024
 <div class="brief">
  Downloads a file from a server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback, 
-              optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts, 
+<div class="synopsis"><pre class="signature prettyprint">void download(DOMString source, DOMString target, optional <a href="#FileDownloadSuccessCallback">FileDownloadSuccessCallback</a>? successCallback,
+              optional <a href="#FileTransferErrorCallback">FileTransferErrorCallback</a>? errorCallback, optional boolean? trustAllHosts,
               optional <a href="#FileDownloadOptions">FileDownloadOptions</a>? options);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1003,25 +1003,24 @@ Upload error target http://some.server.com/file.txt
     attribute <a href="#FileUploadParams">FileUploadParams</a> params;
     attribute boolean chunkedMode;
     attribute <a href="#HeaderFields">HeaderFields</a> headers;
-  };
-  [NoInterfaceObject] interface FileUploadResult {
+  };  [NoInterfaceObject] interface FileUploadResult {
     attribute long bytesSent;
     attribute long responseCode;
     attribute DOMString response;
-    attribute <a href="#HeaderFields">HeaderFields</a>  headers;
+    attribute <a href="#HeaderFields">HeaderFields</a> headers;
   };
   interface FileTransferError {
+    const short FILE_NOT_FOUND_ERR = 1;
+    const short INVALID_URL_ERR = 2;
+    const short CONNECTION_ERR = 3;
+    const short ABORT_ERR = 4;
+    const short NOT_MODIFIED_ERR = 5;
     attribute short code;
     attribute DOMString source;
     attribute DOMString target;
     attribute long http_status;
     attribute DOMString body;
     attribute DOMString _exception;
-    const short FILE_NOT_FOUND_ERR = 1;
-    const short INVALID_URL_ERR = 2;
-    const short CONNECTION_ERR = 3;
-    const short ABORT_ERR = 4;
-    const short NOT_MODIFIED_ERR = 5;
   };
   [Constructor()]
   interface FileTransfer {
