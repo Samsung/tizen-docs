@@ -7,7 +7,7 @@ The main media controller features include:
 
 - Updating and retrieving playlist
 
-    You can [create a playlist](#updating-and-retrieving-playlist) on the server side, and then retrieve that information on the client side.
+    You can [create a playlist](#creating-and-retrieving-playlist) on the server side, and then retrieve that information on the client side.
 
 -   Updating and retrieving information
 
@@ -74,7 +74,7 @@ To enable your application to use the media controller functionality:
     MediaControlServer.Stop();
     ```
 
-## Updating and Retrieving Playlist
+## Creating and Retrieving Playlist
 
 To create a playlist from the server side and retrieve it on the client side, follow these steps:
 
