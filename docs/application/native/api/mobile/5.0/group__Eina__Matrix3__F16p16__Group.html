@@ -94,7 +94,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__Eina__Matrix__Group.html">Matrix</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>Fixed point matrix operations. </p>
+<p>Definition and operations for 3x3 fixed point matrices. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -119,7 +119,7 @@ Typedefs</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Fixed point matrix3 handler </p>
+<p>A 3x3 fixed point (Q16.16) matrix. </p>
 
 </div>
 </div>
@@ -156,17 +156,17 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets dst as the matrix multiplication (composition) of two Eina_F16p16 matrices. </p>
-<p>In matrix multiplication, AB, the resultant matrix is created from the rows of A multiplied against the columns of B and summed. This is not a cummutative; i.e. AB != BA, so the ordering of arguments <code>m1</code> and <code>m2</code> matters.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">m1</td><td>The first matrix. Must be non-NULL. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">m2</td><td>The second matrix. Must be non-NULL. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>The matrix for the results to be placed.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>The results matrix.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>In matrix multiplication, AB, the resultant matrix is created from the rows of A multiplied against the columns of B and summed. This is not a commutative; i.e. AB != BA, so the ordering of arguments <code>m1</code> and <code>m2</code> matters.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -188,13 +188,13 @@ Typedefs</h2></td></tr>
 <p>Sets the given fixed point matrix to the identity matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The fixed point matrix to set</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The fixed point matrix to set.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function sets <code>m</code> to the identity matrix. No check is done on <code>m</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -216,14 +216,14 @@ Typedefs</h2></td></tr>
 <p>Returns the type of the given fixed point matrix. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The fixed point matrix. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">m</td><td>The fixed point matrix. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The type of the matrix.</dd></dl>
 <p>This function returns the type of the matrix <code>m</code>. No check is done on <code>m</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

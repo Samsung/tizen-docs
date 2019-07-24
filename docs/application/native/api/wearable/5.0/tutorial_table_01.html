@@ -89,11 +89,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>In this example we add four labels to a homogeneous table that has a padding of 5px between cells.</p>
 <p>The interesting bits from this example are: </p>
 <ul>
-<li>Where we set the table as homogeneous and the padding:  <div class="fragment"><pre class="fragment"></pre></div> </li>
-<li>Where we add each label to the table: <div class="fragment"><pre class="fragment"></pre></div></li>
+<li>Where we set the table as homogeneous and the padding:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Table.html#ga6e3265352d1c692d0d4e746814d7deb7" title="Set padding between cells. Default value is 0.">elm_table_padding_set</a>(table, 5, 5);
+   <a class="code" href="group__Elm__Table.html#ga08704fb2725f0beeef6e44a340b6608c" title="Control the homogenous state in a table.">elm_table_homogeneous_set</a>(table, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div> </li>
+<li>Where we add each label to the table: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, label, 0, 0, 1, 1);
+   <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, label, 1, 0, 1, 1);
+   <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, label, 0, 1, 1, 1);
+   <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, label, 1, 1, 1, 1);
+</pre></div></li>
 </ul>
 <p>Here you can see the full source: </p>
-<div class="fragment"><pre class="fragment"></pre></div><p>Our example will look like this:</p>
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -g table_example_01.c -o table_example_01 `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *label, *table;
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;table&quot;</span>, <span class="stringliteral">&quot;Table&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   table = <a class="code" href="group__Elm__Table.html#gabb4d507c8b02acd001e998ae424335f4" title="Add a new table to the parent.">elm_table_add</a>(win);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, table);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(table);
+   <a class="code" href="group__Elm__Table.html#ga6e3265352d1c692d0d4e746814d7deb7" title="Set padding between cells. Default value is 0.">elm_table_padding_set</a>(table, 5, 5);
+   <a class="code" href="group__Elm__Table.html#ga08704fb2725f0beeef6e44a340b6608c" title="Control the homogenous state in a table.">elm_table_homogeneous_set</a>(table, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label, <span class="stringliteral">&quot;label 0&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label);
+   <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, label, 0, 0, 1, 1);
+
+   label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label, <span class="stringliteral">&quot;label 1&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label);
+   <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, label, 1, 0, 1, 1);
+
+   label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label, <span class="stringliteral">&quot;label 2&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label);
+   <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, label, 0, 1, 1, 1);
+
+   label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   elm_object_text_set(label, <span class="stringliteral">&quot;label 3&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(label);
+   <a class="code" href="group__Elm__Table.html#ga7bdb25e5bf48d7d8101379600fcfa388" title="Add a subobject on the table with the coordinates passed.">elm_table_pack</a>(table, label, 1, 1, 1, 1);
+
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div><p>Our example will look like this:</p>
 <div class="image">
 <img src="screenshots/table_example_01.png" alt="table_example_01.png"/>
 </div>

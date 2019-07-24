@@ -7,12 +7,14 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Popup</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 
 <h1>Popup</h1>
 
 <p>The popup component handles creating and managing pop-up windows.</p>
+
+<img src="../../images/mobile_popUp.png" width="15%">
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -61,13 +63,15 @@
 
 <p>To manually create a button component, use the component constructor from the <code>tau</code> namespace:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
    &lt;p&gt;This is not a popup yet. But when TAU namespace calls me as widget, I will be popup.&lt;/p&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var popupElement = document.getElementById(&quot;popup&quot;),
-       popup = tau.widget.Popup(popupElement);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var popupElement = document.getElementById(&quot;popup&quot;),
+    popup = tau.widget.Popup(popupElement);
 </pre>
 
 <h2><a id="html-examples0.8655443852767348"></a>HTML Examples</h2>
@@ -210,18 +214,20 @@ In mobile profile, default value is &quot;origin&quot; and if popup has no optio
 
 <p>To handle popup events, use the following code:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">&lt;!--Popup HTML code--&gt;
 &lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
    &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   /* Use popup events */
-   var popup = document.getElementById(&quot;popup&quot;);
-   popup.addEventListener(&quot;popupafteropen&quot;, function()
-   {
-      /* Implement code for popupafteropen event */
-   });
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+/* Use popup events */
+var popup = document.getElementById(&quot;popup&quot;);
+popup.addEventListener(&quot;popupafteropen&quot;, function()
+{
+   /* Implement code for popupafteropen event */
+});
 </pre>
 
 	<h3>Summary</h3>
@@ -272,24 +278,28 @@ In mobile profile, default value is &quot;origin&quot; and if popup has no optio
 <li>Open manually:
 <p>To open a popup with the &quot;popup&quot; <code>id</code> property, the <code>tau</code> namespace can be used.:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
    &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var popupElement = document.getElementById(&quot;popup&quot;),
-       popup = tau.widget.Popup(popupElement);
-   popup.open();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var popupElement = document.getElementById(&quot;popup&quot;),
+    popup = tau.widget.Popup(popupElement);
+popup.open();
 </pre>
 
 <p>With the TAU API, you can open a popup anywhere:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
    &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   tau.openPopup(&quot;#popup&quot;);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+tau.openPopup(&quot;#popup&quot;);
 </pre></li></ul>
 
 <h3>Close Popup</h3>
@@ -317,30 +327,34 @@ The selector, which causes closing on click, can be changed by setting the <code
 <li>Close manually:
 <p>To close a popup with the &quot;popup&quot; <code>id</code> property, the <code>tau</code> namespace can be used:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">&lt;a href=&quot;#popup&quot; data-position-to=&quot;window&quot;&gt;Click to open popup&lt;/a&gt;
 &lt;div id=&quot;popup&quot; data-role=&quot;popup&quot;&gt;
    &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var popupElement = document.getElementById(&quot;popup&quot;),
-       popup = tau.widget.Popup(popupElement);
-   /* Close popup after opening */
-   popupElement.addEventListener(&quot;popupafteropen&quot;, function()
-   {
-      popup.close();
-   });
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var popupElement = document.getElementById(&quot;popup&quot;),
+    popup = tau.widget.Popup(popupElement);
+/* Close popup after opening */
+popupElement.addEventListener(&quot;popupafteropen&quot;, function()
+{
+   popup.close();
+});
 </pre>
 
 
 <p>With the TAU API, you can close a popup anywhere:</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">&lt;div id=&quot;popup&quot;&gt;
    &lt;p&gt;This is a completely basic popup, no options set.&lt;/p&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   tau.closePopup();
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+tau.closePopup();
 </pre></li></ul>
 
 
@@ -352,5 +366,10 @@ The selector, which causes closing on click, can be changed by setting the <code
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

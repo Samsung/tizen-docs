@@ -26,7 +26,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m43telephony.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/SampleTelephony" target="_blank"><strong>(M) Telephony</strong></a></p>
-			<p>This sample application demonstrates how to work with the Telephony API to receive call, modem, network, and sim information from the telephony framework.</p>
+			<p>This sample application demonstrates how to work with the <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.html" target="_blank">Tizen.Telephony</a> to receive the call, modem, network, and sim information from the telephony framework.</p>
 			</td>
 		</tr>
 	</tbody>
@@ -37,7 +37,11 @@ for TD:
 <table>
 	<tbody>
 		<tr>
-			<td>There is no sample.</td>
+			<td><img alt="" height="180" src="media/w59telephony.png" width="180"/></td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SampleTelephony" target="_blank"><strong>(W) Telephony</strong></a></p>
+			<p>This sample application demonstrates how to work with the <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Telephony.html" target="_blank">Tizen.Telephony</a> to receive the call, modem, network, and sim information from the telephony framework.</p>
+			</td>
 		</tr>
 	</tbody>
 </table>

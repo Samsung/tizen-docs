@@ -235,9 +235,9 @@ Defines</h2></td></tr>
 <p>Gets a pointer to the object containing the list element. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">elem</td><td>The element to be used </td></tr>
-    <tr><td class="paramname">type</td><td>The type of the element </td></tr>
-    <tr><td class="paramname">field</td><td>The field of the element </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">elem</td><td>The element to be used </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of the element </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>The field of the element </td></tr>
   </table>
   </dd>
 </dl>
@@ -272,8 +272,8 @@ Defines</h2></td></tr>
 <p>Iterates through the list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
-    <tr><td class="paramname">list</td><td>The list to be interacted with </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to be interacted with </td></tr>
   </table>
   </dd>
 </dl>
@@ -323,10 +323,10 @@ Defines</h2></td></tr>
 <p>Iterates through the list using a list entry. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">elem</td><td>The element to be used </td></tr>
-    <tr><td class="paramname">list</td><td>The list to be iterated </td></tr>
-    <tr><td class="paramname">type</td><td>The type of the list </td></tr>
-    <tr><td class="paramname">field</td><td>The field of the element </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">elem</td><td>The element to be used </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to be iterated </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of the list </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>The field of the element </td></tr>
   </table>
   </dd>
 </dl>
@@ -376,10 +376,10 @@ Defines</h2></td></tr>
 <p>Iterates through the list in the reverse order using a list entry. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">elem</td><td>The element to be used </td></tr>
-    <tr><td class="paramname">list</td><td>The list to be iterated </td></tr>
-    <tr><td class="paramname">type</td><td>The type of the list </td></tr>
-    <tr><td class="paramname">field</td><td>The field of the element </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">elem</td><td>The element to be used </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to be iterated </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of the list </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>The field of the element </td></tr>
   </table>
   </dd>
 </dl>
@@ -437,11 +437,11 @@ Defines</h2></td></tr>
 <p>Iterates through the list using a list entry, with safety against removal. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
-    <tr><td class="paramname">cursor2</td><td>The auxiliary pointer to be used during the interaction </td></tr>
-    <tr><td class="paramname">list</td><td>The list to be interacted with </td></tr>
-    <tr><td class="paramname">type</td><td>The type of the list </td></tr>
-    <tr><td class="paramname">field</td><td>The field of the element </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cursor2</td><td>The auxiliary pointer to be used during the interaction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to be interacted with </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of the list </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>The field of the element </td></tr>
   </table>
   </dd>
 </dl>
@@ -499,11 +499,11 @@ Defines</h2></td></tr>
 <p>Iterates through the list in the reverse order using a list entry, with safety against removal. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
-    <tr><td class="paramname">cursor2</td><td>The auxiliary pointer to be used during the interaction </td></tr>
-    <tr><td class="paramname">list</td><td>The list to be interacted with </td></tr>
-    <tr><td class="paramname">type</td><td>The type of the list </td></tr>
-    <tr><td class="paramname">field</td><td>The field of the element </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cursor2</td><td>The auxiliary pointer to be used during the interaction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to be interacted with </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The type of the list </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">field</td><td>The field of the element </td></tr>
   </table>
   </dd>
 </dl>
@@ -538,8 +538,8 @@ Defines</h2></td></tr>
 <p>Iterates through the list in the reverse order. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
-    <tr><td class="paramname">list</td><td>The list to be interacted with </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to be interacted with </td></tr>
   </table>
   </dd>
 </dl>
@@ -583,9 +583,9 @@ Defines</h2></td></tr>
 <p>Iterates through the list, with safety against removal. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
-    <tr><td class="paramname">cursor2</td><td>The auxiliary pointer to be used during the interaction </td></tr>
-    <tr><td class="paramname">list</td><td>The list to be interacted with </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cursor2</td><td>The auxiliary pointer to be used during the interaction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to be interacted with </td></tr>
   </table>
   </dd>
 </dl>
@@ -629,9 +629,9 @@ Defines</h2></td></tr>
 <p>Iterates through the list in the reverse order, with safety against removal. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
-    <tr><td class="paramname">cursor2</td><td>The auxiliary pointer to be used during the interaction </td></tr>
-    <tr><td class="paramname">list</td><td>The list to be interacted with </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cursor</td><td>The pointer to be used during the interaction </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">cursor2</td><td>The auxiliary pointer to be used during the interaction </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list to be interacted with </td></tr>
   </table>
   </dd>
 </dl>
@@ -656,7 +656,7 @@ Defines</h2></td></tr>
 <p>Macros for statically initialized lists. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">list</td><td>The list to be used </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The list to be used </td></tr>
   </table>
   </dd>
 </dl>
@@ -709,7 +709,7 @@ Defines</h2></td></tr>
 <p>Adds an element after the specified one. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">elem</td><td>An element in the list </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">elem</td><td>An element in the list </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">to_add</td><td>The element to add to the list </td></tr>
   </table>
   </dd>
@@ -750,7 +750,7 @@ The element is not in any list.</dd></dl>
 <p>Adds an element before the specified one. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">elem</td><td>An element in the list </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">elem</td><td>An element in the list </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">to_add</td><td>The element to add to the list </td></tr>
   </table>
   </dd>
@@ -791,7 +791,7 @@ The element is not in any list.</dd></dl>
 <p>Adds an element to the head of the list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The list </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">elem</td><td>An element </td></tr>
   </table>
   </dd>
@@ -832,7 +832,7 @@ The element is not in any list.</dd></dl>
 <p>Adds an element at the tail of the list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The list </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">elem</td><td>An element </td></tr>
   </table>
   </dd>
@@ -891,7 +891,7 @@ The element is not in any list.</dd></dl>
 <p>This function is called on elements that have not been added to the list so that <a class="el" href="group__Eina__CList__Group.html#gaf3553c4de546f4218073a8eec8e6672c" title="Inits an (unlinked) element.">eina_clist_element_init()</a> works correctly.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">elem</td><td>An element </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">elem</td><td>An element </td></tr>
   </table>
   </dd>
 </dl>
@@ -1002,7 +1002,7 @@ The element is not in any list.</dd></dl>
 <p>Initializes a list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">list</td><td>The list </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">list</td><td>The list </td></tr>
   </table>
   </dd>
 </dl>
@@ -1043,7 +1043,7 @@ This function must be called. Don't try to initialize the list by zeroing out th
 <p>Moves all elements from <code>src</code> to the head of <code>dst</code>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dst</td><td>The list to be prepended to </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dst</td><td>The list to be prepended to </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The list to prepend</td></tr>
   </table>
   </dd>
@@ -1081,7 +1081,7 @@ This function must be called. Don't try to initialize the list by zeroing out th
 <p>Moves all elements from <code>src</code> to the tail of <code>dst</code>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">dst</td><td>The list to be appended to </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">dst</td><td>The list to be appended to </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">src</td><td>The list to append</td></tr>
   </table>
   </dd>
@@ -1186,7 +1186,7 @@ This function must be called. Don't try to initialize the list by zeroing out th
 <p>Removes an element from its list. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">elem</td><td>An element </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">elem</td><td>An element </td></tr>
   </table>
   </dd>
 </dl>

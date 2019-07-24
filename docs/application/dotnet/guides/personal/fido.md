@@ -25,7 +25,7 @@ The FIDO UAF consists of the following basic components:
 
 -   **FIDO UAF client**
 
-    The FIDO UAF client implements the client side of the FIDO UAF protocols, and is responsible for interacting with specific FIDO UAF authenticators using the FIDO UAF authenticator abstraction layer through the [Tizen.Account.FidoClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.FidoClient.html) namespace. Before you use the authenticators, [check whether the device can process the UAF protocol messages](#check_uaf_msg_supported).
+    The FIDO UAF client implements the client side of the FIDO UAF protocols, and is responsible for interacting with specific FIDO UAF authenticators using the FIDO UAF authenticator abstraction layer through the [Tizen.Account.FidoClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.FidoClient.html) namespace. Before you use the authenticators, [check whether the device can process the UAF protocol messages](#check_uaf_msg_supported).
 
 -   **FIDO UAF server**
 
@@ -84,7 +84,7 @@ The FIDO UAF consists of the following basic components:
 
 To enable your application to use the FIDO UAF functionality:
 
-1.  To use the [Tizen.Account.FidoClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.FidoClient.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Account.FidoClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.FidoClient.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -101,7 +101,7 @@ To enable your application to use the FIDO UAF functionality:
 <a name="find_auth"></a>
 ## Finding the FIDO Authenticator
 
-To obtain the list of all available authenticators, use the `DiscoverAuthenticatorsAsync()` method of the [Tizen.Account.FidoClient.UafAuthenticatorFinder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.FidoClient.UafAuthenticatorFinder.html) class:
+To obtain the list of all available authenticators, use the `DiscoverAuthenticatorsAsync()` method of the [Tizen.Account.FidoClient.UafAuthenticatorFinder](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.FidoClient.UafAuthenticatorFinder.html) class:
 
 ```
 IEnumerable authInfos = await UafAuthenticatorFinder.DiscoverAuthenticatorsAsync();
@@ -115,7 +115,7 @@ foreach (AuthenticatorInformation authInfo in authInfos)
 <a name="check_uaf_msg_supported"></a>
 ## Checking the UAF Message Support
 
-To check whether the given UAF protocol message can be processed by the device, use the `CheckPolicyAsync()` method of the [Tizen.Account.FidoClient.UafClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.FidoClient.UafClient.html) class:
+To check whether the given UAF protocol message can be processed by the device, use the `CheckPolicyAsync()` method of the [Tizen.Account.FidoClient.UafClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.FidoClient.UafClient.html) class:
 
 ```
 UafMessage uafRequest = new UafMessage()

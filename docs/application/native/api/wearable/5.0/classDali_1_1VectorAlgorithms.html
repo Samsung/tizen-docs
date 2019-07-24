@@ -120,12 +120,12 @@ Protected Member Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the contents.  <a href="#a91d26d4754268098ba30f6461e3fbc1b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1VectorAlgorithms.html#ada221235186b2d5f35e28cb9155e693c">Release</a> ()</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Releases the vector.  <a href="#ada221235186b2d5f35e28cb9155e693c"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1VectorAlgorithms.html#a29a735d6a3313b5ee2410c52288d495e">Erase</a> (char *address, SizeType elementSize)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases an element. Does not change capacity.  <a href="#a29a735d6a3313b5ee2410c52288d495e"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1VectorAlgorithms.html#aeaac192dbcc42138aa747fef7693db29">Erase</a> (char *first, char *last, SizeType elementSize)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases a range of elements. Does not change capacity.  <a href="#aeaac192dbcc42138aa747fef7693db29"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1VectorAlgorithms.html#a2f6f5afe53792c4c2551b0257995071d">Insert</a> (char *at, char *from, char *to, SizeType elementSize)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts the given elements into the vector.  <a href="#a2f6f5afe53792c4c2551b0257995071d"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1VectorAlgorithms.html#aa81d85b825da9850f57edcf03dec0cf3">Erase</a> (uint8_t *address, SizeType elementSize)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases an element. Does not change capacity.  <a href="#aa81d85b825da9850f57edcf03dec0cf3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1VectorAlgorithms.html#abdb78bcb7bcb375e8d9d013a21af29c2">Erase</a> (uint8_t *first, uint8_t *last, SizeType elementSize)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Erases a range of elements. Does not change capacity.  <a href="#abdb78bcb7bcb375e8d9d013a21af29c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDali_1_1VectorAlgorithms.html#a7acb01830cfc765fe5a790ec751f1ccd">Insert</a> (uint8_t *at, uint8_t *from, uint8_t *to, SizeType elementSize)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts the given elements into the vector.  <a href="#a7acb01830cfc765fe5a790ec751f1ccd"></a><br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><h3>template&lt;bool IsTrivial&gt;<br/>
@@ -243,16 +243,16 @@ template&lt;bool IsTrivial&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a29a735d6a3313b5ee2410c52288d495e"></a><!-- doxytag: member="Dali::VectorAlgorithms::Erase" ref="a29a735d6a3313b5ee2410c52288d495e" args="(char *address, SizeType elementSize)" -->
+<a class="anchor" id="aa81d85b825da9850f57edcf03dec0cf3"></a><!-- doxytag: member="Dali::VectorAlgorithms::Erase" ref="aa81d85b825da9850f57edcf03dec0cf3" args="(uint8_t *address, SizeType elementSize)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;bool IsTrivial&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classDali_1_1VectorAlgorithms.html">Dali::VectorAlgorithms</a>&lt; IsTrivial &gt;::<a class="el" href="classDali_1_1VectorAlgorithms.html#a29a735d6a3313b5ee2410c52288d495e">Erase</a> </td>
+          <td class="memname">void <a class="el" href="classDali_1_1VectorAlgorithms.html">Dali::VectorAlgorithms</a>&lt; IsTrivial &gt;::<a class="el" href="classDali_1_1VectorAlgorithms.html#aa81d85b825da9850f57edcf03dec0cf3">Erase</a> </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">uint8_t *&#160;</td>
           <td class="paramname"><em>address</em>, </td>
         </tr>
         <tr>
@@ -280,26 +280,24 @@ template&lt;bool IsTrivial&gt; </div>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="classDali_1_1VectorBase.html#aecc6bd4a18d3d56284c3c7e6e417d8ea">Dali::VectorBase</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="aeaac192dbcc42138aa747fef7693db29"></a><!-- doxytag: member="Dali::VectorAlgorithms::Erase" ref="aeaac192dbcc42138aa747fef7693db29" args="(char *first, char *last, SizeType elementSize)" -->
+<a class="anchor" id="abdb78bcb7bcb375e8d9d013a21af29c2"></a><!-- doxytag: member="Dali::VectorAlgorithms::Erase" ref="abdb78bcb7bcb375e8d9d013a21af29c2" args="(uint8_t *first, uint8_t *last, SizeType elementSize)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;bool IsTrivial&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">char* <a class="el" href="classDali_1_1VectorAlgorithms.html">Dali::VectorAlgorithms</a>&lt; IsTrivial &gt;::<a class="el" href="classDali_1_1VectorAlgorithms.html#a29a735d6a3313b5ee2410c52288d495e">Erase</a> </td>
+          <td class="memname">uint8_t* <a class="el" href="classDali_1_1VectorAlgorithms.html">Dali::VectorAlgorithms</a>&lt; IsTrivial &gt;::<a class="el" href="classDali_1_1VectorAlgorithms.html#aa81d85b825da9850f57edcf03dec0cf3">Erase</a> </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">uint8_t *&#160;</td>
           <td class="paramname"><em>first</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">uint8_t *&#160;</td>
           <td class="paramname"><em>last</em>, </td>
         </tr>
         <tr>
@@ -329,32 +327,30 @@ template&lt;bool IsTrivial&gt; </div>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Address pointing to the next element of the last one </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classDali_1_1VectorBase.html#a3697182a74232baf07e63bd9c86cc036">Dali::VectorBase</a>.</p>
-
 </div>
 </div>
-<a class="anchor" id="a2f6f5afe53792c4c2551b0257995071d"></a><!-- doxytag: member="Dali::VectorAlgorithms::Insert" ref="a2f6f5afe53792c4c2551b0257995071d" args="(char *at, char *from, char *to, SizeType elementSize)" -->
+<a class="anchor" id="a7acb01830cfc765fe5a790ec751f1ccd"></a><!-- doxytag: member="Dali::VectorAlgorithms::Insert" ref="a7acb01830cfc765fe5a790ec751f1ccd" args="(uint8_t *at, uint8_t *from, uint8_t *to, SizeType elementSize)" -->
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;bool IsTrivial&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classDali_1_1VectorAlgorithms.html">Dali::VectorAlgorithms</a>&lt; IsTrivial &gt;::<a class="el" href="classDali_1_1VectorAlgorithms.html#a2f6f5afe53792c4c2551b0257995071d">Insert</a> </td>
+          <td class="memname">void <a class="el" href="classDali_1_1VectorAlgorithms.html">Dali::VectorAlgorithms</a>&lt; IsTrivial &gt;::<a class="el" href="classDali_1_1VectorAlgorithms.html#a7acb01830cfc765fe5a790ec751f1ccd">Insert</a> </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">uint8_t *&#160;</td>
           <td class="paramname"><em>at</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">uint8_t *&#160;</td>
           <td class="paramname"><em>from</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char *&#160;</td>
+          <td class="paramtype">uint8_t *&#160;</td>
           <td class="paramname"><em>to</em>, </td>
         </tr>
         <tr>

@@ -31,7 +31,7 @@ Tizen provides various application models to allow you to create applications ta
 <a name="life-cycle"></a>
 ## Tizen .NET Application Life-Cycle
 
-The Tizen .NET application model handles application life-cycle and system events. Tizen .NET application life-cycle is handled by the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace. It provides methods to manage the main event loop, the application state change events, and basic system events.
+The Tizen .NET application model handles application life-cycle and system events. Tizen .NET application life-cycle is handled by the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html) namespace. It provides methods to manage the main event loop, the application state change events, and basic system events.
 
 Applications in the same package follow the same installation life-cycle, which is handled by the application package manager. Each application in the package follows its own application life-cycle. Each application in an application package can be identified by its own ID.
 

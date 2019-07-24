@@ -11,7 +11,7 @@ The main features of the `Tizen.Applications.PackageManager` class include:
 
 - Retrieving individual package information
 
-    To [retrieve package information](#info), get the [Tizen.Applications.Package](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Package.html) object using the `GetPackage()` method of the `Tizen.Applications.PackageManager` class.
+    To [retrieve package information](#info), get the [Tizen.Applications.Package](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Package.html) object using the `GetPackage()` method of the `Tizen.Applications.PackageManager` class.
 
 - Monitoring changes
 
@@ -21,7 +21,7 @@ The main features of the `Tizen.Applications.PackageManager` class include:
 
 To enable your application to use the package management functionality:
 
-1.  To use the [Tizen.Applications.PackageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.PackageManager.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Applications.PackageManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.PackageManager.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -29,7 +29,7 @@ To enable your application to use the package management functionality:
     </privileges>
     ```
 
-2. To use the methods and properties of the `Tizen.Applications.PackageManager` class, include the [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html) namespace in your application:
+2. To use the methods and properties of the `Tizen.Applications.PackageManager` class, include the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html) namespace in your application:
 
     ```
     using Tizen.Applications;
@@ -40,13 +40,13 @@ To enable your application to use the package management functionality:
 
 To retrieve all package information for installed packages:
 
-1.  Retrieve all package information with the `GetPackages()` method of the [Tizen.Applications.PackageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.PackageManager.html) class:
+1.  Retrieve all package information with the `GetPackages()` method of the [Tizen.Applications.PackageManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.PackageManager.html) class:
 
     ```
     IEnumerable<Package> packageList = PackageManager.GetPackages();
     ```
 
-2. Iterate through the returned list to access information about each [Tizen.Applications.Package](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Package.html) object:
+2. Iterate through the returned list to access information about each [Tizen.Applications.Package](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Package.html) object:
 
     ```
     foreach (Package package in packageList)
@@ -68,13 +68,13 @@ To retrieve all package information for installed packages:
 
 To get specific package information:
 
-1.  Retrieve information for a specific package with the `GetPackage()` method of the [Tizen.Applications.PackageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.PackageManager.html) class:
+1.  Retrieve information for a specific package with the `GetPackage()` method of the [Tizen.Applications.PackageManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.PackageManager.html) class:
 
     ```
     Package package = PackageManager.GetPackage("org.tizen.helloworld");
     ```
 
-2. Use the [Tizen.Applications.Package](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Package.html) object returned by the `GetPackage()` method to access various package details:
+2. Use the [Tizen.Applications.Package](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Package.html) object returned by the `GetPackage()` method to access various package details:
 
     ```
     /// Use package information
@@ -94,7 +94,7 @@ To get specific package information:
 
 To detect package-related events, such as installation, uninstallation, and updates:
 
-1.  Register event handlers for various events of the [Tizen.Applications.PackageManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.PackageManager.html) class.
+1.  Register event handlers for various events of the [Tizen.Applications.PackageManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.PackageManager.html) class.
 
     The following example registers event handlers for package installation, uninstallation, and update events:
 
@@ -104,7 +104,7 @@ To detect package-related events, such as installation, uninstallation, and upda
     PackageManager.UpdateProgressChanged += new System.EventHandler<PackageManagerEventArgs>(UpdateEventHandler);
     ```
 
-2. Define the event handlers. When the related event occurs, the event handler is triggered and you can get the event details from the [Tizen.Applications.PackageManagerEventArgs](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.PackageManagerEventArgs.html) instance.
+2. Define the event handlers. When the related event occurs, the event handler is triggered and you can get the event details from the [Tizen.Applications.PackageManagerEventArgs](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.PackageManagerEventArgs.html) instance.
 
     The following example implements the installation event handler:
 

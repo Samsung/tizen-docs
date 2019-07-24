@@ -86,13 +86,273 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Ecore_Evas Single Process Windowing System.</div>  </div>
 <div class="ingroups"><a class="el" href="group__Ecore__Evas__Group.html">Ecore_Evas wrapper/helper set of functions</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>These are global scope functions to manage the EWS to be used by ecore_evas_ews_new().</p>
+<p>These are global scope functions to manage the EWS to be used by <a class="el" href="group__Ecore__Evas__Group.html#gaf92d2da588a5f7f571f9b999ed19cfe8" title="Creates a new Ecore_Evas canvas bound to the Evas ews (Ecore + Evas Single Process Windowing System) ...">ecore_evas_ews_new()</a>.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#gaaa131a2f289e190bcccd27bc24f1ecdf">ecore_evas_ews_engine_set</a> (const char *engine, const char *options)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the engine to be used by the backing store engine.  <a href="#gaaa131a2f289e190bcccd27bc24f1ecdf"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#gac4bc3b0e2b63a10db8f913ae34be84c0">ecore_evas_ews_setup</a> (int x, int y, int w, int h)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reconfigures the backing store used.  <a href="#gac4bc3b0e2b63a10db8f913ae34be84c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">Ecore_Evas *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#gad01f2257cf4a35aa1ffe1896805c03fb">ecore_evas_ews_ecore_evas_get</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the internal backing store in use.  <a href="#gad01f2257cf4a35aa1ffe1896805c03fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#ga0fcf580ca81b8eef514f873b61b95c69">ecore_evas_ews_evas_get</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the internal backing store in use.  <a href="#ga0fcf580ca81b8eef514f873b61b95c69"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3edb89d0f1c562e9639a937231d06838"></a><!-- doxytag: member="Ecore_Evas_Ews::ecore_evas_ews_background_get" ref="ga3edb89d0f1c562e9639a937231d06838" args="(void)" -->
+<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#ga3edb89d0f1c562e9639a937231d06838">ecore_evas_ews_background_get</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current background. <br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#ga69133caf7519dcc61f727dda994484f6">ecore_evas_ews_background_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current background, must be created by evas <a class="el" href="group__Ecore__Evas__Ews.html#ga0fcf580ca81b8eef514f873b61b95c69" title="Returns the internal backing store in use.">ecore_evas_ews_evas_get()</a>.  <a href="#ga69133caf7519dcc61f727dda994484f6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#ga1aafacd1b5f3db7eee1769d156ab568c">ecore_evas_ews_children_get</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all Ecore_Evas* created by EWS.  <a href="#ga1aafacd1b5f3db7eee1769d156ab568c"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#gae2fda64b6ac4fc8637a3203e9ca3b1c0">ecore_evas_ews_manager_set</a> (const void *manager)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the identifier of the manager taking care of internal windows.  <a href="#gae2fda64b6ac4fc8637a3203e9ca3b1c0"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#ga870e5446527a7e6dbd2e7e9ccbc0f3a0">ecore_evas_ews_manager_get</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the identifier of the manager taking care of internal windows.  <a href="#ga870e5446527a7e6dbd2e7e9ccbc0f3a0"></a><br/></td></tr>
+</table>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga69133caf7519dcc61f727dda994484f6"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_ews_background_set" ref="ga69133caf7519dcc61f727dda994484f6" args="(Evas_Object *o)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Evas__Ews.html#ga69133caf7519dcc61f727dda994484f6">ecore_evas_ews_background_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>o</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the current background, must be created by evas <a class="el" href="group__Ecore__Evas__Ews.html#ga0fcf580ca81b8eef514f873b61b95c69" title="Returns the internal backing store in use.">ecore_evas_ews_evas_get()</a>. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">o</td><td>The Evas_Object for which to set the background.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>It will be kept at lowest layer (EVAS_LAYER_MIN) and below everything else. You can set any object, default is a black rectangle.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>previous object will be deleted! </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1aafacd1b5f3db7eee1769d156ab568c"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_ews_children_get" ref="ga1aafacd1b5f3db7eee1769d156ab568c" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a>* <a class="el" href="group__Ecore__Evas__Ews.html#ga1aafacd1b5f3db7eee1769d156ab568c">ecore_evas_ews_children_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns all Ecore_Evas* created by EWS. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An eina list of Ecore_evases.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Do not change the returned list or its contents.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad01f2257cf4a35aa1ffe1896805c03fb"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_ews_ecore_evas_get" ref="gad01f2257cf4a35aa1ffe1896805c03fb" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Ecore_Evas* <a class="el" href="group__Ecore__Evas__Ews.html#gad01f2257cf4a35aa1ffe1896805c03fb">ecore_evas_ews_ecore_evas_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the internal backing store in use. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The internal backing store in use.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>this will force it to be created, making future calls to <a class="el" href="group__Ecore__Evas__Ews.html#gaaa131a2f289e190bcccd27bc24f1ecdf" title="Sets the engine to be used by the backing store engine.">ecore_evas_ews_engine_set()</a> void.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Ews.html#ga0fcf580ca81b8eef514f873b61b95c69" title="Returns the internal backing store in use.">ecore_evas_ews_evas_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaaa131a2f289e190bcccd27bc24f1ecdf"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_ews_engine_set" ref="gaaa131a2f289e190bcccd27bc24f1ecdf" args="(const char *engine, const char *options)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Evas__Ews.html#gaaa131a2f289e190bcccd27bc24f1ecdf">ecore_evas_ews_engine_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>engine</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>options</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the engine to be used by the backing store engine. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">engine</td><td>The engine to be set. </td></tr>
+    <tr><td class="paramname">options</td><td>The options of the engine to be set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> if ews is already in use.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0fcf580ca81b8eef514f873b61b95c69"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_ews_evas_get" ref="ga0fcf580ca81b8eef514f873b61b95c69" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a>* <a class="el" href="group__Ecore__Evas__Ews.html#ga0fcf580ca81b8eef514f873b61b95c69">ecore_evas_ews_evas_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the internal backing store in use. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The internal backing store in use.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>this will force it to be created, making future calls to <a class="el" href="group__Ecore__Evas__Ews.html#gaaa131a2f289e190bcccd27bc24f1ecdf" title="Sets the engine to be used by the backing store engine.">ecore_evas_ews_engine_set()</a> void.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Ews.html#gad01f2257cf4a35aa1ffe1896805c03fb" title="Returns the internal backing store in use.">ecore_evas_ews_ecore_evas_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga870e5446527a7e6dbd2e7e9ccbc0f3a0"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_ews_manager_get" ref="ga870e5446527a7e6dbd2e7e9ccbc0f3a0" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void* <a class="el" href="group__Ecore__Evas__Ews.html#ga870e5446527a7e6dbd2e7e9ccbc0f3a0">ecore_evas_ews_manager_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the identifier of the manager taking care of internal windows. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>the value set by <a class="el" href="group__Ecore__Evas__Ews.html#gae2fda64b6ac4fc8637a3203e9ca3b1c0" title="Sets the identifier of the manager taking care of internal windows.">ecore_evas_ews_manager_set()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae2fda64b6ac4fc8637a3203e9ca3b1c0"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_ews_manager_set" ref="gae2fda64b6ac4fc8637a3203e9ca3b1c0" args="(const void *manager)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Evas__Ews.html#gae2fda64b6ac4fc8637a3203e9ca3b1c0">ecore_evas_ews_manager_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>manager</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the identifier of the manager taking care of internal windows. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">manager</td><td>any unique identifier address.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>The ECORE_EVAS_EWS_EVENT_MANAGER_CHANGE event is issued. Consider handling it to know if you should stop handling events yourself (ie: another manager took over)</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Ews.html#ga870e5446527a7e6dbd2e7e9ccbc0f3a0" title="Gets the identifier of the manager taking care of internal windows.">ecore_evas_ews_manager_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac4bc3b0e2b63a10db8f913ae34be84c0"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_ews_setup" ref="gac4bc3b0e2b63a10db8f913ae34be84c0" args="(int x, int y, int w, int h)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Evas__Ews.html#gac4bc3b0e2b63a10db8f913ae34be84c0">ecore_evas_ews_setup</a> </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Reconfigures the backing store used. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>The X coordinate to be used. </td></tr>
+    <tr><td class="paramname">y</td><td>The Y coordinate to be used. </td></tr>
+    <tr><td class="paramname">w</td><td>The width of the Ecore_Evas to setup. </td></tr>
+    <tr><td class="paramname">h</td><td>The height of the Ecore_Evas to setup. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+
+</div>
+</div>
 <hr/><h2>Variable Documentation</h2>
 <a class="anchor" id="gaaabf6d0c8e9c8246a491025b3cfa890d"></a><!-- doxytag: member="Ecore_Evas.h::ECORE_EVAS_EWS_EVENT_ACTIVATE" ref="gaaabf6d0c8e9c8246a491025b3cfa890d" args="" -->
 <div class="memitem">

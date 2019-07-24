@@ -8,7 +8,7 @@ Let's begin by sharing our vision for Tizen app design and the visual language w
 
 Tizen is a platform built for the future. It was developed to foster openness, which is essential for creating a rich user experience on mobile devices and the devices they connect to. Tizen nourishes users' curiosity, allows them to easily reach their goals, and lets them express their personality. Tizen is a platform designed to grow with users, enriching their daily life.
 
-![The OS of Everyting](media/1.1.png)
+![The OS of Everything](media/1.1.png)
 
 
 ## Mobile

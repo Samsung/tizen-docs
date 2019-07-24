@@ -94,43 +94,403 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The main point is the way that Genlist manages subitems. Clicking on an item's button to expand it won't really show its children. It will only generate the "expand,request" signal, and the expansion must be done manually.</p>
 <p>In this example we want to be able to add items as subitems of another item. If an item has any child, it must be displayed using a parent class, otherwise it will use the normal item class.</p>
 <p>It will be possible to delete items too. Once a tree is constructed (with subitems of subitems), and the user clicks on the first parent (root of the tree), the entire subtree must be hidden. However, just calling elm_genlist_item_expanded_set(item, EINA_FALSE) won't hide them. The only thing that happens is that the parent item will change its appearance to represent that it's contracted. And the signal "contracted" will be emitted from the genlist. Thus, we must call elm_genlist_item_subitems_clear() to delete all its subitems, but still keep a way to recreate them when expanding the parent again. That's why we are going to keep a node struct for each item, that will be the data of the item, with the following information:</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment"><span class="keyword">typedef</span> <span class="keyword">struct </span>_Node_Data {
+     <a class="code" href="struct__Eina__List.html">Eina_List</a> *children;
+     <span class="keywordtype">int</span> value;
+     <span class="keywordtype">int</span> level;
+     <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> favorite;
+} Node_Data;
+</pre></div></p>
 <p>This <code>Node_Data</code> contains the value for the item, a number indicating its level under the tree, a list of children (to be able to expand it later) and a boolean indicating if it's a favorite item or not.</p>
 <p>We use 3 different item classes in this example:</p>
 <p>One for items that don't have children:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">int</span> nitems = 0;
+
+<span class="keyword">static</span> <span class="keywordtype">char</span> *
+_item_label_get(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
+{
+   <span class="keywordtype">char</span> buf[256] = {0};
+   Node_Data *d = data;
+
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.text&quot;</span>))
+     snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;Item # %i (level %i)&quot;</span>, d-&gt;value, d-&gt;level);
+
+   <span class="keywordflow">return</span> strdup(buf);
+}
+</pre></div></p>
 <p>One for items that have children:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">char</span> *
+_parent_label_get(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *part EINA_UNUSED)
+{
+   <span class="keywordtype">char</span> buf[256];
+   Node_Data *d = data;
+
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;Group %d (%d items)&quot;</span>, d-&gt;value / 7,
+            <a class="code" href="group__Eina__List__Group.html#ga301729054a498a2df09a5f1dd760697e" title="Gets the count of the number of items in a list.">eina_list_count</a>(d-&gt;children));
+
+   <span class="keywordflow">return</span> strdup(buf);
+}
+
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
+_parent_content_get(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(obj);
+
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.icon&quot;</span>))
+     <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;folder&quot;</span>);
+
+   evas_object_size_hint_aspect_set(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+   <span class="keywordflow">return</span> ic;
+}
+</pre></div></p>
 <p>And one for items that were favorited:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">char</span> *
+_favorite_label_get(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
+{
+   <span class="keywordtype">char</span> buf[256] = {0};
+   Node_Data *d = data;
+
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.text&quot;</span>))
+     snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;Favorite # %i&quot;</span>, d-&gt;value);
+
+   <span class="keywordflow">return</span> strdup(buf);
+}
+</pre></div></p>
 <p>The favorite item class is there just to demonstrate the elm_genlist_item_item_class_update() function in action. It would be much simpler to implement the favorite behavior by just changing the icon inside the icon_get functions when the <code>favorite</code> boolean is activated.</p>
 <p>Now we are going to declare the callbacks for the buttons that add, delete and change items.</p>
 <p>First, a button for appending items to the list:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
+_favorite_content_get(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(obj);
+
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.icon&quot;</span>))
+     <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;apps&quot;</span>);
+
+   evas_object_size_hint_aspect_set(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+   <span class="keywordflow">return</span> ic;
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_append_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit, *parent = NULL;
+   Node_Data *pdata, *d = malloc(<span class="keyword">sizeof</span>(*d));
+
+   d-&gt;children = NULL;
+   d-&gt;value = nitems++;
+   d-&gt;favorite = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
+
+   glit = <a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+   <span class="keywordflow">if</span> (glit)
+     parent = elm_genlist_item_parent_get(glit);
+
+   <span class="keywordflow">if</span> (parent)
+     {
+        d-&gt;level = elm_genlist_item_expanded_depth_get(parent) + 1;
+        pdata = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(parent);
+        pdata-&gt;children = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(pdata-&gt;children, d);
+     }
+   <span class="keywordflow">else</span>
+     d-&gt;level = 0;
+
+   <a class="code" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, _itc,
+                           d, parent,
+                           ELM_GENLIST_ITEM_NONE,
+                           _item_sel_cb, NULL);
+}
+</pre></div></p>
 <p>If an item is selected, a new item will be appended to the same level of that item, but using the selected item's parent as its parent too. If no item is selected, the new item will be appended to the root of the tree.</p>
 <p>Then the callback for marking an item as favorite:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_favorite_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = <a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   Node_Data *d = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(glit);
+   d-&gt;favorite = !d-&gt;favorite;
+   <span class="keywordflow">if</span> (d-&gt;favorite)
+     elm_genlist_item_item_class_update(glit, _itfav);
+   <span class="keywordflow">else</span>
+     {
+        <span class="keywordflow">if</span> (d-&gt;children)
+          elm_genlist_item_item_class_update(glit, _itp);
+        <span class="keywordflow">else</span>
+          elm_genlist_item_item_class_update(glit, _itc);
+     }
+
+   elm_genlist_item_update(glit);
+}
+</pre></div></p>
 <p>This callback is very simple, it just changes the item class of the selected item for the "favorite" one, or go back to the "item" or "parent" class depending on that item having children or not.</p>
 <p>Now, the most complex operation (adding a child to an item):</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_add_child_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = <a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit_prev, *glit_parent;
+
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   Node_Data *d = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(glit);
+   glit_prev = elm_genlist_item_prev_get(glit);
+   glit_parent = elm_genlist_item_parent_get(glit);
+
+   <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> change_item = !d-&gt;children;
+
+   <span class="comment">// creating new item data</span>
+   Node_Data *ndata = malloc(<span class="keyword">sizeof</span>(*ndata));
+   ndata-&gt;value = nitems++;
+   ndata-&gt;children = NULL;
+   ndata-&gt;favorite = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
+   ndata-&gt;level = elm_genlist_item_expanded_depth_get(glit) + 1;
+   d-&gt;children = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(d-&gt;children, ndata);
+
+   <span class="comment">// Changing leaf item to parent item</span>
+   <span class="keywordflow">if</span> (change_item)
+     {
+        <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(glit);
+
+        <span class="keywordflow">if</span> (glit_prev != glit_parent)
+          glit = <a class="code" href="group__Elm__Genlist.html#ga35b7c5a1d022c927a589b84ccf969562" title="Insert an item after another in a genlist widget.">elm_genlist_item_insert_after</a>(list, _itp, d, glit_parent,
+                                               glit_prev,
+                                               ELM_GENLIST_ITEM_TREE,
+                                               _item_sel_cb, NULL);
+        <span class="keywordflow">else</span>
+          glit = <a class="code" href="group__Elm__Genlist.html#gad1cc07925e962db462a82e34e91653ac" title="Prepend a new item in a given genlist widget.">elm_genlist_item_prepend</a>(list, _itp, d, glit_parent,
+                                          ELM_GENLIST_ITEM_TREE,
+                                          _item_sel_cb, NULL);
+        elm_genlist_item_expanded_set(glit, EINA_FALSE);
+        elm_genlist_item_selected_set(glit, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+     }
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (elm_genlist_item_expanded_get(glit))
+     {
+        <a class="code" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, _itc, ndata, glit,
+                                ELM_GENLIST_ITEM_NONE, _item_sel_cb, NULL);
+     }
+
+   elm_genlist_item_update(glit);
+
+}
+</pre></div></p>
 <p>This function gets the data of the selected item, create a new data (for the item being added), and appends it to the children list of the selected item.</p>
 <p>Then we must check if the selected item (let's call it <code>item1</code> now) to which the new item (called <code>item2</code> from now on) was already a parent item too (using the parent item class) or just a normal item (using the default item class). In the first case, we just have to append the item to the end of the <code>item1</code> children list.</p>
 <p>However, if the <code>item1</code> didn't have any child previously, we have to change it to a parent item now. It would be easy to just change its item class to the parent type, but there's no way to change the item flags and make it be of the type #ELM_GENLIST_ITEM_TREE. Thus, we have to delete it and create a new item, and add this new item to the same position that the deleted one was. That's the reason of the checks inside the bigger <code>if</code>.</p>
 <p>After adding the item to the newly converted parent, we set it to not expanded (since we don't want to show the added item immediately) and select it again, since the original item was deleted and no item is selected at the moment.</p>
 <p>Finally, let's show the callback for deleting items:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_clear_list(Node_Data *d)
+{
+   Node_Data *tmp;
+
+   <a class="code" href="group__Eina__List__Group.html#gae27a2c686a0a11693f9b06957c9bba83" title="Definition for the macro to remove each list node while having access to each node&#39;s data...">EINA_LIST_FREE</a>(d-&gt;children, tmp)
+      _clear_list(tmp);
+   free(d);
+}
+
+static <span class="keywordtype">void</span>
+_del_item_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = <a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit_parent = NULL;
+
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   Node_Data *pdata, *d = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(glit);
+   glit_parent = elm_genlist_item_parent_get(glit);
+   elm_genlist_item_subitems_clear(glit);
+   <a class="code" href="group__Elm__General.html#gad1b5a0d41fa322b28000a290154ec3a4">elm_object_item_del</a>(glit);
+
+   <span class="keywordflow">if</span> (glit_parent)
+     {
+        pdata = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(glit_parent);
+        pdata-&gt;children = <a class="code" href="group__Eina__List__Group.html#ga7c0c6e07aa592a1cb2e010049a718035" title="Removes the first instance of the specified data from the given list.">eina_list_remove</a>(pdata-&gt;children, d);
+     }
+
+   _clear_list(d);
+
+   elm_genlist_item_update(glit_parent);
+}
+</pre></div></p>
 <p>Since we have an iternal list representing each element of our tree, once we delete an item we have to go deleting each child of that item, in our internal list. That's why we have the function <code>_clear_list</code>, which recursively goes freeing all the item data.</p>
 <p>This is necessary because only when we really want to delete the item is when we need to delete the item data. When we are just contracting the item, we need to hide the children by deleting them, but keeping the item data.</p>
 <p>Now there are two callbacks that will be called whenever the user clicks on the expand/contract icon of the item. They will just request to items to be contracted or expanded:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_expand_request_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = event_info;
+   printf(<span class="stringliteral">&quot;expand request on item: %p\n&quot;</span>, event_info);
+   elm_genlist_item_expanded_set(glit, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+}
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_contract_request_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info)
+{
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = event_info;
+   printf(<span class="stringliteral">&quot;contract request on item: %p\n&quot;</span>, event_info);
+   elm_genlist_item_expanded_set(glit, EINA_FALSE);
+}
+</pre></div></p>
 <p>When the elm_genlist_item_expanded_set() function is called with <code>EINA_TRUE</code>, the <code>_expanded_cb</code> will be called. And when this happens, the subtree of that item must be recreated again. This is done using the internal list stored as item data for each item. The function code follows:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_expanded_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info)
+{
+   <a class="code" href="struct__Eina__List.html">Eina_List</a> *l;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = event_info;
+   Node_Data *it_data, *d = <a class="code" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get</a>(glit);
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = <a class="code" href="group__Elm__General.html#ga6fe693f0d12167a5a98695a5360565c0" title="Get the widget object&#39;s handle which contains a given item.">elm_object_item_widget_get</a>(glit);
+
+   <a class="code" href="struct__Elm__Gen__Item__Class.html">Elm_Genlist_Item_Class</a> *ic;
+
+   <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(d-&gt;children, l, it_data)
+     {
+        <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *nitem;
+        Elm_Genlist_Item_Type type = ELM_GENLIST_ITEM_NONE;
+        printf(<span class="stringliteral">&quot;expanding item: #%d from parent #%d\n&quot;</span>, it_data-&gt;value, d-&gt;value);
+        <span class="keywordflow">if</span> (it_data-&gt;favorite)
+          ic = _itfav;
+        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (it_data-&gt;children)
+          {
+             ic = _itp;
+             type = ELM_GENLIST_ITEM_TREE;
+          }
+</pre></div></p>
 <p>Each appended item is set to contracted, so we don't have to deal with checking if the item was contracted or expanded before its parent being contracted. It could be easily implemented, though, by adding a flag expanded inside the item data.</p>
 <p>Now, the <code>_contracted_cb</code>, which is much simpler:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">        <span class="keywordflow">else</span>
+          ic = _itc;
+
+        nitem = <a class="code" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, ic, it_data, glit,
+                                        type, _item_sel_cb, NULL);
+        elm_genlist_item_expanded_set(nitem, EINA_FALSE);
+     }
+</pre></div></p>
 <p>We just have to call elm_genlist_item_subitems_clear(), that will take care of deleting every item, and keep the item data still stored (since we don't have any del function set on any of our item classes).</p>
 <p>Finally, the code inside <code>elm_main</code> is very similar to the other examples:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *box, *fbox;
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list;
+   <span class="keywordtype">int</span> i;
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;genlist&quot;</span>, <span class="stringliteral">&quot;Genlist&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   box = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(box);
+
+   <span class="keywordflow">if</span> (!_itc)
+     {
+        _itc = <a class="code" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a>();
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#aa611ea90d00c3e0f9abe25ff56fc420f">item_style</a> = <span class="stringliteral">&quot;default&quot;</span>;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#ae7a3a244fab9e126b3ac264615535c41">text_get</a> = _item_label_get;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a796220b356374cd6395bcd2c3668f8d8">content_get</a> = _item_content_get;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a23a335ae22003578adc536313f21e6e5">state_get</a> = NULL;
+        _itc-&gt;<a class="code" href="struct__Elm__Gen__Item__Class.html#a457622de444f6539822387321996418d">func</a>.<a class="code" href="struct__Elm__Gen__Item__Class__Functions.html#a29069fe3b82c13e822a3ce515e12dac0">del</a> = NULL;
+     }
+
+   <span class="keywordflow">if</span> (!_itp)
+     {
+        _itp = <a class="code" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a>();
+        _itp-&gt;item_style = <span class="stringliteral">&quot;default&quot;</span>;
+        _itp-&gt;func.text_get = _parent_label_get;
+        _itp-&gt;func.content_get = _parent_content_get;
+        _itp-&gt;func.state_get = NULL;
+        _itp-&gt;func.del = NULL;
+     }
+
+   <span class="keywordflow">if</span> (!_itfav)
+     {
+        _itfav = <a class="code" href="group__Elm__Genlist.html#gabb8088ee2d6660c5d934ce3153493eb1">elm_genlist_item_class_new</a>();
+        _itfav-&gt;item_style = <span class="stringliteral">&quot;default&quot;</span>;
+        _itfav-&gt;func.text_get = _favorite_label_get;
+        _itfav-&gt;func.content_get = _favorite_content_get;
+        _itfav-&gt;func.state_get = NULL;
+        _itfav-&gt;func.del = NULL;
+     }
+
+   list = <a class="code" href="group__Elm__Genlist.html#ga8845cb5425deadec54558b7badd16a6f">elm_genlist_add</a>(win);
+
+   evas_object_size_hint_weight_set(list, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(list, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, list);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(list);
+
+   fbox = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   elm_box_layout_set(fbox, evas_object_box_layout_flow_horizontal,
+                      NULL, NULL);
+   evas_object_size_hint_weight_set(fbox, EVAS_HINT_EXPAND, 0);
+   evas_object_size_hint_align_set(fbox, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, fbox);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(fbox);
+
+   _button_add(list, fbox, <span class="stringliteral">&quot;append item&quot;</span>, _append_cb);
+   _button_add(list, fbox, <span class="stringliteral">&quot;favorite&quot;</span>, _favorite_cb);
+   _button_add(list, fbox, <span class="stringliteral">&quot;add child&quot;</span>, _add_child_cb);
+   _button_add(list, fbox, <span class="stringliteral">&quot;del item&quot;</span>, _del_item_cb);
+
+
+   Node_Data *pdata = NULL; <span class="comment">// data for the parent of the group</span>
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glg = NULL;
+   <span class="keywordflow">for</span> (i = 0; i &lt; N_ITEMS; i++)
+     {
+        <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *gli = NULL;
+        Node_Data *data = malloc(<span class="keyword">sizeof</span>(*data)); <span class="comment">// data for this item</span>
+        data-&gt;children = NULL;
+        data-&gt;value = i;
+        data-&gt;favorite = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
+        nitems++;
+
+        printf(<span class="stringliteral">&quot;creating item: #%d\n&quot;</span>, data-&gt;value);
+        <span class="keywordflow">if</span> (i % 3 == 0)
+          {
+             glg = gli = <a class="code" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, _itp, data, NULL,
+                                                 ELM_GENLIST_ITEM_TREE,
+                                                 _item_sel_cb, NULL);
+             elm_genlist_item_expanded_set(glg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+             pdata = data;
+             data-&gt;level = 0;
+          }
+        <span class="keywordflow">else</span>
+          {
+             gli = <a class="code" href="group__Elm__Genlist.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, _itc, data, glg,
+                                           ELM_GENLIST_ITEM_NONE,
+                                           _item_sel_cb, NULL);
+             <span class="keywordflow">if</span> (pdata)
+               pdata-&gt;children = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(pdata-&gt;children, data);
+             data-&gt;level = 1;
+          }
+     }
+
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(list, <span class="stringliteral">&quot;expand,request&quot;</span>, _expand_request_cb, list);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(list, <span class="stringliteral">&quot;contract,request&quot;</span>, _contract_request_cb, list);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(list, <span class="stringliteral">&quot;expanded&quot;</span>, _expanded_cb, list);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(list, <span class="stringliteral">&quot;contracted&quot;</span>, _contracted_cb, list);
+
+   evas_object_resize(win, 420, 600);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div></p>
 <p>The example will look like this when running:</p>
 <div class="image">
 <img src="screenshots/genlist_example_05.png" alt="genlist_example_05.png"/>

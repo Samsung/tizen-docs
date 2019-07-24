@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Edje Object Animation</div>  </div>
-<div class="ingroups"><a class="el" href="group__Edje__Object.html">Edje Object</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Edje__Object__Group.html">Edje Object</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions that deal with animations. </p>
@@ -190,7 +190,7 @@ Typedefs</h2></td></tr>
 <p>Reversed do action value </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga303fd8b410c1514e49b2a7d570d63a24ad347832cb294568e23237faea7262630"></a><!-- doxytag: member="EDJE_ACTION_TYPE_FOCUS_OBJECT" ref="gga303fd8b410c1514e49b2a7d570d63a24ad347832cb294568e23237faea7262630" args="" -->EDJE_ACTION_TYPE_FOCUS_OBJECT</em>&nbsp;</td><td>
-<p>Forcus object action value </p>
+<p>Focus object action value </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga303fd8b410c1514e49b2a7d570d63a24aaae1c11915d52a36d7817589aadcb262"></a><!-- doxytag: member="EDJE_ACTION_TYPE_PARAM_COPY" ref="gga303fd8b410c1514e49b2a7d570d63a24aaae1c11915d52a36d7817589aadcb262" args="" -->EDJE_ACTION_TYPE_PARAM_COPY</em>&nbsp;</td><td>
 <p>Param copy action value </p>
@@ -289,7 +289,7 @@ Typedefs</h2></td></tr>
 <p>Decelerate factor tween mode value </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga7addb721055a02126bc0db1a1f4af266add658dbe1109d0fffdcc1b114b48e723"></a><!-- doxytag: member="EDJE_TWEEN_MODE_SINUSOIDAL_FACTOR" ref="gga7addb721055a02126bc0db1a1f4af266add658dbe1109d0fffdcc1b114b48e723" args="" -->EDJE_TWEEN_MODE_SINUSOIDAL_FACTOR</em>&nbsp;</td><td>
-<p>Sinusoidal factgor tween mode value </p>
+<p>Sinusoidal factor tween mode value </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga7addb721055a02126bc0db1a1f4af266ae5db02cc8fc7de3c2157066c1b426e2b"></a><!-- doxytag: member="EDJE_TWEEN_MODE_DIVISOR_INTERP" ref="gga7addb721055a02126bc0db1a1f4af266ae5db02cc8fc7de3c2157066c1b426e2b" args="" -->EDJE_TWEEN_MODE_DIVISOR_INTERP</em>&nbsp;</td><td>
 <p>Divisor iterp tween mode value </p>
@@ -367,7 +367,7 @@ Typedefs</h2></td></tr>
 <p>This function sets the edje built-in animations' frame time (thus, affecting their resolution) by calling <a class="el" href="group__Ecore__Animator__Group.html#ga2c7aa7e621cd68562519066ad87a3fa1" title="Sets the animator call interval in seconds.">ecore_animator_frametime_set()</a>. This frame time can be retrieved with <a class="el" href="group__Edje__Object__Animation.html#gad9593e50d1d5bc847e9b34b104c83935" title="Gets edje transitions&#39; frame time.">edje_frametime_get()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object__Animation.html#gad9593e50d1d5bc847e9b34b104c83935" title="Gets edje transitions&#39; frame time.">edje_frametime_get()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a14">edje-perspective.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-perspective_8c-example.html#a11">edje-perspective.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -389,7 +389,7 @@ Typedefs</h2></td></tr>
 <p>Freezes Edje objects. </p>
 <p>This function freezes all Edje animations in the current process.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>: for freeze a specific object </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object.html#ga2c14c98f4ad3d9cbaa27b30013d10a13" title="Freezes the Edje object.">edje_object_freeze()</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd>edje_object_freeze().</dd>
 <dd>
 <a class="el" href="group__Edje__Object__Animation.html#ga1963a864ac582582780dcbf3db3a4e45" title="Thaws Edje objects.">edje_thaw()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
@@ -412,11 +412,17 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets Edje language. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">locale</td><td>The locale specifier.</td></tr>
+  </table>
+  </dd>
+</dl>
 <p>This function sets the given language.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>: emits signal edje,language,"locale".</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a3">edje-text.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="edje-text_8c-example.html#a2">edje-text.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -438,7 +444,7 @@ Typedefs</h2></td></tr>
 <p>Thaws Edje objects. </p>
 <p>This function thaws all Edje animations in the current process.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>for thaw a specific object </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Edje__Object.html#gace22e3f346e8b7225d4e1a2bacab3e5a" title="Thaws the Edje object.">edje_object_thaw()</a>.</dd>
+<dl class="see"><dt><b>See also:</b></dt><dd>edje_object_thaw().</dd>
 <dd>
 <a class="el" href="group__Edje__Object__Animation.html#ga8f4779b06ca82ab279cecfafe4bf6149" title="Freezes Edje objects.">edje_freeze()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>

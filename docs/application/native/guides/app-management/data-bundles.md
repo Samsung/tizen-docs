@@ -111,8 +111,9 @@ To manage the bundle content:
 
 2. Delete a key-value pair from the bundle content using the `bundle_del()` function:
    ```
-   	   bundle_del(b, "key2");
-   	   bundle_free(b);
+       bundle_del(b, "key2");
+
+       bundle_free(b);
    }
    ```
 

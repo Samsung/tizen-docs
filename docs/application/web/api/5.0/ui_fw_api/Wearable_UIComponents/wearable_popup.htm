@@ -7,11 +7,12 @@
 	 <link href="../snippet.css" rel="StyleSheet" type="text/css" />
 	 <title>Popup</title>
  </head>
- <body onload="prettyPrint()" id="content">
+ <body id="content">
 
 <h1>Popup</h1>
 
 <p>The popup component shows in the middle of the screen a list of items in a pop-up window. It automatically optimizes the pop-up window size within the screen.  The following table describes the supported popup classes.</p>
+<img src="../../images/Popup.png" alt="image of Popup element in TIZEN">
 <table>
 <caption>Table: Popup classes</caption>
 <tbody>
@@ -160,16 +161,17 @@
 
 <p>To bind the popup to a button, use the following code:</p>
 
-<pre class="prettyprint"><pre class="prettyprint lang-html" style="border:0px; margin:0px">
-&lt;!--HTML code--&gt;
+<p>HTML code:</p>
+<pre class="prettyprint">
 &lt;div id=&quot;1btnPopup&quot; class=&quot;ui-popup&quot;&gt;
    &lt;div class=&quot;ui-popup-header&quot;&gt;Power saving mode&lt;/div&gt;
    &lt;div class=&quot;ui-popup-content&quot;&gt;&lt;/div&gt;
    &lt;div class=&quot;ui-popup-footer&quot;&gt;
       &lt;button id=&quot;1btnPopup-cancel&quot; class=&quot;ui-btn&quot;&gt;Cancel&lt;/button&gt;
    &lt;/div&gt;
-&lt;/div&gt;</pre><pre class="prettyprint lang-js" style="border:0px; margin:0px">/* JavaScript code */
-&lt;script&gt;
+&lt;/div&gt;</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
    /* Popup opens with button click */
    button.addEventListener(&quot;click&quot;, function(ev)
    {
@@ -181,8 +183,7 @@
    {
       tau.closePopup();
    });
-&lt;/script&gt;
-</pre></pre>
+</pre>
 
 <h2>Popup Events</h2>
 <p>The following table lists the events related to pop-ups.</p>
@@ -221,36 +222,38 @@
 </table>
 <p>To use popup events, use the following code:</p>
 
-<pre class="prettyprint"><pre class="prettyprint lang-html" style="border:0px; margin:0px">
-&lt;!--Popup HTML code--&gt;
+<p>HTML code:</p>
+<pre class="prettyprint">
 &lt;div id=&quot;popup&quot; class=&quot;ui-popup&quot;&gt;
    &lt;div class=&quot;ui-popup-header&quot;&gt;&lt;/div&gt;
    &lt;div class=&quot;ui-popup-content&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;</pre><pre class="prettyprint lang-js" style="border:0px; margin:0px">/* JavaScript code */
-&lt;script&gt;
+&lt;/div&gt;</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
    /* Use popup events */
    var popup = document.getElementById(&quot;popup&quot;);
    popup.addEventListener(&quot;popupbeforecreate&quot;, function(ev)
    {
       /* Implement code for popupbeforecreate event */
    });
-&lt;/script&gt;
-</pre></pre>
+</pre>
 
 <p>Because popup works in asynchronos way due to animation, the features of popup need to work under event like below code:<br>
 If popup is opened or closed by only openPopup() or closePopup() method,
 it might occur exceptional errors or bugs.<br>
 So it is highly recommended to handle the feature by using event.</p>
 
-<pre class="prettyprint"><pre class="prettyprint lang-html" style="border:0px; margin:0px">
+<p>HTML code:</p>
+<pre class="prettyprint">
 &lt;!--Popup HTML code--&gt;
 &lt;div id=&quot;popup&quot; class=&quot;ui-popup&quot;&gt;
    &lt;div class=&quot;ui-popup-content&quot;&gt;&lt;/div&gt;
    &lt;div class=&quot;ui-popup-footer&quot;&gt;
       &lt;div class=&quot;ui-btn&quot; id=&quot;cancel-btn&quot;&gt;&lt;/div&gt;
    &lt;/div&gt;
-&lt;/div&gt;</pre><pre class="prettyprint lang-js" style="border:0px; margin:0px">/* JavaScript code */
-&lt;script&gt;
+&lt;/div&gt;</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
    /* Use popup events */
    var popup = document.getElementById(&quot;popup&quot;),
        cancel = document.getElementById(&quot;cancel-btn&quot;);
@@ -273,8 +276,7 @@ So it is highly recommended to handle the feature by using event.</p>
    {
       console.log(window.getComputedStyle(popup).display); /* None - closed completely */
    });
-&lt;/script&gt;
-</pre></pre>
+</pre>
 <h2>Popup Transitions</h2>
 <p>Tizen Wearable Web UI framework does not apply transitions by default. To set a custom transition effect for a specific popup component, add the <span style="font-family: Courier New,Courier,monospace">data-transition</span> attribute to a link:</p>
 <pre class="prettyprint">
@@ -326,5 +328,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 })();
 </script>
 
- </body>
+ <script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
+</body>
 </html>

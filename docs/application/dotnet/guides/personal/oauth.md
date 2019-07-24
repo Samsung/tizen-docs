@@ -74,7 +74,7 @@ To request an access token for the implicit, resource owner password credentials
 
 To enable your application to use the OAuth 2.0 functionality:
 
-1.  To use the [Tizen.Account.OAuth2](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.OAuth2.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Account.OAuth2](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -169,7 +169,7 @@ To obtain the required authorization code or access token:
 
     The authorization code grant type is used to obtain both access tokens and refresh tokens. It is a redirection-based flow that requires the client to interact with the server and receive the incoming requests (through redirection) from the authorization server.
 
-    To request the authorization code, use the `AuthorizeAsync()` method of the [Tizen.Account.OAuth2.CodeGrantAuthorizer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.OAuth2.CodeGrantAuthorizer.html) class:
+    To request the authorization code, use the `AuthorizeAsync()` method of the [Tizen.Account.OAuth2.CodeGrantAuthorizer](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.CodeGrantAuthorizer.html) class:
 
     ```
     public static async Task AuthorizeAsync_CHECK_EXCEPTION()
@@ -344,7 +344,7 @@ To obtain the required authorization code or access token:
 
     Refresh tokens are credentials used to obtain access tokens. Refresh tokens are issued to the client by the authorization server and are used to obtain a new access token when the current access token becomes invalid or expires, or to obtain additional access tokens with an identical or narrower scope.
 
-    To refresh an access token, use the `RefreshAccessTokenAsync()` method of the [Tizen.Account.OAuth2.ClientCredentialsAuthorizer](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.OAuth2.ClientCredentialsAuthorizer.html) class. The response from the server is included in a callback.
+    To refresh an access token, use the `RefreshAccessTokenAsync()` method of the [Tizen.Account.OAuth2.ClientCredentialsAuthorizer](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.ClientCredentialsAuthorizer.html) class. The response from the server is included in a callback.
 
     ```
     internal static RefreshTokenRequest CreateRefreshTokenRequest()
@@ -395,7 +395,7 @@ To obtain the required authorization code or access token:
 <a name="response"></a>
 ## Managing an OAuth 2.0 Response
 
-The response from the server is returned as an instance of the [Tizen.Account.OAuth2.AuthorizationResponse](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.OAuth2.AuthorizationResponse.html) class, from which all the various response parameters can be obtained.
+The response from the server is returned as an instance of the [Tizen.Account.OAuth2.AuthorizationResponse](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.AuthorizationResponse.html) class, from which all the various response parameters can be obtained.
 
 To manage the OAuth 2.0 response:
 
@@ -440,7 +440,7 @@ To manage the OAuth 2.0 response:
 
 2.  Handle response errors.
 
-    If the created request is incorrect or missing required permissions, the server response contains an error. Retrieve the error information from the response to check the issue, using the `Error` property of the created [Tizen.Account.OAuth2.OAuth2Exception](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.OAuth2.OAuth2Exception.html) instance:
+    If the created request is incorrect or missing required permissions, the server response contains an error. Retrieve the error information from the response to check the issue, using the `Error` property of the created [Tizen.Account.OAuth2.OAuth2Exception](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.OAuth2.OAuth2Exception.html) instance:
 
     ```
     public static async Task RetrieveServerErrorCode()

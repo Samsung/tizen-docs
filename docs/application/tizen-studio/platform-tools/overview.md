@@ -15,12 +15,12 @@ To use the Tizen Studio, download it from [https://developer.tizen.org/developme
 
 ## Prerequisites for Using the Platform IDE
 
-To use the platform IDE, you must install the GBS and MIC development tools and set up the development environment, including the git, gerrit, and proxy configuration. For more information, see [Installing Development Tools](https://source.tizen.org/documentation/developer-guide/getting-started-guide/installing-development-tools).
+To use the platform IDE, you must install the GBS and MIC development tools and set up the development environment, including the git, gerrit, and proxy configuration. For more information, see [Installing Development Tools](../../../platform/developing/installing.md).
 
 - Git Build System (GBS): command line tool that supports Tizen package development.
 - Image Creator (MIC): command line tool that supports Tizen image creation.
 
-For more information on the following issues, see [Setting up Development Environment](https://source.tizen.org/documentation/developer-guide/environment-setup):
+For more information on the following issues, see [Setting up Development Environment](../../../platform/developing/setting-up.md)
 
 - How to register a user account to gain access to tizen.org
 - How to configure Secure Shell (SSH) for the gerrit access
@@ -73,7 +73,7 @@ If an error message appears in the **Console** view due to dependency problems, 
 
 The Git Build System (GBS) builds a platform project internally. You can set the GBS options in the IDE.
 
-For more information on GBS, see [Git Build System](https://source.tizen.org/documentation/reference/git-build-system).
+For more information on GBS, see [Git Build System](../../../platform/reference/gbs/gbs-build.md)
 
 **Figure: GBS options**
 

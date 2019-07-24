@@ -96,6 +96,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__GL__API.html#aba00319aee368e73da622cc7c2f06332">version</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__GL.html#ga7a61c75cdeef3a1dad5f69b836ec37e5">EvasGLImage</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__GL__API.html#abe5de53832db456bb8c43bf999be86bd">evasglCreateImageForContext</a> )(<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, <a class="el" href="group__Evas__GL.html#ga5e3762a0804b90ec4f0951ed8019167b">Evas_GL_Context</a> *ctx, int target, void *buffer, const int *attrib_list)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an EvasGLImage for a given context.  <a href="#abe5de53832db456bb8c43bf999be86bd"></a><br/></td></tr>
 <tr><td colspan="2"><div class="groupHeader">OpenGL-ES 2.0.</div></td></tr>
 <tr><td colspan="2"><div class="groupText"><p><a class="anchor" id="gles2"></a></p>
 <p>Evas_GL_API version 1.</p>
@@ -498,10 +500,8 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><b>glExtGetProgramBina
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an EvasGLImage for the current context.  <a href="#a6975d8a7a457ab245ab937e947a400b1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__GL__API.html#aba9054c20d138972e65f2b2a2b740128">evasglDestroyImage</a> )(<a class="el" href="group__Evas__GL.html#ga7a61c75cdeef3a1dad5f69b836ec37e5">EvasGLImage</a> image)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys an EvasGLImage. Destroy an image created by either <a class="el" href="struct__Evas__GL__API.html#evasglCreateImage">evasglCreateImage</a> or <a class="el" href="struct__Evas__GL__API.html#evasglCreateImageForContext">evasglCreateImageForContext</a>.  <a href="#aba9054c20d138972e65f2b2a2b740128"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__GL.html#ga7a61c75cdeef3a1dad5f69b836ec37e5">EvasGLImage</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__GL__API.html#abe5de53832db456bb8c43bf999be86bd">evasglCreateImageForContext</a> )(<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, <a class="el" href="group__Evas__GL.html#ga5e3762a0804b90ec4f0951ed8019167b">Evas_GL_Context</a> *ctx, int target, void *buffer, const int *attrib_list)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an EvasGLImage for a given context.  <a href="#abe5de53832db456bb8c43bf999be86bd"></a><br/></td></tr>
 <tr><td colspan="2"><div class="groupHeader">OpenGL-ES 1.1</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Evas_GL_API version 2 or more.</p>
+<tr><td colspan="2"><div class="groupText"><p>Evas_GL_API version 2 or higher.</p>
 <p>The following functions are some of the standard OpenGL-ES 1.0 functions, that are not also present in the <a class="el" href="struct__Evas__GL__API.html#gles2">OpenGL-ES 2.0 APIs</a>. </p>
 </div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b2691afa992d0bb63f7180589b479dc"></a><!-- doxytag: member="_Evas_GL_API::glAlphaFunc" ref="a8b2691afa992d0bb63f7180589b479dc" args=")(GLenum func, GLclampf ref)" -->
@@ -679,7 +679,7 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><b>glTranslatex</b> )(
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acbaaa7bfdb154f5283177799cce1b186"></a><!-- doxytag: member="_Evas_GL_API::glVertexPointer" ref="acbaaa7bfdb154f5283177799cce1b186" args=")(GLint size, GLenum type, GLsizei stride, const GLvoid *pointer)" -->
 void(*&#160;</td><td class="memItemRight" valign="bottom"><b>glVertexPointer</b> )(GLint size, GLenum type, GLsizei stride, const GLvoid *pointer)</td></tr>
 <tr><td colspan="2"><div class="groupHeader">OpenGL-ES 1.1 extensions</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Evas_GL_API version 2 or more.</p>
+<tr><td colspan="2"><div class="groupText"><p>Evas_GL_API version 2 or higher.</p>
 <p>OpenGL-ES 1.1 specifies a set of extensions on top of OpenGL-ES 1.0. When available, Evas GL will expose these extensions with the following function pointers. </p>
 </div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a092d347503479fd1eafe89ebf29dfda0"></a><!-- doxytag: member="_Evas_GL_API::glBlendEquationSeparateOES" ref="a092d347503479fd1eafe89ebf29dfda0" args=")(GLenum modeRGB, GLenum modeAlpha)" -->
@@ -936,7 +936,7 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><b>glEndTilingQCOM</b>
 <tr><td class="memItemLeft" align="right" valign="top">int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__GL__API.html#a68d70a1789977f9d92cb4b7de42ae2cd">evasglWaitSync</a> )(<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, EvasGLSync sync, int flags)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait on an EvasGLSync without blocking, see <code>EGL_KHR_wait_sync</code> for more information.  <a href="#a68d70a1789977f9d92cb4b7de42ae2cd"></a><br/></td></tr>
 <tr><td colspan="2"><div class="groupHeader">Evas GL Wayland functions</div></td></tr>
-<tr><td colspan="2"><div class="groupText"><p>Evas_GL_API version 3 or more.</p>
+<tr><td colspan="2"><div class="groupText"><p>Evas_GL_API version 3 or higher.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
 </div></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct__Evas__GL__API.html#aed97f338137c38476679550926a0e157">evasglBindWaylandDisplay</a> )(<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, void *wl_display)</td></tr>
@@ -1393,7 +1393,8 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><b>glTexStorage3DMulti
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>The Evas GL API This structure contains function pointers to the available GL functions. Some of these functions may be wrapped internally by Evas GL. </p>
-</div><hr/><h2>Member Data Documentation</h2>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="glview_example_01_8c-example.html#_a0">glview_example_01.c</a>.</dd>
+</dl></div><hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="aed97f338137c38476679550926a0e157"></a><!-- doxytag: member="_Evas_GL_API::evasglBindWaylandDisplay" ref="aed97f338137c38476679550926a0e157" args=")(Evas_GL *evas_gl, void *wl_display)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1431,7 +1432,7 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><b>glTexStorage3DMulti
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Requires the extension <code>EGL_KHR_reusable_sync</code>, similarly to eglClientWaitSyncKHR.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Requires the extension <code>EGL_KHR_reusable_sync</code>, similar to eglClientWaitSyncKHR.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EVAS_GL_TIMEOUT_EXPIRED</code> if the sync failed and timeout was reached, <code>EVAS_GL_CONDITION_SATISFIED</code> if the sync was signaled, or 0 in case of failure (in which case <a class="el" href="group__Evas__GL.html#gad08d157ab899b80dd6d10bf807516063" title="Returns the last error of any evas_gl function called in the current thread. Initially, the error is set to EVAS_GL_SUCCESS. A call to evas_gl_error_get resets the error to EVAS_GL_SUCCESS.">evas_gl_error_get()</a> should return an error code) </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 
@@ -1459,7 +1460,7 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><b>glTexStorage3DMulti
 <li><code>EVAS_GL_NATIVE_SURFACE_TIZEN</code> (Tizen platform only):<br/>
  Requires the <code>EVAS_GL_TIZEN_image_native_surface</code> extension.</li>
 </ul>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000258">Deprecated:</a></b></dt><dd></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000337">Deprecated:</a></b></dt><dd></dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Please consider using <a class="el" href="struct__Evas__GL__API.html#evasglCreateImageForContext">evasglCreateImageForContext</a> instead. </dd></dl>
 
 </div>
@@ -1499,7 +1500,7 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><b>glTexStorage3DMulti
 <li><code>EVAS_GL_NATIVE_SURFACE_TIZEN</code> (Tizen platform only):<br/>
  Requires the <code>EVAS_GL_TIZEN_image_native_surface</code> extension.</li>
 </ul>
-<dl class="note"><dt><b>Note:</b></dt><dd>Evas_GL_API must have version 2 or more.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Evas_GL_API must have version 2 or higher.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -1544,7 +1545,7 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><b>glTexStorage3DMulti
 
 <p>Destroys an EvasGLImage. Destroy an image created by either <a class="el" href="struct__Evas__GL__API.html#evasglCreateImage">evasglCreateImage</a> or <a class="el" href="struct__Evas__GL__API.html#evasglCreateImageForContext">evasglCreateImageForContext</a>. </p>
 <p><a class="anchor" id="evasglDestroyImage"></a> Requires the <code>EVAS_GL_image</code> extension.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Unlike in pure EGL, the display pointer needs not be passed in, as Evas GL will use the same EGLDisplay as used in the create function. </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Unlike in pure EGL, the display pointer doesn't need to be passed in, as Evas GL will use the same EGLDisplay as used in the create function. </dd></dl>
 
 </div>
 </div>
@@ -1638,7 +1639,7 @@ void(*&#160;</td><td class="memItemRight" valign="bottom"><b>glTexStorage3DMulti
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Requires the extension <code>EGL_KHR_reusable_sync</code> or <code>EGL_KHR_wait_sync</code>, similarly to eglSignalSyncKHR.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Requires the extension <code>EGL_KHR_reusable_sync</code> or <code>EGL_KHR_wait_sync</code>, similar to eglSignalSyncKHR.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> in case of success, or <code>EINA_FALSE</code> in case of failure (in which case <a class="el" href="group__Evas__GL.html#gad08d157ab899b80dd6d10bf807516063" title="Returns the last error of any evas_gl function called in the current thread. Initially, the error is set to EVAS_GL_SUCCESS. A call to evas_gl_error_get resets the error to EVAS_GL_SUCCESS.">evas_gl_error_get()</a> should return an error code) </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 

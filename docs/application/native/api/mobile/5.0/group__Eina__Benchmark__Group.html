@@ -95,10 +95,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ingroups"><a class="el" href="group__Eina__Tools__Group.html">Tools</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>These functions allow you to add benchmark framework in a project for timing critical part and detect slow parts of code. It is used in Eina to compare the time used by eina, glib, evas and ecore data types.</p>
+<p>These functions allow you to add a benchmark framework to a project for timing critical parts and detecting slow parts of code. It is used in Eina to compare the time used by eina, glib, evas and ecore data types.</p>
 <p>To use the benchmark module, Eina must be initialized with <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a> and later shut down with <a class="el" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown()</a>. A benchmark is created with <a class="el" href="group__Eina__Benchmark__Group.html#gacd3e2dcff8292721754714125572936a" title="Creates a new array.">eina_benchmark_new()</a> and freed with <a class="el" href="group__Eina__Benchmark__Group.html#gac8f2877d714ab6fe90d0fa08f87567c5" title="Frees a benchmark object.">eina_benchmark_free()</a>.</p>
 <p><a class="el" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register()</a> adds a test to a benchmark. That test can be run a certain amount of times. Adding more than one test to be executed allows the comparison between several parts of a program, or different implementations.</p>
-<p><a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark tests that have been registered.">eina_benchmark_run()</a> runs all the tests registered with <a class="el" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register()</a>. The amount of time of each test is written in a gnuplot file.</p>
+<p><a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark&#39;s registered tests.">eina_benchmark_run()</a> runs all the tests registered with <a class="el" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register()</a>. The amount of time of each test is written in a gnuplot file.</p>
 <p>For more information, you can look at the <a class="el" href="tutorial_benchmark_page.html">Benchmark Tutorial</a>. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -110,7 +110,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3">eina_benchmark_register</a> (<a class="el" href="group__Eina__Benchmark__Group.html#gac5c05887f0ad72bfb28b53e6fde49ce2">Eina_Benchmark</a> *bench, const char *name, <a class="el" href="group__Eina__Benchmark__Group.html#gadf67e817134419261b3c2beb5f8f6494">Eina_Benchmark_Specimens</a> bench_cb, int count_start, int count_end, int count_step)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a test to a benchmark.  <a href="#gacd15985f85c6cbfe21f7c1c1902dd2b3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Array__Group.html#ga2a57284ee83a7e767485b7ae2f5df86c">Eina_Array</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf">eina_benchmark_run</a> (<a class="el" href="group__Eina__Benchmark__Group.html#gac5c05887f0ad72bfb28b53e6fde49ce2">Eina_Benchmark</a> *bench)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the benchmark tests that have been registered.  <a href="#ga56b67e26be3cf49cccffa4c148148eaf"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the benchmark's registered tests.  <a href="#ga56b67e26be3cf49cccffa4c148148eaf"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Eina_Benchmark&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Benchmark__Group.html#gac5c05887f0ad72bfb28b53e6fde49ce2">Eina_Benchmark</a></td></tr>
@@ -139,7 +139,7 @@ Defines</h2></td></tr>
 <p>Definition for the cast to an <a class="el" href="group__Eina__Benchmark__Group.html#gadf67e817134419261b3c2beb5f8f6494">Eina_Benchmark_Specimens</a>. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">function</td><td>The function to cast.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">function</td><td>The function to cast.</td></tr>
   </table>
   </dd>
 </dl>
@@ -195,12 +195,12 @@ Defines</h2></td></tr>
 <p>Frees a benchmark object. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">bench</td><td>The benchmark to free.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">bench</td><td>The benchmark to free.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function removes all the benchmark tests that have been registered and frees <code>bench</code>. If <code>bench</code> is <code>NULL</code>, this function returns immediately.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function removes all the benchmark tests that have been registered and frees <code>bench</code>. If <code>bench</code> is <code>NULL</code>, this function returns immediately. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -232,16 +232,15 @@ Defines</h2></td></tr>
 <p>Creates a new array. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name of the benchmark. </td></tr>
-    <tr><td class="paramname">run</td><td>The name of the run. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the benchmark. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">run</td><td>The name of the run. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> on failure, non <code>NULL</code> otherwise.</dd></dl>
-<p>This function creates a new benchmark. <code>name</code> and <code>run</code> are used to name the gnuplot file that <a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark tests that have been registered.">eina_benchmark_run()</a> will create.</p>
-<p>This function return a valid benchmark on success, or <code>NULL</code> if memory allocation fails.</p>
-<p>When the new module is not needed anymore, use <a class="el" href="group__Eina__Benchmark__Group.html#gac8f2877d714ab6fe90d0fa08f87567c5" title="Frees a benchmark object.">eina_benchmark_free()</a> to free the allocated memory.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A valid benchmark on success, or <code>NULL</code> on memory allocation failure.</dd></dl>
+<p>This function creates a new benchmark. <code>name</code> and <code>run</code> are used to name the gnuplot file that <a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark&#39;s registered tests.">eina_benchmark_run()</a> will create.</p>
+<p>When the new module is not needed anymore, use <a class="el" href="group__Eina__Benchmark__Group.html#gac8f2877d714ab6fe90d0fa08f87567c5" title="Frees a benchmark object.">eina_benchmark_free()</a> to free the allocated memory. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -297,19 +296,19 @@ Defines</h2></td></tr>
 <p>Adds a test to a benchmark. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">bench</td><td>The benchmark. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the test. </td></tr>
-    <tr><td class="paramname">bench_cb</td><td>The test function to be called. </td></tr>
-    <tr><td class="paramname">count_start</td><td>The start data to be passed to <code>bench_cb</code>. </td></tr>
-    <tr><td class="paramname">count_end</td><td>The end data to be passed to <code>bench_cb</code>. </td></tr>
-    <tr><td class="paramname">count_step</td><td>The step data to be passed to <code>bench_cb</code>. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">bench</td><td>The benchmark. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the test. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bench_cb</td><td>The test function to be called. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">count_start</td><td>The start data to be passed to <code>bench_cb</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">count_end</td><td>The end data to be passed to <code>bench_cb</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">count_step</td><td>The step data to be passed to <code>bench_cb</code>. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> otherwise.</dd></dl>
-<p>This function adds the test named <code>name</code> to <code>benchmark</code>. <code>bench_cb</code> is the function called when the test is executed. That test can be executed a certain amount of time. <code>count_start</code>, <code>count_end</code> and <code>count_step</code> define a loop with a step increment. The integer that is increasing by <code>count_step</code> from <code>count_start</code> to <code>count_end</code> is passed to <code>bench_cb</code> when <a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark tests that have been registered.">eina_benchmark_run()</a> is called.</p>
-<p>If <code>bench</code> is <code>NULL</code>, this function returns immediately. This function returns <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure, <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function adds the test named <code>name</code> to <code>benchmark</code>. <code>bench_cb</code> is the function called when the test is executed. That test can be executed a certain number of times, from <code>count_start</code> to <code>count_end</code>, with a step increment of <code>count_step</code>. This counter is passed to <code>bench_cb</code> when <a class="el" href="group__Eina__Benchmark__Group.html#ga56b67e26be3cf49cccffa4c148148eaf" title="Runs the benchmark&#39;s registered tests.">eina_benchmark_run()</a> is called.</p>
+<p>If <code>bench</code> is <code>NULL</code> or <code>count_step</code> is 0, this function returns immediately and does not add any tests to the benchmark. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -328,20 +327,19 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Runs the benchmark tests that have been registered. </p>
+<p>Runs the benchmark's registered tests. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">bench</td><td>The benchmark. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">bench</td><td>The benchmark. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The list of names of the test files.</dd></dl>
-<p>This function runs all the tests that as been registered with <a class="el" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register()</a> and save the result in a gnuplot file. The name of the file has the following format:</p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A list of gnuplot filenames for the test results, or <code>NULL</code> on failure.</dd></dl>
+<p>This function runs all the tests that have been registered with <a class="el" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register()</a> and saves the result in gnuplot input files. The filenames have the following format:</p>
 <div class="fragment"><pre class="fragment"> bench_[name]<a class="code" href="group__CAPI__I18N__MODULE.html#gaa829053017e23ef22d44dccecba63a34" title="Definition to mark a string for translation, which is replaced with the translated string at runtime...">_</a>[run]%s.gnuplot
-</pre></div><p>Where [name] and [run] are the values passed to <a class="el" href="group__Eina__Benchmark__Group.html#gacd3e2dcff8292721754714125572936a" title="Creates a new array.">eina_benchmark_new()</a>.</p>
-<p>Each registered test is executed and timed. The time is written to the gnuplot file. The number of times each test is executed is controlled by the parameters passed to <a class="el" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register()</a>.</p>
-<p>If <code>bench</code> is <code>NULL</code>, this functions returns <code>NULL</code> immediately. Otherwise, it returns the list of the names of each test.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+</pre></div><p>Where [name] and [run] are the values passed to <a class="el" href="group__Eina__Benchmark__Group.html#gacd3e2dcff8292721754714125572936a" title="Creates a new array.">eina_benchmark_new()</a> when registering the test.</p>
+<p>Each registered test is executed and timed. The time is written to the gnuplot file. The number of times each test is executed is controlled by the parameters passed to <a class="el" href="group__Eina__Benchmark__Group.html#gacd15985f85c6cbfe21f7c1c1902dd2b3" title="Adds a test to a benchmark.">eina_benchmark_register()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Datetime</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <div class="image">
@@ -172,8 +172,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p><b>field_limit_get()</b> - gives the field minimum, maximum limits.</p>
 <p>To enable a module, set the ELM_MODULES environment variable as shown:</p>
 <p><b>export ELM_MODULES="datetime_input_ctxpopup&gt;datetime/api"</b></p>
-<p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for datetime objects.</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout: </p>
+<p>This widget inherits from the Layout one, so that all the functions acting on it also work for datetime objects.</p>
+<p>This widget emits the following signals, besides the ones sent from Layout: </p>
 <ul>
 <li><b>"changed"</b> - whenever Datetime field value is changed, this signal is sent. </li>
 <li><b>"language,changed"</b> - whenever system locale changes, this signal is sent. </li>
@@ -187,35 +187,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gaf6cde8a45b91c2b1613d8cdf04bb76fd">elm_datetime_format_set</a> (Elm_Datetime *obj, const char *fmt)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the datetime format. Format is a combination of allowed Libc date format specifiers like: "%b %d, %Y %I : %M %p".  <a href="#gaf6cde8a45b91c2b1613d8cdf04bb76fd"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gaaaff58d2009025577f98379f611f8e28">elm_datetime_format_get</a> (const Elm_Datetime *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the datetime format.  <a href="#gaaaff58d2009025577f98379f611f8e28"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gaa7e73c32dec9bb59872598c1793664b7">elm_datetime_field_limit_set</a> (Elm_Datetime *obj, <a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a> fieldtype, int min, int max)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the field limits of a field.  <a href="#gaa7e73c32dec9bb59872598c1793664b7"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gae75fce1c20cfd4529eaeba8f4aaab385">elm_datetime_field_limit_get</a> (const Elm_Datetime *obj, <a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a> fieldtype, int *min, int *max)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the field limits of a field.  <a href="#gae75fce1c20cfd4529eaeba8f4aaab385"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gaa6e1368596bd2e63eb2101fad11b88da">elm_datetime_value_min_set</a> (Elm_Datetime *obj, const Elm_Datetime_Time *mintime)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the lower boundary of a field.  <a href="#gaa6e1368596bd2e63eb2101fad11b88da"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga5f083be0e1f52e41c32b18e837eac43d">elm_datetime_value_min_get</a> (const Elm_Datetime *obj, Elm_Datetime_Time *mintime)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the lower boundary of a field.  <a href="#ga5f083be0e1f52e41c32b18e837eac43d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga955ae7a7d3b0188a300c0124e3cffd31">elm_datetime_value_set</a> (Elm_Datetime *obj, const Elm_Datetime_Time *newtime)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current value of a Datetime object.  <a href="#ga955ae7a7d3b0188a300c0124e3cffd31"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gad246c93c01cb8bfbf240c05003208a98">elm_datetime_value_get</a> (const Elm_Datetime *obj, Elm_Datetime_Time *currtime)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current value of a Datetime object.  <a href="#gad246c93c01cb8bfbf240c05003208a98"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gad36a67de13ac659331aced582d845a27">elm_datetime_field_visible_set</a> (Elm_Datetime *obj, <a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a> fieldtype, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> visible)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a field to be visible or not.  <a href="#gad36a67de13ac659331aced582d845a27"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gaa26caacb883768b28cdff3347d92d307">elm_datetime_field_visible_get</a> (const Elm_Datetime *obj, <a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a> fieldtype)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a field can be visible/not.  <a href="#gaa26caacb883768b28cdff3347d92d307"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga09f41fd97baea0786e15c3e57ffa0e15">elm_datetime_value_max_set</a> (Elm_Datetime *obj, const Elm_Datetime_Time *maxtime)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the upper boundary of a field.  <a href="#ga09f41fd97baea0786e15c3e57ffa0e15"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga58db30f22e06c749e0fffbb6f43f584d">elm_datetime_value_max_get</a> (const Elm_Datetime *obj, Elm_Datetime_Time *maxtime)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the upper boundary of a field.  <a href="#ga58db30f22e06c749e0fffbb6f43f584d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga3dac2d32e2137fac111d91dc15fcc270">elm_datetime_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new datetime Widget.  <a href="#ga3dac2d32e2137fac111d91dc15fcc270"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga75def6ec9fd0ee435c809ddf187c9bac">elm_datetime_format_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *fmt)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the datetime format. Format is a combination of allowed Libc date format specifiers like: "%b %d, %Y %I : %M %p".  <a href="#ga75def6ec9fd0ee435c809ddf187c9bac"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga5a0c290807bab56163628990b654a06f">elm_datetime_format_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the datetime format.  <a href="#ga5a0c290807bab56163628990b654a06f"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga14d57ba595086b355a71579cb1c97dad">elm_datetime_field_limit_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a> type, int min, int max)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the field limits of a field.  <a href="#ga14d57ba595086b355a71579cb1c97dad"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga91831e49d43f2120d719f8b441053353">elm_datetime_field_limit_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a> fieldtype, int *min, int *max)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the field limits of a field.  <a href="#ga91831e49d43f2120d719f8b441053353"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga884f4ae9d7d291d386e1f0db583ad793">elm_datetime_value_min_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const Efl_Time *mintime)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the lower boundary of a field.  <a href="#ga884f4ae9d7d291d386e1f0db583ad793"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga5b213892f5c08d2bd15a941f1ace68b9">elm_datetime_value_min_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Efl_Time *mintime)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the lower boundary of a field.  <a href="#ga5b213892f5c08d2bd15a941f1ace68b9"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga8f41b72c901b546802ecb1371c533e19">elm_datetime_value_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const Efl_Time *newtime)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the current value of a Datetime object.  <a href="#ga8f41b72c901b546802ecb1371c533e19"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#gac9b1c66312bfce7377dba1e93161e57a">elm_datetime_value_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Efl_Time *currtime)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current value of a Datetime object.  <a href="#gac9b1c66312bfce7377dba1e93161e57a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga835e428d8876df70aba140f5d5cc7a58">elm_datetime_field_visible_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a> fieldtype, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> visible)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a field to be visible or not.  <a href="#ga835e428d8876df70aba140f5d5cc7a58"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga1f2bf676a5da157b3706372e078cceb8">elm_datetime_field_visible_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a> fieldtype)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether a field can be visible/not.  <a href="#ga1f2bf676a5da157b3706372e078cceb8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga05bf85239b1fe78d0b6a50bb529f2508">elm_datetime_value_max_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const Efl_Time *maxtime)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the upper boundary of a field.  <a href="#ga05bf85239b1fe78d0b6a50bb529f2508"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Datetime.html#ga84422bb9d25d0a1f03059959228cb93c">elm_datetime_value_max_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Efl_Time *maxtime)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the upper boundary of a field.  <a href="#ga84422bb9d25d0a1f03059959228cb93c"></a><br/></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
-<a class="anchor" id="gaa1825497ac8ec6d500439c33945af8b6"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::Elm_Datetime_Field_Type" ref="gaa1825497ac8ec6d500439c33945af8b6" args="" -->
+<a class="anchor" id="gaa1825497ac8ec6d500439c33945af8b6"></a><!-- doxytag: member="elm_datetime.h::Elm_Datetime_Field_Type" ref="gaa1825497ac8ec6d500439c33945af8b6" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -227,20 +227,23 @@ Functions</h2></td></tr>
 <div class="memdoc">
 <p>Identifies a Datetime field, The widget supports 6 fields : Year, month, Date, Hour, Minute, AM/PM </p>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6a57f9a51d3c792a9ecd58c26ef610ff28"></a><!-- doxytag: member="ELM_DATETIME_MONTH" ref="ggaa1825497ac8ec6d500439c33945af8b6a57f9a51d3c792a9ecd58c26ef610ff28" args="" -->ELM_DATETIME_MONTH</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5"></a><!-- doxytag: member="ELM_DATETIME_YEAR" ref="ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5" args="" -->ELM_DATETIME_YEAR</em>&nbsp;</td><td>
 <p>Indicates Year field. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac974324f9e139812cffca7419d7dd71c"></a><!-- doxytag: member="ELM_DATETIME_DATE" ref="ggaa1825497ac8ec6d500439c33945af8b6ac974324f9e139812cffca7419d7dd71c" args="" -->ELM_DATETIME_DATE</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6a57f9a51d3c792a9ecd58c26ef610ff28"></a><!-- doxytag: member="ELM_DATETIME_MONTH" ref="ggaa1825497ac8ec6d500439c33945af8b6a57f9a51d3c792a9ecd58c26ef610ff28" args="" -->ELM_DATETIME_MONTH</em>&nbsp;</td><td>
 <p>Indicates Month field. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac439cdfe1224fd9a51e5eaf0d0977f87"></a><!-- doxytag: member="ELM_DATETIME_HOUR" ref="ggaa1825497ac8ec6d500439c33945af8b6ac439cdfe1224fd9a51e5eaf0d0977f87" args="" -->ELM_DATETIME_HOUR</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac974324f9e139812cffca7419d7dd71c"></a><!-- doxytag: member="ELM_DATETIME_DATE" ref="ggaa1825497ac8ec6d500439c33945af8b6ac974324f9e139812cffca7419d7dd71c" args="" -->ELM_DATETIME_DATE</em>&nbsp;</td><td>
 <p>Indicates Date field. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6a1a06797eb5657a0da15560dbb9603ee9"></a><!-- doxytag: member="ELM_DATETIME_MINUTE" ref="ggaa1825497ac8ec6d500439c33945af8b6a1a06797eb5657a0da15560dbb9603ee9" args="" -->ELM_DATETIME_MINUTE</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac439cdfe1224fd9a51e5eaf0d0977f87"></a><!-- doxytag: member="ELM_DATETIME_HOUR" ref="ggaa1825497ac8ec6d500439c33945af8b6ac439cdfe1224fd9a51e5eaf0d0977f87" args="" -->ELM_DATETIME_HOUR</em>&nbsp;</td><td>
 <p>Indicates Hour field. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac003bb01ee1993ace1e29026a674f37a"></a><!-- doxytag: member="ELM_DATETIME_AMPM" ref="ggaa1825497ac8ec6d500439c33945af8b6ac003bb01ee1993ace1e29026a674f37a" args="" -->ELM_DATETIME_AMPM</em>&nbsp;</td><td>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6a1a06797eb5657a0da15560dbb9603ee9"></a><!-- doxytag: member="ELM_DATETIME_MINUTE" ref="ggaa1825497ac8ec6d500439c33945af8b6a1a06797eb5657a0da15560dbb9603ee9" args="" -->ELM_DATETIME_MINUTE</em>&nbsp;</td><td>
 <p>Indicates Minute field. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaa1825497ac8ec6d500439c33945af8b6ac003bb01ee1993ace1e29026a674f37a"></a><!-- doxytag: member="ELM_DATETIME_AMPM" ref="ggaa1825497ac8ec6d500439c33945af8b6ac003bb01ee1993ace1e29026a674f37a" args="" -->ELM_DATETIME_AMPM</em>&nbsp;</td><td>
+<p>Indicates AM/PM field . </p>
 </td></tr>
 </table>
 </dd>
@@ -249,7 +252,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga3dac2d32e2137fac111d91dc15fcc270"></a><!-- doxytag: member="elm_datetime_legacy.h::elm_datetime_add" ref="ga3dac2d32e2137fac111d91dc15fcc270" args="(Evas_Object *parent)" -->
+<a class="anchor" id="ga3dac2d32e2137fac111d91dc15fcc270"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_add" ref="ga3dac2d32e2137fac111d91dc15fcc270" args="(Evas_Object *parent)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -273,19 +276,20 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created</dd></dl>
-<p>This function inserts a new datetime widget on the canvas.</p>
+<p>This function inserts a new datetime widget on the canvas. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="datetime_example_8c-example.html#a10">datetime_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gae75fce1c20cfd4529eaeba8f4aaab385"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_field_limit_get" ref="gae75fce1c20cfd4529eaeba8f4aaab385" args="(const Elm_Datetime *obj, Elm_Datetime_Field_Type fieldtype, int *min, int *max)" -->
+<a class="anchor" id="ga91831e49d43f2120d719f8b441053353"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_field_limit_get" ref="ga91831e49d43f2120d719f8b441053353" args="(const Evas_Object *obj, Elm_Datetime_Field_Type fieldtype, int *min, int *max)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Datetime.html#gae75fce1c20cfd4529eaeba8f4aaab385">elm_datetime_field_limit_get</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Datetime.html#ga91831e49d43f2120d719f8b441053353">elm_datetime_field_limit_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Datetime *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -318,34 +322,33 @@ Functions</h2></td></tr>
 <p>Get the field limits of a field. </p>
 <p>Limits can be set to individual fields, independently, except for AM/PM field. Any field can display the values only in between these minimum and maximum limits unless the corresponding time value is restricted from MinTime to MaxTime. That is, min/max field limits always works under the limitations of mintime/maxtime.</p>
 <p>There is no provision to set the limits of AM/PM field.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. #ELM_DATETIME_YEAR etc. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. <a class="el" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5">ELM_DATETIME_YEAR</a> etc. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">min</td><td>Reference to field's minimum value. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">max</td><td>Reference to field's maximum value. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaa7e73c32dec9bb59872598c1793664b7"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_field_limit_set" ref="gaa7e73c32dec9bb59872598c1793664b7" args="(Elm_Datetime *obj, Elm_Datetime_Field_Type fieldtype, int min, int max)" -->
+<a class="anchor" id="ga14d57ba595086b355a71579cb1c97dad"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_field_limit_set" ref="ga14d57ba595086b355a71579cb1c97dad" args="(Evas_Object *obj, Elm_Datetime_Field_Type type, int min, int max)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Datetime.html#gaa7e73c32dec9bb59872598c1793664b7">elm_datetime_field_limit_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Datetime.html#ga14d57ba595086b355a71579cb1c97dad">elm_datetime_field_limit_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Datetime *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="group__Elm__Datetime.html#gaa1825497ac8ec6d500439c33945af8b6">Elm_Datetime_Field_Type</a>&#160;</td>
-          <td class="paramname"><em>fieldtype</em>, </td>
+          <td class="paramname"><em>type</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -371,27 +374,26 @@ Functions</h2></td></tr>
 <p>Set the field limits of a field. </p>
 <p>Limits can be set to individual fields, independently, except for AM/PM field. Any field can display the values only in between these minimum and maximum limits unless the corresponding time value is restricted from MinTime to MaxTime. That is, min/max field limits always works under the limitations of mintime/maxtime.</p>
 <p>There is no provision to set the limits of AM/PM field.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. #ELM_DATETIME_YEAR etc. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. <a class="el" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5">ELM_DATETIME_YEAR</a> etc. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">min</td><td>Reference to field's minimum value. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">max</td><td>Reference to field's maximum value. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaa26caacb883768b28cdff3347d92d307"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_field_visible_get" ref="gaa26caacb883768b28cdff3347d92d307" args="(const Elm_Datetime *obj, Elm_Datetime_Field_Type fieldtype)" -->
+<a class="anchor" id="ga1f2bf676a5da157b3706372e078cceb8"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_field_visible_get" ref="ga1f2bf676a5da157b3706372e078cceb8" args="(const Evas_Object *obj, Elm_Datetime_Field_Type fieldtype)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#gaa26caacb883768b28cdff3347d92d307">elm_datetime_field_visible_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#ga1f2bf676a5da157b3706372e078cceb8">elm_datetime_field_visible_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Datetime *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -410,26 +412,25 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get whether a field can be visible/not. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. #ELM_DATETIME_YEAR etc.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. <a class="el" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5">ELM_DATETIME_YEAR</a> etc.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, if field can be visible. <code>false</code> otherwise. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gad36a67de13ac659331aced582d845a27"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_field_visible_set" ref="gad36a67de13ac659331aced582d845a27" args="(Elm_Datetime *obj, Elm_Datetime_Field_Type fieldtype, Eina_Bool visible)" -->
+<a class="anchor" id="ga835e428d8876df70aba140f5d5cc7a58"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_field_visible_set" ref="ga835e428d8876df70aba140f5d5cc7a58" args="(Evas_Object *obj, Elm_Datetime_Field_Type fieldtype, Eina_Bool visible)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Datetime.html#gad36a67de13ac659331aced582d845a27">elm_datetime_field_visible_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Datetime.html#ga835e428d8876df70aba140f5d5cc7a58">elm_datetime_field_visible_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Datetime *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -456,26 +457,26 @@ Functions</h2></td></tr>
 <p>Set a field to be visible or not. </p>
 <p>Setting this API to <code>true</code> does not ensure that the field is visible, apart from this, the field's format must be present in Datetime overall format. If a field's visibility is set to <code>false</code> then it won't appear even though its format is present in overall format. So if and only if this API is set true and the corresponding field's format is present in Datetime format, the field is visible.</p>
 <p>By default the field visibility is set to <code>true</code>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. #ELM_DATETIME_YEAR etc. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldtype</td><td>Type of the field. <a class="el" href="group__Elm__Datetime.html#ggaa1825497ac8ec6d500439c33945af8b6a7b6ebba71554e834e8798cdd683358f5">ELM_DATETIME_YEAR</a> etc. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">visible</td><td><code>true</code> field can be visible, <code>false</code> otherwise. </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="datetime_example_8c-example.html#a11">datetime_example.c</a>.</dd>
+</dl>
 </div>
 </div>
-<a class="anchor" id="gaaaff58d2009025577f98379f611f8e28"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_format_get" ref="gaaaff58d2009025577f98379f611f8e28" args="(const Elm_Datetime *obj)" -->
+<a class="anchor" id="ga5a0c290807bab56163628990b654a06f"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_format_get" ref="ga5a0c290807bab56163628990b654a06f" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* <a class="el" href="group__Elm__Datetime.html#gaaaff58d2009025577f98379f611f8e28">elm_datetime_format_get</a> </td>
+          <td class="memname">const char* <a class="el" href="group__Elm__Datetime.html#ga5a0c290807bab56163628990b654a06f">elm_datetime_format_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Datetime *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -484,25 +485,19 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the datetime format. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The datetime format. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaf6cde8a45b91c2b1613d8cdf04bb76fd"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_format_set" ref="gaf6cde8a45b91c2b1613d8cdf04bb76fd" args="(Elm_Datetime *obj, const char *fmt)" -->
+<a class="anchor" id="ga75def6ec9fd0ee435c809ddf187c9bac"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_format_set" ref="ga75def6ec9fd0ee435c809ddf187c9bac" args="(Evas_Object *obj, const char *fmt)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Datetime.html#gaf6cde8a45b91c2b1613d8cdf04bb76fd">elm_datetime_format_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Datetime.html#ga75def6ec9fd0ee435c809ddf187c9bac">elm_datetime_format_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Datetime *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -526,31 +521,30 @@ Functions</h2></td></tr>
 <p>Each separator can be a maximum of 6 UTF-8 bytes. Space is also taken as a separator.</p>
 <p>These specifiers can be arranged in any order and the widget will display the fields accordingly.</p>
 <p>Default format is taken as per the system locale settings.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The datetime format. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gad246c93c01cb8bfbf240c05003208a98"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_value_get" ref="gad246c93c01cb8bfbf240c05003208a98" args="(const Elm_Datetime *obj, Elm_Datetime_Time *currtime)" -->
+<a class="anchor" id="gac9b1c66312bfce7377dba1e93161e57a"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_value_get" ref="gac9b1c66312bfce7377dba1e93161e57a" args="(const Evas_Object *obj, Efl_Time *currtime)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#gad246c93c01cb8bfbf240c05003208a98">elm_datetime_value_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#gac9b1c66312bfce7377dba1e93161e57a">elm_datetime_value_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Datetime *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Datetime_Time *&#160;</td>
+          <td class="paramtype">Efl_Time *&#160;</td>
           <td class="paramname"><em>currtime</em>&#160;</td>
         </tr>
         <tr>
@@ -568,32 +562,31 @@ Functions</h2></td></tr>
 <p>Date: default value range is from 1 to 31 according to the month value.</p>
 <p>Hour: default value will be in terms of 24 hr format (0~23)</p>
 <p>Minute: default value range is from 0 to 59.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">currtime</td><td>Time structure.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if current time is returned successfully. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga58db30f22e06c749e0fffbb6f43f584d"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_value_max_get" ref="ga58db30f22e06c749e0fffbb6f43f584d" args="(const Elm_Datetime *obj, Elm_Datetime_Time *maxtime)" -->
+<a class="anchor" id="ga84422bb9d25d0a1f03059959228cb93c"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_value_max_get" ref="ga84422bb9d25d0a1f03059959228cb93c" args="(const Evas_Object *obj, Efl_Time *maxtime)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#ga58db30f22e06c749e0fffbb6f43f584d">elm_datetime_value_max_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#ga84422bb9d25d0a1f03059959228cb93c">elm_datetime_value_max_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Datetime *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Datetime_Time *&#160;</td>
+          <td class="paramtype">Efl_Time *&#160;</td>
           <td class="paramname"><em>maxtime</em>&#160;</td>
         </tr>
         <tr>
@@ -611,32 +604,31 @@ Functions</h2></td></tr>
 <p>Date: default value range is from 1 to 31 according to the month value.</p>
 <p>Hour: default value will be in terms of 24 hr format (0~23)</p>
 <p>Minute: default value range is from 0 to 59.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">maxtime</td><td>Time structure containing the maximum time value.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if maximum value is returned successfully. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga09f41fd97baea0786e15c3e57ffa0e15"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_value_max_set" ref="ga09f41fd97baea0786e15c3e57ffa0e15" args="(Elm_Datetime *obj, const Elm_Datetime_Time *maxtime)" -->
+<a class="anchor" id="ga05bf85239b1fe78d0b6a50bb529f2508"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_value_max_set" ref="ga05bf85239b1fe78d0b6a50bb529f2508" args="(Evas_Object *obj, const Efl_Time *maxtime)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#ga09f41fd97baea0786e15c3e57ffa0e15">elm_datetime_value_max_set</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#ga05bf85239b1fe78d0b6a50bb529f2508">elm_datetime_value_max_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Datetime *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Elm_Datetime_Time *&#160;</td>
+          <td class="paramtype">const Efl_Time *&#160;</td>
           <td class="paramname"><em>maxtime</em>&#160;</td>
         </tr>
         <tr>
@@ -654,32 +646,31 @@ Functions</h2></td></tr>
 <p>Date: default value range is from 1 to 31 according to the month value.</p>
 <p>Hour: default value will be in terms of 24 hr format (0~23)</p>
 <p>Minute: default value range is from 0 to 59.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">maxtime</td><td>Time structure containing the maximum time value.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if maximum value is accepted. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga5f083be0e1f52e41c32b18e837eac43d"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_value_min_get" ref="ga5f083be0e1f52e41c32b18e837eac43d" args="(const Elm_Datetime *obj, Elm_Datetime_Time *mintime)" -->
+<a class="anchor" id="ga5b213892f5c08d2bd15a941f1ace68b9"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_value_min_get" ref="ga5b213892f5c08d2bd15a941f1ace68b9" args="(const Evas_Object *obj, Efl_Time *mintime)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#ga5f083be0e1f52e41c32b18e837eac43d">elm_datetime_value_min_get</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#ga5b213892f5c08d2bd15a941f1ace68b9">elm_datetime_value_min_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Datetime *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Elm_Datetime_Time *&#160;</td>
+          <td class="paramtype">Efl_Time *&#160;</td>
           <td class="paramname"><em>mintime</em>&#160;</td>
         </tr>
         <tr>
@@ -697,32 +688,31 @@ Functions</h2></td></tr>
 <p>Date: default value range is from 1 to 31 according to the month value.</p>
 <p>Hour: default value will be in terms of 24 hr format (0~23)</p>
 <p>Minute: default value range is from 0 to 59.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">mintime</td><td>Time structure.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if minimum value is successfully returned. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="gaa6e1368596bd2e63eb2101fad11b88da"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_value_min_set" ref="gaa6e1368596bd2e63eb2101fad11b88da" args="(Elm_Datetime *obj, const Elm_Datetime_Time *mintime)" -->
+<a class="anchor" id="ga884f4ae9d7d291d386e1f0db583ad793"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_value_min_set" ref="ga884f4ae9d7d291d386e1f0db583ad793" args="(Evas_Object *obj, const Efl_Time *mintime)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#gaa6e1368596bd2e63eb2101fad11b88da">elm_datetime_value_min_set</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#ga884f4ae9d7d291d386e1f0db583ad793">elm_datetime_value_min_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Datetime *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Elm_Datetime_Time *&#160;</td>
+          <td class="paramtype">const Efl_Time *&#160;</td>
           <td class="paramname"><em>mintime</em>&#160;</td>
         </tr>
         <tr>
@@ -740,32 +730,31 @@ Functions</h2></td></tr>
 <p>Date: default value range is from 1 to 31 according to the month value.</p>
 <p>Hour: default value will be in terms of 24 hr format (0~23)</p>
 <p>Minute: default value range is from 0 to 59.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mintime</td><td>Time structure containing the minimum time value.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if minimum value is accepted. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga955ae7a7d3b0188a300c0124e3cffd31"></a><!-- doxytag: member="elm_datetime.eo.legacy.h::elm_datetime_value_set" ref="ga955ae7a7d3b0188a300c0124e3cffd31" args="(Elm_Datetime *obj, const Elm_Datetime_Time *newtime)" -->
+<a class="anchor" id="ga8f41b72c901b546802ecb1371c533e19"></a><!-- doxytag: member="elm_datetime.h::elm_datetime_value_set" ref="ga8f41b72c901b546802ecb1371c533e19" args="(Evas_Object *obj, const Efl_Time *newtime)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#ga955ae7a7d3b0188a300c0124e3cffd31">elm_datetime_value_set</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Datetime.html#ga8f41b72c901b546802ecb1371c533e19">elm_datetime_value_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Datetime *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const Elm_Datetime_Time *&#160;</td>
+          <td class="paramtype">const Efl_Time *&#160;</td>
           <td class="paramname"><em>newtime</em>&#160;</td>
         </tr>
         <tr>
@@ -783,15 +772,14 @@ Functions</h2></td></tr>
 <p>Date: default value range is from 1 to 31 according to the month value.</p>
 <p>Hour: default value will be in terms of 24 hr format (0~23)</p>
 <p>Minute: default value range is from 0 to 59.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">newtime</td><td>Time structure filled with values to be set.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if current time is set successfully. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>

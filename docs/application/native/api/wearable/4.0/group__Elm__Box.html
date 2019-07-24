@@ -98,9 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="box_inheritance_tree.png" alt="box_inheritance_tree.png"/>
 </div>
  <div class="image">
-<img src="img/widget/box/preview-00.png" alt="preview-00.png"/>
-</div>
- <div class="image">
 <img src="box.png" alt="box.png"/>
 </div>
  <p>A box arranges objects in a linear fashion, governed by a layout function that defines the details of this arrangement.</p>
@@ -111,12 +108,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Besides how much space each object is allocated, it's possible to control how the widget will be placed within that space using <a class="el" href="group__Evas__Object__Group__Size__Hints.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set()</a>. By default, this value will be 0.5 for both axis, meaning the object will be centered, but any value from 0.0 (left or top, for the <code>x</code> and <code>y</code> axes, respectively) to 1.0 (right or bottom) can be used. The special value EVAS_HINT_FILL, which is -1.0, means the object will be resized to fill the entire space it was allocated.</p>
 <p>In addition, customized functions to define the layout can be set, which allow the application developer to organize the objects within the box in any number of ways.</p>
 <p>The special <a class="el" href="group__Elm__Box.html#ga15194ef319ae722b03f608373f90fe1f">elm_box_layout_transition()</a> function can be used to switch from one layout to another, animating the motion of the children of the box.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Objects should not be added to box objects using _add() calls.</dd></dl>
-<p>Some examples on how to use boxes follow: </p>
-<ul>
-<li><a class="el" href="box_example_01.html">Box - Basic API</a> </li>
-<li><a class="el" href="box_example_02.html">Box - Layout transitions</a> </li>
-</ul>
+<dl class="note"><dt><b>Note:</b></dt><dd>Objects should not be added to box objects using _add() calls. </dd></dl>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>

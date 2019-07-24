@@ -110,7 +110,7 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    <a class="code" href="group__Eina__File__Group.html#ga13f9c2727e2cbb2d0722917e39678382" title="Lists all the files on the directory by calling the function for every file found.">eina_file_dir_list</a>(<span class="stringliteral">&quot;/home/&quot;</span>, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, _print_cb, NULL);
 
    it = <a class="code" href="group__Eina__File__Group.html#ga8f4aba4de6c0ff63268071c9afe7cf3a" title="Gets an iterator to list the content of a directory.">eina_file_ls</a>(<span class="stringliteral">&quot;/home/&quot;</span>);
-   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(it, f_name)
+   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(it, f_name)
      {
         printf(<span class="stringliteral">&quot;%s\n&quot;</span>, f_name);
         <a class="code" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del</a>(f_name);
@@ -118,12 +118,12 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    <a class="code" href="group__Eina__Iterator__Group.html#gaf9261991a4b05dc63e3401278a3281f8" title="Frees an iterator.">eina_iterator_free</a>(it);
 
    it = <a class="code" href="group__Eina__File__Group.html#gaa4f06311bdc2285d2993deb4cdd0c8cc" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_stat_ls</a>(<span class="stringliteral">&quot;/home/&quot;</span>);
-   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(it, f_info)
+   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(it, f_info)
      printf(&quot;%s if of type %d\n&quot;, f_info-&gt;path, f_info-&gt;type);
    <a class="code" href="group__Eina__Iterator__Group.html#gaf9261991a4b05dc63e3401278a3281f8" title="Frees an iterator.">eina_iterator_free</a>(it);
 
    it = <a class="code" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_direct_ls</a>(&quot;/home/&quot;);
-   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Definition for the macro to iterate over all elements easily.">EINA_ITERATOR_FOREACH</a>(it, f_info)
+   <a class="code" href="group__Eina__Iterator__Group.html#gad2f796ac4df0e500d25235c29821faa3" title="Creates an Eina_Iterator that iterates through a NUL-terminated C array.">EINA_ITERATOR_FOREACH</a>(it, f_info)
      printf(&quot;%s if of type %d\n&quot;, f_info-&gt;path, f_info-&gt;type);
    <a class="code" href="group__Eina__Iterator__Group.html#gaf9261991a4b05dc63e3401278a3281f8" title="Frees an iterator.">eina_iterator_free</a>(it);
 

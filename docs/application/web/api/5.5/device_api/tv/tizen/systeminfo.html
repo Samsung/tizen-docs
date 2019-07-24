@@ -49,6 +49,8 @@ NETWORK          </li>
           <li>
 PERIPHERAL (<b>Since</b>: 2.1)          </li>
           <li>
+SERVICE_COUNTRY (<b>Since</b>: 5.5)          </li>
+          <li>
 SIM          </li>
           <li>
 STORAGE          </li>
@@ -174,6 +176,8 @@ For more information on the System Information features, see <a href="https://de
 <li>2.26. <a href="#SystemInfoCameraFlash">SystemInfoCameraFlash</a>
 </li>
 <li>2.27. <a href="#SystemInfoADS">SystemInfoADS</a>
+</li>
+<li>2.28. <a href="#SystemInfoServiceCountry">SystemInfoServiceCountry</a>
 </li>
 </ul>
 </li>
@@ -304,6 +308,10 @@ For more information on the System Information features, see <a href="https://de
 <td><a href="#SystemInfoADS">SystemInfoADS</a></td>
 <td></td>
 </tr>
+<tr>
+<td><a href="#SystemInfoServiceCountry">SystemInfoServiceCountry</a></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <div class="typedefs" id="typedefs-section">
@@ -314,7 +322,8 @@ For more information on the System Information features, see <a href="https://de
  The device property identifier.
           </div>
 <pre class="webidl prettyprint">  enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK", "WIFI_NETWORK",
-    "ETHERNET_NETWORK", "CELLULAR_NETWORK", "NET_PROXY_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "VIDEOSOURCE", "CAMERA_FLASH", "ADS" };</pre>
+    "ETHERNET_NETWORK", "CELLULAR_NETWORK", "NET_PROXY_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "VIDEOSOURCE", "CAMERA_FLASH", "ADS",
+    "SERVICE_COUNTRY" };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -338,6 +347,9 @@ For more information on the System Information features, see <a href="https://de
           </p>
 <p><span class="remark">Remark: </span>
  <var>ADS</var> is supported since Tizen 3.0
+          </p>
+<p><span class="remark">Remark: </span>
+ <var>SERVICE_COUNTRY</var> is supported since Tizen 5.5
           </p>
 </div>
 <div class="enum" id="SystemInfoNetworkType">
@@ -3867,6 +3879,31 @@ If the specified brightness value is not supported by the device, the brightness
 </li></ul>
 </div>
 </div>
+<div class="interface" id="SystemInfoServiceCountry">
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoServiceCountry"></a><h3>2.28. SystemInfoServiceCountry</h3>
+<div class="brief">
+ This property represents a country of which basic policy of terms and conditions is set.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoServiceCountry : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
+    readonly attribute DOMString serviceCountry;
+  };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+        
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="SystemInfoServiceCountry::serviceCountry">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">serviceCountry</span></span><div class="brief">
+ Represents a country of which basic policy is set.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li></ul>
+</div>
+</div>
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
@@ -3925,7 +3962,8 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SystemInfo {
   enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK", "WIFI_NETWORK",
-    "ETHERNET_NETWORK", "CELLULAR_NETWORK", "NET_PROXY_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "VIDEOSOURCE", "CAMERA_FLASH", "ADS" };
+    "ETHERNET_NETWORK", "CELLULAR_NETWORK", "NET_PROXY_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "VIDEOSOURCE", "CAMERA_FLASH", "ADS",
+    "SERVICE_COUNTRY" };
   enum SystemInfoNetworkType { "NONE", "2G", "2.5G", "3G", "4G", "WIFI", "ETHERNET", "NET_PROXY", "UNKNOWN" };
   enum SystemInfoWifiSecurityMode { "NONE", "WEP", "WPA_PSK", "WPA2_PSK", "EAP" };
   enum SystemInfoWifiEncryptionType { "NONE", "WEP", "TKIP", "AES", "TKIP_AES_MIXED" };
@@ -4091,6 +4129,9 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
   };
   [NoInterfaceObject] interface SystemInfoADS : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute DOMString id;
+  };
+  [NoInterfaceObject] interface SystemInfoServiceCountry : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
+    readonly attribute DOMString serviceCountry;
   };
 };</pre>
 </div>

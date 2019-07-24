@@ -102,9 +102,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <h2><a class="anchor" id="hashtable_algo"></a>
 Algorithm</h2>
 <p>The Eina_Hash is implemented using an array of N "buckets", where each bucket is a pointer to a structure that is the head of a <a href="http://en.wikipedia.org/wiki/Red-black_tree">red-black tree</a>. The array can then be indexed by the [hash_of_element mod N]. The hash_of_element is calculated using the hashing function, passed as parameter to the <a class="el" href="group__Eina__Hash__Group.html#ga32c9a8a82e2d20338618baf6af3d1614">eina_hash_new</a> function. N is the number of buckets (array positions), and is calculated based on the buckets_power_size (argument of <a class="el" href="group__Eina__Hash__Group.html#ga32c9a8a82e2d20338618baf6af3d1614">eina_hash_new</a> too). The following picture illustrates the basic idea:</p>
- 
- <img src="01_hash-table.png" width="500" />
-  <p>Adding an element to the hash table is made of: </p>
+<div class="image">
+<img src="01_hash-table.png" alt="01_hash-table.png"/>
+</div>
+ <p>Adding an element to the hash table is made of: </p>
 <ul>
 <li>calculating the hash for that key (using the specified hash function); </li>
 <li>calculate the array position [hash mod N]; </li>

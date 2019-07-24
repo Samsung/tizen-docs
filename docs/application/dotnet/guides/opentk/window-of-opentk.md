@@ -1,16 +1,14 @@
 # Window of OpenTK
 
-In the OpenTK app, `OpenTKGameApplication` creates a `Window` after `OnCreate` method is called. `Window` is a
-property of `TizenGameApplication`. This document will describe how to use this `Window` in your OpenTK app.
+This guide explains how to use `Window` property of `TizenGameApplication` class. Window is internally created in `OnCreate()` method of the base class.
 
-`Window` defines many events including [input event](#input-event), [window related event](#window-related-event), and
-[render related event](#render-related-event). You can add the event handlers of these events, if needed.
+`Window` defines many events including [input event](#input-event), [window related event](#window-related-event), and [render related event](#render-related-event). You can add the event handlers of these events, if needed.
 
 ## Input Event
 
-There are app scenarios, where you want to do some actions while the app user inputs something. In this scenario, you can add an event handler on the input event of `Window`. Also, you can use **key** or **mouse** event using `Window` of OpenTK, if your device supports them. For example, if your device supports remote controller, then you can use **key** event. If your device supports mouse, then you can use **mouse** event.
+It supposed your application wants to execute some operations while a user is inputting text with a keyboard or selecting some menus with a mouse. You can implement such a use case by adding input event handlers for **key** or **mouse** event using `Window` of OpenTK. For example, if your device supports remote controller, you can use **key** event. If your device supports mouse, you can use **mouse** event.
 
-The following is the sample code:
+The following code snippet shows how to add **mouse** and **key** event handlers:
 
 ```csharp
 private IGameWindow mainWindow;
@@ -18,9 +16,9 @@ private IGameWindow mainWindow;
 protected override void OnCreate()
 {
     mainWindow = Window;
-    
+
     mainWindow.MouseMove += MouseMoveEventHandler;    // add event handler on mouse move event
-    mainWindow.KeyDown += KeyDownEventHandler;        // add event handler on key down event    
+    mainWindow.KeyDown += KeyDownEventHandler;        // add event handler on key down event
 }
 
 private void MouseMoveEventHandler(object sender, MouseMoveEventArgs e)
@@ -31,7 +29,7 @@ private void MouseMoveEventHandler(object sender, MouseMoveEventArgs e)
         float y = (float)(e.YDelta);    // the move distance in y-axis
         // do your action
     }
-    
+
     if (e.Mouse[MouseButton.Right])     // get mouse move event which happening with click right button of mouse
     {
         float x = (float)(e.XDelta);    // the move distance in x-axis
@@ -68,9 +66,11 @@ private void KeyDownEventHandler(object sender, KeyboardKeyEventArgs e)
 
 ## Window Related Event
 
-`Window` also provides some window state related events, such as **Closed**, **Closing**, **FocusedChanged**, **Resize**, **VisibleChanged**, **WindowStateChanged**, and so on. 
+`Window` supports some window state related events, such as **Closed**, **Closing**, **FocusedChanged**, **Resize**, **VisibleChanged**, **WindowStateChanged**, and so on.
 
-In some scenario, if you want to mirror the state of `Window`, then you can add event handlers on these events.
+When the state of `Window` is changed, you can activate some actions by adding your event handlers.
+
+The following code snippet shows adding a resize event handler:
 
 ```csharp
 private IGameWindow mainWindow;
@@ -78,7 +78,7 @@ private IGameWindow mainWindow;
 protected override void OnCreate()
 {
     mainWindow = Window;
-    
+
     mainWindow.Resize += ResizeEventHandler;    // add event handler on window resize event
 }
 
@@ -90,12 +90,14 @@ private void ResizeEventHandler(object sender, EventArgs e)
 
 ## Render Related Event
 
-`Window` also provides the render related events:
+`Window` also supports the render related events:
 
-- `RenderFrame`: This event occurs when a frame is rendered.
-- `UpdateFrame`: This event occurs when a frame is updated before `RenderFrame` event occurs.
+- `RenderFrame`: Occurs when a frame is rendered.
+- `UpdateFrame`: Occurs when a frame is updated before `RenderFrame` event occurs.
 
 These events repeatedly occur while the main loop of OpenTK is running.
+
+You can add these events handlers as follows:
 
 ```csharp
 private IGameWindow mainWindow;
@@ -103,7 +105,7 @@ private IGameWindow mainWindow;
 protected override void OnCreate()
 {
     mainWindow = Window;
-    
+
     mainWindow.UpdateFrame += OnUpdateFrame;    // add event handler on update frame event
     mainWindow.RenderFrame += OnRenderFrame;    // add event handler on render frame event
 }
@@ -116,11 +118,11 @@ private void OnUpdateFrame(Object sender, FrameEventArgs e)
 private void OnRenderFrame(Object sender, FrameEventArgs e)
 {
     // draw your content here
-    
+
     GL.Viewport(0, 0, mainWindow.Width, mainWindow.Height);
     GL.ClearColor(Color4.White);
     GL.Clear(ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit);
-    // draw your content ...    
+    // draw your content ...
     GL.DrawArrays();
     GL.Finish();
     mainWindow.SwapBuffers();

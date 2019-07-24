@@ -34,7 +34,7 @@ The main application icon features include:
 To enable your application to use the application icon functionality:
 
 -   To handle badges:
-    1.  To use the [Tizen.Applications.Badge](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Badge.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+    1.  To use the [Tizen.Applications.Badge](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Badge.html) class, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
         ```
         <privileges>
@@ -49,7 +49,7 @@ To enable your application to use the application icon functionality:
         ```
 
 - To handle shortcuts:
-    1.  To use the [Tizen.Applications.Shortcut](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Shortcut.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+    1.  To use the [Tizen.Applications.Shortcut](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Shortcut.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
         ```
         <privileges>
@@ -68,7 +68,7 @@ To enable your application to use the application icon functionality:
 
 To create and remove badges:
 
--   To create a badge for an application, create an instance of the [Tizen.Applications.Badge](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Badge.html) class. The parameter defines the application for which the badge is added. If the application is adding a badge for itself, the parameter can be null.
+-   To create a badge for an application, create an instance of the [Tizen.Applications.Badge](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Badge.html) class. The parameter defines the application for which the badge is added. If the application is adding a badge for itself, the parameter can be null.
 
     ```
     Badge badge = new Badge(appId);
@@ -77,7 +77,7 @@ To create and remove badges:
 
     The application that creates the badge can also update and remove it. When applications are signed with the same certificate, they can control each other's badges.
 
-    If an application not signed with the same certificate must be allowed to [manage a badge](#manage), use the `Add()` method of the [Tizen.Applications.BadgeControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.BadgeControl.html) class with a writable application ID. The writable application ID enables another application to control your application to manage the badge. You can also configure your application to handle the badge itself.
+    If an application not signed with the same certificate must be allowed to [manage a badge](#manage), use the `Add()` method of the [Tizen.Applications.BadgeControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.BadgeControl.html) class with a writable application ID. The writable application ID enables another application to control your application to manage the badge. You can also configure your application to handle the badge itself.
 
 - To remove the badge from the application, call the `Remove()` method. The only parameter is the ID of the application whose badge is to be removed.
 
@@ -90,7 +90,7 @@ To create and remove badges:
 
 To manage the badge:
 
--   Retrieve the badge count and visibility with the `Find()` method of the [Tizen.Applications.BadgeControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.BadgeControl.html) class. The values are stored in the `count` and `visible` properties of the [Tizen.Applications.Badge](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Badge.html) class.
+-   Retrieve the badge count and visibility with the `Find()` method of the [Tizen.Applications.BadgeControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.BadgeControl.html) class. The values are stored in the `count` and `visible` properties of the [Tizen.Applications.Badge](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Badge.html) class.
 
     The badge count is displayed in the upper-right corner of the badge and the `count` property value must be an integer. The `visible` property value is of the `Bool` type.
 
@@ -121,7 +121,7 @@ To manage the badge:
 
 To add a shortcut to the home screen:
 
-1.  Define the shortcut details (such as its name, icon path, and whether duplicates are allowed) with the properties of the [Tizen.Applications.Shortcut.HomeShortcutInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Shortcut.HomeShortcutInfo.html) class.
+1.  Define the shortcut details (such as its name, icon path, and whether duplicates are allowed) with the properties of the [Tizen.Applications.Shortcut.HomeShortcutInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Shortcut.HomeShortcutInfo.html) class.
 
     You can create 2 types of shortcuts:
 
@@ -138,7 +138,7 @@ To add a shortcut to the home screen:
     };
     ```
 
-2. Add the shortcut using the `Add()` method of the [Tizen.Applications.Shortcut.ShortcutManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Shortcut.ShortcutManager.html) class:
+2. Add the shortcut using the `Add()` method of the [Tizen.Applications.Shortcut.ShortcutManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Shortcut.ShortcutManager.html) class:
 
     ```
     ShortcutManager.Add(shortcut);
@@ -150,10 +150,10 @@ To add a shortcut to the home screen:
 To add a widget to the home screen:
 
 1.  Before adding a widget to the home screen, a widget application must be prepared.
-2. Define the widget details (such as its ID, size, and period) with the properties of the [Tizen.Applications.Shortcut.WidgetShortcutInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Shortcut.WidgetShortcutInfo.html) class:
+2. Define the widget details (such as its ID, size, and period) with the properties of the [Tizen.Applications.Shortcut.WidgetShortcutInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Shortcut.WidgetShortcutInfo.html) class:
 
     ```
-    Widgetshortcutinfo shortcut = new Widgetshortcutinfo
+    WidgetShortcutInfo shortcut = new WidgetShortcutInfo
     {
         shortcutname = "samplewidget",
         iconpath = "icon_path",
@@ -166,7 +166,7 @@ To add a widget to the home screen:
 
     To add a widget, you must know the widget ID and supported sizes.
 
-3. Add the widget using the `Add()` method of the [Tizen.Applications.Shortcut.ShortcutManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.Shortcut.ShortcutManager.html) class:
+3. Add the widget using the `Add()` method of the [Tizen.Applications.Shortcut.ShortcutManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Shortcut.ShortcutManager.html) class:
 
     ```
     ShortcutManager.Add(shortcut);

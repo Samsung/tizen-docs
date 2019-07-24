@@ -55,7 +55,7 @@ system events occur. The following table lists the related methods.
 The Tizen .NET application can be in one of several application states.
 
 The
-[Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html)
+[Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html)
 namespace defines 5 states with corresponding state change methods. A
 state change method is triggered after each state change: whenever the
 application is created, starts running, or is paused, resumed, or
@@ -83,7 +83,7 @@ transitions](./media/app_state_transitions_cs.png)
 ## Prerequisites
 
 To use the methods and properties of the
-[Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html)
+[Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html)
 namespace, include it in your application:
 
 ```
@@ -94,7 +94,7 @@ using Tizen.Applications;
 ## Handling the Application Fundamentals
 
 The
-[Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html)
+[Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html)
 namespace is a simple framework all Tizen .NET applications are based
 on. It only handles interactions between applications and the operating
 system. In order for an application to operate successfully, it must
@@ -104,7 +104,7 @@ loop - this is mandatory for all Tizen .NET applications.
 To manage the application life-cycle:
 
 1.  Make a class derived from the
-    [Tizen.Applications.CoreUIApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.CoreUIApplication.html)
+    [Tizen.Applications.CoreUIApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.CoreUIApplication.html)
     class and start the application with the `Main()` method. The method
     initializes the application and starts the main event loop with the
     `Run()` method.
@@ -191,9 +191,9 @@ To manage the application life-cycle:
     ```
 
 3. Define any required application controls. The
-    [Tizen.Applications.ReceivedAppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ReceivedAppControl.html)
+    [Tizen.Applications.ReceivedAppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ReceivedAppControl.html)
     class, derived from the
-    [Tizen.Applications.AppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html)
+    [Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
     class, is a mechanism through which the application receives
     additional information about why it was started and with
     which parameters.
@@ -209,7 +209,7 @@ To manage the application life-cycle:
     -   `Mime`: Retrieve the MIME type of the data, such as `image/jpg`.
     -   `ExtraData`: Retrieve the data associated with a given key,
         using the
-        [Tizen.Applications.AppControl.ExtraDataCollection](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.ExtraDataCollection.html) class.
+        [Tizen.Applications.AppControl.ExtraDataCollection](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.ExtraDataCollection.html) class.
         First check whether the data is an array using the
         `IsCollection()` method of the
         `Tizen.Applications.AppControl.ExtraDataCollection` class.
@@ -226,12 +226,12 @@ categories that allow an application to run in the background.
 
 | Background category            | Description                              | Related namespaces                       | Manifest file \<background-category\> element value |
 |------------------------------|----------------------------------------|----------------------------------------|----------------------------------------|
-| Media                          | Playing audio, recording, and outputting streaming video in the background | [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) | `media`                                  |
-| Download                       | Downloading data with the classes and methods of the Tizen.Content.Download namespace | [Tizen.Content.Download](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.Download.html) | `download`                               |
-| Background network             | Processing general network operations in the background (such as sync-manager, IM, and VOIP) | [Tizen.Account.SyncManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Account.SyncManager.html) | `background-network`                     |
-| Location                       | Processing location data in the background | [Tizen.Location](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.html) <br> [Tizen.Location.Geofence](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Geofence.html) <br> [Tizen.Maps](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.html) | `location`                               |
-| Sensor (context)               | Processing context data from the sensors, such as gesture | [Tizen.Sensor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Sensor.html) | `sensor`                                 |
-| IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | [Tizen.Network.WiFi](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.WiFi.html) <br> [Tizen.Network.Bluetooth](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.Bluetooth.html) | `iot-communication`                      |
+| Media                          | Playing audio, recording, and outputting streaming video in the background | [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) | `media`                                  |
+| Download                       | Downloading data with the classes and methods of the Tizen.Content.Download namespace | [Tizen.Content.Download](https://samsung.github.io/TizenFX/latest/api/Tizen.Content.Download.html) | `download`                               |
+| Background network             | Processing general network operations in the background (such as sync-manager, IM, and VOIP) | [Tizen.Account.SyncManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Account.SyncManager.html) | `background-network`                     |
+| Location                       | Processing location data in the background | [Tizen.Location](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.html) <br> [Tizen.Location.Geofence](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.html) <br> [Tizen.Maps](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html) | `location`                               |
+| Sensor (context)               | Processing context data from the sensors, such as gesture | [Tizen.Sensor](https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.html) | `sensor`                                 |
+| IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | [Tizen.Network.WiFi](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.WiFi.html) <br> [Tizen.Network.Bluetooth](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Bluetooth.html) | `iot-communication`                      |
 
 <a name="bg-category"></a>
 ### Describing the Background Category

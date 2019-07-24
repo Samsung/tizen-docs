@@ -225,6 +225,10 @@ Since Tizen 2.4, an application is not allowed to run in the background except w
 | Sensor (context)               | Processing context data from the sensors, such as gesture | Sensor API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__SENSOR__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__SENSOR__MODULE.html) applications) | `sensor`                                 |
 | IoT Communication/Connectivity | Communicating between external devices in the background (such as Wi-Fi and Bluetooth) | Wi-Fi (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__WIFI__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__WIFI__MODULE.html) applications) and Bluetooth API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__BLUETOOTH__MODULE.html) applications) | `iot-communication`                      |
 
+  > **Note**
+  >
+  > Since Tizen 4.0, even if the background network category is declared, the running application stops if the network is not connected.
+
 ### Describing the Background Category
 
 An application with a background running capability must declare the background category in its manifest file:

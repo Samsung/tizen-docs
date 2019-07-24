@@ -93,7 +93,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><p>In this example we'll explain how to create applications to work with illume, considering space required for virtual keyboards, indicator and softkeys.</p>
 <p>Illume is a module for Enlightenment that modifies the user interface to work cleanly and nicely on a mobile device. It has support for virtual keyboard, among other nice features.</p>
 <p>Let's start creating a very simple window with a vertical box with multi-line entry between two buttons. This entry will expand filling all space on window not used by buttons.</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment">elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *btn, *bx, *en;
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;conformant&quot;</span>, <span class="stringliteral">&quot;Conformant Example&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Test Conformant&quot;</span>);
+   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, 0);
+   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, 0);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   en = <a class="code" href="group__Elm__Entry.html#ga9b6db43001f1f765aa38f8805411b822">elm_entry_add</a>(win);
+   <a class="code" href="group__Elm__Entry.html#ga5eeb0097491a8a5e9413427ba27199d4" title="Enable or disable scrolling in entry.">elm_entry_scrollable_set</a>(en, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_object_text_set(en,
+                       <span class="stringliteral">&quot;This is a multi-line entry at the bottom&lt;br&gt;&quot;</span>
+                       <span class="stringliteral">&quot;This can contain more than 1 line of text and be &quot;</span>
+                       <span class="stringliteral">&quot;scrolled around to allow for entering of lots of &quot;</span>
+                       <span class="stringliteral">&quot;content. It is also to test to see that autoscroll &quot;</span>
+                       <span class="stringliteral">&quot;moves to the right part of a larger multi-line &quot;</span>
+                       <span class="stringliteral">&quot;text entry that is inside of a scroller than can be &quot;</span>
+                       <span class="stringliteral">&quot;scrolled around, thus changing the expected position &quot;</span>
+                       <span class="stringliteral">&quot;as well as cursor changes updating auto-scroll when &quot;</span>
+                       <span class="stringliteral">&quot;it is enabled.&quot;</span>);
+
+   evas_object_size_hint_weight_set(en, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(en, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(en);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, en);
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Test Conformant&quot;</span>);
+   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, 0);
+   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, 0);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, btn);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(btn);
+
+   evas_object_resize(win, 240, 480);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+</pre></div></p>
 <p>For information about how to create windows, boxes, buttons or entries, look for documentation for these widgets.</p>
 <p>It will looks fine when you don't need a virtual keyboard, as you can see on the following image:</p>
 <div class="image">
@@ -107,9 +160,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
  <p>As you can see, it guess the space that will be required by the keyboard, indicator and softkey bars.</p>
 <p>So, let's study each step required to transform our initial example on the second one.</p>
-<p>First of all, we need to set the window as an illume conformant window:  <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Next, we'll add a conformant widget, and set it to resize with the window, instead of the box. <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Finally, we'll set the box as conformant's content, just like this: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>First of all, we need to set the window as an illume conformant window:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Elm__Win.html#ga4ce488efe34399e0a6e9f3f0e4661153" title="Sets whether the window is a keyboard.">elm_win_conformant_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
+<p>Next, we'll add a conformant widget, and set it to resize with the window, instead of the box. <div class="fragment"><pre class="fragment">   conform = <a class="code" href="group__Elm__Conformant.html#ga104fb5a565680f77d69cd6c95b859612">elm_conformant_add</a>(win);
+   evas_object_size_hint_weight_set(conform, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, conform);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(conform);
+</pre></div></p>
+<p>Finally, we'll set the box as conformant's content, just like this: <div class="fragment"><pre class="fragment">   elm_object_content_set(conform, bx);
+</pre></div></p>
 <p>Compare both examples code: <a class="el" href="conformant_example_01_8c-example.html">conformant_example_01.c</a> <a class="el" href="conformant_example_02_8c-example.html">conformant_example_02.c</a> </p>
 </div></div><!-- contents -->
 </div>

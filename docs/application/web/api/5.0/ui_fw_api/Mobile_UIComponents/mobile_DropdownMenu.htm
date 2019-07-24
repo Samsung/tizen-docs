@@ -7,11 +7,13 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Dropdown Menu</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>Dropdown Menu</h1>
 
 
-DropdownMenu component allows you to create the component in the form of a drop-down list and manage its operation.
+<p>DropdownMenu component allows you to create the component in the form of a drop-down list and manage its operation.</p>
+
+<img src="../../images/mobile_dropdownMenu.png" width="15%">
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -40,6 +42,7 @@ DropdownMenu component allows you to create the component in the form of a drop-
 
 <p>For manual creation of DropdownMenu component you can use constructor of component.</p>
 
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;select id="dropdownmenu" data-native-menu="false"&gt;
    &lt;option value="1"&gt;Item1&lt;/option&gt;
@@ -47,10 +50,11 @@ DropdownMenu component allows you to create the component in the form of a drop-
    &lt;option value="3"&gt;Item3&lt;/option&gt;
    &lt;option value="4"&gt;Item4&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var element = document.getElementById("dropdownmenu"),
-       widget = tau.widget.DropdownMenu(element);
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var element = document.getElementById("dropdownmenu"),
+    widget = tau.widget.DropdownMenu(element);
 </pre>
 
 <h2><a id='html-examples0.1808658204972744'></a>HTML Examples</h2>
@@ -169,7 +173,7 @@ widget.methodName(methodArgument1, methodArgument2, ...);
 
 	<tr>
 		<td>
-			<pre class="intable prettyprint"><a href="#method-_enable">enable</a>() </pre>
+			<pre class="intable prettyprint">DropdownMenu <a href="#method-_enable">enable</a>() </pre>
 		</td>
 		<td><p>Enable DropdownMenu</p></td>
 	</tr>
@@ -178,7 +182,7 @@ widget.methodName(methodArgument1, methodArgument2, ...);
 
 	<tr>
 		<td>
-			<pre class="intable prettyprint"><a href="#method-_disable">disable</a>() </pre>
+			<pre class="intable prettyprint">DropdownMenu <a href="#method-_disable">disable</a>() </pre>
 		</td>
 		<td><p>Disable DropdownMenu</p></td>
 	</tr>
@@ -218,6 +222,7 @@ widget.methodName(methodArgument1, methodArgument2, ...);
 		<div class="example">
                             <span class="example"><p>Code
 								example:</p><p></p></span>
+                            <p>HTML code:</p>
                             <pre name="code" class="examplecode
                             prettyprint">
 &lt;select id=&quot;dropdownmenu&quot; data-native-menu=&quot;false&quot;&gt;
@@ -226,12 +231,13 @@ widget.methodName(methodArgument1, methodArgument2, ...);
    &lt;option value=&quot;3&quot;&gt;Item3&lt;/option&gt;
    &lt;option value=&quot;4&quot;&gt;Item4&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var elDropdownMenu = document.getElementById("dropdownmenu"),
-       widget = tau.widget.DropdownMenu(elDropdownMenu);
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var elDropdownMenu = document.getElementById("dropdownmenu"),
+    widget = tau.widget.DropdownMenu(elDropdownMenu);
 
-   widget.open();
-&lt;/script&gt;
+widget.open();
 </pre>
 		</div>
 	</dd>
@@ -267,6 +273,7 @@ widget.methodName(methodArgument1, methodArgument2, ...);
 		<div class="example">
                             <span class="example"><p>Code
 								example:</p><p></p></span>
+                            <p>HTML code:</p>
                             <pre name="code" class="examplecode
                             prettyprint">
 &lt;select id=&quot;dropdownmenu&quot; data-native-menu=&quot;false&quot;&gt;
@@ -275,12 +282,13 @@ widget.methodName(methodArgument1, methodArgument2, ...);
    &lt;option value=&quot;3&quot;&gt;Item3&lt;/option&gt;
    &lt;option value=&quot;4&quot;&gt;Item4&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var elDropdownMenu = document.getElementById("dropdownmenu"),
-       widget = tau.widget.DropdownMenu(elDropdownMenu);
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var elDropdownMenu = document.getElementById("dropdownmenu"),
+    widget = tau.widget.DropdownMenu(elDropdownMenu);
 
-   widget.close();
-&lt;/script&gt;
+widget.close();
 </pre>
 		</div>
 	</dd>
@@ -294,7 +302,7 @@ widget.methodName(methodArgument1, methodArgument2, ...);
 			<p>Enable DropdownMenu</p>
 		</div>
 		<div class="synopsis">
-			<pre class="signature prettyprint">enable() </pre>
+			<pre class="signature prettyprint">DropdownMenu enable() </pre>
 		</div>
 
 		<div class="description">
@@ -330,6 +338,7 @@ widget.methodName(methodArgument1, methodArgument2, ...);
 		<div class="example">
                             <span class="example"><p>Code
 								example:</p><p></p></span>
+                            <p>HTML code:</p>
                             <pre name="code" class="examplecode
                             prettyprint">
 &lt;select id=&quot;dropdownmenu&quot; data-native-menu=&quot;false&quot;&gt;
@@ -338,12 +347,13 @@ widget.methodName(methodArgument1, methodArgument2, ...);
    &lt;option value=&quot;3&quot;&gt;Item3&lt;/option&gt;
    &lt;option value=&quot;4&quot;&gt;Item4&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var elDropdownMenu = document.getElementById("dropdownmenu"),
-       widget = tau.widget.DropdownMenu(elDropdownMenu);
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var elDropdownMenu = document.getElementById("dropdownmenu"),
+    widget = tau.widget.DropdownMenu(elDropdownMenu);
 
-   widget.enable();
-&lt;/script&gt;
+widget.enable();
 </pre>
 		</div>
 
@@ -359,7 +369,7 @@ widget.methodName(methodArgument1, methodArgument2, ...);
 			<p>Disable DropdownMenu</p>
 		</div>
 		<div class="synopsis">
-			<pre class="signature prettyprint">disable() </pre>
+			<pre class="signature prettyprint">DropdownMenu disable() </pre>
 		</div>
 
 		<div class="description">
@@ -395,6 +405,7 @@ widget.methodName(methodArgument1, methodArgument2, ...);
 		<div class="example">
                             <span class="example"><p>Code
 								example:</p><p></p></span>
+                            <p>HTML code:</p>
                             <pre name="code" class="examplecode
                             prettyprint">
 &lt;select id=&quot;dropdownmenu&quot; data-native-menu=&quot;false&quot;&gt;
@@ -403,12 +414,13 @@ widget.methodName(methodArgument1, methodArgument2, ...);
    &lt;option value=&quot;3&quot;&gt;Item3&lt;/option&gt;
    &lt;option value=&quot;4&quot;&gt;Item4&lt;/option&gt;
 &lt;/select&gt;
-&lt;script&gt;
-   var elDropdownMenu = document.getElementById("dropdownmenu"),
-       widget = tau.widget.DropdownMenu(elDropdownMenu);
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var elDropdownMenu = document.getElementById("dropdownmenu"),
+    widget = tau.widget.DropdownMenu(elDropdownMenu);
 
-   widget.disable();
-&lt;/script&gt;
+widget.disable();
 </pre>
 		</div>
 
@@ -426,5 +438,10 @@ widget.methodName(methodArgument1, methodArgument2, ...);
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

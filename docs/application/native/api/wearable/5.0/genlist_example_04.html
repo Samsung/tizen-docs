@@ -92,12 +92,63 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This example is also similar ot the <a class="el" href="genlist_example_01.html">Genlist - basic usage</a>, but it demonstrates most of the item manipulation functions. See the full source code at <a class="el" href="genlist_example_04_c.html">genlist_example_04.c</a>.</p>
 <p>In this example, we also will use the concept of creating groups of items in the genlist. Each group of items is composed by a parent item (which will be the index of the group) and several children of this item. Thus, for the children, we declare a normal item class. But we also are going to declare a different item class for the group index (which in practice is another type of item in the genlist):</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">char</span> *
+_group_label_get(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *part EINA_UNUSED)
+{
+   <span class="keywordtype">char</span> buf[256];
+   <span class="keywordtype">int</span> i = (int)(<span class="keywordtype">long</span>)data;
+
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;Group %d (item #%d)&quot;</span>, i / 7, i);
+
+   <span class="keywordflow">return</span> strdup(buf);
+}
+
+<span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
+_group_content_get(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keyword">const</span> <span class="keywordtype">char</span> *part)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(obj);
+
+   <span class="keywordflow">if</span> (!strcmp(part, <span class="stringliteral">&quot;elm.swallow.icon&quot;</span>))
+     <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;home&quot;</span>);
+
+   evas_object_size_hint_aspect_set(ic, EVAS_ASPECT_CONTROL_VERTICAL, 1, 1);
+   <span class="keywordflow">return</span> ic;
+}
+</pre></div></p>
 <p>We will add buttons to the window, where each button provides one functionality of the genlist item API. Each button will have a callback attached, that will really execute this functionality. An example of these callbacks is the next one, for the <a class="el" href="group__Elm__Genlist.html#ga35b7c5a1d022c927a589b84ccf969562" title="Insert an item after another in a genlist widget.">elm_genlist_item_insert_after()</a> function:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span>
+_insert_after_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list = data;
+   <a class="code" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *glit = <a class="code" href="group__Elm__Genlist.html#ga97abf26033fe2041450aa26b6f138c8a" title="Get the selected item in the genlist.">elm_genlist_selected_item_get</a>(list);
+
+   <span class="keywordflow">if</span> (!glit) <span class="keywordflow">return</span>;
+
+   <a class="code" href="group__Elm__Genlist.html#ga35b7c5a1d022c927a589b84ccf969562" title="Insert an item after another in a genlist widget.">elm_genlist_item_insert_after</a>(list, _itc,
+                                 (<span class="keywordtype">void</span> *)(<span class="keywordtype">long</span>)nitems++, NULL,
+                                 glit, ELM_GENLIST_ITEM_NONE,
+                                 _item_sel_cb, NULL);
+
+}
+</pre></div></p>
 <p>If you want ot see the other button functions, look at the full source code link above.</p>
 <p>Each button will be created with a function that already creates the button, add it to an elementary box, and attach the specified callback. This is the function that does it:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *
+_button_add(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *list, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *box, <span class="keyword">const</span> <span class="keywordtype">char</span> *label, Evas_Smart_Cb cb)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bt;
+
+   bt = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(<a class="code" href="group__Elm__WidgetNavigation.html#ga0b5f83c403948f1418e434f3ed94973f">elm_object_parent_widget_get</a>(list));
+   elm_object_text_set(bt, label);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(box, bt);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bt);
+
+   <span class="keywordflow">if</span> (cb)
+     <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(bt, <span class="stringliteral">&quot;clicked&quot;</span>, cb, list);
+
+   <span class="keywordflow">return</span> bt;
+}
+</pre></div></p>
 <p>In our <code>elm_main</code> function, besides the code for setting up the window, box and background, we also initialize our two item classes:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>This example uses a different style for the items, the <em>double_label</em>, which provides a text field for the item text, and another text field for a subtext.</p>

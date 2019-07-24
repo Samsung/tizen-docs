@@ -90,7 +90,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Radio</div>  </div>
-<div class="ingroups"><a class="el" href="group__elm__widget__group.html">Elementary Widgets</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Elementary.html">Elementary</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Radio is a widget that allows for 1 or more options to be displayed and have the user choose only 1 of them. </p>
@@ -101,10 +101,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="img/widget/radio/preview-00.png" alt="preview-00.png"/>
 </div>
  <p>A radio object contains an indicator, an optional Label and an optional icon object. While it's possible to have a group of only one radio they, are normally used in groups of 2 or more.</p>
-<p>elm_radio objects are grouped in a slightly different, compared to other UI toolkits. There is no separate group name/id to remember or manage. The members represent the group, there are the group. To make a group, use <a class="el" href="group__Elm__Radio.html#ga2add9e593ceff601c276c67da676578c" title="Add this radio to a group of other radio objects.">elm_radio_group_add()</a> and pass existing radio object and the new radio object.</p>
-<p>The radio object(s) will select from one of a set of integer values, so any value they are configuring needs to be mapped to a set of integers. To configure what value that radio object represents, use <a class="el" href="group__Elm__Radio.html#ga28e2892c157e10bce546d4345b658e71" title="Set the integer value that this radio object represents.">elm_radio_state_value_set()</a> to set the integer it represents. To set the value the whole group(which one is currently selected) is to indicate use <a class="el" href="group__Elm__Radio.html#ga19e95e6315bbcb22a7def26f7175cf47" title="Set the value of the radio group.">elm_radio_value_set()</a> on any group member, and to get the groups value use <a class="el" href="group__Elm__Radio.html#ga85637182e966561ae0706f2b2fbbb5de" title="Get the value of the radio group.">elm_radio_value_get()</a>. For convenience the radio objects are also able to directly set an integer(int) to the value that is selected. To specify the pointer to this integer to modify, use <a class="el" href="group__Elm__Radio.html#gab41abbecbf60e1fff330590da8ce3f4b" title="Set a convenience pointer to a integer to change when radio group value changes.">elm_radio_value_pointer_set()</a>. The radio objects will modify this directly. That implies the pointer must point to valid memory for as long as the radio objects exist.</p>
-<p>This widget inherits from the <a class="el" href="group__Elm__Layout.html">Layout</a> one, so that all the functions acting on it also work for radio objects.</p>
-<p>This widget emits the following signals, besides the ones sent from Elm_Layout: </p>
+<p>elm_radio objects are grouped in a slightly different, compared to other UI toolkits. There is no separate group name/id to remember or manage. The members represent the group, there are the group. To make a group, use elm_radio_group_add() and pass existing radio object and the new radio object.</p>
+<p>The radio object(s) will select from one of a set of integer values, so any value they are configuring needs to be mapped to a set of integers. To configure what value that radio object represents, use elm_radio_state_value_set() to set the integer it represents. To set the value the whole group(which one is currently selected) is to indicate use <a class="el" href="group__Elm__Radio.html#ga7e41ff1e8ad492f99f44efdbcc1fa1cc" title="Set the value of the radio group.">elm_radio_value_set()</a> on any group member, and to get the groups value use <a class="el" href="group__Elm__Radio.html#gab56d65001a82eea600b41e4873a772e6" title="Get the value of the radio group.">elm_radio_value_get()</a>. For convenience the radio objects are also able to directly set an integer(int) to the value that is selected. To specify the pointer to this integer to modify, use elm_radio_value_pointer_set(). The radio objects will modify this directly. That implies the pointer must point to valid memory for as long as the radio objects exist.</p>
+<p>This widget inherits from the Layout one, so that all the functions acting on it also work for radio objects.</p>
+<p>This widget emits the following signals, besides the ones sent from Layout: </p>
 <ul>
 <li><code>"changed"</code> - This is called when the radio object is selected. If you want to trace the state change of a radio group, you should add this callback to all the radio objects in that group. </li>
 <li><code>"focused"</code> - When the radio has received focus. (since 1.8) </li>
@@ -133,22 +133,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Radio.html#ga28e2892c157e10bce546d4345b658e71">elm_radio_state_value_set</a> (Elm_Radio *obj, int value)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the integer value that this radio object represents.  <a href="#ga28e2892c157e10bce546d4345b658e71"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Radio.html#ga76d40efea42107db25084cc27027fd7b">elm_radio_state_value_get</a> (const Elm_Radio *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the integer value that this radio object represents.  <a href="#ga76d40efea42107db25084cc27027fd7b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Radio.html#ga19e95e6315bbcb22a7def26f7175cf47">elm_radio_value_set</a> (Elm_Radio *obj, int value)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of the radio group.  <a href="#ga19e95e6315bbcb22a7def26f7175cf47"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Radio.html#ga85637182e966561ae0706f2b2fbbb5de">elm_radio_value_get</a> (const Elm_Radio *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the radio group.  <a href="#ga85637182e966561ae0706f2b2fbbb5de"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Radio.html#gab41abbecbf60e1fff330590da8ce3f4b">elm_radio_value_pointer_set</a> (Elm_Radio *obj, int *valuep)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a convenience pointer to a integer to change when radio group value changes.  <a href="#gab41abbecbf60e1fff330590da8ce3f4b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Radio.html#gad42a782e1bada3e763b3330a567cb9a8">elm_radio_selected_object_get</a> (const Elm_Radio *obj)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected radio object.  <a href="#gad42a782e1bada3e763b3330a567cb9a8"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Radio.html#ga2add9e593ceff601c276c67da676578c">elm_radio_group_add</a> (Elm_Radio *obj, Elm_Radio *group)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add this radio to a group of other radio objects.  <a href="#ga2add9e593ceff601c276c67da676578c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef">elm_radio_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new radio to the parent.  <a href="#gab905f905e9a90883d482035e457fc7ef"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Radio.html#ga7e41ff1e8ad492f99f44efdbcc1fa1cc">elm_radio_value_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of the radio group.  <a href="#ga7e41ff1e8ad492f99f44efdbcc1fa1cc"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Radio.html#gab56d65001a82eea600b41e4873a772e6">elm_radio_value_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the value of the radio group.  <a href="#gab56d65001a82eea600b41e4873a772e6"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gab905f905e9a90883d482035e457fc7ef"></a><!-- doxytag: member="elm_radio_legacy.h::elm_radio_add" ref="gab905f905e9a90883d482035e457fc7ef" args="(Evas_Object *parent)" -->
@@ -173,150 +163,20 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The new object or NULL if it cannot be created </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga2add9e593ceff601c276c67da676578c"></a><!-- doxytag: member="elm_radio.eo.legacy.h::elm_radio_group_add" ref="ga2add9e593ceff601c276c67da676578c" args="(Elm_Radio *obj, Elm_Radio *group)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Radio.html#ga2add9e593ceff601c276c67da676578c">elm_radio_group_add</a> </td>
-          <td>(</td>
-          <td class="paramtype">Elm_Radio *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">Elm_Radio *&#160;</td>
-          <td class="paramname"><em>group</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Add this radio to a group of other radio objects. </p>
-<p>Radio objects work in groups. Each member should have a different integer value assigned. In order to have them work as a group, they need to know about each other. This adds the given radio object to the group of which the group object indicated is a member.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>Any radio object whose group the obj is to join. </td></tr>
-  </table>
-  </dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a21">bg_example_03.c</a>, <a class="el" href="entry_example_8c-example.html#a34">entry_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a10">flip_example_01.c</a>, and <a class="el" href="radio_example_01_8c-example.html#a9">radio_example_01.c</a>.</dd>
 </dl>
-
 </div>
 </div>
-<a class="anchor" id="gad42a782e1bada3e763b3330a567cb9a8"></a><!-- doxytag: member="elm_radio.eo.legacy.h::elm_radio_selected_object_get" ref="gad42a782e1bada3e763b3330a567cb9a8" args="(const Elm_Radio *obj)" -->
+<a class="anchor" id="gab56d65001a82eea600b41e4873a772e6"></a><!-- doxytag: member="elm_radio_legacy.h::elm_radio_value_get" ref="gab56d65001a82eea600b41e4873a772e6" args="(const Evas_Object *obj)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Elm__Radio.html#gad42a782e1bada3e763b3330a567cb9a8">elm_radio_selected_object_get</a> </td>
+          <td class="memname">int <a class="el" href="group__Elm__Radio.html#gab56d65001a82eea600b41e4873a772e6">elm_radio_value_get</a> </td>
           <td>(</td>
-          <td class="paramtype">const Elm_Radio *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the selected radio object. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The selected radio object </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga76d40efea42107db25084cc27027fd7b"></a><!-- doxytag: member="elm_radio.eo.legacy.h::elm_radio_state_value_get" ref="ga76d40efea42107db25084cc27027fd7b" args="(const Elm_Radio *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__Elm__Radio.html#ga76d40efea42107db25084cc27027fd7b">elm_radio_state_value_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const Elm_Radio *&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Get the integer value that this radio object represents. </p>
-<p>This gets the value of the radio.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The value to use if this radio object is selected </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga28e2892c157e10bce546d4345b658e71"></a><!-- doxytag: member="elm_radio.eo.legacy.h::elm_radio_state_value_set" ref="ga28e2892c157e10bce546d4345b658e71" args="(Elm_Radio *obj, int value)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Radio.html#ga28e2892c157e10bce546d4345b658e71">elm_radio_state_value_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">Elm_Radio *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>value</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set the integer value that this radio object represents. </p>
-<p>This sets the value of the radio.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value to use if this radio object is selected </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga85637182e966561ae0706f2b2fbbb5de"></a><!-- doxytag: member="elm_radio.eo.legacy.h::elm_radio_value_get" ref="ga85637182e966561ae0706f2b2fbbb5de" args="(const Elm_Radio *obj)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__Elm__Radio.html#ga85637182e966561ae0706f2b2fbbb5de">elm_radio_value_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const Elm_Radio *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em></td><td>)</td>
           <td></td>
         </tr>
@@ -325,63 +185,20 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the value of the radio group. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The value to use for the group </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gab41abbecbf60e1fff330590da8ce3f4b"></a><!-- doxytag: member="elm_radio.eo.legacy.h::elm_radio_value_pointer_set" ref="gab41abbecbf60e1fff330590da8ce3f4b" args="(Elm_Radio *obj, int *valuep)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Radio.html#gab41abbecbf60e1fff330590da8ce3f4b">elm_radio_value_pointer_set</a> </td>
-          <td>(</td>
-          <td class="paramtype">Elm_Radio *&#160;</td>
-          <td class="paramname"><em>obj</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>valuep</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Set a convenience pointer to a integer to change when radio group value changes. </p>
-<p>This sets a pointer to a integer, that, in addition to the radio objects state will also be modified directly. To stop setting the object pointed to simply use NULL as the valuep argument. If valuep is not NULL, then when this is called, the radio objects state will also be modified to reflect the value of the integer valuep points to, just like calling <a class="el" href="group__Elm__Radio.html#ga19e95e6315bbcb22a7def26f7175cf47" title="Set the value of the radio group.">elm_radio_value_set()</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">valuep</td><td>Pointer to the integer to modify </td></tr>
-  </table>
-  </dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a2">bg_example_03.c</a>.</dd>
 </dl>
-
 </div>
 </div>
-<a class="anchor" id="ga19e95e6315bbcb22a7def26f7175cf47"></a><!-- doxytag: member="elm_radio.eo.legacy.h::elm_radio_value_set" ref="ga19e95e6315bbcb22a7def26f7175cf47" args="(Elm_Radio *obj, int value)" -->
+<a class="anchor" id="ga7e41ff1e8ad492f99f44efdbcc1fa1cc"></a><!-- doxytag: member="elm_radio_legacy.h::elm_radio_value_set" ref="ga7e41ff1e8ad492f99f44efdbcc1fa1cc" args="(Evas_Object *obj, int value)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="group__Elm__Radio.html#ga19e95e6315bbcb22a7def26f7175cf47">elm_radio_value_set</a> </td>
+          <td class="memname">void <a class="el" href="group__Elm__Radio.html#ga7e41ff1e8ad492f99f44efdbcc1fa1cc">elm_radio_value_set</a> </td>
           <td>(</td>
-          <td class="paramtype">Elm_Radio *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
         </tr>
         <tr>
@@ -401,15 +218,15 @@ Functions</h2></td></tr>
 
 <p>Set the value of the radio group. </p>
 <p>This sets the value of the radio group and will also set the value if pointed to, to the value supplied, but will not call any callbacks.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The value to use for the group </td></tr>
   </table>
   </dd>
 </dl>
-
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a27">bg_example_03.c</a>, and <a class="el" href="flip_example_01_8c-example.html#a11">flip_example_01.c</a>.</dd>
+</dl>
 </div>
 </div>
 </div><!-- contents -->

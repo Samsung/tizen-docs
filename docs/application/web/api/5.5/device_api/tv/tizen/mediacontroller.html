@@ -115,6 +115,7 @@ For more information on the Media Controller features, see <a href="https://deve
 <td><a href="#MediaControllerServer">MediaControllerServer</a></td>
 <td>
 <div>void <a href="#MediaControllerServer::updatePlaybackState">updatePlaybackState</a> (<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state)</div>
+<div>void <a href="#MediaControllerServer::updateIconURI">updateIconURI</a> (DOMString? iconURI)</div>
 <div>void <a href="#MediaControllerServer::updatePlaybackPosition">updatePlaybackPosition</a> (unsigned long long position)</div>
 <div>void <a href="#MediaControllerServer::updatePlaybackAgeRating">updatePlaybackAgeRating</a> (<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating)</div>
 <div>void <a href="#MediaControllerServer::updatePlaybackContentType">updatePlaybackContentType</a> (<a href="#MediaControllerContentType">MediaControllerContentType</a> type)</div>
@@ -205,7 +206,6 @@ For more information on the Media Controller features, see <a href="https://deve
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onshufflemodechanged">onshufflemodechanged</a> (boolean mode)</div>
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onrepeatstatechanged">onrepeatstatechanged</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state)</div>
 <div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onmetadatachanged">onmetadatachanged</a> (<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata)</div>
-<div>void <a href="#MediaControllerPlaybackInfoChangeCallback::onplaylistinfochanged">onplaylistinfochanged</a> (DOMString playlistName, DOMString index)</div>
 </td>
 </tr>
 <tr>
@@ -509,7 +509,9 @@ catch (err)
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerServer {
     readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
+    readonly attribute DOMString? iconURI;
     void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateIconURI(DOMString? iconURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackContentType(<a href="#MediaControllerContentType">MediaControllerContentType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -540,7 +542,8 @@ and be controlled by other application(client) remotely.
          </div>
 <div class="attributes">
 <h4>Attributes</h4>
-<ul><li class="attribute" id="MediaControllerServer::playbackInfo">
+<ul>
+<li class="attribute" id="MediaControllerServer::playbackInfo">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">MediaControllerPlaybackInfo </span><span class="name">playbackInfo</span></span><div class="brief">
  Current playback info.
@@ -551,7 +554,17 @@ and be controlled by other application(client) remotely.
 <p><span class="remark">Remark: </span>
  Object holds state which is automatically updated by update methods.
             </p>
-</li></ul>
+</li>
+<li class="attribute" id="MediaControllerServer::iconURI">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">iconURI</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Server icon URI.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+</ul>
 </div>
 <div class="methods">
 <h4>Methods</h4>
@@ -595,6 +608,47 @@ how to receive playback info changes from server on client side.
 
 mcServer.updatePlaybackState("PLAY");
 console.log("Current playback state is: " + mcServer.playbackInfo.state);
+</pre>
+</div>
+</dd>
+<dt class="method" id="MediaControllerServer::updateIconURI">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updateIconURI"></a><code><b><span class="methodName">updateIconURI</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Updates server icon URI.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void updateIconURI(DOMString? iconURI);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">iconURI</span><span class="optional"> [nullable]</span>:
+ URI of the icon to be set.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.mediacontroller.createServer();
+server.updatePlaybackState("PLAY");
+var client = tizen.mediacontroller.getClient();
+var sinfo = client.getLatestServerInfo();
+server.updateIconURI("http://example.com/res/icon2.ico");
+console.log(sinfo.iconURI);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>http://example.com/res/icon2.ico
 </pre>
 </div>
 </dd>
@@ -1631,6 +1685,7 @@ Provides methods to send commands to server and listen for server status change.
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
     readonly attribute <a href="#MediaControllerServerState">MediaControllerServerState</a> state;
     readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    readonly attribute DOMString? iconURI raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
@@ -1691,6 +1746,35 @@ Provides methods to send commands to server and listen for server status change.
                 </p></li></ul>
 </li></ul>
         </div>
+</li>
+<li class="attribute" id="MediaControllerServerInfo::iconURI">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">iconURI</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Server icon URI.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.mediacontroller.createServer();
+server.updatePlaybackState("PLAY");
+var client = tizen.mediacontroller.getClient();
+var sinfo = client.getLatestServerInfo();
+server.updateIconURI("http://example.com/res/icon2.ico");
+console.log(sinfo.iconURI);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>http://example.com/res/icon2.ico
+</pre>
+</div>
 </li>
 </ul>
 </div>
@@ -2220,11 +2304,6 @@ var playbackListener =
   onmetadatachanged: function(metadata)
   {
     console.log("Playback metadata changed: " + JSON.stringify(metadata));
-  },
-  onplaylistinfochanged: function(playlistName, index)
-  {
-    console.log("New playlist: " + playlistName);
-    console.log("New index: " + index);
   }
 };
 
@@ -2289,11 +2368,6 @@ var playbackListener =
   onmetadatachanged: function(metadata)
   {
     console.log("Playback metadata changed: " + JSON.stringify(metadata));
-  },
-  onplaylistinfochanged: function(playlistName, index)
-  {
-    console.log("New playlist: " + playlistName);
-    console.log("New index: " + index);
   }
 };
 
@@ -3230,7 +3304,6 @@ object for receiving media controller playback info changes from server.
     void onshufflemodechanged(boolean mode);
     void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
     void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
-    void onplaylistinfochanged(DOMString playlistName, DOMString index);
   };</pre>
 <p><span class="version">Since: </span>
  5.0
@@ -3356,31 +3429,6 @@ will be invoked after the <a href="#MediaControllerPlaybackInfoChangeCallback::o
           <li class="param">
 <span class="name">metadata</span>:
  Current playback metadata.
-                </li>
-        </ul>
-</div>
-</dd>
-<dt class="method" id="MediaControllerPlaybackInfoChangeCallback::onplaylistinfochanged">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback::onplaylistinfochanged"></a><code><b><span class="methodName">onplaylistinfochanged</span></b></code>
-</dt>
-<dd>
-<div class="brief">
- Called when playback's playlist or index changed.
-            </div>
-<div class="synopsis"><pre class="signature prettyprint">void onplaylistinfochanged(DOMString playlistName, DOMString index);</pre></div>
-<p><span class="version">Since: </span>
- 5.5
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">playlistName</span>:
- Name of current playlist.
-                </li>
-          <li class="param">
-<span class="name">index</span>:
- Index of current item.
                 </li>
         </ul>
 </div>
@@ -3762,7 +3810,9 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
   };
   [NoInterfaceObject] interface MediaControllerServer {
     readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
+    readonly attribute DOMString? iconURI;
     void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void updateIconURI(DOMString? iconURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackAgeRating(<a href="#MediaControllerContentAgeRating">MediaControllerContentAgeRating</a> rating) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackContentType(<a href="#MediaControllerContentType">MediaControllerContentType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -3791,6 +3841,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
     readonly attribute <a href="#MediaControllerServerState">MediaControllerServerState</a> state;
     readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    readonly attribute DOMString? iconURI raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
@@ -3876,7 +3927,6 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     void onshufflemodechanged(boolean mode);
     void onrepeatstatechanged(<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state);
     void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);
-    void onplaylistinfochanged(DOMString playlistName, DOMString index);
   };
   [Callback, NoInterfaceObject] interface MediaControllerChangeRequestPlaybackInfoCallback {
     void onplaybackstaterequest(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, <a href="application.html#ApplicationId">ApplicationId</a> clientName);

@@ -29,12 +29,12 @@ The Web unit tests are generated in the `webUnitTest` folder.
 
 To edit a unit test:
 
-1. Add a test case using the `test()` function: `
+1. Add a test case using the `test()` function:
    ```
    test(name, test2);
    ```
-   The function takes the following parameters:`
-   - name`: Title of the test as a string, used to display the test results
+   The function takes the following parameters:
+   - `name`: Title of the test as a string, used to display the test results
    - `test2`: Function containing the actual testing code that is written with 1 or more assertions to test
 
 2. Edit the `test2` parameter using assertions.

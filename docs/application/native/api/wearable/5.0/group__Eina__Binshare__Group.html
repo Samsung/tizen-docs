@@ -135,7 +135,7 @@ Defines</h2></td></tr>
 <p>This macro retrieves an instance of <code>obj</code>. If <code>obj</code> is <code>NULL</code>, then <code>NULL</code> is returned. If <code>obj</code> is already stored, it is just returned and its reference counter is increased. Otherwise it is added to the blobs to be searched and a duplicated blob of <code>obj</code> is returned. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">ptr</td><td>The binary blob to retrieve an instance of </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>The binary blob to retrieve an instance of </td></tr>
   </table>
   </dd>
 </dl>
@@ -182,7 +182,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the object on success, otherwise <code>NULL</code> on failure</dd></dl>
 <p>This function retrieves an instance of <code>obj</code>. If <code>obj</code> is <code>NULL</code>, then <code>NULL</code> is returned. If <code>obj</code> is already stored, it is just returned and its reference counter is increased. Otherwise it is added to the objects to be searched and a duplicated object of <code>obj</code> is returned.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function does not check the object size, but uses the exact given size. This can be used to share a part of a larger object or subobject.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binshare__Group.html#ga1472e150f4fbaa3f05e5c583b1698b40" title="Retrieves an instance of a blob for use in a program.">eina_binshare_add()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Binshare__Group.html#ga1472e150f4fbaa3f05e5c583b1698b40" title="Retrieves an instance of a blob for use in a program.">eina_binshare_add()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -210,7 +210,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function decreases the reference counter associated to <code>obj</code> if it exists. If that counter reaches <code>0</code>, the memory associated to <code>obj</code> is freed. If <code>obj</code> is <code>NULL</code>, the function returns immediately.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>If the given pointer is not shared, bad things happen, mostly a segmentation fault.</dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>If the given pointer is not shared, bad things happen, mostly a segmentation fault. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -231,7 +231,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Dumps the contents of share_common. </p>
-<p>This function dumps all the objects from share_common to stdout with a DDD: prefix per line and a memory usage summary.</p>
+<p>This function dumps all the objects from share_common to stdout with a DDD: prefix per line and a memory usage summary. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -261,7 +261,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The length of the shared object</dd></dl>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>If the given pointer is not shared, bad things happen, mostly a segmentation fault. If in doubt, try strlen().</dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>If the given pointer is not shared, bad things happen, mostly a segmentation fault. If in doubt, try strlen(). </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -291,7 +291,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the object on success, otherwise <code>NULL</code> on failure</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This is similar to eina_share_common_add(), but it's faster since it avoids lookups if possible, but on the down side it requires the parameter to be shared before, in other words, it must be the return of a previous <a class="el" href="group__Eina__Binshare__Group.html#ga1472e150f4fbaa3f05e5c583b1698b40" title="Retrieves an instance of a blob for use in a program.">eina_binshare_add()</a>.</dd>
 <dd>
-There is no unref since this is the work of <a class="el" href="group__Eina__Binshare__Group.html#ga9d27dea908363feae9b580abacf52383" title="Notes that the given object has lost an instance.">eina_binshare_del()</a>.</dd></dl>
+There is no unref since this is the work of <a class="el" href="group__Eina__Binshare__Group.html#ga9d27dea908363feae9b580abacf52383" title="Notes that the given object has lost an instance.">eina_binshare_del()</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>

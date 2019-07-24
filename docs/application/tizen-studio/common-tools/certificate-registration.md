@@ -59,13 +59,13 @@ You can view, edit, and remove the certificate profiles you have created.
 
 To manage a certificate profile:
 
-- To see the details of an individual certificate within the selected certificate profile, click the info button ![info](./media/cert_reg_info.png).
+- To see the details of an individual certificate within the selected certificate profile, click the info button (![info](./media/cert_reg_info.png)).
 
   **Figure: Certificate information**
 
   ![Certificate information](./media/cert_reg_cert_info.png)
 
-- To change the author or distributor certificate of the selected certificate profile, click the pencil button ![Pencil](./media/cert_reg_pencil.png).
+- To change the author or distributor certificate of the selected certificate profile, click the pencil button (![Pencil](./media/cert_reg_pencil.png)).
 
   **Figure: Changing the certificate**
 
@@ -73,7 +73,7 @@ To manage a certificate profile:
 
 - To remove the selected certificate profile, click the trash button (![Trash](./media/cert_reg_trash.png)).
 
-- To set the selected certificate profile as active, click the check button ![Check](./media/cert_reg_check.png).
+- To set the selected certificate profile as active, click the check button (![Check](./media/cert_reg_check.png)).
 
   The active profile is used when you package your application.
 

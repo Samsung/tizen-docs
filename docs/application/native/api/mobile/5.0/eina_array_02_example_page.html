@@ -95,7 +95,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <span class="preprocessor">#include &lt;Eina.h&gt;</span>
 </pre></div></p>
-<p>This the callback we are going to use to decide which strings stay on the array and which will be removed. We use something simple, but this can be as complex as you like: <div class="fragment"><pre class="fragment">
+<p>This is the callback we are going to use to decide which strings stay on the array and which will be removed. We use something simple, but this can be as complex as you like: <div class="fragment"><pre class="fragment">
 <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> keep(<span class="keywordtype">void</span> *data, <span class="keywordtype">void</span> *gdata EINA_UNUSED)
 {
    <span class="keywordflow">if</span> (strlen((<span class="keyword">const</span> <span class="keywordtype">char</span>*)data) &lt;= 5)
@@ -128,12 +128,12 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    array = <a class="code" href="group__Eina__Array__Group.html#gad671e356ded4049ccff24cc46f6f6f43" title="Creates a new array.">eina_array_new</a>(10);
 
    <span class="keywordflow">for</span> (i = 0; i &lt; 20; i++)
-     <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data to an array.">eina_array_push</a>(array, strs[i]);
+     <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data item to an array.">eina_array_push</a>(array, strs[i]);
 </pre></div></p>
 <p>So we have added all our elements to the array, but it turns out that is not the elements we wanted, so let's empty the array and add the correct strings: <div class="fragment"><pre class="fragment">
-   <a class="code" href="group__Eina__Array__Group.html#gace3c240bf1eab8aee3897a69555abf94" title="Cleans an array.">eina_array_clean</a>(array);
+   <a class="code" href="group__Eina__Array__Group.html#gace3c240bf1eab8aee3897a69555abf94" title="Clears an array of its elements, without deallocating memory.">eina_array_clean</a>(array);
    <span class="keywordflow">for</span> (i = 0; i &lt; 20; i++)
-     <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data to an array.">eina_array_push</a>(array, strings[i]);
+     <a class="code" href="group__Eina__Array__Group.html#ga888077184f320f9324d90e11829f81f0" title="Appends a data item to an array.">eina_array_push</a>(array, strings[i]);
 </pre></div></p>
 <p>It seems we made a little mistake in one of our strings so we need to replace it, here is how: <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Eina__Array__Group.html#ga3a813776e908340a6663a6f9fdc70baa" title="Sets the data at a given position in an array.">eina_array_data_set</a>(array, 17, <span class="stringliteral">&quot;flattop&quot;</span>);
@@ -141,7 +141,7 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 <p>Now that there is a populated array we can remove elements from it easily: <div class="fragment"><pre class="fragment">
    <a class="code" href="group__Eina__Array__Group.html#gaef415c29b684cd8b11c3c7af14b98d0e" title="Rebuilds an array by specifying the data to keep.">eina_array_remove</a>(array, keep, NULL);
 </pre></div></p>
-<p>And check that the elements were actually removed: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Array__Group.html#ga810ed3618ca03f7d549a1bf2c33b2b6e" title="Definition for the macro to iterate over an array easily.">EINA_ARRAY_ITER_NEXT</a>(array, i, item, iterator)
+<p>And check that the elements were actually removed: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Array__Group.html#ga810ed3618ca03f7d549a1bf2c33b2b6e" title="Iterates through an array&#39;s elements.">EINA_ARRAY_ITER_NEXT</a>(array, i, item, iterator)
      printf(&quot;item <span class="preprocessor">#%u: %s\n&quot;, i, item);</span>
 </pre></div></p>
 <p>Since this time we didn't use strdup we don't need to free each string: <div class="fragment"><pre class="fragment">

@@ -16,7 +16,7 @@ To use a label component in your application:
    label = elm_label_add(parent);
    ```
 
-2. Set a text to the label with the `elm_object_text_set()` function. Label is based on [textblock](evas-objects.md#textblock-objects), which means you can use textblock markup in a label text.
+2. Set a text to the label with the `elm_object_text_set()` function. Label is based on [textblock](../evas-objects.md#textblock-objects), which means you can use textblock markup in a label text.
 
    ```
    elm_object_text_set(label, "This is a label.");

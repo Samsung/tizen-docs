@@ -4,7 +4,7 @@ This feature is supported in wearable applications only.
 
 The circle scroller component changes corresponding to the rotary events. It shows the whole scrollable area with a circular scroll bar.
 
-The circle scroller wraps the [scroller](container-scroller.md) component (`elm_scroller`) internally to draw a circular scroller to the edge of the circular screen. This means that you can use the `elm_scroller` callbacks and functions, excluding the `elm_scroller_policy_set()` and `elm_scroller_policy_get()` functions.
+The circle scroller wraps the [scroller](../container-scroller.md) component (`elm_scroller`) internally to draw a circular scroller to the edge of the circular screen. This means that you can use the `elm_scroller` callbacks and functions, excluding the `elm_scroller_policy_set()` and `elm_scroller_policy_get()` functions.
 
 For more information, see the [Efl Extension Circle Scroller](../../../../api/wearable/latest/group__CAPI__EFL__EXTENSION__CIRCLE__SCROLLER__MODULE.html) API.
 

@@ -48,7 +48,7 @@ You can set the following parameters about TTS:
 
 -   Credential
 
-    The credential is a key to verify the authorization for using the TTS engine. The necessity of the credential depends on the TTS engine. If the TTS engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class.
+    The credential is a key to verify the authorization for using the TTS engine. The necessity of the credential depends on the TTS engine. If the TTS engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Tts.TtsClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
 
 -   Private data
 
@@ -62,7 +62,7 @@ You can get the following information about TTS:
 -   [Get the current TTS state](#get). The state is also applied as a precondition for each method.
 -   Get the default voice.
     -   In TTS, the voice is defined as a combination of the language and the type, such as male or female.
-    -   You can request the synthesis of the text with a specific voice, using the parameters of the `AddText()` method of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class. However, if you do not set a specific voice, TTS synthesizes the text with the default voice.
+    -   You can request the synthesis of the text with a specific voice, using the parameters of the `AddText()` method of the [Tizen.Uix.Tts.TtsClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class. However, if you do not set a specific voice, TTS synthesizes the text with the default voice.
     -   The user can change the default voice in the device settings, by modifying the display language or the TTS default language status. If the display language is changed to a non-supported language, the TTS language is changed to UK English.
 -   Get a list of supported voices to check whether the language and voice type you want are supported.
 -   Get the error message when the error event handler is invoked.
@@ -72,7 +72,7 @@ You can get the following information about TTS:
 
 To enable your application to use the TTS functionality:
 
-1.  To use the methods and properties of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class, include it in your application:
+1.  To use the methods and properties of the [Tizen.Uix.Tts.TtsClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class, include it in your application:
 
     ```
     using Tizen.Uix.Tts.TtsClient;
@@ -126,7 +126,7 @@ TTS provides event handlers to get various information, such as state changes an
 
 You can only register event handlers when the TTS state is `Created`.
 
-Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class:
+Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class:
 
 -   State changed
 
@@ -281,7 +281,7 @@ Event handlers can be set for the following events of the [Tizen.Uix.Tts.TtsClie
 
 To obtain the current state, the supported voice list, and the current voice:
 
--   Retrieve the current TTS state by using the `CurrentState` property of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class.
+-   Retrieve the current TTS state by using the `CurrentState` property of the [Tizen.Uix.Tts.TtsClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
 
     The TTS state is changed by various TTS methods, and it is applied as a precondition for each method.
 
@@ -378,7 +378,7 @@ void GetMode(Mode* mode)
 
 To operate TTS:
 
-1.  After you create the TTS handle, connect the background TTS daemon with the `Prepare()` method of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class.
+1.  After you create the TTS handle, connect the background TTS daemon with the `Prepare()` method of the [Tizen.Uix.Tts.TtsClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
 
     The daemon synthesizes the text with the engine and plays the resulting sound data. The method is asynchronous and the TTS state changes to `Ready`.
 
@@ -422,7 +422,7 @@ To set and get TTS engine options:
 
 -   Set the credential.
 
-    The credential is a key to verify the authorization for using the TTS engine. The necessity of the credential depends on the engine. If the engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class:
+    The credential is a key to verify the authorization for using the TTS engine. The necessity of the credential depends on the engine. If the engine requests the credential, you can set it using the `SetCredential()` method of the [Tizen.Uix.Tts.TtsClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class:
 
     ```
     void SetCredential(string credential)
@@ -482,7 +482,7 @@ To set and get TTS engine options:
 
 To add text:
 
--   You can request the TTS library to read your own text using the `AddText()` method of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class. The TTS library manages added text using queues, so it is possible to add several texts simultaneously. Each obtained text receives an utterance ID, which is used for synthesizing and playing the sound data.
+-   You can request the TTS library to read your own text using the `AddText()` method of the [Tizen.Uix.Tts.TtsClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class. The TTS library manages added text using queues, so it is possible to add several texts simultaneously. Each obtained text receives an utterance ID, which is used for synthesizing and playing the sound data.
 
     > **Note**   
 	> If the added text is too long, some engines need a long time for synthesis. It is recommended to only use proper length text clips.
@@ -531,7 +531,7 @@ To add text:
 
 To start, pause, and stop the playback:
 
--   To start synthesizing the text added in the queue and play the resulting sound data in sequence, use the `Play()` method of the [Tizen.Uix.Tts.TtsClient](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.Tts.TtsClient.html) class.
+-   To start synthesizing the text added in the queue and play the resulting sound data in sequence, use the `Play()` method of the [Tizen.Uix.Tts.TtsClient](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Tts.TtsClient.html) class.
 
     The TTS state is changed to `Playing`, and the playback continues until you call the `Stop()` or the `Pause()` method.
 

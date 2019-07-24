@@ -94,7 +94,7 @@ The following tables list the styles for each UI component, including the names 
 
 | Style     | Sample                                   | Text part                                | Notes                                    |
 |-----------|------------------------------------------|------------------------------------------|----------------------------------------|
-| `default` | ![default](./media/entry_default_wn.png) | `elm.guide`: for the guide text. `elm.text`: for the main text. | The guide text is automatically erased when the main text is entered. |
+| `default` | ![default](./media/entry_default_wn.png) | `elm.guide`: for the guide text.<br>`elm.text`: for the main text. | The guide text is automatically erased when the main text is entered. |
 
 **Table: Genlist styles**
 
@@ -110,7 +110,7 @@ The following tables list the styles for each UI component, including the names 
 | `2text`               | ![2text](./media/genlist_2text_o_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. |                   -                       |
 | `2text.1icon`         | ![2text.1icon.1](./media/genlist_2text1icon_o_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. | `elm.icon`                               |
 | `2text.1icon.1`       | ![2text.1icon.1](./media/genlist_2text1icon1_o_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. | `elm.icon`                               |
-| `2text.1icon.divider` | ![1text.1icon.divider](./media/genlist_2text1icondivider_o_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. | `elm.icon`: for the icon.<br> `elm.divider`: for the icon divider. |
+| `2text.1icon.divider` | ![2text.1icon.divider](./media/genlist_2text1icondivider_o_wn.png) | `elm.text`: for the main text.<br> `elm.text.1`: for the sub text. | `elm.icon`: for the icon.<br> `elm.divider`: for the icon divider. |
 | `editfield`           | ![editfield](./media/genlist_edit_o_wn.png) | `elm.text`                               |                   -                       |
 | `multiline`           | ![multiline](./media/genlist_multiline_o_wn.png) | `elm.text`                               |        -                                  |
 

@@ -39,31 +39,7 @@ The circle spinner component is created with the `default` style.
 
 ## Configuring the Circle Spinner
 
-The circle spinner shows the `elm_spinner` value through a marker, which indicates the value in the round. It has internal minimum and maximum spinner values, and it calculates the minimum and maximum angles to draw the marker. The current value of the circle spinner is calculated internally as well.
-
 To handle the circle spinner value, use the `elm_spinner` functions. They are automatically synchronized with the user values. You can also use the `elm_spinner` callback functions.
-
-To customize the angle offset of the marker to not to follow the internally-calculated system value:
-
-1. Set the custom circle spinner angle value using the `eext_circle_object_spinner_angle_set()` function.
-
-   In the following example, the circle spinner angle value is set to 2.0:
-
-   ```
-   eext_circle_object_spinner_angle_set(circle_spinner, 2.0);
-   ```
-
-2. After the `eext_circle_object_spinner_angle_set()` function has been executed, the calculation formula for the angle offset is changed:
-
-   ```
-   /* Formula for calculating the default angle offset */
-   (360/ max - min) * step
-
-   /* Formula for calculating the angle offset with the new angle value */
-   (360/ max - min) * step * 2.0
-   ```
-
-You can also use the above function to define the angle offset per each rotary callback.
 
 ## Activating a Rotary Event
 
@@ -79,19 +55,11 @@ If the second parameter is `EINA_TRUE`, the circle spinner can receive rotary ev
 
 To configure the circle properties of the circle spinner:
 
-- You can modify the circle object within the circle spinner component using the various functions, such as:
+- You can disable the circle object within the circle spinner component using the following functions:
 
-  - `eext_circle_object_value_min_max_set()`
-  - `eext_circle_object_value_min_max_get()`
-  - `eext_circle_object_value_set()`
-  - `eext_circle_object_value_get()`
-
-- You can modify the circle spinner `default` item, which draws the marker.
-
-  To change the item properties, use the `eext_circle_object_item_XXX()` functions.
-
-For more information, see [Circle Object](component-circle-object.md) and the [Efl Extension Circle Object](../../../../api/wearable/latest/group__CAPI__EFL__EXTENSION__CIRCLE__OBJECT__MODULE.html) API.
+  - `eext_circle_object_disabled_set()`
+  - `eext_circle_object_disabled_get()`
 
 ## Related Information
 - Dependencies
-  - Tizen 2.3.1 and Higher for Wearable
+  - Tizen 4.0 and Higher for Wearable

@@ -1,6 +1,6 @@
 # Creating Certificates
 
-This document explains how to create the necessary ceriticates or import existing ones to install the Tizen application on a Samsung Tizen wearable device.
+This document explains how to create the necessary certificates or import existing ones to install the Tizen application on a Samsung Tizen wearable device.
 
 ## Creating Certificate Profile
 
@@ -61,7 +61,7 @@ It is used to create an author signature, which ensures the integrity of the app
 
     For more information, see [Accessory SDK](https://developer.samsung.com/galaxy/accessory). In case of selecting a Samsung author certificate, you can just renew the certificate with the same information. This renewed certificate will be the same as your original RSA key so upgrading your application is guaranteed.
 
-2. <a name="information_of_the_author_certicate"></a>Information of the author certicate
+2. <a name="information_of_the_author_certificate"></a>Information of the author certificate
 
     Enter the author name and password. It is recommended to set a strong password. If you want to use the same password for the distributor certificate in the next step, select the check box as shown in the following figure:
 
@@ -100,7 +100,7 @@ The next step is creating distributor certificate.
 
     ![Distributor certificate](media/certification_guide13.png)
 
-2. Information of the distributor certicate
+2. Information of the distributor certificate
 
     Select the **Privilege** level for the distributor certificate. The application must have a distributor certificate with appropriate privilege level to ensure that the implemented APIs work in the device.
 
@@ -115,9 +115,9 @@ The next step is creating distributor certificate.
     > - **Public** - No limitation. The privileges can be used by all Tizen application developers.
     > - **Partner** - No limitation to request and get the distributor certificate with this level. But when the application is uploaded to the store, store re-signs the application with official partner level distributor certificate, only for the registered partner developer at Samsung.
 
-    - If you have selected an option to apply same password to the author certificate and to the distributor certificate [while entering author certificate information](#information_of_the_author_certicate), the password is already saved. If you want to change the password, type the new password for the distributor certificate.
+    - If you have selected an option to apply same password to the author certificate and to the distributor certificate [while entering author certificate information](#information_of_the_author_certificate), the password is already saved. If you want to change the password, type the new password for the distributor certificate.
 
-    - After the device is connected to the Host PC, the DUID is automatically added to the list. If you want to add more devices, connect your device to your Host PC via USB or WiFi. The previous DUIDs in the list are not deleted even if you disconnect the device. To delete the DUIDs, click the trash icon. For more information, see [How to connect the device to PC via WiFi](../test/testing-your-app-on-gear.md).
+    - After the device is connected to the Host PC, the DUID is automatically added to the list. If you want to add more devices, connect your device to your Host PC via USB or WiFi. The previous DUIDs in the list are not deleted even if you disconnect the device. To delete the DUIDs, click the trash icon. For more information, see [How to connect the device to PC via WiFi](../testing-your-app-on-gear.md).
 
     - When you need to register devices that are more than 10, upload a txt file using **Import a DUID list file** menu. 1 DUID on a line and max 50 DUIDs are be available.
 

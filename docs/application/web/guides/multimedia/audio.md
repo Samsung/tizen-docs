@@ -40,7 +40,9 @@ Managing volume levels and sound modes is a basic multimedia management skill:
    var vol = tizen.sound.getVolume('RINGTONE');
    ```
 
-2. Set a new volume level using the `setVolume()` method.The following example increases the ringtone volume by 10% of the maximum volume level:
+2. Set a new volume level using the `setVolume()` method.
+
+   The following example increases the ringtone volume by 10% of the maximum volume level:
 
    ```
    tizen.sound.setVolume('RINGTONE', vol + 0.1);

@@ -147,7 +147,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>A callback used by an <a class="el" href="group__Ecore__FD__Handler__Group.html#ga225121ed2123da4b52b76aa08d78c220">Ecore_Fd_Handler</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_gnutls_example_8c-example.html#a7">ecore_fd_handler_gnutls_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_gnutls_example_8c-example.html#a8">ecore_fd_handler_gnutls_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -255,7 +255,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if any of the given flags are active, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if any of the given flags are active, <code>EINA_FALSE</code> otherwise. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_example_8c-example.html#a1">ecore_fd_handler_example.c</a>.</dd>
 </dl>
@@ -290,12 +290,12 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">fd_handler</td><td>The given FD handler. </td></tr>
-    <tr><td class="paramname">flags</td><td>The flags to be watching.</td></tr>
+    <tr><td class="paramname">flags</td><td>The flags to be watching. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_gnutls_example_8c-example.html#a0">ecore_fd_handler_gnutls_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_gnutls_example_8c-example.html#a1">ecore_fd_handler_gnutls_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -366,9 +366,9 @@ Typedefs</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><em>buf_func</em> is meant for <b>internal</b> use only and should be <b>avoided</b>.</dd></dl>
 <p>The return value of <em>buf_func</em> has a different meaning, when it returns ECORE_CALLBACK_CANCEL, it indicates that <em>func</em> <b>shouldn't</b> be called, and when it returns ECORE_CALLBACK_RENEW it indicates <em>func</em> should be called. The return value of <em>buf_func</em> will not cause the FD handler to be deleted.</p>
 <p><em>buf_func</em> is called during event loop handling to check if data that has been read from the file descriptor is in a buffer and is available to read. Some systems, notably xlib, handle their own buffering, and would otherwise not work with select(). These systems should use a <em>buf_func</em>. This is a most annoying hack, only ecore_x uses it, so refer to that for an example.</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>This function should <b>not</b> be used for monitoring "normal" files, like text files.</dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This function should <b>not</b> be used for monitoring "normal" files, like text files. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_basics_example_8c-example.html#a18">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_exe_example_child_8c-example.html#a5">ecore_exe_example_child.c</a>, <a class="el" href="ecore_fd_handler_example_8c-example.html#a8">ecore_fd_handler_example.c</a>, and <a class="el" href="ecore_fd_handler_gnutls_example_8c-example.html#a6">ecore_fd_handler_gnutls_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_evas_basics_example_8c-example.html#a23">ecore_evas_basics_example.c</a>, <a class="el" href="ecore_exe_example_child_8c-example.html#a5">ecore_exe_example_child.c</a>, <a class="el" href="ecore_fd_handler_example_8c-example.html#a8">ecore_fd_handler_example.c</a>, and <a class="el" href="ecore_fd_handler_gnutls_example_8c-example.html#a7">ecore_fd_handler_gnutls_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -395,7 +395,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer set using <a class="el" href="group__Ecore__FD__Handler__Group.html#ga832e68eb7f15912abeadef816bb5d2f5">ecore_main_fd_handler_add</a>, for <em>fd_handler</em> on success, <code>NULL</code> otherwise. This function marks an fd handler to be deleted during an iteration of the main loop. It does NOT close the associated fd!</dd></dl>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>If the underlying fd is already closed ecore may complain if the main loop is using epoll internally, and also in some rare cases this may cause crashes and instability. Remember to delete your fd handlers before the fds they listen to are closed.</dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>If the underlying fd is already closed ecore may complain if the main loop is using epoll internally, and also in some rare cases this may cause crashes and instability. Remember to delete your fd handlers before the fds they listen to are closed. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_example_8c-example.html#a13">ecore_fd_handler_example.c</a>.</dd>
 </dl>
@@ -423,7 +423,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The file descriptor the handler is watching.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The file descriptor the handler is watching. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_example_8c-example.html#a5">ecore_fd_handler_example.c</a>.</dd>
 </dl>
@@ -495,7 +495,7 @@ Typedefs</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This function should ONLY be called with ECORE_FD_ERROR, otherwise it will call the fd handler constantly. </dd>
 <dd>
 Do not use this function unless you know what you are doing.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -543,7 +543,7 @@ Do not use this function unless you know what you are doing.</dd></dl>
 <p>This function will be called prior to any fd handler's callback function (even the other fd handlers), before entering the main loop select function.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Once a prepare callback is set for a fd handler, it cannot be changed. You need to delete the fd handler and create a new one, to set another callback. </dd>
 <dd>
-You probably don't need this function. It is only necessary for very uncommon cases that need special behavior.</dd></dl>
+You probably don't need this function. It is only necessary for very uncommon cases that need special behavior. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_example_8c-example.html#a10">ecore_fd_handler_example.c</a>.</dd>
 </dl>

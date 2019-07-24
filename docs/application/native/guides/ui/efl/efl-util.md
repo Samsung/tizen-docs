@@ -10,9 +10,9 @@ You can take advantage of various EFL utilities in your application:
 
   You can [capture screenshots](#taking-screenshots) and store the screenshot data as a TBM surface, using the EFL UTIL SCREENSHOT API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__SCREENSHOT__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__SCREENSHOT__MODULE.html) applications).
 
-- Using the input generator
+- Using input generator
 
-  You can generate input events using the EFL UTIL INPUT API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__INPUT__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__INPUT__MODULE.html) applications). You can generate [key input events](#generating-key-input-events) that emulate various hardware key presses and [touch input events](#generating-touch-input-events) that emulate screen touches.
+  You can generate input events using the EFL UTIL INPUT API (for [mobile](../../../api/mobile/latest/group__CAPI__EFL__UTIL__INPUT__MODULE.html) and [wearable](../../../api/wearable/latest/group__CAPI__EFL__UTIL__INPUT__MODULE.html) applications). You can generate [key input events](#generating-key-input-events) that emulate various hardware key presses, [touch input events](#generating-touch-input-events) that emulate screen touches, and [point input events](#generating-point-input-events) that emulate mouse moves or clicks.
 
 - Handling global gestures
 
@@ -189,8 +189,8 @@ To create notification windows and access the current notification level of an e
       if (error== EFL_UTIL_ERROR_NONE) {
           switch (notification_level) {
           case EFL_UTIL_NOTIFICATION_LEVEL_DEFAULT:
-               /* Do something for default level */
-               break;
+              /* Do something for default level */
+              break;
           case EFL_UTIL_NOTIFICATION_LEVEL_MEDIUM:
               /* Do something for medium level */
               break;
@@ -245,9 +245,9 @@ To take a screenshot:
 
 ## Generating Key Input Events
 
-To generate key input events:
+To generate key input events, follow these steps:
 
-1. Create the `efl_util_inputgen_h` structure and initialize the structure members with the `efl_util_input_initialize_generator()`, `efl_util_input_initialize_generator_with_name()`, or `efl_util_input_initialize_generator_with_sync()` function:
+1. Create the `efl_util_inputgen_h` structure and initialize the structure members with `efl_util_input_initialize_generator()`, `efl_util_input_initialize_generator_with_name()`, or `efl_util_input_initialize_generator_with_sync()`:
 
    ```
    void
@@ -262,7 +262,7 @@ To generate key input events:
           Since Tizen 4.0, you can create an input device with a given name (in this example, "Local Device"):
           inputgen = efl_util_input_initialize_generator_with_name(EFL_UTIL_INPUT_DEVTYPE_KEYBOARD, "Local_Device");
 
-          From Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
+          Since Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
           inputgen = efl_util_input_initialize_generator_with_sync(EFL_UTIL_INPUT_DEVTYPE_KEYBOARD, NULL);
        */
        if (!inputgen) {
@@ -272,7 +272,7 @@ To generate key input events:
        }
    ```
 
-2. After setting the input device type, call the `efl_util_input_generate_key()` function to generate key input events:
+2. After setting the input device type, to generate key input events call `efl_util_input_generate_key()`:
 
    ```
        ret = efl_util_input_generate_key(inputgen, "XF86Menu", 1);
@@ -296,7 +296,7 @@ To generate key input events:
        }
    ```
 
-3. When no longer needed, free the `efl_util_inputgen_h` structure with the `efl_util_input_deinitialize_generator()` function:
+3. When no longer needed, free the `efl_util_inputgen_h` structure with `efl_util_input_deinitialize_generator()`:
 
    ```
        ret = efl_util_input_deinitialize_generator(inputgen);
@@ -307,9 +307,9 @@ To generate key input events:
 
 ## Generating Touch Input Events
 
-To generate touch input events:
+To generate touch input events, follow these steps:
 
-1. Create the `efl_util_inputgen_h` structure and initialize the structure members with the `efl_util_input_initialize_generator()`, `efl_util_input_initialize_generator_with_name()`, or `efl_util_input_initialize_generator_with_sync()` function:
+1. Create the `efl_util_inputgen_h` structure and initialize the structure members with `efl_util_input_initialize_generator()`, `efl_util_input_initialize_generator_with_name()`, or `efl_util_input_initialize_generator_with_sync()`:
 
    ```
    void
@@ -324,7 +324,7 @@ To generate touch input events:
           Since Tizen 4.0, you can create an input device with a given name (in this example, "Local Device"):
           inputgen = efl_util_input_initialize_generator_with_name(EFL_UTIL_INPUT_DEVTYPE_TOUCHSCREEN, "Local_Device");
 
-          From Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
+          Since Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
           inputgen = efl_util_input_initialize_generator_with_sync(EFL_UTIL_INPUT_DEVTYPE_TOUCHSCREEN, NULL);
        */
        if (!inputgen) {
@@ -334,10 +334,14 @@ To generate touch input events:
        }
    ```
 
-2. After setting the input device type, call the `efl_util_input_generate_touch()` function to generate touch input events:
+2. After setting the input device type, to generate touch input events call `efl_util_input_generate_touch()` or `efl_util_input_generate_touch_axis()`:
 
    ```
        ret = efl_util_input_generate_touch(inputgen, 0, EFL_UTIL_INPUT_TOUCH_BEGIN, 100, 100);
+       /*
+          Since Tizen 5.5, you can generate touch events with touch axis information:
+          ret = efl_util_input_generate_touch_axis(inputgen, 0, EFL_UTIL_INPUT_TOUCH_BEGIN, 100, 100, 5.0, 5.0, 1.0, 0.0, 1.0);
+       */
        if (ret != EFL_UTIL_ERROR_NONE) {
            /* Failed to generate a first finger touch press event on (100, 100) */
            ret = efl_util_input_deinitialize_generator(inputgen);
@@ -347,6 +351,10 @@ To generate touch input events:
            return;
        }
        ret = efl_util_input_generate_touch(inputgen, 0, EFL_UTIL_INPUT_TOUCH_UPDATE, 110, 110);
+       /*
+          Since Tizen 5.5, you can generate touch events with touch axis information:
+          ret = efl_util_input_generate_touch_axis(inputgen, 0, EFL_UTIL_INPUT_TOUCH_UPDATE, 110, 110, 6.0, 6.0, 2.0, 0.0, 1.0);
+       */
        if (ret != EFL_UTIL_ERROR_NONE) {
            /* Failed to generate a first finger touch move event to (110, 110) */
            ret = efl_util_input_deinitialize_generator(inputgen);
@@ -356,6 +364,10 @@ To generate touch input events:
            return;
        }
        ret = efl_util_input_generate_touch(inputgen, 0, EFL_UTIL_INPUT_TOUCH_END, 110, 110);
+       /*
+          Since Tizen 5.5, you can generate touch events with touch axis information:
+          ret = efl_util_input_generate_touch_axis(inputgen, 0, EFL_UTIL_INPUT_TOUCH_END, 110, 110, 0.0, 0.0, 0.0, 0.0, 0.0);
+       */
        if (ret != EFL_UTIL_ERROR_NONE) {
            /* Failed to generate a first finger touch release event on (110, 110) */
            ret = efl_util_input_deinitialize_generator(inputgen);
@@ -366,7 +378,98 @@ To generate touch input events:
        }
    ```
 
-3. When no longer needed, free the `efl_util_inputgen_h` structure with the `efl_util_input_deinitialize_generator()` function:
+3. When no longer needed, free the `efl_util_inputgen_h` structure with `efl_util_input_deinitialize_generator()`:
+
+   ```
+       ret = efl_util_input_deinitialize_generator(inputgen);
+       if (ret != EFL_UTIL_ERROR_NONE)
+           /* Failed to deinitialize the input generator system */
+   }
+   ```
+
+## Generating Point Input Events
+
+To generate point input events, follow these steps:
+
+1. Create the `efl_util_inputgen_h` structure and initialize the structure members with `efl_util_input_initialize_generator()`, `efl_util_input_initialize_generator_with_name()`, or `efl_util_input_initialize_generator_with_sync()`:
+
+   ```
+   void
+   point_event_generator()
+   {
+       int ret = EFL_UTIL_ERROR_NONE;
+       efl_util_inputgen_h inputgen = NULL;
+
+       /* Create an input device with the default name: "Input Generator" */
+       inputgen = efl_util_input_initialize_generator(EFL_UTIL_INPUT_DEVTYPE_POINTER);
+       /*
+          Since Tizen 4.0, you can create an input device with a given name (in this example, "Local Device"):
+          inputgen = efl_util_input_initialize_generator_with_name(EFL_UTIL_INPUT_DEVTYPE_TOUCHSCREEN, "Local_Device");
+
+          Since Tizen 5.0, you can create an input device synchronously with a given name (device_name can be NULL):
+          inputgen = efl_util_input_initialize_generator_with_sync(EFL_UTIL_INPUT_DEVTYPE_TOUCHSCREEN, NULL);
+       */
+       if (!inputgen) {
+           /* Failed to initialize the input generator system */
+
+           return;
+       }
+   ```
+
+2. After setting the input device type, to generate point input events call `efl_util_input_generate_pointer()`:
+
+   ```
+       ret = efl_util_input_generate_pointer(inputgen, 1, EFL_UTIL_INPUT_POINTER_MOVE, 100, 100);
+       if (ret != EFL_UTIL_ERROR_NONE) {
+           /* Failed to generate a pointer move event on (100, 100) (button is meaningless)*/
+           ret = efl_util_input_deinitialize_generator(inputgen);
+           if (ret != EFL_UTIL_ERROR_NONE)
+               /* Failed to deinitialize the input generator system */
+
+           return;
+       }
+       ret = efl_util_input_generate_pointer(inputgen, 1, EFL_UTIL_INPUT_POINTER_BUTTON_DOWN, 100, 100);
+       if (ret != EFL_UTIL_ERROR_NONE) {
+           /* Failed to generate a first button down event */
+           ret = efl_util_input_deinitialize_generator(inputgen);
+           if (ret != EFL_UTIL_ERROR_NONE)
+               /* Failed to deinitialize the input generator system */
+
+           return;
+       }
+       ret = efl_util_input_generate_pointer(inputgen, 1, EFL_UTIL_INPUT_POINTER_BUTTON_UP, 100, 100);
+       if (ret != EFL_UTIL_ERROR_NONE) {
+           /* Failed to generate a first button up event */
+           ret = efl_util_input_deinitialize_generator(inputgen);
+           if (ret != EFL_UTIL_ERROR_NONE)
+               /* Failed to deinitialize the input generator system */
+
+           return;
+       }
+
+       /* Since Tizen 5.5, you can generate wheel events: */
+       ret = efl_util_input_generate_wheel(inputgen, EFL_UTIL_INPUT_POINTER_WHEEL_VERT, 1);
+       if (ret != EFL_UTIL_ERROR_NONE) {
+           /* Failed to generate a vertical wheel event */
+           ret = efl_util_input_deinitialize_generator(inputgen);
+           if (ret != EFL_UTIL_ERROR_NONE)
+               /* Failed to deinitialize the input generator system */
+
+           return;
+       }
+
+       ret = efl_util_input_generate_wheel(inputgen, EFL_UTIL_INPUT_POINTER_WHEEL_HORZ, -1);
+       if (ret != EFL_UTIL_ERROR_NONE) {
+           /* Failed to generate a horizontal wheel event */
+           ret = efl_util_input_deinitialize_generator(inputgen);
+           if (ret != EFL_UTIL_ERROR_NONE)
+               /* Failed to deinitialize the input generator system */
+
+           return;
+       }
+   ```
+
+3. When no longer needed, free the `efl_util_inputgen_h` structure with `efl_util_input_deinitialize_generator()`:
 
    ```
        ret = efl_util_input_deinitialize_generator(inputgen);

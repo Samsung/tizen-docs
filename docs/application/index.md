@@ -1,27 +1,141 @@
-<a name="training"></a>
 # Tizen Applications
 
+<style>
+#main:before, #main:after {
+    content: "";
+    display: table;
+}
+
+.docs-ui-started [class^="docs-ui-"] {
+    width: 33%; 
+    height: auto;
+    padding: 40px 0;
+    text-align: center;
+    border: 0 none;
+    border-top: 1px solid #dadada;
+    border-bottom: 1px solid #dadada;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin: 0 auto 20px;
+}
+
+.docs-ui-started [class^="docs-ui-"]>span {
+    display: block;
+    color: #333;
+    line-height: 29px;
+    font-weight: bold;
+    position: relative;
+}
+
+@media (max-width: 768px)
+.docs-ui-started .docs-ui-wearable:before, .docs-ui-started .docs-ui-tv:before, .docs-ui-started .docs-ui-mobile:before {
+    height: 85px;
+    margin: 0 auto 25px;
+    align: center;
+    background-position: 0 6px;
+}
+.docs-ui-started .docs-ui-wearable:before {
+    content: "";
+    display: block;
+    margin: auto;
+    position: relative;
+    width: 60px;
+    height: 90px;
+    background: url(./media/icon_get_started_wearable.png) no-repeat center top;
+    background-position: 0 0 !important;
+}
+.docs-ui-started .docs-ui-wearable {
+    width: 33%;
+    padding-left: 50;
+    /* border-right: 1px solid #d1d1d1; */
+}
+
+.docs-ui-started .docs-ui-tv:before {
+    content: "";
+    margin: auto;
+    position: relative;
+    display: block;
+    width: 93px;
+    height: 90px;
+    background: url(./media/icon_get_started_tv.png) no-repeat center top;
+    background-position: 0 0 !important;
+}
+.docs-ui-started .docs-ui-tv {
+    width: 33%;
+    padding-left: 50;
+}
+
+.docs-ui-started .docs-ui-mobile:before {
+    content: "";
+    margin: auto;
+    position: relative;
+    display: block;
+    width: 53px;
+    height: 90px;
+    background: url(./media/icon_get_started_mobile.png) no-repeat center top;
+    background-position: 0 0 !important;
+}
+.docs-ui-started.docs-ui-mobile {
+    width: 33%;
+    padding-left: 50px;
+}
+
+div {
+    display: block;
+}
+
+a.docs-btn-more {
+    display: inline-block;
+    font-size: 14px;
+    color: #008aee;
+}
+</style>
+
+<section id ="main">
 Tizen is a user-interactive and service-oriented open source project that allows you to create feature-rich applications for multiple device categories.
 
-Tizen is designed to be equally friendly to embedded systems developers and Web developers alike, and its flexible nature encourages its use on an array of devices, including TVs, smart phones, watches, tablets, in-vehicle infotainment systems, and smart appliances. Tizen provides a Native API that provides the benefits of building software for embedded systems in C; it also provides a Web API that allows you to create simple programs using only HTML5, CSS, and JavaScript.
-
 To get started with the development of your own Tizen applications:
+<div class="docs-ui-started">
+  <div class="docs-ui-wearable">
+    <span>
+    <a href="get-started/wearable.md" class="docs-btn-more">Get Started for Wearable</a>
+    </span>
+  </div>
 
--   [Create your first Tizen .NET application](dotnet/getting-started/first-app.md), and learn about the main features available for implementing your dream application.
+  <div class="docs-ui-tv">
+    <span>
+     <a href="get-started/tv.md" class="docs-btn-more">Get Started for TV</a>
+    </span>
+  </div>
 
--   [Create your first simple native application](native/getting-started/mobile/first-app.md), and learn about the main features available for implementing your dream application.
--   [Create your first simple Web application](web/getting-started/mobile/first-app.md), and learn about the main features available for implementing your dream application.
+  <div class="docs-ui-mobile">
+    <span>
+    <a href="get-started/mobile.md" class="docs-btn-more">Get Started for Mobile</a>
+    </span>
+  </div>
 
-The Visual Studio Tools for Tizen is a collection of tools for developing Tizen .NET application.
+</div>
+</section>
 
-<a href="https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen" target="_blank">
-<img src="media/ic_docs_download.png"><Strong> Download Visual Studio Tools for Tizen</strong></a>
+<a name="profiles"></a>
+## Tizen Profiles
 
-You can develop, build, debug, profile, and emulate Tizen Native and Web applications.
+Tizen is built to work on a wide variety of platforms with a focus on embedded devices. In order to accommodate the various types of devices, a set of profiles has been defined to make it easier to develop applications for specific purposes and device types. Since Tizen 3.0, there are 3 profile types you can choose from: mobile, wearable, and TV. The mobile profile is designed for smart phones, the wearable profile is designed for smart watches, and the TV profile is designed for smart TVs.
 
-<a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank">
-<img src="media/ic_docs_download.png"><strong> Download Tizen Studio</strong></a>
+Both mobile and wearable profiles are supported in native and Web application types. The TV profile is supported in the Web application type only.
 
+**Figure: Applications using the mobile profile**
+
+![Applications using the mobile profile](media/profile_mobile.png)
+
+**Figure: Applications using the wearable profile**
+
+![Applications using the wearable profile](media/profile_wearable.png)
+
+**Figure: Applications using the TV profile**
+
+![Applications using the TV profile](media/profile_tv.png)
 
 <a name="type"></a>
 ## Tizen Application Types
@@ -50,27 +164,10 @@ The following figure illustrates the Tizen architecture model supporting the 3 a
 
 The Tizen platform also allows you to develop a hybrid application package where native and Web applications are packaged together to make more powerful applications. The Tizen platform ensures that all Tizen applications have consistent look and feel, regardless of whether you use the native or Web framework to create them.
 
-<a name="profiles"></a>
-## Tizen Profiles
-
-Tizen is built to work on a wide variety of platforms with a focus on embedded devices. In order to accommodate the various types of devices, a set of profiles has been defined to make it easier to develop applications for specific purposes and device types. Since Tizen 3.0, there are 3 profile types you can choose from: mobile, wearable, and TV. The mobile profile is designed for smart phones, the wearable profile is designed for smart watches, and the TV profile is designed for smart TVs.
-
-Both mobile and wearable profiles are supported in native and Web application types. The TV profile is supported in the Web application type only.
-
-**Figure: Applications using the mobile profile**
-
-![Applications using the mobile profile](media/profile_mobile.png)
-
-**Figure: Applications using the wearable profile**
-
-![Applications using the wearable profile](media/profile_wearable.png)
-
-**Figure: Applications using the TV profile**
-
-![Applications using the TV profile](media/profile_tv.png)
 
 
-To become familiar with some terms that you encounter throughout this site, see [Glossary](../glossary.md).  
+To become familiar with some terms that you encounter throughout this site, see [Glossary](../glossary.md).
+
 To see the trademark notice list, see [Trademarks](../trademarks.md).
 
 **See the following links for more information:**

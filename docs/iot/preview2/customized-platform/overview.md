@@ -77,7 +77,7 @@ To create applications on the customized platform:
 
     1.  Download: To download the customized Tizen image created by you.
     2.  SDK: To download the extension SDK for the customized Tizen image created by you.
-    3.  KS (kickstart): To download the kickstart script file, which is used to create the Tizen image. For more information on kickstart script, see [Creating Tizen Images with MIC](../../../open-source-project/reference/mic/mic-reference.md).
+    3.  KS (kickstart): To download the kickstart script file, which is used to create the Tizen image. For more information on kickstart script, see [Creating Tizen Images with MIC](../../../platform/reference/mic/mic-reference.md).
     4.  Packages: A list of available packages for the customized platform.
     5.  Log : The log file generated, when the image was getting created.
 

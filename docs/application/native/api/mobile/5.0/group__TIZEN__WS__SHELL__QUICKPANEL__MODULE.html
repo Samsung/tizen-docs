@@ -431,7 +431,7 @@ _tzsh_quickpanel_event_info_s *&#160;</td><td class="memItemRight" valign="botto
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>You have to create a <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gab6b123c75a72c8618e0bd3330256cb07" title="Handle for the Tizen shell.">tzsh_h</a> instance using <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gab779ceb5badc27f7f7028cc0356644e4" title="Creates a tzsh_h instance.">tzsh_create()</a> before calling this API. You can get the <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gade8e0e2d1b162c7a3ecd8cf14e7c9589" title="The window handle for native window.">tzsh_window</a> instance using the toolkit API such as elm_win_window_id_get(). </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>You have to create a <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gab6b123c75a72c8618e0bd3330256cb07" title="Handle for the Tizen shell.">tzsh_h</a> instance using <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gab779ceb5badc27f7f7028cc0356644e4" title="Creates a tzsh_h instance.">tzsh_create()</a> before calling this API. You can get the <a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gade8e0e2d1b162c7a3ecd8cf14e7c9589" title="The window handle for native window.">tzsh_window</a> instance using the toolkit API such as <a class="el" href="group__Elm__Win.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__TIZEN__WS__SHELL__MODULE.html#gab779ceb5badc27f7f7028cc0356644e4" title="Creates a tzsh_h instance.">tzsh_create()</a> </dd>
 <dd>
 <a class="el" href="group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#ga82654ec9f897f43c4f7368a28ea6dc53" title="Destroys the given tzsh_quickpanel_h object.">tzsh_quickpanel_destroy()</a> </dd></dl>
@@ -454,7 +454,7 @@ _tzsh_quickpanel_event_info_s *&#160;</td><td class="memItemRight" valign="botto
       win = <a class="code" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;sample&quot;</span>, ELM_WIN_BASIC);
       ...
 
-      tz_win = elm_win_window_id_get(win);
+      tz_win = <a class="code" href="group__Elm__Win.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get</a>(win);
       ...
 
       qp = <a class="code" href="group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#ga12238134aae1e8fb58e586c928dd6f88" title="Creates a tzsh_quickpanel_h object which handles the quickpanel service.">tzsh_quickpanel_create</a>(tzsh, tz_win);
@@ -509,7 +509,7 @@ _tzsh_quickpanel_event_info_s *&#160;</td><td class="memItemRight" valign="botto
       win = <a class="code" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add</a>(NULL, <span class="stringliteral">&quot;sample&quot;</span>, ELM_WIN_BASIC);
       ...
 
-      tz_win = elm_win_window_id_get(win);
+      tz_win = <a class="code" href="group__Elm__Win.html#ga341a40c980e32076874ab5c4c42608e7" title="Gets the Ecore_Window of an Evas_Object.">elm_win_window_id_get</a>(win);
       ...
 
       qp = <a class="code" href="group__TIZEN__WS__SHELL__QUICKPANEL__MODULE.html#ga12238134aae1e8fb58e586c928dd6f88" title="Creates a tzsh_quickpanel_h object which handles the quickpanel service.">tzsh_quickpanel_create</a>(tzsh, tz_win);

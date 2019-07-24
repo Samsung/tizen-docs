@@ -933,6 +933,11 @@ Accumulative total step count: 100
 <p><span class="version">Since: </span>
  2.3
             </p>
+<div class="description">
+            <p>
+Calling this function has no effect if listener is not set.
+            </p>
+           </div>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -1057,6 +1062,9 @@ accuracy: MEDIUM
  3.0
             </p>
 <div class="description">
+            <p>
+Calling this function has no effect if there is no listener with given id.
+            </p>
             <p>
 The <em>ErrorCallback</em> method is launched with this error type:
             </p>
@@ -1446,7 +1454,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
                 </li>
           <li class="param">
 <span class="name">alwaysOn</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- The option of the monitored gesture mode. If it is set to <var>false</var> system may try to reduce power consumption, for example by stoping detecting gestures when display is turned off.<br>If it is set to <var>true</var> power-saving functionality is off. Default value is <var>false</var>.
+ The option of the monitored gesture mode. If it is set to <var>false</var> system may try to reduce power consumption, for example by stopping detecting gestures when display is turned off.<br>If it is set to <var>true</var> power-saving functionality is off. Default value is <var>false</var>.
                 </li>
         </ul>
 </div>
@@ -1514,6 +1522,11 @@ Received GESTURE_SHAKE_DETECTED event on Thu Sep 01 2016 14:33:56 GMT+0200 (CEST
 <p><span class="version">Since: </span>
  4.0
             </p>
+<div class="description">
+            <p>
+Calling this function has no effect if there is no listener with given id.
+            </p>
+           </div>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1773,6 +1786,11 @@ Stress level: Normal
 <p><span class="version">Since: </span>
  5.0
             </p>
+<div class="description">
+            <p>
+Calling this function has no effect if there is no listener with given id.
+            </p>
+           </div>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -2555,7 +2573,7 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
 <dt class="member" id="HumanActivityMonitorOption::sampleInterval"><span class="attrName">long sampleInterval</span></dt>
 <dd>
 <div class="brief">
- GPS infomation sampling interval in milliseconds (ms)<br>For the GPS type, <em>sampleInterval</em> should be greater than or equal to 1000ms. The maximum permissible value for <em>sampleInterval</em> is device specific. If <em>sampleInterval</em> is not specified or zero, it is set to the the default value of 1000ms.<br>For other activity types, <em>sampleInterval</em> will be ignored.
+ GPS information sampling interval in milliseconds (ms)<br>For the GPS type, <em>sampleInterval</em> should be greater than or equal to 1000ms. The maximum permissible value for <em>sampleInterval</em> is device specific. If <em>sampleInterval</em> is not specified or zero, it is set to the the default value of 1000ms.<br>For other activity types, <em>sampleInterval</em> will be ignored.
             </div>
 <p><span class="version">Since: </span>
  3.0

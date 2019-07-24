@@ -36,7 +36,7 @@ To enable your application to use the metadata functionality:
     </privileges>
     ```
 
-2. To use the methods and properties of the [Tizen.Multimedia.MetadataEditor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataEditor.html) and [Tizen.Multimedia.MetadataExtractor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataExtractor.html) classes, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) namespace in your application:
+2. To use the methods and properties of the [Tizen.Multimedia.MetadataEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MetadataEditor.html) and [Tizen.Multimedia.MetadataExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MetadataExtractor.html) classes, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
 
     ```
     using Tizen.Multimedia;
@@ -46,7 +46,7 @@ To enable your application to use the metadata functionality:
 ## Editing Metadata and Artwork
 To add and edit metadata in an audio file:
 
-1.  Create an instance of the [Tizen.Multimedia.MetadataEditor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataEditor.html) class with the path of the file to be edited. Make sure you have access to the file whose metadata and artwork you want to edit.
+1.  Create an instance of the [Tizen.Multimedia.MetadataEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MetadataEditor.html) class with the path of the file to be edited. Make sure you have access to the file whose metadata and artwork you want to edit.
 
     ```
     var metadataEditor = new MetadataEditor(mediaPath);
@@ -99,7 +99,7 @@ To add and edit metadata in an audio file:
 
 To retrieve metadata from a file:
 
-1.  Create an instance of the [Tizen.Multimedia.MetadataExtractor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataExtractor.html) class and pass the path of the file or buffer whose metadata you want to retrieve as a parameter:
+1.  Create an instance of the [Tizen.Multimedia.MetadataExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MetadataExtractor.html) class and pass the path of the file or buffer whose metadata you want to retrieve as a parameter:
     -   Create a `Tizen.Multimedia.MetadataExtractor` instance with a file path parameter:
 
         ```
@@ -114,7 +114,7 @@ To retrieve metadata from a file:
         ```
 
 2. Retrieve the metadata:
-    -   Retrieve the metadata from the file by using the `GetMetadata()` method of the `Tizen.Multimedia.MetadataExtractor` class, which returns a instance of the [Tizen.Multimedia.Metadata](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Metadata.html) class containing all the metadata of the file.
+    -   Retrieve the metadata from the file by using the `GetMetadata()` method of the `Tizen.Multimedia.MetadataExtractor` class, which returns a instance of the [Tizen.Multimedia.Metadata](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Metadata.html) class containing all the metadata of the file.
 
         The following example retrieves the artist and title of the media file:
 
@@ -128,7 +128,7 @@ To retrieve metadata from a file:
 
         You can retrieve other metadata in the same way.
 
-    - For an audio file, retrieve the artwork from the file using the `GetArtwork()` method, which returns a instance of the [Tizen.Multimedia.Artwork](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Artwork.html) class containing the encoded artwork image and the MIME type of the artwork:
+    - For an audio file, retrieve the artwork from the file using the `GetArtwork()` method, which returns a instance of the [Tizen.Multimedia.Artwork](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Artwork.html) class containing the encoded artwork image and the MIME type of the artwork:
 
         ```
         var artWork = metadataExtractor.GetArtwork();
@@ -165,7 +165,7 @@ To retrieve metadata from a file:
 <a name="mime_type"></a>
 ## Getting the MIME Type for a File Extension
 
-To retrieve the MIME type for a given file extension, use the `GetMimeType()` method of the [Tizen.Content.MimeType.MimeUtil](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MimeType.MimeUtil.html) class.
+To retrieve the MIME type for a given file extension, use the `GetMimeType()` method of the [Tizen.Content.MimeType.MimeUtil](https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MimeType.MimeUtil.html) class.
 
 If the given file extension is not associated with any specific file format, the MIME type is `application/octet-stream`.
 
@@ -176,7 +176,7 @@ string mimeType = MimeUtil.GetMimeType("png");
 <a name="mime_extension"></a>
 ## Getting File Extensions for a MIME Type
 
-To retrieve the file extensions for a given MIME type, use `GetFileExtension()` method of the [Tizen.Content.MimeType.MimeUtil](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Content.MimeType.MimeUtil.html) class:
+To retrieve the file extensions for a given MIME type, use `GetFileExtension()` method of the [Tizen.Content.MimeType.MimeUtil](https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MimeType.MimeUtil.html) class:
 
 ```
 /// Retrieve a list of file extensions for a given MIME type
@@ -200,7 +200,7 @@ The following table lists the metadata you can edit.
 | Title         | Title of the audio content         | `Title`                                  |
 | Album         | Album of the audio content         | `Album`                                  |
 | Genre         | Genre of the audio content         | `Genre`                                  |
-| Author        | Author of the audio content        | `Author`                                 |
+| Composer        | Composer of the audio content        | `Composer`                                 |
 | Copyright     | Copyright of the audio content     | `Copyright`                              |
 | Date          | Date of the audio content          | `Date`                                   |
 | Description   | Description of the audio content   | `Description`                            |
@@ -215,7 +215,7 @@ The following table lists the metadata you can edit.
 
 The following table lists the extractable metadata.
 
-The metadata is available with the properties and methods of the [Tizen.Multimedia.AudioMetadata](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioMetadata.html), [Tizen.Multimedia.Metadata](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.Metadata.html), [Tizen.Multimedia.MetadataExtractor](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MetadataExtractor.html), [Tizen.Multimedia.SyncLyrics](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.SyncLyrics.html), and [Tizen.Multimedia.VideoMetadata](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.VideoMetadata.html) classes.
+The metadata is available with the properties and methods of the [Tizen.Multimedia.AudioMetadata](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioMetadata.html), [Tizen.Multimedia.Metadata](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Metadata.html), [Tizen.Multimedia.MetadataExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MetadataExtractor.html), [Tizen.Multimedia.SyncLyrics](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.SyncLyrics.html), and [Tizen.Multimedia.VideoMetadata](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.VideoMetadata.html) classes.
 
 **Table: Metadata extractor attributes**
 
@@ -238,7 +238,7 @@ The metadata is available with the properties and methods of the [Tizen.Multimed
 | Album                | Album of the content                   | `Metadata.Album`                         |
 | Album artist         | Album artist of the content            | `Metadata.AlbumArtist`                   |
 | Genre                | Genre of the content                   | `Metadata.Genre`                         |
-| Author               | Author of the content                  | `Metadata.Author`                        |
+| Composer               | Composer of the content                  | `Metadata.Composer`                        |
 | Copyright            | Copyright of the content               | `Metadata.Copyright`                     |
 | Date                 | Date of the content                    | `Metadata.Date`                          |
 | Description          | Description of the content             | `Metadata.Description`                   |

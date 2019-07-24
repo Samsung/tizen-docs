@@ -25,43 +25,43 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m54audioiosample.png" width="150"/></td>
 			<td>
-			<p><strong>(M) AudioIOSample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to capture an audio and play it using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/AudioIOSample" target="_blank"><strong>(M) AudioIOSample</strong></a></p>
+			<p>This sample application demonstrates how to capture an audio and play it using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m41camera.png" width="150"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Camera" target="_blank"><strong>(M) Camera</strong></a></p>
-			<p>This sample application demonstrates how to take a picture using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia C# API</a>.</p>
+			<p>This sample application demonstrates how to take a picture using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m52imageutilsample.png" width="150"/></td>
 			<td>
 			<p><strong>(M) ImageUtilSample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to transform an image using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
+			<p>This sample application demonstrates how to transform an image using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m44piano.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Piano" target="_blank"><strong>(M) Piano</strong></a></p>
-			<p>This sample application demonstrates how to play sounds using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia C# API</a>.</p>
+			<p>This sample application demonstrates how to play sounds using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m49playersample.png" width="150"/></td>
 			<td>
-			<p><strong>(M) PlayerSample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to play an audio or a video and stream it using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/PlayerSample" target="_blank"><strong>(M) PlayerSample</strong></a></p>
+			<p>This sample application demonstrates how to play an audio or a video and stream it using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m51radiosample.png" width="150"/></td>
 			<td>
-			<p><strong>(M) RadioSample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to play the radio using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/RadioSample" target="_blank"><strong>(M) RadioSample</strong></a></p>
+			<p>This sample application demonstrates how to play the radio using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -81,14 +81,14 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m50thumbnailextractorsample.png" width="150"/></td>
 			<td>
-			<p><strong>(M) ThumbnailExtractorSample</strong> [In progress]</p>
-			<p>This sample application demonstrates how to extract thumbnails from an image using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia C# API</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/ThumbnailExtractorSample" target="_blank"><strong>(M) ThumbnailExtractorSample</strong></a></p>
+			<p>This sample application demonstrates how to extract thumbnails from an image using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html"  target="_blank">Tizen.Multimedia</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="267" src="media/m57visionapplicationsample.png" width="150"/></td>
 			<td>
-			<p><strong>(M) VisionApplicationSample</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/VisionApplicationSamples" target="_blank"><strong>(M) VisionApplicationSample</strong></a></p>
 			<p>This sample application demonstrates how to implement barcode generation or detection, face detection, and image recognition.</p>
 			</td>
 		</tr>
@@ -96,7 +96,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m42voicerecorder.png" width="150"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/VoiceRecorder" target="_blank"><strong>(M) VoiceRecorder</strong></a></p>
-			<p>This sample application demonstrates how to record an audio using <a href="https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia C# API</a>.</p>
+			<p>This sample application demonstrates how to record an audio using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -113,6 +113,13 @@ for TD:
 <div class="tabcontent" id="Wearable">
 <table>
 	<tbody>
+                <tr>
+                        <td><img alt="" height="180" src="media/w69circularuimediaplayer.png" width="180"/></td>
+                        <td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/CircularUIMediaPlayer" target="_blank"><strong>(W) CircularUIMediaPlayer</strong></a></p>
+                        <p>This sample application demonstrates how to build a video player for Tizen Wearables. For more information, see <a href="https://samsung.github.io/Tizen.NET/wearables/CircularUI-MediaPlayer" target="_blank">Tizen .NET Portal</a>.</p>
+                        </td>
+                </tr>
 		<tr>
 			<td><img alt="" height="180" src="media/w41imageviewer.png" width="180"/></td>
 			<td>
@@ -121,20 +128,55 @@ for TD:
 			</td>
 		</tr>
                 <tr>
+                        <td><img alt="" height="180" src="media/w64mediacodecsample.png" width="180"/></td>
+                        <td>
+                        <p><strong>(W) MediaCodecSample</strong> [In progress]</p>
+                        <p>This sample application demonstrates how to encode audio and video data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaCodec.html" target="_blank">Tizen.Multimedia.MediaCodec</a>.</p>
+                        </td>
+                </tr>
+                <tr>
+                        <td><img alt="" height="180" src="media/w61mediatoolsample.png" width="180"/></td>
+                        <td>
+                        <p><strong>(W) MediaToolSample</strong> [In progress]</p>
+                        <p>This sample application demonstrates how to create <code>MediaFormat</code> and <code>MediaPacket</code> using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html" target="_blank">Tizen.Multimedia</a>.</p>
+                        </td>
+                </tr>
+                <tr>
+                        <td><img alt="" height="180" src="media/w60playersample.png" width="180"/></td>
+                        <td>
+                        <p><strong>(W) PlayerSample</strong> [In progress]</p>
+                        <p>This sample application demonstrates how to create a music player using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Player.html" target="_blank">Tizen.Multimedia.Player</a>.</p>
+                        </td>
+                </tr>
+                <tr>
                         <td><img alt="" height="180" src="media/w40qrcodegenerator.png" width="180"/></td>
                         <td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/QRCodeGenerator" target="_blank"><strong>(W) QRCodeGenerator</strong></a></p>
-                        <p>This sample application demonstrates how to use Tizen.CircularUI NuGet package and Tizen.Multimedia.Vision API.</p>
+                        <p>This sample application demonstrates how to use <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a> and <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Vision.html" target="_blank">Tizen.Multimedia.Vision</a>.</p>
                         <p>This application also demonstrates how to generate Wi-Fi type QR code. After scanning the code with any widely available QR code scanner, the <strong>Connect to a Wi-Fi</strong> option appears.</p>
+                        </td>
+                </tr>
+                <tr>
+                        <td><img alt="" height="180" src="media/w65toneplayersample.png" width="180"/></td>
+                        <td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/TonePlayerSample" target="_blank"><strong>(W) TonePlayerSample</strong></a></p>
+                        <p>This sample application demonstrates how to play audio using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.TonePlayer.html" target="_blank">Tizen.Multimedia.TonePlayer</a>.</p>
                         </td>
                 </tr>
 		<tr>
 			<td><img alt="" height="180" src="media/wvolumecontroller.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/VolumeController" target="_blank"><strong>(W) VolumeController</strong></a></p>
-			<p>This sample application demonstrates how to retrieve and set the device volume levels. It also demonstrates how to create circular UI using <a href="https://github.com/Samsung/Tizen.CircularUI/" target="_blank">Tizen.Wearable.CircularUI C# API</a>.</p>
+			<p>This sample application demonstrates how to retrieve and set the device volume levels. It also demonstrates how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
+                <tr>
+                        <td><img alt="" height="180" src="media/w66wavplayersample.png" width="180"/></td>
+                        <td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/WavPlayerSample" target="_blank"><strong>(W) WavPlayerSample</strong></a></p>
+                        <p>This sample application demonstrates how to play audio using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.WavPlayer.html" target="_blank">Tizen.Multimedia.WavPlayer</a>.</p>
+                        </td>
+                </tr>
 	</tbody>
 </table>
 </div>
@@ -142,6 +184,26 @@ for TD:
 <div class="tabcontent" id="TV">
 <table>
 	<tbody>
+		<tr>
+			<td>
+			<p><img alt="" height="225" src="media/tv39mediacontrolclient.png" width="400" /></p>
+			</td>
+			<td>
+			<p><strong>(T) MediaControlClient</strong> [In progress]</p>
+			<p>This sample application demonstrates how to control MediaControlServer using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.html" target="_blank">Tizen.Multimedia.Remoting</a>.</p>
+			<p>This application is dedicated to control MediaControlServer service application.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p>Service application - no UI</p>
+			</td>
+			<td>
+			<p><strong>(T) MediaControlServer</strong> [In progress]</p>
+			<p>This sample application demonstrates how to set up a music player. It also shows how to control the music player using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.html" target="_blank">Tizen.Multimedia.Remoting</a> to play the stored music files.</p>
+			<p>MediaControlClient UI application is required to control this application.</p>
+			</td>
+		</tr>
 		<tr>
 			<td>
 			<p><img alt="" height="225" src="media/tv27musicplayer.png" width="400" /></p>

@@ -101,12 +101,13 @@ Public Attributes</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Elementary Layout-based widgets may declare part proxies, i.e., aliases for real theme part names to expose to the API calls:</p>
 <ul>
-<li><a class="el" href="group__Elm__Layout.html#ga3f40a6922d36558fbaca0b7d7814ed8d" title="Set the text of the given part.">elm_layout_text_set()</a></li>
-<li><a class="el" href="group__Elm__Layout.html#ga9d1ea7c2795d07dc4820804a79856d88" title="Get the text set in the given part.">elm_layout_text_get()</a></li>
+<li><a class="el" href="group__Elm__Layout.html#ga08d021fce14ac123d0b81d2c8dcb8ae9" title="Set the text of the given part.">elm_layout_text_set()</a></li>
+<li><a class="el" href="group__Elm__Layout.html#ga8eb3277acf0b12e204393aad6636f64a" title="Get the text set in the given part.">elm_layout_text_get()</a></li>
 <li><a class="el" href="group__Elm__Layout.html#gae232373336d38945ddf4f7557f28964a">elm_layout_content_set()</a></li>
 <li><a class="el" href="group__Elm__Layout.html#ga9a8de7b4bf6f5241809ffce4f644ff2f">elm_layout_content_get()</a></li>
-<li><a class="el" href="group__Elm__Layout.html#ga0658673fda8367d26084b248b5283a1e">elm_layout_content_unset()</a> and their equivalents. This list must be set on the <code>"_smart_set_user()"</code> function of inheriting widgets, so that part aliasing is handled automatically for them. </li>
+<li><a class="el" href="group__Elm__Layout.html#ga0658673fda8367d26084b248b5283a1e">elm_layout_content_unset()</a> and their equivalents. This list must be set on the "_smart_set_user()" function of inheriting widgets, so that part aliasing is handled automatically for them.</li>
 </ul>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000328">Deprecated:</a></b></dt><dd>Should not be used outside of EFL internal code. </dd></dl>
 </div><hr/><h2>Member Data Documentation</h2>
 <a class="anchor" id="aac3aeb24327b8febb451577013966fab"></a><!-- doxytag: member="_Elm_Layout_Part_Alias_Description::alias" ref="aac3aeb24327b8febb451577013966fab" args="" -->
 <div class="memitem">
@@ -118,7 +119,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Alternate name for a given (real) part. Calls receiving this string as a part name will be translated to the string at _Elm_Layout_Part_Proxies_Description::real_part </p>
+<p>Alternate name for a given (real) part. Calls receiving this string as a part name will be translated to the string at Efl.Ui.Layout_Part_Proxies_Description::real_part </p>
 
 </div>
 </div>
@@ -132,7 +133,7 @@ Public Attributes</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Target part name for the alias set on _Elm_Layout_Part_Proxies_Description::real_part. An example of usage would be <code>"default"</code> on that field, with <code>"elm.content.swallow"</code> on this one </p>
+<p>Target part name for the alias set on Efl.Ui.Layout_Part_Proxies_Description::real_part. An example of usage would be "default" on that field, with "elm.content.swallow" on this one </p>
 
 </div>
 </div>

@@ -13,7 +13,7 @@ Text labels are lightweight, non-editable, and do not respond to user input. The
 
 To create a text label:
 
-1.  Create an instance of the [Tizen.NUI.BaseComponents.TextLabel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.TextLabel.html) class and define the label text as a parameter:
+1.  Create an instance of the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class and define the label text as a parameter:
 
     ```
     TextLabel label = new TextLabel("Hello World");
@@ -48,7 +48,7 @@ To create a text label:
 <a name="font"></a>
 ## Selecting Fonts
 
-You can request a specific font using the `FontFamily`, the `FontStyle`, and the `PointSize` properties of the [Tizen.NUI.BaseComponents.TextLabel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
+You can request a specific font using the `FontFamily`, the `FontStyle`, and the `PointSize` properties of the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
 
 -   `FontFamily` is a string with the font family name, for example, `FreeSerif`.
 -   `FontStyle` is a JSON-formatted string with the font style. The following list describes some possible keys and common values for them:
@@ -82,7 +82,7 @@ If no font is specified, styling defaults are used, and a suitable font for disp
 
 Setting a font size programmatically is not ideal for applications which support multiple screen resolutions, and for platforms which support multiple logical font sizes. Also, any changes made to the platform font settings override sizes that have been programmatically set.
 
-A more flexible approach is to prepare various JSON stylesheets and request a different style for each platform. The [Tizen.NUI.NUIApplication](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.NUIApplication.html) class has constructors which take a stylesheet argument:
+A more flexible approach is to prepare various JSON stylesheets and request a different style for each platform. The [Tizen.NUI.NUIApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.NUIApplication.html) class has constructors which take a stylesheet argument:
 
 ```
 class Example : NUIApplication
@@ -119,13 +119,13 @@ You can provide further flexibility for the various screens by mapping the logic
 
 To align the text in a text label:
 
--   To enable text wrapping, use the `MultiLine` property of the [Tizen.NUI.BaseComponents.TextLabel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
+-   To enable text wrapping, use the `MultiLine` property of the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
 
     ```
     label.MultiLine = true;
     ```
 
--   To align the text horizontally to the beginning, center, or end of the available area, set the `HorizontalAlignment` property of the `Tizen.NUI.BaseComponents.TextLabel` class with the corresponding value of the [Tizen.NUI.HorizontalAlignment](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.HorizontalAlignment.html) enumeration:
+-   To align the text horizontally to the beginning, center, or end of the available area, set the `HorizontalAlignment` property of the `Tizen.NUI.BaseComponents.TextLabel` class with the corresponding value of the [Tizen.NUI.HorizontalAlignment](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.HorizontalAlignment.html) enumeration:
 
     ```
     label.HorizontalAlignment = HorizontalAlignmentType.Begin;
@@ -147,7 +147,7 @@ To align the text in a text label:
 <a name="decorations"></a>
 ## Using Decorations
 
-For text decorations, the [Tizen.NUI.BaseComponents.TextLabel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.TextLabel.html) class provides several properties. All properties are writable and none are animatable.
+For text decorations, the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class provides several properties. All properties are writable and none are animatable.
 
 **Table: Text label properties**
 
@@ -296,7 +296,7 @@ To use the decorations, simply set the applicable property:
 <a name="markup"></a>
 ## Using Markup Styling
 
-You can use markup elements to change the style of the text. Since the text controls do not process markup elements by default, you must first set the `EnableMarkup` property of the [Tizen.NUI.BaseComponents.TextLabel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.TextLabel.html) class to `true`:
+You can use markup elements to change the style of the text. Since the text controls do not process markup elements by default, you must first set the `EnableMarkup` property of the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class to `true`:
 
 ```
 TextLabel label = new TextLabel("Hello World");

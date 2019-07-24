@@ -18,7 +18,7 @@ You can create custom views with NUI, following some general guidelines:
 
 -   Use of gestures instead of analyzing raw touch events.
 
-The `Tizen.NUI.BaseComponents.CustomView` class is derived from the [Tizen.NUI.ViewWrapper](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.ViewWrapper.html) class, which in turn is derived from the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class:
+The `Tizen.NUI.BaseComponents.CustomView` class is derived from the [Tizen.NUI.ViewWrapper](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ViewWrapper.html) class, which in turn is derived from the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class:
 
 ```
 public class CustomView : ViewWrapper
@@ -27,9 +27,9 @@ public class ViewWrapper : View
 ```
 NUI contains predefined custom controls already derived from `CustomView` objects, including:
 
--   [Tizen.NUI.Spin](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Spin.html) control, which is used for continuously changing values when the user can easily predict a set of values.
+-   [Tizen.NUI.Spin](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Spin.html) control, which is used for continuously changing values when the user can easily predict a set of values.
 
--   [Tizen.NUI.BaseComponents.VisualView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.VisualView.html) control, which enables you to add any visual. For more information, see [Visuals](visuals.md).
+-   [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) control, which enables you to add any visual. For more information, see [Visuals](visuals.md).
 
 <a name="creation"></a>
 ## Creating a Custom View
@@ -46,7 +46,7 @@ To create a custom view:
 
     Each custom view must have its static constructor called before any JSON file is loaded. Static constructors for a class are only run once (they are run per view, not per instance). The view must register its type inside the static constructor.
 
-    The Type Registry is used to register your custom view. Type registration allows the creation of the view through a JSON file, as well as registering properties, signals, actions, transitions, and animation effects. Use the `Register()` method of the [Tizen.NUI.CustomViewRegistry](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.CustomViewRegistry.html) class to register the views and any scriptable properties they have:
+    The Type Registry is used to register your custom view. Type registration allows the creation of the view through a JSON file, as well as registering properties, signals, actions, transitions, and animation effects. Use the `Register()` method of the [Tizen.NUI.CustomViewRegistry](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.CustomViewRegistry.html) class to register the views and any scriptable properties they have:
 
     ```
     static ContactView()
@@ -95,7 +95,7 @@ To create a custom view:
    |  `RelayoutRequest()` |   Request a re-layout, which means performing a size negotiation on the view, its parent, and children (and potentially whole scene). |
    |  `OnStageConnection()`  |    If a notification is required when a custom view is connected to a stage default window, override the `OnStageConnection()` method. You can use the `OnStageDisconnection()` method similarly to react to a view getting disconnected from the window.|
 
-You can manage the general behavior of your custom view by defining a value for the `CustomViewBehaviour` enumeration of the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class during object construction. You can determine how the custom view reacts to size negotiation, style changes, event callbacks, and keyboard navigation:
+You can manage the general behavior of your custom view by defining a value for the `CustomViewBehaviour` enumeration of the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class during object construction. You can determine how the custom view reacts to size negotiation, style changes, event callbacks, and keyboard navigation:
 
 ```
 public VisualView() : base(typeof(VisualView).Name, CustomViewBehaviour.ViewBehaviourDefault)
@@ -116,8 +116,8 @@ The following example shows how you can create and register an image visual:
 
 -   Define a [scriptable property](#properties) (in this case, `ImageURL`) which creates the visual when being set. A scriptable property automatically generates indices.
 -   Create the visual with a property map. For more information on the property maps that can be used for each visual type, see [Visuals](visuals.md).
--   The `RegisterVisual()` method of the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class registers a visual by a property index, linking a view to a visual when required.
--   The `GetPropertyIndex()` method of the [Tizen.NUI.Animatable](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Animatable.html) class gets the generated index corresponding to the property name.
+-   The `RegisterVisual()` method of the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class registers a visual by a property index, linking a view to a visual when required.
+-   The `GetPropertyIndex()` method of the [Tizen.NUI.Animatable](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Animatable.html) class gets the generated index corresponding to the property name.
 
   A range of property indices are provided for `ImageVisualPropertyIndex`, 0 by default.
 
@@ -155,11 +155,11 @@ public string ImageURL
 <a name="properties"></a>
 ## Managing Properties
 
-Properties can be animatable or non-animatable. Examples of animatable [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class properties are `Position`, `Orientation`, and `Scale`. For more information on the NUI animation framework, see [Animation](animation.md).
+Properties can be animatable or non-animatable. Examples of animatable [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class properties are `Position`, `Orientation`, and `Scale`. For more information on the NUI animation framework, see [Animation](animation.md).
 
 Properties can be accessed through a unique index. The index can be set manually in code (hard-coded), or calculated automatically. The `ContactView.cs` file example (in [Rendering Content](#rendering)) shows both indexing methods: fixed for depth index, and automatic for registering visuals. The NUI code base is currently being modified (as of July 2017) to utilize property registration based solely on automatic generation of indices.
 
-Property indices are generated automatically in the [Tizen.NUI.ScriptableProperty](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.ScriptableProperty.html) class. With it, you can register a property with the Type Registry. To obtain a unique index for each property, use the `GetPropertyIndex()` method of the [Tizen.NUI.Animatable](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Animatable.html) class, with the name of the property as a parameter.
+Property indices are generated automatically in the [Tizen.NUI.ScriptableProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ScriptableProperty.html) class. With it, you can register a property with the Type Registry. To obtain a unique index for each property, use the `GetPropertyIndex()` method of the [Tizen.NUI.Animatable](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Animatable.html) class, with the name of the property as a parameter.
 
 Add `ScriptableProperty` to any view-related property that you want to script from JSON:
 
@@ -298,7 +298,7 @@ You can implement transition effects in 2 ways:
     ]
     ```
 
--   Using the `CreateTransition()` method of the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class
+-   Using the `CreateTransition()` method of the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class
 
     You can animate scriptable properties by using the `CreateTransition()` method from `Tizen.NUI.BaseComponents.CustomView`-derived classes. The method creates a transition effect on the view. The `transitionData` parameter describes the effect to create, and the return value is a handle to an animation defined with the given effect, or an empty handle if no properties match.
 
@@ -306,7 +306,7 @@ You can implement transition effects in 2 ways:
     protected Animation CreateTransition(TransitionData transitionData);
     ```
 
-    The following example is taken from the `AnimateVisual()` method in the [Tizen.NUI.BaseComponents.VisualView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.VisualView.html) class, which is a `CustomView`-derived class:
+    The following example is taken from the `AnimateVisual()` method in the [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) class, which is a `CustomView`-derived class:
 
     ```
     _alphaFunction = "EASE_IN_OUT_SINE";
@@ -352,7 +352,7 @@ You can implement transition effects in 2 ways:
 <a name="events"></a>
 ## Handling Events and Gestures
 
-You can monitor the following [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class events for your custom view:
+You can monitor the following [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class events for your custom view:
 
 -   `TouchEvent` is triggered when any touch occurs within the bounds of the custom view.
 -   `HoverEvent` is triggered when a pointer moves within the bounds of the custom view (for example, mouse pointer or hover pointer).
@@ -382,7 +382,7 @@ To use gesture detectors:
     }
     ```
 
-    The `EnableGestureDetection()` method of the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class allows deriving classes to enable any available gesture detectors. The above example only enables the default gesture detection for each type. If customization is required for the gesture detection, the gesture detector can be retrieved and set up accordingly in the same method:
+    The `EnableGestureDetection()` method of the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class allows deriving classes to enable any available gesture detectors. The above example only enables the default gesture detection for each type. If customization is required for the gesture detection, the gesture detector can be retrieved and set up accordingly in the same method:
 
     ```
     PanGestureDetector panGestureDetector = GetPanGestureDetector();
@@ -412,7 +412,7 @@ To use gesture detectors:
 <a name="sizenegotiation"></a>
 ## Managing Size Negotiation
 
-Size negotiation controls the view sizes in a container, based on dependency rules between the views. The [Tizen.NUI.ResizePolicyType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.ResizePolicyType.html) enumeration specifies a range of options for controlling the way views resize. These options enable automatic resizing.
+Size negotiation controls the view sizes in a container, based on dependency rules between the views. The [Tizen.NUI.ResizePolicyType](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ResizePolicyType.html) enumeration specifies a range of options for controlling the way views resize. These options enable automatic resizing.
 
 **Table: Resize policy types**
 
@@ -421,7 +421,7 @@ Size negotiation controls the view sizes in a container, based on dependency rul
 |   `DimensionDependency`  |      Use this option to make one dimension depend on another. This option covers width-for-height and height-for-width rules.|
 |  `FillToParent` |    Use this option to maintain a size similar to the parent's size. Aspect ratio is not maintained.|
 |  `FitToChildren`    |       Use this option to scale the size of the view around the size of its children. For example, the height of a pop-up can be resized to fit its content.|
-|  `Fixed`  |     Use this option to maintain a specific size as set by the `Size2D` property of the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class. This is the default for all views.|
+|  `Fixed`  |     Use this option to maintain a specific size as set by the `Size2D` property of the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class. This is the default for all views.|
 | `SizeFixedOffsetFromParent` |   Use this option to maintain a size is similar to the parent's size with a fixed offset. Use the `SetSizeModeFactor()` method of the `Tizen.NUI.BaseComponents.View` class to specify the offset.|
 |     `SizeRelativeToParent`  |       Use this option to maintain a size is similar to the parent's size with a relative scale. Use the `SetSizeModeFactor()` method of the `Tizen.NUI.BaseComponents.View` class to specify the ratio.|
 |     `UseAssignedSize`   |         Use this option to make the view use a size assigned to it. THis option is not an actual resize policy, but more of an implementation detail.|
@@ -435,7 +435,7 @@ contactView.WidthResizePolicy = ResizePolicyType.FillToParent;
 contactView.HeightResizePolicy = ResizePolicyType.FillToParent;
 ```
 
-The view is positioned and resized (relaid out) automatically when a view property or stage hierarchy changes. Although you do not usually need to request for relayouting manually, you can use the `RelayoutRequest()` method of the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class for deriving views when the derived view wants to be relaid out.
+The view is positioned and resized (relaid out) automatically when a view property or stage hierarchy changes. Although you do not usually need to request for relayouting manually, you can use the `RelayoutRequest()` method of the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class for deriving views when the derived view wants to be relaid out.
 
 The following overridable methods of the `Tizen.NUI.BaseComponents.CustomView` class provide customization points for the size negotiation algorithm:
 
