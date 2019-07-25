@@ -54,7 +54,7 @@ void Extract(string testImagePath, Size size)
 }
 ```
 
-To extract synchronously a thumbnail from a file and save it to file, use the `Extract(string path, Size size, string resultThumbnailPath)` or `Extract(string path, string resultThumbnailPath)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+To extract a thumbnail synchronously from a file and save it to file, use the `Extract(string path, Size size, string resultThumbnailPath)` or `Extract(string path, string resultThumbnailPath)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
 ```
 void Extract(string testImagePath, string resultPath, size)
 {
