@@ -59,6 +59,15 @@ for TD:
 	<tbody>
 		<tr>
 			<td>
+			<p><img alt="" height="180" src="media/w68findplace.png" width="180" /></p>
+			</td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/FindPlace" target="_blank"><strong>(W) FindPlace</strong></a></p>
+			<p>This sample application demonstrates how to search for places within a specified area using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a> and how to create a circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
 			<p><img alt="" height="180" src="media/w56geocoding.png" width="180" /></p>
 			</td>
 			<td>

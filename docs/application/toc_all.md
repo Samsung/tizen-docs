@@ -132,6 +132,7 @@
 ###  Connectivity and Wireless
 #### [Overview](/application/dotnet/guides/connectivity/overview.md)
 #### [Connection Management](/application/dotnet/guides/connectivity/connection.md)
+#### [WebView](/application/dotnet/guides/connectivity/webview.md)
 #### [Network Service Discovery](/application/dotnet/guides/connectivity/nsd.md)
 #### [Wi-Fi](/application/dotnet/guides/connectivity/wifi.md)
 #### [Wi-Fi Direct®](/application/dotnet/guides/connectivity/wifi-direct.md)
@@ -1133,6 +1134,7 @@
 #### [Debug the Project](/application/tizen-studio/rt-ide/get-started/debug.md)
 
 ## Release Notes
+### [3.3 (Jul 24, 2019)](/application/tizen-studio/release-notes/3-3-release-notes.md)
 ### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)
 ### [3.1 (Jan 17, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)
 ### [3.0 (Oct 31, 2018)](/application/tizen-studio/release-notes/3-0-release-notes.md)
@@ -1176,4 +1178,8 @@
 
 
 
-# [Visual Studio Code Extension for Tizen](/application/vscode-ext/index.md)
+# Visual Studio Code Extension for Tizen
+
+## [Prerequisites](/application/vscode-ext/index.md)
+## [Tizen .NET](/application/vscode-ext/dotnet.md)
+## [Tizen Web](/application/vscode-ext/web.md)

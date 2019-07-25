@@ -1,5 +1,14 @@
 # IoT APIs
 
+> ![Attention](media/attention_icon.png) 
+> 
+> Samsung has discontinued support for ARTIK.
+>
+> In case you are still using ARTIK, we recommend that you migrate to Raspberry Pi 3 for headless-type IoT devices. Information on [Raspberry Pi 3 for Tizen IoT](https://developer.tizen.org/development/iot-extension-sdk/getting-started/setting-up-your-board/raspberry-pi3-based-on-tizen-5.0) will help you at it.
+> The documentation for Tizen IoT with respect to ARTIK will be available only until August 2019.
+>
+> Thank you for your interest and support as always.
+
 The Tizen IoT API provides a common set of interfaces allowing you to build compelling IoT device applications which achieve native performance. The characteristics include:
 
 -   **Common set API**, which means that the Tizen IoT API is based on the Tizen 5.0 common profile. The API supports the common set of mobile, wearable, and TV profiles and allows you to make IoT applications, such as network audio applications.
