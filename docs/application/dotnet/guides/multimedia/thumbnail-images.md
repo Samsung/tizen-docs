@@ -24,7 +24,8 @@ using Tizen.Multimedia.Util;
 ```
 
 
-> **Note**   
+> **Note**
+>
 > The input media file can be common content in the device storage (internal or external) or private content in your application data.
 
 
@@ -54,7 +55,7 @@ void Extract(string testImagePath, Size size)
 }
 ```
 
-To extract a thumbnail synchronously from a file and save it to file, use the `Extract(string path, Size size, string resultThumbnailPath)` or `Extract(string path, string resultThumbnailPath)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
+To extract a thumbnail synchronously from a file and save it to a file, use the `Extract(string path, Size size, string resultThumbnailPath)` or `Extract(string path, string resultThumbnailPath)` method of the [Tizen.Multimedia.Util.ThumbnailExtractor](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Util.ThumbnailExtractor.html) class:
 ```
 void Extract(string testImagePath, string resultPath, size)
 {
@@ -67,7 +68,8 @@ void Extract(string testImagePath, string resultPath, size)
 }
 ```
 
-> **Note**   
+> **Note**
+>
 > If you do not set the size, a default size of 320 x 240 is used.
 
 
