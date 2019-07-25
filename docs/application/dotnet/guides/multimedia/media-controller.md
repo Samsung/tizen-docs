@@ -177,11 +177,11 @@ To send a custom command from the server and to process it on the client side, f
 2. To process the received custom command on the client side, add an event handler to the `CustomCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
 
     ```csharp
-    controller.CustomCommandReceived += (s, e) =>
+    mediaController.CustomCommandReceived += (s, e) =>
     {
         Log.Info("MC", $"{ e.Command.Action}");
 
-        controller.Response(e.Command, (int)ErrorCode.None);
+        mediaController.Response(e.Command, (int)ErrorCode.None);
     };
     ```
 
