@@ -21,7 +21,6 @@ If you set the opacity state to transparent, the background changes to 32-bit co
 >
 > Each state can present itself differently depending on the implementation of the Softkey service.
 > However, the preceding example does not represent all the Softkey service window.
->
 
 ## Prerequisites
 
