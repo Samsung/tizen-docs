@@ -962,7 +962,7 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 			<p><strong>Expected children:</strong></p>
 			<ul>
 				<li><code>tizen:ls_default</code>
-				<p>Used to indicate the default of the splash screen.</p>
+				<p>Used to indicate the default value of the splash screen.</p>
 				<p>Occurrences:</p>
 				<ul>
 					<li>1</li>
@@ -1009,9 +1009,9 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 				<li><code>ready_when</code>
 				<p>Mandatory; string (available values: <code>first-paint</code> (default), <code>complete</code>, <code>custom</code>)</p>
 				<ul>
-					<li><code>first-paint</code>: hide splash screen when "frame,rendred" callback is called</li>
-					<li><code>complete</code>: hide splash screen when "load,complete" callback is called</li>
-					<li><code>custom</code>: hide splash screen when window.screen.show() method was called</li>
+					<li><code>first-paint</code>: hide splash screen when the "frame,rendered" callback is called</li>
+					<li><code>complete</code>: hide splash screen when the "load,complete" callback is called</li>
+					<li><code>custom</code>: hide splash screen when the window.screen.show() method is called</li>
 				</ul>
 				</li>
 			</ul>
@@ -1928,7 +1928,7 @@ The following sections show additional configuration elements used in the `confi
 				<ul>
 					<li><code>first-paint</code>: hide splash screen when the "frame,rendered" callback is called</li>
 					<li><code>complete</code>: hide splash screen when the "load,complete" callback is called</li>
-					<li><code>custom</code>: hide splash screen when the window.screen.show() method was called</li>
+					<li><code>custom</code>: hide splash screen when the window.screen.show() method is called</li>
 				</ul>
 				</li>
 			</ul>
