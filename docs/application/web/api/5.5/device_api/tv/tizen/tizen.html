@@ -1703,10 +1703,10 @@ type: STRING
   enum SortModeOrder { "ASC", "DESC" };
   enum CompositeFilterType { "UNION", "INTERSECTION" };
   enum BundleValueType { "STRING", "STRING_ARRAY", "BYTES", "BYTES_ARRAY" };
+  Window implements <a href="#TizenObject">TizenObject</a>;
   [NoInterfaceObject] interface TizenObject {
     readonly attribute <a href="#Tizen">Tizen</a> tizen;
   };
-  Window implements <a href="#TizenObject">TizenObject</a>;
   [NoInterfaceObject] interface Tizen {
   };
   [Constructor(optional object? json)]

@@ -740,10 +740,10 @@ To guarantee that the application runs on a device which allows screen state cha
   enum PowerResource { "SCREEN", "CPU" };
   enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL" };
   enum PowerCpuState { "CPU_AWAKE" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PowerManagerObject">PowerManagerObject</a>;
   [NoInterfaceObject] interface PowerManagerObject {
     readonly attribute <a href="#PowerManager">PowerManager</a> power;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PowerManagerObject">PowerManagerObject</a>;
   [NoInterfaceObject] interface PowerManager {
     void request(<a href="#PowerResource">PowerResource</a> resource, <a href="#PowerState">PowerState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void release(<a href="#PowerResource">PowerResource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

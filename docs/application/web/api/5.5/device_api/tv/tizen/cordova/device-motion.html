@@ -543,10 +543,10 @@ To guarantee that the DeviceMotion application runs on a device with the DeviceM
   dictionary AccelerationOptions {
     long frequency;
   };
+  Navigator implements <a href="#AccelerometerManagerObject">AccelerometerManagerObject</a>;
   [NoInterfaceObject] interface AccelerometerManagerObject {
     readonly attribute <a href="#Accelerometer">Accelerometer</a> accelerometer;
   };
-  Navigator implements <a href="#AccelerometerManagerObject">AccelerometerManagerObject</a>;
   [NoInterfaceObject] interface Accelerometer {
     void getCurrentAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
     DOMString watchAcceleration(<a href="#AccelerometerSuccessCallback">AccelerometerSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#AccelerationOptions">AccelerationOptions</a>? options)

@@ -2874,10 +2874,10 @@ var ret = d1.greaterThan(d2);                  /* Returns true. */
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Time {
   enum TimeDurationUnit { "MSECS", "SECS", "MINS", "HOURS", "DAYS" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TimeManagerObject">TimeManagerObject</a>;
   [NoInterfaceObject] interface TimeManagerObject {
     readonly attribute <a href="#TimeUtil">TimeUtil</a> time;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TimeManagerObject">TimeManagerObject</a>;
   [NoInterfaceObject] interface TimeUtil {
     <a href="#TZDate">TZDate</a> getCurrentDateTime() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString getLocalTimezone() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

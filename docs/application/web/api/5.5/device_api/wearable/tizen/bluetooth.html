@@ -7073,10 +7073,10 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
     <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BluetoothManagerObject">BluetoothManagerObject</a>;
   [NoInterfaceObject] interface BluetoothManagerObject {
     readonly attribute <a href="#BluetoothManager">BluetoothManager</a> bluetooth;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BluetoothManagerObject">BluetoothManagerObject</a>;
   [Constructor(DOMString uuid, DOMString data)]
   interface BluetoothLEServiceData {
     attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;

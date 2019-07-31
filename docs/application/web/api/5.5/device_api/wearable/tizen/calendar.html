@@ -411,6 +411,9 @@ BUSY_UNAVAILABLE - if the specified time slot is not vacant and can not be sched
 BUSY_TENTATIVE - if the specified time slot is not vacant because one or more events have been tentatively scheduled for that interval            </li>
           </ul>
          </div>
+<p><span class="remark">Remark: </span>
+ <em>BUSY_UNAVAILABLE</em> and <em>BUSY_TENTATIVE</em> are supported since Tizen 5.0
+          </p>
 </div>
 <div class="enum" id="AttendeeType">
 <a class="backward-compatibility-anchor" name="::Calendar::AttendeeType"></a><h3>1.10. AttendeeType</h3>
@@ -438,9 +441,6 @@ ROOM - Room resource            </li>
 UNKNOWN - Unknown            </li>
           </ul>
          </div>
-<p><span class="remark">Remark: </span>
- <em>BUSY_UNAVAILABLE</em> and <em>BUSY_TENTATIVE</em> are supported since Tizen 5.0
-          </p>
 </div>
 <div class="enum" id="AttendeeStatus">
 <a class="backward-compatibility-anchor" name="::Calendar::AttendeeStatus"></a><h3>1.11. AttendeeStatus</h3>
@@ -4169,10 +4169,10 @@ To guarantee the running of the application on a device with Contact feature, de
     short[] setPositions;
     <a href="time.html#TZDate">TZDate</a>[] exceptions;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CalendarManagerObject">CalendarManagerObject</a>;
   [NoInterfaceObject] interface CalendarManagerObject {
     readonly attribute <a href="#CalendarManager">CalendarManager</a> calendar;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CalendarManagerObject">CalendarManagerObject</a>;
   [NoInterfaceObject] interface CalendarManager {
     void getCalendars(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                       raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

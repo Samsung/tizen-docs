@@ -3457,6 +3457,8 @@ entry.createWriter(successCallback, errorCallback);
     unsigned long long total = false;
     EventTarget target = null;
   };
+  Cordova implements <a href="#FileSystemManagerObject">FileSystemManagerObject</a>;
+  Window implements <a href="#LocalFileSystem">LocalFileSystem</a>;
   [Constructor(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict)]
   interface ProgressEvent {
     readonly attribute DOMString type;
@@ -3468,7 +3470,6 @@ entry.createWriter(successCallback, errorCallback);
     readonly attribute unsigned long long total;
     readonly attribute  target;
   };
-  Cordova implements <a href="#ProgressEvent">ProgressEvent</a>;
   [NoInterfaceObject] interface FileSystemManagerObject {
     readonly attribute <a href="#FileSystemManager">FileSystemManager</a> file;
   };

@@ -2390,10 +2390,10 @@ If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare t
     unsigned long ledOnPeriod;
     unsigned long ledOffPeriod;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;
   [NoInterfaceObject] interface NotificationObject {
     readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;
   [NoInterfaceObject] interface NotificationManager {
     void post(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

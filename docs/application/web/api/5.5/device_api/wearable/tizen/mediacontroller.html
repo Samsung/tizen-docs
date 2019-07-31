@@ -3810,10 +3810,10 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     DOMString trackNum;
     DOMString picture;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaControllerObject">MediaControllerObject</a>;
   [NoInterfaceObject] interface MediaControllerObject {
     readonly attribute <a href="#MediaControllerManager">MediaControllerManager</a> mediacontroller;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaControllerObject">MediaControllerObject</a>;
   [NoInterfaceObject] interface MediaControllerManager {
     <a href="#MediaControllerClient">MediaControllerClient</a> getClient() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#MediaControllerServer">MediaControllerServer</a> createServer() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

@@ -1235,10 +1235,10 @@ To guarantee the running of this application on a device with a TV picture-in-pi
   enum MeasurementUnit { "px", "%" };
   enum AspectRatio { "ASPECT_RATIO_1x1", "ASPECT_RATIO_4x3", "ASPECT_RATIO_16x9", "ASPECT_RATIO_221x100", "ASPECT_RATIO_UNKNOWN" };
   enum ZPosition { "FRONT", "BEHIND" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVWindowManagerObject">TVWindowManagerObject</a>;
   [NoInterfaceObject] interface TVWindowManagerObject {
     readonly attribute <a href="#TVWindowManager">TVWindowManager</a> tvwindow;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVWindowManagerObject">TVWindowManagerObject</a>;
   [NoInterfaceObject] interface TVWindowManager {
     void getAvailableWindows(<a href="#AvailableWindowListCallback">AvailableWindowListCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

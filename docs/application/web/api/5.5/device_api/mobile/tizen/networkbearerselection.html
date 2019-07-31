@@ -428,10 +428,10 @@ To guarantee that the NBS application runs on a device with telephony feature, d
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module NetworkBearerSelection {
   enum NetworkType { "CELLULAR", "UNKNOWN" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NetworkBearerSelectionObject">NetworkBearerSelectionObject</a>;
   [NoInterfaceObject] interface NetworkBearerSelectionObject {
     readonly attribute <a href="#NetworkBearerSelection">NetworkBearerSelection</a> networkbearerselection;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NetworkBearerSelectionObject">NetworkBearerSelectionObject</a>;
   [NoInterfaceObject] interface NetworkBearerSelection {
     void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
