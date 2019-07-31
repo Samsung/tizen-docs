@@ -107,7 +107,7 @@ init(Evas_Object *main_win)
 ```
 
 ## Destroy TZSH-Quickpanel
-When TZSH-Quickpanel is no longer needed, destroy the structures use the following code:
+When TZSH-Quickpanel is no longer needed, destroy the structures. To destroy the structures, use the following code:
 
 ```
 static void

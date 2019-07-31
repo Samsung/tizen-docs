@@ -195,7 +195,7 @@ To get the current opacity state of the Softkey service window, call `tzsh_softk
 
 ## Destroy TZSH-Softkey
 
-When TZSH-Softkey and TZSH structures are no longer needed, destroy the structures use the following code:
+When TZSH-Softkey and TZSH structures are no longer needed, destroy the structures. To destroy the structures, use the following code:
 
 ```
 static void

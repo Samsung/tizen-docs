@@ -25,7 +25,7 @@ To use the functions and structures of the TZSH API, include the `<tzsh.h>` head
 ```
 
 ## Create TZSH Structures
-After you have created the main window of your application, call `tzsh_create()` with a native window ID to create the `tzsh_h` structure use the following code:
+After you have created the main window of your application, call `tzsh_create()` with a native window ID to create the `tzsh_h` structure. To create the `tzsh_h` structure, use the following code:
 
 ```
 #include <Elementary.h>
@@ -57,7 +57,7 @@ init(const char *name)
 ```
 
 ## Destroy TZSH Structures
-When TZSH structures are no longer needed, destroy the structures use the following code:
+When TZSH structures are no longer needed, destroy the structures. To destroy the structures, use the following code:
 
 ```
 static void
