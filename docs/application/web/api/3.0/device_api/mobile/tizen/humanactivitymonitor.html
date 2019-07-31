@@ -2322,10 +2322,10 @@ To guarantee that the barometer (pressure) sensor application runs on a device w
     long callbackInterval;
     long sampleInterval;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#HumanActivityMonitorManagerObject">HumanActivityMonitorManagerObject</a>;
   [NoInterfaceObject] interface HumanActivityMonitorManagerObject {
     readonly attribute <a href="#HumanActivityMonitorManager">HumanActivityMonitorManager</a> humanactivitymonitor;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#HumanActivityMonitorManagerObject">HumanActivityMonitorManagerObject</a>;
   [NoInterfaceObject] interface HumanActivityMonitorManager {
     void getHumanActivityData(<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback,
                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

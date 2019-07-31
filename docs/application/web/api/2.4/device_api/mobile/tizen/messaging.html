@@ -3808,10 +3808,10 @@ To guarantee that the mms application runs on a device with MMS feature, define 
     DOMString htmlBody;
     boolean isHighPriority;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;
   [NoInterfaceObject] interface MessageManagerObject {
     readonly attribute <a href="#Messaging">Messaging</a> messaging;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessageManagerObject">MessageManagerObject</a>;
   [Constructor(<a href="#MessageServiceTag">MessageServiceTag</a> type, optional <a href="#MessageInit">MessageInit</a>? messageInitDict)]
   interface Message {
     readonly attribute <a href="#MessageId">MessageId</a>? id;

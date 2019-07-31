@@ -840,10 +840,10 @@ To guarantee the running of this application on a device with a TV audio control
   enum AudioOutputMode { "PCM", "DOLBY", "DTS", "AAC" };
   enum AudioBeepType { "UP", "DOWN", "LEFT", "RIGHT", "PAGE_LEFT", "PAGE_RIGHT", "BACK", "SELECT", "CANCEL", "WARNING",
     "KEYPAD", "KEYPAD_ENTER", "KEYPAD_DEL", "MOVE", "PREPARING" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AudioControlManagerObject">AudioControlManagerObject</a>;
   [NoInterfaceObject] interface AudioControlManagerObject {
     readonly attribute <a href="#AudioControlManager">AudioControlManager</a> tvaudiocontrol;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AudioControlManagerObject">AudioControlManagerObject</a>;
   [NoInterfaceObject] interface AudioControlManager {
     void setMute(boolean mute) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     boolean isMute() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

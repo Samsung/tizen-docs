@@ -997,10 +997,10 @@ DownloadNetworkType <em>ALL</em> can be available on a ethernet-enabled device. 
   typedef object DownloadHTTPHeaderFields;
   enum DownloadState { "QUEUED", "DOWNLOADING", "PAUSED", "CANCELED", "COMPLETED", "FAILED" };
   enum DownloadNetworkType { "CELLULAR", "WIFI", "ALL" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DownloadManagerObject">DownloadManagerObject</a>;
   [NoInterfaceObject] interface DownloadManagerObject {
     readonly attribute <a href="#DownloadManager">DownloadManager</a> download;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DownloadManagerObject">DownloadManagerObject</a>;
   [Constructor(DOMString url, optional DOMString? destination, optional DOMString? fileName,
                optional <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType, optional <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader)]
   interface DownloadRequest {

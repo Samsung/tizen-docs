@@ -3465,10 +3465,10 @@ It is used in <em>tizen.content.createPlaylist()</em>.
   enum AudioContentLyricsType { "SYNCHRONIZED", "UNSYNCHRONIZED" };
   enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90",
     "TRANSVERSE", "ROTATE_270" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContentManagerObject">ContentManagerObject</a>;
   [NoInterfaceObject] interface ContentManagerObject {
     readonly attribute <a href="#ContentManager">ContentManager</a> content;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContentManagerObject">ContentManagerObject</a>;
   [NoInterfaceObject] interface ContentManager {
     void update(<a href="#Content">Content</a> content) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateBatch(<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)

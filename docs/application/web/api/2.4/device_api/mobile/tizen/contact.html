@@ -6356,10 +6356,10 @@ watcherId = tizen.contact.addChangeListener(watcher);
     DOMString[] types;
     DOMString label;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContactManagerObject">ContactManagerObject</a>;
   [NoInterfaceObject] interface ContactManagerObject {
     readonly attribute <a href="#ContactManager">ContactManager</a> contact;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContactManagerObject">ContactManagerObject</a>;
   [NoInterfaceObject] interface ContactManager {
     void getAddressBooks(<a href="#AddressBookArraySuccessCallback">AddressBookArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

@@ -3127,10 +3127,10 @@ To guarantee that the UV sensor application runs on a device with a UV sensor, d
   enum ProximityState { "FAR", "NEAR" };
   enum SensorType { "ACCELERATION", "GRAVITY", "GYROSCOPE", "GYROSCOPE_ROTATION_VECTOR", "GYROSCOPE_UNCALIBRATED",
     "HRM_RAW", "LIGHT", "LINEAR_ACCELERATION", "MAGNETIC", "MAGNETIC_UNCALIBRATED", "PRESSURE", "PROXIMITY", "ULTRAVIOLET" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SensorServiceManagerObject">SensorServiceManagerObject</a>;
   [NoInterfaceObject] interface SensorServiceManagerObject {
     readonly attribute <a href="#SensorService">SensorService</a> sensorservice;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SensorServiceManagerObject">SensorServiceManagerObject</a>;
   [NoInterfaceObject] interface SensorService {
     <a href="#Sensor">Sensor</a> getDefaultSensor(<a href="#SensorType">SensorType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#SensorType">SensorType</a>[] getAvailableSensors() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

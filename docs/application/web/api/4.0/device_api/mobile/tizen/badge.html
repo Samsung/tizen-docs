@@ -435,10 +435,10 @@ tizen.badge.addChangeListener([appId, targetAppId], watcher);
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Badge {
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BadgeManagerObject">BadgeManagerObject</a>;
   [NoInterfaceObject] interface BadgeManagerObject {
     readonly attribute <a href="#BadgeManager">BadgeManager</a> badge;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BadgeManagerObject">BadgeManagerObject</a>;
   [NoInterfaceObject] interface BadgeManager {
     readonly attribute long maxBadgeCount;
     void setBadgeCount(<a href="application.html#ApplicationId">ApplicationId</a> appId, long count) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

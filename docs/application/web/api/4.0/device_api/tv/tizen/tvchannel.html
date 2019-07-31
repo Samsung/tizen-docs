@@ -2345,10 +2345,10 @@ To guarantee the running of this application on a device with a tuner, define th
     long? originalNetworkID;
     DOMString? providerMBR;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVChannelManager">TVChannelManager</a>;
   [NoInterfaceObject] interface TVChannelManager {
     readonly attribute <a href="#ChannelManager">ChannelManager</a> tvchannel;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVChannelManager">TVChannelManager</a>;
   [NoInterfaceObject] interface ChannelManager {
     void tune(<a href="#TuneOption">TuneOption</a> tuneOption, <a href="#TuneCallback">TuneCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tvwindow.html#WindowType">WindowType</a>? type)
               raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

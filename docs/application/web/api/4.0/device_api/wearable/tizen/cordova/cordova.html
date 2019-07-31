@@ -201,10 +201,10 @@
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Cordova {
+  Window implements <a href="#CordovaManagerObject">CordovaManagerObject</a>;
   [NoInterfaceObject] interface CordovaManagerObject {
     readonly attribute <a href="#Cordova">Cordova</a> cordova;
   };
-  Window implements <a href="#CordovaManagerObject">CordovaManagerObject</a>;
   [NoInterfaceObject] interface Cordova {
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface SuccessCallback {

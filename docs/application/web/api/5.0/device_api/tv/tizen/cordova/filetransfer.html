@@ -1014,7 +1014,8 @@ Upload error target http://some.server.com/file.txt
     attribute <a href="#FileUploadParams">FileUploadParams</a> params;
     attribute boolean chunkedMode;
     attribute <a href="#HeaderFields">HeaderFields</a> headers;
-  };  [NoInterfaceObject] interface FileUploadResult {
+  };
+  [NoInterfaceObject] interface FileUploadResult {
     attribute long bytesSent;
     attribute long responseCode;
     attribute DOMString response;

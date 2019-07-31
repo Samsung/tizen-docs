@@ -464,10 +464,10 @@ To guarantee the running of this application on a device with a TV display contr
   enum Display3DEffectMode { "OFF", "TOP_BOTTOM", "SIDE_BY_SIDE", "LINE_BY_LINE", "VERTICAL_STRIPE", "FRAME_SEQUENCE",
     "CHECKER_BD", "FROM_2D_TO_3D" };
   enum Display3DModeState { "NOT_CONNECTED", "NOT_SUPPORTED", "READY" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DisplayControlManagerObject">DisplayControlManagerObject</a>;
   [NoInterfaceObject] interface DisplayControlManagerObject {
     readonly attribute <a href="#DisplayControlManager">DisplayControlManager</a> tvdisplaycontrol;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DisplayControlManagerObject">DisplayControlManagerObject</a>;
   [NoInterfaceObject] interface DisplayControlManager {
     <a href="#Display3DEffectMode">Display3DEffectMode</a> get3DEffectMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#Display3DModeState">Display3DModeState</a> is3DModeEnabled() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

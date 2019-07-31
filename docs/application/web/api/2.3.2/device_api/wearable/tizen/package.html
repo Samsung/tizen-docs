@@ -910,10 +910,10 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Package {
   typedef DOMString PackageId;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PackageManagerObject">PackageManagerObject</a>;
   [NoInterfaceObject] interface PackageManagerObject {
     readonly attribute <a href="#PackageManager">PackageManager</a> package;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PackageManagerObject">PackageManagerObject</a>;
   [NoInterfaceObject] interface PackageManager {
     void install(DOMString packageFileURI, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

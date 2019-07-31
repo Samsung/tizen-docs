@@ -1720,10 +1720,10 @@ To guarantee that the widget application runs on a system which supports Widgets
   enum WidgetSizeType { "1x1", "2x1", "2x2", "4x1", "4x2", "4x3", "4x4", "4x5", "4x6", "EASY_1x1", "EASY_3x1", "EASY_3x3",
     "FULL" };
   enum WidgetStateType { "CREATE", "DESTROY", "PAUSE", "RESUME" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WidgetServiceManagerObject">WidgetServiceManagerObject</a>;
   [NoInterfaceObject] interface WidgetServiceManagerObject {
     readonly attribute <a href="#WidgetServiceManager">WidgetServiceManager</a> widgetservice;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WidgetServiceManagerObject">WidgetServiceManagerObject</a>;
   [NoInterfaceObject] interface WidgetServiceManager {
     <a href="#Widget">Widget</a> getWidget(<a href="#WidgetId">WidgetId</a> widgetId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void getWidgets(<a href="#WidgetArraySuccessCallback">WidgetArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="package.html#PackageId">PackageId</a>? packageId)

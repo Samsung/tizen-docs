@@ -1424,10 +1424,10 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
     boolean stripSourceDirectory;
     <a href="#ArchiveCompressionLevel">ArchiveCompressionLevel</a> compressionLevel;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ArchiveManagerObject">ArchiveManagerObject</a>;
   [NoInterfaceObject] interface ArchiveManagerObject {
     readonly attribute <a href="#ArchiveManager">ArchiveManager</a> archive;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ArchiveManagerObject">ArchiveManagerObject</a>;
   [NoInterfaceObject] interface ArchiveManager {
     long open(<a href="#FileReference">FileReference</a> file, <a href="filesystem.html#FileMode">FileMode</a> mode, <a href="#ArchiveFileSuccessCallback">ArchiveFileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
               optional <a href="#ArchiveFileOptions">ArchiveFileOptions</a>? options) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

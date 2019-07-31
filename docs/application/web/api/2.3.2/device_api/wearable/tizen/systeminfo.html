@@ -3044,10 +3044,10 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
     double highThreshold;
     double lowThreshold;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemInfoObject">SystemInfoObject</a>;
   [NoInterfaceObject] interface SystemInfoObject {
     readonly attribute <a href="#SystemInfo">SystemInfo</a> systeminfo;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemInfoObject">SystemInfoObject</a>;
   [NoInterfaceObject] interface SystemInfo {
     long long getTotalMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long long getAvailableMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

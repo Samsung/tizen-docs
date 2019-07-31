@@ -539,10 +539,10 @@ tizen.inputdevice.unregisterKeyBatch(keys, successCB, errorCB);
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module InputDevice {
   typedef DOMString InputDeviceKeyName;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>;
   [NoInterfaceObject] interface InputDeviceManagerObject {
     readonly attribute <a href="#InputDeviceManager">InputDeviceManager</a> inputdevice;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>;
   [NoInterfaceObject] interface InputDeviceKey {
     readonly attribute <a href="#InputDeviceKeyName">InputDeviceKeyName</a> name;
     readonly attribute long code;

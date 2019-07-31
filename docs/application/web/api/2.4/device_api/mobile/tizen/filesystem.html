@@ -3176,10 +3176,10 @@ This callback interface specifies a success callback with a function taking an a
     Date startCreated;
     Date endCreated;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FileSystemManagerObject">FileSystemManagerObject</a>;
   [NoInterfaceObject] interface FileSystemManagerObject {
     readonly attribute <a href="#FileSystemManager">FileSystemManager</a> filesystem;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FileSystemManagerObject">FileSystemManagerObject</a>;
   [NoInterfaceObject] interface FileSystemManager {
     readonly attribute long maxPathLength;
     void resolve(DOMString location, <a href="#FileSuccessCallback">FileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional <a href="#FileMode">FileMode</a>? mode)

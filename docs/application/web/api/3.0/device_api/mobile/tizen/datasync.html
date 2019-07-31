@@ -1391,10 +1391,10 @@ To guarantee that data synch application runs on a device, declare the following
   enum SyncInterval { "5_MINUTES", "15_MINUTES", "1_HOUR", "4_HOURS", "12_HOURS", "1_DAY", "1_WEEK", "1_MONTH" };
   enum SyncServiceType { "CONTACT", "EVENT" };
   enum SyncStatus { "SUCCESS", "FAIL", "STOP", "NONE" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataSynchronizationManagerObject">DataSynchronizationManagerObject</a>;
   [NoInterfaceObject] interface DataSynchronizationManagerObject {
     readonly attribute <a href="#DataSynchronizationManager">DataSynchronizationManager</a> datasync;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataSynchronizationManagerObject">DataSynchronizationManagerObject</a>;
   [Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode),
    Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncType">SyncType</a> type),
    Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncInterval">SyncInterval</a> interval)]

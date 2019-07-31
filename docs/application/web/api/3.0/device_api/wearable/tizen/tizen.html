@@ -1264,10 +1264,10 @@ tizen.application.launch(bogusAppID, onSuccess, onError);
   enum FilterMatchFlag { "EXACTLY", "FULLSTRING", "CONTAINS", "STARTSWITH", "ENDSWITH", "EXISTS" };
   enum SortModeOrder { "ASC", "DESC" };
   enum CompositeFilterType { "UNION", "INTERSECTION" };
+  Window implements <a href="#TizenObject">TizenObject</a>;
   [NoInterfaceObject] interface TizenObject {
     readonly attribute <a href="#Tizen">Tizen</a> tizen;
   };
-  Window implements <a href="#TizenObject">TizenObject</a>;
   [NoInterfaceObject] interface Tizen {
   };
   [NoInterfaceObject] interface AbstractFilter {

@@ -884,10 +884,10 @@ This callback interface specifies a success method with the URI for the thumbnai
     Date gpsTime;
     DOMString userComment;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ExifManagerObject">ExifManagerObject</a>;
   [NoInterfaceObject] interface ExifManagerObject {
     readonly attribute <a href="#ExifManager">ExifManager</a> exif;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ExifManagerObject">ExifManagerObject</a>;
   [NoInterfaceObject] interface ExifManager {
     void getExifInfo(DOMString uri, <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

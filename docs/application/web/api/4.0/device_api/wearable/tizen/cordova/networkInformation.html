@@ -459,10 +459,10 @@ To guarantee that the NetworkInformation application runs on a device with the N
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module NetworkInformation {
+  Navigator implements <a href="#NetworkInformationManagerObject">NetworkInformationManagerObject</a>;
   [NoInterfaceObject] interface NetworkInformationManagerObject {
     readonly attribute <a href="#NetworkInformationManager">NetworkInformationManager</a> connection;
   };
-  Navigator implements <a href="#NetworkInformationManagerObject">NetworkInformationManagerObject</a>;
   [NoInterfaceObject] interface NetworkInformationManager {
     readonly attribute DOMString type;
   };

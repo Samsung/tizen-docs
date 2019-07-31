@@ -4810,10 +4810,10 @@ To guarantee this application will run on a device with a Iotcon, add the below 
     <a href="#ResourceInterface">ResourceInterface</a>? resourceInterface;
     object? filter;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#IotconObject">IotconObject</a>;
   [NoInterfaceObject] interface IotconObject {
     readonly attribute <a href="#Iotcon">Iotcon</a> iotcon;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#IotconObject">IotconObject</a>;
   [NoInterfaceObject] interface Iotcon {
     attribute DOMString deviceName;
     void initialize(DOMString filePath) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

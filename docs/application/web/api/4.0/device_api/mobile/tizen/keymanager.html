@@ -576,10 +576,10 @@ If this attribute contains any spaces, the spaces will be removed. Characters wh
     <a href="package.html#PackageId">PackageId</a> packageId;
     DOMString name;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#KeyManagerObject">KeyManagerObject</a>;
   [NoInterfaceObject] interface KeyManagerObject {
     readonly attribute <a href="#KeyManager">KeyManager</a> keymanager;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#KeyManagerObject">KeyManagerObject</a>;
   [NoInterfaceObject] interface KeyManager {
     void saveData(DOMString name, <a href="#RawData">RawData</a> rawData, optional DOMString? password, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                   optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

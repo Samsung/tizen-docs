@@ -698,10 +698,10 @@ var watchId = localMsgPort.addMessagePortListener(onreceived);
     DOMString key;
     DOMString value;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessagePortManagerObject">MessagePortManagerObject</a>;
   [NoInterfaceObject] interface MessagePortManagerObject {
     readonly attribute <a href="#MessagePortManager">MessagePortManager</a> messageport;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MessagePortManagerObject">MessagePortManagerObject</a>;
   [NoInterfaceObject] interface MessagePortManager {
     <a href="#LocalMessagePort">LocalMessagePort</a> requestLocalMessagePort(DOMString localMessagePortName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#LocalMessagePort">LocalMessagePort</a> requestTrustedLocalMessagePort(DOMString localMessagePortName) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

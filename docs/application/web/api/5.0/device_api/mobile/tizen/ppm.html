@@ -684,10 +684,10 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
 <pre class="webidl prettyprint">module PrivacyPrivilege {
   enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK" };
   enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;
   [NoInterfaceObject] interface PrivacyPrivilegeManagerObject {
     readonly attribute <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a> ppm;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;
   [NoInterfaceObject] interface PrivacyPrivilegeManager {
     <a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#PrivilegeStatus">PrivilegeStatus</a>[] checkPermissions(DOMString[] privileges) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

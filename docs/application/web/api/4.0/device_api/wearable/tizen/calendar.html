@@ -4162,10 +4162,10 @@ To guarantee the running of the application on a device with Contact feature, de
     short[] setPositions;
     <a href="time.html#TZDate">TZDate</a>[] exceptions;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CalendarManagerObject">CalendarManagerObject</a>;
   [NoInterfaceObject] interface CalendarManagerObject {
     readonly attribute <a href="#CalendarManager">CalendarManager</a> calendar;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CalendarManagerObject">CalendarManagerObject</a>;
   [NoInterfaceObject] interface CalendarManager {
     void getCalendars(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                       raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

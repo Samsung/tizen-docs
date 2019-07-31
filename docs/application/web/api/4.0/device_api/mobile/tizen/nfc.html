@@ -4260,10 +4260,10 @@ To guarantee that the NFC host-based card emulation application runs on a device
   enum SecureElementType { "ESE", "UICC", "HCE" };
   enum CardEmulationCategoryType { "PAYMENT", "OTHER" };
   enum HCEEventType { "DEACTIVATED", "ACTIVATED", "APDU_RECEIVED" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NFCManagerObject">NFCManagerObject</a>;
   [NoInterfaceObject] interface NFCManagerObject {
     readonly attribute <a href="#NFCManager">NFCManager</a> nfc;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NFCManagerObject">NFCManagerObject</a>;
   [NoInterfaceObject] interface NFCManager {
     const short NFC_RECORD_TNF_EMPTY = 0;
     const short NFC_RECORD_TNF_WELL_KNOWN = 1;

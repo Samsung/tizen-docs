@@ -1002,10 +1002,10 @@ To guarantee that the push application runs on a device with the push feature, d
 <pre class="webidl prettyprint">module Push {
   typedef DOMString PushRegistrationId;
   enum PushRegistrationState { "REGISTERED", "UNREGISTERED" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;
   [NoInterfaceObject] interface PushManagerObject {
     readonly attribute <a href="#PushManager">PushManager</a> push;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;
   [NoInterfaceObject] interface PushManager {
     void register(<a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

@@ -2170,10 +2170,10 @@ The GlobalizationError interface
     long second;
     long millisecond;
   };
+  Navigator implements <a href="#GlobalizationManagerObject">GlobalizationManagerObject</a>;
   [NoInterfaceObject] interface GlobalizationManagerObject {
     readonly attribute <a href="#GlobalizationManager">GlobalizationManager</a> globalization;
   };
-  Navigator implements <a href="#GlobalizationManagerObject">GlobalizationManagerObject</a>;
   [NoInterfaceObject] interface GlobalizationManager {
     void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
     void getLocaleName(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
