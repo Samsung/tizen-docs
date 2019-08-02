@@ -527,8 +527,7 @@ console.log("remove all registered alarms in the storage.");
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Alarm:
-                  </span>
+<span class="return">Alarm:</span>
  An alarm object with the specified ID.
               </ul>
 </div>
@@ -595,8 +594,7 @@ even if the added alarm was using <a href="notification.html#StatusNotification"
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">UserNotification:
-                  </span>
+<span class="return">UserNotification:</span>
  Notification to be posted when the alarm is triggered.
               </ul>
 </div>
@@ -661,8 +659,7 @@ Alarms that have already been triggered are removed automatically from the stora
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Alarm[]:
-                  </span>
+<span class="return">Alarm[]:</span>
  All Alarm objects.
               </ul>
 </div>
@@ -802,8 +799,7 @@ If the alarm has expired, this method returns <var>null</var>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long<span class="optional"> [nullable]</span>:</span>
  The duration before the next alarm is triggered.
               </ul>
 </div>
@@ -840,7 +836,8 @@ console.log("remaining time is " + sec);
    Constructor(Date date, long period)]
   interface AlarmAbsolute : <a href="#Alarm">Alarm</a> {
     readonly attribute Date date;
-    readonly attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
+<span class="nocode deprecated">    readonly attribute long? period;
+</span>    readonly attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
     Date? getNextScheduledDate() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -957,8 +954,7 @@ If the alarm has expired, this method returns <var>null</var>. The returned date
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Date:
-                  </span>
+<span class="return">Date<span class="optional"> [nullable]</span>:</span>
  The date/time of the next alarm trigger.
               </ul>
 </div>
@@ -991,10 +987,10 @@ console.log("next scheduled time is " + date);
 <pre class="webidl prettyprint">module Alarm {
   typedef DOMString AlarmId;
   enum ByDayValue { "MO", "TU", "WE", "TH", "FR", "SA", "SU" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AlarmManagerObject">AlarmManagerObject</a>;
   [NoInterfaceObject] interface AlarmManagerObject {
     readonly attribute <a href="#AlarmManager">AlarmManager</a> alarm;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AlarmManagerObject">AlarmManagerObject</a>;
   [NoInterfaceObject] interface AlarmManager {
     const long PERIOD_MINUTE = 60;
     const long PERIOD_HOUR = 3600;

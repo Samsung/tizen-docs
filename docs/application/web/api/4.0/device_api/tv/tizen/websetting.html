@@ -232,10 +232,10 @@ tizen.websetting.removeAllCookies(successCallback);
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module WebSetting {
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WebSettingObject">WebSettingObject</a>;
   [NoInterfaceObject] interface WebSettingObject {
     readonly attribute <a href="#WebSettingManager">WebSettingManager</a> websetting;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WebSettingObject">WebSettingObject</a>;
   [NoInterfaceObject] interface WebSettingManager {
     void setUserAgentString(DOMString userAgent, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                             raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

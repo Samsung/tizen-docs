@@ -357,7 +357,7 @@ mypackage/test.c                </td>
 <div class="brief">
  Opens the archive file. After this operation, it is possible to add or get files to and from the archive.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long open(<a href="#FileReference">FileReference</a> file, <a href="filesystem.html#FileMode">FileMode</a> mode, <a href="#ArchiveFileSuccessCallback">ArchiveFileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+<div class="synopsis"><pre class="signature prettyprint">long open(<a href="#FileReference">FileReference</a> file, <a href="filesystem.html#FileMode">FileMode</a> mode, <a href="#ArchiveFileSuccessCallback">ArchiveFileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
           optional <a href="#ArchiveFileOptions">ArchiveFileOptions</a>? options);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -450,8 +450,7 @@ In this mode, <em>getEntries()</em>, <em>getEntryByName()</em>, and <em>extractA
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Task ID which can be used to cancel the operation with abort().
               </ul>
 </div>
@@ -581,7 +580,7 @@ The size is <var>null</var> until the archive is opened.
 <div class="brief">
  Adds a new member file to <em>ArchiveFile</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long add(<a href="#FileReference">FileReference</a> sourceFile, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+<div class="synopsis"><pre class="signature prettyprint">long add(<a href="#FileReference">FileReference</a> sourceFile, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
          optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional <a href="#ArchiveFileEntryOptions">ArchiveFileEntryOptions</a>? options);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -696,8 +695,7 @@ If the source file is big then the callback can also be called while the file is
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Task ID which can be used to cancel the operation with abort().
               </ul>
 </div>
@@ -751,7 +749,7 @@ tizen.archive.open("downloads/new_archive.zip", "w", createSuccess);
 <div class="brief">
  Extracts every file from this <em>ArchiveFile</em> to a given directory.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long extractAll(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+<div class="synopsis"><pre class="signature prettyprint">long extractAll(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
                 optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional boolean? overwrite);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -812,8 +810,7 @@ UnknownError: In any other error case              </li>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Task ID which can be used to cancel the operation with abort().
               </ul>
 </div>
@@ -903,8 +900,7 @@ UnknownError: In case of any error              </li>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Task ID which can be used to cancel the operation with abort().
               </ul>
 </div>
@@ -998,8 +994,7 @@ UnknownError: In case of any other error              </li>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Task ID which can be used to cancel the operation with abort().
               </ul>
 </div>
@@ -1149,7 +1144,7 @@ This is usually the modification date of the file.
 <div class="brief">
  Extracts ArchiveFileEntry to the given location.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long extract(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, 
+<div class="synopsis"><pre class="signature prettyprint">long extract(<a href="#FileReference">FileReference</a> destinationDirectory, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,
              optional <a href="#ArchiveFileProgressCallback">ArchiveFileProgressCallback</a>? onprogress, optional boolean? stripName, optional boolean? overwrite);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -1207,8 +1202,7 @@ UnknownError: In case of any other error              </li>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Task ID which can be used to cancel the operation with abort().
               </ul>
 </div>
@@ -1420,10 +1414,6 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
 <pre class="webidl prettyprint">module Archive {
   typedef (DOMString or <a href="filesystem.html#File">File</a>) FileReference;
   enum ArchiveCompressionLevel { "STORE", "FAST", "NORMAL", "BEST" };
-  [NoInterfaceObject] interface ArchiveManagerObject {
-    readonly attribute <a href="#ArchiveManager">ArchiveManager</a> archive;
-  };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ArchiveManagerObject">ArchiveManagerObject</a>;
   dictionary ArchiveFileOptions {
     boolean overwrite;
   };
@@ -1431,6 +1421,10 @@ tizen.archive.open("downloads/some_archive.zip", "r", openSuccess, errorCallback
     DOMString destination;
     boolean stripSourceDirectory;
     <a href="#ArchiveCompressionLevel">ArchiveCompressionLevel</a> compressionLevel;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ArchiveManagerObject">ArchiveManagerObject</a>;
+  [NoInterfaceObject] interface ArchiveManagerObject {
+    readonly attribute <a href="#ArchiveManager">ArchiveManager</a> archive;
   };
   [NoInterfaceObject] interface ArchiveManager {
     long open(<a href="#FileReference">FileReference</a> file, <a href="filesystem.html#FileMode">FileMode</a> mode, <a href="#ArchiveFileSuccessCallback">ArchiveFileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror,

@@ -297,8 +297,7 @@ tizen.preference.getAll(successCB);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">PreferenceValueType:
-                  </span>
+<span class="return">PreferenceValueType:</span>
  The value associated with the given key.
               </ul>
 </div>
@@ -418,8 +417,7 @@ console.log("The current value of the preference key1 is: " + currentValue);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  If <var>true</var> the key exists in the  application preference, otherwise <var>false</var>.
               </ul>
 </div>
@@ -660,11 +658,11 @@ tizen.preference.getAll(successCB);
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Preference {
+  typedef (DOMString or long or double or boolean) PreferenceValueType;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PreferenceManagerObject">PreferenceManagerObject</a>;
   [NoInterfaceObject] interface PreferenceManagerObject {
     readonly attribute <a href="#PreferenceManager">PreferenceManager</a> preference;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PreferenceManagerObject">PreferenceManagerObject</a>;
-  typedef (DOMString or long or double or boolean) PreferenceValueType;
   [NoInterfaceObject] interface PreferenceData {
     readonly attribute DOMString key;
     readonly attribute <a href="#PreferenceValueType">PreferenceValueType</a> value;

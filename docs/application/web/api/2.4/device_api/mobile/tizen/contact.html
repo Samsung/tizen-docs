@@ -653,8 +653,7 @@ and it is set to <var>null</var>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AddressBook:
-                  </span>
+<span class="return">AddressBook:</span>
  The unified AddressBook object.
               </ul>
 </div>
@@ -759,8 +758,7 @@ The default address book is one of the addressBooks that is the appointed addres
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AddressBook:
-                  </span>
+<span class="return">AddressBook:</span>
  The default AddressBook object.
               </ul>
 </div>
@@ -1021,8 +1019,7 @@ tizen.account.getAccounts(
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AddressBook:
-                  </span>
+<span class="return">AddressBook:</span>
  The matching AddressBook object.
               </ul>
 </div>
@@ -1104,8 +1101,7 @@ person with the specified identifier.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Person:
-                  </span>
+<span class="return">Person:</span>
  The matching Person object.
               </ul>
 </div>
@@ -1559,7 +1555,7 @@ catch (err)
 <div class="brief">
  Gets an array of all <em>Person </em>objects from the contact DB or the ones that match the optionally supplied filter.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#PersonArraySuccessCallback">PersonArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, 
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#PersonArraySuccessCallback">PersonArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
           optional <a href="tizen.html#SortMode">SortMode</a>? sortMode);</pre></div>
 <p><span class="version">Since: </span>
  2.0
@@ -1694,8 +1690,7 @@ asynchronously.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -2019,8 +2014,7 @@ flag set to <var>true</var>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Contact:
-                  </span>
+<span class="return">Contact:</span>
  The matching Contact object.
               </ul>
 </div>
@@ -2711,7 +2705,7 @@ catch (err)
  Finds an array of all Contact objects from the specified address book or an array of
 Contact objects that match the optionally supplied filter.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#ContactArraySuccessCallback">ContactArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, 
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#ContactArraySuccessCallback">ContactArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
           optional <a href="tizen.html#SortMode">SortMode</a>? sortMode);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -2855,8 +2849,7 @@ asynchronously.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  An identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -3030,8 +3023,7 @@ watcherId = addressbook.addChangeListener(watcher);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ContactGroup:
-                  </span>
+<span class="return">ContactGroup:</span>
  The matching ContactGroup object.
               </ul>
 </div>
@@ -3324,8 +3316,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ContactGroup[]:
-                  </span>
+<span class="return">ContactGroup[]:</span>
  The array of ContactGroup object from this address book.
               </ul>
 </div>
@@ -3641,8 +3632,7 @@ This function returns a newly created Person object that indicates the separated
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Person:
-                  </span>
+<span class="return">Person:</span>
  Newly created Person object that indicates the separated contact
               </ul>
 </div>
@@ -4297,8 +4287,7 @@ The export format is set via the format parameter.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The string representation of the Contact item.
               </ul>
 </div>
@@ -4381,8 +4370,7 @@ set to <var>null</var> and will be detached from any address book.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Contact:
-                  </span>
+<span class="return">Contact:</span>
  A new clone of the Contact object.
               </ul>
 </div>
@@ -6316,14 +6304,62 @@ watcherId = tizen.contact.addChangeListener(watcher);
   typedef DOMString PersonId;
   typedef DOMString ContactGroupId;
   enum ContactTextFormat { "VCARD_30" };
-  enum ContactRelationshipType { "OTHER", "ASSISTANT", "BROTHER", "CHILD", "DOMESTIC_PARTNER", "FATHER", "FRIEND", "MANAGER", "MOTHER",
-    "PARENT", "PARTNER", "REFERRED_BY", "RELATIVE", "SISTER", "SPOUSE", "CUSTOM" };
-  enum ContactInstantMessengerType { "OTHER", "GOOGLE", "WLM", "YAHOO", "FACEBOOK", "ICQ", "AIM", "QQ", "JABBER", "SKYPE", "IRC",
-    "CUSTOM" };
+  enum ContactRelationshipType { "OTHER", "ASSISTANT", "BROTHER", "CHILD", "DOMESTIC_PARTNER", "FATHER", "FRIEND",
+    "MANAGER", "MOTHER", "PARENT", "PARTNER", "REFERRED_BY", "RELATIVE", "SISTER", "SPOUSE", "CUSTOM" };
+  enum ContactInstantMessengerType { "OTHER", "GOOGLE", "WLM", "YAHOO", "FACEBOOK", "ICQ", "AIM", "QQ", "JABBER",
+    "SKYPE", "IRC", "CUSTOM" };
+  dictionary ContactInit {
+    <a href="#ContactName">ContactName</a> name;
+    <a href="#ContactAddress">ContactAddress</a>[] addresses;
+    DOMString photoURI;
+    <a href="#ContactPhoneNumber">ContactPhoneNumber</a>[] phoneNumbers;
+    <a href="#ContactEmailAddress">ContactEmailAddress</a>[] emails;
+    <a href="#ContactInstantMessenger">ContactInstantMessenger</a>[] messengers;
+    <a href="#ContactRelationship">ContactRelationship</a>[] relationships;
+    [] extensions;
+    Date birthday;
+    <a href="#ContactAnniversary">ContactAnniversary</a>[] anniversaries;
+    <a href="#ContactOrganization">ContactOrganization</a>[] organizations;
+    DOMString[] notes;
+    <a href="#ContactWebSite">ContactWebSite</a>[] urls;
+    DOMString ringtoneURI;
+    DOMString messageAlertURI;
+    DOMString vibrationURI;
+    <a href="#ContactGroupId">ContactGroupId</a>[] groupIds;
+  };
+  dictionary ContactNameInit {
+    DOMString prefix;
+    DOMString suffix;
+    DOMString firstName;
+    DOMString middleName;
+    DOMString lastName;
+    DOMString[] nicknames;
+    DOMString phoneticFirstName;
+    DOMString phoneticMiddleName;
+    DOMString phoneticLastName;
+  };
+  dictionary ContactOrganizationInit {
+    DOMString name;
+    DOMString department;
+    DOMString title;
+    DOMString role;
+    DOMString logoURI;
+  };
+  dictionary ContactAddressInit {
+    DOMString country;
+    DOMString region;
+    DOMString city;
+    DOMString streetAddress;
+    DOMString additionalInformation;
+    DOMString postalCode;
+    boolean isDefault;
+    DOMString[] types;
+    DOMString label;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContactManagerObject">ContactManagerObject</a>;
   [NoInterfaceObject] interface ContactManagerObject {
     readonly attribute <a href="#ContactManager">ContactManager</a> contact;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContactManagerObject">ContactManagerObject</a>;
   [NoInterfaceObject] interface ContactManager {
     void getAddressBooks(<a href="#AddressBookArraySuccessCallback">AddressBookArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -6383,25 +6419,6 @@ watcherId = tizen.contact.addChangeListener(watcher);
     void link(<a href="#PersonId">PersonId</a> personId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#Person">Person</a> unlink(<a href="#ContactId">ContactId</a> contactId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  dictionary ContactInit {
-    <a href="#ContactName">ContactName</a> name;
-    <a href="#ContactAddress">ContactAddress</a>[] addresses;
-    DOMString photoURI;
-    <a href="#ContactPhoneNumber">ContactPhoneNumber</a>[] phoneNumbers;
-    <a href="#ContactEmailAddress">ContactEmailAddress</a>[] emails;
-    <a href="#ContactInstantMessenger">ContactInstantMessenger</a>[] messengers;
-    <a href="#ContactRelationship">ContactRelationship</a>[] relationships;
-    [] extensions;
-    Date birthday;
-    <a href="#ContactAnniversary">ContactAnniversary</a>[] anniversaries;
-    <a href="#ContactOrganization">ContactOrganization</a>[] organizations;
-    DOMString[] notes;
-    <a href="#ContactWebSite">ContactWebSite</a>[] urls;
-    DOMString ringtoneURI;
-    DOMString messageAlertURI;
-    DOMString vibrationURI;
-    <a href="#ContactGroupId">ContactGroupId</a>[] groupIds;
-  };
   [Constructor(optional <a href="#ContactInit">ContactInit</a>? ContactInitDict),
    Constructor(DOMString stringRepresentation)]
   interface Contact {
@@ -6434,17 +6451,6 @@ watcherId = tizen.contact.addChangeListener(watcher);
     attribute <a href="#AddressBookId">AddressBookId</a> addressBookId;
     attribute <a href="#ContactId">ContactId</a> contactId;
   };
-  dictionary ContactNameInit {
-    DOMString prefix;
-    DOMString suffix;
-    DOMString firstName;
-    DOMString middleName;
-    DOMString lastName;
-    DOMString[] nicknames;
-    DOMString phoneticFirstName;
-    DOMString phoneticMiddleName;
-    DOMString phoneticLastName;
-  };
   [Constructor(optional <a href="#ContactNameInit">ContactNameInit</a>? nameInitDict)]
   interface ContactName {
     attribute DOMString? prefix;
@@ -6457,13 +6463,6 @@ watcherId = tizen.contact.addChangeListener(watcher);
     attribute DOMString? phoneticMiddleName;
     attribute DOMString? phoneticLastName;
     readonly attribute DOMString? displayName;
-  };
-  dictionary ContactOrganizationInit {
-    DOMString name;
-    DOMString department;
-    DOMString title;
-    DOMString role;
-    DOMString logoURI;
   };
   [Constructor(optional <a href="#ContactOrganizationInit">ContactOrganizationInit</a>? orgInitDict)]
   interface ContactOrganization {
@@ -6482,17 +6481,6 @@ watcherId = tizen.contact.addChangeListener(watcher);
   interface ContactAnniversary {
     attribute Date date;
     attribute DOMString? label;
-  };
-  dictionary ContactAddressInit {
-    DOMString country;
-    DOMString region;
-    DOMString city;
-    DOMString streetAddress;
-    DOMString additionalInformation;
-    DOMString postalCode;
-    boolean isDefault;
-    DOMString[] types;
-    DOMString label;
   };
   [Constructor(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict)]
   interface ContactAddress {

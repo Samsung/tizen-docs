@@ -136,7 +136,7 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <div class="brief">
  The Media interface provides interface and functions to manage audio objects.
               </div>
-<pre class="webidl prettyprint">Media(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback, 
+<pre class="webidl prettyprint">Media(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback,
       optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus);</pre>
 <div class="description">
               <ul>
@@ -773,7 +773,7 @@ setTimeout(function()
 <div class="brief">
  Basic error callback.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject] interface MediaErrorCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaErrorCallback {
     void onerror(<a href="#MediaError">MediaError</a> error);
   };</pre>
 <div class="methods">
@@ -928,7 +928,7 @@ If an application uses startRecord() or stopRecord(), declare the following feat
     const short MEDIA_ERR_NONE_SUPPORTED = 4;
     readonly attribute short code;
   };
-  [Callback=FunctionOnly,NoInterfaceObject] interface MediaErrorCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface MediaErrorCallback {
     void onerror(<a href="#MediaError">MediaError</a> error);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface StatusChangeCallback {
