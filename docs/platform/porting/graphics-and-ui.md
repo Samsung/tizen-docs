@@ -718,6 +718,7 @@ The Emulator YAGL (OpenGL&reg; ES / EGL&trade; driver for the emulator) is imple
 The following commit explains how to port the driver with `libtpl-egl` from the traditional drm-based driver:
 
 - Porting YAGL to the Tizen platform [https://review.tizen.org/gerrit/#/c/67921/](https://review.tizen.org/gerrit/#/c/67921/)
+- Porting MESA to the Tizen platform [https://review.tizen.org/gerrit/#/c/203119/](https://review.tizen.org/gerrit/#/c/203119/)
 
 ### Testing and Verifying the OpenGL&reg; ES Driver
 
