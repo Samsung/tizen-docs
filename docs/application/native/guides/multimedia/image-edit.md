@@ -418,7 +418,7 @@ To decode a JPEG, PNG, GIF, or BMP image:
 
    > **Note**
    >
-   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are encoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
+   > Due to the decoder limitations, the color space setting is only supported for decoding the JPEG images. The default color space is `IMAGE_UTIL_COLORSPACE_RGBA8888`. PNG, GIF, and BMP images are decoded with `IMAGE_UTIL_COLORSPACE_RGBA8888`.
 
 4. Execute the decoding using `image_util_decode_run2()` or `image_util_decode_run_async2()`:
 
