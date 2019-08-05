@@ -297,6 +297,8 @@ lrwxrwxrwx 1 root root    14 Jul 28  2016 libtdm-default.so -> libtdm-drm.so
 -rwxr-xr-x 1 root root 37152 Jul 12  2016 libtdm-drm.so
 ```
 
+### Initialing the TDM Backend Module
+
 The TDM backend module must define the global data symbol with the name `tdm_backend_module_data`. The TDM frontend reads this symbol at the initialization time. TDM calls the `init()` function of the `tdm_backend_module_data`. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
 ```cpp
@@ -329,7 +331,7 @@ tdm_drm_deinit(tdm_backend_data *bdata) {
 tdm_backend_module tdm_backend_module_data = {
     "drm",
     "Samsung",
-    TDM_BACKEND_SET_ABI_VERSION(1,1),
+    TDM_BACKEND_SET_ABI_VERSION(2,0),
     tdm_drm_init,
     tdm_drm_deinit
 };
@@ -371,7 +373,7 @@ tdm_drm_init(tdm_display *dpy, tdm_error *error) {
 }
 ```
 
-After loading the TDM backend module, the TDM frontend calls the `display_get_capability()`, `display_get_outputs()`, `output_get_capability()`, `output_get_layers()`, and `layer_get_capability()` functions to get the hardware-specific information. That means that the TDM backend module must implement these 5 functions.
+After loading the TDM backend module, the TDM frontend calls the `display_get_capability()`, `display_get_outputs()`, `output_get_capability()` to get the specific information of the hardware.  The TDM backend module has to set the qTDM_OUTPUT_CAPABILITY_HWCq on the output when it supports TDM HWC(HardWare Compositing). In the latest version(v2.9) of libtdm, TDM recommends that the TDM backend module supports TDM HWC which means that it has to registers the `tdm_func_hwc` and `tdm_func_hwc_window`. If TDM backend module does not support TDM HWC, the TDM backend module implements the `output_get_layers()`, and the `layer_get_capability()` functions and register `tdm_func_layer`.
 
 In addition, if a target has a memory-to-memory converting hardware device and the capture hardware device, the TDM backend module can register the `tdm_func_pp()` and `tdm_func_capture()` functions with the `tdm_backend_register_func_pp()` and `tdm_backend_register_func_capture()` functions.
 
@@ -421,6 +423,47 @@ The output backend interface is mandatory. For more information, see [tdm_backen
 | `output_create_capture()`     | Creates a capture object of an output object. The backend module does not need to implement this function if the hardware does not have a capture device. | No  |
 | `output_set_status_handler()` | Sets an output connection status handler. The backend module must call the output status handler when the output connection status has been changed to let the TDM frontend know of the change. | No  |
 | `output_set_dpms_handler()`   | Sets an output DPMS handler. The backend module must call the output DPMS handler when the output DPMS has been changed to let the TDM frontend know of the change. | No  |
+| `output_get_hwc()`            | Gets a hwc object of a output object. The backend module returns the hwc object when the output has TDM_OUTPUT_CAPABILITY_HWC. | Yes  |
+
+The hwc backend interface is mandatory. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
+
+**Table: Hwc backend interface functions**
+
+| Function                   | Description                              | Mandatory          |
+| -------------------------- | ---------------------------------------- | --------- |
+| `hwc_create_window()`   | Creates a new window on the given hwc. The backend module must implement this function. The backend creates a private `tdm_hwc_window` and returns the handle of it. | Yes |
+| `hwc_get_video_supported_formats()`     | Gets video the supported format array for the hwc windows of a hwc object. | Yes  |
+| `hwc_get_video_available_properties()`     | Gets the available video property array of a hwc object. The backend returns the video properties which is predefined in the backend module. | Yes  |
+| `hwc_get_capabilities()`         | Gets the hwc capabilities. The backend returns the multiple of the `tdm_hwc_capability` which the backend can support. | Yes |
+| `hwc_get_available_properties()`         | Gets the available property array of a hwc object. The backend returns the properties which is predefined in the backend module. | Yes |
+| `hwc_get_client_target_buffer_queue()`       | Gets a target buffer queue. The backend returns the `tbm_surface_queue_h`. | Yes |
+| `hwc_set_client_target_buffer()`     | Sets the client(relative to the TDM) target buffer. The target buffer is from the `tbm_surface_queue_h` which contains the result of the gl composition with the `tdm_hwc_window`s which marked as `TDM_HWC_WIN_COMPOSITION_CLIENT`. | Yes |
+| `hwc_validate()`    | Validates the hwc. The backend inspects all of the hw layer state and determine if there are any composition type changes necessary before committing the hwc. | Yes  |
+| `hwc_get_changed_composition_types()`   | Gets changed composition types. The backend returns the `tdm_hwc_window`s of which composition type is changed through the `hwc_validate`. | Yes  |
+| `hwc_accept_validation()` | Accepts the validation required by the backend. The backend can know the decided `tdm_hwc_window_composition`s at this validation. The backend can commit the set of the `tdm_hwc_window`s with this accepted `tdm_hwc_window_compositions`. | Yes  |
+| `hwc_commit()` | Commits changes for a hwc object. The backend can commits the output(layers) associated with the accepted validation of this hwc on the display output device. | Yes  |
+| `hwc_set_commit_handler()` | Sets a user commit handler. The backend has to the `tdm_hwc_commit_handler` function after finishing the `hwc_commit`. | Yes  |
+| `hwc_set_property()` | Set the property which has a given id on the hwc object. | Yes  |
+| `hwc_get_property()` | Get the property which has a given id on the hwc object. | Yes  |
+
+The hwc_window backend interface is mandatory. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
+
+**Table: Hwc backend interface functions**
+
+| Function                   | Description                              | Mandatory          |
+| -------------------------- | ---------------------------------------- | --------- |
+| `hwc_window_destroy()`   | Destroys the given window. The backend module must implement this function. The backend destorys a private `tdm_hwc_window`. | Yes |
+| `hwc_window_acquire_buffer_queue()`     | Acquires a buffer queue for the window object. These buffers are used to composite by hardware a client content in the nocomp mode. This function can be used when the backend has the `TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE`. | No  |
+| `hwc_window_release_buffer_queue()` | Releases a buffer queue for the window object. The backend releases the buffer queue when the client does not use buferrs of queue anymore. This function can be used when the backend has the `TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE`. | No  |
+| `hwc_window_set_composition_type()`  | Gets the composition type of the window object. The backend sets the `tdm_hwc_window_composition`.| Yes |
+| `hwc_window_set_buffer_damage()` | Sets the buffer damage. The backend sets the buffer damage. | Yes |
+| `hwc_window_set_info()`       | Sets the information to a window object. The information will be applied when the hwc object is committed. | Yes |
+| `hwc_window_set_buffer()`     | Sets a TDM buffer to a window object. A TDM buffer will be applied when the hwc object. | Yes |
+| `hwc_window_set_property()`   | Sets the property which has a given id. | Yes  |
+| `hwc_window_get_property()`   | Gets the property which has a given id. | Yes  |
+| `hwc_window_get_constraints()` | Gets the constraints of hwc_window. The backend returns the `tdm_hwc_window_constraint`. | Yes  |
+| `hwc_window_set_name()` | Sets the name of a window object. The backend can get the name of the hwc_window from the tdm client.| Yes  |
+| `hwc_window_set_cursor_image()` | Sets the cursor memory information associated with the hwc_window.	 | Yes  |
 
 The layer backend interface is mandatory. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
@@ -478,22 +521,7 @@ There are several backends which can be used as reference when implementing the 
 
 ### Testing the Porting Result
 
-TDM offers the `tdm-test-server` tool to allow you to easily test the porting result. The `tdm-test-server` tool is included in the `libtdm-tools` package, which can be downloaded from the platform binary's snapshot repository. Make sure that TBM porting is done before using the following commands, because TDM works on top of TBM.
-
-```
-$ systemctl stop display-manager  (stop the display server)
-$ export XDG_RUNTIME_DIR=/run
-$ export TBM_DISPLAY_SERVER=1
-$ tdm-test-server                 (show all options)
-$ tdm-test-server -a              (test all layers)
-$ tdm-test-server -a -v           (test all layers with vblank events)
-```
-
-The following image shows the result of a test performed using the `tdm-test-server -a` command. The fullscreen buffer is set to the PRIMARY layer, and the small buffer is set to the OVERLAY layer.
-
-**Figure: Tdm-test-server results**
-
-![Tdm-test-server results](media/tdm-test-server-result.png)
+TDM offers the `tdm-haltests` to allow you to test and to verify the porting result. The `tdm-haltests` tool is included in the `libtdm-haltests` package, which can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on `gtest` package and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
 
 ### Checking TDM Log Messages
 
