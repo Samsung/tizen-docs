@@ -38,79 +38,105 @@ lrwxrwxrwx  1 root root    20 Jul 28  2016 libtbm_sprd.so.0 -> libtbm_sprd.so.0.
 
 ### Initialing the TBM Backend Module
 
-The `TBMModuleData` is for the entry point symbol to initialize the TBM backend module. The TBM backend module must define the global data symbol with the name of `tbmModuleData`. The TBM frontend loads the `tbmModuleData` global data symbol and calls the `init()` function at the initial time.
-
-> **Note**
->
-> Do not change the name of the symbol in the TBM backend module.
+The TBM backend module must define the global data symbol with the name `tbm_backend_module_data`. The TBM frontend reads this symbol at the initialization time. TBM calls the `init()` function of the `tbm_backend_module_data`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
 ```cpp
-/*
-   @brief tbm module data
-   Data type for the entry point of the backend module
-*/
-typedef struct {
-    TBMModuleVersionInfo *vers;	/* TBM module information */
-    ModuleInitProc init; /* init function of a backend module */
-} TBMModuleData;
-
-typedef int (*ModuleInitProc) (tbm_bufmgr, int);
+/**
+ * @brief The backend module information of the entry point to initialize a tbm
+ * backend module.
+ * @remark
+ * A backend module @b SHOULD define the global data symbol of which name is
+ * @b "tbm_backend_module_data". tbm will read this symbol, @b "tbm_backend_module_data",
+ * at the initial time and call init() function of #tbm_backend_module.
+ */
+typedef struct _tbm_backend_module {
+	const char *name;           /**< The module name of a backend module */
+	const char *vendor;         /**< The vendor name of a backend module */
+	unsigned long abi_version;  /**< The ABI version of a backend module */
+	/**
+	 * @brief The init function of a backend module
+	 * @param[in] bufmgr A tbm buffer manager object.
+	 * @return The backend module data
+	 * @see tbm_backend_bufmgr_data
+	 */
+	tbm_backend_bufmgr_data *(*init)(tbm_bufmgr bufmgr, tbm_error_e *error);
+	/**
+	* @brief deinitialize the bufmgr private data.
+	* @param[in] bufmgr_data : The backend module data
+	*/
+	void (*deinit)(tbm_backend_bufmgr_data *bufmgr_data);
+} tbm_backend_module;
 ```
 
-The TBM backend module initialization consists of allocating the `tbm_bufmgr_backend` instance (`tbm_backend_alloc`), entering the necessary information, and the initialization itself (`tbm_backend_init`).
-
 ```cpp
-tbm_bufmgr_backend tbm_backend_alloc(void);
-void tbm_backend_free(tbm_bufmgr_backend backend);
-int tbm_backend_init(tbm_bufmgr bufmgr, tbm_bufmgr_backend backend);
-```
+#include <tbm_backend.h>
 
-```cpp
-MODULEINITPPROTO (init_tbm_bufmgr_priv);
+static tbm_backend_bufmgr_data *bufmgr_data;
 
-static TBMModuleVersionInfo DumbVersRec = {
-    "shm",
-    "Samsung",
-    TBM_ABI_VERSION,
+tbm_backend_bufmgr_data*
+tbm_shm_init(tbm_bufmgr bufmgr, tbm_error_e *error)
+{
+    bufmgr_data = calloc(1, sizeof(tbm_backend_bufmgr_data));
+
+    return (tbm_backend_bufmgr_data*)bufmgr_data;
+}
+
+void
+tbm_shm_deinit(tbm_backend_bufmgr_data *bufmgr_data)
+{
+    free(bufmgr_data);
+}
+
+tbm_backend_module tbm_backend_module_data = {
+	"shm",
+	"Samsung",
+	TBM_BACKEND_ABI_VERSION_3_0,
+	tbm_shm_init,
+	tbm_shm_deinit
 };
+```
 
-TBMModuleData tbmModuleData = {&DumbVersRec, init_tbm_bufmgr_priv};
+The TDM backend must register the `tbm_backend_bufmgr_func` and `tbm_backend_bo_func` with the `tbm_backend_bufmgr_register_bufmgr_func()` and `tbm_backend_bufmgr_alloc_bo_func()` in the `tbm_backend_module_data` `init()` function.
 
-int
-init_tbm_bufmgr_priv(tbm_bufmgr bufmgr, int fd) {
-    tbm_bufmgr_backend bufmgr_backend;
+```cpp
+#include <tbm_backend.h>
 
-    bufmgr_shm = calloc(1, sizeof(struct _tbm_bufmgr_shm));
+tbm_backend_bufmgr_data*
+tbm_shm_init(tbm_bufmgr bufmgr, tbm_error_e *error)
+{
+	bufmgr_func->bufmgr_get_capabilities = tbm_shm_bufmgr_get_capabilities;
+	bufmgr_func->bufmgr_bind_native_display = tbm_shm_bufmgr_bind_native_display;
+	bufmgr_func->bufmgr_get_supported_formats = tbm_shm_bufmgr_get_supported_formats;
+	bufmgr_func->bufmgr_get_plane_data = tbm_shm_bufmgr_get_plane_data;
+	bufmgr_func->bufmgr_alloc_bo = tbm_shm_bufmgr_alloc_bo;
+	bufmgr_func->bufmgr_alloc_bo_with_format = NULL;
+	bufmgr_func->bufmgr_import_fd = tbm_shm_bufmgr_import_fd;
+	bufmgr_func->bufmgr_import_key = NULL;
 
-    bufmgr_backend = tbm_backend_alloc();
+	bo_func->bo_free = tbm_shm_bo_free;
+	bo_func->bo_get_size = tbm_shm_bo_get_size;
+	bo_func->bo_get_memory_types = tbm_shm_bo_get_memory_type;
+	bo_func->bo_get_handle = tbm_shm_bo_get_handle;
+	bo_func->bo_map = tbm_shm_bo_map;
+	bo_func->bo_unmap = tbm_shm_bo_unmap;
+	bo_func->bo_lock = NULL;
+	bo_func->bo_unlock = NULL;
+	bo_func->bo_export_fd = tbm_sprd_bo_export_fd;
+	bo_func->bo_export_key = NULL;
 
-    bufmgr_backend->priv = (void *)bufmgr_shm;
-    bufmgr_backend->bufmgr_deinit = tbm_shm_bufmgr_deinit,
-    bufmgr_backend->bo_size = tbm_shm_bo_size,
-    bufmgr_backend->bo_alloc = tbm_shm_bo_alloc,
-    bufmgr_backend->bo_free = tbm_shm_bo_free,
-    bufmgr_backend->bo_import = tbm_shm_bo_import,
-    bufmgr_backend->bo_import_fd = NULL,
-    bufmgr_backend->bo_export = tbm_shm_bo_export,
-    bufmgr_backend->bo_export_fd = NULL,
-    bufmgr_backend->bo_get_handle = tbm_shm_bo_get_handle,
-    bufmgr_backend->bo_map = tbm_shm_bo_map,
-    bufmgr_backend->bo_unmap = tbm_shm_bo_unmap,
-    bufmgr_backend->bo_lock = NULL;
-    bufmgr_backend->bo_unlock = NULL;
-    bufmgr_backend->surface_get_plane_data = tbm_shm_surface_get_plane_data;
-    bufmgr_backend->surface_supported_format = tbm_shm_surface_supported_format;
+	err = tbm_backend_bufmgr_register_bo_func(bufmgr, bo_func);
+	if (err != TBM_ERROR_NONE) {
+		TBM_ERR("fail to register bo_func! err(%d)\n", err);
+		if (error)
+			*error = TBM_ERROR_INVALID_OPERATION;
+		goto fail_register_bo_func;
+	}
+	bufmgr_shm->bo_func = bo_func;
 
-    if (!tbm_backend_init(bufmgr, bufmgr_backend)) {
-        tbm_backend_free(bufmgr_backend);
-        free(bufmgr_shm);
-
-        return 0;
-    }
-
-    return 1;
+	return (tbm_backend_bufmgr_data *)bufmgr_shm;
 }
 ```
+
 
 ### Porting the OAL Interface
 
@@ -120,54 +146,58 @@ TBM provides the header files to implement the TBM backend module.
 
 | Header file                              | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
-| [tbm_bufmgr_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=src/tbm_bufmgr_backend.h;h=839ec996de16493e40b90c72066448d770575bca;hb=refs/heads/tizen) | This file includes information on implementing the TBM backend module. |
-| [tbm_drm_helper.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=src/tbm_drm_helper.h;h=0c93a378d2ddf64f2bcb9ebf6a1d0b85563670a2;hb=refs/heads/tizen) | This file includes helper functions for the DRM interface backend module. |
-| [tbm_bufmgr.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=src/tbm_bufmgr.h;h=50fcf08101c2cb0a4b8750f3eda30d375c981ea7;hb=refs/heads/tizen) | This is the user header file including general information on how to use the TBM. |
-| [tbm_surface.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=src/tbm_surface.h;h=0686a4ed2d0e26c0386e9f1232f0aa2a6e7f5eb6;hb=refs/heads/tizen) | This is the user header file including general information on how to use `tbm_surface`. |
+| [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen) | This file includes information on implementing the TBM backend module. |
+| [tbm_drm_helper.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizenn) | This file includes helper functions for the DRM interface backend module. |
+| [tbm_type_common.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen) | This is the user header file including general information on how to use the TBM. |
 
 #### TBM Backend Interface
 
-The following table lists the TBM backend interface functions for initializing and deinitializing.
+The following table lists the `bufmgr` backend interface functions of the tbm_backend module. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
-**Table: Initializing and deinitializing functions**
+**Table: bufmgr functions**
 
-| Function                       | Description                              |           |
-| ------------------------------ | ---------------------------------------- | --------- |
-| `ModuleInitProc()`             | The `init` function of a backend module. | Mandatory |
-| `bufmgr_deinit()`              | Deinitialize the buffer manager privately. | Mandatory |
-| `bufmgr_bind_native_display()` | If the backend needs to get the native display, use this backend function. | Optional  |
-
-The following table lists the TBM backend interface functions for `tbm_bo`.
-
-**Table: tbm_bo functions**
-
-| Function          | Description                              | Mandatory                                         |
+| Function          | Description                              | Mandatory                                |
 | ----------------- | ---------------------------------------- | ---------------------------------------- |
-| `bo_alloc()`      | Allocates the buffer object. If the backend wants to reuse the `bo` private at frontend, return the same pointer of the `bo` private. | Yes                                |
-| `bo_free()`       | Frees the buffer object. The frontend calls this function when it does not use the `bo` private. | Yes                                |
-| `bo_import()`     | Imports the buffer object associated with the key. If the backend does not support buffer sharing by the TBM key, the function pointer must be set to `NULL`. | No                                 |
-| `bo_export()`     | Exports the buffer object. If the backend does not support buffer sharing by TBM key, the function pointer must be set to `NULL`. | No                                 |
-| `bo_import_fd()`  | Imports the buffer object associated with the prime `fd`. The `tbm_fd` must be freed by the user. If the backend does not support buffer sharing by TBM `fd`, the function pointer must be set to `NULL`. | Yes (Must support buffer sharing by TBM `fd`.) |
-| `bo_export_fd()`  | Imports the buffer object associated with the prime `fd`. The `tbm_fd` must be freed by the user. If the backend does not support buffer sharing by TBM `fd`, the function pointer must be set to `NULL`. | Yes (Must support buffer sharing by TBM `fd`.) |
-| `bo_get_flags()`  | Gets the TBM flags of memory type.        | Yes                                |
-| `bo_size()`       | Gets the size of a buffer object.        | Yes                                |
-| `bo_get_handle()` | Gets the `tbm_bo_handle` according to the device type. | Yes                                |
-| `bo_map()`        | Maps the buffer object according to the device type and the option. | Yes                                |
-| `bo_unmap()`      | Unmaps the buffer object.                | Yes                                |
-| `bo_lock()`       | Locks the buffer object with a device and an opt. | No                                 |
-| `bo_unlock()`     | Unlocks the buffer object.               | No                                 |
+| `bufmgr_get_capabilities()` | Get the capabilities of a buffer manager. The backend must support the `TBM_BUFMGR_CAPABILITY_SHARE_FD` and `TBM_BUFMGR_CAPABILITY_SHARE_KEY`. `TBM_BUFMGR_CAPABILITY_SHARE_KEY` will help you do debugging to develop the platform because the `tbm_key` will be the unique identification of the `tbm_bo` memory in the system. | Yes |
+| `bufmgr_bind_native_display()` | Set(bind) the native display.
+ If the backend needs to get the native display, use this backend function. | Yes |
+| `bufmgr_get_supported_formats()` | Get the formats list and the num to be supported by backend. | Yes |
+| `bufmgr_get_plane_data()` | Get the plane data of the plane_idx according to the format. | Yes |
+| `bufmgr_alloc_bo()` | Allocate the `tbm_backend_bo_data` of the tbm_backend. The `tbm_backend_bo_data` is a pointer(handle). | Yes |
+| `bufmgr_alloc_bo_with_format()` | Allocate the `tbm_backend_bo_data` of the bo index according to the format. The `tbm_backend_bo_data` is a pointer(handle). | Yes |
+| `bufmgr_alloc_bo_with_tiled_format()` | Allocate the `tbm_backend_bo_data` for GPU which support tiled format. The `tbm_backend_bo_data` is a pointer(handle). | Yes |
+| `bufmgr_import_fd()` | Import the `tbm_backend_bo_data` associated with the prime `fd`. The `tbm_fd` must be freed by the user. If the backend does not support buffer sharing by TBM `fd`, the function pointer must be set to `NULL`. | Yes (Must support buffer sharing by TBM `fd`.)  |
+| `bufmgr_import_key()` | Import the `tbm_backend_bo_data` associated with the key. If the backend does not support buffer sharing by the TBM key, the function pointer must be set to `NULL`. | Yes |
 
-The following table lists the TBM backend interface functions for `tbm_surface`.
+The following table lists the `bo` backend interface functions of the tbm_backend module. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
-**Table: tbm_surface functions**
+**Table: bo functions**
 
 | Function                     | Description                              | Mandatory          |
-| ---------------------------- | ---------------------------------------- | --------- |
-| `surface_supported_format()` | Queries the format list and the number to be supported by backend. | Yes |
-| `surface_get_plane_data()`   | Gets the plane data, such as the size, offset, pitch, and buffer object index of the surface. | Yes |
-| `surface_bo_alloc()`         | Allocates the buffer object for the TBM surface with width, height, format, and buffer object index. If the backend does not want to allocate the buffer of the TBM surface with width, format, and height, the function pointer must be set to `NULL`. The TBM frontend allocation buffer of the TBM surface with data is gained from the `surface_get_plane_data()`. | No  |
+| ---------------------------- | ---------------------------------------- | ------------------ |
+| `bo_free()` | Free the `tbm_backend_bo_data`. | Yes |
+| `bo_get_size()` | Get the size of a `tbm_backend_bo_data`. | Yes |
+| `bo_get_memory_types()` | Get the `tbm_bo_memory_type`. | Yes |
+| `bo_get_handle()` | Get the `tbm_bo_handle` according to the `tbm_bo_device_type`. | Yes |
+| `bo_map()` | Map the `tbm_backend_bo_data` according to the `tbm_bo_device_type` and the `tbm_bo_access_option`. | Yes |
+| `bo_unmap()` | Unmap the `tbm_backend_bo_data` | Yes |
+| `bo_lock()` | Lock the `tbm_backend_bo_data` with a device and an opt. | No |
+| `bo_unlock()` | Unlock the `tbm_backend_bo_data`. | No |
+| `bo_export_fd()` | Export the `tbm_backend_bo_data` to the `tdm_fd`(prime fd). The `tbm_fd` must be freed by the user. If the backend does not support a buffer sharing by TBM fd, the function pointer must be set to `NULL`. | Yes |
+| `bo_export_key()` | Export the `tbm_backend_bo_data` to the tdm_key. If the backend does not support a buffer sharing by TBM key, the function pointer must be set to `NULL`. | Yes |
 
-The following table lists the TBM buffer memory types.
+The following table lists the TBM bufmgr capability, `tbm_bufmgr_capability`.
+
+**Table: TBM buffer capability**
+|  Buffer capability                   | Description                              |
+| ------------------------------------ | ---------------------------------------- |
+| `TBM_BUFMGR_CAPABILITY_NONE`         | Not Support capability                   |
+| `TBM_BUFMGR_CAPABILITY_SHARE_KEY`    | Support sharing buffer by tbm key        |
+| `TBM_BUFMGR_CAPABILITY_SHARE_FD`     | Support sharing buffer by tbm fd         |
+| `TBM_BUFMGR_CAPABILITY_TBM_SYNC`     | Support timeline sync                    |
+| `TBM_BUFMGR_CAPABILITY_TILED_MEMORY` | Support tiled memory                     |
+
+The following table lists the TBM buffer memory types, `tbm_bo_memory_type`.
 
 **Table: TBM buffer memory types**
 
@@ -179,7 +209,7 @@ The following table lists the TBM buffer memory types.
 | `TBM_BO_WC`          | Write-combine memory                     |
 | `TBM_BO_VENDOR`      | Vendor specific memory (depends on the backend) |
 
-The following table lists the TBM buffer device types.
+The following table lists the TBM buffer device types, `tbm_bo_device_type`.
 
 **Table: TBM buffer device types**
 
@@ -191,7 +221,7 @@ The following table lists the TBM buffer device types.
 | `TBM_DEVICE_3D`      | Device type to get the 3D memory handle |
 | `TBM_DEVICE_MM`      | Device type to get the multimedia handle |
 
-The following table lists the TBM buffer access options.
+The following table lists the TBM buffer access options, `tbm_bo_access_option`.
 
 **Table: TBM buffer access options**
 
@@ -229,6 +259,18 @@ The following table lists the TBM backends.
 | `libtbm-sprd`   | [platform/adaptation/spreadtrum/libtbm-sprd](https://review.tizen.org/gerrit/gitweb?p=platform/adaptation/spreadtrum/libtbm-sprd.git;a=summary) | Backend for a target device which uses the Spreadtrum chipset only. The `sprd` backend module uses the `drm` gem memory interface but some `ioctl` are only provided by the `sprd drm` kernel. |
 | `libtbm-exynos` | [platform/adaptation/samsung_exynos/libtbm-exynos](https://review.tizen.org/gerrit/gitweb?p=platform/adaptation/samsung_exynos/libtbm-exynos.git;a=summary) | Backend for a target device which uses the exynos chipset only. The `exynos` backend module uses the `drm` gem memory interface but some `ioctl` are only provided by `exynos drm` kernel. |
 | `libtbm-vigs`   | [platform/adaptation/emulator/libtbm-vigs](https://review.tizen.org/gerrit/gitweb?p=platform/adaptation/emulator/libtbm-vigs.git;a=summary) | Backend for a target device which supports the VIGS interface. The `vigs` backend is used by the emulator target. |
+
+### Testing the Porting Result
+
+TBM offers the `tbm-haltests` to allow you to test and to verify the porting result. The `tbm-haltests` tool is included in the `libtbm-haltests` package, which can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on `gtest` package and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
+
+### Checking TDM Log Messages
+
+TBM uses dlog to print debug messages. To show TBM runtime log messages:
+
+```
+$ dlogutil -v threadtime TBM
+```
 
 ### Reference
 
