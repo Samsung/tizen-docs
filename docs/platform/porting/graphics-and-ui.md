@@ -36,32 +36,24 @@ lrwxrwxrwx  1 root root    20 Jul 28  2016 libtbm_sprd.so.0 -> libtbm_sprd.so.0.
 -rwxr-xr-x  1 root root 26728 Jun 29  2016 libtbm_sprd.so.0.0.0
 ```
 
-### Initialing the TBM Backend Module
+### Initializing TBM Backend Module
 
-The TBM backend module must define the global data symbol with the name `tbm_backend_module_data`. The TBM frontend reads this symbol at the initialization time. TBM calls the `init()` function of the `tbm_backend_module_data`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
+The TBM backend module must define the global data symbol with the name, `tbm_backend_module_data`. The TBM frontend reads the global data symbol at the initialization time. In addition, the TBM backend module calls `init()` of `tbm_backend_module_data`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
 ```cpp
-/**
- * @brief The backend module information of the entry point to initialize a tbm
- * backend module.
- * @remark
- * A backend module @b SHOULD define the global data symbol of which name is
- * @b "tbm_backend_module_data". tbm will read this symbol, @b "tbm_backend_module_data",
- * at the initial time and call init() function of #tbm_backend_module.
- */
 typedef struct _tbm_backend_module {
 	const char *name;           /**< The module name of a backend module */
 	const char *vendor;         /**< The vendor name of a backend module */
 	unsigned long abi_version;  /**< The ABI version of a backend module */
 	/**
 	 * @brief The init function of a backend module
-	 * @param[in] bufmgr A tbm buffer manager object.
+	 * @param[in] bufmgr A tbm buffer manager object
 	 * @return The backend module data
 	 * @see tbm_backend_bufmgr_data
 	 */
 	tbm_backend_bufmgr_data *(*init)(tbm_bufmgr bufmgr, tbm_error_e *error);
 	/**
-	* @brief deinitialize the bufmgr private data.
+	* @brief deinitialize the bufmgr private data
 	* @param[in] bufmgr_data : The backend module data
 	*/
 	void (*deinit)(tbm_backend_bufmgr_data *bufmgr_data);
@@ -96,7 +88,7 @@ tbm_backend_module tbm_backend_module_data = {
 };
 ```
 
-The TDM backend must register the `tbm_backend_bufmgr_func` and `tbm_backend_bo_func` with the `tbm_backend_bufmgr_register_bufmgr_func()` and `tbm_backend_bufmgr_alloc_bo_func()` in the `tbm_backend_module_data` `init()` function.
+The TBM backend must register `tbm_backend_bufmgr_func` and `tbm_backend_bo_func` with `tbm_backend_bufmgr_register_bufmgr_func()` and `tbm_backend_bufmgr_alloc_bo_func()` in `init()` of `tbm_backend_module`.
 
 ```cpp
 #include <tbm_backend.h>
@@ -112,6 +104,15 @@ tbm_shm_init(tbm_bufmgr bufmgr, tbm_error_e *error)
 	bufmgr_func->bufmgr_alloc_bo_with_format = NULL;
 	bufmgr_func->bufmgr_import_fd = tbm_shm_bufmgr_import_fd;
 	bufmgr_func->bufmgr_import_key = NULL;
+
+	err = tbm_backend_bufmgr_register_bufmgr_func(bufmgr, bufmgr_func);
+	if (err != TBM_ERROR_NONE) {
+		TBM_ERR("fail to register bufmgr_func! err(%d)\n", err);
+		if (error)
+			*error = TBM_ERROR_INVALID_OPERATION;
+		goto fail_register_bufmgr_func;
+	}
+	bufmgr_shm->bufmgr_func = bufmgr_func;
 
 	bo_func->bo_free = tbm_shm_bo_free;
 	bo_func->bo_get_size = tbm_shm_bo_get_size;
@@ -138,7 +139,7 @@ tbm_shm_init(tbm_bufmgr bufmgr, tbm_error_e *error)
 ```
 
 
-### Porting the OAL Interface
+### Porting OAL Interface
 
 TBM provides the header files to implement the TBM backend module.
 
@@ -152,83 +153,75 @@ TBM provides the header files to implement the TBM backend module.
 
 #### TBM Backend Interface
 
-The following table lists the `bufmgr` backend interface functions of the tbm_backend module. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
+The following table lists the `bufmgr` backend interface functions of the `tbm_backend_module`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen):
 
 **Table: bufmgr functions**
 
 | Function          | Description                              | Mandatory                                |
 | ----------------- | ---------------------------------------- | ---------------------------------------- |
-| `bufmgr_get_capabilities()` | Get the capabilities of a buffer manager. The backend must support the `TBM_BUFMGR_CAPABILITY_SHARE_FD` and `TBM_BUFMGR_CAPABILITY_SHARE_KEY`. `TBM_BUFMGR_CAPABILITY_SHARE_KEY` will help you do debugging to develop the platform because the `tbm_key` will be the unique identification of the `tbm_bo` memory in the system. | Yes |
-| `bufmgr_bind_native_display()` | Set(bind) the native display.
- If the backend needs to get the native display, use this backend function. | Yes |
-| `bufmgr_get_supported_formats()` | Get the formats list and the num to be supported by backend. | Yes |
-| `bufmgr_get_plane_data()` | Get the plane data of the plane_idx according to the format. | Yes |
-| `bufmgr_alloc_bo()` | Allocate the `tbm_backend_bo_data` of the tbm_backend. The `tbm_backend_bo_data` is a pointer(handle). | Yes |
-| `bufmgr_alloc_bo_with_format()` | Allocate the `tbm_backend_bo_data` of the bo index according to the format. The `tbm_backend_bo_data` is a pointer(handle). | Yes |
-| `bufmgr_alloc_bo_with_tiled_format()` | Allocate the `tbm_backend_bo_data` for GPU which support tiled format. The `tbm_backend_bo_data` is a pointer(handle). | Yes |
-| `bufmgr_import_fd()` | Import the `tbm_backend_bo_data` associated with the prime `fd`. The `tbm_fd` must be freed by the user. If the backend does not support buffer sharing by TBM `fd`, the function pointer must be set to `NULL`. | Yes (Must support buffer sharing by TBM `fd`.)  |
-| `bufmgr_import_key()` | Import the `tbm_backend_bo_data` associated with the key. If the backend does not support buffer sharing by the TBM key, the function pointer must be set to `NULL`. | Yes |
+| `bufmgr_get_capabilities()`           | Get the capabilities of a buffer manager. The backend must support TBM_BUFMGR_CAPABILITY_SHARE_FD and TBM_BUFMGR_CAPABILITY_SHARE_KEY. `TBM_BUFMGR_CAPABILITY_SHARE_FD` is an ability to generate `tbm_fd` which is the dmabuf fd and which is associated with the `tbm_bo` memory in the system. `TBM_BUFMGR_CAPABILITY_SHARE_KEY` is an ability to generate `tbm_key` which the unique identification of the `tbm_bo` memory in the system. | Yes |
+| `bufmgr_bind_native_display()`        | Set (bind) the native display. If the backend needs to get the native display, use this backend function. | Yes |
+| `bufmgr_get_supported_formats()`      | Get the formats list and the num to be supported by backend. | Yes |
+| `bufmgr_get_plane_data()`             | Get the plane data of the plane_idx according to the color format. | Yes |
+| `bufmgr_alloc_bo()`                   | Allocate `tbm_backend_bo_data` of the `tbm_backend_module`. `tbm_backend_bo_data` is a pointer. | Yes |
+| `bufmgr_alloc_bo_with_format()`       | Allocate `tbm_backend_bo_data` of the bo index according to the color format. `tbm_backend_bo_data` is a pointer. | Yes |
+| `bufmgr_alloc_bo_with_tiled_format()` | Allocate `tbm_backend_bo_data` for GPU that supports the tiled format. `tbm_backend_bo_data` is a pointer. | Yes |
+| `bufmgr_import_fd()`                  | Import `tbm_backend_bo_data` associated with the prime `fd`. `tbm_fd` must be freed by you. If the backend does not support buffer sharing by `tbm_fd`, the function pointer must be set to `NULL`. | Yes (Must support buffer sharing by `tbm_fd`.)  |
+| `bufmgr_import_key()`                 | Import `tbm_backend_bo_data` associated with the key. If the backend does not support buffer sharing by the `tbm_fd`, the function pointer must be set to `NULL`. | Yes |
 
-The following table lists the `bo` backend interface functions of the tbm_backend module. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
+The following table lists the `bo` backend interface functions of the `tbm_backend_module`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen):
 
 **Table: bo functions**
 
 | Function                     | Description                              | Mandatory          |
 | ---------------------------- | ---------------------------------------- | ------------------ |
-| `bo_free()` | Free the `tbm_backend_bo_data`. | Yes |
-| `bo_get_size()` | Get the size of a `tbm_backend_bo_data`. | Yes |
-| `bo_get_memory_types()` | Get the `tbm_bo_memory_type`. | Yes |
-| `bo_get_handle()` | Get the `tbm_bo_handle` according to the `tbm_bo_device_type`. | Yes |
-| `bo_map()` | Map the `tbm_backend_bo_data` according to the `tbm_bo_device_type` and the `tbm_bo_access_option`. | Yes |
-| `bo_unmap()` | Unmap the `tbm_backend_bo_data` | Yes |
-| `bo_lock()` | Lock the `tbm_backend_bo_data` with a device and an opt. | No |
-| `bo_unlock()` | Unlock the `tbm_backend_bo_data`. | No |
-| `bo_export_fd()` | Export the `tbm_backend_bo_data` to the `tdm_fd`(prime fd). The `tbm_fd` must be freed by the user. If the backend does not support a buffer sharing by TBM fd, the function pointer must be set to `NULL`. | Yes |
-| `bo_export_key()` | Export the `tbm_backend_bo_data` to the tdm_key. If the backend does not support a buffer sharing by TBM key, the function pointer must be set to `NULL`. | Yes |
+| `bo_free()`             | Free `tbm_backend_bo_data`. | Yes |
+| `bo_get_size()`         | Get the size of `tbm_backend_bo_data`. | Yes |
+| `bo_get_memory_types()` | Get `tbm_bo_memory_type`. | Yes |
+| `bo_get_handle()`       | Get `tbm_bo_handle` according to `tbm_bo_device_type`. | Yes |
+| `bo_map()`              | Map `tbm_backend_bo_data` according to `tbm_bo_device_type` and `tbm_bo_access_option`. | Yes |
+| `bo_unmap()`            | Unmap `tbm_backend_bo_data`. | Yes |
+| `bo_lock()`             | Lock `tbm_backend_bo_data` with a device and an opt. | No |
+| `bo_unlock()`           | Unlock `tbm_backend_bo_data`. | No |
+| `bo_export_fd()`        | Export the `tbm_backend_bo_data` to `tdm_fd` (prime fd). The `tbm_fd` must be freed by the user. If the backend does not support a buffer sharing by `tdm_fd`, the function pointer must be set to `NULL`. | Yes |
+| `bo_export_key()`       | Export `tbm_backend_bo_data` to `tdm_key`. If the backend does not support a buffer sharing by `tdm_key`, the function pointer must be set to `NULL`. | Yes |
 
-The following table lists the TBM bufmgr capability, `tbm_bufmgr_capability`.
+The following table lists the TBM bufmgr capability, `tbm_bufmgr_capability`:
 
-**Table: TBM buffer capability**
-|  Buffer capability                   | Description                              |
+| Buffer capability                    | Description                              |
 | ------------------------------------ | ---------------------------------------- |
-| `TBM_BUFMGR_CAPABILITY_NONE`         | Not Support capability                   |
-| `TBM_BUFMGR_CAPABILITY_SHARE_KEY`    | Support sharing buffer by tbm key        |
-| `TBM_BUFMGR_CAPABILITY_SHARE_FD`     | Support sharing buffer by tbm fd         |
-| `TBM_BUFMGR_CAPABILITY_TBM_SYNC`     | Support timeline sync                    |
-| `TBM_BUFMGR_CAPABILITY_TILED_MEMORY` | Support tiled memory                     |
+| `TBM_BUFMGR_CAPABILITY_NONE`         | Does not support TBM buffer capability.  |
+| `TBM_BUFMGR_CAPABILITY_SHARE_KEY`    | Supports sharing buffer by `tbm_key`.      |
+| `TBM_BUFMGR_CAPABILITY_SHARE_FD`     | Supports sharing buffer by `tbm_fd`.       |
+| `TBM_BUFMGR_CAPABILITY_TBM_SYNC`     | Supports timeline sync.                  |
+| `TBM_BUFMGR_CAPABILITY_TILED_MEMORY` | Supports tiled memory.                   |
 
-The following table lists the TBM buffer memory types, `tbm_bo_memory_type`.
+The following table lists the TBM buffer memory types, `tbm_bo_memory_type`:
 
-**Table: TBM buffer memory types**
+| Buffer memory type   | Description                                     |
+| -------------------- | ----------------------------------------------- |
+| `TBM_BO_DEFAULT`     | Default memory: it depends on the backend.       |
+| `TBM_BO_SCANOUT`     | Scanout memory.                                  |
+| `TBM_BO_NONCACHABLE` | Non-cachable memory.                             |
+| `TBM_BO_WC`          | Write-combine memory.                            |
+| `TBM_BO_VENDOR`      | Vendor specific memory (depends on the backend). |
 
-| Buffer memory type   | Description                              |
-| -------------------- | ---------------------------------------- |
-| `TBM_BO_DEFAULT`     | Default memory: it depends on the backend |
-| `TBM_BO_SCANOUT`     | Scanout memory                           |
-| `TBM_BO_NONCACHABLE` | Non-cachable memory                      |
-| `TBM_BO_WC`          | Write-combine memory                     |
-| `TBM_BO_VENDOR`      | Vendor specific memory (depends on the backend) |
-
-The following table lists the TBM buffer device types, `tbm_bo_device_type`.
-
-**Table: TBM buffer device types**
+The following table lists the TBM buffer device types, `tbm_bo_device_type`:
 
 | Device type          | Description                              |
 | -------------------- | ---------------------------------------- |
-| `TBM_DEVICE_DEFAULT` | Device type to get the default handle |
-| `TBM_DEVICE_CPU`     | Device type to get the virtual memory |
-| `TBM_DEVICE_2D`      | Device type to get the 2D memory handle |
-| `TBM_DEVICE_3D`      | Device type to get the 3D memory handle |
-| `TBM_DEVICE_MM`      | Device type to get the multimedia handle |
+| `TBM_DEVICE_DEFAULT` | Device type to get the default handle:    |
+| `TBM_DEVICE_CPU`     | Device type to get the virtual memory:    |
+| `TBM_DEVICE_2D`      | Device type to get the 2D memory handle:  |
+| `TBM_DEVICE_3D`      | Device type to get the 3D memory handle:  |
+| `TBM_DEVICE_MM`      | Device type to get the multimedia handle: |
 
 The following table lists the TBM buffer access options, `tbm_bo_access_option`.
 
-**Table: TBM buffer access options**
-
-| Access option       | Description                              |
-| ------------------- | ---------------------------------------- |
-| `TBM_OPTION_READ`   | Access option to read                |
-| `TBM_OPTION_WRITE`  | Access option to write               |
+| Access option       | Description                                        |
+| ------------------- | -------------------------------------------------- |
+| `TBM_OPTION_READ`   | Access option to read                              |
+| `TBM_OPTION_WRITE`  | Access option to write                             |
 | `TBM_OPTION_VENDOR` | Vendor-specific option that depends on the backend |
 
 #### TBM DRM Helper Functions
@@ -262,11 +255,11 @@ The following table lists the TBM backends.
 
 ### Testing the Porting Result
 
-TBM offers the `tbm-haltests` to allow you to test and to verify the porting result. The `tbm-haltests` tool is included in the `libtbm-haltests` package, which can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on `gtest` package and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
+TBM offers `tbm-haltests` that allows you to test and verify the porting result. The `tbm-haltests` tool is included in the `libtbm-haltests` package that can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on the `gtest` package and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
 
 ### Checking TDM Log Messages
 
-TBM uses dlog to print debug messages. To show TBM runtime log messages:
+TBM uses dlog to print the debug messages. To show the TBM run time log, use the following message:
 
 ```
 $ dlogutil -v threadtime TBM
@@ -274,7 +267,7 @@ $ dlogutil -v threadtime TBM
 
 ### Reference
 
-For more information about TBM and the TBM backend, see [Tizen Buffer Manager (TBM)](https://wiki.tizen.org/TBM).
+For more information about TBM and TBM backend, see [Tizen Buffer Manager (TBM)](https://wiki.tizen.org/TBM).
 
 ## Display Management
 
@@ -296,6 +289,8 @@ total 40
 lrwxrwxrwx 1 root root    14 Jul 28  2016 libtdm-default.so -> libtdm-drm.so
 -rwxr-xr-x 1 root root 37152 Jul 12  2016 libtdm-drm.so
 ```
+
+### Initializing TDM Backend Module
 
 The TDM backend module must define the global data symbol with the name `tdm_backend_module_data`. The TDM frontend reads this symbol at the initialization time. TDM calls the `init()` function of the `tdm_backend_module_data`. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
@@ -329,7 +324,7 @@ tdm_drm_deinit(tdm_backend_data *bdata) {
 tdm_backend_module tdm_backend_module_data = {
     "drm",
     "Samsung",
-    TDM_BACKEND_SET_ABI_VERSION(1,1),
+    TDM_BACKEND_SET_ABI_VERSION(2,0),
     tdm_drm_init,
     tdm_drm_deinit
 };
@@ -371,7 +366,7 @@ tdm_drm_init(tdm_display *dpy, tdm_error *error) {
 }
 ```
 
-After loading the TDM backend module, the TDM frontend calls the `display_get_capability()`, `display_get_outputs()`, `output_get_capability()`, `output_get_layers()`, and `layer_get_capability()` functions to get the hardware-specific information. That means that the TDM backend module must implement these 5 functions.
+After loading the TDM backend module, the TDM frontend calls `display_get_capability()`, `display_get_outputs()`, and `output_get_capability()` to get the specific hardware information. The TDM backend module has to set TDM_OUTPUT_CAPABILITY_HWC on the output, when TDM_OUTPUT_CAPABILITY_HWC supports TDM HardWare Compositing (HWC). In the latest version (supports version 2.9) of libtdm, TDM recommends that the TDM backend module supports TDM HWC, which means that TDM has to register `tdm_func_hwc` and `tdm_func_hwc_window`. If the TDM backend module does not support TDM HWC, the TDM backend module implements `output_get_layers()` and `layer_get_capability()`, and also registers `tdm_func_layer()`.
 
 In addition, if a target has a memory-to-memory converting hardware device and the capture hardware device, the TDM backend module can register the `tdm_func_pp()` and `tdm_func_capture()` functions with the `tdm_backend_register_func_pp()` and `tdm_backend_register_func_capture()` functions.
 
@@ -421,6 +416,47 @@ The output backend interface is mandatory. For more information, see [tdm_backen
 | `output_create_capture()`     | Creates a capture object of an output object. The backend module does not need to implement this function if the hardware does not have a capture device. | No  |
 | `output_set_status_handler()` | Sets an output connection status handler. The backend module must call the output status handler when the output connection status has been changed to let the TDM frontend know of the change. | No  |
 | `output_set_dpms_handler()`   | Sets an output DPMS handler. The backend module must call the output DPMS handler when the output DPMS has been changed to let the TDM frontend know of the change. | No  |
+| `output_get_hwc()`            | Gets a HWC object of an output object. The backend module returns the HWC object when the output has TDM_OUTPUT_CAPABILITY_HWC. | Yes  |
+
+The HWC backend interface is mandatory. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
+
+**Table: HWC backend interface functions**
+
+| Function                   | Description                              | Mandatory          |
+| -------------------------- | ---------------------------------------- | --------- |
+| `hwc_create_window()`                  | Creates a new window on the given HWC. The backend module must implement `hwc_create_window()`. In addition, the backend module creates a private `tdm_hwc_window` and returns its handle. | Yes |
+| `hwc_get_video_supported_formats()`    | Gets the video supported format array for the hwc windows of a HWC object. | Yes  |
+| `hwc_get_video_available_properties()` | Gets the available video property array of a hwc object. The backend returns the video properties that are predefined in the backend module. | Yes  |
+| `hwc_get_capabilities()`               | Gets the hwc capabilities. The backend returns the multiple of `tdm_hwc_capability` that the backend can support. | Yes |
+| `hwc_get_available_properties()`       | Gets the available property array of a HWC object. The backend returns the properties that are predefined in the backend module. | Yes |
+| `hwc_get_client_target_buffer_queue()` | Gets a target buffer queue. The backend returns `tbm_surface_queue_h`. | Yes |
+| `hwc_set_client_target_buffer()`       | Sets the client (relative to TDM) target buffer. The target buffer is from `tbm_surface_queue_h` that contains the result of the gl composition with `tdm_hwc_window`s. | Yes |
+| `hwc_validate()`                       | Validates HWC. The backend inspects all the hardware layer state and determines whether there are any composition type changes necessary before committing HWC. | Yes  |
+| `hwc_get_changed_composition_types()`  | Gets the changed composition types. The backend returns `tdm_hwc_window`s and the `tdm_hwc_window`s composition type is changed through `hwc_validate`. | Yes  |
+| `hwc_accept_validation()`              | Accepts the validation required by the backend. The backend can identify the decided `tdm_hwc_window_composition`s at the required validation. The backend can commit the set of `tdm_hwc_window`s with this accepted `tdm_hwc_window_composition`s. | Yes  |
+| `hwc_commit()`                         | Commits changes for an HWC object. The backend can commit output (layers), associated with the accepted validation of the HWC object on the display output device. | Yes  |
+| `hwc_set_commit_handler()`             | Sets a user commit handler. The backend has to call `tdm_hwc_commit_handler` after finishing `hwc_commit`. | Yes  |
+| `hwc_set_property()`                   | Sets the property that has a given property ID by the backend on the HWC object. | Yes  |
+| `hwc_get_property()`                   | Gets the property that has a given property ID by the backend on the HWC object. | Yes  |
+
+The hwc_window backend interface is mandatory. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
+
+**Table: HWC backend interface functions**
+
+| Function                   | Description                              | Mandatory          |
+| -------------------------- | ---------------------------------------- | --------- |
+| `hwc_window_destroy()`              | Destroys `tdm_hwc_window`. The backend module must implement this function. The backend destroys a private `tdm_hwc_window`. | Yes |
+| `hwc_window_acquire_buffer_queue()` | Acquires a buffer queue associated with `tdm_hwc_window`. This function can be used when the backend has TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE. | No  |
+| `hwc_window_release_buffer_queue()` | Releases a buffer queue assoicated with `tdm_hwc_window`. This function can be used when the backend has TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE. | No  |
+| `hwc_window_set_composition_type()` | Gets the composition type of `tdm_hwc_window`. The backend sets `tdm_hwc_window_composition`.| Yes |
+| `hwc_window_set_buffer_damage()`    | Sets the buffer damage. The backend sets the buffer damage. | Yes |
+| `hwc_window_set_info()`             | Sets the information to `tdm_hwc_window`. The information will be applied when the HWC object is committed. | Yes |
+| `hwc_window_set_buffer()`           | Sets a TDM buffer to `tdm_hwc_window`. A TDM buffer will be applied when the HWC object is committed. | Yes |
+| `hwc_window_set_property()`         | Sets the property which has a given property ID by the backend. | Yes  |
+| `hwc_window_get_property()`         | Gets the property which has a given property ID by the backend. | Yes  |
+| `hwc_window_get_constraints()`      | Gets the constraints of `tdm_hwc_window`. The backend returns `tdm_hwc_window_constraint`. | Yes  |
+| `hwc_window_set_name()`             | Sets the name of `tdm_hwc_window`. The backend can get the name of `tdm_hwc_window`.| Yes  |
+| `hwc_window_set_cursor_image()`     | Sets the cursor memory information associated with `tdm_hwc_window`.	 | Yes  |
 
 The layer backend interface is mandatory. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
@@ -478,22 +514,7 @@ There are several backends which can be used as reference when implementing the 
 
 ### Testing the Porting Result
 
-TDM offers the `tdm-test-server` tool to allow you to easily test the porting result. The `tdm-test-server` tool is included in the `libtdm-tools` package, which can be downloaded from the platform binary's snapshot repository. Make sure that TBM porting is done before using the following commands, because TDM works on top of TBM.
-
-```
-$ systemctl stop display-manager  (stop the display server)
-$ export XDG_RUNTIME_DIR=/run
-$ export TBM_DISPLAY_SERVER=1
-$ tdm-test-server                 (show all options)
-$ tdm-test-server -a              (test all layers)
-$ tdm-test-server -a -v           (test all layers with vblank events)
-```
-
-The following image shows the result of a test performed using the `tdm-test-server -a` command. The fullscreen buffer is set to the PRIMARY layer, and the small buffer is set to the OVERLAY layer.
-
-**Figure: Tdm-test-server results**
-
-![Tdm-test-server results](media/tdm-test-server-result.png)
+TDM offers `tdm-haltests` that allows you to test and verify the porting result. The `tdm-haltests` tool is included in the libtdm-haltests package that can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on `gtest` package and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
 
 ### Checking TDM Log Messages
 
