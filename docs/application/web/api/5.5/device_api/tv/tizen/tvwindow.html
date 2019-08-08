@@ -331,7 +331,7 @@ catch (error)
 <div class="brief">
  Changes the source of a TV window.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setSource(<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> videoSource, <a href="#SourceChangedSuccessCallback">SourceChangedSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void setSource(<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> videoSource, <a href="#SourceChangedSuccessCallback">SourceChangedSuccessCallback</a> successCallback,
                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#WindowType">WindowType</a>? type);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -466,8 +466,7 @@ setSource() is successfully done, source type: HDMI, source port number: 4, sign
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SystemInfoVideoSourceInfo:
-                  </span>
+<span class="return">SystemInfoVideoSourceInfo:</span>
  The information about the current video source. Returned object will have the <em>signal</em> property, stating whether there is signal provided or not on the source, this property value will be filled only when the window was shown using <a href="./tvwindow.html#TVWindowManager::show">show()</a> function.
               </ul>
 </div>
@@ -514,7 +513,7 @@ signal: null
 <div class="brief">
  Sets the display area of a TV window and shows it on the display.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void show(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString[]? rectangle, 
+<div class="synopsis"><pre class="signature prettyprint">void show(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional DOMString[]? rectangle,
           optional <a href="#WindowType">WindowType</a>? type, optional <a href="#ZPosition">ZPosition</a>? zPosition);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -712,7 +711,7 @@ catch (error)
 <div class="brief">
  Gets the area information of a TV window which is shown.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getRect(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit, 
+<div class="synopsis"><pre class="signature prettyprint">void getRect(<a href="#WindowRectangleSuccessCallback">WindowRectangleSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#MeasurementUnit">MeasurementUnit</a>? unit,
              optional <a href="#WindowType">WindowType</a>? type);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -833,8 +832,7 @@ catch (error)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">VideoResolution:
-                  </span>
+<span class="return">VideoResolution:</span>
  VideoResolution current video resolution information
               </ul>
 </div>
@@ -897,8 +895,7 @@ if (res.aspectRatio === "ASPECT_RATIO_16x9")
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  long The identifier of the resolution change listener.
               </ul>
 </div>
@@ -1047,7 +1044,7 @@ Calling this function has no effect if there is no listener with given id.
 <div class="brief">
  This interface defines a video resolution change callback for getting notified about video resolution changes.
           </div>
-<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface VideoResolutionChangeCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface VideoResolutionChangeCallback {
     void onchanged(<a href="#VideoResolution">VideoResolution</a> resolution, <a href="#WindowType">WindowType</a> type);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1089,7 +1086,7 @@ Calling this function has no effect if there is no listener with given id.
 <div class="brief">
  This interface defines a callback that is invoked when a list of available windows is retrieved successfully.
           </div>
-<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface AvailableWindowListCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface AvailableWindowListCallback {
     void onsuccess(<a href="#WindowType">WindowType</a>[] type);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1127,7 +1124,7 @@ Calling this function has no effect if there is no listener with given id.
 <div class="brief">
  This interface includes the success callback that is invoked when the position and size of a TV window has been changed or retrieved.
           </div>
-<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface WindowRectangleSuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface WindowRectangleSuccessCallback {
     void onsuccess(DOMString[] windowRect, <a href="#WindowType">WindowType</a> type);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1175,7 +1172,7 @@ For more detailed information about <em>windowRect</em>, see the description of 
 <div class="brief">
  This interface includes the success callback that is invoked when the source has been set.
           </div>
-<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface SourceChangedSuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SourceChangedSuccessCallback {
     void onsuccess(<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> source, <a href="#WindowType">WindowType</a> type);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1238,10 +1235,10 @@ To guarantee the running of this application on a device with a TV picture-in-pi
   enum MeasurementUnit { "px", "%" };
   enum AspectRatio { "ASPECT_RATIO_1x1", "ASPECT_RATIO_4x3", "ASPECT_RATIO_16x9", "ASPECT_RATIO_221x100", "ASPECT_RATIO_UNKNOWN" };
   enum ZPosition { "FRONT", "BEHIND" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVWindowManagerObject">TVWindowManagerObject</a>;
   [NoInterfaceObject] interface TVWindowManagerObject {
     readonly attribute <a href="#TVWindowManager">TVWindowManager</a> tvwindow;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVWindowManagerObject">TVWindowManagerObject</a>;
   [NoInterfaceObject] interface TVWindowManager {
     void getAvailableWindows(<a href="#AvailableWindowListCallback">AvailableWindowListCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                              raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -1264,16 +1261,16 @@ To guarantee the running of this application on a device with a TV picture-in-pi
     readonly attribute long frequency;
     readonly attribute <a href="#AspectRatio">AspectRatio</a> aspectRatio;
   };
-  [Callback = FunctionOnly, NoInterfaceObject] interface VideoResolutionChangeCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface VideoResolutionChangeCallback {
     void onchanged(<a href="#VideoResolution">VideoResolution</a> resolution, <a href="#WindowType">WindowType</a> type);
   };
-  [Callback = FunctionOnly, NoInterfaceObject] interface AvailableWindowListCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface AvailableWindowListCallback {
     void onsuccess(<a href="#WindowType">WindowType</a>[] type);
   };
-  [Callback = FunctionOnly, NoInterfaceObject] interface WindowRectangleSuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface WindowRectangleSuccessCallback {
     void onsuccess(DOMString[] windowRect, <a href="#WindowType">WindowType</a> type);
   };
-  [Callback = FunctionOnly, NoInterfaceObject] interface SourceChangedSuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface SourceChangedSuccessCallback {
     void onsuccess(<a href="systeminfo.html#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a> source, <a href="#WindowType">WindowType</a> type);
   };
 };</pre>

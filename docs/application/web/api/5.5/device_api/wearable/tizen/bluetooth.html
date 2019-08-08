@@ -383,7 +383,7 @@ OPEN - corresponds to opened bluetooth socket.            </li>
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
           </p>
-<pre class="webidl prettyprint">  enum BluetoothProfileType { "HEALTH" };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum BluetoothProfileType { "HEALTH" };</span></pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -402,7 +402,7 @@ HEALTH - corresponds to health bluetooth profile type.            </li>
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
           </p>
-<pre class="webidl prettyprint">  enum BluetoothHealthChannelType { "RELIABLE", "STREAMING" };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum BluetoothHealthChannelType { "RELIABLE", "STREAMING" };</span></pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -913,8 +913,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothAdapter:
-                  </span>
+<span class="return">BluetoothAdapter:</span>
  The local <em>BluetoothAdapter </em>object.
               </ul>
 </div>
@@ -969,8 +968,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothLEAdapter:
-                  </span>
+<span class="return">BluetoothLEAdapter:</span>
  The local <em>BluetoothLEAdapter </em>object.
               </ul>
 </div>
@@ -1031,7 +1029,8 @@ catch (err)
                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback,
                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+<span class="nocode deprecated">    <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a> getBluetoothProfileHandler(<a href="#BluetoothProfileType">BluetoothProfileType</a> profileType) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>  };</pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -2078,7 +2077,7 @@ adapter.getDevice(deviceAddress, gotDevice, function(e)
 <div class="brief">
  Registers a service record in the device service record database with the specified <em>uuid</em>, <em>name</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback,
                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -2238,8 +2237,7 @@ function unregisterChatService()
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothProfileHandler:
-                  </span>
+<span class="return">BluetoothProfileHandler:</span>
  Represents the Bluetooth profile handle.
               </ul>
 </div>
@@ -2431,8 +2429,8 @@ adapter.startScan(function onsuccess(device)
 <div class="brief">
  Starts advertising for Low Energy Devices.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void startAdvertise(<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType, 
-                    <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void startAdvertise(<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType,
+                    <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>? mode, optional boolean? connectable);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -3028,8 +3026,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watchID to be used to unregister the listener.
               </ul>
 </div>
@@ -3683,7 +3680,7 @@ adapter.getDevice("11:22:33:44:55:66", function(device)
 <div class="brief">
  Connects to a specified service identified by <em>uuid</em> on this remote device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -4323,8 +4320,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothGATTService:
-                  </span>
+<span class="return">BluetoothGATTService:</span>
  Retrieved service for the given UUID.
               </ul>
 </div>
@@ -4393,8 +4389,7 @@ adapter.startScan(onDeviceFound, onerror);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothUUID[]:
-                  </span>
+<span class="return">BluetoothUUID[]:</span>
  The array of all service UUIDs that belong to the connected GATT server.
               </ul>
 </div>
@@ -4470,8 +4465,7 @@ Services length 2
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watchID to be used to unregister the listener.
               </ul>
 </div>
@@ -4701,8 +4695,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  The number of bytes actually sent.
               </ul>
 </div>
@@ -4851,8 +4844,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:
-                  </span>
+<span class="return">byte[]:</span>
  The sequence of bytes successfully read.
               </ul>
 </div>
@@ -5093,7 +5085,7 @@ else
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothClass {
     readonly attribute octet major;
     readonly attribute octet minor;
-    readonly attribute unsigned short [] services;
+    readonly attribute unsigned short[] services;
     boolean hasService(unsigned short service) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -5227,8 +5219,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var>, if given service exists in the <em>services</em>.
               </ul>
 </div>
@@ -5616,8 +5607,9 @@ function unRegisterChatService()
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
           </p>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothProfileHandler {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface BluetoothProfileHandler {
+<span class="nocode deprecated">    readonly attribute <a href="#BluetoothProfileType">BluetoothProfileType</a> profileType;
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -5662,8 +5654,13 @@ The BluetoothHealthProfileHandler object is created by <em>BluetoothAdapter.getB
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
           </p>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothHealthProfileHandler : <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a> {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface BluetoothHealthProfileHandler : <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a> {
+<span class="nocode deprecated">    void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback,
+                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application,
+                         <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                         raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -5681,7 +5678,7 @@ The BluetoothHealthProfileHandler object is created by <em>BluetoothAdapter.getB
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback,
                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5770,7 +5767,7 @@ healthProfileHandler.registerSinkApplication(
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
             </p>
-<div class="synopsis"><pre class="signature prettyprint">void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application, 
+<div class="synopsis"><pre class="signature prettyprint">void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application,
                      <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5883,8 +5880,12 @@ healthProfileHandler.registerSinkApplication(
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
           </p>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothHealthApplication {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface BluetoothHealthApplication {
+<span class="nocode deprecated">    readonly attribute unsigned short dataType;
+</span><span class="nocode deprecated">    readonly attribute DOMString name;
+</span><span class="nocode deprecated">    [TreatNonCallableAsNull] attribute <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a>? onconnect raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -6102,8 +6103,16 @@ function stopSink()
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
           </p>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothHealthChannel {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface BluetoothHealthChannel {
+<span class="nocode deprecated">    readonly attribute <a href="#BluetoothDevice">BluetoothDevice</a> peer;
+</span><span class="nocode deprecated">    readonly attribute <a href="#BluetoothHealthChannelType">BluetoothHealthChannelType</a> channelType;
+</span><span class="nocode deprecated">    readonly attribute <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application;
+</span><span class="nocode deprecated">    readonly attribute boolean isConnected;
+</span><span class="nocode deprecated">    void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    unsigned long sendData(byte[] data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void setListener(<a href="#BluetoothHealthChannelChangeCallback">BluetoothHealthChannelChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void unsetListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -6288,8 +6297,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  Number of bytes actually sent.
               </ul>
 </div>
@@ -6867,8 +6875,9 @@ After that, this device is no longer visible.
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
           </p>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothHealthApplicationSuccessCallback {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothHealthApplicationSuccessCallback {
+<span class="nocode deprecated">    void onsuccess(<a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -6913,8 +6922,9 @@ After that, this device is no longer visible.
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
           </p>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothHealthChannelSuccessCallback {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothHealthChannelSuccessCallback {
+<span class="nocode deprecated">    void onsuccess(<a href="#BluetoothHealthChannel">BluetoothHealthChannel</a> channel);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -6959,8 +6969,10 @@ After that, this device is no longer visible.
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated Since 5.5.
           </p>
-<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface BluetoothHealthChannelChangeCallback {
-  };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback, NoInterfaceObject] interface BluetoothHealthChannelChangeCallback {
+<span class="nocode deprecated">    void onmessage(byte[] data);
+</span><span class="nocode deprecated">    void onclose();
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -7047,15 +7059,24 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
 <pre class="webidl prettyprint">module Bluetooth {
   typedef DOMString BluetoothAddress;
   typedef DOMString BluetoothUUID;
-  enum BluetoothSocketState { "CLOSED", "OPEN" };
   typedef DOMString BluetoothLESolicitationUUID;
+  enum BluetoothSocketState { "CLOSED", "OPEN" };
   enum BluetoothAdvertisePacketType { "ADVERTISE", "SCAN_RESPONSE" };
   enum BluetoothAdvertisingState { "STARTED", "STOPPED" };
   enum BluetoothAdvertisingMode { "BALANCED", "LOW_LATENCY", "LOW_ENERGY" };
+  dictionary BluetoothLEAdvertiseDataInit {
+    boolean? includeName;
+    <a href="#BluetoothUUID">BluetoothUUID</a>[]? uuids;
+    <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
+    unsigned long? appearance;
+    boolean? includeTxPowerLevel;
+    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
+    <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BluetoothManagerObject">BluetoothManagerObject</a>;
   [NoInterfaceObject] interface BluetoothManagerObject {
     readonly attribute <a href="#BluetoothManager">BluetoothManager</a> bluetooth;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BluetoothManagerObject">BluetoothManagerObject</a>;
   [Constructor(DOMString uuid, DOMString data)]
   interface BluetoothLEServiceData {
     attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
@@ -7065,15 +7086,6 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   interface BluetoothLEManufacturerData {
     attribute DOMString id;
     attribute DOMString data;
-  };
-  dictionary BluetoothLEAdvertiseDataInit {
-    boolean? includeName;
-    <a href="#BluetoothUUID">BluetoothUUID</a>[]? uuids;
-    <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
-    unsigned long? appearance;
-    boolean? includeTxPowerLevel;
-    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
-    <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
   };
   [Constructor(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init)]
   interface BluetoothLEAdvertiseData {
@@ -7203,7 +7215,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   [NoInterfaceObject] interface BluetoothClass {
     readonly attribute octet major;
     readonly attribute octet minor;
-    readonly attribute unsigned short [] services;
+    readonly attribute unsigned short[] services;
     boolean hasService(unsigned short service) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothClassDeviceMajor {
@@ -7310,7 +7322,6 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     readonly attribute boolean isConnected;
     [TreatNonCallableAsNull] attribute <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a>? onconnect raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
   };
   [Callback, NoInterfaceObject] interface BluetoothAdapterChangeCallback {
     void onstatechanged(boolean powered);

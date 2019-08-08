@@ -223,7 +223,7 @@ The <em>tizen.download </em>object allows access to the functionality of the Dow
           </p>
 <div class="constructors">
 <h4 id="DownloadRequest::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">DownloadRequest(DOMString url, optional DOMString? destination, optional DOMString? fileName, 
+<dl><pre class="webidl prettyprint">DownloadRequest(DOMString url, optional DOMString? destination, optional DOMString? fileName,
                 optional <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType, optional <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader);</pre></dl>
 </div>
 <div class="attributes">
@@ -368,8 +368,7 @@ req.httpHeader["X-Agent"] = "Tizen Sample App";
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  An identifier for each download operation.
 If the network is not available for downloading, the return value is -1 since Tizen 2.3.
               </ul>
@@ -607,8 +606,7 @@ tizen.download.resume(downloadId);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DownloadState:
-                  </span>
+<span class="return">DownloadState:</span>
  The current download state of the specified ID.
               </ul>
 </div>
@@ -659,8 +657,7 @@ var state = tizen.download.getState(downloadId);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DownloadRequest:
-                  </span>
+<span class="return">DownloadRequest:</span>
  The download request information of the given ID.
               </ul>
 </div>
@@ -718,8 +715,7 @@ and successfully retrieves the file header.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The MIME type of the downloaded file.
               </ul>
 </div>
@@ -1006,10 +1002,10 @@ DownloadNetworkType <em>CELLULAR</em> can be available on a cellular-enabled dev
   typedef object DownloadHTTPHeaderFields;
   enum DownloadState { "QUEUED", "DOWNLOADING", "PAUSED", "CANCELED", "COMPLETED", "FAILED" };
   enum DownloadNetworkType { "CELLULAR", "WIFI", "ALL" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DownloadManagerObject">DownloadManagerObject</a>;
   [NoInterfaceObject] interface DownloadManagerObject {
     readonly attribute <a href="#DownloadManager">DownloadManager</a> download;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DownloadManagerObject">DownloadManagerObject</a>;
   [Constructor(DOMString url, optional DOMString? destination, optional DOMString? fileName,
                optional <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType, optional <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader)]
   interface DownloadRequest {
