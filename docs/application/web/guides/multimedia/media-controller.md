@@ -33,6 +33,12 @@ The main features of the Media Controller API include:
 
   To [receive and handle incoming commands](#receive_custom_commands) in the server, use the `addCommandListener()` method.
 
+- Sending and receiving search requests
+
+  You can use the media controller client to [send the search requests](#sending-search-request) with the `sendSearchRequest()` method.
+
+  You can use the media controller server to [receive the search requests](#receiving-search-request) using the `setSearchRequestListener()` method, and return the `RequestReply` object to the client who sent the request.
+
 - Setting content type for the currently playing media
 
   You can [set content type for the currently playing media](#setting-content-type-for-currently-playing-media) using the updatePlaybackContentType() server method.
@@ -277,6 +283,80 @@ To manage the media controller features in your application, you must learn to s
 
       The `watcherId` variable stores the value, which can be used in the future to remove the listener from the server using the `removeCommandListener()` method.
 
+## Sending and Receiving Search Requests from Client to Server
+
+Client application can send search requests, which consist of a collection of search conditions.
+Server listens for the incoming search requests and handles them accordingly.
+After handling a request, server sends a response to the client that sent the request.
+
+### Receiving Search Request
+
+To receive and handle search request on the server, follow these steps:
+
+1. Get server handle:
+
+    ```
+    var server = tizen.mediacontroller.createServer();
+    ```
+
+2. Define search request callback:
+
+    ```
+    function searchRequestCallback(client, request) {
+        console.log(client);
+        console.log(request);
+
+        // You can return RequestReply object, which will be sent to the client
+        // who can handle it in search request reply callback.
+        return new tizen.mediacontroller.RequestReply(123, {"someData": "someValue"});
+    }
+    ```
+
+3. Register search request listener:
+
+    ```
+    server.setSearchRequestListener(searchRequestCallback);
+    ```
+
+### Sending Search Request
+
+To send the search request from the client application, follow these steps:
+
+1. Get client handle:
+
+    ```
+    var client = tizen.mediacontroller.getClient();
+    ```
+
+2. Get server connection:
+
+    ```
+    var serverInfo = client.getLatestServerInfo();
+    ```
+
+3. Prepare search request, which is an array of SearchFilter objects:
+
+    ```
+    var request = [
+        new tizen.mediacontroller.SearchFilter('MUSIC', 'TITLE', 'tizen'),
+        new tizen.mediacontroller.SearchFilter('MUSIC', 'ARTIST', 'samsung')
+    ];
+    ```
+
+4. Define reply callback:
+
+    ```
+    function searchReplyCallback(reply) {
+        console.log("server reply status code: " + reply.code);
+        console.log("server reply data: " + reply.data);
+    }
+    ```
+
+5. Send search request:
+
+    ```
+    serverInfo.sendSearchRequest(request, searchReplyCallback);
+    ```
 
 ## Setting Content Type for Currently Playing Media
 
