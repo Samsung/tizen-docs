@@ -1,7 +1,7 @@
 
 # Install Tizen Studio on MacOS
 
-This section explains the process to download and install Tizen Studio on your development hardware. 
+This page explains the process to download and install Tizen Studio on your development hardware. 
 
 To have the optimal installation experience, follow these steps chronologically:
 
@@ -15,7 +15,7 @@ To have the optimal installation experience, follow these steps chronologically:
 
 <style type="text/css">
 a.clickable   { width: 100%; height: 100%; }
-a.clickable:hover   { background-color: #FF0000; color: #FFFFF; }
+a.clickable:hover   { background-color:; color: #FFFFF; }
 </style>
 
 ## System Prerequisites
@@ -79,10 +79,10 @@ Ensure that the following system prerequisites are met:
 
 >**Note:**
 >
-> - Download the relevant version based on target device operating system, for example, **openjdk-10_osx-x64_bin.tar.gz**. 
-> - Ensure you download the JavaFX <OS> SDK product only, for example: JavaFX Mac OS X SDK.
+> - Download the relevant version based on the target device operating system, for example: **openjdk-10_osx-x64_bin.tar.gz**. 
+> - Ensure that you download the JavaFX <OS> SDK product only, for example: JavaFX Mac OS X SDK.
   
-**Disclaimer:** The third party download links are subjected to change. Alternatively, search and download the appropriate software.
+**Disclaimer:** The third party download links are subjected to change. Search and download the appropriate software.
 
 
 ### Additional Requirements
@@ -105,7 +105,7 @@ $ which msgfmt
 /usr/local/bin/msgfmt
 </code></pre>
 <strong>Note</strong><br>
-To install Homebrew, see the official <a href="http://brew.sh/">Brew Website</a>.
+To install Homebrew, see the<a href="http://brew.sh/">Homebrew documentation</a>.
 </td>
 </tr>
 </tbody>
@@ -116,13 +116,13 @@ To install Homebrew, see the official <a href="http://brew.sh/">Brew Website</a>
 To set up Open JDK, follow these steps: 
 
 1. Extract the downloaded **openjdk-10_osx-x64_bin.tar.gz** file at your preferred location.
-   - Locate the **jdk** directory where you extracted the **.openjdk-10_osx-x64_bin.tar.gz** file.
+   - Locate the **jdk** directory where you extracted the **openjdk-10_osx-x64_bin.tar.gz** file.
      
 	   >**Note:**
      >
-     >**jdk** directory is created as a result of extraction. 
+     > The **jdk** directory is created as a result of extraction. 
    
-2. Copy the **jdk** folder, paste it in **Library/Java/JavaVirtualMachines**. 
+2. Copy the **jdk** folder, paste it in the **Library/Java/JavaVirtualMachines** location. 
     
    >**Note:**
    >
@@ -132,7 +132,7 @@ To set up Open JDK, follow these steps:
    >**Note:**
    > 
    >If the OpenJDK version 10 is not installed, proceed with step 5.
-5. Open **.profile** or **.bash_profile file**, add `export JAVA_HOME =/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home` line. 
+5. Open the **.profile** or the **.bash_profile file**, add the `export JAVA_HOME =/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home` line. 
 6. Type `java –version` command to verify whether the OpenJDK version 10 is installed.
    >Note:
    >
@@ -155,7 +155,7 @@ To launch the installer, follow these steps:
    >The license contains important legal notices for using Tizen Studio. Read it fully, and click **Accept** only if you agree with the license terms.
 
    ![Tizen Studio License Agreement](./media/install_sdk_license.png)
-3. Click **...** and specify a new directory to set the SDK and the data location. 
+3. Click **Browse** and specify a new directory to set the SDK location and the data location. 
    
    ![Set SDK and data location](./media/install_sdk_directory.png)
    
@@ -163,21 +163,16 @@ To launch the installer, follow these steps:
    > 
    >If the new directory is valid, it shows no errors.
 4. Click **Install**.
-   >Note:
-   >
-   >You can monitor the installation process or cancel the installation. The installation process is completed in a few minutes, unless you cancel it.
 5. Click **Finish** and close the installer.
    
    ![Installation complete](./media/migration_finish_instal.png)
    > **Note:**
    >
-   > - If you want to install additional platforms and tools, launch the Package Manager by checking the **Launch Package Manager check box** and click **Finish**.
+   > - If you want to install additional platforms and tools, launch  Package Manager by selecting the Launch Package Manager **check box** and click **Finish**.
    > - Use Tizen Studio Package Manager, to install and update additional tools. 
    > - For more information on the Package Manager, see [Updating Tizen Studio](./update-sdk.md).
 
 ## Verify Installation
 
-To verify whether the installation is successful, follow these steps: 
-    
-  1. Click **Tizen Studio icon**, Tizen Studio startup window appears.
+To verify whether the installation is successful or not, click **Tizen Studio icon**. The Tizen Studio startup window must appear.
 

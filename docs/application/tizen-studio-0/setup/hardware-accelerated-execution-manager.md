@@ -1,6 +1,6 @@
 # Hardware Accelerated Execution Manager
 
-The Intel Hardware Accelerated Execution Manager (Intel&reg; HAXM) is a hardware-assisted virtualization engine (hypervisor). This hypervisor uses Intel Virtualization Technology (VT) to speed-up Tizen application emulation on the Windows&reg; and the macOS host machines. When you combine Tizen x86 emulator images with [Tizen Studio](../index.md), Intel&reg; HAXM speed-ups the Tizen emulation on Intel-VT-enabled systems.
+The Intel Hardware Accelerated Execution Manager (Intel&reg; HAXM) is a hardware-assisted virtualization engine (hypervisor). This hypervisor uses Intel Virtualization Technology (VT) to speed-up the Tizen application emulation on the Windows&reg; and the macOS host machines. When you combine the Tizen x86 emulator images with [Tizen Studio](../index.md), Intel&reg; HAXM speed-ups the Tizen emulation on the Intel-VT-enabled systems.
 Intel&reg; HAXM significantly enhances the performance of the Tizen emulator. For more information on the emulator details, see [Increasing the Application Execution Speed](../common-tools/emulator.md#speed).
 
 This page explains how to install HAXM on your [Windows&reg;](#on_Windows) or [macOS](#on_MacOS) development system.
@@ -12,7 +12,7 @@ Following are the hardware requirements:
 
 > **Note**   
 >
-> Intel&reg; HAXM can only be used on systems with an Intel processor that supports the Intel VT.
+> Intel&reg; HAXM can only be used on the systems with an Intel processor that supports the Intel VT.
 
 <a name="on_Windows"></a>
 ## How to Install Intel&reg; HAXM on Windows&reg;?
@@ -22,7 +22,7 @@ Following are the supported Windows&reg; versions:
 - Vista (32-bit/64-bit)
 - XP SP2 or higher (32-bit only)
 
-HAXM is automatically installed as part of Tizen Studio installation. To install HAXM separately, see [http://download.tizen.org/sdk/haxm/7.0.0/win/](http://download.tizen.org/sdk/haxm/7.0.0/win/IntelHAXM_7.0.0.exe) and download the Windows installer package.
+HAXM is automatically installed as part of the Tizen Studio installation. To install HAXM separately, see [http://download.tizen.org/sdk/haxm/7.0.0/win/](http://download.tizen.org/sdk/haxm/7.0.0/win/IntelHAXM_7.0.0.exe) and download the Windows installer package.
 
 **Table: Windows installer package**
 
@@ -37,17 +37,19 @@ To install Intel&reg; HAXM on Windows&reg;, follow these steps:
    ![UAC prompt](./media/hardware_uac_prompt.png)
 
 3. To start the installation, click **Install**.  
-![Start installation](./media/hardware_start_instal.png)  
+   ![Start installation](./media/hardware_start_instal.png)  
 
-	To access the documentation, click **Intel&reg; HAXM Documentation**.
+   To access the documentation, click **Intel&reg; HAXM Documentation**.
 
-	The following screen shows the installation in-progress:
-	![Confirm installation](./media/hardware_instal.png)
+   The following screen shows the installation in-progress:
+   
+   ![Confirm installation](./media/hardware_instal.png)
 
 4. When the Intel&reg; HAXM installation is completed, to exit the installer, click **Finish**.
-![Finish](./media/hardware_finish.png)
 
-The Intel&reg; HAXM gets successfully installed.
+   ![Finish](./media/hardware_finish.png)
+
+Intel&reg; HAXM is successfully installed.
 
 Execute the following command, to verify whether Intel&reg; HAXM is running:
 
@@ -75,16 +77,16 @@ To uninstall Intel&reg; HAXM, either run the installer or use the control panel.
 
 > **Note** 
 > 
-> If you remove Intel&reg; HAXM, the acceleration of the Tizen emulator is disabled, however, the emulator is still enabled. To re-enable the acceleration, install Intel&reg; HAXM again.
+> If you remove Intel&reg; HAXM, the acceleration of the Tizen emulator is disabled; however, the emulator is still enabled. To re-enable the acceleration, install Intel&reg; HAXM again.
 
 ### Troubleshooting
 
-If there is an installation failure because of hardware requirements, check the BIOS/OS settings:
+If there is an installation failure because of the hardware requirements, check the following BIOS/OS settings:
 
 - Ensure that **VT** is enabled in BIOS.
 - Ensure that **Execute Disable Bit** is enabled in BIOS.
-- Ensure that **Data Execution Prevention** is enabled in Windows&reg;. On the Windows&reg; platform, click **Control Panel > System** and then select **Advanced system settings**. In the **Advanced** tab, select **Performance section**, **Options** (or **Settings**), and **Data Execution Prevention**. Ensure that **DEP** is enabled.
-- Ensure that **Hyper-V** is disabled on Windows&reg; 8 or higher:  
+- Ensure that **Data Execution Prevention** is enabled in Windows&reg;. In the Windows&reg; platform, click **Control Panel > System** and then select **Advanced system settings**. In the **Advanced** tab that appears, select **Performance section**, **Options** (or **Settings**), and **Data Execution Prevention**. Ensure that **DEP** is enabled.
+- Ensure that **Hyper-V** is disabled in Windows&reg; 8 or higher:  
   1. In the **Start** menu, run **Programs and Features**.  
 ![Run Programs and Features](./media/hardware_run_program.png)  
   2. In the **Programs and Features** window that appears, click **Turn Windows features on or off**.
@@ -102,7 +104,7 @@ Following are the supported macOS versions:
 - 10.9 Mavericks (64-bit)
 - 10.8 Mountain Lion (64-bit)
 
-HAXM is automatically installed as part of Tizen Studio installation. To install HAXM separately, see [http://download.tizen.org/sdk/haxm/7.0.0/mac/](http://download.tizen.org/sdk/haxm/7.0.0/mac/IntelHAXM_7.0.0.dmg) and download the macOS installer package.
+HAXM is automatically installed as part of the Tizen Studio installation. To install HAXM separately, see [http://download.tizen.org/sdk/haxm/7.0.0/mac/](http://download.tizen.org/sdk/haxm/7.0.0/mac/IntelHAXM_7.0.0.dmg) and download the macOS installer package.
 
 **Table: Windows installer package**
 
@@ -131,7 +133,8 @@ The installer also functions as a configuration tool for Intel&reg; HAXM. To cha
 	![Type password](./media/hardware_os_pass.png)
 
 7. When the Intel&reg; HAXM installation is finished, to exit the installer, click **Close**.
-![Exit the installer](./media/hardware_os_close.png)
+
+   ![Exit the installer](./media/hardware_os_close.png)
 
 The Intel&reg; HAXM gets successfully installed.
 

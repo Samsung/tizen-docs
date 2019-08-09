@@ -1,42 +1,42 @@
 ## Troubleshooting 
 
-This page is intended to guide you to troubleshoot issues that you might encounter while installing and using Tizen Studio. Visit the [forum pages](https://developer.tizen.org/forums), where you can browse for more relevant information and post your own questions. Perhaps it is most likely that someone else might have already encountered the same problem. 
+This page provides the information needed to troubleshoot Tizen Studio. Participate in the [Tizen User Community forum](https://developer.tizen.org/forums), and suggest ways to improve the documentation. This page describes methodologies, techniques, and procedures for troubleshooting problems that might arise in the day-to-day operations while using Tizen Studio.
 
 ## Issue: HAXM fails to install
 **Description:** You encounter an HAXM installation failure.
 
-**Resolution:** 
-- Ensure **VT**, **Execute Disable Bit** option is enabled in BIOS
-- Ensure **Data Execution Prevention** is enabled in Windows&reg;
+**Solution:** 
+- Ensure that **VT**, **Execute Disable Bit** option is enabled in BIOS
+- Ensure that **Data Execution Prevention** is enabled in Windows&reg;
         
   - To enable **Data Execution Prevention**On the Windows&reg;, follow these steps:
 
-    1. Click **Control Panel > System and Security > System** 
-    2. Select **Advanced system settings**
-    3. In the left navigation bar, Click **Advanced** 
-    4. In **Performance section**, click **Settings** 
-    5. In **Performance Options** dialogue window, click **Data Execution Prevention**
-    6. Select **Turn on DEP** 
-    7. Click **Apply** and **OK**
+    1. Click **Control Panel > System and Security > System**.
+    2. Select **Advanced system settings**.
+    3. In the left navigation bar, Click **Advanced**.
+    4. In **Performance section**, click **Settings**.
+    5. In **Performance Options** dialogue window that appears, click **Data Execution Prevention**.
+    6. Select **Turn on DEP**. 
+    7. Click **Apply** and click **OK**.
 
 - Ensure that **Hyper-V** is disabled (on Windows&reg; 8 or after).
-    1. Run **Programs and Features** on the **Start** menu.  
+    1. In the **Start** menu Run **Programs and Features**.  
        ![Run Programs and Features](./media/hardware_run_program.png)  
     2. In the **Programs and Features** window, click **Turn Windows features on or off**.
-    3. In the **Turn Windows features on or off** window, disable **Hyper-V** and click **OK**.  
+    3. In the **Turn Windows features on or off** window that appears, disable **Hyper-V** and click **OK**.  
        ![Disable Hyper-V](./media/hardware_hyper_v.png)  
     4. Reboot the computer.
  
-## Issue: HAXM installation fails due Intel Execute Disable (XD) Bit capability
+## Issue: HAXM installation fails due to Intel Execute Disable (XD) Bit capability
 
 **Description:**
- When installing Intel HAXM, you may encounter an error regarding Intel XD support.
+ While installing Intel HAXM, you may encounter an error regarding the Intel XD support.
   This error message can be triggered by the following conditions:
 
   - Intel XD is not supported by your computer�s processor
   - Intel XD is not enabled
   
-  **Resolution:** 
+  **Solution:** 
    - **For Intel XD not supported**
   
    Intel HAXM requires an Intel processor with Execute Disable (XD) Bit functionality and cannot be used on systems not supporting this hardware feature. To determine the capabilities of your Intel processor, see [official site] (http://ark.intel.com/).

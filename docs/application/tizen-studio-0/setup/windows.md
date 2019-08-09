@@ -1,8 +1,8 @@
 # Install Tizen Studio on Windows
 
-This section explains the process to download and install Tizen Studio on your development hardware.
+This page explains the process to download and install Tizen Studio on your development hardware.
 
-To have the optimal installation experience, follow these steps chronologically:
+To have optimal installation experience, follow these steps chronologically:
 
 - System prerequisites
   - Hardware requirements
@@ -13,9 +13,8 @@ To have the optimal installation experience, follow these steps chronologically:
 
 <style type="text/css">
 a.clickable   { width: 100%; height: 100%; }
-a.clickable:hover   { background-color: #FF0000; color: #FFFFF; }
+a.clickable:hover   { background-color: ; color: #FFFFF; }
 </style>
-
 
 ## System Prerequisites
 
@@ -77,47 +76,59 @@ Ensure that the following system prerequisites are met:
 
 > **Note:**
 >
-> - Download the relevant version based on target device operating system, for example, **openjdk-10_windows-x64_bin.tar.gz**. 
-> - Ensure you download the JavaFX <OS> SDK product only, for example: JavaFX Windows SDK.
+> - Download the relevant version based on the target device operating system, for example, **openjdk-10_windows-x64_bin.tar.gz** and **openjfx-11.0.2_windows-x64_bin-sdk.zip**
+> - Ensure that you download the JavaFX <OS> SDK product only, for example: JavaFX Windows SDK.
 
-**Disclaimer:** The third party download links are subjected to change. Alternatively, search and download the appropriate software.
+**Disclaimer:** The third party download links are subjected to change. Search and download the appropriate software.
 
 ## Set Up Open JDK
 
- To set up Open JDK, follow these steps: 
+ To set up the Open JDK, follow these steps: 
 
 1. Extract the downloaded **openjdk-10_windows-x64_bin.tar.gz**, and **openjfx-11.0.2_windows-x64_bin-sdk.zip** files at your preferred location.
-   - Locate **jdk-10** and **javafx-sdk-11.0.2** directories.
-     >**Note:**
+     >**Note**
      >
-     >**jdk-10**, **javafx-sdk-11.0.2** directories are created as a result of extraction. 
-2. Copy all the files except **src.zip** from **lib** folder located in the **javafx-sdk-11.0.2** directory.
-3. Paste all the copied files in **lib** folder of **jdk-10** directory.
-4. Copy all the files from **bin** folder in the **javafx-sdk-11.0.2**.
-5. Paste all the copied files in **bin** folder of the **jdk-10** directory.
+     >The **openjdk-10_windows-x64_bin > jdk-10**, **openjfx-11.0.2_windows-x64_bin-sdk** directories are created as a result of extraction. 
+2. Locate the **jdk-10** and the **javafx-sdk-11.0.2** directories after extraction.
+    > **Note**
+    >
+    > - The **jdk-10** is the sub directory under the **openjdk-10_windows-x64_bin** directory.
+    >- The **javafx-sdk-11.0.2** is the sub directory under the **openjfx-11.0.2_windows-x64_bin-sdk** directory.
+3. Double click to open the **javafx-sdk-11.0.2** directory.
+4. Copy all the files except the **src.zip** from the **lib** sub directory located in the **javafx-sdk-11.0.2** directory.
+5. Paste all the copied files in the **lib** sub directory of the  **jdk-10** directory.
+6. Copy all the files from the **bin** sub directory in the **javafx-sdk-11.0.2**.
+7. Paste all the copied files in the **bin** sub directory of the **jdk-10** directory.
 
-   >**Note:**
+   >**Note**
    >
-   >- In this installation guide, setting up OpenJDK is covered.However,  Oracle JDK versions until version 10 are also supported.
-   >- For Oracle JDK 10 installation steps, see the [Oracle official site](https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-microsoft-windows-platforms.htm#JSJIG-GUID-DAF345BA-B3E7-4CF2-B87A-B6662D691840).
-   >- If you have installed Oracle JDK 10 or below already, you can skip the step. 
+   >- In this installation guide, setting up OpenJDK is covered. However, Oracle JDK versions until version 10 are also supported.
+   >- For Oracle JDK 10 installation steps, see the [Oracle Documentation](https://docs.oracle.com/javase/10/install/installation-jdk-and-jre-microsoft-windows-platforms.htm#JSJIG-GUID-DAF345BA-B3E7-4CF2-B87A-B6662D691840).
+   >- If you have installed Oracle JDK 10 or below already, you can skip setting up OpenJDK. 
  
-### Setup Open JDK Path 
+### Set Up Open JDK Path 
 
 To set up the JDK path, follow these steps:
 
-1. On Windows desktop, click **Start > Control Panel > System and security > System > Advanced system settings**, the System Properties window appears. 
-3. In Start-up and recovery section, click **Environment Variables** the Environment Variables window appears.  
+1. On the Windows desktop, click **Start > Control Panel > System and security > System > Advanced system settings**, the System Properties window appears. 
+3. In the **Startup and Recovery** section, click **Environment Variables** the Environment Variables window appears.  
 4. Click **New** under **User variables for {user}** section, also in case the **JAVA_HOME** variable is already in the list, select it and click **Edit**, enter the following details: 
 	- Variable name: **JAVA_HOME** 
-	- Variable value: **C:\Path\to\your\openJDKtype**, i.e. browse for JDK directory path (for example, C:\Users\user\Desktop\jdk-10.0.2) 		
-5. Click **OK**, the Environment Variable list is updated with **JAVA_HOME** variable.
-6. Click **New**,under the System variables section, also In case, if the **Path variable** already exists, select it and click **Edit**, enter the following details: 
+	- Variable value: **C:\Path\to\your\openJDKtype**, i.e. browse for the JDK directory path (for example, C:\Users\user\Desktop\jdk-10.0.2) 	
+5. Click **OK**, the Environment Variable list is updated with the **JAVA_HOME** variable.
+6. Click **New** under the **System variables** section also in case, if the **Path variable** already exists, select it and click **Edit**, and enter the following details: 
 	- Variable name: **Path** 
-	- Variable value: **C:\Path \to\ openJDK\bin directory**; i.e. browse for bin subdirectory path in JDK directory  (for example, C:\Users\user\Desktop\jdk-10.0.2\bin ) 
-8. Click **OK**, the System Variable list is updated with **Path** variable.
-9. Save and close the Environment Variables window.
-10. Open Command Prompt and type `java –version` command to verify whether the OpenJDK version 10 is installed.
+	- Variable value: **C:\Path \to\ openJDK\bin directory**; i.e. browse for the **bin** subdirectory path in the JDK directory  (for example, C:\Users\user\Desktop\jdk-10.0.2\bin ) 
+8. Click **OK**, the System Variable list is updated with the **Path** variable.
+9. Save and close the **Environment Variables** window.
+10. Open Command Prompt and type the `java –version` command to verify whether the OpenJDK version 10 is installed or not. Entering the command must give the following output: 
+
+   ```windows console
+   C:\Users\exampleconsole>java -version
+   openjdk version "10" 2018-03-20
+   OpenJDK Runtime Environment 18.3 (build 10+46)
+   OpenJDK 64-Bit Server VM 18.3 (build 10+46, mixed mode)
+   ```
 
 ## Launch Installer
  
@@ -126,7 +137,7 @@ To launch the installer, follow these steps:
 1. Double click **web-ide_Tizen_Studio_x.x_windows-64.exe** file.
 	>**Note:** 
 	>
-	>**x.x** represents the latest version of Tizen Studio, for example:web-ide_Tizen_Studio_**3.2**_windows-64.exe.
+	>**x.x** represents the latest version of Tizen Studio, for example:web-ide_Tizen_Studio_**3.3**_windows-64.exe.
 
 2. Accept the software license.
 
@@ -136,7 +147,7 @@ To launch the installer, follow these steps:
 
    ![Tizen Studio License Agreement](./media/install_sdk_license.png)
 
-3. Click **...** and specify a new directory to set the SDK data location. 
+3. Click **Browse** and specify a new directory to set the SDK data location. 
 
    ![Set SDK and data location](./media/install_sdk_directory.png)
   
@@ -145,11 +156,6 @@ To launch the installer, follow these steps:
    >If the new directory is valid, it shows no errors.
 
 4. Click **Install**.
-
-	>**Note:** 
-	>
-	>You can monitor the installation process or cancel the installation. The installation process takes a few minutes, unless you cancel it.
-
 5. Click **Finish** to close the installer.
 
    ![Installation complete](./media/migration_finish_instal.png)
@@ -157,12 +163,10 @@ To launch the installer, follow these steps:
    >**Note:**
    >
    > - If you install the Tizen Studio in a directory that requires administrator privileges for access, such as `C:\Program Files`, then administrator privileges are required to run the Tizen SDK tools.
-   > - If you want to install additional platforms and tools, launch Package Manager by checking the **Launch the Package Manager** check box and click **Finish**.
-   > - Use Tizen Studio Package Manager, to install and update additional tools. 
+   > - If you want to install additional platforms and tools, launch Package Manager by selecting the Launch the Package Manager **check box** and click **Finish**.
+   > - Use Tizen Package Manager, to install and update additional tools. 
    > - For more information on the Package Manager, see [Updating Tizen Studio](./update-sdk.md).
 
 ## Verify Installation   
 
-   To verify whether the installation is successful, follow these steps: 
-
-  1. Click **Tizen Studio icon**, Tizen Studio startup window appears.
+   To verify whether the installation is successful or not, click **Tizen Studio icon**. The Tizen Studio startup window must appear.

@@ -1,18 +1,17 @@
-## Frequently asked questions 
+## Frequently Asked Questions 
 
 This page contains answers to most commonly asked questions or errors that you may encounter while installing Tizen studio and developing apps in Tizen Studio.
 
 
 - **How to run Tizen Studio on Ubuntu 18.04?**
 
-  Tizen studio supports Ubuntu 18.04. But Ubuntu 18.04 distribution does not include the runtime libraray **libpng12-0**. To experience optimal installation experience, install the runtime library, run the following command:
+  Tizen studio supports Ubuntu 18.04. However, Ubuntu 18.04 distribution does not include the runtime libraray **libpng12-0**. To experience optimal installation experience, install the runtime library and run the following command:
    ```
    $ wget http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb
    $ sudo dpkg -i libpng12-0_1.2.54-1ubuntu1_amd64.deb 
    ```
-    For more detailed list of Ubuntu dependencies, see [Dependencies](./docs/link to ubuntu.md)
-
-   Generally, installing packages from older distributions may break apt installation system. Since its dependencies are also present in Ubuntu-18.04, it will not break apt system.
+   
+   Generally, installing packages from older distributions may break apt installation system. Since its dependencies are also present in Ubuntu-18.04, it will not break apt installation system.
 
 - **How to manage certificates and package applications in different Ubuntu setups?**
 
@@ -24,16 +23,16 @@ This page contains answers to most commonly asked questions or errors that you m
 
 - **What to do when Tizen Studio fails to launch?**
 
-  Tizen Studio fails to launch if you have incorrect JDK version installed on your system .Ensure that you have recommended version of JDK/OpenJDK installed. 
+  Tizen Studio fails to launch if you have incorrect JDK version installed on your system. Ensure that you have recommended version of JDK, OpenJDK installed. 
 
   Check your JDK version and download an appropriate version.
 
-   Verify you are running a supported version  JDK 8 or OpenJDK 10.  
+   Verify you are using a supported version  JDK 8 or OpenJDK 10.  
 
    1. On your terminal or console window,  type `java -version`.
       If this command does not show which version is installed, see [How can I find which version of Java is installed without running an applet in Windows or Mac](https://www.java.com/en/download/help/version_manual.xml).
-   2. If the version is not 8 for JDK and 10 for OpenJDK, download and install one of these versions. 
-   3. Set or update your JAVA_HOME environment variable, for more information, see the installation pages.
+   2. Verify whether the available version is JDK 8 and OpenJDK 10.
+   3. Set or update your JAVA_HOME environment variable. For more information, see the installation pages.
 
    To download an earlier version of the JDK, see [Oracle Java Archive](https://www.oracle.com/technetwork/java/archive-139210.html).
 

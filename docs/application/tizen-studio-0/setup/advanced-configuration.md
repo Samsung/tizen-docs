@@ -1,15 +1,15 @@
 # Configure Package Manager
 
-This page explains about configuring the package manager for setting up various related repositories and the proxy. By performing these configurations, you get the total control over all package repositories for the main and the extension SDK. It also enables you to modify the proxy settings for accessing these package repositories.
+This page explains about configuring Package Manager for setting up various package repositories and their proxies. By performing these configurations, you get complete control over all package repositories for the main and the extension SDK. It also enables you to modify the proxy settings for accessing these package repositories.
 
-Configure the SDK options by following one of the following procedures:
+Configure the SDK options using one of the following ways:
 
 - Configure main SDK package repository
 - Configure main SDK image
 - Configure extension SDK repository
 - Configure proxy
 
-Manage extension SDK repositories by following one of the following procedures:
+Manage extension SDK repositories using the following ways:
 
 - Add extension repository
 - Remove extension repository
@@ -18,9 +18,9 @@ Manage extension SDK repositories by following one of the following procedures:
 
 > **Note**
 >
-> - Note that the installed packages are removed automatically. Before changing the package repository, as a step of caution you must reinstall the packages from the changed repository.
-> 
-> - If you want to configure Package Manager in the command line interface, see [Updating with the CLI Package Manager](update-sdk.md#updating-with-the-cli-package-manager).
+> The installed packages are removed automatically. Before changing the package repository, you must reinstall the packages from the changed repository.
+
+If you want to configure Package Manager in the command line interface, see [Updating with the CLI Package Manager](update-sdk.md#updating-with-the-cli-package-manager).
 
 
 ### Configure Main SDK Package Repository
@@ -32,28 +32,31 @@ Instead of providing a single repository for the main SDK, various  Content Deli
 
 ![Configuration window with the Package Repository selected](./media/advanced_conf_server.png)
 
-To set the package repository, follow these steps:
+To set the Package Repository, follow these steps:
 
-1. In the Package Repository drop-down list, select an available repository. Select your desired locale specific repository for quick installation and update.
+1. In **Package Repository** drop-down list, select an available repository, and select your desired locale specific repository for quick installation and update.
 2. To validate the repository, click **Apply**. 
-3. In the Distribution drop-down list, select the distribution you want to access.
-4. Different snapshots are listed in the snapshot box, based on your selection in the Distribution drop-down list. You can toggle the Auto Update to **on** and **off**. If you toggle Auto Update to **OFF**, you can select the specific snapshot in the list. If you toggle Auto Update to **ON**, Package Manager updates the snapshot with the latest package snapshot.
+3. In **Distribution** drop-down list, select the distribution that you want to access.
+4. Different snapshots are listed in the snapshot box based on your selection in the **Distribution** drop-down list. You can toggle **Auto Update** to **ON** and **OFF**. If you toggle **Auto Update** to **OFF**, you can select the specific snapshot from the list. If you toggle **Auto Update** to **ON**, Package Manager updates the snapshot with the latest package snapshot.
+   > **Note**  
+   >
+   > If you toggle the **Auto Update** option to **OFF**, the update can cause entire packages to be removed to guarantee system integrity.
 5. To confirm your setting, click **OK**.
 
-> **Note**  
-> If you toggle the **Auto Update** option to **OFF**, you can select an earlier snapshot. Proceed with caution, since the update can cause entire packages to be removed to guarantee system integrity.
+
 
 ### Configure Main SDK Image
 
 To install or update packages using the SDK image, follow these steps:
 
-1. Enter the full path of the SDK image file in the **Package Repository** field, or click ![Browse](./media/advanced_conf_browse.png) next to the drop-down list to open the file browser.
-
-   In the file browser that appears, select the SDK image file, and click **OK**. When you select the image file, the image's origin repository information is displayed below the drop-down list.
-2. To confirm your setting, click **OK**.
+1. Enter the full path of the SDK image file in the **Package Repository** field or click ![Browse](./media/advanced_conf_browse.png) next to the drop-down list to open the file browser.
+2. In the file browser that appears, select the SDK image file, and click **OK**. When you select the image file, the image's origin repository information is displayed in the snapshot table.
+3. To confirm your setting, click **OK**.
 
 > **Note**  
-> If you install or update packages using an image file, the SDK image's origin repository URL or distribution ID can be different from the current packages' URL or distribution ID. Proceed with caution, since the installation or update can cause entire packages to be removed to guarantee system integrity.
+> If you install or update packages using an image file, the SDK image's origin repository URL or distribution ID can be different from the current packages' URL or distribution ID. 
+>
+> The installation or update can cause entire packages to be removed to guarantee system integrity.
 
 ### Configure Extension SDK Repository
 
@@ -70,7 +73,7 @@ To configure the extension SDK, follow these steps:
 
 ### Configure Proxy
 
-The Package Manager provides a network option to configure a proxy. This configured proxy is used to connect to the repository servers. 
+Package Manager provides a network option to configure a proxy. This configured proxy is used to connect to the repository servers. 
 
 To set the proxy, follow these steps:
 
@@ -88,46 +91,49 @@ To set the proxy, follow these steps:
 
 To add an extra repository, follow these steps:
 
-1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click the **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
+1. In the **Configuration** window that appears, scroll down to the **Extension SDK** panel or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
 2. In the repository information table, click **Add +**.
-3. In the **Add Repository** dialog box, enter the values in the **Name** and **Repository** fields. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or a local server location.  
+3. In the **Add Repository** dialog box that appears, enter the values in the **Name** and **Repository** fields. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or a local server location.  
 ![Adding an extra repository](./media/advanced_conf_add_extra.png)
 4. Click **OK**.
-5. In the **Configuration** dialog box, check the detailed repository information below the table.
-6. Click **OK**.
+
+   In the **Configuration** window that appears, you can verify the detailed repository information.
+   
+5. Click **OK**.
 
 ### Remove Extension Repository
 
 To remove an extra repository, follow these steps:
 
-1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click the **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
-2. Select an extension repository in the repository table.
+1. In the **Configuration** window that appears, scroll down to the **Extension SDK** panel or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
+2. Select an extension repository from the repository table.
 3. Click ![Remove icon](./media/advanced_conf_icon_remove.png).
-4. In the **Configuration** dialog box, check whether the extension repository is removed.
+   
+   In the **Configuration** window that appears, you can verify whether the extension repository is removed or not.
 
 ### Modify Extension Repository
 
 To modify an extra repository, follow these steps:
 
-1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click the **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
+1. In the **Configuration** window that appears, scroll down to the **Extension SDK** panel or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
 2. Click the ![Edit icon](./media/advanced_conf_icon_edit.png) icon above the repository information table.
-3. In the **Modify Repository** dialog box, modify the values of the **Name** and the **Repository** fields. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or local server location.  
+3. In the **Modify Repository** dialog box that appears, modify the values of the **Name** and the **Repository** fields. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or local server location.  
 ![Modifying an extra repository](./media/advanced_conf_edit_extra.png)
 4. Click **OK**.
-5. In the **Configuration** dialog box, check whether the repository information has changed below the table.
+5. In the **Configuration** window that appears, check whether the repository information has changed below the table.
 6. Click **OK**.
 
 ### Activate or Deactivate Extension Repository
 
 To activate or deactivate the extra repository, follow these steps:
 
-1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
-2. Select the toggle ![Switch icon](./media/advanced_conf_icon_switch.png) in the **Activation** column in the repository table.  
+1. In the **Configuration** window that appears, scroll down to the **Extension SDK** panel, or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
+2. In the **Activation** column, toggle ![Switch icon](./media/advanced_conf_icon_switch.png) to activate or deactivate the repository.  
 ![Activating or deactivating an extra repository](./media/advanced_conf_activate_extra.png)
 3. Click **OK**.
 
 > **Note**  
-> If the extension repository is deactivated, the packages from that repository are no longer shown in Package Manager. However, if you activate the extension repository, the packages are once more shown in Package Manager.
+> If the extension repository is deactivated, the packages from that repository are no longer shown in Package Manager. However, if you activate the extension repository, the packages will be displayed in Package Manager.
 
 ## Related Information
 - Dependencies

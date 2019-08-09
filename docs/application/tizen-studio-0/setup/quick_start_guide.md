@@ -24,9 +24,9 @@ Following are the four implementation stages for a digital watch application:
 ![implementation plan](./media/imp_pla.png)
 
 
-### How to add an user interface layout to a digital watch?
+### How to add user interface layout to a digital watch?
 
-Following are the steps to add an user interface layout to a digital watch:
+Following are the steps to add user interface layout to a digital watch:
 
 ![Step 1](./media/ste1.png)
 
