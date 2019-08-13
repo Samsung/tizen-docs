@@ -236,16 +236,16 @@ To manage the media controller features in your application, you must learn to s
    1. Define your custom command:
 
       ```
-      var exampleCustomCommandData = {
+      var exampleCustomCommandData = new tizen.Bundle({
           myFilter: 'rock'
-      };
+      });
       ```
 
    2. Define a success (and optionally, an error) callback implementing the `MediaControllerSendCommandSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback) applications):
 
       ```
-      function sendCommandSuccessCallback(response) {
-          console.log('Command executed with result: ' + JSON.stringify(response));
+      function sendCommandSuccessCallback(data, code) {
+          console.log('Server replied with return data: ' + JSON.stringify(data) + ' and code: ' + code);
       }
 
       function sendCommandErrorCallback(e) {
@@ -256,7 +256,7 @@ To manage the media controller features in your application, you must learn to s
    3. Send the command to the server using the `sendCommand()` method:
 
       ```
-      mcServerInfo.sendCommand('myPlaylistFilter', sendCommandSuccessCallback, sendCommandErrorCallback);
+      mcServerInfo.sendCommand('myPlaylistFilter', exampleCustomCommandData, sendCommandSuccessCallback, sendCommandErrorCallback);
       ```
 
 <a name="receive_custom_commands"></a>
@@ -269,7 +269,7 @@ To manage the media controller features in your application, you must learn to s
       var commandReceiveListener = function(client, command, data) {
           console.log('command: ' + command + ' client: ' + client + ' data: ' + JSON.stringify(data));
 
-          return {reply: 'response from server'};
+          return new tizen.mediacontroller.RequestReply(new tizen.Bundle({reply: 'response from server'}), 7);
       };
       ```
 
