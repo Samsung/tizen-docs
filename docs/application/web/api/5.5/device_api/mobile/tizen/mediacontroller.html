@@ -163,7 +163,7 @@ For more information on the Media Controller features, see <a href="https://deve
 <div>void <a href="#MediaControllerServerInfo::sendShuffleMode">sendShuffleMode</a> (boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#MediaControllerServerInfo::sendRepeatState">sendRepeatState</a> (<a href="#MediaControllerRepeatState">MediaControllerRepeatState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#MediaControllerServerInfo::sendSearchRequest">sendSearchRequest</a> (<a href="#SearchFilter">SearchFilter</a>[] request, <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a> replyCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#MediaControllerServerInfo::sendCommand">sendCommand</a> (DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#MediaControllerServerInfo::sendCommand">sendCommand</a> (DOMString command, <a href="tizen.html#Bundle">Bundle</a>? data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>long <a href="#MediaControllerServerInfo::addServerStatusChangeListener">addServerStatusChangeListener</a> (<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener)</div>
 <div>void <a href="#MediaControllerServerInfo::removeServerStatusChangeListener">removeServerStatusChangeListener</a> (long watchId)</div>
 <div>long <a href="#MediaControllerServerInfo::addPlaybackInfoChangeListener">addPlaybackInfoChangeListener</a> (<a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a> listener)</div>
@@ -207,7 +207,7 @@ For more information on the Media Controller features, see <a href="https://deve
 </tr>
 <tr>
 <td><a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a></td>
-<td><div>void <a href="#MediaControllerSendCommandSuccessCallback::onsuccess">onsuccess</a> (object? data)</div></td>
+<td><div>void <a href="#MediaControllerSendCommandSuccessCallback::onsuccess">onsuccess</a> (object? data, optional long code)</div></td>
 </tr>
 <tr>
 <td><a href="#RequestReply">RequestReply</a></td>
@@ -224,7 +224,8 @@ For more information on the Media Controller features, see <a href="https://deve
 </tr>
 <tr>
 <td><a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a></td>
-<td><div>object? <a href="#MediaControllerReceiveCommandCallback::onsuccess">onsuccess</a> (<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data)</div></td>
+<td><div>
+<a href="#RequestReply">RequestReply</a>? <a href="#MediaControllerReceiveCommandCallback::onsuccess">onsuccess</a> (<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data)</div></td>
 </tr>
 <tr>
 <td><a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a></td>
@@ -1834,7 +1835,7 @@ Provides methods to send commands to server and listen for server status change.
                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendSearchRequest(<a href="#SearchFilter">SearchFilter</a>[] request, <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a> replyCallback,
                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
+    void sendCommand(DOMString command, <a href="tizen.html#Bundle">Bundle</a>? data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeServerStatusChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -2313,7 +2314,7 @@ reply data: {"key": "value"}
 <div class="brief">
  Allows to send custom command to media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
+<div class="synopsis"><pre class="signature prettyprint">void sendCommand(DOMString command, <a href="tizen.html#Bundle">Bundle</a>? data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -2330,7 +2331,7 @@ and respond to custom commands.
  Custom command name which is handled on server side.
                 </li>
           <li class="param">
-<span class="name">data</span>:
+<span class="name">data</span><span class="optional"> [nullable]</span>:
  Additional data for custom command which is send to server.
                 </li>
           <li class="param">
@@ -2359,11 +2360,12 @@ and respond to custom commands.
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
-var exampleCustomCommandData = {myFilter: "rock"};
+var exampleCustomCommandData = new tizen.Bundle({myFilter: "rock"});
 mcServerInfo.sendCommand("myPlaylistFilter", exampleCustomCommandData,
-    function(response)
+    function(data, code)
     {
-      console.log("Command executed with result: " + JSON.stringify(response));
+      console.log(
+          "Server replied with return data: " + JSON.stringify(data) + " and code: " + code);
     },
     function(e)
     {
@@ -3352,7 +3354,7 @@ playlist.getItems(successCallback, errorCallback);
 <div class="brief">
  Search filter representation.
           </div>
-<pre class="webidl prettyprint">  [Constructor(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category = "NO_CATEGORY", optional DOMString? keyword = null, optional Bundle<a href="tizen.html#Bundle">Bundle</a>? extraData = null)]
+<pre class="webidl prettyprint">  [Constructor(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category = "NO_CATEGORY", optional DOMString? keyword = null, optional <a href="tizen.html#Bundle">Bundle</a>? extraData = null)]
   interface SearchFilter {
     attribute <a href="#MediaControllerContentType">MediaControllerContentType</a> contentType raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     attribute <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -3370,7 +3372,7 @@ playlist.getItems(successCallback, errorCallback);
           </p>
 <div class="constructors">
 <h4 id="SearchFilter::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">SearchFilter(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category = "NO_CATEGORY", optional DOMString? keyword = null, optional Bundle<a href="tizen.html#Bundle">Bundle</a>? extraData = null);</pre></dl>
+<dl><pre class="webidl prettyprint">SearchFilter(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category = "NO_CATEGORY", optional DOMString? keyword = null, optional <a href="tizen.html#Bundle">Bundle</a>? extraData = null);</pre></dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3485,7 +3487,7 @@ for <em>MediaControllerClient.findServers()</em>.
 for <em>MediaControllerServerInfo.sendCommand()</em>.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSendCommandSuccessCallback {
-    void onsuccess(object? data);
+    void onsuccess(object? data, optional long code);
   };</pre>
 <p><span class="version">Since: </span>
  2.4
@@ -3500,7 +3502,7 @@ for <em>MediaControllerServerInfo.sendCommand()</em>.
 <div class="brief">
  Called when server responded to received custom command.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object? data);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(object? data, optional long code);</pre></div>
 <p><span class="version">Since: </span>
  2.4
             </p>
@@ -3509,7 +3511,11 @@ for <em>MediaControllerServerInfo.sendCommand()</em>.
 <ul>
           <li class="param">
 <span class="name">data</span><span class="optional"> [nullable]</span>:
- Response object sent from server.
+ Response data object sent from server. This object is compatible with  <a href="tizen.html#Bundle">Bundle</a> object.
+                </li>
+          <li class="param">
+<span class="name">code</span><span class="optional"> [optional]</span>:
+ Response code.
                 </li>
         </ul>
 </div>
@@ -3657,7 +3663,7 @@ It will be passed to the replyCallback of <a href="#MediaControllerServerInfo::s
 for custom commands from client in <em>MediaControllerServer.addCommandListener()</em>.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
-    object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
+    <a href="#RequestReply">RequestReply</a>? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
   };</pre>
 <p><span class="version">Since: </span>
  2.4
@@ -3672,7 +3678,7 @@ for custom commands from client in <em>MediaControllerServer.addCommandListener(
 <div class="brief">
  Called when custom command received from client.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#RequestReply">RequestReply</a>? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);</pre></div>
 <p><span class="version">Since: </span>
  2.4
             </p>
@@ -3693,15 +3699,15 @@ See <em>MediaControllerSendCommandSuccessCallback</em> interface.
                 </li>
           <li class="param">
 <span class="name">data</span>:
- Response object sent from client.
+ Response object sent from client. This object is compatible with <a href="tizen.html#Bundle">Bundle</a>.
                 </li>
         </ul>
 </div>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">object<span class="optional"> [nullable]</span>:</span>
- Data object which should be send with reply to the client.
+<span class="return">RequestReply<span class="optional"> [nullable]</span>:</span>
+ RequestReply object which is sent with reply to the client.
               </ul>
 </div>
 </dd>
@@ -4324,7 +4330,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendSearchRequest(<a href="#SearchFilter">SearchFilter</a>[] request, <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a> replyCallback,
                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
+    void sendCommand(DOMString command, <a href="tizen.html#Bundle">Bundle</a>? data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addServerStatusChangeListener(<a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeServerStatusChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -4371,7 +4377,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     void getItems(<a href="#MediaControllerGetItemsSuccessCallback">MediaControllerGetItemsSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  [Constructor(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category = "NO_CATEGORY", optional DOMString? keyword = null, optional Bundle<a href="tizen.html#Bundle">Bundle</a>? extraData = null)]
+  [Constructor(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category = "NO_CATEGORY", optional DOMString? keyword = null, optional <a href="tizen.html#Bundle">Bundle</a>? extraData = null)]
   interface SearchFilter {
     attribute <a href="#MediaControllerContentType">MediaControllerContentType</a> contentType raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     attribute <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -4382,7 +4388,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     void onsuccess(<a href="#MediaControllerServerInfo">MediaControllerServerInfo</a>[] servers);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerSendCommandSuccessCallback {
-    void onsuccess(object? data);
+    void onsuccess(object? data, optional long code);
   };
   [Constructor(<a href="tizen.html#Bundle">Bundle</a>? data, optional long code = 0)]
   interface RequestReply {
@@ -4396,7 +4402,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     <a href="#RequestReply">RequestReply</a>? onrequest(<a href="application.html#ApplicationId">ApplicationId</a> clientName, <a href="#SearchFilter">SearchFilter</a>[] request);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
-    object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
+    <a href="#RequestReply">RequestReply</a>? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerStatusChangeCallback {
     void onsuccess(<a href="#MediaControllerServerState">MediaControllerServerState</a> status);
