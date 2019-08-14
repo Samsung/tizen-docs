@@ -67,7 +67,7 @@
 
 ### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
-#### [Setting Up the NUI Development Environment on Ubuntu](/application/dotnet/guides/nui/setup-ubuntu.md)
+#### [Quickstart](/application/dotnet/guides/nui/quickstart.md)
 #### [Getting Started](/application/dotnet/guides/nui/hello-world.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
 #### Components
