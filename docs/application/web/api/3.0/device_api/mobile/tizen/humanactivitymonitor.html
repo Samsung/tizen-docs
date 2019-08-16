@@ -1834,7 +1834,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface HumanActivitySleepMonitorData : <a href="#HumanActivityData">HumanActivityData</a> {
     readonly attribute <a href="#SleepStatus">SleepStatus</a> status;
-    readonly attribute long timestamp;
+    readonly attribute long long timestamp;
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -1857,7 +1857,7 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </li>
 <li class="attribute" id="HumanActivitySleepMonitorData::timestamp">
 <span class="attrName"><span class="readonly">                readonly
-</span><span class="type">long </span><span class="name">timestamp</span></span><div class="brief">
+</span><span class="type">long long </span><span class="name">timestamp</span></span><div class="brief">
  The time when the sleep status is recognized. Epoch time in milliseconds.
             </div>
 <p><span class="version">Since: </span>
@@ -2388,7 +2388,7 @@ To guarantee that the barometer (pressure) sensor application runs on a device w
   };
   [NoInterfaceObject] interface HumanActivitySleepMonitorData : <a href="#HumanActivityData">HumanActivityData</a> {
     readonly attribute <a href="#SleepStatus">SleepStatus</a> status;
-    readonly attribute long timestamp;
+    readonly attribute long long timestamp;
   };
   [NoInterfaceObject] interface HumanActivityRecognitionData : <a href="#HumanActivityData">HumanActivityData</a> {
     readonly attribute <a href="#ActivityRecognitionType">ActivityRecognitionType</a> type;
