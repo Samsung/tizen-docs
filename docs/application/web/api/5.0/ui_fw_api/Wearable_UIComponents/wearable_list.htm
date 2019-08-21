@@ -15,7 +15,13 @@
 
 <img src="../../images/List.png" alt="photo of List element in Tizen">
 <br>
-<button onclick="window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Flist%2Flist_normal.html', '_blank')">Use example</button>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Flist%2Flist_normal.html', '_blank')"
+>Use example</button>
 
 <table>
 <caption>Table: List classes</caption>

@@ -15,7 +15,13 @@
 
 <img src="../../images/mobile_textInput.png" width="15%">
 <br>
-<button onclick="window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fmobile%2FUIComponents%2Fcomponents%2Fcontrols%2Ftextinput.html', '_blank')">Use example</button>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fmobile%2FUIComponents%2Fcomponents%2Fcontrols%2Ftextinput.html', '_blank')"
+>Use example</button>
 
 <h2>Table of Contents</h2>
 <ol class="toc">

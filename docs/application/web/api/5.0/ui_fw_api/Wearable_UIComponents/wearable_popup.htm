@@ -14,7 +14,14 @@
 <p>The popup component shows in the middle of the screen a list of items in a pop-up window. It automatically optimizes the pop-up window size within the screen.  The following table describes the supported popup classes.</p>
 <img src="../../images/Popup.png" alt="image of Popup element in TIZEN">
 <br>
-<button onclick="window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fpopup%2Fpopup.html', '_blank')">Use example</button>
+<div>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fpopup%2Fpopup.html', '_blank')"
+>Use example</button>
 
 <table>
    <caption>Table: Popup classes</caption>
