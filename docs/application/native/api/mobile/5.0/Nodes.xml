@@ -2575,6 +2575,12 @@
                 <Subnodes>
                 </Subnodes>
                </Node>
+               <Node>
+                <Name>Size Negotiation</Name>
+                <Path>group__dali__core__size__negotiation.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
               </Subnodes>
              </Node>
              <Node>
@@ -2675,6 +2681,12 @@
                   <Subnodes>
                   </Subnodes>
                  </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Image Loader</Name>
+                <Path>group__dali__toolkit__image__loader.html</Path>
+                <Subnodes>
                 </Subnodes>
                </Node>
                <Node>
