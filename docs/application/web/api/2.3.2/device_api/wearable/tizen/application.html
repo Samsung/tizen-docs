@@ -298,8 +298,7 @@ The <em>tizen.application </em>object allows access to the Application API's fun
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Application:
-                  </span>
+<span class="return">Application:</span>
  The data structure that defines the current application.
               </ul>
 </div>
@@ -478,7 +477,7 @@ tizen.application.launch("targetApp0.main", onsuccess);
 <div class="brief">
  Launches an application with the specified application control.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, optional <a href="#ApplicationId">ApplicationId</a>? id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void launchAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, optional <a href="#ApplicationId">ApplicationId</a>? id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#ApplicationControlDataArrayReplyCallback">ApplicationControlDataArrayReplyCallback</a>? replyCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.0
@@ -606,7 +605,7 @@ tizen.application.launchAppControl(appControl, null,
 <div class="brief">
  Finds which applications can be launched with the given application control.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void findAppControl(<a href="#ApplicationControl">ApplicationControl</a> appControl, <a href="#FindAppControlSuccessCallback">FindAppControlSuccessCallback</a> successCallback,
                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.0
@@ -773,8 +772,7 @@ The list of running applications and their application IDs is obtained with <em>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ApplicationContext:
-                  </span>
+<span class="return">ApplicationContext:</span>
  A data structure that lists running application details.
               </ul>
 </div>
@@ -879,8 +877,7 @@ The list of installed applications and their application IDs is obtained with <e
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ApplicationInformation:
-                  </span>
+<span class="return">ApplicationInformation:</span>
  The information of an application.
               </ul>
 </div>
@@ -959,8 +956,7 @@ The certificate types are listed below:
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ApplicationCertificate[]:
-                  </span>
+<span class="return">ApplicationCertificate[]:</span>
  Array of certificate information of a specified application.
               </ul>
 </div>
@@ -1003,7 +999,10 @@ for (var i = 0; i &lt; appCerts.length; i++)
             </p>
 <div class="description">
             <p>
-The shared directory is used to export data to other applications.
+The shared directory is used to export data to other applications. Its structure is described in
+<a href="https://developer.tizen.org/development/training/native-application/understanding-tizen-programming/file-system-directory-hierarchy">File System Directory Hierarchy</a>.
+            </p>
+            <p>
 If the ID is set to <var>null</var> or not set at all, it returns the shared directory URI for the current application.
             </p>
            </div>
@@ -1019,8 +1018,7 @@ If the ID is set to <var>null</var> or not set at all, it returns the shared dir
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The shared directory URI of an application.
               </ul>
 </div>
@@ -1076,8 +1074,7 @@ If the ID is set to <var>null</var> or not set at all, it returns the applicatio
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ApplicationMetaData[]:
-                  </span>
+<span class="return">ApplicationMetaData[]:</span>
  Array of meta data of a specified application. If there are no meta data for a specified application,
 an empty array is returned
               </ul>
@@ -1147,8 +1144,7 @@ with the corresponding listener identifier.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  ID of the listener that can be used to remove the listener later.
               </ul>
 </div>
@@ -1367,8 +1363,7 @@ appropriately when it is launched.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">RequestedApplicationControl:
-                  </span>
+<span class="return">RequestedApplicationControl:</span>
  The details of a requested application control.
               </ul>
 </div>
@@ -1624,7 +1619,7 @@ and launches the selected application.
 </div>
 <div class="constructors">
 <h4 id="ApplicationControl::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ApplicationControl(DOMString operation, optional DOMString? uri, optional DOMString? mime, optional DOMString? category, 
+<dl><pre class="webidl prettyprint">ApplicationControl(DOMString operation, optional DOMString? uri, optional DOMString? mime, optional DOMString? category,
                    optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data, optional ? launchMode);</pre></dl>
 </div>
 <div class="attributes">
@@ -2313,10 +2308,10 @@ To guarantee the running of the application on a device which has battery, decla
 <pre class="webidl prettyprint">module Application {
   typedef DOMString ApplicationId;
   typedef DOMString ApplicationContextId;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ApplicationManagerObject">ApplicationManagerObject</a>;
   [NoInterfaceObject] interface ApplicationManagerObject {
     readonly attribute <a href="#ApplicationManager">ApplicationManager</a> application;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ApplicationManagerObject">ApplicationManagerObject</a>;
   [NoInterfaceObject] interface ApplicationManager {
     <a href="#Application">Application</a> getCurrentApplication() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void kill(<a href="#ApplicationContextId">ApplicationContextId</a> contextId, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)

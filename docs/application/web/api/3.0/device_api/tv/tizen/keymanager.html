@@ -172,7 +172,7 @@ It provides access to the API functionalities through the <em>tizen.keymanager</
 <div class="brief">
  Saves and stores data as a <a href="#KeyManagerAlias">KeyManagerAlias</a> inside the KeyManager.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void saveData(DOMString name, <a href="#RawData">RawData</a> rawData, optional DOMString? password, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void saveData(DOMString name, <a href="#RawData">RawData</a> rawData, optional DOMString? password, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -347,8 +347,7 @@ If an application calls this method to retrieve raw data which it saved into the
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">RawData:
-                  </span>
+<span class="return">RawData:</span>
  Data.
               </ul>
 </div>
@@ -414,8 +413,7 @@ if (aliases.length != 0)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">KeyManagerAlias[]:
-                  </span>
+<span class="return">KeyManagerAlias[]:</span>
  Array of aliases.
               </ul>
 </div>
@@ -444,7 +442,7 @@ for (var i = 0; i &lt; aliases.length; i++)
 <div class="brief">
  Sets permissions that another application has for accessing an application's data.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void setPermission(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias, <a href="package.html#PackageId">PackageId</a> packageId, <a href="#PermissionType">PermissionType</a> permissionType, 
+<div class="synopsis"><pre class="signature prettyprint">void setPermission(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias, <a href="package.html#PackageId">PackageId</a> packageId, <a href="#PermissionType">PermissionType</a> permissionType,
                    optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -589,10 +587,14 @@ If this attribute contains any spaces, the spaces will be removed. Characters wh
 <pre class="webidl prettyprint">module KeyManager {
   typedef DOMString RawData;
   enum PermissionType { "NONE", "READ", "REMOVE", "READ_REMOVE" };
+  dictionary KeyManagerAlias {
+    <a href="package.html#PackageId">PackageId</a> packageId;
+    DOMString name;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#KeyManagerObject">KeyManagerObject</a>;
   [NoInterfaceObject] interface KeyManagerObject {
     readonly attribute <a href="#KeyManager">KeyManager</a> keymanager;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#KeyManagerObject">KeyManagerObject</a>;
   [NoInterfaceObject] interface KeyManager {
     void saveData(DOMString name, <a href="#RawData">RawData</a> rawData, optional DOMString? password, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                   optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -601,10 +603,6 @@ If this attribute contains any spaces, the spaces will be removed. Characters wh
     <a href="#KeyManagerAlias">KeyManagerAlias</a>[] getDataAliasList() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setPermission(<a href="#KeyManagerAlias">KeyManagerAlias</a> dataAlias, <a href="package.html#PackageId">PackageId</a> packageId, <a href="#PermissionType">PermissionType</a> permissionType,
                        optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  dictionary KeyManagerAlias {
-    <a href="package.html#PackageId">PackageId</a> packageId;
-    DOMString name;
   };
 };</pre>
 </div>
