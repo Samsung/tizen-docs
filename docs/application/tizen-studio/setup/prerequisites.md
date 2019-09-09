@@ -20,7 +20,7 @@ Follow these instructions to install the appropriate JDK version for your system
 
 - Ubuntu
 
-  Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java) for detailed instructions for installing the Oracle&reg; JDK version 8. The raw binaries can be downloaded directly from Oracle ([Oracle Java download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+  Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java) for detailed instructions for installing the Oracle&reg; JDK version 8. The raw binaries can be downloaded directly from Oracle ([Oracle Java download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)).
 
 You can also use Oracle's OpenJDK. For more installation details, see [OpenJDK 10 and OpenJFX Installation Guide](openjdk.md).
 
