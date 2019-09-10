@@ -1,10 +1,9 @@
-# How to use transtion
+# How to Use Transition
+To load a transition, you can create transition in XAML and then use this transition in the **.cs** code.
 
-User can create transition in XAML and use it in .cs codes.
+The format of transition in XAML is:
 
-## The format of transition in XAML is :
-
-``` xml
+``` xaml
 <?xml version="1.0" encoding="UTF-8" ?>
 <Transition xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -21,13 +20,11 @@ User can create transition in XAML and use it in .cs codes.
 </Transition>
 ```
 
-The Name is the id for transition.
-Every transition has a Behaviors, it is a array of behavior.
-Each behavior define a target, user can bind it to one animatable object in .cs code.
+The ID for transition is the Name. Every transition has an array of behavior. Each behavior defines a target. You can bind a behavior into one animatable object in the **.cs** code.
 
-## The sample of .cs code is :
+The sample of the **.cs** code is:
 
-``` cs
+``` csharp
 Transition newAnimation = myPage.GetTransition("Type1");
 
 PushButton button = NameScopeExtensions.FindByName<PushButton>(myPage, "Click");
@@ -50,9 +47,9 @@ if (null != button)
 }
 ```
 
-Add the codes in page's XAML file to load transition
+To load transition, add the following code in the XAML file of the page.
 
-``` xml
+``` xaml
 <ContentPage.TransitionNames>
   <x:Array Type="{x:Type x:String}">
     <x:String>OpacityAndPositionAnimation</x:String>
@@ -61,8 +58,7 @@ Add the codes in page's XAML file to load transition
 </ContentPage.TransitionNames>
 ```
 
-The names (such as OpacityAndPositionAnimation and OrientationAnimation in the sample) are according to the file name of transition's XAML.
-
-## The XAML file shall be put in folder res/Animation
+In the preceding example, `OpacityAndPositionAnimation` and `OrientationAnimation` are the transition names.
+The XAML file shall be put in folder of **res/Animation**
 
 ![PathForTransition](./Pictures/PathForTransition.PNG)

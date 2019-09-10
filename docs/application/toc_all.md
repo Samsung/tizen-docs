@@ -87,6 +87,16 @@
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 #### [Resources](/application/dotnet/guides/nui/resources.md)
+#### XAML
+##### [XAML Support for Tizen.NUI](/application/dotnet/guides/nui/xaml/getting-started-with-nui-xaml.md)
+##### [Example](/application/dotnet/guides/nui/xaml/introduction-with-example.md)
+##### [Namespace](/application/dotnet/guides/nui/xaml/namespace.md)
+##### [UI Component](/application/dotnet/guides/nui/xaml/ui-component.md)
+##### [Handling Object Created by XAML](/application/dotnet/guides/nui/xaml/handling-object-created-by-xaml.md)
+##### [Resource](/application/dotnet/guides/nui/xaml/resource.md)
+##### [Data Binding](/application/dotnet/guides/nui/xaml/data-binding.md)
+##### [Property Trigger](/application/dotnet/guides/nui/xaml/property-trigger.md)
+##### [Transition](/application/dotnet/guides/nui/xaml/transition.md)
 
 ### OpenTK
 #### [Overview](/application/dotnet/guides/opentk/overview.md)

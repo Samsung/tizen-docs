@@ -1,19 +1,20 @@
-# How to get the object created by XAML in code
+# How to Handle Object Created by XAML
+In order to implement various functions in an Application, the instances of objects created in XAML must be referenced and handled in csharp code.
 
-``` xml
+In the following XAML code, Tizen.NUI supports two ways to access the `ImageView` instance in the sample code:
+
+``` xaml
 <ContentPage x:Class="Tizen.NUI.Examples.xNameDemoPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-  <ImageView x:Name="ImageOne" Name="title" Position2D="0,0" Size2D="400,400" ResourceUrl="../../res/images/AmbientScreenUXControl/Cut/traffic_content.png"  />
+  <ImageView x:Name="ImageOne" Name="title" Position2D="0,0" Size2D="400,400" ResourceUrl="../res/xxx.png"/>
 
 </ContentPage>
 ```
 
-For the above XAML, Tizen.NUI support two ways to access the ImageView instance in sample or app code:
-
-1. View.FindChildByName
-2. NameScopeExtensions.FindByName&lt;T&gt;
+- View.FindChildByName
+- NameScopeExtensions.FindByName&lt;T&gt;
 
 ``` csharp
 ContentPage myPage = new xNameDemoPage(window);
@@ -24,9 +25,8 @@ ImageView title = myPage.Root.FindChildByName("title") as ImageView;
 ImageView imageOne = NameScopeExtensions.FindByName<Tizen.NUI.BaseComponents.ImageView>(myPage, "ImageOne");
 ```
 
-For the first method, you should set the <code> Name </code> property of the control, such as <code>Name="title"</code>. For the second method, you should set the <code>x:Name</code> of the element, such as <code>x:Name="ImageOne"</code>.
+In `View.FindChildByName` method, set the `Name` property of the control as `Name="title"`. In the `NameScopeExtensions.FindByName<T>` method, set `x:Name` of the element as `x:Name="ImageOne"`.
+To have a better performance, it is recommended to use the `NameScopeExtensions.FindByName<T>` method.
 
-We recommend you use the second way, it has better performance.
-
-**Attention:** If you add Tizen.NUI.XamlBuild nuget package into project, and set the xaml file is "Embedded Resource", it will be generate to .g.cs file. In the .g.cs file, every node with x:Name in XAML has a variable that is generated with the same name as its x:Name.
-You can use it directly in your .xaml.cs file.
+> **Note**  
+> If you add the Tizen.NUI.XamlBuild nuget package into a project, and set the XAML file as `Embedded Resource`. It will be generated in the **.g.cs** file. In the `.g.cs file`, every node with `x:Name` in XAML has a variable that is generated with the same name as its `x:Name`. You can use it directly in your **.xaml.cs** file.

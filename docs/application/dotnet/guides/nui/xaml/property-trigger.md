@@ -1,10 +1,12 @@
 # Property Trigger
+Property trigger occurs when a property on a control is set to a particular value. Property trigger allow you to express actions declaratively in XAML that change the appearance of controls based on the property changes.
 
-Property triggers allow you to express actions declaratively in XAML that change the appearance of controls based on property changes.
+For more information, see https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers#targetText=Triggers%20allow%20you%20to%20express,on%20events%20or%20property%20changes.&targetText=Property%20Trigger%20%2D%20occurs%20when%20a,the%20properties%20of%20another%20control
 
-The following example shows two triggers that change a ImageView's <code> PositionX </code> property when it <code> ResourceUrl </code> property changed and equal to "../../res/images/AmbientScreenUXControl/Cut/bixby_detail.png" or "../../res/images/AmbientScreenUXControl/Cut/bixby_sendtophone.png":
 
-``` xml
+The following example shows two triggers that changes `PositionX` of the `ImageView` property when the `ResourceUrl` property is changed to or set equal to `../res/bixby_detail.png` or `../res/bixby_sendtophone.png`:
+
+``` xaml
 <ContentPage x:Class="Tizen.NUI.Examples.StyleDemoPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -13,12 +15,12 @@ The following example shows two triggers that change a ImageView's <code> Positi
     <ResourceDictionary>
       <Style x:Key="CustomStyle" TargetType="ImageView">
         <Style.Triggers>
-          <Trigger TargetType="ImageView" Property="ResourceUrl" Value="../../res/images/AmbientScreenUXControl/Cut/bixby_detail.png">
+          <Trigger TargetType="ImageView" Property="ResourceUrl" Value="../res/bixby_detail.png">
             <Trigger.Setters >
               <Setter Property="PositionX" Value="200" />
             </Trigger.Setters>
           </Trigger>
-          <Trigger TargetType="ImageView" Property="ResourceUrl" Value="../../res/images/AmbientScreenUXControl/Cut/bixby_sendtophone.png">
+          <Trigger TargetType="ImageView" Property="ResourceUrl" Value="../res/bixby_sendtophone.png">
             <Trigger.Setters >
               <Setter Property="PositionX" Value="500" />
             </Trigger.Setters>
@@ -30,7 +32,7 @@ The following example shows two triggers that change a ImageView's <code> Positi
 
   <ImageView Name="ImageView" Position2D="0,0" Size2D="400,400" Style="{StaticResource CustomStyle}">
     <x:Arguments>
-      <x:String>../../res/images/AmbientScreenUXControl/Cut/traffic_content.png</x:String>
+      <x:String>../res/traffic_content.png</x:String>
     </x:Arguments>
   </ImageView>
 
@@ -38,12 +40,12 @@ The following example shows two triggers that change a ImageView's <code> Positi
 </ContentPage>
 ```
 
-• <code> TargetType </code> - the control type that the trigger applies to.
+- `TargetType`: The control type that the trigger applies to.
+- `Property`: The property on the control that is monitored.
+- `Value`: The value, when it occurs for the monitored property that causes the trigger to activate.
+- `Setter`: A collection of Setter elements can be added when the trigger condition is met. You must specify the `Property` and set `Value`.
 
-• <code> Property </code> - the property on the control that is monitored.
+> **Note**
+> The Property for Trigger and Setter must not be same.
 
-• <code> Value </code> - the value, when it occurs for the monitored property, that causes the trigger to activate.
-
-• <code> Setter </code> - a collection of Setter elements can be added and when the trigger condition is met. You must specify the <code> Property </code> and <code> Value </code> to set.
-
-**Attention**: the <code> Property </code> for <code>Trigger</code> and the <code>Property</code> for <code>Setter</code> can not be same.
+For more information, see https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers#targetText=Triggers%20allow%20you%20to%20express,on%20events%20or%20property%20changes.&targetText=Property%20Trigger%20%2D%20occurs%20when%20a,the%20properties%20of%20another%20control
