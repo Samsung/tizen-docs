@@ -1,27 +1,27 @@
-# Tizen IoT with ThingsPark Cloud
+# Tizen IoT with thingspark Cloud
 
-The ThingsPark service is a cloud-based IoT solution that can be connected with various things. 
+The thingspark service is a cloud-based IoT solution that can be connected with various things. 
 
-Tizen developers can easily develop an application to send IoT data to the cloud in real time.
+Tizen developers can easily develop applications that send IoT data to the cloud in real-time.
 
-Real-time data monitoring between Tizen service app and ThingsPark cloud is empowered through ThingsPark plugin.
+Real-time data monitoring between the Tizen service app and the thingspark cloud is empowered through the thingspark plugin.
 
-The following diagram shows the interface between Tizen IoT device and ThingsPark cloud :
+The following diagram shows the interface between Tizen IoT device and thingspark cloud:
 
 
 **Figure: Architecture**
 
 ![Architecture](media/architecture_thingspark.png)
 
-The ThingsPark plugin can be installed on Tizen IoT devices compatible with as follow:
+The thingspark plugin can be installed on the Tizen IoT devices that are compatible with the following:
 
-* Platform : Tizen 5.0 IoT Headed & Headless and later
-* SDK : Tizen Studio 3.3 and later
+* - Platform: Tizen 5.0 IoT Headed or Tizen 5.0 IoT Headless and higher
+* - SDK: Tizen Studio 3.3 and higher
 
-For more information about ThingsPark IoT cloud service, see the following references:
+For more information on the thingspark IoT cloud service, see the following:
 
-- [Github for ThingsPark Template](https://github.com/theksystem/tizen_to_thingspark_example)
-- [ThingsPark : Open IoT Platform Service](https://www.thingspark.co.kr)
+- [Github for thingspark Template](https://github.com/theksystem/tizen_to_thingspark_example)
+- [ThingsPark: Open IoT Platform Service](https://www.thingspark.co.kr)
 
 
-**Start now by importing ThingsPark's template in the Tizen Studio!**
+Get started by importing thingspark template in Tizen Studio!
