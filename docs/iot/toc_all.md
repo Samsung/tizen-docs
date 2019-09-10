@@ -72,4 +72,4 @@
 
 # IoT Partners
 ## [Nubison Cloud](/iot/iot-partners/nubison.md)
-## [ThingsPark Cloud](/iot/iot-partners/thingspark.md)
+## [thingspark Cloud](/iot/iot-partners/thingspark.md)
