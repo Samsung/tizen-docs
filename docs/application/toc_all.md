@@ -612,6 +612,7 @@
 #### [Telephony Information](/application/native/guides/connectivity/telephony.md)
 #### [USB Host](/application/native/guides/connectivity/usb-host.md)
 #### Internet and Content Downloads
+##### [Overview](/application/native/guides/connectivity/internet-download.md)
 ##### [Connection Management](/application/native/guides/connectivity/connection.md)
 ##### [Download](/application/native/guides/connectivity/download.md)
 ##### [Curl](/application/native/guides/connectivity/curl.md)
