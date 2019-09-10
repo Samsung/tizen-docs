@@ -21,7 +21,7 @@ The thingspark plugin can be installed on the Tizen IoT devices that are compati
 For more information on the thingspark IoT cloud service, see the following:
 
 - [Github for thingspark Template](https://github.com/theksystem/tizen_to_thingspark_example)
-- [ThingsPark: Open IoT Platform Service](https://www.thingspark.co.kr)
+- [thingspark: Open IoT Platform Service](https://www.thingspark.co.kr)
 
 
 Get started by importing thingspark template in Tizen Studio!
