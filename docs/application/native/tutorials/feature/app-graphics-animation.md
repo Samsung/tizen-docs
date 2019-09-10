@@ -147,9 +147,9 @@ To implement animations in an application:
     `ecore_animator_pos_map()` function. For the second parameter, enter
     the style of the animation. The style types are described in the
     `_Ecore_Pos_Map` enumeration (in
-    [mobile](../../api/mobile/latest/group__Ecore__Animator__Group.html#ga2db0d0f0f3973829c7f700e5af3e041c)
+    [mobile](../../api/mobile/latest/group__Ecore__Animator__Group.html)
     and
-    [wearable](../../api/wearable/latest/group__Ecore__Animator__Group.html#ga2db0d0f0f3973829c7f700e5af3e041c) applications)
+    [wearable](../../api/wearable/latest/group__Ecore__Animator__Group.html) applications)
     that defines the position mappings for the animation. For the third
     and fourth parameter, enter the intensity and tempo of the
     speed change.
