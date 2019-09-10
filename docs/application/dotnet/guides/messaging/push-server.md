@@ -95,6 +95,9 @@ To send push notifications:
     When you send a notification to the device with the `BACKGROUNDLAUNCH` action value, the push service launches the application in the background (if it is not already running), and delivers the appData field to the application. The user cannot see that a notification is received, but they find out when they use the application the next time.
 
 4. Use the Rest APIs for sending push notifications.
+
+    <a name="single_req"></a>
+
     -   Single request
 
         With the created message field, you can construct a notification using a JSON query and send it to the RQM server using the POST method. The following list contains the details:
