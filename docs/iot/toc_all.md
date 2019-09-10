@@ -70,4 +70,6 @@
 ## Samples
 ### [Network Audio Sample Overview](/iot/preview2/sample/iot-sample.md)
 
-# [IoT Partners](/iot/iot-partners/index.md)
+# IoT Partners
+## [Nubison Cloud](/iot/iot-partners/nubison.md)
+## [ThingsPark Cloud](/iot/iot-partners/thingspark.md)
