@@ -15,7 +15,7 @@ The following diagram shows the interface between Tizen IoT device and thingspar
 
 The thingspark plugin can be installed on the Tizen IoT devices that are compatible with the following:
 
-- Platform: Tizen 5.0 IoT Headed or Tizen 5.0 IoT Headless and higher
+- Platform: Tizen 5.0 IoT Headed and Headless, and higher
 - SDK: Tizen Studio 3.3 and higher
 
 For more information on the thingspark IoT cloud service, see the following:
