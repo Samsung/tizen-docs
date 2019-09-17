@@ -24,4 +24,4 @@ For more information on the thingspark IoT cloud service, see the following:
 - [thingspark: Open IoT Platform Service](https://www.thingspark.co.kr)
 
 
-Get started by importing thingspark template in Tizen Studio!
+Get started by importing [thingspark's template](https://github.com/theksystem/tizen_to_thingspark_example) in Tizen Studio!
