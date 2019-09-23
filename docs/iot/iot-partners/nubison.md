@@ -24,4 +24,4 @@ For more information about Nubison IoT cloud service, see the following referenc
 - [How to use Nubison IoT](https://blog.naver.com/nubison/221462229766)
 
 
-**Start now by importing [Nubison's template](https://github.com/nubisoniot/NI) in the Tizen Studio!**
+Get started by importing [Nubison's template](https://github.com/nubisoniot/NI) in Tizen Studio!
