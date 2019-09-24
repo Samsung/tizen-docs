@@ -3,8 +3,8 @@
 # Get Started
 ## [Tizen IoT](/iot/get-started/overview.md)
 ## Setting up Board
-### [Overview](/iot/getting-started/setting-up-board.md)
-### [Raspberry Pi3](/iot/getting-started/rpi3-5.0.md)
+### [Overview](/iot/get-started/setting-up-board.md)
+### [Raspberry Pi3](/iot/get-started/rpi3-5.0.md)
 ## Developing Applications
 ### [Developing Applications with Things SDK API](/iot/get-started/things-app-development-5.0.md)
 ### [Setting up Smartthings Cloud](/iot/get-started/things-cloud-setup.md)

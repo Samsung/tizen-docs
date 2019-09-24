@@ -2,7 +2,7 @@
 
 ## Installing Tizen Studio
 
-If you have already installed Tizen Studio 3.0 and installed the **5.0 Mobile** profile for the **Main SDK** and the **IoT Setup Manager**, **IOT-Headed-5.0** and **IOT-Headless-5.0** profiles for the **Extension SDK**, you can skip this section.
+If you have already installed Tizen Studio 3.0 and installed the **5.0 Mobile** profile for the **Main SDK** and the **IoT Setup Manager**, **IoT-Headed-5.0** and **IoT-Headless-5.0** profiles for the **Extension SDK**, you can skip this section.
 
 Otherwise, to install Tizen Studio and the required profiles for IoT development:
 
@@ -11,7 +11,7 @@ Otherwise, to install Tizen Studio and the required profiles for IoT development
 
     ![Install the mobile profile](media/package_manager_mobile_5.0.png)
 
-3.  Select the **Extension SDK** tab and **Extras**. **Extras** includes **IoT Setup Manager**, **IOT-Headed-5.0** and **IOT-Headless-5.0** profiles:
+3.  Select the **Extension SDK** tab and **Extras**. **Extras** includes **IoT Setup Manager** and **IoT-Headless-5.0** profiles:
 
     ![Install the headless profile](media/package_manager_iot_5.0.png)
 
@@ -31,14 +31,11 @@ You must have the binary images in your computer. You can download the binary im
 -   Boot image: [tizen-unified_20181024.1_iot-boot-arm64-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/standard/iot-boot-arm64-rpi3/tizen-unified_20181024.1_iot-boot-arm64-rpi3.tar.gz)
 -   Platform image:
        -   Headless (without display): [tizen-unified_20181024.1_iot-headless-2parts-armv7l-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/standard/iot-headless-2parts-armv7l-rpi3/tizen-unified_20181024.1_iot-headless-2parts-armv7l-rpi3.tar.gz)
-       -   Headed (with display): Not available
-       -   Customized image: Not supported for Tizen 5.0.
-
 
 
 ### Launch IoT Setup Manager
 
-You can launch the IOT Setup Manager with or without using Tizen Studio:
+You can launch the IoT Setup Manager with or without using Tizen Studio:
 
 #### Launch using Tizen Studio
 

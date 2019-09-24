@@ -8,8 +8,7 @@ Tizen IoT Extension SDK version 1.0 is released from Tizen Studio 3.0 for Tizen 
 
 -   Platform image
     -   Headless: Tizen 5.0 platform image for headless-type IoT devices without a display. Raspberry Pi 3 can be used with the headless platform image.
-
-    -   Headed: Tizen 5.0 platform image for headed-type IoT devices with a display. 
+    -   Headed: Tizen 5.0 platform image for headed-type IoT devices with a display. Raspberry Pi 3 can be used with the headed platform image.
 
 -   Development environment
 
