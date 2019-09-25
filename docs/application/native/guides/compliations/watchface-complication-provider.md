@@ -67,7 +67,8 @@ The complication data can be set using the following APIs. These APIs can be use
 
 > **Note**
    >
-   > `watchface_complication_provider_data_set_timestamp()` is deprecated since Tizen 5.5. Instead, use `watchface_complication_provider_timeinfo_create()` and `watchface_complication_provider_timeinfo_set_timezone_id`
+   > `watchface_complication_provider_data_set_timestamp()` is deprecated since Tizen 5.5.
+   Instead, use `watchface_complication_provider_timeinfo_create()` and `watchface_complication_provider_timeinfo_set_timezone_id`
 
 
 ```cpp
@@ -217,9 +218,10 @@ And, the specific default value is mandatory depending on each support types:
 
 > **Note**
    >
-   > `<default-hour>`, `<default-hour>`, `<default-hour>` are deprecated since Tizen 5.5. Instead, use `<default-timezone-id>`.
-   > `<default-timezone-id>` is the value that declared in TZ database. ex) Asia/Seoul
-   > If the xml contains`<default-timezone-id>`, then `<default-hour>`, `<default-hour>`, `<default-hour>` are not necessary.
+   > `<default-hour>`, `<default-hour>`, `<default-hour>` are deprecated since Tizen 5.5.
+   Instead, use `<default-timezone-id>`.
+   `<default-timezone-id>` is the value that declared in TZ database. ex) Asia/Seoul
+   If the xml contains`<default-timezone-id>`, then `<default-hour>`, `<default-hour>`, `<default-hour>` are not necessary.
 
 
 `<label>` is the name of the complication provider.
