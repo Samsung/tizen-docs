@@ -7,7 +7,7 @@ The main media controller features include:
 
 - Updating and retrieving playlist
 
-    You can [create a playlist](#updating-and-retrieving-playlist) on the server side, and then retrieve that information on the client side.
+    You can [create a playlist](#creating-and-retrieving-playlist) on the server side, and then retrieve that information on the client side.
 
 -   Updating and retrieving information
 
@@ -74,7 +74,7 @@ To enable your application to use the media controller functionality:
     MediaControlServer.Stop();
     ```
 
-## Updating and Retrieving Playlist
+## Creating and Retrieving Playlist
 
 To create a playlist from the server side and retrieve it on the client side, follow these steps:
 
@@ -141,6 +141,48 @@ To send a command from the client and to process it on the server side, follow t
 
         MediaControlServer.Response(e.Command, (int)ErrorCode.None);
     }
+    ```
+
+To send a search command from the client and to process it on the server side, follow these steps:
+1.  To send a search command on the client side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+
+    ```csharp
+    var searchCondition = new MediaControlSearchCondition(MediaControlContentType.Image,
+        MediaControlSearchCategory.Artist, "GD", null);
+
+    mediaController.RequestAsync(new SearchCommand(searchCondition));
+    ```
+
+2. To process the received search command on the server side, add an event handler to the `SearchCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+
+    ```csharp
+    MediaControlServer.SearchCommandReceived += (s, e) =>
+    {
+        foreach (var condition in e.Command.Conditions)
+        {
+            Log.Info("MC", $"{condition.Category}, {condition.ContentType}, {condition.Keyword}");
+        }
+
+        MediaControlServer.Response(e.Command, (int)ErrorCode.None);
+    };
+    ```
+
+To send a custom command from the server and to process it on the client side, follow these steps:
+1.  To send a search command on the server side, use the `RequestAsync()` method of the [Tizen.Multimedia.Remoting.MediaControlServer](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaControlServer.html) class:
+
+    ```csharp
+    MediaControlServer.RequestAsync(new CustomCommand("CustomAction"));
+    ```
+
+2. To process the received custom command on the client side, add an event handler to the `CustomCommandReceived` event of the [Tizen.Multimedia.Remoting.MediaController](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.Remoting.MediaController.html) class:
+
+    ```csharp
+    mediaController.CustomCommandReceived += (s, e) =>
+    {
+        Log.Info("MC", $"{ e.Command.Action}");
+
+        mediaController.Response(e.Command, (int)ErrorCode.None);
+    };
     ```
 
 ## Setting and Getting Playback Capability

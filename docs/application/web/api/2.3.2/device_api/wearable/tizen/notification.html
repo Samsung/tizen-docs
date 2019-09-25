@@ -489,8 +489,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Notification:
-                  </span>
+<span class="return">Notification:</span>
  Notification posted previously by the current application.
               </ul>
 </div>
@@ -535,8 +534,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Notification[]:
-                  </span>
+<span class="return">Notification[]:</span>
  All notifications previously been posted by the current application.
               </ul>
 </div>
@@ -1018,25 +1016,6 @@ By default, this attribute is set to <var>null</var>.
   enum NotificationType { "STATUS" };
   enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };
   enum NotificationProgressType { "PERCENTAGE", "BYTE" };
-  [NoInterfaceObject] interface NotificationObject {
-    readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
-  };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;
-  [NoInterfaceObject] interface NotificationManager {
-    void post(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void remove(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#Notification">Notification</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [NoInterfaceObject] interface Notification {
-    readonly attribute <a href="#NotificationId">NotificationId</a> id;
-    readonly attribute <a href="#NotificationType">NotificationType</a> type;
-    readonly attribute Date postedTime;
-    attribute DOMString title;
-    attribute DOMString? content;
-  };
   dictionary StatusNotificationInit {
     DOMString? content;
     DOMString? iconPath;
@@ -1054,6 +1033,25 @@ By default, this attribute is set to <var>null</var>.
     unsigned long ledOffPeriod;
     DOMString? backgroundImagePath;
     DOMString[]? thumbnails;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;
+  [NoInterfaceObject] interface NotificationObject {
+    readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
+  };
+  [NoInterfaceObject] interface NotificationManager {
+    void post(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void remove(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Notification">Notification</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface Notification {
+    readonly attribute <a href="#NotificationId">NotificationId</a> id;
+    readonly attribute <a href="#NotificationType">NotificationType</a> type;
+    readonly attribute Date postedTime;
+    attribute DOMString title;
+    attribute DOMString? content;
   };
   [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
   interface StatusNotification : <a href="#Notification">Notification</a> {

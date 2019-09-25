@@ -277,8 +277,7 @@ tizen.tvaudiocontrol.setMute(false);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  boolean The current mute state
               </ul>
 </div>
@@ -546,8 +545,7 @@ if (tizen.tvaudiocontrol.getVolume() === 0)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned short:
-                  </span>
+<span class="return">unsigned short:</span>
  unsigned short The current volume (the volume range is 0 ~ 100)
               </ul>
 </div>
@@ -717,8 +715,7 @@ tizen.tvaudiocontrol.setVolume(expectedVolumeLevel);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AudioOutputMode:
-                  </span>
+<span class="return">AudioOutputMode:</span>
  AudioOutputMode The current audio output mode
               </ul>
 </div>
@@ -790,7 +787,7 @@ This type of error is deprecated since Tizen 5.0.
 <div class="brief">
  This interface defines a volume change callback for getting notified information about the volume changes.
           </div>
-<pre class="webidl prettyprint">  [Callback = FunctionOnly, NoInterfaceObject] interface VolumeChangeCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface VolumeChangeCallback {
     void onchanged(unsigned short volume);
   };</pre>
 <p><span class="version">Since: </span>
@@ -841,12 +838,12 @@ To guarantee the running of this application on a device with a TV audio control
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVAudioControl {
   enum AudioOutputMode { "PCM", "DOLBY", "DTS", "AAC" };
-  enum AudioBeepType { "UP", "DOWN", "LEFT", "RIGHT", "PAGE_LEFT", "PAGE_RIGHT", "BACK", "SELECT", "CANCEL", "WARNING", "KEYPAD",
-    "KEYPAD_ENTER", "KEYPAD_DEL", "MOVE", "PREPARING" };
+  enum AudioBeepType { "UP", "DOWN", "LEFT", "RIGHT", "PAGE_LEFT", "PAGE_RIGHT", "BACK", "SELECT", "CANCEL", "WARNING",
+    "KEYPAD", "KEYPAD_ENTER", "KEYPAD_DEL", "MOVE", "PREPARING" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AudioControlManagerObject">AudioControlManagerObject</a>;
   [NoInterfaceObject] interface AudioControlManagerObject {
     readonly attribute <a href="#AudioControlManager">AudioControlManager</a> tvaudiocontrol;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AudioControlManagerObject">AudioControlManagerObject</a>;
   [NoInterfaceObject] interface AudioControlManager {
     void setMute(boolean mute) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     boolean isMute() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -859,7 +856,7 @@ To guarantee the running of this application on a device with a TV audio control
     <a href="#AudioOutputMode">AudioOutputMode</a> getOutputMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void playSound(<a href="#AudioBeepType">AudioBeepType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  [Callback = FunctionOnly, NoInterfaceObject] interface VolumeChangeCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface VolumeChangeCallback {
     void onchanged(unsigned short volume);
   };
 };</pre>

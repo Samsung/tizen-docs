@@ -403,7 +403,7 @@ tizen.push.unregister(unregisterSuccessCallback, errorCallback);
 <div class="brief">
  Connects to the push service and gets state change events and push notifications.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void connect(<a href="#PushRegistrationStateChangeCallback">PushRegistrationStateChangeCallback</a> stateChangeCallback, <a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void connect(<a href="#PushRegistrationStateChangeCallback">PushRegistrationStateChangeCallback</a> stateChangeCallback, <a href="#PushNotificationCallback">PushNotificationCallback</a> notificationCallback,
              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -539,8 +539,7 @@ tizen.push.disconnect();
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">PushRegistrationId:
-                  </span>
+<span class="return">PushRegistrationId:</span>
  ID assigned by push service.
               </ul>
 </div>
@@ -693,8 +692,7 @@ If the application was not launched by the push service, this method returns <va
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">PushMessage:
-                  </span>
+<span class="return">PushMessage<span class="optional"> [nullable]</span>:</span>
  The last message delivered from the push service or <var>null</var>.
               </ul>
 </div>
@@ -860,8 +858,7 @@ Details:
 <div class="brief">
  The PushRegisterSuccessCallback interface specifies the success callback for a push service registration request.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PushRegisterSuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PushRegisterSuccessCallback {
     void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
   };</pre>
 <p><span class="version">Since: </span>
@@ -904,8 +901,7 @@ This success callback is invoked when a push service registration request is suc
 <div class="brief">
  The PushRegistrationStateChangeCallback interface specifies the state change callback for the state change event.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PushRegistrationStateChangeCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PushRegistrationStateChangeCallback {
     void onsuccess(<a href="#PushRegistrationState">PushRegistrationState</a> state);
   };</pre>
 <p><span class="version">Since: </span>
@@ -949,8 +945,7 @@ Moreover PushRegistrationStateChangeCallback would be called at least once, just
 <div class="brief">
  The PushNotificationCallback interface specifies the notification callback for the received push notification message.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PushNotificationCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PushNotificationCallback {
     void onsuccess(<a href="#PushMessage">PushMessage</a> message);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1007,10 +1002,10 @@ To guarantee that the push application runs on a device with the push feature, d
 <pre class="webidl prettyprint">module Push {
   typedef DOMString PushRegistrationId;
   enum PushRegistrationState { "REGISTERED", "UNREGISTERED" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;
   [NoInterfaceObject] interface PushManagerObject {
     readonly attribute <a href="#PushManager">PushManager</a> push;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;
   [NoInterfaceObject] interface PushManager {
     void register(<a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -1030,16 +1025,13 @@ To guarantee that the push application runs on a device with the push feature, d
     readonly attribute DOMString sessionInfo;
     readonly attribute DOMString requestId;
   };
-  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PushRegisterSuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface PushRegisterSuccessCallback {
     void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
   };
-  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PushRegistrationStateChangeCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface PushRegistrationStateChangeCallback {
     void onsuccess(<a href="#PushRegistrationState">PushRegistrationState</a> state);
   };
-  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PushNotificationCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface PushNotificationCallback {
     void onsuccess(<a href="#PushMessage">PushMessage</a> message);
   };
 };</pre>

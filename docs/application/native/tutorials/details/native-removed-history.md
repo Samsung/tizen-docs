@@ -143,6 +143,54 @@ The following table provides detailed information regarding removed functions an
 | System - Runtime information | RUNTIME_INFO_KEY_LOCATION_SERVICE_ENABLED, RUNTIME_INFO_KEY_LOCATION_NETWORK_POSITION_ENABLED of runtime_info_key_e | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Multimedia - Player | PLAYER_DISPLAY_TYPE_OBSOLETE_EVAS_WNONE, PLAYER_DISPLAY_TYPE_OBSOLETE_NONE_WEVAS of player_display_type_e | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | UI - EFL | elm_ctxpopup_direction_available_get(), elm_win_profiles_set() | Mobile, Wearable | Since 2.4 | 5.5 | No longer available | - |
+| UI - DALi | Dali::Toolkit::Button::Property::UNSELECTED_STATE_IMAGE | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::Property::SELECTED_STATE_IMAGE | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::Property::DISABLED_STATE_IMAGE | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::Property::SELECTED_COLOR | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::Property::UNSELECTED_COLOR | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::Property::LABEL_TEXT | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::LABEL |
+| UI - DALi | Dali::Toolkit::Button::SetDisabled(bool disabled) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED |
+| UI - DALi | Dali::Toolkit::Button::IsDisabled() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED |
+| UI - DALi | Dali::Toolkit::Button::SetAutoRepeating(bool autoRepeating) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::AUTO_REPEATING |
+| UI - DALi | Dali::Toolkit::Button::IsAutoRepeating() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::AUTO_REPEATING |
+| UI - DALi | Dali::Toolkit::Button::SetInitialAutoRepeatingDelay(float initialAutoRepeatingDelay) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::INITIAL_AUTO_REPEATING_DELAY |
+| UI - DALi | Dali::Toolkit::Button::GetInitialAutoRepeatingDelay() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::INITIAL_AUTO_REPEATING_DELAY |
+| UI - DALi | Dali::Toolkit::Button::SetNextAutoRepeatingDelay(float nextAutoRepeatingDelay) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::NEXT_AUTO_REPEATING_DELAY |
+| UI - DALi | Dali::Toolkit::Button::GetNextAutoRepeatingDelay() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::NEXT_AUTO_REPEATING_DELAY |
+| UI - DALi | Dali::Toolkit::Button::SetTogglableButton(bool togglable) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::TOGGLABLE |
+| UI - DALi | Dali::Toolkit::Button::IsTogglableButton() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::TOGGLABLE |
+| UI - DALi | Dali::Toolkit::Button::SetSelected(bool selected) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED |
+| UI - DALi | Dali::Toolkit::Button::IsSelected() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED |
+| UI - DALi | Dali::Toolkit::Button::SetAnimationTime(float animationTime) | Mobile, Wearable | Since 3.0 | 5.5 | No longer available | - |
+| UI - DALi | Dali::Toolkit::Button::GetAnimationTime() const | Mobile, Wearable | Since 3.0 | 5.5 | No longer available | - |
+| UI - DALi | Dali::Toolkit::Button::SetLabelText(const std::string& label) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::LABEL |
+| UI - DALi | Dali::Toolkit::Button::GetLabelText() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::LABEL |
+| UI - DALi | Dali::Toolkit::Button::SetUnselectedImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetBackgroundImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetSelectedImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetSelectedBackgroundImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetDisabledBackgroundImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_SELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetDisabledImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetDisabledSelectedImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetLabel(Actor label) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::LABEL |
+| UI - DALi | Dali::Toolkit::Button::SetButtonImage(Image image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetSelectedImage(Image image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::GetButtonImage() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::GetSelectedImage() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetButtonImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetBackgroundImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetSelectedImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetSelectedBackgroundImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetDisabledBackgroundImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_SELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetDisabledImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetDisabledSelectedImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Internal::Control::GetBackgroundColor() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::Internal::Control::SetBackgroundImage(Image image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::Control::Property::BACKGROUND_COLOR | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::Control::Property::BACKGROUND_IMAGE | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::Control::GetBackgroundColor() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::Control::SetBackgroundImage(Image image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::ImageView::Property::RESOURCE_URL | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::ImageView::Property::IMAGE |
 
 ## Related information
 

@@ -286,8 +286,7 @@ window.addEventListener("keydown", function(keyEvent)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">InputDeviceKey:
-                  </span>
+<span class="return">InputDeviceKey<span class="optional"> [nullable]</span>:</span>
  InputDeviceKey InputDeviceKey object for the given key name, or null if the key is not supported.
               </ul>
 </div>
@@ -425,7 +424,7 @@ for (i = 0; i &lt; keys.length; i++)
 <div class="brief">
  Registers a batch of input device keys to receive DOM keyboard events when any of them is pressed or released.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -511,7 +510,7 @@ tizen.tvinputdevice.registerKeyBatch(keys, successCB, errorCB);
 <div class="brief">
  Unregisters a batch of input device keys.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -604,10 +603,10 @@ To guarantee the running of this application on a device with a TV input device 
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVInputDevice {
   typedef DOMString InputDeviceKeyName;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInputDeviceManagerObject">TVInputDeviceManagerObject</a>;
   [NoInterfaceObject] interface TVInputDeviceManagerObject {
     readonly attribute <a href="#TVInputDeviceManager">TVInputDeviceManager</a> tvinputdevice;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInputDeviceManagerObject">TVInputDeviceManagerObject</a>;
   [NoInterfaceObject] interface InputDeviceKey {
     readonly attribute <a href="#InputDeviceKeyName">InputDeviceKeyName</a> name;
     readonly attribute long code;

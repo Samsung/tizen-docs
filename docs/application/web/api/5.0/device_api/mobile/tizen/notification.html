@@ -204,7 +204,7 @@ The status notification consists of an icon, title, content, and time. The statu
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated since 4.0. Use <a href="#UserNotificationType">UserNotificationType</a> instead.
           </p>
-<pre class="webidl prettyprint">  enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };</span></pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -337,8 +337,10 @@ Notification API.
     void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void remove(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#Notification">Notification</a> getNotification(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#Notification">Notification</a>[] getAllNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+<span class="nocode deprecated">    <a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>    <a href="#Notification">Notification</a> getNotification(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+<span class="nocode deprecated">    <a href="#Notification">Notification</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>    <a href="#Notification">Notification</a>[] getAllNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopLEDCustomEffect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void saveNotificationAsTemplate(DOMString name, <a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -670,8 +672,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Notification:
-                  </span>
+<span class="return">Notification:</span>
  Notification posted previously by the current application.
               </ul>
 </div>
@@ -732,8 +733,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Notification:
-                  </span>
+<span class="return">Notification:</span>
  Notification previously been posted by the current application.
               </ul>
 </div>
@@ -787,8 +787,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Notification[]:
-                  </span>
+<span class="return">Notification[]:</span>
  All notifications previously been posted by the current application.
               </ul>
 </div>
@@ -847,8 +846,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Notification[]:
-                  </span>
+<span class="return">Notification[]:</span>
  All notifications posted previously by the current application.
               </ul>
 </div>
@@ -1133,8 +1131,7 @@ An application can load only templates that it has saved.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">UserNotification:
-                  </span>
+<span class="return">UserNotification:</span>
  Created notification.
               </ul>
 </div>
@@ -1242,7 +1239,7 @@ catch (err)
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated since 4.0. Use <a href="#UserNotificationInit">UserNotificationInit</a> instead.
           </p>
-<pre class="webidl prettyprint">  dictionary StatusNotificationInit {
+<pre class="webidl prettyprint"><span class="nocode deprecated">  dictionary StatusNotificationInit {
     DOMString? content;
     DOMString? iconPath;
     DOMString? soundPath;
@@ -1259,7 +1256,7 @@ catch (err)
     unsigned long ledOffPeriod;
     DOMString? backgroundImagePath;
     DOMString[]? thumbnails;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -1733,7 +1730,7 @@ By default, this attribute is set to 0.
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated since 4.0. Use <a href="#UserNotification">UserNotification</a> instead.
           </p>
-<pre class="webidl prettyprint">  [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
   interface StatusNotification : <a href="#Notification">Notification</a> {
     readonly attribute <a href="#StatusNotificationType">StatusNotificationType</a> statusType;
     attribute DOMString? iconPath;
@@ -1751,7 +1748,7 @@ By default, this attribute is set to 0.
     attribute <a href="application.html#ApplicationId">ApplicationId</a>? appId;
     attribute <a href="#NotificationProgressType">NotificationProgressType</a> progressType;
     attribute unsigned long? progressValue;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -1766,7 +1763,7 @@ All notifications must have a title attribute.
         
       <div class="constructors">
 <h4 id="StatusNotification::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">StatusNotification(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict);</pre></dl>
+<dl><pre class="webidl prettyprint"><span class="nocode deprecated">StatusNotification(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict);</span></pre></dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -2344,33 +2341,9 @@ If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare t
 <pre class="webidl prettyprint">module Notification {
   typedef DOMString NotificationId;
   enum NotificationType { "STATUS" };
-  enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };
   enum UserNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };
   enum NotificationProgressType { "PERCENTAGE", "BYTE" };
   enum LEDCustomFlags { "LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT" };
-  [NoInterfaceObject] interface NotificationObject {
-    readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
-  };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;
-  [NoInterfaceObject] interface NotificationManager {
-    void post(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void remove(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#Notification">Notification</a> getNotification(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#Notification">Notification</a>[] getAllNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void stopLEDCustomEffect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void saveNotificationAsTemplate(DOMString name, <a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#UserNotification">UserNotification</a> createNotificationFromTemplate(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [NoInterfaceObject] interface Notification {
-    readonly attribute <a href="#NotificationId">NotificationId</a> id;
-    readonly attribute <a href="#NotificationType">NotificationType</a> type;
-    readonly attribute Date postedTime;
-    attribute DOMString title;
-    attribute DOMString? content;
-  };
   dictionary UserNotificationInit {
     DOMString? content;
     <a href="#NotificationTextContentInfo">NotificationTextContentInfo</a>? textContents;
@@ -2417,24 +2390,28 @@ If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare t
     unsigned long ledOnPeriod;
     unsigned long ledOffPeriod;
   };
-  [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
-  interface StatusNotification : <a href="#Notification">Notification</a> {
-    readonly attribute <a href="#StatusNotificationType">StatusNotificationType</a> statusType;
-    attribute DOMString? iconPath;
-    attribute DOMString? subIconPath;
-    attribute long? number;
-    attribute <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
-    attribute DOMString? ledColor;
-    attribute unsigned long ledOnPeriod;
-    attribute unsigned long ledOffPeriod;
-    attribute DOMString? backgroundImagePath;
-    attribute DOMString[]? thumbnails;
-    attribute DOMString? soundPath;
-    attribute boolean vibration;
-    attribute <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
-    attribute <a href="application.html#ApplicationId">ApplicationId</a>? appId;
-    attribute <a href="#NotificationProgressType">NotificationProgressType</a> progressType;
-    attribute unsigned long? progressValue;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;
+  [NoInterfaceObject] interface NotificationObject {
+    readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
+  };
+  [NoInterfaceObject] interface NotificationManager {
+    void post(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void remove(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Notification">Notification</a> getNotification(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Notification">Notification</a>[] getAllNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void stopLEDCustomEffect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void saveNotificationAsTemplate(DOMString name, <a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#UserNotification">UserNotification</a> createNotificationFromTemplate(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface Notification {
+    readonly attribute <a href="#NotificationId">NotificationId</a> id;
+    readonly attribute <a href="#NotificationType">NotificationType</a> type;
+    readonly attribute Date postedTime;
+    attribute DOMString title;
+    attribute DOMString? content;
   };
   [Constructor(<a href="#UserNotificationType">UserNotificationType</a> userType, DOMString title, optional <a href="#UserNotificationInit">UserNotificationInit</a>? notificationGroupedInitDict)]
   interface UserNotification : <a href="#Notification">Notification</a> {

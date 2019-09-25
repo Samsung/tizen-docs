@@ -1081,16 +1081,6 @@
 
 ### Debug Your App
 #### [Log View](/application/tizen-studio/common-tools/log-view.md)
-#### Dynamic Analyzer
-##### [Overview](/application/tizen-studio/common-tools/dynamic-analyzer/overview.md)
-##### [Common Tasks](/application/tizen-studio/common-tools/dynamic-analyzer/common-tasks.md)
-##### [Advanced Tasks](/application/tizen-studio/common-tools/dynamic-analyzer/advanced-tasks.md)
-##### [Memory Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/memory-analysis.md)
-##### [Thread Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/thread-analysis.md)
-##### [File Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/file-analysis.md)
-##### [Network Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/network-analysis.md)
-##### [OpenGL Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/opengl-analysis.md)
-##### [UI Hierarchy Analysis](/application/tizen-studio/common-tools/dynamic-analyzer/ui-hierarchy-analysis.md)
 
 ### Run and Test Your App
 #### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
@@ -1134,6 +1124,7 @@
 #### [Debug the Project](/application/tizen-studio/rt-ide/get-started/debug.md)
 
 ## Release Notes
+### [3.3 (Jul 24, 2019)](/application/tizen-studio/release-notes/3-3-release-notes.md)
 ### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)
 ### [3.1 (Jan 17, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)
 ### [3.0 (Oct 31, 2018)](/application/tizen-studio/release-notes/3-0-release-notes.md)

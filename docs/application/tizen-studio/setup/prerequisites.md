@@ -4,7 +4,7 @@ Check the following prerequisites before attempting to install the Tizen Studio.
 
 ## Java Development Kit (JDK) Requirements
 
-You must install Oracle Java Development Kit (JDK) 8, JDK 9, or OpenJDK 10 to use the Tizen Studio.
+You must install Oracle Java Development Kit (JDK) 8, or OpenJDK 10 to use the Tizen Studio.
 
 Follow these instructions to install the appropriate JDK version for your system:
 
@@ -20,7 +20,7 @@ Follow these instructions to install the appropriate JDK version for your system
 
 - Ubuntu
 
-  Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java) for detailed instructions for installing the Oracle&reg; JDK version 8 or 9. The raw binaries can be downloaded directly from Oracle ([Oracle Java download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+  Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java) for detailed instructions for installing the Oracle&reg; JDK version 8. The raw binaries can be downloaded directly from Oracle ([Oracle Java download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)).
 
 You can also use Oracle's OpenJDK. For more installation details, see [OpenJDK 10 and OpenJFX Installation Guide](openjdk.md).
 
@@ -124,21 +124,11 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 <td>NVIDIA</td>
 <td>NVIDIA&reg; GeForce&reg; 8300 GS, GeForce&reg; 8500 GT, GeForce&reg; GT 220, GeForce&reg; GT 430, GeForce&reg; GT 530, GeForce&reg; GT 330M, GeForce&reg; GTX 550Ti, NVIDIA&reg; Quadro&reg; NVS 290</td>
 </tr>
-<tr>
-<td>ATI</td>
-<td>RADEON HD 4850, RADEON HD 5450</td>
-</tr>
-<tr>
-<td>Intel</td>
-<td>HD Graphics 2000, HD Graphics 2500, HD Graphics 4000</td>
-</tr>
 </tbody>
 </table>
 <strong>Note</strong>
 <ul>
 <li>If the host machine is using the NVIDIA&reg; Optimus&reg; technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus&reg; technology, or set the emulator to run with the external NVIDIA graphics card.</li>
-<li>Integrated graphic cards inside Intel's Q33/Q35/Q43/Q45 motherboards are not supported.</li>
-<li>First generation Intel HD Graphics is not supported.</li>
 </ul>
 </p>
 </td>

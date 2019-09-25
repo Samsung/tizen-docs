@@ -327,8 +327,7 @@ CAPTION_EDGE_DROP_SHADOWED - drop shadowed edge            </li>
 <div class="brief">
  All available values for the caption menu.
           </div>
-<pre class="webidl prettyprint">  typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or
-           <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;</pre>
+<pre class="webidl prettyprint">  typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;</pre>
 <p><span class="version">Since: </span>
  2.4
           </p>
@@ -384,8 +383,7 @@ There is a tizen.tvinfo object that allows accessing the functionality of the TV
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">CaptionValue:
-                  </span>
+<span class="return">CaptionValue:</span>
  CaptionValue value for given caption menu key
               </ul>
 </div>
@@ -434,8 +432,7 @@ There is a tizen.tvinfo object that allows accessing the functionality of the TV
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  long Subscription identifier
               </ul>
 </div>
@@ -562,6 +559,7 @@ To guarantee the running of this application on a device with a caption and so o
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVInfo {
+  typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;
   enum CaptionInfoKey { "CAPTION_ONOFF_KEY", "CAPTION_MODE_KEY", "CAPTION_FONT_SIZE_KEY", "CAPTION_FONT_STYLE_KEY",
     "CAPTION_FONT_COLOR_KEY", "CAPTION_FONT_OPACITY_KEY", "CAPTION_BG_COLOR_KEY", "CAPTION_BG_OPACITY_KEY", "CAPTION_EDGE_TYPE_KEY",
     "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY" };
@@ -573,18 +571,16 @@ To guarantee the running of this application on a device with a caption and so o
     "CAPTION_SIZE_EXTRA_LARGE" };
   enum CaptionFontStyle { "CAPTION_FONT_DEFAULT", "CAPTION_FONT_STYLE0", "CAPTION_FONT_STYLE1", "CAPTION_FONT_STYLE2",
     "CAPTION_FONT_STYLE3", "CAPTION_FONT_STYLE4", "CAPTION_FONT_STYLE5", "CAPTION_FONT_STYLE6", "CAPTION_FONT_STYLE7" };
-  enum CaptionColor { "CAPTION_COLOR_DEFAULT", "CAPTION_COLOR_WHITE", "CAPTION_COLOR_BLACK", "CAPTION_COLOR_RED", "CAPTION_COLOR_GREEN",
-    "CAPTION_COLOR_BLUE", "CAPTION_COLOR_YELLOW", "CAPTION_COLOR_MAGENTA", "CAPTION_COLOR_CYAN" };
-  enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT",
-    "CAPTION_OPACITY_TRANSPARENT", "CAPTION_OPACITY_DEFAULT" };
+  enum CaptionColor { "CAPTION_COLOR_DEFAULT", "CAPTION_COLOR_WHITE", "CAPTION_COLOR_BLACK", "CAPTION_COLOR_RED",
+    "CAPTION_COLOR_GREEN", "CAPTION_COLOR_BLUE", "CAPTION_COLOR_YELLOW", "CAPTION_COLOR_MAGENTA", "CAPTION_COLOR_CYAN" };
+  enum CaptionOpacity { "CAPTION_OPACITY_SOLID", "CAPTION_OPACITY_FLASHING", "CAPTION_OPACITY_TRANSLUCENT", "CAPTION_OPACITY_TRANSPARENT",
+    "CAPTION_OPACITY_DEFAULT" };
   enum CaptionEdge { "CAPTION_EDGE_NONE", "CAPTION_EDGE_RAISED", "CAPTION_EDGE_DEPRESSED", "CAPTION_EDGE_UNIFORM",
     "CAPTION_EDGE_DROP_SHADOWED" };
-  typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or
-           <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInfoManagerObject">TVInfoManagerObject</a>;
   [NoInterfaceObject] interface TVInfoManagerObject {
     readonly attribute <a href="#TVInfoManager">TVInfoManager</a> tvinfo;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInfoManagerObject">TVInfoManagerObject</a>;
   [NoInterfaceObject] interface TVInfoManager {
     <a href="#CaptionValue">CaptionValue</a> getCaptionValue(<a href="#CaptionInfoKey">CaptionInfoKey</a> key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addCaptionValueChangeListener(<a href="#CaptionInfoKey">CaptionInfoKey</a> key, <a href="#CaptionValueChangeCallback">CaptionValueChangeCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
