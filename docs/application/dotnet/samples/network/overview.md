@@ -86,6 +86,13 @@ for TD:
 			<p>This sample application demonstrates how to send and receive a NFC Data Exchange Format (NDEF) message from a remote NFC device and read the NDEF message from the NFC tag. It also demonstrates how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w76webproxysample.png" width="180"/></td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/WebProxySample" target="_blank"><strong>(W) WebProxySample</strong></a></p>
+                        <p>This sample application demonstrates how to use WebProxy to access the internet when Samsung Galaxy Watch is connected to a mobile phone through Bluetooth. For more information, see <a href="https://samsung.github.io/Tizen.NET/wearables/web-proxy/" target="_blank">content on Tizen .NET portal</a>.</p>                           
+			</td>
+		</tr>
 	</tbody>
 </table>
 </div>

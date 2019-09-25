@@ -76,6 +76,15 @@ for TD:
 			</td>
 		</tr>
 		<tr>
+                        <td>
+			<p><img alt="" height="180" src="media/w75speechtotext.png" width="180"/></p>
+			</td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SpeechToText" target="_blank"><strong>(W) SpeechToText</strong></a></p>
+			<p>This sample application demonstrates how to record and recognize sound data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.Stt.html" target="_blank">Tizen.Uix.Stt</a>.</p>
+			</td>
+		</tr>
+		<tr>
 			<td>
 			<p><img alt="" height="180" src="media/w67textreader.png" width="180"/></p>
 			</td>
