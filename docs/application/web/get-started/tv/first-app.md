@@ -1,5 +1,9 @@
 # Create Your First Tizen TV Web Application
 
+>**Note**
+>
+>This profile is deprecated from Tizen Studio 3.5. To develop apps for Samsung Smart TV, see [Create Your First Samsung Smart TV Web Application](first-samsung-tv-app.md).
+
 **Welcome to Tizen TV Web application development!**
 
 A TV Web application is basically a Web site stored on a TV. You can create it using Web-native languages, such as HTML5, CSS, and JavaScript.
