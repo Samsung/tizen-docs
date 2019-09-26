@@ -64,6 +64,8 @@ https://www.sigma-delta.tech/sdt-a7x2-m4
 
 
 Sigma Delta Technologies Inc., hereinafter referred to as SDT, is an IoT platform company that provides a wide range of system-on-modules (SOMs), connectivity stacks, security solutions, and cloud services.
+
 The current process for developing and producing IoT device is far too complex. SDT was founded with a mission to get everyone and everything organically connected by lowering the entry barrier to the cutting-edge IoT technologies.
+
 We have the technologies; All we need is your imagination to reach the era of 1 trillion connected devices. 
 
