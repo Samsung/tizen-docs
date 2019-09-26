@@ -2,7 +2,7 @@
 
 ![Architecture](media/sdt.png)
 
-Gateway SOM based on Arm Cortex-A7 dual core and another Cortex-M4 core, where the former one is for high-performance processing and the latter one is for real-time application performance. It also provides 512MB DDR3L-1600 DRAM and 8GB eMMC NAND Flash. 
+Gateway SOM based on Arm&reg; Cortex&reg;-A7 dual core and another Cortex&reg;-M4 core, where the former one is for high-performance processing and the latter one is for real-time application performance. It also provides 512MB DDR3L-1600 DRAM and 8GB eMMC NAND Flash. 
 
 With Secure Element (SE), SDT-A7X2-M4 ensures high security. The modules supports Arm Mbed Linux OS and Samsung Tizen, and can be directly connected to Arm Pelion and Samsung SmartThings.
 
@@ -11,8 +11,8 @@ With Secure Element (SE), SDT-A7X2-M4 ensures high security. The modules support
 - CPU
   - i.MX7
 -Core
-  - Arm Cortex-A7 Dual Core @ 1.0GHz
-  - Arm Cortex-M4 Sub Core @ 200MHz
+  - Arm&reg; Cortex&reg;-A7 Dual Core @ 1.0GHz
+  - Arm&reg; Cortex&reg;-M4 Sub Core @ 200MHz
 - Memory
   - 512MB DDR3L (1600Mbps)
   - 8GB eMMC (5.0) Flash memory

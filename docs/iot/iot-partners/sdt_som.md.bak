@@ -45,7 +45,7 @@ With Secure Element (SE), SDT-A7X2-M4 ensures high security. The modules support
   - MIPI DSI for Display
 - Environmental
   - 45 x 42 x 4.5(mm) (W x L x H) dimensions
-  - 0 ~ +85 operating temperature
+  - 0&deg;C ~ +85&deg;C operating temperature
 
 
 Tizen IoT can be installed on the SDTA7X2-M4 that are compatible with the following:
