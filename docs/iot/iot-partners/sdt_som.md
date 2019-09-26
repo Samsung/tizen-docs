@@ -3,41 +3,49 @@
 ![Architecture](media/sdt.png)
 
 Gateway SOM based on Arm¢ç Cortex¢ç-A7 dual core and another Cortex¢ç-M4 core, where the former one is for high-performance processing and the latter one is for real-time application performance. It also provides 512MB DDR3L-1600 DRAM and 8GB eMMC NAND Flash. 
+
 With Secure Element (SE), SDT-A7X2-M4 ensures high security. The modules supports Arm Mbed Linux OS and Samsung Tizen, and can be directly connected to Arm Pelion and Samsung SmartThings.
 
 
 **Specifications**
-| -----------|----------------|
-|CPU             |  i.MX7                |
-|Core             | Arm¢ç Cortex¢ç-A7 Dual Core @ 1.0GHz
-Arm¢ç Cortex¢ç-M4 Sub Core @ 200MHz |
-| Memory | 512MB DDR3L (1600Mbps)
-8GB eMMC (5.0) Flash memory |
-| OS |  Support	Samsung Tizen 5.0 Linux
-Android (to be updated)
-Linux (TBU)
-Arm Mbed Linux (TBU) |
-| Security | Secure Element (Samsung KONA I)
-Arm TrustZone A-HAB (Advanced High Assurance Boot, HABv4 with SHA-256, 2048-bit RSA key)
-CAAM (Cryptographic Acceleration and Assurance Module)
-32KB secure RAM
-TRNG (NIST certified)
-SNVS (Secure Non-Volatile Storage, including Secure RTC) |
-| PMIC | PF3000
-Specifically designed PMIC for NXP i.MX7
-5.0V, 600mA boost regulator
-Six adjustable linear regulators
-Coin cell charger
-OTP memory |
-| Serial Peripherals | 	UART, SPI, I2C, PWM, ADC, GPIO
-Dual CAN
-RMII/RGMII for 10/100/1000 Base-T Ethernet
-USB Host, USB OTG
-PCIe, SD I/O
-MIPI CSI for Camera
-MIPI DSI for Display |
-| Environmental | 45 x 42 x 4.5(mm) (W x L x H) dimensions
-0¡ÆC ~ +85¡ÆC operating temperature |
+- CPU
+ - i.MX7
+-Core
+ - Arm¢ç Cortex¢ç-A7 Dual Core @ 1.0GHz
+ - Arm¢ç Cortex¢ç-M4 Sub Core @ 200MHz
+- Memory
+ - 512MB DDR3L (1600Mbps)
+ - 8GB eMMC (5.0) Flash memory
+- OS
+ - Support	Samsung Tizen 5.0 Linux
+ - Android (to be updated)
+ - Linux (TBU)
+ - Arm Mbed Linux (TBU)
+- Security
+ - Secure Element (Samsung KONA I)
+ - Arm TrustZone A-HAB (Advanced High Assurance Boot, HABv4 with SHA-256, 2048-bit RSA key)
+ - CAAM (Cryptographic Acceleration and Assurance Module)
+ - 32KB secure RAM
+ - TRNG (NIST certified)
+ - SNVS (Secure Non-Volatile Storage, including Secure RTC)
+- PMIC
+ - PF3000
+ - Specifically designed PMIC for NXP i.MX7
+ - 5.0V, 600mA boost regulator
+ - Six adjustable linear regulators
+ - Coin cell charger
+ - OTP memory
+- Serial Peripherals
+ - UART, SPI, I2C, PWM, ADC, GPIO
+ - Dual CAN
+ - RMII/RGMII for 10/100/1000 Base-T Ethernet
+ - USB Host, USB OTG
+ - PCIe, SD I/O
+ - MIPI CSI for Camera
+ - MIPI DSI for Display |
+- Environmental
+ - 45 x 42 x 4.5(mm) (W x L x H) dimensions
+ - 0¡ÆC ~ +85¡ÆC operating temperature
 
 
 Tizen IoT can be installed on the SDTA7X2-M4 that are compatible with the following:
