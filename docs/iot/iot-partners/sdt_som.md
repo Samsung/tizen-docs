@@ -1,16 +1,15 @@
 # Tizen-enabled SOM [SDT-A7X2-M4]
 
-![Architecture](media/som.png)
-![Architecture](media/som_with_dap.png)
+![Architecture](media/sdt.png)
 
 Gateway SOM based on Arm¢ç Cortex¢ç-A7 dual core and another Cortex¢ç-M4 core, where the former one is for high-performance processing and the latter one is for real-time application performance. It also provides 512MB DDR3L-1600 DRAM and 8GB eMMC NAND Flash. 
 With Secure Element (SE), SDT-A7X2-M4 ensures high security. The modules supports Arm Mbed Linux OS and Samsung Tizen, and can be directly connected to Arm Pelion and Samsung SmartThings.
 
 
 **Specifications**
- 
-| CPU | i.MX7 |
-| Core | Arm¢ç Cortex¢ç-A7 Dual Core @ 1.0GHz
+| -----------|----------------|
+|CPU             |  i.MX7                |
+|Core             | Arm¢ç Cortex¢ç-A7 Dual Core @ 1.0GHz
 Arm¢ç Cortex¢ç-M4 Sub Core @ 200MHz |
 | Memory | 512MB DDR3L (1600Mbps)
 8GB eMMC (5.0) Flash memory |
@@ -47,9 +46,9 @@ Tizen IoT can be installed on the SDTA7X2-M4 that are compatible with the follow
 
 
 For more information on the SDT boards, see the following:
-- [SDT-A7X2-M4_image] (https://github.com/SigmaDeltaTechnologiesInc/sdta7d-images)
-- [Pinout Diagram_DAP Station for SDT-A7X2-M4] (https://docs.wixstatic.com/ugd/166c05_a20ebe502e08478d85c67f8dd34beb04.pdf)
-- [Product Brief_SDT-A7X2-M4] (https://docs.wixstatic.com/ugd/166c05_9b9635ed83d64bfeb7731fe0671fb511.pdf)
+- [SDT-A7X2-M4_image](https://github.com/SigmaDeltaTechnologiesInc/sdta7d-images)
+- [Pinout Diagram_DAP Station for SDT-A7X2-M4](https://docs.wixstatic.com/ugd/166c05_a20ebe502e08478d85c67f8dd34beb04.pdf)
+- [Product Brief_SDT-A7X2-M4](https://docs.wixstatic.com/ugd/166c05_9b9635ed83d64bfeb7731fe0671fb511.pdf)
 
 
 Buy kit
