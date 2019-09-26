@@ -11,8 +11,8 @@ With Secure Element (SE), SDT-A7X2-M4 ensures high security. The modules support
 - CPU
   - i.MX7
 -Core
-  - Arm¢ç Cortex¢ç-A7 Dual Core @ 1.0GHz
-  - Arm¢ç Cortex¢ç-M4 Sub Core @ 200MHz
+  - Arm Cortex-A7 Dual Core @ 1.0GHz
+  - Arm Cortex-M4 Sub Core @ 200MHz
 - Memory
   - 512MB DDR3L (1600Mbps)
   - 8GB eMMC (5.0) Flash memory
@@ -45,7 +45,7 @@ With Secure Element (SE), SDT-A7X2-M4 ensures high security. The modules support
   - MIPI DSI for Display |
 - Environmental
   - 45 x 42 x 4.5(mm) (W x L x H) dimensions
-  - 0¡ÆC ~ +85¡ÆC operating temperature
+  - 0¡É ~ +85¡É operating temperature¡É
 
 
 Tizen IoT can be installed on the SDTA7X2-M4 that are compatible with the following:
