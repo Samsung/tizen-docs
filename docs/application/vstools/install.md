@@ -71,7 +71,6 @@ The Visual Studio Tools for Tizen extension is registered in the Visual Studio M
 
    The installation starts.
 
-Alternatively, you can download the Visual Studio Tools for Tizen extension from the [Visual Studio Marketplace Web site](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen).
 
 ### Installing the Tizen Baseline SDK
 
