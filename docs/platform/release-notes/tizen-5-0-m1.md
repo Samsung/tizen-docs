@@ -101,7 +101,7 @@ Release date: May. 31, 2018
   - Applications can expose RPC style service interface to other applications with TIDL.
   - Native code is generated from the TIDL with tidlc compiler.
   - C, C++, C# languages are supported.
-  - tidlc compiler will be released along with the Tizen Studio.
+  - tidlc compiler will be released along with Tizen Studio.
 - Watchface complication framework and stylize editable feature support:
   - Applications can provide custom complication data with the new watchface complication provider API.
   - Watchface applications can receive data from the complication providers.
