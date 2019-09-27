@@ -1,7 +1,18 @@
-# Overview
-## [Development Workflow](/platform/about/work-flow.md)
-## [Git Repository Structure](/platform/about/git-repo-structure.md)
-## [Typographic Conventions](/platform/about/conventions.md)
+# What is Tizen?
+## [Overview](/platform/what-is-tizen/overview.md)
+## Profiles
+### [Wearable](/platform/what-is-tizen/profiles/wearable.md)
+### [TV](/platform/what-is-tizen/profiles/tv.md)
+### [Mobile](/platform/what-is-tizen/profiles/mobile.md)
+## Versions
+### [Tizen 4.0 M2](/platform/what-is-tizen/versions/tizen-4-0-m2.md)
+### [Tizen 4.0 M1](/platform/what-is-tizen/versions/tizen-4-0-m1.md)
+### [Tizen 3.0](/platform/what-is-tizen/versions/tizen-3-0.md)
+
+# Get Started
+## [Development Workflow](/platform/get-started/work-flow.md)
+## [Git Repository Structure](/platform/get-started/git-repo-structure.md)
+## [Typographic Conventions](/platform/get-started/conventions.md)
 
 # Developing
 ## [Installing Development Tools](/platform/developing/installing.md)
@@ -42,6 +53,18 @@
 ### [MIC Reference](/platform/reference/mic/mic-reference.md)
 ### [FAQ](/platform/reference/mic/mic-faq.md)
 
+## Tizen Studio
+### [Overview](/platform/tizen-studio/overview.md)
+### [Contributing to Tizen Studio](/platform/tizen-studio/contribute-gerrit.md)
+### Developing Extensions
+#### [IDE Extension Development](/platform/tizen-studio/web-extension-guide.md)
+#### [Emulator Extension Development](/platform/tizen-studio/emulator-extension-guide.md)
+#### [Package File Description](/platform/tizen-studio/package-file-desc-guide.md)
+#### [Metapackage File Description](/platform/tizen-studio/meta-package.md)
+### Building Tizen Studio Code
+#### [Build Environment](/platform/tizen-studio/environment.md)
+#### [Local Build Guide](/platform/tizen-studio/local-build.md)
+
 # Release Notes
 ## [Tizen 5.5 Public M1](/platform/release-notes/tizen-5-5-m1.md)
 ## [Tizen 5.0 Public M2](/platform/release-notes/tizen-5-0-m2.md)
@@ -79,14 +102,4 @@
 ## Release Notes
 ### [Tizen RT 1.0 M1](/platform/tizen-rt/release-notes/tizen-rt-1-0-m1.md)
 
-# Tizen Studio
-## [Overview](/platform/tizen-studio/overview.md)
-## [Contributing to Tizen Studio](/platform/tizen-studio/contribute-gerrit.md)
-## Developing Extensions
-### [IDE Extension Development](/platform/tizen-studio/web-extension-guide.md)
-### [Emulator Extension Development](/platform/tizen-studio/emulator-extension-guide.md)
-### [Package File Description](/platform/tizen-studio/package-file-desc-guide.md)
-### [Metapackage File Description](/platform/tizen-studio/meta-package.md)
-## Building Tizen Studio Code
-### [Build Environment](/platform/tizen-studio/environment.md)
-### [Local Build Guide](/platform/tizen-studio/local-build.md)
+

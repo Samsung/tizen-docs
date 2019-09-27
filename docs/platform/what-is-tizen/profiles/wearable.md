@@ -24,22 +24,21 @@ The design aspect of wearable applications is that they must augment mobile tech
 
 To develop applications for the wearable profile:
 
-- [Creating Wearable Native Applications](https://developer.tizen.org/development/training/native-application/getting-started)
-- [Creating Wearable Web Applications](https://developer.tizen.org/development/training/web-application/getting-started)
-- [Native Application Samples](https://developer.tizen.org/development/sample/native)
-- [Web Application Samples](https://developer.tizen.org/development/sample/web)
+- [Create Wearable .NET Applications](../../../application/dotnet/get-started/wearable/first-app.md)
+- [Create Wearable Web Applications](../../../application/web/get-started/wearable/first-app.md)
+- [Create Wearable Native Applications](../../../application/native/get-started/wearable/first-app.md)
 
 ## Design Guidelines for Tizen Wearable
 
-Tizen design principles suggest some clear guidelines that help you to design simple and easy-to-use applications for everyone:
-
-- [Design Principles](https://developer.tizen.org/design/wearable/design-principles)
+You can see the Wearable design guidelines on [SAMSUNG Developers site](https://developer.samsung.com/galaxy-watch/design/principle){:target="_blank"}.
 
 ## Tizen Wearable Devices
 
 From the Samsung Gear 2 Neo to the current Gear S3, all wearable devices have their own characteristics that boast their functionalities. Each also has their own design language that harnesses their functionality.
-For more information on developing a Samsung Gear application, go to [SAMSUNG GEAR](http://developer.samsung.com/gear).
+For more information on developing a Samsung Gear application, go to [SAMSUNG GALAXY WATCH](http://developer.samsung.com/gear){:target="_blank"}.
 
-**Figure: Wearable Samsung Gear devices**
+**Figure: Wearable Samsung Galaxy Watch devices**
 
-![Wearable Samsung Gear devices](https://developer.tizen.org/sites/default/files/images/profile_wearable_devices.png)
+![Wearable Samsung Watch devices](media/samsung_galaxy_watches.png)
+
+![Wearable Samsung Gear devices](media/profile_wearable_devices.png)
