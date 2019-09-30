@@ -57,10 +57,6 @@ The main features of the Tizen.Content.MediaContent namespace include:
 
     You can manage a collection of media items as a group, when the items have the same value of a given property. You can, for example, [search for groups](#find_groups).
 
-- Media storages
-
-    You can [retrieve information about the media storages](#storage_list).
-
 
 ## Prerequisites
 
@@ -558,25 +554,6 @@ To delete a tag, use the `Delete()` method of the [Tizen.Content.MediaContent.Ta
 tagCmd.Delete(tag.Id);
 ```
 
-<a name="storage_list"></a>
-## Retrieving Storage Information
-
-To find the media storages, use the `Select()` method of the [Tizen.Content.MediaContent.StorageCommand](https://samsung.github.io/TizenFX/latest/api/Tizen.Content.MediaContent.StorageCommand.html) class:
-
-```
-var storageCmd = new StorageCommand(mediaDatabase);
-
-using (var mediaDataReader = storageCmd.Select())
-{
-    while (mediaDataReader.Read())
-    {
-        var storage = mediaDataReader.Current;
-
-        Tizen.Log.Info(LogTag, storage.ToString());
-    }
-}
-```
-
 <a name="find_groups"></a>
 ## Finding Media Item Groups
 
@@ -667,9 +644,7 @@ The following tables list the available media file information.
 | `Rating`         | Rating of the media content              |
 | `IsFavorite`     | Favorite status of the media content     |
 | `Title`          | Title of the media content               |
-| `StorageId`      | The storage Id of the storage that the media is stored on          |
 | `IsDrm`          | The media is DRM-protected or not        |
-| `StorageType`    | The storage type of the storage that the media is stored on        |
 
 **Table: Audio metadata (only for audio files)**
 

@@ -58,7 +58,9 @@
 #### [Application Icons](/application/dotnet/guides/app-management/app-icons.md)
 #### [Application Controls](/application/dotnet/guides/app-management/app-controls.md)
 #### [Application Manager](/application/dotnet/guides/app-management/app-manager.md)
+#### [Event Manager](/application/dotnet/guides/app-management/event.md)
 #### [Package Manager](/application/dotnet/guides/app-management/package-manager.md)
+#### [Widget Control](/application/dotnet/guides/app-management/widget-control.md)
 #### [Message Port](/application/dotnet/guides/app-management/message-port.md)
 #### [Data Control](/application/dotnet/guides/app-management/data-control.md)
 
@@ -194,6 +196,7 @@
 #### [Privilege Information](/application/dotnet/guides/security/privilege.md)
 #### [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
 #### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
+#### [Device Policy Management](/application/dotnet/guides/security/dpm.md)
 
 ### [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)
 
@@ -525,9 +528,11 @@
 ##### Background Knowledge
 ###### [Handle/Body Pattern](/application/native/guides/ui/dali/handle.md)
 ###### [Properties](/application/native/guides/ui/dali/properties.md)
-###### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
-#### [Tizen Window System Shell](/application/native/guides/ui/tizen-ws-shell.md)
+#### Tizen Window System Shell
+##### [Overview](/application/native/guides/ui/tizen-ws-shell/index.md)
+##### [TZSH-Quickpanel](/application/native/guides/ui/tizen-ws-shell/tzsh-quickpanel.md)
+##### [TZSH-Softkey](/application/native/guides/ui/tizen-ws-shell/tzsh-softkey.md)
 
 ### Localization
 #### [Overview](/application/native/guides/internationalization/overview.md)
@@ -638,6 +643,9 @@
 ### Text Input and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
 #### [Input Method](/application/native/guides/text-input/input-method.md)
+#### [Autofill](/application/native/guides/text-input/autofill.md)
+#### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
+#### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Voice Control](/application/native/guides/text-input/voice-control.md)

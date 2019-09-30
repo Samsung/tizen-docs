@@ -77,6 +77,8 @@ The following tables show the available requirements for an application package.
 
 | Feature key                              | Description                              | Since |
 |------------------------------------------|------------------------------------------|-------|
+| `http://tizen.org/feature/accessibility.grayscale`  | Specify this key, if the application requires the accessibility grayscale feature. | 5.5   |
+| `http://tizen.org/feature/accessibility.negative`  | Specify this key, if the application requires the accessibility negative feature. | 5.5   |
 | `http://tizen.org/feature/account`       | Specify this key, if the application requires the account management feature. | 4.0   |
 | `http://tizen.org/feature/account.sync`  | Specify this key, if the application requires the synchronization management feature. | 4.0   |
 | `http://tizen.org/feature/app_history`   | Specify this key, if the application requires the application history feature. | 4.0   |
@@ -219,6 +221,7 @@ The following tables show the available requirements for an application package.
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
+| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 | `http://tizen.org/feature/systemsetting` | Specify this key, if the application requires the SystemSetting feature. | 2.3   |
 | `http://tizen.org/feature/systemsetting.font` | Specify this key, if the application requires a font. | 5.0   |
 | `http://tizen.org/feature/systemsetting.home_screen` | Specify this key, if the application requires a home screen. | 2.3   |
