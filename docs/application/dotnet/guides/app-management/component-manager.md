@@ -1,19 +1,19 @@
 
 # Component Manager
 
-The component manager provides information about installed and running components. 
+Component manager provides information about installed and running components.
 
 The main features of the `Tizen.Applications.ComponentBased.ComponentManager` class include:
 
--   Managing the running component context
+-   Managing running component context
 
-    For running components, you can retrieve the application running context and operate on it. You can [manage thec component running context](#manage_context) with the `Tizen.Applications.ComponentBased.ComponentManager` class.
+    For the running components, you can retrieve the component running context and operate on it. You can [manage thec component running context](#manage_context) with the `Tizen.Applications.ComponentBased.ComponentManager` class.
 
--   Getting the component information
+-   Getting component information
 
-    For installed (but not necessarily running) componentss, you can retrieve information with the [Tizen.Applications.ComponentBased.ComponentInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentInfo.html) class.
+    For components that are installed but not necessarily running, you can retrieve information with the [Tizen.Applications.ComponentBased.ComponentInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentInfo.html) class.
 
-Iterator methods are used to travel through a list of components. The `GetRunningComponentsAsync()` method of the `Tizen.Applications.ComponentBased.ComponentManager` class is used for running components and the `GetInstalledComponentsAsync()` method is used for installed components.
+Iterator methods are used to travel through a list of components. The `GetRunningComponentsAsync()` method of the `Tizen.Applications.ComponentBased.ComponentManager` class is used for the running components and the `GetInstalledComponentsAsync()` method is used for the installed components.
 
 ## Prerequisites
 
@@ -35,13 +35,13 @@ To enable your application to use the component management functionality:
     ```
 
 <a name="manage_context"></a>
-## Managing the Component Running Context
+## Managing Component Running Context
 
 To get the component running context and its details, and to operate on the context:
 
-1.  Get the context of the currently-running component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentRunningContext.html) class, with the ID of the component from which the context is being obtained as a parameter.
+1.  Get the context of the currently running component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentRunningContext.html) class, with the ID of the component from which the context is being obtained as a parameter.
 
-    When an component is not running, it is impossible to get its context.
+    To get a component's context, the component must be running.
 
     ```
     ComponentRunningContext compoRunningContext = new ComponentRunningContext(Your Component ID);
@@ -56,7 +56,7 @@ To get the component running context and its details, and to operate on the cont
         string instanceId = compoRunningContext.InstanceId;
         ```
 
-    -   Check the state of the component:
+    -   Verify the state of the component:
 
         ```
         if (compoRunningContext.State == ComponentRunningContext.ComponentState.Initialized)
@@ -82,13 +82,13 @@ To get the component running context and its details, and to operate on the cont
         ```
 
 <a name="filter"></a>
-## Getting the Component Information
+## Getting Component Information
 
 To get the installed information and its details, and to operate on the information:
 
 1.  Get the information of the currently-installed component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentInfo.html) class, with the ID of the component from which the information is being obtained as a parameter.
 
-    When an component is not installed, it is impossible to get its information.
+    To get a component's information, the component must be installed.
 
     ```
     ComponentInfo compoInfo = new ComponentInfo(Your Component ID);
@@ -101,7 +101,7 @@ To get the installed information and its details, and to operate on the informat
         string componentId = compoInfo.ComponentId;
         string applicationId = compoInfo.ApplicationId;
         ```
-    -   Check the type of the component:
+    -   Verify: the type of the component:
 
         ```
         if (compoInfo.ComponentType == ComponentType.Frame)
@@ -119,7 +119,7 @@ To get the installed information and its details, and to operate on the informat
         string iconPath = compoInfo.IconPath;
         ```
 
-3.  Call the `GetInstalledComponentsAsync()` method of the [Tizen.Applications.ComponentBased.ComponentManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentManager.html) class and retrieve all components and print their information:
+3.  Call the `GetInstalledComponentsAsync()` method of the [Tizen.Applications.ComponentBased.ComponentManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentManager.html) class, and retrieve all components and print their information:
 
     ```
     IEnumerable<ComponentInfo> compoInfoList = await ComponentManager.GetInstalledComponentsAsync();
@@ -139,4 +139,4 @@ To get the installed information and its details, and to operate on the informat
 
 ## Related Information
   * Dependencies
-    -   Tizen 5.5 and Higher
+    -   Tizen 5.5
