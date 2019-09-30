@@ -1,13 +1,14 @@
 # Tizen-enabled SOM [SDT-A7X2-M4]
 
+Tizen-enabled System-on-Module (SOM) [SDT-A7X2-M4] is a gateway SOM based on Arm® Cortex®-A7 dual core and Arm® Cortex®-M4 core.
+Arm® Cortex®-A7 dual core is for high performance and Arm® Cortex®-M4 core is for real-time application performance.
+SDT-A7X2-M4 also provides 512MB DDR3L-1600 DRAM and 8GB eMMC NAND Flash.
+
 ![Architecture](media/sdt.png)
 
-Gateway SOM based on Arm&reg; Cortex&reg;-A7 dual core and another Cortex&reg;-M4 core, where the former one is for high-performance processing and the latter one is for real-time application performance. It also provides 512MB DDR3L-1600 DRAM and 8GB eMMC NAND Flash. 
+SDT-A7X2-M4 uses Secure Element (SE) to provide high security. The modules support Arm Mbed Linux OS and Samsung Tizen, and can be directly connected to Arm Pelion and Samsung SmartThings.
 
-With Secure Element (SE), SDT-A7X2-M4 ensures high security. The modules supports Arm Mbed Linux OS and Samsung Tizen, and can be directly connected to Arm Pelion and Samsung SmartThings.
-
-
-**Specifications**
+**SDT-A7X2-M4 Specifications**
 - CPU
   - i.MX7
 -Core
@@ -17,17 +18,17 @@ With Secure Element (SE), SDT-A7X2-M4 ensures high security. The modules support
   - 512MB DDR3L (1600Mbps)
   - 8GB eMMC (5.0) Flash memory
 - OS
-  - Support	Samsung Tizen 5.0 Linux
+  - Supports Samsung Tizen 5.0 Linux
   - Android (to be updated)
   - Linux (TBU)
   - Arm Mbed Linux (TBU)
 - Security
   - Secure Element (Samsung KONA I)
-  - Arm TrustZone A-HAB (Advanced High Assurance Boot, HABv4 with SHA-256, 2048-bit RSA key)
-  - CAAM (Cryptographic Acceleration and Assurance Module)
+  - Arm TrustZone Advanced High Assurance Boot (A-HAB) (HABv4 with SHA-256, 2048-bit RSA key)
+  - Cryptographic Acceleration and Assurance Module (CAAM)
   - 32KB secure RAM
   - TRNG (NIST certified)
-  - SNVS (Secure Non-Volatile Storage, including Secure RTC)
+  - Secure Non-Volatile Storage (SNVS) (including Secure RTC)
 - PMIC
   - PF3000
   - Specifically designed PMIC for NXP i.MX7
@@ -47,25 +48,19 @@ With Secure Element (SE), SDT-A7X2-M4 ensures high security. The modules support
   - 45 x 42 x 4.5(mm) (W x L x H) dimensions
   - 0&deg;C ~ +85&deg;C operating temperature
 
-
-Tizen IoT can be installed on the SDTA7X2-M4 that are compatible with the following:
+Tizen IoT can be installed on SDTA7X2-M4 that is compatible with the following:
 - Platform: Tizen 5.0 IoT Headless
 - SDK: Tizen Studio 3.3 and higher
-
 
 For more information on the SDT boards, see the following:
 - [SDT-A7X2-M4_image](https://github.com/SigmaDeltaTechnologiesInc/sdta7d-images)
 - [Pinout Diagram_DAP Station for SDT-A7X2-M4](https://docs.wixstatic.com/ugd/166c05_a20ebe502e08478d85c67f8dd34beb04.pdf)
 - [Product Brief_SDT-A7X2-M4](https://docs.wixstatic.com/ugd/166c05_9b9635ed83d64bfeb7731fe0671fb511.pdf)
 
+For more information on purchasing the kit, see https://www.sigma-delta.tech/sdt-a7x2-m4
 
-Buy kit
-https://www.sigma-delta.tech/sdt-a7x2-m4
-
-
-Sigma Delta Technologies Inc., hereinafter referred to as SDT, is an IoT platform company that provides a wide range of system-on-modules (SOMs), connectivity stacks, security solutions, and cloud services.
+Sigma Delta Technologies Inc., also known as SDT in this document, is an IoT platform company that provides a wide range of system-on-modules (SOMs), connectivity stacks, security solutions, and cloud services.
 
 The current process for developing and producing IoT device is far too complex. SDT was founded with a mission to get everyone and everything organically connected by lowering the entry barrier to the cutting-edge IoT technologies.
 
 We have the technologies; All we need is your imagination to reach the era of 1 trillion connected devices. 
-
