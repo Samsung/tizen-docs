@@ -31,9 +31,9 @@ Iterator functions are used to travel through a list of components. `component_m
 
 2. Include the `<component_manager.h>` header file in your application:
 
-```
-#include <component_manager.h>
-```
+    ```
+    #include <component_manager.h>
+    ```
 <a name="manage_context"></a>
 ## Managing Component Context
 
