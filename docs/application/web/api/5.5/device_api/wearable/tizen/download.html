@@ -85,6 +85,7 @@ For more information on the Download features, see <a href="https://developer.ti
 <div>long <a href="#DownloadManager::start">start</a> (<a href="#DownloadRequest">DownloadRequest</a> downloadRequest, optional <a href="#DownloadCallback">DownloadCallback</a>? downloadCallback)</div>
 <div>void <a href="#DownloadManager::cancel">cancel</a> (long downloadId)</div>
 <div>void <a href="#DownloadManager::pause">pause</a> (long downloadId)</div>
+<div>void <a href="#DownloadManager::abandon">abandon</a> (long downloadId)</div>
 <div>void <a href="#DownloadManager::resume">resume</a> (long downloadId)</div>
 <div>
 <a href="#DownloadState">DownloadState</a> <a href="#DownloadManager::getState">getState</a> (long downloadId)</div>
@@ -128,7 +129,7 @@ The key / value type of each HTTP header field should be DOMString.
 <div class="brief">
  An enumerator to indicate the state of a download operation.
           </div>
-<pre class="webidl prettyprint">  enum DownloadState { "QUEUED", "DOWNLOADING", "PAUSED", "CANCELED", "COMPLETED", "FAILED" };</pre>
+<pre class="webidl prettyprint">  enum DownloadState { "QUEUED", "DOWNLOADING", "PAUSED", "CANCELED", "COMPLETED", "FAILED", "ABANDONED" };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -149,6 +150,8 @@ CANCELED - Indicates that the download operation is canceled by user request.   
 COMPLETED - Indicates that the download operation is in a completed state.            </li>
             <li>
 FAILED - Indicates that the download operation has failed due to some reasons.            </li>
+            <li>
+ABANDONED - Indicates that the download operation has been abandoned.            </li>
           </ul>
          </div>
 </div>
@@ -319,6 +322,7 @@ req.httpHeader["X-Agent"] = "Tizen Sample App";
     long start(<a href="#DownloadRequest">DownloadRequest</a> downloadRequest, optional <a href="#DownloadCallback">DownloadCallback</a>? downloadCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void cancel(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void pause(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void abandon(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void resume(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#DownloadState">DownloadState</a> getState(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#DownloadRequest">DownloadRequest</a> getDownloadRequest(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -456,6 +460,7 @@ else
 <dd>
 <div class="brief">
  Cancels an ongoing download operation that is specified by the <em>downloadId</em> parameter.
+The abandoned download operation cannot be canceled and trying to do so will result in InvalidValuesError exception.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void cancel(long downloadId);</pre></div>
 <p><span class="version">Since: </span>
@@ -473,12 +478,6 @@ else
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type NotFoundError, if the identifier does not match any download operation in progress.
-                </p></li>
-<li class="list"><p>
- with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
-                </p></li>
 <li class="list"><p>
  with error type InvalidValuesError, if any of the input parameters contain an invalid value.
                 </p></li>
@@ -506,6 +505,11 @@ The paused download operation can be resumed later by the <em>resume()</em> meth
 <p><span class="version">Since: </span>
  2.0
             </p>
+<div class="description">
+            <p>
+The abandoned download operation cannot be paused and trying to do so will result in InvalidValuesError exception.
+            </p>
+           </div>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -518,12 +522,6 @@ The paused download operation can be resumed later by the <em>resume()</em> meth
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type NotFoundError, if the identifier does not match any download operation in progress.
-                </p></li>
-<li class="list"><p>
- with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
-                </p></li>
 <li class="list"><p>
  with error type InvalidValuesError, if any of the input parameters contain an invalid value.
                 </p></li>
@@ -539,6 +537,48 @@ tizen.download.pause(downloadId);
 </pre>
 </div>
 </dd>
+<dt class="method" id="DownloadManager::abandon">
+<a class="backward-compatibility-anchor" name="::Download::DownloadManager::abandon"></a><code><b><span class="methodName">abandon</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Abandons a download operation that is specified by the <em>downloadId</em> parameter.
+The abandoned download operation cannot be resumed later with the <em>resume()</em> method.
+Trying to resume this download operation will result in <em>InvalidValuesError</em> exception.
+Calling the <em>pause()</em> method or the <em>cancel()</em> method with this <em>downloadId</em> will also result in <em>InvalidValuesError</em> exception.
+All resources needed by download operation are freed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void abandon(long downloadId);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">downloadId</span>:
+ The ID of the ongoing download operation to abandon.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Abandons the ongoing download operation with the specified ID. */
+tizen.download.abandon(downloadId);
+</pre>
+</div>
+</dd>
 <dt class="method" id="DownloadManager::resume">
 <a class="backward-compatibility-anchor" name="::Download::DownloadManager::resume"></a><code><b><span class="methodName">resume</span></b></code>
 </dt>
@@ -550,6 +590,12 @@ tizen.download.pause(downloadId);
 <p><span class="version">Since: </span>
  2.0
             </p>
+<div class="description">
+            <p>
+The abandoned download operation cannot be resumed and trying to do so will result in InvalidValuesError exception.
+Resuming operation that is queued, completed or currently in progress will have no effect.
+            </p>
+           </div>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -563,13 +609,7 @@ tizen.download.pause(downloadId);
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type NotFoundError, if the identifier does not match any download operation in progress.
-                </p></li>
-<li class="list"><p>
- with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type InvalidValuesError, if any of the input parameters contain an invalid value.
+ with error type InvalidValuesError, if any of the input parameters contain an invalid value or in case of an attempt to resume abandoned download operation.
                 </p></li>
 <li class="list"><p>
  with error type UnknownError, if any other error occurs.
@@ -1008,7 +1048,7 @@ DownloadNetworkType <em>CELLULAR</em> can be available on a cellular-enabled dev
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Download {
   typedef object DownloadHTTPHeaderFields;
-  enum DownloadState { "QUEUED", "DOWNLOADING", "PAUSED", "CANCELED", "COMPLETED", "FAILED" };
+  enum DownloadState { "QUEUED", "DOWNLOADING", "PAUSED", "CANCELED", "COMPLETED", "FAILED", "ABANDONED" };
   enum DownloadNetworkType { "CELLULAR", "WIFI", "ALL" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DownloadManagerObject">DownloadManagerObject</a>;
   [NoInterfaceObject] interface DownloadManagerObject {
@@ -1027,6 +1067,7 @@ DownloadNetworkType <em>CELLULAR</em> can be available on a cellular-enabled dev
     long start(<a href="#DownloadRequest">DownloadRequest</a> downloadRequest, optional <a href="#DownloadCallback">DownloadCallback</a>? downloadCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void cancel(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void pause(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void abandon(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void resume(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#DownloadState">DownloadState</a> getState(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#DownloadRequest">DownloadRequest</a> getDownloadRequest(long downloadId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
