@@ -1,33 +1,33 @@
 # Component Manager
 
-
-The component manager provides information about installed and running components.
+Component manager provides information about installed and running components.
 
 The main features of the Component Manager API include:
 
-- Managing the component context
+- Managing component context
 
   You can retrieve the running component context and operate on it. The `component_context_h` handle is related to the running components and can be used to [manage the component context](#manage_context).
 
   For more information on the functions that use the `component_context_h` handle, see the Component Context API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__CONTEXT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__CONTEXT__MODULE.html) applications).
 
-- Getting the component information
+- Getting component information
 
-  The `component_info_h` handle is related to the available components (installed, but not necessarily running), see the Component Information API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__INFO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__INFO__MODULE.html) applications).
+  The `component_info_h` handle is related to the available components that are installed but not necessarily running.
 
-Iterator functions are used to travel through a list of components. The `component_manager_foreach_component_context()` function is used in running components and the `component_manager_foreach_component_info()` function is used in available components. Each function calls a callback function (`component_manager_component_context_cb()` or `component_manager_component_info_cb()`), passing the handle for each component.
+  For more information on the functions that use the `component_info_h` handle, see the Component Information API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__INFO__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__INFO__MODULE.html) applications).
 
+Iterator functions are used to travel through a list of components. `component_manager_foreach_component_context()` is used in running components and `component_manager_foreach_component_info()` is used in available components. Each function calls a callback function (`component_manager_component_context_cb()` or `component_manager_component_info_cb()`), passing the handle for each component.
 
 ## Prerequisites
 
-1. To use the functions and data types of the Component Manager API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) applications), the application has to request permission. Add the following privilege to the `tizen-manifest.xml` file:
+1. To use the functions and data types of the Component Manager API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
-```
-<privileges>
-  <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
-  <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
-</privileges>
-```
+    ```
+    <privileges>
+      <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+      <privilege>http://tizen.org/privilege/packagemanager.info</privilege>
+    </privileges>
+    ```
 
 2. Include the `<component_manager.h>` header file in your application:
 
@@ -35,13 +35,13 @@ Iterator functions are used to travel through a list of components. The `compone
 #include <component_manager.h>
 ```
 <a name="manage_context"></a>
-## Managing the Component Context
+## Managing Component Context
 
 To get the running component context and its details, and to operate on the context:
 
-1. Get the context of the currently-running component with the `component_manager_get_component_context()` function. Its parameters are the ID of the component from which the context is being obtained, and the handle (`component_context_h`) to the component context which is filled with the received context.
+1. Get the context of the currently running component with `component_manager_get_component_context()`. Its parameters are the ID of the component from which the context is being obtained, and the handle (`component_context_h`) to the component context which is filled with the received context.
 
-   When an component is not running, it is impossible to get its context.
+   To get a component's context, the component must be running.
    ```
    component_context_h component_context = NULL;
    int ret = component_manager_get_component_context(`Your Component ID`, &component_context);
@@ -58,11 +58,11 @@ To get the running component context and its details, and to operate on the cont
      if (ret != COMPONENT_MANAGER_ERROR_NONE)
      	/* Error handling */
      ```
-     
-     When `component_id` is no longer needed, release it using the `free()` function.
-     
+
+     When `component_id` is no longer needed, release it using `free()`.
+
    - Get the application ID from the context:
-   
+
      ```
      char *app_id;
      ret = component_context_get_app_id(component_context, &app_id);
@@ -70,9 +70,9 @@ To get the running component context and its details, and to operate on the cont
      	/* Error handling */
      ```
 
-     When `app_id` is no longer needed, release it using the `free()` function.
+     When `app_id` is no longer needed, release it using `free()`.
 
-   - Check whether the component with the given component context is terminated:
+   - Verify whether the component with the given component context is terminated:
 
      ```
      bool terminated = false;
@@ -101,15 +101,15 @@ To get the running component context and its details, and to operate on the cont
      ret = component_context_get_component_state(component_context, &state);
      if (ret != COMPONENT_MANAGER_ERROR_NONE)
          /* Error handling */
-     
+
      if (state == COMPONENT_STATE_RESUMED)
          /* Component is visible */
      else
          /* Component is invisible */
      ```
-     
-   - Check whether the component is running as sub component of the group:
-    
+
+   - Verify whether the component is running as a sub component of the group:
+
      ```
      bool is_subcomponent = false;
      ret = component_context_is_subcomponent(component_context, &is_subcomponent);
@@ -117,14 +117,14 @@ To get the running component context and its details, and to operate on the cont
          /* Error handling */
      ```
    - Resume the running component:
-     
+
      ```
      ret = component_manager_resume_component(component_context);
      if (ret != COMPONENT_MANAGER_ERROR_NONE)
          /* Error handling */
      ```
-     When the component is frame-component, it will be shown on the screen.
-   
+     When the component is frame-component, it will appear on the screen.
+
    - Terminate the running component in the background:
 
      ```
@@ -133,7 +133,7 @@ To get the running component context and its details, and to operate on the cont
         /* Error handling */
      ```
 
-3. When you no longer need the component context, call the `component_context_destroy()` function to remove the handle and release all resources to prevent memory leaks:
+3. When you no longer need the component context, call `component_context_destroy()` to remove the handle and release all resources to prevent memory leaks:
 
    ```
      ret = component_context_destroy(component_context);
@@ -142,11 +142,11 @@ To get the running component context and its details, and to operate on the cont
    ```
 
 <a name="filter"></a>
-## Getting the Component Information
+## Getting Component Information
 
 To get the installed information and its details, and to operate on the information:
 
-1. Get the information of the currently-installed component with the `component_manager_get_component_info()` function. Its parameters are the ID of the component from which the information is being obtained, and the handle (`component_info_h`) to the component information which is filled with the received information. When a component is not installed, it is impossible to get its information.
+1. Get the information of the currently-installed component with `component_manager_get_component_info()`. Its parameters are the ID of the component from which the information is being obtained, and the handle (`component_info_h`) to the component information which is filled with the received information. When a component is not installed, it is impossible to get its information.
 
    ```
    component_info_h component_info = NULL;
@@ -164,19 +164,19 @@ To get the installed information and its details, and to operate on the informat
    if (ret != COMPONENT_MANAGER_ERROR_NONE)
        /* Error handling */
    ```
-   When `component_id` is no longer needed, release it using the `free()` function.
-   
+   When `component_id` is no longer needed, release it using `free()`.
+
  - Get the application ID from the handle:
-   
+
    ```
    char *app_id;
    ret = component_info_get_app_id(component_info, &app_id);
    if (ret != COMPONENT_MANAGER_ERROR_NONE)
        /* Error handling */
    ```
-   
-   When `app_id` is no longer needed, release it using the `free()` function.
-   
+
+   When `app_id` is no longer needed, release it using `free()`.
+
  - Get the component type from the handle:
 
    ```
@@ -184,67 +184,67 @@ To get the installed information and its details, and to operate on the informat
    ret = component_info_get_component_type(component_info, &type);
    if (ret != COMPONENT_MANAGER_ERROR_NONE)
        /* Error handling */
-   
+
    if (type == COMPONENT_INFO_COMPONENT_TYPE_FRAME)
        dlog_print(DLOG_INFO, LOG_TAG, "Component type: frame");
    else if (type == COMPONENT_INFO_COMPONENT_TYPE_SERVICE)
        dlog_print(DLOG_INFO, LOG_TAG, "Component type: service");
    ```
-   
- - Get the icon path and check whether the icon of the component is displayed on the home screen or not:
-   
+
+ - Get the icon path and verify whether the icon of the component appears on the home screen or not:
+
    ```
    char *icon;
    ret = component_info_get_icon(component_info, &icon);
    if (ret != COMPONENT_MANAGER_ERROR_NONE)
        /* Error handling */
-       
+
    bool icon_display = false;
    ret = component_info_is_icon_display(component_info, &icon_display);
    if (ret != COMPONENT_MANAGER_ERROR_NONE)
        /* Error handling */
-   
+
    dlog_print(DLOG_INFO, LOG_TAG, "Icon path: %s", icon);
    dlog_print(DLOG_INFO, LOG_TAG, "Icon is displayed on the home screen: %s", icon_display ? "true" : "false");
    ```
-   When `icon` is no longer needed, release it using the `free()` function.
-   
- - Check whether the component should be managed by task-manager or not:
-   
+   When `icon` is no longer needed, release it using `free()`.
+
+ - Verify whether the component should be managed by task-manager or not:
+
    ```
    bool managed = false;
    ret = component_info_is_managed_by_task_manager(component_info, &managed);
    if (ret != COMPONENT_MANAGER_ERROR_NONE)
        /* Error handling */
-       
+
    dlog_print(DLOG_INFO, LOG_TAG, "Component is managed by task manager: %s", managed ? "true" : "false");
    ```
 
  - Get the label of the component from the handle:
-   
+
    ```
    char *label;
    ret = component_info_get_label(component_info, &label);
    if (ret != COMPONENT_MANAGER_ERROR_NONE)
        /* Error handling */
-       
+
    dlog_print(DLOG_INFO, LOG_TAG, "Component Name: %s", label);
    ```
-   When `label` is no longer needed, release it using the `free()` function.
-   
+   When `label` is no longer needed, release it using `free()`.
+
  - Get the localized label with 'en-us' locale from the handle.
-   
+
    ```
    char *localized_label;
    ret = component_info_get_localized_label(component_info, 'en-us', &localized_label);
    if (ret != COMPONENT_MANAGER_ERROR_NONE)
        /* Error handling */
-       
+
    dlog_print(DLOG_INFO, LOG_TAG, "Component Name: %s", localized_label);
    ```
-   When `localized_label` is no longer needed, release it using the `free()` function.
-   
-3. When you no longer need the component information, call the `component_info_destroy()` function to remote the handle and release all resources to prevent memory leaks:
+   When `localized_label` is no longer needed, release it using `free()`.
+
+3. When you no longer need the component information, call the `component_info_destroy()` to remote the handle and release all resources to prevent memory leaks:
 
 	```
     ret = component_info_destroy(component_info);
