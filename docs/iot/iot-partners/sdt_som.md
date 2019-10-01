@@ -58,9 +58,11 @@ For more information on the SDT boards, see the following:
 - [Product Brief_SDT-A7X2-M4](https://docs.wixstatic.com/ugd/166c05_9b9635ed83d64bfeb7731fe0671fb511.pdf)
 
 For more information on purchasing the kit, see https://www.sigma-delta.tech/sdt-a7x2-m4
+For more information on Sigma Delta Technologies, see https://www.sigma-delta.tech/
 
-Sigma Delta Technologies Inc., also known as SDT in this document, is an IoT platform company that provides a wide range of system-on-modules (SOMs), connectivity stacks, security solutions, and cloud services.
 
-The current process for developing and producing IoT device is far too complex. SDT was founded with a mission to get everyone and everything organically connected by lowering the entry barrier to the cutting-edge IoT technologies.
+Copyright © 2019 Sigma Delta Technologies Inc. All rights reserved.
+No part of this publication may be reproduced, stored in a retrieval system, or transmitted in any form or by any means – electronic, mechanical, photocopying, recording or otherwise – without the permission of Sigma Delta Technologies.
+Trademarks and trade names may be used in this document to refer to either the entities claiming the marks and names or their products. Sigma Delta Technologies disclaims any proprietary interest in the trademarks and trade names other than its own.
 
-We have the technologies; All we need is your imagination to reach the era of 1 trillion connected devices. 
+
