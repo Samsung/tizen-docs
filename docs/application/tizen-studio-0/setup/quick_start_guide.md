@@ -1,4 +1,4 @@
-## How to develop Tizen Web Applications?
+# How to Develop Tizen Web Applications?
 
 ### Introduction
 Web applications involve the standards for building and rendering web pages such as HTML, CSS, and JavaScript. The following figure illustrates the basic structure of a Tizen Web application:
@@ -7,7 +7,7 @@ Web applications involve the standards for building and rendering web pages such
 
 
 
-### How to create Tizen Web project?
+## How to create Tizen Web project?
 
 ![Step 1](./media/step1.png)
 
@@ -17,14 +17,14 @@ Web applications involve the standards for building and rendering web pages such
    
 
    
-### How to implement Tizen Web applications?
+## How to implement Tizen Web applications?
 
 Following are the four implementation stages for a digital watch application:
 
 ![implementation plan](./media/imp_pla.png)
 
 
-### How to add user interface layout to a digital watch?
+## How to add user interface layout to a digital watch?
 
 Following are the steps to add user interface layout to a digital watch:
 
@@ -34,7 +34,7 @@ Following are the steps to add user interface layout to a digital watch:
 
 ![Step 3](./media/ste3.png)  
 
-### How to add watch functionality to a digital watch?
+## How to add watch functionality to a digital watch?
 
 Following are the steps to implement the functionality of the digital watch using JavaScript and standard APIs:
 
@@ -50,7 +50,7 @@ Following are the steps to implement the functionality of the digital watch usin
 
 ![Func 6](./media/fu6.png)
 
-### How to add battery UI layout to a digital watch?
+## How to add battery UI layout to a digital watch?
 
 Following are the steps to implement the user interface layout for the battery, and add a background image to the digital watch using HTML and CSS:
 
@@ -63,7 +63,7 @@ Following are the steps to implement the user interface layout for the battery, 
 ![Battery 4](./media/ba4.png)
 
 
-### How to add battery functionality to a digital watch?
+## How to add battery functionality to a digital watch?
 
 Following are the steps to implement the functionality of the battery indicator using JavaScript and the Tizen Device API:
 

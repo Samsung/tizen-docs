@@ -1059,13 +1059,16 @@
 
 ## Set up
 
+### [About Tizen IDE](/application/tizen-studio/setup/about_ide.md)
 ### [Installation](/application/tizen-studio/setup/install-sdk.md)
 #### [Install Tizen Studio on Windows](/application/tizen-studio/setup/windows.md)
 #### [Install Tizen Studio on Ubuntu](/application/tizen-studio/setup/ubuntu.md)
 #### [Install Tizen Studio on MacOS](/application/tizen-studio/setup/mac.md)
 #### [Install Tizen Studio using CLI](/application/tizen-studio/setup/tizen-cli.md)
 #### [Additional Requirements](/application/tizen-studio/setup/additional-requirements.md)
-### [Quick Start Guide](/application/tizen-studio/setup/quick_start_guide.md)
+### [How to Develop Tizen Web Applications](/application/tizen-studio/setup/quick_start_guide.md)
+### [How to Develop Wearable Web Application using Template](/application/tizen-studio/setup/quick_start_guide_tizen_app_ts.md)
+### [How to Develop Wearable Web Application with TAU](/application/tizen-studio/setup/tau_quick_start_guide.md)
 ### [Update Tizen Studio](/application/tizen-studio/setup/update-sdk.md)
 ### [Hardware Accelerated Execution Manager](/application/tizen-studio/setup/hardware-accelerated-execution-manager.md)
 ### [Configure Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
