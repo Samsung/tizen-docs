@@ -7,7 +7,7 @@ The main features of the `Tizen.Applications.ComponentBased.ComponentManager` cl
 
 -   Managing running component context
 
-    For the running components, you can retrieve the component running context and operate on it. You can [manage thec component running context](#manage_context) with the `Tizen.Applications.ComponentBased.ComponentManager` class.
+    For the running components, you can retrieve the component running context and operate on it. You can [manage the component running context](#manage_context) with the `Tizen.Applications.ComponentBased.ComponentManager` class.
 
 -   Getting component information
 
