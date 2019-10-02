@@ -167,7 +167,7 @@ The following table lists the Service-Component state change events.
 | `service_component_start_command_cb()`    | Used to start instance. A requested `app_control_h` will be passed by parameter. |
 | `service_component_save_content_cb()`    | Used to take necessary actions when there is some data need to be stored and restored for the next instnace launching. This callback will be called right before `service_component_destroy_cb`|
 | `service_component_destroy_cb()` | Used to take necessary actions when the Frame-Component instance is terminating. Release all resources, especially any allocations and shared resources. |
-| `service_component_action_cb()` | Used to take necessary actions when another application sended launch request. |
+| `service_component_action_cb()` | Used to take necessary actions when another application sended launch request.  To receive action event you should [register action](#register_action)|
 
 The Service-Component intance also can receive some basic system events. The following table lists shows available system events callbacks.
 
@@ -235,7 +235,7 @@ To use the functions and data types of the Component-Based Application API (in m
 ```
 
 <a name="application_monitoring"></a>
-## Component-Based Application Fundamentals
+## Run Component-Based Application
 
 To run a Component-Based Application, you should register the Component-Based Application callbacks and start a main event loop as following codes:
 
@@ -419,92 +419,92 @@ To receive an action event:
 
 1. The app-control declaration in the manifest file
 
-	```
-		<component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="capp">
-			<label>Base-component Application</label>
-			<icon>@DESKTOP_ICON@</icon>
-			<app-control id="dial">
-				<operation name="http://tizen.org/appcontrol/operation/dial"/>
-				<mime name="*"/>
-			</app-control>
-			<app-control id="dial-for-excel">
-				<operation name="http://tizen.org/appcontrol/operation/dial"/>
-				<mime name="application/vnd.ms-excel"/>
-			</app-control>
-	```
+```
+	<component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="capp">
+		<label>Base-component Application</label>
+		<icon>@DESKTOP_ICON@</icon>
+		<app-control id="dial">
+			<operation name="http://tizen.org/appcontrol/operation/dial"/>
+			<mime name="*"/>
+		</app-control>
+		<app-control id="dial-for-excel">
+			<operation name="http://tizen.org/appcontrol/operation/dial"/>
+			<mime name="application/vnd.ms-excel"/>
+		</app-control>
+```
 
 2.  Registering an action
 
-  To receive action events, each component instance should register the action.
-  You can registering an action as follows:
+To receive action events, each component instance should register the action.
+You can registering an action as follows:
 
-	```
-	static void __frame_component_action_cb(component_h context,
-			const char *action, app_control_h app_control,
-			void *user_data)
-	{
-	}
+```
+static void __frame_component_action_cb(component_h context,
+		const char *action, app_control_h app_control,
+		void *user_data)
+{
+}
 
-	static Evas_Object *__frame_component_create_cb(component_h context, void *user_data)
-	{
-		component_register_action(context, "dial-for-excel")
-		return frame_get_window(ad->frame);
-	}
+static Evas_Object *__frame_component_create_cb(component_h context, void *user_data)
+{
+	component_register_action(context, "dial-for-excel")
+	return frame_get_window(ad->frame);
+}
 
-	component_class_h app_control_component_add(component_class_h comp_class,
-			const char *component_id, void *user_data)
-	{
-		frame_component_lifecycle_callback_s callback = {
-			.create = __frame_component_create_cb,
-			.action = __frame_component_action_cb,
-		};
+component_class_h app_control_component_add(component_class_h comp_class,
+		const char *component_id, void *user_data)
+{
+	frame_component_lifecycle_callback_s callback = {
+		.create = __frame_component_create_cb,
+		.action = __frame_component_action_cb,
+	};
 
-		return component_based_app_add_frame_component(comp_class,
-				component_id, &callback, user_data);
-	}
-	```
+	return component_based_app_add_frame_component(comp_class,
+			component_id, &callback, user_data);
+}
+```
 
 3.  Sending an action event to another application
 
-  Actions are declared in the manifest files. To send a proper action, you should carefully set app-control values according to the manifest file app-control specification. In this example, the app-control will be set for "dial-for-excel" action.
+Actions are declared in the manifest files. To send a proper action, you should carefully set app-control values according to the manifest file app-control specification. In this example, the app-control will be set for "dial-for-excel" action.
 
-	```
-	static int __app_control_send(const char *app_id, const char *component_id,
-			void *user_data)
-	{
-		app_control_h handle = NULL;
-		int ret;
+```
+static int __app_control_send(const char *app_id, const char *component_id,
+		void *user_data)
+{
+	app_control_h handle = NULL;
+	int ret;
 
-		ret = app_control_create(&handle);
-		if (ret != APP_CONTROL_ERROR_NONE)
-			return ret;
+	ret = app_control_create(&handle);
+	if (ret != APP_CONTROL_ERROR_NONE)
+		return ret;
 
-		ret = app_control_set_operation(handle, "http://tizen.org/appcontrol/operation/dial");
-		if (ret != APP_CONTROL_ERROR_NONE) {
-			app_control_destroy(handle);
-			return ret;
-		}
-
-		ret = app_control_set_mime(handle, "application/vnd.ms-excel");
-		if (ret != APP_CONTROL_ERROR_NONE) {
-			app_control_destroy(handle);
-			return ret;
-		}
-
-		ret = app_control_send_launch_request_async(handle,
-				__app_control_result_cb, NULL, user_data);
-		if (ret != APP_CONTROL_ERROR_NONE) {
-			app_control_destroy(handle);
-			return ret;
-		}
-		return 0;
+	ret = app_control_set_operation(handle, "http://tizen.org/appcontrol/operation/dial");
+	if (ret != APP_CONTROL_ERROR_NONE) {
+		app_control_destroy(handle);
+		return ret;
 	}
 
-	static void __button_clicked_cb(void *data, Evas_Object *obj,
-		void *event_info) {
-		__app_control_send("org.tizen.base-component", "base-frame", NULL);
+	ret = app_control_set_mime(handle, "application/vnd.ms-excel");
+	if (ret != APP_CONTROL_ERROR_NONE) {
+		app_control_destroy(handle);
+		return ret;
 	}
-	```
+
+	ret = app_control_send_launch_request_async(handle,
+			__app_control_result_cb, NULL, user_data);
+	if (ret != APP_CONTROL_ERROR_NONE) {
+		app_control_destroy(handle);
+		return ret;
+	}
+	return 0;
+}
+
+static void __button_clicked_cb(void *data, Evas_Object *obj,
+	void *event_info) {
+	__app_control_send("org.tizen.base-component", "base-frame", NULL);
+}
+```
 
 
 <a name="launch_application"></a>
@@ -514,7 +514,7 @@ To launch a Component-Based Application:
 
 1. Declaring launch privilege in the manifest file
 
-	```
+```
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="5.5" package="@PACKAGE_NAME@" install-location="internal-only" version="0.1.1">
 	<label>Sample</label>
@@ -528,58 +528,121 @@ To launch a Component-Based Application:
 		<privilege>http://tizen.org/privilege/appmanager.launch</privilege>
 	</privileges>
 </manifest>
-	```
+```
 
 2.  Sending launch request
 
-  You can send launch request using app_control_h. The app_control_h will contains the Component-Based Application's ID and the component ID. The component ID is optional, if you do not set the component ID, then the main component instance will be created.
+You can send launch request using app_control_h. The app_control_h will contains the Component-Based Application's ID and the component ID. The component ID is optional, if you do not set the component ID, then the main component instance will be created.
 
-  You can launch a Component-Based application as follow :
-	```
-	static int __app_control_send(const char *app_id, const char *component_id,
-			void *user_data)
-	{
-		app_control_h handle = NULL;
-		int ret;
+You can launch a Component-Based application as follow :
+```
+static int __app_control_send(const char *app_id, const char *component_id,
+		void *user_data)
+{
+	app_control_h handle = NULL;
+	int ret;
 
-		ret = app_control_create(&handle);
-		if (ret != APP_CONTROL_ERROR_NONE)
-			return ret;
+	ret = app_control_create(&handle);
+	if (ret != APP_CONTROL_ERROR_NONE)
+		return ret;
 
-		ret = app_control_set_app_id(handle, app_id);
-		if (ret != APP_CONTROL_ERROR_NONE)
-			return ret;
+	ret = app_control_set_app_id(handle, app_id);
+	if (ret != APP_CONTROL_ERROR_NONE)
+		return ret;
 
-		if (component_id) {
-			ret = app_control_set_component_id(handle, component_id);
-			if (ret != APP_CONTROL_ERROR_NONE) {
-				app_control_destroy(handle);
-				return ret;
-			}
-		}
-
-		ret = app_control_set_launch_mode(handle,
-				APP_CONTROL_LAUNCH_MODE_GROUP);
+	if (component_id) {
+		ret = app_control_set_component_id(handle, component_id);
 		if (ret != APP_CONTROL_ERROR_NONE) {
 			app_control_destroy(handle);
 			return ret;
 		}
-
-		ret = app_control_send_launch_request_async(handle,
-				__app_control_result_cb, NULL, user_data);
-		if (ret != APP_CONTROL_ERROR_NONE) {
-			app_control_destroy(handle);
-			return ret;
-		}
-
-		return 0;
 	}
 
-	static void __button_clicked_cb(void *data, Evas_Object *obj,
-		void *event_info) {
-		__app_control_send("org.tizen.base-component", "base-frame", NULL);
+	ret = app_control_set_launch_mode(handle,
+			APP_CONTROL_LAUNCH_MODE_GROUP);
+	if (ret != APP_CONTROL_ERROR_NONE) {
+		app_control_destroy(handle);
+		return ret;
 	}
-	```
+
+	ret = app_control_send_launch_request_async(handle,
+			__app_control_result_cb, NULL, user_data);
+	if (ret != APP_CONTROL_ERROR_NONE) {
+		app_control_destroy(handle);
+		return ret;
+	}
+
+	return 0;
+}
+
+static void __button_clicked_cb(void *data, Evas_Object *obj,
+	void *event_info) {
+	__app_control_send("org.tizen.base-component", "base-frame", NULL);
+}
+```
+
+<a name="group_launch"></a>
+## Group Launching Management
+
+The Component-Based Application also provides an [application group feature](../app-management/app-controls.md#group). You can use it as follows.
+
+1. Declaring launch privilege in the manifest file
+
+```
+<component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="capp">
+    <frame-component id="base-frame" launch_mode="caller" main="true" icon-display="false" taskmanage="true">
+      <icon>org.tizen.sample.png</icon>
+      <label>FrameComponent</label>
+      <label xml:lang="en-us">FrameComponent</label>
+      <label xml:lang="ko-kr">FrameComponent[KOR]</label>
+    </frame-component>FrameComponent</label>
+    <icon>FrameComponent.png</icon>
+  </component-based-application>
+  <privileges>
+    <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+  </privileges>
+</manifest>
+```
+
+2.  Sending launch request using component_h
+
+You have to send launch request with component_h so that application framework can tell which component instance request group launch.
+
+```
+static void __launch_clicked_cb(void *user_data, Evas_Object *obj, void *event_info) {
+	component_h context = (component_h)user_data;
+	app_control_h handle = NULL;
+	int ret;
+
+	ret = app_control_create(&handle);
+	if (ret != APP_CONTROL_ERROR_NONE)
+		return;
+
+	ret = app_control_set_app_id(handle, "org.tizen.group_app");
+	if (ret != APP_CONTROL_ERROR_NONE) {
+		app_control_destroy(handle);
+		return;
+	}
+
+	ret = app_control_set_component_id(handle, "base-frame");
+	if (ret != APP_CONTROL_ERROR_NONE)
+		return;
+
+	ret = app_control_set_launch_mode(handle, APP_CONTROL_LAUNCH_MODE_GROUP);
+	if (ret != APP_CONTROL_ERROR_NONE) {
+		app_control_destroy(handle);
+		return;
+	}
+
+	ret = component_send_launch_request_async(context, handle,
+				__app_control_result_cb, NULL, NULL);
+	if (ret != APP_CONTROL_ERROR_NONE) {
+		app_control_destroy(handle);
+		return;
+	}
+	app_control_destroy(handle);
+}
+```
 
 
 
