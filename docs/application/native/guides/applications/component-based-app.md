@@ -432,8 +432,8 @@ The Component-Based Application can register actions and receive action event. Y
 
 2.  Registering an action
 
-   To receive action events, each component instance should register the action.
-   You can registering an action as follows.
+    To receive action events, each component instance should register the action.
+    You can registering an action as follows.
     ```
     static void __frame_component_action_cb(component_h context,
             const char *action, app_control_h app_control,
@@ -462,7 +462,7 @@ The Component-Based Application can register actions and receive action event. Y
 
 3.  Sending an action event to another application
 
-   Actions are declared in the manifest files. To send a proper action, you should carefully set app-control values according to the manifest file app-control specification. In this example, the app-control will be set for "dial-for-excel" action.
+    Actions are declared in the manifest files. To send a proper action, you should carefully set app-control values according to the manifest file app-control specification. In this example, the app-control will be set for "dial-for-excel" action.
     ```
     static int __app_control_send(const char *app_id, const char *component_id,
             void *user_data)
@@ -526,9 +526,9 @@ To launch a Component-Based Application:
 
 2.  Sending launch request
 
-   You can send launch request using app_control_h. The app_control_h will contains the Component-Based Application's ID and the component ID. The component ID is optional, if you do not set the component ID, then the main component instance will be created.
+    You can send launch request using app_control_h. The app_control_h will contains the Component-Based Application's ID and the component ID. The component ID is optional, if you do not set the component ID, then the main component instance will be created.
 
-   You can launch a Component-Based application as follow.
+    You can launch a Component-Based application as follow.
     ```
     static int __app_control_send(const char *app_id, const char *component_id,
             void *user_data)
@@ -599,7 +599,7 @@ The Component-Based Application also provides an [application group feature](../
 
 2.  Sending launch request using component_h
 
-   You have to send launch request with component_h so that application framework can tell which component instance request group launch.
+    You have to send launch request with component_h so that application framework can tell which component instance request group launch.
     ```
     static void __launch_clicked_cb(void *user_data, Evas_Object *obj, void *event_info) {
         component_h context = (component_h)user_data;
