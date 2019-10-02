@@ -3,7 +3,7 @@
 
 The Component-Based applications is one of the Tizen application model. It allows developers to create an application that provides multiple components in one process. In the Component-Based application model, components have two different types and each component type has it's own lifecycle. Developers are able to add components to the Component-Based applications and registered components will create instances when the Component-Based application receives launch request.
 
-The main Service Application API features include:
+The main Component-Based Application API features include:
 
 - Application states
 
