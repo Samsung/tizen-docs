@@ -415,10 +415,7 @@ To add and manage Service-Component, you should add Service-Component and regist
 
 The Component-Based Application can register actions and receive action event. You can send an action event to another application using app-control.
 
-To receive an action event:
-
 1. The app-control declaration in the manifest file
-
     ```
     <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="capp">
         <label>Base-component Application</label>
@@ -436,8 +433,7 @@ To receive an action event:
 2.  Registering an action
 
    To receive action events, each component instance should register the action.
-   You can registering an action as follows:
-
+   You can registering an action as follows.
     ```
     static void __frame_component_action_cb(component_h context,
             const char *action, app_control_h app_control,
@@ -467,7 +463,6 @@ To receive an action event:
 3.  Sending an action event to another application
 
    Actions are declared in the manifest files. To send a proper action, you should carefully set app-control values according to the manifest file app-control specification. In this example, the app-control will be set for "dial-for-excel" action.
-
     ```
     static int __app_control_send(const char *app_id, const char *component_id,
             void *user_data)
@@ -513,7 +508,6 @@ To receive an action event:
 To launch a Component-Based Application:
 
 1. Declaring launch privilege in the manifest file
-
     ```
     <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns="http://tizen.org/ns/packages" api-version="5.5" package="@PACKAGE_NAME@" install-location="internal-only" version="0.1.1">
@@ -534,7 +528,7 @@ To launch a Component-Based Application:
 
    You can send launch request using app_control_h. The app_control_h will contains the Component-Based Application's ID and the component ID. The component ID is optional, if you do not set the component ID, then the main component instance will be created.
 
-   You can launch a Component-Based application as follow :
+   You can launch a Component-Based application as follow.
     ```
     static int __app_control_send(const char *app_id, const char *component_id,
             void *user_data)
@@ -587,7 +581,6 @@ To launch a Component-Based Application:
 The Component-Based Application also provides an [application group feature](../app-management/app-controls.md#group). You can use it as follows.
 
 1. Declaring launch privilege in the manifest file
-
     ```
     <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="capp">
         <frame-component id="base-frame" launch_mode="caller" main="true" icon-display="false" taskmanage="true">
@@ -607,7 +600,6 @@ The Component-Based Application also provides an [application group feature](../
 2.  Sending launch request using component_h
 
    You have to send launch request with component_h so that application framework can tell which component instance request group launch.
-
     ```
     static void __launch_clicked_cb(void *user_data, Evas_Object *obj, void *event_info) {
         component_h context = (component_h)user_data;
@@ -643,8 +635,6 @@ The Component-Based Application also provides an [application group feature](../
         app_control_destroy(handle);
     }
     ```
-
-
 
 ## Related Information
 - Dependencies
