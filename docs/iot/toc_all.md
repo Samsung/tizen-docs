@@ -73,3 +73,4 @@
 # IoT Partners
 ## [Nubison Cloud](/iot/iot-partners/nubison.md)
 ## [thingspark Cloud](/iot/iot-partners/thingspark.md)
+## [SDT SOM](/iot/iot-partners/sdt_som.md)
