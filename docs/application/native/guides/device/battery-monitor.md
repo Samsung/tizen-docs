@@ -38,7 +38,7 @@ To enable your application to use the Battery Monitor functionality:
 Some Battery Usage information contain combination of Application Id, Resource Id and time duration.
 
 1. Fetching information for an application for a particular resource over certain duration-
-   To get information use `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums, for example:
+   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, for example:
 
    ```
    #include <battery_monitor.h>
@@ -78,7 +78,7 @@ Some Battery Usage information contain combination of Application Id, Resource I
    ```
 
 2. Fetching total Battery Usage information of Application Id, combining all the resources over certain duration-
-   To get information on use `battery_monitor_duration_type_e` enums, for example:
+   The `battery_monitor_duration_type_e` enum can be used to choose a particular duration type, for example:
 
    ```
    #include <battery_monitor.h>
@@ -109,7 +109,7 @@ Some Battery Usage information contain combination of Application Id, Resource I
    }
    ```
 3. Fetching Battery Usage values for all the resources used by an Application Id for a certain duration-
-   To get information on use `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums, for example:
+   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, for example:
 
    ```
    #include <battery_monitor.h>
@@ -167,7 +167,7 @@ Some Battery Usage information contain combination of Application Id, Resource I
 Some Battery Usage information contain combination of Resource Id and duration.
 
 1. Fetching Battery Usage values for a particular resource over certain duration of time.
-   To get information on use `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums, for example:
+   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, for example:
 
    ```
    #include <battery_monitor.h>
