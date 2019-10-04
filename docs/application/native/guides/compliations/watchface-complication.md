@@ -1,332 +1,279 @@
-# Watch Face Complication
+# Watch Face Complication Provider
 
-The complication shows key information from an application in an economical way. You can tap complications to open the corresponding application and see more detailed information.
+The watch face complication provider application is a service application to provide complication data.
+Complication provider application provides only data. The watch face application decides how to display the complications.
+The complication provider application provides the complication data by using the watch face complication provider API to the watch face application.
 
-The complication data is provided from the complication provider application and the watch face application decides how to display the complications using that data.
-The watch face can select the complication and request to update the complication to the complication provider application.
-
-There are two ways to update the complication data.
-
-1. Watch Face can request to update complication data to complication provider application. The complication provider application receives the request and update the complication data. Then, the complication update callback is called in watch face.
-
-    ![Complication](media/complication_1.png)
- 
-
-2. If the complication data is changed, the complication provider application can notify to the watch face. If the complication received the notification, it requests to update automatically. Then, the update request comes to the complication provider. The complication provider must set the updated data in update requested callback. After the complication data is updated, the complication update callback is called in the watch face.
-
-    ![Complication_update](media/complication_2.png)
- 
-
-## Types of Watch Face Complication
-
-The complication support type is the types of data that can be provided from complication provider.
-The complication provider have to support at least one type. In addition, one complication provider can support multiple types.
-Watch Face can set the complication support types to support specific type of complications.
-
-The followings are types of watch face complication:
-
-| Support type name | Mandatory data | Optional data   |
-|-------------------|----------------|-----------------|
-| short text type   | short text     | title           |
-|                   |                | icon path       |
-|                   |                | extra data      |
-| long text type    | long text      | title           |
-|                   |                | icon path       |
-|                   |                | extra data      |
-| ranged value type | min value      | title           |
-|                   | max value      | short text      |
-|                   | current value  | icon path       |
-|                   |                | extra data      |
-| image type        | image path     | extra data      |
-| icon type         | icon path      | extra data      |
-| time type         | timestamp      | short text      |
-|                   |                | extra data      |
-| empty             |                |                 |
-
- 
 ## Prerequisites
 
-1. To use the Watch Face Complication API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+To enable your application to use the watch face complication functionality:
+
+1. To use the Watch Face Complication API to communicate with the watch face application, this application has to request permission by adding
+the following privilege to the `tizen-manifest.xml` file:
 
     ```xml
     <privileges>
-    	<privilege>http://tizen.org/privilege/datasharing</privilege>
-    	<privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+        <privilege>http://tizen.org/privilege/datasharing</privilege>
     </privileges>
     ```
- 
-2. To use the functions and data types for the Watch Face Complication API, include the `<watchface-complication.h>` header file in application:
+
+2. To use the functions and data types for the Watch Face Complication Provider API, include the `<watchface-complication-provider.h>` header file in your application:
 
     ```cpp
-    #include <watchface-complication.h>
+    #include <watchface-complication-provider.h>
     ```
 
- 
-## Creating Watch Face Complication
-
-Watch Face must create the complication handle to add the default complication.
-You can choose the support types of complication that can be selected in the position of complication.
-And also choose the touch event type that can be supported.
-
-
-```cpp
-{
-	int ret;
-	int comp_id = 1;
-	complication_h complication;
-
-	ret = watchface_complication_create(comp_id, "org.tizen.sample",
-			WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT,
-			WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT|WATCHFACE_COMPLICATION_TYPE_ICON,
-			WATCHFACE_COMPLICATION_EVENT_TAP, &complication);
-}
-```
-
-The default **provider id** and **type** are the items to set for initial display. As the default provider they must not be `null`.
-If they are null, the complication receives an error. Also, if you select the other provider and type, that they are no longer used.
- 
-  
 ## Updating Complication Data
 
-To receive the updated complication data, `watchface_complication_updated_cb()` must be added in the watch face by using `watchface_complication_add_updated_cb()`. And, if complication provider is not available (disabled, uninstalled), `watchface_complication_error_cb()` is called. In this case, watch face can add fallback logic in error callback such as display error message or launch editor interface.
+When the request occurs to update the complication data, the complication provider application can receive the request by adding `watchface_complication_provider_update_requested_cb()`. The watch face application can send the update request, and this request also occurs after the complication provider application notifies that the complication data is changed.
 
 ```cpp
-void _watchface_complication_updated_cb(int complication_id,
-		const char *provider_id,
-		watchface_complication_type_e type,
-		const bundle *data, void *user_data)
+void _watchface_complication_provider_update_requested_cb(const char *provider_id,
+        const char *req_appid, watchface_complication_type_e type, const bundle *context,
+        bundle *share_data, void *user_data)
 {
 }
 
-void _watchface_complication_error_cb)(
-		int complication_id,
-		const char *provider_id,
-		watchface_complication_type_e type,
-		watchface_complication_error_e error,
-		void *user_data)
+bool app_create(void *data)
 {
-}
-
-static void _init_complication()
-{
-	watchface_complication_add_updated_cb(complication,
-		_watchface_complication_updated_cb,
-		_watchface_complication_error_cb,  NULL);
-} 
-```
- 
-When the complication provider data is updated, `watchface_complication_updated_cb()` is called.
-Watch Face can get the information from the bundle parameter of callback by using `watchface_complication_data_get_*`.
-
-To get the complication provider data, the following functions can be used:
-
-
-| Function name | Data type |
-|---------------|-----------|
-| `watchface_complication_data_get_type()` | watchface complication type |
-| `watchface_complication_data_get_short_text()` | short text |
-| `watchface_complication_data_get_long_text()` | long text |
-| `watchface_complication_data_get_title()` | title text |
-| `watchface_complication_data_get_timestamp()` | timestamp |
-| `watchface_complication_data_get_image_path()` | image path |
-| `watchface_complication_data_get_ranged_value()` | min / max / current value |
-| `watchface_complication_data_get_icon_path()` | icon path |
-| `watchface_complication_data_get_extra_data()` | extra data |
-
-```cpp
-void _watchface_complication_updated_cb(int complication_id,
-		const char *provider_id,
-		watchface_complication_type_e type,
-		const bundle *data, void *user_data)
-{
-	char *shorttext;
-	if (type == WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT)
-		watchface_complication_data_get_short_text(data, &shorttext);
+    watchface_complication_provider_add_update_requested_cb("PROVIDER_ID",
+            _watchface_complication_provider_update_requested_cb, NULL);
 }
 ```
 
+The complication provider application must set the updated complication data to `shared_data` in the update requested callback.
+And it is possible to verify whether the data is valid or not using `watchface_complication_provider_data_is_valid()`.
+If the data is invalid, `watchface_complication_updated_cb()` of the complication will not be called.
 
-If the callback is not used any more, it must be removed by using `watchface_complication_remove_updated_cb()`:
+The complication data can be set using the following APIs. These APIs can be used only in `watchface_complication_provider_update_requested_cb()`:
+
+| API | Description |
+|--------|-----------------|
+| `watchface_complication_provider_data_set_title()` | Sets the complication title. |
+| `watchface_complication_provider_data_set_short_text()` | Sets the short text type data. |
+| `watchface_complication_provider_data_set_long_text()` | Sets the long text type data. |
+| `watchface_complication_provider_data_set_image_path()` | Sets the image path type data. |
+| `watchface_complication_provider_data_set_ranged_value()` | Sets the ranged value type data. |
+| `watchface_complication_provider_data_set_icon_path()` | Sets the icon path type data. |
+| `watchface_complication_provider_data_set_timestamp()` | Sets the timestamp type data. |
+| `watchface_complication_provider_data_set_extra_data()` | Sets the extra data. |
+| `watchface_complication_provider_timeinfo_create()` | Creates the time information handle. |
+| `watchface_complication_provider_timeinfo_set_timezone()` | Sets the timezone. For example, UTC+8 |
+| `watchface_complication_provider_timeinfo_set_timezone_id()` | Sets the timezone ID. For example, Asia/Seoul |
+| `watchface_complication_provider_timeinfo_set_timezone_country()` | Sets the timezone country. For example, Korea |
+| `watchface_complication_provider_timeinfo_set_timezone_city()` | Sets the timezone city. For example, Seoul |
+| `watchface_complication_provider_timeinfo_destroy()` | Destroys the time information handle. |
+| `watchface_complication_provider_data_set_timeinfo()` | Sets the time inforamtion data. |
+
+> **Note**
+>
+> `watchface_complication_provider_data_set_timestamp()` is deprecated since Tizen 5.5.
+> Instead, use `watchface_complication_provider_timeinfo_create()` and `watchface_complication_provider_timeinfo_set_timezone_id`.
+
 
 ```cpp
+void _watchface_complication_provider_update_requested_cb(const char *provider_id,
+        const char *req_appid, watchface_complication_type_e type, const bundle *context,
+        bundle *share_data, void *user_data)
 {
-	watchface_complication_remove_updated_cb(complication,
-		_watchface_complication_updated_cb);
-}
-```
+    bool is_valid;
 
-
-If the watch face wants the updated complication data, watch face can request to update the data to the complication provider:
-
-```cpp
-{
-	watchface_complication_send_update_request(complication);
-}
-```
-
-
-## Specifying to Support only Specific Complication Provider
-
-Watch Face can support the specific complication provider by using `allowed_list`.
-In This case, watch face supports complications only in allowed complication list:
-
-```cpp
-{
-	complication_allowed_list_h allowed_list;
-
-	watchface_complication_allowed_list_create(&allowed_list); 
-	watchface_complication_allowed_list_add(allowed_list, "PROVIDER_ID_1", 
-			WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT); 
-	watchface_complication_allowed_list_add(allowed_list, "PROVIDER_ID_2", 
-			WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT); 
-	watchface_complication_allowed_list_apply(complication, allowed_list);
-
-	watchface_complication_allowed_list_destroy(allowed_list);
-}
-```
-
-
-## Watch Face Edit with Editable Feature
-
-The watch face application can provide the changeable features (such as, complication, color, font, and so on) with watch face editable APIs.
-
-The features can be changed by watch face editor application:
-
-![Complication_editor](media/editor_1.png)
-
-
-1. To use the functions and data types for the Watch Face Editable API, include the `<watchface-editable.h>` header file in your application:
-
-    ```cpp
-    #include <watchface-editable.h>
-    ```
-
-2. When the editor is ready to edit, it notifies that it is ready. To receive the notification from the editor, `watchface_editable_edit_ready_cb()` must be added:
-
-    ```cpp
-    void _watchface_editable_edit_ready_cb(watchface_editable_container_h handle,
-    		const char *editor_appid,
-    		void *user_data)
-    {
+    if (type == WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT) {
+        watchface_complication_provider_data_set_short_text(shared_data, "updated short text");
+    } else if (type == WATCHFACE_COMPLICATION_TYPE_TIME) {
+        complication_time_info_h info;
+        watchface_complication_provider_timeinfo_create(&info);
+        watchface_complication_provider_timeinfo_set_timezone_id(info, "Asia/Seoul");
+        watchface_complication_provider_data_set_timeinfo(shared_data, info);
+        watchface_complication_provider_timeinfo_destroy(info);
     }
 
-    {
-    	watchface_editable_add_edit_ready_cb(_watchface_editable_edit_ready_cb, NULL);
-    }
-    ```
- 
-3. Watch Face can create the `complication_candidates_list_h` to identify the editable features to request to editor.
-Watch Face can request to edit the features by using `watchface_editable_request_edit()`.
+    watchface_complication_provider_data_is_valid(shared_data, &is_valid);
+}
+```
 
-4. The watch face editor can draw highlight to give the information about editing.
-To inform the position of editable features, `watchface_editable_highlight_h` must be used.
-The highlight handle can be created by `watchface_editable_highlight_create()` with watch face shape type.
+If the callback is not necessary, it can be removed by using `watchface_complication_provider_remove_update_requested_cb()`:
 
-    The following are shape types:
+```cpp
+{
+    watchface_complication_provider_remove_update_requested_cb("PROVIDER_ID",
+            _watchface_complication_provider_update_requested_cb);
+}
+```
 
-    | Shape types | Description |
-    |-------------|-------------|
-    | `WATCHFACE_EDITABLE_SHAPE_TYPE_CIRCLE` | circle |
-    | `WATCHFACE_EDITABLE_SHAPE_TYPE_RECT` | rectangle |
+## Notifying the Complication Data Update
 
-
-    The position of editable feature can be set by using `watchface_editable_highlight_set_geometry()`.
-    The parameters of this function means the position(x,y) and size(width, height).
+When the complication data is changed, the complication provider application can notify that the complication data is updated.
+If the notification successfully transfers to the complication, the complication data update request will occur:
 
 
-    >**Note**
-    >
-    >`watchface_editable_highlight_h` must be released. It can be released by using `watchface_editable_highlight_destroy()`.
+```cpp
+{
+    watchface_complication_provider_notify_update("PROVIDER_ID");
+}
+```
 
+## Transferring Event Action
 
-5. According to the editable feature, `watchface_editable_add_design_element()` and `watchface_editable_add_complication()` are used to add editable features to the `watchface_editable_container_h`.
-
-
-    ```cpp
-    static void _watchface_editable_edit_ready_cb(watchface_editable_container_h handle,
-    		const char *editor_appid, void *user_data)
-    {
-    	bundle *candidate1;
-    	bundle *candidate2;
-    	complication_h comp;
-    	watchface_editable_highlight_h hi;
-    	complication_candidates_list_h candidates_list = NULL;
-
-    	watchface_editable_candidates_list_create(&candidates_list);
-
-    	candidate1 = bundle_create();
-    	bundle_add_str(candidate1, "TEST_COLOR", "RED");
-    	watchface_editable_candidates_list_add(candidates_list, candidate1);
-    	bundle_free(candidate1);
-
-    	candidate2 = bundle_create();
-    	bundle_add_str(candidate2, "TEST_COLOR", "YELLOW");
-    	watchface_editable_candidates_list_add(candidates_list, candidate2);
-    	bundle_free(candidate2);
-
-    	watchface_editable_highlight_create(&hi, WATCHFACE_EDITABLE_SHAPE_TYPE_CIRCLE);
-    	watchface_editable_highlight_set_geometry(hi, 50, 50, 100, 100);
-    	watchface_editable_add_design_element(handle, COLOR_EDIT, cur_idx, candidates_list, hi, "Color");
-    	watchface_editable_highlight_destroy(hi);
-
-    	watchface_editable_candidates_list_destroy(list_handle);
-
-    	watchface_editable_highlight_create(&hi, WATCHFACE_EDITABLE_SHAPE_TYPE_CIRCLE);
-    	watchface_editable_highlight_set_geometry(hi, 100, 100, 100, 100);
-    	watchface_editable_add_complication(handle, comp_id, comp, hi);
-    	watchface_editable_highlight_destroy(hi);
-
-    	watchface_editable_request_edit(handle, _watchface_editable_update_requested_cb, user_data);
-    }
-    ```
-
-6. If some features are changed from editor, `watchface_editable_update_requested_cb()` is called.
-Watch Face can verify the `watchface_editable_edit_state_e` from the parameter of that callback to get the edit state.
-
-    The following are the edit state:
-
-    | Edit state | Description |
-    |------------|-------------|
-    | `WATCHFACE_EDITABLE_EDIT_STATE_COMPLETE` | edit complete |
-    | `WATCHFACE_EDITABLE_EDIT_STATE_ONGOING` | ongoing edit |
-    | `WATCHFACE_EDITABLE_EDIT_STATE_CANCEL` | edit canceled |
-
-    ```cpp
-    static void _watchface_editable_update_requested_cb(const watchface_editable_h handle,
-    		int selected_idx,
-    		const watchface_editable_edit_state_e state,
-    		void *user_data)
-    {
-    	bundle *data;
-    	int ed_id;
-
-    	watchface_editable_get_current_data(handle, &data);
-    	watchface_editable_get_editable_id(handle, &ed_id);
-
-    }
-    ```
-
-
-## Transferring Touch Event
-
-Complication can provide additional action for touching when the complication is touched.
-To trigger the complication touch action, watch face must transfer the touch event to complication provider when the complication is touched.
+The complication provider can provide additional action that is touching. In this case, complication provider is launched with touch event and information of provider that has touched.
 
 The following are event types:
 
 | Event type | Description |
-|------------|-------------|
+|-------------|-------------|
 | `WATCHFACE_COMPLICATION_EVENT_NONE` | The complication is not tapped. |
 | `WATCHFACE_COMPLICATION_EVENT_TAP` | The complication is tapped. |
-| `WATCHFACE_COMPLICATION_EVENT_DOUBLE_TAP` | The complication is double tapped. |
+| `WATCHFACE_COMPLICATION_EVENT_DOUBLE_TAP` | The compliation is double tapped. |
 
-Watch Face transfers by using `watchface_complication_transfer_event()`:
+The complication provider provides followings:
 
-```cpp
-void _on_complication_clicked(complication_h handle)
-{
-	watchface_complication_transfer_event(handle, WATCHFACE_COMPLICATION_EVENT_TAP);
-}
+1. The complication provider can set the support events in `tizen-manifest.xml` using `<support-event>`.
+
+2. The complication provider can get the transferred event from `app_control_h` that is the parameter of the `app_control` life cycle callback
+by using `watchface_complication_provider_get_event()`.
+And if the touch event is transferred from watchface, the information of the complication is also transferred.
+
+    To get the information, the following functions are used to get the information:
+
+    | API | Information |
+    |-----|-----------|
+    | `watchface_complication_provider_event_get_provider_id()` | Gets the provider id of touched complication. |
+    | `watchface_complication_provider_event_launch_get_complication_type()` | Gets the complication type of touched complication. |
+    | `watchface_complication_provider_event_launch_get_context()` | Gets the context information of touched complication. |
+
+
+    Then complication provider can define the action according to the event and the information of complication that is touched.
+
+
+    ```cpp
+    void app_control(app_control_h app_control, void *data)
+    {
+        watchface_complication_event_type_e event_type;
+        char *provider_id;
+        watchface_complication_type_e type;
+        bundle *context;
+
+        watchface_complication_provider_get_event(app_control, &event_type);
+
+        if (event_type == WATCHFACE_COMPLICATION_EVENT_TAP) {
+            watchface_complication_provider_event_get_provider_id(app_control,
+                    &provider_id);
+            watchface_complication_provider_event_launch_get_complication_type(
+                    app_control, &type);
+            watchface_complication_provider_event_launch_get_context(app_control,
+                    &context);
+
+            /* Do something */
+        }
+    }
+    ```
+
+
+## Providing XML Schema to Create Complication Provider Application
+
+To create the complication provider application, complication provider tags are provided in `tizen-manifest.xml` file.
+It is possible to provide multiple complication provider in a complication provider application:
+
+```xml
+<complication provider-id="mycomplicationid" setup-appid="org.tizen.watch_setting">
+</complication>
+```
+
+It is mandatory to use attribute **provider-id** that is the id of the complication.
+If it is necessary to set the options to provide the specific data (such as, world clock), it can provide the complication setting application.
+In this case, **setup-appid** is the appid of the complication setting application.
+
+If the **trusted** attribute value is `true`, the complication provider do not send data to the complications which have different certificate.
+
+At least one `<support-type>` is necessary to create the complication provider application. Also, it is possible to support multiple types.
+These support type means data type and the complication provider provides data types that are defined in xml. It is not possible to declare duplicated data type for
+one complication provider id.
+
+```xml
+<support-type>
+</support-type>
+```
+
+And, the specific default value is mandatory depending on each support types:
+
+| Support types | Mandatory default values | Optional default values |
+|---------------|--------------------------|---------------------------|
+| `<short-text-type>` | `<default-short-text>` | `<default-title>` |
+|                     |                        | `<default-icon>` |
+|                     |                        | `<default-extra-data>` |
+| `<long-text-type>` | `<default-long-text>` | `<default-title>` |
+|                    |                       | `<default-icon>` |
+|                    |                       | `<default-extra-data>` |
+| `<ranged-value-type>` | `<default-value>` | `<default-title>` |
+|                       | `<default-min>` | `<default-short-text>` |
+|                       | `<default-max>` | `<default-icon>` |
+|                       |                   | `<default-extra-data>` |
+| `<icon-type>` | `<default-icon>` | `<default-extra-data>` |
+| `<image-type>` | `<default-image>` | `<default-extra-data>` |
+| `<time-type>` | `<default-hour>` | `<default-short-text>` |
+|               | `<default-minute>` | `<default-extra-data>` |
+|               | `<default-second>` |         |
+|               | `<default-timezone-id>` |         |
+
+
+> **Note**
+>
+> `<default-hour>`, `<default-hour>`, `<default-hour>` are deprecated since Tizen 5.5.
+> Instead, use `<default-timezone-id>`.
+> `<default-timezone-id>` is the value that declared in TZ database. For example, Asia/Seoul.
+> If the xml contains`<default-timezone-id>`, then `<default-hour>`, `<default-hour>`, `<default-hour>` are not necessary.
+
+
+`<label>` is the name of the complication provider.
+If it is necessary to support the multiple language, **multiple language** tag must be provided:
+
+```xml
+<label>MyComplication</label>
+<label xml:lang="en-us">EngComplication</label>
+```
+
+`<period>` is used to update complication provider data automatically, and in unit seconds:
+
+```xml
+<period>60</period>
+```
+
+In this case, the complication will send data update request to the complication provider every 60 seconds.
+
+`<support-event>` is the type of event that can be supported. It is possible to set **tap**, **double-tap**
+events or both.
+
+And it is possible to add `<privileges>` to restrict getting the complication data.
+In this case, watchface must add the specific privileges to get the complication data in `tizen-manifext.xml`:
+
+
+```xml
+<complication provider-id="mycomplicationid" setup-appid ="org.tizen.watch_setting" trusted="true">
+    <support-type>
+        <short-text-type>
+            <default-short-text>70</default-short-text>
+        </short-text-type>
+        <ranged-value-type>
+            <default-current>70</default-current>
+            <default-min>0</default-min>
+            <default-max>100</default-max>
+        </ranged-value-type>
+        <time-type>
+            <default-timezone-id>Asia/Seoul</default-timezone-id>
+        <time-type>
+    </support-type>
+    <period>60</period>
+    <label>MyComp</label>
+    <label xml:lang="en-us">EngLabel</label>
+    <support-event>
+        <event>tap</event>
+        <event>double-tap</event>
+    </support-event>
+    <privileges>
+        <privilege>http://tizen.org/privilege/alarm.get</privilege>
+        <privilege>http://tizen.org/privilege/alarm.set</privilege>
+    </privileges>
+</complication>
 ```
 
 ## Related Information

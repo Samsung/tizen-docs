@@ -13,7 +13,7 @@ the following privilege to the `tizen-manifest.xml` file:
 
     ```xml
     <privileges>
-    	<privilege>http://tizen.org/privilege/datasharing</privilege>
+        <privilege>http://tizen.org/privilege/datasharing</privilege>
     </privileges>
     ```
 
@@ -29,15 +29,15 @@ When the request occurs to update the complication data, the complication provid
 
 ```cpp
 void _watchface_complication_provider_update_requested_cb(const char *provider_id,
-		const char *req_appid, watchface_complication_type_e type, const bundle *context,
-		bundle *share_data, void *user_data)
+        const char *req_appid, watchface_complication_type_e type, const bundle *context,
+        bundle *share_data, void *user_data)
 {
 }
 
 bool app_create(void *data)
 {
-	watchface_complication_provider_add_update_requested_cb("PROVIDER_ID",
-			_watchface_complication_provider_update_requested_cb, NULL);
+    watchface_complication_provider_add_update_requested_cb("PROVIDER_ID",
+            _watchface_complication_provider_update_requested_cb, NULL);
 }
 ```
 
@@ -49,28 +49,46 @@ The complication data can be set using the following APIs. These APIs can be use
 
 | API | Description |
 |--------|-----------------|
-| `watchface_complication_provider_data_set_title()` | Set the complication title. |
-| `watchface_complication_provider_data_set_short_text()` | Set the short text type data. |
-| `watchface_complication_provider_data_set_long_text()` | Set the long text type data. |
-| `watchface_complication_provider_data_set_image_path()` | Set the image path type data. |
-| `watchface_complication_provider_data_set_ranged_value()` | Set the ranged value type data. |
-| `watchface_complication_provider_data_set_icon_path()` | Set the icon path type data. |
-| `watchface_complication_provider_data_set_timestamp()` | Set the timestamp type data. |
-| `watchface_complication_provider_data_set_extra_data()` | Set the extra data. |
+| `watchface_complication_provider_data_set_title()` | Sets the complication title. |
+| `watchface_complication_provider_data_set_short_text()` | Sets the short text type data. |
+| `watchface_complication_provider_data_set_long_text()` | Sets the long text type data. |
+| `watchface_complication_provider_data_set_image_path()` | Sets the image path type data. |
+| `watchface_complication_provider_data_set_ranged_value()` | Sets the ranged value type data. |
+| `watchface_complication_provider_data_set_icon_path()` | Sets the icon path type data. |
+| `watchface_complication_provider_data_set_timestamp()` | Sets the timestamp type data. |
+| `watchface_complication_provider_data_set_extra_data()` | Sets the extra data. |
+| `watchface_complication_provider_timeinfo_create()` | Creates the time information handle. |
+| `watchface_complication_provider_timeinfo_set_timezone()` | Sets the timezone. For example, UTC+8 |
+| `watchface_complication_provider_timeinfo_set_timezone_id()` | Sets the timezone ID. For example, Asia/Seoul |
+| `watchface_complication_provider_timeinfo_set_timezone_country()` | Sets the timezone country. For example, Korea |
+| `watchface_complication_provider_timeinfo_set_timezone_city()` | Sets the timezone city. For example, Seoul |
+| `watchface_complication_provider_timeinfo_destroy()` | Destroys the time information handle. |
+| `watchface_complication_provider_data_set_timeinfo()` | Sets the time inforamtion data. |
+
+> **Note**
+>
+> `watchface_complication_provider_data_set_timestamp()` is deprecated since Tizen 5.5.
+> Instead, use `watchface_complication_provider_timeinfo_create()` and `watchface_complication_provider_timeinfo_set_timezone_id`
 
 
 ```cpp
 void _watchface_complication_provider_update_requested_cb(const char *provider_id,
-		const char *req_appid, watchface_complication_type_e type, const bundle *context,
-		bundle *share_data, void *user_data)
+        const char *req_appid, watchface_complication_type_e type, const bundle *context,
+        bundle *share_data, void *user_data)
 {
-	bool is_valid;
+    bool is_valid;
 
-	if (type == WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT) {
-		watchface_complication_provider_data_set_short_text(shared_data, "updated short text");
+    if (type == WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT) {
+        watchface_complication_provider_data_set_short_text(shared_data, "updated short text");
+    } else if (type == WATCHFACE_COMPLICATION_TYPE_TIME) {
+        complication_time_info_h info;
+        watchface_complication_provider_timeinfo_create(&info);
+        watchface_complication_provider_timeinfo_set_timezone_id(info, "Asia/Seoul");
+        watchface_complication_provider_data_set_timeinfo(shared_data, info);
+        watchface_complication_provider_timeinfo_destroy(info);
+    }
 
-		watchface_complication_provider_data_is_valid(shared_data, &is_valid);
-	}
+    watchface_complication_provider_data_is_valid(shared_data, &is_valid);
 }
 ```
 
@@ -78,8 +96,8 @@ If the callback is not necessary, it can be removed by using `watchface_complica
 
 ```cpp
 {
-	watchface_complication_provider_remove_update_requested_cb("PROVIDER_ID",
-			_watchface_complication_provider_update_requested_cb);
+    watchface_complication_provider_remove_update_requested_cb("PROVIDER_ID",
+            _watchface_complication_provider_update_requested_cb);
 }
 ```
 
@@ -91,7 +109,7 @@ If the notification successfully transfers to the complication, the complication
 
 ```cpp
 {
-	watchface_complication_provider_notify_update("PROVIDER_ID");
+    watchface_complication_provider_notify_update("PROVIDER_ID");
 }
 ```
 
@@ -195,6 +213,15 @@ And, the specific default value is mandatory depending on each support types:
 | `<time-type>` | `<default-hour>` | `<default-short-text>` |
 |               | `<default-minute>` | `<default-extra-data>` |
 |               | `<default-second>` |         |
+|               | `<default-timezone-id>` |         |
+
+
+> **Note**
+>
+> `<default-hour>`, `<default-minute>`, `<default-second>` are deprecated since Tizen 5.5.
+> Instead, use `<default-timezone-id>`.
+> `<default-timezone-id>` is the value that declared in TZ database. For example, Asia/Seoul.
+> If the xml contains `<default-timezone-id>`, then `<default-hour>`, `<default-minute>`, and `<default-second>` are not necessary.
 
 
 `<label>` is the name of the complication provider.
@@ -222,28 +249,31 @@ In this case, watchface must add the specific privileges to get the complication
 
 ```xml
 <complication provider-id="mycomplicationid" setup-appid ="org.tizen.watch_setting" trusted="true">
-	<support-type>
-		<short-text-type>
-			<default-short-text>70</default-short-text>
-		</short-text-type>
-		<ranged-value-type>
-			<default-current>70</default-current>
-			<default-min>0</default-min>
-			<default-max>100</default-max>
-		</ranged-value-type>
-	</support-type>
-	<period>60</period>
-	<label>MyComp</label>
-	<label xml:lang="en-us">EngLabel</label>
-	<support-event>
-		<event>tap</event>
-		<event>double-tap</event>
-	</support-event>
-	<privileges>
-		<privilege>http://tizen.org/privilege/alarm.get</privilege>
-		<privilege>http://tizen.org/privilege/alarm.set</privilege>
-	</privileges>
-</complication> 
+    <support-type>
+        <short-text-type>
+            <default-short-text>70</default-short-text>
+        </short-text-type>
+        <ranged-value-type>
+            <default-current>70</default-current>
+            <default-min>0</default-min>
+            <default-max>100</default-max>
+        </ranged-value-type>
+        <time-type>
+            <default-timezone-id>Asia/Seoul</default-timezone-id>
+        <time-type>
+    </support-type>
+    <period>60</period>
+    <label>MyComp</label>
+    <label xml:lang="en-us">EngLabel</label>
+    <support-event>
+        <event>tap</event>
+        <event>double-tap</event>
+    </support-event>
+    <privileges>
+        <privilege>http://tizen.org/privilege/alarm.get</privilege>
+        <privilege>http://tizen.org/privilege/alarm.set</privilege>
+    </privileges>
+</complication>
 ```
 
 ## Related Information
