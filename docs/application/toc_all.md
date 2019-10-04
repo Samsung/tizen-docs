@@ -189,6 +189,7 @@
 #### [System Information](/application/dotnet/guides/device/system.md)
 #### [System Settings](/application/dotnet/guides/device/settings.md)
 #### [Sound and Vibration Feedback](/application/dotnet/guides/device/feedback.md)
+#### [Battery Monitor](/application/dotnet/guides/device/battery-monitor.md)
 
 ### Security
 #### [Overview](/application/dotnet/guides/security/overview.md)

@@ -1,24 +1,24 @@
 # Battery Monitor
 
-You can access information related to power consumption by applications or by hardware resource on a battery-powered device for a certain duration of time. The value is returened as a percentage of the total batttery capacity.
+You can access the information related to the power consumption by applications or by hardware resources on a battery-powered device for a certain duration of time. The value is returned as the percentage of the total batttery capacity.
 
-The power consumption for an application is calculated by accumulating, the usage of various individual resource used by the application.
+The power consumption of an application is calculated by accumulating the usage of various individual resources used by the application.
 
-The Battery Monitor provides following provisions to fetch the Battery Usage:
+The Battery Monitor APIs provide following provisions to fetch the battery usage:
 
-- Getting Battery usage information for a particular application-
+- Getting battery usage information of a particular application.
 
-  You can [retrieve information for an application](#appusage_get) by specifing its application id, the [resource](#resource_key) id(s) and the time [duration](#duration_key).
+  You can [retrieve information of an application](#appusage_get) by specifying its application ID, [resource](#resource_key) IDs and the time [duration](#duration_key).
 
-- Getting Battery usage information for a particular resource-
+- Getting battery usage information of a particular resource.
 
-  You can [retrieve information for a resource](#resourceusage_get)(single or multiple) by specifing the [resource](#resource_key) id(s) and the time [duration](#duration_key).
+  You can [retrieve information of a single or muiltiple resources](#resourceusage_get) by specifying its [resource](#resource_key) IDs, and the time [duration](#duration_key).
 
 ## Prerequisites
 
 To enable your application to use the Battery Monitor functionality:
 
-1. To use the functions and data types of the Battery Monitor API (in [wearble](../../api/wearable/latest/group__CAPI__SYSTEM__BATTERY__MONITOR__MODULE.html) applications), include the `<battery_monitor.h>` header file in your application:
+1. To use the functions and data types of the Battery Monitor API (in [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__BATTERY__MONITOR__MODULE.html) applications), include the `<battery_monitor.h>` header file in your application:
 
    ```
    #include <battery_monitor.h>
@@ -26,19 +26,19 @@ To enable your application to use the Battery Monitor functionality:
 
 2. The application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-   ```
+   ```xml
    <privileges>
       <privilege>http://tizen.org/privilege/systemmonitor</privilege>
    </privileges>
    ```
 
 <a name="appusage_get"></a>
-## Getting Battery usage information for a particular application
+## Getting Battery Usage Information of Particular Application
 
-Some Battery Usage information contain combination of Application Id, Resource Id and time duration.
+The battery usage information contains a combination of application ID, resource ID and time duration.
 
-1. Fetching information for an application for a particular resource over certain duration-
-   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, for example:
+1. Fetching information of an application for a particular resource over a certain duration of time.
+   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, as shown in the following code:
 
    ```
    #include <battery_monitor.h>
@@ -77,8 +77,8 @@ Some Battery Usage information contain combination of Application Id, Resource I
    }
    ```
 
-2. Fetching total Battery Usage information of Application Id, combining all the resources over certain duration-
-   The `battery_monitor_duration_type_e` enum can be used to choose a particular duration type, for example:
+2. Fetching total battery usage information of an application ID by combining all the resources over certain a certain duration of time.
+   The `battery_monitor_duration_type_e` enum can be used to choose a particular duration type, see the following code:
 
    ```
    #include <battery_monitor.h>
@@ -108,8 +108,8 @@ Some Battery Usage information contain combination of Application Id, Resource I
 	return;
    }
    ```
-3. Fetching Battery Usage values for all the resources used by an Application Id for a certain duration-
-   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, for example:
+3. Fetching battery usage values for all the resources used by an application ID for a certain duration of time.
+   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, as shown in the following code:
 
    ```
    #include <battery_monitor.h>
@@ -162,12 +162,12 @@ Some Battery Usage information contain combination of Application Id, Resource I
    ```
 
 <a name="resourceusage_get"></a>
-## Getting Battery usage information for a particular resource
+## Getting Battery Usage Information of Particular Resource
 
-Some Battery Usage information contain combination of Resource Id and duration.
+The battery usage information contains combination of the resource ID and the time duration.
 
-1. Fetching Battery Usage values for a particular resource over certain duration of time.
-   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, for example:
+1. Fetching the battery usage information of a particular resource over a certain duration of time.
+   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, as shown in the following code:
 
    ```
    #include <battery_monitor.h>
@@ -201,7 +201,7 @@ Some Battery Usage information contain combination of Resource Id and duration.
 <a name="resource_key"></a>
 ## Resource Keys
 
-The following table lists the available resource keys which are part of `battery_monitor_resource_id_e` enumeration.
+The following table lists the available resource keys, which are part of `battery_monitor_resource_id_e` enumeration:
 
 **Table: Resource Keys**
  | Key                                            | Description                                   |
@@ -217,7 +217,7 @@ The following table lists the available resource keys which are part of `battery
 <a name="duration_key"></a>
 ## Duration Types
 
-The following table lists the available duration type keys which are part of `battery_monitor_duration_type_e` enumeration.
+The following table lists the available duration type keys, which are part of `battery_monitor_duration_type_e` enumeration:
 
 **Table: Duration Type Keys**
  | Key                                            | Description                                          |
@@ -227,4 +227,4 @@ The following table lists the available duration type keys which are part of `ba
 
 ## Related Information
 - Dependencies
-  Tizen 5.5 and Higher for Wearable
+  - Tizen 5.5 and Higher for Wearable
