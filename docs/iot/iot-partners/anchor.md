@@ -30,7 +30,7 @@ You can evaluate, test and use most of the functions for your products with tech
 ![Anchor3baseboardPictureDimension](media/anchor5basePIC1.png)
 
 For more information about **Anchor5**, please click the below.
-- [**Anchor5 Specifications**](https://drive.google.com/open?id=1ljlG2EbQF4rYkY1LdZiYTxZ_5SF_9iTl)
+- [**Anchor5 Specifications**](https://drive.google.com/open?id=10UE1hmsKXYnqTIckH501cz3L8faggXes)
 - [**Github for Anchor5** Boot & Tizen Package and helpful example source codes](https://github.com/dignsys/)
 
 ## Anchor3
