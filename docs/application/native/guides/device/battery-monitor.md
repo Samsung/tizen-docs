@@ -8,7 +8,7 @@ The Battery Monitor APIs provide following provisions to fetch the battery usage
 
 - Getting battery usage information of a particular application.
 
-  You can [retrieve information of an application](#appusage_get) by specifying its application ID, [resource](#resource_key) IDs and the time [duration](#duration_key).
+  You can [retrieve information of an application](#appusage_get) by specifying its application ID, [resource](#resource_key) IDs, and the time [duration](#duration_key).
 
 - Getting battery usage information of a particular resource.
 
@@ -35,7 +35,7 @@ To enable your application to use the Battery Monitor functionality:
 <a name="appusage_get"></a>
 ## Getting Battery Usage Information of Particular Application
 
-The battery usage information contains a combination of application ID, resource ID and time duration.
+The battery usage information contains a combination of application ID, resource ID, and time duration.
 
 1. Fetching information of an application for a particular resource over a certain duration of time.
    The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, as shown in the following code:
