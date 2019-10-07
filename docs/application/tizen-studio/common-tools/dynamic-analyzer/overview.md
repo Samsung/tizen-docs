@@ -1,6 +1,6 @@
 # Monitoring Performance with Dynamic Analyzer
 
-The Dynamic Analyzer is a performance monitoring and analysis tool for your native and Web applications on a Tizen device or the emulator. The main focus of the Dynamic Analyzer is to analyze your application for potential performance issues, such as high usage of CPU, memory, file, or network operations.
+The Dynamic Analyzer is a performance monitoring and analysis tool for your native applications on a Tizen device or the emulator. The main focus of the Dynamic Analyzer is to analyze your application for potential performance issues, such as high usage of CPU, memory, file, or network operations.
 
 The Dynamic Analyzer is designed to analyze performance issues on your application after development, to help you optimize the application. The following figure shows the basic workflow for how the Dynamic Analyzer works with other Tizen tools:
 
