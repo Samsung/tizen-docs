@@ -30,7 +30,7 @@ You can evaluate, test and use most of the functions for your products with tech
 ![Anchor3baseboardPictureDimension](media/anchor5basePIC1.png)
 
 For more information about **Anchor5**, please click the below.
-- [**Anchor5 Specifications**](https://drive.google.com/open?id=1w6ep-lNrKrdAAAmB9vxIX8TSJ2Z50CNn)
+- [**Anchor5 Specifications**](https://drive.google.com/open?id=1ljlG2EbQF4rYkY1LdZiYTxZ_5SF_9iTl)
 - [**Github for Anchor5** Boot & Tizen Package and helpful example source codes](https://github.com/dignsys/)
 
 ## Anchor3
@@ -51,7 +51,7 @@ The Anchor3 System-on-Module has 3 x 60 pin board-to-board connectors and integr
 
 ### Anchor3 Boardkit Overview
 
-**Anchor3 Boardkit** consist of a System-on-Module and a Base Board and Anchor3 Baseboard is connected to the Anchor5 System-on-Module through 3 x 60 pin board-to-board connectors.
+**Anchor3 Boardkit** consist of a System-on-Module and a Base Board and Anchor3 Baseboard is connected to the Anchor3 System-on-Module through 3 x 60 pin board-to-board connectors.
 **Anchor3** Baseboard integrates all of the necessary elements required and optimized for major functionality of embedded equipment with peripheral I/O interface that has a gigabit Ethernet MAC, USB Host and USB OTG connector, LCD interface, Audio DAC with phone jack and a large number of signals on expansion I/O pin headers as well.
 The expansion I/O interface supports various general interface including standard I/O such as I2C, I2S, UART, SPI, PWM, ADC, ... etc., to apply external sensors or peripherals.
 You can evaluate, test and use most of the functions for your products with technical support.
@@ -60,7 +60,7 @@ You can evaluate, test and use most of the functions for your products with tech
 ![Anchor3baseboardPictureDimension](media/anchor3basePICo.png)
 
 For more information about Anchor3, please click the below.
-- [**Anchor3 Specifications**](https://drive.google.com/open?id=17HfQISJLXCbuMLyYugY5X3m318yWDk68)
+- [**Anchor3 Specifications**](https://drive.google.com/open?id=1Lyg82AsNngCCvtgW5kcY1iOB71PmYUcm)
 - [**Github for Anchor3** Boot & Tizen Package and helpful example source codes](https://github.com/dignsys/)
 
 ## Contact Information
