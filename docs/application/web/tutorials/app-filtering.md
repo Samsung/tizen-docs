@@ -169,6 +169,7 @@ application package.
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
 | `http://tizen.org/feature/datasync`      | Specify this key, if the application requires the DataSync feature. | 2.3   |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/fmradio`       | Specify this key, if the application requires an FM radio. | 2.2.1 |
 | `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires any of the Human Activity Monitor features. | 2.3   |
@@ -248,6 +249,7 @@ Tizen 4.0.
 | `http://tizen.org/feature/calendar`      | Specify this key, if the application requires the calendar feature. | 4.0   |
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 2.3   |
 | `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires the [Human Activity Monitor](../api/latest/device_api/wearable/tizen/humanactivitymonitor.html) API.<br>If the key is declared in the `config.xml` file, the application can be installed on the device with any of the Human Activity Monitor features:<br><br> - HRM: `http://tizen.org/feature/sensor.heart_rate_monitor`<br> - PEDOMETER: `http://tizen.org/feature/sensor.pedometer`<br> - WRIST_UP: `http://tizen.org/feature/sensor.wrist_up`<br> - GPS: `http://tizen.org/feature/location.batch` | 2.3   |
@@ -331,6 +333,7 @@ Tizen 4.0.
 
 | Feature key                              | Description                              | Since |
 | ---------------------------------------- | ---------------------------------------- | ----- |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 | `http://tizen.org/feature/tv.audio`      | Specify this key, if the application requires the audio control functionality for using the [TV Audio Control](../api/latest/device_api/tv/tizen/tvaudiocontrol.html) API. | 3.0   |

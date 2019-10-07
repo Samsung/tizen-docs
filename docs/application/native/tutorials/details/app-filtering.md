@@ -165,6 +165,7 @@ package:
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
 | `http://tizen.org/feature/email`         | Specify this key, if the application requires the email feature. | 3.0   |
@@ -342,6 +343,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
 | `http://tizen.org/feature/feedback.vibration` | Specify this key, if the application requires the vibration feedback feature. | 5.0   |
