@@ -93,6 +93,7 @@ The following tables show the available requirements for an application package.
 | `http://tizen.org/feature/camera.front.flash` | Specify this key, if the application requires a front-facing camera with a flash. | 2.2.1 |
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control the display state. | 5.0 |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 2.3   |
 | `http://tizen.org/feature/email`         | Specify this key, if the application requires the email feature. | 4.0   |
