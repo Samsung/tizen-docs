@@ -1,4 +1,3 @@
-
 # Component Manager
 
 Component manager provides information about installed and running components.
@@ -9,7 +8,7 @@ The main features of the `Tizen.Applications.ComponentBased.ComponentManager` cl
 
     For the running components, you can retrieve the component running context and operate on it. You can [manage the component running context](#manage_context) with the `Tizen.Applications.ComponentBased.ComponentManager` class.
 
--   Getting component information
+-   Managing component information
 
     For components that are installed but not necessarily running, you can retrieve information with the [Tizen.Applications.ComponentBased.ComponentInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentInfo.html) class.
 
@@ -19,13 +18,7 @@ Iterator methods are used to travel through a list of components. The `GetRunnin
 
 To enable your application to use the component management functionality:
 
-1.  To use the methods and properties of the [Tizen.Applications.ComponentBased.ComponentManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ApplicationManager.html), [Tizen.Applications.ComponentBased.ComponentRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentRunningContext.html), and [Tizen.Applications.ComponentBased.ComponentInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentInfo.html) classes, include the [Tizen.Applications.ComponentBased](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.html) namespace in your application:
-
-    ```
-    using Tizen.Applications.ComponentBased;
-    ```
-
-2.  To use classes and methods, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use classes and methods, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -34,12 +27,18 @@ To enable your application to use the component management functionality:
     </privileges>
     ```
 
+2.  To use the methods and properties of the [Tizen.Applications.ComponentBased.ComponentManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentManager.html), [Tizen.Applications.ComponentBased.ComponentRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentRunningContext.html), and [Tizen.Applications.ComponentBased.ComponentInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentInfo.html) classes, include the [Tizen.Applications.ComponentBased](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.html) namespace in your application:
+
+    ```
+    using Tizen.Applications.ComponentBased;
+    ```
+
 <a name="manage_context"></a>
-## Managing Component Running Context
+## Managing Running Component Context
 
 To get the component running context and its details, and to operate on the context:
 
-1.  Get the context of the currently running component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentRunningContext.html) class, with the ID of the component from which the context is being obtained as a parameter.
+1.  Get the context of the currently running component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentRunningContext.html) class, with the ID of the context obtained component as a parameter.
 
     To get a component's context, the component must be running.
 
@@ -56,7 +55,7 @@ To get the component running context and its details, and to operate on the cont
         string instanceId = compoRunningContext.InstanceId;
         ```
 
-    -   Verify the state of the component:
+    -   Check the state of the component:
 
         ```
         if (compoRunningContext.State == ComponentRunningContext.ComponentState.Initialized)
@@ -82,11 +81,11 @@ To get the component running context and its details, and to operate on the cont
         ```
 
 <a name="filter"></a>
-## Getting Component Information
+## Managing Component Information
 
 To get the installed information and its details, and to operate on the information:
 
-1.  Get the information of the currently-installed component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentInfo.html) class, with the ID of the component from which the information is being obtained as a parameter.
+1.  Get the information of the currently-installed component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentInfo](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentInfo.html) class, with the ID of information obtained component as a parameter.
 
     To get a component's information, the component must be installed.
 
@@ -101,7 +100,7 @@ To get the installed information and its details, and to operate on the informat
         string componentId = compoInfo.ComponentId;
         string applicationId = compoInfo.ApplicationId;
         ```
-    -   Verify: the type of the component:
+    -   Check the type of the component:
 
         ```
         if (compoInfo.ComponentType == ComponentType.Frame)
@@ -139,4 +138,4 @@ To get the installed information and its details, and to operate on the informat
 
 ## Related Information
   * Dependencies
-    -   Tizen 5.5
+    -   Tizen 5.5 and Higher
