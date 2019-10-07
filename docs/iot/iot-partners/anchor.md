@@ -2,6 +2,37 @@
 
 > The Fastest Way to design your IoT Applications
 
+## Anchor5
+
+**Anchor5** is a system-on-module(SoM) built in a 32-bit RISC application processor that is based on an quad-core ARM® quad Cortex®-A9 cores architecture with max 1.4GHz speed, containing DRAM provided 6.4 GB/s memory bandwidth with flash memory, camera and display interfaces displayed Full HD, a full complement of digital I/O and analog inputs, and world class wireless connectivity with IEEE802.11a/b/g/n/ac and Bluetooth(Classic+BLE) inside a ultra compact package that is just 38x45mm.
+The scalable processing power of the Anchor5 makes it ideally suited for video/image processing tasks and provides the best 3D graphics performance with wide range of APIs, such as OpenGL ES1.1, 2.0.
+The native dual display supports Full HD resolution with Superior 3D performance of  LCD display and progressive Full HDTV throughout HDMI, simultaneously.
+The hardware based Secure Element works with the ARM® TrustZone® and Trusted Execution Environment (TEE) to provide enhanced end-to-end security.
+with excellent performance and most popular connectivity, like WiFi and Bluetooth, Anchor5 is the perfect choice for home automation and industrial equipment, and even IoT devices, while providing effective price / performance capability.
+
+**Figure** | Anchor5 System-on-Module Block Diagram
+![Anchor3BlockDiagram](media/anchor5somDiagram.png)
+
+### Anchor5 System-on-Module Overview
+
+The Anchor5 System-on-Module has 3 x 60 pin board-to-board connectors and integrates the AP, Memory, eMMC, Power Management IC (PMIC) and WiFi / Bluetooth on the module.
+
+**Figure** | Anchor5 System-on-Module Picture and Dimension
+![Anchor3somPictureDimension](media/anchor5somPIC.png)
+ 
+ ### Anchor5 Boardkit Overview
+ 
+ **Anchor5 Boardkit** consist of a System-on-Module and a Base Board and Anchor5 Baseboard is connected to the Anchor5 System-on-Module through 3 x 60 pin board-to-board connectors.
+This Board Kit provides all of needed interfaces required for popular functionality with peripheral I/O interface that has a gigabit Ethernet MAC, USB Host and USB OTG connector, LCD interface, Audio DAC with phone jack and expansion I/O interface including I2C, I2S, UART, SPI, PWM, ADC, … etc.
+You can evaluate, test and use most of the functions for your products with technical support.
+
+**Figure** | Anchor5 Boardkit Picture and Dimension
+![Anchor3baseboardPictureDimension](media/anchor5basePIC1.png)
+
+For more information about **Anchor5**, please click the below.
+- [**Anchor5 Specifications**](https://drive.google.com/open?id=1w6ep-lNrKrdAAAmB9vxIX8TSJ2Z50CNn)
+- [**Github for Anchor5** Boot & Tizen Package and helpful example source codes](https://github.com/dignsys/)
+
 ## Anchor3
 
 **Anchor3** is a embedded system that consist of a System-on-Module and a Base Board and is optimized for the major functionality of embedded equipment.
@@ -15,29 +46,30 @@ With the combination of Wi-Fi, Bluetooth, Anchor3 is the perfect choice for home
 We provide Test Kit Package that can evaluate and test most of the functions with technical support.
 
 **Figure** | Anchor3 System-on-Module Block Diagram
-![Anchor3BlockDiagram](media/anchor3SoM-Block.jpg)
+![Anchor3BlockDiagram](media/anchor3somDiagramO.png)
 
 ### Anchor3 System-on-Module Overview
 
 The Anchor3 System-on-Module has 3 x 60 pin board-to-board connectors and integrates the AP, Memory, eMMC, Power Management IC (PMIC) and WiFi / Bluetooth on the module.
 
 **Figure** | Anchor3 System-on-Module Picture and Dimension
-![Anchor3somPictureDimension](media/anchor3SoM-Dimen.jpg)
+![Anchor3somPictureDimension](media/anchor3somPICo.png)
 
 ### Anchor3 Baseboard Overview
 
 The Anchor3 Baseboard has 3 x 60 pin board-to-board connectors that connect to the Anchor3 System-on-Module and provides the following interfaces such as audio, network, USB and a large number of signals on the various pin headers.
 
 **Figure** | Anchor3 Baseboard Picture and Dimension
-![Anchor3baseboardPictureDimension](media/anchor3base-Dimen.jpg)
+![Anchor3baseboardPictureDimension](media/anchor3basePICo.png)
 
-For more information about Anchor Series, please click the below.
-- [Anchor3 Specifications](https://drive.google.com/open?id=13GqlZtnRxxGUqiYBCiqjyx1hd_yJ4tIr)
-- [Github for Anchor3 Boot & Tizen Package and helpful example source codes](https://github.com/dignsys/)
-- [Customer Service & Technical Supports](https://www.dignsys.com/)
+For more information about Anchor3, please click the below.
+- [**Anchor3 Specifications**](https://drive.google.com/open?id=17HfQISJLXCbuMLyYugY5X3m318yWDk68)
+- [**Github for Anchor3** Boot & Tizen Package and helpful example source codes](https://github.com/dignsys/)
 
-If you have any questions, please send us by [email](hbahn@dignsys.com) 
+## Contact Information
 
-## Anchor5
+For more information about Anchor Series, please visit the below.
+- [Customer Service & Technical Supports For **Anchor Series**](https://www.dignsys.com/)
+- [**ww.dignsys.com**](https://www.dignsys.com/)
 
-It will be launched and updated soon.
+or **If you have any questions, please send us by** [**email**](hbahn@dignsys.com)
