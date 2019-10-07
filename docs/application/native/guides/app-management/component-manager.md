@@ -68,7 +68,7 @@ To get the running component context and its details, and to operate on the cont
 
      When `app_id` is no longer needed, release it using `free()`.
 
-   - Verify whether the component with the given component context is terminated:
+   - Check whether the component with the given component context is terminated:
 
      ```
      bool terminated = false;
@@ -104,7 +104,7 @@ To get the running component context and its details, and to operate on the cont
          /* Component is invisible */
      ```
 
-   - Verify whether the component is running as a sub component of the group:
+   - Check whether the component is running as a sub component of the group:
 
      ```
      bool is_subcomponent = false;
@@ -206,7 +206,7 @@ To get the installed information and its details, and to operate on the informat
      ```
      When `icon` is no longer needed, release it using `free()`.
 
-   - Verify whether the component should be managed by task-manager or not:
+   - Check whether the component should be managed by task-manager or not:
 
      ```
      bool managed = false;
