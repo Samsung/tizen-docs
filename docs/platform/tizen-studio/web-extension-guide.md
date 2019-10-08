@@ -7,7 +7,7 @@ The Tizen IDE is based on [Eclipse](http://www.eclipse.org/) and can be extended
 > The Tizen IDE has modified some of the Eclipse icon images to provide a Tizen Studio identity, and some of the Eclipse platform upstream sources to customize unused menu items and settings, so some extension points do not work properly.
 
 Tizen IDE extensions are developed in essentially the same way as Eclipse plugins. If you are new to Eclipse plugin development or need more information, see:
-- [Eclipse Official Help](https://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Ffirstplugin.htm)
+- [Eclipse Official Help](https://help.eclipse.org/)
 - [Eclipse expert Lars Vogella's blog](http://www.vogella.com/tutorials/EclipsePlugin/article.html)
 
 To develop the Tizen IDE:
