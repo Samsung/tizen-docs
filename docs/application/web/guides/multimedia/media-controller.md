@@ -2,8 +2,6 @@
 
 You can have your client application communicate with a media server.
 
-This feature is supported in mobile and wearable applications only.
-
 To manage the media using the Media Controller API, you have to develop two applications:
 
 - Client that sends requests to the server in order to change, for example, the playback state and position modes.
@@ -57,9 +55,9 @@ The main features of the Media Controller API include:
 
 - Managing abilities of the media controller server
 
-  You can [set the abilities](#setting-media-controller-server-abilities) of the media controller server by using the [MediaControllerAbilities](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerAbilities) interface.
+  You can [set the abilities](#setting-media-controller-server-abilities) of the media controller server by using the `MediaControllerAbilities` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerAbilities), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerAbilities), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerAbilities) applications).
 
-  You can use the [MediaControllerAbilitiesInfo](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerAbilitiesInfo) interface to check which features are supported by the server. Information about current status of the media controller server abilities can be gathered by `getLatestServerInfo()` method.
+  You can use the `MediaControllerAbilitiesInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerAbilitiesInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerAbilitiesInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerAbilitiesInfo) applications) to check which features are supported by the server. Information about current status of the media controller server abilities can be gathered by `getLatestServerInfo()` method.
 
 - Setting features of the media controller server
 
@@ -68,7 +66,7 @@ The main features of the Media Controller API include:
 
 ## Prerequisites
 
-To use the Media Controller API (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the Media Controller API (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html) applications), the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/mediacontroller.client"/>
@@ -91,7 +89,7 @@ To manage the media controller features in your application, you must learn to s
    var mcClient = tizen.mediaController.getClient();
    ```
 
-3. Define a success (and optionally, an error) event handler by implementing the `MediaControllerServerInfoArraySuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfoArraySuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfoArraySuccessCallback) applications):
+3. Define a success (and optionally, an error) event handler by implementing the `MediaControllerServerInfoArraySuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfoArraySuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfoArraySuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerServerInfoArraySuccessCallback) applications):
 
    ```javascript
    var mcServerInfo;
@@ -108,7 +106,7 @@ To manage the media controller features in your application, you must learn to s
    }
    ```
 
-4. To search for all activated media controller servers, use the `findServers()` method of the `MediaControllerClient` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerClient) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerClient) applications):
+4. To search for all activated media controller servers, use the `findServers()` method of the `MediaControllerClient` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerClient), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerClient), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerClient) applications):
 
    ```javascript
    mcClient.findServers(findSuccessCallback, findErrorCallback);
@@ -118,7 +116,7 @@ To manage the media controller features in your application, you must learn to s
 
 To manage the media controller features in your application, you must learn to handle requests from the client to the server:
 
-1. Create a `MediaControllerChangeRequestPlaybackInfoCallback` object (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback) applications) to define listeners for getting the requests from a client.
+1. Create a `MediaControllerChangeRequestPlaybackInfoCallback` object (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback) applications) to define listeners for getting the requests from a client.
   Each listener must invoke the appropriate function to perform the related update on the server and send an appropriate notification to the client. For example, the `onplaybackstaterequest` listener must use the `updatePlaybackState()` method to update the playback state.
 
    ```javascript
@@ -165,7 +163,7 @@ To manage the media controller features in your application, you must learn to h
    }
    ```
 
-4. You can send a request from the client using the `sendPlaybackState()`, `sendPlaybackPosition()`, `sendShuffleMode()`, or `sendRepeatMode()` method of the `MediaControllerServerInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
+4. You can send a request from the client using the `sendPlaybackState()`, `sendPlaybackPosition()`, `sendShuffleMode()`, or `sendRepeatMode()` method of the `MediaControllerServerInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
    In the following example, send a request for the changing the playback state to paused using the `sendPlaybackState()` method:
 
    ```javascript
@@ -203,7 +201,7 @@ To manage the media controller features in your application, you must learn to r
    var watcherId;
    ```
 
-2. Define the event handlers for different notifications by implementing the `MediaControllerPlaybackInfoChangeCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback) applications):
+2. Define the event handlers for different notifications by implementing the `MediaControllerPlaybackInfoChangeCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback) applications):
 
    ```javascript
    var playbackListener = {
@@ -251,7 +249,7 @@ To manage the media controller features in your application, you must learn to s
       });
       ```
 
-   2. Define a success (and optionally, an error) callback implementing the `MediaControllerSendCommandSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback) applications):
+   2. Define a success (and optionally, an error) callback implementing the `MediaControllerSendCommandSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerSendCommandSuccessCallback) applications):
 
       ```javascript
       function sendCommandSuccessCallback(data, code) {
@@ -273,7 +271,7 @@ To manage the media controller features in your application, you must learn to s
 
 2. On the server side:
 
-   1. Create the `MediaControllerReceiveCommandCallback` object (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerReceiveCommandCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerReceiveCommandCallback) applications) to define a listener for receiving custom commands from a client:
+   1. Create the `MediaControllerReceiveCommandCallback` object (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerReceiveCommandCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerReceiveCommandCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerReceiveCommandCallback) applications) to define a listener for receiving custom commands from a client:
 
       ```javascript
       var commandReceiveListener = function(client, command, data) {
@@ -500,13 +498,13 @@ To manage the media controller playlists in your server application, you must le
 
 To manage the media controller playlist in your application, you must handle requests from the client to the server:
 
-1. Send a request from the client using the `sendPlaybackItem()` method of the `MediaControllerServerInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
+1. Send a request from the client using the `sendPlaybackItem()` method of the `MediaControllerServerInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
 
    ```javascript
    mcServerInfo.sendPlaybackItem("testPlaylistName", "index1", "PLAY", 0);;
    ```
 
-2. Define the event handlers for different notifications by implementing the `MediaControllerPlaylistUpdatedCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback) applications):
+2. Define the event handlers for different notifications by implementing the `MediaControllerPlaylistUpdatedCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback) applications):
 
    ```javascript
    var listener = {
@@ -537,7 +535,7 @@ Various abilities can be set to give the information to the clients about the su
 
 1. Media controller simple abilities
 
-    Each ability is described by a single [MediaControllerAbilitySupport](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerAbilitySupport) value and is not a part of a complex ability structure:
+    Each ability is described by a single value of `MediaControllerAbilitySupport` (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerAbilitySupport) , [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerAbilitySupport), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerAbilitySupport) applications)  and is not a part of a complex ability structure:
 
     - PLAYBACK_POSITION: Changing playback position.
     - SHUFFLE: Changing shuffle mode.
@@ -596,27 +594,26 @@ You can monitor changes of server abilities using the `addAbilityChangeListener`
 /* Client-side code */
 var mcClient = tizen.mediacontroller.getClient();
 
-var listener =
-{
-  onplaybackabilitychanged: function(server, ability)
-  {
-    console.log("playback ability changed, server name: " + server.name + ", abilities: ");
-    console.log(JSON.stringify(ability));
-  },
-  ondisplayrotationabilitychanged: function(server, ability)
-  {
-    console.log("display rotation ability changed, server name: " + server.name + ", ability: ");
-    console.log(JSON.stringify(ability));
-  },
-  ondisplaymodeabilitychanged: function(server, ability)
-  {
-    console.log("displayMode ability changed, server name: " + server.name + ", abilities: ");
-    console.log(JSON.stringify(ability));
-  },
-  onsimpleabilitychanged: function(server, type, ability)
-  {
-    console.log(type + " ability changed, server name: " + server.name + ", ability: " + ability);
-  }
+var listener = {
+    onplaybackabilitychanged: function (server, ability) {
+        console.log("playback ability changed, server name: " + server.name +
+            ", abilities: ");
+        console.log(JSON.stringify(ability));
+    },
+    ondisplayrotationabilitychanged: function (server, ability) {
+        console.log("display rotation ability changed, server name: " +
+            server.name + ", ability: ");
+        console.log(JSON.stringify(ability));
+    },
+    ondisplaymodeabilitychanged: function (server, ability) {
+        console.log("displayMode ability changed, server name: " + server.name +
+            ", abilities: ");
+        console.log(JSON.stringify(ability));
+    },
+    onsimpleabilitychanged: function (server, type, ability) {
+        console.log(type + " ability changed, server name: " + server.name +
+            ", ability: " + ability);
+    }
 };
 
 var watchId = mcClient.addAbilityChangeListener(listener);
@@ -659,10 +656,12 @@ var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
 /* Registers to be notified when display rotation changes. */
-watcherId = mcServerInfo.displayRotation.addDisplayRotationChangeListener(function(rotation)
-{
-  console.log(mcServerInfo.name + " server display rotation changed to " + rotation);
-});
+watcherId =
+    mcServerInfo.displayRotation.addDisplayRotationChangeListener(function(
+        rotation) {
+        console.log(mcServerInfo.name + " server display rotation changed to " +
+                    rotation);
+    });
 
 /* Cancels the watch operation. */
 mcServerInfo.displayRotation.removeDisplayRotationChangeListener(watcherId);
@@ -675,29 +674,28 @@ var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 
 var rotation = "ROTATION_180";
-mcServerInfo.displayRotation.sendRequest(rotation, function(data, code)
-{
-  console.log("Server replied with return data: " + JSON.stringify(data) + " and code: " + code);
+mcServerInfo.displayRotation.sendRequest(rotation, function(data, code) {
+    console.log("Server replied with return data: " + JSON.stringify(data) + " and code: " + code);
 });
 ```
 
 Server can reply to the client requests by the `RequestReply` object:
 
 ```javascript
-var watcherId = 0;  /* Watcher identifier. */
+var watcherId = 0; /* Watcher identifier. */
 var mcServer = tizen.mediacontroller.createServer();
 
-var changeListener = function(clientName, rotation)
-{
-  console.log("Display rotation change requested to: " + rotation + " by " + clientName);
-  var result = false;
-  /* do some action here and return according to the result */
-  if (!result)
-  {
+var changeListener = function(clientName, rotation) {
+    console.log("Display rotation change requested to: " + rotation + " by " +
+                clientName);
+    var result = false;
+    /* do some action here and return according to the result */
+    if (!result) {
+        return new tizen.mediacontroller.RequestReply(
+            new tizen.Bundle({"message" : "Error - Not allowed"}), 13);
+    }
     return new tizen.mediacontroller.RequestReply(
-        new tizen.Bundle({"message": "Error - Not allowed"}), 13);
-  }
-  return new tizen.mediacontroller.RequestReply(new tizen.Bundle({"message": "Success"}), 0);
+        new tizen.Bundle({"message" : "Success"}), 0);
 };
 
 /* Registers to receive display rotation change requests from clients. */
