@@ -8,21 +8,22 @@
 The scalable processing power of the Anchor5 makes it ideally suited for video/image processing tasks and provides the best 3D graphics performance with wide range of APIs, such as OpenGL ES1.1, 2.0.
 The native dual display supports Full HD resolution with Superior 3D performance of  LCD display and progressive Full HDTV throughout HDMI, simultaneously.
 The hardware based Secure Element works with the ARM® TrustZone® and Trusted Execution Environment (TEE) to provide enhanced end-to-end security.
-with excellent performance and most popular connectivity, like WiFi and Bluetooth, Anchor5 is the perfect choice for home automation and industrial equipment, and even IoT devices, while providing effective price / performance capability.
+
+With excellent performance and most popular connectivity like WiFi and Bluetooth, Anchor5 is the perfect choice for home automation and industrial equipment, and even IoT devices, while providing effective price / performance capability.
 
 **Figure** | Anchor5 System-on-Module Block Diagram
 ![Anchor3BlockDiagram](media/anchor5somDiagram.png)
 
 ### Anchor5 System-on-Module Overview
 
-The Anchor5 System-on-Module has 3 x 60 pin board-to-board connectors and integrates the AP, Memory, eMMC, Power Management IC (PMIC) and WiFi / Bluetooth on the module.
+The Anchor5 System-on-Module has 2 x 90 pin board-to-board connectors and integrates the Application Processor, Memory, eMMC, Power Management IC (PMIC) and WiFi / Bluetooth on the module.
 
 **Figure** | Anchor5 System-on-Module Picture and Dimension
 ![Anchor3somPictureDimension](media/anchor5somPIC.png)
  
 ### Anchor5 Boardkit Overview
  
-**Anchor5 Boardkit** consist of a System-on-Module and a Base Board and Anchor5 Baseboard is connected to the Anchor5 System-on-Module through 3 x 60 pin board-to-board connectors.
+**Anchor5 Boardkit** consists of a System-on-Module and a Base Board and Anchor5 Baseboard is connected to the Anchor5 System-on-Module through 2 x 90 pin board-to-board connectors.
 This Board Kit provides all of needed interfaces required for popular functionality with peripheral I/O interface that has a gigabit Ethernet MAC, USB Host and USB OTG connector, LCD interface, Audio DAC with phone jack and expansion I/O interface including I2C, I2S, UART, SPI, PWM, ADC, … etc.
 You can evaluate, test and use most of the functions for your products with technical support.
 
