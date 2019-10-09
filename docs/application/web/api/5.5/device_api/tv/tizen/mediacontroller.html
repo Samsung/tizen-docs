@@ -104,55 +104,57 @@ For more information on the Media Controller features, see <a href="https://deve
 </li>
 <li>2.21. <a href="#MediaControllerDisplayRotation">MediaControllerDisplayRotation</a>
 </li>
-<li>2.22. <a href="#MediaControllerDisplayRotationInfo">MediaControllerDisplayRotationInfo</a>
+<li>2.22. <a href="#MediaControllerClientInfo">MediaControllerClientInfo</a>
 </li>
-<li>2.23. <a href="#MediaControllerMetadata">MediaControllerMetadata</a>
+<li>2.23. <a href="#MediaControllerDisplayRotationInfo">MediaControllerDisplayRotationInfo</a>
 </li>
-<li>2.24. <a href="#MediaControllerPlaylistItem">MediaControllerPlaylistItem</a>
+<li>2.24. <a href="#MediaControllerMetadata">MediaControllerMetadata</a>
 </li>
-<li>2.25. <a href="#MediaControllerMetadataInit">MediaControllerMetadataInit</a>
+<li>2.25. <a href="#MediaControllerPlaylistItem">MediaControllerPlaylistItem</a>
 </li>
-<li>2.26. <a href="#MediaControllerPlaylist">MediaControllerPlaylist</a>
+<li>2.26. <a href="#MediaControllerMetadataInit">MediaControllerMetadataInit</a>
 </li>
-<li>2.27. <a href="#SearchFilter">SearchFilter</a>
+<li>2.27. <a href="#MediaControllerPlaylist">MediaControllerPlaylist</a>
 </li>
-<li>2.28. <a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a>
+<li>2.28. <a href="#SearchFilter">SearchFilter</a>
 </li>
-<li>2.29. <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a>
+<li>2.29. <a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a>
 </li>
-<li>2.30. <a href="#RequestReply">RequestReply</a>
+<li>2.30. <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a>
 </li>
-<li>2.31. <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a>
+<li>2.31. <a href="#RequestReply">RequestReply</a>
 </li>
-<li>2.32. <a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a>
+<li>2.32. <a href="#MediaControllerSearchRequestReplyCallback">MediaControllerSearchRequestReplyCallback</a>
 </li>
-<li>2.33. <a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a>
+<li>2.33. <a href="#MediaControllerSearchRequestCallback">MediaControllerSearchRequestCallback</a>
 </li>
-<li>2.34. <a href="#MediaControllerEnabledChangeRequestCallback">MediaControllerEnabledChangeRequestCallback</a>
+<li>2.34. <a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a>
 </li>
-<li>2.35. <a href="#MediaControllerEnabledChangeCallback">MediaControllerEnabledChangeCallback</a>
+<li>2.35. <a href="#MediaControllerEnabledChangeRequestCallback">MediaControllerEnabledChangeRequestCallback</a>
 </li>
-<li>2.36. <a href="#MediaControllerDisplayModeChangeRequestCallback">MediaControllerDisplayModeChangeRequestCallback</a>
+<li>2.36. <a href="#MediaControllerEnabledChangeCallback">MediaControllerEnabledChangeCallback</a>
 </li>
-<li>2.37. <a href="#MediaControllerDisplayModeChangeCallback">MediaControllerDisplayModeChangeCallback</a>
+<li>2.37. <a href="#MediaControllerDisplayModeChangeRequestCallback">MediaControllerDisplayModeChangeRequestCallback</a>
 </li>
-<li>2.38. <a href="#MediaControllerDisplayRotationChangeRequestCallback">MediaControllerDisplayRotationChangeRequestCallback</a>
+<li>2.38. <a href="#MediaControllerDisplayModeChangeCallback">MediaControllerDisplayModeChangeCallback</a>
 </li>
-<li>2.39. <a href="#MediaControllerDisplayRotationChangeCallback">MediaControllerDisplayRotationChangeCallback</a>
+<li>2.39. <a href="#MediaControllerDisplayRotationChangeRequestCallback">MediaControllerDisplayRotationChangeRequestCallback</a>
 </li>
-<li>2.40. <a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a>
+<li>2.40. <a href="#MediaControllerDisplayRotationChangeCallback">MediaControllerDisplayRotationChangeCallback</a>
 </li>
-<li>2.41. <a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a>
+<li>2.41. <a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a>
 </li>
-<li>2.42. <a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a>
+<li>2.42. <a href="#MediaControllerPlaybackInfoChangeCallback">MediaControllerPlaybackInfoChangeCallback</a>
 </li>
-<li>2.43. <a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a>
+<li>2.43. <a href="#MediaControllerChangeRequestPlaybackInfoCallback">MediaControllerChangeRequestPlaybackInfoCallback</a>
 </li>
-<li>2.44. <a href="#MediaControllerPlaylistUpdatedCallback">MediaControllerPlaylistUpdatedCallback</a>
+<li>2.44. <a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a>
 </li>
-<li>2.45. <a href="#MediaControllerGetItemsSuccessCallback">MediaControllerGetItemsSuccessCallback</a>
+<li>2.45. <a href="#MediaControllerPlaylistUpdatedCallback">MediaControllerPlaylistUpdatedCallback</a>
 </li>
-<li>2.46. <a href="#MediaControllerAbilityChangeCallback">MediaControllerAbilityChangeCallback</a>
+<li>2.46. <a href="#MediaControllerGetItemsSuccessCallback">MediaControllerGetItemsSuccessCallback</a>
+</li>
+<li>2.47. <a href="#MediaControllerAbilityChangeCallback">MediaControllerAbilityChangeCallback</a>
 </li>
 </ul>
 </li>
@@ -183,6 +185,8 @@ For more information on the Media Controller features, see <a href="https://deve
 <tr>
 <td><a href="#MediaControllerServer">MediaControllerServer</a></td>
 <td>
+<div>
+<a href="#MediaControllerClientInfo">MediaControllerClientInfo</a>[] <a href="#MediaControllerServer::getAllClientsInfo">getAllClientsInfo</a> ()</div>
 <div>void <a href="#MediaControllerServer::updatePlaybackState">updatePlaybackState</a> (<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state)</div>
 <div>void <a href="#MediaControllerServer::updateIconURI">updateIconURI</a> (DOMString? iconURI)</div>
 <div>void <a href="#MediaControllerServer::updatePlaybackPosition">updatePlaybackPosition</a> (unsigned long long position)</div>
@@ -214,6 +218,8 @@ For more information on the Media Controller features, see <a href="https://deve
 <div>long <a href="#MediaControllerClient::addAbilityChangeListener">addAbilityChangeListener</a> (<a href="#MediaControllerAbilityChangeCallback">MediaControllerAbilityChangeCallback</a> listener)</div>
 <div>void <a href="#MediaControllerClient::removeAbilityChangeListener">removeAbilityChangeListener</a> (long watchId)</div>
 <div>void <a href="#MediaControllerClient::findSubscribedServers">findSubscribedServers</a> (<a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#MediaControllerClient::setCustomEventListener">setCustomEventListener</a> (<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener)</div>
+<div>void <a href="#MediaControllerClient::unsetCustomEventListener">unsetCustomEventListener</a> ()</div>
 </td>
 </tr>
 <tr>
@@ -327,6 +333,10 @@ For more information on the Media Controller features, see <a href="https://deve
 </td>
 </tr>
 <tr>
+<td><a href="#MediaControllerClientInfo">MediaControllerClientInfo</a></td>
+<td><div>void <a href="#MediaControllerClientInfo::sendEvent">sendEvent</a> (DOMString eventName, <a href="tizen.html#Bundle">Bundle</a>? data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback)</div></td>
+</tr>
+<tr>
 <td><a href="#MediaControllerDisplayRotationInfo">MediaControllerDisplayRotationInfo</a></td>
 <td>
 <div>void <a href="#MediaControllerDisplayRotationInfo::sendRequest">sendRequest</a> (<a href="#MediaControllerDisplayRotationType">MediaControllerDisplayRotationType</a> displayRotation, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> replyCallback)</div>
@@ -381,7 +391,7 @@ For more information on the Media Controller features, see <a href="https://deve
 <tr>
 <td><a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a></td>
 <td><div>
-<a href="#RequestReply">RequestReply</a>? <a href="#MediaControllerReceiveCommandCallback::onsuccess">onsuccess</a> (<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data)</div></td>
+<a href="#RequestReply">RequestReply</a>? <a href="#MediaControllerReceiveCommandCallback::onsuccess">onsuccess</a> (<a href="application.html#ApplicationId">ApplicationId</a> senderAppName, DOMString command, object data)</div></td>
 </tr>
 <tr>
 <td><a href="#MediaControllerEnabledChangeRequestCallback">MediaControllerEnabledChangeRequestCallback</a></td>
@@ -858,6 +868,7 @@ catch (err)
     readonly attribute <a href="#MediaControllerMode360">MediaControllerMode360</a> mode360;
     readonly attribute <a href="#MediaControllerDisplayMode">MediaControllerDisplayMode</a> displayMode;
     readonly attribute <a href="#MediaControllerDisplayRotation">MediaControllerDisplayRotation</a> displayRotation;
+    <a href="#MediaControllerClientInfo">MediaControllerClientInfo</a>[] getAllClientsInfo() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateIconURI(DOMString? iconURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -965,6 +976,35 @@ and be controlled by other application(client) remotely.
 <div class="methods">
 <h4>Methods</h4>
 <dl>
+<dt class="method" id="MediaControllerServer::getAllClientsInfo">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::getAllClientsInfo"></a><code><b><span class="methodName">getAllClientsInfo</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Returns all existing clients info.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#MediaControllerClientInfo">MediaControllerClientInfo</a>[] getAllClientsInfo();</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<p><span class="remark">Remark: </span>
+ Code example available at <a href="#MediaControllerClientInfo::sendEvent">sendEvent()</a> method documentation.
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">MediaControllerClientInfo[]:</span>
+ All existing clients info.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if any platform error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+</dd>
 <dt class="method" id="MediaControllerServer::updatePlaybackState">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updatePlaybackState"></a><code><b><span class="methodName">updatePlaybackState</span></b></code>
 </dt>
@@ -1352,7 +1392,8 @@ console.log("Current metadata is: " + JSON.stringify(mcServer.playbackInfo.metad
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>Current metadata is: {"title":"","artist":"Artist Name","album":"","author":"","genre":"",
-"duration":"","date":"","copyright":"","description":"","trackNum":"","picture":""}
+"duration":"","date":"","copyright":"","description":"","trackNum":"","picture":"",
+"seasonNumber":0,"seasonTitle":"","episodeNumber":0,"episodeTitle":"","resolutionWidth":0,"resolutionHeight":0}
 </pre>
 </div>
 </dd>
@@ -2050,6 +2091,8 @@ Functions include operations to get the latest status of the media controller se
     void removeAbilityChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void findSubscribedServers(<a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                                raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setCustomEventListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unsetCustomEventListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  5.0
@@ -2420,6 +2463,86 @@ mcClient.findServers(findSuccessCB, errorCB);
   server name: To0BJCUxbR.MediaControllerServerThree, state: ACTIVE
 Subscribed servers:
   server name: XX8qUW5iFF.MediaControllerServerOne, state: ACTIVE
+</pre>
+</div>
+</dd>
+<dt class="method" id="MediaControllerClient::setCustomEventListener">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerClient::setCustomEventListener"></a><code><b><span class="methodName">setCustomEventListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sets the media controller client's listener for custom events from the server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setCustomEventListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="description">
+            <p>
+If the listener has already been set, calling this method will override it.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">listener</span>:
+ Event handling function.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any of the arguments has invalid types.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* this example assumes that the server and client objects already exist. */
+mcClient.setCustomEventListener(function(serverName, eventName, data)
+{
+  return new tizen.mediacontroller.RequestReply({"reply": "data"}, 123);
+});
+mcClient.unsetCustomEventListener();
+</pre>
+</div>
+</dd>
+<dt class="method" id="MediaControllerClient::unsetCustomEventListener">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerClient::unsetCustomEventListener"></a><code><b><span class="methodName">unsetCustomEventListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Removes the server's events listener.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unsetCustomEventListener();</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="description">
+            <p>
+Calling this function has no effect, if the listener is not set.
+            </p>
+           </div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* this example assumes that the server and client already exist. */
+mcClient.setCustomEventListener(function(serverName, eventName, data)
+{
+  return new tizen.mediacontroller.RequestReply({"reply": "data"}, 123);
+});
+mcClient.unsetCustomEventListener();
 </pre>
 </div>
 </dd>
@@ -6359,8 +6482,120 @@ mcServer.displayRotation.removeChangeRequestListener(watcherId);
 </dl>
 </div>
 </div>
+<div class="interface" id="MediaControllerClientInfo">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerClientInfo"></a><h3>2.22. MediaControllerClientInfo</h3>
+<div class="brief">
+ This interface provides communication methods from the server to the client.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerClientInfo {
+    readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
+    void sendEvent(DOMString eventName, <a href="tizen.html#Bundle">Bundle</a>? data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback)
+                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="MediaControllerClientInfo::name">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">ApplicationId </span><span class="name">name</span></span><div class="brief">
+ Id of the client application.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MediaControllerClientInfo::sendEvent">
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerClientInfo::sendEvent"></a><code><b><span class="methodName">sendEvent</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Sends an event to the client.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void sendEvent(DOMString eventName, <a href="tizen.html#Bundle">Bundle</a>? data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">eventName</span>:
+ Name of the event.
+                </li>
+          <li class="param">
+<span class="name">data</span><span class="optional"> [nullable]</span>:
+ Additional event data.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span>:
+ Reply handling function.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if any argument has invalid type.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* CLIENT APPLICATION */
+var mcClient = tizen.mediacontroller.getClient();
+mcClient.setCustomEventListener(function(serverName, eventName, data)
+{
+  console.log("Media controller client received an event from the server:");
+  console.log("  name: " + eventName);
+  console.log("  data: " + JSON.stringify(data));
+  mcClient.unsetCustomEventListener();
+  return new tizen.mediacontroller.RequestReply({response: "response data"}, 123);
+});
+
+/* SERVER APPLICATION */
+var mcServer = tizen.mediacontroller.createServer();
+mcServer.updatePlaybackState("PLAY");
+
+var mcClientsInfoAll = mcServer.getAllClientsInfo();
+if (mcClientsInfoAll.length &lt; 1)
+{
+  console.log("Server has no active clients.");
+}
+else
+{
+  mcClientsInfoAll[0].sendEvent(
+      "test", new tizen.Bundle({param1: "value1", param2: "value2"}), function(response)
+      {
+        console.log("Media controller server received a reply to the event:");
+        console.log("  response: " + JSON.stringify(response));
+      });
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Media controller client received an event from the server:
+  name: test
+  data: '{param1: "value1", param2: "value2"}'
+Media controller server received a reply to the event:
+  response: '{data: {response: "response data"}, code: 123}'
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 <div class="interface" id="MediaControllerDisplayRotationInfo">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationInfo"></a><h3>2.22. MediaControllerDisplayRotationInfo</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationInfo"></a><h3>2.23. MediaControllerDisplayRotationInfo</h3>
 <div class="brief">
  Client-side object representing display rotation of a media controller server.
           </div>
@@ -6555,7 +6790,7 @@ mcServerInfo.displayRotation.removeDisplayRotationChangeListener(watcherId);
 </div>
 </div>
 <div class="interface" id="MediaControllerMetadata">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMetadata"></a><h3>2.23. MediaControllerMetadata</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMetadata"></a><h3>2.24. MediaControllerMetadata</h3>
 <div class="brief">
  Playback metadata.
           </div>
@@ -6571,6 +6806,12 @@ mcServerInfo.displayRotation.removeDisplayRotationChangeListener(watcherId);
     attribute DOMString description;
     attribute DOMString trackNum;
     attribute DOMString picture;
+    attribute long seasonNumber;
+    attribute DOMString? seasonTitle;
+    attribute long episodeNumber;
+    attribute DOMString? episodeTitle;
+    attribute long resolutionWidth;
+    attribute long resolutionHeight;
   };</pre>
 <p><span class="version">Since: </span>
  5.0
@@ -6666,11 +6907,59 @@ mcServerInfo.displayRotation.removeDisplayRotationChangeListener(watcherId);
  5.0
             </p>
 </li>
+<li class="attribute" id="MediaControllerMetadata::seasonNumber">
+<span class="attrName"><span class="type">long </span><span class="name">seasonNumber</span></span><div class="brief">
+ Season number. Default value is 0.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerMetadata::seasonTitle">
+<span class="attrName"><span class="type">DOMString </span><span class="name">seasonTitle</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Season title. Default value is <var>null</var>.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerMetadata::episodeNumber">
+<span class="attrName"><span class="type">long </span><span class="name">episodeNumber</span></span><div class="brief">
+ Episode number. Default value is 0.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerMetadata::episodeTitle">
+<span class="attrName"><span class="type">DOMString </span><span class="name">episodeTitle</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Episode title. Default value is <var>null</var>.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerMetadata::resolutionWidth">
+<span class="attrName"><span class="type">long </span><span class="name">resolutionWidth</span></span><div class="brief">
+ Resolution width. Default value is 0. It cannot be changed to less than 0. Setting inappropriate values has no effect on the attribute.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerMetadata::resolutionHeight">
+<span class="attrName"><span class="type">long </span><span class="name">resolutionHeight</span></span><div class="brief">
+ Resolution height. Default value is 0. It cannot be changed to less than 0. Setting inappropriate values has no effect on the attribute.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
 </ul>
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaylistItem">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistItem"></a><h3>2.24. MediaControllerPlaylistItem</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistItem"></a><h3>2.25. MediaControllerPlaylistItem</h3>
 <div class="brief">
  Object represents single playlist item.
           </div>
@@ -6706,7 +6995,7 @@ mcServerInfo.displayRotation.removeDisplayRotationChangeListener(watcherId);
 </div>
 </div>
 <div class="dictionary" id="MediaControllerMetadataInit">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMetadataInit"></a><h3>2.25. MediaControllerMetadataInit</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerMetadataInit"></a><h3>2.26. MediaControllerMetadataInit</h3>
 <div class="brief">
  The MediaControllerMetadataInit dictionary defines the properties of a MediaControllerMetadata to add in addItem method.
           </div>
@@ -6722,6 +7011,12 @@ mcServerInfo.displayRotation.removeDisplayRotationChangeListener(watcherId);
     DOMString description;
     DOMString trackNum;
     DOMString picture;
+    long seasonNumber;
+    DOMString seasonTitle;
+    long episodeNumber;
+    DOMString episodeTitle;
+    long resolutionWidth;
+    long resolutionHeight;
   };</pre>
 <p><span class="version">Since: </span>
  5.5
@@ -6733,7 +7028,7 @@ See <a href="#MediaControllerMetadata">MediaControllerMetadata</a> interface for
          </div>
 </div>
 <div class="interface" id="MediaControllerPlaylist">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylist"></a><h3>2.26. MediaControllerPlaylist</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylist"></a><h3>2.27. MediaControllerPlaylist</h3>
 <div class="brief">
  Object represents single playlist (collection of items).
           </div>
@@ -6812,8 +7107,15 @@ var metadata =
   copyright: "testCopyright",
   description: "testDescription",
   trackNum: "testTrackNum",
-  picture: "testPicture"
+  picture: "testPicture",
+  seasonNumber: 1,
+  seasonTitle: "testSeasonTitle",
+  episodeNumber: 1,
+  episodeTitle: "testEpisodeTitle",
+  resolutionWidth: 1600,
+  resolutionHeight: 900
 };
+
 playlist.addItem("index1", metadata);
 console.log("Item added.");
 function successCallback()
@@ -6907,7 +7209,7 @@ playlist.getItems(successCallback, errorCallback);
 </div>
 </div>
 <div class="interface" id="SearchFilter">
-<a class="backward-compatibility-anchor" name="::MediaController::SearchFilter"></a><h3>2.27. SearchFilter</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::SearchFilter"></a><h3>2.28. SearchFilter</h3>
 <div class="brief">
  Search filter representation.
           </div>
@@ -6999,7 +7301,7 @@ playlist.getItems(successCallback, errorCallback);
 </div>
 </div>
 <div class="interface" id="MediaControllerServerInfoArraySuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfoArraySuccessCallback"></a><h3>2.28. MediaControllerServerInfoArraySuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfoArraySuccessCallback"></a><h3>2.29. MediaControllerServerInfoArraySuccessCallback</h3>
 <div class="brief">
  The MediaControllerServerInfoArraySuccessCallback interface that defines the success method
 for <em>MediaControllerClient.findServers()</em>.
@@ -7038,7 +7340,7 @@ for <em>MediaControllerClient.findServers()</em>.
 </div>
 </div>
 <div class="interface" id="MediaControllerSendCommandSuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSendCommandSuccessCallback"></a><h3>2.29. MediaControllerSendCommandSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSendCommandSuccessCallback"></a><h3>2.30. MediaControllerSendCommandSuccessCallback</h3>
 <div class="brief">
  The MediaControllerSendCommandSuccessCallback interface that defines the success method which is triggered, when the server responds to a command.
           </div>
@@ -7063,6 +7365,8 @@ Interface is used as a success method for:
  <em>MediaControllerDisplayMode.sendRequest()</em>             </li>
             <li>
  <em>MediaControllerDisplayRotationInfo.sendRequest()</em>             </li>
+            <li>
+ <em>MediaControllerClientInfo.sendEvent()</em>             </li>
           </ul>
          </div>
 <div class="methods">
@@ -7073,7 +7377,7 @@ Interface is used as a success method for:
 </dt>
 <dd>
 <div class="brief">
- Called when server responded to received custom command.
+ Called when a response to the request is received.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(object? data, optional long code);</pre></div>
 <p><span class="version">Since: </span>
@@ -7084,7 +7388,7 @@ Interface is used as a success method for:
 <ul>
           <li class="param">
 <span class="name">data</span><span class="optional"> [nullable]</span>:
- Response data object received from server. This object is compatible with  <a href="tizen.html#Bundle">Bundle</a> object.
+ Response data object sent by the command handler. This object is compatible with  <a href="tizen.html#Bundle">Bundle</a> object.
                 </li>
           <li class="param">
 <span class="name">code</span><span class="optional"> [optional]</span>:
@@ -7097,7 +7401,7 @@ Interface is used as a success method for:
 </div>
 </div>
 <div class="interface" id="RequestReply">
-<a class="backward-compatibility-anchor" name="::MediaController::RequestReply"></a><h3>2.30. RequestReply</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::RequestReply"></a><h3>2.31. RequestReply</h3>
 <div class="brief">
  Representation of server's response to a request.
           </div>
@@ -7136,7 +7440,7 @@ Interface is used as a success method for:
 </div>
 </div>
 <div class="interface" id="MediaControllerSearchRequestReplyCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestReplyCallback"></a><h3>2.31. MediaControllerSearchRequestReplyCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestReplyCallback"></a><h3>2.32. MediaControllerSearchRequestReplyCallback</h3>
 <div class="brief">
  The MediaControllerSearchRequestReplyCallback interface defines reply callback for
 <em>MediaControllerServerInfo.sendSearchRequest()</em>.
@@ -7180,7 +7484,7 @@ Interpretation of status and data parameters depends on the server implementatio
 </div>
 </div>
 <div class="interface" id="MediaControllerSearchRequestCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestCallback"></a><h3>2.32. MediaControllerSearchRequestCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerSearchRequestCallback"></a><h3>2.33. MediaControllerSearchRequestCallback</h3>
 <div class="brief">
  Server search request listener interface.
           </div>
@@ -7230,17 +7534,32 @@ It will be passed to the replyCallback of <a href="#MediaControllerServerInfo::s
 </div>
 </div>
 <div class="interface" id="MediaControllerReceiveCommandCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerReceiveCommandCallback"></a><h3>2.33. MediaControllerReceiveCommandCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerReceiveCommandCallback"></a><h3>2.34. MediaControllerReceiveCommandCallback</h3>
 <div class="brief">
  The MediaControllerReceiveCommandCallback interface that defines the listener
-for custom commands from client in <em>MediaControllerServer.addCommandListener()</em>.
+for custom communication between server and client.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
-    <a href="#RequestReply">RequestReply</a>? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
+    <a href="#RequestReply">RequestReply</a>? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> senderAppName, DOMString command, object data);
   };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
+<div class="description">
+          <p>
+Related functions:
+          </p>
+          <ul>
+            <li>
+<a href="#MediaControllerServerInfo::sendCommand">sendCommand()</a>            </li>
+            <li>
+<a href="#MediaControllerServer::addCommandListener">addCommandListener()</a>            </li>
+            <li>
+<a href="#MediaControllerClientInfo::sendEvent">sendEvent()</a>            </li>
+            <li>
+<a href="#MediaControllerClient::setCustomEventListener">setEventListener()</a>            </li>
+          </ul>
+         </div>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -7249,30 +7568,26 @@ for custom commands from client in <em>MediaControllerServer.addCommandListener(
 </dt>
 <dd>
 <div class="brief">
- Called when custom command received from client.
+ Called when custom command is received by the server or custom event is received by the client.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#RequestReply">RequestReply</a>? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#RequestReply">RequestReply</a>? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> senderAppName, DOMString command, object data);</pre></div>
 <p><span class="version">Since: </span>
  5.0
-            </p>
-<p><span class="remark">Remark: </span>
- You can return data object from callback which will be sent in reply to the client.
-See <em>MediaControllerSendCommandSuccessCallback</em> interface.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">clientName</span>:
- Client application id which sent command.
+<span class="name">senderAppName</span>:
+ Sender application id.
                 </li>
           <li class="param">
 <span class="name">command</span>:
- Custom command sent from client.
+ Custom command or event.
                 </li>
           <li class="param">
 <span class="name">data</span>:
- Response object sent from client. This object is compatible with <a href="tizen.html#Bundle">Bundle</a>.
+ Response object. This object is compatible with <a href="tizen.html#Bundle">Bundle</a>.
                 </li>
         </ul>
 </div>
@@ -7280,7 +7595,7 @@ See <em>MediaControllerSendCommandSuccessCallback</em> interface.
 <p><span class="return">Return value:</span></p>
 <ul>
 <span class="return">RequestReply<span class="optional"> [nullable]</span>:</span>
- RequestReply object which is sent with reply to the client.
+ RequestReply object which will be returned to the author of the request.
               </ul>
 </div>
 </dd>
@@ -7288,7 +7603,7 @@ See <em>MediaControllerSendCommandSuccessCallback</em> interface.
 </div>
 </div>
 <div class="interface" id="MediaControllerEnabledChangeRequestCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerEnabledChangeRequestCallback"></a><h3>2.34. MediaControllerEnabledChangeRequestCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerEnabledChangeRequestCallback"></a><h3>2.35. MediaControllerEnabledChangeRequestCallback</h3>
 <div class="brief">
  The MediaControllerEnabledChangeRequestCallback interface that defines the listener
 for change requests for spherical mode in <em>MediaControllerMode360.addChangeRequestListener()</em> and
@@ -7345,7 +7660,7 @@ to check how to handle and respond to commands.
 </div>
 </div>
 <div class="interface" id="MediaControllerEnabledChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerEnabledChangeCallback"></a><h3>2.35. MediaControllerEnabledChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerEnabledChangeCallback"></a><h3>2.36. MediaControllerEnabledChangeCallback</h3>
 <div class="brief">
  The MediaControllerEnabledChangeCallback interface that defines the listener
 for a media controller server's attribute changes.
@@ -7384,7 +7699,7 @@ for a media controller server's attribute changes.
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayModeChangeRequestCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeChangeRequestCallback"></a><h3>2.36. MediaControllerDisplayModeChangeRequestCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeChangeRequestCallback"></a><h3>2.37. MediaControllerDisplayModeChangeRequestCallback</h3>
 <div class="brief">
  The MediaControllerDisplayModeChangeRequestCallback interface that defines the listener
 for change requests for display mode in <em>MediaControllerDisplayMode.addChangeRequestListener()</em>.
@@ -7439,7 +7754,7 @@ to check how to handle and respond to commands.
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayModeChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeChangeCallback"></a><h3>2.37. MediaControllerDisplayModeChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayModeChangeCallback"></a><h3>2.38. MediaControllerDisplayModeChangeCallback</h3>
 <div class="brief">
  The MediaControllerDisplayModeChangeCallback interface that defines the listener
 for display mode changes of the media controller server.
@@ -7478,7 +7793,7 @@ for display mode changes of the media controller server.
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayRotationChangeRequestCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationChangeRequestCallback"></a><h3>2.38. MediaControllerDisplayRotationChangeRequestCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationChangeRequestCallback"></a><h3>2.39. MediaControllerDisplayRotationChangeRequestCallback</h3>
 <div class="brief">
  The MediaControllerDisplayRotationChangeRequestCallback interface that defines the listener
 for change requests for display rotation in <em>MediaControllerDisplayRotation.addChangeRequestListener().
@@ -7533,7 +7848,7 @@ to check how to handle and respond to commands.
 </div>
 </div>
 <div class="interface" id="MediaControllerDisplayRotationChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationChangeCallback"></a><h3>2.39. MediaControllerDisplayRotationChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationChangeCallback"></a><h3>2.40. MediaControllerDisplayRotationChangeCallback</h3>
 <div class="brief">
  The MediaControllerDisplayModeChangeCallback interface that defines the listener
 for changes of a media controller server's display rotation.
@@ -7572,7 +7887,7 @@ for changes of a media controller server's display rotation.
 </div>
 </div>
 <div class="interface" id="MediaControllerServerStatusChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerStatusChangeCallback"></a><h3>2.40. MediaControllerServerStatusChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerStatusChangeCallback"></a><h3>2.41. MediaControllerServerStatusChangeCallback</h3>
 <div class="brief">
  The MediaControllerServerStatusChangeCallback interface that defines the listener
 for media controller server status changes.
@@ -7611,7 +7926,7 @@ for media controller server status changes.
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaybackInfoChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback"></a><h3>2.41. MediaControllerPlaybackInfoChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaybackInfoChangeCallback"></a><h3>2.42. MediaControllerPlaybackInfoChangeCallback</h3>
 <div class="brief">
  The MediaControllerPlaybackInfoChangeCallback interface that defines the listeners
 object for receiving media controller playback info changes from server.
@@ -7755,7 +8070,7 @@ will be invoked after the <a href="#MediaControllerPlaybackInfoChangeCallback::o
 </div>
 </div>
 <div class="interface" id="MediaControllerChangeRequestPlaybackInfoCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback"></a><h3>2.42. MediaControllerChangeRequestPlaybackInfoCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerChangeRequestPlaybackInfoCallback"></a><h3>2.43. MediaControllerChangeRequestPlaybackInfoCallback</h3>
 <div class="brief">
  The MediaControllerChangeRequestPlaybackInfoCallback interface that defines the listeners
 object for receiving playback info change requests from client.
@@ -7967,7 +8282,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerGetAllPlaylistsSuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetAllPlaylistsSuccessCallback"></a><h3>2.43. MediaControllerGetAllPlaylistsSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetAllPlaylistsSuccessCallback"></a><h3>2.44. MediaControllerGetAllPlaylistsSuccessCallback</h3>
 <div class="brief">
  Interface for success callback for <em>getAllPlaylists</em> function.
           </div>
@@ -8005,7 +8320,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerPlaylistUpdatedCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistUpdatedCallback"></a><h3>2.44. MediaControllerPlaylistUpdatedCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerPlaylistUpdatedCallback"></a><h3>2.45. MediaControllerPlaylistUpdatedCallback</h3>
 <div class="brief">
  Interface for specific playlist update events (including deletion).
           </div>
@@ -8073,7 +8388,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerGetItemsSuccessCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetItemsSuccessCallback"></a><h3>2.45. MediaControllerGetItemsSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerGetItemsSuccessCallback"></a><h3>2.46. MediaControllerGetItemsSuccessCallback</h3>
 <div class="brief">
  Interface for success callback for <em>getItems</em> function.
           </div>
@@ -8111,7 +8426,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 </div>
 </div>
 <div class="interface" id="MediaControllerAbilityChangeCallback">
-<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerAbilityChangeCallback"></a><h3>2.46. MediaControllerAbilityChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::MediaController::MediaControllerAbilityChangeCallback"></a><h3>2.47. MediaControllerAbilityChangeCallback</h3>
 <div class="brief">
  Interface for handling ability events.
           </div>
@@ -8263,6 +8578,12 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     DOMString description;
     DOMString trackNum;
     DOMString picture;
+    long seasonNumber;
+    DOMString seasonTitle;
+    long episodeNumber;
+    DOMString episodeTitle;
+    long resolutionWidth;
+    long resolutionHeight;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaControllerObject">MediaControllerObject</a>;
   [NoInterfaceObject] interface MediaControllerObject {
@@ -8280,6 +8601,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     readonly attribute <a href="#MediaControllerMode360">MediaControllerMode360</a> mode360;
     readonly attribute <a href="#MediaControllerDisplayMode">MediaControllerDisplayMode</a> displayMode;
     readonly attribute <a href="#MediaControllerDisplayRotation">MediaControllerDisplayRotation</a> displayRotation;
+    <a href="#MediaControllerClientInfo">MediaControllerClientInfo</a>[] getAllClientsInfo() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateIconURI(DOMString? iconURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updatePlaybackPosition(unsigned long long position) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -8311,6 +8633,8 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     void removeAbilityChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void findSubscribedServers(<a href="#MediaControllerServerInfoArraySuccessCallback">MediaControllerServerInfoArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                                raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setCustomEventListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unsetCustomEventListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface MediaControllerServerInfo {
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
@@ -8468,6 +8792,11 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     long addChangeRequestListener(<a href="#MediaControllerDisplayRotationChangeRequestCallback">MediaControllerDisplayRotationChangeRequestCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeRequestListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
+  [NoInterfaceObject] interface MediaControllerClientInfo {
+    readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
+    void sendEvent(DOMString eventName, <a href="tizen.html#Bundle">Bundle</a>? data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback)
+                   raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
   [NoInterfaceObject] interface MediaControllerDisplayRotationInfo {
     readonly attribute <a href="#MediaControllerDisplayRotationType">MediaControllerDisplayRotationType</a> displayRotation raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendRequest(<a href="#MediaControllerDisplayRotationType">MediaControllerDisplayRotationType</a> displayRotation, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> replyCallback)
@@ -8487,6 +8816,12 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     attribute DOMString description;
     attribute DOMString trackNum;
     attribute DOMString picture;
+    attribute long seasonNumber;
+    attribute DOMString? seasonTitle;
+    attribute long episodeNumber;
+    attribute DOMString? episodeTitle;
+    attribute long resolutionWidth;
+    attribute long resolutionHeight;
   };
   [NoInterfaceObject] interface MediaControllerPlaylistItem {
     readonly attribute DOMString index;
@@ -8523,7 +8858,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     <a href="#RequestReply">RequestReply</a>? onrequest(<a href="application.html#ApplicationId">ApplicationId</a> clientName, <a href="#SearchFilter">SearchFilter</a>[] request);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
-    <a href="#RequestReply">RequestReply</a>? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
+    <a href="#RequestReply">RequestReply</a>? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> senderAppName, DOMString command, object data);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerEnabledChangeRequestCallback {
     <a href="#RequestReply">RequestReply</a>? onreply(<a href="application.html#ApplicationId">ApplicationId</a> clientName, boolean enabled);

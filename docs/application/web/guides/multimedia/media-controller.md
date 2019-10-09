@@ -65,6 +65,11 @@ The main features of the Media Controller API include:
 
   You can [set the media controller server features](#media-controller-server-features) using the server interfaces.
 
+- Sending custom events
+
+  You can [use the server to send events](#send_custom_events) with the `sendEvent()` method.
+
+  To [receive and handle incoming events](#receive_custom_events) in the client, use the `setCustomEventsListener()` method.
 
 ## Prerequisites
 
@@ -292,6 +297,79 @@ To manage the media controller features in your application, you must learn to s
       ```
 
       The `watcherId` variable stores the value, which can be used in the future to remove the listener from the server using the `removeCommandListener()` method.
+
+## Sending and Receiving Custom Events
+
+While custom commands are a feature that enables the client application to talk to the server application, the communication
+in the opposite direction is done with the help of custom events.
+
+<a name="receive_custom_events"></a>
+
+1. Listening for custom events on the client side:
+
+   1. Define your custom event listener callback function:
+
+      ```javascript
+      function eventReceivedCallback(serverId, event, data) {
+          console.log('Event ' + event + ' received from ' + serverId);
+          console.log('Event data: ' + JSON.stringify(data));
+
+          var status = 0;
+          var data = {'test': 'data'};
+          return tizen.mediacontroller.RequestReply(data, status);
+      }
+      ```
+
+      Event handler function can return `RequestReply` object which will be send back to the event author.
+      `RequestReply` consists of status code integer and bundle data object.
+
+   2. Set the events listener:
+
+      ```javascript
+      mcClient.setCustomEventListener(eventReceivedCallback);
+      ```
+
+   3. When your application no longer wants to listen for custom events, you can disable the events listener:
+
+      ```javascript
+      mcClient.unsetCustomEventsListener();
+      ```
+
+<a name="send_custom_events"></a>
+
+2. Sending custom events on the server side:
+
+   1. Define the custom event parameters (name and data):
+
+      ```javascript
+      var eventName = 'HelloWorld';
+      var eventData = new tizen.Bundle({'testKey': 'testValue'});
+      ```
+
+   2. Prepare reply callback function:
+
+      ```javascript
+      function eventReplyReceived(data, code) {
+          console.log('client reply code: ' + code);
+          console.log('client reply data: ' + JSON.stringify(data));
+      }
+      ```
+
+   3. Retrieve the recipient client info object:
+
+      ```javascript
+      var recipient = mcServer.getAllClientsInfo()[0];
+      ```
+
+      This example assumes that there is one client application currently running on the device.
+      Otherwise, we would have to iterate over all `MediaControllerClientInfo` objects returned by
+      the `getClientInfo()` method to select the recipient.
+
+   4. Send the event:
+
+     ```javascript
+     recipient.sendEvent(eventName, eventData, eventReplyReceived);
+     ```
 
 ## Sending and Receiving Search Requests from Client to Server
 
