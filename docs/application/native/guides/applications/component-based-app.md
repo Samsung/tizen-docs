@@ -7,7 +7,7 @@ The main component-based Application API features include:
 
 - Application states
 
-  A Tizen native component-based application [transitions through various states](#application_states) during its life-cycle.
+  A Tizen native component-based application [transitions through various states](#application_states) during its lifecycle.
 
 - Application event callbacks
 
@@ -15,7 +15,7 @@ The main component-based Application API features include:
 
 - Frame-component states
 
-  A frame-component has several different [states which it transitions through](#frame_component_states) during its life-cycle.
+  A frame-component has several different [states which it transitions through](#frame_component_states) during its lifecycle.
 
 - Frame-component event callbacks
 
@@ -23,7 +23,7 @@ The main component-based Application API features include:
 
 - Service-component states
 
-  A service-component has several different [states which it transitions through](#service_component_states) during its life-cycle.
+  A service-component has several different [states which it transitions through](#service_component_states) during its lifecycle.
 
 - Service-component event callbacks
 
