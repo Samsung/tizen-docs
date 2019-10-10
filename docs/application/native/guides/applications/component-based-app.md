@@ -50,7 +50,7 @@ The following figure and table describe the component-based application states:
 
   > **Note**
   >
-The component-based application is created with a first component create request and it will be terminated if there is no running instances.
+The component-based application is created with a component create request. This application terminates if there are no running instances.
 In the `RUNNING` state, the component-based application creates instances of registered components. The registered component can have multiple instances.
 
 
