@@ -1352,7 +1352,8 @@ console.log("Current metadata is: " + JSON.stringify(mcServer.playbackInfo.metad
 </div>
 <div class="output">
 <span class="title"><p>Output example:</p></span><pre>Current metadata is: {"title":"","artist":"Artist Name","album":"","author":"","genre":"",
-"duration":"","date":"","copyright":"","description":"","trackNum":"","picture":""}
+"duration":"","date":"","copyright":"","description":"","trackNum":"","picture":"",
+"seasonNumber":0,"seasonTitle":"","episodeNumber":0,"episodeTitle":"","resolutionWidth":0,"resolutionHeight":0}
 </pre>
 </div>
 </dd>
@@ -6571,6 +6572,12 @@ mcServerInfo.displayRotation.removeDisplayRotationChangeListener(watcherId);
     attribute DOMString description;
     attribute DOMString trackNum;
     attribute DOMString picture;
+    attribute long seasonNumber;
+    attribute DOMString? seasonTitle;
+    attribute long episodeNumber;
+    attribute DOMString? episodeTitle;
+    attribute long resolutionWidth;
+    attribute long resolutionHeight;
   };</pre>
 <p><span class="version">Since: </span>
  2.4
@@ -6666,6 +6673,54 @@ mcServerInfo.displayRotation.removeDisplayRotationChangeListener(watcherId);
  2.4
             </p>
 </li>
+<li class="attribute" id="MediaControllerMetadata::seasonNumber">
+<span class="attrName"><span class="type">long </span><span class="name">seasonNumber</span></span><div class="brief">
+ Season number. Default value is 0.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerMetadata::seasonTitle">
+<span class="attrName"><span class="type">DOMString </span><span class="name">seasonTitle</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Season title. Default value is <var>null</var>.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerMetadata::episodeNumber">
+<span class="attrName"><span class="type">long </span><span class="name">episodeNumber</span></span><div class="brief">
+ Episode number. Default value is 0.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerMetadata::episodeTitle">
+<span class="attrName"><span class="type">DOMString </span><span class="name">episodeTitle</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Episode title. Default value is <var>null</var>.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerMetadata::resolutionWidth">
+<span class="attrName"><span class="type">long </span><span class="name">resolutionWidth</span></span><div class="brief">
+ Resolution width. Default value is 0. It cannot be changed to less than 0. Setting inappropriate values has no effect on the attribute.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="MediaControllerMetadata::resolutionHeight">
+<span class="attrName"><span class="type">long </span><span class="name">resolutionHeight</span></span><div class="brief">
+ Resolution height. Default value is 0. It cannot be changed to less than 0. Setting inappropriate values has no effect on the attribute.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
 </ul>
 </div>
 </div>
@@ -6722,6 +6777,12 @@ mcServerInfo.displayRotation.removeDisplayRotationChangeListener(watcherId);
     DOMString description;
     DOMString trackNum;
     DOMString picture;
+    long seasonNumber;
+    DOMString seasonTitle;
+    long episodeNumber;
+    DOMString episodeTitle;
+    long resolutionWidth;
+    long resolutionHeight;
   };</pre>
 <p><span class="version">Since: </span>
  5.5
@@ -6812,8 +6873,15 @@ var metadata =
   copyright: "testCopyright",
   description: "testDescription",
   trackNum: "testTrackNum",
-  picture: "testPicture"
+  picture: "testPicture",
+  seasonNumber: 1,
+  seasonTitle: "testSeasonTitle",
+  episodeNumber: 1,
+  episodeTitle: "testEpisodeTitle",
+  resolutionWidth: 1600,
+  resolutionHeight: 900
 };
+
 playlist.addItem("index1", metadata);
 console.log("Item added.");
 function successCallback()
@@ -8263,6 +8331,12 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     DOMString description;
     DOMString trackNum;
     DOMString picture;
+    long seasonNumber;
+    DOMString seasonTitle;
+    long episodeNumber;
+    DOMString episodeTitle;
+    long resolutionWidth;
+    long resolutionHeight;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaControllerObject">MediaControllerObject</a>;
   [NoInterfaceObject] interface MediaControllerObject {
@@ -8487,6 +8561,12 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
     attribute DOMString description;
     attribute DOMString trackNum;
     attribute DOMString picture;
+    attribute long seasonNumber;
+    attribute DOMString? seasonTitle;
+    attribute long episodeNumber;
+    attribute DOMString? episodeTitle;
+    attribute long resolutionWidth;
+    attribute long resolutionHeight;
   };
   [NoInterfaceObject] interface MediaControllerPlaylistItem {
     readonly attribute DOMString index;

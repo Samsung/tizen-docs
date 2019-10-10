@@ -437,7 +437,13 @@ To manage the media controller playlists in your server application, you must le
        copyright: "testCopyright",
        description: "testDescription",
        trackNum: "testTrackNum",
-       picture: "testPicture"
+       picture: "testPicture",
+       seasonNumber: 1,
+       seasonTitle: "testSeasonTitle",
+       episodeNumber: 1,
+       episodeTitle: "testEpisodeTitle",
+       resolutionWidth: 1600,
+       resolutionHeight: 900
    };
 
    playlist.addItem("index1", metadata);
@@ -503,7 +509,7 @@ To manage the media controller playlist in your application, you must handle req
 1. Send a request from the client using the `sendPlaybackItem()` method of the `MediaControllerServerInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
 
    ```javascript
-   mcServerInfo.sendPlaybackItem("testPlaylistName", "index1", "PLAY", 0);;
+   mcServerInfo.sendPlaybackItem("testPlaylistName", "index1", "PLAY", 0);
    ```
 
 2. Define the event handlers for different notifications by implementing the `MediaControllerPlaylistUpdatedCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback) and [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback) applications):
