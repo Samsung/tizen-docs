@@ -14,7 +14,7 @@ The Battery Monitor APIs provide following provisions to fetch the battery usage
 
 - Getting battery usage information of a resource.
 
-    You can [retrieve battery usage information of single or muiltiple resources](#resourceusage_get) by specifying its [resource IDs](#resource_key), and the [time duration](#duration_key).
+    You can [retrieve battery usage information of single or multiple resources](#resourceusage_get) by specifying its [resource IDs](#resource_key), and the [time duration](#duration_key).
 
 ## Prerequisites
 
