@@ -1,229 +1,198 @@
 # Battery Monitor
 
-You can access the information related to the power consumption by applications or by hardware resources on a battery-powered device for a certain duration of time. The value is returned as the percentage of the total batttery capacity.
+You can access the information related to the power consumption by applications or by hardware resources on a battery-powered device for a specific duration of time. The value is returned as the percentage of the total battery capacity.
 
 The power consumption of an application is calculated by accumulating the usage of various individual resources used by the application.
 
+This feature is supported in wearable applications only.
+
 The Battery Monitor APIs provide following provisions to fetch the battery usage:
 
-- Getting battery usage information of a particular application.
+- Getting battery usage information of an application.
 
-  You can [retrieve information of an application](#appusage_get) by specifying its application ID, [resource](#resource_key) IDs, and the time [duration](#duration_key).
+    You can [retrieve battery usage information of an application](#appusage_get) by specifying its application ID, [resource IDs](#resource_key), and the [time duration](#duration_key).
 
-- Getting battery usage information of a particular resource.
+- Getting battery usage information of a resource.
 
-  You can [retrieve information of a single or muiltiple resources](#resourceusage_get) by specifying its [resource](#resource_key) IDs, and the time [duration](#duration_key).
+    You can [retrieve battery usage information of a single or muiltiple resources](#resourceusage_get) by specifying its [resource IDs](#resource_key), and the [time duration](#duration_key).
 
 ## Prerequisites
 
 To enable your application to use the Battery Monitor functionality:
 
-1. To use the functions and data types of the Battery Monitor API (in [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__BATTERY__MONITOR__MODULE.html) applications), include the `<battery_monitor.h>` header file in your application:
+1. To use the [Battery Monitor](../../api/wearable/latest/group__CAPI__SYSTEM__BATTERY__MONITOR__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-   ```
-   #include <battery_monitor.h>
-   ```
+    ```xml
+    <privileges>
+       <privilege>http://tizen.org/privilege/systemmonitor</privilege>
+    </privileges>
+    ```
 
-2. The application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+2. To use the functions and data types of the Battery Monitor API, include the `<battery_monitor.h>` header file in your application:
 
-   ```xml
-   <privileges>
-      <privilege>http://tizen.org/privilege/systemmonitor</privilege>
-   </privileges>
-   ```
+    ```
+    #include <battery_monitor.h>
+    ```
 
 <a name="appusage_get"></a>
-## Getting Battery Usage Information of Particular Application
+## Getting Battery Usage Information of Application
 
-The battery usage information contains a combination of application ID, resource ID, and time duration.
+To get the battery usage information related with application ID:
 
-1. Fetching information of an application for a particular resource over a certain duration of time.
-   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, as shown in the following code:
+- You can get information about an application for a particular resource over a specific duration of time.
+  To get resource ID, use the `battery_monitor_resource_id_e` enum and to get the time duration type information, use the `battery_monitor_duration_type_e` enum.
 
-   ```
-   #include <battery_monitor.h>
+    ```
+    #include <battery_monitor.h>
 
-   void
-   func(void)
-   {
-	char* app_id = "org.tizen.samsung";
+    void
+    func(void)
+    {
+       char* app_id = "org.tizen.samsung";
 
-	int error_code = BATTERY_MONITOR_ERROR_NONE;
-	int battery_usage = -1;
-	battery_monitor_resource_id_e resource_id = BATTERY_MONITOR_RESOURCE_ID_DISPLAY;
-	battery_monitor_duration_type_e duration_val = BATTERY_MONITOR_DURATION_TYPE_1DAY;
+       int error_code = BATTERY_MONITOR_ERROR_NONE;
+       int battery_usage = -1;
+       battery_monitor_resource_id_e resource_id = BATTERY_MONITOR_RESOURCE_ID_DISPLAY;
+       battery_monitor_duration_type_e duration_val = BATTERY_MONITOR_DURATION_TYPE_1DAY;
 
-	error_code = battery_monitor_get_usage_by_app_id_for_resource_id(app_id, resource_id, duration_val, &battery_usage);
+       error_code = battery_monitor_get_usage_by_app_id_for_resource_id(app_id, resource_id, duration_val, &battery_usage);
 
-	if (error_code == BATTERY_MONITOR_ERROR_NONE)
-		printf("The Battery Usage for appid [%s], for resource display is [%d]", app_id, battery_usage);
-	else
-		printf("Error Occurred [%d]", error_code);
+       if (error_code == BATTERY_MONITOR_ERROR_NONE)
+           printf("The Battery Usage for appid [%s], for resource display is [%d]", app_id, battery_usage);
+       else
+           printf("Error Occurred [%d]", error_code);
 
-	resource_id = BATTERY_MONITOR_RESOURCE_ID_WIFI;
-	duration_val = BATTERY_MONITOR_DURATION_TYPE_1WEEK;
+       resource_id = BATTERY_MONITOR_RESOURCE_ID_WIFI;
+       duration_val = BATTERY_MONITOR_DURATION_TYPE_1WEEK;
 
-	error_code = battery_monitor_get_usage_by_app_id_for_resource_id(app_id, resource_id, duration_val, &battery_usage);
+       error_code = battery_monitor_get_usage_by_app_id_for_resource_id(app_id, resource_id, duration_val, &battery_usage);
 
-	if (error_code == BATTERY_MONITOR_ERROR_NONE)
-		printf("The Battery Usage for appid [%s], for resource wifi is [%d]", app_id, battery_usage);
+       if (error_code == BATTERY_MONITOR_ERROR_NONE)
+           printf("The Battery Usage for appid [%s], for resource wifi is [%d]", app_id, battery_usage);
 
-	else
-		printf("Error Occurred [%d]", error_code);
+       else
+           printf("Error Occurred [%d]", error_code);
 
-	free(app_id);
+       free(app_id);
 
-	return;
-   }
-   ```
+       return;
+    }
+    ```
 
-2. Fetching total battery usage information of an application ID by combining all the resources over certain a certain duration of time.
-   The `battery_monitor_duration_type_e` enum can be used to choose a particular duration type, see the following code:
+- You can get information on total battery usage of an application ID by combining all the resources over a specific duration of time.
+  To get a particular duration type, use the `battery_monitor_duration_type_e` enum.
 
-   ```
-   #include <battery_monitor.h>
+    ```
+    duration_val = BATTERY_MONITOR_DURATION_TYPE_1DAY;
+    error_code = battery_monitor_get_total_usage_by_app_id(app_id, duration_val, &battery_usage);
+    if (error_code == BATTERY_MONITOR_ERROR_NONE)
+        printf("The total battery usage for appid [%s] over last 24 hrs is [%d]", app_id, battery_usage);
+    else
+        printf("Error Occurred [%d]", error_code);
 
-   void
-   func(void)
-   {
-	char* app_id = "org.tizen.samsung";
+    duration_val = BATTERY_MONITOR_DURATION_TYPE_1WEEK;
+    error_code = battery_monitor_get_total_usage_by_app_id(app_id, duration_val, &battery_usage);
+    if (error_code == BATTERY_MONITOR_ERROR_NONE)
+        printf("The total battery usage for appid [%s] over last 7 days is [%d]", app_id, battery_usage);
+    else
+        printf("Error Occurred [%d]", error_code);
 
-	int error_code = BATTERY_MONITOR_ERROR_NONE;
-	int battery_usage = -1;
-	battery_monitor_duration_type_e duration_val = BATTERY_MONITOR_DURATION_TYPE_1DAY;
+    ```
 
-	error_code = battery_monitor_get_total_usage_by_app_id(app_id, duration_val, &battery_usage);
-	if (error_code == BATTERY_MONITOR_ERROR_NONE)
-		printf("The total battery usage for appid [%s] over last 24 hrs is [%d]", app_id, battery_usage);
-	else
-		printf("Error Occurred [%d]", error_code);
+- You can get the battery usage values for all the resources used by an application ID over a specific duration of time.
+  To get resource ID, use the `battery_monitor_resource_id_e` enum, and to get duration type information, use the `battery_monitor_duration_type_e` enum.
 
-	duration_val = BATTERY_MONITOR_DURATION_TYPE_1WEEK;
-	error_code = battery_monitor_get_total_usage_by_app_id(app_id, duration_val, &battery_usage);
-	if (error_code == BATTERY_MONITOR_ERROR_NONE)
-		printf("The total battery usage for appid [%s] over last 7 days is [%d]", app_id, battery_usage);
-	else
-		printf("Error Occurred [%d]", error_code);
+    ```
+    battery_monitor_h data_handle = NULL;
 
-	return;
-   }
-   ```
-3. Fetching battery usage values for all the resources used by an application ID for a certain duration of time.
-   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, as shown in the following code:
 
-   ```
-   #include <battery_monitor.h>
+    /*First use this API to fetch the usage for all the available resources in the data handle*/
+    error_code = battery_monitor_get_usage_by_app_id_for_all_resource_id(app_id, duration_val, &data_handle);
 
-   void
-   func(void)
-   {
-	battery_monitor_h data_handle = NULL;
+    if (error_code == BATTERY_MONITOR_ERROR_NONE)
+        printf("Data Handle information received");
+    else
+        printf("Error Occurred [%d]", error_code);
 
-	char* app_id = "org.tizen.samsung";
-	int error_code = BATTERY_MONITOR_ERROR_NONE;
-	int battery_usage = -1;
-	battery_monitor_duration_type_e duration_val = BATTERY_MONITOR_DURATION_TYPE_1DAY;
+    /*Now retrieving the information one by one from the data_handle*/
+    battery_monitor_resource_id_e resource_id = BATTERY_MONITOR_RESOURCE_ID_DISPLAY;
 
-	/*First use this API to fetch the usage for all the available resources in the data handle*/
-	error_code = battery_monitor_get_usage_by_app_id_for_all_resource_id(app_id, duration_val, &data_handle);
+    error_code = battery_monitor_get_usage_for_resource_id(data_handle, resource_id, &battery_usage);
+    if (error_code == BATTERY_MONITOR_ERROR_NONE)
+        printf("Battery Usage by display is [%d]", battery_usage);
 
-	if (error_code == BATTERY_MONITOR_ERROR_NONE)
-		printf("Data Handle information received");
-	else
-		printf("Error Occurred [%d]", error_code);
+    resource_id = BATTERY_MONITOR_RESOURCE_ID_WIFI;
 
-	/*Now retrieving the information one by one from the data_handle*/
-	battery_monitor_resource_id_e resource_id = BATTERY_MONITOR_RESOURCE_ID_DISPLAY;
+    error_code = battery_monitor_get_usage_for_resource_id(data_handle, resource_id, &battery_usage)
+    if (error_code == BATTERY_MONITOR_ERROR_NONE)
+        printf("Battery Usage by display is [%d]", battery_usage);
 
-	error_code = battery_monitor_get_usage_for_resource_id(data_handle, resource_id, &battery_usage);
-	if (error_code == BATTERY_MONITOR_ERROR_NONE)
-		printf("Battery Usage by display is [%d]", battery_usage);
+    /* Similarly for other resources...
+    .
+    .
+    .
+    */
 
-	resource_id = BATTERY_MONITOR_RESOURCE_ID_WIFI;
-
-	error_code = battery_monitor_get_usage_for_resource_id(data_handle, resource_id, &battery_usage)
-	if (error_code == BATTERY_MONITOR_ERROR_NONE)
-		printf("Battery Usage by display is [%d]", battery_usage);
-
-	/* Similarly for other resources...
-	.
-	.
-	.
-	*/
-
-	error_code = battery_monitor_destroy(data_handle);
-	if (error_code != BATTERY_MONITOR_ERROR_NONE)
-		printf("Error Occurred [%d]", error_code);
-
-	free(app_id);
-
-	return;
-   }
-   ```
+    /*To avoid meomry leak free the memory*/
+    error_code = battery_monitor_destroy(data_handle);
+    if (error_code != BATTERY_MONITOR_ERROR_NONE)
+        printf("Error Occurred [%d]", error_code);
+    ```
 
 <a name="resourceusage_get"></a>
-## Getting Battery Usage Information of Particular Resource
+## Getting Battery Usage Information of Resource
 
-The battery usage information contains combination of the resource ID and the time duration.
+To get battery usage information related with resource ID:
 
-1. Fetching the battery usage information of a particular resource over a certain duration of time.
-   The `battery_monitor_resource_id_e`, `battery_monitor_duration_type_e` enums can be used to provide information related to specific resource and particular duration type respectively, as shown in the following code:
+- You can get the battery usage information of a particular resource over a specific duration of time.
+  To get resource ID, use the `battery_monitor_resource_id_e` enum, and to get duration type information, use the `battery_monitor_duration_type_e` enum.
 
-   ```
-   #include <battery_monitor.h>
+    ```
+    resource_id = BATTERY_MONITOR_RESOURCE_ID_DISPLAY;
+    error_code = battery_monitor_get_total_usage_by_resource_id(resource_id, duration_val, &battery_usage);
+    if (error_code == BATTERY_MONITOR_ERROR_NONE)
+        printf("Battery Usage Display in last 24 hrs is [%d]", battery_usage);
 
-   void
-   func(void)
-   {
-	int error_code = BATTERY_MONITOR_ERROR_NONE;
-	int battery_usage = -1;
-	battery_monitor_resource_id_e resource_id = BATTERY_MONITOR_RESOURCE_ID_DISPLAY;
-	battery_monitor_duration_type_e duration_val = BATTERY_MONITOR_DURATION_TYPE_1DAY;
+    resource_id = BATTERY_MONITOR_RESOURCE_ID_WIFI;
+    error_code = battery_monitor_get_total_usage_by_resource_id(resource_id, duration_val, &battery_usage);
+    if (error_code == BATTERY_MONITOR_ERROR_NONE)
+        printf("Battery Usage Wifi in last 24 hrs is [%d]", battery_usage);
 
-	error_code = battery_monitor_get_total_usage_by_resource_id(resource_id, duration_val, &battery_usage);
-	if (error_code == BATTERY_MONITOR_ERROR_NONE)
-		printf("Battery Usage Display in last 24 hrs is [%d]", battery_usage);
+    /* Similarly for other resources...
+    .
+    .
+    .
+    */
 
-	resource_id = BATTERY_MONITOR_RESOURCE_ID_WIFI;
-	error_code = battery_monitor_get_total_usage_by_resource_id(resource_id, duration_val, &battery_usage);
-	if (error_code == BATTERY_MONITOR_ERROR_NONE)
-		printf("Battery Usage Wifi in last 24 hrs is [%d]", battery_usage);
-
-	/* Similarly for other resources...
-	.
-	.
-	.
-	*/
-
-	return;
-   }
-   ```
+    ```
 <a name="resource_key"></a>
 ## Resource Keys
 
-The following table lists the available resource keys, which are part of `battery_monitor_resource_id_e` enumeration:
+The following table lists the available resource keys, which are part of `battery_monitor_resource_id_e`:
 
 **Table: Resource Keys**
- | Key                                            | Description                                   |
- |------------------------------------------------|-----------------------------------------------|
- | `BATTERY_MONITOR_RESOURCE_ID_BLE`              | Indicates resource key for Bluetooth.         |
- | `BATTERY_MONITOR_RESOURCE_ID_WIFI`             | Indicates resource key for Wifi.              |
- | `BATTERY_MONITOR_RESOURCE_ID_CPU`              | Indicates resource key for CPU.               |
- | `BATTERY_MONITOR_RESOURCE_ID_DISPLAY`          | Indicates resource key for Display.           |
- | `BATTERY_MONITOR_RESOURCE_ID_DEVICE_NETWORK`   | Indicates resource key for Device Network.    |
- | `BATTERY_MONITOR_RESOURCE_ID_GPS_SENSOR`       | Indicates resource key for GPS Sensor.        |
- | `BATTERY_MONITOR_RESOURCE_ID_HRM_SENSOR`       | Indicates resource key for HRM Sensor.        |
+
+ | Key                                            | Description                              |
+ |------------------------------------------------|------------------------------------------|
+ | `BATTERY_MONITOR_RESOURCE_ID_BLE`              | Resource key for Bluetooth.              |
+ | `BATTERY_MONITOR_RESOURCE_ID_WIFI`             | Resource key for Wifi.                   |
+ | `BATTERY_MONITOR_RESOURCE_ID_CPU`              | Resource key for CPU.                    |
+ | `BATTERY_MONITOR_RESOURCE_ID_DISPLAY`          | Resource key for Display.                |
+ | `BATTERY_MONITOR_RESOURCE_ID_DEVICE_NETWORK`   | Resource key for Device Network.         |
+ | `BATTERY_MONITOR_RESOURCE_ID_GPS_SENSOR`       | Resource key for GPS Sensor.             |
+ | `BATTERY_MONITOR_RESOURCE_ID_HRM_SENSOR`       | Resource key for HRM Sensor.             |
 
 <a name="duration_key"></a>
 ## Duration Types
 
-The following table lists the available duration type keys, which are part of `battery_monitor_duration_type_e` enumeration:
+The following table lists the available duration type keys, which are part of `battery_monitor_duration_type_e`:
 
 **Table: Duration Type Keys**
- | Key                                            | Description                                          |
- |------------------------------------------------|------------------------------------------------------|
- | `BATTERY_MONITOR_DURATION_TYPE_1DAY`           | Indicates the Duration of last one day i.e. 24 hrs   |
- | `BATTERY_MONITOR_DURATION_TYPE_1WEEK`          | Indicates the Duration of last one week i.e. 7 days  |
+
+ | Key                                            | Description                              |
+ |------------------------------------------------|------------------------------------------|
+ | `BATTERY_MONITOR_DURATION_TYPE_1DAY`           | Duration of last one day (24 hrs)        |
+ | `BATTERY_MONITOR_DURATION_TYPE_1WEEK`          | Duration of last one week (7 days)       |
 
 ## Related Information
 - Dependencies
