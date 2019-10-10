@@ -84,6 +84,7 @@ As a platform, Tizen provides the foundation for many different applications and
 ## Versions
 
 The latest versions of the Tizen platform include:
+- [Tizen 5.5](versions/tizen-5-5.md)
 - [Tizen 5.0](versions/tizen-5-0.md)
 - [Tizen 4.0 M2](versions/tizen-4-0-m2.md)
 - [Tizen 4.0 M1](versions/tizen-4-0-m1.md)
