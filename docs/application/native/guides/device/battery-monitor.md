@@ -14,7 +14,7 @@ The Battery Monitor APIs provide following provisions to fetch the battery usage
 
 - Getting battery usage information of a resource.
 
-    You can [retrieve battery usage information of a single or muiltiple resources](#resourceusage_get) by specifying its [resource IDs](#resource_key), and the [time duration](#duration_key).
+    You can [retrieve battery usage information of single or muiltiple resources](#resourceusage_get) by specifying its [resource IDs](#resource_key), and the [time duration](#duration_key).
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ To enable your application to use the Battery Monitor functionality:
 To get the battery usage information related with application ID:
 
 - You can get information about an application for a particular resource over a specific duration of time.
-  To get resource ID, use the `battery_monitor_resource_id_e` enum and to get the time duration type information, use the `battery_monitor_duration_type_e` enum.
+  To get resource ID, use the `battery_monitor_resource_id_e` enum and to get the time duration type information, use the `battery_monitor_duration_type_e` enum:
 
     ```
     #include <battery_monitor.h>
@@ -80,7 +80,7 @@ To get the battery usage information related with application ID:
     ```
 
 - You can get information on total battery usage of an application ID by combining all the resources over a specific duration of time.
-  To get a particular duration type, use the `battery_monitor_duration_type_e` enum.
+  To get a particular duration type, use the `battery_monitor_duration_type_e` enum:
 
     ```
     duration_val = BATTERY_MONITOR_DURATION_TYPE_1DAY;
@@ -100,7 +100,7 @@ To get the battery usage information related with application ID:
     ```
 
 - You can get the battery usage values for all the resources used by an application ID over a specific duration of time.
-  To get resource ID, use the `battery_monitor_resource_id_e` enum, and to get duration type information, use the `battery_monitor_duration_type_e` enum.
+  To get resource ID, use the `battery_monitor_resource_id_e` enum, and to get duration type information, use the `battery_monitor_duration_type_e` enum:
 
     ```
     battery_monitor_h data_handle = NULL;
@@ -145,7 +145,7 @@ To get the battery usage information related with application ID:
 To get battery usage information related with resource ID:
 
 - You can get the battery usage information of a particular resource over a specific duration of time.
-  To get resource ID, use the `battery_monitor_resource_id_e` enum, and to get duration type information, use the `battery_monitor_duration_type_e` enum.
+  To get resource ID, use the `battery_monitor_resource_id_e` enum, and to get duration type information, use the `battery_monitor_duration_type_e` enum:
 
     ```
     resource_id = BATTERY_MONITOR_RESOURCE_ID_DISPLAY;
@@ -175,7 +175,7 @@ The following table lists the available resource keys, which are part of `batter
  | Key                                            | Description                              |
  |------------------------------------------------|------------------------------------------|
  | `BATTERY_MONITOR_RESOURCE_ID_BLE`              | Resource key for Bluetooth.              |
- | `BATTERY_MONITOR_RESOURCE_ID_WIFI`             | Resource key for Wifi.                   |
+ | `BATTERY_MONITOR_RESOURCE_ID_WIFI`             | Resource key for Wi-Fi.                  |
  | `BATTERY_MONITOR_RESOURCE_ID_CPU`              | Resource key for CPU.                    |
  | `BATTERY_MONITOR_RESOURCE_ID_DISPLAY`          | Resource key for Display.                |
  | `BATTERY_MONITOR_RESOURCE_ID_DEVICE_NETWORK`   | Resource key for Device Network.         |
