@@ -535,7 +535,7 @@ Various abilities can be set to give the information to the clients about the su
 
 1. Media controller simple abilities
 
-    Each ability is described by a single value of `MediaControllerAbilitySupport` (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerAbilitySupport) , [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerAbilitySupport), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerAbilitySupport) applications)  and is not a part of a complex ability structure:
+    Each ability is described by a single value of `MediaControllerAbilitySupport` (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerAbilitySupport), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerAbilitySupport), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerAbilitySupport) applications)  and is not a part of a complex ability structure:
 
     - PLAYBACK_POSITION: Changing playback position.
     - SHUFFLE: Changing shuffle mode.
@@ -595,22 +595,22 @@ You can monitor changes of server abilities using the `addAbilityChangeListener`
 var mcClient = tizen.mediacontroller.getClient();
 
 var listener = {
-    onplaybackabilitychanged: function (server, ability) {
+    onplaybackabilitychanged: function(server, ability) {
         console.log("playback ability changed, server name: " + server.name +
             ", abilities: ");
         console.log(JSON.stringify(ability));
     },
-    ondisplayrotationabilitychanged: function (server, ability) {
+    ondisplayrotationabilitychanged: function(server, ability) {
         console.log("display rotation ability changed, server name: " +
             server.name + ", ability: ");
         console.log(JSON.stringify(ability));
     },
-    ondisplaymodeabilitychanged: function (server, ability) {
+    ondisplaymodeabilitychanged: function(server, ability) {
         console.log("displayMode ability changed, server name: " + server.name +
             ", abilities: ");
         console.log(JSON.stringify(ability));
     },
-    onsimpleabilitychanged: function (server, type, ability) {
+    onsimpleabilitychanged: function(server, type, ability) {
         console.log(type + " ability changed, server name: " + server.name +
             ", ability: " + ability);
     }
