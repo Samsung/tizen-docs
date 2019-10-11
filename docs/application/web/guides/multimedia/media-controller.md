@@ -67,9 +67,9 @@ The main features of the Media Controller API include:
 
 - Sending custom events
 
-  You can [use the server to send events](#send_custom_events) with the `sendEvent()` method.
+  You can [use the server to send the custom events](#send_custom_events) with the `sendEvent()` method.
 
-  To [receive and handle incoming events](#receive_custom_events) in the client, use the `setCustomEventsListener()` method.
+  To [receive and handle the incoming events](#receive_custom_events) in the client, use the `setCustomEventsListener()` method.
 
 ## Prerequisites
 
@@ -300,12 +300,12 @@ To manage the media controller features in your application, you must learn to s
 
 ## Sending and Receiving Custom Events
 
-While custom commands are a feature that enables the client application to talk to the server application, the communication
-in the opposite direction is done with the help of custom events.
+Custom commands are a feature that enables the client application to talk to the server application.
+The communication in the opposite direction is done with the help of custom events.
 
 <a name="receive_custom_events"></a>
 
-1. Listening for custom events on the client side:
+1. To listen to the custom events on the client-side:
 
    1. Define your custom event listener callback function:
 
@@ -320,7 +320,7 @@ in the opposite direction is done with the help of custom events.
       }
       ```
 
-      Event handler function can return `RequestReply` object which will be send back to the event author.
+      Event handler function can return the `RequestReply` object which will be send back to the event author.
       `RequestReply` consists of status code integer and bundle data object.
 
    2. Set the events listener:
@@ -329,7 +329,7 @@ in the opposite direction is done with the help of custom events.
       mcClient.setCustomEventListener(eventReceivedCallback);
       ```
 
-   3. When your application no longer wants to listen for custom events, you can disable the events listener:
+   3. Disable the events listener, when your application is no longer listening to the custom events:
 
       ```javascript
       mcClient.unsetCustomEventsListener();
@@ -337,7 +337,7 @@ in the opposite direction is done with the help of custom events.
 
 <a name="send_custom_events"></a>
 
-2. Sending custom events on the server side:
+2. To send the custom events on the server-side:
 
    1. Define the custom event parameters (name and data):
 
@@ -361,9 +361,9 @@ in the opposite direction is done with the help of custom events.
       var recipient = mcServer.getAllClientsInfo()[0];
       ```
 
-      This example assumes that there is one client application currently running on the device.
-      Otherwise, we would have to iterate over all `MediaControllerClientInfo` objects returned by
-      the `getClientInfo()` method to select the recipient.
+      This example assumes that there is only one client application currently running on the device.
+      Otherwise, iterate all the `MediaControllerClientInfo` objects returned by the `getClientInfo()`
+      method to select the recipient.
 
    4. Send the event:
 
