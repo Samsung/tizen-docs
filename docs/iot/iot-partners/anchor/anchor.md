@@ -31,7 +31,7 @@ You can evaluate, test and use most of the functions for your products with tech
 ![Anchor3baseboardPictureDimension](media/anchor5basePIC1.png)
 
 For more information about **Anchor5**, please click the below.
-- [**Anchor5 Specifications**](https://drive.google.com/open?id=10UE1hmsKXYnqTIckH501cz3L8faggXes)
+- [**Anchor5 Specifications**](http://dignsys.com/wp-content/uploads/2019/10/Anchor5-1002.pdf)
 - [**Github for Anchor5** Boot & Tizen Package and helpful example source codes](https://github.com/dignsys/)
 
 ## Anchor3
@@ -61,13 +61,13 @@ You can evaluate, test and use most of the functions for your products with tech
 ![Anchor3baseboardPictureDimension](media/anchor3basePICo.png)
 
 For more information about Anchor3, please click the below.
-- [**Anchor3 Specifications**](https://drive.google.com/open?id=1Lyg82AsNngCCvtgW5kcY1iOB71PmYUcm)
+- [**Anchor3 Specifications**](http://dignsys.com/wp-content/uploads/2019/10/Anchor5-1002.pdf)
 - [**Github for Anchor3** Boot & Tizen Package and helpful example source codes](https://github.com/dignsys/)
 
 ## Contact Information
 
 For more information about Anchor Series, please visit the below.
-- [Customer Service & Technical Supports For **Anchor Series**](https://www.dignsys.com/)
+- [Customer Service & Technical Supports For **Anchor Series**](http://dignsys.com/eng/embedded-iot/som-module/anchor5-som/)
 - [**www.dignsys.com**](http://dignsys.com/)
 
 or **If you have any questions, please send us by** [**email**](hbahn@dignsys.com)
