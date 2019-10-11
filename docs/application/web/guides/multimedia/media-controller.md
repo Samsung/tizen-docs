@@ -339,7 +339,7 @@ The communication in the opposite direction is done with the help of custom even
 
 2. To send the custom events on the server-side:
 
-   1. Define the custom event parameters (name and data):
+   1. Define the name and data of the custom event parameters:
 
       ```javascript
       var eventName = 'HelloWorld';
