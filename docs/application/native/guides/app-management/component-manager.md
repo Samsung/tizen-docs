@@ -142,7 +142,7 @@ To get the running component context and its details, and to operate on the cont
 
 To get the installed information and its details, and to operate on the information:
 
-1. Get the information of the currently installed component with `component_manager_get_component_info()`. Use the obtained component ID and `component_info_h` handle of the component with received information as the parameter.
+1. Get the information of the currently-installed component with `component_manager_get_component_info()`. Use the obtained component ID and `component_info_h` handle of the component with received information as the parameter.
 
    ```
    component_info_h component_info = NULL;
