@@ -68,7 +68,6 @@
 ### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Quickstart](/application/dotnet/guides/nui/quickstart.md)
-#### [Getting Started](/application/dotnet/guides/nui/hello-world.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
 #### Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
