@@ -29,7 +29,7 @@ You can use the following device settings and systems features in your native ap
 
   You can play a feedback pattern using sound or vibration. You can use specific patterns, or specific type and pattern. You can also check whether a specific pattern is supported.
 
-- [Battery Monitor](battery-monitor.md) in wearable applications only
+- [Battery Monitor](battery-monitor.md) **in wearable applications only**
 
    You can access battery usage related information for a particular application, or an available hardware resource over a certain duration of time.
 
