@@ -18,7 +18,7 @@ To create a Tizen NUI app, proceed as follows:
 
     ![nui_setting_image_1](./media/tizen_project_wizard_capture_template1_1.png)
 
-2.  In **Configure your new project**, specify the Project name, location and solution name. Click **Create**:
+2.  In **Configure your new project** dialog, specify the Project name, location and solution name. Click **Create**:
 
     ![nui_setting_image_1](./media/tizen_project_wizard_capture_template1_2.png)
 
