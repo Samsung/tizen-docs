@@ -33,6 +33,12 @@ The main features of the Media Controller API include:
 
   To [receive and handle incoming commands](#receive_custom_commands) in the server, use the `addCommandListener()` method.
 
+- Sending custom events
+
+  You can [use the server to send the custom events](#send_custom_events) with the `sendEvent()` method.
+
+  To [receive and handle the incoming events](#receive_custom_events) in the client, use the `setCustomEventListener()` method.
+
 - Sending and receiving search requests
 
   You can use the media controller client to [send the search requests](#sending-search-request) with the `sendSearchRequest()` method.
@@ -64,12 +70,6 @@ The main features of the Media Controller API include:
 - Setting features of the media controller server
 
   You can [set the media controller server features](#media-controller-server-features) using the server interfaces.
-
-- Sending custom events
-
-  You can [use the server to send the custom events](#send_custom_events) with the `sendEvent()` method.
-
-  To [receive and handle the incoming events](#receive_custom_events) in the client, use the `setCustomEventsListener()` method.
 
 ## Prerequisites
 
@@ -300,7 +300,7 @@ To manage the media controller features in your application, you must learn to s
 
 ## Sending and Receiving Custom Events
 
-Custom commands are a feature that enables the client application to talk to the server application.
+Custom command enables the client application to talk to the server application.
 The communication in the opposite direction is done with the help of custom events.
 
 <a name="receive_custom_events"></a>
@@ -320,7 +320,7 @@ The communication in the opposite direction is done with the help of custom even
       }
       ```
 
-      Event handler function can return the `RequestReply` object which will be send back to the event author.
+      Event handler function can return the `RequestReply` object which will be sent back to the event author.
       `RequestReply` consists of status code integer and bundle data object.
 
    2. Set the events listener:
@@ -332,7 +332,7 @@ The communication in the opposite direction is done with the help of custom even
    3. Disable the events listener, when your application is no longer listening to the custom events:
 
       ```javascript
-      mcClient.unsetCustomEventsListener();
+      mcClient.unsetCustomEventListener();
       ```
 
 <a name="send_custom_events"></a>
