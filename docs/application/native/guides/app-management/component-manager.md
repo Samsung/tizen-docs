@@ -2,7 +2,7 @@
 
 Component manager provides information about installed and running components.
 
-The main features of the Component Manager API include:
+The main features of Component Manager API include:
 
 - Managing component context
 
@@ -16,7 +16,7 @@ Iterator functions are used to travel through a list of components. `component_m
 
 ## Prerequisites
 
-1. To use the Component Manager API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use Component Manager API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -25,7 +25,7 @@ Iterator functions are used to travel through a list of components. `component_m
     </privileges>
     ```
 
-2. To use the functions and data types of the Component Manager API, include the `<component_manager.h>` header file in your application:
+2. To use the functions and data types of Component Manager API, include the `<component_manager.h>` header file in your application:
 
     ```
     #include <component_manager.h>
