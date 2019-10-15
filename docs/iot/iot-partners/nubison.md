@@ -2,7 +2,7 @@
 
 The Nubison IoT cloud is a cloud-based IoT platform that provides smart solutions and intelligent services by connecting various things easily, as well as collecting and analyzing IoT data in real time.
 
-Real-time data monitoring and controlling between Tizen service app and Nubison cloud is empowered through Nubison plugin.
+Real-time data monitoring between the Tizen service app and the Nubison cloud is empowered through the Nubison plugin.
 
 The following diagram shows the interface between Tizen IoT device and Nubison cloud through Nubison plugin:
 
