@@ -367,9 +367,9 @@ The communication in the opposite direction is done with the help of custom even
 
    4. Send the event:
 
-     ```javascript
-     recipient.sendEvent(eventName, eventData, eventReplyReceived);
-     ```
+      ```javascript
+      recipient.sendEvent(eventName, eventData, eventReplyReceived);
+      ```
 
 ## Sending and Receiving Search Requests from Client to Server
 
