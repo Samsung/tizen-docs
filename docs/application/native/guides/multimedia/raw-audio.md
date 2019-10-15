@@ -36,7 +36,7 @@ Your application must define the following PCM data settings:
   - `AUDIO_SAMPLE_TYPE_S16_LE` : Signed 16 integer bit PCM, little endian
   - `AUDIO_SAMPLE_TYPE_S24_LE` : Signed 24 bit integer PCM, little endian
   - `AUDIO_SAMPLE_TYPE_S24_32LE` : Signed 24 bit integer PCM in LSB of 32 bit words, little endian
-  - `AUDIO_SAMPLE_TYPE_S32LE` : Signed 32 bit integer PCM, little endian
+  - `AUDIO_SAMPLE_TYPE_S32_LE` : Signed 32 bit integer PCM, little endian
 - Audio sample rate:
   - 8000 ~ 192000 Hz
 
