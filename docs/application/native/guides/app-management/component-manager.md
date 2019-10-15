@@ -53,7 +53,7 @@ To get the running component context and its details, and to operate on the cont
      ret = component_context_get_component_id(component_context, &component_id);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
         dlog_print(DLOG_ERROR, LOG_TAG, "Failed to get component ID. error(%d)", ret);
-	return;
+        return;
      }
      ```
 
@@ -66,7 +66,7 @@ To get the running component context and its details, and to operate on the cont
      ret = component_context_get_app_id(component_context, &app_id);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to get application ID. error(%d)", ret);
-	 return;
+         return;
      }
      ```
 
@@ -80,7 +80,7 @@ To get the running component context and its details, and to operate on the cont
      ret = component_context_is_terminated(component_context, &terminated);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to check whether the component is terminated or not. error(%d)", ret);
-	 return;
+         return;
      }
 
      if (terminated == true)
@@ -97,7 +97,7 @@ To get the running component context and its details, and to operate on the cont
      ret = component_context_clone(&component_context_cloned, component_context);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to clone component context. error(%d)", ret);
-	 return;
+         return;
      }
      ```
 
@@ -109,7 +109,7 @@ To get the running component context and its details, and to operate on the cont
      ret = component_context_get_component_state(component_context, &state);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to get component state. error(%d)", ret);
-	 return;
+         return;
      }
 
      dlog_print(DLOG_INFO, LOG_TAG, "Component State: %d", state);
@@ -122,7 +122,7 @@ To get the running component context and its details, and to operate on the cont
      ret = component_context_is_subcomponent(component_context, &is_subcomponent);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to check whether the component is running as sub component of the group. error(%d)", ret);
-	 return;
+         return;
      }
      ```
    - Resume the running component:
@@ -131,7 +131,7 @@ To get the running component context and its details, and to operate on the cont
      ret = component_manager_resume_component(component_context);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to resume component. error(%d)", ret);
-	 return;
+         return;
      }
      ```
      When the component is frame-component, it will appear on the screen.
@@ -142,18 +142,18 @@ To get the running component context and its details, and to operate on the cont
      ret = component_manager_terminate_bg_component(component_context);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to terminate bg component. error(%d)", ret);
-	 return;
+         return;
      }
      ```
 
 3. When you no longer need the component context, call `component_context_destroy()` to remove the handle and release all resources to prevent memory leaks:
 
    ```
-     ret = component_context_destroy(component_context);
-     if (ret != COMPONENT_MANAGER_ERROR_NONE) {
-         dlog_print(DLOG_ERROR, LOG_TAG, "Failed to destroy component context. error(%d)", ret);
-	 return;
-     }
+   ret = component_context_destroy(component_context);
+   if (ret != COMPONENT_MANAGER_ERROR_NONE) {
+       dlog_print(DLOG_ERROR, LOG_TAG, "Failed to destroy component context. error(%d)", ret);
+       return;
+   }
    ```
 
 <a name="filter"></a>
@@ -181,7 +181,7 @@ To get the installed information and its details, and to operate on the informat
      ret = component_info_get_component_id(component_info, &component_id);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to get component ID. error(%d)", ret);
-	 return;
+         return;
      }
      ```
      When `component_id` is no longer needed, release it using `free()`.
@@ -193,7 +193,7 @@ To get the installed information and its details, and to operate on the informat
      ret = component_info_get_app_id(component_info, &app_id);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to get application ID. error(%d)", ret);
-	 return;
+         return;
      }
      ```
 
@@ -206,7 +206,7 @@ To get the installed information and its details, and to operate on the informat
      ret = component_info_get_component_type(component_info, &type);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Falied to get component type. error(%d)", ret);
-	 return;
+         return;
      }
 
      if (type == COMPONENT_INFO_COMPONENT_TYPE_FRAME)
@@ -222,14 +222,14 @@ To get the installed information and its details, and to operate on the informat
      ret = component_info_get_icon(component_info, &icon);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to get icon path. error(%d)", ret);
-	 return;
+         return;
      }
 
      bool icon_display = false;
      ret = component_info_is_icon_display(component_info, &icon_display);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to check whether the icon is displayed or not. error(%d)", ret);
-	 return;
+         return;
      }
 
      dlog_print(DLOG_INFO, LOG_TAG, "Icon path: %s", icon);
@@ -244,7 +244,7 @@ To get the installed information and its details, and to operate on the informat
      ret = component_info_is_managed_by_task_manager(component_info, &managed);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to check the component is managed by task-manager. error(%d)", ret);
-	 return;
+         return;
      }
 
      dlog_print(DLOG_INFO, LOG_TAG, "Component is managed by task manager: %s", managed ? "true" : "false");
@@ -257,7 +257,7 @@ To get the installed information and its details, and to operate on the informat
      ret = component_info_get_label(component_info, &label);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to get component label. error(%d)", ret);
-	 return;
+         return;
      }
 
      dlog_print(DLOG_INFO, LOG_TAG, "Component Name: %s", label);
@@ -271,7 +271,7 @@ To get the installed information and its details, and to operate on the informat
      ret = component_info_get_localized_label(component_info, 'en-us', &localized_label);
      if (ret != COMPONENT_MANAGER_ERROR_NONE) {
          dlog_print(DLOG_ERROR, LOG_TAG, "Failed to get localized label. error(%d)", ret);
-	 return;
+         return;
      }
 
      dlog_print(DLOG_INFO, LOG_TAG, "Component Name: %s", localized_label);
