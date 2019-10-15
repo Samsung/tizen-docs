@@ -31,7 +31,7 @@ You can use the following device settings and systems features in your native ap
 
 - [Battery Monitor](battery-monitor.md) **in wearable applications only**
 
-   You can access battery usage related information for a particular application, or an available hardware resource over a certain duration of time.
+   You can access the battery usage-related information for a particular application, or an available hardware resource over a specific duration of time.
 
 ## Related Information
 - Dependencies

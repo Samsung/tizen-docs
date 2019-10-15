@@ -37,10 +37,10 @@ To enable your application to use the Battery Monitor functionality:
 <a name="appusage_get"></a>
 ## Getting Battery Usage Information of Application
 
-To get the battery usage information related with application ID:
+To get the battery usage information related to the application ID:
 
 - Get battery usage information of an application for a particular resource over a specific duration of time.
-  To get resource ID use the `battery_monitor_resource_id_e` enum, and to get the time duration type information use the `battery_monitor_duration_type_e` enum:
+  To get the resource ID, use the `battery_monitor_resource_id_e` enum and to get the time duration type information, use the `battery_monitor_duration_type_e` enum:
 
     ```
     #include <battery_monitor.h>
@@ -100,7 +100,7 @@ To get the battery usage information related with application ID:
     ```
 
 - Get the battery usage information of an application ID for each resource over a specific duration of time.
-  To get resource ID use the `battery_monitor_resource_id_e` enum, and to get the time duration type information use the `battery_monitor_duration_type_e` enum:
+  To get the resource ID, use the `battery_monitor_resource_id_e` enum and to get the time duration type information, use the `battery_monitor_duration_type_e` enum:
 
     ```
     battery_monitor_h data_handle = NULL;
@@ -142,10 +142,10 @@ To get the battery usage information related with application ID:
 <a name="resourceusage_get"></a>
 ## Getting Battery Usage Information of Resource
 
-To get battery usage information related with resource ID:
+To get battery usage information related to the resource ID:
 
 - Get the battery usage information of a particular resource over a specific duration of time.
-  To get resource ID use the `battery_monitor_resource_id_e` enum, and to get time duration type information use the `battery_monitor_duration_type_e` enum:
+  To get the resource ID, use the `battery_monitor_resource_id_e` enum and to get time duration type information, use the `battery_monitor_duration_type_e` enum:
 
     ```
     resource_id = BATTERY_MONITOR_RESOURCE_ID_DISPLAY;
