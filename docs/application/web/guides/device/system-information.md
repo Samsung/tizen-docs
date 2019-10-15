@@ -285,7 +285,7 @@ The system properties are defined as subtypes of the `SystemInfoProperty` interf
 | [`SystemInfoVideoSource`](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoVideoSource) | `VIDEOSOURCE`                | Provides information about the connected and disconnected devices. |
 | `SystemInfoCameraFlash` (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfoCameraFlash), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfoCameraFlash), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoCameraFlash) applications) | `CAMERA_FLASH`                | Provides a way to control the attached camera flash. |
 | [`SystemInfoServiceCountry`](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoServiceCountry) | `SERVICE_COUNTRY`                | Represents a country for which the basic policy of terms and conditions is set. |
-| [`SystemInfoSourceInfo`](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoVideoSourceInfo) | `SOURCE_INFO`                | Provides information about the current video source of device, for example TV, HDMI1, HDMI2 and so on. |
+| [`SystemInfoSourceInfo`](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoVideoSourceInfo) | `SOURCE_INFO`                | Provides information about the current video source of device, for example TV, HDMI1, HDMI2, and so on. |
 
 ## Related Information
 * Dependencies
