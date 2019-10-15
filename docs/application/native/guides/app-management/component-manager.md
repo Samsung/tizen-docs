@@ -42,7 +42,7 @@ To get the running component context and its details, and to operate on the cont
    component_context_h component_context = NULL;
    int ret = component_manager_get_component_context(`Your Component ID`, &component_context);
    ```
-   If it executed correctly, the function returns `COMPONENT_MANAGER_ERROR_NONE` and `component_context` variable contains the handle to the defined component context.
+   If it is executed correctly, the function returns `COMPONENT_MANAGER_ERROR_NONE` and `component_context` variable contains the handle to the defined component context.
 
 2. Operate on the context:
 
@@ -163,6 +163,7 @@ To get the installed information and its details, and to operate on the informat
 
 1. Get the information of the currently-installed component with `component_manager_get_component_info()`. Use the obtained component ID and `component_info_h` handle of the component with received information as the parameter.
 
+   To get a component's information, the component must be installed.
    ```
    component_info_h component_info = NULL;
    int ret = component_manager_get_component_info(`Your Component ID`, &component_info);
