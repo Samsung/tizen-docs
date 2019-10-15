@@ -676,6 +676,7 @@
 #### [System Information](/application/native/guides/device/system.md)
 #### [System Settings](/application/native/guides/device/settings.md)
 #### [Sound and Vibration Feedback](/application/native/guides/device/feedback.md)
+#### [Battery Monitor](/application/native/guides/device/battery-monitor.md)
 
 ### Security
 #### [Overview](/application/native/guides/security/overview.md)
