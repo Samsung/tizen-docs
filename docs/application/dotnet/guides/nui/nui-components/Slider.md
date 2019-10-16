@@ -29,10 +29,10 @@ utilityBasicSlider.ThumbImageURLSelector = new StringSelector
 };
 utilityBasicSlider.ThumbSize = new Size(60, 60);
 utilityBasicSlider.Direction = Slider.DirectionType.Horizontal;
-root.Add(utilityBasicSlider);
 utilityBasicSlider.MinValue = 0;
 utilityBasicSlider.MaxValue = 100;
 utilityBasicSlider.CurrentValue = 10;
+root.Add(utilityBasicSlider);
 ~~~
 
 Slider created by property:
@@ -46,6 +46,9 @@ You can declare the value changed event handler as following:
 ~~~{.cs}
 Slider slider = new Slider();
 slider.ValueChangedEvent += OnValueChanged;
+~~~
+
+~~~{.cs}
 private void OnValueChanged(object sender, Slider.ValueChangedArgs args)
 {
     // Do something in response to slider click
@@ -59,6 +62,9 @@ When the user change slider state ( change focus or disable a slider), the Slide
 ~~~{.cs}
 Slider slider = new Slider();
 slider.StateChangedEvent += OnStateChanged;
+~~~
+
+~~~{.cs}
 private void OnStateChanged(object sender, Slider.StateChangedArgs args)
 {
     // Do something in response to state change
@@ -71,6 +77,9 @@ When user finish a touch or pan operate on a slider, the Slider instance receive
 ~~~{.cs}
 Slider slider = new Slider();
 slider.SlidingFinishedEvent += OnSlidingFinished;
+~~~
+
+~~~{.cs}
 private void OnSlidingFinished(object sender, Slider.SlidingFinishedArgs args)
 {
     // Do something in response to slide finished

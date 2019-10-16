@@ -50,6 +50,9 @@ You can declare the click event handler as following:
 ~~~{.cs}
 Button button = new Button();
 button.ClickEvent += OnClick;
+~~~
+
+~~~{.cs}
 private void OnClick(object sender, Button.ClickEventArgs e)
 {
     // Do something in response to button click
@@ -63,6 +66,9 @@ When the user change button state ( change focus or disable a button), the Butto
 ~~~{.cs}
 Button button = new Button();
 button.StateChangedEvent += OnStateChange;
+~~~
+
+~~~{.cs}
 private void OnStateChange(object sender, Button.StateChangeEventArgs e)
 {
     // Do something in response to state change

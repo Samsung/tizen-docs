@@ -25,14 +25,8 @@ utilityBasicLoading = new Loading();
 string[] imageArray = new string[36];
 for (int i=0; i<36; i++)
 {
-    if (i < 10)
-    {
-        imageArray[i] = "Loading Sequence_Native/loading_0" + i + ".png";
-    }
-    else
-    {
-        imageArray[i] = "Loading Sequence_Native/loading_" + i + ".png";
-    }
+    
+    imageArray[i] = "loading_" + i.ToString("00") + ".png";
 }
 utilityBasicLoading.ImageArray = imageArray;
 ~~~

@@ -61,6 +61,9 @@ You can declare the item change event handler as following:
 ~~~{.cs}
 Tab tab = new Tab();
 tab.ItemChangedEvent += TabItemChangedEvent;
+~~~
+
+~~~{.cs}
 private void TabItemChangedEvent(object sender, Tab.ItemChangeEventArgs e)
 {
     createText[0].Text = "Create Tab just by properties, Selected index from " + e.PreviousIndex + " to " + e.CurrentIndex;

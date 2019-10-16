@@ -1,5 +1,5 @@
 # Switch
-This tutorial describes how to create and use Popup.
+This tutorial describes how to create and use Switch.
 
 ## Overview
 Switch is one kind of common component, it can be used as selector.
@@ -37,6 +37,7 @@ for(int i = 0; i < num; i++)
     };
     root.Add(utilitySwitch[i]);
 }
+utilitySwitch[0].IsSelected = true;
 utilitySwitch[2].IsEnabled = false;
 utilitySwitch[2].IsSelected = false;
 utilitySwitch[3].IsEnabled = false;
@@ -54,6 +55,9 @@ You can declare the event handler as following:
 ~~~{.cs}
 Switch switchControl = new Switch();
 switchControl.SelectedEvent += OnSelected;
+~~~
+
+~~~{.cs}
 private void OnSelected(object sender, Switch.SelectEventArgs e)
 {
     //Do something when user select the switch

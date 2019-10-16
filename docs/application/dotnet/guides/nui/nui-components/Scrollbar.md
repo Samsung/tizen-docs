@@ -40,7 +40,7 @@ The properties available in the *ScrollBar* class are:
 | TrackColor | Color | Get/set the color of the track object |
 | TrackImageURL | string | Get/set the image URL of the track image object |
 | Direction | DirectionType | Get/set the direction of the ScrollBar |
-| Duration | uint | Get/set the animation duration |
+| Duration | uint | Get/set the animation duration for thumbImage animate to CurrentValue|
 | ThumbSize | Size | Get/set the size of the thumb object |
 
 ## Related Information

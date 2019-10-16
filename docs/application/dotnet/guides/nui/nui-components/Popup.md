@@ -31,7 +31,7 @@ popup.TitleTextHorizontalAlignment = HorizontalAlignment.Begin;
 popup.TitleTextPosition = new Position(64, 52);
 popup.TitleText = "Popup Title";
 
-popup.ButtonTextColor = color[index];
+popup.ButtonTextColor = new Color(0.05f, 0.63f, 0.9f, 1);
 popup.ButtonHeight = 132;
 popup.ButtonCount = 2;
 popup.SetButtonText(0, "Yes");
@@ -50,6 +50,9 @@ You can declare the event handler as following:
 ~~~{.cs}
 Popup popup = new Popup();
 popup.PopupButtonClickEvent += PopupButtonClickEvent;
+~~~
+
+~~~{.cs}
 private void PopupButtonClickEvent(object sender, Tizen.NUI.CommonUI.Popup.ButtonClickEventArgs e)
 {
     Tizen.Log.Info("CommonUI", "Button index " + e.ButtonIndex + " is clicked");
