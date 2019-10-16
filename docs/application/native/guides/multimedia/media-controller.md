@@ -555,6 +555,12 @@ To send a command to the server from the client side, follow these steps:
    mc_client_send_shuffle_mode_cmd(g_client_h, server_name, MC_SHUFFLE_MODE_ON, NULL);
    mc_client_send_repeat_mode_cmd(g_client_h, server_name, MC_REPEAT_MODE_OFF, NULL);
    mc_client_send_playlist_cmd(g_client_h, server_name, "my_favorite", "1", MC_PLAYBACK_ACTION_PLAY, 0, NULL);
+   
+   /* Since Tizen 5.5, following APIs are supported */ 
+   mc_client_send_subtitles_cmd(g_client_h, server_name, TRUE, NULL);
+   mc_client_send_360_mode_cmd(g_client_h, server_name, FALSE, NULL);
+   mc_client_send_display_mode_cmd(g_client_h, server_name, MC_DISPLAY_MODE_FULL_SCREEN, NULL);
+   mc_client_send_display_rotation_cmd(g_client_h, server_name, MC_DISPLAY_ROTATION_180, NULL);
    ```
    
    If you want to define custom commands, that you can send to the server, use `mc_client_send_custom_cmd()`:
@@ -604,7 +610,12 @@ To process the received command on the server side, follow these steps:
    - To register a callback for repeat mode change commands, use `mc_server_set_repeat_mode_cmd_received_cb()`.
    - To register a callback for played item, playback state, and playback position change commands in playlist, use  `mc_server_set_playlist_cmd_received_cb()`.
    - To register a callback for a custom command, use `mc_server_set_custom_cmd_received_cb()`.
-
+   /* Since Tizen 5.5, following APIs are supported */ 
+   - To register a callback for subtitles change commands, use `mc_server_set_subtitles_cmd_received_cb()`.
+   - To register a callback for 360 mode change commands, use `mc_server_set_360_mode_cmd_received_cb()`.
+   - To register a callback for display mode change commands, use `mc_server_set_display_mode_cmd_received_cb()`.
+   - To register a callback for display rotation change commands, use `mc_server_set_display_rotation_cmd_received_cb()`.
+   
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
@@ -1022,6 +1033,42 @@ The following table lists all the search category attributes the server can rece
 > **Note**
 >
 > These Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+
+## Media Controller Display Mode Attributes
+
+The following table lists all the display mode attributes the client can receive and send command:
+
+**Table: Media controller display mode attributes**
+
+| Attribute                        | Description                              |
+|----------------------------------|------------------------------------------|
+| **Display modes**                |                                          |
+| `MC_DISPLAY_MODE_LETTER_BOX`     | Display mode is Letter box               |
+| `MC_DISPLAY_MODE_ORIGIN_SIZE`    | Display mode is Origin size              |
+| `MC_DISPLAY_MODE_FULL_SCREEN`    | Display mode is Full screen              |
+| `MC_DISPLAY_MODE_CROPPED_FULL`   | Display mode is Cropped full screen      |
+
+> **Note**
+>
+> These Attributes support Tizen 5.5 and Higher for Mobile and Wearable.
+
+## Media Controller Display Rotation Attributes
+
+The following table lists all the display rotation attributes the client can receive and send command:
+
+**Table: Media controller display rotation attributes**
+
+| Attribute                        | Description                              |
+|----------------------------------|------------------------------------------|
+| **Display rotations**            |                                          |
+| `MC_DISPLAY_ROTATION_NONE`       | Display is not rotated                   |
+| `MC_DISPLAY_ROTATION_90`         | Display is rotated 90 degrees            |
+| `MC_DISPLAY_ROTATION_180`        | Display is rotated 180 degrees           |
+| `MC_DISPLAY_ROTATION_270`        | Display is rotated 270 degrees           |
+
+> **Note**
+>
+> These Attributes support Tizen 5.5 and Higher for Mobile and Wearable.
 
 ## Related Information
 - Dependencies
