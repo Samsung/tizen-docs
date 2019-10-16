@@ -32,7 +32,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 
 - Web Runtime
 
-  - New elements: <tizen:content-security-policy>, <tizen:content-security-policy-report-only>, <tizen:allow-navigation>, <tizen:metadata>, <tizen:setting hwkey-event>, and <tizen:box-size use-decoration>
+  - New elements: `<tizen:content-security-policy>`, `<tizen:content-security-policy-report-only>`, `<tizen:allow-navigation>`, `<tizen:metadata>`, `<tizen:setting hwkey-event>`, and `<tizen:box-size use-decoration>`
   - New events: appwidgetready and tizenhwkey
   - Web Runtime supports auto-orientation change
 

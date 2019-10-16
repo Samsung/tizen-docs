@@ -7,7 +7,7 @@ An actor is also the primary object with which DALi applications interact. All C
 
 In an application, multiple types of event signals provided by actors can be handled through user-defined callback functions.
 
-For additional actor usage examples, see [Actor Layout Examples](layout.md#example).
+For additional actor usage examples, see [Actor Layout Examples](layout.md#actor-layout-examples).
 
 ## Actor Types
 

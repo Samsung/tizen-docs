@@ -279,7 +279,7 @@ For more information on the relationship between the elements, see the [element 
 
   By default, this value is not defined.
 
-- `launch_mode`
+- `launch_mode`<a name="launch_mode"></a>
 
   Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with the `app_control_set_launch_mode()` function))
 
@@ -507,6 +507,7 @@ This element contains the watch application icon image.
 <icon>watchsample.png</icon>
 ```
 
+<a name="widget_app"></a>
 ### \<widget-application\> Element
 
 This element contains the settings for a widget application.
