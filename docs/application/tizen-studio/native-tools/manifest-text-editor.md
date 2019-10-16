@@ -718,6 +718,10 @@ For more information on the relationship between the elements, see the [element 
 
   Application unique ID (string)
 
+  You can use the a\~z, A\~Z, 0\~9, ".", "-", and "\_" characters, and the value must be shorter than 50 characters.
+
+  This can be used for launching or terminating the application explicitly.
+
 - `exec`
 
   Application executable file path (string)
@@ -736,20 +740,20 @@ For more information on the relationship between the elements, see the [element 
    <label>component-based</label>
    <icon>icon.png</icon>
    <app-control>
-      <operation name="http://tizen.org/appcontrol/operation/share"/>
+     <operation name="http://tizen.org/appcontrol/operation/share"/>
    </app-control>
    <metadata key="http://tizen.org/metadata/testkey" value="testvalue"/>
    <datacontrol access="ReadOnly" providerid="http://uiapp.com/datacontrol/provider/component-based" type="Sql"/>
    <splash-screens>
-      <splash-screen src="icon.jpg" type="img" dpi="hdpi" orientation="portrait" indicator-display="true"/>
+     <splash-screen src="icon.jpg" type="img" dpi="hdpi" orientation="portrait" indicator-display="true"/>
    </splash-screens>
-   <frame-component id="org.tizen.frame-component" main=”true” icon-display=”true” taskmanage=”true” launch_mode="single">
-      <label>frame-component</label>
-	  <icon>frame.png</icon>
+   <frame-component id="org.tizen.frame-component" main="true" icon-display="true" taskmanage="true" launch_mode="single">
+     <label>frame-component</label>
+     <icon>frame.png</icon>
    </frame-component>
-   <service-component id="org.tizen.service-component" main=”false”>
-      <label>service-component</label>
-	  <icon>service.png</icon>
+   <service-component id="org.tizen.service-component" main="false">
+     <label>service-component</label>
+     <icon>service.png</icon>
    </service-component>
 </component-based-application>
 ```
@@ -832,7 +836,7 @@ This element contains the settings for the frame component. After adding this el
 **For example:**
 
 ```xml
-<frame-component id=”org.example.frame-component” main=”true” icon-display=”true” taskmanage=”true” launch_mode="single">
+<frame-component id="org.example.frame-component" main="true" icon-display="true" taskmanage="true" launch_mode="single">
    <label>.....</label>
    <icon>.....</icon>
 </frame-component>
@@ -902,7 +906,7 @@ This element contains the settings for the service component. After adding this 
 **For example:**
 
 ```xml
-<service-component id=”org.example.service-component” main=”false”>
+<service-component id="org.example.service-component" main="false">
    <label>.....</label>
    <icon>.....</icon>
 </service-component>
