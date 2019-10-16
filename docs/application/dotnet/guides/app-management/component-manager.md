@@ -36,7 +36,7 @@ To enable your application to use the component management functionality:
 <a name="manage_context"></a>
 ## Managing Running Component Context
 
-To get the component running context and its details, and to operate on the context:
+To get the running component context and its details, and to operate on the context:
 
 1.  Get the context of the currently running component by creating an instance of the [Tizen.Applications.ComponentBased.ComponentRunningContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ComponentBased.ComponentRunningContext.html) class, with the ID of the context obtained component as a parameter.
 
@@ -93,7 +93,7 @@ To get the installed information and its details, and to operate on the informat
     ComponentInfo compoInfo = new ComponentInfo(Your Component ID);
     ```
 
-2.  Operate on the context:
+2.  Operate on the information:
     -   Get the component ID and application ID:
 
         ```
