@@ -8,7 +8,7 @@ The main features of the Download API include:
 
 - Managing downloads
 
-  You can [start, pause, resume, and cancel a download](#managing-downloads) of content using the `DownloadManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/download.html#DownloadManager), [wearable](../../api/latest/device_api/wearable/tizen/download.html#DownloadManager), and [TV](../../api/latest/device_api/tv/tizen/download.html#DownloadManager) applications).
+  You can [start, pause, resume, cancel, and abandon a download](#managing-downloads) of content using the `DownloadManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/download.html#DownloadManager), [wearable](../../api/latest/device_api/wearable/tizen/download.html#DownloadManager), and [TV](../../api/latest/device_api/tv/tizen/download.html#DownloadManager) applications).
 
 - Checking the download state and information
 
@@ -85,25 +85,45 @@ To provide the user access to Internet resources, you must learn how to manage d
 
    The `start()` method returns a unique identifier for the download operation.
 
-5. During the download:
+   You can check the status of the download operation by calling the `getState()` method with the download ID:
+
+      ```
+      tizen.download.getState(downloadId);
+      ```
+
+5. During the download operation, you can modify the download state.
+
+    >**Note**
+    >
+    >For downloading small file with using high speed connection, the download operation completes almost instantly.
 
    1. To pause the download, use the `pause()` method with the download ID:
 
       ```
       tizen.download.pause(downloadId);
       ```
+        If the current state is DOWNLOADING or QUEUED, calling the `pause()` method changes the download state to PAUSED.
 
    2. To resume the download, use the `resume()` method with the download ID:
 
       ```
       tizen.download.resume(downloadId);
       ```
+        If the current state is PAUSED, CANCELED, or FAILED, calling the `resume()` method changes the download state to DOWNLOADING or QUEUED.
 
    3. To cancel the download, use the `cancel()` method with the download ID:
 
       ```
       tizen.download.cancel(downloadId);
       ```
+        If the current state is DOWNLOADING or QUEUED, calling the `cancel()` method changes the download state to CANCELED.
+
+   4. To abandon the download, use the `abandon()` method with the download ID:
+
+      ```
+      tizen.download.abandon(downloadId);
+      ```
+        For any abandoned download operation, the resources are already released. Thus the download operation cannot be resumed.
 
 ## Checking the Download State and Information
 
@@ -138,7 +158,7 @@ To provide the user access to Internet resources, you must learn how to check th
    ```
 
 ## Related Information
-* Dependencies   
+- Dependencies
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
    - Tizen 3.0 and Higher for TV

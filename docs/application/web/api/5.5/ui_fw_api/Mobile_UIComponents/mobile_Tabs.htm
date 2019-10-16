@@ -1,0 +1,202 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Tabs</title>
+</head>
+<body onload="prettyPrint()" id="content">
+<h1>Tabs</h1>
+The Tabs component is a controller component for operate closely with tabbar and sectionChanger.
+
+<table class="note">
+    <tbody>
+    <tr>
+        <th class="note">Note</th>
+    </tr>
+    <tr>
+        <td class="note">This component is just a controller. So, please use this component with <a href="#tabbar">tabbar</a> and <a href="mobile_SectionChanger.htm">SectionChanger</a> component.</td>
+    </tr>
+    </tbody>
+</table>
+
+<h2>Table of Contents</h2>
+<ol class="toc">
+	<li><a href="#default-selectors0.6474367568735033">Default selectors</a></li>
+	<li><a href="#html-examples0.6093457289971411">HTML Examples</a></li>
+	<li><a href="#manual-constructor0.5351901147514582">Manual constructor</a></li>
+	<li><a href="#methods-list">Methods</a></li>
+</ol>
+
+<h2><a id='default-selectors0.6474367568735033'></a>Default selectors</h2>
+
+<p>By default, all elements with the class="ui-tabs" or data-role="tabs" attribute are displayed as a tabs components.</p>
+
+<h2><a id='html-examples0.6093457289971411'></a>HTML Examples</h2>
+
+<h4><a id="tabbar"></a>Using tabbar in Tabs component</h4>
+<p>To use Tabs component, it need tabbar as child.<br>
+When define tabbar in HTML, just add <code>class=&quot;ui-tabbar&quot;</code>. Please refer following code:</p>
+<pre class="prettyprint">&lt;div class=&quot;ui-page&quot;&gt;
+   &lt;div class=&quot;ui-tabs&quot;&gt;
+      &lt;div class=&quot;ui-tabbar&quot;&gt;
+         &lt;ul&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;ui-tab-active&quot;&gt;Tab1&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot;&gt;Tab2&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot;&gt;Tab3&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot;&gt;Tab4&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h4>Using tabbar and SectionChanger in Tabs component</h4>
+<pre class="prettyprint">&lt;div class=&quot;ui-page&quot;&gt;
+   &lt;div class=&quot;ui-tabs&quot;&gt;
+      &lt;div class=&quot;ui-tabbar&quot;&gt;
+         &lt;ul&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;ui-tab-active&quot;&gt;Tab1&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot;&gt;Tab2&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot;&gt;Tab3&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&quot;ui-li-anchor&quot;&gt;&lt;a href=&quot;#&quot;&gt;Tab4&lt;/a&gt;&lt;/li&gt;
+         &lt;/ul&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;ui-section-changer&quot; id=&quot;sectionChanger&quot;&gt;
+         &lt;div&gt;
+            &lt;section class=&quot;ui-section-active&quot;&gt;
+               Section1
+            &lt;/section&gt;
+            &lt;section&gt;
+               Section 2
+            &lt;/section&gt;
+            &lt;section&gt;
+               Section 3
+            &lt;/section&gt;
+            &lt;section&gt;
+               Section 4
+            &lt;/section&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+<h2><a id='manual-constructor0.5351901147514582'></a>Manual constructor</h2>
+
+<p>For manual creation of tabs widget you can use constructor of widget</p>
+
+<pre class="prettyprint">
+&lt;script&gt;
+   var tabsElement = document.getElementById("tabs"),
+       tabs;
+   tabs = tau.widget.Tabs(tabsElement);
+&lt;/script&gt;
+</pre>
+
+<h2><a id="methods-list"></a>Methods list</h2>
+<h3>Summary</h3>
+<table class="informaltable">
+	<thead>
+	<tr>
+		<th>Method</th>
+		<th>Description</th>
+	</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+				<pre class="intable prettyprint"><a href="#method-setIndex">setIndex</a>(number index) </pre>
+			</td>
+			<td><p>Set the active tab index</p></td>
+		</tr>
+		<tr>
+			<td>
+				<pre class="intable prettyprint">number <a href="#method-getIndex">getIndex</a>() </pre>
+			</td>
+			<td><p>Get the active tab index</p></td>
+		</tr>
+	</tbody>
+</table>
+<dl>
+	<dt class="method"><code><b><span class="methodName" id="method-setIndex">setIndex</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Set the active tab index</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">setIndex(number index) </pre>
+		</div>
+		<div class="description">
+			<p>
+			</p>
+		</div>
+		<div class="parameters">
+			<p><span class="param">Parameters:</span></p>
+			<table>
+			<tbody>
+			<tr>
+				<th>Parameter</th>
+				<th>Type</th>
+				<th>Required / optional</th>
+				<th>Default value</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
+				<td>number</td>
+				<td>required</td>
+				<td></td>
+				<td></td>
+			</tr>
+			</tbody>
+			</table>
+		</div>
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+				No Return Value
+		</div>
+	</dd>
+	<dt class="method"><code><b><span class="methodName" id="method-getIndex">getIndex</span></b></code></dt>
+	<dd>
+		<div class="brief">
+			<p>Get the active tab index</p>
+		</div>
+		<div class="synopsis">
+			<pre class="signature prettyprint">number getIndex() </pre>
+		</div>
+		<div class="description">
+			<p>
+			</p>
+		</div>
+		<div class="returntype">
+			<p><span class="return">Return value:</span></p>
+				<table>
+					<tbody>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>number</td>
+						<td>index</td>
+					</tr>
+					</tbody>
+				</table>
+		</div>
+	</dd>
+</dl>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

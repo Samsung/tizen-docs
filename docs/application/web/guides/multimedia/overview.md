@@ -16,7 +16,7 @@ You can use the following media and camera features in your Web applications:
 
   You can control the audio latency mode of the W3C player. You can both retrieve the current mode and set a new mode.
 
-- [Media Controller](./media-controller.md) **in mobile and wearable applications only**
+- [Media Controller](./media-controller.md)
 
   You can communicate between the media controller server and client. The client can send requests to the server to modify the media, and the server can respond to the requests by modifying the media directly as requested. For the media controller feature to work, you must create both the client and server applications.
 
