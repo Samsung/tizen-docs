@@ -16,6 +16,8 @@ Iterator functions are used to travel through a list of components. `component_m
 
 ## Prerequisites
 
+To enable your application to use the component management functionality:
+
 1. To use Component Manager API (in [mobile](../../api/mobile/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__COMPONENT__MANAGER__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
