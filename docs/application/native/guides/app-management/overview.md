@@ -58,6 +58,10 @@ You can use the following application data exchange features in your native appl
 
   You can define interface with TIDL, which is a programming language to define interfaces for communicating among applications in Tizen.
 
+- [Sticker](sticker.md)
+
+  You can provide sticker information to application that want to read the sticker information as the standard method. You can also retrieve the sticker information stored by the provider application.
+
 
 ## Related Information
 - Dependencies
