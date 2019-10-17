@@ -170,7 +170,6 @@ The service-component instance can also receive some basic system events. The fo
 ## Application Attributes
 
 Define your component-based application attributes in the manifest file. The attributes determine the application behavior. The following code example illustrates how you can define the attributes:
-
     ```
     <?xml version="1.0" encoding="utf-8"?>
     <manifest xmlns="http://tizen.org/ns/packages" api-version="5.5" package="@PACKAGE_NAME@" install-location="internal-only" version="0.1.1">
@@ -222,7 +221,6 @@ Following are the main attributes:
 ## Prerequisites
 
 To use the functions and data types of the component-based application API (in [mobile](../../api/mobile/latest/group__CAPI__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APPLICATION__MODULE.html) applications), include the `<component_based_app.h>` header file in your application:
-
     ```
     #include <component_based_app.h>
     ```
@@ -231,7 +229,6 @@ To use the functions and data types of the component-based application API (in [
 ## Running component-based application
 
 To run a component-based application, you must register the component-based application callbacks and start a main event loop as following codes:
-
     ```
     component_class_h __app_create_cb(void *user_data)
     {
