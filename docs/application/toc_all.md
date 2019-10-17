@@ -1177,6 +1177,6 @@
 
 # Visual Studio Code Extension for Mac
 
-## [Overview](/application/vstool-mac/README.md)
+## [Overview](/application/vstools-mac/overview.md)
 
 
