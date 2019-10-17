@@ -172,28 +172,28 @@ The service-component instance can also receive some basic system events. The fo
 Define your component-based application attributes in the manifest file. The attributes determine the application behavior. The following code example illustrates how you can define the attributes:
 
 ```
-    <?xml version="1.0" encoding="utf-8"?>
-    <manifest xmlns="http://tizen.org/ns/packages" api-version="5.5" package="@PACKAGE_NAME@" install-location="internal-only" version="0.1.1">
-        <label>Sample</label>
-        <author email="tizenappfw@samsung.com" href="www.samsung.com">Tizen App Framework</author>
-        <description>Sample</description>
-        <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" type="capp">
-            <label>Base-component application</label>
-            <icon>@DESKTOP_ICON@</icon>
-            <service-component id="base-service" main="false">
-                <label>base-service</label>
-            </service-component>
-            <frame-component id="base-frame" launch_mode="caller" main="true" icon-display="true" taskmanage="true">
-                <icon>org.tizen.sample.png</icon>
-                <label>base-frame</label>
-                <label xml:lang="en-us">base-frame</label>
-                <label xml:lang="ko-kr">base-frame[KOR]</label>
-            </frame-component>
-        </component-based-application>
-        <privileges>
-            <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
-        </privileges>
-    </manifest>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://tizen.org/ns/packages" api-version="5.5" package="@PACKAGE_NAME@" install-location="internal-only" version="0.1.1">
+<label>Sample</label>
+    <author email="tizenappfw@samsung.com" href="www.samsung.com">Tizen App Framework</author>
+    <description>Sample</description>
+    <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" type="capp">
+        <label>Base-component application</label>
+        <icon>@DESKTOP_ICON@</icon>
+        <service-component id="base-service" main="false">
+            <label>base-service</label>
+        </service-component>
+        <frame-component id="base-frame" launch_mode="caller" main="true" icon-display="true" taskmanage="true">
+            <icon>org.tizen.sample.png</icon>
+            <label>base-frame</label>
+            <label xml:lang="en-us">base-frame</label>
+            <label xml:lang="ko-kr">base-frame[KOR]</label>
+        </frame-component>
+    </component-based-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+    </privileges>
+</manifest>
 ```
 
 Following are the main attributes:
@@ -224,7 +224,7 @@ Following are the main attributes:
 To use the functions and data types of the component-based application API (in [mobile](../../api/mobile/latest/group__CAPI__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APPLICATION__MODULE.html) applications), include the `<component_based_app.h>` header file in your application:
 
 ```
-    #include <component_based_app.h>
+#include <component_based_app.h>
 ```
 
 <a name="application_monitoring"></a>
@@ -233,30 +233,30 @@ To use the functions and data types of the component-based application API (in [
 To run a component-based application, you must register the component-based application callbacks and start a main event loop as following codes:
 
 ```
-    component_class_h __app_create_cb(void *user_data)
-    {
-        component_class_h comp_class = NULL;
-        return comp_class;
-    }
+component_class_h __app_create_cb(void *user_data)
+{
+    component_class_h comp_class = NULL;
+    return comp_class;
+}
 
-    void __app_terminate_cb(void *user_data)
-    {
-    }
+void __app_terminate_cb(void *user_data)
+{
+}
 
-    int main(int argc, char** argv)
-    {
-        int ret;
-        component_based_app_lifecycle_callback_s callback = {
-            .create = __app_create_cb,
-            .terminate = __app_terminate_cb
-        };
+int main(int argc, char** argv)
+{
+    int ret;
+    component_based_app_lifecycle_callback_s callback = {
+        .create = __app_create_cb,
+        .terminate = __app_terminate_cb
+    };
 
-        ret = component_based_app_main(argc, argv, &callback, NULL);
-        if (ret != APP_ERROR_NONE)
-            return ret;
+    ret = component_based_app_main(argc, argv, &callback, NULL);
+    if (ret != APP_ERROR_NONE)
+        return ret;
 
-        return 0;
-    }
+    return 0;
+}
 ```
 
 <a name="frame_component_monitoring"></a>
