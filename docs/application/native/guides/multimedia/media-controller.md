@@ -900,13 +900,13 @@ To update the abilities on the server side:
    For example, to update the playback ability, set the ability for each playback actions using the 'mc_server_set_playback_ability()', and then update the abilities using the 'mc_server_update_playback_ability()':
    ```
    ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PLAY, MC_ABILITY_SUPPORTED_YES);
-	 ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PAUSE, MC_ABILITY_SUPPORTED_NO);
-	 ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_STOP, MC_ABILITY_SUPPORTED_YES);
-	 ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_NEXT, MC_ABILITY_SUPPORTED_NO);
-	 ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PREV, MC_ABILITY_SUPPORTED_YES);
-	 ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_FAST_FORWARD, MC_ABILITY_SUPPORTED_NO);
-	 ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_REWIND, MC_ABILITY_SUPPORTED_YES);
-	 ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_TOGGLE_PLAY_PAUSE, MC_ABILITY_SUPPORTED_NO);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PAUSE, MC_ABILITY_SUPPORTED_NO);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_STOP, MC_ABILITY_SUPPORTED_YES);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_NEXT, MC_ABILITY_SUPPORTED_NO);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PREV, MC_ABILITY_SUPPORTED_YES);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_FAST_FORWARD, MC_ABILITY_SUPPORTED_NO);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_REWIND, MC_ABILITY_SUPPORTED_YES);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_TOGGLE_PLAY_PAUSE, MC_ABILITY_SUPPORTED_NO);
    
    ret = mc_server_update_playback_ability(g_mc_server);
    ```
@@ -937,17 +937,28 @@ To retrieve the abilities on the client side:
    ```
 
 2. Define the callback that is invoked when the client receives the abilities changes.
-   - To register a callback for playback ability change, use the `mc_client_set_playback_ability_updated_cb()`.
-   - To register a callback for display mode ability change, use the `mc_client_set_display_mode_ability_updated_cb()`.
-   - To register a callback for display rotation ability change, use the `mc_client_set_display_rotation_ability_updated_cb()`.
-   - To register a callback for other abilities change, use the `mc_client_set_ability_support_updated_cb()`.
-   
    For example, to define a callback for a playback ability:
    ```
    ret = mc_client_set_playback_ability_updated_cb(g_client_h, _mc_playback_ability_updated_cb, NULL);
    ```
+   
+   - `mc_client_set_playback_ability_updated_cb()`: For playback ability change.
+   - `mc_client_set_display_mode_ability_updated_cb()`: For display mode ability change.
+   - `mc_client_set_display_rotation_ability_updated_cb()`: For display rotation ability change.
+   - `mc_client_set_ability_support_updated_cb()`: For other abilities change.
+   
+3. Or, client can get the server's ability directly.
+   For example, to get a server's playback ability:
+   ```
+   mc_playback_ability_h ability = NULL;
+   ret = mc_client_get_server_playback_ability(g_client_h, "server_name", &ability);
+   ```
 
-3. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
+   - `mc_client_get_server_display_mode_ability()`: For display mode ability.
+   - `mc_client_get_server_display_rotation_ability()`: For display rotation ability.
+   - `mc_client_get_server_ability_support()`: For other abilities.
+   
+4. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
 
    ```
    ret = mc_client_destroy(g_client_h);
