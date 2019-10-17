@@ -39,9 +39,7 @@ for(int i = 0; i < num; i++)
 }
 utilitySwitch[0].IsSelected = true;
 utilitySwitch[2].IsEnabled = false;
-utilitySwitch[2].IsSelected = false;
 utilitySwitch[3].IsEnabled = false;
-utilitySwitch[3].IsSelected = true;
 ~~~
 
 Switch created by property:

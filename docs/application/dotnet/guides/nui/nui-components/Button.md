@@ -31,8 +31,8 @@ utilityBasicButton.TextColorSelector = new ColorSelector
     Disabled = new Color(0, 0, 0, 0.4f)
 };
 
-utilityBasicButton.Size = new Size2D(300, 80);
-utilityBasicButton.Position = new Position2D(100, 300);
+utilityBasicButton.Size = new Size(300, 80);
+utilityBasicButton.Position = new Position(100, 300);
 utilityBasicButton.PointSize = 20;
 utilityBasicButton.Text = "UtilityBasicButton";
 root.Add(utilityBasicButton);
