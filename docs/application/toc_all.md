@@ -333,6 +333,7 @@
 #### [Application Icons](/application/native/guides/app-management/app-icons.md)
 #### [Application Controls](/application/native/guides/app-management/app-controls.md)
 #### [Common Application Controls](/application/native/guides/app-management/common-appcontrols.md)
+#### [Component Manager](/application/native/guides/app-management/component-manager.md)
 #### [Application Manager](/application/native/guides/app-management/app-manager.md)
 #### [Package Manager](/application/native/guides/app-management/package-manager.md)
 #### [Event Broadcast and Subscription](/application/native/guides/app-management/event.md)
