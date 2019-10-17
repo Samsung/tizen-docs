@@ -929,12 +929,12 @@ The following table lists all the playback action attributes the client can send
 
 > **Note**
 >
-> These Attributes support Tizen 4.0 and Higher for Mobile.
+> These attributes support Tizen 4.0 and Higher for Mobile.
 
 
 ## Media Controller Shuffle Mode Attributes
 
-The following table lists all the shuffle mode attributes the client can receive and send the command to:
+The following table lists all the shuffle mode attributes that the client can receive and send the command to:
 
 **Table: Media controller shuffle mode attributes**
 
@@ -947,7 +947,7 @@ The following table lists all the shuffle mode attributes the client can receive
 
 ## Media Controller Repeat Mode Attributes
 
-The following table lists all the repeat mode attributes the client can receive and send the command to:
+The following table lists all the repeat mode attributes that the client can receive and send the command to:
 
 **Table: Media controller repeat mode attributes**
 
@@ -994,7 +994,7 @@ The following table lists all the playlist update mode attributes the client can
 
 > **Note**
 >
-> These Attributes support Tizen 4.0 and Higher for Mobile.
+> These attributes support Tizen 4.0 and Higher for Mobile.
 
 ## Media Controller Content Type Attributes
 
@@ -1013,7 +1013,7 @@ The following table lists all the content type attributes the server can receive
 
 > **Note**
 >
-> These Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.0 and Higher for Mobile and Wearable.
 
 ## Media Controller Search Category Attributes
 
@@ -1033,29 +1033,29 @@ The following table lists all the search category attributes the server can rece
 
 > **Note**
 >
-> These Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.0 and Higher for Mobile and Wearable.
 
 ## Media Controller Display Mode Attributes
 
-The following table lists all the display mode attributes the client can receive and send the command to:
+The following table lists all the display mode attributes that the client can receive and send the command to:
 
 **Table: Media controller display mode attributes**
 
 | Attribute                        | Description                              |
 |----------------------------------|------------------------------------------|
 | **Display modes**                |                                          |
-| `MC_DISPLAY_MODE_LETTER_BOX`     | Display mode is Letter box               |
-| `MC_DISPLAY_MODE_ORIGIN_SIZE`    | Display mode is Origin size              |
-| `MC_DISPLAY_MODE_FULL_SCREEN`    | Display mode is Full screen              |
-| `MC_DISPLAY_MODE_CROPPED_FULL`   | Display mode is Cropped full screen      |
+| `MC_DISPLAY_MODE_LETTER_BOX`     | Display mode is letter box               |
+| `MC_DISPLAY_MODE_ORIGIN_SIZE`    | Display mode is origin size              |
+| `MC_DISPLAY_MODE_FULL_SCREEN`    | Display mode is fullscreen               |
+| `MC_DISPLAY_MODE_CROPPED_FULL`   | Display mode is cropped fullscreen       |
 
 > **Note**
 >
-> These Attributes support Tizen 5.5 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.5 and Higher for Mobile and Wearable.
 
 ## Media Controller Display Rotation Attributes
 
-The following table lists all the display rotation attributes the client can receive and send the command to:
+The following table lists all the display rotation attributes that the client can receive and send the command to:
 
 **Table: Media controller display rotation attributes**
 
@@ -1069,7 +1069,7 @@ The following table lists all the display rotation attributes the client can rec
 
 > **Note**
 >
-> These Attributes support Tizen 5.5 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.5 and Higher for Mobile and Wearable.
 
 ## Related Information
 - Dependencies
