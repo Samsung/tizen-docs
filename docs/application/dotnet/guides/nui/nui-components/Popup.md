@@ -19,7 +19,7 @@ Popup popup = new Popup();
 NPatchVisual nvisual = new NPatchVisual();
 nvisual.URL = "popup_background.png";
 nvisual.Border = new Rectangle(0, 0, 81, 81);
-popup.MinimumSize = new Size2D(1032, 184);
+popup.MinimumSize = new Size(1032, 184);
 popup.Size = new Size(1032, 400);
 popup.Position = new Position(200, 100);
 
