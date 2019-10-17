@@ -144,6 +144,10 @@
 #### [IoT Connectivity](/application/dotnet/guides/connectivity/iotcon.md)
 #### [Telephony Information](/application/dotnet/guides/connectivity/telephony.md)
 
+### Machine Learning
+#### [Overview](/application/dotnet/guides/machine-learning/overview.md)
+#### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
+
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
 #### [Email](/application/dotnet/guides/messaging/email.md)
