@@ -51,9 +51,9 @@ The following table lists the supported operating systems and hardware requireme
 </tr>
 <tr>
 <th>Bit</th>
-<td>64 bit / 32 bit</td>
 <td>64 bit only</td>
-<td>64 bit / 32 bit</td>
+<td>64 bit only</td>
+<td>64 bit only</td>
 </tr>
 <tr>
 <th rowspan="4">HW</th>
@@ -64,7 +64,7 @@ The following table lists the supported operating systems and hardware requireme
 </tr>
 <tr>
 <th>Architecture</th>
-<td>x64 (64 bit) / x86 (32 bit)</td>
+<td>x64 (64 bit)</td>
 <td>x64 only</td>
 <td>x64 / x86</td>
 </tr>
