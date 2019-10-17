@@ -610,7 +610,8 @@ To process the received command on the server side, follow these steps:
    - To register a callback for repeat mode change commands, use `mc_server_set_repeat_mode_cmd_received_cb()`.
    - To register a callback for played item, playback state, and playback position change commands in playlist, use  `mc_server_set_playlist_cmd_received_cb()`.
    - To register a callback for a custom command, use `mc_server_set_custom_cmd_received_cb()`.
-   /* Since Tizen 5.5, following APIs are supported */ 
+   
+   /* Since Tizen 5.5, following APIs are also supported */ 
    - To register a callback for subtitles change commands, use `mc_server_set_subtitles_cmd_received_cb()`.
    - To register a callback for 360 mode change commands, use `mc_server_set_360_mode_cmd_received_cb()`.
    - To register a callback for display mode change commands, use `mc_server_set_display_mode_cmd_received_cb()`.
@@ -933,7 +934,7 @@ The following table lists all the playback action attributes the client can send
 
 ## Media Controller Shuffle Mode Attributes
 
-The following table lists all the shuffle mode attributes the client can receive and send command:
+The following table lists all the shuffle mode attributes the client can receive and send the command to:
 
 **Table: Media controller shuffle mode attributes**
 
@@ -946,7 +947,7 @@ The following table lists all the shuffle mode attributes the client can receive
 
 ## Media Controller Repeat Mode Attributes
 
-The following table lists all the repeat mode attributes the client can receive and send command:
+The following table lists all the repeat mode attributes the client can receive and send the command to:
 
 **Table: Media controller repeat mode attributes**
 
@@ -1036,7 +1037,7 @@ The following table lists all the search category attributes the server can rece
 
 ## Media Controller Display Mode Attributes
 
-The following table lists all the display mode attributes the client can receive and send command:
+The following table lists all the display mode attributes the client can receive and send the command to:
 
 **Table: Media controller display mode attributes**
 
@@ -1054,7 +1055,7 @@ The following table lists all the display mode attributes the client can receive
 
 ## Media Controller Display Rotation Attributes
 
-The following table lists all the display rotation attributes the client can receive and send command:
+The following table lists all the display rotation attributes the client can receive and send the command to:
 
 **Table: Media controller display rotation attributes**
 
