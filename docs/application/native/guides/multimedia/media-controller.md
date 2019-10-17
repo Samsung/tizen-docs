@@ -218,7 +218,7 @@ To update the playback information on the server side, follow these steps:
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
 
 To retrieve the playback information on the client side, follow these steps:
@@ -318,7 +318,7 @@ To update the metadata on the server side, follow these steps:
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
    
 To retrieve the metadata on the client side, follow these steps:
@@ -442,7 +442,7 @@ To update the playlist and item's metadata on the server side, follow these step
 5. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
 
 To retrieve the playlist and metadata on the client side, follow these steps:
@@ -604,23 +604,23 @@ To process the received command on the server side, follow these steps:
    ret = mc_server_set_playback_action_cmd_received_cb(g_mc_server, playback_action_cmd_received_cb, NULL);
    ```
 
-   - To register a callback for playback state change commands, use `mc_server_set_playback_action_cmd_received_cb()`.
-   - To register a callback for playback position change commands, use `mc_server_set_playback_position_cmd_received_cb()`.
-   - To register a callback for shuffle mode change commands, use `mc_server_set_shuffle_mode_cmd_received_cb()`.
-   - To register a callback for repeat mode change commands, use `mc_server_set_repeat_mode_cmd_received_cb()`.
-   - To register a callback for played item, playback state, and playback position change commands in playlist, use  `mc_server_set_playlist_cmd_received_cb()`.
-   - To register a callback for a custom command, use `mc_server_set_custom_cmd_received_cb()`.
+   - `mc_server_set_playback_action_cmd_received_cb()`: For playback state change commands.
+   - `mc_server_set_playback_position_cmd_received_cb()`: For playback position change commands.
+   - `mc_server_set_shuffle_mode_cmd_received_cb()`: For shuffle mode change commands.
+   - `mc_server_set_repeat_mode_cmd_received_cb()`: For repeat mode change commands.
+   - `mc_server_set_playlist_cmd_received_cb()`: For played item, playback state, and playback position change commands in playlist.
+   - `mc_server_set_custom_cmd_received_cb()`: For a custom command.
    
    /* Since Tizen 5.5, following APIs are also supported */ 
-   - To register a callback for subtitles change commands, use `mc_server_set_subtitles_cmd_received_cb()`.
-   - To register a callback for 360 mode change commands, use `mc_server_set_360_mode_cmd_received_cb()`.
-   - To register a callback for display mode change commands, use `mc_server_set_display_mode_cmd_received_cb()`.
-   - To register a callback for display rotation change commands, use `mc_server_set_display_rotation_cmd_received_cb()`.
+   - `mc_server_set_subtitles_cmd_received_cb()`: For subtitles change commands.
+   - `mc_server_set_360_mode_cmd_received_cb()`: For 360 mode change commands.
+   - `mc_server_set_display_mode_cmd_received_cb()`: For display mode change commands.
+   - `mc_server_set_display_rotation_cmd_received_cb()`: For display rotation change commands.
    
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
 
 To send the reply of completed command on the server side, follow these steps:
@@ -695,7 +695,7 @@ To send a custom event to the client from the server side, follow these steps:
 4. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
 
 To process the received event on the client side, follow these steps:
@@ -879,7 +879,7 @@ To process the received search command on the server side, follow these steps:
 6. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
 
 > **Note**
