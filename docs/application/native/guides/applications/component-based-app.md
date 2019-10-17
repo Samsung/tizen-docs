@@ -174,7 +174,7 @@ Define your component-based application attributes in the manifest file. The att
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns="http://tizen.org/ns/packages" api-version="5.5" package="@PACKAGE_NAME@" install-location="internal-only" version="0.1.1">
-<label>Sample</label>
+    <label>Sample</label>
     <author email="tizenappfw@samsung.com" href="www.samsung.com">Tizen App Framework</author>
     <description>Sample</description>
     <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" type="capp">
