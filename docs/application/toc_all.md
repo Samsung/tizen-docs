@@ -1173,3 +1173,10 @@
 ## [Prerequisites](/application/vscode-ext/index.md)
 ## [Tizen .NET](/application/vscode-ext/dotnet.md)
 ## [Tizen Web](/application/vscode-ext/web.md)
+
+
+# Visual Studio Code Extension for Mac
+
+## [Overview](/application/vstool-mac/README.md)
+
+
