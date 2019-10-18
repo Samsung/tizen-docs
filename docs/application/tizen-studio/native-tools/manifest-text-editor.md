@@ -691,7 +691,7 @@ This element contains the settings for the widget class. After adding this eleme
 ```
 ### \<component-based-application\> Element
 
-This element contains the manifest information for a Tizen native Component-based application.
+This element contains the manifest information for a Tizen Native component-based application.
 
 For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
 
@@ -719,7 +719,7 @@ For more information on the relationship between the elements, see the [element 
 
   Application unique ID (string)
 
-  You can use the a\~z, A\~Z, 0\~9, ".", "-", and "\_" characters, and the value must be shorter than 50 characters.
+  You can use the a~z, A~Z, 0~9, ".", "-", and "_" characters, and the value must be less than 50 characters.
 
   This can be used for launching or terminating the application explicitly.
 
@@ -797,7 +797,7 @@ This element contains the component-based application icon image.
 
 #### \<frame-component\> Element
 
-This element contains the settings for the frame component. After adding this element, you can use the `component_based_app_add_frame_component()` function to create frame component instances in the component-based application.
+This element contains the settings for the frame component. After adding this element, you can use  `component_based_app_add_frame_component()` to create frame component instances in the component-based application.
 
 **Occurrences:**
 
@@ -881,7 +881,7 @@ This element contains the frame component icon image.
 
 #### \<service-component\> Element
 
-This element contains the settings for the service component. After adding this element, you can use the `component_based_app_add_service_component()` function to create service component instances in the component-based application.
+This element contains the settings for the service component. After adding this element, you can use  `component_based_app_add_service_component()` to create service component instances in the component-based application.
 
 **Occurrences:**
 
