@@ -75,9 +75,9 @@ the applications you want.
 
   You can [update the abilities](#updating-and-retrieving-abilities) on the server side, and then retrieve the abilities on the client side.
 
-  The media controller server provides current abilities about the registered application.
+  The media controller server provides the update and retrieval abilities to the registered application.
   
-  Only When the server support abilities, the media controller clients can send command to server.
+  When the server supports abilities, then the media controller clients can send commands to the server.
   
   > **Note**
   >
@@ -888,7 +888,7 @@ To process the received search command on the server side, follow these steps:
 
 
 ## Updating and Retrieving Abilities
-To update the abilities on the server side:
+To update the abilities on the server side, follow these steps:
 
 1. Create the media controller server handle using the `mc_server_create()`:
 
@@ -896,8 +896,10 @@ To update the abilities on the server side:
    ret = mc_server_create(&g_server_h);
    ```
    
-2. Set the abilities using the corresponding 'mc_server_set_XXX_ability()', or 'mc_server_set_ability_support()':
-   For example, to update the playback ability, set the ability for each playback actions using the 'mc_server_set_playback_ability()', and then update the abilities using the 'mc_server_update_playback_ability()':
+2. Set the abilities using the corresponding 'mc_server_set_XXX_ability()', or 'mc_server_set_ability_support()'.
+   The following examples demonstrate setting up various abilities:
+   
+   To update the playback ability, set the ability for each playback action using the 'mc_server_set_playback_ability()', and then update the ability using the 'mc_server_update_playback_ability()':
    ```
    ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PLAY, MC_ABILITY_SUPPORTED_YES);
    ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PAUSE, MC_ABILITY_SUPPORTED_NO);
@@ -911,24 +913,24 @@ To update the abilities on the server side:
    ret = mc_server_update_playback_ability(g_mc_server);
    ```
    
-   For example, to update the display mode ability, set the ability using the 'mc_server_set_display_mode_ability()':
+   To update the display mode ability, set the ability using 'mc_server_set_display_mode_ability()':
    ```
    ret = mc_server_set_display_mode_ability(g_mc_server, MC_DISPLAY_MODE_LETTER_BOX | MC_DISPLAY_MODE_ORIGIN_SIZE | MC_DISPLAY_MODE_FULL_SCREEN | MC_DISPLAY_MODE_CROPPED_FULL, MC_ABILITY_SUPPORTED_YES);
    ```
    
-   For example, to update the display rotation ability, set the ability using the 'mc_server_set_display_rotation_ability()':
+   To update the display rotation ability, set the ability using 'mc_server_set_display_rotation_ability()':
     ```
    ret = mc_server_set_display_rotation_ability(g_mc_server, MC_DISPLAY_ROTATION_NONE | MC_DISPLAY_ROTATION_90 | MC_DISPLAY_ROTATION_180 | MC_DISPLAY_ROTATION_270, MC_ABILITY_SUPPORTED_YES);
    ```
    
-   For other abilities, to update the ability, set the ability using the 'mc_server_set_ability_support()':
+   In case of other abilities, set the ability using 'mc_server_set_ability_support()', to update an ability:
    For example, to update shuffle and repeat ability, set the ability using the 'mc_server_set_ability_support()':
    ```
    ret = mc_server_set_ability_support(g_mc_server, MC_ABILITY_SHUFFLE, MC_ABILITY_SUPPORTED_YES);
    ret = mc_server_set_ability_support(g_mc_server, MC_ABILITY_REPEAT, MC_ABILITY_SUPPORTED_NO);
    ```
 
-To retrieve the abilities on the client side:
+To retrieve the abilities on the client side, follow these steps:
 
 1. Create the media controller client handle using the `mc_client_create()`:
 
@@ -936,8 +938,8 @@ To retrieve the abilities on the client side:
    ret = mc_client_create(&g_client_h);
    ```
 
-2. Define the callback that is invoked when the client receives the abilities changes.
-   For example, to define a callback for a playback ability:
+2. Define the callback that gets invoked when the client receives the change in abilities.
+   To define a callback for a playback ability:
    ```
    ret = mc_client_set_playback_ability_updated_cb(g_client_h, _mc_playback_ability_updated_cb, NULL);
    ```
@@ -1079,7 +1081,7 @@ The following table lists all the playlist update mode attributes the client can
 
 ## Media Controller Content Type Attributes
 
-The following table lists all the content type attributes the server can receive:
+The following table lists all the content type attributes that the server can receive:
 
 **Table: Media controller content type attributes**
 
@@ -1098,7 +1100,7 @@ The following table lists all the content type attributes the server can receive
 
 ## Media Controller Search Category Attributes
 
-The following table lists all the search category attributes the server can receive:
+The following table lists all the search category attributes that the server can receive:
 
 **Table: Media controller search category attributes**
 
@@ -1118,7 +1120,7 @@ The following table lists all the search category attributes the server can rece
 
 ## Media Controller Search Category Attributes
 
-The following table lists all the search category attributes the server can receive:
+The following table lists all the search category attributes that the server can receive:
 
 **Table: Media controller ability attributes**
 
@@ -1134,7 +1136,7 @@ The following table lists all the search category attributes the server can rece
 
 > **Note**
 >
-> This Attributes support Tizen 5.5 and Higher for Mobile and Wearable.
+> These Attributes support Tizen 5.5 and Higher for Mobile and Wearable.
 
 ## Related Information
 - Dependencies
