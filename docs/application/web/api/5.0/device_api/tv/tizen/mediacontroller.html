@@ -144,7 +144,7 @@ For more information on the Media Controller features, see <a href="https://deve
 </tr>
 <tr>
 <td><a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a></td>
-<td><div>object? <a href="#MediaControllerReceiveCommandCallback::onsuccess">onsuccess</a> (<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data)</div></td>
+<td><div>object? <a href="#MediaControllerReceiveCommandCallback::onsuccess">onsuccess</a> (<a href="application.html#ApplicationId">ApplicationId</a> clientAppName, DOMString command, object data)</div></td>
 </tr>
 <tr>
 <td><a href="#MediaControllerServerStatusChangeCallback">MediaControllerServerStatusChangeCallback</a></td>
@@ -457,6 +457,10 @@ mcServer.updatePlaybackState("PLAY");
 console.log("Current playback state is: " + mcServer.playbackInfo.state);
 </pre>
 </div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Current playback state is: PLAY
+</pre>
+</div>
 </dd>
 <dt class="method" id="MediaControllerServer::updatePlaybackPosition">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updatePlaybackPosition"></a><code><b><span class="methodName">updatePlaybackPosition</span></b></code>
@@ -497,6 +501,10 @@ mcServer.updatePlaybackPosition(164);
 console.log("Current playback position is: " + mcServer.playbackInfo.position);
 </pre>
 </div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Current playback position is: 164
+</pre>
+</div>
 </dd>
 <dt class="method" id="MediaControllerServer::updateShuffleMode">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServer::updateShuffleMode"></a><code><b><span class="methodName">updateShuffleMode</span></b></code>
@@ -530,6 +538,10 @@ console.log("Current playback position is: " + mcServer.playbackInfo.position);
 
 mcServer.updateShuffleMode(true);
 console.log("Current shuffle mode is: " + mcServer.playbackInfo.shuffleMode);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Current shuffle mode is: true
 </pre>
 </div>
 </dd>
@@ -608,6 +620,11 @@ metadata.artist = "Artist Name";
 mcServer.updateMetadata(metadata);
 
 console.log("Current metadata is: " + JSON.stringify(mcServer.playbackInfo.metadata));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Current metadata is: {"title":"","artist":"Artist Name","album":"","author":"","genre":"",
+"duration":"","date":"","copyright":"","description":"","trackNum":"","picture":""}
 </pre>
 </div>
 </dd>
@@ -751,7 +768,7 @@ mcServer.removeChangeRequestPlaybackInfoListener(watcherId);
 <dd>
 <div class="brief">
  Adds the listener for receiving custom commands from client.
-See <em>MediaControllerServerInfo</em> to check how to send custom commands from client.
+See <em>MediaControllerServerInfo</em> to check how to <a href="#MediaControllerServerInfo::sendCommand">send custom commands</a> from client.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">long addCommandListener(<a href="#MediaControllerReceiveCommandCallback">MediaControllerReceiveCommandCallback</a> listener);</pre></div>
 <p><span class="version">Since: </span>
@@ -915,8 +932,7 @@ Functions include operations to get the latest status of the media controller se
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Media controller server should be created in application. */
-var mcClient;
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient;
 try
 {
   mcClient = tizen.mediacontroller.getClient();
@@ -981,6 +997,10 @@ var mcClient = tizen.mediacontroller.getClient();
 var mcServerInfo = mcClient.getLatestServerInfo();
 console.log(
     "Latest server name is: " + mcServerInfo.name + ", server state: " + mcServerInfo.state);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Latest server name is: 2cpQcelP8a.HelloTizen, server state: INACTIVE
 </pre>
 </div>
 </dd>
@@ -1113,6 +1133,10 @@ mcServerInfo.sendPlaybackState("STOP",
     });
 </pre>
 </div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Playback has stopped
+</pre>
+</div>
 </dd>
 <dt class="method" id="MediaControllerServerInfo::sendPlaybackPosition">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendPlaybackPosition"></a><code><b><span class="methodName">sendPlaybackPosition</span></b></code>
@@ -1173,6 +1197,10 @@ mcServerInfo.sendPlaybackPosition(164,
     });
 </pre>
 </div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Playback position changed
+</pre>
+</div>
 </dd>
 <dt class="method" id="MediaControllerServerInfo::sendShuffleMode">
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerServerInfo::sendShuffleMode"></a><code><b><span class="methodName">sendShuffleMode</span></b></code>
@@ -1227,6 +1255,10 @@ mcServerInfo.sendShuffleMode(true,
     {
       console.log("Unable to change shuffle mode: " + e.message);
     });
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Shuffle mode changed
 </pre>
 </div>
 </dd>
@@ -1299,7 +1331,7 @@ mcServerInfo.sendRepeatMode(false,
  5.0
             </p>
 <p><span class="remark">Remark: </span>
- See <em>MediaControllerServer</em> interface to check how to receive
+ See <a href="#MediaControllerServer::addCommandListener">addCommandListener()</a> method to check how to receive
 and respond to custom commands.
             </p>
 <div class="parameters">
@@ -1832,7 +1864,7 @@ for <em>MediaControllerServerInfo.sendCommand()</em>.
 </dt>
 <dd>
 <div class="brief">
- Called when server responded to received custom command.
+ Called when a response to the request is received.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(object? data);</pre></div>
 <p><span class="version">Since: </span>
@@ -1843,7 +1875,7 @@ for <em>MediaControllerServerInfo.sendCommand()</em>.
 <ul>
           <li class="param">
 <span class="name">data</span><span class="optional"> [nullable]</span>:
- Response object sent from server.
+ Response object sent by the command handler.
                 </li>
         </ul>
 </div>
@@ -1855,14 +1887,25 @@ for <em>MediaControllerServerInfo.sendCommand()</em>.
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerReceiveCommandCallback"></a><h3>2.10. MediaControllerReceiveCommandCallback</h3>
 <div class="brief">
  The MediaControllerReceiveCommandCallback interface that defines the listener
-for custom commands from client in <em>MediaControllerServer.addCommandListener()</em>.
+for custom communication from the client to the server.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
-    object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
+    object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientAppName, DOMString command, object data);
   };</pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
+<div class="description">
+          <p>
+Related functions:
+          </p>
+          <ul>
+            <li>
+<a href="#MediaControllerServerInfo::sendCommand">sendCommand()</a>            </li>
+            <li>
+<a href="#MediaControllerServer::addCommandListener">addCommandListener()</a>            </li>
+          </ul>
+         </div>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -1871,30 +1914,26 @@ for custom commands from client in <em>MediaControllerServer.addCommandListener(
 </dt>
 <dd>
 <div class="brief">
- Called when custom command received from client.
+ Called when custom command is received by the server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientAppName, DOMString command, object data);</pre></div>
 <p><span class="version">Since: </span>
  5.0
-            </p>
-<p><span class="remark">Remark: </span>
- You can return data object from callback which will be send in reply to the client.
-See <em>MediaControllerSendCommandSuccessCallback</em> interface.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
           <li class="param">
-<span class="name">clientName</span>:
- Client application id which sent command.
+<span class="name">clientAppName</span>:
+ Client application id.
                 </li>
           <li class="param">
 <span class="name">command</span>:
- Custom command sent from client.
+ Custom command.
                 </li>
           <li class="param">
 <span class="name">data</span>:
- Response object sent from client.
+ Response object.
                 </li>
         </ul>
 </div>
@@ -1902,7 +1941,7 @@ See <em>MediaControllerSendCommandSuccessCallback</em> interface.
 <p><span class="return">Return value:</span></p>
 <ul>
 <span class="return">object<span class="optional"> [nullable]</span>:</span>
- Data object which should be send with reply to the client.
+ Data object which will be included in the reply to the author of the request.
               </ul>
 </div>
 </dd>
@@ -2091,7 +2130,7 @@ object for receiving playback info change requests from client.
 <ul>
           <li class="param">
 <span class="name">state</span>:
- Current playback state.
+ Requested playback state.
                 </li>
         </ul>
 </div>
@@ -2112,7 +2151,7 @@ object for receiving playback info change requests from client.
 <ul>
           <li class="param">
 <span class="name">position</span>:
- Current playback position.
+ Requested playback position.
                 </li>
         </ul>
 </div>
@@ -2133,7 +2172,7 @@ object for receiving playback info change requests from client.
 <ul>
           <li class="param">
 <span class="name">mode</span>:
- Current shuffle mode.
+ Requested shuffle mode.
                 </li>
         </ul>
 </div>
@@ -2154,7 +2193,7 @@ object for receiving playback info change requests from client.
 <ul>
           <li class="param">
 <span class="name">mode</span>:
- Current repeat mode.
+ Requested repeat mode.
                 </li>
         </ul>
 </div>
@@ -2238,7 +2277,7 @@ object for receiving playback info change requests from client.
     void onsuccess(object? data);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerReceiveCommandCallback {
-    object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientName, DOMString command, object data);
+    object? onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> clientAppName, DOMString command, object data);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerServerStatusChangeCallback {
     void onsuccess(<a href="#MediaControllerServerState">MediaControllerServerState</a> status);
