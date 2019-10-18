@@ -228,7 +228,7 @@ To use the functions and data types of the component-based application API (in [
 ```
 
 <a name="application_monitoring"></a>
-## Running component-based application
+## Running Component-based Application
 
 To run a component-based application, you must register the component-based application callbacks and start a main event loop as following codes:
 
@@ -260,7 +260,7 @@ int main(int argc, char** argv)
 ```
 
 <a name="frame_component_monitoring"></a>
-## Managing frame-component
+## Managing Frame-component
 
 To add and manage frame-components, you must add frame-component and register the frame-component callbacks.
 
@@ -333,7 +333,7 @@ To add and manage frame-components, you must add frame-component and register th
     ```
 
 <a name="service_component_monitoring"></a>
-## Managing service-component
+## Managing Service-component
 To add and manage service-component, you must add service-component and register the service-component callbacks.
 
 1. Declare a service-component in the manifest file:
@@ -495,7 +495,7 @@ The component-based application can register actions and receive action events. 
 
 
 <a name="launch_application"></a>
-## Launch component-based application
+## Launch Component-based Application
 
 To launch a component-based application:
 
