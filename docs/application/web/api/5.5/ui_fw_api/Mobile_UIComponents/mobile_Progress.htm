@@ -7,7 +7,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Progress</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 
 <h1>Progress</h1>
@@ -28,6 +28,7 @@
 	</tbody>
 </table>
 
+<img src="../../images/mobile_progressCircle.png" width="15%">
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -85,11 +86,18 @@
 
 <p>To manually create a progress component, use the component constructor from the <code>tau</code> namespace:</p>
 
+
+<p>HTML code:</p>
+
 <pre class="prettyprint">&lt;div id=&quot;progress&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;progress&quot;),
-       progress = tau.widget.Progress(element, {type : &quot;progressbar&quot;});
-&lt;/script&gt;
+</pre>
+
+
+<p>JS code:</p>
+
+<pre class="prettyprint">
+var element = document.getElementById(&quot;progress&quot;),
+   progress = tau.widget.Progress(element, {type : &quot;progressbar&quot;});
 </pre>
 
 
@@ -127,20 +135,20 @@
 
 			<tr>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-value</span></td>
-				<td class="option">Number</td>
+				<td class="option">number</td>
 				<td class="option">100</td>
 				<td class="option">Sets default value of progress component.</td>
 			</tr>
             <tr>
                 <td class="option"><span style="font-family: Courier New,Courier,monospace">data-max</span></td>
-                <td class="option">Number</td>
+                <td class="option">number</td>
                 <td class="option">100</td>
                 <td class="option">Sets default max value of progress component.</td>
             </tr>
 
             <tr>
                 <td class="option"><span style="font-family: Courier New,Courier,monospace">data-min</span></td>
-                <td class="option">Number</td>
+                <td class="option">number</td>
                 <td class="option">0</td>
                 <td class="option">Sets default min value of progress component.</td>
             </tr>
@@ -153,17 +161,22 @@
 
 <p>To call a method on the component, please refer the following example:</p>
 
-<pre class="prettyprint">&lt;div id=&quot;progress&quot;&gt;&lt;/div&gt;
-&lt;script&gt;
-   var element = document.getElementById(&quot;progress&quot;),
-       progress = tau.widget.Progress(element);
+<p>HTML code:</p>
 
-   /*
-      progress.methodName(argument1, argument2, ...);
-      For example:
-   */
-   progress.refresh();
-&lt;/script&gt;
+<pre class="prettyprint">&lt;div id=&quot;progress&quot;&gt;&lt;/div&gt;
+</pre>
+
+<p>JS code:</p>
+
+<pre class="prettyprint">
+var element = document.getElementById(&quot;progress&quot;),
+    progress = tau.widget.Progress(element);
+
+/*
+   progress.methodName(argument1, argument2, ...);
+   For example:
+*/
+progress.refresh();
 </pre>
 
 	<h3>Summary</h3>
@@ -178,14 +191,14 @@
 
 				<tr>
 					<td>
-						<pre class="intable prettyprint"><a href="#method-value">value</a>() </pre>
+						<pre class="intable prettyprint"><a href="#method-value">number value</a>() </pre>
 					</td>
 					<td><p>Sets or gets value of Progress component.</p></td>
 				</tr>
 
 				<tr>
 					<td>
-						<pre class="intable prettyprint"><a href="#method-option">option</a>() </pre>
+						<pre class="intable prettyprint"><a href="#method-option">number option</a>() </pre>
 					</td>
 					<td><p>Sets or gets options of Progress component.</p></td>
 				</tr>
@@ -209,7 +222,7 @@
 				<p>Sets or gets value of Progress component.</p>
 			</div>
 			<div class="synopsis">
-				<pre class="signature prettyprint">value(Number value) </pre>
+				<pre class="signature prettyprint">number value(number value) </pre>
 			</div>
 			<div class="description">
 				<br>
@@ -228,7 +241,7 @@
 						<th>Description</th>
 					</tr>
 					<tr>
-						<td>Number</td>
+						<td>number</td>
 						<td>Returns value of Progress.</td>
 					</tr>
 					</tbody>
@@ -238,18 +251,17 @@
 							<span class="example"><p>Code
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
-							prettyprint">&lt;script&gt;
-   var element = document.getElementById(&quot;progress&quot;),
-       progress = tau.widget.Progress(element),
-       originValue;
+							prettyprint">
+var element = document.getElementById(&quot;progress&quot;),
+    progress = tau.widget.Progress(element),
+    originValue;
 
-   /* Get the origin value of progress */
-   originValue = progress.value();
-   console.log(originValue);
+/* Get the origin value of progress */
+originValue = progress.value();
+console.log(originValue);
 
-   /* Set the value of progress to 70 */
-   progress.value(70);
-&lt;/script&gt;
+/* Set the value of progress to 70 */
+progress.value(70);
 </pre>
 			</div>
 
@@ -262,7 +274,7 @@
 				<p>Sets or gets options of Progress component.</p>
 			</div>
 			<div class="synopsis">
-				<pre class="signature prettyprint">option() </pre>
+				<pre class="signature prettyprint">number option() </pre>
 			</div>
 			<div class="description">
 				<p>
@@ -270,23 +282,39 @@
 				</p>
 			</div>
 
+			<div class="returntype">
+				<p><span class="return">Return value:</span></p>
+
+				<table>
+					<tbody>
+					<tr>
+						<th>Type</th>
+						<th>Description</th>
+					</tr>
+					<tr>
+						<td>number</td>
+						<td>Returns value of option specified in the argument.</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+
 			<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
-							prettyprint">&lt;script&gt;
-   var element = document.getElementById(&quot;progress&quot;),
-       progress = tau.widget.Progress(element),
-       type;
+							prettyprint">
+var element = document.getElementById(&quot;progress&quot;),
+    progress = tau.widget.Progress(element),
+    type;
 
-   progress.option("value", 50);
-   /* After change option, call refresh method */
-   progress.refresh();
+progress.option("value", 50);
+/* After change option, call refresh method */
+progress.refresh();
 
-   /* Get type option value */
-   type = progress.option("type");
-   console.log(type);
-&lt;/script&gt;
+/* Get type option value */
+type = progress.option("type");
+console.log(type);
 </pre>
 			</div>
 
@@ -305,18 +333,24 @@
 				<p>
 				</p>
 			</div>
+			<div class="returntype">
+				<p><span class="return">Return value:</span></p>
+
+
+				No return value
+
+			</div>
 
 			<div class="example">
 							<span class="example"><p>Code
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
-							prettyprint">&lt;script&gt;
-   var element = document.getElementById(&quot;progress&quot;),
-       progress = tau.widget.Progress(element);
+							prettyprint">
+var element = document.getElementById(&quot;progress&quot;),
+    progress = tau.widget.Progress(element);
 
-   /* Change DOM dynamically or change option */
-   progress.refresh();
-&lt;/script&gt;
+/* Change DOM dynamically or change option */
+progress.refresh();
 </pre>
 			</div>
 
@@ -334,5 +368,10 @@
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>
