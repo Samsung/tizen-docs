@@ -7,13 +7,15 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Index Scrollbar</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 
 <h1>Index Scrollbar</h1>
 
 <p>The index scrollbar component shows a shortcut list that is bound to its parent scroll bar and list view.</p>
 
 <p>If you move the mouse over the shortcut column, then a pop-up containing the text is also displayed. The scroll view can be moved to the list divider matching the text currently under the mouse cursor.</p>
+
+<img src="../../images/mobile_indexScrollBar.png" width="15%">
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -33,6 +35,7 @@
 <p>To manually create a index scrollbar component, use the component constructor from the <code>tau</code> namespace.</p>
 <p>The index scrollbar component makes index indicator using elements that has "ui-group-index" class.
 
+<p>HTML code:</p>
 <pre class="prettyprint">
 &lt;div data-role=&quot;page&quot; id=&quot;indexscrollbarPage&quot;&gt;
    &lt;div data-role=&quot;indexscrollbar&quot; id=&quot;indexscrollbar&quot;&gt;&lt;/div&gt;
@@ -47,9 +50,10 @@
       &lt;/ul&gt;
    &lt;/div&gt;
 &lt;/div&gt;
-&lt;script&gt;
-   var isb = tau.widget.IndexScrollbar(document.getElementById(&quot;indexscrollbar&quot;));
-&lt;/script&gt;
+</pre>
+<p>JS code:</p>
+<pre class="prettyprint">
+var isb = tau.widget.IndexScrollbar(document.getElementById(&quot;indexscrollbar&quot;));
 </pre>
 
 <div id="footer">
@@ -60,5 +64,10 @@
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

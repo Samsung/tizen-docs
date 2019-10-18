@@ -7,7 +7,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Text Enveloper</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>Text Enveloper</h1>
 
 <p>
@@ -32,6 +32,8 @@ If you want to delete word block, you should press the backspace key. If you foc
 	</tr>
 	</tbody>
 </table>
+
+<img src="../../images/mobile_textEnveloper.png" width="15%">
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -76,10 +78,8 @@ If you want to delete word block, you should press the backspace key. If you foc
 <p>To manually create a TextEnveloper component, use the component constructor from the tau namespace.</p>
 
 <pre class="prettyprint">
-&lt;script&gt;
-   var textEnveloperElement = document.getElementById("textenveloper"),
-       textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
-&lt;/script&gt;
+var textEnveloperElement = document.getElementById("textenveloper"),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
 </pre>
 
 
@@ -218,12 +218,10 @@ textEnveloper.methodName(methodArgument1, methodArgument2, ...);
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
 							prettyprint">
-&lt;script&gt;
-   var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
-       textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
+var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
 
-   textEnveloper.add("hello");
-&lt;/script&gt;
+textEnveloper.add("hello");
 </pre>
 		</div>
 
@@ -285,12 +283,10 @@ textEnveloper.methodName(methodArgument1, methodArgument2, ...);
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
 							prettyprint">
-&lt;script&gt;
-   var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
-       textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
+var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement);
 
-   textEnveloper.remove(1);
-&lt;/script&gt;
+textEnveloper.remove(1);
 </pre>
 		</div>
 
@@ -342,16 +338,14 @@ textEnveloper.methodName(methodArgument1, methodArgument2, ...);
 								example:</p><p></p></span>
 							<pre name="code" class="examplecode
 							prettyprint">
-&lt;script&gt;
-   var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
-       textEnveloper = tau.component.TextEnveloper(textEnveloperElement),
-       textTokenLength;
+var textEnveloperElement = document.getElementById(&quot;textenveloper&quot;),
+    textEnveloper = tau.component.TextEnveloper(textEnveloperElement),
+    textTokenLength;
 
-   textEnveloper.add("hello1");
-   textEnveloper.add("hello2");
-   /* textTokenLength will be 2 */
-   textTokenLength = textEnveloper.length();
-&lt;/script&gt;
+textEnveloper.add("hello1");
+textEnveloper.add("hello2");
+/* textTokenLength will be 2 */
+textTokenLength = textEnveloper.length();
 </pre>
 		</div>
 
@@ -369,5 +363,10 @@ textEnveloper.methodName(methodArgument1, methodArgument2, ...);
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>
