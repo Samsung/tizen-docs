@@ -556,7 +556,7 @@ To send a command to the server from the client side, follow these steps:
    mc_client_send_repeat_mode_cmd(g_client_h, server_name, MC_REPEAT_MODE_OFF, NULL);
    mc_client_send_playlist_cmd(g_client_h, server_name, "my_favorite", "1", MC_PLAYBACK_ACTION_PLAY, 0, NULL);
    
-   Since Tizen 5.5, the following APIs are supported:
+   /* Since Tizen 5.5, the following APIs are supported */
    mc_client_send_subtitles_cmd(g_client_h, server_name, TRUE, NULL);
    mc_client_send_360_mode_cmd(g_client_h, server_name, FALSE, NULL);
    mc_client_send_display_mode_cmd(g_client_h, server_name, MC_DISPLAY_MODE_FULL_SCREEN, NULL);
