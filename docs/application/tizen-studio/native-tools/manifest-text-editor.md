@@ -818,7 +818,7 @@ This element contains the settings for the frame component. After adding this el
 
 - `main`
 
-  Indicates which the component is the main component (available values: `true`, `false`)
+  Indicates which component is the main component (available values: `true`, `false`)
 
 - `launch_mode`
 
@@ -898,11 +898,11 @@ This element contains the settings for the service component. After adding this 
 
 - `id`
 
-  Frame component unique ID (string)
+  Service component unique ID (string)
 
 - `main`
 
-  Indicates which the component is the main component (available values: `true`, `false`)
+  Indicates which component is the main component (available values: `true`, `false`)
 
 **For example:**
 
