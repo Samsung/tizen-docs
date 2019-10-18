@@ -8,7 +8,7 @@ To work with Visual Studio for Mac Extension for Tizen, your computer must have:
 
 - At least 5.6 GB of available disk space
 - macOS Mojave 10.14: Community, Professional, and Enterprise.	
-- Visual Studio Mac 2019 (Community, Professional, Enterprise) Version 8.2 and higher.
+- Visual Studio 2019 for Mac (Community, Professional, Enterprise) Version 8.2 and higher.
 
 - Java Development Kit (JDK)
 
@@ -24,7 +24,7 @@ For Oracle JDK, Java for OS X 2015-001 is required to support legacy Java softwa
 <a name="setup"></a>
 ## Visual Studio for Mac Extension for Tizen Installation
 
-You must install the **Visual Studio for Mac Extension for Tizen** and the **Baseline SDK** to use the Tizen SDK tools.
+This section describes how to install the **Visual Studio for Mac Extension for Tizen** and the **Baseline SDK** to use the Tizen SDK tools.
 
 ### Install the Extension
 
