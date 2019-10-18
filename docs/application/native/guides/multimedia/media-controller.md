@@ -556,7 +556,7 @@ To send a command to the server from the client side, follow these steps:
    mc_client_send_repeat_mode_cmd(g_client_h, server_name, MC_REPEAT_MODE_OFF, NULL);
    mc_client_send_playlist_cmd(g_client_h, server_name, "my_favorite", "1", MC_PLAYBACK_ACTION_PLAY, 0, NULL);
    
-   /* Since Tizen 5.5, following APIs are supported */ 
+   > Since Tizen 5.5, following APIs are supported.
    mc_client_send_subtitles_cmd(g_client_h, server_name, TRUE, NULL);
    mc_client_send_360_mode_cmd(g_client_h, server_name, FALSE, NULL);
    mc_client_send_display_mode_cmd(g_client_h, server_name, MC_DISPLAY_MODE_FULL_SCREEN, NULL);
@@ -611,7 +611,7 @@ To process the received command on the server side, follow these steps:
    - `mc_server_set_playlist_cmd_received_cb()`: For played item, playback state, and playback position change commands in playlist.
    - `mc_server_set_custom_cmd_received_cb()`: For a custom command.
    
-   /* Since Tizen 5.5, following APIs are also supported */ 
+   > Since Tizen 5.5, following APIs are also supported.
    - `mc_server_set_subtitles_cmd_received_cb()`: For subtitles change commands.
    - `mc_server_set_360_mode_cmd_received_cb()`: For 360 mode change commands.
    - `mc_server_set_display_mode_cmd_received_cb()`: For display mode change commands.
