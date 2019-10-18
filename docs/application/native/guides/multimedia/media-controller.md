@@ -207,7 +207,7 @@ To update the playback information on the server side, follow these steps:
    /* Only Tizen 4.0 for Mobile */ 
    ret = mc_server_set_playlist_item_index(g_mc_server, 10);
    
-   /* Since Tizen 5.0, following APIs are supported */ 
+   /* Since Tizen 5.0, the following APIs are supported */ 
    ret = mc_server_set_playlist_item_info(g_mc_server, "my_favoriates", 10);
    ret = mc_server_set_playback_content_type(g_mc_server, MC_CONTENT_TYPE_MUSIC);
    ret = mc_server_set_content_age_rating(g_mc_server, MC_CONTENT_RATING_7_PLUS);
@@ -251,7 +251,7 @@ To retrieve the playback information on the client side, follow these steps:
    /* Only Tizen 4.0 for Mobile */ 
    ret = mc_client_get_playlist_item_index(playback, &index);
 
-   /* Since Tizen 5.0, following APIs are supported */ 
+   /* Since Tizen 5.0, the following APIs are supported */ 
    ret = mc_client_get_playlist_item_info(playback, &playlist_name, &index);
    ret = mc_client_get_playback_content_type(playback, &content_type);
    ret = mc_client_get_age_rating(playback, &age_rating);
@@ -556,7 +556,7 @@ To send a command to the server from the client side, follow these steps:
    mc_client_send_repeat_mode_cmd(g_client_h, server_name, MC_REPEAT_MODE_OFF, NULL);
    mc_client_send_playlist_cmd(g_client_h, server_name, "my_favorite", "1", MC_PLAYBACK_ACTION_PLAY, 0, NULL);
    
-   Since Tizen 5.5, following APIs are supported:
+   Since Tizen 5.5, the following APIs are supported:
    mc_client_send_subtitles_cmd(g_client_h, server_name, TRUE, NULL);
    mc_client_send_360_mode_cmd(g_client_h, server_name, FALSE, NULL);
    mc_client_send_display_mode_cmd(g_client_h, server_name, MC_DISPLAY_MODE_FULL_SCREEN, NULL);
@@ -611,7 +611,7 @@ To process the received command on the server side, follow these steps:
    - `mc_server_set_playlist_cmd_received_cb()`: For played item, playback state, and playback position change commands in playlist.
    - `mc_server_set_custom_cmd_received_cb()`: For a custom command.
    
-   Since Tizen 5.5, following APIs are also supported:
+   Since Tizen 5.5, the following APIs are also supported:
    - `mc_server_set_subtitles_cmd_received_cb()`: For subtitles change commands.
    - `mc_server_set_360_mode_cmd_received_cb()`: For 360 mode change commands.
    - `mc_server_set_display_mode_cmd_received_cb()`: For display mode change commands.
