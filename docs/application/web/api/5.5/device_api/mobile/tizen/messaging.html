@@ -2699,17 +2699,6 @@ messageStorage.findFolders(filter, folderArrayCB);
 <p><span class="version">Since: </span>
  1.0
             </p>
-<div class="description">
-            <p>
-The errorCallback is launched with these error types:
-            </p>
-            <ul>
-              <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
-              <li>
- UnknownError - If any other error occurs.               </li>
-            </ul>
-           </div>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -2787,17 +2776,6 @@ messageStorage.addMessagesChangeListener(messageChangeCallback);
 <p><span class="version">Since: </span>
  1.0
             </p>
-<div class="description">
-            <p>
-The errorCallback is launched with these error types:
-            </p>
-            <ul>
-              <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
-              <li>
- UnknownError - If any other error occurs.              </li>
-            </ul>
-           </div>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -2874,17 +2852,6 @@ messageStorage.addConversationsChangeListener(conversationChangeCB);
 <p><span class="version">Since: </span>
  1.0
             </p>
-<div class="description">
-            <p>
-The errorCallback is launched with these error types:
-            </p>
-            <ul>
-              <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
-              <li>
- UnknownError - If any other error occurs.              </li>
-            </ul>
-           </div>
 <p><span class="privilegelevel">Privilege level: </span>
  public
             </p>
@@ -2965,15 +2932,6 @@ messageStorage.addFoldersChangeListener(folderChangeCB);
             <p>
 Calling this function has no effect if there is no listener with given id.
             </p>
-            <p>
-The errorCallback is launched with these error types:
-            </p>
-            <ul>
-              <li>
- InvalidValuesError - If any of the input parameters contains an invalid value.              </li>
-              <li>
- UnknownError - If any other error occurs.              </li>
-            </ul>
             <p>
 If the <em>subscriptionId </em>argument is valid and corresponds to a subscription already in place, the subscription process must stop immediately and further <em>MessagingStorage </em>change notifications must not be invoked.
 If the <em>subscriptionId argument does not correspond to a valid subscription, the method will return without any further action.
