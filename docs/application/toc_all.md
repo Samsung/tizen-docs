@@ -1174,3 +1174,10 @@
 ## [Prerequisites](/application/vscode-ext/index.md)
 ## [Tizen .NET](/application/vscode-ext/dotnet.md)
 ## [Tizen Web](/application/vscode-ext/web.md)
+
+
+# Visual Studio for Mac Extension for Tizen
+
+## [Overview](/application/vstools-mac/overview.md)
+
+
