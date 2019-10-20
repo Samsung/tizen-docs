@@ -718,7 +718,7 @@ For more information on the relationship between the elements, see the [element 
 
   Application unique ID (string)
 
-  You can use the a~z, A~Z, 0~9, ".", "-", and "_" characters, and the value must be less than 50 characters.
+  You can use the a\~z, A\~Z, 0\~9, ".", "-", and "\_" characters, and the value must be less than 50 characters.
 
   This can be used for launching or terminating the application explicitly.
 
