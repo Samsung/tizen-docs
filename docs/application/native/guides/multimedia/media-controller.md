@@ -960,7 +960,7 @@ To retrieve the abilities on the client side, follow these steps:
    - `mc_client_set_display_rotation_ability_updated_cb()`: To register a callback for changing the display rotation ability.
    - `mc_client_set_ability_support_updated_cb()`: To register a callback for changing other abilities.
    
-3. The client can get the server ability directly. For example to get server playback ability:
+3. The client can get the server ability directly. For example, to get server playback ability:
    ```
    mc_playback_ability_h ability = NULL;
    ret = mc_client_get_server_playback_ability(g_client_h, "server_name", &ability);
