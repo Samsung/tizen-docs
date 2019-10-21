@@ -908,9 +908,9 @@ To update the abilities on the server side, follow these steps:
    ret = mc_server_create(&g_server_h);
    ```
    
-2. Set the abilities using the corresponding 'mc_server_set_XXX_ability()', or 'mc_server_set_ability_support()'.
+2. Set the abilities using the corresponding `mc_server_set_XXX_ability()`, or `mc_server_set_ability_support()`.
    
-   To update the playback ability, set the ability for each playback action using 'mc_server_set_playback_ability()', and then update the ability using 'mc_server_update_playback_ability()':
+   To update the playback ability, set the ability for each playback action using `mc_server_set_playback_ability()`, and then update the ability using `mc_server_update_playback_ability()`:
    ```
    ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PLAY, MC_ABILITY_SUPPORTED_YES);
    ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PAUSE, MC_ABILITY_SUPPORTED_NO);
@@ -924,17 +924,17 @@ To update the abilities on the server side, follow these steps:
    ret = mc_server_update_playback_ability(g_mc_server);
    ```
    
-   To update the display mode ability, set the ability using 'mc_server_set_display_mode_ability()':
+   To update the display mode ability, set the ability using `mc_server_set_display_mode_ability()`:
    ```
    ret = mc_server_set_display_mode_ability(g_mc_server, MC_DISPLAY_MODE_LETTER_BOX | MC_DISPLAY_MODE_ORIGIN_SIZE | MC_DISPLAY_MODE_FULL_SCREEN | MC_DISPLAY_MODE_CROPPED_FULL, MC_ABILITY_SUPPORTED_YES);
    ```
    
-   To update the display rotation ability, set the ability using 'mc_server_set_display_rotation_ability()':
+   To update the display rotation ability, set the ability using `mc_server_set_display_rotation_ability()`:
     ```
    ret = mc_server_set_display_rotation_ability(g_mc_server, MC_DISPLAY_ROTATION_NONE | MC_DISPLAY_ROTATION_90 | MC_DISPLAY_ROTATION_180 | MC_DISPLAY_ROTATION_270, MC_ABILITY_SUPPORTED_YES);
    ```
    
-   In case of other abilities, set the ability using 'mc_server_set_ability_support()', to update it. For example, to update shuffle and repeat ability, set the ability using 'mc_server_set_ability_support()':
+   In case of other abilities, set the ability using `mc_server_set_ability_support()`, to update it. For example, to update shuffle and repeat ability, set the ability using `mc_server_set_ability_support()`:
    ```
    ret = mc_server_set_ability_support(g_mc_server, MC_ABILITY_SHUFFLE, MC_ABILITY_SUPPORTED_YES);
    ret = mc_server_set_ability_support(g_mc_server, MC_ABILITY_REPEAT, MC_ABILITY_SUPPORTED_NO);
