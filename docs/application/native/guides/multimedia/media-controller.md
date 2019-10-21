@@ -890,7 +890,7 @@ To process the received search command on the server side, follow these steps:
 ## Updating and Retrieving Abilities
 To update the abilities on the server side, follow these steps:
 
-1. Create the media controller server handle using the `mc_server_create()`:
+1. Create the media controller server handle using `mc_server_create()`:
 
    ```
    ret = mc_server_create(&g_server_h);
@@ -932,7 +932,7 @@ To update the abilities on the server side, follow these steps:
 
 To retrieve the abilities on the client side, follow these steps:
 
-1. Create the media controller client handle using the `mc_client_create()`:
+1. Create the media controller client handle using `mc_client_create()`:
 
    ```
    ret = mc_client_create(&g_client_h);
@@ -960,7 +960,7 @@ To retrieve the abilities on the client side, follow these steps:
    - `mc_client_get_server_display_rotation_ability()`: For display rotation ability.
    - `mc_client_get_server_ability_support()`: For other abilities.
    
-4. Destroy the media controller client handle using the `mc_client_destroy()`, when media controller client handle is no longer needed:
+4. Destroy the media controller client handle using `mc_client_destroy()`, when media controller client handle is no longer needed:
 
    ```
    ret = mc_client_destroy(g_client_h);
