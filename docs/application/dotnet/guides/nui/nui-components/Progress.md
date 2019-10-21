@@ -1,32 +1,33 @@
 # Progress
-It's used to show the ongoing status with a long narrow bar.
+Progress is a common component that is used to show the ongoing status using a long narrow bar.
+
+Following are the instances where progress is used:
+
+- To show the processing time
+- To show the number of items in progress
+- To show the progress rate depending on the screen layout
 
 ![Progress](./media/progress.png)
 
-## Overview
-Progress is a kind of common component and  used to show the ongoing status with a long narrow bar. This is useful in a long list of items or to show the processing time.
+## Create with Property
+To create a progress using property, follow these steps:
+1. Create progress using the default constructor:
 
-- Use progress to show the number of items in progress or the processing time.
-- Use progress to show the progress rate, depending on the screen layout.
-
-## Create with property
-1. Create Progress by default constructor
-
-~~~{.cs}
+```
 utilityBasicProgress = new Progress();
-~~~
+```
 
-2. Set progress property
+2. Set the progress property:
 
-~~~{.cs}
+```
 utilityBasicProgress.MaxValue = 100;
 utilityBasicProgress.MinValue = 0;
 utilityBasicProgress.CurrentValue = 45;
 utilityBasicProgress.TrackColor = Color.Green;
 utilityBasicProgress.ProgressColor = Color.Black;
-~~~
+```
 
-Progress created by property:
+Following output is generated when the progress is created using property:
 
 ![Progress](./media/progress.gif)
 

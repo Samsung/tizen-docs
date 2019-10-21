@@ -1,24 +1,23 @@
 # Toast
-Use a toast to provide simple messages when the user does not need to make an additional action or confirmation.
+Toast is a common component and provides simple messages.  
+Unlike other popups, a toast consists only of a body field as it is just used for providing simple feedback to the user’s actions.  
+You can use a toast to provide simple messages when the user does not need to make an additional action or confirmation.  
+A toast will automatically disappear after a certain time.
 
 ![Toast](./media/toast.png)
 
-## Overview
-Toast is a kind of common component and provide simple messages. Unlike other popups, a toast only has the body field as it is just used for providing simple feedback to user actions. A toast will automatically disappear after a certain time.
-
-- Toast only show simple messages contain with text.
-- Toast can be automatically disappear after a certain time.
 
 ## Create with property
-1. Create Toast by default constructor
+To create a toast using property, follow these steps:
+1. Create toast using the default constructor:
 
-~~~{.cs}
+```
 utilityBasicToast = new Toast();
-~~~
+```
 
-2. Set Toast property
+2. Set the toast property:
 
-~~~{.cs}
+```
 NPatchVisual nvisual = new NPatchVisual();
 nvisual.URL = "Poptoast_background.png";
 nvisual.Border = new Rectangle(64, 64, 4, 4);
@@ -29,9 +28,10 @@ utilityBasicToast.PointSize = 26;
 utilityBasicToast.TextColor = Color.White;
 utilityBasicToast.TextPadding = new Extents(96, 96, 38, 38);
 utilityBasicToast.Duration = 1500;
-~~~
+root.Add(utilityBasicToast);
+```
 
-Toast created by property:
+Following output is generated when the toast is created using property:
 
 ![Toast](./media/toast.gif)
 

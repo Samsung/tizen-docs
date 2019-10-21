@@ -1,24 +1,22 @@
 # Tab
-A tab makes it easy to explore and switch between different views or functional aspects of an app or to browse categorized data sets.
+Tab is a common component and it can be used as a menu label.  
+A tab makes it easy to explore and switch between different views or functional aspects of an application or to browse categorized data sets.  
+You can handle a tab by adding, inserting, or deleting a TabItem.  
+A tab can contain one or more TabItem with text, usually used as a menu label. A TabItem can have different lengths.
 
 ![Tab](./media/tab.png) ![Tab](./media/tab2.png)
 
-## Overview
-Tab is a kind of common component, it can be used as menu label. User can handle Tab by adding/inserting/deleting TabItem.
-
-- Tab can contain one or more tab items with text, usually used as menu label.
-- Tab item can have different length.
-
 ## Create with property
-1. Create Tab by default constructor
+To create a tab using property, follow these steps:
+1. Create Tab using the default constructor:
 
-~~~{.cs}
+```
 utilityBasicTab = new Tab();
-~~~
+```
 
-2. Set tab property
+2. Set the tab property
 
-~~~{.cs}
+```
 utilityBasicTab.IsSelectable = true;
 utilityBasicTab.Size = new Size(700, 108);
 utilityBasicTab.Position = new Position(100, 300);
@@ -48,27 +46,27 @@ for (int i = 0; i < 3; i++)
     utilityBasicTab.AddItem(item);
 }
 utilityBasicTab.SelectedItemIndex = 0;
-~~~
+```
 
-Tab created by property:
+Following output is generated when the tab is created using property:
 
 ![Tab](./media/tab.gif)
 
 ## Responding to ItemChangedEvent
-When user click an item on Tab, the Tab receives an iten change event.
-You can declare the item change event handler as following:
+When you click an item on tab, the tab receives an item change event.
+You can declare the item change event handler as follows:
 
-~~~{.cs}
+```
 Tab tab = new Tab();
 tab.ItemChangedEvent += TabItemChangedEvent;
-~~~
+```
 
-~~~{.cs}
+```
 private void TabItemChangedEvent(object sender, Tab.ItemChangeEventArgs e)
 {
     createText[0].Text = "Create Tab just by properties, Selected index from " + e.PreviousIndex + " to " + e.CurrentIndex;
 }
-~~~
+```
 
 ## Related Information
 - Dependencies

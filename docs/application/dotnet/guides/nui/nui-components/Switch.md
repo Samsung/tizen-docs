@@ -1,19 +1,19 @@
 # Switch
-This tutorial describes how to create and use Switch.
+Switch is a common component that can be used as a selector.
 
-## Overview
-Switch is one kind of common component, it can be used as selector.
+![SwitchProperty](./media/SwitchProperty.PNG)
 
-## Create with property
-1. Create Switch by default constructor
+## Create with Property
+To create a switch using property, follow these steps:
+1. Create switch using the default constructor:
 
-~~~{.cs}
+```
 Switch[] utilitySwitch = new Switch[4];
-~~~
+```
 
-2. Set switch property
+2. Set the switch property:
 
-~~~{.cs}
+```
 int num = 4;
 for(int i = 0; i < num; i++)
 {
@@ -40,27 +40,27 @@ for(int i = 0; i < num; i++)
 utilitySwitch[0].IsSelected = true;
 utilitySwitch[2].IsEnabled = false;
 utilitySwitch[3].IsEnabled = false;
-~~~
+```
 
-Switch created by property:
+Following output is generated when the switch is created using property:
 
 ![SwitchProperty](./media/SwitchProperty.PNG)
 
 ## Responding to SelectedEvent
-When user click switch, the Popup instance receives a SelectedEvent.
-You can declare the event handler as following:
+When you click the switch, the popup instance receives a selected event.
+You can declare the event handler as follows:
 
-~~~{.cs}
+```
 Switch switchControl = new Switch();
 switchControl.SelectedEvent += OnSelected;
-~~~
+```
 
-~~~{.cs}
+```
 private void OnSelected(object sender, Switch.SelectEventArgs e)
 {
     //Do something when user select the switch
 }
-~~~
+```
 
 ## Related Information
 - Dependencies

@@ -89,6 +89,16 @@
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 #### [Resources](/application/dotnet/guides/nui/resources.md)
+### NUI Components
+#### [Button](/application/dotnet/guides/nui/nui-components/Button.md)
+#### [Loading](/application/dotnet/guides/nui/nui-components/Loading.md)
+#### [Popup](/application/dotnet/guides/nui/nui-components/Popup.md)
+#### [Progress](/application/dotnet/guides/nui/nui-components/Progress.md)
+#### [Scrollbar](/application/dotnet/guides/nui/nui-components/Scrollbar.md)
+#### [Slider](/application/dotnet/guides/nui/nui-components/Slider.md)
+#### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
+#### [Tab](/application/dotnet/guides/nui/nui-components/Tab.md)
+#### [Toast](/application/dotnet/guides/nui/nui-components/Toast.md)
 
 ### OpenTK
 #### [Overview](/application/dotnet/guides/opentk/overview.md)

@@ -1,22 +1,20 @@
 # Button
-This tutorial describes how to create and use button.
+Button is a common component and describes what action will occur when you select it.  
+A button can either contain a text or an icon, and can be created using property.
 
-## Overview
-Button is one kind of common component and clearly describes what action will occur when user select it.
+![Button](./media/Button.PNG)
 
-- Button can contain text or icon.
-- Button can be created by property.
+## Create with Property
+To create a button using property, follow these steps:  
+1. Create Button using the default constructor:
 
-## Create with property
-1. Create Button by default constructor
-
-~~~{.cs}
+```
 utilityBasicButton = new Button();
-~~~
+```
 
-2. Set button property
+2. Set the button property
 
-~~~{.cs}
+```
 NPatchVisual nvisual = new NPatchVisual();
 nvisual.URL = "rectangle_point_btn_normal.png";
 nvisual.Border = new Rectangle(5, 5, 5, 5);
@@ -34,46 +32,46 @@ utilityBasicButton.TextColorSelector = new ColorSelector
 utilityBasicButton.Size = new Size(300, 80);
 utilityBasicButton.Position = new Position(100, 300);
 utilityBasicButton.PointSize = 20;
-utilityBasicButton.Text = "UtilityBasicButton";
+utilityBasicButton.Text = "BasicButton";
 root.Add(utilityBasicButton);
-~~~
+```
 
-Button created by property:
+Following output is generated when the button is created using property:
 
 ![ButtonProperty](./media/ButtonProperty.PNG)
 
 
 ## Responding to ClickEvent
-When user click a button, the Button instance receives a click event.
-You can declare the click event handler as following:
+When you click a button, the button instance receives a click event.
+You can declare the click event handler as follows:
 
-~~~{.cs}
+```
 Button button = new Button();
 button.ClickEvent += OnClick;
-~~~
+```
 
-~~~{.cs}
+```
 private void OnClick(object sender, Button.ClickEventArgs e)
 {
     // Do something in response to button click
 }
-~~~
+```
 
 ## Responding to StateChangedEvent
-Button has 8 states including Normal, Focused, Disabled, Selected, Pressed, DisabledFocused, SelectedFocused and DisabledSelected.
-When the user change button state ( change focus or disable a button), the Button instance receives an StateChangedEvent.
+Button has the following eight states Normal, Focused, Disabled, Selected, Pressed, DisabledFocused, SelectedFocused, and DisabledSelected.
+When you change the button state to focus or disable, the button instance receives a state changed event.
 
-~~~{.cs}
+```
 Button button = new Button();
 button.StateChangedEvent += OnStateChange;
-~~~
+```
 
-~~~{.cs}
+```
 private void OnStateChange(object sender, Button.StateChangeEventArgs e)
 {
     // Do something in response to state change
 }
-~~~
+```
 
 ## Related Information
 - Dependencies

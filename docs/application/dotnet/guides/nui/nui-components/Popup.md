@@ -1,20 +1,20 @@
 # Popup
-This tutorial describes how to create and use Popup.
+Popup is a common component that is used as a popup window. You can manage a popup button count, head title, and content area.  
+A popup can be created using property.
 
-## Overview
-Popup is one kind of common component, it can be used as popup window.
-User can handle Popup button count, head title and content area.
+![PopupProperty](./media/PopupProperty.PNG)
 
-## Create with property
-1. Create Popup by default constructor
+## Create with Property
+To create a popup using property, follow these steps:
+1. Create popup using the default constructor:
 
-~~~{.cs}
+```
 Popup popup = new Popup();
-~~~
+```
 
-2. Set popup property
+2. Set the popup property:
 
-~~~{.cs}
+```
 //set Popup property
 NPatchVisual nvisual = new NPatchVisual();
 nvisual.URL = "popup_background.png";
@@ -37,27 +37,27 @@ popup.ButtonCount = 2;
 popup.SetButtonText(0, "Yes");
 popup.SetButtonText(1, "Exit");
 root.Add(popup);
-~~~
+```
 
-Popup created by property:
+Following output is generated when the popup is created using property:
 
 ![PopupProperty](./media/PopupProperty.PNG)
 
 ## Responding to PopupButtonClickEvent
-When user click popup button, the Popup instance receives a PopupButtonClickEvent.
-You can declare the event handler as following:
+When you click the popup button, the popup instance receives a PopupButtonClickEvent.
+You can declare the event handler as follows:
 
-~~~{.cs}
+```
 Popup popup = new Popup();
 popup.PopupButtonClickEvent += PopupButtonClickEvent;
-~~~
+```
 
-~~~{.cs}
+```
 private void PopupButtonClickEvent(object sender, Tizen.NUI.CommonUI.Popup.ButtonClickEventArgs e)
 {
     Tizen.Log.Info("CommonUI", "Button index " + e.ButtonIndex + " is clicked");
 }
-~~~
+```
 
 ## Related Information
 - Dependencies
