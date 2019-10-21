@@ -822,7 +822,7 @@ This element contains the settings for the frame component. After adding this el
 
 - `launch_mode`
 
-  Component launch mode (available values: `single` (launched as a main component), `group` (launched as a sub component), `caller` (caller component [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with `app_control_set_launch_mode()`))
+  Component launch mode (available values: `single` (launched as a main component), `group` (launched as a sub component), `caller` (caller component [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with `app_control_set_launch_mode()`)
 
   By default, this value is set to `single`.
 
