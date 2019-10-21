@@ -899,7 +899,7 @@ To update the abilities on the server side, follow these steps:
 2. Set the abilities using the corresponding 'mc_server_set_XXX_ability()', or 'mc_server_set_ability_support()'.
    The following examples demonstrate setting up various abilities:
    
-   To update the playback ability, set the ability for each playback action using the 'mc_server_set_playback_ability()', and then update the ability using the 'mc_server_update_playback_ability()':
+   To update the playback ability, set the ability for each playback action using 'mc_server_set_playback_ability()', and then update the ability using 'mc_server_update_playback_ability()':
    ```
    ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PLAY, MC_ABILITY_SUPPORTED_YES);
    ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PAUSE, MC_ABILITY_SUPPORTED_NO);
