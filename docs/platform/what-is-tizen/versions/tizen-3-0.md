@@ -39,4 +39,4 @@ The most important one that enables Tizen to move to the next level is IoT and c
 
  
 
-For detail information, see [Tizen 3.0 public M3 release note](../../open-source-tizen/release-notes/tizen-3-0-m3.md).
+For detail information, see [Tizen 3.0 public M3 release note](../../release-notes/tizen-3-0-m3.md).
