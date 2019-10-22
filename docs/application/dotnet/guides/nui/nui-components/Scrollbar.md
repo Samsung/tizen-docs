@@ -10,28 +10,32 @@ When entering the screen consists of list, the vertical or horizontal scroll bar
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
 ## Create with Properties
+
 To create a scrollbar using property, follow these steps:
+
 1. Create scrollbar using the default constructor:
 
-```
-scrollBar = new ScrollBar();
-```
+    ```cs
+    scrollBar = new ScrollBar();
+    ```
 
 2. Set the scrollbar property:
 
-```
-scrollBar.Position = new Position(50, 300);
-scrollBar.Size = new Size(300, 4);
-scrollBar.TrackColor = Color.Green;
-scrollBar.MaxValue = (int)scrollBar.SizeWidth / 10;
-scrollBar.MinValue = 0;
-scrollBar.ThumbSize = new Size(30, 4);
-scrollBar.CurrentValue = 0;
-scrollBar.ThumbColor = Color.Black;
-root.Add(scrollBar);
-```
-![CreateWithProperties](./media/scrollbar_properties.PNG)
+    ```cs
+    scrollBar.Position = new Position(50, 300);
+    scrollBar.Size = new Size(300, 4);
+    scrollBar.TrackColor = Color.Green;
+    scrollBar.MaxValue = (int)scrollBar.SizeWidth / 10;
+    scrollBar.MinValue = 0;
+    scrollBar.ThumbSize = new Size(30, 4);
+    scrollBar.CurrentValue = 0;
+    scrollBar.ThumbColor = Color.Black;
+    root.Add(scrollBar);
+    ```
 
+Following output is generated when the progress is created using property:
+
+![CreateWithProperties](./media/scrollbar_properties.PNG)
 
 ## ScrollBar Properties
 

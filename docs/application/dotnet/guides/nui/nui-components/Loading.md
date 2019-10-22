@@ -11,25 +11,26 @@ Following are the instances where loading is used:
 ![Loading](./media/loading.png)
 
 ## Create with Property
+
 To create a loading using property, follow these steps:
+
 1. Create loading using the default constructor:
 
-```
-utilityBasicLoading = new Loading();
-```
+    ```cs
+    utilityBasicLoading = new Loading();
+    ```
 
 2. Set the loading property:
 
-```
-string[] imageArray = new string[36];
-for (int i=0; i<36; i++)
-{
-    
-    imageArray[i] = "loading_" + i.ToString("00") + ".png";
-}
-utilityBasicLoading.ImageArray = imageArray;
-root.Add(utilityBasicLoading);
-```
+    ```cs
+    string[] imageArray = new string[36];
+    for (int i=0; i<36; i++)
+    {
+        imageArray[i] = "loading_" + i.ToString("00") + ".png";
+    }
+    utilityBasicLoading.ImageArray = imageArray;
+    root.Add(utilityBasicLoading);
+    ```
 
 Following output is generated when the loading is created using property:
 
