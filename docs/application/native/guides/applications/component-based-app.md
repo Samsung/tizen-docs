@@ -1,39 +1,39 @@
-# Component-based Applications
+# Component Based Applications
 
 
-The component-based application is a Tizen application model. This application model enables you to create an application that provides multiple components in one process.
-In the component-based application model, there are two types of components. Each component type has its own lifecycle:
+The component based application is a Tizen application model. This application model enables you to create an application that provides multiple components in one process.
+In the component based application model, there are two types of components. Each component type has its own lifecycle:
 
-- Service-component: The service-component has a lifecycle for managing non-UI services.
-- Frame-component: The frame-component has a lifecycle for managing UI resources.
+- Service component: The service component has a lifecycle for managing non-UI services.
+- Frame component: The frame component has a lifecycle for managing UI resources.
 
-You can add components to the component-based applications. The registered components create instances when the component-based application receives a launch request.
+You can add components to the component based applications. The registered components create instances when the component based application receives a launch request.
 
-The main component-based application API features include:
+The main component based application API features include:
 
 - Application states
 
-  A Tizen native component-based application [transitions through various states](#application_states) during its lifecycle.
+  A Tizen native component based application [transitions through various states](#application_states) during its lifecycle.
 
 - Application event callbacks
 
-  The component-based application can receive application state change events. You can register [callbacks for these events](#application_register) to react to them.
+  The component based application can receive application state change events. You can register [callbacks for these events](#application_register) to react to them.
 
-- Frame-component states
+- Frame component states
 
-  A frame-component [transitions through various states](#frame_component_states) during its lifecycle.
+  A frame component [transitions through various states](#frame_component_states) during its lifecycle.
 
-- Frame-component event callbacks
+- Frame component event callbacks
 
-  The component-based application can receive frame-component state change events. You can register [callbacks for these events](#frame_component_callbacks) to react to them.
+  The component based application can receive frame component state change events. You can register [callbacks for these events](#frame_component_callbacks) to react to them.
 
-- Service-component states
+- Service component states
 
-  A service-component [transitions through various states](#service_component_states) during its lifecycle.
+  A service component [transitions through various states](#service_component_states) during its lifecycle.
 
-- Service-component event callbacks
+- Service component event callbacks
 
-  The component-based application can receive service-component state change events. You can register [callbacks for these events](#service_component_callbacks) to react to them.
+  The component based application can receive service component state change events. You can register [callbacks for these events](#service_component_callbacks) to react to them.
 
 - Application behavior attributes
 
@@ -43,9 +43,9 @@ The main component-based application API features include:
 <a name="application_states"></a>
 ## Application States
 
-The following figure and table describe the component-based application states:
+The following figure and table describe the component based application states:
 
-![Running component-based applications](./media/application_lifecycle.jpg)
+![Running component based applications](./media/application_lifecycle.jpg)
 
 | State        | Description                         |
 |--------------|-------------------------------------|
@@ -56,14 +56,14 @@ The following figure and table describe the component-based application states:
 
   > **Note**
   >
-  > The component-based application is created with the first component create request. This application terminates if there are no running instances.
-  > In the `RUNNING` state, the component-based application creates instances of registered components. The registered component can have multiple instances.
+  > The component based application is created with the first component create request. This application terminates if there are no running instances.
+  > In the `RUNNING` state, the component based application creates instances of registered components. The registered component can have multiple instances.
 
 
 <a name="application_register"></a>
 ## Application Event Callbacks
 
-You can control the component-based application execution by [managing the application state events](#application_monitoring).
+You can control the component based application execution by [managing the application state events](#application_monitoring).
 
 The following table lists the application state change events:
 
@@ -75,42 +75,42 @@ The following table lists the application state change events:
 
 
 <a name="frame_component_states"></a>
-## Frame-component States
+## Frame Component States
 
-The following figure and table describe the frame-component states:
+The following figure and table describe the frame component states:
 
-![Running frame-component](./media/frame_lifecycle.jpg)
+![Running frame component](./media/frame_lifecycle.jpg)
 
 | State        | Description                         |
 |--------------|-------------------------------------|
-| `CREATE`      | The frame-component instance is created.            |
-| `START`    | The frame-component instance is started and is ready to receive visibility events.   |
-| `RESUME`    | The frame-component instance is visible. |
-| `PAUSE`    | The frame-component instance is invisible. |
-| `STOP`    | The frame-component instance is stopped. Therefore, it stops receiving visibility events. |
-| `DESTROY` | The frame-component instance is destroyed.          |
+| `CREATE`      | The frame component instance is created.            |
+| `START`    | The frame component instance is started and is ready to receive visibility events.   |
+| `RESUME`    | The frame component instance is visible. |
+| `PAUSE`    | The frame component instance is invisible. |
+| `STOP`    | The frame component instance is stopped. Therefore, it stops receiving visibility events. |
+| `DESTROY` | The frame component instance is destroyed.          |
 
 
 <a name="frame_component_callbacks"></a>
-## Frame-component Event Callbacks
+## Frame Component Event Callbacks
 
-You can control the frame-component lifecycle by [managing the frame-component state events](#frame_component_monitoring).
+You can control the frame component lifecycle by [managing the frame component state events](#frame_component_monitoring).
 
-The following table lists the frame-component state change events:
+The following table lists the frame component state change events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
-| `frame_component_create_cb()`    | Used to take necessary actions before the lifecycle of a frame-component instance starts. Place the initialization code here. You must create a window at this point. It will be called once in the instance's lifecycle. |
+| `frame_component_create_cb()`    | Used to take necessary actions before the lifecycle of a frame component instance starts. Place the initialization code here. You must create a window at this point. It will be called once in the instance's lifecycle. |
 | `frame_component_restore_content_cb()`    | Used to restore the current state of an instance. The data stored in  `frame_component_save_content_cb` will be passed by parameter. |
 | `frame_component_start_cb()`    | Used to start an instance. Requested `app_control_h` will be passed by parameter. |
 | `frame_component_resume_cb()`    | Used to take necessary actions when the application becomes visible. If you have released any resources in the `frame_component_pause_cb()` callback, re-allocate those resources before the application resumes. |
 | `frame_component_pause_cb()`    | Used to take necessary actions when the application becomes invisible. For example, release the memory resources so that other applications can use them. |
-| `frame_component_stop_cb()`    | Used to take necessary actions when the frame-component instance window is lowered. The window is lowered when the frame-component window is not activated for a long time. |
+| `frame_component_stop_cb()`    | Used to take necessary actions when the frame component instance window is lowered. The window is lowered when the frame component window is not activated for a long time. |
 | `frame_component_save_content_cb()`    | Used to take necessary actions when there is a need to store or restore data for launching the next instance. This callback will be called right before `frame_component_destroy_cb`. |
-| `frame_component_destroy_cb()` | Used to take necessary actions when the frame-component instance is terminating. This callback releases all resources, especially the allocated and shared resources. |
+| `frame_component_destroy_cb()` | Used to take necessary actions when the frame component instance is terminating. This callback releases all resources, especially the allocated and shared resources. |
 | `frame_component_action_cb()` | Used to take necessary actions when another application sends a launch request. To receive an action event, you must [register an action](#managing_action).|
 
-The frame-component instance can also receive some basic system events. The following table shows available system events callbacks:
+The frame component instance can also receive some basic system events. The following table shows available system events callbacks:
 
 | callback                             | Description                              |
 |----------------------------------------|------------------------------------------|
@@ -124,36 +124,36 @@ The frame-component instance can also receive some basic system events. The foll
 
 
 <a name="service_component_states"></a>
-## Service-component States
+## Service Component States
 
-The following figure and table describe the service-component states:
+The following figure and table describe the service component states:
 
-![Running service-component](./media/service_lifecycle.jpg)
+![Running service component](./media/service_lifecycle.jpg)
 
 | State        | Description                         |
 |--------------|-------------------------------------|
-| `CREATE`      | The service-component instance is created.            |
-| `PROCESS COMMAND`    | The service-component instance handles the requested command. |
-| `DESTROY` | The service-component instance is destroyed.          |
+| `CREATE`      | The service component instance is created.            |
+| `PROCESS COMMAND`    | The service component instance handles the requested command. |
+| `DESTROY` | The service component instance is destroyed.          |
 
 
 <a name="service_component_callbacks"></a>
-## Service-component Event Callbacks
+## Service Component Event Callbacks
 
-You can control the service-component lifecycle by [managing the service-component state events](#service_component_monitoring).
+You can control the service component lifecycle by [managing the service component state events](#service_component_monitoring).
 
-The following table lists the service-component state change events:
+The following table lists the service component state change events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
-| `service_component_create_cb()`    | Used to take necessary actions before the lifecycle of a service-component instance starts. Place the initialization code here. It will be called once in the instance's lifecycle. |
+| `service_component_create_cb()`    | Used to take necessary actions before the lifecycle of a service component instance starts. Place the initialization code here. It will be called once in the instance's lifecycle. |
 | `service_component_restore_content_cb()`    | Used to restore the current state of an instance. The data stored in  `service_component_save_content_cb` will be passed by parameter. |
 | `service_component_start_command_cb()`    | Used to start an instance. Requested `app_control_h` will be passed by parameter. |
 | `service_component_save_content_cb()`    | Used to take necessary actions when there is a need to store or restore data for launching the next instance. This callback will be called right before `service_component_destroy_cb`. |
-| `service_component_destroy_cb()` | Used to take necessary actions when the frame-component instance is terminating. This callback releases all resources, especially the allocated and shared resources. |
+| `service_component_destroy_cb()` | Used to take necessary actions when the frame component instance is terminating. This callback releases all resources, especially the allocated and shared resources. |
 | `service_component_action_cb()` | Used to take necessary actions when another application sends a launch request.  To receive an action event, you must [register an action](#managing_action).|
 
-The service-component instance can also receive some basic system events. The following table shows available system events callbacks:
+The service component instance can also receive some basic system events. The following table shows available system events callbacks:
 
 | Callback                             | Description                              |
 |----------------------------------------|------------------------------------------|
@@ -169,7 +169,7 @@ The service-component instance can also receive some basic system events. The fo
 <a name="attribute"></a>
 ## Application Attributes
 
-Define your component-based application attributes in the manifest file. The attributes determine the application behavior. The following code example illustrates how you can define the attributes:
+Define your component based application attributes in the manifest file. The attributes determine the application behavior. The following code example illustrates how you can define the attributes:
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -204,35 +204,35 @@ Following are the main attributes:
 
 - `main`
 
-  Component-based applications can have multiple components and there is one main component. The main component is the component that is created when the component-based application receives a launch request without a specific component ID. To set the main component, set the `main` attribute to `true`.
+  Component based applications can have multiple components and there is one main component. The main component is the component that is created when the component based application receives a launch request without a specific component ID. To set the main component, set the `main` attribute to `true`.
 
 - `icon-display`
 
-  This attribute is only for the frame-component element. If this value is set to `true`, the home application will display an icon on the app tray for the frame-components.
+  This attribute is only for the frame component element. If this value is set to `true`, the home application will display an icon on the app tray for the frame components.
 
 - `launch_mode`
 
-  This attribute is only for the frame-component element. Application launch mode values are:
+  This attribute is only for the frame component element. Application launch mode values are:
   - Single: Launched as the main application.
   - Group: Launched as a sub-application.
   - Caller: Defines the launch mode with `app_control_set_launch_mode()`.
 
 - `taskmanage`
 
-  This attribute is only for the frame-component element. This attribute indicates whether the application appears in the task manager or not. The available values are `true` and `false`.
+  This attribute is only for the frame component element. This attribute indicates whether the application appears in the task manager or not. The available values are `true` and `false`.
 
 ## Prerequisites
 
-To use the functions and data types of the component-based application API (in [mobile](../../api/mobile/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) applications), include the `<component_based_app.h>` header file in your application:
+To use the functions and data types of the component based application API (in [mobile](../../api/mobile/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) applications), include the `<component_based_app.h>` header file in your application:
 
 ```
 #include <component_based_app.h>
 ```
 
 <a name="application_monitoring"></a>
-## Running Component-based Application
+## Running Component Based Application
 
-To run a component-based application, you must register the component-based application callbacks and start a main event loop as shown in the following code:
+To run a component based application, you must register the component based application callbacks and start a main event loop as shown in the following code:
 
 ```
 component_class_h __app_create_cb(void *user_data)
@@ -262,11 +262,11 @@ int main(int argc, char** argv)
 ```
 
 <a name="frame_component_monitoring"></a>
-## Managing Frame-component
+## Managing Frame Component
 
-To add and manage frame-components, you must add a frame-component and register the frame-component callbacks.
+To add and manage frame components, you must add a frame component and register the frame component callbacks.
 
-1. Declare a frame-component in the manifest file:
+1. Declare a frame component in the manifest file:
     ```
     <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="capp">
         <label>Base-component application</label>
@@ -280,7 +280,7 @@ To add and manage frame-components, you must add a frame-component and register 
     </component-based-application>
     ```
 
-2. Add a frame-component to the component-based application:
+2. Add a frame component to the component based application:
     ```
     component_class_h frame_component_add(component_class_h comp_class,
             const char *component_id, void *user_data)
@@ -335,10 +335,10 @@ To add and manage frame-components, you must add a frame-component and register 
     ```
 
 <a name="service_component_monitoring"></a>
-## Managing Service-component
-To add and manage service-component, you must add a service-component and register the service-component callbacks.
+## Managing Service Component
+To add and manage service component, you must add a service component and register the service component callbacks.
 
-1. Declare a service-component in the manifest file:
+1. Declare a service component in the manifest file:
     ```
     <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="capp">
         <label>Base-component application</label>
@@ -352,7 +352,7 @@ To add and manage service-component, you must add a service-component and regist
     </component-based-application>
     ```
 
-2. Add a service-component to the component-based application:
+2. Add a service component to the component based application:
     ```
     component_class_h service_component_add(component_class_h comp_class,
             const char *component_id, void *user_data)
@@ -407,7 +407,7 @@ To add and manage service-component, you must add a service-component and regist
 <a name="managing_action"></a>
 ## Managing Actions
 
-The component-based application can register actions and receive action events. You can send an action event to another application using `app-control`.
+The component based application can register actions and receive action events. You can send an action event to another application using `app-control`.
 
 1. Declare `app-control` in the manifest file:
     ```
@@ -497,9 +497,9 @@ The component-based application can register actions and receive action events. 
 
 
 <a name="launch_application"></a>
-## Launch Component-based Application
+## Launch Component Based Application
 
-To launch a component-based application:
+To launch a component based application:
 
 1. Declare the launch privilege in the manifest file:
     ```
@@ -520,9 +520,9 @@ To launch a component-based application:
 
 2.  Send launch request:
 
-    You can send a launch request using `app_control_h`. `app_control_h` contains the component-based application's ID and the component ID. The component ID is optional. If you do not set the component ID, the main component instance will be created.
+    You can send a launch request using `app_control_h`. `app_control_h` contains the component based application's ID and the component ID. The component ID is optional. If you do not set the component ID, the main component instance will be created.
 
-    You can launch a component-based application as shown in the following code:
+    You can launch a component based application as shown in the following code:
     ```
     static int __app_control_send(const char *app_id, const char *component_id,
             void *user_data)
@@ -572,7 +572,7 @@ To launch a component-based application:
 <a name="group_launch"></a>
 ## Group Launch Management
 
-The component-based application also provides an [application group feature](../app-management/app-controls.md#group). To use the application group feature, follow these steps:
+The component based application also provides an [application group feature](../app-management/app-controls.md#group). To use the application group feature, follow these steps:
 
 1. Declare the launch privilege in the manifest file:
     ```
