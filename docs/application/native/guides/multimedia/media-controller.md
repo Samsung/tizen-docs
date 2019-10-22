@@ -1182,7 +1182,7 @@ The following table lists all the search category attributes that the server can
 
 > **Note**
 >
-> These Attributes support Tizen 5.5 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.5 and Higher for Mobile and Wearable.
 
 ## Related Information
 - Dependencies
