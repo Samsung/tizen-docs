@@ -997,11 +997,13 @@
 ### [Overview](/application/tizen-studio/native-tools/index.md)
 
 ### Manage Projects
+#### [Overview](/application/tizen-studio/native-tools/managing-projects.md)
 #### [Project Creation Wizard](/application/tizen-studio/native-tools/project-wizard.md)
 #### [Project Explorer View](/application/tizen-studio/native-tools/project-explorer-view.md)
 #### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
 #### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
 ### Write and Edit Code
+#### [Overview](/application/tizen-studio/native-tools/coding.md)
 #### [Content Assist](/application/tizen-studio/native-tools/content-assist.md)
 #### [API and Privilege Checker](/application/tizen-studio/native-tools/api-checker.md)
 #### UI Builder
@@ -1016,12 +1018,14 @@
 #### [EDC Editor](/application/tizen-studio/native-tools/edc-editor.md)
 
 ### Configure Your App
+#### [Overview](/application/tizen-studio/native-tools/configuring.md)
 #### [Manifest Text Editor](/application/tizen-studio/native-tools/manifest-text-editor.md)
 #### [Additional Manifest Elements](/application/tizen-studio/native-tools/manifest-elements.md)
 #### [Resource Manager](/application/tizen-studio/native-tools/resource-manager.md)
 #### [PO File Localization Editor](/application/tizen-studio/native-tools/po-file-editor.md)
 
 ### Debug Your App
+#### [Overview](/application/tizen-studio/native-tools/debuggin.md)
 #### [Log View](/application/tizen-studio/common-tools/log-view.md)
 #### Dynamic Analyzer
 ##### [Overview](/application/tizen-studio/common-tools/dynamic-analyzer/overview.md)
@@ -1041,6 +1045,7 @@
 #### [Code Coverage](/application/tizen-studio/native-tools/code-coverage.md)
 
 ### Run and Test Your App
+#### [Overview](/application/tizen-studio/native-tools/running-testing.md)
 #### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 #### Emulator
 ##### [Overview](/application/tizen-studio/common-tools/emulator.md)
@@ -1061,12 +1066,14 @@
 ### [Overview](/application/tizen-studio/web-tools/index.md)
 
 ### Manage Projects
+#### [Overview](/application/tizen-studio/web-tools/managing-projects.md)
 #### [Project Creation Wizard](/application/tizen-studio/web-tools/project-wizard.md)
 #### [Project Explorer View](/application/tizen-studio/web-tools/project-explorer-view.md)
 #### [Certificate Registration](/application/tizen-studio/common-tools/certificate-registration.md)
 #### [Device Manager](/application/tizen-studio/common-tools/device-manager.md)
 
 ### Write and Edit Code
+#### [Overview](/application/tizen-studio/web-tools/coding.md)
 #### [Web Editor](/application/tizen-studio/web-tools/web-editor.md)
 #### [Live Edit](/application/tizen-studio/web-tools/live-editing.md)
 #### [Content Assist](/application/tizen-studio/web-tools/content-assist.md)
@@ -1077,22 +1084,26 @@
 #### [Tizen Studio Web Preferences](/application/tizen-studio/web-tools/ide-preferences.md)
 
 ### Configure Your App
+#### [Overview](/application/tizen-studio/web-tools/configuring.md)
 #### [Configuration Editor](/application/tizen-studio/web-tools/config-editor.md)
 #### [Web Localization](/application/tizen-studio/web-tools/web-localization.md)
 
 ### Debug Your App
+#### [Overview](/application/tizen-studio/web-tools/debuggin.md)
 #### [Log View](/application/tizen-studio/common-tools/log-view.md)
 
 ### Run and Test Your App
+#### [Overview](/application/tizen-studio/web-tools/running-testing.md)
 #### [SDB](/application/tizen-studio/common-tools/smart-development-bridge.md)
 #### Emulator
 ##### [Overview](/application/tizen-studio/common-tools/emulator.md)
 ##### [Emulator Manager](/application/tizen-studio/common-tools/emulator-manager.md)
 ##### [Emulator Control Panel](/application/tizen-studio/common-tools/emulator-control-panel.md)
 ##### [Extended Emulator Features](/application/tizen-studio/common-tools/emulator-features.md)
+#### Web Simulator
+##### [Overview](/application/tizen-studio/web-tools/web-simulator.md)
+##### [Entended Web Simulator Features](/application/tizen-studio/web-tools/web-simulator-features.md)
 #### [Web Unit Test Tool](/application/tizen-studio/web-tools/web-unit-test-tool.md)
-#### [Use the Web Simulator](/application/tizen-studio/web-tools/web-simulator.md)
-#### [Web Simulator Features](/application/tizen-studio/web-tools/web-simulator-features.md)
 
 ### [CLI](/application/tizen-studio/common-tools/command-line-interface.md)
 
