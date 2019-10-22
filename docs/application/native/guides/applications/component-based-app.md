@@ -63,7 +63,7 @@ The following figure and table describe the component-based application states:
 <a name="application_register"></a>
 ## Application Event Callbacks
 
-You can control the component-based application execution by [managing the application state events.](#application_monitoring).
+You can control the component-based application execution by [managing the application state events](#application_monitoring).
 
 The following table lists the application state change events:
 
@@ -94,7 +94,7 @@ The following figure and table describe the frame-component states:
 <a name="frame_component_callbacks"></a>
 ## Frame-component Event Callbacks
 
-You can control the frame-component lifecycle by [managing the frame-component state events.](#frame_component_monitoring).
+You can control the frame-component lifecycle by [managing the frame-component state events](#frame_component_monitoring).
 
 The following table lists the frame-component state change events:
 
@@ -140,18 +140,18 @@ The following figure and table describe the service-component states:
 <a name="service_component_callbacks"></a>
 ## Service-component Event Callbacks
 
-You can control the service-component lifecycle by [managing the service-component state events.](#service_component_monitoring).
+You can control the service-component lifecycle by [managing the service-component state events](#service_component_monitoring).
 
 The following table lists the service-component state change events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
-| `service_component_create_cb()`    | Used to take necessary actions before the service-component instance's lifecycle starts. Place the initialization code here. It will be called once in the instance's lifecycle. |
+| `service_component_create_cb()`    | Used to take necessary actions before the lifecycle of a service-component instance starts. Place the initialization code here. It will be called once in the instance's lifecycle. |
 | `service_component_restore_content_cb()`    | Used to restore the current state of an instance. The data stored in  `service_component_save_content_cb` will be passed by parameter. |
 | `service_component_start_command_cb()`    | Used to start an instance. Requested `app_control_h` will be passed by parameter. |
 | `service_component_save_content_cb()`    | Used to take necessary actions when there is a need to store or restore data for launching the next instance. This callback will be called right before `service_component_destroy_cb`. |
 | `service_component_destroy_cb()` | Used to take necessary actions when the frame-component instance is terminating. This callback releases all resources, especially the allocated and shared resources. |
-| `service_component_action_cb()` | Used to take necessary actions when another application sends a launch request.  To receive an action event, you must [register an action](#managing_action)|
+| `service_component_action_cb()` | Used to take necessary actions when another application sends a launch request.  To receive an action event, you must [register an action](#managing_action).|
 
 The service-component instance can also receive some basic system events. The following table shows available system events callbacks:
 
@@ -208,20 +208,22 @@ Following are the main attributes:
 
 - `icon-display`
 
-  This attribute is only for the frame-component element. If this value is `true`, the home application will display an icon on the app tray for this frame-component.
+  This attribute is only for the frame-component element. If this value is set to `true`, the home application will display an icon on the app tray for the frame-components.
 
 - `launch_mode`
 
-  This attribute is only for the frame-component element. Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../app-management/app-controls.md#mode) with the `app_control_set_launch_mode()` function))
+  This attribute is only for the frame-component element. Application launch mode values are:
+  - Single: Launched as the main application.
+  - Group: Launched as a sub-application.
+  - Caller: Defines the launch mode with `app_control_set_launch_mode()`.
 
 - `taskmanage`
 
-  This attribute is only for the frame-component element. Indicates whether the application is shown in the task manager (available values: `true`, `false`)
-  By default, this value is set to `single`.
+  This attribute is only for the frame-component element. This attribute indicates whether the application appears in the task manager or not. The available values are `true` and `false`.
 
 ## Prerequisites
 
-To use the functions and data types of the component-based application API (in [mobile](../../api/mobile/latest/group__CAPI__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APPLICATION__MODULE.html) applications), include the `<component_based_app.h>` header file in your application:
+To use the functions and data types of the component-based application API (in [mobile](../../api/mobile/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__COMPONENT__BASED__APPLICATION__MODULE.html) applications), include the `<component_based_app.h>` header file in your application:
 
 ```
 #include <component_based_app.h>
@@ -230,7 +232,7 @@ To use the functions and data types of the component-based application API (in [
 <a name="application_monitoring"></a>
 ## Running Component-based Application
 
-To run a component-based application, you must register the component-based application callbacks and start a main event loop as following codes:
+To run a component-based application, you must register the component-based application callbacks and start a main event loop as shown in the following code:
 
 ```
 component_class_h __app_create_cb(void *user_data)
@@ -262,7 +264,7 @@ int main(int argc, char** argv)
 <a name="frame_component_monitoring"></a>
 ## Managing Frame-component
 
-To add and manage frame-components, you must add frame-component and register the frame-component callbacks.
+To add and manage frame-components, you must add a frame-component and register the frame-component callbacks.
 
 1. Declare a frame-component in the manifest file:
     ```
@@ -334,7 +336,7 @@ To add and manage frame-components, you must add frame-component and register th
 
 <a name="service_component_monitoring"></a>
 ## Managing Service-component
-To add and manage service-component, you must add service-component and register the service-component callbacks.
+To add and manage service-component, you must add a service-component and register the service-component callbacks.
 
 1. Declare a service-component in the manifest file:
     ```
@@ -405,9 +407,9 @@ To add and manage service-component, you must add service-component and register
 <a name="managing_action"></a>
 ## Managing Actions
 
-The component-based application can register actions and receive action events. You can send an action event to another application using app-control.
+The component-based application can register actions and receive action events. You can send an action event to another application using `app-control`.
 
-1. Declare app-control in the manifest file:
+1. Declare `app-control` in the manifest file:
     ```
     <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="capp">
         <label>Base-component application</label>
@@ -452,7 +454,7 @@ The component-based application can register actions and receive action events. 
     }
     ```
 
-3.  Send action event to another application:
+3.  Send an action event to another application:
 
     Actions are declared in the manifest files. To send a proper action, you must set app-control values according to the manifest file app-control specification. In this example, the app-control will be set for the **dial-for-excel** action:
     ```
@@ -518,7 +520,7 @@ To launch a component-based application:
 
 2.  Send launch request:
 
-    You can send launch request using `app_control_h`. `app_control_h` contains the component-based application's ID and the component ID. The component ID is optional. If you do not set the component ID, the main component instance will be created.
+    You can send a launch request using `app_control_h`. `app_control_h` contains the component-based application's ID and the component ID. The component ID is optional. If you do not set the component ID, the main component instance will be created.
 
     You can launch a component-based application as shown in the following code:
     ```
@@ -575,21 +577,21 @@ The component-based application also provides an [application group feature](../
 1. Declare the launch privilege in the manifest file:
     ```
     <component-based-application appid="org.tizen.base-component" exec="@BINDIR@/base-component" nodisplay="false" multiple="false" type="capp">
-        <frame-component id="base-frame" launch_mode="caller" main="true" icon-display="false" taskmanage="true">
-          <icon>org.tizen.sample.png</icon>
-          <label>FrameComponent</label>
-          <label xml:lang="en-us">FrameComponent</label>
-          <label xml:lang="ko-kr">FrameComponent[KOR]</label>
-        </frame-component>FrameComponent</label>
-        <icon>FrameComponent.png</icon>
-      </component-based-application>
-      <privileges>
+        <frame-component id="base-frame" launch_mode="caller" main="true" icon-display="true" taskmanage="true">
+            <icon>org.tizen.sample.png</icon>
+            <label>FrameComponent</label>
+            <label xml:lang="en-us">FrameComponent</label>
+            <label xml:lang="ko-kr">FrameComponent[KOR]</label>
+        </frame-component>
+        <label>BasicComponent</label>
+        <icon>BasicComponent.png</icon>
+    </component-based-application>
+    <privileges>
         <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
-      </privileges>
-    </manifest>
+    </privileges>
     ```
 
-2.  Send launch request using component_h:
+2.  Send launch request using `component_h`:
 
     You have to send a launch request with component_h so that the application framework can determine which component instance requests the launch of the application group:
     ```
