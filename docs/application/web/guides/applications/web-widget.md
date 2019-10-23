@@ -1253,7 +1253,7 @@ It is important to prevent unnecessary performance degradation in widgets. As a 
   <img id="img_water" src="http://spec.example.com/image.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"/>
-  <script src="http://code.angularjs.org/angular-1.0.0rc10.min.js"/>
+  <script src="https://code.angularjs.org/1.0.0rc10/angular-1.0.0rc10.min.js"/>
 
   <link rel="stylesheet" type="text/css" href="http://spec.example.com/theme.css">
 
