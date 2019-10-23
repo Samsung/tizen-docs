@@ -71,6 +71,18 @@ the applications you want.
   >
   > This feature supports Tizen 5.0 and Higher for Mobile and Wearable.
 
+- Updating and retrieving abilities
+
+  You can [update the abilities](#updating-and-retrieving-abilities) on the server side, and then retrieve the abilities on the client side.
+
+  The media controller server provides current abilities about the registered application.
+  
+  When the server supports abilities, then the media controller clients can send commands to the server.
+  
+  > **Note**
+  >
+  > This feature supports Tizen 5.5 and Higher for Mobile and Wearable.
+  
 ## Prerequisites
 
 To enable your application to use the media controller functionality:
@@ -207,7 +219,7 @@ To update the playback information on the server side, follow these steps:
    /* Only Tizen 4.0 for Mobile */ 
    ret = mc_server_set_playlist_item_index(g_mc_server, 10);
    
-   /* Since Tizen 5.0, following APIs are supported */ 
+   /* Since Tizen 5.0, the following APIs are supported */ 
    ret = mc_server_set_playlist_item_info(g_mc_server, "my_favoriates", 10);
    ret = mc_server_set_playback_content_type(g_mc_server, MC_CONTENT_TYPE_MUSIC);
    ret = mc_server_set_content_age_rating(g_mc_server, MC_CONTENT_RATING_7_PLUS);
@@ -218,7 +230,7 @@ To update the playback information on the server side, follow these steps:
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
 
 To retrieve the playback information on the client side, follow these steps:
@@ -251,7 +263,7 @@ To retrieve the playback information on the client side, follow these steps:
    /* Only Tizen 4.0 for Mobile */ 
    ret = mc_client_get_playlist_item_index(playback, &index);
 
-   /* Since Tizen 5.0, following APIs are supported */ 
+   /* Since Tizen 5.0, the following APIs are supported */ 
    ret = mc_client_get_playlist_item_info(playback, &playlist_name, &index);
    ret = mc_client_get_playback_content_type(playback, &content_type);
    ret = mc_client_get_age_rating(playback, &age_rating);
@@ -318,7 +330,7 @@ To update the metadata on the server side, follow these steps:
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
    
 To retrieve the metadata on the client side, follow these steps:
@@ -442,7 +454,7 @@ To update the playlist and item's metadata on the server side, follow these step
 5. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
 
 To retrieve the playlist and metadata on the client side, follow these steps:
@@ -555,6 +567,12 @@ To send a command to the server from the client side, follow these steps:
    mc_client_send_shuffle_mode_cmd(g_client_h, server_name, MC_SHUFFLE_MODE_ON, NULL);
    mc_client_send_repeat_mode_cmd(g_client_h, server_name, MC_REPEAT_MODE_OFF, NULL);
    mc_client_send_playlist_cmd(g_client_h, server_name, "my_favorite", "1", MC_PLAYBACK_ACTION_PLAY, 0, NULL);
+   
+   /* Since Tizen 5.5, the following APIs are supported */
+   mc_client_send_subtitles_cmd(g_client_h, server_name, TRUE, NULL);
+   mc_client_send_360_mode_cmd(g_client_h, server_name, FALSE, NULL);
+   mc_client_send_display_mode_cmd(g_client_h, server_name, MC_DISPLAY_MODE_FULL_SCREEN, NULL);
+   mc_client_send_display_rotation_cmd(g_client_h, server_name, MC_DISPLAY_ROTATION_180, NULL);
    ```
    
    If you want to define custom commands, that you can send to the server, use `mc_client_send_custom_cmd()`:
@@ -598,17 +616,23 @@ To process the received command on the server side, follow these steps:
    ret = mc_server_set_playback_action_cmd_received_cb(g_mc_server, playback_action_cmd_received_cb, NULL);
    ```
 
-   - To register a callback for playback state change commands, use `mc_server_set_playback_action_cmd_received_cb()`.
-   - To register a callback for playback position change commands, use `mc_server_set_playback_position_cmd_received_cb()`.
-   - To register a callback for shuffle mode change commands, use `mc_server_set_shuffle_mode_cmd_received_cb()`.
-   - To register a callback for repeat mode change commands, use `mc_server_set_repeat_mode_cmd_received_cb()`.
-   - To register a callback for played item, playback state, and playback position change commands in playlist, use  `mc_server_set_playlist_cmd_received_cb()`.
-   - To register a callback for a custom command, use `mc_server_set_custom_cmd_received_cb()`.
-
+   - `mc_server_set_playback_action_cmd_received_cb()`: To register a callback for playback state change commands.
+   - `mc_server_set_playback_position_cmd_received_cb()`: To register a callback for playback position change commands.
+   - `mc_server_set_shuffle_mode_cmd_received_cb()`: To register a callback for shuffle mode change commands.
+   - `mc_server_set_repeat_mode_cmd_received_cb()`: To register a callback for repeat mode change commands.
+   - `mc_server_set_playlist_cmd_received_cb()`: To register a callback for played item, playback state, and playback position change commands in playlist.
+   - `mc_server_set_custom_cmd_received_cb()`: To register a callback for custom commands.
+   
+   Since Tizen 5.5, the following APIs are also supported:
+   - `mc_server_set_subtitles_cmd_received_cb()`: To register a callback for subtitles change commands.
+   - `mc_server_set_360_mode_cmd_received_cb()`: To register a callback for 360 mode change commands.
+   - `mc_server_set_display_mode_cmd_received_cb()`: To register a callback for display mode change commands.
+   - `mc_server_set_display_rotation_cmd_received_cb()`: To register a callback for display rotation change commands.
+   
 3. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
 
 To send the reply of completed command on the server side, follow these steps:
@@ -683,7 +707,7 @@ To send a custom event to the client from the server side, follow these steps:
 4. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
 
 To process the received event on the client side, follow these steps:
@@ -867,13 +891,94 @@ To process the received search command on the server side, follow these steps:
 6. Destroy the media controller server handle using `mc_server_destroy()`, when media controller server handle is no longer needed:
 
    ```
-   mc_server_destroy(g_server_h);
+   ret = mc_server_destroy(g_server_h);
    ```
 
 > **Note**
 >
 > This feature supports Tizen 5.0 and Higher for Mobile and Wearable.
 
+
+## Updating and Retrieving Abilities
+To update the abilities on the server side, follow these steps:
+
+1. Create the media controller server handle using `mc_server_create()`:
+
+   ```
+   ret = mc_server_create(&g_server_h);
+   ```
+   
+2. Set the abilities using the corresponding `mc_server_set_XXX_ability()`, or `mc_server_set_ability_support()`.
+   
+   To update the playback ability, set the ability for each playback action using `mc_server_set_playback_ability()`, and then update the ability using `mc_server_update_playback_ability()`:
+   ```
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PLAY, MC_ABILITY_SUPPORTED_YES);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PAUSE, MC_ABILITY_SUPPORTED_NO);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_STOP, MC_ABILITY_SUPPORTED_YES);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_NEXT, MC_ABILITY_SUPPORTED_NO);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_PREV, MC_ABILITY_SUPPORTED_YES);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_FAST_FORWARD, MC_ABILITY_SUPPORTED_NO);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_REWIND, MC_ABILITY_SUPPORTED_YES);
+   ret = mc_server_set_playback_ability(g_mc_server, MC_PLAYBACK_ACTION_TOGGLE_PLAY_PAUSE, MC_ABILITY_SUPPORTED_NO);
+   
+   ret = mc_server_update_playback_ability(g_mc_server);
+   ```
+   
+   To update the display mode ability, set the ability using `mc_server_set_display_mode_ability()`:
+   ```
+   ret = mc_server_set_display_mode_ability(g_mc_server, MC_DISPLAY_MODE_LETTER_BOX | MC_DISPLAY_MODE_ORIGIN_SIZE | MC_DISPLAY_MODE_FULL_SCREEN | MC_DISPLAY_MODE_CROPPED_FULL, MC_ABILITY_SUPPORTED_YES);
+   ```
+   
+   To update the display rotation ability, set the ability using `mc_server_set_display_rotation_ability()`:
+    ```
+   ret = mc_server_set_display_rotation_ability(g_mc_server, MC_DISPLAY_ROTATION_NONE | MC_DISPLAY_ROTATION_90 | MC_DISPLAY_ROTATION_180 | MC_DISPLAY_ROTATION_270, MC_ABILITY_SUPPORTED_YES);
+   ```
+   
+   In case of other abilities, set the ability using `mc_server_set_ability_support()`, to update it. For example, to update shuffle and repeat ability, set the ability using `mc_server_set_ability_support()`:
+   ```
+   ret = mc_server_set_ability_support(g_mc_server, MC_ABILITY_SHUFFLE, MC_ABILITY_SUPPORTED_YES);
+   ret = mc_server_set_ability_support(g_mc_server, MC_ABILITY_REPEAT, MC_ABILITY_SUPPORTED_NO);
+   ```
+
+To retrieve the abilities on the client side, follow these steps:
+
+1. Create the media controller client handle using `mc_client_create()`:
+
+   ```
+   ret = mc_client_create(&g_client_h);
+   ```
+
+2. Define the callback that gets invoked when the client receives the change in abilities.
+
+   To define a callback for a playback ability:
+   ```
+   ret = mc_client_set_playback_ability_updated_cb(g_client_h, _mc_playback_ability_updated_cb, NULL);
+   ```
+   
+   - `mc_client_set_playback_ability_updated_cb()`: To register a callback for changing the playback ability.
+   - `mc_client_set_display_mode_ability_updated_cb()`: To register a callback for changing the display mode ability.
+   - `mc_client_set_display_rotation_ability_updated_cb()`: To register a callback for changing the display rotation ability.
+   - `mc_client_set_ability_support_updated_cb()`: To register a callback for changing other abilities.
+   
+3. The client can get the server ability directly. For example, to get server playback ability:
+   ```
+   mc_playback_ability_h ability = NULL;
+   ret = mc_client_get_server_playback_ability(g_client_h, "server_name", &ability);
+   ```
+
+   - `mc_client_get_server_display_mode_ability()`: For display mode ability.
+   - `mc_client_get_server_display_rotation_ability()`: For display rotation ability.
+   - `mc_client_get_server_ability_support()`: For other abilities.
+   
+4. Destroy the media controller client handle using `mc_client_destroy()`, when media controller client handle is no longer needed:
+
+   ```
+   ret = mc_client_destroy(g_client_h);
+   ```
+   
+> **Note**
+>
+> This feature supports Tizen 5.5 and Higher for Mobile and Wearable.
 
 ## Media Controller Server State Attributes
 
@@ -917,12 +1022,12 @@ The following table lists all the playback action attributes the client can send
 
 > **Note**
 >
-> These Attributes support Tizen 4.0 and Higher for Mobile.
+> These attributes support Tizen 4.0 and Higher for Mobile.
 
 
 ## Media Controller Shuffle Mode Attributes
 
-The following table lists all the shuffle mode attributes the client can receive and send command:
+The following table lists all the shuffle mode attributes that the client can receive and send the command to:
 
 **Table: Media controller shuffle mode attributes**
 
@@ -935,7 +1040,7 @@ The following table lists all the shuffle mode attributes the client can receive
 
 ## Media Controller Repeat Mode Attributes
 
-The following table lists all the repeat mode attributes the client can receive and send command:
+The following table lists all the repeat mode attributes that the client can receive and send the command to:
 
 **Table: Media controller repeat mode attributes**
 
@@ -982,11 +1087,11 @@ The following table lists all the playlist update mode attributes the client can
 
 > **Note**
 >
-> These Attributes support Tizen 4.0 and Higher for Mobile.
+> These attributes support Tizen 4.0 and Higher for Mobile.
 
 ## Media Controller Content Type Attributes
 
-The following table lists all the content type attributes the server can receive:
+The following table lists all the content type attributes that the server can receive:
 
 **Table: Media controller content type attributes**
 
@@ -1001,11 +1106,11 @@ The following table lists all the content type attributes the server can receive
 
 > **Note**
 >
-> These Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.0 and Higher for Mobile and Wearable.
 
 ## Media Controller Search Category Attributes
 
-The following table lists all the search category attributes the server can receive:
+The following table lists all the search category attributes that the server can receive:
 
 **Table: Media controller search category attributes**
 
@@ -1021,7 +1126,63 @@ The following table lists all the search category attributes the server can rece
 
 > **Note**
 >
-> These Attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+
+## Media Controller Display Mode Attributes
+
+The following table lists all the display mode attributes that the client can receive and send the command to:
+
+**Table: Media controller display mode attributes**
+
+| Attribute                        | Description                              |
+|----------------------------------|------------------------------------------|
+| **Display modes**                |                                          |
+| `MC_DISPLAY_MODE_LETTER_BOX`     | Display mode is letter box               |
+| `MC_DISPLAY_MODE_ORIGIN_SIZE`    | Display mode is origin size              |
+| `MC_DISPLAY_MODE_FULL_SCREEN`    | Display mode is fullscreen               |
+| `MC_DISPLAY_MODE_CROPPED_FULL`   | Display mode is cropped fullscreen       |
+
+> **Note**
+>
+> These attributes support Tizen 5.5 and Higher for Mobile and Wearable.
+
+## Media Controller Display Rotation Attributes
+
+The following table lists all the display rotation attributes that the client can receive and send the command to:
+
+**Table: Media controller display rotation attributes**
+
+| Attribute                        | Description                              |
+|----------------------------------|------------------------------------------|
+| **Display rotations**            |                                          |
+| `MC_DISPLAY_ROTATION_NONE`       | Display is not rotated                   |
+| `MC_DISPLAY_ROTATION_90`         | Display is rotated 90 degrees            |
+| `MC_DISPLAY_ROTATION_180`        | Display is rotated 180 degrees           |
+| `MC_DISPLAY_ROTATION_270`        | Display is rotated 270 degrees           |
+
+> **Note**
+>
+> These attributes support Tizen 5.5 and Higher for Mobile and Wearable.
+
+## Media Controller Ability Attributes
+
+The following table lists all the search category attributes that the server can receive:
+
+**Table: Media controller ability attributes**
+
+| Attribute                        | Description                              |
+|----------------------------------|------------------------------------------|
+| **Ability**                      |                                          |
+| `MC_ABILITY_SHUFFLE`             | Ability for shuffle                      |
+| `MC_ABILITY_REPEAT`              | Ability for repeat                       |
+| `MC_ABILITY_PLAYBACK_POSITION`   | Ability for playback position            |
+| `MC_ABILITY_PLAYLIST`            | Ability for playlist                     |
+| `MC_ABILITY_CLIENT_CUSTOM`       | Ability for custom event                 |
+| `MC_ABILITY_SEARCH`              | Ability for search                       |
+
+> **Note**
+>
+> These attributes support Tizen 5.5 and Higher for Mobile and Wearable.
 
 ## Related Information
 - Dependencies

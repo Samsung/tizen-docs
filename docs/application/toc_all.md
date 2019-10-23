@@ -59,6 +59,7 @@
 #### [Application Controls](/application/dotnet/guides/app-management/app-controls.md)
 #### [Application Manager](/application/dotnet/guides/app-management/app-manager.md)
 #### [Event Manager](/application/dotnet/guides/app-management/event.md)
+#### [Component Manager](/application/dotnet/guides/app-management/component-manager.md)
 #### [Package Manager](/application/dotnet/guides/app-management/package-manager.md)
 #### [Widget Control](/application/dotnet/guides/app-management/widget-control.md)
 #### [Message Port](/application/dotnet/guides/app-management/message-port.md)
@@ -333,6 +334,7 @@
 #### [Application Icons](/application/native/guides/app-management/app-icons.md)
 #### [Application Controls](/application/native/guides/app-management/app-controls.md)
 #### [Common Application Controls](/application/native/guides/app-management/common-appcontrols.md)
+#### [Component Manager](/application/native/guides/app-management/component-manager.md)
 #### [Application Manager](/application/native/guides/app-management/app-manager.md)
 #### [Package Manager](/application/native/guides/app-management/package-manager.md)
 #### [Event Broadcast and Subscription](/application/native/guides/app-management/event.md)
@@ -612,6 +614,7 @@
 #### [Telephony Information](/application/native/guides/connectivity/telephony.md)
 #### [USB Host](/application/native/guides/connectivity/usb-host.md)
 #### Internet and Content Downloads
+##### [Overview](/application/native/guides/connectivity/internet-download.md)
 ##### [Connection Management](/application/native/guides/connectivity/connection.md)
 ##### [Download](/application/native/guides/connectivity/download.md)
 ##### [Curl](/application/native/guides/connectivity/curl.md)
@@ -676,6 +679,7 @@
 #### [System Information](/application/native/guides/device/system.md)
 #### [System Settings](/application/native/guides/device/settings.md)
 #### [Sound and Vibration Feedback](/application/native/guides/device/feedback.md)
+#### [Battery Monitor](/application/native/guides/device/battery-monitor.md)
 
 ### Security
 #### [Overview](/application/native/guides/security/overview.md)

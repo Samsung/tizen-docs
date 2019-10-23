@@ -858,7 +858,7 @@ tizen.application.launch('ApplicationIDToLaunch', onGetAppsContextSuccess);
 <a name="comm_host"></a>
 ### Communicating with a Host Application on a Host Device
 
-The widget and its parent application can reside on separate devices, as when a Web widget is on a wearable device while the host (parent) application is on a mobile device. In this case, the widget and parent applications can communicate through [SAP (Samsung Accessory Protocol)](http://developer.samsung.com/onlinedocs/samsung_webapi_guide_public_2.0/html/wapi_spec/sap.html) to share data between the widget (the consumer in SAP) and the parent application (the provider in SAP).
+The widget and its parent application can reside on separate devices, as when a Web widget is on a wearable device while the host (parent) application is on a mobile device. In this case, the widget and parent applications can communicate through [SAP (Samsung Accessory Protocol)](https://developer.samsung.com/galaxy-watch/develop/sdk#samsung-accessory-sdk) to share data between the widget (the consumer in SAP) and the parent application (the provider in SAP).
 
 The following example shows SAP communication implementation between a Web widget on a Tizen wearable device and its parent application on an Android&trade; mobile device:
 

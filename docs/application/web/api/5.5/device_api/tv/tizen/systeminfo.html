@@ -323,7 +323,7 @@ For more information on the System Information features, see <a href="https://de
           </div>
 <pre class="webidl prettyprint">  enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK", "WIFI_NETWORK",
     "ETHERNET_NETWORK", "CELLULAR_NETWORK", "NET_PROXY_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "VIDEOSOURCE", "CAMERA_FLASH", "ADS",
-    "SERVICE_COUNTRY" };</pre>
+    "SERVICE_COUNTRY", "SOURCE_INFO" };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -349,7 +349,7 @@ For more information on the System Information features, see <a href="https://de
  <var>ADS</var> is supported since Tizen 3.0
           </p>
 <p><span class="remark">Remark: </span>
- <var>SERVICE_COUNTRY</var> is supported since Tizen 5.5
+ <var>SERVICE_COUNTRY</var> and <var>SOURCE_INFO</var> are supported since Tizen 5.5
           </p>
 </div>
 <div class="enum" id="SystemInfoNetworkType">
@@ -3958,7 +3958,7 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
 <pre class="webidl prettyprint">module SystemInfo {
   enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK",
     "WIFI_NETWORK", "ETHERNET_NETWORK", "CELLULAR_NETWORK", "NET_PROXY_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "VIDEOSOURCE",
-    "CAMERA_FLASH", "ADS", "SERVICE_COUNTRY" };
+    "CAMERA_FLASH", "ADS", "SERVICE_COUNTRY", "SOURCE_INFO" };
   enum SystemInfoNetworkType { "NONE", "2G", "2.5G", "3G", "4G", "WIFI", "ETHERNET", "NET_PROXY", "UNKNOWN" };
   enum SystemInfoWifiSecurityMode { "NONE", "WEP", "WPA_PSK", "WPA2_PSK", "EAP" };
   enum SystemInfoWifiEncryptionType { "NONE", "WEP", "TKIP", "AES", "TKIP_AES_MIXED" };
