@@ -1,8 +1,9 @@
 # Tab
-Tab is a common component and it can be used as a menu label.  
-A tab makes it easy to explore and switch between different views or functional aspects of an application or to browse categorized data sets.  
-You can handle a tab by adding, inserting, or deleting a TabItem.  
-A tab can contain one or more TabItem with text, usually used as a menu label. A TabItem can have different lengths.
+Tab is a common component and it can be used as a menu label.
+
+A tab makes it easy to explore and switch between different views or functional aspects of an application or to browse categorized data sets.
+
+You can handle a tab by adding, inserting, or deleting a TabItem. A tab can contain one or more TabItem with text, usually used as a menu label. A TabItem can have different lengths.
 
 ![Tab](./media/tab.png) ![Tab](./media/tab2.png)
 
@@ -16,7 +17,7 @@ To create a tab using property, follow these steps:
     utilityBasicTab = new Tab();
     ```
 
-2. Set the tab property
+2. Set the tab property:
 
     ```cs
     utilityBasicTab.IsSelectable = true;

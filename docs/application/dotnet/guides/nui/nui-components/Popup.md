@@ -1,5 +1,6 @@
 # Popup
-Popup is a common component that is used as a popup window. You can manage a popup button count, head title, and content area.  
+Popup is a common component that is used as a popup window. You can manage a popup button count, head title, and content area.
+
 A popup can be created using property.
 
 ![PopupProperty](./media/PopupProperty.PNG)

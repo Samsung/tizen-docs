@@ -9,7 +9,7 @@ When entering the screen consists of list, the vertical or horizontal scroll bar
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
-## Create with Properties
+## Create with Property
 
 To create a scrollbar using property, follow these steps:
 

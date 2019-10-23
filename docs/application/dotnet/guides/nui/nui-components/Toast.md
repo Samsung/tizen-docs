@@ -1,13 +1,14 @@
 # Toast
-Toast is a common component and provides simple messages.  
-Unlike other popups, a toast consists only of a body field as it is just used for providing simple feedback to the user’s actions.  
-You can use a toast to provide simple messages when the user does not need to make an additional action or confirmation.  
-A toast will automatically disappear after a certain time.
+Toast is a common component and provides simple messages.
+
+Unlike other popups, a toast consists only of a body field as it is just used for providing simple feedback to the user’s actions.
+
+You can use a toast to provide simple messages when the user does not need to make an additional action or confirmation. A toast will automatically disappear after a certain time.
 
 ![Toast](./media/toast.png)
 
 
-## Create with property
+## Create with Property
 
 To create a toast using property, follow these steps:
 

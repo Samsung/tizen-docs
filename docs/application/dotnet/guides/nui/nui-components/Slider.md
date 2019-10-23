@@ -57,7 +57,7 @@ private void OnValueChanged(object sender, Slider.ValueChangedArgs args)
 ```
 
 ## Responding to StateChangedEvent
-Slider has the following eight states: Normal, Focused, Disabled, Selected, Pressed, DisabledFocused, SelectedFocused, and DisabledSelected.  
+Slider has the following eight states: `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
 When you change the slider state as change focus or disable a slider, the slider instance receives a state changed event. You can declare the state changed event handler as follows:
 
 ```cs
