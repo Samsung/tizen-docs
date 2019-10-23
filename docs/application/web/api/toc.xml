@@ -208,7 +208,7 @@
 							</topic>
 							<topic href="https://www.w3.org/TR/2015/WD-webaudio-20151208/" label="Web Audio API (Partial)">
 							</topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)">
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)">
 							</topic>
 							<topic href="http://www.w3.org/TR/2012/WD-html-media-capture-20120712/" label="HTML Media Capture">
 							</topic>
@@ -2126,7 +2126,7 @@
 							</topic>
 							<topic href="http://dev.w3.org/2011/webrtc/editor/archives/20121212/getusermedia.html" label="getUserMedia">
 							</topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)">
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)">
 							</topic>
 						</topic>
 						<topic href="html/w3c_api/w3c_api_w.html#communication" label="Communication">
@@ -3885,7 +3885,7 @@
 							<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#the-audio-element" label="HTML5 The audio element"></topic>
 							<topic href="http://www.w3.org/TR/2015/WD-mediacapture-streams-20150414/" label="getUserMedia (Partial)"></topic>
 							<topic href="https://www.w3.org/TR/2015/WD-webaudio-20151208/" label="Web Audio API (Partial)"></topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)"></topic>
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)"></topic>
 						</topic>
 						<topic href="html/w3c_api/w3c_api_tv.html#communication" label="Communication">
 							<topic href="http://www.w3.org/TR/2012/CR-websockets-20120920" label="The WebSocket API"></topic>
@@ -4141,7 +4141,7 @@
 							</topic>
 							<topic href="https://www.w3.org/TR/2015/WD-webaudio-20151208/" label="Web Audio API (Partial)">
 							</topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)">
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)">
 							</topic>
 							<topic href="http://www.w3.org/TR/2012/WD-html-media-capture-20120712/" label="HTML Media Capture">
 							</topic>
@@ -5977,7 +5977,7 @@
 							</topic>
 							<topic href="http://dev.w3.org/2011/webrtc/editor/archives/20121212/getusermedia.html" label="getUserMedia">
 							</topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)">
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)">
 							</topic>
 						</topic>
 						<topic href="html/w3c_api/w3c_api_w.html#communication" label="Communication">
@@ -7629,7 +7629,7 @@
 							<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#the-audio-element" label="HTML5 The audio element"></topic>
 							<topic href="http://www.w3.org/TR/2015/WD-mediacapture-streams-20150414/" label="getUserMedia (Partial)"></topic>
 							<topic href="https://www.w3.org/TR/2015/WD-webaudio-20151208/" label="Web Audio API (Partial)"></topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)"></topic>
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)"></topic>
 						</topic>
 						<topic href="html/w3c_api/w3c_api_tv.html#communication" label="Communication">
 							<topic href="http://www.w3.org/TR/2012/CR-websockets-20120920" label="The WebSocket API"></topic>
@@ -7874,7 +7874,7 @@
 							</topic>
 							<topic href="http://www.w3.org/TR/2012/WD-webaudio-20121213/" label="Web Audio API (Partial)">
 							</topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)">
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)">
 							</topic>
 							<topic href="http://www.w3.org/TR/2012/WD-html-media-capture-20120712/" label="HTML Media Capture">
 							</topic>
@@ -9585,7 +9585,7 @@
 							<topic href="http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#the-video-element" label="HTML5 The video element (Partial)"></topic>
 							<topic href="http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#the-audio-element" label="HTML5 The audio element (Partial)"></topic>
 							<topic href="http://dev.w3.org/2011/webrtc/editor/getusermedia-20111130.html" label="getUserMedia"></topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)"></topic>
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)"></topic>
 						</topic>
 						<topic href="html/w3c_api/w3c_api_w.html#communication" label="Communication">
 							<topic href="http://www.w3.org/TR/2012/CR-websockets-20120920/" label="The WebSocket API"></topic>
@@ -11171,7 +11171,7 @@
 							<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#the-audio-element" label="HTML5 The audio element (Partial)"></topic>
 							<topic href="http://www.w3.org/TR/2015/WD-mediacapture-streams-20150414/" label="getUserMedia (Partial)"></topic>
 							<topic href="https://www.w3.org/TR/2015/WD-webaudio-20151208/" label="Web Audio API (Partial)"></topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)"></topic>
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)"></topic>
 						</topic>
 						<topic href="html/w3c_api/w3c_api_tv.html#communication" label="Communication">
 							<topic href="http://www.w3.org/TR/2012/CR-websockets-20120920" label="The WebSocket API"></topic>
@@ -11393,7 +11393,7 @@
 							</topic>
 							<topic href="http://www.w3.org/TR/2012/WD-webaudio-20121213/" label="Web Audio API (Partial)">
 							</topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)">
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)">
 							</topic>
 							<topic href="http://www.w3.org/TR/2012/WD-html-media-capture-20120712/" label="HTML Media Capture">
 							</topic>
@@ -12655,7 +12655,7 @@
 								<topic href="http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#the-video-element" label="HTML5 The video element (Partial)"></topic>
 								<topic href="http://www.w3.org/TR/2014/CR-html5-20140429/embedded-content-0.html#the-audio-element" label="HTML5 The audio element (Partial)"></topic>
 								<topic href="http://dev.w3.org/2011/webrtc/editor/getusermedia-20111130.html" label="getUserMedia"></topic>
-								<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)"></topic>
+								<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)"></topic>
 							</topic>
 							<topic href="html/w3c_api/w3c_api_w.html#communication" label="Communication">
 								<topic href="http://www.w3.org/TR/2012/CR-websockets-20120920/" label="The WebSocket API"></topic>
@@ -13716,7 +13716,7 @@
 							</topic>
 							<topic href="http://www.w3.org/TR/2012/WD-webaudio-20121213/" label="Web Audio API (Partial)">
 							</topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)">
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)">
 							</topic>
 							<topic href="http://www.w3.org/TR/2012/WD-html-media-capture-20120712/" label="HTML Media Capture">
 							</topic>
@@ -14778,7 +14778,7 @@
 							</topic>
 							<topic href="http://dev.w3.org/2011/webrtc/editor/getusermedia-20111130.html" label="getUserMedia">
 							</topic>
-							<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)">
+							<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)">
 							</topic>
 						</topic>
 						<topic href="html/w3c_api/w3c_api_w.html#communication" label="Communication">
@@ -15768,7 +15768,7 @@
 				          </topic>
 				          <topic href="http://www.w3.org/TR/2012/WD-webaudio-20121213/" label="Web Audio API (Partial)">
 				          </topic>
-				          <topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)">
+				          <topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)">
 				          </topic>
 				          <topic href="http://www.w3.org/TR/2012/WD-html-media-capture-20120712/" label="HTML Media Capture">
 				          </topic>
@@ -16747,7 +16747,7 @@
 		          <topic href="http://www.w3.org/TR/2012/WD-webaudio-20121213/" label="Web Audio API (Partial)">
 		          </topic>
 		          -->
-		          <topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)">
+		          <topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)">
 		          </topic>
 		          <!--
 		          <topic href="http://www.w3.org/TR/2012/WD-html-media-capture-20120712/" label="HTML Media Capture">
