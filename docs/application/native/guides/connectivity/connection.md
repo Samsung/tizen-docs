@@ -155,6 +155,55 @@ To get the type of the current connection, IP address, and proxy information:
     ```
 
 <a name="info"></a>
+## Getting Internet Connection State Information
+
+To get the Internet connection state is ONLINE or OFFLINE:
+
+1. To get internet connection state of the given profile, use the `connection_profile_get_internet_state()` function. The first parameter contains the profile type, in second parameter it returns the given profile internet connection state( CONNECTION_INTERNET_STATE_OFFLINE or CONNECTION_INTERNET_STATE_ONLINE).
+
+    ```
+    int connection_profile_get_internet_state(connection_profile_h profile,
+		connection_internet_state_e *state);
+        
+    if (connection_profile_get_internet_state(profile, &internet_state) != CONNECTION_ERROR_NONE) {
+		dlog_print(DLOG_INFO, "Fail to get Internet state\n");
+		return -1;
+	} else
+		dlog_print(DLOG_INFO, "Internet State : %s\n", (internet_state == CONNECTION_INTERNET_STATE_ONLINE)?"ONLINE":"OFFLINE");
+    ```
+
+2. To monitor connection change state event register the callback.
+
+    Define the callback function to receive internet state change events.
+    ```
+    static void __internet_state_changed_callback(connection_internet_state_e state, void* user_data)
+    {
+        dlog_print(DLOG_INFO, "Internet state changed callback, state : %d\n", state);
+    }
+    ```
+    Register the defined callback with `connection_set_internet_state_changed_cb()` function. The last parameter (user_data) is set to a message which is printed in the callback.
+    ```
+    int connection_set_internet_state_changed_cb(connection_h connection,
+            connection_internet_state_changed_cb callback, void *user_data);
+    
+    int err = connection_create(&connection);
+    if (CONNECTION_ERROR_NONE == err) {
+        connection_set_internet_state_changed_cb(connection, __internet_state_changed_callback, NULL);
+    }
+    ```
+
+3. Deregister the callback function.
+
+   When the callbacks are no longer needed, deregister them with the applicable unset functions
+   ```
+   int connection_unset_internet_state_changed_cb(connection_h connection);
+   
+   error_code = connection_unset_internet_state_changed_cb(connection);
+   if (error_code != CONNECTION_ERROR_NONE)
+       /* Error handling */
+   ```
+
+<a name="info"></a>
 ## Getting Connection Information
 
 To obtain cellular and Wi-Fi connection information with data transfer statistics, such as the amount of total sent or received data and last sent or received data (only cellular and Wi-Fi statistics information is supported):
