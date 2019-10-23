@@ -89,13 +89,15 @@ To enable your application to use the media controller functionality:
 
 - To use the media controller server:
 
-  1. The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+  1. To use the Media Controller Server API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+
      ```
      <privileges>
         <privilege>http://tizen.org/privilege/mediacontroller.server</privilege>
      </privileges>
      ```
-  2. To use the functions and data types of the Media Controller Server API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html) applications), include the `<media_controller_server.h>` header file in your application:
+  
+  2. To use the functions and data types of the Media Controller Server API, include the `<media_controller_server.h>` header file in your application:
 
      ```
      #include <media_controller_server.h>
@@ -113,15 +115,16 @@ To enable your application to use the media controller functionality:
 
 - To use the media controller client:
 
-  1. The application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+  1. To use the Media Controller Client API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+  
      ```
      <privileges>
         <privilege>http://tizen.org/privilege/mediacontroller.client</privilege>
      </privileges>
      ```
   
-  2. To use the functions and data types of the Media Controller Client API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__CONTROLLER__CLIENT__MODULE.html) applications), include the `<media_controller_client.h>` header file in your application:
-
+  2. To use the functions and data types of the Media Controller Client API, include the `<media_controller_client.h>` header file in your application:
+  
      ```
      #include <media_controller_client.h>
      ```
