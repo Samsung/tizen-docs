@@ -61,7 +61,7 @@ private void OnClick(object sender, Button.ClickEventArgs e)
 
 ## Responding to StateChangedEvent
 Button has the following eight states `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
-When you change the button state to focus or disable, the button instance receives a state changed event.
+When you change the button state to focus or disable, the button instance receives a state changed event:
 
 ```cs
 Button button = new Button();
