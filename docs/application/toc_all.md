@@ -576,7 +576,7 @@
 
 ### Machine Learning
 #### [Overview](/application/native/guides/machine-learning/overview.md)
-#### [Machine Learning Inference C-API](/application/native/guides/machine-learning/machine-learning-inference.md)
+#### [Machine Learning Inference](/application/native/guides/machine-learning/machine-learning-inference.md)
 
 ### Multimedia
 #### [Overview](/application/native/guides/multimedia/overview.md)
