@@ -156,7 +156,7 @@ To get the type of the current connection, IP address, and proxy information:
 
 ## Getting Internet Connection State Information
 
-To get whether the state of internet connection is ONLINE or OFFLINE:
+To get whether the state of internet connection is `ONLINE` or `OFFLINE`:
 
 1. To get the state of the internet connection for a given profile, use `connection_profile_get_internet_state()`.
 
@@ -173,7 +173,7 @@ To get whether the state of internet connection is ONLINE or OFFLINE:
 		dlog_print(DLOG_INFO, "Internet State : %s\n", (internet_state == CONNECTION_INTERNET_STATE_ONLINE)?"ONLINE":"OFFLINE");
     ```
 
-2. To monitor the change connection state event, register the callback.
+2. To monitor the change in connection state event, register the callback.
 
     Define the callback function to receive the internet state change events:
     ```
