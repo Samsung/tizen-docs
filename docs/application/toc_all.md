@@ -574,6 +574,10 @@
 #### [Alarms](/application/native/guides/alarm/alarms.md)
 #### [Contextual System Event Trigger](/application/native/guides/alarm/trigger.md)
 
+### Machine Learning
+#### [Overview](/application/native/guides/machine-learning/overview.md)
+#### [Machine Learning Inference](/application/native/guides/machine-learning/machine-learning-inference.md)
+
 ### Multimedia
 #### [Overview](/application/native/guides/multimedia/overview.md)
 #### Media Content and Metadata
