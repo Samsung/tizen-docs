@@ -34,7 +34,7 @@ The main features of the Connection API include:
 
 - Gathering statistics
 
-  You can [gather various statistics on the network usage](#info), such as the amounts of sent and received data, using the Connection Statistics API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) and [wearable](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) applications). You can also retrieve the cumulative size of packets sent or received since the last reset based on the operation mode, such as packet switching (PS). To define the specific type of statistics information you want, use the `connection_statistics_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) applications).
+  You can [gather various statistics on the network usage](#info), such as the amounts of sent and received data, using the [connection state](#getting-internet-connection-state-information), Connection Statistics API (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) and [wearable](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html) applications). You can also retrieve the cumulative size of packets sent or received since the last reset based on the operation mode, such as packet switching (PS). To define the specific type of statistics information you want, use the `connection_statistics_type_e` enumerator (in [mobile](../../api/mobile/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) and [wearable](../../api/wearable/latest/group__CAPI__NETWORK__CONNECTION__STATISTICS__MODULE.html#ga24b29d70490e8cd9ee34f45615ea1c63) applications).
 
   > **Note**
   >
@@ -154,12 +154,12 @@ To get the type of the current connection, IP address, and proxy information:
     }
     ```
 
-<a name="info"></a>
+<a name="getting-internet-connection-state-information"></a>
 ## Getting Internet Connection State Information
 
 To get the Internet connection state is ONLINE or OFFLINE:
 
-1. To get internet connection state of the given profile, use the `connection_profile_get_internet_state()` function. The first parameter contains the profile type, in second parameter it returns the given profile internet connection state( CONNECTION_INTERNET_STATE_OFFLINE or CONNECTION_INTERNET_STATE_ONLINE).
+1. To get internet connection state of the given profile, use `connection_profile_get_internet_state()` function. The first parameter contains the profile type, in second parameter it returns the given profile internet connection state( CONNECTION_INTERNET_STATE_OFFLINE or CONNECTION_INTERNET_STATE_ONLINE).
 
     ```
     int connection_profile_get_internet_state(connection_profile_h profile,
@@ -194,7 +194,7 @@ To get the Internet connection state is ONLINE or OFFLINE:
 
 3. Deregister the callback function.
 
-   When the callbacks are no longer needed, deregister them with the applicable unset functions
+   When the callbacks are no longer needed, deregister them with the applicable unset functions.
    ```
    int connection_unset_internet_state_changed_cb(connection_h connection);
    
