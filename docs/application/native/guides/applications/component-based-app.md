@@ -456,7 +456,7 @@ The component based application can register actions and receive action events. 
 
 3.  Send an action event to another application:
 
-    Actions are declared in the manifest files. To send a proper action, you must set app-control values according to the manifest file app-control specification. In this example, the app-control will be set for the **dial-for-excel** action:
+    Actions are declared in the manifest files. To send a proper action, you must set `app-control` values according to the manifest file `app-control` specification. In this example, the `app-control` will be set for the **dial-for-excel** action:
     ```
     static int __app_control_send(const char *app_id, const char *component_id,
             void *user_data)
@@ -593,7 +593,7 @@ The component based application also provides an [application group feature](../
 
 2.  Send launch request using `component_h`:
 
-    You have to send a launch request with component_h so that the application framework can determine which component instance requests the launch of the application group:
+    You have to send a launch request with `component_h` so that the application framework can determine which component instance requests the launch of the application group:
     ```
     static void __launch_clicked_cb(void *user_data, Evas_Object *obj, void *event_info) {
         component_h context = (component_h)user_data;
