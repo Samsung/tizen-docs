@@ -154,12 +154,11 @@ To get the type of the current connection, IP address, and proxy information:
     }
     ```
 
-<a name="getting-internet-connection-state-information"></a>
 ## Getting Internet Connection State Information
 
 To get the Internet connection state is ONLINE or OFFLINE:
 
-1. To get internet connection state of the given profile, use `connection_profile_get_internet_state()` function. The first parameter contains the profile type, in second parameter it returns the given profile internet connection state( CONNECTION_INTERNET_STATE_OFFLINE or CONNECTION_INTERNET_STATE_ONLINE).
+1. To get internet connection state of the given profile, use `connection_profile_get_internet_state()`. The first parameter contains the profile type, in second parameter it returns the given profile internet connection state( CONNECTION_INTERNET_STATE_OFFLINE or CONNECTION_INTERNET_STATE_ONLINE).
 
     ```
     int connection_profile_get_internet_state(connection_profile_h profile,
