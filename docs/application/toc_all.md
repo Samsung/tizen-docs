@@ -65,27 +65,33 @@
 #### [Message Port](/application/dotnet/guides/app-management/message-port.md)
 #### [Data Control](/application/dotnet/guides/app-management/data-control.md)
 
-### Natural User Interface
+### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Setting Up the NUI Development Environment on Ubuntu](/application/dotnet/guides/nui/setup-ubuntu.md)
 #### [Getting Started](/application/dotnet/guides/nui/hello-world.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
-#### UI Components
+#### Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
 ##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
 ##### [CustomView](/application/dotnet/guides/nui/creating-custom-view-controls.md)
-##### [Buttons](/application/dotnet/guides/nui/button.md)
 ##### [FlexContainer](/application/dotnet/guides/nui/flexcontainer.md)
 ##### [ImageView](/application/dotnet/guides/nui/imageview.md)
-##### [ScrollView](/application/dotnet/guides/nui/scrollview.md)
-##### [Slider](/application/dotnet/guides/nui/slider.md)
 ##### [TableView](/application/dotnet/guides/nui/tableview.md)
 ##### [TextLabel](/application/dotnet/guides/nui/textlabel.md)
 ##### [TextField](/application/dotnet/guides/nui/textfield.md)
 ##### [TextEditor](/application/dotnet/guides/nui/texteditor.md)
 ##### [VideoView](/application/dotnet/guides/nui/videoview.md)
+##### [Button](/application/dotnet/guides/nui/nui-components/Button.md)
+##### [Loading](/application/dotnet/guides/nui/nui-components/Loading.md)
+##### [Popup](/application/dotnet/guides/nui/nui-components/Popup.md)
+##### [Progress](/application/dotnet/guides/nui/nui-components/Progress.md)
+##### [Scrollbar](/application/dotnet/guides/nui/nui-components/Scrollbar.md)
+##### [Slider](/application/dotnet/guides/nui/nui-components/Slider.md)
+##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
+##### [Tab](/application/dotnet/guides/nui/nui-components/Tab.md)
+##### [Toast](/application/dotnet/guides/nui/nui-components/Toast.md)
 #### Animation
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
