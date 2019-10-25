@@ -564,7 +564,7 @@
 ### Notifications and Content Sharing
 #### [Overview](/application/native/guides/notification/overview.md)
 #### [Notifications](/application/native/guides/notification/notifications.md)
-#### [Notification-ex](/application/native/guides/notification/notification-ex.md)
+#### [Expandable Notifications](/application/native/guides/notification/notification-ex.md)
 #### [Attach Panel](/application/native/guides/notification/attach-panel.md)
 #### [Minicontrol Window](/application/native/guides/notification/minicontrol.md)
 

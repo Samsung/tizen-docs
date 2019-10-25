@@ -1,55 +1,31 @@
-# Notification-ex
+# Expandable Notifications
 
 
-An application can use notifications-ex to inform users about important information.
-The Notification-ex API is designed to create large and expandable notifications.
+An application can use expandable notifications to inform users about important information. The expandable notifications are large and combined notifications containing text, image, and chat messages, which can be created by Notification EX API.
 
-The main features of the Notification-ex API include:
+The main features of the Notification EX API include:
 
-- Creating a notification-ex item
+- [Creating a notification item](#create) with several items to several receiver groups.
 
-  You can [create a notification item](#create). There are 10 notification-ex item types.
-  There are five receiver-groups where you want your notification to be displayed on.
+- [Creating multiple items in a group](#group) in a specific order.
 
-- Creating a group item and add a child
+- [Setting notification attributes](#set) such as action, style, receiver group, main type, and so on.
 
-  You can [create a group item](#group). You can include multiple items in a group in a specific order.
-  You can create multiple groups and include them in another group.
+- [Creating an expanded notification](#expanded).
 
-- Setting notification attributes
+- [Creating a messaging style notification](#messaging).
 
-  You can [set notification attributes](#set) such as action, style, receiver group, main type, and so on.
+- [Posting single notification and multiple notifications](#post).
 
-- Creating an expanded notification
+- [Updating the content of a notification](#update).
 
-  You can [create a more extended form](#expanded) of notification.
-
-- Creating a messaging style notification
-
-  You can [create a messaging style](#messaging) notification.
-
-- Creating a notification reporter handle
-
-  You need to [create a reporter handle](#reporter) to post a notification.
-  While creating a handle, you can also register callbacks for events and errors.
-
-- Posting a notification
-
-  You can [post single notification and multiple notifications](#post).
-
-- Updating notification content
-
-  You can [update the content of a notification](#update).
-
-- Deleting a notification
-
-  You can [delete notifications](#delete) when no longer needed.
+- [Deleting notifications](#delete) when no longer needed.
 
 ## Prerequisites
 
-To enable your application to use the notification-ex functionality:
+To enable your application to use the Notification EX API functionality:
 
-1. To use the Notification-ex API (in [mobile](../../api/mobile/latest/group__NOTIFICATION__EX__MODULE.html) and [wearable](../../api/wearable/latest/group__NOTIFICATION__EX__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the Notification EX API (in [mobile](../../api/mobile/latest/group__NOTIFICATION__EX__MODULE.html) and [wearable](../../api/wearable/latest/group__NOTIFICATION__EX__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
     ```
     <privileges>
         <privilege>http://tizen.org/privilege/notification</privilege>
@@ -58,7 +34,7 @@ To enable your application to use the notification-ex functionality:
     </privileges>
     ```
 
-2. To use the functions and data types of the Notification-ex API, include the `<notification_ex.h>` header file in your application:
+2. To use the functions and data types of the Notification EX API, include the `<notification_ex.h>` header file in your application:
     ```
     #include <notification_ex.h>
     ```
@@ -74,7 +50,7 @@ To enable your application to use the notification-ex functionality:
     ```
 
 <a name="create"></a>
-## Creating Notification-ex Items
+## Create Expandable Notification Items
 
 Each element in a notification is an item such as text, image, time and so on.
 An item can be a notification by itself, and each item can be combined to create a group notification.
@@ -207,7 +183,7 @@ An item can be a notification by itself, and each item can be combined to create
     ```
 
 <a name="set"></a>
-## Setting Notification-ex Attributes
+## Set Notification EX Attributes
 
 You can set the following attributes for a notification:
 
@@ -357,10 +333,10 @@ You can set the following attributes for a notification:
     ```
 
 <a name="expanded"></a>
-## Creating Expanded Notification
+## Create Expanded Notification
 
-You can provide a more complex form of notification. You can also specify the display order of each item.
-The display order of each item depends on the order in which the child is added to the group:
+You can provide a more complex form of notifications and also specify the display order of each item.
+The display order of each item depends on the order by which the child is added to the group:
 
 **Figure: Expanded Notification**
 
@@ -399,10 +375,10 @@ The display order of each item depends on the order in which the child is added 
   ```
 
 <a name="messaging"></a>
-## Creating Messaging Style Notification
+## Create Messaging Style Notification
 
-Since messages with different values can be added to a single notification, you can either show various messages in a single notification or you can configure it like a chat-room.
-You can also configure notifications using text items, image items, and time items:
+Since messages with different values can be added to a single notification, you can either show various messages in a single notification or configure it like a chat-room.
+You can also compose notifications using text items, image items, and time items:
 
 **Figure: Messaging Style Notification**
 
@@ -437,7 +413,7 @@ You can also configure notifications using text items, image items, and time ite
   ```
 
 <a name="reporter"></a>
-## Creating Notification-ex Reporter Handle
+## Creating Reporter Handle of Expanable Notification
 
 To send a notification, you need to create a handle for the reporter. While creating a handle, you can register an error callback and an event callback:
   ```
@@ -453,9 +429,9 @@ To send a notification, you need to create a handle for the reporter. While crea
   ```
 
 <a name="post"></a>
-## Posting Notification
+## Post Notification
 
-You can post notifications. You can also post notifications as a list.
+You can post a notification or a notification list.
 
 To post a notification, use `noti_ex_reporter_post()`:
 
@@ -465,7 +441,7 @@ To post a notification, use `noti_ex_reporter_post()`:
       /* Error handling */
   ```
 
-To post the notification list, use `noti_ex_reporter_post_list()`:
+To post a notification list, use `noti_ex_reporter_post_list()`:
 
   ```
   ret = noti_ex_reporter_post_list(handle, noti_list, 2, &request_id);
@@ -474,7 +450,7 @@ To post the notification list, use `noti_ex_reporter_post_list()`:
   ```
 
 <a name="update"></a>
-## Updating Notification
+## Update Notification
 
 To update the content of a notification, use `noti_ex_reporter_update()`:
 
@@ -485,7 +461,7 @@ To update the content of a notification, use `noti_ex_reporter_update()`:
   ```
 
 <a name="delete"></a>
-## Deleting Notification
+## Delete Notification
 
 To delete a notification from the database, use `noti_ex_reporter_delete()`:
 
