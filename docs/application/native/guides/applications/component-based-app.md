@@ -49,10 +49,10 @@ The following figure and table describe the component based application states:
 
 | State        | Description                         |
 |--------------|-------------------------------------|
-| `READY`      | Application is launched.            |
-| `CREATE`     | Application starts the main loop.   |
-| `RUNNING`    | Application runs components.        |
-| `TERMINATE`  | Application is terminated.          |
+| `Ready`      | Application is launched.            |
+| `Create`     | Application starts the main loop.   |
+| `Running`    | Application runs components.        |
+| `Terminate`  | Application is terminated.          |
 
   > **Note**
   >
@@ -82,12 +82,12 @@ The following figure and table describe the frame component states:
 
 | State        | Description                         |
 |--------------|-------------------------------------|
-| `CREATE`     | The frame component instance is created.            |
-| `START`      | The frame component instance is started and is ready to receive visibility events.   |
-| `RESUME`     | The frame component instance is visible. |
-| `PAUSE`      | The frame component instance is invisible. |
-| `STOP`       | The frame component instance is stopped. Therefore, it stops receiving visibility events. |
-| `DESTROY`    | The frame component instance is destroyed.          |
+| `Create`     | The frame component instance is created.            |
+| `Start`      | The frame component instance is started and is ready to receive visibility events.   |
+| `Resume`     | The frame component instance is visible. |
+| `Pause`      | The frame component instance is invisible. |
+| `Stop`       | The frame component instance is stopped. Therefore, it stops receiving visibility events. |
+| `Destroy`    | The frame component instance is destroyed.          |
 
 
 <a name="frame_component_callbacks"></a>
@@ -131,9 +131,9 @@ The following figure and table describe the service component states:
 
 | State        | Description                         |
 |--------------|-------------------------------------|
-| `CREATE`      | The service component instance is created.            |
-| `PROCESS COMMAND`    | The service component instance handles the requested command. |
-| `DESTROY` | The service component instance is destroyed.          |
+| `Create`      | The service component instance is created.            |
+| `Process Command`    | The service component instance handles the requested command. |
+| `Destroy` | The service component instance is destroyed.          |
 
 
 <a name="service_component_callbacks"></a>
