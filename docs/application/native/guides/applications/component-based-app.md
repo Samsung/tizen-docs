@@ -1,7 +1,7 @@
 # Component Based Applications
 
 
-The component based application is one of Tizen application models. This application model enables you to create an application that provides multiple components in one process.
+The component based application is one of the Tizen application models. This application model enables you to create an application that provides multiple components in one process.
 In the component based application model, there are two types of components. Each component type has its own lifecycle:
 
 - Service component: The service component has a lifecycle for managing services without UI.
