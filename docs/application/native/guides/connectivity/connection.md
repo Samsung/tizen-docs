@@ -160,7 +160,7 @@ To get whether the state of internet connection is `ONLINE` or `OFFLINE`:
 
 1. To get the state of the internet connection for a given profile, use `connection_profile_get_internet_state()`.
 
-    The first parameter contains the profile type and the second parameter returns the internet connection state( CONNECTION_INTERNET_STATE_OFFLINE or CONNECTION_INTERNET_STATE_ONLINE) for a given profile:
+    The first parameter contains the profile type and the second parameter returns the internet connection state(CONNECTION_INTERNET_STATE_OFFLINE or CONNECTION_INTERNET_STATE_ONLINE) for a given profile:
 
     ```
     int connection_profile_get_internet_state(connection_profile_h profile,
