@@ -173,7 +173,7 @@ To get whether the state of internet connection is `ONLINE` or `OFFLINE`:
 		dlog_print(DLOG_INFO, "Internet State : %s\n", (internet_state == CONNECTION_INTERNET_STATE_ONLINE)?"ONLINE":"OFFLINE");
     ```
 
-2. To monitor the change in connection state event, register the callback.
+2. To monitor the connection change state event, register the callback.
 
     Define the callback function to receive the internet state change events:
     ```
