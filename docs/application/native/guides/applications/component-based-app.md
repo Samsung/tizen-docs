@@ -65,7 +65,7 @@ The following figure and table describe the component based application states:
 
 You can control the component based application execution by [managing the application state events](#application_monitoring).
 
-The following table lists callbacks coping with the application state events:
+The following table lists the callbacks for the application state events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
@@ -95,7 +95,7 @@ The following figure and table describe the frame component states:
 
 You can control the frame component lifecycle by [managing the frame component state events](#frame_component_monitoring).
 
-The following table lists callbacks coping with the frame component state events:
+The following table lists the callbacks for the frame component state events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
@@ -141,7 +141,7 @@ The following figure and table describe the service component states:
 
 You can control the service component lifecycle by [managing the service component state events](#service_component_monitoring).
 
-The following table lists callbacks coping with the service component state events:
+The following table lists the callbacks for the service component state events:
 
 | Callback                     | Description                              |
 |------------------------------|------------------------------------------|
