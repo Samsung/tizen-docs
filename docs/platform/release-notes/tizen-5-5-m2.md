@@ -637,3 +637,5 @@ Release Date: Oct. 31, 2019
 
 - Neural network single API set
   - With a given handle, the dimensions of input tensors should be identical. If the dimensions are changed, a handle should be closed and re-opened.
+- Inference API set
+  - It supports TensorFlow Lite (.tflite) and custom C (.so) models. In Tizen 5.5, TensorFlow (.pb) and nnfw-runtime models are not supported.
