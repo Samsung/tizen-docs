@@ -11,7 +11,7 @@ Release Date: Oct. 31, 2019
   - Fast boot
     - Unified barrier for system and session boot sequence has been developed.
     - On-demand activation has been applied to more services.
-    - Udev initialization in the user session has been optimized.
+    - udev initialization in the user session has been optimized.
   - Activation and service control
     - Access control for system services has been developed.
     - Signal unicast-based activation has been developed.
