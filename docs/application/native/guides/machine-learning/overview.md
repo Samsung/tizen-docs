@@ -1,7 +1,7 @@
-# Machine Learining
+# Machine Learning
 
 
-Machine-learning features help you to handle machine learning frameworks, like TensorFlow and TensorFlow-lite, with the construction of data pipeline.
+Machine learning features help you to handle machine learning frameworks, like TensorFlow and TensorFlow-Lite, with the construction of data pipeline.
 
 You can use the following machine learning features in your native applications:
 

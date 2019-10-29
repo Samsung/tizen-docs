@@ -5,7 +5,7 @@ You can easily create and efficiently execute data stream pipelines that consist
 
 The main features of the Machine Learning Inference API include:
 
-- Construction of data pipeline based on [Gstreamer](https://gstreamer.freedesktop.org/)
+- Construction of data pipeline based on [GStreamer](https://gstreamer.freedesktop.org/)
 
   You can compose the data stream pipeline through Machine Learning Inference with various elements of GStreamer and NNStreamer.
 
@@ -13,9 +13,9 @@ The main features of the Machine Learning Inference API include:
   
   There are two types of Machine Learning Inference API - Single API and Pipeline API.
 
-  Single API is useful for simple usage scenario of neural network models. It allows to invoke a neural network model with a single instance of input data for the model directly. It is useful if you have the input data pre-processed with the application itself and there is no complex interactions between neural network models, data processors, or data stream paths.
+  Single API is useful for a simple usage scenario of neural network models. It allows invoking a neural network model with a single instance of input data for the model directly. It is useful if you have the input data pre-processed with the application itself and there are no complex interactions between neural network models, data processors, or data stream paths.
 
-  Pipeline API allows developers to construct and execute pipelines with multiple neural network models, multiple inputs and output nodes, multiple data processors, pre-and-post processors, and various data path manipulators. Besides, if the input is online data or streamed data, Pipeline API simplify your application and improves its performance.
+  Pipeline API allows developers to construct and execute pipelines with multiple neural network models, multiple inputs and output nodes, multiple data processors, pre-and-post processors, and various data path manipulators. Besides, if the input is online data or streamed data, Pipeline API simplifies your application and improves its performance.
 
   
 - Support various neural network frameworks (NNFW)
@@ -37,7 +37,7 @@ To enable your application to use the machine learning functionality:
    #include <nnstreamer.h>
    ```
 
-2. To use the Machine Learning Inference API, include the following feature in your `tizen-manifest.xml` file:
+2. To use the Machine Learning Inference API, include the following features in your `tizen-manifest.xml` file:
 
    ```xml
    <feature name="http://tizen.org/feature/machine_learning">true</feature>
@@ -46,7 +46,7 @@ To enable your application to use the machine learning functionality:
 
 ## Single API
 
-This section shows how to load a model.
+This section shows how to load a model without the construction of pipelines.
  
 1. Open a model file:
 
@@ -61,14 +61,14 @@ This section shows how to load a model.
     ml_single_open (&single, "model_file_path", in_info, out_info, ML_NNFW_TYPE_TENSORFLOW_LITE, ML_NNFW_HW_ANY);
     ```
 
-    To load a model file, two `ml_tensors_info_h` are required. `in_info` contains the information of the input tensor, and `out_info` contains the information of the output tensor. For more information, see [Tensors Information](#tensors-information).
+    To load a model file, two `ml_tensors_info_h` are required. `in_info` contains the information of the input tensors, and `out_info` contains the information of the output tensors. For more information, see [Tensors Information](#tensors-information).
 
-2. Load the model with input and output [Tensors Information](#tensors-information).
+2. Get the [Tensors Information](#tensors-information).
 
-    After the model load, use the following functions to bring the information of the input and output tensors:
+    After opening the model, use the following functions to bring the information of the input and output tensors:
     ```c
-    ml_single_get_input_info (ml_single_h single, ml_tensors_info_h *info)
-    ml_single_get_output_info (ml_single_h single, ml_tensors_info_h *info)
+    ml_single_get_input_info (single, &in_info);
+    ml_single_get_output_info (single, &out_info);
     ```
 
 3. Invoke the model with input and output [Tensors Data](#tensors-data).
@@ -81,7 +81,7 @@ This section shows how to load a model.
 
 4. close the opened handle:
 
-    ```bash
+    ```c
     ml_single_close (single);
     ```
 
@@ -95,26 +95,23 @@ This section shows how to create a pipeline.
 
     Different pipelines can be constructed using various GStreamer elements:
     ```c
-    const char *pipeline = "videotestsrc num_buffers=2 ! videoconvert ! videoscale ! video/x-raw,format=RGBx,width=224,height=224 ! tensor_converter !  fakesink";
-    l_pipeline_h handle;
-    nt status = ml_pipeline_construct (pipeline, NULL, NULL, &handle);
+    char pipeline[] = "videotestsrc num_buffers=2 ! videoconvert ! videoscale ! video/x-raw,format=RGBx,width=224,height=224 ! tensor_converter ! fakesink";
+    ml_pipeline_h handle;
+    int status = ml_pipeline_construct (pipeline, NULL, NULL, &handle);
     ```
 
 2. Start the pipeline and get state:
 
     ```c
-    /* a pipeline could be started when the state is paused */
+    /* The pipeline could be started when the state is paused */
     status = ml_pipeline_start (handle);
-
     status = ml_pipeline_get_state (handle, &state);
     ```
 
-3. Stop the pipeline:
+3. Stop the pipeline and get state:
 
     ```c
     status = ml_pipeline_stop (handle);
-    g_usleep (50000); /* 50ms. Let a few frames flow. */
-
     status = ml_pipeline_get_state (handle, &state);
     ```
 
@@ -127,7 +124,7 @@ This section shows how to create a pipeline.
 
 ### Element API
 
-You need to manipulate the input and the output data to run deep learning models with Machine Learning Inference API. In addition, you can construct pipelines that can be controlled.
+You need to manipulate the input and the output data to run neural network models with Machine Learning Inference API. In addition, you can construct pipelines that can be controlled.
 
 Followings are the available elements:
 
@@ -135,7 +132,7 @@ Followings are the available elements:
 
     The configuration of the data source element is required to set the input tensor data:
     ```c
-    gchar * pipeline = g_strdup ("appsrc name=srcx ! other/tensor,dimension=(string)4:1:1:1,type=(string)uint8,framerate=(fraction)0/1 ! tensor_sink");
+    char pipeline[] = "appsrc name=srcx ! other/tensor,dimension=(string)4:1:1:1,type=(string)uint8,framerate=(fraction)0/1 ! tensor_sink";
     ```
     `ml_pipeline_src_get_handle()` controls the `appsrc` element with the name `srcx`:
 
@@ -163,7 +160,7 @@ Followings are the available elements:
     status = ml_tensors_data_create (info, &data);
 
     for (i = 0; i < 10; i++) {
-      uintarray1[i] = (uint8_t *) g_malloc (4);
+      uintarray1[i] = (uint8_t *) malloc (4);
       uintarray1[i][0] = i + 4;
       uintarray1[i][1] = i + 1;
       uintarray1[i][2] = i + 3;
@@ -172,11 +169,11 @@ Followings are the available elements:
 
     status = ml_tensors_data_set_tensor_data (data, 0, uintarray1[0], 4);
 
-    /* setiing the policy of raw data pointer */
+    /* Setting the policy of raw data pointer */
     status = ml_pipeline_src_input_data (srchandle, data, ML_PIPELINE_BUF_POLICY_DO_NOT_FREE);
     ```
 
-    After configuring the data source element, release the handle:
+    After using the data source element, release the handle:
 
     ```c
     status = ml_pipeline_src_release_handle (srchandle);
@@ -184,12 +181,12 @@ Followings are the available elements:
 
 - **Sink**
 
-    The configuration of the data sink element is required to get the output tensor raw data:
+    The configuration of the data sink element is required to get the output tensor data:
     ```c
-    gchar * pipeline = g_strdup ("videotestsrc num-buffers=3 ! videoconvert ! tensor_converter ! appsink name=sinkx");
+    char pipeline[] = "videotestsrc num-buffers=3 ! videoconvert ! tensor_converter ! appsink name=sinkx";
     ```
 
-    `appsink` element with the name `sinkx` becomes reachable through `ml_pipeline_sink_register ()`:
+    `appsink` element with the name `sinkx` becomes reachable through `ml_pipeline_sink_register()`:
     ```c
     int status;
     ml_pipeline_h handle;
@@ -198,12 +195,12 @@ Followings are the available elements:
     status = ml_pipeline_sink_register (handle, "sinkx", sink_callback, user_data, &sinkhandle);
     ```
 
-    You can call `sink_callback ()`, whenever `appsink` and `sinkx` receives data. You can get the output data using [`data`](#tensors-data) and [`info`](#tensors-information). You can use `user_data` to callback:
+    You can get the data from `sink_callback()`, whenever `appsink` named `sinkx` receives data:
     ```c
     typedef void (*ml_pipeline_sink_cb) (const ml_tensors_data_h data, const ml_tensors_info_h info, void *user_data);
     ```
 
-    Release the `sinkhandler` through `ml_pipeline_sink_unregister ()`:
+    Release the `sinkhandle` through `ml_pipeline_sink_unregister()`:
     ```c
     status = ml_pipeline_sink_unregister (sinkhandle);
     ```
@@ -212,7 +209,7 @@ Followings are the available elements:
 
     This element is used to control the stream of a pipeline:
     ```c
-    gchar * pipeline = g_strdup ("videotestsrc is-live=true ! videoconvert ! videoscale ! video/x-raw,format=RGBx,width=16,height=16,framerate=10/1 ! tensor_converter ! queue ! valve name=valve1");
+    char pipeline[] = "videotestsrc is-live=true ! videoconvert ! videoscale ! video/x-raw,format=RGBx,width=16,height=16,framerate=10/1 ! tensor_converter ! valve name=valve1 ! fakesink";
     int status = ml_pipeline_construct (pipeline, NULL, NULL, &handle);
     ```
 
@@ -228,17 +225,17 @@ Followings are the available elements:
     ```c
     status = ml_pipeline_start (handle);
 
-    status = ml_pipeline_valve_set_open (valve1, true); /* close */
+    status = ml_pipeline_valve_set_open (valve1, false); /* Close */
     ```
 
-    you can also open the pipeline by controlling the stream of a pipeline with a valve:"?
+    You can also open the pipeline by controlling the stream of a pipeline with a valve:
     ```c
-    status = ml_pipeline_valve_set_open (valve1, true); /* open */
+    status = ml_pipeline_valve_set_open (valve1, true); /* Open */
     ```
 
     Before you destroy the pipeline, release `ml_pipeline_valve_h`:
     ```c
-    status = ml_pipeline_valve_release_handle (valve1); /* release valve handle */
+    status = ml_pipeline_valve_release_handle (valve1); /* Release valve handle */
     ```
 
 - **Switch**
@@ -248,20 +245,10 @@ Followings are the available elements:
     ![input-selector](./media/input-selector.png)
 
     ```c
-    gchar * pipeline = g_strdup ("input-selector name=ins ! tensor_converter ! tensor_sink name=sinkx "
-        "videotestsrc is-live=true ! videoconvert ! ins.sink_0 "
-        "videotestsrc num-buffers=3 is-live=true ! videoconvert ! ins.sink_1");
+    char pipeline[] = "input-selector name=ins ! tensor_converter ! tensor_sink name=sinkx videotestsrc is-live=true ! videoconvert ! ins.sink_0 videotestsrc num-buffers=3 is-live=true ! videoconvert ! ins.sink_1";
     ```
 
     Get `ml_pipeline_switch_h`. The name of the switch in this pipeline is `ins`:
-    ```c
-    ml_pipeline_h handle;
-    ml_pipeline_switch_h switchhandle;
-
-    status = ml_pipeline_switch_get_handle (handle, "ins", &type, &switchhandle);
-    ```
-
-    You can control the switch using the handle `ml_pipeline_switch_h`:
     ```c
     ml_pipeline_h handle;
     ml_pipeline_switch_h switchhandle;
@@ -269,6 +256,11 @@ Followings are the available elements:
 
     status = ml_pipeline_construct (pipeline, NULL, NULL, &handle);
     status = ml_pipeline_switch_get_handle (handle, "ins", &type, &switchhandle);
+    ```
+
+    You can control the switch using the handle `ml_pipeline_switch_h`:
+    ```c
+    status = ml_pipeline_switch_select (switchhandle, "sink_1");
     ```
 
     Before you destroy the pipeline, release `ml_pipeline_switch_h`:
@@ -281,16 +273,16 @@ Followings are the available elements:
     ![output-selector](./media/output-selector.png)
 
     ```c
-    gchar * pipeline = g_strdup ("videotestsrc is-live=true ! videoconvert ! tensor_converter ! output-selector name=outs "
-        "outs.src_0 ! tensor_sink name=sink0 async=false "
-        "outs.src_1 ! tensor_sink name=sink1 async=false");
+    char pipeline[] = "videotestsrc is-live=true ! videoconvert ! tensor_converter ! output-selector name=outs outs.src_0 ! tensor_sink name=sink0 async=false outs.src_1 ! tensor_sink name=sink1 async=false"
     ```
 
 ### Pipeline States
 
-For more information about the pipeline states, see [Gstreamer guide](https://gstreamer.freedesktop.org/documentation/plugin-development/basics/states.html).
+For more information about the pipeline states, see [GStreamer guide](https://gstreamer.freedesktop.org/documentation/plugin-development/basics/states.html).
 
 ## Tensors Information
+
+`ml_tensors_info_h` contains the information of tensors. The tensor info can be managed using the following functions:
 
 - **Create and destroy**
     ```c
@@ -328,13 +320,13 @@ For more information about the pipeline states, see [Gstreamer guide](https://gs
     /* Get the name of the tensor_0 */
     status = ml_tensors_info_get_tensor_name (info, 0, &out_name);
 
-    /* Getaks  the size of the tensor_0 */
+    /* Get the size of the tensor_0 */
     status = ml_tensors_info_get_tensor_size (info, 0, &data_size);
     ```
 
 ## Tensors Data
 
-Tensors data is a structure that contains the raw data of tensors. The tensor data can be managed using the following functions:
+`ml_tensors_data_h` contains the raw data of tensors. The tensor data can be managed using the following functions:
 
 - **Create and destroy**
     ```c
