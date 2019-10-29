@@ -18,7 +18,7 @@
 ### [Create Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
 ### [Create TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
 ### [Create Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
-
+### [Create NUI .NET Application](/application/dotnet/get-started/nui/quickstart.md)
 
 ## Tutorials
 
