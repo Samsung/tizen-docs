@@ -64,7 +64,7 @@ You can use the following application data exchange features in your native appl
 
 - [Sticker](sticker.md)
 
-  You can provide sticker information to application that want to read the sticker information as the standard method. You can also retrieve the sticker information stored by the provider application.
+  You can provide sticker information to an application that wants to read the sticker information, as a standard method. You can also retrieve the sticker information stored by the provider application.
 
 ## Related Information
 - Dependencies
