@@ -3518,8 +3518,8 @@ Playlist name: testPlaylist
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var serverInfo = mcClient.getLatestServerInfo();
-serverInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
+var mcServerInfo = mcClient.getLatestServerInfo();
+mcServerInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
 </pre>
 </div>
 </dd>
@@ -3564,20 +3564,20 @@ serverInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var serverInfo = mcClient.getLatestServerInfo();
+var mcServerInfo = mcClient.getLatestServerInfo();
 
 var listener =
 {
-  onplaylistupdated: function(playlist)
+  onplaylistupdated: function(serverName, playlist)
   {
     console.log("updated playlist " + playlist);
   },
-  onplaylistdeleted: function(playlistName)
+  onplaylistdeleted: function(serverName, playlistName)
   {
     console.log("deleted playlist " + playlistName);
   }
 };
-var listenerId = serverInfo.addPlaylistUpdatedListener(listener);
+var listenerId = mcServerInfo.addPlaylistUpdatedListener(listener);
 </pre>
 </div>
 </dd>
@@ -3613,15 +3613,15 @@ var listenerId = serverInfo.addPlaylistUpdatedListener(listener);
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var serverInfo = mcClient.getLatestServerInfo();
+var mcServerInfo = mcClient.getLatestServerInfo();
 
 var listener =
 {
-  onplaylistupdated: function(playlist) {},
-  onplaylistdeleted: function(playlistName) {}
+  onplaylistupdated: function(serverName, playlist) {},
+  onplaylistdeleted: function(serverName, playlistName) {}
 };
-var listenerId = serverInfo.addPlaylistUpdatedListener(listener);
-serverInfo.removePlaylistUpdatedListener(listenerId);
+var listenerId = mcServerInfo.addPlaylistUpdatedListener(listener);
+mcServerInfo.removePlaylistUpdatedListener(listenerId);
 </pre>
 </div>
 </dd>
