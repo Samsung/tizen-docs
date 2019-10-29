@@ -24,6 +24,10 @@ You can use the following application information and controls features in your 
 
   The common application introduces the required parameters, such as a specific operation, URI, MIME type, and extra data when the application launches other applications with App Control API.
 
+- [Component Manager](component-manager.md)
+
+  You can retrieve information about the components installed on the device. You can also get information about the currently running components.
+
 - [Application Manager](app-manager.md)
 
   You can retrieve information about the applications installed on the device. You can also get information about the currently-running application.
@@ -61,7 +65,6 @@ You can use the following application data exchange features in your native appl
 - [Sticker](sticker.md)
 
   You can provide sticker information to application that want to read the sticker information as the standard method. You can also retrieve the sticker information stored by the provider application.
-
 
 ## Related Information
 - Dependencies

@@ -189,6 +189,8 @@ package:
 | `http://tizen.org/feature/minicontrol`   | Specify this key, if the application requires the minicontrol feature. | 4.0   |
 | `http://tizen.org/feature/multi_point_touch.pinch_zoom` | Specify this key, if the application requires a pinch-zoom gesture feature. | 2.2.1 |
 | `http://tizen.org/feature/multi_point_touch.point_count` | Specify this key with a specific number (`int` type), if the application requires the minimum of specified number of simultaneous touches in a multi-point touch. | 2.2.1 |
+| `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
+| `http://tizen.org/feature/multimedia.player.audio_offload` | Specify this key, if the application requires the hardware-offloaded audio processing feature. | 5.5   |
 | `http://tizen.org/feature/multimedia.player.spherical_video` | Specify this key, if the application requires the 360-degree video playback feature. | 5.0   |
 | `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
@@ -365,9 +367,10 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone. | 2.2.1 |
 | `http://tizen.org/feature/multi_point_touch.pinch_zoom` | Specify this key, if the application requires a pinch-zoom gesture feature. | 2.2.1 |
 | `http://tizen.org/feature/multi_point_touch.point_count` | Specify this key with a specific number (`int` type), if the application requires the minimum of specified number of simultaneous touches in a multi-point touch. | 2.2.1 |
-| `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
-| `http://tizen.org/feature/multimedia.player.spherical_video` | Specify this key, if the application requires the 360-degree video playback feature. | 5.0   |
 | `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
+| `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
+| `http://tizen.org/feature/multimedia.player.audio_offload` | Specify this key, if the application requires the hardware-offloaded audio processing feature. | 5.5   |
+| `http://tizen.org/feature/multimedia.player.spherical_video` | Specify this key, if the application requires the 360-degree video playback feature. | 5.0   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
 | `http://tizen.org/feature/network.bluetooth.audio.call` | Specify this key, if the application requires the Bluetooth hands-free feature (HFP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.audio.controller` | Specify this key, if the application requires the Bluetooth Advanced Audio Distribution (A2DP) sink feature and the Bluetooth Audio Video Remote Control (AVRCP) controller feature. | 3.0   |

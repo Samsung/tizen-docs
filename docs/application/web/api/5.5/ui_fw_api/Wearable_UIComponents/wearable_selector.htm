@@ -7,7 +7,7 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Selector</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>Selector</h1>
 
 <p>Selector is component for select specific item to use various methods that drag, click and rotary.<br>
@@ -17,6 +17,10 @@ Each items can have the specific degree, radius and class. Item must have a clas
 Selector component has made layers automatically. Layer has items and you can set items number on one layer.<br>
 Indicator is indicator that located center of Selector. TAU provide default indicator style and function. But, If you want to change indicator style and function, you can make the custom indicator and set your indicator for operate with Selector.<br>
 Indicator arrow is special indicator style that has the arrow. It is used for provide more correct indicate information to user. Also, you can make the custom indicator arrow and set your custom indicator arrow for operate with Selector. Selector component control arrow's rotate to indicate active item.</p>
+
+<video autoplay muted loop controls>
+	<source src="https://developer.tizen.org/sites/default/files/documentation/selector.mp4">
+</video>
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -76,8 +80,6 @@ Indicator arrow is special indicator style that has the arrow. It is used for pr
 <h3><a id='manual-constructor0.33475646935403347'></a>Manual constructor</h3>
 
 <pre class="prettyprint">
-(function()
-{
    var page = document.getElementById("selectorPage"),
        selector = document.getElementById("selector"),
        clickBound;
@@ -97,7 +99,6 @@ Indicator arrow is special indicator style that has the arrow. It is used for pr
    {
       selector.removeEventListener("click", clickBound, false);
    });
-})();
 </pre>
 
 <h2><a id='options0.08969108131714165'></a>Options</h2>
@@ -397,5 +398,10 @@ Indicator arrow is special indicator style that has the arrow. It is used for pr
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>

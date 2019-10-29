@@ -276,7 +276,7 @@ For more information on the relationship between the elements, see the [element 
   By default, this value is not defined.
 
 
-- `launch_mode`
+- `launch_mode`<a name="launch_mode"></a>
 
    Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application))
 
@@ -415,7 +415,7 @@ This element contains the watch application icon image.
 ```
 
 <a name="widget_app"></a>
-### &lt;widget-application&gt; Element
+### \<widget-application\> Element
 
 This element contains the settings for a widget application.
 

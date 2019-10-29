@@ -118,7 +118,7 @@ To create a 'Hello World' application with Dali:
 
    - Several signals can be connected to keep you informed when certain platform-related activities occur, and ensure that, upon system events, DALi is called in a thread-safe manner.
 
-     To manage signal connection safely, DALi provides the `Dali::ConnectionTracker` class (in [mobile](../../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). A typical way for starting a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals (for more information, see [Automatic Connection Management](event-handling.md#automatic)). The `HelloWorldExample` class is used in other code samples in the Tizen DALi documentation.
+     To manage signal connection safely, DALi provides the `Dali::ConnectionTracker` class (in [mobile](../../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). A typical way for starting a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals (for more information, see [Automatic Connection Management](event-handling.md#automatic-connection-management)). The `HelloWorldExample` class is used in other code samples in the Tizen DALi documentation.
 
      After getting the initialized signal from the `Dali::Application` instance, you can use the DALi APIs for building the scene graph. Connect the `HelloWorldExample::Create()` callback to the `DALi::Application::InitSignal()` function:
 

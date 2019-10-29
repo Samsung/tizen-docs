@@ -39,7 +39,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - Web Dynamic Box configuration extensions
     - Web Dynamic Box execution and life-cycle management
   - Configuration extension updates
-    - The "package" attribute in the <tizen:application> element to specify the package ID
+    - The "package" attribute in the `<tizen:application>` element to specify the package ID
 
 ##### Changed Features
 

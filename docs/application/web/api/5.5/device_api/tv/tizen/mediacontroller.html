@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MediaController">
- <div class="supported-platforms"><img class="tv-optional emulator" title="Optional, Supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="tv-optional emulator" title="Optional, Supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
 <div class="title"><h1>MediaController API</h1></div>
 <div class="brief">
  The Media Controller API provides functions for communication between the media
@@ -1953,14 +1953,9 @@ mcServer.savePlaylist(playlist, saveSuccess);
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type InvalidValuesError, if playlist with given name does not exists.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if any error occurs.
+                </p></li></ul>
 </li></ul>
         </div>
 <div class="example">
@@ -3523,8 +3518,8 @@ Playlist name: testPlaylist
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var serverInfo = mcClient.getLatestServerInfo();
-serverInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
+var mcServerInfo = mcClient.getLatestServerInfo();
+mcServerInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
 </pre>
 </div>
 </dd>
@@ -3569,20 +3564,20 @@ serverInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var serverInfo = mcClient.getLatestServerInfo();
+var mcServerInfo = mcClient.getLatestServerInfo();
 
 var listener =
 {
-  onplaylistupdated: function(playlist)
+  onplaylistupdated: function(serverName, playlist)
   {
     console.log("updated playlist " + playlist);
   },
-  onplaylistdeleted: function(playlistName)
+  onplaylistdeleted: function(serverName, playlistName)
   {
     console.log("deleted playlist " + playlistName);
   }
 };
-var listenerId = serverInfo.addPlaylistUpdatedListener(listener);
+var listenerId = mcServerInfo.addPlaylistUpdatedListener(listener);
 </pre>
 </div>
 </dd>
@@ -3618,15 +3613,15 @@ var listenerId = serverInfo.addPlaylistUpdatedListener(listener);
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var serverInfo = mcClient.getLatestServerInfo();
+var mcServerInfo = mcClient.getLatestServerInfo();
 
 var listener =
 {
-  onplaylistupdated: function(playlist) {},
-  onplaylistdeleted: function(playlistName) {}
+  onplaylistupdated: function(serverName, playlist) {},
+  onplaylistdeleted: function(serverName, playlistName) {}
 };
-var listenerId = serverInfo.addPlaylistUpdatedListener(listener);
-serverInfo.removePlaylistUpdatedListener(listenerId);
+var listenerId = mcServerInfo.addPlaylistUpdatedListener(listener);
+mcServerInfo.removePlaylistUpdatedListener(listenerId);
 </pre>
 </div>
 </dd>
@@ -3740,6 +3735,9 @@ In this case the <em>repeatMode</em> value will not change.
             <p>
 The <em>repeatState</em> equals to <var>REPEAT_ALL</var> is equivalent to <em>repeatMode</em> equals to <var>true</var> and
 <em>repeatState</em> equals to <var>REPEAT_OFF</var> is equivalent to <em>repeatMode</em> equals to <var>false</var>.
+            </p>
+            <p>
+Default value is <var>REPEAT_ALL</var>.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -8109,7 +8107,7 @@ object for receiving playback info change requests from client.
 <ul>
           <li class="param">
 <span class="name">state</span>:
- Current playback state.
+ Requested playback state.
                 </li>
           <li class="param">
 <span class="name">clientName</span>:
@@ -8137,7 +8135,7 @@ object for receiving playback info change requests from client.
 <ul>
           <li class="param">
 <span class="name">position</span>:
- Current playback position.
+ Requested playback position.
                 </li>
           <li class="param">
 <span class="name">clientName</span>:
@@ -8165,7 +8163,7 @@ object for receiving playback info change requests from client.
 <ul>
           <li class="param">
 <span class="name">mode</span>:
- Current shuffle mode.
+ Requested shuffle mode.
                 </li>
           <li class="param">
 <span class="name">clientName</span>:
@@ -8200,7 +8198,7 @@ will not be invoked, if the <a href="#MediaControllerPlaybackInfo::repeatState">
 <ul>
           <li class="param">
 <span class="name">mode</span>:
- Current repeat mode.
+ Requested repeat mode.
                 </li>
           <li class="param">
 <span class="name">clientName</span>:
@@ -8231,7 +8229,7 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 <ul>
           <li class="param">
 <span class="name">state</span>:
- Current repeat state.
+ Requested repeat state.
                 </li>
           <li class="param">
 <span class="name">clientName</span>:
@@ -8257,19 +8255,19 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 <ul>
           <li class="param">
 <span class="name">playlistName</span>:
- Name of playlist.
+ Name of a requested playlist.
                 </li>
           <li class="param">
 <span class="name">index</span>:
- Index of item to be changed.
+ Requested index.
                 </li>
           <li class="param">
 <span class="name">state</span>:
- Playback state.
+ Requested playback state.
                 </li>
           <li class="param">
 <span class="name">position</span>:
- Playback position.
+ Requested playback position.
                 </li>
           <li class="param">
 <span class="name">clientName</span>:

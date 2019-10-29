@@ -4,7 +4,7 @@ This topic explains how to customize UI components. Before learning the process 
 
 EFL provides the EDC script as a way for defining a look for UI components. For more information on how to write an EDC script, see [Layouting with EDC](learn-edc-intro.md).
 
-## Style, Theme, and EDC
+## Style, Theme, and EDC<a name="style-theme-and-edc"></a>
 
 The style of a UI component refers to its graphical appearance determined by the layout, shapes, fonts, and colors. A theme is a collection of styles for every UI component. Tizen provides a default theme for each profile and version, which includes all available styles of every UI component.
 

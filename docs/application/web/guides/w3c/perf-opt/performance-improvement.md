@@ -13,8 +13,8 @@ This feature is supported in wearable applications only.
 For more detailed and comprehensive information, study the following documentation:
 
 - [Make the Web Faster by Google Developers](https://developers.google.com/speed/)
-- [Speed Up Your JavaScript by Nicholas C. Zakas](http://www.slideshare.net/nzakas/speed-up-your-javascript)
-- [High-Performance Kick-Ass Web Apps by Stoyan Stefanov](http://www.slideshare.net/stoyan/high-performance-kick-ass-web-apps-javascript-edition)
+- [Speed Up Your JavaScript by Nicholas C. Zakas](https://www.slideshare.net/nzakas/speed-up-your-javascript)
+- [High-Performance Kick-Ass Web Apps by Stoyan Stefanov](https://www.slideshare.net/stoyan/high-performance-kick-ass-web-apps-javascript-edition)
 - [Best Practices for Speeding Up Your Web Site, by Yahoo Developer Network](http://developer.yahoo.com/performance/rules.html)  
 - [Rendering: repaint, reflow/relayout, restyle by Stoyan Stefanov](http://www.phpied.com/rendering-repaint-reflowrelayout-restyle/)
 
