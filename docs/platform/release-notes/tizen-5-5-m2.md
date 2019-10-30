@@ -1,6 +1,6 @@
 # Tizen 5.5 Public M2 Release Notes
 
-Release Date: Oct. 31, 2019
+Release Date: Oct. 30, 2019
 
 
 ## System (Kernel and System framework)
@@ -150,7 +150,7 @@ Release Date: Oct. 31, 2019
   - Support for the dpms protocol. Display server can support the wayland protocol for dpms.
   - Support for the custom launching window transition effect has been added. It allows the launcher application to perform various custom launching animation effect instead of the enlightenment display server through tizen-ws-shell.
   - Support for the seamless widget transition effect has been added. It supports seamless widget animation between one window to another window. Seamless animation is an animation that seamlessly transits from one window (occupying the current screen) to the other window (will occupy the next screen) and looks like a transition effect is running only on one window.
-  - The 'focus_policy_ext' configurable property has been added to support the window focus policy selection.
+  - The `focus_policy_ext` configurable property has been added to support the window focus policy selection.
     - E_FOCUS_EXT_HISTORY: Default value. The queue-based window focus policy has been applied.
     - E_FOCUS_EXT_TOP_STACK: The topmost window focus policy has been applied.
   - The remote surface submodule has been refactored to improve reusability.
@@ -458,7 +458,7 @@ Release Date: Oct. 31, 2019
   - The cynara policy recovery mechanism has been added.
     - You can save the default policy at image creation time.
     - If a problem is detected when loading the Cynara policy, the policy is recovered with saved one and the flag file is created.
-    - When the flag file is discovered, you can aditionally re-installing all downloaded applications to generate the Cynara policy.
+    - When the flag file is discovered, you can additionally re-installing all downloaded applications to generate the Cynara policy.
     - This feature has been added but hasn't been enabled. You must make the default policy and re-install downloaded applications when the flag file is created.
 - Privilege
   - The application privilege policy has been changed.
@@ -489,11 +489,14 @@ Release Date: Oct. 31, 2019
     - Support for fetching battery usage values for all the resources separately used by an application id for a certain duration has been added.
     - Support for fetching battery usage values for a particular resource over certain duration of time has been added.
 - Account framework
-  -  New API has been added to fetch information of the deleted account.
+  -  New API set has been added to fetch information of the deleted account.
 - Message Service
   - Support for Commercial Mobile Alert System (CMAS) has been added.
     - Support for alerts from 4396 ~ 4399 has been added to the message API set.
-    - Support to distinguish CMAS public safety alerts, public safety for an additional language has been added to message service.
+      - 4396 : CMAS public safety alerts
+      - 4397 : Public safety alerts for additional language
+      - 4398 : State/local WEA tests
+      - 4399 : State/Local WEA test for a additional languages.
     - Public safety alerts for additional languages have been added to message service.
 
 ### Fixes
@@ -592,7 +595,7 @@ Release Date: Oct. 31, 2019
 ### Known Issues
 
 - Xamarin.Forms
-  - For more information on the list of limitations, see [here](https://developer.tizen.org/development/api-reference/.net-application/current-xamarin.forms-limitations).
+  - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).
 
 
 ## Toolchain
@@ -612,7 +615,7 @@ Release Date: Oct. 31, 2019
   - IntegerSanitizer option's bug with "-fsanitize=shift,unsigned-integer-overflow" has been fixed.
   - AddressSanitizer runtime option has been modified (allocator_may_return_null=1) to provide better report.
 - GLIBC
-  - fclose SIGABORT issue on multi-thread environment with race condition has been fixed by applying bug [#15142](https://sourceware.org/bugzilla/show_bug.cgi?id=15142).
+  - fclose SIGABORT issue on multi-thread environment with race condition has been fixed by applying bug fix of [#15142](https://sourceware.org/bugzilla/show_bug.cgi?id=15142).
   - New localedata(tl_PH) has been added (bug [#15260](https://sourceware.org/bugzilla/show_bug.cgi?id=15260)).
 
 
