@@ -68,6 +68,7 @@
 ### [Modifying Eclipse Themes](/platform/reference/tizen-studio/example-web-theme-ext.md)
 
 # Release Notes
+## [Tizen 5.5 Public M2](/platform/release-notes/tizen-5-5-m2.md)
 ## [Tizen 5.5 Public M1](/platform/release-notes/tizen-5-5-m1.md)
 ## [Tizen 5.0 Public M2](/platform/release-notes/tizen-5-0-m2.md)
 ## [Tizen 4.0 Public M3](/platform/release-notes/tizen-4-0-m3.md)
