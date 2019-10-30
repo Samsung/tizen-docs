@@ -22,9 +22,13 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tiz
 
     Download from <https://nodejs.org>.
 
-  - Oracle Java 8 or higher
+  - Java Development Kit (JDK)
 
-    Ubuntu 16.04 also supports OpenJDK.
+    You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 to use Tizen Baseline SDK. Make sure you download and install the EXACT version.
+
+    - [Oracle Java Development Kit(JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+ 
+    - OpenJDK 12 and OpenJFX: [OpenJDK 12 and OpenJFX Installation Guide](../tizen-studio/setup/openjdk.md).
 
   - Tizen Baseline SDK or Tizen Studio
 

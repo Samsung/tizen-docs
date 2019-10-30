@@ -22,12 +22,14 @@ To work with Visual Studio Tools for Tizen, your computer must have:
 
   ![Visual Studio prerequisites](media/prerequisite-vs.png)
 
-- Java Development Kit (JDK) 8
+- Java Development Kit (JDK)
 
-  JDK 8 is needed to use the Tizen Baseline SDK. OpenJDK is not supported.
+  You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 to use 
+Tizen Baseline SDK. Make sure you download and install the EXACT version.
 
-  Download the JDK 8 from the official [Oracle Web site](http://www.oracle.com/technetwork/java/javase/downloads/index.html). Select the appropriate platform for your hardware architecture and Windows&reg; version. Run the downloaded executable file and follow the displayed instructions.
-  - JDK 9 will be supported soon.
+  - [Oracle Java Development Kit(JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+ 
+  - OpenJDK 12 and OpenJFX: [OpenJDK 12 and OpenJFX Installation Guide](../tizen-studio/setup/openjdk.md#install-openjdk-for-windows).
 
 ### Emulator Requirements
 
