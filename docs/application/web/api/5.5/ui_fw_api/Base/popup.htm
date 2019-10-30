@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+    <script type="text/javascript" src="../snippet.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="../styles.css" rel="StyleSheet" type="text/css" />
+    <link href="../snippet.css" rel="StyleSheet" type="text/css" />
+    <title>Popup Handling</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+<h1>Popup Handling</h1>
+
+<p>The popup component shows in the middle of the screen a list of items in a pop-up window. It automatically optimizes the pop-up window size within the screen.  The following table describes the supported popup classes.</p>
+
+
+<h2>Popup Methods</h2>
+<p>To open or close the popup component, use the methods listed in the following table.</p>
+<table>
+    <caption>Table: Popup methods</caption>
+    <tbody>
+    <tr>
+        <th>Method</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span style="font-family: Courier New,Courier,monospace">tau.openPopup(to)</span></td>
+        <td>Opens a popup by calling the <span style="font-family: Courier New,Courier,monospace">openPopup()</span> method. The <span style="font-family: Courier New,Courier,monospace">to</span> argument is a pop-up container object or string.</td>
+    </tr>
+    <tr>
+        <td><span style="font-family: Courier New,Courier,monospace">tau.closePopup()</span></td>
+        <td>Closes a popup by calling the <span style="font-family: Courier New,Courier,monospace">closePopup()</span> method.</td>
+    </tr>
+    </tbody>
+</table>
+
+<p>To find the currently active popup, use the <span style="font-family: Courier New,Courier,monospace">ui-popup-active</span> class.</p>
+
+<p>To bind the popup to a button, use the following code:</p>
+
+<pre class="prettyprint"><pre class="prettyprint lang-html" style="border:0px; margin:0px">&lt;!--HTML code--&gt;
+&lt;div id=&quot;1btnPopup&quot; class=&quot;ui-popup&quot;&gt;
+   &lt;div class=&quot;ui-popup-header&quot;&gt;Power saving mode&lt;/div&gt;
+   &lt;div class=&quot;ui-popup-content&quot;&gt;&lt;/div&gt;
+   &lt;div class=&quot;ui-popup-footer&quot;&gt;
+      &lt;button id=&quot;1btnPopup-cancel&quot; class=&quot;ui-btn&quot;&gt;Cancel&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;</pre><pre class="prettyprint lang-js" style="border:0px; margin:0px">/* JavaScript code */
+&lt;script&gt;
+   /* Popup opens with button click */
+   button.addEventListener(&quot;click&quot;, function(ev)
+   {
+      tau.openPopup(&quot;#1btnPopup&quot;);
+   });
+
+   /* Popup closes with Cancel button click */
+   document.getElementById(&#39;1btnPopup-cancel&#39;).addEventListener(&#39;click&#39;, function(ev)
+   {
+      tau.closePopup();
+   });
+&lt;/script&gt;
+</pre></pre>
+<h2 id="popup-events">Popup Events</h2>
+<p>The following table lists the events related to pop-ups.</p>
+<table>
+    <caption>Table: Popup events</caption>
+    <tbody>
+    <tr>
+        <th>Event</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td><span style="font-family: Courier New,Courier,monospace">popupbeforecreate</span></td>
+        <td>Triggered when the pop-up is initialized, before most plugin auto-initialization occurs.</td>
+    </tr>
+    <tr>
+        <td><span style="font-family: Courier New,Courier,monospace">popupcreate</span></td>
+        <td>Triggered when the pop-up has been created in the DOM (for example, through Ajax) but before all UI Components have had an opportunity to enhance the contained markup.</td>
+    </tr>
+    <tr>
+        <td><span style="font-family: Courier New,Courier,monospace">popupbeforehide</span></td>
+        <td>Triggered on the pop-up we are transitioning away from, before the actual transition animation is kicked off.</td>
+    </tr>
+    <tr>
+        <td><span style="font-family: Courier New,Courier,monospace">popuphide</span></td>
+        <td>Triggered on the pop-up we are transitioning away from, after the transition animation has completed.</td>
+    </tr>
+    <tr>
+        <td><span style="font-family: Courier New,Courier,monospace">popupbeforeshow</span></td>
+        <td>Triggered on the pop-up we are transitioning to, before the actual transition animation is kicked off.</td>
+    </tr>
+    <tr>
+        <td><span style="font-family: Courier New,Courier,monospace">popupshow</span></td>
+        <td>Triggered on the pop-up we are transitioning to, after the transition animation has completed.</td>
+    </tr>
+    </tbody>
+</table>
+<p>To use popup events, use the following code:</p>
+
+<pre class="prettyprint"><pre class="prettyprint lang-html" style="border:0px; margin:0px">&lt;!--Popup html code--&gt;
+&lt;div id=&quot;popup&quot; class=&quot;ui-popup&quot;&gt;
+   &lt;div class=&quot;ui-popup-header&quot;&gt;&lt;/div&gt;
+   &lt;div class=&quot;ui-popup-content&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre><pre class="prettyprint lang-js" style="border:0px; margin:0px">/* JavaScript code */
+&lt;script&gt;
+   /* Use popup events */
+   var popup = document.getElementById(&quot;popup&quot;);
+   popup.addEventListener(&quot;popupbeforecreate&quot;, function(ev)
+   {
+      /* Implement code for popupbeforecreate event */
+   });
+&lt;/script&gt;
+</pre></pre>
+
+
+<div id="footer">
+    <hr size="1" />
+    <font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-25976949-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

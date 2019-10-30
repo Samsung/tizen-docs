@@ -23,7 +23,7 @@ You can use the following user interface features in your native applications:
   - Homescreens / launch pads
   - Advanced watch faces for wearable devices
 
-- [Tizen Window System Shell (TZSH)](tizen-ws-shell.md)
+- [Tizen Window System Shell (TZSH)](tizen-ws-shell/index.md)
 
   You can use the TZSH to manipulate the windows of the system graphical user interfaces (GUI) services such as the quickpanel. It allows you to control the windows of system GUI services and get notifications about the state changes of each window within an application. Not all applications require to use the TZSH's functionalities. However, in some cases, certain applications may require to perform manipulation of system GUI service's window.
 

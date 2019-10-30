@@ -24,6 +24,10 @@ You can use the following application information and controls features in your 
 
   The common application introduces the required parameters, such as a specific operation, URI, MIME type, and extra data when the application launches other applications with App Control API.
 
+- [Component Manager](component-manager.md)
+
+  You can retrieve information about the components installed on the device. You can also get information about the currently running components.
+
 - [Application Manager](app-manager.md)
 
   You can retrieve information about the applications installed on the device. You can also get information about the currently-running application.
@@ -57,7 +61,6 @@ You can use the following application data exchange features in your native appl
 - [TIDL](tidl.md)
 
   You can define interface with TIDL, which is a programming language to define interfaces for communicating among applications in Tizen.
-
 
 ## Related Information
 - Dependencies
