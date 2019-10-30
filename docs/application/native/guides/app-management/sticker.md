@@ -1,7 +1,7 @@
 # Sticker
 
 
-The Sticker feature provides functions to manage and retrieve the sticker information. The Sticker application is divided into the [Sticker provider application](#provider_application) that creates the sticker and the [Sticker consumer application](#consumer_application) that uses the sticker created by the Sticker provider. The Sticker provider application can store sticker details such as URI, keyword, and group name to the Sticker database. The Sticker consumer application can retrieve sticker information using the Sticker API.
+The Sticker feature provides users with fun experiences to share sticker information. The Sticker applications are composed of a [Sticker provider application](#provider_application) and [Sticker consumer application](#consumer_application). The Sticker provider creates stickers and developers can create their own Sticker consumer applications that use the stickers created by the Sticker provider. The Sticker provider application can store sticker details such as URI, keyword, and group name to the Sticker database. The Sticker consumer applications can retrieve sticker information using the Sticker API.
 
 The main features of the Sticker API include:
 
