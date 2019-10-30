@@ -16,7 +16,7 @@ DALi provides a rich and easy to use animation framework which allows you to cre
 
 DALi animations [occur in a dedicated thread](multi-threaded.md#animations-with-multi-threading). This allows animations to run smoothly, regardless of the time taken to process the input, events, and other factors in the application code.
 
-The following figure illustrates the animation components.
+The following figure illustrates the animation components:
 
 **Figure: DALi animation components**
 

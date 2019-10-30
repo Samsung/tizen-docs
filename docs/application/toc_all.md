@@ -58,31 +58,40 @@
 #### [Application Icons](/application/dotnet/guides/app-management/app-icons.md)
 #### [Application Controls](/application/dotnet/guides/app-management/app-controls.md)
 #### [Application Manager](/application/dotnet/guides/app-management/app-manager.md)
+#### [Event Manager](/application/dotnet/guides/app-management/event.md)
+#### [Component Manager](/application/dotnet/guides/app-management/component-manager.md)
 #### [Package Manager](/application/dotnet/guides/app-management/package-manager.md)
+#### [Widget Control](/application/dotnet/guides/app-management/widget-control.md)
 #### [Message Port](/application/dotnet/guides/app-management/message-port.md)
 #### [Data Control](/application/dotnet/guides/app-management/data-control.md)
 
-### Natural User Interface
+### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Setting Up the NUI Development Environment on Ubuntu](/application/dotnet/guides/nui/setup-ubuntu.md)
 #### [Getting Started](/application/dotnet/guides/nui/hello-world.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
-#### UI Components
+#### Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
 ##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
 ##### [CustomView](/application/dotnet/guides/nui/creating-custom-view-controls.md)
-##### [Buttons](/application/dotnet/guides/nui/button.md)
 ##### [FlexContainer](/application/dotnet/guides/nui/flexcontainer.md)
 ##### [ImageView](/application/dotnet/guides/nui/imageview.md)
-##### [ScrollView](/application/dotnet/guides/nui/scrollview.md)
-##### [Slider](/application/dotnet/guides/nui/slider.md)
 ##### [TableView](/application/dotnet/guides/nui/tableview.md)
 ##### [TextLabel](/application/dotnet/guides/nui/textlabel.md)
 ##### [TextField](/application/dotnet/guides/nui/textfield.md)
 ##### [TextEditor](/application/dotnet/guides/nui/texteditor.md)
 ##### [VideoView](/application/dotnet/guides/nui/videoview.md)
+##### [Button](/application/dotnet/guides/nui/nui-components/Button.md)
+##### [Loading](/application/dotnet/guides/nui/nui-components/Loading.md)
+##### [Popup](/application/dotnet/guides/nui/nui-components/Popup.md)
+##### [Progress](/application/dotnet/guides/nui/nui-components/Progress.md)
+##### [Scrollbar](/application/dotnet/guides/nui/nui-components/Scrollbar.md)
+##### [Slider](/application/dotnet/guides/nui/nui-components/Slider.md)
+##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
+##### [Tab](/application/dotnet/guides/nui/nui-components/Tab.md)
+##### [Toast](/application/dotnet/guides/nui/nui-components/Toast.md)
 #### Animation
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
@@ -142,6 +151,10 @@
 #### [IoT Connectivity](/application/dotnet/guides/connectivity/iotcon.md)
 #### [Telephony Information](/application/dotnet/guides/connectivity/telephony.md)
 
+### Machine Learning
+#### [Overview](/application/dotnet/guides/machine-learning/overview.md)
+#### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
+
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
 #### [Email](/application/dotnet/guides/messaging/email.md)
@@ -194,6 +207,7 @@
 #### [Privilege Information](/application/dotnet/guides/security/privilege.md)
 #### [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
 #### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
+#### [Device Policy Management](/application/dotnet/guides/security/dpm.md)
 
 ### [Natural Language Processing](/application/dotnet/guides/nlp/nlp.md)
 
@@ -322,6 +336,7 @@
 ###### [Watch Application](/application/native/guides/applications/dali-watch-app.md)
 ###### [Widget Application](/application/native/guides/applications/dali-widget-app.md)
 #### [Service Applications](/application/native/guides/applications/service-app.md)
+#### [Component Based Applications](/application/native/guides/applications/component-based-app.md)
 
 ### Application Management
 #### [Overview](/application/native/guides/app-management/overview.md)
@@ -330,6 +345,7 @@
 #### [Application Icons](/application/native/guides/app-management/app-icons.md)
 #### [Application Controls](/application/native/guides/app-management/app-controls.md)
 #### [Common Application Controls](/application/native/guides/app-management/common-appcontrols.md)
+#### [Component Manager](/application/native/guides/app-management/component-manager.md)
 #### [Application Manager](/application/native/guides/app-management/app-manager.md)
 #### [Package Manager](/application/native/guides/app-management/package-manager.md)
 #### [Event Broadcast and Subscription](/application/native/guides/app-management/event.md)
@@ -525,9 +541,11 @@
 ##### Background Knowledge
 ###### [Handle/Body Pattern](/application/native/guides/ui/dali/handle.md)
 ###### [Properties](/application/native/guides/ui/dali/properties.md)
-###### [Multi-threaded Architecture](/application/native/guides/ui/dali/multi-threaded.md)
 
-#### [Tizen Window System Shell](/application/native/guides/ui/tizen-ws-shell.md)
+#### Tizen Window System Shell
+##### [Overview](/application/native/guides/ui/tizen-ws-shell/index.md)
+##### [TZSH-Quickpanel](/application/native/guides/ui/tizen-ws-shell/tzsh-quickpanel.md)
+##### [TZSH-Softkey](/application/native/guides/ui/tizen-ws-shell/tzsh-softkey.md)
 
 ### Localization
 #### [Overview](/application/native/guides/internationalization/overview.md)
@@ -559,6 +577,7 @@
 ### Notifications and Content Sharing
 #### [Overview](/application/native/guides/notification/overview.md)
 #### [Notifications](/application/native/guides/notification/notifications.md)
+#### [Expandable Notifications](/application/native/guides/notification/notification-ex.md)
 #### [Attach Panel](/application/native/guides/notification/attach-panel.md)
 #### [Minicontrol Window](/application/native/guides/notification/minicontrol.md)
 
@@ -566,6 +585,10 @@
 #### [Overview](/application/native/guides/alarm/overview.md)
 #### [Alarms](/application/native/guides/alarm/alarms.md)
 #### [Contextual System Event Trigger](/application/native/guides/alarm/trigger.md)
+
+### Machine Learning
+#### [Overview](/application/native/guides/machine-learning/overview.md)
+#### [Machine Learning Inference](/application/native/guides/machine-learning/machine-learning-inference.md)
 
 ### Multimedia
 #### [Overview](/application/native/guides/multimedia/overview.md)
@@ -639,6 +662,9 @@
 ### Text Input and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
 #### [Input Method](/application/native/guides/text-input/input-method.md)
+#### [Autofill](/application/native/guides/text-input/autofill.md)
+#### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
+#### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Voice Control](/application/native/guides/text-input/voice-control.md)
@@ -669,6 +695,7 @@
 #### [System Information](/application/native/guides/device/system.md)
 #### [System Settings](/application/native/guides/device/settings.md)
 #### [Sound and Vibration Feedback](/application/native/guides/device/feedback.md)
+#### [Battery Monitor](/application/native/guides/device/battery-monitor.md)
 
 ### Security
 #### [Overview](/application/native/guides/security/overview.md)

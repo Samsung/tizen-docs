@@ -23,13 +23,20 @@ To play the audio PCM data, the application must call the `audio_out_create_new(
 Your application must define the following PCM data settings:
 
 - Audio channels:
-  - `AUDIO_CHANNEL_MONO` : 1 channel
-  - `AUDIO_CHANNEL_STEREO` : 2 channels
+  - `AUDIO_CHANNEL_MONO` : 1 channel, mono
+  - `AUDIO_CHANNEL_STEREO` : 2 channels, stereo
+  - `AUDIO_CHANNEL_MULTI_3` : 3 channels (for recording only)
+  - `AUDIO_CHANNEL_MULTI_4` : 4 channels (for recording only)
+  - `AUDIO_CHANNEL_MULTI_5` : 5 channels (for recording only)
+  - `AUDIO_CHANNEL_MULTI_6` : 6 channels (for recording only)
+  - `AUDIO_CHANNEL_MULTI_7` : 7 channels (for recording only)
+  - `AUDIO_CHANNEL_MULTI_8` : 8 channels (for recording only)
 - Audio sample type:
   - `AUDIO_SAMPLE_TYPE_U8` : Unsigned 8 bit integer PCM
   - `AUDIO_SAMPLE_TYPE_S16_LE` : Signed 16 integer bit PCM, little endian
-  - `AUDIO_SAMPLE_TYPE_S24_LE` : Signed 24 bit integer PCM packed, little endian
+  - `AUDIO_SAMPLE_TYPE_S24_LE` : Signed 24 bit integer PCM, little endian
   - `AUDIO_SAMPLE_TYPE_S24_32LE` : Signed 24 bit integer PCM in LSB of 32 bit words, little endian
+  - `AUDIO_SAMPLE_TYPE_S32_LE` : Signed 32 bit integer PCM, little endian
 - Audio sample rate:
   - 8000 ~ 192000 Hz
 
