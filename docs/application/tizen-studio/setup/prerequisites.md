@@ -4,7 +4,7 @@ Check the following prerequisites before attempting to install the Tizen Studio.
 
 ## Java Development Kit (JDK) Requirements
 
-You must install Oracle Java Development Kit (JDK) 8, or OpenJDK 10 to use the Tizen Studio.
+You must install Oracle Java Development Kit (JDK) 8 for Tizen Studio 3.3 or below or OpenJDK 12 for Tizen Studio 3.5 or above.
 
 Follow these instructions to install the appropriate JDK version for your system:
 
