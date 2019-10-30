@@ -4,7 +4,7 @@
 > 
 > Samsung has discontinued support for ARTIK.
 >
-> In case you are still using ARTIK, we recommend that you migrate to Raspberry Pi 3 for headless-type IoT devices. Information on [Raspberry Pi 3 for Tizen IoT](https://developer.tizen.org/development/iot-extension-sdk/getting-started/setting-up-your-board/raspberry-pi3-based-on-tizen-5.0) will help you at it.
+> In case you are still using ARTIK, we recommend that you migrate to Raspberry Pi 3 for headless-type IoT devices. Information on [Raspberry Pi 3 for Tizen IoT](rpi3-5.0.md) will help you at it.
 > The documentation for Tizen IoT with respect to ARTIK will be available only until August 2019.
 >
 > Thank you for your interest and support as always.

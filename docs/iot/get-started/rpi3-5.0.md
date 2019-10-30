@@ -6,7 +6,7 @@ If you have already installed Tizen Studio 3.0 and installed the **5.0 Mobile** 
 
 Otherwise, to install Tizen Studio and the required profiles for IoT development:
 
-1.  Download and install the correct version of Tizen Studio 3.0 (or later) for your operating system from [Tizen developer site](https://developer.tizen.org/development/tizen-studio/download).
+1.  Download and install the correct version of Tizen Studio 3.0 (or later) for your operating system from [Tizen developer site](https://developer.tizen.org/development/tizen-studio/download){:target="_blank"}.
 2.  Open the **Tizen Studio Package Manager**, select the **Main SDK** tab, and install the **5.0 Mobile** profile:
 
     ![Install the mobile profile](media/package_manager_mobile_5.0.png)
