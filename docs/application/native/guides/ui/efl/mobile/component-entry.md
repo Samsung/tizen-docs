@@ -349,7 +349,7 @@ You can format the entry text in many ways:
 
 ## Setting the Input Panel Layout and Return Key Type
 
-The input panel has different input types, such as number, date, URL, and emoticon. You can specify the keyboard layout type you want for the entry component with the [Elm\_Input\_Panel\_Layout](../../../../api/mobile/latest/group__Elm__Entry.html#gabf2a52ba5bbfc9bd40f367c42b1a6619) enumerator, which defines the available input types.
+The input panel has different input types, such as number, date, URL, and emoticon. You can specify the keyboard layout type you want for the entry component with the [Elm\_Input\_Panel\_Layout](../../../../api/mobile/latest/group__Elm__Entry.html) enumerator, which defines the available input types.
 
 To set the input panel layout to the phone number layout:
 
@@ -369,7 +369,7 @@ elm_entry_input_panel_layout_set(entry, ELM_INPUT_PANEL_LAYOUT_PHONENUMBER);
 
 ![DATETIME](./media/input_panel_DATETIME.png) ![EMOTICON](./media/input_panel_EMOTICON.png)
 
-You can change the return key type in the input panel layout. You can specify the return key type you want for the entry component with the [Elm\_Input\_Panel\_Return\_Key\_Type](../../../../api/mobile/latest/group__Elm__Entry.html#ga24d4dcdebc49e633b8039f73b8aec3c3) enumerator, which defines the available return key types.
+You can change the return key type in the input panel layout. You can specify the return key type you want for the entry component with the [Elm\_Input\_Panel\_Return\_Key\_Type](../../../../api/mobile/latest/group__Elm__Entry.html) enumerator, which defines the available return key types.
 
 To set the return key type to the join key:
 

@@ -51,9 +51,9 @@ The following table lists the supported operating systems and hardware requireme
 </tr>
 <tr>
 <th>Bit</th>
-<td>64 bit / 32 bit</td>
 <td>64 bit only</td>
-<td>64 bit / 32 bit</td>
+<td>64 bit only</td>
+<td>64 bit only</td>
 </tr>
 <tr>
 <th rowspan="4">HW</th>
@@ -64,7 +64,7 @@ The following table lists the supported operating systems and hardware requireme
 </tr>
 <tr>
 <th>Architecture</th>
-<td>x64 (64 bit) / x86 (32 bit)</td>
+<td>x64 (64 bit)</td>
 <td>x64 only</td>
 <td>x64 / x86</td>
 </tr>
@@ -160,7 +160,7 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 
 You must install the Google Chrome&trade; browser to use the [Web Inspector](../web-tools/web-inspector.md) tool.
 
-Since the Web Inspector server uses the Web core in the platform, there is a limit on the Google Chrome&trade; browser version in your environment. For all functions of the Web Inspector to work properly, use the [Google Chrome&trade; browser version 52 or lower](http://www.slimjet.com/chrome/google-chrome-old-version.php).
+Since the Web Inspector server uses the Web core in the platform, there is a limit on the Google Chrome&trade; browser version in your environment. For all functions of the Web Inspector to work properly, use the **Google Chrome&trade; browser version 77 or higher**.
 
 ## Additional Requirements
 

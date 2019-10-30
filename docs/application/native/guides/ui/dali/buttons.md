@@ -81,7 +81,7 @@ void HelloWorldExample::Create( Application& application )
 {
   PushButton button = PushButton::New();
   button.SetParentOrigin( ParentOrigin::CENTER );
-  button.SetLabelText( "Press" );
+  button.SetProperty( Button::Property::LABEL, "Press");
   Stage::GetCurrent().Add( button );
 
   // Connect to button signals emitted by the button
@@ -127,9 +127,9 @@ void HelloWorldExample::Create( Application& application )
 {
   CheckBoxButton button = CheckBoxButton::New();
   button.SetParentOrigin( ParentOrigin::CENTER );
-  button.SetLabelText( "Check" );
+  button.SetProperty( Button::Property::LABEL, "Check" );
   button.SetSize( 200, 40 );
-  button.SetBackgroundColor( Color::WHITE );
+  button.SetProperty( Control::Property::BACKGROUND, Color::WHITE );
   Stage::GetCurrent().Add( button );
 
   // Connect to a button signal emitted by the button
@@ -139,7 +139,7 @@ void HelloWorldExample::Create( Application& application )
 bool HelloWorldExample::OnButtonStateChanged( Button button )
 {
   // Do something when the button state is changed
-  // You can get the state using button.IsSelected() call
+  // You can get the state using the property Button::Property::SELECTED
   return true;
 }
 ```
@@ -165,13 +165,13 @@ void HelloWorldExample::Create( Application& application )
   Stage::GetCurrent().Add( radioGroup );
 
   RadioButton button1 = RadioButton::New();
-  button1.SetLabelText( "button1" );
+  button1.SetProperty( Button::Property::LABEL, "button1" );
   button1.SetBackgroundColor( Color::WHITE );
   button1.SetPosition( 0, -40 );
   radioGroup.Add( button1 );
 
   RadioButton button2 = RadioButton::New();
-  button2.SetLabelText( "button2" );
+  button2.SetProperty( Button::Property::LABEL, "button2" );
   button2.SetBackgroundColor( Color::WHITE );
   button2.SetPosition( 0, 40 );
   radioGroup.Add( button2 );
@@ -185,7 +185,7 @@ bool HelloWorldExample::OnButtonStateChanged( Toolkit::Button button )
 {
   // Do something when the 2 buttons' states are changed
   // button parameter can be both button1 and button2
-  // You can use button.GetLabelText() and button.IsSelected()
+  // You can use properties Button::Property::LABEL and Button::Property::SELECTED
   // to know which button is selected
   return true;
 }
@@ -214,12 +214,12 @@ Selected and unselected images are provided to the button as two property maps c
 ...
 PushButton button = PushButton::New();
 
-button.SetProperty( Button::Property::SELECTED_STATE_IMAGE,
+button.SetProperty( Button::Property::SELECTED_VISUAL,
                     Property::Map().Add( Visual::Property::TYPE,  Visual::IMAGE )
                     .Add( ImageVisual::Property::URL, DEMO_IMAGE_DIR "red-button.png" )
                     );
 
-button.SetProperty( Button::Property::UNSELECTED_STATE_IMAGE,
+button.SetProperty( Button::Property::UNSELECTED_VISUAL,
                     Property::Map().Add( Visual::Property::TYPE,  Visual::IMAGE )
                     .Add( ImageVisual::Property::URL, DEMO_IMAGE_DIR "green-button.png" )
                     );
@@ -257,7 +257,7 @@ button.SetProperty( DevelButton::Property::UNSELECTED_BACKGROUND_VISUAL, visualS
 
 OR
 
-button.SetProperty( Toolkit::Button::Property::UNSELECTED_STATE_IMAGE, visualSettingMap );
+button.SetProperty( Toolkit::Button::Property::UNSELECTED_VISUAL, visualSettingMap );
 
 ```
 <a name="ButtonWithMixedVisuals"></a>
@@ -271,7 +271,7 @@ Property::Map visualSettingMap;
               visualSettingMap.Add( Visual::Property::TYPE, Toolkit::Visual::COLOR )
                               .Add( ColorVisual::Property::MIX_COLOR, Vector4( R, G, B, 1.0f ) );
 
-button.SetProperty( Toolkit::Button::Property::UNSELECTED_STATE_IMAGE, visualSettingMap );
+button.SetProperty( Toolkit::Button::Property::UNSELECTED_VISUAL, visualSettingMap );
 
 Property::Map textSettingsMap;
               textSettingsMap.Add( Visual::Property::TYPE, Toolkit::Visual::TEXT )

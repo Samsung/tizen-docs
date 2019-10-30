@@ -32,21 +32,21 @@
 
 <h2>Table of Contents</h2>
 <ol class="toc">
-	
+
 		<li><a href="#html-example0.9038220448419452">How to Create a Selector</a>
-			
+
 		</li>
-	
+
 		<li><a href="#options0.08969108131714165">Options</a>
-			
+
 		</li>
-	
+
 		<li><a href="#events-list">Events</a>
-			
+
 		</li>
-	
+
 		<li><a href="#methods-list">Methods</a>
-			
+
 				<ol class="toc">
                         <li><a href="#method-enable">enable</a>
                         </li>
@@ -54,17 +54,17 @@
                         </li>
 						<li><a href="#method-changeItem">changeItem</a>
 						</li>
-					
+
 						<li><a href="#method-addItem">addItem</a>
 						</li>
-					
+
 						<li><a href="#method-removeItem">removeItem</a>
 						</li>
-					
+
 				</ol>
-			
+
 		</li>
-	
+
 </ol>
 
 <h2><a id='html-example0.9038220448419452'>How to Create a Selector</a></h2>
@@ -90,24 +90,24 @@
 <h3><a id='manual-constructor0.33475646935403347'></a>Manual Constructor</h3>
 
 <pre class="prettyprint">
-(function() 
+(function()
 {
 	var page = document.getElementById(&quot;selectorPage&quot;),
 		selector = document.getElementById(&quot;selector&quot;),
 		clickBound;
 
-	function onClick(event) 
+	function onClick(event)
 	{
 		var activeItem = selector.querySelector(&quot;.ui-item-active&quot;);
 		//console.log(activeItem.getAttribute(&quot;data-title&quot;));
 	}
-	page.addEventListener(&quot;pagebeforeshow&quot;, function() 
+	page.addEventListener(&quot;pagebeforeshow&quot;, function()
 	{
 		clickBound = onClick.bind(null);
 		tau.widget.Selector(selector);
 		selector.addEventListener(&quot;click&quot;, clickBound, false);
 	});
-	page.addEventListener(&quot;pagebeforehide&quot;, function() 
+	page.addEventListener(&quot;pagebeforehide&quot;, function()
 	{
 		selector.removeEventListener(&quot;click&quot;, clickBound, false);
 	});
@@ -124,35 +124,35 @@
 			<th>Default value</th>
 			<th>Description</th>
 		</tr>
-		
+
 			<tr>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-item-selector</span></td>
 				<td class="option">String</td>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">.ui-item</span></td>
 				<td class="option">Item selector with a CSS style.</td>
 			</tr>
-		
+
 			<tr>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-item-degree</span></td>
 				<td class="option">Number</td>
 				<td class="option">30</td>
 				<td class="option">Angle between items.</td>
 			</tr>
-		
+
 			<tr>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-item-radius</span></td>
 				<td class="option">Number</td>
 				<td class="option">-1</td>
 				<td class="option">Radius between the item and center. Default value is determined by the selector layout.</td>
 			</tr>
-		
+
 			<tr>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-indicator-selector</span></td>
 				<td class="option">String</td>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">.ui-selector-indicator</span></td>
 				<td class="option">Indicator selector with a CSS style.</td>
 			</tr>
-		
+
 			<tr>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">data-indicator-arrow-selector</span></td>
 				<td class="option">String</td>
@@ -182,7 +182,7 @@
 			<th>Name</th>
 			<th>Description</th>
 		</tr>
-		
+
 			<tr>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">selectoritemchange</span></td>
 				<td><p>Triggered when the active item is changed. The target is the active item element.</p>
@@ -194,7 +194,7 @@
 				<li>title: If the item has a <span style="font-family: Courier New,Courier,monospace">data-title</span> attribute, this is the value.</li>
 				</ul></td>
 			</tr>
-		
+
 			<tr>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">selectorlayerchange</span></td>
 				<td><p>Triggered when the active layer is changed. The target is the active layer element.</p>
@@ -203,7 +203,7 @@
 				<li>index: Layer index.
 				</li></ul></td>
 			</tr>
-		
+
 		</tbody>
 	</table>
 
@@ -315,10 +315,10 @@
 					<div class="synopsis">
 						<pre class="signature prettyprint">changeItem ( Number index) </pre>
 					</div>
-					
+
 					<div class="description">
 						<p>
-							
+
 						</p>
 					</div>
 
@@ -333,8 +333,8 @@
 						<th>Default value</th>
 						<th>Description</th>
 					</tr>
-					
-					
+
+
 					<tr>
 						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
 						<td>Number</td>
@@ -342,24 +342,24 @@
 						<td></td>
 						<td></td>
 					</tr>
-					
-					
+
+
 					</tbody>
 					</table>
 					</div>
-					
+
 					<div class="returntype">
 						<p><span class="return">Return value:</span></p>
-						
-						
+
+
 							No return value
-						
+
 					</div>
-					
+
 				</dd>
-			
-		
-			
+
+
+
 				<dt class="method"><code><b><span class="methodName"
 																   id="method-addItem">addItem</span></b></code></dt>
 				<dd>
@@ -369,13 +369,13 @@
 					<div class="synopsis">
 						<pre class="signature prettyprint">addItem ( HTMLElement item, Number index) </pre>
 					</div>
-					
+
 					<div class="description">
 						<p>
-							
+
 						</p>
 					</div>
-					
+
 					<div class="parameters">
 						<p><span class="param">Parameters:</span></p>
 					<table>
@@ -387,8 +387,8 @@
 						<th>Default value</th>
 						<th>Description</th>
 					</tr>
-					
-					
+
+
 					<tr>
 						<td><span style="font-family: Courier New,Courier,monospace">item</span></td>
 						<td>HTMLElement</td>
@@ -396,7 +396,7 @@
 						<td></td>
 						<td></td>
 					</tr>
-					
+
 					<tr>
 						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
 						<td>Number</td>
@@ -404,24 +404,24 @@
 						<td>Last index</td>
 						<td></td>
 					</tr>
-					
-					
+
+
 					</tbody>
 					</table>
 					</div>
-					
+
 					<div class="returntype">
 						<p><span class="return">Return value:</span></p>
-						
-						
+
+
 							No return value
-						
+
 					</div>
-					
+
 				</dd>
-			
-		
-			
+
+
+
 				<dt class="method"><code><b><span class="methodName"
 																   id="method-removeItem">removeItem</span></b></code></dt>
 				<dd>
@@ -431,13 +431,13 @@
 					<div class="synopsis">
 						<pre class="signature prettyprint">removeItem ( Number index) </pre>
 					</div>
-					
+
 					<div class="description">
 						<p>
-							
+
 						</p>
 					</div>
-					
+
 					<div class="parameters">
 						<p><span class="param">Parameters:</span></p>
 					<table>
@@ -449,8 +449,8 @@
 						<th>Default value</th>
 						<th>Description</th>
 					</tr>
-					
-					
+
+
 					<tr>
 						<td><span style="font-family: Courier New,Courier,monospace">index</span></td>
 						<td>Number</td>
@@ -458,31 +458,31 @@
 						<td></td>
 						<td></td>
 					</tr>
-					
-					
+
+
 					</tbody>
 					</table>
 					</div>
-					
+
 					<div class="returntype">
 						<p><span class="return">Return value:</span></p>
-						
-						
+
+
 							No return value
-						
+
 					</div>
-					
+
 				</dd>
-			
-		
+
+
 		</dl>
-	
+
 
 <h2>Where to Go Next</h2>
 <ul>
-	<li><a href="../index.html">Widget Reference</a></li>
-	
+	<li><a href="widget_reference.htm">UI Component Reference</a></li>
 </ul>
+
 <div id="footer">
 	<hr size="1">
 	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a

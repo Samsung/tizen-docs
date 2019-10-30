@@ -56,7 +56,7 @@ Release date: Oct. 31, 2018
   - Linux based callstack symbol resolution tools have been provided to integrate into CI/CD infrastructure.
   - Thread based self watchdog system (except of systemd based watchdog) has been added.
 - The SW upgrade has been enhanced to apply on more devices such as headless device:
-  - For small company that does not have SW upgrade infra, SW upgrade infra has been provided on basis of Samsung Smartthings DeviceManager (https://console.smartthingsdm.com). Now, it is available on Beta services.
+  - For small company that does not have SW upgrade infra, SW upgrade infra has been provided on basis of Samsung Smartthings DeviceManager. Now, it is available on Beta services.
   - Remote update control for updating headless device has been provided. The OCF based update protocol and reference agents have been provided. In addition, remote update control framework has been provided to support several devices. The framework provides update control API set and update control plugins. The default plugin is available on the Tizen IoT homepage.
   - For secure update, generic template for binary signing/verification has been provided. Default binary signer and verifier are available on the Tizen IoT homepage.
 - Low Memory Management for headless devices has been enhanced:

@@ -42,7 +42,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 - Web Runtime
   - External storage installation capability for Web applications
   - New configuration extension:
-    - <tizen:privilege>: This tag is used to specify API permissions. (The <feature> tag is now be used to specify the required platform or hardware features.)
+    - `<tizen:privilege>`: This tag is used to specify API permissions. (The `<feature>` tag is now be used to specify the required platform or hardware features.)
   - NPRuntime plug-in support in Web applications:
     - In the 2.0 release, only the 3rd party libraries supported as public APIs, such as eglibc, can be used in NPRuntime plug-ins.
 
@@ -104,7 +104,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - The "tizen-black" theme has been removed.
     - The "tizen-white" theme has been changed to a new UX style.
   - Widget
-    - The automatic footer generation feature has been removed. (<div data-role="footer"/;> needs to be specified.)
+    - The automatic footer generation feature has been removed. (`<div data-role="footer"/;>` needs to be specified.)
     - The optionheader, nocontents, controlgroup, pagecontrol, colorselector, dayselector widgets are removed.
     - The image slider widget has been renamed as "gallery".
     - The shortcut scroll widget has been renamed as "fast scroll".

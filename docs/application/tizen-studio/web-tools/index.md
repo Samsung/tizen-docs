@@ -29,10 +29,6 @@ The Tizen Studio provides various tools to help you with the different Web appli
 
   You can run and test your application using the Tizen emulator. In addition, the Smart Development Bridge (SDB) tool allows you to communicate with a connected target device, and the unit test tool allows you to create test projects to verify the reliability of your code.
 
-- [Using the Web Simulator](web-simulator.md)
-
-  You can run your Web application in a Google Chrome&trade; browser-based simulator, which provides many settings and features for debugging your application. You can test how the application behaves, and even send in events and messages.
-
 If you prefer a command line interface to the graphical Tizen Studio window, you can use the [Command Line Interface (CLI)](../common-tools/command-line-interface.md) tool during the entire development process.
 
 For a list of keyboard shortcuts related to the Tizen Studio and its various tools, see [Keyboard Shortcuts](../common-tools/keyboard-shortcuts.md).

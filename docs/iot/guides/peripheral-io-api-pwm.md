@@ -34,14 +34,6 @@ To open and close a handle:
     peripheral_pwm_open(chip, pin, &pwm_h);
     ```
 
-    The `chip` and `pin` parameters required for this function must be set according to the following table.
-
-    **Table: ARTIK 530**
-
-      Pin name  |Chip (parameter 1)  |Pin (parameter 2)
-      ----------|--------------------|-------------------
-      PWM0      |0                   |2
-
     > **Note**
     >
     > For more information on the pin names and locations, see [Supported Protocols](peripheral-io-api.md#protocol).

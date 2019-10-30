@@ -57,6 +57,10 @@ You can use the following TizenFX features in your .NET applications:
 
   The connectivity features define how you can connect your application to the outside world, and send and receive data. You can create connections to various networks, servers, and other devices.
 
+- [Machine Learning](machine-learning/overview.md)
+
+  Machine learning (ML) feature introduces how you can easily invoke the neural network model and get the inference output result effortlessly and efficiently.
+
 - [Messaging](messaging/overview.md)
 
   The messaging features introduce how you can send and receive text and multimedia messages, and manage emails. You can also create a push server to use the push messaging service to deliver push notifications to the application.

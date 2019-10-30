@@ -27,7 +27,7 @@ To use a flip component in your application:
    elm_object_part_content_set(flip, "back", content2);
    ```
 
-3.  Run a flip animation using the `elm_flip_go()` function. The `ELM_FLIP_CUBE_UP` animation mode flips up the `front` content object as if it was on a side of a cube, letting the down facing side of the cube appear with the `back` content object. For a complete list of animation modes, see [elm\_flip\_go() Remarks](../../../../api/mobile/latest/group__Elm__Flip.html#ga24518d66196b5b634a207fd02e09250e).
+3.  Run a flip animation using the `elm_flip_go()` function. The `ELM_FLIP_CUBE_UP` animation mode flips up the `front` content object as if it was on a side of a cube, letting the down facing side of the cube appear with the `back` content object.
 
    ```
    elm_flip_go(flip, ELM_FLIP_CUBE_UP);
@@ -60,8 +60,6 @@ To set interaction settings to enable the user to interact with the flip:
   ```
   elm_flip_interaction_set(flip, ELM_FLIP_INTERACTION_ROTATE);
   ```
-
-  For a complete list of interaction modes, see [elm\_flip\_interaction\_set() Remarks](../../../../api/mobile/latest/group__Elm__Flip.html#ga9d1b9214b24f3eb7c5066f2980780e23).
 
 - Select which interaction directions are enabled.
 

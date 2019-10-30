@@ -1,4 +1,4 @@
-# Using the Web Simulator
+# Running Applications on the Web Simulator
 
 The Tizen Web Simulator is a light-weight tool that provides many [settings](#setting) and [features](web-simulator-features.md) to develop Web applications. You can use the simulator features to debug your applications.
 
