@@ -1,7 +1,7 @@
 # Sticker
 
 
-The Sticker feature provides users with fun experiences to share sticker information. The Sticker applications are composed of a [Sticker provider application](#provider_application) and [Sticker consumer application](#consumer_application). The Sticker provider creates stickers and developers can create their own Sticker consumer applications that use the stickers created by the Sticker provider. The Sticker provider application can store sticker details such as URI, keyword, and group name to the Sticker database. The Sticker consumer applications can retrieve sticker information using the Sticker API.
+The Sticker feature provides you with fun experiences to share sticker information. The Sticker applications are composed of a [Sticker provider application](#provider_application) and [Sticker consumer application](#consumer_application). The Sticker provider creates stickers and you can create your own Sticker consumer applications that use the stickers created by the Sticker provider. The Sticker provider application can store sticker details such as URI, keyword, and group name to the Sticker database. The Sticker consumer applications can retrieve sticker information using the Sticker API.
 
 The main features of the Sticker API include:
 
@@ -20,7 +20,7 @@ The main features of the Sticker API include:
 
 - Retrieving the sticker information
 
-  You can [retrieve sticker information](#retrieve_sticker), which includes URI, keyword, group name, and so on.
+  You can [retrieve the sticker information](#retrieve_sticker), which includes URI, keyword, group name, and so on.
 
 **Figure: Sticker Mechanism**
 
@@ -61,11 +61,11 @@ To enable your Sticker consumer application to use the Sticker functionality:
  To ensure that a Sticker function has been executed properly, make sure that the return is equal to `STICKER_ERROR_NONE`.
 
 <a name="provider_application"></a>
-## Creating Sticker Provider Application
+## Create Sticker Provider Application
 
 You can provide the sticker information to applications that use stickers. If you store the stickers into the Sticker database, the Sticker consumer applications can search for them.
 
-### Creating Sticker Provider Handle
+### Create Sticker Provider Handle
 
 Create the Sticker provider handle using `sticker_provider_create()` that allows you to store the sticker information:
 
@@ -82,7 +82,7 @@ create_sticker_provider_handle()
 ```
 
 <a name="set_data_handle"></a>
-### Setting Sticker Information to Sticker Data Handle
+### Set Sticker Information to Sticker Data Handle
 
 To store the sticker information to the Sticker database without using the JSON file, the sticker information must be set into the Sticker data handle:
 
@@ -154,7 +154,7 @@ insert_sticker_data()
 > When the Sticker data handle is no longer needed, destroy it.
 
 <a name="set_json"></a>
-### Setting Sticker Information in JSON File
+### Set Sticker Information in JSON File
 
 The following JSON file shows how to set the sticker information to be stored into the Sticker database:
 
@@ -187,7 +187,7 @@ The following JSON file shows how to set the sticker information to be stored in
 ```
 
 <a name="insert_sticker"></a>
-### Inserting Sticker Information
+### Insert Sticker Information
 
 You can use the following methods to store sticker information into the Sticker database:
 
@@ -237,7 +237,7 @@ You can use the following methods to store sticker information into the Sticker 
   >
   > The metadata must be added after category.
 
-### Updating Sticker Information
+### Update Sticker Information
 
 You can update the sticker information stored in the Sticker database using the following functions:
 
@@ -252,7 +252,7 @@ update_sticker_data(sticker_provider_h sticker_provider, sticker_data_h sticker_
 }
 ```
 
-### Destroying Sticker Provider Handle
+### Destroy Sticker Provider Handle
 
 Destroy the Sticker provider handle using `sticker_provider_destroy()`:
 
@@ -268,11 +268,11 @@ destroy_sticker_provider_handle(sticker_provider_h sticker_provider)
 ```
 
 <a name="consumer_application"></a>
-## Creating Sticker Consumer Application
+## Create Sticker Consumer Application
 
 You can create the Sticker consumer application using Sticker API to use sticker information. You can search for stickers and get details of stickers.
 
-### Creating Sticker Consumer Handle
+### Create Sticker Consumer Handle
 
 Create the Sticker consumer handle using `sticker_consumer_create()` that allows you to retrieve the sticker information:
 
@@ -289,11 +289,11 @@ create_sticker_consumer_handle()
 ```
 
 <a name="retrieve_sticker"></a>
-### Retrieving Sticker Information
+### Retrieve Sticker Information
 
 You can retrieve all the stickers stored in the Sticker database and use keyword, group name, and type of URI to retrieve stickers.
 
-The following examples show how to retrieve stickers using the group name:
+The following example shows how to retrieve stickers using the group name:
 
 ```
 void
@@ -344,7 +344,7 @@ retrieve_keyword_list(sticker_consumer_h sticker_consumer)
 ```
 
 <a name="get_data_handle"></a>
-### Getting Sticker Information
+### Get Sticker Information
 
 To obtain sticker information, use `sticker_data_get__XXX()`. To avoid memory leaks, free the character array variable with `free()` when no longer needed.
 
@@ -406,7 +406,7 @@ get_sticker_data(sticker_data_h sticker_data)
 }
 ```
 
-### Destroying Sticker Consumer Handle
+### Destroy Sticker Consumer Handle
 
 Destroy the Sticker consumer handle using `sticker_consumer_destroy()`:
 
@@ -422,6 +422,6 @@ destroy_sticker_consumer_handle(sticker_consumer_h sticker_consumer)
 ```
 
 ## Related Information
--  Dependencies
+* Dependencies
   - Tizen 5.5 and Higher for Mobile
   - Tizen 5.5 and Higher for Wearable
