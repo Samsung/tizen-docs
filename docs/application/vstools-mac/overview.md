@@ -12,12 +12,12 @@ To work with Visual Studio for Mac Extension for Tizen, your computer must have:
 
 - Java Development Kit (JDK)
 
-  You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 10 to use 
+  You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 to use 
 Tizen Baseline SDK. Make sure you download and install the EXACT version.
 
   - [Oracle Java Development Kit(JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Java for OS X 2015-001](https://support.apple.com/kb/DL1572)
  
-  - OpenJDK 10 and OpenJFX: [OpenJDK 10 and OpenJFX Installation Guide](https://developer.tizen.org/development/articles/openjdk-10-and-openjfx-installation-guide#install-openjdk-for-macos).
+  - OpenJDK 12 and OpenJFX: [OpenJDK 12 and OpenJFX Installation Guide](../tizen-studio/setup/openjdk.md#install-openjdk-for-macos).
 
 For Oracle JDK, Java for OS X 2015-001 is required to support legacy Java software on macOS.
 
