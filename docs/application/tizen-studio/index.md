@@ -1,6 +1,6 @@
 # Tizen Studio
 
-**Tizen Studio 3.3 is now launched!**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Download](media/ic_docs_download.png)  **Download**](https://developer.tizen.org/development/tizen-studio/download)
+**Tizen Studio 3.5 is now launched!**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Download](media/ic_docs_download.png)  **Download**](https://developer.tizen.org/development/tizen-studio/download)
 
 The Tizen Studio platform is based on a new version of Eclipse, so you can experience a stable, lightweight, and consistent user interface that is unique to the Tizen development environment. With the Tizen Studio, you can select and install only those platforms and profiles you need.
 
@@ -8,8 +8,8 @@ In the Tizen Studio, you can perform all the same development activities that we
 
 
 > **Note**
-> 
-> Support for Windows 32-bit and Ubuntu 32-bit will be deprecated from the next version of Tizen Studio.
+>
+> Support for Windows 32-bit and Ubuntu 32-bit will be deprecated from the Tizen Studio 3.5.
 
 To develop your applications, use the set of tools provided by the Tizen Studio:
 
