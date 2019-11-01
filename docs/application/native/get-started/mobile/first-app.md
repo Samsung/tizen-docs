@@ -264,7 +264,7 @@ To run the application on the emulator:
 
         If you have created multiple emulator instances, select the instance you want from the combo box in the toolbar before selecting to run the application. If you select an offline emulator, it is automatically launched when you select to run the application.
 
-        ![Selecting the emulator to use](media/app_run_multiple_emulators.png)
+        ![Selecting the emulator to use](media/app_run_multiple_emulators_m.png)
 
     2. Confirm that the application launches on the emulator.
 

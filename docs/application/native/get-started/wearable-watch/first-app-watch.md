@@ -2,10 +2,6 @@
 
 **Welcome to Tizen wearable native watch application development!**
 
-> **Note**
->
-> Watch template is not supported since Tizen Studio 3.0.
-
 A wearable native watch application is created using the C language, and can be run on Tizen wearable devices to display a customized watch face to the user.
 
 Study the following instructions to help familiarize yourself with the Tizen [native application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native watch application, which displays some text and the current time on the screen:
@@ -65,11 +61,11 @@ To create the application project:
 
         The version depends on the platform version you have installed and with which you are developing the application.
 
-        ![Selecting the profile and version](media/create_project_wizard_version_wearable.png)
+        ![Selecting the profile and version](media/create_project_wizard_version_w.png)
 
     3. Select the **Native Application** application type and click **Next**.
 
-        ![Selecting the application type](media/create_project_wizard_app_wearable.png)
+        ![Selecting the application type](media/create_project_wizard_app_wn.png)
 
     4. Select the **Watch** template and click **Next**.
 
@@ -267,7 +263,7 @@ You can build the application in the following ways:
     1.  Select the project in the **Project Explorer** view.
     2. In the Tizen Studio menu, select **Project \> Build Automatically**.
 
-        ![Using the automatic build](media/build_automatic_wn_watch.png)
+        ![Using the automatic build](media/build_automatic.png)
 
         A check mark appears next to the menu option.
 
@@ -281,7 +277,7 @@ You can build the application in the following ways:
 
     **Figure: Manually building the application**
 
-    ![Manually building the application](media/build_manual_n.png)
+    ![Manually building the application](media/build_manual_wn_watch.png)
 
     Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:
 
@@ -311,11 +307,11 @@ To run the application on the emulator:
 
         If no applicable emulator instance exists, [create a new one](../../../tizen-studio/common-tools/emulator-manager.md#create).
 
-        ![Launching the emulator](media/emulator_instance_launch_wearable.png)
+        ![Launching the emulator](media/emulator_launch_w.png)
 
         The emulator is launched in its own window. You can also see the new emulator instance and its folder structure in the **Device Manager**.
 
-        ![Emulator](media/emulator_window_wearable.png)
+        ![Emulator](media/emulator_window_w.png)
 
 2. Generate a security profile.
 
@@ -333,7 +329,7 @@ To run the application on the emulator:
 
         If you have created multiple emulator instances, select the instance you want from the combo box in the toolbar before selecting to run the application. If you select an offline emulator, it is automatically launched when you select to run the application.
 
-        ![Selecting the emulator to use](media/app_run_multiple_emulators.png)
+        ![Selecting the emulator to use](media/app_run_multiple_emulators_w.png)
 
     2. Confirm that the application launches on the emulator.
 

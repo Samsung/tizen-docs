@@ -112,7 +112,7 @@ To view and modify the application configuration:
 
 2.  In the manifest editor, view and modify the configuration details using the various tabs:
 
-    ![Configuring the application](media/basic_app_config_n.png)
+    ![Configuring the application](media/basic_app_config_wn.png)
 
     -   **Overview**: Define general information, such as the package, label, and icon of the application.
 
@@ -264,7 +264,7 @@ To run the application on the emulator:
 
         If you have created multiple emulator instances, select the instance you want from the combo box in the toolbar before selecting to run the application. If you select an offline emulator, it is automatically launched when you select to run the application.
 
-        ![Selecting the emulator to use](media/app_run_multiple_emulators.png)
+        ![Selecting the emulator to use](media/app_run_multiple_emulators_w.png)
 
     2.  Confirm that the application launches on the emulator.
 
