@@ -65,7 +65,7 @@ To create the application project:
 
         The version depends on the platform version you have installed and with which you are developing the application.
 
-        ![Selecting the profile and version](media/create_project_wizard_version_wearable.png)
+        ![Selecting the profile and version](media/create_project_wizard_version_w.png)
 
     3.  Select the **Web Application** application type and click **Next**.
 
@@ -172,7 +172,7 @@ You can build the application in the following ways:
 
     **Figure: Manually building the application**
 
-    ![Manually building the application](media/build_manual_ww.png)
+    ![Manually building the application](media/build_manual_w.png)
 
     Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:
 
@@ -226,7 +226,7 @@ To run the application on the emulator:
 
         If you have created multiple emulator instances, select the instance you want from the combo box in the toolbar before selecting to run the application. If you select an offline emulator, it is automatically launched when you select to run the application.
 
-        ![Selecting the emulator to use](media/app_run_multiple_emulators.png)
+        ![Selecting the emulator to use](media/app_run_multiple_emulators_w.png)
 
     2.  Confirm that the application launches on the emulator.
 
@@ -495,7 +495,7 @@ To create a Web application and design its UI with TAU:
     To create a project with a **TAU Basic** template:
 
     1.  Go to **File \> New \> Tizen Project**.
-    2.  Select **Template \> Wearable v5.0 \> Web Application \> TAU Basic**.
+    2.  Select **Template \> Wearable v5.5 \> Web Application \> TAU Basic**.
 
         ![Creating a new project](media/simple_ui_tau_create_ww.png)
 
