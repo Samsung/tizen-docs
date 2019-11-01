@@ -63,7 +63,7 @@ The complication data can be set using the following APIs. These APIs can be use
 | `watchface_complication_provider_timeinfo_set_timezone_country()` | Sets the timezone country. For example, Korea |
 | `watchface_complication_provider_timeinfo_set_timezone_city()` | Sets the timezone city. For example, Seoul |
 | `watchface_complication_provider_timeinfo_destroy()` | Destroys the time information handle. |
-| `watchface_complication_provider_data_set_timeinfo()` | Sets the time inforamtion data. |
+| `watchface_complication_provider_data_set_timeinfo()` | Sets the time information data. |
 
 > **Note**
 >
@@ -123,7 +123,7 @@ The following are event types:
 |-------------|-------------|
 | `WATCHFACE_COMPLICATION_EVENT_NONE` | The complication is not tapped. |
 | `WATCHFACE_COMPLICATION_EVENT_TAP` | The complication is tapped. |
-| `WATCHFACE_COMPLICATION_EVENT_DOUBLE_TAP` | The compliation is double tapped. |
+| `WATCHFACE_COMPLICATION_EVENT_DOUBLE_TAP` | The complication is double tapped. |
 
 The complication provider provides followings:
 
@@ -218,7 +218,7 @@ And, the specific default value is mandatory depending on each support types:
 
 > **Note**
 >
-> `<default-hour>`, `<default-minute>`, `<default-second>` are deprecated since Tizen 5.5.
+> `<default-hour>`, `<default-minute>`, and `<default-second>` are deprecated since Tizen 5.5.
 > Instead, use `<default-timezone-id>`.
 > `<default-timezone-id>` is the value that declared in TZ database. For example, Asia/Seoul.
 > If the xml contains `<default-timezone-id>`, then `<default-hour>`, `<default-minute>`, and `<default-second>` are not necessary.

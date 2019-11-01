@@ -783,9 +783,9 @@
 ##### [Tracepoints](/application/native/guides/performance/tracepoints.md)
 
 #### Watchface Complication
-##### [Overview](/application/native/guides/compliations/overview.md)
-##### [Watchface Complication](/application/native/guides/compliations/watchface-complication.md)
-##### [Complication Provider](/application/native/guides/compliations/watchface-complication-provider.md)
+##### [Overview](/application/native/guides/complications/overview.md)
+##### [Watchface Complication](/application/native/guides/complications/watchface-complication.md)
+##### [Complication Provider](/application/native/guides/complications/watchface-complication-provider.md)
 
 #### [Migration Guide](/application/native/guides/migration-guide.md)
 
