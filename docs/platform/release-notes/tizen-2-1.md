@@ -1,8 +1,6 @@
 # Tizen 2.1
 
-Release Date: 18 May, 2013
-
-
+Release date: May 18, 2013
 
 The Tizen 2.1 Nectarine release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
 

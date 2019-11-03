@@ -1,15 +1,15 @@
 # Tizen 2.0
 
-Release Date: 18 Feb, 2013
-
-
+Release date: Feb. 18, 2013
 
 The Tizen 2.0 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
+
 
 ## Release Details
 
 - [Getting binaries and images](http://download.tizen.org/releases/2.0/tizen-2.0_20130219.4/)
 - [Detailed application information](https://wiki.tizen.org/wiki/Porting_Guide#Application)
+
 
 ## Release Notes
 
