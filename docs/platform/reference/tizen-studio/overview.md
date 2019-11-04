@@ -1,6 +1,5 @@
-![Tizen banner](media/tizen-connect-everything.jpg)
-
 # Welcome to Tizen Studio
+
 The Tizen Studio platform is based on a new version of Eclipse, so you can experience a stable, lightweight, and consistent user interface that is unique to the Tizen development environment. With Tizen Studio, you can select and install only those platforms and profiles you need.
 
 The development of Tizen Studio takes place in the [Tizen Studio repository](https://review.tizen.org/gerrit/#) and there are many ways you can participate in the project by, for example:
@@ -11,8 +10,8 @@ The development of Tizen Studio takes place in the [Tizen Studio repository](htt
 
 ## Try Tizen Studio
 
-- [About Tizen Studio](../../application/tizen-studio/index.md)
-- [Prerequisites](../../application/tizen-studio/setup/prerequisites.md)
+- [About Tizen Studio](../../../application/tizen-studio/index.md)
+- [Prerequisites](../../../application/tizen-studio/setup/prerequisites.md)
 - [Download Tizen Studio](https://developer.tizen.org/development/tizen-studio/download)
 
 ## Developer Guides
@@ -35,8 +34,8 @@ If you have found a bug, have any questions, or want to contribute, feel free to
 
 - [Tizen Studio Download](https://developer.tizen.org/development/tizen-studio/download)
 - [OpenSource Repository](https://review.tizen.org/gerrit/#/)
-- [Tool Guide](../../application/tizen-studio/native-tools/index.md)
-- [Get Started for Native Application](../../application/native/get-started/overview.md)
-- [Get Started for Web Application](../../application/web/get-started/overview.md)
-- [Release Notes](../../application/tizen-studio/release-notes/release-notes.md)
+- [Tool Guide](../../../application/tizen-studio/native-tools/index.md)
+- [Get Started for Native Application](../../../application/native/get-started/overview.md)
+- [Get Started for Web Application](../../../application/web/get-started/overview.md)
+- [Release Notes](../../../application/tizen-studio/release-notes/release-notes.md)
 
