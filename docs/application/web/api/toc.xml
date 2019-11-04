@@ -299,7 +299,7 @@
 			</topic>
 
 			<!-- 5.5 mobile native -->
-			<topic label="5.0 Native Application" href="../org.tizen.native.mobile.apireference/index.html" invisible-node="true">
+			<topic label="5.5 Native Application" href="../org.tizen.native.mobile.apireference/index.html" invisible-node="true">
 			<topic label="Mobile Native" href="../org.tizen.native.mobile.apireference/modules.html" invisible-node="true">
 				<topic label="The Basics of Tizen Native API Reference" href="index.html"/>
 				<topic label="Native API Reference" href="modules.html" invisible-node="true">
