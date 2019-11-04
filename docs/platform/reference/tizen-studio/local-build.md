@@ -72,4 +72,4 @@ To build the code locally for testing:
 
 6. Install the package with the Package Manager.
 
-   For more information on the Package Manager, see [Configuring the Extension SDK Repository](../../application/tizen-studio/setup/advanced-configuration.md#configuring-the-extension-sdk-repository).
+   For more information on the Package Manager, see [Configuring the Extension SDK Repository](../../../application/tizen-studio/setup/advanced-configuration.md#configuring-the-extension-sdk-repository).

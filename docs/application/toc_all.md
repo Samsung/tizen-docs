@@ -1052,7 +1052,7 @@
 #### [PO File Localization Editor](/application/tizen-studio/native-tools/po-file-editor.md)
 
 ### Debug Your App
-#### [Overview](/application/tizen-studio/native-tools/debuggin.md)
+#### [Overview](/application/tizen-studio/native-tools/debugging.md)
 #### [Log View](/application/tizen-studio/common-tools/log-view.md)
 #### Dynamic Analyzer
 ##### [Overview](/application/tizen-studio/common-tools/dynamic-analyzer/overview.md)
@@ -1116,7 +1116,7 @@
 #### [Web Localization](/application/tizen-studio/web-tools/web-localization.md)
 
 ### Debug Your App
-#### [Overview](/application/tizen-studio/web-tools/debuggin.md)
+#### [Overview](/application/tizen-studio/web-tools/debugging.md)
 #### [Log View](/application/tizen-studio/common-tools/log-view.md)
 
 ### Run and Test Your App
