@@ -47,6 +47,7 @@ Figure:Privilege
 <ul>
 <li>Mobile
   <ul>
+    <li><a href="mobile/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="mobile/5.0/index.html" target="_blank">5.0</a></li>
     <li><a href="mobile/4.0/index.html" target="_blank">4.0</a></li>
     <li><a href="mobile/3.0/index.html" target="_blank">3.0</a></li>
@@ -58,6 +59,7 @@ Figure:Privilege
 
 <li>Wearable
   <ul>
+    <li><a href="wearable/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="wearable/5.0/index.html" target="_blank">5.0</a></li>
     <li><a href="wearable/4.0/index.html" target="_blank">4.0</a></li>
     <li><a href="wearable/3.0/index.html" target="_blank">3.0</a></li>
