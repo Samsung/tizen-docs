@@ -1,11 +1,26 @@
-# Tizen 5.5 Public M2 Release Notes
+# Tizen 5.5 Public M2
 
-Release Date: Oct. 30, 2019
+Release date: Oct. 30, 2019
+
+The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web and Native API set.
 
 
-## System (Kernel and System framework)
+## Release Details
 
-### New and changed features
+- [Getting source code](http://review.tizen.org/git/) (Tizen 5.5 M2 source codes are under **tizen_5.5** branch.)
+
+- Getting binaries and images
+  - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20191011.2/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20191011.2/)
+  - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20191024.2/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20191024.2/)
+
+- [How to flash to a device](../developing/flashing.md)
+
+
+## Release Notes
+
+### System (Kernel and System framework)
+
+#### New and changed features
 
 - New API set and features
   - Fast boot
@@ -33,9 +48,9 @@ Release Date: Oct. 30, 2019
     - Service offloading has been extended to execute service via multiple platforms such as Tizen, Android, and container.
 
 
-## System (OS Upgrade and Reliability)
+### System (OS Upgrade and Reliability)
 
-### New and changed features
+#### New and changed features
 
 - OS upgrade
   - OS upgrade from Tizen 4.0 to Tizen 5.5 has been supported.
@@ -46,15 +61,15 @@ Release Date: Oct. 30, 2019
     - According to the pre-determined maximum and average limits configuration, actions for system stability can be executed. The actions for system stability are live-coredump, notification, process termination, and so on.
     - Flexible configuration allows applying limits based on various process characteristics.
 
-### Known Issues
+#### Known Issues
 
 - OS upgrade
   - OS upgrade from Tizen 5.0 to Tizen 5.5 is not yet supported.
 
 
-## System (Base)
+### System (Base)
 
-### New and changed features
+#### New and changed features
 
 - Open source
   - expat 
@@ -107,7 +122,7 @@ Release Date: Oct. 30, 2019
   - system-settings key value has been added.
     - SYSTEM_SETTINGS_KEY_ROTARY_EVENT_ENABLED
 
-### Fixes
+#### Fixes
 
 - CVE patches
   - glib
@@ -121,9 +136,9 @@ Release Date: Oct. 30, 2019
     - CVE-2019-13118
 
 
-## Application framework
+### Application framework
 
-### New and changed features
+#### New and changed features
 
 - New component-based application API set
   - Application model for UI components and service components to operate in one application process has been provided.
@@ -133,9 +148,9 @@ Release Date: Oct. 30, 2019
   - API to set timezone has been added.
 
 
-## Window System
+### Window System
 
-### New and changed features
+#### New and changed features
 
 - Wayland
   - The open source wayland-protocols has been upgraded to version 1.17.
@@ -196,7 +211,7 @@ Release Date: Oct. 30, 2019
       - EFL_UTIL_INPUT_POINTER_WHEEL_VERT
       - EFL_UTIL_INPUT_POINTER_WHEEL_HORZ
 
-### Fixes
+#### Fixes
 
 - TBM
   - Code defects detected by the static analysis tool have been fixed.
@@ -211,9 +226,9 @@ Release Date: Oct. 30, 2019
   - Issue in which the pointer leave event occurs during touch down has been fixed.
 
 
-## Graphics Engine
+### Graphics Engine
 
-### New and changed features
+#### New and changed features
 
 - DALi (3D UI Toolkit)
   - Actor, Window, and Renderer
@@ -241,7 +256,7 @@ Release Date: Oct. 30, 2019
   - API set for layouts has been added.
   - Dispose class has been refactored to reduce code duplication.
 
-### Fixes
+#### Fixes
 
 - DALi
   - Actor, Window, and Renderer
@@ -258,9 +273,9 @@ Release Date: Oct. 30, 2019
   - Many bugs for views have been fixed.
 
 
-## UI framework
+### UI framework
 
-### New and changed features
+#### New and changed features
 
 - EFL
   - Version 1.22 has been upgraded to version 1.23.
@@ -295,18 +310,18 @@ Release Date: Oct. 30, 2019
 - Sticker framework
   - A sticker framework that provides sticker information to the application and retrieves sticker information from the application has been added.
 
-### Fixes
+#### Fixes
 
 - Memory consumption of rlottie has been improved.
 
-### Known Issues
+#### Known Issues
 
 - Universal switch application AT-client has been tested only in the mobile profile.
 
 
-## Multimedia framework
+### Multimedia framework
 
-### New and changed features
+#### New and changed features
 
 - Sound Manager
   - Audio ducking API set has been added.
@@ -366,7 +381,7 @@ Release Date: Oct. 30, 2019
   - Resource-manager
     - New resource for audio offload has been added.
 
-### Fixes
+#### Fixes
 
 - C# API
   - AudioIO
@@ -406,15 +421,15 @@ Release Date: Oct. 30, 2019
     - CVE-2017-8363
     - CVE-2017-8365
 
-### Known Issues
+#### Known Issues
 
 - Media Vision
   - Model data for the inference API set has not been provided. You can use model data in the open model zoo repository.
 
 
-## Network and Connectivity
+### Network and Connectivity
 
-### New and changed features
+#### New and changed features
 
 - User awareness framework
   - Combined condition of user detection for each service category has been introduced.
@@ -443,16 +458,16 @@ Release Date: Oct. 30, 2019
   - Connection
     - API to get an internet connection state has been added.
 
-### Fixes
+#### Fixes
 
 - Bluetooth
   - Many issues of BT/BLE features for RPI3 have been resolved.
   - The pairing logic of the headless profile was modified to support BR/EDR and LE pairing.
 
 
-## Security
+### Security
 
-### New and changed features
+#### New and changed features
 
 - Cynara
   - The cynara policy recovery mechanism has been added.
@@ -475,9 +490,9 @@ Release Date: Oct. 30, 2019
   - Version 1.0.2s has been upgraded to version 1.1.1d.
 
 
-## Service framework
+### Service framework
 
-### New and changed features
+#### New and changed features
 
 - Battery-Monitor framework
   - Battery-Monitor framework has been developed to monitor per resource per application battery consumption.
@@ -499,15 +514,15 @@ Release Date: Oct. 30, 2019
       - 4399 : State/Local WEA test for a additional languages.
     - Public safety alerts for additional languages have been added to message service.
 
-### Fixes
+#### Fixes
 
 - Maps
     - Dependency on deprecated packages has been removed.
 
 
-## Web framework
+### Web framework
 
-### New and changed features
+#### New and changed features
 
 - Tizen Web Engine
   - Chromium open source version has been changed.
@@ -525,9 +540,9 @@ Release Date: Oct. 30, 2019
   - WYSIWYG UI build has been added for easy Web application development.
 
 
-## Lightweight Web Solution
+### Lightweight Web Solution
 
-### New and changed features
+#### New and changed features
 
 - Rendering Engine
   - Canvas elements and their properties have been added.
@@ -553,7 +568,7 @@ Release Date: Oct. 30, 2019
     - Lexer objects have been allocated on stack memory rather than heap memory.
     - The initialization process of an interpreter has been simplified.
 
-### Fixes
+#### Fixes
 
 - Bug fixes
   - Layout bugs have been fixed.
@@ -561,9 +576,9 @@ Release Date: Oct. 30, 2019
   - Crashes have been fixed.
 
 
-## Tizen .NET
+### Tizen .NET
 
-### New and changed features
+#### New and changed features
 
 - .NET Core (Runtime)
   - .NETCore has been upgraded from 3.0.0-preview2 to 3.0.0.
@@ -592,22 +607,22 @@ Release Date: Oct. 30, 2019
   - New SystemSettings API set to get rotary event enabled has been added.
   - New VoiceControlManager API set has been added.
 
-### Known Issues
+#### Known Issues
 
 - Xamarin.Forms
   - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).
 
 
-## Toolchain
+### Toolchain
 
-### New and changed features
+#### New and changed features
 
 - Toolchain watermarking (annobin) function has been added.
 - AddressSanitizer shadow scaling option has been applied to reduce runtime overhead on RAM.
 - libasansi library has been introduced to support dotnet ASan runtime.
 - gcov-force-options package has been added. This package has scripts to enable automatic package coverage instrumentation.
 
-### Fixes
+#### Fixes
 
 - GCC
   - Bugfix on Internal Compiler Error (ICE) has been back-ported from upstream - bug #83623 #85496.
@@ -619,9 +634,9 @@ Release Date: Oct. 30, 2019
   - New localedata(tl_PH) has been added (bug [#15260](https://sourceware.org/bugzilla/show_bug.cgi?id=15260)).
 
 
-## Machine Learning
+### Machine Learning
 
-### New and changed features
+#### New and changed features
 
 - Inference API set
   - Neural network pipeline API set has been added. This API set allows you to construct and execute data stream pipelines with neural networks, tensor operators, input nodes, and multimedia filters.
@@ -636,7 +651,7 @@ Release Date: Oct. 30, 2019
   - [Performance optimizations] In supporting complex acceleration that inferences one model by using a combination of CPU and GPU, new parallel scheduler provides 30% better performance than single acceleration.
 - TensorFlow Lite has been updated from version 1.09 to version 1.13.
 
-### Known Issues
+#### Known Issues
 
 - Neural network single API set
   - With a given handle, the dimensions of input tensors should be identical. If the dimensions are changed, a handle should be closed and re-opened.

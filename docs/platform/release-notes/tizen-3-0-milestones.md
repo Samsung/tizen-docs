@@ -1,6 +1,6 @@
 # Tizen 3.0 Milestones
 
-Release Date: Sep 17, 2015
+Release date: Sep. 17, 2015
 
 The Tizen 3.0 first milestone release for TV and mobile profiles provides the Tizen kernel, device drivers, middleware subsystems, and Web/native APIs necessary to develop future Tizen-compliant solutions.
 

@@ -1,8 +1,9 @@
 # Tizen 3.0 Public M2
 
-Release Date: Jan 18, 2017
+Release date: Jan. 18, 2017
 
 Tizen 3.0 adopts various new features, such as high-performance graphics, the latest Web technology, improved security, and multi-user support.
+
 
 ## Release Details
 
