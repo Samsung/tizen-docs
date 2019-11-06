@@ -1,8 +1,8 @@
 # Create Your First Tizen .NET NUI Application
 The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Natural User Interface (NUI) application development process. With the instructions, you can create and run a basic NUI application, which displays some text on the screen with no user interaction.
 
-   > **Dependencies**
-   > - Tizen 4.0 and Higher
+   > **Note**
+   > .NET NUI applications are supported since Tizen 4.0
 
 1. Before you get started with developing Tizen applications, set up the [development environment](../../../vstools/install.md).
 
@@ -17,22 +17,12 @@ The Tizen .NET framework allows you to easily and efficiently create application
 4. [Building and Running NUI Application](#building-and-running-nui-application).
   This step shows how you can build and run the application on the emulator or a real target device.
 
-## Prerequisites
-- Visual Studio 2017
-- [Visual Studio tools for Tizen](../../../vstools/install.md)
-
-## Setting Up NUI Development Environment
-To create a Tizen NUI app template, follow these steps:
-1. [Creating a Project](#creating-a-project)
-2. [Enhancing Your Application](#enhancing-your-application)
-3. [Building and Running NUI Application](#building-and-running-nui-application)
-
 ## Creating a Project
 The following example shows you how to create and configure a basic NUI application project in Visual Studio. An application project contains all the files that make up an application.
 To create a Tizen NUI app, proceed as follows:
 
 1.  Launch Visual Studio.
-2.  In the Visual Studio menu, select File > New > Project.
+2.  In the Visual Studio menu, select **File** > **New** > **Project**.
 3.  In **New project** menu, select **Tizen** > **Blank App (Tizen.NUI)**. Click **Next**:
 
     ![nui_setting_image_1](./media/tizen_project_wizard_capture_template1_1.png)
@@ -145,32 +135,24 @@ You can add your code in **SampleNUIApp.cs** file:
     }
     ```
 
-    > **Note**  
-    > To invoke the `Created` event of the [Tizen.Applications.CoreApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class, you must call the `base.OnCreate()` method inside the override.
-
 5.  Within the `Initialize()` method, set the text label properties:
 
     1.  Create the text label object from the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) class:
-
         ```
         TextLabel text = new TextLabel("Hello Tizen NUI World");
-
         ```
 
     2.  Align the text horizontally to the center of the available area:
-
         ```
         text.HorizontalAlignment = HorizontalAlignment.Center;
         ```
 
     3.  To illustrate the label width, set the label text color:
-
         ```
         text.TextColor = Color.Blue;
         ```
 
     4.  Define the text size in points:
-
         ```
         text.PointSize = 12.0f;
         ```
@@ -223,7 +205,6 @@ You can add your code in **SampleNUIApp.cs** file:
             var app = new Program();
             app.Run(args);
         }
-
         ```
 
     2.  Start the application main loop.
