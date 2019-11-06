@@ -84,7 +84,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/contact.read` | public | Contacts | The application can read user's profile, contacts, and contact history. Contact history can include social network activity. |
 | `http://tizen.org/privilege/contact.write` | public | Contacts | The application can create, update, and delete user's profile, contacts, and any contact history that is related to this application. Contact history can include social network activity. |
 | `http://tizen.org/privilege/content.write` | public |  | The application can change media information. This information can be used by other applications. |
-| `http://tizen.org/privilege/d2d.datasharing` | public |  | The application can share data with other applications. |
+| `http://tizen.org/privilege/d2d.datasharing` | public |  | The application can share data with other devices. |
 | `http://tizen.org/privilege/d2d.remotelaunch` | public |  | The application can be opened or used by applications on other devices. |
 | `http://tizen.org/privilege/datasharing` | public |  | The application can share data with other applications. |
 | `http://tizen.org/privilege/devicecertificate` | platform |  | The application can use a device certificate and its private key to communicate securely with a remote server. |
