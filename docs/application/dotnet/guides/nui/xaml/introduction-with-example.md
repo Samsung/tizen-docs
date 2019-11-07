@@ -4,13 +4,12 @@ You can use XAML to define the layout of your user interface. To define the layo
 2. Load the XAML file
 3. Put the XAML file in the appropriate file directory
 
-
 ## Create XAML
 You can use XAML to easily implement the layout shown in the following figure:
 
 ![AmbientPage](./Pictures/AmbientPage.PNG)
 
-Using XAML can implement the above layout easily. Following is the XAML code:
+Following is the XAML code:
 
 ``` xaml
 <ContentPage x:Class="Tizen.NUI.Examples.AmbientPage"
@@ -72,13 +71,14 @@ namespace Tizen.NUI.Examples
     }
 }
 ```
-For more information, see [XAML Support for Tizen.NUI](./getting-started-with-nui-xaml.md)
+For more information, see [XAML Support for Tizen.NUI.](./getting-started-with-nui-xaml.md)
 
 
 ## Load XAML
 After creating the layout, you must load the XAML file in your app code.
 First, you need to define a class named `AmbientPage` in the `Tizen.NUI.Examples` namespace as shown in the following code:
 > **Note**
+>
 > The class name must match with `x:class` that you have defined in the XAML file.
 
 ``` csharp
@@ -135,7 +135,7 @@ For example, if your application runs on the **1920x1080** target and **720X1280
 Therefore, when your application runs on the **1920x1080** target, it will load the XAML files from the **res/layout/1920x1080/** folder and when your application runs on the **720X1280** target, it will load the XAML files from the **res/layout/720X1280/** folder.
 If you are not considering different window sizes, create the **res/layout/** folder, and put all your XAML files in this folder.
 
-For more information, see [XAML Support for Tizen.NUI](./getting-started-with-nui-xaml.md)
+For more information, see [XAML Support for Tizen.NUI.](./getting-started-with-nui-xaml.md)
 
 ## Benefits of XAML
 - You can update the UI without compiling and deploying the application.

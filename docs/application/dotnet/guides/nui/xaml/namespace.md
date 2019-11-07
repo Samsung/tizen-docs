@@ -8,6 +8,7 @@ To use Tizen.NUI, you must define the default namespace as shown in the followin
 xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
 ```
 > **Note**
+>
 > It must be the root element of the XAML file.
 
 ## Declaring Custom Namespaces for Types

@@ -46,6 +46,7 @@ The following example shows two triggers that changes `PositionX` of the `ImageV
 - `Setter`: A collection of Setter elements can be added when the trigger condition is met. You must specify the `Property` and set `Value`.
 
 > **Note**
+>
 > The Property for Trigger and Setter must not be same.
 
 For more information, see https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers#targetText=Triggers%20allow%20you%20to%20express,on%20events%20or%20property%20changes.&targetText=Property%20Trigger%20%2D%20occurs%20when%20a,the%20properties%20of%20another%20control

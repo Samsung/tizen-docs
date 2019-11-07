@@ -20,7 +20,7 @@ The format of transition in XAML is:
 </Transition>
 ```
 
-The ID for transition is the Name. Every transition has an array of behavior. Each behavior defines a target. You can bind a behavior into one animatable object in the **.cs** code.
+The ID for transition is `Name`. Every transition has an array of behavior. Each behavior defines a target. You can bind a behavior into one animatable object in the **.cs** code.
 
 The sample of the **.cs** code is:
 
@@ -47,7 +47,7 @@ if (null != button)
 }
 ```
 
-To load transition, add the following code in the XAML file of the page.
+To load transition, add the following code in the XAML file of the page:
 
 ``` xaml
 <ContentPage.TransitionNames>
@@ -59,6 +59,6 @@ To load transition, add the following code in the XAML file of the page.
 ```
 
 In the preceding example, `OpacityAndPositionAnimation` and `OrientationAnimation` are the transition names.
-The XAML file shall be put in folder of **res/Animation**
+The XAML file must be put in the **res/Animation** folder.
 
 ![PathForTransition](./Pictures/PathForTransition.PNG)

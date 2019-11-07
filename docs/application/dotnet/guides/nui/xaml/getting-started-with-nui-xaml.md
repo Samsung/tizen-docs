@@ -23,7 +23,7 @@ After creating the **XamlSamples** solution, create a XAML file. In the followin
 
 ![XAMLFilePath](./Pictures/XAMLFilePath.PNG)
 
-If your app runs on a target having different window sizes, such as 720x1080, 480x800, or both then put the XAML file into the corresponding folder. You can also create these folders like **/res/layout/720x1080/** or **/res/layout/480x800/**.
+If your app runs on a target having different window sizes, such as 720x1080, 480x800, or both then put the XAML file into the corresponding folder. You can also create these folders, for example, **/res/layout/720x1080/** or **/res/layout/480x800/**.
 To add any control you want, edit the XamlSamplesPage.xaml file.
 
 ![XAMLFile](./Pictures/XAMLFile.PNG)
@@ -32,7 +32,7 @@ In this sample, a simple `TextLabel` is added, and the `Text`, `Position2D`, and
 
 ## Creating C# Code-Behind File
 There is a C# code-behind file associated with the XAML file. In this sample XAML file, the `x:Class` attribute specifies a fully qualified class name, the `XamlSamplesPage` class in the `XamlSamples` namespace. This means that this XAML file of **XamlSamplesPage.xaml.cs** defines a new class named `XamlSamplesPage` in the `XamlSamples` namespace that is derived from `ContentPage`.
-For this sample, we define that `XamlSamplesPage` class in **XamlSamplesPage.xaml.cs** file.
+For this sample, we define the `XamlSamplesPage` class in the **XamlSamplesPage.xaml.cs** file.
 
 ![XAMLCodeBehindFilePath](./Pictures/XAMLCodeBehindFilePath.PNG)
 
@@ -70,7 +70,8 @@ namespace XamlSamples
 ```
 
 > **Note**
-> The name of the XAML file should be same as the class name.
+>
+> The name of the XAML file must be same as the class name.
 
 ## Load XAML
 After creating the XAML and the C# code-behind files, you can load and show the visual contents that you defined in the XAML file:

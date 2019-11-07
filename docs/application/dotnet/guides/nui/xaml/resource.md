@@ -6,7 +6,7 @@ XAML resources are definitions of objects that can be shared and reused througho
 
 ## Creating and Consuming ResourceDictionary
 
-Each resource has a key that is specified using `x:Key` attribute, which becomes a dictionary key in the `ResourceDictionary`.
+Each resource has a key that is specified using the `x:Key` attribute, which becomes a dictionary key in the `ResourceDictionary`.
 The following **TestStaticDynamicResource** example explains the usage of `StaticResource` and `DynamicResource`:
 
 ``` xaml

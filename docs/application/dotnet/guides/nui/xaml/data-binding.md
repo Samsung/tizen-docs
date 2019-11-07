@@ -1,14 +1,14 @@
 # Data Binding
-Data bindings allow the properties of two objects to be linked together. Therefore, a change of one property causes the corresponding change of the other property.
+Data bindings allow the properties of two objects to be linked together. Therefore, a change in one property causes the corresponding change in the other property that is linked.
 There are two objects, the source and the target. The target property must be a bindable property, which means that the target object must derive from `BindableObject`. A property of `TextLabel` such as Text is associated with the bindable property `TextProperty`.
 
 ## View-to-View Bindings
-You can define data bindings to link properties of two views on the same page. You can set the data binding in XAML using the following code:
+You can define data bindings to link properties of two views on the same page. You can set the data binding in XAML using the following:
 
 - Set the `BindingContext` property of the target element to an `x:Reference` markup extension that references the source element.
 - Set the target property to a `Binding` markup extension that references the source property.
 
-Following is a XAML file that contains a `Slider` and two `TextLabel` views. One of the `TextLabel` view is rotated by the `Slider` value and the other displays the `Slider` value.
+Following is a XAML file that contains a `Slider` and two `TextLabel` views. One of the `TextLabel` view is rotated by the `Slider` value and the other displays the `Slider` value:
 
 ``` xaml
 <TextLabel Text="ROTATION" BindingContext="{x:Reference Name=slider}" Position2D="50,50" Rotation="{Binding Path=Value}" Size2D="300,50" HorizontalAlignment="Center" VerticalAlignment="Center" PivotPoint="Center" />
