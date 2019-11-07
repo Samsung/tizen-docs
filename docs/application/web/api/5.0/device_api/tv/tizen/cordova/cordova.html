@@ -99,7 +99,8 @@
 <div class="brief">
  Basic success callback, no parameters.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface SuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject]
+  interface SuccessCallback {
     void onsuccess();
   };</pre>
 <div class="methods">
@@ -125,7 +126,8 @@
 <div class="brief">
  Basic error callback.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject]
+  interface ErrorCallback {
     void onerror(<a href="#DOMException">DOMException</a> error);
   };</pre>
 <div class="methods">
@@ -201,16 +203,18 @@
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Cordova {
-  Window implements <a href="#CordovaManagerObject">CordovaManagerObject</a>;
   [NoInterfaceObject] interface CordovaManagerObject {
     readonly attribute <a href="#Cordova">Cordova</a> cordova;
   };
+  Window implements <a href="#CordovaManagerObject">CordovaManagerObject</a>;
   [NoInterfaceObject] interface Cordova {
   };
-  [Callback=FunctionOnly, NoInterfaceObject] interface SuccessCallback {
+  [Callback=FunctionOnly,NoInterfaceObject]
+  interface SuccessCallback {
     void onsuccess();
   };
-  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
+  [Callback=FunctionOnly,NoInterfaceObject]
+  interface ErrorCallback {
     void onerror(<a href="#DOMException">DOMException</a> error);
   };
   interface DOMException {

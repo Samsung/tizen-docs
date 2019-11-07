@@ -1043,10 +1043,10 @@ To guarantee that the FM radio application runs on a device with FM radio, decla
     "RADIO_INTERRUPTED_BY_NOTIFICATION", "RADIO_INTERRUPTED_BY_EMERGENCY", "RADIO_INTERRUPTED_BY_VOICE_INFORMATION",
     "RADIO_INTERRUPTED_BY_VOICE_RECOGNITION", "RADIO_INTERRUPTED_BY_RINGTONE", "RADIO_INTERRUPTED_BY_VOIP", "RADIO_INTERRUPTED_BY_CALL",
     "RADIO_INTERRUPTED_BY_MEDIA_EXTERNAL_ONLY" };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FMRadioObject">FMRadioObject</a>;
   [NoInterfaceObject] interface FMRadioObject {
     readonly attribute <a href="#FMRadioManager">FMRadioManager</a> fmradio;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FMRadioObject">FMRadioObject</a>;
   [NoInterfaceObject] interface FMRadioManager {
     readonly attribute double frequency;
     readonly attribute double frequencyUpperBound;

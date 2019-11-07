@@ -210,7 +210,8 @@ tizen.badge.setBadgeCount(appid, 3);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:</span>
+<span class="return">long:
+                  </span>
  Count of the badge.
               </ul>
 </div>
@@ -377,7 +378,8 @@ tizen.application.getAppsInfo(onListInstalledApps);
 <div class="brief">
  The BadgeChangeCallback interface specifies a set of methods that are invoked every time a badge number change occurs.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface BadgeChangeCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
+  interface BadgeChangeCallback {
     void onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> appId, long count);
   };</pre>
 <p><span class="version">Since: </span>
@@ -434,11 +436,11 @@ tizen.badge.addChangeListener([appId, targetAppId], watcher);
 </div>
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
-<pre class="webidl prettyprint">module Badge {
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BadgeManagerObject">BadgeManagerObject</a>;
+<pre class="webidl prettyprint">module Badge{
   [NoInterfaceObject] interface BadgeManagerObject {
     readonly attribute <a href="#BadgeManager">BadgeManager</a> badge;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BadgeManagerObject">BadgeManagerObject</a>;
   [NoInterfaceObject] interface BadgeManager {
     readonly attribute long maxBadgeCount;
     void setBadgeCount(<a href="application.html#ApplicationId">ApplicationId</a> appId, long count) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -446,7 +448,8 @@ tizen.badge.addChangeListener([appId, targetAppId], watcher);
     void addChangeListener(<a href="application.html#ApplicationId">ApplicationId</a>[] appIdList, <a href="#BadgeChangeCallback">BadgeChangeCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeListener(<a href="application.html#ApplicationId">ApplicationId</a>[] appIdList) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  [Callback=FunctionOnly, NoInterfaceObject] interface BadgeChangeCallback {
+  [Callback=FunctionOnly, NoInterfaceObject]
+  interface BadgeChangeCallback {
     void onsuccess(<a href="application.html#ApplicationId">ApplicationId</a> appId, long count);
   };
 };</pre>

@@ -8,6 +8,5 @@ var group__dali__core =
     [ "Math", "group__dali__core__math.html", null ],
     [ "Object", "group__dali__core__object.html", null ],
     [ "Rendering & Effect", "group__dali__core__rendering__effects.html", null ],
-    [ "Signal", "group__dali__core__signals.html", null ],
-    [ "Size Negotiation", "group__dali__core__size__negotiation.html", null ]
+    [ "Signal", "group__dali__core__signals.html", null ]
 ];

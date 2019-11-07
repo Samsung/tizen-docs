@@ -17,25 +17,11 @@ The main features of the Storage API include:
 
 ## Prerequisites
 
-To enable your application to use the storage functionality:
+To use the functions and data types of the Storage API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications), include the `<storage.h>` header file in your application:
 
-1. To use the functions and data types of the Storage API (in [mobile](../../api/mobile/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__SYSTEM__STORAGE__MODULE.html) applications), include the `<storage.h>` header file in your application:
-
-   ```
-   #include <storage.h>
-   ```
-
-2. To access the files or directories of the device storage, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
-   ```
-   <privileges>
-       <!--For the internal storage-->
-       <privilege>http://tizen.org/privilege/mediastorage</privilege>
-       <!--For the external storage-->
-       <privilege>http://tizen.org/privilege/externalstorage</privilege>
-   </privileges>
-   ```
-
-   For more information, see [Privacy-related Permissions](../security/privacy-related-permissions.md).
+```
+#include <storage.h>
+```
 
 <a name="memory"></a>
 ## Retrieving Memory Sizes

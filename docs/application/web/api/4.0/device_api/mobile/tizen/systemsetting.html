@@ -407,11 +407,11 @@ tizen.systemsetting.getProperty("HOME_SCREEN", getPropertySuccessCallback, error
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SystemSetting {
-  enum SystemSettingType { "HOME_SCREEN", "LOCK_SCREEN", "INCOMING_CALL", "NOTIFICATION_EMAIL" };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemSettingObject">SystemSettingObject</a>;
   [NoInterfaceObject] interface SystemSettingObject {
     readonly attribute <a href="#SystemSettingManager">SystemSettingManager</a> systemsetting;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemSettingObject">SystemSettingObject</a>;
+  enum SystemSettingType { "HOME_SCREEN", "LOCK_SCREEN", "INCOMING_CALL", "NOTIFICATION_EMAIL" };
   [NoInterfaceObject] interface SystemSettingManager {
     void setProperty(<a href="#SystemSettingType">SystemSettingType</a> type, DOMString value, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

@@ -363,7 +363,8 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:</span>
+<span class="return">boolean:
+                  </span>
  <var>true</var> if the pattern is supported, <var>false</var> otherwise.
               </ul>
 </div>
@@ -416,13 +417,14 @@ To guarantee the running of the application on a device which supports feedback 
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Feedback {
   enum FeedbackType { "TYPE_SOUND", "TYPE_VIBRATION" };
-  enum FeedbackPattern { "TAP", "SIP", "KEY0", "KEY1", "KEY2", "KEY3", "KEY4", "KEY5", "KEY6", "KEY7", "KEY8", "KEY9",
-    "KEY_STAR", "KEY_SHARP", "KEY_BACK", "HOLD", "HW_TAP", "HW_HOLD", "MESSAGE", "EMAIL", "WAKEUP", "SCHEDULE", "TIMER",
-    "GENERAL", "POWERON", "POWEROFF", "CHARGERCONN", "CHARGING_ERROR", "FULLCHARGED", "LOWBATT", "LOCK", "UNLOCK", "VIBRATION_ON", "SILENT_OFF", "BT_CONNECTED", "BT_DISCONNECTED", "LIST_REORDER", "LIST_SLIDER", "VOLUME_KEY" };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FeedbackManagerObject">FeedbackManagerObject</a>;
+  enum FeedbackPattern { "TAP", "SIP", "KEY0", "KEY1", "KEY2", "KEY3", "KEY4", "KEY5", "KEY6", "KEY7", "KEY8", "KEY9", "KEY_STAR",
+    "KEY_SHARP", "KEY_BACK", "HOLD", "HW_TAP", "HW_HOLD", "MESSAGE", "EMAIL", "WAKEUP", "SCHEDULE", "TIMER", "GENERAL", "POWERON",
+    "POWEROFF", "CHARGERCONN", "CHARGING_ERROR", "FULLCHARGED", "LOWBATT", "LOCK", "UNLOCK", "VIBRATION_ON", "SILENT_OFF",
+    "BT_CONNECTED", "BT_DISCONNECTED", "LIST_REORDER", "LIST_SLIDER", "VOLUME_KEY" };
   [NoInterfaceObject] interface FeedbackManagerObject {
     readonly attribute <a href="#FeedbackManager">FeedbackManager</a> feedback;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FeedbackManagerObject">FeedbackManagerObject</a>;
   [NoInterfaceObject] interface FeedbackManager {
     void play(<a href="#FeedbackPattern">FeedbackPattern</a> pattern, optional <a href="#FeedbackType">FeedbackType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stop() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

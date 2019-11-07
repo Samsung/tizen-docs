@@ -154,7 +154,7 @@ This API offers methods for network bearer selection.
 <div class="brief">
  Requests a specific network connection.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback,
+<div class="synopsis"><pre class="signature prettyprint">void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback, 
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -262,7 +262,7 @@ tizen.networkbearerselection.requestRouteToHost("CELLULAR", "www.tizen.org", sta
 <div class="brief">
  Releases a specific network connection.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void releaseRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
+<div class="synopsis"><pre class="signature prettyprint">void releaseRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, 
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -428,10 +428,10 @@ To guarantee that the NBS application runs on a device with telephony feature, d
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module NetworkBearerSelection {
   enum NetworkType { "CELLULAR", "UNKNOWN" };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NetworkBearerSelectionObject">NetworkBearerSelectionObject</a>;
   [NoInterfaceObject] interface NetworkBearerSelectionObject {
     readonly attribute <a href="#NetworkBearerSelection">NetworkBearerSelection</a> networkbearerselection;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NetworkBearerSelectionObject">NetworkBearerSelectionObject</a>;
   [NoInterfaceObject] interface NetworkBearerSelection {
     void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

@@ -21,15 +21,7 @@ The main features of the Phonenumber utils API include:
 
 To enable your application to use the phonenumber utils functionality:
 
-1. To use the Phonenumber utils API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
-
-   ```
-   <privileges>
-      <privilege>http://tizen.org/privilege/telephony</privilege>
-   </privileges>
-   ```
-
-2. To use the functions and data types of the Phonenumber utils API, include the `<phone_number.h>` header file in your application:
+1. To use the functions and data types of the Phonenumber utils API (in [mobile](../../api/mobile/latest/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__TELEPHONY__PHONE__NUMBER__UTILS__MODULE.html) applications), include the `<phone_number.h>` header file in your application:
 
    ```
    #include <phone_number.h>
@@ -37,7 +29,7 @@ To enable your application to use the phonenumber utils functionality:
 
    To ensure that a Phonenumber utils function has been executed properly, make sure that the return is equal to `PHONE_NUMBER_ERROR_NONE`.
 
-3. To connect to the Phonenumber utils service and to access the service features, use `phone_number_connect()`:
+2. To connect to the phonenumber utils service to access the service features, use the `phone_number_connect()` function:
 
    ```
    int error_code;

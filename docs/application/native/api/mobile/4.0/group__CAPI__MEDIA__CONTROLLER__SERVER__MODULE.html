@@ -178,7 +178,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers items to the playlist.  <a href="#ga077935f17327e54ef1d7c6a5ae0b9399"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga769fc97caa3fb7237e04e7acfd4746cf">mc_server_delete_playlist</a> (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a> server, <a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga8f954ebc243085164d61e92ee8bfe3da">mc_playlist_h</a> playlist)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the playlist of the media controller server.  <a href="#ga769fc97caa3fb7237e04e7acfd4746cf"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gac8e4a58bee9592e9e12baef21bb941f3">mc_server_foreach_playlist</a> (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a> server, mc_playlist_cb callback, void *user_data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gac8e4a58bee9592e9e12baef21bb941f3">mc_server_foreach_playlist</a> (<a class="el" href="group__CAPI__MEDIA__CONTROLLER__MODULE.html#ga1a3927ae04a86c8397b8b8325ddb85ed">mc_server_h</a> server, <a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#ga4f67da3128140480af0a30ce80083243">mc_playlist_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves all playlists of the media controller server.  <a href="#gac8e4a58bee9592e9e12baef21bb941f3"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -281,7 +281,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the Server receives custom command from the client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000883">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga05768e8bb8b6af4a4cef0c0928bf96f6" title="Called when the Server receives custom command from the client.">mc_server_custom_cmd_received_cb()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000884">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga05768e8bb8b6af4a4cef0c0928bf96f6" title="Called when the Server receives custom command from the client.">mc_server_custom_cmd_received_cb()</a> instead.</dd></dl>
 <p>This callback is called when server receives custom command from client. If there is reply for command, call <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaa6f71194b38ca3ea79b59bf725768697" title="Sends a reply for the requested command to the client.">mc_server_send_command_reply()</a> function. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The callback is called in the dbus event loop. <em>data</em> should be released using <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#ga21054ad876bff896d38a08ebdc14a1b1" title="Frees the given bundle object with key-value pairs in it.">bundle_free()</a>.<br/>
@@ -414,7 +414,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called when the server receives the playback state from the client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000882">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gac8c5e9b788215d7629f7c85653abd4c2" title="Called when the server receives the playback action command from the client.">mc_server_playback_action_cmd_received_cb()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000883">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gac8c5e9b788215d7629f7c85653abd4c2" title="Called when the server receives the playback action command from the client.">mc_server_playback_action_cmd_received_cb()</a> instead.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The callback is called in the dbus event loop. The <em>client_name</em> should not be released by the application. <br/>
  The <em>client_name</em> can be used only in the callback. To use outside, make a copy.</dd></dl>
@@ -612,7 +612,7 @@ Create a media controller playlist handle by calling <a class="el" href="group__
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga077935f17327e54ef1d7c6a5ae0b9399" title="Registers items to the playlist.">mc_server_update_playlist_done()</a> </dd>
 <dd>
-mc_playlist_destroy() </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#gaba50afd57999adccfe073c7d405bd11a" title="Destroys a media controller playlist handle.">mc_playlist_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -691,7 +691,7 @@ mc_playlist_destroy() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0</dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>playlist</em> should be released using mc_playlist_destroy(). When the server is destroyed, all its playlists will be deleted automatically.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>playlist</em> should be released using <a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#gaba50afd57999adccfe073c7d405bd11a" title="Destroys a media controller playlist handle.">mc_playlist_destroy()</a>. When the server is destroyed, all its playlists will be deleted automatically.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">server</td><td>The handle to media controller server </td></tr>
@@ -722,7 +722,7 @@ mc_playlist_destroy() </dd></dl>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga769fc97caa3fb7237e04e7acfd4746cf" title="Deletes the playlist of the media controller server.">mc_server_delete_playlist()</a> </dd>
 <dd>
-mc_playlist_destroy() </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#gaba50afd57999adccfe073c7d405bd11a" title="Destroys a media controller playlist handle.">mc_playlist_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -781,7 +781,7 @@ Create a media controller playlist handle by calling <a class="el" href="group__
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaee37f0176860d5bec11b9c1abca8e918" title="Creates a new playlist with the given name.">mc_server_create_playlist()</a> </dd>
 <dd>
-mc_playlist_destroy() </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#gaba50afd57999adccfe073c7d405bd11a" title="Destroys a media controller playlist handle.">mc_playlist_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -897,7 +897,7 @@ mc_playlist_destroy() </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">mc_playlist_cb&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#ga4f67da3128140480af0a30ce80083243">mc_playlist_cb</a>&#160;</td>
           <td class="paramname"><em>callback</em>, </td>
         </tr>
         <tr>
@@ -943,7 +943,7 @@ mc_playlist_destroy() </dd></dl>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga45f986c8fcc873d2b6cd0a64d4ddf7e2" title="Destroys media controller server.">mc_server_destroy()</a> </dd>
 <dd>
-mc_playlist_cb() </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#ga4f67da3128140480af0a30ce80083243" title="Called for every playlist.">mc_playlist_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1072,7 +1072,7 @@ mc_playlist_cb() </dd></dl>
 <div class="memdoc">
 
 <p>Sends a reply for the requested command to the client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000888">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf167776cacf8cf246278bec5d5571996" title="Replies the result of the requested command to the client.">mc_server_send_cmd_reply()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000889">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaf167776cacf8cf246278bec5d5571996" title="Replies the result of the requested command to the client.">mc_server_send_cmd_reply()</a> instead.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
@@ -1276,7 +1276,7 @@ mc_playlist_cb() </dd></dl>
 <div class="memdoc">
 
 <p>Sets the callback for receiving custom command from client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000886">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gab4c4ef0b1be4920b82882f38cc568254" title="Sets the callback for receiving custom command from client.">mc_server_set_custom_cmd_received_cb()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000887">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gab4c4ef0b1be4920b82882f38cc568254" title="Sets the callback for receiving custom command from client.">mc_server_set_custom_cmd_received_cb()</a> instead.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
@@ -1694,7 +1694,7 @@ mc_playlist_cb() </dd></dl>
 <div class="memdoc">
 
 <p>Sets the callback for receiving playback state command from client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000884">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga88312bc8e019e6e38819311cfe64c69a" title="Sets the callback for receiving playback action command from client.">mc_server_set_playback_action_cmd_received_cb()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000885">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga88312bc8e019e6e38819311cfe64c69a" title="Sets the callback for receiving playback action command from client.">mc_server_set_playback_action_cmd_received_cb()</a> instead.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
@@ -2017,7 +2017,7 @@ mc_playlist_cb() </dd></dl>
 <div class="memdoc">
 
 <p>Unsets the callback for receiving custom command from client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000887">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaa49cc465e962e14ea68f0facafff9109" title="Unsets the callback for receiving custom command from client.">mc_server_unset_custom_cmd_received_cb()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000888">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaa49cc465e962e14ea68f0facafff9109" title="Unsets the callback for receiving custom command from client.">mc_server_unset_custom_cmd_received_cb()</a> instead.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
@@ -2185,7 +2185,7 @@ mc_playlist_cb() </dd></dl>
 <div class="memdoc">
 
 <p>Unsets the callback for receiving playback state command from client. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000885">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga25486085dff0cacbba4037439aa0ef9a" title="Unsets the callback for receiving playback action command from client.">mc_server_unset_playback_action_cmd_received_cb()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000886">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#ga25486085dff0cacbba4037439aa0ef9a" title="Unsets the callback for receiving playback action command from client.">mc_server_unset_playback_action_cmd_received_cb()</a> instead.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/mediacontroller.server</dd></dl>
@@ -2475,7 +2475,7 @@ Create a media controller playlist handle by calling <a class="el" href="group__
 <dd>
 <a class="el" href="group__CAPI__MEDIA__CONTROLLER__SERVER__MODULE.html#gaee37f0176860d5bec11b9c1abca8e918" title="Creates a new playlist with the given name.">mc_server_create_playlist()</a> </dd>
 <dd>
-mc_playlist_destroy() </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__CONTROLLER__PLAYLIST__MODULE.html#gaba50afd57999adccfe073c7d405bd11a" title="Destroys a media controller playlist handle.">mc_playlist_destroy()</a> </dd></dl>
 
 </div>
 </div>

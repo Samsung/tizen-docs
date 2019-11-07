@@ -124,11 +124,21 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 <td>NVIDIA</td>
 <td>NVIDIA&reg; GeForce&reg; 8300 GS, GeForce&reg; 8500 GT, GeForce&reg; GT 220, GeForce&reg; GT 430, GeForce&reg; GT 530, GeForce&reg; GT 330M, GeForce&reg; GTX 550Ti, NVIDIA&reg; Quadro&reg; NVS 290</td>
 </tr>
+<tr>
+<td>ATI</td>
+<td>RADEON HD 4850, RADEON HD 5450</td>
+</tr>
+<tr>
+<td>Intel</td>
+<td>HD Graphics 2000, HD Graphics 2500, HD Graphics 4000</td>
+</tr>
 </tbody>
 </table>
 <strong>Note</strong>
 <ul>
 <li>If the host machine is using the NVIDIA&reg; Optimus&reg; technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus&reg; technology, or set the emulator to run with the external NVIDIA graphics card.</li>
+<li>Integrated graphic cards inside Intel's Q33/Q35/Q43/Q45 motherboards are not supported.</li>
+<li>First generation Intel HD Graphics is not supported.</li>
 </ul>
 </p>
 </td>

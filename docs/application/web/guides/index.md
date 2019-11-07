@@ -58,7 +58,7 @@ You can schedule an application to be run at a specific time, retrieve informati
   [Applications](applications/overview.md) <br>
   [Application Management](app-management/overview.md) <br>
   [Notifications](notification/notification.md)<br>
-- API Reference: [Application Framework](../api/latest/device_api/mobile/index.html#Application)
+- API Reference: [Application Framework](../api/latest/device_api/mobile/index.html#Application%20Framework)
 
 </td>
 </tr>
@@ -72,7 +72,7 @@ You can search and manage multimedia content locally, download files from the In
 - Guides:<br>
   [Connectivity and Wireless](connectivity/connectivity.md)<br>
   [Data Storage and Management](data/data.md)   <br>
-- API Reference: [Content](../api/latest/device_api/mobile/index.html#Contents)
+- API Reference: [Content](../api/latest/device_api/mobile/index.html#Content)
 
 </td>
 </tr>
@@ -229,7 +229,7 @@ You can schedule an application to be run at a specific time, retrieve informati
   [Applications](applications/overview.md) <br>
   [Application Management](app-management/overview.md) <br>
   [Notifications](notification/notification.md)<br>
-- API Reference: [Application Framework](../api/latest/device_api/wearable/index.html#Application)
+- API Reference: [Application Framework](../api/latest/device_api/wearable/index.html#Application%20Framework)
 </td>
 </tr>
 <tr>
@@ -242,7 +242,7 @@ You can search and manage multimedia content locally, download files from the In
 - Guides:<br>
   [Connectivity and Wireless](connectivity/connectivity.md)<br>
   [Data Storage and Management](data/data.md)
-- API Reference:  [Content](../api/latest/device_api/wearable/index.html#Contents)
+- API Reference:  [Content](../api/latest/device_api/wearable/index.html#Content)
 </td>
 </tr>
 <tr>
@@ -370,7 +370,7 @@ You can manage common files and ZIP archive files, and define filters and sortin
 - Guides:<br>
   [Data Storage and Management](data/data.md)<br>
   [Error Handling](error/error.md)
-- API Reference: [Base](../api/latest/device_api/tv/index.html#Tizen)
+- API Reference: [Base](../api/latest/device_api/tv/index.html#Base)
 </td>
 </tr>
 <tr>
@@ -385,7 +385,7 @@ You can schedule an application to be run at a specific time, retrieve informati
   [Applications](applications/overview.md)
   [Application Management](app-management/overview.md) <br>
 
-- API Reference: [Application Framework](../api/latest/device_api/tv/index.html#Application)
+- API Reference: [Application Framework](../api/latest/device_api/tv/index.html#Application%20Framework)
 </td>
 </tr>
 <tr>
@@ -399,7 +399,7 @@ You can search and manage multimedia content locally, manipulate EXIF data in JP
   [Connectivity and Wireless](connectivity/connectivity.md)<br>
   [Data Storage and Management](data/data.md)<br>
   [Media and Camera](multimedia/overview.md)
-- API Reference: [Content](../api/latest/device_api/tv/index.html#Contents)
+- API Reference: [Content](../api/latest/device_api/tv/index.html#Content)
 </td>
 </tr>
 <tr>
@@ -475,7 +475,7 @@ You can modify the volume level, switch TV channels, get program guide informati
 </td>
 <td>
 
-- API Reference: [TV Controls](../api/latest/device_api/tv/index.html#TV%20Control)
+- API Reference: [TV Controls](../api/latest/device_api/tv/index.html#TV%20Controls)
 </td>
 </tr>
 

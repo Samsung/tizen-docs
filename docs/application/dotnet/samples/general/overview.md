@@ -98,7 +98,7 @@ for TD:
 			<p><img alt="" height="180" src="media/wweatherapp.png" width="180" /></p>
 			</td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Weather" target="_blank"><strong>(W) Weather</strong></a></p>
+			<p><strong>(W) Weather</strong> [In progress]</p>
 			<p>This sample application demonstrates how to obtain the data provided by the RESTful API using <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a> and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>

@@ -218,25 +218,6 @@ The Tizen Web application configuration file consists of XML elements organized 
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
-			<td colspan="3"><code>&lt;tizen:launch_screen&gt;</code> (in <a href="#mw_launch_screen">mobile</a> or <a href="#ww_launch_screen">wearable</a>)</td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td colspan="2"><code>&lt;tizen:ls_default&gt;</code></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td colspan="2"><code>&lt;tizen:ls_landscape&gt;</code></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
-			<td>&nbsp;</td>
-			<td colspan="2"><code>&lt;tizen:ls_portrait&gt;</code></td>
-		</tr>
-		<tr>
-			<td>&nbsp;</td>
 			<td colspan="3"><code><a href="#license">&lt;license&gt;</a></code></td>
 		</tr>
 		<tr>
@@ -938,89 +919,6 @@ The maximum length of the attribute and the element (except `<tizen:metadata>`, 
 			</ul>
 			<p><strong>Example:</strong></p>
 			<pre><code>&lt;feature name="http://tizen.org/feature/network.bluetooth"/&gt;</code></pre>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-<a name="mw_launch_screen"></a>
-### Tizen Launch Screen
-
-<table>
-	<thead>
-		<tr>
-			<th>&lt;tizen:launch_screen/&gt; element</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<td>Used to indicate the splash screen.
-			<p><strong>Occurrences:</strong></p>
-			<ul>
-				<li>0 or 1</li>
-			</ul>
-			<p><strong>Expected children:</strong></p>
-			<ul>
-				<li><code>tizen:ls_default</code>
-				<p>Used to indicate the default value of the splash screen.</p>
-				<p>Occurrences:</p>
-				<ul>
-					<li>1</li>
-				</ul>
-				<p>Attributes:</p>
-				<ul>
-					<li><code>background_image</code>: mandatory, string</li>
-					<li><code>background_color</code>: mandatory, string</li>
-					<li><code>image</code>: mandatory, string</li>
-					<li><code>image_border</code>: mandatory, string</li>
-				</ul>
-				</li>
-				<li><code>tizen:ls_landscape</code>
-				<p>Used to indicate the landscape of the splash screen.</p>
-				<p>Occurrences:</p>
-				<ul>
-					<li>0 or 1</li>
-				</ul>
-				<p>Attributes:</p>
-				<ul>
-					<li><code>background_image</code>: mandatory, string</li>
-					<li><code>background_color</code>: mandatory, string</li>
-					<li><code>image</code>: mandatory, string</li>
-					<li><code>image_border</code>: mandatory, string</li>
-				</ul>
-				</li>
-				<li><code>tizen:ls_portrait</code>
-				<p>Used to indicate the portrait of the splash screen.</p>
-				<p>Occurrences:</p>
-				<ul>
-					<li>0 or 1</li>
-				</ul>
-				<p>Attributes:</p>
-				<ul>
-					<li><code>background_image</code>: mandatory, string</li>
-					<li><code>background_color</code>: mandatory, string</li>
-					<li><code>image</code>: mandatory, string</li>
-					<li><code>image_border</code>: mandatory, string</li>
-				</ul>
-				</li>
-			</ul>
-			<p><strong>Attributes:</strong></p>
-			<ul>
-				<li><code>ready_when</code>
-				<p>Mandatory; string (available values: <code>first-paint</code> (default), <code>complete</code>, <code>custom</code>)</p>
-				<ul>
-					<li><code>first-paint</code>: hide splash screen when the "frame,rendered" callback is called</li>
-					<li><code>complete</code>: hide splash screen when the "load,complete" callback is called</li>
-					<li><code>custom</code>: hide splash screen when the window.screen.show() method is called</li>
-				</ul>
-				</li>
-			</ul>
-			<p><strong>Example:</strong></p>
-			<pre><code>&lt;tizen:launch_screen ready_when="custom"&gt;
-   &lt;tizen:ls_default background_image="bg.png" background_color="#ff0000" image="icon.png" image_border="0px stretch"/&gt;
-   &lt;tizen:ls_landscape background_image="bg.png" background_color="#00ff00" image="icon.png" image_border="0px stretch"/&gt;
-   &lt;tizen:ls_portrait background_image="bg.png" background_color="#0000ff" image="icon.png" image_border="0px stretch"/&gt;
-&lt;/tizen:launch_screen&gt;	</code></pre>
 			</td>
 		</tr>
 	</tbody>
@@ -1855,89 +1753,6 @@ The following sections show additional configuration elements used in the `confi
    &lt;tizen:language&gt;en-us&lt;/tizen:language&gt;
    &lt;tizen:language&gt;de-de&lt;/tizen:language&gt;
 &lt;/tizen:languages&gt;</code></pre>
-			</td>
-		</tr>
-	</tbody>
-</table>
-
-<a name="ww_launch_screen"></a>
-### Tizen Launch Screen
-
-<table>
-	<thead>
-		<tr>
-			<th>&lt;tizen:launch_screen/&gt; element</th>
-		</tr>
-		</thead>
-		<tbody>
-		<tr>
-			<td>Used to indicate the splash screen.
-			<p><strong>Occurrences:</strong></p>
-			<ul>
-				<li>0 or 1</li>
-			</ul>
-			<p><strong>Expected children:</strong></p>
-			<ul>
-				<li><code>tizen:ls_default</code>
-				<p>Used to indicate the default value of the splash screen.</p>
-				<p>Occurrences:</p>
-				<ul>
-					<li>1</li>
-				</ul>
-				<p>Attributes:</p>
-				<ul>
-					<li><code>background_image</code>: mandatory, string</li>
-					<li><code>background_color</code>: mandatory, string</li>
-					<li><code>image</code>: mandatory, string</li>
-					<li><code>image_border</code>: mandatory, string</li>
-				</ul>
-				</li>
-				<li><code>tizen:ls_landscape</code>
-				<p>Used to indicate the landscape of the splash screen.</p>
-				<p>Occurrences:</p>
-				<ul>
-					<li>0 or 1</li>
-				</ul>
-				<p>Attributes:</p>
-				<ul>
-					<li><code>background_image</code>: mandatory, string</li>
-					<li><code>background_color</code>: mandatory, string</li>
-					<li><code>image</code>: mandatory, string</li>
-					<li><code>image_border</code>: mandatory, string</li>
-				</ul>
-				</li>
-				<li><code>tizen:ls_portrait</code>
-				<p>Used to indicate the portrait of the splash screen.</p>
-				<p>Occurrences:</p>
-				<ul>
-					<li>0 or 1</li>
-				</ul>
-				<p>Attributes:</p>
-				<ul>
-					<li><code>background_image</code>: mandatory, string</li>
-					<li><code>background_color</code>: mandatory, string</li>
-					<li><code>image</code>: mandatory, string</li>
-					<li><code>image_border</code>: mandatory, string</li>
-				</ul>
-				</li>
-			</ul>
-			<p><strong>Attributes:</strong></p>
-			<ul>
-				<li><code>ready_when</code>
-				<p>Mandatory; string (available values: <code>first-paint</code> (default), <code>complete</code>, <code>custom</code>)</p>
-				<ul>
-					<li><code>first-paint</code>: hide splash screen when the "frame,rendered" callback is called</li>
-					<li><code>complete</code>: hide splash screen when the "load,complete" callback is called</li>
-					<li><code>custom</code>: hide splash screen when the window.screen.show() method is called</li>
-				</ul>
-				</li>
-			</ul>
-			<p><strong>Example:</strong></p>
-			<pre><code>&lt;tizen:launch_screen ready_when="custom"&gt;
-   &lt;tizen:ls_default background_image="bg.png" background_color="#ff0000" image="icon.png" image_border="0px stretch"/&gt;
-   &lt;tizen:ls_landscape background_image="bg.png" background_color="#00ff00" image="icon.png" image_border="0px stretch"/&gt;
-   &lt;tizen:ls_portrait background_image="bg.png" background_color="#0000ff" image="icon.png" image_border="0px stretch"/&gt;
-&lt;/tizen:launch_screen&gt;	</code></pre>
 			</td>
 		</tr>
 	</tbody>

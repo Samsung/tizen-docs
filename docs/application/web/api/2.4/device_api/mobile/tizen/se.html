@@ -283,7 +283,8 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:</span>
+<span class="return">unsigned long:
+                  </span>
  An identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -480,7 +481,8 @@ This interface offers methods to control sessions on the reader.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:</span>
+<span class="return">DOMString:
+                  </span>
  The name of the reader.
               </ul>
 </div>
@@ -910,7 +912,8 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:</span>
+<span class="return">byte[]:
+                  </span>
  The ATR of a Secure Element.
               </ul>
 </div>
@@ -1213,7 +1216,8 @@ the selection response can not be retrieved by the reader implementation.       
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:</span>
+<span class="return">byte[]:
+                  </span>
  The data as returned by the application select command including the status words.
               </ul>
 </div>
@@ -1485,10 +1489,10 @@ To guarantee this application will run on a device with a Secure Element, add th
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SecureElement {
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SEServiceManagerObject">SEServiceManagerObject</a>;
   [NoInterfaceObject] interface SEServiceManagerObject {
     readonly attribute <a href="#SEService">SEService</a> seService;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SEServiceManagerObject">SEServiceManagerObject</a>;
   [NoInterfaceObject] interface SEService {
     void getReaders(<a href="#ReaderArraySuccessCallback">ReaderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     unsigned long registerSEListener(<a href="#SEChangeListener">SEChangeListener</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

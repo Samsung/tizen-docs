@@ -411,9 +411,6 @@ BUSY_UNAVAILABLE - if the specified time slot is not vacant and can not be sched
 BUSY_TENTATIVE - if the specified time slot is not vacant because one or more events have been tentatively scheduled for that interval            </li>
           </ul>
          </div>
-<p><span class="remark">Remark: </span>
- <em>BUSY_UNAVAILABLE</em> and <em>BUSY_TENTATIVE</em> are supported since Tizen 5.0
-          </p>
 </div>
 <div class="enum" id="AttendeeType">
 <a class="backward-compatibility-anchor" name="::Calendar::AttendeeType"></a><h3>1.10. AttendeeType</h3>
@@ -441,6 +438,9 @@ ROOM - Room resource            </li>
 UNKNOWN - Unknown            </li>
           </ul>
          </div>
+<p><span class="remark">Remark: </span>
+ <em>BUSY_UNAVAILABLE</em> and <em>BUSY_TENTATIVE</em> are supported since Tizen 5.0
+          </p>
 </div>
 <div class="enum" id="AttendeeStatus">
 <a class="backward-compatibility-anchor" name="::Calendar::AttendeeStatus"></a><h3>1.11. AttendeeStatus</h3>
@@ -594,7 +594,7 @@ CANCELLED -  if the task has been cancelled            </li>
 <div class="brief">
  The CalendarManagerObject interface gives access to the Calendar API from the <em>tizen.calendar </em>object.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface CalendarManagerObject {
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface CalendarManagerObject{
     readonly attribute <a href="#CalendarManager">CalendarManager</a> calendar;
   };</pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CalendarManagerObject">CalendarManagerObject</a>;</pre>
@@ -784,7 +784,8 @@ If an item is added to the unified calendar, it will be saved in the default cal
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Calendar:</span>
+<span class="return">Calendar:
+                  </span>
  The unified Calendar object.
               </ul>
 </div>
@@ -878,7 +879,8 @@ unifiedCalendar.find(eventFoundCallback, errorCallback, filter);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Calendar:</span>
+<span class="return">Calendar:
+                  </span>
  The default Calendar object.
               </ul>
 </div>
@@ -1127,7 +1129,8 @@ tizen.account.getAccounts(
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Calendar:</span>
+<span class="return">Calendar:
+                  </span>
  The matching Calendar object.
               </ul>
 </div>
@@ -1311,7 +1314,8 @@ console.log("The calendar name is " + calendar.name);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">CalendarItem:</span>
+<span class="return">CalendarItem:
+                  </span>
  The matching <em>CalendarItem </em>object.
               </ul>
 </div>
@@ -1434,7 +1438,7 @@ console.log("Event added with uid " + ev.id.uid);
 <div class="brief">
  Adds an array of items to the calendar asynchronously.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void addBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a>? successCallback,
+<div class="synopsis"><pre class="signature prettyprint">void addBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a>? successCallback, 
               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -1611,7 +1615,7 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback);
 <div class="brief">
  Updates an array of existing items in the calendar asynchronously with the specified values in the argument.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void updateBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+<div class="synopsis"><pre class="signature prettyprint">void updateBatch(<a href="#CalendarItem">CalendarItem</a>[] items, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
                  optional boolean? updateAllInstances);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -1884,7 +1888,7 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback);
 <div class="brief">
  Finds and fetches an array of <em>CalendarItem </em>objects for items stored in the calendar according to the supplied filter if it is valid else it will return all the items stored.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, 
           optional <a href="tizen.html#SortMode">SortMode</a>? sortMode);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -2016,7 +2020,8 @@ When executed, the implementation must immediately return a subscription identif
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:</span>
+<span class="return">long:
+                  </span>
  The identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -2180,7 +2185,7 @@ These attributes are shared by both calendar events and tasks.
 <div class="brief">
  The CalendarTaskInit dictionary is used for creating calendar tasks.
           </div>
-<pre class="webidl prettyprint">  dictionary CalendarTaskInit : <a href="#CalendarItemInit">CalendarItemInit</a> {
+<pre class="webidl prettyprint">  dictionary CalendarTaskInit: <a href="#CalendarItemInit">CalendarItemInit</a> {
     <a href="time.html#TZDate">TZDate</a> dueDate;
     <a href="time.html#TZDate">TZDate</a> completedDate;
     short progress;
@@ -2203,7 +2208,7 @@ All the attributes are optional and are undefined by default.
 <div class="brief">
  The CalendarEventInit dictionary is used for creating calendar events.
           </div>
-<pre class="webidl prettyprint">  dictionary CalendarEventInit : <a href="#CalendarItemInit">CalendarItemInit</a> {
+<pre class="webidl prettyprint">  dictionary CalendarEventInit: <a href="#CalendarItemInit">CalendarItemInit</a> {
     <a href="time.html#TZDate">TZDate</a> endDate;
     <a href="#EventAvailability">EventAvailability</a> availability;
     <a href="#CalendarRecurrenceRule">CalendarRecurrenceRule</a> recurrenceRule;
@@ -2617,7 +2622,8 @@ The export format is set using the format parameter.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:</span>
+<span class="return">DOMString:
+                  </span>
  The representation of the Calendar item.
               </ul>
 </div>
@@ -2690,7 +2696,8 @@ The <em>CalendarItem </em>object returned by the <em>clone()</em> method will ha
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">CalendarItem:</span>
+<span class="return">CalendarItem:
+                  </span>
  New clone of the <em>CalendarItem </em>object.
               </ul>
 </div>
@@ -3025,7 +3032,7 @@ event.recurrenceRule = rule;
 <div class="brief">
  Expands a recurring event and returns asynchronously the list of instances occurring in a given time interval (inclusive).
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void expandRecurrence(<a href="time.html#TZDate">TZDate</a> startDate, <a href="time.html#TZDate">TZDate</a> endDate, <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback,
+<div class="synopsis"><pre class="signature prettyprint">void expandRecurrence(<a href="time.html#TZDate">TZDate</a> startDate, <a href="time.html#TZDate">TZDate</a> endDate, <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback, 
                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -3678,7 +3685,8 @@ The default value is an empty string.
 <div class="brief">
  The CalendarEventArraySuccessCallback interface that implements the success callback used in the asynchronous operation for retrieving a list of calendar events.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface CalendarEventArraySuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
+  interface CalendarEventArraySuccessCallback {
     void onsuccess(<a href="#CalendarEvent">CalendarEvent</a>[] events);
   };</pre>
 <p><span class="version">Since: </span>
@@ -3742,7 +3750,8 @@ if (event.recurrenceRule != null)
 <div class="brief">
  The CalendarItemArraySuccessCallback interface implements the success callback used in the asynchronous operation for retrieving a list of calendar items.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface CalendarItemArraySuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
+  interface CalendarItemArraySuccessCallback {
     void onsuccess(<a href="#CalendarItem">CalendarItem</a>[] items);
   };</pre>
 <p><span class="version">Since: </span>
@@ -3808,7 +3817,8 @@ calendar.addBatch([ev], calendarItemArraySuccessCB, errorCallback);
 <div class="brief">
  The CalendarArraySuccessCallback interface implements the success callback used in the asynchronous operation to get a list of calendars using the <em>getCalendars()</em> method.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface CalendarArraySuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
+  interface CalendarArraySuccessCallback {
     void onsuccess(<a href="#Calendar">Calendar</a>[] calendars);
   };</pre>
 <p><span class="version">Since: </span>
@@ -4124,55 +4134,10 @@ To guarantee the running of the application on a device with Contact feature, de
   enum CalendarItemPriority { "HIGH", "MEDIUM", "LOW", "NONE" };
   enum CalendarItemVisibility { "PUBLIC", "PRIVATE", "CONFIDENTIAL" };
   enum CalendarItemStatus { "NONE", "TENTATIVE", "CONFIRMED", "CANCELLED", "NEEDS_ACTION", "IN_PROCESS", "COMPLETED" };
-  dictionary CalendarItemInit {
-    DOMString description;
-    DOMString summary;
-    boolean isAllDay;
-    <a href="time.html#TZDate">TZDate</a> startDate;
-    <a href="time.html#TimeDuration">TimeDuration</a> duration;
-    DOMString location;
-    <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a> geolocation;
-    DOMString organizer;
-    <a href="#CalendarItemVisibility">CalendarItemVisibility</a> visibility;
-    <a href="#CalendarItemStatus">CalendarItemStatus</a> status;
-    <a href="#CalendarItemPriority">CalendarItemPriority</a> priority;
-    <a href="#CalendarAlarm">CalendarAlarm</a>[] alarms;
-    DOMString[] categories;
-    <a href="#CalendarAttendee">CalendarAttendee</a>[] attendees;
-  };
-  dictionary CalendarTaskInit : <a href="#CalendarItemInit">CalendarItemInit</a> {
-    <a href="time.html#TZDate">TZDate</a> dueDate;
-    <a href="time.html#TZDate">TZDate</a> completedDate;
-    short progress;
-  };
-  dictionary CalendarEventInit : <a href="#CalendarItemInit">CalendarItemInit</a> {
-    <a href="time.html#TZDate">TZDate</a> endDate;
-    <a href="#EventAvailability">EventAvailability</a> availability;
-    <a href="#CalendarRecurrenceRule">CalendarRecurrenceRule</a> recurrenceRule;
-  };
-  dictionary CalendarAttendeeInit {
-    DOMString name;
-    <a href="#AttendeeRole">AttendeeRole</a> role;
-    <a href="#AttendeeStatus">AttendeeStatus</a> status;
-    boolean RSVP;
-    <a href="#AttendeeType">AttendeeType</a> type;
-    DOMString? group;
-    DOMString delegatorURI;
-    DOMString delegateURI;
-    <a href="contact.html#ContactRef">ContactRef</a> contactRef;
-  };
-  dictionary CalendarRecurrenceRuleInit {
-    short interval;
-    <a href="time.html#TZDate">TZDate</a> untilDate;
-    long occurrenceCount;
-    <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
-    short[] setPositions;
-    <a href="time.html#TZDate">TZDate</a>[] exceptions;
-  };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CalendarManagerObject">CalendarManagerObject</a>;
-  [NoInterfaceObject] interface CalendarManagerObject {
+  [NoInterfaceObject] interface CalendarManagerObject{
     readonly attribute <a href="#CalendarManager">CalendarManager</a> calendar;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CalendarManagerObject">CalendarManagerObject</a>;
   [NoInterfaceObject] interface CalendarManager {
     void getCalendars(<a href="#CalendarType">CalendarType</a> type, <a href="#CalendarArraySuccessCallback">CalendarArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                       raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -4201,6 +4166,32 @@ To guarantee the running of the application on a device with Contact feature, de
               optional <a href="tizen.html#SortMode">SortMode</a>? sortMode) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addChangeListener(<a href="#CalendarChangeCallback">CalendarChangeCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  dictionary CalendarItemInit {
+    DOMString description;
+    DOMString summary;
+    boolean isAllDay;
+    <a href="time.html#TZDate">TZDate</a> startDate;
+    <a href="time.html#TimeDuration">TimeDuration</a> duration;
+    DOMString location;
+    <a href="tizen.html#SimpleCoordinates">SimpleCoordinates</a> geolocation;
+    DOMString organizer;
+    <a href="#CalendarItemVisibility">CalendarItemVisibility</a> visibility;
+    <a href="#CalendarItemStatus">CalendarItemStatus</a> status;
+    <a href="#CalendarItemPriority">CalendarItemPriority</a> priority;
+    <a href="#CalendarAlarm">CalendarAlarm</a>[] alarms;
+    DOMString[] categories;
+    <a href="#CalendarAttendee">CalendarAttendee</a>[] attendees;
+  };
+  dictionary CalendarTaskInit: <a href="#CalendarItemInit">CalendarItemInit</a> {
+    <a href="time.html#TZDate">TZDate</a> dueDate;
+    <a href="time.html#TZDate">TZDate</a> completedDate;
+    short progress;
+  };
+  dictionary CalendarEventInit: <a href="#CalendarItemInit">CalendarItemInit</a> {
+    <a href="time.html#TZDate">TZDate</a> endDate;
+    <a href="#EventAvailability">EventAvailability</a> availability;
+    <a href="#CalendarRecurrenceRule">CalendarRecurrenceRule</a> recurrenceRule;
   };
   [NoInterfaceObject] interface CalendarItem {
     readonly attribute <a href="#CalendarItemId">CalendarItemId</a>? id;
@@ -4240,6 +4231,17 @@ To guarantee the running of the application on a device with Contact feature, de
     void expandRecurrence(<a href="time.html#TZDate">TZDate</a> startDate, <a href="time.html#TZDate">TZDate</a> endDate, <a href="#CalendarEventArraySuccessCallback">CalendarEventArraySuccessCallback</a> successCallback,
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
+  dictionary CalendarAttendeeInit {
+    DOMString name;
+    <a href="#AttendeeRole">AttendeeRole</a> role;
+    <a href="#AttendeeStatus">AttendeeStatus</a> status;
+    boolean RSVP;
+    <a href="#AttendeeType">AttendeeType</a> type;
+    DOMString? group;
+    DOMString delegatorURI;
+    DOMString delegateURI;
+    <a href="contact.html#ContactRef">ContactRef</a> contactRef;
+  };
   [Constructor(DOMString uri, optional <a href="#CalendarAttendeeInit">CalendarAttendeeInit</a>? attendeeInitDict)]
   interface CalendarAttendee {
     attribute DOMString uri;
@@ -4252,6 +4254,14 @@ To guarantee the running of the application on a device with Contact feature, de
     attribute DOMString? delegatorURI;
     attribute DOMString? delegateURI;
     attribute <a href="contact.html#ContactRef">ContactRef</a>? contactRef;
+  };
+  dictionary CalendarRecurrenceRuleInit {
+    short interval;
+    <a href="time.html#TZDate">TZDate</a> untilDate;
+    long occurrenceCount;
+    <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;
+    short[] setPositions;
+    <a href="time.html#TZDate">TZDate</a>[] exceptions;
   };
   [Constructor(<a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency, optional <a href="#CalendarRecurrenceRuleInit">CalendarRecurrenceRuleInit</a>? ruleInitDict)]
   interface CalendarRecurrenceRule {
@@ -4276,13 +4286,16 @@ To guarantee the running of the application on a device with Contact feature, de
     attribute <a href="#AlarmMethod">AlarmMethod</a> method;
     attribute DOMString? description;
   };
-  [Callback=FunctionOnly, NoInterfaceObject] interface CalendarEventArraySuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject]
+  interface CalendarEventArraySuccessCallback {
     void onsuccess(<a href="#CalendarEvent">CalendarEvent</a>[] events);
   };
-  [Callback=FunctionOnly, NoInterfaceObject] interface CalendarItemArraySuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject]
+  interface CalendarItemArraySuccessCallback {
     void onsuccess(<a href="#CalendarItem">CalendarItem</a>[] items);
   };
-  [Callback=FunctionOnly, NoInterfaceObject] interface CalendarArraySuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject]
+  interface CalendarArraySuccessCallback {
     void onsuccess(<a href="#Calendar">Calendar</a>[] calendars);
   };
   [Callback, NoInterfaceObject] interface CalendarChangeCallback {

@@ -177,7 +177,8 @@ In this case, the return will contain bookmarks under the root bookmark folder.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Bookmark[]:</span>
+<span class="return">Bookmark[]:
+                  </span>
   Array of Bookmarks.
               </ul>
 </div>
@@ -487,10 +488,10 @@ If the parent bookmark folder indicates the root bookmark folder, the value will
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Bookmark {
   typedef (<a href="#BookmarkItem">BookmarkItem</a> or <a href="#BookmarkFolder">BookmarkFolder</a>) Bookmark;
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BookmarkManagerObject">BookmarkManagerObject</a>;
   [NoInterfaceObject] interface BookmarkManagerObject {
     readonly attribute <a href="#BookmarkManager">BookmarkManager</a> bookmark;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BookmarkManagerObject">BookmarkManagerObject</a>;
   [NoInterfaceObject] interface BookmarkManager {
     <a href="#Bookmark">Bookmark</a>[] get(optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void add(<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

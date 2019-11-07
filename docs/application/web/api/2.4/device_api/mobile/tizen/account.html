@@ -481,7 +481,8 @@ Returns null if the given key is not found.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:</span>
+<span class="return">DOMString:
+                  </span>
  Value of the extended data.
               </ul>
 </div>
@@ -850,7 +851,8 @@ tizen.account.getAccounts(
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Account<span class="optional"> [nullable]</span>:</span>
+<span class="return">Account:
+                  </span>
  Object with the given identifier or <var>null</var>.
               </ul>
 </div>
@@ -879,7 +881,7 @@ tizen.account.getAccounts(
  Gets the accounts associated with the provider that has a specified applicationId, asynchronously.
 If you want to get all accounts, omit the applicationId argument.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getAccounts(<a href="#AccountArraySuccessCallback">AccountArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+<div class="synopsis"><pre class="signature prettyprint">void getAccounts(<a href="#AccountArraySuccessCallback">AccountArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
                  optional DOMString? applicationId);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -969,7 +971,8 @@ You can register your application as an account provider by writing account rela
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AccountProvider<span class="optional"> [nullable]</span>:</span>
+<span class="return">AccountProvider:
+                  </span>
  Object with the given applicationId or <var>null</var>.
               </ul>
 </div>
@@ -1003,7 +1006,7 @@ if (!provider)
  Gets the providers with the given capabilities, asynchronously.
 If you want to get all the providers, omit the capability argument.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getProviders(<a href="#AccountProviderArraySuccessCallback">AccountProviderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+<div class="synopsis"><pre class="signature prettyprint">void getProviders(<a href="#AccountProviderArraySuccessCallback">AccountProviderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
                   optional DOMString? capability);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -1090,7 +1093,8 @@ If you want to get all the providers, omit the capability argument.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:</span>
+<span class="return">long:
+                  </span>
  Identifier to clear the watch subscription for account changes.
               </ul>
 </div>
@@ -1442,15 +1446,11 @@ To guarantee the running of the application on a device with Account feature, de
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Account {
-  typedef unsigned long AccountId;
-  dictionary AccountInit {
-    DOMString userName;
-    DOMString iconUri;
-  };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AccountManagerObject">AccountManagerObject</a>;
   [NoInterfaceObject] interface AccountManagerObject {
     readonly attribute <a href="#AccountManager">AccountManager</a> account;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AccountManagerObject">AccountManagerObject</a>;
+  typedef unsigned long AccountId;
   [NoInterfaceObject] interface AccountProvider {
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> applicationId;
     readonly attribute DOMString displayName;
@@ -1458,6 +1458,10 @@ To guarantee the running of the application on a device with Account feature, de
     readonly attribute DOMString smallIconUri;
     readonly attribute DOMString[] capabilities;
     readonly attribute boolean isMultipleAccountSupported;
+  };
+  dictionary AccountInit {
+    DOMString userName;
+    DOMString iconUri;
   };
   [Constructor(<a href="#AccountProvider">AccountProvider</a> provider, optional <a href="#AccountInit">AccountInit</a>? accountInitDict)]
   interface Account {

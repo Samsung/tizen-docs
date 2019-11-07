@@ -218,7 +218,8 @@ Mandatory keys will not be retrieved by this method.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">InputDeviceKey[]:</span>
+<span class="return">InputDeviceKey[]:
+                  </span>
  List of supported keys.
               </ul>
 </div>
@@ -274,7 +275,8 @@ window.addEventListener("keydown", function(keyEvent)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">InputDeviceKey<span class="optional"> [nullable]</span>:</span>
+<span class="return">InputDeviceKey:
+                  </span>
  InputDeviceKey object for the given key name or <var>null</var> if the key is not supported.
               </ul>
 </div>
@@ -391,7 +393,7 @@ for (i = 0; i &lt; keys.length; i++)
 <div class="brief">
  Registers a batch of input device keys to receive DOM keyboard event when any of them is pressed or released
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -468,7 +470,7 @@ tizen.inputdevice.registerKeyBatch(keys, successCB, errorCB);
 <div class="brief">
  Unregisters a batch of input device keys
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -539,10 +541,10 @@ tizen.inputdevice.unregisterKeyBatch(keys, successCB, errorCB);
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module InputDevice {
   typedef DOMString InputDeviceKeyName;
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>;
   [NoInterfaceObject] interface InputDeviceManagerObject {
     readonly attribute <a href="#InputDeviceManager">InputDeviceManager</a> inputdevice;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#InputDeviceManagerObject">InputDeviceManagerObject</a>;
   [NoInterfaceObject] interface InputDeviceKey {
     readonly attribute <a href="#InputDeviceKeyName">InputDeviceKeyName</a> name;
     readonly attribute long code;

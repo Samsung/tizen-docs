@@ -212,9 +212,9 @@ NEXT - Corresponds to next media controller playback state.            </li>
             <li>
 PREV - Corresponds to previous media controller playback state.            </li>
             <li>
-FORWARD - Corresponds to forward media controller playback state.            </li>
+FORWARD - Corresponds to forward media controller playback state..            </li>
             <li>
-REWIND - Corresponds to rewind media controller playback state.            </li>
+REWIND - Corresponds to rewind media controller playback state..            </li>
           </ul>
          </div>
 </div>
@@ -286,7 +286,8 @@ There is a <em>tizen.mediacontroller</em> object that allows access to the Media
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">MediaControllerClient:</span>
+<span class="return">MediaControllerClient:
+                  </span>
  The <em>MediaController Client</em> object.
               </ul>
 </div>
@@ -338,7 +339,8 @@ and is controlled by Client.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">MediaControllerServer:</span>
+<span class="return">MediaControllerServer:
+                  </span>
  The <em>MediaController Server</em> object.
               </ul>
 </div>
@@ -521,7 +523,7 @@ console.log("Current playback position is: " + mcServer.playbackInfo.position);
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
+ with error type UnknownError, if any other error occurs.
                 </p></li></ul>
 </li></ul>
         </div>
@@ -556,7 +558,7 @@ console.log("Current shuffle mode is: " + mcServer.playbackInfo.shuffleMode);
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
+ with error type UnknownError, if any other error occurs.
                 </p></li></ul>
 </li></ul>
         </div>
@@ -636,7 +638,8 @@ requests from client.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:</span>
+<span class="return">long:
+                  </span>
  The identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -709,7 +712,7 @@ Calling this function has no effect if there is no listener with given id.
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
+ with error type UnknownError, if any other error occurs.
                 </p></li></ul>
 </li></ul>
         </div>
@@ -769,7 +772,8 @@ See <em>MediaControllerServerInfo</em> to check how to send custom commands from
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:</span>
+<span class="return">long:
+                  </span>
  The identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -832,7 +836,7 @@ Calling this function has no effect if there is no listener with given id.
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
+ with error type UnknownError, if any other error occurs.
                 </p></li></ul>
 </li></ul>
         </div>
@@ -964,14 +968,15 @@ mcClient.findServers(successCallback, errorCallback);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">MediaControllerServerInfo<span class="optional"> [nullable]</span>:</span>
+<span class="return">MediaControllerServerInfo:
+                  </span>
  Server info or <var>null</var>.
               </ul>
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
+ with error type UnknownError, if any platform error occurs.
                 </p></li></ul>
 </li></ul>
         </div>
@@ -996,7 +1001,7 @@ Provides methods to send commands to server and listen for server status change.
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface MediaControllerServerInfo {
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
     readonly attribute <a href="#MediaControllerServerState">MediaControllerServerState</a> state;
-    readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
     void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
@@ -1044,13 +1049,6 @@ Provides methods to send commands to server and listen for server status change.
 <p><span class="version">Since: </span>
  5.0
             </p>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
-                </p></li></ul>
-</li></ul>
-        </div>
 </li>
 </ul>
 </div>
@@ -1064,7 +1062,7 @@ Provides methods to send commands to server and listen for server status change.
 <div class="brief">
  Allows to change playback state of media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1121,7 +1119,7 @@ mcServerInfo.sendPlaybackState("STOP",
 <div class="brief">
  Allows to change playback position of media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+<div class="synopsis"><pre class="signature prettyprint">void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1293,7 +1291,7 @@ mcServerInfo.sendRepeatMode(false,
 <div class="brief">
  Allows to send custom command to media controller server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback,
+<div class="synopsis"><pre class="signature prettyprint">void sendCommand(DOMString command, object data, <a href="#MediaControllerSendCommandSuccessCallback">MediaControllerSendCommandSuccessCallback</a> successCallback, 
                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1375,7 +1373,8 @@ mcServerInfo.sendCommand("myPlaylistFilter", exampleCustomCommandData,
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:</span>
+<span class="return">long:
+                  </span>
  The identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -1432,7 +1431,7 @@ Calling this function has no effect if there is no listener with given id.
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
+ with error type UnknownError, if any other error occurs.
                 </p></li></ul>
 </li></ul>
         </div>
@@ -1475,7 +1474,8 @@ mcServerInfo.removeServerStatusChangeListener(watcherId);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:</span>
+<span class="return">long:
+                  </span>
  The identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -1550,7 +1550,7 @@ Calling this function has no effect if there is no listener with given id.
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any error occurs.
+ with error type UnknownError, if any other error occurs.
                 </p></li></ul>
 </li></ul>
         </div>
@@ -1901,7 +1901,8 @@ See <em>MediaControllerSendCommandSuccessCallback</em> interface.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">object<span class="optional"> [nullable]</span>:</span>
+<span class="return">object:
+                  </span>
  Data object which should be send with reply to the client.
               </ul>
 </div>
@@ -1971,7 +1972,7 @@ object for receiving media controller playback info changes from server.
 </dt>
 <dd>
 <div class="brief">
- Called when playback state or position is changed.
+ Called when playback state or position changed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onplaybackchanged(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, unsigned long long position);</pre></div>
 <p><span class="version">Since: </span>
@@ -1996,7 +1997,7 @@ object for receiving media controller playback info changes from server.
 </dt>
 <dd>
 <div class="brief">
- Called when shuffle mode is changed.
+ Called when shuffle mode changed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onshufflemodechanged(boolean mode);</pre></div>
 <p><span class="version">Since: </span>
@@ -2017,7 +2018,7 @@ object for receiving media controller playback info changes from server.
 </dt>
 <dd>
 <div class="brief">
- Called when repeat mode is changed.
+ Called when repeat mode changed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onrepeatmodechanged(boolean mode);</pre></div>
 <p><span class="version">Since: </span>
@@ -2038,7 +2039,7 @@ object for receiving media controller playback info changes from server.
 </dt>
 <dd>
 <div class="brief">
- Called when playback metadata is changed.
+ Called when playback metadata changed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onmetadatachanged(<a href="#MediaControllerMetadata">MediaControllerMetadata</a> metadata);</pre></div>
 <p><span class="version">Since: </span>
@@ -2167,10 +2168,10 @@ object for receiving playback info change requests from client.
 <pre class="webidl prettyprint">module MediaController {
   enum MediaControllerServerState { "ACTIVE", "INACTIVE" };
   enum MediaControllerPlaybackState { "PLAY", "PAUSE", "STOP", "NEXT", "PREV", "FORWARD", "REWIND" };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaControllerObject">MediaControllerObject</a>;
   [NoInterfaceObject] interface MediaControllerObject {
     readonly attribute <a href="#MediaControllerManager">MediaControllerManager</a> mediacontroller;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaControllerObject">MediaControllerObject</a>;
   [NoInterfaceObject] interface MediaControllerManager {
     <a href="#MediaControllerClient">MediaControllerClient</a> getClient() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#MediaControllerServer">MediaControllerServer</a> createServer() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -2195,7 +2196,7 @@ object for receiving playback info change requests from client.
   [NoInterfaceObject] interface MediaControllerServerInfo {
     readonly attribute <a href="application.html#ApplicationId">ApplicationId</a> name;
     readonly attribute <a href="#MediaControllerServerState">MediaControllerServerState</a> state;
-    readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    readonly attribute <a href="#MediaControllerPlaybackInfo">MediaControllerPlaybackInfo</a> playbackInfo;
     void sendPlaybackState(<a href="#MediaControllerPlaybackState">MediaControllerPlaybackState</a> state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void sendPlaybackPosition(unsigned long long position, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,

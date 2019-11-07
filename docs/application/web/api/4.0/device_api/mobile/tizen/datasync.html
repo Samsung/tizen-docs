@@ -413,7 +413,7 @@ This attribute is used when the sync mode is set to the <em>PERIODIC</em> option
           </p>
 <div class="constructors">
 <h4 id="SyncServiceInfo::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">SyncServiceInfo(boolean enable, <a href="#SyncServiceType">SyncServiceType</a> serviceType, DOMString serverDatabaseUri, optional DOMString? id,
+<dl><pre class="webidl prettyprint">SyncServiceInfo(boolean enable, <a href="#SyncServiceType">SyncServiceType</a> serviceType, DOMString serverDatabaseUri, optional DOMString? id, 
                 optional DOMString? password);</pre></dl>
 </div>
 <div class="attributes">
@@ -875,7 +875,8 @@ Normally the platform sets a limitation on the number of supported profiles. It 
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:</span>
+<span class="return">long:
+                  </span>
  The number of supported profiles on a platform.
               </ul>
 </div>
@@ -917,7 +918,8 @@ var numMaxProfiles = tizen.datasync.getMaxProfilesNum();
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:</span>
+<span class="return">unsigned long:
+                  </span>
  The current number of profiles on a device.
               </ul>
 </div>
@@ -973,7 +975,8 @@ The attempt to retrieve <em>SyncProfileInfo</em> doesn't get any confidential in
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SyncProfileInfo:</span>
+<span class="return">SyncProfileInfo:
+                  </span>
  The profile information of the given ID.
               </ul>
 </div>
@@ -1026,7 +1029,8 @@ An attempt to retrieve <em>SyncProfileInfo</em> doesn't get any confidential inf
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SyncProfileInfo[]:</span>
+<span class="return">SyncProfileInfo[]:
+                  </span>
  The profile information array.
               </ul>
 </div>
@@ -1204,7 +1208,8 @@ tizen.datasync.stopSync(profileId);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SyncStatistics[]:</span>
+<span class="return">SyncStatistics[]:
+                  </span>
  The sync statistics information of a given ID.
               </ul>
 </div>
@@ -1261,7 +1266,7 @@ var statistics = tizen.datasync.getLastSyncStatistics(profileId);
 <div class="brief">
  Called when a synchronization operation is started and progress is made.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onprogress(<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="#SyncServiceType">SyncServiceType</a> serviceType, boolean isFromServer, unsigned long totalPerService,
+<div class="synopsis"><pre class="signature prettyprint">void onprogress(<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="#SyncServiceType">SyncServiceType</a> serviceType, boolean isFromServer, unsigned long totalPerService, 
                 unsigned long syncedPerService);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -1391,10 +1396,10 @@ To guarantee that data synch application runs on a device, declare the following
   enum SyncInterval { "5_MINUTES", "15_MINUTES", "1_HOUR", "4_HOURS", "12_HOURS", "1_DAY", "1_WEEK", "1_MONTH" };
   enum SyncServiceType { "CONTACT", "EVENT" };
   enum SyncStatus { "SUCCESS", "FAIL", "STOP", "NONE" };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataSynchronizationManagerObject">DataSynchronizationManagerObject</a>;
   [NoInterfaceObject] interface DataSynchronizationManagerObject {
     readonly attribute <a href="#DataSynchronizationManager">DataSynchronizationManager</a> datasync;
   };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataSynchronizationManagerObject">DataSynchronizationManagerObject</a>;
   [Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode),
    Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncType">SyncType</a> type),
    Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncInterval">SyncInterval</a> interval)]
