@@ -47,7 +47,6 @@
 					</topic>
 					<topic href="5.5/device_api/tv/index.html#TV Controls" label="TV Controls">
 						<topic href="5.5/device_api/tv/tizen/tvaudiocontrol.html" label="TV Audio Control"/>
-						<topic href="5.5/device_api/tv/tizen/tvchannel.html" label="TV Channel"/>
 						<topic href="5.5/device_api/tv/tizen/tvdisplaycontrol.html" label="TV Display Control"/>
 						<topic href="5.5/device_api/tv/tizen/tvinfo.html" label="TV Information"/>
 						<topic href="5.5/device_api/tv/tizen/tvinputdevice.html" label="TV Input Device"/>
