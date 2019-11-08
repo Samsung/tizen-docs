@@ -470,7 +470,7 @@ You can manage the device filesystem, individual files, and various events, acce
 </tr>
 <tr>
 <td>TV Controls</td>
-<td>These APIs contain classes and interfaces that enable you control the TV functionalities, such as channels and audio.<br>
+<td>These APIs contain classes and interfaces that enable you control the TV functionalities, such as audio and settings.<br>
 You can modify the volume level, and manage TV settings. You can also access 3D mode information, monitor remote control key events, and control the main and PIP window on the TV screen.
 </td>
 <td>
