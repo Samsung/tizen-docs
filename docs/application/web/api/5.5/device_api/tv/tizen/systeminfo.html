@@ -147,37 +147,39 @@ For more information on the System Information features, see <a href="https://de
 </li>
 <li>2.12. <a href="#SystemInfoDisplay">SystemInfoDisplay</a>
 </li>
-<li>2.13. <a href="#SystemInfoDeviceOrientation">SystemInfoDeviceOrientation</a>
+<li>2.13. <a href="#SystemInfoPanel">SystemInfoPanel</a>
 </li>
-<li>2.14. <a href="#SystemInfoBuild">SystemInfoBuild</a>
+<li>2.14. <a href="#SystemInfoDeviceOrientation">SystemInfoDeviceOrientation</a>
 </li>
-<li>2.15. <a href="#SystemInfoLocale">SystemInfoLocale</a>
+<li>2.15. <a href="#SystemInfoBuild">SystemInfoBuild</a>
 </li>
-<li>2.16. <a href="#SystemInfoNetwork">SystemInfoNetwork</a>
+<li>2.16. <a href="#SystemInfoLocale">SystemInfoLocale</a>
 </li>
-<li>2.17. <a href="#SystemInfoWifiNetwork">SystemInfoWifiNetwork</a>
+<li>2.17. <a href="#SystemInfoNetwork">SystemInfoNetwork</a>
 </li>
-<li>2.18. <a href="#SystemInfoEthernetNetwork">SystemInfoEthernetNetwork</a>
+<li>2.18. <a href="#SystemInfoWifiNetwork">SystemInfoWifiNetwork</a>
 </li>
-<li>2.19. <a href="#SystemInfoCellularNetwork">SystemInfoCellularNetwork</a>
+<li>2.19. <a href="#SystemInfoEthernetNetwork">SystemInfoEthernetNetwork</a>
 </li>
-<li>2.20. <a href="#SystemInfoNetProxyNetwork">SystemInfoNetProxyNetwork</a>
+<li>2.20. <a href="#SystemInfoCellularNetwork">SystemInfoCellularNetwork</a>
 </li>
-<li>2.21. <a href="#SystemInfoSIM">SystemInfoSIM</a>
+<li>2.21. <a href="#SystemInfoNetProxyNetwork">SystemInfoNetProxyNetwork</a>
 </li>
-<li>2.22. <a href="#SystemInfoPeripheral">SystemInfoPeripheral</a>
+<li>2.22. <a href="#SystemInfoSIM">SystemInfoSIM</a>
 </li>
-<li>2.23. <a href="#SystemInfoMemory">SystemInfoMemory</a>
+<li>2.23. <a href="#SystemInfoPeripheral">SystemInfoPeripheral</a>
 </li>
-<li>2.24. <a href="#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a>
+<li>2.24. <a href="#SystemInfoMemory">SystemInfoMemory</a>
 </li>
-<li>2.25. <a href="#SystemInfoVideoSource">SystemInfoVideoSource</a>
+<li>2.25. <a href="#SystemInfoVideoSourceInfo">SystemInfoVideoSourceInfo</a>
 </li>
-<li>2.26. <a href="#SystemInfoCameraFlash">SystemInfoCameraFlash</a>
+<li>2.26. <a href="#SystemInfoVideoSource">SystemInfoVideoSource</a>
 </li>
-<li>2.27. <a href="#SystemInfoADS">SystemInfoADS</a>
+<li>2.27. <a href="#SystemInfoCameraFlash">SystemInfoCameraFlash</a>
 </li>
-<li>2.28. <a href="#SystemInfoServiceCountry">SystemInfoServiceCountry</a>
+<li>2.28. <a href="#SystemInfoADS">SystemInfoADS</a>
+</li>
+<li>2.29. <a href="#SystemInfoServiceCountry">SystemInfoServiceCountry</a>
 </li>
 </ul>
 </li>
@@ -246,6 +248,10 @@ For more information on the System Information features, see <a href="https://de
 </tr>
 <tr>
 <td><a href="#SystemInfoDisplay">SystemInfoDisplay</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#SystemInfoPanel">SystemInfoPanel</a></td>
 <td></td>
 </tr>
 <tr>
@@ -323,7 +329,7 @@ For more information on the System Information features, see <a href="https://de
           </div>
 <pre class="webidl prettyprint">  enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK", "WIFI_NETWORK",
     "ETHERNET_NETWORK", "CELLULAR_NETWORK", "NET_PROXY_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "VIDEOSOURCE", "CAMERA_FLASH", "ADS",
-    "SERVICE_COUNTRY", "SOURCE_INFO" };</pre>
+    "SERVICE_COUNTRY", "SOURCE_INFO", "PANEL" };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -349,7 +355,7 @@ For more information on the System Information features, see <a href="https://de
  <var>ADS</var> is supported since Tizen 3.0
           </p>
 <p><span class="remark">Remark: </span>
- <var>SERVICE_COUNTRY</var> and <var>SOURCE_INFO</var> are supported since Tizen 5.5
+ <var>SERVICE_COUNTRY</var>, <var>SOURCE_INFO</var> and <var>PANEL</var> are supported since Tizen 5.5
           </p>
 </div>
 <div class="enum" id="SystemInfoNetworkType">
@@ -2603,8 +2609,50 @@ Change listener registered on <var>DISPLAY</var> property is triggered on
 </ul>
 </div>
 </div>
+<div class="interface" id="SystemInfoPanel">
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoPanel"></a><h3>2.13. SystemInfoPanel</h3>
+<div class="brief">
+ This property reflects the resolution limits of the panel.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoPanel : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
+    readonly attribute unsigned long panelWidth;
+    readonly attribute unsigned long panelHeight;
+  };</pre>
+<p><span class="version">Since: </span>
+ 5.5
+          </p>
+<p><span class="remark">Remark: </span>
+ Methods <a href="#SystemInfo::addPropertyValueChangeListener">addPropertyValueChangeListener()</a> and
+<a href="#SystemInfo::addPropertyValueArrayChangeListener">addPropertyValueArrayChangeListener()</a> triggers
+errorCallback with error type NotSupportedError in case of use the <var>PANEL</var> property.
+          </p>
+        
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="SystemInfoPanel::panelWidth">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">panelWidth</span></span><div class="brief">
+ The width of the panel in pixels.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+<li class="attribute" id="SystemInfoPanel::panelHeight">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">unsigned long </span><span class="name">panelHeight</span></span><div class="brief">
+ The height of the panel in pixels.
+            </div>
+<p><span class="version">Since: </span>
+ 5.5
+            </p>
+</li>
+</ul>
+</div>
+</div>
 <div class="interface" id="SystemInfoDeviceOrientation">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoDeviceOrientation"></a><h3>2.13. SystemInfoDeviceOrientation</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoDeviceOrientation"></a><h3>2.14. SystemInfoDeviceOrientation</h3>
 <div class="brief">
  This property reflects the information of the device orientation in this system.
           </div>
@@ -2641,7 +2689,7 @@ Change listener registered on <var>DISPLAY</var> property is triggered on
 </div>
 </div>
 <div class="interface" id="SystemInfoBuild">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoBuild"></a><h3>2.14. SystemInfoBuild</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoBuild"></a><h3>2.15. SystemInfoBuild</h3>
 <div class="brief">
  This property reflects the information of the current device.
           </div>
@@ -2688,7 +2736,7 @@ Change listener registered on <var>DISPLAY</var> property is triggered on
 </div>
 </div>
 <div class="interface" id="SystemInfoLocale">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoLocale"></a><h3>2.15. SystemInfoLocale</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoLocale"></a><h3>2.16. SystemInfoLocale</h3>
 <div class="brief">
  This property reflects the locale information of the current device.
           </div>
@@ -2737,7 +2785,7 @@ The country setting is case-sensitive.
 </div>
 </div>
 <div class="interface" id="SystemInfoNetwork">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoNetwork"></a><h3>2.16. SystemInfoNetwork</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoNetwork"></a><h3>2.17. SystemInfoNetwork</h3>
 <div class="brief">
  This property reflects the information of the data network in this system.
           </div>
@@ -2762,7 +2810,7 @@ The country setting is case-sensitive.
 </div>
 </div>
 <div class="interface" id="SystemInfoWifiNetwork">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoWifiNetwork"></a><h3>2.17. SystemInfoWifiNetwork</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoWifiNetwork"></a><h3>2.18. SystemInfoWifiNetwork</h3>
 <div class="brief">
  This property reflects the information of the Wi-Fi network in this system.
           </div>
@@ -2935,7 +2983,7 @@ It is written in 255.255.255.255 format.
 </div>
 </div>
 <div class="interface" id="SystemInfoEthernetNetwork">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoEthernetNetwork"></a><h3>2.18. SystemInfoEthernetNetwork</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoEthernetNetwork"></a><h3>2.19. SystemInfoEthernetNetwork</h3>
 <div class="brief">
  This property reflects the information of the Ethernet network in this system.
           </div>
@@ -3077,7 +3125,7 @@ It is written in 255.255.255.255 format.
 </div>
 </div>
 <div class="interface" id="SystemInfoCellularNetwork">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoCellularNetwork"></a><h3>2.19. SystemInfoCellularNetwork</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoCellularNetwork"></a><h3>2.20. SystemInfoCellularNetwork</h3>
 <div class="brief">
  This property reflects the information of the Cellular network in this system.
           </div>
@@ -3292,7 +3340,7 @@ It is written in 255.255.255.255 format.
 </div>
 </div>
 <div class="interface" id="SystemInfoNetProxyNetwork">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoNetProxyNetwork"></a><h3>2.20. SystemInfoNetProxyNetwork</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoNetProxyNetwork"></a><h3>2.21. SystemInfoNetProxyNetwork</h3>
 <div class="brief">
  This property reflects the information of the net_proxy network in this system.
           </div>
@@ -3317,7 +3365,7 @@ It is written in 255.255.255.255 format.
 </div>
 </div>
 <div class="interface" id="SystemInfoSIM">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoSIM"></a><h3>2.21. SystemInfoSIM</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoSIM"></a><h3>2.22. SystemInfoSIM</h3>
 <div class="brief">
  This property reflects the information of the SIM card information.
           </div>
@@ -3524,7 +3572,7 @@ It is written in 255.255.255.255 format.
 </div>
 </div>
 <div class="interface" id="SystemInfoPeripheral">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoPeripheral"></a><h3>2.22. SystemInfoPeripheral</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoPeripheral"></a><h3>2.23. SystemInfoPeripheral</h3>
 <div class="brief">
  This property reflects the peripheral information of the current device.
           </div>
@@ -3549,7 +3597,7 @@ It is written in 255.255.255.255 format.
 </div>
 </div>
 <div class="interface" id="SystemInfoMemory">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoMemory"></a><h3>2.23. SystemInfoMemory</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoMemory"></a><h3>2.24. SystemInfoMemory</h3>
 <div class="brief">
  This property represents information about the memory state on the device system.
           </div>
@@ -3574,7 +3622,7 @@ It is written in 255.255.255.255 format.
 </div>
 </div>
 <div class="interface" id="SystemInfoVideoSourceInfo">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoVideoSourceInfo"></a><h3>2.24. SystemInfoVideoSourceInfo</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoVideoSourceInfo"></a><h3>2.25. SystemInfoVideoSourceInfo</h3>
 <div class="brief">
  This property reflects each input source the current device has.
           </div>
@@ -3637,7 +3685,7 @@ By default getPropertyValue functions does not support this member, and will ret
 </div>
 </div>
 <div class="interface" id="SystemInfoVideoSource">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoVideoSource"></a><h3>2.25. SystemInfoVideoSource</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoVideoSource"></a><h3>2.26. SystemInfoVideoSource</h3>
 <div class="brief">
  This property reflects the video sources the device has.
           </div>
@@ -3676,7 +3724,7 @@ By default getPropertyValue functions does not support this member, and will ret
 </div>
 </div>
 <div class="interface" id="SystemInfoCameraFlash">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoCameraFlash"></a><h3>2.26. SystemInfoCameraFlash</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoCameraFlash"></a><h3>2.27. SystemInfoCameraFlash</h3>
 <div class="brief">
  The SystemInfoCameraFlash provides the way to control the attached the camera flash.
           </div>
@@ -3850,7 +3898,7 @@ If the specified brightness value is not supported by the device, the brightness
 </div>
 </div>
 <div class="interface" id="SystemInfoADS">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoADS"></a><h3>2.27. SystemInfoADS</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoADS"></a><h3>2.28. SystemInfoADS</h3>
 <div class="brief">
  This property represents information about advertisement service - ADS.
           </div>
@@ -3875,7 +3923,7 @@ If the specified brightness value is not supported by the device, the brightness
 </div>
 </div>
 <div class="interface" id="SystemInfoServiceCountry">
-<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoServiceCountry"></a><h3>2.28. SystemInfoServiceCountry</h3>
+<a class="backward-compatibility-anchor" name="::SystemInfo::SystemInfoServiceCountry"></a><h3>2.29. SystemInfoServiceCountry</h3>
 <div class="brief">
  This property represents a country of which basic policy of terms and conditions is set.
           </div>
@@ -3960,7 +4008,7 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
 <pre class="webidl prettyprint">module SystemInfo {
   enum SystemInfoPropertyId { "BATTERY", "CPU", "STORAGE", "DISPLAY", "DEVICE_ORIENTATION", "BUILD", "LOCALE", "NETWORK",
     "WIFI_NETWORK", "ETHERNET_NETWORK", "CELLULAR_NETWORK", "NET_PROXY_NETWORK", "SIM", "PERIPHERAL", "MEMORY", "VIDEOSOURCE",
-    "CAMERA_FLASH", "ADS", "SERVICE_COUNTRY", "SOURCE_INFO" };
+    "CAMERA_FLASH", "ADS", "SERVICE_COUNTRY", "SOURCE_INFO", "PANEL" };
   enum SystemInfoNetworkType { "NONE", "2G", "2.5G", "3G", "4G", "WIFI", "ETHERNET", "NET_PROXY", "UNKNOWN" };
   enum SystemInfoWifiSecurityMode { "NONE", "WEP", "WPA_PSK", "WPA2_PSK", "EAP" };
   enum SystemInfoWifiEncryptionType { "NONE", "WEP", "TKIP", "AES", "TKIP_AES_MIXED" };
@@ -4032,6 +4080,10 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
     readonly attribute double physicalWidth;
     readonly attribute double physicalHeight;
     readonly attribute double brightness;
+  };
+  [NoInterfaceObject] interface SystemInfoPanel : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
+    readonly attribute unsigned long panelWidth;
+    readonly attribute unsigned long panelHeight;
   };
   [NoInterfaceObject] interface SystemInfoDeviceOrientation : <a href="#SystemInfoProperty">SystemInfoProperty</a> {
     readonly attribute <a href="#SystemInfoDeviceOrientationStatus">SystemInfoDeviceOrientationStatus</a> status;
