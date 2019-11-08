@@ -274,7 +274,7 @@ You can set the following attributes for a notification:
         /* Error handling */
     ```
 
-  Followiing are the five viewer types:
+  Following are the five viewer types:
   - NOTI_EX_RECEIVER_GROUP_PANEL
   - NOTI_EX_RECEIVER_GROUP_TICKER
   - NOTI_EX_RECEIVER_GROUP_LOCKSCREEN

@@ -1,8 +1,9 @@
 # Tizen 3.0 Public M4
 
-Release Date: Nov. 30, 2017
+Release date: Nov. 30, 2017
 
 Tizen 3.0 public M4 has been released, mainly containing security fixes.
+
 
 ## Release Details
 
@@ -32,7 +33,7 @@ Tizen 3.0 public M4 has been released, mainly containing security fixes.
 
 ## Tizen 3.0 Platforom(API) for Tizen Studio 1.3
 
-Release Date: Oct. 11, 2017
+Release date: Oct. 11, 2017
 
 
 Tizen Studio 1.3 has Tizen 3.0 Platform updates.
