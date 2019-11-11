@@ -1,6 +1,6 @@
 # MIC Frequently Asked Questions
 
-**Q**: When creating an image, MIC shows "Error &lt;creator&gt;: URLGrabber error: http://www.example.com/latest/repos/oss/ia32/packages/repodata/repomd.xml". What does it mean?
+**Q**: When creating an image, MIC shows `Error <creator>: URLGrabber error: http://www.example.com/latest/repos/oss/ia32/packages/repodata/repomd.xml`. What does it mean?
 
 **A**: Your network can have some issues, or your proxy does not work. Try another proxy and check the network status.
 

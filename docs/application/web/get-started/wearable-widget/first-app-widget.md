@@ -338,6 +338,7 @@ To run the application on the emulator:
 
         The above screen is shown through the Viewer, to allow you to develop a lone widget application for testing purposes.
 
+        <a name="viewer"> </a>
         To see the widget running on the home screen, add the widget there:
 
         1.  Press the **Back** key (in the upper-right corner of the emulator device) to return to the home screen (showing a watch face).
