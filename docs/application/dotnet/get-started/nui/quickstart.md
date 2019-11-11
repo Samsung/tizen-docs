@@ -129,7 +129,8 @@ You can add your code in **SampleNUIApp.cs** file:
         Initialize();
     }
     ```
-    > **Note**  
+    > **Note**
+    >
     > To invoke the `Created` event of the [Tizen.Applications.CoreApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class, you must call the `base.OnCreate()` method inside the override.
 
 5.  Within the `Initialize()` method, set the text label properties:
@@ -190,7 +191,8 @@ You can add your code in **SampleNUIApp.cs** file:
     }
     ```
 
-    >  **Note**  
+    > **Note**
+    >
     > To invoke the `Terminated` event of the `Tizen.Applications.CoreApplication` class, you must call the `base.OnTerminate()` method inside the override.
 
 9.  Implement the `Main()` method:
