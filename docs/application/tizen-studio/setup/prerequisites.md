@@ -22,6 +22,10 @@ Follow these instructions to install the appropriate JDK version for your system
 
   Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java) for detailed instructions for installing the Oracle&reg; JDK version 8. The raw binaries can be downloaded directly from Oracle ([Oracle Java download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)).
 
+  > **Note**
+  >
+  > For RT IDE use Oracle Java Development Kit (JDK) 8 only.
+
 You can also use Oracle's OpenJDK. For more installation details, see [OpenJDK 12 and OpenJFX Installation Guide](openjdk.md).
 
 ## OS and System Requirements
