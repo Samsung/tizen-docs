@@ -3410,21 +3410,6 @@ This feature is only used for tv Web application filtering.
 **System information:**\
 The platform returns true for this key, if the device supports TV Window API.
 
-[Edit Key](https://www.tizen.org/node/20547/edit?destination=feature "edit"){.edit}
-
-</div>
-
-<div class="views-row views-row-217 views-row-odd">
-
-[http://tizen.org/feature/tv.tuner](){#feature/tv.tuner}
---------------------------------------------------------
-
-**Application filtering:**\
-This feature is only used for tv Web application filtering.
-
-**System information:**\
-The platform returns true for this key, if the device supports TV Channel API.
-
 [Edit Key](https://www.tizen.org/node/20543/edit?destination=feature "edit"){.edit}
 
 </div>
