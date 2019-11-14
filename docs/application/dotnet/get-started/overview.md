@@ -17,7 +17,7 @@ When you create your first Tizen .NET application, you can select from the follo
 -   [NUI .NET application](nui/quickstart.md)
 
     NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications.
-    These applications are run on a range of Tizen devices, such as mobile devices, TVs, and wearables.
+    These applications run on a wide range of Tizen devices, such as mobile devices, TVs, and wearables.
 
 
 
