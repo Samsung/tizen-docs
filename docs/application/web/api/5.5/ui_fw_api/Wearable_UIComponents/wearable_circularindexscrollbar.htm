@@ -14,6 +14,13 @@
 <p>If you spin the rotary quickly, an indicator will be displayed and you can move in an index unit.</p>
 <p>The indicator will disappear if no rotary action is detected for a second.</p>
 <p>This component fires a select event when the index characters are selected.</p>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.1%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fnavcontrols%2Findexscrollbar%2Findex.html', '_blank')"
+>Use example</button>
 
 <table class="note">
 	<tbody>
