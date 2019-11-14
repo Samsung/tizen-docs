@@ -17,10 +17,10 @@ Master JSON file can represent device and configuration for thing agent.
      The default value is 2.
   - **crtType**[int] : Certificate type
     - 1(Test Certificate), 2(Artik Certificate), 3(Custom)  
-    To use test certificate as described in [**Getting Started**](../getting-started/overview.md), the value should be 1.
+    To use test certificate as described in [**Get Started**](../get-started/overview.md), the value should be 1.
   - **easySetup**[object] : Easy-setup information
     - **mode**[string] : Easy-setup mode: 1(SoftAP), 2(Custom)  
-      To use Soft AP as described in [**Getting Started**](../getting-started/overview.md), the value should be 1.
+      To use Soft AP as described in [**Get Started**](../get-started/overview.md), the value should be 1.
     - **setupId**[string] : Setup Identifier. Onboarding ID registered in DevWorkSpace
 
 ### Sample Master JSON File

@@ -95,6 +95,7 @@ To create a custom view:
    |  `RelayoutRequest()` |   Request a re-layout, which means performing a size negotiation on the view, its parent, and children (and potentially whole scene). |
    |  `OnStageConnection()`  |    If a notification is required when a custom view is connected to a stage default window, override the `OnStageConnection()` method. You can use the `OnStageDisconnection()` method similarly to react to a view getting disconnected from the window.|
 
+<a name="viewbehaviour"> </a>
 You can manage the general behavior of your custom view by defining a value for the `CustomViewBehaviour` enumeration of the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class during object construction. You can determine how the custom view reacts to size negotiation, style changes, event callbacks, and keyboard navigation:
 
 ```

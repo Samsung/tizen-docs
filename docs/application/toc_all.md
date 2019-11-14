@@ -75,7 +75,7 @@
 ##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
-##### [CustomView](/application/dotnet/guides/nui/creating-custom-view-controls.md)
+##### [CustomView](/application/dotnet/guides/nui/customview.md)
 ##### [FlexContainer](/application/dotnet/guides/nui/flexcontainer.md)
 ##### [ImageView](/application/dotnet/guides/nui/imageview.md)
 ##### [TableView](/application/dotnet/guides/nui/tableview.md)
@@ -792,7 +792,7 @@
 ###### [Constraints](/application/native/guides/ui/dali/constraints.md)
 ##### [Resources](/application/native/guides/ui/dali/resources.md)
 ##### Rendering and Effects
-###### [Overview](/application/native/guides/ui/dali/rendering-effects.md)
+###### [Overview](/application/native/guides/ui/dali/dali-rendering.md)
 ###### [Shape Drawing](/application/native/guides/ui/dali/rendering-tutorial.md)
 ###### [SVG Rendering](/application/native/guides/ui/dali/svg-rendering.md)
 ##### Background Knowledge
@@ -891,7 +891,7 @@
 ##### [Connection Management](/application/native/guides/connectivity/connection.md)
 ##### [Download](/application/native/guides/connectivity/download.md)
 ##### [Curl](/application/native/guides/connectivity/curl.md)
-##### [HTTP](/application/native/guides/connectivity/http.md)
+##### [HTTP](/application/native/guides/connectivity/http-api.md)
 ##### [Web View](/application/native/guides/connectivity/web-view.md)
 #### [File Transfer with MTP](/application/native/guides/connectivity/mtp.md)
 #### [VPN Connections](/application/native/guides/connectivity/vpn.md)

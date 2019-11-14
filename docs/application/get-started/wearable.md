@@ -4,12 +4,13 @@ The Get Started Tutorial teaches you how to create basic Tizen applications for 
 
 The Tizen supports three primary application types for wearable devices:
 
--   [.NET application](#net-application) is a new way to develop applications for the Tizen operating system using C# language.
+-   [.NET application](#dotnet-application) is a new way to develop applications for the Tizen operating system using C# language.
 
 -   [Web application](#web-application) is a Web site stored on your device and built using Web-native languages, such as HTML5, CSS, and JavaScript. The Web application uses the Tizen Web Framework to interact with the native subsystems.
 
 -   [Native application](#native-application) is developed using C language. Developer can use the dozens of native API modules that cover a large range of capabilities such as camera, GPS, and accelerometer in addition to more advanced system settings and functionality.
 
+<a name="dotnet-application"> </a>
 ## .NET Application
 
 The following guide demonstrates how to create and run a basic Tizen .NET application:
