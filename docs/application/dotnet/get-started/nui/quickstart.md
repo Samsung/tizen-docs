@@ -97,7 +97,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
     }
 
 ```
-### Adding text label
+### Adding Text Label
 
 1.  Declare the required system and NUI namespaces:
 
@@ -232,7 +232,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
 
       ![launch_emulator1](media/tizen_project_wizard_capture_template3.png)
 
-    - In Emulator Manager, select an emulator from the list, Click **Launch**:
+    - In Emulator Manager, select an emulator from the list. Click **Launch**:
 
       ![launch_emulator2](media/tizen_project_wizard_capture_template4.png)
 
