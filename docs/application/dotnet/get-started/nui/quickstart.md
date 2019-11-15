@@ -1,3 +1,4 @@
+# Create Your First Tizen .NET NUI Application
 The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Natural User Interface (NUI) application development process. With the instructions, you can create and run a basic NUI application, which displays some text on the screen with no user interaction.
 
    > **Note**
@@ -6,16 +7,11 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 1. Before you get started with developing Tizen applications, set up the [development environment](../../../vstools/install.md).
 
-2. [Creating a Project](#create-a-project) using Visual Studio.
-  This step shows how you can use a predesigned project template that
-  creates all the basic files and folders required for your project.
+2. [Creating a Project](#create-a-project) using Visual Studio. This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 
-3. [Enhancing Your Application](#enhance-your-application).
-  This step shows how you can enhance your application by creating a
-  UI and making small alterations to it to improve the usability of the application.
+3. [Enhancing Your Application](#enhance-your-application). This step shows how you can enhance your application by creating a UI and making small alterations to it to improve the usability of the application.
 
-4. [Building and Running NUI Application](#build-and-run-nui-application).
-  This step shows how you can build and run the application on the emulator or a real target device.
+4. [Building and Running NUI Application](#build-and-run-nui-application). This step shows how you can build and run the application on the emulator or a real target device.
 
 ## Create Project
 The following example shows you how to create and configure a basic NUI application project in Visual Studio. An application project contains all the files that make up an application.
@@ -27,11 +23,11 @@ To create a Tizen NUI application, follow these steps:
 
     ![nui_setting_image_1](./media/tizen_project_wizard_capture_template1_1.png)
 
-4.  In **the Configure your new Project** dialog, specify the **Project name**, **Location**, and **Solution name**, Click **Create**:
+4.  In the **Configure your new Project** dialog, specify the **Project name**, **Location**, and **Solution name**. Click **Create**:
 
     ![nui_setting_image_1](./media/tizen_project_wizard_capture_template1_2.png)
 
-    - The following figure illustrates a new project  `SampleNUIApp` in the **Solution Explorer** view:
+    - The following figure illustrates a new project `SampleNUIApp` in the **Solution Explorer** view:
 
     ![nui_setting_image_2](./media/tizen_project_wizard_capture_template2.png)
 
