@@ -3,7 +3,7 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
    > **Note**
    >
-   > .NET NUI applications are supported since Tizen 4.0
+   > .NET NUI applications are supported since Tizen 4.0.
 
 1. Before you get started with developing Tizen applications, set up the [development environment](../../../vstools/install.md).
 
@@ -27,7 +27,7 @@ To create a Tizen NUI application, follow these steps:
 
     ![nui_setting_image_1](./media/tizen_project_wizard_capture_template1_2.png)
 
-    - The following figure illustrates a new project `SampleNUIApp` in the **Solution Explorer** view:
+    The following figure illustrates a new project `SampleNUIApp` in the **Solution Explorer** view:
 
     ![nui_setting_image_2](./media/tizen_project_wizard_capture_template2.png)
 
