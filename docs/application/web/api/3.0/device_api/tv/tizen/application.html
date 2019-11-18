@@ -500,6 +500,9 @@ UnknownError - If any other error occurs.              </li>
 <p><span class="remark">Remark: </span>
  Since Tizen 2.4, the launch request of the service application from other package is restricted by the platform.
             </p>
+<p><span class="remark">Remark: </span>
+ Use this method for proper case only, for example to launch your own app. Do not abuse the API for other app(s) launch without business consideration.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -593,6 +596,9 @@ UnknownError: If any other error occurs.              </li>
 <p><span class="remark">Remark: </span>
  Since Tizen 2.4, the launch request of the service application from other package is restricted by the platform.
 Also, implicit launch requests are NOT delivered to service applications since 2.4. To launch a service application, an explicit launch request with <em>ApplicationId id</em> MUST be sent.
+            </p>
+<p><span class="remark">Remark: </span>
+ Use this method for proper case only, for example to launch your own app. Do not abuse the API for other app(s) launch without business consideration.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -1899,7 +1905,12 @@ between applications through the <em>ApplicationControl </em>interface.
 </div>
 <div class="constructors">
 <h4 id="ApplicationControlData::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ApplicationControlData(DOMString key, DOMString[] value);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString[])</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ApplicationControlData(DOMString key, DOMString[] value);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -1954,8 +1965,13 @@ and launches the selected application.
 </div>
 <div class="constructors">
 <h4 id="ApplicationControl::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ApplicationControl(DOMString operation, optional DOMString? uri, optional DOMString? mime, optional DOMString? category,
-                   optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data, optional <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>? launchMode);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString?, DOMString?, DOMString?, <a href="#ApplicationControlData">ApplicationControlData</a>[]?, <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ApplicationControl(DOMString operation, optional DOMString? uri, optional DOMString? mime, optional DOMString? category,
+                   optional <a href="#ApplicationControlData">ApplicationControlData</a>[]? data, optional <a href="#ApplicationControlLaunchMode">ApplicationControlLaunchMode</a>? launchMode);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>

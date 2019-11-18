@@ -3107,8 +3107,17 @@ catch (err)
 <div class="constructors">
 <h4 id="NDEFMessage::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor ()</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFMessage();</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#NDEFRecord">NDEFRecord</a>[])</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFMessage(<a href="#NDEFRecord">NDEFRecord</a>[] ndefRecords);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (byte[])</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFMessage(byte[] rawData);</pre>
 </dl>
 </div>
@@ -3244,7 +3253,13 @@ catch (err)
 <div class="constructors">
 <h4 id="NDEFRecord::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (short, byte[], byte[], byte[]?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFRecord(short tnf, byte[] type, byte[] payload, optional byte[]? id);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (byte[])</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFRecord(byte[] raw_data);</pre>
 </dl>
 </div>
@@ -3355,7 +3370,12 @@ var payload = newRecord.payload;
         
       <div class="constructors">
 <h4 id="NDEFRecordText::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">NDEFRecordText(DOMString text, DOMString languageCode, optional DOMString? encoding);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">NDEFRecordText(DOMString text, DOMString languageCode, optional DOMString? encoding);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3409,7 +3429,12 @@ var payload = newRecord.payload;
         
       <div class="constructors">
 <h4 id="NDEFRecordURI::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">NDEFRecordURI(DOMString uri);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">NDEFRecordURI(DOMString uri);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3446,6 +3471,9 @@ var payload = newRecord.payload;
       <div class="constructors">
 <h4 id="NDEFRecordMedia::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, byte[])</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFRecordMedia(DOMString mimeType, byte[] data);</pre>
 <div class="description">
               <ul>
