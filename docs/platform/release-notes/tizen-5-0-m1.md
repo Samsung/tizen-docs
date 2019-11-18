@@ -127,7 +127,7 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
 - Widget framework refactoring:
   - Screen connector library is rewritten in object-oriented design.
 - Package Manager
-  - Added API for changing applications’ icon.
+  - Added API for changing applications' icon.
   - Changed some enum values for fixing errata.
   - Added new enum value for extended storage.
 
@@ -315,7 +315,7 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
   - Added support for ReplayGain.
   - Removed session based audio API.
   - Pre-condition of setting ROI area API is changed.
-  - The “player_set_display()” must be called in the main thread of application by restriction of upgraded EFL.
+  - The "player_set_display()" must be called in the main thread of application by restriction of upgraded EFL.
 - MediaCodec
   - Added H/W resource management.
   - Added the error enum for resource conflict.
@@ -327,18 +327,18 @@ The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, devic
   - Increase the maximum camera number.(2 -> 10)
   - Added new APIs for hue.
   - A display ROI area can be set before display mode is set as ROI mode.
-  - The “camera_set_display()” must be called in main thread of application by restriction of upgraded EFL.
+  - The "camera_set_display()” must be called in main thread of application by restriction of upgraded EFL.
   - Added a dependency of libmm-display-interface.
     - Removed the dependencies of display related packages.
-    - “libmm-display”  must be included in platform binary to use display related APIs.
-  - New package is added to separate camera API test program from “capi-media-camera” package.
-    - “capi-media-camera-tool” must be installed to use “camera_test”.
+    - "libmm-display"  must be included in platform binary to use display related APIs.
+  - New package is added to separate camera API test program from "capi-media-camera" package.
+    - "capi-media-camera-tool” must be installed to use "camera_test".
 - Recorder
   - A related feature is changed.
     - As-Is: `<http://tizen.org/feature/camera>`, `<http://tizen.org/feature/microphone>`
     - To-Be: `<http://tizen.org/feature/media.audio_recording>`, `<http://tizen.org/feature/media.video_recording>`
   - New package is added to separate recorder API test program from capi-media-recorder package.
-    - “capi-media-recorder-tool” must be installed to use “recorder_test”.
+    - "capi-media-recorder-tool" must be installed to use "recorder_test".
 - Media Content
   - Added synchronous thumbnail creation API and old asynchronous API is deprecated.
   - Added support for contents moving among the internal, SD Card and USB Storage.

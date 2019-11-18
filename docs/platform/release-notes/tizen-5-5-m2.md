@@ -316,7 +316,7 @@ The Tizen 5.5 Public M2 release provides developers with the Tizen kernel, devic
 
 #### Known Issues
 
-- Universal switch application AT-client has been tested only in the mobile profile.
+- Universal switch application AT-client has been tested only in the Mobile profile.
 
 
 ### Multimedia framework

@@ -61,7 +61,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
 #### New and changed features
 
 - Extended Wayland Protocols
-  - The ‘event_surface’ event has been added to tizen_keyrouter protocol for sending the surface information before sending the key to client(s).
+  - The 'event_surface' event has been added to tizen_keyrouter protocol for sending the surface information before sending the key to client(s).
 - Enlightenment Wayland Display Server
   - A D-Bus policy has been updated to enhance security regarding D-Bus interface.
   - A new layer has been added for e_desk_object.
@@ -76,7 +76,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - The bugs regarding sending pre-unobscured visibility event have been fixed.
   - The bugs related to uniconify_render have been fixed.
   - The bug not returning to the default screen mode has been fixed.
-  - The error that the quick panel doesn’t disappear has been fixed.
+  - The error that the quick panel doesn't disappear has been fixed.
   - The bugs related with pending position move request have been fixed.
   - The bugs related with hwc cancel condition have been fixed.
   - E_Desk smart object disorder has been fixed while zooming and maximizing member object.
@@ -140,7 +140,7 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
   - Support for EvasGL thread separation on direct rendering mode has been added.
   - The pre-compiled shader list has been optimized for boot time enhancement.
   - Support for the Evas GL capability test has been added.
-  - EGL Sync is added for EvasGL’s EGLImage.
+  - EGL Sync is added for EvasGL's EGLImage.
 
 #### Fixes
 
@@ -182,14 +182,14 @@ The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, devic
     - http://tizen.org/feature/content.scanning.others for scanning OTHERS-type files which are not included in the media content types such as IMAGE, VIDEO, SOUND or MUSIC.
     - http://tizen.org/feature/content.filter.pinyin for supporting the Pinyin Filter. 
 - Media Controller
-  - In the mobile profile, repeat mode on for one media enumeration has been added.
-  - In the mobile profile, new API set for supporting playlist have been added.
-  - In the mobile profile, new API set for sending command and receiving command reply have been added.
-  - In the mobile profile, new API set for sending custom event and receiving event reply have been added.
-  - In the mobile profile, the API set for supporting metadata have been changed.
-  - In the mobile profile, the API set for sending custom command and receiving custom reply have been changed.
-  - In the mobile profile, the callbacks for receiving update information have been changed.
-  - In the mobile profile, some playback states enumerations have been changed.
+  - In the Mobile profile, repeat mode on for one media enumeration has been added.
+  - In the Mobile profile, new API set for supporting playlist have been added.
+  - In the Mobile profile, new API set for sending command and receiving command reply have been added.
+  - In the Mobile profile, new API set for sending custom event and receiving event reply have been added.
+  - In the Mobile profile, the API set for supporting metadata have been changed.
+  - In the Mobile profile, the API set for sending custom command and receiving custom reply have been changed.
+  - In the Mobile profile, the callbacks for receiving update information have been changed.
+  - In the Mobile profile, some playback states enumerations have been changed.
 - Player
   - Pre-condition of setting ROI area API has been changed.
 - Muse
