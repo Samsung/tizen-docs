@@ -8,11 +8,17 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 1. Before you get started with developing Tizen applications, set up the [development environment](../../../vstools/install.md).
 
-2. [Creating a Project](#create-a-project) using Visual Studio. This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
+2. [Creating a Project](#create-a-project) using Visual Studio.
 
-3. [Enhancing Your Application](#enhance-your-application). This step shows how you can enhance your application by creating a UI and making small alterations to it to improve the usability of the application.
+    This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 
-4. [Building and Running NUI Application](#build-and-run-nui-application). This step shows how you can build and run the application on the emulator or a real target device.
+3. [Enhancing Your Application](#enhance-your-application).
+
+    This step shows how you can enhance your application by creating a UI and making small alterations to it to improve the usability of the application.
+
+4. [Building and Running NUI Application](#build-and-run-nui-application).
+
+    This step shows how you can build and run the application on the emulator or a real target device.
 
 ## Create Project
 
@@ -34,8 +40,8 @@ To create a Tizen NUI application, follow these steps:
     ![nui_setting_image_2](./media/tizen_project_wizard_capture_template2.png)
 
     > **Note**
-    >   
-    > You can use the NUI APIs only if Tizen.Net is available in NuGet packages.
+    >
+    > If Tizen.Net is available in NuGet packages then you can use the NUI APIs.
 
 ## Enhance Your Application
 
@@ -158,7 +164,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
     For more information on the key properties of the `Tizen.NUI.BaseComponents.TextLabel` class, see the [TextLabel](../../guides/nui/textlabel.md).
 
 6.  Implement the main application window:
-    1.  Create the window and add an event handler for the `KeyEvent` event of the [Tizen.NUI.Window](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html) class. This event handler is invoked whenever the key event is received.
+    1.  Create the window and add an event handler for the `KeyEvent` event of the [Tizen.NUI.Window](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html) class. This event handler is invoked whenever the key event is received:
 
         ```csharp
         Window.Instance.KeyEvent += OnKeyEvent;
@@ -210,7 +216,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
 
         This ensures that the images are displayed, and the events and signals are dispatched and captured.
 
-        In this `SampleNUI` example, the `Main()` method is implemented within the class. For significant application development, the `Main()` method must be implemented in a separate `.cs` file.
+        In this `SampleNUI` example, the `Main()` method is implemented in the class. For significant application development, the `Main()` method must be implemented in a separate `.cs` file:
 
         ```
         app.Run(args);
@@ -246,11 +252,11 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
 
     You can deploy your NUI application to the target emulator in one of the following ways:
 
-    1. Press the **F5** key or **Ctrl+F5** keys.
+    - Press the **F5** key or **Ctrl+F5** keys.
 
-    2. In the Visual Studio menu, select **Debug > Start Debugging** or **Start Without Debugging**.
+    - In the Visual Studio menu, select **Debug > Start Debugging** or **Start Without Debugging**.
 
-    3. On the Visual Studio toolbar, click an emulator instance:
+    - On the Visual Studio toolbar, click an emulator instance:
 
        ![VS_Toolbar](media/tizen_project_wizard_capture_template5.png)
 
