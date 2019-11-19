@@ -121,6 +121,9 @@ If a listener is created successfully, it is able to observe sensor data changes
            float x = event->values[0];
            float y = event->values[1];
            float z = event->values[2];
+       } else if (type == SENSOR_HRM_LED_GREEN) {
+           unsigned long long timestamp = event->timestamp;
+           int v = (int)event->values[0];
        }
    }
 
@@ -565,17 +568,17 @@ The following table lists the measurement data that the pedometer provides.
 
 **Table: Measurement data detected by the pedometer**
 
-| Measurement                        | Range                               | Unit         |
-|------------------------------------|-------------------------------------|--------------|
-| Timestamp                          | -                                   | Microseconds |
-| values[0]: number of steps         | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
-| values[1]: number of walking steps | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
-| values[2]: number of running steps | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
-| values[3]: moving distance         | Min. value = 0                      | Meters       |
-| values[4]: calories burned         | Min. value = 0                      | kcal         |
-| values[5]: last speed              | Min. value = 0                      | km/h         |
-| values[6]: last stepping frequency | Min. value = 0                      | Steps/second |
-| values[7]: last pedestrian state   | -                                   | -            |
+| Measurement                        | Type    | Range                                           | Unit         |
+|------------------------------------|---------|-------------------------------------------------|--------------|
+| Timestamp                          |         | -                                               | Microseconds |
+| values[0]: number of steps         | `int`   | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
+| values[1]: number of walking steps | `int`   | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
+| values[2]: number of running steps | `int`   | Min. value = 0<br> Max. value = 2<sup>24</sup>  | Steps        |
+| values[3]: moving distance         | `float` | Min. value = 0                                  | Meters       |
+| values[4]: calories burned         | `float` | Min. value = 0                                  | kcal         |
+| values[5]: last speed              | `float` | Min. value = 0                                  | km/h         |
+| values[6]: last stepping frequency | `float` | Min. value = 0                                  | Steps/second |
+| values[7]: last pedestrian state   | -       | -                                               | -            |
 
 The pedestrian state is `SENSOR_PEDOMETER_STATE_UNKNOWN`, `SENSOR_PEDOMETER_STATE_STOP`, `SENSOR_PEDOMETER_STATE_WALK`, or `SENSOR_PEDOMETER_STATE_RUN`.
 
