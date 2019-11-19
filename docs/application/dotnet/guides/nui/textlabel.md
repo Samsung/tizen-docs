@@ -4,7 +4,7 @@ A text label is a NUI control that displays a short text string. It is implement
 
 Text labels are lightweight, non-editable, and do not respond to user input. They can support multiple languages and scripts, including right-to-left scripts, such as Arabic.
 
-For an example of displaying text with a text label, see [NUI Quick Start](../../get-started/nui/quickstart.md).
+The following example displays text with a label, for more information, see [NUI Quick Start](../../get-started/nui/quickstart.md).
 
 **Figure: Text label example, positioned to top left**
 
