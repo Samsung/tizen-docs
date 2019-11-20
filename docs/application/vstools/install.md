@@ -7,11 +7,9 @@ Visual Studio Tools for Tizen provides Tizen-specific tools to improve your prod
 
 ## Prerequisites
 
-To work with Visual Studio Tools for Tizen, you must have:
+To work with Visual Studio Tools for Tizen, you must have Visual Studio 2019.
 
-- Visual Studio 2017
-
-	![Visual Studio Tools for Tizen](media/prerequisite-vs.png)
+![Visual Studio Tools for Tizen](media/prerequisite-vs.png)
 
 > **Note**
 >
@@ -22,17 +20,17 @@ To work with Visual Studio Tools for Tizen, you must have:
 To use the Tizen SDK tools in Visual Studio, you must install:
 
 1. [Visual Studio Tools for Tizen Extension](#installing-visual-studio-tools-for-tizen-extension )
-2. [Tizen Baseline SDK](#installing-tizen-baseline-sdk)
+2. [Tizen Baseline SDK](#install-tizen-baseline-sdk)
 
 <a name="install"></a>
 ## Install Visual Studio Tools for Tizen Extension 
 
 The Visual Studio Tools for Tizen extension is registered in the Visual Studio Marketplace. You can install the extensions from the Visual Studio Marketplace in the Visual Studio IDE.
 
-1. In the Visual Studio menu, select **Tools > Extensions and Updates**.
-2. In the Visual Studio Marketplace, search for **Tizen**.  
-3. In the **Visual Studio Tools for Tizen** option that appears, click **Download** and close the Visual Studio IDE. \
-The installation begins.
+1. In the Visual Studio menu, select **Tools > Extensions > Manage Extensions**.
+2. In the **Visual Studio Marketplace**, search for **Tizen**.  
+3. In the **Visual Studio Tools for Tizen** option that appears, click **Download** and close the Visual Studio IDE. \   
+   The installation begins.
 
 ![Visual Studio Tools for Tizen](media/v1-install-tools.gif)
 
@@ -40,7 +38,7 @@ Alternatively, you can download the Visual Studio Tools for Tizen extension from
 
 ## Install Tizen Baseline SDK
 
-Baseline SDK contains Tizen-specific libraries and tools such as profiler, debugger and so on.
+Baseline SDK contains Tizen-specific libraries and tools such as profiler, debugger, and so on.
 
 After installing the Visual Studio Tools for Tizen extension, you must set up the Tizen baseline SDK. You can either install a new Tizen baseline SDK or configure an existing Tizen baseline SDK:
 
@@ -54,7 +52,7 @@ After installing the Visual Studio Tools for Tizen extension, you must set up th
 3. Read the license document and click **I Agree**.
 4. Enter the root directory path where you want to install the Tizen baseline SDK and click **Next**. \
    The baseline SDK is installed automatically.
-5. In the Tizen Package Manager window that appears, select **Main SDK**.
+5. In the **Package Manager** window that appears, select **Main SDK**.
 6. Install **Tizen SDK tools**.
 
 ![Visual Studio Tools for Tizen](media/v2-install-baseline-sdk.gif)
@@ -82,7 +80,7 @@ To set up each tool path directly:
 
 If you encounter any issue with the installation, verify whether:
 
-- VSIX is installed correctly. To verify that, go to **Tools &gt; Extensions and Updates** and search for **Tizen**.
+- VSIX is installed correctly. To verify that, go to **Tools > Extensions > Manage Extensions** and search for **Tizen**.
 
   ![Check VSIX](media/cps-extension-and-updates.png)
 
@@ -90,7 +88,7 @@ If you encounter any issue with the installation, verify whether:
 
   ![Check the SDK tool path](media/howtoinstall-checktoolpath.png)
 
-- Tizen Project properties have been copied correctly. Ensure that the `Tizen.NET.ProjectType.props` and `Tizen.NET.ProjectType.targets` files are located in the `C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\MSBuild\Tizen\VisualStudio` folder.
+- Tizen Project properties have been copied correctly. Ensure that the `Tizen.NET.ProjectType.props` and `Tizen.NET.ProjectType.targets` files are located in the `C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Tizen\VisualStudio` folder.
 
   ![Project Property](media/cps-project-property.png)
 
@@ -98,8 +96,8 @@ If you encounter any issue with the installation, verify whether:
 
 To uninstall the Visual Studio Tools for Tizen:
 
-1. In the Visual Studio menu, select **Tools > Extensions and Updates**.
-2. In the **Extensions and Updates** window that appears, select **Installed > Visual Studio Tools for Tizen** and click **Uninstall**.
+1. In the Visual Studio menu, select **Tools > Extensions > Manage Extensions**.
+2. In the **Manage Extensions** window that appears, select **Installed > Visual Studio Tools for Tizen** and click **Uninstall**.
 3. Read the warning and click **close**. Close the IDE. 
 4. In the VSIX Installer window that appears, click **Modify**. \
    The modifications are completed and the tools are unistalled.
