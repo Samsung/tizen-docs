@@ -29,8 +29,7 @@ The Visual Studio Tools for Tizen extension is registered in the Visual Studio M
 
 1. In the Visual Studio menu, select **Tools > Extensions > Manage Extensions**.
 2. In the **Visual Studio Marketplace**, search for **Tizen**.  
-3. In the **Visual Studio Tools for Tizen** option that appears, click **Download** and close the Visual Studio IDE. \   
-   The installation begins.
+3. In the **Visual Studio Tools for Tizen** option that appears, click **Download** and close the Visual Studio IDE.
 
 ![Visual Studio Tools for Tizen](media/v1-install-tools.gif)
 
