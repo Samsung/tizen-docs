@@ -133,11 +133,17 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-me
 <div class="constructors">
 <h4 id="Media::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="cordova.html#SuccessCallback">SuccessCallback</a>?, <a href="#MediaErrorCallback">MediaErrorCallback</a>?, <a href="#StatusChangeCallback">StatusChangeCallback</a>?)</span></b></code>
+</dt>
 <div class="brief">
  The Media interface provides interface and functions to manage audio objects.
               </div>
 <pre class="webidl prettyprint">Media(DOMString src, optional <a href="cordova.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="#MediaErrorCallback">MediaErrorCallback</a>? errorCallback,
       optional <a href="#StatusChangeCallback">StatusChangeCallback</a>? mediaStatus);</pre>
+<p><span class="version">Since: </span>
+ 3.0
+              </p>
 <div class="description">
               <ul>
                 <li>
@@ -876,7 +882,9 @@ setTimeout(function()
 </div>
 <h2 id="api-features">2. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="../systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="../systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>

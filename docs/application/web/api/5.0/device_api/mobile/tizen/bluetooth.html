@@ -565,6 +565,9 @@ The <em>tizen.bluetooth</em> object allows access to the Bluetooth API.
 <div class="constructors">
 <h4 id="BluetoothLEServiceData::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">BluetoothLEServiceData(DOMString uuid, DOMString data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
@@ -623,6 +626,9 @@ service.data = "0x1815";
 <div class="constructors">
 <h4 id="BluetoothLEManufacturerData::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">BluetoothLEManufacturerData(DOMString id, DOMString data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a manufacturerData. */
@@ -752,7 +758,12 @@ var advertise = new tizen.BluetoothLEAdvertiseData(advertData);
 </div>
 <div class="constructors">
 <h4 id="BluetoothLEAdvertiseData::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">BluetoothLEAdvertiseData(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">BluetoothLEAdvertiseData(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
