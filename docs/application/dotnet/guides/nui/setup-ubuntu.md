@@ -11,7 +11,7 @@ The [NUI Hello World tutorial](hello-world.md) is used as an example. It provide
 
 To install .NET Core and Visual Studio Core (VSC):
 
-1.  [Install .NET Core for Ubuntu](https://www.microsoft.com/net/core#linuxubuntu).
+1.  [Install .NET Core for Ubuntu](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro#linuxubuntu).
 2.  Install the latest version of Visual Studio Code for Ubuntu:
     1.  Download the Debian package from <https://code.visualstudio.com>.
     2.  Install the package:

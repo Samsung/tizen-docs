@@ -344,7 +344,7 @@ A watch point suspends the execution of a program at the location where the expr
 
 To add a watch point:
 
-1. In the **Variables**, **Outline**, or [Expressions](#expressions) view, right-click a variable, and select **Add Watchpoint (C/C++)**.
+1. In the **Variables**, **Outline**, or [Expressions](#expressions-view) view, right-click a variable, and select **Add Watchpoint (C/C++)**.
 2. Define the details and click **OK**.
 
 **Figure: Watch point details**

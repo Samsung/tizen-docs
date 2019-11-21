@@ -67,7 +67,7 @@ You can also pass properties to an animation method through the `Property` class
 _animation.AnimateTo(new Property(_text, View.Property.ORIENTATION), new Property.Value(new Rotation(new Radian(new Degree(180.0f)), ...)));
 ```
 
-For more information on properties in general and animatable *scriptable properties* in particular, see [Managing Properties](creating-custom-view-controls.md#properties) and [Creating Transitions](creating-custom-view-controls.md#creatingtransitions).
+For more information on properties in general and animatable *scriptable properties* in particular, see [Managing Properties](customview.md#properties) and [Creating Transitions](customview.md#creatingtransitions).
 
 <a name="control"></a>
 ## Playback and Events

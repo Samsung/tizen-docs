@@ -172,7 +172,7 @@ You can build the application in the following ways:
 
     **Figure: Manually building the application**
 
-    ![Manually building the application](media/build_manual_mw.png)
+    ![Manually building the application](media/build_manual_w.png)
 
     Alternatively, you can also select the project in the **Project Explorer** view and do one of the following:
 
@@ -204,7 +204,7 @@ To run the application on the emulator:
 
         The emulator is launched in its own window. You can also see the new emulator instance and its folder structure in the **Device Manager**.
 
-        ![Emulator](media/emulator_window_mobile.png)
+        ![Emulator](media/emulator_window_m.png)
 
 2.  Generate a security profile.
 
@@ -222,7 +222,7 @@ To run the application on the emulator:
 
         If you have created multiple emulator instances, select the instance you want from the combo box in the toolbar before selecting to run the application. If you select an offline emulator, it is automatically launched when you select to run the application.
 
-        ![Selecting the emulator to use](media/app_run_multiple_emulators.png)
+        ![Selecting the emulator to use](media/app_run_multiple_emulators_m.png)
 
     2.  Confirm that the application launches on the emulator.
 
@@ -442,7 +442,7 @@ To create a Web application and design its UI with TAU:
     To create a project with a **TAU SinglePage** template:
 
     1.  Go to **File \> New \> Tizen Project**.
-    2.  Select **Template \> Mobile v5.0 \> Web Application \> TAU SinglePage**.
+    2.  Select **Template \> Mobile v5.5 \> Web Application \> TAU SinglePage**.
 
         ![Creating a new project](media/simple_ui_tau_create_mw.png)
 

@@ -1,11 +1,8 @@
 # Tizen 2.2.1
 
-Release Date: 09 Nov, 2013
-
-
+Release date: Nov. 09, 2013
 
 The Tizen 2.2.1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
-
 
 
 ## Release Details
@@ -13,7 +10,6 @@ The Tizen 2.2.1 release provides developers with the Tizen kernel, device driver
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.2.1 source codes are under **tizen_2.2** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.2.1/tizen-2.2.1)
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.2_Image_to_Reference_Device)
-
 
 
 ## Release Notes

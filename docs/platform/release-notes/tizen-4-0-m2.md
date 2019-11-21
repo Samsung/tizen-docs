@@ -1,8 +1,9 @@
 # Tizen 4.0 Public M2
 
-Release Date: 01 Nov, 2017
+Release date: Nov. 01, 2017
 
 The Tizen 4.0 Public M2 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native API set.
+
 
 ## Release Details
 
