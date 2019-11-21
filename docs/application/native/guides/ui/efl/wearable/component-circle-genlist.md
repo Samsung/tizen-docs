@@ -67,11 +67,11 @@ pad_itc->func.del = _gl_del;
 elm_genlist_item_prepend(circle_genlist, title_itc, NULL, NULL, ELM_GENLIST_ITEM_NONE, NULL, NULL);
 elm_genlist_item_append(circle_genlist, pad_itc, NULL, NULL, ELM_GENLIST_ITEM_NONE, NULL, NULL);
 ```
-To use the title with the group index, use the title_with_groupindex style instead of the title style.
+To use the `title` with the `group index`, use the `title_with_groupindex` style instead of the `title` style.
 >**Note**
->Be aware that the `title` and `padding` style use only for specific usage in top and bottom position of circle genlist.
+>The usage of `title` and `padding` style is specific to the top and the bottom position of circle genlist.
 
-## Configuring the Circle Properties
+## Configure Circle Properties
 
 To configure the circle properties of the circle genlist:
 
