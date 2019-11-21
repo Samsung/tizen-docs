@@ -13,7 +13,7 @@ To work with Visual Studio Tools for Tizen, you must have Visual Studio 2019.
 
 > **Note**
 >
-> Visual Studio Tools for Tizen works with all Visual Studio variations, including Community. Installing or re-installing Visual Studio with .NET desktop development and .NET Core cross-platform development toolsets is recommended.
+> Visual Studio Tools for Tizen works with all Visual Studio variations, except Express. Installing or re-installing Visual Studio with .NET desktop development and .NET Core cross-platform development toolsets is recommended.
 
 # Visual Studio Tools for Tizen 
 
