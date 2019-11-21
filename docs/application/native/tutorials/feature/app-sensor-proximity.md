@@ -12,7 +12,7 @@ device supports the proximity sensor.
 
 To determine whether the proximity sensor is supported on the device:
 
-1.  Create a new project in the Tizen Studio with the **Basic UI**
+1.  Create a new project in Tizen Studio with the **Basic UI**
     template, and specify the project name as **SensorProximity**.
 
     For more information on how to create a project, see Creating a

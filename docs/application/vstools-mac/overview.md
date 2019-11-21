@@ -67,7 +67,7 @@ After installing the Visual Studio Mac Extension for Tizen, you must set up the 
 
    > **Note**
    >
-   > If the Tizen Studio is already installed in your computer, simply [set the Tizen baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
+   > If Tizen Studio is already installed in your computer, simply [set the Tizen baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
    
    ![Select new installation](media/howtoinstall-installwizard1.png)
 
@@ -94,7 +94,7 @@ After installing the Visual Studio Mac Extension for Tizen, you must set up the 
 
 You can also use the Tizen Package Manager to set up the Tizen baseline SDK path or each tool path directly:
 
-- To set up the Tizen baseline SDK path:
+- To set up the Tizen Baseline SDK path:
   1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Package Manager**.
   2. Select **Use installed Tizen SDK**.
 
@@ -105,7 +105,7 @@ You can also use the Tizen Package Manager to set up the Tizen baseline SDK path
      ![Baseline SDK Install](media/howtoinstall-installwizard8.png)
 
   > **Note**  
-  > If the installer gives a warning about your Tizen Studio version being too low, update the Tizen Studio by using the Tizen Package Manager after setting the tool path.
+  > If the installer gives a warning about your Tizen Studio version being too low, update Tizen Studio by using the Tizen Package Manager after setting the tool path.
 
 - To set up each tool path directly:
   1. In the Visual Studio Mac IDE menu, go to **Project &gt; Solution Options &gt; Tizen &gt; Tools**.
@@ -117,7 +117,7 @@ You can also use the Tizen Package Manager to set up the Tizen baseline SDK path
 
 ### Install Emulator Images
 
-If you do not have a real device, you can run applications in the Tizen emulator.
+If you do not have a real device, you can run applications in the Tizen Emulator.
 
 To download emulator images, you can use the Tizen Package Manager or the Tizen Emulator Manager:
 

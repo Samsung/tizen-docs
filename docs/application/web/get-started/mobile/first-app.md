@@ -1,16 +1,16 @@
 # Create Your First Tizen Mobile Web Application
 
-**Welcome to Tizen mobile Web application development!**
+**Welcome to Tizen Mobile Web application development!**
 
 A mobile Web application is basically a Web site stored on a mobile device. You can create it using Web-native languages, such as HTML5, CSS, and JavaScript.
 
-Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic mobile Web application, which displays some text on the screen and changes the text when the user clicks it:
+Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic mobile Web application, which displays some text on the screen and changes the text when the user clicks it:
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
-2.  [Create a mobile Web project](#create) using the Tizen Studio.
+2.  [Create a mobile Web project](#create) using Tizen Studio.
 
     This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 
@@ -26,12 +26,12 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
 
-The following example shows you how to create and configure a basic mobile Web application project in the Tizen Studio. An application project contains all the files that make up an application.
+The following example shows you how to create and configure a basic mobile Web application project in Tizen Studio. An application project contains all the files that make up an application.
 
 The following figure illustrates the application to be created:
 
@@ -45,7 +45,7 @@ The following figure illustrates the application to be created:
 
 To create the application project:
 
-1.  Launch the Tizen Studio.
+1.  Launch Tizen Studio.
 
 2.  In the Tizen Studio menu, select **File \> New \> Tizen Project**.
 
@@ -110,7 +110,7 @@ Your application project is now ready for further actions. Next, build the appli
 
 To view and modify the application configuration:
 
-1.  In the **Project Explorer** view, double-click the `config.xml` file of the application. The Tizen Studio opens the file in the Web application configuration editor.
+1.  In the **Project Explorer** view, double-click the `config.xml` file of the application. Tizen Studio opens the file in the Web application configuration editor.
 
 2.  In the configuration editor, view and modify the configuration details using the various tabs:
 
@@ -118,7 +118,7 @@ To view and modify the application configuration:
 
     -   **Overview**: Define general information, such as the name and icon of the application.
 
-    -   **Features**: Define required software and hardware features. This information is used for application filtering in the Tizen Store.
+    -   **Features**: Define required software and hardware features. This information is used for application filtering in Tizen Store.
 
     -   **Privileges**: Define the security-sensitive APIs or API groups accessed and used by the application.
 
@@ -151,7 +151,7 @@ You can build the application in the following ways:
 
 -   **Automatically**
 
-    The automatic build means that the Tizen Studio automatically rebuilds the application whenever you change a source or resource file and save the application project.
+    The automatic build means that Tizen Studio automatically rebuilds the application whenever you change a source or resource file and save the application project.
 
     To use the automatic build:
 

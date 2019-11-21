@@ -12,7 +12,7 @@ Visual Studio Tools for Tizen provides Tizen-specific tools to improve your prod
 
 - [Certificate Manager](tools/certificate-manager.md)
 
-  The Certificate Manager is used to create a certificate profile and register author and distributor certificates. Before installing your application on a device or submitting it to the Tizen Store, you must sign it with a certificate profile while packaging your application.
+  The Certificate Manager is used to create a certificate profile and register author and distributor certificates. Before installing your application on a device or submitting it to Tizen Store, you must sign it with a certificate profile while packaging your application.
 
 - [Emulator Manager](tools/emulator-manager.md)
 

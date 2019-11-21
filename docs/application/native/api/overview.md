@@ -1,6 +1,6 @@
 # Native API Reference
 
-Tizen Native API is carefully selected and tightly managed APIs from the Tizen native subsystems. The Native API is divided into dozens of API modules; each module represents a logically similar set of submodule APIs, which can be grouped into the same category.
+Tizen Native API is carefully selected and tightly managed APIs from the Tizen Native subsystems. The Native API is divided into dozens of API modules; each module represents a logically similar set of submodule APIs, which can be grouped into the same category.
 
 Tizen Native APIs supports mobile and wearable devices. They contain somewhat different modules. For more information, see API Reference for <a href="mobile/latest/index.html" target="_blank">mobile</a> or <a href="wearable/latest/index.html" target="_blank">wearable</a>.
 
@@ -15,7 +15,7 @@ Figure:Required Header
 
 ## Related Feature
 
-Some of the Tizen native APIs require features to prevent your application from being shown in the application list on the Tizen store. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
+Some of the Tizen Native APIs require features to prevent your application from being shown in the application list on Tizen Store. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
 
 Figure:Related Feature
 

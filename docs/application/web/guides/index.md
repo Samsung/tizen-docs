@@ -2,7 +2,7 @@
 
 Using the Tizen Web API modules, you can develop rich Web applications and build great application experiences with well-known Web programming languages: HTML, CSS, and JavaScript. Like every major browser in the market, the Tizen Web API modules support the latest HTML5 capabilities, such as animation, offline, audio, and video. By utilizing the standard HTML5 capabilities, your Web applications are ready to run across various devices and platforms with minimal customization. In addition to the JavaScript-based Tizen Device API, you can also enable advanced device access from your Web applications, such as Bluetooth and NFC.
 
-The Tizen platform supports hybrid applications (1 Web application and 1 or more native applications). A hybrid application package is very useful for Web applications that need background processing or monitoring. With a hybrid application package, you can register the included applications in the Tizen Store and install, update, and uninstall them using a single hybrid package. For more information on developing hybrid Web applications with Tizen devices, see [Packaging Hybrid Applications](../tutorials/process/app-dev-process.md#hybrid).
+The Tizen platform supports hybrid applications (1 Web application and 1 or more native applications). A hybrid application package is very useful for Web applications that need background processing or monitoring. With a hybrid application package, you can register the included applications in  Tizen Store and install, update, and uninstall them using a single hybrid package. For more information on developing hybrid Web applications with Tizen devices, see [Packaging Hybrid Applications](../tutorials/process/app-dev-process.md#hybrid).
 
 Tizen provides a wide range of Web API modules that allow you to take full advantage of various Tizen features.
 
@@ -23,7 +23,7 @@ The following table lists the features provided by the [Mobile Web Device API Re
 
 <tr>
 <td>Base</td>
-<td>These APIs contain classes and interfaces that provide a set of basic definitions and interfaces that are used in the Tizen Device API.<BR>
+<td>These APIs contain classes and interfaces that provide a set of basic definitions and interfaces that are used in the Tizen Device API.<br>
 You can manage common files and ZIP archive files, and define filters and sorting modes for queries. You can also use generic success and error event handlers, in addition to a generic error interface and a simple coordinate interface for defining location information.
 </td>
 <td>
@@ -708,7 +708,7 @@ The following table lists the features provided by the [Wearable Web W3C/HTML5 a
 >
 > To determine the availability of optional APIs, use the `tizen.systeminfo.getCapability()` method of the System Information API (in [mobile](../api/latest/device_api/mobile/tizen/systeminfo.html), [wearable](../api/latest/device_api/wearable/tizen/systeminfo.html), and [TV](../api/latest/device_api/tv/tizen/systeminfo.html) applications).
 >
-> Note that all mandatory APIs are supported on the Tizen Emulators, while the optional APIs may or may not be supported. For more information on support for each API, see [Tizen Web Device API Reference](../api/latest/device_api/mobile/index.html).
+> Note that all mandatory APIs are supported on the Tizen emulators, while the optional APIs may or may not be supported. For more information on support for each API, see [Tizen Web Device API Reference](../api/latest/device_api/mobile/index.html).
 >
 > To compare API support between Web Device API modules and native API modules, see [Tizen 3.0 Native and Web API Modules](media/tizen-3.0-native-web-api-modules.pdf).
 

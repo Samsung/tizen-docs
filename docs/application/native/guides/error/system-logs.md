@@ -19,7 +19,7 @@ The main features of the dlog API include:
 
     You can use the message priority and tag to filter the output and only view specific messages.
 
-  - In the Tizen Studio (when testing with an emulator), use the **Log** view.
+  - In Tizen Studio (when testing with an emulator), use the **Log** view.
 
     You can filter the messages by their priority level. You can also search the messages by keywords, such as pid, tid, tag, and message.
 

@@ -43,8 +43,8 @@
   - Overwriting a duplicate certificate profile in the migration wizard works incorrectly on macOS.
 - Emulator
   - In 5.5 Emulator Images app un-installation might take some time to complete if the app name contains more than 14 characters. A patch for the same will be released in next update.
-  - To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for the Tizen emulator, see [Prerequisites for Tizen Studio](../setup/prerequisites.md).
-    - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA&reg; graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee). For Windows&reg;, select **High Speed NVIDIA&reg; Processor** as **Preferred Graphics Processor** in the NVIDIA&reg; control panel.
+  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for the Tizen Emulator, see [Prerequisites for Tizen Studio](../setup/prerequisites.md).
+    - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen Emulator to run with your NVIDIA&reg; graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee). For Windows&reg;, select **High Speed NVIDIA&reg; Processor** as **Preferred Graphics Processor** in the NVIDIA&reg; control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session occasionally logs out while launching Emulator Manager, or the emulator skin is displayed improperly. Verify the prerequisites and upgrade to the latest graphics driver.
   - On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
   - On Windows&reg;, if an error with message "failed to allocate memory" occurs while executing the emulator, try the following:
@@ -60,7 +60,7 @@
   - When analyzing applications on commercial devices running Tizen 3.0, newly-released or after a firmware update, the following problems exist:
     - The Core Frequency information is not shown.
     - The screenshots on scene transitions feature will not work.
-  - When analyzing applications on the Tizen 4.0 emulator or reference device, the startup profiling information is not shown.
+  - When analyzing applications on the Tizen 4.0 Emulator or reference device, the startup profiling information is not shown.
   - The UI Hierarchy viewer feature and startup profiling are not performed simultaneously.
   - The Dynamic Analyzer cannot perform Web application profiling with a commercial Tizen device, due to the security policy.
   - The Dynamic Analyzer cannot show lifecycle information for Web applications.

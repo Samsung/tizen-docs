@@ -1,6 +1,6 @@
 # Create Your First Tizen Wearable Native Widget Application
 
-**Welcome to Tizen wearable native widget application development!**
+**Welcome to Tizen Wearable Native widget application development!**
 
 A wearable native widget application is created using the C language, and can be run on Tizen wearable devices. The application uses the native API, which provides various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
 
@@ -10,13 +10,13 @@ A widget application is one of the Tizen application types. It can be shown by s
 
 ![Widget application on a wearable device](media/widget_app_wearable.png)
 
-Study the following instructions to help familiarize yourself with the Tizen [native application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native widget application, which displays some text on the screen with no user interaction:
+Study the following instructions to help familiarize yourself with the Tizen [Native application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native widget application, which displays some text on the screen with no user interaction:
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
-2.  [Create a wearable native widget project](#create) using the Tizen Studio.
+2.  [Create a wearable native widget project](#create) using Tizen Studio.
 
     This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 
@@ -32,18 +32,18 @@ Study the following instructions to help familiarize yourself with the Tizen [na
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [native tools included in Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
 
-The following example shows you how to create and configure a basic wearable native widget application project in the Tizen Studio. An application project contains all the files that make up an application.
+The following example shows you how to create and configure a basic wearable native widget application project in Tizen Studio. An application project contains all the files that make up an application.
 
 > **Note**
 >
-> Standalone widget application packages are not allowed in the Tizen Store.
+> Standalone widget application packages are not allowed in Tizen Store.
 >
-> For user convenience, you can use a standalone widget application for testing purposes in the Tizen Studio. If you want to publish the application in the Tizen Store, combine it with at least 1 UI application in the same package.
+> For user convenience, you can use a standalone widget application for testing purposes in Tizen Studio. If you want to publish the application in Tizen Store, combine it with at least 1 UI application in the same package.
 > For more information, see [Developing Multiple Projects as a Combined Package](../../tutorials/process/app-dev-process.md#develop).
 
 The following figure illustrates the application to be created. The application screen displays the **Hello widget** text and no user interaction is provided.
@@ -54,7 +54,7 @@ The following figure illustrates the application to be created. The application 
 
 To create the application project:
 
-1.  Launch the Tizen Studio.
+1.  Launch Tizen Studio.
 
 2.  In the Tizen Studio menu, select **File \> New \> Tizen Project**.
 
@@ -121,7 +121,7 @@ Your application project is now ready for further actions. Next, build the appli
 
 To view and modify the application configuration:
 
-1.  In the **Project Explorer** view, double-click the `tizen-manifest.xml` file of the application. The Tizen Studio opens the file in the manifest editor.
+1.  In the **Project Explorer** view, double-click the `tizen-manifest.xml` file of the application. Tizen Studio opens the file in the manifest editor.
 
 2.  In the manifest editor, view and modify the configuration details using the various tabs:
 
@@ -129,7 +129,7 @@ To view and modify the application configuration:
 
     -   **Overview**: Define general information, such as the package, label, and icon of the application.
 
-    -   **Features**: Define required software and hardware features. This information is used for application filtering in the Tizen Store.
+    -   **Features**: Define required software and hardware features. This information is used for application filtering in Tizen Store.
 
     -   **Privileges**: Define the security-sensitive APIs or API groups accessed and used by the application.
 
@@ -141,7 +141,7 @@ To view and modify the application configuration:
 
        > **Note**
        >
-       > The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
+       > The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen Native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
 3.  To save any changes, in the Tizen Studio menu, select **File \> Save All**.
 
@@ -317,7 +317,7 @@ Pay attention to the following main issues in the application source code (in th
 
     2.  You can get the private data from the widget instance by calling the `widget_app_context_get_tag()` function of the Widget Application API.
 
-        The following code within the `widget_instance_update()` callback is not included in the default application template in the Tizen Studio, but you can add it to test the data handling feature.
+        The following code within the `widget_instance_update()` callback is not included in the default application template in Tizen Studio, but you can add it to test the data handling feature.
 
         ```
         static int
@@ -363,7 +363,7 @@ You can build the application in the following ways:
 
 -   **Automatically**
 
-    The automatic build means that the Tizen Studio automatically rebuilds the application whenever you change a source or resource file and save the application project.
+    The automatic build means that Tizen Studio automatically rebuilds the application whenever you change a source or resource file and save the application project.
 
     To use the automatic build:
 
@@ -422,7 +422,7 @@ To run the application on the emulator:
 
 2.  Generate a security profile.
 
-    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in the Tizen Studio.
+    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 3.  Run the application:
     1.  In the **Project Explorer** view, right-click the project and select **Run As \> Tizen Native Application**.
@@ -461,7 +461,7 @@ To run the application on the emulator:
 
         ![Home screen widget](media/emulator_running_wn_widget.png)
 
-        While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window \> Show View \> Log**.
+        While the application is running, the **Log** view in Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window \> Show View \> Log**.
 
 For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 

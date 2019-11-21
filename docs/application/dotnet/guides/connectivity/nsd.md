@@ -27,7 +27,7 @@ To enable your application to use the network service discovery functionality:
     </privileges>
     ```
 
-2.  To make your application visible in the Tizen Store only for devices that support the DNS-SD and SSDP protocols, the application must specify the following features in the `tizen-manifest.xml` file:
+2.  To make your application visible in Tizen Store only for devices that support the DNS-SD and SSDP protocols, the application must specify the following features in the `tizen-manifest.xml` file:
 
     ```
     <feature name="http://tizen.org/feature/network.service_discovery.dnssd"/>

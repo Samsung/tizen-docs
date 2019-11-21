@@ -1,6 +1,6 @@
 # Resource Fallback Support
 
-Tizen native applications can run on different types of devices, such as wearable, phone, tablet, and TV. Tizen also supports various resolutions (WVGA ~ XQXGA) and resources. To take advantage of these features, you can handle resources in the [Resource Manager](../../../../tizen-studio/native-tools/resource-manager.md) view in the Tizen Studio.
+Tizen native applications can run on different types of devices, such as wearable, phone, tablet, and TV. Tizen also supports various resolutions (WVGA ~ XQXGA) and resources. To take advantage of these features, you can handle resources in the [Resource Manager](../../../../tizen-studio/native-tools/resource-manager.md) view in Tizen Studio.
 
 In addition to the possibilities provided by the **Resource Manager** view, you can use Edje to provide sets of alternative images in your application.
 

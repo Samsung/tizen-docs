@@ -5,7 +5,7 @@ To effectively protect the device system and user private data, the Tizen securi
 
 Tizen provides API-level access control for security-sensitive operations which, if not used properly, can harm user privacy and system stability. Therefore, applications that use such sensitive APIs must declare the required privileges in the [config.xml](process/setting-properties.md#privilege) file.  Privileges are categorized into public, partner, and platform levels according to their hierarchy:
 
--   The public level is the minimum privilege level, which means that any application developed using the Tizen Studio can use these privileges.
+-   The public level is the minimum privilege level, which means that any application developed using Tizen Studio can use these privileges.
 -   The partner level privileges require at least a partner-signed certificate which is granted to developers who have a business relationship with the vendor.
 -   The platform level is the highest privilege level, and an application that needs these privileges requires at least a  platform-signed certificate, which is granted to vendor developers.
 
@@ -18,7 +18,7 @@ Since Tizen platform 3.0, some privileges are categorized as privacy-related and
 >
 > Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/privacy-related-permissions.md) using the Privacy Privilege API (in [mobile](../api/latest/device_api/mobile/tizen/ppm.html) and [wearable](../api/latest/device_api/wearable/tizen/ppm.html) applications).
 
-The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../tizen-studio/web-tools/privilege-checker.md).
+Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../tizen-studio/web-tools/privilege-checker.md).
 
 The API version restriction of privileges are deprecated since platform version 5.0. So, if you are develeoping an app with an earlier API version and need information about supported version, see [this page](./old-versioned-sec-privileges.md). The page does not include privileges issued after 4.0.
 

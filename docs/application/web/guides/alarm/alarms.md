@@ -2,7 +2,7 @@
 
 You can schedule an application to be run at a specific time. When an alarm is triggered, the application is launched (unless it is already running).
 
-The Alarm API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Alarm API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Alarm API include:
 

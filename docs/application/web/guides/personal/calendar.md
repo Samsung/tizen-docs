@@ -35,7 +35,7 @@ The Calendar API uses the `TZDate` object (in [mobile](../../api/latest/device_a
 
 To enable your application to use the calendar functionality:
 
-1. To make your application visible in the Tizen Store only for devices that support the calendar feature, the application must specify the following feature in the `config.xml` file:
+1. To make your application visible in Tizen Store only for devices that support the calendar feature, the application must specify the following feature in the `config.xml` file:
 
    ```
    <widget>

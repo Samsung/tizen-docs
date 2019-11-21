@@ -71,7 +71,7 @@ To create a custom platform:
 2. Click **+**.
 3. In the **Platform Configuration** dialog, select a base platform and platform image file.
 
-    You can create a custom platform using a qcow2 or raw format image. Qcow2 is a platform image format that is released with the Tizen Studio. You can also create a qcow2 image by [exporting an emulator](#export).
+    You can create a custom platform using a qcow2 or raw format image. Qcow2 is a platform image format that is released with Tizen Studio. You can also create a qcow2 image by [exporting an emulator](#export).
 
     A platform image in the development stage is in raw format. If you launch an emulator with a raw image, you can see the current state of the image. This can be useful for platform developers.
 

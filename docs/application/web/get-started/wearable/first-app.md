@@ -1,16 +1,16 @@
 # Create Your First Tizen Wearable Web Application
 
-**Welcome to Tizen wearable Web application development!**
+**Welcome to Tizen Wearable Web application development!**
 
 A wearable Web application is basically a Web site stored on a wearable device. You can create it using Web-native languages, such as HTML5, CSS, and JavaScript.
 
-Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web application, which displays some text on the screen and changes the text when the user clicks it:
+Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web application, which displays some text on the screen and changes the text when the user clicks it:
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
-2.  [Create a wearable Web project](#create) using the Tizen Studio.
+2.  [Create a wearable Web project](#create) using Tizen Studio.
 
     This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 
@@ -26,12 +26,12 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
 
-The following example shows you how to create and configure a basic wearable Web application project in the Tizen Studio. An application project contains all the files that make up an application.
+The following example shows you how to create and configure a basic wearable Web application project in Tizen Studio. An application project contains all the files that make up an application.
 
 The following figure illustrates the application to be created:
 
@@ -45,7 +45,7 @@ The following figure illustrates the application to be created:
 
 To create the application project:
 
-1.  Launch the Tizen Studio.
+1.  Launch Tizen Studio.
 
 2.  In the Tizen Studio menu, select **File \> New \> Tizen Project**.
 
@@ -110,7 +110,7 @@ Your application project is now ready for further actions. Next, build the appli
 
 To view and modify the application configuration:
 
-1.  In the **Project Explorer** view, double-click the `config.xml` file of the application. The Tizen Studio opens the file in the Web application configuration editor.
+1.  In the **Project Explorer** view, double-click the `config.xml` file of the application. Tizen Studio opens the file in the Web application configuration editor.
 
 2.  In the configuration editor, view and modify the configuration details using the various tabs:
 
@@ -118,7 +118,7 @@ To view and modify the application configuration:
 
     -   **Overview**: Define general information, such as the name and icon of the application.
 
-    -   **Features**: Define required software and hardware features. This information is used for application filtering in the Tizen Store.
+    -   **Features**: Define required software and hardware features. This information is used for application filtering in Tizen Store.
 
     -   **Privileges**: Define the security-sensitive APIs or API groups accessed and used by the application.
 
@@ -151,7 +151,7 @@ You can build the application in the following ways:
 
 -   **Automatically**
 
-    The automatic build means that the Tizen Studio automatically rebuilds the application whenever you change a source or resource file and save the application project.
+    The automatic build means that Tizen Studio automatically rebuilds the application whenever you change a source or resource file and save the application project.
 
     To use the automatic build:
 
@@ -236,7 +236,7 @@ To run the application on the emulator:
         >
         > If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
 
-        While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window \> Show View \> Log**.
+        While the application is running, the **Log** view in Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in Tizen Studio menu, go to **Window \> Show View \> Log**.
 
         For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
@@ -294,7 +294,7 @@ To run the application on a target device:
 
 2.  Generate an author certificate.
 
-    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in the Tizen Studio.
+    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 3.  Run the application:
     1.  In the **Device Manager**, select the device.
@@ -509,7 +509,7 @@ To create a Web application and design its UI with TAU:
 
         ![TAU library directory](media/simple_ui_tau_dir_ww.png)
 
-    You can create a new project using a TAU template or a TAU sample application included in the Tizen Studio, as shown above, or you can add the required TAU libraries to any existing Web project.
+    You can create a new project using a TAU template or a TAU sample application included in Tizen Studio, as shown above, or you can add the required TAU libraries to any existing Web project.
 
     To import TAU manually to an existing project to load the basic Tizen Advanced UI (TAU) libraries, use the following elements in your HTML file:
 
@@ -679,7 +679,7 @@ To create a Web application and design its UI with TAU:
 
 5.  Create the second page.
 
-    In the Tizen Studio, create a new HTML file and name it `second.html`.
+    In Tizen Studio, create a new HTML file and name it `second.html`.
 
     Add the following content to the file to create a title text in the header and a **Hello Tizen!** text in the content area:
 
