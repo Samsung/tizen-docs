@@ -18,7 +18,7 @@
 ### [Create Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
 ### [Create TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
 ### [Create Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
-
+### [Create NUI .NET Application](/application/dotnet/get-started/nui/quickstart.md)
 
 ## Tutorials
 
@@ -67,8 +67,6 @@
 
 ### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
-#### [Setting Up the NUI Development Environment on Ubuntu](/application/dotnet/guides/nui/setup-ubuntu.md)
-#### [Getting Started](/application/dotnet/guides/nui/hello-world.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
 #### Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
