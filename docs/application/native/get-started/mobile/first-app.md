@@ -303,8 +303,6 @@ To run the application on a target device:
 
         If you have both a connected device and existing emulator instances, select the device from the combo box in the toolbar before selecting to run the application.
 
-        ![Selecting the device to use](media/app_run_multiple_emulators.png)
-
     3. Confirm that the application launches on the target device.
 
     > **Note**

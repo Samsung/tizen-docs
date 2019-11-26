@@ -281,54 +281,54 @@ For more information on using the emulator features, see [Using Emulator Control
 <a name="target"></a>
 ### Running on a Target Device
 
-To run the application on a target device:
+First of all, a target device and your computer must be connected to the same Wi-Fi network.
+
+To run the application on the target device:
 
 1.  Connect the wearable target device to your computer:
-    1.  Define settings on the device:
-        -   Go to **Settings \> Connections**, and switch on Bluetooth.
+    1. Define settings on the device:
 
-            ![Switch on Bluetooth](media/emulator_target_bt.png)
+        -   Execute the **Settings** application.
 
-            ![Switch on Bluetooth](media/emulator_target_bt2.png)
+            ![Settings](media/wearable_settings_app.png)
 
-        -   Go to **Settings \> Connections**, and switch on Wi-Fi.
+        -   Go to **Connections > Wi-Fi**, and switch on Wi-Fi.
 
-            The device and the computer must be connected to the same Wi-Fi network.
+            ![Enable Wi-Fi](media/testing_your_app_on_gear3.png) ![Select Wi-Fi AP](media/testing_your_app_on_gear4.png)
+
+        -   Go to **Wi-Fi networks**, and select a Wi-Fi AP.
+
+            ![Select Wi-Fi AP](media/testing_your_app_on_gear6.png) ![IP Address](media/testing_your_app_on_gear7.png)
 
             Note the IP address the device is using.
 
-            ![Switch on Wi-Fi](media/emulator_target_wifi.png)
+        -   Go to **About watch > Debugging**, and switch on the debugging mode.
 
-        -   Go to **Settings \> Gear info**, and switch on the debugging mode.
-
-            ![Switch on debugging](media/emulator_target_debug.png)
+            ![Switch on debugging](media/testing_your_app_on_gear1.png) ![Debugging menu](media/testing_your_app_on_gear2.png) 
 
     <a name="remote_device"></a>
 
     2.  Use the Remote Device Manager to connect the wearable device:
+
         1.  In the **Device Manager**, launch the Remote Device Manager by clicking the related icon.
 
             ![Launch the Remote Device Manager](media/remote_conn_mgr.png)
 
-        2.  In the **Remote Device Manager** window, click **+**.
+        2.  In the **Remote Device Manager** window, click the **Scan** icon(![Scan icon](media/remote_conn_scan_icon.png)).
 
-            ![Add new device](media/remote_conn_new_ww.png)
+            ![Scan devices](media/remote_conn_scan.png)
 
-        3.  In the **Add Device** window, enter the device and network details (use the IP address you noted before), and click **Add**.
+        3.  In the **Remote Device Manager** window, switch the new device on by clicking the switch under **Connection**.
 
-            ![Define device details](media/remote_conn_add_ww.png)
+            ![Connect the device](media/remote_conn_device.png)
 
-        4.  In the **Remote Device Manager** window, switch the new device on by clicking the switch under **Connect**.
+    3.  The device asks for user confirmation. To allow your device to read log data, copy files to and from your computer, and install the application manually, click the accept mark.
 
-            ![Connect the device](media/remote_connect_ww.png)
-
-    3.  The device asks for user confirmation. To allow Gear to read log data, copy files to and from your computer, and install the application manually, click the accept mark.
-
-        ![Allow Gear to access data](media/remote_allow_gear_ww.png)
+        ![Allow Gear to access data](media/remote_allow_gear.png)
 
     4.  In the **Device Manager**, confirm that the device is connected (shown in the device list).
 
-        ![Device is connected](media/remote_connected_ww.png)
+        ![Device is connected](media/remote_connected_w.png)
 
 2.  Generate an author certificate.
 
@@ -346,8 +346,6 @@ To run the application on a target device:
         -   Click the run icon in the toolbar.
 
         If you have both a connected device and existing emulator instances, select the device from the combo box in the toolbar before selecting to run the application.
-
-        ![Selecting the device to use](media/app_run_multiple_emulators.png)
 
     3.  Confirm that the application launches on the target device.
 
