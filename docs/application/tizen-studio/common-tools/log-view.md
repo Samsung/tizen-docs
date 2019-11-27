@@ -1,5 +1,9 @@
 # Checking Logs with Log View
 
+> **Note**
+>
+> Log Viewer has been deprecated from Tizen Studio. Device Manager can be used to view the device logs.
+
 You can insert logging methods to your code and check the logs of your application in the **Log** view.
 
 When a device is connected, a device log tab is automatically created in the **Log** view. You can create additional tabs for a device, and you can set different filters for each tab. Tabs for disconnected devices are shown as inactive, and are reactivated when the device is reconnected.
