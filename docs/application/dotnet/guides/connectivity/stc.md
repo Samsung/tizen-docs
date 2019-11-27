@@ -38,3 +38,66 @@ To enable your application to use the STC API:
     ```
     using Tizen.Network.Stc;
     ```
+
+## Retrieve Data Usage For System
+
+To retrieve statistics about total network data consumed by system:
+
+1. Create filter for retrieveing data usage:
+
+    This filter will be passed as a function parameter in GetStatisticsAsync() API call.
+    
+     ```
+   public static StatisticsFilter MakeFilter()
+   {
+      Tizen.Log.Info(Globals.LogTag, "StcSetup.MakeFilter");
+
+      StatisticsFilter _filter = new StatisticsFilter
+      {
+         AppId = null,
+         From = DateTime.Now.AddMonths(-1),
+         To = DateTime.Now,
+         InterfaceType = NetworkInterface.All,
+         TimePeriod = TimePeriodType.Week
+      };
+     
+      return _filter;
+   }
+   ```
+   
+2. Call `GetStatisticsAsync()` API.
+
+    ```
+   try
+   {
+      StatisticsFilter _filter = StcSetup.MakeFilter();
+      Task<IEnumerable<NetworkStatistics>> _task = StcManager.GetStatisticsAsync(_filter);
+      var _stats = await _task;
+      await Task.Delay(1000);
+      using (IEnumerator<NetworkStatistics> _iter = _stats.GetEnumerator())
+      {
+          _iter.MoveNext();
+          
+          /* Do the processing on received data */       
+      }
+   }
+   catch (NotSupportedException)
+   {
+      Assert.IsTrue(s_isStcSupported == false, "Invalid NotSupportedException");
+   }
+   catch (TypeInitializationException e)
+   {
+      Assert.IsTrue(s_isStcSupported == false && e.InnerException.GetType() == typeof(NotSupportedException), "Invalid          NotSupportedException or TypeInitializationException");
+   }
+   catch (NullReferenceException)
+   {
+      Log.Info(Globals.LogTag, "Inside NullReferenceException: 'stats' is null");
+      Assert.True(true, "Inside NullReferenceException: 'stats' is null");
+   }
+   catch (Exception ex)
+   {
+      Assert.True(false, "Exception occurs. Msg : " + ex.ToString());
+   }
+   Log.Info(Globals.LogTag, "Successfully done");
+    
+   ```
