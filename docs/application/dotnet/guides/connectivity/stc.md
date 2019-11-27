@@ -87,7 +87,7 @@ To retrieve statistics about total network data consumed by system:
    }
    catch (TypeInitializationException e)
    {
-      Assert.IsTrue(s_isStcSupported == false && e.InnerException.GetType() == typeof(NotSupportedException), "Invalid          NotSupportedException or TypeInitializationException");
+      Assert.IsTrue(s_isStcSupported == false && e.InnerException.GetType() == typeof(NotSupportedException), "Invalid NotSupportedException or TypeInitializationException");
    }
    catch (NullReferenceException)
    {
@@ -150,7 +150,7 @@ To retrieve statistics about total network data consumed by applications:
    }
    catch (TypeInitializationException e)
    {
-      Assert.IsTrue(s_isStcSupported == false && e.InnerException.GetType() == typeof(NotSupportedException), "Invalid          NotSupportedException or TypeInitializationException");
+      Assert.IsTrue(s_isStcSupported == false && e.InnerException.GetType() == typeof(NotSupportedException), "Invalid NotSupportedException or TypeInitializationException");
    }
    catch (NullReferenceException)
    {
