@@ -419,19 +419,19 @@ package_updateinfo_s *&#160;</td><td class="memItemRight" valign="bottom"><a cla
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga3ab66c9255fca6320cf75c9fa249c4d3a9850c9b6fa45f02c3cf38f6c023673f5"></a><!-- doxytag: member="PACKAGE_INFO_ALLAPP" ref="gga3ab66c9255fca6320cf75c9fa249c4d3a9850c9b6fa45f02c3cf38f6c023673f5" args="" -->PACKAGE_INFO_ALLAPP</em>&nbsp;</td><td>
-<p>All applications (Deprecated since 5.5, use PACKAGE_INFO_APP_COMPONENT_TYPE_ALL instead) </p>
+<p>All applications (Deprecated since 5.5, use <a class="el" href="group__CAPI__PACKAGE__INFO__MODULE.html#gga3ab66c9255fca6320cf75c9fa249c4d3a62167155d4aba4dfe9f836c1be6fac25">PACKAGE_INFO_APP_COMPONENT_TYPE_ALL</a> instead) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3ab66c9255fca6320cf75c9fa249c4d3aa675537bc1833c5faa3f396d8e7306f3"></a><!-- doxytag: member="PACKAGE_INFO_UIAPP" ref="gga3ab66c9255fca6320cf75c9fa249c4d3aa675537bc1833c5faa3f396d8e7306f3" args="" -->PACKAGE_INFO_UIAPP</em>&nbsp;</td><td>
-<p>UI application (Deprecated since 5.5, use PACKAGE_INFO_APP_COMPONENT_TYPE_UI instead) </p>
+<p>UI application (Deprecated since 5.5, use <a class="el" href="group__CAPI__PACKAGE__INFO__MODULE.html#gga3ab66c9255fca6320cf75c9fa249c4d3a9439b70ee3804dda16e3ce49ab7545e0">PACKAGE_INFO_APP_COMPONENT_TYPE_UI</a> instead) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3ab66c9255fca6320cf75c9fa249c4d3a3b3a3b0828ff42f1b8590bd7ffd7224f"></a><!-- doxytag: member="PACKAGE_INFO_SERVICEAPP" ref="gga3ab66c9255fca6320cf75c9fa249c4d3a3b3a3b0828ff42f1b8590bd7ffd7224f" args="" -->PACKAGE_INFO_SERVICEAPP</em>&nbsp;</td><td>
-<p>Service application (Deprecated since 5.5, use PACKAGE_INFO_APP_COMPONENT_TYPE_SERVICE instead) </p>
+<p>Service application (Deprecated since 5.5, use <a class="el" href="group__CAPI__PACKAGE__INFO__MODULE.html#gga3ab66c9255fca6320cf75c9fa249c4d3a47efd34f8be49364cbf5a42a4fbca7bd">PACKAGE_INFO_APP_COMPONENT_TYPE_SERVICE</a> instead) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3ab66c9255fca6320cf75c9fa249c4d3a93bf5f1110f9f0fec1eea217c34a6ecc"></a><!-- doxytag: member="PACKAGE_INFO_WIDGETAPP" ref="gga3ab66c9255fca6320cf75c9fa249c4d3a93bf5f1110f9f0fec1eea217c34a6ecc" args="" -->PACKAGE_INFO_WIDGETAPP</em>&nbsp;</td><td>
-<p>Widget application (Since 4.0) (Deprecated since 5.5, use PACKAGE_INFO_APP_COMPONENT_TYPE_WIDGET instead) </p>
+<p>Widget application (Since 4.0) (Deprecated since 5.5, use <a class="el" href="group__CAPI__PACKAGE__INFO__MODULE.html#gga3ab66c9255fca6320cf75c9fa249c4d3a24ad6bf93bf48580b18acf22104909ae">PACKAGE_INFO_APP_COMPONENT_TYPE_WIDGET</a> instead) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3ab66c9255fca6320cf75c9fa249c4d3ac36af51bb119ec4b952d070dfdf69ae0"></a><!-- doxytag: member="PACKAGE_INFO_WATCHAPP" ref="gga3ab66c9255fca6320cf75c9fa249c4d3ac36af51bb119ec4b952d070dfdf69ae0" args="" -->PACKAGE_INFO_WATCHAPP</em>&nbsp;</td><td>
-<p>Watch application (Since 4.0) (Deprecated since 5.5, use PACKAGE_INFO_APP_COMPONENT_TYPE_WATCH instead) </p>
+<p>Watch application (Since 4.0) (Deprecated since 5.5, use <a class="el" href="group__CAPI__PACKAGE__INFO__MODULE.html#gga3ab66c9255fca6320cf75c9fa249c4d3a3b5372ae07272347e6f0690dee388180">PACKAGE_INFO_APP_COMPONENT_TYPE_WATCH</a> instead) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga3ab66c9255fca6320cf75c9fa249c4d3a62167155d4aba4dfe9f836c1be6fac25"></a><!-- doxytag: member="PACKAGE_INFO_APP_COMPONENT_TYPE_ALL" ref="gga3ab66c9255fca6320cf75c9fa249c4d3a62167155d4aba4dfe9f836c1be6fac25" args="" -->PACKAGE_INFO_APP_COMPONENT_TYPE_ALL</em>&nbsp;</td><td>
 <p>All applications (Since 5.5) </p>
@@ -543,6 +543,7 @@ package_updateinfo_s *&#160;</td><td class="memItemRight" valign="bottom"><a cla
 
 <p>Clones the package information handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>clone</em> should be released using <a class="el" href="group__CAPI__PACKAGE__INFO__MODULE.html#ga757751301832a0a69ef6deaa58c74b44" title="Destroys the package information handle and releases all its resources.">package_info_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">clone</td><td>The newly created package information handle </td></tr>
@@ -796,7 +797,7 @@ package_updateinfo_s *&#160;</td><td class="memItemRight" valign="bottom"><a cla
 <div class="memdoc">
 
 <p>Retrieves dependencies between packages. </p>
-<p><em>package_info_dependency_info_cb</em> is called whenever there is package dependency. The callback includes packages that are only directly required by the given package. For example, if there are packages having the following relationship:</p>
+<p><em>callback</em> is called whenever there is package dependency. The callback includes packages that are only directly required by the given package. For example, if there are packages having the following relationship:</p>
 <p>B --&gt; E A --&gt; B --&gt; C D --&gt; C</p>
 <p>A --&gt; B means that A depends on B. When package_info_foreach_dependency_info(A) is called, the callback results in two parameters: <em>from</em> is A and <em>to</em> is B. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
@@ -853,7 +854,7 @@ package_updateinfo_s *&#160;</td><td class="memItemRight" valign="bottom"><a cla
 <div class="memdoc">
 
 <p>Retrieves which packages depend on the given package. </p>
-<p><em>package_info_dependency_info_cb</em> is called whenever there is package dependency. The callback includes packages that are both directly and indirectly depend on the given package. For example, if there are packages having the following relationship:</p>
+<p><em>callback</em> is called whenever there is package dependency. The callback includes packages that are both directly and indirectly depend on the given package. For example, if there are packages having the following relationship:</p>
 <p>B --&gt; E A --&gt; B --&gt; C D --&gt; C</p>
 <p>A --&gt; B means that A depends on B. When package_info_foreach_dependency_info(C) is called, the callback results in two parameters: <em>from</em> is B and <em>to</em> is C, <em>from</em> is D and <em>to</em> is C, <em>from</em> is A and <em>to</em> is B. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
@@ -1305,10 +1306,10 @@ package_updateinfo_s *&#160;</td><td class="memItemRight" valign="bottom"><a cla
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a0c4dbf65c015439f1b72ab7c576a4188">PACKAGE_MANAGER_ERROR_SYSTEM_ERROR</a></td><td>Severe system error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>

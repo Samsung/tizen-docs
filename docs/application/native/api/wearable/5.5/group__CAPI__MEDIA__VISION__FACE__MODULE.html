@@ -668,7 +668,7 @@ Create a face engine configuration handle by calling <a class="el" href="group__
 <div class="memdoc">
 
 <p>Performs face detection on the <em>source</em> for the <em>engine_conf</em>. </p>
-<p>Use this function to launch face detection algorithm configured by <em>engine_conf</em> configuration. Each time when mv_face_detect is called, <em>detected_cb</em> will receive a set of the detected faces at the media source.</p>
+<p>Use this function to launch face detection algorithm configured by <em>engine_conf</em> configuration. Each time when <a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga65f9b24d5aa9fd77103d4e518c1052f7" title="Performs face detection on the source for the engine_conf.">mv_face_detect()</a> is called, <em>detected_cb</em> will receive a set of the detected faces at the media source.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -692,7 +692,7 @@ Create a face engine configuration handle by calling <a class="el" href="group__
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a source handle by calling <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga6488bbcd6d80be1ef72b0ce5d450675d">mv_create_source()</a> </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd><em>detected_cb</em> will be called to process detection results</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#gabd3f783d501f6fb15b9e662d08404e72" title="Called when faces are detected for the source.">mv_face_detected_cb</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#gabd3f783d501f6fb15b9e662d08404e72" title="Called when faces are detected for the source.">mv_face_detected_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -836,7 +836,7 @@ Create a face engine configuration handle by calling <a class="el" href="group__
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a source handle by calling <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga6488bbcd6d80be1ef72b0ce5d450675d" title="Creates a source handle.">mv_create_source()</a> </dd>
 <dd>
 Create a face engine configuration handle by calling <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gaff85eca25414cd317464f3c82bec8ac0">mv_create_engine_config()</a></dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga3c53343cb01aac9ae01df89daf4c1d3b" title="Called when facial expression is recognized.">mv_face_facial_expression_recognized_cb</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga3c53343cb01aac9ae01df89daf4c1d3b" title="Called when facial expression is recognized.">mv_face_facial_expression_recognized_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -881,7 +881,7 @@ Create a face engine configuration handle by calling <a class="el" href="group__
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>It is possible to destroy <em>source</em> after calling this method. Source isn't used for learning directly. </dd>
 <dd>
-Face image <em>example_location</em> location can be determined using <a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga65f9b24d5aa9fd77103d4e518c1052f7">mv_face_detect</a> function. </dd></dl>
+Face image <em>example_location</em> location can be determined using <a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga65f9b24d5aa9fd77103d4e518c1052f7">mv_face_detect()</a> function. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">source</td><td>The handle to <em>source</em> that contains face image </td></tr>
@@ -1424,7 +1424,7 @@ Call of this function will free all the memory has been allocated during previou
 <dd>
 Create a face recognition model handle by calling <a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#gaf7fe1f96c0a7a6321a6db9ec475a1740">mv_face_recognition_model_create()</a> </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd><em>recognized_cb</em> will be called to process recognition results</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga85a9f1c0f7cd036e72c48c4b95ab058c" title="Called each time when face is recognized by mv_face_recognize() function.">mv_face_recognized_cb</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga85a9f1c0f7cd036e72c48c4b95ab058c" title="Called each time when face is recognized by mv_face_recognize() function.">mv_face_recognized_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1507,7 +1507,7 @@ Create a face recognition model handle by calling <a class="el" href="group__CAP
 <dd>
 Create a face tracking model handle by calling <a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga0ff5027a7786f56e08d03c28e68eaa98">mv_face_tracking_model_create()</a> </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd><em>tracked_cb</em> will be called to process tracking results</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga48f5ada92ccd12b71b12153a5b3cdbd1" title="Called when face determined by tracking_model is tracked.">mv_face_tracked_cb</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga48f5ada92ccd12b71b12153a5b3cdbd1" title="Called when face determined by tracking_model is tracked.">mv_face_tracked_cb()</a> </dd></dl>
 
 </div>
 </div>
@@ -1672,7 +1672,7 @@ Release <em>tracking_model</em> by using <a class="el" href="group__CAPI__MEDIA_
 
 <p>Calls this method to load a tracking model from file. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>tracking_model</em> is loaded from the absolute path directory. Use <a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga284ac2d7468a681d41351c0625cef4e3">app_get_data_path</a> for the private app storage path. <em>tracking_model</em> must be destroyed using <a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga2211f1cc7fb23c738c81917dae1ab796">mv_face_tracking_model_destroy</a>. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>tracking_model</em> is loaded from the absolute path directory. Use <a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga284ac2d7468a681d41351c0625cef4e3">app_get_data_path</a> for the private app storage path. <em>tracking_model</em> must be destroyed using <a class="el" href="group__CAPI__MEDIA__VISION__FACE__MODULE.html#ga2211f1cc7fb23c738c81917dae1ab796" title="Calls this function to destroy the face tracking model handle and release all its resources...">mv_face_tracking_model_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">file_name</td><td>Name of path/file to load the model </td></tr>

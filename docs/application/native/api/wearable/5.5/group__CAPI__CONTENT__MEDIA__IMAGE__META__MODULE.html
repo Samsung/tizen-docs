@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-  initNavTree('group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html','');
+  initNavTree('group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html','');
 </script>
 <div id="doc-content">
 <div class="header">
@@ -97,74 +97,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>The Image Metadata API provides functions that allow to get information about stored image files. </p>
 <p>This file contains the image metadata API and related functions to proceed with them. Functions include cloning and destroying the image metadata, getting image metadata such as width, height, <br/>
  orientation, date taken.</p>
-<h2><a class="anchor" id="CAPI_CONTENT_MEDIA_IMAGE_MODULE_HEADER"></a>
+<h2><a class="anchor" id="CAPI_CONTENT_MEDIA_IMAGE_META_MODULE_HEADER"></a>
 Required Header</h2>
 <p>#include &lt;media_content.h&gt;</p>
-<h2><a class="anchor" id="CAPI_CONTENT_MEDIA_IMAGE_MODULE_OVERVIEW"></a>
+<h2><a class="anchor" id="CAPI_CONTENT_MEDIA_IMAGE_META_MODULE_OVERVIEW"></a>
 Overview</h2>
 <p>The Image Metadata API provides functions to get basic information associated with image files: </p>
 <table class="doxtable">
 <tr>
-<td>Attribute </td><td>Filter Keyword </td><td>Comments  </td></tr>
+<th>Attribute </th><th>Filter Keyword </th><th>Comments  </th></tr>
 <tr>
-<td>width </td><td>MEDIA_WIDTH </td><td>Width  </td></tr>
+<td>width </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#gabd3ecfadd9117424fc91e908c3a5d6b2" title="Media width.">MEDIA_WIDTH</a> </td><td>Width  </td></tr>
 <tr>
-<td>height </td><td>MEDIA_HEIGHT </td><td>Height  </td></tr>
+<td>height </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga1c5d0b140c7c4611393a9feca891c25c" title="Media height.">MEDIA_HEIGHT</a> </td><td>Height  </td></tr>
 <tr>
-<td>longitude </td><td>MEDIA_LONGITUDE </td><td>Get from metadata if exist.  </td></tr>
+<td>longitude </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga475f6eb82b509cbeb902b9af786e7e9a" title="Media longitude.">MEDIA_LONGITUDE</a> </td><td>Get from metadata if exist.  </td></tr>
 <tr>
-<td>latitude </td><td>MEDIA_LATITUDE </td><td>Get from metadata if exist.  </td></tr>
+<td>latitude </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga040aff1e1e63f68a053be4a98e2782b8" title="Media latitude.">MEDIA_LATITUDE</a> </td><td>Get from metadata if exist.  </td></tr>
 <tr>
-<td>altitude </td><td>MEDIA_ALTITUDE </td><td>Get from metadata if exist.  </td></tr>
+<td>altitude </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga1bd5aa147f8d595fea0f06890c8f693d" title="Media altitude.">MEDIA_ALTITUDE</a> </td><td>Get from metadata if exist.  </td></tr>
 <tr>
-<td>exposure_time </td><td>MEDIA_EXPOSURE_TIME </td><td>Get from EXIF if exist.  </td></tr>
+<td>exposure_time </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga46916d99d47cb532138d1b9f3dfe25d9" title="Media exposure time.">MEDIA_EXPOSURE_TIME</a> </td><td>Get from EXIF if exist.  </td></tr>
 <tr>
-<td>fnumber </td><td>MEDIA_FNUMBER </td><td>Get from EXIF if exist.  </td></tr>
+<td>fnumber </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga4ad26356e32df9d962920ed6b4d92020" title="Media fnumber.">MEDIA_FNUMBER</a> </td><td>Get from EXIF if exist.  </td></tr>
 <tr>
-<td>iso </td><td>MEDIA_ISO </td><td>Get from EXIF if exist.  </td></tr>
+<td>iso </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga418defee8e90d2b17cb67a0f20bd2f30" title="Media ISO.">MEDIA_ISO</a> </td><td>Get from EXIF if exist.  </td></tr>
 <tr>
-<td>model </td><td>MEDIA_MODEL </td><td>Get from EXIF if exist.  </td></tr>
+<td>model </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#gafd67bd004a2890e9722caa31673f9db2" title="Media model.">MEDIA_MODEL</a> </td><td>Get from EXIF if exist.  </td></tr>
 <tr>
-<td>date_taken </td><td>MEDIA_DATETAKEN </td><td>Get from EXIF if exist.  </td></tr>
+<td>date_taken </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga440e0c29ada5f21ee719804ff736bb53" title="Media datetaken.">MEDIA_DATETAKEN</a> </td><td>Get from EXIF if exist.  </td></tr>
 <tr>
-<td>orientation </td><td>MEDIA_ORIENTATION </td><td>Get from EXIF if exist.  </td></tr>
+<td>orientation </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga3bfe498220789c06ac3fa40f348220af" title="Media orientation.">MEDIA_ORIENTATION</a> </td><td>Get from EXIF if exist.  </td></tr>
 <tr>
-<td>is_360_content </td><td>MEDIA_360 </td><td>Whether 360 content or not.  </td></tr>
+<td>is_360_content </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#gab14846e0efefc0df5ba1c81f305c27e8" title="Virtual Reality content.">MEDIA_360</a> </td><td>Whether 360 content or not.  </td></tr>
 </table>
 <p><br/>
 </p>
-<p>For getting the image handle (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201" title="The structure type for the Image metadata handle.">image_meta_h</a>) from the media information (<a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga4008fc7101e7b04ff136e783eb9d10f7" title="The structure type for the Media info handle.">media_info_h</a>), call <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga09d0b3e809440de2bc637a49c45dda3b" title="Gets the image metadata handle for a given media info.">media_info_get_image()</a> function.<br/>
- For getting the information related to image files stored in the device call the respective get functions e.g. to get the width of a image, call <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gad137bf2d04c9ec15168a3c77bb5d6e1d" title="Gets the image width in pixels.">image_meta_get_width()</a> function and to get orientation (<a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gae31f2b063f2cf90936ec064ede96f52d" title="Enumeration for orientation types.">media_content_orientation_e</a>) of a image, call <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga24d7e973015819d20558dd2d3bd91674" title="Gets the image orientation.">image_meta_get_orientation()</a> function and so on.<br/>
- When the image handle is no longer needed, it should be destroyed by calling <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc" title="Destroys the image metadata.">image_meta_destroy()</a> function.<br/>
+<p>For getting the image handle (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201" title="The structure type for the Image metadata handle.">image_meta_h</a>) from the media information (<a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga4008fc7101e7b04ff136e783eb9d10f7" title="The structure type for the Media info handle.">media_info_h</a>), call <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga09d0b3e809440de2bc637a49c45dda3b" title="Gets the image metadata handle for a given media info.">media_info_get_image()</a> function.<br/>
+ For getting the information related to image files stored in the device call the respective get functions e.g. to get the width of a image, call <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gad137bf2d04c9ec15168a3c77bb5d6e1d" title="Gets the image width in pixels.">image_meta_get_width()</a> function and to get orientation (<a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gae31f2b063f2cf90936ec064ede96f52d" title="Enumeration for orientation types.">media_content_orientation_e</a>) of a image, call <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga24d7e973015819d20558dd2d3bd91674" title="Gets the image orientation.">image_meta_get_orientation()</a> function and so on.<br/>
+ When the image handle is no longer needed, it should be destroyed by calling <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc" title="Destroys the image metadata.">image_meta_destroy()</a> function.<br/>
  </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga8d1e71a4c1f7ae994e0d155dabbc7de1">image_meta_clone</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> *dst, <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> src)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga8d1e71a4c1f7ae994e0d155dabbc7de1">image_meta_clone</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> *dst, <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> src)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clones the image metadata.  <a href="#ga8d1e71a4c1f7ae994e0d155dabbc7de1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc">image_meta_destroy</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc">image_meta_destroy</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the image metadata.  <a href="#gae0ead523f552582ba86cb04fe6236dfc"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga617fe3711e975b38c782324cf29f98b6">image_meta_get_media_id</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, char **media_id)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga617fe3711e975b38c782324cf29f98b6">image_meta_get_media_id</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, char **media_id)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the ID of an image.  <a href="#ga617fe3711e975b38c782324cf29f98b6"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gad137bf2d04c9ec15168a3c77bb5d6e1d">image_meta_get_width</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, int *width)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gad137bf2d04c9ec15168a3c77bb5d6e1d">image_meta_get_width</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, int *width)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image width in pixels.  <a href="#gad137bf2d04c9ec15168a3c77bb5d6e1d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gabdf8b4089b332cd5e2826c63f89e5c7b">image_meta_get_height</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, int *height)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gabdf8b4089b332cd5e2826c63f89e5c7b">image_meta_get_height</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, int *height)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image height in pixels.  <a href="#gabdf8b4089b332cd5e2826c63f89e5c7b"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga24d7e973015819d20558dd2d3bd91674">image_meta_get_orientation</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gae31f2b063f2cf90936ec064ede96f52d">media_content_orientation_e</a> *orientation)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga24d7e973015819d20558dd2d3bd91674">image_meta_get_orientation</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gae31f2b063f2cf90936ec064ede96f52d">media_content_orientation_e</a> *orientation)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image orientation.  <a href="#ga24d7e973015819d20558dd2d3bd91674"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga76db7f5cc4c6124da9d36aefecfe3d49">image_meta_get_date_taken</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, char **date_taken)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga76db7f5cc4c6124da9d36aefecfe3d49">image_meta_get_date_taken</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, char **date_taken)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image creation time.  <a href="#ga76db7f5cc4c6124da9d36aefecfe3d49"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga6e2b0f2104f5db0cd04c0923b2abca60">image_meta_get_exposure_time</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, char **exposure_time)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga6e2b0f2104f5db0cd04c0923b2abca60">image_meta_get_exposure_time</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, char **exposure_time)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the exposure time from EXIF.  <a href="#ga6e2b0f2104f5db0cd04c0923b2abca60"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gab0dab24ac6d92fe8b58c3cc8ba2ee60d">image_meta_get_fnumber</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, double *fnumber)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gab0dab24ac6d92fe8b58c3cc8ba2ee60d">image_meta_get_fnumber</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, double *fnumber)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the fnumber from EXIF.  <a href="#gab0dab24ac6d92fe8b58c3cc8ba2ee60d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gadf8d0f3de0d745d677cf1a7e19a0d33f">image_meta_get_iso</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, int *iso)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gadf8d0f3de0d745d677cf1a7e19a0d33f">image_meta_get_iso</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, int *iso)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the iso from EXIF.  <a href="#gadf8d0f3de0d745d677cf1a7e19a0d33f"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gaf67c318cd47686b9f918eb77fdbfd015">image_meta_get_model</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, char **model)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gaf67c318cd47686b9f918eb77fdbfd015">image_meta_get_model</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> image, char **model)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the model from EXIF.  <a href="#gaf67c318cd47686b9f918eb77fdbfd015"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef struct image_meta_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct image_meta_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type for the Image metadata handle.  <a href="#ga3a642fb36fa024b64eb3d33dcb3f2201"></a><br/></td></tr>
 </table>
 <hr/><h2>Typedef Documentation</h2>
@@ -173,14 +173,14 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct image_meta_s* <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a></td>
+          <td class="memname">typedef struct image_meta_s* <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 
 <p>The structure type for the Image metadata handle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -190,15 +190,15 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga8d1e71a4c1f7ae994e0d155dabbc7de1">image_meta_clone</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga8d1e71a4c1f7ae994e0d155dabbc7de1">image_meta_clone</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> *&#160;</td>
           <td class="paramname"><em>dst</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>src</em>&#160;</td>
         </tr>
         <tr>
@@ -212,8 +212,8 @@ Typedefs</h2></td></tr>
 
 <p>Clones the image metadata. </p>
 <p>The function copies the image metadata handle from a source to destination.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>dst</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc" title="Destroys the image metadata.">image_meta_destroy()</a>.</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>dst</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc" title="Destroys the image metadata.">image_meta_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">dst</td><td>The destination handle to the image metadata </td></tr>
@@ -230,7 +230,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc" title="Destroys the image metadata.">image_meta_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc" title="Destroys the image metadata.">image_meta_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -239,9 +239,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc">image_meta_destroy</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc">image_meta_destroy</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>image</em></td><td>)</td>
           <td></td>
         </tr>
@@ -251,7 +251,7 @@ Typedefs</h2></td></tr>
 
 <p>Destroys the image metadata. </p>
 <p>The function frees all resources related to the image metadata handle. This handle no longer can be used to perform any operations. A new handle has to be created before next usage.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>The handle to the image metadata</td></tr>
@@ -266,8 +266,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>Get a copy of image_meta handle by calling <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga8d1e71a4c1f7ae994e0d155dabbc7de1" title="Clones the image metadata.">image_meta_clone()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga8d1e71a4c1f7ae994e0d155dabbc7de1" title="Clones the image metadata.">image_meta_clone()</a> </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Get a copy of image_meta handle by calling <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga8d1e71a4c1f7ae994e0d155dabbc7de1" title="Clones the image metadata.">image_meta_clone()</a>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga8d1e71a4c1f7ae994e0d155dabbc7de1" title="Clones the image metadata.">image_meta_clone()</a> </dd></dl>
 
 </div>
 </div>
@@ -276,9 +276,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga76db7f5cc4c6124da9d36aefecfe3d49">image_meta_get_date_taken</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga76db7f5cc4c6124da9d36aefecfe3d49">image_meta_get_date_taken</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>image</em>, </td>
         </tr>
         <tr>
@@ -297,7 +297,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the image creation time. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>date_taken</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -323,9 +323,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga6e2b0f2104f5db0cd04c0923b2abca60">image_meta_get_exposure_time</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga6e2b0f2104f5db0cd04c0923b2abca60">image_meta_get_exposure_time</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>image</em>, </td>
         </tr>
         <tr>
@@ -344,7 +344,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the exposure time from EXIF. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>exposure_time</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -370,9 +370,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gab0dab24ac6d92fe8b58c3cc8ba2ee60d">image_meta_get_fnumber</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gab0dab24ac6d92fe8b58c3cc8ba2ee60d">image_meta_get_fnumber</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>image</em>, </td>
         </tr>
         <tr>
@@ -391,7 +391,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the fnumber from EXIF. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>The handle to the image metadata </td></tr>
@@ -415,9 +415,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gabdf8b4089b332cd5e2826c63f89e5c7b">image_meta_get_height</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gabdf8b4089b332cd5e2826c63f89e5c7b">image_meta_get_height</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>image</em>, </td>
         </tr>
         <tr>
@@ -436,7 +436,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the image height in pixels. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>The handle to the image metadata </td></tr>
@@ -460,9 +460,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gadf8d0f3de0d745d677cf1a7e19a0d33f">image_meta_get_iso</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gadf8d0f3de0d745d677cf1a7e19a0d33f">image_meta_get_iso</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>image</em>, </td>
         </tr>
         <tr>
@@ -481,7 +481,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the iso from EXIF. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>The handle to the image metadata </td></tr>
@@ -505,9 +505,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga617fe3711e975b38c782324cf29f98b6">image_meta_get_media_id</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga617fe3711e975b38c782324cf29f98b6">image_meta_get_media_id</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>image</em>, </td>
         </tr>
         <tr>
@@ -526,7 +526,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the ID of an image. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>media_id</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -552,9 +552,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gaf67c318cd47686b9f918eb77fdbfd015">image_meta_get_model</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gaf67c318cd47686b9f918eb77fdbfd015">image_meta_get_model</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>image</em>, </td>
         </tr>
         <tr>
@@ -573,7 +573,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the model from EXIF. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>model</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -599,9 +599,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga24d7e973015819d20558dd2d3bd91674">image_meta_get_orientation</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga24d7e973015819d20558dd2d3bd91674">image_meta_get_orientation</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>image</em>, </td>
         </tr>
         <tr>
@@ -620,7 +620,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the image orientation. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>The handle to the image metadata </td></tr>
@@ -644,9 +644,9 @@ Typedefs</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gad137bf2d04c9ec15168a3c77bb5d6e1d">image_meta_get_width</a> </td>
+          <td class="memname">int <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gad137bf2d04c9ec15168a3c77bb5d6e1d">image_meta_get_width</a> </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a>&#160;</td>
           <td class="paramname"><em>image</em>, </td>
         </tr>
         <tr>
@@ -665,7 +665,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the image width in pixels. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">image</td><td>The handle to the image metadata </td></tr>

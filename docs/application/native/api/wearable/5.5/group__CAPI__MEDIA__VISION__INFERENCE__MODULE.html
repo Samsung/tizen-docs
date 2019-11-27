@@ -437,7 +437,7 @@ Defines</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gadaccac496b69f878f33792a37881d0fe" title="Sets the array of string attribute to the configuration.">mv_engine_config_set_array_string_attribute()</a> </dd>
 <dd>
-mv_engine_config_get_arraY_string_attribute() </dd></dl>
+<a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gae9f284db187f96fa7d40cb8edf83c72b" title="Gets the array of string attribute from the configuration dictionary.">mv_engine_config_get_array_string_attribute()</a> </dd></dl>
 
 </div>
 </div>
@@ -768,7 +768,7 @@ mv_engine_config_get_arraY_string_attribute() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If the app sets <a class="el" href="group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga281797fac74ea0db0487c27cc228493d" title="Defines MV_INFERENCE_MODEL_CONFIGURATION_FILE_PATH to set inference model&#39;s configuration file attrib...">MV_INFERENCE_MODEL_CONFIGURATION_FILE_PATH</a>, <a class="el" href="group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga4d0d7ada12e2837d1f4d5a7aa756c719" title="Defines MV_INFERENCE_MODEL_WEIGHT_FILE_PATH to set inference model&#39;s weight file attribute of the eng...">MV_INFERENCE_MODEL_WEIGHT_FILE_PATH</a>, and <a class="el" href="group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga997aac9d5224b8adf8b8e221c1d343cf" title="Defines MV_INFERENCE_MODEL_USER_FILE_PATH to set inference model&#39;s category file attribute of the eng...">MV_INFERENCE_MODEL_USER_FILE_PATH</a> to media storage, then the media storage privilege http://tizen.org/privilege/mediastorage is needed.<br/>
  If the app sets any of the paths mentioned in the previous sentence to external storage, then the external storage privilege http://tizen.org/privilege/externalstorage is needed.<br/>
- If the required privileges aren't set properly, <a class="el" href="group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga76277143b1bae257d4856970938c14cc" title="Prepares inference.">mv_inference_prepare()</a> will return <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gga9000f8cb86ea490bf2542b6f0c03eb1ca5031017e97bd04f673191a17714aa5e3">MEDIA_VISION_ERROR_PERMISSION_DENIED</a>.</dd>
+ If the required privileges aren't set properly, <a class="el" href="group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga76277143b1bae257d4856970938c14cc" title="Prepares inference.">mv_inference_prepare()</a> will returned <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gga9000f8cb86ea490bf2542b6f0c03eb1ca5031017e97bd04f673191a17714aa5e3">MEDIA_VISION_ERROR_PERMISSION_DENIED</a>.</dd>
 <dd>
 The <em>infer</em> should be released using <a class="el" href="group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#gae726c771b8af766c403dd251db3adbcc" title="Destroys inference handle and releases all its resources.">mv_inference_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
