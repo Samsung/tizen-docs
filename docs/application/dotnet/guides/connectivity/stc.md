@@ -7,11 +7,11 @@ The main features of the Tizen.Network.Stc namespace include:
 
 - Retrieve Data Usage for System
 
-  You can retrieve network data consumed by system(#retrieve-data-usage-for-system).
+  You can [retrieve the network data consumed by the system](#retrieve-data-usage-for-system).
 
 - Retrieve Data Usage for Applications
 
-  You can retrieve network data consumed by applications(#retrieve-data-usage-for-applications).
+  You can [retrieve the network data consumed by the applications](#retrieve-data-usage-for-applications).
 
 
 > **Note**  
