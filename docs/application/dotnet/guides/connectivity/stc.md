@@ -1,17 +1,17 @@
-# STC
+# Smart Traffic Control (STC)
 
 
-STC means Smart Traffic Control. It provides extensible packet-level control services, including per-app data usage, total data quota, and background app's data saving.
+Smart Traffic Control (STC) provides extensible packet-level control services, including per-app data usage, total data quota, and background app's data saving.
 
 The main features of the Tizen.Network.Stc namespace include:
 
-- Retrieve Data Usage For System
+- Retrieve Data Usage for System
 
-  You can [retrieve network data consumed by system](#retrieve-data-usage-for-system).
+  You can retrieve network data consumed by system(#retrieve-data-usage-for-system).
 
-- Retrieve Data Usage For Applications
+- Retrieve Data Usage for Applications
 
-  You can [retrieve network data consumed by applications](#retrieve-data-usage-for-applications).
+  You can retrieve network data consumed by applications(#retrieve-data-usage-for-applications).
 
 
 > **Note**  
@@ -29,19 +29,19 @@ To enable your application to use the STC functionality:
     </privileges>
     ```
 
-2. To use the methods and properties of the Tizen.Network.Stc namespace, include it in your application:
+2. To use the methods and properties of the `Tizen.Network.Stc` namespace, include it in your application:
 
     ```
     using Tizen.Network.Stc;
     ```
 
-## Retrieve Data Usage For System
+## Retrieve Data Usage for System
 
-To retrieve statistics about total network data consumed by system:
+To retrieve the statistics about total network data consumed by the system:
 
-1. Create filter for retrieveing data usage:
+1. Create a filter for retrieving data usage:
 
-    This filter will be passed as a method parameter in GetStatisticsAsync() call.
+    This filter will be passed as a method parameter in `GetStatisticsAsync()` call.
     
    ```
    public static StatisticsFilter MakeFilter()
@@ -61,7 +61,7 @@ To retrieve statistics about total network data consumed by system:
    }
    ```
    
-2. Call `GetStatisticsAsync()` method.
+2. Call the `GetStatisticsAsync()` method.
 
    ```
    try
@@ -98,13 +98,13 @@ To retrieve statistics about total network data consumed by system:
     
    ```
    
-## Retrieve Data Usage For Applications
+## Retrieve Data Usage for Applications
 
-To retrieve statistics about total network data consumed by applications:
+To retrieve the statistics about total network data consumed by the applications:
 
-1. Create filter for retrieveing data usage for applications:
+1. Create a filter for retrieving the application data usage:
 
-   This filter will be passed as a method parameter in GetStatisticsAsync() call.
+   This filter will be passed as a method parameter in `GetStatisticsAsync()` call.
 
    ```
    public static StatisticsFilter MakeFilter()
@@ -124,7 +124,7 @@ To retrieve statistics about total network data consumed by applications:
    }
    ``` 
    
-2. Call `GetStatisticsAsync()` method.
+2. Call the `GetStatisticsAsync()` method.
 
    ```
    try
@@ -162,5 +162,5 @@ To retrieve statistics about total network data consumed by applications:
    ```
  
  ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 5.5 and Higher
