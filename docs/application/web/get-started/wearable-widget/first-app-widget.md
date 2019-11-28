@@ -358,46 +358,48 @@ For more information on using the emulator features, see [Using Emulator Control
 <a name="target"></a>
 ### Running on a Target Device
 
-To run the application on a target device:
+First of all, a target device and your computer must be connected to the same Wi-Fi network.
+
+To run the application on the target device:
 
 1.  Connect the wearable target device to your computer:
     1.  Define settings on the device:
-        -   Go to **Settings \> Connections**, and switch on Bluetooth.
+        -   Execute the **Settings** application.
 
-            ![Switch on Bluetooth](media/emulator_target_bt.png)
+            ![Settings](media/wearable_settings_app.png)
 
-            ![Switch on Bluetooth](media/emulator_target_bt2.png)
+        -   Go to **Connections > Wi-Fi**, and switch on Wi-Fi.
 
-        -   Go to **Settings \> Connections**, and switch on Wi-Fi.
+            ![Enable Wi-Fi](media/testing_your_app_on_gear3.png) ![Select Wi-Fi AP](media/testing_your_app_on_gear4.png)
 
-            The device and the computer must be connected to the same Wi-Fi network.
+        -   Go to **Wi-Fi networks**, and select a Wi-Fi AP.
 
-            Note the IP address the device is using.
+            ![Select Wi-Fi AP](media/testing_your_app_on_gear6.png) ![IP Address](media/testing_your_app_on_gear7.png)
 
-            ![Switch on Wi-Fi](media/emulator_target_wifi.png)
+             Note the IP address the device is using.
 
-        -   Go to **Settings \> Gear info**, and switch on the debugging mode.
+        -   Go to **About watch > Debugging**, and switch on the debugging mode.
 
-            ![Switch on debugging](media/emulator_target_debug.png)
+            ![Switch on debugging](media/testing_your_app_on_gear1.png) ![Debugging menu](media/testing_your_app_on_gear2.png)
 
     2.  In the terminal, enter the following commands:
 
         ```
         cd tizen-sdk/tools
-        ./sdb connect <IP address of Gear S2>
+        ./sdb connect <IP address of your device>
         ```
 
         Use the IP address you noted before.
 
         Instead of the terminal, you can also use the [Remote Device Manager](../wearable/first-app.md#remote_device) for the connection.
 
-    3.  In the first attempt, the connection fails and the device asks for user confirmation. To allow Gear to read log data, copy files to and from your computer, and install the application manually, click the accept mark.
+    3.  In the first attempt, the connection fails and the device asks for user confirmation. To allow your device to read log data, copy files to and from your computer, and install the application manually, click the accept mark.
 
-        ![Allow Gear to access data](media/remote_allow_gear_ww.png)
+        ![Allow Gear to access data](media/remote_allow_gear.png)
 
     4.  In the **Device Manager**, confirm that the device is connected (shown in the device list).
 
-        ![Device is connected](media/remote_connected_ww.png)
+        ![Device is connected](media/remote_connected_w.png)
 
 2.  Generate an author certificate.
 
@@ -415,8 +417,6 @@ To run the application on a target device:
         -   Click the run icon in the toolbar.
 
         If you have both a connected device and existing emulator instances, select the device from the combo box in the toolbar before selecting to run the application.
-
-        ![Selecting the device to use](media/app_run_multiple_emulators.png)
 
     3.  Confirm that the application launches on the target device.
 
