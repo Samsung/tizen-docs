@@ -26,7 +26,7 @@ You can use the following connectivity and wireless features in your .NET applic
 
 - [Smart Traffic Control (STC)](stc.md)
 
-  Statistics about network data consumption is fetched by system and applications.
+  You can retrieve statistics about the network data consumption fetched by the system and by the applications.
   
 -   [Telephony Information](telephony.md)
 
