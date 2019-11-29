@@ -1,4 +1,4 @@
-# Smart Traffic Control (STC)
+# Smart Traffic Control
 
 
 Smart Traffic Control (STC) provides extensible packet-level control services, including per-app data usage, total data quota, and background app's data saving.
