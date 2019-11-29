@@ -146,6 +146,7 @@
 #### [Bluetooth](/application/dotnet/guides/connectivity/bluetooth.md)
 #### [NFC](/application/dotnet/guides/connectivity/nfc.md)
 #### [Smart Card](/application/dotnet/guides/connectivity/smartcard.md)
+#### [Smart Traffic Control (STC)](/application/dotnet/guides/connectivity/stc.md)
 #### [IoT Connectivity](/application/dotnet/guides/connectivity/iotcon.md)
 #### [Telephony Information](/application/dotnet/guides/connectivity/telephony.md)
 
