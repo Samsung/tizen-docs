@@ -1,6 +1,6 @@
 # Managing Certificate Profile
 
-Before installing your application on a device or submitting it to the Tizen Store, it must be signed with a certificate profile.
+Before installing your application on a device or submitting it to Tizen Store, it must be signed with a certificate profile.
 The signature verifies the source of the application and ensures that it is not tampered with since its publication.
 A certificate profile is a combination of the certificates used for signing.
 

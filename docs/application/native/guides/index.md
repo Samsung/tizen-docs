@@ -10,7 +10,7 @@ There are two types of submodules - Tizen native modules and open source modules
 
 ## Native API Modules
 
-The following list defines the Tizen native API. The list describes the API modules and the functionality of all their submodule APIs within that module. The list also acts as a reference source for when you are planning a new feature for your application and need a way to efficiently compare different API modules to decide which APIs to use.
+The following list defines Tizen Native API. The list describes the API modules and the functionality of all their submodule APIs within that module. The list also acts as a reference source for when you are planning a new feature for your application and need a way to efficiently compare different API modules to decide which APIs to use.
 
 > **Note**
 >

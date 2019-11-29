@@ -20,7 +20,7 @@ There are limitations of .NET Standard API on Tizen. For more information, see [
 
 You can efficiently build your Tizen .NET application UI and its supporting logic using the Xamarin.Forms APIs. Extended details for these APIs are available on the [Xamarin Web site](https://developer.xamarin.com/api/namespace/Xamarin.Forms/).
 
-The Tizen .NET contains a few limitations on the Xamarin.Forms APIs; these limitations are to be eliminated in future releases. The following classes are not supported:
+Tizen .NET contains a few limitations on the Xamarin.Forms APIs; these limitations are to be eliminated in future releases. The following classes are not supported:
 
 - `AppLinkEntry`
 - `OpenGLView`
@@ -50,7 +50,7 @@ The following table lists the supported TizenFX API namespaces. For the full spe
 | Namespace          | Description                              |
 | ------------------ | ---------------------------------------- |
 | Tizen.Account      | Provides Create, Read, Update, Delete (CRUD) account management functionality and the OAuth Core RFC 6749 protocol. |
-| Tizen.Applications | Provides the Tizen application framework, including application state change events, inter-application messaging, and notification services. |
+| Tizen.Applications | Provides the Tizen Application framework, including application state change events, inter-application messaging, and notification services. |
 | Tizen.Common       | Provides predefined color names.         |
 | Tizen.Content      | Provides content management services, such as file and media downloads, storing and indexing audio and video content, and associating content types with helper applications. |
 | Tizen.Context.AppHistory | Provides classes to retrieve the user's application usage patterns. | 

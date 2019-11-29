@@ -12,11 +12,11 @@ Managed runtime offers the following advantages to your application development:
 
 - **Faster development**
 
-  Application development is accelerated as the managed runtime handles many functions that otherwise have to be coded into the application. The Tizen Native API and Tizen Web API already provides this benefit.
+  Application development is accelerated as the managed runtime handles many functions that otherwise have to be coded into the application.
 
 - **Safer code**
 
-  Managed runtime can handle bound checking, type safety, garbage collection, memory protection services, and objects that are invoked directly. The Tizen Web API already provides some of the benefits mentioned, but does not provide type safety, as JavaScript is not a strongly typed language.
+  Managed runtime can handle bound checking, type safety, garbage collection, memory protection services, and objects that are invoked directly. Tizen Web API already provides some of the mentioned benefits, but does not provide type safety as JavaScript is not a strongly typed language.
 
 - **Lower deployment costs**
 
@@ -32,7 +32,7 @@ Managed runtime offers the following advantages to your application development:
 
 ## Tizen .NET Features and Components
 
-Tizen .NET enables you to build .NET applications with Xamarin.Forms and the Tizen .NET framework. Xamarin.Forms allows you to easily create a user interface, and the TizenFX API provides numerous interfaces to much of the hardware that is found in modern TV, mobile, wearable, and IoT devices.
+Tizen .NET enables you to build .NET applications with Xamarin.Forms and Tizen .NET framework. Xamarin.Forms allows you to easily create a user interface, and TizenFX API provides numerous interfaces to much of the hardware that is found in modern TV, mobile, wearable, and IoT devices.
 
 **Figure: Tizen .NET architecture**
 

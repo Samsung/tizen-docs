@@ -1,6 +1,6 @@
 # Running and Testing Your Application
 
-The Tizen Studio provides the following set of tools to help you run and test your Web application projects:
+Tizen Studio provides the following set of tools to help you run and test your Web application projects:
 
 - [SDB](../common-tools/smart-development-bridge.md) **(Connecting Devices over Smart Development Bridge)**
 
@@ -8,7 +8,7 @@ The Tizen Studio provides the following set of tools to help you run and test yo
 
 - [Emulator](../common-tools/emulator.md) **(Running Applications on the Emulator)**
 
-  The Tizen emulator tool reduces the inconvenience of testing the application on a real device, by providing an environment similar to a real device. With the Emulator Manager, you can create multiple emulator instances, each representing a different environment (device type).
+  The Tizen Emulator tool reduces the inconvenience of testing the application on a real device, by providing an environment similar to a real device. With the Emulator Manager, you can create multiple emulator instances, each representing a different environment (device type).
 
 - [Web Simulator](web-simulator.md)
 

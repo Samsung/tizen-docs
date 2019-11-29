@@ -451,7 +451,7 @@ app_control_result(app_control_h request, app_control_h reply, app_control_resul
 <a name="export_appcontrol"></a>
 ## Application Control Export
 
-You can allow other applications to launch your application and use your application features through application controls by exporting your application control functionalities. To allow other applications to launch your application implicitly without the application ID, specify your application control information in the Tizen Studio.
+You can allow other applications to launch your application and use your application features through application controls by exporting your application control functionalities. To allow other applications to launch your application implicitly without the application ID, specify your application control information in Tizen Studio.
 
 **Figure: Exporting app control**
 
@@ -471,7 +471,7 @@ You can define privileges to restrict your application from launching. To launch
 > - In the MIME type, you can use two types of wildcards: `image/*` and `*/*`.
 > - In the URI, a more complex pattern of wildcards with similar semantics as the standard `glob()` function is available: '\*' matches an arbitrary, possibly empty, string, and '?' matches an arbitrary character. Unlike in the `glob()` function, the '/' character can be matched by the wildcards. There are no [...] character ranges, and the wildcards '\*' and '?' cannot be escaped to include them literally in a pattern.
 
-You can specify the application control information for your application in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in the Tizen Studio.
+You can specify the application control information for your application in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in Tizen Studio.
 
 <a name="group"></a>
 ## Application Group Management

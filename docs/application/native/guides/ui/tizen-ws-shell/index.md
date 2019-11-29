@@ -1,10 +1,10 @@
 # Tizen Window System Shell
 
-The Tizen Window System Shell (TZSH) is an interface for manipulating windows of the system Graphical User Interface (GUI) services such as Quickpanel and Softkey. It provides C libraries that allow you to control windows of system GUI services and get notifications about the state changes of each window within an application.
+Tizen Window System Shell (TZSH) is an interface for manipulating windows of the system Graphical User Interface (GUI) services such as Quickpanel and Softkey. It provides C libraries that allow you to control windows of system GUI services and get notifications about the state changes of each window within an application.
 
 The system GUI service runs different processes. Therefore, all the operations of TZSH are performed using the inter-process communication (IPC). It is needed to enable communication between the system GUI service processes and separated user application process using the display server. The following figure illustrates a simple software architecture of TZSH:
 
-**Figure: Layer diagram for the Tizen window system shell**
+**Figure: Layer diagram for the Tizen Window System Shell**
 
 ![Layer diagram for the Tizen window system shell](./media/tzsh_arch.png)
 

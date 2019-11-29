@@ -1,6 +1,6 @@
-# Prerequisites for the Tizen Studio
+# Prerequisites for Tizen Studio
 
-Check the following prerequisites before attempting to install the Tizen Studio.
+Check the following prerequisites before attempting to install Tizen Studio.
 
 ## Java Development Kit (JDK) Requirements
 
@@ -30,7 +30,7 @@ You can also use Oracle's OpenJDK. For more installation details, see [OpenJDK 1
 
 ## OS and System Requirements
 
-The following table lists the supported operating systems and hardware requirements for the Tizen Studio.
+The following table lists the supported operating systems and hardware requirements for izen Studio.
 
 **Table: OS and system requirements**
 
@@ -90,7 +90,7 @@ The following table lists the supported operating systems and hardware requireme
 <a name="emulator"></a>
 ## Emulator Requirements
 
-The following table lists the CPU, screen resolution, graphic card, driver, and webcam requirements for using the Tizen emulator.
+The following table lists the CPU, screen resolution, graphic card, driver, and webcam requirements for using the Tizen Emulator.
 
 **Table: Emulator requirements**
 
@@ -130,7 +130,7 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 </tr>
 </tbody>
 </table>
-<strong>Note</strong>
+<strong>Note</strong
 <ul>
 <li>If the host machine is using the NVIDIA&reg; Optimus&reg; technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus&reg; technology, or set the emulator to run with the external NVIDIA graphics card.</li>
 </ul>

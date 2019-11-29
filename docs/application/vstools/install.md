@@ -8,7 +8,7 @@ You need the following components on top of Visual Studio to make Visual Studio 
 
 - Tizen Baseline SDK
 
-  The SDK is shared with the Tizen Studio, and it supports tools (such as Certificate Manager, Device Manager, Emulator, SDB, and on-demand rpm) for developing Tizen .NET applications.
+  The SDK is shared with Tizen Studio, and it supports tools (such as Certificate Manager, Device Manager, Emulator, SDB, and on-demand rpm) for developing Tizen .NET applications.
 
 
 ## Prerequisites
@@ -33,7 +33,7 @@ Tizen Baseline SDK. Make sure you download and install the EXACT version.
 
 ### Emulator Requirements
 
-The Tizen emulator for Visual Studio has the same requirements as the emulator in the Tizen Studio. To check the detailed hardware and software requirements for the Tizen emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
+The Tizen Emulator for Visual Studio has the same requirements as the emulator in Tizen Studio. To check the detailed hardware and software requirements for Tizen Emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
 
 - Intel&reg; Hardware Acceleration Execution Manager (Intel&reg; HAXM) speeds up the Tizen emulation on Intel-VT-enabled systems. The Intel&reg; HAXM installation is started automatically as part of the Visual Studio Tools for Tizen installation. For more information, see [Hardware Accelerated Execution Manager](../tizen-studio/setup/hardware-accelerated-execution-manager.md).
 
@@ -57,7 +57,7 @@ The Tizen emulator for Visual Studio has the same requirements as the emulator i
 To use the Tizen SDK tools, you must install the Visual Studio Tools for Tizen extension and the baseline SDK.
 
 > **Note**  
-> If the Tizen Studio is already installed in your computer, simply [set the Tizen baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
+> If Tizen Studio is already installed in your computer, simply [set the Tizen Baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
 
 
 ### Installing the Extension
@@ -76,7 +76,7 @@ The Visual Studio Tools for Tizen extension is registered in the Visual Studio M
 
 ### Installing the Tizen Baseline SDK
 
-After installing the Visual Studio Tools for Tizen extension, you must set up the Tizen baseline SDK:
+After installing the Visual Studio Tools for Tizen extension, you must set up the Tizen Baseline SDK:
 
 1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Package Manager**.
 2. Select **Install new Tizen SDK**.
@@ -108,9 +108,9 @@ After installing the Visual Studio Tools for Tizen extension, you must set up th
 > If you downloaded the Visual Studio Tools for Tizen extension from the Visual Studio Marketplace and installed it on your computer, skip this step.
 
 
-You can use the Tizen Package Manager to set up the Tizen baseline SDK path or each tool path directly:
+You can use the Tizen Package Manager to set up the Tizen Baseline SDK path or each tool path directly:
 
-- To set up the Tizen baseline SDK path:
+- To set up the Tizen Baseline SDK path:
   1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Package Manager**.
   2. Select **Use installed Tizen SDK**.
 
@@ -121,7 +121,7 @@ You can use the Tizen Package Manager to set up the Tizen baseline SDK path or e
      ![Baseline SDK Install](media/howtoinstall-baselineinstall6.png)
 
   > **Note**  
-  > If the installer gives a warning about your Tizen Studio version being too low, update the Tizen Studio by using the Tizen Package Manager after setting the tool path.
+  > If the installer gives a warning about your Tizen Studio version being too low, update Tizen Studio by using the Tizen Package Manager after setting the tool path.
 
 - To set up each tool path directly:
   1. In the Visual Studio IDE menu, go to **Tools &gt; Options &gt; Tizen &gt; Tools**.
@@ -133,7 +133,7 @@ You can use the Tizen Package Manager to set up the Tizen baseline SDK path or e
 
 ### Installing Emulator Images
 
-If you do not have a real device, you can run applications in the Tizen emulator.
+If you do not have a real device, you can run applications in the Tizen Emulator.
 
 To download emulator images, you can use the Tizen Package Manager or the Tizen Emulator Manager:
 

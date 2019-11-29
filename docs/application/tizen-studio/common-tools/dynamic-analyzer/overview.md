@@ -4,7 +4,7 @@ The Dynamic Analyzer is a performance monitoring and analysis tool for your nati
 
 The Dynamic Analyzer is designed to analyze performance issues on your application after development, to help you optimize the application. The following figure shows the basic workflow for how the Dynamic Analyzer works with other Tizen tools:
 
-1. Develop your application with the Tizen Studio.
+1. Develop your application with Tizen Studio.
 2. Compile and install the application to an emulator or Tizen device target.
 3. Verify the application on the target and fix any functional issues to fulfill the requirements.
 4. Profile the application with the Dynamic Analyzer.

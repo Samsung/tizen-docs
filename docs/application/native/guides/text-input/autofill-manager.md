@@ -1,6 +1,6 @@
 # Autofill Manager
 
-The Tizen autofill framework allows one or more autofill services to be installed on a Tizen device. Autofill Manager is a module for managing the installed autofill services. Application developers can use Autofill Manager to get the current autofill service or change the autofill service.
+The Tizen Autofill framework allows one or more autofill services to be installed on a Tizen device. Autofill Manager is a module for managing the installed autofill services. Application developers can use Autofill Manager to get the current autofill service or change the autofill service.
 
 The main features of the Autofill Manager API include:
 

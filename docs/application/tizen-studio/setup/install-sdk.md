@@ -6,7 +6,7 @@ You can use either the GUI or the CLI version of the installer.
 
 ## Using the GUI Installer
 
-To install the Tizen Studio:
+To install Tizen Studio:
 
 1. Launch the Tizen Studio installer.
 
@@ -36,14 +36,14 @@ To install the Tizen Studio:
 
    > **Note**
    >
-   > If you install the Tizen Studio in a directory that requires administrator privileges for access, such as `C:\Program Files`, administrator privileges are required to run the Tizen SDK tools.
+   > If you install Tizen Studio in a directory that requires administrator privileges for access, such as `C:\Program Files`, administrator privileges are required to run the Tizen SDK tools.
 
 
 ## Using the CLI Installer
 
 The CLI (command line interface) provides functional tools for running the CLI installer without the GUI environment.
 
-To install the Tizen Studio using the CLI installer:
+To install Tizen Studio using the CLI installer:
 
 1. [Download the appropriate CLI installer for your platform](https://developer.tizen.org/development/tizen-studio/download).
 
@@ -68,7 +68,7 @@ To install the Tizen Studio using the CLI installer:
 
    | Parameter        | Description                              |
    |------------------|------------------------------------------|
-   | `directory path` | Specifies the installation directory path.<br/> If you do not enter the path, the Tizen Studio is installed in the default directory (`/home/{user}/tizen-studio`). |
+   | `directory path` | Specifies the installation directory path.<br/> If you do not enter the path, Tizen Studio is installed in the default directory (`/home/{user}/tizen-studio`). |
 
 3. If you agree to the software license and the license terms, enter **Y(yes)** for the conditions.
 

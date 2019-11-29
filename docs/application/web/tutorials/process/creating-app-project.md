@@ -7,7 +7,7 @@ creating the project with a template.
 
 To create a Web application project:
 
-1.  In the Tizen Studio, select **File &gt; New &gt; Tizen Project**.
+1.  In Tizen Studio, select **File &gt; New &gt; Tizen Project**.
 
     ![Creating a new project](./media/create_project_1.png)
 
@@ -48,14 +48,14 @@ To create a Web application project:
 
       The Project Wizard sets up the project, creates the application files using the default content from the template, and closes. For more information on the Project Wizard and the available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/web-tools/project-wizard.md).
 
-The new application project is shown in the **Project Explorer** view of the Tizen Studio, with default content in the `config.xml` file as well as in several project folders.
+The new application project is shown in the **Project Explorer** view of Tizen Studio, with default content in the `config.xml` file as well as in several project folders.
 
 <a name="import"></a>
 ## Importing a Project
 
-If you have an existing Tizen application project, you can import it into the Tizen Studio:  
-1.  In the Tizen Studio menu, go to **File &gt; Import &gt; Tizen &gt;    Tizen Project**, and click **Next**.
-2.  Select the location of the root directory or archive file of the    Tizen project and click **Next**.
+If you have an existing Tizen application project, you can import it into Tizen Studio:  
+1.  In the Tizen Studio menu, go to **File &gt; Import &gt; Tizen &gt; Tizen Project**, and click **Next**.
+2.  Select the location of the root directory or archive file of the Tizen project and click **Next**.
 3.  If you want to convert the project profile and version, use the
     **Profile/Version** combo box.
 4.  Click **Finish**.

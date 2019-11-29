@@ -42,7 +42,7 @@ Because of its real-time update mechanism, the EDC Editor updates the preview in
 
 ### Directory View and Workspace
 
-If your EDC collection consists of multiple EDC files, set up a workspace. The default workspace directory is where you opened the EDC file in the Tizen Studio.
+If your EDC collection consists of multiple EDC files, set up a workspace. The default workspace directory is where you opened the EDC file in Tizen Studio.
 
 The workspace is designed to be used with the file browser (toggle hotkey, **F9**) and the file tab (toggle hotkey, **F11**) so that you can navigate between multiple EDC files. The file browser (directory view) displays the current workspace directory.
 
@@ -292,7 +292,7 @@ There are 3 ways to start the EDC editor:
 
 - Open an existing EDC file:
 
-  1. In the Tizen Studio, open a Tizen application project.
+  1. In Tizen Studio, open a Tizen application project.
 
   2. In the **Project Explorer** view, select an EDC file in the resource folder.  
   ![Select EDC](./media/edceditor_sel_edc.png)
@@ -303,7 +303,7 @@ There are 3 ways to start the EDC editor:
 
 - Create a new EDC file:
 
-  1. In the Tizen Studio, open a Tizen application project.
+  1. In Tizen Studio, open a Tizen application project.
   2. In the **Project Explorer** view, select the project name.
   3. Right-click the project, and select **New > EDC file**.  
   ![New EDC file](./media/edceditor_newedcfile.png)
@@ -311,7 +311,7 @@ There are 3 ways to start the EDC editor:
 
 - Create a new EDC file with a predefined template:
 
-  1. In the Tizen Studio, open a Tizen application project.
+  1. In Tizen Studio, open a Tizen application project.
 
   2. In the **Project Explorer** view, select the project name.
 

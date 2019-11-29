@@ -1,6 +1,6 @@
 # Create Your First Tizen Wearable Web Watch Application
 
-**Welcome to Tizen wearable Web watch application development!**
+**Welcome to Tizen Wearable Web watch application development!**
 
 > **Note**
 >
@@ -8,13 +8,13 @@
 
 A wearable Web application is basically a Web site stored on a wearable device. You can create it using Web-native languages, such as HTML5, CSS, and JavaScript, and run it on Tizen wearable devices to display a customized watch face to the user.
 
-Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web watch application, which displays an analog watch face with the current time on the screen:
+Study the following instructions to help familiarize yourself with the Tizen [Web application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable Web watch application, which displays an analog watch face with the current time on the screen:
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
-2.  [Create a wearable Web watch project](#create) using the Tizen Studio.
+2.  [Create a wearable Web watch project](#create) using Tizen Studio.
 
     This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 
@@ -30,12 +30,12 @@ Study the following instructions to help familiarize yourself with the Tizen [We
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [Web tools included in the Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [Web tools included in Tizen Studio](../../../tizen-studio/web-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
 
-The following example shows you how to create and configure a basic wearable Web watch application project in the Tizen Studio. An application project contains all the files that make up an application.
+The following example shows you how to create and configure a basic wearable Web watch application project in Tizen Studio. An application project contains all the files that make up an application.
 
 The following figure illustrates the application to be created. The application screen displays the analog watch face and the current time, which continues to be refreshed every second while the application runs.
 
@@ -45,7 +45,7 @@ The following figure illustrates the application to be created. The application 
 
 To create the application project:
 
-1.  Launch the Tizen Studio.
+1.  Launch Tizen Studio.
 
 2.  In the Tizen Studio menu, select **File \> New \> Tizen Project**.
 
@@ -110,7 +110,7 @@ Your application project is now ready for further actions. Next, build the appli
 
 To view and modify the application configuration:
 
-1.  In the **Project Explorer** view, double-click the `config.xml` file of the application. The Tizen Studio opens the file in the Web application configuration editor.
+1.  In the **Project Explorer** view, double-click the `config.xml` file of the application. Tizen Studio opens the file in the Web application configuration editor.
 
 2.  In the configuration editor, view and modify the configuration details using the various tabs:
 
@@ -118,7 +118,7 @@ To view and modify the application configuration:
 
     -   **Overview**: Define general information, such as the name and icon of the application.
 
-    -   **Features**: Define required software and hardware features. This information is used for application filtering in the Tizen Store.
+    -   **Features**: Define required software and hardware features. This information is used for application filtering in Tizen Store.
 
     -   **Privileges**: Define the security-sensitive APIs or API groups accessed and used by the application.
 
@@ -242,7 +242,7 @@ To run the application on the emulator:
 
 2.  Generate a security profile.
 
-    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in the Tizen Studio.
+    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 3.  Run the application:
     1.  In the **Project Explorer** view, right-click the project and select **Run As \> Tizen Web Application**.
@@ -285,7 +285,7 @@ To run the application on the emulator:
 
             ![Application running in the emulator](media/emulator_running_watch_ww.png)
 
-        While the application is running, the **Log** view in the Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in the Tizen Studio menu, go to **Window \> Show View \> Log**.
+        While the application is running, the **Log** view in Tizen Studio shows the log, debug, and exception messages from the methods defined in the log macros. To see the view, in Tizen Studio menu, go to **Window \> Show View \> Log**.
 
 For more information on using the emulator features, see [Using Emulator Control Keys, Menu, and Panel](../../../tizen-studio/common-tools/emulator-control-panel.md) and [Using Extended Emulator Features](../../../tizen-studio/common-tools/emulator-features.md).
 
@@ -338,7 +338,7 @@ To run the application on the target device:
 
 2.  Generate an author certificate.
 
-    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in the Tizen Studio.
+    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 3.  Run the application:
     1.  In the **Device Manager**, select the device.

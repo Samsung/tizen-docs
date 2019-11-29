@@ -18,7 +18,7 @@ Privileges are categorized into public, partner, and platform levels
 according to their hierarchy:
 
 -   The public level is the minimum privilege level, which means that
-    any application developed using the Tizen Studio can use
+    any application developed using Tizen Studio can use
     these privileges.
 -   The partner level privileges require at least a partner-signed
     certificate which is granted to developers who have a business
@@ -43,7 +43,7 @@ switched it **on**.
 [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
 applications).
 
-The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
+Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
 Privileges](../../../tizen-studio/native-tools/api-checker.md).
 
 The API version restriction of privileges are deprecated since platform version 5.0. So, if you are develeoping an app with an earlier API version and need information about supported version, see [this page](./old-versioned-sec-privileges.md). The page does not include privileges issued after 4.0.
@@ -196,7 +196,7 @@ applications:
 
 Tizen application privileges are loosely bound to APIs, so most of the
 privileges can be identified by the APIs that the application calls.
-However, there are some privileges that are not coupled with the Tizen
+However, there are some privileges that are not coupled with Tizen
 APIs. To allow easy identification, those privileges are mapped to
 corresponding system resources that are similar to other privileges.
 

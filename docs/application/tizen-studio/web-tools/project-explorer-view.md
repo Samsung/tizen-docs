@@ -19,7 +19,7 @@ In this view, you can:
 <a name="opening"></a>
 ## Opening the Project Explorer View
 
-Usually, the **Project Explorer** view is located in the upper-left side of the Tizen Studio. You can change the position by dragging and dropping it. If you close the view, you can show it again by selecting **Project Explorer** in **Window > Show View > Other > General**.
+Usually, the **Project Explorer** view is located in the upper-left side of Tizen Studio. You can change the position by dragging and dropping it. If you close the view, you can show it again by selecting **Project Explorer** in **Window > Show View > Other > General**.
 
 **Figure: Opening the view**
 
@@ -134,7 +134,7 @@ To execute operations, such as copying, moving, creating new resources, and comp
 		</tr>
 		<tr>
 			<td><strong>Export to CLI project</strong></td>
-			<td>Exports the Tizen Studio native project to a CLI (command line interface) project. This option also makes or converts some files.</td>
+			<td>Exports the Tizen Studio Native project to a CLI (command line interface) project. This option also makes or converts some files.</td>
 		</tr>
 		<tr>
 			<td><strong>Build Signed Package</strong></td>
