@@ -2,220 +2,187 @@
 
 You can use animations to allow objects to move around and change their properties for a specified duration. NUI implements an easy-to-use animation framework that allows you to create visually rich applications. The `Tizen.NUI.Animation` class can be used to animate the [animatable properties](#animatableproperties) for any number of objects, typically view object.
 
-NUI animations [occur in a dedicated thread](#multithreading). This allows animations to run smoothly, regardless of the time taken to process the input, events, and other factors in the application code.
+NUI animations [occur in a dedicated thread](multithreading.md). This allows animations to run smoothly, regardless of the time taken to process the input, events, and other factors in the application code.
 
-The figure shows the NUI class hierarchy:
-
-**Figure: NUI class hierarchy**
-
-![NUI class hierarchy](media/NUI_Class_Hierarchy.png)
-
--   The `Tizen.NUI.Animatable` class contains methods related to animation properties, such as the `GetProperty()` and `IsPropertyAnimatable()` methods.
--   The `Tizen.NUI.Animation` class contains animation methods, such as the `AnimateBy()` and `AnimateTo()` methods.
-
-To implement a basic animation, specify an animation object that takes place in milliseconds:
-
-```
-_animation = new Animation(2000);
-
-/// OR
-
-_animation = new Animation
-{
-    Duration = 2000;
-};
-```
 
 <a name="animatableproperties"></a>
-## Animation Properties
+## Animatable Properties
 
 Some view properties are `animatable`, such as `Position`, `Orientation`, `Scale`, and `Color`.
 
-The controls class is derived from the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class and set the property to be *animatable*. For standard controls, you can query whether a property is animatable (using the `IsPropertyAnimatable()` method of the [Tizen.NUI.Animatable](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Animatable.html) class), but cannot change the animatable state.
+<div style="text-align:center;width:100%;"><img src="./media/properties.svg" /></div>
+
+See the `Remarks` section of the properties in [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) to see whether the property is *animatable*.
+
+### Basic Animation Methods
 
 To animate a property in NUI, you can use two distinct methods:
 
--   `AnimateTo()`: animates a property to the target value during a given time.
 
-    ```
-    /// view1 is first located in (10.0f, 10.0f, 0.0f)
-    animation.AnimateTo(view1, "Position", Vector3(10.0f, 50.0f, 0.0f));
-    /// view1 position changes to (10.0f, 50.0f, 0.0f)
+-   `AnimateTo()`: animates a property to the target value during a given time.
+    ```csharp
+    // Animates PositionX to 50
+    var animation = new Animation(2000/*duration*/);
+
+    animation.AnimateTo(view, "PositionX", 50);
+    
+    animation.Play();
     ```
 
 -   `AnimateBy()`: animates a property by the specified amount during a given time.
+    ```csharp
+    // Animates PositionX to x + 50
 
+    var animation = new Animation(2000/*duration*/);
+
+    animation.AnimateBy(view, "PositionX", 50);
+
+    animation.Play();
     ```
-    /// view2 is first located in (10.0f, 10.0f, 0.0f)
-    animation.AnimateBy(view2, "Position", Vector3(10.0f, 50.0f, 0.0f);
-    /// view2 position changes by (10.0f, 50.0f, 0.0f) to (20.0f, 60.0f, 0.0f)
-    ```
 
-The following example provides a more complex animation:
+You can define multiple animating behaviors in a single Animation.
+```csharp
+// Animate ScaleX of View1 and PositionY of View2 at once
 
-```
-_animation.AnimateTo(_text, "Orientation", new Rotation(new Radian(new Degree(180.0f)), PositionAxis.X), 0, 500, new AlphaFunction(AlphaFunction.BuiltinFunctions.EaseInOutSine));
-_animation.AnimateTo(_text, "Orientation", new Rotation(new Radian(new Degree(0.0f)), PositionAxis.X), 500, 1000, new AlphaFunction(AlphaFunction.BuiltinFunctions.EaseInOutSine));
+var animation = new Animation(2000/*duration*/);
 
-_animation.AnimateBy(_text, "ScaleX", 3, 1000, 1500);
-_animation.AnimateBy(_text, "ScaleY", 4.0f, 1500, 2000);
-```
+animation.AnimateBy(view1, "ScaleX", 2);
 
-You can also pass properties to an animation method through the `Property` class instantiation:
+animation.AnimateBy(view2, "PositionY", 100);
 
-```
-_animation.AnimateTo(new Property(_text, View.Property.ORIENTATION), new Property.Value(new Rotation(new Radian(new Degree(180.0f)), ...)));
+animation.Play();
 ```
 
-For more information on properties in general and animatable *scriptable properties* in particular, see [Managing Properties](customview.md#properties) and [Creating Transitions](customview.md#creatingtransitions).
+### KeyFrame Animation
+NUI provides support for animating between several different values for a View. This can be done by defining the `KeyFrames`.
 
-<a name="control"></a>
+The code below shows how to create `KeyFrames`.
+```csharp
+KeyFrames keyFrames = KeyFrames::New();
+
+keyFrames.Add(0.0f /*  0%*/, new Position(0, 0));
+keyFrames.Add(0.25f/* 25%*/, new Position(200, 0));
+keyFrames.Add(0.5f /* 50%*/, new Position(200, 100));
+keyFrames.Add(0.75f/* 75%*/, new Position(0, 100));
+keyFrames.Add(1.0f /*100%*/, new Position(0, 0));
+```
+
+Next, you can add it to your animation by using `AnimateBetween()`.
+
+```csharp
+animation.AnimateBetween(view, "Position", keyFrames);
+animation.Play();
+```
+
+Check the result!
+<div style="text-align:center;width:100%;"><img src="./media/complexanimation.svg" /></div>
+
+For more information on animatable properties and methods, see below.
+-   [Path Animation](animation-types.md#path-animation)
+-   [Managing Properties](customview.md#properties)
+-   [Creating Transitions](creating-custom-view-controls.md#creatingtransitions)
+
+<a name="playbackAndEvents"></a>
 ## Playback and Events
 
 After the animation is created, you can control its playback:
 
 - To play the animation:
 
-    ```
+    ```csharp
     animation.Play();
     ```
 
 - To pause or stop the animation:
 
-    ```
+    ```csharp
     animation.Pause();
     animation.Stop();
     ```
 
 - To loop the animation:
 
-    ```
+    ```csharp
     animation.Looping = true;
     ```
 
-- By default, when the animation ends, the properties that is animating are saved. Additionally, discard the property changes when either the animation ends or stops:
+- By default, when the animation ends, the properties that is animating are saved. If you want to discard the property changes when either the animation ends or stops:
 
-    ```
+    ```csharp
     animation.EndAction = Animations.EndActions.Discard;
     ```
 
 During the playback, you can receive notifications at various stages of the animation, such as the following:
 
--   When the animation progress has reached a specific percentage:
+-   `ProgressReached`: Notify when the animation progress has reached a specific percentage
 
+    ```csharp
+    // Trigger the 'ProgressReached' event to 50% of animation time
+    animation.ProgressNotification = 0.5;
+
+    animation.ProgressReached += progressReachedCallback;
     ```
-    /// Trigger the 'progress reached' event to 50% of animation time
-    _animation.ProgressNotification = 0.5;
 
-    _animation.ProgressReached += progressReached;
-    ```
-
--   When the animation finishes:
-
-    ```
-    public void AnimationFinished(object sender, EventArgs e)
-    {
-        Tizen.Log.Debug("NUI", "AnimationFinished()");
-    }
-
-    _animation.Finished += AnimationFinished;
+-   `Finished`: Notify when the animation finishes
+    ```csharp
+    animation.Finished += animationFinishedCallback;
     ```
 
 <a name="alphafunctions"></a>
 ## Alpha Functions
 
-In animations, alpha functions are used to specify the animation parameter's rate of change over time. This allows the animation to be, for example, accelerated, decelerated, repeated, or bounced. The [Tizen.NUI.AlphaFunction.BuiltinFunctions](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.AlphaFunction.BuiltinFunctions.html) enumeration lists the built-in alpha functions.
+In animations, alpha functions are used to specify the an animation progresses over time. This allows the animation to be, for example, accelerated, decelerated, repeated, or bounced.
 
-You can specify a different alpha function for each animator in an animation object:
+### Built-in Alpha Function
 
-```
-animation.AnimateTo(view1, "Position", Vector3(10.0f, 50.0f, 0.0f), new AlphaFunction.BuiltinFunctions.Linear);
-```
+The simplest way to define an alpha function is to use `built-in alpha function` which NUI provides for the convenience.
+See [Tizen.NUI.AlphaFunction.BuiltinFunctions](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.AlphaFunction.BuiltinFunctions.html), to check a supporting list.
 
-You can also create your own alpha function in two ways:
-
--   By setting the default alpha function:
-
-    ```
-    float alphafunc(float progress)
-    {
-        if ((progress > 0.2f) && (progress < 0.7f))
-        {
-            return progress + 0.8f;
-        }
-
-        return progress;
-    }
-
-    AlphaFunction af(alphafunc);
-    animation.SetDefaultAlphaFunction(af);
-    ```
-
-- By using delegates:
-
-    ```
-    private UserAlphaFunctionDelegate _user_alpha_func;
-
-    /// Declare the user alpha function delegate
-    [UnmanagedFunctionPointer(CallingConvention.StdCall)]
-    delegate float UserAlphaFunctionDelegate(float progress);
-
-    _user_alpha_func = new UserAlphaFunctionDelegate(alphafunc);
-
-    _animation.AnimateTo(_view2, "Position", new Vector3(150.0f, 150.0f, 0.0f), 5000, 10000, new AlphaFunction(_user_alpha_func));
-    ```
-
-<a name="multithreading"></a>
-## Animation Multithreading
-
-NUI animations and rendering occur in a dedicated rendering thread, which allows the animations to run smoothly, regardless of the time taken to process input events in the application code. Internally, NUI contains a scene graph that mirrors the view hierarchy. The scene graph objects perform the actual animation and rendering, while the views provide thread-safe code.
-
-The following figure shows a view hierarchy in which one of the views is being animated. The green objects are created by the application code, while the blue private objects are used in the dedicated rendering thread.
-
-**Figure: Animation view hierarchy**
-
-![Animation view hierarchy](media/multi-threaded-animation.png)
-
-<a name="readvalue"></a>
-### Reading Animated Values
-
-When a property is animatable, it can only be modified in the rendering thread. The value returned from a `get` property is the value used to render the previous frame.
-
-For example, `view.Position` has the position value at which the view was last rendered. Since defining a new position for `view.Position` is asynchronous, it does not immediately return the new value.
-
-```
-View view = new View();
-Window.Instance.Add(view); /// Initial position is 0,0,0
-view.Position = new Position(10, 10, 10);
-
-Position current = view.Position;
-Console.WriteLine("Current position: " + current.X + ", " + current.Y + ", " + current.Z);
-Console.WriteLine("...");
-
-/// Handle another event
-
-current = view.Position;
-Console.WriteLine("Current position: " + current.X + ", " + current.Y + ", " + current.Z);
+The following example shows how to create an AlphaFunction with a built-in item.
+```csharp
+var easeOut = new AlphaFunction(AlphaFunction.BuiltinFunctions.EaseOut);
 ```
 
-The output of the code:
+You can apply it to the animation by setting is as a `DefaultAlphaFunction`:
 
+```csharp
+var animation = new Animation(2000/*duration*/);
+
+animation.DefaultAlphaFunction = easeOut;
+
+animation.AnimateBy(view, "PositionX", 200);
+
+animation.Play();
 ```
-Current position: 0, 0, 0
-...
-Current position: 10, 10, 10
+
+Check out how `EaseOut` animation works in the picture below compared with other built-in functions.
+
+<div style="text-align:center;width:100%;"><img src="./media/easeout.svg" /></div>
+
+You can also specify the alpha function for each animating method:
+
+```csharp
+// Animation in 0 ~ 500ms : speeds up
+animation.AnimateBy(view, "PositionX", 100, 0, 500, easeIn);
+
+// Animation in 500 ~ 1000ms : slows to a gradual stop
+animation.AnimateBy(view, "PositionX", 100, 500, 1000, easeOut);
 ```
 
-<a name="propsetting"></a>
-### Setting Properties during Animations
 
-When a property is being animated, the animation overrides all values set using other methods.
+### Create Your Own Alpha Function
+Let's create your own alpha function using `Bézier Curves`, by setting two control points, C1 and C2. The control points are for a Bézier curve whose end points are fixed at (0, 0) and (1, 1) respectively.
 
-The steps to execute in the render thread are:
+```csharp
+// Define two control points C1, C2
+var c1 = new Vector2(0.0f, 0.5f);
+var c2 = new Vector2(0.5f, 1.0f);
 
-1.  Process the message and call the `SetPosition()` method.
-2.  Apply the animation and call the `SetPosition()` method.
-3.  Render the frame.
+var customAlphaFunction = new AlphaFunction(c1, c2);
+```
+As you see in the first graph, the control points `C1(0, 0.5)` and `C2(0.5, 1)` make a curve that increases rapidly in the start and then slow down to the end. This means that the animation with this alpha function will have a same speed progress. See how the circles below the graphs are moving.
+
+<div style="text-align:center;width:100%;"><img src="./media/bezier.svg" /></div>
 
 <a name="sample"></a>
 ## Sample Animation
