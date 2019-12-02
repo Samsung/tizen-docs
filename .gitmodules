@@ -1,0 +1,3 @@
+[submodule "docs/application/web/api/web-device-api"]
+	path = docs/application/web/api/web-device-api
+	url = ssh://165.213.149.170:29418/doc/web-device-api
