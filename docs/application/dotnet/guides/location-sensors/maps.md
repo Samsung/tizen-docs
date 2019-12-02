@@ -29,6 +29,7 @@ The main Tizen.Maps namespace features are:
 
 You can also [customize service requests](#preference).
 
+<a name="supported_maps"> </a>
 The following map providers are supported:
 
 -   [HERE Maps](https://developer.here.com) based on the [HERE REST API](https://developer.here.com/rest-apis).

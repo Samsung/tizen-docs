@@ -2164,7 +2164,7 @@ $ sensorctl info accelerometer /* retrieve accelerometer sensor information */
 ### crash-manager
 
 crash-manager is a tool used to create crash reports when an application gets crashed.
-crash-manager is not usually invoked manually, but automatically by the kernel when the crash occurs. crash-manager generates the crash report and attaches the kernel-provided core, if requested. crash-worker package provides the `99-crash-manager.conf` file, which configures kernel parameters for crash-manager to get invoked automatically on crash. For more information, see [`99-crash-manager.conf`](#99-crash-managerconf).
+crash-manager is not usually invoked manually, but automatically by the kernel when the crash occurs. crash-manager generates the crash report and attaches the kernel-provided core, if requested. crash-worker package provides the `99-crash-manager.conf` file, which configures kernel parameters for crash-manager to get invoked automatically on crash. For more information, see [`99-crash-manager.conf`](#99-crash-manager).
 
 crash-manager consists of the following options:
 
@@ -2187,6 +2187,7 @@ In addition to handling crashes, crash-manager can create reports from running p
 $ /usr/bin/crash-manager -p <PID> --live --print
 ```
 
+<a name="99-crash-manager"> </a>
 #### 99-crash-manager.conf
 
 The `99-crash-manager.conf` file consists of the following kernel configurations related to the core dump:

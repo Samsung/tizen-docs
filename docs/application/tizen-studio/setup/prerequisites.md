@@ -1,6 +1,6 @@
-# Prerequisites for the Tizen Studio
+# Prerequisites for Tizen Studio
 
-Check the following prerequisites before attempting to install the Tizen Studio.
+Check the following prerequisites before attempting to install Tizen Studio.
 
 ## Java Development Kit (JDK) Requirements
 
@@ -22,11 +22,15 @@ Follow these instructions to install the appropriate JDK version for your system
 
   Go to the [Ubuntu Web site](https://help.ubuntu.com/community/Java) for detailed instructions for installing the Oracle&reg; JDK version 8. The raw binaries can be downloaded directly from Oracle ([Oracle Java download page](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)).
 
+  > **Note**
+  >
+  > For RT IDE use Oracle Java Development Kit (JDK) 8 only.
+
 You can also use Oracle's OpenJDK. For more installation details, see [OpenJDK 12 and OpenJFX Installation Guide](openjdk.md).
 
 ## OS and System Requirements
 
-The following table lists the supported operating systems and hardware requirements for the Tizen Studio.
+The following table lists the supported operating systems and hardware requirements for izen Studio.
 
 **Table: OS and system requirements**
 
@@ -86,7 +90,7 @@ The following table lists the supported operating systems and hardware requireme
 <a name="emulator"></a>
 ## Emulator Requirements
 
-The following table lists the CPU, screen resolution, graphic card, driver, and webcam requirements for using the Tizen emulator.
+The following table lists the CPU, screen resolution, graphic card, driver, and webcam requirements for using the Tizen Emulator.
 
 **Table: Emulator requirements**
 
@@ -126,7 +130,7 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 </tr>
 </tbody>
 </table>
-<strong>Note</strong>
+<strong>Note</strong
 <ul>
 <li>If the host machine is using the NVIDIA&reg; Optimus&reg; technology, the emulator works with the on-board graphics card. To prevent this, either disable the Optimus&reg; technology, or set the emulator to run with the external NVIDIA graphics card.</li>
 </ul>

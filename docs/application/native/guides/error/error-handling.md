@@ -56,7 +56,7 @@ if (LOCATIONS_ERROR_NONE != result) {
 
 The `get_error_message()` function takes an error code as an input and returns its corresponding error messages, such as "Location service is not available".
 
-Every error code in the Tizen native API is represented as an integer value.
+Every error code in Tizen Native API is represented as an integer value.
 
 ## Related Information
 - Dependencies

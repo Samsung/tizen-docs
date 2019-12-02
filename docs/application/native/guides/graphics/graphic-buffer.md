@@ -1,7 +1,7 @@
 # Graphic Buffer and Surface
 
 
-The Tizen Buffer Manager (TBM) surface allows you to manage the graphic buffer in Tizen. The TBM provides an abstraction interface for the graphic buffer and a user interface for the TBM surface. It supports the RGB and YUV graphic formats, as well as multiple plane graphic buffers.
+Tizen Buffer Manager (TBM) surface allows you to manage the graphic buffer in Tizen. The TBM provides an abstraction interface for the graphic buffer and a user interface for the TBM surface. It supports the RGB and YUV graphic formats, as well as multiple plane graphic buffers.
 
 The TBM surface provides the following main features:
 

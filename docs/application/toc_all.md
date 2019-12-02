@@ -18,7 +18,7 @@
 ### [Create Wearable .NET Application](/application/dotnet/get-started/wearable/first-app.md)
 ### [Create TV .NET Application](/application/dotnet/get-started/tv/first-app.md)
 ### [Create Mobile .NET Application](/application/dotnet/get-started/mobile/first-app.md)
-
+### [Create NUI .NET Application](/application/dotnet/get-started/nui/quickstart.md)
 
 ## Tutorials
 
@@ -67,15 +67,13 @@
 
 ### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
-#### [Setting Up the NUI Development Environment on Ubuntu](/application/dotnet/guides/nui/setup-ubuntu.md)
-#### [Getting Started](/application/dotnet/guides/nui/hello-world.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
 #### Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
 ##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
-##### [CustomView](/application/dotnet/guides/nui/creating-custom-view-controls.md)
+##### [CustomView](/application/dotnet/guides/nui/customview.md)
 ##### [FlexContainer](/application/dotnet/guides/nui/flexcontainer.md)
 ##### [ImageView](/application/dotnet/guides/nui/imageview.md)
 ##### [TableView](/application/dotnet/guides/nui/tableview.md)
@@ -792,7 +790,7 @@
 ###### [Constraints](/application/native/guides/ui/dali/constraints.md)
 ##### [Resources](/application/native/guides/ui/dali/resources.md)
 ##### Rendering and Effects
-###### [Overview](/application/native/guides/ui/dali/rendering-effects.md)
+###### [Overview](/application/native/guides/ui/dali/dali-rendering.md)
 ###### [Shape Drawing](/application/native/guides/ui/dali/rendering-tutorial.md)
 ###### [SVG Rendering](/application/native/guides/ui/dali/svg-rendering.md)
 ##### Background Knowledge
@@ -891,7 +889,7 @@
 ##### [Connection Management](/application/native/guides/connectivity/connection.md)
 ##### [Download](/application/native/guides/connectivity/download.md)
 ##### [Curl](/application/native/guides/connectivity/curl.md)
-##### [HTTP](/application/native/guides/connectivity/http.md)
+##### [HTTP](/application/native/guides/connectivity/http-api.md)
 ##### [Web View](/application/native/guides/connectivity/web-view.md)
 #### [File Transfer with MTP](/application/native/guides/connectivity/mtp.md)
 #### [VPN Connections](/application/native/guides/connectivity/vpn.md)
@@ -1152,8 +1150,6 @@
 
 ### [Overview](/application/tizen-studio/extension-sdk/overview.md)
 ### [In-App Purchase Program Guide](/application/tizen-studio/extension-sdk/in-app-purchase.md)
-### [InMobi Tizen Ad SDK Program Guide](/application/tizen-studio/extension-sdk/inmobi.md)
-### [VMAX Tizen Ad SDK Integration Guide](/application/tizen-studio/extension-sdk/vmax.md)
 
 ## RT IDE
 

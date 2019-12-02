@@ -2,7 +2,7 @@
 
 You can download files from the Internet and monitor the progress and status of ongoing downloads.
 
-The Download API is mandatory for the Tizen mobile profile, but optional for wearable and TV profiles. This means that it is supported on all mobile devices, but may not be supported on all wearable and TV devices. The Download API is supported on all Tizen Emulators.
+The Download API is mandatory for the Tizen Mobile profile, but optional for wearable and TV profiles. This means that it is supported on all mobile devices, but may not be supported on all wearable and TV devices. The Download API is supported on all Tizen emulators.
 
 The main features of the Download API include:
 

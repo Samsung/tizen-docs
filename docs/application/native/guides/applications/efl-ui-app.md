@@ -43,7 +43,7 @@ To listen for system events, use the `ui_app_add_event_handler()` function. The 
 <a name="state_trans"></a>
 ## Application States and Transitions
 
-The Tizen native application can be in one of several different [application states](overview.md#state_change).
+The Tizen Native application can be in one of several different [application states](overview.md#state_change).
 
 The Application API defines 5 states with corresponding transition handlers. A state transition callback is triggered after each state change, whenever the application is created, starts running, or is paused, resumed, or terminated. The application must [react to each state change appropriately](#fundamentals).
 
@@ -274,7 +274,7 @@ An application with a background running capability must declare the background 
 >
 > The `<metadata key="http://tizen.org/metadata/bacgkround-category/<value>"/>` element has no effect on Tizen 2.3 devices, but on Tizen 2.4 and higher devices, it has the same effect as the `<background-category>` element.
 
-The background category of your application can be specified in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in the Tizen Studio.
+The background category of your application can be specified in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in Tizen Studio.
 
 ## Related Information
 - Dependencies

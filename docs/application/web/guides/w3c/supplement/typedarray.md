@@ -6,11 +6,11 @@ The main features of the Typed Array - Khronos API include:
 
 - Creating an array buffer
 
-  An [ArrayBuffer](http://www.khronos.org/registry/typedarray/specs/latest/#5) is a fixed-length binary data buffer, and a reference to the used raw binary data in the data format. It does not interact with the data directly, but [creates a new instance of the ArrayBufferView object](#creating-an-array-buffer). The instance presents the buffer in a certain format, and can read and write the buffer content.
+  An [ArrayBuffer](http://www.ecma-international.org/ecma-262/6.0/#sec-arraybuffer-constructor) is a fixed-length binary data buffer, and a reference to the used raw binary data in the data format. It does not interact with the data directly, but [creates a new instance of the ArrayBufferView object](#creating-an-array-buffer). The instance presents the buffer in a certain format, and can read and write the buffer content.
 
 - Using typed array views
 
-  A [TypedArrayView](http://www.khronos.org/registry/typedarray/specs/latest/#6) can be used to establish a detailed data structure. To [create a typed array view](#creating-typed-array-views), you must create an array buffer and the view that points to the array buffer.
+  A [TypedArrayView](http://www.ecma-international.org/ecma-262/6.0/#sec-typedarray-constructors) can be used to establish a detailed data structure. To [create a typed array view](#creating-typed-array-views), you must create an array buffer and the view that points to the array buffer.
 
 - Using typed arrays
 
@@ -32,7 +32,7 @@ Additionally, a typed array can be used to manage in-memory binary data of byte 
 
 To handle binary data in your application with JavaScript, you must learn to create array buffers:
 
-1. Create a new [ArrayBuffer](http://www.khronos.org/registry/typedarray/specs/latest/#5) with a specific length:
+1. Create a new [ArrayBuffer](http://www.ecma-international.org/ecma-262/6.0/#sec-arraybuffer-constructor) with a specific length:
 
    ```
    <script>

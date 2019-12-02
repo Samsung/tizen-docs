@@ -2,12 +2,13 @@
 
 The Get Started Tutorial teaches you how to create basic Tizen applications for TV devices.
 
-The Tizen supports two primary application types for TV:
+Tizen supports two primary application types for TV:
 
--   [.NET application](#net-application) is a new way to develop applications for the Tizen operating system using C# language.
+-   [.NET application](#dotnet-application) is a new way to develop applications for the Tizen operating system using C# language.
 
--   [Web application](#web-application) is a Web site stored on your device and built using Web-native languages, such as HTML5, CSS, and JavaScript. The Web application uses the Tizen Web Framework to interact with the native subsystems.
+-   [Web application](#web-application) is a Web site stored on your device and built using Web-native languages, such as HTML5, CSS, and JavaScript. The Web application uses the Tizen Web framework to interact with the native subsystems.
 
+<a name="dotnet-application"> </a>
 ## .NET Application
 
 The following guide demonstrates how to create and run a basic Tizen .NET application:

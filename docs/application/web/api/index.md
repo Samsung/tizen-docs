@@ -1,8 +1,8 @@
 # Tizen Web API References
 
-The Tizen Web API specifications for the Tizen mobile and wearable Web profile consist of a collection of existing standards, such as W3C and Khronos.
+The Tizen Web API specifications for the Tizen Mobile and Wearable Web profile consist of a collection of existing standards, such as W3C and Khronos.
 
-In addition to standards-based APIs, the Tizen mobile Web profile has a specific set of APIs, which provide access to device platform capabilities, enabling a rich Web application development environment.
+In addition to standards-based APIs, the Tizen Mobile Web profile has a specific set of APIs, which provide access to device platform capabilities, enabling a rich Web application development environment.
 
 The following API references provide descriptions of all the APIs that can be used for creating Tizen Web applications.
 

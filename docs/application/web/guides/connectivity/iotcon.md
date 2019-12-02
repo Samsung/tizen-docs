@@ -2,7 +2,7 @@
 
 [IoTivity](https://www.iotivity.org/) offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications. IoT connectivity (Iotcon) provides the means of using IoTivity in Tizen.
 
-The Iotcon API is optional for Tizen mobile, wearable, and TV profiles, which means that it may not be supported on all mobile, wearable, and TV devices. The Iotcon API is supported on all Tizen Emulators.
+The Iotcon API is optional for Tizen Mobile, Wearable, and TV profiles, which means that it may not be supported on all mobile, wearable, and TV devices. The Iotcon API is supported on all Tizen emulators.
 
 IoT connectivity is usually handled with a server and client. The server is responsible for creating and providing resources, and the client can access those resources through requests.
 
@@ -36,7 +36,7 @@ To enable your application to use the IoT functionality:
    <tizen:privilege name="http://tizen.org/privilege/internet"/>
    ```
 
-2. To make your application visible in the Tizen Store only for devices that support Iotcon, the application must specify the following feature in the `config.xml` file:
+2. To make your application visible in Tizen Store only for devices that support Iotcon, the application must specify the following feature in the `config.xml` file:
 
    ```
    <widget>

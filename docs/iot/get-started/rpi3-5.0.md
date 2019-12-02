@@ -231,7 +231,7 @@ To configure the Raspberry Pi 3 board:
 
 ### Installing Drivers
 
-1.  Connect Smart Development Bridge (SDB) as described in [Connecting the board to the PC](#Connecting-the-board-to-the-PC).
+1.  Connect Smart Development Bridge (SDB) as described in [Connecting the board to the PC](#connecting-the-board-to-the-pc).
 2.  Install the connectivity drivers for each board:
     -   **Raspberry Pi 3**
         1.  Download the plugin zip file from the **Raspberry Pi 3(5.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
@@ -307,7 +307,7 @@ sudo apt-get install package-name
 
 #### Installing IoT Setup Manager
 
-Ensure that you have installed [Tizen Studio](#Installing-Tizen-Studio).
+Ensure that you have installed [Tizen Studio](#installing-tizen-studio).
 
 To install the IoT Setup Manager using the Package Manager available in Tizen Studio:
 
@@ -472,7 +472,7 @@ To flash the SD card for Raspberry Pi 3 without IoT setup Manager:
         $ sudo ./flash-sdcard.sh /dev/sdb
         ```
 
-3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Setting up Raspberry Pi 3](#Setting-up-Raspberry-Pi-3).
+3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Setting up Raspberry Pi 3](#setting-up-raspberry-pi-3).
 
     > **Note**
     >

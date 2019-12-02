@@ -70,4 +70,4 @@ For more information about Anchor Series, please visit the below.
 - [Customer Service & Technical Supports For **Anchor Series**](http://dignsys.com/eng/embedded-iot/som-module/anchor5-som/)
 - [**www.dignsys.com**](http://dignsys.com/)
 
-or **If you have any questions, please send us by** [**email**](hbahn@dignsys.com)
+or **If you have any questions, please send us by** [**email**](mailto:hbahn@dignsys.com)

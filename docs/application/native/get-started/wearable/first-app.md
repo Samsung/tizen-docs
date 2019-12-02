@@ -1,16 +1,16 @@
 # Create Your First Tizen Wearable Native Application
 
-**Welcome to Tizen wearable native application development!**
+**Welcome to Tizen Wearable Native application development!**
 
 A wearable native application is created using the C language, and can be run on Tizen wearable devices. The application uses the native API, which provides various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
 
-Study the following instructions to help familiarize yourself with the Tizen [native application development process](../../tutorials/process/app-dev-process.md) as well as using the Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native application, which displays some text on the screen with no user interaction:
+Study the following instructions to help familiarize yourself with the Tizen [Native application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and installing the created application on the emulator or target device. With the instructions, you can create and run a basic wearable native application, which displays some text on the screen with no user interaction:
 
 1.  Before you get started with developing Tizen applications, download and install the [Tizen Studio](../../../tizen-studio/index.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
-2.  [Create a wearable native project](#create) using the Tizen Studio.
+2.  [Create a wearable native project](#create) using Tizen Studio.
 
     This step shows how you can use a predesigned project template that creates all the basic files and folders required for your project.
 
@@ -26,12 +26,12 @@ Study the following instructions to help familiarize yourself with the Tizen [na
 
     This step shows how you can create the application UI and make small alterations to it to improve the usability of your application.
 
-When you are developing a more complex application, you can take advantage of the [native tools included in the Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
+When you are developing a more complex application, you can take advantage of the [native tools included in Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
 
-The following example shows you how to create and configure a basic wearable native application project in the Tizen Studio. An application project contains all the files that make up an application.
+The following example shows you how to create and configure a basic wearable native application project in Tizen Studio. An application project contains all the files that make up an application.
 
 The following figure illustrates the application to be created. The application screen displays the **Hello Tizen** text and no user interaction is provided. If you click the **Back** key on the device, the application moves to the background.
 
@@ -41,7 +41,7 @@ The following figure illustrates the application to be created. The application 
 
 To create the application project:
 
-1.  Launch the Tizen Studio.
+1.  Launch Tizen Studio.
 
 2.  In the Tizen Studio menu, select **File \> New \> Tizen Project**.
 
@@ -108,7 +108,7 @@ Your application project is now ready for further actions. Next, build the appli
 
 To view and modify the application configuration:
 
-1.  In the **Project Explorer** view, double-click the `tizen-manifest.xml` file of the application. The Tizen Studio opens the file in the manifest editor.
+1.  In the **Project Explorer** view, double-click the `tizen-manifest.xml` file of the application. Tizen Studio opens the file in the manifest editor.
 
 2.  In the manifest editor, view and modify the configuration details using the various tabs:
 
@@ -116,7 +116,7 @@ To view and modify the application configuration:
 
     -   **Overview**: Define general information, such as the package, label, and icon of the application.
 
-    -   **Features**: Define required software and hardware features. This information is used for application filtering in the Tizen Store.
+    -   **Features**: Define required software and hardware features. This information is used for application filtering in Tizen Store.
 
     -   **Privileges**: Define the security-sensitive APIs or API groups accessed and used by the application.
 
@@ -128,7 +128,7 @@ To view and modify the application configuration:
 
         > **Note**
         >
-        > The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
+        > The `tizen-manifest.xml` file must conform to both the XML file format and the Tizen Native application specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
 3.  To save any changes, in the Tizen Studio menu, select **File \> Save All**.
 
@@ -191,7 +191,7 @@ You can build the application in the following ways:
 
 -   **Automatically**
 
-    The automatic build means that the Tizen Studio automatically rebuilds the application whenever you change a source or resource file and save the application project.
+    The automatic build means that Tizen Studio automatically rebuilds the application whenever you change a source or resource file and save the application project.
 
     To use the automatic build:
 
@@ -281,54 +281,54 @@ For more information on using the emulator features, see [Using Emulator Control
 <a name="target"></a>
 ### Running on a Target Device
 
-To run the application on a target device:
+First of all, a target device and your computer must be connected to the same Wi-Fi network.
+
+To run the application on the target device:
 
 1.  Connect the wearable target device to your computer:
-    1.  Define settings on the device:
-        -   Go to **Settings \> Connections**, and switch on Bluetooth.
+    1. Define settings on the device:
 
-            ![Switch on Bluetooth](media/emulator_target_bt.png)
+        -   Execute the **Settings** application.
 
-            ![Switch on Bluetooth](media/emulator_target_bt2.png)
+            ![Settings](media/wearable_settings_app.png)
 
-        -   Go to **Settings \> Connections**, and switch on Wi-Fi.
+        -   Go to **Connections > Wi-Fi**, and switch on Wi-Fi.
 
-            The device and the computer must be connected to the same Wi-Fi network.
+            ![Enable Wi-Fi](media/testing_your_app_on_gear3.png) ![Select Wi-Fi AP](media/testing_your_app_on_gear4.png)
+
+        -   Go to **Wi-Fi networks**, and select a Wi-Fi AP.
+
+            ![Select Wi-Fi AP](media/testing_your_app_on_gear6.png) ![IP Address](media/testing_your_app_on_gear7.png)
 
             Note the IP address the device is using.
 
-            ![Switch on Wi-Fi](media/emulator_target_wifi.png)
+        -   Go to **About watch > Debugging**, and switch on the debugging mode.
 
-        -   Go to **Settings \> Gear info**, and switch on the debugging mode.
-
-            ![Switch on debugging](media/emulator_target_debug.png)
+            ![Switch on debugging](media/testing_your_app_on_gear1.png) ![Debugging menu](media/testing_your_app_on_gear2.png) 
 
     <a name="remote_device"></a>
 
     2.  Use the Remote Device Manager to connect the wearable device:
+
         1.  In the **Device Manager**, launch the Remote Device Manager by clicking the related icon.
 
             ![Launch the Remote Device Manager](media/remote_conn_mgr.png)
 
-        2.  In the **Remote Device Manager** window, click **+**.
+        2.  In the **Remote Device Manager** window, click the **Scan** icon(![Scan icon](media/remote_conn_scan_icon.png)).
 
-            ![Add new device](media/remote_conn_new_ww.png)
+            ![Scan devices](media/remote_conn_scan.png)
 
-        3.  In the **Add Device** window, enter the device and network details (use the IP address you noted before), and click **Add**.
+        3.  In the **Remote Device Manager** window, switch the new device on by clicking the switch under **Connection**.
 
-            ![Define device details](media/remote_conn_add_ww.png)
+            ![Connect the device](media/remote_conn_device.png)
 
-        4.  In the **Remote Device Manager** window, switch the new device on by clicking the switch under **Connect**.
+    3.  The device asks for user confirmation. To allow your device to read log data, copy files to and from your computer, and install the application manually, click the accept mark.
 
-            ![Connect the device](media/remote_connect_ww.png)
-
-    3.  The device asks for user confirmation. To allow Gear to read log data, copy files to and from your computer, and install the application manually, click the accept mark.
-
-        ![Allow Gear to access data](media/remote_allow_gear_ww.png)
+        ![Allow Gear to access data](media/remote_allow_gear.png)
 
     4.  In the **Device Manager**, confirm that the device is connected (shown in the device list).
 
-        ![Device is connected](media/remote_connected_ww.png)
+        ![Device is connected](media/remote_connected_w.png)
 
 2.  Generate an author certificate.
 
@@ -346,8 +346,6 @@ To run the application on a target device:
         -   Click the run icon in the toolbar.
 
         If you have both a connected device and existing emulator instances, select the device from the combo box in the toolbar before selecting to run the application.
-
-        ![Selecting the device to use](media/app_run_multiple_emulators.png)
 
     3.  Confirm that the application launches on the target device.
 

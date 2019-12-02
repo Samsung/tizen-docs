@@ -62,6 +62,7 @@ To enable your application to use the attached device control functionality:
 
 ## Retrieving Battery Information
 
+<a name="battery"></a>
 To retrieve battery information:
 
 -   Get the battery charge percentage with the `Percent` property of the [Tizen.System.Battery](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Battery.html) class.

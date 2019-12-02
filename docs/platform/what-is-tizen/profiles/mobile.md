@@ -24,8 +24,6 @@ Samsung Electronics expanded the Tizen ecosystem with the introduction of the Sa
 
 For the first time on the Z Series, the Samsung Z4 is equipped with a front and rear camera optimized for social media and a wide range of features focused on convenience and productivity, including quick and easy access to the most frequently used functions. Additionally, with 4G LTE, VoLTE, and VoWiFi (voice over Wi-Fi), the Samsung Z4 offers faster network connectivity.
 
-For more information on developing a Samsung Z application, go to [SAMSUNG Z](http://developer.samsung.com/samsung-z){:target="_blank"}.
-
 **Figure: Mobile Samsung Z devices**
 
 ![Mobile Samsung Z devices](media/samsung-z.png)
