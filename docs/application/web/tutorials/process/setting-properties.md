@@ -3,11 +3,11 @@
 
 Before you implement the actual application functionality, define all the necessary properties for your application project:
 
-- To set the application project properties for [build](#set) and [JSON properties](#set_json), right-click the project in the Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
+- To set the application project properties for [build](#set) and [JSON properties](#set_json), right-click the project in Tizen Studio **Project Explorer** view and select **Properties**. After setting or changing a property, click **OK**.
 - To define the [Web application configuration](#set_widget), edit the `config.xml` file.  
   > **Note**  
   > Only modify the Web application configuration by using the
-    configuration editor in the Tizen Studio. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
+    configuration editor in Tizen Studio. If you create or edit the    `config.xml` file using any other text editor, your application may    not work as expected.
 
 After you have finished setting the project properties, you are ready to [design the UI](app-dev-process.md#design).
 
@@ -48,7 +48,7 @@ You can perform the following tasks using the **Overview** tab:
 
 -   View the application identifier.
 
-    The Tizen Studio creates automatically an application ID, which uniquely identifies the application within the package.
+    Tizen Studio creates automatically an application ID, which uniquely identifies the application within the package.
 
 -   Set the content.
 
@@ -91,14 +91,14 @@ You can perform the following tasks using the **Overview** tab:
 <a name="feature"></a>
 ### Declaring Required Software or Hardware Features in the Features Tab
 
-You can declare any device software or hardware features that your application requires to run properly. The declaration can be used for application filtering in the Tizen Store.
+You can declare any device software or hardware features that your application requires to run properly. The declaration can be used for application filtering in Tizen Store.
 
 To enable filtering for your Web application:
 
 1.  In the **Features** tab, click **+**.
 2.  Select the needed features from the [predefined list of features available for filtering](../app-filtering.md).
 3.  Click **Finish**.
-4.  Upload and publish the application package on the Tizen Store.
+4.  Upload and publish the application package on Tizen Store.
 
     If a Tizen-powered device requests applications, the store displays a list containing only applications compatible with the user's device.
 
@@ -250,7 +250,7 @@ The following table describes the schema extension properties that you can edit.
   <td>
 
   **ID** </td>
-  <td> Tizen application ID, which is randomly created from the Tizen package  ID and project name.<br>
+  <td> Tizen application ID, which is randomly created from the Tizen package ID and project name.<br>
   This attribute is mandatory. </td>
 </tr>
 <tr>

@@ -16,9 +16,21 @@ You can use the following application management features in your .NET applicati
 
   You can retrieve information about the applications installed on the device. You can also get information about the currently-running application.
 
+- [Event Manager](event.md)
+
+  You can use events to advertise your application activities. You can also listen to events from other applications or from other systems. You can broadcast events from your application to all listeners who want to listen. You can also subscribe to events to keep track of what is happening in the system or other applications.
+
+- [Component Manager](component-manager.md)
+
+  You can retrieve information about the components installed on the device. You can also get information about the currently running components.
+
 - [Package Manager](package-manager.md)
 
   You can retrieve information about the packages installed on the device. You can also monitor for changes in the device packages.
+
+- [Widget Control](widget-control.md)
+
+  You can send update requests to the widget applications. You can also listen widget lifecycle events, and retrieve details of running instance for the same package widget applications.
 
 The application can communicate with other applications in various ways. You can exchange data between applications through message ports and data controls.
 

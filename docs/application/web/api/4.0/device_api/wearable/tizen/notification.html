@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Notification">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Notification API</h1></div>
 <div class="brief">
  The Notification API provides a way to notify users of events that happen in an application.
@@ -1600,7 +1600,10 @@ All notifications must have a title attribute.
         
       <div class="constructors">
 <h4 id="StatusNotification::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint"><span class="nocode deprecated">StatusNotification(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict);</span></pre></dl>
+<dl>
+<h4>Constructor (<a href="#StatusNotificationType">StatusNotificationType</a>, DOMString, <a href="#StatusNotificationInit">StatusNotificationInit</a>?)</h4>
+<pre class="webidl prettyprint"><span class="nocode deprecated">StatusNotification(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict);</span></pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -1878,7 +1881,10 @@ All notifications must have a title attribute.
         
       <div class="constructors">
 <h4 id="UserNotification::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">UserNotification(<a href="#UserNotificationType">UserNotificationType</a> userType, DOMString title, optional <a href="#UserNotificationInit">UserNotificationInit</a>? notificationGroupedInitDict);</pre></dl>
+<dl>
+<h4>Constructor (<a href="#UserNotificationType">UserNotificationType</a>, DOMString, <a href="#UserNotificationInit">UserNotificationInit</a>?)</h4>
+<pre class="webidl prettyprint">UserNotification(<a href="#UserNotificationType">UserNotificationType</a> userType, DOMString title, optional <a href="#UserNotificationInit">UserNotificationInit</a>? notificationGroupedInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -2129,7 +2135,10 @@ notification.detailInfo = [detailInfo1];
 </div>
 <div class="constructors">
 <h4 id="NotificationDetailInfo::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">NotificationDetailInfo(DOMString mainText, optional DOMString? subText);</pre></dl>
+<dl>
+<h4>Constructor (DOMString, DOMString?)</h4>
+<pre class="webidl prettyprint">NotificationDetailInfo(DOMString mainText, optional DOMString? subText);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -2162,7 +2171,9 @@ By default, this attribute is set to <var>null</var>.
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>

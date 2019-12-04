@@ -13,7 +13,6 @@ The OPR (on pixel rate) check function is included in the 2.3.2 wearable profile
   `SSLv2_method()`, `SSLv2_client_method()`, `SSLv2_server_method()`
 
 
-
 ### Tizen 2.3.2 (Sep. 1, 2016)
 
 #### Wearable Web Widget Engine

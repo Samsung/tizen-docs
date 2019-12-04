@@ -25,57 +25,72 @@ There are 2 different ways to edit the `tizen-manifest.xml` file:
 
 > **Note**
 >
-> The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen native application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
+> The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen Native application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
 
 <a name="hierarchy"></a>
 ## Manifest Element Hierarchy
 
-The Tizen native application manifest file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `tizen-manifest.xml` file.
+The Tizen Native application manifest file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `tizen-manifest.xml` file.
 
-| `<manifest>` |                         |                         |                  |
-|--------------|-------------------------|-------------------------|------------------|
-|              | `<author>`              |                         |                  |
-|              | `<description>`         |                         |                  |
-|              | `<profile>`             |                         |                  |
-|              | `<ui-application>`      |                         |                  |
-|              |                         | `<label>`               |                  |
-|              |                         | `<icon>`                |                  |
-|              |                         | `<app-control>`         |                  |
-|              |                         | `<metadata>`            |                  |
-|              |                         | `<datacontrol>`         |                  |
-|              |                         | `<background-category>` |                  |
-|              |                         | `<splash-screens>`      |                  |
-|              |                         |                         | `<splash-screen>`|
-|              | `<service-application>` |                         |                  |
-|              |                         | `<label>`               |                  |
-|              |                         | `<icon>`                |                  |
-|              |                         | `<app-control>`         |                  |
-|              |                         | `<metadata>`            |                  |
-|              |                         | `<datacontrol>`         |                  |
-|              |                         | `<background-category>` |                  |
-|              | `<watch-application>`   |                         |                  |
-|              |                         | `<icon>`                |                  |
-|              |                         | `<label>`               |                  |
-|              | `<widget-application>`  |                         |                  |
-|              |                         | `<icon>`                |                  |
-|              |                         | `<label>`               |                  |
-|              |                         | `<support-size>`        |                  |
-|              |                         | `<widget-class>`        |                  |
-|              |                         |                         | `<icon>`         |
-|              |                         |                         | `<label>`        |
-|              |                         |                         | `<support-size>` |
-|              | `<shortcut-list>`       |                         |                  |
-|              |                         | `<shortcut>`            |                  |
-|              |                         |                         | `<icon>`         |
-|              |                         |                         | `<label>`        |
-|              | `<account>`             |                         |                  |
-|              |                         | `<account-provider>`    |                  |
-|              |                         |                         | `<icon>`         |
-|              |                         |                         | `<label>`        |
-|              |                         |                         | `<capability>`   |
-|              | `<privileges>`          |                         |                  |
-|              |                         | `<privilege>`           |                  |
-|              | `<feature>`             |                         |                  |
+| `<manifest>` |                                  |                         |                  |
+|--------------|----------------------------------|-------------------------|------------------|
+|              | `<author>`                       |                         |                  |
+|              | `<description>`                  |                         |                  |
+|              | `<profile>`                      |                         |                  |
+|              | `<ui-application>`               |                         |                  |
+|              |                                  | `<label>`               |                  |
+|              |                                  | `<icon>`                |                  |
+|              |                                  | `<app-control>`         |                  |
+|              |                                  | `<metadata>`            |                  |
+|              |                                  | `<datacontrol>`         |                  |
+|              |                                  | `<background-category>` |                  |
+|              |                                  | `<splash-screens>`      |                  |
+|              |                                  |                         | `<splash-screen>`|
+|              | `<service-application>`          |                         |                  |
+|              |                                  | `<label>`               |                  |
+|              |                                  | `<icon>`                |                  |
+|              |                                  | `<app-control>`         |                  |
+|              |                                  | `<metadata>`            |                  |
+|              |                                  | `<datacontrol>`         |                  |
+|              |                                  | `<background-category>` |                  |
+|              | `<watch-application>`            |                         |                  |
+|              |                                  | `<icon>`                |                  |
+|              |                                  | `<label>`               |                  |
+|              | `<widget-application>`           |                         |                  |
+|              |                                  | `<icon>`                |                  |
+|              |                                  | `<label>`               |                  |
+|              |                                  | `<support-size>`        |                  |
+|              |                                  | `<widget-class>`        |                  |
+|              |                                  |                         | `<icon>`         |
+|              |                                  |                         | `<label>`        |
+|              |                                  |                         | `<support-size>` |
+|              | `<component-based-application>`  |                         |                  |
+|              |                                  | `<label>`               |                  |
+|              |                                  | `<icon>`                |                  |
+|              |                                  | `<app-control>`         |                  |
+|              |                                  | `<metadata>`            |                  |
+|              |                                  | `<datacontrol>`         |                  |
+|              |                                  | `<background-category>` |                  |
+|              |                                  | `<splash-screens>`      |                  |
+|              |                                  |                         | `<splash-screen>`|
+|              |                                  | `<frame-component>`     |                  |
+|              |                                  |                         | `<label>`        |
+|              |                                  |                         | `<icon>`         |
+|              |                                  | `<service-component>`   |                  |
+|              |                                  |                         | `<label>`        |
+|              |                                  |                         | `<icon>`         |
+|              | `<shortcut-list>`                |                         |                  |
+|              |                                  | `<shortcut>`            |                  |
+|              |                                  |                         | `<icon>`         |
+|              |                                  |                         | `<label>`        |
+|              | `<account>`                      |                         |                  |
+|              |                                  | `<account-provider>`    |                  |
+|              |                                  |                         | `<icon>`         |
+|              |                                  |                         | `<label>`        |
+|              |                                  |                         | `<capability>`   |
+|              | `<privileges>`                   |                         |                  |
+|              |                                  | `<privilege>`           |                  |
+|              | `<feature>`                      |                         |                  |
 
 <a name="manifest"></a>
 ## Manifest Elements
@@ -94,19 +109,20 @@ For more information on the relationship between the elements, see the [element 
 
 **Expected children (in the following order):**
 
-| Child element           | Occurrences          |
-|-----------------------|--------------------|
-| `<author>`              | 1 (optional)         |
-| `<description>`         | 1 or more (optional) |
-| `<profile>`             | 1 or more (optional) |
-| `<ui-application>`      | 1 (optional)         |
-| `<service-application>` | 1 (optional)         |
-| `<watch-application>`   | 1 (optional)         |
-| `<widget-application>`  | 1 (optional)         |
-| `<shortcut-list>`       | 1 (optional)         |
-| `<account>`             | 1 (optional)         |
-| `<privileges>`          | 1 (optional)         |
-| `<feature>`             | 1 or more (optional) |
+| Child element                   | Occurrences          |
+|---------------------------------|----------------------|
+| `<author>`                      | 1 (optional)         |
+| `<description>`                 | 1 or more (optional) |
+| `<profile>`                     | 1 or more (optional) |
+| `<ui-application>`              | 1 (optional)         |
+| `<service-application>`         | 1 (optional)         |
+| `<watch-application>`           | 1 (optional)         |
+| `<widget-application>`          | 1 (optional)         |
+| `<component-based-application>` | 1 (optional)         |
+| `<shortcut-list>`               | 1 (optional)         |
+| `<account>`                     | 1 (optional)         |
+| `<privileges>`                  | 1 (optional)         |
+| `<feature>`                     | 1 or more (optional) |
 
 **Figure: Editing the \<manifest\> element in the manifest editor**
 
@@ -279,7 +295,7 @@ For more information on the relationship between the elements, see the [element 
 
   By default, this value is not defined.
 
-- `launch_mode`
+- `launch_mode`<a name="launch_mode"></a>
 
   Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with the `app_control_set_launch_mode()` function))
 
@@ -507,6 +523,7 @@ This element contains the watch application icon image.
 <icon>watchsample.png</icon>
 ```
 
+<a name="widget_app"></a>
 ### \<widget-application\> Element
 
 This element contains the settings for a widget application.
@@ -671,6 +688,265 @@ This element contains the settings for the widget class. After adding this eleme
    <icon>.....</icon>
    <support-size>.....</support-size>
 </widget-class>
+```
+### \<component-based-application\> Element
+
+This element contains the manifest information for a Tizen Native component-based application.
+
+For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
+
+**Occurrences:**
+
+- 1 or more (optional)
+
+**Expected children (in the following order):**
+
+| Child element           | Occurrences          |
+|-------------------------|----------------------|
+| `<label>`               | 1 or more (optional) |
+| `<icon>`                | 1 or more (optional) |
+| `<app-control>`         | 1 or more (optional) |
+| `<metadata>`            | 1 or more (optional) |
+| `<datacontrol>`         | 1 or more (optional) |
+| `<background-category>` | 1 or more (optional) |
+| `<splash-screens>`      | 1 or more (optional) |
+| `<frame-component>`     | 1 or more (mandatory)|
+| `<service-component>`   | 1 or more (mandatory)|
+
+**Attributes:**
+
+- `appid`
+
+  Application unique ID (string)
+
+  You can use the a\~z, A\~Z, 0\~9, ".", "-", and "\_" characters, and the value must be less than 50 characters.
+
+  This can be used for launching or terminating the application explicitly.
+
+- `exec`
+
+  Application executable file path (string)
+
+- `type`
+
+  Tizen application type (available values: `capp`, `c++app`, `webapp`, `dotnet`)
+  > **Note**
+  >
+  > This attribute is read-only. Do not attempt to modify it.
+
+**For example:**
+
+```xml
+<component-based-application appid="org.tizen.component-based" exec="component-based" type="capp">
+   <label>component-based</label>
+   <icon>icon.png</icon>
+   <app-control>
+     <operation name="http://tizen.org/appcontrol/operation/share"/>
+   </app-control>
+   <metadata key="http://tizen.org/metadata/testkey" value="testvalue"/>
+   <datacontrol access="ReadOnly" providerid="http://uiapp.com/datacontrol/provider/component-based" type="Sql"/>
+   <splash-screens>
+     <splash-screen src="icon.jpg" type="img" dpi="hdpi" orientation="portrait" indicator-display="true"/>
+   </splash-screens>
+   <frame-component id="org.tizen.frame-component" main="true" icon-display="true" taskmanage="true" launch_mode="single">
+     <label>frame-component</label>
+     <icon>frame.png</icon>
+   </frame-component>
+   <service-component id="org.tizen.service-component" main="false">
+     <label>service-component</label>
+     <icon>service.png</icon>
+   </service-component>
+</component-based-application>
+```
+
+#### \<label\> Element
+
+This element contains the component-based application text.
+
+**Occurrences:**
+
+- 1 or more
+
+**Expected value:**
+
+- Label value in string
+
+**For example:**
+
+```xml
+<label>component-based</label>
+```
+
+#### \<icon\> Element
+
+This element contains the component-based application icon image.
+
+**Occurrences:**
+
+- 1 or more
+
+**Expected value:**
+
+- Icon file name
+
+**For example:**
+
+```xml
+<icon>icon.png</icon>
+```
+
+#### \<frame-component\> Element
+
+This element contains the settings for the frame component. After adding this element, you can use  `component_based_app_add_frame_component()` to create frame component instances in the component-based application.
+
+**Occurrences:**
+
+- 1 or more (optional)
+
+**Expected children:**
+
+| Child element    | Occurrences |
+|------------------|-------------|
+| `<label>`        | 1 or more   |
+| `<icon>`         | 1 or more   |
+
+**Attributes:**
+
+- `id`
+
+  Frame component unique ID (string)
+
+- `main`
+
+  Indicates which component is the main component (available values: `true`, `false`)
+
+- `launch_mode`
+
+  Component launch mode (available values: `single` (launched as a main component), `group` (launched as a sub component), `caller` (caller component [defines the launch mode](../../native/guides/app-management/app-controls.md#mode) with `app_control_set_launch_mode()`)
+
+  By default, this value is set to `single`.
+
+- `icon-display`
+
+  Indicates whether the component is shown in the app tray (available values: `true`, `false`)
+
+- `taskmanage`
+
+  Indicates whether the component is shown in the task manager (available values: `true`, `false`)
+
+**For example:**
+
+```xml
+<frame-component id="org.example.frame-component" main="true" icon-display="true" taskmanage="true" launch_mode="single">
+   <label>.....</label>
+   <icon>.....</icon>
+</frame-component>
+```
+
+##### \<label\> Element
+
+This element contains the frame component text.
+
+**Occurrences:**
+
+- 1 or more
+
+**Expected value:**
+
+- Label value in string
+
+**For example:**
+
+```xml
+<label>frame-component</label>
+```
+
+##### \<icon\> Element
+
+This element contains the frame component icon image.
+
+**Occurrences:**
+
+- 1 or more
+
+**Expected value:**
+
+- Icon file name
+
+**For example:**
+
+```xml
+<icon>frame_icon.png</icon>
+```
+
+#### \<service-component\> Element
+
+This element contains the settings for the service component. After adding this element, you can use  `component_based_app_add_service_component()` to create service component instances in the component-based application.
+
+**Occurrences:**
+
+- 1 or more (optional)
+
+**Expected children:**
+
+| Child element    | Occurrences |
+|------------------|-------------|
+| `<label>`        | 1 or more   |
+| `<icon>`         | 1 or more   |
+
+**Attributes:**
+
+- `id`
+
+  Service component unique ID (string)
+
+- `main`
+
+  Indicates which component is the main component (available values: `true`, `false`)
+
+**For example:**
+
+```xml
+<service-component id="org.example.service-component" main="false">
+   <label>.....</label>
+   <icon>.....</icon>
+</service-component>
+```
+
+##### \<label\> Element
+
+This element contains the service component text.
+
+**Occurrences:**
+
+- 1 or more
+
+**Expected value:**
+
+- Label value in string
+
+**For example:**
+
+```xml
+<label>service-component</label>
+```
+
+##### \<icon\> Element
+
+This element contains the service component icon image.
+
+**Occurrences:**
+
+- 1 or more
+
+**Expected value:**
+
+- Icon file name
+
+**For example:**
+
+```xml
+<icon>service_icon.png</icon>
 ```
 
 ### \<shortcut-list\> Element

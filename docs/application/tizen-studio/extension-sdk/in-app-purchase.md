@@ -62,7 +62,7 @@ An item group is a collection of items connected to your application in the Tize
 
 ### 1.1. Connect to Tizen Store Seller Office
 
-Log in to the [Tizen Store Seller Office](http://seller.tizenstore.com/). If you do not have an account for the Tizen Store Seller Office, create a new account. After you have logged in to the Tizen Store, register as a private seller if you want to sell applications under your personal name, or as a corporate seller if you want to sell applications under your company name.
+Log in to the [Tizen Store Seller Office](http://seller.tizenstore.com/). If you do not have an account for the Tizen Store Seller Office, create a new account. After you have logged in to Tizen Store, register as a private seller if you want to sell applications under your personal name, or as a corporate seller if you want to sell applications under your company name.
 
 ### 1.2. Register a New Item Group
 
@@ -109,7 +109,7 @@ For more information, see the Application Controls guide (in [native](../../nati
 
 ## 3. Programming Your Application to Work with IAP
 
-Programming with IAP is very similar to programming with the Tizen native API and other AppControls supported in the system. Before you implement your code you must edit the configuration file (`tizen-manifest.xml` in native applications or `config.xml` in Web applications) first.
+Programming with IAP is very similar to programming with Tizen Native API and other AppControls supported in the system. Before you implement your code you must edit the configuration file (`tizen-manifest.xml` in native applications or `config.xml` in Web applications) first.
 
 Section 3.1. explains more about the configuration file.
 
@@ -249,7 +249,7 @@ The IAP Service instance allows you to get a list of items available for purchas
 				<ul>
 					<li>
 					<p>0: Normal (commercial) mode</p>
-					<p>This mode needs to be used in an application submitted to the Tizen Store.</p>
+					<p>This mode needs to be used in an application submitted to Tizen Store.</p>
 					</li>
 					<li>
 					<p>1: Developer mode</p>
@@ -639,7 +639,7 @@ The IAP Service instance allows you to get a list of items available for purchas
 				<ul>
 					<li>
 					<p>0: Normal (commercial) mode</p>
-					<p>This mode needs to be used in an application submitted to the Tizen Store.</p>
+					<p>This mode needs to be used in an application submitted to Tizen Store.</p>
 					</li>
 					<li>
 					<p>1: Developer mode</p>
@@ -1185,7 +1185,7 @@ The IAP Client instance allows you to initialize a purchase of item and to compl
 				<ul>
 					<li>
 					<p>0: Normal (commercial) mode</p>
-					<p>This mode needs to be used in an application submitted to the Tizen Store.</p>
+					<p>This mode needs to be used in an application submitted to Tizen Store.</p>
 					</li>
 					<li>
 					<p>1: Developer mode</p>

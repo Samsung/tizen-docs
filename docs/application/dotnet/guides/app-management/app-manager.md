@@ -13,6 +13,11 @@ The main features of the `Tizen.Applications.ApplicationManager` class include:
 
     For installed (but not necessarily running) applications, you can retrieve information with the [Tizen.Applications.ApplicationInfo](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationInfo.html) class. You can also [retrieve information through a filter](#filter) with the [Tizen.Applications.ApplicationInfoFilter](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationInfoFilter.html) class.
 
+-   Getting information on the current application
+
+    For current applications, you can [retrieve information](#manage_current) using the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) class. You can use the retrieved information to manage the current application.
+
+
 Iterator methods are used to travel through a list of applications. The `GetRunningApplicationsAsync()` method of the `Tizen.Applications.ApplicationManager` class is used for running applications and the `GetInstalledApplicationsAsync()` method is used for installed applications.
 
 ## Prerequisites
@@ -34,19 +39,26 @@ To enable your application to use the application management functionality:
     ```
 
 <a name="manage_context"></a>
-## Managing the Application Running Context
+## Managing Application Running Context
 
-To get the application running context and its details, and to operate on the context:
+To manage the context of the currently running application, follow these steps:
 
-1.  Get the context of the currently-running application by creating an instance of the [Tizen.Applications.ApplicationRunningContext](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationRunningContext.html) class, with the ID of the application from which the context is being obtained as a parameter.
+1.  Get the context of the currently running application.
+To get the context, create an instance of the [Tizen.Applications.ApplicationRunningContext](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ApplicationRunningContext.html) class, with the ID of the application from which the context is being obtained as a parameter.
 
-    When an application is not running, it is impossible to get its context.
+    If you do not have the application ID, you can retrieve it as:
+
+    ```
+    string applicationId = ApplicationManager.GetAppId(Your PID);
+    ```
+
+    When an application is not running, it is impossible to get its context:
 
     ```
     ApplicationRunningContext appRunningContext = new ApplicationRunningContext(Your App ID);
     ```
 
-2.  Operate on the context:
+2.  Operate on the application context:
     -   Get the application ID, package ID, and process ID from the context:
 
         ```
@@ -68,12 +80,22 @@ To get the application running context and its details, and to operate on the co
             /// Application is terminated
         else
             /// State is undefined
+
+        if (appRunningContext.IsTerminated) {
+            /// Application is not running now
+        }
         ```
 
     -   Resume the running application:
 
         ```
         appRunningContext.Resume();
+        ```
+
+    -   Terminate the background application:
+
+        ```
+        appRunningContext.TerminateBackgroundApplication();
         ```
 
 <a name="filter"></a>
@@ -113,7 +135,37 @@ To get information on filtered applications:
     }
     ```
 
+<a name="manage_current"></a>
+## Getting Information on Current Application
+
+To get information on the current application, follow these steps:
+
+1.  Call the `Current` property of the [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Application.html) class:
+
+    ```
+    Application application = Application.Current;
+    ```
+
+2.  Operate on the application information:
+    -   Get the application directory information:
+
+        ```
+        DirectoryInfo directory = application.DirectoryInfo;
+        ```
+
+    -   Get the application name:
+
+        ```
+        string name = application.Name;
+        ```
+
+    -   Get the application version:
+
+        ```
+        string version = application.Version;
+        ```
+
 
 ## Related Information
-  * Dependencies
+  - Dependencies
     -   Tizen 4.0 and Higher

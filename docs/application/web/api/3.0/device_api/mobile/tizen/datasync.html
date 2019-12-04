@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::DataSynchronization">
- <div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>DataSynchronization API</h1></div>
 <div class="brief">
  This API provides methods to synchronize contact and event data to the server using the OMA DS 1.2 protocol.
@@ -315,8 +315,17 @@ The <em>tizen.datasync</em> object allows access to the functionality of the Dat
 <div class="constructors">
 <h4 id="SyncInfo::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString, DOMString, <a href="#SyncMode">SyncMode</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">SyncInfo(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString, DOMString, <a href="#SyncMode">SyncMode</a>, <a href="#SyncType">SyncType</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">SyncInfo(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncType">SyncType</a> type);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString, DOMString, <a href="#SyncMode">SyncMode</a>, <a href="#SyncInterval">SyncInterval</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">SyncInfo(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncInterval">SyncInterval</a> interval);</pre>
 </dl>
 </div>
@@ -413,8 +422,13 @@ This attribute is used when the sync mode is set to the <em>PERIODIC</em> option
           </p>
 <div class="constructors">
 <h4 id="SyncServiceInfo::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">SyncServiceInfo(boolean enable, <a href="#SyncServiceType">SyncServiceType</a> serviceType, DOMString serverDatabaseUri, optional DOMString? id,
-                optional DOMString? password);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (boolean, <a href="#SyncServiceType">SyncServiceType</a>, DOMString, DOMString?, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">SyncServiceInfo(boolean enable, <a href="#SyncServiceType">SyncServiceType</a> serviceType, DOMString serverDatabaseUri, optional DOMString? id,
+                optional DOMString? password);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -491,7 +505,12 @@ When an attempt to retrieve the saved value is made, it returns <var>null</var> 
           </p>
 <div class="constructors">
 <h4 id="SyncProfileInfo::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">SyncProfileInfo(DOMString profileName, <a href="#SyncInfo">SyncInfo</a> syncInfo, optional <a href="#SyncServiceInfo">SyncServiceInfo</a>[]? serviceInfo);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#SyncInfo">SyncInfo</a>, <a href="#SyncServiceInfo">SyncServiceInfo</a>[]?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">SyncProfileInfo(DOMString profileName, <a href="#SyncInfo">SyncInfo</a> syncInfo, optional <a href="#SyncServiceInfo">SyncServiceInfo</a>[]? serviceInfo);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -1371,7 +1390,9 @@ Normally the packet size from a server affects it, that is, if the server sends 
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>

@@ -2,7 +2,7 @@
 
 When managing large amounts of data, you can create filters to search for specific information, and make queries to receive only the information you are looking for. You can use various filter attributes and sort the received data.
 
-The Tizen API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Tizen API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main data handling features of the Tizen API include:
 
@@ -309,10 +309,10 @@ The following table lists the filter types you can use with specific content att
 | `contentURI`            | Yes                        | No                               |
 | `thumbnailURIs`         | Yes                        | No                               |
 | `releaseDate`           | Yes                        | Yes                              |
-| `modifedDate`           | Yes                        | Yes                              |
+| `modifiedDate`          | Yes                        | Yes                              |
 | `size`                  | No                         | No                               |
-| `description`           | Yes                        | No                               |
-| `rating`                | Yes                        | Yes                              |
+| `description`           | No <font size="2" color="gray"><sup><i>since 5.5</i></sup></font>                        | No                               |
+| `rating`                | No <font size="2" color="gray"><sup><i>since 5.5</i></sup></font>| No <font size="2" color="gray"><sup><i>since 5.5</i></sup></font>|
 | `geolocation.latitude`  | Yes                        | Yes                              |
 | `geolocation.longitude` | Yes                        | Yes                              |
 | `album`                 | Yes                        | No                               |
@@ -325,6 +325,7 @@ The following table lists the filter types you can use with specific content att
 | `trackNumber`           | No                         | No                               |
 | `duration`              | No                         | No                               |
 | `orientation`           | No                         | No                               |
+
 
 ## Messaging Filter Attributes
 

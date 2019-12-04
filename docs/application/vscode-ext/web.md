@@ -38,7 +38,7 @@ To install VS Code extension for Tizen Web from a VSIX file, follow these steps:
 
 ## Install Emulator Images
 
-If you do not have a real device, you can run your application in a virtual environment using Tizen emulator. To download the emulator images, you can use Tizen Package Manager or Tizen Emulator Manager.
+If you do not have a real device, you can run your application in a virtual environment using Tizen Emulator. To download the emulator images, you can use Tizen Package Manager or Tizen Emulator Manager.
 
 - To use Tizen Package Manager, follow these steps:
   1. In VS Code, click **View** > **Command Palette**.

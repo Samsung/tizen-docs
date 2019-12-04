@@ -12,19 +12,16 @@ Following are the main features of Zigbee API:
 
 Following is the list of supported hardware and chipset combinations:
 
-- ARTIK 5 (inbuilt module)
-- ARTIK 7 (inbuilt module)
-- ARTIK 10 (inbuilt module)
 - CEL's MeshConnect™ EM357 (external USB stick)
 
 > **Note**
-> - This feature is supported in the Tizen IoT.
+> - This feature is supported in Tizen IoT.
 > - You can test the Zigbee functionality only on a target device. The [Emulator](../../application/tizen-studio/common-tools/emulator.md) does not support this feature.
 > - All callbacks in this module are called in the main loop context.
 
 ## Prerequisites
 
-1. To make your application visible in the Tizen Store only for devices that support the Zigbee feature, the application must specify the following feature in the `tizen-manifest.xml` file:
+1. To make your application visible in Tizen Store only for devices that support the Zigbee feature, the application must specify the following feature in the `tizen-manifest.xml` file:
 
    ```
     <feature name="http://tizen.org/feature/network.zigbee">true</feature>
@@ -181,7 +178,7 @@ Following is the list of supported hardware and chipset combinations:
 
 ## Permit Join
 
-Zigbee framework for Tizen on ARTIK works as a Zigbee coordinator, therefore, permission is required to communicate with a new Zigbee device. Zigbee is enabled when a network is created or when a network is re-created. In both the scenarios, you need to make the coordinator to permit joining state.
+Zigbee framework for Tizen works as a Zigbee coordinator, therefore, permission is required to communicate with a new Zigbee device. Zigbee is enabled when a network is created or when a network is re-created. In both the scenarios, you need to make the coordinator to permit joining state.
 
    ```
    int permit_join(zb_zigbee_h handle)
@@ -213,4 +210,3 @@ Zigbee framework for Tizen on ARTIK works as a Zigbee coordinator, therefore, pe
   - http://www.zigbee.org/
   - http://www.zigbee.org/download/standards-zigbee-specification/
   - http://www.zigbee.org/zigbee-for-developers/applicationstandards/zigbeehomeautomation/
-  - https://wiki.tizen.org/Tizen_ZigbeeFW_On_ARTIK

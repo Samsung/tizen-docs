@@ -62,7 +62,7 @@ An accessible application requires the following features to be implemented:
 
 ## Creating an Accessible Application
 
-You can use the mobile native [UI Components](https://developer.tizen.org/development/sample/native/UI/UI_Components) sample application provided within the Tizen Studio to see how the most important accessibility features are implemented in practice. The sample application contains an AT-SPI2 compliant screen reader, which you can use to test the accessibility features on a device. Enable the screen reader by running the sample application and selecting **Accessibility > Screen Reader > Screen Reader (TTS)**.
+You can use the mobile native [UI Components](https://developer.tizen.org/development/sample/native/UI/UI_Components) sample application provided within Tizen Studio to see how the most important accessibility features are implemented in practice. The sample application contains an AT-SPI2 compliant screen reader, which you can use to test the accessibility features on a device. Enable the screen reader by running the sample application and selecting **Accessibility > Screen Reader > Screen Reader (TTS)**.
 
 In the Tizen 2.4 release, the screen reader is available only inside the UI Components application. This means that when the UI Components application is terminated or paused and sent to the background, the screen reader is automatically disabled, and when the UI Components application is restored, the screen reader is enabled.
 

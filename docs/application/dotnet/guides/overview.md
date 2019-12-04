@@ -10,13 +10,13 @@ Tizen.Wearable.CircularUI is a set of extension APIs of Xamarin.Forms. Tizen.Wea
 You can easily create your Tizen wearable applications with [Tizen.Wearable.CircularUI guides](https://samsung.github.io/Tizen.CircularUI/guide/Overview.html). For more information about these APIs, see [Tizen.Wearable.CircularUI GitHub](https://github.com/Samsung/Tizen.CircularUI).
 
 ## Tizen OpenTK
-The Tizen OpenTK provides a set of fast and low-level C# bindings for OpenGL&reg; ES APIs. From Tizen 5.0, it is integrated with Tizen Application Framework. Therefore, it allows Tizen app developer to use C# OpenGL&reg; ES APIs in .Net application.
+Tizen OpenTK provides a set of fast and low-level C# bindings for OpenGL&reg; ES APIs. From Tizen 5.0, it is integrated with Tizen Application Framework. Therefore, it allows Tizen app developer to use C# OpenGL&reg; ES APIs in .Net application.
 
 Using these APIs, you can quickly create graphic applications with the OpenGL&reg; ES 2.0, such as, Ambient app, Game, Dynamic partial, Physics effect, and so on. For more information about these APIs, see [Tizen OpenTK GitHub](https://github.com/TizenAPI/opentk).
 
 ## TizenFX API
 
-TizenFX API introduce various features for Tizen .NET applications. The TizenFX API allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
+TizenFX API introduce various features for Tizen .NET applications. TizenFX API allows applications to call into platform-specific functionality from the shared code. This functionality enables Xamarin.Forms applications to do things a native application can do, without causing the portable part of the application to become littered with operating system-specific details.
 
 You can use the following TizenFX features in your .NET applications:
 
@@ -56,6 +56,10 @@ You can use the following TizenFX features in your .NET applications:
 - [Connectivity and Wireless](connectivity/overview.md)
 
   The connectivity features define how you can connect your application to the outside world, and send and receive data. You can create connections to various networks, servers, and other devices.
+
+- [Machine Learning](machine-learning/overview.md)
+
+  Machine learning (ML) feature introduces how you can easily invoke the neural network model and get the inference output result effortlessly and efficiently.
 
 - [Messaging](messaging/overview.md)
 

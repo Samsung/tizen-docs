@@ -24,6 +24,7 @@ To obtain the information, query a feature or system key.
 
 - [Feature keys](#feature)
    - [Account](#account)
+   - [Accessibility](#accessibility)
    - [Application history](#apphistory)
    - [Attach panel](#attachpanel)
    - [Battery](#battery)
@@ -58,7 +59,9 @@ To obtain the information, query a feature or system key.
    - [Shell](#shell)
    - [Sip](#sip)
    - [Speech](#speech)
+   - [Storage](#storage)
    - [System setting](#systemsetting)
+   - [Thermistor](#thermistor)
    - [USB](#usb)
    - [Vibration](#vibration)
    - [Vision](#vision)
@@ -67,6 +70,7 @@ To obtain the information, query a feature or system key.
 - [System keys](#system)
 
    - [Build](#build)
+   - [Device type](#devicetype)
    - [Manufacturer](#manufacturer)
    - [Model name](#modelname)
    - [Platform](#platformsys)
@@ -153,6 +157,17 @@ The following table lists the account feature keys:
 |-----------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/account`      | `bool` | The platform returns `true` for this key, if the device supports the Account Manager API. |
 | `http://tizen.org/feature/account.sync` | `bool` | The platform returns `true` for this key, if the device supports the Sync Manager API. |
+
+The following table lists the accessibility feature keys:
+
+<a name="accessibility"></a>
+**Table: Accessibility feature keys**
+
+| Key                                     | Type   | Description                              |
+|-----------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/accessibility.grayscale` | `bool` | The platform returns `true` for this key, if the device supports the accessibility grayscale feature. |
+| `http://tizen.org/feature/accessibility.negative` | `bool` | The platform returns `true` for this key, if the device supports the accessibility negative feature. |
+
 
 The following table lists the application history feature keys:
 
@@ -488,7 +503,7 @@ The following table lists the platform feature keys:
 
 | Key                                      | Type     | Description                              |
 |------------------------------------------|----------|------------------------------------------|
-| `http://tizen.org/feature/platform.core.api.version` | `String` | The platform returns the version of the Tizen Core API in the "[Major].[Minor]" format.<br>If a device does not provide the Tizen Core API, it returns an empty string for this key. |
+| `http://tizen.org/feature/platform.core.api.version` | `String` | The platform returns the version of Tizen Core API in the "[Major].[Minor]" format.<br>If a device does not provide Tizen Core API, it returns an empty string for this key. |
 | `http://tizen.org/feature/platform.core.cpu.arch` | `String` | The platform returns the CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv6` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv6 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv7 CPU architecture. |
@@ -632,6 +647,15 @@ The following table lists the speech feature keys:
 | `http://tizen.org/feature/speech.recognition` | `bool` | The platform returns `true` for this key, if the device supports speech recognition (STT). |
 | `http://tizen.org/feature/speech.synthesis` | `bool` | The platform returns `true` for this key, if the device supports speech synthesis (TTS). |
 
+The following table lists the external storage feature keys:
+
+<a name="storage"></a>
+**Table: External storage feature keys**
+
+| Key                                 | Type   | Description                              |
+|-------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/storage.external` | `bool` | The platform returns `true` for this key, if the device supports external storage. |
+
 The following table lists the system setting feature keys:
 
 <a name="systemsetting"></a>
@@ -644,6 +668,17 @@ The following table lists the system setting feature keys:
 | `http://tizen.org/feature/systemsetting.incoming_call` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/systemsetting` key, if the device supports a way to change or get a ringtone for all incoming calls. |
 | `http://tizen.org/feature/systemsetting.lock_screen` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/systemsetting` key, if the device supports a way to change or get the lock screen wallpaper. |
 | `http://tizen.org/feature/systemsetting.notification_email` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/systemsetting` key, if the device supports a way to change or get a ringtone for all email notifications. |
+
+The following table lists the thermistor feature keys:
+
+<a name="thermistor"></a>
+**Table: Thermistor feature keys**
+
+| Key                                      | Type   | Description                              |
+|------------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/thermistor.ap` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the application processor. |
+| `http://tizen.org/feature/thermistor.cp` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the communications processor. |
+| `http://tizen.org/feature/thermistor.battery` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the battery. |
 
 The following table lists the USB feature keys:
 
@@ -696,6 +731,15 @@ The following table lists the build system keys:
 | `http://tizen.org/system/build.type`     | `String` | The platform returns the build type, such as `"user"` or `"eng"`. The build type is made when the platform image is created. |
 | `http://tizen.org/system/build.variant`  | `String` | The platform returns the variant release information. The variant release information is made when the platform image is created. |
 | `http://tizen.org/system/build.release` | `String` | The platform returns the build version information. The build version information is made when the platform image is created. |
+
+The following table lists the device type system keys:
+
+<a name="devicetype"></a>
+**Table: Device type system keys**
+
+| Key                                    | Type     | Description                              |
+|----------------------------------------|----------|------------------------------------------|
+| `http://tizen.org/system/device_type`  | `String` | The platform returns the device type name, which represents a device family the device belongs to. |
 
 The following table lists the manufacturer keys:
 

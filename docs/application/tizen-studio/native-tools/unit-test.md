@@ -1,12 +1,12 @@
 # Building Unit Test Projects
 
-With unit tests, you can verify that your code works well and increase its reliability. The Tizen Studio provides the creating, building, and editing tools for unit tests, and a view for checking and analyzing the test results.
+With unit tests, you can verify that your code works well and increase its reliability. Tizen Studio provides the creating, building, and editing tools for unit tests, and a view for checking and analyzing the test results.
 
-The Tizen Studio uses the gtest framework to make and launch test cases. To manage your test cases, you can use the **Test Explorer** view.
+Tizen Studio uses the gtest framework to make and launch test cases. To manage your test cases, you can use the **Test Explorer** view.
 
 ## Creating a Unit Test Project
 
-You can create a test project for the Tizen native project through the Tizen Native Unit Test Project wizard. The wizard provides the test project for each Tizen native project type, such as UI application, service application, shared library, and static library.
+You can create a test project for the Tizen Native project through the Tizen Native Unit Test Project wizard. The wizard provides the test project for each Tizen Native project type, such as UI application, service application, shared library, and static library.
 
 To create a test project:
 

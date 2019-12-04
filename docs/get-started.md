@@ -1,7 +1,7 @@
 # Get Started
 
 ## Platform
-- [What is Tizen?](platform/about/tizen-open-source-overview.md)
+- [What is Tizen?](platform/what-is-tizen/overview.md)
 - Developers can register for an account at: [https://www.tizen.org/user/register](https://www.tizen.org/user/register)
 
     ![Download](images/ic_docs_download.png) [**Download Tizen Source**](platform/developing/cloning.md)

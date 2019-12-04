@@ -32,7 +32,7 @@ application is using, do one of the following:
     information instead of GPS.
 
 - Use feature-based filtering to prevent your application from being
-    shown in the application list on the Tizen Store, if the user's
+    shown in the application list on Tizen Store, if the user's
     device does not support all the features of your application. This
     way you can prevent the application from being installed on an
     unsupported device in the first place.
@@ -43,7 +43,7 @@ application is using, do one of the following:
     number of devices which can support the application.
 
 If the `config.xml` file of the application package includes a feature
-list, the Tizen Store compares the capabilities of the device with the
+list, Tizen Store compares the capabilities of the device with the
 required feature conditions of the application. The store only lists the
 applications whose conditions match the capabilities of the device, and
 thus prevents incompatible applications from being installed.
@@ -53,7 +53,7 @@ thus prevents incompatible applications from being installed.
 ![Feature-based filtering](./media/app_filtering_basic_flow.png)
 
 When multiple features are defined in the feature list for feature-based
-filtering, the Tizen Store creates the filtering condition for all using
+filtering, Tizen Store creates the filtering condition for all using
 the "AND" operation. For example, if there are
 `http://tizen.org/feature/network.nfc` and
 `http://tizen.org/feature/network.bluetooth` features in the feature
@@ -66,7 +66,7 @@ for downloading.
 
 The screen size feature is the only exception to the normal feature
 handling process described above. When the screen size is defined in the
-feature list, the Tizen Store creates the filtering condition with the
+feature list, Tizen Store creates the filtering condition with the
 "OR" operation. For example, if the
 `http://tizen.org/feature/screen.size.normal.480.800` and
 `http://tizen.org/feature/screen.size.normal.720.1280` features are
@@ -75,7 +75,7 @@ the other of those features can show the application on the Tizen Store
 application list.
 
 If you do not specify a proper screen size in the `config.xml` file,
-your application can be rejected from the Tizen Store.
+your application can be rejected from Tizen Store.
 
 The following tables list the available screen size features.
 
@@ -125,7 +125,7 @@ The feature keys have a hierarchy. For example, consider the
     `http://tizen.org/feature/location` feature can show the application
     on the Tizen Store application list.
 
-    This means that the Tizen Store considers the
+    This means that Tizen Store considers the
     `http://tizen.org/feature/location` feature as the
     `http://tizen.org/feature/location.gps OR http://tizen.org/feature/location.wps` feature.
     (If the feature list includes the
@@ -138,7 +138,7 @@ The feature keys have a hierarchy. For example, consider the
 
 To enable filtering for your Web application, add the feature list for
 the application `config.xml` file:
-1.  To open the Web application configuration editor in the Tizen
+1.  To open the Web application configuration editor in Tizen
     Studio, double-click the `config.xml` file in the **Project
     Explorer** view.
 2.  In the **Features** tab, click **+**.
@@ -169,6 +169,7 @@ application package.
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
 | `http://tizen.org/feature/datasync`      | Specify this key, if the application requires the DataSync feature. | 2.3   |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/fmradio`       | Specify this key, if the application requires an FM radio. | 2.2.1 |
 | `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires any of the Human Activity Monitor features. | 2.3   |
@@ -212,6 +213,7 @@ application package.
 | `http://tizen.org/feature/sensor.sleep_monitor` | Specify this key, if the application requires a sleep monitor sensor which tracks the human sleep state or a sleep detector sensor which detects whether the human falls asleep or wakes up. | 3.0   |
 | `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires a ultraviolet sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
+| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 
 
 \* This key has been available for checking device capabilities since
@@ -247,6 +249,7 @@ Tizen 4.0.
 | `http://tizen.org/feature/calendar`      | Specify this key, if the application requires the calendar feature. | 4.0   |
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 2.3   |
 | `http://tizen.org/feature/humanactivitymonitor` | Specify this key, if the application requires the [Human Activity Monitor](../api/latest/device_api/wearable/tizen/humanactivitymonitor.html) API.<br>If the key is declared in the `config.xml` file, the application can be installed on the device with any of the Human Activity Monitor features:<br><br> - HRM: `http://tizen.org/feature/sensor.heart_rate_monitor`<br> - PEDOMETER: `http://tizen.org/feature/sensor.pedometer`<br> - WRIST_UP: `http://tizen.org/feature/sensor.wrist_up`<br> - GPS: `http://tizen.org/feature/location.batch` | 2.3   |
@@ -288,6 +291,7 @@ Tizen 4.0.
 | `http://tizen.org/feature/sensor.sleep_monitor` | Specify this key, if the application requires a sleep monitor sensor which tracks the human sleep state or a sleep detector sensor which detects whether the human falls asleep or wakes up. | 3.0   |
 | `http://tizen.org/feature/sensor.ultraviolet` | Specify this key, if the application requires an ultraviolet sensor. | 2.3   |
 | `http://tizen.org/feature/sensor.wrist_up` | Specify this key, if the application requires a wrist up sensor. | 2.3   |
+| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 | `http://tizen.org/feature/watch_app`     | Specify this key, if the application requires the watch application feature. | 4.0   |
 
 \* This key has been available for checking device capabilities since
@@ -329,9 +333,10 @@ Tizen 4.0.
 
 | Feature key                              | Description                              | Since |
 | ---------------------------------------- | ---------------------------------------- | ----- |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
+| `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
 | `http://tizen.org/feature/tv.audio`      | Specify this key, if the application requires the audio control functionality for using the [TV Audio Control](../api/latest/device_api/tv/tizen/tvaudiocontrol.html) API. | 3.0   |
-| `http://tizen.org/feature/tv.tuner`      | Specify this key, if the application requires the channel tuner functionality for using the [TV Channel](../api/latest/device_api/tv/tizen/tvchannel.html) API. | 3.0   |
 | `http://tizen.org/feature/tv.display`    | Specify this key, if the application requires the screen display functionality for using the [TV Display Control](../api/latest/device_api/tv/tizen/tvdisplaycontrol.html) API. | 3.0   |
 | `http://tizen.org/feature/tv.inputdevice` | Specify this key, if the application requires the input device event monitoring functionality for using the [TV Input Device](../api/latest/device_api/tv/tizen/tvinputdevice.html) API. | 3.0   |
 | `http://tizen.org/feature/tv.pip`        | Specify this key, if the application requires the picture-in-picture (PIP) functionality for using the [TV Window](../api/latest/device_api/tv/tizen/tvwindow.html) API. | 3.0   |
@@ -379,7 +384,7 @@ In a Web application, the profile name element can be added to the
    <tizen:profile name="mobile"/>
 ```
 
-The Tizen Store compares the device profile and the `profile name`
+Tizen Store compares the device profile and the `profile name`
 element in an application. The store only shows the applications with a
 profile name matching the device profile to prevent unsupported
 applications from being installed.

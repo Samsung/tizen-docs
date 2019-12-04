@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Tizen">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Tizen API</h1></div>
 <div class="brief">
  This API provides common Tizen functionality.
@@ -321,7 +321,12 @@ tizen.content.find(findCB, errorCB, null, albumFilter, null, count, offset);
         
       <div class="constructors">
 <h4 id="AttributeFilter::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">AttributeFilter(DOMString attributeName, optional <a href="#FilterMatchFlag">FilterMatchFlag</a>? matchFlag, optional any matchValue);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#FilterMatchFlag">FilterMatchFlag</a>?, any)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">AttributeFilter(DOMString attributeName, optional <a href="#FilterMatchFlag">FilterMatchFlag</a>? matchFlag, optional any matchValue);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -424,7 +429,12 @@ tizen.content.find(findCB, errorCB, null, dateRangeFilter, null, count, offset);
         
       <div class="constructors">
 <h4 id="AttributeRangeFilter::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">AttributeRangeFilter(DOMString attributeName, optional any initialValue, optional any endValue);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, any, any)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">AttributeRangeFilter(DOMString attributeName, optional any initialValue, optional any endValue);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -545,7 +555,12 @@ tizen.content.find(findCB, errorCB, null, filter, null, count, offset);
         
       <div class="constructors">
 <h4 id="CompositeFilter::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">CompositeFilter(<a href="#CompositeFilterType">CompositeFilterType</a> type, optional <a href="#AbstractFilter">AbstractFilter</a>[]? filters);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#CompositeFilterType">CompositeFilterType</a>, <a href="#AbstractFilter">AbstractFilter</a>[]?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">CompositeFilter(<a href="#CompositeFilterType">CompositeFilterType</a> type, optional <a href="#AbstractFilter">AbstractFilter</a>[]? filters);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -626,7 +641,12 @@ tizen.content.find(findCB, errorCB, null, filter, sortMode, count, offset);
 </div>
 <div class="constructors">
 <h4 id="SortMode::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">SortMode(DOMString attributeName, optional <a href="#SortModeOrder">SortModeOrder</a>? order);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#SortModeOrder">SortModeOrder</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">SortMode(DOMString attributeName, optional <a href="#SortModeOrder">SortModeOrder</a>? order);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -702,7 +722,12 @@ catch (err)
 </div>
 <div class="constructors">
 <h4 id="SimpleCoordinates::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">SimpleCoordinates(double latitude, double longitude);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (double, double)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">SimpleCoordinates(double latitude, double longitude);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>

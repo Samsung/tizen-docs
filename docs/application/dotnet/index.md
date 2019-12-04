@@ -12,11 +12,11 @@ Managed runtime offers the following advantages to your application development:
 
 - **Faster development**
 
-  Application development is accelerated as the managed runtime handles many functions that otherwise have to be coded into the application. The Tizen Native API and Tizen Web API already provides this benefit.
+  Application development is accelerated as the managed runtime handles many functions that otherwise have to be coded into the application.
 
 - **Safer code**
 
-  Managed runtime can handle bound checking, type safety, garbage collection, memory protection services, and objects that are invoked directly. The Tizen Web API already provides some of the benefits mentioned, but does not provide type safety, as JavaScript is not a strongly typed language.
+  Managed runtime can handle bound checking, type safety, garbage collection, memory protection services, and objects that are invoked directly. Tizen Web API already provides some of the mentioned benefits, but does not provide type safety as JavaScript is not a strongly typed language.
 
 - **Lower deployment costs**
 
@@ -32,7 +32,7 @@ Managed runtime offers the following advantages to your application development:
 
 ## Tizen .NET Features and Components
 
-Tizen .NET enables you to build .NET applications with Xamarin.Forms and the Tizen .NET framework. Xamarin.Forms allows you to easily create a user interface, and the TizenFX API provides numerous interfaces to much of the hardware that is found in modern TV, mobile, wearable, and IoT devices.
+Tizen .NET enables you to build .NET applications with Xamarin.Forms and Tizen .NET framework. Xamarin.Forms allows you to easily create a user interface, and TizenFX API provides numerous interfaces to much of the hardware that is found in modern TV, mobile, wearable, and IoT devices.
 
 **Figure: Tizen .NET architecture**
 
@@ -66,6 +66,6 @@ Visual Studio Tools for Tizen provides Tizen-specific tools to improve your prod
 
 You can create a Tizen .NET application project with the Project Wizard in Visual Studio Tools for Tizen. When you create a new project with a specific template, the Project Wizard uses it to automatically create basic functionalities and default project files and folders for the application.
 
-[![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen){:target="_blank"} The Visual Studio Tools for Tizen extension is registered in the Visual Studio Marketplace. You can [install the extension](../vstools/install.md) from the Visual Studio Marketplace in the Visual Studio IDE.
+[![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen){:target="_blank"} The Visual Studio Tools for Tizen extension is registered in the Visual Studio Marketplace. You can [install the extension](../vstools/install.md) from the Visual Studio Marketplace in the Visual Studio IDE. To download the latest Visual Studio Tools for Tizen click the button. To use Visual Studio 2017, download [Visual Studio Tools for Tizen for Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen).
 
 For more information, see [the guides of Visual Studio Tools for Tizen](../vstools/index.md)

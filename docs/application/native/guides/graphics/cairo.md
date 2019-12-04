@@ -94,7 +94,7 @@ To create the image surface:
 
   Since the default backend for Evas is GL, the Cairo Image backend is much slower due to the memory copy operation, which occurs whenever the rendered result from Cairo is uploaded to Evas. To enhance the performance of Cairo Image backend to enable the zero copy feature, set the `EVAS_IMAGE_CONTENT_HINT_DYNAMIC` property with the `evas_object_image_content_hint_set()` function.
 
-  To update a rectangular region on the screen, the `evas_object_image_data_update_add()` function can be used. For more information on the image object functions of Evas, see [Image Objects](../ui/efl/evas-objects.md#image).
+  To update a rectangular region on the screen, the `evas_object_image_data_update_add()` function can be used. For more information on the image object functions of Evas, see [Image Objects](../ui/efl/evas-objects.md#image-objects).
 
     ```
     Evas_Object *win = elm_win_util_standard_add("Cairo Image Backend guide", " Cairo Image Backend guide");

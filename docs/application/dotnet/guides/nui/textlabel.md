@@ -2,11 +2,13 @@
 
 A text label is a NUI control that displays a short text string. It is implemented through the `Tizen.NUI.BaseComponents.TextLabel` class.
 
-Text labels are lightweight, non-editable, and do not respond to user input. They can support multiple languages and scripts, including right-to-left scripts, such as Arabic. For an example of displaying text using a text label, see [NUI Hello World Tutorial](hello-world.md).
+Text labels are lightweight, non-editable, and do not respond to user input. They can support multiple languages and scripts, including right-to-left scripts, such as Arabic.
 
 **Figure: Text label example, positioned to top left**
 
 ![Text label example, positioned to top left](media/TextLabelTopLeft.png)
+
+For an example of displaying text with a text label, see [NUI Quick Start](../../get-started/nui/quickstart.md).
 
 <a name="create"></a>
 ## Creating a Text Label
@@ -161,11 +163,6 @@ For text decorations, the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.g
 |  `HorizontalAlignment` | `string` | The horizontal line alignment. |
 |  `VerticalAlignment` | `string` | The vertical line alignment. |
 | `TextColor`  |   `Color` |  The color of the text. |
-|  `ShadowOffset` | `Vector2` |  The shadow offset of the text. |
-|  `ShadowColor` | `Vector4`  |  The shadow color of the text. |
-| `UnderlineEnabled` | `bool` |  Whether to use underline. |
-| `UnderlineColor` | `Vector4` | The Underline color of the text. |
-| `UnderlineHeight` |  `float` |  The height of the Underline height. |
 |  `EnableMarkup` |  `bool` |  Enable the Markup string, to process text within the Markup tags using DALi application.<br>**Note**: By default, the Markup string is disabled. |
 | `EnableAutoScroll` |  `bool` | Enable or disable the auto scrolling. |
 | `AutoScrollSpeed` | `int`  | The scrolling speed is in pixels per second. |
@@ -179,7 +176,8 @@ For text decorations, the [Tizen.NUI.BaseComponents.TextLabel](https://samsung.g
 | `PixelSize` |  `float`  |       The size of font in pixels. |
 | `Ellipsis` |   `bool` |      Enable or disable ellipsis, if required. |
 | `AutoScrollLoopDelay` | `float` |   Auto scroll loop delay. |
-| `AutoScrollStopMode` | `AutoScrollStopMode` | Auto-scroll stop mode |
+| `AutoScrollStopMode` | `AutoScrollStopMode` | Auto-scroll stop mode. |
+| `MatchSystemLanguageDirection` | `bool` | The text alignment to match the direction of the system language. |
 
 To use the decorations, simply set the applicable property:
 

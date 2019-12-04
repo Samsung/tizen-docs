@@ -10,7 +10,7 @@ you need to know whether the device supports the accelerator sensor.
 
 To determine whether the accelerator sensor is supported on the device:
 
-1.  Create a new project in the Tizen Studio with the **Basic UI**
+1.  Create a new project in Tizen Studio with the **Basic UI**
     template, and specify the project name as **SensorAccelerator**.
 
     For more information on how to create a project, see Creating a

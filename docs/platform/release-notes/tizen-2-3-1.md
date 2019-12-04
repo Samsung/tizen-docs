@@ -2,12 +2,12 @@
 
 The Tizen 2.3.1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/native APIs, necessary to develop future Tizen-compliant solutions.
 
+
 ## Release Details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.3.1 source code is in the **tizen_2.3.1** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.3.1/)
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.3_Image_to_Reference_Device)
-
 
 
 ## SDK Release Notes
@@ -56,8 +56,7 @@ The Tizen 2.3.1 release provides developers with the Tizen kernel, device driver
 - Common
   - Tizen IDE for MAC OS X has dependencies on Apple JDK. To support legacy java software on MAC OS X, download and install the Java for Mac OS X 2015-001 from [https://support.apple.com/kb/DL1572](https://support.apple.com/kb/DL1572)
 - Emulator
-  - To use the Tizen Emulator, you should install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from: 
-    - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
+  - To use the Tizen Emulator, you should install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. 
     - If the host machine is using the Nvidia Optimus technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. If you use Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). If you use Windows, you should select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is outdated, your Ubuntu desktop session may be occasionally logged out when launching the Emulator Manager. Or the Emulator skin may be drawn improperly. Please check the prerequisites and upgrade the latest graphics driver.
   - On Ubuntu 14.04, the shortcut menu can appear sometimes transparently.
@@ -446,9 +445,9 @@ The following features have been added to the existing mobile native APIs in thi
 - Emulator
   - In Mac OS, some files  transferred  to the emulator using an SDB push command cannot be accessed due to a file permission problem. To solve this problem, the file permission for other users must be changed at the host side.
   - If you already installed an Android HAX driver, the Tizen HAX driver is not installed. This causes you to encounter the "No accelerator found" error while launching the emulator. Uninstall the Android HAX driver and install the Tizen HAX driver manually as follows:
-    - MS WindowsUninstall the Android HAX driver by going to the Windows control panel > "Programs and Features" > "Intel(R) Hardware Accelerated Execution Manager".Install the Tizen HAX driver by executing the driver installer, whose path is "<TIZEN_SDK_HOME>\tools\emulator\etc\IntelHaxmTizen.exe" and proceeding with the installation process.
-    - Mac OS X 10.10Uninstall the Android HAX driver by opening a terminal, changing the directory to "/System/Library/Extensions/intelhaxm.kext/Contents/Resources", and entering the "sudo ./uninstall.sh" command.Install the Tizen HAX driver by executing the driver installer, whose path is "<TIZEN_SDK_HOME>/tools/emulator/etc/IntelHaxmTizen_for_10.10.dmg" and proceeding with the installation process.
-    - Mac OS X 10.9 and underUninstall the Android HAX driver by opening a terminal, changing the directory to "/System/Library/Extensions/intelhaxm.kext/Contents/Resources", and entering the "sudo ./uninstall.sh" command.Install the Tizen HAX driver by executing the driver installer, whose path is "<TIZEN_SDK_HOME>/tools/emulator/etc/IntelHaxmTizen.dmg" and proceeding with the installation process. 
+    - MS WindowsUninstall the Android HAX driver by going to the Windows control panel \> "Programs and Features" \> "Intel(R) Hardware Accelerated Execution Manager". Install the Tizen HAX driver by executing the driver installer, whose path is `<TIZEN_SDK_HOME>\tools\emulator\etc\IntelHaxmTizen.exe` and proceeding with the installation process.
+    - Mac OS X 10.10Uninstall the Android HAX driver by opening a terminal, changing the directory to `/System/Library/Extensions/intelhaxm.kext/Contents/Resources`, and entering the `sudo ./uninstall.sh` command.Install the Tizen HAX driver by executing the driver installer, whose path is `<TIZEN_SDK_HOME>/tools/emulator/etc/IntelHaxmTizen_for_10.10.dmg` and proceeding with the installation process.
+    - Mac OS X 10.9 and underUninstall the Android HAX driver by opening a terminal, changing the directory to `/System/Library/Extensions/intelhaxm.kext/Contents/Resources`, and entering the `sudo ./uninstall.sh` command.Install the Tizen HAX driver by executing the driver installer, whose path is `<TIZEN_SDK_HOME>/tools/emulator/etc/IntelHaxmTizen.dmg` and proceeding with the installation process.
   - Emulator Manager can be closed  temporarily.
     - Condition
       - Run Emulator Manager

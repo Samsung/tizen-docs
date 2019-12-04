@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::File">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
 <div class="title"><h1>File API</h1></div>
 <div class="brief">
  This plugin implements a File API allowing read/write access to files residing on the device.
@@ -348,7 +348,12 @@ var event = new ProgressEvent("submit", eventInit);
 </div>
 <div class="constructors">
 <h4 id="ProgressEvent::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ProgressEvent(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#ProgressEventInit">ProgressEventInit</a>)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ProgressEvent(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -2234,7 +2239,12 @@ document.addEventListener("deviceready", deviceReady, true);
 </div>
 <div class="constructors">
 <h4 id="FileReader::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">FileReader();</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor ()</span></b></code>
+</dt>
+<pre class="webidl prettyprint">FileReader();</pre>
+</dl>
 </div>
 <div class="consts">
 <h4>Constants</h4>

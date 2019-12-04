@@ -1,16 +1,16 @@
 # Tizen 1.0 Release Notes
 
-Release Date: Apr. 30, 2012
+Release date: Apr. 30, 2012
 
 Version: **1.0 Larkspur**
 
 
 
-This document details the new features in the Tizen 1.0 Larkspur release and provides a summary of the main components of the platform.
+This document details the new features in Tizen 1.0 Larkspur release and provides a summary of the main components of the platform.
 
-This release provides a solid baseline for device vendors and developers to start creating software for mobile devices. The Tizen 1.0 Larkspur Core OS provides a complete set of enabling technologies for mobile computing. It is specifically designed for productizing smart phones and tablet devices.
+This release provides a solid baseline for device vendors and developers to start creating software for mobile devices. Tizen 1.0 Larkspur Core OS provides a complete set of enabling technologies for mobile computing. It is specifically designed for productizing smart phones and tablet devices.
 
-**UPDATE: Tizen OS development with RPM/OBS (Aug. 6, 2012) **
+**UPDATE: Tizen OS development with RPM/OBS (Aug. 6, 2012)**
 
 This first release since the initial Larkspur release comes with major changes in many areas, notably the completed migration from Debian to rpm based packaging and a new way of how packages and sources are maintained. For Tizen developers GIT becomes the focal point and the only reference for sources and packaging data. Developers now are provided with new tools to interact with both the source management system (git) and the build system (OBS) in an efficient way and easy way.
 

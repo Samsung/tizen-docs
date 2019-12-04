@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::File">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
 <div class="title"><h1>File API</h1></div>
 <div class="brief">
  This plugin implements a File API allowing read/write access to files residing on the device.
@@ -30,7 +30,7 @@ for accessing only external storage using this API, a privilege <a href="http://
           <li>
 for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
           <li>
-Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
+Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="../ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
        </div>
 <p><span class="version">Since: </span>
@@ -361,7 +361,10 @@ var event = new ProgressEvent("submit", eventInit);
 </div>
 <div class="constructors">
 <h4 id="ProgressEvent::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ProgressEvent(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict);</pre></dl>
+<dl>
+<h4>Constructor (DOMString, <a href="#ProgressEventInit">ProgressEventInit</a>)</h4>
+<pre class="webidl prettyprint">ProgressEvent(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -2247,7 +2250,10 @@ document.addEventListener("deviceready", deviceReady, true);
 </div>
 <div class="constructors">
 <h4 id="FileReader::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">FileReader();</pre></dl>
+<dl>
+<h4>Constructor ()</h4>
+<pre class="webidl prettyprint">FileReader();</pre>
+</dl>
 </div>
 <div class="consts">
 <h4>Constants</h4>

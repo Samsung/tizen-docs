@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Contact">
- <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Contact API</h1></div>
 <div class="brief">
  The Contact API provides functionality for managing address books.
@@ -1927,7 +1927,12 @@ tizen.account.getAccounts(
 </div>
 <div class="constructors">
 <h4 id="AddressBook::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">AddressBook(<a href="account.html#AccountId">AccountId</a> accountId, DOMString name);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="account.html#AccountId">AccountId</a>, DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">AddressBook(<a href="account.html#AccountId">AccountId</a> accountId, DOMString name);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3861,7 +3866,13 @@ catch (err)
 <div class="constructors">
 <h4 id="Contact::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactInit">ContactInit</a>?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">Contact(optional <a href="#ContactInit">ContactInit</a>? ContactInitDict);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">Contact(DOMString stringRepresentation);</pre>
 </dl>
 </div>
@@ -4430,6 +4441,9 @@ This interface is used by other APIs to uniquely and globally identify contacts.
 <div class="constructors">
 <h4 id="ContactRef::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#AddressBookId">AddressBookId</a>, <a href="#ContactId">ContactId</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">ContactRef(<a href="#AddressBookId">AddressBookId</a> addressBookId, <a href="#ContactId">ContactId</a> contactId);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the default address book. */
@@ -4517,6 +4531,9 @@ See the ContactName interface for more information about the members.
 <div class="constructors">
 <h4 id="ContactName::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactNameInit">ContactNameInit</a>?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">ContactName(optional <a href="#ContactNameInit">ContactNameInit</a>? nameInitDict);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myContactName = new tizen.ContactName({prefix: "Mr.", firstName: "John", lastName: "Doe"});
@@ -4774,7 +4791,12 @@ For more details, see RFC 2426, Section 3.5.
 </div>
 <div class="constructors">
 <h4 id="ContactOrganization::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactOrganization(optional <a href="#ContactOrganizationInit">ContactOrganizationInit</a>? orgInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactOrganizationInit">ContactOrganizationInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactOrganization(optional <a href="#ContactOrganizationInit">ContactOrganizationInit</a>? orgInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -4881,7 +4903,12 @@ contactInit.urls = [blog];
 </div>
 <div class="constructors">
 <h4 id="ContactWebSite::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactWebSite(DOMString url, optional DOMString type);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactWebSite(DOMString url, optional DOMString type);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -4940,7 +4967,12 @@ contactInit.anniversaries = [marriage_anniv];
 </div>
 <div class="constructors">
 <h4 id="ContactAnniversary::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactAnniversary(Date date, optional DOMString? label);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactAnniversary(Date date, optional DOMString? label);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5038,7 +5070,12 @@ contactInit.contactAddress = [contactAddress];
 </div>
 <div class="constructors">
 <h4 id="ContactAddress::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactAddress(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactAddressInit">ContactAddressInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactAddress(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5207,7 +5244,12 @@ contactInit.phoneNumbers = [phoneNumber];
 </div>
 <div class="constructors">
 <h4 id="ContactPhoneNumber::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactPhoneNumber(DOMString number, optional DOMString[] types, optional boolean isDefault);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString[], boolean)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactPhoneNumber(DOMString number, optional DOMString[] types, optional boolean isDefault);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5340,7 +5382,12 @@ contactInit.emails = [email];
 </div>
 <div class="constructors">
 <h4 id="ContactEmailAddress::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactEmailAddress(DOMString email, optional DOMString[] types, optional boolean isDefault);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString[], boolean)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactEmailAddress(DOMString email, optional DOMString[] types, optional boolean isDefault);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5448,7 +5495,12 @@ contactInit.messengers = [messenger];
 </div>
 <div class="constructors">
 <h4 id="ContactInstantMessenger::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactInstantMessenger(DOMString imAddress, optional <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>? type);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactInstantMessenger(DOMString imAddress, optional <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>? type);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5554,7 +5606,12 @@ tizen.filesystem.resolve("ringtones", function(dir)
 </div>
 <div class="constructors">
 <h4 id="ContactGroup::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactGroup(DOMString name, optional DOMString? ringtoneURI, optional DOMString? photoURI);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString?, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactGroup(DOMString name, optional DOMString? ringtoneURI, optional DOMString? photoURI);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5672,7 +5729,12 @@ contactInit.relationships = [relationship];
 </div>
 <div class="constructors">
 <h4 id="ContactRelationship::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactRelationship(DOMString relativeName, optional <a href="#ContactRelationshipType">ContactRelationshipType</a>? type);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#ContactRelationshipType">ContactRelationshipType</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactRelationship(DOMString relativeName, optional <a href="#ContactRelationshipType">ContactRelationshipType</a>? type);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
