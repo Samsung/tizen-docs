@@ -37,7 +37,7 @@ Advertise for remote devices (including Bluetooth LE devices)          </li>
 Act as a GATT client (Generic Attribute Profile client)          </li>
         </ul>
         <p>
-For more information on the Bluetooth features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/bluetooth">Bluetooth Guide</a>.
+For more information on the Bluetooth features, see <a href="/application/web/guides/connectivity/bluetooth">Bluetooth Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -1285,7 +1285,7 @@ if (capability === true)
 For most Bluetooth actions, the Bluetooth adapter must be powered on.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- It is deprecated since Tizen 2.3. Instead, let the user turn on/off Bluetooth through the Settings application. See <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/bluetooth#Managing_BT_Adapter">Managing Bluetooth Tutorial</a>.
+ It is deprecated since Tizen 2.3. Instead, let the user turn on/off Bluetooth through the Settings application. See <a href="/application/web/guides/connectivity/bluetooth#managing-the-local-bluetooth-adapter">Managing Bluetooth Tutorial</a>.
             </p>
 <div class="synopsis"><pre class="signature prettyprint">void setPowered(boolean state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
@@ -1407,7 +1407,7 @@ else
  Sets the local device visibility by sending a request to a Bluetooth hardware to change the device visible state to <em>mode</em>.
             </div>
 <p class="deprecated"><b>Deprecated.</b>
- It is deprecated since Tizen 2.3. Instead, let the user change the Bluetooth visibility through the Settings application. See the <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/bluetooth#Managing_BT_Adapter">Managing Bluetooth</a> Tutorial.
+ It is deprecated since Tizen 2.3. Instead, let the user change the Bluetooth visibility through the Settings application. See the <a href="/application/web/guides/connectivity/bluetooth#managing-the-local-bluetooth-adapter">Managing Bluetooth</a> Tutorial.
             </p>
 <div class="synopsis"><pre class="signature prettyprint">void setVisible(boolean mode, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                 optional unsigned short? timeout);</pre></div>
@@ -7283,7 +7283,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
 <li class="feature">http://tizen.org/feature/network.bluetooth.le</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Bluetooth {
