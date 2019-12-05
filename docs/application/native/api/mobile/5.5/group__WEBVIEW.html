@@ -1197,6 +1197,19 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 
 <p>Contains option for cache model. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggaade8fd95d6925241dd65e843f4103f0ca45bb6d577a1dab4cac3769b2ae09791f"></a><!-- doxytag: member="EWK_CACHE_MODEL_DOCUMENT_VIEWER" ref="ggaade8fd95d6925241dd65e843f4103f0ca45bb6d577a1dab4cac3769b2ae09791f" args="" -->EWK_CACHE_MODEL_DOCUMENT_VIEWER</em>&nbsp;</td><td>
+<p>Use the smallest cache capacity. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaade8fd95d6925241dd65e843f4103f0ca111695d3945eecbfcc8c782b8d013064"></a><!-- doxytag: member="EWK_CACHE_MODEL_DOCUMENT_BROWSER" ref="ggaade8fd95d6925241dd65e843f4103f0ca111695d3945eecbfcc8c782b8d013064" args="" -->EWK_CACHE_MODEL_DOCUMENT_BROWSER</em>&nbsp;</td><td>
+<p>Use bigger cache capacity than EWK_CACHE_MODEL_DOCUMENT_VIEWER. </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaade8fd95d6925241dd65e843f4103f0cac84a4a183afde998ba462ecc2f2c1e04"></a><!-- doxytag: member="EWK_CACHE_MODEL_PRIMARY_WEBBROWSER" ref="ggaade8fd95d6925241dd65e843f4103f0cac84a4a183afde998ba462ecc2f2c1e04" args="" -->EWK_CACHE_MODEL_PRIMARY_WEBBROWSER</em>&nbsp;</td><td>
+<p>Use the biggest cache capacity. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
 
 </div>
 </div>
@@ -2639,7 +2652,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <div class="memdoc">
 
 <p>Requests to set the cache model. </p>
-<p>The default cache option is EWK_CACHE_MODEL_DOCUMENT_VIEWER.</p>
+<p>The default cache option is <a class="el" href="group__WEBVIEW.html#ggaade8fd95d6925241dd65e843f4103f0ca45bb6d577a1dab4cac3769b2ae09791f">EWK_CACHE_MODEL_DOCUMENT_VIEWER</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3951,7 +3964,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>intercept request instance received from Ewk_Context_Intercept_Request_Callback ewk_context callback</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>intercept request instance received from <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a> ewk_context callback</td></tr>
   </table>
   </dd>
 </dl>
@@ -3979,7 +3992,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>intercept request instance received from Ewk_Context_Intercept_Request_Callback ewk_context callback</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>intercept request instance received from <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a> ewk_context callback</td></tr>
   </table>
   </dd>
 </dl>
@@ -4005,11 +4018,11 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Ignores request so engine will handle it normally. </p>
 <p>When application doesn't have a response for intercepted request url, it calls this function, which notifies engine to proceed with normal resource loading.</p>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>After this call, handling the request is done. Any further calls on the Ewk_Intercept_Request instance result in undefined behavior.</dd></dl>
-<p>Only use this function from inside the Ewk_Context_Intercept_Request_Callback.</p>
+<p>Only use this function from inside the <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received in Ewk_Context_Intercept_Request_Callback</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received in <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a></td></tr>
   </table>
   </dd>
 </dl>
@@ -4050,13 +4063,13 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 
 <p>Writes whole response body at once. </p>
 <p>This function can be used to write response body. To call it, application should have full response body ready for the intercepted request.</p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>It is allowed to use this function both inside and outside the Ewk_Context_Intercept_Request_Callback.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>It is allowed to use this function both inside and outside the <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a>.</dd></dl>
 <p>After this call, handling the request is done. Any further calls on the Ewk_Intercept_Request instance result in undefined behavior.</p>
 <p>You can't use this call after you started writing response in chunks with <em>ewk_intercept_request_response_write_chunk</em>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from Ewk_Context_Intercept_Request_Callback ewk_context callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a> ewk_context callback </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>Response body for the intercept request </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Length of response body</td></tr>
   </table>
@@ -4064,9 +4077,9 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success or EINA_FALSE on failure</dd></dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Before writing response body, you should set response status and headers using the following functions:<ul>
-<li>ewk_intercept_request_response_status_set</li>
-<li>ewk_intercept_request_response_header_add</li>
-<li>ewk_intercept_request_response_header_map_add </li>
+<li><a class="el" href="group__WEBVIEW.html#ga8ef676e1c4f97800ad481803c1d28e7c" title="Sets status code and status text of response for intercepted request.">ewk_intercept_request_response_status_set()</a></li>
+<li><a class="el" href="group__WEBVIEW.html#ga6618ed03267b690ced0c3a404c0d1a2c" title="Adds HTTP header to response for intercepted request.">ewk_intercept_request_response_header_add()</a></li>
+<li><a class="el" href="group__WEBVIEW.html#ga6f72a6de1afc8c53f4df1aa5067f6285" title="Adds HTTP headers to response for intercepted request.">ewk_intercept_request_response_header_map_add()</a> </li>
 </ul>
 </dd></dl>
 
@@ -4104,12 +4117,12 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <div class="memdoc">
 
 <p>Adds HTTP header to response for intercepted request. </p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>It is allowed to use this function both inside and outside the Ewk_Context_Intercept_Request_Callback.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>It is allowed to use this function both inside and outside the <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a>.</dd></dl>
 <p>In case of failure of this function finish writing for this intercept request.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from Ewk_Context_Intercept_Request_Callback ewk_context callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a> ewk_context callback </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">field_name</td><td>HTTP header field name </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">field_value</td><td>HTTP header field value</td></tr>
   </table>
@@ -4145,12 +4158,12 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <div class="memdoc">
 
 <p>Adds HTTP headers to response for intercepted request. </p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>It is allowed to use this function both inside and outside the Ewk_Context_Intercept_Request_Callback.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>It is allowed to use this function both inside and outside the <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a>.</dd></dl>
 <p>In case of failure of this function finish writing for this intercept request.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from Ewk_Context_Intercept_Request_Callback ewk_context callback. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a> ewk_context callback. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">headers</td><td>Map from HTTP header field names to field values, both represented as null terminated strings</td></tr>
   </table>
   </dd>
@@ -4198,22 +4211,22 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 
 <p>Writes whole response with headers at once. </p>
 <p>This function can be used to write whole response at once. To call it, application should have full response headers and body ready for the intercepted request.</p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>It is allowed to use this function both inside and outside the Ewk_Context_Intercept_Request_Callback.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>It is allowed to use this function both inside and outside the <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a>.</dd></dl>
 <p>After this call, handling the request is done. Any further calls on the Ewk_Intercept_Request instance result in undefined behavior.</p>
 <p>You can't use this call after you started writing response in chunks with <em>ewk_intercept_request_response_write_chunk</em>.</p>
 <p>Alternatively you can use following functions which are more convenient:</p>
 <ul>
-<li>ewk_intercept_request_response_status_set</li>
-<li>ewk_intercept_request_response_header_add</li>
-<li>ewk_intercept_request_response_header_map_add</li>
-<li>ewk_intercept_request_response_body_set</li>
-<li>ewk_intercept_request_response_write_chunk</li>
+<li><a class="el" href="group__WEBVIEW.html#ga8ef676e1c4f97800ad481803c1d28e7c" title="Sets status code and status text of response for intercepted request.">ewk_intercept_request_response_status_set()</a></li>
+<li><a class="el" href="group__WEBVIEW.html#ga6618ed03267b690ced0c3a404c0d1a2c" title="Adds HTTP header to response for intercepted request.">ewk_intercept_request_response_header_add()</a></li>
+<li><a class="el" href="group__WEBVIEW.html#ga6f72a6de1afc8c53f4df1aa5067f6285" title="Adds HTTP headers to response for intercepted request.">ewk_intercept_request_response_header_map_add()</a></li>
+<li><a class="el" href="group__WEBVIEW.html#gadc7a605f51409318b5893c65fb3ec736" title="Writes whole response body at once.">ewk_intercept_request_response_body_set()</a></li>
+<li><a class="el" href="group__WEBVIEW.html#ga9580e140e60a662d7361a3fbd5e389d0" title="Writes a part of response body.">ewk_intercept_request_response_write_chunk()</a></li>
 </ul>
 <p>Using this function overrides status and headers set with functions listed above.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from Ewk_Context_Intercept_Request_Callback ewk_context callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a> ewk_context callback </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">headers</td><td>Null-terminated string representing response's headers for the intercept request. By HTTP spec, lines should end with a newline ('\r\n') and headers should end with an empty line ('\r\n\r\n'). </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">body</td><td>Response body for the intercept request </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Length of response body</td></tr>
@@ -4256,12 +4269,12 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <div class="memdoc">
 
 <p>Sets status code and status text of response for intercepted request. </p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>It is allowed to use this function both inside and outside the Ewk_Context_Intercept_Request_Callback.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>It is allowed to use this function both inside and outside the <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a>.</dd></dl>
 <p>In case of failure of this function finish writing for this intercept request.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from Ewk_Context_Intercept_Request_Callback ewk_context callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a> ewk_context callback </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">status_code</td><td>HTTP response status code </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">custom_status_text</td><td>HTTP response reason phrase, pass NULL to use recommended reason phrase (example: "OK" for code 200)</td></tr>
   </table>
@@ -4305,7 +4318,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <p>Writes a part of response body. </p>
 <p>This function can be used to write response body in chunks. Application doesn't have to prepare full response body before calling this function, it can be used as soon as a part of response is ready.</p>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If this function returns EINA_FALSE, handling the request is done. Any further calls on the Ewk_Intercept_Request instance result in undefined behavior. User should always check return value, because response to this request might not be needed anymore, and function can return EINA_FALSE even though user still has data to write.</dd></dl>
-<p>It is only allowed to use this function *outside* of the Ewk_Context_Intercept_Request_Callback.</p>
+<p>It is only allowed to use this function *outside* of the <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a>.</p>
 <p>If a part of response body has been written with this function, you can't use the following functions anymore:</p>
 <ul>
 <li>ewk_intercept_request_response_set</li>
@@ -4315,7 +4328,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from Ewk_Context_Intercept_Request_Callback ewk_context callback </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>Intercept Request instance received from <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a> ewk_context callback </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">chunk</td><td>Part of response body for intercepted request </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Length of response body part</td></tr>
   </table>
@@ -4323,9 +4336,9 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success or EINA_FALSE on failure</dd></dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Before writing response body, you should set response status and headers using the following functions:<ul>
-<li>ewk_intercept_request_response_status_set</li>
-<li>ewk_intercept_request_response_header_add</li>
-<li>ewk_intercept_request_response_header_map_add</li>
+<li><a class="el" href="group__WEBVIEW.html#ga8ef676e1c4f97800ad481803c1d28e7c" title="Sets status code and status text of response for intercepted request.">ewk_intercept_request_response_status_set()</a></li>
+<li><a class="el" href="group__WEBVIEW.html#ga6618ed03267b690ced0c3a404c0d1a2c" title="Adds HTTP header to response for intercepted request.">ewk_intercept_request_response_header_add()</a></li>
+<li><a class="el" href="group__WEBVIEW.html#ga6f72a6de1afc8c53f4df1aa5067f6285" title="Adds HTTP headers to response for intercepted request.">ewk_intercept_request_response_header_map_add()</a></li>
 </ul>
 </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>After writing full response body in chunks using this function, call it again with NULL as <em>chunk</em> and 0 as <em>length</em>, to signal that response body is finished.</dd></dl>
@@ -4353,7 +4366,7 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>intercept request instance received from Ewk_Context_Intercept_Request_Callback ewk_context callback</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">intercept_request</td><td>intercept request instance received from <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a> ewk_context callback</td></tr>
   </table>
   </dd>
 </dl>

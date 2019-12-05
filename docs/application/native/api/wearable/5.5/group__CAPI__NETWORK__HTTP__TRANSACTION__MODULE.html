@@ -218,7 +218,7 @@ Functions</h2></td></tr>
 
 <p>Closes the HTTP transaction handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>http_transaction</em> is released by <a class="el" href="group__CAPI__NETWORK__HTTP__TRANSACTION__MODULE.html#gab99160cde135412112ad60e3dd40dfe6" title="Closes the HTTP transaction handle.">http_transaction_destroy()</a>. http_transaction should be set to NULL after using it. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>http_transaction</em> should be set to NULL after using it. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">http_transaction</td><td>The HTTP transaction handle </td></tr>
@@ -235,7 +235,9 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>http_transaction_create() </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__HTTP__SESSION__MODULE.html#ga6c4c7a48f3c6b6f0ca26cc3c67c5b4c4" title="Opens HTTP transaction from the HTTP Session.">http_session_open_transaction()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__NETWORK__HTTP__AUTHENTICATION__MODULE.html#ga87417df1664c855183197e857aca5241" title="Opens HTTP transaction with authentication information.">http_transaction_open_authentication()</a> </dd></dl>
 
 </div>
 </div>

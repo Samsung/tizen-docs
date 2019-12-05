@@ -337,6 +337,8 @@ Defines</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a linked list type to a data descriptor.  <a href="#gabb4c7833ba053f2322e6b667a9ec7f04"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Data__Group.html#ga56b290f4a8d3749daa88134aeb2317fb">EET_DATA_DESCRIPTOR_ADD_LIST_STRING</a>(edd, struct_type, name, member)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a linked list of string to a data descriptor.  <a href="#ga56b290f4a8d3749daa88134aeb2317fb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Data__Group.html#gadeae061cf848d4d0bce89acdfc570848">EET_DATA_DESCRIPTOR_ADD_LIST_UINT</a>(edd, struct_type, name, member)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a linked list of unsigned integers to a data descriptor.  <a href="#gadeae061cf848d4d0bce89acdfc570848"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Data__Group.html#gad5e348ead4ba0b441c1e020f9bf23365">EET_DATA_DESCRIPTOR_ADD_HASH</a>(edd, struct_type, name, member, subtype)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a hash type to a data descriptor.  <a href="#gad5e348ead4ba0b441c1e020f9bf23365"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Data__Group.html#gad5e0db408c74f1cf7b54caa02fef4df1">EET_DATA_DESCRIPTOR_ADD_HASH_STRING</a>(edd, struct_type, name, member)</td></tr>
@@ -939,6 +941,65 @@ Defines</h2></td></tr>
 </dl>
 <p>This macro lets you easily add a linked list of char *. All the parameters are the same as for <a class="el" href="group__Eet__Data__Group.html#gac38ce778d7eba37cfca8a19efb7a9b3a" title="Adds a basic data element to a data descriptor.">EET_DATA_DESCRIPTOR_ADD_BASIC()</a>.</p>
 <dl class="since"><dt><b>Since:</b></dt><dd>1.5.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gadeae061cf848d4d0bce89acdfc570848"></a><!-- doxytag: member="Eet.h::EET_DATA_DESCRIPTOR_ADD_LIST_UINT" ref="gadeae061cf848d4d0bce89acdfc570848" args="(edd, struct_type, name, member)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eet__Data__Group.html#gadeae061cf848d4d0bce89acdfc570848">EET_DATA_DESCRIPTOR_ADD_LIST_UINT</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">edd, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">struct_type, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">name, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">member&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Value:</b><div class="fragment"><pre class="fragment"><span class="keywordflow">do</span> {                                                                      \
+       struct_type ___ett;                                                  \
+       eet_data_descriptor_element_add(edd, name, <a class="code" href="group__Eet__Data__Group.html#gacf6a3c9f06e10e20be5b02cd8c6a220b">EET_T_UINT</a>, <a class="code" href="group__Eet__Data__Group.html#gadcfddbc1928d1068eba93326201c6232">EET_G_LIST</a>, \
+                                       (<span class="keywordtype">char</span> *)(&amp; (___ett.member)) -        \
+                                       (<span class="keywordtype">char</span> *)(&amp; (___ett)),                \
+                                       0, <span class="comment">/* 0,  */</span> NULL, NULL);            \
+    } <span class="keywordflow">while</span> (0)
+</pre></div>
+<p>Adds a linked list of unsigned integers to a data descriptor. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">edd</td><td>The data descriptor to add the type to. </td></tr>
+    <tr><td class="paramname">struct_type</td><td>The type of the struct. </td></tr>
+    <tr><td class="paramname">name</td><td>The string name to use to encode/decode this member (must be a constant global and never change). </td></tr>
+    <tr><td class="paramname">member</td><td>The struct member itself to be encoded.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This macro lets you easily add a linked list of unsigned int. All the parameters are the same as for <a class="el" href="group__Eet__Data__Group.html#gac38ce778d7eba37cfca8a19efb7a9b3a" title="Adds a basic data element to a data descriptor.">EET_DATA_DESCRIPTOR_ADD_BASIC()</a>.</p>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.24.0 </dd></dl>
 
 </div>
 </div>

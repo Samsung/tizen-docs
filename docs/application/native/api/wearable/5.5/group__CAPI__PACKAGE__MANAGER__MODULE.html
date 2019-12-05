@@ -142,13 +142,13 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gae106553a387377cbc3b04061ded5798e">package_manager_filter_create</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gac0b85233026efec4a95ac9726e9c1a7a">package_manager_filter_h</a> *handle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the package information filter handle from db.  <a href="#gae106553a387377cbc3b04061ded5798e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga34ded989bbc7558f2c87ab465b6f02c2">package_manager_filter_destroy</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gac0b85233026efec4a95ac9726e9c1a7a">package_manager_filter_h</a> handle)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This API destroys the package information filter handle freeing up all the resources.  <a href="#ga34ded989bbc7558f2c87ab465b6f02c2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the package information filter handle freeing up all the resources.  <a href="#ga34ded989bbc7558f2c87ab465b6f02c2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gaec6cce0d92e09144ae7e36d4fd7cd20f">package_manager_filter_add_bool</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gac0b85233026efec4a95ac9726e9c1a7a">package_manager_filter_h</a> handle, const char *property, const bool value)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This API adds a boolean filter property to the filter handle.  <a href="#gaec6cce0d92e09144ae7e36d4fd7cd20f"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a boolean filter property to the filter handle.  <a href="#gaec6cce0d92e09144ae7e36d4fd7cd20f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacd13372c90fddb560666837abfeab176">package_manager_filter_count</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gac0b85233026efec4a95ac9726e9c1a7a">package_manager_filter_h</a> handle, int *count)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This API counts the package that satisfy the filter conditions.  <a href="#gacd13372c90fddb560666837abfeab176"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Counts the package that satisfy the filter conditions.  <a href="#gacd13372c90fddb560666837abfeab176"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacf3f898773ecc419ad506e89fded30d4">package_manager_filter_foreach_package_info</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gac0b85233026efec4a95ac9726e9c1a7a">package_manager_filter_h</a> handle, <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga753810427ad6e1efd74bc6a461159a3b">package_manager_package_info_cb</a> callback, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">This API executes the user supplied callback function for each package that satisfy the filter conditions.  <a href="#gacf3f898773ecc419ad506e89fded30d4"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the user supplied callback function for each package that satisfy the filter conditions.  <a href="#gacf3f898773ecc419ad506e89fded30d4"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga9fc5ec803284fb89df1c76af05cfb965">package_manager_drm_generate_license_request</a> (const char *resp_data, char **req_data, char **license_url)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates request for getting License, asynchronously.  <a href="#ga9fc5ec803284fb89df1c76af05cfb965"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga78e33d25c4a0d572e63c2dc98f3d680e">package_manager_drm_register_license</a> (const char *resp_data)</td></tr>
@@ -723,8 +723,8 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a79694548ffea46c126648374335ff830">PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE</a></td><td>No such package </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a79694548ffea46c126648374335ff830">PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE</a></td><td>No such package </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a0c4dbf65c015439f1b72ab7c576a4188">PACKAGE_MANAGER_ERROR_SYSTEM_ERROR</a></td><td>Severe system error </td></tr>
@@ -764,9 +764,9 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a79694548ffea46c126648374335ff830">PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE</a></td><td>No such package </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a0c4dbf65c015439f1b72ab7c576a4188">PACKAGE_MANAGER_ERROR_SYSTEM_ERROR</a></td><td>Severe system error </td></tr>
@@ -807,9 +807,9 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a79694548ffea46c126648374335ff830">PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE</a></td><td>No such package </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a0c4dbf65c015439f1b72ab7c576a4188">PACKAGE_MANAGER_ERROR_SYSTEM_ERROR</a></td><td>Severe system error </td></tr>
@@ -957,10 +957,10 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>Internal I/O error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
@@ -1044,9 +1044,9 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>Internal I/O error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
@@ -1102,14 +1102,14 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>Internal I/O error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd>package_manager_drm_register_license </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga78e33d25c4a0d572e63c2dc98f3d680e" title="Registers encrypted license, asynchronously.">package_manager_drm_register_license()</a> </dd></dl>
 
 </div>
 </div>
@@ -1143,13 +1143,13 @@ Defines</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>Internal I/O error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>package_manager_drm_generate_license_request </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga9fc5ec803284fb89df1c76af05cfb965" title="Generates request for getting License, asynchronously.">package_manager_drm_generate_license_request()</a> </dd></dl>
 
 </div>
 </div>
@@ -1184,7 +1184,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>This API adds a boolean filter property to the filter handle. </p>
+<p>Adds a boolean filter property to the filter handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1204,10 +1204,10 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gae106553a387377cbc3b04061ded5798e" title="Creates the package information filter handle from db.">package_manager_filter_create()</a> </dd></dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga34ded989bbc7558f2c87ab465b6f02c2" title="This API destroys the package information filter handle freeing up all the resources.">package_manager_filter_destroy()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacd13372c90fddb560666837abfeab176" title="This API counts the package that satisfy the filter conditions.">package_manager_filter_count()</a> </dd>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga34ded989bbc7558f2c87ab465b6f02c2" title="Destroys the package information filter handle freeing up all the resources.">package_manager_filter_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacd13372c90fddb560666837abfeab176" title="Counts the package that satisfy the filter conditions.">package_manager_filter_count()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacf3f898773ecc419ad506e89fded30d4" title="This API executes the user supplied callback function for each package that satisfy the filter condit...">package_manager_filter_foreach_package_info()</a> </dd></dl>
+<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacf3f898773ecc419ad506e89fded30d4" title="Executes the user supplied callback function for each package that satisfy the filter conditions...">package_manager_filter_foreach_package_info()</a> </dd></dl>
 
 </div>
 </div>
@@ -1236,7 +1236,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>This API counts the package that satisfy the filter conditions. </p>
+<p>Counts the package that satisfy the filter conditions. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/packagemanager.info </dd></dl>
@@ -1257,8 +1257,8 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gae106553a387377cbc3b04061ded5798e" title="Creates the package information filter handle from db.">package_manager_filter_create()</a> </dd></dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga34ded989bbc7558f2c87ab465b6f02c2" title="This API destroys the package information filter handle freeing up all the resources.">package_manager_filter_destroy()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacf3f898773ecc419ad506e89fded30d4" title="This API executes the user supplied callback function for each package that satisfy the filter condit...">package_manager_filter_foreach_package_info()</a> </dd></dl>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga34ded989bbc7558f2c87ab465b6f02c2" title="Destroys the package information filter handle freeing up all the resources.">package_manager_filter_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacf3f898773ecc419ad506e89fded30d4" title="Executes the user supplied callback function for each package that satisfy the filter conditions...">package_manager_filter_foreach_package_info()</a> </dd></dl>
 
 </div>
 </div>
@@ -1282,6 +1282,7 @@ Defines</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/packagemanager.info </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>handle</em> should be released using <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga34ded989bbc7558f2c87ab465b6f02c2" title="Destroys the package information filter handle freeing up all the resources.">package_manager_filter_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">handle</td><td>Pointer to the package info filter handle </td></tr>
@@ -1297,10 +1298,10 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga34ded989bbc7558f2c87ab465b6f02c2" title="This API destroys the package information filter handle freeing up all the resources.">package_manager_filter_destroy()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gaec6cce0d92e09144ae7e36d4fd7cd20f" title="This API adds a boolean filter property to the filter handle.">package_manager_filter_add_bool()</a> </dd>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga34ded989bbc7558f2c87ab465b6f02c2" title="Destroys the package information filter handle freeing up all the resources.">package_manager_filter_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gaec6cce0d92e09144ae7e36d4fd7cd20f" title="Adds a boolean filter property to the filter handle.">package_manager_filter_add_bool()</a> </dd>
 <dd>
-package_manager_filter_foreach_pkginfo() </dd></dl>
+<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacf3f898773ecc419ad506e89fded30d4" title="Executes the user supplied callback function for each package that satisfy the filter conditions...">package_manager_filter_foreach_package_info()</a> </dd></dl>
 
 </div>
 </div>
@@ -1319,7 +1320,7 @@ package_manager_filter_foreach_pkginfo() </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>This API destroys the package information filter handle freeing up all the resources. </p>
+<p>Destroys the package information filter handle freeing up all the resources. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1337,9 +1338,9 @@ package_manager_filter_foreach_pkginfo() </dd></dl>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gae106553a387377cbc3b04061ded5798e" title="Creates the package information filter handle from db.">package_manager_filter_create()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacd13372c90fddb560666837abfeab176" title="This API counts the package that satisfy the filter conditions.">package_manager_filter_count()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacd13372c90fddb560666837abfeab176" title="Counts the package that satisfy the filter conditions.">package_manager_filter_count()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacf3f898773ecc419ad506e89fded30d4" title="This API executes the user supplied callback function for each package that satisfy the filter condit...">package_manager_filter_foreach_package_info()</a> </dd></dl>
+<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacf3f898773ecc419ad506e89fded30d4" title="Executes the user supplied callback function for each package that satisfy the filter conditions...">package_manager_filter_foreach_package_info()</a> </dd></dl>
 
 </div>
 </div>
@@ -1374,7 +1375,7 @@ package_manager_filter_foreach_pkginfo() </dd></dl>
 </div>
 <div class="memdoc">
 
-<p>This API executes the user supplied callback function for each package that satisfy the filter conditions. </p>
+<p>Executes the user supplied callback function for each package that satisfy the filter conditions. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/packagemanager.info </dd></dl>
@@ -1396,12 +1397,12 @@ package_manager_filter_foreach_pkginfo() </dd></dl>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gae106553a387377cbc3b04061ded5798e" title="Creates the package information filter handle from db.">package_manager_filter_create()</a> </dd></dl>
-<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga34ded989bbc7558f2c87ab465b6f02c2" title="This API destroys the package information filter handle freeing up all the resources.">package_manager_filter_destroy()</a> </dd>
+<dl class="post"><dt><b>Postcondition:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga34ded989bbc7558f2c87ab465b6f02c2" title="Destroys the package information filter handle freeing up all the resources.">package_manager_filter_destroy()</a> </dd>
 <dd>
 This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga753810427ad6e1efd74bc6a461159a3b" title="Called to retrieve all packages.">package_manager_package_info_cb()</a> repeatedly for each package information. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga753810427ad6e1efd74bc6a461159a3b" title="Called to retrieve all packages.">package_manager_package_info_cb()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacd13372c90fddb560666837abfeab176" title="This API counts the package that satisfy the filter conditions.">package_manager_filter_count()</a> </dd></dl>
+<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gacd13372c90fddb560666837abfeab176" title="Counts the package that satisfy the filter conditions.">package_manager_filter_count()</a> </dd></dl>
 
 </div>
 </div>
@@ -1445,8 +1446,8 @@ This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -1484,6 +1485,7 @@ This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/packagemanager.info </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>package_id</em> should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">app_id</td><td>The ID of the application </td></tr>
@@ -1495,9 +1497,9 @@ This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
@@ -1545,10 +1547,10 @@ This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>Database error occurred </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
@@ -1603,9 +1605,9 @@ This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a79694548ffea46c126648374335ff830">PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE</a></td><td>No such package </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a0c4dbf65c015439f1b72ab7c576a4188">PACKAGE_MANAGER_ERROR_SYSTEM_ERROR</a></td><td>Severe system error </td></tr>
@@ -1655,10 +1657,10 @@ This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
@@ -1706,9 +1708,9 @@ This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a79694548ffea46c126648374335ff830">PACKAGE_MANAGER_ERROR_NO_SUCH_PACKAGE</a></td><td>No such package </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a0c4dbf65c015439f1b72ab7c576a4188">PACKAGE_MANAGER_ERROR_SYSTEM_ERROR</a></td><td>Severe system error </td></tr>
@@ -1758,10 +1760,10 @@ This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8acf6720d277a40b91ba22b16e5a773d0d">PACKAGE_MANAGER_ERROR_IO_ERROR</a></td><td>I/O error </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
@@ -1815,8 +1817,8 @@ This function invokes <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>

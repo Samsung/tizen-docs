@@ -52,6 +52,7 @@
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
+<script type="text/javascript" src="dynsections.js"></script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>The&#160;Basics&#160;of&#160;Tizen&#160;Native&#160;API&#160;Reference</span></a></li>
@@ -90,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt><a class="anchor" id="_deprecated000803"></a>Member <a class="el" href="struct__Evas__GL__API.html#a5110f7540632b376335a68a5d41fe44f">_Evas_GL_API::evasglCreateImage</a>  )(int target, void *buffer, const int *attrib_list) EINA_WARN_UNUSED_RESULT EINA_DEPRECATED</dt>
+<dt><a class="anchor" id="_deprecated000803"></a>Member <a class="el" href="struct__Evas__GL__API.html#a6975d8a7a457ab245ab937e947a400b1">_Evas_GL_API::evasglCreateImage</a>  )(int target, void *buffer, const int *attrib_list) EINA_DEPRECATED</dt>
 <dd></dd>
 <dt><a class="anchor" id="_deprecated000001"></a>Member <a class="el" href="group__CAPI__ACCOUNT__MANAGER__MODULE.html#ga8d97426a3b2a420dc0c72f42b9478a30">account_connect</a>  (void) TIZEN_DEPRECATED_API</dt>
 <dd>Deprecated since Tizen 2.4.<br/>
@@ -515,325 +516,325 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dd>use <a class="el" href="group__Eina__Array__Group.html#gafcc60b430bbc132114ef041e589d3ecf" title="Returns the number of elements in an array.">eina_array_count()</a>  </dd>
 <dt><a class="anchor" id="_deprecated000191"></a>Member <a class="el" href="group__Eina__Stringshare__Group.html#ga0c47c9b11a23985a9302c3a5dbc219a6">eina_tmpstr_strlen</a>  (Eina_Tmpstr *tmpstr)</dt>
 <dd></dd>
-<dt><a class="anchor" id="_deprecated000192"></a>Member <a class="el" href="group__Eina__Unicode__String.html#gae34378fe565687559af718f23631e8e0">eina_unicode_utf8_get_next</a>  (const char *buf, int *iindex)</dt>
+<dt><a class="anchor" id="_deprecated000192"></a>Member <a class="el" href="group__Eina__Unicode__String.html#gae6eca0f899c81a57f1b5053af4432255">eina_unicode_utf8_get_next</a>  (const char *buf, int *iindex) 2)</dt>
 <dd>use eina_unicode_utf8_next_get Deprecated since Tizen 2.4 Reads UTF8 bytes from <code>buf</code>, starting at <code>iindex</code> and returns the decoded code point at <code>iindex</code> offset, and advances <code>iindex</code> to the next code point after this. <code>iindex</code> is always advanced, unless if the advancement is after the <code>NULL</code>. On error: return a codepoint between DC80 to DCFF where the low 8 bits are the byte's value. </dd>
-<dt><a class="anchor" id="_deprecated000198"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#gad239b0bd1990b7266f9467ec8c6c2dce">eldbus_address_connection_get</a>  (const char *address) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000198"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga7e244d68506ffe635774e55c6d03ab69">eldbus_address_connection_get</a>  (const char *address)</dt>
 <dd>Deprecated since 4.0. Establish a connection to bus and integrate it with the ecore main loop. If a connection of given type was already created before, its reference counter is incremented and the connection is returned. </dd>
-<dt><a class="anchor" id="_deprecated000206"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga4aac7e4a06927ff32157b06cde7b1072">eldbus_connection_data_del</a>  (Eldbus_Connection *conn, const char *key) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000206"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga99fc191ceee65794bc63fc6cf1bb1522">eldbus_connection_data_del</a>  (Eldbus_Connection *conn, const char *key)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000205"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga7a7e3b32c16c822ae9f1c147cf188ded">eldbus_connection_data_get</a>  (const Eldbus_Connection *conn, const char *key) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000205"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#gae105d74f20e5502ce7e30f0f54652ff3">eldbus_connection_data_get</a>  (const Eldbus_Connection *conn, const char *key)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000204"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga80e62b035551aa7ef05d4e07210ac421">eldbus_connection_data_set</a>  (Eldbus_Connection *conn, const char *key, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000204"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#gab6f681544b210e5ab730968722cdd2f9">eldbus_connection_data_set</a>  (Eldbus_Connection *conn, const char *key, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000207"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga5e46cb435617dc6423bb9780c7dd3aea">eldbus_connection_event_callback_add</a>  (Eldbus_Connection *conn, Eldbus_Connection_Event_Type type, Eldbus_Connection_Event_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000207"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga1ddabae0241a4eb37ac6281ae831b19e">eldbus_connection_event_callback_add</a>  (Eldbus_Connection *conn, Eldbus_Connection_Event_Type type, Eldbus_Connection_Event_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000208"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga9bcc303fcf7d27bd34dbc8ace2c95005">eldbus_connection_event_callback_del</a>  (Eldbus_Connection *conn, Eldbus_Connection_Event_Type type, Eldbus_Connection_Event_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000208"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga118e1c20600b6bdbc9d6471a2089b267">eldbus_connection_event_callback_del</a>  (Eldbus_Connection *conn, Eldbus_Connection_Event_Type type, Eldbus_Connection_Event_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000202"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#gacbd8d4b60a8a6bea42321cc0b91f6f18">eldbus_connection_free_cb_add</a>  (Eldbus_Connection *conn, Eldbus_Free_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000202"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga874b0b096f5d260ba1560120f80ee31e">eldbus_connection_free_cb_add</a>  (Eldbus_Connection *conn, Eldbus_Free_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000203"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga07eed9feccbe3ccfd7202bf03bf64978">eldbus_connection_free_cb_del</a>  (Eldbus_Connection *conn, Eldbus_Free_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000203"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga58345e6a16fe319d0e4c2a7dd6698c75">eldbus_connection_free_cb_del</a>  (Eldbus_Connection *conn, Eldbus_Free_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000196"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga1dc22769bc21fef644ab1ff7ccf17690">eldbus_connection_get</a>  (Eldbus_Connection_Type type)</dt>
+<dt><a class="anchor" id="_deprecated000196"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga203ec794fc0c7e1bddce4eb18b628c04">eldbus_connection_get</a>  (Eldbus_Connection_Type type)</dt>
 <dd>Deprecated since 4.0. Establish a connection to bus and integrate it with the ecore main loop. If a connection of given type was already created before, its reference counter is incremented and the connection is returned. </dd>
-<dt><a class="anchor" id="_deprecated000200"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#gad529f3963a6f0b6aa47b502f21933a1c">eldbus_connection_ref</a>  (Eldbus_Connection *conn) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000200"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#gaef5a01de909c35d4ba3311ed4440c19a">eldbus_connection_ref</a>  (Eldbus_Connection *conn)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000209"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga48aa3618192e90c14055fd0dbb7b3647">eldbus_connection_send</a>  (Eldbus_Connection *conn, Eldbus_Message *msg, Eldbus_Message_Cb cb, const void *cb_data, double timeout) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000209"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga6f68ce1504eece1d7e54fa08804d7b85">eldbus_connection_send</a>  (Eldbus_Connection *conn, Eldbus_Message *msg, Eldbus_Message_Cb cb, const void *cb_data, double timeout)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000210"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga743e53faee02876d4caa1f6283405c5d">eldbus_connection_unique_name_get</a>  (Eldbus_Connection *conn) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000210"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga584e6faee9938ebe494ed4f88d056b2b">eldbus_connection_unique_name_get</a>  (Eldbus_Connection *conn)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000201"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga97ffed9beb53b4b84695e795292d5202">eldbus_connection_unref</a>  (Eldbus_Connection *conn) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000201"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga1c035aac8b601b416bba11d0d68f80ae">eldbus_connection_unref</a>  (Eldbus_Connection *conn)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000217"></a>Member <a class="el" href="group__Eldbus__Basic.html#gaff94a54944aaa0061501f9cfabdd5b56">eldbus_hello</a>  (Eldbus_Connection *conn, Eldbus_Message_Cb cb, const void *cb_data) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000217"></a>Member <a class="el" href="group__Eldbus__Basic.html#gab4ea9f883c08b46ea90f1bcf2555f8dc">eldbus_hello</a>  (Eldbus_Connection *conn, Eldbus_Message_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0. Send a "Hello" method call in proxy. </dd>
 <dt><a class="anchor" id="_deprecated000194"></a>Member <a class="el" href="group__Eldbus__Core.html#ga695dacda6632542dea454e39659ab54f">eldbus_init</a>  (void)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000249"></a>Member <a class="el" href="group__Eldbus__Message.html#ga61301f6141e313bae64cc1c97b65c571">eldbus_message_arguments_append</a>  (Eldbus_Message *msg, const char *signature,...) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000249"></a>Member <a class="el" href="group__Eldbus__Message.html#ga933ee5158cb25619c9b272aa1765d069">eldbus_message_arguments_append</a>  (Eldbus_Message *msg, const char *signature,...)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000247"></a>Member <a class="el" href="group__Eldbus__Message.html#ga2fea23d7335fafe44be201dcaa9feb38">eldbus_message_arguments_get</a>  (const Eldbus_Message *msg, const char *signature,...) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000247"></a>Member <a class="el" href="group__Eldbus__Message.html#ga7aec6beec8e8a73982c7f43bd1322df8">eldbus_message_arguments_get</a>  (const Eldbus_Message *msg, const char *signature,...)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000250"></a>Member <a class="el" href="group__Eldbus__Message.html#ga5080e24caf2f979b87649c82b10257bc">eldbus_message_arguments_vappend</a>  (Eldbus_Message *msg, const char *signature, va_list ap) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000250"></a>Member <a class="el" href="group__Eldbus__Message.html#ga1d588f88c90d3e759172a86a0be7370b">eldbus_message_arguments_vappend</a>  (Eldbus_Message *msg, const char *signature, va_list ap)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000248"></a>Member <a class="el" href="group__Eldbus__Message.html#gaa3a04710a52fcb459043b69c8f0236e3">eldbus_message_arguments_vget</a>  (const Eldbus_Message *msg, const char *signature, va_list ap) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000248"></a>Member <a class="el" href="group__Eldbus__Message.html#gae0ceedd590ca9ebec3c8251219f06de5">eldbus_message_arguments_vget</a>  (const Eldbus_Message *msg, const char *signature, va_list ap)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000239"></a>Member <a class="el" href="group__Eldbus__Message.html#ga533044435ece3da1e05467361f585a02">eldbus_message_destination_get</a>  (const Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000239"></a>Member <a class="el" href="group__Eldbus__Message.html#ga05b0cd3e557a10348edd6707ab4b6584">eldbus_message_destination_get</a>  (const Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0. Get the Eldbus message destination. </dd>
-<dt><a class="anchor" id="_deprecated000246"></a>Member <a class="el" href="group__Eldbus__Message.html#gacd79c5866be36b6ab63d4b7f6bb25e70">eldbus_message_error_get</a>  (const Eldbus_Message *msg, const char **name, const char **text) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000246"></a>Member <a class="el" href="group__Eldbus__Message.html#ga3aeec7d275bef2bb244ed9a045540921">eldbus_message_error_get</a>  (const Eldbus_Message *msg, const char **name, const char **text)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000244"></a>Member <a class="el" href="group__Eldbus__Message.html#ga69002e007d694ec23f86b3e71a8008ac">eldbus_message_error_new</a>  (const Eldbus_Message *msg, const char *error_name, const char *error_msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000244"></a>Member <a class="el" href="group__Eldbus__Message.html#ga53bd5261d6b82b494b8b8b31e62fb469">eldbus_message_error_new</a>  (const Eldbus_Message *msg, const char *error_name, const char *error_msg)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000268"></a>Member <a class="el" href="group__Eina__Value.html#gab416201595aa297d0c08ec7fc8b4b736">eldbus_message_from_eina_value</a>  (const char *signature, Eldbus_Message *msg, const Eina_Value *value) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000268"></a>Member <a class="el" href="group__Eina__Value.html#ga525bec3d976a9489b27eb6ffa78cc4a6">eldbus_message_from_eina_value</a>  (const char *signature, Eldbus_Message *msg, const Eina_Value *value)</dt>
 <dd>Deprecated since 4.0. Convert Eina_Value to Eldbus_Message </dd>
-<dt><a class="anchor" id="_deprecated000237"></a>Member <a class="el" href="group__Eldbus__Message.html#ga7b6b4b5c2b4d651b674b19208efbcc1b">eldbus_message_interface_get</a>  (const Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000237"></a>Member <a class="el" href="group__Eldbus__Message.html#ga012630692ed14bde6e8039ef11588876">eldbus_message_interface_get</a>  (const Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0. Get the Eldbus message interface. </dd>
-<dt><a class="anchor" id="_deprecated000253"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga6ad92207d9433b60fdf77f59a87447c0">eldbus_message_iter_arguments_append</a>  (Eldbus_Message_Iter *iter, const char *signature,...) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000253"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gae00cddea6435838b7189bcf5ca816332">eldbus_message_iter_arguments_append</a>  (Eldbus_Message_Iter *iter, const char *signature,...)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000263"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga207f40cb169e9f8d294a20ceb5a26b78">eldbus_message_iter_arguments_get</a>  (Eldbus_Message_Iter *iter, const char *signature,...) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000263"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gae44918ce0b571a30546219d1d5040da0">eldbus_message_iter_arguments_get</a>  (Eldbus_Message_Iter *iter, const char *signature,...)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000254"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gaaa2718d4be10b5aeb131a496b856f285">eldbus_message_iter_arguments_vappend</a>  (Eldbus_Message_Iter *iter, const char *signature, va_list ap) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000254"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga76daae758549ce10689d24acb9d851b7">eldbus_message_iter_arguments_vappend</a>  (Eldbus_Message_Iter *iter, const char *signature, va_list ap)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000264"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga27492f8abae05592c284567f8c99a44c">eldbus_message_iter_arguments_vget</a>  (Eldbus_Message_Iter *iter, const char *signature, va_list ap) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000264"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga717a7e00c9cb7f2a55241d866668b567">eldbus_message_iter_arguments_vget</a>  (Eldbus_Message_Iter *iter, const char *signature, va_list ap)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000252"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga406399bcf22028820f0cca383303bcb9">eldbus_message_iter_basic_append</a>  (Eldbus_Message_Iter *iter, int type,...) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000252"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gaf3be6a0eb61416b21f21b65c57109b97">eldbus_message_iter_basic_append</a>  (Eldbus_Message_Iter *iter, int type,...)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000258"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gad87ebb94bb4f2f8446ccab6c68849d6b">eldbus_message_iter_basic_get</a>  (Eldbus_Message_Iter *iter, void *value) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000258"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gad4549921e09633aa56599204278ffade">eldbus_message_iter_basic_get</a>  (Eldbus_Message_Iter *iter, void *value)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000256"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gabf50c1e5448e2935ef312807e15e8e13">eldbus_message_iter_container_close</a>  (Eldbus_Message_Iter *iter, Eldbus_Message_Iter *sub) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000256"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga01840f4c9fb71cbf1c8081cf4e84189c">eldbus_message_iter_container_close</a>  (Eldbus_Message_Iter *iter, Eldbus_Message_Iter *sub)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000251"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gad455dd405ce7995445be1207256b57ab">eldbus_message_iter_container_new</a>  (Eldbus_Message_Iter *iter, int type, const char *contained_signature) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000251"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gac053452551e924020d2105d87e73521e">eldbus_message_iter_container_new</a>  (Eldbus_Message_Iter *iter, int type, const char *contained_signature)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000265"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gad01a17cbbe47a0346ade433c34472d75">eldbus_message_iter_del</a>  (Eldbus_Message_Iter *iter) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000265"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gaac4004e9189b7bb6baddf3e65c9ec830">eldbus_message_iter_del</a>  (Eldbus_Message_Iter *iter)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000269"></a>Member <a class="el" href="group__Eldbus__Message__Helpers.html#gae3e2c976035d27246564de00dfa4b55b">eldbus_message_iter_dict_iterate</a>  (Eldbus_Message_Iter *dict, const char *signature, Eldbus_Dict_Cb_Get cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000269"></a>Member <a class="el" href="group__Eldbus__Message__Helpers.html#ga2b2a85bdad9a8ce06eacb3fe21392360">eldbus_message_iter_dict_iterate</a>  (Eldbus_Message_Iter *dict, const char *signature, Eldbus_Dict_Cb_Get cb, const void *data)</dt>
 <dd>Deprecated since 4.0. Iterate over a dictionary. </dd>
-<dt><a class="anchor" id="_deprecated000255"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga81a415594da5771d6db760a7106a4501">eldbus_message_iter_fixed_array_append</a>  (Eldbus_Message_Iter *iter, int type, const void *array, unsigned int size) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000255"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga5482d43616555df5c91e0004085fb97a">eldbus_message_iter_fixed_array_append</a>  (Eldbus_Message_Iter *iter, int type, const void *array, unsigned int size)</dt>
 <dd>Deprecated since 4.0. Append a array of basic type with fixed size to Eldbus_Message_Iter. </dd>
-<dt><a class="anchor" id="_deprecated000262"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gaad97ba21251c26cd27c10a680d230e6c">eldbus_message_iter_fixed_array_get</a>  (Eldbus_Message_Iter *iter, int signature, void *value, int *n_elements) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000262"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gaccd0410dc29928b34f90b3055600672a">eldbus_message_iter_fixed_array_get</a>  (Eldbus_Message_Iter *iter, int signature, void *value, int *n_elements)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000257"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gae7ef912af10b614ff0a0f9d8be334433">eldbus_message_iter_get</a>  (const Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000257"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga7ca2412ef3cf3c8f77e3782413820814">eldbus_message_iter_get</a>  (const Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000261"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga3fdc7408bef60f80c76c88f2230f25c8">eldbus_message_iter_get_and_next</a>  (Eldbus_Message_Iter *iter, char signature,...) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000261"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga45c7d707ee830ae5be39c17df05af615">eldbus_message_iter_get_and_next</a>  (Eldbus_Message_Iter *iter, char signature,...)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000260"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga132fff362cdd3db02a04a689310c739f">eldbus_message_iter_next</a>  (Eldbus_Message_Iter *iter) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000260"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#ga1c7d3e40bbb79e928881eca98c284162">eldbus_message_iter_next</a>  (Eldbus_Message_Iter *iter)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000259"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gad1ad87401d9af1366a1834fbccdcf4a4">eldbus_message_iter_signature_get</a>  (Eldbus_Message_Iter *iter) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000259"></a>Member <a class="el" href="group__Eldbus__Message__Iter.html#gab0201e1d78d70477ba337d0aa2977802">eldbus_message_iter_signature_get</a>  (Eldbus_Message_Iter *iter)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000267"></a>Member <a class="el" href="group__Eina__Value.html#ga51733ce5028df810f226b9642267b839">eldbus_message_iter_struct_like_to_eina_value</a>  (const Eldbus_Message_Iter *iter)</dt>
+<dt><a class="anchor" id="_deprecated000267"></a>Member <a class="el" href="group__Eina__Value.html#gac331783e5183d20d2a16c7ca7c40dbe0">eldbus_message_iter_struct_like_to_eina_value</a>  (const Eldbus_Message_Iter *iter)</dt>
 <dd>Deprecated since 4.0. Convert Eldbus_Message_Iter of type variant, struct or dict entry to Eina_Value. </dd>
-<dt><a class="anchor" id="_deprecated000238"></a>Member <a class="el" href="group__Eldbus__Message.html#gad00fb7a3c3acebc53f9fb326354a623a">eldbus_message_member_get</a>  (const Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000238"></a>Member <a class="el" href="group__Eldbus__Message.html#ga9c498bce53326c32e93ab2b7064325dd">eldbus_message_member_get</a>  (const Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0. Get the Eldbus message member. </dd>
-<dt><a class="anchor" id="_deprecated000242"></a>Member <a class="el" href="group__Eldbus__Message.html#gaf3f076ff214c98b0e2e470954eec4df6">eldbus_message_method_call_new</a>  (const char *dest, const char *path, const char *iface, const char *method) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000242"></a>Member <a class="el" href="group__Eldbus__Message.html#gadc60e35ada73d1d4167cbca5f02d59dd">eldbus_message_method_call_new</a>  (const char *dest, const char *path, const char *iface, const char *method)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000245"></a>Member <a class="el" href="group__Eldbus__Message.html#ga63d9d6bfb9f2c77100d4bc45deacf4f9">eldbus_message_method_return_new</a>  (const Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000245"></a>Member <a class="el" href="group__Eldbus__Message.html#ga0784dd7e8bed0d5a807fe6af74653c99">eldbus_message_method_return_new</a>  (const Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000236"></a>Member <a class="el" href="group__Eldbus__Message.html#gae409489874ce92179e404817abf50e2d">eldbus_message_path_get</a>  (const Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000236"></a>Member <a class="el" href="group__Eldbus__Message.html#gab274a2173b1c60f5c2eefc8f5849fcb4">eldbus_message_path_get</a>  (const Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0. Get the Eldbus message path. </dd>
-<dt><a class="anchor" id="_deprecated000234"></a>Member <a class="el" href="group__Eldbus__Message.html#gaeaf02471964dbd6935d00bb8ea9a5809">eldbus_message_ref</a>  (Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000234"></a>Member <a class="el" href="group__Eldbus__Message.html#gae9becdb10cdef1dccf5b5f76e50264f1">eldbus_message_ref</a>  (Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000240"></a>Member <a class="el" href="group__Eldbus__Message.html#ga525e248cbbafe53be165b30e73b37a37">eldbus_message_sender_get</a>  (const Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000240"></a>Member <a class="el" href="group__Eldbus__Message.html#ga4f977a0eed417cf774485a7c00572425">eldbus_message_sender_get</a>  (const Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0. Get the Eldbus message sender. </dd>
-<dt><a class="anchor" id="_deprecated000243"></a>Member <a class="el" href="group__Eldbus__Message.html#ga30435427a4ac01ab0e4d061f06fb75a7">eldbus_message_signal_new</a>  (const char *path, const char *interface, const char *name) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000243"></a>Member <a class="el" href="group__Eldbus__Message.html#gaa43218f24e0d377a335f6a038fc76bb7">eldbus_message_signal_new</a>  (const char *path, const char *interface, const char *name)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000241"></a>Member <a class="el" href="group__Eldbus__Message.html#ga6a3bb1dd4ea9f3c0df51243797855f2a">eldbus_message_signature_get</a>  (const Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000241"></a>Member <a class="el" href="group__Eldbus__Message.html#ga13868afb8599721294080c3d8e4b80b5">eldbus_message_signature_get</a>  (const Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0. Get the Eldbus message signature. </dd>
-<dt><a class="anchor" id="_deprecated000266"></a>Member <a class="el" href="group__Eina__Value.html#gabb2348930a25c1704c04a577e3f0c570">eldbus_message_to_eina_value</a>  (const Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000266"></a>Member <a class="el" href="group__Eina__Value.html#gaca1d745634fc1077b23d64ea0e4e7bca">eldbus_message_to_eina_value</a>  (const Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0. Convert Eldbus_Message to Eina_Value </dd>
-<dt><a class="anchor" id="_deprecated000235"></a>Member <a class="el" href="group__Eldbus__Message.html#ga65e9666037f1002be7604c6cd6dbe721">eldbus_message_unref</a>  (Eldbus_Message *msg) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000235"></a>Member <a class="el" href="group__Eldbus__Message.html#ga25e968b4f10dc8ee3ab31cbb66a0b8af">eldbus_message_unref</a>  (Eldbus_Message *msg)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000219"></a>Member <a class="el" href="group__Eldbus__Basic.html#ga78fb8ca37f0f44c5bba5dd973025df0a">eldbus_name_owner_changed_callback_add</a>  (Eldbus_Connection *conn, const char *bus, Eldbus_Name_Owner_Changed_Cb cb, const void *cb_data, Eina_Bool allow_initial_call) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000219"></a>Member <a class="el" href="group__Eldbus__Basic.html#gaf405114e35fec59c14cef2203e9debd5">eldbus_name_owner_changed_callback_add</a>  (Eldbus_Connection *conn, const char *bus, Eldbus_Name_Owner_Changed_Cb cb, const void *cb_data, Eina_Bool allow_initial_call)</dt>
 <dd>Deprecated since 4.0. Add a callback to be called when unique id of a bus name changed. </dd>
-<dt><a class="anchor" id="_deprecated000220"></a>Member <a class="el" href="group__Eldbus__Basic.html#ga7b2baca7d0e269ab94e75449e8ab4619">eldbus_name_owner_changed_callback_del</a>  (Eldbus_Connection *conn, const char *bus, Eldbus_Name_Owner_Changed_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
-<dd>Deprecated since 4.0. Remove callback added with <a class="el" href="group__Eldbus__Basic.html#ga78fb8ca37f0f44c5bba5dd973025df0a">eldbus_name_owner_changed_callback_add()</a>. </dd>
-<dt><a class="anchor" id="_deprecated000213"></a>Member <a class="el" href="group__Eldbus__Basic.html#ga370befde6770991a885b40b4530822d3">eldbus_name_owner_get</a>  (Eldbus_Connection *conn, const char *bus, Eldbus_Message_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000220"></a>Member <a class="el" href="group__Eldbus__Basic.html#gac3c3b6f6b54ed74cfd7cd9b0ab5cfde1">eldbus_name_owner_changed_callback_del</a>  (Eldbus_Connection *conn, const char *bus, Eldbus_Name_Owner_Changed_Cb cb, const void *cb_data)</dt>
+<dd>Deprecated since 4.0. Remove callback added with <a class="el" href="group__Eldbus__Basic.html#gaf405114e35fec59c14cef2203e9debd5">eldbus_name_owner_changed_callback_add()</a>. </dd>
+<dt><a class="anchor" id="_deprecated000213"></a>Member <a class="el" href="group__Eldbus__Basic.html#ga7a10838df33293c4cb6710f447a443c2">eldbus_name_owner_get</a>  (Eldbus_Connection *conn, const char *bus, Eldbus_Message_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0. Send a "GetNameOwner" method call in proxy. </dd>
-<dt><a class="anchor" id="_deprecated000214"></a>Member <a class="el" href="group__Eldbus__Basic.html#gaa52ac187ef857e49484c4ccd70714484">eldbus_name_owner_has</a>  (Eldbus_Connection *conn, const char *bus, Eldbus_Message_Cb cb, const void *cb_data)</dt>
+<dt><a class="anchor" id="_deprecated000214"></a>Member <a class="el" href="group__Eldbus__Basic.html#gae13a514b8376890f6de581f6c6f437a1">eldbus_name_owner_has</a>  (Eldbus_Connection *conn, const char *bus, Eldbus_Message_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0. Send a "NameHasOwner" method call in proxy. </dd>
-<dt><a class="anchor" id="_deprecated000212"></a>Member <a class="el" href="group__Eldbus__Basic.html#gac6ab33fa282538218f456145549f9601">eldbus_name_release</a>  (Eldbus_Connection *conn, const char *bus, Eldbus_Message_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000212"></a>Member <a class="el" href="group__Eldbus__Basic.html#ga52820add848a209019f3a1ec9cc53fd2">eldbus_name_release</a>  (Eldbus_Connection *conn, const char *bus, Eldbus_Message_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0. Send a "ReleaseName" method call in proxy. </dd>
-<dt><a class="anchor" id="_deprecated000211"></a>Member <a class="el" href="group__Eldbus__Basic.html#ga00e5b93386ff9994b094bc6a2fd24089">eldbus_name_request</a>  (Eldbus_Connection *conn, const char *bus, unsigned int flags, Eldbus_Message_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000211"></a>Member <a class="el" href="group__Eldbus__Basic.html#gaa2bade82fbf17312ab03440525630ac4">eldbus_name_request</a>  (Eldbus_Connection *conn, const char *bus, unsigned int flags, Eldbus_Message_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0. Send a "RequestName" method call in proxy. </dd>
-<dt><a class="anchor" id="_deprecated000218"></a>Member <a class="el" href="group__Eldbus__Basic.html#gaf1244528a53508f95235887f90b9c52a">eldbus_name_start</a>  (Eldbus_Connection *conn, const char *bus, unsigned int flags, Eldbus_Message_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000218"></a>Member <a class="el" href="group__Eldbus__Basic.html#ga6a47ad76f86d5e7274e4dccdb18d49c0">eldbus_name_start</a>  (Eldbus_Connection *conn, const char *bus, unsigned int flags, Eldbus_Message_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0. Send a "StartServiceByName" method call in proxy. </dd>
-<dt><a class="anchor" id="_deprecated000216"></a>Member <a class="el" href="group__Eldbus__Basic.html#gac2c66a525883dad0097ed76f24413e62">eldbus_names_activatable_list</a>  (Eldbus_Connection *conn, Eldbus_Message_Cb cb, const void *cb_data) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000216"></a>Member <a class="el" href="group__Eldbus__Basic.html#ga3d24a7e6af0afa3a07a227daeeaa638b">eldbus_names_activatable_list</a>  (Eldbus_Connection *conn, Eldbus_Message_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0. Send a "ListActivatableNames" method call in proxy. </dd>
-<dt><a class="anchor" id="_deprecated000215"></a>Member <a class="el" href="group__Eldbus__Basic.html#ga10f3bd08cf84c825361817d98131b0ab">eldbus_names_list</a>  (Eldbus_Connection *conn, Eldbus_Message_Cb cb, const void *cb_data) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000215"></a>Member <a class="el" href="group__Eldbus__Basic.html#ga9202e546b288eb4b9431e649b1d6c1e7">eldbus_names_list</a>  (Eldbus_Connection *conn, Eldbus_Message_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0. Send a "ListNames" method call in proxy. </dd>
-<dt><a class="anchor" id="_deprecated000278"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga712e9403bc04bb6a29563741db1c5003">eldbus_object_bus_name_get</a>  (const Eldbus_Object *obj) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000278"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#gaad0b030403dafa3271333a003218a1b5">eldbus_object_bus_name_get</a>  (const Eldbus_Object *obj)</dt>
 <dd>Deprecated since 4.0. Get the name associated with a Eldbus_Object. </dd>
-<dt><a class="anchor" id="_deprecated000277"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga035103b272bf617bff516f330408bd7c">eldbus_object_connection_get</a>  (const Eldbus_Object *obj) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000277"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga561392690c2caa00e7b1e31e6e216135">eldbus_object_connection_get</a>  (const Eldbus_Object *obj)</dt>
 <dd>Deprecated since 4.0. Get the Eldbus_Connection object associated with a Eldbus_Object. </dd>
-<dt><a class="anchor" id="_deprecated000275"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga3622aaab8e4c8f35184e73d49a37fd2e">eldbus_object_event_callback_add</a>  (Eldbus_Object *obj, Eldbus_Object_Event_Type type, Eldbus_Object_Event_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000275"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga51777d46a7af02dc5027b31098c7f060">eldbus_object_event_callback_add</a>  (Eldbus_Object *obj, Eldbus_Object_Event_Type type, Eldbus_Object_Event_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000276"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga8fa215af6537d963d9649ee4d70eb88a">eldbus_object_event_callback_del</a>  (Eldbus_Object *obj, Eldbus_Object_Event_Type type, Eldbus_Object_Event_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000276"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga3634ea4bcd8faab23bf5774ee316a428">eldbus_object_event_callback_del</a>  (Eldbus_Object *obj, Eldbus_Object_Event_Type type, Eldbus_Object_Event_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000273"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga41bec7b26cf8c231ed688361541c245e">eldbus_object_free_cb_add</a>  (Eldbus_Object *obj, Eldbus_Free_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000273"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga93cdc265ac6c4f89699184e7a839859f">eldbus_object_free_cb_add</a>  (Eldbus_Object *obj, Eldbus_Free_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000274"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#gacb9cb395d7501125a01c5e066f95dee3">eldbus_object_free_cb_del</a>  (Eldbus_Object *obj, Eldbus_Free_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000274"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga13cf9182415e80ae36e5c8b79ad187a7">eldbus_object_free_cb_del</a>  (Eldbus_Object *obj, Eldbus_Free_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000270"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga333c0b80bc57e0163f3188aaaadfd01a">eldbus_object_get</a>  (Eldbus_Connection *conn, const char *bus, const char *path) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000270"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga067d5c8eba2590fb58e7dc39de87d203">eldbus_object_get</a>  (Eldbus_Connection *conn, const char *bus, const char *path)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000223"></a>Member <a class="el" href="group__Eldbus__FDO__Introspectable.html#gabf988e8c18f0edfe06b3fe570194cdf8">eldbus_object_introspect</a>  (Eldbus_Object *obj, Eldbus_Message_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000223"></a>Member <a class="el" href="group__Eldbus__FDO__Introspectable.html#gae4093f860e01425e9b8b5cc80ea5d203">eldbus_object_introspect</a>  (Eldbus_Object *obj, Eldbus_Message_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0. Call the method "Introspect" on the eldbus object. </dd>
-<dt><a class="anchor" id="_deprecated000231"></a>Member <a class="el" href="group__Eldbus__FDO__ObjectManager.html#ga4e5ae93ad64e93d8d9b5d239566a134f">eldbus_object_managed_objects_get</a>  (Eldbus_Object *obj, Eldbus_Message_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000231"></a>Member <a class="el" href="group__Eldbus__FDO__ObjectManager.html#gadc8095575c2fbbf0a917905daeae4bf5">eldbus_object_managed_objects_get</a>  (Eldbus_Object *obj, Eldbus_Message_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0. Call the method "GetManagedObjects" on the eldbus object. </dd>
-<dt><a class="anchor" id="_deprecated000232"></a>Member <a class="el" href="group__Eldbus__FDO__ObjectManager.html#ga578d941c04c1ebf79c80c2e95666abeb">eldbus_object_manager_interfaces_added</a>  (Eldbus_Object *obj, Eldbus_Signal_Cb cb, const void *cb_data) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000232"></a>Member <a class="el" href="group__Eldbus__FDO__ObjectManager.html#ga243143c0c68d67481324e679821ddd3e">eldbus_object_manager_interfaces_added</a>  (Eldbus_Object *obj, Eldbus_Signal_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0. Register a callback on "InterfacesAdded" signal. </dd>
-<dt><a class="anchor" id="_deprecated000233"></a>Member <a class="el" href="group__Eldbus__FDO__ObjectManager.html#gab5018f0d4e60bf2d67289d068754642c">eldbus_object_manager_interfaces_removed</a>  (Eldbus_Object *obj, Eldbus_Signal_Cb cb, const void *cb_data) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000233"></a>Member <a class="el" href="group__Eldbus__FDO__ObjectManager.html#gae3e4a03500c5f6e4d4a86d1b86277dc4">eldbus_object_manager_interfaces_removed</a>  (Eldbus_Object *obj, Eldbus_Signal_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0. Register a callback on "InterfacesRemoved" signal. </dd>
-<dt><a class="anchor" id="_deprecated000282"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga332121a04f76378d3ae24905f5ac74a2">eldbus_object_method_call_new</a>  (Eldbus_Object *obj, const char *interface, const char *member) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000282"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga1267b8300ebb665f5dc8c60c623a16af">eldbus_object_method_call_new</a>  (Eldbus_Object *obj, const char *interface, const char *member)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000279"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#gaf4fffba71434537b07118567fafc8add">eldbus_object_path_get</a>  (const Eldbus_Object *obj) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000279"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga229b1b1f11ca0f78b1158f271e10df02">eldbus_object_path_get</a>  (const Eldbus_Object *obj)</dt>
 <dd>Deprecated since 4.0. Get the path associated with a Eldbus_Object. </dd>
-<dt><a class="anchor" id="_deprecated000222"></a>Member <a class="el" href="group__Eldbus__FDO__Peer.html#gabfd85c797b1dfb86967bea76960bad7a">eldbus_object_peer_machine_id_get</a>  (Eldbus_Object *obj, Eldbus_Message_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000222"></a>Member <a class="el" href="group__Eldbus__FDO__Peer.html#gab474ae3cc113e19b5fc0a86a83d8a0f3">eldbus_object_peer_machine_id_get</a>  (Eldbus_Object *obj, Eldbus_Message_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0. Call the method "GetMachineId" on the eldbus object. </dd>
-<dt><a class="anchor" id="_deprecated000221"></a>Member <a class="el" href="group__Eldbus__FDO__Peer.html#ga2ec75b580c7053876442977ea71206c3">eldbus_object_peer_ping</a>  (Eldbus_Object *obj, Eldbus_Message_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000221"></a>Member <a class="el" href="group__Eldbus__FDO__Peer.html#ga958dce3f98b0e53e1fa33edb1777f9f9">eldbus_object_peer_ping</a>  (Eldbus_Object *obj, Eldbus_Message_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0. Call the method "Ping" on the eldbus object. </dd>
-<dt><a class="anchor" id="_deprecated000271"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga91d9ab5310cd0f49c5f49744b177f2da">eldbus_object_ref</a>  (Eldbus_Object *obj) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000271"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga395009a5d3d2b5109b3ec7e883779f14">eldbus_object_ref</a>  (Eldbus_Object *obj)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000280"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga0dc563f87cefa4311ae9262ab28548cc">eldbus_object_send</a>  (Eldbus_Object *obj, Eldbus_Message *msg, Eldbus_Message_Cb cb, const void *cb_data, double timeout) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000280"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#gac51c7e49b47c7adffb3bc4020a156295">eldbus_object_send</a>  (Eldbus_Object *obj, Eldbus_Message *msg, Eldbus_Message_Cb cb, const void *cb_data, double timeout)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000281"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#gaf201dd5420600f392511010290257a1d">eldbus_object_signal_handler_add</a>  (Eldbus_Object *obj, const char *interface, const char *member, Eldbus_Signal_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000281"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#gafd35708e5748b5851c7041ddeaecf0fc">eldbus_object_signal_handler_add</a>  (Eldbus_Object *obj, const char *interface, const char *member, Eldbus_Signal_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000272"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#ga0c67a44effdf1401bffe54d89d25af42">eldbus_object_unref</a>  (Eldbus_Object *obj) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000272"></a>Member <a class="el" href="group__Eldbus__Object__Mapper.html#gabf9de9a1f28df4a8b0b3b2cd416d647e">eldbus_object_unref</a>  (Eldbus_Object *obj)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000286"></a>Member <a class="el" href="group__Eldbus__Pending.html#ga4b1b35cc852403efd1de2e7794fedc54">eldbus_pending_cancel</a>  (Eldbus_Pending *pending) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000286"></a>Member <a class="el" href="group__Eldbus__Pending.html#gab53769e946f58c13220739636d4fdf81">eldbus_pending_cancel</a>  (Eldbus_Pending *pending)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000285"></a>Member <a class="el" href="group__Eldbus__Pending.html#gaa5f5bac92d51454e801497963fec978a">eldbus_pending_data_del</a>  (Eldbus_Pending *pending, const char *key) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000285"></a>Member <a class="el" href="group__Eldbus__Pending.html#gac4b0ba16b9c325d31eeb289f55a83e4b">eldbus_pending_data_del</a>  (Eldbus_Pending *pending, const char *key)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000284"></a>Member <a class="el" href="group__Eldbus__Pending.html#gab8c467b7f149bf20a684ee952c5080f2">eldbus_pending_data_get</a>  (const Eldbus_Pending *pending, const char *key) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000284"></a>Member <a class="el" href="group__Eldbus__Pending.html#gac6acffb561fb3e9271b8f5aa9207fd23">eldbus_pending_data_get</a>  (const Eldbus_Pending *pending, const char *key)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000283"></a>Member <a class="el" href="group__Eldbus__Pending.html#ga9bf9e4cf199d6baa9dae23fd1d9aa5e4">eldbus_pending_data_set</a>  (Eldbus_Pending *pending, const char *key, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000283"></a>Member <a class="el" href="group__Eldbus__Pending.html#gaf0f4521b466f5236cff1606ff9002661">eldbus_pending_data_set</a>  (Eldbus_Pending *pending, const char *key, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000287"></a>Member <a class="el" href="group__Eldbus__Pending.html#gafe9ef26b287515330bd382bf1012f29f">eldbus_pending_destination_get</a>  (const Eldbus_Pending *pending) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000287"></a>Member <a class="el" href="group__Eldbus__Pending.html#gaa82e70b9f04b461d1434555e089ca062">eldbus_pending_destination_get</a>  (const Eldbus_Pending *pending)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000291"></a>Member <a class="el" href="group__Eldbus__Pending.html#ga77b6e1967f5597995d2187dabe4230fc">eldbus_pending_free_cb_add</a>  (Eldbus_Pending *pending, Eldbus_Free_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000291"></a>Member <a class="el" href="group__Eldbus__Pending.html#gaff8451e212901b19796c6ee6cbd6388c">eldbus_pending_free_cb_add</a>  (Eldbus_Pending *pending, Eldbus_Free_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000292"></a>Member <a class="el" href="group__Eldbus__Pending.html#ga0c153fd40ac697de0fc952b91e8400ea">eldbus_pending_free_cb_del</a>  (Eldbus_Pending *pending, Eldbus_Free_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000292"></a>Member <a class="el" href="group__Eldbus__Pending.html#gac7f33627d4fac558fe793ae177736c09">eldbus_pending_free_cb_del</a>  (Eldbus_Pending *pending, Eldbus_Free_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000289"></a>Member <a class="el" href="group__Eldbus__Pending.html#ga05a9f05b220c1528986c05b542d776a5">eldbus_pending_interface_get</a>  (const Eldbus_Pending *pending) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000289"></a>Member <a class="el" href="group__Eldbus__Pending.html#gaae9d39cac97353c7753db57b87f680bf">eldbus_pending_interface_get</a>  (const Eldbus_Pending *pending)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000290"></a>Member <a class="el" href="group__Eldbus__Pending.html#ga89957a0343442e09eecc4319734bb9cc">eldbus_pending_method_get</a>  (const Eldbus_Pending *pending) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000290"></a>Member <a class="el" href="group__Eldbus__Pending.html#ga7f79b0c7349dce6766c072dc7140f630">eldbus_pending_method_get</a>  (const Eldbus_Pending *pending)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000288"></a>Member <a class="el" href="group__Eldbus__Pending.html#ga622d181068dfeb0d6e0861ab61e45eaf">eldbus_pending_path_get</a>  (const Eldbus_Pending *pending) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000288"></a>Member <a class="el" href="group__Eldbus__Pending.html#gaf7d2e3f139e03f19e555ea3d9ef3b16a">eldbus_pending_path_get</a>  (const Eldbus_Pending *pending)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000199"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga538c04c4463da0bc03b3c83ce2935cd5">eldbus_private_address_connection_get</a>  (const char *address) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
-<dd>Deprecated since 4.0. Always create and establish a new connection to bus and integrate it with the ecore main loop. Differently from <a class="el" href="group__Eldbus__Conneciton.html#ga1dc22769bc21fef644ab1ff7ccf17690">eldbus_connection_get()</a>, this function guarantees to create a new connection to the D-Bus daemon and the connection is not shared by any means. </dd>
-<dt><a class="anchor" id="_deprecated000197"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga78a1eec7e7fff40caccc24e59cc8f300">eldbus_private_connection_get</a>  (Eldbus_Connection_Type type)</dt>
-<dd>Deprecated since 4.0. Always create and establish a new connection to bus and integrate it with the ecore main loop. Differently from <a class="el" href="group__Eldbus__Conneciton.html#ga1dc22769bc21fef644ab1ff7ccf17690">eldbus_connection_get()</a>, this function guarantees to create a new connection to the D-Bus daemon and the connection is not shared by any means. </dd>
-<dt><a class="anchor" id="_deprecated000306"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga3b6cf837304878326af6ec88bc494f7a">eldbus_proxy_call</a>  (Eldbus_Proxy *proxy, const char *member, Eldbus_Message_Cb cb, const void *cb_data, double timeout, const char *signature,...) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000199"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#gabc61af0bc3dd0964cd0ca1d9cc3d62f4">eldbus_private_address_connection_get</a>  (const char *address)</dt>
+<dd>Deprecated since 4.0. Always create and establish a new connection to bus and integrate it with the ecore main loop. Differently from <a class="el" href="group__Eldbus__Conneciton.html#ga203ec794fc0c7e1bddce4eb18b628c04">eldbus_connection_get()</a>, this function guarantees to create a new connection to the D-Bus daemon and the connection is not shared by any means. </dd>
+<dt><a class="anchor" id="_deprecated000197"></a>Member <a class="el" href="group__Eldbus__Conneciton.html#ga182ef2e5fc99983b0122b1da0ea842b0">eldbus_private_connection_get</a>  (Eldbus_Connection_Type type)</dt>
+<dd>Deprecated since 4.0. Always create and establish a new connection to bus and integrate it with the ecore main loop. Differently from <a class="el" href="group__Eldbus__Conneciton.html#ga203ec794fc0c7e1bddce4eb18b628c04">eldbus_connection_get()</a>, this function guarantees to create a new connection to the D-Bus daemon and the connection is not shared by any means. </dd>
+<dt><a class="anchor" id="_deprecated000306"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga0eaac8e928bd7605855bf61d97eea37c">eldbus_proxy_call</a>  (Eldbus_Proxy *proxy, const char *member, Eldbus_Message_Cb cb, const void *cb_data, double timeout, const char *signature,...)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000300"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gab9da2d7cb4d98c098a18daff9279dd60">eldbus_proxy_data_del</a>  (Eldbus_Proxy *proxy, const char *key) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000300"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga51de49cac1c67c57e431a8dbf6b6f2b2">eldbus_proxy_data_del</a>  (Eldbus_Proxy *proxy, const char *key)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000299"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga86cf548313c1385eba4db98cd8cf90dd">eldbus_proxy_data_get</a>  (const Eldbus_Proxy *proxy, const char *key) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000299"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gad4e4b05c3330b281b8163fb6269ab8d6">eldbus_proxy_data_get</a>  (const Eldbus_Proxy *proxy, const char *key)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000298"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga82851f8f19b65f673836599460438e3f">eldbus_proxy_data_set</a>  (Eldbus_Proxy *proxy, const char *key, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000298"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga920061efa2c2d233d13e8812f248b448">eldbus_proxy_data_set</a>  (Eldbus_Proxy *proxy, const char *key, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000309"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga209596641caf4322da4bedbe1b96e4f8">eldbus_proxy_event_callback_add</a>  (Eldbus_Proxy *proxy, Eldbus_Proxy_Event_Type type, Eldbus_Proxy_Event_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000309"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga4b7ab0db8ac6ab9ea3e7f0912b2432e9">eldbus_proxy_event_callback_add</a>  (Eldbus_Proxy *proxy, Eldbus_Proxy_Event_Type type, Eldbus_Proxy_Event_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000310"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gaded5f8bed6c24e73cf73414e403cab52">eldbus_proxy_event_callback_del</a>  (Eldbus_Proxy *proxy, Eldbus_Proxy_Event_Type type, Eldbus_Proxy_Event_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000310"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gaa0c972c94ccaf39b0ca3586c5d549af4">eldbus_proxy_event_callback_del</a>  (Eldbus_Proxy *proxy, Eldbus_Proxy_Event_Type type, Eldbus_Proxy_Event_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000301"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga07495327a6b4c937b0ea857987b802bf">eldbus_proxy_free_cb_add</a>  (Eldbus_Proxy *proxy, Eldbus_Free_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000301"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gafd97e547ddf84925c959d32ea8baaca7">eldbus_proxy_free_cb_add</a>  (Eldbus_Proxy *proxy, Eldbus_Free_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000302"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gae501cba0b677b0dee611a7571f572789">eldbus_proxy_free_cb_del</a>  (Eldbus_Proxy *proxy, Eldbus_Free_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000302"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga756b0b4871d0654e73971709e725f017">eldbus_proxy_free_cb_del</a>  (Eldbus_Proxy *proxy, Eldbus_Free_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000293"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga61584e514702b5e6ea99a9c5c2999d32">eldbus_proxy_get</a>  (Eldbus_Object *obj, const char *interface) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000293"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga58b8d61188435800e1e866ab3fdc7090">eldbus_proxy_get</a>  (Eldbus_Object *obj, const char *interface)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000297"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gade6f58f2534b1453f39d2a0f0882eec1">eldbus_proxy_interface_get</a>  (const Eldbus_Proxy *proxy) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000297"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga16b308bd9b8620f41ffd3a822eb12d8a">eldbus_proxy_interface_get</a>  (const Eldbus_Proxy *proxy)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000303"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga636ede75f21750aab21a94f065831689">eldbus_proxy_method_call_new</a>  (Eldbus_Proxy *proxy, const char *member) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000303"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga443bd02f44bf6c61c7b6c5ca4fde87de">eldbus_proxy_method_call_new</a>  (Eldbus_Proxy *proxy, const char *member)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000296"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga76529c2317bacd425b4f850a90379230">eldbus_proxy_object_get</a>  (const Eldbus_Proxy *proxy) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000296"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga34872db492010eba09bd12bae659cc5c">eldbus_proxy_object_get</a>  (const Eldbus_Proxy *proxy)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000228"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#gae931d995accc5eed03988ef54a7474c4">eldbus_proxy_properties_changed_callback_add</a>  (Eldbus_Proxy *proxy, Eldbus_Signal_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000228"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#ga8d5c36782d4e8b9e334c4557e2cbb40f">eldbus_proxy_properties_changed_callback_add</a>  (Eldbus_Proxy *proxy, Eldbus_Signal_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0. Register a callback on "PropertiesChanged" signal. </dd>
-<dt><a class="anchor" id="_deprecated000224"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#gabe8175b6b76347602833bf11f67aaa3e">eldbus_proxy_properties_monitor</a>  (Eldbus_Proxy *proxy, Eina_Bool enable) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000224"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#gaa2a20ccdb8dfe3fae539c9366eac9fb5">eldbus_proxy_properties_monitor</a>  (Eldbus_Proxy *proxy, Eina_Bool enable)</dt>
 <dd>Deprecated since 4.0. Enable or disable local cache of properties. </dd>
-<dt><a class="anchor" id="_deprecated000225"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#gaf3aefa8d03355db62d81c1a0fd840f4f">eldbus_proxy_property_get</a>  (Eldbus_Proxy *proxy, const char *name, Eldbus_Message_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000225"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#gaa1d2c82ea9765c6e1ca9d51f50afb61a">eldbus_proxy_property_get</a>  (Eldbus_Proxy *proxy, const char *name, Eldbus_Message_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0. Get a property. </dd>
-<dt><a class="anchor" id="_deprecated000227"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#ga7244d2045cfdeb413244441c94e9f293">eldbus_proxy_property_get_all</a>  (Eldbus_Proxy *proxy, Eldbus_Message_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000227"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#ga5652d33e39e864e44e514d6708870ec6">eldbus_proxy_property_get_all</a>  (Eldbus_Proxy *proxy, Eldbus_Message_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0. Get all properties. </dd>
-<dt><a class="anchor" id="_deprecated000229"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#ga03941523eebb00eda51539ed311c9a1b">eldbus_proxy_property_local_get</a>  (Eldbus_Proxy *proxy, const char *name) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000229"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#ga07e236d5f577453308c1f80e48f1d2a3">eldbus_proxy_property_local_get</a>  (Eldbus_Proxy *proxy, const char *name)</dt>
 <dd>Deprecated since 4.0. Return the cached value of property. </dd>
-<dt><a class="anchor" id="_deprecated000230"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#gabb97f31523936c7984527d6dd0ccb212">eldbus_proxy_property_local_get_all</a>  (Eldbus_Proxy *proxy) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000230"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#gaac2c9a7c4ef0084c17f04ea854ee4d54">eldbus_proxy_property_local_get_all</a>  (Eldbus_Proxy *proxy)</dt>
 <dd>Deprecated since 4.0. Get all cached properties. </dd>
-<dt><a class="anchor" id="_deprecated000226"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#ga2bc684c4dda302b98c433888368fbea8">eldbus_proxy_property_set</a>  (Eldbus_Proxy *proxy, const char *name, const char *sig, const void *value, Eldbus_Message_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000226"></a>Member <a class="el" href="group__Eldbus__FDO__Properties.html#ga87a88f3b4119fb332210f15c3d9c2315">eldbus_proxy_property_set</a>  (Eldbus_Proxy *proxy, const char *name, const char *sig, const void *value, Eldbus_Message_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0. Set a property. </dd>
-<dt><a class="anchor" id="_deprecated000294"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gac13d6065e00a4afe453dbd03fb921333">eldbus_proxy_ref</a>  (Eldbus_Proxy *proxy) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000294"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga2a30ab866c5005d009acd5046a241961">eldbus_proxy_ref</a>  (Eldbus_Proxy *proxy)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000304"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga6e8e556ff80d420e98f4dfc952eb97db">eldbus_proxy_send</a>  (Eldbus_Proxy *proxy, Eldbus_Message *msg, Eldbus_Message_Cb cb, const void *cb_data, double timeout) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000304"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga8e4268bf0000bd0ab9596bb2c4d86489">eldbus_proxy_send</a>  (Eldbus_Proxy *proxy, Eldbus_Message *msg, Eldbus_Message_Cb cb, const void *cb_data, double timeout)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000305"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga97709eae89b473a1ded74ed19b898eec">eldbus_proxy_send_and_block</a>  (Eldbus_Proxy *proxy, Eldbus_Message *msg, double timeout) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000305"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga112a23241d9ecd8fcc97a722b7aa3158">eldbus_proxy_send_and_block</a>  (Eldbus_Proxy *proxy, Eldbus_Message *msg, double timeout)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000308"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga65cf371977df391aaf26a4daafb3c279">eldbus_proxy_signal_handler_add</a>  (Eldbus_Proxy *proxy, const char *member, Eldbus_Signal_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000308"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga74be21757ba7ff8d43909652c389cf2c">eldbus_proxy_signal_handler_add</a>  (Eldbus_Proxy *proxy, const char *member, Eldbus_Signal_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000295"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gaa8f54080631078e95490fc19be381735">eldbus_proxy_unref</a>  (Eldbus_Proxy *proxy) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000295"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gab8b43f9e377544b987d2e0151c660aa7">eldbus_proxy_unref</a>  (Eldbus_Proxy *proxy)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000307"></a>Member <a class="el" href="group__Eldbus__Proxy.html#ga2a7229370a033e024d844ab590f916cd">eldbus_proxy_vcall</a>  (Eldbus_Proxy *proxy, const char *member, Eldbus_Message_Cb cb, const void *cb_data, double timeout, const char *signature, va_list ap) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000307"></a>Member <a class="el" href="group__Eldbus__Proxy.html#gab7048bc12ce5956a2b964d85329f506a">eldbus_proxy_vcall</a>  (Eldbus_Proxy *proxy, const char *member, Eldbus_Message_Cb cb, const void *cb_data, double timeout, const char *signature, va_list ap)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000317"></a>Member <a class="el" href="group__Eldbus__Service.html#ga33f5a65ce7327b599c84aafcb943296c">eldbus_service_connection_get</a>  (const Eldbus_Service_Interface *iface) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000317"></a>Member <a class="el" href="group__Eldbus__Service.html#gada16a04bbabc219123cbac90f1aad793">eldbus_service_connection_get</a>  (const Eldbus_Service_Interface *iface)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000312"></a>Member <a class="el" href="group__Eldbus__Service.html#ga7326090caed0333f9e28702644de546e">eldbus_service_interface_fallback_register</a>  (Eldbus_Connection *conn, const char *path, const Eldbus_Service_Interface_Desc *desc) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000312"></a>Member <a class="el" href="group__Eldbus__Service.html#gadd42330ff9b149f153dc0be70fcaad81">eldbus_service_interface_fallback_register</a>  (Eldbus_Connection *conn, const char *path, const Eldbus_Service_Interface_Desc *desc)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000314"></a>Member <a class="el" href="group__Eldbus__Service.html#ga4063dacd1ab3e39a500c0cfcd4264b4c">eldbus_service_interface_fallback_register2</a>  (Eldbus_Connection *conn, const char *path, const Eldbus_Service_Interface_Desc2 *desc) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000314"></a>Member <a class="el" href="group__Eldbus__Service.html#ga8e24f2c8d621bc7846ea1770f486584e">eldbus_service_interface_fallback_register2</a>  (Eldbus_Connection *conn, const char *path, const Eldbus_Service_Interface_Desc2 *desc)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000311"></a>Member <a class="el" href="group__Eldbus__Service.html#ga133ea7ba6bcf389406d42151e7dd2031">eldbus_service_interface_register</a>  (Eldbus_Connection *conn, const char *path, const Eldbus_Service_Interface_Desc *desc) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000311"></a>Member <a class="el" href="group__Eldbus__Service.html#ga5e48c24176e0d4e845eaa24be5a89c5b">eldbus_service_interface_register</a>  (Eldbus_Connection *conn, const char *path, const Eldbus_Service_Interface_Desc *desc)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000313"></a>Member <a class="el" href="group__Eldbus__Service.html#gaa442499ef77a96115a7f744d4a30d6d3">eldbus_service_interface_register2</a>  (Eldbus_Connection *conn, const char *path, const Eldbus_Service_Interface_Desc2 *desc) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000313"></a>Member <a class="el" href="group__Eldbus__Service.html#gad5a4bef948ad29ff0233768e87432c1b">eldbus_service_interface_register2</a>  (Eldbus_Connection *conn, const char *path, const Eldbus_Service_Interface_Desc2 *desc)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000315"></a>Member <a class="el" href="group__Eldbus__Service.html#gaf5dbd7b94e80413533b9c480f789d7de">eldbus_service_interface_unregister</a>  (Eldbus_Service_Interface *iface) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000315"></a>Member <a class="el" href="group__Eldbus__Service.html#ga16f7215afc4c9432c2bf639e437f193c">eldbus_service_interface_unregister</a>  (Eldbus_Service_Interface *iface)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000324"></a>Member <a class="el" href="group__Eldbus__Service.html#ga8cd87a6bd045848b2ff6f6be50485f38">eldbus_service_object_data_del</a>  (Eldbus_Service_Interface *iface, const char *key) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000324"></a>Member <a class="el" href="group__Eldbus__Service.html#gacfd59221d57aedf3b90a63dc206f09f4">eldbus_service_object_data_del</a>  (Eldbus_Service_Interface *iface, const char *key)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000323"></a>Member <a class="el" href="group__Eldbus__Service.html#ga05b79e3a160a67144bfc9bf5e777d851">eldbus_service_object_data_get</a>  (const Eldbus_Service_Interface *iface, const char *key) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000323"></a>Member <a class="el" href="group__Eldbus__Service.html#gafae1334e33095b18ba4810d2653c8700">eldbus_service_object_data_get</a>  (const Eldbus_Service_Interface *iface, const char *key)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000322"></a>Member <a class="el" href="group__Eldbus__Service.html#gaba2eab40b026904ffa8a9bc9b1e40ee8">eldbus_service_object_data_set</a>  (Eldbus_Service_Interface *iface, const char *key, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000322"></a>Member <a class="el" href="group__Eldbus__Service.html#ga6f4024c9749ecba16c7f7d6c09b96b49">eldbus_service_object_data_set</a>  (Eldbus_Service_Interface *iface, const char *key, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000327"></a>Member <a class="el" href="group__Eldbus__Service.html#ga3ffa560c6ce4deb90447dd66573fe525">eldbus_service_object_manager_attach</a>  (Eldbus_Service_Interface *iface) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000327"></a>Member <a class="el" href="group__Eldbus__Service.html#ga9ebf1302c3be4a23011477b6a2f1ae65">eldbus_service_object_manager_attach</a>  (Eldbus_Service_Interface *iface)</dt>
 <dd>Deprecated since 4.0. Attach ObjectManager interface. </dd>
-<dt><a class="anchor" id="_deprecated000328"></a>Member <a class="el" href="group__Eldbus__Service.html#ga66856c96ecbc53a58a6f7df6c2337050">eldbus_service_object_manager_detach</a>  (Eldbus_Service_Interface *iface) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000328"></a>Member <a class="el" href="group__Eldbus__Service.html#gafb7c735cafee5049992283526168a108">eldbus_service_object_manager_detach</a>  (Eldbus_Service_Interface *iface)</dt>
 <dd>Deprecated since 4.0. Detach ObjectManager interface. </dd>
-<dt><a class="anchor" id="_deprecated000318"></a>Member <a class="el" href="group__Eldbus__Service.html#ga0d8126154b87399baafa3919d2e91436">eldbus_service_object_path_get</a>  (const Eldbus_Service_Interface *iface) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000318"></a>Member <a class="el" href="group__Eldbus__Service.html#ga3633101a16cfe7d80b8649d7bf3e3884">eldbus_service_object_path_get</a>  (const Eldbus_Service_Interface *iface)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000316"></a>Member <a class="el" href="group__Eldbus__Service.html#ga2f2bea2e04a20fb3f45dff1dc2e9ea88">eldbus_service_object_unregister</a>  (Eldbus_Service_Interface *iface) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000316"></a>Member <a class="el" href="group__Eldbus__Service.html#gad93bc27e856d7747d76873edff991a3a">eldbus_service_object_unregister</a>  (Eldbus_Service_Interface *iface)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000325"></a>Member <a class="el" href="group__Eldbus__Service.html#ga22a229ac3df42cd9074b6d80166cadf6">eldbus_service_property_changed</a>  (const Eldbus_Service_Interface *iface, const char *name) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000325"></a>Member <a class="el" href="group__Eldbus__Service.html#ga51cfeabdb75e0f0413bb398f12769f67">eldbus_service_property_changed</a>  (const Eldbus_Service_Interface *iface, const char *name)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000326"></a>Member <a class="el" href="group__Eldbus__Service.html#ga2ad9fed6411ef1139863dcf9ff47126b">eldbus_service_property_invalidate_set</a>  (const Eldbus_Service_Interface *iface, const char *name, Eina_Bool is_invalidate) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000326"></a>Member <a class="el" href="group__Eldbus__Service.html#ga7b22ea92cdc94d4927d2be757a3f0718">eldbus_service_property_invalidate_set</a>  (const Eldbus_Service_Interface *iface, const char *name, Eina_Bool is_invalidate)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000319"></a>Member <a class="el" href="group__Eldbus__Service.html#gaa1deb430c07af0af5f65611b0d5f48a9">eldbus_service_signal_emit</a>  (const Eldbus_Service_Interface *iface, unsigned int signal_id,...) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000319"></a>Member <a class="el" href="group__Eldbus__Service.html#ga710a0428a3bb8d0f436a030272c9f82b">eldbus_service_signal_emit</a>  (const Eldbus_Service_Interface *iface, unsigned int signal_id,...)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000320"></a>Member <a class="el" href="group__Eldbus__Service.html#ga500e34839062cd0206df5b877b7c920f">eldbus_service_signal_new</a>  (const Eldbus_Service_Interface *iface, unsigned int signal_id) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000320"></a>Member <a class="el" href="group__Eldbus__Service.html#ga6448c01e341163b5ce9593416e4e75f3">eldbus_service_signal_new</a>  (const Eldbus_Service_Interface *iface, unsigned int signal_id)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000321"></a>Member <a class="el" href="group__Eldbus__Service.html#ga9ef22d6bd07bba728a165b0635dccdf9">eldbus_service_signal_send</a>  (const Eldbus_Service_Interface *iface, Eldbus_Message *signal_msg) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000321"></a>Member <a class="el" href="group__Eldbus__Service.html#gabcd4af078093c616f025bc05a95c04a7">eldbus_service_signal_send</a>  (const Eldbus_Service_Interface *iface, Eldbus_Message *signal_msg)</dt>
 <dd>Deprecated since 4.0.  </dd>
 <dt><a class="anchor" id="_deprecated000195"></a>Member <a class="el" href="group__Eldbus__Core.html#ga1162c16632b1d81e6dba6620397dcda9">eldbus_shutdown</a>  (void)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000329"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga1422fcc7ebc2a4c9c3f2394e62d13a33">eldbus_signal_handler_add</a>  (Eldbus_Connection *conn, const char *sender, const char *path, const char *interface, const char *member, Eldbus_Signal_Cb cb, const void *cb_data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000329"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga6613bf801b1bbc92708bedc57e64014c">eldbus_signal_handler_add</a>  (Eldbus_Connection *conn, const char *sender, const char *path, const char *interface, const char *member, Eldbus_Signal_Cb cb, const void *cb_data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000332"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga4d8a0b825f20eb70caefd632e90c5653">eldbus_signal_handler_del</a>  (Eldbus_Signal_Handler *handler) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000332"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gadd88fb9662d31a3bb1640dbf454544e9">eldbus_signal_handler_del</a>  (Eldbus_Signal_Handler *handler)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000335"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gaf039b2d19fcb142caa4465a6fc26270a">eldbus_signal_handler_free_cb_add</a>  (Eldbus_Signal_Handler *handler, Eldbus_Free_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000335"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga5ae76aa29a76889636bec918245232b5">eldbus_signal_handler_free_cb_add</a>  (Eldbus_Signal_Handler *handler, Eldbus_Free_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000336"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gadc5734411770f5045ee85d02cea07d04">eldbus_signal_handler_free_cb_del</a>  (Eldbus_Signal_Handler *handler, Eldbus_Free_Cb cb, const void *data) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000336"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gaa93015868f155013c5a740a82c79989d">eldbus_signal_handler_free_cb_del</a>  (Eldbus_Signal_Handler *handler, Eldbus_Free_Cb cb, const void *data)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000339"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga5412a3d0f68bb7c40434745429d98caf">eldbus_signal_handler_interface_get</a>  (const Eldbus_Signal_Handler *handler) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000339"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gaa2447cfb1c1294c3b6d4d08edd19a8db">eldbus_signal_handler_interface_get</a>  (const Eldbus_Signal_Handler *handler)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000333"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga2fb618b67eaee735e5cb06cd49af74cd">eldbus_signal_handler_match_extra_set</a>  (Eldbus_Signal_Handler *sh,...) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_SENTINEL</dt>
+<dt><a class="anchor" id="_deprecated000333"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga04f654be8ad8bd3e94cd3f725f2e04a0">eldbus_signal_handler_match_extra_set</a>  (Eldbus_Signal_Handler *sh,...) EINA_SENTINEL</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000334"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga694402d49a007238a07b61f5ee75f9ae">eldbus_signal_handler_match_extra_vset</a>  (Eldbus_Signal_Handler *sh, va_list ap) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000334"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gaa2c32c046b21c5474a2f9eccf5bb8dc2">eldbus_signal_handler_match_extra_vset</a>  (Eldbus_Signal_Handler *sh, va_list ap)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000341"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gafc2684ead514d6b880142cfabf2ed64e">eldbus_signal_handler_match_get</a>  (const Eldbus_Signal_Handler *handler) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000341"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga7c415992e7a90b5c7ee452c21fb2420f">eldbus_signal_handler_match_get</a>  (const Eldbus_Signal_Handler *handler)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000340"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gad33e4a75b43ed78a139a63bcf32fc5bf">eldbus_signal_handler_member_get</a>  (const Eldbus_Signal_Handler *handler) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000340"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga238a511139f4ca64547284657048f808">eldbus_signal_handler_member_get</a>  (const Eldbus_Signal_Handler *handler)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000338"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gaa838b1a0d983ae4bc206715236e90058">eldbus_signal_handler_path_get</a>  (const Eldbus_Signal_Handler *handler) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000338"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gaa65902f8ab4f2a868cb947f333c80cb3">eldbus_signal_handler_path_get</a>  (const Eldbus_Signal_Handler *handler)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000330"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga9ac538af819fe873b7e583a7e32a3a1f">eldbus_signal_handler_ref</a>  (Eldbus_Signal_Handler *handler) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000330"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga163e96578c1b8cce70b7c588384ccc14">eldbus_signal_handler_ref</a>  (Eldbus_Signal_Handler *handler)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000337"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gaffd9d6e97632a03b17c64acaf64f2515">eldbus_signal_handler_sender_get</a>  (const Eldbus_Signal_Handler *handler) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a> EINA_WARN_UNUSED_RESULT</dt>
+<dt><a class="anchor" id="_deprecated000337"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga7d7e397a771cad1b3b499d0788fa4ccd">eldbus_signal_handler_sender_get</a>  (const Eldbus_Signal_Handler *handler)</dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000331"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#gab3c94b1bbebf5a7d9379a36c972f1ef8">eldbus_signal_handler_unref</a>  (Eldbus_Signal_Handler *handler) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(1)</a></dt>
+<dt><a class="anchor" id="_deprecated000331"></a>Member <a class="el" href="group__Eldbus__Signal__Handler.html#ga1b39e54fb712220f3e699d1ca9c6c919">eldbus_signal_handler_unref</a>  (Eldbus_Signal_Handler *handler)</dt>
 <dd>Deprecated since 4.0.  </dd>
 <dt><a class="anchor" id="_deprecated000193"></a>Member <a class="el" href="group__Eldbus__Core.html#ga531e265eac45b8e5ff1751ee042a2072">eldbus_version</a>  </dt>
 <dd>Deprecated since 4.0.  </dd>
-<dt><a class="anchor" id="_deprecated000450"></a>Member <a class="el" href="group__Elm__Bg.html#ga8e67805cf58750eb86df23e05097c031">elm_bg_overlay_get</a>  (const Evas_Object *obj)</dt>
-<dd>use <a class="el" href="group__Elm__General.html#gac9f8f73e142aa658cd843f33ac884fed">elm_object_part_content_get()</a> instead </dd>
-<dt><a class="anchor" id="_deprecated000449"></a>Member <a class="el" href="group__Elm__Bg.html#gad526272687398867c6f7a8a690d7968e">elm_bg_overlay_set</a>  (Evas_Object *obj, Evas_Object *overlay)</dt>
-<dd>use <a class="el" href="group__Elm__General.html#ga2a5ee92b62ac3533c9aa6a7ce65b25d6">elm_object_part_content_set()</a> instead </dd>
-<dt><a class="anchor" id="_deprecated000451"></a>Member <a class="el" href="group__Elm__Bg.html#ga4a1ded34e80ab2461f8bdbd319d7f6c3">elm_bg_overlay_unset</a>  (Evas_Object *obj)</dt>
-<dd>use <a class="el" href="group__Elm__General.html#ga8fdc7be5074ff980a9ba976d288ad4b8">elm_object_part_content_unset()</a> instead </dd>
-<dt><a class="anchor" id="_deprecated000392"></a>Member <a class="el" href="group__Elm__Caches.html#ga56d1894438d071ff29ef4505f772b00b">elm_cache_flush_enabled_all_set</a>  (Eina_Bool enabled)</dt>
-<dd><p class="startdd">Use elm_cache_flush_enabled_set adnd <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000450"></a>Member <a class="el" href="group__Elm__Bg.html#ga5efdbef26b19739f9253f6ab3fb79ffb">elm_bg_overlay_get</a>  (const Evas_Object *obj)</dt>
+<dd>use <a class="el" href="group__Elm__General.html#ga32413f4d59d8232cd362a922a281abf1">elm_object_part_content_get()</a> instead </dd>
+<dt><a class="anchor" id="_deprecated000449"></a>Member <a class="el" href="group__Elm__Bg.html#ga626651023c23741909f641834db7e4b1">elm_bg_overlay_set</a>  (Evas_Object *obj, Evas_Object *overlay)</dt>
+<dd>use <a class="el" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set()</a> instead </dd>
+<dt><a class="anchor" id="_deprecated000451"></a>Member <a class="el" href="group__Elm__Bg.html#ga090c20e28a8d262267375af586c3f050">elm_bg_overlay_unset</a>  (Evas_Object *obj)</dt>
+<dd>use <a class="el" href="group__Elm__General.html#gadc5a1df25fe17e31739841133b53b5fc">elm_object_part_content_unset()</a> instead </dd>
+<dt><a class="anchor" id="_deprecated000392"></a>Member <a class="el" href="group__Elm__Caches.html#ga65aeabfabd36f1f5b833f6902b59f7cc">elm_cache_flush_enabled_all_set</a>  (Eina_Bool enabled)</dt>
+<dd><p class="startdd">Use elm_cache_flush_enabled_set adnd <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000391"></a>Member <a class="el" href="group__Elm__Caches.html#gab3067a06a1f1bd9aafea626f6f303f7a">elm_cache_flush_interval_all_set</a>  (int size)</dt>
-<dd><p class="startdd">Use elm_cache_flush_interval_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000391"></a>Member <a class="el" href="group__Elm__Caches.html#ga862773c28784f69b4150fdd5445fc38d">elm_cache_flush_interval_all_set</a>  (int size)</dt>
+<dd><p class="startdd">Use elm_cache_flush_interval_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000467"></a>Member <a class="el" href="group__Elm__Calendar.html#ga1ac8b6194179762a8434a888f132df94">elm_calendar_text_saturday_color_set</a>  (Evas_Object *obj, int pos)</dt>
+<dt><a class="anchor" id="_deprecated000467"></a>Member <a class="el" href="group__Elm__Calendar.html#ga1b2546749b6df7673f3d7e162f3a12aa">elm_calendar_text_saturday_color_set</a>  (Evas_Object *obj, int pos)</dt>
 <dd>use elm_calendar_mark_add() instead like: </dd>
-<dt><a class="anchor" id="_deprecated000468"></a>Member <a class="el" href="group__Elm__Calendar.html#ga62a4ec08241604f0c169b3ae9b9890e4">elm_calendar_text_sunday_color_set</a>  (Evas_Object *obj, int pos)</dt>
+<dt><a class="anchor" id="_deprecated000468"></a>Member <a class="el" href="group__Elm__Calendar.html#ga06608ab5826374005094c95fe29795e0">elm_calendar_text_sunday_color_set</a>  (Evas_Object *obj, int pos)</dt>
 <dd>use elm_calendar_mark_add() instead like: </dd>
-<dt><a class="anchor" id="_deprecated000469"></a>Member <a class="el" href="group__Elm__Calendar.html#ga8aa6271f40e60a1ebf34886831c66831">elm_calendar_text_weekday_color_set</a>  (Evas_Object *obj, int pos)</dt>
+<dt><a class="anchor" id="_deprecated000469"></a>Member <a class="el" href="group__Elm__Calendar.html#gabf386320f2d08c8b0be81467254a938f">elm_calendar_text_weekday_color_set</a>  (Evas_Object *obj, int pos)</dt>
 <dd>use elm_calendar_mark_add() instead like: </dd>
 <dt><a class="anchor" id="_deprecated000344"></a>Member <a class="el" href="group__Elm__Colorselector.html#gga5075677f1dd67c4af9b46771978cc059ac93d09fba5e2a01622e9f3a9651ec535">ELM_COLORSELECTOR_ALL</a>  </dt>
 <dd>This mode is not supported. If you use this, it will be shown same with ELM_COLORSELECTOR_PALETTE mode  </dd>
@@ -841,233 +842,233 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dd>This mode is not supported. If you use this, it will be shown same with ELM_COLORSELECTOR_PALETTE mode  </dd>
 <dt><a class="anchor" id="_deprecated000342"></a>Member <a class="el" href="group__Elm__Colorselector.html#gga5075677f1dd67c4af9b46771978cc059a2f702c5939f3ff4e96f0e41964b59547">ELM_COLORSELECTOR_PLANE</a>  </dt>
 <dd>This mode is not supported. If you use this, nothing will be shown  </dd>
-<dt><a class="anchor" id="_deprecated000346"></a>Member <a class="el" href="group__Elm__Engine.html#ga6844565cb7e988c3dfce8f1f9b597c94">elm_config_engine_get</a>  (void)</dt>
-<dd>Deprecated since 2.4. Use <a class="el" href="group__Elm__Engine.html#gadd7ba1fd319c0bb2b29f1a0c0b9e91cd" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#gade8b22a5546a43aac4074b1f2107dc4e" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a>.  </dd>
-<dt><a class="anchor" id="_deprecated000347"></a>Member <a class="el" href="group__Elm__Engine.html#ga94125e1be2346e80f58bb9184bc25da1">elm_config_engine_set</a>  (const char *engine)</dt>
-<dd>Deprecated since 2.4. Use <a class="el" href="group__Elm__Engine.html#gadd7ba1fd319c0bb2b29f1a0c0b9e91cd" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#gade8b22a5546a43aac4074b1f2107dc4e" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a>.  </dd>
-<dt><a class="anchor" id="_deprecated000481"></a>Member <a class="el" href="group__Elm__Conformant.html#gac0ba32692375ac273bc32a40009679a1">elm_conformant_content_get</a>  (const Evas_Object *obj)</dt>
+<dt><a class="anchor" id="_deprecated000346"></a>Member <a class="el" href="group__Elm__Engine.html#gae9f7c2e3c779979aea49b6e4976698b3">elm_config_engine_get</a>  (void)</dt>
+<dd>Deprecated since 2.4. Use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a>.  </dd>
+<dt><a class="anchor" id="_deprecated000347"></a>Member <a class="el" href="group__Elm__Engine.html#ga53d9907f253d19ee00a77d77c3586993">elm_config_engine_set</a>  (const char *engine)</dt>
+<dd>Deprecated since 2.4. Use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a>.  </dd>
+<dt><a class="anchor" id="_deprecated000481"></a>Member <a class="el" href="group__Elm__Conformant.html#ga27215a5c1750a9b32562a470227dd2ca">elm_conformant_content_get</a>  (const Evas_Object *obj)</dt>
 <dd>use elm_object_content_get() instead </dd>
-<dt><a class="anchor" id="_deprecated000480"></a>Member <a class="el" href="group__Elm__Conformant.html#ga0ce93092415c5595e349b989d02bc284">elm_conformant_content_set</a>  (Evas_Object *obj, Evas_Object *content)</dt>
+<dt><a class="anchor" id="_deprecated000480"></a>Member <a class="el" href="group__Elm__Conformant.html#gadcb351c8d9d575897ac4c55eae14375e">elm_conformant_content_set</a>  (Evas_Object *obj, Evas_Object *content)</dt>
 <dd>use elm_object_content_set() instead </dd>
-<dt><a class="anchor" id="_deprecated000482"></a>Member <a class="el" href="group__Elm__Conformant.html#gaa8bbde2af8761671c0dc6e98650de7de">elm_conformant_content_unset</a>  (Evas_Object *obj)</dt>
+<dt><a class="anchor" id="_deprecated000482"></a>Member <a class="el" href="group__Elm__Conformant.html#gac254157d7ed5b94d84534a71a5eec695">elm_conformant_content_unset</a>  (Evas_Object *obj)</dt>
 <dd>use elm_object_content_unset() instead </dd>
-<dt><a class="anchor" id="_deprecated000419"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga7138c8bf3087630740329d6e35eadd3c">elm_ctxpopup_content_set</a>  (Evas_Object *obj, Evas_Object *content)</dt>
+<dt><a class="anchor" id="_deprecated000419"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#gac9d839bcf91f02f0e023a33298bdb05e">elm_ctxpopup_content_set</a>  (Evas_Object *obj, Evas_Object *content)</dt>
 <dd>use elm_object_content_set() instead </dd>
-<dt><a class="anchor" id="_deprecated000420"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga0c50196e6c334778291e665a9e24e34a">elm_ctxpopup_content_unset</a>  (Evas_Object *obj)</dt>
+<dt><a class="anchor" id="_deprecated000420"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga59dd2ccce7f5890e7682606a89bcbbc2">elm_ctxpopup_content_unset</a>  (Evas_Object *obj)</dt>
 <dd><p class="startdd">use elm_object_content_unset()</p>
 <p class="enddd">use elm_object_content_unset() instead </p>
 </dd>
-<dt><a class="anchor" id="_deprecated000364"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#gad2692af8c50f5f855db568333d767005">elm_ctxpopup_direction_available_get</a>  (Evas_Object *obj, Elm_Ctxpopup_Direction direction)</dt>
+<dt><a class="anchor" id="_deprecated000364"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga641e4779f030e4bb294483db9c5851d7">elm_ctxpopup_direction_available_get</a>  (Evas_Object *obj, Elm_Ctxpopup_Direction direction)</dt>
 <dd><p class="startdd">Deprecated since 2.4.</p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000422"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#gaba052b43edbf4d602cdd47ae92b64b34">elm_ctxpopup_item_del</a>  (Elm_Object_Item *it)</dt>
+<dt><a class="anchor" id="_deprecated000422"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga8fe1d905da71606e0ea38fa4012c2462">elm_ctxpopup_item_del</a>  (Elm_Object_Item *it)</dt>
 <dd>Use elm_object_item_del() instead  </dd>
-<dt><a class="anchor" id="_deprecated000413"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga7a37a2efe46d2286d7900db87acfc969">elm_ctxpopup_item_disabled_get</a>  (const Elm_Object_Item *it)</dt>
+<dt><a class="anchor" id="_deprecated000413"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga34a7901bcd2ac4cd5b99e0d14bed9de0">elm_ctxpopup_item_disabled_get</a>  (const Elm_Object_Item *it)</dt>
 <dd>use elm_object_item_disabled_get() instead </dd>
-<dt><a class="anchor" id="_deprecated000414"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga26dc1fc6409e27fe42f9aff80f14976f">elm_ctxpopup_item_disabled_set</a>  (Elm_Object_Item *it, Eina_Bool disabled)</dt>
+<dt><a class="anchor" id="_deprecated000414"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#gabc2f065cf3872ccdb0a13b5dc69ac8fd">elm_ctxpopup_item_disabled_set</a>  (Elm_Object_Item *it, Eina_Bool disabled)</dt>
 <dd>use elm_object_item_disabled_set() instead </dd>
-<dt><a class="anchor" id="_deprecated000415"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga6d9fd77d7326d8ccc6b76429f424e1fc">elm_ctxpopup_item_icon_get</a>  (const Elm_Object_Item *it)</dt>
+<dt><a class="anchor" id="_deprecated000415"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga6033a4e7321dfb99321bfb1ef7f865e3">elm_ctxpopup_item_icon_get</a>  (const Elm_Object_Item *it)</dt>
 <dd>use elm_object_item_part_content_get() instead </dd>
-<dt><a class="anchor" id="_deprecated000416"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#gae32f96ce721f2eee3338b0e09f2c3b51">elm_ctxpopup_item_icon_set</a>  (Elm_Object_Item *it, Evas_Object *icon)</dt>
+<dt><a class="anchor" id="_deprecated000416"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#gae779f821f58a9785ef28cfabcee545ca">elm_ctxpopup_item_icon_set</a>  (Elm_Object_Item *it, Evas_Object *icon)</dt>
 <dd>use elm_object_item_part_content_set() instead </dd>
-<dt><a class="anchor" id="_deprecated000417"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga2132fdb883ad1c4e87da41d4a208b9e1">elm_ctxpopup_item_label_get</a>  (const Elm_Object_Item *it)</dt>
+<dt><a class="anchor" id="_deprecated000417"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#gaf0b48061e617396a1a537ea0223d023b">elm_ctxpopup_item_label_get</a>  (const Elm_Object_Item *it)</dt>
 <dd>use elm_object_item_text_get() instead </dd>
-<dt><a class="anchor" id="_deprecated000418"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#gae7f557829fd1f06384ba9e4c022b0a66">elm_ctxpopup_item_label_set</a>  (Elm_Object_Item *it, const char *label)</dt>
+<dt><a class="anchor" id="_deprecated000418"></a>Member <a class="el" href="group__Elm__Ctxpopup.html#ga60a0c1032069f4bde1ab662076eb5daa">elm_ctxpopup_item_label_set</a>  (Elm_Object_Item *it, const char *label)</dt>
 <dd>use <a class="el" href="group__Elm__General.html#gab7192654621dd090be86c94678635ea4">elm_object_item_text_set()</a> instead </dd>
-<dt><a class="anchor" id="_deprecated000396"></a>Member <a class="el" href="group__Elm__Caches.html#ga47ae2f4525552c4d3eeadaf4cd32f17d">elm_edje_collection_cache_all_set</a>  (int size)</dt>
-<dd><p class="startdd">Use elm_edje_collection_cache_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000396"></a>Member <a class="el" href="group__Elm__Caches.html#ga38841069f00b6dc254a1aa78552da679">elm_edje_collection_cache_all_set</a>  (int size)</dt>
+<dd><p class="startdd">Use elm_edje_collection_cache_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000395"></a>Member <a class="el" href="group__Elm__Caches.html#ga45503af89c71a5a81dfd6550300924a2">elm_edje_file_cache_all_set</a>  (int size)</dt>
-<dd><p class="startdd">Use elm_edje_file_cache_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000395"></a>Member <a class="el" href="group__Elm__Caches.html#gaf8af887f79ceb1c6e060903ec919a852">elm_edje_file_cache_all_set</a>  (int size)</dt>
+<dd><p class="startdd">Use elm_edje_file_cache_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
 <dt><a class="anchor" id="_deprecated000345"></a>Group <a class="el" href="group__Elm__Engine.html">Elm_Engine</a>  </dt>
-<dd>Please use <a class="el" href="group__Elm__Engine.html#gaaf392b17a4cccfef29659804612d077e">elm_config_accel_preference_override_set()</a> instead </dd>
-<dt><a class="anchor" id="_deprecated000388"></a>Member <a class="el" href="group__Elm__Fingers.html#gaa01d30bc852e2bd9f817f234ce95408c">elm_finger_size_all_set</a>  (Evas_Coord size)</dt>
-<dd>Use <a class="el" href="group__Elm__Fingers.html#ga2b9cca0123e16981fcc67313e00a66db">elm_config_finger_size_set()</a> and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a>  </dd>
-<dt><a class="anchor" id="_deprecated000508"></a>Member <a class="el" href="group__Elm__Flipselector.html#gace5265c91d0fb79e8a742f440b59a7c7">elm_flipselector_interval_get</a>  (const Evas_Object *obj)</dt>
+<dd>Please use <a class="el" href="group__Elm__Engine.html#ga2b9d7e5e9e0422ce9484ffaacf8effc4">elm_config_accel_preference_override_set()</a> instead </dd>
+<dt><a class="anchor" id="_deprecated000388"></a>Member <a class="el" href="group__Elm__Fingers.html#ga4320cb13af8782a9638039b3a2dd8751">elm_finger_size_all_set</a>  (Evas_Coord size)</dt>
+<dd>Use <a class="el" href="group__Elm__Fingers.html#gac22657c1e98628b4acde0461a0689577">elm_config_finger_size_set()</a> and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a>  </dd>
+<dt><a class="anchor" id="_deprecated000508"></a>Member <a class="el" href="group__Elm__Flipselector.html#ga6f990eab3e9cad245d0df7e890f370f7">elm_flipselector_interval_get</a>  (const Evas_Object *obj)</dt>
 <dd>Use elm_flipselector_first_interval_get() </dd>
-<dt><a class="anchor" id="_deprecated000507"></a>Member <a class="el" href="group__Elm__Flipselector.html#gac9d2ab6f53a189f050fba191b39edcee">elm_flipselector_interval_set</a>  (Evas_Object *obj, double interval)</dt>
+<dt><a class="anchor" id="_deprecated000507"></a>Member <a class="el" href="group__Elm__Flipselector.html#ga8ef79780c833c94e4395ceb7f7502494">elm_flipselector_interval_set</a>  (Evas_Object *obj, double interval)</dt>
 <dd>Use elm_flipselector_first_interval_set() </dd>
-<dt><a class="anchor" id="_deprecated000506"></a>Member <a class="el" href="group__Elm__Flipselector.html#ga30ed4f4b2d6cd0d243cb158b3e09998e">elm_flipselector_item_del</a>  (Elm_Object_Item *it)</dt>
+<dt><a class="anchor" id="_deprecated000506"></a>Member <a class="el" href="group__Elm__Flipselector.html#ga10daf67ef278454ddf24c575592276be">elm_flipselector_item_del</a>  (Elm_Object_Item *it)</dt>
 <dd><p class="startdd">Use elm_object_item_del() instead</p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000504"></a>Member <a class="el" href="group__Elm__Flipselector.html#ga2e639a36f40f05f8669e13b75ef121be">elm_flipselector_item_label_get</a>  (const Elm_Object_Item *it)</dt>
+<dt><a class="anchor" id="_deprecated000504"></a>Member <a class="el" href="group__Elm__Flipselector.html#ga6a65524c2ba5fc5088139d6765ed64d8">elm_flipselector_item_label_get</a>  (const Elm_Object_Item *it)</dt>
 <dd><p class="startdd">see elm_object_item_text_get() instead</p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000505"></a>Member <a class="el" href="group__Elm__Flipselector.html#gadab14675acfa5a565852cfd66ec1d7e0">elm_flipselector_item_label_set</a>  (Elm_Object_Item *it, const char *label)</dt>
+<dt><a class="anchor" id="_deprecated000505"></a>Member <a class="el" href="group__Elm__Flipselector.html#ga82b8492656c9611bcfdfc60f84718dcb">elm_flipselector_item_label_set</a>  (Elm_Object_Item *it, const char *label)</dt>
 <dd><p class="startdd">see <a class="el" href="group__Elm__General.html#gab7192654621dd090be86c94678635ea4">elm_object_item_text_set()</a> instead</p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000393"></a>Member <a class="el" href="group__Elm__Caches.html#ga575e71a9d7c3659584297835833e3089">elm_font_cache_all_set</a>  (int size)</dt>
-<dd><p class="startdd">Use elm_font_cache_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000393"></a>Member <a class="el" href="group__Elm__Caches.html#ga35960b0eea8278a2e09910b4c81dcbd1">elm_font_cache_all_set</a>  (int size)</dt>
+<dd><p class="startdd">Use elm_font_cache_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000390"></a>Member <a class="el" href="group__Elm__Fonts.html#ga5a6b5ffcb7b71bf50bd917535cec5089">elm_font_overlay_all_apply</a>  (void)</dt>
-<dd>Use elm_font_overlay_apply and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a>  </dd>
-<dt><a class="anchor" id="_deprecated000518"></a>Member <a class="el" href="group__Elm__Genlist.html#gab1ad8e9534d4642661870104479d8118">elm_genlist_horizontal_get</a>  (const Evas_Object *obj)</dt>
-<dd><p class="startdd">use <a class="el" href="group__Elm__Genlist.html#ga8dc69f91e5297e082ae6af63254d6532" title="Get the horizontal stretching mode.">elm_genlist_mode_get()</a></p>
+<dt><a class="anchor" id="_deprecated000390"></a>Member <a class="el" href="group__Elm__Fonts.html#ga90391abc311c7c3fce5d22c354b68987">elm_font_overlay_all_apply</a>  (void)</dt>
+<dd>Use elm_font_overlay_apply and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a>  </dd>
+<dt><a class="anchor" id="_deprecated000518"></a>Member <a class="el" href="group__Elm__Genlist.html#ga53a3ad56cacd3c897609368b375cfaed">elm_genlist_horizontal_get</a>  (const Evas_Object *obj)</dt>
+<dd><p class="startdd">use <a class="el" href="group__Elm__Genlist.html#gab2f9072ed9b28ce2a1f23290e4870f42" title="Get the horizontal stretching mode.">elm_genlist_mode_get()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000517"></a>Member <a class="el" href="group__Elm__Genlist.html#ga803bee271f7c4c1e6d02742843297bfd">elm_genlist_horizontal_set</a>  (Evas_Object *obj, Elm_List_Mode mode)</dt>
-<dd><p class="startdd">use <a class="el" href="group__Elm__Genlist.html#ga43143359883edf3305df94cd9b65ba8b" title="This sets the horizontal stretching mode.">elm_genlist_mode_set()</a></p>
+<dt><a class="anchor" id="_deprecated000517"></a>Member <a class="el" href="group__Elm__Genlist.html#ga398dfdff8093efa5df1c53063fa51802">elm_genlist_horizontal_set</a>  (Evas_Object *obj, Elm_List_Mode mode)</dt>
+<dd><p class="startdd">use <a class="el" href="group__Elm__Genlist.html#ga7749546e6666dd50ab7d1b8a4dbb99ad" title="This sets the horizontal stretching mode.">elm_genlist_mode_set()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000519"></a>Member <a class="el" href="group__Elm__Genlist.html#ga76ad01ee8edaeaa8a7e0d031da278283">elm_genlist_item_data_get</a>  (const Elm_Object_Item *it)</dt>
-<dd><p class="startdd">Use <a class="el" href="group__Elm__General.html#gad2a5aae55b9eecbc70599bbcc7370cce">elm_object_item_data_get()</a> instead</p>
+<dt><a class="anchor" id="_deprecated000519"></a>Member <a class="el" href="group__Elm__Genlist.html#gaa98a009d3758ca1fbed933b98fe2cdd0">elm_genlist_item_data_get</a>  (const Elm_Object_Item *it)</dt>
+<dd><p class="startdd">Use <a class="el" href="group__Elm__General.html#ga4465a576c55d197878aeafc0bacf7bb4">elm_object_item_data_get()</a> instead</p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000520"></a>Member <a class="el" href="group__Elm__Genlist.html#gaac16e5014f2d726ceeeefa8cdc320e43">elm_genlist_item_data_set</a>  (Elm_Object_Item *it, const void *data)</dt>
-<dd><p class="startdd">Use <a class="el" href="group__Elm__General.html#ga957bfd5e9931a96772909529f1f6c4ec">elm_object_item_data_set()</a> instead</p>
+<dt><a class="anchor" id="_deprecated000520"></a>Member <a class="el" href="group__Elm__Genlist.html#ga515df8cbed0f66fc106444f9646ae03c">elm_genlist_item_data_set</a>  (Elm_Object_Item *it, const void *data)</dt>
+<dd><p class="startdd">Use <a class="el" href="group__Elm__General.html#ga8ee7715917ce7f61cf2b9d956f02c21c">elm_object_item_data_set()</a> instead</p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000523"></a>Member <a class="el" href="group__Elm__Genlist.html#gae1677fbbd4d7663383ff464e92a76a7a">elm_genlist_item_del</a>  (Elm_Object_Item *it)</dt>
+<dt><a class="anchor" id="_deprecated000523"></a>Member <a class="el" href="group__Elm__Genlist.html#gad31bde882d476d2ac7dc76bff06313fe">elm_genlist_item_del</a>  (Elm_Object_Item *it)</dt>
 <dd><p class="startdd">Use elm_object_item_del() instead</p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000522"></a>Member <a class="el" href="group__Elm__Genlist.html#ga5e3a9cd8abf4e27081b313471aa8fa42">elm_genlist_item_disabled_get</a>  (const Elm_Object_Item *it)</dt>
+<dt><a class="anchor" id="_deprecated000522"></a>Member <a class="el" href="group__Elm__Genlist.html#gaf7911eb32146845982646115eee4e1e6">elm_genlist_item_disabled_get</a>  (const Elm_Object_Item *it)</dt>
 <dd>Use elm_object_item_disabled_get() instead </dd>
-<dt><a class="anchor" id="_deprecated000521"></a>Member <a class="el" href="group__Elm__Genlist.html#gabd0f6268223cd0fa5fc00d35a966ddaa">elm_genlist_item_disabled_set</a>  (Elm_Object_Item *it, Eina_Bool disabled)</dt>
+<dt><a class="anchor" id="_deprecated000521"></a>Member <a class="el" href="group__Elm__Genlist.html#ga6e6fb5417cad328d99e15721088c194f">elm_genlist_item_disabled_set</a>  (Elm_Object_Item *it, Eina_Bool disabled)</dt>
 <dd>Use elm_object_item_disabled_set() instead </dd>
-<dt><a class="anchor" id="_deprecated000525"></a>Member <a class="el" href="group__Elm__Genlist.html#ga45817af2d27c9a3b1635458ca2ba3ea7">elm_genlist_item_flags_get</a>  (const Elm_Object_Item *it)</dt>
+<dt><a class="anchor" id="_deprecated000525"></a>Member <a class="el" href="group__Elm__Genlist.html#ga556eca403280d739df158ab42fedf8cc">elm_genlist_item_flags_get</a>  (const Elm_Object_Item *it)</dt>
 <dd><p class="startdd">Use elm_genlist_item_type_get() instead</p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000524"></a>Member <a class="el" href="group__Elm__Genlist.html#gabde0c45719a6ef385b591f5a296a9267">elm_genlist_item_genlist_get</a>  (const Elm_Object_Item *it)</dt>
+<dt><a class="anchor" id="_deprecated000524"></a>Member <a class="el" href="group__Elm__Genlist.html#gac4478c3660dcca98c833ea06a68d0acc">elm_genlist_item_genlist_get</a>  (const Elm_Object_Item *it)</dt>
 <dd>Use elm_object_item_widget_get() instead </dd>
-<dt><a class="anchor" id="_deprecated000394"></a>Member <a class="el" href="group__Elm__Caches.html#gab87b96f1da9b05603d5714270bef835b">elm_image_cache_all_set</a>  (int size)</dt>
-<dd><p class="startdd">Use elm_image_cache_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000394"></a>Member <a class="el" href="group__Elm__Caches.html#gad72d4808e1d176d90f552e1ed70fa417">elm_image_cache_all_set</a>  (int size)</dt>
+<dd><p class="startdd">Use elm_image_cache_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000509"></a>Member <a class="el" href="group__Elm__Focus.html#gafc5f67b0dde0ea90e79489eda1529d33">elm_object_focus</a>  (Evas_Object *obj)</dt>
-<dd>use <a class="el" href="group__Elm__Focus.html#gab9ff5db66bbce97be52ca047d272e158">elm_object_focus_set()</a> instead. </dd>
-<dt><a class="anchor" id="_deprecated000511"></a>Member <a class="el" href="group__Elm__Focus.html#ga43fcd64b386452337519571ddbb10787">elm_object_focus_direction_go</a>  (Evas_Object *obj, int x, int y)</dt>
+<dt><a class="anchor" id="_deprecated000509"></a>Member <a class="el" href="group__Elm__Focus.html#ga9bba23f36329b57d978b3a71a446c578">elm_object_focus</a>  (Evas_Object *obj)</dt>
+<dd>use <a class="el" href="group__Elm__Focus.html#ga05e39b5e60ad861c63100c811855ef55">elm_object_focus_set()</a> instead. </dd>
+<dt><a class="anchor" id="_deprecated000511"></a>Member <a class="el" href="group__Elm__Focus.html#gaceecdca9ab7d02f19f21b52a0083fa33">elm_object_focus_direction_go</a>  (Evas_Object *obj, int x, int y)</dt>
 <dd><p class="startdd">Support it later.</p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000510"></a>Member <a class="el" href="group__Elm__Focus.html#ga431c62a3f8f2b241d3f3a7f22c2a8aec">elm_object_unfocus</a>  (Evas_Object *obj)</dt>
-<dd>use <a class="el" href="group__Elm__Focus.html#gab9ff5db66bbce97be52ca047d272e158">elm_object_focus_set()</a> instead. </dd>
-<dt><a class="anchor" id="_deprecated000397"></a>Member <a class="el" href="group__Elm__Profile.html#ga681ff58757232393f6c3961b04754fb0">elm_profile_all_set</a>  (const char *profile)</dt>
-<dd><p class="startdd">Use elm_profile_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000510"></a>Member <a class="el" href="group__Elm__Focus.html#ga62d5d94680bd567608b4293b7c424530">elm_object_unfocus</a>  (Evas_Object *obj)</dt>
+<dd>use <a class="el" href="group__Elm__Focus.html#ga05e39b5e60ad861c63100c811855ef55">elm_object_focus_set()</a> instead. </dd>
+<dt><a class="anchor" id="_deprecated000397"></a>Member <a class="el" href="group__Elm__Profile.html#ga89ae7eb05eb82a00408e3d6142e4eb73">elm_profile_all_set</a>  (const char *profile)</dt>
+<dd><p class="startdd">Use elm_profile_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000374"></a>Member <a class="el" href="group__Elm__General.html#gafe4131fd31d6e11e0b47763a87b04f31">elm_quicklaunch_cleanup</a>  (void)</dt>
+<dt><a class="anchor" id="_deprecated000374"></a>Member <a class="el" href="group__Elm__General.html#gac27c718af7fc2a064b854114ab3f55f4">elm_quicklaunch_cleanup</a>  (void)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000376"></a>Member <a class="el" href="group__Elm__General.html#gad4b67ed5c97753ffebe8fb581861bdf2">elm_quicklaunch_exe_path_get</a>  (const char *exe, const char *cwd)</dt>
+<dt><a class="anchor" id="_deprecated000376"></a>Member <a class="el" href="group__Elm__General.html#ga8c67a6b9598f84a57020d0d7b4a70961">elm_quicklaunch_exe_path_get</a>  (const char *exe, const char *cwd)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000375"></a>Member <a class="el" href="group__Elm__General.html#ga9822d196f9d0af9ceb69001dea22fea5">elm_quicklaunch_fallback</a>  (int argc, char **argv)</dt>
+<dt><a class="anchor" id="_deprecated000375"></a>Member <a class="el" href="group__Elm__General.html#gad5de2592a6655b487beafe94bb393b55">elm_quicklaunch_fallback</a>  (int argc, char **argv)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000373"></a>Member <a class="el" href="group__Elm__General.html#ga009a5f56ab736d1641e9ae1e8deedf64">elm_quicklaunch_fork</a>  (int argc, char **argv, char *cwd, void(*postfork_func)(void *data), void *postfork_data)</dt>
+<dt><a class="anchor" id="_deprecated000373"></a>Member <a class="el" href="group__Elm__General.html#gacd3ecaa7012a5b8e73be219cf95eacdd">elm_quicklaunch_fork</a>  (int argc, char **argv, char *cwd, void(*postfork_func)(void *data), void *postfork_data)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000367"></a>Member <a class="el" href="group__Elm__General.html#gafe60a5e5e1b1154c5cb922f6e4cdf9e9">elm_quicklaunch_init</a>  (int argc, char **argv)</dt>
+<dt><a class="anchor" id="_deprecated000367"></a>Member <a class="el" href="group__Elm__General.html#gae898e42404764e26641f9df8b82a6102">elm_quicklaunch_init</a>  (int argc, char **argv)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000366"></a>Member <a class="el" href="group__Elm__General.html#gaf5d07b83c0020c8c8be0d8d5c734f268">elm_quicklaunch_mode_get</a>  (void)</dt>
+<dt><a class="anchor" id="_deprecated000366"></a>Member <a class="el" href="group__Elm__General.html#ga2ea6deb35748fd46851ec5fe54cb1d8a">elm_quicklaunch_mode_get</a>  (void)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000365"></a>Member <a class="el" href="group__Elm__General.html#gaf2ff57fc5b6781c100cb5c7c7440b9dd">elm_quicklaunch_mode_set</a>  (Eina_Bool ql_on)</dt>
+<dt><a class="anchor" id="_deprecated000365"></a>Member <a class="el" href="group__Elm__General.html#ga95aad040a9fb144952d57fa311cade74">elm_quicklaunch_mode_set</a>  (Eina_Bool ql_on)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000372"></a>Member <a class="el" href="group__Elm__General.html#ga415143dfa3e64e24a3bef20008c3a2b6">elm_quicklaunch_prepare</a>  (int argc, char **argv, const char *cwd)</dt>
+<dt><a class="anchor" id="_deprecated000372"></a>Member <a class="el" href="group__Elm__General.html#gaee7802ea310a2b48c5ea5c986b8ddf8a">elm_quicklaunch_prepare</a>  (int argc, char **argv, const char *cwd)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000371"></a>Member <a class="el" href="group__Elm__General.html#ga81a5967a8422553cdd9adccce8d1ac35">elm_quicklaunch_seed</a>  (void)</dt>
+<dt><a class="anchor" id="_deprecated000371"></a>Member <a class="el" href="group__Elm__General.html#ga02ec7f9c42514a20d67c5192c5c515ad">elm_quicklaunch_seed</a>  (void)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000370"></a>Member <a class="el" href="group__Elm__General.html#gaa4bf204062b5f2c36303f593aeb0ff4b">elm_quicklaunch_shutdown</a>  (void)</dt>
+<dt><a class="anchor" id="_deprecated000370"></a>Member <a class="el" href="group__Elm__General.html#ga8c8dcb00968f9aa6cf1ba01dc54a6569">elm_quicklaunch_shutdown</a>  (void)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000368"></a>Member <a class="el" href="group__Elm__General.html#gaa2d570087ee4de827740b646f66db3e2">elm_quicklaunch_sub_init</a>  (int argc, char **argv)</dt>
+<dt><a class="anchor" id="_deprecated000368"></a>Member <a class="el" href="group__Elm__General.html#ga2b6eeba752245aa93fbbd24c55cdf61f">elm_quicklaunch_sub_init</a>  (int argc, char **argv)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000369"></a>Member <a class="el" href="group__Elm__General.html#ga0a8f08841d9a78a7160f4156ae0002b7">elm_quicklaunch_sub_shutdown</a>  (void)</dt>
+<dt><a class="anchor" id="_deprecated000369"></a>Member <a class="el" href="group__Elm__General.html#ga6b1652f25b90fdd8ab08ed22e7db7b10">elm_quicklaunch_sub_shutdown</a>  (void)</dt>
 <dd>Deprecated since 2.4. Exposed symbol used only by macros and should not be used by apps </dd>
-<dt><a class="anchor" id="_deprecated000389"></a>Member <a class="el" href="group__Elm__Scaling.html#ga0ef3cc0b223b46fb4a69110065daca56">elm_scale_all_set</a>  (double scale)</dt>
-<dd>use elm_scale_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a>  </dd>
-<dt><a class="anchor" id="_deprecated000398"></a>Member <a class="el" href="group__Elm__Scrolling.html#gac2ad182961213e76854fc660cae0d001">elm_scroll_bounce_enabled_all_set</a>  (Eina_Bool enabled)</dt>
-<dd><p class="startdd">Use elm_scroll_bounce_enabled_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000389"></a>Member <a class="el" href="group__Elm__Scaling.html#gaa880e269df13bae603bc1e1172bddb8f">elm_scale_all_set</a>  (double scale)</dt>
+<dd>use elm_scale_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a>  </dd>
+<dt><a class="anchor" id="_deprecated000398"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga0aabcdac1f63575e0c59172853b69e95">elm_scroll_bounce_enabled_all_set</a>  (Eina_Bool enabled)</dt>
+<dd><p class="startdd">Use elm_scroll_bounce_enabled_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000399"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga3f6b9a4d5bd02425c780cb759460e884">elm_scroll_bounce_friction_all_set</a>  (double friction)</dt>
-<dd><p class="startdd">Use elm_scroll_bounce_friction_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000399"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga9936dce59a0b5281827d5b1087e052e2">elm_scroll_bounce_friction_all_set</a>  (double friction)</dt>
+<dd><p class="startdd">Use elm_scroll_bounce_friction_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000401"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga47bd6d7b1fb764b5aaa3ea9d219f212a">elm_scroll_bring_in_scroll_friction_all_set</a>  (double friction)</dt>
-<dd><p class="startdd">Use elm_scroll_bring_in_scroll_friction_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000401"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga9f251d8abf092f6d20d126536a8f1b7a">elm_scroll_bring_in_scroll_friction_all_set</a>  (double friction)</dt>
+<dd><p class="startdd">Use elm_scroll_bring_in_scroll_friction_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000400"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga6f21676d49f75da9f724e76243240654">elm_scroll_page_scroll_friction_all_set</a>  (double friction)</dt>
-<dd><p class="startdd">Use elm_scroll_page_scroll_friction_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000400"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga3fd765a1b103a345b30eb97e12798feb">elm_scroll_page_scroll_friction_all_set</a>  (double friction)</dt>
+<dd><p class="startdd">Use elm_scroll_page_scroll_friction_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000407"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga9561c79f87b70406c15a29a7202a594d">elm_scroll_thumbscroll_border_friction_all_set</a>  (double friction)</dt>
-<dd>Use elm_scroll_thumbscroll_border_friction_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a> </dd>
-<dt><a class="anchor" id="_deprecated000403"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga8b34476aef17c549fe34349a9cb873d1">elm_scroll_thumbscroll_enabled_all_set</a>  (Eina_Bool enabled)</dt>
-<dd>Use elm_scroll_thumbscroll_enabled_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a> </dd>
-<dt><a class="anchor" id="_deprecated000406"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga7ea9386ab50162470dd593d6cfdacec5">elm_scroll_thumbscroll_friction_all_set</a>  (double friction)</dt>
-<dd>Use elm_scroll_thumbscroll_friction_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a> </dd>
-<dt><a class="anchor" id="_deprecated000405"></a>Member <a class="el" href="group__Elm__Scrolling.html#gafe24b6d6e4258fa8f8397cb7bab292ec">elm_scroll_thumbscroll_momentum_threshold_all_set</a>  (double threshold)</dt>
-<dd>Use elm_scroll_thumbscroll_momentum_threshold_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a> </dd>
-<dt><a class="anchor" id="_deprecated000408"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga892167ea1a86d8732e654b5c77efd37f">elm_scroll_thumbscroll_sensitivity_friction_all_set</a>  (double friction)</dt>
-<dd>Use elm_scroll_thumbscroll_sensitivity_friction_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a> </dd>
-<dt><a class="anchor" id="_deprecated000404"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga238d116f0fbb65ed2d7336858d0e6bbd">elm_scroll_thumbscroll_threshold_all_set</a>  (unsigned int threshold)</dt>
-<dd>Use elm_scroll_thumbscroll_threshold_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a> </dd>
-<dt><a class="anchor" id="_deprecated000402"></a>Member <a class="el" href="group__Elm__Scrolling.html#gaee311a3d5ac5bc128609d05accd541cf">elm_scroll_zoom_friction_all_set</a>  (double friction)</dt>
-<dd><p class="startdd">Use elm_scroll_zoom_friction_set() and <a class="el" href="group__Elm__Config.html#ga54ae49ca4aa798ef3eeb66b563c12280">elm_config_all_flush()</a></p>
+<dt><a class="anchor" id="_deprecated000407"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga7427e54b911504d58991c9315494a68c">elm_scroll_thumbscroll_border_friction_all_set</a>  (double friction)</dt>
+<dd>Use elm_scroll_thumbscroll_border_friction_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a> </dd>
+<dt><a class="anchor" id="_deprecated000403"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga6c1062625d051a0011f2a51681789305">elm_scroll_thumbscroll_enabled_all_set</a>  (Eina_Bool enabled)</dt>
+<dd>Use elm_scroll_thumbscroll_enabled_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a> </dd>
+<dt><a class="anchor" id="_deprecated000406"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga7a37bfd80e5a17613dea769247107c4a">elm_scroll_thumbscroll_friction_all_set</a>  (double friction)</dt>
+<dd>Use elm_scroll_thumbscroll_friction_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a> </dd>
+<dt><a class="anchor" id="_deprecated000405"></a>Member <a class="el" href="group__Elm__Scrolling.html#gab06822d4395635230a215d0c4b6adc50">elm_scroll_thumbscroll_momentum_threshold_all_set</a>  (double threshold)</dt>
+<dd>Use elm_scroll_thumbscroll_momentum_threshold_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a> </dd>
+<dt><a class="anchor" id="_deprecated000408"></a>Member <a class="el" href="group__Elm__Scrolling.html#gaf042d93efa41219dfcd567ab5a80d7d6">elm_scroll_thumbscroll_sensitivity_friction_all_set</a>  (double friction)</dt>
+<dd>Use elm_scroll_thumbscroll_sensitivity_friction_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a> </dd>
+<dt><a class="anchor" id="_deprecated000404"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga134b4589db1a7c65e799893481569c8b">elm_scroll_thumbscroll_threshold_all_set</a>  (unsigned int threshold)</dt>
+<dd>Use elm_scroll_thumbscroll_threshold_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a> </dd>
+<dt><a class="anchor" id="_deprecated000402"></a>Member <a class="el" href="group__Elm__Scrolling.html#ga6a02988694b4741b84e581c607178744">elm_scroll_zoom_friction_all_set</a>  (double friction)</dt>
+<dd><p class="startdd">Use elm_scroll_zoom_friction_set() and <a class="el" href="group__Elm__Config.html#ga2906ee30d3976ab4917b3287eecdd526">elm_config_all_flush()</a></p>
 <p class="enddd"></p>
 </dd>
-<dt><a class="anchor" id="_deprecated000350"></a>Member <a class="el" href="group__Elm__Entry.html#gacf07b1403464769503b5008c87aa6464">elm_scrolled_entry_cnp_textonly_get</a>  (Evas_Object *obj)</dt>
+<dt><a class="anchor" id="_deprecated000350"></a>Member <a class="el" href="group__Elm__Entry.html#gaeba1ccf8aa72ba84e799d8b5368ca5e4">elm_scrolled_entry_cnp_textonly_get</a>  (Evas_Object *obj)</dt>
 <dd></dd>
-<dt><a class="anchor" id="_deprecated000349"></a>Member <a class="el" href="group__Elm__Entry.html#ga1774f59ed858f2499d7f1b65e7eec1de">elm_scrolled_entry_cnp_textonly_set</a>  (Evas_Object *obj, Eina_Bool textonly)</dt>
+<dt><a class="anchor" id="_deprecated000349"></a>Member <a class="el" href="group__Elm__Entry.html#ga7e8c3690191cc4b45b9006929dd89ca4">elm_scrolled_entry_cnp_textonly_set</a>  (Evas_Object *obj, Eina_Bool textonly)</dt>
 <dd></dd>
-<dt><a class="anchor" id="_deprecated000800"></a>Member <a class="el" href="group__Elm__Win.html#gadeb2eac6fb758dffeeaf9ec682ed92f2">elm_win_center</a>  (Elm_Win *obj, Eina_Bool h, Eina_Bool v)</dt>
+<dt><a class="anchor" id="_deprecated000800"></a>Member <a class="el" href="group__Elm__Win.html#gab51ab0192936ba3906d98636164b00e0">elm_win_center</a>  (Elm_Win *obj, Eina_Bool h, Eina_Bool v)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000797"></a>Member <a class="el" href="group__Elm__Win.html#gad0fe7e379f9e9642984d8dc0f1f22f8c">elm_win_fullscreen_get</a>  (const Elm_Win *obj)</dt>
+<dt><a class="anchor" id="_deprecated000797"></a>Member <a class="el" href="group__Elm__Win.html#ga9f3a85fefdf3502cf25ef540b1abd093">elm_win_fullscreen_get</a>  (const Elm_Win *obj)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000796"></a>Member <a class="el" href="group__Elm__Win.html#ga33412b09353222c967276ec660a3bedb">elm_win_fullscreen_set</a>  (Elm_Win *obj, Eina_Bool fullscreen)</dt>
+<dt><a class="anchor" id="_deprecated000796"></a>Member <a class="el" href="group__Elm__Win.html#gad2deb4b03c021945c7c6f5ae867c594e">elm_win_fullscreen_set</a>  (Elm_Win *obj, Eina_Bool fullscreen)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000783"></a>Member <a class="el" href="group__Elm__Win.html#ga4b3644f3d3d562961ff32feace117575">elm_win_keyboard_win_get</a>  (const Elm_Win *obj)</dt>
+<dt><a class="anchor" id="_deprecated000783"></a>Member <a class="el" href="group__Elm__Win.html#ga1b3d6c6c7ce589a8dcd76d311a205b09">elm_win_keyboard_win_get</a>  (const Elm_Win *obj)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000782"></a>Member <a class="el" href="group__Elm__Win.html#ga5147a1661fa3f40b6ce9c2d5ff97baed">elm_win_keyboard_win_set</a>  (Elm_Win *obj, Eina_Bool is_keyboard)</dt>
+<dt><a class="anchor" id="_deprecated000782"></a>Member <a class="el" href="group__Elm__Win.html#gacfd017706433ce54c204f39ae033dce6">elm_win_keyboard_win_set</a>  (Elm_Win *obj, Eina_Bool is_keyboard)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000785"></a>Member <a class="el" href="group__Elm__Win.html#ga0515241028d2bdfe27aef24fe22ac9fa">elm_win_override_get</a>  (const Elm_Win *obj)</dt>
+<dt><a class="anchor" id="_deprecated000785"></a>Member <a class="el" href="group__Elm__Win.html#ga1716f7528cba0ea9a397e72d8d805dbc">elm_win_override_get</a>  (const Elm_Win *obj)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000784"></a>Member <a class="el" href="group__Elm__Win.html#gabcda9a4b2a5ab4e8e4d3acea3c761167">elm_win_override_set</a>  (Elm_Win *obj, Eina_Bool override)</dt>
+<dt><a class="anchor" id="_deprecated000784"></a>Member <a class="el" href="group__Elm__Win.html#ga2d70216df3c06f17f9892df7af2bc3c9">elm_win_override_set</a>  (Elm_Win *obj, Eina_Bool override)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000348"></a>Member <a class="el" href="group__Elm__Win.html#ga816aa687623a4ede845fc2a769c9c6bc">elm_win_profiles_set</a>  (Evas_Object *obj, const char **profiles, unsigned int num_profiles)</dt>
+<dt><a class="anchor" id="_deprecated000348"></a>Member <a class="el" href="group__Elm__Win.html#ga6687658a417405b5b25b281c6b462729">elm_win_profiles_set</a>  (Evas_Object *obj, const char **profiles, unsigned int num_profiles)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000799"></a>Member <a class="el" href="group__Elm__Win.html#gafd65169d2e4cdeb17b95fb3c39747092">elm_win_quickpanel_get</a>  (const Elm_Win *obj)</dt>
+<dt><a class="anchor" id="_deprecated000799"></a>Member <a class="el" href="group__Elm__Win.html#gad52d4d11c613f12498b4be5e2031dc48">elm_win_quickpanel_get</a>  (const Elm_Win *obj)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000793"></a>Member <a class="el" href="group__Elm__Win.html#ga17cbcfe8a5c7536207d156c72aae1b95">elm_win_quickpanel_priority_major_get</a>  (const Elm_Win *obj)</dt>
+<dt><a class="anchor" id="_deprecated000793"></a>Member <a class="el" href="group__Elm__Win.html#ga0325a2b7b160ed6a2e0a93cefa079a0b">elm_win_quickpanel_priority_major_get</a>  (const Elm_Win *obj)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000792"></a>Member <a class="el" href="group__Elm__Win.html#gabb7b3a043252e4dbaba9bf5acd24be99">elm_win_quickpanel_priority_major_set</a>  (Elm_Win *obj, int priority)</dt>
+<dt><a class="anchor" id="_deprecated000792"></a>Member <a class="el" href="group__Elm__Win.html#gaff1bc030fca8caa48f4adebfb4c899d7">elm_win_quickpanel_priority_major_set</a>  (Elm_Win *obj, int priority)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000789"></a>Member <a class="el" href="group__Elm__Win.html#ga54e400f8b346ae3d360cf9492ae75759">elm_win_quickpanel_priority_minor_get</a>  (const Elm_Win *obj)</dt>
+<dt><a class="anchor" id="_deprecated000789"></a>Member <a class="el" href="group__Elm__Win.html#ga92c3d76d9c992112921b42cb69adc7a7">elm_win_quickpanel_priority_minor_get</a>  (const Elm_Win *obj)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000788"></a>Member <a class="el" href="group__Elm__Win.html#gacc8e59e13575f099336fcb4bf383a3ba">elm_win_quickpanel_priority_minor_set</a>  (Elm_Win *obj, int priority)</dt>
+<dt><a class="anchor" id="_deprecated000788"></a>Member <a class="el" href="group__Elm__Win.html#ga25f3e9028e74bd882ed79dd368b11108">elm_win_quickpanel_priority_minor_set</a>  (Elm_Win *obj, int priority)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000798"></a>Member <a class="el" href="group__Elm__Win.html#gad4211d4cf770237a20fff1d584d4687f">elm_win_quickpanel_set</a>  (Elm_Win *obj, Eina_Bool quickpanel)</dt>
+<dt><a class="anchor" id="_deprecated000798"></a>Member <a class="el" href="group__Elm__Win.html#ga622cece7b26cfcde388029e92aa109ca">elm_win_quickpanel_set</a>  (Elm_Win *obj, Eina_Bool quickpanel)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000787"></a>Member <a class="el" href="group__Elm__Win.html#ga78cf5898b10e1c7fb106d60aaaed02b8">elm_win_quickpanel_zone_get</a>  (const Elm_Win *obj)</dt>
+<dt><a class="anchor" id="_deprecated000787"></a>Member <a class="el" href="group__Elm__Win.html#gabfa4c6470cece1d3f8b96b5f6513bfdb">elm_win_quickpanel_zone_get</a>  (const Elm_Win *obj)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000786"></a>Member <a class="el" href="group__Elm__Win.html#gad2423927fc30c26c2b94b2f855dc2ba8">elm_win_quickpanel_zone_set</a>  (Elm_Win *obj, int zone)</dt>
+<dt><a class="anchor" id="_deprecated000786"></a>Member <a class="el" href="group__Elm__Win.html#gaf7be1c1df07a0990153eba94dea6ac88">elm_win_quickpanel_zone_set</a>  (Elm_Win *obj, int zone)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000795"></a>Member <a class="el" href="group__Elm__Win.html#ga7f7ff247e08956399ee59774e0ca1195">elm_win_shaped_get</a>  (const Elm_Win *obj)</dt>
+<dt><a class="anchor" id="_deprecated000795"></a>Member <a class="el" href="group__Elm__Win.html#ga346de3921b32ffadcb497f20b9bad6ed">elm_win_shaped_get</a>  (const Elm_Win *obj)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000794"></a>Member <a class="el" href="group__Elm__Win.html#gada3200fb3fa58dc4fd5d00a9ff012521">elm_win_shaped_set</a>  (Elm_Win *obj, Eina_Bool shaped)</dt>
+<dt><a class="anchor" id="_deprecated000794"></a>Member <a class="el" href="group__Elm__Win.html#ga18d395e7444b9a9782c7b35d974f53c3">elm_win_shaped_set</a>  (Elm_Win *obj, Eina_Bool shaped)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000791"></a>Member <a class="el" href="group__Elm__Win.html#ga552078f473fbfdff339ff404031e2a0e">elm_win_sticky_get</a>  (const Elm_Win *obj)</dt>
+<dt><a class="anchor" id="_deprecated000791"></a>Member <a class="el" href="group__Elm__Win.html#ga990221a752590c14b9bc110ff24bec52">elm_win_sticky_get</a>  (const Elm_Win *obj)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000790"></a>Member <a class="el" href="group__Elm__Win.html#ga0c28938ac9cf73b4157e07bab30b6796">elm_win_sticky_set</a>  (Elm_Win *obj, Eina_Bool sticky)</dt>
+<dt><a class="anchor" id="_deprecated000790"></a>Member <a class="el" href="group__Elm__Win.html#gad1247ac151d8a7ee4fa7e75b2246d585">elm_win_sticky_set</a>  (Elm_Win *obj, Eina_Bool sticky)</dt>
 <dd>Deprecated since Tizen 2.4 </dd>
-<dt><a class="anchor" id="_deprecated000804"></a>Member <a class="el" href="group__Evas__Object__Image.html#ga6da0fe525efd37b0dc11b5c766fa9a54">evas_object_image_data_convert</a>  (Evas_Object *obj, Evas_Colorspace to_cspace) EINA_WARN_UNUSED_RESULT EINA_DEPRECATED</dt>
+<dt><a class="anchor" id="_deprecated000804"></a>Member <a class="el" href="group__Evas__Object__Image.html#ga2d7ac31db43f0f2f6ba80e317abb7144">evas_object_image_data_convert</a>  (Evas_Object *obj, Evas_Colorspace to_cspace) EINA_DEPRECATED</dt>
 <dd>evas_object_image_data_conver </dd>
-<dt><a class="anchor" id="_deprecated000805"></a>Member <a class="el" href="group__Evas__Object__Image.html#gac0473436b3514d8428c8972ff87a3b65">evas_object_image_pixels_import</a>  (Evas_Object *obj, Evas_Pixel_Import_Source *pixels) <a class="el" href="group__Eina__Types__Group.html#ga1a066aa3069f7e43279021cc1e378fac">EINA_ARG_NONNULL(2)</a> EINA_DEPRECATED</dt>
+<dt><a class="anchor" id="_deprecated000805"></a>Member <a class="el" href="group__Evas__Object__Image.html#gac11c7b56b285c96b7a77a56fc25f3f4c">evas_object_image_pixels_import</a>  (Evas_Object *obj, Evas_Pixel_Import_Source *pixels) EINA_DEPRECATED</dt>
 <dd>evas_object_image_pixels_impor </dd>
-<dt><a class="anchor" id="_deprecated000806"></a>Member <a class="el" href="group__Evas__Object__Image.html#gab87db9abd7b8bb2a15a9b0b26ba057c4">evas_object_image_reload</a>  (Evas_Object *obj) EINA_DEPRECATED</dt>
+<dt><a class="anchor" id="_deprecated000806"></a>Member <a class="el" href="group__Evas__Object__Image.html#ga8f50680090ece901a20d62fa67959c52">evas_object_image_reload</a>  (Evas_Object *obj) EINA_DEPRECATED</dt>
 <dd>evas_object_image_reloa </dd>
-<dt><a class="anchor" id="_deprecated000807"></a>Member <a class="el" href="group__Evas__Object__Text.html#gaaf0d08dc8c47a026ad67bb34f5fccf1e">evas_object_text_filter_program_set</a>  (Eo *obj, const char *code)</dt>
+<dt><a class="anchor" id="_deprecated000807"></a>Member <a class="el" href="group__Evas__Object__Text.html#ga85dbbc558778c514728ad51b219a0b7e">evas_object_text_filter_program_set</a>  (Eo *obj, const char *code)</dt>
 <dd>Deprecated since Tizen 2.4  </dd>
-<dt><a class="anchor" id="_deprecated000808"></a>Member <a class="el" href="group__Evas__Object__Text.html#ga64fb830b2b14be3afbfc93bd25e804ef">evas_object_text_filter_source_set</a>  (Eo *obj, const char *name, Evas_Object *eo_source)</dt>
+<dt><a class="anchor" id="_deprecated000808"></a>Member <a class="el" href="group__Evas__Object__Text.html#gadd36745fd913ef1519583ad5f4fb7bd3">evas_object_text_filter_source_set</a>  (Eo *obj, const char *name, Evas_Object *eo_source)</dt>
 <dd>Deprecated since Tizen 2.4  </dd>
-<dt><a class="anchor" id="_deprecated000801"></a>Member <a class="el" href="group__Evas__Object__Textblock.html#ga1c5a497d380609c74526e06f56523571">evas_textblock_cursor_set_at_format</a>  (Evas_Textblock_Cursor *cur, const Evas_Object_Textblock_Node_Format *n) EINA_ARG_NONNULL(1</dt>
+<dt><a class="anchor" id="_deprecated000801"></a>Member <a class="el" href="group__Evas__Object__Textblock.html#gaa86497751bf74b60391aa9d8cfdacd53">evas_textblock_cursor_set_at_format</a>  (Evas_Textblock_Cursor *cur, const Evas_Object_Textblock_Node_Format *n)</dt>
 <dd>Use evas_textblock_cursor_at_format_set instead Deprecated since Tizen 2.4  </dd>
 <dt><a class="anchor" id="_deprecated000924"></a>Member <a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga958e6b3e4ebdbdafc781a860c62620f3">FOLDER_MODIFIED_TIME</a>  </dt>
 <dd>Deprecated since 4.0.  </dd>
@@ -1192,7 +1193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dt><a class="anchor" id="_deprecated000967"></a>Member <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gac9f90b3967056749c033c6c8f1c847ae">media_info_create</a>  (const char *path, media_info_h *media) TIZEN_DEPRECATED_API</dt>
 <dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga88ebad54141d3e44bd8622116a9c3545" title="Inserts the content file into the media database.">media_info_insert_to_db()</a> instead.  </dd>
 <dt><a class="anchor" id="_deprecated000938"></a>Member <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga29f76eade9aa95a255c7061777d49c95">media_info_delete_batch_from_db</a>  (filter_h filter) TIZEN_DEPRECATED_API</dt>
-<dd>Deprecated since 4.0.  </dd>
+<dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gaf3c65c5fe726e752bd9d3814ccf63ee7" title="Requests to scan a media folder, asynchronously.">media_content_scan_folder()</a> or <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga7b373b6e9e80dd5173db6555b372a2ea" title="Deletes the media information from the media database.">media_info_delete_from_db()</a> instead.  </dd>
 <dt><a class="anchor" id="_deprecated000945"></a>Member <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga8728b2fda397b8eec41ef88d7daa041d">media_info_get_age_rating</a>  (media_info_h media, char **age_rating) TIZEN_DEPRECATED_API</dt>
 <dd>Deprecated since 4.0.  </dd>
 <dt><a class="anchor" id="_deprecated000940"></a>Member <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga19735ea37c6b5df9dd9c8e636182e3df">media_info_get_author</a>  (media_info_h media, char **author) TIZEN_DEPRECATED_API</dt>

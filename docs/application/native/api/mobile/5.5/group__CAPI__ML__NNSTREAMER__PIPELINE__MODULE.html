@@ -1172,6 +1172,7 @@ The <em>info</em> can be used only in the callback. To use outside, make a copy.
 <div class="memdoc">
 
 <p>Gets a handle for the tensors information of given src node. </p>
+<p>If the mediatype is not other/tensor or other/tensors, <em>info</em> handle may not be correct. If want to use other media types, you MUST set the correct properties. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If the function succeeds, <em>info</em> handle must be released using <a class="el" href="group__CAPI__ML__NNSTREAMER__PIPELINE__MODULE.html#gaec4bae5d600139d335826612109c2b9e" title="Frees the given handle of a tensors information.">ml_tensors_info_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

@@ -110,13 +110,13 @@ Resource Type</h2>
 <tr>
 <th>TYPE </th><th>Description  </th></tr>
 <tr>
-<td>RSC_TYPE_IMAGE </td><td>Image resources.  </td></tr>
+<td><a class="el" href="group__CAPI__RESOURCE__MANAGER__MODULE.html#gga83dadea23a885e1eb257ad1f115513e9a9c3d4d5c08c3fa089369a556960bd273">APP_RESOURCE_TYPE_IMAGE</a> </td><td>Image resources.  </td></tr>
 <tr>
-<td>RSC_TYPE_LAYOUT </td><td>Application's layout to be displayed.  </td></tr>
+<td><a class="el" href="group__CAPI__RESOURCE__MANAGER__MODULE.html#gga83dadea23a885e1eb257ad1f115513e9af11b37376bfbb272e5e3fabf5f8efa34">APP_RESOURCE_TYPE_LAYOUT</a> </td><td>Application's layout to be displayed.  </td></tr>
 <tr>
-<td>RSC_TYPE_SOUND </td><td>Sound, audio resources.  </td></tr>
+<td><a class="el" href="group__CAPI__RESOURCE__MANAGER__MODULE.html#gga83dadea23a885e1eb257ad1f115513e9afda2a7f2b0f10818e52508580a172b58">APP_RESOURCE_TYPE_SOUND</a> </td><td>Sound, audio resources.  </td></tr>
 <tr>
-<td>RSC_TYPE_BIN </td><td>All other resources to be needed, but not specified above.  </td></tr>
+<td><a class="el" href="group__CAPI__RESOURCE__MANAGER__MODULE.html#gga83dadea23a885e1eb257ad1f115513e9a69d15befaa5ee77ba703d262360d55cf">APP_RESOURCE_TYPE_BIN</a> </td><td>All other resources to be needed, but not specified above.  </td></tr>
 </table>
 <h3><a class="anchor" id="CAPI_RESOURCE_MANAGER_MODULE_MATCHING_ALGORITHM"></a>
 Matching Algorithm</h3>
@@ -233,7 +233,7 @@ Functions</h2></td></tr>
 
 <p>Converts resource ID to path name. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If resource manager is not created yet, <a class="el" href="group__CAPI__RESOURCE__MANAGER__MODULE.html#gaa95002c4b45cfc526bc4150a06d71713" title="Creates resource manager and get from db.">app_resource_manager_init()</a> will be invoked automatically. Caller should free the returned pointer. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If resource manager is not created yet, <a class="el" href="group__CAPI__RESOURCE__MANAGER__MODULE.html#gaa95002c4b45cfc526bc4150a06d71713" title="Creates resource manager and get from db.">app_resource_manager_init()</a> will be invoked automatically. The <em>path</em> should be released using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Resource type </td></tr>
@@ -279,7 +279,7 @@ Functions</h2></td></tr>
 
 <p>Creates resource manager and get from db. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If resource manager already exists, It will just return APP_RESOURCE_ERROR_NONE </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If resource manager already exists, It will just return <a class="el" href="group__CAPI__RESOURCE__MANAGER__MODULE.html#ggacf1def0aac5f389b7da23bbbaf7e3e4ea8d4accd68e0def976e64e74c37b54315">APP_RESOURCE_ERROR_NONE</a> </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
