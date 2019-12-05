@@ -634,7 +634,7 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
 #### New and changed features
 
 - nnfw: Neural Network Runtime (Experimental Release)
-  - Support for new architecture design named ‘neurun’ for CPU/GPU mixed inference has been added.
+  - Support for new architecture design named 'neurun' for CPU/GPU mixed inference has been added.
   - Support for mixed acceleration for InceptionV3 and MobileNet model by manual planning has been added.
   - Android NN API compatible (Supports major operations selected carefully.)
 

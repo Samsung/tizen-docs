@@ -1,6 +1,6 @@
 # Tizen TV
 
-The Tizen TV profile allows you to develop applications for Samsung Smart TVs.
+Tizen TV profile allows you to develop applications for Samsung Smart TVs.
 
 Tizen Open Source Project introduced an expanded Tizen platform for Smart TVs at the fifth annual [Tizen Developer Conference](https://www.tizen.org/events/2017/tizen-developer-conference-2017) (TDC)  in San Francisco at the Hilton Union Square.
 

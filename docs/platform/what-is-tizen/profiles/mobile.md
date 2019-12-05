@@ -1,11 +1,11 @@
 # Tizen Mobile
 
-The Tizen mobile profile provides an effortless mobile experience with Tizen OS and a clutter-free, intuitive interface making it easy to understand and use. The profile comes preloaded with essential applications for the ease of new smart phone users. The device manufacture makes mobile devices more efficient; for example, the Ultra Data Saving mode in Samsung Z2 saves up to 40% in mobile data traffic by blocking unnecessary background applications from consuming data and by using a data compression technology, hence ensuring the simplest and most cost-efficient 4G experience.
+Tizen Mobile profile provides an effortless mobile experience with Tizen OS and a clutter-free, intuitive interface making it easy to understand and use. The profile comes preloaded with essential applications for the ease of new smart phone users. The device manufacture makes mobile devices more efficient; for example, the Ultra Data Saving mode in Samsung Z2 saves up to 40% in mobile data traffic by blocking unnecessary background applications from consuming data and by using a data compression technology, hence ensuring the simplest and most cost-efficient 4G experience.
 
 
 ## Developing Applications for Tizen Mobile
 
-To develop applications for the mobile profile:
+To develop applications for the Mobile profile:
 
 - [Create Mobile .NET Applications](../../../application/dotnet/get-started/mobile/first-app.md)
 - [Create Mobile Web Applications](../../../application/web/get-started/mobile/first-app.md)
@@ -37,4 +37,4 @@ When developing applications for Samsung Z devices, the following device and SDK
 
 ###  Reference Mobile Device
 
-TM1 is a reference device for the Tizen mobile profile. It is not for sale.
+TM1 is a reference device for the Tizen Mobile profile. It is not for sale.

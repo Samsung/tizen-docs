@@ -206,7 +206,7 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
 
 - DALi (3D UI Toolkit)
   - Actor and Renderer
-    - Support for notification to inform Actor’s children order change has been added.
+    - Support for notification to inform Actor's children order change has been added.
     - Support for changing rendering behavior has been added.
     - A mechanism to specify a callback on every frame has been added.
     - A CULLED property has been added to Actor.
@@ -425,10 +425,10 @@ The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, devic
 
 - Added feature of App control with URI scheme.
   - Similar to android chrome intent.
-  - Launches Tizen native app implicitly or explicitly using [app-control:// ].
+  - Launches Tizen Native app implicitly or explicitly using [app-control:// ].
   - Supports fallback URL.
 - Implemented alternative TBM back-end for web page rendering.
-  - By setting chromium-efl’s layout, the result can be rendered to memory surface.
+  - By setting chromium-efl's layout, the result can be rendered to memory surface.
   - Using the path, WebView can be merged with given UI framework.
 
 
