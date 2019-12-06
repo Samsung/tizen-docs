@@ -585,9 +585,9 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga4e37f96d7190323d13def968d7ff2e19" title="Gets the Wi-Fi P2P role for a service to be advertised.">asp_advert_get_p2p_role_scheme()</a> </dd>
 <dd>
-asp_session_set_p2p_role() </dd>
+<a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga2626eefdce1112912ac2697def2c7664" title="Sets the Wi-Fi Direct group role in session.">asp_session_set_p2p_role_scheme()</a> </dd>
 <dd>
-asp_session_get_p2p_role() </dd></dl>
+<a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gad7e6cb7bc366fe3174dbd20540827c33" title="Gets the Wi-Fi Direct group role in session.">asp_session_get_p2p_role_scheme()</a> </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="ggacc81ef4747441b726a8f2e9608d71004a2731289753b2a4f9a9c58c0d4a7189e4"></a><!-- doxytag: member="ASP_ADVERT_P2P_ROLE_SCHEME_ANY" ref="ggacc81ef4747441b726a8f2e9608d71004a2731289753b2a4f9a9c58c0d4a7189e4" args="" -->ASP_ADVERT_P2P_ROLE_SCHEME_ANY</em>&nbsp;</td><td>
 <p>All roles are acceptable </p>
@@ -1053,10 +1053,10 @@ asp_session_get_p2p_role() </dd></dl>
 <p>Application should change the advertising service status after advertising service using <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga5653fc58c157389d24f3f5a0456dd04c" title="Starts to advertise a service.">asp_advert_start_advertising()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/wifidirect">http://tizen.org/privilege/wifidirect</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/wifidirect </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">adv_service</td><td>Service descriptor handle provided by the asp_create_service() </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">adv_service</td><td>Service descriptor handle provided by the <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gac1849379a4b4abbc99a28c662ee871eb" title="Creates the description of a service to be advertised.">asp_advert_create()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">status</td><td>Status of the service: (<code>1</code> = available to use, <code>0</code> = not available to use, <code>2-255</code> = service specific information) </td></tr>
   </table>
   </dd>
@@ -1172,7 +1172,7 @@ asp_session_get_p2p_role() </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>This API needs asp_create_service() before use </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>This API needs <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gac1849379a4b4abbc99a28c662ee871eb" title="Creates the description of a service to be advertised.">asp_advert_create()</a> before use </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gac1849379a4b4abbc99a28c662ee871eb" title="Creates the description of a service to be advertised.">asp_advert_create()</a> </dd></dl>
 
 </div>
@@ -1551,7 +1551,7 @@ asp_session_get_p2p_role() </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">adv_service</td><td>Service descriptor handle provided by the <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gac1849379a4b4abbc99a28c662ee871eb" title="Creates the description of a service to be advertised.">asp_advert_create()</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">config_method</td><td>preferred Wi-Fi Simple Config (WSC) configuration method. Default value is ASP_WPS_TYPE_DEFAULT. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">config_method</td><td>preferred Wi-Fi Simple Config (WSC) configuration method. Default value is <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ggaee290902391e675ef2fec034e53bd414acf4e2426d133f1f638ac7a2cfa83a184">ASP_WPS_TYPE_DEFAULT</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1611,7 +1611,7 @@ asp_session_get_p2p_role() </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">adv_service</td><td>Service descriptor handle provided by the <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gac1849379a4b4abbc99a28c662ee871eb" title="Creates the description of a service to be advertised.">asp_advert_create()</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">rsp_info</td><td>Specified for a particular service up to 144 bytes. You can refer to Wi-Fi Peer-to-Peer Services Technical Specification, Wi-Fi Alliance. Available at:http://www.wi-fi.org </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rsp_info</td><td>Specified for a particular service up to 144 bytes. You can refer to Wi-Fi Peer-to-Peer Services Technical Specification, Wi-Fi Alliance. Available at: <a href="http://www.wi-fi.org">http://www.wi-fi.org</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>The length of <em>rsp_info</em> in bytes, maximum length is 144 </td></tr>
   </table>
   </dd>
@@ -1930,7 +1930,7 @@ asp_session_get_p2p_role() </dd></dl>
 <p>Application should start to advertise after creating service using <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gac1849379a4b4abbc99a28c662ee871eb" title="Creates the description of a service to be advertised.">asp_advert_create()</a>. If the service is being advertised, no changes can be made to it. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/wifidirect">http://tizen.org/privilege/wifidirect</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/wifidirect </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">adv_service</td><td>Service descriptor handle provided by the <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gac1849379a4b4abbc99a28c662ee871eb" title="Creates the description of a service to be advertised.">asp_advert_create()</a> </td></tr>
@@ -1978,7 +1978,7 @@ asp_session_get_p2p_role() </dd></dl>
 <p>Application should cancel to advertise after advertising service using <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga5653fc58c157389d24f3f5a0456dd04c" title="Starts to advertise a service.">asp_advert_start_advertising()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/wifidirect">http://tizen.org/privilege/wifidirect</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/wifidirect </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">adv_service</td><td>Service descriptor handle provided by the <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gac1849379a4b4abbc99a28c662ee871eb" title="Creates the description of a service to be advertised.">asp_advert_create()</a> </td></tr>
@@ -2056,7 +2056,7 @@ asp_session_get_p2p_role() </dd></dl>
 <p>Deinitializes Application Service Platform (ASP). </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/wifidirect">http://tizen.org/privilege/wifidirect</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/wifidirect </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value. </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
@@ -2491,7 +2491,7 @@ asp_session_get_p2p_role() </dd></dl>
 <p>If the service is currently seeking, no changes can be made to it. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/wifidirect">http://tizen.org/privilege/wifidirect</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/wifidirect </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">seek_service</td><td>Service seek handle provided by the <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga316b479d9cace8ff1806c157f6288d6f" title="Creates the description of a seek operation.">asp_seek_create()</a> </td></tr>
@@ -2539,7 +2539,7 @@ asp_session_get_p2p_role() </dd></dl>
 <p>Application should cancel to seek service after searching service using <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gacb5c49faaf7405eab7f94a80d4dedc98" title="Starts to seek services on peer devices.">asp_seek_start()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/wifidirect">http://tizen.org/privilege/wifidirect</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/wifidirect </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">seek_service</td><td>Service seek handle provided by the <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga316b479d9cace8ff1806c157f6288d6f" title="Creates the description of a seek operation.">asp_seek_create()</a> </td></tr>
@@ -2686,7 +2686,7 @@ asp_session_get_p2p_role() </dd></dl>
 <p>The ASP may tear down the underlying ASP P2P group if not other ASP sessions are using it. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/wifidirect">http://tizen.org/privilege/wifidirect</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/wifidirect </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>ASP session descriptor handle provided by the <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga794dae5f7f52773042adc13cb5618188" title="Called when a remote device is attempting to initiate an ASP session.">asp_session_request_cb()</a> callback or <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga140b0da0ca3b458f206f9521fdacea92" title="Creates a local Application Service Platform (ASP) session.">asp_session_create()</a> </td></tr>
@@ -2748,7 +2748,7 @@ asp_session_get_p2p_role() </dd></dl>
 <p>Confirms the Application Service Platform(ASP) session request. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/wifidirect">http://tizen.org/privilege/wifidirect</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/wifidirect </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>ASP session descriptor handle provided by the <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga794dae5f7f52773042adc13cb5618188" title="Called when a remote device is attempting to initiate an ASP session.">asp_session_request_cb()</a> callback or <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga140b0da0ca3b458f206f9521fdacea92" title="Creates a local Application Service Platform (ASP) session.">asp_session_create()</a> if pin is requested. </td></tr>
@@ -2796,7 +2796,7 @@ asp_session_get_p2p_role() </dd></dl>
 <p>Starts to connect the Application Service Platform session. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd><a href="http://tizen.org/privilege/wifidirect">http://tizen.org/privilege/wifidirect</a> </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/wifidirect </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>Application Service Platform session descriptor handle </td></tr>
@@ -2861,7 +2861,7 @@ asp_session_get_p2p_role() </dd></dl>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">service_mac</td><td>P2P device address of remote P2P device provided by <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gab250ca3e1335a2eb9669e59222834384" title="Called when the Application Service Platform (ASP) Service is found.">asp_seek_search_result_cb()</a> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">adv_id</td><td>The advertisement ID provided by <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#gab250ca3e1335a2eb9669e59222834384" title="Called when the Application Service Platform (ASP) Service is found.">asp_seek_search_result_cb()</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>ASP session descriptor handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">session</td><td>ASP session descriptor handle </td></tr>
   </table>
   </dd>
 </dl>
@@ -3480,7 +3480,7 @@ asp_session_get_p2p_role() </dd></dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Application Service Platform (ASP) must be initialized by <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga6cc6179dcb37731ae1d0e0948539f122" title="Initializes Application Service Platform (ASP).">asp_initialize()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga6cc6179dcb37731ae1d0e0948539f122" title="Initializes Application Service Platform (ASP).">asp_initialize()</a> </dd>
 <dd>
-asp_session_unset_connection_status_changed_cb() </dd>
+<a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga9781802bffd9e2974f0a08713c4e04fa" title="Unregisters the callback called when the state of the session connection is changed.">asp_session_unset_connect_status_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga29f2e120139198a91ddfd4030231f777" title="Called when the Application Service Platform (ASP) reports progress on group formation.">asp_session_connect_status_cb()</a> </dd></dl>
 
@@ -3517,7 +3517,7 @@ asp_session_unset_connection_status_changed_cb() </dd>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">session</td><td>Application Service Platform session descriptor handle provided by the <a class="el" href="group__CAPI__NETWORK__ASP__MODULE.html#ga140b0da0ca3b458f206f9521fdacea92" title="Creates a local Application Service Platform (ASP) session.">asp_session_create()</a> </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">session_info</td><td>Detailed information about the session. The session_info parameter is defined for each service section and up to 144 bytes. You can refer to Wi-Fi Peer-to-Peer Services Technical Specification, Wi-Fi Alliance. Available at:http://www.wi-fi.org </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">session_info</td><td>Detailed information about the session. The session_info parameter is defined for each service section and up to 144 bytes. You can refer to Wi-Fi Peer-to-Peer Services Technical Specification, Wi-Fi Alliance. Available at: <a href="http://www.wi-fi.org">http://www.wi-fi.org</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -3649,7 +3649,7 @@ asp_session_unset_connection_status_changed_cb() </dd>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>This API needs asp_create_service() before use. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>This API needs asp_create_session() before use. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>asp_create_session() </dd></dl>
 
 </div>

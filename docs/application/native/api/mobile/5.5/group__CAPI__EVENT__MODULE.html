@@ -120,9 +120,9 @@ The name-format of User-Event</h3>
 Launch-On-Event (Service Application only)</h3>
 <p>Service application can be launched by event triggering. For Launch-On-Event,</p>
 <ul>
-<li>The APP_CONTROL_OPERATION_LAUNCH_ON_EVENT must be defined in the manifest file.</li>
+<li>The <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gac3e506b3eb424ca56ce9de74715045bf" title="Definition for the app_control operation: Can be launched by an interested system-event.">APP_CONTROL_OPERATION_LAUNCH_ON_EVENT</a> must be defined in the manifest file.</li>
 <li>The URI name represents event name and the format is "event://{event name"}". For URI example, "event://tizen.system.event.battery_charger_status". (System-Event)</li>
-<li>The APP_CONTROL_OPERATION_LAUNCH_ON_EVENT can not be requested via <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gaeeb755a791bdbc5a6fc6d41614e80c1b" title="Sends the launch request.">app_control_send_launch_request()</a>. How to know the triggered event after launch by event triggering.</li>
+<li>The <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gac3e506b3eb424ca56ce9de74715045bf" title="Definition for the app_control operation: Can be launched by an interested system-event.">APP_CONTROL_OPERATION_LAUNCH_ON_EVENT</a> can not be requested via <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#gaeeb755a791bdbc5a6fc6d41614e80c1b" title="Sends the launch request.">app_control_send_launch_request()</a>. How to know the triggered event after launch by event triggering.</li>
 <li>You can get the event name and data in the first call of app_control_cb, which is called after 'Created' of application states.</li>
 </ul>
 <div class="fragment"><pre class="fragment"> <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -155,13 +155,13 @@ Launch-On-Event (Service Application only)</h3>
 <tr>
 <th>Name </th><th>Condition  </th></tr>
 <tr>
-<td>SYSTEM_EVENT_BATTERY_CHARGER_STATUS </td><td>When Charger CONNECTED  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga6ca8d9a6aa20bbb2ff31ccd588a029c1" title="Definition for system-event of battery : charger status.">SYSTEM_EVENT_BATTERY_CHARGER_STATUS</a> </td><td>When Charger CONNECTED  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_USB_STATUS </td><td>When USB CONNECTED  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga517592172cbbb0b6839c4a4859332594" title="Definition for system-event of USB : status of USB connection.">SYSTEM_EVENT_USB_STATUS</a> </td><td>When USB CONNECTED  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_EARJACK_STATUS </td><td>When Earjack CONNECTED  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga582893430e054dcecb741ba1b1c016f8" title="Definition for system-event of ear-jack : status of ear-jack connection.">SYSTEM_EVENT_EARJACK_STATUS</a> </td><td>When Earjack CONNECTED  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_INCOMING_MSG </td><td>When MSG_TYPE &amp; MSG_ID exist  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#gadd02379e16d34fdddc70549904e1a8f6" title="Definition for system-event of message : incoming msg.">SYSTEM_EVENT_INCOMING_MSG</a> </td><td>When MSG_TYPE &amp; MSG_ID exist  </td></tr>
 </table>
 </li>
 </ul>
@@ -175,106 +175,106 @@ Supported System-Events.</h3>
 <tr>
 <th>Name </th><th>Key </th><th>Value  </th></tr>
 <tr>
-<td>SYSTEM_EVENT_BATTERY_CHARGER_STATUS </td><td>EVENT_KEY_BATTERY_CHARGER_STATUS </td><td>EVENT_VAL_BATTERY_CHARGER_DISCONNECTED<br/>
-EVENT_VAL_BATTERY_CHARGER_CONNECTED<br/>
-EVENT_VAL_BATTERY_CHARGER_CHARGING<br/>
-EVENT_VAL_BATTERY_CHARGER_DISCHARGING  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga6ca8d9a6aa20bbb2ff31ccd588a029c1" title="Definition for system-event of battery : charger status.">SYSTEM_EVENT_BATTERY_CHARGER_STATUS</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga5b1ce630151f5bd29bce59206bde6a93" title="Definition for key of SYSTEM_EVENT_BATTERY_CHARGER_STATUS.">EVENT_KEY_BATTERY_CHARGER_STATUS</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga481a8346d216ccf909fe186662cd1c14" title="Definition for value of EVENT_KEY_BATTERY_CHARGER_STATUS.">EVENT_VAL_BATTERY_CHARGER_DISCONNECTED</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga25066a7d67aeb0eba648a2389b8ddbc1" title="Definition for value of EVENT_KEY_BATTERY_CHARGER_STATUS.">EVENT_VAL_BATTERY_CHARGER_CONNECTED</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gaa143d1f5a40bb5812eec45b728a62c0d" title="Definition for value of EVENT_KEY_BATTERY_CHARGER_STATUS.">EVENT_VAL_BATTERY_CHARGER_CHARGING</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gad354ae59bc2201730605c532a49295dc" title="Definition for value of EVENT_KEY_BATTERY_CHARGER_STATUS.">EVENT_VAL_BATTERY_CHARGER_DISCHARGING</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_BATTERY_LEVEL_STATUS </td><td>EVENT_KEY_BATTERY_LEVEL_STATUS </td><td>EVENT_VAL_BATTERY_LEVEL_EMPTY<br/>
-EVENT_VAL_BATTERY_LEVEL_CRITICAL<br/>
-EVENT_VAL_BATTERY_LEVEL_LOW<br/>
-EVENT_VAL_BATTERY_LEVEL_HIGH<br/>
-EVENT_VAL_BATTERY_LEVEL_FULL  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga2c8257fd4bac74aa905d73f3acfbfa47" title="Definition for system-event of battery : level status.">SYSTEM_EVENT_BATTERY_LEVEL_STATUS</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga5bc2681898b0cc93eac4607ce745402f" title="Definition for key of SYSTEM_EVENT_BATTERY_LEVEL_STATUS.">EVENT_KEY_BATTERY_LEVEL_STATUS</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga33d7144b3d51a39d19b0d35bc078f0c4" title="Definition for value of EVENT_KEY_BATTERY_LEVEL_STATUS.">EVENT_VAL_BATTERY_LEVEL_EMPTY</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga09ed4390d2825be7c8d639455bcbd58e" title="Definition for value of EVENT_KEY_BATTERY_LEVEL_STATUS.">EVENT_VAL_BATTERY_LEVEL_CRITICAL</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga8c06bdba06c30b2ac92ac413ff8c4da1" title="Definition for value of EVENT_KEY_BATTERY_LEVEL_STATUS.">EVENT_VAL_BATTERY_LEVEL_LOW</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gaabcc8dfd037dc059a60460e2bcfa2009" title="Definition for value of EVENT_KEY_BATTERY_LEVEL_STATUS.">EVENT_VAL_BATTERY_LEVEL_HIGH</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga1c4c43e53a37ffc01921123c767ab4b5" title="Definition for value of EVENT_KEY_BATTERY_LEVEL_STATUS.">EVENT_VAL_BATTERY_LEVEL_FULL</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_USB_STATUS </td><td>EVENT_KEY_USB_STATUS </td><td>EVENT_VAL_USB_DISCONNECTED<br/>
-EVENT_VAL_USB_CONNECTED<br/>
-EVENT_VAL_USB_AVAILABLE  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga517592172cbbb0b6839c4a4859332594" title="Definition for system-event of USB : status of USB connection.">SYSTEM_EVENT_USB_STATUS</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga74735d62b5b92cd18034110c88c32e2a" title="Definition for key of SYSTEM_EVENT_USB_STATUS.">EVENT_KEY_USB_STATUS</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaca166f58cc3a5140d8f4ac1de5c0d519" title="Definition for value of EVENT_KEY_USB_STATUS.">EVENT_VAL_USB_DISCONNECTED</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga24b230e32b3be19c4bf6db6bfb494fbd" title="Definition for value of EVENT_KEY_USB_STATUS.">EVENT_VAL_USB_CONNECTED</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gae086e7828de44d0f929787902ea695c3" title="Definition for value of EVENT_KEY_USB_STATUS.">EVENT_VAL_USB_AVAILABLE</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_EARJACK_STATUS </td><td>EVENT_KEY_EARJACK_STATUS </td><td>EVENT_VAL_EARJACK_DISCONNECTED<br/>
-EVENT_VAL_EARJACK_CONNECTED  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga582893430e054dcecb741ba1b1c016f8" title="Definition for system-event of ear-jack : status of ear-jack connection.">SYSTEM_EVENT_EARJACK_STATUS</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga91d43d86362c38c37dbcb4c0b336862e" title="Definition for key of SYSTEM_EVENT_EARJACK_STATUS.">EVENT_KEY_EARJACK_STATUS</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaed414acb1c9e69d4abd64da439484502" title="Definition for value of EVENT_KEY_EARJACK_STATUS.">EVENT_VAL_EARJACK_DISCONNECTED</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gab3f83e4fb2dda5b338c75f2815e82535" title="Definition for value of EVENT_KEY_EARJACK_STATUS.">EVENT_VAL_EARJACK_CONNECTED</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_DISPLAY_STATE </td><td>EVENT_KEY_DISPLAY_STATE </td><td>EVENT_VAL_DISPLAY_NORMAL<br/>
-EVENT_VAL_DISPLAY_DIM<br/>
-EVENT_VAL_DISPLAY_OFF  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga2ad6462f8451bbceb066dd3df8fbbedc" title="Definition for system-event of display : state of display.">SYSTEM_EVENT_DISPLAY_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gae82bc2428b1a90257a362a8ce554ca36" title="Definition for key of SYSTEM_EVENT_DISPLAY_STATE.">EVENT_KEY_DISPLAY_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaf37570597ec0b811a9fa10ca2b9250f3" title="Definition for value of EVENT_KEY_DISPLAY_STATE.">EVENT_VAL_DISPLAY_NORMAL</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga3affdea24e3a530540a3ec608b14bb17" title="Definition for value of EVENT_KEY_DISPLAY_STATE.">EVENT_VAL_DISPLAY_DIM</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga4b03553cdc37e487f6a9de90ef7a35be" title="Definition for value of EVENT_KEY_DISPLAY_STATE.">EVENT_VAL_DISPLAY_OFF</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_BOOT_COMPLETED </td><td>N/A </td><td>N/A  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga3780bd4d0d34c68662ccfe19281fb7d0" title="Definition for system-event of system : boot completion.">SYSTEM_EVENT_BOOT_COMPLETED</a> </td><td>N/A </td><td>N/A  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_SYSTEM_SHUTDOWN </td><td>N/A </td><td>N/A  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga7b94db19c4173d5f1701eea0c5ee137e" title="Definition for system-event of system : shutdown.">SYSTEM_EVENT_SYSTEM_SHUTDOWN</a> </td><td>N/A </td><td>N/A  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_LOW_MEMORY </td><td>EVENT_KEY_LOW_MEMORY </td><td>EVENT_VAL_MEMORY_NORMAL<br/>
-EVENT_VAL_MEMORY_SOFT_WARNING<br/>
-EVENT_VAL_MEMORY_HARD_WARNING  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga899fcd8d37e5850cb56a70a36e260904" title="Definition for system-event of system : low memory.">SYSTEM_EVENT_LOW_MEMORY</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaa7db5f1e168146302bc29bbae18f56e4" title="Definition for key of SYSTEM_EVENT_LOW_MEMORY.">EVENT_KEY_LOW_MEMORY</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga5f698614731cbb3fd932a744c66f3d79" title="Definition for value of EVENT_KEY_LOW_MEMORY.">EVENT_VAL_MEMORY_NORMAL</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gab00b60d1097f0c221669afdd0f700573" title="Definition for value of EVENT_KEY_LOW_MEMORY.">EVENT_VAL_MEMORY_SOFT_WARNING</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gad832523aaa1dcb38ae0565cd55d4abce" title="Definition for value of EVENT_KEY_LOW_MEMORY.">EVENT_VAL_MEMORY_HARD_WARNING</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_WIFI_STATE </td><td>EVENT_KEY_WIFI_STATE </td><td>EVENT_VAL_WIFI_OFF<br/>
-EVENT_VAL_WIFI_ON<br/>
-EVENT_VAL_WIFI_CONNECTED  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga2e540bb767da27899cc59a855d048641" title="Definition for system-event of wifi : state of wifi.">SYSTEM_EVENT_WIFI_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga3b6271685709a58e7d044aba8944387e" title="Definition for key of SYSTEM_EVENT_WIFI_STATE.">EVENT_KEY_WIFI_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gae131ee19b141700b5c27685fee3d5909" title="Definition for value of EVENT_KEY_WIFI_STATE.">EVENT_VAL_WIFI_OFF</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga7f3a076ad3dd60ad105dc0522a18b54d" title="Definition for value of EVENT_KEY_WIFI_STATE.">EVENT_VAL_WIFI_ON</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gad1051e06aa4e08f08ef5b07f17579a53" title="Definition for value of EVENT_KEY_WIFI_STATE.">EVENT_VAL_WIFI_CONNECTED</a>  </td></tr>
 <tr>
-<td rowspan="3">SYSTEM_EVENT_BT_STATE </td><td>EVENT_KEY_BT_STATE </td><td>EVENT_VAL_BT_OFF<br/>
-EVENT_VAL_BT_ON  </td></tr>
+<td rowspan="3"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga834fd295cbcd24693f48f445434b95c6" title="Definition for system-event of bluetooth : status of bluetooth.">SYSTEM_EVENT_BT_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaecb6dbf5939ee006acac881ad6ea59de" title="Definition for key of SYSTEM_EVENT_BT_STATE.">EVENT_KEY_BT_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga5657ae491ab1fc6bfc30a99f69f0a918" title="Definition for value of EVENT_KEY_BT_STATE.">EVENT_VAL_BT_OFF</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga6df0064d1019a05137cbd4502141046c" title="Definition for value of EVENT_KEY_BT_STATE.">EVENT_VAL_BT_ON</a>  </td></tr>
 <tr>
-<td>EVENT_KEY_BT_LE_STATE </td><td>EVENT_VAL_BT_LE_OFF<br/>
-EVENT_VAL_BT_LE_ON  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga7dc34d00b28a282577238067db6bd53a" title="Definition for key of SYSTEM_EVENT_BT_STATE.">EVENT_KEY_BT_LE_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga40cdd342ec1cc9c0a71ec7c704e3c448" title="Definition for value of EVENT_KEY_BT_LE_STATE.">EVENT_VAL_BT_LE_OFF</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gab0db0ae9483adab2a1226a2f8cffd3f1" title="Definition for value of EVENT_KEY_BT_LE_STATE.">EVENT_VAL_BT_LE_ON</a>  </td></tr>
 <tr>
-<td>EVENT_KEY_BT_TRANSFERING_STATE </td><td>EVENT_VAL_BT_NON_TRANSFERING<br/>
-EVENT_VAL_BT_TRANSFERING  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#gab1405bd0f1312cbe7f34777fb3d8057d" title="Definition for key of SYSTEM_EVENT_BT_STATE.">EVENT_KEY_BT_TRANSFERING_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gad8e052595f9068081122e0ad369955a4" title="Definition for value of EVENT_KEY_BT_TRANSFERING_STATE.">EVENT_VAL_BT_NON_TRANSFERING</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga179f877ce5eeee1bfc7930b5a7fb2245" title="Definition for value of EVENT_KEY_BT_TRANSFERING_STATE.">EVENT_VAL_BT_TRANSFERING</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_LOCATION_ENABLE_STATE </td><td>EVENT_KEY_LOCATION_ENABLE_STATE </td><td>EVENT_VAL_LOCATION_DISABLED<br/>
-EVENT_VAL_LOCATION_ENABLED  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga54f3b42581163931a6ebe84296ed4cfc" title="Definition for system-event of location : enable state of location.">SYSTEM_EVENT_LOCATION_ENABLE_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga424728076db91ae9869e7b57563e7e27" title="Definition for key of SYSTEM_EVENT_LOCATION_ENABLE_STATE.">EVENT_KEY_LOCATION_ENABLE_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaa08a96c2bc379cb5e60d6acdd6140c16" title="Definition for value of EVENT_KEY_LOCATION_ENABLE_STATE.">EVENT_VAL_LOCATION_DISABLED</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga4c103ae7ced24ddc3b8373a845ed8e6e" title="Definition for value of EVENT_KEY_LOCATION_ENABLE_STATE.">EVENT_VAL_LOCATION_ENABLED</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_GPS_ENABLE_STATE </td><td>EVENT_KEY_GPS_ENABLE_STATE </td><td>EVENT_VAL_GPS_DISABLED<br/>
-EVENT_VAL_GPS_ENABLED  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga4782cff5b792c902be574d2b570e6528" title="Definition for system-event of location : enable state of gps.">SYSTEM_EVENT_GPS_ENABLE_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga88e800ea3c00d1f49873fb56c64d2831" title="Definition for key of SYSTEM_EVENT_GPS_ENABLE_STATE.">EVENT_KEY_GPS_ENABLE_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaa017fb92e182c3d049de91f07d4e72cb" title="Definition for value of EVENT_KEY_GPS_ENABLE_STATE.">EVENT_VAL_GPS_DISABLED</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gabbc71f0fc10209a282e253dc0bd270b2" title="Definition for value of EVENT_KEY_GPS_ENABLE_STATE.">EVENT_VAL_GPS_ENABLED</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_NPS_ENABLE_STATE </td><td>EVENT_KEY_NPS_ENABLE_STATE </td><td>EVENT_VAL_NPS_DISABLED<br/>
-EVENT_VAL_NPS_ENABLED  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga0fa33b89e4208117be415335da785a9f" title="Definition for system-event of location : enable state of nps.">SYSTEM_EVENT_NPS_ENABLE_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaa564c4a99e5696d93e7f6b940ef43399" title="Definition for key of SYSTEM_EVENT_NPS_ENABLE_STATE.">EVENT_KEY_NPS_ENABLE_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaa6aeb7626a91e66c1f0b7d4bdae1e000" title="Definition for value of EVENT_KEY_NPS_ENABLE_STATE.">EVENT_VAL_NPS_DISABLED</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga2b895f187a88aa1fb976911b8a5fe7e2" title="Definition for value of EVENT_KEY_NPS_ENABLE_STATE.">EVENT_VAL_NPS_ENABLED</a>  </td></tr>
 <tr>
-<td rowspan="2">SYSTEM_EVENT_INCOMING_MSG </td><td>EVENT_KEY_MSG_TYPE </td><td>EVENT_VAL_SMS<br/>
-EVENT_VAL_PUSH<br/>
-EVENT_VAL_CB  </td></tr>
+<td rowspan="2"><a class="el" href="group__CAPI__EVENT__MODULE.html#gadd02379e16d34fdddc70549904e1a8f6" title="Definition for system-event of message : incoming msg.">SYSTEM_EVENT_INCOMING_MSG</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga21d1a5ec75702f54a62bd7ae7dbf3fa0" title="Definition for key of SYSTEM_EVENT_INCOMING_MSG.">EVENT_KEY_MSG_TYPE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga8905b103883eb07a24d231afedf57c80" title="Definition for value of EVENT_KEY_MSG_TYPE.">EVENT_VAL_SMS</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gadd512b984ebb7875c16df3481fd32924" title="Definition for value of EVENT_KEY_MSG_TYPE.">EVENT_VAL_PUSH</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga45c5760c9b3219f50685b15e1c39ddaa" title="Definition for value of EVENT_KEY_MSG_TYPE.">EVENT_VAL_CB</a>  </td></tr>
 <tr>
-<td>EVENT_KEY_MSG_ID </td><td>string of unsigned int type value.  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga82adbec151c1447cbe04d85a5e649278" title="Definition for key of SYSTEM_EVENT_INCOMING_MSG.">EVENT_KEY_MSG_ID</a> </td><td>string of unsigned int type value.  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_TIME_CHANGED </td><td>N/A </td><td>N/A  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga9989e8048fce7dca904bf3f212bc7bc0" title="Definition for system-event of setting : time changed.">SYSTEM_EVENT_TIME_CHANGED</a> </td><td>N/A </td><td>N/A  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_TIME_ZONE </td><td>EVENT_KEY_TIME_ZONE </td><td>The value of this key is timezone value of tz database, for example,<br/>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#gad5e54851cda3658476781d965b05f115" title="Definition for system-event of setting : timezone setting.">SYSTEM_EVENT_TIME_ZONE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga42a1d6862bfe7b4af2f193947ac92603" title="Definition for key of SYSTEM_EVENT_TIME_ZONE.">EVENT_KEY_TIME_ZONE</a> </td><td>The value of this key is timezone value of tz database, for example,<br/>
  "Asia/Seoul", "America/New_York",<br/>
 . Refer to the Time Zone Database of IANA.  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_HOUR_FORMAT </td><td>EVENT_KEY_HOUR_FORMAT </td><td>EVENT_VAL_HOURFORMAT_12<br/>
-EVENT_VAL_HOURFORMAT_24  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#gafda2871992bd411d8d1dd8e3a7d65f06" title="Definition for system-event of setting : hour format.">SYSTEM_EVENT_HOUR_FORMAT</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gade9588df49460400d1b9edcd8f432c25" title="Definition for key of SYSTEM_EVENT_HOUR_FORMAT.">EVENT_KEY_HOUR_FORMAT</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga6947ea303264bcc685c7a6d2407c0c78" title="Definition for value of EVENT_KEY_HOUR_FORMAT.">EVENT_VAL_HOURFORMAT_12</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga7ab6040b520a937a2224a137965cf3b6" title="Definition for value of EVENT_KEY_HOUR_FORMAT.">EVENT_VAL_HOURFORMAT_24</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_LANGUAGE_SET </td><td>EVENT_KEY_LANGUAGE_SET </td><td>The value of this key is full name of locale, for example,<br/>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga340846e9f552709d5e2cf6e325d7330c" title="Definition for system-event of setting : language setting.">SYSTEM_EVENT_LANGUAGE_SET</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gacbf428ede51b507283a0ece6053aa8b7" title="Definition for key of SYSTEM_EVENT_LANGUAGE_SET.">EVENT_KEY_LANGUAGE_SET</a> </td><td>The value of this key is full name of locale, for example,<br/>
  "ko_KR.UTF8" : in case of Korean language<br/>
  "en_US.UTF8" : in case of USA language,<br/>
 . Refer to linux locale info.  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_REGION_FORMAT </td><td>EVENT_KEY_REGION_FORMAT </td><td>The value of this key is full name of locale, for example,<br/>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga1f8ddf1f59bbfe695110db21c09c8573" title="Definition for system-event of setting : region format.">SYSTEM_EVENT_REGION_FORMAT</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gae52e4cb8ef3c03f3986516d3ad61355f" title="Definition for key of SYSTEM_EVENT_REGION_FORMAT.">EVENT_KEY_REGION_FORMAT</a> </td><td>The value of this key is full name of locale, for example,<br/>
  "ko_KR.UTF8" : in case of Korean region format<br/>
  "en_US.UTF8" : in case of USA region format,<br/>
 . Refer to linux locale info.  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_SILENT_MODE </td><td>EVENT_KEY_SILENT_MODE </td><td>EVENT_VAL_SILENTMODE_ON<br/>
-EVENT_VAL_SILENTMODE_OFF  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga54bb56dd90f5319a7acdfb11e1486d65" title="Definition for system-event of setting : silent_mode.">SYSTEM_EVENT_SILENT_MODE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga9a48b26bd17ae536c3d0697513494ff2" title="Definition for key of SYSTEM_EVENT_SILENT_MODE.">EVENT_KEY_SILENT_MODE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga262da50833cb8f7e1de01e3e74963f11" title="Definition for value of EVENT_KEY_SILENT_MODE.">EVENT_VAL_SILENTMODE_ON</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gab3415e4c44b06ba3979519b89174a2a9" title="Definition for value of EVENT_KEY_SILENT_MODE.">EVENT_VAL_SILENTMODE_OFF</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_VIBRATION_STATE </td><td>EVENT_KEY_VIBRATION_STATE </td><td>EVENT_VAL_VIBRATION_ON<br/>
-EVENT_VAL_VIBRATION_OFF  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga8f4c5f9fec34090dcd5708b1b82bce38" title="Definition for system-event of setting : state of vibration.">SYSTEM_EVENT_VIBRATION_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga110d4b7f6eabe441ec5b6ccecf45d389" title="Definition for key of SYSTEM_EVENT_VIBRATION_STATE.">EVENT_KEY_VIBRATION_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga0d2addb4353695606cd67582c77fa9cb" title="Definition for value of EVENT_KEY_VIBRATION_STATE.">EVENT_VAL_VIBRATION_ON</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga629aaee1fc51ffc6aa13f58bc6d6b4db" title="Definition for value of EVENT_KEY_VIBRATION_STATE.">EVENT_VAL_VIBRATION_OFF</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_SCREEN_AUTOROTATE_STATE </td><td>EVENT_KEY_SCREEN_AUTOROTATE_STATE </td><td>EVENT_VAL_SCREEN_AUTOROTATE_ON<br/>
-EVENT_VAL_SCREEN_AUTOROTATE_OFF  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga0c145b7237dc5598ccf34c25bd56c2dd" title="Definition for system-event of setting : state of screen&#39;s auto-rotation.">SYSTEM_EVENT_SCREEN_AUTOROTATE_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gace8a69be3eaa55107b2629eb8e16bd47" title="Definition for key of SYSTEM_EVENT_SCREEN_AUTOROTATE_STATE.">EVENT_KEY_SCREEN_AUTOROTATE_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga8c881eebd5fce370a11c212c598573d9" title="Definition for value of EVENT_KEY_SCREEN_AUTOROTATE_STATE.">EVENT_VAL_SCREEN_AUTOROTATE_ON</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gab5909a23838646499e07c44ade32198c" title="Definition for value of EVENT_KEY_SCREEN_AUTOROTATE_STATE.">EVENT_VAL_SCREEN_AUTOROTATE_OFF</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_MOBILE_DATA_STATE </td><td>EVENT_KEY_MOBILE_DATA_STATE </td><td>EVENT_VAL_MOBILE_DATA_OFF<br/>
-EVENT_VAL_MOBILE_DATA_ON  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga58586267158ae50c875bc77e3c88c170" title="Definition for system-event of setting : state of mobile data.">SYSTEM_EVENT_MOBILE_DATA_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaa6e0889f6eabd562a3ab5f669ffeb5eb" title="Definition for key of SYSTEM_EVENT_MOBILE_DATA_STATE.">EVENT_KEY_MOBILE_DATA_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#gaf96c946d04409b087cb59df42c905a75" title="Definition for value of EVENT_KEY_MOBILE_DATA_STATE.">EVENT_VAL_MOBILE_DATA_OFF</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gaeff0df78489a941da1c8824d844f62d2" title="Definition for value of EVENT_KEY_MOBILE_DATA_STATE.">EVENT_VAL_MOBILE_DATA_ON</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_DATA_ROAMING_STATE </td><td>EVENT_KEY_DATA_ROAMING_STATE </td><td>EVENT_VAL_DATA_ROAMING_OFF<br/>
-EVENT_VAL_DATA_ROAMING_ON  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#gae9dcb0a1293b3d0105859988dbdb26f9" title="Definition for system-event of setting : state of data roaming.">SYSTEM_EVENT_DATA_ROAMING_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga7c314b6be0725d7d378b81aa842e061b" title="Definition for key of SYSTEM_EVENT_DATA_ROAMING_STATE.">EVENT_KEY_DATA_ROAMING_STATE</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga195c727c6af495d5dfa8eb5f061a2658" title="Definition for value of EVENT_KEY_DATA_ROAMING_STATE.">EVENT_VAL_DATA_ROAMING_OFF</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga88c4bbb71cf8c44b1f9120b1a6e98243" title="Definition for value of EVENT_KEY_DATA_ROAMING_STATE.">EVENT_VAL_DATA_ROAMING_ON</a>  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_FONT_SET </td><td>EVENT_KEY_FONT_SET </td><td>The value of this key is font name of string type by font-config.  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga03ed80873452c10e5e9a4639140b19cd" title="Definition for system-event of setting : font setting.">SYSTEM_EVENT_FONT_SET</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga1038e12454a9c85270b996895f23e67d" title="Definition for key of SYSTEM_EVENT_FONT_SET.">EVENT_KEY_FONT_SET</a> </td><td>The value of this key is font name of string type by font-config.  </td></tr>
 <tr>
-<td>SYSTEM_EVENT_NETWORK_STATUS </td><td>EVENT_KEY_NETWORK_STATUS </td><td>EVENT_VAL_NETWORK_DISCONNECTED<br/>
-EVENT_VAL_NETWORK_WIFI<br/>
-EVENT_VAL_NETWORK_CELLULAR<br/>
-EVENT_VAL_NETWORK_ETHERNET<br/>
-EVENT_VAL_NETWORK_BT<br/>
-EVENT_VAL_NETWORK_NET_PROXY  </td></tr>
+<td><a class="el" href="group__CAPI__EVENT__MODULE.html#gadbc597814ab2b2ea6b7832867466c69f" title="Definition for system-event of network : status of network.">SYSTEM_EVENT_NETWORK_STATUS</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga63d27fa45714fda409b6f6a3dd278af9" title="Definition for key of SYSTEM_EVENT_NETWORK_STATUS.">EVENT_KEY_NETWORK_STATUS</a> </td><td><a class="el" href="group__CAPI__EVENT__MODULE.html#ga98ca42dde02fbf261c61b0cd576792f2" title="Definition for value of EVENT_KEY_NETWORK_STATUS.">EVENT_VAL_NETWORK_DISCONNECTED</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga5c4229ebc5e12a0ac8eb39bb7c8f1a01" title="Definition for value of EVENT_KEY_NETWORK_STATUS.">EVENT_VAL_NETWORK_WIFI</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga3312fa35aa24da4db12dd8ff499c2115" title="Definition for value of EVENT_KEY_NETWORK_STATUS.">EVENT_VAL_NETWORK_CELLULAR</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gaafe6e5b87c73801e82c638c5e1d443b4" title="Definition for value of EVENT_KEY_NETWORK_STATUS.">EVENT_VAL_NETWORK_ETHERNET</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga7a135a053b8ebb94574e620c8545ad3c" title="Definition for value of EVENT_KEY_NETWORK_STATUS.">EVENT_VAL_NETWORK_BT</a><br/>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga59af284becdb0070f5b8e1a98236a095" title="Definition for value of EVENT_KEY_NETWORK_STATUS.">EVENT_VAL_NETWORK_NET_PROXY</a>  </td></tr>
 </table>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -324,7 +324,7 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga1c4c43e53a37ffc01921123c767ab4b5">EVENT_VAL_BATTERY_LEVEL_FULL</a>&#160;&#160;&#160;&quot;full&quot;</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for value of EVENT_KEY_BATTERY_LEVEL_STATUS.  <a href="#ga1c4c43e53a37ffc01921123c767ab4b5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga517592172cbbb0b6839c4a4859332594">SYSTEM_EVENT_USB_STATUS</a>&#160;&#160;&#160;&quot;tizen.system.event.usb_status&quot;</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for system-event of usb : status of usb connection.  <a href="#ga517592172cbbb0b6839c4a4859332594"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for system-event of USB : status of USB connection.  <a href="#ga517592172cbbb0b6839c4a4859332594"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga74735d62b5b92cd18034110c88c32e2a">EVENT_KEY_USB_STATUS</a>&#160;&#160;&#160;&quot;usb_status&quot;</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for key of SYSTEM_EVENT_USB_STATUS.  <a href="#ga74735d62b5b92cd18034110c88c32e2a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#gaca166f58cc3a5140d8f4ac1de5c0d519">EVENT_VAL_USB_DISCONNECTED</a>&#160;&#160;&#160;&quot;disconnected&quot;</td></tr>
@@ -425,10 +425,6 @@ Defines</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for key of SYSTEM_EVENT_INCOMING_MSG.  <a href="#ga21d1a5ec75702f54a62bd7ae7dbf3fa0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga8905b103883eb07a24d231afedf57c80">EVENT_VAL_SMS</a>&#160;&#160;&#160;&quot;sms&quot;</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for value of EVENT_KEY_MSG_TYPE.  <a href="#ga8905b103883eb07a24d231afedf57c80"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga8905b103883eb07a24d231afedf57c80">EVENT_VAL_SMS</a>&#160;&#160;&#160;&quot;sms&quot;</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for value of EVENT_KEY_MSG_TYPE.  <a href="#ga8905b103883eb07a24d231afedf57c80"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga1f70227228d3305cf13c0d4234223f1f">EVENT_VAL_MMS</a>&#160;&#160;&#160;&quot;mms&quot;</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for value of EVENT_KEY_MSG_TYPE.  <a href="#ga1f70227228d3305cf13c0d4234223f1f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga1f70227228d3305cf13c0d4234223f1f">EVENT_VAL_MMS</a>&#160;&#160;&#160;&quot;mms&quot;</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for value of EVENT_KEY_MSG_TYPE.  <a href="#ga1f70227228d3305cf13c0d4234223f1f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#gadd512b984ebb7875c16df3481fd32924">EVENT_VAL_PUSH</a>&#160;&#160;&#160;&quot;push&quot;</td></tr>
@@ -441,6 +437,10 @@ Defines</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for system-event of message : outgoing msg.  <a href="#ga5066cd7e98122c696436f51977d7b3ec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga69990c55dd0412e42ec149aee0ac63d1">EVENT_KEY_OUT_MSG_TYPE</a>&#160;&#160;&#160;&quot;msg_type&quot;</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for key of SYSTEM_EVENT_OUTGOING_MSG.  <a href="#ga69990c55dd0412e42ec149aee0ac63d1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#gabfb1b115e0a2bbdc23d9dde60ef18e0a">EVENT_VAL_OUT_MSG_SMS</a>&#160;&#160;&#160;&quot;sms&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for value of EVENT_KEY_OUT_MSG_TYPE.  <a href="#gabfb1b115e0a2bbdc23d9dde60ef18e0a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga34856af26f7459b34a8ce8105b29364d">EVENT_VAL_OUT_MSG_MMS</a>&#160;&#160;&#160;&quot;mms&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for value of EVENT_KEY_OUT_MSG_TYPE.  <a href="#ga34856af26f7459b34a8ce8105b29364d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga0fe813a2069810771fdbbb27fefa75ae">EVENT_KEY_OUT_MSG_ID</a>&#160;&#160;&#160;&quot;msg_id&quot;</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for key of SYSTEM_EVENT_OUTGOING_MSG.  <a href="#ga0fe813a2069810771fdbbb27fefa75ae"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EVENT__MODULE.html#ga9989e8048fce7dca904bf3f212bc7bc0">SYSTEM_EVENT_TIME_CHANGED</a>&#160;&#160;&#160;&quot;tizen.system.event.time_changed&quot;</td></tr>
@@ -588,9 +588,9 @@ Defines</h2></td></tr>
 
 <p>Definition for key of SYSTEM_EVENT_BT_STATE. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>EVENT_VAL_BT_LE_STATE_OFF </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__EVENT__MODULE.html#ga40cdd342ec1cc9c0a71ec7c704e3c448" title="Definition for value of EVENT_KEY_BT_LE_STATE.">EVENT_VAL_BT_LE_OFF</a> </dd>
 <dd>
-EVENT_VAL_BT_LE_STATE_ON </dd></dl>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#gab0db0ae9483adab2a1226a2f8cffd3f1" title="Definition for value of EVENT_KEY_BT_LE_STATE.">EVENT_VAL_BT_LE_ON</a> </dd></dl>
 
 </div>
 </div>
@@ -607,9 +607,9 @@ EVENT_VAL_BT_LE_STATE_ON </dd></dl>
 
 <p>Definition for key of SYSTEM_EVENT_BT_STATE. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>EVENT_VAL_BT_STATE_OFF </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__EVENT__MODULE.html#ga5657ae491ab1fc6bfc30a99f69f0a918" title="Definition for value of EVENT_KEY_BT_STATE.">EVENT_VAL_BT_OFF</a> </dd>
 <dd>
-EVENT_VAL_BT_STATE_ON </dd></dl>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga6df0064d1019a05137cbd4502141046c" title="Definition for value of EVENT_KEY_BT_STATE.">EVENT_VAL_BT_ON</a> </dd></dl>
 
 </div>
 </div>
@@ -939,9 +939,9 @@ EVENT_VAL_BT_STATE_ON </dd></dl>
 
 <p>Definition for key of SYSTEM_EVENT_OUTGOING_MSG. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>EVENT_VAL_OUT_MSG_SMS </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__EVENT__MODULE.html#gabfb1b115e0a2bbdc23d9dde60ef18e0a" title="Definition for value of EVENT_KEY_OUT_MSG_TYPE.">EVENT_VAL_OUT_MSG_SMS</a> </dd>
 <dd>
-EVENT_VAL_OUT_MSG_MMS </dd></dl>
+<a class="el" href="group__CAPI__EVENT__MODULE.html#ga34856af26f7459b34a8ce8105b29364d" title="Definition for value of EVENT_KEY_OUT_MSG_TYPE.">EVENT_VAL_OUT_MSG_MMS</a> </dd></dl>
 
 </div>
 </div>
@@ -1606,24 +1606,6 @@ EVENT_VAL_OUT_MSG_MMS </dd></dl>
 <div class="memdoc">
 
 <p>Definition for value of EVENT_KEY_MSG_TYPE. </p>
-<p>Definition for value of EVENT_KEY_OUT_MSG_TYPE.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga1f70227228d3305cf13c0d4234223f1f"></a><!-- doxytag: member="app_event.h::EVENT_VAL_MMS" ref="ga1f70227228d3305cf13c0d4234223f1f" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__CAPI__EVENT__MODULE.html#ga1f70227228d3305cf13c0d4234223f1f">EVENT_VAL_MMS</a>&#160;&#160;&#160;&quot;mms&quot;</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition for value of EVENT_KEY_MSG_TYPE. </p>
-<p>Definition for value of EVENT_KEY_OUT_MSG_TYPE.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
 </div>
@@ -1788,6 +1770,38 @@ EVENT_VAL_OUT_MSG_MMS </dd></dl>
 
 </div>
 </div>
+<a class="anchor" id="ga34856af26f7459b34a8ce8105b29364d"></a><!-- doxytag: member="app_event.h::EVENT_VAL_OUT_MSG_MMS" ref="ga34856af26f7459b34a8ce8105b29364d" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__CAPI__EVENT__MODULE.html#ga34856af26f7459b34a8ce8105b29364d">EVENT_VAL_OUT_MSG_MMS</a>&#160;&#160;&#160;&quot;mms&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition for value of EVENT_KEY_OUT_MSG_TYPE. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gabfb1b115e0a2bbdc23d9dde60ef18e0a"></a><!-- doxytag: member="app_event.h::EVENT_VAL_OUT_MSG_SMS" ref="gabfb1b115e0a2bbdc23d9dde60ef18e0a" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__CAPI__EVENT__MODULE.html#gabfb1b115e0a2bbdc23d9dde60ef18e0a">EVENT_VAL_OUT_MSG_SMS</a>&#160;&#160;&#160;&quot;sms&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Definition for value of EVENT_KEY_OUT_MSG_TYPE. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gadd512b984ebb7875c16df3481fd32924"></a><!-- doxytag: member="app_event.h::EVENT_VAL_PUSH" ref="gadd512b984ebb7875c16df3481fd32924" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -1880,27 +1894,7 @@ EVENT_VAL_OUT_MSG_MMS </dd></dl>
 <div class="memdoc">
 
 <p>Definition for value of EVENT_KEY_MSG_TYPE. </p>
-<p>Definition for value of EVENT_KEY_OUT_MSG_TYPE.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga8905b103883eb07a24d231afedf57c80"></a><!-- doxytag: member="app_event.h::EVENT_VAL_SMS" ref="ga8905b103883eb07a24d231afedf57c80" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define <a class="el" href="group__CAPI__EVENT__MODULE.html#ga8905b103883eb07a24d231afedf57c80">EVENT_VAL_SMS</a>&#160;&#160;&#160;&quot;sms&quot;</td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Definition for value of EVENT_KEY_MSG_TYPE. </p>
-<p>Definition for value of EVENT_KEY_OUT_MSG_TYPE.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
 </div>
@@ -2480,7 +2474,7 @@ You can use a <em><a class="el" href="group__CAPI__ALARM__MODULE.html#ga51ae8c54
 </div>
 <div class="memdoc">
 
-<p>Definition for system-event of usb : status of usb connection. </p>
+<p>Definition for system-event of USB : status of USB connection. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__EVENT__MODULE.html#ga74735d62b5b92cd18034110c88c32e2a" title="Definition for key of SYSTEM_EVENT_USB_STATUS.">EVENT_KEY_USB_STATUS</a> </dd></dl>
 
@@ -2545,7 +2539,7 @@ You can use a <em><a class="el" href="group__CAPI__ALARM__MODULE.html#ga51ae8c54
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__EVENT__MODULE.html#ga961090870f49e66e7ad43a6adba4ba32" title="Adds the event handler for receiving event-data of interested events.">event_add_event_handler</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__EVENT__MODULE.html#ga961090870f49e66e7ad43a6adba4ba32" title="Adds the event handler for receiving event-data of interested events.">event_add_event_handler()</a> </dd></dl>
 
 </div>
 </div>
@@ -2658,8 +2652,8 @@ You can use a <em><a class="el" href="group__CAPI__ALARM__MODULE.html#ga51ae8c54
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__EVENT__MODULE.html#gga72eb9983e577b5467ffd20cd46977c19a3703abea4e6628bcba2d955e932b13e7">EVENT_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__EVENT__MODULE.html#gga72eb9983e577b5467ffd20cd46977c19a3dfba84782c78f2b4a4883be786cf19e">EVENT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__EVENT__MODULE.html#gga72eb9983e577b5467ffd20cd46977c19a2cfcbcbec2ecc781498dbce5b980dd5c">EVENT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__EVENT__MODULE.html#gga72eb9983e577b5467ffd20cd46977c19a3dfba84782c78f2b4a4883be786cf19e">EVENT_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__EVENT__MODULE.html#gga72eb9983e577b5467ffd20cd46977c19a4be6847a78fc12e52c2d7c2a6478e35f">EVENT_ERROR_IO_ERROR</a></td><td>Adding handler failed </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__EVENT__MODULE.html#gga72eb9983e577b5467ffd20cd46977c19a6e24b608326c49f929752d54e2fb6ce9">EVENT_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
   </table>
@@ -2685,11 +2679,11 @@ You can use a <em><a class="el" href="group__CAPI__ALARM__MODULE.html#ga51ae8c54
 
 <p>Keeps last User-Event data for receiver applications. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The receiver applications will receive this last event data after adding their new handlers via <a class="el" href="group__CAPI__EVENT__MODULE.html#ga961090870f49e66e7ad43a6adba4ba32" title="Adds the event handler for receiving event-data of interested events.">event_add_event_handler()</a> API since the sender application called this API. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The receiver applications will receive this last event data after adding their new handlers via <a class="el" href="group__CAPI__EVENT__MODULE.html#ga961090870f49e66e7ad43a6adba4ba32" title="Adds the event handler for receiving event-data of interested events.">event_add_event_handler()</a> since the sender application called this function. </dd>
 <dd>
 If a sender application sends same event via trusted API and non-trusted API, then a trusted receiver will get latest data regardless of trusted or non-trusted, but non-trusted receiver will get the last data only from non-trusted API. </dd>
 <dd>
-The effect of this API continues during runtime. That means when the sender application process restarts, the sender application needs to call this api again to make the event to keep the last event. </dd></dl>
+The effect of this function continues during runtime. That means when the sender application process restarts, the sender application needs to call this function again to make the event to keep the last event. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">event_name</td><td>The event's name to keep last event data </td></tr>

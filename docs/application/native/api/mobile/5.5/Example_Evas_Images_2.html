@@ -448,10 +448,10 @@ main(<span class="keywordtype">void</span>)
           WIDTH / 4, HEIGHT / 4);
 
    d.text_obj = <a class="code" href="group__Evas__Object__Textblock.html#ga5059cda84291080e59bcc72ead81ca93">evas_object_textblock_add</a>(d.evas);
-   <a class="code" href="group__Evas__Object__Textblock.html#gac35fdf7b795b08a884f62cf479b9901b">evas_object_textblock_text_markup_set</a>(d.text_obj, <span class="stringliteral">&quot;Hello world! :)&quot;</span>);
+   evas_object_textblock_text_markup_set(d.text_obj, <span class="stringliteral">&quot;Hello world! :)&quot;</span>);
    st = <a class="code" href="group__Evas__Object__Textblock.html#ga5047d80b99150342ce3cd5518b474df8">evas_textblock_style_new</a>();
    <a class="code" href="group__Evas__Object__Textblock.html#gaf536f7e63f652e36a125006e31cf5457">evas_textblock_style_set</a>(st, <span class="stringliteral">&quot;DEFAULT=&#39;font=Sans font_size=16 color=#114 wrap=word&#39;&quot;</span>);
-   <a class="code" href="group__Evas__Object__Textblock.html#ga14c222cd68f4c101dc9e52361c47c35e">evas_object_textblock_style_set</a>(d.text_obj, st);
+   evas_object_textblock_style_set(d.text_obj, st);
    evas_object_move(d.text_obj, WIDTH / 16, HEIGHT * 9 / 16);
    evas_object_resize(d.text_obj, WIDTH / 4, 0);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text_obj);

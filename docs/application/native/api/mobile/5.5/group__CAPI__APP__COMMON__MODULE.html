@@ -173,7 +173,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga26c5c78f0c97adf33c536bafcf324b70">app_get_external_shared_data_path</a> (void) TIZEN_DEPRECATED_API</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the absolute path to the application's external shared data directory which is used to share data with other applications.  <a href="#ga26c5c78f0c97adf33c536bafcf324b70"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga111d7090ead5eba87e7a0ea5b9ef7c60">app_get_tep_resource_path</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the absolute path to the application's TEP(Tizen Expansion Package) directory. The resource files are delivered with the expansion package.  <a href="#ga111d7090ead5eba87e7a0ea5b9ef7c60"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the absolute path to the application's TEP (Tizen Expansion Package) directory. The resource files are delivered with the expansion package.  <a href="#ga111d7090ead5eba87e7a0ea5b9ef7c60"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga36f560ba228393bfceff473383b4a203">app_get_display_state</a> (<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga5023c5eaa38b422183cea6079f9661a7">app_display_state_e</a> *display_state)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the display state.  <a href="#ga36f560ba228393bfceff473383b4a203"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga1796b1e42495bfc143b739de340e7dc4">app_watchdog_timer_enable</a> (void)</td></tr>
@@ -205,6 +205,7 @@ Typedefs</h2></td></tr>
 
 <p>The system event callback function. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the given <em>event_info</em> has <a class="el" href="group__CAPI__APP__COMMON__MODULE.html#gga7912ca15af3a0674828c09ee4bdf305ca55633c53fbde24a7d42879ac409fa523">APP_SUSPENDED_STATE_WILL_ENTER</a> value, the application should not call any asynchronous operations in this callback. After the callback returns, process of the application will be changed to suspended state immediately. Thus, asynchronous operations may work incorrectly. (since 2.4) </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">event_info</td><td>The system event information </td></tr>
@@ -212,10 +213,9 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>app_add_event_handler </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APPLICATION__MODULE.html#ga9d7068ed9a47a12ed8614cabd0498674" title="Adds the system event handler.">ui_app_add_event_handler</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga220de98ec6d0a9d5c2be545c16156f07" title="The system event information handle.">app_event_info_h</a> </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the given <em>event_info</em> has <a class="el" href="group__CAPI__APP__COMMON__MODULE.html#gga7912ca15af3a0674828c09ee4bdf305ca55633c53fbde24a7d42879ac409fa523">APP_SUSPENDED_STATE_WILL_ENTER</a> value, the application should not call any asynchronous operations in this callback. After the callback returns, process of the application will be changed to suspended state immediately. Thus, asynchronous operations may work incorrectly. (since 2.4) </dd></dl>
 
 </div>
 </div>
@@ -234,9 +234,9 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga56894cd26c4032f0be798fe0dd8339c7" title="Enumeration for system events.">app_event_type_e</a> </dd>
 <dd>
-app_add_event_handler </dd>
+<a class="el" href="group__CAPI__APPLICATION__MODULE.html#ga9d7068ed9a47a12ed8614cabd0498674" title="Adds the system event handler.">ui_app_add_event_handler</a> </dd>
 <dd>
-app_remove_event_handler </dd>
+<a class="el" href="group__CAPI__APPLICATION__MODULE.html#gaf163351bbf4c1cb1715437ba8b771e21" title="Removes registered event handler.">ui_app_remove_event_handler</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga220de98ec6d0a9d5c2be545c16156f07" title="The system event information handle.">app_event_info_h</a> </dd></dl>
 
@@ -255,17 +255,17 @@ app_remove_event_handler </dd>
 
 <p>The system event information handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#gabde234644bd55110416b493e6dc2a3c5" title="Gets the low memory status from the given event info.">app_event_get_low_memory_status</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#gabde234644bd55110416b493e6dc2a3c5" title="Gets the low memory status from the given event info.">app_event_get_low_memory_status()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga32102ad86985c212c5a32711871428d4" title="Gets the low battery status from given event info.">app_event_get_low_battery_status</a> </dd>
+<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga32102ad86985c212c5a32711871428d4" title="Gets the low battery status from given event info.">app_event_get_low_battery_status()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga5db58beb729f9265ef050b2ea7028091" title="Gets the language from the given event info.">app_event_get_language</a> </dd>
+<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga5db58beb729f9265ef050b2ea7028091" title="Gets the language from the given event info.">app_event_get_language()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga75ccbb953e2d22eafd2f20180776bb2f" title="Gets the region format from the given event info.">app_event_get_region_format</a> </dd>
+<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga75ccbb953e2d22eafd2f20180776bb2f" title="Gets the region format from the given event info.">app_event_get_region_format()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#gab311ebf53f6f3d68118f93797c05b7eb" title="Gets the device orientation from the given event info.">app_event_get_device_orientation</a> </dd>
+<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#gab311ebf53f6f3d68118f93797c05b7eb" title="Gets the device orientation from the given event info.">app_event_get_device_orientation()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#gad6cb8c1658077e143cd92c3b505502b3" title="Gets the suspended state of the application from the given event info.">app_event_get_suspended_state</a> </dd></dl>
+<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#gad6cb8c1658077e143cd92c3b505502b3" title="Gets the suspended state of the application from the given event info.">app_event_get_suspended_state()</a> </dd></dl>
 
 </div>
 </div>
@@ -414,7 +414,7 @@ app_remove_event_handler </dd>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga56894cd26c4032f0be798fe0dd8339c7acb1129ca331f53f5fdc50760a08dfef1"></a><!-- doxytag: member="APP_EVENT_SUSPENDED_STATE_CHANGED" ref="gga56894cd26c4032f0be798fe0dd8339c7acb1129ca331f53f5fdc50760a08dfef1" args="" -->APP_EVENT_SUSPENDED_STATE_CHANGED</em>&nbsp;</td><td>
 <p>The suspended state changed event of the application (since 2.4) </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#gad6cb8c1658077e143cd92c3b505502b3" title="Gets the suspended state of the application from the given event info.">app_event_get_suspended_state</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#gad6cb8c1658077e143cd92c3b505502b3" title="Gets the suspended state of the application from the given event info.">app_event_get_suspended_state()</a> </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga56894cd26c4032f0be798fe0dd8339c7aaeaa6ec13c4239f8fffb245ca8cbd94d"></a><!-- doxytag: member="APP_EVENT_UPDATE_REQUESTED" ref="gga56894cd26c4032f0be798fe0dd8339c7aaeaa6ec13c4239f8fffb245ca8cbd94d" args="" -->APP_EVENT_UPDATE_REQUESTED</em>&nbsp;</td><td>
 <p>The update requested event (Since 3.0) This event can occur when an app needs to be updated. It is dependent on target devices. </p>
@@ -760,7 +760,7 @@ app_remove_event_handler </dd>
 <p>Gets the absolute path to the application's cache directory which is used to store temporary data of the application. </p>
 <p>An application can read and write its own files in the application's cache directory. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned path should be released. <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned value should be released using free(). <br/>
  The files stored in the application's cache directory can be removed by setting application or platform while the application is running. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's cache directory, <br/>
  otherwise a null pointer if the memory is insufficient </dd></dl>
@@ -785,7 +785,7 @@ app_remove_event_handler </dd>
 <p>Gets the absolute path to the application's data directory which is used to store private data of the application. </p>
 <p>An application can read and write its own files in the application's data directory. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned path should be released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned value should be released using free(). </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's data directory, <br/>
  otherwise a null pointer if the memory is insufficient </dd></dl>
 
@@ -819,9 +819,9 @@ app_remove_event_handler </dd>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__APPLICATION__MODULE.html#gga28325cdf70f8df6375642c460639d029abe8e501f5e8ee8b8e022b367555481fa">APP_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APPLICATION__MODULE.html#gga28325cdf70f8df6375642c460639d029aaea11ae1894000bbaaec3533212d8570">APP_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__APPLICATION__MODULE.html#gga28325cdf70f8df6375642c460639d029a689a59094a9a3cbde6e1789d99cefdee">APP_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__APPLICATION__MODULE.html#gga28325cdf70f8df6375642c460639d029a208f389806a15932240ef3a8252451d3">APP_ERROR_INVALID_CONTEXT</a></td><td>The display is in an unknown state. </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__APPLICATION__MODULE.html#gga28325cdf70f8df6375642c460639d029aaea11ae1894000bbaaec3533212d8570">APP_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
   </dd>
 </dl>
@@ -846,7 +846,7 @@ app_remove_event_handler </dd>
 <p>Gets the absolute path to the application's external cache directory which is used to store temporary data of the application. </p>
 <p>An application can read and write its own files in the application's external cache directory. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned path should be released. <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned value should be released using free(). <br/>
  The files stored in the application's external cache directory can be removed by setting application while the application is running. <br/>
  The important files stored in the application's external cache directory should be encrypted because they can be exported via the external sdcard. To access the path returned by this function requires the privilege that is "http://tizen.org/privilege/externalstorage.appdata". </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's external cache directory, <br/>
@@ -872,7 +872,7 @@ app_remove_event_handler </dd>
 <p>Gets the absolute path to the application's external data directory which is used to store data of the application. </p>
 <p>An application can read and write its own files in the application's external data directory. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned path should be released. <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned value should be released using free(). <br/>
  The important files stored in the application's external data directory should be encrypted because they can be exported via the external sdcard. To access the path returned by this function requires the privilege that is "http://tizen.org/privilege/externalstorage.appdata". </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's external data directory, <br/>
  otherwise a null pointer if the memory is insufficient </dd></dl>
@@ -898,7 +898,7 @@ app_remove_event_handler </dd>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000005">Deprecated:</a></b></dt><dd>Deprecated since 2.4. </dd></dl>
 <p>An application can read and write its own files in the application's external shared data directory, and others can only read the files. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned path should be released. To access the path returned by this function requires the privilege that is "http://tizen.org/privilege/externalstorage.appdata". The function may not work as intended in certain devices due to some implementation issues. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned value should be released using free(). To access the path returned by this function requires the privilege that is "http://tizen.org/privilege/externalstorage.appdata". The function may not work as intended in certain devices due to some implementation issues. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's external shared data directory, <br/>
  otherwise a null pointer if the memory is insufficient </dd></dl>
 
@@ -996,7 +996,7 @@ app_remove_event_handler </dd>
 <p>Gets the absolute path to the application resource directory. The resource files are delivered with the application package. </p>
 <p>An application can only read its own files in the application's resource directory. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned path should be released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned value should be released using free(). </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's resource directory, <br/>
  otherwise a null pointer if the memory is insufficient </dd></dl>
 
@@ -1022,16 +1022,16 @@ app_remove_event_handler </dd>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/appdir.shareddata </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned path should be released. <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned value should be released using free(). <br/>
  Since Tizen 3.0, an application that want to use shared/data directory must declare <a href="http://tizen.org/privilege/appdir.shareddata">http://tizen.org/privilege/appdir.shareddata</a> privilege. If the application doesn't declare the privilege, the framework will not create shared/data directory for the application. Carefully consider the privacy implications when deciding whether to use the shared/data directory, since the application cannot control access to this directory by other applications. If you want to share files with other applications, consider passing path via <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html">App Control</a> API. The <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html">App Control</a> API supports giving permission to other applications by passing path via app_control. <br/>
  The specific error code can be obtained using the <a class="el" href="group__CAPI__COMMON__ERROR.html#ga32cd8b05c74576a351e14e2119852bee" title="Gets the last error code in the thread.">get_last_result()</a>. Error codes are described in Exception section.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's shared data directory, <br/>
  otherwise a null pointer if the memory is insufficient. It will return NULL for applications with api-version 3.0 or later, and set <a class="el" href="group__CAPI__APPLICATION__MODULE.html#gga28325cdf70f8df6375642c460639d029aa92fd2b386ab1cfa2cb74073edf67d79">APP_ERROR_PERMISSION_DENIED</a> if the application does not declare the shareddata privilege. </dd></dl>
 <dl class="exception"><dt><b>Exceptions:</b></dt><dd>
   <table class="exception">
-    <tr><td class="paramname">APP_ERROR_NONE</td><td>Success </td></tr>
-    <tr><td class="paramname">APP_ERROR_OUT_OF_MEMORY</td><td>Out of memory </td></tr>
-    <tr><td class="paramname">APP_ERROR_PERMISSION_DENIED</td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APPLICATION__MODULE.html#gga28325cdf70f8df6375642c460639d029abe8e501f5e8ee8b8e022b367555481fa">APP_ERROR_NONE</a></td><td>Success </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APPLICATION__MODULE.html#gga28325cdf70f8df6375642c460639d029aa92fd2b386ab1cfa2cb74073edf67d79">APP_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__APPLICATION__MODULE.html#gga28325cdf70f8df6375642c460639d029a7b3c2e0dd23e6c92f2bf1f39dc5f95bc">APP_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
   </table>
   </dd>
 </dl>
@@ -1056,7 +1056,7 @@ app_remove_event_handler </dd>
 <p>Gets the absolute path to the application's shared resource directory which is used to share resources with other applications. </p>
 <p>An application can read its own files in the application's shared resource directory, and others can only read the files. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned path should be released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned value should be released using free(). </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's shared resource directory, <br/>
  otherwise a null pointer if the memory is insufficient </dd></dl>
 
@@ -1080,7 +1080,7 @@ app_remove_event_handler </dd>
 <p>Gets the absolute path to the application's shared trusted directory which is used to share data with a family of trusted applications. </p>
 <p>An application can read and write its own files in the application's shared trusted directory and the family applications signed with the same certificate can read and write the files in the shared trusted directory. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned path should be released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned value should be released using free(). </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's shared trusted directory, <br/>
  otherwise a null pointer if the memory is insufficient </dd></dl>
 
@@ -1101,11 +1101,11 @@ app_remove_event_handler </dd>
 </div>
 <div class="memdoc">
 
-<p>Gets the absolute path to the application's TEP(Tizen Expansion Package) directory. The resource files are delivered with the expansion package. </p>
-<p>An application can only read its own files in the application's TEP(Tizen Expansion Package) directory. </p>
+<p>Gets the absolute path to the application's TEP (Tizen Expansion Package) directory. The resource files are delivered with the expansion package. </p>
+<p>An application can only read its own files in the application's TEP (Tizen Expansion Package) directory. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned path should be released. </dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's TEP(Tizen Expansion Package) directory, <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The returned value should be released using free(). </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The absolute path to the application's TEP (Tizen Expansion Package) directory, <br/>
  otherwise a null pointer if the memory is insufficient </dd></dl>
 
 </div>
@@ -1172,7 +1172,7 @@ app_remove_event_handler </dd>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga1796b1e42495bfc143b739de340e7dc4" title="Sends the enable request to activate the watchdog timer.">app_watchdog_timer_enable</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga1796b1e42495bfc143b739de340e7dc4" title="Sends the enable request to activate the watchdog timer.">app_watchdog_timer_enable()</a> </dd></dl>
 
 </div>
 </div>
@@ -1193,6 +1193,7 @@ app_remove_event_handler </dd>
 
 <p>Sends the enable request to activate the watchdog timer. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>After this function is called, the system detects a timeout error. If, due to a program error as ANR (Application Not Responding), the system fails to reset the watchdog, the timer will elapse and generate a signal to terminate the running application. If the running application has to process a lot of operations, the application should disable or reset the watchdog timer. </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherrwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
@@ -1201,10 +1202,9 @@ app_remove_event_handler </dd>
   </table>
   </dd>
 </dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>After this function is called, the system detects a timeout error. If, due to a program error as ANR(Application Not Responding), the system fails to reset the watchdog, the timer will elapse and generate a signal to terminate the running application. If the running application has to process a lot of operations, the application should disable or reset the watchdog timer. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga712b8c35f3348dc66d6df123271fee7b" title="Sends the disable request to deactivate the watchdog timer.">app_watchdog_timer_disable</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga712b8c35f3348dc66d6df123271fee7b" title="Sends the disable request to deactivate the watchdog timer.">app_watchdog_timer_disable()</a> </dd>
 <dd>
-<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga4163563adb7f088871cd870191aecbc6" title="Sends the kick request to reset the watchdog timer.">app_watchdog_timer_kick</a> </dd></dl>
+<a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga4163563adb7f088871cd870191aecbc6" title="Sends the kick request to reset the watchdog timer.">app_watchdog_timer_kick()</a> </dd></dl>
 
 </div>
 </div>
@@ -1233,7 +1233,7 @@ app_remove_event_handler </dd>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga1796b1e42495bfc143b739de340e7dc4" title="Sends the enable request to activate the watchdog timer.">app_watchdog_timer_enable</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__APP__COMMON__MODULE.html#ga1796b1e42495bfc143b739de340e7dc4" title="Sends the enable request to activate the watchdog timer.">app_watchdog_timer_enable()</a> </dd></dl>
 
 </div>
 </div>

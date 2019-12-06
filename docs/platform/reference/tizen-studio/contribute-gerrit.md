@@ -1,13 +1,13 @@
 # Contributing to Tizen Studio
 
-The Tizen Studio is an open-source project. You can contribute to the source code and help improve the Tizen Studio.
+Tizen Studio is an open-source project. You can contribute to the source code and help improve Tizen Studio.
 
 You can access the Tizen source code and code review at the following sites:
 
 - [Source code repository](https://review.tizen.org/git/)
 - [Gerrit Code Review](https://review.tizen.org/gerrit)
 
-To contribute code to the Tizen Studio:
+To contribute code to Tizen Studio:
 
 1. Clone the [source code repository](https://review.tizen.org/git/):
     ```

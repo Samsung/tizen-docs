@@ -112,7 +112,9 @@ Overview</h2>
 <td><a class="el" href="group__CAPI__CONTENT__MEDIA__AUDIO__META__MODULE.html">Audio Metadata</a>  </td><td>Provides details about audio items present in the device.<br/>
  Provide functions to get information (e.g. genre, album, year, bitrate etc) about the audio files.  </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html">Image Metadata</a>  </td><td>Provides details about image items present in the device.<br/>
+<td><a class="el" href="group__CAPI__CONTENT__MEDIA__FACE__DETECTION__MODULE.html">Face Detection</a>  </td><td>Provide functions to detect faces from image.   </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html">Image Metadata</a>  </td><td>Provides details about image items present in the device.<br/>
  Provide functions to get information (e.g. longitude, description, date etc) about the image files.  </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html">Video Metadata</a>  </td><td>Provides details about video items present in the device.<br/>
@@ -122,57 +124,57 @@ Overview</h2>
  The media information API provides the following information. Regarding the information of each media type (audio, video, or image), please refer to the type-specific metadata page.</p>
 <table class="doxtable">
 <tr>
-<td>Attribute </td><td>Filter Keyword </td><td>Comments  </td></tr>
+<th>Attribute </th><th>Filter Keyword </th><th>Comments  </th></tr>
 <tr>
-<td>media_id </td><td>MEDIA_ID </td><td>UUID  </td></tr>
+<td>media_id </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga88f1004b47bbbdd3d2eb27be7e3fcad3" title="Media ID.">MEDIA_ID</a> </td><td>UUID  </td></tr>
 <tr>
-<td>file_path </td><td>MEDIA_PATH </td><td>Full path of the file  </td></tr>
+<td>file_path </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#gaefb4f6201aeacd1bbc4a0582ceb09141" title="Media full path.">MEDIA_PATH</a> </td><td>Full path of the file  </td></tr>
 <tr>
-<td>display_name </td><td>MEDIA_DISPLAY_NAME </td><td>Base name of the file  </td></tr>
+<td>display_name </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#gab830f4bd710211566bbb3b43e57b3d9f" title="The file name including the extension.">MEDIA_DISPLAY_NAME</a> </td><td>Base name of the file  </td></tr>
 <tr>
-<td>media_type </td><td>MEDIA_TYPE </td><td>Type (media_content_type_e)  </td></tr>
+<td>media_type </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga8b35c31a875dce9467976e987473f338" title="Media type.">MEDIA_TYPE</a> </td><td>Type (media_content_type_e)  </td></tr>
 <tr>
-<td>mime_type </td><td>MEDIA_MIME_TYPE </td><td>MIME type  </td></tr>
+<td>mime_type </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga23294f816da9b2c3e422c9785e6c201c" title="Media MIME type.">MEDIA_MIME_TYPE</a> </td><td>MIME type  </td></tr>
 <tr>
-<td>size </td><td>MEDIA_SIZE </td><td>File size  </td></tr>
+<td>size </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga09bc2a54f18a6f7ef5f1acf8484b3e93" title="Media file size.">MEDIA_SIZE</a> </td><td>File size  </td></tr>
 <tr>
-<td>added_time </td><td>MEDIA_ADDED_TIME </td><td>Added time to Media DB  </td></tr>
+<td>added_time </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga060ceac936a66cd762d1168ad0944187" title="The time that content file was first added to media database.">MEDIA_ADDED_TIME</a> </td><td>Added time to Media DB  </td></tr>
 <tr>
-<td>modified_time </td><td>MEDIA_MODIFIED_TIME </td><td>Time of last modification  </td></tr>
+<td>modified_time </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga98e66a7186ed20cc0ef7b94cc43cf48b" title="The last modification time provided by the file system.">MEDIA_MODIFIED_TIME</a> </td><td>Time of last modification  </td></tr>
 <tr>
-<td>timeline </td><td>MEDIA_TIMELINE </td><td>Same as date taken time(for image) or recorded time(for Audio/Video) if exit. if not, same as modified time.  </td></tr>
+<td>timeline </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga619a84a71248653347d4ff61fe734c31" title="Media created time.">MEDIA_TIMELINE</a> </td><td>Same as date taken time(for image) or recorded time(for Audio/Video) if exit. if not, same as modified time.  </td></tr>
 <tr>
-<td>is_drm </td><td>MEDIA_IS_DRM </td><td>Whether DRM content or not  </td></tr>
+<td>is_drm </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga2cd7b8984734fa9a36eff2b48dac8a61" title="Is DRM.">MEDIA_IS_DRM</a> </td><td>Whether DRM content or not  </td></tr>
 <tr>
-<td>storage_id </td><td>STORAGE_ID </td><td>Storage UUID.  </td></tr>
+<td>storage_id </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#gaa008387de6eb738fd54d7399993a5a6e" title="Storage ID.">MEDIA_STORAGE_ID</a> </td><td>Storage UUID.  </td></tr>
 <tr>
-<td>storage_type </td><td>MEDIA_STORAGE_TYPE </td><td>Storage type (media_content_storage_e)  </td></tr>
+<td>storage_type </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga38bd4ae1f3d32c818476594696aeef51" title="Media storage.">MEDIA_STORAGE_TYPE</a> </td><td>Storage type (media_content_storage_e)  </td></tr>
 <tr>
-<td>favorite </td><td>MEDIA_FAVOURITE </td><td>User data. Not guarantee independence between applications.  </td></tr>
+<td>favorite </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga19b21d16fbb62cf6051e56d68cb22134" title="The time to register favourite.">MEDIA_FAVOURITE</a> </td><td>User data. Not guarantee independence between applications.  </td></tr>
 <tr>
-<td>provider </td><td>MEDIA_PROVIDER </td><td>User data. Not guarantee independence between applications.  </td></tr>
+<td>provider </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga10510d464978a82645c4e82dddaeacd6" title="Media provider.">MEDIA_PROVIDER</a> </td><td>User data. Not guarantee independence between applications.  </td></tr>
 <tr>
-<td>category </td><td>MEDIA_CATEGORY </td><td>User data. Not guarantee independence between applications.  </td></tr>
+<td>category </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#gade9ae9815548fb0f3eb0df970ca79a0a" title="Media category.">MEDIA_CATEGORY</a> </td><td>User data. Not guarantee independence between applications.  </td></tr>
 <tr>
-<td>location_tag </td><td>MEDIA_LOCATION_TAG </td><td>User data. Not guarantee independence between applications.  </td></tr>
+<td>location_tag </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga1647868b2f5c024f22020878a2949cf7" title="Media location tag.">MEDIA_LOCATION_TAG</a> </td><td>User data. Not guarantee independence between applications.  </td></tr>
 <tr>
-<td>age_rating </td><td>MEDIA_AGE_RATING </td><td>User data. Not guarantee independence between applications.  </td></tr>
+<td>age_rating </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#gaad1e85b84ecaa6870ae5f83603fd37f8" title="Media age rating.">MEDIA_AGE_RATING</a> </td><td>User data. Not guarantee independence between applications.  </td></tr>
 <tr>
-<td>weather </td><td>MEDIA_WEATHER </td><td>User data. Not guarantee independence between applications.  </td></tr>
+<td>weather </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga0a6d508509f3b47878aec68378e571da" title="Media weather.">MEDIA_WEATHER</a> </td><td>User data. Not guarantee independence between applications.  </td></tr>
 <tr>
-<td>played_count </td><td>MEDIA_PLAYED_COUNT </td><td>User data. Not guarantee independence between applications. (deprecated since 4.0)  </td></tr>
+<td>played_count </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga4de714898ee1f2acbcd5accdb6b8ec3d" title="Media playedcount.">MEDIA_PLAYED_COUNT</a> </td><td>User data. Not guarantee independence between applications. (deprecated since 4.0)  </td></tr>
 <tr>
-<td>played_time </td><td>MEDIA_LAST_PLAYED_TIME </td><td>User data. Not guarantee independence between applications. (deprecated since 4.0)  </td></tr>
+<td>played_time </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga9f121b50a1396697798eef55c139d585" title="Media last played time.">MEDIA_LAST_PLAYED_TIME</a> </td><td>User data. Not guarantee independence between applications. (deprecated since 4.0)  </td></tr>
 <tr>
-<td>played_position </td><td>MEDIA_LAST_PLAYED_POSITION </td><td>User data. Not guarantee independence between applications. (deprecated since 4.0)  </td></tr>
+<td>played_position </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga0a9145e8930792db409a75bc24d05a11" title="Media last played position of file.">MEDIA_LAST_PLAYED_POSITION</a> </td><td>User data. Not guarantee independence between applications. (deprecated since 4.0)  </td></tr>
 <tr>
-<td>content_name </td><td>MEDIA_CONTENT_NAME </td><td>User data. Not guarantee independence between applications. (deprecated since 4.0)  </td></tr>
+<td>content_name </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga6863b8e62f62400016a54b1973c847ce" title="Media content name.">MEDIA_CONTENT_NAME</a> </td><td>User data. Not guarantee independence between applications. (deprecated since 4.0)  </td></tr>
 <tr>
-<td>keyword </td><td>MEDIA_KEYWORD </td><td>User data. Not guarantee independence between applications. (deprecated since 4.0)  </td></tr>
+<td>keyword </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga11922024233d4cf60da760be4b1f0981" title="Media keyword.">MEDIA_KEYWORD</a> </td><td>User data. Not guarantee independence between applications. (deprecated since 4.0)  </td></tr>
 <tr>
-<td>thumbnail_path </td><td>MEDIA_THUMBNAIL_PATH </td><td>Thumbnail path(album art for Audio) if exist.  </td></tr>
+<td>thumbnail_path </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga34d9f1617a05bab262b99ccca6da6c5c" title="Media thumbnail path.">MEDIA_THUMBNAIL_PATH</a> </td><td>Thumbnail path(album art for Audio) if exist.  </td></tr>
 <tr>
-<td>description </td><td>MEDIA_DESCRIPTION </td><td>Get from metadata if exist.  </td></tr>
+<td>description </td><td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#gac06d07a564c13118574a1a23819176a8" title="Media description.">MEDIA_DESCRIPTION</a> </td><td>Get from metadata if exist.  </td></tr>
 </table>
 <p><br/>
 </p>
@@ -227,7 +229,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of face for the passed <em>media_id</em> from the media database.  <a href="#ga4c3ef4f52c0c00281d48122e0e9dc72a"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gad7233e1d47ee07c48e69a6963da1ac4a">media_info_foreach_face_from_db</a> (const char *media_id, <a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html#ga3136e83b14cb679e5e12d670c973dfcd">filter_h</a> filter, <a class="el" href="group__CAPI__CONTENT__MEDIA__FACE__MODULE.html#gad0a228708c69ab12bed227d9803bdf9e">media_face_cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates through the media files with optional <em>filter</em> in the given <em>media_id</em> from the media database.  <a href="#gad7233e1d47ee07c48e69a6963da1ac4a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga09d0b3e809440de2bc637a49c45dda3b">media_info_get_image</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga4008fc7101e7b04ff136e783eb9d10f7">media_info_h</a> media, <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> *image)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga09d0b3e809440de2bc637a49c45dda3b">media_info_get_image</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga4008fc7101e7b04ff136e783eb9d10f7">media_info_h</a> media, <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> *image)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the image metadata handle for a given media info.  <a href="#ga09d0b3e809440de2bc637a49c45dda3b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga59993abd7aced0e1c8e4d0e855ec3f0e">media_info_get_video</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga4008fc7101e7b04ff136e783eb9d10f7">media_info_h</a> media, <a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html#ga0398e2aac629ff119977992553053cd8">video_meta_h</a> *video)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a video metadata handle for a given media info.  <a href="#ga59993abd7aced0e1c8e4d0e855ec3f0e"></a><br/></td></tr>
@@ -606,7 +608,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/content.write</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If you request cancel for the already thumbnail created media, this function return MEDIA_CONTENT_ERROR_INVALID_OPERATION</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If you request cancel for the already thumbnail created media, this function returns <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gga7021a96fec7bb8becfe524c95af347baa9e71e6e22d72d311288320162eb7a02a">MEDIA_CONTENT_ERROR_INVALID_OPERATION</a></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">media</td><td>The handle to the media info</td></tr>
@@ -835,7 +837,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Deletes media information that meets the conditions of the filter from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000493">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000493">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gaf3c65c5fe726e752bd9d3814ccf63ee7" title="Requests to scan a media folder, asynchronously.">media_content_scan_folder()</a> or <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gab298d48ab5203a29c47f47dffaa8bcb6" title="Deletes the media information from the media database.">media_info_delete_from_db()</a> instead. </dd></dl>
 <p>This function can delete multiple media information from the media database.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
@@ -1923,7 +1925,7 @@ If you want to access only internal storage with this function, you should add p
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#ga3a642fb36fa024b64eb3d33dcb3f2201">image_meta_h</a> *&#160;</td>
           <td class="paramname"><em>image</em>&#160;</td>
         </tr>
         <tr>
@@ -1938,7 +1940,7 @@ If you want to access only internal storage with this function, you should add p
 <p>Gets the image metadata handle for a given media info. </p>
 <p>This function returns an image metadata handle retrieved from the media info.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>image</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc" title="Destroys the image metadata.">image_meta_destroy()</a>.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>image</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc" title="Destroys the image metadata.">image_meta_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">media</td><td>The handle to the media info </td></tr>
@@ -1955,7 +1957,7 @@ If you want to access only internal storage with this function, you should add p
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc" title="Destroys the image metadata.">image_meta_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html#gae0ead523f552582ba86cb04fe6236dfc" title="Destroys the image metadata.">image_meta_destroy()</a> </dd></dl>
 
 </div>
 </div>

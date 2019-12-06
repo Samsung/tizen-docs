@@ -1224,7 +1224,7 @@ Typedefs</h2></td></tr>
  http://tizen.org/privilege/appmanager.launch </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to use this function, you must add privileges. </dd>
 <dd>
-The following example demonstrates how to use the data_control_map_add() method.</dd></dl>
+The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gab3b7fc329b1f1be182f6b7cdb55c3be0" title="Adds the value associated with the specified key to the key-values map owned by the key-value structu...">data_control_map_add()</a> method.</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   map_add_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error, <span class="keywordtype">void</span> *user_data)
   {
@@ -1320,7 +1320,7 @@ The following example demonstrates how to use the data_control_map_add() method.
  http://tizen.org/privilege/appmanager.launch </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to use this function, you must add privileges. </dd>
 <dd>
-The following example demonstrates how to use the data_control_map_add_bulk_data() method.</dd></dl>
+The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga0546f4db95a54dbc4f1f2d7241bb41f5" title="Adds multiple key-value pairs in one request.">data_control_map_add_bulk_data()</a> method.</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   map_bulk_add_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#ga861220e989ef60683174e68193daad8e" title="The bulk result data handle.">data_control_bulk_result_data_h</a> bulk_results,
   <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error, <span class="keywordtype">void</span> *user_data)
@@ -1526,7 +1526,7 @@ The following example demonstrates how to use the data_control_map_add_bulk_data
 
 <p>Creates a provider handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>provider</em> should be destroyed with <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga76a60a379a618ac55cc2d2ed0684a3e2" title="Destroys the provider handle and releases all its resources.">data_control_map_destroy()</a>. The following example demonstrates how to use the data_control_map_create() method.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>provider</em> should be destroyed with <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga76a60a379a618ac55cc2d2ed0684a3e2" title="Destroys the provider handle and releases all its resources.">data_control_map_destroy()</a>. The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga5cc12e322c1750a1453d11501a734085" title="Creates a provider handle.">data_control_map_create()</a> method.</dd></dl>
 <div class="fragment"><pre class="fragment">  {
       <span class="keyword">const</span> <span class="keywordtype">char</span> *provider_id = <span class="stringliteral">&quot;http://tizen.org/datacontrol/provider/example&quot;</span>;
       <span class="keyword">const</span> <span class="keywordtype">char</span> *data_id = <span class="stringliteral">&quot;table&quot;</span>;
@@ -1657,7 +1657,7 @@ The following example demonstrates how to use the data_control_map_add_bulk_data
 <dd>
 If the length of value list associated with the <em>key</em> is larger than 20, this function only returns the first 20 values. </dd>
 <dd>
-The following example demonstrates how to use the data_control_map_get() method.</dd></dl>
+The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gac876512933e76990a03d8aaeef42c16d" title="Gets the value list associated with the specified key from the key-values map owned by the key-value ...">data_control_map_get()</a> method.</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   map_get_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <span class="keywordtype">char</span> **result_value_list,
                       <span class="keywordtype">int</span> ret_value_count, <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error, <span class="keywordtype">void</span> *user_data)
@@ -2098,7 +2098,7 @@ If you register multiple callback for same provider id, it will be overwritten b
  http://tizen.org/privilege/appmanager.launch </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to use this function, you must add privileges. </dd>
 <dd>
-The following example demonstrates how to use the data_control_map_remove() method.</dd></dl>
+The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gaa9a015c248c4c56eaf0e2c0f7b6fe38a" title="Removes the value associated with the specified key from the key-values map owned by the key-value st...">data_control_map_remove()</a> method.</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   map_remove_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error, <span class="keywordtype">void</span> *user_data)
   {
@@ -2206,7 +2206,7 @@ The following example demonstrates how to use the data_control_map_remove() meth
  http://tizen.org/privilege/appmanager.launch </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to use this function, you must add privileges. </dd>
 <dd>
-The following example demonstrates how to use the data_control_map_set() method.</dd></dl>
+The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gae24803d2aedcf38a1afdb35f17bfb8ab" title="Sets the value associated with the specified key to a new value.">data_control_map_set()</a> method.</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   map_set_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error, <span class="keywordtype">void</span> *user_data)
   {
@@ -2688,7 +2688,7 @@ The following example demonstrates how to use the data_control_map_set() method.
 
 <p>Creates a provider handle. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>provider</em> should be destroyed with <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga789a496f65d2c1c759bfa5ce689369a7" title="Destroys the provider handle and releases all its resources.">data_control_sql_destroy()</a>. The following example demonstrates how to use the data_control_sql_create() method:</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>provider</em> should be destroyed with <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga789a496f65d2c1c759bfa5ce689369a7" title="Destroys the provider handle and releases all its resources.">data_control_sql_destroy()</a>. The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga9db511a11a071de081f7f2332290e4bd" title="Creates a provider handle.">data_control_sql_create()</a> method:</dd></dl>
 <div class="fragment"><pre class="fragment">  {
       <span class="keyword">const</span> <span class="keywordtype">char</span> *provider_id = <span class="stringliteral">&quot;http://tizen.org/datacontrol/provider/example&quot;</span>;
       <span class="keyword">const</span> <span class="keywordtype">char</span> *data_id = <span class="stringliteral">&quot;table&quot;</span>;
@@ -2783,7 +2783,7 @@ The following example demonstrates how to use the data_control_map_set() method.
 <dd>
 If the value is a string, then the value must be wrapped in single quotes, else it does not need to be wrapped in single quotes. </dd>
 <dd>
-The following example demonstrates how to use the data_control_sql_delete() method:</dd></dl>
+The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga98eb5cbf213e79b1edcfc5e8034bf133" title="Deletes rows of a table owned by the SQL-type data control provider.">data_control_sql_delete()</a> method:</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   sql_delete_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error, <span class="keywordtype">void</span> *user_data)
   {
@@ -3515,7 +3515,7 @@ The following example demonstrates how to use the data_control_sql_delete() meth
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/datasharing <br/>
  http://tizen.org/privilege/appmanager.launch</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to use this function, you must add privileges. The following example demonstrates how to use the data_control_sql_insert() method:</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to use this function, you must add privileges. The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga32edf6104ee44d3418d46c54a619f831" title="Inserts new rows in a table owned by the SQL-type data control provider.">data_control_sql_insert()</a> method:</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   sql_insert_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <span class="keywordtype">long</span> <span class="keywordtype">long</span> inserted_row_id,
                          <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error, <span class="keywordtype">void</span> *user_data)
@@ -3617,7 +3617,7 @@ The following example demonstrates how to use the data_control_sql_delete() meth
  http://tizen.org/privilege/appmanager.launch</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to use this function, you must add privileges. </dd>
 <dd>
-The following example demonstrates how to use the data_control_sql_insert_bulk_data() method:</dd></dl>
+The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gaf8891d1ab8c938ada38f9668c2c9fa52" title="Inserts multiple rows in one request.">data_control_sql_insert_bulk_data()</a> method:</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   sql_bulk_insert_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#ga861220e989ef60683174e68193daad8e" title="The bulk result data handle.">data_control_bulk_result_data_h</a> bulk_results,
       <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error, <span class="keywordtype">void</span> *user_data)
@@ -3867,7 +3867,7 @@ If you register multiple callback for same provider id, it will be overwritten b
  http://tizen.org/privilege/appmanager.launch</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to use this function, you must add privileges. </dd>
 <dd>
-The following example demonstrates how to use the data_control_sql_select() method:</dd></dl>
+The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga88784fa67715233f95d61b36b60bc981" title="Selects the specified columns to be queried.">data_control_sql_select()</a> method:</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   sql_select_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <a class="code" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gacd46e90d77130e9689d9ad6a60772dd2" title="The structure type to represent a SQL result set.">result_set_cursor</a> *enumerator,
                          <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error, <span class="keywordtype">void</span> *user_data)
@@ -4168,7 +4168,7 @@ The following example demonstrates how to use the data_control_sql_select() meth
 
 <p>Moves the cursor to the first position. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The following example demonstrates how to use the data_control_sql_step_first() method:</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gad614a8a284f060790b2df2a478391558" title="Moves the cursor to the first position.">data_control_sql_step_first()</a> method:</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   sql_select_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <a class="code" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gacd46e90d77130e9689d9ad6a60772dd2" title="The structure type to represent a SQL result set.">result_set_cursor</a> cursor,
                          <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error)
@@ -4216,7 +4216,7 @@ The following example demonstrates how to use the data_control_sql_select() meth
 
 <p>Moves the cursor to the last position. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The following example demonstrates how to use the data_control_sql_step_last() method:</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gafe857478d72de6a7b50ec9b366e81fed" title="Moves the cursor to the last position.">data_control_sql_step_last()</a> method:</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   sql_select_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <a class="code" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gacd46e90d77130e9689d9ad6a60772dd2" title="The structure type to represent a SQL result set.">result_set_cursor</a> cursor,
                          <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error)
@@ -4264,7 +4264,7 @@ The following example demonstrates how to use the data_control_sql_select() meth
 
 <p>Moves the cursor to the next position. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The following example demonstrates how to use the data_control_sql_step_next() method:</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga9e2fcfab4685172c318db897efff02d1" title="Moves the cursor to the next position.">data_control_sql_step_next()</a> method:</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   sql_select_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <a class="code" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#gacd46e90d77130e9689d9ad6a60772dd2" title="The structure type to represent a SQL result set.">result_set_cursor</a> cursor,
                          <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error)
@@ -4511,7 +4511,7 @@ The following example demonstrates how to use the data_control_sql_select() meth
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/datasharing <br/>
  http://tizen.org/privilege/appmanager.launch</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to use this function, you must add privileges. The following example demonstrates how to use the data_control_sql_update() method:</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If you want to use this function, you must add privileges. The following example demonstrates how to use the <a class="el" href="group__CAPI__DATA__CONTROL__CONSUMER__MODULE.html#ga2b81b231301bf0bf3b16fc76a9a0be54" title="Updates values of a table owned by the SQL-type data control provider.">data_control_sql_update()</a> method:</dd></dl>
 <div class="fragment"><pre class="fragment">  <span class="keywordtype">void</span>
   sql_update_response_cb(<span class="keywordtype">int</span> request_id, <a class="code" href="group__CAPI__DATA__CONTROL__MODULE.html#gae8f88af80d11798a48660e86a3d735b5" title="The structure type for the provider handle.">data_control_h</a> provider, <span class="keywordtype">bool</span> provider_result, <span class="keyword">const</span> <span class="keywordtype">char</span> *error, <span class="keywordtype">void</span> *user_data)
   {

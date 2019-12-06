@@ -63,7 +63,7 @@ Over 3 million units of Tizen phones were sold in 2015. In addition, Samsung is 
 
 ## Productivity
 
-To facilitate developing Tizen applications, [Tizen Studio](/application/tizen-studio/) is provided as an integrated development environment (IDE). It helps you to develop, build, debug, profile, and emulate Tizen applications. Tizen Studio is equipped with useful developer tools, including native UI builder, emulator, and Dynamic Analyzer for profiling. In the integrated environment, you can enjoy comfortable and productive development of Tizen native and Web applications.
+To facilitate developing Tizen applications, [Tizen Studio](/application/tizen-studio/) is provided as an integrated development environment (IDE). It helps you to develop, build, debug, profile, and emulate Tizen applications. Tizen Studio is equipped with useful developer tools, including native UI builder, emulator, and Dynamic Analyzer for profiling. In the integrated environment, you can enjoy comfortable and productive development of Tizen Native and Web applications.
 
 **Figure: Tizen Studio tools**
 

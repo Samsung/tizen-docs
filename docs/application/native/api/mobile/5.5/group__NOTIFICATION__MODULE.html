@@ -2495,7 +2495,7 @@ Defines</h2></td></tr>
 {
     <a class="code" href="group__NOTIFICATION__MODULE.html#gaddf68580b746b320443290dd559a6101" title="Notification handle.">notification_h</a> noti = NULL;
     <span class="keywordtype">int</span> noti_err = <a class="code" href="group__NOTIFICATION__MODULE.html#gga59877a522577b6129d8a6175816a0867ace8d6426fa0e542f22d36e7b87bfe6c4">NOTIFICATION_ERROR_NONE</a>;
-    notification_led_type_e type = <a class="code" href="group__NOTIFICATION__MODULE.html#ggaa96099d9bff211107f6b200eeb92e1d9a40e950221a019a4ead9aa8f696ee155a">NOTIFICATION_LED_OP_OFF</a>;
+    <a class="code" href="group__NOTIFICATION__MODULE.html#gab888cde943369729aad5be00da4ab296" title="Enumeration for notification LED operation.">notification_led_op_e</a> type;
 
     noti_err = <a class="code" href="group__NOTIFICATION__MODULE.html#ga2ae363383537aee71391dd6fe2470668" title="Gets the LED displaying option from the notification handle.">notification_get_led</a>(noti, &amp;type, NULL);
     <span class="keywordflow">if</span> (noti_err != <a class="code" href="group__NOTIFICATION__MODULE.html#gga59877a522577b6129d8a6175816a0867ace8d6426fa0e542f22d36e7b87bfe6c4">NOTIFICATION_ERROR_NONE</a>)
@@ -3623,7 +3623,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets applications to display the notification. </p>
-<p>All display application is enabled(NOTIFICATION_DISPLAY_APP_ALL) if you do not call this function. </p>
+<p>All display application is enabled(<a class="el" href="group__NOTIFICATION__MODULE.html#gga12754b4babd618f4870d9fb2904e19aea5b7df46359bb8ba8552dd4401f8496f2">NOTIFICATION_DISPLAY_APP_ALL</a>) if you do not call this function. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3799,7 +3799,7 @@ Defines</h2></td></tr>
         <span class="keywordflow">return</span>;
 
     noti_err = <a class="code" href="group__NOTIFICATION__MODULE.html#ga003ff472d2ba1b2b9fd34a51984072e3" title="Sets the text to display on the notification view.">notification_set_text</a>(noti,
-            NOTIFICATION_TEXT_TYPE_CONTENT_EXTENTION,
+            <a class="code" href="group__NOTIFICATION__MODULE.html#gga1b932c18e0430b4cd3a09da98d1fb41bab983ee7dc1843b45298a3f30a458acef">NOTIFICATION_TEXT_TYPE_CONTENT_EXTENSION</a>,
             <span class="stringliteral">&quot;message&quot;</span>,
             NULL,
             <a class="code" href="group__NOTIFICATION__MODULE.html#gga0d890aa3e2c4ed1b6a8bd0387d860e9aa281cb737aa5b726ce0bced93af3edcdd">NOTIFICATION_VARIABLE_TYPE_NONE</a>);
@@ -3807,12 +3807,12 @@ Defines</h2></td></tr>
         <span class="keywordflow">return</span>;
 
     noti_err = <a class="code" href="group__NOTIFICATION__MODULE.html#ga9c200559e18da747ab6bdd4a8ebd1432" title="Sets an absolute path for an image file to display on the notification view.">notification_set_image</a>(noti,
-            NOTIFICATION_IMAGE_TYPE_EXTENTION,
+            <a class="code" href="group__NOTIFICATION__MODULE.html#ggaa285a3f74abc58d1cb0b78f0bfd09ed5a5c7fdaa6e46ddfa4155ba5223199c021">NOTIFICATION_IMAGE_TYPE_EXTENSION</a>,
             image_path);
     <span class="keywordflow">if</span> (noti_err != <a class="code" href="group__NOTIFICATION__MODULE.html#gga59877a522577b6129d8a6175816a0867ace8d6426fa0e542f22d36e7b87bfe6c4">NOTIFICATION_ERROR_NONE</a>)
         <span class="keywordflow">return</span>;
 
-    noti_err = <a class="code" href="group__NOTIFICATION__MODULE.html#gab5c41e60930b5aa856ed92b4d00c3e48" title="Sets the layout of the notification view.">notification_set_layout</a>(noti, NOTIFICATION_LY_EXTENTION);
+    noti_err = <a class="code" href="group__NOTIFICATION__MODULE.html#gab5c41e60930b5aa856ed92b4d00c3e48" title="Sets the layout of the notification view.">notification_set_layout</a>(noti, <a class="code" href="group__NOTIFICATION__MODULE.html#ggab1032ddf19008a4755c85efc92bbaef1adbc8c49b2f5c1d78e0288ee3570d4fcd">NOTIFICATION_LY_EXTENSION</a>);
     <span class="keywordflow">if</span> (noti_err != <a class="code" href="group__NOTIFICATION__MODULE.html#gga59877a522577b6129d8a6175816a0867ace8d6426fa0e542f22d36e7b87bfe6c4">NOTIFICATION_ERROR_NONE</a>)
         <span class="keywordflow">return</span>;
 
@@ -4591,7 +4591,7 @@ Defines</h2></td></tr>
 
 <p>Sets a text input box to reply directly on the notification. </p>
 <p>When you add a text input to the active notification, the notification UI will show a text input with a button. So, the user can enter any text and press the button to confirm the text as a input. You can edit some UI component that is related to the text input. First, you can add placeholder text to guide the user using <a class="el" href="group__NOTIFICATION__MODULE.html#ga003ff472d2ba1b2b9fd34a51984072e3" title="Sets the text to display on the notification view.">notification_set_text()</a> with <a class="el" href="group__NOTIFICATION__MODULE.html#gga1b932c18e0430b4cd3a09da98d1fb41ba768b5b6d228dc3f356ba2fdd8eb72859">NOTIFICATION_TEXT_TYPE_TEXT_INPUT_PLACEHOLDER</a> type. You also can edit button for the text input. For setting just a text to the button, you can set the text using <a class="el" href="group__NOTIFICATION__MODULE.html#ga003ff472d2ba1b2b9fd34a51984072e3" title="Sets the text to display on the notification view.">notification_set_text()</a> with <a class="el" href="group__NOTIFICATION__MODULE.html#gga1b932c18e0430b4cd3a09da98d1fb41ba1c5ac5024ea98094b281390ae6ca5e90">NOTIFICATION_TEXT_TYPE_TEXT_INPUT_BUTTON</a> type. If you want to show image button, you can set an image for the button using <a class="el" href="group__NOTIFICATION__MODULE.html#ga9c200559e18da747ab6bdd4a8ebd1432" title="Sets an absolute path for an image file to display on the notification view.">notification_set_image()</a> with <a class="el" href="group__NOTIFICATION__MODULE.html#ggaa285a3f74abc58d1cb0b78f0bfd09ed5ae563f555d886737ac616540ada9e6ccd">NOTIFICATION_IMAGE_TYPE_TEXT_INPUT_BUTTON</a> type.</p>
-<p>Note that you should set an app_control for handling the event for user input using <a class="el" href="group__NOTIFICATION__MODULE.html#gaaab86c323389c10da074c2ac20329d51" title="Sets the handler for a specific event.">notification_set_event_handler()</a>. <a class="el" href="group__NOTIFICATION__MODULE.html#gga38d5cdc16c56dbe88d821995f82b0799ad78a0924e11c543fcfaa22e8dfa77ac7">NOTIFICATION_EVENT_TYPE_CLICK_ON_TEXT_INPUT_BUTTON</a> is the event type for the text input. You can get the text the user enters in the app_control handle that is passed as a result of the event. The app_control will contain APP_CONTROL_DATA_TEXT key, so you can get the text using <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga006a7a9fb47c82edaa5413ad0af23f7e" title="Gets the extra data from the app_control.">app_control_get_extra_data()</a> using APP_CONTROL_DATA_TEXT key. The value will contain the text user enters.</p>
+<p>Note that you should set an app_control for handling the event for user input using <a class="el" href="group__NOTIFICATION__MODULE.html#gaaab86c323389c10da074c2ac20329d51" title="Sets the handler for a specific event.">notification_set_event_handler()</a>. <a class="el" href="group__NOTIFICATION__MODULE.html#gga38d5cdc16c56dbe88d821995f82b0799ad78a0924e11c543fcfaa22e8dfa77ac7">NOTIFICATION_EVENT_TYPE_CLICK_ON_TEXT_INPUT_BUTTON</a> is the event type for the text input. You can get the text the user enters in the app_control handle that is passed as a result of the event. The app_control will contain <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga2a28265780706c5cc9c5fe99f45348f4" title="Definition for the app_control data: Text.">APP_CONTROL_DATA_TEXT</a> key, so you can get the text using <a class="el" href="group__CAPI__APP__CONTROL__MODULE.html#ga006a7a9fb47c82edaa5413ad0af23f7e" title="Gets the extra data from the app_control.">app_control_get_extra_data()</a> using APP_CONTROL_DATA_TEXT key. The value will contain the text user enters.</p>
 <p>Note that you are able to make the switching button to the text input box. You have to set the app_control which you will set in a text input box to the switching button. Refer to the second sample code. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -4792,7 +4792,7 @@ Defines</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">noti</td><td>The notification handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">input_time</td><td>The input time. If you want the time stamp to not be shown, set this as NOTIFICATION_DO_NOT_SHOW_TIME_STAMP </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">input_time</td><td>The input time. If you want the time stamp to not be shown, set this as <a class="el" href="group__NOTIFICATION__MODULE.html#gadfe23cebe3078a54d027fad66a0cb0d4">NOTIFICATION_DO_NOT_SHOW_TIME_STAMP</a> </td></tr>
   </table>
   </dd>
 </dl>
