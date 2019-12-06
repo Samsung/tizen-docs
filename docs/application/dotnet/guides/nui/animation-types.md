@@ -2,7 +2,7 @@
 
 ## Path Animation
 
-The `Path` class can be used to animate the position and orientation of actors. (a three-dimentional parametric curve)
+The `Path` class is a three-dimensional parametric curve that is used to animate the position and orientation of actors.
 
 The `Path` consists of several points and each adjacent pair of points becomes a segment of the path. Each segment can be curved by adding control points to it.
 
@@ -10,7 +10,7 @@ In the following example, the P1, P2 and P3 form the path where the blue circle 
 
 <div style="text-align:center;width:100%;"><img src="./media/path.svg" /></div>
 
-The code would look like:
+To generate the `Path` object, use the following code:
 
 ```csharp
 Path path = new Path();
@@ -39,7 +39,7 @@ animation.AnimatePath(view, path, Vector3.Zero);
 animation.Play();
 ```
 
-The third parameter is the forward vector (in a local space coordinate system) that is oriented with the path's tangent direction.
+The third parameter is the forward vector in a local space coordinate system and is oriented with the tangent direction of the path.
 
 ## Related Information
 - Dependencies
