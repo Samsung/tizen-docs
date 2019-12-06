@@ -1,12 +1,11 @@
 # Image Classification
 
-You can classify an image, which belongs to corresponding labels.
+You can classify an image, which belongs to the corresponding labels.
 
 The main features of the Media Vision Inference API include:
 
 - Classifying an image
-
-  You can [classify](#classify) an image
+  Image classification is one of the main features of the Media Vision Inference API. You can [classify](#classify) an image, which matches to its corresponding labels. For example, to classify an image consisting of a food item, you can apply a food classification model while doing inference of the decoded image data.
 
 ## Prerequisites
 
@@ -14,9 +13,9 @@ To enable your application to use the media vision inference functionality:
 
 1. To use the functions and data types of the Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications), include the `<mv_inference.h>` header file in your application.
 
-   In addition, you must include the `<image_util.h>` header file to handle the image decoding tasks, or the `<camera.h>` header file to provide preview images.
+   In addition, you must include the `<image_util.h>` header file to handle the image decoding tasks, or the `<camera.h>` header file to provide the preview images.
 
-   ```
+   ``` c
    #include <mv_inference.h>
 
    /* Image decoding for image recognition */
@@ -25,11 +24,11 @@ To enable your application to use the media vision inference functionality:
    #include <camera.h>
    ```
 
-2. Create a structure to store the global data:
+2. Create a structure to store the global data.
 
-   - For image classification, use the following `imagedata_s` structure:
+     For image classification, use the following `imagedata_s` structure:
 
-     ```
+     ``` c
      struct _imagedata_s {
          mv_source_h g_source;
          mv_engine_config_h g_engine_config;
@@ -40,13 +39,13 @@ To enable your application to use the media vision inference functionality:
      ```
 
 <a name="classify"></a>
-## Classify an image
+## Classify image
 
 To classify an image:
 
 1. Create the source and engine configuration handles:
 
-    ```
+    ``` c
     int error_code = 0;
 
     error_code = mv_create_source(&imagedata.g_source);
@@ -60,9 +59,10 @@ To classify an image:
 
 2. Decode the image file and fill the `g_source` handle with the decoded raw data.
 
-   In the following example, the `sample.jpg` is the image to be classifed and it is in the `<OwnDataPath>` folder, where `<OwnDataPath>` refers to your own data path.
+   In the following example, `sample.jpg` is the image to be classifed and it is in the `<OwnDataPath>` folder.
+   The `<OwnDataPath>` refers to your own data path:
 
-    ```
+    ``` c
     /* For details, see the Image Util API Reference */
     unsigned char *dataBuffer = NULL;
     unsigned long long bufferSize = 0;
@@ -74,7 +74,7 @@ To classify an image:
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-    error_code = image_util_decode_set_input_path(imageDecoder, "/mydir/sample.jpg");
+    error_code = image_util_decode_set_input_path(imageDecoder, "/<OwnDataPath>/sample.jpg");
     if (error_code != IMAGE_UTIL_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
@@ -104,17 +104,17 @@ To classify an image:
     dataBuffer = NULL;
     ```
 
-3. To classify the `sample.jpg` image, create a `g_inference` media vision inference handle.
+3. To classify the `sample.jpg` image, create a `g_inference` media vision inference handle:
 
-    ```
+    ``` c
     error_code = mv_inference_create(&imagedata.g_inference);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-4. Configure `g_engine_config` with classification model data to classify image. In the following example, TensorFlow-Lite model is used and `data.tflite` and `label.txt` are in `<OwnDataPath>`. Model data is available in open model zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models).
+4. Configure `g_engine_config` with classification model data to classify image. In the following example, TensorFlow Lite model is used and `data.tflite` and `label.txt` are in `<OwnDataPath>`. Model data is available in open model zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models):
 
-    ```
+    ``` c
     #define MODEL_DATA "OwnDataPath/data.tflite"
     #define MODEL_LABEL "OwnDataPath/label.txt"
 
@@ -154,35 +154,34 @@ To classify an image:
                       MV_INFERENCE_INPUT_TENSOR_CHANNELS,
                       3);
     ```
-The datails of configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH` can be found in [Inference API](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html).
+The datails of configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH` of Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications).
 
-5. Use the `mv_inference_configure()` function to configure `g_inference` inference handle with `g_engine_config`.
-    ```
+5. Use `mv_inference_configure()` to configure `g_inference` inference handle with `g_engine_config`:
+    ``` c
     error_code = mv_inference_configure(imagedata.g_inference, imagedata.g_engine_config);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-6. Use the `mv_inference_prepare()` function to prepare inference.
-    ```
+6. Use `mv_inference_prepare()` to prepare inference:
+    ``` c
     error_code = mv_inference_prepare(imagedata.g_inference);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-7. Use the `mv_inference_image_classify()` function to classify the image.
+7. Use `mv_inference_image_classify()` to classify the image:
 
-    ```
+    ``` c
     error_code = mv_inference_image_classify(imagedata.g_source, &imagedata.g_inference, NULL, _on_image_classified_cb, NULL);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-6. The `mv_inference_image_classify()` function invokes the `_on_image_classified_cb()` callback.
+   `mv_inference_image_classify()` invokes `_on_image_classified_cb()` callback.
+    The following callback example prints the classified image labels with thier scores:
 
-   The following callback example prints the classified image labels with thier scores.
-
-    ```
+    ``` c
     static void
     _on_image_classified_cb(mv_source_h source, const int number_of_classes,
                   const int *indices, const char **names,
@@ -195,9 +194,9 @@ The datails of configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_
     }
     ```
 
-7. After the image classification is complete, destroy the source, engine configuration, and inference handles using the `mv_destroy_source()`, `mv_destroy_engine_config()`, and `mv_inference_destroy()` functions:
+8. After the image classification is complete, destroy the source, engine configuration, and the inference handles using `mv_destroy_source()`, `mv_destroy_engine_config()`, and `mv_inference_destroy()`:
 
-    ```
+    ``` c
     error_code = mv_destroy_source(imagedata.g_source);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
