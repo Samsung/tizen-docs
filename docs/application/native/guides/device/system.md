@@ -644,6 +644,7 @@ The following table lists the speech feature keys:
 | Key                                      | Type   | Description                              |
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/speech.control` | `bool` | The platform returns `true` for this key, if the device supports voice control. |
+| `http://tizen.org/feature/speech.control_manager` | `bool` | The platform returns `true` for this key, if the device supports voice control manager. |
 | `http://tizen.org/feature/speech.recognition` | `bool` | The platform returns `true` for this key, if the device supports speech recognition (STT). |
 | `http://tizen.org/feature/speech.synthesis` | `bool` | The platform returns `true` for this key, if the device supports speech synthesis (TTS). |
 

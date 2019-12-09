@@ -21,6 +21,9 @@ You can use the following text input and voice features in your .NET application
 
     You can allow the user to control the device through voice commands. You can register voice commands, which trigger a callback when the user speaks them.
 
+-   [Voice Control Manager](voice-control-manager.md)
+
+    You can allow the user to record voice and gives responses for recognized voice commands. You can register general and system voice commands such as "power on, off", "music play, stop". And, you can start and stop recording voice.
 
 ## Related Information
 * Dependencies
