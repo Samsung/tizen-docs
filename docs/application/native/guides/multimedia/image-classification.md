@@ -4,8 +4,9 @@ You can classify an image, which belongs to the corresponding labels.
 
 The main features of the Media Vision Inference API include:
 
-- Classifying an image
-  Image classification is one of the main features of the Media Vision Inference API. You can [classify](#classify) an image, which matches to its corresponding labels. For example, to classify an image consisting of a food item, you can apply a food classification model while doing inference of the decoded image data.
+- Classifying an image:
+
+Image classification is one of the main features of the Media Vision Inference API. You can [classify](#classify) an image, which matches to its corresponding labels. For example, to classify an image consisting of a food item, you can apply a food classification model while doing inference of the decoded image data.
 
 ## Prerequisites
 
@@ -13,7 +14,7 @@ To enable your application to use the media vision inference functionality:
 
 1. To use the functions and data types of the Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications), include the `<mv_inference.h>` header file in your application.
 
-   In addition, you must include the `<image_util.h>` header file to handle the image decoding tasks, or the `<camera.h>` header file to provide the preview images.
+   In addition, you must include the `<image_util.h>` header file to handle the image decoding tasks, or the `<camera.h>` header file to provide the preview images:
 
    ``` c
    #include <mv_inference.h>
@@ -59,7 +60,7 @@ To classify an image:
 
 2. Decode the image file and fill the `g_source` handle with the decoded raw data.
 
-   In the following example, `sample.jpg` is the image to be classifed and it is in the `<OwnDataPath>` folder.
+   In the following example, `sample.jpg` is the image to be classified and it is in the `<OwnDataPath>` folder.
    The `<OwnDataPath>` refers to your own data path:
 
     ``` c
@@ -154,7 +155,7 @@ To classify an image:
                       MV_INFERENCE_INPUT_TENSOR_CHANNELS,
                       3);
     ```
-The datails of configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH` of Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications).
+The details of configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH` of Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications) can be found.
 
 5. Use `mv_inference_configure()` to configure `g_inference` inference handle with `g_engine_config`:
     ``` c
@@ -179,7 +180,7 @@ The datails of configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_
     ```
 
    `mv_inference_image_classify()` invokes `_on_image_classified_cb()` callback.
-    The following callback example prints the classified image labels with thier scores:
+    The following callback example prints the classified image labels with their scores:
 
     ``` c
     static void
