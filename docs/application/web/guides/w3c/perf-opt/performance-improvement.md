@@ -288,12 +288,12 @@ The basic principle of improving the launch time of a Web application is simply 
 
 - Use web frameworks appropriately.
 
-  There are many popular web frameworks and they help us create web applications easier. It is possible to use popular web frameworks such as Angular, Vue and so on for Tizen web application development.
+  There are many popular web frameworks and they help us create web applications easier. It is possible to use popular web frameworks such as Angular, Vue, and so on for Tizen web application development.
 
   However, if you do not use a framework correctly, it can degrade your application performance on the contrary.
 
   For example, application launch can take a long time. The delay is because most of the web frameworks must be initialized for resource loading while the application starts.
-  Therefore it is recommended not to use web frameworks if your web application UX is simple and the launch time performance is important.
+  Therefore, it is recommended not to use web frameworks if your web application UX is simple and the launch time performance is important.
 
   Alternatively, avoid loading web frameworks until the web application displays the first page. You can create a simple first page that does not use web frameworks and load web frameworks asynchronously while the first page is displayed. Additionally, most frameworks have specific features to improve their loading performance, for example, lazy-loading. To improve the performance of your application, you can use one of the specific features in your web applications that are based on web frameworks.
 
