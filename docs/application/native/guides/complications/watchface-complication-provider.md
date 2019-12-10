@@ -32,6 +32,15 @@ void _watchface_complication_provider_update_requested_cb(const char *provider_i
         const char *req_appid, watchface_complication_type_e type, const bundle *context,
         bundle *share_data, void *user_data)
 {
+    if (type == WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT) {
+        watchface_complication_provider_data_set_short_text(shared_data, "updated short text");
+    } else if (type == WATCHFACE_COMPLICATION_TYPE_TIME) {
+        complication_time_info_h info;
+        watchface_complication_provider_timeinfo_create(&info);
+        watchface_complication_provider_timeinfo_set_timezone_id(info, "Asia/Seoul");
+        watchface_complication_provider_data_set_timeinfo(shared_data, info);
+        watchface_complication_provider_timeinfo_destroy(info);
+    }
 }
 
 bool app_create(void *data)
@@ -68,7 +77,7 @@ The complication data can be set using the following APIs. These APIs can be use
 > **Note**
 >
 > `watchface_complication_provider_data_set_timestamp()` is deprecated since Tizen 5.5.
-> Instead, use `watchface_complication_provider_timeinfo_create()` and `watchface_complication_provider_timeinfo_set_timezone_id`
+> Instead, use `watchface_complication_provider_timeinfo_create()` and `watchface_complication_provider_timeinfo_set_timezone_id`.
 
 
 ```cpp
@@ -220,7 +229,7 @@ And, the specific default value is mandatory depending on each support types:
 >
 > `<default-hour>`, `<default-minute>`, and `<default-second>` are deprecated since Tizen 5.5.
 > Instead, use `<default-timezone-id>`.
-> `<default-timezone-id>` is the value that declared in TZ database. For example, Asia/Seoul.
+> `<default-timezone-id>` is the value declared in the IANA(Internet Assigned Numbers Authority) TZ database. For example, Asia/Seoul.
 > If the xml contains `<default-timezone-id>`, then `<default-hour>`, `<default-minute>`, and `<default-second>` are not necessary.
 
 

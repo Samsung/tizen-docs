@@ -7,12 +7,12 @@ The watch face can select the complication and request to update the complicatio
 
 There are two ways to update the complication data.
 
-1. Watch Face can request to update complication data to complication provider application. The complication provider application receives the request and update the complication data. Then, the complication update callback is called in watch face.
+1. Watch Face can request complication provider application to update complication data. The complication provider application receives the request and updates the complication data. Then, the complication update callback is called in watch face.
 
     ![Complication](media/complication_1.png)
 
 
-2. If the complication data is changed, the complication provider application can notify to the watch face. If the complication received the notification, it requests to update automatically. Then, the update request comes to the complication provider. The complication provider must set the updated data in update requested callback. After the complication data is updated, the complication update callback is called in the watch face.
+2. If the complication data is changed, the complication provider application can notify to the watch face. If the complication receives the notification, it requests to update automatically. Then, the update request comes to the complication provider. The complication provider must set the updated data in update requested callback. After the complication data is updated, the complication update callback is called in the watch face.
 
     ![Complication_update](media/complication_2.png)
 
@@ -39,7 +39,7 @@ The followings are types of watch face complication:
 |                   |                                            | extra data      |
 | image type        | image path                                 | extra data      |
 | icon type         | icon path                                  | extra data      |
-| time type         | timestamp(deprecated) or time information  | short text      |
+| time type         | timestamp (deprecated) or time information | short text      |
 |                   |                                            | extra data      |
 | empty             |                                            |                 |
 
