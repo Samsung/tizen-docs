@@ -11,15 +11,14 @@ The key features of Tizen 5.5 are the enhancement of development environment and
 
 ## Enhancement of Development Environment and Core Component
 
-- **Tizen.NET** :
+- **Tizen .NET** :
 It is the development environment for developing high quality and high performance application in C#. There is the enhancement in Tizen Development environment in Tizen 5.5.
-The latest Xamarin.Forms 4.0 and the latest .NET Core 3.0 are now supported. Xamarin.Forms on Tizen .NET is a complete cross-platform UI toolkit that allows you to create native UI. The latest .NET Core supports unloading DLL, AOT, pre-loading, pre-initialization,Tiered complications and MPGO for enhancing application launching time. Also, there is memory optimization by reducing relocation of DLL files, pre-loading for resource sharing and so on. The .NET Core 3.0 Runtime is faster, lighter than its previous version. With all these enhancements, the application launching time is reduced by 28% and memory usage is reduced by 20%.
-New Tizen extension for official visual studio for Mac also is released in Tizen 5.5. The key features of the Tizen extension are the Tizen.NET application development environment, the Tizen IDE tools, and the application debugging using .NET Core debugge.
+The latest Xamarin.Forms 4.0 and the latest .NET Core 3.0 are now supported. Xamarin.Forms on Tizen .NET is a complete cross-platform UI toolkit that allows you to create native UI. The latest .NET Core supports unloading DLL, AOT, pre-loading, pre-initialization,Tiered complications and MPGO for enhancing application launching time. Also, there is memory optimization by reducing relocation of DLL files, pre-loading for resource sharing and so on. The .NET Core 3.0 Runtime is faster, lighter than its previous version. With all these enhancements, the application launching time is reduced by 28% and memory usage is reduced by 20%. New Tizen extension for official visual studio for Mac also is released in Tizen 5.5. The key features of the Tizen extension are the Tizen.NET application development environment, the Tizen IDE tools, and the application debugging using .NET Core debugger.
 
 ![img](media/5.5_1_XamarinForms.png)
 ![img](media/5.5_2_VisualStudio.png)
 
-- **Watchface Complication APIs in Tizen 5.5** :
+- **Watchface Complication API** :
 Tizen 5.5 provides an easy way to create custom complications in a watch face. These APIs provide various kinds of complication types. You can deploy various kinds of complication services such as health, battery, air pollution, and so on by using these APIs.
 
 ![img](media/5.5_3_Complication.png)
@@ -31,7 +30,7 @@ The Lottie animations are supported in Tizen 5.5. Lottie was named by AirBnB. It
 - **Multi-assistant Framework** :
 It aims to support various AI assistants at the same time for better usability. The framework defines a common interface for making an assistant of the multi-assistant framework. It also provides an expandable wake-up engine that recognizes invocation keyword for each assistant and supports to add a new keyword.
 
-- **The multi-device distributed web engine** :
+- **Multi-device distributed web engine** :
 It is designed for both memory resource requirements mitigation and JavaScript execution speed enhancement to overcome the resource constraints of the low-end devices. With the prior multi-process design of the web engine, the memory usage of the renderers becomes significant as multiple tabs are created. CPU resource consumption of the renderer processes is also substantial as web applications get complicated.
 To manage hardware resources and to make resource usage predictable in low-end devices, the multi-device distributed web engine introduces features for offloading renderer processes over the network to resource-free devices while the browser process runs on the local low-end device.
 
