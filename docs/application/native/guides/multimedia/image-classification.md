@@ -1,12 +1,6 @@
 # Image Classification
 
-You can classify an image, which belongs to the corresponding labels.
-
-The main features of the Media Vision Inference API include:
-
-- Classifying an image:
-
-Image classification is one of the main features of the Media Vision Inference API. You can [classify](#classify) an image, which matches to its corresponding labels. For example, to classify an image consisting of a food item, you can apply a food classification model while doing inference of the decoded image data.
+Image classification is one of the main features of the Media Vision Inference API. You can [classify](#classify) an image, which belongs to the corresponding labels. For example, to classify an image consisting of a food item, you can apply a food classification model while doing inference of the decoded image data.
 
 ## Prerequisites
 
@@ -155,7 +149,7 @@ To classify an image:
                       MV_INFERENCE_INPUT_TENSOR_CHANNELS,
                       3);
     ```
-The details of configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH` of Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications) can be found.
+    The details of configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH` of Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications) can be found.
 
 5. Use `mv_inference_configure()` to configure `g_inference` inference handle with `g_engine_config`:
     ``` c
@@ -188,10 +182,10 @@ The details of configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_
                   const int *indices, const char **names,
                   const float *confidences, void *user_data)
     {
-      dlog_print(DLOG_INFO, LOG_TAG, classifed %d labels\n", number_of_classes);
+      dlog_print(DLOG_INFO, LOG_TAG, "classified %d labels\n", number_of_classes);
 
       for (int n = 0; n < number_of_classes; ++n)
-        dlog_print(DLOG_INFO, LOG_TAG, %s with %.3f score\n", names[n], confidences[n]);
+        dlog_print(DLOG_INFO, LOG_TAG, "%s with %.3f score\n", names[n], confidences[n]);
     }
     ```
 
