@@ -34,3 +34,13 @@ HTML5, CSS, and JavaScript:
 The first application examples show a simple application with a basic UI
 and minimal functionality. Get familiar with the example first, and
 afterwards you can use it as a basis to build more complex applications.
+
+## Richness on your Web applications
+
+After you create your first Tizen Web application, you can create additional common functionalities, which work on all your Web applications. To create them, you can use the Web-native languages, such as HTML5, CSS, and JavaScript.
+
+-   [Web Application Addon](addon/first-addon.md)
+
+    Addon is a software program that commonly runs on the Web applications. 
+
+The first addon example shows a pop-up saying hello before you enter to the main page of a Web application that you want to run. First, get familiar with the example and afterwards you can use it as a base to build more complex addons.

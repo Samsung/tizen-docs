@@ -28,6 +28,9 @@ Tizen provides various application models to allow you to create applications ta
 
   The service application is a Tizen Web application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
+- [Web Application Addon](addon.md)
+
+  Addon is a type of extension for Web applications. Addon works while the Web applications run. They work commonly on all the Web applications installed and provide some common functionalities, which are not included in Web applications. For example, an addon can show an advertisement before a Web application runs. Addons can be installed and removed separately. However, you cannot run them solely without running the Web applications.
 
 ## Application Package Manager
 
