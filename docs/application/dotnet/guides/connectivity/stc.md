@@ -15,7 +15,7 @@ The main features of the Tizen.Network.Stc namespace include:
 
 
 > **Note**  
-
+>
 > You can test the STC functionality on a target device only. The [emulator](../../../tizen-studio/common-tools/emulator.md) does not support this feature.
 
 ## Prerequisites
