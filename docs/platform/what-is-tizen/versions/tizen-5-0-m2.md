@@ -1,4 +1,4 @@
-# Tizen 5.0 M2
+# Tizen 5.0
 
 
 [The second milestone (M2) release of Tizen 5.0](../../release-notes/tizen-5-0-m2.md) was released in October 2018. Tizen has expanded its horizon from smart devices to IoT devices. Currently Tizen is used for the various kinds of smart devices.
