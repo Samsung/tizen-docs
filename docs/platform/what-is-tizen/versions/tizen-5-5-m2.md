@@ -14,9 +14,8 @@ The key features of Tizen 5.5 are the enhancement of development environment and
 - **Tizen .NET** :
 It is the development environment for developing high quality and high performance application in C#. There is the enhancement in Tizen Development environment in Tizen 5.5.
 The latest Xamarin.Forms 4.0 and the latest .NET Core 3.0 are now supported. Xamarin.Forms on Tizen .NET is a complete cross-platform UI toolkit that allows you to create native UI. The latest .NET Core supports unloading DLL, AOT, pre-loading, pre-initialization,Tiered complications and MPGO for enhancing application launching time. Also, there is memory optimization by reducing relocation of DLL files, pre-loading for resource sharing and so on. The .NET Core 3.0 Runtime is faster, lighter than its previous version. With all these enhancements, the application launching time is reduced by 28% and memory usage is reduced by 20%. New Tizen extension for official visual studio for Mac also is released in Tizen 5.5. The key features of the Tizen extension are the Tizen.NET application development environment, the Tizen IDE tools, and the application debugging using .NET Core debugger.
-
-![img](media/5.5_1_XamarinForms.png)
-![img](media/5.5_2_VisualStudio.png)
+  ![img](media/5.5_1_XamarinForms.png)
+  ![img](media/5.5_2_VisualStudio.png)
 
 - **Watchface Complication API** :
 Tizen 5.5 provides an easy way to create custom complications in a watch face. These APIs provide various kinds of complication types. You can deploy various kinds of complication services such as health, battery, air pollution, and so on by using these APIs.
@@ -40,15 +39,18 @@ Smart devices could provide useful services based on the user presence context. 
 ## On Device AI
 
 - **Machine Learning (ML)** : A new Tizen domain, Machine Learning (ML) is introduced along with its ML Inference API sets: “Pipeline ML API” and “Single ML API”. ML Inference API sets allows application developers to apply their machine learning mechanisms or neural network models easily and efficiently. Especially if the intelligence application has multiple sensors, multiple neural network models, and complex topology of data paths, Pipeline ML API can help implement the system efficiently with less time and effort. If developers need to use neural network models preloaded with the platform, APIs in Media Vision are appropriate because ML Inference APIs require developers to supply neural network models. In other words, for predefined special functions, Media Vision is appropriate and for general or custom functions, ML Inference is appropriate.
-ML API sets are based on [NNStreamer](https://github.com/nnsuite/nnstreamer) that allows construction of the GStreamer pipelines that consists of the conventional GStreamer media plugins and the neural network plugins. There are plans to expand its functionality to on-device training in the later releases of Tizen. The ML API set have two API subsets, Pipeline ML API and Single ML API. ML API sets of the current version of Tizen support machine learning inferences only. In ML API sets, there are two API subsets: Pipeline ML API set and Single ML API set.
-Pipeline ML API set allows you to construct and execute GStreamer pipelines with the conventional GStreamer plugins and neural network plugins provided by NNStreamer. With this API set, you can construct pipelines with multiple instances of neural network models, input streams, and various stream path manipulators.
-For input streams, you may use camera, mic, files, or arbitrary inputs from applications. However, your applications need to acquire appropriate privileges for the given inputs. For output streams, you may use files or callback functions of the application.
-Single ML API set allows you to invoke a given neural network model such as .tflite TensorFlow-lite model file with a single instance of input buffer easily.
-In Tizen 5.5, ML API sets allow TensorFlow-lite 1.13 and custom C libraries for model files. Although, NNStreamer itself supports more neural network frameworks such as TensorFlow, Caffe2, PyTorch, custom Python codes, Movidius NCSDK, and so on. However, device developers can install such frameworks and enable ML API sets to utilize such frameworks.
 
-> **Note**
->
-> Few of the GStreamer plugins that are white-listed are allowed with Tizen Application APIs, on the other hand, all the plugins of NNStreamer are allowed.
+  ML API sets are based on [NNStreamer](https://github.com/nnsuite/nnstreamer) that allows construction of the GStreamer pipelines that consists of the conventional GStreamer media plugins and the neural network plugins. There are plans to expand its functionality to on-device training in the later releases of Tizen. The ML API set have two API subsets, Pipeline ML API and Single ML API. ML API sets of the current version of Tizen support machine learning inferences only. In ML API sets, there are two API subsets: Pipeline ML API set and Single ML API set.
+
+  Pipeline ML API set allows you to construct and execute GStreamer pipelines with the conventional GStreamer plugins and neural network plugins provided by NNStreamer. With this API set, you can construct pipelines with multiple instances of neural network models, input streams, and various stream path manipulators.
+
+  For input streams, you may use camera, mic, files, or arbitrary inputs from applications. However, your applications need to acquire appropriate privileges for the given inputs. For output streams, you may use files or callback functions of the application. Single ML API set allows you to invoke a given neural network model such as .tflite TensorFlow-lite model file with a single instance of input buffer easily.
+
+  In Tizen 5.5, ML API sets allow TensorFlow-lite 1.13 and custom C libraries for model files. Although, NNStreamer itself supports more neural network frameworks such as TensorFlow, Caffe2, PyTorch, custom Python codes, Movidius NCSDK, and so on. However, device developers can install such frameworks and enable ML API sets to utilize such frameworks.
+
+  > **Note**
+  >
+  > Few of the GStreamer plugins that are white-listed are allowed with Tizen Application APIs, on the other hand, all the plugins of NNStreamer are allowed.
 
 - **Media Vision** :
 In Tizen 2.4 release, bar code recognition and generation features were added to Media Vision. Since then in Tizen 5.5 release, features such as detection, recognition and tracking of face and images have been added to Media Vision. These features are based on traditional computer vision technology and guarantee good execution speed on low-end hardware. With the rapid development of AI technology, the demand for DNN-based vision technologies has increased. In response to this growing trend, Media Vision has applied the AI Framework to some of the existing and new functions.
