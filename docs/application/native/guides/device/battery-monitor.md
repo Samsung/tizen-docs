@@ -20,7 +20,7 @@ The Battery Monitor APIs provide following provisions to fetch the battery usage
 
 To enable your application to use the Battery Monitor functionality:
 
-1. To use the [Battery Monitor](../../api/wearable/latest/group__CAPI__SYSTEM__BATTERY__MONITOR__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Battery Monitor](../../api/wearable/latest/group__CAPI__SYSTEM__BATTERY__BATTERY__MONITOR__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```xml
     <privileges>

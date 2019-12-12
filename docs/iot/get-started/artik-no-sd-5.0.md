@@ -1,14 +1,6 @@
-# Contents
+# Setting up ARTIK530/ARTIK530S without SD Card
 
-[Installing Tizen Studio](#Installing-Tizen-Studio)
-
-[Setting up ARTIK 530 or ARTIK 530s](#Setting-up-ARTIK-530-or-ARTIK-530s)
-
-[Flashing Tizen Images](#Flashing-Tizen-Images)
-
-[Tips](#Tips)
-
-# Installing Tizen Studio
+## Installing Tizen Studio
 
 If you have already installed Tizen Studio 3.0 and installed the **5.0 Mobile** profile for the **Main SDK** and the **IOT-Headed-5.0** and **IOT-Headless-5.0** profiles for the **Extension SDK**, you can skip this section.
 
@@ -28,7 +20,7 @@ Otherwise, to install Tizen Studio and the required profiles for IoT development
     > **Extension SDK** should be updated to the latest version.
 
 
-# Setting up ARTIK 530 or ARTIK 530s
+## Setting up ARTIK 530 or ARTIK 530s
 
 > ![Attention](media/attention_icon.png) 
 > 
@@ -115,9 +107,9 @@ To configure the ARTIK 530 or the ARTIK 530s hardware board:
         Welcome to Tizen
         ```
 
-# Flashing Tizen Images
+## Flashing Tizen Images
 
-## Prerequisites
+### Prerequisites
 
 You must have the binary images in your computer. You can download the binary images from:
 
@@ -134,7 +126,7 @@ To make a device with a display, select **Headed** image, which consists of the 
 
 Most of the flashing steps mentioned in this section for ARTIK 530 and ARTIK 530s are the same. Only step 4 is different.
 
-## Flashing eMMC (internal flash memory)
+### Flashing eMMC (internal flash memory)
 
 1.  Complete the following prerequisites:
     -   Ensure that you have Ubuntu 14.04 or above installed on your host computer.
@@ -258,7 +250,7 @@ For detailed information, see <https://wiki.tizen.org/Booting_Tizen_From_eMMC_On
 
 
 
-## Installing Drivers
+### Installing Drivers
 
 1.  Connect Smart Development Bridge (SDB) as described in the previous section.
 
@@ -279,9 +271,9 @@ For detailed information, see <https://wiki.tizen.org/Booting_Tizen_From_eMMC_On
         > ARTIK_530_plugin_tizen5.0.bat
         ```
 
-# Tips
+## Tips
 
-## Setting up Wi-Fi
+### Setting up Wi-Fi
 
 This section is not applicable if you want to connect your device to the SmartThings Cloud. In case of SmartThings devices, the device enables SoftAP mode during setup, therefore, you need not switch to Wi-Fi separately.
 

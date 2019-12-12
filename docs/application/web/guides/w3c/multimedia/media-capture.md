@@ -41,7 +41,7 @@ To provide users with the HTML media capture feature, you must learn to activate
     If the `capture` attribute does not exist or the value has not been entered, the `filesystem` format is activated. If the `camera` or `camcorder` format is selected, the device camera is activated.
 
     > **Note**  
-    > In the current version of the Tizen Studio, the `microphone` format for the capture attribute is not available as the voice recorder application is not included.
+    > In the current version of Tizen Studio, the `microphone` format for the capture attribute is not available as the voice recorder application is not included.
 
    The `accept` attribute (in [mobile](http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#attr-input-accept) and [wearable](https://www.w3.org/TR/2014/CR-html5-20140429/forms.html#attr-input-accept) applications) indicates which file types are appropriate. If used with a device that has a camera, it activates the device camera. With a device without a camera, it activates the My photo folder.
 

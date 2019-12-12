@@ -15,8 +15,8 @@ The following table describes the style properties of the [Tizen.NUI.BaseCompone
 
 | Name                     | Type                     | Description              |
 |----------------|--------------------|----------------|
-| `HeightResizePolicy`     | `string`                 | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation) |
-| `WidthResizePolicy`      | `string`                 | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation) |
+| `HeightResizePolicy`     | `string`                 | See [Size Negotiation](customview.md#sizenegotiation) |
+| `WidthResizePolicy`      | `string`                 | See [Size Negotiation](customview.md#sizenegotiation) |
 | `SizeModeFactor`         | `vector3`                | Factor used to calculate the view size<br><br> **Note**<br> This property is used only when `ResizePolicyType` is set to `ResizePolicyType.SizeRelativeToParent` or `ResizePolicyType.SizeFixedOffsetFromParent`.<br> The view's size is accordingly set by  multiplying the view size by this factor, or by adding the factor to the view size.           |
 | `MinimumSize`            | `Size2D`                 | Minimum size a view can  be assigned in size negotiation  |
 | `MaximumSize`            | `Size2D`                 | Maximum size a view can  be assigned in size negotiation              |

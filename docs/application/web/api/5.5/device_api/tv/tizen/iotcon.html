@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Iotcon">
- <div class="supported-platforms"><img class="tv-optional emulator" title="Optional, Supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="tv-optional emulator" title="Optional, Supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
 <div class="title"><h1>Iotcon API</h1></div>
 <div class="brief">
  The Iotcon API provides functions for IoT connectivity.
@@ -28,7 +28,7 @@ for accessing only external storage using this API, a privilege <a href="http://
 for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
         </ul>
         <p>
-For more information on the IoT features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/iot-connectivity">IoT Guide</a>.
+For more information on the IoT features, see <a href="/application/web/guides/connectivity/iotcon">IoT Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -3585,7 +3585,12 @@ var representation = new tizen.Representation(uriPath);
 </div>
 <div class="constructors">
 <h4 id="Representation::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">Representation(DOMString uriPath);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">Representation(DOMString uriPath);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3773,7 +3778,12 @@ query["filter"] = filter;
 </div>
 <div class="constructors">
 <h4 id="IotconOption::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">IotconOption(unsigned long id, DOMString data);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (unsigned long, DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">IotconOption(unsigned long id, DOMString data);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3951,7 +3961,12 @@ catch (err)
 </div>
 <div class="constructors">
 <h4 id="Response::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">Response(<a href="#Request">Request</a> request);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#Request">Request</a>)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">Response(<a href="#Request">Request</a> request);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -4774,7 +4789,9 @@ for <em>Client.findResource()</em>.
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -4784,7 +4801,7 @@ To guarantee this application will run on a device with a Iotcon, add the below 
 <li class="feature">http://tizen.org/feature/iot.ocf</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Iotcon {

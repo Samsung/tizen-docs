@@ -28,7 +28,7 @@ To use the Address Sanitizer:
 
 2. After the application is launched, run the application scenario you want to test.
 
-   The Tizen Studio shows the profiling result after the application crashes, as illustrated in the following figure.
+   Tizen Studio shows the profiling result after the application crashes, as illustrated in the following figure.
 
    In the example shown in the figure, the application crashes as soon as it is launched because the memory corruption happens in the `main()` function.
 

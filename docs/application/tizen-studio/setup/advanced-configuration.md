@@ -1,14 +1,14 @@
 # Configuring the Package Manager
 
-The Package Manager configuration allows you to manage the packages of the Tizen Studio. With the Package Manager configuration, you can change the options for the package repository for the main and extension SDK, as well as the proxy settings to access the package repository. If you want to configure the Package Manager in the command line interface, see [Updating with the CLI Package Manager](update-sdk.md#updating-with-the-cli-package-manager).
+The Package Manager configuration allows you to manage the packages of  Tizen Studio. With the Package Manager configuration, you can change the options for the package repository for the main and extension SDK, as well as the proxy settings to access the package repository. If you want to configure the Package Manager in the command line interface, see [Updating with the CLI Package Manager](update-sdk.md#updating-with-the-cli-package-manager).
 
 ## Configuring the Main SDK Repository
 
-You can set the configuration for installing or updating the Tizen Studio using one of the following methods. Before changing the package repository, note that the installed packages may be removed automatically, and you may need to reinstall the packages from the changed repository.
+You can set the configuration for installing or updating Tizen Studio using one of the following methods. Before changing the package repository, note that the installed packages may be removed automatically, and you may need to reinstall the packages from the changed repository.
 
 ### Configuring the Package Repository
 
-The package repository is a server which stores all the packages that you are using or will use in the Tizen Studio. Using the Package Manager, you can install or update packages from that repository. Rather than providing a single repository for the main SDK, several CDNs (Content Delivery Networks) are offered around the globe for your convenience. You can select the nearest package repository to install or update packages more quickly.
+The package repository is a server which stores all the packages that you are using or will use in Tizen Studio. Using the Package Manager, you can install or update packages from that repository. Rather than providing a single repository for the main SDK, several CDNs (Content Delivery Networks) are offered around the globe for your convenience. You can select the nearest package repository to install or update packages more quickly.
 
 **Figure: Configuration window with the Package Repository selected**
 
@@ -39,7 +39,7 @@ To install or update packages with the SDK image:
 
 ## Configuring the Extension SDK Repository
 
-The Tizen Studio supports extension packages from the extension repositories, which are developed and managed by external developers and companies. To configure the extension SDK, you must unfold the configuration panel by clicking **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) at the bottom of the dialog box. To return to the package repository configuration, click **Extension SDK** ![Extension SDK button icon active](./media/advanced_conf_icon_extension_active.png) to fold the extension SDK panel, or scroll up.
+izen Studio supports extension packages from the extension repositories, which are developed and managed by external developers and companies. To configure the extension SDK, you must unfold the configuration panel by clicking **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) at the bottom of the dialog box. To return to the package repository configuration, click **Extension SDK** ![Extension SDK button icon active](./media/advanced_conf_icon_extension_active.png) to fold the extension SDK panel, or scroll up.
 
 **Figure: Configuration window with the Extension SDK unfolded**
 

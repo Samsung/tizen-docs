@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::PrivacyPrivilege">
- <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>PrivacyPrivilege API</h1></div>
 <div class="brief">
  This Privacy Privilege API defines a set of APIs that manage the permissions for using a privacy-related privileges of application.
@@ -15,7 +15,7 @@
 <div class="description">
         <p>
 A Tizen Web application has privileges defined in <em>config.xml</em> file, but for legal purposes, in case of privacy-related privileges, there could be a need of asking user directly with proper pop-up.
-List of privacy-related privileges is available on <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Security and API Privileges</a> page.
+List of privacy-related privileges is available on <a href="/application/web/tutorials/sec-privileges">Security and API Privileges</a> page.
 Privacy Privilege API allows:
         </p>
         <ul>
@@ -223,8 +223,7 @@ For privileges not listed in application's <em>config.xml</em> file (or not priv
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">PermissionType:
-                  </span>
+<span class="return">PermissionType:</span>
  State of user's permission for using specified privilege.
               </ul>
 </div>
@@ -279,8 +278,7 @@ Maximum number of privileges that can be passed to array is 100.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">PrivilegeStatus[]:
-                  </span>
+<span class="return">PrivilegeStatus[]:</span>
  The array of status of user's permission for using specified privileges.
               </ul>
 </div>
@@ -400,7 +398,7 @@ tizen.ppm.requestPermission(
 <div class="brief">
  This method allows launching pop-up for asking user to directly grant permission for given privileges.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void requestPermissions(DOMString[] privileges, <a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void requestPermissions(DOMString[] privileges, <a href="#PermissionRequestSuccessCallback">PermissionRequestSuccessCallback</a> successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -566,8 +564,7 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
 <div class="brief">
  The PermissionSuccessCallback interface that implements the success callback used in the asynchronous operation for requesting permission for using privilege.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PermissionSuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionSuccessCallback {
     void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);
   };</pre>
 <p><span class="version">Since: </span>
@@ -622,8 +619,7 @@ tizen.ppm.requestPermission("http://tizen.org/privilege/callhistory.read", permi
 <div class="brief">
  The PermissionRequestSuccessCallback interface implements the success callback used in the asynchronous operation of requesting permissions for using privilege.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PermissionRequestSuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionRequestSuccessCallback {
     void onsuccess(<a href="#RequestStatus">RequestStatus</a>[] result);
   };</pre>
 <p><span class="version">Since: </span>
@@ -688,10 +684,10 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
 <pre class="webidl prettyprint">module PrivacyPrivilege {
   enum PermissionType { "PPM_ALLOW", "PPM_DENY", "PPM_ASK" };
   enum PermissionRequestResult { "PPM_ALLOW_FOREVER", "PPM_DENY_FOREVER", "PPM_DENY_ONCE" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;
   [NoInterfaceObject] interface PrivacyPrivilegeManagerObject {
     readonly attribute <a href="#PrivacyPrivilegeManager">PrivacyPrivilegeManager</a> ppm;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PrivacyPrivilegeManagerObject">PrivacyPrivilegeManagerObject</a>;
   [NoInterfaceObject] interface PrivacyPrivilegeManager {
     <a href="#PermissionType">PermissionType</a> checkPermission(DOMString privilege) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#PrivilegeStatus">PrivilegeStatus</a>[] checkPermissions(DOMString[] privileges) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -708,12 +704,10 @@ User's action for privilege http://tizen.org/privilege/contact.write was to: PPM
     readonly attribute DOMString privilege;
     readonly attribute <a href="#PermissionRequestResult">PermissionRequestResult</a> result;
   };
-  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PermissionSuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionSuccessCallback {
     void onsuccess(<a href="#PermissionRequestResult">PermissionRequestResult</a> result, DOMString privilege);
   };
-  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PermissionRequestSuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface PermissionRequestSuccessCallback {
     void onsuccess(<a href="#RequestStatus">RequestStatus</a>[] result);
   };
 };</pre>

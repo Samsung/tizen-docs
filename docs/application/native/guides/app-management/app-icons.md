@@ -144,6 +144,7 @@ To manage the badge:
       /* Error handling */
   ```
 
+<a name="add"> </a>
 ## Adding a Shortcut in Mobile Applications
 
 To add a shortcut to the home screen:

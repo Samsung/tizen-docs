@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::HumanActivityMonitor">
- <div class="supported-platforms"><img class="wearable-optional emulator-partial" title="Optional, Supported by Tizen Wearable emulator - Emulator supports only HRM" src="wearable_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="wearable-optional emulator-partial" title="Optional, Supported by Tizen Wearable emulator - Emulator supports only HRM" src="wearable_s_w_optional.png"></div>
 <div class="title"><h1>HumanActivityMonitor API</h1></div>
 <div class="brief">
  The Human Activity Monitor API defines interfaces and methods to manage human activity data from various sensors on the device.
@@ -25,7 +25,7 @@ Get current human activity monitor data          </li>
 Record and read human activity data          </li>
         </ul>
         <p>
-For more information about how to use Human Activity Monitor API, see <a href="https://developer.tizen.org/development/guides/web-application/sensors/human-activity-monitor">Human Activity Monitor Guide</a>.
+For more information about how to use Human Activity Monitor API, see <a href="/application/web/guides/sensors/ham">Human Activity Monitor Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -365,7 +365,7 @@ The <em>tizen.humanactivitymonitor</em> object allows access to the human activi
 <div class="brief">
  Gets the current human activity data for certain human activity types.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getHumanActivityData(<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void getHumanActivityData(<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback,
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -479,7 +479,7 @@ Cumulative total step count: 100
 <div class="brief">
  Starts a sensor and registers a change listener to be called when new human activity data for a given human activity type is available.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void start(<a href="#HumanActivityType">HumanActivityType</a> type, optional <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a>? changedCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void start(<a href="#HumanActivityType">HumanActivityType</a> type, optional <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a>? changedCallback,
            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a>? option);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -768,7 +768,7 @@ Calling this function has no effect if listener is not set.
 <div class="brief">
  Registers a listener that is to be called when the activity is recognized.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addActivityRecognitionListener(<a href="#ActivityRecognitionType">ActivityRecognitionType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> listener, 
+<div class="synopsis"><pre class="signature prettyprint">long addActivityRecognitionListener(<a href="#ActivityRecognitionType">ActivityRecognitionType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> listener,
                                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
@@ -802,8 +802,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  ID of the listener that can be used to remove the listener later.
               </ul>
 </div>
@@ -1051,7 +1050,7 @@ catch (err)
 <div class="brief">
  Reads the recorded human activity data with some query.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void readRecorderData(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, <a href="#HumanActivityRecorderQuery">HumanActivityRecorderQuery</a>? query, 
+<div class="synopsis"><pre class="signature prettyprint">void readRecorderData(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, <a href="#HumanActivityRecorderQuery">HumanActivityRecorderQuery</a>? query,
                       <a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
@@ -1334,7 +1333,7 @@ function onread(data)
 var type = "PRESSURE";
 var now = new Date();
 var startTime = now.setDate(now.getDate() - 4);
-var anchorTime = (new Date(2000, 1, 2, 6)).getTime();
+var anchorTime = new Date(2000, 1, 2, 6).getTime();
 var query =
 {
   startTime: startTime / 1000,
@@ -2017,7 +2016,9 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -2075,7 +2076,7 @@ To guarantee that the barometer (pressure) sensor application runs on a device w
 <li class="feature">http://tizen.org/feature/sensor.barometer</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module HumanActivityMonitor {
@@ -2084,10 +2085,24 @@ To guarantee that the barometer (pressure) sensor application runs on a device w
   enum PedometerStepStatus { "NOT_MOVING", "WALKING", "RUNNING", "UNKNOWN" };
   enum ActivityRecognitionType { "STATIONARY", "WALKING", "RUNNING", "IN_VEHICLE" };
   enum ActivityAccuracy { "LOW", "MEDIUM", "HIGH" };
+  dictionary HumanActivityRecorderOption {
+    long interval;
+    long retentionPeriod;
+  };
+  dictionary HumanActivityRecorderQuery {
+    long startTime;
+    long endTime;
+    long anchorTime;
+    long interval;
+  };
+  dictionary HumanActivityMonitorOption {
+    long callbackInterval;
+    long sampleInterval;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#HumanActivityMonitorManagerObject">HumanActivityMonitorManagerObject</a>;
   [NoInterfaceObject] interface HumanActivityMonitorManagerObject {
     readonly attribute <a href="#HumanActivityMonitorManager">HumanActivityMonitorManager</a> humanactivitymonitor;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#HumanActivityMonitorManagerObject">HumanActivityMonitorManagerObject</a>;
   [NoInterfaceObject] interface HumanActivityMonitorManager {
     void getHumanActivityData(<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback,
                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -2108,16 +2123,6 @@ To guarantee that the barometer (pressure) sensor application runs on a device w
   [NoInterfaceObject] interface StepDifference {
     readonly attribute long stepCountDifference;
     readonly attribute long timestamp;
-  };
-  dictionary HumanActivityRecorderOption {
-    long interval;
-    long retentionPeriod;
-  };
-  dictionary HumanActivityRecorderQuery {
-    long startTime;
-    long endTime;
-    long anchorTime;
-    long interval;
   };
   [NoInterfaceObject] interface HumanActivityData {
   };
@@ -2157,10 +2162,6 @@ To guarantee that the barometer (pressure) sensor application runs on a device w
   };
   [NoInterfaceObject] interface HumanActivityGPSInfoArray : <a href="#HumanActivityData">HumanActivityData</a> {
     readonly attribute <a href="#HumanActivityGPSInfo">HumanActivityGPSInfo</a>[] gpsInfo;
-  };
-  dictionary HumanActivityMonitorOption {
-    long callbackInterval;
-    long sampleInterval;
   };
   [NoInterfaceObject] interface HumanActivityRecognitionData : <a href="#HumanActivityData">HumanActivityData</a> {
     readonly attribute <a href="#ActivityRecognitionType">ActivityRecognitionType</a> type;

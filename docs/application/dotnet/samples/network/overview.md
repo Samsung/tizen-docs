@@ -25,7 +25,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="267" src="media/m16lescanner.jpg" width="150"/></td>
 			<td>
-			<p><strong>(M) Lescanner</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Lescanner" target="_blank"><strong>(M) Lescanner</strong></a></p>
 			<p>This sample application demonstrates how to scan the Bluetooth Low Energy (BLE) devices.</p>
 			</td>
 		</tr>
@@ -84,6 +84,13 @@ for TD:
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/NFCSampleApp" target="_blank"><strong>(W) NFCSampleApp</strong></a></p>
 			<p>This sample application demonstrates how to send and receive a NFC Data Exchange Format (NDEF) message from a remote NFC device and read the NDEF message from the NFC tag. It also demonstrates how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w76webproxysample.png" width="180"/></td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/WebProxySample" target="_blank"><strong>(W) WebProxySample</strong></a></p>
+                        <p>This sample application demonstrates how to use WebProxy to access the internet when Samsung Galaxy Watch is connected to a mobile phone through Bluetooth. For more information, see <a href="https://samsung.github.io/Tizen.NET/wearables/web-proxy/" target="_blank">content on Tizen .NET portal</a>.</p>                           
 			</td>
 		</tr>
 	</tbody>

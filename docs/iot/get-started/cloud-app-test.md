@@ -1,6 +1,6 @@
 # Testing with SmartThings App
 
-With the SmartThings app, you can test the ARTIK 530 or Raspberry Pi 3 boards developed by you. To test the boards:
+With the SmartThings app, you can test the Raspberry Pi 3 board developed by you. To test the board:
 
 1.  Launch the **SmartThings** app.
 

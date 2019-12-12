@@ -2,14 +2,14 @@
 
 1. Age Rating Categories
 
-   Age Rating is used to ensure that applications available in the Tizen Store are labeled by age according to the content. Age rating provides guidance to users, particularly parents, to help them decide whether to download a particular application or not. The rating of an application confirms that it is suitable for users over a certain age. Age rating is classified in the following way:
+   Age Rating is used to ensure that applications available in Tizen Store are labeled by age according to the content. Age rating provides guidance to users, particularly parents, to help them decide whether to download a particular application or not. The rating of an application confirms that it is suitable for users over a certain age. Age rating is classified in the following way:
 
    - All : Applications that everyone can play.
    - 12+ : Applications that child under the age of 12 cannot play unless accompanied by adults.
    - 16+ : Applications that children and teenagers under the age of 16 cannot play unless accompanied by adults.
    - 18+ : Applications that teenager and children (under 18) cannot play.
 
-   Content rating in the Tizen Store has been created according to international age rating standards for video/game content such as ESRB, PEGI. Therefore, if any content has an international age rating level, the level will be accepted without further review.
+   Content rating in Tizen Store has been created according to international age rating standards for video/game content such as ESRB, PEGI. Therefore, if any content has an international age rating level, the level will be accepted without further review.
 
    **Table: Age rating**
 
