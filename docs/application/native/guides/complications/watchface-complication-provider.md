@@ -77,7 +77,7 @@ The complication data can be set using the following APIs. These APIs can be use
 > **Note**
 >
 > `watchface_complication_provider_data_set_timestamp()` is deprecated since Tizen 5.5.
-> Instead, use `watchface_complication_provider_timeinfo_create()` and `watchface_complication_provider_timeinfo_set_timezone_id`.
+> Instead, use `watchface_complication_provider_timeinfo_create()` and `watchface_complication_provider_timeinfo_set_timezone_id()`.
 
 
 ```cpp
