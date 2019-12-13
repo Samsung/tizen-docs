@@ -1,7 +1,7 @@
 # Tizen 5.0
 
 [The second milestone (M2) release of Tizen 5.0](../../release-notes/tizen-5-0-m2.md) was announced in October 2018. Tizen has expanded its horizon from smart devices to IoT devices. Currently, Tizen is used for various kinds of smart devices.
-Tizen 5.0 adds more enhancements to the services and provides the opportunity to develop service-centric applications. With the result, the end-users will get a better experience with more enhanced applications. Tizen 5.0 provides APIs such as Tizen Interface Definition Language (TIDL), RPC-port for easy integration of various kinds of services such as Smart-things. Core open sources such as Blink, GStreamer, EFL, Wayland, and so on are upgraded.
+Tizen 5.0 adds more enhancements to the services and provides the opportunity to develop service-centric applications. With the result, the end-users will get a better experience with more enhanced applications. Tizen 5.0 provides APIs such as Tizen Interface Definition Language (TIDL) and RPC-port for easy integration of various kinds of services such as SmartThings. Many core open sources are upgraded in Tizen 5.0.
 
 The key features of Tizen 5.5 are as follows:
 
@@ -11,16 +11,16 @@ Applications can expose RPC style service interface to other applications with T
 * **Core Open source Upgrade**: In Tizen 5.0, the following core open source components are upgraded:
   - Blink M56 which is the core web engine in Tizen is upgraded to M63.
     - Enhancement to follow W3C Standards such as Animated PNG, Full featured Indexed DB, CSS grid layout, web USB, MSE, EME, and so on.
-    - Enhancement in standard web features WebRTC, and ARIA 1.1
-    - Enhancement in web performance such as V8 : ES6 performance enhancement, Web Assembly default enabling.
+    - Enhancement in standard web features WebRTC and ARIA 1.1.
+    - Enhancement in web performance such as V8 : ES6 performance enhancement and Web Assembly default enabling.
   - GStreamer 1.6.1 is upgraded to 1.12.2.
   - Pulseaudio 5.0 is upgraded to 11.1.
-  - EFL 1.16 is upgraded to 1.20
+  - EFL 1.16 is upgraded to 1.20.
   - Wayland is upgraded to 1.15.0 version.
-  - .NET Core(Runtime) is upgraded
+  - .NET Core(Runtime) is upgraded.
     - Coreclr 2.1.1 is upgraded to 2.1.4.
     - Corefx 2.1.1 is upgraded to 2.1.4.
-  - Xamarin.Froms is upgraded to 3.2.0. and so on.
+  - Xamarin.Forms is upgraded to 3.2.0, and so on.
 
 * **Tizen Circular UI for Watch**: Tizen 5.0 provides easy watch app development with Tizen Circular UI APIs and also provides Tizen Wearable App project template that eases development of the circular wearable applications.
   ![img](media/5.0_introduction_TizenCircularUIforWatch.png)
@@ -34,8 +34,8 @@ Applications can expose RPC style service interface to other applications with T
   - Multimedia API set for the rotation and zoom level.
   - NLP API set for new Namespace and Class.
   - InputMethod API set for floating keyboard and to hide or launch Input Method Editor (IME).
-  - WiFi API set for forgetting access point (AP), BSSID Scan, RawSSID, CountryCode, and WPS connection cancellation.
-  - NUI API set for KeyboardRepeatInfo, TextPredition and so on.
+  - WiFi API set for forget access point (AP), BSSID Scan, RawSSID, CountryCode, and WPS connection cancellation.
+  - NUI API set for KeyboardRepeatInfo, TextPredition, and so on.
 
   ![img](media/5.0_introduction_TizenFXAPI_v5.png)
 
