@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::HumanActivityMonitor">
- <div class="supported-platforms"><img class="mobile-optional emulator-partial" title="Optional, Supported by Tizen Mobile emulator - Emulator supports only HRM" src="mobile_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="mobile-optional emulator-partial" title="Optional, Supported by Tizen Mobile emulator - Emulator supports only HRM" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>HumanActivityMonitor API</h1></div>
 <div class="brief">
  The Human Activity Monitor API defines interfaces and methods to manage human activity data from various sensors on the device.
@@ -33,7 +33,7 @@ The gesture recognition API allows applications to be notified and react when th
 The activity recognition API allows applications to be notified and react when a user activity is recognized, for example, the user starts to run, walk or is in moving vehicle.
         </p>
         <p>
-For more information about how to use Human Activity Monitor API, see <a href="https://developer.tizen.org/development/guides/web-application/sensors/human-activity-monitor">Human Activity Monitor Guide</a>.
+For more information about how to use Human Activity Monitor API, see <a href="/application/web/guides/sensors/ham">Human Activity Monitor Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -2907,7 +2907,12 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
           </p>
 <div class="constructors">
 <h4 id="StressMonitorDataRange::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">StressMonitorDataRange(optional DOMString label, optional unsigned long min, optional unsigned long max);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, unsigned long, unsigned long)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">StressMonitorDataRange(optional DOMString label, optional unsigned long min, optional unsigned long max);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3094,7 +3099,9 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -3176,7 +3183,7 @@ To guarantee that the stress monitor vector sensor application runs on a device 
 <li class="feature">http://tizen.org/feature/sensor.stress_monitor</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module HumanActivityMonitor {

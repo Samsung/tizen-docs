@@ -28,7 +28,7 @@ Unlike when using other UI containers, you must write C code and an EDC script t
    }
    ```
 
-   If you add an `example.edc` file, the Tizen Studio calls Edje tools automatically to build the final `example.edj` file when building the project. The EDJ file is installed in the application data path.
+   If you add an `example.edc` file, Tizen Studio calls Edje tools automatically to build the final `example.edj` file when building the project. The EDJ file is installed in the application data path.
 
 2. In the C code, add a layout with the `elm_layout_add()` function:
 

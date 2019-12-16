@@ -4,15 +4,6 @@
 
 You must have the binary images in your computer. You can download the binary images from:
 
--   ARTIK 530 or ARTIK 530s
-    -   Boot image:
-        -   ARTIK 530: [tizen-4.0-unified_20180118.1_iot-boot-armv7l-artik530.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-boot-armv7l-artik530/tizen-4.0-unified_20180118.1_iot-boot-armv7l-artik530.tar.gz)
-
-        -   ARTIK 530s: None
-    -   Platform image:
-        -   Headleass (without display): [tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-headless-2parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headless-2parts-armv7l-artik530_710.tar.gz)
-        -   Headed (with display): [iot-headed-3parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headed-3parts-armv7l-artik530_710.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-headed-3parts-armv7l-artik530_710/tizen-4.0-unified_20180118.1_iot-headed-3parts-armv7l-artik530_710.tar.gz)
-        -   Customized image: Create and download the customized image as explained in the [Customized Platform Guide](../customized-platform/overview.md).
 -   Raspberry Pi 3:
     -   Boot image: [tizen-4.0-unified_20180118.1_iot-boot-arm64-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180118.1/images/standard/iot-boot-arm64-rpi3/tizen-4.0-unified_20180118.1_iot-boot-arm64-rpi3.tar.gz)
     -   Platform image:
@@ -22,20 +13,16 @@ You must have the binary images in your computer. You can download the binary im
 
 > **Note**
 >
-> To make a device with a display, select **Headed** image, which consists of the UI framework. To make a device without a display, select **Headless** image. Currently, the ARTIK boards support Headed.
+> To make a device with a display, select **Headed** image, which consists of the UI framework. To make a device without a display, select **Headless** image.
 
 
 You can flash the Tizen images on your board in two ways:
 
--   [Using the IoT Setup Manager](#flashing-with-iot-setup-manager) (ARTIK 530 or Raspberry Pi 3, for Linux and Windows computer)
--   [Using the command-line tool](#flashing-through-command-line) (ARTIK 530, ARTIK 530s, or Raspberry Pi 3, for Linux computer only)
+-   [Using the IoT Setup Manager](#flashing-with-iot-setup-manager) (Raspberry Pi 3, for Linux and Windows computer)
+-   [Using the command-line tool](#flashing-through-command-line) (Raspberry Pi 3, for Linux computer only)
 
 
 After you flash and set up the binary images on your board, you can optionally [set up Wi-Fi](#setting-up-wi-fi).
-
-> **Note**
->
-> `ARTIK 530s`: IoT Setup Manager does not support the ARTIK 530s board. You must use the command-line to flash the binaries to the ARTIK 530s board. For more information, see [Flashing through Command Line](#flashing-through-command-line).
 
 ## Flashing with IoT Setup Manager
 
@@ -166,17 +153,14 @@ The IoT Setup Manager edit view contains the following fields:
 
 -   **Profile name**
 
-    Specify a profile name, for example, ARTIK530-headless.
+    Specify a profile name, for example, RPI3-headless.
 
 -   **Target**
 
     Select the board and image type from the drop-down list.
 
     -   RPI3\_HEADLESS: SD-card-bootable headless image for Raspberry Pi 3 board
-    -   ARTIK530\_HEADLESS: SD-card-bootable headless image for ARTIK 530 board
-    -   ARTIK530\_HEADED: SD-card-bootable headed image for ARTIK 530 board
-    -   ARTIK530\_HEADLESS\_INSTALLABLE: eMMC-bootable headless binary for ARTIK 530 board. When you start the board with SD card, the image is installed into eMMC.
-    -   ARTIK530\_HEADED\_INSTALLABLE: eMMC-bootable headled binary for ARTIK 530 board. When you start the board with SD card, the image is installed into eMMC.
+
 -   **Boot image**
 
     Browse for the Tizen Boot image available on your hard drive. You must select proper images depending on the board. For more information, see [Prerequisite and Overview](#prerequisite-and-overview).
@@ -214,15 +198,7 @@ To flash Tizen on your SD card using the IoT Setup Manager:
 
                 > **Note**
 	            >
-                > For Raspberry Pi 3, the Ethernet must be set as shown above in the Rasberry Pi 3 example. While the Rasberry Pi is booting, it must be connected to the host computer through an Eternet cable as described in [Hardware Configuration](hardware-configuration.md#artik). If the Ethernet is no set as mentioned the the above Rasberry Pi 3 example, the IP is not applied.
-
-        -   ARTIK 530 example:
-            -   Profile name: Enter a profile name, for example, ARTIK530\_Headless or ARTIK530\_Headed
-            -   Target: ARTIK530\_HEADLESS for headless image or ARTIK530\_HEADED for headed image
-            -   Boot image or platform image: The local paths to boot and platform images, which you download from [Prerequisite and Overview](#prerequisite-and-overview).
-            -   ROM bundles: Left as blank
-            -   WiFi: Clear
-            -   Ethernet: Clear
+                > For Raspberry Pi 3, the Ethernet must be set as shown above in the Rasberry Pi 3 example. While the Rasberry Pi is booting, it must be connected to the host computer through an Eternet cable as described in [Hardware Configuration](hardware-configuration.md). If the Ethernet is no set as mentioned the the above Rasberry Pi 3 example, the IP is not applied.
 
     3.  Click **OK** to save.
 
@@ -251,138 +227,10 @@ After flashing your SD card, you need to install connectivity drivers. For more 
 -   While creating or editing a profile, ensure that the boot images, platform images, and the rpms (if selected) match the target device.
 -   Ensure that there are no white spaces in the boot image, platform image, and the rpm folder paths.
 -   Place RPMs in a separate directory, which does not contain any other files or directories and select the directory path for creating the profile.
--   ARTIK530\_HEADLESS\_INSTALLABLE and ARTIK530\_HEADED\_INSTALLABLE profiles are used for writing images from SD Card to eMMC. For more information on setting up the board, see [Setting up the Board and Driver](#installing-drivers).
 
 ## Flashing through Command Line
 
 You can also flash the SD card through command-line in Linux computer.
-
-### ARTIK 530 or ARTIK 530s
-
-> **Note**
->
->  Most of the flashing steps mentioned in this section for ARTIK 530 and ARTIK 530s are the same. Only step 4 is different.
-
-To flash eMMC (without SD card) for ARTIK 530 or ARTIK 530s:
-
-1.  Complete the following prerequisites:
-    -   Ensure that you have Ubuntu 14.04 or above installed on your host computer.
-    -   Install `fastboot` and `lthor`. For more information, see <https://wiki.tizen.org/Booting_Tizen_From_eMMC_On_ARTIK530>.
-    -   Verify whether the binary image files are in your computer. For more information, see [Prerequisite and Overview](#prerequisite-and-overview).
-
-2.  Set up the board connections. For more information, see [Hardware Configuration](hardware-configuration.md#artik).
-3.  Turn off and turn on the board. After the board is reset, the serial shell shows a number counting down next to the **Hit any key to stop autoboot** line. Before the count reaches 0, press **Enter** in the serial shell to stop the boot process and enter the bootloader mode.
-
-    ```
-    Board: ARTIK530 Raptor
-    DRAM:  512 MiB
-    HW Revision:    4
-    MMC:   NEXELL DWMMC: 0, NEXELL DWMMC: 1
-    In:    serial
-    Out:   serial
-    Err:   serial
-    LCD#1:0x4, LCD#2:0x4, CAM#1:0x4, CAM#2:0x4
-    ADD-ON-BOARD : 0xFFFF
-    Net:
-    Warning: ethernet@c0060000 (eth0) using random MAC address - xx:xx:xx:xx:xx
-    eth0: ethernet@c0060000
-    Hit any key to stop autoboot:  0 <Enter key>
-    artik530#
-    ```
-
-4.  Flash the boot image:
-    -   **ARTIK 530**
-        1.  Download the `tar.gz` file from [flash_boot_v2.tar.gz](embedded-files/flash_boot_v2.tar.gz).
-        2.  Unzip the `flash_boot_v2.tar.gz` file to get the `flash_boot.sh` file and the `bootimage` directory.
-
-            > **Note**
-            >
-            > The file extension of the downloaded file is `.tar_.gz`. Modify it to `.tar.gz` before unzipping the file.
-
-        3.  In the serial shell, enter `fastboot 0`:
-
-            ```
-            artik530# fastboot 0
-            ```
-
-        4.  In the Linux shell, run `flash_boot.sh`:
-
-            ```
-            $ ./flash_boot.sh
-            ```
-
-        5.  Reboot the board and enter the bootloader mode again.
-        6.  In the serial shell, enter `thordown 0 mmc 0`:
-
-            ```
-            artik530# thordown 0 mmc 0
-            ```
-
-        7.  In the Linux shell, run `lthor` to flash the boot image (which you downloaded in step 1):
-
-            ```
-            $ lthor tizen-4.0-unified_YYYYMMDD.V_iot-boot-armv7l-artik530.tar.gz
-            ```
-
-    -   **ARTIK 530s**
-        1.  Download the `tar.gz` file from [flash_boot_artik530s_v1.tar.gz](embedded-files/flash_boot_artik530s_v1.tar.gz).
-        2.  Unzip the `flash_boot_artik530s_v1.tar.gz`
-
-            > **Note**
-            >
-            > The file extension of the downloaded file is `.tar_.gz`. Modify it to `.tar.gz` before unzipping the file.
-
-            ```
-            $ tar xvf flash_boot_artik530s_v1.tar.gz
-            ./artik530s/
-            ./artik530s/os_3.0.0/
-            ./artik530s/os_3.0.0/bl1-emmcboot.img
-            ./artik530s/os_3.0.0/partmap_artik530s_tizen_emmc.txt
-            ./artik530s/os_3.0.0/bl_mon.img
-            ./artik530s/os_3.0.0/boot.img
-            ./artik530s/os_3.0.0/bootloader.img
-            ./artik530s/os_3.0.0/tizen_params.bin
-            ./artik530s/os_3.0.0/README.A530S_os_3.0.0
-            ./artik530s/os_3.0.0/loader-emmc.img
-            ./artik530s/os_3.0.0/flash_boot_for_tizen.sh
-            $
-            ```
-
-        3.  Move to `aritk530s/os_3.0.0/` and run `flash_boot_for_tizen.sh`
-
-            ```
-            $ cd artik530s/os_3.0.0/
-            artik530s/os_3.0.0/$ ./flash_boot_for_tizen.sh
-            ```
-
-            > **Note**
-            >
-            >  For more information, see README.A530S\_os\_3.0.0.
-
-5.  Flash the platform image:
-    1.  Reboot the board and enter the bootloader mode again.
-    2.  In the serial shell, enter `thordown 0 mmc 0`:
-
-        ```
-        artik530# thordown 0 mmc 0
-        ```
-
-    3.  In the Linux shell, run `lthor` to flash the platform image (which you downloaded in step 1):
-
-        ```
-        $ lthor tizen-4.0-unified_YYYYMMDD.V_iot-headless-2parts-armv7l-artik530_710.tar.gz
-        ```
-
-6.  Open the Smart Development Bridge (SDB) connection. For more information, see [Hardware Configuration](hardware-configuration.md).
-
-    > **Note**
-    >
-    >  Repeat `sdb-mode.sh --on` in the serial shell whenever you power cycle the device, in order to reconnect the SDB tool.
-
-
-7.  Install connectivity drivers, see [Installing Drivers](#installing-drivers).
-
-For detailed information, see <https://wiki.tizen.org/Booting_Tizen_From_eMMC_On_ARTIK530>.
 
 ### Raspberry Pi 3
 
@@ -484,24 +332,8 @@ To flash the SD card for Raspberry Pi 3:
 
 ## Installing Drivers
 
-1.  Set up the ARTIK 530 or Raspberry Pi 3 board and connect Smart Development Bridge (SDB) as described in [Hardware Configuration.](hardware-configuration.md)
+1.  Set up Raspberry Pi 3 board and connect Smart Development Bridge (SDB) as described in [Hardware Configuration.](hardware-configuration.md)
 2.  Install the connectivity drivers for each board:
-    -   **ARTIK 530**
-        1.  Download the plugin zip file from the **ARTIK530(4.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
-
-            ![ARTIK530(4.0) Plugin section](media/wifi_driver_artik530.png)
-
-        2.  For the case of the Linux shell(Linux), run the `sh` script given in the instructions. For example:
-
-            ```
-            $ ./ARTIK_530_plugin_tizen4.0.sh
-            ```
-
-        3.  For the case of the Command window(Windows), run the `bat` script given in the instructions. For example:
-
-            ```
-            > ARTIK_530_plugin_tizen4.0.bat
-            ```
 
     -   **Raspberry Pi 3**
         1.  Download the plugin zip file from the **Raspberry Pi 3(4.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.

@@ -23,7 +23,7 @@ The preferences are listed in the left pane, and you can search for items by usi
 
 To set a customized prefix for the widget ID, go to **Window > Preferences > Tizen Studio > Web**, and enter the value in the **Widget ID prefix** field. The default value of this field is **http://yourdomain/**.
 
-The value is automatically used in all widget IDs when you create a new Web application in the Tizen Studio. You can view the widget ID in the `config.xml` file of the project.
+The value is automatically used in all widget IDs when you create a new Web application in Tizen Studio. You can view the widget ID in the `config.xml` file of the project.
 
 **Figure: Widget ID**
 
@@ -36,7 +36,7 @@ Go to **Tizen Studio > Web > Chrome**.
 
 The Google Chrome&trade; browser location is automatically set if the browser is installed on your system.
 
-If you have installed the browser in a custom location, the Tizen Studio cannot automatically detect the path and you must set the location manually.
+If you have installed the browser in a custom location, Tizen Studio cannot automatically detect the path and you must set the location manually.
 
 <a name="editor"></a>
 ## Editor

@@ -2,7 +2,7 @@
 
 You can access and monitor the [device and system properties](#system-information-properties) (both hardware and capability), such as the battery level, available device storage, version number, model name, and the cellular network being used.
 
-The System Information API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The System Information API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the System Information API include:
 
@@ -282,6 +282,10 @@ The system properties are defined as subtypes of the `SystemInfoProperty` interf
 | `SystemInfoPeripheral` (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfoPeripheral), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfoPeripheral), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoPeripheral) applications) | `PERIPHERAL`         | Provides information about the video output status. |
 | `SystemInfoMemory` (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfoMemory), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfoMemory), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoMemory) applications) | `MEMORY`             | Provides information about the memory state of the device. |
 | `SystemInfoADS` (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfoADS), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfoADS), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoADS) applications) | `ADS`                | Provides information about the advertisement service. |
+| [`SystemInfoVideoSource`](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoVideoSource) | `VIDEOSOURCE`                | Provides information about the connected and disconnected devices. |
+| `SystemInfoCameraFlash` (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfoCameraFlash), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfoCameraFlash), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoCameraFlash) applications) | `CAMERA_FLASH`                | Provides a way to control the attached camera flash. |
+| [`SystemInfoServiceCountry`](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoServiceCountry) | `SERVICE_COUNTRY`                | Represents a country for which the basic policy of terms and conditions is set. |
+| [`SystemInfoSourceInfo`](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfoVideoSourceInfo) | `SOURCE_INFO`                | Provides information about the current video source of device, for example TV, HDMI1, HDMI2, and so on. |
 
 ## Related Information
 * Dependencies

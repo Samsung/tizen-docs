@@ -2,7 +2,7 @@
 
 You can download files from the Internet and monitor the progress and status of ongoing downloads.
 
-The Download API is mandatory for the Tizen mobile profile, but optional for wearable and TV profiles. This means that it is supported on all mobile devices, but may not be supported on all wearable and TV devices. The Download API is supported on all Tizen Emulators.
+The Download API is mandatory for the Tizen Mobile profile, but optional for wearable and TV profiles. This means that it is supported on all mobile devices, but may not be supported on all wearable and TV devices. The Download API is supported on all Tizen emulators.
 
 The main features of the Download API include:
 
@@ -32,7 +32,7 @@ To provide the user access to Internet resources, you must learn how to manage d
    var downloadRequest = new tizen.DownloadRequest('http://download.tizen.org/tools/README.txt', 'downloads');
    ```
 
-   The final parameter (`downloads`) defines the folder where the downloaded content is stored. The parameter uses a relative folder location defined in the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html) applications). The folder is not an absolute folder location, but instead uses a [virtual root location](../data/file-system.md#roots) (`downloads` is the default download location in the virtual root).
+   The final parameter (`downloads`) defines the folder where the downloaded content is stored. The parameter uses a relative folder location defined in the Filesystem API (in [mobile](../../api/latest/device_api/mobile/tizen/filesystem.html), [wearable](../../api/latest/device_api/wearable/tizen/filesystem.html), and [TV](../../api/latest/device_api/tv/tizen/filesystem.html) applications). The folder is not an absolute folder location, but instead uses a [virtual root location](../data/file-system.md#supported-virtual-roots) (`downloads` is the default download location in the virtual root).
 
 2. It is not possible to download anything when the device is not connected to a network. To check whether any connection is available, use the `getPropertyValue()` method of the `SystemInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/systeminfo.html#SystemInfo), [wearable](../../api/latest/device_api/wearable/tizen/systeminfo.html#SystemInfo), and [TV](../../api/latest/device_api/tv/tizen/systeminfo.html#SystemInfo) applications):
 

@@ -563,9 +563,9 @@ Typedefs</h2></td></tr>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Files saved on the internal/external storage are readable or writable by all applications.<br/>
  When an application is uninstalled, the files written by that application are not removed from the internal/external storage.<br/>
  The directory path may not exist, so you must make sure that it exists before using it.<br/>
- If you want to access files or directories in internal storage except <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ggaacf2209a06b947c1cee4ba223679383aaad87891dda8140f68427703aa8c2fdfb">STORAGE_DIRECTORY_SYSTEM_RINGTONES</a>, you must declare <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>.<br/>
- If you want to access files or directories in <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ggaacf2209a06b947c1cee4ba223679383aaad87891dda8140f68427703aa8c2fdfb">STORAGE_DIRECTORY_SYSTEM_RINGTONES</a>, you must declare http://tizen.org/privilege/systemsettings.<br/>
+ If you want to access files or directories in internal storage, you must declare <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>.<br/>
  If you want to access files or directories in external storage, you must declare <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>.<br/>
+ Refer to <a href="https://docs.tizen.org/application/native/guides/security/privacy-related-permissions"><b>Privacy-related Permissions</b></a>.<br/>
  You must release <em>path</em> using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -708,6 +708,7 @@ Typedefs</h2></td></tr>
  When an application is uninstalled, the files written by that application are not removed from the internal/external storage.<br/>
  If you want to access files or directories in internal storage, you must declare <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a>.<br/>
  If you want to access files or directories in external storage, you must declare <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>.<br/>
+ Refer to <a href="https://docs.tizen.org/application/native/guides/security/privacy-related-permissions"><b>Privacy-related Permissions</b></a>.<br/>
  You must release <em>path</em> using free(). </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

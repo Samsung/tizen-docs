@@ -50,7 +50,7 @@ To create a visual:
     RegisterVisual(ColorVisualPropertyIndex, _colorVisual);
     ```
 
-    The visuals example in this topic use property registration based on a fixed property index range. The NUI code base has been modified to perform property registration based on automatic index generation. For more information, see the [Managing Properties](creating-custom-view-controls.md#properties).
+    The visuals example in this topic use property registration based on a fixed property index range. The NUI code base has been modified to perform property registration based on automatic index generation. For more information, see the [Managing Properties](customview.md#properties).
 
 5.  Set the depth index.
 

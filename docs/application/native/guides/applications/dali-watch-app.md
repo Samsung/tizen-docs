@@ -55,7 +55,7 @@ The `mainloop()` function is used to start the event loop. If you do not call th
 
 The `Dali::WatchApplication` class emits several signals which you can connect to.
 
-The following table lists the callbacks for the watch application signals provided by the `Dali::WatchApplication` class. These signals originally occur in the Tizen application framework, and you can use the callbacks to react to them.
+The following table lists the callbacks for the watch application signals provided by the `Dali::WatchApplication` class. These signals originally occur in the Tizen Application framework, and you can use the callbacks to react to them.
 
 **Table: Callbacks for watch application event signals**
 

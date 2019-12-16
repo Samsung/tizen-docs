@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SystemInfo">
- <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>SystemInfo API</h1></div>
 <div class="brief">
  This specification defines interfaces and methods that provide web applications with access to various properties of a system.
@@ -77,7 +77,7 @@ Not all above properties may be available on every Tizen device. For instance, a
  WIFI_NETWORK     - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.wifi"</em>)          </li>
         </ul>
         <p>
-For more information on the System Information features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/system-information">System Information Guide</a>.
+For more information on the System Information features, see <a href="/application/web/guides/device/system-information">System Information Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -3445,7 +3445,9 @@ If the specified brightness value is not supported by the device, the brightness
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -3487,7 +3489,7 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
 <li class="feature">http://tizen.org/feature/network.wifi</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SystemInfo {

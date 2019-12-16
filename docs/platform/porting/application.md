@@ -1,6 +1,6 @@
 # Application
 
-Tizen supports both core and reference applications. Core applications are developed with platform internal interfaces, such as the Enlightenment Foundation Libraries (EFL) and other third party libraries. Reference applications are developed with Tizen native APIs.
+Tizen supports both core and reference applications. Core applications are developed with platform internal interfaces, such as the Enlightenment Foundation Libraries (EFL) and other third party libraries. Reference applications are developed with Tizen Native APIs.
 
 The following table shows whether the core and reference versions of the preloaded sample applications are supported by default on the emulator and target device.
 

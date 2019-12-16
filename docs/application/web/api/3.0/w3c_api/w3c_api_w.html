@@ -22,10 +22,10 @@
                 <h1>Tizen Wearable Web W3C/HTML5 and Supplementaries API Reference</h3>
             </div>
                 <p>The APIs listed in this category are all part of the W3C specifications. Some of the APIs are stable while others are draft specifications. The draft APIs are subject to change as the W3C specification evolves.</p>
-                <p>The W3C APIs are categorized based on the functionality to make it easier to locate specific APIs. 
-                 To learn the Tizen features provided by the W3C/HTML5 and  some supplementary APIs, see <a href="https://developer.tizen.org/development/guides/web-application/w3chtml5supplementary-features">Guide to W3C/HTML5 and Some Supplementary Features</a>.</p>
+                <p>The W3C APIs are categorized based on the functionality to make it easier to locate specific APIs.
+                 To learn the Tizen features provided by the W3C/HTML5 and  some supplementary APIs, see <a href="/application/web/guides/w3c/w3c-overview">Guide to W3C/HTML5 and Some Supplementary Features</a>.</p>
 
-           <div><h4 id="dom">Default Web Privilege</h4>
+           <div><h4 id="privilege">Default Web Privilege</h4>
                 <p> Tizen WebApp have default privileges listed in below table. Some privileges are granted only when required version is under 2.2.1</p>
                 <table width="90%">
                     <thead>
@@ -233,7 +233,7 @@
                             <td align="center">REC</td>
                         </tr>
                         <tr>
-                            <td id="dom" name="dom"><a href="http://www.w3.org/TR/2014/CR-html5-20140429/">DOM/JavaScript related HTML5 Enhancements</a></td>
+                            <td id="dom_js" name="dom_js"><a href="http://www.w3.org/TR/2014/CR-html5-20140429/">DOM/JavaScript related HTML5 Enhancements</a></td>
                             <td>Handy DOM/JavaScript related enhancements in HTML5.</td>
                             <td align="center">CR</td>
                         </tr>
@@ -259,7 +259,7 @@
                         <tbody>
                             <tr>
                                 <td id="touch" name="touch"><a href="http://www.w3.org/TR/2013/REC-touch-events-20131010/">Touch Events version 1</a></td>
-                                <td>W3C touch event specification for touch devices. 
+                                <td>W3C touch event specification for touch devices.
                                 <!--
                                 The method currently not supported is:
                                     <ul>
@@ -278,7 +278,7 @@
                                         <li><code>compassneedscalibration</code> <!-- and <code>DeviceOrientationEvent</code> interface --></li>
                                     </ul>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/sensor.accelerometer</code></li>
                                                 <li><code>http://tizen.org/feature/sensor.gyroscope</code></li>
@@ -307,11 +307,11 @@
                             </tr>
                             <tr>
                                 <td id="sceenori" name="screenori"><a href="http://www.w3.org/TR/2012/WD-screen-orientation-20120522">The Screen Orientation API </a></td>
-                                <td>To provide an interface for web applications to be able to read 
-                                    the screen orientation state, to be informed when this state changes 
+                                <td>To provide an interface for web applications to be able to read
+                                    the screen orientation state, to be informed when this state changes
                                     and to be able to lock the screen orientation to a specific state</br>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/sensor.magnetometer</code></li>
                                             </ul>
@@ -411,16 +411,16 @@
                                     </ul>
                                 -->
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/mediacapture</code></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/mediacapture</code></li>
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/camera</code></li>
                                                 <li><code>http://tizen.org/feature/microphone</code></li>
                                             </ul>
                                         </li>
                                     </ul>
-                                    
+
                                 </td>
                                 <td align="center">ED</td>
                             </tr>
@@ -441,7 +441,7 @@
                             </tr>
                             -->
                             <tr>
-                                <td id="webspeech" name="webspeech"><a href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html">Web Speech (Partial)</a></td>
+                                <td id="webspeech" name="webspeech"><a href="https://wicg.github.io/speech-api/">Web Speech (Partial)</a></td>
                                 <td>W3C Web Speech API defines a JavaScript API to enable web developers to incorporate speech recognition and synthesis into their web pages. The attributes and events currently not supported are:
                                     <!--
                                     <ul>
@@ -463,9 +463,9 @@
                                     <!--
                                     <div>SpeechRecognition</div>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/speech.recognition</code></li>
                                                 <li><code>http://tizen.org/feature/network.internet</code></li>
@@ -476,7 +476,7 @@
                                     -->
                                     <div>SpeechSynthesis</div>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/speech.synthesis</code></li>
                                             </ul>
@@ -484,9 +484,9 @@
                                     </ul>
                                     <div>Speech Recognition</div>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/mediacapture</code></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/mediacapture</code></li>
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/microphone</code></li>
                                                 <li><code>http://tizen.org/feature/speech.recognition</code></li>
@@ -501,13 +501,13 @@
                                 <td id="mediacapture" name="mediacapture"><a href="http://www.w3.org/TR/2012/WD-html-media-capture-20120712/">HTML Media Capture </a></td>
                                 <td>Capture and record multimedia content with input tag.</br>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/camera</code></li>
                                                 <li><code>http://tizen.org/feature/microphone</code></li>
                                             </ul>
                                         </li>
-                                    </ul>   
+                                    </ul>
                                 </td>
                                 <td align="center">LCWD</td>
                             </tr>
@@ -525,9 +525,9 @@
                                 <td id="websocket" name="websocket"><a href="http://www.w3.org/TR/2012/CR-websockets-20120920/">The WebSocket API</a></td>
                                 <td>Offers bi-directional network connectivity.</br>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/network.internet</code></li>
                                             </ul>
@@ -540,9 +540,9 @@
                                 <td id="httpreq" name="httpreq"><a href="http://www.w3.org/TR/2014/WD-XMLHttpRequest-20140130/">XMLHttpRequest Level 1</a></td>
                                 <td>Enhancements on XHR, including binary file uploading, formdata submission, transfer progress, etc.</br>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/network.internet</code></li>
                                             </ul>
@@ -589,8 +589,8 @@
                                 <td id="directory" name="directory"><a href="http://www.w3.org/TR/2011/WD-file-system-api-20110419">File API: Directories and System</a></td>
                                 <td>API that allows accessing the device file system.</br>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>                     
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
                                     </ul>
                             </td>
                                 <td align="center">WD</td>
@@ -603,8 +603,8 @@
                                         <li><code>saveAs</code> of <code>Window</code> interface</li>
                                     </ul>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
                                     </ul>
                                 </td>
                                 <td align="center">WD</td>
@@ -623,8 +623,8 @@
                                         <li><code>initIDBVersionChangeEvent</code> of <code>IDBVersionChangeEvent</code> interface</li>
                                     </ul>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
                                     </ul>
                                 </td>
                                 <td align="center">LCWD</td>
@@ -634,8 +634,8 @@
                                 <td id="sql" name="sql"><a href="http://www.w3.org/TR/2010/NOTE-webdatabase-20101118/">Web SQL Database</a></td>
                                 <td>API for storing data in databases that can be queried using a variant of SQL.</br>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br>                              </li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br>                              </li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/unlimitedstorage</code></li>
                                     </ul>
                                 </td>
                                 <td align="center">Note</td>
@@ -654,9 +654,9 @@
                                 <td id="cross" name="cross"><a href="http://www.w3.org/TR/2014/REC-cors-20140116/">Cross-Origin Resource Sharing</a></td>
                                 <td>Sharing of resources across different domains.</br>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/internet</code></li>
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/network.internet</code></li>
                                             </ul>
@@ -720,9 +720,9 @@
                                         <li><code>titleDir, bodyDir</code> of <code>NotificationOptions</code> dictionary</li>
                                     </ul>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/notification</code></li>
-                                    </ul> 
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/notification</code></li>
+                                    </ul>
                                 </td>
                                 <td align="center">WD</td>
                             </tr>
@@ -787,14 +787,14 @@
                                 <td id="geo"><a href="http://www.w3.org/TR/2013/REC-geolocation-API-20131024/">Geolocation API Specification</a></td>
                                 <td>Provides scripted access to geographical location information associated with the hosting device.</br>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/location</code></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/location</code></li>
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/location.gps</code></li>
                                             </ul>
                                         </li>
-                                    </ul>                        
+                                    </ul>
                                 </td>
                                 <td align="center">REC</td>
                             </tr>
@@ -835,7 +835,7 @@
                         -->
                         </tbody>
                     </table>
-		
+
 <!-- YHM -->
 
  	<h4 id="Supplementary">Supplementary</h4>
@@ -848,14 +848,14 @@
                                 <td id="camera" name="camera"><a href="camera_w.html">Camera API (Tizen Extension)</a></td>
                                 <td>Provides interfaces for configuring camera options, recording video/audio, and capturing images.</br></br>
                                     <ul class="xmlconfig">
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege level</a>: Public</br></li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>:
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege level</a>: Public</br></li>
+                                        <li><a href="/application/web/tutorials/sec-privileges">Privilege</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/privilege/camera</code></li>
                                                 <li><code>http://tizen.org/privilege/audiorecorder</code></li>
                                             </ul>
                                         </li>
-                                        <li><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Required feature</a>:
+                                        <li><a href="/application/web/tutorials/app-filtering">Required feature</a>:
                                             <ul>
                                                 <li><code>http://tizen.org/feature/media.video_recording</code></li>
                                                 <li><code>http://tizen.org/feature/media.image_capture</code></li>
@@ -884,8 +884,8 @@
                                 <td>Provides a way for an element to be displayed in full screen mode programmatically. The method and attribute currently not supported are:
                                     <li><code>requestFullScreenWithKeys</code> of element</li>
                                     <li><code>allowFullScreen</code> of <code>iframe</code> element</li>
-                                <p><a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege Level</a>: Public</br>                              
-                                <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Privilege</a>: <code>http://tizen.org/privilege/fullscreen</code>  </p>      
+                                <p><a href="/application/web/tutorials/sec-privileges">Privilege Level</a>: Public</br>
+                                <a href="/application/web/tutorials/sec-privileges">Privilege</a>: <code>http://tizen.org/privilege/fullscreen</code>  </p>
                                 </td>
                                 </tr>
                                 -->
@@ -912,7 +912,7 @@
                                 </tr> -->
                         </tbody>
                     </table>
-		</div> 
+		</div>
 
 
 
@@ -936,7 +936,7 @@
                 </div>
                 <div id="footer">
                    <div class="copyright" align="center">
-		 Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.  <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>. 
+		 Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.  <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
                    </div>
                 </div>
             </div>

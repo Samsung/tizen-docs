@@ -32,7 +32,7 @@ All Tizen applications must have at least 2 signatures:
 
 -   Author signature:
     -   You sign the author signature with your own author signing key
-        in the Tizen Studio.
+        in Tizen Studio.
     -   Applications with the same author signing key are regarded as
         developed by the same developer.
     -   Application update is allowed only when the author signature of
@@ -42,7 +42,7 @@ All Tizen applications must have at least 2 signatures:
         secured resources as the author (developer) intended.
 -   Distributor signature:
     -   The distributor signature is signed by a distributor, such as
-        the Tizen Store, as the proof of application validation.
+        Tizen Store, as the proof of application validation.
     -   The distributor signature determines the API set that the
         application can use.
 
@@ -83,7 +83,7 @@ signing key) privilege level and the API privilege level.
 ## Signing Flow and Getting Certificates
 
 You can sign your application with your own author signing key and a
-testing distributor signing key in the Tizen Studio. With those, you can
+testing distributor signing key in Tizen Studio. With those, you can
 install and test the application on your test device and an emulator.
 
 When the application is submitted to a store after development, the
@@ -102,8 +102,8 @@ The following figure illustrates the signature and certificate flow.
 ![Signature flow](./media/signature_flow.png)
 
 The testing distributor certificate and its signing key with the public
-level are preloaded in the Tizen Studio. The author certificate and its
-signing key can also be created in the Tizen Studio. For more
+level are preloaded in Tizen Studio. The author certificate and its
+signing key can also be created in Tizen Studio. For more
 information, see [Working with the Certificate
 Profile](../../tizen-studio/common-tools/certificate-registration.md).
 

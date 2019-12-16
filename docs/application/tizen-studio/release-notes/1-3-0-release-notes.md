@@ -24,7 +24,7 @@
 ### Fixed Bugs
 
 -   Native IDE
-    -   Fixed a bug where an invalid manifest attribute (`setup-appid`) was automatically generated when a user created a multi-application package (native widget and native UI application). This caused the application to be rejected from the Tizen Store.
+    -   Fixed a bug where an invalid manifest attribute (`setup-appid`) was automatically generated when a user created a multi-application package (native widget and native UI application). This caused the application to be rejected from Tizen Store.
 -   Certificate Manager
     -   Added certificate validation to prevent an author certificate from being imported as a distributor certificate.
 
@@ -35,10 +35,10 @@
     -   In Windows&reg; CLI Package Manager, the execution file disappears when forcibly terminated (**Ctrl + C**) during execution.
 -   Web and Native IDE
     -   On a MacBook Pro using macOS version 10.12, the touch bar can turn black. As a workaround, upgrade your macOS version to 10.13.
-    -   You can create unit tests for Tizen 2.3.2 and higher version projects only. The Tizen Studio currently does not support unit testing for all earlier versions.
+    -   You can create unit tests for Tizen 2.3.2 and higher version projects only. Tizen Studio currently does not support unit testing for all earlier versions.
 -   Web IDE
     -   The **Preview** tab in the Web Page Editor sometimes does not appear properly. Use an alternative feature, named Web SDK HTML Editor, which has enhanced features compared to the Web Page Editor. Instead of the **Preview** tab in the Web Page Editor, use the preview (**Ctrl + 4**) feature of the Web SDK HTML Editor.
-    -   The unit test application crashes on launch from the Tizen Studio.
+    -   The unit test application crashes on launch from Tizen Studio.
 -   Native UI Builder
     -   If the `expanded` attribute in a multibutton entry component is set to `false`, **+** is displayed.
     -   When you create a new project with UI Builder, the `layout.xml` file does not open in the **Design** tab. As a workaround, go to the **Source** tab and remove the `page_location_x` and `page_location_y` attributes, then save and reopen the `layout.xml` file.
@@ -47,8 +47,8 @@
     -   Playing sound is not supported on Windows&reg; or macOS.
     -   The Component Designer crashes if an alias is selected as an added item's source group.
 -   Emulator
-    -   To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Tizen Studio](../setup/prerequisites.md#emulator).
-        -   If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project (<https://wiki.ubuntu.com/Bumblebee>). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
+    -   To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from [Prerequisites for Tizen Studio](../setup/prerequisites.md#emulator).
+        -   If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen Emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project (<https://wiki.ubuntu.com/Bumblebee>). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
         -   On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
     -   On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
     -   On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
@@ -60,7 +60,7 @@
     -   When you launch the Emulator Manager in the Tizen IDE, the Emulator Manager shortcut image is not exposed properly.
     -   Basic Web applications do not install on SD cards.
 -   CLI and SDB
-    -   The Tizen Studio does not support the SDB bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
+    -   Tizen Studio does not support the SDB bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
 -   Dynamic Analyzer
     -   The UI Hierarchy viewer feature and start-up profiling are not performed simultaneously.
     -   The Dynamic Analyzer cannot perform Web application profiling with a commercial Tizen device due to the security policy.

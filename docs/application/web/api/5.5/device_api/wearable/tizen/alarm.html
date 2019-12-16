@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Alarm">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Alarm API</h1></div>
 <div class="brief">
  The Alarm API provides functionality for scheduling the system alarm.
@@ -36,7 +36,7 @@ for accessing internal and external storage using this API, privileges (<a href=
 Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
-For more information on the Alarm features, see <a href="https://developer.tizen.org/development/guides/web-application/alarm">Alarm Guide</a>.
+For more information on the Alarm features, see <a href="/application/web/guides/alarm/alarms">Alarm Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -262,7 +262,7 @@ It defines the number of seconds in a week.
 <div class="description">
             <p>
 Sets an alarm with the application ID to be run. You should definitely provide the application ID to run
-and the <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/application-controls#controls">application control</a> information if it is necessary.
+and the <a href="/application/web/guides/app-management/app-controls#application-control-request">application control</a> information if it is necessary.
 For more information about the application control, see <a href="application.html">The Application API</a>.
             </p>
            </div>
@@ -745,7 +745,12 @@ tizen.alarm.add(alarm2, appId);
         
       <div class="constructors">
 <h4 id="AlarmRelative::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">AlarmRelative(long delay, optional long? period);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (long, long?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">AlarmRelative(long delay, optional long? period);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -874,8 +879,17 @@ tizen.alarm.add(alarm3, appId);
       <div class="constructors">
 <h4 id="AlarmAbsolute::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">AlarmAbsolute(Date date);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, <a href="#ByDayValue">ByDayValue</a>[])</span></b></code>
+</dt>
 <pre class="webidl prettyprint">AlarmAbsolute(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, long)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">AlarmAbsolute(Date date, long period);</pre>
 </dl>
 </div>

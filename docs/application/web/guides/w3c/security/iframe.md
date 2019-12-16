@@ -147,6 +147,7 @@ For the complete source code related to this use case, see the following files:
 - [cookie_stolen.html](http://download.tizen.org/misc/examples/w3c_html5/security/html5_the_iframe_element)
 - [iframe_cookie_stolen.html](http://download.tizen.org/misc/examples/w3c_html5/security/html5_the_iframe_element)
 
+<a name="sandboxed_page"></a>
 ## Redirecting a Sandboxed Page
 
 Learning how to control `iframe` element content when redirecting a page enhances the security features of your application:

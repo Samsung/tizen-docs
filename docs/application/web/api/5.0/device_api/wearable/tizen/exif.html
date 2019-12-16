@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Exif">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Exif API</h1></div>
 <div class="brief">
  The Exif API provides interfaces and methods for manipulating <a href="http://en.wikipedia.org/wiki/Exchangeable_image_file_format">Exif</a> data from a JPEG file.
@@ -33,7 +33,7 @@ for accessing internal and external storage using this API, privileges (<a href=
 Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
-For more information about how to use Exif API, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/jpeg-file-exif-information">Exif Guide</a>.
+For more information about how to use Exif API, see <a href="/application/web/guides/multimedia/jpeg-exif">Exif Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -573,7 +573,12 @@ By setting an attribute to null and saving <em>ExifInformation</em> one can remo
          </div>
 <div class="constructors">
 <h4 id="ExifInformation::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ExifInformation(optional <a href="#ExifInit">ExifInit</a>? ExifInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ExifInit">ExifInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ExifInformation(optional <a href="#ExifInit">ExifInit</a>? ExifInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -865,18 +870,6 @@ This callback interface specifies a success method with the URI for the thumbnai
   enum WhiteBalanceMode { "AUTO", "MANUAL" };
   enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM",
     "ACTION_PROGRAM", "PORTRAIT_MODE", "LANDSCAPE_MODE" };
-  [NoInterfaceObject] interface ExifManagerObject {
-    readonly attribute <a href="#ExifManager">ExifManager</a> exif;
-  };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ExifManagerObject">ExifManagerObject</a>;
-  [NoInterfaceObject] interface ExifManager {
-    void getExifInfo(DOMString uri, <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void saveExifInfo(<a href="#ExifInformation">ExifInformation</a> exifInfo, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void getThumbnail(DOMString uri, <a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
   dictionary ExifInit {
     DOMString uri;
     unsigned long width;
@@ -897,6 +890,18 @@ This callback interface specifies a success method with the URI for the thumbnai
     DOMString gpsProcessingMethod;
     Date gpsTime;
     DOMString userComment;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ExifManagerObject">ExifManagerObject</a>;
+  [NoInterfaceObject] interface ExifManagerObject {
+    readonly attribute <a href="#ExifManager">ExifManager</a> exif;
+  };
+  [NoInterfaceObject] interface ExifManager {
+    void getExifInfo(DOMString uri, <a href="#ExifInformationSuccessCallback">ExifInformationSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void saveExifInfo(<a href="#ExifInformation">ExifInformation</a> exifInfo, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getThumbnail(DOMString uri, <a href="#ExifThumbnailSuccessCallback">ExifThumbnailSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [Constructor(optional <a href="#ExifInit">ExifInit</a>? ExifInitDict)]
   interface ExifInformation {

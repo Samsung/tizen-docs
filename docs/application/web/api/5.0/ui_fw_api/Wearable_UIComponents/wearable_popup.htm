@@ -13,24 +13,43 @@
 
 <p>The popup component shows in the middle of the screen a list of items in a pop-up window. It automatically optimizes the pop-up window size within the screen.  The following table describes the supported popup classes.</p>
 <img src="../../images/Popup.png" alt="image of Popup element in TIZEN">
+<br>
+<div>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fpopup%2Fpopup.html', '_blank')"
+>Use example</button>
+
 <table>
-<caption>Table: Popup classes</caption>
-<tbody>
-	<tr>
-		<th>Class</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td><p><span style="font-family: Courier New,Courier,monospace">ui-popup</span></p></td>
-		<td><p>Defines the element as a popup component.</p></td>
-	</tr>
-	<tr>
-		<td><p><span style="font-family: Courier New,Courier,monospace">ui-popup-toast</span></p></td>
-		<td><p>Defines the element as a toast popup (small popup).</p></td>
-	</tr>
-</tbody>
+   <caption>Table: Popup classes</caption>
+   <tbody>
+      <tr>
+         <th>Class</th>
+         <th>Description</th>
+      </tr>
+      <tr>
+         <td><p><span style="font-family: Courier New,Courier,monospace">ui-popup</span></p></td>
+         <td><p>Defines the element as a popup component.</p></td>
+      </tr>
+      <tr>
+         <td><p><span style="font-family: Courier New,Courier,monospace">ui-popup-toast</span></p></td>
+         <td><p>Defines the element as a toast popup (small popup).</p></td>
+      </tr>
+   </tbody>
 </table>
 
+<h2>Table of Contents</h2>
+<ol class="toc">
+   <li><a href="#html-example">HTML Examples</a></li>
+   <li><a href="#popup-methods">Popup methods</a></li>
+   <li><a href="#popup-events">Popup events</a></li>
+   <li><a href="#popup-transitions">Popup transitions</a></li>
+</ol>
+
+<h2 id="html-example">HTML Examples</h2>
 <p>The pop-up window can contain a header, content, and footer area like the page element.</p>
 
 <p>To open a pop-up window from a link, use the <span style="font-family: Courier New,Courier,monospace">data-rel</span> attribute in HTML markup as in the following code:
@@ -137,7 +156,7 @@
 </tbody>
 </table>
 
-<h2>Popup Methods</h2>
+<h2 id="popup-methods">Popup Methods</h2>
 <p>To open or close the popup component programmatically, use the methods listed in the following table.</p>
 <table>
 <caption>Table: Popup methods</caption>
@@ -185,7 +204,7 @@
    });
 </pre>
 
-<h2>Popup Events</h2>
+<h2 id="popup-events">Popup Events</h2>
 <p>The following table lists the events related to pop-ups.</p>
 <table>
 <caption>Table: Popup events</caption>
@@ -277,7 +296,7 @@ So it is highly recommended to handle the feature by using event.</p>
       console.log(window.getComputedStyle(popup).display); /* None - closed completely */
    });
 </pre>
-<h2>Popup Transitions</h2>
+<h2 id="popup-transitions">Popup Transitions</h2>
 <p>Tizen Wearable Web UI framework does not apply transitions by default. To set a custom transition effect for a specific popup component, add the <span style="font-family: Courier New,Courier,monospace">data-transition</span> attribute to a link:</p>
 <pre class="prettyprint">
 &lt;a href=&quot;index.html&quot; data-rel=&quot;popup&quot; data-transition=&quot;slideup&quot;&gt;I&#39;ll slide up&lt;/a&gt;

@@ -1,6 +1,6 @@
 # Building UIs with Components
 
-The Tizen native UI Builder is a graphical user interface builder tool that simplifies the creation of Tizen native application UIs by allowing you to arrange UI components using drag-and-drop operations. You can also create [customized UI components](custom-ui-component.md) for application-specific purposes.
+The Tizen Native UI Builder is a graphical user interface builder tool that simplifies the creation of Tizen native application UIs by allowing you to arrange UI components using drag-and-drop operations. You can also create [customized UI components](custom-ui-component.md) for application-specific purposes.
 
 The native UI Builder is not only a UI layout code generating tool. It also supports an easy-to-use programming model, allows you to [support multiple screens](multiple-screens.md) within a single application, and makes it possible to [manage various data sources through databinding](databind.md). If you have an existing EFL UI project, you can [convert it to a UI Builder project](convert-projects.md) to ease the task of expanding the application and optimizing it to new devices.
 

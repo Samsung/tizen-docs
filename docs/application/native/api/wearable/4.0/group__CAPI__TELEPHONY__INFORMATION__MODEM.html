@@ -99,7 +99,7 @@ Required Header</h2>
 <p>#include &lt;telephony.h&gt;</p>
 <h2><a class="anchor" id="CAPI_TELEPHONY_INFORMATION_MODEM_OVERVIEW"></a>
 Overview</h2>
-<p>The Telephony Modem Information API allows you to access, but not change the information about IMEI. </p>
+<p>The Telephony Modem Information API allows you to get modem information such as IMEI, but not to change the information. </p>
 <h2><a class="anchor" id="CAPI_TELEPHONY_INFORMATION_MODEM_FEATURE"></a>
 Related Features</h2>
 <p>This API is related with the following feature:<br/>
@@ -191,7 +191,29 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/telephony</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <code>imei</code> using free() on success case.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <code>imei</code> using free() on success case. </dd>
+<dd>
+Since 5.5, privilege level and return type are changed.<br/>
+ The following table shows the impact of changes: <table class="doxtable">
+</table>
+</dd></dl>
+<p>Version  </p>
+<p>5.0 and lower  </p>
+<p>5.5 and higher  </p>
+<p>Remarks   &lt;/thead&gt; &lt;tbody&gt; </p>
+<p>Privilege </p>
+<p><a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> </p>
+<p><a href="http://tizen.org/privilege/securesysteminfo">http://tizen.org/privilege/securesysteminfo</a> </p>
+<p>The required privilege is changed.  </p>
+<p>Privilege level </p>
+<p>Public </p>
+<p>Partner </p>
+<p>The application having partner level privilege can use this API   </p>
+<p>Error </p>
+<p><a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4deaeeab1fa370520cc0706e92f95a612e7d">TELEPHONY_ERROR_NONE</a> </p>
+<p><a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4dea5b238af0cd06c21040b52a3be084278e">TELEPHONY_ERROR_PERMISSION_DENIED</a> </p>
+<p>If the application doesn't have the required privilege, the error is returned.  &lt;/tbody&gt; </p>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The applications developed on Tizen 5.0 and lower version having only <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> privilege should check 'permission denied' error.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle from <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#ga68b04bc2303b20d59f2fec3f82fc979b" title="Acquires the list of available handles to use the telephony API.">telephony_init()</a> </td></tr>
@@ -242,7 +264,29 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/telephony</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <code>meid</code> using free() on success case.</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must release <code>meid</code> using free() on success case. </dd>
+<dd>
+Since 5.5, privilege level and return type are changed.<br/>
+ The following table shows the impact of changes: <table class="doxtable">
+</table>
+</dd></dl>
+<p>Version  </p>
+<p>5.0 and lower  </p>
+<p>5.5 and higher  </p>
+<p>Remarks   &lt;/thead&gt; &lt;tbody&gt; </p>
+<p>Privilege </p>
+<p><a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> </p>
+<p><a href="http://tizen.org/privilege/securesysteminfo">http://tizen.org/privilege/securesysteminfo</a> </p>
+<p>The required privilege is changed.  </p>
+<p>Privilege level </p>
+<p>Public </p>
+<p>Partner </p>
+<p>The application having partner level privilege can use this API   </p>
+<p>Error </p>
+<p><a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4deaeeab1fa370520cc0706e92f95a612e7d">TELEPHONY_ERROR_NONE</a> </p>
+<p><a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#gga6626da6112f5e38401425508bc15a4dea5b238af0cd06c21040b52a3be084278e">TELEPHONY_ERROR_PERMISSION_DENIED</a> </p>
+<p>If the application doesn't have the required privilege, the error is returned.  &lt;/tbody&gt; </p>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The applications developed on Tizen 5.0 and lower version having only <a href="http://tizen.org/privilege/telephony">http://tizen.org/privilege/telephony</a> privilege should check 'permission denied' error.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The handle from <a class="el" href="group__CAPI__TELEPHONY__INFORMATION.html#ga68b04bc2303b20d59f2fec3f82fc979b" title="Acquires the list of available handles to use the telephony API.">telephony_init()</a> </td></tr>

@@ -18,7 +18,7 @@ Privileges are categorized into public, partner, and platform levels
 according to their hierarchy:
 
 -   The public level is the minimum privilege level, which means that
-    any application developed using the Tizen Studio can use
+    any application developed using Tizen Studio can use
     these privileges.
 -   The partner level privileges require at least a partner-signed
     certificate which is granted to developers who have a business
@@ -43,7 +43,7 @@ switched it **on**.
 [mobile](../../api/mobile/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html)
 applications).
 
-The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
+Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
 Privileges](../../../tizen-studio/native-tools/api-checker.md).
 
 The API version restriction of privileges are deprecated since platform version 5.0. So, if you are develeoping an app with an earlier API version and need information about supported version, see [this page](./old-versioned-sec-privileges.md). The page does not include privileges issued after 4.0.
@@ -69,6 +69,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/appmanager.kill` | platform |  | The application can close other applications. |
 | `http://tizen.org/privilege/appmanager.kill.bgapp` | public |  | The application can request to close applications running in the background. |
 | `http://tizen.org/privilege/appmanager.launch` | public |  | The application can open other applications. |
+| `http://tizen.org/privilege/autofillmanager` | platform |  | The application can manage installed autofill services, detect which autofill service is currently being used, and change which autofill service to use. |
 | `http://tizen.org/privilege/blocknumber.read` | partner |  | The application can read rules for blocking calls and messages. |
 | `http://tizen.org/privilege/blocknumber.write` | partner |  | The application can write rules for blocking calls and messages. |
 | `http://tizen.org/privilege/bluetooth` | public |  | The application can perform unrestricted actions using Bluetooth, such as scanning for and connecting to other devices. |
@@ -83,6 +84,8 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/contact.read` | public | Contacts | The application can read user's profile, contacts, and contact history. Contact history can include social network activity. |
 | `http://tizen.org/privilege/contact.write` | public | Contacts | The application can create, update, and delete user's profile, contacts, and any contact history that is related to this application. Contact history can include social network activity. |
 | `http://tizen.org/privilege/content.write` | public |  | The application can change media information. This information can be used by other applications. |
+| `http://tizen.org/privilege/d2d.datasharing` | public |  | The application can share data with other devices. |
+| `http://tizen.org/privilege/d2d.remotelaunch` | public |  | The application can be opened or used by applications on other devices. |
 | `http://tizen.org/privilege/datasharing` | public |  | The application can share data with other applications. |
 | `http://tizen.org/privilege/devicecertificate` | platform |  | The application can use a device certificate and its private key to communicate securely with a remote server. |
 | `http://tizen.org/privilege/display` | public |  | The application can manage display settings, such as the brightness. This may increase battery consumption. |
@@ -145,6 +148,7 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/recorder` | public | Microphone | The application can record video and audio. |
 | `http://tizen.org/privilege/screenshot` | platform |  | The application can capture screenshots. |
 | `http://tizen.org/privilege/secureelement` | public |  | The application can access secure smart card chips such as UICC/SIM, embedded secure elements, and secure SD cards. |
+| `http://tizen.org/privilege/securesysteminfo` | partner | Device unique ID | The application can read the non-resettable secure device information. |
 | `http://tizen.org/privilege/shortcut` | public |  | The application can create and delete shortcuts. |
 | `http://tizen.org/privilege/softap` | public |  | The application can manage SoftAP configuration settings, such as the Service Set Identifier (SSID) and password. |
 | `http://tizen.org/privilege/softap.admin` | platform |  | The application can turn SoftAP on or off, and change its settings. |
@@ -152,17 +156,19 @@ when using security-sensitive API modules in native applications:
 | `http://tizen.org/privilege/systemsettings` | public |  | The application can read and write unrestricted system settings. Deprecated since 2.3.1. |
 | `http://tizen.org/privilege/systemsettings.admin` | platform |  | The application can read and write all system settings. |
 | `http://tizen.org/privilege/tee.client` | partner |  | The application can call security related functions running inside a Trusted Execution Environment (TEE), which ensures that sensitive data is stored, processed, and protected in an isolated, trusted environment. |
-| `http://tizen.org/privilege/telephony` | public |  | The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the statuses of calls. |
+| `http://tizen.org/privilege/telephony` | public |  | The application can retrieve telephony information, such as network and SIM card used and statuses of calls. |
 | `http://tizen.org/privilege/telephony.admin` | platform |  | The application can manage telephony settings, such as those for incoming and outgoing calls, forwarding and holding calls, networks, and SIM cards. |
 | `http://tizen.org/privilege/tethering.admin` | platform |  | The application can enable and disable tethering services. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/use_ir` | public |  | The application can use the infrared transmitter. |
 | `http://tizen.org/privilege/voicecontrol.manager` | platform |  | The application can record user's voice and recognize it so that voice commands can be used to control this app. It can also give responses to user's commands. |
+| `http://tizen.org/privilege/voicecontrol.tts` | partner |  | The application can use the voice control engine to recognize your voice commands and provide voice feedback using its own voice. |
 | `http://tizen.org/privilege/volume.set` | public |  | The application can adjust the volume for different features, such as notification alerts, ringtones, and media. |
 | `http://tizen.org/privilege/vpnservice` | public |  | The application can manage the Virtual Private Network (VPN) and change its settings. |
 | `http://tizen.org/privilege/web-history.admin` | platform | User history | The application can manage user's internet history. |
 | `http://tizen.org/privilege/widget.viewer` | public |  | The application can show widgets, and information from their associated applications, on the home screen. |
 | `http://tizen.org/privilege/wifidirect` | public |  | The application can enable and disable Wi-Fi Direct, manage Wi-Fi Direct connections, and change Wi-Fi Direct settings. |
 | `http://tizen.org/privilege/window.priority.set` | public |  | The application can appear on top of other windows and screens, including the lock screen, according to the order of priority of the windows. This may prevent user from interacting with other applications or screens until the window for this application is closed. |
+| `http://tizen.org/privilege/windowsystem.admin` | platform |  | The application can change the settings for services provided by the display server, such as the quick panel and softkey bar. |
 
 <a name="IoT"></a>
 ## IoT Native API Privileges
@@ -190,7 +196,7 @@ applications:
 
 Tizen application privileges are loosely bound to APIs, so most of the
 privileges can be identified by the APIs that the application calls.
-However, there are some privileges that are not coupled with the Tizen
+However, there are some privileges that are not coupled with Tizen
 APIs. To allow easy identification, those privileges are mapped to
 corresponding system resources that are similar to other privileges.
 

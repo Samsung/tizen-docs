@@ -1,11 +1,8 @@
 # Tizen 2.2
 
-Release Date: 22 Jul, 2013
-
-
+Release date: Jul. 22, 2013
 
 The Tizen 2.2 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
-
 
 
 ## Release Details
@@ -13,7 +10,6 @@ The Tizen 2.2 release provides developers with the Tizen kernel, device drivers,
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.2 source codes are under **tizen_2.2** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.2/tizen-2.2)
 - [How to flash to a device](https://wiki.tizen.org/wiki/Flash_Tizen_2.2_Image_to_Reference_Device)
-
 
 
 ## Release Notes
@@ -32,7 +28,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
 
 - Web Runtime
 
-  - New elements: <tizen:content-security-policy>, <tizen:content-security-policy-report-only>, <tizen:allow-navigation>, <tizen:metadata>, <tizen:setting hwkey-event>, and <tizen:box-size use-decoration>
+  - New elements: `<tizen:content-security-policy>`, `<tizen:content-security-policy-report-only>`, `<tizen:allow-navigation>`, `<tizen:metadata>`, `<tizen:setting hwkey-event>`, and `<tizen:box-size use-decoration>`
   - New events: appwidgetready and tizenhwkey
   - Web Runtime supports auto-orientation change
 

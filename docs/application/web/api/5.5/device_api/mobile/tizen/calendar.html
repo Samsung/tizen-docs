@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Calendar">
- <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Calendar API</h1></div>
 <div class="brief">
  The Calendar API provides interfaces and methods for users to manage their schedule.
@@ -21,7 +21,7 @@ The Internet Calendaring and Scheduling Core Object Specification (iCalendar), d
 This API provides functionality to read, create, delete, and update items in specific calendars. Calendars can be obtained using the <em>getCalendars() </em>method, which returns an array of Calendar objects.
         </p>
         <p>
-For more information on the Calendar features, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/calendar">Calendar Guide</a>.
+For more information on the Calendar features, see <a href="/application/web/guides/personal/calendar">Calendar Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -1239,7 +1239,12 @@ tizen.account.getAccounts(
 </div>
 <div class="constructors">
 <h4 id="Calendar::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">Calendar(<a href="account.html#AccountId">AccountId</a> accountId, DOMString name, <a href="#CalendarType">CalendarType</a> type);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="account.html#AccountId">AccountId</a>, DOMString, <a href="#CalendarType">CalendarType</a>)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">Calendar(<a href="account.html#AccountId">AccountId</a> accountId, DOMString name, <a href="#CalendarType">CalendarType</a> type);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -2792,7 +2797,13 @@ var ev = new tizen.CalendarTask(taskInit);
       <div class="constructors">
 <h4 id="CalendarTask::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#CalendarTaskInit">CalendarTaskInit</a>?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">CalendarTask(optional <a href="#CalendarTaskInit">CalendarTaskInit</a>? taskInitDict);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#CalendarTextFormat">CalendarTextFormat</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">CalendarTask(DOMString stringRepresentation, <a href="#CalendarTextFormat">CalendarTextFormat</a> format);</pre>
 </dl>
 </div>
@@ -2932,7 +2943,13 @@ var ev = new tizen.CalendarEvent(eventInit);
       <div class="constructors">
 <h4 id="CalendarEvent::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#CalendarEventInit">CalendarEventInit</a>?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">CalendarEvent(optional <a href="#CalendarEventInit">CalendarEventInit</a>? eventInitDict);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#CalendarTextFormat">CalendarTextFormat</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">CalendarEvent(DOMString stringRepresentation, <a href="#CalendarTextFormat">CalendarTextFormat</a> format);</pre>
 </dl>
 </div>
@@ -3180,7 +3197,12 @@ event.attendees = [attendee];
 </div>
 <div class="constructors">
 <h4 id="CalendarAttendee::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">CalendarAttendee(DOMString uri, optional <a href="#CalendarAttendeeInit">CalendarAttendeeInit</a>? attendeeInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#CalendarAttendeeInit">CalendarAttendeeInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">CalendarAttendee(DOMString uri, optional <a href="#CalendarAttendeeInit">CalendarAttendeeInit</a>? attendeeInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3357,7 +3379,12 @@ event.recurrenceRule = rule;
 </div>
 <div class="constructors">
 <h4 id="CalendarRecurrenceRule::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">CalendarRecurrenceRule(<a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency, optional <a href="#CalendarRecurrenceRuleInit">CalendarRecurrenceRuleInit</a>? ruleInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a>, <a href="#CalendarRecurrenceRuleInit">CalendarRecurrenceRuleInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">CalendarRecurrenceRule(<a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency, optional <a href="#CalendarRecurrenceRuleInit">CalendarRecurrenceRuleInit</a>? ruleInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3532,7 +3559,12 @@ The recurrence identifier (<em>rid</em> attribute) is used to identify a particu
          </div>
 <div class="constructors">
 <h4 id="CalendarEventId::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">CalendarEventId(DOMString uid, optional DOMString? rid);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">CalendarEventId(DOMString uid, optional DOMString? rid);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3604,7 +3636,13 @@ var alarm2 = new tizen.CalendarAlarm(new tizen.TimeDuration(1, "MINS"), "SOUND")
 <div class="constructors">
 <h4 id="CalendarAlarm::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="time.html#TZDate">TZDate</a>, <a href="#AlarmMethod">AlarmMethod</a>, DOMString?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">CalendarAlarm(<a href="time.html#TZDate">TZDate</a> absoluteDate, <a href="#AlarmMethod">AlarmMethod</a> method, optional DOMString? description);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="time.html#TimeDuration">TimeDuration</a>, <a href="#AlarmMethod">AlarmMethod</a>, DOMString?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">CalendarAlarm(<a href="time.html#TimeDuration">TimeDuration</a> before, <a href="#AlarmMethod">AlarmMethod</a> method, optional DOMString? description);</pre>
 </dl>
 </div>
@@ -4079,7 +4117,9 @@ var ev = new tizen.CalendarEvent(
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -4105,7 +4145,7 @@ To guarantee the running of the application on a device with Contact feature, de
 <li class="feature">http://tizen.org/feature/contact</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Calendar {

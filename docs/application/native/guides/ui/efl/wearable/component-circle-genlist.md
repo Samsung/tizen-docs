@@ -49,7 +49,30 @@ eext_rotary_object_event_activated_set(circle_genlist, EINA_TRUE);
 
 If the second parameter is `EINA_TRUE`, the circle genlist can receive rotary events.
 
-## Configuring the Circle Properties
+## Title and Padding Styles
+
+Only the center focused item in the circle genlist is selectable. To allow all the items to be selectable, you must add `title` and `padding` style item in the top and the bottom position:
+```
+Elm_Genlist_Item_Class *title_itc = elm_genlist_item_class_new();
+Elm_Genlist_Item_Class *pad_itc = elm_genlist_item_class_new();
+
+title_itc->item_style = "title";
+title_itc->func.text_get = _gl_title_text_get;
+title_itc->func.content_get = gl_title_icon_get;
+title_itc->func.del = _gl_del;
+
+pad_itc->item_style = "padding";
+pad_itc->func.del = _gl_del;
+
+elm_genlist_item_prepend(circle_genlist, title_itc, NULL, NULL, ELM_GENLIST_ITEM_NONE, NULL, NULL);
+elm_genlist_item_append(circle_genlist, pad_itc, NULL, NULL, ELM_GENLIST_ITEM_NONE, NULL, NULL);
+```
+To use the `title` with the `group index`, use the `title_with_groupindex` style instead of the `title` style.
+>**Note**
+>
+>The usage of `title` and `padding` style is specific to the top and the bottom position of circle genlist.
+
+## Configure Circle Properties
 
 To configure the circle properties of the circle genlist:
 
