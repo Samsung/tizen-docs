@@ -16,7 +16,7 @@ Applications can expose RPC style service interface to other applications with T
   - GStreamer 1.6.1 is upgraded to 1.12.2.
   - Pulseaudio 5.0 is upgraded to 11.1.
   - EFL 1.16 is upgraded to 1.20.
-  - Wayland is upgraded to 1.15.0 version.
+  - Wayland is upgraded to 1.15.0.
   - .NET Core(Runtime) is upgraded.
     - Coreclr 2.1.1 is upgraded to 2.1.4.
     - Corefx 2.1.1 is upgraded to 2.1.4.
