@@ -7,11 +7,11 @@ The main features of the Media Tool API include:
 
 - Creating the media format handle
 
-  You can [set and get video or audio information](#format) using the `media_format_h` handle.
+  You can [set and get video or audio information](#format) using the `media_format_h` handle like average bps, bit, channel, channel mask, mime type, samplerate, width, height and frame rate for each type.(audio/video/text)
 
 - Creating the media packet handle
 
-  You can [set and get metadata](#packet) using the created `media_packet_h` handle. Some `media_packet_h` metadata are NOT filled after creating the `media_packet_h` handle: pts, dts, duration, extradata, codec data, codec data size, and buffer flags.
+  You can [set and get metadata](#packet) using the created `media_packet_h` handle. Some `media_packet_h` metadata are NOT filled after creating the `media_packet_h` handle: pts, dts, duration, extradata, codec data, codec data size, rotation method and buffer flags.
 
 The `media_format_h` handle is created by the caller, who can set and get the video or audio information. The `media_format_h` handle creates the `media_packet_h` handle and allocates the buffer. The caller can set and get the metadata with the `media_packet_h` handle.
 
