@@ -7,7 +7,7 @@ The main features of the Media Tool API include:
 
 - Creating the media format handle
 
-  You can [set and get video or audio information](#format) such as average bps, bit, bit depth, channel, channel mask, mime type, sample rate, width, height and frame rate for each type (audio, video or text) using the `media_format_h` handle.
+  You can [set and get video or audio information](#format) such as average bps, bit, bit depth, channel, channel mask, mime type, sample rate, width, height and frame rate for each type using the `media_format_h` handle.
 
 - Creating the media packet handle
 
