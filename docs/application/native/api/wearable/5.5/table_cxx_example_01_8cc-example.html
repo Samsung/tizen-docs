@@ -126,19 +126,19 @@ efl_main(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="
 <span class="comment">//   FIXME</span>
 <span class="comment">//   table.homogeneous_set(true);</span>
 
-   efl::ui::Text label(instantiate, win);
+   efl::ui::Textbox label(instantiate, win);
    label.text_set(<span class="stringliteral">&quot;label 0&quot;</span>);
    table.pack_table(label, 0, 0, 1, 1);
 
-   efl::ui::Text label1(instantiate, win);
+   efl::ui::Textbox label1(instantiate, win);
    label1.text_set(<span class="stringliteral">&quot;label 1&quot;</span>);
    table.pack_table(label1, 1, 0, 1, 1);
 
-   efl::ui::Text label2(instantiate, win);
+   efl::ui::Textbox label2(instantiate, win);
    label2.text_set(<span class="stringliteral">&quot;label 2&quot;</span>);
    table.pack_table(label2, 0, 1, 1, 1);
 
-   efl::ui::Text label3(instantiate, win);
+   efl::ui::Textbox label3(instantiate, win);
    label3.text_set(<span class="stringliteral">&quot;label 3&quot;</span>);
    table.pack_table(label3, 1, 1, 1, 1);
 }
