@@ -140,8 +140,34 @@ To query audio device information:
         > **Note**   
 		> The initial running state of the connected device is `false`, which means the connected device is not running.
 
+-   More functionality for AudioDeviceType.UsbAudio and AudioDeviceIoDirection.Output device, you can utilize more functionality with the following methods of the [Tizen.Multimedia.AudioDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioDevice.html) class:
+    -   To get the supported sample formats and to set the specific sample format:
 
+        1.  Retrieve the list of the currently supported sample formats with the `GetSupportedSampleFormats()` method:
 
+            ```
+            IEnumerable<AudioSampleFormat> supportedFormats = usbOutputDevice.GetSupportedSampleFormats();
+            ```
+
+        2.  Choose one of the supported sample formats, then set it with the `SetSampleFormat()` method:
+
+            ```
+            usbOutputDevice.SetSampleFormat(AudioSampleFormat.S16LE);
+            ```
+
+    -   To get the supported sample rates and to set the specific sample rate:
+
+        1.  Retrieve the list of the currently supported sample rates with the `GetSupportedSampleRates()` method:
+
+            ```
+            IEnumerable<uint> supportedRates = usbOutputDevice.GetSupportedSampleRates();
+            ```
+
+        2.  Choose one of the supported sample rates, then set it with the `SetSampleRate()` method:
+
+            ```
+            usbOutputDevice.SetSampleRate(48000);
+            ```
 ## Related Information
 * Dependencies
   -   Tizen 4.0 and Higher
