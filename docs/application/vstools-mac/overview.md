@@ -1,6 +1,6 @@
 # Visual Studio for Mac Extension for Tizen
 
-Visual Studio for Mac Extension for Tizen is an extension for Microsoft Visual Studio for Mac. It enables you to develop Tizen .NET aplications easily with Visual Studio for Mac.
+Visual Studio for Mac Extension for Tizen is an extension for Microsoft Visual Studio for Mac. It enables you to develop Tizen .NET applications easily with Visual Studio for Mac.
 
 ## Prerequisites
 
@@ -12,12 +12,12 @@ To work with Visual Studio for Mac Extension for Tizen, your computer must have:
 
 - Java Development Kit (JDK)
 
-  You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 10 to use 
+  You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 to use 
 Tizen Baseline SDK. Make sure you download and install the EXACT version.
 
   - [Oracle Java Development Kit(JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Java for OS X 2015-001](https://support.apple.com/kb/DL1572)
  
-  - OpenJDK 10 and OpenJFX: [OpenJDK 10 and OpenJFX Installation Guide](https://developer.tizen.org/development/articles/openjdk-10-and-openjfx-installation-guide#install-openjdk-for-macos).
+  - OpenJDK 12 and OpenJFX: [OpenJDK 12 and OpenJFX Installation Guide](../tizen-studio/setup/openjdk.md#install-openjdk-for-macos).
 
 For Oracle JDK, Java for OS X 2015-001 is required to support legacy Java software on macOS.
 
@@ -43,7 +43,7 @@ To install Visual Studio for Mac Extension for Tizen:
 	![Browse Extension](media/install-extension3.png)
 	
 4. After the extension list is refreshed, expand the **IDE extensions** in the **Gallery** tab and select the 
-   **Visual Studio for Mac Extension for Tizen**. Click **Install...** at bottom right.
+   **Visual Studio for Mac Extension for Tizen**. Click **Install...** at the bottom right.
 
 	![Install Popup](media/install-extension4.png)
 	![Install Popup1](media/install-extension5.png)
@@ -67,7 +67,7 @@ After installing the Visual Studio Mac Extension for Tizen, you must set up the 
 
    > **Note**
    >
-   > If the Tizen Studio is already installed in your computer, simply [set the Tizen baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
+   > If Tizen Studio is already installed in your computer, simply [set the Tizen baseline SDK path](#set-tizen-baseline-sdk) to the existing SDK instead of reinstalling it.
    
    ![Select new installation](media/howtoinstall-installwizard1.png)
 
@@ -94,7 +94,7 @@ After installing the Visual Studio Mac Extension for Tizen, you must set up the 
 
 You can also use the Tizen Package Manager to set up the Tizen baseline SDK path or each tool path directly:
 
-- To set up the Tizen baseline SDK path:
+- To set up the Tizen Baseline SDK path:
   1. In the Visual Studio IDE menu, go to **Tools &gt; Tizen &gt; Tizen Package Manager**.
   2. Select **Use installed Tizen SDK**.
 
@@ -105,7 +105,7 @@ You can also use the Tizen Package Manager to set up the Tizen baseline SDK path
      ![Baseline SDK Install](media/howtoinstall-installwizard8.png)
 
   > **Note**  
-  > If the installer gives a warning about your Tizen Studio version being too low, update the Tizen Studio by using the Tizen Package Manager after setting the tool path.
+  > If the installer gives a warning about your Tizen Studio version being too low, update Tizen Studio by using the Tizen Package Manager after setting the tool path.
 
 - To set up each tool path directly:
   1. In the Visual Studio Mac IDE menu, go to **Project &gt; Solution Options &gt; Tizen &gt; Tools**.
@@ -117,7 +117,7 @@ You can also use the Tizen Package Manager to set up the Tizen baseline SDK path
 
 ### Install Emulator Images
 
-If you do not have a real device, you can run applications in the Tizen emulator.
+If you do not have a real device, you can run applications in the Tizen Emulator.
 
 To download emulator images, you can use the Tizen Package Manager or the Tizen Emulator Manager:
 

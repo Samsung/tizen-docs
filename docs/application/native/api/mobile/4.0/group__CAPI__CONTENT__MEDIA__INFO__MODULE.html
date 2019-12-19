@@ -602,7 +602,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/content.write</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If you request cancel for the already thumbnail created media, this function return MEDIA_CONTENT_ERROR_INVALID_OPERATION</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If you request cancel for the already thumbnail created media, this function returns <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gga7021a96fec7bb8becfe524c95af347baa9e71e6e22d72d311288320162eb7a02a">MEDIA_CONTENT_ERROR_INVALID_OPERATION</a></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">media</td><td>The handle to the media info</td></tr>
@@ -828,7 +828,7 @@ If you want to access only internal storage with this function, you should add p
 <div class="memdoc">
 
 <p>Deletes media information that meets the conditions of the filter from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000974">Deprecated:</a></b></dt><dd>Deprecated since 4.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000974">Deprecated:</a></b></dt><dd>Deprecated since 4.0. Use <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gaf3c65c5fe726e752bd9d3814ccf63ee7" title="Requests to scan a media folder, asynchronously.">media_content_scan_folder()</a> or <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga7b373b6e9e80dd5173db6555b372a2ea" title="Deletes the media information from the media database.">media_info_delete_from_db()</a> instead. </dd></dl>
 <p>This function can delete multiple media information from the media database.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>

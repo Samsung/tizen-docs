@@ -1,17 +1,17 @@
-# Developing Tizen Platform with the Tizen Studio
+# Developing Tizen Platform with Tizen Studio
 
-The Tizen Studio provides a platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
+Tizen Studio provides a platform development environment that helps you develop preloaded platform applications, platform libraries, and device drivers in Ubuntu.
 
 > **Note**  
 > Platform development is supported in Ubuntu 14.04 and higher (32- or 64-bit) only.
 
-By using the Tizen Studio for Ubuntu, you can, for example:
+By using Tizen Studio for Ubuntu, you can, for example:
 
 - Compile the platform modules with appropriate architecture and rootstrap.
 - Debug the platform modules with the correct rootstrap.
 - Update the rootstrap automatically.
 
-To use the Tizen Studio, download it from [https://developer.tizen.org/development/tizen-studio/download](https://developer.tizen.org/development/tizen-studio/download). For more information on the development tools, see [Platform Development Tools](platform-tools.md).
+To use Tizen Studio, download it from [https://developer.tizen.org/development/tizen-studio/download](https://developer.tizen.org/development/tizen-studio/download). For more information on the development tools, see [Platform Development Tools](platform-tools.md).
 
 ## Prerequisites for Using the Platform IDE
 
@@ -39,7 +39,7 @@ The platform development process consists of the following steps:
 
 ### Creating a Platform Project
 
-The Tizen Studio provides functionality for creating projects from templates using the Platform Project Wizard.
+Tizen Studio provides functionality for creating projects from templates using the Platform Project Wizard.
 
 To use the Platform Project Wizard:
 

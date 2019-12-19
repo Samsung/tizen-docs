@@ -174,6 +174,7 @@ For the complete source code related to this use case, see the following file:
 
 - [indexedDB_saving_data.html](http://download.tizen.org/misc/examples/w3c_html5/storage/indexed_database_api)
 
+<a name="index"> </a>
 ## Creating an Index
 
 Creating, accessing, and deleting an index is a useful data management skill:

@@ -25,7 +25,7 @@ for accessing only external storage using this API, a privilege <a href="http://
 for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
         </ul>
         <p>
-For more information on the Download features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/contents-downloads">Download Guide</a>.
+For more information on the Download features, see <a href="/application/web/guides/connectivity/download">Download Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -221,8 +221,13 @@ The <em>tizen.download </em>object allows access to the functionality of the Dow
           </p>
 <div class="constructors">
 <h4 id="DownloadRequest::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">DownloadRequest(DOMString url, optional DOMString? destination, optional DOMString? fileName,
-                optional <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType, optional <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString?, DOMString?, <a href="#DownloadNetworkType">DownloadNetworkType</a>?, <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">DownloadRequest(DOMString url, optional DOMString? destination, optional DOMString? fileName,
+                optional <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType, optional <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -1003,7 +1008,7 @@ DownloadNetworkType <em>ALL</em> can be available on a ethernet-enabled device. 
 <li class="feature">http://tizen.org/feature/network.ethernet</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Download {

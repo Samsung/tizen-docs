@@ -37,7 +37,7 @@ Advertise for remote devices (including Bluetooth LE devices)          </li>
 Act as a GATT client (Generic Attribute Profile client)          </li>
         </ul>
         <p>
-For more information on the Bluetooth features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/bluetooth">Bluetooth Guide</a>.
+For more information on the Bluetooth features, see <a href="/application/web/guides/connectivity/bluetooth">Bluetooth Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -563,6 +563,9 @@ The <em>tizen.bluetooth</em> object allows access to the Bluetooth API.
 <div class="constructors">
 <h4 id="BluetoothLEServiceData::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">BluetoothLEServiceData(DOMString uuid, DOMString data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
@@ -621,6 +624,9 @@ service.data = "0x1815";
 <div class="constructors">
 <h4 id="BluetoothLEManufacturerData::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">BluetoothLEManufacturerData(DOMString id, DOMString data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a manufacturerData. */
@@ -750,7 +756,12 @@ var advertise = new tizen.BluetoothLEAdvertiseData(advertData);
 </div>
 <div class="constructors">
 <h4 id="BluetoothLEAdvertiseData::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">BluetoothLEAdvertiseData(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">BluetoothLEAdvertiseData(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -6764,7 +6775,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
 <li class="feature">http://tizen.org/feature/network.bluetooth.le</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Bluetooth {

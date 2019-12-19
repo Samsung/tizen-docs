@@ -86,7 +86,7 @@ There will be a <em>tizen.tvaudiocontrol</em> object that allows access to the f
 <div class="brief">
   An enumerator to indicate the audio output mode.
           </div>
-<pre class="webidl prettyprint">  enum AudioOutputMode { "PCM", "DOLBY", "DTS", "AAC" };</pre>
+<pre class="webidl prettyprint">  enum AudioOutputMode { "PCM", "DOLBY", "DTS", "AAC", "DOLBY_DIGITAL_PLUS" };</pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -100,8 +100,13 @@ There will be a <em>tizen.tvaudiocontrol</em> object that allows access to the f
  DTS - DTS(Digital Theater System) audio output mode            </li>
             <li>
  AAC - AAC(Advanced Audio Coding) audio output mode            </li>
+            <li>
+ DOLBY_DIGITAL_PLUS - Dolby Digital Plus audio output mode            </li>
           </ul>
          </div>
+<p><span class="remark">Remark: </span>
+ DOLBY_DIGITAL_PLUS is supported since Tizen 5.5
+          </p>
 </div>
 <div class="enum" id="AudioBeepType">
 <a class="backward-compatibility-anchor" name="::TVAudioControl::AudioBeepType"></a><h3>1.2. AudioBeepType</h3>
@@ -835,11 +840,11 @@ To guarantee the running of this application on a device with a TV audio control
 <li class="feature">http://tizen.org/feature/tv.audio</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVAudioControl {
-  enum AudioOutputMode { "PCM", "DOLBY", "DTS", "AAC" };
+  enum AudioOutputMode { "PCM", "DOLBY", "DTS", "AAC", "DOLBY_DIGITAL_PLUS" };
   enum AudioBeepType { "UP", "DOWN", "LEFT", "RIGHT", "PAGE_LEFT", "PAGE_RIGHT", "BACK", "SELECT", "CANCEL", "WARNING",
     "KEYPAD", "KEYPAD_ENTER", "KEYPAD_DEL", "MOVE", "PREPARING" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AudioControlManagerObject">AudioControlManagerObject</a>;

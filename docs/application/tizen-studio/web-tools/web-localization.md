@@ -4,7 +4,7 @@ Localization is the process of adapting your application for a specific region o
 
 Because a single language can be used in multiple parts of the world, your application must adapt to the regional and cultural conventions of where the application users reside.
 
-The Tizen Studio provides several technologies to help you develop an internationalized application. The **Web Localization** view is a tool which helps you localize strings, resources, and content of a Tizen Web project.
+Tizen Studio provides several technologies to help you develop an internationalized application. The **Web Localization** view is a tool which helps you localize strings, resources, and content of a Tizen Web project.
 
 This topic describes how to localize your application.
 

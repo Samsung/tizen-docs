@@ -1,6 +1,6 @@
 # Converting Projects for UI Builder
 
-You can create UI applications based on pure EFL code. However, when expanding the UI view of the application or developing an optimized application for a new device, code maintenance and development productivity can slow down. For efficiency, consider converting your application to a UI Builder application. The Tizen native UI Builder supports UI layouts and visual editing methods for creating new UI screens for various devices.
+You can create UI applications based on pure EFL code. However, when expanding the UI view of the application or developing an optimized application for a new device, code maintenance and development productivity can slow down. For efficiency, consider converting your application to a UI Builder application. The Tizen Native UI Builder supports UI layouts and visual editing methods for creating new UI screens for various devices.
 
 > **Note**  
 > You cannot convert EFL widget applications or DALi UI applications to UI Builder projects. Only EFL basic UI and watch application projects can be converted (based on the `tizen-manifest.xml` file).

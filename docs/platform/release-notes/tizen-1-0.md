@@ -1,6 +1,6 @@
 # Tizen 1.0 Release Notes
 
-Release Date: Apr. 30, 2012
+Release date: Apr. 30, 2012
 
 Version: **1.0 Larkspur**
 

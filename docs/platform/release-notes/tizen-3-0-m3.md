@@ -1,9 +1,8 @@
 # Tizen 3.0 Public M3
 
-Release Date: Jul 5, 2017
+Release date: Jul. 5, 2017
 
 Tizen 3.0 public M3 has been released, mainly containing security fixes.
-
 
 
 ## Release Details
@@ -17,7 +16,6 @@ Tizen 3.0 public M3 has been released, mainly containing security fixes.
   - Wearable: [http://download.tizen.org/releases/milestone/tizen/3.0.m3/3.0.m3-wearable/tizen-3.0-wearable_20170627.1/images/target-circle/](http://download.tizen.org/releases/milestone/tizen/3.0.m3/3.0.m3-wearable/tizen-3.0-wearable_20170627.1/images/target-circle/)
 
 - [How to flash to a device](../developing/flashing.md)
-
 
 
 ## Release Notes

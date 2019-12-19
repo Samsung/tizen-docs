@@ -7,7 +7,7 @@
 ### New Features
 
 - Installer, Package Manager, and Uninstaller
-  - The Confirm dialog for deleting the emulator has been updated: when user updates the Tizen Studio including the emulators, the Package Manager requires user confirmation to delete the old emulator versions on which the user has created images. Previously, the old emulators and images were deleted without user confirmation. However, since running an old version of images on newer emulators can cause compatibility issues, the Package Manager now opens a dialog to get user confirmation before deleting them. If the user rejects the deletion, the update process is canceled.
+  - The Confirm dialog for deleting the emulator has been updated: when user updates Tizen Studio including the emulators, the Package Manager requires user confirmation to delete the old emulator versions on which the user has created images. Previously, the old emulators and images were deleted without user confirmation. However, since running an old version of images on newer emulators can cause compatibility issues, the Package Manager now opens a dialog to get user confirmation before deleting them. If the user rejects the deletion, the update process is canceled.
 - Emulator
   - A default VM instance is provided to run an application without the creation process in the emulator.
   - The high color AOD (Always On Display) is supported in Tizen 2.3.2 wearable applications.
@@ -22,7 +22,7 @@
 - Web and Native IDE
   - In the Preferences and Properties, Eclipse options have been enabled.
   - In the Remote Device Manager, you can cancel the scanning of nearby devices.
-  - The keyboard shortcuts for Preference (**Alt + Shift + Enter**), Emulator Manager (**Alt + Shift + E**), Dynamic Analyzer (**Alt + Shift + D**), Package Manager (**Alt + Shift + P**), and Certificate Manager (**Alt + Shift + C**) have been added. You can see the shortcut information in the **Tools** menu in the Tizen Studio.
+  - The keyboard shortcuts for Preference (**Alt + Shift + Enter**), Emulator Manager (**Alt + Shift + E**), Dynamic Analyzer (**Alt + Shift + D**), Package Manager (**Alt + Shift + P**), and Certificate Manager (**Alt + Shift + C**) have been added. You can see the shortcut information in the **Tools** menu in Tizen Studio.
   - In the Web IDE, the directory structure of the widget package has been changed.
   - In the Web application configuration editor, a short description of the privilege is displayed.
   - Native project creation has been improved by reducing the latency for indexing.
@@ -62,17 +62,17 @@
 - Installer, Package Manager, and Uninstaller
   - If there is a multibyte character in the Tizen Studio installation path, some development packages have a difficulty in finding the installation location when they are working.
 - Web and Native IDE
-  - You can create unit tests for the Tizen SDK 2.3.2 and higher version projects only. The Tizen Studio currently does not support unit testing for all earlier versions.
+  - You can create unit tests for the Tizen SDK 2.3.2 and higher version projects only. Tizen Studio currently does not support unit testing for all earlier versions.
 - Web IDE
   - The **Preview** tab in the Web Page Editor sometimes does not appear properly. Use an alternative feature, named Web SDK HTML Editor, which has enhanced features compared to the Web Page Editor. Instead of the **Preview** tab in the Web Page Editor, use the preview (**Ctrl + 4**) feature of the Web SDK HTML Editor.
 - Native IDE
   - When you import some projects generated from Tizen 2.3 Rev2, the importing can take some time.
 - Native UI Builder
-  - If the WYSIWYG editor of the Native UI Builder for Windows&reg; runs over 12 hours, your computer slows down because of the editor&apos;s high memory usage. To solve the problem, restart the Tizen Studio.
+  - If the WYSIWYG editor of the Native UI Builder for Windows&reg; runs over 12 hours, your computer slows down because of the editor&apos;s high memory usage. To solve the problem, restart Tizen Studio.
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an IBus (Intelligent Input Bus) bug. When the issue occurs, restart the ibus-daemon by entering the `ibus-daemon –drx` command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Tizen Studio](../setup/prerequisites.md).
-    - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
+  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from [Prerequisites for Tizen Studio](../setup/prerequisites.md).
+    - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen Emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
   - On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
@@ -82,7 +82,7 @@
     - Increase the user area of the virtual memory in the system to 3 GB by entering the `bcdedit /set increaseuserva 3072` command on the console with administrator rights (Windows&reg; 7 only), and reboot.
   - If you use a MacBook Pro which has both Intel HD and NVIDIA&reg; GPUs, when you execute the emulator with the **OpenGL ES ver. v1.1 & v2.0** option, the emulator can be unexpectedly terminated. Use the **OpenGL ES ver. v2.0 & v3.0** option.
 - CLI and SDB
-  - To use the SDB bash completion feature, enter the `source .sdb-complete.bash` command on the bash shell. The Tizen Studio does not support the SDB bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
+  - To use the SDB bash completion feature, enter the `source .sdb-complete.bash` command on the bash shell. Tizen Studio does not support the SDB bash auto-completion on Windows&reg; (it is available on Ubuntu and macOS).
 - Dynamic Analyzer
   - The UI Hierarchy viewer feature and start-up profiling are not performed simultaneously.
   - The Dynamic Analyzer cannot perform Web application profiling with a commercial Tizen device due to the security policy.

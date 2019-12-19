@@ -1,6 +1,6 @@
 # Tizen Wearable
 
-The Tizen wearable profile makes it easy to develop applications for wearable rotary devices or sensors that support rotary events for user interaction. A rotary device can rotate clockwise or counter-clockwise, and dispatch an event for each movement.
+Tizen Wearable profile makes it easy to develop applications for wearable rotary devices or sensors that support rotary events for user interaction. A rotary device can rotate clockwise or counter-clockwise, and dispatch an event for each movement.
 
 The integration with the rotating bezel avoids the disadvantage of covering up the screen with your fingers. Put simply, it relies less on the user's brainpower and memory, allowing them to easily see the screen while performing necessary actions.
 

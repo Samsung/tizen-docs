@@ -1,6 +1,6 @@
 # Writing and Editing Code
 
-The Tizen Studio provides the following set of tools to help you write and edit code in your native application projects:
+Tizen Studio provides the following set of tools to help you write and edit code in your native application projects:
 
 - [Content Assist](content-assist.md) **(Completing and Entering APIs with Assist and Hover)**  
 The Content Assist tool provides the API assist and hover features to ease code writing. The API assist helps you to write code quickly by completing the names of the APIs automatically when writing a part of the API name. The API hover displays information about API functions, API-related types, and macros for the native framework.

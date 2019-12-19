@@ -1,11 +1,26 @@
-# Tizen 5.5 Public M1 Release Notes
+# Tizen 5.5 Public M1
 
-Release Date: May. 31, 2019
+Release date: May 31, 2019
+
+The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web and Native API set.
 
 
-## System (Kernel and System framework)
+## Release Details
 
-### New and changed features
+- [Getting source code](http://review.tizen.org/git/) (Tizen 5.5 M1 source codes are under **tizen_5.5** branch.)
+
+- Getting binaries and images
+  - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20190503.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20190503.1/)
+  - profile(unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20190523.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20190523.1/)
+
+- [How to flash to a device](../developing/flashing.md)
+
+
+## Release Notes
+
+### System (Kernel and System framework)
+
+#### New and changed features
 
 - Kernel upgrade
   - Kernel for Raspberry Pi 3 and ODROID-XU3 has been upgraded to version 4.14.
@@ -30,7 +45,7 @@ Release Date: May. 31, 2019
   - Network flashing
     - Flashing platform image through network has been developed.
 
-### Fixes
+#### Fixes
 
 - System core modules
   - Deviced
@@ -43,9 +58,9 @@ Release Date: May. 31, 2019
     - Race condition on libdbuspolicy has been fixed.
 
 
-## System (IoT System)
+### System (IoT System)
 
-### New and changed features
+#### New and changed features
 
 - Memory management for long-lived process like background-locked application has been enhanced.
   - Separated memory cgroup for long-lived process has been added. When system goes to idle state, it proactively reclaims the long-lived memory of the process to provide better memory usage environment for devices with limited memory.
@@ -54,9 +69,9 @@ Release Date: May. 31, 2019
 - System-dump supports extension mechanism to dump vendor-specific information. In addition, system-dump dumps installed-package list for checking installed-app version as default behaviors.
 
 
-## System (Base)
+### System (Base)
 
-### New and changed features
+#### New and changed features
 
 - Open source upgrade
   - icu (63.1)
@@ -91,7 +106,7 @@ Release Date: May. 31, 2019
     - http://tizen.org/feature/accessibility.grayscale
     - http://tizen.org/feature/accessibility.negative
 
-### Fixes
+#### Fixes
 
 - CVE patches
   - libxslt : CVE-2019-11068
@@ -100,9 +115,9 @@ Release Date: May. 31, 2019
   - file : CVE-2019-8906
 
 
-## Application framework
+### Application framework
 
-### New and changed features
+#### New and changed features
 
 - New notification API set
   - Various types of notifications have been provided to represent various information.
@@ -118,9 +133,9 @@ Release Date: May. 31, 2019
   - C# API set for application events has been provided.
 
 
-## Window System
+### Window System
 
-### New and changed features
+#### New and changed features
 
 - Wayland
   - The open source wayland-protocols has been upgraded to version 1.16.
@@ -175,7 +190,7 @@ Release Date: May. 31, 2019
     - Vulkan-Tools
     - Vulkan-ValidationLayers
 
-### Fixes
+#### Fixes
 
 - libxkbcommon
   - Security vulnerabilities (CVE-2018-15858, CVE-2018-15859, CVE-2018-15861, CVE-2018-15863, CVE-2018-15862, and CVE-2018-15864) have been fixed.
@@ -199,9 +214,9 @@ Release Date: May. 31, 2019
   - The timeout function to wait for the dequeue buffer has been added in order to fix the dequeue deadlock.
 
 
-## Graphics Engine
+### Graphics Engine
 
-### New and changed features
+#### New and changed features
 
 - DALi (3D UI Toolkit)
   - Actor and Renderer
@@ -233,7 +248,7 @@ Release Date: May. 31, 2019
     - Interop classes are added to NUI.
     - Layout implementation has been moved from DALi to NUI.
 
-### Fixes
+#### Fixes
 
 - DALi (3D UI Toolkit)
   - Image
@@ -255,9 +270,9 @@ Release Date: May. 31, 2019
     - Transition, DynamicResource, and Style related issues of NUI XAML have been fixed.
 
 
-## UI framework
+### UI framework
 
-### New and changed features
+#### New and changed features
 
 - EFL
   - Version 1.21 is upgraded to version 1.22.
@@ -279,16 +294,16 @@ Release Date: May. 31, 2019
 - rlottie
   - Lottie file support has been added.
 
-### Known Issues
+#### Known Issues
 
 - Accessibility toolkit packages support meson build system only:
   - Atk, At-spi2-core, and At-spi2-atk
 - Elementary uses legacy focus policy rather than the recent focus manager for compatibility issue.
 
 
-## Interaction Framework
+### Interaction Framework
 
-### New and changed features
+#### New and changed features
 
 - Multi-assistant framework
   - Tizen now supports multi-assistant framework that supports multiple assistants at the same time.
@@ -299,9 +314,9 @@ Release Date: May. 31, 2019
   - IME API set that gets the key code and the visibility state of a candidate has been added.
 
 
-## Multimedia framework
+### Multimedia framework
 
-### New and changed features
+#### New and changed features
 
 - MediaTool
   - API set to support audio channel mask has been added.
@@ -355,7 +370,7 @@ Release Date: May. 31, 2019
   - Metadata
     - API to set composer has been added.
 
-### Fixes
+#### Fixes
 
 - Media Content
   - media_info_insert_to_db() returns the updated media information. Earlier, this API returned the media information without verifying whether it was up-to-date.
@@ -380,9 +395,9 @@ Release Date: May. 31, 2019
     - The busy loop issue caused for high CPU usage has been fixed.
 
 
-## Network and Connectivity
+### Network and Connectivity
 
-### New and changed features
+#### New and changed features
 
 - User awareness framework
   - A framework for user detection based on multiple sensors has been added.
@@ -420,9 +435,9 @@ Release Date: May. 31, 2019
     - Wi-Fi - Exceptions to provide accurate error information has been added.
 
 
-## Security
+### Security
 
-### New and changed features
+#### New and changed features
 
 - Security-manager
   - Smack rules will be loaded directly from security-manager DB. All rule files have been removed.
@@ -434,9 +449,9 @@ Release Date: May. 31, 2019
     - Getting several privilege information as list.
 
 
-## Service framework
+### Service framework
 
-### Fixes
+#### Fixes
 
 - Account-Manager
   - Unwanted D-Bus API calls have been removed.
@@ -462,9 +477,9 @@ Release Date: May. 31, 2019
   - Potential defects have been fixed.
 
 
-## Web framework
+### Web framework
 
-### New and changed features
+#### New and changed features
 
 - Web Engine
   - Web Engine Upgrade Framework has been added.
@@ -513,9 +528,9 @@ Release Date: May. 31, 2019
   - The IntelliSense function for Tizen WebApp SDK has been enhanced.
 
 
-## Lightweight Web Solution
+### Lightweight Web Solution
 
-### New and changed features
+#### New and changed features
 
 - Security modules
   - Content Security Policy (CSP) has been added.
@@ -532,7 +547,7 @@ Release Date: May. 31, 2019
   - Animation performance (transition) has been improved.
   - Type conversion performance in JS has been improved.
 
-### Fixes
+#### Fixes
 
 - Bug fixes
   - Many layout bugs, including flex layout have been fixed.
@@ -540,9 +555,9 @@ Release Date: May. 31, 2019
   - Crashes have been fixed.
 
 
-## Tizen .NET
+### Tizen .NET
 
-### New and changed features
+#### New and changed features
 
 - .NET Core (Runtime)
   - .NETCore has been upgraded from 2.1.4 to 3.0.0 preview 2.
@@ -592,15 +607,15 @@ Release Date: May. 31, 2019
   - New InputMethod API set to update the input panel event has been added.
   - New Application API set to add CurrentDeviceOrientation property for CoreUIApplication has been added.
 
-### Known Issues
+#### Known Issues
 
 - Xamarin.Forms
-  - For more information on the list of limitations, see [here](https://developer.tizen.org/development/api-reference/.net-application/current-xamarin.forms-limitations).
+  - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).
 
 
-## Toolchain
+### Toolchain
 
-### New and changed features
+#### New and changed features
 
 - ASan heap profile flags have been added to libsanitizer.
 - ASan __libc_siglongjmp/__libc_longjmp interceptors have been added.
@@ -608,18 +623,18 @@ Release Date: May. 31, 2019
   - asan-runtime-env package has been added to pre-installation list of mic.
   - ASan report description on stack traces has been improved.
 
-### Fixes
+#### Fixes
 
 - CVE patchset (CVE-2017-16997, CVE-2018-6485, CVE-2018-19591, CVE-2019-9169, CVE-2019-6488, and CVE-2019-7309) for glibc have been applied.
 - Bugfix patchset (#21081 and #22442) on glibc have been back-ported.
 
 
-## Experimental
+### Experimental
 
-### New and changed features
+#### New and changed features
 
 - nnfw: Neural Network Runtime (Experimental Release)
-  - Support for new architecture design named ‘neurun’ for CPU/GPU mixed inference has been added.
+  - Support for new architecture design named 'neurun' for CPU/GPU mixed inference has been added.
   - Support for mixed acceleration for InceptionV3 and MobileNet model by manual planning has been added.
   - Android NN API compatible (Supports major operations selected carefully.)
 

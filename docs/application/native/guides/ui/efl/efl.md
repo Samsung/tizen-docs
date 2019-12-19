@@ -1,6 +1,6 @@
 # Enlightenment Foundation Libraries (EFL)
 
-Enlightenment Foundation Libraries (EFL) is an open source UI toolkit that provides a set of libraries that offer useful features to applications. EFL covers a number of areas from UI component sets to data structures. EFL is one of the Tizen native UI modules and is available in various Tizen profiles. In Tizen, EFL is commonly used for UI applications, although you can also use it for non-UI applications.
+Enlightenment Foundation Libraries (EFL) is an open source UI toolkit that provides a set of libraries that offer useful features to applications. EFL covers a number of areas from UI component sets to data structures. EFL is one of the Tizen Native UI modules and is available in various Tizen profiles. In Tizen, EFL is commonly used for UI applications, although you can also use it for non-UI applications.
 
 The EFL UI programming guide includes the following topics:
 

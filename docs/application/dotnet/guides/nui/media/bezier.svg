@@ -1,0 +1,131 @@
+<svg width="650px" height="400px" viewBox="0 0 650 400" xmlns="http://www.w3.org/2000/svg">
+
+  <rect x="10" y="10" width="630" height="380" rx="2" ry="2" style="fill:rgb(240, 240, 240);" />
+
+  <g transform="translate(50, 50)">
+
+    <path d="M 0 0 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 20 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 40 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 60 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 80 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 100 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 120 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 140 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 160 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 180 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 200 H 200" stroke="rgb(200, 200, 200)"/>
+    
+    <path d="M 0 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 20 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 40 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 60 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 80 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 100 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 120 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 140 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 160 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 180 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 200 0 V 200" stroke="rgb(200, 200, 200)"/>
+
+    <path d="M 0 300 H 200" stroke="rgb(200, 200, 200)" stroke-width="2"/>
+
+    <circle id="target1" cx="0" cy="300" r="10" style="fill:rgb(66, 201, 241);" />
+
+    <animate
+      href="#target1"
+      id="anim0"
+      attributeName="cx"
+      dur="5s"
+      calcMode="spline"
+      values="0; 200"
+      keyTimes="0; 1"
+      keySplines="0 .5 .5 1;"
+      fill="freeze"
+      begin="1s; anim0.end + 2s" />
+    
+    <g transform="translate(0, 200)scale(2)">
+      <path d="M 50 -100 H 100" stroke="rgb(66, 201, 241)" fill="transparent"/>
+      <path d="M 0 -50 V 0" stroke="rgb(66, 201, 241)" fill="transparent"/>
+      
+      <path d="M 0 0 C 0 -50, 50 -100, 100 -100" stroke="rgb(100, 100, 100)" fill="transparent"/>
+      
+      <circle cx="0" cy="-50" r="2" style="fill:rgb(66, 201, 241);" />
+      <circle cx="50" cy="-100" r="2" style="fill:rgb(66, 201, 241);" />
+    </g>
+  </g>
+
+  <g transform="translate(400, 50)">
+
+    <path d="M 0 0 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 20 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 40 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 60 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 80 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 100 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 120 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 140 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 160 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 180 H 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 0 200 H 200" stroke="rgb(200, 200, 200)"/>
+    
+    <path d="M 0 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 20 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 40 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 60 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 80 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 100 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 120 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 140 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 160 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 180 0 V 200" stroke="rgb(200, 200, 200)"/>
+    <path d="M 200 0 V 200" stroke="rgb(200, 200, 200)"/>
+
+    <path d="M 0 300 H 200" stroke="rgb(200, 200, 200)" stroke-width="2"/>
+    
+    <circle id="target2" cx="0" cy="300" r="10" style="fill:rgb(66, 201, 241);" />
+
+    <animate
+      href="#target2"
+      id="anim0"
+      attributeName="cx"
+      dur="5s"
+      calcMode="spline"
+      values="0; 200"
+      keyTimes="0; 1"
+      keySplines=".86 0 .07 1;"
+      fill="freeze"
+      begin="1s; anim0.end + 2s" />
+
+    <g transform="translate(0, 200)scale(2)">
+      <path d="M 86 0 H 0" stroke="rgb(66, 201, 241)" fill="transparent"/>
+      <path d="M 7 -100 H 100" stroke="rgb(66, 201, 241)" fill="transparent"/>
+      
+      <path d="M 0 0 C 86 0, 7 -100, 100 -100" stroke="rgb(100, 100, 100)" fill="transparent"/>
+      
+      <circle cx="86" cy="0" r="2" style="fill:rgb(66, 201, 241);" />
+      <circle cx="7" cy="-100" r="2" style="fill:rgb(66, 201, 241);" />
+    </g>
+  </g>
+
+  <text x="220" y="268" font-size="14" fill="rgb(180,180,180)" font-style="italic" >Time</text>
+  <text x="40" y="100" font-size="14" fill="rgb(180,180,180)" font-style="italic" transform="rotate(-90, 40, 100)">Progress</text>
+  <text x="570" y="268" font-size="14" fill="rgb(180,180,180)" font-style="italic" >Time</text>
+  <text x="390" y="100" font-size="14" fill="rgb(180,180,180)" font-style="italic" transform="rotate(-90, 390, 100)">Progress</text>
+
+  <text x="30" y="270" font-size="14" fill="rgb(160,160,160)" >(0, 0)</text>
+  <text x="240" y="40" font-size="14" fill="rgb(160,160,160)" >(1, 1)</text>
+  <text x="380" y="270" font-size="14" fill="rgb(160,160,160)" >(0, 0)</text>
+  <text x="590" y="40" font-size="14" fill="rgb(160,160,160)" >(1, 1)</text>
+
+  <text x="110" y="300" font-size="15" fill="rgb(80,80,80)"  >C1 ( 0, 0.5 )</text>
+  <text x="110" y="320" font-size="15" fill="rgb(80,80,80)"  >C2 ( 0.5, 1 )</text>
+  <text x="460" y="300" font-size="15" fill="rgb(80,80,80)"  >C1 ( 0.86, 0 )</text>
+  <text x="460" y="320" font-size="15" fill="rgb(80,80,80)"  >C2 ( 0.07, 1 )</text>
+
+  <text x="24" y="156" font-size="14" fill="rgb(66, 201, 241)" font-weight="bold" font-style="italic" >C1</text>
+  <text x="140" y="40" font-size="14" fill="rgb(66, 201, 241)" font-weight="bold" font-style="italic" >C2</text>
+  <text x="562" y="240" font-size="14" fill="rgb(66, 201, 241)" font-weight="bold" font-style="italic" >C1</text>
+  <text x="406" y="40" font-size="14" fill="rgb(66, 201, 241)" font-weight="bold" font-style="italic" >C2</text>
+
+</svg>
