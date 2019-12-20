@@ -7,15 +7,15 @@ The watch face can select the complication and request to update the complicatio
 
 There are two ways to update the complication data.
 
-1. Watch Face can request to update complication data to complication provider application. The complication provider application receives the request and update the complication data. Then, the complication update callback is called in watch face.
+1. Watch Face can request complication provider application to update complication data. The complication provider application receives the request and updates the complication data. Then, the complication update callback is called in watch face.
 
     ![Complication](media/complication_1.png)
- 
 
-2. If the complication data is changed, the complication provider application can notify to the watch face. If the complication received the notification, it requests to update automatically. Then, the update request comes to the complication provider. The complication provider must set the updated data in update requested callback. After the complication data is updated, the complication update callback is called in the watch face.
+
+2. If the complication data is changed, the complication provider application can notify to the watch face. If the complication receives the notification, it requests to update automatically. Then, the update request comes to the complication provider. The complication provider must set the updated data in update requested callback. After the complication data is updated, the complication update callback is called in the watch face.
 
     ![Complication_update](media/complication_2.png)
- 
+
 
 ## Types of Watch Face Complication
 
@@ -25,25 +25,25 @@ Watch Face can set the complication support types to support specific type of co
 
 The followings are types of watch face complication:
 
-| Support type name | Mandatory data | Optional data   |
-|-------------------|----------------|-----------------|
-| short text type   | short text     | title           |
-|                   |                | icon path       |
-|                   |                | extra data      |
-| long text type    | long text      | title           |
-|                   |                | icon path       |
-|                   |                | extra data      |
-| ranged value type | min value      | title           |
-|                   | max value      | short text      |
-|                   | current value  | icon path       |
-|                   |                | extra data      |
-| image type        | image path     | extra data      |
-| icon type         | icon path      | extra data      |
-| time type         | timestamp      | short text      |
-|                   |                | extra data      |
-| empty             |                |                 |
+| Support type name | Mandatory data                             | Optional data   |
+|-------------------|--------------------------------------------|-----------------|
+| short text type   | short text                                 | title           |
+|                   |                                            | icon path       |
+|                   |                                            | extra data      |
+| long text type    | long text                                  | title           |
+|                   |                                            | icon path       |
+|                   |                                            | extra data      |
+| ranged value type | min value                                  | title           |
+|                   | max value                                  | short text      |
+|                   | current value                              | icon path       |
+|                   |                                            | extra data      |
+| image type        | image path                                 | extra data      |
+| icon type         | icon path                                  | extra data      |
+| time type         | timestamp (deprecated) or time information | short text      |
+|                   |                                            | extra data      |
+| empty             |                                            |                 |
 
- 
+
 ## Prerequisites
 
 1. To use the Watch Face Complication API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
@@ -54,14 +54,14 @@ The followings are types of watch face complication:
     	<privilege>http://tizen.org/privilege/appmanager.launch</privilege>
     </privileges>
     ```
- 
+
 2. To use the functions and data types for the Watch Face Complication API, include the `<watchface-complication.h>` header file in application:
 
     ```cpp
     #include <watchface-complication.h>
     ```
 
- 
+
 ## Creating Watch Face Complication
 
 Watch Face must create the complication handle to add the default complication.
@@ -84,8 +84,8 @@ And also choose the touch event type that can be supported.
 
 The default **provider id** and **type** are the items to set for initial display. As the default provider they must not be `null`.
 If they are null, the complication receives an error. Also, if you select the other provider and type, that they are no longer used.
- 
-  
+
+
 ## Updating Complication Data
 
 To receive the updated complication data, `watchface_complication_updated_cb()` must be added in the watch face by using `watchface_complication_add_updated_cb()`. And, if complication provider is not available (disabled, uninstalled), `watchface_complication_error_cb()` is called. In this case, watch face can add fallback logic in error callback such as display error message or launch editor interface.
@@ -112,9 +112,9 @@ static void _init_complication()
 	watchface_complication_add_updated_cb(complication,
 		_watchface_complication_updated_cb,
 		_watchface_complication_error_cb,  NULL);
-} 
+}
 ```
- 
+
 When the complication provider data is updated, `watchface_complication_updated_cb()` is called.
 Watch Face can get the information from the bundle parameter of callback by using `watchface_complication_data_get_*`.
 
@@ -128,10 +128,21 @@ To get the complication provider data, the following functions can be used:
 | `watchface_complication_data_get_long_text()` | long text |
 | `watchface_complication_data_get_title()` | title text |
 | `watchface_complication_data_get_timestamp()` | timestamp |
+| `watchface_complication_data_get_timeinfo()` | time information |
+| `watchface_complication_timeinfo_get_timezone()` | timezone |
+| `watchface_complication_timeinfo_get_timezone_id()` | timezone ID |
+| `watchface_complication_timeinfo_get_timezone_country()` | timezone country |
+| `watchface_complication_timeinfo_get_timezone_city()` | timezone city |
+| `watchface_complication_timeinfo_get_timestamp()` | timestamp |
 | `watchface_complication_data_get_image_path()` | image path |
 | `watchface_complication_data_get_ranged_value()` | min / max / current value |
 | `watchface_complication_data_get_icon_path()` | icon path |
 | `watchface_complication_data_get_extra_data()` | extra data |
+
+> **Note**
+>
+> `watchface_complication_data_get_timestamp()` is deprecated since Tizen 5.5.
+> Instead, use `watchface_complication_data_get_timeinfo()`.
 
 ```cpp
 void _watchface_complication_updated_cb(int complication_id,
@@ -139,9 +150,32 @@ void _watchface_complication_updated_cb(int complication_id,
 		watchface_complication_type_e type,
 		const bundle *data, void *user_data)
 {
-	char *shorttext;
-	if (type == WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT)
+	char *shorttext = NULL;
+	time_t timestamp;
+	complication_time_info_h info;
+	char *country = NULL;
+	char *city = NULL;
+	char *id = NULL;
+
+	if (type == WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT) {
 		watchface_complication_data_get_short_text(data, &shorttext);
+	} else if (type == WATCHFACE_COMPLICATION_TYPE_TIME) {
+		watchface_complication_data_get_timeinfo(data, &info);
+		watchface_complication_timeinfo_get_timezone_id(info, &id);
+		watchface_complication_timeinfo_get_timezone_city(info, &city);
+		watchface_complication_timeinfo_get_timezone_country(info, &country);
+		watchface_complication_timeinfo_get_timestamp(info, &timestamp);
+		watchface_complication_timeinfo_destroy(info);
+	}
+
+	if (shorttext)
+		free(shorttext);
+	if (country)
+		free(country);
+	if (city)
+		free(city);
+	if (id)
+		free(id);
 }
 ```
 
@@ -174,11 +208,11 @@ In This case, watch face supports complications only in allowed complication lis
 {
 	complication_allowed_list_h allowed_list;
 
-	watchface_complication_allowed_list_create(&allowed_list); 
-	watchface_complication_allowed_list_add(allowed_list, "PROVIDER_ID_1", 
-			WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT); 
-	watchface_complication_allowed_list_add(allowed_list, "PROVIDER_ID_2", 
-			WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT); 
+	watchface_complication_allowed_list_create(&allowed_list);
+	watchface_complication_allowed_list_add(allowed_list, "PROVIDER_ID_1",
+			WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT);
+	watchface_complication_allowed_list_add(allowed_list, "PROVIDER_ID_2",
+			WATCHFACE_COMPLICATION_TYPE_SHORT_TEXT);
 	watchface_complication_allowed_list_apply(complication, allowed_list);
 
 	watchface_complication_allowed_list_destroy(allowed_list);
@@ -214,7 +248,7 @@ The features can be changed by watch face editor application:
     	watchface_editable_add_edit_ready_cb(_watchface_editable_edit_ready_cb, NULL);
     }
     ```
- 
+
 3. Watch Face can create the `complication_candidates_list_h` to identify the editable features to request to editor.
 Watch Face can request to edit the features by using `watchface_editable_request_edit()`.
 

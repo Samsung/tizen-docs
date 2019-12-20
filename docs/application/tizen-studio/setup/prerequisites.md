@@ -70,7 +70,7 @@ The following table lists the supported operating systems and hardware requireme
 <th>Architecture</th>
 <td>x64 (64 bit)</td>
 <td>x64 only</td>
-<td>x64 / x86</td>
+<td>x64 (64 bit)</td>
 </tr>
 <tr>
 <th>Memory</th>

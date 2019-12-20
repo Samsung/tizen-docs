@@ -1928,12 +1928,6 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Wi-Fi Device Provisioning Protocol</Name>
-                <Path>group__CAPI__NETWORK__WIFI__MANAGER__DPP__MODULE.html</Path>
-                <Subnodes>
-                </Subnodes>
-               </Node>
-               <Node>
                 <Name>Wi-Fi Management</Name>
                 <Path>group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html</Path>
                 <Subnodes>

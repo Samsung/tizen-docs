@@ -207,10 +207,11 @@ _del(<span class="keywordtype">void</span> *data EINA_UNUSED, <span class="keywo
 }
 </pre></div></p>
 <p>The important parts of this example were described above. If you need to see the full source code for it, there's a link to the code in the beginning of this page.</p>
-<p>This example will start a server and start accepting connections from clients, as demonstrated in the following diagram:  
- <img src="ecore_con-client-server-example.png" style="max-width: 400px"/>
- <a href="ecore_con-client-server-example.png">Full size</a>
-  <dl class="note"><dt><b>Note:</b></dt><dd>This example contains a serious security flaw: it doesn't check for the size of data being received, thus allowing to the string to be exploited in some way. However, it is left like this to make the code simpler and just demonstrate the API usage. </dd></dl>
+<p>This example will start a server and start accepting connections from clients, as demonstrated in the following diagram:</p>
+ <div class="image">
+<img src="ecore_con-client-server-example.png" alt="ecore_con-client-server-example.png"/>
+</div>
+ <dl class="note"><dt><b>Note:</b></dt><dd>This example contains a serious security flaw: it doesn't check for the size of data being received, thus allowing to the string to be exploited in some way. However, it is left like this to make the code simpler and just demonstrate the API usage. </dd></dl>
 </div></div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">
