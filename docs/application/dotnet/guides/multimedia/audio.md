@@ -137,7 +137,8 @@ To query audio device information:
         ```
 
 
-        > **Note**   
+        > **Note**
+        >
         > The initial running state of the connected device is `false`, which means the connected device is not running.
 
 -   To utilize additional functionality for AudioDeviceType.UsbAudio and AudioDeviceIoDirection.Output device, use the [Tizen.Multimedia.AudioDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioDevice.html) class:
