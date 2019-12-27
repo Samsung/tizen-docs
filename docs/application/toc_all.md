@@ -261,6 +261,7 @@
 ### [Create TV Web Application](/application/web/get-started/tv/first-app.md)
 ### [Create Samsung Smart TV Web Application](/application/web/get-started/tv/first-samsung-tv-app.md)
 ### [Create Mobile Web Application](/application/web/get-started/mobile/first-app.md)
+### [Create Web Service Application](/application/web/get-started/web-service/first-service.md)
 ### [Create Web Application Addon](/application/web/get-started/addon/first-addon.md)
 
 
@@ -291,7 +292,7 @@
 #### UI Application
 ##### [Watch Application](/application/web/guides/applications/watch-app.md)
 ##### [Widget Application](/application/web/guides/applications/web-widget.md)
-#### [Service Application](/application/web/guides/applications/service-app.md)
+#### [Web Service](/application/web/guides/applications/service-app.md)
 #### [Web Application Addon](/application/web/guides/applications/addon.md)
 
 ### Application Management
