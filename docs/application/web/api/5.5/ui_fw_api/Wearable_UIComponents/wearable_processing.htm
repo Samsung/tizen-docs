@@ -17,6 +17,14 @@
 <video autoplay muted loop controls>
 	<source src="../../images/processing.mp4">
 </video>
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.1%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fcontrols%2Fprocessing%2Ffull_processing.html', '_blank')"
+>Use example</button>
 
 <h2>Table of Contents</h2>
 <ol class="toc">
