@@ -411,6 +411,7 @@ The following table lists the network feature keys:
 | `http://tizen.org/feature/network.bluetooth.le.5_0` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth 5 feature. |
 | `http://tizen.org/feature/network.bluetooth.le.ipsp` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Internet Protocol Support Profile (IPSP). |
 | `http://tizen.org/feature/network.bluetooth.opp` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Object Push Profile (OPP). |
+| `http://tizen.org/feature/network.bluetooth.oob` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Out Of Band (OOB). |
 | `http://tizen.org/feature/network.bluetooth.phonebook.client` | `bool` | The platform returns `true` for this key, if the device supports the Bluetooth Phone Book Access (PBAP) client feature. |
 | `http://tizen.org/feature/network.ethernet` | `bool` | The platform returns `true` for this key, if the device supports Ethernet. |
 | `http://tizen.org/feature/network.internet` | `bool` | The platform returns `true` for this key, if the device supports Internet access. |
