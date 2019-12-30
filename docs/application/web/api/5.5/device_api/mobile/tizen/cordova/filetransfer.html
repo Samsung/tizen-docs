@@ -227,8 +227,14 @@ Sent = 1024
 <div class="constructors">
 <h4 id="FileUploadOptions::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString, DOMString, <a href="#FileUploadParams">FileUploadParams</a>, <a href="#HeaderFields">HeaderFields</a>, DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">FileUploadOptions(DOMString fileKey, DOMString fileName, DOMString mimeType, <a href="#FileUploadParams">FileUploadParams</a> params, <a href="#HeaderFields">HeaderFields</a> headers,
                   DOMString httpMethod);</pre>
+<p><span class="version">Since: </span>
+ 3.0
+              </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a FileUploadOptions objects */
 var options = new FileUploadOptions("file", "doc.txt", "text/plain", null, null, "POST");
@@ -617,7 +623,13 @@ var options = new FileUploadOptions("file", "doc.txt", "text/plain", null, null,
 <div class="constructors">
 <h4 id="FileTransfer::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor ()</span></b></code>
+</dt>
 <pre class="webidl prettyprint">FileTransfer();</pre>
+<p><span class="version">Since: </span>
+ 3.0
+              </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a FileTransfer object. */
 var file_transfer = new FileTransfer();

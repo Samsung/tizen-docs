@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Filesystem">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Filesystem API</h1></div>
 <div class="brief">
  The Filesystem API provides access to a device's filesystem.
@@ -104,7 +104,7 @@ on aspects that cannot be supported across multiple platforms.
 The encoding used for the file path should be UTF-16 (default for ECMAScript String).
         </p>
         <p>
-For more information on the Filesystem features, see <a href="https://developer.tizen.org/development/guides/web-application/data-storage-and-management/file-system">File System Guide</a>.
+For more information on the Filesystem features, see <a href="/application/web/guides/data/file-system">File System Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -744,8 +744,7 @@ The watch operation must continue until the removeStorageStateChangeListener() m
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Subscription identifier.
               </ul>
 </div>
@@ -1323,8 +1322,7 @@ These URIs must not be accessible to other widgets, apart from the one invoking 
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  URI that identifies the file or <var>null</var> if an error occurs.
               </ul>
 </div>
@@ -1667,7 +1665,7 @@ tizen.filesystem.resolve("documents",
  Copies (and overwrites if possible and specified) a file or a
 directory from a specified location to another specified location.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void copyTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, 
+<div class="synopsis"><pre class="signature prettyprint">void copyTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -1783,7 +1781,7 @@ tizen.filesystem.resolve("documents",
  Moves (and overwrites if possible and specified) a file or a directory from a specified location to another.
 This operation is different from instantiating copyTo() and then deleting the original file, as on certain platforms, this operation does not require extra disk space.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void moveTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, 
+<div class="synopsis"><pre class="signature prettyprint">void moveTo(DOMString originFilePath, DOMString destinationFilePath, boolean overwrite, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -1938,8 +1936,7 @@ In case the directory cannot be created, an error must be thrown with the approp
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">File:
-                  </span>
+<span class="return">File:</span>
  File handle of the new directory.
 The new <em>File </em>object has "rw" access rights, as it inherits this from the <em>File </em>object on which the createDirectory() method is called.
               </ul>
@@ -2012,8 +2009,7 @@ In case the file cannot be created, an error must be thrown with the appropriate
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">File:
-                  </span>
+<span class="return">File:</span>
  File handle for the new empty file.
 The new <em>File </em>object has "rw" access rights, as it inherits this from the <em>File </em>object on which the createFile() method is
 called.
@@ -2082,8 +2078,7 @@ The encoding of file paths is <a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">File:
-                  </span>
+<span class="return">File:</span>
  File handle of the file.
 The new <em>File </em>object inherits its access rights from the <em>File </em>object on which this resolve() method is called.
               </ul>
@@ -2136,7 +2131,7 @@ tizen.filesystem.resolve("documents",
 <div class="brief">
  Deletes a specified directory and directory tree if specified.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void deleteDirectory(DOMString directoryPath, boolean recursive, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, 
+<div class="synopsis"><pre class="signature prettyprint">void deleteDirectory(DOMString directoryPath, boolean recursive, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -2630,8 +2625,7 @@ The resulting string length might be shorter than <em>charCount </em>if EOF is <
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  Array of read characters as a string.
               </ul>
 </div>
@@ -2688,8 +2682,7 @@ stream.close();
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">octet[]:
-                  </span>
+<span class="return">octet[]:</span>
  Result of read bytes as a byte (or number) array.
               </ul>
 </div>
@@ -2750,8 +2743,7 @@ for (var i = 0; i &lt; raw.length; i++)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  Array of read characters as base64 encoding string.
               </ul>
 </div>
@@ -2868,9 +2860,9 @@ stream.write(text);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bytes = in .readBytes(256);
-/* Writes the bytes read from in to out. */
-out.writeBytes(bytes);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var bytes = input.readBytes(256);
+/* Writes the bytes read from input to output. */
+output.writeBytes(bytes);
 </pre>
 </div>
 </dd>
@@ -2917,9 +2909,9 @@ out.writeBytes(bytes);
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var base64 = in .readBase64(256);
-/* Writes the base64 data read from in to out. */
-out.writeBase64(base64);
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var base64 = input.readBase64(256);
+/* Writes the base64 data read from input to output. */
+output.writeBase64(base64);
 </pre>
 </div>
 </dd>
@@ -3190,10 +3182,17 @@ This callback interface specifies a success callback with a function taking an a
   enum FileMode { "a", "r", "rw", "w" };
   enum FileSystemStorageType { "INTERNAL", "EXTERNAL" };
   enum FileSystemStorageState { "MOUNTED", "REMOVED", "UNMOUNTABLE" };
+  dictionary FileFilter {
+    DOMString name;
+    Date startModified;
+    Date endModified;
+    Date startCreated;
+    Date endCreated;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FileSystemManagerObject">FileSystemManagerObject</a>;
   [NoInterfaceObject] interface FileSystemManagerObject {
     readonly attribute <a href="#FileSystemManager">FileSystemManager</a> filesystem;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FileSystemManagerObject">FileSystemManagerObject</a>;
   [NoInterfaceObject] interface FileSystemManager {
     readonly attribute long maxPathLength;
     void resolve(DOMString location, <a href="#FileSuccessCallback">FileSuccessCallback</a> onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror, optional <a href="#FileMode">FileMode</a>? mode)
@@ -3239,13 +3238,6 @@ This callback interface specifies a success callback with a function taking an a
     void deleteDirectory(DOMString directoryPath, boolean recursive, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess,
                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void deleteFile(DOMString filePath, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onsuccess, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? onerror) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  dictionary FileFilter {
-    DOMString name;
-    Date startModified;
-    Date endModified;
-    Date startCreated;
-    Date endCreated;
   };
   [NoInterfaceObject] interface FileStream {
     readonly attribute boolean eof;

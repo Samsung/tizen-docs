@@ -32,6 +32,8 @@ An item can have 0 or more texts, 0 or more contents, and 0 or more boolean stat
 The following item styles are available:
 
 - `default`
+- `title`
+- `title_with_groupindex`
 - `groupindex`
 - `1text`
 - `1text.1icon`
@@ -42,6 +44,7 @@ The following item styles are available:
 - `2text.1icon.1`
 - `multiline/1text`
 - `multiline/2text`
+- `padding`
 
 The following figures show examples of the item styles.
 

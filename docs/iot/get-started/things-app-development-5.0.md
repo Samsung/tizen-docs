@@ -35,7 +35,7 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
 
 8.  Edit the source code. The code is composed of a device definition JSON file (in the `res/` directory) and code implementation C files.
 
-    For more information, see [Things SDK API](../guides/things-api.md). For more information on the JSON file, see [Device Definition](../guides/things-api-device.md), and for C APIs and callbacks, see [API Usage](../guides/things-api-guide.md).
+    For more information, see [Things SDK API](../guides/things-api-5.0.md). For more information on the JSON file, see [Device Definition](../guides/things-api-device-5.0.md), and for C APIs and callbacks, see [API Usage](../guides/things-api-guide-5.0.md).
 
     > **Note**
     >
@@ -113,13 +113,11 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
     2.  Generate the IoT certificate following the [Generating cloud certificates](things-cloud-setup.md#generating-cloud-certificates).
 
 
-11. Connect the ARTIK 530 or Raspberry Pi 3 board to a Linux computer with a USB cable and make SDB connection.
+11. Connect the Raspberry Pi 3 board to a Linux computer with a USB cable and make SDB connection.
 
     For more information, see [Setting up the board](setting-up-board.md).
 
-12. Confirm that **artik** or **rpi3** is shown in Tizen Studio toolbar.(This will be shown when SDB is connected.)
-
-    ![Artik connected to Tizen Studio](media/tizen_studio_artik.png)
+12. Confirm that **rpi3** is shown in Tizen Studio toolbar.(This will be shown when SDB is connected.)
 
     ![Raspberry Pi 3 connected to Tizen Studio](media/tizen_studio_rpi3.png)
 
@@ -127,9 +125,3 @@ To create a new application project using SmartThings&trade; (ST) SDK API:
 
     ![Running the project](media/thingsapp_runas.png)
 
-
-
-
-> **Note**
->
-> For *Developing Applications with Things SDK API* for Tizen 4.0, see [here](things-app-development.md)

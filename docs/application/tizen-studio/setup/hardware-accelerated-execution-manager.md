@@ -17,7 +17,7 @@ Hardware requirements:
 
 Supported Windows&reg; versions: 10/8.1/8/7 (32/64-bit), Vista (32/64-bit), XP SP2 or higher (32-bit only)
 
-**HAXM is automatically installed as part of the Tizen Studio**. If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/win/](http://download.tizen.org/sdk/haxm/7.0.0/win/IntelHAXM_7.0.0.exe) and download the Windows installer package.
+**HAXM is automatically installed as part of Tizen Studio**. If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/win/](http://download.tizen.org/sdk/haxm/7.0.0/win/IntelHAXM_7.0.0.exe) and download the Windows installer package.
 
 **Table: Windows installer package**
 
@@ -62,12 +62,12 @@ To start or stop Intel&reg; HAXM, open the Command Prompt window with administra
 ### Removing Intel HAXM
 
 > **Warning**  
-> Close all instances of the Tizen emulator before removing the Intel&reg; HAXM.
+> Close all instances of the Tizen Emulator before removing the Intel&reg; HAXM.
 
 Run installer or use control panel, to uninstall the Intel&reg; HAXM.
 
 > **Important**  
-> If you remove the Intel&reg; HAXM, the acceleration of the Tizen emulator is disabled, but the emulator still works. If you install the Intel&reg; HAXM again, the acceleration is re-enabled.
+> If you remove the Intel&reg; HAXM, the acceleration of the Tizen Emulator is disabled, but the emulator still works. If you install the Intel&reg; HAXM again, the acceleration is re-enabled.
 
 ### Troubleshooting
 
@@ -124,7 +124,7 @@ The Intel&reg; HAXM is installed and ready to use.
 
 ### Using Intel&reg; HAXM
 
-The Intel&reg; HAXM significantly enhances the performance of the Tizen emulator. For more information on the emulator details, see [Increasing the Application Execution Speed](../common-tools/emulator.md#speed).
+The Intel&reg; HAXM significantly enhances the performance of the Tizen Emulator. For more information on the emulator details, see [Increasing the Application Execution Speed](../common-tools/emulator.md#speed).
 
 
 ## Related information

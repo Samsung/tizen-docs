@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Globalization">
- <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="../tv_s_w.png"></div>
+<div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="../tv_s_w.png"></div>
 <div class="title"><h1>Globalization API</h1></div>
 <div class="brief">
  This plugin obtains information and performs operations specific to the user's locale,
@@ -181,25 +181,25 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-gl
  the GlobalizationManager interface embodies Globalization module methods.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface GlobalizationManager {
-    void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
-    void getLocaleName(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
+    void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
+    void getLocaleName(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
     void dateToString(Date date, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options)
-                      raises();
-    void getCurrencyPattern(DOMString currencyCode, <a href="#PatternSuccessCallback">PatternSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
+                      raises(TypeError);
+    void getCurrencyPattern(DOMString currencyCode, <a href="#PatternSuccessCallback">PatternSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
     void getDateNames(<a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#GetDateNamesOptions">GetDateNamesOptions</a> options)
-                      raises();
+                      raises(TypeError);
     void getDatePattern(<a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options)
-                        raises();
-    void getFirstDayOfWeek(<a href="#LongSuccessCallback">LongSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
+                        raises(TypeError);
+    void getFirstDayOfWeek(<a href="#LongSuccessCallback">LongSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
     void getNumberPattern(<a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options)
-                          raises();
-    void isDayLightSavingsTime(Date date, <a href="#DSTSuccessCallback">DSTSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
+                          raises(TypeError);
+    void isDayLightSavingsTime(Date date, <a href="#DSTSuccessCallback">DSTSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
     void numberToString(double number, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options)
-                        raises();
+                        raises(TypeError);
     void stringToDate(DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror,
-                      optional <a href="#DateOptions">DateOptions</a> options) raises();
+                      optional <a href="#DateOptions">DateOptions</a> options) raises(TypeError);
     void stringToNumber(DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror,
-                        optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options) raises();
+                        optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options) raises(TypeError);
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -354,7 +354,7 @@ navigator.globalization.getLocaleName(
 <div class="brief">
  Returns a date formatted as a string according to the client's locale and timezone.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void dateToString(Date date<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void dateToString(Date date, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options);</pre></div>
 <p><span class="version">Since: </span>
  3.0
             </p>
@@ -896,7 +896,7 @@ navigator.globalization.isDayLightSavingsTime(new Date(),
  Returns a number formatted as a string
 according to the client's user preferences.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void numberToString(double number<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void numberToString(double number, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);</pre></div>
 <p><span class="version">Since: </span>
  3.0
             </p>
@@ -1014,7 +1014,7 @@ Currency: $1,099.95
 user preferences and calendar using the time zone of the client.
 Returns the corresponding date object.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void stringToDate(DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, 
+<div class="synopsis"><pre class="signature prettyprint">void stringToDate(DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror,
                   optional <a href="#DateOptions">DateOptions</a> options);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1089,7 +1089,7 @@ navigator.globalization.stringToDate("9/25/2012",
  Parses a number formatted as a string according to the client's
 user preferences and returns the corresponding number.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void stringToNumber(DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, 
+<div class="synopsis"><pre class="signature prettyprint">void stringToNumber(DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror,
                     optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1998,12 +1998,12 @@ of a NumberPattern object.
 <div class="interface" id="GlobalizationError">
 <a class="backward-compatibility-anchor" name="::Globalization::GlobalizationError"></a><h3>1.19. GlobalizationError</h3>
 <pre class="webidl prettyprint">  interface GlobalizationError {
-    attribute long code;
-    attribute DOMString message;
     const short UNKNOWN_ERROR = 0;
     const short FORMATTING_ERROR = 1;
     const short PARSING_ERROR = 2;
     const short PATTERN_ERROR = 3;
+    attribute long code;
+    attribute DOMString message;
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -2093,8 +2093,7 @@ The GlobalizationError interface
 <div class="brief">
  Basic error callback.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly,NoInterfaceObject]
-  interface ErrorCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
     void onerror(<a href="cordova.html#DOMException">DOMException</a> error);
   };</pre>
 <div class="methods">
@@ -2127,31 +2126,6 @@ The GlobalizationError interface
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Globalization {
-  [NoInterfaceObject] interface GlobalizationManagerObject {
-    readonly attribute <a href="#GlobalizationManager">GlobalizationManager</a> globalization;
-  };
-  Navigator implements <a href="#GlobalizationManagerObject">GlobalizationManagerObject</a>;
-  [NoInterfaceObject] interface GlobalizationManager {
-    void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
-    void getLocaleName(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
-    void dateToString(Date date, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options)
-                      raises();
-    void getCurrencyPattern(DOMString currencyCode, <a href="#PatternSuccessCallback">PatternSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
-    void getDateNames(<a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#GetDateNamesOptions">GetDateNamesOptions</a> options)
-                      raises();
-    void getDatePattern(<a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options)
-                        raises();
-    void getFirstDayOfWeek(<a href="#LongSuccessCallback">LongSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
-    void getNumberPattern(<a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options)
-                          raises();
-    void isDayLightSavingsTime(Date date, <a href="#DSTSuccessCallback">DSTSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises();
-    void numberToString(double number, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options)
-                        raises();
-    void stringToDate(DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror,
-                      optional <a href="#DateOptions">DateOptions</a> options) raises();
-    void stringToNumber(DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror,
-                        optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options) raises();
-  };
   dictionary DateOptions {
     DOMString formatLength;
     DOMString selector;
@@ -2196,6 +2170,31 @@ The GlobalizationError interface
     long second;
     long millisecond;
   };
+  Navigator implements <a href="#GlobalizationManagerObject">GlobalizationManagerObject</a>;
+  [NoInterfaceObject] interface GlobalizationManagerObject {
+    readonly attribute <a href="#GlobalizationManager">GlobalizationManager</a> globalization;
+  };
+  [NoInterfaceObject] interface GlobalizationManager {
+    void getPreferredLanguage(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
+    void getLocaleName(<a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
+    void dateToString(Date date, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options)
+                      raises(TypeError);
+    void getCurrencyPattern(DOMString currencyCode, <a href="#PatternSuccessCallback">PatternSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
+    void getDateNames(<a href="#ArrayStringSuccessCallback">ArrayStringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#GetDateNamesOptions">GetDateNamesOptions</a> options)
+                      raises(TypeError);
+    void getDatePattern(<a href="#GetDatePatternSuccessCallback">GetDatePatternSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#DateOptions">DateOptions</a> options)
+                        raises(TypeError);
+    void getFirstDayOfWeek(<a href="#LongSuccessCallback">LongSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
+    void getNumberPattern(<a href="#GetNumberPatternSuccessCallback">GetNumberPatternSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options)
+                          raises(TypeError);
+    void isDayLightSavingsTime(Date date, <a href="#DSTSuccessCallback">DSTSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror) raises(TypeError);
+    void numberToString(double number, <a href="#StringSuccessCallback">StringSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror, optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options)
+                        raises(TypeError);
+    void stringToDate(DOMString dateString, <a href="#GlobalizationDateSuccessCallback">GlobalizationDateSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror,
+                      optional <a href="#DateOptions">DateOptions</a> options) raises(TypeError);
+    void stringToNumber(DOMString numberString, <a href="#DoubleSuccessCallback">DoubleSuccessCallback</a> onsuccess, <a href="#ErrorCallback">ErrorCallback</a> onerror,
+                        optional <a href="#NumberPatternOptions">NumberPatternOptions</a> options) raises(TypeError);
+  };
   [Callback=FunctionOnly, NoInterfaceObject] interface DSTSuccessCallback {
     void onsuccess(object properties);
   };
@@ -2224,15 +2223,14 @@ The GlobalizationError interface
     void onsuccess(<a href="#NumberPattern">NumberPattern</a> pattern);
   };
   interface GlobalizationError {
-    attribute long code;
-    attribute DOMString message;
     const short UNKNOWN_ERROR = 0;
     const short FORMATTING_ERROR = 1;
     const short PARSING_ERROR = 2;
     const short PATTERN_ERROR = 3;
+    attribute long code;
+    attribute DOMString message;
   };
-  [Callback=FunctionOnly,NoInterfaceObject]
-  interface ErrorCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
     void onerror(<a href="cordova.html#DOMException">DOMException</a> error);
   };
 };</pre>

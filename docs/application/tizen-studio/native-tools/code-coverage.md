@@ -24,11 +24,11 @@ To use the Code Coverage tool:
 
    ![Application running](./media/code_coverage_run.png)
 
-3. To get the coverage report, press the **Stop/Cancel Operation** button in the **Progress** view of the Tizen Studio.
+3. To get the coverage report, press the **Stop/Cancel Operation** button in the **Progress** view of Tizen Studio.
 
    ![Stop/Cancel Operation button](./media/code_coverage_end.png)
 
-4. The Tizen Studio shows the code coverage information in the editor after the application has closed. A **Code Coverage** view also opens to give a summary of the code coverage percentage for each file.
+4. Tizen Studio shows the code coverage information in the editor after the application has closed. A **Code Coverage** view also opens to give a summary of the code coverage percentage for each file.
 
    The code covered during the scenario has a green highlight and the uncovered code has a red highlight.
 

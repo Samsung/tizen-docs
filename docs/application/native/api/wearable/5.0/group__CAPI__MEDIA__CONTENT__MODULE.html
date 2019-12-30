@@ -107,20 +107,24 @@ Overview</h2>
  Since 3.0, a thumbnail is not automatically extracted during media scanning. A thumbnail will be created only when <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga14ed58a82e8941249518a234efb963a2" title="Creates a thumbnail file for the given media, asynchronously.">media_info_create_thumbnail()</a> is called by any application. <br/>
  Media content services do not manage hidden files. <br/>
  The API provides functions for connecting (<a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#ga9793ebe07c5d98f5e5b5524b922597c5" title="Connects to the media content service.">media_content_connect()</a>) and disconnecting (<a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#gabbeb0e413ca6ff8a0eccc921041f4b10" title="Disconnects from the media content service.">media_content_disconnect()</a>) from the media content service.</p>
-<p>The API consists of <a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html">Media Folder</a>,<a class="el" href="group__CAPI__CONTENT__MEDIA__TAG__MODULE.html">Media Tag</a>,<a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html">Media Filter</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html">Media Information</a> API and others.</p>
+<p>The API consists of <a class="el" href="group__CAPI__CONTENT__MEDIA__ALBUM__MODULE.html">Media Album</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__BOOKMARK__MODULE.html">Media Bookmark</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__FACE__MODULE.html">Media Face</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html">Media Filter</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html">Media Folder</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__GROUP__MODULE.html">Media Group</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html">Media Information</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html">Media Playlist</a>, <a class="el" href="group__CAPI__CONTENT__MEDIA__TAG__MODULE.html">Media Tag</a> API.</p>
 <table class="doxtable">
 <tr>
 <th>API </th><th>Description  </th></tr>
 <tr>
-<td><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html">Media Folder</a>  </td><td>Provide information about folders (e.g. path, name, modification date) stored on the device.<br/>
- Provide information about the media items present in the folders.  </td></tr>
+<td><a class="el" href="group__CAPI__CONTENT__MEDIA__ALBUM__MODULE.html">Media Album</a>  </td><td>Provide information about the media album.   </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__CONTENT__MEDIA__TAG__MODULE.html">Media Tag</a>  </td><td>Provide information about media tags.<br/>
- Provide functions to insert or delete tag from database.<br/>
- Provide functions to add and remove media item from tags in the database.   </td></tr>
+<td><a class="el" href="group__CAPI__CONTENT__MEDIA__BOOKMARK__MODULE.html">Media Bookmark</a>  </td><td>Provide information about the media bookmark.   </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__CONTENT__MEDIA__FACE__MODULE.html">Media Face</a>  </td><td>Provide information about the detected faces from image.   </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__CONTENT__MEDIA__FILTER__MODULE.html">Media Filter</a>  </td><td>Provide functions for creating and destroying media filters.<br/>
  Provide functions to get filter properties  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__CONTENT__MEDIA__FOLDER__MODULE.html">Media Folder</a>  </td><td>Provide information about folders (e.g. path, name, modification date) stored on the device.<br/>
+ Provide information about the media items present in the folders.  </td></tr>
+<tr>
+<td><a class="el" href="group__CAPI__CONTENT__MEDIA__GROUP__MODULE.html">Media Group</a>  </td><td>Provide information about the media group(e.g. media artist, composer, genre, year).   </td></tr>
 <tr>
 <td><a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html">Media Information</a>  </td><td>Provide generic information about media content items (i.e. image, audio, video and others).<br/>
  Provide details about audio files (e.g. name, author, genre etc) present in the device.<br/>
@@ -129,13 +133,9 @@ Overview</h2>
 <tr>
 <td><a class="el" href="group__CAPI__CONTENT__MEDIA__PLAYLIST__MODULE.html">Media Playlist</a>  </td><td>Provide information about the media playlist.   </td></tr>
 <tr>
-<td><a class="el" href="group__CAPI__CONTENT__MEDIA__ALBUM__MODULE.html">Media Album</a>  </td><td>Provide information about the media album.   </td></tr>
-<tr>
-<td><a class="el" href="group__CAPI__CONTENT__MEDIA__GROUP__MODULE.html">Media Group</a>  </td><td>Provide information about the media group(e.g. media artist, composer, genre, year).   </td></tr>
-<tr>
-<td><a class="el" href="group__CAPI__CONTENT__MEDIA__BOOKMARK__MODULE.html">Media Bookmark</a>  </td><td><p class="starttd">Provide information about the media bookmark.  </p>
-<p class="endtd"></p>
-</td></tr>
+<td><a class="el" href="group__CAPI__CONTENT__MEDIA__TAG__MODULE.html">Media Tag</a>  </td><td>Provide information about media tags.<br/>
+ Provide functions to insert or delete tag from database.<br/>
+ Provide functions to add and remove media item from tags in the database.   </td></tr>
 </table>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>

@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::HumanActivityMonitor">
- <div class="supported-platforms"><img class="mobile-optional emulator-partial" title="Optional, Supported by Tizen Mobile emulator - Emulator supports only HRM" src="mobile_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="mobile-optional emulator-partial" title="Optional, Supported by Tizen Mobile emulator - Emulator supports only HRM" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>HumanActivityMonitor API</h1></div>
 <div class="brief">
  The Human Activity Monitor API defines interfaces and methods to manage human activity data from various sensors on the device.
@@ -23,7 +23,7 @@ Set up callbacks for data change notification          </li>
 Get current human activity monitor data          </li>
         </ul>
         <p>
-For more information about how to use Human Activity Monitor API, see <a href="https://developer.tizen.org/development/guides/web-application/sensors/human-activity-monitor">Human Activity Monitor Guide</a>.
+For more information about how to use Human Activity Monitor API, see <a href="/application/web/guides/sensors/ham">Human Activity Monitor Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -229,7 +229,7 @@ The <em>tizen.humanactivitymonitor</em> object allows access to the human activi
 <div class="brief">
  Gets the current human activity data for certain human activity types.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getHumanActivityData(<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void getHumanActivityData(<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback,
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -1058,7 +1058,9 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -1100,16 +1102,16 @@ To guarantee that the GPS batch information tracking application runs on a devic
 <li class="feature">http://tizen.org/feature/location.batch</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module HumanActivityMonitor {
   enum HumanActivityType { "PEDOMETER", "WRIST_UP", "HRM", "GPS" };
   enum PedometerStepStatus { "NOT_MOVING", "WALKING", "RUNNING" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#HumanActivityMonitorManagerObject">HumanActivityMonitorManagerObject</a>;
   [NoInterfaceObject] interface HumanActivityMonitorManagerObject {
     readonly attribute <a href="#HumanActivityMonitorManager">HumanActivityMonitorManager</a> humanactivitymonitor;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#HumanActivityMonitorManagerObject">HumanActivityMonitorManagerObject</a>;
   [NoInterfaceObject] interface HumanActivityMonitorManager {
     void getHumanActivityData(<a href="#HumanActivityType">HumanActivityType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> successCallback,
                               optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

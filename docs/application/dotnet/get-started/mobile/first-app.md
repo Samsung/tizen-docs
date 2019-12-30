@@ -1,4 +1,3 @@
-
 # Create Your First Tizen Mobile .NET Application
 
 The Tizen .NET framework allows you to easily and efficiently create
@@ -133,7 +132,7 @@ After you have built the application, deploy and run it.
 
 To run the application, you must first deploy it to the target: either a
 device or an emulator. Deploying means transferring the package file
-(`.tpk`) to the target and invoking the Tizen package manager to install
+(`.tpk`) to the target and invoking the Tizen Package Manager to install
 it.
 
 To deploy and run the application on the emulator:

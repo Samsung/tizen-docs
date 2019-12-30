@@ -2,7 +2,7 @@
 
 When managing large amounts of data, you can create filters to search for specific information, and make queries to receive only the information you are looking for. You can use various filter attributes and sort the received data.
 
-The Tizen API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Tizen API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main data handling features of the Tizen API include:
 

@@ -2,7 +2,7 @@
 
 The [Tizen Studio](../../../tizen-studio/index.md) enables you to create Web applications for mobile and wearable devices. A Web application consists of HTML, JavaScript, and CSS combined in a package, which can be installed on the Tizen device. A [Web application package](../../tutorials/process/app-dev-process.md#package) includes all the support files that are needed by the Web application. Therefore, a Web application can run without any additional external resources or network connectivity after installation.
 
-The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Application API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 ## Web Application Models
 

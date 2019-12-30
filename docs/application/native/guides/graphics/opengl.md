@@ -12,7 +12,7 @@ Different Tizen versions support different OpenGL&reg; ES versions:
 -   OpenGL&reg; ES 3.1 is supported by Tizen 3.0 and higher.
 -   OpenGL&reg; ES 3.2 is supported by Tizen 4.0 and higher.
 
-EGL™ is another specification for binding OpenGL&reg; ES to the native windowing systems. To set up the EGL™ environment, you normally need to understand the native windowing system and EGL™ specification in detail. In Tizen, however, its native UI components and 2D canvas (Elementary and Evas, respectively) replace the role of EGL™ to provide a simple way to use OpenGL&reg; ES. To maintain the best device performance, the Tizen Studio makes the native windowing system and EGL™ APIs invisible.
+EGL™ is another specification for binding OpenGL&reg; ES to the native windowing systems. To set up the EGL™ environment, you normally need to understand the native windowing system and EGL™ specification in detail. In Tizen, however, its native UI components and 2D canvas (Elementary and Evas, respectively) replace the role of EGL™ to provide a simple way to use OpenGL&reg; ES. To maintain the best device performance, Tizen Studio makes the native windowing system and EGL™ APIs invisible.
 
 The main features of the OpenGL&reg; ES API include:
 

@@ -1,10 +1,11 @@
 # Tizen 2.4
 
-Release Date: Oct 30, 2015
+Release date: Oct. 30, 2015
 
 The Tizen 2.4 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/native API set, necessary to develop future Tizen compliant solutions.
 
-#### Release Details
+
+## Release Details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.4 source code is in the **tizen_2.4** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.4/)

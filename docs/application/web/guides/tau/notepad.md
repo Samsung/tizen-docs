@@ -6,14 +6,14 @@ This feature is supported in mobile and wearable applications only.
 
 To create a simple notepad application using the TAU library:
 
-1. Generate an application from the Tizen Studio.
+1. Generate an application from Tizen Studio.
 
    Create a simple basic application that can be used for further development:
 
-   1. In the Tizen Studio menu, go to	**File > New > Tizen Project**. Select a template for a wearable Web application, and create a project using the **Basic UI** template.
+   1. In the Tizen Studio menu, go to **File > New > Tizen Project**. Select a template for a wearable Web application, and create a project using the **Basic UI** template.
    2. Enter the application name as **Notes** and click **Finish**.
 
-   The Tizen Studio creates the application with a default file structure.
+   Tizen Studio creates the application with a default file structure.
 
 2. Edit the section header for the `index.html` file.  
    Because the application runs on mobile or wearable devices, make sure that you have the correct `tau.css` styles for the corresponding profile:

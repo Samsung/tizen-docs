@@ -57,7 +57,7 @@ It is used to create an author signature, which ensures the integrity of the app
 
     ![Author Certificate Advanced options](media/certification_guide8-2.png)
 
-    The same signing key helps in maintaining secure peer authentication between the Tizen Gear App and the Android mobile app.
+    The same signing key helps in maintaining secure peer authentication between the Tizen Watch app and the Android mobile app.
 
     For more information, see [Accessory SDK](https://developer.samsung.com/galaxy/accessory). In case of selecting a Samsung author certificate, you can just renew the certificate with the same information. This renewed certificate will be the same as your original RSA key so upgrading your application is guaranteed.
 
