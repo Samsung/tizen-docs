@@ -53,6 +53,7 @@
 ##### [Overview](/application/dotnet/guides/applications/ui-app.md)
 ##### [Watch Application](/application/dotnet/guides/applications/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/widget-app.md)
+##### [NUI Widget Application](/application/dotnet/guides/applications/nui-widget-app.md)
 
 ### Application Management
 #### [Overview](/application/dotnet/guides/app-management/overview.md)
