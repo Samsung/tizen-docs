@@ -1,21 +1,23 @@
 # Example
-You can use XAML to define the layout of your user interface. To define the layout, follow these steps:
+
+You can use XAML to define the layout of user interface in your applications. To define the layout, follow these steps:
 1. Create a XAML file
 2. Load the XAML file
 3. Put the XAML file in the appropriate file directory
 
 > **Note**
 > 
-> WPF XAML provides a template to create an application easily, but currently NUI XAML does not have a XAML application template. However, NUI XAML will be opened and released at **Tizen.NET API7** version.
+> Tizen NUI Xaml App platform provides supports of a XAML application template and you can use XMAL since **Tizen.NET API 7** version.
 
 ## Create XAML
+
 You can use XAML to easily implement the layout shown in the following figure:
 
 ![AmbientPage](./media/AmbientPage.PNG)
 
 Following is the XAML code:
 
-``` xaml
+```xml
 <ContentPage x:Class="Tizen.NUI.Examples.AmbientPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -54,10 +56,11 @@ Following is the XAML code:
 In this example, the relative path of the image resources (relative to the location of the exe file) is used. You can also use the absolute path of the image.
 
 ### Requirements
+
 - `x:Class` specifies the namespace and the class name for a class defined in the XAML file. The class name must match the class name of the code-behind file:
 - The filename of the XAML file must be same with the class name.
 
-``` xaml
+```xml
 <ContentPage x:Class="Tizen.NUI.Examples.AmbientPage"
     xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -66,7 +69,7 @@ In this example, the relative path of the image resources (relative to the locat
 </ContentPage>
 ```
 
-``` csharp
+```csharp
 namespace Tizen.NUI.Examples
 {
     public class AmbientPage : ContentPage
@@ -83,13 +86,15 @@ For more information, see [XAML Support for Tizen.NUI](./getting-started-with-nu
 
 
 ## Load XAML
+
 After creating the layout, you must load the XAML file in your app code.
 First, you need to define a class named `AmbientPage` in the `Tizen.NUI.Examples` namespace as shown in the following code:
+
 > **Note**
 >
 > The class name must match with `x:class` that you have defined in the XAML file.
 
-``` csharp
+```csharp
 namespace Tizen.NUI.Examples
 {
     public class AmbientPage : ContentPage
@@ -118,7 +123,7 @@ namespace Tizen.NUI.Examples
 
 Then you can load the XAML file in the app using the following code:
 
-``` csharp
+```csharp
 namespace Tizen.NUI.Examples
 {
     class AmbientPageDemo : NUIApplication
@@ -137,6 +142,7 @@ namespace Tizen.NUI.Examples
 ```
 
 ## Put XAML Files
+
 To support the multi-window size, it is recommended to create different folders to keep the XAML files for devices with various window sizes.
 
 For example, if your application runs on the **1920x1080** target and **720X1280** targets, then create the **res/layout/1920x1080/** and **res/layout/720X1280/** folders.

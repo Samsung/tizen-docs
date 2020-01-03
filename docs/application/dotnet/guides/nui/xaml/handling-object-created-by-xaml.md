@@ -1,9 +1,10 @@
 # How to Handle Object Created by XAML
+
 In order to implement various functions in an Application, the instances of objects created in XAML must be referenced and handled in the C# code.
 
 In the following XAML code, Tizen.NUI supports two ways to access the `ImageView` instance in the sample code:
 
-``` xaml
+```xml
 <ContentPage x:Class="Tizen.NUI.Examples.xNameDemoPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -14,9 +15,9 @@ In the following XAML code, Tizen.NUI supports two ways to access the `ImageView
 ```
 
 - View.FindChildByName
-- NameScopeExtensions.FindByName&lt;T&gt;
+- NameScopeExtensions.FindByName\<T\>
 
-``` csharp
+```csharp
 ContentPage myPage = new xNameDemoPage(window);
 Extensions.LoadFromXaml(myPage, typeof(xNameDemoPage));
 

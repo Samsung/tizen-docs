@@ -1,9 +1,10 @@
 # How to Use Transition
+
 To load a transition, you can create transition in XAML and then use this transition in the **.cs** code.
 
 The format of transition in XAML is:
 
-``` xaml
+```xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <Transition xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -24,7 +25,7 @@ The ID for transition is `Name`. Every transition has an array of behavior. Each
 
 The sample of the **.cs** code is:
 
-``` csharp
+```csharp
 Transition newAnimation = myPage.GetTransition("Type1");
 
 PushButton button = NameScopeExtensions.FindByName<PushButton>(myPage, "Click");
@@ -49,7 +50,7 @@ if (null != button)
 
 To load transition, add the following code in the XAML file of the page:
 
-``` xaml
+```xml
 <ContentPage.TransitionNames>
   <x:Array Type="{x:Type x:String}">
     <x:String>OpacityAndPositionAnimation</x:String>
