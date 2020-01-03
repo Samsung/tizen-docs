@@ -1,13 +1,5 @@
 # Flex Layout
 
-[Overview](#overview)<br>
-[FlexDirection](#flexDirection)<br>
-[FlexJustification](#flexJustification)<br>
-[AlignmentType](#alignmentType)<br>
-[FlexWrapType](#flexWrapType)<br>
-
-
-<a name="overview"></a>
 ## Overview
 
 `FlexLayout` is a flexible box layout, providing a more efficient way to lay out, align and distribute space among items in the container, even when their size is unknown or dynamic.
@@ -30,7 +22,6 @@ Natural size of items are used which can be different for each item. And setting
 `Justification` applies to the flex Direction axis whilst `Alignment` is the (other) cross axis. Changing the Direction will apply the `Justification` to the new direction.
 
 
-<a name="flexDirection"></a>
 ## FlexDirection
 
 `Direction` property specifies the main axis direction along which flex items are placed.
@@ -59,7 +50,7 @@ flexLayout.Direction = FlexLayout.FlexDirection.Column;
 layoutView.Layout = flexLayout;
 ```
 
-<a name="flexJustification"></a>
+
 ## FlexJustification
 
 `Justification` property specifies the alignment for flex items, when they do not use all available space on the main axis.
@@ -90,7 +81,6 @@ layoutView.Layout = flexLayout;
 ```
 
 
-<a name="alignmentType"></a>
 ## AlignmentType
 
 `Alignment` property specifies the alignment for flex items when they do not use all the available space on the cross axis.
@@ -120,7 +110,7 @@ flexLayout.Alignment = FlexLayout.AlignmentType.Center;
 layoutView.Layout = flexLayout;
 ```
 
-<a name="flexWrapType"></a>
+
 ## FlexWrapType
 
 `WrapType` property specifies whether the flex items must wrap if there is not enough room for them on 1 flex line.

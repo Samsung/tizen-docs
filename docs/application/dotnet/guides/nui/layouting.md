@@ -2,15 +2,6 @@
 
 This tutorial describes the NUI Layouting framework, covering the following subjects:
 
-[Overview](#overview)<br>
-[Setting Layouts](#settingLayouts)<br>
-[Sizing](#sizingLayouts)<br>
-[Padding/Margins](#paddingAndMargins)<br>
-[Minimum/Maximum sizes](#minimumAndMaximum)<br>
-[Common Layouts](#commonLayout)<br>
-
-
-<a name="overview"></a>
 ## Layouting Overview
 
 The Layouting framework enables [View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) to be automatically positioned within a parent View that has been assigned a Layout.
@@ -39,10 +30,8 @@ A View can be assigned any Layout and re-assigned to a different Layout but a La
 New layouts can be implemented by deriving from the Layouting base class and positioning the children in any way required. If you want to create `Custom Layout`, see [Creating custom Layouts](./custom-layout.md) for instructions.
 
 
-
 ## Lay out a View
 
-<a name="settingLayouts"></a>
 ### Setting a layout to a View
 
 For a View to perform the desired layouting for its children, it needs to have a layout created and set to it. NUI Layout may need extra settings to be provided. For example, a `GridLayout` can have the number of columns set on it.
@@ -83,7 +72,6 @@ someAction.Event += (sender, e) =>
 Code above changes the layout from `LinearLayout` to `GridLayout` on a event occurance.
 
 
-<a name="sizingLayouts"></a>
 ### Sizing and Specifications
 
 There are 2 size specifications available for Views : Setting **explicit value** and Using **Layout Parameters**.
@@ -142,7 +130,6 @@ Size specifications are ways to specify the preferred size of Views within the l
   childView.HeightSpecification = LayoutParamPolicies.MatchParent;
   ```
 
-<a name="paddingAndMargins"></a>
 ### Padding and Margin
 
 <table style="width:100%">
@@ -218,7 +205,6 @@ container.Add(childView2);
 ```
 
 
-<a name="minimumAndMaximum"></a>
 ### Minimum and Maximum Sizes
 
 The layouting framework has control over the size of the Views it lays out.  The size of a child view may need to be smaller or larger than its natural size or specified size.
@@ -241,7 +227,6 @@ childView.MaximumSize.height = 400;
 ```
 
 
-<a name="commonLayout"></a>
 ## Common Layouts
 
 Below are the available Layouts that have been implemented and ready to be assigned to Views.

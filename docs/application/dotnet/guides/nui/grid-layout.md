@@ -1,9 +1,5 @@
 # Grid Layout
 
-[Overview](#overview)<br>
-[Column](#column)<br>
-
-<a name="overview"></a>
 ## Overview
 
 `GridLayout` is a grid box for the two-dimensional layout. It constraints the x and y position, width, and height of the child actors.
@@ -16,7 +12,7 @@ The number of **columns** can be specified and the rows will automatically incre
 | -----------------------| --------------- | ------------ |
 | `Columns`              | int             | Gets/Sets the number of columns in the Grid |
 
-<a name="column"></a>
+
 ## Column
 
 <table style="width:100%">

@@ -1,14 +1,8 @@
 # Linear Layout
 
-[Overview](#overview)<br>
-[Orientation](#orientation)<br>
-[Alignment](#alignment)<br>
-[CellPadding](#cellpadding)<br>
-[Weight](#weight)<br>
-
-
-<a name="overview"></a>
 ## Overview
+
+`LinearLayout` is a linear box layout, automatically handling children laid out vertically or horizontally. You can set the layout direction vertically or horizontally by using `LinearOrientation` property.
 
 <table style="width:100%">
 <tr>
@@ -17,8 +11,6 @@
 </td>
 </tr>
 </table>
-
-`LinearLayout` is a linear box layout, automatically handling children laid out vertically or horizontally. You can set the layout direction vertically or horizontally by using `LinearOrientation` property.
 
 Positioning children in a linear form, one after the other, `CellPadding` can be provided to insert a space between each child. Unlike generic padding, this will not result in a space at the start, end or top, bottom of the layout.
 
@@ -31,7 +23,6 @@ Positioning children in a linear form, one after the other, `CellPadding` can be
 | `CellPadding`          | Size2D      | Gets/Sets Spacing between the cells : horizontal space and vertical space |
 
 
-<a name="orientation"></a>
 ## Orientation
 
 A `LinearOrientation` indicates the direction of children layouts : horizontal or vertical. The default value is Horizontal.
@@ -48,7 +39,6 @@ layoutView.Layout = layout;
 ```
 
 
-<a name="alignment"></a>
 ## Alignment
 
 A `LinearAlignment` handles how Layout items are positioned within their parent Layout in the space. By default, items are aligned at the Top and Begin.
@@ -81,8 +71,6 @@ layoutView.Layout = layout;
 ```
 
 
-
-<a name="cellpadding"></a>
 ## CellPadding
 
 A `CellPadding` is to set the padding between cells in the layout.
@@ -103,7 +91,7 @@ linearLayout.CellPadding = new Size2D(10, 20);
 layoutView.Layout = layout;
 ```
 
-<a name="weight"></a>
+
 ## Weight
 
 A `Weight` is used to share available space in a layout with siblings.
