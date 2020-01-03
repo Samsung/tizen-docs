@@ -68,6 +68,11 @@
 ### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
+#### [Layouting](/application/dotnet/guides/nui/layouting.md)
+##### [Linear Layout](/application/dotnet/guides/nui/linear-layout.md)
+##### [Grid Layout](/application/dotnet/guides/nui/grid-layout.md)
+##### [Flex Layout](/application/dotnet/guides/nui/flex-layout.md)
+##### [Create Custom Layout](/application/dotnet/guides/nui/custom-layout.md)
 #### Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
 ##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
