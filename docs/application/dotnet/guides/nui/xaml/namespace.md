@@ -1,10 +1,12 @@
 # XAML Namespaces
+
 XAML uses the `xmlns` XML attribute for namespace declarations. This article introduces the XAML namespace syntax, and demonstrates how to declare a XAML namespace to access a type.
 
 ## Default Namespaces
+
 To use Tizen.NUI, you must define the default namespace as shown in the following code:
 
-``` xaml
+```xml
 xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
 ```
 > **Note**
@@ -12,6 +14,7 @@ xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
 > It must be the root element of the XAML file.
 
 ## Declare Custom Namespaces for Types
+
 Custom types can be referenced in XAML by declaring a XAML namespace with a prefix, and specifying the namespace name, optionally an assembly name.
 
 - `clr-namespace`: The CLR namespace is declared within the assembly that contains the types to expose as XAML elements. This is a mandatory namespace.
@@ -19,13 +22,13 @@ Custom types can be referenced in XAML by declaring a XAML namespace with a pref
 
 The following code example shows a XAML namespace declaration:
 
-``` xaml
+```xml
 xmlns:l="clr-namespace:Tizen.NUI.Examples;assembly=TestXaml"
 ```
 
 The namespace prefix is specified while declaring an instance of a type from an imported namespace, as shown in the following XAML code example:
 
-``` xaml
+```xml
 <View x:Name="view" BackgroundColor="{Binding Color}" Size2D="440,400" Position2D="20,10" >
     <View.BindingContext>
       <l:HslViewModel x:Name="hsl" Color="Red" />
@@ -36,13 +39,15 @@ The namespace prefix is specified while declaring an instance of a type from an 
 The default namespace specifies the elements defined within the XAML file with no prefix referring to the Tizen.NUI classes, such as `View`.
 
 ## x:Prefix Namespace
+
 There is a namespace declaration that uses the `x` prefix as shown in the following XAML code example:
 
-``` xaml
+```xml
 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 ```
 
 The `x` namespace declaration specifies that elements defined within the XAML with a prefix of `x` are used for elements and attributes that are intrinsic to XAML (specifically the 2009 XAML specification).  
+
 The following table outlines the `x` namespace attributes supported by Tizen.NUI:
 
 |Construct|Description|

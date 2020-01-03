@@ -1,4 +1,5 @@
 # Property Trigger
+
 Property trigger occurs when a property on a control is set to a particular value. Property trigger allows you to express actions declaratively in XAML that change the appearance of controls based on the property changes.
 
 For more information, see https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers#targetText=Triggers%20allow%20you%20to%20express,on%20events%20or%20property%20changes.&targetText=Property%20Trigger%20%2D%20occurs%20when%20a,the%20properties%20of%20another%20control
@@ -6,7 +7,7 @@ For more information, see https://docs.microsoft.com/en-us/xamarin/xamarin-forms
 
 The following example shows two triggers that changes `PositionX` of the `ImageView` property when the `ResourceUrl` property is changed to or set equal to `../res/detail.png` or `../res/sendtophone.png`:
 
-``` xaml
+```xml
 <ContentPage x:Class="Tizen.NUI.Examples.StyleDemoPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
