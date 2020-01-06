@@ -110,12 +110,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the byte order of a 32-bit (destination) register.  <a href="#ga145eac053a5a0bc5a7f99347d3375e1c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Cpu__Group.html#ga333e8feb4c7412f32aa0ec817b142948">eina_swap64</a> (unsigned long long x)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reverses the byte order of a 64-bit (destination) register.  <a href="#ga333e8feb4c7412f32aa0ec817b142948"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Cpu__Group.html#gafb67dfb7eece061a918c7bcb423725ca">eina_htons</a> (unsigned short host)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Cpu__Group.html#gac0b5ad3b70c53732cf3d5880dea57d05">eina_htonl</a> (unsigned int host)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Cpu__Group.html#ga5f101446487921d98785b87e51663c52">eina_htonll</a> (unsigned long long host)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Cpu__Group.html#ga64494b718f0c2afa4977e4d996e36194">eina_ntohs</a> (unsigned short net)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Cpu__Group.html#ga6fdc8310fc939f193eb8ea091788b99b">eina_ntohl</a> (unsigned int net)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Cpu__Group.html#ga80249cbc89cdf2edf722f520bed83a43">eina_ntohll</a> (unsigned long long net)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum _Eina_Cpu_Features&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Cpu__Group.html#ga5b1c582b9cbe7cf337aedb4f80f78a7f">Eina_Cpu_Features</a></td></tr>
@@ -153,7 +147,6 @@ Typedefs</h2></td></tr>
 
 <p>Gets the current number of processors. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of processors that are online, that is available when the function is called. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -174,7 +167,6 @@ Typedefs</h2></td></tr>
 
 <p>Cpu features accessor. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the current cpu features </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -195,116 +187,6 @@ Typedefs</h2></td></tr>
 
 <p>Gets the current virtual page size. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The fixed length that represents the smallest unit of data for memory allocation performed by the operating system on behalf of the program, and for transfers between the main memory and any other auxiliary store. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gac0b5ad3b70c53732cf3d5880dea57d05"></a><!-- doxytag: member="eina_cpu.h::eina_htonl" ref="gac0b5ad3b70c53732cf3d5880dea57d05" args="(unsigned int host)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static unsigned int <a class="el" href="group__Eina__Cpu__Group.html#gac0b5ad3b70c53732cf3d5880dea57d05">eina_htonl</a> </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>host</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga5f101446487921d98785b87e51663c52"></a><!-- doxytag: member="eina_cpu.h::eina_htonll" ref="ga5f101446487921d98785b87e51663c52" args="(unsigned long long host)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static unsigned long long <a class="el" href="group__Eina__Cpu__Group.html#ga5f101446487921d98785b87e51663c52">eina_htonll</a> </td>
-          <td>(</td>
-          <td class="paramtype">unsigned long long&#160;</td>
-          <td class="paramname"><em>host</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gafb67dfb7eece061a918c7bcb423725ca"></a><!-- doxytag: member="eina_cpu.h::eina_htons" ref="gafb67dfb7eece061a918c7bcb423725ca" args="(unsigned short host)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static unsigned short <a class="el" href="group__Eina__Cpu__Group.html#gafb67dfb7eece061a918c7bcb423725ca">eina_htons</a> </td>
-          <td>(</td>
-          <td class="paramtype">unsigned short&#160;</td>
-          <td class="paramname"><em>host</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_gnutls_example_8c-example.html#a1">ecore_fd_handler_gnutls_example.c</a>.</dd>
-</dl>
-</div>
-</div>
-<a class="anchor" id="ga6fdc8310fc939f193eb8ea091788b99b"></a><!-- doxytag: member="eina_cpu.h::eina_ntohl" ref="ga6fdc8310fc939f193eb8ea091788b99b" args="(unsigned int net)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static unsigned int <a class="el" href="group__Eina__Cpu__Group.html#ga6fdc8310fc939f193eb8ea091788b99b">eina_ntohl</a> </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>net</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga80249cbc89cdf2edf722f520bed83a43"></a><!-- doxytag: member="eina_cpu.h::eina_ntohll" ref="ga80249cbc89cdf2edf722f520bed83a43" args="(unsigned long long net)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static unsigned long long <a class="el" href="group__Eina__Cpu__Group.html#ga80249cbc89cdf2edf722f520bed83a43">eina_ntohll</a> </td>
-          <td>(</td>
-          <td class="paramtype">unsigned long long&#160;</td>
-          <td class="paramname"><em>net</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga64494b718f0c2afa4977e4d996e36194"></a><!-- doxytag: member="eina_cpu.h::eina_ntohs" ref="ga64494b718f0c2afa4977e4d996e36194" args="(unsigned short net)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static unsigned short <a class="el" href="group__Eina__Cpu__Group.html#ga64494b718f0c2afa4977e4d996e36194">eina_ntohs</a> </td>
-          <td>(</td>
-          <td class="paramtype">unsigned short&#160;</td>
-          <td class="paramname"><em>net</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -332,7 +214,6 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A byte order swapped 16-bit integer.</dd></dl>
 <p>On big endian systems, the number is converted to little endian byte order. On little endian systems, the number is converted to big endian byte order. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -360,7 +241,6 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A byte order swapped 32-bit integer.</dd></dl>
 <p>On big endian systems, the number is converted to little endian byte order. On little endian systems, the number is converted to big endian byte order. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -388,7 +268,6 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A byte order swapped 64-bit integer.</dd></dl>
 <p>On big endian systems, the number is converted to little endian byte order. On little endian systems, the number is converted to big endian byte order. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -406,7 +285,6 @@ Typedefs</h2></td></tr>
 
 <p>Global hardware architecture handler. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the current cpu features </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
