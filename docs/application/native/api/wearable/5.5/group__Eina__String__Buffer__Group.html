@@ -481,8 +481,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A string buffer containing the substring, or <code>NULL</code> if invalid parameters were specified.</dd></dl>
 <p>This function creates a Eina_Strbuf containing a copy of a substring of buf starting at <code>pos</code> with <code>len</code> length. If len is 0, then an empty strbuf will be returned.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Gets a read-only slice of the buffer contents.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 Gets a read-only slice of the buffer contents.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -490,8 +489,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A read-only slice of the current contents. It may become invalid as soon as <code>buf</code> is changed.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Gets a read-write slice of the buffer contents.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Gets a read-write slice of the buffer contents.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -499,8 +497,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A read-write slice for the current contents. It may become invalid as soon as the <code>buf</code> is changed, such as through calls like <a class="el" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append()</a> or <a class="el" href="group__Eina__String__Buffer__Group.html#gac7ead92f4ce23c16b7a33d40ce3bf5cd" title="Removes a section from the given string buffer.">eina_strbuf_remove()</a>.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Frees the buffer, returning its old contents.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Frees the buffer, returning its old contents.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -508,8 +505,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The string contained by buf. The caller must release the memory of the returned string by calling free().</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Appends a strftime-style timestamp to the buffer.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Appends a strftime-style timestamp to the buffer.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -529,8 +525,7 @@ Defines</h2></td></tr>
  eina_strbuf_append_strftime(buf, <span class="stringliteral">&quot;%I:%M%p&quot;</span>, info);
  <span class="comment">//after use</span>
  <a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf);
-</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Inserts a strftime-style timestamp into the buffer.</dd></dl>
+</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Inserts a strftime-style timestamp into the buffer.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -551,8 +546,7 @@ Defines</h2></td></tr>
  eina_strbuf_insert_strftime(buf, <span class="stringliteral">&quot;%I:%M%p&quot;</span>, info, 2);
  <span class="comment">//after use</span>
  <a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf);
-</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21</dd></dl>
 <p>Prepends a strftime-style timestamp to the buffer.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -713,7 +707,6 @@ Defines</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__String__Buffer__Group.html#gaad4f562f3a36881f12a4df5154e04b26" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_strbuf_append_length()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a39">entry_example.c</a>.</dd>
 </dl>
 </div>
@@ -753,8 +746,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be appended.</dd></dl>
 <p>This function appends <code>slice</code> to <code>buf</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Appends an Eina_Strbuf to a buffer, reallocating as necessary.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Appends an Eina_Strbuf to a buffer, reallocating as necessary.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -770,7 +762,6 @@ Defines</h2></td></tr>
 <dd>
 <a class="el" href="group__Eina__String__Buffer__Group.html#gaad4f562f3a36881f12a4df5154e04b26" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_strbuf_append_length()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -809,7 +800,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>c</code> could not be appended.</dd></dl>
 <p>This function appends <code>c</code> to <code>buf</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a4">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -849,7 +839,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be appended.</dd></dl>
 <p>This function escapes and then appends the string <code>str</code> to <code>buf</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a10">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -901,7 +890,6 @@ Defines</h2></td></tr>
 <a class="el" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__String__Buffer__Group.html#ga8a66b98b4c957658c87f4a79c2f1b10b" title="Appends a string to a buffer, reallocating as necessary, limited by the given length.">eina_strbuf_append_n()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a3">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -951,7 +939,6 @@ Defines</h2></td></tr>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__String__Buffer__Group.html#gaad4f562f3a36881f12a4df5154e04b26" title="Appends a string of exact length to a buffer, reallocating as necessary.">eina_strbuf_append_length()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -998,7 +985,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if formatted string could not be appended.</dd></dl>
 <p>This function appends the string defined by the format <code>fmt</code> to <code>buf</code>, reallocating as necessary. <code>fmt</code> must be of a valid format for the printf family of functions.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a11">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -1045,7 +1031,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Buffer__Group.html#ga534c489bfd0e82776ff43a4aff82d1a8" title="Appends data elements to a buffer using printf-style formatting.">eina_strbuf_append_printf()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1072,7 +1057,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function frees the memory of <code>buf</code>. <code>buf</code> must have been created by <a class="el" href="group__Eina__String__Buffer__Group.html#ga6f3c9ce942e61364a10ec7c0ea01cedc" title="Creates a new string buffer.">eina_strbuf_new()</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a7">eina_strbuf_01.c</a>, and <a class="el" href="entry_example_8c-example.html#a42">entry_example.c</a>.</dd>
 </dl>
 </div>
@@ -1119,7 +1103,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be inserted.</dd></dl>
 <p>This function inserts <code>str</code> into <code>buf</code> at position <code>pos</code>. It computes the length of <code>str</code>, so is slightly slower than <a class="el" href="group__Eina__String__Buffer__Group.html#ga548eb8a66646b753cce9091051b1ea08" title="Inserts a string of an exact length into a buffer, reallocating as necessary.">eina_strbuf_insert_length()</a>. If the length is known beforehand, consider using that variant. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1165,8 +1148,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be inserted.</dd></dl>
 <p>This function inserts <code>slice</code> into <code>buf</code> at position <code>pos</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Inserts a character into a string buffer, reallocating as necessary.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Inserts a character into a string buffer, reallocating as necessary.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -1177,7 +1159,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>c</code> could not be inserted.</dd></dl>
 <p>This function inserts <code>c</code> into <code>buf</code> at position <code>pos</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1223,7 +1204,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be inserted.</dd></dl>
 <p>This function escapes and inserts the string <code>str</code> into <code>buf</code> at position <code>pos</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a8">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -1282,7 +1262,6 @@ Defines</h2></td></tr>
 <a class="el" href="group__Eina__String__Buffer__Group.html#ga0990bbe862fcf90e5c259a5b2c3a9a66" title="Inserts a string into a buffer, reallocating as necessary.">eina_strbuf_insert()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__String__Buffer__Group.html#gaaf6f39311db7d7d074ea087ae4ee7c63" title="Inserts a string of a maximum length into a buffer, reallocating as necessary.">eina_strbuf_insert_n()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1335,7 +1314,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>str</code> could not be inserted.</dd></dl>
 <p>This function inserts <code>str</code> into <code>buf</code> at position <code>pos</code>, with at most <code>maxlen</code> bytes. The number of inserted characters cannot be greater than the length of <code>str</code>. It computes the length of <code>str</code>, so is slightly slower than <a class="el" href="group__Eina__String__Buffer__Group.html#ga548eb8a66646b753cce9091051b1ea08" title="Inserts a string of an exact length into a buffer, reallocating as necessary.">eina_strbuf_insert_length()</a>. If the length is known beforehand, consider using that variant (<code>maxlen</code> should then be checked so that it is greater than the size of <code>str</code>). </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1388,7 +1366,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if the string could not be inserted.</dd></dl>
 <p>This function inserts a string as described by the format <code>fmt</code> into <code>buf</code> at the position <code>pos</code>. <code>fmt</code> must be of a valid format for printf family of functions. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a12">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -1442,7 +1419,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Buffer__Group.html#ga5f43a53c89886f4eeeaa38bf8e964626" title="Inserts data elements into a buffer using printf-style formatting.">eina_strbuf_insert_printf</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1470,7 +1446,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current length of the string, in bytes.</dd></dl>
 <p>This function returns the length of <code>buf</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a13">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -1498,7 +1473,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function removes whitespace at the beginning of the buffer's string. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1532,7 +1506,6 @@ Defines</h2></td></tr>
 <dd>
 <a class="el" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1573,7 +1546,6 @@ Defines</h2></td></tr>
 <p>This function creates a new string buffer. The passed string is used directly as the buffer, it's effectively the inverse of <a class="el" href="group__Eina__String__Buffer__Group.html#ga2cd6a08bf222465ebbd30e72f9f3bfb9" title="Steals the contents of a string buffer.">eina_strbuf_string_steal()</a>. The passed string must be malloc'd. To free the resources, use <a class="el" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Buffer__Group.html#ga458a02a82d743856819ae239fd94e95d" title="Creates a new string buffer using the passed string.">eina_strbuf_manage_new()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1616,7 +1588,6 @@ Defines</h2></td></tr>
 <dd>
 <a class="el" href="group__Eina__String__Buffer__Group.html#gae4f4e9f6f1a7135027357144c655d944" title="Creates a new string buffer using the passed string.">eina_strbuf_manage_new_length()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a16">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -1644,7 +1615,6 @@ Defines</h2></td></tr>
 <a class="el" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a2">eina_strbuf_01.c</a>, and <a class="el" href="entry_example_8c-example.html#a38">entry_example.c</a>.</dd>
 </dl>
 </div>
@@ -1691,7 +1661,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
 <p>This function removes a slice of <code>buf</code>, starting at <code>start</code> (inclusive) and ending at <code>end</code> (non-inclusive). Both values are in bytes. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a14">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -1745,7 +1714,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
 <p>This function replaces the n-th occurrence of <code>str</code> in <code>buf</code> with <code>with</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1791,7 +1759,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of replacements made, or <code>0</code> on failure.</dd></dl>
 <p>This function replaces all the occurrences of <code>str</code> in <code>buf</code> with the string <code>with</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a15">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -1819,7 +1786,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function resets <code>buf:</code> the buffer len is set to 0, and the string data is set to '\0'. No memory is freed. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a9">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -1847,7 +1813,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function removes whitespace at the end of the buffer's string. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1874,7 +1839,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function frees the string contained in <code>buf</code> without freeing <code>buf</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1903,7 +1867,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current string in the string buffer.</dd></dl>
 <p>This function returns the string contained in <code>buf</code>. The returned value must not be modified and will no longer be valid if <code>buf</code> is modified. In other words, calling <a class="el" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append()</a> or similar functions will make this pointer invalid. The pointer returned by this function <b>must not</b> be freed.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Buffer__Group.html#ga2cd6a08bf222465ebbd30e72f9f3bfb9" title="Steals the contents of a string buffer.">eina_strbuf_string_steal()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a5">eina_strbuf_01.c</a>, and <a class="el" href="entry_example_8c-example.html#a41">entry_example.c</a>.</dd>
 </dl>
 </div>
@@ -1933,7 +1896,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The string that was contained in <code>buf</code>.</dd></dl>
 <p>This function returns the string contained in <code>buf</code>. <code>buf</code> is then initialized and does not own the returned string anymore. The caller must release the memory of the returned string by calling free().</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Buffer__Group.html#ga66c7c19a2b240448fbd2dae6c6161023" title="Retrieves a pointer to the contents of a string buffer.">eina_strbuf_string_get()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1961,7 +1923,6 @@ Defines</h2></td></tr>
 </dl>
 <p>This function converts all the characters in the buffer's string to lower case.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_strbuf_01_8c-example.html#a6">eina_strbuf_01.c</a>.</dd>
 </dl>
 </div>
@@ -1989,7 +1950,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function removes whitespace at the beginning and end of the buffer's string. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>

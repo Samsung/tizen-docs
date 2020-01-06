@@ -113,7 +113,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gaac0b66eff443de69f913d99bb0454ee1">eina_file_statat</a> (void *container, <a class="el" href="group__Eina__File__Group.html#ga8e8779c9f28937a642dbe1be86760646">Eina_File_Direct_Info</a> *info, <a class="el" href="group__Eina__File__Group.html#gab15fe1278f044850fcb24417a47364a8">Eina_Stat</a> *buf)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Uses information provided by <a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> of <a class="el" href="group__Eina__File__Group.html#gaa4f06311bdc2285d2993deb4cdd0c8cc" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_stat_ls()</a> or <a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a" title="Gets an iterator to list the content of a directory, with direct information.">eina_file_direct_ls()</a> to call stat in the most efficient way on your system.  <a href="#gaac0b66eff443de69f913d99bb0454ee1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#gaaa203d417adcbd2389394c6514a5e8fc">eina_file_mkstemp</a> (const char *templatename, <a class="el" href="group__Eina__Stringshare__Group.html#gae8d53f367d5da5acfd19af6c235831d5">Eina_Tmpstr</a> **path)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and creates a uniquely named temporary file from a template name. The generated file is opened with the open(2) <code>O_EXCL</code> flag.  <a href="#gaaa203d417adcbd2389394c6514a5e8fc"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Close all file descriptors that are open at or above the given fd.  <a href="#gaaa203d417adcbd2389394c6514a5e8fc"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#ga73f4be7e9b54f2c46fad7790f4c8d9e9">eina_file_mkdtemp</a> (const char *templatename, <a class="el" href="group__Eina__Stringshare__Group.html#gae8d53f367d5da5acfd19af6c235831d5">Eina_Tmpstr</a> **path)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates and creates a uniquely named temporary directory from a template name.  <a href="#ga73f4be7e9b54f2c46fad7790f4c8d9e9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__File__Group.html#ga4c759d38e0c1cf88180939cc083c120a">eina_file_direct_ls</a> (const char *dir)</td></tr>
@@ -996,7 +996,7 @@ The iterator walks over '.' and '..' without returning them.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>If the <code>templatename</code> is a simple directory name (no relative or absolute path to another directory), then a temporary directory will be created inside the system temporary directory (</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Tools__Group.html#ga6f462dce106714a3ba29f63deea61be2" title="Returns the content of the environment referred as TMPDIR on this system.">eina_environment_tmp_get()</a>). If the <code>templatename</code> contains a directory separator ('/', or '\' on Windows) then the temporary directory will be created inside that other directory, which must exist and be writeable. (since 1.17)</dd>
 <dd>
-<a class="el" href="group__Eina__File__Group.html#gaaa203d417adcbd2389394c6514a5e8fc" title="Generates and creates a uniquely named temporary file from a template name. The generated file is ope...">eina_file_mkstemp()</a> </dd></dl>
+<a class="el" href="group__Eina__File__Group.html#gaaa203d417adcbd2389394c6514a5e8fc" title="Close all file descriptors that are open at or above the given fd.">eina_file_mkstemp()</a> </dd></dl>
 <dl class="since"><dt><b>Since:</b></dt><dd>1.8  3.0f(2.3.1) </dd></dl>
 
 </div>
@@ -1026,7 +1026,16 @@ The iterator walks over '.' and '..' without returning them.</dd></dl>
 </div>
 <div class="memdoc">
 
-<p>Generates and creates a uniquely named temporary file from a template name. The generated file is opened with the open(2) <code>O_EXCL</code> flag. </p>
+<p>Close all file descriptors that are open at or above the given fd. </p>
+<p>This closes all open file descriptors that are equal to or of higher value than the given inpit fd given. This is intended for niche use like closing all open files just before exec()ing a new process after calling fork(). The except_fd array can be NULL if no fd's are to be skipped, but if some fd's are to skip being closed then this will be an array of fd numbers being terminated by a fd value of -1.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">fd</td><td>The fd value to begin closing at </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">except_fd</td><td>An array of fd's not to close terminated by -1 as the last invalid fd</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.24  Generates and creates a uniquely named temporary file from a template name. The generated file is opened with the open(2) <code>O_EXCL</code> flag.</dd></dl>
 <p>This function calls mkstemp(), generates a unique temporary filename from template, creates and opens the file, and returns an open file descriptor for the file.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
