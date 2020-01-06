@@ -459,7 +459,6 @@ Defines</h2></td></tr>
 </dl>
 <p>This function sets its top-left X coordinate to <code>x</code>, its top-left Y coordinate to <code>y</code>, its width to <code>w</code> and its height to <code>h</code>.</p>
 <p>No check is done on <code>r</code>, so it must be a valid rectangle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -505,7 +504,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the point (<code>x</code>, <code>y</code>) is within the edges of <code>r</code>, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>No check is done on <code>r</code>, so it must be a valid rectangle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -543,8 +541,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An OR'd map of Eina_Rectangle_Outside values </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Compares two rectangles for equality</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Compares two rectangles for equality</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">rect1</td><td>First rectangle. Must not be NULL. </td></tr>
@@ -555,7 +552,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if the rectangles are equal (x, y, w and h are all equal).</dd></dl>
 <p>No check is made on the rectangles, so they should be valid and non NULL for this function to be meaningful.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -582,7 +578,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function removes <code>rect</code> from the rectangles pool. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -635,7 +630,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the cut succeeds, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>Cut a rectangle horizontally at a distance <code>amount</code> from the rectangle's top edge. If the <code>amount</code> value is greater than the rectangle width, no cut is performed and <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -675,7 +669,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the rectangles intersect, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>Changes <code>dst</code> to be the rectangle represented by the intersection of <code>dst</code> and <code>src</code>. <code>dst</code> is unchanged if the two rectangles do not intersect.</p>
 <p>No check is done on <code>dst</code> or <code>src</code>, so they must be valid rectangles. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -703,7 +696,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the rectangle <code>r</code> is empty, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>No check is done on <code>r</code>, so it must be a valid rectangle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -731,7 +723,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the rectangle is valid, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function checks if both width and height attributes of the rectangle are positive integers. If so, the rectangle is considered valid, else the rectangle is invalid. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -759,7 +750,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The maximum X coordinate.</dd></dl>
 <p>This function calculates the maximum X coordinate of the rectangle by summing the <code>width</code> with the current <code>x</code> coordinate of the rectangle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -787,7 +777,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The maximum Y coordinate.</dd></dl>
 <p>This function calculates the maximum y coordinate of the rectangle by summing the <code>height</code> with the current <code>y</code> coordinate of the rectangle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -868,7 +857,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of rectangles in the pool.</dd></dl>
 <p>This function returns the number of rectangles in <code>pool</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -896,7 +884,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The returned data.</dd></dl>
 <p>This function gets the data from <code>pool</code> set by <a class="el" href="group__Eina__Rectangle__Group.html#ga786c201c66e21e2d7c6411ab5907ba2f" title="Sets the data to the given pool.">eina_rectangle_pool_data_set()</a>. If <code>pool</code> is <code>NULL</code>, this function returns <code>NULL</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -934,7 +921,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function sets <code>data</code> to <code>pool</code>. If <code>pool</code> is <code>NULL</code>, this function does nothing. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -961,7 +947,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function frees the allocated data of <code>pool</code>. If <code>pool</code> is <code>NULL</code>, this function returned immediately. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1007,7 +992,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function returns the width and height of <code>pool</code> and store them in respectively <code>w</code> and <code>h</code> if they are not <code>NULL</code>. If <code>pool</code> is <code>NULL</code>, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned. Otherwise <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1035,7 +1019,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The pool of the given rectangle.</dd></dl>
 <p>This function returns the pool in which <code>rect</code> is. If <code>rect</code> is <code>NULL</code>, <code>NULL</code> is returned. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1074,7 +1057,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A newly allocated pool on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function adds the rectangle of size (<code>width</code>, <code>height</code>) to a new pool. If the pool can not be created, <code>NULL</code> is returned. Otherwise the newly allocated pool is returned. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1114,7 +1096,6 @@ Defines</h2></td></tr>
 <p>This function sets <code>type</code> of <code>pool</code>. </p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Rectangle__Group.html#gac4685e311f54db1086756a94e76e1fb2">Eina_Rectangle_Packing</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.11 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1141,7 +1122,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function removes <code>rect</code> from the pool. If <code>rect</code> is <code>NULL</code>, the function returns immediately. Otherwise it removes <code>rect</code> from the pool. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1187,7 +1167,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The requested rectangle on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function retrieves from <code>pool</code> the rectangle of width <code>w</code> and height <code>h</code>. If <code>pool</code> is <code>NULL</code>, or <code>w</code> or <code>h</code> are non-positive, the function returns <code>NULL</code>. If <code>w</code> or <code>h</code> are greater than the pool size, the function returns <code>NULL</code>. On success, the function returns the rectangle which matches the size (<code>w</code>, <code>h</code>). Otherwise it returns <code>NULL</code>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1231,7 +1210,6 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1275,7 +1253,6 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1321,7 +1298,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>This function subtracts two rectangles and stores the resulting differences into the <code>out</code> array. There will be at most four differences; use eina_rectangle_is_valid to confirm the exact number. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1360,7 +1336,6 @@ Defines</h2></td></tr>
 </dl>
 <p>Changes <code>dst</code> to be the bounding box of both rectangles <code>dst</code> and <code>src</code>.</p>
 <p>No check is done on <code>dst</code> or <code>src</code>, so they must be valid rectangles. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1413,7 +1388,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the cut succeeds, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise</dd></dl>
 <p>Cut a rectangle vertically at a distance <code>amount</code> from the rectangle's right edge. If the <code>amount</code> value is greater than the rectangle's width, no cut is performed and <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1466,7 +1440,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the cut succeeds, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>Cut a rectangle vertically at a distance <code>amount</code> from the rectangle's left edge. If the <code>amount</code> value is greater than the rectangle's width, no cut is performed and <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1505,7 +1478,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if <code>x</code> is between the rectangle's left and right edges, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>No check is done on <code>r</code>, so it must be a valid rectangle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1558,7 +1530,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the cut succeeds, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise</dd></dl>
 <p>Cut a rectangle horizontally at a distance <code>amount</code> from the rectangle's bottom edge. If the <code>amount</code> value is greater than the rectangle's height, no cut is performed and <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1597,7 +1568,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if <code>y</code> is between the rectangle's top and bottom edges, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>No check is done on <code>r</code>, so it must be a valid rectangle. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1636,7 +1606,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the rectangles <code>rect1</code> and <code>rect2</code> intersect, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>No check is done on <code>rect1</code> and <code>rect2</code>, so they must be valid rectangles. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1688,7 +1657,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the given spans intersect, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>

@@ -503,6 +503,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for orientation of the window is the way in which a rectangular page is oriented for normal viewing. </p>
+<p>This Enumeration is used the available orientation APIs and the preferred orientation.</p>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.0.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="a72f6a171edeec5b83197f91fd4fc76f4af4afb332056486c4fedfe64e2bf1c286"></a><!-- doxytag: member="PORTRAIT" ref="a72f6a171edeec5b83197f91fd4fc76f4af4afb332056486c4fedfe64e2bf1c286" args="" -->PORTRAIT</em>&nbsp;</td><td>
@@ -520,6 +521,10 @@ Static Public Member Functions</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="a72f6a171edeec5b83197f91fd4fc76f4ac9bcabc898eca16b2214c4443db24faf"></a><!-- doxytag: member="LANDSCAPE_INVERSE" ref="a72f6a171edeec5b83197f91fd4fc76f4ac9bcabc898eca16b2214c4443db24faf" args="" -->LANDSCAPE_INVERSE</em>&nbsp;</td><td>
 <p>Landscape inverse orientation. </p>
 <dl class="user"><dt><b>Since:</b></dt><dd>3.0, DALi version 1.0.0 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="a72f6a171edeec5b83197f91fd4fc76f4a15c19f1c42cbd9b141b7151b282b76da"></a><!-- doxytag: member="NO_ORIENTATION_PREFERENCE" ref="a72f6a171edeec5b83197f91fd4fc76f4a15c19f1c42cbd9b141b7151b282b76da" args="" -->NO_ORIENTATION_PREFERENCE</em>&nbsp;</td><td>
+<p>No orientation. It is used to initialize or unset the preferred orientation. </p>
+<dl class="user"><dt><b>Since:</b></dt><dd>5.5, DALi version 1.4.51 </dd></dl>
 </td></tr>
 </table>
 </dd>
@@ -1868,7 +1873,8 @@ The actor does not have a parent. </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>Orientation is in the list of available orientations. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Orientation is in the list of available orientations.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>To unset the preferred orientation, orientation should be set NO_ORIENTATION_PREFERENCE. </dd></dl>
 
 </div>
 </div>

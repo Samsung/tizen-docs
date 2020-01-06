@@ -116,6 +116,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove registered rotary event handler.  <a href="#ga00512bee34d13a53f99610af27faa0e7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__EXTENSION__ROTARY__EVENT__MODULE.html#gaca6755411666079d2bd018cc9cf52ff8">eext_rotary_object_event_activated_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> activated)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set an object <em>obj</em> as activated object.  <a href="#gaca6755411666079d2bd018cc9cf52ff8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__EFL__EXTENSION__ROTARY__EVENT__MODULE.html#gac0a98d14b83f633e466aec192d2c8f3f">eext_rotary_object_event_activated_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the activated status of the given object.  <a href="#gac0a98d14b83f633e466aec192d2c8f3f"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum <br class="typebreak"/>
@@ -359,6 +361,34 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data which is passed when registers callback function.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__EFL__EXTENSION__ROTARY__EVENT__MODULE.html#gab47b4f110bd048370f68d9fd8b233ec3" title="Add (register) a handler for rotary event.">eext_rotary_event_handler_add</a>.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac0a98d14b83f633e466aec192d2c8f3f"></a><!-- doxytag: member="efl_extension_rotary.h::eext_rotary_object_event_activated_get" ref="gac0a98d14b83f633e466aec192d2c8f3f" args="(Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__CAPI__EFL__EXTENSION__ROTARY__EVENT__MODULE.html#gac0a98d14b83f633e466aec192d2c8f3f">eext_rotary_object_event_activated_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the activated status of the given object. </p>
+<p>This function gets the activated status of the given object. <a class="el" href="group__CAPI__EFL__EXTENSION__ROTARY__EVENT__MODULE.html#gaca6755411666079d2bd018cc9cf52ff8">eext_rotary_object_event_activated_set</a>.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object to get the activated status.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the given object is activated. <code>EINA_FALSE</code> otherwise.</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 
 </div>
 </div>
