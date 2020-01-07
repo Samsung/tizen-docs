@@ -1,0 +1,228 @@
+<?xml version="1.0" ?>
+<tizen-api version="5.5">
+	<tizen-api profile="mobile">
+		<!-- 5.5 mobile web -->
+		<topic href="5.5/device_api/mobile/index.html" invisible-node="true" label="5.5 Web Application">
+			<topic href="5.5/device_api/mobile/index.html" label="Tizen Web Device API Reference">
+				<topic href="5.5/device_api/mobile/index.html" invisible-node="true" label="Mobile Web">
+					<topic href="5.5/device_api/mobile/index.html#Base" label="Base">
+						<topic href="5.5/device_api/mobile/tizen/archive.html" label="Archive"/>
+						<topic href="5.5/device_api/mobile/tizen/filesystem.html" label="Filesystem"/>
+						<topic href="5.5/device_api/mobile/tizen/tizen.html" label="Tizen"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#Account" label="Account">
+						<topic href="5.5/device_api/mobile/tizen/account.html" label="Account"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#Application Framework" label="Application Framework">
+						<topic href="5.5/device_api/mobile/tizen/alarm.html" label="Alarm"/>
+						<topic href="5.5/device_api/mobile/tizen/application.html" label="Application"/>
+						<topic href="5.5/device_api/mobile/tizen/badge.html" label="Badge"/>
+						<topic href="5.5/device_api/mobile/tizen/datacontrol.html" label="Data Control"/>
+						<topic href="5.5/device_api/mobile/tizen/inputdevice.html" label="Input Device"/>
+						<topic href="5.5/device_api/mobile/tizen/messageport.html" label="Message Port"/>
+						<topic href="5.5/device_api/mobile/tizen/notification.html" label="Notification"/>
+						<topic href="5.5/device_api/mobile/tizen/package.html" label="Package"/>
+						<topic href="5.5/device_api/mobile/tizen/preference.html" label="Preference"/>
+						<topic href="5.5/device_api/mobile/tizen/widgetservice.html" label="WidgetService"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#Content" label="Content">
+						<topic href="5.5/device_api/mobile/tizen/content.html" label="Content"/>
+						<topic href="5.5/device_api/mobile/tizen/download.html" label="Download"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#Messaging" label="Messaging">
+						<topic href="5.5/device_api/mobile/tizen/messaging.html" label="Messaging"/>
+						<topic href="5.5/device_api/mobile/tizen/push.html" label="Push"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#Multimedia" label="Multimedia">
+						<topic href="5.5/device_api/mobile/tizen/exif.html" label="Exif"/>
+						<topic href="5.5/device_api/mobile/tizen/fmradio.html" label="FM Radio"/>
+						<topic href="5.5/device_api/mobile/tizen/mediacontroller.html" label="Media Controller"/>
+						<topic href="5.5/device_api/mobile/tizen/playerutil.html" label="Player Util"/>
+						<topic href="5.5/device_api/mobile/tizen/sound.html" label="Sound"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#Network" label="Network">
+						<topic href="5.5/device_api/mobile/tizen/bluetooth.html" label="Bluetooth"/>
+						<topic href="5.5/device_api/mobile/tizen/iotcon.html" label="Iotcon"/>
+						<topic href="5.5/device_api/mobile/tizen/networkbearerselection.html" label="Network Bearer Selection"/>
+						<topic href="5.5/device_api/mobile/tizen/nfc.html" label="NFC"/>
+						<topic href="5.5/device_api/mobile/tizen/se.html" label="Secure Element"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#Security" label="Security">
+						<topic href="5.5/device_api/mobile/tizen/keymanager.html" label="Keymanager"/>
+						<topic href="5.5/device_api/mobile/tizen/libteec.html" label="LibTeec"/>
+						<topic href="5.5/device_api/mobile/tizen/ppm.html" label="PrivacyPrivilege"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#Social" label="Social">
+						<topic href="5.5/device_api/mobile/tizen/bookmark.html" label="Bookmark"/>
+						<topic href="5.5/device_api/mobile/tizen/calendar.html" label="Calendar"/>
+						<topic href="5.5/device_api/mobile/tizen/callhistory.html" label="Call History"/>
+						<topic href="5.5/device_api/mobile/tizen/contact.html" label="Contact"/>
+						<topic href="5.5/device_api/mobile/tizen/datasync.html" label="Data Synchronization"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#System" label="System">
+						<topic href="5.5/device_api/mobile/tizen/feedback.html" label="Feedback"/>
+						<topic href="5.5/device_api/mobile/tizen/humanactivitymonitor.html" label="Human Activity Monitor"/>
+						<topic href="5.5/device_api/mobile/tizen/mediakey.html" label="Media Key"/>
+						<topic href="5.5/device_api/mobile/tizen/power.html" label="Power"/>
+						<topic href="5.5/device_api/mobile/tizen/sensor.html" label="Sensor"/>
+						<topic href="5.5/device_api/mobile/tizen/systeminfo.html" label="System Information"/>
+						<topic href="5.5/device_api/mobile/tizen/systemsetting.html" label="System Setting"/>
+						<topic href="5.5/device_api/mobile/tizen/time.html" label="Time"/>
+						<topic href="5.5/device_api/mobile/tizen/websetting.html" label="Web Setting"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#UIX" label="UIX">
+						<topic href="5.5/device_api/mobile/tizen/voicecontrol.html" label="Voice Control"/>
+					</topic>
+					<topic href="5.5/device_api/mobile/index.html#Cordova" label="Cordova">
+						<topic href="5.5/device_api/mobile/tizen/cordova/console.html" label="Console"/>
+						<topic href="5.5/device_api/mobile/tizen/cordova/cordova.html" label="Cordova"/>
+						<topic href="5.5/device_api/mobile/tizen/cordova/device.html" label="Device"/>
+						<topic href="5.5/device_api/mobile/tizen/cordova/device-motion.html" label="Device Motion"/>
+						<topic href="5.5/device_api/mobile/tizen/cordova/dialogs.html" label="Dialogs"/>
+						<topic href="5.5/device_api/mobile/tizen/cordova/events.html" label="Events"/>
+						<topic href="5.5/device_api/mobile/tizen/cordova/file.html" label="File"/>
+						<topic href="5.5/device_api/mobile/tizen/cordova/filetransfer.html" label="File Transfer"/>
+						<topic href="5.5/device_api/mobile/tizen/cordova/globalization.html" label="Globalization"/>
+						<topic href="5.5/device_api/mobile/tizen/cordova/media.html" label="Media"/>
+						<topic href="5.5/device_api/mobile/tizen/cordova/networkInformation.html" label="Network Information"/>
+					</topic>
+				</topic>
+			</topic>
+			<topic href="5.5/ui_fw_api/ui_fw_api_cover.htm" label="Tizen Advanced UI framework (TAU)">
+				<topic href="5.5/ui_fw_api/Base/base.htm" label="Base">
+					<topic href="5.5/ui_fw_api/Base/page.htm" label="Page Handling"/>
+					<topic href="5.5/ui_fw_api/Base/popup.htm" label="Popup Handling"/>
+				</topic>
+				<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_component_list.htm" label="Mobile UI Components">
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Button.htm" label="Button"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Checkbox.htm" label="Checkbox"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_ColoredListview.htm" label="ColoredListView"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Drawer.htm" label="Drawer"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_DropdownMenu.htm" label="DropdownMenu"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Expandable.htm" label="Expandable"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_FloatingActions.htm" label="FloatingActions"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_GridView.htm" label="GridView"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_IndexScrollBar.htm" label="IndexScrollBar"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Listview.htm" label="ListView"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Navigation.htm" label="Navigation"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_PageIndicator.htm" label="PageIndicator"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_PanelChanger.htm" label="PanelChanger"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Popup.htm" label="Popup"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Progress.htm" label="Progress"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Radio.htm" label="Radio"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_SearchInput.htm" label="SearchInput"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_SectionChanger.htm" label="SectionChanger"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Slider.htm" label="Slider"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_Tabs.htm" label="Tabs"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_TextEnveloper.htm" label="TextEnveloper"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_TextInput.htm" label="TextInput"/>
+					<topic href="5.5/ui_fw_api/Mobile_UIComponents/mobile_ToggleSwitch.htm" label="ToggleSwitch"/>
+				</topic>
+				<topic href="5.5/ui_fw_api/Gesture_Events/gesture.htm" label="Gesture Events">
+					<topic href="5.5/ui_fw_api/Gesture_Events/drag.htm" label="Drag"/>
+					<topic href="5.5/ui_fw_api/Gesture_Events/swipe.htm" label="Swipe"/>
+				</topic>
+				<topic href="5.5/ui_fw_api/Globalization/globalization.htm" label="Globalization"/>
+				<topic href="5.5/ui_fw_api/Animation/animation.htm" label="Animation"/>
+			</topic>
+			<topic href="5.5/w3c_api/w3c_api_m.html" label="W3C/HTML5 and Supplementaries API Reference">
+				<topic href="5.5/w3c_api/w3c_api_m.html" invisible-node="true" label="Mobile Web">
+					<topic href="5.5/w3c_api/w3c_api_m.html#dom" label="DOM, Forms and Styles">
+						<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/forms.html#forms" label="HTML5 Forms (Partial)"/>
+						<topic href="http://www.w3.org/TR/2013/REC-selectors-api-20130221/" label="Selectors API Level 1"/>
+						<topic href="http://www.w3.org/TR/2013/NOTE-selectors-api2-20131017/" label="Selectors API Level 2 (Partial)"/>
+						<topic href="http://www.w3.org/TR/2012/REC-css3-mediaqueries-20120619" label="Media Queries (Partial)"/>
+						<topic href="http://www.w3.org/TR/2013/WD-css-transforms-1-20131126/" label="CSS Transforms"/>
+						<topic href="http://www.w3.org/TR/2013/WD-css3-animations-20130219/" label="CSS Animations Module Level 3 (Partial)"/>
+						<topic href="http://www.w3.org/TR/2013/WD-css3-transitions-20131119/" label="CSS Transitions Module Level 3"/>
+						<topic href="http://www.w3.org/TR/2011/REC-css3-color-20110607" label="CSS Color Module Level 3"/>
+						<topic href="http://www.w3.org/TR/2014/CR-css3-background-20140909/" label="CSS Backgrounds and Borders Module Level 3"/>
+						<topic href="http://www.w3.org/TR/2015/WD-css-flexbox-1-20150514/" label="CSS Flexible Box Layout Module"/>
+						<topic href="http://www.w3.org/TR/2011/CR-css3-multicol-20110412" label="CSS Multi-column Layout Module (Partial)"/>
+						<topic href="http://www.w3.org/TR/2013/WD-css-text-3-20131010/" label="CSS Text Module Level 3 (Partial)"/>
+						<topic href="http://www.w3.org/TR/2013/CR-css-text-decor-3-20130801/" label="CSS Text Decoration Module Level 3 (Partial)"/>
+						<topic href="http://www.w3.org/TR/2015/CR-css-ui-3-20150707/" label="CSS Basic User Interface Module Level 3 (CSS3 UI)"/>
+						<topic href="http://www.w3.org/TR/2013/CR-css-fonts-3-20131003/" label="CSS Fonts Module Level 3 (Partial)"/>
+						<topic href="http://www.w3.org/TR/2015/WD-WOFF2-20150414/" label="WOFF File Format 2.0"/>
+						<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#history" label="HTML5 The session history of browsing contexts"/>
+						<topic href="http://www.w3.org/TR/2014/WD-custom-elements-20141216/" label="Custom Elements"/>
+						<topic href="http://www.w3.org/TR/2013/WD-html-templates-20130214/" label="HTML Templates"/>
+						<topic href="http://www.w3.org/TR/2014/WD-html-imports-20140311/" label="HTML Imports"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#device" label="Device">
+						<topic href="http://www.w3.org/TR/2013/REC-touch-events-20131010/" label="Touch Events"/>
+						<topic href="http://www.w3.org/TR/2011/WD-orientation-event-20111201" label="DeviceOrientation Event Specification (Partial)"/>
+						<topic href="https://www.w3.org/TR/2016/CR-battery-status-20160707/" label="Battery Status API (Partial)"/>
+						<topic href="http://www.w3.org/TR/2015/REC-vibration-20150210/" label="Vibration API"/>
+						<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#browser-state" label="HTML5 Browser state"/>
+						<topic href="http://www.w3.org/TR/2015/WD-screen-orientation-20150428/" label="The Screen Orientation API"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#graphics" label="Graphics">
+						<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/scripting-1.html#the-canvas-element" label="HTML5 The canvas element (Partial)"/>
+						<topic href="http://www.w3.org/TR/2015/REC-2dcontext-20151119/" label="HTML Canvas 2D Context"/>
+						<topic href="http://www.w3.org/TR/2015/WD-SVG2-20150409/struct.html#InterfaceSVGSVGElement" label="Scalable Vector Graphics (SVG) 2"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#media" label="Media">
+						<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#the-video-element" label="HTML5 The video element"/>
+						<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#the-audio-element" label="HTML5 The audio element"/>
+						<topic href="http://www.w3.org/TR/2015/WD-mediacapture-streams-20150414/" label="getUserMedia (Partial)"/>
+						<topic href="https://www.w3.org/TR/2015/WD-webaudio-20151208/" label="Web Audio API (Partial)"/>
+						<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)"/>
+						<topic href="http://www.w3.org/TR/2012/WD-html-media-capture-20120712/" label="HTML Media Capture"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#communication" label="Communication">
+						<topic href="http://www.w3.org/TR/2012/CR-websockets-20120920" label="The WebSocket API"/>
+						<topic href="http://www.w3.org/TR/2014/WD-XMLHttpRequest-20140130/" label="XMLHttpRequest Level 1"/>
+						<topic href="http://www.w3.org/TR/2015/REC-eventsource-20150203/" label="Server-Sent Events"/>
+						<topic href="http://www.w3.org/TR/2015/REC-webmessaging-20150519/" label="HTML5 Web Messaging"/>
+						<topic href="http://www.w3.org/TR/2015/WD-beacon-20150929/" label="Beacon"/>
+						<topic href="https://www.w3.org/TR/2015/WD-push-api-20151215/" label="Push API (Partial)"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#storage" label="Storage">
+						<topic href="http://www.w3.org/TR/2015/CR-webstorage-20150609/" label="Web Storage"/>
+						<topic href="http://www.w3.org/TR/2015/WD-FileAPI-20150421/" label="File API"/>
+						<topic href="http://www.w3.org/TR/2011/WD-file-system-api-20110419" label="File API: Directories and System"/>
+						<topic href="http://www.w3.org/TR/2011/WD-file-writer-api-20110419/" label="File API: Writer (Partial)"/>
+						<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/browsers.html#appcache" label="HTML5 Application caches"/>
+						<topic href="http://www.w3.org/TR/2015/REC-IndexedDB-20150108/" label="Indexed Database API"/>
+						<topic href="http://www.w3.org/TR/2010/NOTE-webdatabase-20101118/" label="Web SQL Database"/>
+						<topic href="http://www.w3.org/TR/2015/WD-service-workers-20150625/" label="Service Workers (Partial)"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#security" label="Security">
+						<topic href="http://www.w3.org/TR/2014/REC-cors-20140116/" label="Cross-Origin Resource Sharing"/>
+						<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#the-iframe-element" label="HTML5 The iframe element"/>
+						<topic href="http://www.w3.org/TR/2015/CR-CSP2-20150721/" label="Content Security Policy Level 2 (Partial)"/>
+						<topic href="http://www.w3.org/TR/2014/CR-WebCryptoAPI-20141211/" label="Web Crypto API"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#ui" label="UI">
+						<topic href="http://www.w3.org/TR/2015/WD-clipboard-apis-20150421/" label="Clipboard API and events (Partial)"/>
+						<topic href="http://www.w3.org/TR/2012/WD-html5-20120329/dnd.html" label="HTML5 Drag and drop (Partial)"/>
+						<topic href="http://www.w3.org/TR/2015/REC-notifications-20151022/" label="Web Notifications"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#performance" label="Performance and Optimization">
+						<topic href="http://www.w3.org/TR/2015/WD-workers-20150924/" label="Web Workers (Partial)"/>
+						<topic href="http://www.w3.org/TR/2013/REC-page-visibility-20131029/" label="Page Visibility"/>
+						<topic href="http://www.w3.org/TR/2013/CR-animation-timing-20131031/" label="Timing control for script-based animations"/>
+						<topic href="http://www.w3.org/TR/2012/REC-navigation-timing-20121217/" label="Navigation Timing"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#location" label="Location">
+						<topic href="http://www.w3.org/TR/2013/REC-geolocation-API-20131024/" label="Geolocation API Specification"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#widget" label="Widget">
+						<topic href="http://www.w3.org/TR/2011/REC-widgets-20110927/" label="Widget Packaging and XML Configuration"/>
+						<topic href="http://www.w3.org/TR/2011/WD-widgets-apis-20110607/" label="Widget Interface"/>
+						<topic href="http://www.w3.org/TR/2011/PR-widgets-digsig-20110811/" label="XML Digital Signatures for Widgets"/>
+						<topic href="http://www.w3.org/TR/2012/REC-widgets-access-20120207/" label="Widget Access Request Policy"/>
+					</topic>
+					<topic href="5.5/w3c_api/w3c_api_m.html#Supplementary" label="Supplementary">
+						<topic href="https://www.khronos.org/registry/typedarray/specs/1.0/" label="Typed Array - Khronos"/>
+						<topic href="https://www.khronos.org/registry/webgl/specs/1.0/" label="WebGL - Khronos (Partial)"/>
+						<topic href="https://wiki.mozilla.org/index.php?title=Gecko:FullScreenAPI" label="FullScreen API - Mozilla (Partial)"/>
+					</topic>
+				</topic>
+			</topic>
+		</topic>
+		<!-- 5.5 mobile native -->
+		<!--====================== 5.5 Native API section here ======================-->
+	</tizen-api>
+</tizen-api>
