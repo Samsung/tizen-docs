@@ -69,9 +69,15 @@ You can use the following TizenFX features in your .NET applications:
 
   The location and sensor features provide information about the geographical location and surrounding environment of the device. You can create location-based applications that track the user location and use maps. You can also access data from various device sensors, which provide information on the physical environment the device is in, and the gestures and activities the user engages in.
 
-- [Text Input and Voice](text-input/overview.md)
+- [Speech and Voice](speech/overview.md)
 
-  The text input and voice features introduce how you can convert speech to text and back to speech, or provide customized keyboards. You can also define commands to allow the user to control the application with their voice.
+  The speech and voice features introduce how you can convert speech to text and back to speech. You can also define commands to allow the user to control the application with their voice.
+
+
+- [Text Input](text-input/overview.md)
+
+  The text input feature introduces how to provide customized keyboards and retrieve previous data in a text input field.
+
 
 - [Personal Data](personal/overview.md)
 

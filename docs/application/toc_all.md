@@ -170,13 +170,16 @@
 #### [Geofences](/application/dotnet/guides/location-sensors/geofences.md)
 #### [Device Sensors](/application/dotnet/guides/location-sensors/device-sensors.md)
 
-### Text Input and Voice
+### Speech and Voice
+#### [Overview](/application/dotnet/guides/speech/overview.md)
+#### [Speech-to-text](/application/dotnet/guides/speech/stt.md)
+#### [Text-to-speech](/application/dotnet/guides/speech/tts.md)
+#### [Voice Control](/application/dotnet/guides/speech/voice-control.md)
+
+### Text Input
 #### [Overview](/application/dotnet/guides/text-input/overview.md)
 #### [Input Method](/application/dotnet/guides/text-input/input-method.md)
 #### [Input Method Manager](/application/dotnet/guides/text-input/input-method-manager.md)
-#### [Speech-to-text](/application/dotnet/guides/text-input/stt.md)
-#### [Text-to-speech](/application/dotnet/guides/text-input/tts.md)
-#### [Voice Control](/application/dotnet/guides/text-input/voice-control.md)
 
 ### Personal Data
 #### [Overview](/application/dotnet/guides/personal/overview.md)
@@ -365,6 +368,10 @@
 #### [Overview](/application/web/guides/sensors/sensors.md)
 #### [Human Activity Monitor](/application/web/guides/sensors/ham.md)
 #### [Device Sensors](/application/web/guides/sensors/device-sensors.md)
+
+### Speech and Voice
+#### [Overview](/application/web/guides/speech/speech.md)
+#### [Voice Control](/application/web/guides/speech/voice-control.md)
 
 ### Text Input
 #### [Overview](/application/web/guides/text-input/text-input.md)
@@ -920,16 +927,19 @@
 #### [Activity Recognition](/application/native/guides/location-sensors/activity.md)
 #### [Gesture Recognition](/application/native/guides/location-sensors/gesture.md)
 
-### Text Input and Voice
+### Speech and Voice
+#### [Overview](/application/native/guides/speech/overview.md)
+#### [Speech-to-text](/application/native/guides/speech/stt.md)
+#### [Text-to-speech](/application/native/guides/speech/tts.md)
+#### [Voice Control](/application/native/guides/speech/voice-control.md)
+#### [Voice Control Engine](/application/native/guides/speech/voice-control-engine.md)
+
+### Text Input
 #### [Overview](/application/native/guides/text-input/overview.md)
 #### [Input Method](/application/native/guides/text-input/input-method.md)
 #### [Autofill](/application/native/guides/text-input/autofill.md)
 #### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
 #### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
-#### [Speech-to-text](/application/native/guides/text-input/stt.md)
-#### [Text-to-speech](/application/native/guides/text-input/tts.md)
-#### [Voice Control](/application/native/guides/text-input/voice-control.md)
-#### [Voice Control Engine](/application/native/guides/text-input/voice-control-engine.md)
 
 ### Personal Data
 #### [Overview](/application/native/guides/personal/overview.md)

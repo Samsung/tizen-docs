@@ -1,7 +1,6 @@
 <a name="manager"></a>
 # Input Method Manager
 
-
 You can manage the input method editors (IMEs) installed on the device. After your IME application is installed, you can use the input method manager to open a list of installed IMEs, allow the user to enable an installed IME, and show an IME selector, in which the user can see the enabled IMEs and select one as a default keyboard.
 
 The main features of the Tizen.Uix.InputMethodManager namespace include:

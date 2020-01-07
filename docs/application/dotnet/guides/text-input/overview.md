@@ -1,27 +1,18 @@
-# Text Input and Voice
+# Text Input
 
+The text input feature introduces how you can use Input Method Editors (IMEs) and manage your custom keyboards.
 
-The text input and voice features introduce how you can convert speech to text and back to speech, and provide customized keyboards and voice control.
+You can use the following text input feature in your .NET applications:
 
-You can use the following text input and voice features in your .NET applications:
+-   [Input Method](input-method.md)
 
--   [Input Method](input-method.md) and [Input Method Manager](input-method-manager.md)
+    You can create an application that provides a new IME. You can start the IME application life-cycle, interact with the current IME UI state, and retrieve attributes and events.
 
-    You can create an IME (Input Method Editor) application that provides a customized keyboard for the user. You can show and hide the keyboard as needed, and offer a keyboard option menu to allow the user to manage the keyboard settings.
+-   [Input Method Manager](input-method-manager.md)
 
--   [Speech-to-text](stt.md)
-
-    You can recognize sound data recorded by the user and send the result as text. The result text can, for example, be displayed on the screen.
-
--   [Text-to-speech](tts.md)
-
-    You can synthesize text into sound data as utterances and play it. You can also control the playback by pausing, resuming, and stopping it, as needed.
-
--   [Voice Control](voice-control.md)
-
-    You can allow the user to control the device through voice commands. You can register voice commands, which trigger a callback when the user speaks them.
-
+    You can manage the IMEs installed on the device. The input method manager allows users to enable an installed IME and show the enabled IMEs, and select one as a default keyboard.
 
 ## Related Information
-* Dependencies
+
+- Dependencies
   -   Tizen 4.0 and Higher

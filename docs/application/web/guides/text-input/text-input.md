@@ -1,8 +1,8 @@
-# Text Input and Voice
+# Text Input
 
-The text input and voice features introduce how you can provide customized keyboards and voice commands. You can also define keyboard commands to trigger specific actions and voice commands to allow the user to control the Web application with their voice.
+The text input feature introduces how you can provide customized keyboards. You can also define keyboard commands to trigger specific actions.
 
-You can use the following text input and voice features in your Web applications:
+You can use the following text input feature in your Web applications:
 
 - [IME Application](./input-method.md) **in wearable applications only**
 
@@ -12,12 +12,9 @@ You can use the following text input and voice features in your Web applications
 
   You can manage input keys in the application. You can retrieve information about the available keys, and add custom actions to be performed when specific input keys are pressed.
 
-- [Voice Control](./voice-control.md)
-
-  You can register general voice commands and enable the user to control the Web application with their voice.
-
 ## Related Information
-* Dependencies  
+
+- Dependencies  
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 4.0 and Higher for TV

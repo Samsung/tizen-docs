@@ -58,6 +58,7 @@ You can schedule an application to be run at a specific time, retrieve informati
   [Applications](applications/overview.md) <br>
   [Application Management](app-management/overview.md) <br>
   [Notifications](notification/notification.md)<br>
+  [Text Input](text-input/text-input.md)
 - API Reference: [Application Framework](../api/latest/device_api/mobile/index.html#Application%20Framework)
 
 </td>
@@ -153,7 +154,7 @@ You can allow the user to control the Web application through their voice.
 </td>
 <td>
 
-- Guides: [Text Input and Voice](text-input/text-input.md)
+- Guides: [Speech and Voice](speech/speech.md)
 - API Reference: [UIX](../api/latest/device_api/mobile/index.html#UIX)
 </td>
 </tr>
@@ -229,6 +230,7 @@ You can schedule an application to be run at a specific time, retrieve informati
   [Applications](applications/overview.md) <br>
   [Application Management](app-management/overview.md) <br>
   [Notifications](notification/notification.md)<br>
+  [Text Input](text-input/text-input.md)
 - API Reference: [Application Framework](../api/latest/device_api/wearable/index.html#Application%20Framework)
 </td>
 </tr>
@@ -321,7 +323,7 @@ You can allow the user to control the Web application through their voice.
 </td>
 <td>
 
-- Guides: [Text Input and Voice](text-input/text-input.md)
+- Guides: [Speech and Voice](speech/speech.md)
 - API Reference: [UIX](../api/latest/device_api/wearable/index.html#UIX)
 
 </td>
@@ -382,9 +384,9 @@ You can schedule an application to be run at a specific time, retrieve informati
 
 - Guides:<br>
   [Alarms](alarm/alarms.md) <br>
-  [Applications](applications/overview.md)
+  [Applications](applications/overview.md)<br>
   [Application Management](app-management/overview.md) <br>
-
+  [Text Input](text-input/text-input.md)
 - API Reference: [Application Framework](../api/latest/device_api/tv/index.html#Application%20Framework)
 </td>
 </tr>
@@ -453,7 +455,7 @@ You can allow the user to control the Web application through their voice.
 </td>
 <td>
 
-- Guides: [Text Input and Voice](text-input/text-input.md)
+- Guides: [Speech and Voice](speech/speech.md)
 - API Reference: [UIX](../api/latest/device_api/tv/index.html#UIX)
 </td>
 </tr>
