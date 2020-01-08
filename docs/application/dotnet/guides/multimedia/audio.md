@@ -141,8 +141,8 @@ To query audio device information:
         >
         > The initial running state of the connected device is `false`, which means the connected device is not running.
 
--   To utilize additional functionality for AudioDeviceType.UsbAudio and AudioDeviceIoDirection.Output device, use the [Tizen.Multimedia.AudioDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioDevice.html) class:
-    -   To get the device of AudioDeviceType.UsbAudio and AudioDeviceIoDirection.Output:
+-   To utilize additional functionality for UsbAudio type and Output direction device, use the [Tizen.Multimedia.AudioDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioDevice.html) class:
+    -   To get the device of UsbAudio type and Output direction:
         ```csharp
         AudioDevice usbOutputDevice = null;
         foreach(AudioDevice d in AudioManager.GetConnectedDevices())
