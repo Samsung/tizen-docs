@@ -1,54 +1,55 @@
 # Create Custom Layout
 
-You can create custom layouts with the fundamental layout of NUI for building your own layouting.
-
-Or you can just use the available layouts, such as `LinearLayout` and `GridLayout`. For more information, see [Common Layouts](./layouting.md#commonLayout) category.
+You can create a custom layout with the fundamental layout of NUI. You can also use the available layouts, such as `LinearLayout` and `GridLayout`. For more information, see the [Common Layouts](./layouts.md#commonLayout).
 
 ## OnMeasure and OnLayout
 
-Custom layouts can be created for use in applications or to add to the current "Toolkit".
+With NUI component toolkit, custom layout for the applications can be created.
 
-The custom layout must derive from `LayoutGroup` and override the 2 methods : `OnMeasure` and `OnLayout` described below.
+The custom layout must be derived from `LayoutGroup` and override the two methods, `OnMeasure` and `OnLayout`.
 
-When creating a custom Layout, these are the methods that should be extended and will be called during the Measure and Layout phases respectively. And the layouting framework does all the heavy work leaving just the Measuring and Layouting to the Custom Layout.
+When creating a custom layout, `OnMeasure` and `OnLayout` methods must be extended and called during the measuring and layout phases respectively. The layout framework does all the heavy work except for measuring and layout. Measuring and layout are done by Custom Layout.
 
-Layouting is a 2 phase process :
+To create a layout, following two phases are required:
 
-1. First, Measuring of the children hence determining the layouts own dimensions.
+1. `OnMeasure`: Determining the layout size requirements of children and parents after measuring the approximate dimensions of children and parent.
 
-2. Second, Layouting (Positioning) the children within itself using their measured sizes.
+2. `OnLayout`: Laying out and positioning the children within `View` itself using their measured sizes.
 
-### Measure the view and its children
+### Measure View and Children
 
-```protected override void OnMeasure( MeasureSpecification widthMeasureSpec, MeasureSpecification heightMeasureSpec )```
+This section shows how to measure children of its layout using the following method:
 
-    The `OnMeasure` is the first function to overrid that 2 parameters are provided. They are the parents' width and height MeasureSpecifications which impose the size that the custom layout can be.
+```
+protected override void OnMeasure( MeasureSpecification widthMeasureSpec, MeasureSpecification heightMeasureSpec )
+```
 
-    Then, the Custom layout should measure its children.
-    To measure children size, `MeasureChild` API is available along with children which is an List of the Layouts children. It can be used to iterate and measure each one.
+The `OnMeasure` is the first function to override the two parameters, width and height of parents. `MeasureSpecification` imposes the size of the custom layout.
 
-    After the children are measured, the Custom Layout can add up their height and width together in any way it needs to.
-    Finally, the `SetMeasuredDimensions` API with the size is called it needs to be.
+After this, the custom layout must measure its children. To measure children size, MeasureChild API is available along with children, which is a list of the layout’s children. MeasureChild can be used to iterate and measure each one. After the children are measured, the custom layout can adjust height and width together as required.
 
-### Layout its children
+Finally, you must call the SetMeasuredDimensions API with the size to set the required dimensions.
 
-```protected override void OnLayout( bool changed, LayoutLength left, LayoutLength top, LayoutLength right, LayoutLength bottom )```
+### Layout Children
 
-    The `OnLayout` is where the children are positioned using the Layout API which takes a frame : start, top, end, bottom.
-    The positioning of the vertices of the child in turn defines its size.
+This section shows how to lay children of its layout using the following method:
 
-    As in the `OnMeasure`, the children List can be iterated to get each child in the Layout, then the `MeasuredWidth` and `MeasuredHeight` can be queried on each child.
+```
+protected override void OnLayout( bool changed, LayoutLength left, LayoutLength top, LayoutLength right, LayoutLength bottom )
+```
+
+The `OnLayout` is where the children are positioned using NUI Layout API, which takes start, top, end, and bottom of a frame. The positioning of the vertices of the child, defines its size.
+As in the `OnMeasure`, the children list can be iterated to get each child in the layout. Then the `MeasuredWidth` and `MeasuredHeight` can be queried on each child.
 
 ## LayoutLength
 
-`LayoutLength` is a class which encapsulates either the height or width value used in Layouting.  The value can be set by passing in a integer or float and retrieved as a decimal or rounded value. The rounded value should be used in outputting like when setting measured dimensions. The decimal value should be used during calculations.
+`LayoutLength` is a class, which encapsulates either the height or the width value used in layout. The value can be set by passing in an integer or a float. The value is retrieved as a decimal or a rounded value. The rounded value must be used as an output, for example when setting measured dimensions. The decimal value must be used during calculations.
 
-It is up to the layout to deal with the floating point to rounded number differences. For example, dividing a length of 100 between 3 columns could result in a column 33,34,33. Which would be preferable to 33,33,33 and 1 being undefined.
+Layout manages the floating point to rounded number differences. For example, dividing a length of 100 between 3 columns could result in a column 33, 34, 33, which is preferable to 33, 33, 33 and 1 being undefined.
 
-## Example code for a Custom Layout
+## Custom Layout Example
 
-The following code snippet explains shows how to create a custom layout.
-You can see a custom Layout positioning children in a horizontal line.
+The following code snippet shows how to create a custom layout:
 
 ```csharp
 
@@ -100,8 +101,8 @@ namespace SimpleLayout
             }
 
             // Finally, call this method to set the dimensions we would like
-            SetMeasuredDimensions( new MeasuredSize( measuredWidth, MeasuredSize.StateType.MeasuredSizeOK),
-                                   new MeasuredSize( measuredHeight, MeasuredSize.StateType.MeasuredSizeOK) );
+            SetMeasuredDimensions( new MeasuredSize( measuredWidth, MeasuredSize.StateType.MeasuredSizeOK ),
+                                   new MeasuredSize( measuredHeight, MeasuredSize.StateType.MeasuredSizeOK ) );
         }
 
         protected override void OnLayout( bool changed, LayoutLength left, LayoutLength top, LayoutLength right, LayoutLength bottom )
@@ -158,7 +159,7 @@ namespace SimpleLayout
 
 ```
 
-## Related information
+## Related Information
 
 - Dependencies
   -  Tizen 5.5 and Higher

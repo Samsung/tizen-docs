@@ -1,31 +1,26 @@
 # Linear Layout
 
-## Overview
+`LinearLayout` is a linear box layout in which the children of a layout are arranged vertically or horizontally by using [`LinearOrientation`](#orientation) property.
 
-`LinearLayout` is a linear box layout, automatically handling children laid out vertically or horizontally. You can set the layout direction vertically or horizontally by using `LinearOrientation` property.
+![LinearLayout](./media/linearTotal.png)
 
-<table style="width:100%">
-<tr>
-<td style="width:100%" align="center">
-<img src="./media/linearTotal.png">
-</td>
-</tr>
-</table>
+`LinearAlignment` defines from where you can start positioning children. It can be used when children do not use all the space of a parent.
 
-Positioning children in a linear form, one after the other, `CellPadding` can be provided to insert a space between each child. Unlike generic padding, this will not result in a space at the start, end or top, bottom of the layout.
+While positioning children in a linear form that is one after the other, you can use [`CellPadding`](#cellPadding) to insert a space between each child. Unlike generic padding, `CellPadding` does not insert a space at the start, end, top, or bottom of the layout.
 
-`LinearAlignment` defines where the children should start being positioned from, and it's very useful if the children do not use all the space of the parent.
+Here are the properties of `LinearLayout`:
 
 | Property               | Type            | Description  |
 | -----------------------| --------------- | ------------ |
-| `LinearOrientation`    | LinearLayout.Orientation | Gets/Sets Orientation of the linear layout : vertical or horizontal |
-| `LinearAlignment`      | LinearLayout.Alignment  | Gets/Sets the global child alignment to be used |
-| `CellPadding`          | Size2D      | Gets/Sets Spacing between the cells : horizontal space and vertical space |
+| `LinearOrientation`    | LinearLayout.Orientation | Gets or sets the vertical or horizontal orientation of the linear layout. |
+| `LinearAlignment`      | LinearLayout.Alignment  | Gets or sets the global child alignment. |
+| `CellPadding`          | Size2D      | Gets or sets the horizontal or vertical spacing between the cells. |
 
 
+<a name="orientation"></a>
 ## Orientation
 
-A `LinearOrientation` indicates the direction of children layouts : horizontal or vertical. The default value is Horizontal.
+`LinearOrientation` indicates the direction of a child layout such as horizontal or vertical. The default value is horizontal.
 
 | Horizontal | Vetical |
 | -----------------------| --------------- |
@@ -38,30 +33,25 @@ linearLayout.LinearOrientation = LinearLayout.Orientation.Horizontal;
 layoutView.Layout = layout;
 ```
 
-
+<a name="alignment"></a>
 ## Alignment
 
-A `LinearAlignment` handles how Layout items are positioned within their parent Layout in the space. By default, items are aligned at the Top and Begin.
+`LinearAlignment` handles how the layout items are positioned within their parent layout. By default, items are aligned at **Top** and **Begin**.
+You can choose from the following alignment options:
 
-You can choose from the below alignment options.
-
-| Alignment  | Info        |
-| ---------- | ----------- |
-| Begin      | At the left/right edge of the container (according to LTR/RTL direction for horizontal orientation) |
-| End        | At the right/left edge of the container (according to LTR/RTL direction for horizontal orientation) |
-| CenterHorizontal | At the horizontal center of the container (Vetical will be set to top) |
+| Alignment  | Description        |
+| ---------- | ------------------ |
+| Begin      | At the left or right edge of the container, according to Left to Right (LTR) or Right to Left (RTL) direction for horizontal orientation |
+| End        | At the right or left edge of the container, according to LTR or RTL direction for horizontal orientation |
+| CenterHorizontal | At the horizontal center of the container (vertical will be set to top) |
 | Top        | At the top edge of the container |
 | Bottom     | At the bottom edge of the container |
-| CenterVertical | At the vertical center of the container (Horizontal will be set to start) |
+| CenterVertical | At the vertical center of the container (horizontal will be set to begin) |
 | Center    | At both the vertical and horizontal center of the container |
 
-<table style="width:100%">
-<tr>
-<td style="width:100%" align="center">
-<img src="./media/linearAlignment.png">
-</td>
-</tr>
-</table>
+The following example shows how to set the layout alignment to `Center`:
+
+![LinearAlignment](./media/linearAlignment.png)
 
 ```csharp
 View layoutView = new View();
@@ -70,19 +60,16 @@ linearLayout.LinearAlignment = LinearLayout.Alignment.Center;
 layoutView.Layout = layout;
 ```
 
-
+<a name="cellPadding"></a>
 ## CellPadding
 
-A `CellPadding` is to set the padding between cells in the layout.
+`CellPadding` is to set the padding between cells in the layout. It is used to insert a space between each child.
+The type of `CellPadding` is [Size2D](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Size2D.html), which is two-dimensional. Height and width values are considered in `CellPadding`.
+After setting `CellPadding` to parent view, the interval between children is located by the width of CellPadding in the case of horizontal layout or by the height of `CellPadding` in the case of vertical layout.
 
-<table style="width:100%">
-<tr>
-<td style="width:100%" align="center">
-<img src="./media/cellPadding.png">
-</td>
-</tr>
-</table>
+The type of `CellPadding` is not `Extents` which has start, end, top, and bottom, but `Size2D` which as float width and float height. And in the following image, the arrow is the width (10) because the orientation of container layout is horizontal.
 
+![CellPadding](./media/cellPadding.png)
 
 ```csharp
 View layoutView = new View();
@@ -91,25 +78,21 @@ linearLayout.CellPadding = new Size2D(10, 20);
 layoutView.Layout = layout;
 ```
 
-
+<a name="weight"></a>
 ## Weight
 
-A `Weight` is used to share available space in a layout with siblings.
+`Weight` is used to determine how much space is occupied by a view and how a view shares the available space in a layout with its siblings.
 
-Depending on each weight, children take up their Parent view's space. So, child views can set a `Weight` as float type. Default weight value is zero.
+Depending on each weight, children take up their parent's view space. Therefore, child views can set the `Weight` value to float type. The default weight value is zero. If the weight is zero, then the size of child would be its natural size or specific size the user sets.
 
-<table style="width:100%">
-<tr>
-<td style="width:100%" align="center">
-<img src="./media/weight.png">
-</td>
-</tr>
-</table>
+The following example shows how to set the layout weight to each child. The weight of `imageView1` is 0.75f and the weight of `imageView2` is 0.25f. According to the weight, children are arranged in the parent view space.
+
+![Weight](./media/weight.png)
 
 ```csharp
 View layoutView = new View();
 var linearLayout = new LinearLayout();
-layoutView.Layout = layout;
+layoutView.Layout = linearLayout;
 
 ImageView imageView1 = new ImageView();
 imageView1.Weight = 0.75f;
@@ -117,12 +100,12 @@ imageView1.Weight = 0.75f;
 ImageView imageView2 = new ImageView();
 imageView2.Weight = 0.25f;
 
-view.Add(imageView1);
-view.Add(imageView2);
+layoutView.Add(imageView1);
+layoutView.Add(imageView2);
 ```
 
 
-## Related information
+## Related Information
 
 - Dependencies
   -  Tizen 5.5 and Higher

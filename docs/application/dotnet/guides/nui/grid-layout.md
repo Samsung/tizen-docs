@@ -1,27 +1,19 @@
 # Grid Layout
 
-## Overview
-
-`GridLayout` is a grid box for the two-dimensional layout. It constraints the x and y position, width, and height of the child actors.
+`GridLayout` is a grid box for the two dimensional layout. It constraints the x and y position, width, and height of the child actors.
 
 Positioning children in a grid form, the cells are of uniform size based on the first child added to the parent View.
 
-The number of **columns** can be specified and the rows will automatically increased to hold the children. Once the available space is used up, further rows will not be added.
+You can set the number of **columns**, however the rows automatically increase to hold the children. After the available space is used, the remaining rows become invisible by default.
 
 | Property               | Type            | Description |
 | -----------------------| --------------- | ------------ |
-| `Columns`              | int             | Gets/Sets the number of columns in the Grid |
+| `Columns`              | int             | Gets or sets the number of columns in the grid. |
 
 
 ## Column
 
-<table style="width:100%">
-<tr>
-<td style="width:100%" align="center">
-<img src="./media/columnLayout.png">
-</td>
-</tr>
-</table>
+![Column](./media/columnLayout.png)
 
 ```csharp
 View layoutView = new View();
@@ -31,7 +23,7 @@ layoutView.Layout = gridLayout;
 ```
 
 
-## Related information
+## Related Information
 
 - Dependencies
   -  Tizen 5.5 and Higher

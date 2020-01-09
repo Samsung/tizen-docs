@@ -1,47 +1,38 @@
 # Flex Layout
 
-## Overview
+`FlexLayout` is a flexible box layout, that provides a more efficient way to layout, align, and distribute space among items in the container, even when their size is unknown or dynamic.
 
-`FlexLayout` is a flexible box layout, providing a more efficient way to lay out, align and distribute space among items in the container, even when their size is unknown or dynamic.
+A layout provides features such as wrapping that automatically positions items that do not fit on an axis to another row or column.
 
-A layout which provides features like wrapping so if items no long fit on an axis they can automatically be positioned on another row or column.
+`FlexLayout` defines four properties that affect the size, orientation, and alignment of child views.
+Following are the properties:
 
-`FlexLayout` defines four properties that affect the size, orientation, and alignment of child views. These properties are described in more detail in the table below.
-Please see each categories below.
-
-| Property               | Type            | Description |
+| Property               | Type            | Description  |
 | -----------------------| --------------- | ------------ |
-| `Direction`            | FlexDirection   | The orientation the flex items are laid out in (Column/Row) |
-| `Justification`        | FlexJustification | Alignment of items along the flex axis when free space available |
-| `Alignment`            | AlignmentType     | Alignment of items along the cross axis when free space available |
+| `Direction`            | FlexDirection   | Orientation of the flex items are laid out in columns or rows |
+| `Justification`        | FlexJustification | Alignment of items along the flex axis when free space is available |
+| `Alignment`            | AlignmentType     | Alignment of items along the cross axis when free space is available |
 | `WrapType`             | FlexWrapType    | Enable wrapping of items |
 
+Natural size of items are used, which can be different for each item. Additionally, setting the size of an item has no effect.
 
-Natural size of items are used which can be different for each item. And setting the size of an item has no effect.
-
-`Justification` applies to the flex Direction axis whilst `Alignment` is the (other) cross axis. Changing the Direction will apply the `Justification` to the new direction.
+`Justification` applies to the flex `Direction` axis while `Alignment` applies to the cross axis. If you change the flex `Direction` axis, then the base of the `Justification` axis will also change.
 
 
 ## FlexDirection
 
-`Direction` property specifies the main axis direction along which flex items are placed.
+`Direction` property specifies the main axis direction along which the flex items are placed.
 
-<table style="width:100%">
-<tr>
-<td style="width:100%" align="center">
-<img src="./media/flexDirection.png">
-</td>
-</tr>
-</table>
+![FlexDirection](./media/flexDirection.png)
 
 | Property value |  Description |
 |----------------|--------------|
-| `Row`          | Place items horizontally in a row |
-| `RowReverse`   | Place items horizontally in a row, but in reverse order |
-| `Column`       | Place items vertically in a column |
-| `ColumnReverse` | Place items vertically in a column, but in reverse order |
+| `Row`          | Place items horizontally in a row. |
+| `RowReverse`   | Place items horizontally in a row, but in reverse order. |
+| `Column`       | Place items vertically in a column. |
+| `ColumnReverse` | Place items vertically in a column, but in reverse order. |
 
-### Usage
+The following code shows how to set the `Direction` property using `FlexDirection`:
 
 ```csharp
 View layoutView = new View();
@@ -55,23 +46,17 @@ layoutView.Layout = flexLayout;
 
 `Justification` property specifies the alignment for flex items, when they do not use all available space on the main axis.
 
-<table style="width:100%">
-<tr>
-<td style="width:100%" align="center">
-<img src="./media/justifyContent.png">
-</td>
-</tr>
-</table>
+![FlexJustification](./media/justifyContent.png)
 
 | Property value  |   Description |
 |-----------------|---------------|
-| `FlexStart`     | Position items at the beginning of the container |
-| `FlexEnd`       | Position items at the end of the container |
-| `Center`        | Position items at the center of the container |
-| `SpaceBetween`  |  Position items with equal spacing between them |
-| `SpaceAround`   |  Position items with equal spacing before, between, and after them |
+| `FlexStart`     | Position items at the beginning of the container. |
+| `FlexEnd`       | Position items at the end of the container. |
+| `Center`        | Position items at the center of the container. |
+| `SpaceBetween`  |  Position items with equal spacing between them. |
+| `SpaceAround`   |  Position items with equal spacing before, between, and after them. |
 
-### Usage
+The following code shows how to set the `Justification` property using `FlexJustification`:
 
 ```csharp
 View layoutView = new View();
@@ -85,23 +70,17 @@ layoutView.Layout = flexLayout;
 
 `Alignment` property specifies the alignment for flex items when they do not use all the available space on the cross axis.
 
-<table style="width:100%">
-<tr>
-<td style="width:100%" align="center">
-<img src="./media/alignItems.png">
-</td>
-</tr>
-</table>
+![AlignmentType](./media/alignItems.png)
 
 |  Property value  |   Description  |
 |------------------|----------------|
-|  `Auto`          | Inherits the same alignment from the parent |
-|  `FlexStart`     | Align items to the beginning of the container |
-|  `Center`        | Align items to the center of the container |
-|  `FlexEnd`       | Align items to the end of the container |
-|  `Stretch`       | Stretch items to fit the container |
+|  `Auto`          | Inherit the same alignment from the parent. |
+|  `FlexStart`     | Align items to the beginning of the container. |
+|  `FlexEnd`       | Align items to the end of the container. |
+|  `Center`        | Align items to the center of the container. |
+|  `Stretch`       | Stretch items to fit the container. |
 
-### Usage
+The following code shows how to set the `Alignment` property using `AlignmentType`:
 
 ```csharp
 View layoutView = new View();
@@ -113,23 +92,16 @@ layoutView.Layout = flexLayout;
 
 ## FlexWrapType
 
-`WrapType` property specifies whether the flex items must wrap if there is not enough room for them on 1 flex line.
+`WrapType` property specifies whether the flex items must wrap if there is not enough room for them on one flex line.
 
-<table style="width:100%">
-<tr>
-<td style="width:100%" align="center">
-<img src="./media/flexWrap.png">
-</td>
-</tr>
-</table>
-
+![FlexWrapType](./media/flexWrap.png)
 
 | Property value |  Description  |
 |----------------|---------------|
-|  `NoWrap`      | Reduce item sizes to fit them in a single line along the main axis |
-|  `Wrap`        | Show items over multiple lines, if needed |
+|  `NoWrap`      | Reduce item sizes to fit them in a single line along the main axis. |
+|  `Wrap`        | Show items over multiple lines, if needed. |
 
-### Usage
+The following code shows how to set the `WrapType` property using `FlexWrapType`:
 
 ```csharp
 View layoutView = new View();
@@ -139,7 +111,7 @@ layoutView.Layout = flexLayout;
 ```
 
 
-## Related information
+## Related Information
 
 - Dependencies
   -  Tizen 5.5 and Higher
