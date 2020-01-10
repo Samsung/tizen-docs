@@ -85,7 +85,7 @@ Enabling the monitor and retrieving data is a basic Human Activity Monitor (HAM)
    tizen.humanactivitymonitor.getHumanActivityData('HRM', onsuccessCB, onerrorCB);
    ```
 
-4. If requested `HumanActivityType` type is `PEDOMETER`, then `getHumanActivityData()` provides `HumanActivityPedometerData` object data gathered since the call of the `start()` method, but also data, which is gathered since the device boot.
+4. If the requested `HumanActivityType` type is `PEDOMETER` then `getHumanActivityData()` provides the `HumanActivityPedometerData` object. This object not only includes data gathered since the call of the `start()` method, but also the data gathered since the device boot:
 
     ```
     function onsuccessCB(pedometerData) {
