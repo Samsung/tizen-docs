@@ -175,10 +175,52 @@ typedef struct <a class="el" href="struct__Eina__Size2D.html">_Eina_Size2D</a>&#
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Eina_Rectangle_Pool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rectangle__Group.html#ga2b3b9a89a129503c7378827498353955">Eina_Rectangle_Pool</a></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rectangle__Group.html#gaab68032ceb1a1688f46fc019170d9443">EINA_SIZE2D_EQ</a>(a, b)&#160;&#160;&#160;(((a).w == (b).w) &amp;&amp; ((a).h == (b).h))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">convenience macro for comparing two Eina_Size2D structs  <a href="#gaab68032ceb1a1688f46fc019170d9443"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rectangle__Group.html#ga1bb31f76776758659fd5739581c21c35">EINA_POSITION2D_EQ</a>(a, b)&#160;&#160;&#160;(((a).x == (b).x) &amp;&amp; ((a).y == (b).y))</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">convenience macro for comparing two Eina_Position2D structs  <a href="#ga1bb31f76776758659fd5739581c21c35"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Rectangle__Group.html#gaaceb5b08727a052cc814a92569fcf8da">EINA_RECTANGLE_SET</a>(Rectangle, X, Y, W, H)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for the macro to set the values of a <a class="el" href="group__Eina__Rectangle__Group.html#gad1f49db9be2cd747f458ebf4718b6228">Eina_Rectangle</a>.  <a href="#gaaceb5b08727a052cc814a92569fcf8da"></a><br/></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
+<a class="anchor" id="ga1bb31f76776758659fd5739581c21c35"></a><!-- doxytag: member="eina_rectangle.h::EINA_POSITION2D_EQ" ref="ga1bb31f76776758659fd5739581c21c35" args="(a, b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Rectangle__Group.html#ga1bb31f76776758659fd5739581c21c35">EINA_POSITION2D_EQ</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(((a).x == (b).x) &amp;&amp; ((a).y == (b).y))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>convenience macro for comparing two Eina_Position2D structs </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>An Eina_Position2D </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>An Eina_Position2D </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>1 if the structs are equal, 0 if they are not </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaaceb5b08727a052cc814a92569fcf8da"></a><!-- doxytag: member="eina_rectangle.h::EINA_RECTANGLE_SET" ref="gaaceb5b08727a052cc814a92569fcf8da" args="(Rectangle, X, Y, W, H)" -->
 <div class="memitem">
 <div class="memproto">
@@ -240,6 +282,44 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This macro set the values of <code>Rectangle</code>. <code>X</code> and <code>Y</code> are the coordinates of the top left corner of <code>Rectangle</code>, <code>W</code> is its width and <code>H</code> is its height. </p>
+
+</div>
+</div>
+<a class="anchor" id="gaab68032ceb1a1688f46fc019170d9443"></a><!-- doxytag: member="eina_rectangle.h::EINA_SIZE2D_EQ" ref="gaab68032ceb1a1688f46fc019170d9443" args="(a, b)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Rectangle__Group.html#gaab68032ceb1a1688f46fc019170d9443">EINA_SIZE2D_EQ</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">a, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">b&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;(((a).w == (b).w) &amp;&amp; ((a).h == (b).h))</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>convenience macro for comparing two Eina_Size2D structs </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>An Eina_Size2D </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>An Eina_Size2D </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>1 if the structs are equal, 0 if they are not </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24 </dd></dl>
 
 </div>
 </div>

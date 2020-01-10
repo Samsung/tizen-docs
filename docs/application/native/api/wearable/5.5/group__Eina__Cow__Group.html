@@ -127,6 +127,8 @@ Defines</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for the macro to setup a writeable pointer from a const one.  <a href="#ga1f0c8727aa196d1974b696f999cd0f10"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Cow__Group.html#ga534f63d0d61c6e9256488d211fc2a473">EINA_COW_WRITE_END</a>(Cow, Read, Write)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for the macro to close the writeable pointer.  <a href="#ga534f63d0d61c6e9256488d211fc2a473"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Cow__Group.html#ga8887961f1f87ede76b5b521f00fd6b33">EINA_COW_WRITE_END_NOGC</a>(Cow, Read, Write)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Definition for the macro to close the writeable pointer without triggering the GC.  <a href="#ga8887961f1f87ede76b5b521f00fd6b33"></a><br/></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ga1f0c8727aa196d1974b696f999cd0f10"></a><!-- doxytag: member="eina_cow.h::EINA_COW_WRITE_BEGIN" ref="ga1f0c8727aa196d1974b696f999cd0f10" args="(Cow, Read, Write_Type, Write)" -->
@@ -222,6 +224,55 @@ Defines</h2></td></tr>
   while (0);
 </pre></div>
 <p>Definition for the macro to close the writeable pointer. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">Cow</td><td>The Eina_Cow where the const pointer came from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Read</td><td>The const pointer to get a writable handler from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">Write</td><td>The name of the variable where to put the writeable pointer to.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>This macro closes the scope opened by <a class="el" href="group__Eina__Cow__Group.html#ga1f0c8727aa196d1974b696f999cd0f10" title="Definition for the macro to setup a writeable pointer from a const one.">EINA_COW_WRITE_BEGIN()</a>. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8887961f1f87ede76b5b521f00fd6b33"></a><!-- doxytag: member="eina_cow.h::EINA_COW_WRITE_END_NOGC" ref="ga8887961f1f87ede76b5b521f00fd6b33" args="(Cow, Read, Write)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Cow__Group.html#ga8887961f1f87ede76b5b521f00fd6b33">EINA_COW_WRITE_END_NOGC</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Cow, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Read, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">Write&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<b>Value:</b><div class="fragment"><pre class="fragment"><a class="code" href="group__Eina__Cow__Group.html#ga53993db46845b54e1a6874f04514029e" title="Sets back a pointer into read only.">eina_cow_done</a>(Cow, ((<span class="keyword">const</span> <a class="code" href="group__Eina__Cow__Group.html#ga854ebe0e23513188f43adfdc6b4e977f">Eina_Cow_Data</a>**)&amp;(Read)), Write, \
+            <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);                                        \
+    }                                   \
+  while (0);
+</pre></div>
+<p>Definition for the macro to close the writeable pointer without triggering the GC. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">Cow</td><td>The Eina_Cow where the const pointer came from. </td></tr>
@@ -347,7 +398,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the new pool instance </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -373,7 +423,6 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -425,7 +474,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function is not thread safe. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -463,7 +511,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>To simplify the caller code *data will point to the default read only state after the call to this function. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -491,7 +538,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if something was compacted, EINA_FALSE if nothing was.</dd></dl>
 <p>There is no guaranty in the time it will require, but should remain low. It does run a hash function on all possible common structures trying to find the one that matches and merge them into one pointer. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -535,7 +581,6 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -573,7 +618,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function is not thread safe. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

@@ -139,11 +139,11 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__REQUEST__MODULE.html#ga3e2c54cf67670585c99fe5d833eb0bcd">package_manager_updateinfo_set_type</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gab19c44f3eb8ba36ff4f506a07f27cf3c">package_updateinfo_request_h</a> pkg_updateinfo_req, <a class="el" href="group__CAPI__PACKAGE__INFO__MODULE.html#ga00ff46ea76a632d248711a649780937e">package_updateinfo_type_e</a> type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the package update type to the package update info request.  <a href="#ga3e2c54cf67670585c99fe5d833eb0bcd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__REQUEST__MODULE.html#gaead82c8b52396f3b23cd85914a6f1eaa">package_manager_updateinfo_request_register</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gab19c44f3eb8ba36ff4f506a07f27cf3c">package_updateinfo_request_h</a> pkg_updateinfo_req)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Request to register package update info in platform.  <a href="#gaead82c8b52396f3b23cd85914a6f1eaa"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests to register package update info in platform.  <a href="#gaead82c8b52396f3b23cd85914a6f1eaa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__REQUEST__MODULE.html#ga94206be3bce9afa3ed9e9d5e0e99d925">package_manager_updateinfo_request_destroy</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gab19c44f3eb8ba36ff4f506a07f27cf3c">package_updateinfo_request_h</a> pkg_updateinfo_req)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys the package update info request.  <a href="#ga94206be3bce9afa3ed9e9d5e0e99d925"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__REQUEST__MODULE.html#ga7803c70374faa294e8fd10df42a6ab03">package_manager_updateinfo_request_unregister</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gab19c44f3eb8ba36ff4f506a07f27cf3c">package_updateinfo_request_h</a> pkg_updateinfo_req, const char *pkgid)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Request to unregister update info in platform for given package id.  <a href="#ga7803c70374faa294e8fd10df42a6ab03"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests to unregister update info in platform for given package id.  <a href="#ga7803c70374faa294e8fd10df42a6ab03"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__PACKAGE__REQUEST__MODULE.html#ga005bf0e0cddfa4563f042dcbaed2803b">package_manager_updateinfo_request_unregister_all</a> (<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#gab19c44f3eb8ba36ff4f506a07f27cf3c">package_updateinfo_request_h</a> pkg_updateinfo_req)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Request to unregister update info of all packages in platform.  <a href="#ga005bf0e0cddfa4563f042dcbaed2803b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -358,8 +358,8 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -430,8 +430,8 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -478,7 +478,7 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">request</td><td>The request handle </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the package to be moved </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">move_type</td><td>The move type [enum package_manager_move_type_e], [external to internal/internal to external] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">move_type</td><td>The move type [<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga67b553a7345b0ced58f83e2c645a6c60" title="Enumeration for move type.">package_manager_move_type_e</a>], [external to internal/internal to external] </td></tr>
   </table>
   </dd>
 </dl>
@@ -486,8 +486,8 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -553,7 +553,7 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">request</td><td>The request handle </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the package to be moved </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">move_type</td><td>The move type [enum package_manager_move_type_e], [external to internal/internal to external] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">move_type</td><td>The move type [<a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ga67b553a7345b0ced58f83e2c645a6c60" title="Enumeration for move type.">package_manager_move_type_e</a>], [external to internal/internal to external] </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be invoked </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">id</td><td>The ID of the request to the package manager </td></tr>
@@ -564,8 +564,8 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -620,8 +620,8 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -719,8 +719,8 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a0c4dbf65c015439f1b72ab7c576a4188">PACKAGE_MANAGER_ERROR_SYSTEM_ERROR</a></td><td>Severe system error </td></tr>
   </table>
   </dd>
@@ -822,8 +822,8 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -893,8 +893,8 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
@@ -970,9 +970,9 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a71aee4efa25937e40c78b12b8c4067e9">PACKAGE_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
   </table>
   </dd>
 </dl>
@@ -1030,7 +1030,7 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 </div>
 <div class="memdoc">
 
-<p>Request to register package update info in platform. </p>
+<p>Requests to register package update info in platform. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1079,7 +1079,7 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 </div>
 <div class="memdoc">
 
-<p>Request to unregister update info in platform for given package id. </p>
+<p>Requests to unregister update info in platform for given package id. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1175,8 +1175,8 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
   </table>
   </dd>
 </dl>
@@ -1270,8 +1270,8 @@ package_manager_request_s *&#160;</td><td class="memItemRight" valign="bottom"><
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8adb407aac4c1de191a3a1690bb7feed6a">PACKAGE_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a5f322e993784f124b5494f362e470be9">PACKAGE_MANAGER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
   </table>
   </dd>
 </dl>

@@ -15,7 +15,7 @@
 <div class="description">
         <p>
 A Tizen Web application has privileges defined in <em>config.xml</em> file, but for legal purposes, in case of privacy-related privileges, there could be a need of asking user directly with proper pop-up.
-List of privacy-related privileges is available on <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/security-and-api-privileges">Security and API Privileges</a> page.
+List of privacy-related privileges is available on <a href="/application/web/tutorials/sec-privileges">Security and API Privileges</a> page.
 Privacy Privilege API allows:
         </p>
         <ul>
@@ -168,6 +168,9 @@ PPM_DENY_ONCE - The user denied granting permission to use a privacy-related pri
     void requestPermission(DOMString privilege, <a href="#PermissionSuccessCallback">PermissionSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                            raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
+<p><span class="version">Since: </span>
+ 4.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>

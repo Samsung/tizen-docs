@@ -25,7 +25,7 @@ Get current human activity monitor data          </li>
 Record and read human activity data          </li>
         </ul>
         <p>
-For more information about how to use Human Activity Monitor API, see <a href="https://developer.tizen.org/development/guides/web-application/sensors/human-activity-monitor">Human Activity Monitor Guide</a>.
+For more information about how to use Human Activity Monitor API, see <a href="/application/web/guides/sensors/ham">Human Activity Monitor Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -1464,7 +1464,7 @@ The <em>interval</em> should be greater than or equal to zero.<br>For the PEDOME
 <li class="attribute" id="HumanActivityPedometerData::cumulativeCalorie">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">cumulativeCalorie</span></span><div class="brief">
- Cumulative calories burned since the last <a href="#HumanActivityMonitorManager::start">start()</a> method call in kcal.
+ Cumulative calories burnt since the last <a href="#HumanActivityMonitorManager::start">start()</a> method call in kcal.
             </div>
 <p><span class="version">Since: </span>
  2.3
@@ -1518,7 +1518,7 @@ The value is the sum of <em>cumulativeWalkStepCount</em> and <em>cumulativeRunSt
 <div class="interface" id="HumanActivityAccumulativePedometerData">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityAccumulativePedometerData"></a><h3>2.8. HumanActivityAccumulativePedometerData</h3>
 <div class="brief">
- The HumanActivityAccumulativePedometerData interface represents pedometer motion data since the device is booted.
+ The HumanActivityAccumulativePedometerData interface represents pedometer motion data since the device boot.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface HumanActivityAccumulativePedometerData : <a href="#HumanActivityData">HumanActivityData</a> {
     readonly attribute <a href="#PedometerStepStatus">PedometerStepStatus</a> stepStatus;
@@ -1568,7 +1568,7 @@ The value is the sum of <em>cumulativeWalkStepCount</em> and <em>cumulativeRunSt
 <li class="attribute" id="HumanActivityAccumulativePedometerData::accumulativeDistance">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">accumulativeDistance</span></span><div class="brief">
- Accumulative distance traveled since the device is booted in meters.
+ Accumulative distance traveled since the device boot in meters.
             </div>
 <p><span class="version">Since: </span>
  2.3
@@ -1577,7 +1577,7 @@ The value is the sum of <em>cumulativeWalkStepCount</em> and <em>cumulativeRunSt
 <li class="attribute" id="HumanActivityAccumulativePedometerData::accumulativeCalorie">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">accumulativeCalorie</span></span><div class="brief">
- Accumulative calories burnt since the device is booted in kcal.
+ Accumulative calories burnt since the device boot in kcal.
             </div>
 <p><span class="version">Since: </span>
  2.3
@@ -1586,7 +1586,7 @@ The value is the sum of <em>cumulativeWalkStepCount</em> and <em>cumulativeRunSt
 <li class="attribute" id="HumanActivityAccumulativePedometerData::accumulativeTotalStepCount">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">accumulativeTotalStepCount</span></span><div class="brief">
- Accumulative walking and running step count since the device is booted.
+ Accumulative walking and running step count since the device boot.
             </div>
 <div class="description">
             <p>
@@ -1600,7 +1600,7 @@ The value is the sum of <em>accumulativeWalkStepCount</em> and <em>accumulativeR
 <li class="attribute" id="HumanActivityAccumulativePedometerData::accumulativeWalkStepCount">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">accumulativeWalkStepCount</span></span><div class="brief">
- Accumulative walking step count since the device is booted.
+ Accumulative walking step count since the device boot.
             </div>
 <p><span class="version">Since: </span>
  2.3
@@ -1609,7 +1609,7 @@ The value is the sum of <em>accumulativeWalkStepCount</em> and <em>accumulativeR
 <li class="attribute" id="HumanActivityAccumulativePedometerData::accumulativeRunStepCount">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">accumulativeRunStepCount</span></span><div class="brief">
- Accumulative running step count since the device is booted.
+ Accumulative running step count since the device boot.
             </div>
 <p><span class="version">Since: </span>
  2.3
@@ -2076,7 +2076,7 @@ To guarantee that the barometer (pressure) sensor application runs on a device w
 <li class="feature">http://tizen.org/feature/sensor.barometer</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module HumanActivityMonitor {

@@ -57,7 +57,7 @@ for accessing internal and external storage using this API, privileges (<a href=
 Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
-For more information on the System Setting features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/system-setting">System Setting Guide</a>.
+For more information on the System Setting features, see <a href="/application/web/guides/device/system-setting">System Setting Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -183,6 +183,9 @@ access to the module functionalities.
     void getProperty(<a href="#SystemSettingType">SystemSettingType</a> type, <a href="#SystemSettingSuccessCallback">SystemSettingSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
+<p><span class="version">Since: </span>
+ 2.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -308,8 +311,6 @@ else
             <p>
 This method allows the user to get the value of the specified system property as wallpaper or ringtone of a device.
             </p>
-           </div>
-<div class="description">
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
             </p>

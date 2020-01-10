@@ -28,7 +28,7 @@ Exchanging some information or data between two devices by holding them close to
 Making payments by holding mobile phones close to point of sales terminals instead of swiping smart cards.          </li>
         </ul>
         <p>
-For more information on the NFC features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/nfc">NFC Guide</a>.
+For more information on the NFC features, see <a href="/application/web/guides/connectivity/nfc">NFC Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -2248,7 +2248,7 @@ When the application comes back from background, receiving events is turned back
  http://tizen.org/privilege/nfc.cardemulation
             </p>
 <p class="warning"><b>Warning:</b>
- The application must follow the <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/nfc#Using_NFC_Host_Based_Card_Emulation">Using NFC Host-based Card Emulation</a> to ensure proper behaviour.
+ The application must follow the <a href="/application/web/guides/connectivity/nfc#using-nfc-host-based-card-emulation">Using NFC Host-based Card Emulation</a> to ensure proper behaviour.
 If the application does not respect above requirement, <em>WebAPIException</em> with error type AbortError will be thrown.
             </p>
 <p><span class="remark">Remark: </span>
@@ -2995,11 +2995,17 @@ catch (err)
 <div class="constructors">
 <h4 id="NDEFMessage::constructor">Constructors</h4>
 <dl>
-<h4>Constructor ()</h4>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor ()</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFMessage();</pre>
-<h4>Constructor (<a href="#NDEFRecord">NDEFRecord</a>[])</h4>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#NDEFRecord">NDEFRecord</a>[])</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFMessage(<a href="#NDEFRecord">NDEFRecord</a>[] ndefRecords);</pre>
-<h4>Constructor (byte[])</h4>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (byte[])</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFMessage(byte[] rawData);</pre>
 </dl>
 </div>
@@ -3135,9 +3141,13 @@ catch (err)
 <div class="constructors">
 <h4 id="NDEFRecord::constructor">Constructors</h4>
 <dl>
-<h4>Constructor (short, byte[], byte[], byte[]?)</h4>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (short, byte[], byte[], byte[]?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFRecord(short tnf, byte[] type, byte[] payload, optional byte[]? id);</pre>
-<h4>Constructor (byte[])</h4>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (byte[])</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFRecord(byte[] raw_data);</pre>
 </dl>
 </div>
@@ -3249,7 +3259,9 @@ var payload = newRecord.payload;
       <div class="constructors">
 <h4 id="NDEFRecordText::constructor">Constructors</h4>
 <dl>
-<h4>Constructor (DOMString, DOMString, DOMString?)</h4>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString, DOMString?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFRecordText(DOMString text, DOMString languageCode, optional DOMString? encoding);</pre>
 </dl>
 </div>
@@ -3306,7 +3318,9 @@ var payload = newRecord.payload;
       <div class="constructors">
 <h4 id="NDEFRecordURI::constructor">Constructors</h4>
 <dl>
-<h4>Constructor (DOMString)</h4>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFRecordURI(DOMString uri);</pre>
 </dl>
 </div>
@@ -3345,7 +3359,9 @@ var payload = newRecord.payload;
       <div class="constructors">
 <h4 id="NDEFRecordMedia::constructor">Constructors</h4>
 <dl>
-<h4>Constructor (DOMString, byte[])</h4>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, byte[])</span></b></code>
+</dt>
 <pre class="webidl prettyprint">NDEFRecordMedia(DOMString mimeType, byte[] data);</pre>
 <div class="description">
               <ul>
@@ -4149,7 +4165,7 @@ To guarantee that the NFC host-based card emulation application runs on a device
 <li class="feature">http://tizen.org/feature/network.nfc.card_emulation.hce</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module NFC {

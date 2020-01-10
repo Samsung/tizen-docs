@@ -90,7 +90,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">table_cxx_example_01.cc</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"><span class="comment">// g++ -g `pkg-config --cflags --libs elementary-cxx efl-cxx eina-cxx eo-cxx ecore-cxx evas-cxx edje-cxx` table_cxx_example_01.cc -o table_cxx_example_01</span>
+<div class="fragment"><pre class="fragment"><span class="comment">/*</span>
+<span class="comment"> * Copyright 2019 by its authors. See AUTHORS.</span>
+<span class="comment"> *</span>
+<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
+<span class="comment"> * you may not use this file except in compliance with the License.</span>
+<span class="comment"> * You may obtain a copy of the License at</span>
+<span class="comment"> *</span>
+<span class="comment"> *     http://www.apache.org/licenses/LICENSE-2.0</span>
+<span class="comment"> *</span>
+<span class="comment"> * Unless required by applicable law or agreed to in writing, software</span>
+<span class="comment"> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
+<span class="comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
+<span class="comment"> * See the License for the specific language governing permissions and</span>
+<span class="comment"> * limitations under the License.</span>
+<span class="comment"> */</span>
+<span class="comment">// g++ -g `pkg-config --cflags --libs elementary-cxx efl-cxx eina-cxx eo-cxx ecore-cxx evas-cxx edje-cxx` table_cxx_example_01.cc -o table_cxx_example_01</span>
 
 <span class="preprocessor">#include &lt;Efl_Ui.hh&gt;</span>
 
@@ -111,19 +126,19 @@ efl_main(<span class="keywordtype">void</span> *data <a name="a0"></a><a class="
 <span class="comment">//   FIXME</span>
 <span class="comment">//   table.homogeneous_set(true);</span>
 
-   efl::ui::Text label(instantiate, win);
+   efl::ui::Textbox label(instantiate, win);
    label.text_set(<span class="stringliteral">&quot;label 0&quot;</span>);
    table.pack_table(label, 0, 0, 1, 1);
 
-   efl::ui::Text label1(instantiate, win);
+   efl::ui::Textbox label1(instantiate, win);
    label1.text_set(<span class="stringliteral">&quot;label 1&quot;</span>);
    table.pack_table(label1, 1, 0, 1, 1);
 
-   efl::ui::Text label2(instantiate, win);
+   efl::ui::Textbox label2(instantiate, win);
    label2.text_set(<span class="stringliteral">&quot;label 2&quot;</span>);
    table.pack_table(label2, 0, 1, 1, 1);
 
-   efl::ui::Text label3(instantiate, win);
+   efl::ui::Textbox label3(instantiate, win);
    label3.text_set(<span class="stringliteral">&quot;label 3&quot;</span>);
    table.pack_table(label3, 1, 1, 1, 1);
 }

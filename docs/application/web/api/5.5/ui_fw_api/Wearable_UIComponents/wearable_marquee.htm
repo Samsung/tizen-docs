@@ -13,8 +13,16 @@
 It makes &lt;div&gt; element (has some child nodes such as text and img) move horizontally like legacy &lt;marquee&gt; tag.</p>
 
 <video autoplay muted loop controls>
-	<source src="https://developer.tizen.org/sites/default/files/documentation/marquee.mp4">
+	<source src="../../images/marquee.mp4">
 </video>
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.1%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fcontrols%2Fmarquee%2Findex.html', '_blank')"
+>Use example</button>
 
 <table class="note">
 	<tbody>

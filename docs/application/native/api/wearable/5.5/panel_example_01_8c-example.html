@@ -112,20 +112,20 @@ elm_main(<span class="keywordtype">int</span> argc <a name="a0"></a><a class="co
    <a name="a10"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
 
    panel = <a name="a11"></a><a class="code" href="group__Elm__Panel.html#ga952990e3a7e7b13a9dab33f189de0783" title="Adds a panel object.">elm_panel_add</a>(win);
-   elm_panel_orient_set(panel, <a name="a12"></a><a class="code" href="group__Elm__Panel.html#gga5bde2896bce9792babf57a8373796bc4a39eacc76270ea5367e7d2fa7d31e9c42">ELM_PANEL_ORIENT_TOP</a>);
+   elm_panel_orient_set(panel, ELM_PANEL_ORIENT_TOP);
    elm_panel_toggle(panel);
    evas_object_size_hint_weight_set(panel, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    evas_object_size_hint_align_set(panel, EVAS_HINT_FILL, EVAS_HINT_FILL);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(panel);
    elm_box_pack_end(bx, panel);
 
-   content = <a name="a13"></a><a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   content = <a name="a12"></a><a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
    elm_object_text_set(content, <span class="stringliteral">&quot;content&quot;</span>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(content);
    elm_object_content_set(panel, content);
 
    panel = <a class="code" href="group__Elm__Panel.html#ga952990e3a7e7b13a9dab33f189de0783" title="Adds a panel object.">elm_panel_add</a>(win);
-   elm_panel_orient_set(panel, <a name="a14"></a><a class="code" href="group__Elm__Panel.html#gga5bde2896bce9792babf57a8373796bc4a036d49b9f166a357ab475d4d0e71a615">ELM_PANEL_ORIENT_RIGHT</a>);
+   elm_panel_orient_set(panel, ELM_PANEL_ORIENT_RIGHT);
    elm_panel_hidden_set(panel, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
    evas_object_size_hint_weight_set(panel, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    evas_object_size_hint_align_set(panel, EVAS_HINT_FILL, EVAS_HINT_FILL);
@@ -150,11 +150,11 @@ elm_main(<span class="keywordtype">int</span> argc <a name="a0"></a><a class="co
 
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a15"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a13"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a16"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a14"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

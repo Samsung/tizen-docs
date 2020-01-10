@@ -112,6 +112,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-allocates an amount memory by the given mempool.  <a href="#ga7f15747ff472c6f051299284d64b5983"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Memory__Pool__Group.html#gabbdb8f387ae2e475f743ca86ef980d08">eina_mempool_malloc</a> (<a class="el" href="group__Eina__Memory__Pool__Group.html#ga8ca45185c6759c6c7b57e7c1b614215a">Eina_Mempool</a> *mp, unsigned int size)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory using the given mempool.  <a href="#gabbdb8f387ae2e475f743ca86ef980d08"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Memory__Pool__Group.html#gac860afa1561e81018c035769b5a2ad22">eina_mempool_malloc_near</a> (<a class="el" href="group__Eina__Memory__Pool__Group.html#ga8ca45185c6759c6c7b57e7c1b614215a">Eina_Mempool</a> *mp, void *after, void *before, unsigned int size)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory in the given mempool using locality hint to improve future memory access use.  <a href="#gac860afa1561e81018c035769b5a2ad22"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Memory__Pool__Group.html#gab9f29782c01cb62d2b70bc65c6fa5e1b">eina_mempool_calloc</a> (<a class="el" href="group__Eina__Memory__Pool__Group.html#ga8ca45185c6759c6c7b57e7c1b614215a">Eina_Mempool</a> *mp, unsigned int size)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates and zeros memory using the given mempool.  <a href="#gab9f29782c01cb62d2b70bc65c6fa5e1b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Memory__Pool__Group.html#gab863371d668381f7bca07d6fafcc2fc2">eina_mempool_free</a> (<a class="el" href="group__Eina__Memory__Pool__Group.html#ga8ca45185c6759c6c7b57e7c1b614215a">Eina_Mempool</a> *mp, void *element)</td></tr>
@@ -211,7 +213,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Newly allocated mempool instance, NULL otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -238,7 +239,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The alignment for an allocation of size <code>size</code>. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -280,7 +280,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <dl class="warning"><dt><b>Warning:</b></dt><dd>No checks are done for <code>mp</code>.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Memory__Pool__Group.html#gab863371d668381f7bca07d6fafcc2fc2" title="Frees resources previously allocated by the given mempool.">eina_mempool_free()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -306,7 +305,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -350,7 +348,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <a class="el" href="group__Eina__Memory__Pool__Group.html#gab9f29782c01cb62d2b70bc65c6fa5e1b" title="Allocates and zeros memory using the given mempool.">eina_mempool_calloc()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Memory__Pool__Group.html#ga7f15747ff472c6f051299284d64b5983" title="Re-allocates an amount memory by the given mempool.">eina_mempool_realloc()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -389,7 +386,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the element is a valid element of the mempool, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -415,7 +411,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -444,7 +439,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> if it is not possible to iterate over the mempool, a valid iterator otherwise.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This call is expected to be slow and should not be used in any performance critical area. </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -485,7 +479,63 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <dl class="note"><dt><b>Note:</b></dt><dd>This function allocates and returns <code>size</code> bytes using the mempool <code>mp</code>. If not used anymore, the data must be freed with <a class="el" href="group__Eina__Memory__Pool__Group.html#gab863371d668381f7bca07d6fafcc2fc2" title="Frees resources previously allocated by the given mempool.">eina_mempool_free()</a>. </dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>No checks are done for <code>mp</code>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Memory__Pool__Group.html#gab863371d668381f7bca07d6fafcc2fc2" title="Frees resources previously allocated by the given mempool.">eina_mempool_free()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac860afa1561e81018c035769b5a2ad22"></a><!-- doxytag: member="eina_mempool.h::eina_mempool_malloc_near" ref="gac860afa1561e81018c035769b5a2ad22" args="(Eina_Mempool *mp, void *after, void *before, unsigned int size)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void* <a class="el" href="group__Eina__Memory__Pool__Group.html#gac860afa1561e81018c035769b5a2ad22">eina_mempool_malloc_near</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Eina__Memory__Pool__Group.html#ga8ca45185c6759c6c7b57e7c1b614215a">Eina_Mempool</a> *&#160;</td>
+          <td class="paramname"><em>mp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>after</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>before</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td><code> [static]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Allocates memory in the given mempool using locality hint to improve future memory access use. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mp</td><td>The mempool </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">after</td><td>Hint to the nearest pointer after which to try find an empty spot. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">before</td><td>Hint to the nearest pointer before which to try find an empty spot. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The size in bytes to allocate </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The newly allocated data that might be near <code>after</code> and <code>before</code>.</dd></dl>
+<p>This function is to be used to improve cache locality of structure that are likely to be used one after another. An example of this use would be Eina_List.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>This function allocates and returns <code>size</code> bytes using the mempool <code>mp</code>. If not used anymore, the data must be freed with <a class="el" href="group__Eina__Memory__Pool__Group.html#gab863371d668381f7bca07d6fafcc2fc2" title="Frees resources previously allocated by the given mempool.">eina_mempool_free()</a>. </dd>
+<dd>
+<code>after</code> and <code>before</code> must be either <code>NULL</code> or allocated by the same mempool <code>mp</code>. They are hint and if no space near them is found, memory will be allocated without locality improvement. </dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>No checks are done for <code>mp</code>.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Memory__Pool__Group.html#gab863371d668381f7bca07d6fafcc2fc2" title="Frees resources previously allocated by the given mempool.">eina_mempool_free()</a> </dd></dl>
 
 </div>
 </div>
@@ -533,7 +583,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <dl class="note"><dt><b>Note:</b></dt><dd>This function re-allocates and returns <code>element</code> with <code>size</code> bytes using the mempool <code>mp</code>. If not used anymore, the data must be freed with <a class="el" href="group__Eina__Memory__Pool__Group.html#gab863371d668381f7bca07d6fafcc2fc2" title="Frees resources previously allocated by the given mempool.">eina_mempool_free()</a>. </dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>No checks are done for <code>mp</code>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Memory__Pool__Group.html#gab863371d668381f7bca07d6fafcc2fc2" title="Frees resources previously allocated by the given mempool.">eina_mempool_free()</a> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -560,7 +609,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if backend has been correctly registered, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -607,7 +655,6 @@ _Eina_Mempool_Backend&#160;</td><td class="memItemRight" valign="bottom"><a clas
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Memory__Pool__Group.html#ga36987f282791adfc0d82c493af4462dc" title="The callback type which is called when the mempool &quot;repacks&quot; its data.">Eina_Mempool_Repack_Cb</a> </dd>
 <dd>
 _Eina_Mempool_Backend </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -633,7 +680,6 @@ _Eina_Mempool_Backend </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -659,22 +705,6 @@ _Eina_Mempool_Backend </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
-
-</div>
-</div>
-<hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="gacbc6db834ac68b83684f83e55193be4a"></a><!-- doxytag: member="eina_mempool.h::EINA_ERROR_NOT_MEMPOOL_MODULE" ref="gacbc6db834ac68b83684f83e55193be4a" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a> <a class="el" href="group__Eina__Memory__Pool__Group.html#gacbc6db834ac68b83684f83e55193be4a">EINA_ERROR_NOT_MEMPOOL_MODULE</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

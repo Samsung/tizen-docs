@@ -146,7 +146,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Called for every storage in the obtained list of storages. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000422">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000423">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <p>Iterates over a media storage list.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>You should not destroy <em>storage</em> returned by this function. <br/>
@@ -176,7 +176,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>The structure type for the Media storage handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000420">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000421">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 
 </div>
@@ -208,7 +208,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Clones the media storage handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000456">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000457">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <p>This function copies the media storage handle from a source to the destination. There is no media_storage_create() function. The media_storage_h is created internally and available through media storage foreach function such as <a class="el" href="group__CAPI__CONTENT__MEDIA__STORAGE__MODULE.html#ga59410bce1736e00b9b61b8af4ec41e85" title="Iterates through media storage from the media database.">media_storage_foreach_storage_from_db()</a>. To use this handle outside of these foreach functions, use this function.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>dst</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__STORAGE__MODULE.html#gac44e195ef075d5a45c1dfb8fe10ef2ab" title="Destroys media storage handle.">media_storage_destroy()</a>.</dd></dl>
@@ -252,7 +252,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Destroys media storage handle. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000455">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000456">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <p>The function frees all resources related to the media storage handle. This handle can no longer be used to perform any operations. New media storage handle has to be created before the next usage.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -312,7 +312,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Iterates through the media files with an optional <em>filter</em> in the given <em>storage_id</em> from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000454">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga71bf8c410d47ed42adf827d9fa92cc3c" title="Iterates through media info from the media database.">media_info_foreach_media_from_db()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000455">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga71bf8c410d47ed42adf827d9fa92cc3c" title="Iterates through media info from the media database.">media_info_foreach_media_from_db()</a> instead. </dd></dl>
 <p>This function gets all media files associated with the given storage and meeting desired filter option and calls <em>callback</em> for every retrieved media item. If <code>NULL</code> is passed to the <em>filter</em>, no filtering is applied.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Do not call updating DB function like <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#ga825c97b7f53ba73953ecef585db6a2ff" title="Updates the media info to the media database.">media_info_update_to_db()</a> in your callback function, your callback function is invoked as inline function. <br/>
@@ -381,7 +381,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Iterates through media storage from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000452">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html">Storage</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000453">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html">Storage</a> instead. </dd></dl>
 <p>This function gets all media storage handles meeting the given <em>filter</em>. The <em>callback</em> function will be invoked for every retrieved media storage. If <code>NULL</code> is passed to the <em>filter</em>, then no filtering is applied.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -437,7 +437,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the storage id of media storage. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000457">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000458">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>storage_id</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -491,7 +491,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the count of media files for the passed <em>filter</em> in the given <em>storage_id</em> from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000453">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gac65cd60ad4b0b4b06e642d92d35de1e0" title="Gets the count of media info for the passed filter from the media database.">media_info_get_media_count_from_db()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000454">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gac65cd60ad4b0b4b06e642d92d35de1e0" title="Gets the count of media info for the passed filter from the media database.">media_info_get_media_count_from_db()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>Use <a class="el" href="group__CAPI__CONTENT__MEDIA__INFO__MODULE.html#gac65cd60ad4b0b4b06e642d92d35de1e0" title="Gets the count of media info for the passed filter from the media database.">media_info_get_media_count_from_db()</a> if you want to search for internal storage.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -543,7 +543,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the storage path of media storage. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000458">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html">Storage</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000459">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html">Storage</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>storage_path</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -591,7 +591,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the count of media storage for the passed <em>filter</em> from the media database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000451">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html">Storage</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000452">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html">Storage</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -642,7 +642,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets media storage from database. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000450">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000451">Deprecated:</a></b></dt><dd>Deprecated since 5.0. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>storage</em> should be released using <a class="el" href="group__CAPI__CONTENT__MEDIA__STORAGE__MODULE.html#gac44e195ef075d5a45c1dfb8fe10ef2ab" title="Destroys media storage handle.">media_storage_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -694,7 +694,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the storage type of media storage. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000459">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gaa94ac8120da755db0e781ca7fa2a5913" title="Gets the type and the kind of external device for the given storage id.">storage_get_type_dev()</a> instead. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000460">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gaa94ac8120da755db0e781ca7fa2a5913" title="Gets the type and the kind of external device for the given storage id.">storage_get_type_dev()</a> instead. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

@@ -1,6 +1,6 @@
 # Tizen RT API
 
-The Tizen RT API consists of two components:
+Tizen RT API consists of two components:
 
 - [Public API](public-api/index.html)
 

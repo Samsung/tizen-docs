@@ -24,6 +24,10 @@ You can use the following connectivity and wireless features in your .NET applic
 
     You can find nearby Wi-Fi Direct devices and discover their details. You can also form a Wi-Fi Direct group to communicate over a peer-to-peer link without wireless access points (base stations) in the infrastructure mode.
 
+- [Smart Traffic Control (STC)](stc.md)
+
+  You can retrieve statistics about the network data consumption fetched by the system and by the applications.
+  
 -   [Telephony Information](telephony.md)
 
     You can access various information from the Telephony Service. You can access details about the voice and video call states, currently used SIM card, and modem. You can also retrieve general details about the telephony network the device is currently connected to.

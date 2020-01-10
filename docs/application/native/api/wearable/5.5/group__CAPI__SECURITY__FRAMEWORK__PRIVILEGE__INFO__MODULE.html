@@ -109,7 +109,7 @@ Related Features</h2>
  It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, and control your application's actions accordingly.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </li>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -349,7 +349,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>description</em> must be released using free(). </dd>
 <dd>
-package_type must be one of followings: PRVINFO_PACKAGE_TYPE_NATIVE, PRVINFO_PACKAGE_TYPE_WEB </dd></dl>
+package_type must be one of followings: "PRVINFO_PACKAGE_TYPE_NATIVE", "PRVINFO_PACKAGE_TYPE_WEB" </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">package_type</td><td>The type of application package </td></tr>
@@ -468,7 +468,7 @@ package_type must be one of followings: PRVINFO_PACKAGE_TYPE_NATIVE, PRVINFO_PAC
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>display_name</em> must be released using free(). </dd>
 <dd>
-package_type must be one of followings: PRVINFO_PACKAGE_TYPE_NATIVE, PRVINFO_PACKAGE_TYPE_WEB </dd></dl>
+package_type must be one of followings: "PRVINFO_PACKAGE_TYPE_NATIVE", "PRVINFO_PACKAGE_TYPE_WEB" </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">package_type</td><td>The type of application package </td></tr>
@@ -568,7 +568,7 @@ package_type must be one of followings: PRVINFO_PACKAGE_TYPE_NATIVE, PRVINFO_PAC
 <div class="memdoc">
 
 <p>Gets the status of the given privacy related privilege. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000434">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#gaec610fbde60c9bd37a63e7798418bcb8" title="Checks if an application, which calls this function, has permission to use the given privilege...">ppm_check_permission()</a> instead. You can refer to <a class="el" href="group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html">Privacy Privilege Manager</a>. </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000435">Deprecated:</a></b></dt><dd>Deprecated since 5.0. Use <a class="el" href="group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html#gaec610fbde60c9bd37a63e7798418bcb8" title="Checks if an application, which calls this function, has permission to use the given privilege...">ppm_check_permission()</a> instead. You can refer to <a class="el" href="group__CAPI__PRIVACY__PRIVILEGE__MANAGER__MODULE.html">Privacy Privilege Manager</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>privilege</em> must be privacy related, otherwise <a class="el" href="group__CAPI__SECURITY__FRAMEWORK__PRIVILEGE__INFO__MODULE.html#ggae50b814d4efe1b1d7218b6d68cdcadd6a0a0d3c6c7998abcc2f0437f54edcc80d">PRVINFO_ERROR_INVALID_PARAMETER</a> is returned. In case of errors, <em>status</em> is set to <code>true</code>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

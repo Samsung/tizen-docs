@@ -524,7 +524,7 @@
 								</topic>
 								<topic label="Face Detection" href="group__CAPI__CONTENT__MEDIA__FACE__DETECTION__MODULE.html">
 								</topic>
-								<topic label="Image Metadata" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html">
+								<topic label="Image Metadata" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html">
 								</topic>
 								<topic label="Video Metadata" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html">
 								</topic>
@@ -937,24 +937,6 @@
 						<topic label="VPN Service" href="group__CAPI__NETWORK__VPN__SERVICE__MODULE.html">
 						</topic>
 						<topic label="Wi-Fi" href="group__CAPI__NETWORK__WIFI__PACKAGE.html">
-							<topic label="Wi-Fi (Deprecated)" href="group__CAPI__NETWORK__WIFI__MODULE.html">
-								<topic label="Wi-Fi Configuration" href="group__CAPI__NETWORK__WIFI__CONFIG__MODULE.html">
-								</topic>
-								<topic label="Wi-Fi Management" href="group__CAPI__NETWORK__WIFI__MANAGEMENT__MODULE.html">
-									<topic label="AP" href="group__CAPI__NETWORK__WIFI__AP__MODULE.html">
-										<topic label="Network Information" href="group__CAPI__NETWORK__WIFI__AP__NETWORK__MODULE.html">
-										</topic>
-										<topic label="Security Information" href="group__CAPI__NETWORK__WIFI__AP__SECURITY__MODULE.html">
-											<topic label="EAP" href="group__CAPI__NETWORK__WIFI__AP__SECURITY__EAP__MODULE.html">
-											</topic>
-										</topic>
-									</topic>
-								</topic>
-								<topic label="Wi-Fi Monitor" href="group__CAPI__NETWORK__WIFI__MONITOR__MODULE.html">
-								</topic>
-								<topic label="Wi-Fi TDLS" href="group__CAPI__NETWORK__WIFI__TDLS__MODULE.html">
-								</topic>
-							</topic>
 							<topic label="Wi-Fi Manager" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html">
 								<topic label="Wi-Fi Configuration" href="group__CAPI__NETWORK__WIFI__MANAGER__CONFIG__MODULE.html">
 								</topic>
@@ -2499,7 +2481,7 @@
 								</topic>
 								<topic label="Face Detection" href="group__CAPI__CONTENT__MEDIA__FACE__DETECTION__MODULE.html">
 								</topic>
-								<topic label="Image Metadata" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html">
+								<topic label="Image Metadata" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html">
 								</topic>
 								<topic label="Video Metadata" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html">
 								</topic>
@@ -2896,24 +2878,6 @@
 							</topic>
 						</topic>
 						<topic label="Wi-Fi" href="group__CAPI__NETWORK__WIFI__PACKAGE.html">
-							<topic label="Wi-Fi (Deprecated)" href="group__CAPI__NETWORK__WIFI__MODULE.html">
-								<topic label="Wi-Fi Configuration" href="group__CAPI__NETWORK__WIFI__CONFIG__MODULE.html">
-								</topic>
-								<topic label="Wi-Fi Management" href="group__CAPI__NETWORK__WIFI__MANAGEMENT__MODULE.html">
-									<topic label="AP" href="group__CAPI__NETWORK__WIFI__AP__MODULE.html">
-										<topic label="Network Information" href="group__CAPI__NETWORK__WIFI__AP__NETWORK__MODULE.html">
-										</topic>
-										<topic label="Security Information" href="group__CAPI__NETWORK__WIFI__AP__SECURITY__MODULE.html">
-											<topic label="EAP" href="group__CAPI__NETWORK__WIFI__AP__SECURITY__EAP__MODULE.html">
-											</topic>
-										</topic>
-									</topic>
-								</topic>
-								<topic label="Wi-Fi Monitor" href="group__CAPI__NETWORK__WIFI__MONITOR__MODULE.html">
-								</topic>
-								<topic label="Wi-Fi TDLS" href="group__CAPI__NETWORK__WIFI__TDLS__MODULE.html">
-								</topic>
-							</topic>
 							<topic label="Wi-Fi Manager" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html">
 								<topic label="Wi-Fi Configuration" href="group__CAPI__NETWORK__WIFI__MANAGER__CONFIG__MODULE.html">
 								</topic>
@@ -4624,7 +4588,7 @@
 								</topic>
 								<topic label="Face Detection" href="group__CAPI__CONTENT__MEDIA__FACE__DETECTION__MODULE.html">
 								</topic>
-								<topic label="Image Metadata" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html">
+								<topic label="Image Metadata" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html">
 								</topic>
 								<topic label="Video Metadata" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html">
 								</topic>
@@ -6518,7 +6482,7 @@
 									</topic>
 									<topic label="Face Detection" href="group__CAPI__CONTENT__MEDIA__FACE__DETECTION__MODULE.html">
 									</topic>
-									<topic label="Image Metadata" href="group__CAPI__CONTENT__MEDIA__IMAGE__MODULE.html">
+									<topic label="Image Metadata" href="group__CAPI__CONTENT__MEDIA__IMAGE__META__MODULE.html">
 									</topic>
 									<topic label="Video Metadata" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html">
 									</topic>

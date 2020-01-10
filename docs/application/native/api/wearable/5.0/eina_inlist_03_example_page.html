@@ -123,9 +123,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      }
 </pre></div></p>
 <p>And the resulting lists will be as follow:</p>
- 
- <img src="eina_inlist-node_eg3-two-inlists.png" style="max-width: 100%;"/>
-   <p>For the first list, we can use the macro <a class="el" href="group__Eina__Inline__List__Group.html#ga65e496b9b16d527d23c1d735652b4e62">EINA_INLIST_FOREACH</a> to iterate over its elements:</p>
+ <div class="image">
+<img src="eina_inlist-node_eg3-two-inlists.png" alt="eina_inlist-node_eg3-two-inlists.png"/>
+</div>
+ <p>For the first list, we can use the macro <a class="el" href="group__Eina__Inline__List__Group.html#ga65e496b9b16d527d23c1d735652b4e62">EINA_INLIST_FOREACH</a> to iterate over its elements:</p>
 <p><div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Inline__List__Group.html#ga65e496b9b16d527d23c1d735652b4e62">EINA_INLIST_FOREACH</a>(list, cur)
      printf(&quot;\ta=%d, b=%d\n&quot;, cur-&gt;a, cur-&gt;b);
 </pre></div></p>

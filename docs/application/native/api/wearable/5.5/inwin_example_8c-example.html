@@ -226,17 +226,17 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
 
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(o, <span class="stringliteral">&quot;clicked&quot;</span>, _btn_click_cb, NULL);
 
-   <span class="keywordflow">if</span> (<a name="a24"></a><a class="code" href="group__Eina__String__Group.html#gae95f831abd514af9e7f537fe4df4d103">eina_streq</a>(getenv(<span class="stringliteral">&quot;ELM_ENGINE&quot;</span>), <span class="stringliteral">&quot;shot&quot;</span>))
-     <a name="a25"></a><a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(0.1, _screenshot_hack_cb, o);
+   <span class="keywordflow">if</span> (eina_streq(getenv(<span class="stringliteral">&quot;ELM_ENGINE&quot;</span>), <span class="stringliteral">&quot;shot&quot;</span>))
+     <a name="a24"></a><a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(0.1, _screenshot_hack_cb, o);
 
    evas_object_resize(win, 400, 400);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a26"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a25"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a27"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a26"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

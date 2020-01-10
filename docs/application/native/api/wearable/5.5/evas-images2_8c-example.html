@@ -370,10 +370,10 @@ main(<span class="keywordtype">void</span>)
           WIDTH / 4, HEIGHT / 4);
 
    d.text_obj = <a name="a42"></a><a class="code" href="group__Evas__Object__Textblock.html#ga5059cda84291080e59bcc72ead81ca93">evas_object_textblock_add</a>(d.evas);
-   <a name="a43"></a><a class="code" href="group__Evas__Object__Textblock.html#gac35fdf7b795b08a884f62cf479b9901b">evas_object_textblock_text_markup_set</a>(d.text_obj, <span class="stringliteral">&quot;Hello world! :)&quot;</span>);
-   st = <a name="a44"></a><a class="code" href="group__Evas__Object__Textblock.html#ga5047d80b99150342ce3cd5518b474df8">evas_textblock_style_new</a>();
-   <a name="a45"></a><a class="code" href="group__Evas__Object__Textblock.html#gaf536f7e63f652e36a125006e31cf5457">evas_textblock_style_set</a>(st, <span class="stringliteral">&quot;DEFAULT=&#39;font=Sans font_size=16 color=#114 wrap=word&#39;&quot;</span>);
-   <a name="a46"></a><a class="code" href="group__Evas__Object__Textblock.html#ga14c222cd68f4c101dc9e52361c47c35e">evas_object_textblock_style_set</a>(d.text_obj, st);
+   evas_object_textblock_text_markup_set(d.text_obj, <span class="stringliteral">&quot;Hello world! :)&quot;</span>);
+   st = <a name="a43"></a><a class="code" href="group__Evas__Object__Textblock.html#ga5047d80b99150342ce3cd5518b474df8">evas_textblock_style_new</a>();
+   <a name="a44"></a><a class="code" href="group__Evas__Object__Textblock.html#gaf536f7e63f652e36a125006e31cf5457">evas_textblock_style_set</a>(st, <span class="stringliteral">&quot;DEFAULT=&#39;font=Sans font_size=16 color=#114 wrap=word&#39;&quot;</span>);
+   evas_object_textblock_style_set(d.text_obj, st);
    evas_object_move(d.text_obj, WIDTH / 16, HEIGHT * 9 / 16);
    evas_object_resize(d.text_obj, WIDTH / 4, 0);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.text_obj);
@@ -385,10 +385,10 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.proxy_img);
 
    puts(commands);
-   <a name="a47"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a45"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
-   <a name="a48"></a><a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(d.ee);
-   <a name="a49"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
+   <a name="a46"></a><a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(d.ee);
+   <a name="a47"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
    <span class="keywordflow">return</span> 0;
 
 error:

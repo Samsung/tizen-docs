@@ -112,7 +112,7 @@ Related Features</h2>
 <p>It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>. </a></p>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>. </a></p>
 <h2><a class="anchor" id="CAPI_MEDIA_VISION_BARCODE_MODULE_OVERVIEW"></a>
 Overview</h2>
 <p><a class="el" href="group__CAPI__MEDIA__VISION__BARCODE__MODULE.html">Media Vision BarCode</a> contains two submodules:<br/>
@@ -318,8 +318,11 @@ Defines</h2></td></tr>
 <p>Enumeration for supported image formats for the barcode generating. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga83dddc2a6a2a460afbed6299c8e52be7aceeb233bdb4e77dc71ac160616d37cf1"></a><!-- doxytag: member="MV_BARCODE_IMAGE_FORMAT_UNAVAILABLE" ref="gga83dddc2a6a2a460afbed6299c8e52be7aceeb233bdb4e77dc71ac160616d37cf1" args="" -->MV_BARCODE_IMAGE_FORMAT_UNAVAILABLE</em>&nbsp;</td><td>
+<p>Unavailable image format </p>
+</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga83dddc2a6a2a460afbed6299c8e52be7a209be198902de252e6c07a9cdb39b526"></a><!-- doxytag: member="MV_BARCODE_IMAGE_FORMAT_BMP" ref="gga83dddc2a6a2a460afbed6299c8e52be7a209be198902de252e6c07a9cdb39b526" args="" -->MV_BARCODE_IMAGE_FORMAT_BMP</em>&nbsp;</td><td>
-<p>Unavailable image format BMP image format </p>
+<p>BMP image format </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga83dddc2a6a2a460afbed6299c8e52be7aabb63de1e7b351e1fdff5b78799bc171"></a><!-- doxytag: member="MV_BARCODE_IMAGE_FORMAT_JPG" ref="gga83dddc2a6a2a460afbed6299c8e52be7aabb63de1e7b351e1fdff5b78799bc171" args="" -->MV_BARCODE_IMAGE_FORMAT_JPG</em>&nbsp;</td><td>
 <p>JPEG image format </p>
@@ -606,7 +609,7 @@ Create an engine configuration handle by calling <a class="el" href="group__CAPI
 <p>Generates image file with barcode. </p>
 <p>Pay attention that for EAN-8 and EAN-13 barcode types the barcode type may be selected automatically and this selection depends on the input message length. Also for QR codes the version may be selected as minimum required to generate QR code with the input message length.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the text attribute of engine configuration is set to MV_BARCODE_GENERATE_ATTR_TEXT_VISIBLE, MEDIA_VISION_ERROR_INVALID_OPERATION will be return when <em>type</em> is MV_BARCODE_QR</dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the text attribute of engine configuration is set to <a class="el" href="group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ggaff049431f2259d00cfd0fdc7ee721858a38657688d67fbeb6aaf8d96a329222f9">MV_BARCODE_GENERATE_ATTR_TEXT_VISIBLE</a>, <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gga9000f8cb86ea490bf2542b6f0c03eb1ca1927dc2d74220ff8f6a7cb9ae778dbbf">MEDIA_VISION_ERROR_INVALID_OPERATION</a> will be returned when <em>type</em> is MV_BARCODE_QR</dd>
 <dd>
 The mediastorage privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> is needed <br/>
  if <em>image_path</em> is relevant to media storage.<br/>
@@ -619,8 +622,8 @@ The mediastorage privilege <a href="http://tizen.org/privilege/mediastorage">htt
     <tr><td class="paramdir">[in]</td><td class="paramname">image_width</td><td>The width of the generated image </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">image_height</td><td>The height of the generated image </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Type of the barcode to be generated </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">qr_enc_mode</td><td>Encoding mode for the message (only for QR codes; for 1D barcodes set this parameter to <em>MV_BARCODE_QR_MODE_UNAVAILABLE</em>) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">qr_ecc</td><td>Error correction level (only for QR codes; for 1D barcodes set this parameter to <em>MV_BARCODE_QR_ECC_UNAVAILABLE</em>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qr_enc_mode</td><td>Encoding mode for the message (only for QR codes; for 1D barcodes set this parameter to <a class="el" href="group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gga7f0d166bd235a1e521dde7bb1cefd508a21155e057c29af1cbcc25dab1fa7aad4">MV_BARCODE_QR_MODE_UNAVAILABLE</a>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qr_ecc</td><td>Error correction level (only for QR codes; for 1D barcodes set this parameter to <a class="el" href="group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gga8a791708899a98349ef997caca30dbe9aa5a9efc6cdc83ae4769a14513c339a62">MV_BARCODE_QR_ECC_UNAVAILABLE</a>) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">qr_version</td><td>QR code version (for 1D barcodes set this parameter to 0) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">image_path</td><td>The path to the file that has to be generated </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">image_format</td><td>The format of the output image </td></tr>
@@ -705,14 +708,14 @@ The mediastorage privilege <a href="http://tizen.org/privilege/mediastorage">htt
 <p>Generates <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga2e4229d3b8a8ad4b373894ff049f0906">mv_source_h</a> with barcode image. </p>
 <p>Pay attention that for EAN-8 and EAN-13 barcode types the barcode type may be selected automatically and this selection depends on the input message length. Also for QR codes the version may be selected as minimum required to generate QR code with the input message length.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the text attribute of engine configuration is set to MV_BARCODE_GENERATE_ATTR_TEXT_VISIBLE, MEDIA_VISION_ERROR_INVALID_OPERATION will be return when <em>type</em> is MV_BARCODE_QR</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the text attribute of engine configuration is set to <a class="el" href="group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#ggaff049431f2259d00cfd0fdc7ee721858a38657688d67fbeb6aaf8d96a329222f9">MV_BARCODE_GENERATE_ATTR_TEXT_VISIBLE</a>, <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gga9000f8cb86ea490bf2542b6f0c03eb1ca1927dc2d74220ff8f6a7cb9ae778dbbf">MEDIA_VISION_ERROR_INVALID_OPERATION</a> will be returned when <em>type</em> is MV_BARCODE_QR</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">engine_cfg</td><td>The handle to the configuration of the engine </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>The message to be encoded in the barcode </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Type of the barcode to be generated </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">qr_enc_mode</td><td>Encoding mode for the message (only for QR codes; for 1D barcodes set this parameter to <em>MV_BARCODE_QR_MODE_UNAVAILABLE</em>) </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">qr_ecc</td><td>Error correction level (only for QR codes; for 1D barcodes set this parameter to <em>MV_BARCODE_QR_ECC_UNAVAILABLE</em>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qr_enc_mode</td><td>Encoding mode for the message (only for QR codes; for 1D barcodes set this parameter to <a class="el" href="group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gga7f0d166bd235a1e521dde7bb1cefd508a21155e057c29af1cbcc25dab1fa7aad4">MV_BARCODE_QR_MODE_UNAVAILABLE</a>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">qr_ecc</td><td>Error correction level (only for QR codes; for 1D barcodes set this parameter to <a class="el" href="group__CAPI__MEDIA__VISION__BARCODE__MODULE.html#gga8a791708899a98349ef997caca30dbe9aa5a9efc6cdc83ae4769a14513c339a62">MV_BARCODE_QR_ECC_UNAVAILABLE</a>) </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">qr_version</td><td>QR code version (for 1D barcodes set this parameter to 0) </td></tr>
     <tr><td class="paramdir">[in,out]</td><td class="paramname">image</td><td>The media source handle which will be used to fill by the buffer with generated image </td></tr>
   </table>

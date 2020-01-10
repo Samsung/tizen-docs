@@ -113,7 +113,7 @@ Related Features</h2>
  It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </li>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -750,10 +750,9 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The return type (int) </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>N</code> Number of items (call count of the callback function), otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
-    <tr><td class="paramname">@c</td><td>N Number of items (call count of the callback function) </td></tr>
     <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a613ecaa24197bc37ab4a79f715d44d4e">SHORTCUT_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289ae330092ca9d137f67e85f400beb4c11e">SHORTCUT_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
     <tr><td class="paramname"><a class="el" href="group__SHORTCUT__MODULE.html#gga2fa1e3c2ae44272bd3cad3d8e0102289a5ab3abfbf94031ef90140e2924913c95">SHORTCUT_ERROR_INVALID_PARAMETER</a></td><td>Invalid function parameter </td></tr>
@@ -905,7 +904,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>You have to prepare a callback function. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>If a request is sent from the application, the registered callback will be invoked. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>remove_cb_t </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__SHORTCUT__MODULE.html#gaf96371e4dbc7aa1fc8eb59c4f1b2da20" title="Called to the shortcut_remove_from_home() request.">shortcut_remove_cb()</a> </dd>
 <dd>
 <a class="el" href="group__SHORTCUT__MODULE.html#ga2fa1e3c2ae44272bd3cad3d8e0102289" title="Enumeration for values of shortcut response types.">shortcut_error_e</a> </dd></dl>
 

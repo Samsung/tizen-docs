@@ -278,7 +278,7 @@ You must release <em>archive_info</em> using <a class="el" href="group__CAPI__PA
  </pre><p> A --&gt; B means that A depends on B.</p>
 <p>If package_archive_info_foreach_direct_dependency(A) is called, the callback will be called once with the following argument values: <em>from</em> = A, <em>to</em> = B. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>The function provides the results synchronously. If there are no dependencies, this function will return PACKAGE_MANAGER_ERROR_NONE immediately and the callback will not be invoked. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The function provides the results synchronously. If there are no dependencies, this function will return <a class="el" href="group__CAPI__PACKAGE__MANAGER__MODULE.html#ggad6bc221a39a877ca947c912eceb19ce8a8e268d579d8d8535659bbe81dc9cc067">PACKAGE_MANAGER_ERROR_NONE</a> immediately and the callback will not be invoked. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">archive_info</td><td>The package archive information </td></tr>

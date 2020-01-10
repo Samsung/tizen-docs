@@ -125,7 +125,7 @@ Related Features</h2>
 <p>It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>. </a> </p>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>. </a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -315,7 +315,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Enumeration for Media Vision <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga465654375f6bb726cdef0cd82a7f0e56">mv_engine_config_h</a> handle attribute type. </p>
+<p>Enumeration for Media Vision <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga465654375f6bb726cdef0cd82a7f0e56" title="The handle to the Media Vision API engine algorithms configuration.">mv_engine_config_h</a> handle attribute type. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga5511110597255cf5d29c5bd23bc8da6daf3210887821ba7cff5519a79439ab35a"></a><!-- doxytag: member="MV_ENGINE_CONFIG_ATTR_TYPE_DOUBLE" ref="gga5511110597255cf5d29c5bd23bc8da6daf3210887821ba7cff5519a79439ab35a" args="" -->MV_ENGINE_CONFIG_ATTR_TYPE_DOUBLE</em>&nbsp;</td><td>
@@ -419,7 +419,7 @@ Typedefs</h2></td></tr>
 
 <p>Creates the handle to the configuration of engine. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Available engine configuration attributes can be get by using <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gaf29aee139cb6ceabf32ab8d47f7a9829">mv_engine_config_foreach_supported_attribute()</a>. The attributes can be changed by <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga465654375f6bb726cdef0cd82a7f0e56">mv_engine_config_h</a> related setters. Default values are used if the attributes are not changed. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Available engine configuration attributes can be get by using <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gaf29aee139cb6ceabf32ab8d47f7a9829">mv_engine_config_foreach_supported_attribute()</a>. The attributes can be changed by <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga465654375f6bb726cdef0cd82a7f0e56" title="The handle to the Media Vision API engine algorithms configuration.">mv_engine_config_h</a> related setters. Default values are used if the attributes are not changed. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">engine_cfg</td><td>The handle to the engine to be created </td></tr>
@@ -600,7 +600,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>If <em>callback</em> is called zero times after <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gaf29aee139cb6ceabf32ab8d47f7a9829">mv_engine_config_foreach_supported_attribute()</a> call, then engine configuration is not supported and setting of attributes will cause no effect. In this case for all Media Vision functions which require <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga465654375f6bb726cdef0cd82a7f0e56">mv_engine_config_h</a> handle as in parameter this parameter can be set NULL. </dd>
 <dd>
-If <em>callback</em> is called at least once, then attribute names and types obtained in the <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga746bf654295e8943c76a1731e26a2343">mv_supported_attribute_cb</a> callback can be changed after mv_engine_config_h handle creation (with <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gaff85eca25414cd317464f3c82bec8ac0">mv_create_engine_config()</a> function) by corresponding setters. Although, if attributes aren't changed by setters, then default values will be used.<br/>
+If <em>callback</em> is called at least once, then attribute names and types obtained in the <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#ga746bf654295e8943c76a1731e26a2343" title="Called to get information (type and name) once for each supported attribute.">mv_supported_attribute_cb()</a> callback can be changed after mv_engine_config_h handle creation (with <a class="el" href="group__CAPI__MEDIA__VISION__COMMON__MODULE.html#gaff85eca25414cd317464f3c82bec8ac0">mv_create_engine_config()</a> function) by corresponding setters. Although, if attributes aren't changed by setters, then default values will be used.<br/>
  Changing of attribute values will affect internal functionality provided by concrete library underlying Media Vision API. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

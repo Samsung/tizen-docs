@@ -146,6 +146,7 @@
 #### [Bluetooth](/application/dotnet/guides/connectivity/bluetooth.md)
 #### [NFC](/application/dotnet/guides/connectivity/nfc.md)
 #### [Smart Card](/application/dotnet/guides/connectivity/smartcard.md)
+#### [Smart Traffic Control (STC)](/application/dotnet/guides/connectivity/stc.md)
 #### [IoT Connectivity](/application/dotnet/guides/connectivity/iotcon.md)
 #### [Telephony Information](/application/dotnet/guides/connectivity/telephony.md)
 
@@ -494,6 +495,10 @@
 
 ## [Overview](/application/native/index.md)
 
+### Watchface Complication
+#### [Overview](/application/native/guides/complications/overview.md)
+#### [Watchface Complication](/application/native/guides/complications/watchface-complication.md)
+#### [Complication Provider](/application/native/guides/complications/watchface-complication-provider.md)
 
 ## Get Started
 
@@ -856,6 +861,7 @@
 ##### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
 ##### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
+##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
 #### [Media Playback](/application/native/guides/multimedia/media-playback.md)
 #### [Media Recording](/application/native/guides/multimedia/media-recording.md)
 #### [Media Controller](/application/native/guides/multimedia/media-controller.md)
@@ -1163,6 +1169,7 @@
 #### [Debug the Project](/application/tizen-studio/rt-ide/get-started/debug.md)
 
 ## Release Notes
+### [3.6 (Dec 10, 2019)](/application/tizen-studio/release-notes/3-6-release-notes.md)
 ### [3.5 (Oct 30, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
 ### [3.3 (Jul 24, 2019)](/application/tizen-studio/release-notes/3-3-release-notes.md)
 ### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)

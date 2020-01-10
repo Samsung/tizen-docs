@@ -2,8 +2,7 @@
 
 **Welcome to Tizen Wearable Web watch application development!**
 
-> **Note**
->
+> [!NOTE]
 > Watch template is not supported since Tizen Studio 3.0.
 
 A wearable Web application is basically a Web site stored on a wearable device. You can create it using Web-native languages, such as HTML5, CSS, and JavaScript, and run it on Tizen wearable devices to display a customized watch face to the user.
@@ -99,8 +98,7 @@ You can see the created project in the **Project Explorer** view. The most impor
 
 ![Application in the Project Explorer](media/basic_app_project_explorer_ww_watch.png)
 
-> **Note**
->
+> [!NOTE]
 > You can [view and modify the application configuration](#configuration) in the Web application configuration editor. In this example, no configuration changes are required.
 
 Your application project is now ready for further actions. Next, build the application.
@@ -132,8 +130,7 @@ To view and modify the application configuration:
 
     -   **Source**: View and edit the source code of the `config.xml` file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
 
-        > **Note**
-        >
+        > [!NOTE]
         > The `config.xml` file must conform to both the XML file format and the W3C specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
 3.  To save any changes, in the Tizen Studio menu, select **File \> Save All**.
@@ -162,8 +159,7 @@ Pay attention to the following main issues in the application source code, to un
     </widget>
     ```
 
-    > **Note**
-    >
+    > [!NOTE]
     > By default, the BasicWatch sample has the application category defined as `<tizen:category name="http://tizen.org/category/wearable_clock"/>`. To run your application on Samsung Gear 2, Samsung Gear 2 Neo, and Samsung Gear S devices, use `<tizen:category name="com.samsung.wmanager.WATCH_CLOCK"/>` instead.
 
 -   On a low-powered wearable device, an ambient mode is available. In this mode, the watch application shows a limited UI and receives only the ambient tick event every minute to reduce power consumption.
@@ -216,8 +212,7 @@ After you have built the application, run it.
 
 You can run the Web watch application on the [emulator](../../tutorials/process/run-debug-app.md#emulator) or a [real target device](../../tutorials/process/run-debug-app.md#target).
 
-> **Note**
->
+> [!NOTE]
 > Since the Web Simulator does not support a circular UI, this topic does not cover the instructions for running the application on the Web Simulator.
 
 <a name="emulator"></a>
@@ -262,8 +257,7 @@ To run the application on the emulator:
 
         ![Application running in the emulator](media/emulator_running_watch_ww.png)
 
-        > **Note**
-        >
+        > [!NOTE]
         > If the emulator display has switched off, you cannot see the application launch. To switch the display on, click the **Power** key (in the lower-right corner of the emulator).
 
     <a name="watchface"></a>
@@ -357,8 +351,7 @@ To run the application on the target device:
 
         Like with the [emulator](#watchface), you can change the watch face in the device settings to see the watch application on the home screen.
 
-    > **Note**
-    >
+    > [!NOTE]
     > The application is launched using the default debug run configuration. To create and use another configuration:
     > 1.  In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.

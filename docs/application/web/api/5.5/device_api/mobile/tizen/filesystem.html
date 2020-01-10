@@ -107,7 +107,7 @@ Storage privileges are privacy-related privileges and there is a need of asking 
 <b>Remark:</b> Methods, which names end with <var>NonBlocking</var> are asynchronous and are executed in background in the order in which they were called. Corresponding methods without <var>NonBlocking</var> at the end are synchronous and will block further instructions execution, until they are finished.
         </p>
         <p>
-For more information on the Filesystem features, see <a href="https://developer.tizen.org/development/guides/web-application/data-storage-and-management/file-system">File System Guide</a>.
+For more information on the Filesystem features, see <a href="/application/web/guides/data/file-system">File System Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -2534,8 +2534,6 @@ The <em>ErrorCallback</em> is launched with these error types:
               <li>
 IOError, if any error related to file handle occurs.               </li>
             </ul>
-           </div>
-<div class="description">
             <p>
 Note, that current position indicator value, can be obtained in SeekSuccessCallback by calling <var>seekNonBlocking(0, "CURRENT")</var>.
 seekNonBlocking is executed in background and does not block further instructions.
@@ -3874,8 +3872,6 @@ The <em>ErrorCallback</em> is launched with these error types:
               <li>
 IOError, if flush fails or any error related to file handle occurs.              </li>
             </ul>
-           </div>
-<div class="description">
             <p>
 This method is asynchronous. Its execution will occur in background and after all previously commissioned background jobs will finish.
             </p>
@@ -4036,8 +4032,6 @@ The <em>ErrorCallback</em> is launched with these error types:
               <li>
 IOError, if sync fails or any error related to file handle occurs.              </li>
             </ul>
-           </div>
-<div class="description">
             <p>
 This method is asynchronous. Its execution will occur in background and after all previously commissioned background jobs will finish.
             </p>
@@ -4184,8 +4178,6 @@ The <em>ErrorCallback</em> is launched with these error types:
               <li>
 IOError, if close fails or any error related to file handle occurs.              </li>
             </ul>
-           </div>
-<div class="description">
             <p>
 This method is asynchronous. Its execution will occur in background and after all previously commissioned background jobs will finish.
             </p>

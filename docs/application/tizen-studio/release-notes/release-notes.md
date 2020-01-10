@@ -1,1 +1,1 @@
-3-5-release-notes.md
+3-6-release-notes.md

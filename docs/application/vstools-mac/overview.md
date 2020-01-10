@@ -1,6 +1,6 @@
 # Visual Studio for Mac Extension for Tizen
 
-Visual Studio for Mac Extension for Tizen is an extension for Microsoft Visual Studio for Mac. It enables you to develop Tizen .NET aplications easily with Visual Studio for Mac.
+Visual Studio for Mac Extension for Tizen is an extension for Microsoft Visual Studio for Mac. It enables you to develop Tizen .NET applications easily with Visual Studio for Mac.
 
 ## Prerequisites
 
@@ -43,7 +43,7 @@ To install Visual Studio for Mac Extension for Tizen:
 	![Browse Extension](media/install-extension3.png)
 	
 4. After the extension list is refreshed, expand the **IDE extensions** in the **Gallery** tab and select the 
-   **Visual Studio for Mac Extension for Tizen**. Click **Install...** at bottom right.
+   **Visual Studio for Mac Extension for Tizen**. Click **Install...** at the bottom right.
 
 	![Install Popup](media/install-extension4.png)
 	![Install Popup1](media/install-extension5.png)
