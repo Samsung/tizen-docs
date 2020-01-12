@@ -97,13 +97,3 @@
 ## [Tizen Compliance Program](/platform/compliance/compliance-program.md)
 ## [Tizen Compliance Specification](/platform/compliance/compliance-specification.md)
 ## [Tizen Compliance Test](/platform/compliance/compliance-test.md)
-
-# Tizen RT
-## [Overview](/platform/tizen-rt/tizen-rt-overview.md)
-## [Getting Started](/platform/tizen-rt/rt-getting-started.md)
-## [API](/platform/tizen-rt/rt-api.md)
-## [1.0 Specification](/platform/tizen-rt/rt-specification-1-0.md)
-## [Long-term Goals](/platform/tizen-rt/rt-goal.md)
-## Release Notes
-### [Tizen RT 1.0 M1](/platform/tizen-rt/release-notes/tizen-rt-1-0-m1.md)
-
