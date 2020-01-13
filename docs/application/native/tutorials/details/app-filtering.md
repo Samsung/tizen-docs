@@ -201,6 +201,10 @@ package:
 | `http://tizen.org/feature/network.bluetooth.hid` | Specify this key, if the application requires the Bluetooth Human Input Device feature (HID). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth LE feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le.5_0` | Specify this key, if the application requires the Bluetooth 5 feature. | 5.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Client. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.server` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Server. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.ipsp` | Specify this key, if the application requires the Bluetooth Internet Protocol Support Profile (IPSP). | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.oob` | Specify this key, if the application requires Bluetooth Out Of Band (OOB). | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.opp` | Specify this key, if the application requires the Bluetooth Object Push feature (OPP). | 2.3   |
 | `http://tizen.org/feature/network.ethernet` | Specify this key, if the application requires the Ethernet connection. | 2.4   |
 | `http://tizen.org/feature/network.mtp`   | Specify this key, if the application requires the Media Transfer Protocol (MTP) Host (Initiator) feature. | 3.0   |
@@ -380,6 +384,10 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.bluetooth.hid.device` | Specify this key, if the application requires the Bluetooth Human Interface Device (HID) device feature. | 3.0   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth LE feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le.5_0` | Specify this key, if the application requires the Bluetooth 5 feature. | 5.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Client. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.server` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Server. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.ipsp` | Specify this key, if the application requires the Bluetooth Internet Protocol Support Profile (IPSP). | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.oob` | Specify this key, if the application requires Bluetooth Out Of Band (OOB). | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.opp` | Specify this key, if the application requires the Bluetooth Object Push feature (OPP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.phonebook.client` | Specify this key, if the application requires the Bluetooth Phone Book Access (PBAP) client feature. | 3.0   |
 | `http://tizen.org/feature/network.ethernet` | Specify this key, if the application requires the Ethernet connection. | 2.4   |
