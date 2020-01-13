@@ -85,7 +85,22 @@ Enabling the monitor and retrieving data is a basic Human Activity Monitor (HAM)
    tizen.humanactivitymonitor.getHumanActivityData('HRM', onsuccessCB, onerrorCB);
    ```
 
-4. To disable HAM when it is no longer required, use the `stop()` method of the `HumanActivityMonitorManager` interface:
+4. If the requested `HumanActivityType` type is `PEDOMETER` then `getHumanActivityData()` provides the `HumanActivityPedometerData` object. This object not only includes data gathered since the call of the `start()` method, but also the data gathered since the device boot:
+
+    ```
+    function onsuccessCB(pedometerData) {
+        console.log('Steps made since start: ' + pedometerData.cumulativeTotalStepCount);
+        console.log('Steps made since device boot: ' + pedometerData.accumulativeTotalStepCount);
+    }
+
+    function onerrorCB(error) {
+        console.log('Error occurred: ' + error.message);
+    }
+
+    tizen.humanactivitymonitor.getHumanActivityData('PEDOMETER', onsuccessCB, onerrorCB);
+    ```
+
+5. To disable HAM when it is no longer required, use the `stop()` method of the `HumanActivityMonitorManager` interface:
 
    ```
    tizen.humanactivitymonitor.stop('HRM');
