@@ -123,7 +123,6 @@ To manage the media controller features in your application, you must learn to h
    ```javascript
    var requestPlaybackInfoCb = {
        onplaybackactionrequest: function(action, clientName) {
-<<<<<<< HEAD
            console.log('Received playback change request for: ' + action);
            if ("TOGGLE_PLAY_PAUSE" === action){
             if (mcServer.playback.state === "PLAY") {
@@ -134,9 +133,6 @@ To manage the media controller features in your application, you must learn to h
            } else {
                mcServer.playback.state = action;
            }
-=======
-           console.log('Request to change the playback state to: ' + action);
->>>>>>> b6408bd975490b95d0425c123fec76622fb67739
        },
        onplaybackpositionrequest: function(position, clientName) {
            console.log('Request to change the playback position to: ' + position);
@@ -552,10 +548,6 @@ To manage the media controller playlists in your server application, you must le
     2. or get playlist by name with method `getPlaylist()`:
 
         ```javascript
-<<<<<<< HEAD
-=======
-        /* assuming that the playlist was previously created */
->>>>>>> b6408bd975490b95d0425c123fec76622fb67739
         var playlist = null;
         try {
             playlist = mcServer.playlists.getPlaylist("playlistName");
@@ -644,10 +636,6 @@ To manage the media controller playlist in your application, you must handle req
     2. or get playlist by name with method `getPlaylist()`:
 
         ```javascript
-<<<<<<< HEAD
-=======
-        /* assuming that the playlist was previously created */
->>>>>>> b6408bd975490b95d0425c123fec76622fb67739
         var playlist = null;
         try {
             playlist = mcServerInfo.playlists.getPlaylist("playlistName");
