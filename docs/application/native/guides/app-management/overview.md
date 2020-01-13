@@ -68,7 +68,7 @@ You can use the following application data exchange features in your native appl
 
 - [Widget Viewer](widget-viewer.md)
 
-  You can display Tizen widget applications, manage life-cycle of its instances and retrieve widget information.
+  You can display Tizen widget applications, manage life-cycle of its instances, and retrieve widget information.
 
 ## Related Information
 - Dependencies

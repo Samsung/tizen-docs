@@ -613,8 +613,8 @@
 #### [Data Bundle](/application/native/guides/app-management/data-bundles.md)
 #### [RPC Port](/application/native/guides/app-management/rpc-port.md)
 #### [TIDL](/application/native/guides/app-management/tidl.md)
-#### [Widget Viewer](/application/native/guides/app-management/widget-viewer.md)
 #### [Sticker](/application/native/guides/app-management/sticker.md)
+#### [Widget Viewer](/application/native/guides/app-management/widget-viewer.md)
 
 ### User Interface
 

@@ -1,21 +1,21 @@
 # EFL Widget Viewer
 
 
-The widget viewer API provides functionality that display and manage Tizen native widget applications.
+The widget viewer API provides functionality that displays and manages Tizen native widget applications.
 
-The main features of the Widget Viewer Application API include:
+The main features of the widget viewer application API include:
 
 - Displaying widgets
 
-  You can create widget objects, which will [display a widget](#display) application's buffer. The buffer is updated when the widget application updated its own window.
+  You can create widget objects that can [display a widget](#display) application's buffer. The buffer is updated when the widget application updates its window.
 
-- Managing widget life-cycles
+- Managing widget life-cycle
 
-  You can [manage created widget applications' life-cycles](#manage_lifecycle).
+  You can [manage the instance life-cycle](#manage_life-cycle) of a created widget application.
 
 - Retrieving widget information
 
-  You can [retrieve created widget applications' information](#retrieve_information).
+  You can [retrieve the created widget application's information](#retrieve_information).
 
 
 
@@ -23,7 +23,7 @@ The main features of the Widget Viewer Application API include:
 
 To enable your application to use the widget viewer functionality:
 
-1.  To use the widget viewer API (in [mobile](../../api/mobile/latest/group__CAPI__WIDGET__VIEWER__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__WIDGET__VIEWER__MODULE.html) applications), the application has to request permission. Add the following privilege to the `tizen-manifest.xml` file:
+1.  To use the widget viewer API (in [mobile](../../api/mobile/latest/group__CAPI__WIDGET__VIEWER__EVAS__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__WIDGET__VIEWER__EVAS__MODULE.html) applications), the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -38,18 +38,18 @@ To enable your application to use the widget viewer functionality:
     ```
 
 <a name="display"></a>
-## Display widgets
+## Display Widgets
 
-To display widget application's buffer you have to create widget object which will be the sharing point of the widget application's buffer.
+To display widget application's buffer you have to create widget object which will be the sharing point of the widget application's buffer. You can create the widget object as shown in the following code.
 
-1. Initialize widget viewer with the `widget_viewer_evas_init()` function. Its parameter is an application's window object.
+1. Initialize widget viewer using `widget_viewer_evas_init()`. The parameter of `widget_viewer_evas_init()` is the window object of an application:
 
    ```
    Evas_Object *win = elm_win_add(NULL, "VIEWER", ELM_WIN_BASIC);
    int ret = widget_viewer_evas_init(win);
    ```
 
-2. Create widget object with the `widget_viewer_evas_add_widget()` function. Its parameters are parent Evas_Object, widget id (the widget application's appid or class id), content info (Bundle encoded data which contains extra information about widget developer can retrieve it using `widget_viewer_evas_get_content_info`), and widget update period.
+2. Create a widget object using `widget_viewer_evas_add_widget()`. The parameters of `widget_viewer_evas_add_widget()` are parent Evas_Object, widget ID, content information, and widget update period. The widget ID is the widget application's app ID or class ID. Content information is the bundle encoded data, which contains extra information on the widget. You can retrieve the content information using `widget_viewer_evas_get_content_info()`:
 
 
    ```
@@ -63,32 +63,36 @@ To display widget application's buffer you have to create widget object which wi
    evas_object_show(widget);
    ```
 
-3. Finalize widget viewer functionality with the `widget_viewer_evas_fini()` function.
+3. Finalize widget viewer functionality using `widget_viewer_evas_fini()`:
 
    ```
    int ret = widget_viewer_evas_fini();
    ```
 
-<a name="manage_lifecycle"></a>
-## Manage widget lifecycles
+<a name="manage_life-cycle"></a>
+## Manage widget life-cycle
 
-After displaying widget, you can manage the widget application's lifecycle as shown in the following code.
+After displaying a widget, you can manage the widget application's lifecycle:
 
-1. Resume widget application's instance using an `widget_viewer_evas_resume_widget()` function. Its parameter is an widget object created by the `widget_viewer_evas_add_widget` function.
+1. Create widget object with `widget_viewer_evas_add_widget()`.
 
    ```
    Evas_Object *widget = widget_viewer_evas_add_widget(win, "widget_id", (const char *)raw, 0.0);
+   ```
+
+2. Resume the instance of a widget application using `widget_viewer_evas_resume_widget()`. The parameter of `widget_viewer_evas_resume_widget()` is a widget object created by `widget_viewer_evas_add_widget()`:
+
+   ```
    int ret = widget_viewer_evas_resume_widget(widget);
    ```
 
-2. Pause widget application's instance using an `widget_viewer_evas_pause_widget()` function. Its parameter is an widget object created by the `widget_viewer_evas_add_widget` function.
+3. Pause an instance of a widget application instance using `widget_viewer_evas_pause_widget()`. The parameter of `widget_viewer_evas_pause_widget()` is a widget object created by `widget_viewer_evas_add_widget()`:
 
    ```
-   Evas_Object *widget = widget_viewer_evas_add_widget(win, "widget_id", (const char *)raw, 0.0);
    int ret = widget_viewer_evas_pause_widget(widget);
    ```
 
-3. Resume/Pause all the widget instances displayed by the widget viewer application using `widget_viewer_evas_notify_resumed_status_of_viewer()` and `widget_viewer_evas_notify_paused_status_of_viewer()` functions.
+4. Resume or pause all the widget instances displayed by the widget viewer application using `widget_viewer_evas_notify_resumed_status_of_viewer()` and `widget_viewer_evas_notify_paused_status_of_viewer()`:
 
    ```
    int ret = widget_viewer_evas_notify_resumed_status_of_viewer();
@@ -96,18 +100,18 @@ After displaying widget, you can manage the widget application's lifecycle as sh
    ```
 
 <a name="retrieve_information"></a>
-## Retrieve widget information
+## Retrieve Widget Information
 
 After displaying widget, you can retrieve information about widget instances as shown in the following code.
 
-1. Get content information using an `widget_viewer_evas_get_content_info()` function. Its parameter is an widget object created by the `widget_viewer_evas_add_widget` function.
+1. Get the content information using `widget_viewer_evas_get_content_info()`. The parameter of `widget_viewer_evas_get_content_info()` is a widget object created by widget_viewer_evas_add_widget:
 
    ```
    Evas_Object *widget = widget_viewer_evas_add_widget(win, "widget_id", (const char *)raw, 0.0);
    const char *content = widget_viewer_evas_get_content_info(widget);
    ```
 
-2. Get widget id from the widget object using an `widget_viewer_evas_get_widget_id()` function. Its parameter is an widget object created by the `widget_viewer_evas_add_widget` function.
+2. Get widget ID from the widget object using `widget_viewer_evas_get_widget_id()`. The parameter for `widget_viewer_evas_get_widget_id()` is a widget object created by `widget_viewer_evas_add_widget()`:
 
    ```
    Evas_Object *widget = widget_viewer_evas_add_widget(win, "widget_id", (const char *)raw, 0.0);
