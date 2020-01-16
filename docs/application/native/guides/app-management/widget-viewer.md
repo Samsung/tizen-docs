@@ -40,7 +40,7 @@ To enable your application to use the Widget Viewer functionality:
 <a name="display"></a>
 ## Display Widgets
 
-To display widget application's buffer you have to create widget object which will be the sharing point of the widget application's buffer. You can create the widget object as shown in the following code:
+Widget application shares its window to the Widget Viewer application. To display the widget application's buffer you have to create a widget object. The widget application's buffer is displayed on the widget object. You can create the widget object as shown in the following code:
 
 1. Initialize Widget Viewer using `widget_viewer_evas_init()`. The parameter of `widget_viewer_evas_init()` is the window object of an application:
 
