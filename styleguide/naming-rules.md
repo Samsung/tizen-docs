@@ -52,9 +52,9 @@ Each product is to use the exact service/product type name.
 4. Studio for design and technical development tools  
     ‘Studio’ comes for the 3rd layer.
 
-## Unique nouns 
+## Proper nouns 
 
-The following nouns are unique nouns:
+The following nouns are proper nouns:
 - Tizen
 - Tizen Mobile
 - Tizen TV
@@ -71,7 +71,7 @@ The following nouns are unique nouns:
 - All API module names  
   e.g. Tizen Alaram API, Tizen Notification API, Tizen Device API
 
-### How to use unique nouns
+### How to use proper nouns
 
 1. Do use without 'the' when you use the following nouns alone:
       - Tizen, Tizen 3.x, 4.x, 5.x
@@ -93,7 +93,7 @@ The following nouns are unique nouns:
       - TIzen Web API
       - TizenFX API
 
-3. Do use 'the' when the unique nouns are used with common nouns.
+3. Do use 'the' when the proper nouns are used with common nouns.
 
       - The Tizen Studio menu,
       - The Tizen Mobile profile
