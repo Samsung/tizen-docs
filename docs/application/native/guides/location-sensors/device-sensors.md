@@ -106,7 +106,7 @@ If a listener is created successfully, it is able to observe sensor data changes
    ```
    /* Define callback */
    void
-   example_sensor_callback(sensor_h sensor, sensor_event_s *event, void *user_data)
+   example_sensor_callback(sensor_h sensor, sensor_event_s events[], int events_count, void *user_data)
    {
        /*
           If a callback is used to listen for different sensor types,
@@ -114,21 +114,25 @@ If a listener is created successfully, it is able to observe sensor data changes
        */
        sensor_type_e type;
        sensor_get_type(sensor, &type);
-
+       int i = 0;
        if (type == SENSOR_ACCELEROMETER) {
-           unsigned long long timestamp = event->timestamp;
-           int accuracy = event->accuracy;
-           float x = event->values[0];
-           float y = event->values[1];
-           float z = event->values[2];
+          for (i = 0; i < events_count; i++) {
+             unsigned long long timestamp = events[i].timestamp;
+             int accuracy = events[i].accuracy;
+             float x = events[i].values[0];
+             float y = events[i].values[1];
+             float z = events[i].values[2];
+          }
        } else if (type == SENSOR_HRM_LED_GREEN) {
-           unsigned long long timestamp = event->timestamp;
-           int v = (int)event->values[0];
+           unsigned long long timestamp = events[0].timestamp;
+           int v = (int)events[0].values[0];
        }
    }
+   /* Set interval */
+   sensor_listener_set_interval(listener, 100);
 
    /* Register callback */
-   sensor_listener_set_event_cb(listener, 100, example_sensor_callback, NULL);
+   sensor_listener_set_events_cb(listener, example_sensor_callback, NULL);
    ```
 
    In the above example, the update interval for the sensor data is set to 100 ms.
