@@ -45,11 +45,11 @@ The main features of the Media Controller API include:
 
 - Setting content type
 
-    You can [set the content type](#setting-content-type-for-currently-playing-media) for the currently playing media
+    You can [set the content type](#setting-content-type-for-currently-playing-media) for the currently playing media.
 
 - Setting age rating
 
-    You can [set the age rating](#setting-content-age-rating-for-currently-playing-media) for the currently playing media
+    You can [set the age rating](#setting-content-age-rating-for-currently-playing-media) for the currently playing media.
 
 - Managing playlists on server side
 
