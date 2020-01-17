@@ -43,13 +43,17 @@ The main features of the Media Controller API include:
 
   You can use the media controller server to [receive the search requests](#receiving-search-request) using the `setSearchRequestListener()` method, and return the `RequestReply` object to the client who sent the request.
 
-- [Setting content type](#setting-content-type-for-currently-playing-media) for the currently playing media
+- Setting content type
 
-- [Setting age rating](#setting-content-age-rating-for-currently-playing-media) for the currently playing media
+    You can [set the content type](#setting-content-type-for-currently-playing-media) for the currently playing media
+
+- Setting age rating
+
+    You can [set the age rating](#setting-content-age-rating-for-currently-playing-media) for the currently playing media
 
 - Managing playlists on server side
 
-  You can [manage playlists](#managing-playlists-on-server-side) on server side by creating, saving, deleting and getting information about playlists. You can also update the playback item from the playlists item list.
+  You can [manage playlists](#managing-playlists-on-server-side) on server side by creating, saving, deleting, and getting information about playlists. You can also update the playback item from the playlists item list.
 
 - Managing playlists on client side
 
@@ -168,8 +172,8 @@ To manage the media controller features in your application, you must learn to h
     };
    ```
 
-4. You can send a request from the client using the `sendPlaybackAction()`, `sendPlaybackPosition()`, `sendShuffleMode()` or `sendRepeatState()` methods of the `MediaControllerServerInfoPlaybackInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfoPlaybackInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfoPlaybackInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerServerInfoPlaybackInfo) applications).
-   In the following example, send a request for the changing the playback shuffle mode to `true` using the `sendShuffleMode()` method:
+4. You can send a request from the client using the `sendPlaybackAction()`, `sendPlaybackPosition()`, `sendShuffleMode()`, or `sendRepeatState()` methods of the `MediaControllerServerInfoPlaybackInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfoPlaybackInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfoPlaybackInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerServerInfoPlaybackInfo) applications).
+   The following example shows how to send a request for changing the playback shuffle mode to `true` using the `sendShuffleMode()` method:
 
    ```javascript
    mcServerInfo.playback.sendShuffleMode(true, replyCallback);
@@ -530,8 +534,8 @@ To manage the media controller playlists in your server application, you must le
    mcServer.playlists.savePlaylist(playlist, successCallback, errorCallback);
    ```
 
-4. To get information about playlists:
-    1. use the `getAllPlaylists()` method:
+4. To get information about playlists, you can use the following:
+    * To get the entire play list information, use the `getAllPlaylists()` method:
 
         ```javascript
         function successCallback(playlists) {
@@ -545,7 +549,7 @@ To manage the media controller playlists in your server application, you must le
         mcServer.playlists.getAllPlaylists(successCallback, errorCallback);
         ```
 
-    2. or get playlist by name with method `getPlaylist()`:
+    * To get the playlist information by name, use the `getPlaylist()` method:
 
         ```javascript
         var playlist = null;
@@ -587,7 +591,7 @@ To manage the media controller playlists in your server application, you must le
 
 To manage the media controller playlist in your application, you must handle requests from the client to the server:
 
-1. Send a request from the client using the `sendPlaybackItem()` method of the `MediaControllerPlaylistsInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaylistsInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaylistsInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerPlaylistsInfo) applications).
+1. Send a request from the client using the `sendPlaybackItem()` method of the `MediaControllerPlaylistsInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaylistsInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaylistsInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerPlaylistsInfo) applications):
 
    ```javascript
    mcServerInfo.playlists.sendPlaybackItem("testPlaylistName", "index1", "PLAY", 0);
@@ -619,7 +623,7 @@ To manage the media controller playlist in your application, you must handle req
    ```
 
 5. To get information about playlists:
-    1. use the `getAllPlaylists()` method:
+    * To get the entire play list information, use the `getAllPlaylists()` method:
 
         ```javascript
         function successCallback(playlists) {
@@ -633,7 +637,7 @@ To manage the media controller playlist in your application, you must handle req
         mcServerInfo.playlists.getAllPlaylists(successCallback, errorCallback);
         ```
 
-    2. or get playlist by name with method `getPlaylist()`:
+    * To get the playlist information by name, use the `getPlaylist()` method:
 
         ```javascript
         var playlist = null;
