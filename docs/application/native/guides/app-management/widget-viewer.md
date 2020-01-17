@@ -74,25 +74,25 @@ Widget application shares its window to the Widget Viewer application. To displa
 
 After displaying a widget, you can manage the widget application's lifecycle:
 
-1. Create widget object with `widget_viewer_evas_add_widget()`.
+1. Create widget object using `widget_viewer_evas_add_widget()`.
 
    ```
    Evas_Object *widget = widget_viewer_evas_add_widget(win, "widget_id", (const char *)raw, 0.0);
    ```
 
-2. Resume the instance of widget application using `widget_viewer_evas_resume_widget()` with the widget object as the parameter.:
+2. Resume the instance of the widget application using `widget_viewer_evas_resume_widget()` with the widget object as the parameter:
 
    ```
    int ret = widget_viewer_evas_resume_widget(widget);
    ```
 
-3. Pause the instance of widget application using `widget_viewer_evas_pause_widget()` with the widget object as the parameter.:
+3. Pause the instance of the widget application using `widget_viewer_evas_pause_widget()` with the widget object as the parameter:
 
    ```
    int ret = widget_viewer_evas_pause_widget(widget);
    ```
 
-4. Resume or Pause all the widget instances displayed by the widget viewer application using `widget_viewer_evas_notify_resumed_status_of_viewer()` and `widget_viewer_evas_notify_paused_status_of_viewer()`.:
+4. Resume or pause all the widget instances displayed by the Widget Viewer application using `widget_viewer_evas_notify_resumed_status_of_viewer()` and `widget_viewer_evas_notify_paused_status_of_viewer()`:
 
    ```
    int ret = widget_viewer_evas_notify_resumed_status_of_viewer();
@@ -104,31 +104,31 @@ After displaying a widget, you can manage the widget application's lifecycle:
 
 After displaying widget, you can retrieve information about widget instances as shown in the following code.
 
-1. Create widget object with `widget_viewer_evas_add_widget()`.
+1. Create widget object using `widget_viewer_evas_add_widget()`.
 
    ```
    Evas_Object *widget = widget_viewer_evas_add_widget(win, "widget_id", (const char *)raw, 0.0);
    ```
 
-2. Get the content information using `widget_viewer_evas_get_content_info()` with the widget object as the parameter.:
+2. Get the content information using `widget_viewer_evas_get_content_info()` with the widget object as the parameter:
 
    ```
    const char *content = widget_viewer_evas_get_content_info(widget);
    ```
 
-3. Get widget ID from the widget object using `widget_viewer_evas_get_widget_id()` with the widget object as the parameter.:
+3. Get widget ID from the widget object using `widget_viewer_evas_get_widget_id()` with the widget object as the parameter:
 
    ```
    const char *widget_id = widget_viewer_evas_get_widget_id(widget);
    ```
 
-4. Get widget update period from the widget object using an `widget_viewer_evas_get_period()` with the widget object as the parameter.:
+4. Get widget update period from the widget object using `widget_viewer_evas_get_period()` with the widget object as the parameter:
 
    ```
    double period = widget_viewer_evas_get_period(widget);
    ```
 
-5. Get widget instance id from the widget object using an `widget_viewer_evas_get_widget_instance_id()` with the widget object as the parameter.:
+5. Get widget instance id from the widget object using `widget_viewer_evas_get_widget_instance_id()` with the widget object as the parameter:
 
    ```
    const char *instance_id = widget_viewer_evas_get_widget_instance_id(widget);
