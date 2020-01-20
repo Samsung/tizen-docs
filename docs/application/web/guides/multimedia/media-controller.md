@@ -147,7 +147,7 @@ To manage the media controller features in your application, you must learn to h
            mcServer.playback.shuffleMode = mode;
        },
        onrepeatstaterequest: function(state, clientName) {
-           console.log('Request to change the playback repeat state to: ' + state));
+           console.log('Request to change the playback repeat state to: ' + state);
            mcServer.playback.repeatState = mode;
        },
        onplaybackitemrequest: function(playlistName, index, state, position, clientName) {
