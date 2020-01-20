@@ -127,7 +127,7 @@ After displaying widget, you can retrieve information about widget instances:
    double period = widget_viewer_evas_get_period(widget);
    ```
 
-5. Get widget instance id from the widget object using `widget_viewer_evas_get_widget_instance_id()` with the widget object as the parameter:
+5. Get widget instance ID from the widget object using `widget_viewer_evas_get_widget_instance_id()` with the widget object as the parameter:
 
    ```
    const char *instance_id = widget_viewer_evas_get_widget_instance_id(widget);
