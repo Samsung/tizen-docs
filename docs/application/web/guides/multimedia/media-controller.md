@@ -528,7 +528,7 @@ To manage the media controller playlists in your server application, you must le
    playlist.addItem("index1", metadata);
    ```
 
-3. To save playlist, use the `savePlaylist()` method wih optional callbacks:
+3. To save playlist, use the `savePlaylist()` method with optional callbacks:
 
    ```javascript
    function successCallback() {
