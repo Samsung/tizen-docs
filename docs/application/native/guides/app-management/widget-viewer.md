@@ -1,9 +1,9 @@
 # EFL Widget Viewer
 
 
-The Widget Viewer API provides functionality that displays and manages Tizen Native widget applications.
+The Widget Viewer API provides functionality that displays and manages widget applications.
 
-The main features of the Widget Viewer application API include:
+The main features of the Widget Viewer API include:
 
 - Displaying widgets
 
@@ -40,7 +40,7 @@ To enable your application to use the Widget Viewer functionality:
 <a name="display"></a>
 ## Display Widgets
 
-Widget application shares its window to the Widget Viewer application. To display the widget application's buffer you have to create a widget object. The widget application's buffer is displayed on the widget object. You can create the widget object as shown in the following code:
+Widget application shares its window to the Widget Viewer application. To display the widget application's buffer you have to create a widget object. The widget application's buffer is displayed on the widget object. You can create the widget object:
 
 1. Initialize Widget Viewer using `widget_viewer_evas_init()`. The parameter of `widget_viewer_evas_init()` is the window object of an application:
 
@@ -49,8 +49,7 @@ Widget application shares its window to the Widget Viewer application. To displa
    int ret = widget_viewer_evas_init(win);
    ```
 
-2. Create a widget object using `widget_viewer_evas_add_widget()`. The parameters of `widget_viewer_evas_add_widget()` are parent Evas_Object, widget ID, content information, and widget update period. The widget ID is the widget application's app ID or class ID. Content information is the bundle encoded data, which contains extra information on the widget. You can retrieve the content information using `widget_viewer_evas_get_content_info()`:
-
+2. Create a widget object using `widget_viewer_evas_add_widget()`. The parameters of `widget_viewer_evas_add_widget()` are parent Evas_Object, widget ID, content information, and widget update period. The widget ID is the widget application's app ID or class ID. Content information is the bundle encoded data, which contains extra information on the widget:
 
    ```
    const char *content_info;
@@ -70,7 +69,7 @@ Widget application shares its window to the Widget Viewer application. To displa
    ```
 
 <a name="manage_life-cycle"></a>
-## Manage widget life-cycle
+## Manage Widget Life-cycle
 
 After displaying a widget, you can manage the widget application's lifecycle:
 
@@ -102,7 +101,7 @@ After displaying a widget, you can manage the widget application's lifecycle:
 <a name="retrieve_information"></a>
 ## Retrieve Widget Information
 
-After displaying widget, you can retrieve information about widget instances as shown in the following code:
+After displaying widget, you can retrieve information about widget instances:
 
 1. Create widget object using `widget_viewer_evas_add_widget()`:
 
