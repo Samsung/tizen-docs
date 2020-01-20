@@ -240,6 +240,8 @@ To manage the media controller features in your application, you must learn to r
 
 To manage the media controller features in your application, you must learn to send custom commands:
 
+<a name="send_custom_commands"></a>
+
 1. On the client side:
 
    1. Define your custom command:
@@ -268,6 +270,8 @@ To manage the media controller features in your application, you must learn to s
       mcServerInfo.sendCommand('myPlaylistFilter', exampleCustomCommandData, sendCommandSuccessCallback, sendCommandErrorCallback);
       ```
 
+<a name="receive_custom_commands"></a>
+
 2. On the server side:
 
    1. Create the `MediaControllerReceiveCommandCallback` object (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerReceiveCommandCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerReceiveCommandCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerReceiveCommandCallback) applications) to define a listener for receiving custom commands from a client:
@@ -294,6 +298,8 @@ To manage the media controller features in your application, you must learn to s
 
 Custom command enables the client application to talk to the server application.
 The communication in the opposite direction is done with the help of custom events.
+
+<a name="receive_custom_events"></a>
 
 1. To listen to the custom events on the client-side:
 
@@ -324,6 +330,7 @@ The communication in the opposite direction is done with the help of custom even
       ```javascript
       mcClient.unsetCustomEventListener();
       ```
+<a name="send_custom_events"></a>
 
 2. To send the custom events on the server-side:
 
@@ -481,7 +488,7 @@ Server can set age rating for current playback. Client can access this rating (r
     var userAge = 17; // App developer should retrieve actual user age from user profile.
     var rating = mcServerInfo.playback.ageRating;
     if (rating > userAge) {
-        console.log("Warning: this content has age rating " + rating + "+.";
+        console.log("Warning: this content has age rating " + rating + "+.");
     }
     ```
 
@@ -535,7 +542,7 @@ To manage the media controller playlists in your server application, you must le
    ```
 
 4. To get information about playlists, you can use the following:
-    * To get the entire play list information, use the `getAllPlaylists()` method:
+    - To get the entire play list information, use the `getAllPlaylists()` method:
 
         ```javascript
         function successCallback(playlists) {
@@ -549,7 +556,7 @@ To manage the media controller playlists in your server application, you must le
         mcServer.playlists.getAllPlaylists(successCallback, errorCallback);
         ```
 
-    * To get the playlist information by name, use the `getPlaylist()` method:
+    - To get the playlist information by name, use the `getPlaylist()` method:
 
         ```javascript
         var playlist = null;
@@ -623,7 +630,7 @@ To manage the media controller playlist in your application, you must handle req
    ```
 
 5. To get information about playlists:
-    * To get the entire play list information, use the `getAllPlaylists()` method:
+    - To get the entire play list information, use the `getAllPlaylists()` method:
 
         ```javascript
         function successCallback(playlists) {
@@ -637,7 +644,7 @@ To manage the media controller playlist in your application, you must handle req
         mcServerInfo.playlists.getAllPlaylists(successCallback, errorCallback);
         ```
 
-    * To get the playlist information by name, use the `getPlaylist()` method:
+    - To get the playlist information by name, use the `getPlaylist()` method:
 
         ```javascript
         var playlist = null;
