@@ -242,6 +242,9 @@ Original documentation: <a href="https://www.npmjs.com/package/cordova-plugin-fi
 See <a href="https://www.w3.org/TR/FileAPI/#blob-section">The Blob Interface and Binary Data</a>.
           </div>
 <pre class="webidl prettyprint">  typedef <a href="#Blob">Blob</a> Blob;</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 </div>
 <div class="typedef" id="WriteData">
 <a class="backward-compatibility-anchor" name="::File::WriteData"></a><h3>1.2. WriteData</h3>
@@ -2001,6 +2004,9 @@ Otherwise, if no other error occurs, getFile must return a FileEntry correspondi
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface DirectoryReader {
     void readEntries(<a href="#EntriesCallback">EntriesCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
@@ -2075,6 +2081,9 @@ Otherwise, if no other error occurs, getFile must return a FileEntry correspondi
     void createWriter(<a href="#FileWriterCallback">FileWriterCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
     void file(<a href="#FileCallback">FileCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a> onerror);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
@@ -2705,6 +2714,9 @@ ByteLength: 3
 <a class="backward-compatibility-anchor" name="::File::FileWriter::DONE"></a><span class="name">DONE</span><div class="brief">
  Above constants describe current state of FileWriter object.
             </div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
 <br><br>
 </li>
 </dl>
@@ -3098,6 +3110,9 @@ entry.createWriter(successCallback, errorCallback);
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ProgressCallback {
     void onsuccess(<a href="#ProgressEvent">ProgressEvent</a> event);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -3355,6 +3370,9 @@ entry.createWriter(successCallback, errorCallback);
  Used to supply a File as a response to a user query.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#File">File</a> file);</pre></div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>

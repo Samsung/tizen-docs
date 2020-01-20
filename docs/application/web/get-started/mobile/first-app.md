@@ -99,8 +99,7 @@ You can see the created project in the **Project Explorer** view. The most impor
 
 ![Application in the Project Explorer](media/basic_app_project_explorer_mw.png)
 
-> **Note**
->
+> [!NOTE]
 > You can [view and modify the application configuration](#configuration) in the Web application configuration editor. In this example, no configuration changes are required.
 
 Your application project is now ready for further actions. Next, build the application.
@@ -132,8 +131,7 @@ To view and modify the application configuration:
 
     -   **Source**: View and edit the source code of the `config.xml` file. Changes made and saved on the other tabs are reflected in the source code and vice versa.
 
-       > **Note**
-       >
+       > [!NOTE]
        > The `config.xml` file must conform to both the XML file format and the W3C specification requirements. Editing the file in the **Source** tab is intended for advanced users only.
 
 3.  To save any changes, in the Tizen Studio menu, select **File \> Save All**.
@@ -228,8 +226,7 @@ To run the application on the emulator:
 
         ![Application running in the emulator](media/emulator_running_mw.png)
 
-        > **Note**
-        >
+        > [!NOTE]
         > If the emulator display has switched off, you cannot see the application launch. To see the application on the emulator screen:
         > 1. To switch the display on, in the key window next to the emulator screen, click `Power`.
         > 2. On the home screen, swipe left.
@@ -282,8 +279,7 @@ To run the application on a target device:
 
     3.  Confirm that the application launches on the target device.
 
-    > **Note**
-    >
+    > [!NOTE]
 	> The application is launched using the default debug run configuration. To create and use another configuration:
     > 1. In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.

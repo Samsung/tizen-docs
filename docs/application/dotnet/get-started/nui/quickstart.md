@@ -2,8 +2,7 @@
 
 The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Natural User Interface (NUI) application development process. With the instructions, you can create and run a basic NUI application, which displays some text on the screen with no user interaction.
 
-   > **Note**
-   >
+   > [!NOTE]
    > .NET NUI applications are supported since Tizen 4.0.
 
 1. Before you get started with developing Tizen applications, set up the [development environment](../../../vstools/install.md).
@@ -39,8 +38,7 @@ To create a Tizen NUI application, follow these steps:
 
     ![nui_setting_image_2](./media/tizen_project_wizard_capture_template2.png)
 
-    > **Note**
-    >
+    > [!NOTE]
     > If Tizen.Net is available in NuGet packages then you can use the NUI APIs.
 
 ## Enhance Your Application
@@ -135,8 +133,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
         Initialize();
     }
     ```
-    > **Note**
-    >
+    > [!NOTE]
     > To invoke the `Created` event of the [Tizen.Applications.CoreApplication](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.CoreApplication.html) class, you must call the `base.OnCreate()` method inside the override.
 
 5.  In the `Initialize()` method, set the text label properties:
@@ -197,8 +194,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
     }
     ```
 
-    > **Note**
-    >
+    > [!NOTE]
     > To invoke the `Terminated` event of the `Tizen.Applications.CoreApplication` class, you must call the `base.OnTerminate()` method inside the override.
 
 9.  Implement the `Main()` method:
@@ -242,8 +238,7 @@ You can add your code in **SampleNUIApp.cs** file, as follows:
 
       ![launch_emulator2](media/tizen_project_wizard_capture_template4.png)
 
-    > **Note**
-    >
+    > [!NOTE]
     > You must update the emulator images to use the latest version.
 
 3.  After you launch an emulator instance, you can select the target from the drop-down list to change the deployment target in the Visual Studio toolbar:

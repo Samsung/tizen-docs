@@ -104,8 +104,8 @@ It denotes one-way-call from service.
 ```csharp
 interface ITest {
 	void OnReceivedEvent(string msg, bundle b) delegate;
-	void RegisterEvent(OnReceivedEvent cb);
-	void UnregisterEvent(OnReceivedEvent cb);
+	int RegisterEvent(OnReceivedEvent cb);
+	int UnregisterEvent(OnReceivedEvent cb);
 }
 ```
 
