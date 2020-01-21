@@ -43,13 +43,13 @@ The main features of the Media Controller API include:
 
   You can use the media controller server to [receive the search requests](#receiving-search-request) using the `setSearchRequestListener()` method, and return the `RequestReply` object to the client who sent the request.
 
-- Setting content type for the currently playing media
+- Setting content type
 
-  You can [set content type for the currently playing media](#setting-content-type-for-currently-playing-media) using the updatePlaybackContentType() server method.
+    You can [set the content type](#setting-content-type-for-currently-playing-media) for the currently playing media.
 
-- Setting age rating for the currently playing media
+- Setting age rating
 
-  You can [set age rating for the currently playing media](#setting-content-age-rating-for-currently-playing-media) using the updatePlaybackAgeRating() server method.
+    You can [set the age rating](#setting-content-age-rating-for-currently-playing-media) for the currently playing media.
 
 - Managing playlists on server side
 
@@ -122,25 +122,33 @@ To manage the media controller features in your application, you must learn to s
 To manage the media controller features in your application, you must learn to handle requests from the client to the server:
 
 1. Create a `MediaControllerChangeRequestPlaybackInfoCallback` object (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerChangeRequestPlaybackInfoCallback) applications) to define listeners for getting the requests from a client.
-  Each listener must invoke the appropriate function to perform the related update on the server and send an appropriate notification to the client. For example, the `onplaybackstaterequest` listener must use the `updatePlaybackState()` method to update the playback state.
+  Each listener must invoke the appropriate function to perform the related update on the server and send an appropriate notification to the client. For example, the `onshufflemoderequest` listener can change the playback shuffle mode of the media controller server:
 
    ```javascript
    var requestPlaybackInfoCb = {
-       onplaybackstaterequest: function(state, clientName) {
-           console.log('Request to change the playback state to: ' + state);
-           mcServer.updatePlaybackState(state);
+       onplaybackactionrequest: function(action, clientName) {
+           console.log('Received playback change request for: ' + action);
+           if ("TOGGLE_PLAY_PAUSE" === action){
+            if (mcServer.playback.state === "PLAY") {
+                mcServer.playback.state = "PAUSE";
+            } else {
+                mcServer.playback.state = "PLAY";
+            }
+           } else {
+               mcServer.playback.state = action;
+           }
        },
        onplaybackpositionrequest: function(position, clientName) {
            console.log('Request to change the playback position to: ' + position);
-           mcServer.updatePlaybackPosition(position);
+           mcServer.playback.position = position;
        },
        onshufflemoderequest: function(mode, clientName) {
            console.log('Request to change the playback shuffle mode to: ' + (mode ? 'TRUE' : 'FALSE'));
-           mcServer.updateShuffleMode(mode);
+           mcServer.playback.shuffleMode = mode;
        },
-       onrepeatmoderequest: function(mode, clientName) {
-           console.log('Request to change the playback repeat mode to: ' + (mode ? 'TRUE' : 'FALSE'));
-           mcServer.updateRepeatMode(mode);
+       onrepeatstaterequest: function(state, clientName) {
+           console.log('Request to change the playback repeat state to: ' + state);
+           mcServer.playback.repeatState = mode;
        },
        onplaybackitemrequest: function(playlistName, index, state, position, clientName) {
            console.log("Playlist: " + playlistName + " index: " + index + " state: " + state + " position " + position + " requested by " + clientName);
@@ -151,28 +159,24 @@ To manage the media controller features in your application, you must learn to h
 2. Add the listeners defined in the `MediaControllerChangeRequestPlaybackInfoCallback` object to the server:
 
    ```javascript
-   var watchId = mcServer.addChangeRequestPlaybackInfoListener(requestPlaybackInfoCb);
+   var watchId = mcServer.playback.addChangeRequestListener(requestPlaybackInfoCb);
    ```
 
-   The `watchId` variable stores the value, which can be used in the future to remove the listeners from the server using the `removeChangeRequestPlaybackInfoListener()` method.
+   The `watchId` variable stores the value, which can be used in the future to remove the listeners from the server using the `removeChangeRequestListener()` method.
 
-3. At the client side, before sending a request, define optional success and error callbacks:
+3. At the client side, before sending a request, define optional reply callback:
 
    ```javascript
-   function successCallback() {
-       console.log('Playback has been paused.');
-   }
-
-   function errorCallback(e) {
-       console.log('Error name: ' + e.name + ' Error message: ' + e.message);
-   }
+   var replyCallback = function (data, code) {
+        console.log("Server replied with return data: " + JSON.stringify(data) + " and code: " + code);
+    };
    ```
 
-4. You can send a request from the client using the `sendPlaybackState()`, `sendPlaybackPosition()`, `sendShuffleMode()`, or `sendRepeatMode()` method of the `MediaControllerServerInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
-   In the following example, send a request for the changing the playback state to paused using the `sendPlaybackState()` method:
+4. You can send a request from the client using the `sendPlaybackAction()`, `sendPlaybackPosition()`, `sendShuffleMode()`, or `sendRepeatState()` methods of the `MediaControllerServerInfoPlaybackInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfoPlaybackInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfoPlaybackInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerServerInfoPlaybackInfo) applications).
+   The following example shows how to send a request for changing the playback shuffle mode to `true` using the `sendShuffleMode()` method:
 
    ```javascript
-   mcServerInfo.sendPlaybackState('PAUSE', successCallback, errorCallback);
+   mcServerInfo.playback.sendShuffleMode(true, replyCallback);
    ```
 
 ## Setting and Getting Server Icon URI
@@ -185,7 +189,7 @@ To use the icon URI attribute in your media controller application, follow these
 
     ```javascript
     var mcServer = tizen.mediacontroller.createServer();
-    mcServer.updateIconURI("icon.png");
+    mcServer.iconURI = "icon.png";
     ```
 
 2. Get the server icon URI on the client side:
@@ -200,13 +204,7 @@ To use the icon URI attribute in your media controller application, follow these
 
 To manage the media controller features in your application, you must learn to receive notifications from the server:
 
-1. Define the needed variable:
-
-   ```javascript
-   var watcherId;
-   ```
-
-2. Define the event handlers for different notifications by implementing the `MediaControllerPlaybackInfoChangeCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback) applications):
+1. Define the event handlers for different notifications by implementing the `MediaControllerPlaybackInfoChangeCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerPlaybackInfoChangeCallback) applications):
 
    ```javascript
    var playbackListener = {
@@ -217,8 +215,8 @@ To manage the media controller features in your application, you must learn to r
        onshufflemodechanged: function(mode) {
            console.log('Shuffle mode changed to: ' + mode);
        },
-       onrepeatmodechanged: function(mode) {
-           console.log('Repeat mode changed to: ' + mode);
+       onrepeatstatechanged: function(state) {
+           console.log('Repeat state changed to: ' + state);
        },
        onmetadatachanged: function(metadata) {
            console.log('Playback metadata changed: ' + JSON.stringify(metadata));
@@ -226,16 +224,16 @@ To manage the media controller features in your application, you must learn to r
    };
    ```
 
-3. Register the listener to start receiving notifications about playback changes:
+2. Register the listener to start receiving notifications about playback changes:
 
    ```javascript
-   watcherId = mcServerInfo.addPlaybackInfoChangeListener(playbackListener);
+   var watcherId = mcServerInfo.playback.addPlaybackInfoChangeListener(playbackListener);
    ```
 
-4. To stop receiving notifications, use the `removePlaybackInfoChangeListener()` method:
+3. To stop receiving notifications, use the `removePlaybackInfoChangeListener()` method:
 
    ```javascript
-   mcServerInfo.removePlaybackInfoChangeListener(watcherId);
+   mcServerInfo.playback.removePlaybackInfoChangeListener(watcherId);
    ```
 
 ## Sending and Receiving Custom Commands
@@ -332,7 +330,6 @@ The communication in the opposite direction is done with the help of custom even
       ```javascript
       mcClient.unsetCustomEventListener();
       ```
-
 <a name="send_custom_events"></a>
 
 2. To send the custom events on the server-side:
@@ -450,16 +447,19 @@ Server can set content type for current playback. Client can access this type (r
 and perform some actions that depend on the content-type, such as displaying different icons for
 different types of media items.
 
-1. Setting content type on the server side:
+1. Creating the server and setting content type:
 
     ```javascript
-    mcServer.updatePlaybackContentType("VIDEO");
+    var mcServer = tizen.mediacontroller.createServer();
+    mcServer.playback.contentType = "VIDEO";
     ```
 
 2. Accessing content type on the client side:
 
     ```javascript
-    var type = mcServerInfo.playbackInfo.contentType;
+    var mcClient = tizen.mediacontroller.getClient();
+    var mcServerInfo = mcClient.getLatestServerInfo();
+    var type = mcServerInfo.playback.contentType;
     if (type == "VIDEO") {
         console.log("playing video");
     }
@@ -473,19 +473,22 @@ different types of media items.
 
 Server can set age rating for current playback. Client can access this rating (read-only) and perform some actions such as displaying a warning for underage users.
 
-1. Setting content age rating on the server side:
+1. Creating the server and setting content age rating:
 
     ```javascript
-    mcServer.updatePlaybackAgeRating("18");
+    var mcServer = tizen.mediacontroller.createServer();
+    mcServer.playback.ageRating = "18";
     ```
 
 2. Accessing content age rating on the client side:
 
     ```javascript
+    var mcClient = tizen.mediacontroller.getClient();
+    var mcServerInfo = mcClient.getLatestServerInfo();
     var userAge = 17; // App developer should retrieve actual user age from user profile.
-    var rating = mcServerInfo.playbackInfo.ageRating;
+    var rating = mcServerInfo.playback.ageRating;
     if (rating > userAge) {
-        console.log("Warning: this content has age rating " + rating + "+.";
+        console.log("Warning: this content has age rating " + rating + "+.");
     }
     ```
 
@@ -496,7 +499,7 @@ To manage the media controller playlists in your server application, you must le
 1. To create a media controller playlist, use the `createPlaylist()` method:
 
    ```javascript
-   var playlist = mcServer.createPlaylist("testPlaylistName");
+   var playlist = mcServer.playlists.createPlaylist("testPlaylistName");
    ```
 
 2. To add item to playlist, use the `addItem()` method:
@@ -525,7 +528,7 @@ To manage the media controller playlists in your server application, you must le
    playlist.addItem("index1", metadata);
    ```
 
-3. To save playlist, use the `savePlaylist()` method:
+3. To save playlist, use the `savePlaylist()` method with optional callbacks:
 
    ```javascript
    function successCallback() {
@@ -535,22 +538,35 @@ To manage the media controller playlists in your server application, you must le
    function errorCallback(error) {
        console.log("savePlaylist failed with error: " + error);
    }
-   mcServer.savePlaylist(successCallback, errorCallback);
+   mcServer.playlists.savePlaylist(playlist, successCallback, errorCallback);
    ```
 
-4. To get information about playlists, use the `getAllPlaylists()` method:
+4. To get information about playlists, you can use the following:
+    - To get the entire play list information, use the `getAllPlaylists()` method:
 
-   ```javascript
-   function successCallback(playlists) {
-       playlists.forEach(function(playlist) {
-           console.log("Playlist name: " + playlist.name);
-       });
-   }
-   function errorCallback(error) {
-       console.log("getAllPlaylists failed with error: " + error);
-    }
-   mcServer.getAllPlaylists(successCallback, errorCallback);
-   ```
+        ```javascript
+        function successCallback(playlists) {
+            playlists.forEach(function(playlist) {
+                console.log("Playlist name: " + playlist.name);
+            });
+        }
+        function errorCallback(error) {
+            console.log("getAllPlaylists failed with error: " + error);
+            }
+        mcServer.playlists.getAllPlaylists(successCallback, errorCallback);
+        ```
+
+    - To get the playlist information by name, use the `getPlaylist()` method:
+
+        ```javascript
+        var playlist = null;
+        try {
+            playlist = mcServer.playlists.getPlaylist("playlistName");
+        } catch (err) {
+            console.log(err.name + ": " + err.message);
+        }
+
+        ```
 
 5. To get information about playlist items, use the `getItems()` method:
 
@@ -575,17 +591,17 @@ To manage the media controller playlists in your server application, you must le
    function deleteFailure(error) {
        console.log("deletePlaylist failed with error: " + error);
    }
-   mcServer.deletePlaylist(playlist.name, deleteSuccess, deleteFailure);
+   mcServer.playlists.deletePlaylist(playlist.name, deleteSuccess, deleteFailure);
    ```
 
 ## Managing Playlists on Client Side
 
 To manage the media controller playlist in your application, you must handle requests from the client to the server:
 
-1. Send a request from the client using the `sendPlaybackItem()` method of the `MediaControllerServerInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerServerInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerServerInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerServerInfo) applications).
+1. Send a request from the client using the `sendPlaybackItem()` method of the `MediaControllerPlaylistsInfo` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaylistsInfo), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaylistsInfo), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerPlaylistsInfo) applications):
 
    ```javascript
-   mcServerInfo.sendPlaybackItem("testPlaylistName", "index1", "PLAY", 0);
+   mcServerInfo.playlists.sendPlaybackItem("testPlaylistName", "index1", "PLAY", 0);
    ```
 
 2. Define the event handlers for different notifications by implementing the `MediaControllerPlaylistUpdatedCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback), [wearable](../../api/latest/device_api/wearable/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback), and [tv](../../api/latest/device_api/tv/tizen/mediacontroller.html#MediaControllerPlaylistUpdatedCallback) applications):
@@ -604,14 +620,41 @@ To manage the media controller playlist in your application, you must handle req
 3. Register the listener to start receiving notifications about playlist changes:
 
    ```javascript
-   watcherId = mcServerInfo.addPlaylistUpdatedListener(listener);
+   var watcherId = mcServerInfo.playlists.addPlaylistUpdatedListener(listener);
    ```
 
 4. To stop receiving notifications, use the `removePlaylistUpdatedListener()` method:
 
    ```javascript
-   mcServerInfo.removePlaylistUpdatedListener(watcherId);
+   mcServerInfo.playlists.removePlaylistUpdatedListener(watcherId);
    ```
+
+5. To get information about playlists:
+    - To get the entire play list information, use the `getAllPlaylists()` method:
+
+        ```javascript
+        function successCallback(playlists) {
+            playlists.forEach(function(playlist) {
+                console.log("Playlist name: " + playlist.name);
+            });
+        }
+        function errorCallback(error) {
+            console.log("getAllPlaylists failed with error: " + error);
+            }
+        mcServerInfo.playlists.getAllPlaylists(successCallback, errorCallback);
+        ```
+
+    - To get the playlist information by name, use the `getPlaylist()` method:
+
+        ```javascript
+        var playlist = null;
+        try {
+            playlist = mcServerInfo.playlists.getPlaylist("playlistName");
+        } catch (err) {
+            console.log(err.name + ": " + err.message);
+        }
+
+        ```
 
 ## Media Controller Server Abilities
 
