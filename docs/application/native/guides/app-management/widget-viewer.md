@@ -62,7 +62,7 @@ Widget application shares its window to the Widget Viewer application. To displa
    evas_object_show(widget);
    ```
 
-3. Finalize Widget Viewer functionality using `widget_viewer_evas_fini()`:
+3. Finalize the Widget Viewer functionality using `widget_viewer_evas_fini()`:
 
    ```
    int ret = widget_viewer_evas_fini();
@@ -115,19 +115,19 @@ After displaying widget, you can retrieve information about widget instances:
    const char *content = widget_viewer_evas_get_content_info(widget);
    ```
 
-3. Get widget ID from the widget object using `widget_viewer_evas_get_widget_id()` with the widget object as the parameter:
+3. Get the widget ID from the widget object using `widget_viewer_evas_get_widget_id()` with the widget object as the parameter:
 
    ```
    const char *widget_id = widget_viewer_evas_get_widget_id(widget);
    ```
 
-4. Get widget update period from the widget object using `widget_viewer_evas_get_period()` with the widget object as the parameter:
+4. Get the widget update period from the widget object using `widget_viewer_evas_get_period()` with the widget object as the parameter:
 
    ```
    double period = widget_viewer_evas_get_period(widget);
    ```
 
-5. Get widget instance ID from the widget object using `widget_viewer_evas_get_widget_instance_id()` with the widget object as the parameter:
+5. Get the widget instance ID from the widget object using `widget_viewer_evas_get_widget_instance_id()` with the widget object as the parameter:
 
    ```
    const char *instance_id = widget_viewer_evas_get_widget_instance_id(widget);
