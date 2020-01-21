@@ -73,7 +73,7 @@ Widget application shares its window to the Widget Viewer application. To displa
 
 After displaying a widget, you can manage the widget application's lifecycle:
 
-1. Create widget object using `widget_viewer_evas_add_widget()`:
+1. Create a widget object using `widget_viewer_evas_add_widget()`:
 
    ```
    Evas_Object *widget = widget_viewer_evas_add_widget(win, "widget_id", (const char *)raw, 0.0);
@@ -103,7 +103,7 @@ After displaying a widget, you can manage the widget application's lifecycle:
 
 After displaying widget, you can retrieve information about widget instances:
 
-1. Create widget object using `widget_viewer_evas_add_widget()`:
+1. Create a widget object using `widget_viewer_evas_add_widget()`:
 
    ```
    Evas_Object *widget = widget_viewer_evas_add_widget(win, "widget_id", (const char *)raw, 0.0);
