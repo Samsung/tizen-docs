@@ -66,6 +66,10 @@ You can use the following application data exchange features in your native appl
 
   You can provide sticker information to an application that wants to read the sticker information, as a standard method. You can also retrieve the sticker information stored by the provider application.
 
+- [Widget Viewer](widget-viewer.md)
+
+  You can display Tizen widget applications, manage life-cycle of its instances, and retrieve widget information.
+
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
