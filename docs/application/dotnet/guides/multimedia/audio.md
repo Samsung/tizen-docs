@@ -163,7 +163,7 @@ To query audio device information:
             IEnumerable<AudioSampleFormat> supportedFormats = usbOutputDevice.GetSupportedSampleFormats();
             ```
 
-        2.  Choose one of the supported sample formats, then set it with the `SetSampleFormat()` method:
+        2.  Select one of the supported sample formats, then set it with the `SetSampleFormat()` method:
 
             ```csharp
             usbOutputDevice.SetSampleFormat(AudioSampleFormat.S16LE);
@@ -177,7 +177,7 @@ To query audio device information:
             IEnumerable<uint> supportedRates = usbOutputDevice.GetSupportedSampleRates();
             ```
 
-        2.  Choose one of the supported sample rates, then set it with the `SetSampleRate()` method:
+        2.  Select one of the supported sample rates, then set it with the `SetSampleRate()` method:
 
             ```csharp
             usbOutputDevice.SetSampleRate(48000);
