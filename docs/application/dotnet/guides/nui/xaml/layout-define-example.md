@@ -1,4 +1,4 @@
-# Example
+# Layout Define Example
 
 You can use XAML to define the layout of user interface in your applications. To define the layout, follow these steps:
 1. Create a XAML file
@@ -7,7 +7,7 @@ You can use XAML to define the layout of user interface in your applications. To
 
 > **Note**
 > 
-> Tizen NUI Xaml App platform provides supports of a XAML application template and you can use XMAL since **Tizen.NET API 7** version.
+> Tizen NUI XAML application platform provides a XAML application template and you can use XAML since **Tizen.NET API version 7**.
 
 ## Create XAML
 
@@ -15,7 +15,7 @@ You can use XAML to easily implement the layout shown in the following figure:
 
 ![AmbientPage](./media/AmbientPage.PNG)
 
-Following is the XAML code:
+To implement the layout, you can use the following code:
 
 ```xml
 <ContentPage x:Class="Tizen.NUI.Examples.AmbientPage"
@@ -53,12 +53,13 @@ Following is the XAML code:
 </ContentPage>
 ```
 
-In this example, the relative path of the image resources (relative to the location of the exe file) is used. You can also use the absolute path of the image.
+In this code, the relative image path from the exe file is used. You can also use the absolute path of the image.
 
 ### Requirements
 
-- `x:Class` specifies the namespace and the class name for a class defined in the XAML file. The class name must match the class name of the code-behind file:
-- The filename of the XAML file must be same with the class name.
+- `x:Class` specifies the namespace and the class name for a class defined in the XAML file. The class name must match the class name of the code-behind file.
+
+- The filename of the XAML file must be same as the class name.
 
 ```xml
 <ContentPage x:Class="Tizen.NUI.Examples.AmbientPage"
@@ -84,15 +85,10 @@ namespace Tizen.NUI.Examples
 ```
 For more information, see [XAML Support for Tizen.NUI](./getting-started-with-nui-xaml.md).
 
-
 ## Load XAML
 
 After creating the layout, you must load the XAML file in your app code.
 First, you need to define a class named `AmbientPage` in the `Tizen.NUI.Examples` namespace as shown in the following code:
-
-> **Note**
->
-> The class name must match with `x:class` that you have defined in the XAML file.
 
 ```csharp
 namespace Tizen.NUI.Examples
@@ -119,7 +115,8 @@ namespace Tizen.NUI.Examples
 }
 ```
 
-`AmbientPage` must inherit form `ContentPage`. All the objects that you have defined in the XAML file must be added to `ContentPage`, and then these objects will be added to `Window` as a result. As you can see the root node of the XAML file is also a `ContentPage`, which is consistent with the code. All the pages in your application should inherit from the `ContentPage`.
+`AmbientPage` must inherit form `ContentPage`. All the objects that you have defined in the XAML file must be added to `ContentPage`, and then these objects will be added to `Window` as a result. 
+As you can see the root node of the XAML file is also `ContentPage`, which is consistent with the code. All the pages in your application must be inherited from `ContentPage`.
 
 Then you can load the XAML file in the app using the following code:
 
@@ -145,8 +142,8 @@ namespace Tizen.NUI.Examples
 
 To support the multi-window size, it is recommended to create different folders to keep the XAML files for devices with various window sizes.
 
-For example, if your application runs on the **1920x1080** target and **720X1280** targets, then create the **res/layout/1920x1080/** and **res/layout/720X1280/** folders.
+For example, if your application runs on the **1920x1080** and **720X1280** targets, then create the **res/layout/1920x1080/** and **res/layout/720X1280/** folders.
 Therefore, when your application runs on the **1920x1080** target, it will load the XAML files from the **res/layout/1920x1080/** folder and when your application runs on the **720X1280** target, it will load the XAML files from the **res/layout/720X1280/** folder.
 If you are not considering different window sizes, create the **res/layout/** folder, and put all your XAML files in this folder.
 
-For more information, see [XAML Support for Tizen.NUI](./getting-started-with-nui-xaml.md).
+For more information, see [XAML Support for Tizen.NUI](./xaml-support-for-tizen-nui.md).
