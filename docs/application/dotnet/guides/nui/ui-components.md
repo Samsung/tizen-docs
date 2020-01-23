@@ -24,9 +24,7 @@ The following table lists the available UI components:
 | [Switch](./nui-components/Switch.md) | A switch that can be used as a selector. | `Switch`                |
 | [Tab](./nui-components/Tab.md) | A tab is easy to explore and switch between different views. | `Tab`                |
 | [TableView](./tableview.md)          | A table view that can align child actors in a grid like layout. | `TableView`             |
-| [TextEditor](./texteditor.md)        | A text editor that provides a multi line editable text. | `TextEditor`                |
-| [TextField](./textfield.md)          | A text field that provides a single line editable text. | `TextField`                 |
-| [TextLabel](./textlabel.md)          | A text label that renders a short text string. | `TextLabel`                |
+| [Text](./text.md)                    | A text that renders a short text string and provides a editable text. | `TextLabel`, `TextField`, `TextEditor`  |
 | [Toast](./nui-components/Toast.md) | A toast is used to provide simple messages. | `Toast`                |
 | [VideoView](./videoview.md)          | A video view that controls and displays video playback. | `VideoView`                 |
 
