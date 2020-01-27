@@ -240,7 +240,8 @@ dlog_print(DLOG_INFO, LOG_TAG, "%d bytes of response received: %s", bytes_transf
 <a name="async_transfer"></a>
 ## Asynchronous Transfer
 
-Asynchronous transfers, including isochronous and control transfers, are explained with examples on [their API page](../../api/mobile/latest/group__CAPI__USB__HOST__ASYNC__MODULE.html).
+Asynchronous transfer is a way to let the system handle traffic in the background, without having to wait for a transfer to finish. A program can request an asynchronous transfer and proceed further, then be notified by the system at some point after the request gets handled.
+Asynchronous transfer includes isochronous and control transfers. For more information, including examples, see [Asynchronous IO](../../api/mobile/latest/group__CAPI__USB__HOST__ASYNC__MODULE.html).
 
 
 ## Related Information
