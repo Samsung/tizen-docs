@@ -7,14 +7,23 @@
 	<link href="../snippet.css" rel="StyleSheet" type="text/css">
 	<title>Panel Changer</title>
 </head>
-<body onload="prettyPrint()" id="content">
+<body id="content">
 <h1>Panel Changer</h1>
 
 <p>To implement multi page layout in a page component, you can use panel and panel changer components.</p>
 <p>Panel can have header, content and so on like the page component.<br>
 It works even if the panel components is in other HTML files.<br>
 Panel changer component controls lifecycle of the panels.</p>
+<img src="../../images/mobile_panelchanger.png" width="15%">
+<br>
 
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.0%2Fexamples%2Fmobile%2FUIComponents%2Fcomponents%2Fnavigationelements%2Fpanel%2Findex.html', '_blank')"
+>Use example</button>
 
 <h2>Table of Contents</h2>
 <ol class="toc">
@@ -258,5 +267,10 @@ var elPanelChanger = document.getElementById(&quot;panelchanger&quot;),
 			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
 		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
 </div>
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
 </body>
 </html>
