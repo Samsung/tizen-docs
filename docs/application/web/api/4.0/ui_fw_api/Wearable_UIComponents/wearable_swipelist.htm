@@ -7,7 +7,7 @@
 	 <link href="../snippet.css" rel="StyleSheet" type="text/css" />
 	 <title>Swipe List</title>
  </head>
- <body onload="prettyPrint()" id="content">
+ <body id="content">
 
 <h1>Swipe List</h1>
 
@@ -78,8 +78,6 @@ You can set the details when swiping such as elements that appear, background co
 
 <h3>JavaScript</h3>
 <pre class="prettyprint">
-(function()
-{
    var page = document.getElementById(&quot;pageSwipeList&quot;),
        listElement = page.getElementsByClassName(&quot;ui-swipelist-list&quot;)[0],
        swipeList;
@@ -97,7 +95,6 @@ You can set the details when swiping such as elements that appear, background co
       /* Release object */
       swipeList.destroy();
    });
-})();
 </pre>
 
 <h2 id="options-list">Options</h2>
@@ -107,81 +104,83 @@ You can set the details when swiping such as elements that appear, background co
 <tbody>
 	<tr>
 		<th>Option</th>
-		<th>Type</th>
+		<th>Input type</th>
+		<th>Default value</th>
 		<th>Description</th>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">swipeTarget</span></td>
-		<td>String</td>
-		<td>Swipe list selector.
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">li</span>.</p></td>
+		<td>string</td>
+		<td><span style="font-family: Courier New,Courier,monospace">li</span></td>
+		<td>Swipe list selector.</td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">swipeElement</span></td>
-		<td>String</td>
-		<td>Swipe list container selector.
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">.ui-swipelist</span>.</p></td>
+		<td>string</td>
+		<td><span style="font-family: Courier New,Courier,monospace">.ui-swipelist</span></td>
+		<td>Swipe list container selector.</td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">swipeLeftElement</span></td>
-		<td>String</td>
-		<td>Swipe left container selector.
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">.ui-swipelist-left</span>.</p></td>
+		<td>string</td>
+		<td><span style="font-family: Courier New,Courier,monospace">.ui-swipelist-left</span>.</td>
+		<td>Swipe left container selector.</td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">swipeRightElement</span></td>
-		<td>String</td>
-		<td>Swipe right container selector.
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">.ui-swipelist-right</span>.</p></td>
+		<td>string</td>
+		<td><span style="font-family: Courier New,Courier,monospace">.ui-swipelist-right</span></td>
+		<td>Swipe right container selector.</td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">threshold</span></td>
-		<td>Number</td>
-		<td>Define the threshold (in pixels) for the minimum swipe movement which allows the swipe action to appear.
-		</td>
+		<td>number</td>
+		<td>10</td>
+		<td>Define the threshold (in pixels) for the minimum swipe movement which allows the swipe action to appear.</td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">animationThreshold</span></td>
-		<td>IntNumbereger</td>
+		<td>number</td>
+		<td>150</td>
 		<td>Define the threshold (in pixels) for the minimum swipe movement that allows a swipe animation (with a color change) to be shown. The animation threshold is usually the threshold for the next operation after the swipe.
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">150</span>.</p></td>
+		</td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">animationDuration</span></td>
-		<td>Number</td>
+		<td>number</td>
+		<td>200</td>
 		<td>Define the swipe list animation duration.
-		<p>Do not change the default value, since it has been defined to show a complete color change.</p>
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">200</span>.</p></td>
+		<p>Do not change the default value, since it has been defined to show a complete color change.</p></td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">animationInterval</span></td>
-		<td>Number</td>
-		<td>Define the swipe list animation interval. The animation is called with the <span style="font-family: Courier New,Courier,monospace">requestAnimationFrame()</span> method once every 1/60 seconds. The interval determines how many coordinates the animation proceeds between each call. The animation ends when the coordinates reach the value defined as <span style="font-family: Courier New,Courier,monospace">animationDuration</span>. This option basically allows you to control the speed of the animation.
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">8</span>.</p></td>
+		<td>number</td>
+		<td>8</td>
+		<td>Define the swipe list animation interval. The animation is called with the <span style="font-family: Courier New,Courier,monospace">requestAnimationFrame()</span> method once every 1/60 seconds. The interval determines how many coordinates the animation proceeds between each call. The animation ends when the coordinates reach the value defined as <span style="font-family: Courier New,Courier,monospace">animationDuration</span>. This option basically allows you to control the speed of the animation.</td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">ltrStartColor</span></td>
-		<td>String</td>
-		<td>Define the start color for the left-to-right swipe.
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">#62a917</span>.</p></td>
+		<td>string</td>
+		<td>#62a917</td>
+		<td>Define the start color for the left-to-right swipe.</td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">ltrEndColor</span></td>
-		<td>String</td>
-		<td>Define the end color for the left-to-right swipe.
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">#58493a</span>.</p></td>
+		<td>string</td>
+		<td>#58493a</td>
+		<td>Define the end color for the left-to-right swipe.</td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">rtlStartColor</span></td>
-		<td>String</td>
-		<td>Define the start color for the right-to-left swipe.
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">#eaa317</span>.</p></td>
+		<td>string</td>
+		<td>#eaa317</td>
+		<td>Define the start color for the right-to-left swipe.</td>
 	</tr>
 	<tr>
 		<td><span style="font-family: Courier New,Courier,monospace">rtlEndColor</span></td>
-		<td>String</td>
-		<td>Define the end color for the right-to-left swipe.
-		<p>The default value is <span style="font-family: Courier New,Courier,monospace">#58493a</span>.</p></td>
+		<td>string</td>
+		<td>#58493a</td>
+		<td>Define the end color for the right-to-left swipe.</td>
 	</tr>
 </tbody>
 </table>
@@ -212,14 +211,11 @@ You can set the details when swiping such as elements that appear, background co
 <p>To use the swipe list events, use the following code:</p>
 
 <pre class="prettyprint">
-(function()
-{
    var slist = document.getElementById(&quot;swipelist&quot;);
    slist.addEventListener(&quot;swipelist.left&quot;, function(evt)
    {
       /* You can connect your app with a native app (such as phone call or message) using the Device API */
    });
-})();
 </pre>
 
 
@@ -239,5 +235,10 @@ var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga
 })();
 </script>
 
- </body>
+ <script>
+	document.addEventListener("DOMContentLoaded", function () {
+		prettyPrint();
+	});
+</script>
+</body>
 </html>

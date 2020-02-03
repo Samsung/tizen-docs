@@ -9985,10 +9985,12 @@
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_checkbox.htm" label="CheckboxRadio"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circleprogressbar.htm" label="CircleProgressBar"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_circularindexscrollbar.htm" label="CircularIndexScrollBar"></topic>
+						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_datepicker.htm" label="DatePicker"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_drawer.htm" label="Drawer"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_indexscrollbar.htm" label="IndexScrollBar"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_list.htm" label="List"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_marquee.htm" label="Marquee"></topic>
+						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_numberpicker.htm" label="NumberPicker"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_pageindicator.htm" label="PageIndicator"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_popup.htm" label="Popup"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_processing.htm" label="Processing"></topic>
@@ -9998,6 +10000,7 @@
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_slider.htm" label="Slider"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_snaplistview.htm" label="SnapListview"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_swipelist.htm" label="SwipeList"></topic>
+						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_timepicker.htm" label="TimePicker"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_toggleswitch.htm" label="ToggleSwitch"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_viewSwitcher.htm" label="ViewSwitcher"></topic>
 						<topic href="html/ui_fw_api/Wearable_UIComponents/wearable_virtuallist.htm" label="VirtualList"></topic>
