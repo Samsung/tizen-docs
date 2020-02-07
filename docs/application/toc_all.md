@@ -37,7 +37,7 @@
 
 ### [Third Party Libraries for Tizen .NET Application](/application/dotnet/tutorials/library-list.md)
 
-### [Application Filtering](/application/native/tutorials/details/app-filtering.md)
+### [Application Filtering](/application/dotnet/tutorials/app-filtering.md)
 
 ### [Security and API Privileges](/application/dotnet/tutorials/sec-privileges.md)
 
@@ -614,6 +614,7 @@
 #### [RPC Port](/application/native/guides/app-management/rpc-port.md)
 #### [TIDL](/application/native/guides/app-management/tidl.md)
 #### [Sticker](/application/native/guides/app-management/sticker.md)
+#### [Widget Viewer](/application/native/guides/app-management/widget-viewer.md)
 
 ### User Interface
 

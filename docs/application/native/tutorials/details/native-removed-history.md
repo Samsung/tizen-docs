@@ -104,6 +104,7 @@ The following table provides detailed information regarding removed functions an
 | Content - Media Content - Media Information | media_info_set_album(), media_info_set_artist(), media_info_set_genre(), media_info_set_recorded_date() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Content - Media Content - Media Storage | media_storage_get_name() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Content - Media Content - Media Information | video_meta_update_to_db() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
+| Multimedia - Thumbnail Util | thumbnail_util_cancel_all() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Multimedia - Media Controller Client | mc_client_set_server_update_cb() | Mobile, Wearable | Since 4.0 | 5.5 | Better alternative | mc_client_set_server_updated_cb() |
 | Multimedia - Media Controller Client | mc_client_unset_server_update_cb() | Mobile, Wearable | Since 4.0 | 5.5 | Better alternative | mc_client_unset_server_updated_cb() |
 | Multimedia - Media Controller Client | mc_client_set_playback_update_cb() | Mobile, Wearable | Since 4.0 | 5.5 | Better alternative | mc_client_set_playback_updated_cb() |
