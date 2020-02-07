@@ -333,35 +333,6 @@ To debug application, follow these steps:
 
     ![Debugging you application in the Web Simulator](media/tizen_web18.png)
 
-### Run Design Editor
-
-To run Design Editor, follow one of the below ways:
-
-> **Note** 
-> 
-> You must select the **HTML extension file** in the file explorer.
-
-- Command Palette
-    1. In VS Code, click **View** > **Command Palette**.
-    2. In the input field of the **Command Palette** that appears, type **Tizen Web: Run Design-Editor** and press **Enter**.
-
-        A new tab is created and the Design Editor is launched.
-
-- Design-Editor button
-
-    To launch the Design Editor, click **Design-Editor** at the bottom right of the screen.
-
-    ![Design Editor button](media/tizen_web27.png)
-- Right-click preference
-    1. Select the HTML file that you want to launch and right-click.
-    2. From the list that appears, click **Tizen Web: Run Design-Editor**.
-
-        ![Design Editor right click](media/tizen_web28.png)
-
-Design Editor is successfully launched.
-
-![Design Editor launch](media/tizen_web29.png)
-
 ### Quick Action Execution
 Right-click on the **project folder** to use the extension function in the menu.
 
@@ -373,6 +344,98 @@ For more information on each function, see:
 - [Tizen Web: Run Tizen App](#Deploy-and-Run-Application-in-Emulator)
 
 ![Design Editor launch](media/tizen_web34.png)
+
+
+## Tizen Web with Design Editor
+
+Visual Studio Code Extension for Tizen Web supports WYSIWYG Design Editor features such as **Preview**, **JavaScript Assistant**, **Structure View**, **New Page**, **HTML Assistant**, **Undo**, and **Redo**. 
+
+You must select the **HTML extension file** in the file explorer before you launch Design Editor.
+
+### Run Design Editor
+
+To run Design Editor, perform one of the following:
+
+- Using Command Palette
+
+    1. To launch Design Editor, click **View** > **Command Palette** in VS Code.
+    2. In the input field of **Command Palette** that appears, type **Tizen Web: Run Design-Editor** and press **Enter**.
+
+        A new tab is created and Design Editor is launched.
+
+- Using Design-Editor button
+
+    To launch Design Editor, click **Design-Editor** on the VS Code window as shown in the following figure:
+
+    ![Design Editor button](media/tizen_web27.png)
+
+- Using right-click options
+
+    1. To launch Design Editor, select the HTML file that you want to launch and right-click.
+    2. From the list that appears, click **Tizen Web: Run Design-Editor**.
+
+        ![Design Editor right click](media/tizen_web28.png)
+
+### Features
+
+Following are the WYSIWYG Design Editor features:
+
+- Drag and Drop a component
+
+    You can drag and drop a component from the Widgets palette to the canvas.
+
+    ![Design Editor Widget](media/tizen_web35.png)
+    
+- Change component properties
+
+    After placing the UI components, you can set the component properties in the Attributes palette.
+
+    ![Design Editor Attribute](media/tizen_web36.png)
+
+- Preview
+
+    You can use **Preview** ![Design Editor PreviewIcon](media/tizen_web45.png) in the toolbar to display the preview of the edited page.
+
+    ![Design Editor Preview](media/tizen_web37.png)
+   
+- JavaScript Assistant
+
+   You can use **JavaScript Assistant** ![Design Editor JSAssitantIcon](media/tizen_web46.png) in the toolbar to edit the Javascript code with **JavaScript Assistant Wizard** ![Design Editor JSAssitantCodeIcon](media/tizen_web52.png).
+
+    ![Design Editor JavaScript Assistant](media/tizen_web38.png)
+
+- Structure View
+
+   You can use **Structure View** ![Design Editor StructureIcon](media/tizen_web47.png) in the toolbar to see the DOM tree of the page.
+
+   ![Design Editor Structure](media/tizen_web39.png)
+
+- New Page 
+
+   You can use **New Page** ![Design Editor NewPageIcon](media/tizen_web48.png) in the toolbar to add a new page with empty, header, footer, or list template.
+
+   ![Design Editor Newpage](media/tizen_web40.png)
+
+- HTML Assistant
+
+   You can use **HTML Assistant** ![Design Editor HTMLAssistantIcon](media/tizen_web49.png) in the toolbar to edit the HTML code.
+
+   ![Design Editor HTML Assistant](media/tizen_web41.png)
+
+- Undo or Redo 
+
+   You can use **Undo** ![Design Editor UndoIcon](media/tizen_web50.png) or **Redo** ![Design Editor RedoIcon](media/tizen_web51.png) in the toolbar to undo or redo any action.
+
+### Usage of Design Editor 
+
+- Usage of Radio button with HTML Assistant
+
+    ![Design Editor Radio button usage](media/tizen_web43.gif)
+
+- Usage of Popup with Javascript Assistant
+
+    ![Design Editor Popup usage](media/tizen_web44.gif)
+
 
 ## Tizen Web with Code IntelliSense
 
