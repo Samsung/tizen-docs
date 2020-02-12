@@ -4,7 +4,11 @@ When you create your first Tizen .NET application, you can select from the follo
 
 -   [Wearable .NET application](wearable/first-app.md)
 
-    A wearable application is targeted to run on a smart watch. The applications can be optimized for the smaller screen.
+    A wearable application is targeted to run on a smart watch. The application can be optimized for the smaller screen.
+
+-   [Wearable XAML application](wearable/first-xaml-app.md)
+
+    A Wearable XAML application allows you to use XAML to define the visual contents of a page and work together with a C# code-behind file on a smart watch.
 
 -   [TV .NET application](tv/first-app.md)
 

@@ -214,6 +214,7 @@ The code does not show the instantiation of the `App` class. Since application l
 
 ```csharp
 using System;
+using Xamarin.Forms;
 
 namespace CrossTemplate1
 {
@@ -222,13 +223,14 @@ namespace CrossTemplate1
         protected override void OnCreate()
         {
             base.OnCreate();
+
             LoadApplication(new App());
         }
 
         static void Main(string[] args)
         {
             var app = new Program();
-            global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
+            Forms.Init(app);
             app.Run(args);
         }
     }

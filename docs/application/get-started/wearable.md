@@ -19,6 +19,10 @@ The following guide demonstrates how to create and run a basic Tizen .NET applic
 
     A wearable application is targeted to run on a smart watch. The applications can be optimized for the smaller screen.
 
+-   [Wearable XAML application](../dotnet/get-started/wearable/first-xaml-app.md)
+
+    A Wearable XAML application allows you to use XAML to define the visual contents of a page and work together with a C# code-behind file on a smart watch.
+
 First, ensure that you have installed the latest version of Visual Studio Tools for Tizen. [**Learn more >**](../vstools/install.md)
 
 ## Web Application
