@@ -1,3 +1,15 @@
+Check the following prerequisites before attempting to debug Web applications using Chrome.
+
+##Chrome Requirements
+The Web Inspector tool is displayed in a new Google Chrome™ browser window.
+To use the web inspector tool, you need to install Chrome™ browser in your on your system.
+Following the below steps.
+Go to Window > Preferences > Tizen Studio > Web > Chrome.
+The Google Chrome™ browser location is automatically set if the browser is installed on your system.
+If you have installed the browser in a custom location, the Tizen Studio cannot automatically detect the path and you must set the location manually as shown below.
+![Chrome setting](./media/setchrome_webinspector.png)
+
+
 # Debugging with Web Inspector
 
 You can [debug Web applications](../../web/tutorials/process/run-debug-app.md) using the JavaScript Debugger tool. The JavaScript Debugger is based on Webkit Web Inspector, and has been modified to support remote debugging.
