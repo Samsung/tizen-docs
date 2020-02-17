@@ -10,4 +10,5 @@ You can implement in-app purchase in your application by using the Tizen applica
 
 To use in-app purchase, you can use your Tizen Store Seller Office account to register items to the [Tizen Store Seller Office](http://seller.tizenstore.com/). To get started, read the following guide:
 
-- [In-app Purchase Programming Guide](in-app-purchase.md)
+- [In-app Purchase Programming Guide](https://developer.samsung.com/galaxy-watch-iap/overview.html){:target="_blank"}
+

@@ -1156,7 +1156,6 @@
 ## Extension SDK
 
 ### [Overview](/application/tizen-studio/extension-sdk/overview.md)
-### [In-App Purchase Program Guide](/application/tizen-studio/extension-sdk/in-app-purchase.md)
 
 ## RT IDE
 
