@@ -495,11 +495,6 @@
 
 ## [Overview](/application/native/index.md)
 
-### Watchface Complication
-#### [Overview](/application/native/guides/complications/overview.md)
-#### [Watchface Complication](/application/native/guides/complications/watchface-complication.md)
-#### [Complication Provider](/application/native/guides/complications/watchface-complication-provider.md)
-
 ## Get Started
 
 ### [Overview](/application/native/get-started/overview.md)
