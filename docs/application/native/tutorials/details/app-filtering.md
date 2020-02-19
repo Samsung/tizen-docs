@@ -248,11 +248,13 @@ package:
 | `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
 | `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
+| `http://tizen.org/feature/platform.core.cpu.arch.armv8` | Specify this key, if the application requires the ARMv8 CPU architecture. | 5.0 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse3` | Specify this key, if the application requires the SSE3 FPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.ssse3` | Specify this key, if the application requires the SSSE3 FPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.vfpv3` | Specify this key, if the application requires the VFPv3 FPU architecture. | 2.2.1 |
+| `http://tizen.org/feature/platform.core.fpu.arch.vfpv4` | Specify this key, if the application requires the VFPv4 FPU architecture. | 5.0 |
 | `http://tizen.org/feature/platform.native.osp_compatible` | Specify this key, if the application requires OSP compatibility (the bada compatibility mode). | 2.2.1 |
 | `http://tizen.org/feature/screen.auto_rotation` | Specify this key, if the application requires the automatic screen rotation feature. | 2.2.1 |
 | `http://tizen.org/feature/screen.size.all` | Specify this key, if the application supports all possible current and future screen sizes and all possible current and future resolutions per screen size. | 2.2.1 |
@@ -422,11 +424,13 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
 | `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
+| `http://tizen.org/feature/platform.core.cpu.arch.armv8` | Specify this key, if the application requires the ARMv8 CPU architecture. | 5.0 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse3` | Specify this key, if the application requires the SSE3 FPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.ssse3` | Specify this key, if the application requires the SSSE3 FPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.vfpv3` | Specify this key, if the application requires the VFPv3 FPU architecture. | 2.2.1 |
+| `http://tizen.org/feature/platform.core.fpu.arch.vfpv4` | Specify this key, if the application requires the VFPv4 FPU architecture. | 5.0 |
 | `http://tizen.org/feature/platform.native.osp_compatible` | Specify this key, if the application requires OSP compatibility (the bada compatibility mode). | 2.2.1 |
 | `http://tizen.org/feature/screen.auto_rotation` | Specify this key, if the application requires the automatic screen rotation feature. | 2.2.1 |
 | `http://tizen.org/feature/screen.shape.circle` | Specify this key, if the application requires a circle-shaped screen. | 2.3.1 |
