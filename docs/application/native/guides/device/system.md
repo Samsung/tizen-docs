@@ -511,7 +511,7 @@ The following table lists the platform feature keys:
 | `http://tizen.org/feature/platform.core.cpu.arch` | `String` | The platform returns the CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv6` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv6 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv7 CPU architecture. |
-| `http://tizen.org/feature/platform.core.cpu.arch.armv8` | `bool`   | The platform returns `true` for this key, if the device runs en the ARMv8 CPU architecture. |
+| `http://tizen.org/feature/platform.core.cpu.arch.armv8` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv8 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | `bool`   | The platform returns `true` for this key, if the device runs on the x86 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.frequency` | `int`    | The platform returns the frequency at which a core CPU is running. |
 | `http://tizen.org/feature/platform.core.fpu.arch` | `String` | The platform returns the FPU architecture. |
