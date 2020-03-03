@@ -202,7 +202,7 @@ If you want to change the Certificate, you need to remove the added Certificate.
       > [!NOTE]
       > To view the **Tizen Certificate Manager** window, type **Tizen Web: Run Certificate-Manager** in Command Palette.
 
-### Build project
+### Build your project
 
 To build project, follow these steps:
 
@@ -230,7 +230,7 @@ To build the project after removing unwanted files, follow these steps:
 
       ![Exclude Build List](media/tizen_web30.png)
 
-### Deploy and run application in emulator
+### Deploy and run your application in emulator
 
 To deploy and run application, follow these steps:
 
@@ -279,7 +279,7 @@ To run project if your app is already installed, follow these steps:
         > - debug `0` means normal launch.
         > - debug `1` means launching an inspector available from command line.
 
-### Debug application in emulator
+### Debug your application in emulator
 
 1. In VS Code, click **View** > **Command Palette**.
 2. In the input field of the **Command Palette** that appears, type **Tizen Web: Debug Tizen App** and press **Enter**.
@@ -305,7 +305,7 @@ To run project if your app is already installed, follow these steps:
     > [!NOTE] 
     > If you have a Tizen device and want to deploy the application into it, then you must first generate a certificate and add it.
 
-### Debug application in Web simulator
+### Debug your application in Web simulator
 
 To debug application, follow these steps:
 

@@ -114,7 +114,7 @@ To create a Tizen .NET project:
 6. Enter the project name.
 7. For a building target, select a solution file with the `.sln` extension or a project file with the `.csproj` extension.
 
-### Build project
+### Build your project
 
 To build your project:
 
@@ -126,7 +126,7 @@ To build your project:
 > If you have a Tizen device and want to deploy the application to it, you must create a certificate profile using the Tizen Certificate Manager or Tizen CLI before building your project. For more information, see [Certificate Manager](../vstools/tools/certificate-manager.md).
 
 <a name="emulator-run"></a>
-### Deploy and run application in emulator
+### Deploy and run your application in emulator
 
 To deploy and run your application:
 
@@ -140,7 +140,7 @@ To deploy and run your application:
 4. To deploy your application to the target, enter **tizen install** in the **Command Palette** and select **Tizen .NET: Install a Tizen .NET application on the Tizen device**.
 5. To run the application on the emulator, enter **tizen run** in the **Command Palette** and select **Tizen .NET: Run a Tizen .NET application on the Tizen device**.
 
-### Debug application in emulator
+### Debug your application in emulator
 
 To debug your application:
 
