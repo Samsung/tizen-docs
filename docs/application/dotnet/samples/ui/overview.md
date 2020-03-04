@@ -165,6 +165,13 @@ for TD:
 			</td>
 		</tr>
 		<tr>
+			<td><img alt="" height="180" src="media/w81tetris.png" width="180"/></td>
+			<td>
+                        <p><strong>(W) Tetris</strong> [In progress]</p>
+			<p>This sample application demonstrates how to create a Tetris game.</p>
+			</td>
+		</tr>
+		<tr>
 			<td><img alt="" height="180" src="media/wxstopwatch.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/XStopWatch" target="_blank"><strong>(W) XStopWatch</strong></a></p>
@@ -354,7 +361,7 @@ for TD:
 			<p><img alt="" height="225" src="media/tv9visualsample.png" width="400" /></p>
 			</td>
 			<td>
-            <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/VisualSample" target="_blank"><strong>(T) Visual Sample (NUI)</strong></a></p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/VisualSample" target="_blank"><strong>(T) Visual Sample (NUI)</strong></a></p>
 			<p>This sample application demonstrates how to use various kinds of visuals.</p>
 			</td>
 		</tr>
