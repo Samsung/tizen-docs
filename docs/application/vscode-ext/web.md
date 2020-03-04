@@ -237,7 +237,7 @@ To deploy and run application, follow these steps:
 1. In VS Code, click **View** > **Command Palette**.
 2. In the input field of the **Command Palette** that appears, type **Tizen Web: Run Emulator-Manager** and press **Enter**.
 
-   > [!NOTE]  
+   > [!NOTE]
    > To launch an emulator in VS Code, you must launch Tizen Emulator Manager and select the emulator you want to launch.
 
 3. Create and launch an emulator instance in the Emulator Manager.
@@ -256,7 +256,7 @@ To install project:
     
     The app launches automatically when the installation completes successfully.
 
-    > [!NOTE] 
+    > [!NOTE]
     > If you have a Tizen device and want to deploy the application into it, then you must first generate a certificate and add it.
 
 To run project if your app is already installed, follow these steps:
@@ -271,7 +271,7 @@ To run project if your app is already installed, follow these steps:
   
       ![Run Your Tizen App](media/tizen_web15.png)
 
-        > [!NOTE]  
+        > [!NOTE]
         > If you have a Tizen device and want to deploy the application into it, then you must first generate a certificate and add it.
         >
         > In addition, `vscode` terminal displays successful launch log messages:
