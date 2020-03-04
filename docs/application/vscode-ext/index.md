@@ -38,7 +38,7 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tiz
 
     Install from the Visual Studio Code Marketplace.
 
-### Emulator Requirements
+## Emulator requirements
 
 The Tizen Emulator for VS Code Extension for Tizen has the same requirements as the emulator in Tizen Studio. To check the detailed hardware and software requirements for the Tizen Emulator, see [Emulator Requirements](../tizen-studio/setup/prerequisites.md#emulator).
 
