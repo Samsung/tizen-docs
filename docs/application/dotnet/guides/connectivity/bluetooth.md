@@ -551,10 +551,10 @@ To connect to other devices:
 
 To share data between devices after establishing a connection:
 
-1.  To write data, use the `SendData()` method of the [Tizen.Network.Bluetooth.IBluetoothClientSocket](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Bluetooth.IBluetoothClientSocket.html) interface, which accepts the data as a string parameter:
+1.  To write data, use the `SendData()` method of the [Tizen.Network.Bluetooth.IBluetoothClientSocket](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Bluetooth.IBluetoothClientSocket.html) interface, which accepts the data as a byte[] parameter:
 
     ```
-    private static string dataFromClient = "Test from client";
+    private static byte[] dataFromClient = { 0xAB, 0xCD, 0xEF };
     /// The client is created after successful socket connection with server device
     Client.SendData(dataFromClient);
     ```
@@ -563,7 +563,7 @@ To share data between devices after establishing a connection:
 
     Register the event handler for the `DataReceived` event of the [Tizen.Network.Bluetooth.IBluetoothServerSocket](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Bluetooth.IBluetoothServerSocket.html) interface.
 
-    The received data is passed to the event handler as an instance of the [Tizen.Network.Bluetooth.SocketData](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Bluetooth.SocketData.html) class, which contains the socket file descriptor, the size of the received data in bytes, and the data itself as a string.
+    The received data is passed to the event handler as an instance of the [Tizen.Network.Bluetooth.SocketData](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.Bluetooth.SocketData.html) class, which contains the socket file descriptor, the size of the received data in bytes, and the data itself as a byte[].
 
     ```
     public static IBluetoothServerSocket Socket = null;
@@ -571,7 +571,7 @@ To share data between devices after establishing a connection:
     public static void DataReceivedServerEventHandler(object sender, SocketDataReceivedEventArgs args)
     {
         BluetoothSetup.Data = args.Data;
-        LogUtils.Write(LogUtils.DEBUG, LogUtils.TAG, "DataReceived in client: " + args.Data.Data);
+        LogUtils.Write(LogUtils.DEBUG, LogUtils.TAG, "DataReceived in client: " + string.Format("0X{0:X2} ", BluetoothSetup.Data.ByteData[0]) + string.Format("0X{0:X2} ", BluetoothSetup.Data.ByteData[1]) + string.Format("0X{0:X2} ", BluetoothSetup.Data.ByteData[2]));
         flagServerDataReceived = true;
     }
     /// The socket is created on the server device, after the socket connection is accepted from the client device
