@@ -68,6 +68,12 @@
 ### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
+#### Layouts
+##### [Overview](/application/dotnet/guides/nui/layouts.md)
+##### [Linear Layout](/application/dotnet/guides/nui/linear-layout.md)
+##### [Grid Layout](/application/dotnet/guides/nui/grid-layout.md)
+##### [Flex Layout](/application/dotnet/guides/nui/flex-layout.md)
+##### [Create Custom Layout](/application/dotnet/guides/nui/custom-layout.md)
 #### Components
 ##### [Overview](/application/dotnet/guides/nui/ui-components.md)
 ##### [Styling UI Components](/application/dotnet/guides/nui/styling-controls-with-JSON.md)
@@ -94,6 +100,9 @@
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 #### [Resources](/application/dotnet/guides/nui/resources.md)
+#### XAML
+##### [XAML Support for Tizen.NUI](/application/dotnet/guides/nui/xaml/xaml-support-for-tizen-nui.md)
+##### [Layout Define Example](/application/dotnet/guides/nui/xaml/layout-define-example.md)
 
 ### OpenTK
 #### [Overview](/application/dotnet/guides/opentk/overview.md)
@@ -495,10 +504,6 @@
 
 ## [Overview](/application/native/index.md)
 
-### Watchface Complication
-#### [Overview](/application/native/guides/complications/overview.md)
-#### [Watchface Complication](/application/native/guides/complications/watchface-complication.md)
-#### [Complication Provider](/application/native/guides/complications/watchface-complication-provider.md)
 
 ## Get Started
 
@@ -980,9 +985,9 @@
 #### [Tracepoints](/application/native/guides/performance/tracepoints.md)
 
 ### Watchface Complication
-#### [Overview](/application/native/guides/compliations/overview.md)
-#### [Watchface Complication](/application/native/guides/compliations/watchface-complication.md)
-#### [Complication Provider](/application/native/guides/compliations/watchface-complication-provider.md)
+#### [Overview](/application/native/guides/complications/overview.md)
+#### [Watchface Complication](/application/native/guides/complications/watchface-complication.md)
+#### [Complication Provider](/application/native/guides/complications/watchface-complication-provider.md)
 
 ### [Migration Guide](/application/native/guides/migration-guide.md)
 
@@ -1156,7 +1161,6 @@
 ## Extension SDK
 
 ### [Overview](/application/tizen-studio/extension-sdk/overview.md)
-### [In-App Purchase Program Guide](/application/tizen-studio/extension-sdk/in-app-purchase.md)
 
 ## RT IDE
 

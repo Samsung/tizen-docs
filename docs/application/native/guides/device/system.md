@@ -511,6 +511,7 @@ The following table lists the platform feature keys:
 | `http://tizen.org/feature/platform.core.cpu.arch` | `String` | The platform returns the CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv6` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv6 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv7 CPU architecture. |
+| `http://tizen.org/feature/platform.core.cpu.arch.armv8` | `bool`   | The platform returns `true` for this key, if the device runs on the ARMv8 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | `bool`   | The platform returns `true` for this key, if the device runs on the x86 CPU architecture. |
 | `http://tizen.org/feature/platform.core.cpu.frequency` | `int`    | The platform returns the frequency at which a core CPU is running. |
 | `http://tizen.org/feature/platform.core.fpu.arch` | `String` | The platform returns the FPU architecture. |
@@ -519,6 +520,7 @@ The following table lists the platform feature keys:
 | `http://tizen.org/feature/platform.core.fpu.arch.ssse3` | `bool`   | The platform returns `true` for this key, if the device runs on the SSSE3 FPU architecture. |
 | `http://tizen.org/feature/platform.core.fpu.arch.vfpv2` | `bool`   | The platform returns `true` for this key, if the device runs on the VFPV2 FPU architecture. |
 | `http://tizen.org/feature/platform.core.fpu.arch.vfpv3` | `bool`   | The platform returns `true` for this key, if the device runs on the VFPV3 FPU architecture. |
+| `http://tizen.org/feature/platform.core.fpu.arch.vfpv4` | `bool`   | The platform returns `true` for this key, if the device runs on the VFPV4 FPU architecture. |
 | `http://tizen.org/feature/platform.native.api.version` | `String` | The platform returns the version of the native API in the "[Major].[Minor]" format. |
 | `http://tizen.org/feature/platform.native.osp_compatible` | `bool`   | The platform returns `true` for this key, if the device supports the bada compatibility mode. |
 | `http://tizen.org/feature/platform.version` | `String` | The platform returns the version of the platform in the "[Major].[Minor].[Patch Version]" format. |
