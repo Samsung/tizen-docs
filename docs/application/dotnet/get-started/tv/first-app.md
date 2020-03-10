@@ -102,11 +102,13 @@ To deploy and run the application on the emulator:
 
     ![Tizen Emulator Manager](media/cs_first_building_emulator_manager_tv.png)
 
-3.  Once you launch an emulator instance, you can deploy the application by clicking the emulator instance in the Visual Studio toolbar.
+3. Once you launch an emulator instance, you can deploy the application by clicking the emulator instance in the Visual Studio toolbar. Make the TV project **Set as StartUp Project**.
+
+    ![Deploy your project](media/vs_emulator_launch_tv.png)
 
     In the Visual Studio toolbar, you can select the target from the drop-down list to change the deployment target.
 
-    ![Tizen Emulator Manager](media/vs_emulator_launch_tv.png)
+    ![Tizen Emulator Manager](media/vs_emulator_dropdown.png)
 
 4. If deployment is successful, the application icon is visible on the emulator or device screen. Click the icon to launch the application.  The following figure shows the launched application on the TV emulator:
 
