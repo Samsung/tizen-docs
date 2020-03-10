@@ -9,9 +9,14 @@ The Tizen Compliance Specification is the definitive set of requirements for sof
 - The following specification is the official version for Tizen Wearable profile 2.3.1 devices:
 
   [Tizen 2.3.1 Compliance Specification for Wearable Profile](media/tizen-2.3.1-compliance-specification-for-wearable-profile-v1.0.pdf) ![PDF icon](media/application-pdf.png)
+
 - The following specification is the official version for Tizen TV profile 2.4 devices:
 
   [Tizen 2.4 Compliance Specification for TV Profile](media/tizen-2.4-compliance-specification-for-tv-profile-v1.0.pdf) ![PDF icon](media/application-pdf.png)
+
+- The following specification is the beta version for Tizen TV profile 5.5 devices:
+
+  [Tizen 5.5 Compliance Specification for TV Profile](media/tizen-5.5-compliance-specification-for-tv-profile-v0.95beta.pdf) ![PDF icon](media/application-pdf.png)
 
 - The following specification is the official version for Tizen IVI profile 3.0 devices:
 
