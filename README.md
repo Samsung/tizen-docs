@@ -1,5 +1,11 @@
 # Tizen Docs
 
+[![License](https://licensebuttons.net/l/by/3.0/88x31.png)](content-license.md)
+[![License](https://img.shields.io/badge/licence-BSD-green.svg?style=flat)](LICENSE-CODE)
+[![Build Status](https://jenkins-docs.stg.tizen.org/buildStatus/icon?job=STG_docs_PR_builder&subject=master%20build)](https://jenkins-docs.stg.tizen.org/job/STG_docs_PR_builder/)
+[![Build Status](https://jenkins-docs.stg.tizen.org/buildStatus/icon?job=PRD_docs&subject=live%20build)](https://jenkins-docs.stg.tizen.org/job/PRD_docs/)
+![Repository Size](https://img.shields.io/github/repo-size/Samsung/tizen-docs)
+
 This repo contains Tizen documents for platform and application developers. 
 
 All files under ./docs/ are hosted on the [Tizen Docs site](https://docs.tizen.org). 
