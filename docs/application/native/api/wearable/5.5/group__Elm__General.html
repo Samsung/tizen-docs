@@ -256,7 +256,7 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga58ed51d0195ef67c395709d22c9598e2">Elm_Object_Item_Signal_Cb</a> )(void *data, <a class="el" href="group__Elm__General.html#ga13a0c231414b86e62f68afe3c6fb462b">Elm_Object_Item</a> *it, const char *emission, const char *source)</td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()&#160;&#160;&#160;int main(int argc, char **argv) { int ret__; _elm_startup_time = <a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get</a>(); <a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init</a>(argc, argv); ret__ = elm_main(argc, argv); <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown</a>(); return ret__; }</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()&#160;&#160;&#160;int main(int argc, char **argv) { int ret__; <a class="el" href="group__Elm__General.html#ga16bdc4eeb2b9ae90cfe7c3204e2faeb7">_elm_startup_time</a> = <a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get</a>(); <a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init</a>(argc, argv); ret__ = elm_main(argc, argv); <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown</a>(); return ret__; }</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__General.html#gab7192654621dd090be86c94678635ea4">elm_object_item_text_set</a>(it, label)&#160;&#160;&#160;<a class="el" href="group__Elm__General.html#ga990f25208c4ef0e5c9c404cfb482d813">elm_object_item_part_text_set</a>((it), NULL, (label))</td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
@@ -268,13 +268,13 @@ Defines</h2></td></tr>
           <td class="memname">#define <a class="el" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a></td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td>&#160;&#160;&#160;int main(int argc, char **argv) { int ret__; _elm_startup_time = <a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get</a>(); <a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init</a>(argc, argv); ret__ = elm_main(argc, argv); <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown</a>(); return ret__; }</td>
+          <td>&#160;&#160;&#160;int main(int argc, char **argv) { int ret__; <a class="el" href="group__Elm__General.html#ga16bdc4eeb2b9ae90cfe7c3204e2faeb7">_elm_startup_time</a> = <a class="el" href="group__Ecore__Time__Group.html#ga0b8030aa39eb3701b6b30816ee9c45df">ecore_time_unix_get</a>(); <a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init</a>(argc, argv); ret__ = elm_main(argc, argv); <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown</a>(); return ret__; }</td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
 <p>macro to be used after the elm_main() function </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a14">actionslider_example_01.c</a>, <a class="el" href="bg_cxx_example_01_8cc-example.html#a5">bg_cxx_example_01.cc</a>, <a class="el" href="bg_example_01_8c-example.html#a9">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a19">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a34">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a24">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a15">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a12">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a20">button_example_01.c</a>, <a class="el" href="calendar_cxx_example_05_8cc-example.html#a5">calendar_cxx_example_05.cc</a>, <a class="el" href="calendar_example_01_8c-example.html#a11">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a11">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a11">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a12">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a12">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a14">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a16">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a14">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a17">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a16">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a25">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a13">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a15">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a21">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a20">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a13">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a15">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a20">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a9">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a8">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a12">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a14">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a18">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a18">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a57">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a20">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a17">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a17">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a18">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a20">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a13">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a36">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a56">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a22">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a42">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a27">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a33">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a37">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a55">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a16">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a20">hoversel_example_01.c</a>, <a class="el" href="icon_cxx_example_01_8cc-example.html#a5">icon_cxx_example_01.cc</a>, <a class="el" href="icon_example_01_8c-example.html#a19">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a23">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a18">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a27">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a26">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a14">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a32">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a17">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a25">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a12">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a17">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a23">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a23">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a40">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a27">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a23">mapbuf_example.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a12">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a23">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a13">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a15">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a14">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a16">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a18">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a13">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a19">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a19">popup_example_03.c</a>, <a class="el" href="prefs_data_example_8c-example.html#a8">prefs_data_example.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a21">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a22">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a20">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a32">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a16">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a19">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a15">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a13">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a27">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a32">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a18">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a12">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a14">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a20">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a19">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a14">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a15">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a14">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a13">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a14">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a15">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a19">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a48">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a36">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a40">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a35">win_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a14">actionslider_example_01.c</a>, <a class="el" href="bg_cxx_example_01_8cc-example.html#a5">bg_cxx_example_01.cc</a>, <a class="el" href="bg_example_01_8c-example.html#a9">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a19">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a34">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a24">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a16">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a12">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a20">button_example_01.c</a>, <a class="el" href="calendar_cxx_example_05_8cc-example.html#a5">calendar_cxx_example_05.cc</a>, <a class="el" href="calendar_example_01_8c-example.html#a11">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a11">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a11">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a12">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a12">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a14">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a16">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a14">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a17">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a16">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a25">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a13">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a15">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a21">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a20">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a13">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a15">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a20">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a9">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a8">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a12">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a14">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a18">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a18">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a57">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a20">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a17">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a17">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a18">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a20">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a13">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a36">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a56">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a22">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a42">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a27">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a33">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a37">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a55">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a16">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a20">hoversel_example_01.c</a>, <a class="el" href="icon_cxx_example_01_8cc-example.html#a5">icon_cxx_example_01.cc</a>, <a class="el" href="icon_example_01_8c-example.html#a19">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a23">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a18">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a27">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a27">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a14">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a32">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a17">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a25">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a12">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a17">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a23">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a23">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a40">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a27">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a23">mapbuf_example.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a12">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a23">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a13">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a15">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a16">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a16">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a18">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a13">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a20">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a19">popup_example_03.c</a>, <a class="el" href="prefs_data_example_8c-example.html#a8">prefs_data_example.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a21">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a22">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a20">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a32">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a16">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a19">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a15">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a13">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a27">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a32">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a18">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a12">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a14">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a20">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a19">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a14">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a15">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a14">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a13">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a14">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a15">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a19">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a48">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a36">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a40">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a36">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -447,6 +447,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The current process state</dd></dl>
 <p>The process may logically be some runnable state. a "foreground" application runs as normal and may be user-visible or "active" in some way. A background application is not user-visible or otherwise important and likely should release resources and not wake up often or process much.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga62c4bec2f0402bd043da4e97edef9e7ba2086671a98a586c2cab7384a92ef0450"></a><!-- doxytag: member="ELM_FOCUS_AUTOSCROLL_MODE_SHOW" ref="gga62c4bec2f0402bd043da4e97edef9e7ba2086671a98a586c2cab7384a92ef0450" args="" -->ELM_FOCUS_AUTOSCROLL_MODE_SHOW</em>&nbsp;</td><td>
 <p>Directly show the focused region or item automatically. </p>
@@ -1291,6 +1292,7 @@ Defines</h2></td></tr>
 <p>If this call is issued, it will flag the main loop to cease processing and return back to its parent function (usually your elm_main() function). This does not mean the main loop instantly quits. So your ecore callbacks(timer, animator, event, job, and etc.) have chances to be called even after <a class="el" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init()</a> for an example. There, just after a request to close the window comes, the main loop will be left.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>By using the appropriate <a class="el" href="group__Elm__General.html#ggaa16f3378ecdbf660fa378402e3c5a0a9a02fadb6faada04b19d0fa42c11a8d32a">ELM_POLICY_QUIT</a> on your Elementary applications, you'll be able to get this function called automatically for you. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="button_example_00_8c-example.html#a1">button_example_00.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a2">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a3">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a5">efl_thread_5.c</a>, <a class="el" href="fileselector_example_8c-example.html#a1">fileselector_example.c</a>, <a class="el" href="glview_example_01_8c-example.html#a34">glview_example_01.c</a>, <a class="el" href="progressbar_example_8c-example.html#a10">progressbar_example.c</a>, and <a class="el" href="win_example_8c-example.html#a7">win_example.c</a>.</dd>
 </dl>
 </div>
@@ -1334,6 +1336,7 @@ Defines</h2></td></tr>
 </pre></div></p>
 <p>See the full <a class="el" href="bg_example_01_c.html">example</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown()</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1361,6 +1364,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1387,6 +1391,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The text that describes the widget to people with poor or no vision</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1422,6 +1427,7 @@ Defines</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1513,6 +1519,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if the widget is disabled, <code>EINA_FALSE</code> if it's enabled (or on errors)</dd></dl>
 <p>This gets the state of the widget, which might be enabled or disabled. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1550,6 +1557,7 @@ Defines</h2></td></tr>
 </dl>
 <p>Elementary objects can be <b>disabled</b>, in which state they won't receive input and, in general, will be themed differently from their normal state, usually greyed out. Useful for contexts where you don't want your users to interact with some of the parts of you interface.</p>
 <p>This sets the state for the widget, either disabling it or enabling it back. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="general_funcs_example_8c-example.html#a2">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a6">gengrid_example.c</a>, <a class="el" href="inwin_example_8c-example.html#a2">inwin_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a4">slideshow_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a0">web_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -1607,6 +1615,7 @@ Defines</h2></td></tr>
 <dd>
 elm_policy()</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1659,6 +1668,7 @@ elm_policy()</dd></dl>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1716,6 +1726,7 @@ Not to be confused with <code>edje_object_signal_callback_add()</code>, which do
 <dd>
 Not to be confused with <code><a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a></code>, which adds callbacks to smart objects' <b>smart events</b>, and not input events.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#gac408fbe965f361030746adf3a904c791">elm_object_event_callback_del()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="flipselector_example_8c-example.html#a18">flipselector_example.c</a>.</dd>
 </dl>
 </div>
@@ -1761,6 +1772,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Canvas.html#ga18a
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1797,6 +1809,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Canvas.html#ga18a
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1824,6 +1837,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Canvas.html#ga18a
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Accessible object of the object item or NULL for any error</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1851,6 +1865,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Canvas.html#ga18a
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>List of evas canvas objects</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1888,6 +1903,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Canvas.html#ga18a
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1907,6 +1923,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Canvas.html#ga18a
 <div class="memdoc">
 <p>Unset highlight order</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1934,6 +1951,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Canvas.html#ga18a
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Accessible object of the object item or NULL for any error</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -1953,6 +1971,7 @@ Not to be confused with <code><a class="el" href="group__Evas__Canvas.html#ga18a
 <div class="memdoc">
 <p>Unregister accessible object of the object item.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2047,6 +2066,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Use <code>true</code> to have cursors looked for only on those provided by the rendering engine, <code>false</code> to have them searched on the widget's theme, as well. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2086,6 +2106,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2114,6 +2135,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The cursor type's name </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2152,6 +2174,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2180,6 +2203,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The theme style to use/in use (e.g. $"default", $"transparent", etc) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2218,6 +2242,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2245,6 +2270,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2271,6 +2297,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data associated with <code>it</code> </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Every elm_object_item supports this API </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a3">entry_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a11">gengrid_example.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a7">genlist_example_05.c</a>, <a class="el" href="index_example_01_8c-example.html#a1">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a1">index_example_02.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a8">slideshow_example.c</a>.</dd>
 </dl>
 </div>
@@ -2308,6 +2335,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Every elm_object_item supports this API </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2326,6 +2354,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 <p>Delete the given item. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_02_8c-example.html#a4">diskselector_example_02.c</a>, <a class="el" href="flipselector_example_8c-example.html#a2">flipselector_example.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a10">genlist_example_05.c</a>, <a class="el" href="index_example_01_8c-example.html#a2">index_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a6">list_example_03.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a5">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a2">menu_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a12">segment_control_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a4">web_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -2364,6 +2393,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="diskselector_example_02_8c-example.html#a3">diskselector_example_02.c</a>, <a class="el" href="index_example_01_8c-example.html#a14">index_example_01.c</a>, <a class="el" href="list_example_03_8c-example.html#a5">list_example_03.c</a>, and <a class="el" href="web_example_02_8c-example.html#a7">web_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -2393,6 +2423,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, if the widget item is disabled, <code>false</code> if it's enabled (or on errors) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2431,6 +2462,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ctxpopup_example_01_8c-example.html#a8">ctxpopup_example_01.c</a>, <a class="el" href="gengrid_example_8c-example.html#a15">gengrid_example.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a31">genlist_example_04.c</a>, <a class="el" href="list_example_03_8c-example.html#a10">list_example_03.c</a>, <a class="el" href="menu_example_01_8c-example.html#a20">menu_example_01.c</a>, and <a class="el" href="toolbar_example_01_8c-example.html#a12">toolbar_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -2485,6 +2517,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2537,6 +2570,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2564,6 +2598,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The focused state</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2602,6 +2637,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Focus next object item</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2646,6 +2682,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2684,6 +2721,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Focus next object</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2728,6 +2766,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2765,6 +2804,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2803,6 +2843,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The content of the object item </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2847,6 +2888,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2885,6 +2927,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Content object </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2923,6 +2966,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Text of the label </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -2967,6 +3011,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3026,6 +3071,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3080,6 +3126,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer of the signal callback or <code>NULL</code>, on errors.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3124,6 +3171,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3151,6 +3199,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The style of object item</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3188,6 +3237,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.9 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3240,6 +3290,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>
@@ -3268,6 +3319,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The theme style used/to use (default, transparent, ...) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>
@@ -3306,6 +3358,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>
@@ -3344,6 +3397,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>
@@ -3371,6 +3425,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>
@@ -3398,6 +3453,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <code>true</code>, size restrictions are disabled </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>
@@ -3436,6 +3492,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>false</code> on failure, <code>true</code> on success </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>N/A </dd></dl>
 
 </div>
 </div>
@@ -3466,6 +3523,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The track object</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="track_example_01_8c-example.html#a1">track_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -3496,6 +3554,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Track object reference count</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3535,6 +3594,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The original, untranslated string</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3563,6 +3623,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="track_example_01_8c-example.html#a3">track_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -3591,6 +3652,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The widget object </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="genlist_example_05_8c-example.html#a15">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
@@ -3636,6 +3698,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The found object of that name, or NULL if none is found</dd></dl>
 <p>This function searches the children (or recursively children of children and so on) of the given <code>obj</code> object looking for a child with the name of <code>name</code>. If the child is found the object is returned, or NULL is returned. You can set the name of an object with <a class="el" href="group__Evas__Object__Group__Basic.html#ga88bfcce07ad3bcef31687e29075ae2d2" title="Sets the name of the given Evas object to the given name.">evas_object_name_set()</a>. If the name is not unique within the child objects (or the tree is <code>recurse</code> is greater than 0) then it is undefined as to which child of that name is returned, so ensure the name is unique amongst children. If recurse is set to -1 it will recurse without limit. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3663,6 +3726,7 @@ By default, cursors will only be looked for between those provided by the render
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code>, if the orientation mode is disabled, <code>EINA_FALSE</code> if the orientation mode is enabled (or on errors) </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga57afefa94c3d00ceb3ba0b8364af79a3">elm_object_orientation_mode_disabled_set()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3700,6 +3764,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3774,6 +3839,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>content of the object at the given part or <code>NULL</code>, on errors</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set()</a> for more details </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_02_8c-example.html#a1">layout_example_02.c</a>.</dd>
 </dl>
 </div>
@@ -3819,7 +3885,8 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <p>All widgets deriving from the elm-container-class may hold child objects as content at given parts. This sets new content to a given part. If any object was already set as a content object in the same part, the previous object will be deleted automatically with this call. If the <code>content</code> is NULL, this call will just delete the previous object. If the If you wish to preserve it, issue <a class="el" href="group__Elm__General.html#gadc5a1df25fe17e31739841133b53b5fc">elm_object_part_content_unset()</a> on it first.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga32413f4d59d8232cd362a922a281abf1">elm_object_part_content_get()</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a6">bg_example_03.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a11">bubble_example_01.c</a>, <a class="el" href="button_example_01_8c-example.html#a1">button_example_01.c</a>, <a class="el" href="check_example_01_8c-example.html#a14">check_example_01.c</a>, <a class="el" href="entry_example_8c-example.html#a53">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a12">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a12">fileselector_entry_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a11">flip_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a13">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a14">hoversel_example_01.c</a>, <a class="el" href="inwin_example_8c-example.html#a16">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a30">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a14">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a22">layout_example_03.c</a>, <a class="el" href="panes_example_8c-example.html#a12">panes_example.c</a>, <a class="el" href="popup_example_02_8c-example.html#a14">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a15">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a22">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a13">radio_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a16">slider_example.c</a>, <a class="el" href="transit_example_03_8c-example.html#a42">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a30">transit_example_04.c</a>, and <a class="el" href="web_example_02_8c-example.html#a24">web_example_02.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_example_03_8c-example.html#a6">bg_example_03.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a12">bubble_example_01.c</a>, <a class="el" href="button_example_01_8c-example.html#a1">button_example_01.c</a>, <a class="el" href="check_example_01_8c-example.html#a14">check_example_01.c</a>, <a class="el" href="entry_example_8c-example.html#a53">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a12">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a12">fileselector_entry_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a11">flip_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a13">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a14">hoversel_example_01.c</a>, <a class="el" href="inwin_example_8c-example.html#a16">inwin_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a30">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a14">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a22">layout_example_03.c</a>, <a class="el" href="panes_example_8c-example.html#a12">panes_example.c</a>, <a class="el" href="popup_example_02_8c-example.html#a14">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a15">popup_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a22">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a13">radio_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a16">slider_example.c</a>, <a class="el" href="transit_example_03_8c-example.html#a42">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a30">transit_example_04.c</a>, and <a class="el" href="web_example_02_8c-example.html#a24">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3857,6 +3924,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>content of the object at the given part or <code>NULL</code>, on errors</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set()</a> for more details </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a11">layout_example_01.c</a>.</dd>
 </dl>
 </div>
@@ -3895,6 +3963,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>text of the part or NULL for any error</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Elementary objects may have many text parts (e.g. Action Slider) </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -3938,7 +4007,8 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Elementary objects may have many text parts (e.g. Action Slider) </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a10">actionslider_example_01.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a12">bubble_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a12">combobox_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a24">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a20">layout_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a19">mapbuf_example.c</a>, <a class="el" href="popup_example_01_8c-example.html#a10">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a10">popup_example_02.c</a>, and <a class="el" href="popup_example_03_8c-example.html#a12">popup_example_03.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a10">actionslider_example_01.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a13">bubble_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a12">combobox_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a24">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a20">layout_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a19">mapbuf_example.c</a>, <a class="el" href="popup_example_01_8c-example.html#a10">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a10">popup_example_02.c</a>, and <a class="el" href="popup_example_03_8c-example.html#a12">popup_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3996,6 +4066,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_02_8c-example.html#a15">layout_example_02.c</a>, and <a class="el" href="layout_example_03_8c-example.html#a17">layout_example_03.c</a>.</dd>
 </dl>
 </div>
@@ -4048,6 +4119,7 @@ By default, cursors will only be looked for between those provided by the render
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer of the signal callback or <code>NULL</code>, on errors.</dd></dl>
 <p>This function removes the <b>last</b> callback, previously attached to a signal emitted by an underlying Edje object of <em>obj</em>, whose parameters <em>emission</em>, <em>source</em> and <code>func</code> match exactly with those passed to a previous call to <a class="el" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add()</a>. The data pointer that was passed to this call will be returned. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4091,6 +4163,7 @@ By default, cursors will only be looked for between those provided by the render
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_03_8c-example.html#a3">layout_example_03.c</a>.</dd>
 </dl>
 </div>
@@ -4131,6 +4204,7 @@ By default, cursors will only be looked for between those provided by the render
 <dl class="return"><dt><b>Returns:</b></dt><dd>The original, untranslated string</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>elm_object_translatable_part_text_set()</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4156,6 +4230,7 @@ By default, cursors will only be looked for between those provided by the render
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The currently set policy value, for that identifier. Will be <code>0</code> if <code>policy</code> passed is invalid. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4194,7 +4269,8 @@ By default, cursors will only be looked for between those provided by the render
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success or <code>EINA_FALSE</code>, on error.</dd></dl>
 <p>Elementary policies define applications' behavior, somehow. These behaviors are divided in policy groups (see <a class="el" href="group__Elm__General.html#gaa16f3378ecdbf660fa378402e3c5a0a9">Elm_Policy</a> enumeration). This call will emit the Ecore event <a class="el" href="group__Elm__General.html#ga96ac88e27c467eac36e432db9fd597eb">ELM_EVENT_POLICY_CHANGED</a>, which can be hooked at with handlers. An <a class="el" href="group__Elm__General.html#ga4e6fce7ba42e89eddcf522202fc4715c">Elm_Event_Policy_Changed</a> struct will be passed, then.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Currently, we have only one policy identifier/group (<a class="el" href="group__Elm__General.html#ggaa16f3378ecdbf660fa378402e3c5a0a9a02fadb6faada04b19d0fa42c11a8d32a">ELM_POLICY_QUIT</a>), which has two possible values. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a1">actionslider_example_01.c</a>, <a class="el" href="bg_cxx_example_01_8cc-example.html#a1">bg_cxx_example_01.cc</a>, <a class="el" href="bg_example_01_8c-example.html#a1">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a1">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a9">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a13">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a1">bubble_example_01.c</a>, <a class="el" href="button_cxx_example_00_8cc-example.html#a1">button_cxx_example_00.cc</a>, <a class="el" href="button_cxx_example_01_8cc-example.html#a1">button_cxx_example_01.cc</a>, <a class="el" href="button_example_00_8c-example.html#a2">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a7">button_example_01.c</a>, <a class="el" href="calendar_cxx_example_01_8cc-example.html#a1">calendar_cxx_example_01.cc</a>, <a class="el" href="calendar_cxx_example_02_8cc-example.html#a1">calendar_cxx_example_02.cc</a>, <a class="el" href="calendar_cxx_example_03_8cc-example.html#a1">calendar_cxx_example_03.cc</a>, <a class="el" href="calendar_cxx_example_04_8cc-example.html#a1">calendar_cxx_example_04.cc</a>, <a class="el" href="calendar_cxx_example_05_8cc-example.html#a1">calendar_cxx_example_05.cc</a>, <a class="el" href="calendar_example_01_8c-example.html#a4">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a1">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a1">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a4">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a4">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a4">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a1">check_example_01.c</a>, <a class="el" href="clock_cxx_example_8cc-example.html#a1">clock_cxx_example.cc</a>, <a class="el" href="clock_example_8c-example.html#a1">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a8">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a1">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a3">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a1">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a1">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a11">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a1">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a1">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a1">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a9">diskselector_example_02.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a3">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a4">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a6">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a7">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a44">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a1">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a1">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a2">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a1">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a7">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a1">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a17">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a28">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a5">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a11">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a10">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a15">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a22">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a36">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a3">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a4">hoversel_example_01.c</a>, <a class="el" href="icon_cxx_example_01_8cc-example.html#a1">icon_cxx_example_01.cc</a>, <a class="el" href="icon_example_01_8c-example.html#a1">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a2">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a3">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a8">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a18">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a1">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a13">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a3">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a7">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a1">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a1">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a11">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a9">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a23">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a13">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a2">mapbuf_example.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a2">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a12">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a3">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a4">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a1">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a1">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a2">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a4">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a2">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a2">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a8">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a10">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a8">prefs_example_03.c</a>, <a class="el" href="radio_cxx_example_01_8cc-example.html#a1">radio_cxx_example_01.cc</a>, <a class="el" href="radio_example_01_8c-example.html#a1">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a1">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a1">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a1">separator_example_01.c</a>, <a class="el" href="slider_cxx_example_8cc-example.html#a1">slider_cxx_example.cc</a>, <a class="el" href="slider_example_8c-example.html#a2">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a12">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a2">spinner_example.c</a>, <a class="el" href="table_cxx_example_01_8cc-example.html#a1">table_cxx_example_01.cc</a>, <a class="el" href="table_cxx_example_02_8cc-example.html#a1">table_cxx_example_02.cc</a>, <a class="el" href="table_example_01_8c-example.html#a1">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a1">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a4">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a3">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a2">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a1">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a2">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a1">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a4">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a1">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a1">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a29">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a18">transit_example_04.c</a>, and <a class="el" href="web_example_02_8c-example.html#a28">web_example_02.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a1">actionslider_example_01.c</a>, <a class="el" href="bg_cxx_example_01_8cc-example.html#a1">bg_cxx_example_01.cc</a>, <a class="el" href="bg_example_01_8c-example.html#a1">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a1">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a9">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a13">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a2">bubble_example_01.c</a>, <a class="el" href="button_cxx_example_00_8cc-example.html#a1">button_cxx_example_00.cc</a>, <a class="el" href="button_cxx_example_01_8cc-example.html#a1">button_cxx_example_01.cc</a>, <a class="el" href="button_example_00_8c-example.html#a2">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a7">button_example_01.c</a>, <a class="el" href="calendar_cxx_example_01_8cc-example.html#a1">calendar_cxx_example_01.cc</a>, <a class="el" href="calendar_cxx_example_02_8cc-example.html#a1">calendar_cxx_example_02.cc</a>, <a class="el" href="calendar_cxx_example_03_8cc-example.html#a1">calendar_cxx_example_03.cc</a>, <a class="el" href="calendar_cxx_example_04_8cc-example.html#a1">calendar_cxx_example_04.cc</a>, <a class="el" href="calendar_cxx_example_05_8cc-example.html#a1">calendar_cxx_example_05.cc</a>, <a class="el" href="calendar_example_01_8c-example.html#a4">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a1">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a1">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a4">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a4">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a4">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a1">check_example_01.c</a>, <a class="el" href="clock_cxx_example_8cc-example.html#a1">clock_cxx_example.cc</a>, <a class="el" href="clock_example_8c-example.html#a1">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a8">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a1">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a3">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a1">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a1">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a11">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a1">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a1">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a1">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a9">diskselector_example_02.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a3">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a4">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a6">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a7">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a44">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a1">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a1">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a2">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a1">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a7">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a1">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a17">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a28">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a5">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a11">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a10">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a15">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a22">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a36">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a3">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a4">hoversel_example_01.c</a>, <a class="el" href="icon_cxx_example_01_8cc-example.html#a1">icon_cxx_example_01.cc</a>, <a class="el" href="icon_example_01_8c-example.html#a1">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a2">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a3">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a8">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a18">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a1">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a13">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a3">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a7">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a1">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a1">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a11">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a9">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a23">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a13">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a2">mapbuf_example.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a2">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a12">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a3">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a4">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a1">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a1">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a2">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a4">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a2">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a2">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a8">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a10">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a8">prefs_example_03.c</a>, <a class="el" href="radio_cxx_example_01_8cc-example.html#a1">radio_cxx_example_01.cc</a>, <a class="el" href="radio_example_01_8c-example.html#a1">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a1">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a1">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a1">separator_example_01.c</a>, <a class="el" href="slider_cxx_example_8cc-example.html#a1">slider_cxx_example.cc</a>, <a class="el" href="slider_example_8c-example.html#a2">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a12">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a2">spinner_example.c</a>, <a class="el" href="table_cxx_example_01_8cc-example.html#a1">table_cxx_example_01.cc</a>, <a class="el" href="table_cxx_example_02_8cc-example.html#a1">table_cxx_example_02.cc</a>, <a class="el" href="table_example_01_8c-example.html#a1">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a1">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a4">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a3">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a2">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a1">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a2">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a1">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a4">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a1">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a1">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a29">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a18">transit_example_04.c</a>, and <a class="el" href="web_example_02_8c-example.html#a28">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -4212,7 +4288,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000294">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000305">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4240,7 +4317,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000296">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000307">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4268,7 +4346,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000295">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000306">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4315,7 +4394,9 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 <p>Exposed symbol used only by macros and should not be used by apps </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000293">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000304">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4343,7 +4424,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000287">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000298">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4361,7 +4443,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000286">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000297">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4379,7 +4462,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000285">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000296">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4413,7 +4497,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000292">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000303">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4431,7 +4516,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000291">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000302">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4449,7 +4535,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000290">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000301">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4477,7 +4564,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000288">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000299">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4495,7 +4583,8 @@ By default, cursors will only be looked for between those provided by the render
       </table>
 </div>
 <div class="memdoc">
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000289">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000300">Deprecated:</a></b></dt><dd>Deprecated since 2.4 Exposed symbol used only by macros and should not be used by apps </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -4517,7 +4606,8 @@ By default, cursors will only be looked for between those provided by the render
 <p>This call should be issued just after all initialization is completed. This function will not return until <a class="el" href="group__Elm__General.html#gabada1ccecc6a712df48e90cbf9915c35">elm_exit()</a> is called. It will keep looping, running the main (event/processing) loop for Elementary.</p>
 <p>This function should be called once only from the same thread that initted elementary, (<a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init()</a>, <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a>, ...) and should never be nested. Never call it from within an instance of itself.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init()</a> for an example </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a13">actionslider_example_01.c</a>, <a class="el" href="bg_cxx_example_01_8cc-example.html#a4">bg_cxx_example_01.cc</a>, <a class="el" href="bg_example_01_8c-example.html#a8">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a18">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a33">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a23">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a14">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a11">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a19">button_example_01.c</a>, <a class="el" href="calendar_cxx_example_05_8cc-example.html#a4">calendar_cxx_example_05.cc</a>, <a class="el" href="calendar_example_01_8c-example.html#a10">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a10">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a10">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a11">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a11">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a13">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a15">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a13">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a16">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a15">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a24">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a12">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a14">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a20">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a19">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a12">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a14">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a19">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a8">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a7">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a11">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a13">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a17">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a15">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a56">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a19">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a16">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a16">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a17">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a19">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a12">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a35">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a55">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a21">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a41">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a26">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a32">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a36">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a54">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a15">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a19">hoversel_example_01.c</a>, <a class="el" href="icon_cxx_example_01_8cc-example.html#a4">icon_cxx_example_01.cc</a>, <a class="el" href="icon_example_01_8c-example.html#a18">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a22">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a17">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a26">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a25">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a13">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a31">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a16">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a24">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a11">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a16">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a22">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a22">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a39">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a26">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a22">mapbuf_example.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a11">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a22">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a12">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a14">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a13">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a15">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a17">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a12">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a18">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a18">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a20">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a21">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a19">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a31">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a15">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a18">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a14">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a12">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a26">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a31">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a17">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a11">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a13">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a19">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a18">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a13">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a14">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a13">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a12">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a13">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a14">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a18">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a47">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a35">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a39">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a34">win_example.c</a>.</dd>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a13">actionslider_example_01.c</a>, <a class="el" href="bg_cxx_example_01_8cc-example.html#a4">bg_cxx_example_01.cc</a>, <a class="el" href="bg_example_01_8c-example.html#a8">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a18">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a33">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a23">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a15">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a11">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a19">button_example_01.c</a>, <a class="el" href="calendar_cxx_example_05_8cc-example.html#a4">calendar_cxx_example_05.cc</a>, <a class="el" href="calendar_example_01_8c-example.html#a10">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a10">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a10">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a11">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a11">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a13">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a15">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a13">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a16">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a15">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a24">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a12">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a14">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a20">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a19">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a12">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a14">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a19">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a8">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a7">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a11">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a13">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a17">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a15">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a56">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a19">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a16">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a16">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a17">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a19">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a12">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a35">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a55">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a21">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a41">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a26">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a32">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a36">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a54">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a15">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a19">hoversel_example_01.c</a>, <a class="el" href="icon_cxx_example_01_8cc-example.html#a4">icon_cxx_example_01.cc</a>, <a class="el" href="icon_example_01_8c-example.html#a18">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a22">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a17">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a26">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a26">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a13">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a31">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a16">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a24">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a11">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a16">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a22">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a22">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a39">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a26">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a22">mapbuf_example.c</a>, <a class="el" href="menu_cxx_example_01_8cc-example.html#a11">menu_cxx_example_01.cc</a>, <a class="el" href="menu_example_01_8c-example.html#a22">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a12">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a14">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a15">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a15">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a17">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a12">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a19">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a18">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a20">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a21">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a19">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a31">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a15">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a18">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a14">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a12">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a26">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a31">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a17">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a11">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a13">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a19">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a18">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a13">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a14">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a13">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a12">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a13">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a14">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a18">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a47">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a35">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a39">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a35">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -4540,10 +4630,39 @@ By default, cursors will only be looked for between those provided by the render
 <p>This should be called at the end of your application, just before it ceases to do any more processing. This will clean up any permanent resources your application may have allocated via Elementary that would otherwise persist.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__General.html#ga0c2e80e13f4855004f7ccb61e891aef0">elm_init()</a> for an example</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd><a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown()</a> will iterate main loop until all ecore_evas are freed. There is a possibility to call your ecore callbacks(timer, animator, event, job, and etc.) in <a class="el" href="group__Elm__General.html#ga9de9b3690cc9d500e4576e0f086a099a">elm_shutdown()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
 <hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="ga16bdc4eeb2b9ae90cfe7c3204e2faeb7"></a><!-- doxytag: member="elm_general.h::_elm_startup_time" ref="ga16bdc4eeb2b9ae90cfe7c3204e2faeb7" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="group__Elm__General.html#ga16bdc4eeb2b9ae90cfe7c3204e2faeb7">_elm_startup_time</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gab6de1198687f38b31d46e3a214480ece"></a><!-- doxytag: member="elm_general.h::ELM_ECORE_EVENT_ETHUMB_CONNECT" ref="gab6de1198687f38b31d46e3a214480ece" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Elm__General.html#gab6de1198687f38b31d46e3a214480ece">ELM_ECORE_EVENT_ETHUMB_CONNECT</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaf346065785990ae8c24846b4b3fbe440"></a><!-- doxytag: member="elm_general.h::ELM_EVENT_CONFIG_ALL_CHANGED" ref="gaf346065785990ae8c24846b4b3fbe440" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -4555,6 +4674,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 <p>Emitted when the application has reconfigured elementary settings due to an external configuration tool asking it to. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4569,6 +4689,7 @@ By default, cursors will only be looked for between those provided by the render
 </div>
 <div class="memdoc">
 <p>Emitted when any Elementary's policy value is changed. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4584,6 +4705,7 @@ By default, cursors will only be looked for between those provided by the render
 <div class="memdoc">
 <p>Emitted when nothing is visible and the process as a whole should go into a background state. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -4599,6 +4721,7 @@ By default, cursors will only be looked for between those provided by the render
 <div class="memdoc">
 <p>Emitted when going from nothing being visible to at least one window being visible. </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

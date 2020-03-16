@@ -150,7 +150,8 @@ Functions</h2></td></tr>
      fprintf(stderr, <span class="stringliteral">&quot;WARNING: Memory is really low. Cleaning out RAM.\n&quot;</span>);
      my_memory_cleanup();
    }
-</pre></div> <dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a31">evas-events.c</a>.</dd>
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a31">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -173,6 +174,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A file descriptor to the asynchronous events.</dd></dl>
 <p>Normally, Evas handles asynchronous events internally, particularly in Evas-using modules that are part of the EFL infrastructure. Notably, ecore-evas takes care of processing these events for canvases instantiated through it.</p>
 <p>However, when asynchronous calculations need to be done outside the main thread (in some other mainloop) with some followup action, this function permits accessing the events. An example would be asynchronous image preloading. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -194,6 +196,7 @@ Functions</h2></td></tr>
 <p>Process the asynchronous event queue. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of events processed.</dd></dl>
 <p>Triggers the callback functions for asynchronous events that were queued up by <a class="el" href="group__Evas__Main__Group.html#gab4dda3c2ef0c587a849935bafea9f66a" title="Insert asynchronous events on the canvas.">evas_async_events_put()</a>. The callbacks are called in the same order that they were queued. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -246,6 +249,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_FALSE if an error occurred, EINA_TRUE otherwise.</dd></dl>
 <p>Allows routines running outside Evas' main thread to report an asynchronous event. The target, type, and event info will be passed to the callback function when <a class="el" href="group__Evas__Main__Group.html#ga80fa27be7ba9fe5180ebbd1ec551e4a3" title="Process the asynchronous event queue.">evas_async_events_process()</a> is called. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -265,7 +269,7 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Directly initialize Evas and its required dependencies. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000313">Deprecated:</a></b></dt><dd>This function now returns NULL as cserve2 support has been removed</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000324">Deprecated:</a></b></dt><dd>This function now returns NULL as cserve2 support has been removed</dd></dl>
 <p>Get the path for the cserve binary to execute</p>
 <p>There is little need for anyone except a desktop environment to call this. This can be called before <a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a> has been called. It will try and find the full path to the to the cserve binary to run to provide cserve image and font caching services for evas.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>NULL if error, or a string with the full path to the cserve binary.</dd></dl>
@@ -324,6 +328,7 @@ Functions</h2></td></tr>
    <a class="code" href="group__Evas__Canvas.html#ga6dcd13997f7825f03807dc0ec38dd38e" title="Sets the output viewport of the given evas in evas units.">evas_output_viewport_set</a>(canvas, 0, 0, width, height);
 </pre></div></p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga95a8864f81d944a92bb012b77ffd1b09" title="Directly shutdown Evas.">evas_shutdown()</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a18">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a0">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a1">evas-init-shutdown.c</a>.</dd>
 </dl>
 </div>
@@ -504,6 +509,7 @@ Functions</h2></td></tr>
     <a class="code" href="group__Evas__Canvas.html#gaa0d5d3f1a1e1ffa3b14b09bb374215b4">evas_free</a>(canvas);
 </pre></div></p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Main__Group.html#ga5dc5f05144dd72e8d58a043344e373b8" title="Directly initialize Evas and its required dependencies.">evas_init()</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_tiler_01_8c-example.html#a30">eina_tiler_01.c</a>, <a class="el" href="evas-buffer-simple_8c-example.html#a4">evas-buffer-simple.c</a>, and <a class="el" href="evas-init-shutdown_8c-example.html#a5">evas-init-shutdown.c</a>.</dd>
 </dl>
 </div>
