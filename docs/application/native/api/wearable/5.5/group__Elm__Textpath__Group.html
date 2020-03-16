@@ -99,8 +99,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a circle with given radius, and start angle. The circle center will be decided by the object center position.  <a href="#gab5f48dd7d66d4473bc080d9246461325"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Textpath__Group.html#gaea8ca9378920c51218d52f9ffdffad49">elm_textpath_ellipsis_get</a> (const Efl_Ui_Textpath *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Control the ellipsis behavior of the textpath.  <a href="#gaea8ca9378920c51218d52f9ffdffad49"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Textpath__Group.html#ga483152fb754cbab539413a21fb8fb6f1">elm_textpath_circle_set</a> (Efl_Ui_Textpath *obj, double x, double y, double radius, double start_angle, <a class="el" href="group__Elm__Textpath__Group.html#ga80c4a8b0846b2eb0cfdc9e8f11c602bd">Efl_Ui_Textpath_Direction</a> direction)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a circle with given center, radius, and start angle.  <a href="#ga483152fb754cbab539413a21fb8fb6f1"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3db3556eec8ef18cb8ddb43816974ac8">EAPI</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Textpath__Group.html#gacb476d7387cbce0c3a5ac3072bd60c82">elm_textpath_circle_set</a> (Efl_Ui_Textpath *obj, double x, double y, double radius, double start_angle, <a class="el" href="group__Elm__Textpath__Group.html#ga80c4a8b0846b2eb0cfdc9e8f11c602bd">Efl_Ui_Textpath_Direction</a> direction)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a circle with given center, radius, and start angle.  <a href="#gacb476d7387cbce0c3a5ac3072bd60c82"></a><br/></td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
 <a class="anchor" id="ga80c4a8b0846b2eb0cfdc9e8f11c602bd"></a><!-- doxytag: member="efl_ui_textpath_eo.legacy.h::Efl_Ui_Textpath_Direction" ref="ga80c4a8b0846b2eb0cfdc9e8f11c602bd" args="" -->
@@ -136,12 +136,12 @@ Functions</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga483152fb754cbab539413a21fb8fb6f1"></a><!-- doxytag: member="elm_deprecated.h::elm_textpath_circle_set" ref="ga483152fb754cbab539413a21fb8fb6f1" args="(Efl_Ui_Textpath *obj, double x, double y, double radius, double start_angle, Efl_Ui_Textpath_Direction direction)" -->
+<a class="anchor" id="gacb476d7387cbce0c3a5ac3072bd60c82"></a><!-- doxytag: member="elm_deprecated.h::elm_textpath_circle_set" ref="gacb476d7387cbce0c3a5ac3072bd60c82" args="(Efl_Ui_Textpath *obj, double x, double y, double radius, double start_angle, Efl_Ui_Textpath_Direction direction)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> void <a class="el" href="group__Elm__Textpath__Group.html#ga483152fb754cbab539413a21fb8fb6f1">elm_textpath_circle_set</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3db3556eec8ef18cb8ddb43816974ac8">EAPI</a> void <a class="el" href="group__Elm__Textpath__Group.html#gacb476d7387cbce0c3a5ac3072bd60c82">elm_textpath_circle_set</a> </td>
           <td>(</td>
           <td class="paramtype">Efl_Ui_Textpath *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -197,7 +197,8 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000283">Deprecated:</a></b></dt><dd>Use elm_textpath_circular_set() instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000294">Deprecated:</a></b></dt><dd>Use elm_textpath_circular_set() instead.</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 
 </div>
 </div>
@@ -224,6 +225,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>To ellipsis text or not </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 
 </div>
 </div>
@@ -262,16 +264,24 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 The number of slices. The larger the number of slice_num is, The better the text follows the path.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 The number of slices. The larger the number of slice_num is, The better the text follows the path.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">slice_no</td><td>Number of slices The number of slices. The larger the number of slice_num is, The better the text follows the path.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slice_no</td><td>Number of slices </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>The number of slices. The larger the number of slice_num is, The better the text follows the path.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Number of slices Control the ellipsis behavior of the textpath.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Number of slices </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>Control the ellipsis behavior of the textpath.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -279,6 +289,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 
 </div>
 </div>
