@@ -95,9 +95,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Get language direction.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.20 Reinitialize language from the environment.</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.20  Reinitialize language from the environment.</dd></dl>
 <p>The locale can change while a process is running. This call tells evas to reload the locale from the environment like it does on start.</p>
-<dl class="since"><dt><b>Since:</b></dt><dd>1.18</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.18 </dd></dl>
 <p>Functions that feed key events to the canvas.</p>
 <p>As explained in intro_not_evas, Evas is <b>not</b> aware of input systems at all. Then, the user, if using it crudely (<a class="el" href="group__Evas__Canvas.html#ga67e8eb17d2a676bfdfb8794fc5f72bc0">evas_new()</a>), will have to feed it with input events, so that it can react somehow. If, however, the user creates a canvas by means of the Ecore_Evas wrapper, it will automatically bind the chosen display engine's input events to the canvas, for you.</p>
 <p>This group presents the functions dealing with the feeding of key events to the canvas. On most of them, one has to reference a given key by a name (<code>keyname</code> argument). Those are <b>platform dependent</b> symbolic names for the keys. Sometimes you'll get the right <code>keyname</code> by simply using an ASCII value of the key name, but it won't be like that always.</p>
@@ -215,7 +215,8 @@ evas_seat_key_modifier_on </dd>
 evas_seat_key_modifier_off </dd>
 <dd>
 <a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Checks the state of a given lock key of the default seat, at the time of the call. If the lock is set, such as caps lock, this function returns <code>Eina_True</code>.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>Checks the state of a given lock key of the default seat, at the time of the call. If the lock is set, such as caps lock, this function returns <code>Eina_True</code>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">l</td><td>The current locks set, as returned by <a class="el" href="group__Evas__Canvas.html#gab896e54f904562f291dc6f3acb5c45bc" title="Returns a handle to the list of lock keys registered in the canvas e.">evas_key_lock_get()</a>. </td></tr>
@@ -239,6 +240,7 @@ evas_seat_key_lock_on </dd>
 evas_seat_key_lock_off </dd>
 <dd>
 evas_seat_key_lock_is_set </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>
@@ -286,6 +288,7 @@ evas_key_modifier_on </dd>
 evas_key_modifier_off </dd>
 <dd>
 evas_seat_key_modifier_is_set </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a46">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a15">edje-box2.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a4">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a15">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a21">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a7">evas-hints.c</a>, and <a class="el" href="web_example_02_8c-example.html#a16">web_example_02.c</a>.</dd>
 </dl>
 </div>

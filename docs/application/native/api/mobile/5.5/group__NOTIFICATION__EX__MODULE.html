@@ -281,8 +281,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the notification_ex item handle by notification_ex item id.  <a href="#gac6f61d9f2360e6022ee966c83b30bbec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga2dee348dff51ea525c5d4a3688315041">noti_ex_item_get_type</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a> handle, int *type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the type of notification_ex item.  <a href="#ga2dee348dff51ea525c5d4a3688315041"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#gab5bc2f2d7aa8b6d2fd172b4f32a1df10">noti_ex_item_get_shared_paths</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a> handle, char ***paths, int *count)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the path of shared files.  <a href="#gab5bc2f2d7aa8b6d2fd172b4f32a1df10"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga80d13bccd68c22ef37c8268b192b0c43">noti_ex_item_get_id</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a> handle, char **id)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the id of a notification_ex item.  <a href="#ga80d13bccd68c22ef37c8268b192b0c43"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga255037c2013073a8b80152c822a49b8c">noti_ex_item_set_id</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a> handle, const char *id)</td></tr>
@@ -349,6 +347,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the main type of a notification item.  <a href="#ga23d6ab01192178fb988af0ca5256b48b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#gafe3f743116e26da3b9585a1809c49bf8">noti_ex_item_find_by_main_type</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a> handle, int type, <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a> *item)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the notification item of the specified main type.  <a href="#gafe3f743116e26da3b9585a1809c49bf8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaa09f8ad3e6815df5363d41db5bac4e45">noti_ex_item_get_extension_data</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a> handle, const char *key, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> **value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the extension data.  <a href="#gaa09f8ad3e6815df5363d41db5bac4e45"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga2a7a3625518f46959eb6d3de50104ebf">noti_ex_item_set_extension_data</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a> handle, const char *key, <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *value)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the extension data.  <a href="#ga2a7a3625518f46959eb6d3de50104ebf"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#gacf22afc29e6997530a12e6b08c762a6b">noti_ex_manager_create</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga018207c9c270242f7f3342119e13e5ce">noti_ex_manager_h</a> *handle, const char *receiver_group, <a class="el" href="structnoti__ex__manager__events__s.html">noti_ex_manager_events_s</a> event_callbacks, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the notification_ex manager handle.  <a href="#gacf22afc29e6997530a12e6b08c762a6b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaf968d4ac84b34d76cc49e0b2497b7d18">noti_ex_manager_destroy</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga018207c9c270242f7f3342119e13e5ce">noti_ex_manager_h</a> handle)</td></tr>
@@ -497,6 +499,10 @@ Defines</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Predefined receiver group for the Indicator.  <a href="#ga14531597a9712cf7c9367ffd9b402727"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga7e42c2289169253f2492d65816acc5b4">NOTI_EX_RECEIVER_GROUP_POPUP</a>&#160;&#160;&#160;&quot;tizen.org/receiver/popup&quot;</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Predefined receiver group for the Popup.  <a href="#ga7e42c2289169253f2492d65816acc5b4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#gabed92a7086b1919b542a69075ef63640">NOTI_EX_SOUND_TYPE_DEFAULT</a>&#160;&#160;&#160;&quot;__SOUND_TYPE_DEFAULT__&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default sound.  <a href="#gabed92a7086b1919b542a69075ef63640"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga101242381ba3a0889b4bd3e4517b27ea">NOTI_EX_VIBRATION_TYPE_DEFAULT</a>&#160;&#160;&#160;&quot;__VIBRATION_TYPE_DEFAULT__&quot;</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default vibration.  <a href="#ga101242381ba3a0889b4bd3e4517b27ea"></a><br/></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ga14531597a9712cf7c9367ffd9b402727"></a><!-- doxytag: member="notification_ex_item.h::NOTI_EX_RECEIVER_GROUP_INDICATOR" ref="ga14531597a9712cf7c9367ffd9b402727" args="" -->
@@ -575,6 +581,38 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Predefined receiver group for the Ticker. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gabed92a7086b1919b542a69075ef63640"></a><!-- doxytag: member="notification_ex_item.h::NOTI_EX_SOUND_TYPE_DEFAULT" ref="gabed92a7086b1919b542a69075ef63640" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gabed92a7086b1919b542a69075ef63640">NOTI_EX_SOUND_TYPE_DEFAULT</a>&#160;&#160;&#160;&quot;__SOUND_TYPE_DEFAULT__&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default sound. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga101242381ba3a0889b4bd3e4517b27ea"></a><!-- doxytag: member="notification_ex_item.h::NOTI_EX_VIBRATION_TYPE_DEFAULT" ref="ga101242381ba3a0889b4bd3e4517b27ea" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga101242381ba3a0889b4bd3e4517b27ea">NOTI_EX_VIBRATION_TYPE_DEFAULT</a>&#160;&#160;&#160;&quot;__VIBRATION_TYPE_DEFAULT__&quot;</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Default vibration. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
 
 </div>
@@ -1216,26 +1254,20 @@ Defines</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggab5ad9a9a4c7faf422cac75fe19d42080ac8e7bada9f83cf28c1a3fc33b98d0b6e"></a><!-- doxytag: member="NOTI_EX_ERROR_PERMISSION_DENIED" ref="ggab5ad9a9a4c7faf422cac75fe19d42080ac8e7bada9f83cf28c1a3fc33b98d0b6e" args="" -->NOTI_EX_ERROR_PERMISSION_DENIED</em>&nbsp;</td><td>
 <p>Permission denied </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggab5ad9a9a4c7faf422cac75fe19d42080ac937272423d1c6925557221900c24b55"></a><!-- doxytag: member="NOTI_EX_ERROR_INVALID_OPERATION" ref="ggab5ad9a9a4c7faf422cac75fe19d42080ac937272423d1c6925557221900c24b55" args="" -->NOTI_EX_ERROR_INVALID_OPERATION</em>&nbsp;</td><td>
-<p>Function not implemented </p>
-</td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggab5ad9a9a4c7faf422cac75fe19d42080a37c1b54f6866bb673b3d3a103093643a"></a><!-- doxytag: member="NOTI_EX_ERROR_FROM_DB" ref="ggab5ad9a9a4c7faf422cac75fe19d42080a37c1b54f6866bb673b3d3a103093643a" args="" -->NOTI_EX_ERROR_FROM_DB</em>&nbsp;</td><td>
 <p>Error from DB query </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggab5ad9a9a4c7faf422cac75fe19d42080a4f4055bc85b9a128e9e3bec293fa26a9"></a><!-- doxytag: member="NOTI_EX_ERROR_ALREADY_EXIST_ID" ref="ggab5ad9a9a4c7faf422cac75fe19d42080a4f4055bc85b9a128e9e3bec293fa26a9" args="" -->NOTI_EX_ERROR_ALREADY_EXIST_ID</em>&nbsp;</td><td>
-<p>Private ID already exists </p>
+<p>Already exist private ID </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggab5ad9a9a4c7faf422cac75fe19d42080a8fa6488e3d7521dc7140a8be8c08ede6"></a><!-- doxytag: member="NOTI_EX_ERROR_FROM_DBUS" ref="ggab5ad9a9a4c7faf422cac75fe19d42080a8fa6488e3d7521dc7140a8be8c08ede6" args="" -->NOTI_EX_ERROR_FROM_DBUS</em>&nbsp;</td><td>
 <p>Error from DBus </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggab5ad9a9a4c7faf422cac75fe19d42080a32df87f1ec4eab0121ff612a0cf9b281"></a><!-- doxytag: member="NOTI_EX_ERROR_NOT_EXIST_ID" ref="ggab5ad9a9a4c7faf422cac75fe19d42080a32df87f1ec4eab0121ff612a0cf9b281" args="" -->NOTI_EX_ERROR_NOT_EXIST_ID</em>&nbsp;</td><td>
-<p>Private ID does not exist </p>
+<p>Not exist private ID </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggab5ad9a9a4c7faf422cac75fe19d42080ad19cd6f235324aa896cca0eed53c47e6"></a><!-- doxytag: member="NOTI_EX_ERROR_SERVICE_NOT_READY" ref="ggab5ad9a9a4c7faf422cac75fe19d42080ad19cd6f235324aa896cca0eed53c47e6" args="" -->NOTI_EX_ERROR_SERVICE_NOT_READY</em>&nbsp;</td><td>
 <p>No response from notification service </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ggab5ad9a9a4c7faf422cac75fe19d42080ad7caeadf4f4de3dfa3b47bc1ec086d52"></a><!-- doxytag: member="NOTI_EX_ERROR_MAX_EXCEEDED" ref="ggab5ad9a9a4c7faf422cac75fe19d42080ad7caeadf4f4de3dfa3b47bc1ec086d52" args="" -->NOTI_EX_ERROR_MAX_EXCEEDED</em>&nbsp;</td><td>
-<p>Max notification count exceeded </p>
 </td></tr>
 </table>
 </dd>
@@ -1301,6 +1333,9 @@ Defines</h2></td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga90b94db84e425600b3947253113ce4bdae4e8b689a1657bb9fc327abe55c5c445"></a><!-- doxytag: member="NOTI_EX_ITEM_CHAT_MESSAGE_TYPE_SENDER" ref="gga90b94db84e425600b3947253113ce4bdae4e8b689a1657bb9fc327abe55c5c445" args="" -->NOTI_EX_ITEM_CHAT_MESSAGE_TYPE_SENDER</em>&nbsp;</td><td>
 <p>The sender of chat message </p>
 </td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga90b94db84e425600b3947253113ce4bda71c51608d75e0067e751d5e59684e346"></a><!-- doxytag: member="NOTI_EX_ITEM_CHAT_MESSAGE_TYPE_NONE" ref="gga90b94db84e425600b3947253113ce4bda71c51608d75e0067e751d5e59684e346" args="" -->NOTI_EX_ITEM_CHAT_MESSAGE_TYPE_NONE</em>&nbsp;</td><td>
+<p>Not user or sender </p>
+</td></tr>
 </table>
 </dd>
 </dl>
@@ -1364,6 +1399,9 @@ Defines</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggad1c4c615f925446dc8f4bc4037501be0a63127b112becec3069e3da8c06b62e54"></a><!-- doxytag: member="NOTI_EX_ITEM_POLICY_SIM_MODE" ref="ggad1c4c615f925446dc8f4bc4037501be0a63127b112becec3069e3da8c06b62e54" args="" -->NOTI_EX_ITEM_POLICY_SIM_MODE</em>&nbsp;</td><td>
 <p>SIM mode </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggad1c4c615f925446dc8f4bc4037501be0a526908e4a19a4422747dab6c4c0ffa9d"></a><!-- doxytag: member="NOTI_EX_ITEM_POLICY_DISABLE_AUTO_DELETE" ref="ggad1c4c615f925446dc8f4bc4037501be0a526908e4a19a4422747dab6c4c0ffa9d" args="" -->NOTI_EX_ITEM_POLICY_DISABLE_AUTO_DELETE</em>&nbsp;</td><td>
+<p>Disable auto delete </p>
 </td></tr>
 </table>
 </dd>
@@ -3484,7 +3522,7 @@ You can pass NULL to <em>multi</em>, if you want to remove multi-language text. 
 <p>Creates the notification_ex item handle for the chat message. </p>
 <p>The notification_ex item is the predefined type of notifications. The notification can be created with one item or group of items. If the user wants to create a chat message notification, notification_ex handle has to be created as a chat message item. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>handle</em> must be released using <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy()</a>. <em>name</em>, <em>text</em>, <em>image</em> and <em>time</em> must not be released if the function returns <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a9e977eefd9b728ad45d83057f683633e">NOTI_EX_ERROR_NONE</a>. <em>name</em>, <em>text</em>, <em>image</em> and <em>time</em> will be released when <em>handle</em> is released. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>handle</em> must be released using <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy()</a>. <em>name</em>, <em>text</em>, <em>image</em> and <em>time</em> must not be released if the function returns <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a9e977eefd9b728ad45d83057f683633e">NOTI_EX_ERROR_NONE</a>. <em>name</em>, <em>text</em>, <em>image</em> and <em>time</em> will be released when <em>handle</em> is released. <em>name</em> and <em>time</em> are mandatory (cannot be null). <em>text</em> and <em>image</em> cannot both be null. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">handle</td><td>The noti ex item handle </td></tr>
@@ -4843,6 +4881,72 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 
 </div>
 </div>
+<a class="anchor" id="gaa09f8ad3e6815df5363d41db5bac4e45"></a><!-- doxytag: member="notification_ex_item.h::noti_ex_item_get_extension_data" ref="gaa09f8ad3e6815df5363d41db5bac4e45" args="(noti_ex_item_h handle, const char *key, bundle **value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaa09f8ad3e6815df5363d41db5bac4e45">noti_ex_item_get_extension_data</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> **&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the extension data. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>value</em> should be released using <a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#ga21054ad876bff896d38a08ebdc14a1b1" title="Frees the given bundle object with key-value pairs in it.">bundle_free()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification_ex item handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>The bundle data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a9e977eefd9b728ad45d83057f683633e">NOTI_EX_ERROR_NONE</a> On success, other value on failure </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a9e977eefd9b728ad45d83057f683633e">NOTI_EX_ERROR_NONE</a></td><td>Success </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a3461afd363af6683e6cb7a2777b333b3">NOTI_EX_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591" title="The notification_ex item handle.">noti_ex_item_h</a> </dd></dl>
+<dl class="user"><dt><b>Sample code:</b></dt><dd><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;notification_ex.h&gt;</span>
+
+{
+    <span class="keywordtype">int</span> ret;
+    <span class="keywordtype">char</span> *key = <span class="stringliteral">&quot;ADDITIONAL_DATA_KEY&quot;</span>;
+    <a class="code" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0" title="The bundle handle.">bundle</a> *b;
+
+    ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaa09f8ad3e6815df5363d41db5bac4e45" title="Gets the extension data.">noti_ex_item_get_extension_data</a>(item_handle, key, &amp;b);
+    ...
+    <a class="code" href="group__CORE__LIB__BUNDLE__MODULE.html#ga21054ad876bff896d38a08ebdc14a1b1" title="Frees the given bundle object with key-value pairs in it.">bundle_free</a>(b);
+}
+</pre></div> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga80d13bccd68c22ef37c8268b192b0c43"></a><!-- doxytag: member="notification_ex_item.h::noti_ex_item_get_id" ref="ga80d13bccd68c22ef37c8268b192b0c43" args="(noti_ex_item_h handle, char **id)" -->
 <div class="memitem">
 <div class="memproto">
@@ -5302,77 +5406,13 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591" title="The notification_ex item handle.">noti_ex_item_h</a> </dd></dl>
-<dl class="user"><dt><b>Sample code:</b></dt><dd><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;notification_exh&gt;</span>
+<dl class="user"><dt><b>Sample code:</b></dt><dd><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;notification_ex.h&gt;</span>
 
 {
     <span class="keywordtype">int</span> ret;
     <span class="keywordtype">char</span> *app_id = NULL;
 
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gad00738f1e23489600de7fe3109733c18" title="Gets the sender app id of a notification_ex item.">noti_ex_item_get_sender_app_id</a>(item_handle, &amp;app_id);
-}
-</pre></div> </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gab5bc2f2d7aa8b6d2fd172b4f32a1df10"></a><!-- doxytag: member="notification_ex_item.h::noti_ex_item_get_shared_paths" ref="gab5bc2f2d7aa8b6d2fd172b4f32a1df10" args="(noti_ex_item_h handle, char ***paths, int *count)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gab5bc2f2d7aa8b6d2fd172b4f32a1df10">noti_ex_item_get_shared_paths</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a>&#160;</td>
-          <td class="paramname"><em>handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char ***&#160;</td>
-          <td class="paramname"><em>paths</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>count</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets the path of shared files. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Each path in the <em>paths</em> must be released using free(), then the <em>paths</em> must be released using free(). </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification_ex item handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">paths</td><td>The absolute paths of shared files </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>The number of paths </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a9e977eefd9b728ad45d83057f683633e">NOTI_EX_ERROR_NONE</a> On success, other value on failure </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a9e977eefd9b728ad45d83057f683633e">NOTI_EX_ERROR_NONE</a></td><td>Success </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a3461afd363af6683e6cb7a2777b333b3">NOTI_EX_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591" title="The notification_ex item handle.">noti_ex_item_h</a> </dd></dl>
-<dl class="user"><dt><b>Sample code:</b></dt><dd><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;notification_ex.h&gt;</span>
-
-{
-    <span class="keywordtype">int</span> ret;
-    <span class="keywordtype">char</span> **paths = NULL;
-    <span class="keywordtype">int</span> count;
-
-    ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gab5bc2f2d7aa8b6d2fd172b4f32a1df10" title="Gets the path of shared files.">noti_ex_item_get_shared_paths</a>(item_handle, &amp;paths, &amp;count);
 }
 </pre></div> </dd></dl>
 
@@ -5409,7 +5449,7 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification_ex item handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">path</td><td>The absolute path of sound for notification_ex item </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">path</td><td>The absolute path of sound for notification_ex item If not set, you will get NULL. If set default, you will get <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gabed92a7086b1919b542a69075ef63640" title="Default sound.">NOTI_EX_SOUND_TYPE_DEFAULT</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -5642,7 +5682,7 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification_ex item handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">path</td><td>The absolute path of vibration for a notification_ex item </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">path</td><td>The absolute path of vibration for a notification_ex item If not set, you will get NULL. If set default, you will get <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga101242381ba3a0889b4bd3e4517b27ea" title="Default vibration.">NOTI_EX_VIBRATION_TYPE_DEFAULT</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -5778,6 +5818,8 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga63ef8c992aba92d43dc0f7aaa2871e8d" title="Creates the group of notification_ex items.">noti_ex_item_group_create</a>(&amp;group_item, <span class="stringliteral">&quot;group_id&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga31806a49dbcd43b2c326a68d2e14f630" title="Creates the notification_ex item handle with a button.">noti_ex_item_button_create</a>(&amp;child_item, <span class="stringliteral">&quot;button_id&quot;</span>, <span class="stringliteral">&quot;button_title&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga8cc5eebccc4e5523d6a38aab21cf97c8" title="Adds the child to the group item.">noti_ex_item_group_add_child</a>(group_item, child_item);
+
+    <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy</a>(child_item);
 }
 </pre></div> </dd></dl>
 
@@ -5910,6 +5952,8 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga63ef8c992aba92d43dc0f7aaa2871e8d" title="Creates the group of notification_ex items.">noti_ex_item_group_create</a>(&amp;group_item, <span class="stringliteral">&quot;group_id&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga31806a49dbcd43b2c326a68d2e14f630" title="Creates the notification_ex item handle with a button.">noti_ex_item_button_create</a>(&amp;child_item, <span class="stringliteral">&quot;button_id&quot;</span>, <span class="stringliteral">&quot;button_title&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga8cc5eebccc4e5523d6a38aab21cf97c8" title="Adds the child to the group item.">noti_ex_item_group_add_child</a>(group_item, child_item);
+
+    <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy</a>(child_item);
 
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaeaa9e284c95f75ffba0288b81c5b9606" title="Gets the data of children from the group item.">noti_ex_item_group_foreach_child</a>(group_item, _ex_item_group_foreach_child_cb, NULL);
 }
@@ -7508,6 +7552,71 @@ You can pass NULL to <em>multi_language_list</em>, if you want to remove the mul
 
 </div>
 </div>
+<a class="anchor" id="ga2a7a3625518f46959eb6d3de50104ebf"></a><!-- doxytag: member="notification_ex_item.h::noti_ex_item_set_extension_data" ref="ga2a7a3625518f46959eb6d3de50104ebf" args="(noti_ex_item_h handle, const char *key, bundle *value)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga2a7a3625518f46959eb6d3de50104ebf">noti_ex_item_set_extension_data</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591">noti_ex_item_h</a>&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0">bundle</a> *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the extension data. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification_ex item handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>The key </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>The bundle data </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a9e977eefd9b728ad45d83057f683633e">NOTI_EX_ERROR_NONE</a> On success, other value on failure </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a9e977eefd9b728ad45d83057f683633e">NOTI_EX_ERROR_NONE</a></td><td>Success </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a3461afd363af6683e6cb7a2777b333b3">NOTI_EX_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga926fd9c4e86be95885e50c615ebb1591" title="The notification_ex item handle.">noti_ex_item_h</a> </dd></dl>
+<dl class="user"><dt><b>Sample code:</b></dt><dd><div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;notification_ex.h&gt;</span>
+
+{
+    <span class="keywordtype">int</span> ret;
+    <span class="keywordtype">char</span> *key = <span class="stringliteral">&quot;ADDITIONAL_DATA_KEY&quot;</span>;
+    <a class="code" href="group__CORE__LIB__BUNDLE__MODULE.html#gae6bcd5be7bb61f5fa47341d34f5e61c0" title="The bundle handle.">bundle</a> *b = <a class="code" href="group__CORE__LIB__BUNDLE__MODULE.html#ga52020317b04a3c53eec8dc5d2b8d56d2" title="Creates a bundle object.">bundle_create</a>();
+    <a class="code" href="group__CORE__LIB__BUNDLE__MODULE.html#gab73352f97eb8504dfd2b711c4ff6f06c" title="Adds a string type key-value pair into a bundle.">bundle_add_str</a>(b, <span class="stringliteral">&quot;key&quot;</span>, <span class="stringliteral">&quot;value&quot;</span>);
+
+    ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga2a7a3625518f46959eb6d3de50104ebf" title="Sets the extension data.">noti_ex_item_set_extension_data</a>(item_handle, key, b);
+    <a class="code" href="group__CORE__LIB__BUNDLE__MODULE.html#ga21054ad876bff896d38a08ebdc14a1b1" title="Frees the given bundle object with key-value pairs in it.">bundle_free</a>(b);
+}
+</pre></div> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga255037c2013073a8b80152c822a49b8c"></a><!-- doxytag: member="notification_ex_item.h::noti_ex_item_set_id" ref="ga255037c2013073a8b80152c822a49b8c" args="(noti_ex_item_h handle, const char *id)" -->
 <div class="memitem">
 <div class="memproto">
@@ -7686,6 +7795,7 @@ You can pass NULL to <em>multi_language_list</em>, if you want to remove the mul
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga63ef8c992aba92d43dc0f7aaa2871e8d" title="Creates the group of notification_ex items.">noti_ex_item_group_create</a>(&amp;group_item, <span class="stringliteral">&quot;group_id&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gadad29a0717ad9f2affa3c5da229c6be9" title="Creates the notification_ex item handle with text.">noti_ex_item_text_create</a>(&amp;text_item, <span class="stringliteral">&quot;text_id&quot;</span>, <span class="stringliteral">&quot;text&quot;</span>, <span class="stringliteral">&quot;hyperlink&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga8cc5eebccc4e5523d6a38aab21cf97c8" title="Adds the child to the group item.">noti_ex_item_group_add_child</a>(group_item, text_item);
+    <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy</a>(text_item);
 
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga23d6ab01192178fb988af0ca5256b48b" title="Sets the main type of a notification item.">noti_ex_item_set_main_type</a>(group_item, <span class="stringliteral">&quot;text_id&quot;</span>, type);
 }
@@ -7835,7 +7945,7 @@ You can pass NULL to <em>multi_language_list</em>, if you want to remove the mul
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification_ex item handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>The absolute path of sound for notification_ex item </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>The absolute path of sound for notification_ex item If you want to set a default sound, enter <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gabed92a7086b1919b542a69075ef63640" title="Default sound.">NOTI_EX_SOUND_TYPE_DEFAULT</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -8002,7 +8112,7 @@ You can pass NULL to <em>multi_language_list</em>, if you want to remove the mul
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification_ex item handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>The absolute path of vibration for notification_ex item </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">path</td><td>The absolute path of vibration for notification_ex item If you want to set a default sound, enter <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga101242381ba3a0889b4bd3e4517b27ea" title="Default vibration.">NOTI_EX_VIBRATION_TYPE_DEFAULT</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -10758,7 +10868,10 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga63ef8c992aba92d43dc0f7aaa2871e8d" title="Creates the group of notification_ex items.">noti_ex_item_group_create</a>(&amp;group_item, <span class="stringliteral">&quot;group_id&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga31806a49dbcd43b2c326a68d2e14f630" title="Creates the notification_ex item handle with a button.">noti_ex_item_button_create</a>(&amp;child_item, <span class="stringliteral">&quot;button_id&quot;</span>, <span class="stringliteral">&quot;button_title&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga8cc5eebccc4e5523d6a38aab21cf97c8" title="Adds the child to the group item.">noti_ex_item_group_add_child</a>(group_item, child_item);
+    <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy</a>(child_item);
+
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gafb8dc9b830857b2d9fb628debbd52332" title="Posts a notification.">noti_ex_reporter_post</a>(handle, group_item, &amp;request_id);
+    <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy</a>(group_item);
 }
 </pre></div> </dd></dl>
 
@@ -10845,12 +10958,18 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga63ef8c992aba92d43dc0f7aaa2871e8d" title="Creates the group of notification_ex items.">noti_ex_item_group_create</a>(&amp;noti_list[0], <span class="stringliteral">&quot;group_id1&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga31806a49dbcd43b2c326a68d2e14f630" title="Creates the notification_ex item handle with a button.">noti_ex_item_button_create</a>(&amp;child_item, <span class="stringliteral">&quot;button_id1&quot;</span>, <span class="stringliteral">&quot;button_title&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga8cc5eebccc4e5523d6a38aab21cf97c8" title="Adds the child to the group item.">noti_ex_item_group_add_child</a>(noti_list[0], child_item);
+    <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy</a>(child_item);
 
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga63ef8c992aba92d43dc0f7aaa2871e8d" title="Creates the group of notification_ex items.">noti_ex_item_group_create</a>(&amp;noti_list[1], <span class="stringliteral">&quot;group_id2&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga31806a49dbcd43b2c326a68d2e14f630" title="Creates the notification_ex item handle with a button.">noti_ex_item_button_create</a>(&amp;child_item, <span class="stringliteral">&quot;button_id2&quot;</span>, <span class="stringliteral">&quot;button_title&quot;</span>);
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga8cc5eebccc4e5523d6a38aab21cf97c8" title="Adds the child to the group item.">noti_ex_item_group_add_child</a>(noti_list[1], child_item);
+    <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy</a>(child_item);
 
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga219bc7d5b2952ceca2867c522bef7ea4" title="Posts notifications contained in a list.">noti_ex_reporter_post_list</a>(handle, noti_list, 2, &amp;request_id);
+    <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy</a>(noti_list[0]);
+    <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy</a>(noti_list[1]);
+
+    free(noti_list);
 }
 </pre></div> </dd></dl>
 
