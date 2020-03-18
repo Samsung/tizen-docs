@@ -14,7 +14,7 @@ Visual Studio Code Extension for Tizen enables you to develop Tizen .NET and Tiz
 
   To use VS Code Extension for Tizen, you must install the following tools:
 
-  - NET Core SDK 2.0 or later **for Tizen.Net only**
+  - NET Core SDK 2.0 **for Tizen.Net only**
 
     Download from <https://www.microsoft.com/net/download/>.
 
