@@ -1,46 +1,26 @@
-
 # API Versioning and Deprecation Policy of the Tizen Platform
 
 
-As much as the Tizen team wants to have a completely stable API, the
-evolution of both hardware technology and software capabilities is
-rapid. To be maximally useful, the API set must evolve to reflect those
-changes to enable the development of compelling applications that use
-those features. As an inevitable side effect, APIs may become obsolete
-and need to be replaced by more feature-rich versions.
+As much as the Tizen team wants to have a completely stable API, the evolution of both hardware technology and software capabilities is rapid. To be maximally useful, the API set must evolve to reflect those changes to enable the development of compelling applications that use those features. As an inevitable side effect, APIs may become obsolete and need to be replaced by more feature-rich versions.
 
-To mitigate the effect of the API deprecations, the Tizen team has
-decided to support deprecated APIs for 2 releases. You are encouraged to
-use the best API set that meets your needs at the time of development.
-If the application needs a specific API version, you can indicate it in
-the packaging information for Web, native, and hybrid application
-packages.
+To mitigate the effect of the API deprecations, the Tizen team has decided to support deprecated APIs for 2 releases. You are encouraged to use the best API set that meets your needs at the time of development. If the application needs a specific API version, you can indicate it in the packaging information for Web, native, and hybrid application packages.
 
 <a name="versioning"></a>
 ## API Versioning
 
 
-The version format used to identify the APIs of the Tizen platform is
-**X.Y.Z** (Major.Minor.Micro). All changes, including any kind of
-version update, maintain the application binary interface (ABI)
-compatibility excepting only critical security reasons.
+The version format used to identify the APIs of the Tizen platform is **X.Y.Z** (Major.Minor.Micro). All changes, including any kind of version update, maintain the application binary interface (ABI) compatibility excepting only critical security reasons.
 
 <a name="policy"></a>
 ## Deprecation Policy and Schedule
 
-API deprecation is used to inform you that some APIs are no longer
-recommended for use in your applications. The Tizen team is trying to
-keep the API as stable as possible, but sometimes APIs must be
-deprecated due to, for example, critical security issues, or new and
-better alternatives.
+API deprecation is used to inform you that some APIs are no longer recommended for use in your applications. The Tizen team is trying to keep the API as stable as possible, but sometimes APIs must be deprecated due to, for example, critical security issues, or new and better alternatives.
 
-Based on a careful analysis, the following deprecation policy has been
-adopted in Tizen:
+Based on a careful analysis, the following deprecation policy has been adopted in Tizen:
 
--   This policy comes into effect beginning with Tizen 2.4.
+- This policy comes into effect beginning with Tizen 2.4.
 
-- The functionality of the deprecated API is available for 2 releases,
-    as indicated in the following table.
+- The functionality of the deprecated API is available for 2 releases, as indicated in the following table.
 
   **Table: Deprecation schedule**
 
@@ -51,31 +31,22 @@ adopted in Tizen:
 | **API Reference<br>API Guides<br>Samples** |Available  |Available      | **Not available**       |
 | **TCT**  | Available   | Available    | **Not available**  |
 
-- Deprecated APIs are removed after 2 version releases (including the
-    notice version).
+- Deprecated APIs are removed after 2 version releases (including the notice version).
 
-    During the 2 version releases, the functionality of the deprecated
-    API may also be removed immediately for security reasons or as an
-    unavoidable part of the platform evolution.
+    During the 2 version releases, the functionality of the deprecated API may also be removed immediately for security reasons or as an unavoidable part of the platform evolution.
 
-- Alternatives must be described within the reference of the
-    deprecated API, if possible.
+- Alternatives must be described within the reference of the deprecated API, if possible.
 
-- All version changes are considered 1 release for purposes of the
-    deprecation policy.
+- All version changes are considered 1 release for purposes of the deprecation policy.
 
 
 <a name="identify"></a>
 ## Identifying a Deprecated API
 
 
-Tizen Studio continues to provide deprecation warnings. From the API
-reference, you can find a highlighted tag starting with **Deprecated**.
-If there is an alternative for the deprecated API, it is specified
-within that tag.
+Tizen Studio continues to provide deprecation warnings. From the API reference, you can find a highlighted tag starting with **Deprecated**. If there is an alternative for the deprecated API, it is specified within that tag.
 
-The following examples illustrate how the deprecation info is shown in
-the API reference:
+The following examples illustrate how the deprecation info is shown in the API reference:
 
 -   Deprecated API in the Native API:
 
@@ -148,5 +119,4 @@ You can also see the API deprecation warning in log messages:
 ## API Backward Compatibility
 
 
-With the best efforts, the Tizen platform tries to provide a backward
-compatibility of public APIs documented in the API reference. Therefore, you must use the listed APIs in the API reference to make the applications compatible.
+With the best efforts, the Tizen platform tries to provide a backward compatibility of public APIs documented in the API reference. Therefore, you must use the listed APIs in the API reference to make the applications compatible.
