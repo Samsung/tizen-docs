@@ -12,11 +12,11 @@
   - Log Viewer has been re-enabled in Tizen IDE.
 
 - Certificate Manager
-  - The security of Tizen certificates has been enhanced by adding support for SHA512 encryption.
+  - The security of the Tizen certificates has been enhanced by adding support for SHA512 encryption.
 
 ### Fixed Bugs
 
-- The issue of Tizen Native unit test applications not getting installed on the emulator has been fixed.
+- The issue of the Tizen Native unit test applications not getting installed on the emulator has been fixed.
 
 ### Known Issues
 
