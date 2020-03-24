@@ -12,7 +12,7 @@
   - Log Viewer has been re-enabled in the IDE.
 
 - Certificate Manager
-  - The security of the certificates has been enhanced by adding support for SHA512 encryption.
+  - The security of Tizen certificates has been enhanced by adding support for SHA512 encryption.
 
 ### Fixed Bugs
 
