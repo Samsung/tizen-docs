@@ -37,7 +37,7 @@ switched it **on**.
 > **Note**  
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
-> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/requesting-permissions.md) using the [Privacy Privilege Manager API](../api/tizenfx/api/Tizen.Security.PrivacyPrivilegeManager.html).
+> Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/privacy-related-permissions.md) using the [Privacy Privilege Manager API](../api/tizenfx/api/Tizen.Security.PrivacyPrivilegeManager.html).
 
 Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying APIs and
 Privileges](../../tizen-studio/native-tools/api-checker.md).
