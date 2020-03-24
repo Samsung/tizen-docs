@@ -7,16 +7,16 @@
 ### New Features
 
 - IDE
-  - Bundeled JDK with Tizen Studio removing the dependency on system Java
-  - Support for Chrome 80 added
-  - Log Viewer has been re enabled in the IDE
+  - JDK has been bundled with Tizen Studio removing the dependency of Java being installed in the system.
+  - Support for Chrome 80 has been added.
+  - Log Viewer has been re-enabled in the IDE.
 
 - Certificate Manager
-  - Enhanced the security of certificates by adding support for SHA512 encryption
+  - The security of the certificates has been enhanced by adding support for SHA512 encryption.
 
 ### Fixed Bugs
 
-- The issue with Native unit test applications not getting installed on emulator is fixed
+- The issue of Tizen Native unit test applications not getting installed on the emulator has been fixed.
 
 ### Known Issues
 
@@ -33,8 +33,8 @@
 - Certificate Manager
   - Overwriting a duplicate certificate profile in the migration wizard works incorrectly on macOS.
 - Emulator
-  - In 5.5 Emulator images app un-installation might take some time to complete if the app name contains more than 14 characters. A patch for the same will be released in next update.
-  - To use the Tizen Emulator, install an Intel VTx supported by the CPU and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for the Tizen Emulator, see [Prerequisites for Tizen Studio](../setup/prerequisites.md).
+  - In the Tizen 5.5 version, the emulator images app un-installation might take some time to complete if the app name contains more than 14 characters. A patch for the same will be released in the next update.
+  - To use Tizen Emulator, use Intel VTx supported CPU and the latest version of the graphic card driver provided by the vendor. To verify the prerequisites for Tizen Emulator, see [Prerequisites for Tizen Studio](../setup/prerequisites.md).
     - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen Emulator to run with your NVIDIA&reg; graphics card. For Ubuntu, verify the [bumblebee project](https://wiki.ubuntu.com/Bumblebee). For Windows&reg;, select **High Speed NVIDIA&reg; Processor** as **Preferred Graphics Processor** in the NVIDIA&reg; control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session occasionally logs out while launching Emulator Manager, or the emulator skin is displayed improperly. Verify the prerequisites and upgrade to the latest graphics driver.
   - On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.
