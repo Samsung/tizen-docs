@@ -17,6 +17,12 @@ The main features of the `Tizen.Security.PrivacyPrivilegeManager` class include:
 
 For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/sec-privileges.md).
 
+> **Note**
+>
+> Popups by `ppm_request_permission()` and `ppm_request_permissions()` are launched as 'group mode' with caller apps.   
+> If the popup is terminated without full responses, all remained requests that aren't responded by the user will be treated as if the user selected `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE` and you can request the permission again anytime you want.  
+> If you need to request multiple privileges then use `ppm_request_permissions()`.
+
 ## Prerequisites
 
 To enable your application to use the privacy-related permissions functionality:
