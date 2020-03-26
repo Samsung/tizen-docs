@@ -9,7 +9,6 @@
 - IDE
   - JDK has been bundled with Tizen Studio removing the dependency of Java being installed in the system.
   - Support for Chrome 80 has been added.
-  - Log Viewer has been re-enabled in Tizen IDE.
 
 - Certificate Manager
   - The security of the Tizen certificates has been enhanced by adding support for SHA512 encryption.
