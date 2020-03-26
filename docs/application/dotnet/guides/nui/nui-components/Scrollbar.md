@@ -1,4 +1,5 @@
 # ScrollBar
+
 A scroll bar allows you to recognize the direction of the display, the range of lists, and the range of content.  
 A scroll bar is shown on the screen only when the entire content cannot be displayed on the same page.  
 The method of displaying a scroll bar can vary depending on the display area such as a list or a text area.
@@ -37,6 +38,92 @@ Following output is generated when the progress is created using property:
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
+## Create with style
+
+To create a scrollbar using style, follow these steps:
+
+1. Firstly, we create a scrollbar style as the whole view to set the properties of the track and the thumb.
+
+    ```cs
+    ScrollBarStyle style = new ScrollBarStyle
+    {
+        Track = new ImageViewStyle
+        {
+            BackgroundColor = Color.Green
+        },
+        Thumb = new ImageViewStyle
+        {
+            BackgroundColor = Color.Black,
+            Size = new Size(30, 4)
+        },
+    };
+    ```
+
+2. Use the style to create a scroll bar and add it to its parent.
+
+    ```cs
+    scrollBar = new ScrollBar(style);
+    scrollBar.Size = new Size(300, 4);
+    scrollBar.MaxValue = (int)scrollBar.SizeWidth / 10;
+    scrollBar.MinValue = 0;
+    scrollBar.CurrentValue = 0;
+    root.Add(scrollBar);
+    ```
+
+Following output is generated when the progress is created using style:
+
+![CreateWithProperties](./media/scrollbar_properties.PNG)
+
+## Create with defined styles
+
+You can define a style according to the UX, then you can use the this style to ceate a scrollBar.
+
+1. Firstly, we define a custome style as the whole view.
+
+    ```cs
+    internal class CustomeScrollBarStyle : StyleBase
+    {
+        protected override ViewStyle GetViewStyle()
+        {
+            ScrollBarStyle style = new ScrollBarStyle
+            {
+                Track = new ImageViewStyle
+                {
+                    BackgroundColor = Color.Green
+                },
+                Thumb = new ImageViewStyle
+                {
+                    BackgroundColor = Color.Black,
+                    Size = new Size(30, 4)
+                },
+                Direction = ScrollBar.DirectionType.Horizontal,
+            };
+            return style;
+        }
+    }
+    ```
+
+2. Register your custome style.
+
+    ```cs
+    StyleManager.Instance.RegisterStyle("CustomeScrollbar", null, typeof(YourNameSpace.CustomeScrollBarStyle));
+    ```
+
+3. Use your custome style to create a scroll bar instance
+
+    ```cs
+    scrollBar = new ScrollBar("CustomeScrollbar");
+    scrollBar.Size = new Size(300, 4);
+    scrollBar.MaxValue = (int)scrollBar.SizeWidth / 10;
+    scrollBar.MinValue = 0;
+    scrollBar.CurrentValue = 0;
+    root.Add(scrollBar);
+    ```
+
+Following output is generated when the progress is created using defined style:
+
+![CreateWithProperties](./media/scrollbar_properties.PNG)
+
 ## ScrollBar Properties
 
 The properties available in the ScrollBar class are:
@@ -54,5 +141,6 @@ The properties available in the ScrollBar class are:
 | ThumbSize | Size | Get or set the size of the thumb object |
 
 ## Related Information
+
 - Dependencies
   -   Tizen 5.5 and Higher

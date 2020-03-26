@@ -1,4 +1,5 @@
 # Slider
+
 A slider enables you to select a value from a continuous or discrete range of values by moving the slider thumb.
 
 Sliders are classified into a horizontal type and a vertical type, depending on their orientation, and the number of sliders that are adjusted simultaneously.
@@ -40,7 +41,107 @@ Following output is generated when the slider is created using property:
 
 ![Slider](./media/slider.gif)
 
+## Create with style
+
+To create a slider using style, follow these steps:
+
+1. Create Slider style
+
+    ```cs
+    SliderStyle style = new SliderStyle
+    {
+        TrackThickness = 4,
+        Track = new ImageViewStyle
+        {
+            BackgroundColor = new Color(0, 0, 0, 0.1f)
+        },
+        Progress = new ImageViewStyle
+        {
+            BackgroundColor = new Color(0.05f, 0.63f, 0.9f, 1)
+        },
+        Thumb = new ImageViewStyle
+        {
+            Size = new Size(60, 60),
+            ResourceUrl = new Selector<string>
+            {
+                Normal = "controller_btn_slide_handler_normal.png",
+                Pressed = "controller_btn_slide_handler_press.png",
+            },
+        },
+    };
+    ```
+
+2. Use the style to create a Slider and add it to parent
+
+    ```cs
+    utilityBasicSlider = new Slider(style);
+    utilityBasicSlider.Size = new Size(50, 400);
+    utilityBasicSlider.Direction = Slider.DirectionType.Horizontal;
+    root.Add(utilityBasicSlider);
+    ```
+
+Following output is generated when the slider is created using style:
+
+![Slider](./media/slider.gif)
+
+## Create with defined styles
+
+You can define a style according to the UX, then you can use the this style to ceate a slider.
+
+1. User define a custom style as the whole view.
+
+    ```cs
+    internal class CustomSliderStyle : StyleBase
+    {
+        protected override ViewStyle GetViewStyle()
+        {
+            SliderStyle style = new SliderStyle
+            {
+                TrackThickness = 4,
+                Track = new ImageViewStyle
+                {
+                    BackgroundColor = new Color(0, 0, 0, 0.1f)
+                },
+                Progress = new ImageViewStyle
+                {
+                    BackgroundColor = new Color(0.05f, 0.63f, 0.9f, 1)
+                },
+                Thumb = new ImageViewStyle
+                {
+                    Size = new Size(60, 60),
+                    ResourceUrl = new Selector<string>
+                    {
+                        Normal = "controller_btn_slide_handler_normal.png",
+                        Pressed = "controller_btn_slide_handler_press.png",
+                    },
+                },
+            };
+            return style;
+        }
+    }
+    ```
+
+2. Register your custom style.
+
+    ```cs
+    StyleManager.Instance.RegisterStyle("CustomSlider", null, typeof(YourNameSpace.CustomSliderStyle));
+    ```
+
+3. Use your custom style to create a slider instance
+
+    ```cs
+    utilityBasicSlider = new Slider("CustomSlider");
+    utilityBasicSlider.Size = new Size(50, 400);
+    utilityBasicSlider.Direction = Slider.DirectionType.Horizontal;
+    root.Add(utilityBasicSlider);
+    ```
+
+Following output is generated when the slider is created using defined style:
+
+![Slider](./media/slider.gif)
+
 ## Responding to ValueChangedEvent
+
 When you touch or pan a slider, the slider instance receives a value changed event.
 You can declare the value changed event handler as follows:
 
@@ -57,6 +158,7 @@ private void OnValueChanged(object sender, Slider.ValueChangedArgs args)
 ```
 
 ## Responding to StateChangedEvent
+
 Slider has the following eight states: `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
 When you change the slider state as change focus or disable a slider, the slider instance receives a state changed event. You can declare the state changed event handler as follows:
 
@@ -73,6 +175,7 @@ private void OnStateChanged(object sender, Slider.StateChangedArgs args)
 ```
 
 ## Responding to SlidingFinishedEvent
+
 As you finish a touch or a pan operate on a slider, the slider instance receives a slide finished event. You can declare the slide finished event handler as follows:
 
 ```cs
@@ -88,5 +191,6 @@ private void OnSlidingFinished(object sender, Slider.SlidingFinishedArgs args)
 ```
 
 ## Related Information
+
 - Dependencies
   -   Tizen 5.5 and Higher

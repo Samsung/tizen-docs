@@ -1,4 +1,5 @@
 # Popup
+
 Popup is a common component that is used as a popup window. You can manage a popup button count, head title, and content area.
 
 A popup can be created using property.
@@ -46,7 +47,117 @@ Following output is generated when the popup is created using property:
 
 ![PopupProperty](./media/PopupProperty.PNG)
 
+## Create with style
+
+To create a popup using style, follow these steps:
+
+1. Create popup style
+
+    ```cs
+    PopupStyle style = new PopupStyle
+    {
+        MinimumSize = new Size(1032, 184),
+        BackgroundImage = "popup_background.png",
+        BackgroundImageBorder = new Rectangle(0, 0, 81, 81),
+        Title = new TextLabelStyle
+        {
+            PointSize = 25,
+            TextColor = Color.Black,
+            Size = new Size(0, 68),
+            HorizontalAlignment = HorizontalAlignment.Begin,
+            Position = new Position(64, 52),
+            Text = "Popup Title",
+        },
+        Buttons = new ButtonStyle
+        {
+            Text = new TextLabelStyle
+            {
+                TextColor = new Color(0.05f, 0.63f, 0.9f, 1),
+            },
+        },
+    };
+    ```
+
+2. Use the style to create a popup and add popup to parent
+
+    ```cs
+    popup2 = new Popup(style);
+    popup2.Size = new Size(1032, 400);
+    popup2.Position = new Position(200, 600);
+    popup2.ButtonHeight = 132;
+    popup2.ButtonCount = 2;
+    popup2.SetButtonText(0, "Yes");
+    popup2.SetButtonText(1, "Exit");
+    root.Add(popup2);
+    ```
+
+Following output is generated when the popup is created using style:
+
+![PopupProperty](./media/PopupProperty.PNG)
+
+## Create with defined styles
+
+You can define a style according to the UX, then you can use the this style to ceate a popup.
+
+1. User define a custom style as the whole view.
+
+    ```cs
+    internal class CustomPopupStyle : StyleBase
+    {
+        protected override ViewStyle GetViewStyle()
+        {
+            PopupStyle style = new PopupStyle
+            {
+                MinimumSize = new Size(1032, 184),
+                BackgroundImage = "popup_background.png",
+                BackgroundImageBorder = new Rectangle(0, 0, 81, 81),
+                Title = new TextLabelStyle
+                {
+                    PointSize = 25,
+                    TextColor = Color.Black,
+                    Size = new Size(0, 68),
+                    HorizontalAlignment = HorizontalAlignment.Begin,
+                    Position = new Position(64, 52),
+                    Text = "Popup Title",
+                },
+                Buttons = new ButtonStyle
+                {
+                    Text = new TextLabelStyle
+                    {
+                        TextColor = new Color(0.05f, 0.63f, 0.9f, 1),
+                    },
+                },
+            };
+            return style;
+        }
+    }
+    ```
+
+2. Register your custom style.
+
+    ```cs
+    StyleManager.Instance.RegisterStyle("CustomPopup", null, typeof(YourNameSpace.CustomPopupStyle));
+    ```
+
+3. Use your custom style to create a popup instance
+
+    ```cs
+    popup = new Tizen.NUI.CommonUI.Popup("CustomPopup");
+    popup.Size = new Size(1032, 400);
+    popup.Position = new Position(1200, 50);
+    popup.ButtonHeight = 132;
+    popup.ButtonCount = 2;
+    popup.SetButtonText(0, "Yes");
+    popup.SetButtonText(1, "Exit");
+    root.Add(popup);
+    ```
+
+Following output is generated when the popup is created using defined style:
+
+![PopupProperty](./media/PopupProperty.PNG)
+
 ## Responding to PopupButtonClickEvent
+
 When you click the popup button, the popup instance receives a PopupButtonClickEvent.
 You can declare the event handler as follows:
 
@@ -63,5 +174,6 @@ private void PopupButtonClickEvent(object sender, Tizen.NUI.CommonUI.Popup.Butto
 ```
 
 ## Related Information
+
 - Dependencies
   -   Tizen 5.5 and Higher
