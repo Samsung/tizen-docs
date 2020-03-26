@@ -1,4 +1,5 @@
 # Tab
+
 Tab is a common component and it can be used as a menu label.
 
 A tab makes it easy to explore and switch between different views or functional aspects of an application or to browse categorized data sets.
@@ -55,7 +56,127 @@ Following output is generated when the tab is created using property:
 
 ![Tab](./media/tab.gif)
 
+## Create with style
+
+To create a tab using style, follow these steps:
+
+1. Create tab style
+
+    ```cs
+    TabStyle style = new TabStyle
+    {
+        ItemPadding = new Extents(56, 56, 1, 0),
+        UnderLine = new ViewStyle
+        {
+            Size = new Size(1, 3),
+            PositionUsesPivotPoint = true,
+            ParentOrigin = Tizen.NUI.ParentOrigin.BottomLeft,
+            PivotPoint = Tizen.NUI.PivotPoint.BottomLeft,
+            BackgroundColor = color[0],
+        },
+        Text = new TextLabelStyle
+        {
+            PointSize = 25,
+            TextColor = new Selector<Color>
+            {
+                Normal = Color.Black,
+                Selected = color[0],
+            },
+        },
+    };
+    ```
+
+2. Use the style to create a tab and add it to parent
+
+    ```cs
+    utilityBasicTab = new Tab(style);
+    utilityBasicTab.Size = new Size(700, 108);
+    utilityBasicTab.Position = new Position(900, 300);
+    utilityBasicTab.BackgroundColor = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+    utilityBasicTab.ItemChangedEvent += TabItemChangedEvent;
+    root.Add(utilityBasicTab);
+
+    for (int i = 0; i < 3; i++)
+    {
+        Tab.TabItemData item = new Tab.TabItemData();
+        item.Text = "Tab " + i;
+        utilityBasicTab.AddItem(item);
+    }
+    utilityBasicTab.SelectedItemIndex = 0;
+    ```
+
+Following output is generated when the tab is created using style:
+
+![Tab](./media/tab.gif)
+
+## Create with defined styles
+
+You can define a style according to the UX, then you can use the this style to ceate a tab.
+
+1. User define a custom style as the whole view.
+
+    ```cs
+    internal class CustomTabStyle : StyleBase
+    {
+        protected override ViewStyle GetViewStyle()
+        {
+            TabStyle style = new TabStyle
+            {
+                ItemPadding = new Extents(56, 56, 1, 0),
+                UnderLine = new ViewStyle
+                {
+                    Size = new Size(1, 3),
+                    PositionUsesPivotPoint = true,
+                    ParentOrigin = Tizen.NUI.ParentOrigin.BottomLeft,
+                    PivotPoint = Tizen.NUI.PivotPoint.BottomLeft,
+                    BackgroundColor = color[0],
+                },
+                Text = new TextLabelStyle
+                {
+                    PointSize = 25,
+                    TextColor = new Selector<Color>
+                    {
+                        Normal = Color.Black,
+                        Selected = color[0],
+                    },
+                },
+            };
+            return style;
+        }
+    }
+    ```
+
+2. Register your custom style.
+
+    ```cs
+    StyleManager.Instance.RegisterStyle("CustomTab", null, typeof(YourNameSpace.CustomTabStyle));
+    ```
+
+3. Use your custom style to create a tab instance
+
+    ```cs
+    utilityBasicTab = new Tab("CustomTab");
+    utilityBasicTab.Size = new Size(700, 108);
+    utilityBasicTab.Position = new Position(900, 300);
+    utilityBasicTab.BackgroundColor = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+    utilityBasicTab.ItemChangedEvent += TabItemChangedEvent;
+    root.Add(utilityBasicTab);
+
+    for (int i = 0; i < 3; i++)
+    {
+        Tab.TabItemData item = new Tab.TabItemData();
+        item.Text = "Tab " + i;
+        utilityBasicTab.AddItem(item);
+    }
+    utilityBasicTab.SelectedItemIndex = 0;
+    ```
+
+Following output is generated when the tab is created using defined style:
+
+![Tab](./media/tab.gif)
+
 ## Responding to ItemChangedEvent
+
 When you click an item on tab, the tab receives an item change event.
 You can declare the item change event handler as follows:
 
@@ -72,5 +193,6 @@ private void TabItemChangedEvent(object sender, Tab.ItemChangeEventArgs e)
 ```
 
 ## Related Information
+
 - Dependencies
   -   Tizen 5.5 and Higher
