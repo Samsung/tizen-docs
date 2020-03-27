@@ -1175,7 +1175,7 @@
 #### [Debug the Project](/application/tizen-studio/rt-ide/get-started/debug.md)
 
 ## Release Notes
-### [3.7 (Mar 31, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
+### [3.7 (Mar 30, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
 ### [3.6 (Dec 10, 2019)](/application/tizen-studio/release-notes/3-6-release-notes.md)
 ### [3.5 (Oct 30, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
 ### [3.3 (Jul 24, 2019)](/application/tizen-studio/release-notes/3-3-release-notes.md)
