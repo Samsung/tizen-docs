@@ -18,11 +18,11 @@ The main features of the Privacy Privilege API include:
 
 For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/sec-privileges.md).
 
-> **Note**
+> [!NOTE]
 >
-> Popups by `ppm_request_permission()` and `ppm_request_permissions()` are launched as 'group mode' with caller apps since Tizen 5.5.   
-> If the popup is terminated without full responses, all remained requests that aren't responded by the user will be treated as if the user selected `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE` and you can request the permission again anytime you want.  
-> If you need to request multiple privileges then use `ppm_request_permissions()`.
+> Since Tizen 5.5, pop-ups by `requestPermission()` and `requestPermissions()` are launched as `group mode` with the caller apps.   
+> If the pop-up is terminated without full responses, all remained requests that aren't responded by the user will be treated as if the user selected 'Deny' for the requests. In this case, the app will get `PPM_DENY_ONCE` for those permissions and the app can request the **automatically denied** permissions again anytime it wants.  
+> If you need to request multiple privileges then use `requestPermissions()` instead of calling `requestPermission()` multiple times.
 
 <a name="requesting"></a>
 ## Requesting Permissions
@@ -95,7 +95,7 @@ To verify whether an application has permission to use a privilege, and to reque
 
 4. Since Tizen 5.0 you can check and request multiple privacy privileges at once. To do that please use `checkPermissions` [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PrivacyPrivilegeManager::checkPermissions) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PrivacyPrivilegeManager::checkPermissions) and `requestPermissions` [mobile](../../api/latest/device_api/mobile/tizen/ppm.html#PrivacyPrivilegeManager::requestPermissions) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html#PrivacyPrivilegeManager::requestPermissions).
 
-> **Note**  
+> [!NOTE]  
 > Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.
 
 ## Related Information

@@ -17,11 +17,11 @@ The main features of the `Tizen.Security.PrivacyPrivilegeManager` class include:
 
 For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/sec-privileges.md).
 
-> **Note**
+> [!NOTE]
 >
-> Popups by `ppm_request_permission()` and `ppm_request_permissions()` are launched as 'group mode' with caller apps since Tizen 5.5.   
-> If the popup is terminated without full responses, all remained requests that aren't responded by the user will be treated as if the user selected `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE` and you can request the permission again anytime you want.  
-> If you need to request multiple privileges then use `ppm_request_permissions()`.
+> Since Tizen 5.5, pop-ups by `RequestPermission()` and `RequestPermissions()` are launched as `group mode` with the caller apps.   
+> If the pop-up is terminated without full responses, all remained requests that aren't responded by the user will be treated as if the user answered 'Deny' for the requests. In this case, the app will get `RequestResult.DenyOnce` for those permissions and the app can request the **automatically denied** permissions again anytime it wants.  
+> If you need to request multiple privileges then use `RequestPermissions()` instead of calling `RequestPermission()` multiple times.
 
 ## Prerequisites
 
@@ -37,7 +37,7 @@ To enable your application to use the privacy-related permissions functionality:
 
     It means that the methods can be employed in any UI event handler (such as button click, timer event, system event, and application state change event). If you want to resolve privileges during application startup, call these methods from the Xamarin.Forms resume and start life-cycle methods (`Xamarin.Forms.Application.OnResume()` and `Xamarin.Forms.Application.OnStart()`).
 
-    > **Note**
+    > [!NOTE]
     >
     > The `Tizen.Security.PrivacyPrivilegeManager` class is not thread-safe.
 
@@ -152,7 +152,7 @@ To check whether an application has permission to use a privilege, and to reques
 
 This section describes how to check and request multiple privileges in a single API call.
 
-> **Note**
+> [!NOTE]
 >
 > Multiple privileges in a single API call are supported from Tizen 5.5.
 
@@ -233,7 +233,7 @@ To check whether an application has permission to use a privilege, and to reques
         }
       ```
 
-> **Note**
+> [!NOTE]
 >
 > Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.
 
