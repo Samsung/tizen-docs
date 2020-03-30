@@ -19,9 +19,9 @@ For a list of privacy-related privileges, see [Security and API Privileges](../.
 
 > [!NOTE]
 >
-> Since Tizen 5.5, pop-ups by `ppm_request_permission()` and `ppm_request_permissions()` are launched as `group mode` with the caller apps.   
-> If the pop-up is terminated without full responses, all remained requests that aren't responded by the user will be treated as if the user answered 'Deny' for the requests. In this case, the app will get `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE` for those permissions and the app can request the **automatically denied** permissions again anytime it wants.  
-> If you need to request multiple privileges then use `ppm_request_permissions()` instead of calling `ppm_request_permission()` multiple times.
+> Since Tizen 5.5, pop-ups by `ppm_request_permission()` and `ppm_request_permissions()` are launched as `group mode` with the caller apps.
+> If the pop-up is terminated without full response, all the remaining requests that aren't responded by the user will be interpreted as 'Deny' action on behalf of the user. In this case, the app gets `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE` response to those permissions. The app can again request for those **automatically denied** permissions anytime it needs.
+> Use `ppm_request_permissions()` to request multiple privileges instead of calling `ppm_request_permission()` multiple times.
 
 ## Prerequisites
 
