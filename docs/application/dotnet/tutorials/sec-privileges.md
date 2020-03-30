@@ -34,7 +34,7 @@ application. For the application to use the API, the privilege must be
 declared in the `tizen-manifest.xml` file and the user must have
 switched it **on**.
 
-> **Note**  
+> [!NOTE]  
 > In applications with the platform version 3.0 or higher, if you use privacy-related privileged APIs, make sure that the user has switched the privilege on before making the function call. Otherwise, the application does not work as expected.
 >
 > Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/privacy-related-permissions.md) using the [Privacy Privilege Manager API](../api/tizenfx/api/Tizen.Security.PrivacyPrivilegeManager.html).
