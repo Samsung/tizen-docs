@@ -6,7 +6,7 @@ A popup can be created using property.
 
 ![PopupProperty](./media/PopupProperty.PNG)
 
-## Create with Property
+## Create with property
 
 To create a popup using property, follow these steps:
 
@@ -51,7 +51,7 @@ Following output is generated when the popup is created using property:
 
 To create a popup using style, follow these steps:
 
-1. Create popup style
+1. Create a style for popup:
 
     ```cs
     PopupStyle style = new PopupStyle
@@ -78,7 +78,7 @@ To create a popup using style, follow these steps:
     };
     ```
 
-2. Use the style to create a popup and add popup to parent
+2. Use the style to create a popup and add it to parent:
 
     ```cs
     popup2 = new Popup(style);
@@ -97,9 +97,9 @@ Following output is generated when the popup is created using style:
 
 ## Create with defined styles
 
-You can define a style according to the UX, then you can use the this style to ceate a popup.
+You can define a style based on the user experience (UX) and then use this style to ceate a popup.
 
-1. User define a custom style as the whole view.
+1. Define a custom style:
 
     ```cs
     internal class CustomPopupStyle : StyleBase
@@ -133,13 +133,13 @@ You can define a style according to the UX, then you can use the this style to c
     }
     ```
 
-2. Register your custom style.
+2. Register your custom style:
 
     ```cs
     StyleManager.Instance.RegisterStyle("CustomPopup", null, typeof(YourNameSpace.CustomPopupStyle));
     ```
 
-3. Use your custom style to create a popup instance
+3. Use your custom style to create a popup instance:
 
     ```cs
     popup = new Tizen.NUI.CommonUI.Popup("CustomPopup");
@@ -152,7 +152,7 @@ You can define a style according to the UX, then you can use the this style to c
     root.Add(popup);
     ```
 
-Following output is generated when the popup is created using defined style:
+Following output is generated when the popup is created using the defined style:
 
 ![PopupProperty](./media/PopupProperty.PNG)
 

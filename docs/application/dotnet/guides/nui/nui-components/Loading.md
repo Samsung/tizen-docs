@@ -11,7 +11,7 @@ Following are the instances where loading is used:
 
 ![Loading](./media/loading.png)
 
-## Create with Property
+## Create with property
 
 To create a loading using property, follow these steps:
 
@@ -41,7 +41,7 @@ Following output is generated when the loading is created using property:
 
 To create a loading using style, follow these steps:
 
-1. Create loading style
+1. Create a style for loading:
 
     ```cs
     string[] imageArray = new string[36];
@@ -55,7 +55,7 @@ To create a loading using style, follow these steps:
     };
     ```
 
-2. Use the style to create a loading and add it to parent
+2. Use the style to create a loading and add it to parent:
 
     ```cs
     utilityBasicLoading = new Loading(style);
@@ -70,9 +70,9 @@ Following output is generated when the loading is created using style:
 
 ## Create with defined styles
 
-You can define a style according to the UX, then you can use the this style to ceate a loading.
+You can define a style based on the user experience (UX) and then use this style to ceate a loading.
 
-1. User define a custom style as the whole view.
+1. Define a custom style:
 
     ```cs
     internal class CustomLoadingStyle : StyleBase
@@ -90,13 +90,13 @@ You can define a style according to the UX, then you can use the this style to c
     }
     ```
 
-2. Register your custom style.
+2. Register your custom style:
 
     ```cs
     StyleManager.Instance.RegisterStyle("CustomLoading", null, typeof(YourNameSpace.CustomLoadingStyle));
     ```
 
-3. Use your custom style to create a loading instance
+3. Use your custom style to create a loading instance:
 
     ```cs
     utilityBasicLoading = new Loading("CustomLoading");
@@ -105,7 +105,7 @@ You can define a style according to the UX, then you can use the this style to c
     root.Add(utilityBasicLoading);
     ```
 
-Following output is generated when the loading is created using defined style:
+Following output is generated when the loading is created using the defined style:
 
 ![Loading](./media/loading.gif)
 

@@ -5,7 +5,7 @@ A button can either contain a text or an icon, and can be created using property
 
 ![Button](./media/Button.PNG)
 
-## Create with Property
+## Create with property
 
 To create a button using property, follow these steps:
 
@@ -47,7 +47,7 @@ Following output is generated when the button is created using property:
 
 To create a button using style, follow these steps:
 
-1. Create button style
+1. Create a style for button:
 
     ```cs
     ButtonStyle style = new ButtonStyle
@@ -70,7 +70,7 @@ To create a button using style, follow these steps:
     };
     ```
 
-2. Use the style to create a button and add button to parent
+2. Use the style to create a button and add it to parent:
 
     ```cs
     familyBasicButton = new Button(style);
@@ -85,9 +85,9 @@ Following output is generated when the button is created using style:
 
 ## Create with defined styles
 
-You can define a style according to the UX, then you can use the this style to ceate a button.
+You can define a style based on the user experience (UX) and then use this style to ceate a button.
 
-1. User define a custom style as the whole view.
+1. Define a custom style:
 
     ```cs
     internal class CustomButtonStyle : StyleBase
@@ -117,13 +117,13 @@ You can define a style according to the UX, then you can use the this style to c
     }
     ```
 
-2. Register your custom style.
+2. Register your custom style:
 
     ```cs
     StyleManager.Instance.RegisterStyle("CustomButton", null, typeof(YourNameSpace.CustomButtonStyle));
     ```
 
-3. Use your custom style to create a button instance
+3. Use your custom style to create a button instance:
 
     ```cs
     familyBasicButton = new Button("CustomButton");
@@ -132,7 +132,7 @@ You can define a style according to the UX, then you can use the this style to c
     root.Add(familyBasicButton);
     ```
 
-Following output is generated when the button is created using defined styles:
+Following output is generated when the button is created using the defined style:
 
 ![ButtonProperty](./media/ButtonProperty.PNG)
 

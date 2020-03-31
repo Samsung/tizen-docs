@@ -8,7 +8,7 @@ Using a slider you can adjust the steps or strength of settings, such as brightn
 
 ![Slider](./media/slider.png) ![Slider](./media/slider2.png)
 
-## Create with Property
+## Create with property
 
 To create a slider using property, follow these steps:
 
@@ -45,7 +45,7 @@ Following output is generated when the slider is created using property:
 
 To create a slider using style, follow these steps:
 
-1. Create Slider style
+1. Create a style for slider:
 
     ```cs
     SliderStyle style = new SliderStyle
@@ -71,7 +71,7 @@ To create a slider using style, follow these steps:
     };
     ```
 
-2. Use the style to create a Slider and add it to parent
+2. Use the style to create a slider and add it to parent:
 
     ```cs
     utilityBasicSlider = new Slider(style);
@@ -86,9 +86,9 @@ Following output is generated when the slider is created using style:
 
 ## Create with defined styles
 
-You can define a style according to the UX, then you can use the this style to ceate a slider.
+You can define a style based on the user experience (UX) and then use the this style to ceate a slider.
 
-1. User define a custom style as the whole view.
+1. Define a custom style:
 
     ```cs
     internal class CustomSliderStyle : StyleBase
@@ -121,13 +121,13 @@ You can define a style according to the UX, then you can use the this style to c
     }
     ```
 
-2. Register your custom style.
+2. Register your custom style:
 
     ```cs
     StyleManager.Instance.RegisterStyle("CustomSlider", null, typeof(YourNameSpace.CustomSliderStyle));
     ```
 
-3. Use your custom style to create a slider instance
+3. Use your custom style to create a slider instance:
 
     ```cs
     utilityBasicSlider = new Slider("CustomSlider");
@@ -136,7 +136,7 @@ You can define a style according to the UX, then you can use the this style to c
     root.Add(utilityBasicSlider);
     ```
 
-Following output is generated when the slider is created using defined style:
+Following output is generated when the slider is created using the defined style:
 
 ![Slider](./media/slider.gif)
 
