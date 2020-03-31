@@ -10,17 +10,17 @@ When entering the screen consists of list, the vertical or horizontal scroll bar
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
-## Create with Property
+## Create with property
 
-To create a scrollbar using property, follow these steps:
+To create a scroll bar using property, follow these steps:
 
-1. Create scrollbar using the default constructor:
+1. Create scroll bar using the default constructor:
 
     ```cs
     scrollBar = new ScrollBar();
     ```
 
-2. Set the scrollbar property:
+2. Set the scroll bar property:
 
     ```cs
     scrollBar.Position = new Position(50, 300);
@@ -40,9 +40,9 @@ Following output is generated when the progress is created using property:
 
 ## Create with style
 
-To create a scrollbar using style, follow these steps:
+To create a scroll bar using style, follow these steps:
 
-1. Firstly, we create a scrollbar style as the whole view to set the properties of the track and the thumb.
+1. Create a style for scroll bar and set the properties for track and thumb:
 
     ```cs
     ScrollBarStyle style = new ScrollBarStyle
@@ -59,7 +59,7 @@ To create a scrollbar using style, follow these steps:
     };
     ```
 
-2. Use the style to create a scroll bar and add it to its parent.
+2. Use the style to create a scroll bar and add it to parent:
 
     ```cs
     scrollBar = new ScrollBar(style);
@@ -76,12 +76,12 @@ Following output is generated when the progress is created using style:
 
 ## Create with defined styles
 
-You can define a style according to the UX, then you can use the this style to ceate a scrollBar.
+You can define a style based on the user experience (UX) and then use this style to ceate a scroll bar.
 
-1. Firstly, we define a custome style as the whole view.
+1. Define a custom style:
 
     ```cs
-    internal class CustomeScrollBarStyle : StyleBase
+    internal class CustomScrollBarStyle : StyleBase
     {
         protected override ViewStyle GetViewStyle()
         {
@@ -103,16 +103,16 @@ You can define a style according to the UX, then you can use the this style to c
     }
     ```
 
-2. Register your custome style.
+2. Register your custom style:
 
     ```cs
-    StyleManager.Instance.RegisterStyle("CustomeScrollbar", null, typeof(YourNameSpace.CustomeScrollBarStyle));
+    StyleManager.Instance.RegisterStyle("CustomScrollbar", null, typeof(YourNameSpace.CustomScrollBarStyle));
     ```
 
-3. Use your custome style to create a scroll bar instance
+3. Use your custom style to create a scroll bar instance:
 
     ```cs
-    scrollBar = new ScrollBar("CustomeScrollbar");
+    scrollBar = new ScrollBar("CustomScrollbar");
     scrollBar.Size = new Size(300, 4);
     scrollBar.MaxValue = (int)scrollBar.SizeWidth / 10;
     scrollBar.MinValue = 0;
@@ -120,7 +120,7 @@ You can define a style according to the UX, then you can use the this style to c
     root.Add(scrollBar);
     ```
 
-Following output is generated when the progress is created using defined style:
+Following output is generated when the scroll bar is created using the defined style:
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 

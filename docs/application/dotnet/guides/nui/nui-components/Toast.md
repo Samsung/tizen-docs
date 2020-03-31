@@ -8,7 +8,7 @@ You can use a toast to provide simple messages when the user does not need to ma
 
 ![Toast](./media/toast.png)
 
-## Create with Property
+## Create with property
 
 To create a toast using property, follow these steps:
 
@@ -42,7 +42,7 @@ Following output is generated when the toast is created using property:
 
 To create a toast using style, follow these steps:
 
-1. Create Toast style
+1. Create a style for toast:
 
     ```cs
     ToastStyle style = new ToastStyle
@@ -60,7 +60,7 @@ To create a toast using style, follow these steps:
     };
     ```
 
-2. Use the style to create a Toast and add Toast to parent
+2. Use the style to create a toast and add it to parent:
 
     ```cs
     utilityBasicToast = new Toast(style);
@@ -75,9 +75,9 @@ Following output is generated when the toast is created using property:
 
 ## Create with defined styles
 
-You can define a style according to the UX, then you can use the this style to ceate a Toast.
+You can define a style based on the user experience (UX) and then use this style to ceate a toast.
 
-1. User define a custom style as the whole view.
+1. Define a custom style:
 
     ```cs
     internal class CustomToastStyle : StyleBase
@@ -102,13 +102,13 @@ You can define a style according to the UX, then you can use the this style to c
     }
     ```
 
-2. Register your custom style.
+2. Register your custom style:
 
     ```cs
     StyleManager.Instance.RegisterStyle("CustomToast", null, typeof(YourNameSpace.CustomToastStyle));
     ```
 
-3. Use your custom style to create a Toast instance
+3. Use your custom style to create a toast instance:
 
     ```cs
     utilityBasicToast = new Toast("CustomToast");
@@ -117,7 +117,7 @@ You can define a style according to the UX, then you can use the this style to c
     root.Add(utilityBasicToast);
     ```
 
-Following output is generated when the toast is created using defined style:
+Following output is generated when the toast is created using the defined style:
 
 ![Toast](./media/toast.gif)
 

@@ -4,7 +4,7 @@ Switch is a common component that can be used as a selector.
 
 ![SwitchProperty](./media/SwitchProperty.PNG)
 
-## Create with Property
+## Create with property
 
 To create a switch using property, follow these steps:
 
@@ -53,7 +53,7 @@ Following output is generated when the switch is created using property:
 
 To create a switch using style, follow these steps:
 
-1. Create switch style
+1. Create a style for switch:
 
     ```cs
     SwitchStyle style = new SwitchStyle
@@ -83,7 +83,7 @@ To create a switch using style, follow these steps:
     };
     ```
 
-2. Use the style to create a switch and add switch to parent
+2. Use the style to create a switch and add it to parent:
 
     ```cs
     int num = 4;
@@ -105,9 +105,9 @@ Following output is generated when the switch is created using style:
 
 ## Create with defined styles
 
-You can define a style according to the UX, then you can use the this style to ceate a switch.
+You can define a style based on the user experience (UX) and then use this style to ceate a switch.
 
-1. User define a custom style as the whole view.
+1. Define a custom style:
 
     ```cs
     internal class CustomSwitchStyle : StyleBase
@@ -144,13 +144,13 @@ You can define a style according to the UX, then you can use the this style to c
     }
     ```
 
-2. Register your custom style.
+2. Register your custom style:
 
     ```cs
     StyleManager.Instance.RegisterStyle("CustomSwitch", null, typeof(YourNameSpace.CustomSwitchStyle));
     ```
 
-3. Use your custom style to create a switch instance
+3. Use your custom style to create a switch instance:
 
     ```cs
     int num = 4;
@@ -166,7 +166,7 @@ You can define a style according to the UX, then you can use the this style to c
     switchControl[3].IsEnabled = false;
     ```
 
-Following output is generated when the switch is created using defined style:
+Following output is generated when the switch is created using the defined style:
 
 ![SwitchProperty](./media/SwitchProperty.PNG)
 

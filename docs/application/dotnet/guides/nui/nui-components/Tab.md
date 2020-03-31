@@ -60,7 +60,7 @@ Following output is generated when the tab is created using property:
 
 To create a tab using style, follow these steps:
 
-1. Create tab style
+1. Create a style for tab:
 
     ```cs
     TabStyle style = new TabStyle
@@ -86,7 +86,7 @@ To create a tab using style, follow these steps:
     };
     ```
 
-2. Use the style to create a tab and add it to parent
+2. Use the style to create a tab and add it to parent:
 
     ```cs
     utilityBasicTab = new Tab(style);
@@ -111,9 +111,9 @@ Following output is generated when the tab is created using style:
 
 ## Create with defined styles
 
-You can define a style according to the UX, then you can use the this style to ceate a tab.
+You can define a style based on the user experience (UX) and then use this style to ceate a tab.
 
-1. User define a custom style as the whole view.
+1. Define a custom style:
 
     ```cs
     internal class CustomTabStyle : StyleBase
@@ -146,13 +146,13 @@ You can define a style according to the UX, then you can use the this style to c
     }
     ```
 
-2. Register your custom style.
+2. Register your custom style:
 
     ```cs
     StyleManager.Instance.RegisterStyle("CustomTab", null, typeof(YourNameSpace.CustomTabStyle));
     ```
 
-3. Use your custom style to create a tab instance
+3. Use your custom style to create a tab instance:
 
     ```cs
     utilityBasicTab = new Tab("CustomTab");
@@ -171,7 +171,7 @@ You can define a style according to the UX, then you can use the this style to c
     utilityBasicTab.SelectedItemIndex = 0;
     ```
 
-Following output is generated when the tab is created using defined style:
+Following output is generated when the tab is created using the defined style:
 
 ![Tab](./media/tab.gif)
 

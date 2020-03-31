@@ -10,7 +10,7 @@ Following are the instances where progress is used:
 
 ![Progress](./media/progress.png)
 
-## Create with Property
+## Create with property
 
 To create a progress using property, follow these steps:
 
@@ -38,7 +38,7 @@ Following output is generated when the progress is created using property:
 
 To create a progress using style, follow these steps:
 
-1. Create progress style
+1. Create a style for progress:
 
     ```cs
     ProgressStyle style = new ProgressStyle
@@ -54,16 +54,16 @@ To create a progress using style, follow these steps:
     };
     ```
 
-2. Use the style to create a progress and add it to parent
+2. Use the style to create a progress and add it to parent:
 
-```cs
-utilityBasicProgress = new Progress(style);
-utilityBasicProgress.Size = new Size(140, 4);
-utilityBasicProgress.MaxValue = 100;
-utilityBasicProgress.MinValue = 0;
-utilityBasicProgress.CurrentValue = 45;
-root.Add(utilityBasicProgress);
-```
+    ```cs
+    utilityBasicProgress = new Progress(style);
+    utilityBasicProgress.Size = new Size(140, 4);
+    utilityBasicProgress.MaxValue = 100;
+    utilityBasicProgress.MinValue = 0;
+    utilityBasicProgress.CurrentValue = 45;
+    root.Add(utilityBasicProgress);
+    ```
 
 Following output is generated when the progress is created using style:
 
@@ -71,9 +71,9 @@ Following output is generated when the progress is created using style:
 
 ## Create with defined styles
 
-You can define a style according to the UX, then you can use the this style to ceate a progress.
+You can define a style based on the user experience (UX) and then use this style to ceate a progress.
 
-1. User define a custom style as the whole view.
+1. Define a custom style:
 
     ```cs
     internal class CustomProgressStyle : StyleBase
@@ -96,13 +96,13 @@ You can define a style according to the UX, then you can use the this style to c
     }
     ```
 
-2. Register your custom style.
+2. Register your custom style:
 
     ```cs
     StyleManager.Instance.RegisterStyle("CustomProgress", null, typeof(YourNameSpace.CustomProgressStyle));
     ```
 
-3. Use your custom style to create a progress instance
+3. Use your custom style to create a progress instance:
 
     ```cs
     utilityBasicProgress = new Progress("CustomProgress");
@@ -113,7 +113,7 @@ You can define a style according to the UX, then you can use the this style to c
     root.Add(utilityBasicProgress);
     ```
 
-Following output is generated when the progress is created using defined style:
+Following output is generated when the progress is created using the defined style:
 
 ![Progress](./media/progress.gif)
 
