@@ -1,24 +1,24 @@
 # Slider
 
-A slider enables you to select a value from a continuous or discrete range of values by moving the slider thumb.
+A Slider enables you to select a value from a continuous or discrete range of values by moving the Slider thumb.
 
 Sliders are classified into a horizontal type and a vertical type, depending on their orientation, and the number of sliders that are adjusted simultaneously.
 
-Using a slider you can adjust the steps or strength of settings, such as brightness and contrast.
+Using a Slider you can adjust the steps or strength of settings, such as brightness and contrast.
 
 ![Slider](./media/slider.png) ![Slider](./media/slider2.png)
 
 ## Create with property
 
-To create a slider using property, follow these steps:
+To create a Slider using property, follow these steps:
 
-1. Create slider using the default constructor:
+1. Create Slider using the default constructor:
 
     ```cs
     utilityBasicSlider = new Slider();
     ```
 
-2. Set the slider property:
+2. Set the Slider property:
 
     ```cs
     utilityBasicSlider.TrackThickness = 4;
@@ -37,15 +37,15 @@ To create a slider using property, follow these steps:
     root.Add(utilityBasicSlider);
     ```
 
-Following output is generated when the slider is created using property:
+Following output is generated when the Slider is created using property:
 
 ![Slider](./media/slider.gif)
 
 ## Create with style
 
-To create a slider using style, follow these steps:
+To create a Slider using style, follow these steps:
 
-1. Create a style for slider:
+1. Create a style for Slider:
 
     ```cs
     SliderStyle style = new SliderStyle
@@ -71,7 +71,7 @@ To create a slider using style, follow these steps:
     };
     ```
 
-2. Use the style to create a slider and add it to parent:
+2. Use the style to create a Slider and add it to parent:
 
     ```cs
     utilityBasicSlider = new Slider(style);
@@ -80,13 +80,13 @@ To create a slider using style, follow these steps:
     root.Add(utilityBasicSlider);
     ```
 
-Following output is generated when the slider is created using style:
+Following output is generated when the Slider is created using style:
 
 ![Slider](./media/slider.gif)
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to create a slider.
+You can define a style based on the user experience (UX) and then use this style to create a Slider.
 
 1. Define a custom style:
 
@@ -127,7 +127,7 @@ You can define a style based on the user experience (UX) and then use this style
     StyleManager.Instance.RegisterStyle("CustomSlider", null, typeof(YourNameSpace.CustomSliderStyle));
     ```
 
-3. Use your custom style to create a slider instance:
+3. Use your custom style to create a Slider instance:
 
     ```cs
     utilityBasicSlider = new Slider("CustomSlider");
@@ -136,13 +136,13 @@ You can define a style based on the user experience (UX) and then use this style
     root.Add(utilityBasicSlider);
     ```
 
-Following output is generated when the slider is created using the defined style:
+Following output is generated when the Slider is created using the defined style:
 
 ![Slider](./media/slider.gif)
 
 ## Responding to ValueChangedEvent
 
-When you touch or pan a slider, the slider instance receives a value changed event.
+When you touch or pan a Slider, the Slider instance receives a value changed event.
 You can declare the value changed event handler as follows:
 
 ```cs
@@ -153,14 +153,14 @@ slider.ValueChangedEvent += OnValueChanged;
 ```cs
 private void OnValueChanged(object sender, Slider.ValueChangedArgs args)
 {
-    // Do something in response to slider click
+    // Do something in response to Slider click
 }
 ```
 
 ## Responding to StateChangedEvent
 
 Slider has the following eight states: `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
-When you change the slider state as change focus or disable a slider, the slider instance receives a state changed event. You can declare the state changed event handler as follows:
+When you change the Slider state as change focus or disable a Slider, the Slider instance receives a state changed event. You can declare the state changed event handler as follows:
 
 ```cs
 Slider slider = new Slider();
@@ -176,7 +176,7 @@ private void OnStateChanged(object sender, Slider.StateChangedArgs args)
 
 ## Responding to SlidingFinishedEvent
 
-As you finish a touch or a pan operate on a slider, the slider instance receives a slide finished event. You can declare the slide finished event handler as follows:
+As you finish a touch or a pan operate on a Slider, the Slider instance receives a slide finished event. You can declare the slide finished event handler as follows:
 
 ```cs
 Slider slider = new Slider();

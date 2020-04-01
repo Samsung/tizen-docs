@@ -1,13 +1,13 @@
 # Button
 
 Button is a common component and describes what action will occur when you select it.  
-A button can either contain a text or an icon, and can be created using property.
+A Button can either contain a text or an icon, and can be created using property.
 
 ![Button](./media/Button.PNG)
 
 ## Create with property
 
-To create a button using property, follow these steps:
+To create a Button using property, follow these steps:
 
 1. Create Button using the default constructor:
 
@@ -15,7 +15,7 @@ To create a button using property, follow these steps:
     utilityBasicButton = new Button();
     ```
 
-2. Set the button property:
+2. Set the Button property:
 
     ```cs
     NPatchVisual nvisual = new NPatchVisual();
@@ -39,15 +39,15 @@ To create a button using property, follow these steps:
     root.Add(utilityBasicButton);
     ```
 
-Following output is generated when the button is created using property:
+Following output is generated when the Button is created using property:
 
 ![ButtonProperty](./media/ButtonProperty.PNG)
 
 ## Create with style
 
-To create a button using style, follow these steps:
+To create a Button using style, follow these steps:
 
-1. Create a style for button:
+1. Create a style for Button:
 
     ```cs
     ButtonStyle style = new ButtonStyle
@@ -70,7 +70,7 @@ To create a button using style, follow these steps:
     };
     ```
 
-2. Use the style to create a button and add it to parent:
+2. Use the style to create a Button and add it to parent:
 
     ```cs
     familyBasicButton = new Button(style);
@@ -79,13 +79,13 @@ To create a button using style, follow these steps:
     root.Add(familyBasicButton);
     ```
 
-Following output is generated when the button is created using style:
+Following output is generated when the Button is created using style:
 
 ![ButtonProperty](./media/ButtonProperty.PNG)
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to create a button.
+You can define a style based on the user experience (UX) and then use this style to create a Button.
 
 1. Define a custom style:
 
@@ -123,7 +123,7 @@ You can define a style based on the user experience (UX) and then use this style
     StyleManager.Instance.RegisterStyle("CustomButton", null, typeof(YourNameSpace.CustomButtonStyle));
     ```
 
-3. Use your custom style to create a button instance:
+3. Use your custom style to create a Button instance:
 
     ```cs
     familyBasicButton = new Button("CustomButton");
@@ -132,13 +132,13 @@ You can define a style based on the user experience (UX) and then use this style
     root.Add(familyBasicButton);
     ```
 
-Following output is generated when the button is created using the defined style:
+Following output is generated when the Button is created using the defined style:
 
 ![ButtonProperty](./media/ButtonProperty.PNG)
 
 ## Responding to ClickEvent
 
-When you click a button, the button instance receives a click event.
+When you click a Button, the Button instance receives a click event.
 You can declare the click event handler as follows:
 
 ```cs
@@ -156,7 +156,7 @@ private void OnClick(object sender, Button.ClickEventArgs e)
 ## Responding to StateChangedEvent
 
 Button has the following eight states `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
-When you change the button state to focus or disable, the button instance receives a state changed event:
+When you change the Button state to focus or disable, the Button instance receives a state changed event:
 
 ```cs
 Button button = new Button();

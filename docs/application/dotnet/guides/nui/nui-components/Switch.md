@@ -6,15 +6,15 @@ Switch is a common component that can be used as a selector.
 
 ## Create with property
 
-To create a switch using property, follow these steps:
+To create a Switch using property, follow these steps:
 
-1. Create switch using the default constructor:
+1. Create Switch using the default constructor:
 
     ```cs
     Switch[] utilitySwitch = new Switch[4];
     ```
 
-2. Set the switch property:
+2. Set the Switch property:
 
     ```cs
     int num = 4;
@@ -45,15 +45,15 @@ To create a switch using property, follow these steps:
     utilitySwitch[3].IsEnabled = false;
     ```
 
-Following output is generated when the switch is created using property:
+Following output is generated when the Switch is created using property:
 
 ![SwitchProperty](./media/SwitchProperty.PNG)
 
 ## Create with style
 
-To create a switch using style, follow these steps:
+To create a Switch using style, follow these steps:
 
-1. Create a style for switch:
+1. Create a style for Switch:
 
     ```cs
     SwitchStyle style = new SwitchStyle
@@ -83,7 +83,7 @@ To create a switch using style, follow these steps:
     };
     ```
 
-2. Use the style to create a switch and add it to parent:
+2. Use the style to create a Switch and add it to parent:
 
     ```cs
     int num = 4;
@@ -99,13 +99,13 @@ To create a switch using style, follow these steps:
     utilitySwitch2[3].IsEnabled = false;
     ```
 
-Following output is generated when the switch is created using style:
+Following output is generated when the Switch is created using style:
 
 ![SwitchProperty](./media/SwitchProperty.PNG)
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to create a switch.
+You can define a style based on the user experience (UX) and then use this style to create a Switch.
 
 1. Define a custom style:
 
@@ -150,7 +150,7 @@ You can define a style based on the user experience (UX) and then use this style
     StyleManager.Instance.RegisterStyle("CustomSwitch", null, typeof(YourNameSpace.CustomSwitchStyle));
     ```
 
-3. Use your custom style to create a switch instance:
+3. Use your custom style to create a Switch instance:
 
     ```cs
     int num = 4;
@@ -166,13 +166,13 @@ You can define a style based on the user experience (UX) and then use this style
     switchControl[3].IsEnabled = false;
     ```
 
-Following output is generated when the switch is created using the defined style:
+Following output is generated when the Switch is created using the defined style:
 
 ![SwitchProperty](./media/SwitchProperty.PNG)
 
 ## Responding to SelectedEvent
 
-When you click the switch, the popup instance receives a selected event.
+When you click the Switch, the popup instance receives a selected event.
 You can declare the event handler as follows:
 
 ```cs
@@ -183,7 +183,7 @@ switchControl.SelectedEvent += OnSelected;
 ```cs
 private void OnSelected(object sender, Switch.SelectEventArgs e)
 {
-    //Do something when user select the switch
+    //Do something when user select the Switch
 }
 ```
 
