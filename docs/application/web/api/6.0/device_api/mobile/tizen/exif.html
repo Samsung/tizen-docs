@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Exif API</title>
+<meta data-version="6.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Exif">
@@ -131,8 +132,8 @@ MANUAL - Manual White Balance mode            </li>
 <div class="brief">
  Specifies an exposure balance program for an image.
           </div>
-<pre class="webidl prettyprint">  enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM",
-    "ACTION_PROGRAM", "PORTRAIT_MODE", "LANDSCAPE_MODE" };</pre>
+<pre class="webidl prettyprint">  enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM", "ACTION_PROGRAM",
+    "PORTRAIT_MODE", "LANDSCAPE_MODE" };</pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -528,8 +529,8 @@ tizen.filesystem.resolve("images/tizen.jpg", resolveSuccess, resolveFail);
 <div class="description">
           <p>
 This dictionary is used to input parameters when <em>ExifInformation</em> is created.
-For description of attributes please see the corresponding attributes in the <em>ExifInformation<em> interface.
-</em></em>          </p>
+For description of attributes please see the corresponding attributes in the <em>ExifInformation</em> interface.
+          </p>
          </div>
 </div>
 <div class="interface" id="ExifInformation">
@@ -868,8 +869,8 @@ This callback interface specifies a success method with the URI for the thumbnai
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Exif {
   enum WhiteBalanceMode { "AUTO", "MANUAL" };
-  enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM",
-    "ACTION_PROGRAM", "PORTRAIT_MODE", "LANDSCAPE_MODE" };
+  enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM", "ACTION_PROGRAM",
+    "PORTRAIT_MODE", "LANDSCAPE_MODE" };
   dictionary ExifInit {
     DOMString uri;
     unsigned long width;
