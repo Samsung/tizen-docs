@@ -29,14 +29,14 @@ To create a Switch using property, follow these steps:
             Normal = "controller_switch_bg_off.png",
             Selected = "controller_switch_bg_on.png",
             Disabled = "controller_switch_bg_off_dim.png",
-            DisabledSelected = "controller_switch_bg_on_dim.png",
+            DisabledSelected = "controller_switch_bg_on_dim.png"
         };
         utilitySwitch[i].SwitchHandlerImageURLSelector = new StringSelector
         {
             Normal = "controller_switch_handler.png",
             Selected = "controller_switch_handler.png",
             Disabled = "controller_switch_handler_dim.png",
-            DisabledSelected = "controller_switch_handler_dim.png",
+            DisabledSelected = "controller_switch_handler_dim.png"
         };
         root.Add(utilitySwitch[i]);
     }
@@ -66,8 +66,8 @@ To create a Switch using style, follow these steps:
                 Normal = "controller_switch_bg_off.png",
                 Selected = "controller_switch_bg_on.png",
                 Disabled = "controller_switch_bg_off_dim.png",
-                DisabledSelected = "controller_switch_bg_on_dim.png",
-            },
+                DisabledSelected = "controller_switch_bg_on_dim.png"
+            }
         },
         Thumb = new ImageViewStyle
         {
@@ -125,7 +125,7 @@ You can define a style based on the user experience (UX) and then use this style
                         Selected = "controller_switch_bg_on.png",
                         Disabled = "controller_switch_bg_off_dim.png",
                         DisabledSelected = "controller_switch_bg_on_dim.png"
-                    },
+                    }
                 },
                 Thumb = new ImageViewStyle
                 {

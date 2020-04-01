@@ -52,7 +52,7 @@ To create a Toast using style, follow these steps:
         {
             Padding = new Extents(96, 96, 38, 38),
             PointSize = 26,
-            TextColor = Color.White,
+            TextColor = Color.White
         },
         BackgroundImage = "Poptoast_background.png",
         BackgroundImageBorder = new Rectangle(64, 64, 4, 4),
@@ -91,7 +91,7 @@ You can define a style based on the user experience (UX) and then use this style
                 {
                     Padding = new Extents(96, 96, 38, 38),
                     PointSize = 26,
-                    TextColor = Color.White,
+                    TextColor = Color.White
                 },
                 BackgroundImage = "Poptoast_background.png",
                 BackgroundImageBorder = new Rectangle(64, 64, 4, 4),
