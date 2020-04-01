@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Notification API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Notification">
@@ -43,14 +44,11 @@ For more information on the Notification features, see <a href="/application/web
 <li>
                     1.2. <a href="#NotificationType">NotificationType</a>
 </li>
-<li class="deprecated">
-                    1.3. <a href="#StatusNotificationType">StatusNotificationType</a>
+<li>
+                    1.3. <a href="#UserNotificationType">UserNotificationType</a>
 </li>
 <li>
-                    1.4. <a href="#UserNotificationType">UserNotificationType</a>
-</li>
-<li>
-                    1.5. <a href="#NotificationProgressType">NotificationProgressType</a>
+                    1.4. <a href="#NotificationProgressType">NotificationProgressType</a>
 </li>
 </ul>
 </li>
@@ -61,27 +59,23 @@ For more information on the Notification features, see <a href="/application/web
 </li>
 <li>2.3. <a href="#Notification">Notification</a>
 </li>
-<li class="deprecated">2.4. <a href="#StatusNotificationInit">StatusNotificationInit</a>
+<li>2.4. <a href="#UserNotificationInit">UserNotificationInit</a>
 </li>
-<li>2.5. <a href="#UserNotificationInit">UserNotificationInit</a>
+<li>2.5. <a href="#NotificationTextContentInfo">NotificationTextContentInfo</a>
 </li>
-<li>2.6. <a href="#NotificationTextContentInfo">NotificationTextContentInfo</a>
+<li>2.6. <a href="#NotificationImageInfo">NotificationImageInfo</a>
 </li>
-<li>2.7. <a href="#NotificationImageInfo">NotificationImageInfo</a>
+<li>2.7. <a href="#NotificationThumbnailInfo">NotificationThumbnailInfo</a>
 </li>
-<li>2.8. <a href="#NotificationThumbnailInfo">NotificationThumbnailInfo</a>
+<li>2.8. <a href="#NotificationActionInfo">NotificationActionInfo</a>
 </li>
-<li>2.9. <a href="#NotificationActionInfo">NotificationActionInfo</a>
+<li>2.9. <a href="#NotificationGroupContentInfo">NotificationGroupContentInfo</a>
 </li>
-<li>2.10. <a href="#NotificationGroupContentInfo">NotificationGroupContentInfo</a>
+<li>2.10. <a href="#NotificationLedInfo">NotificationLedInfo</a>
 </li>
-<li>2.11. <a href="#NotificationLedInfo">NotificationLedInfo</a>
+<li>2.11. <a href="#UserNotification">UserNotification</a>
 </li>
-<li class="deprecated">2.12. <a href="#StatusNotification">StatusNotification</a>
-</li>
-<li>2.13. <a href="#UserNotification">UserNotification</a>
-</li>
-<li>2.14. <a href="#NotificationDetailInfo">NotificationDetailInfo</a>
+<li>2.12. <a href="#NotificationDetailInfo">NotificationDetailInfo</a>
 </li>
 </ul>
 </li>
@@ -192,38 +186,8 @@ The status notification consists of an icon, title, content, and time. The statu
           </ul>
          </div>
 </div>
-<div class="enum deprecated" id="StatusNotificationType">
-<a class="backward-compatibility-anchor" name="::Notification::StatusNotificationType"></a><h3>1.3. StatusNotificationType</h3>
-<div class="brief">
- A status notification type.
-          </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 4.0. Use <a href="#UserNotificationType">UserNotificationType</a> instead.
-          </p>
-<pre class="webidl prettyprint"><span class="nocode deprecated">  enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };</span></pre>
-<p><span class="version">Since: </span>
- 2.3.1
-          </p>
-<div class="description">
-          <p>
-The following status notification types are supported:
-          </p>
-          <ul>
-            <li>
-SIMPLE - A basic status notification type that is removed automatically when selected by the user. All simple status notifications can be removed by user interaction.            </li>
-            <li>
-THUMBNAIL - The thumbnail status notification posts a thumbnail-format notification which includes several thumbnail image paths.
-The thumbnail status notification is also removed by user selection.
-            </li>
-            <li>
-ONGOING - A status notification type that informs the user whether an application is running or not.            </li>
-            <li>
-PROGRESS - A status notification that displays information on the progress of a job. However, this status notification should be removed by the application that posted the notification.            </li>
-          </ul>
-         </div>
-</div>
 <div class="enum" id="UserNotificationType">
-<a class="backward-compatibility-anchor" name="::Notification::UserNotificationType"></a><h3>1.4. UserNotificationType</h3>
+<a class="backward-compatibility-anchor" name="::Notification::UserNotificationType"></a><h3>1.3. UserNotificationType</h3>
 <div class="brief">
  A user notification type.
           </div>
@@ -250,7 +214,7 @@ PROGRESS - An user notification that displays information on the progress of a j
          </div>
 </div>
 <div class="enum" id="NotificationProgressType">
-<a class="backward-compatibility-anchor" name="::Notification::NotificationProgressType"></a><h3>1.5. NotificationProgressType</h3>
+<a class="backward-compatibility-anchor" name="::Notification::NotificationProgressType"></a><h3>1.4. NotificationProgressType</h3>
 <div class="brief">
  A notification progress type.
           </div>
@@ -314,10 +278,8 @@ Notification API.
     void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void remove(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    <a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    <a href="#Notification">Notification</a> getNotification(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    <a href="#Notification">Notification</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    <a href="#Notification">Notification</a>[] getAllNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Notification">Notification</a> getNotification(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Notification">Notification</a>[] getAllNotifications() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void saveNotificationAsTemplate(DOMString name, <a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#UserNotification">UserNotification</a> createNotificationFromTemplate(DOMString name) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
@@ -619,69 +581,6 @@ catch (err)
 </pre>
 </div>
 </dd>
-<dt class="deprecated method" id="NotificationManager::get">
-<a class="backward-compatibility-anchor" name="::Notification::NotificationManager::get"></a><code><b><span class="methodName">get</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Gets a notification that has previously been posted by the current application. Note that the obtained notification's progressType is <em>PERCENTAGE</em>            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 4.0. Use <a href="#getNotification">getNotification</a> instead.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id);</pre></div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-<p><span class="remark">Remark: </span>
- This method is designed to return <a href="#StatusNotification">old-style notification</a>.
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">id</span>:
- A previously posted notification ID.
-                </li>
-        </ul>
-</div>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">Notification:</span>
- Notification posted previously by the current application.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type NotFoundError, if NotificationId is not found in the previously posted notifications.
-                </p></li>
-<li class="list"><p>
- with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
-{
-  /* Uses a variable for the previously posted notification. */
-  /* Saves the notification ID for future use. */
-  var myId = notification.id;
-
-  var myNotification = tizen.notification.get(myId);
-}
-catch (err)
-{
-  console.log(err.name + ": " + err.message);
-}
-</pre>
-</div>
-</dd>
 <dt class="method" id="NotificationManager::getNotification">
 <a class="backward-compatibility-anchor" name="::Notification::NotificationManager::getNotification"></a><code><b><span class="methodName">getNotification</span></b></code>
 </dt>
@@ -735,67 +634,6 @@ catch (err)
   var myId = notification.id;
 
   var myNotification = tizen.notification.getNotification(myId);
-}
-catch (err)
-{
-  console.log(err.name + ": " + err.message);
-}
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="NotificationManager::getAll">
-<a class="backward-compatibility-anchor" name="::Notification::NotificationManager::getAll"></a><code><b><span class="methodName">getAll</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Gets all notifications that have previously been posted by the current application. Note that the obtained notification's progressType is <em>PERCENTAGE</em>            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 4.0. Use <a href="#getAllNotifications">getAllNotifications</a> instead.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Notification">Notification</a>[] getAll();</pre></div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-<p><span class="remark">Remark: </span>
- This method is designed to return <a href="#StatusNotification">old-style notifications</a>.
-            </p>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">Notification[]:</span>
- All notifications previously been posted by the current application.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if any other error occurs.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
-{
-  var notifications = tizen.notification.getAll();
-
-  for (var index = 0; index &lt; notifications.length; index++)
-  {
-    console.log(notifications[index].id);
-    console.log(notifications[index].title);
-    console.log(notifications[index].statusType);
-    console.log(notifications[index].type);
-    console.log(notifications[index].content);
-    console.log(notifications[index].postedTime);
-    console.log(notifications[index].iconPath);
-    console.log(notifications[index].soundPath);
-    console.log(notifications[index].vibration);
-    console.log(notifications[index].appControl);
-  }
 }
 catch (err)
 {
@@ -1084,36 +922,6 @@ catch (err)
 </ul>
 </div>
 </div>
-<div class="dictionary deprecated" id="StatusNotificationInit">
-<a class="backward-compatibility-anchor" name="::Notification::StatusNotificationInit"></a><h3>2.4. StatusNotificationInit</h3>
-<div class="brief">
- The properties of StatusNotification, to pass to the constructor.
-          </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 4.0. Use <a href="#UserNotificationInit">UserNotificationInit</a> instead.
-          </p>
-<pre class="webidl prettyprint"><span class="nocode deprecated">  dictionary StatusNotificationInit {
-    DOMString? content;
-    DOMString? iconPath;
-    DOMString? soundPath;
-    boolean? vibration;
-    <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
-    <a href="application.html#ApplicationId">ApplicationId</a>? appId;
-    <a href="#NotificationProgressType">NotificationProgressType</a>? progressType;
-    unsigned long? progressValue;
-    long? number;
-    DOMString? subIconPath;
-    <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
-    DOMString? ledColor;
-    unsigned long ledOnPeriod;
-    unsigned long ledOffPeriod;
-    DOMString? backgroundImagePath;
-    DOMString[]? thumbnails;
-  };</span></pre>
-<p><span class="version">Since: </span>
- 2.3.1
-          </p>
-</div>
 <div class="dictionary" id="UserNotificationInit">
 <a class="backward-compatibility-anchor" name="::Notification::UserNotificationInit"></a><h3>2.5. UserNotificationInit</h3>
 <div class="brief">
@@ -1166,8 +974,8 @@ For detailed descriptions of properties, please refer to <a href="#Notification"
 <dd>
 <div class="brief">
  Defines the type for a <em>PROGRESS</em> notification's progress.
-By default, this attribute is set to <em>PERCENTAGE<em>.
-</em></em>            </div>
+By default, this attribute is set to <em>PERCENTAGE</em>.
+            </div>
 <p><span class="version">Since: </span>
  4.0
             </p>
@@ -1575,303 +1383,8 @@ By default, this attribute is set to 0.
 </dl>
 </div>
 </div>
-<div class="interface deprecated" id="StatusNotification">
-<a class="backward-compatibility-anchor" name="::Notification::StatusNotification"></a><h3>2.12. StatusNotification</h3>
-<div class="brief">
- The StatusNotification interface represents a status notification and offers additional attributes to represent a notification displayed in the notification tray.
-          </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 4.0. Use <a href="#UserNotification">UserNotification</a> instead.
-          </p>
-<pre class="webidl prettyprint"><span class="nocode deprecated">  [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
-  interface StatusNotification : <a href="#Notification">Notification</a> {
-    readonly attribute <a href="#StatusNotificationType">StatusNotificationType</a> statusType;
-    attribute DOMString? iconPath;
-    attribute DOMString? subIconPath;
-    attribute long? number;
-    attribute <a href="#NotificationDetailInfo">NotificationDetailInfo</a>[]? detailInfo;
-    attribute DOMString? ledColor;
-    attribute unsigned long ledOnPeriod;
-    attribute unsigned long ledOffPeriod;
-    attribute DOMString? backgroundImagePath;
-    attribute DOMString[]? thumbnails;
-    attribute DOMString? soundPath;
-    attribute boolean vibration;
-    attribute <a href="application.html#ApplicationControl">ApplicationControl</a>? appControl;
-    attribute <a href="application.html#ApplicationId">ApplicationId</a>? appId;
-    attribute <a href="#NotificationProgressType">NotificationProgressType</a> progressType;
-    attribute unsigned long? progressValue;
-  };</span></pre>
-<p><span class="version">Since: </span>
- 2.3.1
-          </p>
-<div class="description">
-          <p>
-All notifications must have a title attribute.
-          </p>
-         </div>
-<p class="warning"><b>Warning:</b>
- Some members of notification could have no effect depending on the device.
-          </p>
-        
-      <div class="constructors">
-<h4 id="StatusNotification::constructor">Constructors</h4>
-<dl>
-<dt class="method" id="">
-<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#StatusNotificationType">StatusNotificationType</a>, DOMString, <a href="#StatusNotificationInit">StatusNotificationInit</a>?)</span></b></code>
-</dt>
-<pre class="webidl prettyprint"><span class="nocode deprecated">StatusNotification(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict);</span></pre>
-</dl>
-</div>
-<div class="attributes">
-<h4>Attributes</h4>
-<ul>
-<li class="attribute" id="StatusNotification::statusType">
-<span class="attrName"><span class="readonly">                readonly
-</span><span class="type">StatusNotificationType </span><span class="name">statusType</span></span><div class="brief">
- The status notification type.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::iconPath">
-<span class="attrName"><span class="type">DOMString </span><span class="name">iconPath</span><span class="optional"> [nullable]</span></span><div class="brief">
- The icon path to display in the notification.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::subIconPath">
-<span class="attrName"><span class="type">DOMString </span><span class="name">subIconPath</span><span class="optional"> [nullable]</span></span><div class="brief">
- The sub icon path to display in the notification.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::number">
-<span class="attrName"><span class="type">long </span><span class="name">number</span><span class="optional"> [nullable]</span></span><div class="brief">
- The number of events to display in the notification.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::detailInfo">
-<span class="attrName"><span class="type">NotificationDetailInfo[]
-                      </span><span class="name">detailInfo</span><span class="optional"> [nullable]</span></span><div class="brief">
- Appends lines of the detail information to the notification.
-This attribute is available in a simple status notification.
-By default, this attribute is initialized with an empty array.
-The maximum number of detail information elements in the array is 2.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::ledColor">
-<span class="attrName"><span class="type">DOMString </span><span class="name">ledColor</span><span class="optional"> [nullable]</span></span><div class="brief">
- Sets the notification LED indicator color property.
-The color is a numerical RGB value(#rrggbb). The format of an RGB value in hexadecimal notation is a "#" immediately followed by exactly six hexadecimal characters(0-9, A-F). The color format is case-insensitive.
-The LED indicator color will show that it's a close approximation.
-LED will only light on when the screen is off. To turn the LED off, set "#000000" or null to ledColor.
-This method has effects when the device has notification LED.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
-{
-  var notificationDict =
-  {
-    content: "This is a simple notification.",
-    iconPath: "images/image1.jpg",
-    soundPath: "music/Over the horizon.mp3",
-    vibration: true,
-    ledColor: "#FFFF00",
-    ledOnPeriod: 1000,
-    ledOffPeriod: 500
-  };
-
-  var notification =
-      new tizen.StatusNotification("SIMPLE", "Simple notification", notificationDict);
-
-  tizen.notification.post(notification);
-}
-catch (err)
-{
-  console.log(err.name + ": " + err.message);
-}
-</pre>
-</div>
-</li>
-<li class="attribute" id="StatusNotification::ledOnPeriod">
-<span class="attrName"><span class="type">unsigned long </span><span class="name">ledOnPeriod</span></span><div class="brief">
- The milliseconds for which the light is on.
-The light continuously toggles on (ledOnPeriod) and off (ledOffPeriod).
-By default, this attribute is set to 0
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::ledOffPeriod">
-<span class="attrName"><span class="type">unsigned long </span><span class="name">ledOffPeriod</span></span><div class="brief">
- The milliseconds for which the light is off.
-By default, this attribute is set to 0.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::backgroundImagePath">
-<span class="attrName"><span class="type">DOMString </span><span class="name">backgroundImagePath</span><span class="optional"> [nullable]</span></span><div class="brief">
- The image path to use as the background of the notification.
-This attribute is available on simple or thumbnail status notifications.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::thumbnails">
-<span class="attrName"><span class="type">DOMString[]
-                      </span><span class="name">thumbnails</span><span class="optional"> [nullable]</span></span><div class="brief">
- The image paths associated with the thumbnail status notification.
-By default, this attribute is initialized with an empty array.
-The maximum number of thumbnail path elements in the array is 4.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::soundPath">
-<span class="attrName"><span class="type">DOMString </span><span class="name">soundPath</span><span class="optional"> [nullable]</span></span><div class="brief">
- The path of a sound file to play when the notification is shown.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::vibration">
-<span class="attrName"><span class="type">boolean </span><span class="name">vibration</span></span><div class="brief">
- Checks whether to vibrate when the notification is shown. By default, this attribute is set to false.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::appControl">
-<span class="attrName"><span class="type">ApplicationControl </span><span class="name">appControl</span><span class="optional"> [nullable]</span></span><div class="brief">
- Holds the application control to launch an application when the notification is selected from the notification tray.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::appId">
-<span class="attrName"><span class="type">ApplicationId </span><span class="name">appId</span><span class="optional"> [nullable]</span></span><div class="brief">
- Holds the application ID to launch when the notification is selected from the notification tray.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
-{
-  /* Gets the current application information with tizen.application.getAppInfo. */
-  var myappInfo = tizen.application.getAppInfo();
-
-  var notificationDict =
-  {
-    content: "This is a simple notification.",
-    iconPath: "images/image1.jpg",
-    soundPath: "music/Over the horizon.mp3",
-    vibration: true,
-    appId: myappInfo.id
-  };
-
-  var notification =
-      new tizen.StatusNotification("SIMPLE", "Simple notification", notificationDict);
-
-  tizen.notification.post(notification);
-}
-catch (err)
-{
-  console.log(err.name + ": " + err.message);
-}
-</pre>
-</div>
-</li>
-<li class="attribute" id="StatusNotification::progressType">
-<span class="attrName"><span class="type">NotificationProgressType </span><span class="name">progressType</span></span><div class="brief">
- Defines the type for an ongoing notification's progress.
-By default, this attribute is set to PERCENTAGE.
-            </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-</li>
-<li class="attribute" id="StatusNotification::progressValue">
-<span class="attrName"><span class="type">unsigned long </span><span class="name">progressValue</span><span class="optional"> [nullable]</span></span><div class="brief">
- Defines the current notification progress value (<em>PERCENTAGE</em> or <em>BYTE</em>), depending on the <em>progressType</em>            </div>
-<div class="description">
-            <p>
-If progressValue is set, the progressbar will be displayed in the notification. The progressValue can change the amount of progress as it moves forward or backward. It gets the progress value of the current notification.
-If 0, the indeterminate progressbar will be shown.
-This attribute is only available for StatusNotification of type <em>PROGRESS</em>.
-            </p>
-            <p>
-Applications should keep the progress value for its job because
-the saved value in the notification status tray would be different from
-the exact progress value.
-            </p>
-            <p>
-Range of <em>progressValue</em>: percent (0 to 100).
-            </p>
-           </div>
-<p><span class="version">Since: </span>
- 2.3.1
-            </p>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
-{
-  var appControl = new tizen.ApplicationControl(
-      "http://tizen.org/appcontrol/operation/create_content", null, "image/jpg", null);
-
-  var notificationDict =
-  {
-    content: "This is a progress notification.",
-    iconPath: "images/image2.jpg",
-    soundPath: "music/Over the horizon.mp3",
-    vibration: true,
-    appControl: appControl,
-    progressValue: 20
-  };
-  /* Constructs the progress notification. */
-  var notification =
-      new tizen.StatusNotification("PROGRESS", "Progress notification", notificationDict);
-  /* Posts the notification. */
-  tizen.notification.post(notification);
-
-  /* Updates the progress value of the notification. */
-  notification.progressValue = 59;
-  tizen.notification.update(notification);
-}
-catch (err)
-{
-  console.log(err.name + ": " + err.message);
-}
-</pre>
-</div>
-</li>
-</ul>
-</div>
-</div>
 <div class="interface" id="UserNotification">
-<a class="backward-compatibility-anchor" name="::Notification::UserNotification"></a><h3>2.13. UserNotification</h3>
+<a class="backward-compatibility-anchor" name="::Notification::UserNotification"></a><h3>2.11. UserNotification</h3>
 <div class="brief">
  The UserNotification interface represents a notification and offers additional attributes to represent a notification displayed in the notification tray.
           </div>
@@ -2136,7 +1649,7 @@ catch (err)
 </div>
 </div>
 <div class="interface" id="NotificationDetailInfo">
-<a class="backward-compatibility-anchor" name="::Notification::NotificationDetailInfo"></a><h3>2.14. NotificationDetailInfo</h3>
+<a class="backward-compatibility-anchor" name="::Notification::NotificationDetailInfo"></a><h3>2.12. NotificationDetailInfo</h3>
 <div class="brief">
  The NotificationDetailInfo object that contains the detail information of the notification.
           </div>

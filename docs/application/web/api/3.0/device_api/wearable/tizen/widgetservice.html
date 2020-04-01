@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>WidgetService API</title>
+<meta data-version="3.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::WidgetService">
@@ -1719,8 +1720,7 @@ To guarantee that the widget application runs on a system which supports Widgets
 <pre class="webidl prettyprint">module WidgetService {
   typedef DOMString WidgetId;
   typedef DOMString WidgetInstanceId;
-  enum WidgetSizeType { "1x1", "2x1", "2x2", "4x1", "4x2", "4x3", "4x4", "4x5", "4x6", "EASY_1x1", "EASY_3x1", "EASY_3x3",
-    "FULL" };
+  enum WidgetSizeType { "1x1", "2x1", "2x2", "4x1", "4x2", "4x3", "4x4", "4x5", "4x6", "EASY_1x1", "EASY_3x1", "EASY_3x3", "FULL" };
   enum WidgetStateType { "CREATE", "DESTROY", "PAUSE", "RESUME" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#WidgetServiceManagerObject">WidgetServiceManagerObject</a>;
   [NoInterfaceObject] interface WidgetServiceManagerObject {
