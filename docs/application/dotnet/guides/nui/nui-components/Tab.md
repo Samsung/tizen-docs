@@ -72,7 +72,7 @@ To create a tab using style, follow these steps:
             PositionUsesPivotPoint = true,
             ParentOrigin = Tizen.NUI.ParentOrigin.BottomLeft,
             PivotPoint = Tizen.NUI.PivotPoint.BottomLeft,
-            BackgroundColor = color[0],
+            BackgroundColor = color[0]
         },
         Text = new TextLabelStyle
         {
@@ -80,9 +80,9 @@ To create a tab using style, follow these steps:
             TextColor = new Selector<Color>
             {
                 Normal = Color.Black,
-                Selected = color[0],
-            },
-        },
+                Selected = color[0]
+            }
+        }
     };
     ```
 
@@ -111,7 +111,7 @@ Following output is generated when the tab is created using style:
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to ceate a tab.
+You can define a style based on the user experience (UX) and then use this style to create a tab.
 
 1. Define a custom style:
 
@@ -129,7 +129,7 @@ You can define a style based on the user experience (UX) and then use this style
                     PositionUsesPivotPoint = true,
                     ParentOrigin = Tizen.NUI.ParentOrigin.BottomLeft,
                     PivotPoint = Tizen.NUI.PivotPoint.BottomLeft,
-                    BackgroundColor = color[0],
+                    BackgroundColor = color[0]
                 },
                 Text = new TextLabelStyle
                 {
@@ -137,9 +137,9 @@ You can define a style based on the user experience (UX) and then use this style
                     TextColor = new Selector<Color>
                     {
                         Normal = Color.Black,
-                        Selected = color[0],
-                    },
-                },
+                        Selected = color[0]
+                    }
+                }
             };
             return style;
         }

@@ -66,15 +66,15 @@ To create a popup using style, follow these steps:
             Size = new Size(0, 68),
             HorizontalAlignment = HorizontalAlignment.Begin,
             Position = new Position(64, 52),
-            Text = "Popup Title",
+            Text = "Popup Title"
         },
         Buttons = new ButtonStyle
         {
             Text = new TextLabelStyle
             {
-                TextColor = new Color(0.05f, 0.63f, 0.9f, 1),
-            },
-        },
+                TextColor = new Color(0.05f, 0.63f, 0.9f, 1)
+            }
+        }
     };
     ```
 
@@ -97,7 +97,7 @@ Following output is generated when the popup is created using style:
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to ceate a popup.
+You can define a style based on the user experience (UX) and then use this style to create a popup.
 
 1. Define a custom style:
 
@@ -118,15 +118,15 @@ You can define a style based on the user experience (UX) and then use this style
                     Size = new Size(0, 68),
                     HorizontalAlignment = HorizontalAlignment.Begin,
                     Position = new Position(64, 52),
-                    Text = "Popup Title",
+                    Text = "Popup Title"
                 },
                 Buttons = new ButtonStyle
                 {
                     Text = new TextLabelStyle
                     {
-                        TextColor = new Color(0.05f, 0.63f, 0.9f, 1),
-                    },
-                },
+                        TextColor = new Color(0.05f, 0.63f, 0.9f, 1)
+                    }
+                }
             };
             return style;
         }

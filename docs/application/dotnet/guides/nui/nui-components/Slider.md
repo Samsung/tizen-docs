@@ -65,9 +65,9 @@ To create a slider using style, follow these steps:
             ResourceUrl = new Selector<string>
             {
                 Normal = "controller_btn_slide_handler_normal.png",
-                Pressed = "controller_btn_slide_handler_press.png",
-            },
-        },
+                Pressed = "controller_btn_slide_handler_press.png"
+            }
+        }
     };
     ```
 
@@ -86,7 +86,7 @@ Following output is generated when the slider is created using style:
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use the this style to ceate a slider.
+You can define a style based on the user experience (UX) and then use this style to create a slider.
 
 1. Define a custom style:
 
@@ -112,9 +112,9 @@ You can define a style based on the user experience (UX) and then use the this s
                     ResourceUrl = new Selector<string>
                     {
                         Normal = "controller_btn_slide_handler_normal.png",
-                        Pressed = "controller_btn_slide_handler_press.png",
-                    },
-                },
+                        Pressed = "controller_btn_slide_handler_press.png"
+                    }
+                }
             };
             return style;
         }
