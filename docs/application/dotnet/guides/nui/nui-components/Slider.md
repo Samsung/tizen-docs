@@ -27,7 +27,7 @@ To create a Slider using property, follow these steps:
     utilityBasicSlider.ThumbImageURLSelector = new StringSelector
     {
         Normal = "controller_btn_slide_handler_normal.png",
-        Pressed = "controller_btn_slide_handler_press.png",
+        Pressed = "controller_btn_slide_handler_press.png"
     };
     utilityBasicSlider.ThumbSize = new Size(60, 60);
     utilityBasicSlider.Direction = Slider.DirectionType.Horizontal;

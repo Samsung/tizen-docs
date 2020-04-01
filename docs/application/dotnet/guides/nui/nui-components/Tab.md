@@ -34,7 +34,7 @@ To create a Tab using property, follow these steps:
     utilityBasicTab.TextColorSelector = new ColorSelector
     {
         Normal = Color.Black,
-        Selected = color[0],
+        Selected = color[0]
     };
     utilityBasicTab.ItemChangedEvent += TabItemChangedEvent;
     root.Add(utilityBasicTab);
