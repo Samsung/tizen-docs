@@ -2,15 +2,15 @@
 
 Tab is a common component and it can be used as a menu label.
 
-A tab makes it easy to explore and switch between different views or functional aspects of an application or to browse categorized data sets.
+A Tab makes it easy to explore and switch between different views or functional aspects of an application or to browse categorized data sets.
 
-You can handle a tab by adding, inserting, or deleting a TabItem. A tab can contain one or more TabItem with text, usually used as a menu label. A TabItem can have different lengths.
+You can handle a Tab by adding, inserting, or deleting a TabItem. A Tab can contain one or more TabItem with text, usually used as a menu label. A TabItem can have different lengths.
 
 ![Tab](./media/tab.png) ![Tab](./media/tab2.png)
 
 ## Create with property
 
-To create a tab using property, follow these steps:
+To create a Tab using property, follow these steps:
 
 1. Create Tab using the default constructor:
 
@@ -18,7 +18,7 @@ To create a tab using property, follow these steps:
     utilityBasicTab = new Tab();
     ```
 
-2. Set the tab property:
+2. Set the Tab property:
 
     ```cs
     utilityBasicTab.IsSelectable = true;
@@ -37,7 +37,7 @@ To create a tab using property, follow these steps:
         Selected = color[0],
     };
     utilityBasicTab.ItemChangedEvent += TabItemChangedEvent;
-    root.Add(tab);
+    root.Add(utilityBasicTab);
 
     for (int i = 0; i < 3; i++)
     {
@@ -52,15 +52,15 @@ To create a tab using property, follow these steps:
     utilityBasicTab.SelectedItemIndex = 0;
     ```
 
-Following output is generated when the tab is created using property:
+Following output is generated when the Tab is created using property:
 
 ![Tab](./media/tab.gif)
 
 ## Create with style
 
-To create a tab using style, follow these steps:
+To create a Tab using style, follow these steps:
 
-1. Create a style for tab:
+1. Create a style for Tab:
 
     ```cs
     TabStyle style = new TabStyle
@@ -86,7 +86,7 @@ To create a tab using style, follow these steps:
     };
     ```
 
-2. Use the style to create a tab and add it to parent:
+2. Use the style to create a Tab and add it to parent:
 
     ```cs
     utilityBasicTab = new Tab(style);
@@ -105,13 +105,13 @@ To create a tab using style, follow these steps:
     utilityBasicTab.SelectedItemIndex = 0;
     ```
 
-Following output is generated when the tab is created using style:
+Following output is generated when the Tab is created using style:
 
 ![Tab](./media/tab.gif)
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to create a tab.
+You can define a style based on the user experience (UX) and then use this style to create a Tab.
 
 1. Define a custom style:
 
@@ -152,7 +152,7 @@ You can define a style based on the user experience (UX) and then use this style
     StyleManager.Instance.RegisterStyle("CustomTab", null, typeof(YourNameSpace.CustomTabStyle));
     ```
 
-3. Use your custom style to create a tab instance:
+3. Use your custom style to create a Tab instance:
 
     ```cs
     utilityBasicTab = new Tab("CustomTab");
@@ -171,13 +171,13 @@ You can define a style based on the user experience (UX) and then use this style
     utilityBasicTab.SelectedItemIndex = 0;
     ```
 
-Following output is generated when the tab is created using the defined style:
+Following output is generated when the Tab is created using the defined style:
 
 ![Tab](./media/tab.gif)
 
 ## Responding to ItemChangedEvent
 
-When you click an item on tab, the tab receives an item change event.
+When you click an item on Tab, the Tab receives an item change event.
 You can declare the item change event handler as follows:
 
 ```cs

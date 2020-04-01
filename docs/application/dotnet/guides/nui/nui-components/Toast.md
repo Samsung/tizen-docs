@@ -2,23 +2,23 @@
 
 Toast is a common component and provides simple messages.
 
-Unlike other popups, a toast consists only of a body field as it is just used for providing simple feedback to the user’s actions.
+Unlike other popups, a Toast consists only of a body field as it is just used for providing simple feedback to the user’s actions.
 
-You can use a toast to provide simple messages when the user does not need to make an additional action or confirmation. A toast will automatically disappear after a certain time.
+You can use a Toast to provide simple messages when the user does not need to make an additional action or confirmation. A Toast will automatically disappear after a certain time.
 
 ![Toast](./media/toast.png)
 
 ## Create with property
 
-To create a toast using property, follow these steps:
+To create a Toast using property, follow these steps:
 
-1. Create toast using the default constructor:
+1. Create Toast using the default constructor:
 
     ```cs
     utilityBasicToast = new Toast();
     ```
 
-2. Set the toast property:
+2. Set the Toast property:
 
     ```cs
     NPatchVisual nvisual = new NPatchVisual();
@@ -34,15 +34,15 @@ To create a toast using property, follow these steps:
     root.Add(utilityBasicToast);
     ```
 
-Following output is generated when the toast is created using property:
+Following output is generated when the Toast is created using property:
 
 ![Toast](./media/toast.gif)
 
 ## Create with style
 
-To create a toast using style, follow these steps:
+To create a Toast using style, follow these steps:
 
-1. Create a style for toast:
+1. Create a style for Toast:
 
     ```cs
     ToastStyle style = new ToastStyle
@@ -60,7 +60,7 @@ To create a toast using style, follow these steps:
     };
     ```
 
-2. Use the style to create a toast and add it to parent:
+2. Use the style to create a Toast and add it to parent:
 
     ```cs
     utilityBasicToast = new Toast(style);
@@ -69,13 +69,13 @@ To create a toast using style, follow these steps:
     root.Add(utilityBasicToast);
     ```
 
-Following output is generated when the toast is created using style:
+Following output is generated when the Toast is created using style:
 
 ![Toast](./media/toast.gif)
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to create a toast.
+You can define a style based on the user experience (UX) and then use this style to create a Toast.
 
 1. Define a custom style:
 
@@ -108,7 +108,7 @@ You can define a style based on the user experience (UX) and then use this style
     StyleManager.Instance.RegisterStyle("CustomToast", null, typeof(YourNameSpace.CustomToastStyle));
     ```
 
-3. Use your custom style to create a toast instance:
+3. Use your custom style to create a Toast instance:
 
     ```cs
     utilityBasicToast = new Toast("CustomToast");
@@ -117,7 +117,7 @@ You can define a style based on the user experience (UX) and then use this style
     root.Add(utilityBasicToast);
     ```
 
-Following output is generated when the toast is created using the defined style:
+Following output is generated when the Toast is created using the defined style:
 
 ![Toast](./media/toast.gif)
 

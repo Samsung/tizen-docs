@@ -1,22 +1,22 @@
 # Popup
 
-Popup is a common component that is used as a popup window. You can manage a popup button count, head title, and content area.
+Popup is a common component that is used as a Popup window. You can manage a Popup button count, head title, and content area.
 
-A popup can be created using property.
+A Popup can be created using property.
 
 ![PopupProperty](./media/PopupProperty.PNG)
 
 ## Create with property
 
-To create a popup using property, follow these steps:
+To create a Popup using property, follow these steps:
 
-1. Create popup using the default constructor:
+1. Create Popup using the default constructor:
 
     ```cs
     Popup popup = new Popup();
     ```
 
-2. Set the popup property:
+2. Set the Popup property:
 
     ```cs
     //set Popup property
@@ -43,15 +43,15 @@ To create a popup using property, follow these steps:
     root.Add(popup);
     ```
 
-Following output is generated when the popup is created using property:
+Following output is generated when the Popup is created using property:
 
 ![PopupProperty](./media/PopupProperty.PNG)
 
 ## Create with style
 
-To create a popup using style, follow these steps:
+To create a Popup using style, follow these steps:
 
-1. Create a style for popup:
+1. Create a style for Popup:
 
     ```cs
     PopupStyle style = new PopupStyle
@@ -78,7 +78,7 @@ To create a popup using style, follow these steps:
     };
     ```
 
-2. Use the style to create a popup and add it to parent:
+2. Use the style to create a Popup and add it to parent:
 
     ```cs
     popup2 = new Popup(style);
@@ -91,13 +91,13 @@ To create a popup using style, follow these steps:
     root.Add(popup2);
     ```
 
-Following output is generated when the popup is created using style:
+Following output is generated when the Popup is created using style:
 
 ![PopupProperty](./media/PopupProperty.PNG)
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to create a popup.
+You can define a style based on the user experience (UX) and then use this style to create a Popup.
 
 1. Define a custom style:
 
@@ -139,7 +139,7 @@ You can define a style based on the user experience (UX) and then use this style
     StyleManager.Instance.RegisterStyle("CustomPopup", null, typeof(YourNameSpace.CustomPopupStyle));
     ```
 
-3. Use your custom style to create a popup instance:
+3. Use your custom style to create a Popup instance:
 
     ```cs
     popup = new Tizen.NUI.CommonUI.Popup("CustomPopup");
@@ -152,13 +152,13 @@ You can define a style based on the user experience (UX) and then use this style
     root.Add(popup);
     ```
 
-Following output is generated when the popup is created using the defined style:
+Following output is generated when the Popup is created using the defined style:
 
 ![PopupProperty](./media/PopupProperty.PNG)
 
 ## Responding to PopupButtonClickEvent
 
-When you click the popup button, the popup instance receives a PopupButtonClickEvent.
+When you click the Popup button, the Popup instance receives a PopupButtonClickEvent.
 You can declare the event handler as follows:
 
 ```cs

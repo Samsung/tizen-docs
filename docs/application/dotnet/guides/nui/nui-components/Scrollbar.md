@@ -1,26 +1,26 @@
 # ScrollBar
 
-A scrollbar allows you to recognize the direction of the display, the range of lists, and the range of content.  
-A scrollbar is shown on the screen only when the entire content cannot be displayed on the same page.  
-The method of displaying a scrollbar can vary depending on the display area such as a list or a text area.
+A ScrollBar allows you to recognize the direction of the display, the range of lists, and the range of content.  
+A ScrollBar is shown on the screen only when the entire content cannot be displayed on the same page.  
+The method of displaying a ScrollBar can vary depending on the display area such as a list or a text area.
 
-A scrollbar is displayed on the right or at the bottom of the scrolling area.  
-On the lists or the contents, the scrollbar is shown when the focus moves to the same direction of contents extension.  
-When entering the screen consists of list, the vertical or horizontal scrollbar is displayed that has same direction with mainstream of the screen.
+A ScrollBar is displayed on the right or at the bottom of the scrolling area.  
+On the lists or the contents, the ScrollBar is shown when the focus moves to the same direction of contents extension.  
+When entering the screen consists of list, the vertical or horizontal ScrollBar is displayed that has same direction with mainstream of the screen.
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
 ## Create with property
 
-To create a scrollbar using property, follow these steps:
+To create a ScrollBar using property, follow these steps:
 
-1. Create scrollbar using the default constructor:
+1. Create ScrollBar using the default constructor:
 
     ```cs
     scrollBar = new ScrollBar();
     ```
 
-2. Set the scrollbar property:
+2. Set the ScrollBar property:
 
     ```cs
     scrollBar.Position = new Position(50, 300);
@@ -34,15 +34,15 @@ To create a scrollbar using property, follow these steps:
     root.Add(scrollBar);
     ```
 
-Following output is generated when the scrollbar is created using property:
+Following output is generated when the ScrollBar is created using property:
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
 ## Create with style
 
-To create a scrollbar using style, follow these steps:
+To create a ScrollBar using style, follow these steps:
 
-1. Create a style for scrollbar and set the properties for track and thumb:
+1. Create a style for ScrollBar and set the properties for track and thumb:
 
     ```cs
     ScrollBarStyle style = new ScrollBarStyle
@@ -59,7 +59,7 @@ To create a scrollbar using style, follow these steps:
     };
     ```
 
-2. Use the style to create a scrollbar and add it to parent:
+2. Use the style to create a ScrollBar and add it to parent:
 
     ```cs
     scrollBar = new ScrollBar(style);
@@ -70,13 +70,13 @@ To create a scrollbar using style, follow these steps:
     root.Add(scrollBar);
     ```
 
-Following output is generated when the scrollbar is created using style:
+Following output is generated when the ScrollBar is created using style:
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to create a scrollbar.
+You can define a style based on the user experience (UX) and then use this style to create a ScrollBar.
 
 1. Define a custom style:
 
@@ -109,7 +109,7 @@ You can define a style based on the user experience (UX) and then use this style
     StyleManager.Instance.RegisterStyle("CustomScrollbar", null, typeof(YourNameSpace.CustomScrollBarStyle));
     ```
 
-3. Use your custom style to create a scrollbar instance:
+3. Use your custom style to create a ScrollBar instance:
 
     ```cs
     scrollBar = new ScrollBar("CustomScrollbar");
@@ -120,7 +120,7 @@ You can define a style based on the user experience (UX) and then use this style
     root.Add(scrollBar);
     ```
 
-Following output is generated when the scrollbar is created using the defined style:
+Following output is generated when the ScrollBar is created using the defined style:
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
