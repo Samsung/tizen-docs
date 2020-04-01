@@ -70,7 +70,7 @@ Following output is generated when the loading is created using style:
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to ceate a loading.
+You can define a style based on the user experience (UX) and then use this style to create a loading.
 
 1. Define a custom style:
 

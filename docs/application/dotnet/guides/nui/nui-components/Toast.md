@@ -69,13 +69,13 @@ To create a toast using style, follow these steps:
     root.Add(utilityBasicToast);
     ```
 
-Following output is generated when the toast is created using property:
+Following output is generated when the toast is created using style:
 
 ![Toast](./media/toast.gif)
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to ceate a toast.
+You can define a style based on the user experience (UX) and then use this style to create a toast.
 
 1. Define a custom style:
 

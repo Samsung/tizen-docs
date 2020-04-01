@@ -85,7 +85,7 @@ Following output is generated when the button is created using style:
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to ceate a button.
+You can define a style based on the user experience (UX) and then use this style to create a button.
 
 1. Define a custom style:
 

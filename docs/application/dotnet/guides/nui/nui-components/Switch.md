@@ -77,9 +77,9 @@ To create a switch using style, follow these steps:
                 Normal = "controller_switch_handler.png",
                 Selected = "controller_switch_handler.png",
                 Disabled = "controller_switch_handler_dim.png",
-                DisabledSelected = "controller_switch_handler_dim.png",
-            },
-        },
+                DisabledSelected = "controller_switch_handler_dim.png"
+            }
+        }
     };
     ```
 
@@ -105,7 +105,7 @@ Following output is generated when the switch is created using style:
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to ceate a switch.
+You can define a style based on the user experience (UX) and then use this style to create a switch.
 
 1. Define a custom style:
 
@@ -124,7 +124,7 @@ You can define a style based on the user experience (UX) and then use this style
                         Normal = "controller_switch_bg_off.png",
                         Selected = "controller_switch_bg_on.png",
                         Disabled = "controller_switch_bg_off_dim.png",
-                        DisabledSelected = "controller_switch_bg_on_dim.png",
+                        DisabledSelected = "controller_switch_bg_on_dim.png"
                     },
                 },
                 Thumb = new ImageViewStyle
@@ -135,9 +135,9 @@ You can define a style based on the user experience (UX) and then use this style
                         Normal = "controller_switch_handler.png",
                         Selected = "controller_switch_handler.png",
                         Disabled = "controller_switch_handler_dim.png",
-                        DisabledSelected = "controller_switch_handler_dim.png",
-                    },
-                },
+                        DisabledSelected = "controller_switch_handler_dim.png"
+                    }
+                }
             };
             return style;
         }

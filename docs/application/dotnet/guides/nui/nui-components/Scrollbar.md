@@ -34,7 +34,7 @@ To create a scroll bar using property, follow these steps:
     root.Add(scrollBar);
     ```
 
-Following output is generated when the progress is created using property:
+Following output is generated when the scroll bar is created using property:
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
@@ -55,7 +55,7 @@ To create a scroll bar using style, follow these steps:
         {
             BackgroundColor = Color.Black,
             Size = new Size(30, 4)
-        },
+        }
     };
     ```
 
@@ -70,13 +70,13 @@ To create a scroll bar using style, follow these steps:
     root.Add(scrollBar);
     ```
 
-Following output is generated when the progress is created using style:
+Following output is generated when the scroll bar is created using style:
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to ceate a scroll bar.
+You can define a style based on the user experience (UX) and then use this style to create a scroll bar.
 
 1. Define a custom style:
 
@@ -96,7 +96,7 @@ You can define a style based on the user experience (UX) and then use this style
                     BackgroundColor = Color.Black,
                     Size = new Size(30, 4)
                 },
-                Direction = ScrollBar.DirectionType.Horizontal,
+                Direction = ScrollBar.DirectionType.Horizontal
             };
             return style;
         }

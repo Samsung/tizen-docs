@@ -45,12 +45,12 @@ To create a progress using style, follow these steps:
     {
         Track = new ImageViewStyle
         {
-            BackgroundColor = Color.Cyan,
+            BackgroundColor = Color.Cyan
         },
         Progress = new ImageViewStyle
         {
-            BackgroundColor = Color.Black,
-        },
+            BackgroundColor = Color.Black
+        }
     };
     ```
 
@@ -71,7 +71,7 @@ Following output is generated when the progress is created using style:
 
 ## Create with defined styles
 
-You can define a style based on the user experience (UX) and then use this style to ceate a progress.
+You can define a style based on the user experience (UX) and then use this style to create a progress.
 
 1. Define a custom style:
 
@@ -84,12 +84,12 @@ You can define a style based on the user experience (UX) and then use this style
             {
                 Track = new ImageViewStyle
                 {
-                    BackgroundColor = Color.Cyan,
+                    BackgroundColor = Color.Cyan
                 },
                 Progress = new ImageViewStyle
                 {
-                    BackgroundColor = Color.Black,
-                },
+                    BackgroundColor = Color.Black
+                }
             };
             return style;
         }
