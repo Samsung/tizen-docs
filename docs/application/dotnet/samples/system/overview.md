@@ -102,7 +102,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/w78level.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Level</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Level" target="_blank"><strong>(W) Level</strong></a></p>
 			<p>This sample application demonstrates how to obtain the accelerometer sensor data and level objects using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.Accelerometer.html" target="_blank">Tizen.Sensor.Accelerometer</a>.</p>
 			</td>
 		</tr>
@@ -116,14 +116,14 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/w79pedometer.png" width="180"/></td>
 			<td>
-			<p><strong>(W) Pedometer</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Pedometer" target="_blank"><strong>(W) Pedometer</strong></a></p>
 			<p>This sample application demonstrates how to obtain the pedometer sensor data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.Pedometer.html" target="_blank">Tizen.Sensor.Pedometer</a>.</p>
 			</td>
 		</tr>
 		<tr>
 			<td><img alt="" height="180" src="media/w80squatcounter.png" width="180"/></td>
 			<td>
-			<p><strong>(W) SquatCounter</strong> [In progress]</p>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SquatCounter" target="_blank"><strong>(W) SquatCounter</strong></a></p>
 			<p>This sample application demonstrates how to obtain the pressure sensor data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.PressureSensor.html" target="_blank">Tizen.Sensor.PressureSensor</a>.</p>
 			</td>
 		</tr>
