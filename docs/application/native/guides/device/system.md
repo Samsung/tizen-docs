@@ -310,6 +310,7 @@ The following table lists the input feature keys:
 | `http://tizen.org/feature/input.keyboard` | `bool`   | The platform returns `true` for this key, if the device provides a built-in keyboard supporting any keyboard layout. |
 | `http://tizen.org/feature/input.keyboard.layout` | `String` | The platform returns the keyboard layout (such as `"qwerty"`) supported by the built-in keyboard for this key and returns `true` for the `http://tizen.org/feature/input.keyboard` key.<br>If the device does not provide a built-in keyboard, the platform returns an empty string for this key and returns `false` for the `http://tizen.org/feature/input.keyboard` key. |
 | `http://tizen.org/feature/input.rotating_bezel` | `bool`   | The platform returns `true` for this key, if the device supports the rotating bezel feature. |
+| `http://tizen.org/feature/input.rotating_bezel.virtual` | `bool`   | The platform returns `true` for this key,  if the device supports the virtual rotating bezel feature. |
 
 The following table lists the IOT feature keys:
 
