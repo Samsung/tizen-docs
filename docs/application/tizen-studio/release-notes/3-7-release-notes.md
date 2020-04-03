@@ -1,6 +1,6 @@
 # Tizen Studio 3.7 Release Notes
 
-- Release Date: Apr 01, 2020
+- Release Date: Apr 06, 2020
 
 ## IDE and Tools
 
