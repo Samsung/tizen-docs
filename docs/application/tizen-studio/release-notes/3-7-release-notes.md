@@ -1,6 +1,6 @@
 # Tizen Studio 3.7 Release Notes
 
-- Release Date: Apr 06, 2020
+- Release Date: Apr 6, 2020
 
 ## IDE and Tools
 
@@ -37,7 +37,7 @@
   - On Windows, if an error with message "failed to allocate memory" occurs while executing the emulator, try the following:
     - Close some other programs and try to launch the emulator again.
     - If the RAM size is set to 768 or 1024 MB for the VM in Emulator Manager, change it to 512 MB.
-    - Increase the user area of the virtual memory in the system to 3 GB by entering the **bcdedit /setincreaseuserva 3072** command on the console with administrator rights (only in Windows), and reboot.
+    - Increase the user area of the virtual memory in the system to 3 GB by entering the **bcdedit /setincreaseuserva 3072** command on the console with administrator rights (only in Windows 7), and reboot.
   - If you use a MacBook Pro that has both Intel HD and NVIDIA&reg; GPUs, the emulator can be unexpectedly terminated when you execute the emulator with OpenGL ES version 1.1 or 2.0. Verify the emulator configuration in Emulator Manager and on the general tab in the emulator configuration window, set OpenGL ES version to version 2.0 or to version 3.0.
   - When you launch Emulator Manager in the Tizen IDE, the shortcut image of Emulator Manager may not be displayed properly.
   - Basic Web applications are not installed on SD cards.
