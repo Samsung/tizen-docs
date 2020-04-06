@@ -1,8 +1,3 @@
----
-title: "Create Your First Tizen Wearable Web Widget Application"
-keywords: "Tizen, Tizen Wearable, Widget Application, Guide"
----
-
 # Create Your First Tizen Wearable Web Widget Application
 
 **Welcome to Tizen Wearable Web widget application development!**
