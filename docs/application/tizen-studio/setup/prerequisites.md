@@ -5,7 +5,7 @@ Check the following prerequisites before attempting to install Tizen Studio.
 ## Java Development Kit (JDK) Requirements
 > **Note**
 >
-> There are no JDK prerequisites for Tizen Studio 3.7 and higher.
+> There is no JDK prerequisite for Tizen Studio 3.7 and higher.
 
 You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 for Tizen Studio 3.5 and Tizen Studio 3.6.
 
@@ -109,7 +109,7 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 <tbody>
 <tr>
 <td>CPU</td>
-<td colspan="3">Recommended: Support for Intel VTx (Virtualization Technology)</td>
+<td colspan="3">Recommended: Support for Intel&reg; VTx (Virtualization Technology)</td>
 </tr>
 <tr>
 <td>Screen resolution</td>
