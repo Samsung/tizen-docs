@@ -215,7 +215,7 @@ To use Python conveniently at the command prompt, set the <code>%PATH%</code> en
 </td>
 <td>At the terminal prompt, enter the following commands:
 <pre><code>$ brew install gettext
-$ brew link gettext -force
+$ brew link gettext --force
 $ which msgfmt
 /usr/local/bin/msgfmt
 </code></pre>
