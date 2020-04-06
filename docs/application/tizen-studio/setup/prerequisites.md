@@ -33,7 +33,7 @@ You can also use Oracle's OpenJDK. For more installation details, see [OpenJDK 1
 
 ## OS and System Requirements
 
-The following table lists the supported operating systems and hardware requirements for izen Studio.
+The following table lists the supported operating systems and hardware requirements for Tizen Studio.
 
 **Table: OS and system requirements**
 
