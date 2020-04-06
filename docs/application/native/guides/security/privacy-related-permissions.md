@@ -18,9 +18,8 @@ The main features of the Privacy Privilege Manager API include:
 For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/details/sec-privileges.md).
 
 > [!NOTE]
->
-> Since Tizen 5.5, pop-ups by `ppm_request_permission()` and `ppm_request_permissions()` are launched as `group mode` with the caller apps.
-> If the pop-up is terminated without full response, all the remaining requests that aren't responded by the user will be interpreted as 'Deny' action on behalf of the user. In this case, the app gets `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE` response to those permissions. The app can again request for those **automatically denied** permissions anytime it needs.
+> Since Tizen 5.5, if the caller app's `App component type` is `UI app` or `Component based app` with `Frame component` then pop-ups by `ppm_request_permission()` and `ppm_request_permissions()` are launched as `group mode` with the caller app.
+> If the pop-up is terminated without full response, all the remaining requests that are not responded by the user will be interpreted as **Deny** action on behalf of the user. In this case, the app gets `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE` response to those permissions. The app can again request for those **automatically denied** permissions anytime it needs.
 > Use `ppm_request_permissions()` to request multiple privileges instead of calling `ppm_request_permission()` multiple times.
 
 ## Prerequisites
