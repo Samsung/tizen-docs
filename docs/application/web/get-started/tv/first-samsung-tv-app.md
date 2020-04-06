@@ -1,3 +1,8 @@
+---
+title: "Create Your First Samsung Smart TV Web Application"
+keywords: "Tizen, Smart TV, TV Extension, Guide"
+---
+
 # Create Your First Samsung Smart TV Web Application
 
 **Welcome to Samsung Smart TV Web application development!**
