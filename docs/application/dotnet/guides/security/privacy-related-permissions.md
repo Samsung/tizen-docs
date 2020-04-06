@@ -18,9 +18,8 @@ The main features of the `Tizen.Security.PrivacyPrivilegeManager` class include:
 For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/sec-privileges.md).
 
 > [!NOTE]
->
-> Since Tizen 5.5, pop-ups by `RequestPermission()` and `RequestPermissions()` are launched as `group mode` with the caller apps.
-> If the pop-up is terminated without full response, all the remaining requests that aren't responded by the user will be interpreted as 'Deny' action on behalf of the user. In this case, the app gets `RequestResult.DenyOnce` response to those permissions. The app can again request for those **automatically denied** permissions anytime it needs.
+> Since Tizen 5.5, if the caller app's `App component type` is `UI app` or `Component based app` with `Frame component` then pop-ups by `RequestPermission()` and `RequestPermissions()` are launched as `group mode` with the caller app.
+> If the pop-up is terminated without full response, all the remaining requests that are not responded by the user will be interpreted as **Deny** action on behalf of the user. In this case, the app gets `RequestResult.DenyOnce` response to those permissions. The app can again request for those **automatically denied** permissions anytime it needs.
 > Use `RequestPermissions()` to request multiple privileges instead of calling `RequestPermission()` multiple times.
 
 ## Prerequisites
