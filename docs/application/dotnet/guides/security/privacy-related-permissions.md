@@ -18,7 +18,7 @@ The main features of the `Tizen.Security.PrivacyPrivilegeManager` class include:
 For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/sec-privileges.md).
 
 > [!NOTE]
-> Since Tizen 5.5, if the caller app's `App component type` is `UI app` or `Component based app` with `Frame component` then pop-ups by `RequestPermission()` and `RequestPermissions()` are launched as `group mode` with the caller app.
+> Since Tizen 5.5, if the caller app component type is UI app or component based app with frame component, then, the pop-ups by `RequestPermission()` and `RequestPermissions()` are launched as `group mode` with the caller app.
 > If the pop-up is terminated without full response, all the remaining requests that are not responded by the user will be interpreted as **Deny** action on behalf of the user. In this case, the app gets `RequestResult.DenyOnce` response to those permissions. The app can again request for those **automatically denied** permissions anytime it needs.
 > Use `RequestPermissions()` to request multiple privileges instead of calling `RequestPermission()` multiple times.
 
@@ -152,7 +152,6 @@ To check whether an application has permission to use a privilege, and to reques
 This section describes how to check and request multiple privileges in a single API call.
 
 > [!NOTE]
->
 > Multiple privileges in a single API call are supported from Tizen 5.5.
 
 To check whether an application has permission to use a privilege, and to request permission if required:
@@ -233,7 +232,6 @@ To check whether an application has permission to use a privilege, and to reques
       ```
 
 > [!NOTE]
->
 > Since the privileges are grouped, the user's decision regarding 1 privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only 1 of them, the above rule does not apply.
 
 

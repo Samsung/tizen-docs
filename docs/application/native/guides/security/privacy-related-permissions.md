@@ -18,7 +18,7 @@ The main features of the Privacy Privilege Manager API include:
 For a list of privacy-related privileges, see [Security and API Privileges](../../tutorials/details/sec-privileges.md).
 
 > [!NOTE]
-> Since Tizen 5.5, if the caller app's `App component type` is `UI app` or `Component based app` with `Frame component` then pop-ups by `ppm_request_permission()` and `ppm_request_permissions()` are launched as `group mode` with the caller app.
+> Since Tizen 5.5, if the caller app component type is UI app or component based app with frame component, then, the pop-ups by `ppm_request_permission()` and `ppm_request_permissions()` are launched as `group mode` with the caller app.
 > If the pop-up is terminated without full response, all the remaining requests that are not responded by the user will be interpreted as **Deny** action on behalf of the user. In this case, the app gets `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_ONCE` response to those permissions. The app can again request for those **automatically denied** permissions anytime it needs.
 > Use `ppm_request_permissions()` to request multiple privileges instead of calling `ppm_request_permission()` multiple times.
 
@@ -39,7 +39,6 @@ To enable your application to use the privacy-related privileges functionality:
    It means that the functions can be employed in any UI event callback (such as button callbacks, timer callbacks, handlers for system events, and application state change event callbacks). If you want to resolve privileges during application startup, call these functions from the resume event callback (`app_resume_cb()`).
 
    > [!NOTE]
-   >
    > The Privacy Privilege Manager functions are not thread-safe.
 
 <a name="req"></a>
@@ -134,7 +133,6 @@ To check whether an application has permission to use a privilege, and to reques
    If the decision is definitive, any subsequent `ppm_request_permission()` calls result in an immediate response with an appropriate result: `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_ALLOW_FOREVER` or `PRIVACY_PRIVILEGE_MANAGER_REQUEST_RESULT_DENY_FOREVER`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
 
 > [!NOTE]
->
 > Since the privileges are grouped, the user's decision regarding one privilege applies to the whole group of related privileges. For example, if the user has granted permission to use the `http://tizen.org/privilege/account.read` privilege, permission is automatically granted to the `http://tizen.org/privilege/account.write` privilege also. Be aware that both privileges need to be declared in the application manifest file. If you declare only one of them, the above rule does not apply.
 
 ## Requesting Multiple Permissions
@@ -142,7 +140,6 @@ To check whether an application has permission to use a privilege, and to reques
 This section describes how to check and request multiple privileges in a single API call.
 
 > [!NOTE]
->
 > Multiple privileges in single API call are supported from Tizen 5.0.
 
 To check whether an application has permission to use a privilege, and to request permission if required:
@@ -241,7 +238,6 @@ To check whether an application has permission to use a privilege, and to reques
 This section describes how to check privileges of the application with the specified app_id.
 
 > [!NOTE]
->
 > Checking permissions of the application with the specified app_id is supported from Tizen 5.0. Requesting permissions of the application with the specified app_id is not supported.
 
 To check whether the application with the specified app_id has permission to use the privileges:
