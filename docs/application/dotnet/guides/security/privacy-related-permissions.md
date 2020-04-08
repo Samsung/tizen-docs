@@ -37,7 +37,6 @@ To enable your application to use the privacy-related permissions functionality:
     It means that the methods can be employed in any UI event handler (such as button click, timer event, system event, and application state change event). If you want to resolve privileges during application startup, call these methods from the Xamarin.Forms resume and start life-cycle methods (`Xamarin.Forms.Application.OnResume()` and `Xamarin.Forms.Application.OnStart()`).
 
     > [!NOTE]
-    >
     > The `Tizen.Security.PrivacyPrivilegeManager` class is not thread-safe.
 
 <a name="requesting"></a>
