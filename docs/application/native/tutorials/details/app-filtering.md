@@ -394,6 +394,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.bluetooth.opp` | Specify this key, if the application requires the Bluetooth Object Push feature (OPP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.phonebook.client` | Specify this key, if the application requires the Bluetooth Phone Book Access (PBAP) client feature. | 3.0   |
 | `http://tizen.org/feature/network.ethernet` | Specify this key, if the application requires the Ethernet connection. | 2.4   |
+| `http://tizen.org/feature/network.inm` | Specify this key, if the application requires the Intelligent Network Monitoring (INM) feature. | 5.0   |
 | `http://tizen.org/feature/network.internet` | Specify this key, if the application requires Internet access. | 2.3.1 |
 | `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the Internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
 | `http://tizen.org/feature/network.nfc`   | Specify this key, if the application requires the use of any API that, in turn, requires the Near Field Communication (NFC) feature. | 2.2.1 |
@@ -415,7 +416,6 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.vpn`   | Specify this key, if the application requires the Virtual Private Network feature (VPN). | 3.0   |
 | `http://tizen.org/feature/network.wifi`  | Specify this key, if the application requires the use of any API that, in turn, requires the Wi-Fi feature. | 2.2.1 |
 | `http://tizen.org/feature/network.wifi.tdls` | Specify this key, if the application requires the Wi-Fi Tunneled Direct Link Setup (TDLS). | 3.0   |
-| `http://tizen.org/feature/network.inm` | Specify this key, if the application requires the Intelligent Network Monitoring (INM) feature. | 5.0   |
 | `http://tizen.org/feature/opengles.texture_format.3dc` | Specify this key, if the application requires the 3DC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.atc` | Specify this key, if the application requires the ATC texture format for OpenGL&reg; ES. | 2.2.1 |
 | `http://tizen.org/feature/opengles.texture_format.etc` | Specify this key, if the application requires the ETC texture format for OpenGL&reg; ES. | 2.2.1 |
