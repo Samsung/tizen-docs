@@ -16,6 +16,8 @@ The Battery Monitor APIs provide following provisions to fetch the battery usage
 
     You can [retrieve battery usage information of single or multiple resources](#resourceusage_get) by specifying its [resource IDs](#resource_key) as well as 'from' and 'to' Unix epoch time in seconds.
 
+    You can retrieve data recorded within last seven days.
+
 ## Prerequisites
 
 To enable your application to use the Battery Monitor functionality:
