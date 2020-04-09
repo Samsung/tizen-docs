@@ -53,7 +53,6 @@
 						<topic href="6.0/device_api/mobile/tizen/ppm.html" label="PrivacyPrivilege"/>
 					</topic>
 					<topic href="6.0/device_api/mobile/index.html#Social" label="Social">
-						<topic href="6.0/device_api/mobile/tizen/bookmark.html" label="Bookmark"/>
 						<topic href="6.0/device_api/mobile/tizen/calendar.html" label="Calendar"/>
 						<topic href="6.0/device_api/mobile/tizen/callhistory.html" label="Call History"/>
 						<topic href="6.0/device_api/mobile/tizen/contact.html" label="Contact"/>
@@ -85,6 +84,9 @@
 						<topic href="6.0/device_api/mobile/tizen/cordova/globalization.html" label="Globalization"/>
 						<topic href="6.0/device_api/mobile/tizen/cordova/media.html" label="Media"/>
 						<topic href="6.0/device_api/mobile/tizen/cordova/networkInformation.html" label="Network Information"/>
+					</topic>
+					<topic href="6.0/device_api/mobile/index.html#Deprecated API" label="Deprecated API">
+						<topic deprecatedSince="6.0" href="6.0/device_api/mobile/tizen/bookmark.html" label="Bookmark"/>
 					</topic>
 				</topic>
 			</topic>
