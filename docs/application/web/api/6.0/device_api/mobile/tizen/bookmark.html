@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Bookmark API</title>
+<meta data-version="6.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Bookmark">
@@ -13,6 +14,9 @@
  The Bookmark API provides interfaces and methods for accessing Bookmark.
 This API provides functionality to get, add, and remove bookmarks.
         </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+        </p>
 <div class="description">
         <p>
 For more information on the Bookmark features, see <a href="/application/web/guides/personal/bookmarks">Bookmark Guide</a>.
@@ -23,18 +27,18 @@ For more information on the Bookmark features, see <a href="/application/web/gui
         </p>
 <h2>Table of Contents</h2>
 <ul class="toc">
-<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li class="deprecated">
                     1.1. <a href="#Bookmark">Bookmark</a>
 </li></ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
-<li>2.1. <a href="#BookmarkManagerObject">BookmarkManagerObject</a>
+<li class="deprecated">2.1. <a href="#BookmarkManagerObject">BookmarkManagerObject</a>
 </li>
-<li>2.2. <a href="#BookmarkManager">BookmarkManager</a>
+<li class="deprecated">2.2. <a href="#BookmarkManager">BookmarkManager</a>
 </li>
-<li>2.3. <a href="#BookmarkItem">BookmarkItem</a>
+<li class="deprecated">2.3. <a href="#BookmarkItem">BookmarkItem</a>
 </li>
-<li>2.4. <a href="#BookmarkFolder">BookmarkFolder</a>
+<li class="deprecated">2.4. <a href="#BookmarkFolder">BookmarkFolder</a>
 </li>
 </ul>
 </li>
@@ -48,38 +52,19 @@ For more information on the Bookmark features, see <a href="/application/web/gui
 <th>Interface</th>
 <th>Method</th>
 </tr></thead>
-<tbody>
-<tr>
-<td><a href="#BookmarkManagerObject">BookmarkManagerObject</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#BookmarkManager">BookmarkManager</a></td>
-<td>
-<div>
-<a href="#Bookmark">Bookmark</a>[] <a href="#BookmarkManager::get">get</a> (optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive)</div>
-<div>void <a href="#BookmarkManager::add">add</a> (<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder)</div>
-<div>void <a href="#BookmarkManager::remove">remove</a> (optional <a href="#Bookmark">Bookmark</a>? bookmark)</div>
-</td>
-</tr>
-<tr>
-<td><a href="#BookmarkItem">BookmarkItem</a></td>
-<td></td>
-</tr>
-<tr>
-<td><a href="#BookmarkFolder">BookmarkFolder</a></td>
-<td></td>
-</tr>
-</tbody>
+<tbody></tbody>
 </table>
 <div class="typedefs" id="typedefs-section">
 <h2>1. Type Definitions</h2>
-<div class="typedef" id="Bookmark">
+<div class="typedef deprecated" id="Bookmark">
 <a class="backward-compatibility-anchor" name="::Bookmark::Bookmark"></a><h3>1.1. Bookmark</h3>
 <div class="brief">
  A bookmark, which could be either a <em>BookmarkItem </em>or a <em>BookmarkFolder</em>.
           </div>
-<pre class="webidl prettyprint">  typedef (<a href="#BookmarkItem">BookmarkItem</a> or <a href="#BookmarkFolder">BookmarkFolder</a>) Bookmark;</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  typedef (<a href="#BookmarkItem">BookmarkItem</a> or <a href="#BookmarkFolder">BookmarkFolder</a>) Bookmark;</span></pre>
 <p><span class="version">Since: </span>
  2.1
           </p>
@@ -87,14 +72,17 @@ For more information on the Bookmark features, see <a href="/application/web/gui
 </div>
 <div class="interfaces" id="interfaces-section">
 <h2>2. Interfaces</h2>
-<div class="interface" id="BookmarkManagerObject">
+<div class="interface deprecated" id="BookmarkManagerObject">
 <a class="backward-compatibility-anchor" name="::Bookmark::BookmarkManagerObject"></a><h3>2.1. BookmarkManagerObject</h3>
 <div class="brief">
  The BookmarkManagerObject interface defines what is instantiated by the Tizen object from the Tizen Platform.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface BookmarkManagerObject {
-    readonly attribute <a href="#BookmarkManager">BookmarkManager</a> bookmark;
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface BookmarkManagerObject {
+<span class="nocode deprecated">    readonly attribute <a href="#BookmarkManager">BookmarkManager</a> bookmark;
+</span>  };</span></pre>
 <pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BookmarkManagerObject">BookmarkManagerObject</a>;</pre>
 <p><span class="version">Since: </span>
  2.1
@@ -106,27 +94,33 @@ There will be a <em>tizen.bookmark </em>object that allows to access the functio
          </div>
 <div class="attributes">
 <h4>Attributes</h4>
-<ul><li class="attribute" id="BookmarkManagerObject::bookmark">
+<ul><li class="attribute deprecated" id="BookmarkManagerObject::bookmark">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BookmarkManager </span><span class="name">bookmark</span></span><div class="brief">
  Object representing a bookmark manager.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+            </p>
 <p><span class="version">Since: </span>
  2.1
             </p>
 </li></ul>
 </div>
 </div>
-<div class="interface" id="BookmarkManager">
+<div class="interface deprecated" id="BookmarkManager">
 <a class="backward-compatibility-anchor" name="::Bookmark::BookmarkManager"></a><h3>2.2. BookmarkManager</h3>
 <div class="brief">
  The BookmarkManager interface provides access to the bookmark folder and bookmark item.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface BookmarkManager {
-    <a href="#Bookmark">Bookmark</a>[] get(optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void add(<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void remove(optional <a href="#Bookmark">Bookmark</a>? bookmark) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface BookmarkManager {
+<span class="nocode deprecated">    <a href="#Bookmark">Bookmark</a>[] get(optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void add(<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void remove(optional <a href="#Bookmark">Bookmark</a>? bookmark) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.1
           </p>
@@ -138,13 +132,16 @@ It provides access to the API functionalities through the <em>tizen.bookmark </e
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="BookmarkManager::get">
+<dt class="deprecated method" id="BookmarkManager::get">
 <a class="backward-compatibility-anchor" name="::Bookmark::BookmarkManager::get"></a><code><b><span class="methodName">get</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Gets all bookmark items and bookmark folders.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#Bookmark">Bookmark</a>[] get(optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -212,13 +209,16 @@ catch (err)
 </pre>
 </div>
 </dd>
-<dt class="method" id="BookmarkManager::add">
+<dt class="deprecated method" id="BookmarkManager::add">
 <a class="backward-compatibility-anchor" name="::Bookmark::BookmarkManager::add"></a><code><b><span class="methodName">add</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Adds a bookmark item or a bookmark folder.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void add(<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -282,13 +282,16 @@ catch (err)
 </pre>
 </div>
 </dd>
-<dt class="method" id="BookmarkManager::remove">
+<dt class="deprecated method" id="BookmarkManager::remove">
 <a class="backward-compatibility-anchor" name="::Bookmark::BookmarkManager::remove"></a><code><b><span class="methodName">remove</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Removes a bookmark item or a bookmark folder.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void remove(optional <a href="#Bookmark">Bookmark</a>? bookmark);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -345,27 +348,33 @@ catch (err)
 </dl>
 </div>
 </div>
-<div class="interface" id="BookmarkItem">
+<div class="interface deprecated" id="BookmarkItem">
 <a class="backward-compatibility-anchor" name="::Bookmark::BookmarkItem"></a><h3>2.3. BookmarkItem</h3>
 <div class="brief">
  The BookmarkItem interface implements the <em>BookmarkItem </em>object.
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString title, DOMString url)]
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [<span class="nocode deprecated">Constructor(DOMString title, DOMString url)</span>]
   interface BookmarkItem {
-    readonly attribute <a href="#BookmarkFolder">BookmarkFolder</a>? parent;
-    readonly attribute DOMString title;
-    readonly attribute DOMString url;
-  };</pre>
+<span class="nocode deprecated">    readonly attribute <a href="#BookmarkFolder">BookmarkFolder</a>? parent;
+</span><span class="nocode deprecated">    readonly attribute DOMString title;
+</span><span class="nocode deprecated">    readonly attribute DOMString url;
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.1
           </p>
 <div class="constructors">
 <h4 id="BookmarkItem::constructor">Constructors</h4>
 <dl>
-<dt class="method" id="">
+<dt class="extendedattribute deprecated" id="">
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">BookmarkItem(DOMString title, DOMString url);</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">BookmarkItem(DOMString title, DOMString url);</span></pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+              </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
@@ -383,11 +392,14 @@ catch (err)
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="BookmarkItem::parent">
+<li class="attribute deprecated" id="BookmarkItem::parent">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BookmarkFolder </span><span class="name">parent</span><span class="optional"> [nullable]</span></span><div class="brief">
  The parent bookmark folder.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+            </p>
 <div class="description">
             <p>
 This attribute is meaningful when this object is successfully added or retrieved.
@@ -401,20 +413,26 @@ If the parent bookmark folder indicates the root bookmark folder, the value will
  2.1
             </p>
 </li>
-<li class="attribute" id="BookmarkItem::title">
+<li class="attribute deprecated" id="BookmarkItem::title">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">title</span></span><div class="brief">
  The title of the bookmark.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+            </p>
 <p><span class="version">Since: </span>
  2.1
             </p>
 </li>
-<li class="attribute" id="BookmarkItem::url">
+<li class="attribute deprecated" id="BookmarkItem::url">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">url</span></span><div class="brief">
  The URL of the bookmark.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+            </p>
 <p><span class="version">Since: </span>
  2.1
             </p>
@@ -422,26 +440,32 @@ If the parent bookmark folder indicates the root bookmark folder, the value will
 </ul>
 </div>
 </div>
-<div class="interface" id="BookmarkFolder">
+<div class="interface deprecated" id="BookmarkFolder">
 <a class="backward-compatibility-anchor" name="::Bookmark::BookmarkFolder"></a><h3>2.4. BookmarkFolder</h3>
 <div class="brief">
  The BookmarkFolder interface implements the <em>BookmarkFolder </em>object.
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString title)]
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [<span class="nocode deprecated">Constructor(DOMString title)</span>]
   interface BookmarkFolder {
-    readonly attribute <a href="#BookmarkFolder">BookmarkFolder</a>? parent;
-    readonly attribute DOMString title;
-  };</pre>
+<span class="nocode deprecated">    readonly attribute <a href="#BookmarkFolder">BookmarkFolder</a>? parent;
+</span><span class="nocode deprecated">    readonly attribute DOMString title;
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  2.1
           </p>
 <div class="constructors">
 <h4 id="BookmarkFolder::constructor">Constructors</h4>
 <dl>
-<dt class="method" id="">
+<dt class="extendedattribute deprecated" id="">
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">BookmarkFolder(DOMString title);</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">BookmarkFolder(DOMString title);</span></pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+              </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
 {
@@ -459,11 +483,14 @@ catch (err)
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="BookmarkFolder::parent">
+<li class="attribute deprecated" id="BookmarkFolder::parent">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BookmarkFolder </span><span class="name">parent</span><span class="optional"> [nullable]</span></span><div class="brief">
  The parent bookmark folder.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+            </p>
 <div class="description">
             <p>
 This attribute is meaningful when this object is successfully added or retrieved.
@@ -477,11 +504,14 @@ If the parent bookmark folder indicates the root bookmark folder, the value will
  2.1
             </p>
 </li>
-<li class="attribute" id="BookmarkFolder::title">
+<li class="attribute deprecated" id="BookmarkFolder::title">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">title</span></span><div class="brief">
  The title of the bookmark folder.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 6.0 Bookmark API is deprecated.
+            </p>
 <p><span class="version">Since: </span>
  2.1
             </p>
@@ -492,27 +522,7 @@ If the parent bookmark folder indicates the root bookmark folder, the value will
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Bookmark {
-  typedef (<a href="#BookmarkItem">BookmarkItem</a> or <a href="#BookmarkFolder">BookmarkFolder</a>) Bookmark;
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BookmarkManagerObject">BookmarkManagerObject</a>;
-  [NoInterfaceObject] interface BookmarkManagerObject {
-    readonly attribute <a href="#BookmarkManager">BookmarkManager</a> bookmark;
-  };
-  [NoInterfaceObject] interface BookmarkManager {
-    <a href="#Bookmark">Bookmark</a>[] get(optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void add(<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void remove(optional <a href="#Bookmark">Bookmark</a>? bookmark) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [Constructor(DOMString title, DOMString url)]
-  interface BookmarkItem {
-    readonly attribute <a href="#BookmarkFolder">BookmarkFolder</a>? parent;
-    readonly attribute DOMString title;
-    readonly attribute DOMString url;
-  };
-  [Constructor(DOMString title)]
-  interface BookmarkFolder {
-    readonly attribute <a href="#BookmarkFolder">BookmarkFolder</a>? parent;
-    readonly attribute DOMString title;
-  };
 };</pre>
 </div>
 <div id="page-footer">
