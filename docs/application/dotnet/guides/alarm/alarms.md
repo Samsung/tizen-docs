@@ -56,6 +56,9 @@ To enable your application to use the alarm functionality:
 
 You can set an alarm which, when it expires, either launches an application or sends a notification to the user:
 
+> [!NOTE]
+> Since Tizen 6.0, the time period value of an alarm can be one of the values of `Tizen.Applications.AlarmStandardPeriod`. For the `CreateAlarm()` method of the `Tizen.Applications.AlarmManager` class, if you use `Tizen.Applications.AlarmStandardPeriod`, the time period value of the alarm is guaranteed. If `Tizen.Applications.AlarmStandardPeriod` is not used, the time period value will be phase-aligned with another time period value of the alarm.
+
 -   To set an alarm to launch an application:
 
     You need 2 applications: the "AlarmRegister" application that sets the alarm, and the "AlarmTarget" application that is launched when the alarm expires.
