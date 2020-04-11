@@ -153,6 +153,7 @@
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
 #### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
+#### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
