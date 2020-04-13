@@ -1,0 +1,1232 @@
+Get Started:
+
+    Overview: "/application/index"
+    Wearable: "/application/get-started/wearable"
+    TV: "/application/get-started/tv"
+    Mobile: "/application/get-started/mobile"
+
+
+.NET Application:
+
+
+    Overview: "/application/dotnet/index"
+
+
+    Get Started:
+
+        Overview: "/application/dotnet/get-started/overview"
+        Create Wearable .NET Application: "/application/dotnet/get-started/wearable/first-app"
+        Create TV .NET Application: "/application/dotnet/get-started/tv/first-app"
+        Create Mobile .NET Application: "/application/dotnet/get-started/mobile/first-app"
+        Create NUI .NET Application: "/application/dotnet/get-started/nui/quickstart"
+
+    Tutorials:
+
+        Overview: "/application/dotnet/tutorials/overview"
+
+        Getting the Certificates:
+            Overview: "/application/dotnet/tutorials/certificates/getting-the-certificates"
+            Installing Certificates Extension: "/application/dotnet/tutorials/certificates/installing-certificate-extension"
+            Creating Certificates: "/application/dotnet/tutorials/certificates/creating-certificates"
+            Permit Device To Install Applications: "/application/dotnet/tutorials/certificates/permit-device-to-install-apps"
+            Managing Certificate Profile: "/application/dotnet/tutorials/certificates/managing-certificate-profile"
+
+        Test Tizen .NET Application on a Gear device: "/application/dotnet/tutorials/testing-your-app-on-gear"
+
+        Packaging a .NET and Web Hybrid Application: "/application/dotnet/tutorials/create-dotnet-hybrid-package"
+
+        Third Party Libraries for Tizen .NET Application: "/application/dotnet/tutorials/library-list"
+
+        Application Filtering: "/application/dotnet/tutorials/app-filtering"
+
+        Security and API Privileges: "/application/dotnet/tutorials/sec-privileges"
+
+
+    Guides:
+
+        Overview: "/application/dotnet/guides/overview"
+
+        Applications:
+            Overview: "/application/dotnet/guides/applications/overview"
+            UI Application:
+                Overview: "/application/dotnet/guides/applications/ui-app"
+                Watch Application: "/application/dotnet/guides/applications/watch-app"
+                Widget Application: "/application/dotnet/guides/applications/widget-app"
+
+        Application Management:
+            Overview: "/application/dotnet/guides/app-management/overview"
+            Application Icons: "/application/dotnet/guides/app-management/app-icons"
+            Application Controls: "/application/dotnet/guides/app-management/app-controls"
+            Application Manager: "/application/dotnet/guides/app-management/app-manager"
+            Event Manager: "/application/dotnet/guides/app-management/event"
+            Component Manager: "/application/dotnet/guides/app-management/component-manager"
+            Package Manager: "/application/dotnet/guides/app-management/package-manager"
+            Widget Control: "/application/dotnet/guides/app-management/widget-control"
+            Message Port: "/application/dotnet/guides/app-management/message-port"
+            Data Control: "/application/dotnet/guides/app-management/data-control"
+
+        NUI:
+            Overview: "/application/dotnet/guides/nui/overview"
+            Layer: "/application/dotnet/guides/nui/layer"
+            Layouts:
+                Overview: "/application/dotnet/guides/nui/layouts"
+                Linear Layout: "/application/dotnet/guides/nui/linear-layout"
+                Grid Layout: "/application/dotnet/guides/nui/grid-layout"
+                Flex Layout: "/application/dotnet/guides/nui/flex-layout"
+                Create Custom Layout: "/application/dotnet/guides/nui/custom-layout"
+            Components:
+                Overview: "/application/dotnet/guides/nui/ui-components"
+                Styling UI Components: "/application/dotnet/guides/nui/styling-controls-with-JSON"
+                Visuals: "/application/dotnet/guides/nui/visuals"
+                View: "/application/dotnet/guides/nui/view"
+                CustomView: "/application/dotnet/guides/nui/customview"
+                FlexContainer: "/application/dotnet/guides/nui/flexcontainer"
+                ImageView: "/application/dotnet/guides/nui/imageview"
+                TableView: "/application/dotnet/guides/nui/tableview"
+                TextLabel: "/application/dotnet/guides/nui/textlabel"
+                TextField: "/application/dotnet/guides/nui/textfield"
+                TextEditor: "/application/dotnet/guides/nui/texteditor"
+                VideoView: "/application/dotnet/guides/nui/videoview"
+                Button: "/application/dotnet/guides/nui/nui-components/Button"
+                Loading: "/application/dotnet/guides/nui/nui-components/Loading"
+                Popup: "/application/dotnet/guides/nui/nui-components/Popup"
+                Progress: "/application/dotnet/guides/nui/nui-components/Progress"
+                Scrollbar: "/application/dotnet/guides/nui/nui-components/Scrollbar"
+                Slider: "/application/dotnet/guides/nui/nui-components/Slider"
+                Switch: "/application/dotnet/guides/nui/nui-components/Switch"
+                Tab: "/application/dotnet/guides/nui/nui-components/Tab"
+                Toast: "/application/dotnet/guides/nui/nui-components/Toast"
+            Animation:
+                Overview: "/application/dotnet/guides/nui/animation"
+                Animation Types: "/application/dotnet/guides/nui/animation-types"
+            Resources: "/application/dotnet/guides/nui/resources"
+            XAML:
+                XAML Support for Tizen.NUI: "/application/dotnet/guides/nui/xaml/xaml-support-for-tizen-nui"
+                Layout Define Example: "/application/dotnet/guides/nui/xaml/layout-define-example"
+
+        OpenTK:
+            Overview: "/application/dotnet/guides/opentk/overview"
+            Quickstart: "/application/dotnet/guides/opentk/quickstart"
+            OpenTK Window: "/application/dotnet/guides/opentk/window-of-opentk"
+            Create Applications with SkiaSharp: "/application/dotnet/guides/opentk/create-app-skiasharp"
+
+        Wearable Circular UI:
+            Overview: "/application/dotnet/guides/wcircularui/overview"
+            Quickstart: "/application/dotnet/guides/wcircularui/quickstart"
+            Tizen Wearable XAML App Template: "/application/dotnet/guides/wcircularui/quickstart_tizenxamlapptemplate"
+
+        Localization: "/application/dotnet/guides/internationalization/localization"
+
+        Notifications and Content Sharing:
+            Notifications: "/application/dotnet/guides/notification/noti"
+            Attach Panel: "/application/dotnet/guides/notification/attach-panel"
+
+        Alarms: "/application/dotnet/guides/alarm/alarms"
+
+        Media and Camera:
+            Overview: "/application/dotnet/guides/multimedia/overview"
+            Media Content and Metadata: "/application/dotnet/guides/multimedia/media-content-metadata"
+            Media Content: "/application/dotnet/guides/multimedia/media-content"
+            Metadata: "/application/dotnet/guides/multimedia/metadata"
+            Thumbnail Images: "/application/dotnet/guides/multimedia/thumbnail-images"
+            Visual Detection and Recognition:
+                Overview: "/application/dotnet/guides/multimedia/media-vision"
+                Barcode Detection and Generation: "/application/dotnet/guides/multimedia/image-barcode"
+                Face Detection, Recognition, and Tracking: "/application/dotnet/guides/multimedia/face-detection"
+                Image Recognition and Tracking: "/application/dotnet/guides/multimedia/image-recognition"
+            Audio Management: "/application/dotnet/guides/multimedia/audio"
+            Media Playback: "/application/dotnet/guides/multimedia/media-playback"
+            Media Recording: "/application/dotnet/guides/multimedia/media-recording"
+            Raw Audio Playback and Recording: "/application/dotnet/guides/multimedia/raw-audio"
+            Media Controller: "/application/dotnet/guides/multimedia/media-controller"
+            Media Conversions: "/application/dotnet/guides/multimedia/media-conversions"
+            Screen Mirroring: "/application/dotnet/guides/multimedia/screen-mirroring"
+            Media Stream Recording: "/application/dotnet/guides/multimedia/stream-recorder"
+            Radio: "/application/dotnet/guides/multimedia/radio"
+            Camera: "/application/dotnet/guides/multimedia/camera"
+
+        Connectivity and Wireless:
+            Overview: "/application/dotnet/guides/connectivity/overview"
+            Connection Management: "/application/dotnet/guides/connectivity/connection"
+            WebView: "/application/dotnet/guides/connectivity/webview"
+            Network Service Discovery: "/application/dotnet/guides/connectivity/nsd"
+            Wi-Fi: "/application/dotnet/guides/connectivity/wifi"
+            Wi-Fi Direct®: "/application/dotnet/guides/connectivity/wifi-direct"
+            Bluetooth: "/application/dotnet/guides/connectivity/bluetooth"
+            NFC: "/application/dotnet/guides/connectivity/nfc"
+            Smart Card: "/application/dotnet/guides/connectivity/smartcard"
+            Smart Traffic Control (STC): "/application/dotnet/guides/connectivity/stc"
+            IoT Connectivity: "/application/dotnet/guides/connectivity/iotcon"
+            Telephony Information: "/application/dotnet/guides/connectivity/telephony"
+
+        Machine Learning:
+            Overview: "/application/dotnet/guides/machine-learning/overview"
+            Single Shot: "/application/dotnet/guides/machine-learning/singleshot"
+
+        Messaging:
+            Overview: "/application/dotnet/guides/messaging/overview"
+            Email: "/application/dotnet/guides/messaging/email"
+            Messages: "/application/dotnet/guides/messaging/messages"
+            Push: "/application/dotnet/guides/messaging/push"
+            Push Server: "/application/dotnet/guides/messaging/push-server"
+
+        Location and Sensors:
+            Overview: "/application/dotnet/guides/location-sensors/overview"
+            Location Information: "/application/dotnet/guides/location-sensors/location"
+            Maps and Maps Service:
+                Overview: "/application/dotnet/guides/location-sensors/maps"
+                Getting HERE Maps Credentials: "/application/dotnet/guides/location-sensors/here-credentials"
+            Geofences: "/application/dotnet/guides/location-sensors/geofences"
+            Device Sensors: "/application/dotnet/guides/location-sensors/device-sensors"
+
+        Text Input and Voice:
+            Overview: "/application/dotnet/guides/text-input/overview"
+            Input Method: "/application/dotnet/guides/text-input/input-method"
+            Input Method Manager: "/application/dotnet/guides/text-input/input-method-manager"
+            Speech-to-text: "/application/dotnet/guides/text-input/stt"
+            Text-to-speech: "/application/dotnet/guides/text-input/tts"
+            Voice Control: "/application/dotnet/guides/text-input/voice-control"
+
+        Personal Data:
+            Overview: "/application/dotnet/guides/personal/overview"
+            Account Management: "/application/dotnet/guides/personal/account"
+            Synchronization Management: "/application/dotnet/guides/personal/data-sync"
+            Authentication and Authorization:
+                Overview: "/application/dotnet/guides/personal/authentication"
+                FIDO Universal Authentication Framework: "/application/dotnet/guides/personal/fido"
+                OAuth 2.0: "/application/dotnet/guides/personal/oauth"
+            Calendar: "/application/dotnet/guides/personal/calendar"
+            Contacts: "/application/dotnet/guides/personal/contacts"
+            Phone Number Management: "/application/dotnet/guides/personal/phonenumber"
+            Application Usage History Data: "/application/dotnet/guides/personal/app-history"
+
+        Data Storages: "/application/dotnet/guides/data/data-storages"
+
+        Device Settings and Systems:
+            Overview: "/application/dotnet/guides/device/overview"
+            Attached Devices: "/application/dotnet/guides/device/attached-devices"
+            System Information: "/application/dotnet/guides/device/system"
+            System Settings: "/application/dotnet/guides/device/settings"
+            Sound and Vibration Feedback: "/application/dotnet/guides/device/feedback"
+
+        Security:
+            Overview: "/application/dotnet/guides/security/overview"
+            Secure Key Management: "/application/dotnet/guides/security/secure-repository"
+            Privilege Information: "/application/dotnet/guides/security/privilege"
+            Privacy-related Permissions: "/application/dotnet/guides/security/requesting-permissions"
+            TEE Communication: "/application/dotnet/guides/security/tee-client"
+            Device Policy Management: "/application/dotnet/guides/security/dpm"
+
+        Natural Language Processing: "/application/dotnet/guides/nlp/nlp"
+
+
+    API Reference: "/application/dotnet/api/overview"
+
+
+    Samples:
+
+        Account: "/application/dotnet/samples/account/overview"
+        AppFW: "/application/dotnet/samples/appfw/overview"
+        Content: "/application/dotnet/samples/content/overview"
+        Context: "/application/dotnet/samples/context/overview"
+        General: "/application/dotnet/samples/general/overview"
+        Location: "/application/dotnet/samples/location/overview"
+        Messaging: "/application/dotnet/samples/messaging/overview"
+        Multimedia: "/application/dotnet/samples/multimedia/overview"
+        Network: "/application/dotnet/samples/network/overview"
+        Security: "/application/dotnet/samples/security/overview"
+        Social: "/application/dotnet/samples/social/overview"
+        System: "/application/dotnet/samples/system/overview"
+        Telephony: "/application/dotnet/samples/telephony/overview"
+        UI: "/application/dotnet/samples/ui/overview"
+        UIX: "/application/dotnet/samples/uix/overview"
+        Watch: "/application/dotnet/samples/watch/overview"
+
+
+
+Web Application:
+
+
+    Overview: "/application/web/index"
+
+    Get Started:
+
+        Overview: "/application/web/get-started/overview"
+        Create Wearable Web Application: "/application/web/get-started/wearable/first-app"
+        Create Wearable Web Watch Application: "/application/web/get-started/wearable-watch/first-app-watch"
+        Create Wearable Web Widget Application: "/application/web/get-started/wearable-widget/first-app-widget"
+        Create TV Web Application: "/application/web/get-started/tv/first-app"
+        Create Samsung Smart TV Web Application: "/application/web/get-started/tv/first-samsung-tv-app"
+        Create Mobile Web Application: "/application/web/get-started/mobile/first-app"
+
+
+    Tutorials:
+
+        Overview: "/application/web/tutorials/overview"
+        Application Development Process:
+            Creating the Application Project: "/application/web/tutorials/process/creating-app-project"
+            Setting Project Properties: "/application/web/tutorials/process/setting-properties"
+            Coding Applications: "/application/web/tutorials/process/coding-app"
+            Running and Debugging Applications: "/application/web/tutorials/process/run-debug-app"
+        Application Filtering: "/application/web/tutorials/app-filtering"
+        Security and API Privileges: "/application/web/tutorials/sec-privileges"
+        Security and API Privileges for Apps with API Version 4.0 or Earlier: "/application/web/tutorials/old-versioned-sec-privileges"
+        Web Runtime: "/application/web/tutorials/web-runtime"
+        Event Handling: "/application/web/tutorials/event-handling"
+        Application Signing and Certificates: "/application/web/tutorials/sign-certificate"
+        API Versioning and Deprecation Policy: "/application/web/tutorials/deprecation-policy"
+
+
+    Guides:
+
+        Overview: "/application/web/guides/index"
+
+        Applications:
+            Overview: "/application/web/guides/applications/overview"
+            UI Application:
+                Watch Application: "/application/web/guides/applications/watch-app"
+                Widget Application: "/application/web/guides/applications/web-widget"
+            Service Application: "/application/web/guides/applications/service-app"
+
+        Application Management:
+            Overview: "/application/web/guides/app-management/overview"
+            Application Groups: "/application/web/guides/app-management/app-group"
+            Application Preferences: "/application/web/guides/app-management/preference"
+            Application Icons: "/application/web/guides/app-management/app-icons"
+            Application Controls: "/application/web/guides/app-management/app-controls"
+            Common Application Controls: "/application/web/guides/app-management/common-appcontrols"
+            Widget Information: "/application/web/guides/app-management/widget-info"
+            Package Information: "/application/web/guides/app-management/packages"
+            Message Port: "/application/web/guides/app-management/message-port"
+            Data Control: "/application/web/guides/app-management/data-control"
+
+        Cordova:
+            Overview: "/application/web/guides/cordova/cordova"
+            Common Cordova: "/application/web/guides/cordova/core"
+            Console Logging: "/application/web/guides/cordova/console"
+            Device Information: "/application/web/guides/cordova/device"
+            Device Motions: "/application/web/guides/cordova/devicemotion"
+            Event Handling: "/application/web/guides/cordova/events"
+            File Management: "/application/web/guides/cordova/file"
+            File Transfers: "/application/web/guides/cordova/filetransfer"
+            Globalization: "/application/web/guides/cordova/globalization"
+            Media Playback and Recording: "/application/web/guides/cordova/media"
+            Network Information: "/application/web/guides/cordova/network-information"
+            Notification Dialogs: "/application/web/guides/cordova/dialogs"
+
+        Tizen Advanced UI:
+            Overview: "/application/web/guides/tau/tau"
+            Downloading TAU: "/application/web/guides/tau/download-tau"
+            Hello World: "/application/web/guides/tau/helloworld"
+            Managing Pages: "/application/web/guides/tau/managing-page"
+            Event Handling: "/application/web/guides/tau/event-handling"
+            UI Components: "/application/web/guides/tau/ui-component"
+            Creating a Notepad UI Application: "/application/web/guides/tau/notepad"
+            Applications for Circular UI: 
+                Handling Rotary Events: "/application/web/guides/tau/tau-rotary"
+                Using the Helper Script: "/application/web/guides/tau/helper"
+                Creating Snap Lists: "/application/web/guides/tau/list"
+                Creating Expandable Headers: "/application/web/guides/tau/header"
+                Creating Circle-shaped Progress Bars: "/application/web/guides/tau/circle-progressbar"
+                Creating Full Size Processing Components: "/application/web/guides/tau/processing"
+                Creating Footer Buttons: "/application/web/guides/tau/footerbutton"
+                Creating Thumbnails: "/application/web/guides/tau/thumbnail"
+                Creating Popup Buttons: "/application/web/guides/tau/popup"
+                Creating Index Scroll Bars: "/application/web/guides/tau/indexscrollbar"
+                Implementing More Options: "/application/web/guides/tau/moreoptions"
+            Accessibility: "/application/web/guides/tau/accessibility"
+            Globalization: "/application/web/guides/tau/globalization"
+            Animation:
+                Overview: "/application/web/guides/tau/animation"
+                Creating Applications with Animation: "/application/web/guides/tau/creating-animation"
+            2.4 Porting Guide: "/application/web/guides/tau/tau-porting"
+
+        Localization: "/application/web/guides/localization/localization"
+
+        Notifications: "/application/web/guides/notification/notification"
+
+        Alarms: "/application/web/guides/alarm/alarms"
+
+        Media and Camera:
+            Ovierview: "/application/web/guides/multimedia/overview"
+            JPEG File EXIF Information: "/application/web/guides/multimedia/jpeg-exif"
+            Audio Management: "/application/web/guides/multimedia/audio"
+            Audio Latency: "/application/web/guides/multimedia/player-util"
+            Media Controller: "/application/web/guides/multimedia/media-controller"
+            Media Key Events: "/application/web/guides/multimedia/media-key"
+            Radio: "/application/web/guides/multimedia/radio"
+            Camera: "/application/web/guides/multimedia/camera"
+
+        Connectivity and Wireless:
+            Overview: "/application/web/guides/connectivity/connectivity"
+            Bluetooth: "/application/web/guides/connectivity/bluetooth"
+            IoT Connectivity: "/application/web/guides/connectivity/iotcon"
+            NFC: "/application/web/guides/connectivity/nfc"
+            Secure Element Access: "/application/web/guides/connectivity/secure-element"
+            Content Downloads: "/application/web/guides/connectivity/download"
+
+        Messaging:
+            Overview: "/application/web/guides/messaging/overview"
+            Messages: "/application/web/guides/messaging/messages"
+            Push Notification: "/application/web/guides/messaging/push"
+
+        Sensors:
+            Overview: "/application/web/guides/sensors/sensors"
+            Human Activity Monitor: "/application/web/guides/sensors/ham"
+            Device Sensors: "/application/web/guides/sensors/device-sensors"
+
+        Text Input:
+            Overview: "/application/web/guides/text-input/text-input"
+            IME Application: "/application/web/guides/text-input/input-method"
+            Input Device: "/application/web/guides/text-input/input-device"
+
+        Personal Data:
+            Overview: "/application/web/guides/personal/personal"
+            Account Management: "/application/web/guides/personal/account"
+            Bookmarks: "/application/web/guides/personal/bookmarks"
+            Calendar: "/application/web/guides/personal/calendar"
+            Call History: "/application/web/guides/personal/call-history"
+            Contacts: "/application/web/guides/personal/contacts"
+            Data Synchronization: "/application/web/guides/personal/sync"
+
+        Data Storage and Management:
+            Overview: "/application/web/guides/data/data"
+            Data Filtering and Sorting: "/application/web/guides/data/data-filter"
+            File System: "/application/web/guides/data/file-system"
+            Stored Content Management: "/application/web/guides/data/stored-content"
+            File Archiving: "/application/web/guides/data/file-archiving"
+
+        Device Settings and Systems:
+            Overview: "/application/web/guides/device/device"
+            Power States: "/application/web/guides/device/power"
+            System Information: "/application/web/guides/device/system-information"
+            System Settings: "/application/web/guides/device/system-setting"
+            Time and Date Management: "/application/web/guides/device/time"
+            Web View Settings: "/application/web/guides/device/web-view"
+            Sound and Vibration Feedback: "/application/web/guides/device/feedback"
+
+        Security:
+            Secure Key Management: "/application/web/guides/security/secure-key"
+            TEE Communication: "/application/web/guides/security/tee-client"
+            Privacy-related Permissions: "/application/web/guides/security/privacy-related-permissions"
+
+        Error Handling: "/application/web/guides/error/error"
+
+        W3C/HTML5/Supplementary Features:
+            Overview: "/application/web/guides/w3c/w3c-overview"
+            Device:
+                Overview: "/application/web/guides/w3c/device/device-guide"
+                Battery Status: "/application/web/guides/w3c/device/battery"
+                DeviceOrientation Event Specification: "/application/web/guides/w3c/device/device-orientation"
+                Touch Events: "/application/web/guides/w3c/device/touch"
+                Vibration: "/application/web/guides/w3c/device/vibration"
+                HTML5 Browser state: "/application/web/guides/w3c/device/browser-state"
+                Screen Orientation: "/application/web/guides/w3c/device/screen-orientation"
+            Graphics:
+                Overview: "/application/web/guides/w3c/graphics/graphics-guide"
+                HTML5 Canvas: "/application/web/guides/w3c/graphics/canvas"
+                SVG: "/application/web/guides/w3c/graphics/svg"
+            MultiMedia:
+                Overview: "/application/web/guides/w3c/multimedia/media-guide"
+                getUserMedia: "/application/web/guides/w3c/multimedia/getusermedia"
+                HTML5 video and audio element: "/application/web/guides/w3c/multimedia/video-audio"
+                HTML Media Capture: "/application/web/guides/w3c/multimedia/media-capture"
+                Web Audio: "/application/web/guides/w3c/multimedia/webaudio"
+                Tizen WebKit Tap Sound Policy: "/application/web/guides/w3c/multimedia/sound-policy"
+            Communication:
+                Overview: "/application/web/guides/w3c/communication/comm-guide"
+                HTML5 Web Messaging: "/application/web/guides/w3c/communication/web-messaging"
+                WebSocket: "/application/web/guides/w3c/communication/websocket"
+                XMLHttpRequest: "/application/web/guides/w3c/communication/xmlhttprequest"
+                Server-Sent Events: "/application/web/guides/w3c/communication/server-sent"
+            Storage:
+                Overview: "/application/web/guides/w3c/storage/storage-guide"
+                File: "/application/web/guides/w3c/storage/file"
+                Indexed Database: "/application/web/guides/w3c/storage/indexdb"
+                Web Storage: "/application/web/guides/w3c/storage/web-storage"
+                HTML5 Application caches: "/application/web/guides/w3c/storage/appcache"
+                Web SQL Database: "/application/web/guides/w3c/storage/websql"
+            Security:
+                Overview: "/application/web/guides/w3c/security/security-guide"
+                Cross-Origin Resource Sharing: "/application/web/guides/w3c/security/cors"
+                HTML5 iframe element: "/application/web/guides/w3c/security/iframe"
+            Performance and Optimization:
+                Overview: "/application/web/guides/w3c/perf-opt/performance-guide"
+                Page Visibility: "/application/web/guides/w3c/perf-opt/page"
+                Timing control for script-based animations: "/application/web/guides/w3c/perf-opt/timing-control"
+                Performance Improvement: "/application/web/guides/w3c/perf-opt/performance-improvement"
+                Web Workers: "/application/web/guides/w3c/perf-opt/web-workers"
+                JavaScript Performance Improvement: "/application/web/guides/w3c/perf-opt/js-performance-improvement"
+                JavaScript and CSS Minification: "/application/web/guides/w3c/perf-opt/minify-js-css"
+                jQuery Performance Improvement: "/application/web/guides/w3c/perf-opt/jquery-performance-improvement"
+            Location:
+                Geolocation API Specification: "/application/web/guides/w3c/location/geolocation"
+            Supplementary Features:
+                Overview: "/application/web/guides/w3c/supplement/supplement-guide"
+                Typed Array - Khronos: "/application/web/guides/w3c/supplement/typedarray"
+                WebGL - Khronos: "/application/web/guides/w3c/supplement/webgl"
+                FullScreen API - Mozilla: "/application/web/guides/w3c/supplement/fullscreen"
+                Camera API (Tizen Extension): "/application/web/guides/w3c/supplement/camera"
+            User Interface:
+                Overview: "/application/web/guides/w3c/ui/ui-guide"
+                HTML Priorities: "/application/web/guides/w3c/ui/html-priority"
+                HTML5 Forms: "/application/web/guides/w3c/ui/html5forms"
+                Selectors API (Level 1 and 2): "/application/web/guides/w3c/ui/selector"
+                Media Queries: "/application/web/guides/w3c/ui/media-query"
+                Multiple Screen Support: "/application/web/guides/w3c/ui/multiple-screens"
+                Multiple UI Layouts: "/application/web/guides/w3c/ui/ui-layout"
+                Frame Flattening: "/application/web/guides/w3c/ui/frame-flattening"
+                HTML5 Session History: "/application/web/guides/w3c/ui/session-history"
+                Clipboard API and events: "/application/web/guides/w3c/ui/clipboard"
+                HTML5 Drag and Drop: "/application/web/guides/w3c/ui/drag-drop"
+                CSS Transforms: "/application/web/guides/w3c/ui/transform"
+                CSS Animations Module (Level 3): "/application/web/guides/w3c/ui/animation"
+                CSS Transitions Module (Level 3): "/application/web/guides/w3c/ui/transition"
+                CSS Color Module (Level 3): "/application/web/guides/w3c/ui/color"
+                CSS Backgrounds and Borders Module (Level 3): "/application/web/guides/w3c/ui/background"
+                CSS Flexible Box Layout Module: "/application/web/guides/w3c/ui/flexible"
+                CSS Multi-column Layout Module: "/application/web/guides/w3c/ui/multi"
+                CSS Text Module (Level 3): "/application/web/guides/w3c/ui/text-module"
+                CSS Basic User Interface Module (Level 3): "/application/web/guides/w3c/ui/basic-ui"
+                CSS Fonts Module (Level 3): "/application/web/guides/w3c/ui/font"
+                WOFF File Format (1.0 and 2.0): "/application/web/guides/w3c/ui/woff"
+
+
+    API Reference: "/application/web/api/index"
+
+
+    Samples: "/development/sample/web"
+
+
+
+Native Application:
+
+
+    Overview: "/application/native/index"
+
+
+    Get Started:
+
+        Overview: "/application/native/get-started/overview"
+        Create Wearable Native Application: "/application/native/get-started/wearable/first-app"
+        Create Wearable Native Watch Application: "/application/native/get-started/wearable-watch/first-app-watch"
+        Create Wearable Native Widget Application: "/application/native/get-started/wearable-widget/first-app-widget"
+        Create Mobile Native Application: "/application/native/get-started/mobile/first-app"
+
+
+    Tutorials:
+
+        Overview: "/application/native/tutorials/overview"
+
+        Application Development Process:
+            Overview: "/application/native/tutorials/process/app-dev-process"
+            Creating the Application Project: "/application/native/tutorials/process/creating-app-project"
+            Setting Project Properties: "/application/native/tutorials/process/setting-properties"
+            Building Applications: "/application/native/tutorials/process/building-app"
+            Running Applications: "/application/native/tutorials/process/running-app"
+            Debugging Applications: "/application/native/tutorials/process/debugging-app"
+            Optimizing Application Performance: "/application/native/tutorials/process/performance"
+
+        Understanding Tizen Programming:
+            Overview: "/application/native/tutorials/details/details"
+            Application Filtering: "/application/native/tutorials/details/app-filtering"
+            Security and API Privileges: "/application/native/tutorials/details/sec-privileges"
+            Security and API Privileges for Apps with API Version 4.0 or Earlier: "/application/native/tutorials/details/old-versioned-sec-privileges"
+            Event Handling: "/application/native/tutorials/details/event-handling"
+            Error Handling: "/application/native/tutorials/details/error-handling"
+            File System Directory Hierarchy: "/application/native/tutorials/details/io-overview"
+            Application Signing and Certificates: "/application/native/tutorials/details/sign-certificate"
+            API Versioning and Deprecation Policy of the Tizen Platform: "/application/native/tutorials/details/deprecation-policy"
+            Removed functions and enumerations of Tizen Native API: "/application/native/tutorials/details/native-removed-history"
+
+        Tizen UI Development:
+            Overview: "/application/native/tutorials/ui-builder/ui-builder-overview"
+            Designing Your Native Application: "/application/native/tutorials/ui-builder/ui-builder-app-design"
+
+        Creating Applications with Connectivity and Network:
+            Overview: "/application/native/tutorials/feature/app-connectivity"
+            Network Operations: "/application/native/tutorials/feature/app-connectivity-operation"
+            Network Usage: "/application/native/tutorials/feature/app-connectivity-usage"
+            P2P Connections with Wi-Fi Direct&reg;: "/application/native/tutorials/feature/app-connectivity-p2p"
+
+        Creating Applications with Contacts:
+            Overview: "/application/native/tutorials/feature/app-contacts"
+            Basic Concepts: "/application/native/tutorials/feature/app-contacts-basic"
+            Contact Management: "/application/native/tutorials/feature/app-contacts-management"
+            Group Management: "/application/native/tutorials/feature/app-contacts-group"
+
+        Creating Applications with Content Sharing:
+            Overview: "/application/native/tutorials/feature/app-contentshare"
+            Sending Content to Other Applications: "/application/native/tutorials/feature/app-contentshare-send"
+            Receiving Content from Other Applications: "/application/native/tutorials/feature/app-contentshare-receive"
+            Sharing through NFC: "/application/native/tutorials/feature/app-contentshare-nfc"
+
+        Creating Applications with Graphics and Animation:
+            Overview: "/application/native/tutorials/feature/app-graphics"
+            Squares on the Canvas: "/application/native/tutorials/feature/app-graphics-square"
+            Polygons on the Canvas: "/application/native/tutorials/feature/app-graphics-polygon"
+            Animations: "/application/native/tutorials/feature/app-graphics-animation"
+
+        Creating Applications with Multimedia:
+            Overview: "/application/native/tutorials/feature/app-multimedia"
+            Audio Playback and Recording: "/application/native/tutorials/feature/app-multimedia-audio"
+            Video Playback and Recording: "/application/native/tutorials/feature/app-multimedia-video"
+            Image Capturing with the Camera: "/application/native/tutorials/feature/app-multimedia-camera"
+
+        Creating Applications with Sensors:
+            Overview: "/application/native/tutorials/feature/app-sensor"
+            Accelerator Sensor Usage: "/application/native/tutorials/feature/app-sensor-accelerator"
+            Proximity Sensor Usage: "/application/native/tutorials/feature/app-sensor-proximity"
+
+        Best Practices for Location: "/application/native/tutorials/feature/best-practice-battery"
+
+
+    Guides:
+
+        Overview: "/application/native/guides/index"
+
+        Applications:
+            Overview: "/application/native/guides/applications/overview"
+            UI Applications:
+                Overview: "/application/native/guides/applications/ui-app"
+                EFL Applications:
+                    Overview: "/application/native/guides/applications/efl-app"
+                    Basic UI Application: "/application/native/guides/applications/efl-ui-app"
+                    Watch Application: "/application/native/guides/applications/watch-app"
+                    Widget Application: "/application/native/guides/applications/widget-app"
+                DALi Applications:
+                    Overview: "/application/native/guides/applications/dali-app"
+                    Basic UI Application: "/application/native/guides/applications/dali-basic-app"
+                    Watch Application: "/application/native/guides/applications/dali-watch-app"
+                    Widget Application: "/application/native/guides/applications/dali-widget-app"
+            Service Applications: "/application/native/guides/applications/service-app"
+            Component Based Applications: "/application/native/guides/applications/component-based-app"
+
+        Application Management:
+            Overview: "/application/native/guides/app-management/overview"
+            Application Resources: "/application/native/guides/app-management/app-resources"
+            Application Preferences: "/application/native/guides/app-management/app-preferences"
+            Application Icons: "/application/native/guides/app-management/app-icons"
+            Application Controls: "/application/native/guides/app-management/app-controls"
+            Common Application Controls: "/application/native/guides/app-management/common-appcontrols"
+            Component Manager: "/application/native/guides/app-management/component-manager"
+            Application Manager: "/application/native/guides/app-management/app-manager"
+            Package Manager: "/application/native/guides/app-management/package-manager"
+            Event Broadcast and Subscription: "/application/native/guides/app-management/event"
+            Message Port: "/application/native/guides/app-management/message-port"
+            Data Control: "/application/native/guides/app-management/data-control"
+            Data Bundle: "/application/native/guides/app-management/data-bundles"
+            RPC Port: "/application/native/guides/app-management/rpc-port"
+            TIDL: "/application/native/guides/app-management/tidl"
+            Sticker: "/application/native/guides/app-management/sticker"
+            Widget Viewer: "/application/native/guides/app-management/widget-viewer"
+
+        User Interface:
+
+            Overview: "/application/native/guides/ui/overview"
+
+            EFL:
+                Introduction: "/application/native/guides/ui/efl/index"
+                Getting Started: "/application/native/guides/ui/efl/getting-started"
+                Programming Principles: "/application/native/guides/ui/efl/programming-principles"
+                UI Layouts:
+                    Building UI Layouts: "/application/native/guides/ui/efl/ui-layouts"
+                    Box: "/application/native/guides/ui/efl/container-box"
+                    Conformant: "/application/native/guides/ui/efl/container-conformant"
+                    Grid: "/application/native/guides/ui/efl/container-grid"
+                    Layout: "/application/native/guides/ui/efl/container-layout"
+                    Mapbuf: "/application/native/guides/ui/efl/container-mapbuf"
+                    Naviframe: "/application/native/guides/ui/efl/container-naviframe"
+                    Panes: "/application/native/guides/ui/efl/container-panes"
+                    Scroller: "/application/native/guides/ui/efl/container-scroller"
+                    Table: "/application/native/guides/ui/efl/container-table"
+                UI Components:
+                    Overview: "/application/native/guides/ui/efl/ui-components"
+                    Wearable UI Components:
+                        Overview: "/application/native/guides/ui/efl/wearable/ui-components"
+                        Background: "/application/native/guides/ui/efl/wearable/component-background"
+                        Button: "/application/native/guides/ui/efl/wearable/component-button"
+                        Check: "/application/native/guides/ui/efl/wearable/component-check"
+                        Ctxpopup: "/application/native/guides/ui/efl/wearable/component-ctxpopup"
+                        Datetime: "/application/native/guides/ui/efl/wearable/component-datetime"
+                        Entry: "/application/native/guides/ui/efl/wearable/component-entry"
+                        Genlist: "/application/native/guides/ui/efl/wearable/component-genlist"
+                        GLView: "/application/native/guides/ui/efl/wearable/component-glview"
+                        Icon: "/application/native/guides/ui/efl/wearable/component-icon"
+                        Image: "/application/native/guides/ui/efl/wearable/component-image"
+                        Index: "/application/native/guides/ui/efl/wearable/component-index"
+                        Label: "/application/native/guides/ui/efl/wearable/component-label"
+                        List: "/application/native/guides/ui/efl/wearable/component-list"
+                        Plug: "/application/native/guides/ui/efl/wearable/component-plug"
+                        Popup: "/application/native/guides/ui/efl/wearable/component-popup"
+                        Progressbar: "/application/native/guides/ui/efl/wearable/component-progressbar"
+                        Radio: "/application/native/guides/ui/efl/wearable/component-radio"
+                        Slider: "/application/native/guides/ui/efl/wearable/component-slider"
+                        Win: "/application/native/guides/ui/efl/wearable/component-win"
+                        Circle Datetime: "/application/native/guides/ui/efl/wearable/component-circle-datetime"
+                        Circle Genlist: "/application/native/guides/ui/efl/wearable/component-circle-genlist"
+                        Circle Object: "/application/native/guides/ui/efl/wearable/component-circle-object"
+                        Circle Progressbar: "/application/native/guides/ui/efl/wearable/component-circle-progressbar"
+                        Circle Scroller: "/application/native/guides/ui/efl/wearable/component-circle-scroller"
+                        Circle Slider: "/application/native/guides/ui/efl/wearable/component-circle-slider"
+                        Circle Spinner: "/application/native/guides/ui/efl/wearable/component-circle-spinner"
+                        Circle Surface: "/application/native/guides/ui/efl/wearable/component-circle-surface"
+                        Rotary Selector: "/application/native/guides/ui/efl/wearable/component-circle-rotary"
+                        More Option: "/application/native/guides/ui/efl/wearable/component-circle-option"
+                    Mobile UI Components:
+                        Overview: "/application/native/guides/ui/efl/mobile/ui-components"
+                        Background: "/application/native/guides/ui/efl/mobile/component-background"
+                        Button: "/application/native/guides/ui/efl/mobile/component-button"
+                        Calendar: "/application/native/guides/ui/efl/mobile/component-calendar"
+                        Check: "/application/native/guides/ui/efl/mobile/component-check"
+                        Colorselector: "/application/native/guides/ui/efl/mobile/component-colorselector"
+                        Ctxpopup: "/application/native/guides/ui/efl/mobile/component-ctxpopup"
+                        Datetime: "/application/native/guides/ui/efl/mobile/component-datetime"
+                        Entry: "/application/native/guides/ui/efl/mobile/component-entry"
+                        Flip: "/application/native/guides/ui/efl/mobile/component-flip"
+                        Flipselector: "/application/native/guides/ui/efl/mobile/component-flipselector"
+                        Gengrid: "/application/native/guides/ui/efl/mobile/component-gengrid"
+                        Genlist: "/application/native/guides/ui/efl/mobile/component-genlist"
+                        GLView: "/application/native/guides/ui/efl/mobile/component-glview"
+                        Hoversel: "/application/native/guides/ui/efl/mobile/component-hoversel"
+                        Icon: "/application/native/guides/ui/efl/mobile/component-icon"
+                        Image: "/application/native/guides/ui/efl/mobile/component-image"
+                        Index: "/application/native/guides/ui/efl/mobile/component-index"
+                        Label: "/application/native/guides/ui/efl/mobile/component-label"
+                        List: "/application/native/guides/ui/efl/mobile/component-list"
+                        Map: "/application/native/guides/ui/efl/mobile/component-map"
+                        Multibuttonentry: "/application/native/guides/ui/efl/mobile/component-multibuttonentry"
+                        Notify: "/application/native/guides/ui/efl/mobile/component-notify"
+                        Panel: "/application/native/guides/ui/efl/mobile/component-panel"
+                        Photocam: "/application/native/guides/ui/efl/mobile/component-photocam"
+                        Plug: "/application/native/guides/ui/efl/mobile/component-plug"
+                        Popup: "/application/native/guides/ui/efl/mobile/component-popup"
+                        Progressbar: "/application/native/guides/ui/efl/mobile/component-progressbar"
+                        Radio: "/application/native/guides/ui/efl/mobile/component-radio"
+                        Segmentcontrol: "/application/native/guides/ui/efl/mobile/component-segmentcontrol"
+                        Slider: "/application/native/guides/ui/efl/mobile/component-slider"
+                        Spinner: "/application/native/guides/ui/efl/mobile/component-spinner"
+                        Toolbar: "/application/native/guides/ui/efl/mobile/component-toolbar"
+                        Tooltip: "/application/native/guides/ui/efl/mobile/component-tooltip"
+                        Win: "/application/native/guides/ui/efl/mobile/component-win"
+                    Customizing UI Components: "/application/native/guides/ui/efl/component-custom"
+                    Managing UI Component Focus: "/application/native/guides/ui/efl/component-focus"
+                    Configuring UI Components: "/application/native/guides/ui/efl/configuring"
+                Scaling:
+                    Overview: "/application/native/guides/ui/efl/ui-scalability"
+                    Multiple Screen Support: "/application/native/guides/ui/efl/multiple-screens"
+                    Scalability Support: "/application/native/guides/ui/efl/scalability"
+                    Resource Fallback Support: "/application/native/guides/ui/efl/resource-fallback"
+                Fonts: "/application/native/guides/ui/efl/font-setting"
+                EDC:
+                    Layouting with EDC: "/application/native/guides/ui/efl/learn-edc-intro"
+                    Collections Block: "/application/native/guides/ui/efl/learn-edc-collections"
+                    Group Block: "/application/native/guides/ui/efl/learn-edc-group"
+                    Part Block: "/application/native/guides/ui/efl/learn-edc-part"
+                    Positioning Parts: "/application/native/guides/ui/efl/learn-edc-positioning-parts"
+                    Program Block: "/application/native/guides/ui/efl/learn-edc-program"
+                Signal:
+                    Signal Handling: "/application/native/guides/ui/efl/learn-edc-signal-handling"
+                    Images Block: "/application/native/guides/ui/efl/learn-edc-images"
+                    Fonts Block: "/application/native/guides/ui/efl/learn-edc-fonts"
+                    Data Block: "/application/native/guides/ui/efl/learn-edc-data"
+                    Color Classes Block: "/application/native/guides/ui/efl/learn-edc-color-classes"
+                    Styles Block: "/application/native/guides/ui/efl/learn-edc-styles"
+                Graphical Objects:
+                    Primitive Graphical Objects: "/application/native/guides/ui/efl/graphical-objects"
+                    Evas Objects: "/application/native/guides/ui/efl/evas-objects"
+                    Manipulating Graphical Objects: "/application/native/guides/ui/efl/evas-basic-objects"
+                Evas Rendering Concept and Method: "/application/native/guides/ui/efl/evas-rendering"
+                Animations and Effects:
+                    Ecore Animations: "/application/native/guides/ui/efl/ecore-animation"
+                    Edje Animations: "/application/native/guides/ui/efl/edje-animation"
+                    Elementary Animations: "/application/native/guides/ui/efl/elementary-animation"
+                    Transformation with Evas Map: "/application/native/guides/ui/efl/evas-map-animation"
+                    Creating Evas Map Effects: "/application/native/guides/ui/efl/evas-map-effects"
+                Core Loop and OS Interfacing:
+                    Overview: "/application/native/guides/ui/efl/core-loop"
+                    Handling the Main Loop: "/application/native/guides/ui/efl/main-loop"
+                    Using Threads: "/application/native/guides/ui/efl/threads"
+                Event Handling:
+                    Overview: "/application/native/guides/ui/efl/event-handling"
+                    Event Types: "/application/native/guides/ui/efl/event-types"
+                    Handling Touch Gestures: "/application/native/guides/ui/efl/touch-gesture"
+                    Tracking Multi-point Touch Events: "/application/native/guides/ui/efl/multipoint-touch"
+                Data Types and Tools:
+                    Overview: "/application/native/guides/ui/efl/data-types-tools"
+                    Data Types: "/application/native/guides/ui/efl/data-types"
+                    Tools: "/application/native/guides/ui/efl/tools"
+                Hardware Input Handling:
+                    Overview: "/application/native/guides/ui/efl/hw-input"
+                    Managing Menu and Back Key Events: "/application/native/guides/ui/efl/key-events"
+                    Managing Rotary Events: "/application/native/guides/ui/efl/rotary-events"
+                    Grabbing Hardware Key Events: "/application/native/guides/ui/efl/key-grab"
+                Accessibility:
+                    Overview: "/application/native/guides/ui/efl/accessibility"
+                    Accessibility Architecture: "/application/native/guides/ui/efl/accessibility-architecture"
+                    Configuring Accessibility on a Device: "/application/native/guides/ui/efl/accessibility-config"
+                    Implementing Accessible Applications: "/application/native/guides/ui/efl/accessibility-implementation"
+
+            DALi:
+                Overview: "/application/native/guides/ui/dali/index"
+                Getting Started: "/application/native/guides/ui/dali/dali-getting-started"
+                Actors:
+                    Overview: "/application/native/guides/ui/dali/actors"
+                    Layout Management: "/application/native/guides/ui/dali/layout"
+                    Layer: "/application/native/guides/ui/dali/layer"
+                Event Handling:
+                    Overview: "/application/native/guides/ui/dali/event-handling"
+                    Touch Data: "/application/native/guides/ui/dali/touchdata"
+                UI Components:
+                    Overview: "/application/native/guides/ui/dali/ui-components"
+                    Styling UI Components: "/application/native/guides/ui/dali/styling"
+                    Visuals: "/application/native/guides/ui/dali/visuals"
+                    Control: "/application/native/guides/ui/dali/control-base"
+                    Buttons: "/application/native/guides/ui/dali/buttons"
+                    FlexContainer: "/application/native/guides/ui/dali/flexcontainer"
+                    ImageView: "/application/native/guides/ui/dali/imageview"
+                    ItemView: "/application/native/guides/ui/dali/itemview"
+                    Model3dView: "/application/native/guides/ui/dali/model3dview"
+                    ProgressBar: "/application/native/guides/ui/dali/progressbar"
+                    ScrollView: "/application/native/guides/ui/dali/scrollview"
+                    Slider: "/application/native/guides/ui/dali/slider"
+                    TableView: "/application/native/guides/ui/dali/tableview"
+                    TextLabel: "/application/native/guides/ui/dali/textlabel"
+                    TextField: "/application/native/guides/ui/dali/textfield"
+                    TextEditor: "/application/native/guides/ui/dali/texteditor"
+                    VideoView: "/application/native/guides/ui/dali/videoview"
+                Animation:
+                    Overview: "/application/native/guides/ui/dali/animation"
+                    Animation Types: "/application/native/guides/ui/dali/animation-types"
+                    Constraints: "/application/native/guides/ui/dali/constraints"
+                Resources: "/application/native/guides/ui/dali/resources"
+                Rendering and Effects:
+                    Overview: "/application/native/guides/ui/dali/dali-rendering"
+                    Shape Drawing: "/application/native/guides/ui/dali/rendering-tutorial"
+                    SVG Rendering: "/application/native/guides/ui/dali/svg-rendering"
+                Background Knowledge:
+                    Handle/Body Pattern: "/application/native/guides/ui/dali/handle"
+                    Properties: "/application/native/guides/ui/dali/properties"
+
+            Tizen Window System Shell:
+                Overview: "/application/native/guides/ui/tizen-ws-shell/index"
+                TZSH-Quickpanel: "/application/native/guides/ui/tizen-ws-shell/tzsh-quickpanel"
+                TZSH-Softkey: "/application/native/guides/ui/tizen-ws-shell/tzsh-softkey"
+
+        Localization:
+            Overview: "/application/native/guides/internationalization/overview"
+            i18n: "/application/native/guides/internationalization/i18n"
+            Resource Localization: "/application/native/guides/internationalization/resource-localization"
+
+        Graphics:
+            Overview: "/application/native/guides/graphics/overview"
+            Cairo Vector Graphics: "/application/native/guides/graphics/cairo"
+            Graphic Buffer and Surface: "/application/native/guides/graphics/graphic-buffer"
+            Hardware Acceleration: "/application/native/guides/graphics/hw-acceleration"
+            OpenGL&reg; ES:
+                Overview: "/application/native/guides/graphics/opengl"
+                Creating OpenGL&reg; ES Applications: "/application/native/guides/graphics/creating-opengles"
+                Polygon Mesh in OpenGL&reg; ES: "/application/native/guides/graphics/polygon-mesh"
+                Vertex Shader: "/application/native/guides/graphics/vertex-shader"
+                Primitive Assembly and Rasterization: "/application/native/guides/graphics/assembly"
+                Texturing: "/application/native/guides/graphics/texturing"
+                Fragment Shader: "/application/native/guides/graphics/fragment-shader"
+                Output Merging: "/application/native/guides/graphics/output-merging"
+                Interactive UI: "/application/native/guides/graphics/interactive-ui"
+                Advanced Rendering: "/application/native/guides/graphics/adv-rendering"
+                Advanced Performance: "/application/native/guides/graphics/adv-performance"
+            Simple DirectMedia Layer (SDL): 
+                Overview: "/application/native/guides/graphics/sdl"
+                SDL Graphics with Vulkan&reg;: "/application/native/guides/graphics/vulkan"
+                SDL Graphics with OpenGL&reg; ES: "/application/native/guides/graphics/sdl-opengles"
+
+        Notifications and Content Sharing:
+            Overview: "/application/native/guides/notification/overview"
+            Notifications: "/application/native/guides/notification/notifications"
+            Expandable Notifications: "/application/native/guides/notification/notification-ex"
+            Attach Panel: "/application/native/guides/notification/attach-panel"
+            Minicontrol Window: "/application/native/guides/notification/minicontrol"
+
+        Alarms and Scheduling:
+            Overview: "/application/native/guides/alarm/overview"
+            Alarms: "/application/native/guides/alarm/alarms"
+            Contextual System Event Trigger: "/application/native/guides/alarm/trigger"
+
+        Machine Learning:
+            Overview: "/application/native/guides/machine-learning/overview"
+            Machine Learning Inference: "/application/native/guides/machine-learning/machine-learning-inference"
+
+        Multimedia:
+            Overview: "/application/native/guides/multimedia/overview"
+            Media Content and Metadata:
+                Media Content: "/application/native/guides/multimedia/media-content"
+                Metadata: "/application/native/guides/multimedia/metadata"
+            Image Editing: "/application/native/guides/multimedia/image-edit"
+            Thumbnail Images: "/application/native/guides/multimedia/thumbnail-images"
+            Visual Detection and Recognition:
+                Barcode Detection and Generation: "/application/native/guides/multimedia/image-barcode"
+                Face Detection, Recognition, and Tracking: "/application/native/guides/multimedia/face-detection"
+                Image Recognition and Tracking: "/application/native/guides/multimedia/image-recognition"
+                Image Classification: "/application/native/guides/multimedia/image-classification"
+            Media Playback: "/application/native/guides/multimedia/media-playback"
+            Media Recording: "/application/native/guides/multimedia/media-recording"
+            Media Controller: "/application/native/guides/multimedia/media-controller"
+            Media Conversions: "/application/native/guides/multimedia/media-conversions"
+            Media Handle Management: "/application/native/guides/multimedia/media-handle"
+            Media Key Events: "/application/native/guides/multimedia/media-key"
+            Media Muxing: "/application/native/guides/multimedia/media-muxing"
+            Media Stream Playback: "/application/native/guides/multimedia/media-streams"
+            Media Stream Recording: "/application/native/guides/multimedia/stream-recorder"
+            Screen Mirroring: "/application/native/guides/multimedia/screen-mirroring"
+            Raw Audio Playback and Recording: "/application/native/guides/multimedia/raw-audio"
+            Sound Manager: "/application/native/guides/multimedia/sound-manager"
+            Sound Pools: "/application/native/guides/multimedia/sound-pool"
+            OpenAL: "/application/native/guides/multimedia/openal"
+            Radio: "/application/native/guides/multimedia/radio"
+            Camera: "/application/native/guides/multimedia/camera"
+
+        Connectivity and Wireless:
+            Overview: "/application/native/guides/connectivity/overview"
+            Bluetooth: "/application/native/guides/connectivity/bluetooth"
+            NFC: "/application/native/guides/connectivity/nfc"
+            Smart Card: "/application/native/guides/connectivity/smartcard"
+            Wi-Fi: "/application/native/guides/connectivity/wifi"
+            Wi-Fi Direct&reg;: "/application/native/guides/connectivity/wifi-direct"
+            SoftAP: "/application/native/guides/connectivity/softap"
+            Smart Traffic Control (STC): "/application/native/guides/connectivity/stc"
+            Telephony Information: "/application/native/guides/connectivity/telephony"
+            USB Host: "/application/native/guides/connectivity/usb-host"
+            Internet and Content Downloads:
+                Overview: "/application/native/guides/connectivity/internet-download"
+                Connection Management: "/application/native/guides/connectivity/connection"
+                Download: "/application/native/guides/connectivity/download"
+                Curl: "/application/native/guides/connectivity/curl"
+                HTTP: "/application/native/guides/connectivity/http-api"
+                Web View: "/application/native/guides/connectivity/web-view"
+            File Transfer with MTP: "/application/native/guides/connectivity/mtp"
+            VPN Connections: "/application/native/guides/connectivity/vpn"
+            IoT Connectivity: "/application/native/guides/connectivity/iotcon"
+            Network Service Discovery: "/application/native/guides/connectivity/nsd"
+
+        Messaging:
+            Overview: "/application/native/guides/messaging/overview"
+            Email: "/application/native/guides/messaging/email"
+            Messages: "/application/native/guides/messaging/messages"
+            Push: "/application/native/guides/messaging/push"
+            Push Server: "/application/native/guides/messaging/push-server"
+
+        Location and Sensors:
+            Overview: "/application/native/guides/location-sensors/overview"
+            Geofences: "/application/native/guides/location-sensors/geofences"
+            Location Information: "/application/native/guides/location-sensors/location"
+            Maps and Maps Service:
+                Overview: "/application/native/guides/location-sensors/maps"
+                Getting HERE Maps Credentials: "/application/native/guides/location-sensors/here-credentials"
+            Device Sensors: "/application/native/guides/location-sensors/device-sensors"
+            Activity Recognition: "/application/native/guides/location-sensors/activity"
+            Gesture Recognition: "/application/native/guides/location-sensors/gesture"
+
+        Text Input and Voice:
+            Overview: "/application/native/guides/text-input/overview"
+            Input Method: "/application/native/guides/text-input/input-method"
+            Autofill: "/application/native/guides/text-input/autofill"
+            Autofill Service: "/application/native/guides/text-input/autofill-service"
+            Autofill Manager: "/application/native/guides/text-input/autofill-manager"
+            Speech-to-text: "/application/native/guides/text-input/stt"
+            Text-to-speech: "/application/native/guides/text-input/tts"
+            Voice Control: "/application/native/guides/text-input/voice-control"
+            Voice Control Engine: "/application/native/guides/text-input/voice-control-engine"
+
+        Personal Data:
+            Overview: "/application/native/guides/personal/overview"
+            Account Management: "/application/native/guides/personal/account"
+            Data Synchronization: "/application/native/guides/personal/data-sync"
+            Authentication and Authorization:
+                FIDO Universal Authentication Framework: "/application/native/guides/personal/fido"
+                OAuth 2.0: "/application/native/guides/personal/oauth"
+            Calendar: "/application/native/guides/personal/calendar"
+            Contacts: "/application/native/guides/personal/contacts"
+            Phone Number Management: "/application/native/guides/personal/phonenumber"
+            Contextual Device Usage History Data: "/application/native/guides/personal/context"
+
+        Data Storage and Management:
+            Overview: "/application/native/guides/data/overview"
+            Data Storages: "/application/native/guides/data/data-storages"
+            SQLite Database Engine: "/application/native/guides/data/sql"
+
+        Device Settings and Systems:
+            Overview: "/application/native/guides/device/overview"
+            Attached Devices: "/application/native/guides/device/attached-devices"
+            External Output Devices: "/application/native/guides/device/ext-output"
+            Runtime Information: "/application/native/guides/device/runtime"
+            System Information: "/application/native/guides/device/system"
+            System Settings: "/application/native/guides/device/settings"
+            Sound and Vibration Feedback: "/application/native/guides/device/feedback"
+            Battery Monitor: "/application/native/guides/device/battery-monitor"
+
+        Security:
+            Overview: "/application/native/guides/security/overview"
+            Secure Key Management: "/application/native/guides/security/secure-key"
+            Privilege Information: "/application/native/guides/security/privilege"
+            Privacy-related Permissions: "/application/native/guides/security/privacy-related-permissions"
+            Cryptographic Operations: "/application/native/guides/security/yaca"
+            Device Policy Management: "/application/native/guides/security/dpm"
+            Malware Scanning and Web Protection: "/application/native/guides/security/csr"
+            Device Certificate Manager: "/application/native/guides/security/device-certificate-manager"
+            Security Tips: "/application/native/guides/security/security-tip"
+
+        Error Handling:
+            Overview: "/application/native/guides/error/overview"
+            Error Handling: "/application/native/guides/error/error-handling"
+            System Logs: "/application/native/guides/error/system-logs"
+
+        Performance:
+            Overview: "/application/native/guides/performance/overview"
+            Tracepoints: "/application/native/guides/performance/tracepoints"
+
+        Watchface Complication:
+            Overview: "/application/native/guides/complications/overview"
+            Watchface Complication: "/application/native/guides/complications/watchface-complication"
+            Complication Provider: "/application/native/guides/complications/watchface-complication-provider"
+
+        Migration Guide: "/application/native/guides/migration-guide"
+
+
+    API Reference:
+
+        Overview: "/application/native/api/overview"
+
+        Wearable:
+            5.5: "/application/native/api/wearable/5.5/index.html"
+            5.0: "/application/native/api/wearable/5.0/index.html"
+            4.0: "/application/native/api/wearable/4.0/index.html"
+            3.0: "/application/native/api/wearable/3.0/index.html"
+            2.3.2: "/application/native/api/wearable/2.3.2/index.html"
+
+        Mobile:
+            5.5: "/application/native/api/mobile/5.5/index.html"
+            5.0: "/application/native/api/mobile/5.0/index.html"
+            4.0: "/application/native/api/mobile/4.0/index.html"
+            3.0: "/application/native/api/mobile/3.0/index.html"
+            2.4: "/application/native/api/mobile/2.4/index.html"
+
+
+    Samples: "/development/sample/native"
+
+
+Tizen Studio:
+
+
+    Overview: "/application/tizen-studio/index"
+
+
+    Set up:
+
+        Install:
+            Prerequisites: "/application/tizen-studio/setup/prerequisites"
+            Install Tizen Studio: "/application/tizen-studio/setup/install-sdk"
+            Update Tizen Studio: "/application/tizen-studio/setup/update-sdk"
+            Hardware Accelerated Execution Manager: "/application/tizen-studio/setup/hardware-accelerated-execution-manager"
+        Configure the Package Manager: "/application/tizen-studio/setup/advanced-configuration"
+        Uninstall Tizen Studio: "/application/tizen-studio/setup/uninstall-sdk"
+
+
+    Native Tools:
+
+        Overview: "/application/tizen-studio/native-tools/index"
+
+        Manage Projects:
+            Overview: "/application/tizen-studio/native-tools/managing-projects"
+            Project Creation Wizard: "/application/tizen-studio/native-tools/project-wizard"
+            Project Explorer View: "/application/tizen-studio/native-tools/project-explorer-view"
+            Certificate Registration: "/application/tizen-studio/common-tools/certificate-registration"
+            Device Manager: "/application/tizen-studio/common-tools/device-manager"
+        Write and Edit Code:
+            Overview: "/application/tizen-studio/native-tools/coding"
+            Content Assist: "/application/tizen-studio/native-tools/content-assist"
+            API and Privilege Checker: "/application/tizen-studio/native-tools/api-checker"
+            UI Builder:
+                Overview: "/application/tizen-studio/native-tools/ui-builder/ui-builder"
+                Storyboard: "/application/tizen-studio/native-tools/ui-builder/storyboard"
+                Component Attributes: "/application/tizen-studio/native-tools/ui-builder/component-attributes"
+                Custom UI Component: "/application/tizen-studio/native-tools/ui-builder/custom-ui-component"
+                Databind: "/application/tizen-studio/native-tools/ui-builder/databind"
+                Multiple Screen Support: "/application/tizen-studio/native-tools/ui-builder/multiple-screens"
+                Convert Projects for UI Builder: "/application/tizen-studio/native-tools/ui-builder/convert-projects"
+                Combin Screens from Multiple Applications: "/application/tizen-studio/native-tools/ui-builder/combine-screens"
+            EDC Editor: "/application/tizen-studio/native-tools/edc-editor"
+
+        Configure Your App:
+            Overview: "/application/tizen-studio/native-tools/configuring"
+            Manifest Text Editor: "/application/tizen-studio/native-tools/manifest-text-editor"
+            Additional Manifest Elements: "/application/tizen-studio/native-tools/manifest-elements"
+            Resource Manager: "/application/tizen-studio/native-tools/resource-manager"
+            PO File Localization Editor: "/application/tizen-studio/native-tools/po-file-editor"
+
+        Debug Your App:
+            Overview: "/application/tizen-studio/native-tools/debugging"
+            Log View: "/application/tizen-studio/common-tools/log-view"
+            Dynamic Analyzer:
+                Overview: "/application/tizen-studio/common-tools/dynamic-analyzer/overview"
+                Common Tasks: "/application/tizen-studio/common-tools/dynamic-analyzer/common-tasks"
+                Advanced Tasks: "/application/tizen-studio/common-tools/dynamic-analyzer/advanced-tasks"
+                Memory Analysis: "/application/tizen-studio/common-tools/dynamic-analyzer/memory-analysis"
+                Thread Analysis: "/application/tizen-studio/common-tools/dynamic-analyzer/thread-analysis"
+                File Analysis: "/application/tizen-studio/common-tools/dynamic-analyzer/file-analysis"
+                Network Analysis: "/application/tizen-studio/common-tools/dynamic-analyzer/network-analysis"
+                OpenGL Analysis: "/application/tizen-studio/common-tools/dynamic-analyzer/opengl-analysis"
+                UI Hierarchy Analysis: "/application/tizen-studio/common-tools/dynamic-analyzer/ui-hierarchy-analysis"
+            Call Stack View: "/application/tizen-studio/native-tools/call-stack-view"
+            Static Analyzer: "/application/tizen-studio/native-tools/static-analyzer"
+            Valgrind: "/application/tizen-studio/native-tools/valgrind"
+            T-trace: "/application/tizen-studio/native-tools/t-trace"
+            Address Sanitizer: "/application/tizen-studio/native-tools/address-sanitizer"
+            Code Coverage: "/application/tizen-studio/native-tools/code-coverage"
+
+        Run and Test Your App:
+            Overview: "/application/tizen-studio/native-tools/running-testing"
+            SDB: "/application/tizen-studio/common-tools/smart-development-bridge"
+            Emulator:
+                Overview: "/application/tizen-studio/common-tools/emulator"
+                Emulator Manager: "/application/tizen-studio/common-tools/emulator-manager"
+                Emulator Control Panel: "/application/tizen-studio/common-tools/emulator-control-panel"
+                Extended Emulator Features: "/application/tizen-studio/common-tools/emulator-features"
+            Unit Test: "/application/tizen-studio/native-tools/unit-test"
+
+        CLI:
+            Overview: "/application/tizen-studio/common-tools/command-line-interface"
+            Convert Projects for CLI: "/application/tizen-studio/native-tools/project-conversion"
+
+        Keyboard Shortcuts: "/application/tizen-studio/common-tools/keyboard-shortcuts"
+
+
+    Web Tools:
+
+        Overview: "/application/tizen-studio/web-tools/index"
+
+        Manage Projects:
+            Overview: "/application/tizen-studio/web-tools/managing-projects"
+            Project Creation Wizard: "/application/tizen-studio/web-tools/project-wizard"
+            Project Explorer View: "/application/tizen-studio/web-tools/project-explorer-view"
+            Certificate Registration: "/application/tizen-studio/common-tools/certificate-registration"
+            Device Manager: "/application/tizen-studio/common-tools/device-manager"
+
+        Write and Edit Code:
+            Overview: "/application/tizen-studio/web-tools/coding"
+            Web Editor: "/application/tizen-studio/web-tools/web-editor"
+            Live Edit: "/application/tizen-studio/web-tools/live-editing"
+            Content Assist: "/application/tizen-studio/web-tools/content-assist"
+            Code Clean: "/application/tizen-studio/web-tools/code-productivity"
+            REST Viewer: "/application/tizen-studio/web-tools/rest-viewer"
+            Previewer: "/application/tizen-studio/web-tools/previewer"
+            Privilege Checker: "/application/tizen-studio/web-tools/privilege-checker"
+            Tizen Studio Web Preferences: "/application/tizen-studio/web-tools/ide-preferences"
+
+        Configure Your App:
+            Overview: "/application/tizen-studio/web-tools/configuring"
+            Configuration Editor: "/application/tizen-studio/web-tools/config-editor"
+            Web Localization: "/application/tizen-studio/web-tools/web-localization"
+
+        Debug Your App:
+            Overview: "/application/tizen-studio/web-tools/debugging"
+            Log View: "/application/tizen-studio/common-tools/log-view"
+            Web Inspector: "/application/tizen-studio/web-tools/web-inspector"
+            JavaScript Analyzer: "/application/tizen-studio/web-tools/js-analyzer"
+
+        Run and Test Your App:
+            Overview: "/application/tizen-studio/web-tools/running-testing"
+            SDB: "/application/tizen-studio/common-tools/smart-development-bridge"
+            Emulator:
+                Overview: "/application/tizen-studio/common-tools/emulator"
+                Emulator Manager: "/application/tizen-studio/common-tools/emulator-manager"
+                Emulator Control Panel: "/application/tizen-studio/common-tools/emulator-control-panel"
+                Extended Emulator Features: "/application/tizen-studio/common-tools/emulator-features"
+            Web Simulator:
+                Overview: "/application/tizen-studio/web-tools/web-simulator"
+                Entended Web Simulator Features: "/application/tizen-studio/web-tools/web-simulator-features"
+            Web Unit Test Tool: "/application/tizen-studio/web-tools/web-unit-test-tool"
+
+        CLI: "/application/tizen-studio/common-tools/command-line-interface"
+
+        Keyboard Shortcuts: "/application/tizen-studio/common-tools/keyboard-shortcuts"
+
+
+    Platform Tools:
+
+        Overview: "/application/tizen-studio/platform-tools/overview"
+        Platform Development Tools: "/application/tizen-studio/platform-tools/platform-tools"
+
+    Configurable SDK: "/application/tizen-studio/configurable-sdk/configurable-sdk"
+
+    Extension SDK:
+
+        Overview: "/application/tizen-studio/extension-sdk/overview"
+
+    RT IDE:
+
+        Overview: "/application/tizen-studio/rt-ide/overview"
+        Get Started:
+            Overview: "/application/tizen-studio/rt-ide/get-started/overview"
+            Install Tizen Studio for RT: "/application/tizen-studio/rt-ide/get-started/install"
+            Manage a Project: "/application/tizen-studio/rt-ide/get-started/create"
+            Flash the Project: "/application/tizen-studio/rt-ide/get-started/flash"
+            Use the Serial Terminal: "/application/tizen-studio/rt-ide/get-started/terminal"
+            Debug the Project: "/application/tizen-studio/rt-ide/get-started/debug"
+
+    Release Notes:
+        3.6 (Dec 10, 2019): "/application/tizen-studio/release-notes/3-6-release-notes"
+        3.5 (Oct 30, 2019): "/application/tizen-studio/release-notes/3-5-release-notes"
+        3.3 (Jul 24, 2019): "/application/tizen-studio/release-notes/3-3-release-notes"
+        3.2 (Mar 18, 2019): "/application/tizen-studio/release-notes/3-2-release-notes"
+        3.1 (Jan 17, 2019): "/application/tizen-studio/release-notes/3-1-release-notes"
+        3.0 (Oct 31, 2018): "/application/tizen-studio/release-notes/3-0-release-notes"
+        2.5 (Aug 8, 2018): "/application/tizen-studio/release-notes/2-5-release-notes"
+        2.4 (May 29, 2018): "/application/tizen-studio/release-notes/2-4-release-notes"
+        2.3 (Mar 30, 2018): "/application/tizen-studio/release-notes/2-3-release-notes"
+        2.2 (Jan 30, 2018): "/application/tizen-studio/release-notes/2-2-release-notes"
+        2.1 (Jan 3, 2018): "/application/tizen-studio/release-notes/2-1-release-notes"
+        2.0 (Nov 1, 2017): "/application/tizen-studio/release-notes/2-0-release-notes"
+        1.3 (Oct 11, 2017): "/application/tizen-studio/release-notes/1-3-0-release-notes"
+        1.2 (May 10, 2017): "/application/tizen-studio/release-notes/1-2-0-release-notes"
+        1.1.1 (Feb 27, 2017): "/application/tizen-studio/release-notes/1-1-1-release-notes"
+        1.1 (Jan 18, 2017): "/application/tizen-studio/release-notes/1-1-0-release-notes"
+        1.0.2 (Dec 23, 2016): "/application/tizen-studio/release-notes/1-0-2-release-notes"
+        1.0.1 (Oct 28, 2016): "/application/tizen-studio/release-notes/1-0-1-release-notes"
+        1.0 (Sep 1, 2016): "/application/tizen-studio/release-notes/1-0-release-notes"
+
+
+
+Visual Studio Tools for Tizen:
+
+    Overview: "/application/vstools/index"
+
+    Installing Visual Studio Tools for Tizen: "/application/vstools/install"
+
+    Tools:
+
+        Project Wizard: "/application/vstools/tools/project-wizard"
+        Manifest Editor:
+            Overview: "/application/vstools/tools/manifest-editor"
+            Additional Manifest Elements: "/application/vstools/tools/manifest-elements"
+        Certificate Manager: "/application/vstools/tools/certificate-manager"
+        Emulator Manager: "/application/vstools/tools/emulator-manager"
+        Emulator Control Panel: "/application/vstools/tools/emulator-control-panel"
+        API and Privilege Checker: "/application/vstools/tools/api-privilege-checker"
+        Device Manager: "/application/vstools/tools/device-manager"
+        Log Viewer: "/application/vstools/tools/log-viewer"
+        Profiler: "/application/vstools/tools/profiler-user-manual"
+        Memory Profiler: "/application/vstools/tools/memory-profiler-user-manual"
+        Command Line Interface: "/application/vstools/tools/dotnet-cli-ext"
+
+
+
+Visual Studio Code Extension for Tizen:
+
+    Prerequisites: "/application/vscode-ext/index"
+    Tizen .NET: "/application/vscode-ext/dotnet"
+    Tizen Web: "/application/vscode-ext/web"
+
+
+Visual Studio for Mac Extension for Tizen:
+
+    Overview: "/application/vstools-mac/overview"

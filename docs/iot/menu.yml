@@ -1,0 +1,42 @@
+IoT extension SDK: "/iot/index"
+
+Get Started:
+    Tizen IoT: "/iot/get-started/overview"
+    Setting up Board:
+        Overview: "/iot/get-started/setting-up-board"
+        Raspberry Pi3: "/iot/get-started/rpi3-5.0"
+    Developing Applications:
+        Developing Applications with Things SDK API: "/iot/get-started/things-app-development-5.0"
+        Setting up Smartthings Cloud: "/iot/get-started/things-cloud-setup"
+        Testing with Smartthings App: "/iot/get-started/cloud-app-test"
+
+API Guides:
+    Overview: "/iot/guides/iot-api"
+    Things SDK API:
+        Overview: "/iot/guides/things-api-5.0"
+        Device Definition: "/iot/guides/things-api-device-5.0"
+        API Usage: "/iot/guides/things-api-guide-5.0"
+    Tizen Peripheral I/O Native API:
+        Overview: "/iot/guides/peripheral-io-api"
+        GPIO: "/iot/guides/peripheral-io-api-gpio"
+        PWM: "/iot/guides/peripheral-io-api-pwm"
+        SPI: "/iot/guides/peripheral-io-api-spi"
+        I2C: "/iot/guides/peripheral-io-api-i2c"
+        UART: "/iot/guides/peripheral-io-api-uart"
+    ZigBee: "/iot/guides/zigbee"
+    Tizen Update Control Native API: "/iot/guides/update-control-api"
+
+API Reference:
+    Overview: "/iot/api/overview"
+    5.0:
+        Tizen Common Headed API Reference: "/iot/api/5.0/tizen-iot-headed/index.html"
+        Tizen Common Headless API Reference: "/iot/api/5.0/tizen-iot-headless/index.html"
+    4.0:
+        Tizen Common Headed API Reference: "/iot/api/4.0/tizen-iot-headed/index.html"
+        Tizen Common Headless API Reference: "/iot/api/4.0/tizen-iot-headless/index.html"
+
+IoT Partners:
+    Nubison Cloud: "/iot/iot-partners/nubison"
+    thingspark Cloud: "/iot/iot-partners/thingspark"
+    SDT SOM: "/iot/iot-partners/sdt_som"
+    Anchor SoM: "/iot/iot-partners/anchor/anchor"
