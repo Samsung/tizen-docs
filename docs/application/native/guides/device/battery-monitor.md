@@ -1,28 +1,28 @@
 # Battery Monitor
 
-You can access the information related to the power consumption by applications or by hardware resources available on a battery-powered device for a specific duration of time. The value of the battery power usage is returned in milli-Ampere hour(mAh).
+You can access the information related to the power consumption by applications or by hardware resources available on a battery-powered device for a specific duration of time. The value of the battery power usage is returned in the milliampere hour(mAh).
 
 The power consumption of an application is calculated by accumulating the usage of various individual resources used by the application.
 
 This feature is supported in wearable applications only.
 
-The Battery Monitor APIs provide following provisions to fetch the battery usage:
+The Battery Monitor APIs provide the following provisions to fetch the battery usage:
 
 - Getting battery usage information of an application.
 
-    You can [retrieve battery usage information of an application](#appusage_get) by specifying its application ID, [resource IDs](#resource_key) as well as 'from' and 'to' Unix epoch time in seconds.
+    You can [retrieve battery usage information of an application](#appusage_get) by specifying its application ID, [resource IDs](#resource_key), and timestamps such as **from** and **to** as per Unix Epoch time format.
 
 - Getting battery usage information of a resource.
 
-    You can [retrieve battery usage information of single or multiple resources](#resourceusage_get) by specifying its [resource IDs](#resource_key) as well as 'from' and 'to' Unix epoch time in seconds.
+    You can [retrieve battery usage information of single or multiple resources](#resourceusage_get) by specifying its [resource IDs](#resource_key), and timestamps such as **from** and **to** as per Unix Epoch time format.
 
-    You can retrieve data recorded within last seven days.
+    You can retrieve the data that is recorded within the last seven days.
 
 ## Prerequisites
 
 To enable your application to use the Battery Monitor functionality:
 
-1. To use the [Battery Monitor](../../api/wearable/latest/group__CAPI__SYSTEM__BATTERY__BATTERY__MONITOR__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Battery Monitor](../../api/wearable/5.5/group__CAPI__SYSTEM__BATTERY__BATTERY__MONITOR__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```xml
     <privileges>
@@ -41,8 +41,8 @@ To enable your application to use the Battery Monitor functionality:
 
 To get the battery usage information related to the application ID:
 
-- Get battery usage information of an application for a particular resource over a specific interval of time.
-  To get the resource ID, use the `battery_monitor_resource_id_e` enum. The from and to time of the period should be set as Unix epoch time in seconds:
+- Get the battery usage information of an application for a particular resource over a specific interval of time.
+  To get the resource ID, use the `battery_monitor_resource_id_e` enum. The timestamps **from** and **to** must be set as per the Unix Epoch time format:
 
     ```
     #include <battery_monitor.h>
@@ -58,7 +58,7 @@ To get the battery usage information related to the application ID:
        battery_monitor_resource_id_e resource_id = BATTERY_MONITOR_RESOURCE_ID_CPU;
        time_t now, from = -1, to = -1; time(&now);
 
-       /* To get the usage for past 1000 seconds from current epoch time */
+       /* To get the usage for past thousand seconds from current epoch time */
        int period_t = 1000;
        to = now; from = to - period_t;
 
@@ -77,11 +77,10 @@ To get the battery usage information related to the application ID:
     }
     ```
 
-- Get total battery usage of an application ID over a specific interval of time.
-  The from and to time of the period should be set as Unix epoch time in seconds:
+- Get the total battery usage of an application ID over a specific interval of time. The timestamps **from** and **to** must be set as per the Unix Epoch time format:
 
     ```
-    /* To get the usage for past 24 hours from current epoch time */
+    /* To get the usage for past 24 hours from the current epoch time */
     int period_t = 24*60*60; //24 hours in seconds
     to = now; from = to - period_t;
 
@@ -93,7 +92,7 @@ To get the battery usage information related to the application ID:
     else
         printf("Error Occurred [%d]", error_code);
 
-    /* To get usage for a period of 1000 seconds, 2 hours before the current epoch time */
+    /* To get usage for a period of thousand seconds starting, 2 hours before the current epoch time */
     int period_t = 2*60*60; //2 hours in seconds
     to = now; to -= period_t; from = to - 1000;
 
@@ -108,15 +107,15 @@ To get the battery usage information related to the application ID:
     ```
 
 - Get the battery usage information of an application ID for each resource over a specific interval of time.
-  To get the resource ID, use the `battery_monitor_resource_id_e` enum. The from and to time of the period should be set as Unix epoch time in seconds:
+  To get the resource ID, use the `battery_monitor_resource_id_e` enum. The timestamps **from** and **to** must be set as per the Unix Epoch time format:
 
     ```
     battery_usage_data_h data_handle = NULL;
-    /* To get the usage for past 1000 seconds from current epoch time */
+    /* To get the usage for past thousand seconds from the current epoch time */
     int period_t = 1000;
     to = now; from = to - period_t;
 
-    /*First use this API to fetch the usage for all the available resources in the data handle*/
+    /*Use this API to fetch the usage of all the available resources in the data handle*/
     error_code = battery_monitor_get_power_usage_by_app_for_all_resources(app_id, from, to, &data_handle);
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
         printf("Data Handle information received");
@@ -125,7 +124,7 @@ To get the battery usage information related to the application ID:
     else
         printf("Error Occurred [%d]", error_code);
 
-    /*Now retrieving the information one by one from the data_handle*/
+    /*Retrieving the information one by one from the data_handle*/
     battery_monitor_resource_id_e resource_id = BATTERY_MONITOR_RESOURCE_ID_CPU;
 
     error_code = battery_monitor_usage_data_get_power_usage_per_resource(data_handle, resource_id, &battery_usage);
@@ -140,14 +139,14 @@ To get the battery usage information related to the application ID:
     else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
         printf("Battery usage for above resource is not recorded");
 
-    /* Similarly for other resources...
+    /* Similarly for other resources.
     .
     . You can also iterate over the resource enums using 'BATTERY_MONITOR_RESOURCE_ID_MAX'
     .
     .
     */
 
-    /*To avoid memory leak free the handle*/
+    /*To avoid memory leak, free the handle*/
     error_code = battery_monitor_battery_usage_data_destroy(data_handle);
     if (error_code != BATTERY_MONITOR_ERROR_NONE)
         printf("Error Occurred [%d]", error_code);
@@ -156,10 +155,10 @@ To get the battery usage information related to the application ID:
 <a name="resourceusage_get"></a>
 ## Getting Battery Usage Information of Resource
 
-To get battery usage information related to the resource ID:
+To get the battery usage information related to the resource ID:
 
 - Get the battery usage information of a particular resource over a specific interval of time.
-  To get the resource ID, use the `battery_monitor_resource_id_e` enum. The from and to time of the period should be set as Unix epoch time in seconds:
+  To get the resource ID, use the `battery_monitor_resource_id_e` enum. The timestamps **from** and **to** must be set as per the Unix Epoch time format:
 
     ```
     resource_id = BATTERY_MONITOR_RESOURCE_ID_DISPLAY;
@@ -175,11 +174,8 @@ To get battery usage information related to the resource ID:
         printf("Battery Usage Wifi in last 1000 seconds is [%lf]", battery_usage);
     else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
         printf("Battery Usage for Wi-Fi not recorded");
-    /* Similarly for other resources...
-    .
-    .
-    .
-    */
+
+    /* Similarly for other resources. */
 
     ```
 <a name="resource_key"></a>
