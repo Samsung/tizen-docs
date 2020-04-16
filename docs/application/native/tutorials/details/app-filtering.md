@@ -361,6 +361,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/input.keyboard` | Specify this key, if the application requires a built-in physical keyboard. | 2.2.1 |
 | `http://tizen.org/feature/input.keyboard.layout` | Specify this key with a specific keyboard layout (`string` type), if the application requires a built-in physical keyboard supporting the specified keyboard layout. | 2.2.1 |
 | `http://tizen.org/feature/input.rotating_bezel` | Specify this key, if the application requires rotating bezel input. | 2.3.1 |
+| `http://tizen.org/feature/input.rotating_bezel.virtual` | Specify this key, if the application requires virtual rotating bezel input. | 5.5 |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
 | `http://tizen.org/feature/led`           | Specify this key, if the application requires a LED. | 2.3   |
 | `http://tizen.org/feature/location`      | Specify this key, if the application requires any location positioning features. | 2.2.1 |
