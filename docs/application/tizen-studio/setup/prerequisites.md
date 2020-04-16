@@ -3,8 +3,11 @@
 Check the following prerequisites before attempting to install Tizen Studio.
 
 ## Java Development Kit (JDK) Requirements
+> **Note**
+>
+> There is no JDK prerequisite for Tizen Studio 3.7 and higher.
 
-You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 for Tizen Studio 3.5 and higher.
+You must install Oracle Java Development Kit (JDK) 8 or OpenJDK 12 for Tizen Studio 3.5 and Tizen Studio 3.6.
 
 Follow these instructions to install the appropriate JDK version for your system:
 
@@ -30,7 +33,7 @@ You can also use Oracle's OpenJDK. For more installation details, see [OpenJDK 1
 
 ## OS and System Requirements
 
-The following table lists the supported operating systems and hardware requirements for izen Studio.
+The following table lists the supported operating systems and hardware requirements for Tizen Studio.
 
 **Table: OS and system requirements**
 
@@ -106,7 +109,7 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 <tbody>
 <tr>
 <td>CPU</td>
-<td colspan="3">Recommended: Support for Intel VTx (Virtualization Technology)</td>
+<td colspan="3">Recommended: Support for Intel&reg; VTx (Virtualization Technology)</td>
 </tr>
 <tr>
 <td>Screen resolution</td>
@@ -212,7 +215,7 @@ To use Python conveniently at the command prompt, set the <code>%PATH%</code> en
 </td>
 <td>At the terminal prompt, enter the following commands:
 <pre><code>$ brew install gettext
-$ brew link gettext -force
+$ brew link gettext --force
 $ which msgfmt
 /usr/local/bin/msgfmt
 </code></pre>
