@@ -604,7 +604,9 @@ The following table lists the sensor feature keys:
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | `bool` | The platform returns `true` for this key, if the device supports the uncalibrated gyroscope sensor. |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/sensor.gyroscope` key, if the device supports the wake-up operation by the gyro sensor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | `bool` | The platform returns `true` for this key, if the device supports the heart rate monitor. |
+| `http://tizen.org/feature/sensor.heart_rate_monitor.batch` | `bool` | The platform returns `true` for this key, if the device supports the heart rate monitor batch sensor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | `bool` | The platform returns `true` for this key, if the device supports the LED green sensor of the heart rate monitor. |
+| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green.batch` | `bool` | The platform returns `true` for this key, if the device supports the LED green batch sensor of the heart rate monitor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | `bool` | The platform returns `true` for this key, if the device supports the LED infrared sensor of the heart rate monitor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | `bool` | The platform returns `true` for this key, if the device supports the LED red sensor of the heart rate monitor. |
 | `http://tizen.org/feature/sensor.humidity` | `bool` | The platform returns `true` for this key, if the device supports the humidity sensor. |
