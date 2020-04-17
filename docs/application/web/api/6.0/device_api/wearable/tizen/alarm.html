@@ -343,9 +343,6 @@ For more information about the notification, see <a href="notification.html">The
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/notification
             </p>
-<p class="warning"><b>Warning:</b>
- Since Tizen 4.0 constructor AlarmAbsolute(Date date, long period) is deprecated thus it is <b>not</b> allowed to pass <em>AlarmAbsolute</em> created from such constructor.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -578,10 +575,6 @@ console.log("The alarm will trigger at " + alarm.getNextScheduledDate());
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/alarm
-            </p>
-<p><span class="remark">Remark: </span>
- This method is designed to return only <a href="notification.html#UserNotification">UserNotification</a> objects,
-even if the added alarm was using <a href="notification.html#StatusNotification">StatusNofitication</a>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
