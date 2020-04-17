@@ -1,5 +1,6 @@
 # Contextual System Event Trigger
 
+
 Tizen enables you to define rules as a combination of a contextual event, conditions, and an action. When the rule is enabled, the system starts to monitor the device status or user activities corresponding to the event defined in the rule. When the event is detected, the conditions are evaluated, and if the conditions are met, the action is triggered.
 
 This feature is supported in mobile applications only.

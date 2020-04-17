@@ -1,3 +1,8 @@
+---
+title: Alarms
+keyword: alarm, set, time, date
+---
+
 # Alarms
 
 
