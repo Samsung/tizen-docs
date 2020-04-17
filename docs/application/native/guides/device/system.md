@@ -417,6 +417,7 @@ The following table lists the network feature keys:
 | `http://tizen.org/feature/network.bluetooth.opp` | `bool` | The platform returns `true` for this key, if the device supports Bluetooth Object Push Profile (OPP). |
 | `http://tizen.org/feature/network.bluetooth.phonebook.client` | `bool` | The platform returns `true` for this key, if the device supports the Bluetooth Phone Book Access (PBAP) client feature. |
 | `http://tizen.org/feature/network.ethernet` | `bool` | The platform returns `true` for this key, if the device supports Ethernet. |
+| `http://tizen.org/feature/network.inm` | `bool` | The platform returns `true` for this key, if the device supports the Intelligent Network Monitoring (INM) feature. |
 | `http://tizen.org/feature/network.internet` | `bool` | The platform returns `true` for this key, if the device supports Internet access. |
 | `http://tizen.org/feature/network.mtp`   | `bool` | The platform returns `true` for this key, if the device supports the Media Transfer Protocol (MTP) Host (Initiator) feature. |
 | `http://tizen.org/feature/network.net_proxy` | `bool` | The platform returns `true` for this key, if the device supports the net-proxy, a proxy type connection for a device that acts as an intermediary between client (network service customer) and server (network service provider). |
@@ -456,6 +457,7 @@ The following table lists the network feature keys:
 | `http://tizen.org/feature/network.wifi.direct.display` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.wifi` key, if the device supports Wi-Fi Direct display feature. |
 | `http://tizen.org/feature/network.wifi.direct.service_discovery` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/network.wifi` key, if the device supports Wi-Fi Direct service discovery. |
 | `http://tizen.org/feature/network.wifi.tdls` | `bool` | The platform returns `true` for this key, if the device supports the Wi-Fi Tunneled Direct Link Setup (TDLS). |
+
 
 The following table lists the OAuth 2.0 feature keys:
 
