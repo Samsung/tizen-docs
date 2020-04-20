@@ -284,9 +284,7 @@ To run the application on the target device:
 
         ![Allow Gear to access data](media/remote_allow_gear.png)
 
-    4.  In the **Device Manager**, confirm that the device is connected (shown in the device list).
-
-        ![Device is connected](media/remote_connected_w.png)
+    4.  In the **Device Manager**, confirm that the device is connected.
 
 2.  Generate an author certificate.
 
