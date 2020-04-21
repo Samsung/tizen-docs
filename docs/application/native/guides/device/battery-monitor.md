@@ -10,11 +10,11 @@ The Battery Monitor APIs provide the following provisions to fetch the battery u
 
 - Getting battery usage information of an application.
 
-    You can [retrieve battery usage information of an application](#appusage_get) by specifying its application ID, [resource IDs](#resource_key), and timestamps such as **from** and **to** as per Unix Epoch time format.
+    You can [retrieve the battery usage information of an application](#appusage_get) by specifying its application ID, [resource IDs](#resource_key), and timestamps such as **from** and **to** as per the Unix Epoch time format.
 
 - Getting battery usage information of a resource.
 
-    You can [retrieve battery usage information of single or multiple resources](#resourceusage_get) by specifying its [resource IDs](#resource_key), and timestamps such as **from** and **to** as per Unix Epoch time format.
+    You can [retrieve the battery usage information of single or multiple resources](#resourceusage_get) by specifying its [resource IDs](#resource_key), and timestamps such as **from** and **to** as per the Unix Epoch time format.
 
     You can retrieve the data that is recorded within the last seven days.
 
@@ -22,7 +22,7 @@ The Battery Monitor APIs provide the following provisions to fetch the battery u
 
 To enable your application to use the Battery Monitor functionality:
 
-1. To use the [Battery Monitor](../../api/wearable/5.5/group__CAPI__SYSTEM__BATTERY__BATTERY__MONITOR__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the [Battery Monitor](../../api/wearable/latest/group__CAPI__SYSTEM__BATTERY__BATTERY__MONITOR__MODULE.html) API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```xml
     <privileges>
@@ -86,7 +86,7 @@ To get the battery usage information related to the application ID:
 
     error_code = battery_monitor_get_power_usage_by_app(app_id, from, to, &battery_usage);
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
-        printf("The total battery usage for appid [%s] over last 24 hrs is [%lf]", app_id, battery_usage);
+        printf("The Total Battery Usage for appid [%s] over last 24 hrs is [%lf]", app_id, battery_usage);
     else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
         printf("The Battery Usage for appid [%s] is not recorded");
     else
@@ -98,7 +98,7 @@ To get the battery usage information related to the application ID:
 
     error_code = battery_monitor_get_power_usage_by_app(app_id, from, to, &battery_usage);
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
-        printf("The total battery usage for appid [%s] over 1000s interval is [%lf] mAh", app_id, battery_usage);
+        printf("The Total Battery Usage for appid [%s] over 1000s interval is [%lf] mAh", app_id, battery_usage);
     else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
         printf("The Battery Usage for appid [%s] is not recorded");
     else
