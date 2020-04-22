@@ -92,7 +92,7 @@ To get the battery usage information related to the application ID:
     else
         printf("Error Occurred [%d]", error_code);
 
-    /* To get usage for a period of thousand seconds starting, 2 hours before the current epoch time */
+    /* To get usage for a period of thousand seconds starting two hours before the current epoch time */
     int period_t = 2*60*60; //2 hours in seconds
     to = now; to -= period_t; from = to - 1000;
 
