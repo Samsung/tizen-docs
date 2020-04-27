@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Contact API</title>
+<meta data-version="6.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Contact">
@@ -6915,10 +6916,10 @@ To guarantee the running of the application on a device with Contact feature, de
   typedef DOMString ContactGroupId;
   typedef (<a href="tizen.html#AttributeFilter">AttributeFilter</a> or <a href="tizen.html#AttributeRangeFilter">AttributeRangeFilter</a>) ContactUsageCountFilter;
   enum ContactTextFormat { "VCARD_30" };
-  enum ContactRelationshipType { "OTHER", "ASSISTANT", "BROTHER", "CHILD", "DOMESTIC_PARTNER", "FATHER", "FRIEND",
-    "MANAGER", "MOTHER", "PARENT", "PARTNER", "REFERRED_BY", "RELATIVE", "SISTER", "SPOUSE", "CUSTOM" };
-  enum ContactInstantMessengerType { "OTHER", "GOOGLE", "WLM", "YAHOO", "FACEBOOK", "ICQ", "AIM", "QQ", "JABBER",
-    "SKYPE", "IRC", "CUSTOM" };
+  enum ContactRelationshipType { "OTHER", "ASSISTANT", "BROTHER", "CHILD", "DOMESTIC_PARTNER", "FATHER", "FRIEND", "MANAGER", "MOTHER",
+    "PARENT", "PARTNER", "REFERRED_BY", "RELATIVE", "SISTER", "SPOUSE", "CUSTOM" };
+  enum ContactInstantMessengerType { "OTHER", "GOOGLE", "WLM", "YAHOO", "FACEBOOK", "ICQ", "AIM", "QQ", "JABBER", "SKYPE", "IRC",
+    "CUSTOM" };
   enum ContactUsageType { "OUTGOING_CALL", "OUTGOING_MSG", "OUTGOING_EMAIL", "INCOMING_CALL", "INCOMING_MSG", "INCOMING_EMAIL",
     "MISSED_CALL", "REJECTED_CALL", "BLOCKED_CALL", "BLOCKED_MSG" };
   dictionary ContactInit {

@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>TVDisplayControl API</title>
+<meta data-version="6.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::TVDisplayControl">
@@ -226,15 +227,6 @@ For example, Display Control API provides whether your device supports 3D.
 <p><span class="version">Since: </span>
  2.3
             </p>
-<p><span class="privilegelevel">Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">Privilege: </span>
- http://tizen.org/privilege/tv.display
-            </p>
-<p class="warning"><b>Warning:</b>
- http://tizen.org/privilege/tv.display (public level) has been deprecated since 5.0.
-            </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
@@ -281,15 +273,6 @@ catch (error)
 <div class="synopsis"><pre class="signature prettyprint"><a href="#Display3DModeState">Display3DModeState</a> is3DModeEnabled();</pre></div>
 <p><span class="version">Since: </span>
  2.3
-            </p>
-<p><span class="privilegelevel">Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">Privilege: </span>
- http://tizen.org/privilege/tv.display
-            </p>
-<p class="warning"><b>Warning:</b>
- http://tizen.org/privilege/tv.display (public level) has been deprecated since 5.0.
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
@@ -350,15 +333,6 @@ catch (error)
 <div class="synopsis"><pre class="signature prettyprint">void getSupported3DEffectModeList(<a href="#Mode3DEffectListSupportCallback">Mode3DEffectListSupportCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
-            </p>
-<p><span class="privilegelevel">Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">Privilege: </span>
- http://tizen.org/privilege/tv.display
-            </p>
-<p class="warning"><b>Warning:</b>
- http://tizen.org/privilege/tv.display (public level) has been deprecated since 5.0.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -475,8 +449,8 @@ To guarantee the running of this application on a device with a TV display contr
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVDisplayControl {
-  enum Display3DEffectMode { "OFF", "TOP_BOTTOM", "SIDE_BY_SIDE", "LINE_BY_LINE", "VERTICAL_STRIPE", "FRAME_SEQUENCE",
-    "CHECKER_BD", "FROM_2D_TO_3D" };
+  enum Display3DEffectMode { "OFF", "TOP_BOTTOM", "SIDE_BY_SIDE", "LINE_BY_LINE", "VERTICAL_STRIPE", "FRAME_SEQUENCE", "CHECKER_BD",
+    "FROM_2D_TO_3D" };
   enum Display3DModeState { "NOT_CONNECTED", "NOT_SUPPORTED", "READY" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DisplayControlManagerObject">DisplayControlManagerObject</a>;
   [NoInterfaceObject] interface DisplayControlManagerObject {

@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Application API</title>
+<meta data-version="6.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Application">
@@ -382,9 +383,7 @@ The <em>tizen.application </em>object allows access to the Application API's fun
     <a href="#ApplicationCertificate">ApplicationCertificate</a>[] getAppCerts(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString getAppSharedURI(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#ApplicationMetaData">ApplicationMetaData</a>[] getAppMetaData(optional <a href="#ApplicationId">ApplicationId</a>? id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    long addAppInfoEventListener( eventCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void removeAppInfoEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    long addAppStatusChangeListener(<a href="#StatusEventCallback">StatusEventCallback</a> eventCallback, optional <a href="#ApplicationId">ApplicationId</a>? appId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addAppStatusChangeListener(<a href="#StatusEventCallback">StatusEventCallback</a> eventCallback, optional <a href="#ApplicationId">ApplicationId</a>? appId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeAppStatusChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -1221,145 +1220,6 @@ an empty array is returned
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var metaDataArray = tizen.application.getAppMetaData(null);
 console.log("Size of metadata: " + metaDataArray.length);
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="ApplicationManager::addAppInfoEventListener">
-<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::addAppInfoEventListener"></a><code><b><span class="methodName">addAppInfoEventListener</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Adds a listener for receiving any notification for changes in the list of installed applications
-on a device.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 2.4. Instead, <a href="./package.html#PackageManager::setPackageInfoEventListener">tizen.package.setPackageInfoEventListener()</a> allows the app developers to set a listener for getting notified for the changes(add/remove/update) of applications on a device.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">long addAppInfoEventListener( eventCallback);</pre></div>
-<p><span class="version">Since: </span>
- 2.0
-            </p>
-<div class="description">
-            <p>
-It installs a callback that is triggered every time a change occurs on
-the list of installed applications on a device. This change may
-occur due to a new installation, uninstallation, or update of an application.
-            </p>
-            <p>
-When executed, the implementation must immediately return a listener
-ID that identifies the listener. After returning the ID, the change
-detection operation is started asynchronously.
-            </p>
-            <p>
-The <em>ApplicationInformationEventCallback </em>must be invoked every time a new
-application is installed, removed, or updated.
-            </p>
-            <p>
-The change detection must continue until the <em>removeAppInfoEventListener()</em> method is called
-with the corresponding listener identifier.
-            </p>
-           </div>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">eventCallback</span>:
- The method to call when a change on the installed applications is made
-                </li>
-        </ul>
-</div>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">long:</span>
- ID of the listener that can be used to remove the listener later.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if any input parameter is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if it fails to add a listener because of an unknown error.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appEventCallback =
-{
-  oninstalled: function(appInfo)
-  {
-    console.log("The application " + appInfo.name + " is installed");
-  },
-  onupdated: function(appInfo)
-  {
-    console.log("The application " + appInfo.name + " is updated");
-  },
-  onuninstalled: function(appid)
-  {
-    console.log("The application " + appid + " is uninstalled");
-  }
-};
-var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="ApplicationManager::removeAppInfoEventListener">
-<a class="backward-compatibility-anchor" name="::Application::ApplicationManager::removeAppInfoEventListener"></a><code><b><span class="methodName">removeAppInfoEventListener</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Removes the listener to stop receiving notifications for changes on the list of installed applications on a device.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 2.4. Instead, use <a href="./package.html#PackageManager::unsetPackageInfoEventListener">tizen.package.unsetPackageInfoEventListener()</a>.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void removeAppInfoEventListener(long watchId);</pre></div>
-<p><span class="version">Since: </span>
- 2.0
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">watchId</span>:
- An ID that identifies the listener
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type NotFoundError, if the listener is not found with the specified ID.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError, if it fails to remove a listener because of an unknown error.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var appEventCallback =
-{
-  oninstalled: function(appInfo)
-  {
-    console.log("The application " + appInfo.name + " is installed");
-  },
-  onupdated: function(appInfo)
-  {
-    console.log("The application " + appInfo.name + " is updated");
-  },
-  onuninstalled: function(appid)
-  {
-    console.log("The application " + appid + " is uninstalled");
-  }
-};
-var watchId = tizen.application.addAppInfoEventListener(appEventCallback);
-tizen.application.removeAppInfoEventListener(watchId);
 </pre>
 </div>
 </dd>
