@@ -44,6 +44,15 @@ To use the methods and properties of the [Tizen.Multimedia.StreamRecorder](https
 using Tizen.Multimedia;
 ```
 
+And the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+
+```
+<privileges>
+   <privilege>http://tizen.org/privilege/mediastorage</privilege>
+   <privilege>http://tizen.org/privilege/externalstorage</privilege>
+</privileges>
+```
+
 <a name="manage"></a>
 ## Managing Recording Options
 
