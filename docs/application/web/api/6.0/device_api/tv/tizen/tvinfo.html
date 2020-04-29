@@ -44,7 +44,10 @@
                     1.8. <a href="#CaptionEdge">CaptionEdge</a>
 </li>
 <li>
-                    1.9. <a href="#CaptionValue">CaptionValue</a>
+                    1.9. <a href="#CaptionStyle">CaptionStyle</a>
+</li>
+<li>
+                    1.10. <a href="#CaptionValue">CaptionValue</a>
 </li>
 </ul>
 </li>
@@ -98,7 +101,7 @@
           </div>
 <pre class="webidl prettyprint">  enum CaptionInfoKey { "CAPTION_ONOFF_KEY", "CAPTION_MODE_KEY", "CAPTION_FONT_SIZE_KEY", "CAPTION_FONT_STYLE_KEY",
     "CAPTION_FONT_COLOR_KEY", "CAPTION_FONT_OPACITY_KEY", "CAPTION_BG_COLOR_KEY", "CAPTION_BG_OPACITY_KEY", "CAPTION_EDGE_TYPE_KEY",
-    "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY" };</pre>
+    "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY", "CAPTION_STYLE_KEY" };</pre>
 <p><span class="version">Since: </span>
  2.4
           </p>
@@ -128,6 +131,8 @@ CAPTION_EDGE_COLOR_KEY - caption edge color            </li>
 CAPTION_WINDOW_COLOR_KEY - caption window color (only US)            </li>
             <li>
 CAPTION_WINDOW_OPACITY_KEY - caption window opacity mode (only US)            </li>
+            <li>
+CAPTION_STYLE_KEY - style of typographical emphasis of caption font            </li>
           </ul>
          </div>
 </div>
@@ -323,12 +328,32 @@ CAPTION_EDGE_DROP_SHADOWED - drop shadowed edge            </li>
           </ul>
          </div>
 </div>
+<div class="enum" id="CaptionStyle">
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionStyle"></a><h3>1.9. CaptionStyle</h3>
+<div class="brief">
+ Available values for the caption style.
+          </div>
+<pre class="webidl prettyprint">  enum CaptionStyle { "CAPTION_STYLE_DEFAULT", "CAPTION_STYLE_BOLD", "CAPTION_STYLE_ITALIC" };</pre>
+<p><span class="version">Since: </span>
+ 2.4
+          </p>
+<div class="description">
+          <ul>
+            <li>
+CAPTION_STYLE_DEFAULT - default style depending on the system configuration            </li>
+            <li>
+CAPTION_STYLE_BOLD - bold captions            </li>
+            <li>
+CAPTION_STYLE_ITALIC - italic captions            </li>
+          </ul>
+         </div>
+</div>
 <div class="typedef" id="CaptionValue">
-<a class="backward-compatibility-anchor" name="::TVInfo::CaptionValue"></a><h3>1.9. CaptionValue</h3>
+<a class="backward-compatibility-anchor" name="::TVInfo::CaptionValue"></a><h3>1.10. CaptionValue</h3>
 <div class="brief">
  All available values for the caption menu.
           </div>
-<pre class="webidl prettyprint">  typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;</pre>
+<pre class="webidl prettyprint">  typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a> or <a href="#CaptionStyle">CaptionStyle</a>) CaptionValue;</pre>
 <p><span class="version">Since: </span>
  2.4
           </p>
@@ -562,10 +587,10 @@ To guarantee the running of this application on a device with a caption and so o
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVInfo {
-  typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a>) CaptionValue;
+  typedef (<a href="#CaptionState">CaptionState</a> or <a href="#CaptionMode">CaptionMode</a> or <a href="#CaptionFontSize">CaptionFontSize</a> or <a href="#CaptionFontStyle">CaptionFontStyle</a> or <a href="#CaptionColor">CaptionColor</a> or <a href="#CaptionOpacity">CaptionOpacity</a> or <a href="#CaptionEdge">CaptionEdge</a> or <a href="#CaptionStyle">CaptionStyle</a>) CaptionValue;
   enum CaptionInfoKey { "CAPTION_ONOFF_KEY", "CAPTION_MODE_KEY", "CAPTION_FONT_SIZE_KEY", "CAPTION_FONT_STYLE_KEY",
     "CAPTION_FONT_COLOR_KEY", "CAPTION_FONT_OPACITY_KEY", "CAPTION_BG_COLOR_KEY", "CAPTION_BG_OPACITY_KEY", "CAPTION_EDGE_TYPE_KEY",
-    "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY" };
+    "CAPTION_EDGE_COLOR_KEY", "CAPTION_WINDOW_COLOR_KEY", "CAPTION_WINDOW_OPACITY_KEY", "CAPTION_STYLE_KEY" };
   enum CaptionState { "CAPTION_OFF", "CAPTION_ON" };
   enum CaptionMode { "CAPTION_MODE_DEFAULT", "CAPTION_MODE_SERVICE1", "CAPTION_MODE_SERVICE2", "CAPTION_MODE_SERVICE3",
     "CAPTION_MODE_SERVICE4", "CAPTION_MODE_SERVICE5", "CAPTION_MODE_SERVICE6", "CAPTION_MODE_CC1", "CAPTION_MODE_CC2", "CAPTION_MODE_CC3",
@@ -580,6 +605,7 @@ To guarantee the running of this application on a device with a caption and so o
     "CAPTION_OPACITY_DEFAULT" };
   enum CaptionEdge { "CAPTION_EDGE_NONE", "CAPTION_EDGE_RAISED", "CAPTION_EDGE_DEPRESSED", "CAPTION_EDGE_UNIFORM",
     "CAPTION_EDGE_DROP_SHADOWED" };
+  enum CaptionStyle { "CAPTION_STYLE_DEFAULT", "CAPTION_STYLE_BOLD", "CAPTION_STYLE_ITALIC" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInfoManagerObject">TVInfoManagerObject</a>;
   [NoInterfaceObject] interface TVInfoManagerObject {
     readonly attribute <a href="#TVInfoManager">TVInfoManager</a> tvinfo;
