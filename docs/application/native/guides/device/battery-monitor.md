@@ -37,7 +37,7 @@ To enable your application to use the Battery Monitor functionality:
     ```
 
 <a name="appusage_get"></a>
-## Getting Battery Usage Information of Application
+## Get Battery Usage Information of Application
 
 To get the battery usage information related to the application ID:
 
@@ -129,15 +129,15 @@ To get the battery usage information related to the application ID:
 
     error_code = battery_monitor_usage_data_get_power_usage_per_resource(data_handle, resource_id, &battery_usage);
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
-        printf("Battery Usage by CPU is [%lf]", battery_usage);
+        printf("The Battery Usage by CPU is [%lf]", battery_usage);
 
     resource_id = BATTERY_MONITOR_RESOURCE_ID_WIFI;
 
     error_code = battery_monitor_usage_data_get_power_usage_per_resource(data_handle, resource_id, &battery_usage);
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
-        printf("Battery Usage by wifi is [%lf]", battery_usage);
+        printf("The Battery Usage by the Wi-Fi is [%lf]", battery_usage);
     else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
-        printf("Battery usage for above resource is not recorded");
+        printf("The Battery Usage for the resource is not recorded");
 
     /* Similarly for other resources.
     .
@@ -153,7 +153,7 @@ To get the battery usage information related to the application ID:
     ```
 
 <a name="resourceusage_get"></a>
-## Getting Battery Usage Information of Resource
+## Get Battery Usage Information of Resource
 
 To get the battery usage information related to the resource ID:
 
@@ -164,16 +164,16 @@ To get the battery usage information related to the resource ID:
     resource_id = BATTERY_MONITOR_RESOURCE_ID_DISPLAY;
     error_code = battery_monitor_get_power_usage_by_resource(resource_id, from, to, &battery_usage);
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
-        printf("Battery Usage Display in last 1000 seconds is [%lf]", battery_usage);
+        printf("The Battery Usage by Display in the last 1000 seconds is [%lf]", battery_usage);
     else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
-        printf("Battery Usage for Display not recorded");
+        printf("The Battery Usage by Display is not recorded");
 
     resource_id = BATTERY_MONITOR_RESOURCE_ID_WIFI;
     error_code = battery_monitor_get_power_usage_by_resource(resource_id, from, to, &battery_usage);
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
-        printf("Battery Usage Wifi in last 1000 seconds is [%lf]", battery_usage);
+        printf("The Battery Usage by Wi-Fi in the last 1000 seconds is [%lf]", battery_usage);
     else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
-        printf("Battery Usage for Wi-Fi not recorded");
+        printf("The Battery Usage by Wi-Fi is not recorded");
 
     /* Similarly for other resources. */
 
