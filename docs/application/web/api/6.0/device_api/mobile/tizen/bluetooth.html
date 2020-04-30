@@ -19,10 +19,6 @@ The following Bluetooth functionalities are provided:
         </p>
         <ul>
           <li>
-Controls local Bluetooth device, that is, turn Bluetooth on/off, etc.          </li>
-          <li>
-Sets visibility          </li>
-          <li>
 Discovers nearby Bluetooth devices (Device discovery, including Bluetooth LE devices)          </li>
           <li>
 Gets bonded devices information          </li>
@@ -537,7 +533,7 @@ The <em>tizen.bluetooth</em> object allows access to the Bluetooth API.
 <pre class="webidl prettyprint">BluetoothLEServiceData(DOMString uuid, DOMString data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
 </pre>
 </div>
 </dl>
@@ -554,8 +550,8 @@ var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
-service.uuid = "f236-41a4";
+var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
+service.uuid = "f23641a4";
 </pre>
 </div>
 </li>
@@ -568,7 +564,7 @@ service.uuid = "f236-41a4";
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
 service.data = "0x1815";
 </pre>
 </div>
@@ -678,8 +674,8 @@ This dictionary is used as an input parameter of the BluetoothLEAdvertiseData co
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertData =
 {
   includeName: false,
-  uuids: ["f236-41a4"],
-  solicitationuuids: ["5857-4d3f"],
+  uuids: ["f23641a4"],
+  solicitationuuids: ["58574d3f"],
   appearance: 192,
   includeTxPowerLevel: false
 };
@@ -714,8 +710,8 @@ This represents the data to be advertised as well as the scan response data for 
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertData =
 {
   includeName: false,
-  uuids: ["f236-41a4"],
-  solicitationuuids: ["5857-4d3f"],
+  uuids: ["f23641a4"],
+  solicitationuuids: ["58574d3f"],
   appearance: 192,
   includeTxPowerLevel: false
 };
@@ -817,7 +813,7 @@ advertise.includeTxPowerLevel = true;
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
 advertise.serviceData = service;
 </pre>
 </div>
@@ -1043,10 +1039,6 @@ catch (err)
 This interface offers methods to control local Bluetooth behavior, such as:
           </p>
           <ul>
-            <li>
-Turning on/off Bluetooth radio            </li>
-            <li>
-Changing device visibility            </li>
             <li>
 Scanning for remote devices            </li>
             <li>
@@ -4317,10 +4309,10 @@ adapter.startScan(onDeviceFound, onerror);
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
 <li class="list"><p>
- with error type InvalidValuesError: If GATT server is not available.
+ with error type InvalidValuesError, if GATT server is not available.
                 </p></li>
 <li class="list"><p>
- with error type NotSupportedError: If the feature is not supported.
+ with error type NotSupportedError, if the feature is not supported.
                 </p></li>
 <li class="list"><p>
  with error type SecurityError, if the application does not have the privilege to call this method.
