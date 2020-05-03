@@ -18,7 +18,7 @@ The main features of WebView are as follows:
 
 - Executing JavaScript
 
-    You can [execute JavaScript code](#eval) on the context of the current WebView.
+    You can [execute the JavaScript code](#eval) in the context of the current WebView.
 
 - Finalizing WebView
 
@@ -159,9 +159,10 @@ To manage and set the cookie options, use the [Tizen.WebView.CookieManager](http
 <a name="eval"></a>
 ## Executing JavaScript
 
-To execute JavaScript code, use the `Tizen.WebView.Eval` and `Tizen.WebView.EvalAsync` methods.
+To execute the JavaScript code, use the `Tizen.WebView.Eval` and `Tizen.WebView.EvalAsync` methods.
 
-Here is the HTML file used in the below example:
+The following example shows the HTML file used:
+
 
 ```
 <html>
@@ -175,17 +176,16 @@ Here is the HTML file used in the below example:
 </html>
 ```
 
-- If no return value is needed, use the `Tizen.WebView.Eval` method:
-
-    ```
-    webView.Eval("document.getElementById('content-text').innerHTML = 'Tizen'");
-    ```
-
 - If you need a return value, use the `Tizen.WebView.EvalAsync` method:
 
     ```
     string result = await webview.EvalAsync("document.getElementById('content-text').innerHTML");
 
+    ```
+- If you do not need a return value, use the `Tizen.WebView.Eval` method:
+
+    ```
+    webView.Eval("document.getElementById('content-text').innerHTML = 'Tizen'");
     ```
 
 <a name="finalize"></a>
