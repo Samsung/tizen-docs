@@ -33,13 +33,13 @@ To enable your application to use the INM API:
     inm_initialize();
     ```
 
-4. Call the `inm_deinitialize()` function to deinitialize library before quiting:
+4. Call the `stc_deinitialize()` function to deinitialize library before quiting:
 
    ```
    inm_deinitialize();
    ```
    
-## Get Connection Info
+## Get Default Connection Info
 
 To retrieve information about the default connection:
 
@@ -78,7 +78,7 @@ To retrieve information about the default connection:
 	 ret = inm_connection_get_state(conn, conn_state);
 	 ret = inm_connection_get_network_interface_name(conn, &if_name);
 	 if(ret != INM_ERROR_NONE) {
-		 inm_deinitialize(inm);
+         inm_deinitialize(inm);
          printf("Getting basic connection info failed\n");
          return ret;
 	 }
@@ -86,27 +86,28 @@ To retrieve information about the default connection:
 	 printf("conn-info: type[%d] state[%d] if_name[%s]\n",
 			 network_type, conn_state, if_name);
 	 
-	 // get ipv4 address
+	 /* get ipv4 address */
 	 ret = inm_connection_get_ip_address(conn, INM_ADDRESS_FAMILY_IPV4, &ip_addr);
 	 if(ret != INM_ERROR_NONE) {
-		 inm_deinitialize(inm);
+         inm_deinitialize(inm);
          printf("Getting IP address failed\n");
          return ret;
 	 }
 
 	 printf("conn-info: ip_addr[%s]\n", ip_addr);
 	 
-	 // get sent and received bytes data via link
+	 /* get sent and received bytes data via link */
 	 ret = inm_link_get_received_bytes(link, rx_bytes);
 	 ret = inm_link_get_sent_bytes(link, tx_bytes);
 	 if(ret != INM_ERROR_NONE) {
-		 inm_deinitialize(inm);
+         inm_deinitialize(inm);
          printf("Getting received and sent bytes failed\n");
          return ret;
 	 }
 	 
 	 printf("conn-info: rx_bytes[%llu], tx_bytes[%llu]\n", rx_bytes, tx_bytes);
 	 
+	 /* free up allocated memory and deinitialize */
 	 free(if_name);
 	 free(ip_addr);
 	 inm_link_destroy(link);
@@ -114,3 +115,10 @@ To retrieve information about the default connection:
 	 inm_deinitialize(inm);
    }
    ```
+
+You can retreive information about a particular connection 
+
+## Related Information
+- Dependencies
+  - Tizen 5.0 and Higher for Mobile
+  - Tizen 5.0 and Higher for Wearable
