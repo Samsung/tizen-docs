@@ -94,7 +94,7 @@ To get the battery usage information related to the application ID:
 
     /* To get usage for a period of thousand seconds starting two hours before the current epoch time */
     int period_t = 2*60*60; //2 hours in seconds
-    to = now; to -= period_t; from = to - 1000;
+    from = now - period_t; to = from + 1000;
 
     error_code = battery_monitor_get_power_usage_by_app(app_id, from, to, &battery_usage);
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
