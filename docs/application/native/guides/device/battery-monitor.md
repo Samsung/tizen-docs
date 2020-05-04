@@ -67,7 +67,7 @@ To get the battery usage information related to the application ID:
        if (error_code == BATTERY_MONITOR_ERROR_NONE)
            printf("The Battery Usage for appid [%s], for resource cpu is [%lf] mAh", app_id, battery_usage);
        else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
-           printf("The Battery Usage for appid [%s], for resource cpu is not recorded");
+           printf("The Battery Usage for appid [%s], for resource cpu is not recorded, app_id");
        else
            printf("Error Occurred [%d]", error_code);
 
@@ -88,7 +88,7 @@ To get the battery usage information related to the application ID:
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
         printf("The Total Battery Usage for appid [%s] over last 24 hrs is [%lf]", app_id, battery_usage);
     else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
-        printf("The Battery Usage for appid [%s] is not recorded");
+        printf("The Battery Usage for appid [%s] is not recorded", app_id);
     else
         printf("Error Occurred [%d]", error_code);
 
@@ -100,7 +100,7 @@ To get the battery usage information related to the application ID:
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
         printf("The Total Battery Usage for appid [%s] over 1000s interval is [%lf] mAh", app_id, battery_usage);
     else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
-        printf("The Battery Usage for appid [%s] is not recorded");
+        printf("The Battery Usage for appid [%s] is not recorded", app_id);
     else
         printf("Error Occurred [%d]", error_code);
 
@@ -120,7 +120,7 @@ To get the battery usage information related to the application ID:
     if (error_code == BATTERY_MONITOR_ERROR_NONE)
         printf("Data Handle information received");
     else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
-        printf("The Battery Usage for appid [%s] is not recorded");
+        printf("The Battery Usage for appid [%s] is not recorded", app_id);
     else
         printf("Error Occurred [%d]", error_code);
 
