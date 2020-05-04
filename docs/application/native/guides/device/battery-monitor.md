@@ -67,7 +67,7 @@ To get the battery usage information related to the application ID:
        if (error_code == BATTERY_MONITOR_ERROR_NONE)
            printf("The Battery Usage for appid [%s], for resource cpu is [%lf] mAh", app_id, battery_usage);
        else if (error_code == BATTERY_MONITOR_ERROR_RECORD_NOT_FOUND)
-           printf("The Battery Usage for appid [%s], for resource cpu is not recorded, app_id");
+           printf("The Battery Usage for appid [%s], for resource cpu is not recorded", app_id);
        else
            printf("Error Occurred [%d]", error_code);
 
