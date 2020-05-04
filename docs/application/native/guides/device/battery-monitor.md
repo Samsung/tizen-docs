@@ -71,8 +71,6 @@ To get the battery usage information related to the application ID:
        else
            printf("Error Occurred [%d]", error_code);
 
-       free(app_id);
-
        return;
     }
     ```
