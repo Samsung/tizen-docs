@@ -17,7 +17,7 @@ To enable your application to use the INM API:
    ```
    <privileges>
       <privilege>http://tizen.org/privilege/network.get</privilege>
-	  <privilege>http://tizen.org/privilege/network.set</privilege>
+      <privilege>http://tizen.org/privilege/network.set</privilege>
    </privileges>
    ```
 
@@ -66,57 +66,104 @@ To retrieve information about the default connection:
 
      /* retrieve required info */
      inm_link_h link;
-	 inm_connection_type_e network_type;
-	 inm_connection_state_e conn_state;
-	 char *if_name;
-	 char *ip_addr;
-	 unsigned long long rx_bytes;
-	 unsigned long long tx_bytes;
+     inm_connection_type_e network_type;
+     inm_connection_state_e conn_state;
+     char *if_name;
+     char *ip_addr;
+     unsigned long long rx_bytes;
+     unsigned long long tx_bytes;
 
-	 ret = inm_connection_get_link(conn, &link);
-	 ret = inm_connection_get_type(conn, network_type);
-	 ret = inm_connection_get_state(conn, conn_state);
-	 ret = inm_connection_get_network_interface_name(conn, &if_name);
-	 if(ret != INM_ERROR_NONE) {
+     ret = inm_connection_get_link(conn, &link);
+     ret = inm_connection_get_type(conn, network_type);
+     ret = inm_connection_get_state(conn, conn_state);
+     ret = inm_connection_get_network_interface_name(conn, &if_name);
+     if(ret != INM_ERROR_NONE) {
          inm_deinitialize(inm);
          printf("Getting basic connection info failed\n");
          return ret;
-	 }
+     }
 
-	 printf("conn-info: type[%d] state[%d] if_name[%s]\n",
-			 network_type, conn_state, if_name);
-	 
-	 /* get ipv4 address */
-	 ret = inm_connection_get_ip_address(conn, INM_ADDRESS_FAMILY_IPV4, &ip_addr);
-	 if(ret != INM_ERROR_NONE) {
+     printf("conn-info: type[%d] state[%d] if_name[%s]\n",
+             network_type, conn_state, if_name);
+     
+     /* get ipv4 address */
+     ret = inm_connection_get_ip_address(conn, INM_ADDRESS_FAMILY_IPV4, &ip_addr);
+     if(ret != INM_ERROR_NONE) {
          inm_deinitialize(inm);
          printf("Getting IP address failed\n");
          return ret;
-	 }
+     }
 
-	 printf("conn-info: ip_addr[%s]\n", ip_addr);
-	 
-	 /* get sent and received bytes data via link */
-	 ret = inm_link_get_received_bytes(link, rx_bytes);
-	 ret = inm_link_get_sent_bytes(link, tx_bytes);
-	 if(ret != INM_ERROR_NONE) {
+     printf("conn-info: ip_addr[%s]\n", ip_addr);
+     
+     /* get sent and received bytes data via link */
+     ret = inm_link_get_received_bytes(link, rx_bytes);
+     ret = inm_link_get_sent_bytes(link, tx_bytes);
+     if(ret != INM_ERROR_NONE) {
          inm_deinitialize(inm);
          printf("Getting received and sent bytes failed\n");
          return ret;
-	 }
-	 
-	 printf("conn-info: rx_bytes[%llu], tx_bytes[%llu]\n", rx_bytes, tx_bytes);
-	 
-	 /* free up allocated memory and deinitialize */
-	 free(if_name);
-	 free(ip_addr);
-	 inm_link_destroy(link);
-	 inm_connection_destroy(&conn);
-	 inm_deinitialize(inm);
+     }
+     
+     printf("conn-info: rx_bytes[%llu], tx_bytes[%llu]\n", rx_bytes, tx_bytes);
+     
+     /* free up allocated memory and deinitialize */
+     free(if_name);
+     free(ip_addr);
+     inm_link_destroy(link);
+     inm_connection_destroy(&conn);
+     inm_deinitialize(inm);
+     
+     return ret;
    }
    ```
 
-You can retreive information about a particular connection 
+You can retreive information about a particular connection by iterating through the connections using inm_get_connection_iterator() (which returns a connection iterator) and inm_connection_iterator_next() (which gets you a connection handle).
+
+## Monitor Wi-Fi State Change
+
+1. Define a callback function for processing the Wi-Fi state change:
+
+    ```
+    void __wifi_state_changed_cb(inm_wifi_state_e state,
+                                              void *user_data)
+    {
+     /* Do the necessary action when Wi-Fi state has changed */
+    }
+    ```
+    
+2. Set the Wi-Fi state change callback:
+
+    ```
+    int monitor_wifi_state(void)
+    {
+        int ret = INM_ERROR_NONE;
+        inm_h inm;
+        
+        /* initialize library */
+        ret = inm_initialize(&inm);
+        if (ret != INM_ERROR_NONE) {
+            printf("Initialization failed\n");
+            return ret;
+        }
+        
+        ret = inm_set_wifi_state_changed_cb(inm, __wifi_state_changed_cb, NULL);
+        if (ret != INM_ERROR_NONE) {
+            printf("Setting wifi state change callback failed\n");
+            return ret;
+        }
+        else {
+            printf("Successfully set wifi state change callback\n");
+        }
+        
+        /* deinitialize */
+        inm_deinitialize(inm);
+        
+        return ret;
+    }
+    ```
+    
+You can monitor other types of state changes, with inm_set_cellular_state_changed_cb(), inm_set_ethernet_state_changed_cb(), etc.
 
 ## Related Information
 - Dependencies
