@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>TVDisplayControl API</title>
+<meta data-version="3.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::TVDisplayControl">
@@ -463,8 +464,8 @@ To guarantee the running of this application on a device with a TV display contr
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVDisplayControl {
-  enum Display3DEffectMode { "OFF", "TOP_BOTTOM", "SIDE_BY_SIDE", "LINE_BY_LINE", "VERTICAL_STRIPE", "FRAME_SEQUENCE",
-    "CHECKER_BD", "FROM_2D_TO_3D" };
+  enum Display3DEffectMode { "OFF", "TOP_BOTTOM", "SIDE_BY_SIDE", "LINE_BY_LINE", "VERTICAL_STRIPE", "FRAME_SEQUENCE", "CHECKER_BD",
+    "FROM_2D_TO_3D" };
   enum Display3DModeState { "NOT_CONNECTED", "NOT_SUPPORTED", "READY" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DisplayControlManagerObject">DisplayControlManagerObject</a>;
   [NoInterfaceObject] interface DisplayControlManagerObject {

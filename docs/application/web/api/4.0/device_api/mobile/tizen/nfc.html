@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>NFC API</title>
+<meta data-version="4.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::NFC">
@@ -271,8 +272,8 @@ UTF16 - Corresponds to UTF16 NDEF record text encoding.            </li>
 <div class="brief">
  Specifies the type of an NFC tag.
           </div>
-<pre class="webidl prettyprint">  enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A", "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K",
-    "MIFARE_ULTRA", "MIFARE_DESFIRE", "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693", "UNKNOWN_TARGET" };</pre>
+<pre class="webidl prettyprint">  enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A", "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K", "MIFARE_ULTRA",
+    "MIFARE_DESFIRE", "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693", "UNKNOWN_TARGET" };</pre>
 <p><span class="version">Since: </span>
  1.0
           </p>
@@ -665,9 +666,7 @@ catch (err)
     readonly attribute boolean powered;
     attribute <a href="#CardEmulationMode">CardEmulationMode</a> cardEmulationMode raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     attribute <a href="#SecureElementType">SecureElementType</a>? activeSecureElement raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    void setPowered(boolean state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
-                    raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    void setTagListener(<a href="#NFCTagDetectCallback">NFCTagDetectCallback</a> detectCallback, optional <a href="#NFCTagType">NFCTagType</a>[]? tagFilter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setTagListener(<a href="#NFCTagDetectCallback">NFCTagDetectCallback</a> detectCallback, optional <a href="#NFCTagType">NFCTagType</a>[]? tagFilter) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setPeerListener(<a href="#NFCPeerDetectCallback">NFCPeerDetectCallback</a> detectCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetTagListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetPeerListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -815,116 +814,6 @@ If the NFC service is not available, it returns <var>null</var>.
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="deprecated method" id="NFCAdapter::setPowered">
-<a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::setPowered"></a><code><b><span class="methodName">setPowered</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Sets the power of an NFC adapter to either an on state or an off state.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 2.3. Instead, let the user turn NFC on/off through the Settings application. See the <a href="/application/web/guides/connectivity/nfc#managing-nfc-connectivity">Managing NFC</a> Tutorial.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void setPowered(boolean state, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
-<p><span class="version">Since: </span>
- 1.0
-            </p>
-<div class="description">
-            <p>
-The ErrorCallback is launched with these error types:
-            </p>
-            <ul>
-              <li>
- ServiceNotAvailableError - If the NFC device is busy.              </li>
-              <li>
- UnknownError - If any other error occurs.              </li>
-            </ul>
-           </div>
-<p><span class="privilegelevel">Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">Privilege: </span>
- http://tizen.org/privilege/nfc.admin
-            </p>
-<div class="parameters">
-<p><span class="param">Parameters:</span></p>
-<ul>
-          <li class="param">
-<span class="name">state</span>:
- The state of the NFC adapter, <var>true</var> means on, <var>false</var> means off
-                </li>
-          <li class="param">
-<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when the NFC adapter is
-enabled or disabled successfully.
-                </li>
-          <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method to be invoked when an error occurs.
-                </li>
-        </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type TypeMismatchError, if the input parameter
-is not compatible with the expected type for that parameter.
-                </p></li>
-<li class="list"><p>
- with error type SecurityError, if this functionality is not allowed.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var gNfcAdapter;
-var onPowerOn = function()
-{
-  /* Called when NFC adapter is powered on. */
-  try
-  {
-    console.log("Power on succeed");
-    /* Implements NFC communication routines. */
-    gNfcAdapter.setPowered(false,  /* Disable NFC adapter. */
-        function()
-        {
-          console.log("Power off succeed");
-        },  /* Handle success. */
-        function()
-        {
-          console.log("Power off failed");
-        });  /* Handle failure. */
-  }
-  catch (err)
-  {
-    console.log(err.name + ": " + err.message);
-  }
-};
-try
-{
-  gNfcAdapter = tizen.nfc.getDefaultAdapter();
-  if (!gNfcAdapter.powered)
-  {
-    gNfcAdapter.setPowered(true,  /* Enable NFC adapter. */
-        onPowerOn,                /* Handle success. */
-        function()
-        {
-          console.log("Power on failed");
-        });  /* Handle failure. */
-  }
-  else
-  {
-    onPowerOn();
-  }
-}
-catch (err)
-{
-  console.log(err.name + ": " + err.message);
-}
-</pre>
-</div>
-</dd>
 <dt class="method" id="NFCAdapter::setTagListener">
 <a class="backward-compatibility-anchor" name="::NFC::NFCAdapter::setTagListener"></a><code><b><span class="methodName">setTagListener</span></b></code>
 </dt>
@@ -4283,9 +4172,8 @@ To guarantee that the NFC host-based card emulation application runs on a device
 <pre class="webidl prettyprint">module NFC {
   typedef DOMString AID;
   enum NDEFRecordTextEncoding { "UTF8", "UTF16" };
-  enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A", "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K",
-    "MIFARE_ULTRA", "MIFARE_DESFIRE", "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693",
-    "UNKNOWN_TARGET" };
+  enum NFCTagType { "GENERIC_TARGET", "ISO14443_A", "ISO14443_4A", "ISO14443_3A", "MIFARE_MINI", "MIFARE_1K", "MIFARE_4K", "MIFARE_ULTRA",
+    "MIFARE_DESFIRE", "ISO14443_B", "ISO14443_4B", "ISO14443_BPRIME", "FELICA", "JEWEL", "ISO15693", "UNKNOWN_TARGET" };
   enum CardEmulationMode { "ALWAYS_ON", "OFF" };
   enum SecureElementType { "ESE", "UICC", "HCE" };
   enum CardEmulationCategoryType { "PAYMENT", "OTHER" };

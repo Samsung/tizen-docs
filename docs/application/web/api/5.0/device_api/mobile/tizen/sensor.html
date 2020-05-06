@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Sensor API</title>
+<meta data-version="5.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Sensor">
@@ -3123,8 +3124,8 @@ To guarantee that the UV sensor application runs on a device with a UV sensor, d
 <pre class="webidl prettyprint">module Sensor {
   enum MagneticSensorAccuracy { "ACCURACY_UNDEFINED", "ACCURACY_BAD", "ACCURACY_NORMAL", "ACCURACY_GOOD", "ACCURACY_VERYGOOD" };
   enum ProximityState { "FAR", "NEAR" };
-  enum SensorType { "ACCELERATION", "GRAVITY", "GYROSCOPE", "GYROSCOPE_ROTATION_VECTOR", "GYROSCOPE_UNCALIBRATED",
-    "HRM_RAW", "LIGHT", "LINEAR_ACCELERATION", "MAGNETIC", "MAGNETIC_UNCALIBRATED", "PRESSURE", "PROXIMITY", "ULTRAVIOLET" };
+  enum SensorType { "ACCELERATION", "GRAVITY", "GYROSCOPE", "GYROSCOPE_ROTATION_VECTOR", "GYROSCOPE_UNCALIBRATED", "HRM_RAW", "LIGHT",
+    "LINEAR_ACCELERATION", "MAGNETIC", "MAGNETIC_UNCALIBRATED", "PRESSURE", "PROXIMITY", "ULTRAVIOLET" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SensorServiceManagerObject">SensorServiceManagerObject</a>;
   [NoInterfaceObject] interface SensorServiceManagerObject {
     readonly attribute <a href="#SensorService">SensorService</a> sensorservice;

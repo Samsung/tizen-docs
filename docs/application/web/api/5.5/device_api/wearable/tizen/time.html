@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Time API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Time">
@@ -807,8 +808,7 @@ If its date/time exceeds the platform limit, TZDate will be invalid.
     DOMString toDateString();
     DOMString toTimeString();
     DOMString toString();
-<span class="nocode deprecated">    DOMString getTimezoneAbbreviation() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    long secondsFromUTC() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long secondsFromUTC() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     boolean isDST() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#TZDate">TZDate</a>? getPreviousDSTTransition() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#TZDate">TZDate</a>? getNextDSTTransition() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -2374,52 +2374,6 @@ console.log(someDate.toTimeString());
 
 /* Output: "Friday, December 31, 1999, 11:59:59 PM GMT+0000 United Kingdom Time". */
 console.log(someDate.toString());
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="TZDate::getTimezoneAbbreviation">
-<a class="backward-compatibility-anchor" name="::Time::TZDate::getTimezoneAbbreviation"></a><code><b><span class="methodName">getTimezoneAbbreviation</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Determines the time zone abbreviation to be used at a particular date in the time zone.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 2.1.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">DOMString getTimezoneAbbreviation();</pre></div>
-<p><span class="version">Since: </span>
- 1.0
-            </p>
-<div class="description">
-            <p>
-For example, in Toronto this is currently "EST" during the winter months and "EDT" during the
-summer months when daylight savings time is in effect.
-            </p>
-           </div>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">DOMString:</span>
- DOMString The abbreviation of the time zone (such as "EST") <br>If TZDate is invalid, it will return 'Invalid Date'.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if the call failed due to an unknown error.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* The following code uses DEPRECATED methods. */
-/* please do not use this in new applications. */
-var abbreviation = tizen.time.getCurrentDateTime().getTimezoneAbbreviation();
-console.log("The time zone abbreviation is: " + abbreviation);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>The time zone abbreviation is: GMT+09:00
 </pre>
 </div>
 </dd>

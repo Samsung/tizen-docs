@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Power API</title>
+<meta data-version="4.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Power">
@@ -109,10 +110,7 @@ CPU - corresponds to CPU power resource.            </li>
 <div class="brief">
  Specifies the power state for screen resource.
           </div>
-<pre class="webidl prettyprint">  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL", <span class="nocode deprecated">"SCREEN_BRIGHT"</span> };</pre>
-<p class="deprecated"><b>Deprecated.</b>
- SCREEN_BRIGHT is deprecated since Tizen 2.1.
-          </p>
+<pre class="webidl prettyprint">  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL" };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -127,13 +125,10 @@ SCREEN_OFF - This screen state cannot be requested but can only be used in the s
 SCREEN_DIM - The minimal screen state is set to <em>DIM</em> and device does not change to <em>OFF</em> state automatically.            </li>
             <li>
 SCREEN_NORMAL - The minimal screen state is set to <em>NORMAL</em> and device does not change to <em>DIM</em> state automatically.            </li>
-            <li>
-SCREEN_BRIGHT (Deprecated since 2.1) - The minimal screen state is set to <em>BRIGHT</em> and device does not change to <em>NORMAL</em> state automatically.            </li>
           </ul>
           <p>
 <em>DIM</em> state refers to the screen that the backlight is turned off.
 <em>NORMAL</em> state refers to the default screen brightness that a user has configured for the device.
-<em>BRIGHT (Deprecated since 2.1)</em> state refers to the maximum screen brightness that the device provides.
 Note that the change in brightness does not affect the system brightness setting, i.e., the system brightness value is automatically restored when the resource is released or the process is completed.
           </p>
          </div>
@@ -215,9 +210,7 @@ There will be a <em>tizen.power </em>object that allows accessing of a functiona
     void setScreenBrightness(double brightness) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     boolean isScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void restoreScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    void turnScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span><span class="nocode deprecated">    void turnScreenOff() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>  };</pre>
+  };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -576,99 +569,6 @@ var isScreenOn = tizen.power.isScreenOn();
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Restores the screen brightness value to the system default setting value. */
 tizen.power.restoreScreenBrightness();
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="PowerManager::turnScreenOn">
-<a class="backward-compatibility-anchor" name="::Power::PowerManager::turnScreenOn"></a><code><b><span class="methodName">turnScreenOn</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Turns on the screen.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 2.4. Use <a href="#PowerManager::request">request()</a> instead.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void turnScreenOn();</pre></div>
-<p><span class="version">Since: </span>
- 2.0
-            </p>
-<div class="description">
-            <p>
-This API triggers turn-on process and then updates the status when it completes. While the operation is on-going, the isScreenOn() method returns false.
-            </p>
-           </div>
-<p><span class="privilegelevel">Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">Privilege: </span>
-      http://tizen.org/privilege/power
-            </p>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type NotSupportedError, if this feature is not supported.
-                </p></li>
-<li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError in any other error case.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Turns the screen on. */
-tizen.power.turnScreenOn();
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="PowerManager::turnScreenOff">
-<a class="backward-compatibility-anchor" name="::Power::PowerManager::turnScreenOff"></a><code><b><span class="methodName">turnScreenOff</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Turns off the screen.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 2.4. Use <a href="#PowerManager::request">request()</a> instead.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">void turnScreenOff();</pre></div>
-<p><span class="version">Since: </span>
- 2.0
-            </p>
-<div class="description">
-            <p>
-This API triggers turn-off process and then updates the status when it completes.
-While the operation is on-going, the isScreenOn() method returns true.
-            </p>
-           </div>
-<p><span class="privilegelevel">Privilege level: </span>
- public
-            </p>
-<p><span class="privilege">Privilege: </span>
-      http://tizen.org/privilege/power
-            </p>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul>
-<li class="list"><p>
- with error type NotSupportedError, if this feature is not supported.
-                </p></li>
-<li class="list"><p>
- with error type SecurityError, if the application does not have the privilege to call this method.
-                </p></li>
-<li class="list"><p>
- with error type UnknownError in any other error case.
-                </p></li>
-</ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Turns the screen off. */
-tizen.power.turnScreenOff();
 </pre>
 </div>
 </dd>
