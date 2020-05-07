@@ -3,7 +3,7 @@
 
 Multi-assistant allows the user to install and use multiple voice assistants on the same machine.
 
-The Multi-assistant framework will manage voice assistants that are built with Multi-assistant client library and will activate one among them when either wake word is detected or voice key is pressed.
+The Multi-assistant framework manages voice assistants that are built with Multi-assistant client library and activates one among them when either the wake word is detected or the voice key is pressed.
 
 The main features of the Multi-assistant API include:
 
@@ -13,19 +13,19 @@ The main features of the Multi-assistant API include:
 
   - Client state
 
-    The state is changed by functions and applied as a precondition of each API.
+The client state is changed by functions and applied as a precondition for each API.
 
   - Service state
 
-    The service state is changed when the user starts or stops interacting with installed voice assistants.
+The service state is changed when the user starts or stops interacting with the installed voice assistants.
 
   - Active state
 
-    Active state indicates whether the current client application is expected to serve as an active voice assistant for the user. An active voice assistant is responsible for responding to user utterance and should provide appropriate feedback.
+Active state indicates whether the current client application is expected to serve as an active voice assistant for the user or not. An active voice assistant is responsible for responding to the user utterance and must provide appropriate feedback.
 
   - Audio Data
 
-    When the assistant gets activated, it will retrieve the user utterance audio data from the Multi-assistant framework in order to process user's voice command.
+When the assistant gets activated, it retrieves the user utterance audio data from the Multi-assistant framework in order to process user's voice command.
 
 - Updating result information
 
@@ -45,9 +45,9 @@ The main features of the Multi-assistant API include:
 
   - Adjust background volume
 
-    When a voice assistant starts playing voice feedback, it can request to adjust the background volume for making the voice feedback more audible.
+When a voice assistant starts playing the voice feedback, it can request to adjust the background volume for making the voice feedback more audible.
 
-To use the functionalities of Multi-assistant framework:
+To use functionalities of the Multi-assistant framework:
 
 1. Set up Multi-assistant client library and [register callbacks](#callback).
 
