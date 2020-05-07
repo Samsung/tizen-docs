@@ -937,6 +937,7 @@
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Voice Control](/application/native/guides/text-input/voice-control.md)
 #### [Voice Control Engine](/application/native/guides/text-input/voice-control-engine.md)
+#### [Multi-assistant](/application/native/guides/text-input/multi-assistant.md)
 
 ### Personal Data
 #### [Overview](/application/native/guides/personal/overview.md)
