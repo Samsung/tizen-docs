@@ -179,8 +179,7 @@ The following example shows the HTML file used:
 - If you need a return value, use the `Tizen.WebView.EvalAsync` method:
 
     ```
-    string result = await webview.EvalAsync("document.getElementById('content-text').innerHTML");
-
+    string result = await webView.EvalAsync("document.getElementById('content-text').innerHTML");
     ```
 - If you do not need a return value, use the `Tizen.WebView.Eval` method:
 
