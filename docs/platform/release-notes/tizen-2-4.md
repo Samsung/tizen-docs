@@ -470,7 +470,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 **Known Issues**
 
 - Installer and Update Manager
-  -  The update command of the 2.4 rev1 and rev2 CLI installer has some errors. If you use the 2.4 rev1 or rev2 CLI installer, the Tizen SDK update fails.  To solve the problem, download [CLI installer patch files](http://download.tizen.org/sdk/old/patches/), and do the following (or upgrade your CLI installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tizen-studio/download)):
+  -  The update command of the 2.4 rev1 and rev2 CLI installer has some errors. If you use the 2.4 rev1 or rev2 CLI installer, the Tizen SDK update fails.  To solve the problem, download CLI installer patch files, and do the following (or upgrade your CLI installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tizen-studio/download)):
     - Open the terminal or command line, and go to the location where you have downloaded the patch file.
     - Move the patch file to the location where the SDK is installed.
     - At the prompt, enter the update-manager-cli_2.4_patch update_{OS}_{bit}.{bin|exe} command to install the patch.
