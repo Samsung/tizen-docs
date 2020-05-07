@@ -230,6 +230,7 @@
 ### [Context](/application/dotnet/samples/context/overview.md)
 ### [General](/application/dotnet/samples/general/overview.md)
 ### [Location](/application/dotnet/samples/location/overview.md)
+### [Machine Learning](/application/dotnet/samples/machinelearning/overview.md)
 ### [Messaging](/application/dotnet/samples/messaging/overview.md)
 ### [Multimedia](/application/dotnet/samples/multimedia/overview.md)
 ### [Network](/application/dotnet/samples/network/overview.md)
