@@ -13,19 +13,19 @@ The main features of the Multi-assistant API include:
 
   - Client state
 
-The client state is changed by functions and applied as a precondition for each API.
+    The client state is changed by functions and applied as a precondition for each API.
 
   - Service state
 
-The service state is changed when the user starts or stops interacting with the installed voice assistants.
+    The service state is changed when the user starts or stops interacting with the installed voice assistants.
 
   - Active state
 
-Active state indicates whether the current client application is expected to serve as an active voice assistant for the user or not. An active voice assistant is responsible for responding to the user utterance and must provide appropriate feedback.
+    Active state indicates whether the current client application is expected to serve as an active voice assistant for the user or not. An active voice assistant is responsible for responding to the user utterance and must provide appropriate feedback.
 
   - Audio Data
 
-When the assistant gets activated, it retrieves the user utterance audio data from the Multi-assistant framework in order to process user's voice command.
+    When the assistant gets activated, it retrieves the user utterance audio data from the Multi-assistant framework in order to process user's voice command.
 
 - Updating result information
 
