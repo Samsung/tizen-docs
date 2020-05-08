@@ -55,21 +55,21 @@ To use functionalities of the Multi-assistant framework:
 
 2. Prepare the Multi-assistant client library.
 
-   The preparation connects the client application to the Multi-assistant service for start exchanging messages with Mutli-assistant framework and wakeup engines.
+   The preparation connects the client application to the Multi-assistant service to start exchanging messages with Mutli-assistant framework and wakeup engines.
 
 3. Retrieve audio data when activated.
 
-   If the registered active state changed event callback function is called with ACTIVE parameter, it's time for you to ask for user utterance data so that the query could be processed by your voice assistant.
+   If the registered active state changed event callback function is called with the ACTIVE parameter, then you must ask for the user utterance data so that the query could be processed by your voice assistant.
 
 4. Send the result.
 
-   While you're processing the user utterance, it's better to update the partially converted ASR result to Multi-assistant framework so that it can display visual feedback to the user.
+   While you are processing the user utterance, it is recomended to update the partially converted ASR result to the Multi-assistant framework so that it can display the visual feedback to the user.
 
    When the processing work is finished, you can send the final result to the Multi-assistant framework to display the result, and also send recognition result to report whether the audio data processing has succeeded or not.
 
 5. When no longer needed, unprepare and deinitialize the Multi-assistant client library.
 
-   You must disconnect from the Multi-assistant service and deinitialize the client library using the `ma_unprepare()` and `ma_deinitialize()` functions.
+   You must disconnect from the Multi-assistant service and deinitialize the client library using `ma_unprepare()` and `ma_deinitialize()`.
 
 
 ## Prerequisites
@@ -82,7 +82,7 @@ To enable your application to use the Multi-assistant functionality:
    #include <multi_assistant.h>
    ```
 
-2. Initialize the Multi-assistant client library with the `ma_initialize()` function:
+2. Initialize the Multi-assistant client library with `ma_initialize()`:
 
    ```c
    void
@@ -97,10 +97,10 @@ To enable your application to use the Multi-assistant functionality:
 
    If the function call is successful, the client state changes to `MA_STATE_INITIALIZED`.
 
-   > **Note**  
+   > [!NOTE]
    > The Mutli-assistant client feature is not thread-safe and depends on the Ecore main loop. Implement Multi-assistant within the Ecore main loop and do not use it in a thread.
 
-3. Prepare the Multi-assistant with the `ma_prepare()` function, which connects the client application to the Multi-assistant service. The Multi-assistant service records user utterance and manages wakeup engines to detect wake word from the audio data.
+3. Prepare Multi-assistant with `ma_prepare()`, which connects the client application to the Multi-assistant service. The Multi-assistant service records user utterance and manages wakeup engines to detect the wake word from the audio data.
 
    ```c
    void
@@ -113,7 +113,7 @@ To enable your application to use the Multi-assistant functionality:
    }
    ```
 
-   The `ma_prepare()` function is asynchronous, and when the preparation succeeds, the client state changes from `MA_STATE_INITIALIZED` to `MA_STATE_READY`. If the `ma_prepare()` function fails, the error callback is triggered.
+   `ma_prepare()` is asynchronous and when the preparation succeeds, the client state changes from `MA_STATE_INITIALIZED` to `MA_STATE_READY`. If `ma_prepare()` fails, the error callback is triggered.
 
 4. When the Multi-assistant is no longer needed, unprepare and deinitialize it:
 
@@ -137,20 +137,20 @@ To enable your application to use the Multi-assistant functionality:
    }
    ```
 
-   When the `ma_unprepare()` function succeeds, the client state changes from `MA_STATE_READY` to `MA_STATE_INITIALIZED`.
+   When `ma_unprepare()` succeeds, the client state changes from `MA_STATE_READY` to `MA_STATE_INITIALIZED`.
 
-   > **Note**  
-   > Do not call the `ma_deinitialize()` function in a callback. Within a callback, the `ma_deinitialize()` function fails and returns `MA_ERROR_OPERATION_FAILED`.
+   > [!NOTE]
+   > Do not call `ma_deinitialize()` in a callback. Within a callback, `ma_deinitialize()` fails and returns `MA_ERROR_OPERATION_FAILED`.
 
 
 <a name="callback"></a>
-## Managing Callbacks
+## Manage callbacks
 
 For more information on the callback functions, see the `multi_assistant_common.h` header file, where they are defined.
 
 To set and unset callbacks to get notifications about state changes, errors and audio data retrieval:
 
-> **Note**  
+> [!NOTE]
 > Set and unset all callbacks when the client state is `MA_STATE_INITIALIZED`.
 
 - Set the state change callback to be invoked when the client state changes:
@@ -186,14 +186,14 @@ To set and unset callbacks to get notifications about state changes, errors and 
 
 - Set the service state change callback to be invoked when the Multi-assistant service state changes:
 
-  The user controls the Multi-assistant service state. In a general scenario:
+  User controls the Multi-assistant service state. In a general scenario:
 
-  1. If the system is configured to use Multi-assistant feature, then after system boots the Multi-assistant service will have the state `MA_SERVICE_STATE_LISTENING`.
-  2. The user starts giving voice command to the system, by saying wake word or pressing voice button. If the start is successful, the Multi-assistant service state changes to `MA_SERVICE_STATE_UTTERANCE`.
+  1. If the system is configured to use the Multi-assistant feature, then after the system boots the Multi-assistant service will have the `MA_SERVICE_STATE_LISTENING` state.
+  2. User starts giving the voice command to the system by saying the wake word or pressing the voice button. If the start is successful, the Multi-assistant service state changes to `MA_SERVICE_STATE_UTTERANCE`.
   3. After recording, the service state changes to `MA_SERVICE_STATE_PROCESSING` for recognition processing.
-  4. After recognition is completed, the service state returns to `MA_SERVICE_STATE_LISTENING`.
+  4. After the recognition is completed, the service state returns to `MA_SERVICE_STATE_LISTENING`.
 
-  If the system configuration changes that makes the Multi-assistant feature to be not available, the Multi-assistant service state can be changed to `MA_SERVICE_STATE_INACTIVE`.
+  If the system configuration changes and because of this if the Multi-assistant feature is not available, then the Multi-assistant service state can be changed to `MA_SERVICE_STATE_INACTIVE`.
 
   ```c
   /* Callback */
@@ -286,7 +286,7 @@ To set and unset callbacks to get notifications about state changes, errors and 
   }
   ```
 
-- Set the error callback to be invoked when an error occurs while processing Multi-assistant related tasks:
+- Set the error callback to be invoked when an error occurs while processing the Multi-assistant related tasks:
 
   ```c
   /* Callback */
@@ -318,13 +318,13 @@ To set and unset callbacks to get notifications about state changes, errors and 
   ```
 
 <a name="info"></a>
-## Retrieving Multi-assistant Information
+## Retrieve Multi-assistant information
 
 To get information about the current client state and current language:
 
-- Get the current client state using the `ma_get_state()` function.
+- Get the current client state using `ma_get_state()`.
 
-  The client state changes according to function calls when the Multi-assistant client library is, for example, initialized and prepared.
+  The client state changes according to function calls when the Multi-assistant client library is, for example, initialized and prepared:
 
   ```c
   void
@@ -338,7 +338,7 @@ To get information about the current client state and current language:
   }
   ```
 
-- Get the current language with the `ma_get_current_language()` function. The wake word detection works for the current (default) language. Use the language change callback to be notified of language changes.
+- Get the current language with `ma_get_current_language()`. The wake word detection works for the current (default) language. Use the language change callback to get language change notifications.
 
     ```c
     void
@@ -352,7 +352,7 @@ To get information about the current client state and current language:
     }
     ```
 
-## Monitoring Language Changes
+## Monitor language change
 
 To monitor the system or application language changes:
 
@@ -388,11 +388,11 @@ To monitor the system or application language changes:
   ```
 
 
-## Updating result information
+## Update result information
 
 To keep the Multi-assistant framework updated about the current progress on voice command processing, voice assistants need to update various types of result information.
 
-1. When the audio data is translated into text using ASR technology, it is recommended to update partial ASR result to the Multi-assistant framework so that the partial ASR result is displayed as a visual feedback to the user utterance:
+1. When the audio data is translated into text using the ASR technology, it is recommended to update the partial ASR result to the Multi-assistant framework so that the partial ASR result is displayed as a visual feedback to the user utterance:
 
    ```c
    void
@@ -418,7 +418,7 @@ To keep the Multi-assistant framework updated about the current progress on voic
    }
    ```
 
-3. If is also possible to just let the Multi-assistant framework know about the recognition result, indicating whether the recognition succeeded or not:
+3. It is possible to let the Multi-assistant framework know about the recognition result, indicating whether the recognition succeeded or not:
 
    ```c
    void
@@ -438,7 +438,7 @@ To keep the Multi-assistant framework updated about the current progress on voic
    }
    ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 5.5 and Higher for Mobile
   - Tizen 5.5 and Higher for Wearable
