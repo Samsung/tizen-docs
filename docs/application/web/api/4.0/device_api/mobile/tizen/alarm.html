@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Alarm API</title>
+<meta data-version="4.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Alarm">
@@ -825,7 +826,7 @@ console.log("remaining time is " + sec);
           </div>
 <pre class="webidl prettyprint">  [Constructor(Date date),
    Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek),
-   Constructor(Date date, long period)]
+   <span class="nocode deprecated">Constructor(Date date, long period)</span>]
   interface AlarmAbsolute : <a href="#Alarm">Alarm</a> {
     readonly attribute Date date;
 <span class="nocode deprecated">    readonly attribute long? period;
@@ -840,9 +841,6 @@ console.log("remaining time is " + sec);
 If a <em>period</em> is provided, the alarm keeps triggering for the given interval. If the <em>daysOfTheWeek</em> array is not empty, the alarm triggers every week, for the given days, at the time defined by the <em>date</em> attribute.
           </p>
          </div>
-<p class="warning"><b>Warning:</b>
- Since Tizen 4.0 constructor AlarmAbsolute(Date date, long period) is deprecated.
-          </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the current application ID. */
 var appId = tizen.application.getCurrentApplication().appInfo.id;
@@ -874,10 +872,13 @@ tizen.alarm.add(alarm3, appId);
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, <a href="#ByDayValue">ByDayValue</a>[])</span></b></code>
 </dt>
 <pre class="webidl prettyprint">AlarmAbsolute(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek);</pre>
-<dt class="method" id="">
+<dt class="extendedattribute deprecated" id="">
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, long)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">AlarmAbsolute(Date date, long period);</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">AlarmAbsolute(Date date, long period);</span></pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Since Tizen 4.0 constructor AlarmAbsolute(Date date, long period) is deprecated.
+              </p>
 </dl>
 </div>
 <div class="attributes">
@@ -1015,8 +1016,7 @@ console.log("next scheduled time is " + date);
     long? getRemainingSeconds() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [Constructor(Date date),
-   Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek),
-   Constructor(Date date, long period)]
+   Constructor(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek)]
   interface AlarmAbsolute : <a href="#Alarm">Alarm</a> {
     readonly attribute Date date;
     readonly attribute <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek;

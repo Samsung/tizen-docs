@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>TVAudioControl API</title>
+<meta data-version="4.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::TVAudioControl">
@@ -800,8 +801,8 @@ To guarantee the running of this application on a device with a TV audio control
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVAudioControl {
   enum AudioOutputMode { "PCM", "DOLBY", "DTS", "AAC" };
-  enum AudioBeepType { "UP", "DOWN", "LEFT", "RIGHT", "PAGE_LEFT", "PAGE_RIGHT", "BACK", "SELECT", "CANCEL", "WARNING",
-    "KEYPAD", "KEYPAD_ENTER", "KEYPAD_DEL", "MOVE", "PREPARING" };
+  enum AudioBeepType { "UP", "DOWN", "LEFT", "RIGHT", "PAGE_LEFT", "PAGE_RIGHT", "BACK", "SELECT", "CANCEL", "WARNING", "KEYPAD",
+    "KEYPAD_ENTER", "KEYPAD_DEL", "MOVE", "PREPARING" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AudioControlManagerObject">AudioControlManagerObject</a>;
   [NoInterfaceObject] interface AudioControlManagerObject {
     readonly attribute <a href="#AudioControlManager">AudioControlManager</a> tvaudiocontrol;

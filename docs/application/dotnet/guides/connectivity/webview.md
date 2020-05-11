@@ -16,6 +16,10 @@ The main features of WebView are as follows:
 
     You can [set the cookie policy and the storage](#cookie) for the cookie.
 
+- Executing JavaScript
+
+    You can [execute the JavaScript code](#eval) in the context of the current WebView.
+
 - Finalizing WebView
 
     You can [shut down the WebView](#finalize) and clean up the resources.
@@ -150,6 +154,37 @@ To manage and set the cookie options, use the [Tizen.WebView.CookieManager](http
 
     ```
     cookieManager.SetPersistentStorage(DirectoryInfo.Data, CookiePersistentStorage.SqlLite);
+    ```
+
+<a name="eval"></a>
+## Executing JavaScript
+
+To execute the JavaScript code, use the `Tizen.WebView.Eval` and `Tizen.WebView.EvalAsync` methods.
+
+The following example shows the HTML file used:
+
+
+```
+<html>
+<body>
+    <div id="main" class="page">
+        <div class="contents">
+            <span id="content-text">Basic</span>
+        </div>
+    </div>
+</body>
+</html>
+```
+
+- If you need a return value, use the `Tizen.WebView.EvalAsync` method:
+
+    ```
+    string result = await webView.EvalAsync("document.getElementById('content-text').innerHTML");
+    ```
+- If you do not need a return value, use the `Tizen.WebView.Eval` method:
+
+    ```
+    webView.Eval("document.getElementById('content-text').innerHTML = 'Tizen'");
     ```
 
 <a name="finalize"></a>

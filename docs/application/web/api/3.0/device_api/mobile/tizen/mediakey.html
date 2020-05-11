@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MediaKey API</title>
+<meta data-version="3.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MediaKey">
@@ -308,8 +309,8 @@ To guarantee that the Media Key application runs on a device with Bluetooth feat
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module MediaKey {
-  enum MediaKeyType { "MEDIA_PLAY", "MEDIA_STOP", "MEDIA_PAUSE", "MEDIA_PREVIOUS", "MEDIA_NEXT", "MEDIA_FAST_FORWARD",
-    "MEDIA_REWIND", "MEDIA_PLAY_PAUSE" };
+  enum MediaKeyType { "MEDIA_PLAY", "MEDIA_STOP", "MEDIA_PAUSE", "MEDIA_PREVIOUS", "MEDIA_NEXT", "MEDIA_FAST_FORWARD", "MEDIA_REWIND",
+    "MEDIA_PLAY_PAUSE" };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaKeyManagerObject">MediaKeyManagerObject</a>;
   [NoInterfaceObject] interface MediaKeyManagerObject {
     readonly attribute <a href="#MediaKeyManager">MediaKeyManager</a> mediakey;
