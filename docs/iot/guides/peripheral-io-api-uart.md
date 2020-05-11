@@ -50,7 +50,7 @@ To open and close a handle:
 
     The `port` parameter required for this function must be set according to the following tables.
 
-    **Table: Raspberry Pi 3**
+    **Table: Raspberry Pi 3 and Raspberry Pi 4**
 
     | Pin name | | Port (parameter 1) |
     | -------- | ---------| ---- |
