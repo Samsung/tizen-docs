@@ -318,6 +318,7 @@ package:
 | `http://tizen.org/feature/shortcut`      | Specify this key, if the application requires the shortcut feature. | 4.0   |
 | `http://tizen.org/feature/sip.voip`      | Specify this key, if the application requires the Voice Over Internet Protocol (VOIP) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
+| `http://tizen.org/feature/speech.control_manager` | Specify this key, if the application requires the voice control manager feature. | 5.5   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
 | `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
@@ -497,6 +498,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
 | `http://tizen.org/feature/sip.voip`      | Specify this key, if the application requires the Voice Over Internet Protocol (VOIP) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
+| `http://tizen.org/feature/speech.control_manager` | Specify this key, if the application requires the voice control manager feature. | 5.5   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
 | `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
