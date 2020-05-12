@@ -59,6 +59,7 @@ To obtain the information, query a feature or system key.
    - [Shell](#shell)
    - [Sip](#sip)
    - [Speech](#speech)
+   - [Sticker](#sticker)
    - [Storage](#storage)
    - [System setting](#systemsetting)
    - [Thermistor](#thermistor)
@@ -657,6 +658,15 @@ The following table lists the speech feature keys:
 | `http://tizen.org/feature/speech.control` | `bool` | The platform returns `true` for this key, if the device supports voice control. |
 | `http://tizen.org/feature/speech.recognition` | `bool` | The platform returns `true` for this key, if the device supports speech recognition (STT). |
 | `http://tizen.org/feature/speech.synthesis` | `bool` | The platform returns `true` for this key, if the device supports speech synthesis (TTS). |
+
+The following table lists the sticker feature keys:
+
+<a name="sticker"></a>
+**Table: Sticker feature keys**
+
+| Key                                           | Type   | Description                              |
+|-----------------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/ui_service.sticker` | `bool` | The platform returns `true` for this key, if the device supports Sticker API. |
 
 The following table lists the external storage feature keys:
 
