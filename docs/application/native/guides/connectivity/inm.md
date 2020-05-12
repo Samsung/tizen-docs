@@ -16,7 +16,7 @@ Intelligent Network Monitoring (INM) API is used to get information about the ne
 
 To enable your application to use the INM API:
 
-1. To use the INM API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1. To use the INM API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```xml
    <privileges>
@@ -30,7 +30,7 @@ To enable your application to use the INM API:
    #include <inm.h>
    ```
 
-3. Call `inm_initialize()` to initialize library:
+3. Call `inm_initialize()` to initialize the library:
 
     ```cpp
     inm_initialize();
