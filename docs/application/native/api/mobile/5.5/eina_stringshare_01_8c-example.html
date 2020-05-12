@@ -125,13 +125,13 @@ main(<span class="keywordtype">int</span> argc <a name="a0"></a><a class="code" 
    <a class="code" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del</a>(str2);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str2);
 
-   <a name="a9"></a><a class="code" href="group__Eina__Stringshare__Group.html#ga9e32a137ce8c4cd5f6ec3dbde3dbedd8">eina_stringshare_replace</a>(&amp;str, prologe);
+   eina_stringshare_replace(&amp;str, prologe);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str);
 
    <a class="code" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del</a>(str);
    <a class="code" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del</a>(str2);
 
-   <a name="a10"></a><a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
+   <a name="a9"></a><a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
 
    <span class="keywordflow">return</span> 0;
 }

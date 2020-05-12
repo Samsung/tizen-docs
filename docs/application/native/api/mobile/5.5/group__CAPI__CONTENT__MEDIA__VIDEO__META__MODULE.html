@@ -176,7 +176,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html#ga6e9d723853940da6a0460ed393de469b">video_meta_get_year</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html#ga0398e2aac629ff119977992553053cd8">video_meta_h</a> video, char **year)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the year of the given video metadata.  <a href="#ga6e9d723853940da6a0460ed393de469b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html#ga6aa8181dc48cc502e290d7d2eff0088e">video_meta_get_recorded_date</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html#ga0398e2aac629ff119977992553053cd8">video_meta_h</a> video, char **recorded_date)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the recorded date of the video.  <a href="#ga6aa8181dc48cc502e290d7d2eff0088e"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the recorded date of the given video metadata.  <a href="#ga6aa8181dc48cc502e290d7d2eff0088e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html#gaf61cf1d30de6843b4b8a09cba01a0504">video_meta_get_copyright</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html#ga0398e2aac629ff119977992553053cd8">video_meta_h</a> video, char **copyright)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the copyright notice of the given video metadata.  <a href="#gaf61cf1d30de6843b4b8a09cba01a0504"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html#gaec15e31abdb72d514dde53fea5920d6a">video_meta_get_track_num</a> (<a class="el" href="group__CAPI__CONTENT__MEDIA__VIDEO__META__MODULE.html#ga0398e2aac629ff119977992553053cd8">video_meta_h</a> video, char **track_num)</td></tr>
@@ -801,9 +801,9 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Gets the recorded date of the video. </p>
-<p>The recorded date is got from video file's metadata. Some formats like mp4 use UTC and the rest can be different. <br/>
- So, please refer to the format specification if needed.</p>
+<p>Gets the recorded date of the given video metadata. </p>
+<p>The format of the recorded date may vary depending on the file format. <br/>
+ For more details on the recorded date format, refer to the file format specification.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>recorded_date</em> should be released using free().</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>

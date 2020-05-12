@@ -94,26 +94,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Retrieves if the system wants to share bitmaps using the server. </p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it wants, <code>EINA_FALSE</code> otherwise.  Retrieves if the system is connected to the server used to share bitmaps.</dd>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if it wants, <code>EINA_FALSE</code> otherwise. Retrieves if the system is connected to the server used to share bitmaps.</dd>
 <dd>
-<code>EINA_TRUE</code> if it's connected, <code>EINA_FALSE</code> otherwise.  Retrieves statistics from a running bitmap sharing server. </dd></dl>
+<code>EINA_TRUE</code> if it's connected, <code>EINA_FALSE</code> otherwise. Retrieves statistics from a running bitmap sharing server. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">stats</td><td>pointer to structure to fill with statistics about the bitmap cache server.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>stats</code> were filled with data, <code>EINA_FALSE</code> otherwise (when <code>stats</code> is untouched)  Completely discard/clean a given images cache, thus re-setting it.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>stats</code> were filled with data, <code>EINA_FALSE</code> otherwise (when <code>stats</code> is untouched) Completely discard/clean a given images cache, thus re-setting it.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cache</td><td>A handle to the given images cache.  Retrieves the current configuration of the Evas image caching server.</td></tr>
+    <tr><td class="paramname">cache</td><td>A handle to the given images cache. Retrieves the current configuration of the Evas image caching server.</td></tr>
     <tr><td class="paramname">config</td><td>where to store current image caching server's configuration.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>config</code> was filled with data, <code>EINA_FALSE</code> otherwise (when <code>config</code> is untouched)</dd></dl>
 <p>The fields of <code>config</code> will be altered to reflect the current configuration's values.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_cserve_config_set()  Changes the configurations of the <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> image caching server.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_cserve_config_set() Changes the configurations of the <a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> image caching server.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">config</td><td>A bitmap cache configuration handle with fields set to desired configuration values. </td></tr>
@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if <code>config</code> was successfully applied, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>evas_cserve_config_get()  Force the system to disconnect from the bitmap caching server. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>evas_cserve_config_get() Force the system to disconnect from the bitmap caching server.</dd></dl>
 <p>Some functions that are handy but are not specific of canvas or objects. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>

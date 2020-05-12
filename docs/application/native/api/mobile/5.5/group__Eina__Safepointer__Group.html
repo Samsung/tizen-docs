@@ -150,8 +150,7 @@ Typedefs</h2></td></tr>
 The lower 2 bits of the returned pointer will always be 0.</dd>
 <dd>
 The returned pointer can be used like a pointer, but cannot be touched except with Eina_Safepointer functions.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Unregister an Eina_Safepointer and the pointer that maps to it.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Unregister an Eina_Safepointer and the pointer that maps to it.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">safe</td><td>The index to unregister from the mapping.</td></tr>
@@ -159,8 +158,7 @@ The returned pointer can be used like a pointer, but cannot be touched except wi
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function will ignore the lower 2 bits of the given pointer.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Get the associated pointer from an Eina_Safepointer mapping.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Get the associated pointer from an Eina_Safepointer mapping.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">safe</td><td>The Eina_Safepointer index to lookup at. </td></tr>
@@ -169,7 +167,6 @@ The returned pointer can be used like a pointer, but cannot be touched except wi
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The pointer registered with that index or <code>NULL</code> in any other case.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>It is always safe to ask for a pointer for any value of the mapping. If the pointer is invalid or <code>NULL</code>, we will return <code>NULL</code> and not crash. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>

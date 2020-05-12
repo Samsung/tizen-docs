@@ -3522,7 +3522,7 @@ You can pass NULL to <em>multi</em>, if you want to remove multi-language text. 
 <p>Creates the notification_ex item handle for the chat message. </p>
 <p>The notification_ex item is the predefined type of notifications. The notification can be created with one item or group of items. If the user wants to create a chat message notification, notification_ex handle has to be created as a chat message item. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>handle</em> must be released using <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy()</a>. <em>name</em>, <em>text</em>, <em>image</em> and <em>time</em> must not be released if the function returns <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a9e977eefd9b728ad45d83057f683633e">NOTI_EX_ERROR_NONE</a>. <em>name</em>, <em>text</em>, <em>image</em> and <em>time</em> will be released when <em>handle</em> is released. <em>name</em> and <em>time</em> are mandatory (cannot be null). <em>text</em> and <em>image</em> cannot both be null. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd><em>handle</em> must be released using <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaee8c44af49e620a6caed9c0bada16c2c" title="Releases the notification_ex item handle.">noti_ex_item_destroy()</a>. <em>name</em>, <em>text</em>, <em>image</em> and <em>time</em> must not be released if the function returns <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ggab5ad9a9a4c7faf422cac75fe19d42080a9e977eefd9b728ad45d83057f683633e">NOTI_EX_ERROR_NONE</a>. <em>name</em>, <em>text</em>, <em>image</em> and <em>time</em> will be released when <em>handle</em> is released. <em>name</em> and <em>time</em> are mandatory (cannot be null). Both <em>text</em> and <em>image</em> cannot be null. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">handle</td><td>The noti ex item handle </td></tr>
@@ -9075,10 +9075,11 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <div class="memdoc">
 
 <p>Creates the notification_ex manager handle. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications.</dd></dl>
 <p>The manager handle is created with event callbacks and the user can listen to notification events through the event callbacks. If the user wants to manage notifications for specific group the user should identify it with <em>receiver_group</em> Callbacks in <em>event_callbacks</em> can be set to NULL, which will result in the corresponding events not being received. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification.admin </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>handle</em> must be released using <a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaf968d4ac84b34d76cc49e0b2497b7d18" title="Destroys the notification_ex manager handle.">noti_ex_manager_destroy()</a>. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -9177,9 +9178,10 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <div class="memdoc">
 
 <p>Deletes notification. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification.admin </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification manager handle </td></tr>
@@ -9254,9 +9256,10 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <div class="memdoc">
 
 <p>Deletes all notification. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification.admin </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification manager handle </td></tr>
@@ -9383,9 +9386,10 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <div class="memdoc">
 
 <p>Finds notification by root id. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification.admin </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd><em>root_id</em> is the id of the foremost notification item. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -9463,10 +9467,11 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <div class="memdoc">
 
 <p>Gets all notifications for the notification_ex manager. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications.</dd></dl>
 <p>Every notification that has been sent for the manager will be retrieved. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification.admin </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification manager handle </td></tr>
@@ -9558,10 +9563,11 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <div class="memdoc">
 
 <p>Gets notifications with <em>channel</em> for the notification_ex manager. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications.</dd></dl>
 <p>Every notification that has been sent for the manager will be retrieved. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification.admin </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification manager handle </td></tr>
@@ -9644,9 +9650,10 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <div class="memdoc">
 
 <p>Gets the count of notifications for the manager. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification.admin </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification manager handle </td></tr>
@@ -9725,9 +9732,10 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <div class="memdoc">
 
 <p>Hides notification. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification.admin </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification manager handle </td></tr>
@@ -9807,9 +9815,10 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <div class="memdoc">
 
 <p>Sends error to the reporter. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification.admin </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification manager handle </td></tr>
@@ -9900,9 +9909,10 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <div class="memdoc">
 
 <p>Updates notification. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/notification.admin </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification manager handle </td></tr>

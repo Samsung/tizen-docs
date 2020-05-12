@@ -3630,12 +3630,6 @@
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>Lock</Name>
-                  <Path>group__Eina__Lock__Group.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
                   <Name>Log</Name>
                   <Path>group__Eina__Log__Group.html</Path>
                   <Subnodes>
@@ -4773,6 +4767,12 @@
                <Node>
                 <Name>Efl Extension Panel</Name>
                 <Path>group__CAPI__EFL__EXTENSION__PANEL__MODULE.html</Path>
+                <Subnodes>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>Efl Extension Popup</Name>
+                <Path>group__CAPI__EFL__EXTENSION__POPUP__MODULE.html</Path>
                 <Subnodes>
                 </Subnodes>
                </Node>

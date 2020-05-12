@@ -111,11 +111,13 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga5718dd573403997436d1efa7185ae379">sticker_provider_insert_data</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> data_handle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a sticker data to the sticker database.  <a href="#ga5718dd573403997436d1efa7185ae379"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#gac4cd979008673b14c3d4995b29a5d9fd">sticker_provider_insert_data_by_json_file</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, const char *json_path, <a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga83f0673be417960e2d25f4820bc656e7">sticker_provider_insert_finished_cb</a> callback, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a sticker data using json file.  <a href="#gac4cd979008673b14c3d4995b29a5d9fd"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a sticker data using JSON file.  <a href="#gac4cd979008673b14c3d4995b29a5d9fd"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga0fd68724cc4f302d5f98fb20618ebee5">sticker_provider_update_data</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> data_handle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates a sticker data in the sticker database.  <a href="#ga0fd68724cc4f302d5f98fb20618ebee5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga8198c914603151b87132b0329f64563e">sticker_provider_delete_data</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> data_handle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a sticker data in the sticker database.  <a href="#ga8198c914603151b87132b0329f64563e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#gaec30f061620a63b2ac2672aa9a5f2ba5">sticker_provider_delete_data_by_uri</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, const char *uri)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes a sticker data with the given <em>uri</em> from the sticker database.  <a href="#gaec30f061620a63b2ac2672aa9a5f2ba5"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga820389d0f904fc61ff4f08023eadcc44">sticker_provider_get_sticker_count</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, int *count)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the count of stickers stored by the provider application.  <a href="#ga820389d0f904fc61ff4f08023eadcc44"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga29ebd04d0cce12d8eb4dc3d174501a08">sticker_provider_data_foreach_all</a> (<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a> provider_handle, int offset, int count, int *result, <a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga78ac3ad65b81dc5edb685ccae5c445f4">sticker_provider_data_foreach_cb</a> callback, void *user_data)</td></tr>
@@ -197,8 +199,8 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#gac4cd979008673b14c3d4995b29a5d9fd" title="Inserts a sticker data using json file.">sticker_provider_insert_data_by_json_file()</a> will invoke this callback. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#gac4cd979008673b14c3d4995b29a5d9fd" title="Inserts a sticker data using json file.">sticker_provider_insert_data_by_json_file()</a> </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#gac4cd979008673b14c3d4995b29a5d9fd" title="Inserts a sticker data using JSON file.">sticker_provider_insert_data_by_json_file()</a> will invoke this callback. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#gac4cd979008673b14c3d4995b29a5d9fd" title="Inserts a sticker data using JSON file.">sticker_provider_insert_data_by_json_file()</a> </dd></dl>
 
 </div>
 </div>
@@ -373,6 +375,58 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gaec30f061620a63b2ac2672aa9a5f2ba5"></a><!-- doxytag: member="sticker_provider.h::sticker_provider_delete_data_by_uri" ref="gaec30f061620a63b2ac2672aa9a5f2ba5" args="(sticker_provider_h provider_handle, const char *uri)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#gaec30f061620a63b2ac2672aa9a5f2ba5">sticker_provider_delete_data_by_uri</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga004acdee576628d52892d87f14d7d664">sticker_provider_h</a>&#160;</td>
+          <td class="paramname"><em>provider_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>uri</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Deletes a sticker data with the given <em>uri</em> from the sticker database. </p>
+<p>If the database does not have a sticker that matches the given <em>uri</em>, the STICKER_ERROR_NO_SUCH_FILE error is returned. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">provider_handle</td><td>The sticker provider handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">uri</td><td>The URI of the sticker data to be deleted </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181afef4d4ffef4bcccbf8a13101da94b94f">STICKER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a6ee47d7bcba28fdcee8c727320420aca">STICKER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181ac71e5187278cafd2c879c66e266a5e0c">STICKER_ERROR_NO_SUCH_FILE</a></td><td>No such file </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga5718dd573403997436d1efa7185ae379" title="Inserts a sticker data to the sticker database.">sticker_provider_insert_data()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga8198c914603151b87132b0329f64563e" title="Deletes a sticker data in the sticker database.">sticker_provider_delete_data()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga11bcbe5961c1a6f9f2cc8300f9c1738d"></a><!-- doxytag: member="sticker_provider.h::sticker_provider_destroy" ref="ga11bcbe5961c1a6f9f2cc8300f9c1738d" args="(sticker_provider_h provider_handle)" -->
 <div class="memitem">
 <div class="memproto">
@@ -484,7 +538,7 @@ Typedefs</h2></td></tr>
 
 <p>Inserts a sticker data to the sticker database. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>All data except thumbnail and description must be set in the <em>data_handle</em> to insert the sticker data. If the uri type is <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ggaf5fca5424dede6b5a6e169834549311eac0046eae7b7dcf5bc4016f9c316975c9">STICKER_DATA_URI_LOCAL_PATH</a>, the sticker file is copied to a sticker directory. It is recommended to delete your sticker file after inserting a sticker data. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>All data except thumbnail, description, display_type must be set in the <em>data_handle</em> to insert the sticker data. If the URI type is <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ggaf5fca5424dede6b5a6e169834549311eac0046eae7b7dcf5bc4016f9c316975c9">STICKER_DATA_URI_LOCAL_PATH</a>, the sticker file is copied to a sticker directory. It is recommended to delete your sticker file after inserting a sticker data. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">provider_handle</td><td>The sticker provider handle </td></tr>
@@ -499,6 +553,8 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a6ee47d7bcba28fdcee8c727320420aca">STICKER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181ac14befeaa384c398aeb95bea2e5ba70d">STICKER_ERROR_FILE_EXISTS</a></td><td>File exists </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181ac71e5187278cafd2c879c66e266a5e0c">STICKER_ERROR_NO_SUCH_FILE</a></td><td>No such file </td></tr>
   </table>
   </dd>
 </dl>
@@ -545,14 +601,14 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Inserts a sticker data using json file. </p>
+<p>Inserts a sticker data using JSON file. </p>
 <p><em>json_path</em> must be a relative path like '/data/message_sticker.json'. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>All data except thumbnail and description must be set in the json file to insert the sticker data. <em>json_path</em> must have a non-null value and must be an existing file. If not, the error as invalid parameter will be returned. If the uri type is <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ggaf5fca5424dede6b5a6e169834549311eac0046eae7b7dcf5bc4016f9c316975c9">STICKER_DATA_URI_LOCAL_PATH</a>, the sticker file is copied to a sticker directory. It is recommended to delete your sticker files after inserting a sticker data. </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>All data except thumbnail, description, display_type must be set in the JSON file to insert the sticker data. <em>json_path</em> must have a non-null value and must be an existing file. If not, the error as invalid parameter will be returned. If the URI type is <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ggaf5fca5424dede6b5a6e169834549311eac0046eae7b7dcf5bc4016f9c316975c9">STICKER_DATA_URI_LOCAL_PATH</a>, the sticker file is copied to a sticker directory. It is recommended to delete your sticker files after inserting a sticker data. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">provider_handle</td><td>The sticker provider handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">json_path</td><td>The path of json file containing sticker information to be saved </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">json_path</td><td>The path of JSON file containing sticker information to be saved </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to invoke </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data to be passed to the callback function </td></tr>
   </table>
@@ -570,7 +626,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>This function invokes <a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga83f0673be417960e2d25f4820bc656e7" title="Called when inserting sticker data is finished.">sticker_provider_insert_finished_cb()</a>. </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__PROVIDER__MODULE.html#ga83f0673be417960e2d25f4820bc656e7" title="Called when inserting sticker data is finished.">sticker_provider_insert_finished_cb()</a></dd></dl>
-<div class="fragment"><pre class="fragment"> <span class="comment">//json file format</span>
+<div class="fragment"><pre class="fragment"> <span class="comment">//JSON file format</span>
  {
     <span class="stringliteral">&quot;sticker&quot;</span>:
     [
@@ -580,7 +636,8 @@ Typedefs</h2></td></tr>
             <span class="stringliteral">&quot;keyword&quot;</span> : [<span class="stringliteral">&quot;heart eyes&quot;</span>, <span class="stringliteral">&quot;love&quot;</span>, <span class="stringliteral">&quot;cute&quot;</span>],
             <span class="stringliteral">&quot;group&quot;</span> : <span class="stringliteral">&quot;face&quot;</span>,
             <span class="stringliteral">&quot;thumbnail&quot;</span> : <span class="stringliteral">&quot;/res/face/thumbnail/heart_eyes.png&quot;</span>,
-            <span class="stringliteral">&quot;description&quot;</span> : <span class="stringliteral">&quot;Smiling face with heart eyes emoji.&quot;</span>
+            <span class="stringliteral">&quot;description&quot;</span> : <span class="stringliteral">&quot;Smiling face with heart eyes emoji.&quot;</span>,
+            <span class="stringliteral">&quot;display_type&quot;</span> : 1
         },
         {
             <span class="stringliteral">&quot;type&quot;</span> : 2,
@@ -588,7 +645,8 @@ Typedefs</h2></td></tr>
             <span class="stringliteral">&quot;keyword&quot;</span> : [<span class="stringliteral">&quot;smile&quot;</span>, <span class="stringliteral">&quot;high five&quot;</span>],
             <span class="stringliteral">&quot;group&quot;</span> : <span class="stringliteral">&quot;face&quot;</span>,
             <span class="stringliteral">&quot;thumbnail&quot;</span> : <span class="stringliteral">&quot;&quot;</span>,
-            <span class="stringliteral">&quot;description&quot;</span> : <span class="stringliteral">&quot;Smiling face with high five emoji.&quot;</span>
+            <span class="stringliteral">&quot;description&quot;</span> : <span class="stringliteral">&quot;Smiling face with high five emoji.&quot;</span>,
+            <span class="stringliteral">&quot;display_type&quot;</span> : null
         },
             .....
         {
@@ -640,6 +698,8 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a6ee47d7bcba28fdcee8c727320420aca">STICKER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181ac14befeaa384c398aeb95bea2e5ba70d">STICKER_ERROR_FILE_EXISTS</a></td><td>File exists </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181ac71e5187278cafd2c879c66e266a5e0c">STICKER_ERROR_NO_SUCH_FILE</a></td><td>No such file </td></tr>
   </table>
   </dd>
 </dl>

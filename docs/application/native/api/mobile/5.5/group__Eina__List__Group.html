@@ -850,8 +850,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <p>This function returns the quantity of members that <code>list</code> contains. If the list is <code>NULL</code>, <code>0</code> is returned.</p>
 <p>NB: This is an order-1 operation and takes the same time regardless of the length of the list.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a37">ecore_con_server_simple_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a30">ecore_thread_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a5">edje-box2.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a10">eina_inlist_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a10">eina_list_03.c</a>, <a class="el" href="evas-box_8c-example.html#a5">evas-box.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a6">genlist_example_02.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a5">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a37">ecore_con_server_simple_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a26">ecore_thread_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a5">edje-box2.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a10">eina_inlist_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a10">eina_list_03.c</a>, <a class="el" href="evas-box_8c-example.html#a5">evas-box.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a6">genlist_example_02.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a5">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -969,7 +968,6 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data member from the list node.</dd></dl>
 <p>This function returns the data member of the specified list node <code>list</code>. It is equivalent to list-&gt;data. If <code>list</code> is <code>NULL</code>, this function returns <code>NULL</code>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="box_example_02_8c-example.html#a8">box_example_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a8">eina_list_04.c</a>, <a class="el" href="menu_example_01_8c-example.html#a3">menu_example_01.c</a>, and <a class="el" href="slideshow_example_8c-example.html#a26">slideshow_example.c</a>.</dd>
 </dl>
 </div>
@@ -1051,7 +1049,6 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <dl class="return"><dt><b>Returns:</b></dt><dd>The previous data value.</dd></dl>
 <p>This function sets the data member <code>data</code> of the specified list node <code>list</code>. It returns the previous data of the node. If <code>list</code> is <code>NULL</code>, this function returns <code>NULL</code>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_03_8c-example.html#a9">eina_list_03.c</a>.</dd>
 </dl>
 </div>
@@ -1230,7 +1227,6 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <p>This function returns the last list node in the list <code>list</code>. If <code>list</code> is <code>NULL</code> or empty, <code>NULL</code> is returned.</p>
 <p>This is a order-1 operation (it takes the same short time regardless of the length of the list).</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_04_8c-example.html#a6">eina_list_04.c</a>.</dd>
 </dl>
 </div>
@@ -1260,7 +1256,6 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="return"><dt><b>Returns:</b></dt><dd>The node's data, or <code>NULL</code> on being passed a <code>NULL</code> pointer</dd></dl>
 <p>This function is a shortcut for typing eina_list_data_get(<a class="el" href="group__Eina__List__Group.html#ga4c3a9eb5062f3b44c5dcef845cc7a72a" title="Gets the last list node in the list.">eina_list_last()</a>) </p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1425,7 +1420,6 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="return"><dt><b>Returns:</b></dt><dd>The next list node on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function returns the next list node after the current one in <code>list</code>. It is equivalent to list-&gt;next. If <code>list</code> is <code>NULL</code> or if no next list node exists, it returns <code>NULL</code>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_04_8c-example.html#a4">eina_list_04.c</a>.</dd>
 </dl>
 </div>
@@ -1689,7 +1683,6 @@ if the list structure changes then the iterator becomes invalid! That is, if you
 <dl class="return"><dt><b>Returns:</b></dt><dd>The previous list node on success, <code>NULL</code> otherwise.</dd></dl>
 <p>This function returns the previous list node before the current one in <code>list</code>. It is equivalent to list-&gt;prev. If <code>list</code> is <code>NULL</code> or if no previous list node exists, it returns <code>NULL</code>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_list_04_8c-example.html#a7">eina_list_04.c</a>.</dd>
 </dl>
 </div>

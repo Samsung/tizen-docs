@@ -297,6 +297,24 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Main Menu of a window.  <a href="#gafb7ad6513f7861718998d009b8bb55a7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__Win.html#gab15e6b646dbbff900a60c85c3444959d">Elm_Win_Keyboard_Mode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga66f40f3871ce371e296b29a0f12c6e33">elm_win_keyboard_mode_get</a> (const Elm_Win *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the keyboard mode of the window.  <a href="#ga66f40f3871ce371e296b29a0f12c6e33"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga523e4d3d45f41808c9d8b623a5be06ca">elm_win_aux_hints_supported_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of supported auxiliary hint strings.  <a href="#ga523e4d3d45f41808c9d8b623a5be06ca"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga1dc0799069923e8ef98c0e3e3182bab8">elm_win_aux_hint_add</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *hint, const char *val)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an auxiliary hint of the window.  <a href="#ga1dc0799069923e8ef98c0e3e3182bab8"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga819a9094ed92d26926757dea699224a5">elm_win_aux_hint_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const int id)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes an auxiliary hint of the window.  <a href="#ga819a9094ed92d26926757dea699224a5"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga6462a1cd0be90c4b0836a166b7235cec">elm_win_aux_hint_val_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const int id, const char *val)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Changes a value of the auxiliary hint.  <a href="#ga6462a1cd0be90c4b0836a166b7235cec"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga2ef12e2f754738fe1ebdafd9b59f0ac4">elm_win_aux_hint_val_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, int id)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a value of the auxiliary hint.  <a href="#ga2ef12e2f754738fe1ebdafd9b59f0ac4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga86b66bbdfeb75ae21a8859a235ff86c2">elm_win_aux_hint_id_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *hint)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets an ID of the auxiliary hint string.  <a href="#ga86b66bbdfeb75ae21a8859a235ff86c2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#gad6b91ec523781465f062964b8cd3738a">elm_win_aux_msg_key_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_Win_Aux_Message *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the key string from an aux message.  <a href="#gad6b91ec523781465f062964b8cd3738a"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga1af7941b9a18d7947d0b869a73d9f627">elm_win_aux_msg_val_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_Win_Aux_Message *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value string from an aux message.  <a href="#ga1af7941b9a18d7947d0b869a73d9f627"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga9a90536d65fef43628f2ad441ec3346e">elm_win_aux_msg_options_get</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, Elm_Win_Aux_Message *msg)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the list of option from an aux message.  <a href="#ga9a90536d65fef43628f2ad441ec3346e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga89a87576c2d1e4c2dcf3afefdcb2ad7f">elm_win_type_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__Win.html#ga4df03d1a1e94e8b24a58d8ccc5d4d514">Elm_Win_Type</a> type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the window.  <a href="#ga89a87576c2d1e4c2dcf3afefdcb2ad7f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Win.html#ga25cfe4148205e018598ea1551c2e730d">elm_win_focus_highlight_animate_set</a> (Elm_Win *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> animate)</td></tr>
@@ -711,8 +729,366 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a5">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a5">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a8">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a14">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a17">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a6">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a6">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a11">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a2">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a5">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a5">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a2">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a2">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a2">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a5">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a5">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a11">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a5">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a7">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a5">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a5">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a15">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a5">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a5">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a5">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a13">diskselector_example_02.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a11">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a48">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a5">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a5">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a6">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a5">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a11">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a5">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a20">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a33">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a8">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a14">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a13">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a18">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a25">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a40">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a7">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a8">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a5">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a6">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a7">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a13">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a22">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a5">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a17">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a7">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a11">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a5">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a5">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a15">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a13">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a27">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a17">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a6">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a10">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a7">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a2">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a5">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a5">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a6">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a2">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a6">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a6">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a11">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a13">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a12">prefs_example_03.c</a>, <a class="el" href="radio_example_01_8c-example.html#a5">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a5">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a5">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a5">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a6">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a16">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a6">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a5">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a5">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a12">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a11">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a6">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a5">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a6">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a5">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a8">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a5">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a5">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a33">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a23">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a32">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a26">win_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a5">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a5">bg_example_01.c</a>, <a class="el" href="bg_example_02_8c-example.html#a8">bg_example_02.c</a>, <a class="el" href="bg_example_03_8c-example.html#a14">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a17">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a5">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a6">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a11">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a2">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a5">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a5">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a2">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a2">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a2">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a5">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a5">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a11">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a5">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a7">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a5">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a5">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a15">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a5">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a5">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a5">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a13">diskselector_example_02.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a11">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a48">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a5">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a5">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a6">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a5">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a11">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a5">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a20">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a33">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a8">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a14">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a13">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a18">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a25">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a40">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a7">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a8">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a5">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a6">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a7">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a13">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a22">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a5">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a17">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a7">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a11">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a5">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a5">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a15">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a13">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a27">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a17">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a6">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a10">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a7">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a2">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a5">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a5">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a6">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a2">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a6">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a6">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a11">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a13">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a12">prefs_example_03.c</a>, <a class="el" href="radio_example_01_8c-example.html#a5">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a5">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a5">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a5">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a6">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a16">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a6">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a5">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a5">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a12">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a11">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a6">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a5">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a6">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a5">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a8">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a5">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a5">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a33">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a23">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a32">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a26">win_example.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="ga1dc0799069923e8ef98c0e3e3182bab8"></a><!-- doxytag: member="elm_win_legacy.h::elm_win_aux_hint_add" ref="ga1dc0799069923e8ef98c0e3e3182bab8" args="(Evas_Object *obj, const char *hint, const char *val)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Elm__Win.html#ga1dc0799069923e8ef98c0e3e3182bab8">elm_win_aux_hint_add</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>hint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Creates an auxiliary hint of the window. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The window object </td></tr>
+    <tr><td class="paramname">hint</td><td>The auxiliary hint string </td></tr>
+    <tr><td class="paramname">val</td><td>The value string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The ID of the created auxiliary hint, otherwise <code>-1</code> on failure</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga819a9094ed92d26926757dea699224a5"></a><!-- doxytag: member="elm_win_legacy.h::elm_win_aux_hint_del" ref="ga819a9094ed92d26926757dea699224a5" args="(Evas_Object *obj, const int id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Win.html#ga819a9094ed92d26926757dea699224a5">elm_win_aux_hint_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Deletes an auxiliary hint of the window. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The window object </td></tr>
+    <tr><td class="paramname">id</td><td>The ID of the auxiliary hint </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if no error occurs, otherwise <code>EINA_FALSE</code> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga86b66bbdfeb75ae21a8859a235ff86c2"></a><!-- doxytag: member="elm_win_legacy.h::elm_win_aux_hint_id_get" ref="ga86b66bbdfeb75ae21a8859a235ff86c2" args="(Evas_Object *obj, const char *hint)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Elm__Win.html#ga86b66bbdfeb75ae21a8859a235ff86c2">elm_win_aux_hint_id_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>hint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets an ID of the auxiliary hint string. </p>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The window object </td></tr>
+    <tr><td class="paramname">hint</td><td>The auxiliary hint string </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The ID of the auxiliary hint, otherwise <code>-1</code> on failure</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2ef12e2f754738fe1ebdafd9b59f0ac4"></a><!-- doxytag: member="elm_win_legacy.h::elm_win_aux_hint_val_get" ref="ga2ef12e2f754738fe1ebdafd9b59f0ac4" args="(Evas_Object *obj, int id)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Elm__Win.html#ga2ef12e2f754738fe1ebdafd9b59f0ac4">elm_win_aux_hint_val_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a value of the auxiliary hint. </p>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The window object </td></tr>
+    <tr><td class="paramname">id</td><td>The auxiliary hint ID </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The string value of the auxiliary hint ID, otherwise <code>NULL</code> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6462a1cd0be90c4b0836a166b7235cec"></a><!-- doxytag: member="elm_win_legacy.h::elm_win_aux_hint_val_set" ref="ga6462a1cd0be90c4b0836a166b7235cec" args="(Evas_Object *obj, const int id, const char *val)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Win.html#ga6462a1cd0be90c4b0836a166b7235cec">elm_win_aux_hint_val_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>val</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Changes a value of the auxiliary hint. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Support for this depends on the underlying windowing system. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The window object </td></tr>
+    <tr><td class="paramname">id</td><td>The auxiliary hint ID </td></tr>
+    <tr><td class="paramname">val</td><td>The value string to be set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if no error occurs, otherwise <code>EINA_FALSE</code> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga523e4d3d45f41808c9d8b623a5be06ca"></a><!-- doxytag: member="elm_win_legacy.h::elm_win_aux_hints_supported_get" ref="ga523e4d3d45f41808c9d8b623a5be06ca" args="(const Evas_Object *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a>* <a class="el" href="group__Elm__Win.html#ga523e4d3d45f41808c9d8b623a5be06ca">elm_win_aux_hints_supported_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the list of supported auxiliary hint strings. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Do not change the returned list of contents. Auxiliary hint strings are internal and should be considered constants, do not free or modify them. </dd>
+<dd>
+Support for this depends on the underlying windowing system.</dd>
+<dd>
+The window auxiliary hint is the value that is used to decide which action should be made available to the user by the Windows Manager. If you want to set a specific hint to your window, then you should check whether it exists in the supported auxiliary hints that are registered in the root window by the Windows Manager. Once you have added an auxiliary hint, you can get a new ID which is used to change the value and delete the hint. The Windows Manager sends a response message to the application on receiving the auxiliary hint change event.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The window object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The list of supported auxiliary hint strings</dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad6b91ec523781465f062964b8cd3738a"></a><!-- doxytag: member="elm_win_legacy.h::elm_win_aux_msg_key_get" ref="gad6b91ec523781465f062964b8cd3738a" args="(Evas_Object *obj, Elm_Win_Aux_Message *msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Elm__Win.html#gad6b91ec523781465f062964b8cd3738a">elm_win_aux_msg_key_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Elm_Win_Aux_Message *&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the key string from an aux message. </p>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The window object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Constant key string of the aux message. otherwise <code>NULL</code> on failure. Do not use this return value after end of the aux message callback. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9a90536d65fef43628f2ad441ec3346e"></a><!-- doxytag: member="elm_win_legacy.h::elm_win_aux_msg_options_get" ref="ga9a90536d65fef43628f2ad441ec3346e" args="(Evas_Object *obj, Elm_Win_Aux_Message *msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a>* <a class="el" href="group__Elm__Win.html#ga9a90536d65fef43628f2ad441ec3346e">elm_win_aux_msg_options_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Elm_Win_Aux_Message *&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the list of option from an aux message. </p>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The window object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Constant list of option of the aux message. otherwise <code>NULL</code> on failure. Do not use this return value after end of the aux message callback. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga1af7941b9a18d7947d0b869a73d9f627"></a><!-- doxytag: member="elm_win_legacy.h::elm_win_aux_msg_val_get" ref="ga1af7941b9a18d7947d0b869a73d9f627" args="(Evas_Object *obj, Elm_Win_Aux_Message *msg)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* <a class="el" href="group__Elm__Win.html#ga1af7941b9a18d7947d0b869a73d9f627">elm_win_aux_msg_val_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Elm_Win_Aux_Message *&#160;</td>
+          <td class="paramname"><em>msg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the value string from an aux message. </p>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>Support for this depends on the underlying windowing system.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">obj</td><td>The window object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Constant value string of the aux message. otherwise <code>NULL</code> on failure. Do not use this return value after end of the aux message callback. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="ga82eec30059278f60cca880c14db03c91"></a><!-- doxytag: member="elm_win_legacy.h::elm_win_conformant_get" ref="ga82eec30059278f60cca880c14db03c91" args="(const Evas_Object *obj)" -->
@@ -1038,8 +1414,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if the request was successfully sent to the display server, <code>false</code> in case of error.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Set the animate status for the focus highlight for this window.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Set the animate status for the focus highlight for this window.</dd></dl>
 <p>This function will enable or disable the animation of focus highlight only for the given window, regardless of the global setting for it.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1456,10 +1831,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the Main Menu of a window. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The Main Menu of the window ($null on error). </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Sets the keyboard mode of the window.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The Main Menu of the window ($null on error). Sets the keyboard mode of the window.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>The mode, one of <a class="el" href="group__Elm__Win.html#gab15e6b646dbbff900a60c85c3444959d" title="The different layouts that can be requested for the virtual keyboard.">Elm_Win_Keyboard_Mode</a>. </td></tr>
@@ -2778,13 +3150,11 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the Ecore_X_Window of an Evas_Object. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>Gets the Ecore_Win32_Window of an Evas_Object</dd></dl>
+<p>Gets the Ecore_Win32_Window of an Evas_Object</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The Ecore_Win32_Window of <code>obj</code>.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Gets the Ecore_Cocoa_Window of an Efl.Canvas.Object.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 Gets the Ecore_Cocoa_Window of an Efl.Canvas.Object.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The Ecore_Cocoa_Window of <code>obj</code>.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Gets the trap data associated with a window.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 Gets the trap data associated with a window.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The trap data of the window.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
@@ -2845,9 +3215,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>The type of the window. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>It is a hint of how the Window Manager should handle it.</dd></dl>
+<p>It is a hint of how the Window Manager should handle it.</p>
 <p>The window type is a constructing property that need to be set at creation within eo_add.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Once set, it can NOT be modified afterward.</dd></dl>
 <p>Can only be used at creation time, within eo_add.</p>
@@ -3002,7 +3370,7 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The created object, or <code>NULL</code> on failure</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a4">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a4">bg_example_01.c</a>, <a class="el" href="bg_example_03_8c-example.html#a13">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a16">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a5">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a5">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a10">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a1">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a4">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a4">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a1">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a1">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a1">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a4">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a4">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a7">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a4">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a6">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a4">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a4">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a14">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a4">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a4">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a4">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a12">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a3">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a2">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a6">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a7">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a9">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a10">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a47">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a4">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a4">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a5">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a4">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a10">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a4">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a16">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a32">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a4">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a10">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a9">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a14">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a21">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a39">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a6">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a7">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a4">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a5">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a6">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a12">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a21">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a4">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a16">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a6">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a10">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a4">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a4">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a14">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a12">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a26">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a16">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a5">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a9">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a6">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a1">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a4">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a4">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a5">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a1">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a5">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a5">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a7">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a9">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a11">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a12">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a4">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a4">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a4">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a4">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a5">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a15">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a5">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a4">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a4">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a11">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a10">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a5">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a4">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a5">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a4">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a7">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a4">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a4">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a32">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a22">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a31">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a19">win_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="actionslider_example_01_8c-example.html#a4">actionslider_example_01.c</a>, <a class="el" href="bg_example_01_8c-example.html#a4">bg_example_01.c</a>, <a class="el" href="bg_example_03_8c-example.html#a13">bg_example_03.c</a>, <a class="el" href="box_example_02_8c-example.html#a16">box_example_02.c</a>, <a class="el" href="bubble_example_01_8c-example.html#a4">bubble_example_01.c</a>, <a class="el" href="button_example_00_8c-example.html#a5">button_example_00.c</a>, <a class="el" href="button_example_01_8c-example.html#a10">button_example_01.c</a>, <a class="el" href="calendar_example_01_8c-example.html#a1">calendar_example_01.c</a>, <a class="el" href="calendar_example_02_8c-example.html#a4">calendar_example_02.c</a>, <a class="el" href="calendar_example_03_8c-example.html#a4">calendar_example_03.c</a>, <a class="el" href="calendar_example_04_8c-example.html#a1">calendar_example_04.c</a>, <a class="el" href="calendar_example_05_8c-example.html#a1">calendar_example_05.c</a>, <a class="el" href="calendar_example_06_8c-example.html#a1">calendar_example_06.c</a>, <a class="el" href="check_example_01_8c-example.html#a4">check_example_01.c</a>, <a class="el" href="clock_example_8c-example.html#a4">clock_example.c</a>, <a class="el" href="codegen_example_8c-example.html#a7">codegen_example.c</a>, <a class="el" href="colorselector_example_01_8c-example.html#a4">colorselector_example_01.c</a>, <a class="el" href="combobox_example_01_8c-example.html#a6">combobox_example_01.c</a>, <a class="el" href="conformant_example_01_8c-example.html#a4">conformant_example_01.c</a>, <a class="el" href="conformant_example_02_8c-example.html#a4">conformant_example_02.c</a>, <a class="el" href="ctxpopup_example_01_8c-example.html#a14">ctxpopup_example_01.c</a>, <a class="el" href="datetime_example_8c-example.html#a4">datetime_example.c</a>, <a class="el" href="dayselector_example_8c-example.html#a4">dayselector_example.c</a>, <a class="el" href="diskselector_example_01_8c-example.html#a4">diskselector_example_01.c</a>, <a class="el" href="diskselector_example_02_8c-example.html#a12">diskselector_example_02.c</a>, <a class="el" href="efl_thread_1_8c-example.html#a3">efl_thread_1.c</a>, <a class="el" href="efl_thread_2_8c-example.html#a2">efl_thread_2.c</a>, <a class="el" href="efl_thread_3_8c-example.html#a6">efl_thread_3.c</a>, <a class="el" href="efl_thread_4_8c-example.html#a7">efl_thread_4.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a9">efl_thread_5.c</a>, <a class="el" href="efl_thread_6_8c-example.html#a10">efl_thread_6.c</a>, <a class="el" href="entry_example_8c-example.html#a47">entry_example.c</a>, <a class="el" href="fileselector_button_example_8c-example.html#a4">fileselector_button_example.c</a>, <a class="el" href="fileselector_entry_example_8c-example.html#a4">fileselector_entry_example.c</a>, <a class="el" href="fileselector_example_8c-example.html#a5">fileselector_example.c</a>, <a class="el" href="flip_example_01_8c-example.html#a4">flip_example_01.c</a>, <a class="el" href="flipselector_example_8c-example.html#a10">flipselector_example.c</a>, <a class="el" href="frame_example_01_8c-example.html#a4">frame_example_01.c</a>, <a class="el" href="general_funcs_example_8c-example.html#a16">general_funcs_example.c</a>, <a class="el" href="gengrid_example_8c-example.html#a32">gengrid_example.c</a>, <a class="el" href="genlist_example_01_8c-example.html#a4">genlist_example_01.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a10">genlist_example_02.c</a>, <a class="el" href="genlist_example_03_8c-example.html#a9">genlist_example_03.c</a>, <a class="el" href="genlist_example_04_8c-example.html#a14">genlist_example_04.c</a>, <a class="el" href="genlist_example_05_8c-example.html#a21">genlist_example_05.c</a>, <a class="el" href="glview_example_01_8c-example.html#a39">glview_example_01.c</a>, <a class="el" href="hover_example_01_8c-example.html#a6">hover_example_01.c</a>, <a class="el" href="hoversel_example_01_8c-example.html#a7">hoversel_example_01.c</a>, <a class="el" href="icon_example_01_8c-example.html#a4">icon_example_01.c</a>, <a class="el" href="image_example_01_8c-example.html#a5">image_example_01.c</a>, <a class="el" href="index_example_01_8c-example.html#a6">index_example_01.c</a>, <a class="el" href="index_example_02_8c-example.html#a12">index_example_02.c</a>, <a class="el" href="inwin_example_8c-example.html#a21">inwin_example.c</a>, <a class="el" href="label_example_01_8c-example.html#a4">label_example_01.c</a>, <a class="el" href="layout_example_01_8c-example.html#a16">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a6">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a10">layout_example_03.c</a>, <a class="el" href="list_example_01_8c-example.html#a4">list_example_01.c</a>, <a class="el" href="list_example_02_8c-example.html#a4">list_example_02.c</a>, <a class="el" href="list_example_03_8c-example.html#a14">list_example_03.c</a>, <a class="el" href="map_example_01_8c-example.html#a12">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a26">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a16">map_example_03.c</a>, <a class="el" href="mapbuf_example_8c-example.html#a5">mapbuf_example.c</a>, <a class="el" href="menu_example_01_8c-example.html#a9">menu_example_01.c</a>, <a class="el" href="naviframe_example_8c-example.html#a6">naviframe_example.c</a>, <a class="el" href="notify_example_01_8c-example.html#a1">notify_example_01.c</a>, <a class="el" href="panel_example_01_8c-example.html#a4">panel_example_01.c</a>, <a class="el" href="panes_example_8c-example.html#a4">panes_example.c</a>, <a class="el" href="photocam_example_01_8c-example.html#a5">photocam_example_01.c</a>, <a class="el" href="popup_example_01_8c-example.html#a1">popup_example_01.c</a>, <a class="el" href="popup_example_02_8c-example.html#a5">popup_example_02.c</a>, <a class="el" href="popup_example_03_8c-example.html#a5">popup_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a7">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a9">prefs_example_02.c</a>, <a class="el" href="prefs_example_03_8c-example.html#a11">prefs_example_03.c</a>, <a class="el" href="progressbar_example_8c-example.html#a12">progressbar_example.c</a>, <a class="el" href="radio_example_01_8c-example.html#a4">radio_example_01.c</a>, <a class="el" href="scroller_example_01_8c-example.html#a4">scroller_example_01.c</a>, <a class="el" href="segment_control_example_8c-example.html#a4">segment_control_example.c</a>, <a class="el" href="separator_example_01_8c-example.html#a4">separator_example_01.c</a>, <a class="el" href="slider_example_8c-example.html#a5">slider_example.c</a>, <a class="el" href="slideshow_example_8c-example.html#a15">slideshow_example.c</a>, <a class="el" href="spinner_example_8c-example.html#a5">spinner_example.c</a>, <a class="el" href="table_example_01_8c-example.html#a4">table_example_01.c</a>, <a class="el" href="table_example_02_8c-example.html#a4">table_example_02.c</a>, <a class="el" href="theme_example_01_8c-example.html#a11">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a10">theme_example_02.c</a>, <a class="el" href="thumb_example_01_8c-example.html#a5">thumb_example_01.c</a>, <a class="el" href="toolbar_example_01_8c-example.html#a4">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a5">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a4">toolbar_example_03.c</a>, <a class="el" href="track_example_01_8c-example.html#a7">track_example_01.c</a>, <a class="el" href="transit_example_01_8c-example.html#a4">transit_example_01.c</a>, <a class="el" href="transit_example_02_8c-example.html#a4">transit_example_02.c</a>, <a class="el" href="transit_example_03_8c-example.html#a32">transit_example_03.c</a>, <a class="el" href="transit_example_04_8c-example.html#a22">transit_example_04.c</a>, <a class="el" href="web_example_02_8c-example.html#a31">web_example_02.c</a>, and <a class="el" href="win_example_8c-example.html#a19">win_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -3232,8 +3600,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The Ecore_Wl_Window of <code>obj</code> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Gets the Ecore_Win32_Window of an Evas_Object</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The Ecore_Wl_Window of <code>obj</code> Gets the Ecore_Win32_Window of an Evas_Object</dd></dl>
 <p>Do not use this function if you'd like your application/library be portable. You have been warned.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -3242,8 +3609,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The Ecore_Win32_Window of <code>obj</code> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Sets the preferred rotation value.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 Sets the preferred rotation value.</dd></dl>
 <p>This function is used to set the orientation of window <code>obj</code> to specific angle fixed.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

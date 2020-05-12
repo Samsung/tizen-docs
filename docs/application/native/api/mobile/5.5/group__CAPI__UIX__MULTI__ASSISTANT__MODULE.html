@@ -205,7 +205,7 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html#ga87d6c5201853b526b1b31c2e49d3b190">ma_assistant_info_h</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A handle to get assistant information.  <a href="#ga87d6c5201853b526b1b31c2e49d3b190"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef int(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html#ga5abf6673ef54fb19cef45ee473838c3d">ma_assistant_info_list_cb</a> )(<a class="el" href="group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html#ga87d6c5201853b526b1b31c2e49d3b190">ma_assistant_info_h</a> handle, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called to get the assistant information once for each installed assistant.  <a href="#ga5abf6673ef54fb19cef45ee473838c3d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called whenever to get the assistant information of each installed assistant.  <a href="#ga5abf6673ef54fb19cef45ee473838c3d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html#gaedf8d4b2173c2e05fb4ed69a3053d27e">ma_preprocessing_information_changed_cb</a> )(const char *app_id, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the preprocessing information is changed.  <a href="#gaedf8d4b2173c2e05fb4ed69a3053d27e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html#ga0ce6aff93337c323304ca22514354586">ma_audio_streaming_data_section_changed_cb</a> )(<a class="el" href="group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html#ga455283824718e2172b17c7a3b828fec9">ma_audio_streaming_data_section_e</a> section, void *user_data)</td></tr>
@@ -263,7 +263,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called to get the assistant information once for each installed assistant. </p>
+<p>Called whenever to get the assistant information of each installed assistant. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>handle</em> should not be released. </dd>
 <dd>

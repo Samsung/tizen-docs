@@ -128,6 +128,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroys a sticker data handle.  <a href="#ga52cac4900d4a047132f619c9f094859d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gac4a133c918cba6aa5663780c07e73d89">sticker_data_clone</a> (<a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> origin_handle, <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> *target_handle)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Clones a sticker data handle.  <a href="#gac4a133c918cba6aa5663780c07e73d89"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gadb1a0410c51b505710376b9dba48c11e">sticker_data_get_handle</a> (const char *uri, <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> *data_handle)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the sticker data handle for the given URI.  <a href="#gadb1a0410c51b505710376b9dba48c11e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaf7a5735e56098b7fc9a8905df262840e">sticker_data_get_app_id</a> (<a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> data_handle, char **app_id)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the name of the sticker provider application from sticker data handle.  <a href="#gaf7a5735e56098b7fc9a8905df262840e"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga1e6c584292d4ed1fdd3be6a0d48683fd">sticker_data_set_uri</a> (<a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> data_handle, <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaf5fca5424dede6b5a6e169834549311e">sticker_data_uri_type_e</a> type, const char *uri)</td></tr>
@@ -154,6 +156,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the description from sticker data handle.  <a href="#ga367a2b1bfd2e545a19764f707a36d124"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga9fce77b5fcf465c3a52e1c06c7085af7">sticker_data_get_date</a> (<a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> data_handle, char **date)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last updated date from sticker data handle.  <a href="#ga9fce77b5fcf465c3a52e1c06c7085af7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga1b988af489a4edb3805c43ae8dbd46bb">sticker_data_set_display_type</a> (<a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> data_handle, <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaaf7115d100ddf75b1822795aa6b2d4ef">sticker_data_display_type_e</a> type)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the display type of the sticker.  <a href="#ga1b988af489a4edb3805c43ae8dbd46bb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaa24c0bf119f9542fab9b4361cdbb86ab">sticker_data_get_display_type</a> (<a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> data_handle, <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaaf7115d100ddf75b1822795aa6b2d4ef">sticker_data_display_type_e</a> *type)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the display type from sticker data handle.  <a href="#gaa24c0bf119f9542fab9b4361cdbb86ab"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct sticker_data_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a></td></tr>
@@ -206,6 +212,33 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="gaaf7115d100ddf75b1822795aa6b2d4ef"></a><!-- doxytag: member="sticker_data.h::sticker_data_display_type_e" ref="gaaf7115d100ddf75b1822795aa6b2d4ef" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaaf7115d100ddf75b1822795aa6b2d4ef">sticker_data_display_type_e</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enumeration for sticker display type. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="ggaaf7115d100ddf75b1822795aa6b2d4efabc6683dbf1da75d18613c02860594692"></a><!-- doxytag: member="STICKER_DATA_DISP_EMOJI" ref="ggaaf7115d100ddf75b1822795aa6b2d4efabc6683dbf1da75d18613c02860594692" args="" -->STICKER_DATA_DISP_EMOJI</em>&nbsp;</td><td>
+<p>Emoji type </p>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="ggaaf7115d100ddf75b1822795aa6b2d4efa9f17e3d748b404d944b7f2b1c533838e"></a><!-- doxytag: member="STICKER_DATA_DISP_WALLPAPER" ref="ggaaf7115d100ddf75b1822795aa6b2d4efa9f17e3d748b404d944b7f2b1c533838e" args="" -->STICKER_DATA_DISP_WALLPAPER</em>&nbsp;</td><td>
+<p>Wallpaper type. </p>
+<p>The stickers of the wallpaper type are intended to be used by a wallpaper application and usually have larger size. </p>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="gaf5fca5424dede6b5a6e169834549311e"></a><!-- doxytag: member="sticker_data.h::sticker_data_uri_type_e" ref="gaf5fca5424dede6b5a6e169834549311e" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -456,7 +489,7 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181afef4d4ffef4bcccbf8a13101da94b94f">STICKER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a6ee47d7bcba28fdcee8c727320420aca">STICKER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a9443c1a2ce59db197ace515496ed7fc5">STICKER_ERROR_NO_DATA</a></td><td>No data available </td></tr>
   </table>
   </dd>
 </dl>
@@ -510,7 +543,7 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181afef4d4ffef4bcccbf8a13101da94b94f">STICKER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a6ee47d7bcba28fdcee8c727320420aca">STICKER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a9443c1a2ce59db197ace515496ed7fc5">STICKER_ERROR_NO_DATA</a></td><td>No data available </td></tr>
   </table>
   </dd>
 </dl>
@@ -559,7 +592,7 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181afef4d4ffef4bcccbf8a13101da94b94f">STICKER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a6ee47d7bcba28fdcee8c727320420aca">STICKER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a9443c1a2ce59db197ace515496ed7fc5">STICKER_ERROR_NO_DATA</a></td><td>No data available </td></tr>
   </table>
   </dd>
 </dl>
@@ -615,6 +648,54 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gaa24c0bf119f9542fab9b4361cdbb86ab"></a><!-- doxytag: member="sticker_data.h::sticker_data_get_display_type" ref="gaa24c0bf119f9542fab9b4361cdbb86ab" args="(sticker_data_h data_handle, sticker_data_display_type_e *type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaa24c0bf119f9542fab9b4361cdbb86ab">sticker_data_get_display_type</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a>&#160;</td>
+          <td class="paramname"><em>data_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaaf7115d100ddf75b1822795aa6b2d4ef">sticker_data_display_type_e</a> *&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the display type from sticker data handle. </p>
+<p>If the display type is empty, the result will be a zero. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_handle</td><td>The sticker data handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">type</td><td>The display type of the sticker </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181afef4d4ffef4bcccbf8a13101da94b94f">STICKER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga1b988af489a4edb3805c43ae8dbd46bb" title="Sets the display type of the sticker.">sticker_data_set_display_type()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga551d8be71f031cffe59c4ac47978ae52"></a><!-- doxytag: member="sticker_data.h::sticker_data_get_group_name" ref="ga551d8be71f031cffe59c4ac47978ae52" args="(sticker_data_h data_handle, char **group)" -->
 <div class="memitem">
 <div class="memproto">
@@ -656,11 +737,62 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181afef4d4ffef4bcccbf8a13101da94b94f">STICKER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a6ee47d7bcba28fdcee8c727320420aca">STICKER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a9443c1a2ce59db197ace515496ed7fc5">STICKER_ERROR_NO_DATA</a></td><td>No data available </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>sticker_data_set_group() </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaf5fce3400597d07267fe96ce769a50bf" title="Sets the group name of the sticker.">sticker_data_set_group_name()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gadb1a0410c51b505710376b9dba48c11e"></a><!-- doxytag: member="sticker_data.h::sticker_data_get_handle" ref="gadb1a0410c51b505710376b9dba48c11e" args="(const char *uri, sticker_data_h *data_handle)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gadb1a0410c51b505710376b9dba48c11e">sticker_data_get_handle</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>uri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a> *&#160;</td>
+          <td class="paramname"><em>data_handle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the sticker data handle for the given URI. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the function succeeds, <em>data_handle</em> must be released with <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga52cac4900d4a047132f619c9f094859d" title="Destroys a sticker data handle.">sticker_data_destroy()</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">uri</td><td>The URI of the sticker data handle </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data_handle</td><td>The sticker data handle for the given sticker URI </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181afef4d4ffef4bcccbf8a13101da94b94f">STICKER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a00fdc4478016b9a551716e4ba7c01f56">STICKER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a6ee47d7bcba28fdcee8c727320420aca">STICKER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181ac71e5187278cafd2c879c66e266a5e0c">STICKER_ERROR_NO_SUCH_FILE</a></td><td>A sticker with given <em>uri</em> does not exist </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga52cac4900d4a047132f619c9f094859d" title="Destroys a sticker data handle.">sticker_data_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -761,7 +893,7 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181afef4d4ffef4bcccbf8a13101da94b94f">STICKER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a6ee47d7bcba28fdcee8c727320420aca">STICKER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a9443c1a2ce59db197ace515496ed7fc5">STICKER_ERROR_NO_DATA</a></td><td>No data available </td></tr>
   </table>
   </dd>
 </dl>
@@ -869,6 +1001,53 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga1b988af489a4edb3805c43ae8dbd46bb"></a><!-- doxytag: member="sticker_data.h::sticker_data_set_display_type" ref="ga1b988af489a4edb3805c43ae8dbd46bb" args="(sticker_data_h data_handle, sticker_data_display_type_e type)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga1b988af489a4edb3805c43ae8dbd46bb">sticker_data_set_display_type</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga8569730ce5b22a9be02344c492921000">sticker_data_h</a>&#160;</td>
+          <td class="paramname"><em>data_handle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaaf7115d100ddf75b1822795aa6b2d4ef">sticker_data_display_type_e</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the display type of the sticker. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_handle</td><td>The sticker data handle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The display type to be saved </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181afef4d4ffef4bcccbf8a13101da94b94f">STICKER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#gaa24c0bf119f9542fab9b4361cdbb86ab" title="Gets the display type from sticker data handle.">sticker_data_get_display_type()</a> </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="gaf5fce3400597d07267fe96ce769a50bf"></a><!-- doxytag: member="sticker_data.h::sticker_data_set_group_name" ref="gaf5fce3400597d07267fe96ce769a50bf" args="(sticker_data_h data_handle, const char *group)" -->
 <div class="memitem">
 <div class="memproto">
@@ -913,7 +1092,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>sticker_data_get_group() </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__UIX__STICKER__DATA__MODULE.html#ga551d8be71f031cffe59c4ac47978ae52" title="Gets the group name from sticker data handle.">sticker_data_get_group_name()</a> </dd></dl>
 
 </div>
 </div>
@@ -1015,7 +1194,6 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181afef4d4ffef4bcccbf8a13101da94b94f">STICKER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181aa13945eded739a03b829da3b0bf759c5">STICKER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a0c7e80b20749e1395d6731e1c42c2901">STICKER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__UIX__STICKER__MODULE.html#gga1d6638335f816306208a8f1b339ec181a6ee47d7bcba28fdcee8c727320420aca">STICKER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
   </table>
   </dd>
 </dl>

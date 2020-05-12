@@ -184,8 +184,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be appended.</dd></dl>
 <p>This function appends <code>slice</code> to <code>buf</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Appends an Eina_Binbuf to a buffer, reallocating as necessary.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Appends an Eina_Binbuf to a buffer, reallocating as necessary.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -289,8 +288,7 @@ eina_binbuf_append_n() </dd>
 <dl class="see"><dt><b>See also:</b></dt><dd>eina_binbuf_rw_slice_get() </dd>
 <dd>
 eina_binbuf_use()</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Marks more bytes as used.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Marks more bytes as used.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -301,8 +299,7 @@ eina_binbuf_use()</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure, such as <code>extra_bytes</code> is too big or <em>buf</em> is NULL.</dd></dl>
 <p>This function should be used after eina_binbuf_expand(), marking the extra bytes returned there as used, then they will be taken into account by other functions, such as <a class="el" href="group__Eina__Binary__Buffer__Group.html#gac3b5a05306bf9face35e44c1f5e0a4bd" title="Retrieves the length of the string buffer&#39;s content.">eina_binbuf_length_get()</a>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>eina_binbuf_expand()</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Appends a string of exact length to a buffer, reallocating as necessary.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Appends a string of exact length to a buffer, reallocating as necessary.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -338,7 +335,6 @@ eina_binbuf_append_n() </dd></dl>
 <div class="memdoc">
 
 <p>Frees a string buffer. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer.</td></tr>
@@ -392,8 +388,7 @@ eina_binbuf_append_n() </dd></dl>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be inserted.</dd></dl>
 <p>This function inserts <code>slice</code> into <code>buf</code> at position <code>pos</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Inserts a character into a string buffer, reallocating as necessary.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Inserts a character into a string buffer, reallocating as necessary.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>

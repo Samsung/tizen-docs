@@ -251,7 +251,7 @@ Static Public Member Functions</h2></td></tr>
  <span class="comment">// ...To play the animation</span>
 
  mAnimation = <a class="code" href="classDali_1_1Animation.html#a8b075910d823f7bf76a9a0748b1bff87" title="Creates an initialized Animation.">Animation::New</a>(3.0f); <span class="comment">// duration 3 seconds</span>
- mAnimation.AnimateTo(<a class="code" href="group__dali__toolkit__controls__item__view.html#gaf2a1e1c40b03627fd03302bb26c87894" title="The properties of each type of item layout.">Property</a>(mActor, <a class="code" href="structDali_1_1Actor_1_1Property.html#adf2fbb355fa7de595eef05102a575f9ca2a46843cf5c6eda012f5246ace045519" title="name &quot;position&quot;, type Vector3 (animatable / constraint-input)">Actor::Property::POSITION</a>), Vector3(10.0f, 50.0f, 0.0f));
+ mAnimation.AnimateTo(<a class="code" href="group__dali__toolkit__controls__item__view.html#gaf2a1e1c40b03627fd03302bb26c87894" title="The properties of each type of item layout.">Property</a>(mActor, <a class="code" href="structDali_1_1Actor_1_1Property.html#adf2fbb355fa7de595eef05102a575f9ca2a46843cf5c6eda012f5246ace045519" title="The position of an actor.">Actor::Property::POSITION</a>), Vector3(10.0f, 50.0f, 0.0f));
  mAnimation.Play();
 </pre></div><p><a class="el" href="classDali_1_1Animation.html" title="Dali::Animation can be used to animate the properties of any number of objects, typically Actors...">Dali::Animation</a> supports "fire and forget" behaviour i.e. an animation continues to play if the handle is discarded. Note that in the following example, the "Finish" signal will be emitted:</p>
 <div class="fragment"><pre class="fragment"> <span class="keywordtype">void</span> ExampleCallback( <a class="code" href="classDali_1_1Animation.html#a3c50e96609536846a7ffa29b55d92051" title="Creates an uninitialized Animation; this can be initialized with Animation::New().">Animation</a>&amp; source )
@@ -262,7 +262,7 @@ Static Public Member Functions</h2></td></tr>
  <span class="keywordtype">void</span> ExampleAnimation( Actor actor )
  {
    <a class="code" href="classDali_1_1Animation.html#a3c50e96609536846a7ffa29b55d92051" title="Creates an uninitialized Animation; this can be initialized with Animation::New().">Animation</a> animation = <a class="code" href="classDali_1_1Animation.html#a8b075910d823f7bf76a9a0748b1bff87" title="Creates an initialized Animation.">Animation::New</a>(2.0f); <span class="comment">// duration 2 seconds</span>
-   animation.AnimateTo(<a class="code" href="group__dali__toolkit__controls__item__view.html#gaf2a1e1c40b03627fd03302bb26c87894" title="The properties of each type of item layout.">Property</a>(actor, <a class="code" href="structDali_1_1Actor_1_1Property.html#adf2fbb355fa7de595eef05102a575f9ca2a46843cf5c6eda012f5246ace045519" title="name &quot;position&quot;, type Vector3 (animatable / constraint-input)">Actor::Property::POSITION</a>), 10.0f, 50.0f, 0.0f);
+   animation.AnimateTo(<a class="code" href="group__dali__toolkit__controls__item__view.html#gaf2a1e1c40b03627fd03302bb26c87894" title="The properties of each type of item layout.">Property</a>(actor, <a class="code" href="structDali_1_1Actor_1_1Property.html#adf2fbb355fa7de595eef05102a575f9ca2a46843cf5c6eda012f5246ace045519" title="The position of an actor.">Actor::Property::POSITION</a>), 10.0f, 50.0f, 0.0f);
    animation.FinishedSignal().Connect( ExampleCallback );
    animation.Play();
  } <span class="comment">// At this point the animation handle has gone out of scope</span>

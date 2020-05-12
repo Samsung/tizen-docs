@@ -271,6 +271,8 @@ Typedefs</h2></td></tr>
 
 <p>Stops playing the WAV file. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If the playback of <em>id</em> has been already finished at the server side and<br/>
+ <a class="el" href="group__CAPI__MEDIA__WAV__PLAYER__MODULE.html#ga0514468a3f3e68a660ef9535d7dcb22d" title="Called when a WAV file has finished playing.">wav_player_playback_completed_cb()</a> is not invoked yet, <a class="el" href="group__CAPI__MEDIA__WAV__PLAYER__MODULE.html#ggabfb635a3671dc0b0141c3ffffa4bcd73a4d887d4cb4e4e45c1ebdd13fcf2609e6">WAV_PLAYER_ERROR_INVALID_OPERATION</a> will be returned.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>The WAV player ID to stop</td></tr>
