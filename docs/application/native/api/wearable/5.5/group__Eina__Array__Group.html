@@ -307,7 +307,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function sets the <code>array's</code> member count to 0 without freeing memory. This facilitates emptying an array and quickly refilling it with new elements. For performance reasons, there is no check of <code>array</code>. If it is <code>NULL</code> or invalid, the program may crash. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_array_02_8c-example.html#a7">eina_array_02.c</a>.</dd>
 </dl>
 </div>
@@ -336,7 +335,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of elements.</dd></dl>
 <p>This function returns the number of elements in <code>array</code> (array-&gt;count). For performance reasons, there is no check of <code>array</code>, so if it is <code>NULL</code> or invalid, the program may crash. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_cxx_example_02_8cc-example.html#a1">bg_cxx_example_02.cc</a>, and <a class="el" href="eina_array_01_8c-example.html#a7">eina_array_01.c</a>.</dd>
 </dl>
 </div>
@@ -366,7 +364,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of elements.</dd></dl>
 <p>This function returns the number of elements in <code>array</code> (array-&gt;count). For performance reasons, there is no check of <code>array</code>, so if it is <code>NULL</code> or invalid, the program may crash. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -405,7 +402,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The retrieved data.</dd></dl>
 <p>This function returns the data at the position <code>idx</code> in <code>array</code>. For performance reasons, there is no check of <code>array</code> or <code>idx</code>. If <code>array</code> is <code>NULL</code> or invalid, or if <code>idx</code> is larger than the array's size, the program may crash. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="bg_cxx_example_02_8cc-example.html#a2">bg_cxx_example_02.cc</a>, and <a class="el" href="eina_array_01_8c-example.html#a9">eina_array_01.c</a>.</dd>
 </dl>
 </div>
@@ -451,7 +447,6 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This function sets the data at the position <code>idx</code> in <code>array</code> to <code>data</code>, this effectively replaces the previously held data, you must therefore get a pointer to it first if you need to free it. For performance reasons, there is no check of <code>array</code> or <code>idx</code>. If <code>array</code> is <code>NULL</code> or invalid, or if <code>idx</code> is larger than the array's size, the program may crash. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_array_02_8c-example.html#a8">eina_array_02.c</a>.</dd>
 </dl>
 </div>
@@ -499,7 +494,6 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if found otherwise returns EINA_FALSE.</dd></dl>
 <p>This function searches for the data pointer <code>data</code> inside <code>array</code>, returning <code>EINA_TRUE</code> if found. The exact position where the pointer is found can be retrieved through <code>out_idx</code>. Please note that only the pointer is compared, not the actual data pointed by it.</p>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.23 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -572,7 +566,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if it successfully iterated all items of the array.</dd></dl>
 <p>This function iterates over an array in order, calling <code>cb</code> for each item. <code>cb</code> should return <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the loop should continue, or <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> to exit the loop, in which case <a class="el" href="group__Eina__Array__Group.html#ga8de2d191a0fffceb5bdc6376540b8db1" title="Iterates over an array using a callback function.">eina_array_foreach()</a> will return <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_array_01_8c-example.html#a8">eina_array_01.c</a>, and <a class="el" href="eina_simple_xml_parser_01_8c-example.html#a7">eina_simple_xml_parser_01.c</a>.</dd>
 </dl>
 </div>
@@ -689,7 +682,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The retrieved data, or <code>NULL</code> if there are no remaining items.</dd></dl>
 <p>This function removes the last data item from <code>array</code>, decreases the length of <code>array</code> and returns the data item. For performance reasons, there is no check of <code>array</code>, so if it is <code>NULL</code> or invalid, the program may crash. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_array_01_8c-example.html#a10">eina_array_01.c</a>.</dd>
 </dl>
 </div>
@@ -729,7 +721,6 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if allocation is necessary and fails or if <code>data</code> is <code>NULL</code>.</dd></dl>
 <p>This function appends <code>data</code> to <code>array</code>. For performance reasons, there is no check of <code>array</code>. If it is <code>NULL</code> or invalid, the program may crash. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_accessor_01_8c-example.html#a6">eina_accessor_01.c</a>, <a class="el" href="eina_array_01_8c-example.html#a6">eina_array_01.c</a>, <a class="el" href="eina_array_02_8c-example.html#a6">eina_array_02.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a8">eina_iterator_01.c</a>, and <a class="el" href="eina_simple_xml_parser_01_8c-example.html#a17">eina_simple_xml_parser_01.c</a>.</dd>
 </dl>
 </div>

@@ -481,8 +481,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A string buffer containing the substring, or <code>NULL</code> if invalid parameters were specified.</dd></dl>
 <p>This function creates a Eina_Strbuf containing a copy of a substring of buf starting at <code>pos</code> with <code>len</code> length. If len is 0, then an empty strbuf will be returned.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Gets a read-only slice of the buffer contents.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17 Gets a read-only slice of the buffer contents.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -490,8 +489,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A read-only slice of the current contents. It may become invalid as soon as <code>buf</code> is changed.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Gets a read-write slice of the buffer contents.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Gets a read-write slice of the buffer contents.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -499,8 +497,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A read-write slice for the current contents. It may become invalid as soon as the <code>buf</code> is changed, such as through calls like <a class="el" href="group__Eina__String__Buffer__Group.html#gaded50fb52b2dda9bbfce89b7028ac23e" title="Appends a string to a buffer, reallocating as necessary.">eina_strbuf_append()</a> or <a class="el" href="group__Eina__String__Buffer__Group.html#gac7ead92f4ce23c16b7a33d40ce3bf5cd" title="Removes a section from the given string buffer.">eina_strbuf_remove()</a>.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Frees the buffer, returning its old contents.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Frees the buffer, returning its old contents.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -508,8 +505,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The string contained by buf. The caller must release the memory of the returned string by calling free().</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Appends a strftime-style timestamp to the buffer.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Appends a strftime-style timestamp to the buffer.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -529,8 +525,7 @@ Defines</h2></td></tr>
  eina_strbuf_append_strftime(buf, <span class="stringliteral">&quot;%I:%M%p&quot;</span>, info);
  <span class="comment">//after use</span>
  <a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf);
-</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Inserts a strftime-style timestamp into the buffer.</dd></dl>
+</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 Inserts a strftime-style timestamp into the buffer.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -551,8 +546,7 @@ Defines</h2></td></tr>
  eina_strbuf_insert_strftime(buf, <span class="stringliteral">&quot;%I:%M%p&quot;</span>, info, 2);
  <span class="comment">//after use</span>
  <a class="code" href="group__Eina__String__Buffer__Group.html#ga482e9f90bc8e0e17811e825975a2ba85" title="Frees a string buffer.">eina_strbuf_free</a>(buf);
-</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+</pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.21</dd></dl>
 <p>Prepends a strftime-style timestamp to the buffer.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -753,8 +747,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be appended.</dd></dl>
 <p>This function appends <code>slice</code> to <code>buf</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Appends an Eina_Strbuf to a buffer, reallocating as necessary.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Appends an Eina_Strbuf to a buffer, reallocating as necessary.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>
@@ -1165,8 +1158,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if <code>slice</code> could not be inserted.</dd></dl>
 <p>This function inserts <code>slice</code> into <code>buf</code> at position <code>pos</code>.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Inserts a character into a string buffer, reallocating as necessary.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19.0 Inserts a character into a string buffer, reallocating as necessary.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">buf</td><td>The string buffer. </td></tr>

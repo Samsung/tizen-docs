@@ -1784,9 +1784,9 @@ vc_request_cancel() </dd>
 <div class="memdoc">
 
 <p>Requests to cancel TTS streaming data. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd></dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.tts </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1842,10 +1842,10 @@ vc_request_cancel() </dd>
 <div class="memdoc">
 
 <p>Gets the TTS audio details. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications.</dd></dl>
 <p>Using this function, the developer can get details of synthesized audio data which is requested by <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga983364a2e906bfc156c57d5145002dfa" title="Requests to send TTS streaming data, asynchronously.">vc_tts_request()</a> function. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd></dd></dl>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.tts </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1908,10 +1908,10 @@ vc_request_cancel() </dd>
 <div class="memdoc">
 
 <p>Requests to send TTS streaming data, asynchronously. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications.</dd></dl>
 <p>Using this function, the developer can request text to speech to the framework. When the developer requests the TTS with <em>language</em>, VC engine will send PCM data which is synthesized using VC engine's own persona. If <em>to_vc_manager</em> is true, the synthesized PCM data will be delivered to the VC manager, otherwise it will be delivered to the VC client For example, if <em>text</em> is "Alarm is set as 7 PM" and <em>to_vc_manager</em> is true, the PCM data corresponding "Alarm is set as 7 PM" will be delivered to VC manager client, and then it will be spoken in VC manager. If <em>to_vc_manager</em> is false, you will receive PCM data through the <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga1cb22259f37bac3a61e640578fa57749" title="Called when the client receives TTS streaming data from the VC engine service.">vc_tts_streaming_cb()</a> callback function if it was set using <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#gae5a74e38a9fe37fae9f5ce19f8a52ac3" title="Sets the TTS streaming callback function.">vc_tts_set_streaming_cb()</a>. This function is executed asynchronously, so if there is an error while synthesizing, <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga9a7d8acf86e41df9f0c08ffab83c549b" title="Called when error occurred.">vc_error_cb()</a> will be called. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd></dd></dl>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.tts </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -1966,9 +1966,9 @@ vc_request_cancel() </dd>
 <div class="memdoc">
 
 <p>Sets the TTS streaming callback function. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd></dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.tts </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2018,10 +2018,10 @@ vc_request_cancel() </dd>
 <div class="memdoc">
 
 <p>Sets the TTS utterance status callback function. </p>
-<p>Using this function, the developer can set the utterance status callback to be called when the VC manager client starts or stops playing TTS PCM data which was requested to be synthesized with the <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga983364a2e906bfc156c57d5145002dfa" title="Requests to send TTS streaming data, asynchronously.">vc_tts_request()</a> function. This function is called when <em>to_vc_manager</em> in the <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga983364a2e906bfc156c57d5145002dfa" title="Requests to send TTS streaming data, asynchronously.">vc_tts_request()</a> function call is true. </p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications.</dd></dl>
+<p>Using this function, the developer can set the utterance status callback to be called when the VC manager client starts or stops playing TTS PCM data which was requested to be synthesized with the <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga983364a2e906bfc156c57d5145002dfa" title="Requests to send TTS streaming data, asynchronously.">vc_tts_request()</a> function. This function is called when <em>to_vc_manager</em> in the <a class="el" href="group__CAPI__UIX__VOICE__CONTROL__MODULE.html#ga983364a2e906bfc156c57d5145002dfa" title="Requests to send TTS streaming data, asynchronously.">vc_tts_request()</a> function call is <code>true</code>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd></dd></dl>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.tts </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -2062,9 +2062,9 @@ vc_request_cancel() </dd>
 <div class="memdoc">
 
 <p>Unsets the TTS streaming callback function. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd></dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.tts </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
@@ -2096,9 +2096,9 @@ vc_request_cancel() </dd>
 <div class="memdoc">
 
 <p>Unsets the TTS utterance status callback function. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd></dd></dl>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This is not for use by third-party applications. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>partner </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/voicecontrol.tts </dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>

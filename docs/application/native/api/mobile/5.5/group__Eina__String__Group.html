@@ -127,14 +127,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Lowercases all the characters in range [A-Z] in the given string.  <a href="#ga0909a116b1d8e9e8d8836f646ac8a2f1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__String__Group.html#ga82c8c194203522f702a6f73570b1220a">eina_str_toupper</a> (char **str)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Uppercases all the characters in range [a-z] in the given string.  <a href="#ga82c8c194203522f702a6f73570b1220a"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__String__Group.html#ga3b03fc33ef07b92d442e07b3901933ed">eina_str_join</a> (char *dst, size_t size, char sep, const char *a, const char *b)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__String__Group.html#ga20b6615a6d105e7c1f6d7166810d3d88">eina_strlen_bounded</a> (const char *str, size_t maxlen)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and update the buffer based on strftime output.  <a href="#ga20b6615a6d105e7c1f6d7166810d3d88"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__String__Group.html#gad63239b52af915783af40bca8657e9d1">eina_memdup</a> (unsigned char *mem, size_t size, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> terminate)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Memory duplication function with optional termination for strings.  <a href="#gad63239b52af915783af40bca8657e9d1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__String__Group.html#ga0b8400d50224e035bb163c506e94aa7b">eina_strdup</a> (const char *str)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__String__Group.html#gab1a21ba9441206e464d3c7afc394dda7">eina_strndup</a> (const char *str, size_t n)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__String__Group.html#gae95f831abd514af9e7f537fe4df4d103">eina_streq</a> (const char *a, const char *b)</td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__String__Group.html#gafe8d21bb68ce3a4a26ffb3cfe4321184">eina_str_join_static</a>(dst, sep, a, b)&#160;&#160;&#160;<a class="el" href="group__Eina__String__Group.html#ga78b94379522949b2f521d56e89755035">eina_str_join_len</a>(dst, sizeof(dst), sep, a, (sizeof(a) &gt; 0) ? sizeof(a) - 1 : 0, b, (sizeof(b) &gt; 0) ? sizeof(b) - 1 : 0)</td></tr>
@@ -190,7 +186,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of characters printed.</dd></dl>
 <p>This function is similar to <a class="el" href="group__Eina__String__Group.html#ga78b94379522949b2f521d56e89755035" title="Joins two strings of known length.">eina_str_join_len()</a>, but will assume string sizes are know using sizeof(X).</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Group.html#ga3b03fc33ef07b92d442e07b3901933ed">eina_str_join()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd>eina_str_join() </dd>
 <dd>
 <a class="el" href="group__Eina__String__Group.html#gafe8d21bb68ce3a4a26ffb3cfe4321184" title="Joins two static strings and store the result in a static buffer.">eina_str_join_static()</a> </dd></dl>
 
@@ -495,52 +491,6 @@ Defines</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga3b03fc33ef07b92d442e07b3901933ed"></a><!-- doxytag: member="eina_str.h::eina_str_join" ref="ga3b03fc33ef07b92d442e07b3901933ed" args="(char *dst, size_t size, char sep, const char *a, const char *b)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static size_t <a class="el" href="group__Eina__String__Group.html#ga3b03fc33ef07b92d442e07b3901933ed">eina_str_join</a> </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>dst</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>size</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>sep</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ga78b94379522949b2f521d56e89755035"></a><!-- doxytag: member="eina_str.h::eina_str_join_len" ref="ga78b94379522949b2f521d56e89755035" args="(char *dst, size_t size, char sep, const char *a, size_t a_len, const char *b, size_t b_len)" -->
 <div class="memitem">
 <div class="memproto">
@@ -611,7 +561,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of characters printed.</dd></dl>
 <p>This function joins the strings <code>a</code> and <code>b</code> (in that order) and separate them with <code>sep</code>. The result is stored in the buffer <code>dst</code> and at most <code>size</code> - 1 characters will be written and the string is NULL-terminated. <code>a_len</code> is the length of <code>a</code> (not including '\0') and <code>b_len</code> is the length of <code>b</code> (not including '\0'). This function returns the number of characters printed (not including the trailing '\0' used to end output to strings). Just like snprintf(), it will not write more than <code>size</code> bytes, thus a returned value of <code>size</code> or more means that the output was truncated.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__String__Group.html#ga3b03fc33ef07b92d442e07b3901933ed">eina_str_join()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd>eina_str_join() </dd>
 <dd>
 <a class="el" href="group__Eina__String__Group.html#gafe8d21bb68ce3a4a26ffb3cfe4321184" title="Joins two static strings and store the result in a static buffer.">eina_str_join_static()</a>  2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_str_01_8c-example.html#a9">eina_str_01.c</a>.</dd>
@@ -775,53 +725,6 @@ Defines</h2></td></tr>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga0b8400d50224e035bb163c506e94aa7b"></a><!-- doxytag: member="eina_str.h::eina_strdup" ref="ga0b8400d50224e035bb163c506e94aa7b" args="(const char *str)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static char* <a class="el" href="group__Eina__String__Group.html#ga0b8400d50224e035bb163c506e94aa7b">eina_strdup</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gae95f831abd514af9e7f537fe4df4d103"></a><!-- doxytag: member="eina_str.h::eina_streq" ref="gae95f831abd514af9e7f537fe4df4d103" args="(const char *a, const char *b)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Eina__String__Group.html#gae95f831abd514af9e7f537fe4df4d103">eina_streq</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>b</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="inwin_example_8c-example.html#a24">inwin_example.c</a>.</dd>
-</dl>
-</div>
-</div>
 <a class="anchor" id="ga3172a47b021bb56263a591e2fefdc729"></a><!-- doxytag: member="eina_str.h::eina_strlcat" ref="ga3172a47b021bb56263a591e2fefdc729" args="(char *dst, const char *src, size_t siz)" -->
 <div class="memitem">
 <div class="memproto">
@@ -941,7 +844,6 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Creates and update the buffer based on strftime output. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">tm</td><td>Pointer to a tm structure needed by strftime. </td></tr>
@@ -961,36 +863,6 @@ Defines</h2></td></tr>
  <span class="comment">//after use</span>
  free(buf);
 </pre></div><dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17.0 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gab1a21ba9441206e464d3c7afc394dda7"></a><!-- doxytag: member="eina_str.h::eina_strndup" ref="gab1a21ba9441206e464d3c7afc394dda7" args="(const char *str, size_t n)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">static char* <a class="el" href="group__Eina__String__Group.html#gab1a21ba9441206e464d3c7afc394dda7">eina_strndup</a> </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>str</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>n</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td><code> [static]</code></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>

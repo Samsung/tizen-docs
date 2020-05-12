@@ -204,7 +204,7 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>A callback for getting the information of the installed assistants. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback for getting the information of installed assistants. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed to the callback function</td></tr>
   </table>
   </dd>
@@ -1284,7 +1284,9 @@ Functions</h2></td></tr>
 <div class="memdoc">
 
 <p>Sets whether multi-assistant service should send wake word audio data. </p>
-<p>If set to true, wake word audio data will be included in audio streaming data. Use <a class="el" href="group__CAPI__UIX__MULTI__ASSISTANT__CLIENT__MODULE.html#gae25edcaf771e69e31b41dbf1b8a9dfc1" title="Sets the section changed callback for audio streaming data.">ma_set_audio_streaming_data_section_changed_cb()</a> to be informed about switching between wake word and regular audio data. </p>
+<p>If set to true, wake word audio data will be included in audio streaming data.<br/>
+ The wake word is the way you initiate a conversation with your vocal assistant. It is a predefined keyword automatically detected from continuously streaming audio.<br/>
+ Use <a class="el" href="group__CAPI__UIX__MULTI__ASSISTANT__CLIENT__MODULE.html#gae25edcaf771e69e31b41dbf1b8a9dfc1" title="Sets the section changed callback for audio streaming data.">ma_set_audio_streaming_data_section_changed_cb()</a> to be informed about switching between wake word and regular audio data. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
