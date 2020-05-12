@@ -45,7 +45,7 @@ The main features of the Multi-assistant API include:
 
   - Adjust background volume
 
-When a voice assistant starts playing the voice feedback, it can request to adjust the background volume for making the voice feedback more audible.
+    When a voice assistant starts playing the voice feedback, it can request to adjust the background volume for making the voice feedback more audible.
 
 To use functionalities of the Multi-assistant framework:
 
@@ -55,7 +55,7 @@ To use functionalities of the Multi-assistant framework:
 
 2. Prepare the Multi-assistant client library.
 
-   The preparation connects the client application to the Multi-assistant service to start exchanging messages with Mutli-assistant framework and wakeup engines.
+   The preparation connects the client application to the Multi-assistant service to start exchanging messages with the Mutli-assistant framework and wakeup engines.
 
 3. Retrieve audio data when activated.
 
@@ -100,7 +100,7 @@ To enable your application to use the Multi-assistant functionality:
    > [!NOTE]
    > The Mutli-assistant client feature is not thread-safe and depends on the Ecore main loop. Implement Multi-assistant within the Ecore main loop and do not use it in a thread.
 
-3. Prepare Multi-assistant with `ma_prepare()`, which connects the client application to the Multi-assistant service. The Multi-assistant service records user utterance and manages wakeup engines to detect the wake word from the audio data.
+3. Prepare Multi-assistant with `ma_prepare()`, which connects the client application to the Multi-assistant service. The Multi-assistant service records user utterance and manages wakeup engines to detect the wake word from the audio data:
 
    ```c
    void
@@ -338,7 +338,7 @@ To get information about the current client state and current language:
   }
   ```
 
-- Get the current language with `ma_get_current_language()`. The wake word detection works for the current (default) language. Use the language change callback to get language change notifications.
+- Get the current language with `ma_get_current_language()`. The wake word detection works for the current (default) language. Use the language change callback to get language change notifications:
 
     ```c
     void
