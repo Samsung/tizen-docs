@@ -210,7 +210,7 @@ Typedefs</h2></td></tr>
 <p>This returns the number of threads currently running jobs of any type through the Ecore_Thread API.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Jobs started through the <a class="el" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run()</a> function with the <code>try_no_queue</code> parameter set to <code>EINA_TRUE</code> will not be accounted for in the return of this function unless the thread creation fails and it falls back to using one from the pool.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a18">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a14">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -233,7 +233,7 @@ Typedefs</h2></td></tr>
 <p>Same as doing <a class="el" href="group__Ecore__Thread__Group.html#gabad7972818b7fb1346ae7a098cd47220">ecore_thread_max_get()</a> - <a class="el" href="group__Ecore__Thread__Group.html#gad7a28588dc26d6af8b6db8abc3ef37ce">ecore_thread_active_get()</a>.</p>
 <p>This function may return a negative number only in the case the user changed the maximum number of running threads while other tasks are running.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a22">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a18">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -343,7 +343,7 @@ Typedefs</h2></td></tr>
 <p>Care must be taken that <code>msg_data</code> is properly freed in the <code>func_notify</code> callback set when creating the thread.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a12">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a11">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -422,7 +422,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a46">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a38">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -484,7 +484,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#ga011eeb2f99aaa950089ddc6ea989da29">ecore_thread_global_data_find()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a43">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a37">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -515,7 +515,7 @@ Typedefs</h2></td></tr>
 <p>Note, also, that freeing data that other threads may be using will result in a crash, so appropriate care must be taken by the application when that possibility exists.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a13">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a12">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -890,7 +890,7 @@ ecore_thread_local_data_wait()</dd></dl>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#ga4324944541abf9f84861690b4ff66e18">ecore_thread_max_reset()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a40">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a34">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -943,7 +943,7 @@ ecore_thread_local_data_wait()</dd></dl>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#ga4324944541abf9f84861690b4ff66e18">ecore_thread_max_reset()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a42">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a36">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -965,7 +965,7 @@ ecore_thread_local_data_wait()</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of pending threads running "feedback" jobs</dd></dl>
 <p>This returns the number of tasks started with <a class="el" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run()</a> that are pending, waiting for a thread to become available to run them.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a20">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a16">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -987,7 +987,7 @@ ecore_thread_local_data_wait()</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of pending threads running "short" jobs</dd></dl>
 <p>This returns the number of tasks started with <a class="el" href="group__Ecore__Thread__Group.html#gaac9c9933ef0a90ba86f8fd0247e9c7ef">ecore_thread_run()</a> that are pending, waiting for a thread to become available to run them.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a21">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a17">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1009,7 +1009,7 @@ ecore_thread_local_data_wait()</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of pending threads running jobs</dd></dl>
 <p>Same as the sum of <a class="el" href="group__Ecore__Thread__Group.html#ga3e32f650cfe811e69bba7825c71b9070">ecore_thread_pending_get()</a> and <a class="el" href="group__Ecore__Thread__Group.html#gaa5c56445198f7b03c1f080039499689a">ecore_thread_pending_feedback_get()</a>.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a19">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a15">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1040,7 +1040,7 @@ ecore_thread_local_data_wait()</dd></dl>
 <p>This should never return <code>EINA_FALSE</code>, unless it was called from the wrong thread or with the wrong arguments.</p>
 <p>The <code>func_end</code> callback set when the thread is created will not be called until the function in the thread returns without being rescheduled. Similarly, if the <code>thread</code> is cancelled, the reschedule will not take effect.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a16">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a13">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1106,7 +1106,7 @@ ecore_thread_local_data_wait()</dd></dl>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a></dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a47">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a39">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
