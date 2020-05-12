@@ -1,12 +1,16 @@
 # INM
 
+Intelligent Network Monitoring (INM) API is used to get information about the network, provided by Linux functions. INM is supported by mobile, TV, and wearable profile. Following are some of the features provided by INM API:
 
-INM means Intelligent Network Monitoring. It can be used to get information about the network provided by well-known linux functions. Some features provided by this API are: detecting IP collision, dumping network status, dumping TCP, monitoring ethernet, monitoring Wi-Fi module state and getting network statistics.
+- Detecting IP collision
+- Dumping network status
+- Dumping TCP
+- Monitoring Ethernet
+- Monitoring Wi-Fi module state
+- Getting network statistics
 
-This feature is supported in mobile, tv and wearable profile.
-
-> **Note**  
-> You can test the INM functionality on a target device only. The [emulator](../../../tizen-studio/common-tools/emulator.md) does not support this feature.
+> [!NOTE]
+> You can test the INM functionality on a target device only. The [Tizen emulator](../../../tizen-studio/common-tools/emulator.md) does not support this feature.
 
 ## Prerequisites
 
@@ -14,28 +18,27 @@ To enable your application to use the INM API:
 
 1. To use the INM API, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-   ```
+   ```xml
    <privileges>
       <privilege>http://tizen.org/privilege/network.get</privilege>
-      <privilege>http://tizen.org/privilege/network.set</privilege>
    </privileges>
    ```
 
-2. To use the functions and data types of the INM API, include the <inm.h> header file in your application:
+2. To use the functions and data types of the INM API, include the `<inm.h>` header file in your application:
 
-   ```
+   ```cpp
    #include <inm.h>
    ```
 
-3. Call the `inm_initialize()` function to initialize library:
+3. Call `inm_initialize()` to initialize library:
 
-    ```
+    ```cpp
     inm_initialize();
     ```
 
-4. Call the `stc_deinitialize()` function to deinitialize library before quiting:
+4. When no longer needed, call `inm_deinitialize()` to deinitialize the library:
 
-   ```
+   ```cpp
    inm_deinitialize();
    ```
    
@@ -43,7 +46,7 @@ To enable your application to use the INM API:
 
 To retrieve information about the default connection:
 
-   ```
+   ```cpp
    int get_conn_info(void)
    {
      int ret = INM_ERROR_NONE;
@@ -118,13 +121,13 @@ To retrieve information about the default connection:
    }
    ```
 
-You can retreive information about a particular connection by iterating through the connections using inm_get_connection_iterator() (which returns a connection iterator) and inm_connection_iterator_next() (which gets you a connection handle).
+You can retrieve information about a particular connection by iterating through the connections using `inm_get_connection_iterator()` that returns a connection iterator and `inm_connection_iterator_next()` that gets you a connection handle.
 
 ## Monitor Wi-Fi State Change
 
-1. Define a callback function for processing the Wi-Fi state change:
+1. Define a callback function to process the Wi-Fi state change:
 
-    ```
+    ```cpp
     void __wifi_state_changed_cb(inm_wifi_state_e state,
                                               void *user_data)
     {
@@ -134,7 +137,7 @@ You can retreive information about a particular connection by iterating through 
     
 2. Set the Wi-Fi state change callback:
 
-    ```
+    ```cpp
     int monitor_wifi_state(void)
     {
         int ret = INM_ERROR_NONE;
@@ -163,7 +166,7 @@ You can retreive information about a particular connection by iterating through 
     }
     ```
     
-You can monitor other types of state changes, with inm_set_cellular_state_changed_cb(), inm_set_ethernet_state_changed_cb(), etc.
+You can monitor other types of state changes, with `inm_set_cellular_state_changed_cb()`, `inm_set_ethernet_state_changed_cb()`, etc.
 
 ## Related Information
 - Dependencies
