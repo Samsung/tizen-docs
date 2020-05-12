@@ -77,8 +77,8 @@ To retrieve information about the default connection:
      unsigned long long tx_bytes;
 
      ret = inm_connection_get_link(conn, &link);
-     ret = inm_connection_get_type(conn, network_type);
-     ret = inm_connection_get_state(conn, conn_state);
+     ret = inm_connection_get_type(conn, &network_type);
+     ret = inm_connection_get_state(conn, &conn_state);
      ret = inm_connection_get_network_interface_name(conn, &if_name);
      if(ret != INM_ERROR_NONE) {
          inm_deinitialize(inm);
@@ -100,8 +100,8 @@ To retrieve information about the default connection:
      printf("conn-info: ip_addr[%s]\n", ip_addr);
      
      /* get sent and received bytes data via link */
-     ret = inm_link_get_received_bytes(link, rx_bytes);
-     ret = inm_link_get_sent_bytes(link, tx_bytes);
+     ret = inm_link_get_received_bytes(link, &rx_bytes);
+     ret = inm_link_get_sent_bytes(link, &tx_bytes);
      if(ret != INM_ERROR_NONE) {
          inm_deinitialize(inm);
          printf("Getting received and sent bytes failed\n");
