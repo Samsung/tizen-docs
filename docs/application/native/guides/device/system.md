@@ -381,9 +381,10 @@ The following table lists the multimedia feature keys:
 | Key                                      | Type   | Description                              |
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/multimedia.media_codec` | `bool` | The platform returns `true` for this key, if the device supports the media codec feature. |
+| `http://tizen.org/feature/multimedia.player.spherical_video` | `bool` | The platform returns `true` for this key, if the device supports the 360-degree video playback feature. |
 | `http://tizen.org/feature/multimedia.stream_recorder` | `bool` | The platform returns `true` for this key, if the device supports the stream recorder feature. |
 | `http://tizen.org/feature/multimedia.transcoder` | `bool` | The platform returns `true` for this key, if the device supports the transcoder. |
-| `http://tizen.org/feature/multimedia.player.spherical_video` | `bool` | The platform returns `true` for this key, if the device supports the 360-degree video playback feature. |
+
 
 The following table lists the multi-point touch feature keys:
 
