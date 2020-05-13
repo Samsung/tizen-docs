@@ -42,18 +42,18 @@ To enable your application to use the stream recording functionality:
 
 1. To use the [Tizen.Multimedia.StreamRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorder.html) class, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
-```
-<privileges>
-   <privilege>http://tizen.org/privilege/mediastorage</privilege>
-   <privilege>http://tizen.org/privilege/externalstorage</privilege>
-</privileges>
-```
+    ```
+    <privileges>
+       <privilege>http://tizen.org/privilege/mediastorage</privilege>
+       <privilege>http://tizen.org/privilege/externalstorage</privilege>
+    </privileges>
+    ```
 
 2. To use the methods and properties of the [Tizen.Multimedia.StreamRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorder.html) class, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
 
-```
-using Tizen.Multimedia;
-```
+    ```
+    using Tizen.Multimedia;
+    ```
 
 <a name="manage"></a>
 ## Managing Recording Options
