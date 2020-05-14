@@ -894,6 +894,7 @@
 #### [Wi-Fi](/application/native/guides/connectivity/wifi.md)
 #### [Wi-Fi Direct&reg;](/application/native/guides/connectivity/wifi-direct.md)
 #### [SoftAP](/application/native/guides/connectivity/softap.md)
+#### [Intelligent Network Monitoring (INM)](/application/native/guides/connectivity/inm.md)
 #### [Smart Traffic Control (STC)](/application/native/guides/connectivity/stc.md)
 #### [Telephony Information](/application/native/guides/connectivity/telephony.md)
 #### [USB Host](/application/native/guides/connectivity/usb-host.md)
