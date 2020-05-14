@@ -21,13 +21,15 @@ The main features of the Multi-assistant API include:
 
   - Active state
 
-    Active state indicates whether the current client application is expected to serve as an active voice assistant for the user or not. An active voice assistant is responsible for responding to the user utterance and must provide appropriate feedback.
+    Active state indicates whether the current client application is expected to serve as an active voice assistant for the user or not. An active voice assistant is responsible for responding to the user utterance and providing appropriate feedback.
 
   - Audio Data
 
-    When the assistant gets activated, it retrieves the user utterance audio data from the Multi-assistant framework in order to process user's voice command.
+    When the voice assistant gets activated, it retrieves the user utterance audio data from the Multi-assistant framework in order to process user's voice command.
 
 - Updating result information
+
+  You can [update different types of result information](#result) to the Mutli-assistant framework:
 
   - ASR result
 
@@ -59,11 +61,11 @@ To use functionalities of the Multi-assistant framework:
 
 3. Retrieve audio data when activated.
 
-   If the registered active state changed event callback function is called with the ACTIVE parameter, then you must ask for the user utterance data so that the query could be processed by your voice assistant.
+   If the registered active state changed event callback function is called with the ACTIVE parameter, then you must ask for the user utterance data to process the query by your voice assistant.
 
 4. Send the result.
 
-   While you are processing the user utterance, it is recomended to update the partially converted ASR result to the Multi-assistant framework so that it can display the visual feedback to the user.
+   While you are processing the user utterance, it is recommended to update the partially converted ASR result to the Multi-assistant framework so that it can display the visual feedback to the user.
 
    When the processing work is finished, you can send the final result to the Multi-assistant framework to display the result, and also send recognition result to report whether the audio data processing has succeeded or not.
 
@@ -90,7 +92,7 @@ To enable your application to use the Multi-assistant functionality:
    {
        int ret;
        ret = ma_initialize();
-       if (MA_ERROR_NONE != result)
+       if (MA_ERROR_NONE != ret)
            /* Error handling */
    }
    ```
@@ -132,7 +134,7 @@ To enable your application to use the Multi-assistant functionality:
    {
        int ret;
        ret = ma_deinitialize();
-       if (MA_ERROR_NONE != result)
+       if (MA_ERROR_NONE != ret)
            /* Error handling */
    }
    ```
@@ -146,14 +148,12 @@ To enable your application to use the Multi-assistant functionality:
 <a name="callback"></a>
 ## Manage callbacks
 
-For more information on the callback functions, see the `multi_assistant_common.h` header file, where they are defined.
-
 To set and unset callbacks to get notifications about state changes, errors and audio data retrieval:
 
 > [!NOTE]
 > Set and unset all callbacks when the client state is `MA_STATE_INITIALIZED`.
 
-- Set the state change callback to be invoked when the client state changes:
+- Set the state changed callback to be invoked when the client state changes:
 
   ```c
   /* Callback */
@@ -184,7 +184,7 @@ To set and unset callbacks to get notifications about state changes, errors and 
   }
   ```
 
-- Set the service state change callback to be invoked when the Multi-assistant service state changes:
+- Set the service state changed callback to be invoked when the Multi-assistant service state changes:
 
   User controls the Multi-assistant service state. In a general scenario:
 
@@ -317,6 +317,8 @@ To set and unset callbacks to get notifications about state changes, errors and 
   }
   ```
 
+- For more information on the callback functions, see the [multi_assistant_common.h](https://review.tizen.org/git/?p=platform/core/uifw/multi-assistant.git;a=blob;f=include/multi_assistant_common.h;h=1da13a8acfc32b726e197607708ba78cd3c59614;hb=refs/heads/tizen) header file.
+
 <a name="info"></a>
 ## Retrieve Multi-assistant information
 
@@ -338,7 +340,7 @@ To get information about the current client state and current language:
   }
   ```
 
-- Get the current language with `ma_get_current_language()`. The wake word detection works for the current (default) language. Use the language change callback to get language change notifications:
+- Get the current language with `ma_get_current_language()`. The wake word detection works for the current language. Use the language change callback to get language change notifications:
 
     ```c
     void
@@ -388,6 +390,7 @@ To monitor the system or application language changes:
   ```
 
 
+<a name="result"></a>
 ## Update result information
 
 To keep the Multi-assistant framework updated about the current progress on voice command processing, voice assistants need to update various types of result information.
