@@ -1,13 +1,8 @@
 # INM
 
-Intelligent Network Monitoring (INM) API is used to get information about the network, provided by Linux functions. INM is supported by mobile, TV, and wearable profile. Following are some of the features provided by INM API:
+Intelligent Network Monitoring (INM) API is used to get information about the network, provided by Linux functions. Some features of this API are detecting IP collision, dumping network status, dumping TCP, monitoring ethernet, monitoring Wi-Fi module state and getting network statistics.
 
-- Detecting IP collision
-- Dumping network status
-- Dumping TCP
-- Monitoring Ethernet
-- Monitoring Wi-Fi module state
-- Getting network statistics
+This feature is supported in mobile, TV, and wearable profile.
 
 > [!NOTE]
 > You can test the INM functionality on a target device only. The [Tizen emulator](../../../tizen-studio/common-tools/emulator.md) does not support this feature.
@@ -16,7 +11,7 @@ Intelligent Network Monitoring (INM) API is used to get information about the ne
 
 To enable your application to use the INM API:
 
-1. To use the INM API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1. To use the [INM](../../api/mobile/latest/group__CAPI__NETWORK__INM__MODULE.html) API, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
    ```xml
    <privileges>
@@ -166,9 +161,10 @@ You can retrieve information about a particular connection by iterating through 
     }
     ```
     
-You can monitor other types of state changes, with `inm_set_cellular_state_changed_cb()`, `inm_set_ethernet_state_changed_cb()`, etc.
+You can monitor other types of state changes using certain callback functions, such as `inm_set_cellular_state_changed_cb()` or `inm_set_ethernet_state_changed_cb()`.
 
 ## Related Information
 - Dependencies
   - Tizen 5.0 and Higher for Mobile
   - Tizen 5.0 and Higher for Wearable
+  - Tizen 5.0 and Higher for TV
