@@ -100,7 +100,7 @@ To launch the installer, follow these steps:
 
 2. Accept the software license.
    
-   > [!NOTE]*
+   > [!NOTE]
    > The license contains important legal notices for using Tizen Studio. Read it fully, and click **Accept** only if you agree with the license terms.
 
    ![Tizen Studio License Agreement](./media/install_sdk_license.png)
