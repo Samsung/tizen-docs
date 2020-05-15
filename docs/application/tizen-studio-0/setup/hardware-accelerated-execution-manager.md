@@ -64,12 +64,12 @@ To start or stop Intel&reg; HAXM, open the Command Prompt window with administra
 ### Removing Intel HAXM
 
 > [!WARNING]
-> Close all instances of the Tizen emulator before removing Intel&reg; HAXM.
+> Close all instances of the Tizen Emulator before removing Intel&reg; HAXM.
 
 Run installer or use control panel, to uninstall the Intel&reg; HAXM.
 
 > [!NOTE] 
-> If you remove Intel&reg; HAXM, the acceleration of the Tizen emulator is disabled; however, the emulator is still enabled. To re-enable the acceleration, install Intel&reg; HAXM again.
+> If you remove Intel&reg; HAXM, the acceleration of the Tizen Emulator is disabled; however, the emulator is still enabled. To re-enable the acceleration, install Intel&reg; HAXM again.
 
 ### Troubleshooting
 
@@ -90,7 +90,7 @@ If you meet an installation failure because of hardware requirements, check the 
 
 Supported macOS versions: 10.12 Sierra (64-bit), 10.11 OS X El Capitan(64-bit), 10.10 Yosemite (64-bit), 10.9 Mavericks (64-bit), 10.8 Mountain Lion (64-bit)
 
-HAXM is automatically installed as part of Tizen Studio installation. To install HAXM separately, see [http://download.tizen.org/sdk/haxm/7.0.0/mac/](http://download.tizen.org/sdk/haxm/7.0.0/mac/IntelHAXM_7.0.0.dmg) and download the macOS installer package.
+**HAXM is automatically installed as part of the Tizen Studio.** If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/mac/](http://download.tizen.org/sdk/haxm/7.0.0/mac/IntelHAXM_7.0.0.dmg) and download the macOS installer package.
 
 **Table: Windows installer package**
 

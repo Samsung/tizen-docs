@@ -1,4 +1,4 @@
-# Updating Tizen Studio
+# Update Tizen Studio
 
 Tizen Studio provides the Package Manager, a comprehensive package management tool for installing, updating, and removing platforms and tools. This topic describes how to install, update, and remove packages using the GUI version of the tool, and how to update packages with the CLI version of the tool.
 
@@ -10,16 +10,9 @@ Before starting the Package Manager, close all Tizen Studio programs.
 
 To run the Package Manager:
 
-- Windows&reg;: Click **Start > All Programs > Tizen Studio > Tools > Package Manager**.
-- MacOS&reg;: Click **Launchpad > Package Manager**.
-- Ubuntu&reg;: Click **Dashboard Home > Package Manager**.
-
-> [!NOTE]
-> Before you launch Package Manager, ensure that you close all Tizen Studio programs.
-
-## Package Manager Components 
-
-The Package Manager window is made up of the following logical areas as identified in the following figure:
+- On Windows&reg;, select **Start > All Programs > Tizen Studio > Tools > Package Manager**.
+- On macOS, select **Launchpad > Package Manager**.
+- On Ubuntu, select **Dashboard Home > Package Manager**.
 
 **Figure: Package Manager main window**
 
@@ -65,7 +58,7 @@ If you are using the Tizen Studio offline, you can update the packages with an i
 2. Enter the full path of the image file in the **Package Repository** box, or click **...** next to the combo box to open the file browser. In the file browser, select the image file, and click **Open** to close the dialog. If the image file is valid, detailed information about the image is displayed below the combo box.
 3. Click **OK** to close the **Configuration** dialog. The **Update available** button appears after the platforms and tools in the image file are re-loaded. Now you can update and install additional platforms and tools with the image file.
 
-> **Note**  
+> [!NOTE]
 > Make sure that the image file includes a newer Tizen Studio version than your installed version before updating or installing with the image file.
 
 ## Install Additional Packages
@@ -94,7 +87,7 @@ To remove a package, click the **delete** button next to the package. Due to pac
 
 ![Removing packages](./media/updating_sdk_install_remove.png)
 
-## Monitoring Progress
+## Monitor Progress
 
 When you have installations, updates, or removals in progress, a progress bar appears in the header area indicating the overall progress. You can monitor the progress of specific installations, uninstallations, or updates, as well as view the expected time to completion, in the **Progress** tab.
 
@@ -122,5 +115,5 @@ package-manager-cli update [--accept-license] [--no-java-check] [--proxy <value>
 | `--latest`                  | This option is only useful for updating Tizen Studio to the latest version after you downgraded it manually to an earlier version. Otherwise, the Package Manager updates it to the latest version with or without this option. |
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen Studio 1.0 and Higher

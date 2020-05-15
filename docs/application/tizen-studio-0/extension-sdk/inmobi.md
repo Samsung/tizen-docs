@@ -27,6 +27,7 @@ Step 1 - Send an email to [tizen.onboarding@inmobi.com](mailto:tizen.onboarding@
 Step 2 - You will receive a document stating the terms and conditions for app monetization with InMobi along with a list of details required for account creation and site ids approval
 
 Step 3 - Fill in the required details (only to be TYPED, not handwritten) and share a signed copy with InMobi. A scanned copy should be shared on the above mentioned email id and a hard copy should be mailed to the below mentioned address
+ 
   ```text
   Legal Team, INMOBI, 7th Floor, Cessna Business Park,
   Kadubishanahalli, Sarjapur - Outer Ring Road,

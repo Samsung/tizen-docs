@@ -30,8 +30,7 @@ This section explains how to install the OpenJDK version 12 for Windows:
 3. Click **Environment Variables...**. The **Environment Variables** window appears.
 
 4. Click **New...** in the **User variables for \<user name\>** section.
-    > **Note**
-    >
+    > [!NOTE]
     > If your `JAVA_HOME` variable is already created, select it and click **Edit...**.
 
 5. Enter `JAVA_HOME` in the variable name field and the JDK directory path, for example, `C:\Users\user\Desktop\jdk-12.0.2`, in the Variable value field.
@@ -70,16 +69,14 @@ This section explains how to install the OpenJDK version 12 for Ubuntu:
     ```
     sudo update-alternatives --config java
     ```
-    > **Note**
-    >
+    > [!NOTE]
     > If there are multiple JDK installed, select the required java version by entering the selection number.
 
 5. Run the following command:
     ```
     sudo update-alternatives --config javac
     ```
-    > **Note**
-    >
+    > [!NOTE]
     > `javac` is for compilation. For more information on differences between java and javac, see https://docs.oracle.com.
 
 4. Select the required javac version as mentioned above.
@@ -109,21 +106,20 @@ This section explains how to install the OpenJDK version 12 for macOS:
     >
     > If the OpenJDK version 12 is not installed, add the `export JAVA_HOME = /Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home` command in the `.profile` or `.bash_profile` file.
 
-
 ## Install OpenJFX
 
 After installing OpenJDK, install the OpenJFX:
 
 1. Download the OpenJFX version 11 from [https://gluonhq.com/products/javafx](https://gluonhq.com/products/javafx/).
-    > **Note**
-    >
+   
+    > [!NOTE]
     > Download the appropriate JavaFX product for your operating system.
 
 2. Extract the downloaded zip file.
 
 3. Copy all files in `lib` folder to `lib` folder of `JAVA_HOME`.
-   > **Note**
-   >
+   
+   > [!NOTE]
    > On Ubuntu, run the following command:
    > ```
    > cd javafx-sdk-11.0.1
@@ -131,7 +127,7 @@ After installing OpenJDK, install the OpenJFX:
    > ```
 
 4. Copy all files in `bin` folder to `bin` folder of `JAVA_HOME`.
-   > **Note**
-   >
+   
+   > [!NOTE]
    > This step is only required for Windows.
 

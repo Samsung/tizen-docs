@@ -18,7 +18,7 @@ To uninstallTizen Studio:
    The SDK data directory typically contains user-created data files, including emulator images, log files, and tool configuration files.
 
    - **KeyStore**  
-   The keystore directory is located inside the SDK data directory, and contains the author and distributor certificate files. If the certificate files are deleted, you cannot restore them from any Tizen seller market site. If you plan to install another Tizen Studio version or reinstall Tizen Studio later, it is strongly recommended that you back up the certificate files or keep the keystore directory by unchecking the **KeyStore** component.
+   The keystore directory is located inside the SDK data directory, and contains the author and distributor certificate files. If the certificate files are deleted, you cannot restore them from any Tizen seller market site. If you plan to install another Tizen Studio version or reinstall the Tizen Studio later, it is strongly recommended that you back up the certificate files or keep the keystore directory by unchecking the **KeyStore** component.
 
    ![Uninstaller selections](./media/uninstall_sdk_selection.png)
 

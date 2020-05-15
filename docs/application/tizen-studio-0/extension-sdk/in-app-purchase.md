@@ -1,18 +1,20 @@
-# In-app Purchase Programming Guide
+# In-App Purchase
 
-By selling items from within your application, you can get a large revenue. You can implement In-Application Purchases (IAP) in your application using the AppControl mechanism for Tizen native and Web applications.
+By selling items from within your application, you can generate considerable revenue. You can implement In-Application Purchases(IAP) in your application using the AppControl mechanism for Tizen native and Web applications.
 
 You can use the IAP in the following scenarios, for example:
 
 - An application that enables additional features
 - Any application that allows the user to remove ads
-- An audio-book application that allows the user to purchase and download new books
+- An audio-book application that enables the user to purchase and download new books
 - A game which offers new levels to play
 - An RPG game that allows to buy virtual items
 
 ## What is the In-App Purchase AppControl Mechanism?
 
-To sell items inside your applications such as in-game coins, levels and others, you need to set servers up to communicate with billing server and user authentications server, and many other infra servers. In-App Purchase simply handles all those things for you. To use In-App Purchase, you need to prepare your applications for communicating with it. For example, with in-app purchase of items, your application finds the proper AppControl, starts the purchase method, and receives the result of the purchase in the method of the listener method. IAP shows dialogs in case of errors, communicates with the Tizen Stores server, and invokes the listener methods to return the result of the request.
+To sell items inside your applications such as in-game coins, levels and others, you need to set servers up to communicate with billing server and user authentications server, and many other infra servers. In-App Purchase simply handles all those things for you. 
+
+To use In-App Purchase, you need to prepare your applications for communicating with it. For example, with in-app purchase of items, your application finds the proper AppControl, starts the purchase method, and receives the result of the purchase in the method of the listener method. IAP shows dialogs in case of errors, communicates with the Tizen Stores server, and invokes the listener methods to return the result of the request.
 
 This document explains the process of using the IAP. Read this document thoroughly before using the IAP.
 

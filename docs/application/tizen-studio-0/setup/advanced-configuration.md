@@ -37,9 +37,9 @@ To set the package repository:
         > [!NOTE]  
         > If you toggle the **Auto Update** option to **OFF**, the update causes entire packages to be removed to ensure system integrity.
 5. To confirm your setting, click **OK**.
-    
-    
+       
     ![Configuration window with the Package Repository selected](./media/advanced_conf_serverg.gif)
+
 ## Configure Main SDK Image
 
 1. Enter the full path of the SDK image file in the **Package Repository** box, or click ![Browse](./media/advanced_conf_browse.png) next to the combo box to open the file browser.
@@ -52,8 +52,6 @@ To set the package repository:
 > - The installation or update can cause entire packages to be removed to ensure system integrity.
 
 ## Configure Extension SDK Repository
-
-## Configuring the Extension SDK Repository
 
 izen Studio supports extension packages from the extension repositories, which are developed and managed by external developers and companies. To configure the extension SDK, you must unfold the configuration panel by clicking **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) at the bottom of the dialog box. To return to the package repository configuration, click **Extension SDK** ![Extension SDK button icon active](./media/advanced_conf_icon_extension_active.png) to fold the extension SDK panel, or scroll up.
 
