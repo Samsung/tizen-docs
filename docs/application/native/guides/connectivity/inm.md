@@ -1,4 +1,4 @@
-# INM
+# Intelligent Network Monitoring
 
 Intelligent Network Monitoring (INM) API is used to get information about the network, provided by Linux functions. Some features of this API are detecting IP collision, dumping network status, dumping TCP, monitoring ethernet, monitoring Wi-Fi module state and getting network statistics.
 
