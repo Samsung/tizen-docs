@@ -31,7 +31,7 @@ You can use the following connectivity and wireless features in your native appl
 
 - [Intelligent Network Monitoring (INM)](inm.md)
 
-  You can get information about the network provided by Linux functions. You can detect IP collisions, dump network status, dump TCP, monitor ethernet, monitor Wi-Fi module state, and get network statistics.
+  You can get information about the network, provided by Linux functions. You can detect IP collisions, dump network status, dump TCP, monitor ethernet, monitor Wi-Fi module state, and get network statistics.
 
 - [Smart Traffic Control (STC)](stc.md)
 
