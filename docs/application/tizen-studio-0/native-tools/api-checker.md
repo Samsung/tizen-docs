@@ -1,4 +1,4 @@
-# Verifying APIs and Privileges
+# Verify APIs and Privileges
 
 Tizen Studio provides the API Checker tool to identify potential problems in the application code related to the API and privilege use.
 
@@ -17,7 +17,7 @@ In the **Project Explorer** view, right-click the project on which you want to r
 
 The project is automatically built and the API Checker is run during the build process.
 
-**Figure: Running the API Checker**
+**Figure: Run API Checker**
 
 ![Running the API Checker](./media/api_checker_run.png)
 
@@ -27,7 +27,7 @@ When the API Checker is finished, the detected issues are listed in the **Proble
 
 ![Results in the Problems view](./media/api_checker_result.png)
 
-## Customizing the API Checker
+## Customize API Checker
 
 By default, the API Checker checks for API version mismatches, deprecated APIs, and undefined privileges.
 
@@ -43,7 +43,7 @@ To customize the API Checker:
 
    ![API Checker settings](./media/api_checker_settings.png)
 
-## Quick-fixing API Checker Findings
+## Quick-fix API Checker Findings
 
 You can quick-fix some of the issues found by the API Checker, such as use of undefined and unused privileges.
 
@@ -57,5 +57,5 @@ To quick-fix issues:
 3. To resolve all issues of the same type in the project, click **Select All** and **Finish**.![API Checker quick-fix all](./media/api_checker_quickfix_all.png)
 
 ## Related information
-* Dependencies
+- Dependencies
  - Tizen Studio 1.0 and Higher

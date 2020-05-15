@@ -10,9 +10,10 @@ You can set the configuration for installing or updating Tizen Studio using one 
 
 The package repository is a server which stores all the packages that you are using or will use in Tizen Studio. Using the Package Manager, you can install or update packages from that repository. Rather than providing a single repository for the main SDK, several CDNs (Content Delivery Networks) are offered around the globe for your convenience. You can select the nearest package repository to install or update packages more quickly.
 
-**Figure: Configuration window with the Package Repository selected**
+> [!NOTE]
+> The installed packages are removed automatically. Before changing the package repository, you must reinstall the packages from the changed repository.
 
-![Configuration window with the Package Repository selected](./media/advanced_conf_server.png)
+If you want to configure Package Manager in the command-line interface, see [Updating with the CLI Package Manager](update-sdk.md#updating-with-the-cli-package-manager).
 
 To set the package repository:
 
@@ -27,15 +28,30 @@ To set the package repository:
 
 ### Configuring the SDK Image
 
-To install or update packages with the SDK image:
+1. In **Package Repository** drop-down list, select an available repository, and select your desired locale specific repository for quick installation and update.
+2. To validate the repository, click **Apply**. 
+3. In **Distribution** drop-down list, select the distribution that you want to access.
+4. Different snapshots are listed in the snapshot box based on your selection in the **Distribution** drop-down list.  You can toggle **Auto Update** to **ON** and **OFF**. 
+     - If you toggle **Auto Update** to **OFF**, you can select the specific snapshot from the list. 
+     - If you toggle **Auto Update** to **ON**, Package Manager updates the snapshot with the latest package snapshot.
+        > [!NOTE]  
+        > If you toggle the **Auto Update** option to **OFF**, the update causes entire packages to be removed to ensure system integrity.
+5. To confirm your setting, click **OK**.
+    
+    
+    ![Configuration window with the Package Repository selected](./media/advanced_conf_serverg.gif)
+## Configure Main SDK Image
 
 1. Enter the full path of the SDK image file in the **Package Repository** box, or click ![Browse](./media/advanced_conf_browse.png) next to the combo box to open the file browser.
 
    In the file browser, select the SDK image file, and click **OK**. When you select the image file, the image's origin repository information is displayed below the combo box.
 2. Click **OK** to confirm your setting.
 
-> **Note**  
-> If you install or update packages using an image file, the SDK image's origin repository URL or distribution ID can be different than the current packages' URL or distribution ID. Be careful when doing this, since the installation or update can cause entire packages to be removed to guarantee system integrity.
+> [!NOTE]  
+>-  If you install or update packages using an image file, the SDK image's origin repository URL or distribution ID can be different from the current packages URL or distribution ID. 
+> - The installation or update can cause entire packages to be removed to ensure system integrity.
+
+## Configure Extension SDK Repository
 
 ## Configuring the Extension SDK Repository
 
@@ -87,21 +103,8 @@ To activate or deactivate the extra repository:
 ![Activating or deactivating an extra repository](./media/advanced_conf_activate_extra.png)
 3. Click **OK** to confirm.
 
-> **Note**  
-> If the extension repository is deactivated, the packages from that repository are no longer shown in the Package Manager. However, if you activate the extension repository, the packages are shown in the Package Manager again.
-
-## Configuring the Proxy
-
-The Package Manager provides the network option to configure a proxy to connect to repository servers. To set the proxy:
-
-1. Click the **Proxy Settings** button at the bottom of the **Configuration** dialog box.  
-![Proxy settings window](./media/advanced_conf_proxy.png)
-2. Select the proxy option you want to use:
-   - **No proxy**: The Package Manager accesses the repository servers directly.
-   - **System proxy settings**: The Package Manager accesses the repository servers through the system proxy.
-   - **Manual proxy settings**: The Package Manager accesses the repository servers through the **IP** and **Port** value that you specify.
-3. Click **Apply** to confirm.
-
+> [!NOTE]  
+> If the extension repository is deactivated, the packages from that repository are no longer shown in Package Manager. However, if you activate the extension repository, the packages will be displayed in Package Manager.
 
 ## Related information
 * Dependencies

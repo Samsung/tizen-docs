@@ -4,15 +4,22 @@ Tizen Studio provides the Package Manager, a comprehensive package management to
 
 The Package Manager features manage the packages that are used in all Tizen Studio programs. Tizen Studio platforms and tools consist of collections of packages that contain the necessary files, metadata, and installation and removal scripts. Each package has complicated dependencies to other packages. The Package Manager offers an easy and simple way to manage platforms and tools without understanding the complicated package dependencies.
 
-## Starting the Package Manager
+## Start the Package Manager
 
 Before starting the Package Manager, close all Tizen Studio programs.
 
 To run the Package Manager:
 
-- On Windows&reg;, select **Start > All Programs > Tizen Studio > Tools > Package Manager**.
-- On macOS, select **Launchpad > Package Manager**.
-- On Ubuntu, select **Dashboard Home > Package Manager**.
+- Windows&reg;: Click **Start > All Programs > Tizen Studio > Tools > Package Manager**.
+- MacOS&reg;: Click **Launchpad > Package Manager**.
+- Ubuntu&reg;: Click **Dashboard Home > Package Manager**.
+
+> [!NOTE]
+> Before you launch Package Manager, ensure that you close all Tizen Studio programs.
+
+## Package Manager Components 
+
+The Package Manager window is made up of the following logical areas as identified in the following figure:
 
 **Figure: Package Manager main window**
 
@@ -44,7 +51,7 @@ The Package Manager is composed of 3 areas:
 
   ![Description area](./media/updating_sdk_description.png)
 
-## Updating Packages
+## Update Packages
 
 If you are connected to the Internet and updates are available for your installed Tizen Studio packages, an **Updates available** button appears in the Package Manager. Click it to update all the packages you have installed. To ensure system integrity across all packages in Tizen Studio, the Package Manager does not support updating packages individually.
 
@@ -61,7 +68,7 @@ If you are using the Tizen Studio offline, you can update the packages with an i
 > **Note**  
 > Make sure that the image file includes a newer Tizen Studio version than your installed version before updating or installing with the image file.
 
-## Installing Additional Packages
+## Install Additional Packages
 
 If you want to install a specific platform or tool, in the **Main SDK** and **Extension SDK** tabs, simply click **install** next to that platform or tool. The Package Manager installs all packages that are required for that platform or tool.
 
@@ -79,7 +86,7 @@ While a package is installing, you can cancel the installation in the **Progress
 
 If you want to retry a canceled or failed installation, click the **retry** (![Retry icon](./media/updating_sdk_icon_retry.png)) button. Due to package dependencies, retrying the installation of a single package can cause the installation of other packages.
 
-## Removing Packages
+## Remove Packages
 
 To remove a package, click the **delete** button next to the package. Due to package dependencies, removing a single package can cause other packages to be removed also. To ensure system integrity across all installed Tizen Studio packages, package removal cannot be canceled while in progress.
 
@@ -95,7 +102,7 @@ When you have installations, updates, or removals in progress, a progress bar ap
 
 ![Progress tab](./media/updating_sdk_progress.png)
 
-## Updating with the CLI Package Manager
+## Update with the CLI Package Manager
 
 Run the CLI Package Manager with the `update` command using the following syntax:
 

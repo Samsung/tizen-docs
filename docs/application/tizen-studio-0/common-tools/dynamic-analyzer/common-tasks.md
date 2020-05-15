@@ -143,7 +143,7 @@ The Call Trace table contains the following columns:
 
 ![Call Trace table](./media/da_common_call_trace.png)
 
-> **Note**  
+> [!NOTE]  
 > If your application is built by setting the optimization option above O0 (default value), the API callstack-related information shown in the Call Trace table can be incorrect. To profile your application with the Dynamic Analyzer, you must not change the optimization option.
 
 #### Startup Table

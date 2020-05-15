@@ -75,8 +75,7 @@ You can also add a shared directory in the Emulator Control Panel (ECP):
 3. Select the **Host Directory Sharing** tab.
 4. Add or remove the host computer directory.
 
-> **Note**
->
+> [!NOTE]
 > You must have read/write permissions for the directory you want to share.
 
 <a name="camera"></a>
@@ -94,12 +93,9 @@ Before running the application, install a USB-connected Webcam or embedded Webca
 $ dpkg -l | grep libv4l-0
 ```
 
-> **Note**
-> 
+> [!NOTE]
 > - The Webcam must support video4linux2. (Currently, only `/dev/video0` is supported.)
->
 > - Multiple instances of the emulator can be launched, but only a single emulator instance can use the camera feature.
->
 > - Depending on the Webcam in use, the emulator camera feature may not work properly.
 
 The following table lists the host Webcam features.
@@ -130,8 +126,7 @@ The emulator provides 3 methods of proxy configuration. They can be configured i
 - **Use host proxy**: sets the same proxy value that the host uses.
 - **Use manual proxy**: sets manually a proxy value different from the host.
 
-> **Note**
->
+> [!NOTE]
 > The following preallocated addresses are not supported as a manual proxy:
 > - Localhost
 > - 127.0.0.1/8
@@ -181,8 +176,7 @@ Inbound connections from external to the emulator fail in the NAT backend. If yo
   2. On A, append the `,hostfwd tcp:127.0.0.1:<B's localPort>-:<A's serverPort>` redirection option in the `vm_launch.conf` file.
   3. On B, let the client connect to `10.0.2.2:<B's localPort>`.
 
-  > **Note**
-  >
+  > [!NOTE]
   > The appending value of the configuration file is removed when the user changes the VM setting on the Emulator Manager.
 
 ### Bridge (Bridged Network)
@@ -198,8 +192,7 @@ The bridge backend requires a dedicated IP for the emulator and you can communic
 
 ![Emulator bridged network architecture](./media/emulator_feature_bridge_architecture.png)
 
-> **Note**
-> 
+> [!NOTE]
 > - Network bridging does not work when the underlying physical network device is a wireless device.
 > - On macOS, only a physical network device named `en0` can be used for bridging.
 
@@ -287,8 +280,7 @@ To create your own skin layout:
 
    The image defined in your modified XML meta file is displayed when the emulator is launched.
 
-> **Note**
-> 
+> [!NOTE]
 > If you reinstall Tizen Studio, the custom skin folders are reset.
 
 <a name="eventcast"></a>
@@ -342,8 +334,7 @@ To connect the EventCaster application to the emulator:
 
      On Android 4.0 and newer, it is in **Settings > Developer options**.
 
-     > **Note**
-     >
+     > [!NOTE]
      > On Android 4.2 and newer, the developer options are hidden by default. To make them available, go to **Settings > About phone** and tap **Build number** 7 times. Return to the previous screen to find the developer options.
 
   2. Enable USB debugging.

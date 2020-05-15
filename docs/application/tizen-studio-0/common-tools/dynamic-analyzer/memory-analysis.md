@@ -171,7 +171,7 @@ You can find where memory leaks occurred in the application by enabling the **Le
 
 ![Leak Sanitizer enabled in the Preferences dialog](./media/da_memory_leaks_preference.png)
 
-> **Note**  
+> [!NOTE]  
 > Pay attention to the known limitations of the Leak Sanitizer in the Dynamic Analyzer:
 > - Leak Sanitizer can be enabled for Tizen 3.0 devices only.
 > - Leak Sanitizer cannot be enabled together with the Thread Analysis feature.

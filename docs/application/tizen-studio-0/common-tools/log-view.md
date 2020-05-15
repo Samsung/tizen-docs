@@ -34,7 +34,7 @@ You can perform a variety of actions in the **Log** view:
 
    - To delete all tabs for a device, right-click the device in the Device Manager and select **Delete log tabs**. Confirm the deletion by clicking **OK**.
 
-   > **Note**
+   > [!NOTE]
    >
    > Any filters created for a log tab are deleted when the tab is removed.
 
@@ -54,7 +54,7 @@ You can perform a variety of actions in the **Log** view:
 
    To export logs to a file, click the **Export Logs** button (![Export Logs](./media/log_view_export_logs_icon.png)), select the file storage location and file name for the exported log, and click **OK**.
 
-   > **Note**
+   > [!NOTE]
    >
    > If you have filters applied to a log tab, only messages that match those filters are exported. If you want to export the complete log, remove all filters before exporting.
 

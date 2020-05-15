@@ -8,7 +8,7 @@ The Device Manager provides a graphical user interface that is more convenient t
 
 To use the Device Manager with a specific device, you must connect the device over SDB (Smart Development Bridge). Physical devices can be connected with a USB cable, and emulators can be connected through the Emulator Manager. When the device is connected over SDB, it is automatically displayed in the Device Manager and its directory structure and logs are shown in the **File Explorer** and **Log** views, respectively.
 
-> **Note**  
+> [!NOTE]  
 > If you do not have the Device Manager installed, open the [Package Manager](../setup/update-sdk.md), go to the **Main SDK** tab, and locate the **Device Manager** under **Tizen SDK Tools > Baseline SDK**. To install the tool, click **Install**.
 
 <a name="access"></a>
@@ -119,7 +119,7 @@ You can perform a variety of actions through the **File Explorer** view:
 -   To pull a file from the device to the computer, right-click the file you want to pull and select **Pull the file**. In the popup, select the destination directory on the computer and click **OK**.
 
 
-> **Note**  
+> [!NOTE]  
 > To create or remove a file, the folder must have `Write` permission set for the `Other` user.
 
 <a name="log_view"></a>
@@ -153,7 +153,7 @@ You can perform a variety of actions in the **Log** view:
     -   To delete a single tab, click the **X** next to the name of the log tab.
     -   To delete all tabs for a device, right-click it in the Device Manager and select **Delete log tabs**. Confirm the deletion by clicking **OK**.
 
-    > **Note**  
+    > [!NOTE]  
 	> Any filters created for a log tab are deleted when the tab is removed.
 
 - Filtering log messages
@@ -171,7 +171,7 @@ You can perform a variety of actions in the **Log** view:
 
     To export logs to a file, click the **Export Logs** button (![Export Logs](./media/device_manager_export_logs_icon.png)), select the file storage location and file name for the exported log, and click **OK**.
 
-   > **Note**  
+   > [!NOTE]  
    > If you have filters applied to a log tab, only messages that match those filters are exported. If you want to export the complete log, remove all filters before exporting.
 
 <a name="settings"></a>
@@ -193,14 +193,14 @@ You can set the following settings for the Device Manager:
 
     This is the maximum wait time for push and pull operations in the **File Explorer** view. To set the timeout value, select the **Device** tab, change the value, and click **OK**.
 
-    > **Note**  
+    > [!NOTE]  
     > Only values between 30 000 and 600 000 (milliseconds) are allowed.
 
 - Log buffer size
 
     This is the maximum amount of log entries to store in the log table. To set the buffer size, select the **Log** tab, change the value, and click **OK**.
 
-    > **Note**  
+    > [!NOTE]  
     > Only values between 5 000 and 100 000 (lines) are allowed.
 
 ## Related Information

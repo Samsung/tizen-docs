@@ -79,7 +79,7 @@ In the view, you can see:
   - **No Image**: If the UI object has no image, this message appears (if the width or height of the UI object is 0).
   - **No Object**: When the UI object does not exist anymore in the application, this message appears. This can happen because the Hierarchy Tree view is not automatically updated.
 
-  > **Note**  
+  > [!NOTE]  
   > If there are other UI objects intersecting the position of the selected UI object, those are also displayed.
 
 - The name set by the EFL `evas_object_name_set()` function. If the name is not set, the **No Name** message appears instead of the name.

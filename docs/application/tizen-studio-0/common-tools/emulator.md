@@ -79,7 +79,7 @@ If the CPU VT is disabled in the **Emulator Configuration** view on the Emulator
 
      The HAXM driver is installed during the Tizen Studio installation. For more information on installing HAXM, see [Hardware Accelerated Execution Manager](../setup/hardware-accelerated-execution-manager.md).
 
-   > **Note**  
+   > [!NOTE]  
    > If the installation fails with a VT-related message, check the CPU feature and BIOS settings. If the installation fails with an NX-related message, enable NX (or PAE and DEP) -related item in the BIOS. In addition, make sure that the operating system supports the NX feature (for more information, see [MSDN](http://msdn.microsoft.com/en-us/library/windows/hardware/ff542275%28v=vs.85%29.aspx)).
 
    No configuration is required for KVM or HAX.
@@ -250,7 +250,7 @@ For the emulator to support OpenGL&reg; ES acceleration, you need:
 - Graphics chipset driver that supports OpenGL&reg; 1.4 installed on the host machine
 - All chipset vendors and driver versions available to support the OpenGL&reg; 1.4 standard
 
-> **Note**  
+> [!NOTE]  
 > The emulator supports only ES 1.1, ES 2.0, and EGL&trade; 1.4 versions.
 
 <a name="target"></a>

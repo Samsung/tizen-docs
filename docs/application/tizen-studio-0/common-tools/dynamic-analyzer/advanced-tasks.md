@@ -285,7 +285,7 @@ You can launch the `dacli.jar` file from the Dynamic Analyzer installation direc
 export PATH=$PATH:<path-to-tizen-studio>/tools/dynamic-analyzer/
 ```
 
-> **Note**  
+> [!NOTE]  
 > If you have trouble with the execution, you can try one of the following:
 >
 > - Grant execution permissions to the `dacli.jar` file:

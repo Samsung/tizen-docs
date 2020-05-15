@@ -1,31 +1,28 @@
 # Web Tools
 
-In Tizen Studio, you can perform all the development activities from the application project creation to testing and packaging.
+This page explains about various web application development tools supported in Tizen Studio. Tizen Studio IDE provides powerful tool chains to ease web-based app development and provides a platform that is consistent and fast. 
 
-> **Note**  
-> This section covers the tool details supported in mobile and wearable Web application development. Although most of the features are also supported in TV Web application development, no TV-specific details are included within the topics in this section. For more information on TV application development tools, see the [Samsung Developers Smart TV site](http://developer.samsung.com/tv/develop).
+Using Tizen Studio IDE and the web tools, you can create the web app that is:
+ - Reliable: Loads instantly
+ - Intuitive: Gives seamless and immersive user experience
+ - Responsive: Responds quickly to user interactions on any device
+ - Discoverable: Found easily through search engines 
 
-Tizen Studio provides various tools to help you with the different Web application development process phases:
-
-- [Managing Projects](managing-projects.md)
-
-  You can create new application projects with the Project Wizard, and manage the existing applications in the **Project Explorer** view in Tizen Studio. You can also manage connected devices, and register certificates for your applications to allow them to be published in the application stores.
-
-- [Writing and Editing Code](coding.md)
-
-  You can edit HTML, JS, and CSS files in specific editors, and preview how the changing code affects the application screen. You can also use the live editing feature to modify the application while it is running.
-
-  You can use the content assist, privilege checker, and code cleaning tools to speed up the code writing and verification tasks. With the REST Viewer tool, you can emulate interaction with a Web service. In addition, you can modify various Tizen Studio preferences to ensure that the code editing environment suits your needs.
-
-- [Configuring Your Application](configuring.md)
+> [!NOTE]
+> Most of the web features discussed in this section are supported in TV Web application development as well. However, TV-specific details are not included in this section. For more information on TV application development tools, see [Samsung Developers Smart TV site](http://developer.samsung.com/tv/develop).
 
   You can manage various application functionalities and features through the application configuration file, which you can easily configure with a test or form editor. In addition, you can localize your application to use various languages and locale-specific resources by using the **Web Localization** view in Tizen Studio.
 
-- [Debugging Your Application](debugging.md)
+ - [Create and Manage Application](managing-projects.md) 
+ - [Write and Edit Code](coding.md) 
+ - [Configure](configuring.md) 
+ - [Debug](debugging.md) 
+ - [Run and Test Application ](running-testing.md) 
+ - [Web Simulator](web-simulator.md) 
 
   You can debug, profile, and optimize your application with various tools, such as the Dynamic Analyzer, Web Inspector, and JavaScript Analyzer. Tizen Studio provides various views designed to help you identify and fix runtime errors, such as the  **Log** view.
 
-- [Running and Testing Your Application](running-testing.md)
+    ![Web application development](./media/web1.png)
 
   You can run and test your application using the Tizen Emulator. In addition, the Smart Development Bridge (SDB) tool allows you to communicate with a connected target device, and the unit test tool allows you to create test projects to verify the reliability of your code.
 

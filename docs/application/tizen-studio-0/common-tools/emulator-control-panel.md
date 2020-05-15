@@ -24,7 +24,7 @@ The control keys are visible on the emulator when you start it. To access the co
 
 The emulator can use a general purpose or profile-specific skin. While the profile-specific skin provides a realistic skin and hardware keys, the general purpose skin shows a consistent frame on every state of resolution, scale, or rotation, and enables you to change the emulator display resolution to custom values. You can also see the key window.
 
-> **Note**  
+> [!NOTE]  
 > The layout of the general purpose skin is not configurable like the profile-specific skin.
 
 - Key window
@@ -43,7 +43,7 @@ The following figure illustrates the general purpose skin emulator.
 
 ![General purpose skin emulator](./media/emulator_control_general.png)
 
-> **Note**  
+> [!NOTE]  
 > You can create a custom resolution emulator by using the [Emulator Manager CLI](emulator-manager.md#control), and launch it with the general purpose skin. It is not guaranteed that all applications are correctly shown in the custom resolution.
 
 ### Control Keys
@@ -116,7 +116,7 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
 
   Show or hide the controller window.
 
-  > **Note**  
+  > [!NOTE]  
   > The **Controller** menu is not supported in the profile-specific skin.
 
 - **Advanced > Screenshot**
@@ -147,7 +147,7 @@ You can access the context menu by right-clicking on the emulator. In the menu, 
 
   Exit the emulator.
 
-> **Note**  
+> [!NOTE]  
 > In Ubuntu, you must change a global GNOME setting to view the menu icons:
 >
 > 1. In the command console, execute the `gconf-editor` command.
@@ -329,7 +329,7 @@ The control panel can be used to simulate various device data:
 - In the **USB** card, you can connect or disconnect a USB device.
 - In the **RSSI** card, you can set the RSSI (remote signal strength indicator) information level.
 - In the **SDCard** card, you can attach or detach an SD card to or from the emulator at runtime. You can attach a **4G**, **8G**, **16G**, or **32G** SD card.
-  > **Note**  
+  > [!NOTE]  
   > The same SD card cannot be attached to multiple emulators at the same time.
 
 Device information set using the control panel is reflected on the indicator bar of the emulator screen.
@@ -354,7 +354,7 @@ In the **Location** card, you can provide simulated responses to location data r
 
 In the **NFC** card, you can test near-field communication (NFC) features.
 
-> **Note**  
+> [!NOTE]  
 > The control panel only sends NFC-related events to the emulator. There is no actual information exchange between the control panel and emulator. Therefore, for information exchange features, such as writing information to an NFC tag, the emulator simply displays a success message.
 
 - Creating NFC data exchange format (NDEF) messages
@@ -438,7 +438,7 @@ In the **Telephony** card, you can generate incoming calls and messages:
 
   Incoming calls are generated in the **Call** tab.
 
-  > **Note**  
+  > [!NOTE]  
   > A Mobile Termination (MT) call is made from the Emulator Control Panel to the emulator. A Mobile Origination (MO) call is made from the emulator to the Emulator Control Panel using the emulator's phone application.
 
   To make an MT call:

@@ -2,13 +2,21 @@
 
 In Tizen Studio, you can perform all the development activities from the application project creation to testing and packaging.
 
-Tizen Studio provides various tools to help you with the different native application development process phases:
+Tizen Studio and its native application tools enable you to:
+  - Maximize the performance of a device to achieve higher throughput for time-sensitive apps, and run computationally intensive applications such as simulations and games.
+  - Provide access to platform libraries to manage native activities and access physical device components such as sensors, touch input panels, and Wi-Fi.
+  - Provide enhanced debugging, compilation, and integrated build tools. 
 
-- [Managing Projects](managing-projects.md)
+The native application development phases and the tools used in each phase are as follows:
+  - [Create and manage application](managing-projects.md)
+  - [Write and Edit Code](coding.md) 
+  - [Configure](configuring.md) 
+  - [Debug](debugging.md) 
+  - [Run and Test Your Application](running-testing.md) 
 
   You can create new application projects with the Project Wizard, and manage the existing applications in the **Project Explorer** view in Tizen Studio. You can also manage connected devices, and register certificates for your applications to allow them to be published in the application stores.
 
-- [Writing and Editing Code](coding.md)
+For advanced users, see [Command Line Interface](../common-tools/command-line-interface.md).
 
   You can use the content assist and API and privilege checker tools to speed up the code writing and verification task. In addition, you can design the application UI by arranging UI components with the visual UI Builder tool, or by defining the components and layout with the EDC script, using the EDC script editor or a graphical Component Designer.
 

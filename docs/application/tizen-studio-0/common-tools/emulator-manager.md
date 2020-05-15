@@ -1,4 +1,4 @@
-# Managing Emulator Instances
+# Manage Emulator Instances
 
 You can use emulators to run your application in a virtual environment.
 
@@ -11,7 +11,8 @@ The main features of the Emulator Manager are:
 - Starting and stopping the emulator instance
 
 <a name="access"></a>
-## Accessing the Emulator Manager
+
+## Access the Emulator Manager
 
 If you do not have the Emulator Manager installed, you can install it using the Tizen Studio Package Manager.
 
@@ -54,9 +55,8 @@ To create a new emulator instance:
 
    To view the emulator instance details, right-click the instance and select **Detail**.
 
-   > **Note**
-   >
-   > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../setup/prerequisites.md#emulator).
+   > [!NOTE]
+   > To run the application faster, switch on CPU VT and GPU. If CPU VT is disabled, check [Increasing the Application Execution Speed](emulator.md#speed) for more information. If GPU is disabled, [install the latest vendor-provided graphic driver](../setup/additional-requirements.md#tizen-studio-emulator).
 
 ### Creating Platforms
 
@@ -184,5 +184,5 @@ The following figure shows an example of how to create and launch an emulator us
 In the `create` command, the `–p` option is the platform name. You can see the available platforms using the `list -vm` command.
 
 ## Related information
-* Dependencies
+- Dependencies
   - Tizen Studio 1.0 and Higher
