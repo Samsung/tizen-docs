@@ -1,6 +1,6 @@
 # ﻿Tizen 6.0 Public M1 Release Notes
 
-Release Date: May. 31, 2020
+Release Date: May 31, 2020
 
 
 ## System (Kernel and System framework)
@@ -12,15 +12,15 @@ Release Date: May. 31, 2020
 - Device management
   - Multi-frequency feedback vibration has been developed.
   - Safe unmount for external storage has been developed.
-  - Exfat mount feature has been added.
+  - Extended File Allocation Table (exFAT) mount feature has been added.
   - Blink display has been supported.
   - Battery module has been improved for thermal management and reliability.
   - Product plugin architecture has been developed.
   - Storage cleanup modules have been improved.
-  - API set for playing feedback with sound path info has been added.
+  - API set for playing feedback with sound path information has been added.
 - Logger
   - API set for dlogutil logdump has been added.
-  - Separate persistent logging for critical events for has been developed.
+  - Separate persistent logging for critical events has been developed.
 - Open source
   - Systemd version has been upgraded with KDBus support.
   - D-Bus (libdbus and dbus-daemon) has been upgraded with KDBus support.
@@ -32,12 +32,12 @@ Release Date: May. 31, 2020
 ### New and changed features
 
 - Generic platform status dump tool has been provided to dump the status of Tizen platform as unified interface.
-- System status dump tool has been enhanced to support vender-specific cmdline flag.
-- C# callstack analyzer and Interactive debugging mode have been added to Tizen Callstack Analyzer.
+- System status dump tool has been enhanced to support vendor-specific command line flag.
+- C# call stack analyzer and interactive debugging mode have been added to Tizen Callstack Analyzer.
 
 ### Fixes
 
-- Crash garbages by sudden power failure have been removed.
+- Crash garbages due to sudden power failure have been removed.
 
 
 ## System (Base)
@@ -150,7 +150,7 @@ Release Date: May. 31, 2020
 ### New and changed features
 
 - Improved alarm usability
-  - Several time values have been provided to resolve the uncertainty of the in-exact alarm.
+  - Several time values have been provided to resolve the uncertainty of the inexact alarm.
 - Improved app launch performance
   - A new type of loader called App-defined loader has been provided to improve internal app launch performance.
 - Improved widget
@@ -178,44 +178,44 @@ Release Date: May. 31, 2020
   - The tizen_video_surface_provider interface has been added. Display server can get the serial number of the wl_surface from this interface.
 - Enlightenment Wayland display server
   - Video and UI synchronization has been added. The geometry of the video area changes with UI updates synchronously.
-  - Display server window grouping feature has been added. It supports common window grouping feature of display server. The window grouping operation is going to be performed in display server core. Therefore each product specific module could focus only on the policy management of the window group mode.
+  - Display server window grouping feature has been added. It supports the common window grouping feature of display server. The window grouping operation is going to be performed in the display server core. Therefore, each product specific module can focus only on the policy management of the window group mode.
   - Support for the presentation-time protocol has been added. Display server can notify the presentation time of the wl_surface through this protocol.
   - E_EVENT_HWC_ACTIVATE/DEACTIVATE event for the enlightenment module has been added. These events let the enlightenment module know when the hwc is activated and deactivated.
-  - The e_client_hwc_visible_skip_set function for enlightenment modules has been added. The enlightenment modules can ignore the e_client from the hwc visible list with this function.
-  - The tizen-dpms protocol can bind only one wl_client.
+  - The e_client_hwc_visible_skip_set function for the enlightenment module has been added. The enlightenment module can ignore e_client from the hwc visible list with this function.
+  - The tizen-dpms protocol support to bind only one wl_client has been added.
   - Key event generation API has been added in e_devicemgr.
-  - 'enlightenment_input_key' CLI tool has been added.
+  - enlightenment_input_key CLI tool has been added.
   - Support for long press and key composition has been added in e_keyrouter.
-  - Functionalities for 'enlightenment_info' have been added.
+  - Functionalities for enlightenment_info have been added.
     - The functionality to check zone's display state has been added.
-    - The functionality to display 'force_obscured' information has been added.
+    - The functionality to display the force_obscured information has been added.
     - The functionality to display the geometry/zoom-factor of a desk has been added.
-    - The information of functionalities like 'topvwins', 'focus_history’ have been enhanced.
+    - The information on functionalities such as topvwins and focus_history has been enhanced.
     - The functionality to generate key event has been added.
     - The functionality to generate multitouch events has been added.
     - The functionality to generate mouse event has been added.
-    - The functionality to apply filters like 'Blur', 'Gray Scale' and 'Color Inversion’ on a window or on the entire screen has been added.
+    - The functionality to apply filters such as blur, grayscale, and color inversion on a window or on the entire screen has been added.
   - Privileges for gesture functionalities have been added.
   - An API to traverse surface tree of an E_Client has been added.
   - An API to reset axis information on a transform matrix has been added.
   - An API to get timeout value regarding e_policy_visibility has been added.
   - An API to remap key codes at runtime has been added.
   - An API to update the base_output_resolution for a remote surface has been added.
-  - APIs to set/unset zoom of a client have been added.
-  - APIs to block/unblock input events inside enlightenment have been added.
-  - APIs to change E_Client’s stack have been added.
+  - API set to set/unset zoom of a client has been added.
+  - API set to block/unblock input events inside enlightenment has been added.
+  - API set to change E_Client’s stack has been added.
     - e_client_stack_above,  e_client_stack_below
   - Blocking input events during custom transition animation has been added.
-  - Skipping handling 'tizen_position_set' request for the keyboard window has been added.
-  - 'e_policy_appinfo' APIs have been changed to 'e_appinfo' APIs.
+  - Skipping handling tizen_position_set request for the keyboard window has been added.
+  - e_policy_appinfo API set has been changed to e_appinfo API set.
   - ‘e_policy_stack_transient_for_set’ API has been changed to EINTERN from E_API.
   - E_POLICY_HOOK_CLIENT_ROTATION_GEOMETRY_SET hook has been added.
   - E_COMP_WL_PID_HOOK_CONNECTED_CLIENT_CREATE hook has been added.
-  - Logs for 'quick panel' requests have been added.
+  - Logs for quick panel requests have been added.
   - Logs for touch/wheel events have been added.
 - Tizen Display Manager (TDM)
   - The tdm_display_get_pp_preferred_align_vertical API has been added.
-  - The tdm_layer APIs make the error message when the tdm-backend supports the tdm_hwc.
+  - The tdm_layer API set makes the error message when the tdm-backend supports the tdm_hwc.
 - TPL-EGL
   - The API set for the synchronization has been added.
     - wl_egl_window_tizen_create_commit_sync_fd
@@ -230,16 +230,16 @@ Release Date: May. 31, 2020
   - The output transform bug has been fixed at HWC_Windows.
   - The flickering issues at the time of the HWC transition have been fixed.
   - The several bugs under pp zoom have been fixed.
-  - The bug fix for sending quickpanel_state message has been added.
-  - The bug fix for setting input region has been added.
-  - The bug fix for single touch device has been added.
-  - The bug fix for positioning cursor under the transformed window has been added.
-  - The bug fix for displaying cursor on the transformed window has been added.
-  - The bug fix for positioning cursor when the cursor is reloaded has been added.
-  - Bugs regarding 'base_output_resolution' have been fixed.
+  - The bug regarding sending quickpanel_state message has been fixed
+  - The bug regarding setting input region has been fixed.
+  - The bug regarding single touch device has been fixed.
+  - The bug regarding positioning cursor under the transformed window has been fixed.
+  - The bug regarding displaying cursor on the transformed window has been fixed.
+  - The bug regarding positioning cursor when the cursor is reloaded has been fixed.
+  - Bugs regarding base_output_resolution have been fixed.
   - Bugs regarding calculation of visibility have been fixed.
   - Bugs regarding checking focus have been fixed.
-  - Bugs regarding seamless effect feature has been fixed.
+  - Bugs regarding seamless effect feature have been fixed.
   - Input region request has been fixed to be applied only for the mapped window.
   - Wrong handling of consumer hash data regarding remote surface has been fixed.
 
@@ -249,35 +249,35 @@ Release Date: May. 31, 2020
 ### New and changed features
 
 - DALi (3D UI Toolkit)
-  - Actor, Window and Renderer
+  - Actor, Window, and Renderer
     - Support for multiple render targets has been added.
     - Support for the reflection has been added to the Camera.
     - Signals for the window effect have been added.
   - Text, Input and Gesture
     - Support for the rotation gesture has been added.
-    - Environment variables for the long press, the pinch and the rotation gesture have been added.
+    - Environment variables for the long press, pinch, and rotation gesture have been added.
     - Some preedit enumerations have been added.
   - Widget
     - Support for the multiple widget instances has been added.
   - Control
     - The shadow property has been added to the Control.
   - Image
-    - Support for downloading of a remote svg file has been added.
-    - Support for loading n-patch image file asynchronously has been added.
-    - Support for loading svg file synchronously has been added.
+    - Support for downloading a remote SVG file has been added.
+    - Support for loading an n-patch image file asynchronously has been added.
+    - Support for loading an SVG file synchronously has been added.
 - NUI
   - LottieAnimationView has been added.
-  - Implicit conversion for Size, Size2D, Position and Position2D has been added.
+  - Implicit conversion for Size, Size2D, Position, and Position2D has been added.
   - ComponentBasedApplication has been added.
-  - Window related APIs have been added.
+  - Window related API set has been added.
   - ScrollEvent of ScrollableBase has been added.
   - CornerRadius of View has been added.
   - Support for the default style has been added to NUI.Components.
   - Hex color code has been added.
   - NUI.Components styles and extensions have been added.
   - NUI.Components have been updated to support features of wearable profile.
-  - Dotnet pre-Initialze has been added.
-  - Several InputMethodContext APIs have been added.
+  - .NET pre-initialize has been added.
+  - Several InputMethodContext API set has been added.
 
 ### Fixes
 
@@ -307,8 +307,8 @@ Release Date: May. 31, 2020
 ### New and changed features
 
 - EFL
-  - Version 1.23 has been upgraded to 1.24.
-  - New APIs have been added.
+  - Version 1.23 has been upgraded to version 1.24.
+  - New API set has been added.
     - elm_conformant_input_area_resize_disabled_get
     - elm_conformant_input_area_resize_disabled_set
     - elm_win_aux_msg_key_get
@@ -365,28 +365,28 @@ Release Date: May. 31, 2020
     - evas_map_point_precise_coord_get
     - evas_map_point_precise_coord_set
 - EFL-extension
-  - New APIs have been added.
+  - New API set has been added.
     - eext_rotary_event_activated_object_get
     - eext_popup_add
 - UI-Viewmanager has been deprecated.
 - Freetype2
-  - Version 2.9.1 has been upgraded to 2.10.1.
+  - Version 2.9.1 has been upgraded to version 2.10.1.
 - Fontconfig
-  - Version 2.13.0 has been upgraded to 2.13.1.
+  - Version 2.13.0 has been upgraded to version 2.13.1.
 - Harfbuzz
-  - Version 2.4.0 has been upgraded to 2.6.4.
+  - Version 2.4.0 has been upgraded to version 2.6.4.
 - Atk
-  - Version 2.30 has been upgraded to 2.25.1.
+  - Version 2.30 has been upgraded to version 2.25.1.
 - At-spi2-atk
-  - Version 2.20.1 has been upgraded to 2.34.1.
+  - Version 2.20.1 has been upgraded to version 2.34.1.
 - At-spi2-core
-  - Version 2.31.1 has been upgraded to 2.34.0.
+  - Version 2.31.1 has been upgraded to version 2.34.0.
 - Aurum has been added.
   - Automation framework for UI testing
 - efl-theme-tizen-wearable has been updated with new UX.
 - efl-theme-tizen-common has been updated with new UX.
 - Voice Framework
-  - The WRR (Word Recognition Rate) of default voice control engine has been enhanced.
+  - The Word Recognition Rate (WRR) of default voice control engine has been enhanced.
   - The feature for changing background volume has been added. 
   - The speed of connecting TTS engine service has been enhanced.
   - The downloadable package for TTS engine has been supported. 
@@ -397,32 +397,32 @@ Release Date: May. 31, 2020
 - Sticker Framework
   - Support for on-demand daemon launch has been added.
   - Support for whitelist to limit access to the sticker DB has been added.
-  - APIs to set/get display type of sticker (emoji, wallpaper) have been added.
-  - APIs to delete sticker using URI have been added.
-  - APIs for managing recent stickers history have been added.
+  - API set to set/get display type of sticker (emoji, wallpaper) has been added.
+  - API set to delete sticker using URI has been added.
+  - API set for managing recent stickers history has been added.
   - API for registering has been added whenever sticker info is changed.
 
 ### Fixes
 
-- Reference display for IoT headed is 7 inch display with 1280x720 resolution.
+- Reference display for IoT headed has been added. It is 7 inch display with 1280x720 resolution.
 - Input Framework
-  - The bug fix for language and return key type callback not working has been added.
+  - The bug for language and return key type callback not working has been fixed.
   - It has been modified to call language_changed, accessibility_changed callback on the C# IME.
   - Many code defects detected by the static analysis tool have been fixed.
   - Compilation warnings while building with GCC-9 have been fixed.
 - Sticker Framework
-  - It has been modified to create the DB tables when sticker daemon was not launched.
+  - It has been modified to create the DB tables when sticker daemon is not launched.
 - Voice Framework
   - Many code defects detected by the static analysis tool have been fixed.
   - Compilation warnings while building with GCC-9 have been fixed.
-  - The bug fix for thread safety issue on voice command has been added.
-  - The bug fix for memory leak issue has been added.
-  - The bug fix for checking utf8 validation has been added.
+  - The thread safety issue on voice command has been fixed.
+  - The memory leak issue has been fixed.
+  - The checking UTF-8 validation bug has been fixed.
 
 ### Known Issues
 
-- efl-theme-tizen-wearable is under developing, and will be completed by the next release.
-- efl-theme-tizen-common is under developing, and will be completed by the next release.
+- efl-theme-tizen-wearable is under development, and will be completed by the next release.
+- efl-theme-tizen-common is under development, and will be completed by the next release.
 
 
 ## Multimedia framework
@@ -450,22 +450,22 @@ Release Date: May. 31, 2020
   - A new flag to check whether it’s delta frame or not has been added.
 - Open source upgrade
   - GStreamer
-    - Version 1.12.2 has been upgraded to 1.16.2.
+    - Version 1.12.2 has been upgraded to version 1.16.2.
     - webrtcbin has been enabled to support native webrtc.
   - Pulseaudio
-    - Version 11.1 has been upgraded to 13.0.
+    - Version 11.1 has been upgraded to version 13.0.
   - OpenCV
-    - Version 3.4.1 has been upgraded to 4.2.0.
+    - Version 3.4.1 has been upgraded to version 4.2.0.
   - GraphicsMagick
-    - Version: 1.3.31 has been upgraded to 1.3.34.
+    - Version: 1.3.31 has been upgraded to version 1.3.34.
   - Giflib
-    - Version 5.1.2 has been upgraded to 5.1.9.
+    - Version 5.1.2 has been upgraded to version 5.1.9.
   - Libpng
-    - Version 1.6.36 has been upgraded to 1.6.37.
+    - Version 1.6.36 has been upgraded to version 1.6.37.
   - Libjpeg-turbo
-    - Version 2.0.1 has been upgraded to 2.0.4.
+    - Version 2.0.1 has been upgraded to version 2.0.4.
   - Tiff
-    - Version 4.0.10 has been upgraded to 4.1.0.
+    - Version 4.0.10 has been upgraded to version 4.1.0.
 - Audio FW
   - An API to control input (capture) volume has been added in audio-in.
   - An API to support looping has been added in wav-player.
@@ -479,25 +479,25 @@ Release Date: May. 31, 2020
 ### New and changed features
 
 - Wi-Fi Aware
-  - Neighbor Awareness Networking (a.k.a Wi-Fi Aware) specification has been developed.
+  - Neighbor Awareness Networking (Wi-Fi Aware) specification has been developed.
     - Devices which equip Wi-Fi chips with Wi-Fi Aware support can find each other and exchange data directly without AP.
-  - New platform level Wi-Fi Aware APIs have been introduced.
+  - New platform level Wi-Fi Aware API set has been introduced.
 - Improved AP selection algorithm
-  - AP selection algorithm in connman has been improved to consider network environment more intelligently.
+  - AP selection algorithm in ConnMan has been improved to consider network environment more intelligently.
 - EAP over Ethernet
   - EAP protocol has been developed to support in Ethernet also.
-  - New platform level connection APIs have been added.
+  - New platform level connection API set has been added.
 - curl
-  - Version 7.62 has been upgraded to 7.68.
+  - Version 7.62 has been upgraded to version 7.68.
 - libsoup
-  - Version 2.46.0 has been upgraded to 2.62.2.
+  - Version 2.46.0 has been upgraded to version 2.62.2.
 - libwebsockets
-  - Version 2.3.0 has been upgraded to 3.2.0.
+  - Version 2.3.0 has been upgraded to version 3.2.0.
 
 ### Fixes
 
-- Bug fixes in user awareness framework.
-- Bug fixes in bluetooth framework.
+- Bug in user awareness framework has been fixed.
+- Bug in bluetooth framework has been fixed.
 
 
 ## Security
@@ -506,13 +506,13 @@ Release Date: May. 31, 2020
 
 - Askuser
   - New application for user consent has been added.
-    - It was provided by a daemon, but changed by being provided by an application.
+    - It was provided by a daemon, however, now it is being provided by an application.
 - Security manager
   - The way to control access of shared/data has been changed.
-    - It will be controlled in an application’s mount namespace.
+    - It is controlled in an application’s mount namespace.
   - New privilege control mechanism has been added.
     - Privileges can be mapped to predefined Smack label and rules.
-    - Applications which have these privileges will have proper Smack rule set when it is launching.
+    - Applications that have these privileges have proper Smack rule set when it is launched.
 - Privileges
   - New privilege has been added.
     - notification.admin
@@ -524,23 +524,22 @@ Release Date: May. 31, 2020
 
 - Battery-Monitor framework
   - Support for fetching battery information for custom period has been added.
-  - Battery monitor APIs have been changed to return usage in mAh instead of percentage.
-  - Support for C# APIs for battery monitor has been added. 
-  - Support for dumping battery information for external tools has been added.
-    - Support of dumping approximate power usage per application id has been added.
-    - Support for dumping power usage per system resource has been added.
+  - Battery monitor API set has been changed to return usage in mAh instead of percentage.
+  - Support for C# API set for battery monitor has been added. 
+  - Support for estimating battery information for external tools has been added.
+    - Support for estimating approximate power usage per application ID has been added.
+    - Support for estimating power usage per system resource has been added.
     - Per-app statistics of state and events has been added. 
-  - Following APIs have been changed to provide custom time period support & return usage in mAh
+  - Following API set has been changed to provide custom time period support and return usage in mAh.
     - API for fetching information for an application for a particular resource over a certain duration of time has been updated.
     - API for fetching total battery usage information of an application, combining all the resources over certain duration of time has been updated.
-    - API for fetching battery usage values for all the resources separately used by an application id for a certain duration has been updated.
+    - API for fetching battery usage values for all the resources separately used by an application ID for a certain duration has been updated.
     - API for fetching battery usage values for a particular resource over certain duration of time has been updated.
-
 - Contact Framework
   - Support for getting count for contact records has been added for better performance.
     - API for fetching count of searched records has been added.
     - API for fetching count of searched record with range has been added.
-    - APIs for fetching count for searched record with query have been added.
+    - API set for fetching count for searched record with query has been added.
 
 ### Fixes
 
@@ -556,7 +555,7 @@ Release Date: May. 31, 2020
 ### New and changed features
 
 - Web Engine
-  - Open source chromium 76 version base has been applied.  (below feature  and API is provided by new web engine)
+  - Open source chromium 76 version base has been applied. (below feature  and API is provided by new web engine)
     - Named web worker: For multiple workers on the same URL, named web worker makes workers distinguishable by name.
     - Relative time API
     - User activation API
@@ -566,23 +565,23 @@ Release Date: May. 31, 2020
     - Chromium 76 based Tizen web engine is compatible with Tizen 5.5.
     - Web engine is packaged with installable tpk format.
 - Web Runtime
-  - Open source electorn 6.1.5 version has been applied for wrt-core functionality.
-  - WRT-AddOn feature has been extended as below.
+  - Open source electron 6.1.5 version has been applied for wrt-core functionality.
+  - WRT-AddOn feature has been extended as follows:
     - Handle multiple events from an addon.
     - Handle multiple operations for an event.
     - Prohibit the disallowed events and their operation.
-  - WRT-Service feature has been extended as below.
+  - WRT-Service feature has been extended as follows:
     - Provide background web services with multiple sandbox contexts by sharing single nodejs instance for low memory devices.
-    - Support Tizen web API in the WRT-Service context (device APIs, nodejs built-in APIs, and standard JS APIs).
+    - Support Tizen web API in the WRT-Service context (device API set, nodejs built-in API set, and standard JS API set).
     - Provide global background service (independent of web application and allows web service creations for multiple web applications).
 - Web view enhancement
-  - Web view API & interface for various back-end has been enhanced.
-    - Generic web view : Categorized EWK APIs systemically.
+  - Web view API and interface for various back-end has been enhanced.
+    - Generic web view: Categorized EWK APIs systemically.
     - .NET web view API
-      - Xamarin web view : Improves API coverage compared to the other platforms. (iOS, Android).
-      - tizenFX Tizen.WebView : Improves API coverage compared to the Native web view app
-    - NUI Web view API : Provides API consistency(coverage, naming) with .NET webview
-  - WRT-AddOn feature has been extended as below.
+      - Xamarin web view: Improves API coverage compared to the other platforms (iOS, Android).
+      - tizenFX Tizen.WebView: Improves API coverage compared to the Native web view app.
+    - NUI Web view API: Provides API consistency (coverage, naming) with .NET webview.
+  - WRT-AddOn feature has been extended as follows:
     - Handle multiple events from an addon.
     - Handle multiple operations for an event.
 
@@ -602,7 +601,7 @@ Release Date: May. 31, 2020
     - Direct mode has been enabled on EvasGL.
     - CompositorGL has been fixed to enhance performance.
     - Multithreaded image decoding feature has been added.
-    - OpenGL Texture is re-used to reduce loading time.
+    - OpenGL texture has been re-used to reduce the loading time.
   - JS Engine
     - Frequently used case about apply operation has been optimized.
     - Source code compression has been updated to reduce large memory consumption in source code.
@@ -624,10 +623,10 @@ Release Date: May. 31, 2020
   - Auto rotation sensor has been added in Sensor.
   - LottieAnimationView has been added in NUI.
 - Xamarin Forms
-  - Xamarin.Forms 4.5.0, which is latest stable version has been supported.
+  - Xamarin.Forms 4.5.0, which is the latest stable version has been supported.
 - Tizen.CircularUI
   - Wearable UI extension (Tizen.Wearable.CircularUI) 1.5.0 preview has been supported.
-- .NET runtime & Tools
+- .NET runtime and tools
   - .NETCore has been upgraded from 3.0.0 to 3.1.0.
   - .NETCore diagnostics tools have been supported.
 
@@ -640,17 +639,17 @@ Release Date: May. 31, 2020
   - Libraries are updated by gmp 6.1.2, mpc 1.1.0, mpfr 4.0.2, and isl 0.22.
   - Cilk runtime is dropped in upstream.
 - Glibc (GNU 2.30), Binutils (GNU 2.33.1) have been upgraded.
-  - The NIS(+) support library, libnsl, has been also deprecated from glibc 2.26.
+  - The NIS (+) support library, libnsl, has been also deprecated from glibc 2.26.
   - Libio.h has been removed from glibc 2.28.
 - Compilation options have been updated.
   - The default mode for C++ is now -std=gnu++14 instead of -std=gnu++11.
-  - Program Instrumentation Option(-fstack-protector-strong) and Linker option(-Wl,-z,relro) have been added globally to improve security.
-  - Code generation Option(-frecord-gcc-switches) has been added and now used command line is be recorded into the object file as .GCC.command.line.
+  - Program Instrumentation Option (-fstack-protector-strong) and Linker option (-Wl,-z,relro) have been added globally to improve security.
+  - Code generation Option (-frecord-gcc-switches) has been added and now used command line is recorded into the object file as .GCC.command.line.
   - "_FILE_OFFSET_BITS=64" has been added as default on armv7l.
   - New warning options have been enabled by default in -Wall -Wextra switches.
-- Toolchain testing infrastructure has been enabled
+- Toolchain testing infrastructure has been enabled.
   - Packages (autogen, dejagnu, guile, libgc, tcl and expect) for toolchain testing have been added. 
-  - “{package}-testresults.rpm” in gdb, binutils, glibc, and gcc have been provided with ‘run_tests’ macro
+  - “{package}-testresults.rpm” in gdb, binutils, glibc, and gcc have been provided with run_tests macro.
 
 
 ## Machine Learning
@@ -660,32 +659,34 @@ Release Date: May. 31, 2020
 - ML/Inference API
   - Pipeline .NET API set has been added.
   - Single C/.NET API set has been updated.
-    - Single API supports flexible input tensor dimensions.
+    - Single API support for flexible input tensor dimensions has been added.
       - Applications are no longer required to close and re-open a handle to change input tensor dimensions.
-    - Single API supports hardware acceleration configurations.
-    - nnfw (Tizen’s Neural Network Runtime) has been integrated.
+    - Single API support for hardware acceleration configurations has been added.
+    - Tizen’s Neural Network Runtime (nnfw) has been integrated.
     - Performance enhancement: low-latency open and invocation.
     - Timeout for invocation may be specified.
 - NNStreamer update
   - NNStreamer is upgraded from 1.0.0 to 1.5.2.
   - Tizen Sensor Framework may be used as stream inputs.
-  - AI acceleration hardware and neural network framework support
-    - Allow to control HW acceleration with ML API.
-    - Allow to use NCSDK2, Edge-TPU, OpenVINO, ARMNN, Caffe2, PyTorch
+  - AI acceleration hardware and neural network framework support has been added.
+    - ML API now allows controlling HW acceleration.
+    - ML API may utilize NCSDK2, Edge-TPU, OpenVINO, ARMNN, Caffe2, and PyTorch.
       - You may need to download and install additional adaptors from tizen.org for these additional frameworks or hardware.
-  - Ability to insert filters implemented as a C++ class (OpenCV compatible) or a simple C function.
+  - The ability to insert filters implemented as a C++ class (OpenCV compatible) or a simple C function has been added.
 - nnfw: Neural Network Runtime
+  - nnfw has been upgraded to version 1.4.0.
+  - Support for quantized MobileNet and Inception V3 models on CPU Backend has been added.
 
 ### Fixes
 
 - Neural network Single API set (5.5 M2 known issue) / dimension changes
-  - New Single API set supports flexible tensor dimensions.
+  - New Single API set to support flexible tensor dimensions has been added.
 - Inference API set / additional neural networm framework supports
-  - nnfw (Neural Network Runtime) has been integrated.
-  - Others (tensorflow, caffe2, pytorch, and so on) have been supported optionally if the device has additional packages downloaded and installed from tizen.org.
+  - Tizen’s Neural Network Runtime (nnfw) has been integrated.
+  - Others (TensorFlow, Caffe2, PyTorch, and so on) have been supported optionally if the device has additional packages downloaded and installed from tizen.org.
 
 ### Known Issues
 
-- ML / Inference Pipeline C-API & .NET API
-  - If APPSRC is used with “DO NOT FREE” mode, an additional memcpy per input frame is added as a workaround. We expect that this workaround will be removed with a performance fix in later releases.
+- ML/Inference Pipeline C-API and .NET API
+  - If APPSRC is used with DO NOT FREE mode, an additional memcpy per input frame has been added as a workaround. This work around is expect to be removed with a performance fix in the later releases.
 
