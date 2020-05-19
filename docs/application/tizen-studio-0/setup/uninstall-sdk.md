@@ -1,12 +1,12 @@
 # Uninstalling Tizen Studio
 
-By uninstalling the Tizen Studio, you can completely remove all the Tizen platforms and tools that you have installed. To remove a single package or multiple packages, see [Updating Tizen Studio](update-sdk.md).
+By uninstalling Tizen Studio, you can completely remove all en platforms and tools that you have installed. To remove a single package or multiple packages, see [Updating Tizen Studio](update-sdk.md).
 
 You can uninstall using the GUI uninstaller or the CLI Package Manager.
 
 ## Using the GUI Uninstaller
 
-To uninstall the Tizen Studio:
+To uninstallTizen Studio:
 
 1. Launch the Tizen Studio uninstaller.
 

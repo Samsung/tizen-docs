@@ -1,6 +1,6 @@
 # Debugging Your Application
 
-The Tizen Studio provides the following set of tools to help you debug your Web application projects:
+Tizen Studio provides the following set of tools to help you debug your Web application projects:
 
 - [Log View](../common-tools/log-view.md) **(Checking Logs with Log View)**
 
