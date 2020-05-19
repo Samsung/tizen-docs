@@ -1,15 +1,16 @@
 # Permit Device To Install Applications
 
-In the menu bar, click **Tools** > **Tizen** > **Tizen Device Manager**.
+To permit a device to install applications, follow these steps:
 
-Right-click anywhere in the file explorer of the **Device Manager** and select **Permit to install applications**.
+1. In the Visual Studio menu, select **Tools** > **Tizen** > **Tizen Device Manager**.
+2. In the **Device Manager** window that appears, select the device and right-click. 
+3. Select **Permit to install applications** from the options.
 
-![Device Manager](media/DeviceManager.png)
+    ![Device Manager](media/DeviceManager.png)
 
 ## Troubleshooting
 
-If failed to install application to device, follow the instructions:
-- Verify the device date and time.
-
-   If the certificate issued is before the device date and time, the application cannot be installed, as the certificate is considered invalid.
-- Verify whether the permit to install applications process is performed correctly.
+If you fail to install an application on a device, follow these instructions:
+- Verify the device date and time: If the certificate issued date is before the device date and time, the application cannot be installed as the certificate is considered invalid.
+   
+- Verify whether the **Permit to install applications** process is performed correctly.
