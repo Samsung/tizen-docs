@@ -1,11 +1,13 @@
 # Packaging a .NET and Web Hybrid Application
 
-Tizen Platform allows you to create hybrid application packages to combine .NET application and Web application.
+Tizen platform allows you to create hybrid application packages combining .NET application and Web application.
 
-You can develop the .NET application using Visual Studio and Web application using Tizen Studio. Therefore, you cannot create a hybrid application package using the existing project connection method provided by Tizen Studio.
+You can develop the .NET application using Visual Studio and Web application using Tizen Studio. This implies that, you cannot create a hybrid application package using the existing project connection method provided by Tizen Studio.
 
-Therefore, you can create a hybrid application package by merging Web application and .NET application packages. You can merge using the CLI tool provided in Tizen Studio:
-(Currently, only command-line interface is provided for .NET and Web hybrid application package.)
+You can create a hybrid application package by merging Web application and .NET application packages. You can merge using the CLI tool provided in Tizen Studio.
+
+> [!NOTE]
+> Currently, only command-line interface is provided for .NET and Web hybrid application package.
 
 **Figure: Create .NET and Web Hybrid Application Package**
 
@@ -17,19 +19,18 @@ The .NET and Web hybrid application package follows the same conventions, which 
 
 The .NET and Web hybrid application package is a type of a merge between a .NET application based on a Web application. Therefore, the Package ID of the Web application generates the Package ID for the hybrid application.
 
-Use the following command to create hybrid application packages:
+To create hybrid application packages, use the following command:
 
 ```bash
 $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFILE_NAME] -r [TPK_FILE_PATH] -- [WGT_FILE_PATH]
 ```
 
->**Note**
->
->`[CERTIFICATE_PROFILE_NAME]` means certificate profile name not certificate file name.
+> [!Note]
+> `[CERTIFICATE_PROFILE_NAME]` means certificate profile name and not certificate file name.
 
 ## Example
 
-1. Create Web Widget Sample Application
+1. Launch the latest version of Tizen Studio and create a Web Widget sample application.
 
     ![Create Web Widget 1](./media/create_web_sample_cs_1.png)
 
@@ -39,37 +40,37 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
 
     ![Create Web Widget 4](./media/create_web_sample_cs_4.png)
 
-2. Check manifest file of web application
+2. Check the **config.xml** file of the Web application.
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/WorldClockWidget" version="1.0.0" viewmodes="maximized">
         <access origin="*" subdomains="true"></access>
-        <tizen:app-widget id="TestHybrid.WorldClockWidget.WorldClockWidget" primary="true">
+        <tizen:app-widget id="NtKvDqWLe7.WorldClockWidget.WorldClockWidget" primary="true">
             <tizen:widget-label>World Clock Widget</tizen:widget-label>
-            <tizen:widget-content src="widget/Widget/index.html">
-                <tizen:widget-size preview="widget/Widget/preview.png">2x2</tizen:widget-size>
+            <tizen:widget-content src="widget/WorldClockWidget/index.html">
+                <tizen:widget-size preview="widget/WorldClockWidget/preview.png">2x2</tizen:widget-size>
             </tizen:widget-content>
         </tizen:app-widget>
-        <tizen:application id="TestHybrid.WorldClockWidget" package="TestHybrid" required_version="2.3.2"/>
+        <tizen:application id="NtKvDqWLe7.WorldClockWidget" package="TestHybrid" required_version="2.3.2"/>
         <content src="index.html"/>
         <feature name="http://tizen.org/feature/screen.size.all"/>
-        <icon src="icon.png"/>
-        <name>WorldClockWidget</name>
-        <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
-        <tizen:profile name="wearable"/>
+		<icon src="icon.png"/>
+		<name>WorldClockWidget</name>
+		<tizen:privilege name="http://tizen.org/privilege/application.launch"/>
+		<tizen:profile name="wearable"/>
     </widget>
     ```
-    package id of web application is set like below :
-     __*package="TestHybrid"*__
+    > [!NOTE]
+	> Ensure that the package ID of the Web application is set to **TestHybrid**. For example, `package="TestHybrid"`.
 
-3. Create .NET Sample Application
+3. Launch the latest version of Visual Studio and create a .NET sample application.
 
     ![Create .NET App 1](./media/create_dotnet_sample_cs_1.png)
 
     ![Create .NET App 2](./media/create_dotnet_sample_cs_2.png)
 
-4. Check manifest of .NET application
+4. Check the manifest file of the .NET application:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -88,10 +89,10 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
     </manifest>  
     ```
 
-    package id of .NET application is set like below :
-    __package="org.tizen.example.CrossTemplate1.Tizen"__
+    > [!NOTE]
+	> Ensure that the package ID of the Web application is set to **org.tizen.example.CrossTemplate1.Tizen**. For example, `package="org.tizen.example.CrossTemplate1.Tizen"`.
 
-5. Create hybrid package with CLI tool
+5. Create a hybrid package using the CLI tool:
 
     ```bash
     /home/test/tizen-studio/tools/ide/bin$ ./tizen package -t wgt -s test_cert_profile -r /home/test/hybrid/org.tizen.example.CrossTemplate1.Tizen-1.0.0.tpk – /home/test/hybrid/WebWidgetSample.wgt
@@ -101,13 +102,12 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
     Package( /home/test/hybrid/WebWidgetSample.wgt ) is created successfully.
     ```
 
-    > **Note**
-    >
-    > Newly generated hybrid application package file overrides previous web application package file.
+    > [!NOTE]
+    > The newly generated hybrid application package file overrides the previously generated web application package file.
 
-6. Check created manifest file in the WebWidgetSample.wgt file.
+6. Check the newly created manifest file in the **WebWidgetSample.wgt** file.
 
-    You can find the package name is changed from `org.tizen.example.CrossTemplate1.Tizen` to `TestHybrid`
+    The package name is changed from `org.tizen.example.CrossTemplate1.Tizen` to `TestHybrid`:
 
     ```xml
     <?xml version="1.0" encoding="UTF-8" standalone="no"?>
