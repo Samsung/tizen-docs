@@ -46,13 +46,13 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
     <?xml version="1.0" encoding="UTF-8"?>
     <widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/WorldClockWidget" version="1.0.0" viewmodes="maximized">
         <access origin="*" subdomains="true"></access>
-        <tizen:app-widget id="NtKvDqWLe7.WorldClockWidget.WorldClockWidget" primary="true">
+        <tizen:app-widget id="TestHybrid.WorldClockWidget.WorldClockWidget" primary="true">
             <tizen:widget-label>World Clock Widget</tizen:widget-label>
             <tizen:widget-content src="widget/WorldClockWidget/index.html">
                 <tizen:widget-size preview="widget/WorldClockWidget/preview.png">2x2</tizen:widget-size>
             </tizen:widget-content>
         </tizen:app-widget>
-        <tizen:application id="NtKvDqWLe7.WorldClockWidget" package="TestHybrid" required_version="2.3.2"/>
+        <tizen:application id="TestHybrid.WorldClockWidget" package="TestHybrid" required_version="2.3.2"/>
         <content src="index.html"/>
         <feature name="http://tizen.org/feature/screen.size.all"/>
 		<icon src="icon.png"/>
@@ -62,7 +62,7 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
     </widget>
     ```
     > [!NOTE]
-	> Ensure that the package ID of the Web application is set to **TestHybrid**. For example, `package="TestHybrid"`.
+    > Ensure that the package ID of the Web application is set to **TestHybrid**. For example, `package="TestHybrid"`.
 
 3. Launch the latest version of Visual Studio and create a .NET sample application.
 
@@ -90,7 +90,7 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
     ```
 
     > [!NOTE]
-	> Ensure that the package ID of the Web application is set to **org.tizen.example.CrossTemplate1.Tizen**. For example, `package="org.tizen.example.CrossTemplate1.Tizen"`.
+    > Ensure that the package ID of the Web application is set to **org.tizen.example.CrossTemplate1.Tizen**. For example, `package="org.tizen.example.CrossTemplate1.Tizen"`.
 
 5. Create a hybrid package using the CLI tool:
 
