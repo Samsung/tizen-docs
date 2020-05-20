@@ -39,7 +39,7 @@ To create a new Tizen .NET project:
 
     A New Project window appears.
 
-3. Select **C\#** in languages and **Tizen** in platforms, select **Blank App (Xamarin.Forms)** template, and then click **Next**.
+3. Select **C\#** in languages and **Tizen** in platforms, select **Tizen XAML App (Xamarin.Forms)** template, and then click **Next**.
 
     ![Select a template](media/cs_first_creating_new_project.png)
 
@@ -53,9 +53,8 @@ To create a new Tizen .NET project:
 
     ![Tizen Project Wizard](media/cs_first_creating_project_wizard_common.png)
 
-    If you select the **Common** profile, you cannot select **Mobile**, **TV**, or **Wearable**.
 
-The following figure illustrates a solution with four projects created and displayed in the **Solution Explorer** view:
+The following figure illustrates a solution with common project created and displayed in the **Solution Explorer** view:
 
 ![Project Structure](media/vs_solution_explorer.png)
 
@@ -85,36 +84,24 @@ After you have built the application, deploy and run it.
 
 ## Deploy and Run Your Application
 
-To run the application, you must first deploy it to the target: either a device or an emulator. Deploying means transferring the package file (`.tpk`) to the target and invoking the Tizen Package Manager to install it.
+To run the UI application, you must first deploy it to the reference board with headed image. Deploying means transferring the package file (`.tpk`) to the target and invoking the Tizen Package Manager to install it.
 
-To deploy and run the application on the emulator:
+To deploy and run the application on the reference board:
 
-1.  In the Visual Studio menu, select **Tools \> Tizen \> Tizen Emulator Manager**.
+1. Connect the reference board to your PC.
 
-    Alternatively, click **Launch Tizen Emulator** in the Visual Studio toolbar to launch the Tizen Emulator Manager.
-
-    ![Launch Tizen Emulator](media/cs_launch_tizen_emu.png)
-
-2. In the Emulator Manager, select an emulator from the list and click **Launch**.
-
-    If no applicable emulator instance exists, [create one](../../../vstools/tools/emulator-manager.md#create).
-
-    ![Tizen Emulator Manager](media/cs_first_building_emulator_manager_mobile.png)
-
-3. Once you launch an emulator instance, you can deploy the application by clicking the emulator instance in the Visual Studio toolbar. Make the Mobile project **Set as StartUp Project**.
+2. Once you connect the reference board, you can deploy the application by clicking the reference board instance in the Visual Studio toolbar. Make the Tizen project **Set as StartUp Project**.
 
     ![Deploy your package](media/vs_emulator_launch_mobile.png)
 
-    In the Visual Studio toolbar, you can select the target from the drop-down list to change the deployment target.
+    In the Visual Studio toolbar, you can select the reference board from the drop-down list to change the deployment target.
 
-    ![Tizen Emulator Manager](media/vs_emulator_dropdown.png)
 
-4. If deployment is successful, the application icon is visible on the emulator or device screen. Click the icon to launch the application.
+4. If deployment is successful, the application icon is visible on the device screen. Click the icon to launch the application.
 
-    The following figure shows the launched application on the mobile emulator:
+    The following figure shows the launched application on the reference board:
 
-    ![Application running on the mobile
-    emulator](media/cs_first_building_emulator_mobile.png)
+    ![Application running on the reference board](media/cs_first_building_emulator_mobile.png)
 
 Visual Studio uses the Smart Development Bridge (SDB) to communicate with the reference board. If you encounter problems with detecting the device in Visual Studio, you can check the SDB manually:
 
@@ -127,10 +114,10 @@ Visual Studio uses the Smart Development Bridge (SDB) to communicate with the re
 
 If you face any issues during deployment, it is recommended to manually install the application using SDB:
 
--   Mobile application:
+-   IoT application:
 
     ```bash
-    $ sdb install <path-to-package>/org.tizen.example.CrossTemplate1.Tizen.Mobile-1.0.0.tpk
+    $ sdb install <path-to-package>/org.tizen.example.CrossTemplate1.Tizen-1.0.0.tpk
     ```
 
 ## Enhance Your Application
@@ -228,7 +215,7 @@ The package contains the following:
 
 The following figure shows the layout of the platform-specific (Tizen) project. 
 
-![Project layout](media/vs_solution_explorer_mobile.png)
+![Project layout](media/vs_solution_explorer.png)
 
 It includes the `lib`, `res`, and `shared` (with a `res` subdirectory containing an image file) directories, and the **tizen-manifest.xml** file. There is also the `bin` directory, which Visual Studio only shows if you select the **Show all files** option for the solution. These pieces all go into the package.
 
