@@ -21,6 +21,10 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
     This step shows how you can enhance your application by creating a UI and making small alterations to it to improve the usability of the application.
 
+6. [Package Your Application](#package-your-application).
+
+    This step shows how you can package your application.
+
 ## Create a Project
 
 The following example shows you how to create and configure a basic Tizen .NET application project in Visual Studio. An application project contains all the files that make up an application.
@@ -154,17 +158,11 @@ The following shows the portable code portion of the Tizen Xamarin.Forms project
 
 This application is constructed with the following Xamarin.Forms controls:
 
-- The `App` class is declared, deriving from the [Xamarin.Forms.Application](https://developer.xamarin.com/api/type/Xamarin.Forms.Application/) class, which represents a cross-platform mobile application.
-- The `App` class constructor creates a `ContentPage` instance where you set up the view to display.
-- You assign what you want to display to the `Content` property of the `ContentPage` class.
+- There is the 'ContentPage' where you set up the view to display. You assign what you want to display to the Content property of the ContentPage.
+- The `StackLayout` is used. This layout positions ("stacks") its child elements in a single vertical (default) or horizontal line.
+- The `Label` is added, whose `Text` property is the message you want to display.
 
-    In this case, the content is a container, specifically a `StackLayout` instance. This layout positions ("stacks") its child elements in a single vertical (default) or horizontal line.
-
-- Child elements are added to the `Children` property. In this example, a single `Label` instance is added, whose `Text` property is the message you want to display.
-- Some lines implement control over the layout. For example, the stack is set to vertically center the child elements, and the label is set to use center-alignment for its text.
-- Besides the `App` constructor, the rest of the file is just a template. Event handlers from the `Application` class can be filled in if the application needs to handle application state changes.
-
-The code does not show the instantiation of the `App` class. Since application launching is platform-specific, the launching part, including the instantiation of the `App` class and the declaration of the `Main()` function (required as the entry point of every C\# program), happens in the \<projectname\>.Tizen project, in the matching file there. For example, if the file you are looking at in the portable project is named `<projectname>.cs`, the platform-specific file in the \<projectname\>.Tizen.\<platform\> project is `<projectname>.Tizen.Mobile.cs`. For a similar application, which uses only Xamarin.Forms controls, the generated code at the \<projectname\>.Tizen part of the project contains everything needed, and you do not need to make any modifications. The following example shows the content of the `<projectname>.Tizen.Mobile.cs` file:
+The code does not show the instantiation of the `App` class. Since application launching is platform-specific, the launching part, including the instantiation of the `App` class and the declaration of the `Main()` function (required as the entry point of every C\# program), happens in the \<projectname\>.Tizen project, in the matching file there. The following example shows the content of the `<projectname>.Tizen.cs` file:
 
 ```csharp
 using System;
