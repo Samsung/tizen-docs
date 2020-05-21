@@ -79,7 +79,7 @@ For more information, see Manage certificates through [remote login, headless Li
    > In case you are using an older version of Tizen Studio, you can try the mentioned steps.
 </p>
 </div>
-<button class="accordion"><b>How to do form validation using Tizen Web?</b></button>
+<button class="accordion">How to do form validation using Tizen Web?</button>
 <div class="panel">
   <p>Form validation normally occurs at the server end after the client enters all necessary data. The user clicks <b>Submit</b> button to send the data to the server. 
   <ul>

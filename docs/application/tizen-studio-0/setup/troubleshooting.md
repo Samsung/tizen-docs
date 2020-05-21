@@ -7,7 +7,7 @@ This page describes methodologies, techniques, and procedures to troubleshoot pr
 ## Issue: HAXM fails to install
 **Description:** You encounter HAXM installation failure.
 
-**Solution:** 
+**Resolution:** 
 - Ensure that **VT**, **Execute Disable Bit** option is enabled in BIOS
 - Ensure that **Data Execution Prevention** is enabled in Windows&reg;
         
@@ -38,7 +38,7 @@ This page describes methodologies, techniques, and procedures to troubleshoot pr
   - Intel XD is not supported by your computer�s processor
   - Intel XD is not enabled
   
-  **Solution:** 
+  **Resolution:** 
    - **For Intel XD not supported**
   
    Intel HAXM requires an Intel processor with Execute Disable (XD) Bit functionality and cannot be used on systems not supporting this hardware feature. To determine the capabilities of your Intel processor, see [official site] (http://ark.intel.com/).

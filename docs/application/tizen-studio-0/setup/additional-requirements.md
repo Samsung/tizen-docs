@@ -2,7 +2,7 @@
 
 This page explains the summary of various requirements that are necessary to configure your development environment for optimal and seamless development experience. 
 
-Tizen studio tools such as Emulator, Web Inspector, and various other tools need to be configured specifically on your development hardware, such that the dependent development processes work efficiently. 
+Tizen studio tools such as Emulator, Web Inspector, and various other tools need to be configured specifically on your development hardware such that the dependent development processes work efficiently. 
 
 The following sections provides a quick overview of the additional requirements for various tools to run seamlessly:
 
@@ -97,7 +97,7 @@ To download and install Python, follow these steps: <br>
 <li>Run the downloaded installer file and follow the on-screen instructions.</li>
 </ol>
 
-<br><strong>Note</strong>
+<br><strong>Note:</strong>
 
 To use Python in native command prompt, set the <code>%PATH%</code> environment variable in <strong>My Computer > Properties > Advanced > Environment Variables</strong>.
 </td>

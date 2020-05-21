@@ -1,32 +1,38 @@
-# Configuring the Package Manager
+# Configure Package Manager
 
-The Package Manager configuration allows you to manage the packages of  Tizen Studio. With the Package Manager configuration, you can change the options for the package repository for the main and extension SDK, as well as the proxy settings to access the package repository. If you want to configure the Package Manager in the command line interface, see [Updating with the CLI Package Manager](update-sdk.md#updating-with-the-cli-package-manager).
+This page explains about configuring Package Manager for setting up various package repositories and their proxies. By performing these configurations, you get complete control over all package repositories for the main and the extension SDK. It also enables you to modify the proxy settings for accessing these package repositories.
 
-## Configuring the Main SDK Repository
+You can configure the SDK options using one of the following ways:
 
-You can set the configuration for installing or updating Tizen Studio using one of the following methods. Before changing the package repository, note that the installed packages may be removed automatically, and you may need to reinstall the packages from the changed repository.
+- Configure main SDK package repository
+- Configure main SDK image
+- Configure extension SDK repository
+- Configure proxy
 
-### Configuring the Package Repository
+You can manage extension SDK repositories using the following ways:
 
-The package repository is a server which stores all the packages that you are using or will use in Tizen Studio. Using the Package Manager, you can install or update packages from that repository. Rather than providing a single repository for the main SDK, several CDNs (Content Delivery Networks) are offered around the globe for your convenience. You can select the nearest package repository to install or update packages more quickly.
+- Add extension repository
+- Remove extension repository
+- Modify extension repository
+- Activate or deactivate extension repository
 
 > [!NOTE]
 > The installed packages are removed automatically. Before changing the package repository, you must reinstall the packages from the changed repository.
 
 If you want to configure Package Manager in the command-line interface, see [Updating with the CLI Package Manager](update-sdk.md#updating-with-the-cli-package-manager).
 
-To set the package repository:
 
-1. Select an available repository from the drop-down list. Select the nearest repository for quickest installation and update.
-2. Click **Apply** next to the combo box. Wait for a few seconds until the repository is validated.
-3. In the **Distribution** combo box, select the distribution you want to access.
-4. On your selection in the **Distribution** combo box, different snapshots are listed in the snapshot box. By switching off the **Auto Update** switch, you can select the specific snapshot in the list. If you leave the switch on, the Package Manager always updates all the packages from the latest snapshot.
-5. Click **OK** to confirm your setting.
+## Configure Main SDK Package Repository
 
-> **Note**  
-> If you switch off the **Auto Update** option, you can select an earlier snapshot than the snapshot you are currently using. Be careful when doing this, since the update can cause entire packages to be removed to guarantee system integrity.
+The package repository can be thought of as a server, which stores all the packages that are used in Tizen Studio. Using Package Manager, you can install or update the packages from the package repository. Instead of providing a single repository for the main SDK, various  Content Delivery Networks(CDNs) are provided as per the locales.
 
-### Configuring the SDK Image
+Select the desired locale-specific package repository and install or update your packages seamlessly.
+
+**Figure: Configuration window with Package Repository selected**
+
+![Configuration window with the Package Repository selected](./media/advanced_conf_server.PNG)
+
+To set the Package Repository, follow these steps:
 
 1. In **Package Repository** drop-down list, select an available repository, and select your desired locale specific repository for quick installation and update.
 2. To validate the repository, click **Apply**. 
@@ -37,15 +43,16 @@ To set the package repository:
         > [!NOTE]  
         > If you toggle the **Auto Update** option to **OFF**, the update causes entire packages to be removed to ensure system integrity.
 5. To confirm your setting, click **OK**.
-       
+    
+    
     ![Configuration window with the Package Repository selected](./media/advanced_conf_serverg.gif)
-
 ## Configure Main SDK Image
 
-1. Enter the full path of the SDK image file in the **Package Repository** box, or click ![Browse](./media/advanced_conf_browse.png) next to the combo box to open the file browser.
+To install or update packages using the SDK image, follow these steps:
 
-   In the file browser, select the SDK image file, and click **OK**. When you select the image file, the image's origin repository information is displayed below the combo box.
-2. Click **OK** to confirm your setting.
+1. In the configuration dialog box, under **Package Repository**, enter the full path of the SDK image file in the **Package Repository** field or click ![Browse](./media/advanced_conf_browse.png) next to the drop-down list to open the file browser.
+2. In the file browser that appears, select the SDK image file, and click **OK**. When you select the image file, the image's origin repository information is displayed in the snapshot table.
+3. To confirm your setting, click **OK**.
 
 > [!NOTE]  
 >-  If you install or update packages using an image file, the SDK image's origin repository URL or distribution ID can be different from the current packages URL or distribution ID. 
@@ -53,57 +60,81 @@ To set the package repository:
 
 ## Configure Extension SDK Repository
 
-izen Studio supports extension packages from the extension repositories, which are developed and managed by external developers and companies. To configure the extension SDK, you must unfold the configuration panel by clicking **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) at the bottom of the dialog box. To return to the package repository configuration, click **Extension SDK** ![Extension SDK button icon active](./media/advanced_conf_icon_extension_active.png) to fold the extension SDK panel, or scroll up.
+Tizen Studio supports extension packages from the extension repositories, which are developed and managed by external developers and companies. 
+
+To configure the extension SDK, follow these steps:
+
+1. To open the configuration panel, click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) at the bottom of the dialog box.
+2. To return to the package repository configuration, click **Extension SDK** ![Extension SDK button icon active](./media/advanced_conf_icon_extension_active.png).
 
 **Figure: Configuration window with the Extension SDK unfolded**
 
 ![Configuration window with the Extension SDK unfolded](./media/advanced_conf_extension.png)
 
-### Adding an Extension Repository
+## Configure Proxy
 
-To add an extra repository:
+Package Manager provides a network option to configure a proxy. This configured proxy is used to connect to the repository servers. 
 
-1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) to unfold it.
-2. Click **+** above the repository information table.
-3. Enter values to the **Name** and **Repository** fields in the **Add Repository** dialog box. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or local server location.  
+To set the proxy, follow these steps:
+
+1. Click **Proxy Settings** at the bottom of the **Configuration** dialog box.  
+![Proxy settings window](./media/advanced_conf_proxy.png)
+2. Select the proxy option:
+   - **No proxy**: Package Manager accesses the repository servers directly.
+   - **System proxy settings**: Package Manager accesses the repository servers through the system proxy.
+   - **Manual proxy settings**: Package Manager accesses the repository servers through the **IP** and the **Port** value that you specify.
+3. Click **Apply**.
+
+
+## Manage Extension Repository
+### Add Extension Repository
+
+To add an extra repository, follow these steps:
+
+1. In the **Configuration** window that appears, scroll down to the **Extension SDK** panel or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
+2. In the repository information table, click **Add +**.
+3. In the **Add Repository** dialog box that appears, enter the values in the **Name** and **Repository** fields. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or a local server location.  
 ![Adding an extra repository](./media/advanced_conf_add_extra.png)
 4. Click **OK**.
-5. In the **Configuration** dialog box, check the detailed repository information below the table.
-6. Click **OK** to confirm.
 
-### Removing an Extension Repository
+   In the **Configuration** window that appears, you can verify the detailed repository information.
+   
+5. Click **OK**.
 
-To remove an extra repository:
+### Remove Extension Repository
 
-1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) to unfold it.
-2. Select an extension repository in the repository table.
-3. Click the ![Remove icon](./media/advanced_conf_icon_remove.png) icon right above the table.
-4. In the **Configuration** dialog box, check that the extension repository has been removed.
+To remove an extra repository, follow these steps:
 
-### Modifying an Extension Repository
+1. In the **Configuration** window that appears, scroll down to the **Extension SDK** panel or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
+   - Select an extension repository from the repository table.
+3. Click ![Remove icon](./media/advanced_conf_icon_remove.png).
+   
+   In the **Configuration** window that appears, you can verify whether the extension repository is removed or not.
 
-To modify an extra repository:
+### Modify Extension Repository
 
-1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) to unfold it.
+To modify an extra repository, follow these steps:
+
+1. In the **Configuration** window that appears, scroll down to the **Extension SDK** panel or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
 2. Click the ![Edit icon](./media/advanced_conf_icon_edit.png) icon above the repository information table.
-3. Modify the values of the **Name** and **Repository** fields in the **Modify Repository** dialog box. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or local server location.  
+3. In the **Modify Repository** dialog box that appears, modify the values of the **Name** and the **Repository** fields. The **Repository** field indicates the external server address. You can also click ![Browse](./media/advanced_conf_browse.png) to select a local image file or local server location.  
 ![Modifying an extra repository](./media/advanced_conf_edit_extra.png)
 4. Click **OK**.
-5. In the **Configuration** dialog box, check that the repository information has changed below the table.
-6. Click **OK** to confirm.
+5. In the **Configuration** window that appears, check whether the repository information has changed below the table.
+6. Click **OK**.
 
-### Activating or Deactivating an Extension Repository
+### Activate or Deactivate Extension Repository
 
-To activate or deactivate the extra repository:
+To activate or deactivate the extra repository, follow these steps:
 
-1. In the **Configuration** dialog box, scroll down to the **Extension SDK** panel, or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png) to unfold it.
-2. Select the ![Switch icon](./media/advanced_conf_icon_switch.png) on-off switch icon in the **Activation** column in the repository table.  
+1. In the **Configuration** window that appears, scroll down to the **Extension SDK** panel, or click **Extension SDK** ![Extension SDK button icon](./media/advanced_conf_icon_extension.png).
+2. In the **Activation** column, toggle ![Switch icon](./media/advanced_conf_icon_switch.png) to activate or deactivate the repository.  
 ![Activating or deactivating an extra repository](./media/advanced_conf_activate_extra.png)
-3. Click **OK** to confirm.
+3. Click **OK**.
 
 > [!NOTE]  
 > If the extension repository is deactivated, the packages from that repository are no longer shown in Package Manager. However, if you activate the extension repository, the packages will be displayed in Package Manager.
 
-## Related information
-* Dependencies
+## Related Information
+- Dependencies
   - Tizen Studio 1.0 and Higher

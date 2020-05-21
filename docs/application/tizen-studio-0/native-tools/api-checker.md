@@ -1,8 +1,8 @@
 # Verify APIs and Privileges
 
-Tizen Studio provides the API Checker tool to identify potential problems in the application code related to the API and privilege use.
+The Tizen Studio provides the API Checker tool to identify potential problems in the application code related to the API and privilege use.
 
-The API Checker can be used on Tizen native applications to detect potential issues with privileges and API versions. The tool can be used from Tizen Studio as well as from the command line.
+The API Checker can be used on Tizen native applications to detect potential issues with privileges and API versions. The tool can be used from the Tizen Studio as well as from the command line.
 
 The following defects can be detected by the API Checker:
 

@@ -1,14 +1,15 @@
 # Extension SDK
 
-The extension SDK provides the following functionalities:
+This page explains about using Extension SDK to extend the feature set of Tizen Studio. The Extension SDK maximizes on the capabilities, and functionalities of the Tizen Studio. Extension SDK helps you enrich the Tizen Studio capabilities by integrating one or more new functionalities or modifying the behaviour of existing functionalities.  
+With Extension SDK, you can also create your own extensions that work with additional built-in platform functions, communicate with existing 3rd-Party SDKs and APIs. These Extension SDK magnify the power of the Tizen applications and games. 
 
-**In-App Purchase**
+The following are some of the ways in which you can extend your Tizen Studio:
 
-In-app purchase allows you to sell the digital content to customers inside your application such as in-game coins. With in-app purchase service, you can offer your customers a variety of items directly within your paid or free application. In-app purchase can be offered as a consumable, non-consumable, or subscription.
+## In-App Purchase
 
 You can implement in-app purchase in your application by using the Tizen application control mechanism. In-app purchase service provides the functionality to process payments for items offered in your application through Tizen Store. In-app purchase uses the same payment service as is used for application purchases, so your customers experience a consistent and secured purchase flow. In-app purchase can be implemented in both Tizen native and Web applications.
 
-To use in-app purchase, you can use your Tizen Store Seller Office account to register items to the [Tizen Store Seller Office](http://seller.tizenstore.com/). To get started, read the following guide:
+You can implement in-app purchase in your application by using the Tizen application control mechanism. In-app purchase service provides the functionality to process payments for items offered in your application through Tizen Store. In-app purchase uses the same payment service as is used for application purchases, so your customers experience a consistent and secured purchase flow. In-app purchase can be implemented in both Tizen native and Web applications.
 
-- [In-app Purchase Programming Guide](https://developer.samsung.com/galaxy-watch-iap/overview.html){:target="_blank"}
+To use in-app purchase, you can use your Tizen Store Seller Office account to register items to the [Tizen Store Seller Office](http://seller.tizenstore.com/). 
 

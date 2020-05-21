@@ -1,7 +1,7 @@
 # How to Develop Wearable Web Application with TAU
 
-TAU stands for Tizen Advanced UI framework, which is the Tizen Web UI framework. 
-TAU helps you to: 
+TAU stands for Tizen Advanced UI framework, which refers to Tizen Web UI framework. 
+TAU enables you to: 
 - Create, manage pages, and various kinds of UI components 
 - Use utilities for Web applications such as using transition effect for pages
 - Support the Mobile and Wearable profiles 

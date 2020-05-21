@@ -9,7 +9,6 @@ This page answers to most commonly asked questions or the errors that you may en
    $ wget http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb
    $ sudo dpkg -i libpng12-0_1.2.54-1ubuntu1_amd64.deb 
    ```
-   
    Generally, installing packages from older distributions may break apt installation system. Since its dependencies are also present in Ubuntu-18.04, it will not break the apt installation system.
 
 - **How to manage certificates and package applications in different Ubuntu setups?**

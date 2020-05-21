@@ -89,8 +89,8 @@
     -   Playing sound is not supported on Windows&reg; or macOS.
     -   The Component Designer crashes if an alias is selected as an added item's source group.
 - Emulator
-    -   To use Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from [Prerequisites for Tizen Studio](../setup/prerequisites.md#emulator).
-        -   If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen Emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project (<https://wiki.ubuntu.com/Bumblebee>). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
+    -   To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Emulator](../setup/additional-requirements.md#tizen-studio-emulator-requirements).
+        -   If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project (<https://wiki.ubuntu.com/Bumblebee>). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
         -   On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
     -   On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
     -   On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.

@@ -5,7 +5,6 @@ Wearable Web applications are apps that help you monitor health, show time, play
 
 This page explains how to develop a Wearable Web application in Tizen Studio using an existing **Template**.
 
-
 ## System Requirements
 
 ![Step 2](./media/test.PNG)
@@ -17,7 +16,6 @@ You can download and install Tizen Studio using the IDE installer or the CLI ins
 
 ![Step 1](./media/1.PNG)
 
-
 ## Create Project 
 
 ![Step 1](./media/2.PNG)
@@ -25,7 +23,6 @@ You can download and install Tizen Studio using the IDE installer or the CLI ins
 ![Step 2](./media/3.PNG)
 
 ![Step 3](./media/4.PNG)
-
 
 ## Generate Author Certificate
 
@@ -43,9 +40,7 @@ You can download and install Tizen Studio using the IDE installer or the CLI ins
 
 ![Step 3](./media/em3.PNG)
 
-
 ## Running Applications on Target Device
-
 
 ![Step 1](./media/t1.PNG)
 

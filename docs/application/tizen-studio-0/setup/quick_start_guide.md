@@ -1,6 +1,7 @@
 # How to Develop Tizen Web Applications?
 
 ### Introduction
+
 Web application involves various standards for building and rendering web pages such as HTML, CSS, and JavaScript. The following figure illustrates the basic structure of a Web application in Tizen:
 
 ![Web applications](./media/web_app.png)

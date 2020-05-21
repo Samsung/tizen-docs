@@ -91,7 +91,7 @@ To launch the installer, follow these steps:
    > - Use Tizen Package Manager, to install and update additional tools. 
    > - For more information on the Package Manager, see [Updating Tizen Studio](./update-sdk.md).
 
-    ### Quick hands-on installation Demo
+    ### Quick Hands-on Installation Demo
    
    ![Installation complete](./media/installw.gif)
 

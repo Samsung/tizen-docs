@@ -1012,5 +1012,5 @@ tizen version
   ```
 
 ## Related Information
-* Dependencies  
+- Dependencies  
   - Tizen Studio 1.0 and Higher

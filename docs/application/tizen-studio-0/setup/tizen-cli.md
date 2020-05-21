@@ -6,15 +6,15 @@ The CLI installation is mostly intended for advanced developers. Tizen Studio CL
 
 ### Prerequisites
 
-- Ensure that you download the appropriate CLI installer for your operating system. For more information, see the [Download page](https://developer.tizen.org/development/tizen-studio/download#).
-- Ensure that you have appropriate JDK installed on your development hardware. For more information see [JDK Installation for CLI](./openjdk.md).
+ - Ensure that you download the appropriate CLI installer for your operating system. For more information, see the [Download page](https://developer.tizen.org/development/tizen-studio/download#).
+ - Ensure that you have appropriate JDK installed on your development hardware. For more information see [JDK Installation for CLI](./openjdk.md).
 ### Tizen Studio Command Line Installation  
 
 Tizen Studio command-line installation takes minimal network resources and time to download and install on your development hardware. 
 
-- To install Tizen Studio on Windows&reg; using the CLI installer, double click the installer file. The console window appears, and the installer gets executed automatically. You can follow the console window to see the installation progress. 
+ - To install Tizen Studio on Windows&reg; using the CLI installer, double click the installer file. The console window appears, and the installer gets executed automatically. You can follow the console window to see the installation progress. 
    
-- To install Tizen Studio on Ubuntu&reg; and macOS&reg;, navigate to the directory where you downloaded the installer file and follow these steps:
+ - To install Tizen Studio on Ubuntu&reg; and macOS&reg;, navigate to the directory where you downloaded the installer file and follow these steps:
       
     1. Open the terminal.
     2. Type the `chmod +x` command to apply the execute permission to the installer file.

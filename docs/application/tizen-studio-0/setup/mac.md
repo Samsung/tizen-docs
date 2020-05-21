@@ -114,6 +114,7 @@ To launch the installer, follow these steps:
 5. Click **Finish** and close the installer.
    
    ![Installation complete](./media/migration_finish_instal.png)
+   
    > [!NOTE]
    > - If you want to install additional platforms and tools, launch  Package Manager by selecting the Launch Package Manager **check box** and click **Finish**.
    > - Use Tizen Studio Package Manager, to install and update additional tools. 

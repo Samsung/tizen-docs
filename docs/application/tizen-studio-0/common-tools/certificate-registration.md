@@ -98,6 +98,6 @@ To migrate a certificate profile:
    ![Migrating certificate profiles](media/cert_reg_migrate_duplicate.png)
 
 
-## Related Informatioin
+## Related Information
 - Dependencies  
   - Tizen Studio 1.0 and Higher

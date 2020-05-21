@@ -137,7 +137,7 @@ Tizen Studio runs on Windows, Ubuntu, as well as macOS and for installation guid
  
    <div class="docs-ui-widget">
     <span>
-	<a href="mac" class="docs-btn-more">MacOS&reg</a><br>  
+	<a href="mac" class="docs-btn-more">macOS&reg</a><br>  
     </span>
   </div>
 </section>
