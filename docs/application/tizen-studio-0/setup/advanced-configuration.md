@@ -78,7 +78,7 @@ Package Manager provides a network option to configure a proxy. This configured 
 To set the proxy, follow these steps:
 
 1. Click **Proxy Settings** at the bottom of the **Configuration** dialog box.  
-![Proxy settings window](./media/advanced_conf_proxy.png)
+![Proxy settings window](./media/advanced_conf_proxy.PNG)
 2. Select the proxy option:
    - **No proxy**: Package Manager accesses the repository servers directly.
    - **System proxy settings**: Package Manager accesses the repository servers through the system proxy.
