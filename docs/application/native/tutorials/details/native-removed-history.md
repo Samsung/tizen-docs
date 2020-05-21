@@ -295,6 +295,7 @@ The following table provides detailed information regarding removed functions an
 | Network - Wi-Fi | wifi_tdls_get_connected_peer() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_tdls_get_connected_peer() |
 | Network - Wi-Fi | wifi_tdls_set_state_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_tdls_set_state_changed_cb() |
 | Network - Wi-Fi | wifi_tdls_unset_state_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_tdls_unset_state_changed_cb() |
+| Security - Privilege Info | privilege_info_get_privacy_privilege_status() | Mobile, Wearable | Since 5.0 | 6.0 | Better alternative | ppm_check_permission() |
 
 ## Related information
 
