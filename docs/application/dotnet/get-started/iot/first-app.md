@@ -31,7 +31,7 @@ The following example shows you how to create and configure a basic Tizen .NET a
 
 The following figure illustrates the output of application. The application screen displays a message, **Welcome to Xamarin Forms!** and there is no user interaction.
 
-![Application running on the mobile emulator](media/cs_first_building_emulator_mobile.png)
+![Application running on the reference board](media/cs_first_building_device.png)
 
 To create a new Tizen .NET project:
 
@@ -96,7 +96,7 @@ To deploy and run the application on the reference board:
 
 2. Once you connect the reference board, you can deploy the application by clicking the reference board instance in the Visual Studio toolbar. Make the Tizen project **Set as StartUp Project**.
 
-    ![Deploy your package](media/vs_emulator_launch_mobile.png)
+    ![Deploy your package](media/vs_device_launch.png)
 
     In the Visual Studio toolbar, you can select the reference board from the drop-down list to change the deployment target.
 
@@ -105,14 +105,14 @@ To deploy and run the application on the reference board:
 
     The following figure shows the launched application on the reference board:
 
-    ![Application running on the reference board](media/cs_first_building_emulator_mobile.png)
+    ![Application running on the reference board](media/cs_first_building_device.png)
 
 Visual Studio uses the Smart Development Bridge (SDB) to communicate with the reference board. If you encounter problems with detecting the device in Visual Studio, you can check the SDB manually:
 
 1.  In the Visual Studio menu, select **Tools \> Tizen \> Tizen Sdb Command Prompt**.
 2.  In the command prompt, enter `sdb devices`.
 
-    ![Emulator detection](media/cs_first_building_sdb_prompt_mobile.png)
+    ![Device detection](media/cs_first_building_sdb_prompt.png)
 
     A list of the attached devices appears.
 
@@ -158,8 +158,8 @@ The following shows the portable code portion of the Tizen Xamarin.Forms project
 
 This application is constructed with the following Xamarin.Forms controls:
 
-- There is the 'ContentPage' where you set up the view to display. You assign what you want to display to the Content property of the ContentPage.
-- The `StackLayout` is used. This layout positions ("stacks") its child elements in a single vertical (default) or horizontal line.
+- There is the `ContentPage` where you set up the view to display. You assign what you want to display to the `Content` property of the ContentPage.
+- The `StackLayout` is added. This layout positions ("stacks") its child elements in a single vertical (default) or horizontal line.
 - The `Label` is added, whose `Text` property is the message you want to display.
 
 The code does not show the instantiation of the `App` class. Since application launching is platform-specific, the launching part, including the instantiation of the `App` class and the declaration of the `Main()` function (required as the entry point of every C\# program), happens in the \<projectname\>.Tizen project, in the matching file there. The following example shows the content of the `<projectname>.Tizen.cs` file:
@@ -219,6 +219,6 @@ It includes the `lib`, `res`, and `shared` (with a `res` subdirectory containing
 
 Package generation (and in fact installation) is controlled by the **tizen-manifest.xml** package manifest file. The following figure shows the `.tpk` file for the initial application, to illustrate how the combination of the directory layout and the package manifest leads to the actual package.
 
-![Package content](media/cs_first_packaging_content_mobile.png)
+![Package content](media/cs_first_packaging_content.png)
 
 When packaging your application, you also need to consider whether any feature or privilege declarations are needed in the manifest file, and how to place any language-specific files.
