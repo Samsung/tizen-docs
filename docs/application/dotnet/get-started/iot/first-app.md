@@ -1,6 +1,6 @@
 # Create Your First Tizen IoT .NET Application
 
-The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Tizen .NET application development process. With the instructions, you can create and run a basic .NET application, which displays some text on the screen with no user interaction.
+The Tizen .NET framework allows you to easily and efficiently create applications for Tizen. Study the following instructions to help familiarize yourself with the Tizen .NET application development process. With the instructions, you can create and run a basic .NET application, which displays some texts on the screen without any user interaction.
 
 1.  Before you get started with developing Tizen applications, set up the [development environment](../../../vstools/install.md).
 
@@ -17,9 +17,9 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
     This step shows how you can deploy and run the application on the reference board.
 
-5. [Enhance Your Application](#enhance-your-application).
+5. [Understand Your Application](#understand-your-application).
 
-    This step shows how you can enhance your application by creating a UI and making small alterations to it to improve the usability of the application.
+    This step shows how you can enhance your application by creating a UI and making small alterations to improve the usability of the application.
 
 6. [Package Your Application](#package-your-application).
 
@@ -29,7 +29,7 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 The following example shows you how to create and configure a basic Tizen .NET application project in Visual Studio. An application project contains all the files that make up an application.
 
-The following figure illustrates the output of application. The application screen displays a message, **Welcome to Xamarin Forms!** and there is no user interaction.
+The following figure illustrates the output of the application. The application screen displays a message, **Welcome to Xamarin Forms!** and there is no user interaction.
 
 ![Application running on the reference board](media/cs_first_building_device.png)
 
@@ -43,11 +43,11 @@ To create a new Tizen .NET project:
 
     A New Project window appears.
 
-3. Select **C\#** in languages and **Tizen** in platforms, select **Tizen XAML App (Xamarin.Forms)** template, and then click **Next**.
+3. Select **C\#** from languages and **Tizen** from platforms, select **Tizen XAML App (Xamarin.Forms)** template and click **Next**.
 
     ![Select a template](media/cs_first_creating_new_project.png)
 
-    Configure the project properties and click **Create**. You can enter the **Project name**, **Location**, **Solution**, and **Solution name**.
+    Configure the project properties and click **Create**. You can enter **Project name**, **Location**, **Solution**, and **Solution name**.
 
     ![Select a template](media/cs_first_creating_configure_project.png)
 
@@ -58,20 +58,19 @@ To create a new Tizen .NET project:
     ![Tizen Project Wizard](media/cs_first_creating_project_wizard_common.png)
 
 
-The following figure illustrates a solution with common project created and displayed in the **Solution Explorer** view:
+The following figure illustrates a solution with the common project created and displayed in the **Solution Explorer** view:
 
 ![Project Structure](media/vs_solution_explorer.png)
 
 -   The **\<projectname\>** project contains the Xamarin.Forms code shared across platforms.
 -   A common project titled **\<projectname\>.Tizen** is added. It contains code to instantiate your common application within the Tizen framework.
 
-If you are already familiar with Xamarin.Forms, this project has the same structure as a Xamarin.Forms portable application. The **\<projectname\>** project is the portable class library and the others are the platform-specific projects; however, in Tizen .NET, only the Tizen platform-specific project is generated.
 
 The `.xaml` file in the portable project already contains simple Xamarin.Forms code that makes a basic UI.
 
 ## Build Your Application
 
-After you have created the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code changes are required.
+After you create the application project, you can implement the required features. In this example, only the default features from the project template are used, and no code change is required.
 
 When your application code is ready, build the application. The building process performs a validation check and compiles your files. You must sign the application package with an author certificate when building the application. If you have not yet registered a Tizen certificate in Visual Studio, see [Certificate Manager](../../../vstools/tools/certificate-manager.md).
 
@@ -80,43 +79,43 @@ There are two different ways to build the application:
 -   In the Visual Studio menu, select **Build \> Build Solution**.
 -   In the **Solution Explorer** view, right-click the solution name and select **Build**.
 
-Tizen .NET applications are always deployed as installed packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../../vstools/tools/manifest-editor.md). The Visual Studio template generates the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project.
+Tizen .NET applications are always deployed as installable packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../../vstools/tools/manifest-editor.md). The Visual Studio template generates the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project.
 
-For this example application, the default manifest is sufficient. If you want to make any changes in the application, such as changing the application icon or installing resources that are used by the application at runtime, see [Package Your Application](#package-your-application).
+For this example application, the default manifest is sufficient. If you want to make any change in the application, such as changing the application icon or installing resources that are used by the application at runtime, see [Package Your Application](#package-your-application).
 
-After you have built the application, deploy and run it.
+After you build the application, deploy and run it.
 
 ## Deploy and Run Your Application
 
-To run the UI application, you must first deploy it to the reference board with headed image. Deploying means transferring the package file (`.tpk`) to the target and invoking the Tizen Package Manager to install it.
+To run the UI application, you must first deploy it to the reference board with the headed image installed. Deploying means transferring the package file (`.tpk`) to the target and invoking the Tizen Package Manager to install it.
 
 To deploy and run the application on the reference board:
 
 1. Connect the reference board to your PC.
 
-2. Once you connect the reference board, you can deploy the application by clicking the reference board instance in the Visual Studio toolbar. Make the Tizen project **Set as StartUp Project**.
+2. Once you connect the reference board, you can deploy the application by clicking the reference board instance in the Visual Studio toolbar. Make the Tizen project as a start-up project with **Set as StartUp Project**.
 
     ![Deploy your package](media/vs_device_launch.png)
 
     In the Visual Studio toolbar, you can select the reference board from the drop-down list to change the deployment target.
 
 
-4. If deployment is successful, the application icon is visible on the device screen. Click the icon to launch the application.
+3. If the deployment is successful, the application icon gets displayed visible on the device screen. Click the icon to launch the application.
 
     The following figure shows the launched application on the reference board:
 
     ![Application running on the reference board](media/cs_first_building_device.png)
 
-Visual Studio uses the Smart Development Bridge (SDB) to communicate with the reference board. If you encounter problems with detecting the device in Visual Studio, you can check the SDB manually:
+Visual Studio uses the Smart Development Bridge (SDB) to communicate with the reference board. If you encounter a problem with detecting the device in Visual Studio, you can check the SDB manually:
 
 1.  In the Visual Studio menu, select **Tools \> Tizen \> Tizen Sdb Command Prompt**.
 2.  In the command prompt, enter `sdb devices`.
 
     ![Device detection](media/cs_first_building_sdb_prompt.png)
 
-    A list of the attached devices appears.
+    A list of attached devices appears.
 
-If you face any issues during deployment, it is recommended to manually install the application using SDB:
+If you face any issue during deployment, it is recommended to manually install the application using SDB:
 
 -   IoT application:
 
@@ -124,18 +123,14 @@ If you face any issues during deployment, it is recommended to manually install 
     $ sdb install <path-to-package>/org.tizen.example.CrossTemplate1.Tizen-1.0.0.tpk
     ```
 
-## Enhance Your Application
-
-Xamarin.Forms provides a way to build portable applications which run in a native way. It provides a set of controls for building a user interface, as well as generates code which adapts the user interface code to use the native facilities of the supported platforms. The following is a brief introduction to the Xamarin.Forms controls, and how to use them to build on the application you have just created.
-
-### Understand the Source Code
+## Understand Your Application
 
 The C\# code from your first application displays a label centered on the screen, containing the **Welcome to Xamarin Forms!** text. This CrossTemplate1 application created from the template is set up and ready to be built and run by Visual Studio right after you create it, as described above.
 
 The Xamarin.Forms controls used to create the user interface of a Tizen .NET application can be broadly categorized into four groups:
 
 -   `Pages` represent screens within an application. The UI of an application is built from one or more pages and with a navigation mechanism, if needed. The navigation scheme is specified by the `INavigation` interface. Many pages are of the `ContentPage` type, which describes the view of a single screen.
--   `Layouts` are containers used to compose views into logical structures. Some available types are absolute, grid, relative, and stack layouts; each provide mechanisms, such as orientation, spacing, and padding, to control the layout. The `StackLayout` class is a basic layout where you can simply stack controls on top of, or side-by-side, one another. Layouts can also be bundled with and nested into each other.
+-   `Layouts` are containers used to compose views into logical structures. Some available types are absolute, grid, relative, and stack layouts; each provides mechanisms, such as orientation, spacing, and padding, to control the layout. The `StackLayout` class is a basic layout where you can simply stack controls on top of, or side-by-side, one another. Layouts can also be bundled with and nested into each other.
 -   `Views` are the controls displayed on the user interface, such as labels, buttons, and text entry boxes.
 -   `Cells` are specialized elements used for items in tables and lists, which help describe how the items must be rendered.
 
@@ -217,8 +212,8 @@ The following figure shows the layout of the platform-specific (Tizen) project.
 
 It includes the `lib`, `res`, and `shared` (with a `res` subdirectory containing an image file) directories, and the **tizen-manifest.xml** file. There is also the `bin` directory, which Visual Studio only shows if you select the **Show all files** option for the solution. These pieces all go into the package.
 
-Package generation (and in fact installation) is controlled by the **tizen-manifest.xml** package manifest file. The following figure shows the `.tpk` file for the initial application, to illustrate how the combination of the directory layout and the package manifest leads to the actual package.
+Package generation (and in fact installation) is controlled by the **tizen-manifest.xml** package manifest file. The following figure shows the `.tpk` file for the initial application to illustrate how the combination of the directory layout and the package manifest leads to the actual package.
 
 ![Package content](media/cs_first_packaging_content.png)
 
-When packaging your application, you also need to consider whether any feature or privilege declarations are needed in the manifest file, and how to place any language-specific files.
+When packaging your application, you also need to consider whether any feature or privilege declarations are needed in the manifest file and how to place any language-specific files.
