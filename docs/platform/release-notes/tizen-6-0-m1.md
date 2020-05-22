@@ -576,7 +576,7 @@ Release Date: May 31, 2020
     - Provide global background service (independent of web application and allows web service creations for multiple web applications).
 - Web view enhancement
   - Web view API and interface for various back-end has been enhanced.
-    - Generic web view: Categorized EWK APIs systemically.
+    - Generic web view: Categorized EWK API set systemically.
     - .NET web view API
       - Xamarin web view: Improves API coverage compared to the other platforms (iOS, Android).
       - tizenFX Tizen.WebView: Improves API coverage compared to the Native web view.
