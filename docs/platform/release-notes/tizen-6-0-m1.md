@@ -37,7 +37,7 @@ Release Date: May 31, 2020
 
 ### Fixes
 
-- Crash garbages due to sudden power failure have been removed.
+- Crash garbage due to sudden power failure has been removed.
 
 
 ## System (Base)
@@ -208,7 +208,7 @@ Release Date: May 31, 2020
   - Blocking input events during custom transition animation has been added.
   - Skipping handling tizen_position_set request for the keyboard window has been added.
   - e_policy_appinfo API set has been changed to e_appinfo API set.
-  - ‘e_policy_stack_transient_for_set’ API has been changed to EINTERN from E_API.
+  - e_policy_stack_transient_for_set API has been changed to EINTERN from E_API.
   - E_POLICY_HOOK_CLIENT_ROTATION_GEOMETRY_SET hook has been added.
   - E_COMP_WL_PID_HOOK_CONNECTED_CLIENT_CREATE hook has been added.
   - Logs for quick panel requests have been added.
@@ -555,7 +555,7 @@ Release Date: May 31, 2020
 ### New and changed features
 
 - Web Engine
-  - Open source chromium 76 version base has been applied. (below feature  and API is provided by new web engine)
+  - Open source chromium 76 version base has been applied. The following features and API set are provided by the new web engine:
     - Named web worker: For multiple workers on the same URL, named web worker makes workers distinguishable by name.
     - Relative time API
     - User activation API
@@ -579,7 +579,7 @@ Release Date: May 31, 2020
     - Generic web view: Categorized EWK APIs systemically.
     - .NET web view API
       - Xamarin web view: Improves API coverage compared to the other platforms (iOS, Android).
-      - tizenFX Tizen.WebView: Improves API coverage compared to the Native web view app.
+      - tizenFX Tizen.WebView: Improves API coverage compared to the Native web view.
     - NUI Web view API: Provides API consistency (coverage, naming) with .NET webview.
   - WRT-AddOn feature has been extended as follows:
     - Handle multiple events from an addon.
@@ -679,9 +679,9 @@ Release Date: May 31, 2020
 
 ### Fixes
 
-- Neural network Single API set (5.5 M2 known issue) / dimension changes
+- Dynamic tensor dimensions issue of Neural network Single API set, the 5.5 M2 known issue, has been fixed.
   - New Single API set to support flexible tensor dimensions has been added.
-- Inference API set / additional neural networm framework supports
+- Inference API set/additional neural networm framework supports
   - Tizen’s Neural Network Runtime (nnfw) has been integrated.
   - Others (TensorFlow, Caffe2, PyTorch, and so on) have been supported optionally if the device has additional packages downloaded and installed from tizen.org.
 
