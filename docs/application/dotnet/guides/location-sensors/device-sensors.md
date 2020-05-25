@@ -18,7 +18,8 @@ A device can have various physical and virtual sensors. The following table list
 
 | Supported sensor types                   |                                          |                                       |
 |----------------------------------------|----------------------------------------|-------------------------------------|
-| [Accelerometer](#accelerometer)          | [Heart Rate Monitor Sensor](#hrm)        | [Proximity Sensor](#proximity)        |
+| [Accelerometer](#accelerometer)          | [AutoRotation Sensor](#auto_rotation)    | [Proximity Sensor](#proximity)        |
+| [Heart Rate Monitor Sensor](#hrm)        | -                                        | -                                     |
 | [Geomagnetic Rotation Vector Sensor](#mag_rotation) | [Humidity Sensor](#humidity)             | [Rotation Vector Sensor](#rotation)   |
 | [Gravity Sensor](#gravity)               | [Light Sensor](#light)                   | [Sleep Monitor](#sleep_monitor)       |
 | [Gyroscope](#gyro)                       | [Linear Acceleration Sensor](#lin_accelerometer) | [Temperature Sensor](#temperature)    |
@@ -184,6 +185,22 @@ The following table provides information about the accelerometer output for a de
 | X-polarity     | 0                                        | +                                        | 0                                        | -                                        | 0                                        | 0                                        |
 | Y-polarity     | +                                        | 0                                        | -                                        | 0                                        | 0                                        | 0                                        |
 | Z-polarity     | 0                                        | 0                                        | 0                                        | 0                                        | +                                        | -                                        |
+
+
+ <a name="auto_rotation"></a>
+## AutoRotation Sensor
+
+The autorotation sensor is the software sensor which uses the accelerometer to compute the orientation of the device. This sensor helps to determine if the device is placed in a landscape or portrait orientation.
+
+**Table: Measurement data detected by the AutoRotation sensor**
+
+| Measurement | Type                     | Range                         | Unit         |
+|-----------|------------------------|-----------------------------|------------|
+| TimeSpan   | `TimeSpan`     | -                             | Microseconds |
+| Accuracy    | `SensorDataAccuracy` | -                             | int          |
+| Rotation   | `AutoRotationState` | -     | -            |
+
+The `AutoRotationState` property is one of the values of the [Tizen.Sensor.AutoRotationState](https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.AutoRotationState.html) enumeration: `Degree_0`, `Degree_90`, `Degree_180`, or `Degree_270`.
 
  <a name="mag_rotation"></a>
 ## Geomagnetic Rotation Vector Sensor
