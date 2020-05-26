@@ -96,7 +96,7 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 </li>
 <li>2.13. <a href="#HumanActivitySleepDetectorData">HumanActivitySleepDetectorData</a>
 </li>
-<li>2.14. <a href="#HumanActivityStressMonitorData">HumanActivityStressMonitorData</a>
+<li class="deprecated">2.14. <a href="#HumanActivityStressMonitorData">HumanActivityStressMonitorData</a>
 </li>
 <li>2.15. <a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a>
 </li>
@@ -114,7 +114,7 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 </li>
 <li>2.22. <a href="#GestureData">GestureData</a>
 </li>
-<li>2.23. <a href="#StressMonitorDataRange">StressMonitorDataRange</a>
+<li class="deprecated">2.23. <a href="#StressMonitorDataRange">StressMonitorDataRange</a>
 </li>
 <li>2.24. <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a>
 </li>
@@ -122,7 +122,7 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 </li>
 <li>2.26. <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a>
 </li>
-<li>2.27. <a href="#StressMonitorCallback">StressMonitorCallback</a>
+<li class="deprecated">2.27. <a href="#StressMonitorCallback">StressMonitorCallback</a>
 </li>
 </ul>
 </li>
@@ -159,8 +159,6 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 <div>boolean <a href="#HumanActivityMonitorManager::isGestureSupported">isGestureSupported</a> (<a href="#GestureType">GestureType</a> type)</div>
 <div>long <a href="#HumanActivityMonitorManager::addGestureRecognitionListener">addGestureRecognitionListener</a> (<a href="#GestureType">GestureType</a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional boolean? alwaysOn)</div>
 <div>void <a href="#HumanActivityMonitorManager::removeGestureRecognitionListener">removeGestureRecognitionListener</a> (long watchId)</div>
-<div>long <a href="#HumanActivityMonitorManager::addStressMonitorChangeListener">addStressMonitorChangeListener</a> (<a href="#StressMonitorDataRange">StressMonitorDataRange</a>[] ranges, <a href="#StressMonitorCallback">StressMonitorCallback</a> listener)</div>
-<div>void <a href="#HumanActivityMonitorManager::removeStressMonitorChangeListener">removeStressMonitorChangeListener</a> (long watchId)</div>
 </td>
 </tr>
 <tr>
@@ -208,10 +206,6 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 <td></td>
 </tr>
 <tr>
-<td><a href="#HumanActivityStressMonitorData">HumanActivityStressMonitorData</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a></td>
 <td></td>
 </tr>
@@ -244,10 +238,6 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 <td></td>
 </tr>
 <tr>
-<td><a href="#StressMonitorDataRange">StressMonitorDataRange</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a></td>
 <td><div>void <a href="#HumanActivityMonitorSuccessCallback::onsuccess">onsuccess</a> (optional <a href="#HumanActivityData">HumanActivityData</a>? humanactivitydata)</div></td>
 </tr>
@@ -259,10 +249,6 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 <td><a href="#GestureRecognitionCallback">GestureRecognitionCallback</a></td>
 <td><div>void <a href="#GestureRecognitionCallback::onsuccess">onsuccess</a> (<a href="#GestureData">GestureData</a> data)</div></td>
 </tr>
-<tr>
-<td><a href="#StressMonitorCallback">StressMonitorCallback</a></td>
-<td><div>void <a href="#StressMonitorCallback::onsuccess">onsuccess</a> (DOMString label)</div></td>
-</tr>
 </tbody>
 </table>
 <div class="typedefs" id="typedefs-section">
@@ -272,7 +258,10 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 <div class="brief">
  Specifies the supported human activity monitor types.
           </div>
-<pre class="webidl prettyprint">  enum HumanActivityType { "PEDOMETER", "HRM", "GPS", "SLEEP_MONITOR", "SLEEP_DETECTOR", "STRESS_MONITOR" };</pre>
+<pre class="webidl prettyprint">  enum HumanActivityType { "PEDOMETER", "HRM", "GPS", "SLEEP_MONITOR", "SLEEP_DETECTOR", <span class="nocode deprecated">"STRESS_MONITOR"</span> };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ STRESS_MONITOR is deprecated since Tizen 5.5.
+          </p>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -557,9 +546,9 @@ The <em>tizen.humanactivitymonitor</em> object allows access to the human activi
     long addGestureRecognitionListener(<a href="#GestureType">GestureType</a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                                        optional boolean? alwaysOn) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeGestureRecognitionListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addStressMonitorChangeListener(<a href="#StressMonitorDataRange">StressMonitorDataRange</a>[] ranges, <a href="#StressMonitorCallback">StressMonitorCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeStressMonitorChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+<span class="nocode deprecated">    long addStressMonitorChangeListener(<a href="#StressMonitorDataRange">StressMonitorDataRange</a>[] ranges, <a href="#StressMonitorCallback">StressMonitorCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void removeStressMonitorChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>  };</pre>
 <p><span class="version">Since: </span>
  2.3
           </p>
@@ -1567,13 +1556,16 @@ catch (error)
 </pre>
 </div>
 </dd>
-<dt class="method" id="HumanActivityMonitorManager::addStressMonitorChangeListener">
+<dt class="deprecated method" id="HumanActivityMonitorManager::addStressMonitorChangeListener">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::addStressMonitorChangeListener"></a><code><b><span class="methodName">addStressMonitorChangeListener</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Adds a listener to be invoked when returned value enters into defined range (the range is changed).
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">long addStressMonitorChangeListener(<a href="#StressMonitorDataRange">StressMonitorDataRange</a>[] ranges, <a href="#StressMonitorCallback">StressMonitorCallback</a> listener);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -1768,13 +1760,16 @@ Stress level: Normal
 </pre>
 </div>
 </dd>
-<dt class="method" id="HumanActivityMonitorManager::removeStressMonitorChangeListener">
+<dt class="deprecated method" id="HumanActivityMonitorManager::removeStressMonitorChangeListener">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::removeStressMonitorChangeListener"></a><code><b><span class="methodName">removeStressMonitorChangeListener</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Removes listener with the given id.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void removeStressMonitorChangeListener(long watchId);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -2510,26 +2505,32 @@ When a user takes off the watch device, the heartRate is set to -3. When a user 
 </li></ul>
 </div>
 </div>
-<div class="interface" id="HumanActivityStressMonitorData">
+<div class="interface deprecated" id="HumanActivityStressMonitorData">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityStressMonitorData"></a><h3>2.14. HumanActivityStressMonitorData</h3>
 <div class="brief">
  The HumanActivityStressMonitorData interface represents stress monitor data.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface HumanActivityStressMonitorData : <a href="#HumanActivityData">HumanActivityData</a> {
-    readonly attribute long stressScore;
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface HumanActivityStressMonitorData : <a href="#HumanActivityData">HumanActivityData</a> {
+<span class="nocode deprecated">    readonly attribute long stressScore;
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
         
       <div class="attributes">
 <h4>Attributes</h4>
-<ul><li class="attribute" id="HumanActivityStressMonitorData::stressScore">
+<ul><li class="attribute deprecated" id="HumanActivityStressMonitorData::stressScore">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">long </span><span class="name">stressScore</span></span><div class="brief">
  Value returned from <em>STRESS_MONITOR</em>.
 It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroller_based_RR-Interval_measurement_using_PPG_signals_for_Heart_Rate_Variability_based_biometric_application">RR-interval</a>.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+            </p>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -2888,52 +2889,67 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
 </ul>
 </div>
 </div>
-<div class="interface" id="StressMonitorDataRange">
+<div class="interface deprecated" id="StressMonitorDataRange">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::StressMonitorDataRange"></a><h3>2.23. StressMonitorDataRange</h3>
 <div class="brief">
- The GestureData interface represents detected gesture information.
+ The StressMonitorDataRange interface represents range information for stress monitoring.
           </div>
-<pre class="webidl prettyprint">  [Constructor(optional DOMString label, optional unsigned long min, optional unsigned long max)]
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [<span class="nocode deprecated">Constructor(optional DOMString label, optional unsigned long min, optional unsigned long max)</span>]
   interface StressMonitorDataRange {
-    attribute DOMString label;
-    attribute unsigned long min;
-    attribute unsigned long max;
-  };</pre>
+<span class="nocode deprecated">    attribute DOMString label;
+</span><span class="nocode deprecated">    attribute unsigned long min;
+</span><span class="nocode deprecated">    attribute unsigned long max;
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
 <div class="constructors">
 <h4 id="StressMonitorDataRange::constructor">Constructors</h4>
 <dl>
-<dt class="method" id="">
+<dt class="extendedattribute deprecated" id="">
 <a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, unsigned long, unsigned long)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">StressMonitorDataRange(optional DOMString label, optional unsigned long min, optional unsigned long max);</pre>
+<pre class="webidl prettyprint"><span class="nocode deprecated">StressMonitorDataRange(optional DOMString label, optional unsigned long min, optional unsigned long max);</span></pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+              </p>
 </dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="StressMonitorDataRange::label">
+<li class="attribute deprecated" id="StressMonitorDataRange::label">
 <span class="attrName"><span class="type">DOMString </span><span class="name">label</span></span><div class="brief">
  Name of range. Default value is "";
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+            </p>
 <p><span class="version">Since: </span>
  5.0
             </p>
 </li>
-<li class="attribute" id="StressMonitorDataRange::min">
+<li class="attribute deprecated" id="StressMonitorDataRange::min">
 <span class="attrName"><span class="type">unsigned long </span><span class="name">min</span></span><div class="brief">
  Minimum value of range. Default value is 0.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+            </p>
 <p><span class="version">Since: </span>
  5.0
             </p>
 </li>
-<li class="attribute" id="StressMonitorDataRange::max">
+<li class="attribute deprecated" id="StressMonitorDataRange::max">
 <span class="attrName"><span class="type">unsigned long </span><span class="name">max</span></span><div class="brief">
  Maximum value of range. If <var>max</var> is undefined it means that this value represents infinity. Default value is undefined.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+            </p>
 <p><span class="version">Since: </span>
  5.0
             </p>
@@ -3055,27 +3071,33 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
 </dl>
 </div>
 </div>
-<div class="interface" id="StressMonitorCallback">
+<div class="interface deprecated" id="StressMonitorCallback">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::StressMonitorCallback"></a><h3>2.27. StressMonitorCallback</h3>
 <div class="brief">
  The StressMonitorCallback describes a callback for the addStressMonitorChangeListener() method.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface StressMonitorCallback {
-    void onsuccess(DOMString label);
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface StressMonitorCallback {
+<span class="nocode deprecated">    void onsuccess(DOMString label);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  5.0
           </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="StressMonitorCallback::onsuccess">
+<dt class="deprecated method" id="StressMonitorCallback::onsuccess">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::StressMonitorCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Called when value returned from <em>STRESS_MONITOR</em> is within registered range.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 5.5.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(DOMString label);</pre></div>
 <p><span class="version">Since: </span>
  5.0
@@ -3174,7 +3196,10 @@ To guarantee that the barometer (pressure) sensor application runs on a device w
 <div class="def-api-feature">
 <p><div class="description">
             <p>
-To guarantee that the stress monitor vector sensor application runs on a device with a stress monitor, declare the following feature requirements in the config file:
+To guarantee that the stress monitor vector sensor application runs on a device with a stress monitor, declare the below feature requirements in the config file.
+            </p>
+            <p>
+This feature is deprecated since Tizen 5.5.
             </p>
            </div></p>
 <li class="feature">http://tizen.org/feature/sensor.stress_monitor</li>
@@ -3184,7 +3209,7 @@ To guarantee that the stress monitor vector sensor application runs on a device 
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module HumanActivityMonitor {
-  enum HumanActivityType { "PEDOMETER", "HRM", "GPS", "SLEEP_MONITOR", "SLEEP_DETECTOR", "STRESS_MONITOR" };
+  enum HumanActivityType { "PEDOMETER", "HRM", "GPS", "SLEEP_MONITOR", "SLEEP_DETECTOR" };
   enum HumanActivityRecorderType { "PEDOMETER", "HRM", "SLEEP_MONITOR", "PRESSURE" };
   enum PedometerStepStatus { "NOT_MOVING", "WALKING", "RUNNING", "UNKNOWN" };
   enum ActivityRecognitionType { "STATIONARY", "WALKING", "RUNNING", "IN_VEHICLE" };
@@ -3232,8 +3257,6 @@ To guarantee that the stress monitor vector sensor application runs on a device 
     long addGestureRecognitionListener(<a href="#GestureType">GestureType</a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                                        optional boolean? alwaysOn) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeGestureRecognitionListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addStressMonitorChangeListener(<a href="#StressMonitorDataRange">StressMonitorDataRange</a>[] ranges, <a href="#StressMonitorCallback">StressMonitorCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeStressMonitorChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface StepDifference {
     readonly attribute long stepCountDifference;
@@ -3285,9 +3308,6 @@ To guarantee that the stress monitor vector sensor application runs on a device 
   [NoInterfaceObject] interface HumanActivitySleepDetectorData : <a href="#HumanActivityData">HumanActivityData</a> {
     readonly attribute <a href="#SleepStatus">SleepStatus</a> status;
   };
-  [NoInterfaceObject] interface HumanActivityStressMonitorData : <a href="#HumanActivityData">HumanActivityData</a> {
-    readonly attribute long stressScore;
-  };
   [NoInterfaceObject] interface HumanActivityRecognitionData : <a href="#HumanActivityData">HumanActivityData</a> {
     readonly attribute <a href="#ActivityRecognitionType">ActivityRecognitionType</a> type;
     readonly attribute long timestamp;
@@ -3322,12 +3342,6 @@ To guarantee that the stress monitor vector sensor application runs on a device 
     readonly attribute double? x;
     readonly attribute double? y;
   };
-  [Constructor(optional DOMString label, optional unsigned long min, optional unsigned long max)]
-  interface StressMonitorDataRange {
-    attribute DOMString label;
-    attribute unsigned long min;
-    attribute unsigned long max;
-  };
   [Callback=FunctionOnly, NoInterfaceObject] interface HumanActivityMonitorSuccessCallback {
     void onsuccess(optional <a href="#HumanActivityData">HumanActivityData</a>? humanactivitydata);
   };
@@ -3336,9 +3350,6 @@ To guarantee that the stress monitor vector sensor application runs on a device 
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface GestureRecognitionCallback {
     void onsuccess(<a href="#GestureData">GestureData</a> data);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface StressMonitorCallback {
-    void onsuccess(DOMString label);
   };
 };</pre>
 </div>
