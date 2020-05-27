@@ -104,15 +104,15 @@ Release Date: May 31, 2020
   - perl-XML-SAX (1.02) has been added.
 - The capi-base-utils API set has been expanded.
   - Add
-    - unorm2 : Unicode normalization module.
+    - unorm2: Unicode normalization module.
   - New
-    - unumsys : Numbering systems module.
-    - utext : Text abstraction module.
-    - uscript : Unicode Script module.
-    - uidna : Internationalizing Domain Names in Applications (IDNA) module.
-    - ucnv : Character conversion module.
-    - ucnvsel : Converter selector module.
-    - ucsdet : Detecting the charset or encoding of character data module.
+    - unumsys: Numbering systems module.
+    - utext: Text abstraction module.
+    - uscript: Unicode Script module.
+    - uidna: Internationalizing Domain Names in Applications (IDNA) module.
+    - ucnv: Character conversion module.
+    - ucnvsel: Converter selector module.
+    - ucsdet: Detecting the charset or encoding of character data module.
 - The capi-system-settings API has been improved in terms of performance and stability.
 
 ### Fixes
@@ -645,11 +645,11 @@ Release Date: May 31, 2020
   - The default mode for C++ is now -std=gnu++14 instead of -std=gnu++11.
   - Program Instrumentation Option (-fstack-protector-strong) and Linker option (-Wl,-z,relro) have been added globally to improve security.
   - Code generation Option (-frecord-gcc-switches) has been added and now used command line is recorded into the object file as .GCC.command.line.
-  - "_FILE_OFFSET_BITS=64" has been added as default on armv7l.
+  - _FILE_OFFSET_BITS=64 has been added as default on armv7l.
   - New warning options have been enabled by default in -Wall -Wextra switches.
 - Toolchain testing infrastructure has been enabled.
   - Packages (autogen, dejagnu, guile, libgc, tcl and expect) for toolchain testing have been added. 
-  - “{package}-testresults.rpm” in gdb, binutils, glibc, and gcc have been provided with run_tests macro.
+  - {package}-testresults.rpm in gdb, binutils, glibc, and gcc have been provided with run_tests macro.
 
 
 ## Machine Learning
