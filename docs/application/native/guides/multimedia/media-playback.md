@@ -38,9 +38,9 @@ You can [play audio](#play_audio) and control functions for using audio resource
 
 The supported audio formats include MP3, AAC, WMA, M4A, 3GA, WAV, and AMR. The available formats depend on the target device.
 
-S/W and H/W audio codec could be selected by player API and the default codec type should be checked by calling player_get_audio_codec_type().
+Software and hardware audio codec can be selected using the player API. You must check the default codec type by calling 'player_get_audio_codec_type()'.
 
-You can use multiple instances of the player to play several audio data streams concurrently if S/W codec is selected. This means that your application can [play multiple uncompressed audio files](#play) at the same time.
+If the software codec is selected, you can use multiple instances of the player to play several audio data streams concurrently. This implies that your application can [play multiple uncompressed audio files](#play) at the same time.
 
 The following figure illustrates the general player state changes.
 
@@ -48,7 +48,7 @@ The following figure illustrates the general player state changes.
 
 ![Player state changes](./media/using_players_state_changes.png)
 
-The `player_interrupted_cb()` callback could be called due to the resource restriction in the system. The player state will be one of IDLE, READY or PAUSED according to the resource management policy. You must check the state of the current instance and take appropriate action.
+The `player_interrupted_cb()` callback could be called due to the resource restriction in the system. The player state could be IDLE, READY, or PAUSED based on the resource management policy. You must check the state of the current instance and take appropriate action.
 
 <a name="video"></a>
 ## Video Player
@@ -65,11 +65,9 @@ Tizen enables your application to [play video](#play_video), and it uses its own
 
 The supported video formats include WMV, ASF, MP4, 3GP, AVI, MKV, and OGG. The available formats depend on the target device.
 
-In the case of a video interruption, the state will be one of IDLE, READY or PAUSED due to the resource restriction in the system. You must check the state of the current instance and take appropriate action.
+In case there is a video interruption, the state will be either IDLE, READY, or PAUSED because of the resource restriction in the system. You must check the state of the current instance and take appropriate action.
 
 The following figure illustrates what happens when the player gets interrupted by the system.
-
-**Figure: Player states when interrupted by system**
 
 ![Player states when interrupted by system](./media/using_players_interrupted_state.png)
 
@@ -361,7 +359,7 @@ To initialize the player for use:
      }
      ```
 
-     The playback is interrupted and the callback triggered when, for example, another multimedia application is run. The player state automatically changes to `PLAYER_STATE_PAUSED` or `PLAYER_STATE_IDLE` according to the resource management policy. To get the current state, use the `player_get_state()` function.
+     The playback is interrupted and the callback is triggered when, for example, some other multimedia application starts. The player state automatically changes to `PLAYER_STATE_PAUSED` or `PLAYER_STATE_IDLE` based on the resource management policy. To get the current state, use the `player_get_state()` function.
 
    - To receive a notification when the playback ends, register a callback function using the `player_set_completed_cb()` function:
 
