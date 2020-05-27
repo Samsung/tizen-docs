@@ -13,6 +13,10 @@ When you create your first Tizen .NET application, you can select from the follo
 -   [TV .NET application](tv/first-app.md)
 
     A TV application is targeted to run on a smart TV. The applications can be optimized for larger screens and remote control.
+    
+-   [IoT .NET application](iot/first-app.md)
+
+    A IoT application is targeted to run on a IoT board. The applications can be optimized for headed and headless.
 
 -   [Mobile .NET application](mobile/first-app.md)
 
