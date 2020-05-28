@@ -3234,12 +3234,6 @@
                   </Subnodes>
                  </Node>
                  <Node>
-                  <Name>Lock</Name>
-                  <Path>group__Eina__Lock__Group.html</Path>
-                  <Subnodes>
-                  </Subnodes>
-                 </Node>
-                 <Node>
                   <Name>Log</Name>
                   <Path>group__Eina__Log__Group.html</Path>
                   <Subnodes>

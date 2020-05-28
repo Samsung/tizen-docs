@@ -161,8 +161,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The iterator that will walk over the array.</dd></dl>
 <p>You can create it like this: int array[] = {1, 2, 3, 4}; int* array2[] = {&amp;array[0], &amp;array[1], &amp;array[2], &amp;array[3], NULL};</p>
 <p>Eina_Iterator* iterator = eina_carray_iterator_new((void**)array2);</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Creates an Eina_Iterator that iterates through a C array of specified size.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.18 Creates an Eina_Iterator that iterates through a C array of specified size.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">array</td><td>The array </td></tr>
@@ -172,8 +171,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The iterator that will walk over the array.</dd></dl>
 <p>You can create it like this: int array[] = {1, 2, 3, 4};</p>
 <p>Eina_Iterator* iterator = eina_carray_length_iterator_new((void**)array, sizeof (array[0]), (<a class="el" href="group__Eina__Types__Group.html#ga7c1b6f81660b4e30516169e9e7d3261c">EINA_C_ARRAY_LENGTH(array)</a>);</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.22 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.22</dd></dl>
 <p>Creates an Eina_Iterator that iterates through a NUL-terminated C array.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -241,7 +239,7 @@ Defines</h2></td></tr>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>The order in which the elements will be traversed depends on the underlying container and <b>shouldn't</b> be relied upon.</dd>
 <dd>
 unless explicitly stated in functions returning iterators, do not modify the iterated object while you walk it, in this example using lists, do not remove list nodes or you might crash! This is not a limitation of iterators themselves, rather in the iterators implementations to keep them as simple and fast as possible. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a14">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a7">eina_file_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a13">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a13">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a13">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a7">eina_file_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a13">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a13">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -281,8 +279,7 @@ unless explicitly stated in functions returning iterators, do not modify the ite
   </dd>
 </dl>
 <p>The iterator is filtered while it is being iterated. The original iterator you pass in here is is then owned and will be freed once the the new iterator is freed.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>Creates an Eina_Iterator that iterates through a series of Eina_Iterator.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Creates an Eina_Iterator that iterates through a series of Eina_Iterator.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">it</td><td>The first Eina_Iterator to iterate over </td></tr>
@@ -292,8 +289,18 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 <dl class="return"><dt><b>Returns:</b></dt><dd>The iterator that will walk all the other iterator</dd></dl>
 <p>Eina_Iterator* iterator = <a class="el" href="group__Eina__Iterator__Group.html#gad00de79d25cdeb74c1e1438aa14340f7" title="Creates a new iterator which which iterates through all elements with are accepted by the filter call...">eina_multi_iterator_new(it1, it2, it3, NULL)</a>;</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>The returned array will destroy iterator given to it once they are not necessary anymore. Taking ownership of those iterator.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.22 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.22 Calls the process method on each node of iterator, producing new "processed" nodes and returning a new iterator which contains them.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">original</td><td>Iterator containing the nodes to process. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">process</td><td>Method to call on each node. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">free_cb</td><td>Method called when all nodes have been processed. It receives "data" as a parameter. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Additional data passed to the process method.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Processes every node in the input iterator and returns a new iterator containing the processed nodes. This is akin to a Map function: <a href="https://en.wikipedia.org/wiki/Map_(higher-order_function)">https://en.wikipedia.org/wiki/Map_(higher-order_function)</a></p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.24</dd></dl>
 <p>Creates an Eina_Iterator that iterates through a series of Eina_Iterator.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -551,7 +558,7 @@ unless explicitly stated in functions returning iterators, do not modify the ite
 </dl>
 <p>This function frees <code>iterator</code> if it is not <code>NULL</code>; </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a17">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a9">eina_file_01.c</a>, <a class="el" href="eina_hash_01_8c-example.html#a16">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a16">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a16">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a16">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a16">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a16">eina_hash_07.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a14">eina_iterator_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a14">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a14">eina_tiler_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a16">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a9">eina_file_01.c</a>, <a class="el" href="eina_hash_01_8c-example.html#a16">eina_hash_01.c</a>, <a class="el" href="eina_hash_03_8c-example.html#a16">eina_hash_03.c</a>, <a class="el" href="eina_hash_04_8c-example.html#a16">eina_hash_04.c</a>, <a class="el" href="eina_hash_05_8c-example.html#a16">eina_hash_05.c</a>, <a class="el" href="eina_hash_06_8c-example.html#a16">eina_hash_06.c</a>, <a class="el" href="eina_hash_07_8c-example.html#a16">eina_hash_07.c</a>, <a class="el" href="eina_iterator_01_8c-example.html#a14">eina_iterator_01.c</a>, <a class="el" href="eina_list_03_8c-example.html#a14">eina_list_03.c</a>, and <a class="el" href="eina_tiler_01_8c-example.html#a14">eina_tiler_01.c</a>.</dd>
 </dl>
 </div>
 </div>

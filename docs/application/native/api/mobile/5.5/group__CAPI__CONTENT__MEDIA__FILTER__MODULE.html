@@ -2099,6 +2099,9 @@ Defines</h2></td></tr>
 
 <p>Sets the media filter content <em>order_type</em> and <em>order_keyword</em> i.e. either descending or ascending. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>If <em>order_type</em> set to <a class="el" href="group__CAPI__MEDIA__CONTENT__MODULE.html#ggaa4e5eece5a509c7414afb96e7a2c3fa2a5accee97bcf8be30a723bf226f4f7b1c">MEDIA_CONTENT_ORDER_OTHER</a>, media_filter sorts by referring only to the value of <em>order_keyword</em>. <br/>
+ Therefore, <em>order_keyword</em> must include collation type and order type. <br/>
+ e.g. MEDIA_DISPLAY_NAME COLLATE NOCASE DESC, MEDIA_MODIFIED_TIME DESC</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">filter</td><td>The handle to the media filter </td></tr>

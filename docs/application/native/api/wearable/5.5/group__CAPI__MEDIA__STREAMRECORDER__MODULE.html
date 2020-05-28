@@ -170,7 +170,14 @@ Foreach Operations</h3>
 <tr>
 <td><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CAPABILITY__MODULE.html#gaa4006c45969d64f28eda74152f998f72" title="Retrieves all supported video resolutions by invoking callback function once for each supported video...">streamrecorder_foreach_supported_video_resolution()</a> </td><td><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__CAPABILITY__MODULE.html#ga81aacfbb171782c2e45e03a5c3c03926" title="Called once for each supported video resolution.">streamrecorder_supported_video_resolution_cb()</a> </td><td>Supported video resolutions  </td></tr>
 </table>
-</div> <table class="memberdecls">
+</div> <h2><a class="anchor" id="CAPI_MEDIA_STREAMRECORDER_MODULE_FEATURE"></a>
+Related Features</h2>
+<p>This API is related with the following feature</p>
+<ul>
+<li><a href="http://tizen.org/feature/multimedia.stream_recorder">http://tizen.org/feature/multimedia.stream_recorder</a></li>
+</ul>
+<p>It is recommended to design feature related codes in your application for reliability. You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application. To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK. More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
+<table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a">streamrecorder_create</a> (<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga44e7f52be10a082e6e82e97a15dd3312">streamrecorder_h</a> *recorder)</td></tr>
@@ -535,6 +542,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abaac609e5e0a4b9dde63166ebf6c0427">STREAMRECORDER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310a750f699ee460848f37622d93fc22fa0f">STREAMRECORDER_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
@@ -542,9 +550,13 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The streamrecorder state must be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab272fcf7fc028ca73d6dc5740310669b">STREAMRECORDER_STATE_RECORDING</a> set by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gada00f8a9887137729ddb590caff5bf4f" title="Starts the recording.">streamrecorder_start()</a> or <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ae5cc059997bf4e82c98fcf28734e5765">STREAMRECORDER_STATE_PAUSED</a> by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a stream recorder handle by calling <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a>. </dd>
+<dd>
+The streamrecorder state must be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab272fcf7fc028ca73d6dc5740310669b">STREAMRECORDER_STATE_RECORDING</a> set by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gada00f8a9887137729ddb590caff5bf4f" title="Starts the recording.">streamrecorder_start()</a> or <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ae5cc059997bf4e82c98fcf28734e5765">STREAMRECORDER_STATE_PAUSED</a> by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The streamrecorder state will be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5a220f45e59f01bbe98d48425ba580c733">STREAMRECORDER_STATE_PREPARED</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga606b38f38313fed38d41f1f7ffd1471d" title="Stops recording and saves the result.">streamrecorder_commit()</a> </dd>
 <dd>
@@ -582,6 +594,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abaac609e5e0a4b9dde63166ebf6c0427">STREAMRECORDER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310a750f699ee460848f37622d93fc22fa0f">STREAMRECORDER_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
@@ -589,9 +602,13 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The streamrecorder state must be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab272fcf7fc028ca73d6dc5740310669b">STREAMRECORDER_STATE_RECORDING</a> set by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gada00f8a9887137729ddb590caff5bf4f" title="Starts the recording.">streamrecorder_start()</a> or <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ae5cc059997bf4e82c98fcf28734e5765">STREAMRECORDER_STATE_PAUSED</a> by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a stream recorder handle by calling <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a>. </dd>
+<dd>
+The streamrecorder state must be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab272fcf7fc028ca73d6dc5740310669b">STREAMRECORDER_STATE_RECORDING</a> set by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gada00f8a9887137729ddb590caff5bf4f" title="Starts the recording.">streamrecorder_start()</a> or <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ae5cc059997bf4e82c98fcf28734e5765">STREAMRECORDER_STATE_PAUSED</a> by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The streamrecorder state will be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5a220f45e59f01bbe98d48425ba580c733">STREAMRECORDER_STATE_PREPARED</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaa3b54fffa9e774e3a15c9738e1b790d0" title="Cancels the recording.">streamrecorder_cancel()</a> </dd>
 <dd>
@@ -629,6 +646,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310a14bde69eb41c81e689feca49973209f3">STREAMRECORDER_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abaac609e5e0a4b9dde63166ebf6c0427">STREAMRECORDER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
@@ -665,14 +683,18 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abaac609e5e0a4b9dde63166ebf6c0427">STREAMRECORDER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310a750f699ee460848f37622d93fc22fa0f">STREAMRECORDER_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The recorder state should be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab64d99d4611b0ec4d727f66f272e6d50">STREAMRECORDER_STATE_CREATED</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a stream recorder handle by calling <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a>. </dd>
+<dd>
+The recorder state should be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab64d99d4611b0ec4d727f66f272e6d50">STREAMRECORDER_STATE_CREATED</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The recorder state will be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ae17d4a7daeee3f48a84681b3d3db2936">STREAMRECORDER_STATE_NONE</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a> </dd></dl>
 
 </div>
 </div>
@@ -715,12 +737,16 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310a750f699ee460848f37622d93fc22fa0f">STREAMRECORDER_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The streamrecorder state must be only <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab64d99d4611b0ec4d727f66f272e6d50">STREAMRECORDER_STATE_CREATED</a> </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a stream recorder handle by calling <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a>. </dd>
+<dd>
+The streamrecorder state must be only <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab64d99d4611b0ec4d727f66f272e6d50">STREAMRECORDER_STATE_CREATED</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a> </dd></dl>
 
 </div>
 </div>
@@ -762,10 +788,13 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a stream recorder handle by calling <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a> </dd></dl>
 
 </div>
 </div>
@@ -797,15 +826,20 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abaac609e5e0a4b9dde63166ebf6c0427">STREAMRECORDER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310a750f699ee460848f37622d93fc22fa0f">STREAMRECORDER_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The streamrecorder state must be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab272fcf7fc028ca73d6dc5740310669b">STREAMRECORDER_STATE_RECORDING</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a stream recorder handle by calling <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a>. </dd>
+<dd>
+The streamrecorder state must be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab272fcf7fc028ca73d6dc5740310669b">STREAMRECORDER_STATE_RECORDING</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The streamrecorder state will be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ae5cc059997bf4e82c98fcf28734e5765">STREAMRECORDER_STATE_PAUSED</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga606b38f38313fed38d41f1f7ffd1471d" title="Stops recording and saves the result.">streamrecorder_commit()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga606b38f38313fed38d41f1f7ffd1471d" title="Stops recording and saves the result.">streamrecorder_commit()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaa3b54fffa9e774e3a15c9738e1b790d0" title="Cancels the recording.">streamrecorder_cancel()</a> </dd></dl>
 
@@ -839,16 +873,21 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abaac609e5e0a4b9dde63166ebf6c0427">STREAMRECORDER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310a750f699ee460848f37622d93fc22fa0f">STREAMRECORDER_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The recorder state should be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab64d99d4611b0ec4d727f66f272e6d50">STREAMRECORDER_STATE_CREATED</a>. <br/>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a stream recorder handle by calling <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a>. </dd>
+<dd>
+The recorder state should be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab64d99d4611b0ec4d727f66f272e6d50">STREAMRECORDER_STATE_CREATED</a>. <br/>
  The <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaf6ee7d45be226a8e39052a720d4e731f" title="Sets the video source as live buffer to be used for recording.">streamrecorder_enable_source_buffer()</a> should be invoked before this function. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The streamrecorder state will be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5a220f45e59f01bbe98d48425ba580c733">STREAMRECORDER_STATE_PREPARED</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga9a8bd43a548b09ce6d6515a8d7470866" title="Resets the streamrecorder.">streamrecorder_unprepare()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga9a8bd43a548b09ce6d6515a8d7470866" title="Resets the streamrecorder.">streamrecorder_unprepare()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__ATTRIBUTES__MODULE.html#ga5bba1993519305159edaa30494d49e64" title="Sets the audio codec for encoding an audio stream.">streamrecorder_set_audio_encoder()</a> </dd>
 <dd>
@@ -899,11 +938,14 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310ad1a689a808b35888f25364c22b1e8f81">STREAMRECORDER_ERROR_PERMISSION_DENIED</a></td><td>The access to the resources can not be granted </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a stream recorder handle by calling <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a>. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a> </dd></dl>
 
 </div>
 </div>
@@ -938,6 +980,7 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abaac609e5e0a4b9dde63166ebf6c0427">STREAMRECORDER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310a750f699ee460848f37622d93fc22fa0f">STREAMRECORDER_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
@@ -945,10 +988,14 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The streamrecorder state must be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5a220f45e59f01bbe98d48425ba580c733">STREAMRECORDER_STATE_PREPARED</a> by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga2ccfbf5e33cdd0905108cfbbcf31e97f" title="Prepares the streamrecorder for recording.">streamrecorder_prepare()</a> or <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ae5cc059997bf4e82c98fcf28734e5765">STREAMRECORDER_STATE_PAUSED</a> by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a>. <br/>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a stream recorder handle by calling <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a>. </dd>
+<dd>
+The streamrecorder state must be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5a220f45e59f01bbe98d48425ba580c733">STREAMRECORDER_STATE_PREPARED</a> by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga2ccfbf5e33cdd0905108cfbbcf31e97f" title="Prepares the streamrecorder for recording.">streamrecorder_prepare()</a> or <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ae5cc059997bf4e82c98fcf28734e5765">STREAMRECORDER_STATE_PAUSED</a> by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a>. <br/>
  The filename should be set by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__ATTRIBUTES__MODULE.html#gab5ea797e861a4e0f1be8508761e2cde5" title="Sets the file path to record.">streamrecorder_set_filename()</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The recorder state will be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab272fcf7fc028ca73d6dc5740310669b">STREAMRECORDER_STATE_RECORDING</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga08b44ab50a95f7eef1aa957274418fa6" title="Pauses the recording.">streamrecorder_pause()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga606b38f38313fed38d41f1f7ffd1471d" title="Stops recording and saves the result.">streamrecorder_commit()</a> </dd>
 <dd>
@@ -993,15 +1040,20 @@ Typedefs</h2></td></tr>
 <dl class="retval"><dt><b>Return values:</b></dt><dd>
   <table class="retval">
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310aeee331559cf2f9ed58fbe6a59218254e">STREAMRECORDER_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abbeb9b10c6f221a72f96ec8936ee4e4e">STREAMRECORDER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310accdd128cb183a4508f892b421ad0309d">STREAMRECORDER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310abaac609e5e0a4b9dde63166ebf6c0427">STREAMRECORDER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gga183d6a4b17d0b3f0b68db02b6c876310a750f699ee460848f37622d93fc22fa0f">STREAMRECORDER_ERROR_INVALID_STATE</a></td><td>Invalid state </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="pre"><dt><b>Precondition:</b></dt><dd>The streamrecorder state should be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5a220f45e59f01bbe98d48425ba580c733">STREAMRECORDER_STATE_PREPARED</a> set by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga2ccfbf5e33cdd0905108cfbbcf31e97f" title="Prepares the streamrecorder for recording.">streamrecorder_prepare()</a>, <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaa3b54fffa9e774e3a15c9738e1b790d0" title="Cancels the recording.">streamrecorder_cancel()</a> or <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga606b38f38313fed38d41f1f7ffd1471d" title="Stops recording and saves the result.">streamrecorder_commit()</a>. </dd></dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd>Create a stream recorder handle by calling <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a>. </dd>
+<dd>
+The streamrecorder state should be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5a220f45e59f01bbe98d48425ba580c733">STREAMRECORDER_STATE_PREPARED</a> set by <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga2ccfbf5e33cdd0905108cfbbcf31e97f" title="Prepares the streamrecorder for recording.">streamrecorder_prepare()</a>, <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaa3b54fffa9e774e3a15c9738e1b790d0" title="Cancels the recording.">streamrecorder_cancel()</a> or <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga606b38f38313fed38d41f1f7ffd1471d" title="Stops recording and saves the result.">streamrecorder_commit()</a>. </dd></dl>
 <dl class="post"><dt><b>Postcondition:</b></dt><dd>The streamrecorder state will be <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ggabead65b87737a5e6bc5f4d5f48306fd5ab64d99d4611b0ec4d727f66f272e6d50">STREAMRECORDER_STATE_CREATED</a>. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga2ccfbf5e33cdd0905108cfbbcf31e97f" title="Prepares the streamrecorder for recording.">streamrecorder_prepare()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaaca2d6668c94e791b5eb231504e14f7a" title="Creates a streamrecorder handle to record a video or audio.">streamrecorder_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#ga2ccfbf5e33cdd0905108cfbbcf31e97f" title="Prepares the streamrecorder for recording.">streamrecorder_prepare()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__MEDIA__STREAMRECORDER__MODULE.html#gaa3b54fffa9e774e3a15c9738e1b790d0" title="Cancels the recording.">streamrecorder_cancel()</a> </dd>
 <dd>

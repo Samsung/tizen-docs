@@ -150,6 +150,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of records matching a query.  <a href="#ga4a8f8a36b0a5f0d1ca4e90a775b06f1b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#ga949e522a12799fa45da0deb50a20aac2">contacts_db_get_last_change_version</a> (int *last_change_version)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last successful changed contacts database version on the current connection.  <a href="#ga949e522a12799fa45da0deb50a20aac2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#gac273f7f7bb37bab717f649534f7039a6">contacts_db_get_count_for_search_records</a> (const char *view_uri, const char *keyword, unsigned int *count)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of found records based on a given keyword.  <a href="#gac273f7f7bb37bab717f649534f7039a6"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#ga492af4ed6f0f187f7539b6480c7bbb0e">contacts_db_get_count_for_search_records_with_range</a> (const char *view_uri, const char *keyword, int range, unsigned int *count)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of found records based on a given keyword and range.  <a href="#ga492af4ed6f0f187f7539b6480c7bbb0e"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#ga8ecd9b484f305ee6c8b85b6052f365ce">contacts_db_get_count_for_search_records_with_query</a> (contacts_query_h query, const char *keyword, unsigned int *count)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of found records based on a given keyword and query.  <a href="#ga8ecd9b484f305ee6c8b85b6052f365ce"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#gadaf032245bc8acf5550c19063fca96ba">contacts_db_get_status</a> (<a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#gabd69685df0911cde78242233ed0cb391">contacts_db_status_e</a> *status)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current status of server.  <a href="#gadaf032245bc8acf5550c19063fca96ba"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#ga8e7841724f5cd7d27aa3edddb8738b13">contacts_db_add_status_changed_cb</a> (<a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#gac291053078e31caca532ef28319bdd91">contacts_db_status_changed_cb</a> callback, void *user_data)</td></tr>
@@ -764,6 +770,210 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27ad6213ff683f34e6b2073886e1832d732">CONTACTS_ERROR_NO_DATA</a></td><td>Requested data does not exist </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a84b9b4d0884ac7d35e89bc35874e6420">CONTACTS_ERROR_PERMISSION_DENIED</a></td><td>Permission denied. This application does not have the privilege to call this method </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a27c53a12fac558fb7838b2591925698e">CONTACTS_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a20bb22f8b9e13276e7870e935276745a">CONTACTS_ERROR_DB</a></td><td>Database operation failure </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a9c93eaafaf7232f05fb77a4e577d588a">CONTACTS_ERROR_IPC</a></td><td>IPC error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a0ddba0a3217c68f7be472328c42356a1">CONTACTS_ERROR_SYSTEM</a></td><td>Internal system module error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#ga8ff34e2de425222000b5dcb5b1cd0a61" title="Connects to the contacts service.">contacts_connect()</a> should be called to open a connection to the contacts service. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#ga8ff34e2de425222000b5dcb5b1cd0a61" title="Connects to the contacts service.">contacts_connect()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac273f7f7bb37bab717f649534f7039a6"></a><!-- doxytag: member="contacts_db.h::contacts_db_get_count_for_search_records" ref="gac273f7f7bb37bab717f649534f7039a6" args="(const char *view_uri, const char *keyword, unsigned int *count)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#gac273f7f7bb37bab717f649534f7039a6">contacts_db_get_count_for_search_records</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>view_uri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>keyword</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of found records based on a given keyword. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/contact.read </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function works only for <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person">_contacts_person view</a>, <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_contact">_contacts_person_contact view (read only)</a>, <br/>
+ <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_grouprel">_contacts_person_grouprel view (read only)</a>, <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_group_assigned">_contacts_person_group_assigned view (read only)</a> <br/>
+ and <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_group_not_assigned">_contacts_person_group_not_assigned view (read only)</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">view_uri</td><td>The view URI </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">keyword</td><td>The keyword </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>The number of records </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27ac4ce8da355205c798576e05b24871182">CONTACTS_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a27c53a12fac558fb7838b2591925698e">CONTACTS_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a84b9b4d0884ac7d35e89bc35874e6420">CONTACTS_ERROR_PERMISSION_DENIED</a></td><td>Permission denied. This application does not have the privilege to call this method </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a633c2b94ec18b65b186f1e19c13adf68">CONTACTS_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a6871f0ce6bb94ccded539252d5419839">CONTACTS_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a20bb22f8b9e13276e7870e935276745a">CONTACTS_ERROR_DB</a></td><td>Database operation failure </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a9c93eaafaf7232f05fb77a4e577d588a">CONTACTS_ERROR_IPC</a></td><td>IPC error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a0ddba0a3217c68f7be472328c42356a1">CONTACTS_ERROR_SYSTEM</a></td><td>Internal system module error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#ga8ff34e2de425222000b5dcb5b1cd0a61" title="Connects to the contacts service.">contacts_connect()</a> should be called to open a connection to the contacts service. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#ga8ff34e2de425222000b5dcb5b1cd0a61" title="Connects to the contacts service.">contacts_connect()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8ecd9b484f305ee6c8b85b6052f365ce"></a><!-- doxytag: member="contacts_db.h::contacts_db_get_count_for_search_records_with_query" ref="ga8ecd9b484f305ee6c8b85b6052f365ce" args="(contacts_query_h query, const char *keyword, unsigned int *count)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#ga8ecd9b484f305ee6c8b85b6052f365ce">contacts_db_get_count_for_search_records_with_query</a> </td>
+          <td>(</td>
+          <td class="paramtype">contacts_query_h&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>keyword</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of found records based on a given keyword and query. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/contact.read </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function works only for <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person">_contacts_person view</a>, <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_contact">_contacts_person_contact view (read only)</a>, <br/>
+ <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_grouprel">_contacts_person_grouprel view (read only)</a>, <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_group_assigned">_contacts_person_group_assigned view (read only)</a> <br/>
+ and <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_group_not_assigned">_contacts_person_group_not_assigned view (read only)</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">query</td><td>The query handle to filter </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">keyword</td><td>The keyword </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>The number of records </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27ac4ce8da355205c798576e05b24871182">CONTACTS_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a27c53a12fac558fb7838b2591925698e">CONTACTS_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a84b9b4d0884ac7d35e89bc35874e6420">CONTACTS_ERROR_PERMISSION_DENIED</a></td><td>Permission denied. This application does not have the privilege to call this method </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a633c2b94ec18b65b186f1e19c13adf68">CONTACTS_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a6871f0ce6bb94ccded539252d5419839">CONTACTS_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a20bb22f8b9e13276e7870e935276745a">CONTACTS_ERROR_DB</a></td><td>Database operation failure </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a9c93eaafaf7232f05fb77a4e577d588a">CONTACTS_ERROR_IPC</a></td><td>IPC error </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a0ddba0a3217c68f7be472328c42356a1">CONTACTS_ERROR_SYSTEM</a></td><td>Internal system module error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="pre"><dt><b>Precondition:</b></dt><dd><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#ga8ff34e2de425222000b5dcb5b1cd0a61" title="Connects to the contacts service.">contacts_connect()</a> should be called to open a connection to the contacts service. </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#ga8ff34e2de425222000b5dcb5b1cd0a61" title="Connects to the contacts service.">contacts_connect()</a> </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga492af4ed6f0f187f7539b6480c7bbb0e"></a><!-- doxytag: member="contacts_db.h::contacts_db_get_count_for_search_records_with_range" ref="ga492af4ed6f0f187f7539b6480c7bbb0e" args="(const char *view_uri, const char *keyword, int range, unsigned int *count)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__DATABASE__MODULE.html#ga492af4ed6f0f187f7539b6480c7bbb0e">contacts_db_get_count_for_search_records_with_range</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>view_uri</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>keyword</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>range</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int *&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the number of found records based on a given keyword and range. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
+<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
+<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/contact.read </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function works only for <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person">_contacts_person view</a>, <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_contact">_contacts_person_contact view (read only)</a>, <br/>
+ <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_grouprel">_contacts_person_grouprel view (read only)</a>, <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_group_assigned">_contacts_person_group_assigned view (read only)</a>, <br/>
+ <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_group_not_assigned">_contacts_person_group_not_assigned view (read only)</a>. For these views the valid search ranges are: <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gga80e9d08c2920d11bc57e8df55eaa0849a58c5d0a470ea6edbcc3240135d8c53e3">CONTACTS_SEARCH_RANGE_NAME</a>, <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gga80e9d08c2920d11bc57e8df55eaa0849a1267f097408849dd724b5112afaf662b">CONTACTS_SEARCH_RANGE_NUMBER</a>, <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gga80e9d08c2920d11bc57e8df55eaa0849adbdd35021ae94e1d011c3bdce35e0660">CONTACTS_SEARCH_RANGE_DATA</a>. <br/>
+ For <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_number">_contacts_person_number view (read only)</a> the valid search ranges are <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gga80e9d08c2920d11bc57e8df55eaa0849a58c5d0a470ea6edbcc3240135d8c53e3">CONTACTS_SEARCH_RANGE_NAME</a> and <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gga80e9d08c2920d11bc57e8df55eaa0849a1267f097408849dd724b5112afaf662b">CONTACTS_SEARCH_RANGE_NUMBER</a>.<br/>
+ For <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__VIEW__MODULE.html#CAPI_SOCIAL_CONTACTS_SVC_VIEW_MODULE_contacts_person_email">_contacts_person_email view (read only)</a> the valid search ranges are <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gga80e9d08c2920d11bc57e8df55eaa0849a58c5d0a470ea6edbcc3240135d8c53e3">CONTACTS_SEARCH_RANGE_NAME</a> and <a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__RECORD__MODULE.html#gga80e9d08c2920d11bc57e8df55eaa0849a3cd29f08820567696f6f462aa86cbf6d">CONTACTS_SEARCH_RANGE_EMAIL</a>. </dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">view_uri</td><td>The view URI </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">keyword</td><td>The keyword </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">range</td><td>The search range </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>The number of records </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27ac4ce8da355205c798576e05b24871182">CONTACTS_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a27c53a12fac558fb7838b2591925698e">CONTACTS_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a84b9b4d0884ac7d35e89bc35874e6420">CONTACTS_ERROR_PERMISSION_DENIED</a></td><td>Permission denied. This application does not have the privilege to call this method </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a633c2b94ec18b65b186f1e19c13adf68">CONTACTS_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a6871f0ce6bb94ccded539252d5419839">CONTACTS_ERROR_OUT_OF_MEMORY</a></td><td>Out of memory </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a20bb22f8b9e13276e7870e935276745a">CONTACTS_ERROR_DB</a></td><td>Database operation failure </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a9c93eaafaf7232f05fb77a4e577d588a">CONTACTS_ERROR_IPC</a></td><td>IPC error </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__SOCIAL__CONTACTS__SVC__COMMON__MODULE.html#gga3054f7ba3b71b5163e378dd4b3e42c27a0ddba0a3217c68f7be472328c42356a1">CONTACTS_ERROR_SYSTEM</a></td><td>Internal system module error </td></tr>

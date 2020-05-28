@@ -381,8 +381,10 @@ The following table lists the multimedia feature keys:
 | Key                                      | Type   | Description                              |
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/multimedia.media_codec` | `bool` | The platform returns `true` for this key, if the device supports the media codec feature. |
-| `http://tizen.org/feature/multimedia.transcoder` | `bool` | The platform returns `true` for this key, if the device supports the transcoder. |
 | `http://tizen.org/feature/multimedia.player.spherical_video` | `bool` | The platform returns `true` for this key, if the device supports the 360-degree video playback feature. |
+| `http://tizen.org/feature/multimedia.stream_recorder` | `bool` | The platform returns `true` for this key, if the device supports the stream recorder feature. |
+| `http://tizen.org/feature/multimedia.transcoder` | `bool` | The platform returns `true` for this key, if the device supports the transcoder. |
+
 
 The following table lists the multi-point touch feature keys:
 
@@ -655,6 +657,7 @@ The following table lists the speech feature keys:
 | Key                                      | Type   | Description                              |
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/speech.control` | `bool` | The platform returns `true` for this key, if the device supports voice control. |
+| `http://tizen.org/feature/speech.control_manager` | `bool` | The platform returns `true` for this key, if the device supports voice control manager. |
 | `http://tizen.org/feature/speech.recognition` | `bool` | The platform returns `true` for this key, if the device supports speech recognition (STT). |
 | `http://tizen.org/feature/speech.synthesis` | `bool` | The platform returns `true` for this key, if the device supports speech synthesis (TTS). |
 

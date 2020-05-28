@@ -192,6 +192,7 @@ package:
 | `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
 | `http://tizen.org/feature/multimedia.player.audio_offload` | Specify this key, if the application requires the hardware-offloaded audio processing feature. | 5.5   |
 | `http://tizen.org/feature/multimedia.player.spherical_video` | Specify this key, if the application requires the 360-degree video playback feature. | 5.0   |
+| `http://tizen.org/feature/multimedia.stream_recorder` | Specify this key, if the application requires the stream recorder feature. | 5.5   |
 | `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
 | `http://tizen.org/feature/network.bluetooth.audio.call` | Specify this key, if the application requires the Bluetooth hands-free feature (HFP). | 2.3   |
@@ -317,6 +318,7 @@ package:
 | `http://tizen.org/feature/shortcut`      | Specify this key, if the application requires the shortcut feature. | 4.0   |
 | `http://tizen.org/feature/sip.voip`      | Specify this key, if the application requires the Voice Over Internet Protocol (VOIP) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
+| `http://tizen.org/feature/speech.control_manager` | Specify this key, if the application requires the voice control manager feature. | 5.5   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
 | `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
@@ -380,6 +382,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
 | `http://tizen.org/feature/multimedia.player.audio_offload` | Specify this key, if the application requires the hardware-offloaded audio processing feature. | 5.5   |
 | `http://tizen.org/feature/multimedia.player.spherical_video` | Specify this key, if the application requires the 360-degree video playback feature. | 5.0   |
+| `http://tizen.org/feature/multimedia.stream_recorder` | Specify this key, if the application requires the stream recorder feature. | 5.5   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
 | `http://tizen.org/feature/network.bluetooth.audio.call` | Specify this key, if the application requires the Bluetooth hands-free feature (HFP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.audio.controller` | Specify this key, if the application requires the Bluetooth Advanced Audio Distribution (A2DP) sink feature and the Bluetooth Audio Video Remote Control (AVRCP) controller feature. | 3.0   |
@@ -495,6 +498,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
 | `http://tizen.org/feature/sip.voip`      | Specify this key, if the application requires the Voice Over Internet Protocol (VOIP) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
+| `http://tizen.org/feature/speech.control_manager` | Specify this key, if the application requires the voice control manager feature. | 5.5   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
 | `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |

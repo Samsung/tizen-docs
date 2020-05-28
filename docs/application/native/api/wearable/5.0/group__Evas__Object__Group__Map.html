@@ -841,31 +841,7 @@ evas_object_map_set() </dd></dl>
       </table>
 </div>
 <div class="memdoc">
-<p>Change the map point's coordinate precisely.</p>
-<p>This sets the fixed point's coordinate in the map precisely.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">m</td><td>map to change point. Must not be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">idx</td><td>index of point to change. Must be smaller than map size. </td></tr>
-    <tr><td class="paramname">x</td><td>Point X Coordinate (double) </td></tr>
-    <tr><td class="paramname">y</td><td>Point Y Coordinate (double) </td></tr>
-    <tr><td class="paramname">z</td><td>Point Z Coordinate (double)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Map.html#ga46ab921df9fe617d6c241056784217b7">evas_map_point_coord_set()</a> Get the map point's precise coordinate.</dd></dl>
-<p>This returns the coordinates of the given point in the map.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">m</td><td>map to query point. </td></tr>
-    <tr><td class="paramname">idx</td><td>index of point to query. Must be smaller than map size. </td></tr>
-    <tr><td class="paramname">x</td><td>where to return the X coordinate. (double) </td></tr>
-    <tr><td class="paramname">y</td><td>where to return the Y coordinate. (double) </td></tr>
-    <tr><td class="paramname">z</td><td>where to return the Z coordinate. (double)</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Object__Group__Map.html#ga87812b35a91cec3ad383f7ed47d86027">evas_map_point_coord_get()</a> Change the map point's U and V texture source point</dd></dl>
+<p>Change the map point's U and V texture source point</p>
 <p>This sets the U and V coordinates for the point. This determines which coordinate in the source image is mapped to the given point, much like OpenGL and textures. Notes that these points do select the pixel, but are double floating point values to allow for accuracy and sub-pixel selection.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

@@ -131,7 +131,9 @@ Overview</h2>
 <span class="preprocessor">    ({ do { \</span>
 <span class="preprocessor">        dlog_print(DLOG_ERROR, LOG_TAG, &quot;%s: %s(%d) &gt; &quot; fmt, __MODULE__, __func__, __LINE__, ##arg); \</span>
 <span class="preprocessor">    } while (0); })</span>
-</pre></div><h2><a class="anchor" id="CAPI_SYSTEM_DLOG_UTIL"></a>
+</pre></div><h2>Signal</h2>
+<p>For technical reasons, libdlog blocks the SIGPIPE signal on initialization. If you need to receive it, feel free to reenable it, but note that you may receive the SIGPIPE signal spuriously when writing logs.</p>
+<h2><a class="anchor" id="CAPI_SYSTEM_DLOG_UTIL"></a>
 dlogutil CLI</h2>
 <p>dlogutil is a utility that can be utilized to read stored logs.</p>
 <p>The most rudimentary way to use it is to run it with no parameters; it then prints all stored logs to the standard output and awaits more.</p>

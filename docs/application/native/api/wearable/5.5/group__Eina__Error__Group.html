@@ -121,6 +121,8 @@ Functions</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The integer type containing the error type.  <a href="#ga95b3cbb33e987e7d92a81ea785001686"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Error__Group.html#gad5645c25e5c3d6cd11d07567d685fe39">Eina_Success_Flag</a></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">A flag indicating a function completed succesfully.  <a href="#gad5645c25e5c3d6cd11d07567d685fe39"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="define-members"></a>
 Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Error__Group.html#ga637bff52ecef75ad46993950450347ae">EINA_ERROR_NO_ERROR</a>&#160;&#160;&#160;((<a class="el" href="group__Eina__Error__Group.html#ga95b3cbb33e987e7d92a81ea785001686">Eina_Error</a>)0)</td></tr>
@@ -157,6 +159,22 @@ Defines</h2></td></tr>
 
 <p>The integer type containing the error type. </p>
 <p>Errors are registered with <a class="el" href="group__Eina__Error__Group.html#ga39e79c4918d5e385404c79df751888d2" title="Registers a new error type.">eina_error_msg_register()</a>, <a class="el" href="group__Eina__Error__Group.html#ga4e67b3ce519e086fad1962c0499201b2" title="Registers a new error type, statically allocated message.">eina_error_msg_static_register()</a> or those inherited from the system's <code>errno.h</code> such as <code>ENOMEM</code>. </p>
+
+</div>
+</div>
+<a class="anchor" id="gad5645c25e5c3d6cd11d07567d685fe39"></a><!-- doxytag: member="eina_error.h::Eina_Success_Flag" ref="gad5645c25e5c3d6cd11d07567d685fe39" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Error__Group.html#gad5645c25e5c3d6cd11d07567d685fe39">Eina_Success_Flag</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>A flag indicating a function completed succesfully. </p>
+<p>Errors are reported with a EINA_FALSE value for Eina_Success_Flag return and success with a EINA_TRUE. </p>
 
 </div>
 </div>

@@ -106,8 +106,9 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the internal backing store in use.  <a href="#gad01f2257cf4a35aa1ffe1896805c03fb"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#ga0fcf580ca81b8eef514f873b61b95c69">ecore_evas_ews_evas_get</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the internal backing store in use.  <a href="#ga0fcf580ca81b8eef514f873b61b95c69"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#ga3edb89d0f1c562e9639a937231d06838">ecore_evas_ews_background_get</a> (void)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current background.  <a href="#ga3edb89d0f1c562e9639a937231d06838"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3edb89d0f1c562e9639a937231d06838"></a><!-- doxytag: member="Ecore_Evas_Ews::ecore_evas_ews_background_get" ref="ga3edb89d0f1c562e9639a937231d06838" args="(void)" -->
+<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#ga3edb89d0f1c562e9639a937231d06838">ecore_evas_ews_background_get</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current background. <br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#ga69133caf7519dcc61f727dda994484f6">ecore_evas_ews_background_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the current background, must be created by evas <a class="el" href="group__Ecore__Evas__Ews.html#ga0fcf580ca81b8eef514f873b61b95c69" title="Returns the internal backing store in use.">ecore_evas_ews_evas_get()</a>.  <a href="#ga69133caf7519dcc61f727dda994484f6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Evas__Ews.html#ga1aafacd1b5f3db7eee1769d156ab568c">ecore_evas_ews_children_get</a> (void)</td></tr>
@@ -118,26 +119,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the identifier of the manager taking care of internal windows.  <a href="#ga870e5446527a7e6dbd2e7e9ccbc0f3a0"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga3edb89d0f1c562e9639a937231d06838"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_ews_background_get" ref="ga3edb89d0f1c562e9639a937231d06838" args="(void)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>* <a class="el" href="group__Ecore__Evas__Ews.html#ga3edb89d0f1c562e9639a937231d06838">ecore_evas_ews_background_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets the current background. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ga69133caf7519dcc61f727dda994484f6"></a><!-- doxytag: member="Ecore_Evas.h::ecore_evas_ews_background_set" ref="ga69133caf7519dcc61f727dda994484f6" args="(Evas_Object *o)" -->
 <div class="memitem">
 <div class="memproto">
@@ -162,7 +143,6 @@ Functions</h2></td></tr>
 </dl>
 <p>It will be kept at lowest layer (EVAS_LAYER_MIN) and below everything else. You can set any object, default is a black rectangle.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>previous object will be deleted! </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -185,7 +165,6 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An eina list of Ecore_evases.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Do not change the returned list or its contents.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -209,7 +188,6 @@ Functions</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>this will force it to be created, making future calls to <a class="el" href="group__Ecore__Evas__Ews.html#gaaa131a2f289e190bcccd27bc24f1ecdf" title="Sets the engine to be used by the backing store engine.">ecore_evas_ews_engine_set()</a> void.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Ews.html#ga0fcf580ca81b8eef514f873b61b95c69" title="Returns the internal backing store in use.">ecore_evas_ews_evas_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -248,7 +226,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> if ews is already in use.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -272,7 +249,6 @@ Functions</h2></td></tr>
 <dl class="note"><dt><b>Note:</b></dt><dd>this will force it to be created, making future calls to <a class="el" href="group__Ecore__Evas__Ews.html#gaaa131a2f289e190bcccd27bc24f1ecdf" title="Sets the engine to be used by the backing store engine.">ecore_evas_ews_engine_set()</a> void.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Ews.html#gad01f2257cf4a35aa1ffe1896805c03fb" title="Returns the internal backing store in use.">ecore_evas_ews_ecore_evas_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -294,7 +270,6 @@ Functions</h2></td></tr>
 <p>Gets the identifier of the manager taking care of internal windows. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>the value set by <a class="el" href="group__Ecore__Evas__Ews.html#gae2fda64b6ac4fc8637a3203e9ca3b1c0" title="Sets the identifier of the manager taking care of internal windows.">ecore_evas_ews_manager_set()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -323,7 +298,6 @@ Functions</h2></td></tr>
 <p>The ECORE_EVAS_EWS_EVENT_MANAGER_CHANGE event is issued. Consider handling it to know if you should stop handling events yourself (ie: another manager took over)</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Evas__Ews.html#ga870e5446527a7e6dbd2e7e9ccbc0f3a0" title="Gets the identifier of the manager taking care of internal windows.">ecore_evas_ews_manager_get()</a> </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -376,7 +350,6 @@ Functions</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd></dd></dl>
 
 </div>
 </div>
@@ -391,7 +364,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window was activated  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window was activated </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -405,7 +379,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window was created  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window was created </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -419,7 +394,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : some other window property changed (title, name, class, alpha, transparent, shaped...)  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>some other window property changed (title, name, class, alpha, transparent, shaped...) </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -433,7 +409,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window was deleted, pointer is already invalid but may be used as reference for further cleanup work.  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window was deleted, pointer is already invalid but may be used as reference for further cleanup work. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -447,7 +424,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window was focused  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window was focused </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -461,7 +439,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window fullscreen changed  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window fullscreen changed </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -475,7 +454,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window become hidden  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window become hidden </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -489,7 +469,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window minimized/iconified changed  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window minimized/iconified changed </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -503,7 +484,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window layer changed  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window layer changed </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -517,7 +499,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window was lowered  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window was lowered </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -531,7 +514,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : manager was changed  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>manager was changed </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -545,7 +529,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window maximized changed  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window maximized changed </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -559,7 +544,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window was moved  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window was moved </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -573,7 +559,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window was raised  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window was raised </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -587,7 +574,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window was resized  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window was resized </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -601,7 +589,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window become visible  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window become visible </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>
@@ -615,7 +604,8 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<dl class="user"><dt><b>Since : window lost focus  Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<p>window lost focus </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 
 </div>
 </div>

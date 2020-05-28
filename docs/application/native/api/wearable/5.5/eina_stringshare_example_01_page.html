@@ -121,13 +121,13 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 <p>Sometimes you already have a pointer to a shared string and want to use it, so to make sure the provider of the pointer won't free it while you're using it you can increase the shared string's ref count: <div class="fragment"><pre class="fragment">   str2 = <a class="code" href="group__Eina__Stringshare__Group.html#ga5293082680141132ffcacc28866ef0ef" title="Retrieves an instance of a string for use in a program.">eina_stringshare_add</a>(prologe3);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str2);
 </pre></div></p>
-<p>Whenever you have a pointer to a shared string and would like to change it's value you should use <a class="el" href="group__Eina__Stringshare__Group.html#ga9e32a137ce8c4cd5f6ec3dbde3dbedd8">eina_stringshare_replace()</a>: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Stringshare__Group.html#ga602c8fe9bd3853e1ae80cc16590089c1">eina_stringshare_ref</a>(str2);
+<p>Whenever you have a pointer to a shared string and would like to change it's value you should use eina_stringshare_replace(): <div class="fragment"><pre class="fragment">   <a class="code" href="group__Eina__Stringshare__Group.html#ga602c8fe9bd3853e1ae80cc16590089c1">eina_stringshare_ref</a>(str2);
    <a class="code" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del</a>(str2);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str2);
 </pre></div> </p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><b>Don't</b> use <a class="el" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del()</a> followed by eina_share_common_add(), under some circumstances you might end up deleting a shared string some other piece of code is using.</dd></dl>
 <p>We created str but haven't deleted it yet, and while we called <a class="el" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del()</a> on str2, we created it and then increased the ref count so it's still alive: <div class="fragment"><pre class="fragment">
-   <a class="code" href="group__Eina__Stringshare__Group.html#ga9e32a137ce8c4cd5f6ec3dbde3dbedd8">eina_stringshare_replace</a>(&amp;str, prologe);
+   eina_stringshare_replace(&amp;str, prologe);
    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, str);
 
    <a class="code" href="group__Eina__Stringshare__Group.html#ga495411b0bc85b9c0d59ec7255a025260" title="Notes that the given string has lost an instance.">eina_stringshare_del</a>(str);
