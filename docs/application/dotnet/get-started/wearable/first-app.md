@@ -135,8 +135,6 @@ If you face any issues during deployment, it is recommended to manually install 
     $ sdb install <path-to-package>/org.tizen.example.CrossTemplate1.Tizen.Wearable-1.0.0.tpk
     ```
 
-## Enhance Your Application
-
 Xamarin.Forms provides a way to build portable applications which run in a native way. It provides a set of controls for building a user interface, as well as generates code which adapts the user interface code to use the native facilities of the supported platforms. The following is a brief introduction to the Xamarin.Forms controls, and how to use them to build on the application you have just created.
 
 ### Understand the Source Code
