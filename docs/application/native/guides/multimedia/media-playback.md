@@ -38,7 +38,7 @@ You can [play audio](#play_audio) and control functions for using audio resource
 
 The supported audio formats include MP3, AAC, WMA, M4A, 3GA, WAV, and AMR. The available formats depend on the target device.
 
-Software and hardware audio codec can be selected using the player API. You must check the default codec type by calling 'player_get_audio_codec_type()'.
+Software and hardware audio codec can be selected using the player API. You must check the default codec type by calling `player_get_audio_codec_type()`.
 
 If the software codec is selected, you can use multiple instances of the player to play several audio data streams concurrently. This implies that your application can [play multiple uncompressed audio files](#play) at the same time.
 
@@ -359,7 +359,7 @@ To initialize the player for use:
      }
      ```
 
-     The playback is interrupted and the callback is triggered when, for example, some other multimedia application starts. The player state automatically changes to `PLAYER_STATE_PAUSED` or `PLAYER_STATE_IDLE` based on the resource management policy. To get the current state, use the `player_get_state()` function.
+     The playback is interrupted and the callback is triggered when, for example, some other multimedia application starts. The player state automatically changes to `PLAYER_STATE_PAUSED` or `PLAYER_STATE_IDLE` based on the resource management policy. To get the current state, use `player_get_state()`.
 
    - To receive a notification when the playback ends, register a callback function using the `player_set_completed_cb()` function:
 
