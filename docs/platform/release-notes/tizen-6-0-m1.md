@@ -1,11 +1,27 @@
-# ﻿Tizen 6.0 Public M1 Release Notes
+# Tizen 6.0 Public M1 Release Notes
 
 Release date: May 31, 2020
 
 
-## System (Kernel and System framework)
+The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web, Tizen .NET, and Native API set.
 
-### New and changed features
+
+## Release Details
+
+- [Getting source code](http://review.tizen.org/git/) (Tizen 6.0 M1 source codes are under **tizen** branch.)
+
+- Getting binaries and images
+  - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20200503.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20200503.1/)
+  - profile(unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20200521.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20200521.1/)
+
+- [How to flash to a device](../developing/flashing.md)
+
+
+## Release Notes
+
+### System (Kernel and System framework)
+
+#### New and changed features
 
 - System management
   - Silent boot mode has been developed.
@@ -27,22 +43,22 @@ Release date: May 31, 2020
   - GDBus (glib) has been upgraded with KDBus support.
 
 
-## System (System Reliability)
+### System (System Reliability)
 
-### New and changed features
+#### New and changed features
 
 - Generic platform status dump tool has been provided to dump the status of Tizen platform as unified interface.
 - System status dump tool has been enhanced to support vendor-specific command line flag.
 - C# call stack analyzer and interactive debugging mode have been added to Tizen Callstack Analyzer.
 
-### Fixes
+#### Fixes
 
 - Crash garbage due to sudden power failure has been removed.
 
 
-## System (Base)
+### System (Base)
 
-### New and changed features
+#### New and changed features
 
 - Open source
   - aspell 
@@ -115,7 +131,7 @@ Release date: May 31, 2020
     - ucsdet: Detecting the charset or encoding of character data module.
 - The capi-system-settings API has been improved in terms of performance and stability.
 
-### Fixes
+#### Fixes
 
 - CVE patches
   - glib
@@ -145,9 +161,9 @@ Release date: May 31, 2020
     - CVE-2019-19646
 
 
-## Application framework
+### Application framework
 
-### New and changed features
+#### New and changed features
 
 - Improved alarm usability
   - Several time values have been provided to resolve the uncertainty of the inexact alarm.
@@ -157,9 +173,9 @@ Release date: May 31, 2020
   - API set to enable and disable by widget class has been added.
 
 
-## Window System
+### Window System
 
-### New and changed features
+#### New and changed features
 
 - Wayland
   - Wayland has been upgraded to version 1.18.0.
@@ -222,7 +238,7 @@ Release date: May 31, 2020
     - wl_egl_window_tizen_create_presentation_sync_fd
     - wl_egl_window_tizen_merge_sync_fds
 
-### Fixes
+#### Fixes
 
 - Enlightenment
   - Many code defects detected by the static analysis tool have been fixed.
@@ -244,9 +260,9 @@ Release date: May 31, 2020
   - Wrong handling of consumer hash data regarding remote surface has been fixed.
 
 
-## Graphics Engine
+### Graphics Engine
 
-### New and changed features
+#### New and changed features
 
 - DALi (3D UI Toolkit)
   - Actor, Window, and Renderer
@@ -279,7 +295,7 @@ Release date: May 31, 2020
   - .NET pre-initialize has been added.
   - Several InputMethodContext API set has been added.
 
-### Fixes
+#### Fixes
 
 - DALi (3D UI Toolkit)
   - Actor, Window and Renderer
@@ -296,15 +312,15 @@ Release date: May 31, 2020
   - Several Layout bugs have been fixed.
   - AlphaMaskUrl setting order problem has been fixed.
 
-### Known Issues
+#### Known Issues
 
 - NUI
   - ImfManager has been removed.
 
 
-## UI framework
+### UI framework
 
-### New and changed features
+#### New and changed features
 
 - EFL
   - Version 1.23 has been upgraded to version 1.24.
@@ -402,7 +418,7 @@ Release date: May 31, 2020
   - API set for managing recent stickers history has been added.
   - API for registering has been added whenever sticker info is changed.
 
-### Fixes
+#### Fixes
 
 - Reference display for IoT headed has been added. It is 7 inch display with 1280x720 resolution.
 - Input Framework
@@ -419,15 +435,15 @@ Release date: May 31, 2020
   - The memory leak issue has been fixed.
   - The checking UTF-8 validation bug has been fixed.
 
-### Known Issues
+#### Known Issues
 
 - efl-theme-tizen-wearable is under development, and will be completed by the next release.
 - efl-theme-tizen-common is under development, and will be completed by the next release.
 
 
-## Multimedia framework
+### Multimedia framework
 
-### New and changed features
+#### New and changed features
 
 - Media Vision
   - A new enumeration type has been added.
@@ -474,9 +490,9 @@ Release date: May 31, 2020
   - Support for audio routing of multiple built-in audio devices has been added.
 
 
-## Network and Connectivity
+### Network and Connectivity
 
-### New and changed features
+#### New and changed features
 
 - Wi-Fi Aware
   - Neighbor Awareness Networking (Wi-Fi Aware) specification has been developed.
@@ -494,15 +510,15 @@ Release date: May 31, 2020
 - libwebsockets
   - Version 2.3.0 has been upgraded to version 3.2.0.
 
-### Fixes
+#### Fixes
 
 - Bug in user awareness framework has been fixed.
 - Bug in bluetooth framework has been fixed.
 
 
-## Security
+### Security
 
-### New and changed features
+#### New and changed features
 
 - Askuser
   - New application for user consent has been added.
@@ -518,9 +534,9 @@ Release date: May 31, 2020
     - notification.admin
 
 
-## Service framework
+### Service framework
 
-### New and changed features
+#### New and changed features
 
 - Battery-Monitor framework
   - Support for fetching battery information for custom period has been added.
@@ -541,7 +557,7 @@ Release date: May 31, 2020
     - API for fetching count of searched record with range has been added.
     - API set for fetching count for searched record with query has been added.
 
-### Fixes
+#### Fixes
 
 - Context Framework
   - Memory stacking issues have been resolved.
@@ -550,9 +566,9 @@ Release date: May 31, 2020
   - Handling of XCUSTOMCHARSET has been added.
 
 
-## Web framework
+### Web framework
 
-### New and changed features
+#### New and changed features
 
 - Web Engine
   - Open source chromium 76 version base has been applied. The following features and API set are provided by the new web engine:
@@ -586,9 +602,9 @@ Release date: May 31, 2020
     - Handle multiple operations for an event.
 
 
-## Lightweight Web Solution
+### Lightweight Web Solution
 
-### New and changed features
+#### New and changed features
 
 - Rendering engine 
   - WebRTC has been added.
@@ -606,7 +622,7 @@ Release date: May 31, 2020
     - Frequently used case about apply operation has been optimized.
     - Source code compression has been updated to reduce large memory consumption in source code.
 
-### Fixes
+#### Fixes
 
 - Bug fixes
   - Layout bugs have been fixed.
@@ -614,9 +630,9 @@ Release date: May 31, 2020
   - Crash has been fixed.
 
 
-## Tizen .NET
+### Tizen .NET
 
-### New and changed features
+#### New and changed features
 
 - TizenFX (Tizen .NET Device API) API Level 8
   - Pipeline and SingleShot functionalities have been added in MachineLearning Inference.
@@ -631,9 +647,9 @@ Release date: May 31, 2020
   - .NETCore diagnostics tools have been supported.
 
 
-## Toolchain
+### Toolchain
 
-### New and changed features
+#### New and changed features
 
 - GNU GCC 9.2 has been enabled by default from Tizen 6.0 Platform.
   - Libraries are updated by gmp 6.1.2, mpc 1.1.0, mpfr 4.0.2, and isl 0.22.
@@ -652,9 +668,9 @@ Release date: May 31, 2020
   - "{package}-testresults.rpm" in gdb, binutils, glibc, and gcc have been provided with run_tests macro.
 
 
-## Machine Learning
+### Machine Learning
 
-### New and changed features
+#### New and changed features
 
 - ML/Inference API
   - Pipeline .NET API set has been added.
@@ -677,7 +693,7 @@ Release date: May 31, 2020
   - nnfw has been upgraded to version 1.4.0.
   - Support for quantized MobileNet and Inception V3 models on CPU Backend has been added.
 
-### Fixes
+#### Fixes
 
 - Dynamic tensor dimensions issue of Neural network Single API set, the 5.5 M2 known issue, has been fixed.
   - New Single API set to support flexible tensor dimensions has been added.
@@ -685,7 +701,7 @@ Release date: May 31, 2020
   - Tizen’s Neural Network Runtime (nnfw) has been integrated.
   - Others (TensorFlow, Caffe2, PyTorch, and so on) have been supported optionally if the device has additional packages downloaded and installed from tizen.org.
 
-### Known Issues
+#### Known Issues
 
 - ML/Inference Pipeline C-API and .NET API
   - If APPSRC is used with DO NOT FREE mode, an additional memcpy per input frame has been added as a workaround. This work around is expect to be removed with a performance fix in the later releases.
