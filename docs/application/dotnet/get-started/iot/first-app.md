@@ -102,7 +102,7 @@ To deploy and run the application on the reference board:
     In the Visual Studio toolbar, you can select the reference board from the drop-down list to change the deployment target.
 
 
-3. If the deployment is successful, the application icon gets displayed visible on the device screen. Click the icon to launch the application.
+3. If the deployment is successful, the application icon is visible on the device screen. Click the icon to launch the application.
 
     The following figure shows the launched application on the reference board:
 
