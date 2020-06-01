@@ -70,6 +70,9 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <li>
                     1.9. <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>
 </li>
+<li>
+                    1.10. <a href="#Bytes">Bytes</a>
+</li>
 </ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -187,6 +190,10 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <a href="#BluetoothAdapter">BluetoothAdapter</a> <a href="#BluetoothManager::getDefaultAdapter">getDefaultAdapter</a> ()</div>
 <div>
 <a href="#BluetoothLEAdapter">BluetoothLEAdapter</a> <a href="#BluetoothManager::getLEAdapter">getLEAdapter</a> ()</div>
+<div>byte[] <a href="#BluetoothManager::toByteArray">toByteArray</a> (<a href="#Bytes">Bytes</a> data)</div>
+<div>DOMString <a href="#BluetoothManager::toDOMString">toDOMString</a> (<a href="#Bytes">Bytes</a> data)</div>
+<div>
+<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> <a href="#BluetoothManager::toUint8Array">toUint8Array</a> (<a href="#Bytes">Bytes</a> data)</div>
 </td>
 </tr>
 <tr>
@@ -221,7 +228,7 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <td><a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a></td>
 <td>
 <div>void <a href="#BluetoothGATTCharacteristic::readValue">readValue</a> (<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#BluetoothGATTCharacteristic::writeValue">writeValue</a> (byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothGATTCharacteristic::writeValue">writeValue</a> (<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>long <a href="#BluetoothGATTCharacteristic::addValueChangeListener">addValueChangeListener</a> (<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> callback)</div>
 <div>void <a href="#BluetoothGATTCharacteristic::removeValueChangeListener">removeValueChangeListener</a> (long watchID)</div>
 </td>
@@ -230,7 +237,7 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <td><a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a></td>
 <td>
 <div>void <a href="#BluetoothGATTDescriptor::readValue">readValue</a> (<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#BluetoothGATTDescriptor::writeValue">writeValue</a> (byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothGATTDescriptor::writeValue">writeValue</a> (<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 </td>
 </tr>
 <tr>
@@ -272,7 +279,7 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <tr>
 <td><a href="#BluetoothSocket">BluetoothSocket</a></td>
 <td>
-<div>unsigned long <a href="#BluetoothSocket::writeData">writeData</a> (byte[] data)</div>
+<div>unsigned long <a href="#BluetoothSocket::writeData">writeData</a> (<a href="#Bytes">Bytes</a> data)</div>
 <div>byte[] <a href="#BluetoothSocket::readData">readData</a> ()</div>
 <div>void <a href="#BluetoothSocket::close">close</a> ()</div>
 </td>
@@ -478,6 +485,16 @@ LOW_ENERGY - Low energy advertising mode             </li>
           </ul>
          </div>
 </div>
+<div class="typedef" id="Bytes">
+<a class="backward-compatibility-anchor" name="::Bluetooth::Bytes"></a><h3>1.10. Bytes</h3>
+<div class="brief">
+ The Bytes type, that aggregates all types in Bluetooth API used to pass binary data. It can be either a <em>byte[]</em> or a <em>DOMString</em> or a <em>Uint8Array</em>.
+          </div>
+<pre class="webidl prettyprint">  typedef (byte[] or DOMString or <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a>) Bytes;</pre>
+<p><span class="version">Since: </span>
+ 1.0
+          </p>
+</div>
 </div>
 <div class="interfaces" id="interfaces-section">
 <h2>2. Interfaces</h2>
@@ -516,7 +533,7 @@ The <em>tizen.bluetooth</em> object allows access to the Bluetooth API.
 <div class="brief">
  The BluetoothLEServiceData interface is a service specific data container of Bluetooth LE device.
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString uuid, DOMString data)]
+<pre class="webidl prettyprint">  [Constructor(DOMString uuid, <a href="#Bytes">Bytes</a> data)]
   interface BluetoothLEServiceData {
     attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
     attribute DOMString data;
@@ -528,12 +545,12 @@ The <em>tizen.bluetooth</em> object allows access to the Bluetooth API.
 <h4 id="BluetoothLEServiceData::constructor">Constructors</h4>
 <dl>
 <dt class="method" id="">
-<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#Bytes">Bytes</a>)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">BluetoothLEServiceData(DOMString uuid, DOMString data);</pre>
+<pre class="webidl prettyprint">BluetoothLEServiceData(DOMString uuid, <a href="#Bytes">Bytes</a> data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
 </pre>
 </div>
 </dl>
@@ -550,8 +567,8 @@ var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
-service.uuid = "f23641a4";
+var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
+service.uuid = "f236-41a4";
 </pre>
 </div>
 </li>
@@ -564,7 +581,7 @@ service.uuid = "f23641a4";
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
 service.data = "0x1815";
 </pre>
 </div>
@@ -577,7 +594,7 @@ service.data = "0x1815";
 <div class="brief">
  The BluetoothLEManufacturerData interface is a manufacturer specific data container for an advertise or scan response data.
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString id, DOMString data)]
+<pre class="webidl prettyprint">  [Constructor(DOMString id, <a href="#Bytes">Bytes</a> data)]
   interface BluetoothLEManufacturerData {
     attribute DOMString id;
     attribute DOMString data;
@@ -589,9 +606,9 @@ service.data = "0x1815";
 <h4 id="BluetoothLEManufacturerData::constructor">Constructors</h4>
 <dl>
 <dt class="method" id="">
-<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#Bytes">Bytes</a>)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">BluetoothLEManufacturerData(DOMString id, DOMString data);</pre>
+<pre class="webidl prettyprint">BluetoothLEManufacturerData(DOMString id, <a href="#Bytes">Bytes</a> data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a manufacturerData. */
 var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
@@ -674,8 +691,8 @@ This dictionary is used as an input parameter of the BluetoothLEAdvertiseData co
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertData =
 {
   includeName: false,
-  uuids: ["f23641a4"],
-  solicitationuuids: ["58574d3f"],
+  uuids: ["f236-41a4"],
+  solicitationuuids: ["5857-4d3f"],
   appearance: 192,
   includeTxPowerLevel: false
 };
@@ -710,8 +727,8 @@ This represents the data to be advertised as well as the scan response data for 
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertData =
 {
   includeName: false,
-  uuids: ["f23641a4"],
-  solicitationuuids: ["58574d3f"],
+  uuids: ["f236-41a4"],
+  solicitationuuids: ["5857-4d3f"],
   appearance: 192,
   includeTxPowerLevel: false
 };
@@ -813,7 +830,7 @@ advertise.includeTxPowerLevel = true;
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
 advertise.serviceData = service;
 </pre>
 </div>
@@ -846,6 +863,9 @@ advertise.manufacturerData = manufacture;
     readonly attribute <a href="#BluetoothClassDeviceService">BluetoothClassDeviceService</a> deviceService;
     <a href="#BluetoothAdapter">BluetoothAdapter</a> getDefaultAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BluetoothLEAdapter">BluetoothLEAdapter</a> getLEAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    byte[] toByteArray(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    DOMString toDOMString(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> toUint8Array(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  1.0
@@ -996,6 +1016,180 @@ catch (err)
 {
   console.log(err.name + ": " + err.message);
 }
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothManager::toByteArray">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::toByteArray"></a><code><b><span class="methodName">toByteArray</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts given data to byte array.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">byte[] toByteArray(<a href="#Bytes">Bytes</a> data);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+If given parameter is of type <em>DOMSting</em> the string should consist of hexadecimal characters only (A-F, a-f, 0-9). If the string's length is odd, the last character will be omitted. Only exception is string containing single zero, in which case [0] is returned.
+The string may start without or with one of below prefixes:
+            </p>
+            <ul>
+              <li>
+"0x",              </li>
+              <li>
+"0X".              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The data can be either a <em>byte[]</em> or a <em>DOMString</em> or an <em>Uint8Array</em>.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">byte[]:</span>
+ byte array with given data.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataInt8Array = new Int8Array([-21, 31]);
+var dataUint8Array = new Uint8Array([240, 129]);
+var dataString = "0x18b1";
+console.log("converted from Int8Array: " + tizen.bluetooth.toByteArray(dataInt8Array));
+console.log("converted from Uint8Array: " + tizen.bluetooth.toByteArray(dataUint8Array));
+console.log("converted from DOMString: " + tizen.bluetooth.toByteArray(dataString));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>converted from Int8Array: Int8Array(2) [-21, 31]
+converted from Uint8Array: Int8Array(2) [-16, -127]
+converted from DOMString: Int8Array(2) [24, -79]
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothManager::toDOMString">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::toDOMString"></a><code><b><span class="methodName">toDOMString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts given data to DOMString.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString toDOMString(<a href="#Bytes">Bytes</a> data);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The data can be either a <em>byte[]</em> or a <em>DOMString</em> or an <em>Uint8Array</em>.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">DOMString:</span>
+ DOMString with given data in the form of hexadecimal number preceded by "0x". The return string is always lowercase.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataInt8Array = new Int8Array([-21, 31]);
+var dataUint8Array = new Uint8Array([240, 129]);
+var dataString = "0x18b1";
+console.log("converted from Int8Array: " + tizen.bluetooth.toDOMString(dataInt8Array));
+console.log("converted from Uint8Array: " + tizen.bluetooth.toDOMString(dataUint8Array));
+console.log("converted from DOMString: " + tizen.bluetooth.toDOMString(dataString));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>converted from Int8Array: 0xeb1f
+converted from Uint8Array: 0xf081
+converted from DOMString: 0x18b1
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothManager::toUint8Array">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::toUint8Array"></a><code><b><span class="methodName">toUint8Array</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts given data to Uint8Array.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> toUint8Array(<a href="#Bytes">Bytes</a> data);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+If given parameter is of type <em>DOMSting</em> the string should consist of hexadecimal characters only (A-F, a-f, 0-9). If the string's length is odd, the last character will be omitted. Only exception is string containing single zero, in which case Uint8Array([0]) is returned.
+The string may start without or with one of below prefixes:
+            </p>
+            <ul>
+              <li>
+"0x",              </li>
+              <li>
+"0X".              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The data can be either a <em>byte[]</em> or a <em>DOMString</em> or an <em>Uint8Array</em>.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Uint8Array:</span>
+ byte array with given data.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataInt8Array = new Int8Array([-21, 31]);
+var dataUint8Array = new Uint8Array([240, 129]);
+var dataString = "0x18b1";
+console.log("converted from Int8Array: " + tizen.bluetooth.toUint8Array(dataInt8Array));
+console.log("converted from Uint8Array: " + tizen.bluetooth.toUint8Array(dataUint8Array));
+console.log("converted from DOMString: " + tizen.bluetooth.toUint8Array(dataString));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>converted from Int8Array: Uint8Array(2) [235, 31]
+converted from Uint8Array: Uint8Array(2) [240, 129]
+converted from DOMString: Uint8Array(2) [24, 177]
 </pre>
 </div>
 </dd>
@@ -2645,7 +2839,7 @@ for (var i = 0; i &lt; service.characteristics.length; ++i)
     readonly attribute boolean isWritable;
     readonly attribute boolean isWriteNoResponse;
     void readValue(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+    void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addValueChangeListener(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeValueChangeListener(long watchID);
@@ -2840,7 +3034,7 @@ adapter.startScan(function onsuccess(device)
 <div class="brief">
  Writes the characteristic value to the remote device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
@@ -3047,7 +3241,7 @@ Calling this function has no effect if there is no listener with given id.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTDescriptor {
     void readValue(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+    void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -3154,7 +3348,7 @@ adapter.startScan(function onsuccess(device)
 <div class="brief">
  Writes the descriptor value to the remote device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
@@ -4495,7 +4689,7 @@ adapter.startScan(onDeviceFound, onerror);
     readonly attribute <a href="#BluetoothDevice">BluetoothDevice</a> peer;
     [TreatNonCallableAsNull] attribute <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onmessage raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     [TreatNonCallableAsNull] attribute <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onclose raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    unsigned long writeData(byte[] data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long writeData(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     byte[] readData() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
@@ -4581,7 +4775,7 @@ By default, this attribute is set to null.
 <div class="brief">
  Writes data as a sequence of bytes onto the socket and returns the number of bytes actually written.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">unsigned long writeData(byte[] data);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">unsigned long writeData(<a href="#Bytes">Bytes</a> data);</pre></div>
 <p><span class="version">Since: </span>
  1.0
             </p>
@@ -5556,7 +5750,7 @@ The BluetoothHealthProfileHandler object is created by <em>BluetoothAdapter.getB
 <p><span class="version">Since: </span>
  2.2
           </p>
-        
+
       <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -6926,6 +7120,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   typedef DOMString BluetoothAddress;
   typedef DOMString BluetoothUUID;
   typedef DOMString BluetoothLESolicitationUUID;
+  typedef (byte[] or DOMString or <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a>) Bytes;
   enum BluetoothSocketState { "CLOSED", "OPEN" };
   enum BluetoothAdvertisePacketType { "ADVERTISE", "SCAN_RESPONSE" };
   enum BluetoothAdvertisingState { "STARTED", "STOPPED" };
@@ -6943,12 +7138,12 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   [NoInterfaceObject] interface BluetoothManagerObject {
     readonly attribute <a href="#BluetoothManager">BluetoothManager</a> bluetooth;
   };
-  [Constructor(DOMString uuid, DOMString data)]
+  [Constructor(DOMString uuid, <a href="#Bytes">Bytes</a> data)]
   interface BluetoothLEServiceData {
     attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
     attribute DOMString data;
   };
-  [Constructor(DOMString id, DOMString data)]
+  [Constructor(DOMString id, <a href="#Bytes">Bytes</a> data)]
   interface BluetoothLEManufacturerData {
     attribute DOMString id;
     attribute DOMString data;
@@ -6969,6 +7164,9 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     readonly attribute <a href="#BluetoothClassDeviceService">BluetoothClassDeviceService</a> deviceService;
     <a href="#BluetoothAdapter">BluetoothAdapter</a> getDefaultAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BluetoothLEAdapter">BluetoothLEAdapter</a> getLEAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    byte[] toByteArray(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    DOMString toDOMString(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> toUint8Array(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothAdapter {
     readonly attribute DOMString name;
@@ -7017,14 +7215,14 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     readonly attribute boolean isWritable;
     readonly attribute boolean isWriteNoResponse;
     void readValue(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+    void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addValueChangeListener(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeValueChangeListener(long watchID);
   };
   [NoInterfaceObject] interface BluetoothGATTDescriptor {
     void readValue(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+    void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothLEScanCallback {
@@ -7074,7 +7272,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     readonly attribute <a href="#BluetoothDevice">BluetoothDevice</a> peer;
     [TreatNonCallableAsNull] attribute <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onmessage raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     [TreatNonCallableAsNull] attribute <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onclose raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    unsigned long writeData(byte[] data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long writeData(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     byte[] readData() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
