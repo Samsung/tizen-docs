@@ -25,7 +25,7 @@ When you create your first Tizen .NET application, you can select from the follo
     
 -   [IoT .NET application](iot/first-app.md)
 
-    A IoT application is targeted to run on a IoT board. The applications can be optimized for headed and headless.
+    An IoT application is targeted to run in an IoT device. The IoT application can be optimized for both the headed as well as the headless IoT devices.
 
 
 

@@ -29,9 +29,11 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 The following example shows you how to create and configure a basic Tizen .NET application project in Visual Studio. An application project contains all the files that make up an application.
 
-The following figure illustrates the output of the application. The application screen displays a message, **Welcome to Xamarin Forms!** and there is no user interaction.
+The following figure illustrates the output of the application. 
 
 ![Application running on the reference board](media/cs_first_building_device.png)
+
+The application screen displays a message, **Welcome to Xamarin Forms!** and there is no user interaction.
 
 To create a new Tizen .NET project:
 
@@ -201,12 +203,12 @@ The package contains the following:
 - The `bin` directory, which contains the generated application executable.
 - The `lib` directory, which contains the generated application support code.
 
-    If you use nugget libraries, they are imported in the lib directory.
+    If you use Nuget libraries, they are imported in the lib directory.
 
 - The package manifest, which defines the application properties and is used at the installation time.
 - Two signature files (author and distributor), which are checked at the installation time.
 
-The following figure shows the layout of the platform-specific (Tizen) project. 
+The following figure shows the layout of the platform-specific (Tizen) project: 
 
 ![Project layout](media/vs_solution_explorer.png)
 
