@@ -81,7 +81,7 @@ There are two different ways to build the application:
 -   In the Visual Studio menu, select **Build \> Build Solution**.
 -   In the **Solution Explorer** view, right-click the solution name and select **Build**.
 
-Tizen .NET applications are always deployed as installable packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../../vstools/tools/manifest-editor.md). The Visual Studio template generates the manifest file (`tizen-manifest.xml`) to the top level of the \<projectname\>.Tizen project.
+Tizen .NET applications are always deployed as installable packages. The package files have the `.tpk` file extension, and the process of generating a package is controlled by the [manifest file](../../../vstools/tools/manifest-editor.md). The Visual Studio template generates the manifest file (`tizen-manifest.xml`) to the top level of the **\<projectname\>.Tizen project**.
 
 For this example application, the default manifest is sufficient. If you want to make any change in the application, such as changing the application icon or installing resources that are used by the application at runtime, see [Package Your Application](#package-your-application).
 
@@ -159,7 +159,7 @@ This application is constructed with the following Xamarin.Forms controls:
 - The `StackLayout` is added. This layout positions ("stacks") its child elements in a single vertical (default) or horizontal line.
 - The `Label` is added, whose `Text` property is the message you want to display.
 
-The code does not show the instantiation of the `App` class. Since application launching is platform-specific, the launching part, including the instantiation of the `App` class and the declaration of the `Main()` function (required as the entry point of every C\# program), happens in the \<projectname\>.Tizen project, in the matching file there. The following example shows the content of the `<projectname>.Tizen.cs` file:
+The code does not show the instantiation of the `App` class. Since application launching is platform-specific, the launching part, including the instantiation of the `App` class and the declaration of the `Main()` function (required as the entry point of every C\# program), happens in the `\<projectname\>.Tizen` project, in the matching file there. The following example shows the content of the `<projectname>.Tizen.cs` file:
 
 ```csharp
 using System;
