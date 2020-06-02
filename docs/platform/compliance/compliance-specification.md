@@ -16,7 +16,7 @@ The Tizen Compliance Specification is the definitive set of requirements for sof
 
 - The following specification is the beta version for Tizen TV profile 5.5 devices:
 
-  [Tizen 5.5 Compliance Specification for TV Profile](media/tizen-5.5-compliance-specification-for-tv-profile-v0.95beta.pdf) ![PDF icon](media/application-pdf.png)
+  [Tizen 5.5 Compliance Specification for TV Profile](media/tizen-5.5-compliance-specification-for-tv-profile-v0.96beta2.pdf) ![PDF icon](media/application-pdf.png)
 
 - The following specification is the official version for Tizen IVI profile 3.0 devices:
 
