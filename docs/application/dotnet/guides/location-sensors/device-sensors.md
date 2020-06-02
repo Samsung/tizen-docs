@@ -18,14 +18,14 @@ A device can have various physical and virtual sensors. The following table list
 
 | Supported sensor types                   |                                          |                                       |
 |----------------------------------------|----------------------------------------|-------------------------------------|
-| [Accelerometer](#accelerometer)  | [Humidity Sensor](#humidity)   | [Proximity Sensor](#proximity)   |
-| [AutoRotation Sensor](#auto_rotation)   | [Light Sensor](#light)   | [Rotation Vector Sensor](#rotation)  |
-| [Geomagnetic Rotation Vector Sensor](#mag_rotation)  | [Linear Acceleration Sensor](#lin_accelerometer)  | [Sleep Monitor](#sleep_monitor)  |
-| [Gravity Sensor](#gravity)   | [Magnetic Sensor](#magnetic) | [Temperature Sensor](#temperature)  |
-| [Gyroscope](#gyro)    | [Orientation Sensor](#orientation)  | [Ultraviolet Sensor](#ultraviolet)  |
-| [Gyroscope Rotation Vector Sensor](#gyro_rotation)  | [Pedometer](#pedometer)  | [Uncalibrated Gyroscope](#uncal_gyro)  |
-| [Heart Rate Monitor Sensor](#hrm)   | [Pressure Sensor](#pressure)   | [Uncalibrated Magnetic Sensor](#uncal_magnetic) |
-
+| [Accelerometer](#accelerometer)  | [Heart Rate Monitor LED Green Batch Sensor](#hrm_green_batch) | [Proximity Sensor](#proximity)   |
+| [AutoRotation Sensor](#auto_rotation) | [Humidity Sensor](#humidity) | [Rotation Vector Sensor](#rotation)  |
+| [Geomagnetic Rotation Vector Sensor](#mag_rotation) | [Light Sensor](#light) | [Sleep Monitor](#sleep_monitor)  |
+| [Gravity Sensor](#gravity)   | [Linear Acceleration Sensor](#lin_accelerometer) | [Temperature Sensor](#temperature)  |
+| [Gyroscope](#gyro)    | [Magnetic Sensor](#magnetic) | [Ultraviolet Sensor](#ultraviolet)  |
+| [Gyroscope Rotation Vector Sensor](#gyro_rotation)  | [Orientation Sensor](#orientation) | [Uncalibrated Gyroscope](#uncal_gyro)  |
+| [Heart Rate Monitor Sensor](#hrm)   | [Pedometer](#pedometer) | [Uncalibrated Magnetic Sensor](#uncal_magnetic) |
+| [Heart Rate Monitor Batch Sensor](#hrm_batch) | [Pressure Sensor](#pressure)  |  |
 ## Prerequisites
 
 To enable your application to use the device sensor functionalities:
@@ -165,6 +165,7 @@ The following table lists the measurement data that the accelerometer provides.
 
 | Measurement | Type                 | Range                               | Unit         |
 |-----------|--------------------|-----------------------------------|------------|
+| Timestamp  | `ulong`    | -                                   | Microseconds |
 | TimeSpan   | `TimeSpan` | -                                   | Microseconds |
 | X           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
 | Y           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
@@ -195,6 +196,7 @@ The AutoRotation sensor is a software sensor that uses an accelerometer to compu
 
 | Measurement | Type                     | Range                         | Unit         |
 |-----------|------------------------|-----------------------------|------------|
+| Timestamp  | `ulong`        | -                             | Microseconds |
 | TimeSpan   | `TimeSpan`     | -                             | Microseconds |
 | Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | Rotation   | `AutoRotationState` | -     | -            |
@@ -212,6 +214,7 @@ The following table lists the measurement data that the geomagnetic rotation vec
 
 | Measurement | Type                     | Range                         | Unit         |
 |-----------|------------------------|-----------------------------|------------|
+| Timestamp  | `ulong`        | -                             | Microseconds |
 | TimeSpan   | `TimeSpan`     | -                             | Microseconds |
 | Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | X           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
@@ -236,6 +239,7 @@ The following table lists the measurement data that the gravity sensor provides.
 
 | Measurement | Type                 | Range                             | Unit         |
 |-----------|--------------------|---------------------------------|------------|
+| Timestamp  | `ulong`        | -                             | Microseconds |
 | TimeSpan   | `TimeSpan` | -                                 | Microseconds |
 | X           | `float`              | Min. value = -9.8<br>Max. value = 9.8 | m/s<sup>2</sup>         |
 | Y           | `float`              | Min. value = -9.8<br>Max. value = 9.8 | m/s<sup>2</sup>         |
@@ -256,6 +260,7 @@ The following table lists the measurement data that the gyroscope provides.
 
 | Measurement | Type                 | Range                                 | Unit            |
 |-----------|--------------------|-------------------------------------|---------------|
+| Timestamp  | `ulong`    | -                                     | Microseconds    |
 | TimeSpan   | `TimeSpan` | -                                     | Microseconds    |
 | X           | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
 | Y           | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
@@ -273,6 +278,7 @@ The following table lists the measurement data that the gyroscope rotation vecto
 
 | Measurement | Type                     | Range                         | Unit         |
 |-----------|------------------------|-----------------------------|------------|
+| Timestamp  | `ulong`        | -                             | Microseconds |
 | TimeSpan   | `TimeSpan`     | -                             | Microseconds |
 | Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | X           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
@@ -291,8 +297,61 @@ The following table lists the measurement data that the HRM sensor provides.
 
 | Measurement | Type                 | Range                          | Unit         |
 |-----------|--------------------|------------------------------|------------|
+| Timestamp  | `ulong`    | -                              | Microseconds |
 | TimeSpan   | `TimeSpan` | -                              | Microseconds |
 | HeartRate   | `int`                | Min. value = 0<br>Max. value = 240 | -            |
+
+<a name="hrm_batch"></a>
+## Heart Rate Monitor Batch Sensor
+
+The Heart Rate Monitor (HRM) batch sensor measures a person's heart rate. The sensor must be power-efficient and support batch processing.
+
+The following table lists the measurement data that the HRM batch sensor provides.
+
+**Table: Measurement data detected by the HRM batch sensor**
+
+| Measurement | Type                 | Range                          | Unit         |
+|-----------|--------------------|------------------------------|------------|
+| Timestamp | `ulong`            | -                            | Microseconds |
+| TimeSpan  | `TimeSpan`         | -                            | Microseconds |
+| Data      | `IReadOnlyList<HeartRateMonitorBatchData>`        | - | -            |
+
+**Table: Measurements contained in HeartRateMonitorBatchData**
+
+| Measurement                           | Type                      | Range                               | Unit         |
+|---------------------------------------|---------------------------|-------------------------------------|--------------|
+| Timestamp                             | `ulong`                   | -                                   | Microseconds |
+| Accuracy                              | `SensorDataAccuracy`      | -                                   | -            |
+| State                                 | `HeartRateMonitorBatchState`| -                                 | -            |
+| HeartRate: Beats per minute           | `int`                     | Min. value = 0<br> Max. value = 240 | -            |
+| RRInterval: R wave-to-R wave interval | `int`                     | -                                   | Millisecond  |
+
+<a name="hrm_green_batch"></a>
+## Heart Rate Monitor LED Green batch Sensor
+
+The Heart Rate Monitor (HRM) LED green batch sensor measures the amount of green light that is reflected back from a person's blood vessel. The sensor must be power-efficient and support batch processing.
+
+The following table lists the measurement data that the HRM LED green batch sensor provides.
+
+**Table: Measurement data detected by the HRM LED green batch sensor**
+
+| Measurement | Type                 | Range                          | Unit         |
+|-----------|--------------------|------------------------------|------------|
+| Timestamp | `ulong`            | -                            | Microseconds |
+| TimeSpan  | `TimeSpan`         | -                            | Microseconds |
+| Data      | `IReadOnlyList<HeartRateMonitorLEDGreenBatchData>`| - | -            |
+
+**Table: Measurements contained in HeartRateMonitorLEDGreenBatchData**
+
+| Measurement                      | Type                 | Range                                    | Unit         |
+|----------------------------------|----------------------|------------------------------------------|--------------|
+| Timestamp                        | `ulong`              | -                                        | Microseconds |
+| Accuracy                         | `SensorDataAccuracy` | -                                        | -            |
+| Green: HRM green light value     | `uint`               | Min. value = 0<br> Max. value = 4194304  | -            |
+| AccelerationX: X                 | `int`                | Min. value = -4096<br> Max. value = 4096 | -            |
+| AccelerationY: Y                 | `int`                | Min. value = -4096<br> Max. value = 4096 | -            |
+| AccelerationZ: Z                 | `int`                | Min. value = -4096<br> Max. value = 4096 | -            |
+| Index                            | `int`                | Sequential index of sensor event         | -            |
 
 <a name="humidity"></a>
 
@@ -306,6 +365,7 @@ The following table lists the measurement data that the humidity sensor provides
 
 | Measurement | Type                 | Range | Unit         |
 |-----------|--------------------|-----|------------|
+| Timestamp  | `ulong`    | -     | Microseconds |
 | TimeSpan   | `TimeSpan` | -     | Microseconds |
 | Humidity    | `float`              | 100   | %            |
 
@@ -323,6 +383,7 @@ The following table lists the measurement data that the light sensor provides.
 
 | Measurement | Type                 | Range                            | Unit         |
 |-----------|--------------------|--------------------------------|------------|
+| Timestamp  | `ulong`    | -                                | Microseconds |
 | TimeSpan   | `TimeSpan` | -                                | Microseconds |
 | Level       | `float`              | Min. value = 0<br>Max. value = 45875 | Lux          |
 
@@ -346,6 +407,7 @@ The following table lists the measurement data that the linear acceleration sens
 
 | Measurement | Type                 | Range                               | Unit         |
 |-----------|--------------------|-----------------------------------|------------|
+| Timestamp  | `ulong`    | -                                   | Microseconds |
 | TimeSpan   | `TimeSpan` | -                                   | Microseconds |
 | X           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
 | Y           | `float`              | Min. value = -19.6<br>Max. value = 19.6 | m/s<sup>2</sup>         |
@@ -369,6 +431,7 @@ The following table lists the measurement data that the magnetic sensor provides
 
 | Measurement | Type                 | Unit             |
 |-----------|--------------------|----------------|
+| Timestamp  | `ulong`    | Microseconds     |
 | TimeSpan   | `TimeSpan` | Microseconds     |
 | X           | `float`              | µT (microteslas) |
 | Y           | `float`              | µT (microteslas) |
@@ -395,6 +458,7 @@ The following table lists the measurement data that the orientation sensor provi
 
 | Measurement | Type                 | Range                             | Unit         |
 |-----------|--------------------|---------------------------------|------------|
+| Timestamp  | `ulong`    | -                                 | Microseconds |
 | TimeSpan   | `TimeSpan` | -                                 | Microseconds |
 | Azimuth     | `float`              | Min. value = 0<br>Max. value = 360    | Degrees (&deg;)  |
 | Pitch       | `float`              | Min. value = -180<br>Max. value = 180 | Degrees (&deg;)  |
@@ -420,6 +484,7 @@ The following table lists the measurement data that the pedometer provides.
 
 | Measurement           | Range                          | Unit         |
 |---------------------|------------------------------|------------|
+| Timestamp            | -                              | Microseconds |
 | TimeSpan             | -                              | Microseconds |
 | StepCount             | Min. value = 0<br>Max. value = 2<sup>24</sup> | Steps        |
 | WalkStepCount         | Min. value = 0<br>Max. value = 2<sup>24</sup> | Steps        |
@@ -444,6 +509,7 @@ The following table lists the measurement data that the pressure sensor provides
 
 | Measurement | Type                 | Range                             | Unit         |
 |-----------|--------------------|---------------------------------|------------|
+| Timestamp  | `ulong`    | -                                 | Microseconds |
 | TimeSpan   | `TimeSpan` | -                                 | Microseconds |
 | Pressure    | `float`              | Min. value = 260<br>Max. value = 1260 | hPa          |
 
@@ -461,6 +527,7 @@ The following table lists the measurement data that the proximity sensor provide
 
 | Measurement | Type                  | Range | Unit         |
 |-----------|---------------------|-----|------------|
+| Timestamp  | `ulong`     | -     | Microseconds |
 | TimeSpan   | `TimeSpan`  | -     | Microseconds |
 | Proximity   | `ProxmitySensorState` | -     | -            |
 
@@ -477,6 +544,7 @@ The following table lists the measurement data that the rotation vector sensor p
 
 | Measurement | Type                     | Range                         | Unit         |
 |-----------|------------------------|-----------------------------|------------|
+| Timestamp  | `ulong`        | -                             | Microseconds |
 | TimeSpan   | `TimeSpan`     | -                             | Microseconds |
 | Accuracy    | `SensorDataAccuracy` | -                             | int          |
 | X           | `float`                  | Min. value = -1<br>Max. value = 1 | -            |
@@ -496,6 +564,7 @@ The following table lists the measurement data that the sleep monitor provides.
 
 | Measurement | Unit         |
 |-----------|------------|
+| Timestamp  | Microseconds |
 | TimeSpan   | Microseconds |
 | SleepState  | -            |
 
@@ -514,6 +583,7 @@ The following table lists the measurement data that the temperature sensor provi
 
 | Measurement | Type                 | Range                            | Unit         |
 |-----------|--------------------|--------------------------------|------------|
+| Timestamp  | `ulong`    | -                                | Microseconds |
 | TimeSpan   | `TimeSpan` | -                                | Microseconds |
 | Temperature | `float`              | Min. value = -30<br>Max. value = 100 | °C           |
 
@@ -529,6 +599,7 @@ The following table lists the measurement data that the ultraviolet sensor provi
 
 | Measurement      | Type                 | Range                         | Unit         |
 |----------------|--------------------|-----------------------------|------------|
+| Timestamp       | `ulong`    | -                             | Microseconds |
 | TimeSpan        | `TimeSpan` | -                             | Microseconds |
 | UltravioletIndex | `float`              | Min. value = 0<br>Max. value = 15 | UV index     |
 
@@ -544,6 +615,7 @@ The following table lists the measurement data that the uncalibrated gyroscope p
 
 | Measurement             | Type                 | Range                                 | Unit            |
 |-----------------------|--------------------|-------------------------------------|---------------|
+| Timestamp              | `ulong`    | -                                     | Microseconds    |
 | TimeSpan               | `TimeSpan` | -                                     | Microseconds    |
 | X                       | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
 | Y                       | `float`              | Min. value = -573.0<br>Max. value = 573.0 | Degrees/s (&deg;/s) |
@@ -569,6 +641,7 @@ The following table lists the measurement data that the uncalibrated magnetic se
 
 | Measurement | Type                 | Unit             |
 |-----------|--------------------|----------------|
+| Timestamp  | `ulong`    | Microseconds     |
 | TimeSpan   | `TimeSpan` | Microseconds     |
 | X           | `float`              | &micro;T (microteslas) |
 | Y           | `float`              | &micro;T (microteslas) |
