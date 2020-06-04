@@ -19,7 +19,7 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 5. [Understand Your Application](#understand-your-application).
 
-    This step shows how to create a default project using Xamarin.Forms.
+    This step shows the default structure of the basic files.
 
 6. [Package Your Application](#package-your-application).
 
