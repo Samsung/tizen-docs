@@ -208,8 +208,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a timeout to hide popup automatically.  <a href="#gac489900862949eb5693b64d2a815e768"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Popup.html#ga94187bbac3e2fcbf7994a3d97130d7d3">elm_popup_timeout_get</a> (const Elm_Popup *obj)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the timeout value set to the popup (in seconds).  <a href="#ga94187bbac3e2fcbf7994a3d97130d7d3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Popup.html#ga600b8b42902005aa186fe6115ca926c7">elm_popup_scrollable_set</a> (Elm_Popup *obj, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> scroll)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable scroller in popup content area.  <a href="#ga600b8b42902005aa186fe6115ca926c7"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Popup.html#gadbd5aad67bf5a26a7c6c9dbae1f6d2a1">elm_popup_scrollable_get</a> (const Elm_Popup *obj)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the scrollable state of popup content area.  <a href="#gadbd5aad67bf5a26a7c6c9dbae1f6d2a1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Elm__General.html#ga9a9ae618832fd9732d59650931a9db08">Elm_Widget_Item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Popup.html#ga1fb6fe8d0389aec5cd8b0997f547ae7d">elm_popup_item_append</a> (Elm_Popup *obj, const char *label, <a class="el" href="group__Evas__Object__Group.html#gaa5c3ea447e776040a102c696cd715574">Efl_Canvas_Object</a> *icon, Evas_Smart_Cb func, const void *data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable scroller in popup content area.  <a href="#ga1fb6fe8d0389aec5cd8b0997f547ae7d"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new item to a Popup object.  <a href="#ga1fb6fe8d0389aec5cd8b0997f547ae7d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__Popup.html#gab521731a7599a347cc645c83edfb2e8c">elm_popup_dismiss</a> (Elm_Popup *obj)</td></tr>
 </table>
 <hr/><h2>Enumeration Type Documentation</h2>
@@ -577,25 +581,7 @@ Functions</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Enable or disable scroller in popup content area. </p>
-<p>Normally content area does not contain scroller.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">scroll</td><td><code>true</code> if it is to be scrollable, <code>false</code> otherwise.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15.1 Get the scrollable state of popup content area</dd></dl>
-<p>Normally content area does not contain scroller.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if it is to be scrollable, <code>false</code> otherwise.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15.1 Add a new item to a Popup object</dd></dl>
+<p>Add a new item to a Popup object. </p>
 <p>Both an item list and a content could not be set at the same time! once you add an item, the previous content will be removed.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>When the first item is appended to popup object, any previous content of the content area is deleted. At a time, only one of content, content-text and item(s) can be there in a popup content area.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -678,6 +664,74 @@ Functions</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="popup_example_02_8c-example.html#a15">popup_example_02.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="gadbd5aad67bf5a26a7c6c9dbae1f6d2a1"></a><!-- doxytag: member="elm_popup.eo.legacy.h::elm_popup_scrollable_get" ref="gadbd5aad67bf5a26a7c6c9dbae1f6d2a1" args="(const Elm_Popup *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Elm__Popup.html#gadbd5aad67bf5a26a7c6c9dbae1f6d2a1">elm_popup_scrollable_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Elm_Popup *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Get the scrollable state of popup content area. </p>
+<p>Normally content area does not contain scroller.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if it is to be scrollable, <code>false</code> otherwise.</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga600b8b42902005aa186fe6115ca926c7"></a><!-- doxytag: member="elm_popup.eo.legacy.h::elm_popup_scrollable_set" ref="ga600b8b42902005aa186fe6115ca926c7" args="(Elm_Popup *obj, Eina_Bool scroll)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Elm__Popup.html#ga600b8b42902005aa186fe6115ca926c7">elm_popup_scrollable_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Elm_Popup *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>scroll</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Enable or disable scroller in popup content area. </p>
+<p>Normally content area does not contain scroller.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scroll</td><td><code>true</code> if it is to be scrollable, <code>false</code> otherwise.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.15.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>4.0 </dd></dl>
+
 </div>
 </div>
 <a class="anchor" id="ga94187bbac3e2fcbf7994a3d97130d7d3"></a><!-- doxytag: member="elm_popup.eo.legacy.h::elm_popup_timeout_get" ref="ga94187bbac3e2fcbf7994a3d97130d7d3" args="(const Elm_Popup *obj)" -->
