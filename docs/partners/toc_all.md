@@ -1,7 +1,7 @@
-# [Tizen Specialist](/partner/specialist/index.md)
+# [Tizen Specialist](/partners/specialist/index.md)
 
 # IoT Partners
-## [Nubison Cloud](/partner/iot-partners/nubison.md)
-## [thingspark Cloud](/partner/iot-partners/thingspark.md)
-## [SDT SOM](/partner/iot-partners/sdt_som.md)
-## [Anchor SoM](/partner/iot-partners/anchor/anchor.md)
+## [Nubison Cloud](/partners/iot-partners/nubison.md)
+## [thingspark Cloud](/partners/iot-partners/thingspark.md)
+## [SDT SOM](/partners/iot-partners/sdt_som.md)
+## [Anchor SoM](/partners/iot-partners/anchor/anchor.md)
