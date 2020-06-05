@@ -34,9 +34,3 @@
 ## 4.0
 ### [Tizen Common Headed API Reference](/iot/api/4.0/tizen-iot-headed/index.html){:target="_blank"}
 ### [Tizen Common Headless API Reference](/iot/api/4.0/tizen-iot-headless/index.html){:target="_blank"}
-
-# IoT Partners
-## [Nubison Cloud](/iot/iot-partners/nubison.md)
-## [thingspark Cloud](/iot/iot-partners/thingspark.md)
-## [SDT SOM](/iot/iot-partners/sdt_som.md)
-## [Anchor SoM](/iot/iot-partners/anchor/anchor.md)
