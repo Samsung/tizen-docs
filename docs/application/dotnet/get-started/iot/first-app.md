@@ -19,7 +19,7 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 5. [Understand Your Application](#understand-your-application).
 
-    This step shows the default structure of the basic files.
+    This step explains the controls used in the application and the default structure of the basic files.
 
 6. [Package Your Application](#package-your-application).
 
@@ -145,7 +145,7 @@ The following shows the portable code portion of the Tizen Xamarin.Forms project
              x:Class="CrossTemplate1.MainPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Welcome to Xamarin Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
         </StackLayout>
