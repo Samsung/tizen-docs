@@ -10,8 +10,7 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
 3. [Build Your Application](#build-your-application).
 
-    After you have implemented code for the features you want, this step shows how you can build the application to validate and compile
-    the code.
+    After you have implemented code for the features you want, this step shows how you can build the application to validate and compile the code.
 
 4. [Deploy and Run Your Application](#deploy-and-run-your-application).
 
