@@ -211,6 +211,15 @@ To get started with the development of your own Tizen applications:
                 </div>
             </div>
         </div>
+        <div class="column docs-column content-box-column content-box-hover content-box-column-last content-box-column-last-in-row">
+            <div class="col content-box-wrapper icon-wrapper-hover-animation-pulsate" data-animationoffset="100%" style="background-color:#ffffff;">
+                <div class="vscom-boxes-body">
+                    <p align="center"><img alt="" src="./media/icon_get_started_iot.png" height="90"></p>
+                    <p class="vscom-boxes-text" align="center">
+                    <a href="get-started/iot.md" target="_self">Get Started for IoT</a></p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
