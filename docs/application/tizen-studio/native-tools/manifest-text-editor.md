@@ -1237,7 +1237,7 @@ For more information on the relationship between the elements, see the [element 
 </dependencies>
 ```
 
-### \<dependency\> Element
+#### \<dependency\> Element
 
 This element contains a required package for a Tizen package.
 
