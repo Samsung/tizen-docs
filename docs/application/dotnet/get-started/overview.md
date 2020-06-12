@@ -13,7 +13,7 @@ When you create your first Tizen .NET application, you can select from the follo
 -   [TV .NET application](tv/first-app.md)
 
     A TV application is targeted to run on a smart TV. The applications can be optimized for larger screens and remote control.
-
+    
 -   [Mobile .NET application](mobile/first-app.md)
 
     A mobile application is targeted to run on a smart phone. The applications can take advantage of a wide variety of functionalities available on smart phones.
@@ -22,6 +22,10 @@ When you create your first Tizen .NET application, you can select from the follo
 
     NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications.
     These applications run on a wide range of Tizen devices, such as mobile devices, TVs, and wearables.
+    
+-   [IoT .NET application](iot/first-app.md)
+
+    An IoT application is targeted to run in an IoT device. The IoT application can be optimized for both the headed as well as the headless IoT devices.
 
 
 
