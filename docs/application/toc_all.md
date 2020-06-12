@@ -29,7 +29,7 @@
 #### [Overview](/application/dotnet/tutorials/certificates/getting-the-certificates.md)
 #### [Installing Certificates Extension](/application/dotnet/tutorials/certificates/installing-certificate-extension.md)
 #### [Creating Certificates](/application/dotnet/tutorials/certificates/creating-certificates.md)
-#### [Signing Application with Certificate](/application/dotnet/tutorials/certificates/signing-your-application.md)
+#### [Signing Application](/application/dotnet/tutorials/certificates/signing-your-application.md)
 #### [Managing Certificate Profile](/application/dotnet/tutorials/certificates/managing-certificate-profile.md)
 
 ### [Test Tizen .NET Application on a Gear device](/application/dotnet/tutorials/testing-your-app-on-gear.md)

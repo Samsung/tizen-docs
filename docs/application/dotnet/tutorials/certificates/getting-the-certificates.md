@@ -11,7 +11,7 @@ The following pages describe how to generate certificates, how to maintain them,
 
 - [Installing Certificates Extension](installing-certificate-extension.md)
 - [Creating Certificates](creating-certificates.md)
-- [Signing Application with Certificate](signing-your-application-with-a-certificate.md)
+- [Signing Application with Certificate](signing-your-application.md)
 - [Managing Certificate Profile](managing-certificate-profile.md)
 
 ## Certificates
