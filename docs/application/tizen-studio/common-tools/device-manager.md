@@ -63,10 +63,10 @@ Connecting a device to a computer depends on the device type:
     To connect a remote device, follow these steps:
 
     1. In the Tizen Studio menu, select **Tools > Device Manager**.
-	2. In the **Device Manager** window that appears,  click **Remote Device Manager** ![Remote Device Manager](./media/device_manager_remote_device_manager_icon.png). 
-        
-		![Remote Device Manager](./media/remote_device_manager.png)
+	2. In the **Device Manager** window that appears,  click **Remote Device Manager** ![Remote Device Manager](./media/device_manager_remote_device_manager_icon.png).        
 	3. In the **Remote Device Manager** window that appears, you can scan, add, edit, and delete a device. You can click **Scan Devices** ![Scan Device](./media/dm_scan_devices_icon.png) to see the list of available devices. 
+	
+	    ![Remote Device Manager](./media/remote_device_manager.png)
 	4. To add a remote device, click **Add +**. 
 	5. In the **Add Device** dialog that appears, enter the device name, the IP address of the device to which the connection needs to be made, and the port number. The default port number is **26101**.
         
@@ -85,13 +85,11 @@ Connecting a device to a computer depends on the device type:
 You can install a Tizen application to a connected device with the TPK or WGT file:
 
 1.  In the device list, right-click the device to which you want to install an application, and select **Install app**.
+
+    ![Context menu for connected devices](./media/device_manager_connected_devices_context_menu.png)
 2. In a file dialog, select a TPK or WGT file to install and click **OK**.
 
     The application is installed and launched on the selected device.
-
-    **Figure: Context menu for connected devices**
-
-    ![Context menu for connected devices](./media/device_manager_connected_devices_context_menu.png)
 
 <a name="permitting"></a>
 ## Permitting Devices to Install Applications
@@ -204,14 +202,14 @@ You can set the following settings for Device Manager:
     This is the maximum wait time for push and pull operations in the **File Explorer** view. To set the timeout value, select the **Device** tab, change the value, and click **OK**.
 
     > [!NOTE]   
-    > Only values between 30 000 and 600 000 (milliseconds) are allowed.
+    > Only values between 30,000 and 600,000 (milliseconds) are allowed.
 
 - Log buffer size
 
     This is the maximum amount of log entries to store in the log table. To set the buffer size, select the **Log** tab, change the value, and click **OK**.
 
     > [!NOTE]   
-    > Only values between 5000 and 100 000 (lines) are allowed.
+    > Only values between 5000 and 100,000 (lines) are allowed.
 
 ## Related Information
 * Dependencies    
