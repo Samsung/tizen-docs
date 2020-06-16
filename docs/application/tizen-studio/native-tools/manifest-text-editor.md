@@ -1215,7 +1215,7 @@ For more information on the relationship between the elements, see the [element 
 
 ### \<dependencies\> Element
 
-This element contains a set of packages which are have dependent to this Tizen package. The package can be installed when all dependencies are satisfied.
+This element contains a set of packages that have dependencies to this Tizen package. The package can be installed when all dependencies are satisfied.
 
 For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
 
@@ -1239,7 +1239,7 @@ For more information on the relationship between the elements, see the [element 
 
 #### \<dependency\> Element
 
-This element contains a required package for a Tizen package.
+This element contains dependency information such as package ID of required package, type of dependency, and required package version.
 
 **Occurrences:**
 
@@ -1249,11 +1249,11 @@ This element contains a required package for a Tizen package.
 
 - `type`
 
-  The type of dependency (available values: "requires", "wants")
+  The type of dependency (available values: `requires`, `wants`)
 
-  If the type is "requires", a Tizen package can be installed when the dependent package is installed
+  If the type is `requires`, a Tizen package can be installed when the dependent package is installed
 
-  If the type is "wants", a Tizen package can be installed even if the dependent package is not installed
+  If the type is `wants`, a Tizen package can be installed even if the dependent package is not installed
 
 - `required-version`
 
