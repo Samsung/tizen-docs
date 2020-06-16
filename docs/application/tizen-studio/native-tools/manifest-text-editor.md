@@ -1251,9 +1251,9 @@ This element contains dependency information such as package ID of required pack
 
   The type of dependency (available values: `requires`, `wants`)
 
-  If the type is `requires`, a Tizen package can be installed when the dependent package is installed
+  If the type is `requires`, a Tizen package can be installed when the dependent package is installed.
 
-  If the type is `wants`, a Tizen package can be installed even if the dependent package is not installed
+  If the type is `wants`, a Tizen package can be installed even if the dependent package is not installed.
 
 - `required-version`
 
