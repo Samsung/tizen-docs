@@ -1215,7 +1215,7 @@ For more information on the relationship between the elements, see the [element 
 
 ### \<dependencies\> Element
 
-This element contains a set of packages that have dependencies to this Tizen package. The package can be installed when all dependencies are satisfied.
+This element contains a set of packages that have dependencies on Tizen package. The package can be installed when all dependencies are satisfied.
 
 For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
 
@@ -1239,7 +1239,7 @@ For more information on the relationship between the elements, see the [element 
 
 #### \<dependency\> Element
 
-This element contains dependency information such as package ID of required package, type of dependency, and required package version.
+This element contains dependency information such as package ID of the required package, type of dependency, and the required package version.
 
 **Occurrences:**
 
