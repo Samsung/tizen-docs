@@ -209,7 +209,7 @@ You can set the following settings for Device Manager:
     This is the maximum amount of log entries to store in the log table. To set the buffer size, select the **Log** tab, change the value, and click **OK**.
 
     > [!NOTE]   
-    > Only values between 5000 and 100,000 (lines) are allowed.
+    > Only values between 5,000 and 100,000 (lines) are allowed.
 
 ## Related Information
 * Dependencies    
