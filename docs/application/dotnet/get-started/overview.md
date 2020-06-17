@@ -22,7 +22,7 @@ When you create your first Tizen .NET application, you can select from the follo
 
     Applications targeted to run on a wide range of Tizen devices, such as mobile devices, TVs, and wearables.
 	NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications.
-    
+
 -   [IoT .NET application](iot/first-app.md)
 
     Applications targeted to run on IoT devices. 
