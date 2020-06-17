@@ -43,13 +43,13 @@ To install and execute your application on the Samsung Gear device over Wi-Fi, f
 
     ![Device Manager-Remote Device Manager](media/testing_your_app_on_gear8.png)
 
-3. To search for remote Samsung Gear devices, click **Scan Devices**. A list of available remote devices appears.
+2. To search for remote Samsung Gear devices, click **Scan Devices**. A list of available remote devices appears.
 
     ![Scan Device](media/testing_your_app_on_gear9.png)
 
     ![Remote Device Manager](media/testing_your_app_on_gear10.png)
 
-4. Select the IP of the Samsung Gear device that you want to connect to.
+3. Select the IP of the Samsung Gear device that you want to connect to.
 
     ![Remote Device Manager - Enable Connection](media/testing_your_app_on_gear11.png)
 
