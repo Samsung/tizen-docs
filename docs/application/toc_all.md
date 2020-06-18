@@ -1232,6 +1232,4 @@
 ## [Tizen Web](/application/vscode-ext/web.md)
 
 
-# Visual Studio for Mac Extension for Tizen
-
-## [Overview](/application/vstools-mac/overview.md)
+# [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)
