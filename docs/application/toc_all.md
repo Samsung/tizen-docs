@@ -4,6 +4,7 @@
 ## [Wearable](/application/get-started/wearable.md)
 ## [TV](/application/get-started/tv.md)
 ## [Mobile](/application/get-started/mobile.md)
+## [Tizen Applications](/application/get-started/applications.md)
 
 
 # .NET Application
