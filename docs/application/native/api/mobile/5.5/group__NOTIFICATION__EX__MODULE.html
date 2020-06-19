@@ -371,8 +371,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds notification by root id.  <a href="#gaf4cc579d2afe99c31051a5a458175477"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga3554341cfff5d6f4d5882c3179d619f5">noti_ex_manager_send_error</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga018207c9c270242f7f3342119e13e5ce">noti_ex_manager_h</a> handle, <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga2a10101eb211df244b3c4d00d796f731">noti_ex_event_info_h</a> info, <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga93eaab2ca5045e65d3d2b2f17328d36c">noti_ex_error_e</a> error)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends error to the reporter.  <a href="#ga3554341cfff5d6f4d5882c3179d619f5"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga894b705fe8987d5cbe05c98ad45da217">noti_ex_manager_get_notification_count</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga018207c9c270242f7f3342119e13e5ce">noti_ex_manager_h</a> handle, int *cnt)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the count of notifications for the manager.  <a href="#ga894b705fe8987d5cbe05c98ad45da217"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga0517b078540a458c00b493036cba7189">noti_ex_manager_get_notification_count</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga018207c9c270242f7f3342119e13e5ce">noti_ex_manager_h</a> handle, int *count)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the count of notifications for the manager.  <a href="#ga0517b078540a458c00b493036cba7189"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#gab817738636e4450d2be491125e8fedd7">noti_ex_multi_lang_create</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaaa372f4cdc8891dab8a7d1d2d952e9ab">noti_ex_multi_lang_h</a> *handle, const char *msgid, const char *format,...)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the multi-language item handle.  <a href="#gab817738636e4450d2be491125e8fedd7"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaa61e979dde0f709491dff314fad70bd2">noti_ex_multi_lang_destroy</a> (<a class="el" href="group__NOTIFICATION__EX__MODULE.html#gaaa372f4cdc8891dab8a7d1d2d952e9ab">noti_ex_multi_lang_h</a> handle)</td></tr>
@@ -9185,7 +9185,7 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification manager handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">noti</td><td>The notification item to be updated </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">noti</td><td>The notification item to be deleted </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">request_id</td><td>The id of request </td></tr>
   </table>
   </dd>
@@ -9624,12 +9624,12 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 
 </div>
 </div>
-<a class="anchor" id="ga894b705fe8987d5cbe05c98ad45da217"></a><!-- doxytag: member="notification_ex_manager.h::noti_ex_manager_get_notification_count" ref="ga894b705fe8987d5cbe05c98ad45da217" args="(noti_ex_manager_h handle, int *cnt)" -->
+<a class="anchor" id="ga0517b078540a458c00b493036cba7189"></a><!-- doxytag: member="notification_ex_manager.h::noti_ex_manager_get_notification_count" ref="ga0517b078540a458c00b493036cba7189" args="(noti_ex_manager_h handle, int *count)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga894b705fe8987d5cbe05c98ad45da217">noti_ex_manager_get_notification_count</a> </td>
+          <td class="memname">int <a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga0517b078540a458c00b493036cba7189">noti_ex_manager_get_notification_count</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__NOTIFICATION__EX__MODULE.html#ga018207c9c270242f7f3342119e13e5ce">noti_ex_manager_h</a>&#160;</td>
           <td class="paramname"><em>handle</em>, </td>
@@ -9638,7 +9638,7 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int *&#160;</td>
-          <td class="paramname"><em>cnt</em>&#160;</td>
+          <td class="paramname"><em>count</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -9657,7 +9657,7 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The notification manager handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">cnt</td><td>The count of notifications </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">count</td><td>The count of notifications </td></tr>
   </table>
   </dd>
 </dl>
@@ -9694,7 +9694,7 @@ You can pass NULL to <em>multi</em>, if you want to remove the multi-language te
 
     ev.<a class="code" href="structnoti__ex__manager__events__s.html#a8e5a41672518c6fbafc62ae88593e599">error</a> = _manager_events_error_cb;
     ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#gacf22afc29e6997530a12e6b08c762a6b" title="Creates the notification_ex manager handle.">noti_ex_manager_create</a>(&amp;handle, <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga14531597a9712cf7c9367ffd9b402727" title="Predefined receiver group for the Indicator.">NOTI_EX_RECEIVER_GROUP_INDICATOR</a>, ev, NULL);
-    ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga894b705fe8987d5cbe05c98ad45da217" title="Gets the count of notifications for the manager.">noti_ex_manager_get_notification_count</a>(handle, &amp;cnt);
+    ret = <a class="code" href="group__NOTIFICATION__EX__MODULE.html#ga0517b078540a458c00b493036cba7189" title="Gets the count of notifications for the manager.">noti_ex_manager_get_notification_count</a>(handle, &amp;cnt);
 }
 </pre></div> </dd></dl>
 

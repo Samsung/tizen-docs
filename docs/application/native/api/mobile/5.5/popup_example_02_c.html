@@ -115,7 +115,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    elm_object_text_set(popup, <span class="stringliteral">&quot;This is the Content-Text for popup. The wrap&quot;</span>
                        <span class="stringliteral">&quot;for the content-text is character wrapping&quot;</span>);
    <span class="comment">// Setting the wrapping type to character wrapping</span>
-   elm_popup_content_text_wrap_type_set(popup, <a class="code" href="group__Elm__General.html#ggab5ef300e5e95d85a1b22f46a767d6d87a5c3fd8d34f49fb999dbfb4368284e698">ELM_WRAP_CHAR</a>);
+   <a class="code" href="group__Elm__Popup.html#ga23794b366ce64600273b89c241c771e4" title="Control the wrapping type of content text packed in content area of popup object.">elm_popup_content_text_wrap_type_set</a>(popup, <a class="code" href="group__Elm__General.html#ggab5ef300e5e95d85a1b22f46a767d6d87a5c3fd8d34f49fb999dbfb4368284e698">ELM_WRAP_CHAR</a>);
 
    <span class="comment">// Seting popup title-text</span>
    <a class="code" href="group__Elm__General.html#ga9c088563c442670796564d2e5158f154">elm_object_part_text_set</a>(popup, <span class="stringliteral">&quot;title,text&quot;</span>, <span class="stringliteral">&quot;Title&quot;</span>);
@@ -148,7 +148,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(popup, <span class="stringliteral">&quot;button3&quot;</span>, btn3);
    <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn3, <span class="stringliteral">&quot;clicked&quot;</span>, _response_cb, popup);
    <span class="comment">// Setting the orientation of popup to Top</span>
-   elm_popup_orient_set(popup, <a class="code" href="group__Elm__Popup.html#ggaf7139673c5e2101c98c4b005a0705f47a2f9c2535f88f428da3f411a3b52ca431">ELM_POPUP_ORIENT_TOP</a>);
+   <a class="code" href="group__Elm__Popup.html#ga2b9dd2717a603208cdd3c491362d5cdd" title="Sets the orientation of the popup in the parent region.">elm_popup_orient_set</a>(popup, <a class="code" href="group__Elm__Popup.html#ggaf7139673c5e2101c98c4b005a0705f47a2f9c2535f88f428da3f411a3b52ca431">ELM_POPUP_ORIENT_TOP</a>);
    <span class="comment">// Display the popup object</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(popup);
 
