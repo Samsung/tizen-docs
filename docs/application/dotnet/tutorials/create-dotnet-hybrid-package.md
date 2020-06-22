@@ -62,7 +62,7 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
     </widget>
     ```
     > [!NOTE]
-	> Ensure that the package ID of the Web application is set to **TestHybrid**. For example, `package="TestHybrid"`.
+	> Ensure that the package ID of the Web application is set to **TestHybrid**.
 
 3. Launch the latest version of Visual Studio and create a .NET sample application.
 
@@ -92,7 +92,7 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
     ```
 
     > [!NOTE]
-	> Ensure that the package ID of the Web application is set to **org.tizen.example.CrossTemplate1.Tizen**.
+    > Ensure that the package ID of the .NET application is set to **org.tizen.example.CrossTemplate1.Tizen**.
 
 5. Create a hybrid package using the CLI tool:
 
