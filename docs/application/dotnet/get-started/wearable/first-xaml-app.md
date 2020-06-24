@@ -140,7 +140,7 @@ To use the Hot Reload feature, you must enable it in your Visual Studio IDE. To 
 2. In the **Options** window that appears, select **Tizen** > **Tools**.
 3. Select **Enable XAML Hot Reload**.
 
-    ![Enable Hot Relaod](media/vs_enable_hot_reload.png)
+    ![Enable Hot Relaod](media/vs_enable_hot_reload.PNG)
 
 ### Using XAML Hot Reload 
 
