@@ -1110,6 +1110,7 @@
 #### [T-trace](/application/tizen-studio/native-tools/t-trace.md)
 #### [Address Sanitizer](/application/tizen-studio/native-tools/address-sanitizer.md)
 #### [Code Coverage](/application/tizen-studio/native-tools/code-coverage.md)
+#### [Battery Historian](/application/tizen-studio/native-tools/batt-historian.md)
 
 ### Run and Test Your App
 #### [Overview](/application/tizen-studio/native-tools/running-testing.md)
