@@ -47,7 +47,6 @@
 					</topic>
 					<topic href="5.5/device_api/tv/index.html#TV Controls" label="TV Controls">
 						<topic href="5.5/device_api/tv/tizen/tvaudiocontrol.html" label="TV Audio Control"/>
-						<topic href="5.5/device_api/tv/tizen/tvchannel.html" label="TV Channel"/>
 						<topic href="5.5/device_api/tv/tizen/tvdisplaycontrol.html" label="TV Display Control"/>
 						<topic href="5.5/device_api/tv/tizen/tvinfo.html" label="TV Information"/>
 						<topic href="5.5/device_api/tv/tizen/tvinputdevice.html" label="TV Input Device"/>
@@ -106,7 +105,7 @@
 						<topic href="http://www.w3.org/TR/2014/REC-html5-20141028/embedded-content-0.html#the-audio-element" label="HTML5 The audio element"/>
 						<topic href="http://www.w3.org/TR/2015/WD-mediacapture-streams-20150414/" label="getUserMedia (Partial)"/>
 						<topic href="https://www.w3.org/TR/2015/WD-webaudio-20151208/" label="Web Audio API (Partial)"/>
-						<topic href="https://dvcs.w3.org/hg/speech-api/raw-file/tip/speechapi.html" label="Web Speech (Partial)"/>
+						<topic href="https://wicg.github.io/speech-api/" label="Web Speech (Partial)"/>
 					</topic>
 					<topic href="5.5/w3c_api/w3c_api_tv.html#communication" label="Communication">
 						<topic href="http://www.w3.org/TR/2012/CR-websockets-20120920" label="The WebSocket API"/>

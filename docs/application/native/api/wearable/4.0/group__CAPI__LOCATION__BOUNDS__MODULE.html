@@ -114,7 +114,7 @@ Related Features</h2>
  It is recommended to design feature related codes in your application for reliability.<br/>
  You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </li>
+ More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </li>
 </ul>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -183,6 +183,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>The boundary state </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed from the start function </td></tr>
   </table>
   </dd>
 </dl>
@@ -235,6 +236,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration for error code for Location manager. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga5caccdbbc318c863492cbfd9fb8395e1acee4df0e4778663cba76e4b6d10fa219"></a><!-- doxytag: member="LOCATION_BOUNDS_ERROR_NONE" ref="gga5caccdbbc318c863492cbfd9fb8395e1acee4df0e4778663cba76e4b6d10fa219" args="" -->LOCATION_BOUNDS_ERROR_NONE</em>&nbsp;</td><td>
 <p>Successful </p>

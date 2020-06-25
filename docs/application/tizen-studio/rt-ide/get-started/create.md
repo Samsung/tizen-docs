@@ -1,6 +1,6 @@
 # Managing a Project
 
-You can create an RT project in the Tizen Studio. Additionally, you can create application resources within the project and build the project.
+You can create an RT project in Tizen Studio. Additionally, you can create application resources within the project and build the project.
 
 ## Creating a Project
 
@@ -125,7 +125,7 @@ To create a new application with a template within a selected project:
 
     ![Code Editor](media/rt_editor.png)
 
-The Tizen Studio for RT provides various features to ease code writing and improves your coding productivity when developing your applications:
+Tizen Studio for RT provides various features to ease code writing and improves your coding productivity when developing your applications:
 
 - The **API assist** helps you to write code quickly by completing the names of the APIs automatically when writing a part of the API name.
 - The **API hover** displays information about API functions, API-related types, and macros for the native framework.

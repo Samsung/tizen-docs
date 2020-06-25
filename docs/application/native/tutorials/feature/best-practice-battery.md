@@ -24,7 +24,7 @@ Using the location received from GPS is potentially one of your application's mo
 
 ### Application Life-cycle
 
-The Tizen native application can be in one of several different states.  Typically, the application is launched by the user from the Launcher, or by another application. As the application is starting, the `app_create_cb()` callback is executed and the main event loop starts. The application now normally becomes the frontmost window, with focus.  When the application loses the frontmost or focus status, the `app_pause_cb()` callback is invoked and the application goes into a pause state. The pause state means that the application is not terminated, but is running in the background. When your application becomes visible again, the `app_resume_cb()` callback is invoked. When your application starts exiting, the `app_terminate_cb()` callback is invoked.
+The Tizen Native application can be in one of several different states.  Typically, the application is launched by the user from the Launcher, or by another application. As the application is starting, the `app_create_cb()` callback is executed and the main event loop starts. The application now normally becomes the frontmost window, with focus.  When the application loses the frontmost or focus status, the `app_pause_cb()` callback is invoked and the application goes into a pause state. The pause state means that the application is not terminated, but is running in the background. When your application becomes visible again, the `app_resume_cb()` callback is invoked. When your application starts exiting, the `app_terminate_cb()` callback is invoked.
 
 The application state changes are managed by the underlying framework. The following figure illustrates the application states.
 
@@ -395,7 +395,7 @@ The following example demonstrates how you can stop the location service using t
 ```cpp
 #include <tizen.h>
 #include <service_app.h>
-#include "service.h" /* Auto-generated header file by the Tizen Studio */
+#include "service.h" /* Auto-generated header file by Tizen Studio */
 #include <locations.h>
 #include <Ecore.h>
 
@@ -525,7 +525,7 @@ service_app_terminate(void *data)
 }
 
 
-/* Assume that auto-generated functions from the Tizen Studio are here */
+/* Assume that auto-generated functions from Tizen Studio are here */
 
 int
 main(int argc, char* argv[])
@@ -555,7 +555,7 @@ The following example demonstrates how you can stop the location service using a
 ```cpp
 #include <tizen.h>
 #include <service_app.h>
-#include "service.h" /* Auto-generated header file by the Tizen Studio */
+#include "service.h" /* Auto-generated header file by Tizen Studio */
 #include <locations.h>
 #include <app_alarm.h>
 #include <app_control.h>
@@ -697,7 +697,7 @@ app_terminate(void *data)
         destroy_location_service(ad);
 }
 
-/* Assume that auto-generated functions from the Tizen Studio are here */
+/* Assume that auto-generated functions from Tizen Studio are here */
 
 int
 main(int argc, char *argv[])
@@ -740,7 +740,7 @@ service_app_low_battery(app_event_info_h event_info, void *user_data)
         stop_location_service(ad);
 }
 
-/* Assume that auto-generated functions from the Tizen Studio are here */
+/* Assume that auto-generated functions from Tizen Studio are here */
 
 int
 main(int argc, char* argv[])

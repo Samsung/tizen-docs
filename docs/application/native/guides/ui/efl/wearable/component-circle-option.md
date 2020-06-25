@@ -51,6 +51,7 @@ To add an item:
    }
    ```
 
+<a name="configure"> </a>
 ## Configuring the More Option and Items
 
 To configure the more option cue button direction, and the text and content of various more option parts:

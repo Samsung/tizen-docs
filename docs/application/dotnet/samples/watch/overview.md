@@ -56,7 +56,7 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/w63analogwatch.png" width="180"/></td>
 			<td>
-                        <p><strong>(W) AnalogWatch</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AnalogWatch" target="_blank"><strong>(W) AnalogWatch</strong></a></p>
 			<p>This sample application demonstrates how to create a watchface for the wearable device using ElmSharp and how to use <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Badge.html" target="_blank">Tizen.Applications.Badge</a>.</p>
 			</td>
 		</tr>

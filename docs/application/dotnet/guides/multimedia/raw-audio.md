@@ -76,7 +76,7 @@ Before recording audio, you must define the PCM data settings. For more informat
 ## Prerequisites
 
 
-To make your application visible in the Tizen Store only for devices that support a microphone, the application must specify the following feature in the `tizen-manifest.xml` file:
+To make your application visible in Tizen Store only for devices that support a microphone, the application must specify the following feature in the `tizen-manifest.xml` file:
 
 ```
 <feature name="http://tizen.org/feature/microphone"/>

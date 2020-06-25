@@ -1,5 +1,8 @@
 # Bookmarks
 
+> [!CAUTION]
+> Since Tizen 6.0, the Bookmark API is deprecated and using it is not recommended.
+
 You can manage the Tizen Web browser bookmarks by retrieving the current bookmark list. You can create or delete both bookmark folders and items.
 
 This feature is supported in mobile applications only.

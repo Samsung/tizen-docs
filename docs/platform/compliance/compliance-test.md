@@ -2,7 +2,7 @@
 
 Tizen Compliance Tests (TCT) verify conformance to the [Tizen Compliance Specification](compliance-specification.md) (TCS). These tests are intended to be used by Tizen device implementers to build a Tizen-compliant development environment for Tizen application developers.
 
-TCT consists of the Web TCT and the Native TCT, which include test suites and tools for testing on the Tizen Web stack and native stack, respectively.
+TCT consists of the Web TCT and the Native TCT, which include test suites and tools for testing on the Tizen Web stack and Native stack, respectively.
 
 ## Web TCT
 

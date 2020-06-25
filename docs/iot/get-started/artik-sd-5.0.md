@@ -1,14 +1,7 @@
-# Contents
+# Setting up ARTIK530/ARTIK530S with SD Card
 
-[Installing Tizen Studio](#Installing-Tizen-Studio)
 
-[Flashing Tizen Images with IoT Setup Manager](#Flashing-Tizen-Images-with-IoT-Setup-Manager)
-
-[Setting up ARTIK 530](#Setting-up-ARTIK-530)
-
-[Tips](#Tips)
-
-# Installing Tizen Studio
+## Installing Tizen Studio
 
 If you have already installed Tizen Studio 3.0 and installed the **5.0 Mobile** profile for the **Main SDK** and the **IoT Setup Manager**, **IOT-Headed-5.0** and **IOT-Headless-5.0** profiles for the **Extension SDK**, you can skip this section.
 
@@ -27,7 +20,7 @@ Otherwise, to install Tizen Studio and the required profiles for IoT development
     >
     > **Extension SDK** should be updated to the latest version.
 
-# Flashing Tizen Images with IoT Setup Manager
+## Flashing Tizen Images with IoT Setup Manager
 
 > ![Attention](media/attention_icon.png) 
 > 
@@ -40,7 +33,7 @@ Otherwise, to install Tizen Studio and the required profiles for IoT development
 
 IoT Setup Manager helps you to easily install Tizen on your IoT device using your computer. It helps to get your device running and connected to the local network. After your device is connected to the local network, you can start developing and testing the Tizen IoT applications.
 
-## Prerequisites
+### Prerequisites
 
 You must have the binary images in your computer. You can download the binary images from:
 
@@ -57,12 +50,11 @@ To make a device with a display, select **Headed** image, which consists of the 
 The flashing steps mentioned in this section are only for ARTIK 530.
 
 
-
-## Launch IoT Setup Manager
+### Launch IoT Setup Manager
 
 You can launch the IOT Setup Manager with or without using Tizen Studio:
 
-### Launch using Tizen Studio
+#### Launch using Tizen Studio
 
 From Tizen Studio, you can launch the IoT Setup Manager in the following two ways:
 
@@ -71,7 +63,7 @@ From Tizen Studio, you can launch the IoT Setup Manager in the following two way
 
     ![IoT Setup Manager menu path](media/tizen_studio_ism.png)
 
-### Launch without using Tizen Studio
+#### Launch without using Tizen Studio
 
 During installation, the Package Manager creates shortcuts for IoT Setup Manager, which are used to launch the IoT Setup Manager as a standalone application. To launch the IoT Setup Manager for:
 
@@ -82,7 +74,7 @@ During installation, the Package Manager creates shortcuts for IoT Setup Manager
 ![IoT Setup Manager Main](media/iot_setup_manager_main_window.png)
 
 
-## Flashing an SD Card using IoT Setup Manager
+### Flashing an SD Card using IoT Setup Manager
 
 To flash Tizen on your SD card using the IoT Setup Manager:
 
@@ -118,7 +110,7 @@ To flash Tizen on your SD card using the IoT Setup Manager:
     -   Click **Burn** to burn Tizen to your SD Card. This takes about two minutes to complete.
 
 
-# Setting up ARTIK 530
+## Setting up ARTIK 530
 
 To configure the ARTIK 530 hardware board:
 
@@ -211,7 +203,7 @@ To configure the ARTIK 530 hardware board:
         > `sdb` execution file is available in the `tools` sub-directory of the directory where Tizen Studio is installed.
 
 
-## Installing Drivers
+### Installing Drivers
 
 1.  Connect Smart Development Bridge (SDB) as described in the previous section.
 2.  Install the connectivity drivers:
@@ -231,11 +223,11 @@ To configure the ARTIK 530 hardware board:
         > ARTIK_530_plugin_tizen5.0.bat
         ```
 
-# Tips
+## Tips
 
-## IoT Setup Manager Details
+### IoT Setup Manager Details
 
-### IoT Setup Manager Features
+#### IoT Setup Manager Features
 
 -   **Saved Profiles:** You can save and retrieve the configuration profiles for easy flashing.
 -   **Three Steps Flashing:**
@@ -244,16 +236,16 @@ To configure the ARTIK 530 hardware board:
     3.  Click **Burn**.
 -   **Automatic Network Connection:** You can enter the Wi-Fi (SSID and password) or the Ethernet (static information) details to allow the device to automatically connect to the local network upon startup.
 
-### Prerequisites
+#### Prerequisites
 
-#### Operating System
+##### Operating System
 
 IoT Setup Manager supports the following operating systems:
 
 -   Windows 7 and later (64 and 32 bit)
 -   Ubuntu 14.04 LTS and later (64 and 32 bit)
 
-#### Environment
+##### Environment
 
 IoT Setup Manager requires Java Runtime Environment (JRE) version 1.8 or later to be installed on your computer.
 
@@ -273,7 +265,7 @@ Java HotSpot(TM) 64-Bit Server VM (build 25.112-b15, mixed mode)
 
 If JRE is installed, the output is similar for both Ubuntu and Windows. If `Java(TM) SE Runtime Environment` does not appear in the output or if an error occurs, then this implies, JRE is not installed on your computer.
 
-#### Ubuntu Tools
+##### Ubuntu Tools
 
 If you are using Ubuntu, the following packages must be installed in addition to the IoT Setup Manager:
 
@@ -286,7 +278,7 @@ If the packages are not installed, run the following command to install a packag
 sudo apt-get install package-name
 ```
 
-### Installing IoT Setup Manager
+#### Installing IoT Setup Manager
 
 Ensure that you have installed [Tizen Studio](#Installing-Tizen-Studio).
 
@@ -298,7 +290,7 @@ To install the IoT Setup Manager using the Package Manager available in Tizen St
 4.  Start Tizen Studio. If Tizen Studio is already running, close and restart it.
 
 
-### IoT Setup Manager fields
+#### IoT Setup Manager fields
 
 ![IoT Setup Manager Main](media/iot_setup_manager_main_window.png)
 
@@ -360,7 +352,7 @@ The IoT Setup Manager edit view contains the following fields:
 
     Enter the Wi-Fi (SSID and password) or the Ethernet (static) details to allow the device to automatically connect to the local network after startup. If you do not want to set up the network, you can clear the **Wifi** and the **Ethernet** check box.
 
-### Tips and Guidelines
+#### Tips and Guidelines
 
 -   Profiles are an easy way to store image paths and network configuration information. After you save a profile, you can use it to flash your SD Card instead of specifying all information again.
 -   While creating or editing a profile, ensure that the boot images, platform images, and the rpms (if selected) match the target device.
@@ -369,9 +361,7 @@ The IoT Setup Manager edit view contains the following fields:
 -   ARTIK530_HEADLESS_INSTALLABLE and ARTIK530_HEADED_INSTALLABLE profiles are used for writing images from SD Card to eMMC.
 
 
-
-
-## Setting up Wi-Fi
+### Setting up Wi-Fi
 
 This section is not applicable if you want to connect your device to the SmartThings Cloud. In case of SmartThings devices, the device enables SoftAP mode during setup, therefore, you need not switch to Wi-Fi separately.
 

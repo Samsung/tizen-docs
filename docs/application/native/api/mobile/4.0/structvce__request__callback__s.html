@@ -115,6 +115,10 @@ Public Attributes</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga1ae28c61d3041f6ffb40a91bc371802d">vce_process_text_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a9d9b0ee0df16eae45b1cbff3c99de99b">process_text</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga69f09f3010a90e2cfe72c1e255a8bde1">vce_process_list_event_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a6f3d804b7258720fe6de47fd7d6bbfcd">process_list_event</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga95b7f8a5802f3418428ecd7c80f2d755">vce_process_haptic_event_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a20f20f59eee14a0fbe05c9c6681e2094">process_haptic_event</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad7ea17b11f74b7767046561c02de8084">vce_private_data_set_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a320e156965aa1707c74abd136bd1d3bf">private_data_set</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga1ac037972c7a75d8dcd49262dd8cbd09">vce_private_data_requested_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a06e8964b62b4096f9cd70f116871df8b">private_data_request</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a19a49c7440ccb36ed231301ccfb27">vce_nlu_base_info_requested_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a20f040bf8d3f695837a9b79c51e72300">nlu_base_info_request</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga9c75e39bede7381098eeb3a9957316ef">vce_specific_engine_request_cb</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structvce__request__callback__s.html#a78966cd2866b394aa7f13417db4b2a98">specific_engine_request</a></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>A structure for the VC engine functions. </p>
@@ -217,6 +221,48 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Check language </p>
+
+</div>
+</div>
+<a class="anchor" id="a20f040bf8d3f695837a9b79c51e72300"></a><!-- doxytag: member="vce_request_callback_s::nlu_base_info_request" ref="a20f040bf8d3f695837a9b79c51e72300" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga86a19a49c7440ccb36ed231301ccfb27">vce_nlu_base_info_requested_cb</a> <a class="el" href="structvce__request__callback__s.html#a20f040bf8d3f695837a9b79c51e72300">vce_request_callback_s::nlu_base_info_request</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Send essential value from NLU result </p>
+
+</div>
+</div>
+<a class="anchor" id="a06e8964b62b4096f9cd70f116871df8b"></a><!-- doxytag: member="vce_request_callback_s::private_data_request" ref="a06e8964b62b4096f9cd70f116871df8b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga1ac037972c7a75d8dcd49262dd8cbd09">vce_private_data_requested_cb</a> <a class="el" href="structvce__request__callback__s.html#a06e8964b62b4096f9cd70f116871df8b">vce_request_callback_s::private_data_request</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Send private data to the app </p>
+
+</div>
+</div>
+<a class="anchor" id="a320e156965aa1707c74abd136bd1d3bf"></a><!-- doxytag: member="vce_request_callback_s::private_data_set" ref="a320e156965aa1707c74abd136bd1d3bf" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#gad7ea17b11f74b7767046561c02de8084">vce_private_data_set_cb</a> <a class="el" href="structvce__request__callback__s.html#a320e156965aa1707c74abd136bd1d3bf">vce_request_callback_s::private_data_set</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Set private data from the app </p>
 
 </div>
 </div>
@@ -343,6 +389,20 @@ Public Attributes</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Set server dialog </p>
+
+</div>
+</div>
+<a class="anchor" id="a78966cd2866b394aa7f13417db4b2a98"></a><!-- doxytag: member="vce_request_callback_s::specific_engine_request" ref="a78966cd2866b394aa7f13417db4b2a98" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__CAPI__UIX__VOICE__CONTROL__ENGINE__MODULE.html#ga9c75e39bede7381098eeb3a9957316ef">vce_specific_engine_request_cb</a> <a class="el" href="structvce__request__callback__s.html#a78966cd2866b394aa7f13417db4b2a98">vce_request_callback_s::specific_engine_request</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get specific engine's request from the engine service user </p>
 
 </div>
 </div>

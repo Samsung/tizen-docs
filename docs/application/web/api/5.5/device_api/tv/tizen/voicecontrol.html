@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::VoiceControl">
- <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="tv_s_w.png"></div>
+<div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="tv_s_w.png"></div>
 <div class="title"><h1>VoiceControl API</h1></div>
 <div class="brief">
  The Voice Control API provides interfaces and methods for recognizing voice command.
@@ -741,10 +741,16 @@ client.release();
 <div class="constructors">
 <h4 id="VoiceControlCommand::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#VoiceControlCommandType">VoiceControlCommandType</a>?)</span></b></code>
+</dt>
 <div class="brief">
  Command constructor
               </div>
 <pre class="webidl prettyprint">VoiceControlCommand(DOMString command, optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type);</pre>
+<p><span class="version">Since: </span>
+ 4.0
+              </p>
 </dl>
 </div>
 <div class="attributes">
@@ -863,7 +869,9 @@ The default value is <var>"FOREGROUND"</var>            </p>
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -881,7 +889,7 @@ To guarantee that the voice control application runs on a device with microphone
 <li class="feature">http://tizen.org/feature/microphone</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module VoiceControl {

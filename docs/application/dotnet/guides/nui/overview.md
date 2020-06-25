@@ -33,7 +33,7 @@ To be able to use NUI in your applications, you must become familiar with the fo
 
 -   **Layer**: Layers allow you to overlay groups of views on top of each other.
 
-To get started with NUI development, [study a "Hello World" sample application](hello-world.md).
+To get started with NUI development, see [NUI Quick Start](../../get-started/nui/quickstart.md) page.
 
 ## Related Information
 - Dependencies

@@ -118,7 +118,7 @@ The following table lists the host Webcam features.
 <a name="net"></a>
 ## Using Network Features
 
-The Tizen emulator provides 2 network backend types: NAT-based TCP/IP communication and a bridged network. By default, the NAT-based network is used. You can configure the network backend type in **Emulator Manager > Network Configuration**.
+The Tizen Emulator provides 2 network backend types: NAT-based TCP/IP communication and a bridged network. By default, the NAT-based network is used. You can configure the network backend type in **Emulator Manager > Network Configuration**.
 
 The emulator is based on the QEMU virtual machine. The NAT type exploits the QEMU user networking (SLIRP) and the bridge type uses tap networking. For more information on networking, see [QEMU Networking documentation](http://wiki.qemu.org/Documentation/Networking).
 
@@ -289,7 +289,7 @@ To create your own skin layout:
 
 > **Note**
 > 
-> If you reinstall the Tizen Studio, the custom skin folders are reset.
+> If you reinstall Tizen Studio, the custom skin folders are reset.
 
 <a name="eventcast"></a>
 ## Using EventCast
@@ -326,7 +326,7 @@ When connecting through Wi-Fi, make sure that your Android device and computer a
 
 ### Installing EventCaster
 
-EventCaster is the application on the target device. It communicates with the Tizen emulator through the TCP/IP protocol. It can connect to the emulator using USB or Wi-Fi.
+EventCaster is the application on the target device. It communicates with the Tizen Emulator through the TCP/IP protocol. It can connect to the emulator using USB or Wi-Fi.
 
 You can download the EventCaster from Google Play ([https://github.com/eventcaster/eventcaster.git](https://github.com/eventcaster/eventcaster.git)) and install it manually.
 
@@ -358,7 +358,7 @@ To connect the EventCaster application to the emulator:
 
      For example, to forward the 7000 port in the application to the 1234 port in your computer: `adb forward tcp:1234 tcp:7000`
 
-  7. Launch the Tizen emulator, and open the Emulator Control Panel (ECP) from the emulator context menu.
+  7. Launch the Tizen Emulator, and open the Emulator Control Panel (ECP) from the emulator context menu.
 
   8. Select the **USB** checkbox on the **EventCast** tab of the ECP.
 

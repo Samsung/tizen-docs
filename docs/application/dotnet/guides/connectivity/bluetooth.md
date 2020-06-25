@@ -306,11 +306,10 @@ To find remote Bluetooth devices, you can either discover them and bond with the
 
     To remove a device from the bonded list, call the `DestroyBond()` method of the `Tizen.Network.Bluetooth.BluetoothDevice` class.
 
-
 > **Note**   
 > A Bluetooth device must be in a discovery mode (visible) for other devices to find it and connect to it. If you want other devices to find your device, you must set the device to be visible.
 
-
+<a name="visibility_control"></a>
 To manage the device visibility and enable discovery:
 
 1.  Check the current visibility of your device:

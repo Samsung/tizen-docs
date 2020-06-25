@@ -25,12 +25,12 @@ There are 2 different ways to edit the `tizen-manifest.xml` file:
 
 > **Note**
 >
-> The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen native application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
+> The `tizen-manifest.xml` file must conform to both the standard XML file format and the Tizen Native application specification requirements. Editing the manifest file XML structure with the text editor is intended for advanced users only. If the file does not conform to the standard and the requirements, errors can occur during installation.
 
 <a name="hierarchy"></a>
 ## Manifest Element Hierarchy
 
-The Tizen native application manifest file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `tizen-manifest.xml` file.
+The Tizen Native application manifest file consists of XML elements organized in a hierarchy. The following tree structure shows the relationship between the elements of the `tizen-manifest.xml` file.
 
 | `<manifest>` |                                  |                         |                  |
 |--------------|----------------------------------|-------------------------|------------------|

@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SecureElement">
- <div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>SecureElement API</h1></div>
 <div class="brief">
  The Secure Element API provides functionality to communicate with applications in several Secure Elements.
@@ -15,7 +15,7 @@ A Secure Element is a secure smart card chip. It can be a UICC/SIM, an embedded 
         </div>
 <div class="description">
         <p>
-For more information on the Secure Element features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/secure-element-access">Secure Element Access Guide</a>.
+For more information on the Secure Element features, see <a href="/application/web/guides/connectivity/secure-element">Secure Element Access Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -283,8 +283,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  An identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -481,8 +480,7 @@ This interface offers methods to control sessions on the reader.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The name of the reader.
               </ul>
 </div>
@@ -912,8 +910,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:
-                  </span>
+<span class="return">byte[]:</span>
  The ATR of a Secure Element.
               </ul>
 </div>
@@ -1216,8 +1213,7 @@ the selection response can not be retrieved by the reader implementation.       
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:
-                  </span>
+<span class="return">byte[]:</span>
  The data as returned by the application select command including the status words.
               </ul>
 </div>
@@ -1475,7 +1471,9 @@ This callback interface specifies a success method with an array of bytes as an 
 </div>
 <h2 id="api-features">2. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -1485,14 +1483,14 @@ To guarantee this application will run on a device with a Secure Element, add th
 <li class="feature">http://tizen.org/feature/network.secure_element</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SecureElement {
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SEServiceManagerObject">SEServiceManagerObject</a>;
   [NoInterfaceObject] interface SEServiceManagerObject {
     readonly attribute <a href="#SEService">SEService</a> seService;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SEServiceManagerObject">SEServiceManagerObject</a>;
   [NoInterfaceObject] interface SEService {
     void getReaders(<a href="#ReaderArraySuccessCallback">ReaderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     unsigned long registerSEListener(<a href="#SEChangeListener">SEChangeListener</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

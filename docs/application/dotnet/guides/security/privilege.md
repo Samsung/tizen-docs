@@ -66,29 +66,6 @@ To get various privilege information:
     }
     ```
 
--   Get the privacy-related privilege's status using the `GetPrivacyPrivilegeStatus()` method of the `Tizen.Security.Privilege` class:
-
-    ```
-    try
-    {
-        bool isAllowed = Privilege.GetPrivacyPrivilegeStatus("http://tizen.org/privilege/account.read");
-        if (isAllowed)
-        {
-            /// Call privacy privileged methods
-        }
-        else
-        {
-            /// If the privilege is not allowed, take proper action,
-            /// such as show a privacy request popup to the user (for example, "To use
-            /// Account, enable it in Settings > Privacy and Security > Privacy Setting.")
-        }
-    }
-    catch (Exception e)
-    {
-        /// Error handling
-    }
-    ```
-
 
 ## Related Information
 * Dependencies

@@ -429,7 +429,7 @@ There are several backends which can be used as reference when implementing the 
 
 | Backend         | Project ([http://review.tizen.org](http://review.tizen.org/)) | Description                              |
 | --------------- | ---------------------------------------- | ---------------------------------------- |
-| `libtdm-drm`    | [platform/adaptation/libtdm-drm](https://review.tizen.org/gerrit/gitweb?p=platform/adaptation/libtdm-drm.git;a=summary) | Backend for a target device which supports the DRM interface, such as the Tizen SDK emulator. No PP or capture capability. |
+| `libtdm-drm`    | [platform/adaptation/libtdm-drm](https://review.tizen.org/gerrit/gitweb?p=platform/adaptation/libtdm-drm.git;a=summary) | Backend for a target device which supports the DRM interface, such as the Tizen Emulator. No PP or capture capability. |
 | `libtdm-fbdev`  | [platform/adaptation/libtdm-fbdev](https://review.tizen.org/gerrit/gitweb?p=platform%2Fadaptation%2Flibtdm-fbdev.git;a=summary) | Backend for a target device which supports the FBDEV interface. No PP or capture capability. |
 | `libtdm-exynos` | [platform/adaptation/samsung_exynos/libtdm-exynos](https://review.tizen.org/gerrit/gitweb?p=platform%2Fadaptation%2Fsamsung_exynos%2Flibtdm-exynos.git;a=summary) | Backend for a target device which uses the `exynos` chipset using the DRM interface. Has PP and capture capability, using the exynos-specific DRM interface to support PP. |
 | `libtdm-sprd`   | [platform/adaptation/spreadtrum/libtdm-sprd](https://review.tizen.org/gerrit/gitweb?p=platform%2Fadaptation%2Fspreadtrum%2Flibtdm-sprd.git;a=summary) | Backend for a target device which uses the Spreadtrum chipset using the Spreadtrum-specific `ioctl`. Uses the DRM interface to support `vblank`. Has PP capability, but no capture capability. |
@@ -663,7 +663,7 @@ The following table lists the available project Git repositories.
 | Project         | Repository                               | Description                              |
 | --------------- | ---------------------------------------- | ---------------------------------------- |
 | `libtpl-egl`    | `platform/core/uifw/libtpl-egl`          | Tizen Porting Layer for EGL&trade;       |
-| `libtbm`        | `platform/core/uifw/libtbm`              | Library for the Tizen Buffer Manager |
+| `libtbm`        | `platform/core/uifw/libtbm`              | Library for Tizen Buffer Manager |
 | `coregl`        | `platform/core/uifw/coregl`              | Injection layer of OpenGL&reg; ES / EGL&trade;    |
 | `wayland-tbm`   | `platform/core/uifw/wayland-tbm`         | Protocol for graphics memory management for Tizen |
 | `emulator-yagl` | `platform/adaptation/emulator/emulator-yagl` | OpenGL&reg; ES / EGL&trade; driver for the emulator  |

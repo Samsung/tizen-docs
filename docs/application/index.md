@@ -125,10 +125,6 @@ Tizen is built to work on a wide variety of platforms with a focus on embedded d
 
 Both mobile and wearable profiles are supported in native and Web application types. The TV profile is supported in the Web application type only.
 
-**Figure: Applications using the mobile profile**
-
-![Applications using the mobile profile](media/profile_mobile.png)
-
 **Figure: Applications using the wearable profile**
 
 ![Applications using the wearable profile](media/profile_wearable.png)
@@ -137,24 +133,28 @@ Both mobile and wearable profiles are supported in native and Web application ty
 
 ![Applications using the TV profile](media/profile_tv.png)
 
+**Figure: Applications using the mobile profile**
+
+![Applications using the mobile profile](media/profile_mobile.png)
+
 <a name="type"></a>
 ## Tizen Application Types
 
 The Tizen platform supports three primary application types:
 
--   [Native application](native/index.md) is developed using C and can access more advanced device-specific features, such as camera, GPS, and accelerometer in addition to more advanced system settings and functionality.
+-   [Tizen .NET application](dotnet/index.md) is a new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs, wearables, mobile devices, and many other IoT devices around the world. The existing Tizen frameworks are either C-based with no advantages of a managed runtime, or HTML5-based with fewer features and lower performance than the C-based solution.
 
-    The native applications use the Native API, which provides all of the memory management and performance benefits that come with building applications for Linux in C. The Native API is extremely helpful, as it includes dozens of API modules that cover a large range of capabilities. It provides numerous interfaces to much of the hardware that is found in modern mobile and wearable devices, and does so in an environment that is tailored for limited resources.
+    With Tizen .NET, you can use the C\# programming language and the Common Language Infrastructure standards and benefit from a managed runtime for faster application development, and efficient, secure code execution.
 
--   [Web application](web/index.md) is essentially a Web site stored on your device and built using Web-native languages, such as HTML5, CSS, and JavaScript. The Web application uses the Tizen Web Framework to interact with the native subsystems.
+-  [Web application](web/index.md) is essentially a Web site stored on your device and built using Web-native languages, such as HTML5, CSS, and JavaScript. The Web application uses the Tizen Web framework to interact with the native subsystems.
 
     The Web applications use the Web API, which is a standard Web application project structure with basic elements. The Web API is designed to allow you to easily build applications using Web-native languages.
 
     A program built using the Web API is laid out much like a standard Web site. It has an `index.html` file that serves as the root, and separate directories for resources, such as JavaScript, CSS, images, and sound resources. This approach makes Web application development in Tizen extremely intuitive for developers with a background in Web development, and makes it easy to quickly write simple applications using high-level languages.
 
--   [Tizen .NET application](dotnet/index.md) is a new way to develop applications for the Tizen operating system, running on 50 million Samsung devices, including TVs, wearables, mobile devices, and many other IoT devices around the world. The existing Tizen frameworks are either C-based with no advantages of a managed runtime, or HTML5-based with fewer features and lower performance than the C-based solution.
+-   [Native application](native/index.md) is developed using C and can access more advanced device-specific features, such as camera, GPS, and accelerometer in addition to more advanced system settings and functionality.
 
-    With Tizen .NET, you can use the C\# programming language and the Common Language Infrastructure standards and benefit from a managed runtime for faster application development, and efficient, secure code execution.
+    The native applications use the Native API, which provides all of the memory management and performance benefits that come with building applications for Linux in C. The Native API is extremely helpful, as it includes dozens of API modules that cover a large range of capabilities. It provides numerous interfaces to much of the hardware that is found in modern mobile and wearable devices, and does so in an environment that is tailored for limited resources.
 
 The following figure illustrates the Tizen architecture model supporting the 3 application types.
 

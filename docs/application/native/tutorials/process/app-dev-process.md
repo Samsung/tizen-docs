@@ -16,7 +16,7 @@ Once you have finished the application plan and design, you are ready to [create
 <a name="creating"></a>
 ## Creating the Application Project
 
-The Tizen Studio provides various project templates that make it easier for you to start coding your application. When you create a new project, you can select a specific template or sample. Based on the selection, the Tizen native [Project Wizard](../../../tizen-studio/native-tools/project-wizard.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
+Tizen Studio provides various project templates that make it easier for you to start coding your application. When you create a new project, you can select a specific template or sample. Based on the selection, The Tizen Native [Project Wizard](../../../tizen-studio/native-tools/project-wizard.md) automatically creates basic functionalities that the application has to implement to be able to run. The default project files and folders are also created.
 
 <a name="setting"></a>
 ## Setting Project Properties
@@ -32,7 +32,7 @@ Implementing your application consists of:
 
   You can [design and create the application UI (user interface) with UI Builder](../ui-builder/ui-builder-app-design.md).
 
-  UI Builder is included in the Tizen Studio, and functions as a WYSIWYG (What You See Is What You Get) design environment for creating UIs for native applications.
+  UI Builder is included in Tizen Studio, and functions as a WYSIWYG (What You See Is What You Get) design environment for creating UIs for native applications.
 
   > **Note**  
   > You can also design the application UI using the controls defined in the [User Interface](../../guides/ui/overview.md) guides.
@@ -40,7 +40,7 @@ Implementing your application consists of:
 
 - **Coding applications**
 
-  Code your application in the Tizen Studio using the namespaces defined in the Native API Reference (in [mobile](../../api/mobile/latest/modules.html) and [wearable](../../api/wearable/latest/modules.html) applications).
+  Code your application in Tizen Studio using the namespaces defined in the Native API Reference (in [mobile](../../api/mobile/latest/modules.html) and [wearable](../../api/wearable/latest/modules.html) applications).
 
 If needed, update the privileges of the application.
 
@@ -61,7 +61,7 @@ The build configuration is the [set of properties](building-app.md#prop) which a
 <a name="debugging"></a>
 ## Running and Debugging the Application
 
-You can [run your application in the emulator](running-app.md). The device emulator, provided with the Tizen Studio, imitates the target environment running Tizen native applications. Using this replicated environment, you can test your application before deploying it to the real target device.
+You can [run your application in the emulator](running-app.md). The device emulator, provided with Tizen Studio, imitates the target environment running Tizen native applications. Using this replicated environment, you can test your application before deploying it to the real target device.
 
 You can also [debug your application with the
 emulator](debugging-app.md#debugging-applications-on-the-emulator). The emulator represents the almost identical functionality of the corresponding device model.
@@ -82,7 +82,7 @@ To debug your application with the emulator or the target device, you must first
 <a name="packaging"></a>
 ## Packaging the Application
 
-You can package your application using the Tizen Studio. If you want to register your application in the Tizen store, [register the author certificate](../../../tizen-studio/common-tools/certificate-registration.md) before packaging your application.
+You can package your application using Tizen Studio. If you want to register your application in Tizen store, [register the author certificate](../../../tizen-studio/common-tools/certificate-registration.md) before packaging your application.
 
 1. If you have made changes to the application after testing it, [rebuild the application](building-app.md).
 
@@ -105,8 +105,8 @@ To develop a multi-project native application:
 2. Create a service or widget application.
 3. Package a multi-project application using Tizen Studio:
 
-   1. In the Tizen Studio, make sure all the applications you want to include in the package are located in the **Project Explorer** view.  
-      To make the projects appear in the **Project Explorer** view, you can create new applications, or import existing projects or sample applications into the Tizen Studio.
+   1. In Tizen Studio, make sure all the applications you want to include in the package are located in the **Project Explorer** view.  
+      To make the projects appear in the **Project Explorer** view, you can create new applications, or import existing projects or sample applications into Tizen Studio.
 
    2. To establish a project reference between a UI application and a service or widget application:  
       - In the **Project Explorer** view, right-click the UI application.  
@@ -122,9 +122,9 @@ To develop a multi-project native application:
    while the UI application is built and run.
 
 > **Note**  
-> Tizen has limited a multi-project application combination policy for device usability. If you do not follow the policy, the submission of your application to the Tizen Store can be rejected.
+> Tizen has limited a multi-project application combination policy for device usability. If you do not follow the policy, the submission of your application to Tizen Store can be rejected.
 >
-> For your convenience, some policies can be allowed in the Tizen Studio only. For example, you can make a STANDALONE service application or STANDALONE widget application in the Tizen Studio, but these applications can be rejected in the Tizen Store.
+> For your convenience, some policies can be allowed in Tizen Studio only. For example, you can make a STANDALONE service application or STANDALONE widget application in Tizen Studio, but these applications can be rejected in Tizen Store.
 
 The following table shows the possible combinations for a native multi-project. **1** means that only one application can be packaged as a sub application, while **M** means that multiple applications can be packaged as sub applications. The **STANDALONE** column defines whether the application can be packaged alone as the main application.
 
@@ -156,14 +156,14 @@ After you have packaged your application, you are ready to certify and publish y
 
 To certify and publish your application:
 
-- Upload your mobile native application to the Tizen Store or your wearable native application to the Samsung Galaxy Apps Store for registration.
+- Upload your mobile native application to Tizen Store or your wearable native application to the Samsung Galaxy Apps Store for registration.
 
-  After the application is uploaded, the application is signed as a certified application installer package and the `<Application_name>.tpk` archive format, which contains the distributor signature, is added by the Tizen Store or Samsung Galaxy Apps Store.
+  After the application is uploaded, the application is signed as a certified application installer package and the `<Application_name>.tpk` archive format, which contains the distributor signature, is added by Tizen Store or Samsung Galaxy Apps Store.
 
-- Check your application to the Tizen Store or Samsung Galaxy Apps Store for validation and selling.
+- Check your application to Tizen Store or Samsung Galaxy Apps Store for validation and selling.
 
-  The Tizen Store or Samsung Galaxy Apps Store checks whether your application functions properly.
+  Tizen Store or Samsung Galaxy Apps Store checks whether your application functions properly.
 
-For detailed instructions on how to register your application and submit it for validation and publication in the Tizen Store, see [Tizen Store Overview](https://developer.tizen.org/distribution/tizen-store-overview) and other subtopics within the **Distribution** section of the Tizen Developers site.
+For detailed instructions on how to register your application and submit it for validation and publication in Tizen Store, see [Tizen Store Overview](https://developer.tizen.org/distribution/tizen-store-overview) and other subtopics within the **Distribution** section of the Tizen Developers site.
 
-You can also upgrade your application after certification. If you want to withdraw your application from distribution and operation, you need to request for application retirement from the Tizen Store or Samsung Galaxy Apps Store.
+You can also upgrade your application after certification. If you want to withdraw your application from distribution and operation, you need to request for application retirement from Tizen Store or Samsung Galaxy Apps Store.

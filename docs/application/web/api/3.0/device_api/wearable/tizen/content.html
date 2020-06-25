@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Content">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Content API</h1></div>
 <div class="brief">
  The Content API provides functionality to discover content such as images, videos, music, or others.
@@ -18,7 +18,7 @@ It is possible to search for specific content using filters.
 The API also supports setting the attributes of specific content.
         </p>
         <p>
-For more information on the Content features, see <a href="https://developer.tizen.org/development/guides/web-application/data-storage-and-management/stored-content-management">Stored Content Management</a>.
+For more information on the Content features, see <a href="/application/web/guides/data/stored-content">Stored Content Management</a>.
         </p>
         <p>
 Playlist functionality has been added in Tizen 2.3.
@@ -384,7 +384,9 @@ The <em>tizen.content </em>object allows accessing the functionality of the Cont
     void cancelScanDirectory(DOMString contentDirURI) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeChangeListener(long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+<span class="nocode deprecated">    void setChangeListener(<a href="#ContentChangeCallback">ContentChangeCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void unsetChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>    void getPlaylists(<a href="#PlaylistArraySuccessCallback">PlaylistArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                         optional <a href="#Playlist">Playlist</a>? sourcePlaylist) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removePlaylist(<a href="#PlaylistId">PlaylistId</a> id, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
@@ -630,8 +632,8 @@ tizen.content.getDirectories(getDirectoriesCB, errorCB);
 <div class="brief">
  Finds contents that satisfy the conditions set by a filter.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
-          optional <a href="#ContentDirectoryId">ContentDirectoryId</a>? directoryId, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode, 
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#ContentArraySuccessCallback">ContentArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+          optional <a href="#ContentDirectoryId">ContentDirectoryId</a>? directoryId, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode,
           optional unsigned long? count, optional unsigned long? offset);</pre></div>
 <p><span class="version">Since: </span>
  2.0
@@ -660,7 +662,7 @@ UnknownError: In any other error case.              </li>
             </p>
 <p><span class="remark">Remark: </span>
  Attributes available for <em>Content</em> objects filtering are listed in
-<a href="https://developer.tizen.org/development/guides/web-application/data-storage-and-management/data-filtering-and-sorting#content_filter">Data Filtering and Sorting guide</a>.
+<a href="/application/web/guides/data/data-filter#content-filter-attributes">Data Filtering and Sorting guide</a>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -836,7 +838,7 @@ tizen.filesystem.resolve("images/tizen.jpg", function(imageFile)
 <div class="brief">
  Scans a content directory to create or update content in the content database.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void scanDirectory(DOMString contentDirURI, boolean recursive, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void scanDirectory(DOMString contentDirURI, boolean recursive, optional <a href="#ContentScanSuccessCallback">ContentScanSuccessCallback</a>? successCallback,
                    optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -997,8 +999,7 @@ contain an invalid value (e.g. given <em>contentDirURI</em> is an empty string).
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Identifier of the newly added listener.
               </ul>
 </div>
@@ -1330,7 +1331,7 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 <div class="brief">
  Creates a new playlist.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void createPlaylist(DOMString name, <a href="#PlaylistSuccessCallback">PlaylistSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional <a href="#Playlist">Playlist</a>? sourcePlaylist);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -2408,8 +2409,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 <div class="brief">
  The PlaylistItem interface represents a playlist item.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject]
-  interface PlaylistItem {
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface PlaylistItem {
     readonly attribute <a href="#Content">Content</a> content;
   };</pre>
 <p><span class="version">Since: </span>
@@ -2433,8 +2433,7 @@ If the lyrics are not synchronized, the array has only one member with full lyri
 <div class="brief">
  The Playlist interface represents a playlist.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject]
-  interface Playlist {
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface Playlist {
     readonly attribute <a href="#PlaylistId">PlaylistId</a> id;
     attribute DOMString name raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute long numberOfTracks;
@@ -2890,7 +2889,7 @@ tizen.content.getPlaylists(getPlaylistsSuccess, getPlaylistsFail);
 <div class="brief">
  Gets playlist items from a playlist.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count, 
+<div class="synopsis"><pre class="signature prettyprint">void get(<a href="#PlaylistItemArraySuccessCallback">PlaylistItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional long? count,
          optional long? offset);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -3442,18 +3441,18 @@ It is used in <em>tizen.content.createPlaylist()</em>.
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Content {
-  enum ContentDirectoryStorageType { "INTERNAL", "EXTERNAL" };
-  enum ContentType { "IMAGE", "VIDEO", "AUDIO", "OTHER" };
-  enum AudioContentLyricsType { "SYNCHRONIZED", "UNSYNCHRONIZED" };
-  enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90", "TRANSVERSE",
-    "ROTATE_270" };
   typedef DOMString ContentId;
   typedef DOMString ContentDirectoryId;
   typedef DOMString PlaylistId;
+  enum ContentDirectoryStorageType { "INTERNAL", "EXTERNAL" };
+  enum ContentType { "IMAGE", "VIDEO", "AUDIO", "OTHER" };
+  enum AudioContentLyricsType { "SYNCHRONIZED", "UNSYNCHRONIZED" };
+  enum ImageContentOrientation { "NORMAL", "FLIP_HORIZONTAL", "ROTATE_180", "FLIP_VERTICAL", "TRANSPOSE", "ROTATE_90",
+    "TRANSVERSE", "ROTATE_270" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContentManagerObject">ContentManagerObject</a>;
   [NoInterfaceObject] interface ContentManagerObject {
     readonly attribute <a href="#ContentManager">ContentManager</a> content;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContentManagerObject">ContentManagerObject</a>;
   [NoInterfaceObject] interface ContentManager {
     void update(<a href="#Content">Content</a> content) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void updateBatch(<a href="#Content">Content</a>[] contents, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
@@ -3548,12 +3547,10 @@ It is used in <em>tizen.content.createPlaylist()</em>.
     readonly attribute unsigned long height;
     attribute <a href="#ImageContentOrientation">ImageContentOrientation</a> orientation;
   };
-  [NoInterfaceObject]
-  interface PlaylistItem {
+  [NoInterfaceObject] interface PlaylistItem {
     readonly attribute <a href="#Content">Content</a> content;
   };
-  [NoInterfaceObject]
-  interface Playlist {
+  [NoInterfaceObject] interface Playlist {
     readonly attribute <a href="#PlaylistId">PlaylistId</a> id;
     attribute DOMString name raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     readonly attribute long numberOfTracks;

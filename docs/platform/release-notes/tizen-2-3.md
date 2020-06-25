@@ -1,6 +1,6 @@
 # Tizen 2.3
 
-Release Date: 09 Feb, 2015
+Release date: Feb. 09, 2015
 
 The Tizen 2.3 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
 

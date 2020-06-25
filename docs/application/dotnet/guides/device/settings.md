@@ -24,7 +24,7 @@ To enable your application to use the system setting functionality:
     </privileges>
     ```
 
-2. To make your application visible in the Tizen Store only for devices that support the system setting features, add the following feature key to the `tizen-manifest.xml` file:
+2. To make your application visible in Tizen Store only for devices that support the system setting features, add the following feature key to the `tizen-manifest.xml` file:
 
     ```
     <!--To use the WallpaperHomeScreen property and WallpaperHomeScreenChanged event-->

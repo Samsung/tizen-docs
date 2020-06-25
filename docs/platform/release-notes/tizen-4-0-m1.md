@@ -1,10 +1,11 @@
 # Tizen 4.0 Public M1
 
-Release Date: 31 May, 2017
+Release date: May 31, 2017
 
 The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web and Native API set.
 
-### Release Details
+
+## Release Details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 4.0 Public M1 source codes are under **tizen_4.0** branch.)
 
@@ -16,9 +17,10 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 - [How to flash to a device](../developing/flashing.md)
 
-# Release Notes
 
-## System (Kernel and System Framework)
+## Release Notes
+
+### System (Kernel and System Framework)
 
 **New and Changed Features**
 
@@ -43,7 +45,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - The dlogutil dump mode (nonblack) bug has been fixed.
 
 
-## System (Base)
+### System (Base)
 
 **New and Changed Features**
 
@@ -88,7 +90,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-## Application Framework
+### Application Framework
 
 **New and Changed Features**
 
@@ -111,7 +113,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - data-control trusted communication has been added.
 
 
-## Window System
+### Window System
 
 **New and Changed Features**
 
@@ -187,7 +189,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
   - The move/resize bug in the system cursor image has been fixed.
 
 
-## Graphics Engine
+### Graphics Engine
 
 **New and Changed Features**
 
@@ -301,7 +303,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-## UI Framework
+### UI Framework
 
 **New and Changed Features**
 
@@ -334,14 +336,14 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 - View manager
   - View manager has not been fully tested.
 - Customization API
-  - In wearable profile, the theme is not ready for customization.
+  - In Wearable profile, the theme is not ready for customization.
 - Focused UI has not been fully tested.
 - UI mirroring has not been fully tested.
 - Tizen 4.0 UX is not finalized yet (UI control and theme can change later).
 
 
 
-## Multimedia Framework
+### Multimedia Framework
 
 **New and Changed Features**
 
@@ -369,54 +371,54 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-## Network & Connectivity
+### Network & Connectivity
 
 **New and Changed Features**
 
 - Data Network
   - New features and API set have been added:
-    - In mobile, wearable, and TV profiles, a connection API for getting the DHCP server address has been added.
-    - In mobile, wearable, and TV profiles, the enum for the pdn type has been deprecated.
-    - In mobile, wearable, and TV profiles, connection API set for adding/removing a routing table have been added.
+    - In Mobile, Wearable, and TV profiles, a connection API for getting the DHCP server address has been added.
+    - In Mobile, Wearable, and TV profiles, the enum for the pdn type has been deprecated.
+    - In Mobile, Wearable, and TV profiles, connection API set for adding/removing a routing table have been added.
     - In the TV profile, connection API set for attaching/detaching an Ethernet cable have been deprecated/added.
-    - In mobile, wearable, and TV profiles, API set for getting/setting the DNS config type have been added.
-    - In mobile, wearable, and TV profiles, connection and wifi-manager API set for getting/setting the prefix length have been added.
-    - In mobile, wearable, and TV profiles, a connection and wifi-manager API for getting multiple ipv6 addresses has been added.
-    - In mobile, wearable, and TV profiles, a wifi-manager API for getting multiple IPv6 addresses has been added.
-    - In mobile, wearable, and TV profiles, a wifi-manager API for connecting a hidden AP has been added.
-    - In mobile, wearable, and TV profiles, a wifi-manager API for getting the disconnect reason has been added.
-    - In mobile, wearable, and TV profiles, wifi-manager API set for connecting/canceling WPS-PIN/PBC without SSID have been added.
-    - In mobile, wearable, and TV profiles, wifi-manager API set for connecting/discovering TDLS without SSID have been added.
-    - In mobile, wearable, and TV profiles, a wifi-manager API for switching TDLS's channel has been added.
-    - In mobile, wearable, and TV profiles, wifi-manager API set for getting the DHCP address have been added.
-    - In mobile, wearable, and TV profiles, wifi-manager API set for getting the scan status have been added.
-    - In mobile and wearable profiles, the ASP (Application Service Platform) feature support has been added.
-    - In mobile, wearable, and TV profiles, the IPv6 tethering feature support has been added.
-    - In mobile, wearable, and TV profiles, tethering API set for getting/setting IPv6 tethering have been added.
-    - In the mobile profile, the default VPN (IPsec) feature support has been added.
-    - In mobile and wearable profiles, the wifi-direct tethering feature support has been added.
-    - In mobile and wearable profiles, the Smart Traffic Control (STC) feature support has been added.
+    - In Mobile, Wearable, and TV profiles, API set for getting/setting the DNS config type have been added.
+    - In Mobile, Wearable, and TV profiles, connection and wifi-manager API set for getting/setting the prefix length have been added.
+    - In Mobile, Wearable, and TV profiles, a connection and wifi-manager API for getting multiple ipv6 addresses has been added.
+    - In Mobile, Wearable, and TV profiles, a wifi-manager API for getting multiple IPv6 addresses has been added.
+    - In Mobile, Wearable, and TV profiles, a wifi-manager API for connecting a hidden AP has been added.
+    - In Mobile, Wearable, and TV profiles, a wifi-manager API for getting the disconnect reason has been added.
+    - In Mobile, Wearable, and TV profiles, wifi-manager API set for connecting/canceling WPS-PIN/PBC without SSID have been added.
+    - In Mobile, Wearable, and TV profiles, wifi-manager API set for connecting/discovering TDLS without SSID have been added.
+    - In Mobile, Wearable, and TV profiles, a wifi-manager API for switching TDLS's channel has been added.
+    - In Mobile, Wearable, and TV profiles, wifi-manager API set for getting the DHCP address have been added.
+    - In Mobile, Wearable, and TV profiles, wifi-manager API set for getting the scan status have been added.
+    - In Mobile and Wearable profiles, the ASP (Application Service Platform) feature support has been added.
+    - In Mobile, Wearable, and TV profiles, the IPv6 tethering feature support has been added.
+    - In Mobile, Wearable, and TV profiles, tethering API set for getting/setting IPv6 tethering have been added.
+    - In the Mobile profile, the default VPN (IPsec) feature support has been added.
+    - In Mobile and Wearable profiles, the wifi-direct tethering feature support has been added.
+    - In Mobile and Wearable profiles, the Smart Traffic Control (STC) feature support has been added.
   - Major open source upgrades and changes:
     - Curl has been upgraded from 7.40 to 7.53 for stability.
 - Telephony
-  - In mobile, wearable, and TV profiles, the telephony manager plugin has been added.
-  - In mobile, wearable, and TV profiles, feature-based handling support has been added.
-  - In mobile, wearable, and TV profiles, SQLite3 insertion operations for the packet service plugin have been improved.
-  - In mobile and wearable profiles, telephony popup plugins have been added.
-  - In mobile and wearable profiles, an API for network signal strength with dBm getter has been added.
-  - In mobile and wearable profiles, an API for modem power status event register has been added.
-  - In mobile and wearable profiles, LTE attach apn logic support has been added.
-  - In the wearable profile, the call manager library support has been added.
-  - In the wearable profile, the standalone mode telephony framework support has been added.
+  - In Mobile, Wearable, and TV profiles, the telephony manager plugin has been added.
+  - In Mobile, Wearable, and TV profiles, feature-based handling support has been added.
+  - In Mobile, Wearable, and TV profiles, SQLite3 insertion operations for the packet service plugin have been improved.
+  - In Mobile and Wearable profiles, telephony popup plugins have been added.
+  - In Mobile and Wearable profiles, an API for network signal strength with dBm getter has been added.
+  - In Mobile and Wearable profiles, an API for modem power status event register has been added.
+  - In Mobile and Wearable profiles, LTE attach apn logic support has been added.
+  - In the Wearable profile, the call manager library support has been added.
+  - In the Wearable profile, the standalone mode telephony framework support has been added.
 - Connectivity
   - New features and API set have been added:
-    -  In mobile and wearable profiles, support for OMAPI 3.2 has been added.
+    -  In Mobile and Wearable profiles, support for OMAPI 3.2 has been added.
   - Major open-source component upgrades and changes have been made.
 - Bluetooth
   - New features and API set have been added:
-    - In mobile, wearable, and TV profiles, Internet Protocol Support Profile (IPSP) API set have been added.
-    - In mobile, wearable, and TV profiles, GATT MTU Exchange API set have been added.
-    - In mobile, wearable, and TV profiles, LE Scan filtering API set have been added.
+    - In Mobile, Wearable, and TV profiles, Internet Protocol Support Profile (IPSP) API set have been added.
+    - In Mobile, Wearable, and TV profiles, GATT MTU Exchange API set have been added.
+    - In Mobile, Wearable, and TV profiles, LE Scan filtering API set have been added.
   - Major Open-source component upgrades and changes:
     - Bluez has been upgraded from 5.37 to 5.43.
 - IoTCon
@@ -432,7 +434,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-## Security
+### Security
 
 **New and Changed Features**
 
@@ -447,13 +449,13 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 - App-defined Privilege
   - The ways to define and declare an app-defined privilege have been added.
 - Privilege List
-  - In mobile and wearable profiles, the following privilege has been added:
+  - In Mobile and Wearable profiles, the following privilege has been added:
     - Native
       - `zigbee` / `zigbee.admin`
-  - In mobile and wearable profiles, the following privilege has been removed:
+  - In Mobile and Wearable profiles, the following privilege has been removed:
     - Web
       - `nfc.admin`
-  - In mobile, wearable, and TV profiles, the following privileges have been added:
+  - In Mobile, Wearable, and TV profiles, the following privileges have been added:
     - C#
       - `tee.client`
     - Web
@@ -461,7 +463,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-## Service Framework
+### Service Framework
 
 **New and Changed Features**
 
@@ -485,11 +487,11 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
     - Install/uninstall for multiuser has been added.
     - Delivery of push messages when the application is in freeze state has been added.
   - Account Manager
-    - Notification for deletions by package name has been added (in mobile and wearable profiles).
-    - An "ADD button" string has been added in My-account setting application (in the wearable profile).
-    - An accounts view for showing registered account providers has been added (in the wearable profile).
+    - Notification for deletions by package name has been added (in Mobile and Wearable profiles).
+    - An "ADD button" string has been added in My-account setting application (in the Wearable profile).
+    - An accounts view for showing registered account providers has been added (in the Wearable profile).
   - Sync Manager
-    - Application enable/disable has been added (in mobile and wearable profiles).
+    - Application enable/disable has been added (in Mobile and Wearable profiles).
 
 **Fixes**
 
@@ -500,16 +502,16 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
     - Wrong notification posting has been fixed.
     - Lazy mount dependency has been removed.
   - Account Manager
-    - The conf name in the service file for `CapabilityBoundingSet` has been fixed (in mobile and wearable profiles).
-    - The Global DB path for the owner user has been fixed (in mobile and wearable profiles).
-    - Timing for drawing the main UI has been fixed (in the wearable profile).
+    - The conf name in the service file for `CapabilityBoundingSet` has been fixed (in Mobile and Wearable profiles).
+    - The Global DB path for the owner user has been fixed (in Mobile and Wearable profiles).
+    - Timing for drawing the main UI has been fixed (in the Wearable profile).
   - Sync Manager
-    - The application control for sync-service has been changed to aul (in mobile and wearable profiles).
-    - The runtime profile build dependency has been removed (in mobile and wearable profiles).
+    - The application control for sync-service has been changed to aul (in Mobile and Wearable profiles).
+    - The runtime profile build dependency has been removed (in Mobile and Wearable profiles).
 
 
 
-## Web Framework
+### Web Framework
 
 **New and Changed Features**
 
@@ -530,7 +532,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-## Tizen .NET
+### Tizen .NET
 
 **New and Changed Features**
 
@@ -615,7 +617,7 @@ The Tizen 4.0 Public M1 release provides developers with the Tizen kernel, devic
 
 
 
-## SCM
+### SCM
 
 **New and Changed Features**
 

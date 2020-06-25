@@ -7,7 +7,7 @@
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MediaController">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>MediaController API</h1></div>
 <div class="brief">
  The Media Controller API provides functions for communication between the media
@@ -20,7 +20,7 @@ and metadata from media controller server to client. Allows to control server st
 by sending commands from client.
         </p>
         <p>
-For more information on the Media Controller features, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/media-controller">Media Controller Guide</a>.
+For more information on the Media Controller features, see <a href="/application/web/guides/multimedia/media-controller">Media Controller Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -3518,8 +3518,8 @@ Playlist name: testPlaylist
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var serverInfo = mcClient.getLatestServerInfo();
-serverInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
+var mcServerInfo = mcClient.getLatestServerInfo();
+mcServerInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
 </pre>
 </div>
 </dd>
@@ -3564,20 +3564,20 @@ serverInfo.sendPlaybackItem("testPlaylist", "1", "PLAY", 0);
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var serverInfo = mcClient.getLatestServerInfo();
+var mcServerInfo = mcClient.getLatestServerInfo();
 
 var listener =
 {
-  onplaylistupdated: function(playlist)
+  onplaylistupdated: function(serverName, playlist)
   {
     console.log("updated playlist " + playlist);
   },
-  onplaylistdeleted: function(playlistName)
+  onplaylistdeleted: function(serverName, playlistName)
   {
     console.log("deleted playlist " + playlistName);
   }
 };
-var listenerId = serverInfo.addPlaylistUpdatedListener(listener);
+var listenerId = mcServerInfo.addPlaylistUpdatedListener(listener);
 </pre>
 </div>
 </dd>
@@ -3613,15 +3613,15 @@ var listenerId = serverInfo.addPlaylistUpdatedListener(listener);
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var mcClient = tizen.mediacontroller.getClient();
-var serverInfo = mcClient.getLatestServerInfo();
+var mcServerInfo = mcClient.getLatestServerInfo();
 
 var listener =
 {
-  onplaylistupdated: function(playlist) {},
-  onplaylistdeleted: function(playlistName) {}
+  onplaylistupdated: function(serverName, playlist) {},
+  onplaylistdeleted: function(serverName, playlistName) {}
 };
-var listenerId = serverInfo.addPlaylistUpdatedListener(listener);
-serverInfo.removePlaylistUpdatedListener(listenerId);
+var listenerId = mcServerInfo.addPlaylistUpdatedListener(listener);
+mcServerInfo.removePlaylistUpdatedListener(listenerId);
 </pre>
 </div>
 </dd>
@@ -7229,7 +7229,12 @@ playlist.getItems(successCallback, errorCallback);
           </p>
 <div class="constructors">
 <h4 id="SearchFilter::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">SearchFilter(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category = "NO_CATEGORY", optional DOMString? keyword = null, optional <a href="tizen.html#Bundle">Bundle</a>? extraData = null);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#MediaControllerContentType">MediaControllerContentType</a>, <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a>, DOMString?, <a href="tizen.html#Bundle">Bundle</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">SearchFilter(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category = "NO_CATEGORY", optional DOMString? keyword = null, optional <a href="tizen.html#Bundle">Bundle</a>? extraData = null);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -7413,7 +7418,12 @@ Interface is used as a success method for:
           </p>
 <div class="constructors">
 <h4 id="RequestReply::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">RequestReply(<a href="tizen.html#Bundle">Bundle</a>? data, optional long code = 0);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="tizen.html#Bundle">Bundle</a>?, long)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">RequestReply(<a href="tizen.html#Bundle">Bundle</a>? data, optional long code = 0);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>

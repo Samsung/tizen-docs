@@ -17,7 +17,7 @@ You can use the following Internet and content download features in your native 
 
   You can perform URL-related transfer activities with various protocols. You can initialize libcurl connections, manage the proxy address, and transfer HTTP requests.
 
-- [HTTP](http.md)
+- [HTTP](./http-api.md)
 
   You can connect to Web servers to fetch and transmit a Web resource. You can also manage HTTP sessions, transactions, and requests.
 

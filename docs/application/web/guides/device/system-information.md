@@ -2,7 +2,7 @@
 
 You can access and monitor the [device and system properties](#system-information-properties) (both hardware and capability), such as the battery level, available device storage, version number, model name, and the cellular network being used.
 
-The System Information API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The System Information API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the System Information API include:
 

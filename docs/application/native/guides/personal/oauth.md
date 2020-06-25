@@ -296,6 +296,7 @@ To obtain the required authorization code or access token:
         }
         ```
 
+  <a name="direct_token"> </a>
   - Request the access token directly.
 
     You can request an access token in a single step without obtaining the authorization code explicitly. For the authorization code grant type, the code is obtained after authentication and passed to the server to obtain the access token internally. For implicit, resource owner password credentials, and client credentials grant types, you can obtain the access token directly.

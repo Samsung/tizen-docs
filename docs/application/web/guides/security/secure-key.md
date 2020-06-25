@@ -2,7 +2,7 @@
 
 The key manager allows you to [control data access](#data-access-control) by securely storing in a central secure repository keys, certificates, and sensitive data related to users and their password-protected applications. Additionally, the key manager provides secure cryptographic operations for non-exportable keys without revealing the key values to clients. The central secure repository is protected by a password.
 
-The Key Manager API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Key Manager API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main features of the Key Manager API include:
 
