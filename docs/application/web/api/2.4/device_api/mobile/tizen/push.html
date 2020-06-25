@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Push API</title>
+<meta data-version="2.4" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Push">
- <div class="supported-platforms"><img class="mobile-optional emulator" title="Optional, Supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="mobile-optional emulator" title="Optional, Supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>Push API</h1></div>
 <div class="brief">
  The Push API provides functionality for receiving push notifications
@@ -32,7 +33,7 @@ Registering your application, if the application has not been registered yet    
 Getting notification data          </li>
         </ul>
         <p>
-For more information on the Push features, see <a href="https://developer.tizen.org/development/guides/web-application/messaging/push-notification">Push Guide</a>.
+For more information on the Push features, see <a href="/application/web/guides/messaging/push">Push Guide</a>.
         </p>
         <p>
 To use Push features the application needs the permission to access the Tizen Push servers.
@@ -183,7 +184,7 @@ The <em>tizen.push </em>object allows access to the functionality of the Push AP
 <div class="brief">
  Registers an application to the Tizen push server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerService(<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerService(<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback,
                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -206,7 +207,7 @@ UnknownError - If any other error occurs.              </li>
  http://tizen.org/privilege/push
             </p>
 <p><span class="remark">Remark: </span>
- In order to use the push messaging service, see <a href="https://developer.tizen.org/development/guides/web-application/messaging/push-notification">Push Guide</a>.
+ In order to use the push messaging service, see <a href="/application/web/guides/messaging/push">Push Guide</a>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -474,8 +475,7 @@ tizen.push.disconnectService();
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">PushRegistrationId:
-                  </span>
+<span class="return">PushRegistrationId:</span>
  ID assigned by push service.
               </ul>
 </div>
@@ -619,8 +619,7 @@ This data is the message that the sender wants to send and its length must be le
 <div class="brief">
  The PushRegisterSuccessCallback interface specifies the success callback for a push service registration request.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PushRegisterSuccessCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PushRegisterSuccessCallback {
     void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
   };</pre>
 <p><span class="version">Since: </span>
@@ -663,8 +662,7 @@ This success callback is invoked when a push service registration request is suc
 <div class="brief">
  The PushNotificationCallback interface specifies the notification callback for the received push notification message.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PushNotificationCallback {
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PushNotificationCallback {
     void onsuccess(<a href="#PushMessage">PushMessage</a> message);
   };</pre>
 <p><span class="version">Since: </span>
@@ -705,7 +703,9 @@ This notification callback is invoked when the push notification message arrives
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -715,15 +715,15 @@ To guarantee that the push application runs on a device with the push feature, d
 <li class="feature">http://tizen.org/feature/network.push</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Push {
   typedef DOMString PushRegistrationId;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;
   [NoInterfaceObject] interface PushManagerObject {
     readonly attribute <a href="#PushManager">PushManager</a> push;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PushManagerObject">PushManagerObject</a>;
   [NoInterfaceObject] interface PushManager {
     void registerService(<a href="application.html#ApplicationControl">ApplicationControl</a> appControl, <a href="#PushRegisterSuccessCallback">PushRegisterSuccessCallback</a> successCallback,
                          optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -738,12 +738,10 @@ To guarantee that the push application runs on a device with the push feature, d
     readonly attribute DOMString alertMessage;
     readonly attribute Date date;
   };
-  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PushRegisterSuccessCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface PushRegisterSuccessCallback {
     void onsuccess(<a href="#PushRegistrationId">PushRegistrationId</a> id);
   };
-  [Callback=FunctionOnly, NoInterfaceObject]
-  interface PushNotificationCallback {
+  [Callback=FunctionOnly, NoInterfaceObject] interface PushNotificationCallback {
     void onsuccess(<a href="#PushMessage">PushMessage</a> message);
   };
 };</pre>

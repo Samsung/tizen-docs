@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>SystemInfo API</title>
+<meta data-version="3.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SystemInfo">
- <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="tv_s_w.png"></div>
+<div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="tv_s_w.png"></div>
 <div class="title"><h1>SystemInfo API</h1></div>
 <div class="brief">
  This specification defines interfaces and methods that provide web applications with access to various properties of a system.
@@ -79,7 +80,7 @@ Not all above properties may be available on every Tizen device. For instance, a
  WIFI_NETWORK     - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/network.wifi"</em>)          </li>
         </ul>
         <p>
-For more information on the System Information features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/system-information">System Information Guide</a>.
+For more information on the System Information features, see <a href="/application/web/guides/device/system-information">System Information Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -602,7 +603,8 @@ functionality of the System Information API.
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfo {
     long long getTotalMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long long getAvailableMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    any getCapability(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+<span class="nocode deprecated">    <a href="#SystemInfoDeviceCapability">SystemInfoDeviceCapability</a> getCapabilities() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>    any getCapability(DOMString key) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long getCount(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
                           optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -617,6 +619,9 @@ functionality of the System Information API.
                                                       raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removePropertyValueChangeListener(unsigned long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
+<p><span class="version">Since: </span>
+ 1.0
+          </p>
 <div class="description">
           <p>
 This API offers methods for retrieving system information
@@ -640,8 +645,7 @@ and for subscribing notifications of system information changes.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long long:
-                  </span>
+<span class="return">long long:</span>
  Total system memory.
               </ul>
 </div>
@@ -672,8 +676,7 @@ console.log("The total memory size is " + tizen.systeminfo.getTotalMemory() + " 
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long long:
-                  </span>
+<span class="return">long long:</span>
  Not used memory in bytes.
               </ul>
 </div>
@@ -712,8 +715,7 @@ The function must synchronously acquire the capabilities of the device.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SystemInfoDeviceCapability:
-                  </span>
+<span class="return">SystemInfoDeviceCapability:</span>
  Capabilities of the device.
               </ul>
 </div>
@@ -763,8 +765,7 @@ The additional keys for the custom device capability are specified by OEMs and v
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">any:
-                  </span>
+<span class="return">any:</span>
  The value of the specified device capability.
               </ul>
 </div>
@@ -817,8 +818,7 @@ That is the length of array retrieved by the <a href="#SystemInfo::getPropertyVa
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The number of property values for the given property. If the property is not supported, 0 is returned.
               </ul>
 </div>
@@ -849,7 +849,7 @@ else
 <div class="brief">
  Gets the current value of a specified system property.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void getPropertyValue(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -959,7 +959,7 @@ else
 <div class="brief">
  Gets the current values of a specified system property.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getPropertyValueArray(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void getPropertyValueArray(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback,
                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -1053,7 +1053,7 @@ else
 <div class="brief">
  Adds a listener to allow tracking changes in one or more system properties.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">unsigned long addPropertyValueChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">unsigned long addPropertyValueChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, <a href="#SystemInfoPropertySuccessCallback">SystemInfoPropertySuccessCallback</a> successCallback,
                                              optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -1117,8 +1117,7 @@ NotSupportedError - If the given <var>property</var> is not supported (since Tiz
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  An identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -1157,8 +1156,8 @@ tizen.systeminfo.addPropertyValueChangeListener("CPU", onSuccessCallback, {lowTh
 <div class="brief">
  Adds a listener to allow tracking of changes in one or more values of a system property.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">unsigned long addPropertyValueArrayChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property, 
-                                                  <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">unsigned long addPropertyValueArrayChangeListener(<a href="#SystemInfoPropertyId">SystemInfoPropertyId</a> property,
+                                                  <a href="#SystemInfoPropertyArraySuccessCallback">SystemInfoPropertyArraySuccessCallback</a> successCallback,
                                                   optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3
@@ -1206,8 +1205,7 @@ any identifier of these properties, but the listener added for them will not be 
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  An identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -1300,7 +1298,7 @@ id = tizen.systeminfo.addPropertyValueChangeListener("CPU", onSuccessCallback);
 <p class="deprecated"><b>Deprecated.</b>
  Deprecated since 2.3. Instead, use <a href="#SystemInfo::getCapability">getCapability()</a> to query device capabilities.
           </p>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface SystemInfoDeviceCapability {
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface SystemInfoDeviceCapability {
     readonly attribute boolean bluetooth;
     readonly attribute boolean nfc;
     readonly attribute boolean nfcReservedPush;
@@ -1369,7 +1367,7 @@ id = tizen.systeminfo.addPropertyValueChangeListener("CPU", onSuccessCallback);
     readonly attribute boolean secureElement;
     readonly attribute boolean nativeOspCompatible;
     readonly attribute <a href="#SystemInfoProfile">SystemInfoProfile</a> profile;
-  };</pre>
+  };</span></pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -2372,7 +2370,11 @@ Any threshold parameter used in a watch function to monitor this property applie
     readonly attribute unsigned long long capacity;
     readonly attribute unsigned long long availableCapacity;
     readonly attribute boolean isRemovable;
-  };</pre>
+<span class="nocode deprecated">    readonly attribute boolean isRemoveable;
+</span>  };</pre>
+<p><span class="version">Since: </span>
+ 1.0
+          </p>
         
       <div class="attributes">
 <h4>Attributes</h4>
@@ -3811,7 +3813,9 @@ If the specified brightness value is not supported by the device, the brightness
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -3853,7 +3857,7 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
 <li class="feature">http://tizen.org/feature/network.wifi</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SystemInfo {
@@ -3865,13 +3869,18 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
   enum SystemInfoNetworkIpMode { "NONE", "STATIC", "DYNAMIC", "AUTO", "FIXED" };
   enum SystemInfoDeviceOrientationStatus { "PORTRAIT_PRIMARY", "PORTRAIT_SECONDARY", "LANDSCAPE_PRIMARY", "LANDSCAPE_SECONDARY" };
   enum SystemInfoSimState { "ABSENT", "INITIALIZING", "READY", "PIN_REQUIRED", "PUK_REQUIRED", "NETWORK_LOCKED", "SIM_LOCKED", "UNKNOWN" };
-  enum SystemInfoProfile { "MOBILE_FULL", "MOBILE_WEB", "MOBILE", "WEARABLE", "TV" };
+  enum SystemInfoProfile { "MOBILE", "WEARABLE", "TV" };
   enum SystemInfoLowMemoryStatus { "NORMAL", "WARNING" };
   enum SystemInfoVideoSourceType { "TV", "AV", "SVIDEO", "COMP", "PC", "HDMI", "SCART", "DVI", "MEDIA" };
+  dictionary SystemInfoOptions {
+    unsigned long timeout;
+    double highThreshold;
+    double lowThreshold;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemInfoObject">SystemInfoObject</a>;
   [NoInterfaceObject] interface SystemInfoObject {
     readonly attribute <a href="#SystemInfo">SystemInfo</a> systeminfo;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemInfoObject">SystemInfoObject</a>;
   [NoInterfaceObject] interface SystemInfo {
     long long getTotalMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long long getAvailableMemory() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -3889,11 +3898,6 @@ To guarantee the running of the application on a device which supports Wi-Fi, de
                                                       optional <a href="#SystemInfoOptions">SystemInfoOptions</a>? options, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                                                       raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removePropertyValueChangeListener(unsigned long listenerId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  dictionary SystemInfoOptions {
-    unsigned long timeout;
-    double highThreshold;
-    double lowThreshold;
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface SystemInfoPropertySuccessCallback {
     void onsuccess(<a href="#SystemInfoProperty">SystemInfoProperty</a> property);

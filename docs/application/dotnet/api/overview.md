@@ -6,7 +6,7 @@ Tizen .NET provides a rich set of interfaces allowing you to build compelling TV
 - **Xamarin.Forms**, which allows you to efficiently build a user interface from standard components in C# or XAML.
 - **Tizen.Wearable.CircularUI**, which allows you to efficiently add Tizen wearable-specific user interfaces.
 - **TizenFX API**, which allows you to access platform-specific features not covered by the generic .NET and Xamarin.Forms features, such as system information and status, battery status, sensor date, and account and connectivity services.
-  For the full specification, see the [TizenFX API Reference](https://samsung.github.io/TizenFX/API5/).
+  For the full specification, see the [TizenFX API Reference](https://samsung.github.io/TizenFX/latest/).
 
 ## .NET Standard API
 
@@ -20,7 +20,7 @@ There are limitations of .NET Standard API on Tizen. For more information, see [
 
 You can efficiently build your Tizen .NET application UI and its supporting logic using the Xamarin.Forms APIs. Extended details for these APIs are available on the [Xamarin Web site](https://developer.xamarin.com/api/namespace/Xamarin.Forms/).
 
-The Tizen .NET contains a few limitations on the Xamarin.Forms APIs; these limitations are to be eliminated in future releases. The following classes are not supported:
+Tizen .NET contains a few limitations on the Xamarin.Forms APIs; these limitations are to be eliminated in future releases. The following classes are not supported:
 
 - `AppLinkEntry`
 - `OpenGLView`
@@ -43,13 +43,14 @@ The following table specifies the API Level supported by each version of the Tiz
 | ---------------- | --------- | ------------------------------------------------------------ |
 | Tizen 4.0 M2     | 4         | [TizenFX API Reference](https://samsung.github.io/TizenFX/API4/) |
 | Tizen 5.0 M2     | 5         | [TizenFX API Reference](https://samsung.github.io/TizenFX/API5/) |
+| Tizen 5.5 M2     | 6         | [TizenFX API Reference](https://samsung.github.io/TizenFX/API6/) |
 
 The following table lists the supported TizenFX API namespaces. For the full specification, see the TizenFX API Reference:
 
 | Namespace          | Description                              |
 | ------------------ | ---------------------------------------- |
 | Tizen.Account      | Provides Create, Read, Update, Delete (CRUD) account management functionality and the OAuth Core RFC 6749 protocol. |
-| Tizen.Applications | Provides the Tizen application framework, including application state change events, inter-application messaging, and notification services. |
+| Tizen.Applications | Provides the Tizen Application framework, including application state change events, inter-application messaging, and notification services. |
 | Tizen.Common       | Provides predefined color names.         |
 | Tizen.Content      | Provides content management services, such as file and media downloads, storing and indexing audio and video content, and associating content types with helper applications. |
 | Tizen.Context.AppHistory | Provides classes to retrieve the user's application usage patterns. | 

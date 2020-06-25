@@ -83,4 +83,4 @@ The core layer consists of various subsystems:
 
 - **Web**
 
-  Web provides a complete implementation of the Tizen Web API optimized for low-power devices. It includes WebKit, which is a layout engine designed to allow Web browsers to render Web pages. It also provides Web runtime for Web applications.
+  Web provides a complete implementation of Tizen Web API optimized for low-power devices. It includes WebKit, which is a layout engine designed to allow Web browsers to render Web pages. It also provides Web runtime for Web applications.

@@ -4,10 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>NetworkInformation API</title>
+<meta data-version="5.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::NetworkInformation">
- 
 <div class="title"><h1>NetworkInformation API</h1></div>
 <div class="brief">
  This plugin provides information about the device's cellular and wifi connection, and whether the device has an internet connection.
@@ -375,8 +375,7 @@ checkConnection();
 <div class="brief">
  Callback for the event when an application goes online, and the device becomes connected to the Internet.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface OnlineEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface OnlineEventCallback {
     void online();
   };</pre>
 <p><span class="version">Since: </span>
@@ -412,8 +411,7 @@ function onOnline()
 <div class="brief">
  Callback for the event when an application goes offline, and the device is not connected to the Internet.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface OfflineEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface OfflineEventCallback {
     void offline();
   };</pre>
 <p><span class="version">Since: </span>
@@ -447,7 +445,9 @@ function onOffline()
 </div>
 <h2 id="api-features">2. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="../systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -457,14 +457,14 @@ To guarantee that the NetworkInformation application runs on a device with the N
 <li class="feature">http://tizen.org/feature/network.telephony</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module NetworkInformation {
+  Navigator implements <a href="#NetworkInformationManagerObject">NetworkInformationManagerObject</a>;
   [NoInterfaceObject] interface NetworkInformationManagerObject {
     readonly attribute <a href="#NetworkInformationManager">NetworkInformationManager</a> connection;
   };
-  Navigator implements <a href="#NetworkInformationManagerObject">NetworkInformationManagerObject</a>;
   [NoInterfaceObject] interface NetworkInformationManager {
     readonly attribute DOMString type;
   };
@@ -478,12 +478,10 @@ To guarantee that the NetworkInformation application runs on a device with the N
     readonly attribute DOMString CELL;
     readonly attribute DOMString NONE;
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface OnlineEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface OnlineEventCallback {
     void online();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface OfflineEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface OfflineEventCallback {
     void offline();
   };
 };</pre>

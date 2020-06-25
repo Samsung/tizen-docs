@@ -1,6 +1,6 @@
 # Configuring Your Application
 
-The Tizen Studio provides the following set of tools to help you configure your native application projects:
+Tizen Studio provides the following set of tools to help you configure your native application projects:
 
 - [Manifest Editor](manifest-text-editor.md) **(Configuring the Application Manifest)**  
 The manifest editor tool allows you to edit the application manifest with a text or form editor. The application manifest contains the application configuration, including specific features and more general runtime settings.

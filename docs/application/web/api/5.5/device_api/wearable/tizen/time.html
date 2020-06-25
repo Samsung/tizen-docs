@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Time API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Time">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Time API</h1></div>
 <div class="brief">
   The Time API provides information regarding date/time and time zones.
@@ -35,7 +36,7 @@ This API can be used to get TZDate objects with full time zone support, convert 
 between timezones, retrieve available timezones.
         </p>
         <p>
-For more information on the Time features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/time-and-date-management">Time Guide</a>.
+For more information on the Time features, see <a href="/application/web/guides/device/time">Time Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -273,8 +274,7 @@ Get timezones using getLocalTimezone() and getAvailableTimezones().            <
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">TZDate:
-                  </span>
+<span class="return">TZDate:</span>
  The current TZDate object.
               </ul>
 </div>
@@ -305,8 +305,7 @@ console.log("current date/time is " + current_dt.toLocaleString());
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The local timezone.
               </ul>
 </div>
@@ -353,8 +352,7 @@ with the most general descriptor first and the most specific one last. For examp
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString[]:
-                  </span>
+<span class="return">DOMString[]:</span>
  Array of time zone identifiers.
               </ul>
 </div>
@@ -430,8 +428,7 @@ date format (23/10/2011) instead of a long date format ("Monday, October 23 2011
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The date format according to the system's locale settings.
               </ul>
 </div>
@@ -485,8 +482,7 @@ Examples of string formats include: "h:m:s ap", "h:m:s".
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The time format according to the system's locale settings.
               </ul>
 </div>
@@ -528,8 +524,7 @@ console.log(timeFormat);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var>, if the year is a leap year.
               </ul>
 </div>
@@ -835,6 +830,10 @@ var myDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/Berlin");
 <div class="constructors">
 <h4 id="TZDate::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date?, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">TZDate(optional Date? datetime, optional DOMString? timezone);</pre>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -848,8 +847,10 @@ var myDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/Berlin");
                   </li>
           </ul>
 </div>
-<pre class="webidl prettyprint">TZDate(optional Date? datetime, optional DOMString? timezone);</pre>
-<pre class="webidl prettyprint">TZDate(long year, long month, long day, optional long? hours, optional long? minutes, optional long? seconds, 
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (long, long, long, long?, long?, long?, long?, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">TZDate(long year, long month, long day, optional long? hours, optional long? minutes, optional long? seconds,
        optional long? milliseconds, optional DOMString? timezone);</pre>
 </dl>
 </div>
@@ -870,8 +871,7 @@ var myDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/Berlin");
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The day of the month.
               </ul>
 </div>
@@ -928,8 +928,7 @@ console.log(someDate.getDate());  /* Outputs 1. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The day of the week.
               </ul>
 </div>
@@ -959,8 +958,7 @@ For example, 1 = AD 1, 0 = BC 1, -1 = BC 2.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The year.
               </ul>
 </div>
@@ -1011,8 +1009,7 @@ console.log(someDate.getFullYear());  /* Outputs 2099. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The hour.
               </ul>
 </div>
@@ -1069,8 +1066,7 @@ console.log(someDate.getHours());  /* Outputs 15. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The milliseconds.
               </ul>
 </div>
@@ -1127,8 +1123,7 @@ console.log(someDate.getMilliseconds());  /* Outputs 42. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The minutes.
               </ul>
 </div>
@@ -1185,8 +1180,7 @@ console.log(someDate.getMinutes());  /* Outputs 58. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The month.
               </ul>
 </div>
@@ -1243,8 +1237,7 @@ console.log(someDate.getMonth());  /* Outputs 2. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The seconds.
               </ul>
 </div>
@@ -1301,8 +1294,7 @@ console.log(someDate.getSeconds());  /* Outputs 23. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The day of the month, according to universal time.
               </ul>
 </div>
@@ -1359,8 +1351,7 @@ console.log(someDate.getUTCDate());  /* Outputs 5. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The day of the week, according to universal time.
               </ul>
 </div>
@@ -1390,8 +1381,7 @@ For example, 1 = AD 1, 0 = BC 1, -1 = BC 2.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The year, according to universal time.
               </ul>
 </div>
@@ -1442,8 +1432,7 @@ console.log(someDate.getUTCFullYear());  /* Outputs 2099. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The hour, according to universal time.
               </ul>
 </div>
@@ -1500,8 +1489,7 @@ console.log(someDate.getUTCHours());  /* Outputs 15. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The milliseconds, according to universal time.
               </ul>
 </div>
@@ -1558,8 +1546,7 @@ console.log(someDate.getUTCMilliseconds());  /* Outputs 42. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The minutes, according to universal time.
               </ul>
 </div>
@@ -1616,8 +1603,7 @@ console.log(someDate.getUTCMinutes());  /* Outputs 58. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The month, according to universal time.
               </ul>
 </div>
@@ -1674,8 +1660,7 @@ console.log(someDate.getUTCMonth());  /* Outputs 2. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The seconds, according to universal time.
               </ul>
 </div>
@@ -1742,8 +1727,7 @@ This attribute uniquely identifies the timezone.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The string timezone identifier. If TZDate is invalid, it will return "Invalid Date".
               </ul>
 </div>
@@ -1780,8 +1764,7 @@ console.log(someDate.getTimezone());
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">TZDate:
-                  </span>
+<span class="return">TZDate:</span>
  The new TZDate in given Timezone.
               </ul>
 </div>
@@ -1827,8 +1810,7 @@ console.log(someDate.toString());
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">TZDate:
-                  </span>
+<span class="return">TZDate:</span>
  The new TZDate in local Timezone.
               </ul>
 </div>
@@ -1866,8 +1848,7 @@ console.log(localDate.toString());
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">TZDate:
-                  </span>
+<span class="return">TZDate:</span>
  The Date/Time in UTC.
               </ul>
 </div>
@@ -1931,8 +1912,7 @@ Positive, if other is in the past              </li>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">TimeDuration:
-                  </span>
+<span class="return">TimeDuration:</span>
  The duration in milliseconds between the two date/time objects
 (or in days for comparison between dates with no time component).
               </ul>
@@ -2008,8 +1988,7 @@ the two TZDate objects represent the same instant in different timezones.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if the 2 date/times are the same.
               </ul>
 </div>
@@ -2089,8 +2068,7 @@ This method takes the timezones into consideration.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var>, if the Date/Time is earlier than the one passed in argument.
               </ul>
 </div>
@@ -2150,8 +2128,7 @@ This method takes the timezones into consideration.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var>, if the Date/Time is later than the one passed in argument.
               </ul>
 </div>
@@ -2215,8 +2192,7 @@ Note that calling this method does not alter the current object.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">TZDate:
-                  </span>
+<span class="return">TZDate:</span>
  The new TZDate by adding a duration.
               </ul>
 </div>
@@ -2253,8 +2229,7 @@ var in_one_week = now.addDuration(new tizen.TimeDuration(7, "DAYS"));
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The date portion of the TZDate object as a string, using locale conventions. If TZDate is invalid, it will return "Invalid Date".
               </ul>
 </div>
@@ -2282,8 +2257,7 @@ console.log(someDate.toLocaleDateString());
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The time portion of the TZDate object as a string, using locale conventions. If TZDate is invalid, it will return "Invalid Date".
               </ul>
 </div>
@@ -2311,8 +2285,7 @@ console.log(someDate.toLocaleTimeString());
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The string representation of the TZDate object, using locale conventions. If TZDate is invalid, it will return "Invalid Date".
               </ul>
 </div>
@@ -2340,8 +2313,7 @@ console.log(someDate.toLocaleString());
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The date portion of the TZDate object as a string. If TZDate is invalid, it will return "Invalid Date".
               </ul>
 </div>
@@ -2367,8 +2339,7 @@ console.log(someDate.toDateString());
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The time portion of the TZDate object as a string. If TZDate is invalid, it will return "Invalid Date".
               </ul>
 </div>
@@ -2394,8 +2365,7 @@ console.log(someDate.toTimeString());
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The string representation of the TZDate object. If TZDate is invalid, it will return "Invalid Date".
               </ul>
 </div>
@@ -2404,53 +2374,6 @@ console.log(someDate.toTimeString());
 
 /* Output: "Friday, December 31, 1999, 11:59:59 PM GMT+0000 United Kingdom Time". */
 console.log(someDate.toString());
-</pre>
-</div>
-</dd>
-<dt class="deprecated method" id="TZDate::getTimezoneAbbreviation">
-<a class="backward-compatibility-anchor" name="::Time::TZDate::getTimezoneAbbreviation"></a><code><b><span class="methodName">getTimezoneAbbreviation</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Determines the time zone abbreviation to be used at a particular date in the time zone.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 2.1.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">DOMString getTimezoneAbbreviation();</pre></div>
-<p><span class="version">Since: </span>
- 1.0
-            </p>
-<div class="description">
-            <p>
-For example, in Toronto this is currently "EST" during the winter months and "EDT" during the
-summer months when daylight savings time is in effect.
-            </p>
-           </div>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">DOMString:
-                  </span>
- DOMString The abbreviation of the time zone (such as "EST") <br>If TZDate is invalid, it will return 'Invalid Date'.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if the call failed due to an unknown error.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* The following code uses DEPRECATED methods. */
-/* please do not use this in new applications. */
-var abbreviation = tizen.time.getCurrentDateTime().getTimezoneAbbreviation();
-console.log("The time zone abbreviation is: " + abbreviation);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>The time zone abbreviation is: GMT+09:00
 </pre>
 </div>
 </dd>
@@ -2474,8 +2397,7 @@ savings if it is in the timezone. For example, if time zone is GMT+8, it will re
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The offset from UTC in seconds.
               </ul>
 </div>
@@ -2514,8 +2436,7 @@ identified by the TZDate object.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  The flag indicating whether the daylight saving are in effect.
               </ul>
 </div>
@@ -2549,8 +2470,7 @@ var isDstActiveInWinter = wintertime.isDST();  /* false. */
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">TZDate:
-                  </span>
+<span class="return">TZDate<span class="optional"> [nullable]</span>:</span>
  The date of the previous daylight saving transition (before the instant identified by the TZDate).
               </ul>
 </div>
@@ -2587,8 +2507,7 @@ console.log(previousDstTransition.toString());
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">TZDate:
-                  </span>
+<span class="return">TZDate<span class="optional"> [nullable]</span>:</span>
  The date of the next daylight saving transition (after the instant identified by the TZDate).
               </ul>
 </div>
@@ -2634,10 +2553,16 @@ console.log(nextDstTransition.toString());
 <div class="constructors">
 <h4 id="TimeDuration::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (long long, <a href="#TimeDurationUnit">TimeDurationUnit</a>?)</span></b></code>
+</dt>
 <div class="brief">
  The TimeDuration interface that contains the length and its associated time unit.
               </div>
 <pre class="webidl prettyprint">TimeDuration(long long length, optional <a href="#TimeDurationUnit">TimeDurationUnit</a>? unit);</pre>
+<p><span class="version">Since: </span>
+ 1.0
+              </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var now = tizen.time.getCurrentDateTime();
 var tomorrow = now.addDuration(new tizen.TimeDuration(1, "DAYS"));  /* Becomes tomorrow, same time. */
@@ -2722,8 +2647,7 @@ The returned TimeDuration is the biggest possible unit without losing the precis
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">TimeDuration:
-                  </span>
+<span class="return">TimeDuration:</span>
  New TimeDuration object corresponding to the result of <em>this</em> - <em>other</em>.
               </ul>
 </div>
@@ -2782,8 +2706,7 @@ if the two TimeDuration objects represent the same duration in different units.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if the two TimeDuration object represent the same duration.
               </ul>
 </div>
@@ -2835,8 +2758,7 @@ This method takes the units into consideration when doing the comparison.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if the TimeDuration is less than <em>other</em>.
               </ul>
 </div>
@@ -2887,8 +2809,7 @@ This method takes the units into consideration when doing the comparison.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if the TimeDuration is greater than <em>other</em>.
               </ul>
 </div>
@@ -2919,10 +2840,10 @@ var ret = d1.greaterThan(d2);                  /* Returns true. */
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Time {
   enum TimeDurationUnit { "MSECS", "SECS", "MINS", "HOURS", "DAYS" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TimeManagerObject">TimeManagerObject</a>;
   [NoInterfaceObject] interface TimeManagerObject {
     readonly attribute <a href="#TimeUtil">TimeUtil</a> time;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TimeManagerObject">TimeManagerObject</a>;
   [NoInterfaceObject] interface TimeUtil {
     <a href="#TZDate">TZDate</a> getCurrentDateTime() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString getLocalTimezone() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Bluetooth API</title>
+<meta data-version="5.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Bluetooth">
- <div class="supported-platforms"><img class="wearable-optional" title="Optional, Not supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="wearable-optional" title="Optional, Not supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
 <div class="title"><h1>Bluetooth API</h1></div>
 <div class="brief">
  The Bluetooth API defines interfaces and methods to manage Bluetooth.
@@ -37,7 +38,7 @@ Advertise for remote devices (including Bluetooth LE devices)          </li>
 Act as a GATT client (Generic Attribute Profile client)          </li>
         </ul>
         <p>
-For more information on the Bluetooth features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/bluetooth">Bluetooth Guide</a>.
+For more information on the Bluetooth features, see <a href="/application/web/guides/connectivity/bluetooth">Bluetooth Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -565,6 +566,9 @@ The <em>tizen.bluetooth</em> object allows access to the Bluetooth API.
 <div class="constructors">
 <h4 id="BluetoothLEServiceData::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">BluetoothLEServiceData(DOMString uuid, DOMString data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
@@ -623,6 +627,9 @@ service.data = "0x1815";
 <div class="constructors">
 <h4 id="BluetoothLEManufacturerData::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">BluetoothLEManufacturerData(DOMString id, DOMString data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a manufacturerData. */
@@ -752,7 +759,12 @@ var advertise = new tizen.BluetoothLEAdvertiseData(advertData);
 </div>
 <div class="constructors">
 <h4 id="BluetoothLEAdvertiseData::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">BluetoothLEAdvertiseData(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">BluetoothLEAdvertiseData(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -805,7 +817,7 @@ advertise.solicitationuuids = ["180f"];
             </div>
 <div class="description">
             <p>
-See the <a href="https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.gap.appearance.xml">list of appearance codes</a> for sample values.
+See the <a href="https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Characteristics/org.bluetooth.characteristic.gap.appearance.xml">list of appearance codes</a> for sample values.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -941,15 +953,10 @@ advertise.manufacturerData = manufacture;
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.gap</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothAdapter:
-                  </span>
+<span class="return">BluetoothAdapter:</span>
  The local <em>BluetoothAdapter </em>object.
               </ul>
 </div>
@@ -994,18 +1001,13 @@ catch (err)
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <p><span class="remark">Remark: </span>
  To check if this method is supported or not, use <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability</a>("http://tizen.org/feature/network.bluetooth.le").
             </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothLEAdapter:
-                  </span>
+<span class="return">BluetoothLEAdapter:</span>
  The local <em>BluetoothLEAdapter </em>object.
               </ul>
 </div>
@@ -1199,10 +1201,6 @@ The ErrorCallback is launched with these error types:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <p><span class="remark">Remark: </span>
  To check if this method is supported or not, use <var>tizen.systeminfo.getCapability("http://tizen.org/feature/network.bluetooth")</var>            </p>
@@ -1416,10 +1414,6 @@ The ErrorCallback is launched with these error types:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.gap</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1564,10 +1558,6 @@ The ErrorCallback is launched with these error types:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.gap</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -1742,10 +1732,6 @@ The ErrorCallback is launched with these error types:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.gap</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1876,10 +1862,6 @@ The ErrorCallback is launched with these error types:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.gap</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -1961,10 +1943,6 @@ The ErrorCallback is launched with these error types:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.gap</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -2045,10 +2023,6 @@ The ErrorCallback is launched with these error types:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.gap</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -2114,7 +2088,7 @@ adapter.getDevice(deviceAddress, gotDevice, function(e)
 <div class="brief">
  Registers a service record in the device service record database with the specified <em>uuid</em>, <em>name</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback,
                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -2148,10 +2122,6 @@ The ErrorCallback is launched with these error types:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.spp</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -2271,8 +2241,7 @@ function unregisterChatService()
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothProfileHandler:
-                  </span>
+<span class="return">BluetoothProfileHandler:</span>
  Represents the Bluetooth profile handle.
               </ul>
 </div>
@@ -2370,10 +2339,6 @@ The <em>ErrorCallback</em> will be launched in the following situations:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -2428,10 +2393,6 @@ adapter.startScan(function onsuccess(device)
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -2464,8 +2425,8 @@ adapter.startScan(function onsuccess(device)
 <div class="brief">
  Starts advertising for Low Energy Devices.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void startAdvertise(<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType, 
-                    <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void startAdvertise(<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType,
+                    <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>? mode, optional boolean? connectable);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -2489,10 +2450,6 @@ The <em>ErrorCallback</em> will be launched in the following situations:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -2587,10 +2544,6 @@ adapter.startAdvertise(advertiseData, "ADVERTISE",
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
@@ -2856,10 +2809,6 @@ The ErrorCallback is launched with these error types:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -2949,10 +2898,6 @@ The ErrorCallback is launched with these error types:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3045,10 +2990,6 @@ adapter.startScan(function onsuccess(device)
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -3061,8 +3002,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watchID to be used to unregister the listener.
               </ul>
 </div>
@@ -3182,10 +3122,6 @@ The ErrorCallback is launched with these error types:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -3276,10 +3212,6 @@ The ErrorCallback is launched with these error types:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3716,7 +3648,7 @@ adapter.getDevice("11:22:33:44:55:66", function(device)
 <div class="brief">
  Connects to a specified service identified by <em>uuid</em> on this remote device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -3742,10 +3674,6 @@ The ErrorCallback is launched with these error types:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.spp</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -4182,10 +4110,6 @@ The ErrorCallback is launched with these error types:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -4259,10 +4183,6 @@ The ErrorCallback is launched with these error types:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -4340,10 +4260,6 @@ adapter.startScan(onDeviceFound, onerror);
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.admin</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -4356,8 +4272,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothGATTService:
-                  </span>
+<span class="return">BluetoothGATTService:</span>
  Retrieved service for the given UUID.
               </ul>
 </div>
@@ -4426,8 +4341,7 @@ adapter.startScan(onDeviceFound, onerror);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothUUID[]:
-                  </span>
+<span class="return">BluetoothUUID[]:</span>
  The array of all service UUIDs that belong to the connected GATT server.
               </ul>
 </div>
@@ -4503,8 +4417,7 @@ Services length 2
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watchID to be used to unregister the listener.
               </ul>
 </div>
@@ -4718,10 +4631,6 @@ By default, this attribute is set to null.
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.spp</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -4734,8 +4643,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  The number of bytes actually sent.
               </ul>
 </div>
@@ -4877,15 +4785,10 @@ This method should be called only in the <em>BluetoothSocket.onmessage</em> hand
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.spp</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:
-                  </span>
+<span class="return">byte[]:</span>
  The sequence of bytes successfully read.
               </ul>
 </div>
@@ -5019,10 +4922,6 @@ else
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.spp</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -5126,7 +5025,7 @@ else
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothClass {
     readonly attribute octet major;
     readonly attribute octet minor;
-    readonly attribute unsigned short [] services;
+    readonly attribute unsigned short[] services;
     boolean hasService(unsigned short service) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -5244,10 +5143,6 @@ values.
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.gap</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -5260,8 +5155,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var>, if given service exists in the <em>services</em>.
               </ul>
 </div>
@@ -5553,10 +5447,6 @@ The ErrorCallback is launched with these error types:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.spp</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -5708,7 +5598,7 @@ The BluetoothHealthProfileHandler object is created by <em>BluetoothAdapter.getB
 <div class="brief">
  Registers an application for the Sink role.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback,
                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5729,10 +5619,6 @@ The ErrorCallback is launched with these error types:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.health</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -5794,7 +5680,7 @@ healthProfileHandler.registerSinkApplication(
 <div class="brief">
  Connects to the health device which acts as the Source role.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application, 
+<div class="synopsis"><pre class="signature prettyprint">void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application,
                      <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5817,10 +5703,6 @@ The ErrorCallback is launched with these error types:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.health</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -6016,10 +5898,6 @@ The ErrorCallback is launched with these error types:
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.health</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -6212,10 +6090,6 @@ healthProfileHandler.registerSinkApplication(
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.health</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul>
@@ -6272,10 +6146,6 @@ healthProfileHandler.registerSinkApplication(
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.health</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
-            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -6288,8 +6158,7 @@ Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  Number of bytes actually sent.
               </ul>
 </div>
@@ -6359,10 +6228,6 @@ healthProfileHandler.registerSinkApplication(
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.health</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -6445,10 +6310,6 @@ Calling this function has no effect if listener is not set.
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
-            </p>
-<p class="warning"><b>Warning:</b>
- <em>http://tizen.org/privilege/bluetooth.health</em> <em>(public level)</em> has been deprecated since 3.0.
-Instead, use <em>http://tizen.org/privilege/bluetooth</em>.
             </p>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
@@ -6992,7 +6853,9 @@ After that, this device is no longer visible.
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -7018,23 +6881,32 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
 <li class="feature">http://tizen.org/feature/network.bluetooth.le</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Bluetooth {
   typedef DOMString BluetoothAddress;
   typedef DOMString BluetoothUUID;
+  typedef DOMString BluetoothLESolicitationUUID;
   enum BluetoothSocketState { "CLOSED", "OPEN" };
   enum BluetoothProfileType { "HEALTH" };
   enum BluetoothHealthChannelType { "RELIABLE", "STREAMING" };
-  typedef DOMString BluetoothLESolicitationUUID;
   enum BluetoothAdvertisePacketType { "ADVERTISE", "SCAN_RESPONSE" };
   enum BluetoothAdvertisingState { "STARTED", "STOPPED" };
   enum BluetoothAdvertisingMode { "BALANCED", "LOW_LATENCY", "LOW_ENERGY" };
+  dictionary BluetoothLEAdvertiseDataInit {
+    boolean? includeName;
+    <a href="#BluetoothUUID">BluetoothUUID</a>[]? uuids;
+    <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
+    unsigned long? appearance;
+    boolean? includeTxPowerLevel;
+    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
+    <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BluetoothManagerObject">BluetoothManagerObject</a>;
   [NoInterfaceObject] interface BluetoothManagerObject {
     readonly attribute <a href="#BluetoothManager">BluetoothManager</a> bluetooth;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BluetoothManagerObject">BluetoothManagerObject</a>;
   [Constructor(DOMString uuid, DOMString data)]
   interface BluetoothLEServiceData {
     attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
@@ -7044,15 +6916,6 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   interface BluetoothLEManufacturerData {
     attribute DOMString id;
     attribute DOMString data;
-  };
-  dictionary BluetoothLEAdvertiseDataInit {
-    boolean? includeName;
-    <a href="#BluetoothUUID">BluetoothUUID</a>[]? uuids;
-    <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
-    unsigned long? appearance;
-    boolean? includeTxPowerLevel;
-    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
-    <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
   };
   [Constructor(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init)]
   interface BluetoothLEAdvertiseData {
@@ -7183,7 +7046,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   [NoInterfaceObject] interface BluetoothClass {
     readonly attribute octet major;
     readonly attribute octet minor;
-    readonly attribute unsigned short [] services;
+    readonly attribute unsigned short[] services;
     boolean hasService(unsigned short service) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothClassDeviceMajor {

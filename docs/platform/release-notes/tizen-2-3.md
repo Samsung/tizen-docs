@@ -1,6 +1,6 @@
 # Tizen 2.3
 
-Release Date: 09 Feb, 2015
+Release date: Feb. 09, 2015
 
 The Tizen 2.3 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
 
@@ -235,9 +235,9 @@ The following Mobile Web Device APIs have been added in this release to allow a 
     - Note that the Dynamic Box Viewer is only supported on the reference target device, not on the Emulator.
 - Web UI Framework (TAU)
   - The navigation bar winset has been added.
-    - The navigation bar with a history can be used through the <nav data-role=”navigation”> element.
+    - The navigation bar with a history can be used through the `<nav data-role=”navigation”>` element.
   - The select menu winset has been added.
-    - The select menu with the tizen theme can be used through the <select name="select-custom-1" data-native-menu="false"> element.
+    - The select menu with the tizen theme can be used through the `<select name="select-custom-1" data-native-menu="false">` element.
 
 **Changed Features**
 
@@ -533,7 +533,7 @@ The wearable profile provides a complete implementation of the Web API optimized
 
   - Human Activity Monitor API (tizen.humanactivitymonitor)
 
-    - #### Provides support for pedometers, heart rate monitors (HRMs), and GPS tracking features to determine the device’s geographical location and changes, such as velocity changes. It also supports the detection of “wrist-up” motions. For example, if a smartwatch user rotates their wrist to look at their watch screen, the application can detect this and present content on the screen.
+    - Provides support for pedometers, heart rate monitors (HRMs), and GPS tracking features to determine the device’s geographical location and changes, such as velocity changes. It also supports the detection of “wrist-up” motions. For example, if a smartwatch user rotates their wrist to look at their watch screen, the application can detect this and present content on the screen.
 
     - Only HRMs are supported on the Tizen 2.3 mobile and wearable Emulator.
 
@@ -571,15 +571,15 @@ The wearable profile provides a complete implementation of the Web API optimized
 
   - 3 new application types have been added to the 2.3 wearable profile (WebIME, ClockWidget, and Web Service Application):
     - The following configuration elements have been added to support the Web IME application:
-      - <tizen:ime>, <tizen:uuid>, <tizen:languages>, and <tizen:language>
+      - `<tizen:ime>`, `<tizen:uuid>`, `<tizen:languages>`, and `<tizen:language>`
     - Web service application type is provided to support background running without the UI. The following configuration element has been added to support the Web service application:
-      - <tizen:service>
+      - `<tizen:service>`
     - The ClockWidget application type is provided to customize the Home screen. The following configuration element has been added to support the ClockWidget application:
-      - <tizen:category name="[http://tizen.org/category/wearable_clock](http://tizen.org/category/wearable_clock)" />
+      - `<tizen:category name="http://tizen.org/category/wearable_clock" />`
   - The Web Dynamic Box has been added to provide content on the Home screen:
     - The following configuration elements have been added to support Web Dynamic Box:
-      - <tizen:app-widget>
-  - The <tizen:category> element has been added to define the categories to which an application belongs.
+      - `<tizen:app-widget>`
+  - The `<tizen:category>` element has been added to define the categories to which an application belongs.
   - The application ID constraint has been added to the Web application packages (widgets):
     - Once the application has been published, the ID cannot be changed.
 
@@ -743,8 +743,7 @@ The wearable profile provides a complete implementation of the Web API optimized
   - On Windows, depending on your OS theme (such as non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is obscured by another window. If you click the Emulator window, the display surface works correctly again.
   - The Emulator skin cannot be drawn properly on Ubuntu, if the graphics driver is not installed or an old version is installed. To fix this issue, upgrade the graphics driver.
   - When the disk storage is full, various incorrect operations can occur.
-  - To use the Tizen Emulator, you need, for example, an Intel VTx supported by the CPU, and the latest vendor-provided version of the graphic card driver. Check the prerequisites for the Tizen Emulator from:
-    - [https://developer.tizen.org](https://developer.tizen.org)
+  - To use the Tizen Emulator, you need, for example, an Intel VTx supported by the CPU, and the latest vendor-provided version of the graphic card driver. 
     - On Ubuntu, if the host machine is using Nvidia Optimus technology, you can set the Tizen Emulator to run with your Nvidia graphics card through the bumblebee project: [https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)
   - The browser for the map of the location tab does not support HTTPS/SSL certificate on Ubuntu.
   - Sound control does not work properly in wearable settings application.

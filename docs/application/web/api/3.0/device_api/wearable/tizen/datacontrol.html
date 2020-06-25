@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>DataControl API</title>
+<meta data-version="3.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::DataControl">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>DataControl API</h1></div>
 <div class="brief">
  This specification defines a Data Control API for applications.
@@ -17,7 +18,7 @@
 The Data Control functionality provides a way to access specific data that is exported by other applications.
         </p>
         <p>
-Please read the <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-data-exchange/data-control">Data Control guide</a> to know how to share own application data with other applications.
+Please read the <a href="/application/web/guides/app-management/data-control">Data Control guide</a> to know how to share own application data with other applications.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -227,8 +228,7 @@ Data Control API.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DataControlConsumerObject:
-                  </span>
+<span class="return">DataControlConsumerObject:</span>
  The local <em>DataControlConsumerObject</em>.
               </ul>
 </div>
@@ -358,7 +358,7 @@ The string consists of one or more components, separated by a slash("/").
 <div class="brief">
  Inserts new rows into a table owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void insert(unsigned long reqId, <a href="#RowData">RowData</a> insertionData, optional <a href="#DataControlInsertSuccessCallback">DataControlInsertSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void insert(unsigned long reqId, <a href="#RowData">RowData</a> insertionData, optional <a href="#DataControlInsertSuccessCallback">DataControlInsertSuccessCallback</a>? successCallback,
             optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
@@ -443,7 +443,7 @@ catch (err)
 <div class="brief">
  Updates values of a table owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void update(unsigned long reqId, <a href="#RowData">RowData</a> updateData, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void update(unsigned long reqId, <a href="#RowData">RowData</a> updateData, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
             optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
@@ -532,7 +532,7 @@ catch (err)
 <div class="brief">
  Delete rows from a table that is owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void remove(unsigned long reqId, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void remove(unsigned long reqId, DOMString where, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
             optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
@@ -615,8 +615,8 @@ catch (err)
 <div class="brief">
  Selects the specified columns to be queried. The result set of the specified columns is retrieved from a table owned by an SQL-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void select(unsigned long reqId, DOMString[] columns, DOMString where, <a href="#DataControlSelectSuccessCallback">DataControlSelectSuccessCallback</a> successCallback, 
-            optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback, optional unsigned long? page, 
+<div class="synopsis"><pre class="signature prettyprint">void select(unsigned long reqId, DOMString[] columns, DOMString where, <a href="#DataControlSelectSuccessCallback">DataControlSelectSuccessCallback</a> successCallback,
+            optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback, optional unsigned long? page,
             optional unsigned long? maxNumberPerPage, optional DOMString? order);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
@@ -767,7 +767,7 @@ catch (err)
 <div class="brief">
  Adds the value associated with the specified key to a key-values map owned by a MAP-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void addValue(unsigned long reqId, DOMString key, DOMString value, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void addValue(unsigned long reqId, DOMString key, DOMString value, optional <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a>? successCallback,
               optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
@@ -854,7 +854,7 @@ catch (err)
 <div class="brief">
  Removes the value associated with the specified key from a key-values map owned by a MAP-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void removeValue(unsigned long reqId, DOMString key, DOMString value, <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void removeValue(unsigned long reqId, DOMString key, DOMString value, <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback,
                  optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
@@ -944,7 +944,7 @@ catch (err)
 <div class="brief">
  Gets the value associated with the specified key, from a key-values map owned by a MAP-type data control provider.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void getValue(unsigned long reqId, DOMString key, <a href="#DataControlGetValueSuccessCallback">DataControlGetValueSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void getValue(unsigned long reqId, DOMString key, <a href="#DataControlGetValueSuccessCallback">DataControlGetValueSuccessCallback</a> successCallback,
               optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
@@ -1030,7 +1030,7 @@ catch (err)
 <div class="brief">
  Sets the value associated with the specified key to a new value.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void updateValue(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue, 
+<div class="synopsis"><pre class="signature prettyprint">void updateValue(unsigned long reqId, DOMString key, DOMString oldValue, DOMString newValue,
                  <a href="#DataControlSuccessCallback">DataControlSuccessCallback</a> successCallback, optional <a href="#DataControlErrorCallback">DataControlErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.2
@@ -1366,10 +1366,14 @@ catch (err)
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module DataControl {
   enum DataType { "MAP", "SQL" };
+  dictionary RowData {
+    DOMString[] columns;
+    DOMString[] values;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataControlManagerObject">DataControlManagerObject</a>;
   [NoInterfaceObject] interface DataControlManagerObject {
     readonly attribute <a href="#DataControlManager">DataControlManager</a> datacontrol;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataControlManagerObject">DataControlManagerObject</a>;
   [NoInterfaceObject] interface DataControlManager {
     <a href="#DataControlConsumerObject">DataControlConsumerObject</a> getDataControlConsumer(DOMString providerId, DOMString dataId, <a href="#DataType">DataType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
@@ -1414,10 +1418,6 @@ catch (err)
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface DataControlGetValueSuccessCallback {
     void onsuccess(DOMString[] values, unsigned long reqid);
-  };
-  dictionary RowData {
-    DOMString[] columns;
-    DOMString[] values;
   };
 };</pre>
 </div>

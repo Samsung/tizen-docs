@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Console API</title>
+<meta data-version="3.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Console">
- <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="../mobile_s_w.png"></div>
 <div class="title"><h1>Console API</h1></div>
 <div class="brief">
  the Console module provides function to access the console.
@@ -496,10 +497,10 @@ console.timeEnd("Big array initialization");
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Console {
+  Window implements <a href="#ConsoleManagerObject">ConsoleManagerObject</a>;
   [NoInterfaceObject] interface ConsoleManagerObject {
     readonly attribute <a href="#ConsoleManager">ConsoleManager</a> console;
   };
-  Window implements <a href="#ConsoleManagerObject">ConsoleManagerObject</a>;
   [NoInterfaceObject] interface ConsoleManager {
     void log(DOMString text);
     void error(DOMString text);

@@ -12,7 +12,7 @@ To create a 'Hello World' application with Dali:
    1. In the Tizen Studio menu, go to **File > New > Tizen Project**.
    2. In the Project Wizard, select **Template > Mobile or Wearable > Native Application > Basic UI with DALi**.
    3. Click **Finish**, and your project is created at the default location. If you want to change the location, uncheck **Use default location** and set a new location. For more information, see [Creating the Application Project](../../../tutorials/process/app-dev-process.md#creating).![Create a DALi project](./media/tizen_project_dali.png)
-   4. The new project is shown in the **Project Explorer** view of the Tizen Studio. If you open the `src/basicuiwithdali.cpp` file, you can see the source code of the basic DALi application:
+   4. The new project is shown in the **Project Explorer** view of Tizen Studio. If you open the `src/basicuiwithdali.cpp` file, you can see the source code of the basic DALi application:
 
     ```
     #include <dali-toolkit/dali-toolkit.h>
@@ -118,7 +118,7 @@ To create a 'Hello World' application with Dali:
 
    - Several signals can be connected to keep you informed when certain platform-related activities occur, and ensure that, upon system events, DALi is called in a thread-safe manner.
 
-     To manage signal connection safely, DALi provides the `Dali::ConnectionTracker` class (in [mobile](../../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). A typical way for starting a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals (for more information, see [Automatic Connection Management](event-handling.md#automatic)). The `HelloWorldExample` class is used in other code samples in the Tizen DALi documentation.
+     To manage signal connection safely, DALi provides the `Dali::ConnectionTracker` class (in [mobile](../../../api/mobile/latest/classDali_1_1ConnectionTracker.html) and [wearable](../../../api/wearable/latest/classDali_1_1ConnectionTracker.html) applications). A typical way for starting a DALi application is to create a class derived from the `Dali::ConnectionTracker` class and use its member functions as callback functions for DALi signals (for more information, see [Automatic Connection Management](event-handling.md#automatic-connection-management)). The `HelloWorldExample` class is used in other code samples in the Tizen DALi documentation.
 
      After getting the initialized signal from the `Dali::Application` instance, you can use the DALi APIs for building the scene graph. Connect the `HelloWorldExample::Create()` callback to the `DALi::Application::InitSignal()` function:
 
@@ -171,17 +171,17 @@ To create a 'Hello World' application with Dali:
 
 6. Build the DALi application:
 
-   To build your application, select **Project > Build Project** or press **F10** in the Tizen Studio.
+   To build your application, select **Project > Build Project** or press **F10** in Tizen Studio.
 
-   The Tizen Studio automatically packages the project after building. Note that you need to register your certificate when building for the first time. For more information, see [Working with the Certificate Profile](../../../../tizen-studio/common-tools/certificate-registration.md) and [Building Applications](../../../tutorials/process/building-app.md).
+   Tizen Studio automatically packages the project after building. Note that you need to register your certificate when building for the first time. For more information, see [Working with the Certificate Profile](../../../../tizen-studio/common-tools/certificate-registration.md) and [Building Applications](../../../tutorials/process/building-app.md).
 
 7. Run the DALi application:
 
-   To run your application, select **Run > Run** or press **Ctrl + F11** in the Tizen Studio.
+   To run your application, select **Run > Run** or press **Ctrl + F11** in Tizen Studio.
 
    For more information, see [Running Applications](../../../tutorials/process/running-app.md).
 
-The following figure illustrates the basic DALi application running on a Tizen emulator.
+The following figure illustrates the basic DALi application running on a Tizen Emulator.
 
 **Figure: Basic DALi application**
 

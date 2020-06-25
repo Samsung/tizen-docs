@@ -100,10 +100,31 @@ for TD:
 			</td>
 		</tr>
 		<tr>
+			<td><img alt="" height="180" src="media/w78level.png" width="180"/></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Level" target="_blank"><strong>(W) Level</strong></a></p>
+			<p>This sample application demonstrates how to obtain the accelerometer sensor data and level objects using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.Accelerometer.html" target="_blank">Tizen.Sensor.Accelerometer</a>.</p>
+			</td>
+		</tr>
+		<tr>
 			<td><img alt="" height="180" src="media/metaldetector.png" width="180"/></td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/MetalDetector" target="_blank"><strong>(W) MetalDetector</strong></a></p>
 			<p>This sample application demonstrates how to obtain the magnetometer sensor data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.html" target="_blank">Tizen.Sensor</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w79pedometer.png" width="180"/></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Pedometer" target="_blank"><strong>(W) Pedometer</strong></a></p>
+			<p>This sample application demonstrates how to obtain the pedometer sensor data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.Pedometer.html" target="_blank">Tizen.Sensor.Pedometer</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td><img alt="" height="180" src="media/w80squatcounter.png" width="180"/></td>
+			<td>
+			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SquatCounter" target="_blank"><strong>(W) SquatCounter</strong></a></p>
+			<p>This sample application demonstrates how to obtain the pressure sensor data using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.PressureSensor.html" target="_blank">Tizen.Sensor.PressureSensor</a>.</p>
 			</td>
 		</tr>
 		<tr>

@@ -114,7 +114,7 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature List</b>.</a>a&gt;</p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature List</b>.</a>a&gt;</p>
 <p>Tizen OAuth 2.0 Authorization Framework. Refer to <a href="http://tools.ietf.org/html/rfc6749">rfc6749</a> about OAuth 2.0. Also service provider document needs to be referred for using end points and additional parameters. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -238,7 +238,7 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct oauth2_manager_s *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga7c2d31a09b300b6f4e2b74e9482cb1ca">oauth2_manager_h</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type for OAuth 2.0 Manager handle.  <a href="#ga7c2d31a09b300b6f4e2b74e9482cb1ca"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga213ea0e0f5073c73523733b188ea7d06">oauth2_token_cb</a> )(<a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga93c376f47962587a1a3c6af9b1d015f0">oauth2_response_h</a> response, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the <a class="el" href="group__CAPI__OAUTH2__MODULE.html#gad2bf3034747fc565370c6958e2b8d654" title="Request OAuth 2.0 access token.">oauth2_manager_request_token()</a> resopnse comes.  <a href="#ga213ea0e0f5073c73523733b188ea7d06"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when the <a class="el" href="group__CAPI__OAUTH2__MODULE.html#gad2bf3034747fc565370c6958e2b8d654" title="Request OAuth 2.0 access token.">oauth2_manager_request_token()</a> response comes.  <a href="#ga213ea0e0f5073c73523733b188ea7d06"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga057d3f107cf57451081ac5ca03c1ae2d">oauth2_auth_grant_cb</a> )(<a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga93c376f47962587a1a3c6af9b1d015f0">oauth2_response_h</a> response, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Called when <a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga39d29a5dfedbd632e53b595b6ef803da" title="Request authorization grant.">oauth2_manager_request_authorization_grant()</a> response comes.  <a href="#ga057d3f107cf57451081ac5ca03c1ae2d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga245bd547f8ad58b03d0507a905ee0b22">oauth2_access_token_cb</a> )(<a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga93c376f47962587a1a3c6af9b1d015f0">oauth2_response_h</a> response, void *user_data)</td></tr>
@@ -401,7 +401,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Called when the <a class="el" href="group__CAPI__OAUTH2__MODULE.html#gad2bf3034747fc565370c6958e2b8d654" title="Request OAuth 2.0 access token.">oauth2_manager_request_token()</a> resopnse comes. </p>
+<p>Called when the <a class="el" href="group__CAPI__OAUTH2__MODULE.html#gad2bf3034747fc565370c6958e2b8d654" title="Request OAuth 2.0 access token.">oauth2_manager_request_token()</a> response comes. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>response</em> must be released using <a class="el" href="group__CAPI__OAUTH2__MODULE.html#gaed768ea81b123fa7aa0e846789ab6ea5" title="Destroys the received handle.">oauth2_response_destroy()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -1223,7 +1223,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Request OAuth 2.0 access token. </p>
-<p>The response is delivered via <a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga213ea0e0f5073c73523733b188ea7d06" title="Called when the oauth2_manager_request_token() resopnse comes.">oauth2_token_cb()</a>. </p>
+<p>The response is delivered via <a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga213ea0e0f5073c73523733b188ea7d06" title="Called when the oauth2_manager_request_token() response comes.">oauth2_token_cb()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
 <dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/internet </dd></dl>
@@ -1252,7 +1252,7 @@ Typedefs</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga213ea0e0f5073c73523733b188ea7d06" title="Called when the oauth2_manager_request_token() resopnse comes.">oauth2_token_cb()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga213ea0e0f5073c73523733b188ea7d06" title="Called when the oauth2_manager_request_token() response comes.">oauth2_token_cb()</a> </dd>
 <dd>
 <a class="el" href="group__CAPI__OAUTH2__MODULE.html#ga105106cc8b9e11ba9bab9eab7a29a237" title="Creates oauth2_manager_h handle.">oauth2_manager_create()</a> </dd>
 <dd>
@@ -1371,7 +1371,7 @@ Typedefs</h2></td></tr>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The oauth2_request handle to destory</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The oauth2_request handle to destroy</td></tr>
   </table>
   </dd>
 </dl>
@@ -1916,7 +1916,7 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">handle</td><td>The request handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">response_type</td><td>The respose type</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">response_type</td><td>The response type</td></tr>
   </table>
   </dd>
 </dl>

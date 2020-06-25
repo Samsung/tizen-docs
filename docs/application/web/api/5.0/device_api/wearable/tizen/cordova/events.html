@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Events API</title>
+<meta data-version="5.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Events">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
 <div class="title"><h1>Events API</h1></div>
 <div class="brief">
  This plugin provides information about events defined in cordova.
@@ -194,8 +195,7 @@ offline            </td>
 <div class="brief">
  Callback for the event which fires when Cordova is fully loaded
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface DeviceReadyEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface DeviceReadyEventCallback {
     void ondeviceready();
   };</pre>
 <p><span class="version">Since: </span>
@@ -238,8 +238,7 @@ function onDeviceReady()
 <div class="brief">
  Callback for the event which fires when an application is put into the background
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface PauseEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface PauseEventCallback {
     void onpause();
   };</pre>
 <p><span class="version">Since: </span>
@@ -281,8 +280,7 @@ function onPause()
 <div class="brief">
  Callback for the event which fires when an application is retrieved from the background
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface ResumeEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface ResumeEventCallback {
     void onresume();
   };</pre>
 <p><span class="version">Since: </span>
@@ -324,8 +322,7 @@ function onResume()
 <div class="brief">
  Callback for the event which fires when the user presses the back button
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface BackButtonEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface BackButtonEventCallback {
     void onbackbutton();
   };</pre>
 <p><span class="version">Since: </span>
@@ -365,8 +362,7 @@ function onBackKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the menu button
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface MenuButtonEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface MenuButtonEventCallback {
     void onmenubutton();
   };</pre>
 <p><span class="version">Since: </span>
@@ -408,8 +404,7 @@ function onMenuKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the search button
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface SearchButtonEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface SearchButtonEventCallback {
     void onsearchbutton();
   };</pre>
 <p><span class="version">Since: </span>
@@ -451,8 +446,7 @@ function onSearchKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the start call button
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface StartCallEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface StartCallEventCallback {
     void onstartcallbutton();
   };</pre>
 <p><span class="version">Since: </span>
@@ -494,8 +488,7 @@ function onStartCallKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the end call button
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface EndCallButtonEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface EndCallButtonEventCallback {
     void onendcallbutton();
   };</pre>
 <p><span class="version">Since: </span>
@@ -537,8 +530,7 @@ function onEndCallKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the volume down button
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface VolumeDownButtonEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface VolumeDownButtonEventCallback {
     void onvolumedownbutton();
   };</pre>
 <p><span class="version">Since: </span>
@@ -580,8 +572,7 @@ function onVolumeDownKeyDown()
 <div class="brief">
  Callback for the event which fires when the user presses the volume up button
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly]
-  interface VolumeUpButtonEventCallback {
+<pre class="webidl prettyprint">  [NoInterfaceObject, Callback=FunctionOnly] interface VolumeUpButtonEventCallback {
     void onvolumeupbutton();
   };</pre>
 <p><span class="version">Since: </span>
@@ -621,44 +612,34 @@ function onVolumeUpKeyDown()
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Events {
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface DeviceReadyEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface DeviceReadyEventCallback {
     void ondeviceready();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface PauseEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface PauseEventCallback {
     void onpause();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface ResumeEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface ResumeEventCallback {
     void onresume();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface BackButtonEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface BackButtonEventCallback {
     void onbackbutton();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface MenuButtonEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface MenuButtonEventCallback {
     void onmenubutton();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface SearchButtonEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface SearchButtonEventCallback {
     void onsearchbutton();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface StartCallEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface StartCallEventCallback {
     void onstartcallbutton();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface EndCallButtonEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface EndCallButtonEventCallback {
     void onendcallbutton();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface VolumeDownButtonEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface VolumeDownButtonEventCallback {
     void onvolumedownbutton();
   };
-  [NoInterfaceObject, Callback=FunctionOnly]
-  interface VolumeUpButtonEventCallback {
+  [NoInterfaceObject, Callback=FunctionOnly] interface VolumeUpButtonEventCallback {
     void onvolumeupbutton();
   };
 };</pre>

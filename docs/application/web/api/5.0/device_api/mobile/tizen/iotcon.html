@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Iotcon API</title>
+<meta data-version="5.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Iotcon">
- <div class="supported-platforms"><img class="mobile-optional emulator" title="Optional, Supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="mobile-optional emulator" title="Optional, Supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>Iotcon API</h1></div>
 <div class="brief">
  The Iotcon API provides functions for IoT connectivity.
@@ -30,7 +31,7 @@ for accessing internal and external storage using this API, privileges (<a href=
 Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
-For more information on the IoT features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/iot-connectivity">IoT Guide</a>.
+For more information on the IoT features, see <a href="/application/web/guides/connectivity/iotcon">IoT Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -634,8 +635,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Client:
-                  </span>
+<span class="return">Client:</span>
  The <em>Client</em> object.
               </ul>
 </div>
@@ -668,8 +668,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Server:
-                  </span>
+<span class="return">Server:</span>
  The <em>Server</em> object.
               </ul>
 </div>
@@ -708,8 +707,7 @@ Without a response after the specified time, the mentioned methods would trigger
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The timeout value in seconds.
               </ul>
 </div>
@@ -795,8 +793,7 @@ console.log("Timeout value is " + timeout);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watchID which can be used to remove the listener.
               </ul>
 </div>
@@ -870,14 +867,14 @@ watchId = tizen.iotcon.addGeneratedPinListener(RandomPinSuccess);
  The Client provides API for client side.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Client {
-    void findResource(DOMString? hostAddress, <a href="#Query">Query</a>?  query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
+    void findResource(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                       <a href="#FoundResourceSuccessCallback">FoundResourceSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addPresenceEventListener(DOMString? hostAddress, <a href="#ResourceType">ResourceType</a>? resourceType, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                                   <a href="#PresenceEventCallback">PresenceEventCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removePresenceEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void findDeviceInfo(DOMString? hostAddress, <a href="#Query">Query</a>?  query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
+    void findDeviceInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                         <a href="#FoundDeviceInfoSuccessCallback">FoundDeviceInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void findPlatformInfo(DOMString? hostAddress, <a href="#Query">Query</a>?  query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
+    void findPlatformInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                           <a href="#FoundPlatformInfoSuccessCallback">FoundPlatformInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
@@ -894,7 +891,7 @@ watchId = tizen.iotcon.addGeneratedPinListener(RandomPinSuccess);
 <div class="brief">
  Finds resources using host address and resource type.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findResource(DOMString? hostAddress, <a href="#Query">Query</a>? query<a href="#ConnectivityType">ConnectivityType</a> connectivityType, 
+<div class="synopsis"><pre class="signature prettyprint">void findResource(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                   <a href="#FoundResourceSuccessCallback">FoundResourceSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1022,7 +1019,7 @@ Resource interfaces:
  Adds a listener to receive a presence events from the server.
 A server sends presence events when starts or stops presence.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addPresenceEventListener(DOMString? hostAddress, <a href="#ResourceType">ResourceType</a>? resourceType, <a href="#ConnectivityType">ConnectivityType</a> connectivityType, 
+<div class="synopsis"><pre class="signature prettyprint">long addPresenceEventListener(DOMString? hostAddress, <a href="#ResourceType">ResourceType</a>? resourceType, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                               <a href="#PresenceEventCallback">PresenceEventCallback</a> successCallback);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1057,8 +1054,7 @@ A server sends presence events when starts or stops presence.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watchID which can be used to remove the listener.
               </ul>
 </div>
@@ -1167,7 +1163,7 @@ Resource type: oic.wk.ad
 <div class="brief">
  Gets the device information of remote server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findDeviceInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query<a href="#ConnectivityType">ConnectivityType</a> connectivityType, 
+<div class="synopsis"><pre class="signature prettyprint">void findDeviceInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                     <a href="#FoundDeviceInfoSuccessCallback">FoundDeviceInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1286,7 +1282,7 @@ Data model version: res.1.0.0
 <div class="brief">
  Gets the platform information of remote server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findPlatformInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query<a href="#ConnectivityType">ConnectivityType</a> connectivityType, 
+<div class="synopsis"><pre class="signature prettyprint">void findPlatformInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                       <a href="#FoundPlatformInfoSuccessCallback">FoundPlatformInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1446,8 +1442,7 @@ There are different resource types, for example a temperature sensor, a light co
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Resource[]:
-                  </span>
+<span class="return">Resource[]:</span>
  Array of <em>Resource</em> objects registered on server.
               </ul>
 </div>
@@ -1471,7 +1466,7 @@ var resources = server.getResources();
 <div class="brief">
  Creates a resource and registers the resource on server.
             </div>
-<div class="synopsis"><pre class="signature prettyprint"><a href="#Resource">Resource</a> createResource(DOMString uriPath, <a href="#ResourceType">ResourceType</a>[] resourceTypes, <a href="#ResourceInterface">ResourceInterface</a>[] resourceInterfaces, 
+<div class="synopsis"><pre class="signature prettyprint"><a href="#Resource">Resource</a> createResource(DOMString uriPath, <a href="#ResourceType">ResourceType</a>[] resourceTypes, <a href="#ResourceInterface">ResourceInterface</a>[] resourceInterfaces,
                         <a href="#RequestCallback">RequestCallback</a> listener, optional <a href="#ResourcePolicy">ResourcePolicy</a> policy);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1510,8 +1505,7 @@ var resources = server.getResources();
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Resource:
-                  </span>
+<span class="return">Resource:</span>
  Instance of <em>Resource</em> object.
               </ul>
 </div>
@@ -2041,7 +2035,7 @@ key: openstate, value: open
 <div class="brief">
  Puts the representation of a resource for update.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void methodPut(<a href="#Representation">Representation</a> representation, <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="#Query">Query</a>? query, 
+<div class="synopsis"><pre class="signature prettyprint">void methodPut(<a href="#Representation">Representation</a> representation, <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="#Query">Query</a>? query,
                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -2160,7 +2154,7 @@ key: openstate, value: closed
 <div class="brief">
  Posts the representation of a resource for create.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void methodPost(<a href="#Representation">Representation</a> representation, <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="#Query">Query</a>? query, 
+<div class="synopsis"><pre class="signature prettyprint">void methodPost(<a href="#Representation">Representation</a> representation, <a href="#RemoteResourceResponseCallback">RemoteResourceResponseCallback</a> responseCallback, optional <a href="#Query">Query</a>? query,
                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -3594,7 +3588,12 @@ var representation = new tizen.Representation(uriPath);
 </div>
 <div class="constructors">
 <h4 id="Representation::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">Representation(DOMString uriPath);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">Representation(DOMString uriPath);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3782,7 +3781,12 @@ query["filter"] = filter;
 </div>
 <div class="constructors">
 <h4 id="IotconOption::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">IotconOption(unsigned long id, DOMString data);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (unsigned long, DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">IotconOption(unsigned long id, DOMString data);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -3812,7 +3816,7 @@ query["filter"] = filter;
  The Request interface represents a details from client.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface Request {
-    readonly attribute DOMString  hostAddress;
+    readonly attribute DOMString hostAddress;
     readonly attribute <a href="#ConnectivityType">ConnectivityType</a> connectivityType;
     readonly attribute <a href="#Representation">Representation</a>? representation;
     readonly attribute <a href="#IotconOption">IotconOption</a>[] options;
@@ -3960,7 +3964,12 @@ catch (err)
 </div>
 <div class="constructors">
 <h4 id="Response::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">Response(<a href="#Request">Request</a> request);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#Request">Request</a>)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">Response(<a href="#Request">Request</a> request);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -4783,7 +4792,9 @@ for <em>Client.findResource()</em>.
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -4793,23 +4804,36 @@ To guarantee this application will run on a device with a Iotcon, add the below 
 <li class="feature">http://tizen.org/feature/iot.ocf</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Iotcon {
   typedef DOMString ResourceType;
+  typedef DOMString ResourceInterface;
   enum QosLevel { "HIGH", "LOW" };
   enum ResponseResult { "SUCCESS", "ERROR", "RESOURCE_CREATED", "RESOURCE_DELETED", "RESOURCE_CHANGED", "SLOW", "FORBIDDEN" };
   enum PresenceResponseResultType { "OK", "STOPPED", "TIMEOUT" };
   enum PresenceTriggerType { "CREATED", "UPDATED", "DESTROYED" };
   enum ConnectivityType { "IP", "PREFER_UDP", "PREFER_TCP", "IPV4_ONLY", "IPV6_ONLY", "ALL" };
-  typedef DOMString ResourceInterface;
   enum ObservePolicy { "IGNORE_OUT_OF_ORDER", "ACCEPT_OUT_OF_ORDER" };
   enum ObserveType { "NO_TYPE", "REGISTER", "DEREGISTER" };
+  dictionary ResourcePolicy {
+    boolean isObservable;
+    boolean isDiscoverable;
+    boolean isActive;
+    boolean isSlow;
+    boolean isSecure;
+    boolean isExplicitDiscoverable;
+  };
+  dictionary Query {
+    <a href="#ResourceType">ResourceType</a>? resourceType;
+    <a href="#ResourceInterface">ResourceInterface</a>? resourceInterface;
+    object? filter;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#IotconObject">IotconObject</a>;
   [NoInterfaceObject] interface IotconObject {
     readonly attribute <a href="#Iotcon">Iotcon</a> iotcon;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#IotconObject">IotconObject</a>;
   [NoInterfaceObject] interface Iotcon {
     attribute DOMString deviceName;
     void initialize(DOMString filePath) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -4821,14 +4845,14 @@ To guarantee this application will run on a device with a Iotcon, add the below 
     void removeGeneratedPinListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface Client {
-    void findResource(DOMString? hostAddress, <a href="#Query">Query</a>?  query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
+    void findResource(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                       <a href="#FoundResourceSuccessCallback">FoundResourceSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addPresenceEventListener(DOMString? hostAddress, <a href="#ResourceType">ResourceType</a>? resourceType, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                                   <a href="#PresenceEventCallback">PresenceEventCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removePresenceEventListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void findDeviceInfo(DOMString? hostAddress, <a href="#Query">Query</a>?  query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
+    void findDeviceInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                         <a href="#FoundDeviceInfoSuccessCallback">FoundDeviceInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void findPlatformInfo(DOMString? hostAddress, <a href="#Query">Query</a>?  query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
+    void findPlatformInfo(DOMString? hostAddress, <a href="#Query">Query</a>? query, <a href="#ConnectivityType">ConnectivityType</a> connectivityType,
                           <a href="#FoundPlatformInfoSuccessCallback">FoundPlatformInfoSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
@@ -4872,14 +4896,6 @@ To guarantee this application will run on a device with a Iotcon, add the below 
     void setResourceStateChangeListener(<a href="#ResourceStateChangeCallback">ResourceStateChangeCallback</a> successCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetResourceStateChangeListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  dictionary ResourcePolicy {
-    boolean isObservable;
-    boolean isDiscoverable;
-    boolean isActive;
-    boolean isSlow;
-    boolean isSecure;
-    boolean isExplicitDiscoverable;
-  };
   [NoInterfaceObject] interface Resource {
     readonly attribute DOMString uriPath;
     readonly attribute <a href="#ResourceType">ResourceType</a>[] resourceTypes;
@@ -4916,18 +4932,13 @@ To guarantee this application will run on a device with a Iotcon, add the below 
     readonly attribute <a href="#PresenceResponseResultType">PresenceResponseResultType</a> resultType;
     readonly attribute <a href="#PresenceTriggerType">PresenceTriggerType</a>? triggerType;
   };
-  dictionary Query {
-    <a href="#ResourceType">ResourceType</a>? resourceType;
-    <a href="#ResourceInterface">ResourceInterface</a>? resourceInterface;
-    object? filter;
-  };
   [Constructor(unsigned long id, DOMString data)]
   interface IotconOption {
     attribute unsigned long id;
     attribute DOMString data;
   };
   [NoInterfaceObject] interface Request {
-    readonly attribute DOMString  hostAddress;
+    readonly attribute DOMString hostAddress;
     readonly attribute <a href="#ConnectivityType">ConnectivityType</a> connectivityType;
     readonly attribute <a href="#Representation">Representation</a>? representation;
     readonly attribute <a href="#IotconOption">IotconOption</a>[] options;

@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Sound API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Sound">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Sound API</h1></div>
 <div class="brief">
  The Sound API provides functions to control the volume level for several sound types and to check whether a specified sound device type is connected.
@@ -18,7 +19,7 @@ You can get the maximum volume level for system, notifications, alarm, media and
 Also, you can change or get the current volume level.
         </p>
         <p>
-For more information on the Sound features, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/audio-management">Audio Management Guide</a>.
+For more information on the Sound features, see <a href="/application/web/guides/multimedia/audio">Audio Management Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -286,8 +287,7 @@ There is a tizen.sound object that allows accessing the functionality of the Sou
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SoundModeType:
-                  </span>
+<span class="return">SoundModeType:</span>
  The current sound mode.
               </ul>
 </div>
@@ -374,8 +374,7 @@ There is a tizen.sound object that allows accessing the functionality of the Sou
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">double:
-                  </span>
+<span class="return">double:</span>
  The current volume level.
               </ul>
 </div>
@@ -403,9 +402,6 @@ There is a tizen.sound object that allows accessing the functionality of the Sou
  Registers a listener to be called when the sound mode is changed.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void setSoundModeChangeListener(<a href="#SoundModeChangeCallback">SoundModeChangeCallback</a> callback);</pre></div>
-<p><span class="version">Since: </span>
- 2.3
-            </p>
 <p><span class="version">Since: </span>
  2.3
             </p>
@@ -526,8 +522,7 @@ Calling this function has no effect if listener is not set.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SoundDeviceInfo[]:
-                  </span>
+<span class="return">SoundDeviceInfo[]:</span>
  List of connected sound devices.
               </ul>
 </div>
@@ -562,8 +557,7 @@ for (var i = 0; i &lt; infoArr.length; i++)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SoundDeviceInfo[]:
-                  </span>
+<span class="return">SoundDeviceInfo[]:</span>
  List of activated sound devices.
               </ul>
 </div>
@@ -618,8 +612,7 @@ Activation: When a device changes from being activated to being deactivated or f
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  ID of the listener that can be used to remove the listener later.
               </ul>
 </div>
@@ -903,10 +896,10 @@ tizen.sound.removeDeviceStateChangeListener(id);
   enum SoundModeType { "SOUND", "VIBRATE", "MUTE" };
   enum SoundDeviceType { "SPEAKER", "RECEIVER", "AUDIO_JACK", "BLUETOOTH", "HDMI", "MIRRORING", "USB_AUDIO", "MIC" };
   enum SoundIOType { "IN", "OUT", "BOTH" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SoundManagerObject">SoundManagerObject</a>;
   [NoInterfaceObject] interface SoundManagerObject {
     readonly attribute <a href="#SoundManager">SoundManager</a> sound;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SoundManagerObject">SoundManagerObject</a>;
   [NoInterfaceObject] interface SoundManager {
     <a href="#SoundModeType">SoundModeType</a> getSoundMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setVolume(<a href="#SoundType">SoundType</a> type, double volume) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

@@ -6,6 +6,7 @@ All basic and GitHub Flavored Markdown (GFM) is supported. For more information 
 
 - [Baseline Markdown syntax](https://daringfireball.net/projects/markdown/syntax)
 - [GFM documentation](https://guides.github.com/features/mastering-markdown)
+- [Tizen Custom Markdown documentation](custom-style.md)
 
 Contents:
 

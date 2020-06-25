@@ -4,14 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>DataSynchronization API</title>
+<meta data-version="4.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::DataSynchronization">
- <div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>DataSynchronization API</h1></div>
 <div class="brief">
  This API provides methods to synchronize contact and event data to the server using the OMA DS 1.2 protocol.
-To know the details of this specification, visit <a href="http://www.openmobilealliance.org">OMA web page</a>. And for more information on the Data Synchronization features, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/data-synchronization">Data Synchronization Guide</a>.
+To know the details of this specification, visit <a href="http://www.openmobilealliance.org">OMA web page</a>. And for more information on the Data Synchronization features, see <a href="/application/web/guides/personal/sync">Data Synchronization Guide</a>.
         </div>
 <p><span class="version">Since: </span>
  2.1
@@ -315,8 +316,17 @@ The <em>tizen.datasync</em> object allows access to the functionality of the Dat
 <div class="constructors">
 <h4 id="SyncInfo::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString, DOMString, <a href="#SyncMode">SyncMode</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">SyncInfo(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString, DOMString, <a href="#SyncMode">SyncMode</a>, <a href="#SyncType">SyncType</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">SyncInfo(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncType">SyncType</a> type);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString, DOMString, <a href="#SyncMode">SyncMode</a>, <a href="#SyncInterval">SyncInterval</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">SyncInfo(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncInterval">SyncInterval</a> interval);</pre>
 </dl>
 </div>
@@ -413,8 +423,13 @@ This attribute is used when the sync mode is set to the <em>PERIODIC</em> option
           </p>
 <div class="constructors">
 <h4 id="SyncServiceInfo::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">SyncServiceInfo(boolean enable, <a href="#SyncServiceType">SyncServiceType</a> serviceType, DOMString serverDatabaseUri, optional DOMString? id, 
-                optional DOMString? password);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (boolean, <a href="#SyncServiceType">SyncServiceType</a>, DOMString, DOMString?, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">SyncServiceInfo(boolean enable, <a href="#SyncServiceType">SyncServiceType</a> serviceType, DOMString serverDatabaseUri, optional DOMString? id,
+                optional DOMString? password);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -491,7 +506,12 @@ When an attempt to retrieve the saved value is made, it returns <var>null</var> 
           </p>
 <div class="constructors">
 <h4 id="SyncProfileInfo::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">SyncProfileInfo(DOMString profileName, <a href="#SyncInfo">SyncInfo</a> syncInfo, optional <a href="#SyncServiceInfo">SyncServiceInfo</a>[]? serviceInfo);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#SyncInfo">SyncInfo</a>, <a href="#SyncServiceInfo">SyncServiceInfo</a>[]?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">SyncProfileInfo(DOMString profileName, <a href="#SyncInfo">SyncInfo</a> syncInfo, optional <a href="#SyncServiceInfo">SyncServiceInfo</a>[]? serviceInfo);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -875,8 +895,7 @@ Normally the platform sets a limitation on the number of supported profiles. It 
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The number of supported profiles on a platform.
               </ul>
 </div>
@@ -918,8 +937,7 @@ var numMaxProfiles = tizen.datasync.getMaxProfilesNum();
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  The current number of profiles on a device.
               </ul>
 </div>
@@ -975,8 +993,7 @@ The attempt to retrieve <em>SyncProfileInfo</em> doesn't get any confidential in
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SyncProfileInfo:
-                  </span>
+<span class="return">SyncProfileInfo:</span>
  The profile information of the given ID.
               </ul>
 </div>
@@ -1029,8 +1046,7 @@ An attempt to retrieve <em>SyncProfileInfo</em> doesn't get any confidential inf
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SyncProfileInfo[]:
-                  </span>
+<span class="return">SyncProfileInfo[]:</span>
  The profile information array.
               </ul>
 </div>
@@ -1208,8 +1224,7 @@ tizen.datasync.stopSync(profileId);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SyncStatistics[]:
-                  </span>
+<span class="return">SyncStatistics[]:</span>
  The sync statistics information of a given ID.
               </ul>
 </div>
@@ -1266,7 +1281,7 @@ var statistics = tizen.datasync.getLastSyncStatistics(profileId);
 <div class="brief">
  Called when a synchronization operation is started and progress is made.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void onprogress(<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="#SyncServiceType">SyncServiceType</a> serviceType, boolean isFromServer, unsigned long totalPerService, 
+<div class="synopsis"><pre class="signature prettyprint">void onprogress(<a href="#SyncProfileId">SyncProfileId</a> profileId, <a href="#SyncServiceType">SyncServiceType</a> serviceType, boolean isFromServer, unsigned long totalPerService,
                 unsigned long syncedPerService);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -1376,7 +1391,9 @@ Normally the packet size from a server affects it, that is, if the server sends 
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -1386,7 +1403,7 @@ To guarantee that data synch application runs on a device, declare the following
 <li class="feature">http://tizen.org/feature/datasync</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module DataSynchronization {
@@ -1396,10 +1413,10 @@ To guarantee that data synch application runs on a device, declare the following
   enum SyncInterval { "5_MINUTES", "15_MINUTES", "1_HOUR", "4_HOURS", "12_HOURS", "1_DAY", "1_WEEK", "1_MONTH" };
   enum SyncServiceType { "CONTACT", "EVENT" };
   enum SyncStatus { "SUCCESS", "FAIL", "STOP", "NONE" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataSynchronizationManagerObject">DataSynchronizationManagerObject</a>;
   [NoInterfaceObject] interface DataSynchronizationManagerObject {
     readonly attribute <a href="#DataSynchronizationManager">DataSynchronizationManager</a> datasync;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DataSynchronizationManagerObject">DataSynchronizationManagerObject</a>;
   [Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode),
    Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncType">SyncType</a> type),
    Constructor(DOMString url, DOMString id, DOMString password, <a href="#SyncMode">SyncMode</a> mode, <a href="#SyncInterval">SyncInterval</a> interval)]

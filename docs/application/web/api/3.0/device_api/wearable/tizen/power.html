@@ -4,17 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Power API</title>
+<meta data-version="3.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Power">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Power API</h1></div>
 <div class="brief">
  The Power API provides support for requesting power management related resource states.
         </div>
 <div class="description">
         <p>
-For more information on the Power features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/power-states">Power Guide</a>.
+For more information on the Power features, see <a href="/application/web/guides/device/power">Power Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -215,7 +216,9 @@ There will be a <em>tizen.power </em>object that allows accessing of a functiona
     void setScreenBrightness(double brightness) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     boolean isScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void restoreScreenBrightness() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };</pre>
+<span class="nocode deprecated">    void turnScreenOn() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void turnScreenOff() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span>  };</pre>
 <p><span class="version">Since: </span>
  2.0
           </p>
@@ -430,8 +433,7 @@ tizen.power.unsetScreenStateChangeListener();
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">double:
-                  </span>
+<span class="return">double:</span>
  Current screen brightness value.
               </ul>
 </div>
@@ -527,8 +529,7 @@ tizen.power.setScreenBrightness(1);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if screen is on, otherwise <var>false</var> if the screen is off.
               </ul>
 </div>
@@ -720,14 +721,14 @@ tizen.power.turnScreenOff();
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Power {
-  enum PowerResource { "SCREEN", "CPU" };
-  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL", "SCREEN_BRIGHT" };
-  enum PowerCpuState { "CPU_AWAKE" };
   typedef (<a href="#PowerScreenState">PowerScreenState</a> or <a href="#PowerCpuState">PowerCpuState</a>) PowerState;
+  enum PowerResource { "SCREEN", "CPU" };
+  enum PowerScreenState { "SCREEN_OFF", "SCREEN_DIM", "SCREEN_NORMAL" };
+  enum PowerCpuState { "CPU_AWAKE" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PowerManagerObject">PowerManagerObject</a>;
   [NoInterfaceObject] interface PowerManagerObject {
     readonly attribute <a href="#PowerManager">PowerManager</a> power;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PowerManagerObject">PowerManagerObject</a>;
   [NoInterfaceObject] interface PowerManager {
     void request(<a href="#PowerResource">PowerResource</a> resource, <a href="#PowerState">PowerState</a> state) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void release(<a href="#PowerResource">PowerResource</a> resource) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

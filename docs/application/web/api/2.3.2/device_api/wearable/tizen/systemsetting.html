@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>SystemSetting API</title>
+<meta data-version="2.3.2" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SystemSetting">
- <div class="supported-platforms"><img class="wearable-mandatory emulator-partial" title="Mandatory, Supported by Tizen Wearable emulator - Emulator supports only HOME_SCREEN, INCOMING_CALL" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator-partial" title="Mandatory, Supported by Tizen Wearable emulator - Emulator supports only HOME_SCREEN, INCOMING_CALL" src="wearable_s_w.png"></div>
 <div class="title"><h1>SystemSetting API</h1></div>
 <div class="brief">
  The System Setting API provides interfaces and methods providing web applications with access to various values of the system.
@@ -44,7 +45,7 @@ In addition, not all the above properties may be available even though a device 
  NOTIFICATION_EMAIL - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/systemsetting.notification_email"</em>)          </li>
         </ul>
         <p>
-For more information on the System Setting features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/system-setting">System Setting Guide</a>.
+For more information on the System Setting features, see <a href="/application/web/guides/device/system-setting">System Setting Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -170,6 +171,9 @@ access to the module functionalities.
     void getProperty(<a href="#SystemSettingType">SystemSettingType</a> type, <a href="#SystemSettingSuccessCallback">SystemSettingSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
+<p><span class="version">Since: </span>
+ 2.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -295,8 +299,6 @@ else
             <p>
 This method allows the user to get the value of the specified system property as wallpaper or ringtone of a device.
             </p>
-           </div>
-<div class="description">
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
             </p>
@@ -407,11 +409,11 @@ tizen.systemsetting.getProperty("HOME_SCREEN", getPropertySuccessCallback, error
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SystemSetting {
+  enum SystemSettingType { "HOME_SCREEN", "LOCK_SCREEN", "INCOMING_CALL", "NOTIFICATION_EMAIL" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemSettingObject">SystemSettingObject</a>;
   [NoInterfaceObject] interface SystemSettingObject {
     readonly attribute <a href="#SystemSettingManager">SystemSettingManager</a> systemsetting;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SystemSettingObject">SystemSettingObject</a>;
-  enum SystemSettingType { "HOME_SCREEN", "LOCK_SCREEN", "INCOMING_CALL", "NOTIFICATION_EMAIL" };
   [NoInterfaceObject] interface SystemSettingManager {
     void setProperty(<a href="#SystemSettingType">SystemSettingType</a> type, DOMString value, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                      raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Contact API</title>
+<meta data-version="5.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Contact">
- <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Contact API</h1></div>
 <div class="brief">
  The Contact API provides functionality for managing address books.
@@ -40,7 +41,7 @@ for accessing internal and external storage using this API, privileges (<a href=
 Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
-For more information on the Contact features, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/contacts">Contact Guide</a>.
+For more information on the Contact features, see <a href="/application/web/guides/personal/contacts">Contact Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -738,8 +739,7 @@ and it is set to <var>null</var>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AddressBook:
-                  </span>
+<span class="return">AddressBook:</span>
  The unified AddressBook object.
               </ul>
 </div>
@@ -844,8 +844,7 @@ The default address book is one of the addressBooks that is the appointed addres
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AddressBook:
-                  </span>
+<span class="return">AddressBook:</span>
  The default AddressBook object.
               </ul>
 </div>
@@ -1106,8 +1105,7 @@ tizen.account.getAccounts(
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">AddressBook:
-                  </span>
+<span class="return">AddressBook:</span>
  The matching AddressBook object.
               </ul>
 </div>
@@ -1189,8 +1187,7 @@ person with the specified identifier.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Person:
-                  </span>
+<span class="return">Person:</span>
  The matching Person object.
               </ul>
 </div>
@@ -1644,7 +1641,7 @@ catch (err)
 <div class="brief">
  Gets an array of all <em>Person </em>objects from the contact DB or the ones that match the optionally supplied filter.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#PersonArraySuccessCallback">PersonArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, 
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#PersonArraySuccessCallback">PersonArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
           optional <a href="tizen.html#SortMode">SortMode</a>? sortMode);</pre></div>
 <p><span class="version">Since: </span>
  2.0
@@ -1750,8 +1747,8 @@ catch (err)
 <div class="brief">
  Gets an array of <em>Person </em>objects from the contact DB which match the supplied filter. This method is for filtering usageCount property of Person objects.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void findByUsageCount(<a href="#ContactUsageCountFilter">ContactUsageCountFilter</a> filter, <a href="#PersonArraySuccessCallback">PersonArraySuccessCallback</a> successCallback, 
-                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortModeOrder">SortModeOrder</a>? sortModeOrder, optional unsigned long limit, 
+<div class="synopsis"><pre class="signature prettyprint">void findByUsageCount(<a href="#ContactUsageCountFilter">ContactUsageCountFilter</a> filter, <a href="#PersonArraySuccessCallback">PersonArraySuccessCallback</a> successCallback,
+                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SortModeOrder">SortModeOrder</a>? sortModeOrder, optional unsigned long limit,
                       optional unsigned long offset);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1891,8 +1888,7 @@ asynchronously.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -2129,7 +2125,12 @@ tizen.account.getAccounts(
 </div>
 <div class="constructors">
 <h4 id="AddressBook::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">AddressBook(<a href="account.html#AccountId">AccountId</a> accountId, DOMString name);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="account.html#AccountId">AccountId</a>, DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">AddressBook(<a href="account.html#AccountId">AccountId</a> accountId, DOMString name);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -2216,8 +2217,7 @@ flag set to <var>true</var>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Contact:
-                  </span>
+<span class="return">Contact:</span>
  The matching Contact object.
               </ul>
 </div>
@@ -2908,7 +2908,7 @@ catch (err)
  Finds an array of all Contact objects from the specified address book or an array of
 Contact objects that match the optionally supplied filter.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#ContactArraySuccessCallback">ContactArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, 
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#ContactArraySuccessCallback">ContactArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
           optional <a href="tizen.html#SortMode">SortMode</a>? sortMode);</pre></div>
 <p><span class="version">Since: </span>
  1.0
@@ -3052,8 +3052,7 @@ asynchronously.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  An identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -3227,8 +3226,7 @@ watcherId = addressbook.addChangeListener(watcher);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ContactGroup:
-                  </span>
+<span class="return">ContactGroup:</span>
  The matching ContactGroup object.
               </ul>
 </div>
@@ -3521,8 +3519,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">ContactGroup[]:
-                  </span>
+<span class="return">ContactGroup[]:</span>
  The array of ContactGroup object from this address book.
               </ul>
 </div>
@@ -3841,8 +3838,7 @@ This function returns a newly created Person object that indicates the separated
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Person:
-                  </span>
+<span class="return">Person:</span>
  Newly created Person object that indicates the separated contact
               </ul>
 </div>
@@ -3953,8 +3949,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Number of usages.
               </ul>
 </div>
@@ -4194,7 +4189,13 @@ catch (err)
 <div class="constructors">
 <h4 id="Contact::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactInit">ContactInit</a>?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">Contact(optional <a href="#ContactInit">ContactInit</a>? ContactInitDict);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">Contact(DOMString stringRepresentation);</pre>
 </dl>
 </div>
@@ -4640,8 +4641,7 @@ The export format is set via the format parameter.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The string representation of the Contact item.
               </ul>
 </div>
@@ -4724,8 +4724,7 @@ set to <var>null</var> and will be detached from any address book.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Contact:
-                  </span>
+<span class="return">Contact:</span>
  A new clone of the Contact object.
               </ul>
 </div>
@@ -4785,6 +4784,9 @@ This interface is used by other APIs to uniquely and globally identify contacts.
 <div class="constructors">
 <h4 id="ContactRef::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#AddressBookId">AddressBookId</a>, <a href="#ContactId">ContactId</a>)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">ContactRef(<a href="#AddressBookId">AddressBookId</a> addressBookId, <a href="#ContactId">ContactId</a> contactId);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the default address book. */
@@ -4872,6 +4874,9 @@ See the ContactName interface for more information about the members.
 <div class="constructors">
 <h4 id="ContactName::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactNameInit">ContactNameInit</a>?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">ContactName(optional <a href="#ContactNameInit">ContactNameInit</a>? nameInitDict);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var myContactName = new tizen.ContactName({prefix: "Mr.", firstName: "John", lastName: "Doe"});
@@ -5129,7 +5134,12 @@ For more details, see RFC 2426, Section 3.5.
 </div>
 <div class="constructors">
 <h4 id="ContactOrganization::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactOrganization(optional <a href="#ContactOrganizationInit">ContactOrganizationInit</a>? orgInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactOrganizationInit">ContactOrganizationInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactOrganization(optional <a href="#ContactOrganizationInit">ContactOrganizationInit</a>? orgInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5236,7 +5246,12 @@ contactInit.urls = [blog];
 </div>
 <div class="constructors">
 <h4 id="ContactWebSite::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactWebSite(DOMString url, optional DOMString type);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactWebSite(DOMString url, optional DOMString type);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5295,7 +5310,12 @@ contactInit.anniversaries = [marriage_anniv];
 </div>
 <div class="constructors">
 <h4 id="ContactAnniversary::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactAnniversary(Date date, optional DOMString? label);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactAnniversary(Date date, optional DOMString? label);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5393,7 +5413,12 @@ contactInit.contactAddress = [contactAddress];
 </div>
 <div class="constructors">
 <h4 id="ContactAddress::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactAddress(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactAddressInit">ContactAddressInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactAddress(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5562,7 +5587,12 @@ contactInit.phoneNumbers = [phoneNumber];
 </div>
 <div class="constructors">
 <h4 id="ContactPhoneNumber::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactPhoneNumber(DOMString number, optional DOMString[] types, optional boolean isDefault);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString[], boolean)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactPhoneNumber(DOMString number, optional DOMString[] types, optional boolean isDefault);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5695,7 +5725,12 @@ contactInit.emails = [email];
 </div>
 <div class="constructors">
 <h4 id="ContactEmailAddress::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactEmailAddress(DOMString email, optional DOMString[] types, optional boolean isDefault);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString[], boolean)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactEmailAddress(DOMString email, optional DOMString[] types, optional boolean isDefault);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5803,7 +5838,12 @@ contactInit.messengers = [messenger];
 </div>
 <div class="constructors">
 <h4 id="ContactInstantMessenger::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactInstantMessenger(DOMString imAddress, optional <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>? type);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactInstantMessenger(DOMString imAddress, optional <a href="#ContactInstantMessengerType">ContactInstantMessengerType</a>? type);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -5909,7 +5949,12 @@ tizen.filesystem.resolve("ringtones", function(dir)
 </div>
 <div class="constructors">
 <h4 id="ContactGroup::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactGroup(DOMString name, optional DOMString? ringtoneURI, optional DOMString? photoURI);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString?, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactGroup(DOMString name, optional DOMString? ringtoneURI, optional DOMString? photoURI);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -6027,7 +6072,12 @@ contactInit.relationships = [relationship];
 </div>
 <div class="constructors">
 <h4 id="ContactRelationship::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactRelationship(DOMString relativeName, optional <a href="#ContactRelationshipType">ContactRelationshipType</a>? type);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#ContactRelationshipType">ContactRelationshipType</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactRelationship(DOMString relativeName, optional <a href="#ContactRelationshipType">ContactRelationshipType</a>? type);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -6142,7 +6192,12 @@ console.log(contact1.extensions[1].data3);
 </div>
 <div class="constructors">
 <h4 id="ContactExtension::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ContactExtension(optional <a href="#ContactExtensionInit">ContactExtensionInit</a>? extensionInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ContactExtensionInit">ContactExtensionInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ContactExtension(optional <a href="#ContactExtensionInit">ContactExtensionInit</a>? extensionInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -6831,7 +6886,9 @@ watcherId = tizen.contact.addChangeListener(watcher);
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -6849,7 +6906,7 @@ To guarantee the running of the application on a device with Contact feature, de
 <li class="feature">http://tizen.org/feature/contact</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Contact {
@@ -6865,10 +6922,72 @@ To guarantee the running of the application on a device with Contact feature, de
     "CUSTOM" };
   enum ContactUsageType { "OUTGOING_CALL", "OUTGOING_MSG", "OUTGOING_EMAIL", "INCOMING_CALL", "INCOMING_MSG", "INCOMING_EMAIL",
     "MISSED_CALL", "REJECTED_CALL", "BLOCKED_CALL", "BLOCKED_MSG" };
+  dictionary ContactInit {
+    <a href="#ContactName">ContactName</a> name;
+    <a href="#ContactAddress">ContactAddress</a>[] addresses;
+    DOMString photoURI;
+    <a href="#ContactPhoneNumber">ContactPhoneNumber</a>[] phoneNumbers;
+    <a href="#ContactEmailAddress">ContactEmailAddress</a>[] emails;
+    <a href="#ContactInstantMessenger">ContactInstantMessenger</a>[] messengers;
+    <a href="#ContactRelationship">ContactRelationship</a>[] relationships;
+    <a href="#ContactExtension">ContactExtension</a>[] extensions;
+    Date birthday;
+    <a href="#ContactAnniversary">ContactAnniversary</a>[] anniversaries;
+    <a href="#ContactOrganization">ContactOrganization</a>[] organizations;
+    DOMString[] notes;
+    <a href="#ContactWebSite">ContactWebSite</a>[] urls;
+    DOMString ringtoneURI;
+    DOMString messageAlertURI;
+    DOMString vibrationURI;
+    <a href="#ContactGroupId">ContactGroupId</a>[] groupIds;
+  };
+  dictionary ContactNameInit {
+    DOMString prefix;
+    DOMString suffix;
+    DOMString firstName;
+    DOMString middleName;
+    DOMString lastName;
+    DOMString[] nicknames;
+    DOMString phoneticFirstName;
+    DOMString phoneticMiddleName;
+    DOMString phoneticLastName;
+  };
+  dictionary ContactOrganizationInit {
+    DOMString name;
+    DOMString department;
+    DOMString title;
+    DOMString role;
+    DOMString logoURI;
+  };
+  dictionary ContactAddressInit {
+    DOMString country;
+    DOMString region;
+    DOMString city;
+    DOMString streetAddress;
+    DOMString additionalInformation;
+    DOMString postalCode;
+    boolean isDefault;
+    DOMString[] types;
+    DOMString label;
+  };
+  dictionary ContactExtensionInit {
+    long data1;
+    DOMString data2;
+    DOMString data3;
+    DOMString data4;
+    DOMString data5;
+    DOMString data6;
+    DOMString data7;
+    DOMString data8;
+    DOMString data9;
+    DOMString data10;
+    DOMString data11;
+    DOMString data12;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContactManagerObject">ContactManagerObject</a>;
   [NoInterfaceObject] interface ContactManagerObject {
     readonly attribute <a href="#ContactManager">ContactManager</a> contact;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#ContactManagerObject">ContactManagerObject</a>;
   [NoInterfaceObject] interface ContactManager {
     void getAddressBooks(<a href="#AddressBookArraySuccessCallback">AddressBookArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -6933,25 +7052,6 @@ To guarantee the running of the application on a device with Contact feature, de
     long getUsageCount(optional <a href="#ContactUsageType">ContactUsageType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void resetUsageCount(optional <a href="#ContactUsageType">ContactUsageType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
-  dictionary ContactInit {
-    <a href="#ContactName">ContactName</a> name;
-    <a href="#ContactAddress">ContactAddress</a>[] addresses;
-    DOMString photoURI;
-    <a href="#ContactPhoneNumber">ContactPhoneNumber</a>[] phoneNumbers;
-    <a href="#ContactEmailAddress">ContactEmailAddress</a>[] emails;
-    <a href="#ContactInstantMessenger">ContactInstantMessenger</a>[] messengers;
-    <a href="#ContactRelationship">ContactRelationship</a>[] relationships;
-    <a href="#ContactExtension">ContactExtension</a>[] extensions;
-    Date birthday;
-    <a href="#ContactAnniversary">ContactAnniversary</a>[] anniversaries;
-    <a href="#ContactOrganization">ContactOrganization</a>[] organizations;
-    DOMString[] notes;
-    <a href="#ContactWebSite">ContactWebSite</a>[] urls;
-    DOMString ringtoneURI;
-    DOMString messageAlertURI;
-    DOMString vibrationURI;
-    <a href="#ContactGroupId">ContactGroupId</a>[] groupIds;
-  };
   [Constructor(optional <a href="#ContactInit">ContactInit</a>? ContactInitDict),
    Constructor(DOMString stringRepresentation)]
   interface Contact {
@@ -6985,17 +7085,6 @@ To guarantee the running of the application on a device with Contact feature, de
     attribute <a href="#AddressBookId">AddressBookId</a> addressBookId;
     attribute <a href="#ContactId">ContactId</a> contactId;
   };
-  dictionary ContactNameInit {
-    DOMString prefix;
-    DOMString suffix;
-    DOMString firstName;
-    DOMString middleName;
-    DOMString lastName;
-    DOMString[] nicknames;
-    DOMString phoneticFirstName;
-    DOMString phoneticMiddleName;
-    DOMString phoneticLastName;
-  };
   [Constructor(optional <a href="#ContactNameInit">ContactNameInit</a>? nameInitDict)]
   interface ContactName {
     attribute DOMString? prefix;
@@ -7008,13 +7097,6 @@ To guarantee the running of the application on a device with Contact feature, de
     attribute DOMString? phoneticMiddleName;
     attribute DOMString? phoneticLastName;
     readonly attribute DOMString? displayName;
-  };
-  dictionary ContactOrganizationInit {
-    DOMString name;
-    DOMString department;
-    DOMString title;
-    DOMString role;
-    DOMString logoURI;
   };
   [Constructor(optional <a href="#ContactOrganizationInit">ContactOrganizationInit</a>? orgInitDict)]
   interface ContactOrganization {
@@ -7033,17 +7115,6 @@ To guarantee the running of the application on a device with Contact feature, de
   interface ContactAnniversary {
     attribute Date date;
     attribute DOMString? label;
-  };
-  dictionary ContactAddressInit {
-    DOMString country;
-    DOMString region;
-    DOMString city;
-    DOMString streetAddress;
-    DOMString additionalInformation;
-    DOMString postalCode;
-    boolean isDefault;
-    DOMString[] types;
-    DOMString label;
   };
   [Constructor(optional <a href="#ContactAddressInit">ContactAddressInit</a>? addressInitDict)]
   interface ContactAddress {
@@ -7091,20 +7162,6 @@ To guarantee the running of the application on a device with Contact feature, de
     attribute DOMString relativeName;
     attribute <a href="#ContactRelationshipType">ContactRelationshipType</a> type;
     attribute DOMString? label;
-  };
-  dictionary ContactExtensionInit {
-    long data1;
-    DOMString data2;
-    DOMString data3;
-    DOMString data4;
-    DOMString data5;
-    DOMString data6;
-    DOMString data7;
-    DOMString data8;
-    DOMString data9;
-    DOMString data10;
-    DOMString data11;
-    DOMString data12;
   };
   [Constructor(optional <a href="#ContactExtensionInit">ContactExtensionInit</a>? extensionInitDict)]
   interface ContactExtension {

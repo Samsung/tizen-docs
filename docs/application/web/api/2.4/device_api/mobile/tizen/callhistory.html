@@ -4,17 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>CallHistory API</title>
+<meta data-version="2.4" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::CallHistory">
- <div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>CallHistory API</h1></div>
 <div class="brief">
  This API provides interfaces and methods for retrieving information from the call history.
         </div>
 <div class="description">
         <p>
-For more information on the Call History features, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/call-history">Call History Guide</a>.
+For more information on the Call History features, see <a href="/application/web/guides/personal/call-history">Call History Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -93,8 +94,8 @@ For more information on the Call History features, see <a href="https://develope
 <a class="backward-compatibility-anchor" name="::CallHistory::CallHistoryObject"></a><h3>1.1. CallHistoryObject</h3>
 <div class="brief">
  This interface defines what is instantiated by the <em>Tizen </em>object from the Tizen Platform.
-The <em>tizen.callhistory<em> object allows access to the Call History API.
-</em></em>          </div>
+The <em>tizen.callhistory</em> object allows access to the Call History API.
+          </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface CallHistoryObject {
     readonly attribute <a href="#CallHistory">CallHistory</a> callhistory;
   };</pre>
@@ -345,8 +346,8 @@ Adding call history is owned by the back-end. Filtering is supported for all fie
 <div class="brief">
  Finds and returns call history.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#CallHistoryEntryArraySuccessCallback">CallHistoryEntryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
-          optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode, optional unsigned long? limit, 
+<div class="synopsis"><pre class="signature prettyprint">void find(<a href="#CallHistoryEntryArraySuccessCallback">CallHistoryEntryArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+          optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter, optional <a href="tizen.html#SortMode">SortMode</a>? sortMode, optional unsigned long? limit,
           optional unsigned long? offset);</pre></div>
 <p><span class="version">Since: </span>
  2.0
@@ -694,8 +695,7 @@ UnknownError - If any other error occurs.              </li>
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  A handle which can be used for unregistering.
               </ul>
 </div>
@@ -860,8 +860,7 @@ For example code, see <em>CallHistory </em>interface.
  This is a callback interface of <em> CallHistory </em>operations.
 For example code, see <em>CallHistory </em>interface.
           </div>
-<pre class="webidl prettyprint">  [Callback, NoInterfaceObject]
-  interface CallHistoryChangeCallback {
+<pre class="webidl prettyprint">  [Callback, NoInterfaceObject] interface CallHistoryChangeCallback {
     void onadded(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] newItems);
     void onchanged(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] changedItems);
     void onremoved(DOMString[] removedItems);
@@ -941,7 +940,9 @@ For example code, see <em>CallHistory </em>interface.
 </div>
 <h2 id="api-features">2. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -951,14 +952,14 @@ To guarantee that the call log application runs on a device with the telephony f
 <li class="feature">http://tizen.org/feature/network.telephony</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module CallHistory {
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CallHistoryObject">CallHistoryObject</a>;
   [NoInterfaceObject] interface CallHistoryObject {
     readonly attribute <a href="#CallHistory">CallHistory</a> callhistory;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#CallHistoryObject">CallHistoryObject</a>;
   [NoInterfaceObject] interface RemoteParty {
     readonly attribute DOMString? remoteParty;
     readonly attribute <a href="contact.html#PersonId">PersonId</a>? personId;
@@ -987,8 +988,7 @@ To guarantee that the call log application runs on a device with the telephony f
   [Callback=FunctionOnly, NoInterfaceObject] interface CallHistoryEntryArraySuccessCallback {
     void onsuccess(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] entries);
   };
-  [Callback, NoInterfaceObject]
-  interface CallHistoryChangeCallback {
+  [Callback, NoInterfaceObject] interface CallHistoryChangeCallback {
     void onadded(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] newItems);
     void onchanged(<a href="#CallHistoryEntry">CallHistoryEntry</a>[] changedItems);
     void onremoved(DOMString[] removedItems);

@@ -1,19 +1,35 @@
-# Tizen 4.0 Public M3 Release Notes
+# Tizen 4.0 Public M3
 
-Release Date: Aug. 31, 2018
+Release date: Aug. 31, 2018
+
+The Tizen 4.0 Public M3 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native API set.
 
 
-## System (Kernel and System Framework)
+## Release Details
 
-### Fixes
+- [Getting source code](http://review.tizen.org/git/) (Tizen 4.0 M2 source codes are under **tizen_4.0** branch.)
+
+- [Getting binaries and images](http://download.tizen.org/releases/milestone/tizen/4.0-unified/)
+  - Base: [http://download.tizen.org/releases/milestone/tizen/4.0-base/tizen-4.0-base_20180817.1/](http://download.tizen.org/releases/milestone/tizen/4.0-base/tizen-4.0-base_20180817.1/)
+  - Mobile: [http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/mobile-wayland-armv7l-tm1/](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/mobile-wayland-armv7l-tm1/)
+  - Wearable: [http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/wearable-wayland-armv7l-tw2/](http://download.tizen.org/releases/milestone/tizen/4.0-unified/tizen-4.0-unified_20180821.6/images/standard/wearable-wayland-armv7l-tw2/)
+
+- [How to flash to a device](../developing/flashing.md)
+
+
+## Release Notes
+
+### System (Kernel and System Framework)
+
+#### Fixes
 
 - Security improvement
   - Systemd patch has been applied for CVE-2018-1049.
 
 
-## System (Base)
+### System (Base)
 
-### New and changed features
+#### New and changed features
 
 - The following Open-source libraries have been upgraded:
   - file (5.32)
@@ -31,21 +47,21 @@ Release Date: Aug. 31, 2018
   - vim (8.0.586)
 
 
-## Application Framework
+### Application Framework
 
-### New and changed features
+#### New and changed features
 
 - TIDL (Tizen Interface Definition Language) has been added (Mobile profile).
   - TIDL supports app-to-app RPC style IPC.
   - rpc-port API has been added to support TIDL.
 
 
-## Window System
+### Window System
 
-### New and changed features
+#### New and changed features
 
 - Extended Wayland Protocols
-  - The ‘event_surface’ event has been added to tizen_keyrouter protocol for sending the surface information before sending the key to client(s).
+  - The 'event_surface' event has been added to tizen_keyrouter protocol for sending the surface information before sending the key to client(s).
 - Enlightenment Wayland Display Server
   - A D-Bus policy has been updated to enhance security regarding D-Bus interface.
   - A new layer has been added for e_desk_object.
@@ -54,13 +70,13 @@ Release Date: Aug. 31, 2018
   - Add the tbm_dummy_display.
   - Add the tbm_surface_internal_set/get_damage.
 
-### Fixes
+#### Fixes
 
 - Enlightenment Wayland Display Server
   - The bugs regarding sending pre-unobscured visibility event have been fixed.
   - The bugs related to uniconify_render have been fixed.
   - The bug not returning to the default screen mode has been fixed.
-  - The error that the quick panel doesn’t disappear has been fixed.
+  - The error that the quick panel doesn't disappear has been fixed.
   - The bugs related with pending position move request have been fixed.
   - The bugs related with hwc cancel condition have been fixed.
   - E_Desk smart object disorder has been fixed while zooming and maximizing member object.
@@ -68,9 +84,9 @@ Release Date: Aug. 31, 2018
   - The error of not sending axis event during a touchdown operation has been fixed.
 
 
-## Graphics Engine
+### Graphics Engine
 
-### New and changed features
+#### New and changed features
 
 - DALi (3D UI Toolkit)
   - Actor and Stage
@@ -124,9 +140,9 @@ Release Date: Aug. 31, 2018
   - Support for EvasGL thread separation on direct rendering mode has been added.
   - The pre-compiled shader list has been optimized for boot time enhancement.
   - Support for the Evas GL capability test has been added.
-  - EGL Sync is added for EvasGL’s EGLImage.
+  - EGL Sync is added for EvasGL's EGLImage.
 
-### Fixes
+#### Fixes
 
 - DALi (3D UI Toolkit)
   - The blending factor of premultiplied alpha format has been fixed.
@@ -142,9 +158,9 @@ Release Date: Aug. 31, 2018
   - The resource sharing issue is fixed in Evas TBM backend.
 
 
-## UI Framework
+### UI Framework
 
-### New and changed features
+#### New and changed features
 
 - EFL
   - Assist-panel is added.
@@ -153,9 +169,9 @@ Release Date: Aug. 31, 2018
   - Voice engine model is changed to a service app for supporting download (only for mobile and TV profile).
 
 
-## Multimedia Framework
+### Multimedia Framework
 
-### New and changed features
+#### New and changed features
 
 - Camera
   - New API set for hue setting have been added.
@@ -166,14 +182,14 @@ Release Date: Aug. 31, 2018
     - http://tizen.org/feature/content.scanning.others for scanning OTHERS-type files which are not included in the media content types such as IMAGE, VIDEO, SOUND or MUSIC.
     - http://tizen.org/feature/content.filter.pinyin for supporting the Pinyin Filter. 
 - Media Controller
-  - In the mobile profile, repeat mode on for one media enumeration has been added.
-  - In the mobile profile, new API set for supporting playlist have been added.
-  - In the mobile profile, new API set for sending command and receiving command reply have been added.
-  - In the mobile profile, new API set for sending custom event and receiving event reply have been added.
-  - In the mobile profile, the API set for supporting metadata have been changed.
-  - In the mobile profile, the API set for sending custom command and receiving custom reply have been changed.
-  - In the mobile profile, the callbacks for receiving update information have been changed.
-  - In the mobile profile, some playback states enumerations have been changed.
+  - In the Mobile profile, repeat mode on for one media enumeration has been added.
+  - In the Mobile profile, new API set for supporting playlist have been added.
+  - In the Mobile profile, new API set for sending command and receiving command reply have been added.
+  - In the Mobile profile, new API set for sending custom event and receiving event reply have been added.
+  - In the Mobile profile, the API set for supporting metadata have been changed.
+  - In the Mobile profile, the API set for sending custom command and receiving custom reply have been changed.
+  - In the Mobile profile, the callbacks for receiving update information have been changed.
+  - In the Mobile profile, some playback states enumerations have been changed.
 - Player
   - Pre-condition of setting ROI area API has been changed.
 - Muse
@@ -182,9 +198,9 @@ Release Date: Aug. 31, 2018
   - Update message IPC mechanism.
 
 
-## Network and Connectivity
+### Network and Connectivity
 
-### Fixes
+#### Fixes
 
 - Data Network
   - A memory leak in the stc-manager has been fixed.
@@ -207,9 +223,9 @@ Release Date: Aug. 31, 2018
   - The native API reference errors have been fixed.
 
 
-## Security
+### Security
 
-### New and changed features
+#### New and changed features
 
 - Security-manager
   - Support application update between wen application and hybrid application.
@@ -223,9 +239,9 @@ Release Date: Aug. 31, 2018
   - Change nether rule to use raw table for UDP packets.
 
 
-## Service Framework
+### Service Framework
 
-### Fixes
+#### Fixes
 
 - Context
   - Removed critical information from logs.
@@ -246,9 +262,9 @@ Release Date: Aug. 31, 2018
   - Fixed potential defects.
 
 
-## Tizen .NET
+### Tizen .NET
 
-### New and changed features
+#### New and changed features
 
 - Xamarin.Forms
   - Xamarin.Forms version 3.1.0 Service Release 2 is supported.

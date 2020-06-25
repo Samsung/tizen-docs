@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Sensor API</title>
+<meta data-version="2.4" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Sensor">
- <div class="supported-platforms"><img class="mobile-optional emulator" title="Optional, Supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="mobile-optional emulator" title="Optional, Supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>Sensor API</h1></div>
 <div class="brief">
  The Sensor API defines interfaces and methods to manage sensor data from various sensors on the device.
@@ -25,7 +26,7 @@ Set and unset notification of the sensor data change          </li>
 Get current sensor data          </li>
         </ul>
         <p>
-For more information about how to use Sensor API, see <a href="https://developer.tizen.org/development/guides/web-application/sensors/device-sensors">Device Sensors Guide</a>.
+For more information about how to use Sensor API, see <a href="/application/web/guides/sensors/device-sensors">Device Sensors Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -325,8 +326,6 @@ The supported sensor types are hardware-dependent. <br><br>To check if the given
  ULTRAVIOLET - tizen.systeminfo.getCapability(<em>"http://tizen.org/feature/sensor.ultraviolet"</em>)               </li>
             </ul>
            </div>
-<div class="description">
-           </div>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -341,8 +340,7 @@ The supported sensor types are hardware-dependent. <br><br>To check if the given
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Sensor:
-                  </span>
+<span class="return">Sensor:</span>
  Default sensor object.
               </ul>
 </div>
@@ -395,8 +393,7 @@ else
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">SensorType[]:
-                  </span>
+<span class="return">SensorType[]:</span>
  All available sensor types.
               </ul>
 </div>
@@ -462,8 +459,6 @@ console.log("Capable sensor: " + sensorCapabilities[0]);
             <p>
 The <em>SuccessCallback</em> will be invoked when the first event from the sensor is fired.
             </p>
-           </div>
-<div class="description">
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
             </p>
@@ -1448,7 +1443,9 @@ The ultraviolet index is an international standard measurement of the strength o
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -1498,17 +1495,17 @@ To guarantee that the UV sensor application runs on a device with a UV sensor, d
 <li class="feature">http://tizen.org/feature/sensor.ultraviolet</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Sensor {
   enum MagneticSensorAccuracy { "ACCURACY_UNDEFINED", "ACCURACY_BAD", "ACCURACY_NORMAL", "ACCURACY_GOOD", "ACCURACY_VERYGOOD" };
   enum ProximityState { "FAR", "NEAR" };
   enum SensorType { "HRM_RAW", "LIGHT", "MAGNETIC", "PRESSURE", "PROXIMITY", "ULTRAVIOLET" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SensorServiceManagerObject">SensorServiceManagerObject</a>;
   [NoInterfaceObject] interface SensorServiceManagerObject {
     readonly attribute <a href="#SensorService">SensorService</a> sensorservice;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SensorServiceManagerObject">SensorServiceManagerObject</a>;
   [NoInterfaceObject] interface SensorService {
     <a href="#Sensor">Sensor</a> getDefaultSensor(<a href="#SensorType">SensorType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#SensorType">SensorType</a>[] getAvailableSensors() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

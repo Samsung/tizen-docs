@@ -1,6 +1,6 @@
 # Updating Tizen Studio
 
-The Tizen Studio provides the Package Manager, a comprehensive package management tool for installing, updating, and removing platforms and tools. This topic describes how to install, update, and remove packages using the GUI version of the tool, and how to update packages with the CLI version of the tool.
+Tizen Studio provides the Package Manager, a comprehensive package management tool for installing, updating, and removing platforms and tools. This topic describes how to install, update, and remove packages using the GUI version of the tool, and how to update packages with the CLI version of the tool.
 
 The Package Manager features manage the packages that are used in all Tizen Studio programs. Tizen Studio platforms and tools consist of collections of packages that contain the necessary files, metadata, and installation and removal scripts. Each package has complicated dependencies to other packages. The Package Manager offers an easy and simple way to manage platforms and tools without understanding the complicated package dependencies.
 
@@ -46,7 +46,7 @@ The Package Manager is composed of 3 areas:
 
 ## Updating Packages
 
-If you are connected to the Internet and updates are available for your installed Tizen Studio packages, an **Updates available** button appears in the Package Manager. Click it to update all the packages you have installed. To ensure system integrity across all packages in the Tizen Studio, the Package Manager does not support updating packages individually.
+If you are connected to the Internet and updates are available for your installed Tizen Studio packages, an **Updates available** button appears in the Package Manager. Click it to update all the packages you have installed. To ensure system integrity across all packages in Tizen Studio, the Package Manager does not support updating packages individually.
 
 **Figure: Updates available button**
 
@@ -112,7 +112,7 @@ package-manager-cli update [--accept-license] [--no-java-check] [--proxy <value>
 | `--proxy <value>`           | Proxy configuration value. Use one of the following values: **direct**, **auto**, or **ip:port**. |
 | `-f, --file <file path>`    | If you want to install packages from a local SDK image, specify the full path of the SDK image file. |
 | `-p, --password <password>` | Administrator (sudo) password for authentication. Ubuntu only. |
-| `--latest`                  | This option is only useful for updating the Tizen Studio to the latest version after you downgraded it manually to an earlier version. Otherwise, the Package Manager updates it to the latest version with or without this option. |
+| `--latest`                  | This option is only useful for updating Tizen Studio to the latest version after you downgraded it manually to an earlier version. Otherwise, the Package Manager updates it to the latest version with or without this option. |
 
 ## Related Information
 * Dependencies

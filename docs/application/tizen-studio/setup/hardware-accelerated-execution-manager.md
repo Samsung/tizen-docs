@@ -1,8 +1,8 @@
 # Hardware Accelerated Execution Manager
 
-The Intel Hardware Accelerated Execution Manager (Intel&reg; HAXM) is a hardware-assisted virtualization engine (hypervisor) that uses Intel Virtualization Technology (VT) to speed-up Tizen application emulation on Windows&reg; and macOS host machines. In combination with Tizen x86 emulator images and the [Tizen Studio](../index.md), Intel&reg; HAXM speed-ups the Tizen emulation on Intel-VT-enabled systems.
+The Intel Hardware Accelerated Execution Manager (Intel&reg; HAXM) is a hardware-assisted virtualization engine (hypervisor) that uses Intel Virtualization Technology (VT) to speed-up Tizen application emulation on Windows and macOS host machines. In combination with Tizen x86 emulator images and the [Tizen Studio](../index.md), Intel&reg; HAXM speed-ups the Tizen emulation on Intel-VT-enabled systems.
 
-This topic describes how to install the HAXM on your [Windows&reg;](#on_Windows) or [macOS](#on_MacOS) development system.
+This topic describes how to install the HAXM on your [Windows](#on_Windows) or [macOS](#on_MacOS) development system.
 
 Hardware requirements:
 
@@ -13,11 +13,11 @@ Hardware requirements:
 > Intel&reg; HAXM can only be used on systems with an Intel processor which supports the Intel VT.
 
 <a name="on_Windows"></a>
-## Installing Intel&reg; HAXM on Windows&reg;
+## Installing Intel&reg; HAXM on Windows
 
-Supported Windows&reg; versions: 10/8.1/8/7 (32/64-bit), Vista (32/64-bit), XP SP2 or higher (32-bit only)
+Supported Windows versions: 10/8.1/8/7 (32/64-bit), Vista (32/64-bit), XP SP2 or higher (32-bit only)
 
-**HAXM is automatically installed as part of the Tizen Studio**. If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/win/](http://download.tizen.org/sdk/haxm/7.0.0/win/IntelHAXM_7.0.0.exe) and download the Windows installer package.
+**HAXM is automatically installed as part of Tizen Studio**. If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/win/](http://download.tizen.org/sdk/haxm/7.0.0/win/IntelHAXM_7.0.0.exe) and download the Windows installer package.
 
 **Table: Windows installer package**
 
@@ -62,12 +62,12 @@ To start or stop Intel&reg; HAXM, open the Command Prompt window with administra
 ### Removing Intel HAXM
 
 > **Warning**  
-> Close all instances of the Tizen emulator before removing the Intel&reg; HAXM.
+> Close all instances of the Tizen Emulator before removing the Intel&reg; HAXM.
 
 Run installer or use control panel, to uninstall the Intel&reg; HAXM.
 
 > **Important**  
-> If you remove the Intel&reg; HAXM, the acceleration of the Tizen emulator is disabled, but the emulator still works. If you install the Intel&reg; HAXM again, the acceleration is re-enabled.
+> If you remove the Intel&reg; HAXM, the acceleration of the Tizen Emulator is disabled, but the emulator still works. If you install the Intel&reg; HAXM again, the acceleration is re-enabled.
 
 ### Troubleshooting
 
@@ -75,13 +75,12 @@ If you meet an installation failure because of hardware requirements, check the 
 
 - Ensure **VT** is enabled in BIOS.
 - Ensure **Execute Disable Bit** is enabled in BIOS.
-- Ensure **Data Execution Prevention** is enabled in Windows&reg;. On the Windows&reg; platform, click **Control Panel > System > Advanced system settings > Advanced tab > Performance section**, **Options** (or **Settings**), and **Data Execution Prevention**. Make sure that **DEP** is enabled.
-- Ensure that **Hyper-V** is disabled (on Windows&reg; 8 or after):  
-  1. Run **Programs and Features** on the **Start** menu.  
-![Run Programs and Features](./media/hardware_run_program.png)  
-  2. Click **Turn Windows features on or off**.
+- Ensure **Data Execution Prevention** is enabled in Windows. On the Windows platform, click **Control Panel > System > Advanced system settings > Advanced tab > Performance section**, **Options** (or **Settings**), and **Data Execution Prevention**. Make sure that **DEP** is enabled.
+- Ensure that **Hyper-V** is disabled (on Windows 8 or after):  
+  1. Input **Control Panel** on the **Search** box in Windows 10.  
+  2. Click **Control Panel > Programs and Features > Turn Windows features on or off**.
   3. Disable **Hyper-V** and click **OK**.  
-![Disable Hyper-V](./media/hardware_hyper_v.png)  
+     ![Disable Hyper-V](./media/hardware_hyper_v.png)  
   4. Reboot the computer.
 
 <a name="on_MacOS"></a>
@@ -124,7 +123,7 @@ The Intel&reg; HAXM is installed and ready to use.
 
 ### Using Intel&reg; HAXM
 
-The Intel&reg; HAXM significantly enhances the performance of the Tizen emulator. For more information on the emulator details, see [Increasing the Application Execution Speed](../common-tools/emulator.md#speed).
+The Intel&reg; HAXM significantly enhances the performance of the Tizen Emulator. For more information on the emulator details, see [Increasing the Application Execution Speed](../common-tools/emulator.md#speed).
 
 
 ## Related information

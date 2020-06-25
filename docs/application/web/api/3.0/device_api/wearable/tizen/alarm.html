@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Alarm API</title>
+<meta data-version="3.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Alarm">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Alarm API</h1></div>
 <div class="brief">
  The Alarm API provides functionality for scheduling the system alarm.
@@ -23,7 +24,7 @@ Once an alarm goes off, it will be removed from the alarm storage automatically.
 <em>AlarmManager</em> provides methods to manage alarms such as adding and removing.
         </p>
         <p>
-For more information on the Alarm features, see <a href="https://developer.tizen.org/development/guides/web-application/alarm">Alarm Guide</a>.
+For more information on the Alarm features, see <a href="/application/web/guides/alarm/alarms">Alarm Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -244,7 +245,7 @@ It defines the number of seconds in a week.
 <div class="description">
             <p>
 Sets an alarm with the application ID to be run. You should definitely provide the application ID to run
-and the <a href="https://developer.tizen.org/development/guides/web-application/application-management/application-information-and-controls/application-controls#controls">application control</a> information if it is necessary.
+and the <a href="/application/web/guides/app-management/app-controls#application-control-request">application control</a> information if it is necessary.
 For more information about the application control, see <a href="application.html">The Application API</a>.
             </p>
            </div>
@@ -429,8 +430,7 @@ console.log("remove all registered alarms in the storage.");
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Alarm:
-                  </span>
+<span class="return">Alarm:</span>
  An alarm object with the specified ID.
               </ul>
 </div>
@@ -483,8 +483,7 @@ Alarms that have already been triggered are removed automatically from the stora
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Alarm[]:
-                  </span>
+<span class="return">Alarm[]:</span>
  All Alarm objects.
               </ul>
 </div>
@@ -570,7 +569,12 @@ tizen.alarm.add(alarm2, appId);
         
       <div class="constructors">
 <h4 id="AlarmRelative::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">AlarmRelative(long delay, optional long? period);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (long, long?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">AlarmRelative(long delay, optional long? period);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -624,8 +628,7 @@ If the alarm has expired, this method returns <var>null</var>.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long<span class="optional"> [nullable]</span>:</span>
  The duration before the next alarm is triggered.
               </ul>
 </div>
@@ -696,8 +699,17 @@ tizen.alarm.add(alarm3, appId);
       <div class="constructors">
 <h4 id="AlarmAbsolute::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">AlarmAbsolute(Date date);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, <a href="#ByDayValue">ByDayValue</a>[])</span></b></code>
+</dt>
 <pre class="webidl prettyprint">AlarmAbsolute(Date date, <a href="#ByDayValue">ByDayValue</a>[] daysOfTheWeek);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date, long)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">AlarmAbsolute(Date date, long period);</pre>
 </dl>
 </div>
@@ -773,8 +785,7 @@ If the alarm has expired, this method returns <var>null</var>. The returned date
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Date:
-                  </span>
+<span class="return">Date<span class="optional"> [nullable]</span>:</span>
  The date/time of the next alarm trigger.
               </ul>
 </div>
@@ -807,10 +818,10 @@ console.log("next scheduled time is " + date);
 <pre class="webidl prettyprint">module Alarm {
   typedef DOMString AlarmId;
   enum ByDayValue { "MO", "TU", "WE", "TH", "FR", "SA", "SU" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AlarmManagerObject">AlarmManagerObject</a>;
   [NoInterfaceObject] interface AlarmManagerObject {
     readonly attribute <a href="#AlarmManager">AlarmManager</a> alarm;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#AlarmManagerObject">AlarmManagerObject</a>;
   [NoInterfaceObject] interface AlarmManager {
     const long PERIOD_MINUTE = 60;
     const long PERIOD_HOUR = 3600;

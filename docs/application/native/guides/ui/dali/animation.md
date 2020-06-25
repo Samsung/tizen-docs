@@ -12,9 +12,9 @@ In this tutorial, the following subjects are covered:
 
 You can use animation to allow your objects to move around and change their properties for a specified duration.
 
-DALi provides a rich and easy to use animation framework which allows you to create visually rich applications. The `Dali::Animation` class can be used to animate the [animatable properties](properties.md#attributes) of any number of objects.
+DALi provides a rich and easy to use animation framework which allows you to create visually rich applications. The `Dali::Animation` class can be used to animate the [animatable properties](properties.md#managing-property-attributes) of any number of objects.
 
-DALi animations [occur in a dedicated thread](dali-rendering.md#animations-with-multi-threading). It allows animations to run smoothly, regardless of the time taken to process the input, events, and other factors in the application code.
+DALi animations [occur in a dedicated thread](multi-threaded.md#animations-with-multi-threading). This allows animations to run smoothly, regardless of the time taken to process the input, events, and other factors in the application code.
 
 The following figure illustrates the animation components:
 

@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Bookmark API</title>
+<meta data-version="5.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Bookmark">
- <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Bookmark API</h1></div>
 <div class="brief">
  The Bookmark API provides interfaces and methods for accessing Bookmark.
@@ -15,7 +16,7 @@ This API provides functionality to get, add, and remove bookmarks.
         </div>
 <div class="description">
         <p>
-For more information on the Bookmark features, see <a href="https://developer.tizen.org/development/guides/web-application/personal-data/bookmarks">Bookmark Guide</a>.
+For more information on the Bookmark features, see <a href="/application/web/guides/personal/bookmarks">Bookmark Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -177,8 +178,7 @@ In this case, the return will contain bookmarks under the root bookmark folder.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Bookmark[]:
-                  </span>
+<span class="return">Bookmark[]:</span>
   Array of Bookmarks.
               </ul>
 </div>
@@ -363,6 +363,9 @@ catch (err)
 <div class="constructors">
 <h4 id="BookmarkItem::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">BookmarkItem(DOMString title, DOMString url);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
@@ -436,6 +439,9 @@ If the parent bookmark folder indicates the root bookmark folder, the value will
 <div class="constructors">
 <h4 id="BookmarkFolder::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">BookmarkFolder(DOMString title);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
@@ -488,10 +494,10 @@ If the parent bookmark folder indicates the root bookmark folder, the value will
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Bookmark {
   typedef (<a href="#BookmarkItem">BookmarkItem</a> or <a href="#BookmarkFolder">BookmarkFolder</a>) Bookmark;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BookmarkManagerObject">BookmarkManagerObject</a>;
   [NoInterfaceObject] interface BookmarkManagerObject {
     readonly attribute <a href="#BookmarkManager">BookmarkManager</a> bookmark;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BookmarkManagerObject">BookmarkManagerObject</a>;
   [NoInterfaceObject] interface BookmarkManager {
     <a href="#Bookmark">Bookmark</a>[] get(optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder, optional boolean? recursive) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void add(<a href="#Bookmark">Bookmark</a> bookmark, optional <a href="#BookmarkFolder">BookmarkFolder</a>? parentFolder) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

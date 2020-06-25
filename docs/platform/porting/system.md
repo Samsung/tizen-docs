@@ -1,6 +1,6 @@
 # System
 
-You can implement various features relatesd to the System framework and the file system.
+You can implement various features related to the System framework and the file system.
 
 ## Partition and File System
 
@@ -43,6 +43,7 @@ The Tizen directory hierarchy intends to follow the File System Hierarchy Standa
 Directory macros for accessing the Tizen-specific directories are provided in the Tizen platform configuration metafile. The following table lists some example macros.
 
 **Table: Example directory macros**
+
 | Directory macro | Real path    |
 | ---------------- | ------------ |
 | `TZ_SYS_DATA`    | `/opt/data`  |
@@ -2156,4 +2157,386 @@ $ sensorctl test accelerometer 100 /* enable accelerometer with interval 100 ms 
 $ sensorctl test accelerometer 100 1000 /* enable accelerometer with interval 100 ms and 1s batch latency */
 $ sensorctl test accelerometer 100 1000 0 /* enable accelerometer with interval 100 ms, 1s batch latency and always on option */
 $ sensorctl info accelerometer /* retrieve accelerometer sensor information */
+```
+
+## Crash Framework
+
+### crash-manager
+
+crash-manager is a tool used to create crash reports when an application gets crashed.
+crash-manager is not usually invoked manually, but automatically by the kernel when the crash occurs. crash-manager generates the crash report and attaches the kernel-provided core, if requested. crash-worker package provides the `99-crash-manager.conf` file, which configures kernel parameters for crash-manager to get invoked automatically on crash. For more information, see [`99-crash-manager.conf`](#99-crash-manager).
+
+crash-manager consists of the following options:
+
+Option                | Description
+----------------------|------------------------------------------------------
+-p  --pid=PID         | Specifies the process ID (PID) of the dumped process.
+-u  --uid=UID         | Specifies the real user identifier (UID) of the dumped process.
+-g  --gid=GID         | Specifies the real group identifier (GID) of the dumped process.
+-i  --tid=TID         | Specifies the thread identifier (TID) of the thread that triggered core dump. For more information, see [core(5)](http://man7.org/linux/man-pages/man5/core.5.html).
+-s  --signal=SIG      | Specifies the signal number causing dump.
+-t  --time=TIME       | Specifies the time of dump in seconds since the epoch.
+-l  --live            | Gets the core dump of the running process.
+-k  --kill-after-dump | Kills after dump (only with --live option).
+-r  --print           | Prints the report path to standard output (stdout).
+-h  --help            | Prints the help message.
+
+In addition to handling crashes, crash-manager can create reports from running processes, livedumps. Livedumps contain `core` generated from the running process. The `core` is not created automatically but need to be requested explicitly by you. crash-manager needs to be invoked with the `--live` option, to produce the livedump report:
+
+```
+$ /usr/bin/crash-manager -p <PID> --live --print
+```
+
+<a name="99-crash-manager"> </a>
+#### 99-crash-manager.conf
+
+The `99-crash-manager.conf` file consists of the following kernel configurations related to the core dump:
+
+-  **kernel.core_pattern**  
+     This value contains the path to the file in which the kernel will store the core dump in case of a process crash. The possible values are described in [core(5)](http://man7.org/linux/man-pages/man5/core.5.html). If the first character of this path is a pipe symbol (`|`), then the whole line is interpreted as a program that can be executed, and the core dump will be given as a standard input.
+     To disable crash-manager, set this value to an empty string.
+
+     Default value: ```"/usr/bin/crash-manager -p %p -u %u -g %g -s %s -t %t"```
+
+-  **kernel.core_pipe_limit**  
+     Defines the maximum number of concurrent processes that may be dumped at the same time. For more information, see [core(5)](http://man7.org/linux/man-pages/man5/core.5.html).
+     If the limit is exceeded, then the next crashed process will not be dumped.
+
+     Default value: `10`
+
+-  **fs.suid_dumpable**  
+     Defines whether the core dump is produced for the set-owner-user-ID (SUID) binaries ([proc(5)](http://man7.org/linux/man-pages/man5/proc.5.html)) or not.
+
+     Default value: `2`
+
+
+#### crash-manager.conf
+
+The default configuration file for crash-manager is `/etc/crash-manager.conf`. It is used to configure the location, the content and retention policy of crash reports.
+
+-  **SystemMaxUse**  
+     Determines the maximum size (in kilobytes) on disk that reports can occupy. If this value is exceeded, then the oldest reports will be deleted.
+     Value `0` turns off the check.
+
+     Default value: `0`
+
+-  **SystemKeepFree**  
+     If set to a value other than `0`, then crash-manager will check whether an appropriate amount of empty space (in kilobytes) is available on the disk or not.
+     Value `0` turns off the check.
+
+     Default value: `0`
+
+-  **MaxRetentionSec**  
+     Defines the maximal time (in seconds) a report will be kept. Older reports will be deleted.
+     Value `0` turns off the check.
+
+     Default value: `0`
+
+-  **MaxCrashDump**  
+     Defines how many reports will be kept. In case the number of reports exceeds this value, the oldest reports will be removed.
+     Value `0` turns off the check.
+
+     Default value: `0`
+
+-  **AllowZip**  
+     Determines whether the report will be compressed or not.
+
+     Default value: `yes`
+
+-  **CoreDump**  
+     If set to `0`, then the core dump will be removed from the final report.
+
+     Default value: `1`
+
+-  **CrashRootPath**  
+     Specifies the directory in which the crash reports will be saved. In the specified path, crash-manager will create four sub-directories:
+     - `dump/`: For saved reports of crashed applications
+     - `livedump/`: For saved reports of running processes (with option `--live`)
+     - `log/`: For logs
+     - `temp/`: For files while creating report
+
+     Default value: `/opt/user/share/crash/`
+
+-  **ReportType**  
+     Specifies the type of the crash report. Possible values are:
+     - `INFO`: Only the `*.info` file will be saved. The `*.info` file contains information about the registers and the call stack of the crashed application.
+     - `FULL`: The full crash report:
+         - `*.info`: Contains information about the registers and the call stack of the crashed application.
+         - `*.coredump`: A process memory dump.
+         - `*.so_info`: Contains information about shared libraries used by the crashed application, together with the names of packages that contain them.
+         - `*.log`: Contains information provided by [dump_systemstate](#dump_systemstate).
+         - Interesting files (`cmdline`, `environ`, `io`, `maps`, `smaps`, `stack`, `stat`, `statm`, `cwd`, `fd`) from the `/proc/<PID>/` directory.
+
+     Default value: `FULL`
+
+
+-  **ExtraScript**  
+     Path to a script or an application that will be executed during report creation. The process will be started asynchronously.
+
+     Default value is empty
+
+#### Disabling crash-manager
+
+In some situations there may be a need to disable the crash-manager functionality. In such cases, the recommended solution is to provide the `sysctl` configuration file to overwrite the default `kernel.core_pattern` setting. For example, the `99-disable-crash-manager.conf` file must be placed in the `/usr/lib/sysctl.d/` directory and must contain:
+
+```
+kernel.core_pattern=
+kernel.core_uses_pid=0
+```
+
+### D-Bus notification
+
+After the report is generated, crash-manager sends the D-Bus signal containing the following information about the crashed process:
+
+Signature: `sssssiia{sv}`  
+Member: `ProcessCrashed`  
+Interface: `org.tizen.system.crash.Crash`  
+Path: `/Org/Tizen/System/Crash/Crash`  
+Data structure:  
+
+Data         | Type
+-------------|-------
+command name | STRING
+command path | STRING
+appid        | STRING
+pkgid        | STRING
+report path  | STRING
+PID          | INT32
+TID          | INT32
+array        | ARRAY
+
+Array containing pairs of keys (STRING) and values (VARIANT). Possible keys:
+
+Key          | Type   | Description
+-------------|--------|---------------
+x86.eip      | UINT32 | instruction pointer
+x86_64.rip   | UINT64 | instruction pointer
+arm.pc       | UINT32 | instruction pointer
+arm.lr       | UINT32 | instruction pointer
+aarch64.pc   | UINT64 | instruction pointer
+aarch64.lr   | UINT64 | instruction pointer
+sys.signal   | INT32  | signal that caused crash
+sys.tid.comm | STRING | thread name
+
+Depending on the architecture, array will contain:
+
+Arch    | PC (instruction pointer) | Link Register
+--------|--------------------------|------------------
+x86     | x86.eip                  | (not available)
+x86_64  | x86_64.eip               | (not available)
+arm     | arm.pc                   | arm.lr
+aarch64 | aarch64.pc               | aarch64.lr
+
+### minicoredumper
+
+minicoredumper is a tool that accepts a core dump on a standard input and saves the modified (size-reduced) core dump in a file. This tool is internally used by crash-manager to generate minicoredump. Modifications depends on the configuration, and they mainly rely on minimization of the core dump file.
+
+Usually, integrator does not need to modify this configuration unless integrator needs to change parameters of minicoredump files or settings for specified applications.
+
+minicoredumper can be used alone by setting `/proc/sys/kernel/core_pattern` to `|/usr/bin/minicoredumper %P %u %g %s %t %h %e`. All possible `%` specifiers are described in [core(5)](http://man7.org/linux/man-pages/man5/core.5.html).
+
+The default path of the configuration file is `/etc/minicoredumper/minicoredumper.cfg.json` and the file format is JSON. Possible options are:
+
+-   **base_dir** (string): Defines the root directory where the dumped data will be stored. This option is overwritten by the command line option, which is set by **crash-manager**.
+-   **watch** (array): A set of recepts, which will be used for applications that meet the defined criteria:
+    -   **exe** (string): The full path to the binary returned by readlink. The `*` character is supported as wildcard. If not specified, the `*` value will be used.
+    -   **comm** (string): The basename of the command that was run. The `*` character is supported as wildcard. If not specified, the `*` value will be used.
+    -   **recept** (string): The full path to the recept file.
+
+    > **Note**
+    >
+    > If **exe** and **comm** are specified, then both conditions must be met to use the recept.
+
+Default minicoredumper.cfg.json:
+
+```
+  {
+      "base_dir": "/usr/local/var/crash/minicoredumper",
+      "watch": [
+          {
+              "exe": "/usr/bin/dotnet-launcher",
+              "recept": "dotnet.recept.json"
+          },
+          {
+              "recept": "generic.recept.json"
+          }
+      ]
+  }
+```
+
+
+The default path of the recept files is `/etc/minicoredumper/` and the format is JSON. Possible options are:
+
+-   **stacks** (list): Contains settings for what should be dumped.
+    -   **dump_stacks** (bool): If true, stacks will be dumped.
+    -   **first_thread_only** (bool): If true, only the first thread will be dumped.
+    -   **max_stack_size** (integer): Maximum size of the stack.
+-   **maps** (list): Contains list "dump_by_name".
+    -   **dump_by_name** (list): List of pathnames of memory regions that should be dumped (pathnames are read from `/proc/<PID>/maps`).
+-   **compression** (list): Contains settings related to report compression.
+    -   **compressor** (string): Command line of compressor that supports stdin as input and stdout as output (gzip, bzip2, xz).
+    -   **extension**: (string): In case of a compressed core file, the specified value will be appended at the end of the core file name; otherwise, `.compressed` will be appended to the compressed core files.
+    -   **in_tar** (bool): Determines whether the core file should be a `.tar` file or not. This is useful because the tar format enables preserving the sparse properties of the core file.
+    -   **dump_auxv_so_list** (bool): If true, the shared object list will be saved in the core file.
+    -   **dump_pthread_list** (bool): If true, the pthread list will be saved in the core file.
+    -   **dump_robust_mutex_list** (bool): If true then robust mutexes will be saved in the core file.
+    -   **dump_scope** (int): Only registered dumps at this value or lower than this value will be dumped. This option applies only to libminicoredumper.
+    -   **dump_build_id** (bool): If true, then for all the contained ELF files, minicoredumper will save ELF header with BuildID to enable determining a specific version of the shared libraries.
+    -   **live_dumper** (bool): If true, then minicoredumper will trigger applications registered by libminicoredumper.
+    -   **write_proc_info** (boolean): If true, then interesting files (`cmdline`, `environ`, `io`, `maps`, `smaps`, `stack`, `stat`, `statm`, `cwd`, `fd`) from `/proc/<PID>` will be copied to the dump directory.
+    -   **proc_info_exclude** (list): Contains a list of filenames that must not be copied from the `/proc/` directory. For example, copying the `smaps` files will significantly increase the dumping time.
+    -   **write_debug_log** (bool): If true, then minicoredumper messages will be saved to `debug.txt` in the dump directory.
+    -   **dump_fat_core** (bool): If true, then all virtual memory areas will be saved in the separate core dump file. This must be used only for debug purpose.
+    -   **dump_pointed_by_regs** (bool): If true, then memory region around the address to which the CPU registers point is saved in the core file by minicoredumper. Precisely, for each CPU register minicoredumper saves page to which address points, one page before the address, and one page after the address. Page is 4096 bytes on most architectures.
+    -   **full_coredump** (bool): If true, then minicoredumper dumps the full core dump file.
+
+Default `generic.recept.json`:
+
+```
+  {
+      "stacks": {
+          "dump_stacks": true,
+          "first_thread_only": false,
+          "max_stack_size": 0
+      },
+      "maps": {
+          "dump_by_name": [
+              "[vdso]"
+          ]
+      },
+      "compression": {
+          "compressor": "",
+          "extension": "",
+          "in_tar": true
+      },
+      "dump_auxv_so_list": true,
+      "dump_pthread_list": true,
+      "dump_robust_mutex_list": true,
+      "dump_scope": 1024,
+      "dump_build_id": true,
+      "live_dumper": true,
+      "write_proc_info": true,
+      "proc_info_exclude": [
+          "smaps"
+      ],
+      "write_debug_log": false,
+      "dump_fat_core": false,
+      "dump_pointed_by_regs": true
+  }
+```
+
+### dump_systemstate
+
+**dump_systemstate** is used to dump information that can be useful for developers to fix bugs in the crashed applications.
+
+Default dump contains:
+-   Basic information:
+    -   Binary version from `/etc/info.ini`
+    -   Tizen version from `/etc/tizen-release`
+    -   Kernel version from `/proc/version`
+    -   Boot arguments from `/proc/cmdline`
+    -   CPU and system architecture from `/proc/cpuinfo`
+    -   System uptime from `/proc/uptime`
+    -   Local time from `/opt/etc/localtime`
+-   Resource usage information:
+    - System statistics from `/proc/stat`
+    - System memory usage from `/proc/meminfo`
+    - System disk I/O statistics from `/proc/diskstats`
+    - System disk space usage
+    - System memory statistics
+-   Process information:
+    - Process information by `ps` command
+-   Device information:
+    - Device major numbers from `/proc/devices` 
+
+
+The dump contents of **dump_systemstate** can be modified by the following command line options:
+
+Option | Description
+-------|----------------------------------
+-f     | write to file (instead of stdout)
+-k     | dump kernel messages (root only)
+-d     | dump dlog messages
+-j     | dump journal log messages
+-p     | dump list of installed packages
+-e     | dump extras defined in the config
+
+Depending on the command line options, **dump_systemstate** can save the output of these commands:
+
+-   `/bin/df -h`
+-   `/bin/du -ah /opt --exclude=/opt/usr`
+-   `/bin/ls -al /opt/etc/localtime`
+-   `/bin/top -bcH -n 1`
+-   `/bin/ps auxfw`
+-   `/bin/memps -v`
+-   `/bin/buxton2ctl dump memory`
+-   `/bin/buxton2ctl dump system`
+-   `/usr/bin/pkgcmd -l`
+-   `/bin/dmesg -T`
+-   `/bin/dlogutil -d -v threadtime -u 16384`
+-   `/bin/journalctl -b -n 1024`
+
+
+There are two types of configuration files, under `files/` subdirectory and `programs/` subdirectory. These files allow to specify the results of additional files and programs that will be included in the **dump_systemstate** output:
+
+-   `files/` subdirectory: Specified files will be appended to the **dump_systemstate** output.
+    - **[SECTION_NAME]**
+    - **title**: Title that will be printed before contents of the file
+    - **path**: Path to the file
+
+    Example:
+
+    ```
+      [UNIQUE_ID_KEY]
+      title=header line that gets printed (path gets appended too)
+      path=/path/to/the/file
+
+      [DLOG_CONF]
+      title=dlog configuration file
+      path=/opt/etc/dlog.conf
+    ```
+
+-   `programs/` subdirectory: Specified commands will be executed and the output will be added to the **dump_systemstate** output.
+    - **[SECTION_NAME]**
+    - **title**: Title that will be printed before contents of the file
+    - **path**: Path to the application
+    - **args**: Arguments for the application
+    - **env**: Environment variable, which should be passed to the application
+
+    Example:
+
+    ```
+      [UNIQUE_ID_KEY]
+      title=header line describing the program (will be printed alongside env, path and args)
+      path=/path/to/the/program/executable
+      args=-x foo --verbose
+      env=POSIXLY_CORRECT=1
+
+      [DLOG_DUMP]
+      title=dump dlog contents
+      path=/usr/bin/dlogutil
+      args=-d
+    ```
+
+### livedumper
+
+**livedumper** is a tool to save the core dump of the live process.
+
+Usage:
+
+```
+livedumper [-m] [-P <fd>] [-f <file_name>] <PID>
+```
+
+Option               | Description
+---------------------|-------------------------------------------------------------------------------
+-f &lt;file_name&gt; | Saves core dump to the specified file (default livecore.&lt;PID&gt; in current directory).
+-P &lt;fd&gt;        | Descriptor for the registers structure (used by crash-manager).
+-m                   | Saves minicore. Saves minimum information that allows to restore the call stack.
+
+Example:
+
+```
+  $ sleep 123 &
+  $ livedumper -f sleep.core -m $?
 ```

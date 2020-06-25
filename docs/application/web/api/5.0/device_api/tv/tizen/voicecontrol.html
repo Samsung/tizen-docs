@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>VoiceControl API</title>
+<meta data-version="5.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::VoiceControl">
- <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="tv_s_w.png"></div>
+<div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="tv_s_w.png"></div>
 <div class="title"><h1>VoiceControl API</h1></div>
 <div class="brief">
  The Voice Control API provides interfaces and methods for recognizing voice command.
@@ -208,8 +209,7 @@ using one of voice control client objects, it affects other objects.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">VoiceControlClient:
-                  </span>
+<span class="return">VoiceControlClient:</span>
  The object to manage voice control.
               </ul>
 </div>
@@ -279,8 +279,7 @@ For example, "ko_KR" for Korean, "en_US" for American English.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  Currently set language.
               </ul>
 </div>
@@ -451,8 +450,7 @@ client.unsetCommandList("FOREGROUND");
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -580,8 +578,7 @@ client.removeResultListener(id);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  Identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -742,13 +739,22 @@ client.release();
     attribute DOMString command;
     attribute <a href="#VoiceControlCommandType">VoiceControlCommandType</a> type;
   };</pre>
+<p><span class="version">Since: </span>
+ 4.0
+          </p>
 <div class="constructors">
 <h4 id="VoiceControlCommand::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#VoiceControlCommandType">VoiceControlCommandType</a>?)</span></b></code>
+</dt>
 <div class="brief">
  Command constructor
               </div>
 <pre class="webidl prettyprint">VoiceControlCommand(DOMString command, optional <a href="#VoiceControlCommandType">VoiceControlCommandType</a>? type);</pre>
+<p><span class="version">Since: </span>
+ 4.0
+              </p>
 </dl>
 </div>
 <div class="attributes">
@@ -763,6 +769,9 @@ client.release();
 The command should be set as text you want to be recognized.
             </p>
            </div>
+<p><span class="version">Since: </span>
+ 4.0
+            </p>
 </li>
 <li class="attribute" id="VoiceControlCommand::type">
 <span class="attrName"><span class="type">VoiceControlCommandType </span><span class="name">type</span></span><div class="brief">
@@ -772,6 +781,9 @@ The command should be set as text you want to be recognized.
             <p>
 The default value is <var>"FOREGROUND"</var>            </p>
            </div>
+<p><span class="version">Since: </span>
+ 4.0
+            </p>
 </li>
 </ul>
 </div>
@@ -867,7 +879,9 @@ The default value is <var>"FOREGROUND"</var>            </p>
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -885,16 +899,16 @@ To guarantee that the voice control application runs on a device with microphone
 <li class="feature">http://tizen.org/feature/microphone</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module VoiceControl {
   enum VoiceControlResultEvent { "SUCCESS", "FAILURE" };
   enum VoiceControlCommandType { "FOREGROUND" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#VoiceControlClientManagerObject">VoiceControlClientManagerObject</a>;
   [NoInterfaceObject] interface VoiceControlClientManagerObject {
     readonly attribute <a href="#VoiceControlClientManager">VoiceControlClientManager</a> voicecontrol;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#VoiceControlClientManagerObject">VoiceControlClientManagerObject</a>;
   [NoInterfaceObject] interface VoiceControlClientManager {
     <a href="#VoiceControlClient">VoiceControlClient</a> getVoiceControlClient() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };

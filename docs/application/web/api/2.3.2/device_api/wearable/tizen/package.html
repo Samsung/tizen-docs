@@ -4,17 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Package API</title>
+<meta data-version="2.3.2" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Package">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="wearable_s_w.png"></div>
 <div class="title"><h1>Package API</h1></div>
 <div class="brief">
  This API provides functionalities to install or uninstall packages, and retrieve information about installed packages.<br>It also provides a listener method so that an application can be notified when there is a change on the installed packages.
         </div>
 <div class="description">
         <p>
-For more information on the Package features, see <a href="https://developer.tizen.org/development/guides/web-application/application-management/package-information">Package Guide</a>.
+For more information on the Package features, see <a href="/application/web/guides/app-management/packages">Package Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -447,8 +448,7 @@ The list of installed packages and their package IDs is obtained using <em>getPa
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">PackageInformation:
-                  </span>
+<span class="return">PackageInformation:</span>
  The information of a package.
               </ul>
 </div>
@@ -911,10 +911,10 @@ It is used in <em>tizen.package.getPackagesInfo()</em>.
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Package {
   typedef DOMString PackageId;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PackageManagerObject">PackageManagerObject</a>;
   [NoInterfaceObject] interface PackageManagerObject {
     readonly attribute <a href="#PackageManager">PackageManager</a> package;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#PackageManagerObject">PackageManagerObject</a>;
   [NoInterfaceObject] interface PackageManager {
     void install(DOMString packageFileURI, <a href="#PackageProgressCallback">PackageProgressCallback</a> progressCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                  raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

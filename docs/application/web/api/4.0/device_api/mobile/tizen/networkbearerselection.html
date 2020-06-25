@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>NetworkBearerSelection API</title>
+<meta data-version="4.0" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::NetworkBearerSelection">
- <div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="mobile-optional" title="Optional, Not supported by Tizen Mobile emulator" src="mobile_s_w_optional.png"></div>
 <div class="title"><h1>NetworkBearerSelection API</h1></div>
 <div class="brief">
  The Network Bearer Selection (NBS) API defines interfaces and methods providing Web applications to access the devices.
@@ -15,10 +16,7 @@
 <div class="description">
         <p>
 This API provides interfaces and methods for users to set network bearer selection.
-Since Tizen 2.3, the "http://tizen.org/privilege/internet" privilege is additionally required.        </p>
-        <p>
-If not declared in config.xml of wgt file, <em>UnknownError</em> occurs.
-
+Since Tizen 2.3, the "http://tizen.org/privilege/internet" privilege is additionally required.<br>If not declared in config.xml of wgt file, <em>UnknownError</em> occurs.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -154,7 +152,7 @@ This API offers methods for network bearer selection.
 <div class="brief">
  Requests a specific network connection.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -262,7 +260,7 @@ tizen.networkbearerselection.requestRouteToHost("CELLULAR", "www.tizen.org", sta
 <div class="brief">
  Releases a specific network connection.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void releaseRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void releaseRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="tizen.html#SuccessCallback">SuccessCallback</a> successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.1
@@ -274,8 +272,6 @@ The function must asynchronously acquire success or fail.
             <p>
 When called, it closes a network connection.
             </p>
-           </div>
-<div class="description">
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
             </p>
@@ -413,7 +409,9 @@ It is used in asynchronous operations with requestRouteToHost().
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -423,15 +421,15 @@ To guarantee that the NBS application runs on a device with telephony feature, d
 <li class="feature">http://tizen.org/feature/network.telephony</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module NetworkBearerSelection {
   enum NetworkType { "CELLULAR", "UNKNOWN" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NetworkBearerSelectionObject">NetworkBearerSelectionObject</a>;
   [NoInterfaceObject] interface NetworkBearerSelectionObject {
     readonly attribute <a href="#NetworkBearerSelection">NetworkBearerSelection</a> networkbearerselection;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NetworkBearerSelectionObject">NetworkBearerSelectionObject</a>;
   [NoInterfaceObject] interface NetworkBearerSelection {
     void requestRouteToHost(<a href="#NetworkType">NetworkType</a> networkType, DOMString domainName, <a href="#NetworkSuccessCallback">NetworkSuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

@@ -28,16 +28,21 @@ The main features of the Alarm API include:
 To enable your application to use the alarm functionality:
 
 1. To use the Alarm API (in [mobile](../../api/mobile/latest/group__CAPI__ALARM__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__ALARM__MODULE.html) applications), the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
-```
-<privileges>
-    <privilege>http://tizen.org/privilege/alarm.get</privilege>
-    <privilege>http://tizen.org/privilege/alarm.set</privilege>
-</privileges>
-```
+   ```
+   <privileges>
+       <privilege>http://tizen.org/privilege/alarm.get</privilege>
+       <privilege>http://tizen.org/privilege/alarm.set</privilege>
+
+       <!-- To launch an application or notification with Alarm API -->
+       <privilege>http://tizen.org/privilege/appmanager.launch</privilege>
+       <privilege>http://tizen.org/privilege/notification</privilege>
+   </privileges>
+   ```
+
 2. To use the functions and data types of the Alarm API, include the `<app_alarm.h>` header file in your application:
-```
-#include <app_alarm.h>
-```
+   ```
+   #include <app_alarm.h>
+   ```
 <a name="scenario_1"></a>
 ## Setting an Alarm after Specific Time
 

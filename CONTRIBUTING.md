@@ -7,6 +7,7 @@ The document covers the process for contributing to the articles and code sample
 1.  [Process for contributing](#process-for-contributing)
     1. [Repository structure](#repository-structure)
     1. [File Name](#file-name)
+    1. [Naming Rules for Tizen Terms](./styleguide/naming-rules.md)
 1.  [DOs and DON'Ts](#dos-and-donts)
 1.  [Content license](#content-license)
 1.  [Contributor License Agreement](#contributor-license-agreement)

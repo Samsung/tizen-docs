@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>File API</title>
+<meta data-version="4.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::File">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
 <div class="title"><h1>File API</h1></div>
 <div class="brief">
  This plugin implements a File API allowing read/write access to files residing on the device.
@@ -30,7 +31,7 @@ for accessing only external storage using this API, a privilege <a href="http://
           <li>
 for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
           <li>
-Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
+Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="../ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
        </div>
 <p><span class="version">Since: </span>
@@ -255,6 +256,9 @@ Storage privileges are privacy-related privileges and there is a need of asking 
 See <a href="https://www.w3.org/TR/FileAPI/#blob-section">The Blob Interface and Binary Data</a>.
           </div>
 <pre class="webidl prettyprint">  typedef <a href="#Blob">Blob</a> Blob;</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 </div>
 <div class="typedef" id="WriteData">
 <a class="backward-compatibility-anchor" name="::File::WriteData"></a><h3>1.2. WriteData</h3>
@@ -323,7 +327,7 @@ See <a href="https://www.w3.org/TR/FileAPI/#blob-section">The Blob Interface and
 <pre class="webidl prettyprint">  dictionary ProgressEventInit {
     unsigned long long loaded = false;
     unsigned long long total = false;
-     target = null;
+    EventTarget target = null;
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -361,7 +365,12 @@ var event = new ProgressEvent("submit", eventInit);
 </div>
 <div class="constructors">
 <h4 id="ProgressEvent::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ProgressEvent(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#ProgressEventInit">ProgressEventInit</a>)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ProgressEvent(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -1059,9 +1068,9 @@ The specifics of naming filesystems is unspecified, but a name must be unique ac
     const short TEMPORARY = 0;
     const short PERSISTENT = 1;
     void requestFileSystem(short type, long long size, optional <a href="#FileSystemCallback">FileSystemCallback</a>? successCallback,
-                           optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback) raises();
+                           optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback) raises(TypeError);
     void resolveLocalFileSystemURL(DOMString uri, optional <a href="#EntryCallback">EntryCallback</a>? successCallback, optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback)
-                                   raises();
+                                   raises(TypeError);
   };</pre>
 <pre class="webidl prettyprint">  Window implements <a href="#LocalFileSystem">LocalFileSystem</a>;</pre>
 <p><span class="version">Since: </span>
@@ -1106,7 +1115,7 @@ The specifics of naming filesystems is unspecified, but a name must be unique ac
 <div class="brief">
  Request a file system in which to store application data.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void requestFileSystem(short type, long long size, optional <a href="#FileSystemCallback">FileSystemCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void requestFileSystem(short type, long long size, optional <a href="#FileSystemCallback">FileSystemCallback</a>? successCallback,
                        optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1239,13 +1248,13 @@ resolveLocalFileSystemURL(uri, successCallback, errorCallback);
     readonly attribute DOMString fullPath;
     readonly attribute DOMString name;
     readonly attribute <a href="#FileSystem">FileSystem</a> filesystem;
-    void getMetadata(<a href="#MetadataCallback">MetadataCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises();
+    void getMetadata(<a href="#MetadataCallback">MetadataCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
     void moveTo(<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)
-                raises();
+                raises(FileException);
     void copyTo(<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)
-                raises();
-    void getParent(<a href="#EntryCallback">EntryCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises();
-    void remove(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises();
+                raises(FileException);
+    void getParent(<a href="#EntryCallback">EntryCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
+    void remove(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
     DOMString toURL();
   };</pre>
 <p><span class="version">Since: </span>
@@ -1708,8 +1717,7 @@ requestFileSystem(TEMPORARY, 100, function(fs)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  URL that can be used to identify this entry.
               </ul>
 </div>
@@ -1740,10 +1748,10 @@ requestFileSystem(TEMPORARY, 100, function(fs)
 <pre class="webidl prettyprint">  interface DirectoryEntry : <a href="#Entry">Entry</a> {
     <a href="#DirectoryReader">DirectoryReader</a> createReader();
     void getDirectory(DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)
-                      raises();
+                      raises(FileException);
     void getFile(DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)
-                 raises();
-    void removeRecursively(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises();
+                 raises(FileException);
+    void removeRecursively(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -1772,8 +1780,7 @@ requestFileSystem(TEMPORARY, 100, function(fs)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DirectoryReader:
-                  </span>
+<span class="return">DirectoryReader:</span>
  DirectoryReader.
               </ul>
 </div>
@@ -2009,8 +2016,11 @@ Otherwise, if no other error occurs, getFile must return a FileEntry correspondi
  The DirectoryReader interface provides access to the Filesystem API.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface DirectoryReader {
-    void readEntries(<a href="#EntriesCallback">EntriesCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises();
+    void readEntries(<a href="#EntriesCallback">EntriesCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
@@ -2085,6 +2095,9 @@ Otherwise, if no other error occurs, getFile must return a FileEntry correspondi
     void createWriter(<a href="#FileWriterCallback">FileWriterCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
     void file(<a href="#FileCallback">FileCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a> onerror);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
@@ -2224,10 +2237,10 @@ Otherwise, if no other error occurs, getFile must return a FileEntry correspondi
     attribute <a href="#ProgressCallback">ProgressCallback</a>? onerror;
     attribute <a href="#ProgressCallback">ProgressCallback</a>? onloadend;
     void abort();
-    void readAsDataURL(<a href="#Blob">Blob</a> blob) raises(, <a href="#FileError">FileError</a>);
-    void readAsText(<a href="#Blob">Blob</a> blob, optional DOMString? label) raises(, <a href="#FileError">FileError</a>);
-    void readAsBinaryString(<a href="#Blob">Blob</a> blob) raises(, <a href="#FileError">FileError</a>);
-    void readAsArrayBuffer(<a href="#Blob">Blob</a> blob) raises(, <a href="#FileError">FileError</a>);
+    void readAsDataURL(<a href="#Blob">Blob</a> blob) raises(TypeError, <a href="#FileError">FileError</a>);
+    void readAsText(<a href="#Blob">Blob</a> blob, optional DOMString? label) raises(TypeError, <a href="#FileError">FileError</a>);
+    void readAsBinaryString(<a href="#Blob">Blob</a> blob) raises(TypeError, <a href="#FileError">FileError</a>);
+    void readAsArrayBuffer(<a href="#Blob">Blob</a> blob) raises(TypeError, <a href="#FileError">FileError</a>);
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -2249,7 +2262,12 @@ document.addEventListener("deviceready", deviceReady, true);
 </div>
 <div class="constructors">
 <h4 id="FileReader::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">FileReader();</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor ()</span></b></code>
+</dt>
+<pre class="webidl prettyprint">FileReader();</pre>
+</dl>
 </div>
 <div class="consts">
 <h4>Constants</h4>
@@ -2683,10 +2701,10 @@ ByteLength: 3
     attribute <a href="#ProgressCallback">ProgressCallback</a>? onabort;
     attribute <a href="#ProgressCallback">ProgressCallback</a>? onerror;
     attribute <a href="#ProgressCallback">ProgressCallback</a>? onwriteend;
-    void abort() raises();
-    void seek(long offset) raises();
-    void truncate(long size) raises();
-    void write(<a href="#WriteData">WriteData</a> data) raises();
+    void abort() raises(FileException);
+    void seek(long offset) raises(FileException);
+    void truncate(long size) raises(FileException);
+    void write(<a href="#WriteData">WriteData</a> data) raises(FileException);
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -2710,6 +2728,9 @@ ByteLength: 3
 <a class="backward-compatibility-anchor" name="::File::FileWriter::DONE"></a><span class="name">DONE</span><div class="brief">
  Above constants describe current state of FileWriter object.
             </div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
 <br><br>
 </li>
 </dl>
@@ -3103,6 +3124,9 @@ entry.createWriter(successCallback, errorCallback);
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ProgressCallback {
     void onsuccess(<a href="#ProgressEvent">ProgressEvent</a> event);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -3360,6 +3384,9 @@ entry.createWriter(successCallback, errorCallback);
  Used to supply a File as a response to a user query.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#File">File</a> file);</pre></div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -3459,8 +3486,10 @@ entry.createWriter(successCallback, errorCallback);
   dictionary ProgressEventInit {
     unsigned long long loaded = false;
     unsigned long long total = false;
-     target = null;
+    EventTarget target = null;
   };
+  Cordova implements <a href="#FileSystemManagerObject">FileSystemManagerObject</a>;
+  Window implements <a href="#LocalFileSystem">LocalFileSystem</a>;
   [Constructor(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict)]
   interface ProgressEvent {
     readonly attribute DOMString type;
@@ -3475,7 +3504,6 @@ entry.createWriter(successCallback, errorCallback);
   [NoInterfaceObject] interface FileSystemManagerObject {
     readonly attribute <a href="#FileSystemManager">FileSystemManager</a> file;
   };
-  <a href="cordova.html#Cordova">Cordova</a> implements <a href="#FileSystemManagerObject">FileSystemManagerObject</a>;
   [NoInterfaceObject] interface FileSystemManager {
     readonly attribute DOMString? applicationDirectory;
     readonly attribute DOMString? applicationStorageDirectory;
@@ -3524,36 +3552,35 @@ entry.createWriter(successCallback, errorCallback);
     const short TEMPORARY = 0;
     const short PERSISTENT = 1;
     void requestFileSystem(short type, long long size, optional <a href="#FileSystemCallback">FileSystemCallback</a>? successCallback,
-                           optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback) raises();
+                           optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback) raises(TypeError);
     void resolveLocalFileSystemURL(DOMString uri, optional <a href="#EntryCallback">EntryCallback</a>? successCallback, optional <a href="#ErrorCallback">ErrorCallback</a>? errorCallback)
-                                   raises();
+                                   raises(TypeError);
   };
-  Window implements <a href="#LocalFileSystem">LocalFileSystem</a>;
   [NoInterfaceObject] interface Entry {
     readonly attribute boolean isFile;
     readonly attribute boolean isDirectory;
     readonly attribute DOMString fullPath;
     readonly attribute DOMString name;
     readonly attribute <a href="#FileSystem">FileSystem</a> filesystem;
-    void getMetadata(<a href="#MetadataCallback">MetadataCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises();
+    void getMetadata(<a href="#MetadataCallback">MetadataCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
     void moveTo(<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)
-                raises();
+                raises(FileException);
     void copyTo(<a href="#DirectoryEntry">DirectoryEntry</a> parent, optional DOMString? newName, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)
-                raises();
-    void getParent(<a href="#EntryCallback">EntryCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises();
-    void remove(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises();
+                raises(FileException);
+    void getParent(<a href="#EntryCallback">EntryCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
+    void remove(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
     DOMString toURL();
   };
   interface DirectoryEntry : <a href="#Entry">Entry</a> {
     <a href="#DirectoryReader">DirectoryReader</a> createReader();
     void getDirectory(DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)
-                      raises();
+                      raises(FileException);
     void getFile(DOMString path, optional ? options, optional <a href="#EntryCallback">EntryCallback</a>? onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror)
-                 raises();
-    void removeRecursively(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises();
+                 raises(FileException);
+    void removeRecursively(<a href="#VoidCallback">VoidCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
   };
   [NoInterfaceObject] interface DirectoryReader {
-    void readEntries(<a href="#EntriesCallback">EntriesCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises();
+    void readEntries(<a href="#EntriesCallback">EntriesCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
   };
   [NoInterfaceObject] interface FileEntry : <a href="#Entry">Entry</a> {
     void createWriter(<a href="#FileWriterCallback">FileWriterCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
@@ -3573,10 +3600,10 @@ entry.createWriter(successCallback, errorCallback);
     attribute <a href="#ProgressCallback">ProgressCallback</a>? onerror;
     attribute <a href="#ProgressCallback">ProgressCallback</a>? onloadend;
     void abort();
-    void readAsDataURL(<a href="#Blob">Blob</a> blob) raises(, <a href="#FileError">FileError</a>);
-    void readAsText(<a href="#Blob">Blob</a> blob, optional DOMString? label) raises(, <a href="#FileError">FileError</a>);
-    void readAsBinaryString(<a href="#Blob">Blob</a> blob) raises(, <a href="#FileError">FileError</a>);
-    void readAsArrayBuffer(<a href="#Blob">Blob</a> blob) raises(, <a href="#FileError">FileError</a>);
+    void readAsDataURL(<a href="#Blob">Blob</a> blob) raises(TypeError, <a href="#FileError">FileError</a>);
+    void readAsText(<a href="#Blob">Blob</a> blob, optional DOMString? label) raises(TypeError, <a href="#FileError">FileError</a>);
+    void readAsBinaryString(<a href="#Blob">Blob</a> blob) raises(TypeError, <a href="#FileError">FileError</a>);
+    void readAsArrayBuffer(<a href="#Blob">Blob</a> blob) raises(TypeError, <a href="#FileError">FileError</a>);
   };
   [NoInterfaceObject] interface FileWriter {
     const short INIT = 0;
@@ -3592,10 +3619,10 @@ entry.createWriter(successCallback, errorCallback);
     attribute <a href="#ProgressCallback">ProgressCallback</a>? onabort;
     attribute <a href="#ProgressCallback">ProgressCallback</a>? onerror;
     attribute <a href="#ProgressCallback">ProgressCallback</a>? onwriteend;
-    void abort() raises();
-    void seek(long offset) raises();
-    void truncate(long size) raises();
-    void write(<a href="#WriteData">WriteData</a> data) raises();
+    void abort() raises(FileException);
+    void seek(long offset) raises(FileException);
+    void truncate(long size) raises(FileException);
+    void write(<a href="#WriteData">WriteData</a> data) raises(FileException);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface ProgressCallback {
     void onsuccess(<a href="#ProgressEvent">ProgressEvent</a> event);

@@ -4,7 +4,7 @@ This topic explains how to customize UI components. Before learning the process 
 
 EFL provides the EDC script as a way for defining a look for UI components. For more information on how to write an EDC script, see [Layouting with EDC](learn-edc-intro.md).
 
-## Style, Theme, and EDC
+## Style, Theme, and EDC<a name="style-theme-and-edc"></a>
 
 The style of a UI component refers to its graphical appearance determined by the layout, shapes, fonts, and colors. A theme is a collection of styles for every UI component. Tizen provides a default theme for each profile and version, which includes all available styles of every UI component.
 
@@ -54,7 +54,7 @@ To customize a UI component:
 
 2. Create an EDJ file in the `/res/edje/` directory.
 
-   If you add the `custom.edc` file, the Tizen Studio calls Edje tools automatically to build the final `custom.edj` file when building the project.
+   If you add the `custom.edc` file, Tizen Studio calls Edje tools automatically to build the final `custom.edj` file when building the project.
 
    The EDJ file is installed under the application data path. You can get the full path of where the EDJ file is installed using the `app_get_resource()` function.
 

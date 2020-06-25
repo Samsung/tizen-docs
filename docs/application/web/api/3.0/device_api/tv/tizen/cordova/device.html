@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Device API</title>
+<meta data-version="3.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Device">
- <div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="../tv_s_w.png"></div>
+<div class="supported-platforms"><img class="tv-mandatory emulator" title="Mandatory, Supported by Tizen Tv emulator" src="../tv_s_w.png"></div>
 <div class="title"><h1>Device API</h1></div>
 <div class="brief">
  This plugin defines a global device object, which describes the device's hardware and software.
@@ -245,10 +246,10 @@ function onDeviceReady()
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Device {
+  Window implements <a href="#DeviceManagerObject">DeviceManagerObject</a>;
   [NoInterfaceObject] interface DeviceManagerObject {
     readonly attribute <a href="#Device">Device</a> device;
   };
-  Window implements <a href="#DeviceManagerObject">DeviceManagerObject</a>;
   [NoInterfaceObject] interface Device {
     readonly attribute DOMString cordova;
     readonly attribute DOMString model;

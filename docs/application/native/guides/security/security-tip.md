@@ -70,6 +70,8 @@ Because these privileges are used to access very sensitive user data, when an ap
 ## Communicating Securely Between Applications
 
 Tizen supports APIs for communicating between application processes. You can use various methods when developing your Tizen application to ensure secure communication: file sharing, message ports, and data control.
+> [!NOTE]
+> In general, the best approach for user data security is to minimize the use of APIs that access sensitive or personal user data. The private user data can be shared with other applications. Therefore, you must be careful when communicating between applications. If you want to transmit the user data, consider if there is a way that your application logic can be implemented using a hash or non-reversible form of the data.
 
 ### File Sharing
 

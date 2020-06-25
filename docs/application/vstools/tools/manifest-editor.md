@@ -276,7 +276,7 @@ For more information on the relationship between the elements, see the [element 
   By default, this value is not defined.
 
 
-- `launch_mode`
+- `launch_mode`<a name="launch_mode"></a>
 
    Application launch mode (available values: `single` (launched as a main application), `group` (launched as a sub application), `caller` (caller application))
 
@@ -415,7 +415,7 @@ This element contains the watch application icon image.
 ```
 
 <a name="widget_app"></a>
-### &lt;widget-application&gt; Element
+### \<widget-application\> Element
 
 This element contains the settings for a widget application.
 
@@ -902,7 +902,7 @@ This element is used to get the required access privileges provided by a provide
 <a name="feature"></a>
 ### &lt;feature&gt; Element
 
-This element contains a list of required features for feature-based filtering in the Tizen Store.
+This element contains a list of required features for feature-based filtering in Tizen Store.
 
 The element is used to define the hardware and software components for the Tizen application. In order to use or access an API that is specialized for each vendor or platform, the feature must be declared. This element has no child elements.
 
@@ -920,7 +920,7 @@ For more information on the relationship between the elements, see the [element 
 
 - `name`  (mandatory, a feature key URI)
 
-  Item name used in feature-based filtering in the Tizen Store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`
+  Item name used in feature-based filtering in Tizen Store, for example, `"http://tizen.org/feature/camera"` or `"http://tizen.org/feature/fmradio"`
 
 **Expected value:**
 

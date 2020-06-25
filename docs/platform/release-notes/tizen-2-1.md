@@ -1,8 +1,6 @@
 # Tizen 2.1
 
-Release Date: 18 May, 2013
-
-
+Release date: May 18, 2013
 
 The Tizen 2.1 Nectarine release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native APIs, necessary to develop future Tizen compliant solutions.
 
@@ -39,7 +37,7 @@ The Tizen Software Development Kit (SDK) is a comprehensive set of tools for dev
     - Web Dynamic Box configuration extensions
     - Web Dynamic Box execution and life-cycle management
   - Configuration extension updates
-    - The "package" attribute in the <tizen:application> element to specify the package ID
+    - The "package" attribute in the `<tizen:application>` element to specify the package ID
 
 ##### Changed Features
 

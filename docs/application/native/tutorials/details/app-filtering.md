@@ -33,7 +33,7 @@ application is using, do one of the following:
     information instead of GPS.
 
 - Use feature-based filtering to prevent your application from being
-    shown in the application list on the Tizen Store, if the user's
+    shown in the application list on Tizen Store, if the user's
     device does not support all the features of your application. This
     way you can prevent the application from being installed on an
     unsupported device in the first place.
@@ -44,7 +44,7 @@ application is using, do one of the following:
     number of devices which can support the application.
 
 If the `tizen-manifest.xml` file of the application package includes a
-feature list, the Tizen Store compares the capabilities of the device
+feature list, Tizen Store compares the capabilities of the device
 with the required feature conditions of the application. The store only
 lists the applications whose conditions match the capabilities of the
 device, and thus prevents incompatible applications from being
@@ -55,7 +55,7 @@ installed.
 ![Feature-based filtering](./media/app_filtering_basic_flow.png)
 
 When multiple features are defined in the feature list for feature-based
-filtering, the Tizen Store creates the filtering condition for all using
+filtering, Tizen Store creates the filtering condition for all using
 the "AND" operation. For example, if there are
 `http://tizen.org/feature/network.nfc` and
 `http://tizen.org/feature/network.bluetooth` features in the feature
@@ -68,7 +68,7 @@ for downloading.
 
 The screen size feature is the only exception to the normal feature
 handling process described above. When the screen size is defined in the
-feature list, the Tizen Store creates the filtering condition with the
+feature list, Tizen Store creates the filtering condition with the
 "OR" operation. For example, if the
 `http://tizen.org/feature/screen.size.normal.480.800` and
 `http://tizen.org/feature/screen.size.normal.720.1280` features are
@@ -117,7 +117,7 @@ The feature keys have a hierarchy. For example, consider the
     `http://tizen.org/feature/location` feature can show the application
     on the Tizen Store application list.
 
-    This means that the Tizen Store considers the
+    This means that Tizen Store considers the
     `http://tizen.org/feature/location` feature as the
     `http://tizen.org/feature/location.gps OR http://tizen.org/feature/location.wps` feature.
     (If the feature list includes the
@@ -131,7 +131,7 @@ The feature keys have a hierarchy. For example, consider the
 To enable filtering for your native application, add the feature list
 for the application `tizen-manifest.xml` file:
 
-1.  To open the manifest editor in the Tizen Studio, double-click the
+1.  To open the manifest editor in Tizen Studio, double-click the
     `tizen-manifest.xml` file in the **Project Explorer** view.
 2. Select the features you need, one at a time:
 
@@ -165,6 +165,7 @@ package:
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
 | `http://tizen.org/feature/email`         | Specify this key, if the application requires the email feature. | 3.0   |
@@ -188,7 +189,10 @@ package:
 | `http://tizen.org/feature/minicontrol`   | Specify this key, if the application requires the minicontrol feature. | 4.0   |
 | `http://tizen.org/feature/multi_point_touch.pinch_zoom` | Specify this key, if the application requires a pinch-zoom gesture feature. | 2.2.1 |
 | `http://tizen.org/feature/multi_point_touch.point_count` | Specify this key with a specific number (`int` type), if the application requires the minimum of specified number of simultaneous touches in a multi-point touch. | 2.2.1 |
+| `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
+| `http://tizen.org/feature/multimedia.player.audio_offload` | Specify this key, if the application requires the hardware-offloaded audio processing feature. | 5.5   |
 | `http://tizen.org/feature/multimedia.player.spherical_video` | Specify this key, if the application requires the 360-degree video playback feature. | 5.0   |
+| `http://tizen.org/feature/multimedia.stream_recorder` | Specify this key, if the application requires the stream recorder feature. | 5.5   |
 | `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
 | `http://tizen.org/feature/network.bluetooth.audio.call` | Specify this key, if the application requires the Bluetooth hands-free feature (HFP). | 2.3   |
@@ -198,6 +202,10 @@ package:
 | `http://tizen.org/feature/network.bluetooth.hid` | Specify this key, if the application requires the Bluetooth Human Input Device feature (HID). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth LE feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le.5_0` | Specify this key, if the application requires the Bluetooth 5 feature. | 5.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Client. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.server` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Server. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.ipsp` | Specify this key, if the application requires the Bluetooth Internet Protocol Support Profile (IPSP). | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.oob` | Specify this key, if the application requires Bluetooth Out Of Band (OOB). | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.opp` | Specify this key, if the application requires the Bluetooth Object Push feature (OPP). | 2.3   |
 | `http://tizen.org/feature/network.ethernet` | Specify this key, if the application requires the Ethernet connection. | 2.4   |
 | `http://tizen.org/feature/network.mtp`   | Specify this key, if the application requires the Media Transfer Protocol (MTP) Host (Initiator) feature. | 3.0   |
@@ -241,11 +249,13 @@ package:
 | `http://tizen.org/feature/opengles.version.3_1` | Specify this key, if the application requires OpenGL&reg; ES version 3.1.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
 | `http://tizen.org/feature/opengles.version.3_2` | Specify this key, if the application requires OpenGL&reg; ES version 3.2.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 4.0   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
+| `http://tizen.org/feature/platform.core.cpu.arch.armv8` | Specify this key, if the application requires the ARMv8 CPU architecture. | 4.0 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse3` | Specify this key, if the application requires the SSE3 FPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.ssse3` | Specify this key, if the application requires the SSSE3 FPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.vfpv3` | Specify this key, if the application requires the VFPv3 FPU architecture. | 2.2.1 |
+| `http://tizen.org/feature/platform.core.fpu.arch.vfpv4` | Specify this key, if the application requires the VFPv4 FPU architecture. | 4.0 |
 | `http://tizen.org/feature/platform.native.osp_compatible` | Specify this key, if the application requires OSP compatibility (the bada compatibility mode). | 2.2.1 |
 | `http://tizen.org/feature/screen.auto_rotation` | Specify this key, if the application requires the automatic screen rotation feature. | 2.2.1 |
 | `http://tizen.org/feature/screen.size.all` | Specify this key, if the application supports all possible current and future screen sizes and all possible current and future resolutions per screen size. | 2.2.1 |
@@ -275,7 +285,9 @@ package:
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | Specify this key, if the application requires the gyro sensor wake-up feature. | 2.2.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
+| `http://tizen.org/feature/sensor.heart_rate_monitor.batch` | Specify this key, if the application requires the heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | Specify this key, if the application requires the LED green heart rate monitor sensor. | 2.3.1 |
+| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green.batch` | Specify this key, if the application requires the LED green heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | Specify this key, if the application requires the LED infrared heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | Specify this key, if the application requires the LED red heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.humidity` | Specify this key, if the application requires a humidity sensor. | 2.3   |
@@ -306,6 +318,7 @@ package:
 | `http://tizen.org/feature/shortcut`      | Specify this key, if the application requires the shortcut feature. | 4.0   |
 | `http://tizen.org/feature/sip.voip`      | Specify this key, if the application requires the Voice Over Internet Protocol (VOIP) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
+| `http://tizen.org/feature/speech.control_manager` | Specify this key, if the application requires the voice control manager feature. | 5.5   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
 | `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
@@ -342,6 +355,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/contact`       | Specify this key, if the application requires the contact service. | 4.0   |
 | `http://tizen.org/feature/contextual_trigger` | Specify this key, if the application requires the contextual trigger feature. | 4.0   |
 | `http://tizen.org/feature/database.encryption` | Specify this key, if the application requires the database encryption feature. | 2.2.1 |
+| `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/download`      | Specify this key, if the application requires the download feature. | 4.0   |
 | `http://tizen.org/feature/feedback.vibration` | Specify this key, if the application requires the vibration feedback feature. | 5.0   |
@@ -351,6 +365,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/input.keyboard` | Specify this key, if the application requires a built-in physical keyboard. | 2.2.1 |
 | `http://tizen.org/feature/input.keyboard.layout` | Specify this key with a specific keyboard layout (`string` type), if the application requires a built-in physical keyboard supporting the specified keyboard layout. | 2.2.1 |
 | `http://tizen.org/feature/input.rotating_bezel` | Specify this key, if the application requires rotating bezel input. | 2.3.1 |
+| `http://tizen.org/feature/input.rotating_bezel.virtual` | Specify this key, if the application requires virtual rotating bezel input. | 5.5 |
 | `http://tizen.org/feature/iot.ocf`       | Specify this key, if the application requires the Open Connectivity Foundation (OCF) framework. | 3.0   |
 | `http://tizen.org/feature/led`           | Specify this key, if the application requires a LED. | 2.3   |
 | `http://tizen.org/feature/location`      | Specify this key, if the application requires any location positioning features. | 2.2.1 |
@@ -363,9 +378,11 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/microphone`    | Specify this key, if the application requires a microphone. | 2.2.1 |
 | `http://tizen.org/feature/multi_point_touch.pinch_zoom` | Specify this key, if the application requires a pinch-zoom gesture feature. | 2.2.1 |
 | `http://tizen.org/feature/multi_point_touch.point_count` | Specify this key with a specific number (`int` type), if the application requires the minimum of specified number of simultaneous touches in a multi-point touch. | 2.2.1 |
-| `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
-| `http://tizen.org/feature/multimedia.player.spherical_video` | Specify this key, if the application requires the 360-degree video playback feature. | 5.0   |
 | `http://tizen.org/feature/multimedia.transcoder` | Specify this key, if the application requires the multimedia transcoder feature. | 2.3   |
+| `http://tizen.org/feature/multimedia.media_codec`     | Specify this key, if the application requires the media codec feature. | 4.0   |
+| `http://tizen.org/feature/multimedia.player.audio_offload` | Specify this key, if the application requires the hardware-offloaded audio processing feature. | 5.5   |
+| `http://tizen.org/feature/multimedia.player.spherical_video` | Specify this key, if the application requires the 360-degree video playback feature. | 5.0   |
+| `http://tizen.org/feature/multimedia.stream_recorder` | Specify this key, if the application requires the stream recorder feature. | 5.5   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
 | `http://tizen.org/feature/network.bluetooth.audio.call` | Specify this key, if the application requires the Bluetooth hands-free feature (HFP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.audio.controller` | Specify this key, if the application requires the Bluetooth Advanced Audio Distribution (A2DP) sink feature and the Bluetooth Audio Video Remote Control (AVRCP) controller feature. | 3.0   |
@@ -375,9 +392,14 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/network.bluetooth.hid.device` | Specify this key, if the application requires the Bluetooth Human Interface Device (HID) device feature. | 3.0   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth LE feature. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le.5_0` | Specify this key, if the application requires the Bluetooth 5 feature. | 5.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Client. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.server` | Specify this key, if the application requires the Bluetooth Generic Attribute Profile (GATT) Server. | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.le.ipsp` | Specify this key, if the application requires the Bluetooth Internet Protocol Support Profile (IPSP). | 4.0   |
+| `http://tizen.org/feature/network.bluetooth.oob` | Specify this key, if the application requires Bluetooth Out Of Band (OOB). | 4.0   |
 | `http://tizen.org/feature/network.bluetooth.opp` | Specify this key, if the application requires the Bluetooth Object Push feature (OPP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.phonebook.client` | Specify this key, if the application requires the Bluetooth Phone Book Access (PBAP) client feature. | 3.0   |
 | `http://tizen.org/feature/network.ethernet` | Specify this key, if the application requires the Ethernet connection. | 2.4   |
+| `http://tizen.org/feature/network.inm` | Specify this key, if the application requires the Intelligent Network Monitoring (INM) feature. | 5.0   |
 | `http://tizen.org/feature/network.internet` | Specify this key, if the application requires Internet access. | 2.3.1 |
 | `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the Internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
 | `http://tizen.org/feature/network.nfc`   | Specify this key, if the application requires the use of any API that, in turn, requires the Near Field Communication (NFC) feature. | 2.2.1 |
@@ -409,11 +431,13 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
 | `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0.<br> You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
 | `http://tizen.org/feature/platform.core.cpu.arch.armv7` | Specify this key, if the application requires the ARMv7 CPU architecture. | 2.2.1 |
+| `http://tizen.org/feature/platform.core.cpu.arch.armv8` | Specify this key, if the application requires the ARMv8 CPU architecture. | 4.0 |
 | `http://tizen.org/feature/platform.core.cpu.arch.x86` | Specify this key, if the application requires the x86 CPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse2` | Specify this key, if the application requires the SSE2 Floating Point Unit (FPU) architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.sse3` | Specify this key, if the application requires the SSE3 FPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.ssse3` | Specify this key, if the application requires the SSSE3 FPU architecture. | 2.2.1 |
 | `http://tizen.org/feature/platform.core.fpu.arch.vfpv3` | Specify this key, if the application requires the VFPv3 FPU architecture. | 2.2.1 |
+| `http://tizen.org/feature/platform.core.fpu.arch.vfpv4` | Specify this key, if the application requires the VFPv4 FPU architecture. | 4.0 |
 | `http://tizen.org/feature/platform.native.osp_compatible` | Specify this key, if the application requires OSP compatibility (the bada compatibility mode). | 2.2.1 |
 | `http://tizen.org/feature/screen.auto_rotation` | Specify this key, if the application requires the automatic screen rotation feature. | 2.2.1 |
 | `http://tizen.org/feature/screen.shape.circle` | Specify this key, if the application requires a circle-shaped screen. | 2.3.1 |
@@ -445,7 +469,9 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | Specify this key, if the application requires an uncalibrated gyroscope sensor. | 2.4   |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | Specify this key, if the application requires the gyro sensor wake-up feature. | 2.2.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | Specify this key, if the application requires a heart rate monitor sensor. | 2.3   |
+| `http://tizen.org/feature/sensor.heart_rate_monitor.batch` | Specify this key, if the application requires the heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | Specify this key, if the application requires the LED green heart rate monitor sensor. | 2.3.1 |
+| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green.batch` | Specify this key, if the application requires the LED green heart rate monitor sensor with a batch sensing feature. | 5.5 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | Specify this key, if the application requires the LED infrared heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | Specify this key, if the application requires the LED red heart rate monitor sensor. | 2.3.1 |
 | `http://tizen.org/feature/sensor.humidity` | Specify this key, if the application requires a humidity sensor. | 2.3   |
@@ -472,6 +498,7 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/shell.appwidget` | Specify this key, if the application requires the AppWidget (Dynamic Box) feature. | 2.2.1 |
 | `http://tizen.org/feature/sip.voip`      | Specify this key, if the application requires the Voice Over Internet Protocol (VOIP) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.control` | Specify this key, if the application requires the voice control feature. | 2.4   |
+| `http://tizen.org/feature/speech.control_manager` | Specify this key, if the application requires the voice control manager feature. | 5.5   |
 | `http://tizen.org/feature/speech.recognition` | Specify this key, if the application requires the speech recognition (STT) feature. | 2.2.1 |
 | `http://tizen.org/feature/speech.synthesis` | Specify this key, if the application requires the speech synthesis (text to speech, TTS) feature. | 2.2.1 |
 | `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
@@ -530,6 +557,6 @@ In a native application, the profile name element can be added to the
    <profile name="mobile"/>
 ```
 
-The Tizen Store compares the device profile and the `profile name`
+Tizen Store compares the device profile and the `profile name`
 element in an application. The store only shows the applications with a profile name matching the device profile to prevent unsupported
 applications from being installed.

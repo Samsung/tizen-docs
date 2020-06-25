@@ -1,8 +1,8 @@
 # Tizen 3.0 Milestones
 
-Release Date: Sep 17, 2015
+Release date: Sep. 17, 2015
 
-The Tizen 3.0 first milestone release for TV and mobile profiles provides the Tizen kernel, device drivers, middleware subsystems, and Web/native APIs necessary to develop future Tizen-compliant solutions.
+The Tizen 3.0 first milestone release for TV and Mobile profiles provides the Tizen kernel, device drivers, middleware subsystems, and Web/native APIs necessary to develop future Tizen-compliant solutions.
 
 ## Release Details
 
@@ -15,18 +15,18 @@ The Tizen 3.0 first milestone release for TV and mobile profiles provides the Ti
 - How to flash to a device
   - XU3 (TV profile): [https://wiki.tizen.org/wiki/Quick_guide_for_odroidxu3](https://wiki.tizen.org/wiki/Quick_guide_for_odroidxu3)
   - XU4 (TV profile): [https://wiki.tizen.org/wiki/Quick_guide_for_odroidxu4](https://wiki.tizen.org/wiki/Quick_guide_for_odroidxu4)
-  - Mobile profile: A reference device for the mobile profile is not currently available.
+  - Mobile profile: A reference device for the Mobile profile is not currently available.
 
 ## Release Notes
 
-This milestone marks feature completion for the key features of the Tizen 3.0 TV and mobile profiles. Key features in this milestone include:
+This milestone marks feature completion for the key features of the Tizen 3.0 TV and Mobile profiles. Key features in this milestone include:
 
 - 2.4 API compatibility  
-The 3.0 TV and mobile profiles are backward-compatible with the 2.4 public API (both native API and Web API). The 2.4 API list is to be published at [https://developer.tizen.org/development](https://developer.tizen.org/development).
+The 3.0 TV and Mobile profiles are backward-compatible with the 2.4 public API (both native API and Web API). The 2.4 API list is to be published at [https://developer.tizen.org/development](https://developer.tizen.org/development).
 - 64-bit support  
-64-bit SoC has been tested and verified with 3.0 TV and mobile profiles. 32-bit hard-coded source code has been modified and core components have been re-factored to support both 32-bit and 64-bit SoC. LTP (Linux Testing Project) and TCT (Tizen Compliance Tests) were used to verify behavioral correctness.
+64-bit SoC has been tested and verified with 3.0 TV and Mobile profiles. 32-bit hard-coded source code has been modified and core components have been re-factored to support both 32-bit and 64-bit SoC. LTP (Linux Testing Project) and TCT (Tizen Compliance Tests) were used to verify behavioral correctness.
 - Multi-user architecture  
-The 3.0 TV and mobile profiles support multi-user architecture for multi-user/single-login usage. Many services have been moved to user session from system session and the global application and user-specific application concepts have been introduced. This feature enables easy personalization on shared devices, such as tablets and TVs.
+The 3.0 TV and Mobile profiles support multi-user architecture for multi-user/single-login usage. Many services have been moved to user session from system session and the global application and user-specific application concepts have been introduced. This feature enables easy personalization on shared devices, such as tablets and TVs.
 - New security architecture: 3 domain smack and Cynara  
 The security server and privilege manager have been replaced with security manager and Cynara, respectively. Platform components are categorized depending on their usage domain and the security manager auto-generates the smack rule for each component, rather than based on the module developer.
 - Wayland display server  
@@ -36,7 +36,7 @@ Webkit2 has been replaced with Chromium-efl and core components interacting with
 - Buxton2  
 Buxton2 has been introduced. Buxton2 provides a secure configuration service based on Cynara and has been re-implemented with consideration for multi-user and recovery support.
 - IoTivity integration  
-IoTivity 0.9.2 has been integrated into the 3.0 TV and mobile profiles. Simple APIs for this framework are scheduled for the next milestone release.
+IoTivity 0.9.2 has been integrated into the 3.0 TV and Mobile profiles. Simple APIs for this framework are scheduled for the next milestone release.
 - Murphy  
 A generic policy manager, Murphy, has been integrated into the 3.0 platform. In the M1 release, this manager is only used to control audio session resource conflict scenarios.
 - Linux kernel  
