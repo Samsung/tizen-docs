@@ -20,16 +20,16 @@ function stripPath(uri)
 
 function getScript(scriptName,func,show)
 {
-  var head = document.getElementsByTagName("head")[0]; 
+  var head = document.getElementsByTagName("head")[0];
   var script = document.createElement('script');
   script.id = scriptName;
   script.type = 'text/javascript';
-  script.onload = func; 
-  script.src = scriptName+'.js'; 
+  script.onload = func;
+  script.src = scriptName+'.js';
   script.onreadystatechange = function() {
     if (script.readyState == 'complete') { func(); if (show) showRoot(); }
   };
-  head.appendChild(script); 
+  head.appendChild(script);
 }
 
 function createIndent(o,domNode,node,level)
@@ -46,9 +46,9 @@ function createIndent(o,domNode,node,level)
     node.plus_img = imgNode;
     node.expandToggle = document.createElement("a");
     node.expandToggle.href = "javascript:void(0)";
-    node.expandToggle.onclick = function() 
+    node.expandToggle.onclick = function()
     {
-      if (node.expanded) 
+      if (node.expanded)
       {
         $(node.getChildrenUL()).slideUp("fast");
         if (node.isLast)
@@ -60,8 +60,8 @@ function createIndent(o,domNode,node,level)
           node.plus_img.src = node.relpath+"ftv2pnode.png";
         }
         node.expanded = false;
-      } 
-      else 
+      }
+      else
       {
         expandNode(o, node, false, false);
       }
@@ -142,7 +142,7 @@ function newNode(o, po, text, link, childrenData, lastNode)
   node.label = document.createTextNode(text);
   node.expanded = false;
   a.appendChild(node.label);
-  if (link) 
+  if (link)
   {
     a.className = stripPath(link.replace('#',':'));
     if (link.indexOf('#')!=-1)
@@ -170,10 +170,10 @@ function newNode(o, po, text, link, childrenData, lastNode)
     {
       a.href = node.relpath+link;
     }
-  } 
-  else 
+  }
+  else
   {
-    if (childrenData != null) 
+    if (childrenData != null)
     {
       a.className = "nolink";
       a.href = "javascript:void(0)";
@@ -182,9 +182,9 @@ function newNode(o, po, text, link, childrenData, lastNode)
   }
 
   node.childrenUL = null;
-  node.getChildrenUL = function() 
+  node.getChildrenUL = function()
   {
-    if (!node.childrenUL) 
+    if (!node.childrenUL)
     {
       node.childrenUL = document.createElement("ul");
       node.childrenUL.className = "children_ul";
@@ -213,7 +213,7 @@ function showRoot()
 
 function expandNode(o, node, imm, showRoot)
 {
-  if (node.childrenData && !node.expanded) 
+  if (node.childrenData && !node.expanded)
   {
     if (typeof(node.childrenData)==='string')
     {
@@ -225,15 +225,15 @@ function expandNode(o, node, imm, showRoot)
     }
     else
     {
-      if (!node.childrenVisited) 
+      if (!node.childrenVisited)
       {
         getNode(o, node);
       }
       if (imm)
       {
         $(node.getChildrenUL()).show();
-      } 
-      else 
+      }
+      else
       {
         $(node.getChildrenUL()).slideDown("fast");
       }
@@ -252,7 +252,7 @@ function expandNode(o, node, imm, showRoot)
 
 function showNode(o, node, index)
 {
-  if (node.childrenData && !node.expanded) 
+  if (node.childrenData && !node.expanded)
   {
     if (typeof(node.childrenData)==='string')
     {
@@ -264,7 +264,7 @@ function showNode(o, node, index)
     }
     else
     {
-      if (!node.childrenVisited) 
+      if (!node.childrenVisited)
       {
         getNode(o, node);
       }
@@ -331,7 +331,7 @@ function getNode(o, po)
 {
   po.childrenVisited = true;
   var l = po.childrenData.length-1;
-  for (var i in po.childrenData) 
+  for (var i in po.childrenData)
   {
     var nodeData = po.childrenData[i];
     po.children[i] = newNode(o, po, nodeData[0], nodeData[1], nodeData[2],
@@ -373,6 +373,7 @@ function initNavTree(toroot,relpath)
      if (window.location.hash && window.location.hash.length>1){
        var anchor = $(window.location.hash);
        var targetDiv = anchor.next();
+	   /*
        $(targetDiv).children('.memproto,.memdoc').effect("highlight",{},1500);
        var docContent = $('#doc-content');
        if (docContent && anchor && anchor[0] && anchor[0].ownerDocument){
@@ -393,6 +394,7 @@ function initNavTree(toroot,relpath)
          var targetDiv = anchor.next();
          showRoot();
        }
+	   */
      } else {
        var docContent = $('#doc-content');
        if (docContent){ docContent.scrollTop(0); }
