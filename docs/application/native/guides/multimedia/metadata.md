@@ -7,7 +7,7 @@ To handle content metadata, you can use the following features:
 
   You can [edit the metadata](#edit_metadata) of several popular audio formats using the metadata editor. You can add and remove album art, or update the information for the audio file.
 
-  The metadata editor supports editing the [metadata](#attribute) of the mp3 and mp4 (audio only) file formats. Image and video file editing is not supported.
+  The metadata editor supports editing the [metadata](#attribute) of the MP3, mp4, WAV, FLAC and OGG file formats. Image file editing is not supported.
 
 - Metadata extraction
 
