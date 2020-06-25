@@ -40,15 +40,15 @@ music - the location for sounds          </li>
           <li>
 documents - the location for documents          </li>
           <li>
-downloads - the location for downloaded items           </li>
+downloads - the location for downloaded items          </li>
           <li>
-ringtones - the location for ringtones (read-only location)           </li>
+ringtones - the location for ringtones (read-only location)          </li>
           <li>
-camera - the location for the pictures and videos taken by a device (supported since Tizen 2.3)           </li>
+camera - the location for the pictures and videos taken by a device (supported since Tizen 2.3)          </li>
           <li>
 wgt-package - the location for widget package which is read-only          </li>
           <li>
-wgt-private - the location for a widget's private storage           </li>
+wgt-private - the location for a widget's private storage          </li>
           <li>
 wgt-private-tmp - the location for a widget's private volatile storage          </li>
           <li>
@@ -417,7 +417,7 @@ END - End of the file.            </li>
           </p>
 <div class="description">
           <p>
-There is a <em>tizen.filesystem </em>object that allows accessing the functionality of the Filesystem API.
+There is a <em>tizen.filesystem</em> object that allows accessing the functionality of the Filesystem API.
           </p>
          </div>
 <div class="attributes">
@@ -1907,7 +1907,7 @@ Strips trailing '/', then breaks <em>path</em> into two components by last <em>p
             </p>
 <div class="description">
             <p>
-The <em>onsuccess </em>method receives the data structure as an input argument containing additional information about the drive.
+The <em>onsuccess</em> method receives the data structure as an input argument containing additional information about the drive.
             </p>
             <p>
 The ErrorCallback is launched with these error types:
@@ -1918,7 +1918,7 @@ InvalidValuesError - If any of the input parameters contains an invalid value.  
               <li>
 NotFoundError - If no drive was found with the given label.              </li>
               <li>
-UnknownError - If any other error occurs.               </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2134,7 +2134,7 @@ watchID = tizen.filesystem.addStorageStateChangeListener(onStorageStateChanged);
             </p>
 <div class="description">
             <p>
-If the <em>watchId </em>argument is valid and corresponds to a subscription already in place, the watch process will be stopped and no further callbacks will be invoked.
+If the <em>watchId</em> argument is valid and corresponds to a subscription already in place, the watch process will be stopped and no further callbacks will be invoked.
 Otherwise, the method call has no effect.
             </p>
            </div>
@@ -2399,7 +2399,7 @@ The <em>ErrorCallback</em> is launched with these error types:
             </p>
             <ul>
               <li>
-IOError, if any error related to file handle occurs.               </li>
+IOError, if any error related to file handle occurs.              </li>
             </ul>
             <p>
 Note, that current position indicator value, can be obtained in SeekSuccessCallback by calling <var>seekNonBlocking(0, "CURRENT")</var>.
@@ -2764,7 +2764,7 @@ Sets file handle position indicator at the end of written data.
                 </li>
           <li class="param">
 <span class="name">outputEncoding</span><span class="optional"> [optional]</span>:
-  Default value: UTF-8. Encoding to use for write operation on the file, at least the following encodings must be supported:<br>"<a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-8</a>" default encoding<br>"<a href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a>" Latin-1 encoding<br>                </li>
+ Default value: UTF-8. Encoding to use for write operation on the file, at least the following encodings must be supported:<br>"<a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-8</a>" default encoding<br>"<a href="http://en.wikipedia.org/wiki/ISO/IEC_8859-1">ISO-8859-1</a>" Latin-1 encoding<br>                </li>
         </ul>
 </div>
 <div class="returntype">
@@ -4154,12 +4154,12 @@ A file item only matches the <em>FileFilter</em> object if all of the defined fi
 (only matching values other than <var>undefined</var> or <var>null</var>). This is similar to a SQL's "AND" operation.
           </p>
           <p>
-An attribute of the file entry matches the <em>FileFilter </em>attribute value in accordance with the
+An attribute of the file entry matches the <em>FileFilter</em> attribute value in accordance with the
 following rules:
           </p>
           <ul>
             <li>
-For <em>FileFilter </em>attributes of type DOMString, an entry matches this value only if its corresponding attribute is an exact match. If the filter contains U+0025 "PERCENT SIGN" it is interpreted as a wildcard character and "%" matches any string of any length, including no length. If wildcards are used, the behavior is similar to the LIKE condition in SQL. To specify that a "PERCENT SIGN" character is to be considered literally instead of interpreting it as a wildcard, developers can escape it with the backslash character (\). Please, remember that the backslash character has to be escaped itself, to not to be removed from the string - proper escaping of the "PERCENT SIGN" in JavaScript string requires preceding it with double backslash ("\\%").
+For <em>FileFilter</em> attributes of type DOMString, an entry matches this value only if its corresponding attribute is an exact match. If the filter contains U+0025 "PERCENT SIGN" it is interpreted as a wildcard character and "%" matches any string of any length, including no length. If wildcards are used, the behavior is similar to the LIKE condition in SQL. To specify that a "PERCENT SIGN" character is to be considered literally instead of interpreting it as a wildcard, developers can escape it with the backslash character (\). Please, remember that the backslash character has to be escaped itself, to not to be removed from the string - proper escaping of the "PERCENT SIGN" in JavaScript string requires preceding it with double backslash ("\\%").
 The matching is not case sensitive, such as "FOO" matches a "foo" or an "f%" filter.            </li>
             <li>
 For File entry attributes of type Date, attributes start and end are included to allow filtering of File entries between two supplied dates. If either or both of these attributes are specified, the following rules apply:<br>A) If both start and end dates are specified (that is, other than <var>null</var>), a File entry matches the filter if its corresponding attribute is the same as either start or end or between the two supplied dates (that is, after start and before end).<br>B) If only the start attribute contains a value (other than <var>null</var>), a File entry matches the filter if its corresponding attribute is later than or equal to the start one.<br>C) If only the end date contains a value (other than <var>null</var>), a file matches the filter if its corresponding attribute is earlier than or equal to the end date.            </li>
@@ -4307,7 +4307,7 @@ It is used in asynchronous operations, such as FileSystemManager.listStorages().
 <div class="interface" id="FileSystemStorageSuccessCallback">
 <a class="backward-compatibility-anchor" name="::Filesystem::FileSystemStorageSuccessCallback"></a><h3>2.7. FileSystemStorageSuccessCallback</h3>
 <div class="brief">
- The FileSystemStorageSuccessCallback callback interface specifies a success callback with a <em>FileSystemStorage </em>object as input argument.
+ The FileSystemStorageSuccessCallback callback interface specifies a success callback with a <em>FileSystemStorage</em> object as input argument.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface FileSystemStorageSuccessCallback {
     void onsuccess(<a href="#FileSystemStorage">FileSystemStorage</a> storage);
