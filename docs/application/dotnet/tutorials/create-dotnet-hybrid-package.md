@@ -40,7 +40,7 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
 
     ![Create Web Widget 4](./media/create_web_sample_cs_4.png)
 
-2. Check the **config.xml** file of the Web application:
+2. Check the application's package ID in the **config.xml** file of the Web application:
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
@@ -62,7 +62,7 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
     </widget>
     ```
     > [!NOTE]
-	> Ensure that the package ID of the Web application is set to **TestHybrid**.
+    > The `package` attribute of the `<tizen:application>` element refers to the application's package ID. Ensure that this attribute is set to **TestHybrid**.
 
 3. Launch the latest version of Visual Studio and create a .NET sample application.
 
@@ -72,7 +72,7 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
 	
 	![Create .NET App 3](./media/create_dotnet_sample_cs_3.png)
 
-4. Check the manifest file of the .NET application:
+4. Check the application's package ID in the `tizen-manifest.xml` file of the .NET application:
 
     ```xml
     <?xml version="1.0" encoding="utf-8"?>
@@ -92,7 +92,7 @@ $[TIZEN_STUDIO_DIR]/tools/ide/bin$ ./tizen package -t wgt -s [CERTIFICATE_PROFIL
     ```
 
     > [!NOTE]
-    > Ensure that the package ID of the .NET application is set to **org.tizen.example.CrossTemplate1.Tizen**.
+    > The `package` attribute of the `<manifest>` element refers to the application's package ID. Ensure that this attribute is set to **org.tizen.example.CrossTemplate1.Tizen**.
 
 5. Create a hybrid package using the CLI tool:
 
