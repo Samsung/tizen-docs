@@ -2,10 +2,10 @@
 Tizen targets to provide a robust development environment to explore the future of innovative smart wearable application development. 
 For wearable devices, Tizen supports three primary application types, .NET, Web, and Native applications.
 
-## Wearable .NET Applications
+## .NET Applications
 You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development. 
 
-To begin with, you can use the following quick start guides:
+To begin your Tizen .NET application development journey, use the following quick start guides:
 -   [Wearable .NET application](../dotnet/get-started/wearable/first-app.md)
 -   [Wearable XAML application](../dotnet/get-started/wearable/first-xaml-app.md)
 
@@ -16,10 +16,10 @@ Explore more about the Tizen wearable .NET application development:
 -   [Guides](../dotnet/guides/overview.md)
 -   [API reference ](../dotnet/api/overview.md)	
 
-## Wearable Web Applications
+## Web Applications
 You can create rich Web applications that consist of HTML, JavaScript, and CSS that are combined in a package. 
 
-To begin with, you can use the following quick start guides:
+To begin your Tizen Web application development journey, use the following quick start guides:
 -   [Wearable Web application](../web/get-started/wearable/first-app.md)
 -   [Wearable Web watch application](../web/get-started/wearable-watch/first-app-watch.md)
 -   [Wearable Web widget application](../web/get-started/wearable-widget/first-app-widget.md)
@@ -31,10 +31,10 @@ Explore more about the Tizen wearable Web application development:
 -   [Guides](../web/guides/index.md)
 -   [API reference](../web/api/index.md)
 
-## Wearable Native Applications
+## Native Applications
 You can create rich applications in C with device-specific features, advanced system settings, and additional functionalities.
 
-To begin with, you can use the following quick start guides:
+To begin your Tizen Native application development journey, use the following quick start guides:
 -   [Wearable Native application](../native/get-started/wearable/first-app.md)
 -   [Wearable Native watch application](../native/get-started/wearable-watch/first-app-watch.md)
 -   [Wearable Native widget application](../native/get-started/wearable-widget/first-app-widget.md)
@@ -45,9 +45,4 @@ Explore more about the Tizen wearable Native application development:
 -   [Tutorials](../native/tutorials/overview.md)
 -   [Guides](../native/guides/index.md)
 -   [API reference](../native/api/overview.md)
-
-Further enrichment with Tizen wearable applications:
--   Connect with the [community](https://developer.tizen.org/community/tip-tech).
--   [Design](../design/wearable.md) comfortable visual identity for your applications.
--   [Distribute](../distribute/how-to-distribute/overview.md) through Tizen Store.
 
