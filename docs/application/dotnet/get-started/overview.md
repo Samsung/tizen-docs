@@ -5,11 +5,11 @@ To create your first Tizen .NET application, you can select from the following o
 
 -   [Wearable .NET application](wearable/first-app.md)
 
-	An application that is targeted to run on smartwatches. It can be optimized for small screens.
+    An application that is targeted to run on smartwatches. It can be optimized for small screens.
 
 -   [Wearable XAML application](wearable/first-xaml-app.md)
 
-	An application that allows you to use XAML to define the visual contents of a page and work together with a C# code-behind file on smartwatches.
+    An application that allows you to use XAML to define the visual contents of a page and work together with a C# code-behind file on smartwatches.
 
 -   [TV .NET application](tv/first-app.md)
 
@@ -17,12 +17,12 @@ To create your first Tizen .NET application, you can select from the following o
 
 -   [Mobile .NET application](mobile/first-app.md)
 
-	An application that is targeted to run on smartphones. It can take advantage of the functionalities available on smartphones.
+    An application that is targeted to run on smartphones. It can take advantage of the functionalities available on smartphones.
 
 -   [NUI .NET application](nui/quickstart.md)
 
-	An application that is targeted to run on a wide range of Tizen devices such as mobile devices, TVs, and wearables. 
-	NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications.
+    An application that is targeted to run on a wide range of Tizen devices such as mobile devices, TVs, and wearables. 
+    NUI is a rich GUI library used for creating two-dimensional or three-dimensional applications.
 
 -   [IoT .NET application](iot/first-app.md)
 
