@@ -1,32 +1,33 @@
 # Get Started with Web Applications
 
-Tizen Web applications are created using the web-native languages, such as HTML, JavaScript, and CSS that are combined in a package.
+You can create the Tizen Web applications in the web-native languages such as HTML, JavaScript, and CSS. 
+You can also use the Tizen Web APIs that interact with the Tizen native subsystems.
 
-The Web application uses the Tizen Web framework to interact with the native subsystems. To create your first Tizen Web application, the following profiles are available:
+To create your first Tizen Web application, you can select from the following profiles:
 
 -   [Wearable Web application](wearable/first-app.md)
 
-    Applications targeted to run on smartwatches. It can be optimized for small screens.
+    An application that is targeted to run on smartwatches. It can be optimized for small screens.
 
 -   [Wearable Web watch application](wearable-watch/first-app-watch.md)
 
-    Applications that are customized watch faces that appear as the device home screen.
+    An application that is a customized watch face and can be shown on the device home screen.
 
 -   [Wearable Web widget application](wearable-widget/first-app-widget.md)
 
-    Applications that can be shown by specific UI applications such as home screen.
+    An application that can be shown by specific UI applications such as home screen.
 
 -   [TV Web application](tv/first-app.md)
 
-    Applications targeted to run on smart TVs. It can be optimized for large screens and remote controls.
+    An application that is targeted to run on smart TVs. It can be optimized for large screens and remote controls.
 
 -   [Samsung Smart TV Web application](tv/first-samsung-tv-app.md)
 
-     Applications targeted to run on Samsung smart TVs and can be optimized for larger screens and remote control.
+    An application that is targeted to run on Samsung smart TVs. It can be optimized for large screens and remote controls.
 
 -   [Mobile Web application](mobile/first-app.md)
 
-    Applications targeted to run on smartphones. It can take advantage of the functionalities available on smartphones.
+    An application that is targeted to run on smartphones. It can take advantage of the functionalities available on smartphones.
 
 The examples in each profile explain a simple application with a basic UI and minimal functionality.
 Get familiar with these examples, and then you can build more complex applications.
