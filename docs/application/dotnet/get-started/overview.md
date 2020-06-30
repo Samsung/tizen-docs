@@ -1,7 +1,8 @@
 # Get Started with .NET Applications
 
-You can create the Tizen .NET applications in C#. You can also use the Tizen .NET APIs to access the Tizen platform-specific features. 
-To create your first Tizen .NET application, you can select from the following options:
+You can create the Tizen .NET applications in C#. You can also use the Tizen .NET APIs to access the Tizen platform-specific features.
+
+To create your first Tizen .NET application, you can select from the following profiles:
 
 -   [Wearable .NET application](wearable/first-app.md)
 
