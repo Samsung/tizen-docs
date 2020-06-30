@@ -91,6 +91,8 @@ The Tizen Native application manifest file consists of XML elements organized in
 |              | `<privileges>`                   |                         |                  |
 |              |                                  | `<privilege>`           |                  |
 |              | `<feature>`                      |                         |                  |
+|              | `<dependencies>`                 |                         |                  |
+|              |                                  | `<dependency>`          |                  |
 
 <a name="manifest"></a>
 ## Manifest Elements
@@ -123,6 +125,7 @@ For more information on the relationship between the elements, see the [element 
 | `<account>`                     | 1 (optional)         |
 | `<privileges>`                  | 1 (optional)         |
 | `<feature>`                     | 1 or more (optional) |
+| `<dependencies>`                | 1 (optional)         |
 
 **Figure: Editing the \<manifest\> element in the manifest editor**
 
@@ -1208,6 +1211,65 @@ For more information on the relationship between the elements, see the [element 
 ```xml
 <feature name="http://tizen.org/feature/camera">true</feature>
 <feature name="http://tizen.org/feature/fmradio">true</feature>
+```
+
+### \<dependencies\> Element
+
+This element contains a set of packages that have dependencies on the Tizen package. The package can be installed when all dependencies are satisfied.
+
+For more information on the relationship between the elements, see the [element hierarchy](#hierarchy).
+
+**Occurrences:**
+
+- 1 (optional)
+
+**Expected children:**
+
+| Child element             | Occurrences          |
+|---------------------------|----------------------|
+| `<dependency>`            | 1 or more (optional) |
+
+**For example:**
+
+```xml
+<dependencies>
+   <dependency>.....</dependency>
+</dependencies>
+```
+
+#### \<dependency\> Element
+
+This element contains dependency information such as package ID of the required package, type of dependency, and the required package version.
+
+**Occurrences:**
+
+- 1 or more (optional)
+
+**Attributes:**
+
+- `type`
+
+  The type of dependency (available values: `requires`, `wants`)
+
+  If the type is `requires`, a Tizen package can be installed when the dependent package is installed.
+
+  If the type is `wants`, a Tizen package can be installed even if the dependent package is not installed.
+
+- `required-version`
+
+  The required version of dependent package
+
+  This attribute is not mandatory
+
+**Expected value:**
+
+package ID
+
+**For example:**
+
+```xml
+<dependency type="requires" required-version="1.2.3">org.example.dependency1</dependency>
+<dependency type="wants">org.example.dependency2</dependency>
 ```
 
 ## Related information
