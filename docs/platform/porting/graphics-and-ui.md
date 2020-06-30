@@ -14,7 +14,7 @@ The modules are hardware abstraction layers for graphics and UI. They allow the 
 
 - TBM provides an abstraction interface for the Tizen graphic buffer manager.
 - TDM provides an abstraction interface for a display server, such as X or Wayland, to allow direct access to graphics hardware in a safe and efficient manner as a display HAL.
-- TPL-EGL is an abstraction layer for surface and buffer management on the Tizen platform aimed to implement the EGL porting layer of the OpenGL ES driver over various display protocols.
+- TPL-EGL is an abstraction layer for surface and buffer management on the Tizen platform aimed to implement the EGL&trade; porting layer of the OpenGL&reg; ES driver over various display protocols.
 
 For an application to handle input device events, the [Input Manager](https://wiki.tizen.org/3.0_Porting_Guide/Graphics_and_UI/Input) is provided, and is mainly comprised of `libinput` and a thin wrapper around it. It handles input events in Wayland compositors and communicates with Wayland clients.
 
@@ -36,110 +36,83 @@ lrwxrwxrwx  1 root root    20 Jul 28  2016 libtbm_sprd.so.0 -> libtbm_sprd.so.0.
 -rwxr-xr-x  1 root root 26728 Jun 29  2016 libtbm_sprd.so.0.0.0
 ```
 
-### Initializing TBM Backend Module
+### Initialing the TBM Backend Module
 
-The TBM backend module must define the global data symbol with the name, `tbm_backend_module_data`. The TBM frontend reads the global data symbol at the initialization time. In addition, the TBM backend module calls `init()` of `tbm_backend_module_data`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
+The `TBMModuleData` is for the entry point symbol to initialize the TBM backend module. The TBM backend module must define the global data symbol with the name of `tbmModuleData`. The TBM frontend loads the `tbmModuleData` global data symbol and calls the `init()` function at the initial time.
+
+> **Note**
+>
+> Do not change the name of the symbol in the TBM backend module.
 
 ```cpp
-typedef struct _tbm_backend_module {
-	const char *name;           /**< The module name of the backend module */
-	const char *vendor;         /**< The vendor name of the backend module */
-	unsigned long abi_version;  /**< The ABI version of the backend module */
-	/**
-	 * @brief The init function of the backend module
-	 * @param[in] bufmgr: A TBM buffer manager object
-	 * @return The backend module data
-	 * @see tbm_backend_bufmgr_data
-	 */
-	tbm_backend_bufmgr_data *(*init)(tbm_bufmgr bufmgr, tbm_error_e *error);
-	/**
-	* @brief deinitialize the bufmgr private data
-	* @param[in] bufmgr_data : The backend module data
-	*/
-	void (*deinit)(tbm_backend_bufmgr_data *bufmgr_data);
-} tbm_backend_module;
+/*
+   @brief tbm module data
+   Data type for the entry point of the backend module
+*/
+typedef struct {
+    TBMModuleVersionInfo *vers;	/* TBM module information */
+    ModuleInitProc init; /* init function of a backend module */
+} TBMModuleData;
+
+typedef int (*ModuleInitProc) (tbm_bufmgr, int);
+```
+
+The TBM backend module initialization consists of allocating the `tbm_bufmgr_backend` instance (`tbm_backend_alloc`), entering the necessary information, and the initialization itself (`tbm_backend_init`).
+
+```cpp
+tbm_bufmgr_backend tbm_backend_alloc(void);
+void tbm_backend_free(tbm_bufmgr_backend backend);
+int tbm_backend_init(tbm_bufmgr bufmgr, tbm_bufmgr_backend backend);
 ```
 
 ```cpp
-#include <tbm_backend.h>
+MODULEINITPPROTO (init_tbm_bufmgr_priv);
 
-static tbm_backend_bufmgr_data *bufmgr_data;
-
-tbm_backend_bufmgr_data*
-tbm_shm_init(tbm_bufmgr bufmgr, tbm_error_e *error)
-{
-    bufmgr_data = calloc(1, sizeof(tbm_backend_bufmgr_data));
-
-    return (tbm_backend_bufmgr_data*)bufmgr_data;
-}
-
-void
-tbm_shm_deinit(tbm_backend_bufmgr_data *bufmgr_data)
-{
-    free(bufmgr_data);
-}
-
-tbm_backend_module tbm_backend_module_data = {
-	"shm",
-	"Samsung",
-	TBM_BACKEND_ABI_VERSION_3_0,
-	tbm_shm_init,
-	tbm_shm_deinit
+static TBMModuleVersionInfo DumbVersRec = {
+    "shm",
+    "Samsung",
+    TBM_ABI_VERSION,
 };
-```
 
-The TBM backend must register `tbm_backend_bufmgr_func` and `tbm_backend_bo_func` with `tbm_backend_bufmgr_register_bufmgr_func()` and `tbm_backend_bufmgr_alloc_bo_func()` in `init()` of `tbm_backend_module`.
+TBMModuleData tbmModuleData = {&DumbVersRec, init_tbm_bufmgr_priv};
 
-```cpp
-#include <tbm_backend.h>
+int
+init_tbm_bufmgr_priv(tbm_bufmgr bufmgr, int fd) {
+    tbm_bufmgr_backend bufmgr_backend;
 
-tbm_backend_bufmgr_data*
-tbm_shm_init(tbm_bufmgr bufmgr, tbm_error_e *error)
-{
-	bufmgr_func->bufmgr_get_capabilities = tbm_shm_bufmgr_get_capabilities;
-	bufmgr_func->bufmgr_bind_native_display = tbm_shm_bufmgr_bind_native_display;
-	bufmgr_func->bufmgr_get_supported_formats = tbm_shm_bufmgr_get_supported_formats;
-	bufmgr_func->bufmgr_get_plane_data = tbm_shm_bufmgr_get_plane_data;
-	bufmgr_func->bufmgr_alloc_bo = tbm_shm_bufmgr_alloc_bo;
-	bufmgr_func->bufmgr_alloc_bo_with_format = NULL;
-	bufmgr_func->bufmgr_import_fd = tbm_shm_bufmgr_import_fd;
-	bufmgr_func->bufmgr_import_key = NULL;
+    bufmgr_shm = calloc(1, sizeof(struct _tbm_bufmgr_shm));
 
-	err = tbm_backend_bufmgr_register_bufmgr_func(bufmgr, bufmgr_func);
-	if (err != TBM_ERROR_NONE) {
-		TBM_ERR("fail to register bufmgr_func! err(%d)\n", err);
-		if (error)
-			*error = TBM_ERROR_INVALID_OPERATION;
-		goto fail_register_bufmgr_func;
-	}
-	bufmgr_shm->bufmgr_func = bufmgr_func;
+    bufmgr_backend = tbm_backend_alloc();
 
-	bo_func->bo_free = tbm_shm_bo_free;
-	bo_func->bo_get_size = tbm_shm_bo_get_size;
-	bo_func->bo_get_memory_types = tbm_shm_bo_get_memory_type;
-	bo_func->bo_get_handle = tbm_shm_bo_get_handle;
-	bo_func->bo_map = tbm_shm_bo_map;
-	bo_func->bo_unmap = tbm_shm_bo_unmap;
-	bo_func->bo_lock = NULL;
-	bo_func->bo_unlock = NULL;
-	bo_func->bo_export_fd = tbm_sprd_bo_export_fd;
-	bo_func->bo_export_key = NULL;
+    bufmgr_backend->priv = (void *)bufmgr_shm;
+    bufmgr_backend->bufmgr_deinit = tbm_shm_bufmgr_deinit,
+    bufmgr_backend->bo_size = tbm_shm_bo_size,
+    bufmgr_backend->bo_alloc = tbm_shm_bo_alloc,
+    bufmgr_backend->bo_free = tbm_shm_bo_free,
+    bufmgr_backend->bo_import = tbm_shm_bo_import,
+    bufmgr_backend->bo_import_fd = NULL,
+    bufmgr_backend->bo_export = tbm_shm_bo_export,
+    bufmgr_backend->bo_export_fd = NULL,
+    bufmgr_backend->bo_get_handle = tbm_shm_bo_get_handle,
+    bufmgr_backend->bo_map = tbm_shm_bo_map,
+    bufmgr_backend->bo_unmap = tbm_shm_bo_unmap,
+    bufmgr_backend->bo_lock = NULL;
+    bufmgr_backend->bo_unlock = NULL;
+    bufmgr_backend->surface_get_plane_data = tbm_shm_surface_get_plane_data;
+    bufmgr_backend->surface_supported_format = tbm_shm_surface_supported_format;
 
-	err = tbm_backend_bufmgr_register_bo_func(bufmgr, bo_func);
-	if (err != TBM_ERROR_NONE) {
-		TBM_ERR("fail to register bo_func! err(%d)\n", err);
-		if (error)
-			*error = TBM_ERROR_INVALID_OPERATION;
-		goto fail_register_bo_func;
-	}
-	bufmgr_shm->bo_func = bo_func;
+    if (!tbm_backend_init(bufmgr, bufmgr_backend)) {
+        tbm_backend_free(bufmgr_backend);
+        free(bufmgr_shm);
 
-	return (tbm_backend_bufmgr_data *)bufmgr_shm;
+        return 0;
+    }
+
+    return 1;
 }
 ```
 
-
-### Porting OAL Interface
+### Porting the OAL Interface
 
 TBM provides the header files to implement the TBM backend module.
 
@@ -147,81 +120,85 @@ TBM provides the header files to implement the TBM backend module.
 
 | Header file                              | Description                              |
 | ---------------------------------------- | ---------------------------------------- |
-| [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=include/tbm_backend.h;h=5a274838222a85d6756d34ad9bcfe96e28dbf347;hb=refs/heads/tizen) | This file includes information on implementing the TBM backend module. |
-| [tbm_drm_helper.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=include/tbm_drm_helper.h;h=9204b43793c9ede6409096157354c6280c024ed1;hb=refs/heads/tizen) | This file includes helper functions for the DRM interface backend module. |
-| [tbm_type_common.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=include/tbm_type_common.h;h=068d19b9514a9241cbdd442a310c423e086be60d;hb=refs/heads/tizen) | This is the user header file including general information on how to use TBM. |
+| [tbm_bufmgr_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=src/tbm_bufmgr_backend.h;h=839ec996de16493e40b90c72066448d770575bca;hb=refs/heads/tizen) | This file includes information on implementing the TBM backend module. |
+| [tbm_drm_helper.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=src/tbm_drm_helper.h;h=0c93a378d2ddf64f2bcb9ebf6a1d0b85563670a2;hb=refs/heads/tizen) | This file includes helper functions for the DRM interface backend module. |
+| [tbm_bufmgr.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=src/tbm_bufmgr.h;h=50fcf08101c2cb0a4b8750f3eda30d375c981ea7;hb=refs/heads/tizen) | This is the user header file including general information on how to use the TBM. |
+| [tbm_surface.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=blob;f=src/tbm_surface.h;h=0686a4ed2d0e26c0386e9f1232f0aa2a6e7f5eb6;hb=refs/heads/tizen) | This is the user header file including general information on how to use `tbm_surface`. |
 
 #### TBM Backend Interface
 
-The following table lists the `bufmgr` backend interface functions of `tbm_backend_module`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen):
+The following table lists the TBM backend interface functions for initializing and deinitializing.
 
-**Table: bufmgr functions**
+**Table: Initializing and deinitializing functions**
 
-| Function          | Description                              | Mandatory                                |
+| Function                       | Description                              |           |
+| ------------------------------ | ---------------------------------------- | --------- |
+| `ModuleInitProc()`             | The `init` function of a backend module. | Mandatory |
+| `bufmgr_deinit()`              | Deinitialize the buffer manager privately. | Mandatory |
+| `bufmgr_bind_native_display()` | If the backend needs to get the native display, use this backend function. | Optional  |
+
+The following table lists the TBM backend interface functions for `tbm_bo`.
+
+**Table: tbm_bo functions**
+
+| Function          | Description                              | Mandatory                                         |
 | ----------------- | ---------------------------------------- | ---------------------------------------- |
-| `bufmgr_get_capabilities()`           | Gets the capabilities of a buffer manager. | Yes |
-| `bufmgr_bind_native_display()`        | Sets (bind) the native display. If the backend needs to get the native display, use this backend function. | Yes |
-| `bufmgr_get_supported_formats()`      | Gets the format list and the number to be supported by the backend. | Yes |
-| `bufmgr_get_plane_data()`             | Gets the plane data of `plane_idx` according to the color format. | Yes |
-| `bufmgr_alloc_bo()`                   | Allocates `tbm_backend_bo_data` of `tbm_backend_module`. `tbm_backend_bo_data` is a pointer. | Yes |
-| `bufmgr_alloc_bo_with_format()`       | Allocates `tbm_backend_bo_data` of the `bo` index according to the color format. `tbm_backend_bo_data` is a pointer. | Yes |
-| `bufmgr_alloc_bo_with_tiled_format()` | Allocates `tbm_backend_bo_data` for GPU that supports the tiled format. `tbm_backend_bo_data` is a pointer. | Yes |
-| `bufmgr_import_fd()`                  | Imports `tbm_backend_bo_data` associated with the prime `fd`. `tbm_fd` must be freed by you. If the backend does not support buffer sharing by `tbm_fd`, the function pointer must be set to `NULL`. | Yes (Must support buffer sharing by `tbm_fd`.)  |
-| `bufmgr_import_key()`                 | Imports `tbm_backend_bo_data` associated with the key. If the backend does not support buffer sharing by `tbm_fd`, the function pointer must be set to `NULL`. | Yes |
+| `bo_alloc()`      | Allocates the buffer object. If the backend wants to reuse the `bo` private at frontend, return the same pointer of the `bo` private. | Yes                                |
+| `bo_free()`       | Frees the buffer object. The frontend calls this function when it does not use the `bo` private. | Yes                                |
+| `bo_import()`     | Imports the buffer object associated with the key. If the backend does not support buffer sharing by the TBM key, the function pointer must be set to `NULL`. | No                                 |
+| `bo_export()`     | Exports the buffer object. If the backend does not support buffer sharing by TBM key, the function pointer must be set to `NULL`. | No                                 |
+| `bo_import_fd()`  | Imports the buffer object associated with the prime `fd`. The `tbm_fd` must be freed by the user. If the backend does not support buffer sharing by TBM `fd`, the function pointer must be set to `NULL`. | Yes (Must support buffer sharing by TBM `fd`.) |
+| `bo_export_fd()`  | Imports the buffer object associated with the prime `fd`. The `tbm_fd` must be freed by the user. If the backend does not support buffer sharing by TBM `fd`, the function pointer must be set to `NULL`. | Yes (Must support buffer sharing by TBM `fd`.) |
+| `bo_get_flags()`  | Gets the TBM flags of memory type.        | Yes                                |
+| `bo_size()`       | Gets the size of a buffer object.        | Yes                                |
+| `bo_get_handle()` | Gets the `tbm_bo_handle` according to the device type. | Yes                                |
+| `bo_map()`        | Maps the buffer object according to the device type and the option. | Yes                                |
+| `bo_unmap()`      | Unmaps the buffer object.                | Yes                                |
+| `bo_lock()`       | Locks the buffer object with a device and an opt. | No                                 |
+| `bo_unlock()`     | Unlocks the buffer object.               | No                                 |
 
-The following table lists the `bo` backend interface functions of `tbm_backend_module`. For more information, see [tbm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtbm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen):
+The following table lists the TBM backend interface functions for `tbm_surface`.
 
-**Table: bo functions**
+**Table: tbm_surface functions**
 
 | Function                     | Description                              | Mandatory          |
-| ---------------------------- | ---------------------------------------- | ------------------ |
-| `bo_free()`             | Frees `tbm_backend_bo_data`. | Yes |
-| `bo_get_size()`         | Gets the size of `tbm_backend_bo_data`. | Yes |
-| `bo_get_memory_types()` | Gets `tbm_bo_memory_type`. | Yes |
-| `bo_get_handle()`       | Gets `tbm_bo_handle` according to `tbm_bo_device_type`. | Yes |
-| `bo_map()`              | Maps `tbm_backend_bo_data` according to `tbm_bo_device_type` and `tbm_bo_access_option`. | Yes |
-| `bo_unmap()`            | Unmaps `tbm_backend_bo_data`. | Yes |
-| `bo_lock()`             | Locks `tbm_backend_bo_data` with a device and an option. | No |
-| `bo_unlock()`           | Unlocks `tbm_backend_bo_data`. | No |
-| `bo_export_fd()`        | Exports `tbm_backend_bo_data` to `tdm_fd` (prime fd). `tbm_fd` must be freed by the user. If the backend does not support a buffer sharing by `tdm_fd`, the function pointer must be set to `NULL`. | Yes |
-| `bo_export_key()`       | Exports `tbm_backend_bo_data` to `tdm_key`. If the backend does not support a buffer sharing by `tdm_key`, the function pointer must be set to `NULL`. | Yes |
+| ---------------------------- | ---------------------------------------- | --------- |
+| `surface_supported_format()` | Queries the format list and the number to be supported by backend. | Yes |
+| `surface_get_plane_data()`   | Gets the plane data, such as the size, offset, pitch, and buffer object index of the surface. | Yes |
+| `surface_bo_alloc()`         | Allocates the buffer object for the TBM surface with width, height, format, and buffer object index. If the backend does not want to allocate the buffer of the TBM surface with width, format, and height, the function pointer must be set to `NULL`. The TBM frontend allocation buffer of the TBM surface with data is gained from the `surface_get_plane_data()`. | No  |
 
-The following table lists the TBM buffer manager capability, `tbm_bufmgr_capability`:
+The following table lists the TBM buffer memory types.
 
-| Buffer capability                    | Description                              |
-| ------------------------------------ | ---------------------------------------- |
-| `TBM_BUFMGR_CAPABILITY_NONE`         | Does not support TBM buffer capability.  |
-| `TBM_BUFMGR_CAPABILITY_SHARE_KEY`    | Supports sharing buffer by `tbm_key`.      |
-| `TBM_BUFMGR_CAPABILITY_SHARE_FD`     | Supports sharing buffer by `tbm_fd`.       |
-| `TBM_BUFMGR_CAPABILITY_TBM_SYNC`     | Supports timeline sync.                  |
-| `TBM_BUFMGR_CAPABILITY_TILED_MEMORY` | Supports tiled memory.                   |
+**Table: TBM buffer memory types**
 
-The following table lists the TBM buffer memory types, `tbm_bo_memory_type`:
+| Buffer memory type   | Description                              |
+| -------------------- | ---------------------------------------- |
+| `TBM_BO_DEFAULT`     | Default memory: it depends on the backend |
+| `TBM_BO_SCANOUT`     | Scanout memory                           |
+| `TBM_BO_NONCACHABLE` | Non-cachable memory                      |
+| `TBM_BO_WC`          | Write-combine memory                     |
+| `TBM_BO_VENDOR`      | Vendor specific memory (depends on the backend) |
 
-| Buffer memory type   | Description                                     |
-| -------------------- | ----------------------------------------------- |
-| `TBM_BO_DEFAULT`     | Default memory: It depends on the backend.       |
-| `TBM_BO_SCANOUT`     | Scanout memory                                  |
-| `TBM_BO_NONCACHABLE` | Non-cacheable memory                             |
-| `TBM_BO_WC`          | Write-combined memory                            |
-| `TBM_BO_VENDOR`      | Vendor specific memory: It depends on the backend. |
+The following table lists the TBM buffer device types.
 
-The following table lists the TBM buffer device types, `tbm_bo_device_type`:
+**Table: TBM buffer device types**
 
 | Device type          | Description                              |
 | -------------------- | ---------------------------------------- |
-| `TBM_DEVICE_DEFAULT` | Device type to get the default handle    |
-| `TBM_DEVICE_CPU`     | Device type to get the virtual memory    |
-| `TBM_DEVICE_2D`      | Device type to get the 2D memory handle  |
-| `TBM_DEVICE_3D`      | Device type to get the 3D memory handle  |
+| `TBM_DEVICE_DEFAULT` | Device type to get the default handle |
+| `TBM_DEVICE_CPU`     | Device type to get the virtual memory |
+| `TBM_DEVICE_2D`      | Device type to get the 2D memory handle |
+| `TBM_DEVICE_3D`      | Device type to get the 3D memory handle |
 | `TBM_DEVICE_MM`      | Device type to get the multimedia handle |
 
-The following table lists the TBM buffer access options, `tbm_bo_access_option`:
+The following table lists the TBM buffer access options.
 
-| Access option       | Description                                        |
-| ------------------- | -------------------------------------------------- |
-| `TBM_OPTION_READ`   | Access option to read                              |
-| `TBM_OPTION_WRITE`  | Access option to write                             |
+**Table: TBM buffer access options**
+
+| Access option       | Description                              |
+| ------------------- | ---------------------------------------- |
+| `TBM_OPTION_READ`   | Access option to read                |
+| `TBM_OPTION_WRITE`  | Access option to write               |
 | `TBM_OPTION_VENDOR` | Vendor-specific option that depends on the backend |
 
 #### TBM DRM Helper Functions
@@ -253,21 +230,9 @@ The following table lists the TBM backends.
 | `libtbm-exynos` | [platform/adaptation/samsung_exynos/libtbm-exynos](https://review.tizen.org/gerrit/gitweb?p=platform/adaptation/samsung_exynos/libtbm-exynos.git;a=summary) | Backend for a target device which uses the exynos chipset only. The `exynos` backend module uses the `drm` gem memory interface but some `ioctl` are only provided by `exynos drm` kernel. |
 | `libtbm-vigs`   | [platform/adaptation/emulator/libtbm-vigs](https://review.tizen.org/gerrit/gitweb?p=platform/adaptation/emulator/libtbm-vigs.git;a=summary) | Backend for a target device which supports the VIGS interface. The `vigs` backend is used by the emulator target. |
 
-### Testing Porting Result
-
-TBM offers `tbm-haltests` that allows you to test and verify the porting result. The `tbm-haltests` tool is included in the `libtbm-haltests` package that can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on the `gtest` package and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
-
-### Checking TDM Log Messages
-
-TBM uses `dlog` to print the debug messages. To show the TBM run time log, use the following message:
-
-```
-$ dlogutil -v threadtime TBM
-```
-
 ### Reference
 
-For more information about TBM and TBM backend, see [Tizen Buffer Manager (TBM)](https://wiki.tizen.org/TBM).
+For more information about TBM and the TBM backend, see [Tizen Buffer Manager (TBM)](https://wiki.tizen.org/TBM).
 
 ## Display Management
 
@@ -289,8 +254,6 @@ total 40
 lrwxrwxrwx 1 root root    14 Jul 28  2016 libtdm-default.so -> libtdm-drm.so
 -rwxr-xr-x 1 root root 37152 Jul 12  2016 libtdm-drm.so
 ```
-
-### Initializing TDM Backend Module
 
 The TDM backend module must define the global data symbol with the name `tdm_backend_module_data`. The TDM frontend reads this symbol at the initialization time. TDM calls the `init()` function of the `tdm_backend_module_data`. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
@@ -324,7 +287,7 @@ tdm_drm_deinit(tdm_backend_data *bdata) {
 tdm_backend_module tdm_backend_module_data = {
     "drm",
     "Samsung",
-    TDM_BACKEND_SET_ABI_VERSION(2,0),
+    TDM_BACKEND_SET_ABI_VERSION(1,1),
     tdm_drm_init,
     tdm_drm_deinit
 };
@@ -366,7 +329,7 @@ tdm_drm_init(tdm_display *dpy, tdm_error *error) {
 }
 ```
 
-After loading the TDM backend module, the TDM frontend calls `display_get_capability()`, `display_get_outputs()`, and `output_get_capability()` to get the specific hardware information. The TDM backend module has to set `TDM_OUTPUT_CAPABILITY_HWC` on the output, when `TDM_OUTPUT_CAPABILITY_HWC` supports TDM HardWare Compositing (HWC). In the latest version (supports version 2.9) of `libtdm`, TDM recommends that the TDM backend module must support TDM HWC, which means that TDM backend has to register `tdm_func_hwc` and `tdm_func_hwc_window`. If the TDM backend module does not support TDM HWC, the TDM backend module implements `output_get_layers()` and `layer_get_capability()`, and also registers `tdm_func_layer()`.
+After loading the TDM backend module, the TDM frontend calls the `display_get_capability()`, `display_get_outputs()`, `output_get_capability()`, `output_get_layers()`, and `layer_get_capability()` functions to get the hardware-specific information. That means that the TDM backend module must implement these 5 functions.
 
 In addition, if a target has a memory-to-memory converting hardware device and the capture hardware device, the TDM backend module can register the `tdm_func_pp()` and `tdm_func_capture()` functions with the `tdm_backend_register_func_pp()` and `tdm_backend_register_func_capture()` functions.
 
@@ -416,47 +379,6 @@ The output backend interface is mandatory. For more information, see [tdm_backen
 | `output_create_capture()`     | Creates a capture object of an output object. The backend module does not need to implement this function if the hardware does not have a capture device. | No  |
 | `output_set_status_handler()` | Sets an output connection status handler. The backend module must call the output status handler when the output connection status has been changed to let the TDM frontend know of the change. | No  |
 | `output_set_dpms_handler()`   | Sets an output DPMS handler. The backend module must call the output DPMS handler when the output DPMS has been changed to let the TDM frontend know of the change. | No  |
-| `output_get_hwc()`            | Gets an hwc object of an output object. The backend module returns the hwc object when the output has `TDM_OUTPUT_CAPABILITY_HWC`. | Yes  |
-
-The HWC backend interface is mandatory. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
-
-**Table: HWC backend interface functions**
-
-| Function                   | Description                              | Mandatory          |
-| -------------------------- | ---------------------------------------- | --------- |
-| `hwc_create_window()`                  | Creates a new window on the given HWC. The backend module must implement `hwc_create_window()`. In addition, the backend module creates a private `tdm_hwc_window` and returns its handle. | Yes |
-| `hwc_get_video_supported_formats()`    | Gets the video supported format array for the hwc windows of an hwc object. | Yes  |
-| `hwc_get_video_available_properties()` | Gets the available video property array of an hwc object. The backend returns the video properties that are predefined in the backend module. | Yes  |
-| `hwc_get_capabilities()`               | Gets the hwc capabilities that the backend can support. | Yes |
-| `hwc_get_available_properties()`       | Gets the available property array of an hwc object. The backend returns the properties that are predefined in the backend module. | Yes |
-| `hwc_get_client_target_buffer_queue()` | Gets a target buffer queue. The backend returns `tbm_surface_queue_h`. | Yes |
-| `hwc_set_client_target_buffer()`       | Sets the client (relative to TDM) target buffer. The target buffer is from `tbm_surface_queue_h` that contains the result of the GL composition with `tdm_hwc_window`. | Yes |
-| `hwc_validate()`                       | Validates HWC. The backend inspects all the hardware layer states and determines whether there are any composition type changes necessary before committing HWC. | Yes  |
-| `hwc_get_changed_composition_types()`  | Gets the changed composition types. The backend returns `tdm_hwc_window` and the `tdm_hwc_window` composition type is changed through `hwc_validate`. | Yes  |
-| `hwc_accept_validation()`              | Accepts the validation required by the backend. The backend can identify the decided `tdm_hwc_window_composition` at the required validation. The backend can commit the set of `tdm_hwc_window` with this accepted `tdm_hwc_window_composition`. | Yes  |
-| `hwc_commit()`                         | Commits changes for an hwc object. The backend can commit output (layers), associated with the accepted validation of the hwc object on the display output device. | Yes  |
-| `hwc_set_commit_handler()`             | Sets a user commit handler. The backend has to call `tdm_hwc_commit_handler` after finishing `hwc_commit`. | Yes  |
-| `hwc_set_property()`                   | Sets the property that has a given property ID by the backend on the hwc object. | Yes  |
-| `hwc_get_property()`                   | Gets the property that has a given property ID by the backend on the hwc object. | Yes  |
-
-The hwc window backend interface is mandatory. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
-
-**Table: HWC window backend interface functions**
-
-| Function                   | Description                              | Mandatory          |
-| -------------------------- | ---------------------------------------- | --------- |
-| `hwc_window_destroy()`              | Destroys `tdm_hwc_window`. The backend module must implement this function. The backend destroys the private window, `tdm_hwc_window`. | Yes |
-| `hwc_window_acquire_buffer_queue()` | Acquires a buffer queue associated with `tdm_hwc_window`. This function can be used when the backend has `TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE`. | No  |
-| `hwc_window_release_buffer_queue()` | Releases a buffer queue assoicated with `tdm_hwc_window`. This function can be used when the backend has `TDM_HWC_WIN_CONSTRAINT_BUFFER_QUEUE`. | No  |
-| `hwc_window_set_composition_type()` | Sets the composition type of `tdm_hwc_window`. The backend sets `tdm_hwc_window_composition`.| Yes |
-| `hwc_window_set_buffer_damage()`    | Sets the buffer damage. The backend sets the buffer damage. | Yes |
-| `hwc_window_set_info()`             | Sets the information to `tdm_hwc_window`. The information will be applied when the hwc object is committed. | Yes |
-| `hwc_window_set_buffer()`           | Sets a TDM buffer to `tdm_hwc_window`. A TDM buffer will be applied when the hwc object is committed. | Yes |
-| `hwc_window_set_property()`         | Sets the property that has a given property ID by the backend. | Yes  |
-| `hwc_window_get_property()`         | Gets the property that has a given property ID by the backend. | Yes  |
-| `hwc_window_get_constraints()`      | Gets the constraints of `tdm_hwc_window`. The backend returns `tdm_hwc_window_constraint`. | Yes  |
-| `hwc_window_set_name()`             | Sets the name of `tdm_hwc_window`. The backend can get the name of `tdm_hwc_window`.| Yes  |
-| `hwc_window_set_cursor_image()`     | Sets the cursor memory information associated with `tdm_hwc_window`.	 | Yes  |
 
 The layer backend interface is mandatory. For more information, see [tdm_backend.h](https://review.tizen.org/gerrit/gitweb?p=platform/core/uifw/libtdm.git;a=tree;h=refs/heads/tizen;hb=refs/heads/tizen).
 
@@ -464,7 +386,7 @@ The layer backend interface is mandatory. For more information, see [tdm_backend
 
 | Function                   | Description                              | Mandatory          |
 | -------------------------- | ---------------------------------------- | --------- |
-| `layer_get_capability()`   | Gets the capabilities of a layer object. The backend module must implement this function. TDM calls this function not only at initialization, but also when a new output is connected. `tdm_caps_layer` contains the available formats, properties, and `zpos` information. | Yes |
+| `layer_get_capability()`   | Get the capabilities of a layer object. The backend module must implement this function. TDM calls this function not only at initialization, but also when a new output is connected. The `tdm_caps_layer` contains the available formats/properties and `zpos` information. | Yes |
 | `layer_set_property()`     | Sets the property with a given ID.       | No  |
 | `layer_get_property()`     | Gets the property with a given ID.       | No  |
 | `layer_set_info()`         | Sets the geometry information to a layer object. The backend module applies the geometry information when the output object of a layer object is committed. | Yes |
@@ -512,13 +434,28 @@ There are several backends which can be used as reference when implementing the 
 | `libtdm-exynos` | [platform/adaptation/samsung_exynos/libtdm-exynos](https://review.tizen.org/gerrit/gitweb?p=platform%2Fadaptation%2Fsamsung_exynos%2Flibtdm-exynos.git;a=summary) | Backend for a target device which uses the `exynos` chipset using the DRM interface. Has PP and capture capability, using the exynos-specific DRM interface to support PP. |
 | `libtdm-sprd`   | [platform/adaptation/spreadtrum/libtdm-sprd](https://review.tizen.org/gerrit/gitweb?p=platform%2Fadaptation%2Fspreadtrum%2Flibtdm-sprd.git;a=summary) | Backend for a target device which uses the Spreadtrum chipset using the Spreadtrum-specific `ioctl`. Uses the DRM interface to support `vblank`. Has PP capability, but no capture capability. |
 
-### Testing Porting Result
+### Testing the Porting Result
 
-TDM offers `tdm-haltests` that allows you to test and verify the porting result. The `tdm-haltests` tool is included in the `libtdm-haltests` package that can be downloaded from the [platform binary's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/). It depends on the `gtest` package and it can be downloaded from the [platform's snapshot repository](https://download.tizen.org/snapshots/tizen/unified/latest/repos/standard/packages/).
+TDM offers the `tdm-test-server` tool to allow you to easily test the porting result. The `tdm-test-server` tool is included in the `libtdm-tools` package, which can be downloaded from the platform binary's snapshot repository. Make sure that TBM porting is done before using the following commands, because TDM works on top of TBM.
+
+```
+$ systemctl stop display-manager  (stop the display server)
+$ export XDG_RUNTIME_DIR=/run
+$ export TBM_DISPLAY_SERVER=1
+$ tdm-test-server                 (show all options)
+$ tdm-test-server -a              (test all layers)
+$ tdm-test-server -a -v           (test all layers with vblank events)
+```
+
+The following image shows the result of a test performed using the `tdm-test-server -a` command. The fullscreen buffer is set to the PRIMARY layer, and the small buffer is set to the OVERLAY layer.
+
+**Figure: Tdm-test-server results**
+
+![Tdm-test-server results](media/tdm-test-server-result.png)
 
 ### Checking TDM Log Messages
 
-TDM uses `dlog` to print debug messages. To show TDM runtime log messages:
+TDM uses dlog to print debug messages. To show TDM runtime log messages:
 
 ```
 $ dlogutil -v threadtime TDM
@@ -561,50 +498,50 @@ The `mtdev` standalone library transforms all variants of kernel MT events to th
 
 `libinput: platform/upstream/libinput`
 
-## OpenGL
+## OpenGL&reg;
 
-This section describes the essential elements of the Tizen platform-level graphics architecture related to OpenGL ES and EGL, and how it is used by the application framework and the display server. The focus is on how graphical data buffers move through the system.
+This section describes the essential elements of the Tizen platform-level graphics architecture related to OpenGL&reg; ES and EGL&trade;, and how it is used by the application framework and the display server. The focus is on how graphical data buffers move through the system.
 
-The Tizen platform requires the OpenGL ES driver for the acceleration of the Wayland display server and the `wayland-egl` client. This platform demands an OpenGL ES and EGL driver, which are implemented by the Tizen EGL Porting Layer.
+The Tizen platform requires the OpenGL&reg; ES driver for the acceleration of the Wayland display server and the `wayland-egl` client. This platform demands an OpenGL&reg; ES and EGL&trade; driver which is implemented by the Tizen EGL Porting Layer.
 
-### Tizen OpenGL ES and EGL Architecture
+### Tizen OpenGL&reg; ES and EGL&trade; Architecture
 
-The following figure illustrates the Tizen OpenGL ES and EGL architecture.
+The following figure illustrates the Tizen OpenGL&reg; ES and EGL&trade; architecture.
 
-**Figure: Tizen OpenGL ES architecture**
+**Figure: Tizen OpenGL&reg; ES architecture**
 
 ![Tizen OpenGL ES architecture](media/800px-opengles-stack.png)
 
 - CoreGL
 
-  An injection layer of OpenGL ES that provides the following capabilities:
+  An injection layer of OpenGL&reg; ES that provides the following capabilities:
 
   - Support for driver-independent optimization (FastPath)
-  - EGL/OpenGL ES debugging
+  - EGL&trade;/OpenGL&reg; ES debugging
   - Performance logging
   - Supported versions
-    - EGL 1.4
-    - OpenGL ES 1.1, 2.0, 3.0, 3.1
+    - EGL&trade; 1.4
+    - OpenGL&reg; ES 1.1, 2.0, 3.0, 3.1
 
-  CoreGL loads the manufacturer's OpenGL ES driver from the `/usr/lib/driver` directory. CoreGL provides `libEGL.so`, `libGLESv1_CM.so`, and `libGLESvs.so` driver files in the `/usr/lib` directory.
-- GPU vendor GL/EGL driver
+  CoreGL loads the manufacturer's OpenGL&reg; ES driver from the `/usr/lib/driver` directory. CoreGL provides the `libEGL.so`, `libGLESv1_CM.so`, and `libGLESvs.so` driver files in the `/usr/lib` directory.
+- GPU vendor GL/EGL&trade; driver
 
-  The Tizen platform demands that the GPU vendor implements the GL and EGL driver using `libtpl-egl`. The GPU vendor GL/EGL driver (`libEGL.so`, `libGLESv1_CM.so`, `libGLESv2.so`) must be installed in the `/usr/lib/driver` path.
+  The Tizen platform demands that the GPU vendor implements the GL and EGL&trade; driver using `libtpl-egl`. The GPU vendor GL/EGL&trade; driver (`libEGL.so`, `libGLESv1_CM.so`, `libGLESv2.so`) must be installed in the `/usr/lib/driver` path.
 
 
-### Tizen Porting Layer (TPL) for EGL
+### Tizen Porting Layer (TPL) for EGL&trade;
 
-TPL-EGL is an abstraction layer for surface and buffer management on the Tizen platform. It is used for the implementation of the EGL platform functions.
+TPL-EGL is an abstraction layer for surface and buffer management on the Tizen platform. It is used for implementation of the EGL&trade; platform functions.
 
 **Figure: TPL architecture**
 
 ![TPL architecture](media/800px-tpl-architecture.png)
 
-The background for the Tizen EGL Porting Layer for EGL uses various Tizen window system protocols. Therefore, there is a need to separate the common layer and backend.
+The background for the Tizen EGL Porting Layer for EGL&trade; is in various window system protocols in Tizen. There was a need for separating common layer and backend.
 
-Tizen uses the Tizen Porting Layer for EGL, as the TPL-EGL API prevents burdens of the EGL porting on various window system protocols. The GPU GL Driver's Window System Porting Layer can be implemented by TPL-EGL APIs, which are the corresponding window system APIs. The TBM, Wayland, and GBM backends are supported.
+Tizen uses the Tizen Porting Layer for EGL&trade;, as the TPL-EGL API prevents burdens of the EGL&trade; porting on various window system protocols. The GPU GL Driver's Window System Porting Layer can be implemented by TPL-EGL APIs which are the corresponding window system APIs. The TBM, Wayland, and GBM backends are supported.
 
-### Tizen Porting Layer for EGL Object Model
+### Tizen Porting Layer for the EGL&trade; Object Model
 
 TPL-EGL provides interfaces based on an object-driven model. Every TPL-EGL object can be represented as a generic `tpl_object_t`, which is reference-counted and provides common functions. Currently, display and surface types of TPL-EGL objects are provided. A display, like a normal display, represents a display system which is usually used for connecting to the server. A surface corresponds to a native surface, such as `wl_surface`. Surfaces can be configured to use N-buffers, but are usually double-buffered or triple-buffered. A buffer is what you render on, usually a set of pixels or a block of memory. For these 2 objects, the Wayland, GBM, TBM backend are defined, and they correspond to their own window systems. This means that you do not need to care about the window systems.
 
@@ -622,17 +559,17 @@ The TPL-EGL has the following core objects:
 
   Encapsulates the native drawable object (`Window`, `Pixmap`, `wl_surface`). The surface corresponds to a native surface, such as `tbm_surface_queue` or `wl_surface`. A surface can be configured to use N-buffers, but they are usually double-buffered or triple-buffered.
 
-#### TPL-EGL Objects and Corresponding EGL Objects
+#### TPL-EGL Objects and Corresponding EGL&trade; Objects
 
-Both TPL-EGL and vendor OpenGL ES/EGL driver handles `tbm_surface` as the corresponding TPL surface buffer. It is represented by the `TBM_Surface` part in the following figure.
+Both TPL-EGL and vendor OpenGL&reg; ES/EGL&trade; driver handles a `tbm_surface` as the corresponding TPL surface buffer. It is represented by the `TBM_Surface` part in the following figure.
 
 **Figure: TPL-EGL architecture**
 
 ![TPL-EGL architecture](media/800px-relationship-tpl-egl-gray.png)
 
-The following figure illustrates the OpenGL ES drawing API flow.
+The following figure illustrates the OpenGL&reg; ES drawing API flow.
 
-**Figure: OpenGL ES drawing API flow**
+**Figure: OpenGL&reg; ES drawing API flow**
 
 ![GLES drawing API flow](media/800px-gles-api-flow-gray.png)
 
@@ -703,17 +640,17 @@ In the GPU vendor driver, the GPU frame builder handles the drawing. TPL-EGL exp
 
 #### TPL-EGL and Wayland Server and Client
 
-Tizen uses the `wl_tbm` protocol instead of `wl_drm`. The `wl_tbm` protocol is designed for sharing the buffer (`tbm_surface`) between `wayland_client` and `wayland_server`. Although the `wayland_tbm_server_init` and `wayland_tbm_client_init` pair is a role for `eglBindWaylandDisplayWL`, the EGL driver is required to implement the entry points for `eglBindWaylandDisplayWL` and `eglUnbindWaylandDisplayWL` as dummy. For more information, see [https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec](https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec).
+Tizen uses the `wl_tbm` protocol instead of `wl_drm`. The `wl_tbm` protocol is designed for sharing the buffer (`tbm_surface`) between the `wayland_client` and `wayland_server`. Although the `wayland_tbm_server_init` and `wayland_tbm_client_init` pair is a role for the `eglBindWaylandDisplayWL`, the EGL&trade; driver is required to implement the entry points for the `eglBindWaylandDisplayWL` and `eglUnbindWaylandDisplayWL` as dummy. For more information, see [https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec](https://cgit.freedesktop.org/mesa/mesa/tree/docs/specs/WL_bind_wayland_display.spec).
 
 **Figure: TPL-EGL and Wayland**
 
 ![TPL-EGL and Wayland](media/800px-libtpl-egl-module-diagram.png)
 
-#### Buffer Flow Between the Wayland Server and OpenGL ES/EGL Driver
+#### Buffer Flow Between the Wayland Server and OpenGL&reg; ES/EGL&trade; Driver
 
-The following figure shows the buffer flow between the Wayland server and the OpenGL ES/EGL driver. The passed buffer is of the `tbm_surface` type.
+The following figure shows the buffer flow between the Wayland server and the OpenGL&reg; ES/EGL&trade; driver. The passed buffer is of the `tbm_surface` type.
 
-**Figure: Buffer flow between Wayland server and OpenGL ES/EGL driver**
+**Figure: Buffer flow between Wayland server and OpenGL&reg; ES/EGL&trade; driver**
 
 ![Buffer flow between Wayland server and OpenGL ES/EGL driver](media/800px-libtpl-egl-buffer-flow.png)
 
@@ -725,23 +662,22 @@ The following table lists the available project Git repositories.
 
 | Project         | Repository                               | Description                              |
 | --------------- | ---------------------------------------- | ---------------------------------------- |
-| `libtpl-egl`    | `platform/core/uifw/libtpl-egl`          | Tizen Porting Layer for EGL       |
-| `libtbm`        | `platform/core/uifw/libtbm`              | Library for Tizen Buffer Manager  |
-| `coregl`        | `platform/core/uifw/coregl`              | Injection layer of OpenGL ES/EGL    |
+| `libtpl-egl`    | `platform/core/uifw/libtpl-egl`          | Tizen Porting Layer for EGL&trade;       |
+| `libtbm`        | `platform/core/uifw/libtbm`              | Library for Tizen Buffer Manager |
+| `coregl`        | `platform/core/uifw/coregl`              | Injection layer of OpenGL&reg; ES / EGL&trade;    |
 | `wayland-tbm`   | `platform/core/uifw/wayland-tbm`         | Protocol for graphics memory management for Tizen |
-| `emulator-yagl` | `platform/adaptation/emulator/emulator-yagl` | OpenGL ES/EGL driver for the emulator  |
+| `emulator-yagl` | `platform/adaptation/emulator/emulator-yagl` | OpenGL&reg; ES / EGL&trade; driver for the emulator  |
 | `tpl-novice`    | `platform/core/uifw/ws-testcase`         | Novice test framework for TPL            |
 
 ### libtpl-egl Reference Driver
 
-The Emulator YAGL (OpenGL ES/EGL driver for the emulator) is implemented by `libtpl-egl`.
+The Emulator YAGL (OpenGL&reg; ES / EGL&trade; driver for the emulator) is implemented by `libtpl-egl`.
 
 The following commit explains how to port the driver with `libtpl-egl` from the traditional drm-based driver:
 
-- Porting YAGL to the Tizen platform [https://review.tizen.org/gerrit/c/platform/adaptation/emulator/emulator-yagl/+/67921](https://review.tizen.org/gerrit/c/platform/adaptation/emulator/emulator-yagl/+/67921)
-- Porting MESA to the Tizen platform [https://review.tizen.org/gerrit/c/platform/upstream/mesa/+/228724](https://review.tizen.org/gerrit/c/platform/upstream/mesa/+/228724)
+- Porting YAGL to the Tizen platform [https://review.tizen.org/gerrit/#/c/67921/](https://review.tizen.org/gerrit/#/c/67921/)
 
-### Testing and Verifying OpenGL ES Driver
+### Testing and Verifying the OpenGL&reg; ES Driver
 
-The Khronos OpenGL ES CTS supports `wayland-egl`. `libtpl-egl` has a test case for the `libtpl-egl`. `tpl-novice` of `ws-testcase` has the sample code for `libtpl-egl`.
+The Khronos OpenGL&reg; ES CTS supports `wayland-egl`. `libtpl-egl` has a test case for the `libtpl-egl`. The `ws-testcase`'s `tpl-novice` has sample code for the `libtpl-egl`.
 

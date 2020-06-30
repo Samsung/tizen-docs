@@ -4,7 +4,7 @@ Tizen .NET is an exciting new way to develop applications for the Tizen operatin
 
 The existing Tizen frameworks are either C-based with no advantages of a managed runtime, or HTML5-based with fewer features and lower performance than the C-based solution. With Tizen .NET, you can use the C# programming language and the Common Language Infrastructure standards, and have benefits from a managed runtime for faster application development and code execution that is efficient and secure.
 
-To start developing Tizen applications using .NET, see [Creating Your First Tizen .NET Application with Visual Studio](get-started/wearable/first-app.md).
+To start developing Tizen applications using .NET, see [Creating Your First Tizen .NET Application with Visual Studio](get-started/mobile/first-app.md).
 
 ## Managed Runtime Advantages
 
@@ -28,7 +28,7 @@ Managed runtime offers the following advantages to your application development:
 
 - **Cross-platform support**
 
-  The managed code is portable. Tizen .NET applications can have large portions of their logic applied to other systems supported by .NET Core and Xamarin.Forms.
+  The managed code is portable. Tizen .NET applications can have large portions of their logic applied to other systems supported by the .NET Core and Xamarin.Forms.
 
 ## Tizen .NET Features and Components
 
@@ -42,7 +42,7 @@ Tizen .NET consists of the following main components:
 
 - **.NET Core**
 
-  [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) is an [open-source](https://github.com/dotnet/coreclr/blob/master/LICENSE.TXT), general-purpose development platform maintained by Microsoft and the .NET community on [GitHub](https://github.com/dotnet/core). It is cross-platform (supporting Windows, macOS, and Linux) and can be used to build device, cloud, and IoT applications.
+  [.NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) is an [open-source](https://github.com/dotnet/coreclr/blob/master/LICENSE.TXT), general-purpose development platform maintained by Microsoft and the .NET community on [GitHub](https://github.com/dotnet/core). It's cross-platform (supporting Windows, macOS, and Linux) and can be used to build device, cloud, and IoT applications.
 
   See [About .NET Core](https://docs.microsoft.com/en-us/dotnet/core/about) to learn more about .NET Core, including its characteristics, supported languages and frameworks, and key APIs.
 
@@ -64,8 +64,8 @@ Tizen .NET consists of the following main components:
 
 Visual Studio Tools for Tizen provides Tizen-specific tools to improve your productivity.
 
-You can create a Tizen .NET application project with the Project Wizard tool in Visual Studio Tools for Tizen. When you create a new project with a specific template, Project Wizard uses it to automatically create basic functionalities, and default project files and folders for the application.
+You can create a Tizen .NET application project with the Project Wizard in Visual Studio Tools for Tizen. When you create a new project with a specific template, the Project Wizard uses it to automatically create basic functionalities and default project files and folders for the application.
 
-The Visual Studio Tools for Tizen extension is registered in Visual Studio Marketplace. You can [install the extension](../vstools/install.md) from Visual Studio Marketplace in the Visual Studio IDE. To download Visual Studio 2017 for Tizen, click [![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen). To use the latest version of Visual Studio, download [Visual Studio Tools for Tizen for Visual Studio](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
+[![Download](media/ic_docs_download.png)](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen){:target="_blank"} The Visual Studio Tools for Tizen extension is registered in the Visual Studio Marketplace. You can [install the extension](../vstools/install.md) from the Visual Studio Marketplace in the Visual Studio IDE. To download the latest Visual Studio Tools for Tizen click the button. To use Visual Studio 2017, download [Visual Studio Tools for Tizen for Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen).
 
-For more information, see the [Visual Studio Tools for Tizen](../vstools/index.md) guides.
+For more information, see [the guides of Visual Studio Tools for Tizen](../vstools/index.md)

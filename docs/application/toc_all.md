@@ -4,7 +4,6 @@
 ## [Wearable](/application/get-started/wearable.md)
 ## [TV](/application/get-started/tv.md)
 ## [Mobile](/application/get-started/mobile.md)
-## [Tizen Applications](/application/get-started/applications.md)
 
 
 # .NET Application
@@ -31,7 +30,7 @@
 #### [Overview](/application/dotnet/tutorials/certificates/getting-the-certificates.md)
 #### [Installing Certificates Extension](/application/dotnet/tutorials/certificates/installing-certificate-extension.md)
 #### [Creating Certificates](/application/dotnet/tutorials/certificates/creating-certificates.md)
-#### [Signing Application](/application/dotnet/tutorials/certificates/signing-your-application.md)
+#### [Permit Device To Install Applications](/application/dotnet/tutorials/certificates/permit-device-to-install-apps.md)
 #### [Managing Certificate Profile](/application/dotnet/tutorials/certificates/managing-certificate-profile.md)
 
 ### [Test Tizen .NET Application on a Gear device](/application/dotnet/tutorials/testing-your-app-on-gear.md)
@@ -1233,4 +1232,6 @@
 ## [Tizen Web](/application/vscode-ext/web.md)
 
 
-# [Visual Studio for Mac Extension for Tizen](/application/vstools-mac/overview.md)
+# Visual Studio for Mac Extension for Tizen
+
+## [Overview](/application/vstools-mac/overview.md)
