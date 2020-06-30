@@ -16,7 +16,7 @@ Explore more about the Tizen TV .NET application development:
 -   [API reference ](../dotnet/api/overview.md)
 
 ## Web Applications
-You can create rich web applications using web-native languages, such as HTML, JavaScript, and CSS that are combined in a package. These applications use the Tizen Web Framework to interact with the native subsystems.
+You can create rich web applications using web-native languages, such as HTML, JavaScript, and CSS that are combined in a package. 
 
 To begin your Tizen Web application development journey, use the following quick start guides:
 -   [TV Web application](../web/get-started/tv/first-app.md)
