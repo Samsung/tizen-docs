@@ -64,6 +64,9 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <li>
                     1.7. <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>
 </li>
+<li>
+                    1.8. <a href="#Bytes">Bytes</a>
+</li>
 </ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -167,6 +170,15 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <a href="#BluetoothAdapter">BluetoothAdapter</a> <a href="#BluetoothManager::getDefaultAdapter">getDefaultAdapter</a> ()</div>
 <div>
 <a href="#BluetoothLEAdapter">BluetoothLEAdapter</a> <a href="#BluetoothManager::getLEAdapter">getLEAdapter</a> ()</div>
+<div>byte[] <a href="#BluetoothManager::toByteArray">toByteArray</a> (<a href="#Bytes">Bytes</a> data)</div>
+<div>DOMString <a href="#BluetoothManager::toDOMString">toDOMString</a> (<a href="#Bytes">Bytes</a> data)</div>
+<div>
+<a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> <a href="#BluetoothManager::toUint8Array">toUint8Array</a> (<a href="#Bytes">Bytes</a> data)</div>
+<div>
+<a href="#BluetoothUUID">BluetoothUUID</a> <a href="#BluetoothManager::uuidTo128bit">uuidTo128bit</a> (<a href="#BluetoothUUID">BluetoothUUID</a> uuid)</div>
+<div>
+<a href="#BluetoothUUID">BluetoothUUID</a> <a href="#BluetoothManager::uuidToShortestPossible">uuidToShortestPossible</a> (<a href="#BluetoothUUID">BluetoothUUID</a> uuid)</div>
+<div>boolean <a href="#BluetoothManager::uuidsEqual">uuidsEqual</a> (<a href="#BluetoothUUID">BluetoothUUID</a> uuid1, <a href="#BluetoothUUID">BluetoothUUID</a> uuid2)</div>
 </td>
 </tr>
 <tr>
@@ -201,7 +213,7 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <td><a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a></td>
 <td>
 <div>void <a href="#BluetoothGATTCharacteristic::readValue">readValue</a> (<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#BluetoothGATTCharacteristic::writeValue">writeValue</a> (byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothGATTCharacteristic::writeValue">writeValue</a> (<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>long <a href="#BluetoothGATTCharacteristic::addValueChangeListener">addValueChangeListener</a> (<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> callback)</div>
 <div>void <a href="#BluetoothGATTCharacteristic::removeValueChangeListener">removeValueChangeListener</a> (long watchID)</div>
 </td>
@@ -210,7 +222,7 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <td><a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a></td>
 <td>
 <div>void <a href="#BluetoothGATTDescriptor::readValue">readValue</a> (<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#BluetoothGATTDescriptor::writeValue">writeValue</a> (byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothGATTDescriptor::writeValue">writeValue</a> (<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 </td>
 </tr>
 <tr>
@@ -252,7 +264,7 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <tr>
 <td><a href="#BluetoothSocket">BluetoothSocket</a></td>
 <td>
-<div>unsigned long <a href="#BluetoothSocket::writeData">writeData</a> (byte[] data)</div>
+<div>unsigned long <a href="#BluetoothSocket::writeData">writeData</a> (<a href="#Bytes">Bytes</a> data)</div>
 <div>byte[] <a href="#BluetoothSocket::readData">readData</a> ()</div>
 <div>void <a href="#BluetoothSocket::close">close</a> ()</div>
 </td>
@@ -327,11 +339,31 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <div class="typedef" id="BluetoothUUID">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothUUID"></a><h3>1.2. BluetoothUUID</h3>
 <div class="brief">
- The UUID of a Bluetooth service.
+ The UUID of a Bluetooth object.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString BluetoothUUID;</pre>
 <p><span class="version">Since: </span>
  6.0
+          </p>
+<div class="description">
+          <p>
+According to the <a href="https://www.bluetooth.com/specifications/bluetooth-core-specification/">Bluetooth Core Specification</a>, UUIDs used to represent Bluetooth objects can take 3 forms:
+          </p>
+          <ul>
+            <li>
+128-bit representation: <var>"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX"</var>, where each <em>'X'</em> stands for a hexadecimal digit.<br>For example: <var>"198d3a9c-e21a-4f72-a48b-39a6bad7e583"</var>.            </li>
+            <li>
+32-bit representation: <var>"D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>D<sub>5</sub>D<sub>6</sub>D<sub>7</sub>D<sub>8</sub>"</var>, equivalent to <var>"D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>D<sub>5</sub>D<sub>6</sub>D<sub>7</sub>D<sub>8</sub>-0000-1000-8000-00805F9B34FB"</var>, where D<sub>1</sub>..D<sub>8</sub> stand for hexadecimal digits.<br>For example: <var>"e72ad71b"</var>.            </li>
+            <li>
+16-bit representation: <var>"D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>"</var>, equivalent to <var>"0000D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>-0000-1000-8000-00805F9B34FB"</var>, where D<sub>1</sub>..D<sub>4</sub> stand for hexadecimal digits.<br>For example: <var>"d182"</var>.            </li>
+          </ul>
+          <p>
+Unless stated otherwise, each function taking a UUID as a parameter will accept any of the 3 forms and make appropriate conversions.<br>Unless stated otherwise, each UUID returned from a function and each UUID attribute of an object may be a 16-bit, 32-bit or 128-bit UUID.
+Bluetooth API functions are case-insensitive with regard to UUIDs - lowercase (<var>abcdef</var>) and uppercase (<var>ABCDEF</var>) characters are recognized as valid hexadecimal digits.
+          </p>
+         </div>
+<p><span class="remark">Remark: </span>
+ The 128-bit UUID that is the base for UUIDs having 16-bit or 32-bit equivalents is defined available through the API in <a href="#BluetoothManager::BASE_UUID">BluetoothManager::BASE_UUID</a>.
           </p>
 </div>
 <div class="enum" id="BluetoothSocketState">
@@ -361,6 +393,10 @@ OPEN - corresponds to opened bluetooth socket.            </li>
 <p><span class="version">Since: </span>
  6.0
           </p>
+<p><span class="remark">Remark: </span>
+ <em>BluetoothLESolicitationUUID</em> is an alias for <a href="bluetooth.html#BluetoothUUID">BluetoothUUID</a>. Values of both types can take the same 16-bit, 32-bit or 128-bit forms.
+Functions taking <em>BluetoothLESolicitationUUID</em> parameters will accept the same UUID formats as those accepting <a href="bluetooth.html#BluetoothUUID">BluetoothUUID</a> values.
+          </p>
 </div>
 <div class="enum" id="BluetoothAdvertisePacketType">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAdvertisePacketType"></a><h3>1.5. BluetoothAdvertisePacketType</h3>
@@ -374,9 +410,9 @@ OPEN - corresponds to opened bluetooth socket.            </li>
 <div class="description">
           <ul>
             <li>
-ADVERTISE - the advertising packet             </li>
+ADVERTISE - the advertising packet            </li>
             <li>
-SCAN_RESPONSE- the scan response packet             </li>
+SCAN_RESPONSE- the scan response packet            </li>
           </ul>
          </div>
 </div>
@@ -392,9 +428,9 @@ SCAN_RESPONSE- the scan response packet             </li>
 <div class="description">
           <ul>
             <li>
-STARTED - advertising has started             </li>
+STARTED - advertising has started            </li>
             <li>
-STOPPED - advertising has stopped             </li>
+STOPPED - advertising has stopped            </li>
           </ul>
          </div>
 </div>
@@ -412,11 +448,21 @@ STOPPED - advertising has stopped             </li>
             <li>
 BALANCED- Balanced advertising mode            </li>
             <li>
-LOW_LATENCY- Low latency advertising mode             </li>
+LOW_LATENCY- Low latency advertising mode            </li>
             <li>
-LOW_ENERGY - Low energy advertising mode             </li>
+LOW_ENERGY - Low energy advertising mode            </li>
           </ul>
          </div>
+</div>
+<div class="typedef" id="Bytes">
+<a class="backward-compatibility-anchor" name="::Bluetooth::Bytes"></a><h3>1.8. Bytes</h3>
+<div class="brief">
+ The Bytes type, that aggregates all types in Bluetooth API used to pass binary data. It can be either a <em>byte[]</em> or a <em>DOMString</em> or a <em>Uint8Array</em>.
+          </div>
+<pre class="webidl prettyprint">  typedef (byte[] or DOMString or <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a>) Bytes;</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
 </div>
 </div>
 <div class="interfaces" id="interfaces-section">
@@ -456,7 +502,7 @@ The <em>tizen.bluetooth</em> object allows access to the Bluetooth API.
 <div class="brief">
  The BluetoothLEServiceData interface is a service specific data container of Bluetooth LE device.
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString uuid, DOMString data)]
+<pre class="webidl prettyprint">  [Constructor(DOMString uuid, <a href="#Bytes">Bytes</a> data)]
   interface BluetoothLEServiceData {
     attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
     attribute DOMString data;
@@ -468,12 +514,12 @@ The <em>tizen.bluetooth</em> object allows access to the Bluetooth API.
 <h4 id="BluetoothLEServiceData::constructor">Constructors</h4>
 <dl>
 <dt class="method" id="">
-<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#Bytes">Bytes</a>)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">BluetoothLEServiceData(DOMString uuid, DOMString data);</pre>
+<pre class="webidl prettyprint">BluetoothLEServiceData(DOMString uuid, <a href="#Bytes">Bytes</a> data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("11e5", "0x1811");
 </pre>
 </div>
 </dl>
@@ -483,28 +529,28 @@ var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
 <ul>
 <li class="attribute" id="BluetoothLEServiceData::uuid">
 <span class="attrName"><span class="type">BluetoothUUID </span><span class="name">uuid</span></span><div class="brief">
- The 16 bit UUID of service data
+ The UUID of service data.
             </div>
 <p><span class="version">Since: </span>
  6.0
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("11e5", "0x1811");
 service.uuid = "f23641a4";
 </pre>
 </div>
 </li>
 <li class="attribute" id="BluetoothLEServiceData::data">
 <span class="attrName"><span class="type">DOMString </span><span class="name">data</span></span><div class="brief">
- The service data of the Bluetooth LE device
+ The service data of the Bluetooth LE device.
             </div>
 <p><span class="version">Since: </span>
  6.0
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("11e5", "0x1811");
 service.data = "0x1815";
 </pre>
 </div>
@@ -517,7 +563,7 @@ service.data = "0x1815";
 <div class="brief">
  The BluetoothLEManufacturerData interface is a manufacturer specific data container for an advertise or scan response data.
           </div>
-<pre class="webidl prettyprint">  [Constructor(DOMString id, DOMString data)]
+<pre class="webidl prettyprint">  [Constructor(DOMString id, <a href="#Bytes">Bytes</a> data)]
   interface BluetoothLEManufacturerData {
     attribute DOMString id;
     attribute DOMString data;
@@ -529,12 +575,12 @@ service.data = "0x1815";
 <h4 id="BluetoothLEManufacturerData::constructor">Constructors</h4>
 <dl>
 <dt class="method" id="">
-<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#Bytes">Bytes</a>)</span></b></code>
 </dt>
-<pre class="webidl prettyprint">BluetoothLEManufacturerData(DOMString id, DOMString data);</pre>
+<pre class="webidl prettyprint">BluetoothLEManufacturerData(DOMString id, <a href="#Bytes">Bytes</a> data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a manufacturerData. */
-var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
+var manufacturer = new tizen.BluetoothLEManufacturerData("127", "0x0057");
 </pre>
 </div>
 </dl>
@@ -551,7 +597,7 @@ var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a manufacturerData. */
-var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
+var manufacturer = new tizen.BluetoothLEManufacturerData("127", "0x0057");
 manufacturer.id = "129";
 </pre>
 </div>
@@ -580,7 +626,7 @@ See also, <a href="#BluetoothLEDevice::manufacturerData">usage of BluetoothLEMan
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a manufacturerData. */
-var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
+var manufacturer = new tizen.BluetoothLEManufacturerData("127", "0x0057");
 manufacturer.data = "0x0059";
 </pre>
 </div>
@@ -614,7 +660,7 @@ This dictionary is used as an input parameter of the BluetoothLEAdvertiseData co
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertData =
 {
   includeName: false,
-  uuids: ["f23641a4"],
+  uuids: ["41a4"],
   solicitationuuids: ["58574d3f"],
   appearance: 192,
   includeTxPowerLevel: false
@@ -650,7 +696,7 @@ This represents the data to be advertised as well as the scan response data for 
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertData =
 {
   includeName: false,
-  uuids: ["f23641a4"],
+  uuids: ["41a4"],
   solicitationuuids: ["58574d3f"],
   appearance: 192,
   includeTxPowerLevel: false
@@ -687,28 +733,54 @@ advertise.includeName = true;
 <li class="attribute" id="BluetoothLEAdvertiseData::uuids">
 <span class="attrName"><span class="type">BluetoothUUID[]
                       </span><span class="name">uuids</span><span class="optional"> [nullable]</span></span><div class="brief">
- The service UUID for advertise or scan response data.
+ The service UUIDs for advertise or scan response data.
             </div>
+<div class="description">
+            <p>
+UUIDs may be advertised in another formats than passed in <em>uuids</em>. The following conversions are applied:
+            </p>
+            <ul>
+              <li>
+16-bit values are advertised as 16-bit UUIDs              </li>
+              <li>
+128-bit values, that have 16-bit equivalent UUIDs described in <a href="#BluetoothUUID">BluetoothUUID</a>, are advertised as 16-bit UUIDs              </li>
+              <li>
+in any other case, UUIDs are advertised in 128-bit format              </li>
+            </ul>
+           </div>
 <p><span class="version">Since: </span>
  6.0
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-advertise.uuids = ["180d"];
+advertise.uuids = ["180d", "7cae86d2-a021-11ea-bb37-0242ac130002"];
 </pre>
 </div>
 </li>
 <li class="attribute" id="BluetoothLEAdvertiseData::solicitationuuids">
 <span class="attrName"><span class="type">BluetoothLESolicitationUUID[]
                       </span><span class="name">solicitationuuids</span><span class="optional"> [nullable]</span></span><div class="brief">
- The service solicitation UUID for advertise or scan response data.
+ The service solicitation UUIDs for advertise or scan response data.
             </div>
+<div class="description">
+            <p>
+UUIDs may be advertised in another formats than passed in <em>solicitationuuids</em>. The following conversions are applied:
+            </p>
+            <ul>
+              <li>
+16-bit values are advertised as 16-bit UUIDs              </li>
+              <li>
+128-bit values, that have 16-bit equivalent UUIDs described in <a href="#BluetoothUUID">BluetoothUUID</a>, are advertised as 16-bit UUIDs              </li>
+              <li>
+in any other case, UUIDs are advertised in 128-bit format              </li>
+            </ul>
+           </div>
 <p><span class="version">Since: </span>
  6.0
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-advertise.solicitationuuids = ["180f"];
+advertise.solicitationuuids = ["180f", "7cae86d2-a021-11ea-bb37-0242ac130002"];
 </pre>
 </div>
 </li>
@@ -751,9 +823,12 @@ advertise.includeTxPowerLevel = true;
 <p><span class="version">Since: </span>
  6.0
             </p>
+<p><span class="remark">Remark: </span>
+ Only 16-bit <a href="#BluetoothLEServiceData::uuid">BluetoothLEServiceData::uuid</a> values can be advertised.
+            </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-var service = new tizen.BluetoothLEServiceData("c50011e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("11e5", "0x1811");
 advertise.serviceData = service;
 </pre>
 </div>
@@ -767,8 +842,8 @@ advertise.serviceData = service;
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
-advertise.manufacturerData = manufacture;
+var manufacturer = new tizen.BluetoothLEManufacturerData("127", "0x0057");
+advertise.manufacturerData = manufacturer;
 </pre>
 </div>
 </li>
@@ -781,15 +856,34 @@ advertise.manufacturerData = manufacture;
  The BluetoothManager interface provides access to the <em>BluetoothAdapter</em> object.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothManager {
+    const DOMString BASE_UUID = "00000000-0000-1000-8000-00805F9B34FB";
     readonly attribute <a href="#BluetoothClassDeviceMajor">BluetoothClassDeviceMajor</a> deviceMajor;
     readonly attribute <a href="#BluetoothClassDeviceMinor">BluetoothClassDeviceMinor</a> deviceMinor;
     readonly attribute <a href="#BluetoothClassDeviceService">BluetoothClassDeviceService</a> deviceService;
     <a href="#BluetoothAdapter">BluetoothAdapter</a> getDefaultAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BluetoothLEAdapter">BluetoothLEAdapter</a> getLEAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    byte[] toByteArray(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    DOMString toDOMString(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> toUint8Array(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#BluetoothUUID">BluetoothUUID</a> uuidTo128bit(<a href="#BluetoothUUID">BluetoothUUID</a> uuid) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#BluetoothUUID">BluetoothUUID</a> uuidToShortestPossible(<a href="#BluetoothUUID">BluetoothUUID</a> uuid) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean uuidsEqual(<a href="#BluetoothUUID">BluetoothUUID</a> uuid1, <a href="#BluetoothUUID">BluetoothUUID</a> uuid2) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  6.0
           </p>
+<div class="consts">
+<h4>Constants</h4>
+<dl><li class="const" id="BluetoothManager::BASE_UUID">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::BASE_UUID"></a><span class="name">BASE_UUID</span><div class="brief">
+ The base for 128-bit representation of 16-bit and 32-bit UUIDs.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<br><br>
+</li></dl>
+</div>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
@@ -858,7 +952,7 @@ advertise.manufacturerData = manufacture;
 <p><span class="return">Return value:</span></p>
 <ul>
 <span class="return">BluetoothAdapter:</span>
- The local <em>BluetoothAdapter </em>object.
+ The local <em>BluetoothAdapter</em> object.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -909,7 +1003,7 @@ catch (err)
 <p><span class="return">Return value:</span></p>
 <ul>
 <span class="return">BluetoothLEAdapter:</span>
- The local <em>BluetoothLEAdapter </em>object.
+ The local <em>BluetoothLEAdapter</em> object.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -936,6 +1030,335 @@ catch (err)
 {
   console.log(err.name + ": " + err.message);
 }
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothManager::toByteArray">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::toByteArray"></a><code><b><span class="methodName">toByteArray</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts given data to byte array.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">byte[] toByteArray(<a href="#Bytes">Bytes</a> data);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+If given parameter is of type <em>DOMSting</em> the string should consist of hexadecimal characters only (A-F, a-f, 0-9). If the string's length is odd, the last character will be omitted. Only exception is string containing single zero, in which case [0] is returned.
+The string may start without or with one of below prefixes:
+            </p>
+            <ul>
+              <li>
+"0x",              </li>
+              <li>
+"0X".              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The data can be either a <em>byte[]</em> or a <em>DOMString</em> or an <em>Uint8Array</em>.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">byte[]:</span>
+ byte array with given data.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataInt8Array = new Int8Array([-21, 31]);
+var dataUint8Array = new Uint8Array([240, 129]);
+var dataString = "0x18b1";
+console.log("converted from Int8Array: " + tizen.bluetooth.toByteArray(dataInt8Array));
+console.log("converted from Uint8Array: " + tizen.bluetooth.toByteArray(dataUint8Array));
+console.log("converted from DOMString: " + tizen.bluetooth.toByteArray(dataString));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>converted from Int8Array: Int8Array(2) [-21, 31]
+converted from Uint8Array: Int8Array(2) [-16, -127]
+converted from DOMString: Int8Array(2) [24, -79]
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothManager::toDOMString">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::toDOMString"></a><code><b><span class="methodName">toDOMString</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts given data to DOMString.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString toDOMString(<a href="#Bytes">Bytes</a> data);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The data can be either a <em>byte[]</em> or a <em>DOMString</em> or an <em>Uint8Array</em>.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">DOMString:</span>
+ DOMString with given data in the form of hexadecimal number preceded by "0x". The return string is always lowercase.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataInt8Array = new Int8Array([-21, 31]);
+var dataUint8Array = new Uint8Array([240, 129]);
+var dataString = "0x18b1";
+console.log("converted from Int8Array: " + tizen.bluetooth.toDOMString(dataInt8Array));
+console.log("converted from Uint8Array: " + tizen.bluetooth.toDOMString(dataUint8Array));
+console.log("converted from DOMString: " + tizen.bluetooth.toDOMString(dataString));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>converted from Int8Array: 0xeb1f
+converted from Uint8Array: 0xf081
+converted from DOMString: 0x18b1
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothManager::toUint8Array">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::toUint8Array"></a><code><b><span class="methodName">toUint8Array</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts given data to Uint8Array.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> toUint8Array(<a href="#Bytes">Bytes</a> data);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+If given parameter is of type <em>DOMSting</em> the string should consist of hexadecimal characters only (A-F, a-f, 0-9). If the string's length is odd, the last character will be omitted. Only exception is string containing single zero, in which case Uint8Array([0]) is returned.
+The string may start without or with one of below prefixes:
+            </p>
+            <ul>
+              <li>
+"0x",              </li>
+              <li>
+"0X".              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">data</span>:
+ The data can be either a <em>byte[]</em> or a <em>DOMString</em> or an <em>Uint8Array</em>.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">Uint8Array:</span>
+ byte array with given data.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataInt8Array = new Int8Array([-21, 31]);
+var dataUint8Array = new Uint8Array([240, 129]);
+var dataString = "0x18b1";
+console.log("converted from Int8Array: " + tizen.bluetooth.toUint8Array(dataInt8Array));
+console.log("converted from Uint8Array: " + tizen.bluetooth.toUint8Array(dataUint8Array));
+console.log("converted from DOMString: " + tizen.bluetooth.toUint8Array(dataString));
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>converted from Int8Array: Uint8Array(2) [235, 31]
+converted from Uint8Array: Uint8Array(2) [240, 129]
+converted from DOMString: Uint8Array(2) [24, 177]
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothManager::uuidTo128bit">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::uuidTo128bit"></a><code><b><span class="methodName">uuidTo128bit</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts given UUID to 128 bit representation.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#BluetoothUUID">BluetoothUUID</a> uuidTo128bit(<a href="#BluetoothUUID">BluetoothUUID</a> uuid);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">uuid</span>:
+ Valid UUID in any representation.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">BluetoothUUID:</span>
+ 128 bit representation of given UUID.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type InvalidValuesError, If given parameter is not a valid UUID.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.bluetooth.uuidTo128bit("1234");
+tizen.bluetooth.uuidTo128bit("ab5690ef");
+tizen.bluetooth.uuidTo128bit("abcdef01-2345-6789-abcd-ef0123456789");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>00001234-0000-1000-8000-00805f9b34fb
+ab5690ef-0000-1000-8000-00805f9b34fb
+abcdef01-2345-6789-abcd-ef0123456789
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothManager::uuidToShortestPossible">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::uuidToShortestPossible"></a><code><b><span class="methodName">uuidToShortestPossible</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Converts given UUID to the shortest format, in which it can be expressed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#BluetoothUUID">BluetoothUUID</a> uuidToShortestPossible(<a href="#BluetoothUUID">BluetoothUUID</a> uuid);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+This function attempts to return the possible shortest UUID with the following priority:
+1. 16 bit
+2. 32 bit
+3. 128 bit
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">uuid</span>:
+ Valid UUID in any representation.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">BluetoothUUID:</span>
+ UUID in shortest possible representation.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type InvalidValuesError, If given parameter is not a valid UUID.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.bluetooth.uuidToShortestPossible("1234");
+tizen.bluetooth.uuidToShortestPossible("0000acdf");
+tizen.bluetooth.uuidToShortestPossible("ab5690ef-0000-1000-8000-00805F9B34FB");
+tizen.bluetooth.uuidToShortestPossible("abcdef01-2345-6789-abcd-ef0123456789");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>1234
+acdf
+ab5690ef
+abcdef01-2345-6789-abcd-ef0123456789
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothManager::uuidsEqual">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::uuidsEqual"></a><code><b><span class="methodName">uuidsEqual</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks if given parameters are representations of the same UUID.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean uuidsEqual(<a href="#BluetoothUUID">BluetoothUUID</a> uuid1, <a href="#BluetoothUUID">BluetoothUUID</a> uuid2);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">uuid1</span>:
+ Valid UUID in any representation.
+                </li>
+          <li class="param">
+<span class="name">uuid2</span>:
+ Valid UUID in any representation.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">boolean:</span>
+ <var>true</var> if <em>uuid1</em> is a representation of the same UUID as <em>uuid2</em>, <var>false</var> otherwise.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type InvalidValuesError, If any of given parameters is not a valid UUID.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.bluetooth.uuidsEqual("1234", "00001234");
+tizen.bluetooth.uuidsEqual("ab5690ef", "ab5690ef-0000-1000-8000-00805F9B34FB");
+tizen.bluetooth.uuidsEqual("abcdef01-2345-6789-abcd-ef0123456789", "abcdef01");
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>true
+true
+false
 </pre>
 </div>
 </dd>
@@ -1083,13 +1506,13 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError: If any of the input parameters contain an invalid value.              </li>
+InvalidValuesError: If any of the input parameters contain an invalid value.              </li>
               <li>
- ServiceNotAvailableError: If a Bluetooth device is turned off.               </li>
+ServiceNotAvailableError: If a Bluetooth device is turned off.              </li>
               <li>
- UnknownError: In any other error case.               </li>
+UnknownError: In any other error case.              </li>
               <li>
- NotSupportedError: If a device doesn't allow a Tizen Web application to change the name of the local Bluetooth adapter.               </li>
+NotSupportedError: If a device doesn't allow a Tizen Web application to change the name of the local Bluetooth adapter.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1285,23 +1708,23 @@ This method initiates the device discovery process. Depending on the progress of
               <li>
 <em>BluetoothDiscoverDevicesSuccessCallback.onstarted()</em> - when a discovery process starts successfully.              </li>
               <li>
-<em>BluetoothDiscoverDevicesSuccessCallback.ondevicefound() </em>- when any device is found in the process and this method is invoked with the device information. If no device is found, this method will never be invoked.              </li>
+<em>BluetoothDiscoverDevicesSuccessCallback.ondevicefound()</em> - when any device is found in the process and this method is invoked with the device information. If no device is found, this method will never be invoked.              </li>
               <li>
 <em>BluetoothDiscoverDevicesSuccessCallback.ondevicedisappeared()</em> - when a device goes out of proximity and this method is invoked with the address of the device.              </li>
               <li>
 <em>BluetoothDiscoverDevicesSuccessCallback.onfinished()</em> - when a discovery process is completed.              </li>
             </ul>
             <p>
-A discovery process can be canceled anytime, by calling <em>stopDiscovery() </em>on the <em>BluetoothAdapter</em>.
+A discovery process can be canceled anytime, by calling <em>stopDiscovery()</em> on the <em>BluetoothAdapter</em>.
             </p>
             <p>
 The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1444,9 +1867,9 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1617,9 +2040,9 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1745,11 +2168,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- NotFoundError - If there is no device with the given address              </li>
+NotFoundError - If there is no device with the given address              </li>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1826,11 +2249,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- NotFoundError - If there is no device with the given address              </li>
+NotFoundError - If there is no device with the given address              </li>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1906,11 +2329,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- NotFoundError - If there is no device with the given address              </li>
+NotFoundError - If there is no device with the given address              </li>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2006,11 +2429,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contain an invalid value              </li>
+InvalidValuesError - If any of the input parameters contain an invalid value              </li>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2024,7 +2447,7 @@ The ErrorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">uuid</span>:
-            UUID of the new service, to which clients connect.
+            UUID of the new service, to which clients connect. Only 128-bit UUIDs are supported. 16-bit and 32-bit UUIDs have to be converted to 128-bit equivalents before being passed to this function.
                 </li>
           <li class="param">
 <span class="name">name</span>:
@@ -2084,6 +2507,7 @@ function chatServiceSuccessCb(recordHandler)
 
 function publishChatService()
 {
+  /* Only RFCOMM services with 128-bit UUIDs can be registered */
   var CHAT_SERVICE_UUID = "5BCE9431-6C75-32AB-AFE0-2EC108A30860";
   adapter.registerRFCOMMServiceByUUID(CHAT_SERVICE_UUID, "Chat service", chatServiceSuccessCb,
       /* Error handler. */
@@ -2156,16 +2580,16 @@ Scanning and Advertising for remote devices            </li>
             </p>
 <div class="description">
             <p>
-There is no time limit for the bluetooth Low Energy scanning process. It can be canceled only by calling the <em>stopScan() </em> method in the <em>BluetoothLEAdapter</em> interface.
+There is no time limit for the bluetooth Low Energy scanning process. It can be canceled only by calling the <em>stopScan()</em> method in the <em>BluetoothLEAdapter</em> interface.
             </p>
             <p>
 The <em>ErrorCallback</em> will be launched in the following situations:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2268,16 +2692,18 @@ adapter.startScan(function onsuccess(device)
             </p>
 <div class="description">
             <p>
-A advertising process can be canceled anytime, by calling <em>stopAdvertise() </em>on the <em>BluetoothLEAdapter</em>.
+A advertising process can be canceled anytime, by calling <em>stopAdvertise()</em> on the <em>BluetoothLEAdapter</em>.
             </p>
+           </div>
+<div class="description">
             <p>
 The <em>ErrorCallback</em> will be launched in the following situations:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2285,6 +2711,12 @@ The <em>ErrorCallback</em> will be launched in the following situations:
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
+            </p>
+<p><span class="remark">Remark: </span>
+ Values of <a href="bluetooth.html#BluetoothLEAdvertiseData::uuids">service UUIDs</a> and <a href="bluetooth.html#BluetoothLEAdvertiseData::solicitationuuids">solicitation UUIDs</a> may be converted to one of equivalent formats defined in <a href="bluetooth.html#BluetoothUUID">BluetoothUUID</a> before advertising. Consult the documentation of these fields for more information.
+            </p>
+<p><span class="remark">Remark: </span>
+ Consult the documentation of <a href="bluetooth.html#BluetoothLEAdvertiseData::serviceData">BluetoothLEAdvertiseData::serviceData</a> for the information about the UUID format of service data that can be advertised.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -2335,9 +2767,13 @@ The <em>ErrorCallback</em> will be launched in the following situations:
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
-var battery_svc_uuid_16 = "180f";  /* Service UUID, 16-bit UUID is supported (e.g. 180f). */
-var heart_rate_svc_uuid_16 =
-    "180d";  /* Service solicitation UUID, 16-bit UUID is supported (e.g. 180d). */
+/* 16-bit, 32-bit and 128-bit service UUIDs are supported (e.g. 180d, 281eb931, */
+/* 7cae86d2-a021-11ea-bb37-0242ac130002). */
+var battery_svc_uuid_16 = "180f";
+
+/* 16-bit, 32-bit and 128-bit service solicitation UUIDs are supported(e.g. 180d, 281eb931, */
+/* 7cae86d2-a021-11ea-bb37-0242ac130002). */
+var heart_rate_svc_uuid_16 = "180d";
 var advertiseOptions =
 {
   includeName: true,          /* Whether the device name should be included. */
@@ -2394,9 +2830,13 @@ adapter.startAdvertise(advertiseData, "ADVERTISE",
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
-var battery_svc_uuid_16 = "180f";  /* Service UUID, 16-bit UUID is supported (e.g. 180f). */
-var heart_rate_svc_uuid_16 =
-    "180d";  /* Service solicitation UUID, 16-bit UUID is supported (e.g. 180d). */
+/* 16-bit, 32-bit and 128-bit service UUIDs are supported (e.g. 180d, 281eb931, */
+/* 7cae86d2-a021-11ea-bb37-0242ac130002). */
+var battery_svc_uuid_16 = "180f";
+
+/* 16-bit, 32-bit and 128-bit service solicitation UUIDs are supported (e.g. 180d, 281eb931, */
+/* 7cae86d2-a021-11ea-bb37-0242ac130002). */
+var heart_rate_svc_uuid_16 = "180d";
 var advertiseOptions =
 {
   includeName: true,          /* Whether the device name should be included. */
@@ -2425,7 +2865,7 @@ adapter.stopAdvertise();
  Bluetooth Low Energy Service. The service can be retrieved with BluetoothLEDevice.getService().
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTService {
-    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
+    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? serviceUuid;
     readonly attribute <a href="#BluetoothGATTService">BluetoothGATTService</a>[] services;
     readonly attribute <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a>[] characteristics;
   };</pre>
@@ -2451,17 +2891,27 @@ adapter.startScan(function onsuccess(device)
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="BluetoothGATTService::uuid">
+<li class="attribute" id="BluetoothGATTService::serviceUuid">
 <span class="attrName"><span class="readonly">                readonly
-</span><span class="type">BluetoothUUID </span><span class="name">uuid</span></span><div class="brief">
+</span><span class="type">BluetoothUUID </span><span class="name">serviceUuid</span><span class="optional"> [nullable]</span></span><div class="brief">
  UUID of the service.
             </div>
 <p><span class="version">Since: </span>
  6.0
             </p>
+<p><span class="remark">Remark: </span>
+ <em>serviceUuid</em> is set to <var>null</var>, if the value cannot be retrieved.
+            </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service = device.getService(device.uuids[0]);
-console.log("Service UUID " + service.uuid);
+if (service.serviceUuid === null)
+{
+  console.error("Could not read service UUID");
+}
+else
+{
+  console.log("Service UUID " + service.serviceUuid);
+}
 </pre>
 </div>
 </li>
@@ -2519,8 +2969,9 @@ for (var i = 0; i &lt; service.characteristics.length; ++i)
     readonly attribute boolean isSignedWrite;
     readonly attribute boolean isWritable;
     readonly attribute boolean isWriteNoResponse;
+    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? uuid;
     void readValue(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+    void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addValueChangeListener(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeValueChangeListener(long watchID);
@@ -2613,6 +3064,18 @@ for (var i = 0; i &lt; service.characteristics.length; ++i)
  6.0
             </p>
 </li>
+<li class="attribute" id="BluetoothGATTCharacteristic::uuid">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">BluetoothUUID </span><span class="name">uuid</span><span class="optional"> [nullable]</span></span><div class="brief">
+ UUID of the characteristic.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<p><span class="remark">Remark: </span>
+ <em>uuid</em> is set to <var>null</var>, if the value cannot be retrieved.
+            </p>
+</li>
 </ul>
 </div>
 <div class="methods">
@@ -2635,7 +3098,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2715,7 +3178,7 @@ adapter.startScan(function onsuccess(device)
 <div class="brief">
  Writes the characteristic value to the remote device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  6.0
             </p>
@@ -2725,7 +3188,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2921,13 +3384,29 @@ Calling this function has no effect if there is no listener with given id.
  Bluetooth Low Energy Descriptor.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTDescriptor {
+    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? uuid;
     void readValue(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+    void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  6.0
           </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="BluetoothGATTDescriptor::uuid">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">BluetoothUUID </span><span class="name">uuid</span><span class="optional"> [nullable]</span></span><div class="brief">
+ UUID of the descriptor.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<p><span class="remark">Remark: </span>
+ <em>uuid</em> is set to <var>null</var>, if the value cannot be retrieved.
+            </p>
+</li></ul>
+</div>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -2948,7 +3427,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -3029,7 +3508,7 @@ adapter.startScan(function onsuccess(device)
 <div class="brief">
  Writes the descriptor value to the remote device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  6.0
             </p>
@@ -3039,7 +3518,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -3319,13 +3798,13 @@ A <em>BluetoothDevice</em> object can be retrieved using one of the following AP
           </p>
           <ul>
             <li>
- BluetoothAdapter.getDevice()            </li>
+BluetoothAdapter.getDevice()            </li>
             <li>
- BluetoothAdapter.getKnownDevices()             </li>
+BluetoothAdapter.getKnownDevices()            </li>
             <li>
- BluetoothAdapter.discoverDevices()             </li>
+BluetoothAdapter.discoverDevices()            </li>
             <li>
- BluetoothAdapter.createBonding()             </li>
+BluetoothAdapter.createBonding()            </li>
           </ul>
          </div>
 <div class="attributes">
@@ -3437,7 +3916,7 @@ adapter.getDevice("11:22:33:44:55:66", function(device)
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BluetoothUUID[]
                       </span><span class="name">uuids</span></span><div class="brief">
- The list of 128 bit service UUIDs available on this remote device.
+ The list of 128-bit service UUIDs available on this remote device.
             </div>
 <p><span class="version">Since: </span>
  6.0
@@ -3497,11 +3976,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- NotFoundError - If there is no service with the specified <em>uuid</em>              </li>
+NotFoundError - If there is no service with the specified <em>uuid</em>              </li>
               <li>
- InvalidValuesError - If any of the input parameters contain an invalid value              </li>
+InvalidValuesError - If any of the input parameters contain an invalid value              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -3515,7 +3994,7 @@ The ErrorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">uuid</span>:
-            128 bit unique identifier, which specifies the service on the remote device.
+            128-bit unique identifier, which specifies the service on the remote device.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
@@ -3688,7 +4167,7 @@ A <em>BluetoothLEDevice</em> object can be retrieved by using one of the followi
           </p>
           <ul>
             <li>
- BluetoothLEAdapter.startScan()            </li>
+BluetoothLEAdapter.startScan()            </li>
           </ul>
          </div>
 <div class="attributes">
@@ -3824,6 +4303,9 @@ adapter.startScan(function onsuccess(device)
 <p><span class="version">Since: </span>
  6.0
             </p>
+<p><span class="remark">Remark: </span>
+ On devices prior to Tizen 6.0, service data is found only when its <a href="#BluetoothLEServiceData::uuid">BluetoothLEServiceData::uuid</a> is 16-bit. Finding service data with 128-bit <a href="#BluetoothLEServiceData::uuid">BluetoothLEServiceData::uuid</a> is supported since Tizen 6.0.
+            </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
 adapter.startScan(function onsuccess(device)
@@ -3936,7 +4418,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -4010,7 +4492,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -4370,7 +4852,7 @@ adapter.startScan(onDeviceFound, onerror);
     readonly attribute <a href="#BluetoothDevice">BluetoothDevice</a> peer;
     [TreatNonCallableAsNull] attribute <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onmessage raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     [TreatNonCallableAsNull] attribute <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onclose raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    unsigned long writeData(byte[] data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long writeData(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     byte[] readData() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
@@ -4456,7 +4938,7 @@ By default, this attribute is set to null.
 <div class="brief">
  Writes data as a sequence of bytes onto the socket and returns the number of bytes actually written.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">unsigned long writeData(byte[] data);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">unsigned long writeData(<a href="#Bytes">Bytes</a> data);</pre></div>
 <p><span class="version">Since: </span>
  6.0
             </p>
@@ -4871,15 +5353,15 @@ else
 Bluetooth device class describes the characteristics and capabilities of a device.
           </p>
           <p>
-Bluetooth CoD is a 24 bit integer created by the union of three components:
+Bluetooth CoD is a 24-bit integer created by the union of three components:
           </p>
           <ul>
             <li>
-Exactly one <b>Major Device Class </b>(bits 8-12 of CoD) - This is the highest level of granularity for defining a Bluetooth Device.            </li>
+Exactly one <b>Major Device Class</b> (bits 8-12 of CoD) - This is the highest level of granularity for defining a Bluetooth Device.            </li>
             <li>
-Exactly one <b>Minor Device Class </b>(bits 2-7 of CoD) - This is to be interpreted only in the context of the Major Device Class. Thus, the meaning of these bits may change, depending on the value of "Major Device Class".             </li>
+Exactly one <b>Minor Device Class</b> (bits 2-7 of CoD) - This is to be interpreted only in the context of the Major Device Class. Thus, the meaning of these bits may change, depending on the value of "Major Device Class".            </li>
             <li>
-Zero or more <b>Major Service Classes </b>(bits 13-23) - Represents the services supported by the device.            </li>
+Zero or more <b>Major Service Classes</b> (bits 13-23) - Represents the services supported by the device.            </li>
           </ul>
           <p>
 The Major and Minor classes are intended to define a general family of devices with which any particular implementation wishes to be associated.
@@ -5273,7 +5755,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -5745,6 +6227,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   typedef DOMString BluetoothAddress;
   typedef DOMString BluetoothUUID;
   typedef DOMString BluetoothLESolicitationUUID;
+  typedef (byte[] or DOMString or <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a>) Bytes;
   enum BluetoothSocketState { "CLOSED", "OPEN" };
   enum BluetoothAdvertisePacketType { "ADVERTISE", "SCAN_RESPONSE" };
   enum BluetoothAdvertisingState { "STARTED", "STOPPED" };
@@ -5762,12 +6245,12 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   [NoInterfaceObject] interface BluetoothManagerObject {
     readonly attribute <a href="#BluetoothManager">BluetoothManager</a> bluetooth;
   };
-  [Constructor(DOMString uuid, DOMString data)]
+  [Constructor(DOMString uuid, <a href="#Bytes">Bytes</a> data)]
   interface BluetoothLEServiceData {
     attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
     attribute DOMString data;
   };
-  [Constructor(DOMString id, DOMString data)]
+  [Constructor(DOMString id, <a href="#Bytes">Bytes</a> data)]
   interface BluetoothLEManufacturerData {
     attribute DOMString id;
     attribute DOMString data;
@@ -5783,11 +6266,18 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     attribute <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
   };
   [NoInterfaceObject] interface BluetoothManager {
+    const DOMString BASE_UUID = "00000000-0000-1000-8000-00805F9B34FB";
     readonly attribute <a href="#BluetoothClassDeviceMajor">BluetoothClassDeviceMajor</a> deviceMajor;
     readonly attribute <a href="#BluetoothClassDeviceMinor">BluetoothClassDeviceMinor</a> deviceMinor;
     readonly attribute <a href="#BluetoothClassDeviceService">BluetoothClassDeviceService</a> deviceService;
     <a href="#BluetoothAdapter">BluetoothAdapter</a> getDefaultAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BluetoothLEAdapter">BluetoothLEAdapter</a> getLEAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    byte[] toByteArray(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    DOMString toDOMString(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> toUint8Array(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#BluetoothUUID">BluetoothUUID</a> uuidTo128bit(<a href="#BluetoothUUID">BluetoothUUID</a> uuid) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#BluetoothUUID">BluetoothUUID</a> uuidToShortestPossible(<a href="#BluetoothUUID">BluetoothUUID</a> uuid) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean uuidsEqual(<a href="#BluetoothUUID">BluetoothUUID</a> uuid1, <a href="#BluetoothUUID">BluetoothUUID</a> uuid2) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothAdapter {
     readonly attribute DOMString name;
@@ -5821,7 +6311,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     void stopAdvertise() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothGATTService {
-    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
+    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? serviceUuid;
     readonly attribute <a href="#BluetoothGATTService">BluetoothGATTService</a>[] services;
     readonly attribute <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a>[] characteristics;
   };
@@ -5835,15 +6325,17 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     readonly attribute boolean isSignedWrite;
     readonly attribute boolean isWritable;
     readonly attribute boolean isWriteNoResponse;
+    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? uuid;
     void readValue(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+    void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addValueChangeListener(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeValueChangeListener(long watchID);
   };
   [NoInterfaceObject] interface BluetoothGATTDescriptor {
+    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? uuid;
     void readValue(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void writeValue(byte[] value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+    void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothLEScanCallback {
@@ -5893,7 +6385,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     readonly attribute <a href="#BluetoothDevice">BluetoothDevice</a> peer;
     [TreatNonCallableAsNull] attribute <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onmessage raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     [TreatNonCallableAsNull] attribute <a href="tizen.html#SuccessCallback">SuccessCallback</a>? onclose raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    unsigned long writeData(byte[] data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    unsigned long writeData(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     byte[] readData() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void close() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
