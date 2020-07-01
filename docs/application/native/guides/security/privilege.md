@@ -73,14 +73,6 @@ To get various privilege information:
                                                       &privacy_display_name);
     ```
 
-- Get the privacy-related privilege's status using the `privilege_info_get_privacy_privilege_status()` function:
-
-    ```
-    bool status = NULL;
-    int ret = privilege_info_get_privacy_privilege_status("http://tizen.org/privilege/account.read",
-                                                          &status);
-    ```
-
 - Get the privilege information in a list form using the `privilege_info_get_privilege_info_list()` function:
 
     ```
