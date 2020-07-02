@@ -132,9 +132,9 @@ $ sdb install <path-to-package>/org.tizen.example.TizenWearableXamlApp1-1.0.0.tp
 ```
 ## Validate Your Application Changes Using XAML Hot Reload
 
-To test your UI code changes in your application, you would have to build and deploy your application. With the introduction of the XAML Hot Reload feature, you can now immediately see the UI edits on the running emulator without having to rebuild or redeploy your application. This feature helps you save time and validate your changes easily.
+To test your UI code changes in your application, you must build and deploy your application. However, if you use the XAML Hot Reload feature, the UI edits are immediately applied on the running emulator without building or deploying your application again. It helps you save time and validate the changes easily.
 
-To use the Hot Reload feature, you must enable it in your Visual Studio IDE. To enable:
+To use the Hot Reload feature, enable it in your Visual Studio IDE. To enable the Hot Reload feature, follow these steps:
 
 1. In the Visual Studio menu, select **Tools** > **Options**.
 2. In the **Options** window that appears, select **Tizen** > **Tools**.
@@ -150,7 +150,7 @@ You can launch the instance in debugging mode and run the application by clickin
 
 After you make UI changes in your application code, you do not need to rebuild or redeploy the application.
 
-You will see that your changes are immediately reflected on your emulator while you are in debugging mode.
+While you are in debugging mode, your changes are immediately reflected on your emulator .
 
 > [!NOTE]
 > The XAML Hot Reload feature is available for Tizen XAML App and Tizen Wearable XAML App.
