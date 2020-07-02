@@ -16,7 +16,7 @@ The Tizen .NET framework allows you to easily and efficiently create application
 
     This step shows how you can deploy and run the application on the emulator or a real target device.
 	
-5. [Validate Your Application Changes Using XAML Hot Reload](#validate-your-application-changes-using-xaml-hot-reload).
+5. [Validate Your Application Changes using XAML Hot Reload](#validate-your-application-changes-using-xaml-hot-reload).
 
     This step shows how you can immediately see the UI changes made to your application during debugging on your emulator.
 
@@ -130,7 +130,7 @@ If you face any issues during deployment, it is recommended to manually install 
 ```bash
 $ sdb install <path-to-package>/org.tizen.example.TizenWearableXamlApp1-1.0.0.tpk
 ```
-## Validate Your Application Changes Using XAML Hot Reload
+## Validate Your Application Changes using XAML Hot Reload
 
 To test your UI code changes in your application, you must build and deploy your application. However, if you use the XAML Hot Reload feature, the UI edits are immediately applied on the running emulator without building or deploying your application again. It helps you save time and validate the changes easily.
 
