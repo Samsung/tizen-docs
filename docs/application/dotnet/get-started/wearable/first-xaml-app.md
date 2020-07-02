@@ -152,7 +152,7 @@ After you make UI changes in your application code, you do not need to rebuild o
 
 You will see that your changes are immediately reflected on your emulator while you are in debugging mode.
 
-> [!Note]
+> [!NOTE]
 > The XAML Hot Reload feature is available for Tizen XAML App and Tizen Wearable XAML App.
 
 ## Enhance Your Application
