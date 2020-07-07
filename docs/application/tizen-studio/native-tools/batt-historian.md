@@ -7,8 +7,7 @@ Battery Historian tool helps you to increase the productivity of Tizen devices b
 Battery Historian tool also allows an A/B comparison of two bug reports, highlighting the key differences in the battery-related metrics.
 
 > [!NOTE]
-> To use the Battery Historian feature, ensure that: 
->  - The Smart Development Bridge (SDB) is enabled to issue commands to Tizen devices. 
+> To use the Battery Historian feature, ensure that the Smart Development Bridge (SDB) is enabled to issue commands to Tizen devices. 
 
 ## Access Battery Historian
 
@@ -137,11 +136,11 @@ To compare the bug report files, follow these steps:
 
 4. Click **Submit.**
 
-Battery Historian takes a few seconds to analyze the data in both the files, and a comparison chart appears: 
+   Battery Historian takes a few seconds to analyze the data in both the files, and a comparison chart appears: 
 
-![](./media/compare2.png)
+   ![compare](./media/compare2.png)
 
-The chart illustrates the metrics from both the bug reports as the coloured bars.
+   The chart illustrates the metrics from both the bug reports as the coloured bars.
 
 ## Related Information
 
