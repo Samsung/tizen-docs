@@ -6,19 +6,16 @@ Battery Historian tool helps you to increase the productivity of Tizen devices b
 
 Battery Historian tool also allows an A/B comparison of two bug reports, highlighting the key differences in the battery-related metrics.
 
-## Prerequisites
-
-To use the Battery Historian feature, ensure that: 
-
- - The latest version of Tizen Studio is installed on your development hardware.
- - The Smart Development Bridge (SDB) is enabled to issue commands to Tizen devices. 
+> [!NOTE]
+> To use the Battery Historian feature, ensure that: 
+>  - The Smart Development Bridge (SDB) is enabled to issue commands to Tizen devices. 
 
 ## Access Battery Historian
 
 To access and open the Battery Historian tool, use one of the following:
 
  - In the Tizen Studio menu, select **Tools \> Battery Historian.**
- - In the Tizen Studio toolbar, click **Battery Historian**  ![](./media/batt1.png).
+ - In the Tizen Studio toolbar, click **Battery Historian**  ![baticon](./media/batt1.png).
  - In Tizen Studio main window, press the combination of the **Alt+Shift+B** keys. 
 
 The **Battery Historian** window appears. 
@@ -29,10 +26,6 @@ The Battery Historian tool window comprises of the following components:
 
  - **Browse**: This component allows you to browse and select a bug report file.
  - **Switch to Bug Report Comparison**: This component allows you to compare and analyze two different bug report files.
-
-**Figure** : Battery Historian bug report comparison window
-
-![](./media/bug2.png)
 
 > [!NOTE]
 > The Battery Historian tool only supports **.txt** or **.zip** format for bug report file.
@@ -94,7 +87,7 @@ To view and analyze your data, follow these steps:
 
 Battery Historian takes a few seconds to analyze the data in the file. After the analysis is done, a battery stats chart appears:
 
-**Figure:** Battery Historian Chart
+**Figure: Battery Historian Chart**
 
 ![](./media/graph1.png)
 
@@ -106,12 +99,12 @@ The Battery Historian chart graph illustrates the battery consumption events ove
  - The sloping black bar indicates your battery percentage level throughout the day.
  - The colored line segments represent the various apps, services, and other elements that have used battery life.
    - For instance, a green bar denotes an active time for WiFi.
- - You can add more metrics, by clicking on Add Metric and the corresponding metric will appear on the chart, some of the available metrics are Voltage, Charging status, and so on.
+ - You can add more metrics, by clicking on Add Metric and the corresponding metric will appear on the chart. Some of the available metrics are  Charging status, Voltage, Device active, Plug and so on.
  - The chart generated is intuitive, hovering over any metric name in the first column shows you more information about that metric.
 
-**Figure**: Additional Stats
+**Figure: System Stats**
 
-![](./media/graph2.png)
+![System Stats](./media/graph2.png)
 
 The **System Stats** tab includes overall system statistics, such as screen on time, WiFi idle time, and so on. It gives an overview of what is happening with your Tizen device. For example, you can analyze the impact of a particular application on the battery during its use.
 
@@ -131,17 +124,16 @@ To compare the bug report files, follow these steps:
 
     ![](./media/compare1.png)
 
-    The bug report compare window comprises of the following components: 
-      - **Browse**: This component allows you to browse and select a bug report file.
-         - The window has two **Browse** buttons to allow you to upload two bug report files. 
+    The bug report compare window comprises of the    
+     **Browse** components that allows you to browse and select bug report files. 
 
 2. Click **Browse.**
    
-   Select the first bug report file. 
+   Select the respective bug report files. 
    
-3. Click **Browse.** 
-   
-   Select the second bug report file.  
+   The **Submit** button appears. 
+  
+   ![Browse](./media/submit.png)
 
 4. Click **Submit.**
 
