@@ -51,7 +51,7 @@ To generate a bug report file, follow these steps:
 2. From your Tizen device terminal, enter the following commands:
 
     ```
-    sh-3.2] dumpsys batterstats \> /tmp/battery_dump.txt
+    sh-3.2] dumpsys batterstats > /tmp/battery_dump.txt
     sh-3.2] exit
     ```
 
