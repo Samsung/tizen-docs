@@ -44,29 +44,21 @@ To generate a bug report file, follow these steps:
 1. From your Linux Terminal, enter the following commands:
 
     ```
-
     $] sdb root on
-
     $] sdb shell
-
     ```
 
 2. From your Tizen device terminal, enter the following commands:
 
     ```
-
-    sh-3.2] dumpsys batterstats \&gt; /tmp/battery\_dump.txt
-
+    sh-3.2] dumpsys batterstats \> /tmp/battery_dump.txt
     sh-3.2] exit
-
     ```
 
-3. From Linux Terminal, enter the following commands::
+3. From Linux Terminal, enter the following commands:
 
     ```
-
-    $] sdb pull /tmp/battery\_dump.txt
-
+    $] sdb pull /tmp/battery_dump.txt
     ```
 
 After you execute the commands, the `batterystats.txt` file is generated in the specified directory using the optional path argument.
@@ -84,11 +76,11 @@ To view and analyze your data, follow these steps:
 
 3. Click **Submit.**
 
-Battery Historian takes a few seconds to analyze the data in the file. After the analysis is done, a battery stats chart appears:
+Battery Historian takes a few seconds to analyze the data in the file. After the analysis is done, a Battery Historian stats chart appears:
 
 **Figure: Battery Historian Chart**
 
-![](./media/graph1.png)
+![Historian chart](./media/graph1.png)
 
 The Battery Historian chart graph illustrates the battery consumption events over time, where usage of the various device components correlates to battery consumption.
 
@@ -98,14 +90,15 @@ The Battery Historian chart graph illustrates the battery consumption events ove
  - The sloping black bar indicates your battery percentage level throughout the day.
  - The colored line segments represent the various apps, services, and other elements that have used battery life.
    - For instance, a green bar denotes an active time for WiFi.
- - You can add more metrics, by clicking on Add Metric and the corresponding metric will appear on the chart. Some of the available metrics are  Charging status, Voltage, Device active, Plug and so on.
+ - You can add more metrics, by clicking on **Add Metrics** and the corresponding metric will appear on the chart. Some of the available metrics are  Charging status, Voltage, Device active, Plug and so on.
  - The chart generated is intuitive, hovering over any metric name in the first column shows you more information about that metric.
+
+
+The **System Stats** tab includes overall system statistics, such as screen on time, WiFi idle time, and so on. It gives an overview of what is happening with your Tizen device. For example, you can analyze the impact of a particular application on the battery during its use.
 
 **Figure: System Stats**
 
 ![System Stats](./media/graph2.png)
-
-The **System Stats** tab includes overall system statistics, such as screen on time, WiFi idle time, and so on. It gives an overview of what is happening with your Tizen device. For example, you can analyze the impact of a particular application on the battery during its use.
 
 ### Compare Bug Reports 
 
@@ -121,7 +114,7 @@ To compare the bug report files, follow these steps:
 
     The bug report compare window appears: 
 
-    ![](./media/compare1.png)
+    ![Comparewindow](./media/compare1.png)
 
     The bug report compare window comprises of the    
      **Browse** components that allows you to browse and select bug report files. 
@@ -138,7 +131,7 @@ To compare the bug report files, follow these steps:
 
    Battery Historian takes a few seconds to analyze the data in both the files, and a comparison chart appears: 
 
-   ![compare](./media/compare2.png)
+   ![Uploadfiles](./media/compare2.png)
 
    The chart illustrates the metrics from both the bug reports as the coloured bars.
 
