@@ -72,6 +72,7 @@
 ### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
+#### [Window](/application/dotnet/guides/nui/window.md)
 #### Layouts
 ##### [Overview](/application/dotnet/guides/nui/layouts.md)
 ##### [Linear Layout](/application/dotnet/guides/nui/linear-layout.md)
