@@ -414,7 +414,6 @@
 ####### [Overview](/application/native/guides/applications/dali-app.md)
 ####### [Basic UI Application](/application/native/guides/applications/dali-basic-app.md)
 ####### [Watch Application](/application/native/guides/applications/dali-watch-app.md)
-####### [Widget Application](/application/native/guides/applications/dali-widget-app.md)
 ##### [Service Applications](/application/native/guides/applications/service-app.md)
 
 #### Application Management
