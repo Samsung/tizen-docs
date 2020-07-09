@@ -13,4 +13,4 @@ The following guide demonstrates how to create and run a basic Tizen .NET applic
 First, ensure that you have installed the latest version of Visual Studio Tools for Tizen. [**Learn more >**](../vstools/install.md)
 
 ## Hardware Setup for IoT Development
-To start developing Tizen IoT applications, follow the [guide](http://tizenschool.org/tutorial/137/) that demonstrates how to set up the Raspberry Pi board.
+To start developing Tizen IoT applications, follow the [Get Started guide](http://tizenschool.org/tutorial/191/) that demonstrates how to set up the Raspberry Pi 3 or 4 board.
