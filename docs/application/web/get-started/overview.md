@@ -1,6 +1,6 @@
 # Get Started with Web Applications
 
-You can create the Tizen Web applications in the web-native languages such as HTML, JavaScript, and CSS. 
+You can create the Tizen Web applications that consist of languages such as HTML, JavaScript, and CSS. 
 You can also use the Tizen Web APIs that interact with the Tizen native subsystems.
 
 To create your first Tizen Web application, you can select from the following profiles:
@@ -34,7 +34,7 @@ Get familiar with these examples, and then you can build more complex applicatio
 
 ## Richness on your Web applications
 
-After you create your first Tizen Web application, you can create additional common functionalities, which work on all your Web applications. To create them, you can use the web-native languages, such as HTML5, CSS, and JavaScript.
+After you create your first Tizen Web application, you can create additional common functionalities, which work on all your Web applications. To create them, you can use languages, such as HTML5, CSS, and JavaScript.
 
 -   [Web Application Addon](addon/first-addon.md)
 
