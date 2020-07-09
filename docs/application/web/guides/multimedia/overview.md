@@ -8,6 +8,10 @@ You can use the following media and camera features in your Web applications:
 
   You can access and modify EXIF (exchangeable image format) information in a JPEG file. You can add or update information in a file, copy it between files, and retrieve both the information and the thumbnail image of the file.
 
+- [Metadata of multimedia files](./metadata.md)
+
+  You can extract metadata information from multimedia files.
+
 - [Audio Management](./audio.md) **in mobile and wearable applications only**
 
   You can control the volume level of several sound types. You can also retrieve information about the current sound mode and the state of the current sound devices, and monitor changes in the sound device states.
@@ -33,7 +37,7 @@ You can use the following media and camera features in your Web applications:
   You can control the device camera by using the camera options. You can capture images and record video.
 
 ## Related Information
-* Dependencies  
+* Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV
