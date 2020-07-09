@@ -89,7 +89,7 @@ To get various privilege information:
                                                      &return_result);
     ```
 
-These functions return a `privilege_info_error_e` enum value (in [mobile](../../api/mobile/latest/group__CAPI__SECURITY__FRAMEWORK__PRIVILEGE__INFO__MODULE.html#gae50b814d4efe1b1d7218b6d68cdcadd6) and [wearable](../../api/wearable/latest/group__CAPI__SECURITY__FRAMEWORK__PRIVILEGE__INFO__MODULE.html#gae50b814d4efe1b1d7218b6d68cdcadd6) applications), which indicates the value of retrieval result. These functions also store the requested privilege display name or description and privacy display in their last parameter.
+These functions return a `privilege_info_error_e` enum value (in [mobile](../../api/mobile/latest/group__CAPI__SECURITY__FRAMEWORK__PRIVILEGE__INFO__MODULE.html#gae50b814d4efe1b1d7218b6d68cdcadd6) and [wearable](../../api/wearable/latest/group__CAPI__SECURITY__FRAMEWORK__PRIVILEGE__INFO__MODULE.html#gae50b814d4efe1b1d7218b6d68cdcadd6) applications), which indicates the value of retrieval result. These functions also store the requested privilege display name or description, and privacy display in their last parameter.
 
 ## Related Information
 - Dependencies
