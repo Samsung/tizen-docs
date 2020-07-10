@@ -1,22 +1,24 @@
 # Get Started with Native Applications
 
-When creating your first Tizen native application, you can select from the following options, which all use the C language:
+You can create the Tizen Native applications in C. You can also use the Tizen Native APIs to have advanced system settings and additional functionalities.
 
--   [Wearable native application](wearable/first-app.md)
+To create your first Tizen Native application, you can select from the following profiles:
 
-    A wearable application is targeted to run on smart watches, and can be optimized for the smaller screen.
+-   [Wearable Native application](wearable/first-app.md)
 
--   [Wearable native watch application](wearable-watch/first-app-watch.md)
+	An application that is targeted to run on smartwatches. It can be optimized for small screens.
 
-    A wearable watch application is a customized watch face that can be shown as the device home screen.
+-   [Wearable Native watch application](wearable-watch/first-app-watch.md)
 
--   [Wearable native widget application](wearable-widget/first-app-widget.md)
+    An application that is a customized watch face and can be shown on the device home screen.
+	
+-   [Wearable Native widget application](wearable-widget/first-app-widget.md)
 
-    A wearable widget application is a small application that can be shown by specific UI applications (such as the home screen).
+    An application that can be shown by specific UI applications such as home screen. 
 
--   [Mobile native application](mobile/first-app.md)
+-   [Mobile Native application](mobile/first-app.md)
 
-    A mobile application is targeted to run on smart phones, and can take advantage of a wide variety of functionalities available on those devices.
+	An application that is targeted to run on smartphones. It can take advantage of the functionalities available on smartphones.
 
-The first application examples show a simple application with a basic UI and minimal functionality. Get familiar with the example first, and afterwards you can use it as a basis to build more complex applications with the help of the extensive native API.
-
+The examples in each profile explain a simple application with a basic UI and minimal functionality.
+Get familiar with these examples, and then you can build more complex applications.
