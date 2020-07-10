@@ -102,7 +102,7 @@ The **System Stats** tab includes overall system statistics, such as screen on t
 
 ### Compare Bug Reports 
 
-The battery Historian also allows comparative analysis of two bug reports. The analysis can be viewed in the graphs that highlights the key differences in the battery-related metrics. 
+The Battery Historian also allows comparative analysis of two bug reports. The analysis can be viewed in the graphs that highlights the key differences in the battery-related metrics. 
 
 It also helps you to compare and contrast the metrics for battery consumption, and explains differences or similarities for any two key battery metrics of the Tizen device. 
 
@@ -116,8 +116,7 @@ To compare the bug report files, follow these steps:
 
     ![Comparewindow](./media/compare1.png)
 
-    The bug report compare window comprises of the    
-     **Browse** components that allows you to browse and select bug report files. 
+    The bug report compare window comprises of the **Browse** components that allows you to browse and select bug report files. 
 
 2. Click **Browse.**
    
@@ -133,7 +132,7 @@ To compare the bug report files, follow these steps:
 
    ![Uploadfiles](./media/compare2.png)
 
-   The chart illustrates the metrics from both the bug reports as the coloured bars.
+   The chart illustrates the metrics from both the bug reports as the colored bars.
 
 ## Related Information
 
