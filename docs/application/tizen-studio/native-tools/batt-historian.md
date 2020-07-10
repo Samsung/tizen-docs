@@ -14,12 +14,12 @@ Battery Historian tool also allows an A/B comparison of two bug reports, highlig
 To access and open the Battery Historian tool, use one of the following:
 
  - In the Tizen Studio menu, select **Tools \> Battery Historian.**
- - In the Tizen Studio toolbar, click **Battery Historian**  ![baticon](./media/batt1.png).
+ - In the Tizen Studio toolbar, click **Battery Historian**  ![Baticon](./media/batt1.png).
  - In Tizen Studio main window, press the combination of the **Alt+Shift+B** keys. 
 
 The **Battery Historian** window appears. 
 
-![](./media/bug1.png)
+![BattHist](./media/bug1.png)
 
 The Battery Historian tool window comprises of the following components:
 
@@ -44,21 +44,21 @@ To generate a bug report file, follow these steps:
 1. From your Linux Terminal, enter the following commands:
 
     ```
-    $] sdb root on
-    $] sdb shell
+    $ sdb root on
+    $ sdb shell
     ```
 
 2. From your Tizen device terminal, enter the following commands:
 
     ```
-    sh-3.2] dumpsys batterstats > /tmp/battery_dump.txt
-    sh-3.2] exit
+    sh-3.2$ dumpsys batterstats > /tmp/battery_dump.txt
+    sh-3.2$ exit
     ```
 
 3. From Linux Terminal, enter the following commands:
 
     ```
-    $] sdb pull /tmp/battery_dump.txt
+    $ sdb pull /tmp/battery_dump.txt
     ```
 
 After you execute the commands, the `batterystats.txt` file is generated in the specified directory using the optional path argument.
