@@ -58,7 +58,7 @@ To generate a bug report file, follow these steps:
 3. From Linux Terminal, enter the following commands:
 
     ```
-    $ sdb pull /tmp/battery_dump.txt
+    $ sdb pull /tmp/battery_stats.txt
     ```
 
 After you execute the commands, the `battery_stats.txt` file is generated in the specified directory using the optional path argument.
