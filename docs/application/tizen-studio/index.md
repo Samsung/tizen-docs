@@ -9,7 +9,7 @@ In Tizen Studio, you can perform all the same development activities that were p
 
 > **Note**
 >
-> Support for Windows 32-bit and Ubuntu 32-bit are deprecated from Tizen Studio 3.5.
+> Support for Windows 32-bit and Ubuntu 32-bit is deprecated from Tizen Studio 3.5.
 
 To develop your applications, use the set of tools provided by Tizen Studio:
 
