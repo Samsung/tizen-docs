@@ -37,7 +37,7 @@ You can use the following media and camera features in your Web applications:
   You can control the device camera by using the camera options. You can capture images and record video.
 
 ## Related Information
-* Dependencies
+- Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
   - Tizen 3.0 and Higher for TV

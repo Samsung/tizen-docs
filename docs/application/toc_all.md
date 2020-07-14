@@ -340,7 +340,7 @@
 ### [Alarms](/application/web/guides/alarm/alarms.md)
 
 ### Media and Camera
-#### [Ovierview](/application/web/guides/multimedia/overview.md)
+#### [Overview](/application/web/guides/multimedia/overview.md)
 #### [JPEG File EXIF Information](/application/web/guides/multimedia/jpeg-exif.md)
 #### [Audio Management](/application/web/guides/multimedia/audio.md)
 #### [Audio Latency](/application/web/guides/multimedia/player-util.md)
@@ -348,6 +348,7 @@
 #### [Media Key Events](/application/web/guides/multimedia/media-key.md)
 #### [Radio](/application/web/guides/multimedia/radio.md)
 #### [Camera](/application/web/guides/multimedia/camera.md)
+#### [Metadata](/application/web/guides/multimedia/metadata.md)
 
 ### Connectivity and Wireless
 #### [Overview](/application/web/guides/connectivity/connectivity.md)
