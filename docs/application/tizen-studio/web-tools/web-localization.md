@@ -80,7 +80,7 @@ When the string localization is complete, the following modifications are made i
   ![src element in index.html](./media/web_loc_index_html.png)
 
   > **Note**  
-  > For more information on using localized string content, see [Localization](https://developer.tizen.org/development/guides/web-application/localization).
+  > For more information on using localized string content, see [Localization](../../web/guides/localization/localization.md).
 
 ### Using Resources for Localization
 
