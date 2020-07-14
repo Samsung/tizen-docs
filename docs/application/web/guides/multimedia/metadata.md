@@ -17,7 +17,8 @@ To access files using the Metadata API (in [mobile](../../api/latest/device_api/
 <tizen:privilege name="http://tizen.org/privilege/externalstorage"/>
 ```
 
-Additionally, to access files using the Metadata API (in [mobile](../../api/latest/device_api/mobile/tizen/metadata.html) and [wearable](../../api/latest/device_api/wearable/tizen/metadata.html) applications), the application has to request storage privileges [proper storage permissions](../security/privacy-related-permissions.md) using the PPM API.
+
+Additionally, to access files using the Metadata API (in [mobile](../../api/latest/device_api/mobile/tizen/metadata.html) and [wearable](../../api/latest/device_api/wearable/tizen/metadata.html) applications), the application has to request [proper storage permissions](../security/privacy-related-permissions.md) using the PPM API.
 
 
 ## Extract metadata
