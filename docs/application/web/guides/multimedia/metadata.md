@@ -2,7 +2,7 @@
 
 You can extract metadata information from multimedia files.
 
-The main feature of the Metadata API is extraction of a metadata from a file. You can [extract metadata](#extract-metadata) from multimedia files using the `get()` method.
+The main feature of the Metadata API is to extract metadata from a file. You can [extract metadata](#extract-metadata) from multimedia files using the `get()` method.
 
 
 ## Prerequisites
