@@ -1,6 +1,6 @@
 # Metadata
 
-You can extract metadata information from multimedia files.
+You can extract metadata information from multimedia files. Metadata is the information about multimedia files.
 
 The main feature of the Metadata API is to extract metadata from a file. You can [extract metadata](#extract-metadata) from multimedia files using the `get()` method.
 
@@ -18,7 +18,7 @@ To access files using the Metadata API (in [mobile](../../api/latest/device_api/
 ```
 
 
-Additionally, to access files using the Metadata API (in [mobile](../../api/latest/device_api/mobile/tizen/metadata.html) and [wearable](../../api/latest/device_api/wearable/tizen/metadata.html) applications), the application has to request [proper storage permissions](../security/privacy-related-permissions.md) using the PPM API.
+Additionally, to access files using the Metadata API (in [mobile](../../api/latest/device_api/mobile/tizen/metadata.html) and [wearable](../../api/latest/device_api/wearable/tizen/metadata.html) applications), the application has to request [proper storage permissions](../security/privacy-related-permissions.md) using the PPM API  (in [mobile](../../api/latest/device_api/mobile/tizen/ppm.html) and [wearable](../../api/latest/device_api/wearable/tizen/ppm.html) applications).
 
 
 ## Extract metadata
@@ -38,7 +38,7 @@ Additionally, to access files using the Metadata API (in [mobile](../../api/late
    ```
 
 3. For better performance, the file handle does not release underlying resources after every metadata extraction. The data is decoded on the first extraction, which helps in speeding up the next metadata extractions.
-When all the needed metadata is extracted, the file handle needs to be released using the`release()` method:
+When all the needed metadata is extracted, the file handle needs to be released using the `release()` method:
 
    ```javascript
    fileHandle.release();
