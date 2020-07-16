@@ -30,6 +30,7 @@
 					<topic href="6.0/device_api/tv/index.html#Multimedia" label="Multimedia">
 						<topic href="6.0/device_api/tv/tizen/exif.html" label="Exif"/>
 						<topic href="6.0/device_api/tv/tizen/mediacontroller.html" label="Media Controller"/>
+						<topic href="6.0/device_api/tv/tizen/metadata.html" label="Metadata"/>
 					</topic>
 					<topic href="6.0/device_api/tv/index.html#Network" label="Network">
 						<topic href="6.0/device_api/tv/tizen/bluetooth.html" label="Bluetooth"/>

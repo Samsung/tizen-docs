@@ -39,6 +39,7 @@
 						<topic href="6.0/device_api/mobile/tizen/mediacontroller.html" label="Media Controller"/>
 						<topic href="6.0/device_api/mobile/tizen/playerutil.html" label="Player Util"/>
 						<topic href="6.0/device_api/mobile/tizen/sound.html" label="Sound"/>
+						<topic href="6.0/device_api/mobile/tizen/metadata.html" label="Metadata"/>
 					</topic>
 					<topic href="6.0/device_api/mobile/index.html#Network" label="Network">
 						<topic href="6.0/device_api/mobile/tizen/bluetooth.html" label="Bluetooth"/>

@@ -1,0 +1,464 @@
+<!DOCTYPE html PUBLIC "html">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
+<script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Metadata API</title>
+<meta data-version="6.0" data-profile="mobile">
+</head>
+<body id="page-content" onload="prettyPrint()">
+<div class="api" id="::Metadata">
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="title"><h1>Metadata API</h1></div>
+<div class="brief">
+ The Metadata API provides interfaces and methods for extracting metadata information from a media file.
+        </div>
+<div class="description">
+        <p>
+The following functionality is provided:
+        </p>
+        <ul>
+          <li>
+Extract selected metadata from a file          </li>
+        </ul>
+        <p>
+<b id="StorageRemark">Remark:</b> In order to access files, a proper privilege has to be defined additionally:
+        </p>
+        <ul>
+          <li>
+for accessing only internal storage using this API, a privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> must be provided,          </li>
+          <li>
+for accessing only external storage using this API, a privilege <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> must be provided,          </li>
+          <li>
+for accessing internal and external storage using this API, privileges (<a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> and <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>) must be provided.          </li>
+          <li>
+Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
+        </ul>
+        <p>
+For more information about how to use Metadata API, see <a href="/application/web/guides/multimedia/metadata">Metadata Guide</a>.
+        </p>
+       </div>
+<p><span class="version">Since: </span>
+ 6.0
+        </p>
+<h2>Table of Contents</h2>
+<ul class="toc">
+<li>1. <a href="#typedefs-section">Type Definitions</a><ul class="toc"><li>
+                    1.1. <a href="#MetadataType">MetadataType</a>
+</li></ul>
+</li>
+<li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
+<li>2.1. <a href="#MetadataObject">MetadataObject</a>
+</li>
+<li>2.2. <a href="#MetadataManager">MetadataManager</a>
+</li>
+<li>2.3. <a href="#MetadataFileHandle">MetadataFileHandle</a>
+</li>
+</ul>
+</li>
+<li>3. <a href="#full-webidl">Full WebIDL</a>
+</li>
+</ul>
+<hr>
+<h2 id="method-summary">Summary of Interfaces and Methods</h2>
+<table class="informaltable">
+<thead><tr>
+<th>Interface</th>
+<th>Method</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="#MetadataObject">MetadataObject</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#MetadataManager">MetadataManager</a></td>
+<td><div>
+<a href="#MetadataFileHandle">MetadataFileHandle</a> <a href="#MetadataManager::createFileHandle">createFileHandle</a> (<a href="filesystem.html#Path">Path</a> path)</div></td>
+</tr>
+<tr>
+<td><a href="#MetadataFileHandle">MetadataFileHandle</a></td>
+<td>
+<div>DOMString <a href="#MetadataFileHandle::get">get</a> (<a href="#MetadataType">MetadataType</a> type)</div>
+<div>void <a href="#MetadataFileHandle::release">release</a> ()</div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="typedefs" id="typedefs-section">
+<h2>1. Type Definitions</h2>
+<div class="enum" id="MetadataType">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataType"></a><h3>1.1. MetadataType</h3>
+<div class="brief">
+ Specifies the type of a metadata.
+          </div>
+<pre class="webidl prettyprint">  enum MetadataType { "ALBUM", "ALBUM_ARTIST", "ALTITUDE", "ARTIST", "AUDIO_BITPERSAMPLE", "AUDIO_BITRATE", "AUDIO_CHANNELS",
+    "AUDIO_CODEC", "AUDIO_SAMPLERATE", "CLASSIFICATION", "COMMENT", "COMPOSER", "CONDUCTOR", "COPYRIGHT", "DATE", "DESCRIPTION", "DURATION",
+    "GENRE", "HAS_AUDIO", "HAS_VIDEO", "LATITUDE", "LONGITUDE", "MODE_360", "RATING", "RECDATE", "ROTATE", "SYNCLYRICS_NUM", "TITLE",
+    "TRACK_NUM", "UNSYNCLYRICS", "VIDEO_BITRATE", "VIDEO_CODEC", "VIDEO_FPS", "VIDEO_HEIGHT", "VIDEO_WIDTH" };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<div class="description">
+          <p>
+The types are:
+          </p>
+          <ul>
+            <li>
+ALBUM - album            </li>
+            <li>
+ALBUM_ARTIST - album artist            </li>
+            <li>
+ALTITUDE - altitude            </li>
+            <li>
+ARTIST - artist            </li>
+            <li>
+AUDIO_BITPERSAMPLE - audio bits per sample            </li>
+            <li>
+AUDIO_BITRATE - audio bitrate            </li>
+            <li>
+AUDIO_CHANNELS - audio channels            </li>
+            <li>
+AUDIO_CODEC - audio codec            </li>
+            <li>
+AUDIO_SAMPLERATE - audio sample rate            </li>
+            <li>
+CLASSIFICATION - classification of a content            </li>
+            <li>
+COMMENT - comment            </li>
+            <li>
+COMPOSER - composer            </li>
+            <li>
+CONDUCTOR - conductor            </li>
+            <li>
+COPYRIGHT - copyright            </li>
+            <li>
+DATE - date            </li>
+            <li>
+DESCRIPTION - description            </li>
+            <li>
+DURATION - duration (in milliseconds)            </li>
+            <li>
+GENRE - genre            </li>
+            <li>
+HAS_AUDIO - audio stream count            </li>
+            <li>
+HAS_VIDEO - video stream count            </li>
+            <li>
+LATITUDE - latitude            </li>
+            <li>
+LONGITUDE - longitude            </li>
+            <li>
+MODE_360 - flag indicating if the video is a spherical video            </li>
+            <li>
+RATING - rating of a content            </li>
+            <li>
+RECDATE - recording date            </li>
+            <li>
+ROTATE - rotation (orientation) of a content            </li>
+            <li>
+SYNCLYRICS_NUM - synchronized lyrics (time/lyric set) number            </li>
+            <li>
+TITLE - title            </li>
+            <li>
+TRACK_NUM - track number information            </li>
+            <li>
+UNSYNCLYRICS - unsynchronized lyrics            </li>
+            <li>
+VIDEO_BITRATE - video bitrate            </li>
+            <li>
+VIDEO_CODEC - video codec            </li>
+            <li>
+VIDEO_FPS - video frame rate            </li>
+            <li>
+VIDEO_HEIGHT - video height            </li>
+            <li>
+VIDEO_WIDTH - video width            </li>
+          </ul>
+         </div>
+</div>
+</div>
+<div class="interfaces" id="interfaces-section">
+<h2>2. Interfaces</h2>
+<div class="interface" id="MetadataObject">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataObject"></a><h3>2.1. MetadataObject</h3>
+<div class="brief">
+ The MetadataObject interface defines what is instantiated in the tizen object.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MetadataObject {
+    readonly attribute <a href="#MetadataManager">MetadataManager</a> metadata;
+  };</pre>
+<pre class="webidl prettyprint">  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MetadataObject">MetadataObject</a>;</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<div class="description">
+          <p>
+The tizen.metadata object provides access to the functionality of the Metadata API.
+          </p>
+         </div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="MetadataObject::metadata">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">MetadataManager </span><span class="name">metadata</span></span><div class="brief">
+ Object representing a Metadata manager.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li></ul>
+</div>
+</div>
+<div class="interface" id="MetadataManager">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataManager"></a><h3>2.2. MetadataManager</h3>
+<div class="brief">
+ The MetadataManager interface is the top-level interface for the Metadata API.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MetadataManager {
+    <a href="#MetadataFileHandle">MetadataFileHandle</a> createFileHandle(<a href="filesystem.html#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MetadataManager::createFileHandle">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataManager::createFileHandle"></a><code><b><span class="methodName">createFileHandle</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Creates representation of file for metadata operations.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#MetadataFileHandle">MetadataFileHandle</a> createFileHandle(<a href="filesystem.html#Path">Path</a> path);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+Handle is used for optimization of a process of reading multiple metadata from file. Creation of a handle does not open a file yet.
+For memory management optimization, handle should be <a href="#MetadataFileHandle::release">released</a> after reading all needed metadata.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">path</span>:
+ Path to the file.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">MetadataFileHandle:</span>
+ A handle for metadata operations.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotFoundError, if the <em>path</em> does not point to an existing file.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
+{
+  var fileHandle = tizen.metadata.createFileHandle("videos/sample_video.mp4");
+  console.log("Created handle for file: " + fileHandle.uri);
+}
+catch (e)
+{
+  console.log("Error " + JSON.stringify(e));
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Created handle for file: file:///opt/usr/home/owner/media/Videos/sample_video.mp4
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="MetadataFileHandle">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataFileHandle"></a><h3>2.3. MetadataFileHandle</h3>
+<div class="brief">
+ Object representing a file for metadata operations.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface MetadataFileHandle {
+    readonly attribute DOMString uri;
+    DOMString get(<a href="#MetadataType">MetadataType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void release() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="MetadataFileHandle::uri">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">DOMString </span><span class="name">uri</span></span><div class="brief">
+ <a href="https://tools.ietf.org/html/rfc8089">File URI</a> for a path passed to <a href="#MetadataManager::createFileHandle">createFileHandle</a>.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="MetadataFileHandle::get">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataFileHandle::get"></a><code><b><span class="methodName">get</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Extracts a metadata of a given type.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">DOMString get(<a href="#MetadataType">MetadataType</a> type);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">type</span>:
+ A type of metadata to be extracted.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">DOMString:</span>
+ A value of extracted metadata.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have privilege to access the storage. For more information, see <a href="#StorageRemark">Storage privileges</a>.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
+{
+  var fileHandle = tizen.metadata.createFileHandle("videos/sample_video.mp4");
+  console.log("Video duration is: " + fileHandle.get("DURATION") + " milliseconds");
+  console.log("Video title is: " + fileHandle.get("TITLE"));
+  fileHandle.release();
+}
+catch (e)
+{
+  console.log("Error " + JSON.stringify(e));
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Video duration is: 70138 milliseconds
+Video title is: Sample Video
+</pre>
+</div>
+</dd>
+<dt class="method" id="MetadataFileHandle::release">
+<a class="backward-compatibility-anchor" name="::Metadata::MetadataFileHandle::release"></a><code><b><span class="methodName">release</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Releases all resources related to the handle and marks handle as invalid.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void release();</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type AbortError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">try
+{
+  var fileHandle = tizen.metadata.createFileHandle("videos/sample_video.mp4");
+  /* Read metadata here */
+  console.log("Video duration is: " + fileHandle.get("DURATION") + " milliseconds");
+  /* File is no longer needed, release related resources */
+  fileHandle.release();
+}
+catch (e)
+{
+  console.log("Error " + JSON.stringify(e));
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Video duration is: 70138 milliseconds
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<h2 id="full-webidl">3. Full WebIDL</h2>
+<pre class="webidl prettyprint">module Metadata {
+  enum MetadataType { "ALBUM", "ALBUM_ARTIST", "ALTITUDE", "ARTIST", "AUDIO_BITPERSAMPLE", "AUDIO_BITRATE", "AUDIO_CHANNELS",
+    "AUDIO_CODEC", "AUDIO_SAMPLERATE", "CLASSIFICATION", "COMMENT", "COMPOSER", "CONDUCTOR", "COPYRIGHT", "DATE", "DESCRIPTION", "DURATION",
+    "GENRE", "HAS_AUDIO", "HAS_VIDEO", "LATITUDE", "LONGITUDE", "MODE_360", "RATING", "RECDATE", "ROTATE", "SYNCLYRICS_NUM", "TITLE",
+    "TRACK_NUM", "UNSYNCLYRICS", "VIDEO_BITRATE", "VIDEO_CODEC", "VIDEO_FPS", "VIDEO_HEIGHT", "VIDEO_WIDTH" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MetadataObject">MetadataObject</a>;
+  [NoInterfaceObject] interface MetadataObject {
+    readonly attribute <a href="#MetadataManager">MetadataManager</a> metadata;
+  };
+  [NoInterfaceObject] interface MetadataManager {
+    <a href="#MetadataFileHandle">MetadataFileHandle</a> createFileHandle(<a href="filesystem.html#Path">Path</a> path) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface MetadataFileHandle {
+    readonly attribute DOMString uri;
+    DOMString get(<a href="#MetadataType">MetadataType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void release() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+};</pre>
+</div>
+<div id="page-footer">
+<div class="copyright" align="center">
+         Except as noted, this content - excluding the Code Examples - is licensed under <a href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution 3.0</a> and all of the Code Examples contained herein are licensed under <a href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>. <br>For details, see the <a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.
+            </div>
+<script type="text/javascript">
+
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-25976949-1']);
+              _gaq.push(['_setDomainName', 'tizen.org']);
+              _gaq.push(['_trackPageview']);
+
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+              })();
+
+            </script>
+</div>
+</body>
+</html>

@@ -37,6 +37,7 @@
 						<topic href="6.0/device_api/wearable/tizen/mediacontroller.html" label="Media Controller"/>
 						<topic href="6.0/device_api/wearable/tizen/playerutil.html" label="Player Util"/>
 						<topic href="6.0/device_api/wearable/tizen/sound.html" label="Sound"/>
+						<topic href="6.0/device_api/wearable/tizen/metadata.html" label="Metadata"/>
 					</topic>
 					<topic href="6.0/device_api/wearable/index.html#Network" label="Network">
 						<topic href="6.0/device_api/wearable/tizen/bluetooth.html" label="Bluetooth"/>
