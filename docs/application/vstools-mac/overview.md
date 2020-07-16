@@ -1,4 +1,4 @@
-# Install Visual Studio for Mac Extension for Tizen.
+# Visual Studio for Mac Extension for Tizen
 
 Visual Studio for Mac Extension for Tizen is an extension, which enables you to develop Tizen .NET applications easily using various Tizen project templates with Visual Studio for Mac.
 
@@ -14,7 +14,7 @@ To work with Visual Studio for Mac Extension for Tizen, your computer must have:
   > [!NOTE]
   > To use Tizen Baseline SDK version earlier than version 3.7, you must install [Oracle Java Development Kit(JDK) 8](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) and [Java for OS X 2017-001](https://support.apple.com/kb/DL1572) together or [OpenJDK 12 and OpenJFX](../tizen-studio/setup/openjdk.md#install-openjdk-for-macos).
 
-## Install Visual Studio for Mac Extension for Tizen
+## Install Visual Studio for Mac Extension
 
 To install Visual Studio for Mac Extension for Tizen:
 
@@ -101,7 +101,7 @@ You can also use Tizen Package Manager to configure the Tizen Baseline SDK path 
      The Tizen Baseline SDK is installed automatically.
 
      > [!NOTE]  
-	 > If the installer gives a warning about your Tizen Studio version being too low, update the Tizen Baseline SDK by using the Tizen Package Manager after setting the tool path.
+     > If the installer gives a warning about your Tizen Studio version being too low, update the Tizen Baseline SDK by using the Tizen Package Manager after setting the tool path.
 
 - To set up each tool path directly:
 
