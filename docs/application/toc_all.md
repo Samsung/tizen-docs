@@ -376,7 +376,6 @@
 ### Personal Data
 #### [Overview](/application/web/guides/personal/personal.md)
 #### [Account Management](/application/web/guides/personal/account.md)
-#### [Bookmarks](/application/web/guides/personal/bookmarks.md)
 #### [Calendar](/application/web/guides/personal/calendar.md)
 #### [Call History](/application/web/guides/personal/call-history.md)
 #### [Contacts](/application/web/guides/personal/contacts.md)
