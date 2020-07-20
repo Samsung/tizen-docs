@@ -4,7 +4,7 @@ Tizen Studio is the official IDE for developing Web applications and Native appl
 
 The following figure summarizes various benefits that you can achieve using Tizen Studio IDE tools:
 
-![Step 2](./media/ide.png)
+![Step 2](./media/ide.PNG)
 
 ## Tizen Studio Views
 
@@ -14,7 +14,7 @@ This view provides a hierarchical view of all the resources in the workspace. Yo
 
 The following is the basic UI that you see when Tizen Studio IDE appears: 
 
-![Step 1](./media/1.png)
+![Step 1](./media/1.PNG)
 Tizen Studio main window comprises of the following components: 
 
  -	**Edit**: It is the area on the UI where you can write your code. 

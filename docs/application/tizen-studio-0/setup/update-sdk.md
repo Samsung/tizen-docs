@@ -4,7 +4,11 @@ This page explains how to install, update, and remove packages using the Package
 
 After you install Tizen Studio, it is easy to keep the packages, platforms, and other tools up-to-date with automatic updates. Tizen Studio includes a comprehensive package management tool to manage processes such as installing, uninstalling, updating packages and platforms, and other related tools.
 
+<<<<<<< HEAD
 ## Launch Package Manager
+=======
+## Starting the Package Manager
+>>>>>>> parent of f5b6484ab... Revamp updated to latest master
 
 Package Manager offers a simple way to manage packages without getting into the complicated package dependencies.
 
@@ -48,7 +52,7 @@ The Package Manager window consists of the following logical areas:
 
     ![Description area](./media/updating_sdk_description.png)
 
-## Update Packages
+## Updating Packages
 
 Package Manager makes it easy to update your packages and platforms. You can use the Package Manager tool to locate and install updates and new features for the packages that are already installed. 
 
@@ -88,7 +92,7 @@ To install the packages with an image file, follow these steps:
  > [!NOTE]  
  > Ensure that the image file includes the latest version of Tizen Studio, before updating or installing using the image file.
 
-## Install Additional Packages
+## Installing Additional Packages
 
 Package Manager simplifies the process to install packages, platforms, and tools. You can install any platform or tool that are listed under the **Main SDK** and **Extension SDK** tabs.
 
@@ -153,9 +157,13 @@ Tizen Studio provides a progress bar where you can monitor the installation, upd
 
 ![Progress tab](./media/updating_sdk_progress.png)
 
+<<<<<<< HEAD
 ## Update Packages using CLI
 
 For advanced developers, Tizen Studio provides a command line version of the Package Manager tool. It can be used to install, update, remove packages, and platform tools respectively using the terminal or the console window. 
+=======
+## Updating with the CLI Package Manager
+>>>>>>> parent of f5b6484ab... Revamp updated to latest master
 
 To Run the CLI version of Package Manager with the `update` command, use the following syntax:
 

@@ -1,340 +1,204 @@
 # Tizen Studio
 
+**Tizen Studio 3.7 is now launched!**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[![Download](media/ic_docs_download.png)  **Download**](https://developer.tizen.org/development/tizen-studio/download)
+
 <style>
-/* Reset */
-
-html, body, div, span, applet, object, iframe, {
-		margin:;
-		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
-		vertical-align: baseline;
-	}
-
-	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-		display: block;
-	}
-
-	body {
-		line-height: 1;
-	}
-
-	ol, ul{
-		list-style-type: circle;
-		list-style-position:inside;
-	}
-
-	blockquote, q {
-		quotes: none;
-	}
-
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
-	}
-
-	table {
-		border-collapse: collapse;
-		border-spacing: 0;
-	}
-
-	body {
-		-webkit-text-size-adjust: none;
-	}
-
-/* Box Model */
-
-	*, *:before, *:after {
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-
-
-/* Type */
-
-	body {
-		background-color: #fff;
-		color: #444;
-	}
-
-	body, input, select, textarea {
-		font-family: "Raleway", Arial, Helvetica, sans-serif;
-		font-size: 14pt;
-		font-weight: 300;
-		letter-spacing: 0.09em;
-		line-height: 1.65em;
-	}
-		@media screen and (max-width: 1680px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 1280px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 980px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			body, input, select, textarea {
-				font-size: 11pt;
-			}
-
-		}
-
-
-/* Button */
-
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		border-radius: 0;
-		border: 0;
-		cursor: pointer;
-		display: inline-block;
-		height: 2.85em;
-		line-height: 2.95em;
-		padding: 0 1.5em;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		white-space: nowrap;
-	}
-
-
-		input[type="submit"].special,
-		input[type="reset"].special,
-		input[type="button"].special,
-		button.special,
-		.button.special {
-			background-color: #008aee;
-			color: #ffffff !important;
-		}
-
-
-/* Section/Article */
-
-	section.special, article.special, header.special {
-		text-align: center;
-	}
-
-	header {
-		margin-bottom: em;
-	}
-
-		header p {
-			position: relative;
-			margin: 0 0 1.5em 0;
-			text-transform: uppercase;
-		}
-
-		header h2, header h3 {
-			display: inline-block;
-			padding-bottom: 0.4em;
-			border-bottom-style: double;
-			border-bottom-width: 4px;
-		}
-
-		header h2 + p {
-			font-size: 1.25em;
-			margin-top: -0.5em;
-			line-height: 1.5em;
-		}
-
-		header h3 + p {
-			font-size: 1.1em;
-			line-height: 1.5em;
-		}
-
-		header h4 + p,
-		header h5 + p,
-		header h6 + p {
-			font-size: 0.9em;
-			line-height: 1.5em;
-		}
-
-		header.major {
-			margin-bottom: 4em;
-		}
-
-		@media screen and (max-width: 1280px) {
-
-			header.major {
-				margin-bottom: 2em;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			header.major {
-				margin-bottom: 1.5em;
-			}
-
-		}
-
-		@media screen and (max-width: 480px) {
-
-			header.major {
-				margin-bottom: 1em;
-			}
-
-		}
-
-	header h2, header h3 {
-		border-bottom-color: #e3e3e3;
-	}
-
-	header p {
-		color: #bbb;
-	}
-
-/* Feature */
-
-	.features {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-wrap: wrap;
-		-webkit-flex-wrap: wrap;
-		-ms-flex-wrap: wrap;
-		flex-wrap: wrap;
-		-moz-justify-content: center;
-		-webkit-justify-content: center;
-		-ms-justify-content: center;
-		justify-content: center;
-		margin-bottom: 2em;
-	}
-
-	.feature {
-		padding: 2em 2em 0.1em 2em;
-		border-style: solid;
-		border-width: 1px;
-		margin-left: -1px;
-		margin-top: -1px;
-		width: 33.33333%;
-	}
-
-		.feature .fa {
-			font-size: 2.8em;
-			margin-bottom: 0.7em;
-		}
-
-		@media screen and (max-width: 1280px) {
-
-			.feature {
-				padding: 2em 1.5em 0.1em 1.5em;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			.feature {
-				padding: 2em 1em 0.1em 1em;
-				width: 50%;
-			}
-
-		}
-
-		@media screen and (max-width: 480px) {
-
-			.feature {
-				padding: 2em 0.5em 0.1em 0.5em;
-				width: 100%;
-			}
-
-		}
-
-	.feature {
-		border-color: #e3e3e3;
-	}
-
-		.feature .fa {
-			color: #00cdcf;
-		}
-	.button.special{
-      margin-top: 15px;
-      background-color: #008aee;
-      border: none;
-      color: white;
-      padding: 10px 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-	  cursor: pointer;
-	  border-radius: 0;
-	  border: 0;
-	  cursor: pointer;
-	  display: inline-block;
-	  height: 2.85em;
-	  line-height: 2.95em;
-	  padding: 0 1.5em;
-	  text-align: center;
-	  text-decoration: none;
-	  text-transform: uppercase;
-	  white-space: nowrap;
-	  margin:20px;
- }	
- .container {
-    &__text {
-        display: inline;
-    }
-}	
-.fa {
-    color: #00cdcf;
+#main:before, #main:after {
+    content: "";
+    display: table;
 }
-a:link {
-  color: #008aee;
-  background-color: transparent;
-  text-decoration: none;
+.docs-ui-started [class^="docs-ui-"] {
+    width: 100%; 
+    height: 200px;
+    padding: 0px 0;
+    text-align: center;
+    border: 0 none;
+    border-top: 0 px solid #dadada;
+    border-bottom: 0 px solid #dadada;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin: 2 auto 30px;
 }
-a:visited {
-  color: rgb(7, 3, 245);
-  background-color: transparent;
-  text-decoration: none;
+.docs-ui-started [class^="docs-ui-"]>span {
+    display: block;
+    color: #333;
+    line-height: 32px;
+    position: relative;   
 }
-a:hover {
-  color: #008aee;
-  background-color: transparent;
-  text-decoration: underline;
+.docs-ui-star [class^="docs-ui-"] {
+    width: 100%; 
+    height: 200px;
+    padding: 1px 0;
+    text-align: center;
+    border: 0 none;
+    border-top: 0 px solid #dadada;
+    border-bottom: 0 px solid #dadada;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin: 2 auto ;
 }
-a:active {
-  color: y#008aee;
-  background-color: transparent;
+.docs-ui-star [class^="docs-ui-"]>span {
+    display: block;
+    color: #333;
+    line-height: px;
+    position: relative;  
 }
+
+@media (max-width: 800px)
+.docs-ui-started
+.docs-ui-wearable:before, 
+.docs-ui-started 
+.docs-ui-tv:before, 
+.docs-ui-started 
+.docs-ui-mobile:before, 
+.docs-ui-started 
+.docs-ui-widget:before, 
+.docs-ui-started 
+.docs-ui-ide:before, 
+.docs-ui-star
+.docs-ui-wear:before, 
+.docs-ui-star 
+.docs-ui-t:before, 
+.docs-ui-start 
+.docs-ui-w:before, 
+.docs-ui-start 
+.docs-ui-get:before, 
+
+.docs-ui-started .docs-ui-watch:before {
+    height: 85px;
+    margin: 0 auto 25px;
+    align: center;
+    background-position: 0 6px;
+}
+.docs-ui-started .docs-ui-wearable:before {
+    content: "";
+    display: block;
+    margin: auto;
+    position: relative;
+    width: 100px;
+    height: 90px;
+    background: url(./media/Download.png) no-repeat center top;
+    /*Download icon*/
+    background-position: 0 0 !important;
+}
+.docs-ui-started .docs-ui-wearable {
+    width: 33%;
+    padding-left: 0;
+    /* border-right: 1px solid #d1d1d1; */
+}
+.docs-ui-started .docs-ui-t:before {
+    content: "";
+    margin: auto;
+    position: relative;
+    display: block;
+    width: 85px;
+    height: 90px;
+    background: url(./media/RT.png) no-repeat center top;
+    /*Platform*/
+    background-position: 0 0 !important;
+}
+.docs-ui-started .docs-ui-t {
+    width: 33%;
+    padding-left: 0;
+}
+.docs-ui-started .docs-ui-wear:before {
+    content: "";
+    margin: auto;
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 90px;
+    background: url(./media/Csdk.png) no-repeat center top;
+    /*configure SDK*/
+    background-position: 0 0 !important;
+}
+.docs-ui-star .docs-ui-wear {
+    width: 33%;
+    padding-left: 0;
+}
+.docs-ui-started .docs-ui-tv:before {
+    content: "";
+    margin: auto;
+    position: relative;
+    display: block;
+    width: 85px;
+    height: 90px;
+    background: url(./media/Tools.png) no-repeat center top;
+    /*Native tools*/
+    background-position: 0 0 !important;
+}
+.docs-ui-started .docs-ui-tv {
+    width: 33%;
+    padding-left: 0;
+}
+.docs-ui-started .docs-ui-widget:before {
+    content: "";
+    margin: auto;
+    position: relative;
+	display: block;
+    width: 100px;
+    height: 90px;
+    background: url(./media/webtools.png) no-repeat center top;
+    background-position: 0 0 !important;
+    /*web tools*/
+}
+.docs-ui-started .docs-ui-widget {
+    width: 33%;
+    padding-left: 0;
+    /* border-right: 1px solid #d1d1d1; */
+}
+.docs-ui-started .docs-ui-get:before {
+    content: "";
+    margin: auto;
+    position: relative;
+	display: block;
+    width: 100px;
+    height: 90px;
+    background: url(./media/SDK.png) no-repeat center top;
+    background-position: 0 0 !important;
+    /*configurable*/
+}
+.docs-ui-started .docs-ui-get {
+    width: 33%;
+    padding-left: 0;
+    /* border-right: 1px solid #d1d1d1; */
+}
+.docs-ui-star .docs-ui-w:before {
+    content: "";
+    margin: auto;
+    position: relative;
+	display: block;
+    width: 100px;
+    height: 90px;
+    background: url(media/IDEp.png) no-repeat center top;
+    /*RTIDE*/
+    background-position: 0 0 !important;
+}
+.docs-ui-star .docs-ui-w {
+    width: 33%;
+    padding-left: 0;
+    /* border-right: 1px solid #d1d1d1; */
+}
+}
+div {
+    display: block;
+}
+
+ul.a{
+a.docs-btn-more {
+    display: inline-block;
+    font-size: 13px;
+    color: #008aee;
+}}
 </style>
+
 <section id ="main">
 
-Tizen Studio is an official integrated development environment (IDE) for developing Tizen apps. This environment is built over Eclipse, it presents a unified environment where you can write, edit, debug, build, and publish your app. Tizen Studio runs on Windows®, Ubuntu, and macOS.
+Tizen Studio is an official integrated development environment (IDE) for developing Tizen apps. This environment is built over Eclipse, it presents a unified environment where you can write, edit, debug, build, and publish your app. 
+
+Tizen Studio runs on Windows®, Ubuntu, and macOS. For more information on the latest release, see the [Download](https://developer.tizen.org/development/tizen-studio/download) page.
 
 Tizen Studio primarily consists of: 
 
@@ -344,44 +208,43 @@ Tizen Studio primarily consists of:
 - components to support new platforms
 - system applications and drivers 
 - utilities for compiling applications to Tizen RT (Tizen RTOS kernel variant)
-<!-- tiles-->
-<section id="one" class="wrapper special">
-		<div class="inner">
-			<header class="major">
-			</header>
 
-<div id="buttonzone">
-							<a href="https://developer.tizen.org/development/tizen-studio/download" class="button special">Download</i></a>
-							<a href="./setup/install-sdk" class="button special">Get Started</a>
-						</div>
-						
-</header>
-<p>Visit the following pages to explore more about Tizen Studio:</p>
-                        <div class="features">
-                        <div class="feature">
-                        <img src="./media/Tools.png">
-                         <h3><a href="native-tools/index.md">Native Tools</a></h3>	
-                        </div>
-						<div class="feature">
-							<i class="fa fa-copy"></i>
-							<img src="./media/RT.png">
-							<h3><a href= "web-tools/index.md">Web Tools</a></h3>
-						</div>
-						<div class="feature">
-							<i class="fa fa-paper-plane-o"></i>
-							<img src="./media/Csdk.png">
-                            <h3><a href= "configurable-sdk/configurable-sdk.md">Configurable - IoT SDK</a></h3>
-						</div>
-						<div class="feature">
-							<i class="fa fa-save"></i>
-							<img src="./media/Tools.png">
-                            <h3><a href= "extension-sdk/overview.md">Extension SDK</a></h3>
-						</div>
-						<div class="feature">
-							<i class="fa fa-envelope-o"></i>
-							<img src="./media/webtools.png">
-							<h3><a href= "rt-ide/overview.md">Tizen RT IDE</a></h3>
-						</div>
-					</div>
-				</div>
-			</section>
+Visit the following pages to explore more about Tizen Studio: 
+<div class="docs-ui-started">
+  <div class="docs-ui-wearable">
+    <span>
+    <a href="https://developer.tizen.org/development/tizen-studio/download" class="docs-btn-more">Download</a>
+    </span>
+  </div>
+
+  <div class="docs-ui-tv" style="padding-left: 0px;padding-right: 20px;">
+    <span>
+        <a href="native-tools/index.md" class="docs-btn-more">Native Tools</a><br>
+    </span>
+  </div>
+ 
+   <div class="docs-ui-widget">
+    <span>
+    <a href="web-tools/index.md" class="docs-btn-more" style="padding-left: 0px;padding-right: 13px;">Web Tools</a>
+    </span>
+  </div>
+
+<div class="docs-ui-star" style="margin-top: -71px;">
+  <div class="docs-ui-wear">
+    <span>
+    <a href="configurable-sdk/configurable-sdk.md" class="docs-btn-more">Configurable - IoT SDK</a>
+        </span>
+  </div>
+  <div class="docs-ui-get">
+    <span>
+    <a href="extension-sdk/overview.md" class="docs-btn-more">Extension SDK</a><br>
+    </span>
+  </div>
+<div class="docs-ui-w">
+    <span>
+    <a href="rt-ide/overview.md" class="docs-btn-more">Tizen RT IDE</a><br>
+    </span>
+  </div>
+</div>
+</section>
+
