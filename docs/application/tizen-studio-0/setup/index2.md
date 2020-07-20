@@ -4,11 +4,13 @@
 /* Reset */
 
 html, body, div, span, applet, object, iframe, {
-		font-size: inherit;
+		font-size: 70%;
 		vertical-align: baseline;
 	}
 	body {
-		font-size: inherit;
+		line-height: 1;
+	}
+	body {
 		-webkit-text-size-adjust: none;
 	}
 
@@ -81,6 +83,7 @@ html, body, div, span, applet, object, iframe, {
 	.feature {
 		border-color: #e3e3e3;
 	}
+
 </style>
 <section id ="main">
 
@@ -98,15 +101,17 @@ Tizen Studio runs on Windows, Ubuntu, as well as macOS and for installation guid
                         <div class="features">
                         <div class="feature">
                         <img src="./media/win.png">
-                        <a href="setup/windows.md"> <h3>Windows&reg</h3></a>	
+                         <h3><a href="native-tools/index.md">Windows&reg</a></h3>	
                         </div>
 						<div class="feature">
+							<i class="fa fa-copy"></i>
 							<img src="./media/linux1.png">
-							<a href= "setup/ubuntu.md"><h3>Ubuntu&reg</h3></a>
+							<h3><a href= "web-tools/index.md">Ubuntu&reg</a></h3>
 						</div>
 						<div class="feature">
+							<i class="fa fa-paper-plane-o"></i>
 							<img src="./media/apple1.png">
-                            <a href= "setup/mac.md"><h3>macOS&reg</h3></a>
+                            <h3><a href= "configurable-sdk/configurable-sdk.md">macOS&reg</a></h3>
 						</div>
 					</div>
 				</div>
