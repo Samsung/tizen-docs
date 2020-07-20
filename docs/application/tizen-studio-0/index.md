@@ -4,44 +4,9 @@
 /* Reset */
 
 html, body, div, span, applet, object, iframe, {
-		margin:;
-		padding: 0;
-		border: 0;
-		font-size: 100%;
-		font: inherit;
 		vertical-align: baseline;
 	}
 
-	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-		display: block;
-	}
-
-	body {
-		line-height: 1;
-	}
-
-	ol, ul{
-		list-style-type: circle;
-		list-style-position:inside;
-	}
-
-	blockquote, q {
-		quotes: none;
-	}
-
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
-	}
-
-	table {
-		border-collapse: collapse;
-		border-spacing: 0;
-	}
-
-	body {
-		-webkit-text-size-adjust: none;
-	}
 
 /* Box Model */
 
@@ -51,83 +16,7 @@ html, body, div, span, applet, object, iframe, {
 		box-sizing: border-box;
 	}
 
-
-/* Type */
-
-	body {
-		background-color: #fff;
-		color: #444;
-	}
-
-	body, input, select, textarea {
-		font-family: "Raleway", Arial, Helvetica, sans-serif;
-		font-size: 14pt;
-		font-weight: 300;
-		letter-spacing: 0.09em;
-		line-height: 1.65em;
-	}
-		@media screen and (max-width: 1680px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 1280px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 980px) {
-
-			body, input, select, textarea {
-				font-size: 12pt;
-			}
-
-		}
-
-		@media screen and (max-width: 736px) {
-
-			body, input, select, textarea {
-				font-size: 11pt;
-			}
-
-		}
-
-
 /* Button */
-
-	input[type="submit"],
-	input[type="reset"],
-	input[type="button"],
-	button,
-	.button {
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		-ms-appearance: none;
-		appearance: none;
-		-moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		border-radius: 0;
-		border: 0;
-		cursor: pointer;
-		display: inline-block;
-		height: 2.85em;
-		line-height: 2.95em;
-		padding: 0 1.5em;
-		text-align: center;
-		text-decoration: none;
-		text-transform: uppercase;
-		white-space: nowrap;
-	}
-
-
 		input[type="submit"].special,
 		input[type="reset"].special,
 		input[type="button"].special,
@@ -160,29 +49,6 @@ html, body, div, span, applet, object, iframe, {
 			border-bottom-style: double;
 			border-bottom-width: 4px;
 		}
-
-		header h2 + p {
-			font-size: 1.25em;
-			margin-top: -0.5em;
-			line-height: 1.5em;
-		}
-
-		header h3 + p {
-			font-size: 1.1em;
-			line-height: 1.5em;
-		}
-
-		header h4 + p,
-		header h5 + p,
-		header h6 + p {
-			font-size: 0.9em;
-			line-height: 1.5em;
-		}
-
-		header.major {
-			margin-bottom: 4em;
-		}
-
 		@media screen and (max-width: 1280px) {
 
 			header.major {
@@ -285,21 +151,15 @@ html, body, div, span, applet, object, iframe, {
       background-color: #008aee;
       border: none;
       color: white;
-      padding: 10px 20px;
       text-align: center;
-      text-decoration: none;
       display: inline-block;
       font-size: 16px;
-	  cursor: pointer;
-	  border-radius: 0;
-	  border: 0;
 	  cursor: pointer;
 	  display: inline-block;
 	  height: 2.85em;
 	  line-height: 2.95em;
 	  padding: 0 1.5em;
 	  text-align: center;
-	  text-decoration: none;
 	  text-transform: uppercase;
 	  white-space: nowrap;
 	  margin:20px;
@@ -363,17 +223,14 @@ Tizen Studio primarily consists of:
                          <h3><a href="native-tools/index.md">Native Tools</a></h3>	
                         </div>
 						<div class="feature">
-							<i class="fa fa-copy"></i>
 							<img src="./media/RT.png">
 							<h3><a href= "web-tools/index.md">Web Tools</a></h3>
 						</div>
 						<div class="feature">
-							<i class="fa fa-paper-plane-o"></i>
 							<img src="./media/Csdk.png">
                             <h3><a href= "configurable-sdk/configurable-sdk.md">Configurable - IoT SDK</a></h3>
 						</div>
 						<div class="feature">
-							<i class="fa fa-save"></i>
 							<img src="./media/Tools.png">
                             <h3><a href= "extension-sdk/overview.md">Extension SDK</a></h3>
 						</div>
