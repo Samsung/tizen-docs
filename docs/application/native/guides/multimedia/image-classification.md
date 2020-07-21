@@ -108,7 +108,7 @@ To classify an image:
     ```
 
 4. Configure `g_engine_config` with classification model data to classify image.
-   The default engine is configured by the system. You can see the supported engines in Media Vision Inference API reference (for
+   The default engine is configured by the system. You can see the supported engines in Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f) applications).
 		   [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f)
 		   and
 		   [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f).
