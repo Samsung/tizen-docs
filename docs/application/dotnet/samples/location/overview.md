@@ -107,7 +107,7 @@ for TD:
 			<p><img alt="" height="180" src="media/w57reversegeocoding.png" width="180" /></p>
 			</td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ReverseGeocoding" target="_blank"><strong>(W) ReverseGeocoding</strong></a></p>
+                       <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ReverseGeocoding" target="_blank"><strong>(W) ReverseGeocoding</strong></a></p>
 			<p>This sample application demonstrates how to get the address of a selected geographical location using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
 			</td>
 		</tr>
@@ -116,7 +116,7 @@ for TD:
 			<p><img alt="" height="180" src="media/w77routing.png" width="180" /></p>
 			</td>
 			<td>
-                        <p><strong>(W) Routing</strong> [In progress]</p>
+                       <p><strong>(W) Routing</strong> [In progress]</p>
 			<p>This sample application demonstrates how to use <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
 			</td>
 		</tr>
