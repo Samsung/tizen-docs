@@ -54,7 +54,7 @@ To classify an image:
 
 2. Decode the image file and fill the `g_source` handle with the decoded raw data.
 
-   In the following example, `sample.jpg` is the image to be classified and it is in the `<OwnDataPath>` folder.
+   In the following example, `sample.jpg` is the image to be classified, and it is in the `<OwnDataPath>`.
    The `<OwnDataPath>` refers to your own data path:
 
     ```c
@@ -110,7 +110,7 @@ To classify an image:
 4. Configure `g_engine_config` with classification model data to classify the image.
    The default engine is configured by the system. You can see the supported engines in Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html#ga0ffb25d88f8ef1f76702d9189aa6a68f)).
 
-    In the following example, TensorFlow Lite model is used and `data.tflite` and `label.txt` are in `<OwnDataPath>`.
+    In the following example, TensorFlow Lite model is used, and `data.tflite` and `label.txt` are in the `<OwnDataPath>`.
 	Model data is available in open model zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models):
 
     ```c
