@@ -200,6 +200,10 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 0 1em 0;
     text-transform: inherit;
 }
+img {
+  display: inline-block;
+  margin: 10px;
+}
 </style>
 <section id ="main">
 

@@ -81,6 +81,10 @@ html, body, div, span, applet, object, iframe, {
 	.feature {
 		border-color: #e3e3e3;
 	}
+img {
+  display: inline-block;
+  margin: 10px;
+}
 </style>
 <section id ="main">
 
