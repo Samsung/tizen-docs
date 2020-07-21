@@ -36,9 +36,11 @@ To install Intel&reg; HAXM on Windows&reg;, follow these steps:
 
 1. Open the downloaded file and run the installer.
 2. In the User Account Control dialog that appears, accept the UAC prompt, click **Yes**:  
+   
    ![UAC prompt](./media/hardware_uac_prompt.png)
 
 3. To start the installation, click **Install**: 
+   
    ![Start installation](./media/hardware_start_instal.png)  
 
    To access the documentation, click **Intel&reg; HAXM Documentation**.

@@ -103,20 +103,20 @@ Tizen Studio runs on Windows®, Ubuntu®, as well as macOS® and for installatio
                         <div class="feature">
                         <img src="./media/win.png">
                         <div style="width:100%;text-align:center;">
-						<a href="/windows.md"> Windows&reg
+						<a href="../windows.md"> Windows&reg
 						</a>
 						</div>	
                         </div>
 						<div class="feature">
 							<img src="./media/linux1.png">
 							<div style="width:100%;text-align:center;">
-							<a href= "/ubuntu.md">Ubuntu&reg</a>
+							<a href= "./ubuntu.md">Ubuntu&reg</a>
 							</div>
 						</div>
 						<div class="feature">
 							<img src="./media/apple1.png">
                             <div style="width:100%;text-align:center;">
-							<a href= "/mac.md">macOS&reg</a>
+							<a href= "mac.md">macOS&reg</a>
 							</div>
 						</div>
 					</div>
