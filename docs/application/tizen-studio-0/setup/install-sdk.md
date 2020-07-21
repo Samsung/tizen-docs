@@ -1,4 +1,4 @@
-# Tizen Studio
+# Installation
 
 <style>
 /* Reset */
@@ -98,15 +98,22 @@ Tizen Studio runs on Windows, Ubuntu, as well as macOS and for installation guid
                         <div class="features">
                         <div class="feature">
                         <img src="./media/win.png">
-                        <a href="setup/windows.md"> <h3>Windows&reg</h3></a>	
+                        <div style="width:100%;text-align:center;">
+						<a href="../windows.md"> Windows&reg
+						</a>
+						</div>	
                         </div>
 						<div class="feature">
 							<img src="./media/linux1.png">
-							<a href= "setup/ubuntu.md"><h3>Ubuntu&reg</h3></a>
+							<div style="width:100%;text-align:center;">
+							<a href= "../ubuntu.md">Ubuntu&reg</a>
+							</div>
 						</div>
 						<div class="feature">
 							<img src="./media/apple1.png">
-                            <a href= "setup/mac.md"><h3>macOS&reg</h3></a>
+                            <div style="width:100%;text-align:center;">
+							<a href= "../mac.md">macOS&reg</a>
+							</div>
 						</div>
 					</div>
 				</div>

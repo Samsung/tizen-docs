@@ -191,6 +191,15 @@ a:active {
   color: y#008aee;
   background-color: transparent;
 }
+h1, h2, h3, h4, h5, h6 {
+    color: ;
+	font-weight: ;
+	font-size: 1rem;
+	
+    line-height: 5em;
+    margin: 0 0 1em 0;
+    text-transform: inherit;
+}
 </style>
 <section id ="main">
 
@@ -220,24 +229,34 @@ Tizen Studio primarily consists of:
                         <div class="features">
                         <div class="feature">
                         <img src="./media/Tools.png">
-                         <h3><a href="native-tools/index.md">Native Tools</a></h3>	
+                         <div style="width:100%;text-align:center;">
+						 <a href="native-tools/index.md">
+						 Native Tools</a>
                         </div>
+						</div>
 						<div class="feature">
 							<img src="./media/RT.png">
-							<h3><a href= "web-tools/index.md">Web Tools</a></h3>
+							<div style="width:100%;text-align:center;">
+							<a href= "web-tools/index.md">Web Tools</a>
+							</div>
 						</div>
 						<div class="feature">
 							<img src="./media/Csdk.png">
-                            <h3><a href= "configurable-sdk/configurable-sdk.md">Configurable - IoT SDK</a></h3>
+                            <div style="width:100%;text-align:center;">
+							<a href= "configurable-sdk/configurable-sdk.md">Configurable - IoT SDK</a></div>
 						</div>
 						<div class="feature">
-							<img src="./media/Tools.png">
-                            <h3><a href= "extension-sdk/overview.md">Extension SDK</a></h3>
+							<img src="./media/SDK.png">
+                            <div style="width:100%;text-align:center;">
+							<a href= "extension-sdk/overview.md">Extension SDK</a>
+							</div>
 						</div>
 						<div class="feature">
 							<i class="fa fa-envelope-o"></i>
 							<img src="./media/webtools.png">
-							<h3><a href= "rt-ide/overview.md">Tizen RT IDE</a></h3>
+							<div style="width:100%;text-align:center;">
+							<a href= "rt-ide/overview.md">Tizen RT IDE</a>
+							</div>
 						</div>
 					</div>
 				</div>
