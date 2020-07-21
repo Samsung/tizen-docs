@@ -43,7 +43,7 @@ html, body, div, span, applet, object, iframe, {
 	}
 
 	.feature {
-		padding: 2em 2em 0.1em 2em;
+		padding: 1em 1em 1em 1em;
 		border-style: solid;
 		border-width: 1px;
 		margin-left: -1px;
@@ -83,7 +83,7 @@ html, body, div, span, applet, object, iframe, {
 	}
 img {
   display: inline-block;
-  margin: 10px;
+  margin: 25px;
 }
 </style>
 <section id ="main">

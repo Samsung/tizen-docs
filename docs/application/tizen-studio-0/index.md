@@ -247,7 +247,7 @@ Tizen Studio primarily consists of:
 						<div class="feature">
 							<img src="./media/Csdk.png">
                             <div style="width:100%;text-align:center;">
-							<a href= "configurable-sdk/configurable-sdk.md">Configurable - IoT SDK</a></div>
+							<a href= "configurable-sdk/configurable-sdk.md">Configurable-IoT SDK</a></div>
 						</div>
 						<div class="feature">
 							<img src="./media/SDK.png">
