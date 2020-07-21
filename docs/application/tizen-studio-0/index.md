@@ -207,7 +207,7 @@ img {
 </style>
 <section id ="main">
 
-Tizen Studio is an official integrated development environment (IDE) for developing Tizen apps. This environment is built over Eclipse, it presents a unified environment where you can write, edit, debug, build, and publish your app. Tizen Studio runs on Windows®, Ubuntu, and macOS.
+Tizen Studio is an official Integrated Development Environment (IDE) for developing Tizen apps. This environment is built over Eclipse, it presents a unified environment where you can write, edit, debug, build, and publish your app. Tizen Studio runs on Windows®, Ubuntu®, and macOS®.
 
 Tizen Studio primarily consists of: 
 
@@ -224,7 +224,7 @@ Tizen Studio primarily consists of:
 			</header>
 
 <div id="buttonzone">
-							<a href="https://developer.tizen.org/development/tizen-studio/download" class="button special">Download</i></a>
+							<a href="https://developer.tizen.org/development/tizen-studio/download" class="button special">Download</a>
 							<a href="./setup/install-sdk" class="button special">Get Started</a>
 						</div>
 						
