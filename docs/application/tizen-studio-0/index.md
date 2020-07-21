@@ -191,6 +191,15 @@ a:active {
   color: y#008aee;
   background-color: transparent;
 }
+h1, h2, h3, h4, h5, h6 {
+    color: ;
+	font-weight: ;
+	font-size: 1rem;
+	
+    line-height: 5em;
+    margin: 0 0 1em 0;
+    text-transform: inherit;
+}
 </style>
 <section id ="main">
 
@@ -220,19 +229,19 @@ Tizen Studio primarily consists of:
                         <div class="features">
                         <div class="feature">
                         <img src="./media/Tools.png">
-                         <h3><a href="native-tools/index.md">Native Tools</a></h3>	
+                         <a href="native-tools/index.md"><h3>Native Tools</h3></a>
                         </div>
 						<div class="feature">
 							<img src="./media/RT.png">
-							<h3><a href= "web-tools/index.md">Web Tools</a></h3>
+							<a href= "web-tools/index.md"><h3>Web Tools</h3></a>
 						</div>
 						<div class="feature">
 							<img src="./media/Csdk.png">
-                            <h3><a href= "configurable-sdk/configurable-sdk.md">Configurable - IoT SDK</a></h3>
+                            <a href= "configurable-sdk/configurable-sdk.md"><h3>Configurable - IoT SDK<h3></a>
 						</div>
 						<div class="feature">
-							<img src="./media/Tools.png">
-                            <h3><a href= "extension-sdk/overview.md">Extension SDK</a></h3>
+							<img src="./media/SDK.png">
+                            <a href= "extension-sdk/overview.md"><h3>Extension SDK</h3></a>
 						</div>
 						<div class="feature">
 							<i class="fa fa-envelope-o"></i>
