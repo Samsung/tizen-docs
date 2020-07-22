@@ -1,10 +1,8 @@
-# InMobi Tizen Ad SDK Programing Guide
+# InMobi Tizen Ad SDK
 
-## InMobi Tizen Ad SDK
+This page explains about how you can use InMobi SDK in your applications.The InMobi Tizen Ad SDK allows you to monetize your Tizen application with a wide range of advertisement formats. From banner ads to full-screen interstitial ads, you can deliver ads from the InMobi network for a better user experience.
 
-The InMobi Tizen Ad SDK allows you to monetize your Tizen application with a wide range of advertisement formats. From banner ads to full-screen interstitial ads, you can deliver ads from the InMobi network for a better user experience.
-
-This site introduces InMobi Tizen Ads for Tizen Web applications, native applications, and Unity games.
+The InMobi Tizen Ads can be used for the following: 
 
 - **Tizen Web application**: Tizen Web applications use the Tizen Web Framework to interact with the Web subsystems. The application is built using Web languages, such as HTML5, CSS, and JavaScript.
 - **Tizen Native application**: Tizen Native application uses EFL (Enlightenment Foundation Libraries) for the application UI. The application is developed using C and it can access advanced device-specific features.
@@ -18,7 +16,7 @@ InMobi Tizen Ads allows application sellers to monetize Tizen applications and g
 
 You can [**download the attached zip file**](media/tizen_inmobi_sdk_0831.zip) which has **inmobi-tizen-adsdk_1.0.3.zip, api references for native, unity, and web adlibraries, 3 sample apps, and Unityadlib.unitypackage** at the end of this page.
 
-## Getting Started with InMobi Tizen Ads
+## Get Started with InMobi Tizen Ads
 
 To start off, please follow the below steps to create account and register your app with Inmobi.
 
@@ -39,7 +37,7 @@ Step 4 - Once the details are approved, the InMobi team will get back to you wit
 
 Step 5 - Proceed with technical integration as mentioned in the sections below
 
-## Adding the SDK to Your Project
+## Add SDK to Project
 
 To add the SDK to your project:
 
