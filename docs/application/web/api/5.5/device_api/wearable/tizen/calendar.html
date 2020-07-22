@@ -19,7 +19,7 @@ Separate calendars can be implemented for group related events or tasks. For exa
 The Internet Calendaring and Scheduling Core Object Specification (iCalendar), defines a format for exchanging event items. Mapping to specified event/task attributes in this API is as per this specification. For details, see <a href="http://tools.ietf.org/html/rfc5545">RFC 5545</a>.
         </p>
         <p>
-This API provides functionality to read, create, delete, and update items in specific calendars. Calendars can be obtained using the <em>getCalendars() </em>method, which returns an array of Calendar objects.
+This API provides functionality to read, create, delete, and update items in specific calendars. Calendars can be obtained using the <em>getCalendars()</em> method, which returns an array of Calendar objects.
         </p>
         <p>
 For more information on the Calendar features, see <a href="/application/web/guides/personal/calendar">Calendar Guide</a>.
@@ -265,7 +265,7 @@ For more information on the Calendar features, see <a href="/application/web/gui
 <div class="typedef" id="CalendarItemId">
 <a class="backward-compatibility-anchor" name="::Calendar::CalendarItemId"></a><h3>1.3. CalendarItemId</h3>
 <div class="brief">
- The calendar item identifier, which can either be a <em>CalendarEventId </em>or a <em>CalendarTaskId</em>.
+ The calendar item identifier, which can either be a <em>CalendarEventId</em> or a <em>CalendarTaskId</em>.
           </div>
 <pre class="webidl prettyprint">  typedef (<a href="#CalendarEventId">CalendarEventId</a> or <a href="#CalendarTaskId">CalendarTaskId</a>) CalendarItemId;</pre>
 <p><span class="version">Since: </span>
@@ -593,7 +593,7 @@ CANCELLED -  if the task has been cancelled            </li>
 <div class="interface" id="CalendarManagerObject">
 <a class="backward-compatibility-anchor" name="::Calendar::CalendarManagerObject"></a><h3>2.1. CalendarManagerObject</h3>
 <div class="brief">
- The CalendarManagerObject interface gives access to the Calendar API from the <em>tizen.calendar </em>object.
+ The CalendarManagerObject interface gives access to the Calendar API from the <em>tizen.calendar</em> object.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface CalendarManagerObject {
     readonly attribute <a href="#CalendarManager">CalendarManager</a> calendar;
@@ -649,7 +649,7 @@ Once a calendar object is obtained, it is possible to add, remove, or update the
             </p>
 <div class="description">
             <p>
-If the operation completes successfully, the <em>successCallback() </em>must be invoked with all the calendars found and available. The first calendar in the list is always the default calendar.
+If the operation completes successfully, the <em>successCallback()</em> must be invoked with all the calendars found and available. The first calendar in the list is always the default calendar.
             </p>
             <p>
 If no Calendar object is available, the <em>successCallback()</em> is invoked with an empty array.
@@ -1207,15 +1207,15 @@ This interface offers the following methods to manage events in a calendar:
           </p>
           <ul>
             <li>
- Finding items using a key-value filter.            </li>
+Finding items using a key-value filter.            </li>
             <li>
- Adding items to a specific calendar using <em>add() </em>/ <em>addBatch() </em>methods.            </li>
+Adding items to a specific calendar using <em>add()</em> / <em>addBatch()</em> methods.            </li>
             <li>
- Updating existing items using <em>update() </em>/ <em>updateBatch()</em> methods.            </li>
+Updating existing items using <em>update()</em> / <em>updateBatch()</em> methods.            </li>
             <li>
- Deleting existing items using <em>remove()</em> / <em>removeBatch() </em>methods.            </li>
+Deleting existing items using <em>remove()</em> / <em>removeBatch()</em> methods.            </li>
             <li>
- Tracking calendar changes using <em>addChangeListener()</em> / <em>removeChangeListener() </em>methods.            </li>
+Tracking calendar changes using <em>addChangeListener()</em> / <em>removeChangeListener()</em> methods.            </li>
           </ul>
          </div>
 <div class="example">
@@ -1318,7 +1318,7 @@ console.log("The calendar name is " + calendar.name);
 <p><span class="return">Return value:</span></p>
 <ul>
 <span class="return">CalendarItem:</span>
- The matching <em>CalendarItem </em>object.
+ The matching <em>CalendarItem</em> object.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -1373,10 +1373,10 @@ catch (err)
             </p>
 <div class="description">
             <p>
-If the item is successfully inserted in the calendar, the <em>CalendarItem </em>will have its identifier (id attribute) set when the method returns.
+If the item is successfully inserted in the calendar, the <em>CalendarItem</em> will have its identifier (id attribute) set when the method returns.
             </p>
             <p>
-To update an existing item, call the <em>update() </em>method instead. If you wish to add a copy of an existing <em>CalendarItem </em>object, call <em>CalendarItem.clone()</em> method first and pass the clone to the <em>add()</em> method.
+To update an existing item, call the <em>update()</em> method instead. If you wish to add a copy of an existing <em>CalendarItem</em> object, call <em>CalendarItem.clone()</em> method first and pass the clone to the <em>add()</em> method.
             </p>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1447,7 +1447,7 @@ console.log("Event added with uid " + ev.id.uid);
             </p>
 <div class="description">
             <p>
-If all the items are successfully added to the calendar, the success callback will be invoked, passing the list of <em>CalendarItem </em>objects that were added, with their identifier set (id attribute).
+If all the items are successfully added to the calendar, the success callback will be invoked, passing the list of <em>CalendarItem</em> objects that were added, with their identifier set (id attribute).
             </p>
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
@@ -1456,10 +1456,10 @@ The <em>ErrorCallback</em> method is launched with these error types:
               <li>
 InvalidValuesError - if any of the input parameters contain an invalid value, the item has any invalid value or the calendar has some restrictions that cause the attempted insertion of the calendar items to fail (for example, limitations in the size of text attributes).              </li>
               <li>
-UnknownError - if any other error occurs.               </li>
+UnknownError - if any other error occurs.              </li>
             </ul>
             <p>
-If you wish to update an existing item, call the <em>update() </em>method instead. If you wish to add a copy of an existing <em>CalendarItem </em>object, call CalendarItem.clone() method first and pass the clone to the add() method.
+If you wish to update an existing item, call the <em>update()</em> method instead. If you wish to add a copy of an existing <em>CalendarItem</em> object, call CalendarItem.clone() method first and pass the clone to the add() method.
             </p>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1651,11 +1651,11 @@ UnknownError - if any other error occurs.              </li>
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when the <em>updateEvents() </em>request succeeds.
+ Callback method that is invoked when the <em>updateEvents()</em> request succeeds.
                 </li>
           <li class="param">
 <span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Callback method that is invoked when the <em>updateEvents() </em>request fails.
+ Callback method that is invoked when the <em>updateEvents()</em> request fails.
                 </li>
           <li class="param">
 <span class="name">updateAllInstances</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1805,7 +1805,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
-NotFoundError - if an identifier in the <em>ids </em>parameter does not correspond to the id attribute of an item in the calendar.              </li>
+NotFoundError - if an identifier in the <em>ids</em> parameter does not correspond to the id attribute of an item in the calendar.              </li>
               <li>
 InvalidValuesError - if any of the input parameters contain an invalid value.              </li>
               <li>
@@ -1826,7 +1826,7 @@ UnknownError - if any other error occurs.              </li>
 <ul>
           <li class="param">
 <span class="name">ids</span>:
- The identifiers (<em>id </em>attribute) of the items to delete.
+ The identifiers (<em>id</em> attribute) of the items to delete.
                 </li>
           <li class="param">
 <span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -1888,7 +1888,7 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback);
 </dt>
 <dd>
 <div class="brief">
- Finds and fetches an array of <em>CalendarItem </em>objects for items stored in the calendar according to the supplied filter if it is valid else it will return all the items stored.
+ Finds and fetches an array of <em>CalendarItem</em> objects for items stored in the calendar according to the supplied filter if it is valid else it will return all the items stored.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void find(<a href="#CalendarItemArraySuccessCallback">CalendarItemArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#AbstractFilter">AbstractFilter</a>? filter,
           optional <a href="tizen.html#SortMode">SortMode</a>? sortMode);</pre></div>
@@ -1897,9 +1897,9 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback);
             </p>
 <div class="description">
             <p>
-If the filter is passed and contains valid values, only those values in the calendar that match the filter criteria as specified in the <em>AbstractFilter </em>interface will be returned in the <em>successCallback()</em>.
-If no filter is passed, or the filter contains any invalid value which is <var>null </var>or undefined, then the implementation must return the full list of items in the <em>successCallback()</em>.
-If no items are available in the calendar (it is empty) or no item matches the filter criteria, the <em>successCallback() </em>will be invoked with an empty array.
+If the filter is passed and contains valid values, only those values in the calendar that match the filter criteria as specified in the <em>AbstractFilter</em> interface will be returned in the <em>successCallback()</em>.
+If no filter is passed, or the filter contains any invalid value which is <var>null</var> or undefined, then the implementation must return the full list of items in the <em>successCallback()</em>.
+If no items are available in the calendar (it is empty) or no item matches the filter criteria, the <em>successCallback()</em> will be invoked with an empty array.
             </p>
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
@@ -1939,7 +1939,7 @@ If no recurrence ID is given, the filter will match both the parent event and al
                 </li>
           <li class="param">
 <span class="name">filter</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- Supplied data used to filter the results of the <em>find() </em>method.
+ Supplied data used to filter the results of the <em>find()</em> method.
                 </li>
           <li class="param">
 <span class="name">sortMode</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
@@ -2085,8 +2085,8 @@ watcherId = calendar.addChangeListener(watcher);
             </p>
 <div class="description">
             <p>
-If the <em>watchId </em>argument is valid and corresponds to a subscription already in place, the watch process must immediately stop and no further callbacks must be invoked.
-If the <em>watchId </em>argument is not valid or does not correspond to a valid subscription, the method should return without any further action.
+If the <em>watchId</em> argument is valid and corresponds to a subscription already in place, the watch process must immediately stop and no further callbacks must be invoked.
+If the <em>watchId</em> argument is not valid or does not correspond to a valid subscription, the method should return without any further action.
             </p>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2196,7 +2196,7 @@ These attributes are shared by both calendar events and tasks.
           </p>
 <div class="description">
           <p>
-It also provides an interface for specifying task attributes upon task creation (in the <em>CalendarTask </em>constructor).
+It also provides an interface for specifying task attributes upon task creation (in the <em>CalendarTask</em> constructor).
           </p>
           <p>
 All the attributes are optional and are undefined by default.
@@ -2219,7 +2219,7 @@ All the attributes are optional and are undefined by default.
           </p>
 <div class="description">
           <p>
-Provides an interface for specifying event attributes upon event creation (in the <em>CalendarEvent </em>constructor).
+Provides an interface for specifying event attributes upon event creation (in the <em>CalendarEvent</em> constructor).
           </p>
           <p>
 All the attributes are optional and are undefined by default.
@@ -2351,7 +2351,7 @@ The default value is an empty string.
             </div>
 <div class="description">
             <p>
-If set to <var>true</var>, then the time and time zone of the <em>startDate </em>are to be ignored and are not guaranteed to be stored in the database. An all-day event always covers the whole day, regardless of which time zone it was defined in and what the current time zone is. The duration must be <var>n*60*24 </var>minutes for an event lasting <var>n</var> days.
+If set to <var>true</var>, then the time and time zone of the <em>startDate</em> are to be ignored and are not guaranteed to be stored in the database. An all-day event always covers the whole day, regardless of which time zone it was defined in and what the current time zone is. The duration must be <var>n*60*24</var> minutes for an event lasting <var>n</var> days.
             </p>
             <p>
 The default value for this attribute is <var>false</var>.
@@ -2506,7 +2506,7 @@ The default value for this attribute is <var>NONE</var>.
             </div>
 <div class="description">
             <p>
-The default value for this attribute is <var>NONE </var>priority.
+The default value for this attribute is <var>NONE</var> priority.
             </p>
             <p>
 If the native item database supports another priority schema (such as a range from 1 to 9), the implementation must convert those values to the supported values. For instance, RFC 5545 suggests the following mapping for a range from 1 to 9:
@@ -2674,7 +2674,7 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback, filter);
 </dt>
 <dd>
 <div class="brief">
- Clones the <em>CalendarItem </em>object, detached from any calendar.
+ Clones the <em>CalendarItem</em> object, detached from any calendar.
             </div>
 <div class="synopsis"><pre class="signature prettyprint"><a href="#CalendarItem">CalendarItem</a> clone();</pre></div>
 <p><span class="version">Since: </span>
@@ -2682,7 +2682,7 @@ myCalendar.find(eventSearchSuccessCallback, errorCallback, filter);
             </p>
 <div class="description">
             <p>
-The <em>CalendarItem </em>object returned by the <em>clone()</em> method will have its identifier set to <var>null </var>and will be detached from any calendar.
+The <em>CalendarItem</em> object returned by the <em>clone()</em> method will have its identifier set to <var>null</var> and will be detached from any calendar.
             </p>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2695,7 +2695,7 @@ The <em>CalendarItem </em>object returned by the <em>clone()</em> method will ha
 <p><span class="return">Return value:</span></p>
 <ul>
 <span class="return">CalendarItem:</span>
- New clone of the <em>CalendarItem </em>object.
+ New clone of the <em>CalendarItem</em> object.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -2737,7 +2737,7 @@ calendar.add(tizenseminar);
 <div class="interface" id="CalendarTask">
 <a class="backward-compatibility-anchor" name="::Calendar::CalendarTask"></a><h3>2.8. CalendarTask</h3>
 <div class="brief">
- This interface implements the <em>CalendarTask </em>object.
+ This interface implements the <em>CalendarTask</em> object.
           </div>
 <pre class="webidl prettyprint">  [Constructor(optional <a href="#CalendarTaskInit">CalendarTaskInit</a>? taskInitDict),
    Constructor(DOMString stringRepresentation, <a href="#CalendarTextFormat">CalendarTextFormat</a> format)]
@@ -2859,7 +2859,7 @@ The default value is <var>null</var>. If no value is provided, the task is not c
             </div>
 <div class="description">
             <p>
-The value is a positive integer between <var>0 </var>and <var>100</var>. A value of <var>0 </var>indicates the task has not been started yet. A value of <var>100 </var>indicates that the task has been completed.
+The value is a positive integer between <var>0</var> and <var>100</var>. A value of <var>0</var> indicates the task has not been started yet. A value of <var>100</var> indicates that the task has been completed.
             </p>
             <p>
 Integer values in between indicate the percent partially complete.
@@ -2883,7 +2883,7 @@ The default value is <var>0</var>, implies that the task has not been started.
 <div class="interface" id="CalendarEvent">
 <a class="backward-compatibility-anchor" name="::Calendar::CalendarEvent"></a><h3>2.9. CalendarEvent</h3>
 <div class="brief">
- This interface implements the <em>calendarEvent </em>object.
+ This interface implements the <em>calendarEvent</em> object.
           </div>
 <pre class="webidl prettyprint">  [Constructor(optional <a href="#CalendarEventInit">CalendarEventInit</a>? eventInitDict),
    Constructor(DOMString stringRepresentation, <a href="#CalendarTextFormat">CalendarTextFormat</a> format)]
@@ -3051,7 +3051,7 @@ event.recurrenceRule = rule;
 This method takes into consideration all the parameters of the event recurrence rule to generate the instances occurring in a given time interval.
             </p>
             <p>
-The call involves retrieving from the database detached instances of an event to replace their corresponding virtual instances in the returned list. The client can then use <em>CalendarEvent.isDetached </em>attribute to identify detached instances. If the event is not saved to a calendar yet, only virtual instances will be returned.
+The call involves retrieving from the database detached instances of an event to replace their corresponding virtual instances in the returned list. The client can then use <em>CalendarEvent.isDetached</em> attribute to identify detached instances. If the event is not saved to a calendar yet, only virtual instances will be returned.
             </p>
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
@@ -3156,14 +3156,14 @@ if (event.recurrenceRule != null)
           </p>
 <div class="description">
           <p>
-See <em>CalendarAttendee </em>interface for more information about the members.
+See <em>CalendarAttendee</em> interface for more information about the members.
           </p>
          </div>
 </div>
 <div class="interface" id="CalendarAttendee">
 <a class="backward-compatibility-anchor" name="::Calendar::CalendarAttendee"></a><h3>2.11. CalendarAttendee</h3>
 <div class="brief">
- The CalendarAttendee interface implements the <em>CalendarAttendee </em>object that contains information about an event attendee.
+ The CalendarAttendee interface implements the <em>CalendarAttendee</em> object that contains information about an event attendee.
           </div>
 <pre class="webidl prettyprint">  [Constructor(DOMString uri, optional <a href="#CalendarAttendeeInit">CalendarAttendeeInit</a>? attendeeInitDict)]
   interface CalendarAttendee {
@@ -3318,7 +3318,7 @@ The default value is <var>INDIVIDUAL</var>.
             </div>
 <div class="description">
             <p>
-If the contact is not resolved, this attribute will be set to<var> null</var>.
+If the contact is not resolved, this attribute will be set to <var>null</var>.
 For more information, see the <a href="contact.html">Contact API</a>.
             </p>
            </div>
@@ -3347,14 +3347,14 @@ For more information, see the <a href="contact.html">Contact API</a>.
           </p>
 <div class="description">
           <p>
-For more information about the members, see <em>CalendarRecurrenceRule </em>interface.
+For more information about the members, see <em>CalendarRecurrenceRule</em> interface.
           </p>
          </div>
 </div>
 <div class="interface" id="CalendarRecurrenceRule">
 <a class="backward-compatibility-anchor" name="::Calendar::CalendarRecurrenceRule"></a><h3>2.13. CalendarRecurrenceRule</h3>
 <div class="brief">
- The CalendarRecurrenceRule interface implements the<em> CalendarRecurrenceRule </em>object, which contains information about the recurrence of an event.
+ The CalendarRecurrenceRule interface implements the <em>CalendarRecurrenceRule</em> object, which contains information about the recurrence of an event.
 (See RFC 5545, Section 3.3.10.)
           </div>
 <pre class="webidl prettyprint">  [Constructor(<a href="#RecurrenceRuleFrequency">RecurrenceRuleFrequency</a> frequency, optional <a href="#CalendarRecurrenceRuleInit">CalendarRecurrenceRuleInit</a>? ruleInitDict)]
@@ -3407,13 +3407,13 @@ This property corresponds to <em>FREQ</em> in RFC 5545.
             </div>
 <div class="description">
             <p>
-This attribute is linked to the <em>frequency </em>attribute and for an interval of <var>n</var>, the event will recur every <var>n </var>of recurrence attribute.
+This attribute is linked to the <em>frequency</em> attribute and for an interval of <var>n</var>, the event will recur every <var>n</var> of recurrence attribute.
             </p>
             <p>
-For example, if the interval attribute is set to <var>2 </var>and <em>frequency </em>attribute is set to <var>WEEKLY</var>, then the event will recur every 2 weeks.
+For example, if the interval attribute is set to <var>2</var> and <em>frequency</em> attribute is set to <var>WEEKLY</var>, then the event will recur every 2 weeks.
             </p>
             <p>
-The default interval value is <var>1</var>, that is, every day if the <em>CalendarRecurrenceRule frequency</em> attribute is DAILY, every week if frequency is <var>WEEKLY</var>, every month if frequency is <var>MONTHLY </var>or every year if frequency is <var>YEARLY</var>.
+The default interval value is <var>1</var>, that is, every day if the <em>CalendarRecurrenceRule frequency</em> attribute is DAILY, every week if frequency is <var>WEEKLY</var>, every month if frequency is <var>MONTHLY</var> or every year if frequency is <var>YEARLY</var>.
             </p>
             <p>
 This property corresponds to <em>INTERVAL</em> in RFC 5545.
@@ -3425,11 +3425,11 @@ This property corresponds to <em>INTERVAL</em> in RFC 5545.
 </li>
 <li class="attribute" id="CalendarRecurrenceRule::untilDate">
 <span class="attrName"><span class="type">TZDate </span><span class="name">untilDate</span><span class="optional"> [nullable]</span></span><div class="brief">
- The end date of a recurrence duration of an event using either an end date (<em>untilDate </em>attribute) or a number of occurrences (<em>occurrenceCount </em>attribute).
+ The end date of a recurrence duration of an event using either an end date (<em>untilDate</em> attribute) or a number of occurrences (<em>occurrenceCount</em> attribute).
             </div>
 <div class="description">
             <p>
-By default, this attribute is set to <var>null</var>, meaning that the event recurs infinitely, unless <em>occurrenceCount </em>is set.
+By default, this attribute is set to <var>null</var>, meaning that the event recurs infinitely, unless <em>occurrenceCount</em> is set.
             </p>
             <p>
 This attribute is precise to the second. Milliseconds are ignored.
@@ -3451,10 +3451,10 @@ This property corresponds to <em>UNTIL</em> in RFC 5545.
             </div>
 <div class="description">
             <p>
-The recurrence duration of an event can be defined using either an end date (<em>untilDate </em>attribute) or a number of occurrences (<em>occurrenceCount </em>attribute).
+The recurrence duration of an event can be defined using either an end date (<em>untilDate</em> attribute) or a number of occurrences (<em>occurrenceCount</em> attribute).
             </p>
             <p>
-By default, this attribute is set to <var>-1</var>, meaning that the event recurs infinitely, unless <em>untilDate </em>is set.
+By default, this attribute is set to <var>-1</var>, meaning that the event recurs infinitely, unless <em>untilDate</em> is set.
             </p>
             <p>
 This property corresponds to <em>COUNT</em> in RFC 5545.
@@ -3494,7 +3494,7 @@ By default, this attribute is set to an empty array.
             </div>
 <div class="description">
             <p>
-For example, a yearly recurrence rule that has a <em>daysOfTheWeek </em>value that specifies Monday through Friday, and a <em>setPositions </em>array containing <var>2 </var>and <var>-1</var>, occurs only on the second weekday and last weekday of every year.
+For example, a yearly recurrence rule that has a <em>daysOfTheWeek</em> value that specifies Monday through Friday, and a <em>setPositions</em> array containing <var>2</var> and <var>-1</var>, occurs only on the second weekday and last weekday of every year.
             </p>
             <p>
 Values can be from 1 to 366 or -366 to -1.
@@ -3587,7 +3587,7 @@ This value is assigned by the platform when the <em>add()</em> method is success
 </li>
 <li class="attribute" id="CalendarEventId::rid">
 <span class="attrName"><span class="type">DOMString </span><span class="name">rid</span><span class="optional"> [nullable]</span></span><div class="brief">
- The recurrence ID of a <em>CalendarEvent </em>instance.
+ The recurrence ID of a <em>CalendarEvent</em> instance.
             </div>
 <div class="description">
             <p>
@@ -3654,7 +3654,7 @@ var alarm2 = new tizen.CalendarAlarm(new tizen.TimeDuration(1, "MINS"), "SOUND")
             </div>
 <div class="description">
             <p>
-<em>absoluteDate </em>and <em>before </em>are mutually exclusive.
+<em>absoluteDate</em> and <em>before</em> are mutually exclusive.
             </p>
             <p>
 This attribute is precise to the second. Milliseconds are ignored.
@@ -3673,7 +3673,7 @@ This attribute is precise to the second. Milliseconds are ignored.
 The duration should be positive.
             </p>
             <p>
-<em>absoluteDate </em>and <em>before </em>are mutually exclusive.
+<em>absoluteDate</em> and <em>before</em> are mutually exclusive.
             </p>
             <p>
 This attribute is precise to the second. Milliseconds are ignored.
@@ -3740,7 +3740,7 @@ The default value is an empty string.
 <ul>
           <li class="param">
 <span class="name">events</span>:
- Array of <em>CalendarEvent </em>objects.
+ Array of <em>CalendarEvent</em> objects.
                 </li>
         </ul>
 </div>
@@ -3804,7 +3804,7 @@ if (event.recurrenceRule != null)
 <ul>
           <li class="param">
 <span class="name">items</span>:
- Array of <em>CalendarItem </em>objects.
+ Array of <em>CalendarItem</em> objects.
                 </li>
         </ul>
 </div>
@@ -3859,7 +3859,7 @@ calendar.addBatch([ev], calendarItemArraySuccessCB, errorCallback);
 </dt>
 <dd>
 <div class="brief">
- Called when the array of <em>Calendar </em>objects is retrieved successfully.
+ Called when the array of <em>Calendar</em> objects is retrieved successfully.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#Calendar">Calendar</a>[] calendars);</pre></div>
 <p><span class="version">Since: </span>
@@ -3870,7 +3870,7 @@ calendar.addBatch([ev], calendarItemArraySuccessCB, errorCallback);
 <ul>
           <li class="param">
 <span class="name">calendars</span>:
- Array of <em>Calendar </em>objects.
+ Array of <em>Calendar</em> objects.
                 </li>
         </ul>
 </div>

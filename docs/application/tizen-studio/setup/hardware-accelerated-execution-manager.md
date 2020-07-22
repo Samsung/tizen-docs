@@ -10,12 +10,12 @@ Hardware requirements:
 - At least 1 GB of available memory (2 GB or more is preferred)
 
 > **Important**   
-> Intel&reg; HAXM can only be used on systems with an Intel processor which supports the Intel VT.
+> Intel&reg; HAXM can only be used on systems with an Intel processor that supports the Intel VT.
 
 <a name="on_Windows"></a>
 ## Installing Intel&reg; HAXM on Windows
 
-Supported Windows versions: 10/8.1/8/7 (32/64-bit), Vista (32/64-bit), XP SP2 or higher (32-bit only)
+Supported Windows versions: 10/8.1/8/7 (32/64-bit)
 
 **HAXM is automatically installed as part of Tizen Studio**. If you want to install the HAXM separately, visit [http://download.tizen.org/sdk/haxm/7.0.0/win/](http://download.tizen.org/sdk/haxm/7.0.0/win/IntelHAXM_7.0.0.exe) and download the Windows installer package.
 

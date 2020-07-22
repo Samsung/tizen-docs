@@ -4,6 +4,7 @@
 ## [Wearable](/application/get-started/wearable.md)
 ## [TV](/application/get-started/tv.md)
 ## [Mobile](/application/get-started/mobile.md)
+## [IoT](/application/get-started/iot.md)
 ## [Tizen Applications](/application/get-started/applications.md)
 
 
@@ -55,6 +56,7 @@
 ##### [Overview](/application/dotnet/guides/applications/ui-app.md)
 ##### [Watch Application](/application/dotnet/guides/applications/watch-app.md)
 ##### [Widget Application](/application/dotnet/guides/applications/widget-app.md)
+##### [NUI Widget Application](/application/dotnet/guides/applications/nui-widget-app.md)
 
 ### Application Management
 #### [Overview](/application/dotnet/guides/app-management/overview.md)
@@ -1181,7 +1183,7 @@
 ## Release Notes
 ### [3.7 (Apr 6, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
 ### [3.6 (Dec 10, 2019)](/application/tizen-studio/release-notes/3-6-release-notes.md)
-### [3.5 (Oct 30, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
+### [3.5 (Oct 31, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
 ### [3.3 (Jul 24, 2019)](/application/tizen-studio/release-notes/3-3-release-notes.md)
 ### [3.2 (Mar 18, 2019)](/application/tizen-studio/release-notes/3-2-release-notes.md)
 ### [3.1 (Jan 17, 2019)](/application/tizen-studio/release-notes/3-1-release-notes.md)

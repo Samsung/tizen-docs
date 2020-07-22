@@ -4,9 +4,9 @@ Tizen is a user-interactive and service-oriented open source project that allows
 
 ## Tizen Profiles
 
-Tizen is built to work on a wide variety of platforms with a focus on embedded devices. In order to accommodate the various types of devices, a set of profiles has been defined to make it easier to develop applications for specific purposes and device types. Since Tizen 3.0, there are 3 profile types you can choose from: mobile, wearable, and TV. The mobile profile is designed for smart phones, the wearable profile is designed for smart watches, and the TV profile is designed for smart TVs.
+Tizen is built to work on a wide variety of platforms with a focus on embedded devices. To accommodate various types of devices, a set of profiles has been defined to make it easier to develop applications for specific purposes and different device types. Tizen supports four profile types, which are mobile, wearable, TV, and IoT. The mobile profile is designed for smartphones, the wearable profile is designed for smartwatches, the TV profile is designed for smart TVs, and the IoT profile is designed for IoT-based smart devices.
 
-Both mobile and wearable profiles are supported in native and Web application types. The TV profile is supported in the Web application type only.
+Both mobile and wearable profiles are supported in native, Web, and .NET application types. The TV profile is supported in Web and .NET application types, whereas the IoT profile is supported in native and .NET application types.
 
 **Figure: Applications using the wearable profile**
 
@@ -19,6 +19,10 @@ Both mobile and wearable profiles are supported in native and Web application ty
 **Figure: Applications using the mobile profile**
 
 ![Applications using the mobile profile](media/profile_mobile.png)
+
+**Figure: Applications using the IoT profile**
+
+![Applications using the iot profile](media/profile_iot.png)
 
 <a name="type"></a>
 ## Tizen Application Types
@@ -37,7 +41,7 @@ The Tizen platform supports three primary application types:
 
 -   [Native application](../native/index.md) is developed using C and can access more advanced device-specific features, such as camera, GPS, and accelerometer in addition to more advanced system settings and functionality.
 
-    The native applications use the Native API, which provides all of the memory management and performance benefits that come with building applications for Linux in C. The Native API is extremely helpful, as it includes dozens of API modules that cover a large range of capabilities. It provides numerous interfaces to much of the hardware that is found in modern mobile and wearable devices, and does so in an environment that is tailored for limited resources.
+    The native applications use the Native API, which provides all of the memory management and performance benefits that come with building applications for Linux in C. The Native API is extremely helpful, as it includes dozens of API modules that cover a large range of capabilities. It provides numerous interfaces to much of the hardware that is found in modern mobile, wearable, and IoT devices, and does so in an environment that is tailored for limited resources.
 
 The following figure illustrates the Tizen architecture model supporting the 3 application types.
 

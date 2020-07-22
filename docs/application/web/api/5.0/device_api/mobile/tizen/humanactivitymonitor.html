@@ -397,7 +397,7 @@ The activity accuracy defined by this enumerator are:
           </p>
           <ul>
             <li>
-LOW - Low accuracy             </li>
+LOW - Low accuracy            </li>
             <li>
 MEDIUM - Medium accuracy            </li>
             <li>
@@ -593,7 +593,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError: If the <em>getHumanActivityData()</em> method is called without previously calling the <em>start()</em> method              </li>
+ServiceNotAvailableError: If the <em>getHumanActivityData()</em> method is called without previously calling the <em>start()</em> method              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -690,7 +690,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If the human activity service is not available. For the GPS type, if the GPS function is disabled by the user in the location settings, it is not possible to receive notifications when the GPS value changes.              </li>
+ServiceNotAvailableError - If the human activity service is not available. For the GPS type, if the GPS function is disabled by the user in the location settings, it is not possible to receive notifications when the GPS value changes.              </li>
             </ul>
            </div>
 <div class="description">
@@ -979,7 +979,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
             </p>
             <ul>
               <li>
- AbortError: If the system operation was aborted.              </li>
+AbortError: If the system operation was aborted.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1069,7 +1069,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
             </p>
             <ul>
               <li>
- AbortError: If the system operation was aborted.              </li>
+AbortError: If the system operation was aborted.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1432,7 +1432,7 @@ The <em>ErrorCallback</em> method is launched with this error type:
             </p>
             <ul>
               <li>
- AbortError: If the system operation was aborted.              </li>
+AbortError: If the system operation was aborted.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -2894,7 +2894,7 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
 <div class="interface" id="StressMonitorDataRange">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::StressMonitorDataRange"></a><h3>2.23. StressMonitorDataRange</h3>
 <div class="brief">
- The GestureData interface represents detected gesture information.
+ The StressMonitorDataRange interface represents range information for stress monitoring.
           </div>
 <pre class="webidl prettyprint">  [Constructor(optional DOMString label, optional unsigned long min, optional unsigned long max)]
   interface StressMonitorDataRange {
@@ -3177,7 +3177,7 @@ To guarantee that the barometer (pressure) sensor application runs on a device w
 <div class="def-api-feature">
 <p><div class="description">
             <p>
-To guarantee that the stress monitor vector sensor application runs on a device with a stress monitor, declare the following feature requirements in the config file:
+To guarantee that the stress monitor vector sensor application runs on a device with a stress monitor, declare the below feature requirements in the config file.
             </p>
            </div></p>
 <li class="feature">http://tizen.org/feature/sensor.stress_monitor</li>

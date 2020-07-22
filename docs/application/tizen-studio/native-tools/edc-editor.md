@@ -142,11 +142,11 @@ The EDC Editor provides useful tool functions through the tool buttons available
 | ![Wireframes](./media/edceditor_wireframes.png) | Display wireframes to identify the parts boundaries. | **Ctrl + W**   |
 | ![Invert](./media/edceditor_invert.png) | Invert the layout horizontally and review the designed layout in the RTL, LTR settings. | **Ctrl + M**   |
 | ![Rect](./media/edceditor_rect.png)    | Add a Rect part to the preview.          | -              |
-| ![Text](./media/edceditor_text.png)    | Add a Text part to the preview.          |                |
-| ![Add image](./media/edceditor_image.png) | Add an Image part to the preview.        |                |
-| ![Swallow](./media/edceditor_swallow.png) | Add a Swallow part to the preview.       |                |
-| ![Textbox](./media/edceditor_textbox.png) | Add a Textblock part to the preview.     |                |
-| ![Spacer](./media/edceditor_spacer.png) | Add a Spacer part to the preview.        |                |
+| ![Text](./media/edceditor_text.png)    | Add a Text part to the preview.          | -              |
+| ![Add image](./media/edceditor_image.png) | Add an Image part to the preview.        |-               |
+| ![Swallow](./media/edceditor_swallow.png) | Add a Swallow part to the preview.       | -              |
+| ![Textbox](./media/edceditor_textbox.png) | Add a Textblock part to the preview.     | -              |
+| ![Spacer](./media/edceditor_spacer.png) | Add a Spacer part to the preview.        | -              |
 | ![Save](./media/edceditor_save.png)    | Save the current script to a file.       | **Ctrl + S**   |
 | ![Undo](./media/edceditor_undo.png)    | Undo text changes.                       | **Ctrl + Z**   |
 | ![Redo](./media/edceditor_redo.png)    | Redo text changes.                       | **Ctrl + R**   |
