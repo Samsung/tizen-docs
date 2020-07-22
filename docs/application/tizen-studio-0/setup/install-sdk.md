@@ -103,7 +103,7 @@ Based on your target operating system, choose the installation guide from the fo
                         <div class="feature">
                         <img src="./media/win.png">
                         <div style="width:100%;text-align:center;">
-						<a href="../windows.md"> Windows&reg
+						<a href="./windows.md"> Windows&reg
 						</a>
 						</div>	
                         </div>
@@ -116,7 +116,7 @@ Based on your target operating system, choose the installation guide from the fo
 						<div class="feature">
 							<img src="./media/apple1.png">
                             <div style="width:100%;text-align:center;">
-							<a href= "mac.md">macOS&reg</a>
+							<a href= "./mac.md">macOS&reg</a>
 							</div>
 						</div>
 					</div>
