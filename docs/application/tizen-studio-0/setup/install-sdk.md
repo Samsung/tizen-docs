@@ -44,8 +44,6 @@ html, body, div, span, applet, object, iframe, {
 
 	.feature {
 		padding: 1em 1em 1em 1em;
-		border-style: solid;
-		border-width: 1px;
 		margin-left: -1px;
 		margin-top: -1px;
 		width: 33.33333%;
@@ -88,12 +86,14 @@ img {
 </style>
 <section id ="main">
 
-This section explains about options available to install Tizen Studio on your development hardware. Tizen Studio runs on all major operating systems like Windows, macOS, Ubuntu. You can install any release of Tizen Studio. However, it is recommended that you install the most recent release. 
+This page guides you with various options available to install Tizen Studio on your development hardware. Tizen Studio runs on all major operating systems such as Windows®, Ubuntu®, and macOS®.  It is recommended to install the latest version of Tizen Studio. 
+For a seamless development experience: 
 - **Plan your installation:** check for the necessary hardware and software requirements. 
-- **Install Tizen Studio:**  follow the installation guides for each operating system.
-- **Configure:** After installation, to have optimal development experience, configure various Tizen Studio components.  
+- **Install Tizen Studio:**  follow the installation instructions for each operating system.
+- **Configure Tizen Studio:**  get the optimal experience after installation by configuring various Tizen Studio components.  
 
-Tizen Studio runs on Windows®, Ubuntu®, as well as macOS® and for installation guide, click the following as per target operating system: 
+Based on your target operating system, choose the installation guide from the following: 
+
 <!-- tiles-->
 <section id="one" class="wrapper special">
 		<div class="inner">

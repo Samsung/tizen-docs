@@ -1,26 +1,30 @@
-# OpenJDK 10 and OpenJFX Installation Guide For CLI Installation 
+# OpenJDK and OpenJFX Installation Guide For CLI Installation 
 
-Open Java Development Kit (OpenJDK) is an open source implementation of the Java Standard Edition (Java SE) platform with contribution from Oracle and the open Java community. For more information, see [OpenJDK](http://openjdk.java.net/).
+This pages explains about installing Open Java Development Kit and Open JavaFX on your development hardware. OpenJDK is an open source implementation of the Java Standard Edition (Java SE) platform, for more information, see [OpenJDK](http://openjdk.java.net/).
 
 Open JavaFX (OpenJFX) is an open source, next generation client application platform for desktop, mobile and embedded systems built on Java. For more information, see [JavaFX](https://openjfx.io/).
 
 Before JDK version 9, JavaFX libraries were included in the JDK distribution. Since JDK version 9, JavaFX (JFX) is provided as a separate package.
 
-This document explains how to install the OpenJDK version 10 along with OpenJFX libraries for the following operating systems:
+This document explains how to install the OpenJDK along with OpenJFX libraries for the following operating systems:
 
 - [Windows](#install-openjdk-for-windows)
 - [Linux](#install-openjdk-for-ubuntu)
 - [MacOS](#install-openjdk-for-macos)
 
+
+> [!NOTE]
+> Currently OpenJDK 12 and below is supported. 
+
 ## Download OpenJDK
 
-1. Download the OpenJDK version 10 from [https://jdk.java.net/10/](https://jdk.java.net/10/).
+1. Download the latest version of OpenJDK. 
 
-2. Extract the .tar file. The `jdk-10.0.2` folder appears.
+2. Extract the .tar file. The `jdk-12.0.02>` folder appears.
 
 ### Install OpenJDK for Windows
 
-This section explains how to install the OpenJDK version 10 on Windows:
+This section explains how to install the OpenJDK on Windows:
 
 1. Go to **Start** > **Control Panel** > **System and Security** > **System**.
 
@@ -30,32 +34,32 @@ This section explains how to install the OpenJDK version 10 on Windows:
 
 4. Click **New...** in the **User variables for \<user name\>** section.
     > [!NOTE]
-    > If your `JAVA_HOME` variable is already created, select it and click **Edit...**.
+    > If your `JAVA_HOME` variable is already created, select it and click **Edit**.
 
-5. Enter `JAVA_HOME` in the variable name field and the JDK directory path, for example, `C:\Users\user\Desktop\jdk-10.0.2`, in the Variable value field.
+5. Enter `JAVA_HOME` in the variable name field and the JDK directory path, for example, `C:\Users\user\Desktop\jdk-12.0.2`, in the Variable value field.
 
 6. Click **OK**. The Environment Variables window appears.
 
 7. If you cannot find `JAVA_HOME` in **System variables** section, add the variable by repeating the 4, 5, and 6 steps.
 
-10. Save and close the **Environment Variables** window.
+8. Save and close the **Environment Variables** window.
 
-11. Launch **Command Prompt**.
+9. Launch **Command Prompt**.
 
-12. Run the following command to verify whether the OpenJDK version 10 is installed:
+10. Run the following command to verify whether the OpenJDK is installed:
     ```
     java -version
     ```
 
 ### Install OpenJDK for Ubuntu
 
-This section explains how to install the OpenJDK version 10 on Ubuntu:
+This section explains how to install the OpenJDK on Ubuntu:
 
 1. Launch the **Terminal** application.
 
 2. Run the following command in the terminal to set the `JAVA_HOME` as OpenJDK directory path, for example:
     ```
-    JAVA_HOME=/home/<username>/Desktop/openJDK/jdk-10.0.2/
+    JAVA_HOME=/home/<username>/Desktop/openJDK/jdk-12.x.x/
     ```
 
 3. Run the following commands in the terminal:
@@ -80,14 +84,14 @@ This section explains how to install the OpenJDK version 10 on Ubuntu:
 
 4. Select the required javac version as mentioned above.
 
-6. Run the following command to verify whether the OpenJDK version 10 is installed:
+6. Run the following command to verify whether the OpenJDK is installed:
     ```
     java -version
     ```
 
-### Install OpenJDK for MacOS
+### Install OpenJDK for macOS
 
-This section explains how to install the OpenJDK version 10 on macOS:
+This section explains how to install the OpenJDK on macOS:
 
 1. Copy the downloaded jdk folder to the `Library/Java/JavaVirtualMachines` location. This is the default location where all the JDKs are available. Use the following command to copy the JDK directory.
     ```
@@ -96,13 +100,13 @@ This section explains how to install the OpenJDK version 10 on macOS:
 
 2. Launch **Terminal** application.
 
-3. Run the following command to verify whether the OpenJDK version 10 is installed:
+3. Run the following command to verify whether the OpenJDK is installed:
     ```
     java -version
     ```
 
     > [!NOTE]
-    > If the OpenJDK version 10 is not installed, add the `export JAVA_HOME = /Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home` command in the `.profile` or `.bash_profile` file.
+    > If OpenJDK is not installed, add the `export JAVA_HOME = /Library/Java/JavaVirtualMachines/jdk-12.jdk/Contents/Home` command in the `.profile` or `.bash_profile` file.
 
 
 ## Install OpenJFX
