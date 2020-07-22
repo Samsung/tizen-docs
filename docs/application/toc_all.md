@@ -810,6 +810,8 @@
 ###### [Overview](/application/native/guides/ui/dali/dali-rendering.md)
 ###### [Shape Drawing](/application/native/guides/ui/dali/rendering-tutorial.md)
 ###### [SVG Rendering](/application/native/guides/ui/dali/svg-rendering.md)
+##### Capture
+###### [Capture](/application/native/guides/ui/dali/capture.md)
 ##### Background Knowledge
 ###### [Handle/Body Pattern](/application/native/guides/ui/dali/handle.md)
 ###### [Properties](/application/native/guides/ui/dali/properties.md)
