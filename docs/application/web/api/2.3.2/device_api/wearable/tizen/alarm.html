@@ -546,11 +546,6 @@ console.log(alarms.length + " alarms present in the storage.");
 This alarm triggers after a duration mentioned in the <em>delay</em> attribute from the moment the alarm is added.
 If a <em>period</em> is provided, the alarm keeps triggering for the given interval.
           </p>
-          <p>
-the operating system decides when this alarm is going to be fired and what is the period between subsequent executions.
-It is guaranteed that this alarm will be fired after at least <em>delay</em> seconds.
-If <em>period</em> is provided, it will be adjusted by the operating system, however this value will not be lower than <var>600</var> seconds.
-          </p>
          </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Gets the current application ID. */
@@ -670,7 +665,8 @@ console.log("remaining time is " + sec);
           </p>
 <div class="description">
           <p>
-If a <em>period</em> is provided, the alarm keeps triggering for the given interval. If the <em>daysOfTheWeek</em> array is not empty, the alarm triggers every week, for the given days, at the time defined by the <em>date</em> attribute.
+If a <em>period</em> is provided, the alarm keeps triggering for the given interval.
+If the <em>daysOfTheWeek</em> array is not empty, the alarm triggers every week, for the given days, at the time defined by the <em>date</em> attribute.
           </p>
          </div>
 <div class="example">

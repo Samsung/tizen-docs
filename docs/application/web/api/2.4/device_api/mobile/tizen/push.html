@@ -505,7 +505,7 @@ if (registrationId != null)
 </dt>
 <dd>
 <div class="brief">
- Requests to get unread push notifications. As a consequence, the PushNotificationCallback which was set using the connectService() method will be invoked to retrieve the notifications..
+ Requests to get unread push notifications. As a consequence, the PushNotificationCallback which was set using the connectService() method will be invoked to retrieve the notifications.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void getUnreadNotifications();</pre></div>
 <p><span class="version">Since: </span>
@@ -514,7 +514,7 @@ if (registrationId != null)
 <div class="description">
             <p>
 The connectService() method must be called to connect to Tizen push server and receive push notifications before calling the getUnreadNotifications() method.
-If connectService is not called, <var>ServiceNotAvailableError</var> occurs.<br>If any unread message exists, you will get unread push notification message through <var>PushNotificationCallback</var> of connectService().
+If connectService() is not called, <var>ServiceNotAvailableError</var> occurs.<br>If any unread message exists, you will get unread push notification message through <var>PushNotificationCallback</var> of connectService().
 For instance, if there are 10 unread messages, the <var>PushNotificationCallback</var> will be invoked 10 times.<br><br>If an application receives unread messages, the messages are removed from the system.
             </p>
             <p>
