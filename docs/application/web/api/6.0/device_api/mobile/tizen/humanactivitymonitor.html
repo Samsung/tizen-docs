@@ -273,8 +273,6 @@ The human activity monitor types defined by this enumerator are:
             <li>
 PEDOMETER - Pedometer data            </li>
             <li>
-WRIST_UP - Wrist up gesture            </li>
-            <li>
 HRM - Heart rate monitor (Heart rate and RR interval)            </li>
             <li>
 GPS - GPS information (latitude, longitude and speed)            </li>
@@ -687,9 +685,6 @@ ServiceNotAvailableError - If the human activity service is not available. For t
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/healthinfo
-            </p>
-<p><span class="remark">Remark: </span>
- When the CPU is in the power saving mode, the WRIST_UP event might not occur even though &lt;tizen:setting background-support="enable" /&gt; is declared in the <em>config.xml</em> file.
             </p>
 <p><span class="remark">Remark: </span>
  The <b>"http://tizen.org/privilege/location"</b> privilege is required for only the <a href="#HumanActivityType">GPS</a> type.
@@ -3038,8 +3033,7 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
 <ul>
           <li class="param">
 <span class="name">humanactivitydata</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
- New human activity data<br>Note that <var>null</var> is passed for the WRIST_UP type.
-                </li>
+ New human activity data<br>                </li>
         </ul>
 </div>
 </dd>
