@@ -9,7 +9,18 @@ Before creating an image, study the following instructions:
 - [Cloning Tizen Source Files](cloning.md)
 - [Building Packages Locally with GBS](building.md)
 
-## Preparing the Kickstart File
+## MIC image creator
+
+MIC is an image creator that is used to create images for Tizen. 
+
+The tool offers three major functions as follows:
+- create an image in a specific format
+- chroot into an image
+- convert an image to another format
+
+For more information on the tool and its functions, see [MIC Image Creator](../reference/mic/mic-overview.md).
+
+## Prepare the Kickstart File
 
 Image creation requires a kickstart file that describes how to create an image. To prepare the kickstart file:
 
@@ -64,7 +75,7 @@ Image creation requires a kickstart file that describes how to create an image. 
    > - Setting the priority of the `local` repository at 1 and the priorities of remote repositories at 99 guarantees that MIC uses the packages that exist in the local repository with a higher priority, when packages are available in both remote and local repositories.
    > - To add new packages into a Tizen image, add the new packages' names into the `%package` section, and add them into the `local` repository.
 
-## Creating a Tizen Image
+## Create a Tizen image
 
 To create a Tizen image:
 
