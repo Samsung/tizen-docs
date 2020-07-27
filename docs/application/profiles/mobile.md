@@ -1,3 +1,9 @@
+---
+title: Get Started with Tizen Mobile Applications
+author: Young-Ae Kang (youngae.kang@samsung.com)
+keyword: Get started
+---
+
 # Get Started with Tizen Mobile Applications
 
 Tizen ecosystem is enhanced with advanced Tizen-based smartphone application development.  
