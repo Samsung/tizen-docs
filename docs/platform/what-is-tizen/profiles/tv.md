@@ -21,7 +21,7 @@ Voice Touch, one of the new Smart TV "touch" capabilities, provides the user a m
 By the end of 2017, Samsung plans to make the Tizen .NET framework public. Since announcing last November its collaboration with Microsoft on .NET open-source projects, such as .NET Core and Xamarin.Forms, Samsung has steadily released preview versions of the Tizen .NET SDK to help you build more powerful applications. The previews allow you to practice on the new framework and encourage you to participate in the framework's ongoing development.
 
 
-## Developing Applications for Tizen TV
+## Develop applications for Tizen TV
 
 Samsung has completely redesigned its Smart TV experience. With a new intuitive menu, enhanced recommendations, and quick access to your favorite shows, movies, apps, and games, it is easy to discover your favorites.
 
@@ -34,12 +34,12 @@ To develop applications for the TV profile:
 - [Create TV .NET Applications](../../../application/dotnet/get-started/tv/first-app.md)
 - [Create TV Web applications](../../../application/web/get-started/tv/first-app.md)
 
-## Design Guidelines for Tizen TV
+## Design guidelines for Tizen TV
 
 Tizen design principles suggest some clear guidelines that help you to design simple and easy-to-use applications for everyone:
 - [Design Principles](https://developer.tizen.org/design/tv/design-principles){:target="_blank"}
 
-## Tizen TV Devices
+## Tizen TV devices
 
 Samsung Electronics provides various TV models that support the Tizen platform.
 
