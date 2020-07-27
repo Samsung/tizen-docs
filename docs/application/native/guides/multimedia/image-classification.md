@@ -1,6 +1,7 @@
 # Image Classification
 
-Image classification is one of the main features of the Media Vision Inference API. You can [classify](#classify) an image, which belongs to the corresponding labels. For example, to classify an image consisting of a food item, you can apply a food classification model while doing inference of the decoded image data.
+Image classification is one of the main features of the Media Vision Inference API. This API allows inference engine to classify a given image and apply corresponding labels.
+For example, when an image consisting of a food item is provided as input to this API, the Media Vision framework will make use of the pre-trained model to classify the food item while doing inference of the decoded image data and apply a corresponding label.
 
 ## Prerequisites
 
