@@ -1,6 +1,6 @@
 # XAML Support for Tizen.NUI
 
-NUI adopts and integrates Xamarin.Forms XAML as NUI XAML. NUI XAML supports almost all the features of Xamarin.Forms XAML along with some additional features. 
+NUI adopts and integrates Xamarin.Forms XAML as NUI XAML. NUI XAML supports almost all the features of Xamarin.Forms XAML along with some additional features.
 In this file, the additional features are explained. However, to get a basic concept and insight of XAML, it is strongly recommended to go through the [eXtensible Application Markup Language (XAML)](https://docs.microsoft.com/en-US/xamarin/xamarin-forms/xaml/) guide.
 
 ## Benefits of XAML
@@ -25,8 +25,7 @@ To create a new project, follow these steps:
 
 4. Select **Tizen NUI Xaml App** and click **Next**.
 
-> **Note**
->
+> [!NOTE]
 > If you create a new project with **Tizen NUI Xaml App** template, a XAML file and a C# code-behind file are created.
 
 ![CreateNUIProject](./media/nui_xaml_template.png)
@@ -34,12 +33,11 @@ To create a new project, follow these steps:
 
 ### Create XAML file
 
-After creating the **NUIXamlTemplate** solution, you can see `XamlPage.xaml` in the `/res/layout` folder. 
+After creating the **NUIXamlTemplate** solution, you can see `XamlPage.xaml` in the `/res/layout` folder.
 
 ![SetProjectName](./media/project_name.PNG)
 
-> **Note**
->
+> [!NOTE]
 > If you select other templates or work on lower version than Tizen 5.5, you have to manually create a XAML file.
 
 If your application runs on a target having different resolutions, such as 720x1080, 480x800, or both of them then put XAML files into the corresponding folders. For example, you can create two folders: `/res/layout/720x1080/` and `/res/layout/480x800/`. The former is the folder with a XAML file for 720x1080 resolution, and the latter is the folder with a XAML file for 480x800 resolution.
@@ -56,15 +54,14 @@ In this sample, the `TextLabel` element is added, and the `Text`, `PointSize`, `
 
 ### Create C# Code-Behind File
 
-After creating the **NUIXamlTemplate** solution, you can see `XamlPage.xaml.cs`, which is a C# code-behind file associated with the XAML file in the project folder. 
+After creating the **NUIXamlTemplate** solution, you can see `XamlPage.xaml.cs`, which is a C# code-behind file associated with the XAML file in the project folder.
 
 ![XAMLCodeBehindFilePath](./media/xaml-page-xaml-cs-code-behind.PNG)
 
-> **Note**
->
+> [!NOTE]
 > If you select other templates or work on lower version than Tizen 5.5, you have to manually create a C# code-behind file.
 
-In the following sample XAML code, the `x:Class` attribute specifies a fully qualified class name, the `XamlPage` class in the `NUIXamlTemplate` namespace. This means that this XAML file of **XamlPage.xaml.cs** defines a new class named `XamlPage` in the `NUIXamlTemplate` namespace that is derived from `ContentPage`:
+In the following sample XAML code, the `x:Class` attribute specifies a fully qualified class name, the `XamlPage` class in the `NUIXamlTemplate` namespace. This means that the **XamlPage.xaml** file of **XamlPage.xaml.cs** defines a new class `XamlPage` in the `NUIXamlTemplate` namespace that is derived from `View`:
 
 ```csharp
 using System;
@@ -73,9 +70,9 @@ using Tizen.NUI.BaseComponents;
 
 namespace NUIXamlTemplate
 {
-    public partial class XamlPage : ContentPage
+    public partial class XamlPage : View
     {
-        public XamlPage(Window win) : base(win)
+        public XamlPage() : base()
         {
             InitializeComponent();
         }
@@ -83,8 +80,7 @@ namespace NUIXamlTemplate
 }
 ```
 
-> **Note**
->
+> [!NOTE]
 > The name of the XAML file must be same as the class name.
 
 ### Load XAML
@@ -107,7 +103,9 @@ namespace NUIXamlTemplate
             Window.Instance.BackgroundColor = Color.Blue;
             Window.Instance.KeyEvent += OnKeyEvent;
 
-            XamlPage page = new XamlPage(Window.Instance);
+            XamlPage page = new XamlPage();
+            page.Size = new Size(720, 1280, 0);
+            Window.Instance.Add(page);
 
             animation = new Animation(2000);
             animation.AnimateTo(page.text, "Orientation", new Rotation(new Radian(new Degree(180.0f)), PositionAxis.X), 0, 500);
@@ -193,8 +191,7 @@ namespace XamlSamples
 }
 ```
 
-> **Note**
->
+> [!NOTE]
 > The name of the XAML file must be same as the class name.
 
 ### Load XAML
@@ -241,9 +238,8 @@ To use Tizen.NUI, you must define the default namespace as shown in the followin
 ```xml
 xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
 ```
-> **Note**
->
-> It must be the root element of the XAML file.
+> [!NOTE]
+> The default namespace must be the root element of the XAML file.
 
 The following code example shows a XAML namespace declaration:
 
@@ -285,7 +281,7 @@ Following is a XAML file that contains a `Slider` and two `TextLabel` views. One
 
 <Slider x:Name="slider" Name="slider" LowerBound="0" UpperBound="360" Value="10" ShowPopup="true" ShowValue="true" ValuePrecision="1" Position2D="50,200" Size2D="300,20" />
 
-<TextLabel BindingContext="{x:Reference slider}" Position2D="50,300" Size2D="300,50" Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}" /> 
+<TextLabel BindingContext="{x:Reference slider}" Position2D="50,300" Size2D="300,50" Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}" />
 ```
 
 The `Slider` contains an `x:Name` attribute that is referenced by the two `TextLabel` views using the `x:Reference` markup extension.
@@ -324,23 +320,23 @@ In order to implement various functions in an Application, the instances of obje
 In the following XAML code, Tizen.NUI supports two ways to access the `ImageView` instance in the sample code:
 
 ```xml
-<ContentPage x:Class="Tizen.NUI.Examples.xNameDemoPage"
+<View x:Class="Tizen.NUI.Examples.xNameDemoPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
   <ImageView x:Name="ImageOne" Name="title" Position2D="0,0" Size2D="400,400" ResourceUrl="*Resource*/res/xxx.png"/>
 
-</ContentPage>
+</View>
 ```
 
 - View.FindChildByName
 - NameScopeExtensions.FindByName\<T\>
 
 ```csharp
-ContentPage myPage = new xNameDemoPage(window);
-Extensions.LoadFromXaml(myPage, typeof(xNameDemoPage));
+View myPage = new xNameDemoPage();
+Tizen.NUI.Xaml.Extensions.LoadFromXaml(myPage, typeof(xNameDemoPage));
 
-ImageView title = myPage.Root.FindChildByName("title") as ImageView;
+ImageView title = myPage.FindChildByName("title") as ImageView;
 
 ImageView imageOne = NameScopeExtensions.FindByName<Tizen.NUI.BaseComponents.ImageView>(myPage, "ImageOne");
 ```
@@ -348,10 +344,8 @@ ImageView imageOne = NameScopeExtensions.FindByName<Tizen.NUI.BaseComponents.Ima
 In `View.FindChildByName` method, set the `Name` property of the control as `Name="title"`. In the `NameScopeExtensions.FindByName<T>` method, set `x:Name` of the element as `x:Name="ImageOne"`.
 To have a better performance, it is recommended to use the `NameScopeExtensions.FindByName<T>` method.
 
-> **Note**
->
+> [!NOTE]
 > If you add the Tizen.NUI.XamlBuild nuget package into a project, and set the XAML file as `Embedded Resource`. It will be generated in the **.g.cs** file.
->
 > In the **.g.cs** file, every node with `x:Name` in XAML has a variable that is generated with a similar name as its `x:Name`. You can use it directly in your **.xaml.cs** file.
 
 
@@ -359,20 +353,20 @@ To have a better performance, it is recommended to use the `NameScopeExtensions.
 
 XAML resources are definitions of objects that can be shared and reused throughout a Tizen.NUI application. These resource objects are stored in a resource dictionary.
 
-`ContentPage` defines a property named `Resources` that is of type `ResourceDictionary`. `ResourceDictionary` is a dictionary with `string` keys and values of an object. Items can be added to this dictionary in XAML, and they can be accessed in XAML with the `StaticResource` and `DynamicResource` markup extensions.
+`View` defines a property named as `XamlResources`, which is of type `ResourceDictionary`. The `ResourceDictionary` is a dictionary with `string` keys and values of an object. Items can be added to this dictionary in XAML, and they can be accessed in XAML with the `StaticResource` and `DynamicResource` markup extensions.
 `DynamicResource` is for the dictionary keys associated with values that might change during runtime, while `StaticResource` accesses elements from the dictionary only once when the elements on the page are constructed.
- 
+
 ### Create and Consume ResourceDictionary
 
 Each resource has a key that is specified using the `x:Key` attribute, which becomes a dictionary key in `ResourceDictionary`.
 The following **TestStaticDynamicResource** example explains the usage of `StaticResource` and `DynamicResource`:
 
 ```xml
-<ContentPage x:Class="Tizen.NUI.Examples.TestStaticDynamicResourcePage"
+<View x:Class="Tizen.NUI.Examples.TestStaticDynamicResourcePage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-  <ContentPage.XamlResources>
+  <View.XamlResources>
     <ResourceDictionary>
       <x:String x:Key="urlKey">
           *Resource*/res/picture_m_1.jpg
@@ -381,18 +375,18 @@ The following **TestStaticDynamicResource** example explains the usage of `Stati
           200, 200
       </x:String>
     </ResourceDictionary>
-  </ContentPage.XamlResources>`
+  </View.XamlResources>`
 
-  <ImageView x:Name="img1" ResourceUrl="{StaticResource urlKey}"  Position2D="{DynamicResource positionKey}/>
-</ContentPage>
+  <ImageView x:Name="img1" ResourceUrl="{StaticResource urlKey}"  Position2D="{DynamicResource positionKey}"/>
+</View>
 ```
 
 `StaticResource` accesses the item in the dictionary only once, while XAML is being parsed and the page is being built. However, `DynamicResource` maintains a link between the dictionary key and the property set from that dictionary item. If the item in the resource dictionary referenced by the key changes, then `DynamicResource` will detect that change and set the new value to the property.
 When you change the value of `"positionKey"`, `DynamicResource` will detect that change and set the new value to the `Position2D` property.
 
 ```csharp
-Tizen.NUI.Binding.ResourceDictionary dict = Tizen.NUI.GetResourcesProvider.Get().Resources;
-Tizen.NUI.GetResourcesProvider.Get().Resources["positionKey"] = positionX.ToString() + "," + positionY.ToString();
+Tizen.NUI.Binding.ResourceDictionary dict = Tizen.NUI.GetResourcesProvider.Get().XamlResources;
+Tizen.NUI.GetResourcesProvider.Get().XamlResources["positionKey"] = positionX.ToString() + "," + positionY.ToString();
 ```
 
 For more information, see https://docs.microsoft.com/en-US/xamarin/xamarin-forms/xaml/resource-dictionaries.
@@ -403,17 +397,15 @@ For more information, see https://docs.microsoft.com/en-US/xamarin/xamarin-forms
 If you want to convert a string to some custom type in XAML, you need to define a TypeConverter. This changes the string format as a XAML format such as converting `Red` to `Color.Red`.
 If you write a custom class, and you want instances of your class to be usable as XAML settable attribute values, you might need to write a custom TypeConverter class.
 
-> **Note**
-> 
-> NUI XAML is very similar to WPF XAML. For more information on basic concepts, see
-https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/typeconverters-and-xaml.
+> [!NOTE]
+> NUI XAML is very similar to WPF XAML. For more information, see [TypeConverters and XAML]( https://docs.microsoft.com/en-us/dotnet/framework/wpf/advanced/typeconverters-and-xaml ).
 
 ### Type Conversion
 
 In the XAML file, all the attribute values are represented as type of string with pure text.
 Even primitives (ex: Int, Double) are simple text string and they are needed to be changed as the type that XAML processor can understand.
-For instance, **Tizen.NUI** defines some properties that take a value of type `Size2D`. 
-`Size2D` is a value that describes two-dimensional sizes and has two important properties, width and height. 
+For instance, **Tizen.NUI** defines some properties that take a value of type `Size2D`.
+`Size2D` is a value that describes two-dimensional sizes and has two important properties, width and height.
 When you are specifying size2D in XAML, you must specify it as a string with a comma between the width and height values:
 
 ```xml
@@ -455,7 +447,7 @@ Therefore, you can define the color, position, Size2D, and so on as string in XA
 ### Implement Type Converter
 
 If you want to convert a string to some custom type in XAML, you need to define a `TypeConverter`.
-The most important method in `TypeConverter` is the `ConvertFromInvariantString` which converts the input string to the required object type. 
+The most important method in `TypeConverter` is `ConvertFromInvariantString`, which converts the input string to the required object type.
 You can see `Size2DTypeConverter` as shown in the following code:
 
 ```csharp
@@ -468,7 +460,7 @@ internal class Size2DTypeConverter : TypeConverter
             string[] parts = value.Split(',');
             if (parts.Length == 2)
             {
-                return new Size2D(Int32.Parse(parts[0].Trim(), CultureInfo.InvariantCulture), 
+                return new Size2D(Int32.Parse(parts[0].Trim(), CultureInfo.InvariantCulture),
                                 Int32.Parse(parts[1].Trim(), CultureInfo.InvariantCulture));
             }
         }
@@ -483,11 +475,11 @@ internal class Size2DTypeConverter : TypeConverter
 The following example shows two triggers that changes `PositionX` of the `ImageView` property when the `ResourceUrl` property is changed to or set equal to `../res/detail.png` or `../res/sendtophone.png`:
 
 ```xml
-<ContentPage x:Class="Tizen.NUI.Examples.StyleDemoPage"
+<View x:Class="Tizen.NUI.Examples.StyleDemoPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
-  <ContentPage.Resources>
+  <View.XamlResources>
     <ResourceDictionary>
       <Style x:Key="CustomStyle" TargetType="ImageView">
         <Style.Triggers>
@@ -504,7 +496,7 @@ The following example shows two triggers that changes `PositionX` of the `ImageV
         </Style.Triggers>
       </Style>
     </ResourceDictionary>
-  </ContentPage.Resources>
+  </View.XamlResources>
 
   <ImageView Name="ImageView" Position2D="0,0" Size2D="400,400" Style="{StaticResource CustomStyle}">
     <x:Arguments>
@@ -513,7 +505,7 @@ The following example shows two triggers that changes `PositionX` of the `ImageV
   </ImageView>
 
   <PushButton Name="Click" LabelText="Click" Size2D="400,80" Position2D="1000,100" />
-</ContentPage>
+</View>
 ```
 
 - `TargetType`: The control type that the trigger applies to.
@@ -521,8 +513,7 @@ The following example shows two triggers that changes `PositionX` of the `ImageV
 - `Value`: The value that occurs for the monitored property that causes the trigger to activate.
 - `Setter`: A collection of Setter elements can be added when the trigger condition is met. You must specify `Property` and set `Value`.
 
-> **Note**
->
+> [!NOTE]
 > The Property for Trigger and Setter must not be same.
 
 For more information, see [Xamarin.Forms Triggers](https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/triggers#targetText=Triggers%20allow%20you%20to%20express,on%20events%20or%20property%20changes.&targetText=Property%20Trigger%20%2D%20occurs%20when%20a,the%20properties%20of%20another%20control).
@@ -581,12 +572,12 @@ if (null != button)
 To load transition, add the following code in the XAML file of the page:
 
 ```xml
-<ContentPage.TransitionNames>
+<View.TransitionNames>
   <x:Array Type="{x:Type x:String}">
     <x:String>OpacityAndPositionAnimation</x:String>
     <x:String>OrientationAnimation</x:String>
   </x:Array>
-</ContentPage.TransitionNames>
+</View.TransitionNames>
 ```
 
 In the preceding example, `OpacityAndPositionAnimation` and `OrientationAnimation` are the transition names.
@@ -664,31 +655,31 @@ In some cases, particular property takes a collection type, such as the `ImageVi
 </ImageView>
 ```
 
-If the type of the property is an array, you can use the `x:Array` markup extension to implement it.  
+If the type of the property is an array, you can use the `x:Array` markup extension to implement it.
 
 For more information, see https://docs.microsoft.com/en-US/xamarin/xamarin-forms/xaml/markup-extensions/consuming.
 
 ### Events and Callback
 
-Attribute syntax can also be used for events. In this case, the attribute's name is the name of the event. In the Tizen.NUI implementation of events for XAML, the attribute's value is the name of a handler that implements that event's delegate. 
+Attribute syntax can also be used for events. In this case, the attribute's name is the name of the event. In the Tizen.NUI implementation of events for XAML, the attribute's value is the name of a handler that implements that event's delegate.
 For example, the following markup assigns a handler for the `Click` event to a `PushButton` created in markup:
 
 ```xml
-<ContentPage x:Class="Tizen.NUI.Examples.TestEventHandler"
+<View x:Class="Tizen.NUI.Examples.TestEventHandler"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
   <PushButton Name="PushButton" PositionX="100" PositionY="100" LabelText="PushButton" Size2D="260, 84" Clicked="OnClicked" />
-</ContentPage>
+</View>
 ```
 
 You must define the event handle in the partial class within the CLR namespace identified by `x:Class`:
 
 ```csharp
-public class TestEventHandler : ContentPage
+public class TestEventHandler : View
 {
 
-    public TestEventHandler(Window win) : base(win)
+    public TestEventHandler() : base()
     {
        InitializeComponent();
     }
@@ -707,9 +698,9 @@ public class TestEventHandler : ContentPage
 
 ### x:Arguments
 
-In the preceding examples explained in this file, each element in the XAML file is instantiated with a call. 
-The XAML file can either instantiate a call to the parameterless constructor of the corresponding class or to a structure. 
-The `x:Arguments` element supports to instantiate objects with constructors that require arguments.  
+In the preceding examples explained in this file, each element in the XAML file is instantiated with a call.
+The XAML file can either instantiate a call to the parameterless constructor of the corresponding class or to a structure.
+The `x:Arguments` element supports instantiating objects with constructors that require arguments.
 The following code example demonstrates using the `x:Arguments` attribute with `ImageView`:
 
 ```xml
