@@ -3,23 +3,18 @@
 This page answers to the most commonly asked questions or errors that you may encounter while installing Tizen studio and developing apps in Tizen Studio.
 
  <style>
-        body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
+         pre {
+  display: block;
+  font-family: monospace;
+  white-space: pre-line;
+  margin: 20 em 70;
+  /*! white-space:pre-wrap; */
 }
 
-div {
-    width: 100vw;
-    height: 1vh;
-}
-         body {
-         color;
-         }
-         label {
+label {
          font-size: 18px;
          cursor: pointer;
-         padding: 0.8em 1em 0.8em 0;
+         padding: 0em 0em 0.8em 6px;
          }
          label:hover {
          color: ##008aee;
@@ -33,11 +28,11 @@ div {
          border: 10px solid #008aee;
          border-radius: 40px;
          display: inline-block;
-         width: 40px;
-         height: 40px;
-         line-height: 40px;
-         font-size: 24px;
-         margin: 0 0.5em 0 0;
+         width: 47px;
+         height: 45px;
+         line-height: 28px;
+         font-size: 18px;
+         margin: 4px 1.5em 0px 0px;
          color:#008aee;
          }
          .css-accordion {
@@ -55,15 +50,15 @@ div {
          margin: 0;
          }
          .css-accordion .accordion-item .item-content-container {
-         border-left: 10px solid #008aee;
-         padding: 6px 0;
-         margin: -2px 0 -2px 25px;
+         border-left: 9px solid #008aee;
+         padding: 7px 0px;
+         margin: -23px 0px -4px 25px;
          }
          .css-accordion .accordion-item .item-content-container .item-content {
          background: #eee;
-         padding: 0 1em;
+         padding: 0px 0em;
          overflow: hidden;
-         margin: 0 0 0 36px;
+         margin: 11px 0 0px 40px;
          border-radius: 2px;
          box-shadow: inset 0 2px 8px rgba(241, 235, 235, 0.5), 0 1px 2px rgba(255, 255, 255, 0.9);
          }
@@ -89,8 +84,8 @@ div {
          overflow: visible;
          }
          .css-accordion .accordion-item input[type=radio]:checked ~ .item-content-container .item-content {
-         height: auto;
-         overflow-y: auto;
+         height: inherit;
+         /*! overflow-y: auto; */
          transition: all 0.5s linear;
          }
          .css-accordion .accordion-item input[type=radio]:checked + label {
@@ -99,6 +94,7 @@ div {
          .css-accordion .accordion-item input[type=radio]:checked + label:before {
          background: #f3f3f3;
          }
+      
       </style>
    </head>
 <body>

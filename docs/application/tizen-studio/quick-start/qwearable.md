@@ -173,7 +173,7 @@ This quickstart guide explains how to create a basic wearable app. However, if y
     <input id="tab2-2" name="tabs-two" type="radio">
     <div>  
     <video width="auto" height="240" controls>
-  <source src="./media/wearable.mp4" type="video/mp4">
+  <source src="../media/wearable.mp4" type="video/mp4">
 </video>
   </div>
 </div>
