@@ -1037,6 +1037,10 @@
 ### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
 ### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
 
+## Quick Start 
+### [Wearable](/application/tize/rt-ide/get-started/qwearable.md)
+### [TV](/application/tizen-studio/quick-start/qtv.md)
+
 
 ## Native Tools
 
@@ -1179,6 +1183,9 @@
 #### [Flash the Project](/application/tizen-studio/rt-ide/get-started/flash.md)
 #### [Use the Serial Terminal](/application/tizen-studio/rt-ide/get-started/terminal.md)
 #### [Debug the Project](/application/tizen-studio/rt-ide/get-started/debug.md)
+
+## [Troubleshooting](/application/tizen-studio/troubleshooting/troubleshooting.md)
+## [Frequently Asked Questions](/application/tizen-studio/faq/faq.md)
 
 ## Release Notes
 ### [3.7 (Apr 6, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
