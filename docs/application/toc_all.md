@@ -1038,7 +1038,7 @@
 ### [Uninstall Tizen Studio](/application/tizen-studio/setup/uninstall-sdk.md)
 
 ## Quick Start 
-### [Wearable](/application/tize/rt-ide/get-started/qwearable.md)
+### [Wearable](/application/tizen-studio/quick-start/qwearable.md)
 ### [TV](/application/tizen-studio/quick-start/qtv.md)
 
 
