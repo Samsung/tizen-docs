@@ -90,6 +90,8 @@
 ##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
 ##### [Tab](/application/dotnet/guides/nui/nui-components/Tab.md)
 ##### [Toast](/application/dotnet/guides/nui/nui-components/Toast.md)
+##### [CheckBox](/application/dotnet/guides/nui/nui-components/CheckBox.md)
+##### [RadioButton](/application/dotnet/guides/nui/nui-components/RadioButton.md)
 #### Animation
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)

@@ -24,10 +24,10 @@ To create a CheckBox applying style, follow these steps:
             Size =  new Size(48, 48),
             ResourceUrl = new Selector<string>
             {
-                Normal = CommonResource.GetFHResourcePath() + "9. Controller/controller_btn_check_off.png",
-                Selected = CommonResource.GetFHResourcePath() + "9. Controller/[Controller] App Primary Color/controller_btn_check_on_24c447.png",
-                Disabled = CommonResource.GetFHResourcePath() + "9. Controller/controller_btn_check_off.png",
-                DisabledSelected = CommonResource.GetFHResourcePath() + "9. Controller/[Controller] App Primary Color/controller_btn_check_on_24c447.png",
+                Normal = "btn_check_off.png",
+                Selected = "btn_check_on_24c447.png",
+                Disabled = "btn_check_off.png",
+                DisabledSelected = "btn_check_on_24c447.png",
             }
         }
     }
@@ -53,7 +53,7 @@ ck.ClickEvent += OnClick;
 ```cs
 private void OnClick(object sender, Button.ClickEventArgs e)
 {
-    // Do something in response to RadioButton click
+    // Do something in response to CheckBox click
 }
 ```
 
@@ -75,4 +75,4 @@ private void OnStateChange(object sender, Button.StateChangeEventArgs e)
 
 ## Related Information
 - Dependencies
-  -   Tizen 5.5 and Higher
+  -   Tizen 6.0 and Higher
