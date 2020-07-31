@@ -101,7 +101,7 @@ html, body, div, span, applet, object, iframe, {
 
 	.feature {
 		padding: 2em 2em 0.1em 2em;
-		border-style: solid;
+		border-style: hidden;
 		border-width: 1px;
 		margin-left: -1px;
 		margin-top: -1px;
