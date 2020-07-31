@@ -24,10 +24,10 @@ To create a RadioButton applying style, follow these steps:
             Size =  new Size(48, 48),
             ResourceUrl = new Selector<string>
             {
-                Normal = CommonResource.GetFHResourcePath() + "9. Controller/controller_btn_radio_off.png",
-                Selected = CommonResource.GetFHResourcePath() + "9. Controller/controller_btn_radio_on.png",
-                Disabled = CommonResource.GetFHResourcePath() + "9. Controller/controller_btn_radio_off.png",
-                DisabledSelected = CommonResource.GetFHResourcePath() + "9. Controller/controller_btn_radio_on.png",
+                Normal = "btn_radio_off.png",
+                Selected = "btn_radio_on.png",
+                Disabled = "btn_radio_off.png",
+                DisabledSelected = "btn_radio_on.png",
             }
         }
     }
@@ -75,4 +75,4 @@ private void OnStateChange(object sender, Button.StateChangeEventArgs e)
 
 ## Related Information
 - Dependencies
-  -   Tizen 5.5 and Higher
+  -   Tizen 6.0 and Higher

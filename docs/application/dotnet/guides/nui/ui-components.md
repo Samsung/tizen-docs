@@ -29,6 +29,8 @@ The following table lists the available UI components:
 | [TextLabel](./textlabel.md)          | A text label that renders a short text string. | `TextLabel`                |
 | [Toast](./nui-components/Toast.md) | A toast is used to provide simple messages. | `Toast`                |
 | [VideoView](./videoview.md)          | A video view that controls and displays video playback. | `VideoView`                 |
+| [CheckBox](./nui-components/CheckBox.md) | A CheckBox that can set selected/unselected status when user select it. | `CheckBox`                |
+| [RadioButton](./nui-components/RadioButton.md) | A RadioButton that can set selected/unselected status when user select it. | `RadioButton`                |
 
 The base class for the components is `View`. This class can also be used to create your own custom UI components. For more information on the view class, see [View](./view.md). In this UI Components guide, both the terms **control** and **component** are used to refer to a UI component.
 
