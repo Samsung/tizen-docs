@@ -99,7 +99,7 @@ video {
 
 2. **Install Tizen Studio**
 
-    To install Tizen Studio on your development hardware, see [Installation](../../../tizen-studio/setup/install-sdk.md), and to ensure seamless development experience, see [Prerequisites](../../../tizen-studio/setup/prerequisites.md).
+    To install Tizen Studio on your development hardware, see <a href="../tizen-studio/setup/install-sdk.md">Installation</a>, and to ensure seamless development experience, see <a href="../tizen-studio/setup/prerequisites.md">Prerequisites</a>.
 
 3. **Create TV project** 
     
@@ -114,7 +114,7 @@ video {
 	
        The **New Project** wizard sets up your TV project and creates the basic application files and folders.
         
-       To manage **TV application** configuration and to understand the source code, see [Create Your First Tizen TV Web Application](../../../web/get-started/tv/first-app.md). 
+       To manage **TV application** configuration and to understand the source code, see [Create Your First Tizen TV Web Application](../web/get-started/tv/first-app.md). 
 
        After your application code is ready, you must build the application. The build process performs a validation check and compiles and packages your JavaScript and CSS files.
      
@@ -126,7 +126,7 @@ video {
   
 5. **Run your application**
    
-    Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
+    Before you run the application, you must [sign your application package with a certificate profile](../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 	
 	You can run the Web application on the emulator, Samsung Smart TV Simulator, or a real target device.
    
@@ -141,9 +141,9 @@ video {
        
     - To run the app on simulator. In the Tizen Studio menu, select **Run > Run As**, select **Tizen Web Simulator Application**.
 	
-	- To run your application on a real device, see [Running on a Target Device](../../../web/get-started/tv/first-samsung-tv-app.md#run-on-a-target-device).
+	- To run your application on a real device, see [Running on a Target Device](../web/get-started/tv/first-samsung-tv-app.md#run-on-a-target-device).
 
-This quickstart guide explains how to create a basic TV app. However, if but you want to create complex apps, see [Create Your First Tizen TV Web Application](../../../web/get-started/tv/first-samsung-tv-app.md).
+This quickstart guide explains how to create a basic TV app. However, if but you want to create complex apps, see [Create Your First Tizen TV Web Application](../web/get-started/tv/first-samsung-tv-app.md).
 
   </div>
   </div>
@@ -153,7 +153,7 @@ This quickstart guide explains how to create a basic TV app. However, if but you
     <input id="tab2-2" name="tabs-two" type="radio">
     <div>  
     <video width="auto" height="240" controls>
-  <source src="./media/tv.mp4" type="video/mp4">
+  <source src="../media/tv.mp4" type="video/mp4">
 </video>
   </div>
 </div>
