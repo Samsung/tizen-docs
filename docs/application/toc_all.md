@@ -518,6 +518,7 @@
 ### [Create Wearable Native Watch Application](/application/native/get-started/wearable-watch/first-app-watch.md)
 ### [Create Wearable Native Widget Application](/application/native/get-started/wearable-widget/first-app-widget.md)
 ### [Create Mobile Native Application](/application/native/get-started/mobile/first-app.md)
+### [Create IoT Native Service Application](/application/native/get-started/iot/first-app.md)
 
 
 ## Tutorials
