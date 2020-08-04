@@ -14,11 +14,13 @@ The following table lists the available UI components:
 | Control                              | Description                              | Related classes                          |
 | ------------------------------------ | ---------------------------------------- | ---------------------------------------- |
 | [Button](./nui-components/Button.md) | A button that can set action when user select it. | `Button`                |
+| [CheckBox](./nui-components/CheckBox.md) | A CheckBox that can set selected or unselected status when user selects it. | `CheckBox`                |
 | [FlexContainer](./flexcontainer.md)  | A FlexContainer implements a subset of the flexbox spec. | `FlexContainer`              |
 | [ImageView](./imageview.md)          | An image view is a class for displaying an image resource.   | `ImageView`                   |
 | [Loading](./nui-components/Loading.md) | A loading is used to give information about the ongoing operations. | `Loading`                |
 | [Popup](./nui-components/Popup.md) | A popup is used as a popup window. | `Popup`                |
 | [Progress](./nui-components/Progress.md) | A progress is used to show the ongoing status using a long narrow bar. | `Progress`                |
+| [RadioButton](./nui-components/RadioButton.md) | A RadioButton that can set selected or unselected status when user selects it. | `RadioButton`                |
 | [Scrollbar](./nui-components/Scrollbar.md) | A scrollbar is used to show the range of content. | `ScrollBar`                |
 | [Slider](./nui-components/Slider.md) | A slider that indicates a modifiable value within a specific range. | `Slider`                   |
 | [Switch](./nui-components/Switch.md) | A switch that can be used as a selector. | `Switch`                |
@@ -29,8 +31,6 @@ The following table lists the available UI components:
 | [TextLabel](./textlabel.md)          | A text label that renders a short text string. | `TextLabel`                |
 | [Toast](./nui-components/Toast.md) | A toast is used to provide simple messages. | `Toast`                |
 | [VideoView](./videoview.md)          | A video view that controls and displays video playback. | `VideoView`                 |
-| [CheckBox](./nui-components/CheckBox.md) | A CheckBox that can set selected/unselected status when user select it. | `CheckBox`                |
-| [RadioButton](./nui-components/RadioButton.md) | A RadioButton that can set selected/unselected status when user select it. | `RadioButton`                |
 
 The base class for the components is `View`. This class can also be used to create your own custom UI components. For more information on the view class, see [View](./view.md). In this UI Components guide, both the terms **control** and **component** are used to refer to a UI component.
 
