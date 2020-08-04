@@ -6,7 +6,7 @@ A RadioButton can only contain an icon, and can be created using style.
 
 ## Create with Style
 
-To create a RadioButton applying style, follow these steps:
+To create a radio button using style, follow these steps:
 
 1. Create RadioButton using the default constructor:
 
@@ -14,7 +14,7 @@ To create a RadioButton applying style, follow these steps:
     RadioButton utilityRadioButton = new RadioButton();
     ```
 
-2. Apply style to the RadioButton:
+2. Apply style to RadioButton:
 
     ```cs
     ButtonStyle utilityStyle = new ButtonStyle
@@ -36,13 +36,13 @@ To create a RadioButton applying style, follow these steps:
     root.Add(utilityRadioButton);
     ```
 
-Following output is generated when the RadioButton applying style:
+Following output is generated when a radio button is created by using style:
 
 ![RadioButton2](./media/RadioButton2.png)
 
 
 ## Responding to ClickEvent
-When you click a RadioButton, the RadioButton instance receives a click event.
+When you click a radio button, the radio button instance receives a click event.
 You can declare the click event handler as follows:
 
 ```cs
@@ -59,7 +59,7 @@ private void OnClick(object sender, Button.ClickEventArgs e)
 
 ## Responding to StateChangedEvent
 RadioButton has the following eight states `Normal`, `Focused`, `Disabled`, `Selected`, `Pressed`, `DisabledFocused`, `SelectedFocused`, and `DisabledSelected`.  
-When you change the RadioButton state to focus or disable, the RadioButton instance receives a state changed event:
+When you change the radio button state to focus or disable, the radio button instance receives a state changed event:
 
 ```cs
 RadioButton button = new RadioButton();

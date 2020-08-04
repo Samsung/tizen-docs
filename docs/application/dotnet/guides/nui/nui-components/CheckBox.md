@@ -6,7 +6,7 @@ A CheckBox can only contain an icon, and can be created using style.
 
 ## Create with Style
 
-To create a CheckBox applying style, follow these steps:
+To create a checkbox using style, follow these steps:
 
 1. Create CheckBox using the default constructor:
 
@@ -14,7 +14,7 @@ To create a CheckBox applying style, follow these steps:
     CheckBox utilityCheckBox = new CheckBox();
     ```
 
-2. Apply style to the RadioButton:
+2. Apply style to the CheckBox:
 
     ```cs
     ButtonStyle utilityStyle = new ButtonStyle
@@ -36,7 +36,7 @@ To create a CheckBox applying style, follow these steps:
     root.Add(utilityCheckBox);
     ```
 
-Following output is generated when the CheckBox applying style:
+Following output is generated when a checkbox is created by using style:
 
 ![CheckBox2](./media/CheckBox2.png)
 
