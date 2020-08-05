@@ -36,7 +36,7 @@ To create a radio button using style, follow these steps:
     root.Add(utilityRadioButton);
     ```
 
-Following output is generated when a radio button is created by using style:
+Following output is generated when a radio button is created using style:
 
 ![RadioButton2](./media/RadioButton2.png)
 
