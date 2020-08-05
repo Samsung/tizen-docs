@@ -36,7 +36,7 @@ To create a checkbox using style, follow these steps:
     root.Add(utilityCheckBox);
     ```
 
-Following output is generated when a checkbox is created by using style:
+Following output is generated when a checkbox is created using style:
 
 ![CheckBox2](./media/CheckBox2.png)
 
