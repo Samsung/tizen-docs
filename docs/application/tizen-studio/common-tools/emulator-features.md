@@ -422,7 +422,7 @@ You can override the defined qemu values on the emulator starting time. For exam
    ./emulator --conf <configuration file> --ram 1024
    ```
 
-For more information on the start-up options, see [QEMU Emulator User Documentation](https://qemu.weilnetz.de/doc/qemu-doc.html#sec_005finvocation) and the `vm_launch.conf` file.
+For more information on the start-up options, see [QEMU Emulator User Documentation](https://qemu.weilnetz.de/doc/latest/) and the `vm_launch.conf` file.
 
 The following example shows the configuration file:
 

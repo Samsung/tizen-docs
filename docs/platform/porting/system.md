@@ -2264,7 +2264,7 @@ The default configuration file for crash-manager is `/etc/crash-manager.conf`. I
          - `*.info`: Contains information about the registers and the call stack of the crashed application.
          - `*.coredump`: A process memory dump.
          - `*.so_info`: Contains information about shared libraries used by the crashed application, together with the names of packages that contain them.
-         - `*.log`: Contains information provided by [dump_systemstate](#dump_systemstate).
+         - `*.log`: Contains information provided by [dump_systemstate](#dump-systemstate).
          - Interesting files (`cmdline`, `environ`, `io`, `maps`, `smaps`, `stack`, `stat`, `statm`, `cwd`, `fd`) from the `/proc/<PID>/` directory.
 
      Default value: `FULL`

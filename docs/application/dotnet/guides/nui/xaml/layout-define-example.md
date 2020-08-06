@@ -83,7 +83,7 @@ namespace Tizen.NUI.Examples
     }
 }
 ```
-For more information, see [XAML Support for Tizen.NUI](./getting-started-with-nui-xaml.md).
+For more information, see [XAML Support for Tizen.NUI](../../../get-started/wearable/first-xaml-app.md).
 
 ## Load XAML
 
