@@ -128,9 +128,8 @@
 
 ### Media and Camera
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
-#### [Media Content and Metadata](/application/dotnet/guides/multimedia/media-content-metadata.md)
-##### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
-##### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
+#### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
+#### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
 #### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
 #### Visual Detection and Recognition
 ##### [Overview](/application/dotnet/guides/multimedia/media-vision.md)
@@ -868,9 +867,8 @@
 
 ### Multimedia
 #### [Overview](/application/native/guides/multimedia/overview.md)
-#### Media Content and Metadata
-##### [Media Content](/application/native/guides/multimedia/media-content.md)
-##### [Metadata](/application/native/guides/multimedia/metadata.md)
+#### [Media Content](/application/native/guides/multimedia/media-content.md)
+#### [Metadata](/application/native/guides/multimedia/metadata.md)
 #### [Image Editing](/application/native/guides/multimedia/image-edit.md)
 #### [Thumbnail Images](/application/native/guides/multimedia/thumbnail-images.md)
 #### Visual Detection and Recognition
