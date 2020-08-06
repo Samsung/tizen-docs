@@ -1,23 +1,23 @@
 # Get Started with Tizen Wearable Applications
-Tizen targets to provide a robust development environment to explore the future of innovative smart wearable application development. 
+Tizen targets to provide a robust development environment to explore the future of innovative smart wearable application development.
 For wearable devices, Tizen supports three primary application types, .NET, Web, and Native applications.
 
 ## .NET Applications
-You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development. 
+You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development.
 
 To begin your Tizen .NET application development journey, use the following quick start guides:
 -   [Wearable .NET application](../dotnet/get-started/wearable/first-app.md)
 -   [Wearable XAML application](../dotnet/get-started/wearable/first-xaml-app.md)
 
 Ensure that you have installed the latest version of [Visual Studio Tools for Tizen](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
-	
+
 Explore more about the Tizen wearable .NET application development:
--   [Tutorials](../dotnet/tutorials/overview.md)	
+-   [Tutorials](../dotnet/tutorials/overview.md)
 -   [Guides](../dotnet/guides/overview.md)
--   [API reference ](../dotnet/api/overview.md)	
+-   [API reference ](../dotnet/api/overview.md)
 
 ## Web Applications
-You can create rich Web applications that consist of HTML, JavaScript, and CSS that are combined in a package. 
+You can create rich Web applications that consist of HTML, JavaScript, and CSS that are combined in a package.
 
 To begin your Tizen Web application development journey, use the following quick start guides:
 -   [Wearable Web application](../web/get-started/wearable/first-app.md)

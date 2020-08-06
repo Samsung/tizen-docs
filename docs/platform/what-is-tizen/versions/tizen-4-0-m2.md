@@ -2,17 +2,16 @@
 
 Since the first release in 2012, Tizen has evolved adapting to the market requirements and technical advances. As smart devices are widespread in the market, Tizen is deployed to mobile phones, wearable devices, TVs, and home appliances. In the near future, lots of IoT (Internet of Things) services will pervade everyone's life. Tizen is moving forward as a convergence platform and Tizen 4.0 is another big step to the world of everything connected.
 
-![img](media/4.0_Tizen_Evolution.png)
+**Figure: Evolution of Tizen**
 
-Figure. Evolution of Tizen
+![img](media/4.0_Tizen_Evolution.png)
 
 Tizen 4.0 M1 was a significant improvement of development environment: Tizen .NET architecture based on Microsoft's .NET Core and Xamarin.Forms, support of C# as an application language, and Visual Studio Tools for Tizen.
 
+**Figure: Tizen .NET architecture and groundwork**
+
 ![img](media/4.0_TizenArch.png)
 ![img](media/4.0_Tizen.NET.png)
-
-Figure. Tizen .NET architecture and groundwork
-
 
 
 Tizen 4.0 M2 presents more advances in development environment and tools. Moreover, this version includes Tizen IoT preview 1  with a configurable SDK supporting headed mode and headless mode.
@@ -29,7 +28,7 @@ The key features are as follows:
 
 ![Wearable Emulator](media/wearable_emul.png)
 
-* **Tizen IoT preview 1**: Tizen 4.0 M2 introduces Tizen IoT, a lightweight embedded Tizen OS for IoT devices. Tizen IoT can be configured for either "Tizen IoT Core (headless mode)" or "Tizen Common (headed mode)." Accordingly, Tizen Studio is configurable for both modes. For now, Tizen IoT supports two hardware platforms: Artick 530 and Raspberry Pi 3. For more information of Tizen IoT preview 1, see [here]().
+* **Tizen IoT preview 1**: Tizen 4.0 M2 introduces Tizen IoT, a lightweight embedded Tizen OS for IoT devices. Tizen IoT can be configured for either "Tizen IoT Core (headless mode)" or "Tizen Common (headed mode)." Accordingly, Tizen Studio is configurable for both modes. For now, Tizen IoT supports two hardware platforms: Artick 530 and Raspberry Pi 3.
 
 ![img](media/tizen_iot_preview.png)
 

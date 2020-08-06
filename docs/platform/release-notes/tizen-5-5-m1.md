@@ -103,8 +103,8 @@ The Tizen 5.5 Public M1 release provides developers with the Tizen kernel, devic
     - SYSTEM_SETTINGS_KEY_ACCESSIBILITY_GRAYSCALE
     - SYSTEM_SETTINGS_KEY_ACCESSIBILITY_NEGATIVE_COLOR
   - Added features for accessibility
-    - http://tizen.org/feature/accessibility.grayscale
-    - http://tizen.org/feature/accessibility.negative
+    - `http://tizen.org/feature/accessibility.grayscale`
+    - `http://tizen.org/feature/accessibility.negative`
 
 #### Fixes
 
