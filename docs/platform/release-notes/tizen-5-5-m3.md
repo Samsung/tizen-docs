@@ -1,0 +1,93 @@
+﻿# Tizen 5.5 Public M3 Release Notes
+
+Release date: Aug. 31, 2020
+
+
+- Tizen 5.5 public M3 adopts some new features for wearable, such as AOD viewer, Sticker framework, Aurum for testing-automation, and Battery-Monitor framework.
+
+
+## Application framework
+
+### New and changed features
+
+- App-defined-loader
+  - The new API set for preparing a specific app-defined loader has been provided.
+- Added widget-service API set
+  - Functions to enable and disable by widget class have been provided.
+- API set for watch viewer
+  - The new API set for watch viewer has been provided.
+- API set for AOD viewer
+  - The new API set for AOD viewer has been provided.
+- Watchface-complication
+  - The additional API set for watchface-complication has been provided.
+
+
+## Window System
+
+### New and changed features
+
+- tzsh-quickpanel
+  - tzsh_quickpanel_scrollable_state_set/get API and enumeration have been added.
+  - tzsh_quickpanel_scrollable_set/get API has been deprecated.
+
+
+## UI framework
+
+### New and changed features
+
+- Aurum has been added.
+  - Automation framework for UI testing
+- efl-theme-tizen-wearable has been updated with new UX.
+- Sticker framework
+  - Support for API to set/get display type of sticker (emoji, wallpaper) has been added.
+  - Support for API to delete sticker using URI has been added.
+  - API set for managing recent stickers history has been added.
+  - A new API for registering whenever sticker info is changed, has been added.
+
+
+## Network and Connectivity
+
+### New and changed features
+
+- C# API Changes
+  - Tizen.Network.Bluetooth
+    - IBluetoothServerSocket
+      - [Added] int SendData(byte[] data)
+      - [Deprecated] int SendData(string data)
+    - SocketData
+      - [Added] byte[] ByteData { get; }
+      - [Deprecated] string Data { get; }
+
+
+## Service framework
+
+### New and changed features
+
+- Battery-Monitor framework
+  - Support for fetching battery information for custom period has been added.
+  - Battery monitor API set has been changed to return usage in mAh instead of percentage.
+  - Support for C# API set for battery monitor has been added.
+  - Support for estimating battery information for external tools has been added.
+    - Support for estimating approximate power usage per application ID has been added.
+    - Support for estimating power usage per system resource has been added.
+    - Per-app statistics of state and events has been added.
+  - Following API set has been changed to provide custom time period support and return usage in mAh.
+    - API for fetching information for an application for a particular resource over a certain duration of time has been updated.
+    - API for fetching total battery usage information of an application, combining all the resources over certain duration of time has been updated.
+    - API for fetching battery usage values for all the resources separately used by an application ID for a certain duration has been updated.
+    - API for fetching battery usage values for a particular resource over certain duration of time has been updated.
+- Contact Framework
+  - Support for getting count for contact records has been added for better performance.
+    - API for fetching count of searched records has been added.
+    - API for fetching count of searched record with range has been added.
+    - API set for fetching count for searched record with query has been added.
+
+
+## Tizen .NET
+
+### New and changed features
+
+- Xamarin.Forms
+  - Support for Xamarin.Forms 4.6.0 has been added.
+- Tizen.CircularUI
+  - Support for Wearable UI extension (Tizen.Wearable.CircularUI) 1.5.0 has been added.
