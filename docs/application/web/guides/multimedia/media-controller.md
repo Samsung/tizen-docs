@@ -394,7 +394,7 @@ To receive and handle search request on the server, follow these steps:
 
         // You can return RequestReply object, which will be sent to the client
         // who can handle it in search request reply callback.
-        return new tizen.mediacontroller.RequestReply(123, {"someData": "someValue"});
+        return new tizen.mediacontroller.RequestReply({"someData": "someValue"}, 123);
     }
     ```
 
