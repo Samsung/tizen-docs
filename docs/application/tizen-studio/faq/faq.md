@@ -1,6 +1,6 @@
 # Frequently Asked Questions 
 
-This page answers to the most commonly asked questions or errors that you may encounter while installing Tizen studio and developing apps in Tizen Studio.
+This page answers to the most commonly asked questions or errors that you may encounter while installing Tizen Studio and developing apps in Tizen Studio.
 
  <style>
          pre {
@@ -104,7 +104,7 @@ label {
             <label for="stage-1-control">How to run Tizen Studio on Ubuntu 18.04?</label>
                <div class="item-content-container">
                   <div class="item-content">
-                     <p>Tizen studio supports Ubuntu 18.04. However, Ubuntu 18.04 distribution does not include the runtime library <b>libpng12-0</b>.
+                     <p>Tizen Studio supports Ubuntu 18.04. However, Ubuntu 18.04 distribution does not include the runtime library <b>libpng12-0</b>.
                      <p>To experience optimal installation experience, install the runtime library and run the following command:
                         <pre>
                            $ wget http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb
@@ -117,7 +117,7 @@ label {
       </li>
       <li class="accordion-item stage-2">
          <input type="radio" name="accordion-control" id="stage-2-control">
-            <label for="stage-2-control">How to manage certificates in different Ubuntu?</label>
+            <label for="stage-2-control">How to manage certificates in different Ubuntu versions?</label>
                <div class="item-content-container">
                   <div class="item-content">
                      <p>
@@ -143,7 +143,7 @@ label {
             <label for="stage-4-control">How to implement vibration API in Tizen Web app?</label>
                <div class="item-content-container">
                   <div class="item-content">
-                     <p>Vibration API offers adds to the user experience and improves overall perception of the application. With vibration API, no third party library is required to implement vibration feature. For more information on implentation of Tizen Vibration API, see <a href="https://developer.tizen.org/community/tip-tech/vibration-api-tizen-web-app">Vibration API.</a></p>
+                     <p>Vibration API adds to the user experience and improves overall perception of the application. With vibration API, no third party library is required to implement vibration feature. For more information on implemtation of Tizen Vibration API, see <a href="https://developer.tizen.org/community/tip-tech/vibration-api-tizen-web-app">Vibration API.</a></p>
                   </div>
                </div>
       </li>
