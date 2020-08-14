@@ -298,6 +298,59 @@ Followings are the available elements:
     char pipeline[] = "videotestsrc is-live=true ! videoconvert ! tensor_converter ! output-selector name=outs outs.src_0 ! tensor_sink name=sink0 async=false outs.src_1 ! tensor_sink name=sink1 async=false"
     ```
 
+- **Normal element**
+
+    All elements in the pipeline have specific properties and can be manipulated to control the operation of a pipeline. To get and set the property value, you have to get the element handle in the pipeline by calling `ml_pipeline_element_get_handle()` with its name as follows:
+    ```c
+    ml_pipeline_h handle = nullptr;
+    ml_pipeline_element_h demux_h = nullptr;
+
+    pipeline = g_strdup("videotestsrc ! video/x-raw,format=RGB,width=640,height=480 ! videorate max-rate=1 ! " \
+	    "tensor_converter ! tensor_mux ! tensor_demux name=demux ! tensor_sink");
+
+    // Construct a pipeline
+    status = ml_pipeline_construct (pipeline, NULL, NULL, &handle);
+
+    // Get the handle of the target element
+    status = ml_pipeline_element_get_handle (handle, "demux", &demux_h);
+    ```
+
+    After fetching the handle of the target element, you can set and get the value of the specific property:
+    ```c
+    gchar *ret_tensorpick;
+
+    // Set the string value of the given element's property
+    status = ml_pipeline_element_set_property_string (demux_h, "tensorpick", "1,2");
+
+    // Get the string value of the given element's property
+    status = ml_pipeline_element_get_property_string (demux_h, "tensorpick", &ret_tensorpick);
+    ```
+
+    Before you destroy the pipeline, release `demux_h` by calling `ml_pipeline_element_release_handle()`:
+    ```c
+    ml_pipeline_element_release_handle (demux_h);
+    ```
+
+    To figure out the property information of the target element, you can run `gst-inspect-1.0` command on your device as follows:
+    ```text
+    # gst-inspect-1.0 tensor_demux
+    ...
+    Element Properties:
+    name                : The name of the object
+                            flags: readable, writable
+                            String. Default: "tensordemux0"
+    parent              : The parent of the object
+                            flags: readable, writable
+                            Object of type "GstObject"
+    silent              : Produce verbose output
+                            flags: readable, writable
+                            Boolean. Default: true
+    tensorpick          : Choose nth tensor among tensors
+                            flags: readable, writable
+                            String. Default: ""
+    ...
+    ```
+
 ### Pipeline States
 
 For more information about the pipeline states, see [GStreamer guide](https://gstreamer.freedesktop.org/documentation/plugin-development/basics/states.html).
@@ -377,6 +430,72 @@ For more information about the pipeline states, see [GStreamer guide](https://gs
     uint8_t dummy[4] = {1, 1, 1, 1};
     ml_tensors_data_set_tensor_data (data, 0, dummy, 1);
     ```
+
+## Custom Filter
+
+For your convenience, NNStreamer provides an interface for processing the tensor data with the `custom-easy` framework. After registering the user-defined callback function with the input and the output tensor information, NNStreamer can manipulate tensor data in the pipeline without an independent shared object. Since the callback function works as **filter** in the pipeline, it is named as `Custom Filter`.
+
+- **Define and register Custom Filter**
+
+    Before you use the Custom Filter in the pipeline, you have to register the Custom Filter with input and output tensor information and its name:
+
+    ```c
+    /* Define Custom Filter function */
+    static int custom_filter_invoke_cb (const ml_tensors_data_h in, ml_tensors_data_h out, void *user_data)
+    {
+        /* Get input tensors using data handle 'in',
+           and fill output tensors using data handle 'out'. */
+        if (user_data) {
+            void *raw_data = NULL;
+            size_t *data_size = (size_t *) user_data;
+
+            ml_tensors_data_get_tensor_data (out, 0, &raw_data, data_size);
+        }
+
+        return 0;
+    }
+    ...
+
+    ml_tensors_info_h in_info, out_info;
+    ml_custom_easy_filter_h custom;
+    ml_tensor_dimension dim = { 2, 1, 1, 1 };
+    size_t data_size;
+    int status;
+
+    /* Define input and output tensor information. */
+    ml_tensors_info_create (&in_info);
+    ml_tensors_info_set_count (in_info, 1);
+    ml_tensors_info_set_tensor_type (in_info, 0, ML_TENSOR_TYPE_INT8);
+    ml_tensors_info_set_tensor_dimension (in_info, 0, dim);
+
+    ml_tensors_info_create (&out_info);
+    ml_tensors_info_set_count (out_info, 1);
+    ml_tensors_info_set_tensor_type (out_info, 0, ML_TENSOR_TYPE_FLOAT32);
+    ml_tensors_info_set_tensor_dimension (out_info, 0, dim);
+
+    /* Register custom filter with name 'my-custom-filter' */
+    status = ml_pipeline_custom_easy_filter_register ("my-custom-filter", in_info, out_info, custom_filter_invoke_cb, &data_size, &custom);
+    ```
+
+- **Construct a pipeline with Custom Filter**
+
+    After registering the Custom Filter, you can use it when constructing the pipeline:
+
+    ```c
+    ml_pipeline_h pipe;
+
+    /* framework is 'custom-easy' and registered model `my-custom-filter` is used */
+    const char pipeline[] = "appsrc ! other/tensor,dimension=(string)2:1:1:1,type=(string)  int8,framerate=(fraction)0/1 ! tensor_filter framework=custom-easy model=my-custom-filter ! tensor_sink";
+
+    status = ml_pipeline_construct (pipeline, NULL, NULL, &pipe);
+    ```
+
+    After using the Custom Filter handle, it should be unregistered by calling `ml_pipeline_custom_easy_filter_unregister()`:
+    ```c
+    ml_pipeline_destroy (handle);
+    ml_pipeline_custom_easy_filter_unregister (custom);
+    ```
+
 
 ## Related Information
 
