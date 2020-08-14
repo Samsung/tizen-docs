@@ -1,6 +1,6 @@
 # Frequently Asked Questions 
 
-This page answers to the most commonly asked questions or errors that you may encounter while installing Tizen Studio and developing apps in Tizen Studio.
+This page answers to the most commonly asked questions or errors that you may encounter while installing or developing apps in Tizen Studio.
 
  <style>
          pre {
@@ -104,24 +104,24 @@ label {
             <label for="stage-1-control">How to run Tizen Studio on Ubuntu 18.04?</label>
                <div class="item-content-container">
                   <div class="item-content">
-                     <p>Tizen Studio supports Ubuntu 18.04. However, Ubuntu 18.04 distribution does not include the runtime library <b>libpng12-0</b>.
-                     <p>To experience optimal installation experience, install the runtime library and run the following command:
+                     <p>Tizen Studio is supported on Ubuntu 18.04. However, Ubuntu 18.04 distribution does not include the runtime library <b>libpng12-0</b>.
+                     <p>For optimal installation experience, it is recommend to install the runtime library and run the following command:
                         <pre>
                            $ wget http://mirrors.kernel.org/ubuntu/pool/main/libp/libpng/libpng12-0_1.2.54-1ubuntu1_amd64.deb
                            $ sudo dpkg -i libpng12-0_1.2.54-1ubuntu1_amd64.deb
                         </pre>
                      </p>
-                     Generally, installing packages from older distributions may break apt installation system, but since these dependencies are also present in Ubuntu-18.04, so the apt installation system works flawlessly. </p>
+                     Generally, installing packages from older distributions may break the `apt` installation system, but since these dependencies are also present in Ubuntu 18.04, the `apt` installation system works flawlessly.</p>
                   </div>
                </div>
       </li>
       <li class="accordion-item stage-2">
          <input type="radio" name="accordion-control" id="stage-2-control">
-            <label for="stage-2-control">How to manage certificates in different Ubuntu versions?</label>
+            <label for="stage-2-control">How to manage certificates on different versions of Ubuntu?</label>
                <div class="item-content-container">
                   <div class="item-content">
                      <p>
-                      On Ubuntu, Tizen Certificate Manager in Tizen Studio stores the passwords of the certificates in the <b>gnome-keyring</b> application. Therefore, you must enable the <b>gnome-keyring</b> application to ensure that Tizen Studio functions smoothly. </p>
+                      On Ubuntu, Tizen Certificate Manager stores the passwords of the certificates in the <b>gnome-keyring</b> application. Therefore, you must enable the <b>gnome-keyring</b> application to ensure that Tizen Studio functions smoothly. </p>
                      <p>The remote login in a Linux desktop system does not have the <b>DBUS_SESSION_BUS_ADDRESS</b> variable set in the session. </p>
                      <p>To store and lookup passwords in the <b>host login keyring</b>, you must set the <b>DBUS_SESSION_BUS_ADDRESS</b> variable.</p>
                      <p>For more information, see <a href="https://developer.tizen.org/community/tip-tech/how-manage-certificates-and-package-applications-different-ubuntu-setups)">Manage certificates. </a>
@@ -134,7 +134,7 @@ label {
             <label for="stage-3-control">How to efficiently validate form data in Tizen Web app?</label>
                <div class="item-content-container">
                   <div class="item-content">
-                     <p>Validation typically occurs at the server end. If the data entered by the client is incorrect or the data is missing, the server responds and the user needs to resubmit the form with correct information. The whole process incurs lot of time but to effectively validate the form data, see <a href="https://developer.tizen.org/community/tip-tech/form-validation-using-tizen-web">simple form validation in Tizen Web app.</a></p>             
+                     <p>Form Validation typically occurs at the server end. If the data entered by the client is incorrect or the data is missing, the server responds and the user needs to resubmit the form with correct information. The whole process incurs lot of time but to effectively validate the form data, see <a href="https://developer.tizen.org/community/tip-tech/form-validation-using-tizen-web">simple form validation in Tizen Web app.</a></p>             
                   </div>
                </div>
       </li>
@@ -168,7 +168,7 @@ label {
       </li>
          <li class="accordion-item stage-6">
             <input type="radio" name="accordion-control" id="stage-6-control">
-            <label for="stage-6-control">How to update Package Mananger using CLI?</label>
+            <label for="stage-6-control">How to update Package Manager using CLI?</label>
             <div class="item-content-container">
                <div class="item-content">
                   <p>To update Tizen Studio using CLI Package Manager, use the update command with the following syntax:
