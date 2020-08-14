@@ -3,7 +3,10 @@
 This page describes methodologies, techniques, and procedures to troubleshoot problems that might arise in the day-to-day operations while using Tizen Studio.
 
 ## Issue: HAXM installation fails 
-**Description:** HAXM fails to install.
+
+**Description:** 
+
+HAXM fails to install.
 
 **Resolution:** 
 

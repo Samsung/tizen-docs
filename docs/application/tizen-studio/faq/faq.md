@@ -32,7 +32,7 @@ label {
          height: 45px;
          line-height: 28px;
          font-size: 18px;
-         margin: 4px 1.5em 0px 0px;
+         margin: 4px 0.5em 0px 0px;
          color:#008aee;
          }
          .css-accordion {
