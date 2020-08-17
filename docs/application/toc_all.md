@@ -186,7 +186,6 @@
 #### Authentication and Authorization
 ##### [Overview](/application/dotnet/guides/personal/authentication.md)
 ##### [FIDO Universal Authentication Framework](/application/dotnet/guides/personal/fido.md)
-##### [OAuth 2.0](/application/dotnet/guides/personal/oauth.md)
 #### [Calendar](/application/dotnet/guides/personal/calendar.md)
 #### [Contacts](/application/dotnet/guides/personal/contacts.md)
 #### [Phone Number Management](/application/dotnet/guides/personal/phonenumber.md)
