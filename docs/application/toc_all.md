@@ -128,7 +128,6 @@
 
 ### Media and Camera
 #### [Overview](/application/dotnet/guides/multimedia/overview.md)
-#### [Media Content and Metadata](/application/dotnet/guides/multimedia/media-content-metadata.md)
 #### [Media Content](/application/dotnet/guides/multimedia/media-content.md)
 #### [Metadata](/application/dotnet/guides/multimedia/metadata.md)
 #### [Thumbnail Images](/application/dotnet/guides/multimedia/thumbnail-images.md)
@@ -268,7 +267,8 @@
 ## Tutorials
 
 ### [Overview](/application/web/tutorials/overview.md)
-### [Application Development Process](/application/web/tutorials/process/app-dev-process.md)
+### Application Development Process
+#### [Overview](/application/web/tutorials/process/app-dev-process.md)
 #### [Creating the Application Project](/application/web/tutorials/process/creating-app-project.md)
 #### [Setting Project Properties](/application/web/tutorials/process/setting-properties.md)
 #### [Coding Applications](/application/web/tutorials/process/coding-app.md)
@@ -370,6 +370,7 @@
 #### [NFC](/application/web/guides/connectivity/nfc.md)
 #### [Secure Element Access](/application/web/guides/connectivity/secure-element.md)
 #### [Content Downloads](/application/web/guides/connectivity/download.md)
+#### [Network Bearer Selection](/application/web/guides/connectivity/nbs.md)
 
 ### Messaging
 #### [Overview](/application/web/guides/messaging/overview.md)
@@ -380,11 +381,13 @@
 #### [Overview](/application/web/guides/sensors/sensors.md)
 #### [Human Activity Monitor](/application/web/guides/sensors/ham.md)
 #### [Device Sensors](/application/web/guides/sensors/device-sensors.md)
+#### [Gesture Recognition](/application/web/guides/sensors/ham-gesture.md)
 
 ### Text Input
 #### [Overview](/application/web/guides/text-input/text-input.md)
 #### [IME Application](/application/web/guides/text-input/input-method.md)
 #### [Input Device](/application/web/guides/text-input/input-device.md)
+#### [Voice Control](/application/web/guides/text-input/voice-control.md)
 
 ### Personal Data
 #### [Overview](/application/web/guides/personal/personal.md)
@@ -865,9 +868,8 @@
 
 ### Multimedia
 #### [Overview](/application/native/guides/multimedia/overview.md)
-#### Media Content and Metadata
-##### [Media Content](/application/native/guides/multimedia/media-content.md)
-##### [Metadata](/application/native/guides/multimedia/metadata.md)
+#### [Media Content](/application/native/guides/multimedia/media-content.md)
+#### [Metadata](/application/native/guides/multimedia/metadata.md)
 #### [Image Editing](/application/native/guides/multimedia/image-edit.md)
 #### [Thumbnail Images](/application/native/guides/multimedia/thumbnail-images.md)
 #### Visual Detection and Recognition

@@ -1,6 +1,6 @@
 # IoT Connectivity
 
-[IoTivity](https://www.iotivity.org/) offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications. IoT connectivity (Iotcon) provides the means of using IoTivity in Tizen.
+[IoTivity](https://iotivity.org/) offers seamless device-to-device connectivity to address the emerging needs of the Internet of Things (IoT) through the open source reference implementation of the OIC (Open Interconnect Consortium) standard specifications. IoT connectivity (Iotcon) provides the means of using IoTivity in Tizen.
 
 The Iotcon API is optional for Tizen Mobile, Wearable, and TV profiles, which means that it may not be supported on all mobile, wearable, and TV devices. The Iotcon API is supported on all Tizen emulators.
 
@@ -64,7 +64,7 @@ To create a new resource:
 
 1. Initialize a server and set the device name:
 
-   1. For managing secure virtual resources, a CBOR format file (Concise Binary Object Representation) must be	available, preferably in the application local storage. For more information on security, see [Iotivity Security](https://wiki.iotivity.org/iotivity_security).
+   1. For managing secure virtual resources, a CBOR format file (Concise Binary Object Representation) must be	available, preferably in the application local storage.
 
       ```
       var cborPath = 'path_to_my_app_storage/iotcon-server-test.dat';
@@ -156,7 +156,7 @@ To find remote resources:
 
 1. Initialize a client and set the device name:
 
-   1. For managing secure virtual resources, a CBOR format file (Concise Binary Object Representation) must be	available, preferably in the application local storage. For more information on security, see [Iotivity Security](https://wiki.iotivity.org/iotivity_security).
+   1. For managing secure virtual resources, a CBOR format file (Concise Binary Object Representation) must be	available, preferably in the application local storage.
 
       ```
       var cborPath = 'path_to_my_app_storage/iotcon-client-test.dat';

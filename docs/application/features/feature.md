@@ -3414,6 +3414,22 @@ The platform returns true for this key, if the device supports TV Window API.
 
 </div>
 
+<div class="views-row views-row-217 views-row-even">
+
+[http://tizen.org/feature/ui_service.sticker](){#feature/ui_service.sticker}
+----------------------------------------------------
+
+**Application filtering:**\
+Specify this key, if the application requires Sticker API.\
+This feature is only used for native application filtering and not used for Web application filtering.
+
+**System information:**\
+The platform returns true for this key, if the device supports Sticker API.
+
+[Edit Key]( "edit"){.edit}
+
+</div>
+
 <div class="views-row views-row-218 views-row-even">
 
 [http://tizen.org/feature/usb.accessory](){#feature/usb.accessory}

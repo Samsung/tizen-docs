@@ -4,42 +4,42 @@
 
 > [!NOTE]
 > Service applications are Tizen native applications which run in the background with no graphical user interface.
-> They can be very useful for activities, such as getting sensor data in the background, that need to be run periodically or continuously but do not require any user interaction.
+> These applications can be very useful for activities, such as getting sensor data in the background that needs to run periodically or continuously but does not require any user interaction.
 
-An IoT native service application can be created using the C language and run on the Raspberry Pi. The application uses the native APIs, which provide various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
+An IoT native service application can be created using the C language and run on Raspberry Pi. The application uses the native APIs, which provide various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
 
-You can study the following contents to help familiarize yourself with the Tizen [Native application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and deploying the created application on the Raspberry Pi. With the instructions, you can create and run a basic IoT native service application, which displays some text on the log with no user interaction:
+You can study the following contents to help familiarize yourself with the Tizen [Native application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and deploying the created application on Raspberry Pi. With the instructions, you can create and run a basic IoT native service application, which displays some text on the log with no user interaction:
 
-1. Before you get started with developing Tizen applications on Raspberry Pi, you should set up your development environment with the board.
+1. Before you get started with developing Tizen applications on Raspberry Pi, you must set up your development environment with the board.
 
-	For more information on setting up the development environment with the board, see the links below:
-	- [Flashing Tizen Image](http://tizenschool.org/tutorial/191/contents/6)
-	- [Setting up Raspberry Pi](http://tizenschool.org/tutorial/191/contents/8)
+    For more information on setting up the development environment with the board, see the following:
+    - [Flashing Tizen Image](http://tizenschool.org/tutorial/191/contents/6)
+    - [Setting up Raspberry Pi](http://tizenschool.org/tutorial/191/contents/8)
 
-1. Download and install [Tizen Studio](../../../tizen-studio/index.md).
+2. Download and install [Tizen Studio](../../../tizen-studio/index.md).
 
     For more information on the installation process, see the [installation guide](../../../tizen-studio/setup/install-sdk.md).
 
-2. [Create an IoT native service project](#create) using Tizen Studio.
+3. [Create an IoT native service project](#create) using Tizen Studio.
 
-	This step shows how to use a pre-designed template that creates all the basic files and folders required for your project.
+    This step shows how to use a pre-designed template that creates all the basic files and folders required for your project.
 
-3. [Build the application](#build).
+4. [Build the application](#build).
 
-	This step shows how to build your own application by validating and compiling your codes.
+    This step shows how to build your own application by validating and compiling your codes.
 
-4. [Run the application](#run).
+5. [Run the application](#run).
 
-	This step shows how to run your application on the Raspberry Pi.
+    This step shows how to run your application on Raspberry Pi.
 
-When you are developing a more complex application, you can take advantage of the [native tools included in Tizen Studio](../../../tizen-studio/native-tools/index.md). It makes the tasks of creating functionality and designing the application UI easier.
+When you are developing a more complex application, you can take advantage of the [native tools included in Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
 ## Creating a Project
 
-The following example shows you how to create and configure a basic IoT native service application project in Tizen Studio. An application project contains all the files that make up the application.
+The following example shows you how to create and configure a basic IoT native service application project in Tizen Studio. An application project contains all the files that make up an application.
 
-The following figure illustrates the running result of the example application to be created. You can see the text log of the application (**Hello Tizen**) with no user interaction.
+The following figure illustrates the running result of the example application to be created. You can see the text log of the application (**Hello Tizen**) with no user interaction:
 
 **Figure: Log of the IoT native service application**
 
@@ -57,13 +57,13 @@ To create the application project:
 
 3. In the Project Wizard, define the project details.
 
-	The Project Wizard helps you to create a basic application skeleton with the predefined folder structure and mandatory files. You can easily create various applications by selecting an application template or sample to use in the Project Wizard.
+    The Project Wizard helps you to create a basic application skeleton with the predefined folder structure and mandatory files. You can easily create various applications by selecting an application template or sample to use in the Project Wizard.
 
     1.  Select the **Template** project type, and click **Next**.
 
         ![Selecting the project type](media/create_project_wizard_type.png)
 
-    2. Select the profile (**Iot-headed or Iot-hedless**) and version from a drop-down list, and click **Next**.
+    2. Select the profile (**Iot-headed or Iot-headless**) and version from a drop-down list, and click **Next**.
 
         The version depends on the platform version you have installed and with which you are developing the application.
 
@@ -79,11 +79,11 @@ To create the application project:
 
     5. Define the project properties, and click **Finish**.
 
-		You can enter a project name (3-50 characters) and an unique package ID. You also can select the location and working sets by clicking **More properties**.
+        You can enter a project name (3-50 characters) and an unique package ID. You also can select the location and working sets by clicking **More properties**.
 
         ![Defining properties](media/create_project_wizard_properties.png)
 
-		The Project Wizard sets up the project and creates application files using the default content from the template. For more information on the Project Wizard and available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/native-tools/project-wizard.md).
+        The Project Wizard sets up the project and creates application files using the default content from the template. For more information on the Project Wizard and available templates, see [Creating Tizen Projects with Tizen Project Wizard](../../../tizen-studio/native-tools/project-wizard.md).
 
 You can see the created project in the **Project Explorer** view. The most important files and folders include:
 
@@ -123,7 +123,7 @@ To view and modify the application configuration:
 
     - **Features**: Define required software and hardware features. This information is used for application filtering in Tizen Store.
 
-	- **Privileges**: Define privileges for the security-sensitive APIs or API groups accessed and used by the application.
+    - **Privileges**: Define privileges for the security-sensitive APIs or API groups accessed and used by the application.
 
     - **Localization**: Define localized values for the application label, description, and icon.
 
@@ -156,19 +156,19 @@ The `main()` function in the `src/service.c` file is used to register callbacks 
     -   Used to implement parameter-specific actions of the application.
 
 ```
-int
-main(int argc, char *argv[])
-{
-    char ad[50] = {0,};
-	service_app_lifecycle_callback_s event_callback;
-	app_event_handler_h handlers[5] = {NULL, };
+    int
+    main(int argc, char *argv[])
+    {
+        char ad[50] = {0,};
+        service_app_lifecycle_callback_s event_callback;
+        app_event_handler_h handlers[5] = {NULL, };
 
-	event_callback.create = service_app_create;
-	event_callback.terminate = service_app_terminate;
-	event_callback.app_control = service_app_control;
+        event_callback.create = service_app_create;
+        event_callback.terminate = service_app_terminate;
+        event_callback.app_control = service_app_control;
 
-	return service_app_main(argc, argv, &event_callback, ad);
-}
+        return service_app_main(argc, argv, &event_callback, ad);
+    }
 ```
 
 ### Adding the log
@@ -178,28 +178,28 @@ For more information on **Dlog**, see [Tizen Native API Reference > System > Dlo
 
 In this example, to confirm that the IoT native service application has been launched successfully, add the **Hello Tizen** as a debug log.
 
-You can add the debug log in following steps:
+You can add the debug log as follows:
 
 1. Confirm that **#include<dlog.h>** is added, and **LOG_TAG** is defined in `inc/service.h`.
-**LOG_TAG** can be changed as you want.
+**LOG_TAG** can be changed as you want:
 
 ```
-#include <dlog.h>
+    #include <dlog.h>
 
-#ifdef  LOG_TAG
-#undef  LOG_TAG
-#endif
-#define LOG_TAG "service"
+    #ifdef  LOG_TAG
+    #undef  LOG_TAG
+    #endif
+    #define LOG_TAG "service"
 ```
 
-2. Add **dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");** to the `service_app_create` function.
+2. Add **dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");** to the `service_app_create()`:
 
 ```
-bool service_app_create(void *data)
-{
-	dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");
-	return true;
-}
+    bool service_app_create(void *data)
+    {
+        dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");
+        return true;
+    }
 ```
 
 <a name="build"></a>
@@ -246,7 +246,7 @@ After you have built the application, run it.
 <a name="run"></a>
 ## Running Your Application
 
-You can run the application on the Raspberry Pi.
+You can run the application on Raspberry Pi.
 
 <a name="target"></a>
 ### Running on a Raspberry Pi
@@ -255,17 +255,17 @@ To run the application on a Raspberry Pi:
 
 1. Set the Wi-Fi of Raspberry Pi.
 
-	> [!NOTE]
-	> The Wi-Fi of the PC with the Tizen Studio installed and Raspberry Pi must be on the same local network.
+    > [!NOTE]
+    > The Wi-Fi of the PC with the Tizen Studio installed and Raspberry Pi must be on the same local network.
 
 1. Generate an author certificate.
 
     Before you run the application, you must [sign your application package with a certificate profile](../../../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
 
 2. Run the application:
-    1. In the **Tools \> Device Manager**, select the Raspberry Pi and change the connection status to **ON**.
+    1. In the **Tools \> Device Manager**, select Raspberry Pi and change the connection status to **ON**.
 
-		![Connected Raspberry Pi](media/connected_rpi.png)
+        ![Connected Raspberry Pi](media/connected_rpi.png)
 
     2. In **Project Explorer** view, right-click the project and select **Run As \> Tizen Native Application**.
 
@@ -276,16 +276,16 @@ To run the application on a Raspberry Pi:
         -   Press the **Ctrl + F11** key.
         -   Click the run icon in the toolbar.
 
-		If you have more than one connected devices, select the device from the combo box in the toolbar before selecting to run the application.
+        If you have more than one connected devices, select the device from the combo box in the toolbar before selecting to run the application.
 
-	3. See logs to confirm if the application launches successfully on the Raspberry Pi.
+	3. See logs to confirm if the application launches successfully on Raspberry Pi.
 
-	![Log of the IoT native service application](media/hellotizen_log.png)
+        ![Log of the IoT native service application](media/hellotizen_log.png)
 
 	For more information on the Log View, see the [checking Logs with Log View](https://docs.tizen.org/application/tizen-studio/common-tools/log-view/).
 
     > [!NOTE]
-	> The application is launched using the default debug run configuration. To create and other configurations:
+    > The application is launched using the default debug run configuration. To create and other configurations:
     > 1.  In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.
     >    ![Run Configurations window](media/run_configurations_n.png)

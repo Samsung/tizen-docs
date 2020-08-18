@@ -62,6 +62,7 @@ To obtain the information, query a feature or system key.
    - [Storage](#storage)
    - [System setting](#systemsetting)
    - [Thermistor](#thermistor)
+   - [UI Sticker](#sticker)
    - [USB](#usb)
    - [Vibration](#vibration)
    - [Vision](#vision)
@@ -606,9 +607,7 @@ The following table lists the sensor feature keys:
 | `http://tizen.org/feature/sensor.gyroscope.uncalibrated` | `bool` | The platform returns `true` for this key, if the device supports the uncalibrated gyroscope sensor. |
 | `http://tizen.org/feature/sensor.gyroscope.wakeup` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/sensor.gyroscope` key, if the device supports the wake-up operation by the gyro sensor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor` | `bool` | The platform returns `true` for this key, if the device supports the heart rate monitor. |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.batch` | `bool` | The platform returns `true` for this key, if the device supports the heart rate monitor batch sensor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_green` | `bool` | The platform returns `true` for this key, if the device supports the LED green sensor of the heart rate monitor. |
-| `http://tizen.org/feature/sensor.heart_rate_monitor.led_green.batch` | `bool` | The platform returns `true` for this key, if the device supports the LED green batch sensor of the heart rate monitor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_ir` | `bool` | The platform returns `true` for this key, if the device supports the LED infrared sensor of the heart rate monitor. |
 | `http://tizen.org/feature/sensor.heart_rate_monitor.led_red` | `bool` | The platform returns `true` for this key, if the device supports the LED red sensor of the heart rate monitor. |
 | `http://tizen.org/feature/sensor.humidity` | `bool` | The platform returns `true` for this key, if the device supports the humidity sensor. |
@@ -693,6 +692,15 @@ The following table lists the thermistor feature keys:
 | `http://tizen.org/feature/thermistor.ap` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the application processor. |
 | `http://tizen.org/feature/thermistor.cp` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the communications processor. |
 | `http://tizen.org/feature/thermistor.battery` | `bool` | The platform returns `true` for this key, if the device supports a thermistor for the battery. |
+
+The following table lists the sticker feature keys:
+
+<a name="sticker"></a>
+**Table: UI Sticker feature keys**
+
+| Key                                           | Type   | Description                              |
+|-----------------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/ui_service.sticker` | `bool` | The platform returns `true` for this key, if the device supports Sticker API. |
 
 The following table lists the USB feature keys:
 
