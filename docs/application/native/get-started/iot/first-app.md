@@ -3,7 +3,7 @@
 **Welcome to Tizen IoT Native Service Application development!**
 
 > [!NOTE]
-> Service applications are Tizen native applications which run in the background with no graphical user interface.
+> Service applications are Tizen native applications, which run in the background with no graphical user interface.
 > These applications can be very useful for activities, such as getting sensor data in the background that needs to run periodically or continuously but does not require any user interaction.
 
 An IoT native service application can be created using the C language and run on Raspberry Pi. The application uses the native APIs, which provide various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
@@ -156,19 +156,19 @@ The `main()` function in the `src/service.c` file is used to register callbacks 
     -   Used to implement parameter-specific actions of the application.
 
 ```
-    int
-    main(int argc, char *argv[])
-    {
-        char ad[50] = {0,};
-        service_app_lifecycle_callback_s event_callback;
-        app_event_handler_h handlers[5] = {NULL, };
+int
+main(int argc, char *argv[])
+{
+    char ad[50] = {0,};
+    service_app_lifecycle_callback_s event_callback;
+    app_event_handler_h handlers[5] = {NULL, };
 
-        event_callback.create = service_app_create;
-        event_callback.terminate = service_app_terminate;
-        event_callback.app_control = service_app_control;
+    event_callback.create = service_app_create;
+    event_callback.terminate = service_app_terminate;
+    event_callback.app_control = service_app_control;
 
-        return service_app_main(argc, argv, &event_callback, ad);
-    }
+    return service_app_main(argc, argv, &event_callback, ad);
+}
 ```
 
 ### Adding the log
@@ -180,27 +180,27 @@ In this example, to confirm that the IoT native service application has been lau
 
 You can add the debug log as follows:
 
-1. Confirm that **#include<dlog.h>** is added, and **LOG_TAG** is defined in `inc/service.h`.
-**LOG_TAG** can be changed as you want:
+    1. Confirm that **#include<dlog.h>** is added, and **LOG_TAG** is defined in `inc/service.h`.
+	**LOG_TAG** can be changed as you want:
 
-```
+    ```
     #include <dlog.h>
 
     #ifdef  LOG_TAG
     #undef  LOG_TAG
     #endif
     #define LOG_TAG "service"
-```
+    ```
 
-2. Add **dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");** to the `service_app_create()`:
+    2. Add **dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");** to the `service_app_create()`:
 
-```
+    ```
     bool service_app_create(void *data)
     {
         dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");
         return true;
     }
-```
+    ```
 
 <a name="build"></a>
 ## Building Your Application
@@ -276,7 +276,7 @@ To run the application on a Raspberry Pi:
         -   Press the **Ctrl + F11** key.
         -   Click the run icon in the toolbar.
 
-        If you have more than one connected devices, select the device from the combo box in the toolbar before selecting to run the application.
+        If you have more than one connected device, select the device from the combo box in the toolbar before selecting to run the application.
 
 	3. See logs to confirm if the application launches successfully on Raspberry Pi.
 
