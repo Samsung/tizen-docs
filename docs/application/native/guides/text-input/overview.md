@@ -37,6 +37,10 @@ You can use the following text input and voice features in your native applicati
 
   You can manage Voice-Control-Engine (VCE) service application and control the recorded audio. The result of audio recording is sent as a predefined command.
 
+- [Multi-assistant](multi-assistant.md)
+
+  You can create a voice assistant application that can be used in conjunction with other voice assistants on the same machine.
+
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
