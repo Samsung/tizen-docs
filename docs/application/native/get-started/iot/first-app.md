@@ -174,33 +174,33 @@ main(int argc, char *argv[])
 ### Adding the log
 
 You can print logs using the Dlog API in the Tizen native application.
-For more information on **Dlog**, see [Tizen Native API Reference > System > Dlog](https://docs.tizen.org/iot/api/5.5/tizen-iot-headless/group__CAPI__SYSTEM__DLOG.html).
+For more information on **Dlog**, see [Dlog](../../../../iot/api/5.5/tizen-iot-headless/group__CAPI__SYSTEM__DLOG.html) API.
 
 In this example, to confirm that the IoT native service application has been launched successfully, add the **Hello Tizen** as a debug log.
 
 You can add the debug log as follows:
 
-    1. Confirm that **#include<dlog.h>** is added, and **LOG_TAG** is defined in `inc/service.h`.
-	**LOG_TAG** can be changed as you want:
+1. Confirm that **#include<dlog.h>** is included, and **LOG_TAG** is defined in `inc/service.h`.
+**LOG_TAG** can be changed as you want:
 
-    ```
-    #include <dlog.h>
+```
+#include <dlog.h>
 
-    #ifdef  LOG_TAG
-    #undef  LOG_TAG
-    #endif
-    #define LOG_TAG "service"
-    ```
+#ifdef  LOG_TAG
+#undef  LOG_TAG
+#endif
+#define LOG_TAG "service"
+```
 
-    2. Add **dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");** to the `service_app_create()`:
+2. To print the sentence you want, use `dlog_print()` in the `service_app_create()`:
 
-    ```
-    bool service_app_create(void *data)
-    {
-        dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");
-        return true;
-    }
-    ```
+```
+bool service_app_create(void *data)
+{
+	dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");
+	return true;
+}
+```
 
 <a name="build"></a>
 ## Building Your Application
@@ -282,7 +282,7 @@ To run the application on a Raspberry Pi:
 
         ![Log of the IoT native service application](media/hellotizen_log.png)
 
-	For more information on the Log View, see the [checking Logs with Log View](https://docs.tizen.org/application/tizen-studio/common-tools/log-view/).
+	For more information on the Log View, see the [checking Logs with Log View](../../../tizen-studio/common-tools/log-view.md).
 
     > [!NOTE]
     > The application is launched using the default debug run configuration. To create and other configurations:
