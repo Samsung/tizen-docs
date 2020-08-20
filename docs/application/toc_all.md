@@ -87,7 +87,6 @@
 ##### [Popup](/application/dotnet/guides/nui/nui-components/Popup.md)
 ##### [Progress](/application/dotnet/guides/nui/nui-components/Progress.md)
 ##### [RadioButton](/application/dotnet/guides/nui/nui-components/RadioButton.md)
-##### [Scrollbar](/application/dotnet/guides/nui/nui-components/Scrollbar.md)
 ##### [Slider](/application/dotnet/guides/nui/nui-components/Slider.md)
 ##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
 ##### [Tab](/application/dotnet/guides/nui/nui-components/Tab.md)
