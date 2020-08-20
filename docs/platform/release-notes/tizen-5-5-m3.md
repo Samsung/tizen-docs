@@ -3,12 +3,14 @@
 Release date: Aug. 31, 2020
 
 
-- Tizen 5.5 public M3 adopts some new features for wearable, such as AOD viewer, Sticker framework, Aurum for testing-automation, and Battery-Monitor framework.
+The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD viewer, Sticker framework, Aurum for UI test automation, and Battery-Monitor framework.
 
 
-## Application framework
+## Release Notes
 
-### New and changed features
+### Application framework
+
+#### New and changed features
 
 - App-defined-loader
   - The new API set for preparing a specific app-defined loader has been provided.
@@ -22,46 +24,45 @@ Release date: Aug. 31, 2020
   - The additional API set for watchface-complication has been provided.
 
 
-## Window System
+### Window System
 
-### New and changed features
+#### New and changed features
 
 - tzsh-quickpanel
   - tzsh_quickpanel_scrollable_state_set/get API and enumeration have been added.
   - tzsh_quickpanel_scrollable_set/get API has been deprecated.
 
 
-## UI framework
+### UI framework
 
-### New and changed features
+#### New and changed features
 
-- Aurum has been added.
-  - Automation framework for UI testing
+- Aurum, an automation framework for UI testing has been added.
 - efl-theme-tizen-wearable has been updated with new UX.
 - Sticker framework
   - Support for API to set/get display type of sticker (emoji, wallpaper) has been added.
   - Support for API to delete sticker using URI has been added.
   - API set for managing recent stickers history has been added.
-  - A new API for registering whenever sticker info is changed, has been added.
+  - A new API for registering any change in sticker info has been added.
 
 
-## Network and Connectivity
+### Network and Connectivity
 
-### New and changed features
+#### New and changed features
 
 - C# API Changes
   - Tizen.Network.Bluetooth
     - IBluetoothServerSocket
-      - [Added] int SendData(byte[] data)
-      - [Deprecated] int SendData(string data)
+      - int SendData(byte[] data) has been added.
+      - int SendData(string data) has been deprecated.
     - SocketData
-      - [Added] byte[] ByteData { get; }
-      - [Deprecated] string Data { get; }
+      - byte[] ByteData { get; } has been added.
+      - string Data { get; } has been deprecated.
 
 
-## Service framework
+### Service framework
 
-### New and changed features
+#### New and changed features
 
 - Battery-Monitor framework
   - Support for fetching battery information for custom period has been added.
@@ -71,7 +72,7 @@ Release date: Aug. 31, 2020
     - Support for estimating approximate power usage per application ID has been added.
     - Support for estimating power usage per system resource has been added.
     - Per-app statistics of state and events has been added.
-  - Following API set has been changed to provide custom time period support and return usage in mAh.
+  - The API set to provide custom time period support and return usage in mAh has been changed.
     - API for fetching information for an application for a particular resource over a certain duration of time has been updated.
     - API for fetching total battery usage information of an application, combining all the resources over certain duration of time has been updated.
     - API for fetching battery usage values for all the resources separately used by an application ID for a certain duration has been updated.
@@ -83,9 +84,9 @@ Release date: Aug. 31, 2020
     - API set for fetching count for searched record with query has been added.
 
 
-## Tizen .NET
+### Tizen .NET
 
-### New and changed features
+#### New and changed features
 
 - Xamarin.Forms
   - Support for Xamarin.Forms 4.6.0 has been added.
