@@ -2,7 +2,7 @@
 
 
 
-You can use the following authentication and authorization features in your .NET applications:
+You can use the following authentication features in your .NET applications:
 
 -   [FIDO Universal Authentication Framework](fido.md)
 

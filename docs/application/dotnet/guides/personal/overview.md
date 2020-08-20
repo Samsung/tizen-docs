@@ -13,6 +13,10 @@ You can use the following personal data features in your .NET applications:
 
     You can synchronize service application data between a server and the device by creating various sync jobs.
 
+-   [Authentication and Authorization](authentication.md)
+
+    You can use the FIDO Universal Authentication Framework to authenticate users. The FIDO UAF authenticator abstraction layer provides a uniform API to FIDO clients enabling the use of authenticator-based cryptographic services for FIDO-supported operations. It provides a uniform lower-layer "authenticator plugin" API facilitating the deployment of multi-vendor FIDO UAF authenticators and their requisite drivers. The FIDO UAF authenticator is a secure entity, connected to or housed within the FIDO user devices, that can create key material associated with a relying party. The key can then be used to participate in FIDO UAF strong authentication protocols.
+
 -   [Calendar](calendar.md)
 
     You can manage calendars, events, and tasks on a device. You can add, modify, and monitor calendar items, and set reminders for important items. You can also convert calendar items to the vCalendar format.
