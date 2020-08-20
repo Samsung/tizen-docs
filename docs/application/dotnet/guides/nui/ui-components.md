@@ -1,6 +1,6 @@
 # UI Components
 
-UI components are interactive components for layout and scrolling the user interface. NUI provides UI components, such as buttons, scroll view, table view, text controls, image view, flex container, slider, and video view.
+UI components are interactive components for layout and user interface. NUI provides UI components, such as buttons, table view, text controls, image view, flex container, slider, and video view.
 
 **Figure: UI components**
 
@@ -21,7 +21,6 @@ The following table lists the available UI components:
 | [Popup](./nui-components/Popup.md) | A popup is used as a popup window. | `Popup`                |
 | [Progress](./nui-components/Progress.md) | A progress is used to show the ongoing status using a long narrow bar. | `Progress`                |
 | [RadioButton](./nui-components/RadioButton.md) | A RadioButton that can set selected or unselected status when user selects it. | `RadioButton`                |
-| [Scrollbar](./nui-components/Scrollbar.md) | A scrollbar is used to show the range of content. | `ScrollBar`                |
 | [Slider](./nui-components/Slider.md) | A slider that indicates a modifiable value within a specific range. | `Slider`                   |
 | [Switch](./nui-components/Switch.md) | A switch that can be used as a selector. | `Switch`                |
 | [Tab](./nui-components/Tab.md) | A tab is easy to explore and switch between different views. | `Tab`                |
