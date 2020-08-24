@@ -15,7 +15,7 @@ You can use the following personal data features in your .NET applications:
 
 -   [Authentication and Authorization](authentication.md)
 
-    You can use the FIDO Universal Authentication Framework to authenticate users. The FIDO UAF authenticator abstraction layer provides a uniform API to FIDO clients enabling the use of authenticator-based cryptographic services for FIDO-supported operations. It provides a uniform lower-layer "authenticator plugin" API facilitating the deployment of multi-vendor FIDO UAF authenticators and their requisite drivers. The FIDO UAF authenticator is a secure entity, connected to or housed within the FIDO user devices, that can create key material associated with a relying party. The key can then be used to participate in FIDO UAF strong authentication protocols.
+    You can authenticate users without entering password using FIDO Universal Authentication Framework.
 
 -   [Calendar](calendar.md)
 
