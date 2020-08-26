@@ -19,6 +19,9 @@ Usage:
   -o, --output=OUTPUT         The generated interface file.
   -p, --proxy                 Generate proxy code.
   -s, --stub                  Generate stub code.
+  -r, --rpclib                Generate C# library for rpc-port (Since Tizen 6.0).
+  -t, --thread                Generate thread code with stub code (Since Tizen 6.0).
+  -b, --beta                  Use beta version for private file sharing (Since Tizen 6.0).
   -v, --version               Show version information.
 
 ```
