@@ -54,7 +54,7 @@ The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD 
   - Tizen.Network.Bluetooth
     - IBluetoothServerSocket
       - API for sending data in byte has been added.
-      - API for sending data in string has been  deprecated.
+      - API for sending data in string has been deprecated.
     - SocketData
       - API to get data in byte has been added.
       - API to get data in string has been deprecated.
