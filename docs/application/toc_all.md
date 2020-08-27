@@ -864,6 +864,7 @@
 ### Machine Learning
 #### [Overview](/application/native/guides/machine-learning/overview.md)
 #### [Machine Learning Inference](/application/native/guides/machine-learning/machine-learning-inference.md)
+#### [Machine Learning Training](/application/native/guides/machine-learning/machine-learning-training.md)
 
 ### Multimedia
 #### [Overview](/application/native/guides/multimedia/overview.md)
