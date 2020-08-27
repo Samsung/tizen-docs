@@ -39,7 +39,7 @@ the `/system` directory, and other filesystems (such as `/opt` and
 4. The `system-recovery` program searches the removable storage for `tizen-recovery.img`
 which has the compressed partition image and config file.
 The `system-recovery` program decompress `tizen-recovery.img`,
-and dumps the partition image to the appropriate block with config file.
+and dumps the partition image to the appropriate block as mentioned in the config file.
 
 ## Adding New Files to the `ramdisk-recovery` Partition
 
