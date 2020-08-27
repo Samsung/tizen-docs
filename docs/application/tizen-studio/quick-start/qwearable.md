@@ -1,8 +1,8 @@
 # Quickstart Guide for Wearable
 
-This quickstart guide walks you through a default installation of Tizen Studio and how to create a basic Tizen wearable application. Follow the steps or video demo for getting hands on with wearable app development, and get yourself up and running instantly.
+This quickstart guide walks you through a default installation of Tizen Studio and how to create a basic Tizen wearable application. Follow the steps or video demo to get hands on with wearable app development, and get yourself up and running instantly.
 
-The following illustration shows the basic tech stack used in creating a wearable application: 
+The following illustration shows the basic tech stack used to create a basic wearable application: 
 
 <div class="wrapper">
 <img src="./media/tech2.png"  class="center">
@@ -131,7 +131,7 @@ video {
     4. Select the **Wearable** profile with an appropriate version from the drop-down list and click **Next**.
         
         > [!NOTE]
-        > Depending on your choice with developing either **Native** or **Web** wearable app, proceed with the next steps as per the choice. 
+        > Depending on your choice with developing either **Native** or **Web** wearable app, proceed with the next steps.
 
     5. Select the **Native application** or **Web application** type and click **Next**.
 
@@ -147,7 +147,7 @@ video {
      
 4. **Build your application**
 
-    1. Select the project in the Project Explorer view.
+    1. Select your project in the **Project Explorer** view.
 
     2. In the Tizen Studio menu, select **Project > Build Automatically**.
  
@@ -157,7 +157,7 @@ video {
 	
    You can run the application on the emulator or a real target device.
    
-   - To run the application on the emulator, launch an emulator instance in the Emulator Manager:
+   - To run the application on the emulator, launch an emulator instance in the Emulator Manager, and follow these steps:
 
      1. In the Tizen Studio menu, select **Tools > Emulator Manager**.
      2. In the Emulator Manager, select a wearable emulator from the list and click **Launch**. 

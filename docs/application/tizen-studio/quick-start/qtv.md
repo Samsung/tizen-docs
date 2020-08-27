@@ -1,6 +1,6 @@
 # Quickstart Guide for TV
 
-This quickstart guide walks you through a default installation of Tizen Studio and how to create a basic TV app. Follow the steps or video demo for getting hands on with TV app development, and get yourself up and running instantly.
+This quickstart guide walks you through a default installation of Tizen Studio and how to create a basic TV application. Follow the steps or video demo to get hands-on with TV app development, and get yourself up and running instantly.
 
 <style>
 .center {
@@ -105,13 +105,13 @@ video {
     
       1. Launch Tizen Studio.
       2. In the Tizen Studio menu, select **File > New > Tizen Project**.
-      3. In the **New Tizen Project** window that appears select the **Template** project type and click **Next**.
+      3. In the **New Tizen Project** window that appears, select the **Template** project type and click **Next**.
       4. In **New Tizen Project** wizard, on **Profile & Version** tab, select the **TV** profile with an appropriate version and click **Next**.
       5. Select the **Web Application** type and click **Next**.
       6. In **New Tizen Project** wizard, on **Template** tab, select the **Basic Project** template and click **Next**.
       7. Define **Project name, Package ID**, select the **Location**, and **Working sets** by clicking **More properties**. 
       8. Click **Finish**.
-	
+  
       The **New Project** wizard sets up your TV project and creates the basic application files and folders.
         
       To manage **TV application** configuration and to understand the source code, see [Create Your First Tizen TV Web Application](../../web/get-started/tv/first-app.md). 
@@ -120,27 +120,27 @@ video {
      
   4. **Build your application**
 
-      1. Select the project in the Project Explorer view.
+      1. Select your project in the Project Explorer view.
 
       2. In the Tizen Studio menu, select **Project > Build Automatically**.
   
   5. **Run your application**
    
       Before you run the application, you must [sign your application package with a certificate profile](../tizen-studio/common-tools/certificate-registration.md) in Tizen Studio.
-	
-	  You can run the Web application on the emulator, Samsung Smart TV Simulator, or a real target device.
+  
+      You can run the Web application on the emulator, Samsung Smart TV Simulator, or a real target device.
    
-      - To run the application on the emulator, launch an emulator instance in the Emulator Manager:
+      - To run the application on the emulator, launch an emulator instance in the Emulator Manager, and follow these steps:
 
-      1. In the Tizen Studio menu, select **Tools > Emulator Manager**.
-      2. In the **Emulator Manager**, select a TV emulator from the list and click **Launch**. 
+        1. In the Tizen Studio menu, select **Tools > Emulator Manager**.
+        2. In the **Emulator Manager**, select a TV emulator from the list and click **Launch**. 
       
-         The **Device Manager** window with a TV emulator appears. 
+           The **Device Manager** window with a TV emulator  appears. 
 
-      3. In the Tizen Studio menu, select **Run > Run As**, select **Tizen Web Application**.
+         3. In the Tizen Studio menu, select **Run > Run As**, select **Tizen Web Application**.
        
-        - To run the app on simulator. In the Tizen Studio menu, select **Run > Run As**, select **Tizen Web Simulator Application**.
-	    - To run your application on a real device, see [Running on a Target Device](../../web/get-started/tv/first-samsung-tv-app.md#run-on-a-target-device).
+      - To run the app on simulator. In the Tizen Studio menu, select **Run > Run As**, select **Tizen Web Simulator Application**.
+      - To run your application on a real device, see [Running on a Target Device](../../web/get-started/tv/first-samsung-tv-app.md#run-on-a-target-device).
 
       This quickstart guide explains how to create a basic TV app. However, if but you want to create complex apps, see [Create Your First Tizen TV Web Application](../../web/get-started/tv/first-samsung-tv-app.md).
   </div>
