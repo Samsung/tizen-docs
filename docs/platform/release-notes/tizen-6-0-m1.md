@@ -1,4 +1,4 @@
-# Tizen 6.0 Public M1 Release Notes
+# Tizen 6.0 Public M1
 
 Release date: May 31, 2020
 
@@ -12,7 +12,7 @@ The Tizen 6.0 Public M1 release provides developers with the Tizen kernel, devic
 
 - Getting binaries and images
   - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20200503.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20200503.1/)
-  - profile(unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20200521.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20200521.1/)
+  - Profile(Unified): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20200521.1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20200521.1/)
 
 - [How to flash to a device](../developing/flashing.md)
 
