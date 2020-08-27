@@ -1,6 +1,6 @@
 ﻿# Tizen 5.5 Public M3 Release Notes
 
-Release date: Aug. 31, 2020
+Release date: Aug. 27, 2020
 
 
 The Tizen 5.5 Public M3 release provides new features for wearable, such as AOD viewer, Sticker framework, Aurum for UI test automation, and Battery-Monitor framework.
