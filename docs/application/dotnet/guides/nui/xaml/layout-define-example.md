@@ -5,8 +5,7 @@ You can use XAML to define the layout of user interface in your applications. To
 2. Load the XAML file
 3. Put the XAML file in the appropriate file directory
 
-> **Note**
-> 
+> [!NOTE]
 > Tizen NUI XAML application platform provides a XAML application template and you can use XAML since **Tizen.NET API version 7**.
 
 ## Create XAML
@@ -18,7 +17,7 @@ You can use XAML to easily implement the layout shown in the following figure:
 To implement the layout, you can use the following code:
 
 ```xml
-<ContentPage x:Class="Tizen.NUI.Examples.AmbientPage"
+<View x:Class="Tizen.NUI.Examples.AmbientPage"
   xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
 
@@ -30,7 +29,7 @@ To implement the layout, you can use the following code:
   <ImageView Name="photo6" ResourceUrl="*Resource*/picture_05.jpg" Position2D="510,350" Size2D="440,340" />
   <ImageView Name="photo7" ResourceUrl="*Resource*/picture_06.jpg" Position2D="510,710" Size2D="440,320" />
   <ImageView Name="photo8" ResourceUrl="*Resource*/picture_01.jpg" Position2D="1431,671" Size2D="440,360" />
-  
+
   <ImageView Name="photo00" ResourceUrl="*Resource*/bg_textbox_w.png" Position2D="1431,51" Size2D="440,600" />
 
   <View Name="num_area" Size2D="440,160" Position2D="1431,51">
@@ -50,7 +49,7 @@ To implement the layout, you can use the following code:
     <ImageView Name="photo24" ResourceUrl="*Resource*/year_w_9.png" Position2D="330,0" Size2D="110,210" />
   </View>
 
-</ContentPage>
+</View>
 ```
 
 In this code, the relative image path from the exe file is used. You can also use the absolute path of the image.
@@ -62,20 +61,20 @@ In this code, the relative image path from the exe file is used. You can also us
 - The filename of the XAML file must be same as the class name.
 
 ```xml
-<ContentPage x:Class="Tizen.NUI.Examples.AmbientPage"
+<View x:Class="Tizen.NUI.Examples.AmbientPage"
     xmlns="http://tizen.org/Tizen.NUI/2018/XAML"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     ...
     ...
-</ContentPage>
+</View>
 ```
 
 ```csharp
 namespace Tizen.NUI.Examples
 {
-    public class AmbientPage : ContentPage
+    public class AmbientPage : View
     {
-        public AmbientPage(Window win) : base (win)
+        public AmbientPage() : base ()
         {
             InitializeComponent();
         }
@@ -83,7 +82,7 @@ namespace Tizen.NUI.Examples
     }
 }
 ```
-For more information, see [XAML Support for Tizen.NUI](./getting-started-with-nui-xaml.md).
+For more information, see [XAML Support for Tizen.NUI](../../../get-started/wearable/first-xaml-app.md).
 
 ## Load XAML
 
@@ -93,9 +92,9 @@ First, you need to define a class named `AmbientPage` in the `Tizen.NUI.Examples
 ```csharp
 namespace Tizen.NUI.Examples
 {
-    public class AmbientPage : ContentPage
+    public class AmbientPage : View
     {
-        public AmbientPage(Window win) : base (win)
+        public AmbientPage() : base ()
         {
             InitializeComponent();
         }
@@ -115,8 +114,8 @@ namespace Tizen.NUI.Examples
 }
 ```
 
-`AmbientPage` must inherit form `ContentPage`. All the objects that you have defined in the XAML file must be added to `ContentPage`, and then these objects will be added to `Window` as a result. 
-As you can see the root node of the XAML file is also `ContentPage`, which is consistent with the code. All the pages in your application must be inherited from `ContentPage`.
+The `AmbientPage` class must inherit from `View`. The objects defined in the XAML file must be added to `View`, and as a result, these objects are added to `Window`.
+All the pages in your application must inherit `View`, as the root node of the XAML file is also `View`, which is consistent throughout the code.
 
 Then you can load the XAML file in the app using the following code:
 
@@ -126,13 +125,14 @@ namespace Tizen.NUI.Examples
     class AmbientPageDemo : NUIApplication
     {
         private Window window;
-        private ContentPage myPage;
+        private View myPage;
         protected override void OnCreate()
         {
             base.OnCreate();
             window = Window.Instance;
             myPage = new AmbientPage(window);
             myPage.SetFocus();
+            window.Add(myPage);
         }
     }
 }

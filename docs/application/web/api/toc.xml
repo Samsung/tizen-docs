@@ -940,8 +940,6 @@
 							<topic label="Wi-Fi Manager" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html">
 								<topic label="Wi-Fi Configuration" href="group__CAPI__NETWORK__WIFI__MANAGER__CONFIG__MODULE.html">
 								</topic>
-								<topic label="Wi-Fi Device Provisioning Protocol" href="group__CAPI__NETWORK__WIFI__MANAGER__DPP__MODULE.html">
-								</topic>
 								<topic label="Wi-Fi Management" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html">
 									<topic label="AP" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html">
 										<topic label="Network Information" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html">
@@ -1509,8 +1507,6 @@
 									</topic>
 									<topic label="Lazy allocator" href="group__Eina__Lalloc__Group.html">
 									</topic>
-									<topic label="Lock" href="group__Eina__Lock__Group.html">
-									</topic>
 									<topic label="Log" href="group__Eina__Log__Group.html">
 									</topic>
 									<topic label="Magic" href="group__Eina__Magic__Group.html">
@@ -1890,6 +1886,8 @@
 								<topic label="Efl Extension More Option" href="group__CAPI__EFL__EXTENSION__MORE__OPTION__MODULE.html">
 								</topic>
 								<topic label="Efl Extension Panel" href="group__CAPI__EFL__EXTENSION__PANEL__MODULE.html">
+								</topic>
+								<topic label="Efl Extension Popup" href="group__CAPI__EFL__EXTENSION__POPUP__MODULE.html">
 								</topic>
 								<topic label="Efl Extension Rotary Selector" href="group__CAPI__EFL__EXTENSION__ROTARY__SELECTOR__MODULE.html">
 								</topic>
@@ -2881,8 +2879,6 @@
 							<topic label="Wi-Fi Manager" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html">
 								<topic label="Wi-Fi Configuration" href="group__CAPI__NETWORK__WIFI__MANAGER__CONFIG__MODULE.html">
 								</topic>
-								<topic label="Wi-Fi Device Provisioning Protocol" href="group__CAPI__NETWORK__WIFI__MANAGER__DPP__MODULE.html">
-								</topic>
 								<topic label="Wi-Fi Management" href="group__CAPI__NETWORK__WIFI__MANAGER__MANAGEMENT__MODULE.html">
 									<topic label="AP" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__MODULE.html">
 										<topic label="Network Information" href="group__CAPI__NETWORK__WIFI__MANAGER__AP__NETWORK__MODULE.html">
@@ -3434,8 +3430,6 @@
 									</topic>
 									<topic label="Lazy allocator" href="group__Eina__Lalloc__Group.html">
 									</topic>
-									<topic label="Lock" href="group__Eina__Lock__Group.html">
-									</topic>
 									<topic label="Log" href="group__Eina__Log__Group.html">
 									</topic>
 									<topic label="Magic" href="group__Eina__Magic__Group.html">
@@ -3835,6 +3829,8 @@
 								<topic label="Efl Extension More Option" href="group__CAPI__EFL__EXTENSION__MORE__OPTION__MODULE.html">
 								</topic>
 								<topic label="Efl Extension Panel" href="group__CAPI__EFL__EXTENSION__PANEL__MODULE.html">
+								</topic>
+								<topic label="Efl Extension Popup" href="group__CAPI__EFL__EXTENSION__POPUP__MODULE.html">
 								</topic>
 								<topic label="Efl Extension Rotary Selector" href="group__CAPI__EFL__EXTENSION__ROTARY__SELECTOR__MODULE.html">
 								</topic>
@@ -5557,8 +5553,6 @@
 									</topic>
 									<topic label="Lazy allocator" href="group__Eina__Lalloc__Group.html">
 									</topic>
-									<topic label="Lock" href="group__Eina__Lock__Group.html">
-									</topic>
 									<topic label="Log" href="group__Eina__Log__Group.html">
 									</topic>
 									<topic label="Magic" href="group__Eina__Magic__Group.html">
@@ -5783,7 +5777,7 @@
 								</topic>
 								<topic label="Slideshow" href="group__Elm__Slideshow.html">
 								</topic>
-								<topic label="Sotfcursor" href="group__softcursor__group.html">
+								<topic label="SotfCursor" href="group__softcursor__group.html">
 								</topic>
 								<topic label="Spinner" href="group__Elm__Spinner.html">
 								</topic>
@@ -7415,8 +7409,6 @@
 										</topic>
 										<topic label="Lazy allocator" href="group__Eina__Lalloc__Group.html">
 										</topic>
-										<topic label="Lock" href="group__Eina__Lock__Group.html">
-										</topic>
 										<topic label="Log" href="group__Eina__Log__Group.html">
 										</topic>
 										<topic label="Magic" href="group__Eina__Magic__Group.html">
@@ -7641,7 +7633,7 @@
 									</topic>
 									<topic label="Slideshow" href="group__Elm__Slideshow.html">
 									</topic>
-									<topic label="Sotfcursor" href="group__softcursor__group.html">
+									<topic label="SotfCursor" href="group__softcursor__group.html">
 									</topic>
 									<topic label="Spinner" href="group__Elm__Spinner.html">
 									</topic>
@@ -9449,8 +9441,6 @@
 										</topic>
 										<topic label="Lazy allocator" href="group__Eina__Lalloc__Group.html">
 										</topic>
-										<topic label="Lock" href="group__Eina__Lock__Group.html">
-										</topic>
 										<topic label="Log" href="group__Eina__Log__Group.html">
 										</topic>
 										<topic label="Magic" href="group__Eina__Magic__Group.html">
@@ -11209,8 +11199,6 @@
 										<topic label="File" href="group__Eina__File__Group.html">
 										</topic>
 										<topic label="Lazy allocator" href="group__Eina__Lalloc__Group.html">
-										</topic>
-										<topic label="Lock" href="group__Eina__Lock__Group.html">
 										</topic>
 										<topic label="Log" href="group__Eina__Log__Group.html">
 										</topic>

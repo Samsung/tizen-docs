@@ -77,4 +77,4 @@ Tizen 5.5 provides IoT total solution of the open hardware platform, platform OS
 
 ![img](media/5.5_4_IoT.png)
 
-For more information, see [IoT Partners](https://docs.tizen.org/iot/iot-partners/).
+For more information, see [IoT Partners](../../../partners/iot-partners/nubison.md).

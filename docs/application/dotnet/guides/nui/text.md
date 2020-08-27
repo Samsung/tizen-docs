@@ -77,8 +77,8 @@ The following example code specifies the font properties:
 label.FontFamily = "FreeSerif";
 
 PropertyMap fontStyle = new PropertyMap();
-fontStyle.Add("weight", new PropertyValue("bold"));
-fontStyle.Add("slant", new PropertyValue("italic"));
+fontStyle.Add("weight", new PropertyValue(FontWeightType.Bold));
+fontStyle.Add("slant", new PropertyValue(FontSlantType.Italic));
 label.FontStyle = fontStyle;
 label.PointSize = 12.0f;
 ```
@@ -207,20 +207,20 @@ To use the text-decoration, set the applicable property:
 
     label1.Text = "Text with Shadow";
     PropertyMap shadow = new PropertyMap();
-    shadow.Add("offset", new PropertyValue("1 1"));
-    shadow.Add("color", new PropertyValue("black"));
+    shadow.Add("offset", new PropertyValue(new Vector2(1, 1)));
+    shadow.Add("color", new PropertyValue(Color.Black));
     label1.Shadow = shadow;
 
     label2.Text = "Text with Bigger Shadow";
     PropertyMap shadow = new PropertyMap();
-    shadow.Add("offset", new PropertyValue("2 2"));
-    shadow.Add("color", new PropertyValue("black"));
+    shadow.Add("offset", new PropertyValue(new Vector2(2, 2)));
+    shadow.Add("color", new PropertyValue(Color.Black));
     label2.Shadow = shadow;
 
     label3.Text = "Text with Color Shadow";
     PropertyMap shadow = new PropertyMap();
-    shadow.Add("offset", new PropertyValue("1 1"));
-    shadow.Add("color", new PropertyValue("red"));
+    shadow.Add("offset", new PropertyValue(new Vector2(1, 1)));
+    shadow.Add("color", new PropertyValue(Color.Red));
     label3.Shadow = shadow;
     ```
 
@@ -244,7 +244,7 @@ To use the text-decoration, set the applicable property:
     label1.Underline = textStyle;
     ```
 
-    By default, the underline height is based on the font metrics. For example, the following text figures are in one pixel height:
+    By default, the underline height is based on the font metrics and the minimum height is one pixel. The underline color is based on the text color. For example, the following text figures are in one pixel height and the color is the same as the text color:
 
     **Figure: Text with underline**
 
