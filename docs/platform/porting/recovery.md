@@ -36,10 +36,10 @@ the `/system` directory, and other filesystems (such as `/opt` and
 `/opt/usr`) below the `/system` directory. The script starts a shell on the serial console and launches the
 `system-recovery` program.
 
-4. The `system-recovery` program search `tizen-recovery.img` from removable storage.
-`tizen-recovery.img` has compressed partition image and config file.
-`tizen-recovery.img` is found from removable storage, `system-recovery` program decompress `tizen-recovery.img`
-and dump partition image to appropicate block with config file.
+4. The `system-recovery` program searches the removable storage for `tizen-recovery.img`
+which has the compressed partition image and config file.
+The `system-recovery` program decompress `tizen-recovery.img`,
+and dumps the partition image to the appropriate block with config file.
 
 ## Adding New Files to the `ramdisk-recovery` Partition
 
