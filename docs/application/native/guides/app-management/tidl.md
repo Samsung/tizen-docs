@@ -25,7 +25,7 @@ Usage:
   -v, --version               Show version information.
 
 ```
--t and -b options are supported since Tizen 6.0.
+Generating thread option with `-t` or `--thread`, and using beta version options with `-b` or `--beta` are supported since Tizen 6.0.
 
 ## TIDL Syntax
 
