@@ -42,6 +42,7 @@ To obtain the information, query a feature or system key.
    - [IOT](#iot)
    - [LED](#led)
    - [Location](#location)
+   - [Machine learning](#machine_learning)
    - [Maps](#maps)
    - [Media](#media)
    - [Microphone](#microphone)
@@ -342,6 +343,17 @@ The following table lists the location feature keys:
 | `http://tizen.org/feature/location.gps`  | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/location` key, if the device supports the Global Positioning System (GPS). |
 | `http://tizen.org/feature/location.gps.satellite` | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/location.gps` key, if the device has a GPS chip that supports satellite information. |
 | `http://tizen.org/feature/location.wps`  | `bool` | The platform returns `true` for this key and the `http://tizen.org/feature/location` key, if the device supports the Wi-Fi-based Positioning System (WPS). |
+
+The following table lists the machine learning feature keys:
+
+<a name="machine_learning"></a>
+**Table: Machine Learning feature keys**
+
+| Key                                      | Type   | Description                              |
+|------------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/machine_learning.inference`      | `bool` | The platform returns `true` for this key, if the device supports machine learning inference. |
+| `http://tizen.org/feature/machine_learning.training`      | `bool` | The platform returns `true` for this key, if the device supports machine learning training. |
+
 
 The following table lists the maps feature keys:
 
