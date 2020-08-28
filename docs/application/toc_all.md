@@ -517,8 +517,6 @@
 ## [Samples](/development/sample/web)
 
 
-
-
 # Native Application
 
 
