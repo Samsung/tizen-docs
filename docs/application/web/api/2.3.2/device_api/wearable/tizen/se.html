@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>SecureElement API</title>
+<meta data-version="2.3.2" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::SecureElement">
- <div class="supported-platforms"><img class="wearable-optional" title="Optional, Not supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="wearable-optional" title="Optional, Not supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
 <div class="title"><h1>SecureElement API</h1></div>
 <div class="brief">
  The Secure Element API provides functionality to communicate with applications in several Secure Elements.
@@ -15,7 +16,7 @@ A Secure Element is a secure smart card chip. It can be a UICC/SIM, an embedded 
         </div>
 <div class="description">
         <p>
-For more information on the Secure Element features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/secure-element-access">Secure Element Access Guide</a>.
+For more information on the Secure Element features, see <a href="/application/web/guides/connectivity/secure-element">Secure Element Access Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -194,7 +195,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any error occurs during retrieval.              </li>
+UnknownError - If any error occurs during retrieval.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -283,8 +284,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  An identifier used to clear the watch subscription.
               </ul>
 </div>
@@ -481,8 +481,7 @@ This interface offers methods to control sessions on the reader.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">DOMString:
-                  </span>
+<span class="return">DOMString:</span>
  The name of the reader.
               </ul>
 </div>
@@ -541,11 +540,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- IOError - An error occurred in communication with the Secure Element in this reader.              </li>
+IOError - An error occurred in communication with the Secure Element in this reader.              </li>
               <li>
- InvalidStateError - If a Secure Element is not present on this reader.              </li>
+InvalidStateError - If a Secure Element is not present on this reader.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -699,17 +698,17 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- IOError - If an error occurs while communicating with the Secure Element in the reader.              </li>
+IOError - If an error occurs while communicating with the Secure Element in the reader.              </li>
               <li>
- SecurityError - If access to this AID or the default application on this session is not allowed .              </li>
+SecurityError - If access to this AID or the default application on this session is not allowed .              </li>
               <li>
- InvalidStateError - If this session is closed.               </li>
+InvalidStateError - If this session is closed.              </li>
               <li>
- NotFoundError - If the application of the AID does not exist in the Secure Element.              </li>
+NotFoundError - If the application of the AID does not exist in the Secure Element.              </li>
               <li>
- NoChannelError - If basic channel is unavailable.              </li>
+NoChannelError - If basic channel is unavailable.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -810,17 +809,17 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- IOError - If an error occurs while communicating with the Secure Element in the reader.              </li>
+IOError - If an error occurs while communicating with the Secure Element in the reader.              </li>
               <li>
- SecurityError - If access to this AID or the default application in this session is not allowed.              </li>
+SecurityError - If access to this AID or the default application in this session is not allowed.              </li>
               <li>
- InvalidStateError - If this session is closed.              </li>
+InvalidStateError - If this session is closed.              </li>
               <li>
- NotFoundError - If the application of the AID does not exist in the Secure Element.              </li>
+NotFoundError - If the application of the AID does not exist in the Secure Element.              </li>
               <li>
- NoChannelError - If logical channel is unavailable.              </li>
+NoChannelError - If logical channel is unavailable.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -912,8 +911,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:
-                  </span>
+<span class="return">byte[]:</span>
  The ATR of a Secure Element.
               </ul>
 </div>
@@ -1119,26 +1117,26 @@ Some commands that are not allowed to be sent are:
             </p>
             <ul>
               <li>
- MANAGE_CHANNEL commands.               </li>
+MANAGE_CHANNEL commands.              </li>
               <li>
- SELECT by DF Name (p1=04).               </li>
+SELECT by DF Name (p1=04).              </li>
               <li>
- The commands that CLA bytes with channel numbers are de-masked.               </li>
+The commands that CLA bytes with channel numbers are de-masked.              </li>
             </ul>
             <p>
 The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If the command contain an invalid value.              </li>
+InvalidValuesError - If the command contain an invalid value.              </li>
               <li>
- IOError - An error occurred while communicating with the Secure Element in the reader.              </li>
+IOError - An error occurred while communicating with the Secure Element in the reader.              </li>
               <li>
- SecurityError - If the command is not allowed.              </li>
+SecurityError - If the command is not allowed.              </li>
               <li>
- InvalidStateError - If this channel is closed.              </li>
+InvalidStateError - If this channel is closed.              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1216,8 +1214,7 @@ the selection response can not be retrieved by the reader implementation.       
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:
-                  </span>
+<span class="return">byte[]:</span>
  The data as returned by the application select command including the status words.
               </ul>
 </div>
@@ -1399,7 +1396,7 @@ It is used in asynchronous operations such as <em>Reader.openSession()</em>.
 <div class="description">
           <p>
 This callback interface specifies a success method with a <em>Channel</em> object as an input parameter.
-It is used in asynchronous operations such as <em>Session.openBasicChannel() </em>or <em>Session.openLogicalChannel()</em>.
+It is used in asynchronous operations such as <em>Session.openBasicChannel()</em> or <em>Session.openLogicalChannel()</em>.
           </p>
          </div>
 <div class="methods">
@@ -1432,7 +1429,7 @@ It is used in asynchronous operations such as <em>Session.openBasicChannel() </e
 <div class="interface" id="TransmitSuccessCallback">
 <a class="backward-compatibility-anchor" name="::SecureElement::TransmitSuccessCallback"></a><h3>1.10. TransmitSuccessCallback</h3>
 <div class="brief">
- The TransmitSuccessCallback interface specifies the success callback that is invoked when <em>Channel.transmit() </em>completes successfully.
+ The TransmitSuccessCallback interface specifies the success callback that is invoked when <em>Channel.transmit()</em> completes successfully.
           </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface TransmitSuccessCallback {
     void onsuccess(byte[] response);
@@ -1475,7 +1472,9 @@ This callback interface specifies a success method with an array of bytes as an 
 </div>
 <h2 id="api-features">2. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -1485,14 +1484,14 @@ To guarantee this application will run on a device with a Secure Element, add th
 <li class="feature">http://tizen.org/feature/network.secure_element</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module SecureElement {
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SEServiceManagerObject">SEServiceManagerObject</a>;
   [NoInterfaceObject] interface SEServiceManagerObject {
     readonly attribute <a href="#SEService">SEService</a> seService;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#SEServiceManagerObject">SEServiceManagerObject</a>;
   [NoInterfaceObject] interface SEService {
     void getReaders(<a href="#ReaderArraySuccessCallback">ReaderArraySuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     unsigned long registerSEListener(<a href="#SEChangeListener">SEChangeListener</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

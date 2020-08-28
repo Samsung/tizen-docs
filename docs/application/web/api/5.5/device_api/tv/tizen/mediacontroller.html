@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MediaController API</title>
+<meta data-version="5.5" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MediaController">
@@ -20,7 +21,7 @@ and metadata from media controller server to client. Allows to control server st
 by sending commands from client.
         </p>
         <p>
-For more information on the Media Controller features, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/media-controller">Media Controller Guide</a>.
+For more information on the Media Controller features, see <a href="/application/web/guides/multimedia/media-controller">Media Controller Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -527,19 +528,19 @@ TPO - Search by Time Place Occasion.            </li>
 <div class="description">
           <ul>
             <li>
-PLAY - Corresponds to play media controller playback state.            </li>
+PLAY - Corresponds to the "playing" media controller playback state.            </li>
             <li>
-PAUSE - Corresponds to pause media controller playback state.            </li>
+PAUSE - Corresponds to the "paused" media controller playback state.            </li>
             <li>
-STOP - Corresponds to stop media controller playback state.            </li>
+STOP - Corresponds to the "stopped" media controller playback state.            </li>
             <li>
-NEXT - Corresponds to next media controller playback state.            </li>
+NEXT - Corresponds to the "moving to next" media controller playback state.            </li>
             <li>
-PREV - Corresponds to previous media controller playback state.            </li>
+PREV - Corresponds to the "moving to previous" media controller playback state.            </li>
             <li>
-FORWARD - Corresponds to forward media controller playback state.            </li>
+FORWARD - Corresponds to the "forwarding" media controller playback state.            </li>
             <li>
-REWIND - Corresponds to rewind media controller playback state.            </li>
+REWIND - Corresponds to the "rewinding" media controller playback state.            </li>
           </ul>
          </div>
 </div>
@@ -1784,7 +1785,7 @@ var playlist = mcServer.createPlaylist("testPlaylistName");
 </dt>
 <dd>
 <div class="brief">
- Saves playlist in local database.
+ Saves the playlist in a local database.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void savePlaylist(<a href="#MediaControllerPlaylist">MediaControllerPlaylist</a> playlist, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                   optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
@@ -1797,13 +1798,13 @@ The <em>errorCallback</em> may be triggered for one of the following errors:
             </p>
             <ul>
               <li>
-<em>InvalidValuesError</em>: if playlist with given name does not exists.              </li>
+<em>InvalidValuesError</em>: if playlist with given name does not exist.              </li>
               <li>
-<em>UnknownError</em>: if any other error prevents function from successful completion.              </li>
+<em>UnknownError</em>: if any other error prevents the function from successful completion.              </li>
             </ul>
            </div>
 <p><span class="remark">Remark: </span>
- All playlists will be deleted after application is closed.
+ All playlists will be deleted after the application is closed.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -1870,9 +1871,9 @@ The <em>errorCallback</em> may be triggered for one of the following errors:
             </p>
             <ul>
               <li>
-<em>InvalidValuesError</em>: if playlist with given name does not exists.              </li>
+<em>InvalidValuesError</em>: if playlist with given name does not exist.              </li>
               <li>
-<em>UnknownError</em>: if any other error prevents function from successful completion.              </li>
+<em>UnknownError</em>: if any other error prevents the function from successful completion.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -1995,7 +1996,7 @@ Current index: index1
 </dt>
 <dd>
 <div class="brief">
- Retrieves all playlists from local database.
+ Retrieves all playlists from a local database.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void getAllPlaylists(<a href="#MediaControllerGetAllPlaylistsSuccessCallback">MediaControllerGetAllPlaylistsSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
@@ -2379,7 +2380,7 @@ The ErrorCallback may be triggered for one of the following errors:
             </p>
             <ul>
               <li>
- UnknownError:  if any error prevents function from successful completion.               </li>
+UnknownError: if any error prevents function from successful completion.              </li>
             </ul>
            </div>
 <div class="parameters">
@@ -7229,7 +7230,12 @@ playlist.getItems(successCallback, errorCallback);
           </p>
 <div class="constructors">
 <h4 id="SearchFilter::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">SearchFilter(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category = "NO_CATEGORY", optional DOMString? keyword = null, optional <a href="tizen.html#Bundle">Bundle</a>? extraData = null);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#MediaControllerContentType">MediaControllerContentType</a>, <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a>, DOMString?, <a href="tizen.html#Bundle">Bundle</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">SearchFilter(<a href="#MediaControllerContentType">MediaControllerContentType</a> contentType, optional <a href="#MediaControllerSearchCategory">MediaControllerSearchCategory</a> category = "NO_CATEGORY", optional DOMString? keyword = null, optional <a href="tizen.html#Bundle">Bundle</a>? extraData = null);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -7354,17 +7360,17 @@ Interface is used as a success method for:
           </p>
           <ul>
             <li>
- <em>MediaControllerServerInfo.sendCommand()</em>             </li>
+<em>MediaControllerServerInfo.sendCommand()</em>             </li>
             <li>
- <em>MediaControllerMode360Info.sendRequest()</em>             </li>
+<em>MediaControllerMode360Info.sendRequest()</em>             </li>
             <li>
- <em>MediaControllerSubtitlesInfo.sendRequest()</em>             </li>
+<em>MediaControllerSubtitlesInfo.sendRequest()</em>             </li>
             <li>
- <em>MediaControllerDisplayMode.sendRequest()</em>             </li>
+<em>MediaControllerDisplayMode.sendRequest()</em>             </li>
             <li>
- <em>MediaControllerDisplayRotationInfo.sendRequest()</em>             </li>
+<em>MediaControllerDisplayRotationInfo.sendRequest()</em>             </li>
             <li>
- <em>MediaControllerClientInfo.sendEvent()</em>             </li>
+<em>MediaControllerClientInfo.sendEvent()</em>             </li>
           </ul>
          </div>
 <div class="methods">
@@ -7386,7 +7392,7 @@ Interface is used as a success method for:
 <ul>
           <li class="param">
 <span class="name">data</span><span class="optional"> [nullable]</span>:
- Response data object sent by the command handler. This object is compatible with  <a href="tizen.html#Bundle">Bundle</a> object.
+ Response data object sent by the command handler. This object is compatible with <a href="tizen.html#Bundle">Bundle</a> object.
                 </li>
           <li class="param">
 <span class="name">code</span><span class="optional"> [optional]</span>:
@@ -7413,7 +7419,12 @@ Interface is used as a success method for:
           </p>
 <div class="constructors">
 <h4 id="RequestReply::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">RequestReply(<a href="tizen.html#Bundle">Bundle</a>? data, optional long code = 0);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="tizen.html#Bundle">Bundle</a>?, long)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">RequestReply(<a href="tizen.html#Bundle">Bundle</a>? data, optional long code = 0);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -7794,8 +7805,8 @@ for display mode changes of the media controller server.
 <a class="backward-compatibility-anchor" name="::MediaController::MediaControllerDisplayRotationChangeRequestCallback"></a><h3>2.39. MediaControllerDisplayRotationChangeRequestCallback</h3>
 <div class="brief">
  The MediaControllerDisplayRotationChangeRequestCallback interface that defines the listener
-for change requests for display rotation in <em>MediaControllerDisplayRotation.addChangeRequestListener().
-</em>          </div>
+for change requests for display rotation in <em>MediaControllerDisplayRotation.addChangeRequestListener()</em>.
+          </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface MediaControllerDisplayRotationChangeRequestCallback {
     <a href="#RequestReply">RequestReply</a>? onreply(<a href="application.html#ApplicationId">ApplicationId</a> clientName, <a href="#MediaControllerDisplayRotationType">MediaControllerDisplayRotationType</a> displayRotation);
   };</pre>
@@ -8255,19 +8266,19 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
 <ul>
           <li class="param">
 <span class="name">playlistName</span>:
- Name of a requested playlist.
+ Name of playlist.
                 </li>
           <li class="param">
 <span class="name">index</span>:
- Requested index.
+ Index of the item to be changed.
                 </li>
           <li class="param">
 <span class="name">state</span>:
- Requested playback state.
+ Playback state.
                 </li>
           <li class="param">
 <span class="name">position</span>:
- Requested playback position.
+ Playback position.
                 </li>
           <li class="param">
 <span class="name">clientName</span>:
@@ -8557,11 +8568,11 @@ will be invoked after the <a href="#MediaControllerChangeRequestPlaybackInfoCall
   enum MediaControllerPlaybackState { "PLAY", "PAUSE", "STOP", "NEXT", "PREV", "FORWARD", "REWIND" };
   enum MediaControllerRepeatState { "REPEAT_OFF", "REPEAT_ONE", "REPEAT_ALL" };
   enum MediaControllerContentType { "IMAGE", "MUSIC", "VIDEO", "OTHER", "UNDECIDED" };
-  enum MediaControllerContentAgeRating { "ALL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
-    "14", "15", "16", "17", "18", "19" };
+  enum MediaControllerContentAgeRating { "ALL", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+    "17", "18", "19" };
   enum MediaControllerAbilitySupport { "YES", "NO", "UNDECIDED" };
-  enum MediaControllerSimpleAbility { "PLAYBACK_POSITION", "SHUFFLE", "REPEAT", "PLAYLIST", "CLIENT_CUSTOM", "SEARCH",
-    "SUBTITLES", "MODE_360" };
+  enum MediaControllerSimpleAbility { "PLAYBACK_POSITION", "SHUFFLE", "REPEAT", "PLAYLIST", "CLIENT_CUSTOM", "SEARCH", "SUBTITLES",
+    "MODE_360" };
   enum MediaControllerDisplayModeType { "LETTER_BOX", "ORIGIN_SIZE", "FULL_SCREEN", "CROPPED_FULL" };
   enum MediaControllerDisplayRotationType { "ROTATION_NONE", "ROTATION_90", "ROTATION_180", "ROTATION_270" };
   dictionary MediaControllerMetadataInit {

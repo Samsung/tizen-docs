@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>DeviceMotion API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::DeviceMotion">
@@ -88,7 +89,7 @@ Original documentation: <a href="https://cordova.apache.org/docs/en/3.0.0/cordov
 <div class="interface" id="AccelerometerManagerObject">
 <a class="backward-compatibility-anchor" name="::DeviceMotion::AccelerometerManagerObject"></a><h3>1.1. AccelerometerManagerObject</h3>
 <div class="brief">
- The <em>navigator.accelerometer </em>object allows access to the functionality of the DeviceMotion API.
+ The <em>navigator.accelerometer</em> object allows access to the functionality of the DeviceMotion API.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface AccelerometerManagerObject {
     readonly attribute <a href="#Accelerometer">Accelerometer</a> accelerometer;
@@ -361,6 +362,9 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
     readonly attribute double z;
     readonly attribute long timestamp;
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
@@ -441,6 +445,9 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 <pre class="webidl prettyprint">  dictionary AccelerationOptions {
     long frequency;
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="attributes">
 <h4>Dictionary members</h4>
 <dl>
@@ -464,6 +471,9 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface AccelerometerSuccessCallback {
     void onsuccess(<a href="#Acceleration">Acceleration</a> acceleration);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -496,6 +506,9 @@ Acceleration values include the effect of gravity (9.81 m/s^2), so that when a d
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ErrorCallback {
     void onerror(<a href="cordova.html#DOMException">DOMException</a> error);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -538,7 +551,7 @@ To guarantee that the DeviceMotion application runs on a device with the DeviceM
 <li class="feature">http://tizen.org/feature/sensor.accelerometer</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module DeviceMotion {

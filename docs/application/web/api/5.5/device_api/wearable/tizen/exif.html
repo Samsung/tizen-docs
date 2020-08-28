@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Exif API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Exif">
@@ -33,7 +34,7 @@ for accessing internal and external storage using this API, privileges (<a href=
 Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
-For more information about how to use Exif API, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/jpeg-file-exif-information">Exif Guide</a>.
+For more information about how to use Exif API, see <a href="/application/web/guides/multimedia/jpeg-exif">Exif Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -131,8 +132,8 @@ MANUAL - Manual White Balance mode            </li>
 <div class="brief">
  Specifies an exposure balance program for an image.
           </div>
-<pre class="webidl prettyprint">  enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM",
-    "ACTION_PROGRAM", "PORTRAIT_MODE", "LANDSCAPE_MODE" };</pre>
+<pre class="webidl prettyprint">  enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM", "ACTION_PROGRAM",
+    "PORTRAIT_MODE", "LANDSCAPE_MODE" };</pre>
 <p><span class="version">Since: </span>
  2.3.1
           </p>
@@ -528,8 +529,8 @@ tizen.filesystem.resolve("images/tizen.jpg", resolveSuccess, resolveFail);
 <div class="description">
           <p>
 This dictionary is used to input parameters when <em>ExifInformation</em> is created.
-For description of attributes please see the corresponding attributes in the <em>ExifInformation<em> interface.
-</em></em>          </p>
+For description of attributes please see the corresponding attributes in the <em>ExifInformation</em> interface.
+          </p>
          </div>
 </div>
 <div class="interface" id="ExifInformation">
@@ -573,7 +574,12 @@ By setting an attribute to null and saving <em>ExifInformation</em> one can remo
          </div>
 <div class="constructors">
 <h4 id="ExifInformation::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ExifInformation(optional <a href="#ExifInit">ExifInit</a>? ExifInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#ExifInit">ExifInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ExifInformation(optional <a href="#ExifInit">ExifInit</a>? ExifInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -863,8 +869,8 @@ This callback interface specifies a success method with the URI for the thumbnai
 <h2 id="full-webidl">3. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Exif {
   enum WhiteBalanceMode { "AUTO", "MANUAL" };
-  enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM",
-    "ACTION_PROGRAM", "PORTRAIT_MODE", "LANDSCAPE_MODE" };
+  enum ExposureProgram { "NOT_DEFINED", "MANUAL", "NORMAL", "APERTURE_PRIORITY", "SHUTTER_PRIORITY", "CREATIVE_PROGRAM", "ACTION_PROGRAM",
+    "PORTRAIT_MODE", "LANDSCAPE_MODE" };
   dictionary ExifInit {
     DOMString uri;
     unsigned long width;

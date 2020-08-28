@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>File API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::File">
@@ -255,6 +256,9 @@ Storage privileges are privacy-related privileges and there is a need of asking 
 See <a href="https://www.w3.org/TR/FileAPI/#blob-section">The Blob Interface and Binary Data</a>.
           </div>
 <pre class="webidl prettyprint">  typedef <a href="#Blob">Blob</a> Blob;</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 </div>
 <div class="typedef" id="WriteData">
 <a class="backward-compatibility-anchor" name="::File::WriteData"></a><h3>1.2. WriteData</h3>
@@ -343,7 +347,7 @@ See <a href="https://www.w3.org/TR/FileAPI/#blob-section">The Blob Interface and
     readonly attribute boolean lengthComputable;
     readonly attribute unsigned long long loaded;
     readonly attribute unsigned long long total;
-    readonly attribute  target;
+    readonly attribute EventTarget target;
   };</pre>
 <p><span class="version">Since: </span>
  3.0
@@ -361,7 +365,12 @@ var event = new ProgressEvent("submit", eventInit);
 </div>
 <div class="constructors">
 <h4 id="ProgressEvent::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">ProgressEvent(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, <a href="#ProgressEventInit">ProgressEventInit</a>)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">ProgressEvent(DOMString type, optional <a href="#ProgressEventInit">ProgressEventInit</a> eventInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -503,7 +512,7 @@ var event = new ProgressEvent("submit", eventInit);
           </p>
 <div class="description">
           <p>
-There is a <em>cordova.file </em>object that allows accessing the functionality of the Filesystem API.
+There is a <em>cordova.file</em> object that allows accessing the functionality of the Filesystem API.
           </p>
          </div>
 </div>
@@ -726,7 +735,7 @@ This manager interface exposes the Filesystem base API constants.
 <li class="attribute" id="FileSystemManager::tempDirectory">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">DOMString </span><span class="name">tempDirectory</span><span class="optional"> [nullable]</span></span><div class="brief">
-  Temp directory that the OS can clear at will. Do not rely on the OS to clear this directory; your app should always remove files as applicable.
+ Temp directory that the OS can clear at will. Do not rely on the OS to clear this directory; your app should always remove files as applicable.
             </div>
 <p><span class="version">Since: </span>
  3.0
@@ -2009,6 +2018,9 @@ Otherwise, if no other error occurs, getFile must return a FileEntry correspondi
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface DirectoryReader {
     void readEntries(<a href="#EntriesCallback">EntriesCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror) raises(FileException);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
@@ -2083,6 +2095,9 @@ Otherwise, if no other error occurs, getFile must return a FileEntry correspondi
     void createWriter(<a href="#FileWriterCallback">FileWriterCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a>? onerror);
     void file(<a href="#FileCallback">FileCallback</a> onsuccess, optional <a href="#ErrorCallback">ErrorCallback</a> onerror);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <p><span class="privilegelevel">Privilege level: </span>
  public
           </p>
@@ -2247,7 +2262,12 @@ document.addEventListener("deviceready", deviceReady, true);
 </div>
 <div class="constructors">
 <h4 id="FileReader::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">FileReader();</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor ()</span></b></code>
+</dt>
+<pre class="webidl prettyprint">FileReader();</pre>
+</dl>
 </div>
 <div class="consts">
 <h4>Constants</h4>
@@ -2708,6 +2728,9 @@ ByteLength: 3
 <a class="backward-compatibility-anchor" name="::File::FileWriter::DONE"></a><span class="name">DONE</span><div class="brief">
  Above constants describe current state of FileWriter object.
             </div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
 <br><br>
 </li>
 </dl>
@@ -3101,6 +3124,9 @@ entry.createWriter(successCallback, errorCallback);
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ProgressCallback {
     void onsuccess(<a href="#ProgressEvent">ProgressEvent</a> event);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
@@ -3358,6 +3384,9 @@ entry.createWriter(successCallback, errorCallback);
  Used to supply a File as a response to a user query.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void handleEvent(<a href="#File">File</a> file);</pre></div>
+<p><span class="version">Since: </span>
+ 3.0
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -3470,7 +3499,7 @@ entry.createWriter(successCallback, errorCallback);
     readonly attribute boolean lengthComputable;
     readonly attribute unsigned long long loaded;
     readonly attribute unsigned long long total;
-    readonly attribute  target;
+    readonly attribute EventTarget target;
   };
   [NoInterfaceObject] interface FileSystemManagerObject {
     readonly attribute <a href="#FileSystemManager">FileSystemManager</a> file;

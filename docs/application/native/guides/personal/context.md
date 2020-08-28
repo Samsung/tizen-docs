@@ -362,7 +362,7 @@ The history data records retrieved through the contextual history API contain th
 			<td><code>CONTEXT_HISTORY_MEDIA_VOLUME</code></td>
 			<td>Integer</td>
 			<td>This attribute denotes the most common media volume level.
-			<p>For more information on the system and media volume settings, see the <a href="https://developer.tizen.org/development/guides/native-application/media-and-camera/audio-management/sound-manager">Sound Manager</a> guide.</p>
+			<p>For more information on the system and media volume settings, see the <a href="../multimedia/sound-manager.md">Sound Manager</a> guide.</p>
 			</td>
 		</tr>
 		<tr>

@@ -3,9 +3,14 @@
 Samsung Certificate Extension provides functionalities to get and register certificates for Samsung commercial devices.  
 It is an add-on SDK, which is installed using the Tizen Studio Package Manager.
 
-Click **Tools** > **Tizen** > **Tizen Package Manager** in the menu bar to launch the Package Manager.
+To install Samsung Certificate Extension, follow these steps:
+  
+1. In the Visual Studio menu, select **Tools** > **Tizen** > **Tizen Package Manager**.
+2. In the **Tizen Package Manager** window that appears, select **Extension SDK**.
+    
+	The list of available extensions appears. 
+3. Select **Samsung Certificate Extension** from the list and click **Install**.
+	
+	You can also see that the extension details are described in the **Samsung Certificate Extension (Extras)** panel.
 
-In the Extension SDK tab you can find the list of available extensions.  
-The version of the extension is described in the lower window.
-
-![Package Manager](media/certification_guide2.png)
+    ![Package Manager](media/certification_guide2.png)

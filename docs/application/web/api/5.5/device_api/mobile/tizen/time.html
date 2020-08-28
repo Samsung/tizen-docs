@@ -4,13 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Time API</title>
+<meta data-version="5.5" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Time">
 <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Time API</h1></div>
 <div class="brief">
-  The Time API provides information regarding date/time and time zones.
+ The Time API provides information regarding date/time and time zones.
         </div>
 <div class="description">
         <p>
@@ -35,7 +36,7 @@ This API can be used to get TZDate objects with full time zone support, convert 
 between timezones, retrieve available timezones.
         </p>
         <p>
-For more information on the Time features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/time-and-date-management">Time Guide</a>.
+For more information on the Time features, see <a href="/application/web/guides/device/time">Time Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -181,11 +182,11 @@ At least the following values must be supported:
             <li>
 MSECS - Indicates a duration in milliseconds            </li>
             <li>
-SECS - Indicates a duration in seconds             </li>
+SECS - Indicates a duration in seconds            </li>
             <li>
-MINS - Indicates a duration in minutes             </li>
+MINS - Indicates a duration in minutes            </li>
             <li>
-HOURS - Indicates a duration in hours             </li>
+HOURS - Indicates a duration in hours            </li>
             <li>
 DAYS - Indicates a duration in days            </li>
           </ul>
@@ -807,8 +808,7 @@ If its date/time exceeds the platform limit, TZDate will be invalid.
     DOMString toDateString();
     DOMString toTimeString();
     DOMString toString();
-<span class="nocode deprecated">    DOMString getTimezoneAbbreviation() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-</span>    long secondsFromUTC() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long secondsFromUTC() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     boolean isDST() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#TZDate">TZDate</a>? getPreviousDSTTransition() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#TZDate">TZDate</a>? getNextDSTTransition() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -830,6 +830,10 @@ var myDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/Berlin");
 <div class="constructors">
 <h4 id="TZDate::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (Date?, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">TZDate(optional Date? datetime, optional DOMString? timezone);</pre>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -843,7 +847,9 @@ var myDate = new tizen.TZDate(1999, 11, 31, 23, 59, 59, 999, "Europe/Berlin");
                   </li>
           </ul>
 </div>
-<pre class="webidl prettyprint">TZDate(optional Date? datetime, optional DOMString? timezone);</pre>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (long, long, long, long?, long?, long?, long?, DOMString?)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">TZDate(long year, long month, long day, optional long? hours, optional long? minutes, optional long? seconds,
        optional long? milliseconds, optional DOMString? timezone);</pre>
 </dl>
@@ -2371,52 +2377,6 @@ console.log(someDate.toString());
 </pre>
 </div>
 </dd>
-<dt class="deprecated method" id="TZDate::getTimezoneAbbreviation">
-<a class="backward-compatibility-anchor" name="::Time::TZDate::getTimezoneAbbreviation"></a><code><b><span class="methodName">getTimezoneAbbreviation</span></b></code>
-</dt>
-<dd class="deprecated">
-<div class="brief">
- Determines the time zone abbreviation to be used at a particular date in the time zone.
-            </div>
-<p class="deprecated"><b>Deprecated.</b>
- Deprecated since 2.1.
-            </p>
-<div class="synopsis"><pre class="signature prettyprint">DOMString getTimezoneAbbreviation();</pre></div>
-<p><span class="version">Since: </span>
- 1.0
-            </p>
-<div class="description">
-            <p>
-For example, in Toronto this is currently "EST" during the winter months and "EDT" during the
-summer months when daylight savings time is in effect.
-            </p>
-           </div>
-<div class="returntype">
-<p><span class="return">Return value:</span></p>
-<ul>
-<span class="return">DOMString:</span>
- DOMString The abbreviation of the time zone (such as "EST") <br>If TZDate is invalid, it will return 'Invalid Date'.
-              </ul>
-</div>
-<div class="exceptionlist">
-<p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if the call failed due to an unknown error.
-                </p></li></ul>
-</li></ul>
-        </div>
-<div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* The following code uses DEPRECATED methods. */
-/* please do not use this in new applications. */
-var abbreviation = tizen.time.getCurrentDateTime().getTimezoneAbbreviation();
-console.log("The time zone abbreviation is: " + abbreviation);
-</pre>
-</div>
-<div class="output">
-<span class="title"><p>Output example:</p></span><pre>The time zone abbreviation is: GMT+09:00
-</pre>
-</div>
-</dd>
 <dt class="method" id="TZDate::secondsFromUTC">
 <a class="backward-compatibility-anchor" name="::Time::TZDate::secondsFromUTC"></a><code><b><span class="methodName">secondsFromUTC</span></b></code>
 </dt>
@@ -2593,10 +2553,16 @@ console.log(nextDstTransition.toString());
 <div class="constructors">
 <h4 id="TimeDuration::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (long long, <a href="#TimeDurationUnit">TimeDurationUnit</a>?)</span></b></code>
+</dt>
 <div class="brief">
  The TimeDuration interface that contains the length and its associated time unit.
               </div>
 <pre class="webidl prettyprint">TimeDuration(long long length, optional <a href="#TimeDurationUnit">TimeDurationUnit</a>? unit);</pre>
+<p><span class="version">Since: </span>
+ 1.0
+              </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var now = tizen.time.getCurrentDateTime();
 var tomorrow = now.addDuration(new tizen.TimeDuration(1, "DAYS"));  /* Becomes tomorrow, same time. */

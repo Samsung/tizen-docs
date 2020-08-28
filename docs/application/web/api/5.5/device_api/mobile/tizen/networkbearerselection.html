@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>NetworkBearerSelection API</title>
+<meta data-version="5.5" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::NetworkBearerSelection">
@@ -15,10 +16,7 @@
 <div class="description">
         <p>
 This API provides interfaces and methods for users to set network bearer selection.
-Since Tizen 2.3, the "http://tizen.org/privilege/internet" privilege is additionally required.        </p>
-        <p>
-If not declared in config.xml of wgt file, <em>UnknownError</em> occurs.
-
+Since Tizen 2.3, the "http://tizen.org/privilege/internet" privilege is additionally required.<br>If not declared in config.xml of wgt file, <em>UnknownError</em> occurs.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -181,7 +179,7 @@ The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError : If the "http://tizen.org/privilege/internet" privilege is not declared in config.xml or any other platform error occurs.               </li>
+UnknownError : If the "http://tizen.org/privilege/internet" privilege is not declared in config.xml or any other platform error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -274,14 +272,12 @@ The function must asynchronously acquire success or fail.
             <p>
 When called, it closes a network connection.
             </p>
-           </div>
-<div class="description">
             <p>
 The <em>ErrorCallback</em> method is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError : If the "http://tizen.org/privilege/internet" privilege is not declared in config.xml or any other platform error occurs.               </li>
+UnknownError : If the "http://tizen.org/privilege/internet" privilege is not declared in config.xml or any other platform error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -425,7 +421,7 @@ To guarantee that the NBS application runs on a device with telephony feature, d
 <li class="feature">http://tizen.org/feature/network.telephony</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module NetworkBearerSelection {

@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>TVDisplayControl API</title>
+<meta data-version="3.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::TVDisplayControl">
- <div class="supported-platforms"><img class="tv-optional" title="Optional, Not supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="tv-optional" title="Optional, Not supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
 <div class="title"><h1>TVDisplayControl API</h1></div>
 <div class="brief">
         </div>
@@ -134,25 +135,25 @@ functionality of the display control API.
 <div class="description">
           <ul>
             <li>
-OFF - identifier for 3DEffect mode off             </li>
+OFF - identifier for 3DEffect mode off            </li>
             <li>
-TOP_BOTTOM - Left image at the top, right image at the bottom             </li>
+TOP_BOTTOM - Left image at the top, right image at the bottom            </li>
             <li>
 SIDE_BY_SIDE - Left image at the left side, right image at the right
-side             </li>
+side            </li>
             <li>
 LINE_BY_LINE - Left and right image interlaced
-by row             </li>
+by row            </li>
             <li>
 VERTICAL_STRIP - Left and right image interlaced
-by column             </li>
+by column            </li>
             <li>
-FRAME_SEQUENCE -  Left and right image interlaced by frame             </li>
+FRAME_SEQUENCE -  Left and right image interlaced by frame            </li>
             <li>
-CHECKER_BD - Checkerboard (only for PC or game console sources)             </li>
+CHECKER_BD - Checkerboard (only for PC or game console sources)            </li>
             <li>
 FROM_2D_TO_3D - Left and right image computed from
-non-stereoscopic image             </li>
+non-stereoscopic image            </li>
           </ul>
          </div>
 </div>
@@ -168,11 +169,11 @@ non-stereoscopic image             </li>
 <div class="description">
           <ul>
             <li>
- NOT_CONNECTED - The device (e.g. Blu-ray player) supports 3D mode but a 3D display is not connected.            </li>
+NOT_CONNECTED - The device (e.g. Blu-ray player) supports 3D mode but a 3D display is not connected.            </li>
             <li>
- NOT_SUPPORTED - The device does not support 3D mode.            </li>
+NOT_SUPPORTED - The device does not support 3D mode.            </li>
             <li>
- READY - The device supports 3D mode and it can display 3D mode.            </li>
+READY - The device supports 3D mode and it can display 3D mode.            </li>
           </ul>
          </div>
 </div>
@@ -183,7 +184,7 @@ non-stereoscopic image             </li>
 <a class="backward-compatibility-anchor" name="::TVDisplayControl::DisplayControlManagerObject"></a><h3>2.1. DisplayControlManagerObject</h3>
 <div class="brief">
  This interface defines what is instantiated by the <em>tizen</em> object.
-There will be a <em>tizen.tvdisplaycontrol </em>object that allows the access to the Display Control API.
+There will be a <em>tizen.tvdisplaycontrol</em> object that allows the access to the Display Control API.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface DisplayControlManagerObject {
     readonly attribute <a href="#DisplayControlManager">DisplayControlManager</a> tvdisplaycontrol;
@@ -235,8 +236,7 @@ For example, Display Control API provides whether your device supports 3D.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Display3DEffectMode:
-                  </span>
+<span class="return">Display3DEffectMode:</span>
  Display3DEffectMode The current mode of 3D effect.
               </ul>
 </div>
@@ -288,8 +288,7 @@ catch (error)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Display3DModeState:
-                  </span>
+<span class="return">Display3DModeState:</span>
  Display3DModeState The current state to display 3D contents.
               </ul>
 </div>
@@ -449,7 +448,9 @@ catch (error)
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -459,17 +460,17 @@ To guarantee the running of this application on a device with a TV display contr
 <li class="feature">http://tizen.org/feature/tv.display</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVDisplayControl {
   enum Display3DEffectMode { "OFF", "TOP_BOTTOM", "SIDE_BY_SIDE", "LINE_BY_LINE", "VERTICAL_STRIPE", "FRAME_SEQUENCE", "CHECKER_BD",
     "FROM_2D_TO_3D" };
   enum Display3DModeState { "NOT_CONNECTED", "NOT_SUPPORTED", "READY" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DisplayControlManagerObject">DisplayControlManagerObject</a>;
   [NoInterfaceObject] interface DisplayControlManagerObject {
     readonly attribute <a href="#DisplayControlManager">DisplayControlManager</a> tvdisplaycontrol;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#DisplayControlManagerObject">DisplayControlManagerObject</a>;
   [NoInterfaceObject] interface DisplayControlManager {
     <a href="#Display3DEffectMode">Display3DEffectMode</a> get3DEffectMode() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#Display3DModeState">Display3DModeState</a> is3DModeEnabled() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

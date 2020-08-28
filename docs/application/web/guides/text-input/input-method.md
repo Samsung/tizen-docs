@@ -1,6 +1,6 @@
 # IME Application
 
-Tizen Web IME (Input Method Editor) applications are written in HTML5 for Tizen, combining HTML, JavaScript, and CSS into a package that can be installed on a Tizen device, such as Samsung Gear, or the Tizen emulator. Both the Tizen device and the emulator must run Tizen version 2.3 or higher to run Web IME applications.
+Tizen Web IME (Input Method Editor) applications are written in HTML5 for Tizen, combining HTML, JavaScript, and CSS into a package that can be installed on a Tizen device, such as Samsung Gear, or the Tizen Emulator. Both the Tizen device and the emulator must run Tizen version 2.3 or higher to run Web IME applications.
 
 This feature is supported in wearable applications only.
 
@@ -18,7 +18,7 @@ The following figure shows the overall architecture of the Tizen Web IME support
 
 When a Web IME is executed, the Input Service framework launches the Input Service Engine process, as with native IME applications. The Input Service Engine process loads a special bridge IME module, `ise-web-helper-agent`, which executes a Web IME within its Web container and communicates with the executed Web IME.
 
-The communication between the Web IME and the `ise-web-helper-agent` module is accomplished by 2 utility modules, `web-helper-agent` on the Web helper agent side and `web-helper-client` on the Web IME side. Therefore, a Web IME application must contain the `web-helper-client.js`, which is created automatically when you create a Web IME project using the Tizen Studio.
+The communication between the Web IME and the `ise-web-helper-agent` module is accomplished by 2 utility modules, `web-helper-agent` on the Web helper agent side and `web-helper-client` on the Web IME side. Therefore, a Web IME application must contain the `web-helper-client.js`, which is created automatically when you create a Web IME project using Tizen Studio.
 
 Since the Web IME runs within a Web container and communicates with it, as a Web IME application developer you do not need knowledge of the platform architecture or details of the native API. You can develop Web IME applications as if they were normal Web applications, as long as the `web-helper-client.js` file is included and properly used.
 
@@ -232,7 +232,7 @@ A Web IME in the visible or invisible state can move on to the terminated state 
 
 To create an IME application:
 
-1. To create the Web IME project, launch the Tizen Studio and go to **File > New > Tizen Project**.
+1. To create the Web IME project, launch Tizen Studio and go to **File > New > Tizen Project**.
 2. In the Project Wizard, select **Template** as the project type, **WEARABLE** profile and applicable version, **Web Application** type, and **Web Input Method Editor** template.
 3. Enter the project name and click **Finish**.   
 ![Create a Web IME project](./media/web_ime_create_project.png)

@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Download API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Download">
@@ -27,7 +28,7 @@ for accessing internal and external storage using this API, privileges (<a href=
 Storage privileges are privacy-related privileges and there is a need of asking user directly with proper pop-up. Please refer to <a href="ppm.html">Privacy Privilege API</a> for more details.          </li>
         </ul>
         <p>
-For more information on the Download features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/contents-downloads">Download Guide</a>.
+For more information on the Download features, see <a href="/application/web/guides/connectivity/download">Download Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -184,8 +185,8 @@ ALL - Indicates that the download operation is allowed in all network types.    
 <div class="interface" id="DownloadManagerObject">
 <a class="backward-compatibility-anchor" name="::Download::DownloadManagerObject"></a><h3>2.1. DownloadManagerObject</h3>
 <div class="brief">
- This interface defines the default download manager that is instantiated by the <em>Tizen </em>object.
-The <em>tizen.download </em>object allows access to the functionality of the Download API.
+ This interface defines the default download manager that is instantiated by the <em>Tizen</em> object.
+The <em>tizen.download</em> object allows access to the functionality of the Download API.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface DownloadManagerObject {
     readonly attribute <a href="#DownloadManager">DownloadManager</a> download;
@@ -226,8 +227,13 @@ The <em>tizen.download </em>object allows access to the functionality of the Dow
           </p>
 <div class="constructors">
 <h4 id="DownloadRequest::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">DownloadRequest(DOMString url, optional DOMString? destination, optional DOMString? fileName,
-                optional <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType, optional <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString?, DOMString?, <a href="#DownloadNetworkType">DownloadNetworkType</a>?, <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">DownloadRequest(DOMString url, optional DOMString? destination, optional DOMString? fileName,
+                optional <a href="#DownloadNetworkType">DownloadNetworkType</a>? networkType, optional <a href="#DownloadHTTPHeaderFields">DownloadHTTPHeaderFields</a>? httpHeader);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -894,7 +900,7 @@ tizen.download.setListener(downloadId, listener);
 <dd>
 <div class="brief">
  Called when a download is successful and it is called multiple times as the download progresses.
-The interval between the <em>onprogress()</em> callback is platform-dependent. When the download is started, the <em>receivedSize </em>can be <var>0</var>.
+The interval between the <em>onprogress()</em> callback is platform-dependent. When the download is started, the <em>receivedSize</em> can be <var>0</var>.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onprogress(long downloadId, unsigned long long receivedSize, unsigned long long totalSize);</pre></div>
 <p><span class="version">Since: </span>
@@ -923,7 +929,7 @@ The interval between the <em>onprogress()</em> callback is platform-dependent. W
 </dt>
 <dd>
 <div class="brief">
- Called when the download operation is paused by the <em>pause() </em>method.
+ Called when the download operation is paused by the <em>pause()</em> method.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void onpaused(long downloadId);</pre></div>
 <p><span class="version">Since: </span>
@@ -944,7 +950,7 @@ The interval between the <em>onprogress()</em> callback is platform-dependent. W
 </dt>
 <dd>
 <div class="brief">
- Called when the download operation is canceled by the <em>cancel() </em>method.
+ Called when the download operation is canceled by the <em>cancel()</em> method.
             </div>
 <div class="synopsis"><pre class="signature prettyprint">void oncanceled(long downloadId);</pre></div>
 <p><span class="version">Since: </span>
@@ -1045,7 +1051,7 @@ DownloadNetworkType <em>CELLULAR</em> can be available on a cellular-enabled dev
 <li class="feature">http://tizen.org/feature/network.telephony</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Download {

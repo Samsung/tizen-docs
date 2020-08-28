@@ -114,7 +114,7 @@ Required Header</h2>
 <p>You can check if a device supports the related features for this API by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, and control your application's actions accordingly.</p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/tizen-studio/native-tools/configuring-your-app/manifest-text-editor#feature"><b>Feature Element</b>.</a> </p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -138,16 +138,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables a TDLS channel switching request.  <a href="#gaaa9015b4ec2c3de8ec83a7ac84585cd1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#gab88c6459c8ffd0bad0dbc362aabc4c74">wifi_manager_tdls_disable_channel_switching</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, const char *peer_mac_addr)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables a TDLS channel switching request.  <a href="#gab88c6459c8ffd0bad0dbc362aabc4c74"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#gae8723b54e7f3be6e1d29a82b8eeecfa3">wifi_manager_set_ip_conflict_cb</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga59a9236f4158c2bb908016ede4097bcd">wifi_manager_ip_conflict_cb</a> callback, void *user_data)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers the callback called when IP conflict state is changed.  <a href="#gae8723b54e7f3be6e1d29a82b8eeecfa3"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#gaea6e48abd6f25f24dfecea108985e155">wifi_manager_unset_ip_conflict_cb</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Unregisters the callback called when IP conflict state is changed.  <a href="#gaea6e48abd6f25f24dfecea108985e155"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#ga9d1f00fb4155f3df500b268feb579e79">wifi_manager_set_ip_conflict_detect_enable</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, bool detect)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables or disables IP conflict detection.  <a href="#ga9d1f00fb4155f3df500b268feb579e79"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#gaae6b2aeefd749ea39a62b9405a8cb883">wifi_manager_ip_conflict_detect_is_enabled</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, bool *state)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether IP conflict detection is enabled.  <a href="#gaae6b2aeefd749ea39a62b9405a8cb883"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#ga45a15a9112175767e4f5a00afb69f6b4">wifi_manager_get_ip_conflict_state</a> (<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a> wifi, <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga6088e1b228001a5a09540066a2d14917">wifi_manager_ip_conflict_state_e</a> *state)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the state of the IP conflict.  <a href="#ga45a15a9112175767e4f5a00afb69f6b4"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#ga3cfa41a58e137555251d62a7707c4395">wifi_manager_tdls_state_changed_cb</a> )(<a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#ga509d115b155240ac688cb5f8913df738">wifi_manager_tdls_state_e</a> state, char *peer_mac_addr, void *user_data)</td></tr>
@@ -238,210 +228,6 @@ Typedefs</h2></td></tr>
 </div>
 </div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga45a15a9112175767e4f5a00afb69f6b4"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_get_ip_conflict_state" ref="ga45a15a9112175767e4f5a00afb69f6b4" args="(wifi_manager_h wifi, wifi_manager_ip_conflict_state_e *state)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#ga45a15a9112175767e4f5a00afb69f6b4">wifi_manager_get_ip_conflict_state</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
-          <td class="paramname"><em>wifi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga6088e1b228001a5a09540066a2d14917">wifi_manager_ip_conflict_state_e</a> *&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Gets the state of the IP conflict. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.get </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">state</td><td>The current state of IP conflict </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gaae6b2aeefd749ea39a62b9405a8cb883"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_ip_conflict_detect_is_enabled" ref="gaae6b2aeefd749ea39a62b9405a8cb883" args="(wifi_manager_h wifi, bool *state)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#gaae6b2aeefd749ea39a62b9405a8cb883">wifi_manager_ip_conflict_detect_is_enabled</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
-          <td class="paramname"><em>wifi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool *&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Checks whether IP conflict detection is enabled. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.get </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">state</td><td><code>true</code> if IP conflict detection is enabled, otherwise <code>false</code> if IP conflict detection is disabled. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccaef6a3199ea55efbb38a70619e1b063d0">WIFI_MANAGER_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission Denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gae8723b54e7f3be6e1d29a82b8eeecfa3"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_set_ip_conflict_cb" ref="gae8723b54e7f3be6e1d29a82b8eeecfa3" args="(wifi_manager_h wifi, wifi_manager_ip_conflict_cb callback, void *user_data)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#gae8723b54e7f3be6e1d29a82b8eeecfa3">wifi_manager_set_ip_conflict_cb</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
-          <td class="paramname"><em>wifi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MONITOR__MODULE.html#ga59a9236f4158c2bb908016ede4097bcd">wifi_manager_ip_conflict_cb</a>&#160;</td>
-          <td class="paramname"><em>callback</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>user_data</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Registers the callback called when IP conflict state is changed. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>The callback function to be called </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>The user data passed to the callback function </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga9d1f00fb4155f3df500b268feb579e79"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_set_ip_conflict_detect_enable" ref="ga9d1f00fb4155f3df500b268feb579e79" args="(wifi_manager_h wifi, bool detect)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#ga9d1f00fb4155f3df500b268feb579e79">wifi_manager_set_ip_conflict_detect_enable</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
-          <td class="paramname"><em>wifi</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>detect</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Enables or disables IP conflict detection. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="user"><dt><b>Privilege Level:</b></dt><dd>public </dd></dl>
-<dl class="user"><dt><b>Privilege:</b></dt><dd>http://tizen.org/privilege/network.set</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">detect</td><td>True or false boolean to enable or disable</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca9181e3c3b6b7685cb9fdfb7d232b0ac0">WIFI_MANAGER_ERROR_PERMISSION_DENIED</a></td><td>Permission denied </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="gaa5004f15e489523383d83d9980daec5e"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_tdls_connect" ref="gaa5004f15e489523383d83d9980daec5e" args="(wifi_manager_h wifi, const char *peer_mac_addr)" -->
 <div class="memitem">
 <div class="memproto">
@@ -926,42 +712,6 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gaea6e48abd6f25f24dfecea108985e155"></a><!-- doxytag: member="wifi&#45;manager.h::wifi_manager_unset_ip_conflict_cb" ref="gaea6e48abd6f25f24dfecea108985e155" args="(wifi_manager_h wifi)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__TDLS__MODULE.html#gaea6e48abd6f25f24dfecea108985e155">wifi_manager_unset_ip_conflict_cb</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#ga0c77ee787dbcdbb012f3899627eb2b94">wifi_manager_h</a>&#160;</td>
-          <td class="paramname"><em>wifi</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Unregisters the callback called when IP conflict state is changed. </p>
-<dl class="user"><dt><b>Since :</b></dt><dd>5.0 </dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">wifi</td><td>The Wi-Fi handle </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>0 on success, otherwise negative error value </dd></dl>
-<dl class="retval"><dt><b>Return values:</b></dt><dd>
-  <table class="retval">
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca64bc19b4b8d064b21cf9b62b13ea9ff5">WIFI_MANAGER_ERROR_NONE</a></td><td>Successful </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebecca6021c162da19c191a368ddae1fe403f3">WIFI_MANAGER_ERROR_INVALID_OPERATION</a></td><td>Invalid operation </td></tr>
-    <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccae73e0f4f92374896a7cff53756d662b1">WIFI_MANAGER_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
     <tr><td class="paramname"><a class="el" href="group__CAPI__NETWORK__WIFI__MANAGER__MODULE.html#gga23ecaf77b31aefdbf8aa5e9dd47ebeccade9b358d56b2576446e070136ee5665a">WIFI_MANAGER_ERROR_NOT_SUPPORTED</a></td><td>Not supported </td></tr>
   </table>
   </dd>

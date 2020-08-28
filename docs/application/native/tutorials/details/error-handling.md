@@ -67,5 +67,5 @@ native APIs in Tizen:
     and returns its corresponding error messages, such as "Location
     service is not available".
 
-Every error code in the Tizen native API is represented as an integer
+Every error code in Tizen Native API is represented as an integer
 value.

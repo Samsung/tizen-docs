@@ -799,6 +799,7 @@ dt.method
 .optional
 {
     font-style: italic;
+    font-weight: normal;
 }
 
 
@@ -917,7 +918,7 @@ a[href].status:hover{
 {
     margin-bottom: 2px;
 }
-.version, span.param, .except, .example, .return, .privilege, .remark, .privilegelevel, .output > .title
+.version, .defaultValue, span.param, .except, .example, .return, .privilege, .remark, .privilegelevel, .output > .title
 {
     font-weight: bold;
 }

@@ -27,6 +27,10 @@ Tizen provides various application models to allow you to create applications ta
   - [Widget application](widget-app.md)
 
     A widget application (or widget) is a specialized application that provides the user a quick view of specific information from the parent application. In addition, the widget allows the user to access certain features without launching the parent application. Combined with the parent application, your widget can have various features to increase the usability of your application.
+  
+  - [NUI Widget application](nui-widget-app.md)
+
+    A NUI Widget application is a widget application for NUI. It can be created using components of NUI.
 
 <a name="life-cycle"></a>
 ## Tizen .NET Application Life-Cycle

@@ -2,7 +2,7 @@
 
 You can handle generic error situations in your application.
 
-The Tizen API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Tizen API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main error handling features of the Tizen API include:
 
@@ -11,7 +11,7 @@ The main error handling features of the Tizen API include:
   You can enable the Tizen APIs to throw errors synchronously with the `WebAPIException` interface (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#WebAPIException), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#WebAPIException), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#WebAPIException) applications), or return errors in the error event handlers of asynchronous methods with the `WebAPIError` interface (in [mobile](../../api/latest/device_api/mobile/tizen/tizen.html#WebAPIError), [wearable](../../api/latest/device_api/wearable/tizen/tizen.html#WebAPIError), and [TV](../../api/latest/device_api/tv/tizen/tizen.html#WebAPIError) applications).
 
    > **Note**  
-   > Do not use the `code` attribute of the `WebAPIException` interface to distinguish errors, because the code of the exception object is set to `0` for new error types that are not defined in [DOMException](http://www.w3.org/TR/dom/#domexception).
+   > Do not use the `code` attribute of the `WebAPIException` interface to distinguish errors, because the code of the exception object is set to `0` for new error types that are not defined in [DOMException](https://heycam.github.io/webidl/#idl-DOMException).
 
 - Generic event handling  
 

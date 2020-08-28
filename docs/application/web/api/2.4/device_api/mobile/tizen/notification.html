@@ -4,17 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Notification API</title>
+<meta data-version="2.4" data-profile="mobile">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Notification">
- <div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
+<div class="supported-platforms"><img class="mobile-mandatory emulator" title="Mandatory, Supported by Tizen Mobile emulator" src="mobile_s_w.png"></div>
 <div class="title"><h1>Notification API</h1></div>
 <div class="brief">
  The Notification API provides a way to notify users of events that happen in an application.
         </div>
 <div class="description">
         <p>
-For more information on the Notification features, see <a href="https://developer.tizen.org/development/guides/web-application/tizen-features/application/notification">Notification Guide</a>.
+For more information on the Notification features, see <a href="/application/web/guides/notification/notification">Notification Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -179,9 +180,9 @@ The following notification progress types are supported:
           </p>
           <ul>
             <li>
- "BYTE" - The progress is indicated in bytes.            </li>
+"BYTE" - The progress is indicated in bytes.            </li>
             <li>
- "PERCENTAGE" -The progress is indicated in percentage.            </li>
+"PERCENTAGE" -The progress is indicated in percentage.            </li>
           </ul>
          </div>
 </div>
@@ -514,8 +515,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Notification:
-                  </span>
+<span class="return">Notification:</span>
  Notification posted previously by the current application.
               </ul>
 </div>
@@ -560,8 +560,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">Notification[]:
-                  </span>
+<span class="return">Notification[]:</span>
  All notifications previously been posted by the current application.
               </ul>
 </div>
@@ -849,7 +848,12 @@ All notifications must have a title attribute.
         
       <div class="constructors">
 <h4 id="StatusNotification::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">StatusNotification(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#StatusNotificationType">StatusNotificationType</a>, DOMString, <a href="#StatusNotificationInit">StatusNotificationInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">StatusNotification(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -1118,7 +1122,12 @@ notification.detailInfo = [detailInfo1];
 </div>
 <div class="constructors">
 <h4 id="NotificationDetailInfo::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">NotificationDetailInfo(DOMString mainText, optional DOMString? subText);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">NotificationDetailInfo(DOMString mainText, optional DOMString? subText);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -1151,7 +1160,9 @@ By default, this attribute is set to <var>null</var>.
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -1161,7 +1172,7 @@ If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare t
 <li class="feature">http://tizen.org/feature/led</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Notification {
@@ -1170,27 +1181,6 @@ If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare t
   enum StatusNotificationType { "SIMPLE", "THUMBNAIL", "ONGOING", "PROGRESS" };
   enum NotificationProgressType { "PERCENTAGE", "BYTE" };
   enum LEDCustomFlags { "LED_CUSTOM_DUTY_ON", "LED_CUSTOM_DEFAULT" };
-  [NoInterfaceObject] interface NotificationObject {
-    readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
-  };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;
-  [NoInterfaceObject] interface NotificationManager {
-    void post(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void remove(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    <a href="#Notification">Notification</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void stopLEDCustomEffect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-  };
-  [NoInterfaceObject] interface Notification {
-    readonly attribute <a href="#NotificationId">NotificationId</a> id;
-    readonly attribute <a href="#NotificationType">NotificationType</a> type;
-    readonly attribute Date postedTime;
-    attribute DOMString title;
-    attribute DOMString? content;
-  };
   dictionary StatusNotificationInit {
     DOMString? content;
     DOMString? iconPath;
@@ -1208,6 +1198,27 @@ If an application uses playLEDCustomEffect() or stopLEDCustomEffect(), declare t
     unsigned long ledOffPeriod;
     DOMString? backgroundImagePath;
     DOMString[]? thumbnails;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#NotificationObject">NotificationObject</a>;
+  [NoInterfaceObject] interface NotificationObject {
+    readonly attribute <a href="#NotificationManager">NotificationManager</a> notification;
+  };
+  [NoInterfaceObject] interface NotificationManager {
+    void post(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void update(<a href="#Notification">Notification</a> notification) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void remove(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Notification">Notification</a> get(<a href="#NotificationId">NotificationId</a> id) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#Notification">Notification</a>[] getAll() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void playLEDCustomEffect(long timeOn, long timeOff, DOMString color, <a href="#LEDCustomFlags">LEDCustomFlags</a>[] flags) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void stopLEDCustomEffect() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface Notification {
+    readonly attribute <a href="#NotificationId">NotificationId</a> id;
+    readonly attribute <a href="#NotificationType">NotificationType</a> type;
+    readonly attribute Date postedTime;
+    attribute DOMString title;
+    attribute DOMString? content;
   };
   [Constructor(<a href="#StatusNotificationType">StatusNotificationType</a> statusType, DOMString title, optional <a href="#StatusNotificationInit">StatusNotificationInit</a>? notificationInitDict)]
   interface StatusNotification : <a href="#Notification">Notification</a> {

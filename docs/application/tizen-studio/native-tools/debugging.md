@@ -1,6 +1,6 @@
 # Debugging Your Application
 
-The Tizen Studio provides the following set of tools to help you debug your native application projects:
+Tizen Studio provides the following set of tools to help you debug your native application projects:
 
 - [Log View](../common-tools/log-view.md) **(Checking Logs with Log View)**  
 The **Log** view allows you to check the logs of your application based on the logging methods you have inserted to your code. It helps to debug your application by capturing all the events logged by the platform and your application.

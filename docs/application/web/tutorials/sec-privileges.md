@@ -5,7 +5,7 @@ To effectively protect the device system and user private data, the Tizen securi
 
 Tizen provides API-level access control for security-sensitive operations which, if not used properly, can harm user privacy and system stability. Therefore, applications that use such sensitive APIs must declare the required privileges in the [config.xml](process/setting-properties.md#privilege) file.  Privileges are categorized into public, partner, and platform levels according to their hierarchy:
 
--   The public level is the minimum privilege level, which means that any application developed using the Tizen Studio can use these privileges.
+-   The public level is the minimum privilege level, which means that any application developed using Tizen Studio can use these privileges.
 -   The partner level privileges require at least a partner-signed certificate which is granted to developers who have a business relationship with the vendor.
 -   The platform level is the highest privilege level, and an application that needs these privileges requires at least a  platform-signed certificate, which is granted to vendor developers.
 
@@ -18,7 +18,7 @@ Since Tizen platform 3.0, some privileges are categorized as privacy-related and
 >
 > Since Tizen 4.0, the status of privacy-related privileges can be [resolved at runtime](../guides/security/privacy-related-permissions.md) using the Privacy Privilege API (in [mobile](../api/latest/device_api/mobile/tizen/ppm.html) and [wearable](../api/latest/device_api/wearable/tizen/ppm.html) applications).
 
-The Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../tizen-studio/web-tools/privilege-checker.md).
+Tizen Studio also provides privilege checker tools to check whether the Tizen application source code contains any privilege violations. For more information, see [Verifying Privilege Usage](../../tizen-studio/web-tools/privilege-checker.md).
 
 The API version restriction of privileges are deprecated since platform version 5.0. So, if you are develeoping an app with an earlier API version and need information about supported version, see [this page](./old-versioned-sec-privileges.md). The page does not include privileges issued after 4.0.
 
@@ -93,7 +93,6 @@ The following tables list the API privileges, which you must declare when using 
 | `http://tizen.org/privilege/tee.client` | partner |  | The application can call security related functions running inside a Trusted Execution Environment (TEE), which ensures that sensitive data is stored, processed, and protected in an isolated, trusted environment. |
 | `http://tizen.org/privilege/telephony` | public |  | The application can retrieve telephony information, such as the network and SIM card used, the IMEI, and the statuses of calls. |
 | `http://tizen.org/privilege/tv.audio` | public |  | The application can change the volume, enable and disable silent mode, detect volume changes, and play beeps. Deprecated since 5.0. |
-| `http://tizen.org/privilege/tv.channel` | public |  | The application can change the TV channel, read information about TV channels and programmes, and receive notifications when the TV channel has been changed. |
 | `http://tizen.org/privilege/tv.display` | public |  | The application can check whether a device supports 3D and read information about 3D mode. Deprecated since 5.0. |
 | `http://tizen.org/privilege/tv.inputdevice` | public |  | The application can capture the key events of an input device, for example, TV remote control, and release key grabbing. |
 | `http://tizen.org/privilege/tv.window` | public |  | The application can embed the display of a video source, specify the size, and show or hide the embedded display. |

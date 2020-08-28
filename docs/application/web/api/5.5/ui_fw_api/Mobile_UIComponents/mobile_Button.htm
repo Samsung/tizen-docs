@@ -15,6 +15,14 @@
 <p>The button component changes the default browser buttons to special buttons with additional configuration options, such as an icon, corners, and a shadow.</p>
 
 <img src="../../images/mobile_button.png" width="15%">
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.1%2Fexamples%2Fmobile%2FUIComponents%2Fcomponents%2Fcontrols%2Fbutton%2Findex.html', '_blank')"
+>Use example</button>
 
 <h2>Table of Contents</h2>
 

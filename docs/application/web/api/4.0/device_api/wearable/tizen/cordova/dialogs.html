@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../../scripts/snippet.js"></script><title>Dialogs API</title>
+<meta data-version="4.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Dialogs">
- <div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
+<div class="supported-platforms"><img class="wearable-mandatory emulator" title="Mandatory, Supported by Tizen Wearable emulator" src="../wearable_s_w.png"></div>
 <div class="title"><h1>Dialogs API</h1></div>
 <div class="brief">
  This plugin provides the ability to make different types of notifications to the user.
@@ -239,7 +240,7 @@ navigator.notification.confirm(
 <div class="brief">
  Shows a custom confirm box with set of buttons.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback, optional DOMString? title, optional DOMString[]? buttonNames, 
+<div class="synopsis"><pre class="signature prettyprint">void prompt(DOMString message, <a href="#PromptCallback">PromptCallback</a> promptCallback, optional DOMString? title, optional DOMString[]? buttonNames,
             optional DOMString? defaultText);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -397,6 +398,9 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ConfirmCallback {
     void onsuccess(long buttonIndex);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <p><span class="remark">Remark: </span>
  Example usage is described on method <a href="#DialogsManager::confirm">confirm</a>.
           </p>
@@ -436,6 +440,9 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface PromptCallback {
     void onsuccess(<a href="#PromptData">PromptData</a> data);
   };</pre>
+<p><span class="version">Since: </span>
+ 3.0
+          </p>
 <p><span class="remark">Remark: </span>
  Example usage is described on method <a href="#DialogsManager::prompt">prompt</a>.
           </p>
@@ -469,10 +476,10 @@ the index uses one-based indexing, so the values could be 1, 2, 3, etc.
 </div>
 <h2 id="full-webidl">2. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Dialogs {
+  Navigator implements <a href="#DialogsManagerObject">DialogsManagerObject</a>;
   [NoInterfaceObject] interface DialogsManagerObject {
     readonly attribute <a href="#DialogsManager">DialogsManager</a> notification;
   };
-  Navigator implements <a href="#DialogsManagerObject">DialogsManagerObject</a>;
   [NoInterfaceObject] interface DialogsManager {
     void alert(DOMString message, <a href="cordova.html#SuccessCallback">SuccessCallback</a> alertCallback, optional DOMString? title, optional DOMString? buttonName);
     void confirm(DOMString message, <a href="#ConfirmCallback">ConfirmCallback</a> confirmCallback, optional DOMString? title, optional DOMString[]? buttonNames);

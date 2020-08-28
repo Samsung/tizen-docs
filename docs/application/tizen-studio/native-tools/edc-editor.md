@@ -42,7 +42,7 @@ Because of its real-time update mechanism, the EDC Editor updates the preview in
 
 ### Directory View and Workspace
 
-If your EDC collection consists of multiple EDC files, set up a workspace. The default workspace directory is where you opened the EDC file in the Tizen Studio.
+If your EDC collection consists of multiple EDC files, set up a workspace. The default workspace directory is where you opened the EDC file in Tizen Studio.
 
 The workspace is designed to be used with the file browser (toggle hotkey, **F9**) and the file tab (toggle hotkey, **F11**) so that you can navigate between multiple EDC files. The file browser (directory view) displays the current workspace directory.
 
@@ -142,11 +142,11 @@ The EDC Editor provides useful tool functions through the tool buttons available
 | ![Wireframes](./media/edceditor_wireframes.png) | Display wireframes to identify the parts boundaries. | **Ctrl + W**   |
 | ![Invert](./media/edceditor_invert.png) | Invert the layout horizontally and review the designed layout in the RTL, LTR settings. | **Ctrl + M**   |
 | ![Rect](./media/edceditor_rect.png)    | Add a Rect part to the preview.          | -              |
-| ![Text](./media/edceditor_text.png)    | Add a Text part to the preview.          |                |
-| ![Add image](./media/edceditor_image.png) | Add an Image part to the preview.        |                |
-| ![Swallow](./media/edceditor_swallow.png) | Add a Swallow part to the preview.       |                |
-| ![Textbox](./media/edceditor_textbox.png) | Add a Textblock part to the preview.     |                |
-| ![Spacer](./media/edceditor_spacer.png) | Add a Spacer part to the preview.        |                |
+| ![Text](./media/edceditor_text.png)    | Add a Text part to the preview.          | -              |
+| ![Add image](./media/edceditor_image.png) | Add an Image part to the preview.        |-               |
+| ![Swallow](./media/edceditor_swallow.png) | Add a Swallow part to the preview.       | -              |
+| ![Textbox](./media/edceditor_textbox.png) | Add a Textblock part to the preview.     | -              |
+| ![Spacer](./media/edceditor_spacer.png) | Add a Spacer part to the preview.        | -              |
 | ![Save](./media/edceditor_save.png)    | Save the current script to a file.       | **Ctrl + S**   |
 | ![Undo](./media/edceditor_undo.png)    | Undo text changes.                       | **Ctrl + Z**   |
 | ![Redo](./media/edceditor_redo.png)    | Redo text changes.                       | **Ctrl + R**   |
@@ -292,7 +292,7 @@ There are 3 ways to start the EDC editor:
 
 - Open an existing EDC file:
 
-  1. In the Tizen Studio, open a Tizen application project.
+  1. In Tizen Studio, open a Tizen application project.
 
   2. In the **Project Explorer** view, select an EDC file in the resource folder.  
   ![Select EDC](./media/edceditor_sel_edc.png)
@@ -303,7 +303,7 @@ There are 3 ways to start the EDC editor:
 
 - Create a new EDC file:
 
-  1. In the Tizen Studio, open a Tizen application project.
+  1. In Tizen Studio, open a Tizen application project.
   2. In the **Project Explorer** view, select the project name.
   3. Right-click the project, and select **New > EDC file**.  
   ![New EDC file](./media/edceditor_newedcfile.png)
@@ -311,7 +311,7 @@ There are 3 ways to start the EDC editor:
 
 - Create a new EDC file with a predefined template:
 
-  1. In the Tizen Studio, open a Tizen application project.
+  1. In Tizen Studio, open a Tizen application project.
 
   2. In the **Project Explorer** view, select the project name.
 

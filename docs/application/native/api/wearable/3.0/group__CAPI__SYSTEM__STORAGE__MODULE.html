@@ -147,9 +147,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ga37b732df787c1ef93a07d8ec86d3f3a1">storage_get_available_space</a> (int storage_id, unsigned long long *bytes)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the available space size of the given storage in bytes.  <a href="#ga37b732df787c1ef93a07d8ec86d3f3a1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ga321e838f4bc3cba650e1e9f5c5d8cfb2">storage_get_internal_memory_size</a> (struct statvfs *buf)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">int <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ga321e838f4bc3cba650e1e9f5c5d8cfb2" title="int storage_get_internal_memory_size(struct statvfs *buf).">storage_get_internal_memory_size(struct statvfs *buf)</a>.  <a href="#ga321e838f4bc3cba650e1e9f5c5d8cfb2"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the internal memory size.  <a href="#ga321e838f4bc3cba650e1e9f5c5d8cfb2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gae43c9a7add8fcb8fe9ab87c6a1643c1b">storage_get_external_memory_size</a> (struct statvfs *buf)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">int <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gae43c9a7add8fcb8fe9ab87c6a1643c1b" title="int storage_get_external_memory_size(struct statvfs *buf).">storage_get_external_memory_size(struct statvfs *buf)</a>.  <a href="#gae43c9a7add8fcb8fe9ab87c6a1643c1b"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the external memory size.  <a href="#gae43c9a7add8fcb8fe9ab87c6a1643c1b"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef bool(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gadafe9a148d01fa82178d189a53f17f81">storage_device_supported_cb</a> )(int storage_id, <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gabdf32571260b6c253da5bfcdecaa2f1f">storage_type_e</a> type, <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gac72d0e57e790d888dfd7bd57d52fbfee">storage_state_e</a> state, const char *path, void *user_data)</td></tr>
@@ -596,8 +596,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>int <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gae43c9a7add8fcb8fe9ab87c6a1643c1b" title="int storage_get_external_memory_size(struct statvfs *buf).">storage_get_external_memory_size(struct statvfs *buf)</a>. </p>
-<p>This generic API is used to get the external memory size. </p>
+<p>Gets the external memory size. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -606,9 +605,17 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value on failure </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gga2064bae0af733b883bad529b2cb68902a1d77d95a20f67da1613049bc1de0c464">STORAGE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gga2064bae0af733b883bad529b2cb68902ac4e1ae42ce924689e20b76aee1ecfd95">STORAGE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gga2064bae0af733b883bad529b2cb68902ac75f0d4166cb4b568da610925deb3c15">STORAGE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="user"><dt><b>Example:</b></dt><dd><div class="fragment"><pre class="fragment">    ...
   <span class="keyword">struct </span>statvfs s;
-    <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gae43c9a7add8fcb8fe9ab87c6a1643c1b" title="int storage_get_external_memory_size(struct statvfs *buf).">storage_get_external_memory_size</a>(&amp;s) &lt; 0)
+    <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gae43c9a7add8fcb8fe9ab87c6a1643c1b" title="Gets the external memory size.">storage_get_external_memory_size</a>(&amp;s) &lt; 0)
         <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54afe587b82bef57a833efb01cb01ab331d">DLOG_DEBUG</a>, LOG_TAG, <span class="stringliteral">&quot;Fail to get external memory size&quot;</span>);
     <span class="keywordflow">else</span>
         <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54afe587b82bef57a833efb01cb01ab331d">DLOG_DEBUG</a>, LOG_TAG, <span class="stringliteral">&quot;Total mem : %lf, Avail mem : %lf&quot;</span>,
@@ -633,8 +640,7 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>int <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ga321e838f4bc3cba650e1e9f5c5d8cfb2" title="int storage_get_internal_memory_size(struct statvfs *buf).">storage_get_internal_memory_size(struct statvfs *buf)</a>. </p>
-<p>This generic API is used to get the internal memory size. </p>
+<p>Gets the internal memory size. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -643,9 +649,17 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> on success, otherwise a negative error value on failure </dd></dl>
+<dl class="retval"><dt><b>Return values:</b></dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gga2064bae0af733b883bad529b2cb68902a1d77d95a20f67da1613049bc1de0c464">STORAGE_ERROR_NONE</a></td><td>Successful </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gga2064bae0af733b883bad529b2cb68902ac4e1ae42ce924689e20b76aee1ecfd95">STORAGE_ERROR_INVALID_PARAMETER</a></td><td>Invalid parameter </td></tr>
+    <tr><td class="paramname"><a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#gga2064bae0af733b883bad529b2cb68902ac75f0d4166cb4b568da610925deb3c15">STORAGE_ERROR_OPERATION_FAILED</a></td><td>Operation failed </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="user"><dt><b>Example:</b></dt><dd><div class="fragment"><pre class="fragment">    ...
   <span class="keyword">struct </span>statvfs s;
-    <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ga321e838f4bc3cba650e1e9f5c5d8cfb2" title="int storage_get_internal_memory_size(struct statvfs *buf).">storage_get_internal_memory_size</a>(&amp;s) &lt; 0)
+    <span class="keywordflow">if</span> (<a class="code" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ga321e838f4bc3cba650e1e9f5c5d8cfb2" title="Gets the internal memory size.">storage_get_internal_memory_size</a>(&amp;s) &lt; 0)
     <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54afe587b82bef57a833efb01cb01ab331d">DLOG_DEBUG</a>, LOG_TAG, <span class="stringliteral">&quot;Fail to get internal memory size&quot;</span>);
     <span class="keywordflow">else</span>
         <a class="code" href="group__CAPI__SYSTEM__DLOG.html#gaeb5d6a73b9b98abd319e9aaa8ee62bad" title="Sends log with priority and tag.">dlog_print</a>(<a class="code" href="group__CAPI__SYSTEM__DLOG.html#gga87e2b0bdb074915521f34ea7e53d9c54afe587b82bef57a833efb01cb01ab331d">DLOG_DEBUG</a>, LOG_TAG, <span class="stringliteral">&quot;Total mem : %lf, Avail mem : %lf&quot;</span>,

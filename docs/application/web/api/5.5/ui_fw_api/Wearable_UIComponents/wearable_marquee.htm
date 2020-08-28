@@ -13,8 +13,16 @@
 It makes &lt;div&gt; element (has some child nodes such as text and img) move horizontally like legacy &lt;marquee&gt; tag.</p>
 
 <video autoplay muted loop controls>
-	<source src="https://developer.tizen.org/sites/default/files/documentation/marquee.mp4">
+	<source src="../../images/marquee.mp4">
 </video>
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.1%2Fexamples%2Fwearable%2FUIComponents%2Fcontents%2Fcontrols%2Fmarquee%2Findex.html', '_blank')"
+>Use example</button>
 
 <table class="note">
 	<tbody>
@@ -100,16 +108,18 @@ page.addEventListener(&quot;pagebeforeshow&quot;, function()
 
 			<tr>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">marqueeStyle</span></td>
-				<td class="option">&quot;slide&quot; | &quot;scroll&quot; | &quot;alternate&quot;</td>
+				<td class="option">&quot;slide&quot; | &quot;scroll&quot; | &quot;alternate&quot; | &quot;endToEnd&quot;</td>
 				<td class="option">&quot;slide&quot;</td>
 				<td class="option">Sets the default style for the marquee</td>
 			</tr>
 
 			<tr>
 				<td class="option"><span style="font-family: Courier New,Courier,monospace">ellipsisEffect</span></td>
-				<td class="option">&quot;gradient&quot; | &quot;ellipsis&quot; | &quot;none&quot;</td>
+				<td class="option">&quot;gradient&quot; | &quot;none&quot;</td>
 				<td class="option">&quot;gradient&quot;</td>
-				<td class="option">Sets the end-effect(gradient) of marquee</td>
+				<td class="option">Sets the end-effect(gradient) of marquee<br>
+					The option &quot;ellipsis&quot; has been deprecated. Please use &quot;gradient&quot; instead of.
+				</td>
 			</tr>
 
 			<tr>

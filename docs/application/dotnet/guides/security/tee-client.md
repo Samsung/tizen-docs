@@ -24,7 +24,7 @@ The main features of the Tizen.Security.TEEC namespace include:
 
 To enable your application to use the TEE communication functionality:
 
-1.  To make your application visible in the Tizen Store only for devices that support TEE communication, the application must specify the following feature in the `tizen-manifest.xml` file:
+1.  To make your application visible in Tizen Store only for devices that support TEE communication, the application must specify the following feature in the `tizen-manifest.xml` file:
 
     ```
     <feature name="http://tizen.org/feature/security.tee"/>

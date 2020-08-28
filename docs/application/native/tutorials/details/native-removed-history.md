@@ -104,6 +104,7 @@ The following table provides detailed information regarding removed functions an
 | Content - Media Content - Media Information | media_info_set_album(), media_info_set_artist(), media_info_set_genre(), media_info_set_recorded_date() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Content - Media Content - Media Storage | media_storage_get_name() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Content - Media Content - Media Information | video_meta_update_to_db() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
+| Multimedia - Thumbnail Util | thumbnail_util_cancel_all() | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Multimedia - Media Controller Client | mc_client_set_server_update_cb() | Mobile, Wearable | Since 4.0 | 5.5 | Better alternative | mc_client_set_server_updated_cb() |
 | Multimedia - Media Controller Client | mc_client_unset_server_update_cb() | Mobile, Wearable | Since 4.0 | 5.5 | Better alternative | mc_client_unset_server_updated_cb() |
 | Multimedia - Media Controller Client | mc_client_set_playback_update_cb() | Mobile, Wearable | Since 4.0 | 5.5 | Better alternative | mc_client_set_playback_updated_cb() |
@@ -143,6 +144,160 @@ The following table provides detailed information regarding removed functions an
 | System - Runtime information | RUNTIME_INFO_KEY_LOCATION_SERVICE_ENABLED, RUNTIME_INFO_KEY_LOCATION_NETWORK_POSITION_ENABLED of runtime_info_key_e | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | Multimedia - Player | PLAYER_DISPLAY_TYPE_OBSOLETE_EVAS_WNONE, PLAYER_DISPLAY_TYPE_OBSOLETE_NONE_WEVAS of player_display_type_e | Mobile, Wearable | Since 4.0 | 5.5 | No longer available | - |
 | UI - EFL | elm_ctxpopup_direction_available_get(), elm_win_profiles_set() | Mobile, Wearable | Since 2.4 | 5.5 | No longer available | - |
+| UI - DALi | Dali::Toolkit::Button::Property::UNSELECTED_STATE_IMAGE | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::Property::SELECTED_STATE_IMAGE | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::Property::DISABLED_STATE_IMAGE | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::Property::SELECTED_COLOR | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::Property::UNSELECTED_COLOR | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::Property::LABEL_TEXT | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::LABEL |
+| UI - DALi | Dali::Toolkit::Button::SetDisabled(bool disabled) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED |
+| UI - DALi | Dali::Toolkit::Button::IsDisabled() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED |
+| UI - DALi | Dali::Toolkit::Button::SetAutoRepeating(bool autoRepeating) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::AUTO_REPEATING |
+| UI - DALi | Dali::Toolkit::Button::IsAutoRepeating() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::AUTO_REPEATING |
+| UI - DALi | Dali::Toolkit::Button::SetInitialAutoRepeatingDelay(float initialAutoRepeatingDelay) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::INITIAL_AUTO_REPEATING_DELAY |
+| UI - DALi | Dali::Toolkit::Button::GetInitialAutoRepeatingDelay() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::INITIAL_AUTO_REPEATING_DELAY |
+| UI - DALi | Dali::Toolkit::Button::SetNextAutoRepeatingDelay(float nextAutoRepeatingDelay) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::NEXT_AUTO_REPEATING_DELAY |
+| UI - DALi | Dali::Toolkit::Button::GetNextAutoRepeatingDelay() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::NEXT_AUTO_REPEATING_DELAY |
+| UI - DALi | Dali::Toolkit::Button::SetTogglableButton(bool togglable) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::TOGGLABLE |
+| UI - DALi | Dali::Toolkit::Button::IsTogglableButton() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::TOGGLABLE |
+| UI - DALi | Dali::Toolkit::Button::SetSelected(bool selected) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED |
+| UI - DALi | Dali::Toolkit::Button::IsSelected() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED |
+| UI - DALi | Dali::Toolkit::Button::SetAnimationTime(float animationTime) | Mobile, Wearable | Since 3.0 | 5.5 | No longer available | - |
+| UI - DALi | Dali::Toolkit::Button::GetAnimationTime() const | Mobile, Wearable | Since 3.0 | 5.5 | No longer available | - |
+| UI - DALi | Dali::Toolkit::Button::SetLabelText(const std::string& label) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::LABEL |
+| UI - DALi | Dali::Toolkit::Button::GetLabelText() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::LABEL |
+| UI - DALi | Dali::Toolkit::Button::SetUnselectedImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetBackgroundImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetSelectedImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetSelectedBackgroundImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetDisabledBackgroundImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_SELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetDisabledImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetDisabledSelectedImage(const std::string& filename) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetLabel(Actor label) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::LABEL |
+| UI - DALi | Dali::Toolkit::Button::SetButtonImage(Image image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::SetSelectedImage(Image image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::GetButtonImage() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Button::GetSelectedImage() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetButtonImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetBackgroundImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::UNSELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetSelectedImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetSelectedBackgroundImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::SELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetDisabledBackgroundImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_SELECTED_BACKGROUND_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetDisabledImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_UNSELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::PushButton::SetDisabledSelectedImage(Actor image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Button::Property::DISABLED_SELECTED_VISUAL |
+| UI - DALi | Dali::Toolkit::Internal::Control::GetBackgroundColor() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::Internal::Control::SetBackgroundImage(Image image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::Control::Property::BACKGROUND_COLOR | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::Control::Property::BACKGROUND_IMAGE | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::Control::GetBackgroundColor() const | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::Control::SetBackgroundImage(Image image) | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::Control::Property::BACKGROUND |
+| UI - DALi | Dali::Toolkit::ImageView::Property::RESOURCE_URL | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | Dali::Toolkit::ImageView::Property::IMAGE |
+| Network - Wi-Fi | wifi_initialize() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_initialize() |
+| Network - Wi-Fi | wifi_deinitialize() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_deinitialize() |
+| Network - Wi-Fi | wifi_activate() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_activate() |
+| Network - Wi-Fi | wifi_activate_with_wifi_picker_tested() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_activate_with_wifi_picker_tested() |
+| Network - Wi-Fi | wifi_deactivate() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_deactivate() |
+| Network - Wi-Fi | wifi_is_activated() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_is_activated() |
+| Network - Wi-Fi | wifi_get_mac_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_get_mac_address() |
+| Network - Wi-Fi | wifi_get_network_interface_name() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_get_network_interface_name() |
+| Network - Wi-Fi | wifi_scan() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_scan() |
+| Network - Wi-Fi | wifi_scan_specific_ap() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_scan_specific_ap() |
+| Network - Wi-Fi | wifi_get_connected_ap() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_get_connected_ap() |
+| Network - Wi-Fi | wifi_foreach_found_aps() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_foreach_found_ap() |
+| Network - Wi-Fi | wifi_foreach_found_specific_aps() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_foreach_found_specific_ap() |
+| Network - Wi-Fi | wifi_connect() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_connect() |
+| Network - Wi-Fi | wifi_disconnect() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_disconnect() |
+| Network - Wi-Fi | wifi_connect_by_wps_pbc() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_connect_by_wps_pbc() |
+| Network - Wi-Fi | wifi_connect_by_wps_pin() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_connect_by_wps_pin() |
+| Network - Wi-Fi | wifi_forget_ap() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_forget_ap() |
+| Network - Wi-Fi | wifi_get_connection_state() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_get_connection_state() |
+| Network - Wi-Fi | wifi_set_device_state_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_set_device_state_changed_cb() |
+| Network - Wi-Fi | wifi_unset_device_state_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_unset_device_state_changed_cb() |
+| Network - Wi-Fi | wifi_set_background_scan_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_set_background_scan_cb() |
+| Network - Wi-Fi | wifi_unset_background_scan_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_unset_background_scan_cb() |
+| Network - Wi-Fi | wifi_set_connection_state_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_set_connection_state_changed_cb() |
+| Network - Wi-Fi | wifi_unset_connection_state_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_unset_connection_state_changed_cb() |
+| Network - Wi-Fi | wifi_set_rssi_level_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_set_rssi_level_changed_cb() |
+| Network - Wi-Fi | wifi_unset_rssi_level_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_unset_rssi_level_changed_cb() |
+| Network - Wi-Fi | wifi_ap_create() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_create() |
+| Network - Wi-Fi | wifi_ap_hidden_create() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_hidden_create() |
+| Network - Wi-Fi | wifi_ap_destroy() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_destroy() |
+| Network - Wi-Fi | wifi_ap_clone() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_clone() |
+| Network - Wi-Fi | wifi_ap_refresh() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_refresh() |
+| Network - Wi-Fi | wifi_ap_get_essid() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_essid() |
+| Network - Wi-Fi | wifi_ap_get_bssid() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_bssid() |
+| Network - Wi-Fi | wifi_ap_get_rssi() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_rssi() |
+| Network - Wi-Fi | wifi_ap_get_frequency() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_frequency() |
+| Network - Wi-Fi | wifi_ap_get_max_speed() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_max_speed() |
+| Network - Wi-Fi | wifi_ap_is_favorite() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_is_favorite() |
+| Network - Wi-Fi | wifi_ap_is_passpoint() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_is_passpoint() |
+| Network - Wi-Fi | wifi_ap_get_connection_state() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_connection_state() |
+| Network - Wi-Fi | wifi_ap_get_ip_config_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_ip_config_type() |
+| Network - Wi-Fi | wifi_ap_set_ip_config_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_ip_config_type() |
+| Network - Wi-Fi | wifi_ap_get_ip_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_ip_address() |
+| Network - Wi-Fi | wifi_ap_set_ip_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_ip_address() |
+| Network - Wi-Fi | wifi_ap_get_subnet_mask() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_subnet_mask() |
+| Network - Wi-Fi | wifi_ap_set_subnet_mask() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_subnet_mask() |
+| Network - Wi-Fi | wifi_ap_get_gateway_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_gateway_address() |
+| Network - Wi-Fi | wifi_ap_set_gateway_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_gateway_address() |
+| Network - Wi-Fi | wifi_ap_get_proxy_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_proxy_address() |
+| Network - Wi-Fi | wifi_ap_set_proxy_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_proxy_address() |
+| Network - Wi-Fi | wifi_ap_get_proxy_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_proxy_type() |
+| Network - Wi-Fi | wifi_ap_set_proxy_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_proxy_type() |
+| Network - Wi-Fi | wifi_ap_get_dns_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_dns_address() |
+| Network - Wi-Fi | wifi_ap_set_dns_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_dns_address() |
+| Network - Wi-Fi | wifi_ap_get_security_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_security_type() |
+| Network - Wi-Fi | wifi_ap_set_security_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_security_type() |
+| Network - Wi-Fi | wifi_ap_get_encryption_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_encryption_type() |
+| Network - Wi-Fi | wifi_ap_set_encryption_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_encryption_type() |
+| Network - Wi-Fi | wifi_ap_is_passphrase_required() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_is_passphrase_required() |
+| Network - Wi-Fi | wifi_ap_set_passphrase() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_passphrase() |
+| Network - Wi-Fi | wifi_ap_is_wps_supported() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_is_wps_supported() |
+| Network - Wi-Fi | wifi_ap_set_eap_passphrase() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_eap_passphrase() |
+| Network - Wi-Fi | wifi_ap_get_eap_passphrase() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_eap_passphrase() |
+| Network - Wi-Fi | wifi_ap_get_eap_ca_cert_file() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_eap_ca_cert_file() |
+| Network - Wi-Fi | wifi_ap_set_eap_ca_cert_file() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_eap_ca_cert_file() |
+| Network - Wi-Fi | wifi_ap_get_eap_client_cert_file() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_eap_client_cert_file() |
+| Network - Wi-Fi | wifi_ap_set_eap_client_cert_file() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_eap_client_cert_file() |
+| Network - Wi-Fi | wifi_ap_get_eap_private_key_file() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_eap_private_key_file() |
+| Network - Wi-Fi | wifi_ap_set_eap_private_key_info() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_eap_private_key_info() |
+| Network - Wi-Fi | wifi_ap_get_eap_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_eap_type() |
+| Network - Wi-Fi | wifi_ap_set_eap_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_eap_type() |
+| Network - Wi-Fi | wifi_ap_get_eap_auth_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_get_eap_auth_type() |
+| Network - Wi-Fi | wifi_ap_set_eap_auth_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_ap_set_eap_auth_type() |
+| Network - Wi-Fi | wifi_config_create() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_create() |
+| Network - Wi-Fi | wifi_config_clone() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_clone() |
+| Network - Wi-Fi | wifi_config_destroy() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_destroy() |
+| Network - Wi-Fi | wifi_config_save_configuration() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_save() |
+| Network - Wi-Fi | wifi_config_remove() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_remove() |
+| Network - Wi-Fi | wifi_config_foreach_configuration() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_foreach_configuration() |
+| Network - Wi-Fi | wifi_config_get_name() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_name() |
+| Network - Wi-Fi | wifi_config_get_security_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_security_type() |
+| Network - Wi-Fi | wifi_config_set_proxy_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_set_proxy_address() |
+| Network - Wi-Fi | wifi_config_get_proxy_address() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_proxy_address() |
+| Network - Wi-Fi | wifi_config_set_hidden_ap_property() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_set_hidden_ap_property() |
+| Network - Wi-Fi | wifi_config_get_hidden_ap_property() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_hidden_ap_property() |
+| Network - Wi-Fi | wifi_config_get_eap_anonymous_identity() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_eap_anonymous_identity() |
+| Network - Wi-Fi | wifi_config_set_eap_anonymous_identity() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_set_eap_anonymous_identity() |
+| Network - Wi-Fi | wifi_config_get_eap_ca_cert_file() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_eap_ca_cert_file() |
+| Network - Wi-Fi | wifi_config_set_eap_ca_cert_file() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_set_eap_ca_cert_file() |
+| Network - Wi-Fi | wifi_config_get_eap_client_cert_file() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_eap_client_cert_file() |
+| Network - Wi-Fi | wifi_config_set_eap_client_cert_file() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_set_eap_client_cert_file() |
+| Network - Wi-Fi | wifi_config_get_eap_identity() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_eap_identity() |
+| Network - Wi-Fi | wifi_config_set_eap_identity() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_set_eap_identity() |
+| Network - Wi-Fi | wifi_config_get_eap_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_eap_type() |
+| Network - Wi-Fi | wifi_config_set_eap_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_set_eap_type() |
+| Network - Wi-Fi | wifi_config_get_eap_auth_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_eap_auth_type() |
+| Network - Wi-Fi | wifi_config_set_eap_auth_type() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_set_eap_auth_type() |
+| Network - Wi-Fi | wifi_config_get_eap_subject_match() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_get_eap_subject_match() |
+| Network - Wi-Fi | wifi_config_set_eap_subject_match() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_config_set_eap_subject_match() |
+| Network - Wi-Fi | wifi_tdls_disconnect() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_tdls_disconnect() |
+| Network - Wi-Fi | wifi_tdls_get_connected_peer() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_tdls_get_connected_peer() |
+| Network - Wi-Fi | wifi_tdls_set_state_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_tdls_set_state_changed_cb() |
+| Network - Wi-Fi | wifi_tdls_unset_state_changed_cb() | Mobile, Wearable | Since 3.0 | 5.5 | Better alternative | wifi_manager_tdls_unset_state_changed_cb() |
+| Security - Privilege Info | privilege_info_get_privacy_privilege_status() | Mobile, Wearable | Since 5.0 | 6.0 | Better alternative | ppm_check_permission() |
+| Network - Curl | CURLE_SSL_CACERT | Mobile, Wearable | Since 5.0 | 5.5 | Security | CURLE_PEER_FAILED_VERIFICATION |
+| Network - Curl | CURLOPT_DNS_USE_GLOBAL_CACHE | Mobile, Wearable | Since 5.0 | 5.5 | Security | CURLOPT_SHARE |
 
 ## Related information
 

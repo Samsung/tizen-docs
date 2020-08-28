@@ -98,10 +98,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>These functions provide double linked list management. </p>
 <p>Eina_List is a doubly linked list. It can store data of any type in the form of void pointers. It has convenience functions to do all the common operations which means it should rarely if ever be necessary to directly access the struct's fields. Nevertheless it can be useful to understand the inner workings of the data structure being used.</p>
 <p><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> nodes keep references to the previous node, the next node, its data and to an accounting structure.</p>
- 
- <img src="eina_list.png" style="max-width: 100%;" />
- <a href="eina_list.png">Full-size</a>
-   <p><a class="el" href="group__Eina__List__Group.html#gae6fd9c3d1d8d2c9dd01ef647494f5862">Eina_List_Accounting</a> is used to improve the performance of some functions. It is private and <b>should not</b> be modified. It contains a reference to the end of the list and the number of elements in the list.</p>
+ <div class="image">
+<img src="eina_list.png" alt="eina_list.png"/>
+</div>
+ <p><a class="el" href="group__Eina__List__Group.html#gae6fd9c3d1d8d2c9dd01ef647494f5862">Eina_List_Accounting</a> is used to improve the performance of some functions. It is private and <b>should not</b> be modified. It contains a reference to the end of the list and the number of elements in the list.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Every function that modifies the contents of the list returns a pointer to the head of the list and it is essential that this be pointer be used in any future references to the list.</dd></dl>
 <p>Most functions have two versions that have the same effect but operate on different arguments, the <em>plain</em> functions operate over data(e.g..: <a class="el" href="group__Eina__List__Group.html#ga4676c189ca4bcfa22d7ecfbcd00200ae">eina_list_append_relative</a>, <a class="el" href="group__Eina__List__Group.html#ga7c0c6e07aa592a1cb2e010049a718035">eina_list_remove</a>, <a class="el" href="group__Eina__List__Group.html#ga48e7356e1e0975bcabfce6f5c4ec9160">eina_list_data_find</a>), the <em>list</em> versions of these functions operate on <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> nodes.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>You must <b>always</b> use the pointer to the first element of the list as the list! </dd>
@@ -266,10 +266,10 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <p>This macro iterates over <code>list</code> from the first element to the last. <code>data</code> is the data related to the current element. <code>l</code> is an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> used as the list iterator.</p>
-<p>The following diagram illustrates this macro iterating over a list of four elements("one", "two", "three" and "four"):  
- <img src="eina-list-foreach.png" style="max-width: 100%;" />
- <a href="eina-list-foreach.png">Full-size</a>
-  <p>It can be used to free list data, as in the following example:</p>
+<p>The following diagram illustrates this macro iterating over a list of four elements("one", "two", "three" and "four"):  <div class="image">
+<img src="eina-list-foreach.png" alt="eina-list-foreach.png"/>
+</div>
+<p>It can be used to free list data, as in the following example:</p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="struct__Eina__List.html">Eina_List</a> *list;
  <a class="code" href="struct__Eina__List.html">Eina_List</a> *l;
  <span class="keywordtype">char</span>      *data;
@@ -349,10 +349,10 @@ Be careful when deleting list nodes. If you remove the current node and continue
 </dl>
 <p>This macro iterates over <code>list</code> from the first element to the last. <code>data</code> is the data related to the current element. <code>l</code> is an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> used as the list iterator.</p>
 <p>Since this macro stores a pointer to the next list node in <code>l_next</code>, deleting the current node and continuing looping is safe.</p>
-<p>The following diagram illustrates this macro iterating over a list of four elements ("one", "two", "three" and "four"):  
- <img src="eina-list-foreach-safe.png" style="max-width: 100%;" />
- <a href="eina-list-foreach-safe.png">Full-size</a>
-  <p>This macro can be used to free list nodes, as in the following example:</p>
+<p>The following diagram illustrates this macro iterating over a list of four elements ("one", "two", "three" and "four"):  <div class="image">
+<img src="eina-list-foreach-safe.png" alt="eina-list-foreach-safe.png"/>
+</div>
+<p>This macro can be used to free list nodes, as in the following example:</p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="struct__Eina__List.html">Eina_List</a> *list;
  <a class="code" href="struct__Eina__List.html">Eina_List</a> *l;
  <a class="code" href="struct__Eina__List.html">Eina_List</a> *l_next;
@@ -413,10 +413,10 @@ Be careful when deleting list nodes. If you remove the current node and continue
   </dd>
 </dl>
 <p>This macro will call <a class="el" href="group__Eina__List__Group.html#ga7edefe0975beecc76c02525fb9200f5a" title="Removes the specified list node.">eina_list_remove_list</a> for each list node, and store the data contained in the current node in <code>data</code>.</p>
-<p>The following diagram illustrates this macro iterating over a list of four elements ("one", "two", "three" and "four"):  
- <img src="eina-list-free.png" style="max-width: 100%;" />
- <a href="eina-list-free.png">Full-size</a>
-  <p>If you do not need to release node data, it is easier to call <a class="el" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free()</a>.</p>
+<p>The following diagram illustrates this macro iterating over a list of four elements ("one", "two", "three" and "four"):  <div class="image">
+<img src="eina-list-free.png" alt="eina-list-free.png"/>
+</div>
+<p>If you do not need to release node data, it is easier to call <a class="el" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free()</a>.</p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="struct__Eina__List.html">Eina_List</a> *list;
  <span class="keywordtype">char</span>      *data;
 
@@ -479,10 +479,10 @@ Be careful when deleting list nodes. If you remove the current node and continue
   </dd>
 </dl>
 <p>This macro works like EINA_LIST_FOREACH, but iterates from the last element of a list to the first. <code>data</code> is the data related to the current element, while <code>l</code> is an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> that is used as the list iterator.</p>
-<p>The following diagram illustrates this macro iterating over a list of four elements("one", "two", "three" and "four"):  
- <img src="eina-list-reverse-foreach.png" style="max-width: 100%;" />
- <a href="eina-list-reverse-foreach.png">Full-size</a>
-  <p>It can be used to free list data, as in the following example:</p>
+<p>The following diagram illustrates this macro iterating over a list of four elements("one", "two", "three" and "four"):  <div class="image">
+<img src="eina-list-reverse-foreach.png" alt="eina-list-reverse-foreach.png"/>
+</div>
+<p>It can be used to free list data, as in the following example:</p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="struct__Eina__List.html">Eina_List</a> *list;
  <a class="code" href="struct__Eina__List.html">Eina_List</a> *l;
  <span class="keywordtype">char</span>      *data;
@@ -561,10 +561,10 @@ Be careful when deleting list nodes. If you remove the current node and continue
 </dl>
 <p>This macro works like EINA_LIST_FOREACH_SAFE, but iterates from the last element of a list to the first. <code>data</code> is the data related to the current element, while <code>l</code> is an <a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> that is used as the list iterator.</p>
 <p>Since this macro stores a pointer to the previous list node in <code>l_prev</code>, deleting the current node and continuing looping is safe.</p>
-<p>The following diagram illustrates this macro iterating over a list of four elements ("one", "two", "three" and "four"):  
- <img src="eina-list-reverse-foreach-safe.png" style="max-width: 100%;" />
- <a href="eina-list-reverse-foreach-safe.png">Full-size</a>
-  <p>This macro can be used to free list nodes, as in the following example:</p>
+<p>The following diagram illustrates this macro iterating over a list of four elements ("one", "two", "three" and "four"):  <div class="image">
+<img src="eina-list-reverse-foreach-safe.png" alt="eina-list-reverse-foreach-safe.png"/>
+</div>
+<p>This macro can be used to free list nodes, as in the following example:</p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="struct__Eina__List.html">Eina_List</a> *list;
  <a class="code" href="struct__Eina__List.html">Eina_List</a> *l;
  <a class="code" href="struct__Eina__List.html">Eina_List</a> *l_prev;
@@ -850,7 +850,7 @@ Be careful when deleting list nodes. If you remove the current node and continue
 <p>This function returns the quantity of members that <code>list</code> contains. If the list is <code>NULL</code>, <code>0</code> is returned.</p>
 <p>NB: This is an order-1 operation and takes the same time regardless of the length of the list.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd><code>list</code> must be a pointer to the first element of the list. </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a37">ecore_con_server_simple_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a30">ecore_thread_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a5">edje-box2.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a10">eina_inlist_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a10">eina_list_03.c</a>, <a class="el" href="evas-box_8c-example.html#a5">evas-box.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a8">genlist_example_02.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a5">genlist_example_05.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_con_server_simple_example_8c-example.html#a37">ecore_con_server_simple_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a26">ecore_thread_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a5">edje-box2.c</a>, <a class="el" href="eina_inlist_02_8c-example.html#a10">eina_inlist_02.c</a>, <a class="el" href="eina_list_03_8c-example.html#a10">eina_list_03.c</a>, <a class="el" href="evas-box_8c-example.html#a5">evas-box.c</a>, <a class="el" href="genlist_example_02_8c-example.html#a8">genlist_example_02.c</a>, and <a class="el" href="genlist_example_05_8c-example.html#a5">genlist_example_05.c</a>.</dd>
 </dl>
 </div>
 </div>

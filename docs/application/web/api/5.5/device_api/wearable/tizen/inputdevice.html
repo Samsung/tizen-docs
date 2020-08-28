@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>InputDevice API</title>
+<meta data-version="5.5" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::InputDevice">
@@ -18,7 +19,7 @@ The Tizen Device may provide depending on a particular input device.
 An application can handle device dependent key events after registration.
         </p>
         <p>
-For more information on the Input Device features, see <a href="https://developer.tizen.org/development/guides/web-application/text-input/input-device">Input Device Guide</a>.
+For more information on the Input Device features, see <a href="/application/web/guides/text-input/input-device">Input Device Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -81,6 +82,9 @@ For more information on the Input Device features, see <a href="https://develope
  Name which identifies the key
           </div>
 <pre class="webidl prettyprint">  typedef DOMString InputDeviceKeyName;</pre>
+<p><span class="version">Since: </span>
+ 2.4
+          </p>
 <div class="description">
           <p>
 Name of the key may be, for example:
@@ -151,7 +155,7 @@ There is a tizen.inputdevice object that allows accessing the functionality of t
             </div>
 <div class="description">
             <p>
-If the key is listed in the <a href="http://www.w3.org/TR/2014/WD-DOM-Level-3-Events-key-20140612">DOM Level 3 KeyboardEvent key Values</a> specification, the <em>name</em> attribute is equal to the <em>key value</em> specified there. (The <a href="http://www.w3.org/TR/2014/WD-DOM-Level-3-Events-key-20140612/#keys-media-controller">Media Controller Keys</a> section is the most relevant to the Input Device API)
+If the key is listed in the <a href="https://www.w3.org/TR/uievents-key">DOM Level 3 KeyboardEvent key Values</a> specification, the <em>name</em> attribute is equal to the <em>key value</em> specified there. (The <a href="https://www.w3.org/TR/uievents-key/#keys-media-controller">Media Controller Keys</a> section is the most relevant to the Input Device API)
             </p>
             <p>
 If the "DOM Level 3 KeyboardEvent key Value" does not contain appropriate entry for the key, then the Input Device provides a device specific <em>name</em>.

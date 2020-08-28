@@ -48,7 +48,7 @@ The main features of the OpenAL API include:
   > Since 3.0, extension `alcDevicePauseSOFT()` was introduced to allow applications to pause a playback device explicitly.
   > The main purpose is to silence output, stop processing, and to allow audio hardware to go into low-power mode.
   > Additionally, you can use `alcDeviceResumeSOFT()` function to resume playback of a paused device.  
-  > For more information, see [here](http://kcat.strangesoft.net/openal-extensions/SOFT_pause_device.txt).
+  > For more information, see [here](http://openal-soft.org/openal-extensions/SOFT_pause_device.txt).
 
 - Requesting a source and buffer
 
@@ -62,7 +62,7 @@ The main features of the OpenAL API include:
 
 To use OpenAL, you must create a context and the initial set of buffers, load the buffers with sample data, create sources, attach the buffers to the sources, set the locations and directions for the listener and sources, and set the initial values for the OpenAL state global. You can also [queue buffers](#buffer).
 
-For additional OpenAL code samples, see [Example Code](http://kcat.strangesoft.net/openal.html#examples).
+For additional OpenAL code samples, see [Example Code](https://github.com/kcat/openal-soft/tree/master/examples).
 
 ## Prerequisites
 

@@ -10,7 +10,7 @@ Tizen IoT is composed of:
 
 - [Lightweight OS](get-started/setting-up-board.md) for IoT devices,
 - [Peripheral I/O API](guides/peripheral-io-api.md) for the access and control of the devices, and
-- [Things SDK API](guides/things-api.md) for the integration with the [SmartThings Cloud](https://smartthings.developer.samsung.com/develop/index.html).
+- [Things SDK API](guides/things-api-5.0.md) for the integration with the [SmartThings Cloud](https://smartthings.developer.samsung.com/develop/index.html).
 
 Connected with the Cloud, the SmartThings App on your smart phone  provides easy and convenient ways for users to manage and configure the  devices and the services. For more information about Samsung's  SmartThings solution, see [SmartThings website.](https://smartthings.developer.samsung.com/)
 

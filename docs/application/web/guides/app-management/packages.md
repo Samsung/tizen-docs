@@ -2,7 +2,7 @@
 
 You can retrieve detailed information about packages, such as package name, icon path, version details, and package ID. You can receive notifications if packages are updated or removed, or new packages are installed. You can also perform package management tasks, such as installing or uninstalling packages.
 
-The Package API is mandatory for Tizen mobile, wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen Emulators.
+The Package API is mandatory for Tizen Mobile, Wearable, and TV profiles, which means that it is supported on all mobile, wearable, and TV devices. All mandatory APIs are supported on the Tizen emulators.
 
 The main package information features are:
 

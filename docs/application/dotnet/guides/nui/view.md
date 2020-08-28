@@ -1,75 +1,133 @@
 # View
 
-The `View` class is the base class for all views. With this class you can manage the background color and images for UI components.
+[View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) is the fundamental concept for all the UI components such as `Button`, `Image`, `Text`, and so on.
+`View` provides [Properties](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#properties), [Methods](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#methods), and [Events](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#events) that are commonly used on every components. To render `View`, you must add it on [Window](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Window.html) as a child.
 
-In this tutorial, the following subjects are covered:
-
-[View events](#1)<br>
-[Setting the Background Color](#2)<br>
-[Setting the Background Image](#3)<br>
 
 <a name="1"></a>
-## View events
+## Transforms
 
-The following table lists the basic event provided by the `View` class:
+`Position`, `Orientation`, and `Scale` of `View` are known as transforms.
+`View` supports hierarchical structure. Therefore, `Position`, `Orientation`, and `Scale` of every `View` are affected by their parents.
+
+`Position` of each `View` is defined as the distance between the position of [ParentOrigin](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_ParentOrigin) and **TopLeft** position of `View`. `ParentOrigin` is a property that defines the reference point in the parent `View`. For example, if a `View` object has properties `Position` (5, 3) and `ParentOrigin` is **Center**, then the **TopLeft** of the object is located (5, 3) away from **Center** position of its parent `View` object.
+
+In addition, if the property `ParentOrigin` is changed to **BottomRight**, then the position of `View` is moved to (5, 3) from the **BottomRight** position of its parent. NUI provides predefined `ParentOrigin` as shown in the following figure:
+
+**Figure: The position of predefined ParentOrigin**
+
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/view_Figure_ParentOrigin_PivotPoint.png">
+</td>
+</tr>
+</table>
+
+The following figure shows three cases of parent `View` and its child `View`. Parent `View` is blue and child `View` is red. In the following examples, all of the red `View` is identically located at (3, 5) of its parent coordinate system that is based on `ParentOrigin` property of the child `View`.
+
+**Figure: The final position with different ParentOrigin**
+
+<table style="width:100%">
+<tr>
+<td style="width:100%" align="center">
+<img src="./media/view_Figure_Position.png" width="100%">
+</td>
+</tr>
+</table>
+
+Alternatively, you can use an arbitrary `Position` type value defined in the unit coordinates to set `ParentOrigin` without predefined values.
+
+`Orientation` of `View` is the rotation from its default orientation. `Scale` of `View` is the size ratio between the size to be rendered and the default size. For these two transforms, `View` is rotated and scaled around [PivotPoint](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_PivotPoint). NUI also provides predefined presets of `PivotPoint` identical to `ParentOrigin`. Alternatively, you can use custom values.
+
+`Orientation` and `Scale` of `View` are also affected by the transforms of its parent. In the final calculation of `View`, `Orientation` and `Scale` of parents are first applied to the child `View` with parent's `PivotPoint`, and then `Orientation` and `Scale` of child are applied.
+
+The following examples demonstrate the rotation and scaling that change `Orientation` and `Scale` respectively. **View A** is a child of **View B**. Therefore, transforms of **A** only affects **A**. However, the transforms of parent **B** influences its child **A**. The black dot in the figure is `PivotPoint` that is used by the transforms.
+
+**Figure: Rotation and Scaling.**
+
+<table style="width:100%">
+<tr>
+<td style="width:50%" align="center">
+<img src="./media/view_Figure_Orientation.gif" width="100%">
+</td>
+<td style="width:50%" align="center">
+<img src="./media/view_Figure_Scale.gif" width="100%">
+</td>
+</tr>
+</table>
+
+
+<a name="2"></a>
+## Directional Navigation
+
+NUI also provides directional navigation between each `View` using arrow keys on the keyboard. You can simply set the following properties to specify the next `FocusableView` for each direction:
+
+- [View.UpFocusableView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_UpFocusableView)
+
+- [View.DownFocusableView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_DownFocusableView)
+
+- [View.LeftFocusableView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_LeftFocusableView)
+
+- [View.RightFocusableView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html#Tizen_NUI_BaseComponents_View_RightFocusableView)
+
+When an arrow key is pressed and the current `View` has next `FocusableView` for that direction, the system passes focus to the next `FocusableView`. However, if the current `View` does not have the next `FocusableView` for the direction or the next `ForcusableView` is not on the window, the property returns `NULL` and no change occurs.
+
+
+<a name="3"></a>
+## View Event
+
+`View` provides a variety of events that are commonly used by the components. The following table lists the basic events provided by `View`:
 
 **Table: View events**
 
-| Input signal        | Description                                               |
+| Event               | Description                                               |
 | ------------------- | --------------------------------------------------------- |
-| `AddedToWindow`     | Emitted after the view has been connected to the window.  |
-| `FocusGained`       | Emitted when the control gets the key input focus.        |
-| `FocusLost`         | Emitted when the control loses key input focus.           |
-| `HoverEvent`        | Emitted when the hover input is received.                 |
-| `KeyEvent`          | Emitted when the key event is received.                   |
-| `LayoutDirectionChanged` | Emitted when  the layout direction property of this or a parent view is changed. |
-| `Relayout`          | Emitted after the size has been set on the view during relayout. |
-| `RemovedFromWindow` | Emitted after the view has been disconnected from the window. |
-| `ResourcesLoaded`   | Emitted after all resources required by a view are loaded and ready. |
-| `TouchEvent`        | Emitted when the touch input is received.                 |
-| `VisibilityChanged` | Emitted when the visible property of this or a parent view is changed. |
-| `WheelEvent`        | Emitted when the wheel event is received.                 |
+| `KeyEvent`          | Triggered when the key input is received.                   |
+| `TouchEvent`        | Triggered when the touch input is received.                 |
+| `HoverEvent`        | Triggered when the hover input is received.                 |
+| `WheelEvent`        | Triggered when the wheel input is received.                 |
+| `FocusGained`       | Triggered when the control gets the key input focus.        |
+| `FocusLost`         | Triggered when the control loses key input focus.           |
+| `Relayout`          | Triggered after the size has been set on View during relayout. |
+| `LayoutDirectionChanged` | Triggered when the layout direction property of View or its parent View is changed. |
+| `AddedToWindow`     | Triggered after View has been connected to the window.  |
+| `RemovedFromWindow` | Triggered after View has been disconnected from the window. |
+| `VisibilityChanged` | Triggered when the visible property of View or parent View is changed. |
+| `ResourcesLoaded`   | Triggered after all the resources required by View are loaded and ready. |
 
-<a name="2"></a>
-## Setting the Background Color
+You can create custom `callback` methods with event handler for each `Event`.
 
-You can set a background color for a UI component. To set a red background for a component:
+Input `Event` such as `KeyEvent` and `TouchEvent` is first received on the current focused `View` to be handled. However, if the focused `View` is not having a proper event handler, then the `Event` is delivered to its parent `View` iteratively until it can be consumed.
 
-```
-View view = new View();
-view.Size2D = new Size2D(200, 200);
-view.BackgroundColor = Color.Red;
-```
+The following code explains how to handle `Event` with a simple example of `TouchEvent`. If you touch the blue `View` then the background color is changed:
 
-**Figure: View with a red background**
+```csharp
+View touchedView = new View();
+touchedView.BackgroundColor = Color.Blue;
+// Attach callback method
+touchedView.TouchEvent += ViewTouchEventCallBack;
 
-![View with a red background](./media/background_control_color.png)
+...
 
-You can handle all existing views similarly. For example, to set the background color for a TextLabel:
-
-```
-TextLabel label = new TextLabel( "Hello World" );
-label.BackgroundColor = Color.Red;
-```
-
-**Figure: TextLabel object with a red background**
-
-![TextLabel object with a red background](./media/background_textlabel.png)
-
-<a name="3"></a>
-## Setting the Background Image
-
-You can set a background image of a view:
-
-```
-View view = new View();
-view.BackgroundImage = "image.png";
+// Custom callback method
+private bool ViewTouchEventCallBack(object sender, View.TouchEventArgs e)
+{
+    View touchedView = sender as View;
+    if (e.Touch.GetState(0) == PointStateType.Down)
+    {
+        touchedView.BackgroundColor = Color.Red;
+    }
+    return true;
+}
 ```
 
-**Figure: View with a background image**
+**Figure: TouchEvent example**
 
-![View with a background image](./media/background_image.png)
+![View with a background image](./media/view_Figure_Touch.gif)
+
 
 ## Related Information
 - Dependencies
   -   Tizen 4.0 and Higher
+

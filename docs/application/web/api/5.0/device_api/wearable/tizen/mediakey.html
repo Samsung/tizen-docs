@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>MediaKey API</title>
+<meta data-version="5.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::MediaKey">
- <div class="supported-platforms"><img class="wearable-optional" title="Optional, Not supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="wearable-optional" title="Optional, Not supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
 <div class="title"><h1>MediaKey API</h1></div>
 <div class="brief">
  The Media Key API provides functions to get notified when a media key has been pressed or released.
@@ -17,7 +18,7 @@
 Media keys are the keys of a Bluetooth headset which control multimedia playback.
         </p>
         <p>
-For more information on the Media Key features, see <a href="https://developer.tizen.org/development/guides/web-application/media-and-camera/media-key-events">Media Key Guide</a>.
+For more information on the Media Key features, see <a href="/application/web/guides/multimedia/media-key">Media Key Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -86,21 +87,21 @@ For more information on the Media Key features, see <a href="https://developer.t
 <div class="description">
           <ul>
             <li>
- MEDIA_PLAY - the Play media key             </li>
+MEDIA_PLAY - the Play media key            </li>
             <li>
- MEDIA_STOP - the Stop media key            </li>
+MEDIA_STOP - the Stop media key            </li>
             <li>
- MEDIA_PAUSE - the Pause media key            </li>
+MEDIA_PAUSE - the Pause media key            </li>
             <li>
- MEDIA_PREVIOUS - the Previous media key            </li>
+MEDIA_PREVIOUS - the Previous media key            </li>
             <li>
- MEDIA_NEXT - the Next media key            </li>
+MEDIA_NEXT - the Next media key            </li>
             <li>
- MEDIA_FAST_FORWARD - the Fast Forward media key            </li>
+MEDIA_FAST_FORWARD - the Fast Forward media key            </li>
             <li>
- MEDIA_REWIND - the Rewind media key            </li>
+MEDIA_REWIND - the Rewind media key            </li>
             <li>
- MEDIA_PLAY_PAUSE - the Play/Pause media key            </li>
+MEDIA_PLAY_PAUSE - the Play/Pause media key            </li>
           </ul>
          </div>
 </div>
@@ -188,7 +189,7 @@ There is a tizen.mediakey object that allows accessing the functionality of the 
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.mediakey.setMediaKeyEventListener({
   onpressed: function(key)
   {
-    console.log("Pressed  key: " + key);
+    console.log("Pressed key: " + key);
   },
   onreleased: function(key)
   {
@@ -292,7 +293,9 @@ Calling this function has no effect if listener is not set.
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -302,16 +305,16 @@ To guarantee that the Media Key application runs on a device with Bluetooth feat
 <li class="feature">http://tizen.org/feature/network.bluetooth.audio.media</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module MediaKey {
   enum MediaKeyType { "MEDIA_PLAY", "MEDIA_STOP", "MEDIA_PAUSE", "MEDIA_PREVIOUS", "MEDIA_NEXT", "MEDIA_FAST_FORWARD", "MEDIA_REWIND",
     "MEDIA_PLAY_PAUSE" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaKeyManagerObject">MediaKeyManagerObject</a>;
   [NoInterfaceObject] interface MediaKeyManagerObject {
     readonly attribute <a href="#MediaKeyManager">MediaKeyManager</a> mediakey;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#MediaKeyManagerObject">MediaKeyManagerObject</a>;
   [NoInterfaceObject] interface MediaKeyManager {
     void setMediaKeyEventListener(<a href="#MediaKeyEventCallback">MediaKeyEventCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetMediaKeyEventListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
