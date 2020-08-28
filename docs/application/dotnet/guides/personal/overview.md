@@ -13,9 +13,9 @@ You can use the following personal data features in your .NET applications:
 
     You can synchronize service application data between a server and the device by creating various sync jobs.
 
--   [Authentication and Authorization](authentication.md)
+-   [FIDO Universal Authentication Framework](fido.md)
 
-    You can authenticate users without entering password using FIDO Universal Authentication Framework.
+    You can use the FIDO Authentication Framework to authenticate users. FIDO covers password-less authentication, such as fingerprint, iris, voice.
 
 -   [Calendar](calendar.md)
 

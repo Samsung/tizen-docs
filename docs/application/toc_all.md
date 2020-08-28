@@ -675,7 +675,6 @@
 #### [Data Synchronization](/application/native/guides/personal/data-sync.md)
 #### Authentication and Authorization
 ##### [FIDO Universal Authentication Framework](/application/native/guides/personal/fido.md)
-##### [OAuth 2.0](/application/native/guides/personal/oauth.md)
 #### [Calendar](/application/native/guides/personal/calendar.md)
 #### [Contacts](/application/native/guides/personal/contacts.md)
 #### [Phone Number Management](/application/native/guides/personal/phonenumber.md)
