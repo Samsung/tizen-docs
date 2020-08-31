@@ -8,7 +8,7 @@
 
 An IoT native service application can be created using the C language and run on Raspberry Pi. The application uses the native APIs, which provide various interfaces to the device hardware allowing you to take advantage of numerous capabilities tailored to run with limited device resources.
 
-You can study the following contents to help familiarize yourself with the Tizen [Native application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and deploying the created application on Raspberry Pi. With the instructions, you can create and run a basic IoT native service application, which displays some text on the log with no user interaction:
+Study the following instructions to help familiarize yourself with the Tizen [Native application development process](../../tutorials/process/app-dev-process.md) as well as using Tizen Studio and deploying the created application on Raspberry Pi. With the instructions, you can create and run a basic IoT native service application, which displays some text on the log with no user interaction:
 
 1. Before you get started with developing Tizen applications on Raspberry Pi, you must set up your development environment with the board.
 
@@ -35,7 +35,7 @@ You can study the following contents to help familiarize yourself with the Tizen
 When you are developing a more complex application, you can take advantage of the [native tools included in Tizen Studio](../../../tizen-studio/native-tools/index.md) to ease the tasks of creating functionality and designing the application UI.
 
 <a name="create"></a>
-## Creating a Project
+## Create project
 
 The following example shows you how to create and configure a basic IoT native service application project in Tizen Studio. An application project contains all the files that make up an application.
 
@@ -79,7 +79,7 @@ To create the application project:
 
     5. Define the project properties, and click **Finish**.
 
-        You can enter a project name (3-50 characters) and an unique package ID. You also can select the location and working sets by clicking **More properties**.
+        You can enter a project name (3-50 characters) and a unique package ID. You also can select the location and working sets by clicking **More properties**.
 
         ![Defining properties](media/create_project_wizard_properties.png)
 
@@ -109,7 +109,7 @@ You can see the created project in the **Project Explorer** view. The most impor
 Your application project is now ready for further action.
 
 <a name="configuration"></a>
-### Managing the Application Configuration
+### Manage application configuration
 
 To view and modify the application configuration:
 
@@ -117,7 +117,7 @@ To view and modify the application configuration:
 
 2. In the manifest editor, view and modify the configuration details using various tabs:
 
-    ![Configuring the application](media/basic_app_config_mn.png)
+    ![Configuring the application](media/basic_app_config.png)
 
     - **Overview**: Define general information, such as the package, label, and icon of the application.
 
@@ -138,7 +138,7 @@ To view and modify the application configuration:
 
 For more information on configuring the application, see [Setting the Application Manifest](../../tutorials/process/setting-properties.md#manifest).
 
-### Understanding the Source Code
+### Understand source code
 
 Pay attention to the life-cycle callbacks in the application source code to understand how the application works.
 
@@ -171,7 +171,7 @@ main(int argc, char *argv[])
 }
 ```
 
-### Adding the log
+### Add log
 
 You can print logs using the Dlog API in the Tizen native application.
 For more information on **Dlog**, see [Dlog](../../../../iot/api/5.5/tizen-iot-headless/group__CAPI__SYSTEM__DLOG.html) API.
@@ -180,30 +180,30 @@ In this example, to confirm that the IoT native service application has been lau
 
 You can add the debug log as follows:
 
-1. Confirm that **#include<dlog.h>** is included, and **LOG_TAG** is defined in `inc/service.h`.
+1. Confirm that `<dlog.h>` is included, and **LOG_TAG** is defined in `inc/service.h`.
 **LOG_TAG** can be changed as you want:
 
-```
-#include <dlog.h>
+    ```
+    #include <dlog.h>
 
-#ifdef  LOG_TAG
-#undef  LOG_TAG
-#endif
-#define LOG_TAG "service"
-```
+    #ifdef  LOG_TAG
+    #undef  LOG_TAG
+    #endif
+    #define LOG_TAG "service"
+    ```
 
 2. To print the sentence you want, use `dlog_print()` in the `service_app_create()`:
 
-```
-bool service_app_create(void *data)
-{
-	dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");
-	return true;
-}
-```
+    ```
+    bool service_app_create(void *data)
+    {
+	    dlog_print(DLOG_DEBUG, LOG_TAG, "Hello Tizen");
+	    return true;
+    }
+    ```
 
 <a name="build"></a>
-## Building Your Application
+## Build your application
 
 When your application code is ready, you may build the application. The building process performs a validation check and compiles your codes.
 
@@ -244,12 +244,12 @@ There are more than one build configurations. To see the currently active config
 After you have built the application, run it.
 
 <a name="run"></a>
-## Running Your Application
+## Run your application
 
 You can run the application on Raspberry Pi.
 
 <a name="target"></a>
-### Running on a Raspberry Pi
+### Run on Raspberry Pi
 
 To run the application on a Raspberry Pi:
 
@@ -285,8 +285,8 @@ To run the application on a Raspberry Pi:
 	For more information on the Log View, see the [checking Logs with Log View](../../../tizen-studio/common-tools/log-view.md).
 
     > [!NOTE]
-    > The application is launched using the default debug run configuration. To create and other configurations:
+    > The application is launched using the default debug run configuration. To create and use another configuration:
     > 1.  In the `Project Explorer` view, right-click the project and select `Run As > Run Configurations`.
     > 2.  In the `Run Configurations` window, click the `New Launch Configuration` icon (![New Launch Configuration icon](media/run_new_config_wn.png)), define the configuration details, and launch the application by clicking `Run`.
-    >    ![Run Configurations window](media/run_configurations_n.png)
+    >    ![Run Configurations window](media/run_configurations.png)
 
