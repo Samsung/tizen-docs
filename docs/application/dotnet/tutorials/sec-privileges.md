@@ -127,6 +127,7 @@ when using security-sensitive API modules in .net applications:
 | `http://tizen.org/privilege/minicontrol.provider` | public |  | The application can show a small toolbar on the notification panel or lock screen while it is open. Deprecated since 3.0. |
 | `http://tizen.org/privilege/network.get` | public |  | The application can retrieve network information such as the status of each network, its type, and detailed network profile information. |
 | `http://tizen.org/privilege/network.profile` | public |  | The application can add, remove, and edit network profiles. |
+| `http://tizen.org/privilege/network.route` | partner |  | The application can add or remove route table entries. |
 | `http://tizen.org/privilege/network.set` | public |  | The application can turn Wi-Fi on and off, and connect to and disconnect from Wi-Fi and mobile networks. This may result in additional charges depending on user's payment plan. |
 | `http://tizen.org/privilege/nfc` | public |  | The application can read and write NFC tag information, and send NFC messages to other devices. |
 | `http://tizen.org/privilege/nfc.admin` | platform |  | The application can change NFC settings, such as turning NFC on or off. |
