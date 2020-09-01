@@ -186,7 +186,7 @@ The following table lists the additional requirements to be met before developin
 <tr>
 <td>Python for using the T-trace (Tizen profiling tool used to optimize the application performance)
 </td>
-<td>To use the T-trace in Windows&reg; 8/7, you must install a Python 2.7.X version:
+<td>To use the T-trace in Windows, you must install a Python 2.7.X version:
 <ul>
 <li>On the <a href="https://www.python.org/downloads/">Python Web site</a>, download the appropriate Python version for your hardware and Windows&reg; version.
 </li>
