@@ -16,7 +16,7 @@ Usage:
   -h, --help                  Show help options.
   -l, --language=LANGUAGE     Select generating language (C, C++, C#).
   -i, --input=INPUT           A tidl interface file.
-  -o, --output=OUTPUT         The generated interface file.
+  -o, --output=OUTPUT         Generate an interface file.
   -p, --proxy                 Generate proxy code.
   -s, --stub                  Generate stub code.
   -r, --rpclib                Generate C# library for rpc-port.
