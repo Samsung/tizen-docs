@@ -96,9 +96,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="image">
 <img src="fileselector_entry_inheritance_tree.png" alt="fileselector_entry_inheritance_tree.png"/>
 </div>
- <div class="image">
-<img src="img/widget/fileselector_entry/preview-00.png" alt="preview-00.png"/>
-</div>
  <p>This is an entry made to be filled with or display a <b>file system path string</b>. Besides the entry itself, the widget has a file selector button on its side, which will raise an internal file selector widget, when clicked, for path selection aided by file system navigation.</p>
 <p>This file selector may appear in an Elementary window or in an inner window. When a file is chosen from it, the (inner) window is closed and the selected file's path string is exposed both as a smart event and as the new text on the entry.</p>
 <p>This widget inherits from the Layout one, so that all the functions acting on it also work for file selector entry objects (since 1.8).</p>
@@ -146,7 +143,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3db3556eec8ef18cb8ddb43816974ac8">EAPI</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__File__Selector__Entry.html#ga64c2600069747d86de8e887e97405f4a">elm_win_type_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__Win.html#ga4df03d1a1e94e8b24a58d8ccc5d4d514">Elm_Win_Type</a> type)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3db3556eec8ef18cb8ddb43816974ac8">EAPI</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Elm__File__Selector__Entry.html#ga64c2600069747d86de8e887e97405f4a">elm_win_type_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <a class="el" href="group__Elm__Win__Group.html#ga4df03d1a1e94e8b24a58d8ccc5d4d514">Elm_Win_Type</a> type)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Set slide effect of label widget.  <a href="#ga64c2600069747d86de8e887e97405f4a"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
@@ -155,7 +152,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3db3556eec8ef18cb8ddb43816974ac8">EAPI</a> void <a class="el" href="group__Elm__Win.html#ga89a87576c2d1e4c2dcf3afefdcb2ad7f">elm_win_type_set</a> </td>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#gad5b2116495471db12a34bab9a34edfaa">EINA_DEPRECATED</a> <a class="el" href="group__Eina__Types__Group.html#ga3db3556eec8ef18cb8ddb43816974ac8">EAPI</a> void <a class="el" href="group__Elm__Win__Group.html#ga89a87576c2d1e4c2dcf3afefdcb2ad7f">elm_win_type_set</a> </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -163,7 +160,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Elm__Win.html#ga4df03d1a1e94e8b24a58d8ccc5d4d514">Elm_Win_Type</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Elm__Win__Group.html#ga4df03d1a1e94e8b24a58d8ccc5d4d514">Elm_Win_Type</a>&#160;</td>
           <td class="paramname"><em>type</em>&#160;</td>
         </tr>
         <tr>
@@ -188,8 +185,8 @@ Functions</h2></td></tr>
 <p>If set to true, the text of the label will slide/scroll through the length of label.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>This only works with the themes "slide_short", "slide_long" and "slide_bounce". </dd>
 <dd>
-This doesn't work if the line wrap(elm_label_line_wrap_set()) or ellipsis(elm_label_ellipsis_set()) is set.</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000227">Deprecated:</a></b></dt><dd>see elm_label_slide_mode_set() instead.</dd></dl>
+This doesn't work if the line wrap(<a class="el" href="group__Elm__Label__Group.html#ga60a1dad4d49a3aea31ced12e30d0b815" title="Control the wrapping behavior of the label.">elm_label_line_wrap_set()</a>) or ellipsis(<a class="el" href="group__Elm__Label__Group.html#gacde1f9668d9afa17935569ec01f21377" title="Control the ellipsis behavior of the label.">elm_label_ellipsis_set()</a>) is set.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000227">Deprecated:</a></b></dt><dd>see <a class="el" href="group__Elm__Label__Group.html#ga6cad055d2cd4ea72f9d6c9ce8bd68421" title="Control the slide mode of the label widget.">elm_label_slide_mode_set()</a> instead.</dd></dl>
 <p>Get whether slide effect is shown or not.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -199,7 +196,7 @@ This doesn't work if the line wrap(elm_label_line_wrap_set()) or ellipsis(elm_la
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If true, slide effect is shown.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>elm_label_slide_set()</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000228">Deprecated:</a></b></dt><dd>see elm_label_slide_mode_get() instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000228">Deprecated:</a></b></dt><dd>see <a class="el" href="group__Elm__Label__Group.html#ga99df8331829b61807db79100c1179afe" title="Control the slide mode of the label widget.">elm_label_slide_mode_get()</a> instead.</dd></dl>
 <p>Set the text for an object's part, marking it as translatable.</p>
 <p>The string to set as <code>text</code> must be the original one. Do not pass the return of <code>gettext()</code> here. Elementary will translate the string internally and set it on the object using <a class="el" href="group__Elm__General.html#ga9c088563c442670796564d2e5158f154">elm_object_part_text_set()</a>, also storing the original string so that it can be automatically translated when the language is changed with <a class="el" href="group__Elm__General.html#ga6b94ddc6b63885d4f4c5aa039589c96c">elm_language_set()</a>.</p>
 <p>The <code>domain</code> will be stored along to find the translation in the correct catalog. It can be NULL, in which case it will use whatever domain was set by the application with <code>textdomain()</code>. This is useful in case you are building a library on top of Elementary that will have its own translatable strings, that should not be mixed with those of programs using the library.</p>
@@ -254,9 +251,9 @@ also elm_naviframe_item_title_enabled_get() Get a value whether title area is vi
   </table>
   </dd>
 </dl>
-<p>This will enable or disable the scroller bouncing effect for the genlist. See <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> for details.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000233">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> </dd>
+<p>This will enable or disable the scroller bouncing effect for the genlist. See <a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> for details.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000233">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> </dd>
 <dd>
 elm_genlist_bounce_get() Get whether the horizontal and vertical bouncing effect is enabled.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -267,8 +264,8 @@ elm_genlist_bounce_get() Get whether the horizontal and vertical bouncing effect
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000234">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> </dd>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000234">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> </dd>
 <dd>
 elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -279,9 +276,9 @@ elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
   </table>
   </dd>
 </dl>
-<p>This sets the scrollbar visibility policy for the given genlist scroller. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars. Default is <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a></p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000235">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> Get the scrollbar policy</dd></dl>
+<p>This sets the scrollbar visibility policy for the given genlist scroller. <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars. Default is <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a></p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000235">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> Get the scrollbar policy</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The genlist object </td></tr>
@@ -290,9 +287,9 @@ elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000236">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> This sets the entry's scrollbar policy (i.e. enabling/disabling them).</dd></dl>
-<p>Setting an entry to single-line mode with elm_entry_single_line_set() will automatically disable the display of scrollbars when the entry moves inside its scroller.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000236">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> This sets the entry's scrollbar policy (i.e. enabling/disabling them).</dd></dl>
+<p>Setting an entry to single-line mode with <a class="el" href="group__Elm__Entry__Group.html#ga96e162d7def2bbba34c5449d51f87fdd" title="Sets the entry to single line mode.">elm_entry_single_line_set()</a> will automatically disable the display of scrollbars when the entry moves inside its scroller.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The entry object </td></tr>
@@ -301,7 +298,7 @@ elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000237">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000237">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
 <p>This enables/disables bouncing within the entry.</p>
 <p>This function sets whether the entry will bounce when scrolling reaches the end of the contained entry.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -312,7 +309,7 @@ elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000238">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000238">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
 <p>Get the bounce mode</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -322,7 +319,7 @@ elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000239">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000239">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
 <p>Set the photocam scrolling bouncing.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -332,7 +329,7 @@ elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000240">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000240">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
 <p>Get the photocam scrolling bouncing.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -343,7 +340,7 @@ elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
   </dd>
 </dl>
 <dl class="see"><dt><b>See also:</b></dt><dd>elm_photocam_bounce_set()</dd></dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000241">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000241">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
 <p>Set bouncing behaviour when the scrolled content reaches an edge.</p>
 <p>Tell the internal scroller object whether it should bounce or not when it reaches the respective edges for each axis.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -354,8 +351,8 @@ elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000242">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> Get the bouncing behaviour of the internal scroller.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000242">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> Get the bouncing behaviour of the internal scroller.</dd></dl>
 <p>Get whether the internal scroller should bounce when the edge of each axis is reached scrolling.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -365,8 +362,8 @@ elm_genlist_bounce_set() Set the scrollbar policy</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000243">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> </dd>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000243">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> </dd>
 <dd>
 elm_list_bounce_set() Set the scrollbar policy.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -377,9 +374,9 @@ elm_list_bounce_set() Set the scrollbar policy.</dd></dl>
   </table>
   </dd>
 </dl>
-<p>This sets the scrollbar visibility policy for the given scroller. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars.</p>
-<p>The both are disabled by default, i.e., are set to <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a>.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000244">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
+<p>This sets the scrollbar visibility policy for the given scroller. <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars.</p>
+<p>The both are disabled by default, i.e., are set to <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a>.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000244">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
 <p>Get the scrollbar policy.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd>elm_list_scroller_policy_get() for details.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -390,7 +387,7 @@ elm_list_bounce_set() Set the scrollbar policy.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000245">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000245">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</dd></dl>
 <p>Set custom theme elements for the scroller</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -411,8 +408,8 @@ elm_list_bounce_set() Set the scrollbar policy.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000247">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> Get the bouncing behaviour of the internal scroller.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000247">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set()</a> Get the bouncing behaviour of the internal scroller.</dd></dl>
 <p>Get whether the internal scroller should bounce when the edge of each axis is reached scrolling.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -422,8 +419,8 @@ elm_list_bounce_set() Set the scrollbar policy.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000248">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> </dd>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000248">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae74537077c42537037834d4d4bdae634" title="Get the bounce behaviour.">elm_scroller_bounce_get()</a> </dd>
 <dd>
 elm_diskselector_bounce_set() Get the scrollbar policy.</dd>
 <dd>
@@ -436,8 +433,8 @@ elm_diskselector_scroller_policy_get() for details.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000249">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> Set the scrollbar policy.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000249">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#gae5d37ebf0a5540326b2b56ae41f24c97" title="Get scrollbar visibility policy.">elm_scroller_policy_get()</a> Set the scrollbar policy.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The diskselector object. </td></tr>
@@ -446,10 +443,10 @@ elm_diskselector_scroller_policy_get() for details.</dd></dl>
   </table>
   </dd>
 </dl>
-<p>This sets the scrollbar visibility policy for the given scroller. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars.</p>
-<p>The both are disabled by default, i.e., are set to <a class="el" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a>.</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000250">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> Set the file that will be used as icon.</dd></dl>
+<p>This sets the scrollbar visibility policy for the given scroller. <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a> means the scrollbar is made visible if it is needed, and otherwise kept hidden. <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a> turns it on all the time, and <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a> always keeps it off. This applies respectively for the horizontal and vertical scrollbars.</p>
+<p>The both are disabled by default, i.e., are set to <a class="el" href="group__Elm__Scroller__Group.html#ggae4532876fde43d8d37fc9440a1e36a84a4453d6502d28a1157c19301deaa8f565">ELM_SCROLLER_POLICY_OFF</a>.</p>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000250">Deprecated:</a></b></dt><dd>Use <a class="el" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> instead.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a> Set the file that will be used as icon.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">obj</td><td>The icon object </td></tr>

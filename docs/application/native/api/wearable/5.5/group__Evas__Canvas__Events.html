@@ -86,6 +86,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
 <div id="doc-content">
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Canvas Events</div>  </div>
 <div class="ingroups"><a class="el" href="group__Evas__Canvas.html">Canvas Functions</a></div></div><!--header-->
@@ -93,7 +96,113 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Functions relating to canvas events that report on changes of its internal states (an object got focused, the rendering is updated, etc).</p>
 <p>Some of the functions in this group are exemplified <a class="el" href="Example_Evas_Events.html">here</a>. </p>
+<table class="memberdecls">
+<tr><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, Evas_Callback_Type type, Evas_Event_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga466fbd13d4f7422e984a1f2c01397e4e">evas_event_callback_priority_add</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, Evas_Callback_Type type, Evas_Callback_Priority priority, Evas_Event_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga176cd73f1afdf62b55a912cd728b892e">evas_event_callback_del</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, Evas_Callback_Type type, Evas_Event_Cb func)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, Evas_Callback_Type type, Evas_Event_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#gac8521438f0d0c6709e8a1ed78b0ff7c3">evas_post_event_callback_push</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, Evas_Object_Event_Post_Cb func, const void *data)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#gaf15646313dc5814e690e41bf78c6135a">evas_post_event_callback_remove</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, Evas_Object_Event_Post_Cb func)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga27e99c1ecaece9da32cff27e682a631c">evas_post_event_callback_remove_full</a> (<a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, Evas_Object_Event_Post_Cb func, const void *data)</td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+<a class="el" href="struct__Evas__Event__Mouse__Down.html">_Evas_Event_Mouse_Down</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga907df7a46177e7bac9928ea39fbcca50">Evas_Event_Mouse_Down</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Evas__Event__Mouse__Up.html">_Evas_Event_Mouse_Up</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga337e8227780d38bdeae5c0ccd00d04b3">Evas_Event_Mouse_Up</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Evas__Event__Mouse__In.html">_Evas_Event_Mouse_In</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga9b42da2562eb8390dd513d7337b1e018">Evas_Event_Mouse_In</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+<a class="el" href="struct__Evas__Event__Mouse__Out.html">_Evas_Event_Mouse_Out</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga7a168fcb1c4b6bc53ac4e69f5424f317">Evas_Event_Mouse_Out</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+<a class="el" href="struct__Evas__Event__Mouse__Move.html">_Evas_Event_Mouse_Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga224de88869fe5315ca144ef8a2946827">Evas_Event_Mouse_Move</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+<a class="el" href="struct__Evas__Event__Mouse__Wheel.html">_Evas_Event_Mouse_Wheel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga54d0e99e450e158924b06746544bb4dc">Evas_Event_Mouse_Wheel</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+<a class="el" href="struct__Evas__Event__Multi__Down.html">_Evas_Event_Multi_Down</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga0436550ffcc1e2eab730ef3c493b8c40">Evas_Event_Multi_Down</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Evas__Event__Multi__Up.html">_Evas_Event_Multi_Up</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga0f4d63b8673ee370e41e2c0bdc374212">Evas_Event_Multi_Up</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+<a class="el" href="struct__Evas__Event__Multi__Move.html">_Evas_Event_Multi_Move</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga8658f1e1a6801e219547b05e8728ebd2">Evas_Event_Multi_Move</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Evas__Event__Key__Down.html">_Evas_Event_Key_Down</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga9a1bfd297b751119977f3c14c0004612">Evas_Event_Key_Down</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Evas__Event__Key__Up.html">_Evas_Event_Key_Up</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga92e77497752a3b100b3bfc4ee92daf09">Evas_Event_Key_Up</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct__Evas__Event__Hold.html">_Evas_Event_Hold</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga6fb6e5748f93fc24d62276e5421f9767">Evas_Event_Hold</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct <br class="typebreak"/>
+_Evas_Event_Axis_Update&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga0e0de1817be10871c54e2438a2218676">Evas_Event_Axis_Update</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__Evas__Canvas__Events.html#ga5b9cb5b15cb929522d6cad85a06a0b1b">_Evas_Axis_Label</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Canvas__Events.html#ga8a27c0f42194c323af117ed8974d0e8f">Evas_Axis_Label</a></td></tr>
+</table>
 <hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga8a27c0f42194c323af117ed8974d0e8f"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Axis_Label" ref="ga8a27c0f42194c323af117ed8974d0e8f" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="group__Evas__Canvas__Events.html#ga5b9cb5b15cb929522d6cad85a06a0b1b">_Evas_Axis_Label</a>  <a class="el" href="group__Evas__Canvas__Events.html#ga8a27c0f42194c323af117ed8974d0e8f">Evas_Axis_Label</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Types of recognized device axes </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0e0de1817be10871c54e2438a2218676"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Axis_Update" ref="ga0e0de1817be10871c54e2438a2218676" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct _Evas_Event_Axis_Update <a class="el" href="group__Evas__Canvas__Events.html#ga0e0de1817be10871c54e2438a2218676">Evas_Event_Axis_Update</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_AXIS_UPDATE event callbacks </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga6fb6e5748f93fc24d62276e5421f9767"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Hold" ref="ga6fb6e5748f93fc24d62276e5421f9767" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Hold.html">_Evas_Event_Hold</a> <a class="el" href="group__Evas__Canvas__Events.html#ga6fb6e5748f93fc24d62276e5421f9767">Evas_Event_Hold</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_HOLD event callbacks </p>
+
+</div>
+</div>
+<a class="anchor" id="ga9a1bfd297b751119977f3c14c0004612"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Key_Down" ref="ga9a1bfd297b751119977f3c14c0004612" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Key__Down.html">_Evas_Event_Key_Down</a> <a class="el" href="group__Evas__Canvas__Events.html#ga9a1bfd297b751119977f3c14c0004612">Evas_Event_Key_Down</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_KEY_DOWN event callbacks </p>
+
+</div>
+</div>
+<a class="anchor" id="ga92e77497752a3b100b3bfc4ee92daf09"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Key_Up" ref="ga92e77497752a3b100b3bfc4ee92daf09" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Key__Up.html">_Evas_Event_Key_Up</a> <a class="el" href="group__Evas__Canvas__Events.html#ga92e77497752a3b100b3bfc4ee92daf09">Evas_Event_Key_Up</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_KEY_UP event callbacks </p>
+
+</div>
+</div>
 <a class="anchor" id="ga907df7a46177e7bac9928ea39fbcca50"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Mouse_Down" ref="ga907df7a46177e7bac9928ea39fbcca50" args="" -->
 <div class="memitem">
 <div class="memproto">
@@ -105,6 +214,618 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <div class="memdoc">
 <p>Event structure for #EVAS_CALLBACK_MOUSE_DOWN event callbacks </p>
+
+</div>
+</div>
+<a class="anchor" id="ga9b42da2562eb8390dd513d7337b1e018"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Mouse_In" ref="ga9b42da2562eb8390dd513d7337b1e018" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Mouse__In.html">_Evas_Event_Mouse_In</a> <a class="el" href="group__Evas__Canvas__Events.html#ga9b42da2562eb8390dd513d7337b1e018">Evas_Event_Mouse_In</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_MOUSE_IN event callbacks </p>
+
+</div>
+</div>
+<a class="anchor" id="ga224de88869fe5315ca144ef8a2946827"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Mouse_Move" ref="ga224de88869fe5315ca144ef8a2946827" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Mouse__Move.html">_Evas_Event_Mouse_Move</a> <a class="el" href="group__Evas__Canvas__Events.html#ga224de88869fe5315ca144ef8a2946827">Evas_Event_Mouse_Move</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_MOUSE_MOVE event callbacks </p>
+
+</div>
+</div>
+<a class="anchor" id="ga7a168fcb1c4b6bc53ac4e69f5424f317"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Mouse_Out" ref="ga7a168fcb1c4b6bc53ac4e69f5424f317" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Mouse__Out.html">_Evas_Event_Mouse_Out</a> <a class="el" href="group__Evas__Canvas__Events.html#ga7a168fcb1c4b6bc53ac4e69f5424f317">Evas_Event_Mouse_Out</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_MOUSE_OUT event callbacks </p>
+
+</div>
+</div>
+<a class="anchor" id="ga337e8227780d38bdeae5c0ccd00d04b3"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Mouse_Up" ref="ga337e8227780d38bdeae5c0ccd00d04b3" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Mouse__Up.html">_Evas_Event_Mouse_Up</a> <a class="el" href="group__Evas__Canvas__Events.html#ga337e8227780d38bdeae5c0ccd00d04b3">Evas_Event_Mouse_Up</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_MOUSE_UP event callbacks </p>
+
+</div>
+</div>
+<a class="anchor" id="ga54d0e99e450e158924b06746544bb4dc"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Mouse_Wheel" ref="ga54d0e99e450e158924b06746544bb4dc" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Mouse__Wheel.html">_Evas_Event_Mouse_Wheel</a> <a class="el" href="group__Evas__Canvas__Events.html#ga54d0e99e450e158924b06746544bb4dc">Evas_Event_Mouse_Wheel</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_MOUSE_WHEEL event callbacks </p>
+
+</div>
+</div>
+<a class="anchor" id="ga0436550ffcc1e2eab730ef3c493b8c40"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Multi_Down" ref="ga0436550ffcc1e2eab730ef3c493b8c40" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Multi__Down.html">_Evas_Event_Multi_Down</a> <a class="el" href="group__Evas__Canvas__Events.html#ga0436550ffcc1e2eab730ef3c493b8c40">Evas_Event_Multi_Down</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_MULTI_DOWN event callbacks </p>
+
+</div>
+</div>
+<a class="anchor" id="ga8658f1e1a6801e219547b05e8728ebd2"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Multi_Move" ref="ga8658f1e1a6801e219547b05e8728ebd2" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Multi__Move.html">_Evas_Event_Multi_Move</a> <a class="el" href="group__Evas__Canvas__Events.html#ga8658f1e1a6801e219547b05e8728ebd2">Evas_Event_Multi_Move</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_MULTI_MOVE event callbacks </p>
+
+</div>
+</div>
+<a class="anchor" id="ga0f4d63b8673ee370e41e2c0bdc374212"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Event_Multi_Up" ref="ga0f4d63b8673ee370e41e2c0bdc374212" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct__Evas__Event__Multi__Up.html">_Evas_Event_Multi_Up</a> <a class="el" href="group__Evas__Canvas__Events.html#ga0f4d63b8673ee370e41e2c0bdc374212">Evas_Event_Multi_Up</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Event structure for #EVAS_CALLBACK_MULTI_UP event callbacks </p>
+
+</div>
+</div>
+<hr/><h2>Enumeration Type Documentation</h2>
+<a class="anchor" id="ga5b9cb5b15cb929522d6cad85a06a0b1b"></a><!-- doxytag: member="Evas_Legacy.h::_Evas_Axis_Label" ref="ga5b9cb5b15cb929522d6cad85a06a0b1b" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__Evas__Canvas__Events.html#ga5b9cb5b15cb929522d6cad85a06a0b1b">_Evas_Axis_Label</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1ba3b7f9b8c89e808eb0731e66fe1cce4c7"></a><!-- doxytag: member="EVAS_AXIS_LABEL_UNKNOWN" ref="gga5b9cb5b15cb929522d6cad85a06a0b1ba3b7f9b8c89e808eb0731e66fe1cce4c7" args="" -->EVAS_AXIS_LABEL_UNKNOWN</em>&nbsp;</td><td>
+<p>Axis containing unknown (or not yet representable) data. Range: Unbounded. Unit: Undefined. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1ba6a95bd2f5a87d879476211c8e6c613dd"></a><!-- doxytag: member="EVAS_AXIS_LABEL_X" ref="gga5b9cb5b15cb929522d6cad85a06a0b1ba6a95bd2f5a87d879476211c8e6c613dd" args="" -->EVAS_AXIS_LABEL_X</em>&nbsp;</td><td>
+<p>Position along physical X axis; not window relative. Range: Unbounded. Unit: Undefined. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1ba276f6be8eb55cbcea0e9f581e50acb82"></a><!-- doxytag: member="EVAS_AXIS_LABEL_Y" ref="gga5b9cb5b15cb929522d6cad85a06a0b1ba276f6be8eb55cbcea0e9f581e50acb82" args="" -->EVAS_AXIS_LABEL_Y</em>&nbsp;</td><td>
+<p>Position along physical Y axis; not window relative. Range: Unbounded. Unit: Undefined. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1baa134872579b861d3158d3956c05feb9d"></a><!-- doxytag: member="EVAS_AXIS_LABEL_PRESSURE" ref="gga5b9cb5b15cb929522d6cad85a06a0b1baa134872579b861d3158d3956c05feb9d" args="" -->EVAS_AXIS_LABEL_PRESSURE</em>&nbsp;</td><td>
+<p>Force applied to tool tip. Range: [0.0, 1.0]. Unit: Unitless. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1ba633466183e782eca959d9276b724856f"></a><!-- doxytag: member="EVAS_AXIS_LABEL_DISTANCE" ref="gga5b9cb5b15cb929522d6cad85a06a0b1ba633466183e782eca959d9276b724856f" args="" -->EVAS_AXIS_LABEL_DISTANCE</em>&nbsp;</td><td>
+<p>Relative distance along physical Z axis. Range: [0.0, 1.0]. Unit: Unitless </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1ba4299cb35a4b7cd13b240828e5cc00397"></a><!-- doxytag: member="EVAS_AXIS_LABEL_AZIMUTH" ref="gga5b9cb5b15cb929522d6cad85a06a0b1ba4299cb35a4b7cd13b240828e5cc00397" args="" -->EVAS_AXIS_LABEL_AZIMUTH</em>&nbsp;</td><td>
+<p>Angle of tool about the Z axis from positive X axis. Range: [-PI, PI]. Unit: Radians. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1ba4f04963da2a8063fa99bb17fa7359f7c"></a><!-- doxytag: member="EVAS_AXIS_LABEL_TILT" ref="gga5b9cb5b15cb929522d6cad85a06a0b1ba4f04963da2a8063fa99bb17fa7359f7c" args="" -->EVAS_AXIS_LABEL_TILT</em>&nbsp;</td><td>
+<p>Angle of tool about plane of sensor from positive Z axis. Range: [0.0, PI]. Unit: Radians. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1bae22893836f262eaeba7a41e1e7b3c836"></a><!-- doxytag: member="EVAS_AXIS_LABEL_TWIST" ref="gga5b9cb5b15cb929522d6cad85a06a0b1bae22893836f262eaeba7a41e1e7b3c836" args="" -->EVAS_AXIS_LABEL_TWIST</em>&nbsp;</td><td>
+<p>Rotation of tool about its major axis from its "natural" position. Range: [-PI, PI] Unit: Radians. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1ba976b4c82dbb5fcaed346817d35947a83"></a><!-- doxytag: member="EVAS_AXIS_LABEL_TOUCH_WIDTH_MAJOR" ref="gga5b9cb5b15cb929522d6cad85a06a0b1ba976b4c82dbb5fcaed346817d35947a83" args="" -->EVAS_AXIS_LABEL_TOUCH_WIDTH_MAJOR</em>&nbsp;</td><td>
+<p>Length of contact ellipse along AZIMUTH. Range: Unbounded: Unit: Same as EVAS_AXIS_LABEL_{X,Y}. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1bae6a93050f86e5287dc96f1c9ed13dad8"></a><!-- doxytag: member="EVAS_AXIS_LABEL_TOUCH_WIDTH_MINOR" ref="gga5b9cb5b15cb929522d6cad85a06a0b1bae6a93050f86e5287dc96f1c9ed13dad8" args="" -->EVAS_AXIS_LABEL_TOUCH_WIDTH_MINOR</em>&nbsp;</td><td>
+<p>Length of contact ellipse perpendicular to AZIMUTH. Range: Unbounded. Unit: Same as EVAS_AXIS_LABEL_{X,Y}. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1baf72612992e69675ba39e11d7ac3fcde4"></a><!-- doxytag: member="EVAS_AXIS_LABEL_TOOL_WIDTH_MAJOR" ref="gga5b9cb5b15cb929522d6cad85a06a0b1baf72612992e69675ba39e11d7ac3fcde4" args="" -->EVAS_AXIS_LABEL_TOOL_WIDTH_MAJOR</em>&nbsp;</td><td>
+<p>Length of tool ellipse along AZIMUTH. Range: Unbounded. Unit: Same as EVAS_AXIS_LABEL_{X,Y}. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1ba4e61bed0f176d6d879e5171795a5ed8e"></a><!-- doxytag: member="EVAS_AXIS_LABEL_TOOL_WIDTH_MINOR" ref="gga5b9cb5b15cb929522d6cad85a06a0b1ba4e61bed0f176d6d879e5171795a5ed8e" args="" -->EVAS_AXIS_LABEL_TOOL_WIDTH_MINOR</em>&nbsp;</td><td>
+<p>Length of tool ellipse perpendicular to AZIMUTH. Range: Unbounded. Unit: Same as EVAS_AXIS_LABEL_{X,Y}. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.13 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1ba090e68d970dc0fe96943196703488364"></a><!-- doxytag: member="EVAS_AXIS_LABEL_WINDOW_X" ref="gga5b9cb5b15cb929522d6cad85a06a0b1ba090e68d970dc0fe96943196703488364" args="" -->EVAS_AXIS_LABEL_WINDOW_X</em>&nbsp;</td><td>
+<p>X coordinate mapped to the window. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1ba0987bf439bcbedb7044d9e83c09966ba"></a><!-- doxytag: member="EVAS_AXIS_LABEL_WINDOW_Y" ref="gga5b9cb5b15cb929522d6cad85a06a0b1ba0987bf439bcbedb7044d9e83c09966ba" args="" -->EVAS_AXIS_LABEL_WINDOW_Y</em>&nbsp;</td><td>
+<p>Y coordinate mapped to the window. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1babb11e4d40544608be3f73da326e26f3c"></a><!-- doxytag: member="EVAS_AXIS_LABEL_NORMAL_X" ref="gga5b9cb5b15cb929522d6cad85a06a0b1babb11e4d40544608be3f73da326e26f3c" args="" -->EVAS_AXIS_LABEL_NORMAL_X</em>&nbsp;</td><td>
+<p>X normalized to the [0, 1] range. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+</td></tr>
+<tr><td valign="top"><em><a class="anchor" id="gga5b9cb5b15cb929522d6cad85a06a0b1bac9368a0d68f090fe0609cc2f369d65ab"></a><!-- doxytag: member="EVAS_AXIS_LABEL_NORMAL_Y" ref="gga5b9cb5b15cb929522d6cad85a06a0b1bac9368a0d68f090fe0609cc2f369d65ab" args="" -->EVAS_AXIS_LABEL_NORMAL_Y</em>&nbsp;</td><td>
+<p>Y normalized to the [0, 1] range. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+</td></tr>
+</table>
+</dd>
+</dl>
+
+</div>
+</div>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="gaf236cc76039a654de4df734f8875ba1a"></a><!-- doxytag: member="Evas_Legacy.h::evas_event_callback_add" ref="gaf236cc76039a654de4df734f8875ba1a" args="(Evas *e, Evas_Callback_Type type, Evas_Event_Cb func, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Callback_Type&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Event_Cb&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Add (register) a callback function to a given canvas event.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Canvas to attach a callback to </td></tr>
+    <tr><td class="paramname">type</td><td>The type of event that will trigger the callback </td></tr>
+    <tr><td class="paramname">func</td><td>The (callback) function to be called when the event is triggered </td></tr>
+    <tr><td class="paramname">data</td><td>The data pointer to be passed to <code>func</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function adds a function callback to the canvas <code>e</code> when the event of type <code>type</code> occurs on it. The function pointer is <code>func</code>.</p>
+<p>In the event of a memory allocation error during the addition of the callback to the canvas, <a class="el" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error()</a> should be used to determine the nature of the error, if any, and the program should sensibly try and recover.</p>
+<p>A callback function must have the ::Evas_Event_Cb prototype definition. The first parameter (<code>data</code>) in this definition will have the same value passed to <a class="el" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add()</a> as the <code>data</code> parameter, at runtime. The second parameter <code>e</code> is the canvas pointer on which the event occurred. The third parameter <code>event_info</code> is a pointer to a data structure that may or may not be passed to the callback, depending on the event type that triggered the callback. This is so because some events don't carry extra context with them, but others do.</p>
+<p>The event type <code>type</code> to trigger the function may be one of #EVAS_CALLBACK_RENDER_FLUSH_PRE, #EVAS_CALLBACK_RENDER_FLUSH_POST, #EVAS_CALLBACK_CANVAS_FOCUS_IN, #EVAS_CALLBACK_CANVAS_FOCUS_OUT, #EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN and #EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_OUT. This determines the kind of event that will trigger the callback to be called. Only the last two of the event types listed here provide useful event information data -- a pointer to the recently focused Evas object. For the others the <code>event_info</code> pointer is going to be <code>NULL</code>.</p>
+<p>Example:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a>(d.canvas, EVAS_CALLBACK_RENDER_FLUSH_PRE,
+                           _render_flush_cb, NULL);
+   <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
+     {
+        fprintf(stderr, <span class="stringliteral">&quot;ERROR: Callback registering failed! Aborting.\n&quot;</span>);
+        <span class="keywordflow">goto</span> panic;
+     }
+
+   <a class="code" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a>(d.canvas, EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN,
+                           _object_focus_in_cb, NULL);
+   <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Main__Group.html#gacfae4f589c777003f58d51e502c52835" title="Get the error status of the most recent memory allocation call.">evas_alloc_error</a>() != EVAS_ALLOC_ERROR_NONE)
+     {
+        fprintf(stderr, <span class="stringliteral">&quot;ERROR: Callback registering failed! Aborting.\n&quot;</span>);
+        <span class="keywordflow">goto</span> panic;
+     } <span class="comment">/* two canvas event callbacks */</span>
+</pre></div></p>
+<p>Looking to the callbacks registered above,  <div class="fragment"><pre class="fragment"><span class="comment">/* called when our rectangle gets focus */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_object_focus_in_cb(<span class="keywordtype">void</span> *data <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>,
+                    <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e,
+                    <span class="keywordtype">void</span> *event_info)
+{
+   printf(<span class="stringliteral">&quot;An object got focused: %s\n&quot;</span>,
+          <a class="code" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3" title="Retrieves the name of the given Evas object.">evas_object_name_get</a>(event_info));
+
+   printf(<span class="stringliteral">&quot;Let&#39;s recheck it: %s\n&quot;</span>,
+          <a class="code" href="group__Evas__Object__Group__Basic.html#ga7934106d84f6a019fcb421b6b4d860a3" title="Retrieves the name of the given Evas object.">evas_object_name_get</a>(<a class="code" href="group__Evas__Canvas.html#gabeeab2a18e586a4195d85b6a0c50413a" title="Retrieve the object focused by the default seat.">evas_focus_get</a>(e)));
+
+   printf(<span class="stringliteral">&quot;And again: %s\n&quot;</span>, <a class="code" href="group__Evas__Object__Group.html#ga797d900504cf98d5f3c711b17ab5eaba" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_get</a>(event_info) ?
+          <span class="stringliteral">&quot;OK!&quot;</span> : <span class="stringliteral">&quot;Oops, something is bad.&quot;</span>);
+}
+
+<span class="comment">/* render flush callback */</span>
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_render_flush_cb(<span class="keywordtype">void</span> *data EINA_UNUSED,
+                 <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e EINA_UNUSED,
+                 <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;Canvas is about to flush its rendering pipeline!\n&quot;</span>);
+}
+
+<span class="comment">/* put some action in the canvas */</span>
+<span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
+_resize_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
+{
+   <span class="keywordtype">int</span> w, h, cw, ch;
+
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(d.img, NULL, NULL, &amp;w, &amp;h);
+   <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(d.ee, NULL, NULL, &amp;cw, &amp;ch);
+
+   <span class="keywordflow">if</span> (w &lt; cw)
+     <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, cw, ch);
+   <span class="keywordflow">else</span>
+     <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.img, cw / 2, ch / 2);
+
+   <span class="keywordflow">return</span> <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>; <span class="comment">/* re-issue the timer */</span>
+}
+
+<span class="comment">/* let&#39;s have our events back */</span>
+</pre></div></p>
+<p>we see that the canvas flushes its rendering pipeline (#EVAS_CALLBACK_RENDER_FLUSH_PRE) whenever the <code>_resize_cb</code> routine takes place: it has to redraw that image at a different size. Also, the callback on an object being focused comes just after we focus it explicitly, on code.</p>
+<p>See the full <a class="el" href="Example_Evas_Events.html">example</a>.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>Be careful not to add the same callback multiple times, if that's not what you want, because Evas won't check if a callback existed before exactly as the one being registered (and thus, call it more than once on the event, in this case). This would make sense if you passed different functions and/or callback data, only. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a89">ecore_imf_example.c</a>, and <a class="el" href="evas-events_8c-example.html#a37">evas-events.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga176cd73f1afdf62b55a912cd728b892e"></a><!-- doxytag: member="Evas_Legacy.h::evas_event_callback_del" ref="ga176cd73f1afdf62b55a912cd728b892e" args="(Evas *e, Evas_Callback_Type type, Evas_Event_Cb func)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="group__Evas__Canvas__Events.html#ga176cd73f1afdf62b55a912cd728b892e">evas_event_callback_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Callback_Type&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Event_Cb&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Delete a callback function from the canvas.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Canvas to remove a callback from </td></tr>
+    <tr><td class="paramname">type</td><td>The type of event that was triggering the callback </td></tr>
+    <tr><td class="paramname">func</td><td>The function that was to be called when the event was triggered </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer that was to be passed to the callback</dd></dl>
+<p>This function removes the most recently added callback from the canvas <code>e</code> which was triggered by the event type <code>type</code> and was calling the function <code>func</code> when triggered. If the removal is successful it will also return the data pointer that was passed to <a class="el" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add()</a> when the callback was added to the canvas. If not successful <code>NULL</code> will be returned.</p>
+<p>Example: </p>
+<div class="fragment"><pre class="fragment"> <span class="keyword">extern</span> <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e;
+ <span class="keywordtype">void</span> *my_data;
+ <span class="keywordtype">void</span> focus_in_callback(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *e, <span class="keywordtype">void</span> *event_info);
+
+ my_data = <a class="code" href="group__Evas__Canvas__Events.html#ga176cd73f1afdf62b55a912cd728b892e">evas_event_callback_del</a>(ebject, EVAS_CALLBACK_CANVAS_FOCUS_IN, focus_in_callback);
+</pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga48b6d066830a1350bd5c8770070cd3f9"></a><!-- doxytag: member="Evas_Legacy.h::evas_event_callback_del_full" ref="ga48b6d066830a1350bd5c8770070cd3f9" args="(Evas *e, Evas_Callback_Type type, Evas_Event_Cb func, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Callback_Type&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Event_Cb&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Delete (unregister) a callback function registered to a given canvas event.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Canvas to remove an event callback from </td></tr>
+    <tr><td class="paramname">type</td><td>The type of event that was triggering the callback </td></tr>
+    <tr><td class="paramname">func</td><td>The function that was to be called when the event was triggered </td></tr>
+    <tr><td class="paramname">data</td><td>The data pointer that was to be passed to the callback </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer that was to be passed to the callback</dd></dl>
+<p>This function removes <b>the first</b> added callback from the canvas <code>e</code> matching the event type <code>type</code>, the registered function pointer <code>func</code> and the callback data pointer <code>data</code>. If the removal is successful it will also return the data pointer that was passed to <a class="el" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add()</a> (that will be the same as the parameter) when the callback(s) was(were) added to the canvas. If not successful <code>NULL</code> will be returned. A common use would be to remove an exact match of a callback.</p>
+<p>Example:  <div class="fragment"><pre class="fragment">        <a class="code" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a>(evas, EVAS_CALLBACK_RENDER_FLUSH_PRE,
+                                     _render_flush_cb, NULL);
+        <a class="code" href="group__Evas__Canvas__Events.html#ga48b6d066830a1350bd5c8770070cd3f9">evas_event_callback_del_full</a>(
+          evas, EVAS_CALLBACK_CANVAS_OBJECT_FOCUS_IN,
+          _object_focus_in_cb, NULL);
+</pre></div></p>
+<p>See the full <a class="el" href="Example_Evas_Events.html">example</a>.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>For deletion of canvas events callbacks filtering by just type and function pointer, user <a class="el" href="group__Evas__Canvas__Events.html#ga176cd73f1afdf62b55a912cd728b892e">evas_event_callback_del()</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a91">ecore_imf_example.c</a>, and <a class="el" href="evas-events_8c-example.html#a19">evas-events.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga466fbd13d4f7422e984a1f2c01397e4e"></a><!-- doxytag: member="Evas_Legacy.h::evas_event_callback_priority_add" ref="ga466fbd13d4f7422e984a1f2c01397e4e" args="(Evas *e, Evas_Callback_Type type, Evas_Callback_Priority priority, Evas_Event_Cb func, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Canvas__Events.html#ga466fbd13d4f7422e984a1f2c01397e4e">evas_event_callback_priority_add</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Callback_Type&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Callback_Priority&#160;</td>
+          <td class="paramname"><em>priority</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Event_Cb&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Add (register) a callback function to a given canvas event with a non-default priority set. Except for the priority field, it's exactly the same as <a class="el" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a></p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Canvas to attach a callback to </td></tr>
+    <tr><td class="paramname">type</td><td>The type of event that will trigger the callback </td></tr>
+    <tr><td class="paramname">priority</td><td>The priority of the callback, lower values called first. </td></tr>
+    <tr><td class="paramname">func</td><td>The (callback) function to be called when the event is triggered </td></tr>
+    <tr><td class="paramname">data</td><td>The data pointer to be passed to <code>func</code> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas__Events.html#gaf236cc76039a654de4df734f8875ba1a">evas_event_callback_add</a> </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gac8521438f0d0c6709e8a1ed78b0ff7c3"></a><!-- doxytag: member="Evas_Legacy.h::evas_post_event_callback_push" ref="gac8521438f0d0c6709e8a1ed78b0ff7c3" args="(Evas *e, Evas_Object_Event_Post_Cb func, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Canvas__Events.html#gac8521438f0d0c6709e8a1ed78b0ff7c3">evas_post_event_callback_push</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Object_Event_Post_Cb&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Push a callback on the post-event callback stack</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Canvas to push the callback on </td></tr>
+    <tr><td class="paramname">func</td><td>The function that to be called when the stack is unwound </td></tr>
+    <tr><td class="paramname">data</td><td>The data pointer to be passed to the callback</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Evas has a stack of callbacks that get called after all the callbacks for an event have triggered (all the objects it triggers on and all the callbacks in each object triggered). When all these have been called, the stack is unwound from most recently to least recently pushed item and removed from the stack calling the callback set for it.</p>
+<p>This is intended for doing reverse logic-like processing, example - when a child object that happens to get the event later is meant to be able to "steal" functions from a parent and thus on unwind of this stack have its function called first, thus being able to set flags, or return 0 from the post-callback that stops all other post-callbacks in the current stack from being called (thus basically allowing a child to take control, if the event callback prepares information ready for taking action, but the post callback actually does the action).</p>
+<p>This function should only be called from inside an evas input event callback. The event_info data may be kept up until <code>func</code> is called, in order to check the state of the "on-hold" flag for instance. Do not modify the canvas or otherwise trigger or feed a events to the canvas from inside <code>func</code>. Use jobs to safely modify the canvas.</p>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>Only use this function if you know exactly what you are doing! </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaf15646313dc5814e690e41bf78c6135a"></a><!-- doxytag: member="Evas_Legacy.h::evas_post_event_callback_remove" ref="gaf15646313dc5814e690e41bf78c6135a" args="(Evas *e, Evas_Object_Event_Post_Cb func)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Canvas__Events.html#gaf15646313dc5814e690e41bf78c6135a">evas_post_event_callback_remove</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Object_Event_Post_Cb&#160;</td>
+          <td class="paramname"><em>func</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Remove a callback from the post-event callback stack</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Canvas to push the callback on </td></tr>
+    <tr><td class="paramname">func</td><td>The function that to be called when the stack is unwound</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This removes a callback from the stack added with <a class="el" href="group__Evas__Canvas__Events.html#gac8521438f0d0c6709e8a1ed78b0ff7c3">evas_post_event_callback_push()</a>. The first instance of the function in the callback stack is removed from being executed when the stack is unwound. Further instances may still be run on unwind. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga27e99c1ecaece9da32cff27e682a631c"></a><!-- doxytag: member="Evas_Legacy.h::evas_post_event_callback_remove_full" ref="ga27e99c1ecaece9da32cff27e682a631c" args="(Evas *e, Evas_Object_Event_Post_Cb func, const void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Canvas__Events.html#ga27e99c1ecaece9da32cff27e682a631c">evas_post_event_callback_remove_full</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a> *&#160;</td>
+          <td class="paramname"><em>e</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Evas_Object_Event_Post_Cb&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Remove a callback from the post-event callback stack</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">e</td><td>Canvas to push the callback on </td></tr>
+    <tr><td class="paramname">func</td><td>The function that to be called when the stack is unwound </td></tr>
+    <tr><td class="paramname">data</td><td>The data pointer to be passed to the callback</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This removes a callback from the stack added with <a class="el" href="group__Evas__Canvas__Events.html#gac8521438f0d0c6709e8a1ed78b0ff7c3">evas_post_event_callback_push()</a>. The first instance of the function and data in the callback stack is removed from being executed when the stack is unwound. Further instances may still be run on unwind. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
 </div>

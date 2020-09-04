@@ -205,7 +205,7 @@ Typedefs</h2></td></tr>
 <p>The string <code>str</code> must be NULL terminated ('\0') and its full length will be used. To use part of the string or non-null terminated, use <a class="el" href="group__Eina__Stringshare__Group.html#gabe8ecf4121011cb792f36ecd8c44e470" title="Retrieves an instance of a string with a specific size for use in a program.">eina_stringshare_add_length()</a> instead.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#gabe8ecf4121011cb792f36ecd8c44e470" title="Retrieves an instance of a string with a specific size for use in a program.">eina_stringshare_add_length()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_02_8c-example.html#a4">eina_hash_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a3">eina_list_04.c</a>, <a class="el" href="eina_stringshare_01_8c-example.html#a7">eina_stringshare_01.c</a>, and <a class="el" href="gengrid_example_8c-example.html#a13">gengrid_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_02_8c-example.html#a4">eina_hash_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a3">eina_list_04.c</a>, <a class="el" href="eina_stringshare_01_8c-example.html#a7">eina_stringshare_01.c</a>, and <a class="el" href="gengrid_example_8c-example.html#a18">gengrid_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -276,7 +276,7 @@ Typedefs</h2></td></tr>
 <p>This function decreases the reference counter associated to <code>str</code> if it exists. If that counter reaches 0, the memory associated to <code>str</code> is freed. If <code>str</code> is <code>NULL</code>, the function returns immediately.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If the given pointer is not shared, bad things will happen, likely a segmentation fault. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a14">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a8">eina_file_01.c</a>, <a class="el" href="eina_hash_02_8c-example.html#a0">eina_hash_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a10">eina_list_04.c</a>, <a class="el" href="eina_stringshare_01_8c-example.html#a4">eina_stringshare_01.c</a>, <a class="el" href="gengrid_example_8c-example.html#a24">gengrid_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a14">web_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a14">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a8">eina_file_01.c</a>, <a class="el" href="eina_hash_02_8c-example.html#a0">eina_hash_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a10">eina_list_04.c</a>, <a class="el" href="eina_stringshare_01_8c-example.html#a4">eina_stringshare_01.c</a>, <a class="el" href="gengrid_example_8c-example.html#a41">gengrid_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a18">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -415,7 +415,7 @@ Typedefs</h2></td></tr>
 <p>This is similar to eina_share_common_add(), but it's faster since it will avoid lookups if possible, but on the down side it requires the parameter to be shared string. In other words, it must be the return of a previous call to one of the stringshare functions.</p>
 <p>There is no unref since this is the work of eina_share_common_del(). </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_stringshare_01_8c-example.html#a8">eina_stringshare_01.c</a>, and <a class="el" href="web_example_02_8c-example.html#a13">web_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_stringshare_01_8c-example.html#a8">eina_stringshare_01.c</a>, and <a class="el" href="web_example_02_8c-example.html#a17">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
