@@ -295,7 +295,7 @@ Defines</h2></td></tr>
 
 <p>Appends the picture to the media file. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gacf2c7514275a0a68060345fbea572b68" title="Updates the modified metadata.">metadata_editor_update_metadata()</a> for applying to the metadata of the media file. if not, you will see the existing metadata when you call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1eb8b0337c626af86946a0c37bd57999" title="Gets the metadata corresponding to the attribute.">metadata_editor_get_metadata()</a>. <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gacf2c7514275a0a68060345fbea572b68" title="Updates the modified metadata.">metadata_editor_update_metadata()</a> to apply metadata changes to the media file. Otherwise, the previous metadata will be returned when you call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1eb8b0337c626af86946a0c37bd57999" title="Gets the metadata corresponding to the attribute.">metadata_editor_get_metadata()</a>. <br/>
  Image type of the metadata supports jpeg and png. <br/>
  In case of accessing specific path in internal storage or external storage, you may add the privilege for accessing the path. <br/>
  For example, if you get the specific path by using <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ga3fa5d91f560ca1adffbb8c2717c0eed8" title="Gets the absolute path to the each directory of the given storage.">storage_get_directory()</a>. you should add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> or <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>.</dd></dl>
@@ -319,7 +319,13 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Set path to read or write metadata by calling <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a>, <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gacf2c7514275a0a68060345fbea572b68" title="Updates the modified metadata.">metadata_editor_update_metadata()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -454,7 +460,11 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Set path to read or write metadata by calling <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a>, <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -502,6 +512,8 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Gets the picture in the media file. </p>
+<p>If there is no picture or if the <em>index</em> is invalid, this function returns <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gga44069b0e869ecd7cc618cdaaeb621a6fac0628d69922c777fa68d57df87f66f6f">METADATA_EDITOR_ERROR_INVALID_PARAMETER</a>.<br/>
+ You can get picture number by using <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1eb8b0337c626af86946a0c37bd57999" title="Gets the metadata corresponding to the attribute.">metadata_editor_get_metadata()</a> and index starts with 0. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>picture</em> and <em>mime_type</em> should be released using free(). <br/>
  In case of accessing specific path in internal storage or external storage, you may add the privilege for accessing the path. <br/>
@@ -509,7 +521,7 @@ Defines</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">metadata</td><td>The handle to metadata </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>picture order </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>picture order (starts with 0) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">picture</td><td>encoded picture </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>encoded picture size </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">mime_type</td><td>the MIME of the picture </td></tr>
@@ -528,7 +540,11 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Set path to read or write metadata by calling <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a>, <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -559,7 +575,7 @@ Defines</h2></td></tr>
 
 <p>Removes artwork image from media file. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gacf2c7514275a0a68060345fbea572b68" title="Updates the modified metadata.">metadata_editor_update_metadata()</a> for applying to the metadata of the media file. if not, you will see the existing metadata when you call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1eb8b0337c626af86946a0c37bd57999" title="Gets the metadata corresponding to the attribute.">metadata_editor_get_metadata()</a>. <br/>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>You must call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gacf2c7514275a0a68060345fbea572b68" title="Updates the modified metadata.">metadata_editor_update_metadata()</a> to apply metadata changes to the media file. Otherwise, the previous metadata will be returned when you call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1eb8b0337c626af86946a0c37bd57999" title="Gets the metadata corresponding to the attribute.">metadata_editor_get_metadata()</a>. <br/>
  In case of accessing specific path in internal storage or external storage, you may add the privilege for accessing the path. <br/>
  For example, if you get the specific path by using <a class="el" href="group__CAPI__SYSTEM__STORAGE__MODULE.html#ga3fa5d91f560ca1adffbb8c2717c0eed8" title="Gets the absolute path to the each directory of the given storage.">storage_get_directory()</a>. you should add privilege <a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> or <a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -581,7 +597,13 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Set path to read or write metadata by calling <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a>, <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gacf2c7514275a0a68060345fbea572b68" title="Updates the modified metadata.">metadata_editor_update_metadata()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -618,10 +640,10 @@ Defines</h2></td></tr>
 
 <p>Sets the attribute of the metadata. </p>
 <p>This function set the attribute of the metadata for updating the metadata. <br/>
- </p>
+ If <em>attribute</em> is <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gga1c6a8dcf861f527302e9c55152692df3ab225afc5e99eb13450d0443f19dd7355">METADATA_EDITOR_ATTR_PICTURE_NUM</a>, this function returns <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gga44069b0e869ecd7cc618cdaaeb621a6fac0628d69922c777fa68d57df87f66f6f">METADATA_EDITOR_ERROR_INVALID_PARAMETER</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>The <em>value</em> should be released using free(). <br/>
- You must call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gacf2c7514275a0a68060345fbea572b68" title="Updates the modified metadata.">metadata_editor_update_metadata()</a> for applying to the metadata of the media file. if not, you will see the existing metadata when you call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1eb8b0337c626af86946a0c37bd57999" title="Gets the metadata corresponding to the attribute.">metadata_editor_get_metadata()</a>.</dd></dl>
+ You must call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gacf2c7514275a0a68060345fbea572b68" title="Updates the modified metadata.">metadata_editor_update_metadata()</a> to apply metadata changes to the media file. Otherwise, the previous metadata will be returned when you call <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga1eb8b0337c626af86946a0c37bd57999" title="Gets the metadata corresponding to the attribute.">metadata_editor_get_metadata()</a>.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">metadata</td><td>The handle to metadata </td></tr>
@@ -641,7 +663,13 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Set path to read or write metadata by calling <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a>, <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gacf2c7514275a0a68060345fbea572b68" title="Updates the modified metadata.">metadata_editor_update_metadata()</a>, <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gacf2c7514275a0a68060345fbea572b68" title="Updates the modified metadata.">metadata_editor_update_metadata()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -694,7 +722,9 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Create metadata handle by calling <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a>, <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
 
 </div>
 </div>
@@ -736,7 +766,11 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="pre"><dt><b>Precondition:</b></dt><dd>Set path to read or write metadata by calling <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a>, <a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga350160bc328e398af5ec85f3a5e216f5" title="Creates metadata.">metadata_editor_create()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#gad90c702e32463fb832354c1926e56697" title="Sets file path to read or write metadata.">metadata_editor_set_path()</a> </dd>
+<dd>
+<a class="el" href="group__CAPI__MEDIA__METADATA__EDITOR__MODULE.html#ga796c44310aa531da521d368d5eacf594" title="Destroys metadata.">metadata_editor_destroy()</a> </dd></dl>
 
 </div>
 </div>

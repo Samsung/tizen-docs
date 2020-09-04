@@ -152,7 +152,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data,
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;r&quot;</span>) == 0) <span class="comment">/* individual scaling factor */</span>
      {
-        <span class="keywordtype">double</span> scale = edje_object_scale_get(edje_obj);
+        <span class="keywordtype">double</span> scale = <a name="a5"></a><a class="code" href="group__Edje__Object__Scale.html#ga0f4bf41cc9dcd8b2524aad08adbd23fb" title="Gets a given Edje object&#39;s scaling factor.">edje_object_scale_get</a>(edje_obj);
 
         printf(<span class="stringliteral">&quot;got scale %f\n&quot;</span>, scale);
 
@@ -160,7 +160,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data,
         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (scale == 1.0) scale = 2.0;
         <span class="keywordflow">else</span> scale = 0.0;
 
-        edje_object_scale_set(edje_obj, scale);
+        <a name="a6"></a><a class="code" href="group__Edje__Object__Scale.html#ga9de0e4aa12e0e825ffa6890be99a4e49" title="Sets the scaling factor for a given Edje object.">edje_object_scale_set</a>(edje_obj, scale);
 
         printf(<span class="stringliteral">&quot;Setting center rectangle&#39;s scaling factor to %f.\n&quot;</span>,
                 scale);
@@ -168,7 +168,7 @@ _on_keydown(<span class="keywordtype">void</span>        *data,
         <span class="keywordflow">return</span>;
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;Escape&quot;</span>))
-     <a name="a5"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
+     <a name="a7"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
    <span class="keywordflow">else</span>
      {
         printf(<span class="stringliteral">&quot;unhandled key: %s\n&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
@@ -197,71 +197,71 @@ main(<span class="keywordtype">int</span> argc <a class="code" href="group__Eina
    <span class="keywordtype">int</span>          w;
    <span class="keywordtype">int</span>          h;
 
-   <span class="keywordflow">if</span> (!<a name="a6"></a><a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
+   <span class="keywordflow">if</span> (!<a name="a8"></a><a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>())
      <span class="keywordflow">return</span> EXIT_FAILURE;
 
-   <span class="keywordflow">if</span> (!<a name="a7"></a><a class="code" href="group__Edje__General__Group.html#ga1c9c6594f38023c29fbfb2d0c8c675db" title="Initializes the Edje library.">edje_init</a>())
+   <span class="keywordflow">if</span> (!<a name="a9"></a><a class="code" href="group__Edje__General__Group.html#ga1c9c6594f38023c29fbfb2d0c8c675db" title="Initializes the Edje library.">edje_init</a>())
      <span class="keywordflow">goto</span> shutdown_ecore_evas;
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee = <a name="a8"></a><a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> shutdown_edje;
 
-   <a name="a9"></a><a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_delete);
-   <a name="a10"></a><a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Edje Basics Example&quot;</span>);
+   <a name="a10"></a><a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_delete);
+   <a name="a11"></a><a class="code" href="group__Ecore__Evas__Group.html#ga09f31ba06a5424c66ee239dd92ff9f6e" title="Sets the title of an Ecore_Evas&#39; window.">ecore_evas_title_set</a>(ee, <span class="stringliteral">&quot;Edje Basics Example&quot;</span>);
 
-   evas = <a name="a11"></a><a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
+   evas = <a name="a12"></a><a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
 
-   bg = <a name="a12"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a name="a13"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
-   <a name="a14"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
-   <a name="a15"></a><a class="code" href="group__Ecore__Evas__Group.html#ga52ddd7e1011746cca7915af6e38b1f0b" title="Associates the given object to this ecore evas.">ecore_evas_object_associate</a>(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
+   bg = <a name="a13"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
+   <a name="a14"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   <a name="a15"></a><a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   <a name="a16"></a><a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a name="a17"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+   ecore_evas_object_associate(ee, bg, ECORE_EVAS_OBJECT_ASSOCIATE_BASE);
 
-   <a name="a16"></a><a class="code" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_set</a>(bg, <a name="a17"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a name="a18"></a><a class="code" href="group__Evas__Object__Group.html#ga4405e118e1fb762987af1269b6848db5" title="Indicates that this object is the keyboard event receiver on its canvas.">evas_object_focus_set</a>(bg, <a name="a19"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   edje_obj = edje_object_add(evas);
+   edje_obj = <a name="a20"></a><a class="code" href="group__Edje__Object__Group.html#ga2fb20b8db9d2c4384cca17e2f7637c40" title="Instantiates a new Edje object.">edje_object_add</a>(evas);
 
    <span class="comment">/* exercising Edje loading error, on purpose */</span>
-   <span class="keywordflow">if</span> (!edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;unexistant_group&quot;</span>))
+   <span class="keywordflow">if</span> (!<a name="a21"></a><a class="code" href="group__Edje__Object__Group.html#gaec1edd24b5bd8e82823759a8dddc1996" title="Sets the EDJ file (and group within it) to load an Edje object&#39;s contents from.">edje_object_file_set</a>(edje_obj, edje_file, <span class="stringliteral">&quot;unexistant_group&quot;</span>))
      {
-        <span class="keywordtype">int</span> err = edje_object_load_error_get(edje_obj);
-        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
+        <span class="keywordtype">int</span> err = <a name="a22"></a><a class="code" href="group__Edje__Object__Group.html#ga4d244ed455a48b9cbf286b6d8b802df3" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje_obj);
+        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a name="a23"></a><a class="code" href="group__Edje__Object__Group.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
         fprintf(stderr, <span class="stringliteral">&quot;Could not load &#39;unexistant_group&#39; from basic.edj:&quot;</span>
                         <span class="stringliteral">&quot; %s\n&quot;</span>, errmsg);
      }
 
-   <span class="keywordflow">if</span> (!edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;example_group&quot;</span>))
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Group.html#gaec1edd24b5bd8e82823759a8dddc1996" title="Sets the EDJ file (and group within it) to load an Edje object&#39;s contents from.">edje_object_file_set</a>(edje_obj, edje_file, <span class="stringliteral">&quot;example_group&quot;</span>))
      {
-        <span class="keywordtype">int</span> err = edje_object_load_error_get(edje_obj);
-        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
+        <span class="keywordtype">int</span> err = <a class="code" href="group__Edje__Object__Group.html#ga4d244ed455a48b9cbf286b6d8b802df3" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje_obj);
+        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a class="code" href="group__Edje__Object__Group.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
         fprintf(stderr, <span class="stringliteral">&quot;Could not load &#39;example_group&#39; from basic.edj: %s\n&quot;</span>,
                 errmsg);
 
-        <a name="a18"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje_obj);
+        <a name="a24"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(edje_obj);
         <span class="keywordflow">goto</span> shutdown_edje;
      }
 
    printf(<span class="stringliteral">&quot;Loaded Edje object bound to group &#39;example_group&#39; from&quot;</span>
                    <span class="stringliteral">&quot; file basic.edj with success!\n&quot;</span>);
 
-   evas_object_move(edje_obj, 20, 20);
-   evas_object_resize(edje_obj, WIDTH - 40, HEIGHT - 40);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 20, 20);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, WIDTH - 40, HEIGHT - 40);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
 
-   <a name="a19"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, edje_obj);
+   <a name="a25"></a><a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, edje_obj);
 
    <span class="comment">/* this is a border around the Edje object above, here just to</span>
 <span class="comment">    * emphasize its geometry */</span>
-   border = evas_object_image_filled_add(evas);
-   evas_object_image_file_set(border, img_file, NULL);
-   evas_object_image_border_set(border, 2, 2, 2, 2);
-   evas_object_image_border_center_fill_set(border, EVAS_BORDER_FILL_NONE);
+   border = <a name="a26"></a><a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(evas);
+   <a name="a27"></a><a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(border, img_file, NULL);
+   <a name="a28"></a><a class="code" href="group__Evas__Object__Image.html#gace5efad74de9f87cd996b2a34b3ea591" title="Dimensions of this image&#39;s border, a region that does not scale with the center area.">evas_object_image_border_set</a>(border, 2, 2, 2, 2);
+   <a name="a29"></a><a class="code" href="group__Evas__Object__Image.html#ga1f134668dedc8ad855c3af28fd2df8f6" title="Specifies how the center part of the object (not the borders) should be drawn when EFL is rendering i...">evas_object_image_border_center_fill_set</a>(border, <a name="a30"></a><a class="code" href="group__Evas__Object__Image.html#gga9f789224285e646309b7dd81a2401910a2ad856ac6aab5e2659c3a584a37aec70">EVAS_BORDER_FILL_NONE</a>);
 
-   evas_object_resize(border, WIDTH - 40 + 4, HEIGHT - 40 + 4);
-   evas_object_move(border, 20 - 2, 20 - 2);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(border, WIDTH - 40 + 4, HEIGHT - 40 + 4);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(border, 20 - 2, 20 - 2);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(border);
 
    printf(<span class="stringliteral">&quot;&#39;example_data&#39; data field in group &#39;example_group&#39; has &quot;</span>
@@ -269,44 +269,44 @@ main(<span class="keywordtype">int</span> argc <a class="code" href="group__Eina
                                                            <span class="stringliteral">&quot;example_data&quot;</span>));
 
    printf(<span class="stringliteral">&quot;Testing if &#39;part_one&#39; part exists: %s\n&quot;</span>,
-           edje_object_part_exists(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>) ? <span class="stringliteral">&quot;yes!&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
+           <a name="a31"></a><a class="code" href="group__Edje__Object__Part.html#ga54caca972ea2036b5bbf6e7133729e4e" title="Checks if a part exists in a given Edje object&#39;s group definition.">edje_object_part_exists</a>(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>) ? <span class="stringliteral">&quot;yes!&quot;</span> : <span class="stringliteral">&quot;no&quot;</span>);
 
-   edje_object_part_geometry_get(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>, &amp;x, &amp;y, &amp;w, &amp;h);
+   <a name="a32"></a><a class="code" href="group__Edje__Object__Group.html#ga739bc5265bedbc02c90900fc3bd11eed" title="Retrieves the geometry of a given Edje part, in a given Edje object&#39;s group definition, relative to the object&#39;s area.">edje_object_part_geometry_get</a>(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>, &amp;x, &amp;y, &amp;w, &amp;h);
    printf(<span class="stringliteral">&quot;The geometry of that part inside the Edje object&#39;s area &quot;</span>
                    <span class="stringliteral">&quot;is: x = %d, y = %d, w = %d, h = %d\n&quot;</span>, x, y, w, h);
 
-   <a name="a20"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(edje_object_part_object_get(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>),
+   <a name="a33"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga0854bae878bfc39f51b9c989353c973f">evas_object_color_get</a>(<a name="a34"></a><a class="code" href="group__Edje__Object__Group.html#ga1e331952436b9c069cd5d81e13c00bdc" title="Gets a handle to the Evas object implementing a given Edje part, in an Edje object.">edje_object_part_object_get</a>(edje_obj, <span class="stringliteral">&quot;part_one&quot;</span>),
                          &amp;x, &amp;y, &amp;w, &amp;h);
    printf(<span class="stringliteral">&quot;That part&#39;s color components are: r = %d, g = %d, b = %d,&quot;</span>
                    <span class="stringliteral">&quot; a = %d\n&quot;</span>, x, y, w, h);
 
-   edje_object_size_max_get(edje_obj, &amp;w, &amp;h);
+   <a name="a35"></a><a class="code" href="group__Edje__Object__Group.html#ga367ce6bad86acb63fa7a6b9f72597cda" title="Gets the maximum size specified -- as an EDC property -- for a given Edje object.">edje_object_size_max_get</a>(edje_obj, &amp;w, &amp;h);
    printf(<span class="stringliteral">&quot;The Edje object&#39;s max. size is: %d, %d\n&quot;</span>, w, h);
 
-   edje_object_size_min_get(edje_obj, &amp;w, &amp;h);
+   <a name="a36"></a><a class="code" href="group__Edje__Object__Group.html#ga6e8cf0e56dcb9f1f96422334fa07a356" title="Gets the minimum size specified -- as an EDC property -- for a given Edje object.">edje_object_size_min_get</a>(edje_obj, &amp;w, &amp;h);
    printf(<span class="stringliteral">&quot;The Edje object&#39;s min. size is: %d, %d\n&quot;</span>, w, h);
 
-   edje_object_size_min_calc(edje_obj, &amp;w, &amp;h);
+   <a name="a37"></a><a class="code" href="group__Edje__Object__Group.html#gae8dc1397ff94126f3083280a0400cfbc" title="Calculates the minimum required size for a given Edje object.">edje_object_size_min_calc</a>(edje_obj, &amp;w, &amp;h);
    printf(<span class="stringliteral">&quot;The Edje object&#39;s min. size reported by min. size&quot;</span>
                    <span class="stringliteral">&quot; calculation is: w = %d, h = %d\n&quot;</span>, w, h);
 
-   edje_object_size_min_restricted_calc(edje_obj, &amp;w, &amp;h, 500, 500);
+   <a name="a38"></a><a class="code" href="group__Edje__Object__Group.html#ga98d74542aa2faa8399e93b86c41c828e" title="Calculates the minimum required size for a given Edje object.">edje_object_size_min_restricted_calc</a>(edje_obj, &amp;w, &amp;h, 500, 500);
    printf(<span class="stringliteral">&quot;The Edje object&#39;s min. size reported by *restricted* &quot;</span>
                    <span class="stringliteral">&quot;min. size calculation is: w = %d, h = %d\n&quot;</span>, w, h);
 
-   edje_object_parts_extends_calc(edje_obj, &amp;x, &amp;y, &amp;w, &amp;h);
+   <a name="a39"></a><a class="code" href="group__Edje__Object__Group.html#gac903f485812444eda3068f91cdb3c7f5" title="Calculates the geometry of the region, relative to a given Edje object&#39;s area, occupied by all parts ...">edje_object_parts_extends_calc</a>(edje_obj, &amp;x, &amp;y, &amp;w, &amp;h);
    printf(<span class="stringliteral">&quot;The Edje object&#39;s \&quot;extended\&quot; geometry is: x = %d, &quot;</span>
                    <span class="stringliteral">&quot;y = %d, w = %d, h = %d\n&quot;</span>, x, y, w, h);
 
    printf(commands);
 
-   <a name="a21"></a><a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee);
+   <a name="a40"></a><a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee);
 
-   <a name="a22"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a41"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
-   <a name="a23"></a><a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(ee);
-   <a name="a24"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
-   <a name="a25"></a><a class="code" href="group__Edje__General__Group.html#ga01041f6702f2d81bf10c3e41899805cb" title="Shuts down the Edje library.">edje_shutdown</a>();
+   <a name="a42"></a><a class="code" href="group__Ecore__Evas__Group.html#ga68f83d423894b2797e8e693376921161" title="Frees an Ecore_Evas.">ecore_evas_free</a>(ee);
+   <a name="a43"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
+   <a name="a44"></a><a class="code" href="group__Edje__General__Group.html#ga01041f6702f2d81bf10c3e41899805cb" title="Shuts down the Edje library.">edje_shutdown</a>();
 
    <span class="keywordflow">return</span> EXIT_SUCCESS;
 
