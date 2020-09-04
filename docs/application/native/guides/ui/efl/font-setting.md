@@ -146,7 +146,7 @@ To set a font for a UI component:
   elm_object_part_text_set(layout, "textblock1", buf);
   ```
 
-- Set the font for an entry component (in [mobile](../../../api/mobile/latest/group__Elm__Entry.html) and [wearable](../../../api/wearable/latest/group__Elm__Entry.html) applications) using the `elm_entry_text_style_user_push()` function. It overrides the default style of the entry component for each attribute.
+- Set the font for an entry component (in [mobile](../../../api/mobile/latest/group__Elm__Entry__Group.html) and [wearable](../../../api/wearable/latest/group__Elm__Entry__Group.html) applications) using the `elm_entry_text_style_user_push()` function. It overrides the default style of the entry component for each attribute.
 
   > **Note**
   >
