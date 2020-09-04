@@ -106,26 +106,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(bg, 0, 0); <span class="comment">/* at origin */</span>
-   evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">/* at origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
    r1 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r1, 255, 0, 0, 255); <span class="comment">/* 100% opaque red */</span>
-   evas_object_move(r1, 10, 10);
-   evas_object_resize(r1, 100, 100);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r1, 10, 10);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r1, 100, 100);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r1);
 
    r2 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r2, 0, 128, 0, 128); <span class="comment">/* 50% opaque green */</span>
-   evas_object_move(r2, 10, 10);
-   evas_object_resize(r2, 50, 50);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r2, 10, 10);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r2, 50, 50);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r2);
 
    r3 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r3, 0, 128, 0, 255); <span class="comment">/* 100% opaque dark green */</span>
-   evas_object_move(r3, 60, 60);
-   evas_object_resize(r3, 50, 50);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r3, 60, 60);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r3, 50, 50);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r3);
 </pre></div></p>
 <p>Since it's a buffer canvas and we're using it to only save its contents on a file, we even needn't <a class="el" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show()</a> it. We make it render itself, forcefully, without the aid of Ecore's main loop, with <a class="el" href="group__Ecore__Evas__Group.html#ga52b3bc7cffed2f1866148921c9c50170" title="Forces immediate rendering on a given Ecore_Evas window.">ecore_evas_manual_render()</a>:  <div class="fragment"><pre class="fragment">   <a class="code" href="group__Ecore__Evas__Group.html#ga52b3bc7cffed2f1866148921c9c50170" title="Forces immediate rendering on a given Ecore_Evas window.">ecore_evas_manual_render</a>(ee);
@@ -256,26 +256,26 @@ main(<span class="keywordtype">void</span>)
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   evas_object_move(bg, 0, 0); <span class="comment">/* at origin */</span>
-   evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">/* at origin */</span>
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
 
    r1 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r1, 255, 0, 0, 255); <span class="comment">/* 100% opaque red */</span>
-   evas_object_move(r1, 10, 10);
-   evas_object_resize(r1, 100, 100);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r1, 10, 10);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r1, 100, 100);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r1);
 
    r2 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r2, 0, 128, 0, 128); <span class="comment">/* 50% opaque green */</span>
-   evas_object_move(r2, 10, 10);
-   evas_object_resize(r2, 50, 50);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r2, 10, 10);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r2, 50, 50);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r2);
 
    r3 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(r3, 0, 128, 0, 255); <span class="comment">/* 100% opaque dark green */</span>
-   evas_object_move(r3, 60, 60);
-   evas_object_resize(r3, 50, 50);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(r3, 60, 60);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(r3, 50, 50);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(r3);
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga52b3bc7cffed2f1866148921c9c50170" title="Forces immediate rendering on a given Ecore_Evas window.">ecore_evas_manual_render</a>(ee);

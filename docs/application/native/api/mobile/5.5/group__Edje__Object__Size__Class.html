@@ -111,6 +111,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all active classes of an application.  <a href="#ga489173e5a25a65422f546638e2718ac8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Iterator__Group.html#ga15b975bb881d955249ce13d4ebc96948">Eina_Iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Size__Class.html#ga544d418dab4b6ec92efd8fb2680b8507">edje_mmap_size_class_iterator_new</a> (<a class="el" href="group__Eina__File__Group.html#ga20697123547cbc937c6c9dd845af0403">Eina_File</a> *f)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all size classes provided by an Edje file.  <a href="#ga544d418dab4b6ec92efd8fb2680b8507"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Size__Class.html#ga67dde31c2f82ed3696c4c6e53fc0fbb2">edje_object_size_class_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *size_class, int minw, int minh, int maxw, int maxh)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the object text class.  <a href="#ga67dde31c2f82ed3696c4c6e53fc0fbb2"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Size__Class.html#gaa9f350579c59adde978a53465c59aa76">edje_object_size_class_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *size_class, int *minw, int *minh, int *maxw, int *maxh)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the object size class.  <a href="#gaa9f350579c59adde978a53465c59aa76"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Edje__Object__Size__Class.html#ga5344f3f9d28785643f8c8af80fd7e194">edje_object_size_class_del</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, const char *size_class)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the object size class.  <a href="#ga5344f3f9d28785643f8c8af80fd7e194"></a><br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="ga544d418dab4b6ec92efd8fb2680b8507"></a><!-- doxytag: member="Edje_Common.h::edje_mmap_size_class_iterator_new" ref="ga544d418dab4b6ec92efd8fb2680b8507" args="(Eina_File *f)" -->
@@ -138,6 +144,185 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>an iterator of Edje_Size_Class provided by the Edje file.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.17</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5344f3f9d28785643f8c8af80fd7e194"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_size_class_del" ref="ga5344f3f9d28785643f8c8af80fd7e194" args="(Evas_Object *obj, const char *size_class)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Edje__Object__Size__Class.html#ga5344f3f9d28785643f8c8af80fd7e194">edje_object_size_class_del</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>size_class</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete the object size class. </p>
+<p>This function deletes any values at the object level for the specified object and size class.</p>
+<p>Deleting the size class will revert it to the values defined by <a class="el" href="group__Edje__Object__Size__Class.html#gae97a214d588aa93384f30bb538a29d92" title="Sets the Edje size class.">edje_size_class_set()</a> or the color class defined in the theme file.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">size_class</td><td>Size class name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.17  3.0f </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa9f350579c59adde978a53465c59aa76"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_size_class_get" ref="gaa9f350579c59adde978a53465c59aa76" args="(const Evas_Object *obj, const char *size_class, int *minw, int *minh, int *maxw, int *maxh)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Size__Class.html#gaa9f350579c59adde978a53465c59aa76">edje_object_size_class_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>size_class</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>minw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>minh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>maxw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>maxh</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the object size class. </p>
+<p>This function gets the min and max values for an object level size class. These values will only be valid until the size class is changed or the edje object is deleted.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">size_class</td><td>The size class name </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">minw</td><td>The min width </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">minh</td><td>The min height </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">maxw</td><td>The max width </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">maxh</td><td>The max height</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.17  3.0f </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga67dde31c2f82ed3696c4c6e53fc0fbb2"></a><!-- doxytag: member="Edje_Legacy.h::edje_object_size_class_set" ref="ga67dde31c2f82ed3696c4c6e53fc0fbb2" args="(Evas_Object *obj, const char *size_class, int minw, int minh, int maxw, int maxh)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Edje__Object__Size__Class.html#ga67dde31c2f82ed3696c4c6e53fc0fbb2">edje_object_size_class_set</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>size_class</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>minw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>minh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxw</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>maxh</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Delete the object text class. </p>
+<p>This function deletes any values at the object level for the specified object and text class.</p>
+<p>Deleting the text class will revert it to the values defined by <a class="el" href="group__Edje__Object__Text__Class.html#ga89c1386d949e637236757ac220c18fca" title="Sets the Edje text class.">edje_text_class_set()</a> or the text class defined in the theme file.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text_class</td><td>The color class to be deleted.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.17 Sets the object size class.</dd></dl>
+<p>This function sets the min and max values for an object level size class. This will make all edje parts in the specified object that have the specified size class update their min and max size with given values.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">size_class</td><td>The size class name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">minw</td><td>The min width </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">minh</td><td>The min height </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maxw</td><td>The max width </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">maxh</td><td>The max height</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code>, on success or <code>false</code>, on error</dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.17  3.0f </dd></dl>
 
 </div>
 </div>
