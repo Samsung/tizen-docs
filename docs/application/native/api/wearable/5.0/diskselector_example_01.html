@@ -92,7 +92,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This code places 4 Elementary diskselector widgets on a window, each of them exemplifying a part of the widget's API.</p>
 <p>All of them will have weekdays as items, since we won't focus on items management on this example. For an example about this subject, check <a class="el" href="diskselector_example_02.html">Diskselector - Items management</a>.</p>
-<p>The first of them is a default diskselector.  <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>The first of them is a default diskselector.  <div class="fragment"><pre class="fragment">   <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *lbl[] =
+     {
+        <span class="stringliteral">&quot;Sunday&quot;</span>,
+        <span class="stringliteral">&quot;Monday&quot;</span>,
+        <span class="stringliteral">&quot;Tuesday&quot;</span>,
+        <span class="stringliteral">&quot;Wednesday&quot;</span>,
+        <span class="stringliteral">&quot;Thursday&quot;</span>,
+        <span class="stringliteral">&quot;Friday&quot;</span>,
+        <span class="stringliteral">&quot;Saturday&quot;</span>
+     };
+   ds = elm_diskselector_add(win);
+   evas_object_size_hint_weight_set(ds, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(ds, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ds);
+   <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)
+     elm_diskselector_item_append(ds, lbl[i], NULL, NULL, NULL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ds);
+</pre></div></p>
 <p>We are just adding the diskselector, so as you can see, defaults for it are: </p>
 <ul>
 <li>Only 3 items visible each time. </li>
@@ -102,11 +119,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>To add items, we are just appending it on a loop, using function elm_diskselector_item_append(), that will be better explained on items management example.</p>
 <p>For a circular diskselector, check the second widget. A circular diskselector will display first item after last, and last previous to the first one. So, as you can see, <b>Sa</b> will appears on left side of selected <b>Sunday</b>. This property is set with elm_diskselector_round_enabled_set().</p>
 <p>Also, we decide to display only 2 character for side labels, instead of 3. For this we call elm_diskselector_side_text_max_length_set(). As result, we'll see <b>Mo</b> displayed instead of <b>Mon</b>, when <b>Monday</b> is on a side position.</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>But so far, we are only displaying 3 items at once. If more are wanted, is enough to call elm_diskselector_display_item_num_set(), as you can see here: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   ds = elm_diskselector_add(win);
+   evas_object_size_hint_weight_set(ds, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(ds, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ds);
+   <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)
+     elm_diskselector_item_append(ds, lbl[i], NULL, NULL, NULL);
+   elm_diskselector_round_enabled_set(ds, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_diskselector_side_text_max_length_set(ds, 2);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ds);
+</pre></div></p>
+<p>But so far, we are only displaying 3 items at once. If more are wanted, is enough to call elm_diskselector_display_item_num_set(), as you can see here: <div class="fragment"><pre class="fragment">   ds = elm_diskselector_add(win);
+   evas_object_size_hint_weight_set(ds, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(ds, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ds);
+   <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)
+     elm_diskselector_item_append(ds, lbl[i], NULL, NULL, NULL);
+   elm_diskselector_display_item_num_set(ds, 5);
+</pre></div></p>
 <dl class="note"><dt><b>Note:</b></dt><dd>You can't set less than 3 items to be displayed.</dd></dl>
-<p>You can get the number of items in the diskselector by calling elm_diskselector_display_item_num_get(), as you can see here: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Finally, if a bounce effect is required, or you would like to see scrollbars, it is possible. But, for default theme, diskselector scrollbars will be invisible anyway. <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>You can get the number of items in the diskselector by calling elm_diskselector_display_item_num_get(), as you can see here: <div class="fragment"><pre class="fragment">   printf(<span class="stringliteral">&quot;Number of Items in DiskSelector : %d\n&quot;</span>, elm_diskselector_display_item_num_get(ds));
+</pre></div></p>
+<p>Finally, if a bounce effect is required, or you would like to see scrollbars, it is possible. But, for default theme, diskselector scrollbars will be invisible anyway. <div class="fragment"><pre class="fragment">   ds = elm_diskselector_add(win);
+   evas_object_size_hint_weight_set(ds, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(ds, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, ds);
+   <span class="keywordflow">for</span> (i = 0; i &lt; <span class="keyword">sizeof</span>(lbl) / <span class="keyword">sizeof</span>(lbl[0]); i++)
+     elm_diskselector_item_append(ds, lbl[i], NULL, NULL, NULL);
+   <a class="code" href="group__Elm__Scroller.html#gae69101dbdb089598ca790c73bd9d7a42" title="Set bouncing behavior.">elm_scroller_bounce_set</a>(ds, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   <a class="code" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set</a>(ds, <a class="code" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a9a3e639489c64f070d4caa6cafc22870">ELM_SCROLLER_POLICY_AUTO</a>,
+                           <a class="code" href="group__Elm__Scroller.html#ggae4532876fde43d8d37fc9440a1e36a84a74e67e8e341f5069ec27244c2a41053f">ELM_SCROLLER_POLICY_ON</a>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(ds);
+</pre></div></p>
 <p>See the full <a class="el" href="diskselector_example_01_8c-example.html">diskselector_example_01.c</a> code, whose window should look like this picture:</p>
 <div class="image">
 <img src="screenshots/diskselector_example_01.png" alt="diskselector_example_01.png"/>

@@ -1,0 +1,16 @@
+- name: "Platform"
+  href: "/platform/what-is-tizen/overview"
+
+- name: "Application"
+  href: "/application"
+
+- name: "IoT"
+  href: "/iot"
+
+- name: "Partners"
+  href: "/partners/specialist"
+
+- name: "Download"
+  href: "https://developer.tizen.org/development/tizen-studio/download"
+  external: true
+  

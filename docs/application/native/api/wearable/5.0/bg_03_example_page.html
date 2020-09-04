@@ -92,12 +92,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>The full code for this example can be found at <a class="el" href="bg_example_03_c.html">bg_example_03.c</a>, in the function <code>test_bg_options</code>, with the callbacks <code>_cb_overlay_changed</code>, <code>_cb_color_changed</code> and <code>_cb_radio_changed</code> defined in the beginning of the file. It's part of the <code>elementary_test</code> suite, and thus has the code for the three examples referenced by this documentation.</p>
 <p>This example will show the properties available for the background object, and will use of some more widgets to set them.</p>
-<p>In order to do this, we will set some callbacks for these widgets. The first is for the radio buttons that will be used to choose the option passed as argument to <a class="el" href="group__Elm__Bg.html#gab079cb5e5f770be10ddb4acb00434f57" title="Sets the mode of display for a given background widget&#39;s image.">elm_bg_option_set()</a>:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p>In order to do this, we will set some callbacks for these widgets. The first is for the radio buttons that will be used to choose the option passed as argument to <a class="el" href="group__Elm__Bg.html#ga2ed059b3cf946d10a12182fedc3125f9" title="Sets the mode of display for a given background widget&#39;s image.">elm_bg_option_set()</a>:</p>
+<p><div class="fragment"><pre class="fragment">_cb_radio_changed(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o_bg = data;
+
+   <a class="code" href="group__Elm__Bg.html#ga2ed059b3cf946d10a12182fedc3125f9" title="Sets the mode of display for a given background widget&#39;s image.">elm_bg_option_set</a>(o_bg, <a class="code" href="group__Elm__Radio.html#gab56d65001a82eea600b41e4873a772e6" title="Get the value of the radio group.">elm_radio_value_get</a>((<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *)obj));
+}
+</pre></div></p>
 <p>The next callback will be used when setting the overlay (using elm_object_content_set()):</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And the last one, used to set the color (with <a class="el" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8">elm_bg_color_set()</a>):</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">_cb_overlay_changed(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o_bg = data;
+
+   <span class="keywordflow">if</span> (<a class="code" href="group__Elm__Check.html#ga011ed8bd33b24ab9be27d7f162b80846" title="Get the state of the check object.">elm_check_state_get</a>(obj))
+     {
+        <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *parent, *over;
+        <span class="keywordtype">char</span> buff[PATH_MAX];
+
+        snprintf(buff, <span class="keyword">sizeof</span>(buff), <span class="stringliteral">&quot;%s/objects/test.edj&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+        parent = <a class="code" href="group__Elm__WidgetNavigation.html#ga0b5f83c403948f1418e434f3ed94973f">elm_object_parent_widget_get</a>(o_bg);
+        over = edje_object_add(evas_object_evas_get(parent));
+        edje_object_file_set(over, buff, <span class="stringliteral">&quot;bg_overlay&quot;</span>);
+        <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(o_bg, <span class="stringliteral">&quot;overlay&quot;</span>, over);
+     }
+   <span class="keywordflow">else</span>
+     <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(o_bg, <span class="stringliteral">&quot;overlay&quot;</span>, NULL);
+}
+</pre></div></p>
+<p>And the last one, used to set the color (with <a class="el" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8" title="Sets the color on a given background widget.">elm_bg_color_set()</a>):</p>
+<p><div class="fragment"><pre class="fragment">_cb_color_changed(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o_bg = data;
+   <span class="keywordtype">double</span> val = 0.0;
+
+   val = <a class="code" href="group__Elm__Spinner.html#ga0f93a325d38ad9a249994a7dc4ea4f1b" title="Control the value the spinner displays.">elm_spinner_value_get</a>(obj);
+   <span class="keywordflow">if</span> (val == 1.0)
+     <a class="code" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8" title="Sets the color on a given background widget.">elm_bg_color_set</a>(o_bg, 255, 255, 255);
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (val == 2.0)
+     <a class="code" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8" title="Sets the color on a given background widget.">elm_bg_color_set</a>(o_bg, 255, 0, 0);
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (val == 3.0)
+     <a class="code" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8" title="Sets the color on a given background widget.">elm_bg_color_set</a>(o_bg, 0, 0, 255);
+   <span class="keywordflow">else</span> <span class="keywordflow">if</span> (val == 4.0)
+     <a class="code" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8" title="Sets the color on a given background widget.">elm_bg_color_set</a>(o_bg, 0, 255, 0);
+}
+</pre></div></p>
 <p>We will get back to what these functions do soon. If you want to know more about how to set these callbacks and what these widgets are, look for: </p>
 <ul>
 <li><a class="el" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add()</a> </li>
@@ -105,26 +144,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li><a class="el" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add()</a></li>
 </ul>
 <p>Now going to the main function, <code>test_bg_options</code>, we have the common code with the other examples:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;bg-options&quot;</span>, <span class="stringliteral">&quot;Bg Options&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+</pre></div></p>
 <p>We add a plain background to this window, so it will have the default background color behind everything:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Then we add a vertical box (<a class="el" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add()</a>) that will hold the background object that we are going to play with, as well as a horizontal box that will hold widgets:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Now we add the background object that is going to be of use for our example. It is an image background, as used in <a class="el" href="bg_02_example_page.html">elm_bg - Image background.</a> , so the code should be familiar:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Notice the call to <a class="el" href="group__Elm__Box.html#ga53156bf1cf1cb90fb07a97172f72d0b6" title="Add an object at the end of the pack list.">elm_box_pack_end()</a>: it will pack the background object in the end of the Elementary box declared above. Just refer to that documentation for more info.</p>
+<p>Notice the call to <a class="el" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end()</a>: it will pack the background object in the end of the Elementary box declared above. Just refer to that documentation for more info.</p>
 <p>Since this Elementary background is already an image background, we are going to play with its other properties. We will change its option (CENTER, SCALE, STRETCH, TILE), its color (RGB), and add an overlay to it. For all of these properties, we are going to add widgets that will configure them.</p>
 <p>First, lets add the horizontal box that will hold these widgets: <div class="fragment"><pre class="fragment"></pre></div></p>
 <p>For now, just consider this <code>hbox</code> as a rectangle that will contain the widgets, and will distribute them horizontally inside its content. Then we add radio buttons that will allow us to choose the property to use with this background:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Again, I won't give details about the use of these widgets, just look for their documentation if necessary. It's enough to know for now that we are packing them in the <code>hbox</code>, setting a label for them, and the most important parts: setting its value to <code>ELM_BG_OPTION_CENTER</code> and its callback to <code>_cb_radio_changed</code> (the function defined in the beginning of this example). We do this for the next 3 radio buttons added after this one, each of them with a different value.</p>
-<p>Now taking a look at the code of the callback <code>_cb_radio_changed</code> again, it will call <a class="el" href="group__Elm__Bg.html#gab079cb5e5f770be10ddb4acb00434f57" title="Sets the mode of display for a given background widget&#39;s image.">elm_bg_option_set()</a> with the value set from the checked radio button, thus setting the option for this background. The background is passed as argument to the <code>data</code> parameter of this callback, and is referenced here as <code>o_bg</code>.</p>
+<p>Now taking a look at the code of the callback <code>_cb_radio_changed</code> again, it will call <a class="el" href="group__Elm__Bg.html#ga2ed059b3cf946d10a12182fedc3125f9" title="Sets the mode of display for a given background widget&#39;s image.">elm_bg_option_set()</a> with the value set from the checked radio button, thus setting the option for this background. The background is passed as argument to the <code>data</code> parameter of this callback, and is referenced here as <code>o_bg</code>.</p>
 <p>Later we set the default value for this radio button:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Then we add a checkbox for the elm_object_content_set() function for the bg:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Now look at the code of the <code>_cb_overlay_changed</code> again. If the checkbox state is checked, an overlay will be added to the background. It's done by creating an Edje object, and setting it with elm_object_content_set() to the background object. For information about what are and how to set Edje object, look at the Edje documentation.</p>
-<p>Finally we add a spinner object (<a class="el" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add()</a>) to be used to select the color of our background. In its callback it's possible to see the call to <a class="el" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8">elm_bg_color_set()</a>, which will change the color of this background. This color is used by the background to fill areas where the image doesn't cover (in this case, where we have an image background). The spinner is also packed into the <code>hbox</code> :</p>
+<p>Finally we add a spinner object (<a class="el" href="group__Elm__Spinner.html#gac259ed8ba5d597ceb982cc0170c37a63">elm_spinner_add()</a>) to be used to select the color of our background. In its callback it's possible to see the call to <a class="el" href="group__Elm__Bg.html#ga9431af239574a212be6988d618be5ae8" title="Sets the color on a given background widget.">elm_bg_color_set()</a>, which will change the color of this background. This color is used by the background to fill areas where the image doesn't cover (in this case, where we have an image background). The spinner is also packed into the <code>hbox</code> :</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>
 <p>Then we just have to pack the <code>hbox</code> inside the <code>box</code>, set some size hints, and show our window:</p>
 <p><div class="fragment"><pre class="fragment"></pre></div></p>

@@ -125,7 +125,7 @@ Related Features</h2>
 </p>
 <p>To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
 </p>
-<p>More details on featuring your application can be found from <a href="https://developer.tizen.org/development/getting-started/native-application/understanding-tizen-programming/application-filtering"><b>Feature List</b>.</a> </p>
+<p>More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature List</b>.</a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -154,7 +154,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__GL.html#ga46f06b7d4cd079a2fefe660fd1803943">evas_gl_string_query</a> (<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, int name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to a static, null-terminated string describing some aspect of Evas GL.  <a href="#ga46f06b7d4cd079a2fefe660fd1803943"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__GL.html#gac703a7f3596976104ab393408cf5ac39">Evas_GL_Func</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__GL.html#ga5b6e0dd030469751b00ac76e5a2f9ec1">evas_gl_proc_address_get</a> (<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, const char *name)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a extension function from the Evas_GL glue layer.  <a href="#ga5b6e0dd030469751b00ac76e5a2f9ec1"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a extension function from OpenGL or the Evas_GL glue layer.  <a href="#ga5b6e0dd030469751b00ac76e5a2f9ec1"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__GL.html#gae7830648b7ac1e33e055c4df0063bd8c">evas_gl_native_surface_get</a> (<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, <a class="el" href="group__Evas__GL.html#ga3c2530dd88bd600cccb5dc0840fc837c">Evas_GL_Surface</a> *surf, <a class="el" href="struct__Evas__Native__Surface.html">Evas_Native_Surface</a> *ns)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills in the Native Surface information from a given Evas GL surface.  <a href="#gae7830648b7ac1e33e055c4df0063bd8c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__GL.html#gac033b6a97f0f913986ef69a4ae63d8c1">Evas_GL_API</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__GL.html#gafb3bfac073afb5d6bb6d7c4b35df7bb2">evas_gl_api_get</a> (<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl)</td></tr>
@@ -310,6 +310,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration that defines the available OpenGL ES version numbers. They can be used to create OpenGL-ES 1.1 contexts. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__GL.html#ga34617a4999e7ca74429df86cf58d6ba5" title="Creates and returns a new Evas GL context object for OpenGL-ES 1.1 or 2.0.">evas_gl_context_version_create</a></dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This will only work with EGL/GLES (but not with desktop OpenGL). </dd></dl>
@@ -426,6 +427,7 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Enumeration that defines the available OpenGL ES version numbers. They can be used to create OpenGL-ES 1.1 contexts. </p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.12 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__GL.html#ga34617a4999e7ca74429df86cf58d6ba5" title="Creates and returns a new Evas GL context object for OpenGL-ES 1.1 or 2.0.">evas_gl_context_version_create</a></dd></dl>
 <dl class="remark"><dt><b>Remarks:</b></dt><dd>This will only work with EGL/GLES (but not with desktop OpenGL). </dd></dl>
@@ -437,7 +439,7 @@ Defines</h2></td></tr>
 <p>OpenGL-ES 2.x is the default </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga1b30afb1340b3409c79dbd4ad363a5c9a159d60e6a14c6377a1886dfae3f273f4"></a><!-- doxytag: member="EVAS_GL_GLES_3_X" ref="gga1b30afb1340b3409c79dbd4ad363a5c9a159d60e6a14c6377a1886dfae3f273f4" args="" -->EVAS_GL_GLES_3_X</em>&nbsp;</td><td>
-<p>OpenGL-ES 3.x (<b>Since</b> 2.4) </p>
+<p>OpenGL-ES 3.x (<b>Since:</b> 2.4) </p>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="gga1b30afb1340b3409c79dbd4ad363a5c9a8a12ada2ca4f9955f2dbd6526edf3126"></a><!-- doxytag: member="EVAS_GL_DEBUG" ref="gga1b30afb1340b3409c79dbd4ad363a5c9a8a12ada2ca4f9955f2dbd6526edf3126" args="" -->EVAS_GL_DEBUG</em>&nbsp;</td><td>
 <p>Enable debug mode on this context (See GL_KHR_debug) (<b>Since</b> 4.0) </p>
@@ -537,7 +539,7 @@ Defines</h2></td></tr>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggaf2221e9c06a3fae1d7a314dc0788f90ba482c4212188c743ea5c201de4a394c37"></a><!-- doxytag: member="EVAS_GL_OPTIONS_CLIENT_SIDE_ROTATION" ref="ggaf2221e9c06a3fae1d7a314dc0788f90ba482c4212188c743ea5c201de4a394c37" args="" -->EVAS_GL_OPTIONS_CLIENT_SIDE_ROTATION</em>&nbsp;</td><td>
 <p>Force direct rendering even if the canvas is rotated. In that case, it is the application's role to rotate the contents of the Evas_GL view. </p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__GL.html#ga10dd6f2e3a55ab38edc2848703b773c6" title="Get the current rotation of the view, in degrees.">evas_gl_rotation_get</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__GL.html#ga10dd6f2e3a55ab38edc2848703b773c6" title="Get the current rotation of the view, in degrees.">evas_gl_rotation_get</a>. </dd></dl>
 </td></tr>
 <tr><td valign="top"><em><a class="anchor" id="ggaf2221e9c06a3fae1d7a314dc0788f90ba26997d27516e72a43485d524270b0fe4"></a><!-- doxytag: member="EVAS_GL_OPTIONS_THREAD" ref="ggaf2221e9c06a3fae1d7a314dc0788f90ba26997d27516e72a43485d524270b0fe4" args="" -->EVAS_GL_OPTIONS_THREAD</em>&nbsp;</td><td>
 <p>If enabled, Evas GL pixel callback will be called by another thread instead of main thread. This option can enhance performance because Evas GL is worked with aynchronized call, but user must guarantee synchronization with pixel callback and main loop when using this flag. </p>
@@ -697,7 +699,7 @@ Defines</h2></td></tr>
 
 <p>Gets the API for rendering using OpenGL with non standard contexts. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function is similar to <a class="el" href="group__Evas__GL.html#gafb3bfac073afb5d6bb6d7c4b35df7bb2">evas_gl_api_get</a> but takes an extra Evas GL context argument as it is used to get the real API used by special contexts, that have been instanciated with <a class="el" href="group__Evas__GL.html#ga34617a4999e7ca74429df86cf58d6ba5">evas_gl_context_version_create()</a>.</dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function is similar to <a class="el" href="group__Evas__GL.html#gafb3bfac073afb5d6bb6d7c4b35df7bb2">evas_gl_api_get</a> but takes an extra Evas GL context argument as it is used to get the real API used by special contexts, that have been instantiated with <a class="el" href="group__Evas__GL.html#ga34617a4999e7ca74429df86cf58d6ba5">evas_gl_context_version_create()</a>.</dd>
 <dd>
 This function can be used to get the GL API for a OpenGL-ES 1.1 context. When using OpenGL-ES 1.1, applications should always use <a class="el" href="group__Evas__GL.html#ga27ef9aa8975f62d6e9ef552ebfc834f7">evas_gl_context_api_get</a> and never call <a class="el" href="group__Evas__GL.html#gafb3bfac073afb5d6bb6d7c4b35df7bb2">evas_gl_api_get</a> (this will always return a OpenGL-ES 2+ API).</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
@@ -911,10 +913,11 @@ GLES 3.x is supported since 2.4.</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The current Evas GL, ie. the last Evas GL passed to evas_gl_make_current</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The current Evas GL, i.e. the last Evas GL passed to evas_gl_make_current</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__GL.html#ga9ba77874faa45b94641a3f1e1547e080" title="Sets the given context as the current context for the given surface.">evas_gl_make_current</a></dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>This can be used to restore a previous context, for instance if you are writing a library that needs to work transparently with Evas GL, and may not have control over the other Evas GL objects.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1095,7 +1098,7 @@ Evas GL does not specify exactly which error codes will be returned in which cir
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if successful, otherwise <code>EINA_FALSE</code> if not</dd></dl>
-<p>This function can be called to later set this native surface as source of an Evas Object Image. Please refer to <a class="el" href="group__Evas__Object__Image.html#gaabe0ddc5e656d6c09f9f4dd85f981279">evas_object_image_native_surface_set</a>.</p>
+<p>This function can be called to later set this native surface as source of an Evas Object Image. Please refer to evas_object_image_native_surface_set.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Applications should not rely on the information set in <code>ns</code> since its properties are internal to Evas and are not meant to be tampered with in any way or form from outside Evas. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
@@ -1222,7 +1225,7 @@ The attribute list can be terminated by EVAS_GL_NONE or 0. As of now, no special
 </div>
 <div class="memdoc">
 
-<p>Returns a extension function from the Evas_GL glue layer. </p>
+<p>Returns a extension function from OpenGL or the Evas_GL glue layer. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">

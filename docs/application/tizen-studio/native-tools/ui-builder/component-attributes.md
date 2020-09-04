@@ -146,7 +146,7 @@ The following attributes are used for all `<event>` elements.
 
 ## Component Attributes - UI Container
 
-The [\<UI container\>](../../../native/guides/ui/efl/ui-layouts.md#ui-containters) is an element that has the `<UI component>` elements as children. In the `layout.xml` file, containers, such as View, Box, Grid, Panel, Panes, Scroller, and Table, are supported.
+The [`<UI container>`](../../../native/guides/ui/efl/ui-layouts.md#ui-containers) is an element that has the `<UI component>` elements as children. In the `layout.xml` file, containers, such as View, Box, Grid, Panel, Panes, Scroller, and Table, are supported.
 
 ### View
 

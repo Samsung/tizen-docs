@@ -7,11 +7,11 @@
 ### New Features
 
 - Common
-  - The name of the **Tizen SDK** has been changed to the **Tizen Studio**. The Tizen Studio 1.0 has been updated from the Tizen 2.4, and a new UX/UI has been applied to it.
+  - The name of the **Tizen SDK** has been changed to the **Tizen Studio**. Tizen Studio 1.0 has been updated from Tizen 2.4, and a new UX/UI has been applied to it.
   - The Eclipse version has been upgraded from Kepler (4.3) to Mars (4.5.2). For more information, see [https://eclipse.org/mars/noteworthy/](https://eclipse.org/mars/noteworthy/).
 - Installer, Package Manager, and Uninstaller
   - The Package Manager supports installing and removing a profile unit. You do not need to install a package one by one for a profile. By clicking the install button next to each profile, you can install all packages for the profile.
-  - The Uninstaller allows you to keep the `Data` and `Keystore` directories when you uninstall the Tizen Studio.
+  - The Uninstaller allows you to keep the `Data` and `Keystore` directories when you uninstall Tizen Studio.
 - Web and Native IDE
   - The Tizen theme has been renewed. Simple and flat design has been applied to the IDE.
   - The project wizard has been changed and improved.
@@ -49,9 +49,9 @@
 ### Changed Features
 
 - Installer, Package Manager, and Uninstaller
-  - The Tizen Studio does not support OpenJDK any longer. Also, it requires Oracle&reg; JDK 1.8 or higher.
+  - Tizen Studio does not support OpenJDK any longer. Also, it requires Oracle&reg; JDK 1.8 or higher.
   - The new UX has been applied to the Installer, Package Manager (Update Manager), and Uninstaller.
-  - The Update Manager title has been changed to **Package Manager**. The older versions of the Update Manager do not support the auto-update to the new Package Manager. If you want to use the new Package Manager, install the Tizen Studio using the new Installer.
+  - The Update Manager title has been changed to **Package Manager**. The older versions of the Update Manager do not support the auto-update to the new Package Manager. If you want to use the new Package Manager, install Tizen Studio using the new Installer.
   - The Package Manager tabs have been changed to **Main SDK**, **Extension SDK**, and **Progress**:
     - You can install, update, and remove the main packages in the **Main SDK** tab. In general, there are platforms and SDK tools for each profile in this tab.
     - You can install, update, and remove extended packages in the **Extension SDK** tab.
@@ -135,8 +135,8 @@
   - The EDC Editor application instances are limited to a single instance. However, due to a technical issue, multiple EDC Editor instances are allowed on macOS.
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an IBus (Intelligent Input Bus) bug. When the issue occurs, restart the ibus-daemon by entering the `ibus-daemon -drx` command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen emulator from [Prerequisites for the Tizen Studio](../setup/prerequisites.md#emulator).
-    - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
+  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from [Prerequisites for Tizen Studio](../setup/prerequisites.md#emulator).
+    - If the host machine is using NVIDIA&reg; Optimus&reg; technology on either Ubuntu or Windows&reg;, you must set the Tizen Emulator to run with your NVIDIA graphics card. For Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). For Windows&reg;, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the NVIDIA control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
   - On Windows&reg;, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the emulator window is covered with another window. If you click the emulator window, the display surface runs correctly again.

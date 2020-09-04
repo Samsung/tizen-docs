@@ -4,17 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Feedback API</title>
+<meta data-version="4.0" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Feedback">
- <div class="supported-platforms"><img class="wearable-optional emulator" title="Optional, Supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="wearable-optional emulator" title="Optional, Supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
 <div class="title"><h1>Feedback API</h1></div>
 <div class="brief">
  The Feedback API provides functions to play sounds or vibrations associated with device actions.
         </div>
 <div class="description">
         <p>
-For more information on the Feedback features, see <a href="https://developer.tizen.org/development/guides/web-application/device-settings-and-systems/sound-and-vibration-feedback">Feedback Guide</a>.
+For more information on the Feedback features, see <a href="/application/web/guides/device/feedback">Feedback Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -92,9 +93,9 @@ TYPE_VIBRATION - Feedback type for vibration            </li>
  Enumerations of the system predefined media or vibration patterns for feedback interface.
           </div>
 <pre class="webidl prettyprint">  enum FeedbackPattern { "TAP", "SIP", "KEY0", "KEY1", "KEY2", "KEY3", "KEY4", "KEY5", "KEY6", "KEY7", "KEY8", "KEY9", "KEY_STAR",
-    "KEY_SHARP", "KEY_BACK", "HOLD", "HW_TAP", "HW_HOLD", "MESSAGE", "EMAIL", "WAKEUP", "SCHEDULE", "TIMER", "GENERAL", "POWERON",
-    "POWEROFF", "CHARGERCONN", "CHARGING_ERROR", "FULLCHARGED", "LOWBATT", "LOCK", "UNLOCK", "VIBRATION_ON", "SILENT_OFF",
-    "BT_CONNECTED", "BT_DISCONNECTED", "LIST_REORDER", "LIST_SLIDER", "VOLUME_KEY" };</pre>
+    "KEY_SHARP", "KEY_BACK", "HOLD", "HW_TAP", "HW_HOLD", "MESSAGE", "EMAIL", "WAKEUP", "SCHEDULE", "TIMER", "GENERAL", "POWERON", "POWEROFF",
+    "CHARGERCONN", "CHARGING_ERROR", "FULLCHARGED", "LOWBATT", "LOCK", "UNLOCK", "VIBRATION_ON", "SILENT_OFF", "BT_CONNECTED",
+    "BT_DISCONNECTED", "LIST_REORDER", "LIST_SLIDER", "VOLUME_KEY" };</pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -361,8 +362,7 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var> if the pattern is supported, <var>false</var> otherwise.
               </ul>
 </div>
@@ -402,13 +402,13 @@ console.log("Pattern " + pattern + " is" + isSupported + " supported");
 <pre class="webidl prettyprint">module Feedback {
   enum FeedbackType { "TYPE_SOUND", "TYPE_VIBRATION" };
   enum FeedbackPattern { "TAP", "SIP", "KEY0", "KEY1", "KEY2", "KEY3", "KEY4", "KEY5", "KEY6", "KEY7", "KEY8", "KEY9", "KEY_STAR",
-    "KEY_SHARP", "KEY_BACK", "HOLD", "HW_TAP", "HW_HOLD", "MESSAGE", "EMAIL", "WAKEUP", "SCHEDULE", "TIMER", "GENERAL", "POWERON",
-    "POWEROFF", "CHARGERCONN", "CHARGING_ERROR", "FULLCHARGED", "LOWBATT", "LOCK", "UNLOCK", "VIBRATION_ON", "SILENT_OFF",
-    "BT_CONNECTED", "BT_DISCONNECTED", "LIST_REORDER", "LIST_SLIDER", "VOLUME_KEY" };
+    "KEY_SHARP", "KEY_BACK", "HOLD", "HW_TAP", "HW_HOLD", "MESSAGE", "EMAIL", "WAKEUP", "SCHEDULE", "TIMER", "GENERAL", "POWERON", "POWEROFF",
+    "CHARGERCONN", "CHARGING_ERROR", "FULLCHARGED", "LOWBATT", "LOCK", "UNLOCK", "VIBRATION_ON", "SILENT_OFF", "BT_CONNECTED",
+    "BT_DISCONNECTED", "LIST_REORDER", "LIST_SLIDER", "VOLUME_KEY" };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FeedbackManagerObject">FeedbackManagerObject</a>;
   [NoInterfaceObject] interface FeedbackManagerObject {
     readonly attribute <a href="#FeedbackManager">FeedbackManager</a> feedback;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#FeedbackManagerObject">FeedbackManagerObject</a>;
   [NoInterfaceObject] interface FeedbackManager {
     void play(<a href="#FeedbackPattern">FeedbackPattern</a> pattern, optional <a href="#FeedbackType">FeedbackType</a>? type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stop() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);

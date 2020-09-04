@@ -29,6 +29,7 @@ The main Tizen.Maps namespace features are:
 
 You can also [customize service requests](#preference).
 
+<a name="supported_maps"> </a>
 The following map providers are supported:
 
 -   [HERE Maps](https://developer.here.com) based on the [HERE REST API](https://developer.here.com/rest-apis).
@@ -107,7 +108,7 @@ You can [create objects in the widget](#maps_object). The following view object 
 
 The object properties can be changed after the object has been created.
 
-The map view and map object can [handle events](#maps_event). Each object has handlers to invoke callbacks for selected events of the [Tizen.Maps.MapObject](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.MapObject.html) and [Tizen.Maps.MapView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.MapView.html) classes:
+The map view and map object can [handle events](#maps_event). Each object has handlers to invoke callbacks for selected events of the [Tizen.Maps.MapObject](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.MapObject.html) and [Tizen.Maps.MapView](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.MapView.html) classes:
 
 -   Gestures
     -   `Tizen.Maps.MapView.Scrolled`: Scroll gesture is detected over the widget.
@@ -129,7 +130,7 @@ The map view and map object can [handle events](#maps_event). Each object has ha
 
 To enable your application to use the map service functionality:
 
-1.  To use the [Tizen.Maps](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Maps](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -150,7 +151,7 @@ To enable your application to use the map service functionality:
 
 To start using the map service:
 
-1.  The [Tizen.Maps.MapService](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.MapService.html) instance relies on a particular map provider. To get a list of available map providers, use the `Providers` property of the `Tizen.Maps.MapService` class:
+1.  The [Tizen.Maps.MapService](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.MapService.html) instance relies on a particular map provider. To get a list of available map providers, use the `Providers` property of the `Tizen.Maps.MapService` class:
 
     ```
     var providerList = MapService.Providers;
@@ -186,7 +187,7 @@ To start using the map service:
     bool isRoutingWaypointsSupported = maps.IsSupported(ServiceRequestType.SearchRouteWithWaypoints);
     ```
 
-    To check for the availability of other services, follow the same approach using the keys from the [Tizen.Maps.ServiceRequestType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.ServiceRequestType.html) enumerator.
+    To check for the availability of other services, follow the same approach using the keys from the [Tizen.Maps.ServiceRequestType](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.ServiceRequestType.html) enumerator.
 
 5.  Optionally, check which data features are available for the desired services using the same `IsSupported()` method:
 
@@ -201,7 +202,7 @@ To start using the map service:
     bool isRouteSegmentsManeuversSupported = maps.IsSupported(ServiceData.RouteSegmentsManeuvers);
     ```
 
-    To check the availability of other data features, follow the same approach using the keys from the [Tizen.Maps.ServiceData](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.ServiceData.html) enumerator.
+    To check the availability of other data features, follow the same approach using the keys from the [Tizen.Maps.ServiceData](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.ServiceData.html) enumerator.
 
 <a name="use_geocode"></a>
 ## Using Geocode and Reverse Geocode Services
@@ -210,7 +211,7 @@ To retrieve a geocode of a specified place, or the place information correspondi
 
 To retrieve a geocode:
 
--   To retrieve a geocode, use a string of free-formed address for the `CreateGeocodeRequest()` method of the [Tizen.Maps.MapService](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.MapService.html) object:
+-   To retrieve a geocode, use a string of free-formed address for the `CreateGeocodeRequest()` method of the [Tizen.Maps.MapService](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.MapService.html) object:
 
     ```
     try
@@ -228,7 +229,7 @@ To retrieve a geocode:
     }
     ```
 
--   To retrieve a geocode inside a specified area, use a string and an instance of the [Tizen.Maps.Area](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.Area.html) object for the `CreateGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
+-   To retrieve a geocode inside a specified area, use a string and an instance of the [Tizen.Maps.Area](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.Area.html) object for the `CreateGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
 
     ```
     try
@@ -247,7 +248,7 @@ To retrieve a geocode:
     }
     ```
 
--   To retrieve places specified as a structured address, use an instance of the [Tizen.Maps.PlaceAddress](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.PlaceAddress.html) object for the `CreateGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
+-   To retrieve places specified as a structured address, use an instance of the [Tizen.Maps.PlaceAddress](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.PlaceAddress.html) object for the `CreateGeocodeRequest()` method of the `Tizen.Maps.MapService` object:
 
     ```
     try
@@ -316,7 +317,7 @@ To retrieve a reverse geocode:
 
 To search for a place with a diversity of search parameters, use one of the following approaches. The service requests can be [customized](#preference).
 
--   To retrieve places within a specified distance around the center coordinates, use an instance of the [Tizen.Maps.Geocoordinates](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.Geocoordinates.html) object for the `CreatePlaceSearchRequest()` method of the [Tizen.Maps.MapService](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.MapService.html) object:
+-   To retrieve places within a specified distance around the center coordinates, use an instance of the [Tizen.Maps.Geocoordinates](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.Geocoordinates.html) object for the `CreatePlaceSearchRequest()` method of the [Tizen.Maps.MapService](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.MapService.html) object:
 
     ```
     try
@@ -335,7 +336,7 @@ To search for a place with a diversity of search parameters, use one of the foll
     }
     ```
 
--   To retrieve places within a specified geographic boundary, use an instance of the [Tizen.Maps.Area](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.Area.html) object for the `CreatePlaceSearchRequest()` method of the `Tizen.Maps.MapService` object:
+-   To retrieve places within a specified geographic boundary, use an instance of the [Tizen.Maps.Area](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.Area.html) object for the `CreatePlaceSearchRequest()` method of the `Tizen.Maps.MapService` object:
 
     ```
     try
@@ -460,7 +461,7 @@ To customize the service request:
     }
     ```
 
--   To prepare preferences for the routing service, use the [Tizen.Maps.SearchPreference](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.SearchPreference.html) or [Tizen.Maps.IRouteSearchPreference](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.IRouteSearchPreference.html) methods.
+-   To prepare preferences for the routing service, use the [Tizen.Maps.SearchPreference](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.SearchPreference.html) or [Tizen.Maps.IRouteSearchPreference](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.IRouteSearchPreference.html) methods.
 
     The example from [Using the Routing Service](#use_search_route) can be modified as follows to include the customized preferences:
 
@@ -497,7 +498,7 @@ If your map provider requires any specific preferences, use the `Tizen.Maps.Sear
 
 To use the map view:
 
-1.  Before you use the view features, create a [Tizen.Maps.MapView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.MapView.html) instance:
+1.  Before you use the view features, create a [Tizen.Maps.MapView](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.MapView.html) instance:
 
     ```
     try
@@ -518,7 +519,7 @@ To use the map view:
 2.  Set the map view properties:
     -   Set the map view type with the `MapType` property of the `Tizen.Maps.MapView` class.
 
-        For other available types, see the [Tizen.Maps.MapTypes](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.MapTypes.html) enumerator.
+        For other available types, see the [Tizen.Maps.MapTypes](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.MapTypes.html) enumerator.
 
         ```
         mapview.MapType = MapTypes.Satellite;
@@ -557,7 +558,7 @@ To use the map view:
 
 
     > **Note**   
-	> To check whether a feature is supported, use `IsSupported()` method of the [Tizen.Maps.MapService](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.MapService.html) class with the [Tizen.Maps.ServiceData](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.ServiceData.html) enumerator.
+	> To check whether a feature is supported, use `IsSupported()` method of the [Tizen.Maps.MapService](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.MapService.html) class with the [Tizen.Maps.ServiceData](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.ServiceData.html) enumerator.
 
 
 
@@ -661,7 +662,7 @@ To create a map view object:
 
 To add a map view object to a map view widget:
 
-1.  Add the object instance to the map view with the `Add()` method of the [Tizen.Maps.MapView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Maps.MapView.html) class:
+1.  Add the object instance to the map view with the `Add()` method of the [Tizen.Maps.MapView](https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.MapView.html) class:
 
     ```
     mapview.Add(pin);

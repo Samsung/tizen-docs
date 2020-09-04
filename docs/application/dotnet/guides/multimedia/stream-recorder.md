@@ -22,11 +22,11 @@ The main features of the `Tizen.Multimedia.StreamRecorder` class include:
         -   Video: MP4 and 3GP
         -   Audio: AMR, AAC, and WAV
 
-        The supported file formats are defined in the [Tizen.Multimedia.RecorderFileFormat](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
+        The supported file formats are defined in the [Tizen.Multimedia.RecorderFileFormat](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderFileFormat.html) enumeration.
 
     -   You can use various video and audio encoders.
 
-        The available video and audio codecs are defined in the [Tizen.Multimedia.RecorderVideoCodec](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderVideoCodec.html) and [Tizen.Multimedia.RecorderAudioCodec](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.RecorderAudioCodec.html) enumerations.
+        The available video and audio codecs are defined in the [Tizen.Multimedia.RecorderVideoCodec](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderVideoCodec.html) and [Tizen.Multimedia.RecorderAudioCodec](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.RecorderAudioCodec.html) enumerations.
 
 Valid input sources consist of external sources, such as a live buffer passed by the application. Most operations of the stream recorder work synchronously.
 
@@ -38,17 +38,28 @@ The following figure illustrates general stream recorder state changes. Use the 
 
 ## Prerequisites
 
-To use the methods and properties of the [Tizen.Multimedia.StreamRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.html) class, include the [Tizen.Multimedia](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.html) namespace in your application:
+To enable your application to use the stream recording functionality:
 
-```
-using Tizen.Multimedia;
-```
+1. To use the [Tizen.Multimedia.StreamRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorder.html) class, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+
+    ```
+    <privileges>
+       <privilege>http://tizen.org/privilege/mediastorage</privilege>
+       <privilege>http://tizen.org/privilege/externalstorage</privilege>
+    </privileges>
+    ```
+
+2. To use the methods and properties of the [Tizen.Multimedia.StreamRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorder.html) class, include the [Tizen.Multimedia](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.html) namespace in your application:
+
+    ```
+    using Tizen.Multimedia;
+    ```
 
 <a name="manage"></a>
 ## Managing Recording Options
 
 To define recording options for video recording:
-1.  Create an instance of the [Tizen.Multimedia.StreamRecorderOptions](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorderOptions.html) class with the output path and file format for the recorded media stream:
+1.  Create an instance of the [Tizen.Multimedia.StreamRecorderOptions](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorderOptions.html) class with the output path and file format for the recorded media stream:
 
     ```
     var options = new StreamRecorderOptions(SavePath, RecorderFileFormat.Mp4);
@@ -56,7 +67,7 @@ To define recording options for video recording:
 
     You can check which file formats the device supports using the `GetSupportedFileFormats()` method of the `Tizen.Multimedia.StreamRecorder` class.
 
-2.  Define the video recording options in the `Video` property of the `Tizen.Multimedia.StreamRecorderOptions` class, using an instance of the [Tizen.Multimedia.StreamRecorderVideoOptions](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorderVideoOptions.html) class:
+2.  Define the video recording options in the `Video` property of the `Tizen.Multimedia.StreamRecorderOptions` class, using an instance of the [Tizen.Multimedia.StreamRecorderVideoOptions](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorderVideoOptions.html) class:
 
     ```
     options.Video = new StreamRecorderVideoOptions(codec: RecorderVideoCodec.H263,
@@ -66,7 +77,7 @@ To define recording options for video recording:
                                                    bitRate: 288000);
     ```
 
-    To get a list of video codecs the device supports, use the `GetSupportedVideoCodecs()` method of the [Tizen.Multimedia.StreamRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.html) class. The following example retrieves the first supported codec found:
+    To get a list of video codecs the device supports, use the `GetSupportedVideoCodecs()` method of the [Tizen.Multimedia.StreamRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorder.html) class. The following example retrieves the first supported codec found:
 
     ```
     var streamRecorder = new StreamRecorder();
@@ -78,7 +89,7 @@ To define recording options for video recording:
 	 > Even if a higher bitrate is set, the recording bitrate is limited by that of the stream buffer pushed.
 
 
-Similarly, to record an audio stream, define the audio recording options in the `Audio` property of the `StreamRecorderOptions` class instance, using an instance of the [Tizen.Multimedia.StreamRecorderAudioOptions](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorderAudioOptions.html) class.
+Similarly, to record an audio stream, define the audio recording options in the `Audio` property of the `StreamRecorderOptions` class instance, using an instance of the [Tizen.Multimedia.StreamRecorderAudioOptions](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorderAudioOptions.html) class.
 
 <a name="packet"></a>
 ## Creating a Media Packet
@@ -94,14 +105,14 @@ var mediaPacket = MediaPacket.Create(videoFormat);
 mediaPacket.Buffer.CopyFrom(rawbuffer, 0, rawbuffer.length);
 ```
 
-The media packet must be created for each buffer captured from the source and passed to the `PushBuffer()` method of the [Tizen.Multimedia.StreamRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.html) class when the stream recorder is prepared to record.
+The media packet must be created for each buffer captured from the source and passed to the `PushBuffer()` method of the [Tizen.Multimedia.StreamRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorder.html) class when the stream recorder is prepared to record.
 
 <a name="record_stream"></a>
 ## Recording a Stream
 
 To record a stream:
 
-1.  Call the `Prepare()` method of the [Tizen.Multimedia.StreamRecorder](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorder.html) class with a [Tizen.Multimedia.StreamRecorderOptions](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.StreamRecorderOptions.html) instance:
+1.  Call the `Prepare()` method of the [Tizen.Multimedia.StreamRecorder](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorder.html) class with a [Tizen.Multimedia.StreamRecorderOptions](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.StreamRecorderOptions.html) instance:
 
     ```
     streamRecorder.Prepare(options);

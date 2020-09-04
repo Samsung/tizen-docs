@@ -123,6 +123,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         <span class="keywordflow">return</span> EXIT_FAILURE;
      }
 
+   <a class="code" href="group__Eina__Log__Group.html#ga3588dded50cc324ab6f84da2f328bd8e" title="Sets the default log level.">eina_log_level_set</a>(<a class="code" href="group__Eina__Log__Group.html#gga326699509b2e7578ace7c0a15b4a8c1aae6fda047b87c6d22a23cbb7143dd2fe8">EINA_LOG_LEVEL_WARN</a>);
+
    test_warn();
 
    <a class="code" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown</a>();
@@ -187,10 +189,8 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Default logging method, this will output to standard error stream.  <a href="#ga38af538700301b2aa201e92837ca9c46"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga8bae9ff20acfb94f8dcb29b66440123d">eina_log_print_cb_file</a> (const <a class="el" href="group__Eina__Log__Group.html#ga3e8bc7f3b9aa9140d1e5b91baf08ebe8">Eina_Log_Domain</a> *d, <a class="el" href="group__Eina__Log__Group.html#ga5c0cd3a8463b76bb855805b70f58c7dd">Eina_Log_Level</a> level, const char *file, const char *fnc, int line, const char *fmt, void *data, va_list args)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternative logging method, this will output to given file stream.  <a href="#ga8bae9ff20acfb94f8dcb29b66440123d"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga2174d66ed735f236582f5bb947c58ad9">eina_log_print_cb_syslog</a> (const <a class="el" href="group__Eina__Log__Group.html#ga3e8bc7f3b9aa9140d1e5b91baf08ebe8">Eina_Log_Domain</a> *d, <a class="el" href="group__Eina__Log__Group.html#ga5c0cd3a8463b76bb855805b70f58c7dd">Eina_Log_Level</a> level, const char *file, const char *fnc, int line, const char *fmt, void *data, va_list args)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternative logging function, this outputs to the system log.  <a href="#ga2174d66ed735f236582f5bb947c58ad9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga6b686425922b1117946cf869e18bc672">eina_log_print_cb_journald</a> (const <a class="el" href="group__Eina__Log__Group.html#ga3e8bc7f3b9aa9140d1e5b91baf08ebe8">Eina_Log_Domain</a> *d, <a class="el" href="group__Eina__Log__Group.html#ga5c0cd3a8463b76bb855805b70f58c7dd">Eina_Log_Level</a> level, const char *file, const char *fnc, int line, const char *fmt, void *data, va_list args)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternative logging method, this will output to systemd journal.  <a href="#ga6b686425922b1117946cf869e18bc672"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Alternative logging function, this outputs to the system log.  <a href="#ga6b686425922b1117946cf869e18bc672"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga8dcfef1baf5777089448b212b05899e2">eina_log_console_color_set</a> (FILE *fp, const char *color)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures console color of given file.  <a href="#ga8dcfef1baf5777089448b212b05899e2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#gaf1521fab496ea03a641f44868c7da5ce">eina_log_timing</a> (int domain, <a class="el" href="group__Eina__Log__Group.html#gadfcd7fc51aaa188de388a7f4c6164d83">Eina_Log_State</a> state, const char *phase)</td></tr>
@@ -215,8 +215,8 @@ Defines</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#gafb145e82df0f9441244832c94e87a21b">EINA_LOG_INFO</a>(fmt,...)&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#ga00e2a10370282673064d2bd3579b463c">EINA_LOG</a>(<a class="el" href="group__Eina__Log__Group.html#ga41d6e3b51ce5f50ef403428776a02626">EINA_LOG_DOMAIN_DEFAULT</a>, <a class="el" href="group__Eina__Log__Group.html#gga326699509b2e7578ace7c0a15b4a8c1aa0368139789af856a6ad9bbe4f21d195f">EINA_LOG_LEVEL_INFO</a>, fmt, ## __VA_ARGS__)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga21c44f66537533db16ee8f475ae2ae70">EINA_LOG_WARN</a>(fmt,...)&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#ga00e2a10370282673064d2bd3579b463c">EINA_LOG</a>(<a class="el" href="group__Eina__Log__Group.html#ga41d6e3b51ce5f50ef403428776a02626">EINA_LOG_DOMAIN_DEFAULT</a>, <a class="el" href="group__Eina__Log__Group.html#gga326699509b2e7578ace7c0a15b4a8c1aae6fda047b87c6d22a23cbb7143dd2fe8">EINA_LOG_LEVEL_WARN</a>, fmt, ## __VA_ARGS__)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga09b88349373c2158f988d72375af5849">EINA_LOG_DBG</a>(fmt,...)&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#ga00e2a10370282673064d2bd3579b463c">EINA_LOG</a>(<a class="el" href="group__Eina__Log__Group.html#ga41d6e3b51ce5f50ef403428776a02626">EINA_LOG_DOMAIN_DEFAULT</a>, <a class="el" href="group__Eina__Log__Group.html#gga326699509b2e7578ace7c0a15b4a8c1aafdc5a5cfb78f5e4d5851447ed798af50">EINA_LOG_LEVEL_DBG</a>, fmt, ## __VA_ARGS__)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga079e9de9602815a6de0d5188b65c07a2">EINA_LOG_STATE_INIT</a>&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#gae6f969b21b4b371519f8ab4705eb2fa4">_eina_log_state_init</a></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga527ad9352599d503a53bf834868d3461">EINA_LOG_STATE_SHUTDOWN</a>&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#ga18925c475ddee5bb69f8f58c7ba7abf6">_eina_log_state_shutdown</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga079e9de9602815a6de0d5188b65c07a2">EINA_LOG_STATE_INIT</a>&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#ga1ca2677482690721c72321ff0fc14973">_eina_log_state_init</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Log__Group.html#ga527ad9352599d503a53bf834868d3461">EINA_LOG_STATE_SHUTDOWN</a>&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#ga1e7a4d48261d22d66934e22d784c7862">_eina_log_state_shutdown</a></td></tr>
 </table>
 <hr/><h2>Define Documentation</h2>
 <a class="anchor" id="ga00e2a10370282673064d2bd3579b463c"></a><!-- doxytag: member="eina_log.h::EINA_LOG" ref="ga00e2a10370282673064d2bd3579b463c" args="(DOM, LEVEL, fmt,...)" -->
@@ -556,7 +556,7 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Logs a message with level ERROR on the default domain with the specified format. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_log_02_8c-example.html#a1">eina_log_02.c</a>, and <a class="el" href="eina_simple_xml_parser_01_8c-example.html#a8">eina_simple_xml_parser_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_log_02_8c-example.html#a1">eina_log_02.c</a>, and <a class="el" href="eina_simple_xml_parser_01_8c-example.html#a3">eina_simple_xml_parser_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -594,11 +594,13 @@ Defines</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="group__Eina__Log__Group.html#ga079e9de9602815a6de0d5188b65c07a2">EINA_LOG_STATE_INIT</a>&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#gae6f969b21b4b371519f8ab4705eb2fa4">_eina_log_state_init</a></td>
+          <td class="memname">#define <a class="el" href="group__Eina__Log__Group.html#ga079e9de9602815a6de0d5188b65c07a2">EINA_LOG_STATE_INIT</a>&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#ga1ca2677482690721c72321ff0fc14973">_eina_log_state_init</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>String that indicates the log system is initializing</p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
 <p>String that indicates the log system is initializing </p>
 
 </div>
@@ -608,7 +610,7 @@ Defines</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define <a class="el" href="group__Eina__Log__Group.html#ga527ad9352599d503a53bf834868d3461">EINA_LOG_STATE_SHUTDOWN</a>&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#ga18925c475ddee5bb69f8f58c7ba7abf6">_eina_log_state_shutdown</a></td>
+          <td class="memname">#define <a class="el" href="group__Eina__Log__Group.html#ga527ad9352599d503a53bf834868d3461">EINA_LOG_STATE_SHUTDOWN</a>&#160;&#160;&#160;<a class="el" href="group__Eina__Log__Group.html#ga1e7a4d48261d22d66934e22d784c7862">_eina_log_state_shutdown</a></td>
         </tr>
       </table>
 </div>
@@ -777,8 +779,8 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, any messages with level equal or smaller than <a class="el" href="group__Eina__Log__Group.html#ga7b23128aa5512aff0a4698a5cfa9a2e9" title="Gets level that triggers abort if abort-on-critical is set.">eina_log_abort_on_critical_level_get()</a> will abort the program.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gafd5bd8f8b44c19d0970bd21bb2d72e34" title="Sets if critical messages should abort the program.">eina_log_abort_on_critical_set()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Log__Group.html#gaa1f9627ef1c76a369e38c02971c634a7" title="Sets level that triggers abort if abort-on-critical is set.">eina_log_abort_on_critical_level_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<a class="el" href="group__Eina__Log__Group.html#gaa1f9627ef1c76a369e38c02971c634a7" title="Sets level that triggers abort if abort-on-critical is set.">eina_log_abort_on_critical_level_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -801,8 +803,8 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Critical level equal or smaller than value will trigger program abortion if <a class="el" href="group__Eina__Log__Group.html#ga6ac58025ffeb43fc110317cf3d3c9831" title="Gets if critical messages should abort the program.">eina_log_abort_on_critical_get()</a> returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gaa1f9627ef1c76a369e38c02971c634a7" title="Sets level that triggers abort if abort-on-critical is set.">eina_log_abort_on_critical_level_set()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Log__Group.html#ga6ac58025ffeb43fc110317cf3d3c9831" title="Gets if critical messages should abort the program.">eina_log_abort_on_critical_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<a class="el" href="group__Eina__Log__Group.html#ga6ac58025ffeb43fc110317cf3d3c9831" title="Gets if critical messages should abort the program.">eina_log_abort_on_critical_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -824,15 +826,15 @@ Defines</h2></td></tr>
 <p>Sets level that triggers abort if abort-on-critical is set. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">critical_level</td><td>Levels equal or smaller than the given value will trigger program abortion if <a class="el" href="group__Eina__Log__Group.html#ga6ac58025ffeb43fc110317cf3d3c9831" title="Gets if critical messages should abort the program.">eina_log_abort_on_critical_get()</a> returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">critical_level</td><td>Levels equal or smaller than the given value will trigger program abortion if <a class="el" href="group__Eina__Log__Group.html#ga6ac58025ffeb43fc110317cf3d3c9831" title="Gets if critical messages should abort the program.">eina_log_abort_on_critical_get()</a> returns <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>this is initially set to envvar EINA_LOG_ABORT_LEVEL by <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga7b23128aa5512aff0a4698a5cfa9a2e9" title="Gets level that triggers abort if abort-on-critical is set.">eina_log_abort_on_critical_level_get()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Log__Group.html#ga6ac58025ffeb43fc110317cf3d3c9831" title="Gets if critical messages should abort the program.">eina_log_abort_on_critical_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<a class="el" href="group__Eina__Log__Group.html#ga6ac58025ffeb43fc110317cf3d3c9831" title="Gets if critical messages should abort the program.">eina_log_abort_on_critical_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -854,15 +856,15 @@ Defines</h2></td></tr>
 <p>Sets if critical messages should abort the program. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">abort_on_critical</td><td>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, messages with level equal or smaller than <a class="el" href="group__Eina__Log__Group.html#ga7b23128aa5512aff0a4698a5cfa9a2e9" title="Gets level that triggers abort if abort-on-critical is set.">eina_log_abort_on_critical_level_get()</a> will abort the program.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">abort_on_critical</td><td>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, messages with level equal or smaller than <a class="el" href="group__Eina__Log__Group.html#ga7b23128aa5512aff0a4698a5cfa9a2e9" title="Gets level that triggers abort if abort-on-critical is set.">eina_log_abort_on_critical_level_get()</a> will abort the program.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>this is initially set to envvar EINA_LOG_ABORT by <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga6ac58025ffeb43fc110317cf3d3c9831" title="Gets if critical messages should abort the program.">eina_log_abort_on_critical_get()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Log__Group.html#gaa1f9627ef1c76a369e38c02971c634a7" title="Sets level that triggers abort if abort-on-critical is set.">eina_log_abort_on_critical_level_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<a class="el" href="group__Eina__Log__Group.html#gaa1f9627ef1c76a369e38c02971c634a7" title="Sets level that triggers abort if abort-on-critical is set.">eina_log_abort_on_critical_level_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -883,8 +885,8 @@ Defines</h2></td></tr>
 
 <p>Determines if color logging is enabled or disabled. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, color logging is disabled.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gac034e165604088379530e6c67f0233d6" title="Enables or disables colored text in the logs.">eina_log_color_disable_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gac034e165604088379530e6c67f0233d6" title="Enables or disables colored text in the logs.">eina_log_color_disable_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -906,13 +908,13 @@ Defines</h2></td></tr>
 <p>Enables or disables colored text in the logs. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">disabled</td><td>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, color logging should be disabled.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">disabled</td><td>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, color logging should be disabled.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>this is initially set to envvar EINA_LOG_COLOR_DISABLE by <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga77a96439127b855203bb7f6ba711ada5" title="Determines if color logging is enabled or disabled.">eina_log_color_disable_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga77a96439127b855203bb7f6ba711ada5" title="Determines if color logging is enabled or disabled.">eina_log_color_disable_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -944,16 +946,16 @@ Defines</h2></td></tr>
 <p>Configures console color of given file. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">fp</td><td>File to configure console color (usually stderr or stdout). </td></tr>
-    <tr><td class="paramname">color</td><td>A VT color code such as EINA_COLOR_RED or EINA_COLOR_RESET.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fp</td><td>File to configure console color (usually stderr or stdout). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>A VT color code such as EINA_COLOR_RED or EINA_COLOR_RESET.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>If color is disabled, nothing is done. See <a class="el" href="group__Eina__Log__Group.html#ga77a96439127b855203bb7f6ba711ada5" title="Determines if color logging is enabled or disabled.">eina_log_color_disable_get()</a> </dd>
 <dd>
 On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -975,15 +977,15 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <p>Gets the domain level given its name. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">domain_name</td><td>Domain name to retrieve the level. It may be of a still not registered domain. If the domain is not registered yet, but there is a pending value, either from <a class="el" href="group__Eina__Log__Group.html#gae44848ef2d3ce7b407d62f3de0036913" title="Sets the domain level given its name.">eina_log_domain_level_set()</a>,EINA_LOG_LEVELS environment variable or from EINA_LOG_LEVELS_GLOB, these are returned. If nothing else was found, then the global/default level (<a class="el" href="group__Eina__Log__Group.html#ga91a8e7d7cfd25939b64589212d391c38" title="Gets the default log level.">eina_log_level_get()</a>) is returned.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain_name</td><td>Domain name to retrieve the level. It may be of a still not registered domain. If the domain is not registered yet, but there is a pending value, either from <a class="el" href="group__Eina__Log__Group.html#gae44848ef2d3ce7b407d62f3de0036913" title="Sets the domain level given its name.">eina_log_domain_level_set()</a>,EINA_LOG_LEVELS environment variable or from EINA_LOG_LEVELS_GLOB, these are returned. If nothing else was found, then the global/default level (<a class="el" href="group__Eina__Log__Group.html#ga91a8e7d7cfd25939b64589212d391c38" title="Gets the default log level.">eina_log_level_get()</a>) is returned.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Level to use to limit <a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a> for given domain. On error (<code>domain_name</code> == NULL), EINA_LOG_LEVEL_UNKNOWN is returned.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gae44848ef2d3ce7b407d62f3de0036913" title="Sets the domain level given its name.">eina_log_domain_level_set()</a> </dd>
 <dd>
-<a class="el" href="group__Eina__Log__Group.html#gaf923006303d86304c2a24f3299aaafe8" title="Gets the domain level given its identifier.">eina_log_domain_registered_level_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<a class="el" href="group__Eina__Log__Group.html#gaf923006303d86304c2a24f3299aaafe8" title="Gets the domain level given its identifier.">eina_log_domain_registered_level_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1016,8 +1018,8 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <p>This call has the same effect as setting EINA_LOG_LEVELS=&lt;<code>domain_name&gt;</code>:&lt;<code>level&gt;</code> </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">domain_name</td><td>Domain name to change the level. It may be of a still not registered domain. If the domain is not registered yet, it will be saved as a pending set and applied upon registration. </td></tr>
-    <tr><td class="paramname">level</td><td>Level to use to limit <a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a> for given domain.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain_name</td><td>Domain name to change the level. It may be of a still not registered domain. If the domain is not registered yet, it will be saved as a pending set and applied upon registration. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Level to use to limit <a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a> for given domain.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1051,12 +1053,12 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <div class="memdoc">
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>Domain name </td></tr>
-    <tr><td class="paramname">color</td><td>Color of the domain name</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>Domain name </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">color</td><td>Color of the domain name</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>Domain index that will be used as the DOMAIN parameter on log macros. A negative return value means an log occurred.</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>Domain index that will be used as the DOMAIN parameter on log macros. A negative return value means an error occurred.</dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>MT: Safe to call from any thread.</dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
@@ -1080,12 +1082,12 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <p>Gets the domain level given its identifier. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">domain</td><td>Identifier, so it must be previously registered with <a class="el" href="group__Eina__Log__Group.html#gabdd5fedabf0f175017222bfbc78e86b4">eina_log_domain_register()</a>. It's a much faster version of <a class="el" href="group__Eina__Log__Group.html#gab2027f5a6e7554dcff6a58dfc92f5550" title="Gets the domain level given its name.">eina_log_domain_level_get()</a>, but relies on domain being present.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>Identifier, so it must be previously registered with <a class="el" href="group__Eina__Log__Group.html#gabdd5fedabf0f175017222bfbc78e86b4">eina_log_domain_register()</a>. It's a much faster version of <a class="el" href="group__Eina__Log__Group.html#gab2027f5a6e7554dcff6a58dfc92f5550" title="Gets the domain level given its name.">eina_log_domain_level_get()</a>, but relies on domain being present.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if level should be printed, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if not. (domain's level is greater or equal <em>level</em>).</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if level should be printed, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> if not. (domain's level is greater or equal <em>level</em>). </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1117,13 +1119,13 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <p>Sets the domain level given its identifier. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">domain</td><td>Identifier, so it must be previously registered with <a class="el" href="group__Eina__Log__Group.html#gabdd5fedabf0f175017222bfbc78e86b4">eina_log_domain_register()</a>. It's a much faster version of <a class="el" href="group__Eina__Log__Group.html#gab2027f5a6e7554dcff6a58dfc92f5550" title="Gets the domain level given its name.">eina_log_domain_level_get()</a>, but relies on domain being present. </td></tr>
-    <tr><td class="paramname">level</td><td>Level to use to limit <a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a> for given domain. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>Identifier, so it must be previously registered with <a class="el" href="group__Eina__Log__Group.html#gabdd5fedabf0f175017222bfbc78e86b4">eina_log_domain_register()</a>. It's a much faster version of <a class="el" href="group__Eina__Log__Group.html#gab2027f5a6e7554dcff6a58dfc92f5550" title="Gets the domain level given its name.">eina_log_domain_level_get()</a>, but relies on domain being present. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Level to use to limit <a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a> for given domain. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1145,7 +1147,7 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <p>Forgets about a logging domain registered by <a class="el" href="group__Eina__Log__Group.html#gabdd5fedabf0f175017222bfbc78e86b4">eina_log_domain_register()</a> </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">domain</td><td>Domain identifier as reported by <a class="el" href="group__Eina__Log__Group.html#gabdd5fedabf0f175017222bfbc78e86b4">eina_log_domain_register()</a>, must be &gt;= 0.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>Domain identifier as reported by <a class="el" href="group__Eina__Log__Group.html#gabdd5fedabf0f175017222bfbc78e86b4">eina_log_domain_register()</a>, must be &gt;= 0.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1171,8 +1173,8 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 
 <p>Gets if originating file name logging should be disabled. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, file name logging should be disabled.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga85ea9e96d9907172d24dfbd43158c04a" title="Sets if originating file name logging should be disabled.">eina_log_file_disable_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga85ea9e96d9907172d24dfbd43158c04a" title="Sets if originating file name logging should be disabled.">eina_log_file_disable_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1194,13 +1196,13 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <p>Sets if originating file name logging should be disabled. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">disabled</td><td>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, file name logging should be disabled.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">disabled</td><td>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, file name logging should be disabled.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>this is initially set to envvar EINA_LOG_FILE_DISABLE by <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gaf1b681a61bb7fb83294fd89665f39047" title="Gets if originating file name logging should be disabled.">eina_log_file_disable_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gaf1b681a61bb7fb83294fd89665f39047" title="Gets if originating file name logging should be disabled.">eina_log_file_disable_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1221,8 +1223,8 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 
 <p>Gets if originating function name logging should be disabled. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, function name logging should be disabled.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gafd20b0417b03d215dab420d29ab14ff5" title="Sets if originating function name logging should be disabled.">eina_log_function_disable_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gafd20b0417b03d215dab420d29ab14ff5" title="Sets if originating function name logging should be disabled.">eina_log_function_disable_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1244,13 +1246,13 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <p>Sets if originating function name logging should be disabled. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">disabled</td><td>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, function name logging should be disabled.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">disabled</td><td>If <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>, function name logging should be disabled.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>this is initially set to envvar EINA_LOG_FUNCTION_DISABLE by <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga9c65b1b471b68f50c584adf1b916885e" title="Gets if originating function name logging should be disabled.">eina_log_function_disable_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga9c65b1b471b68f50c584adf1b916885e" title="Gets if originating function name logging should be disabled.">eina_log_function_disable_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1270,6 +1272,12 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <div class="memdoc">
 
 <p>Determines if a given <code>level</code> should be logged. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>The log level to check</td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the <code>level</code> should be logged, else <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>.</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga3588dded50cc324ab6f84da2f328bd8e" title="Sets the default log level.">eina_log_level_set()</a> </dd></dl>
 
@@ -1292,8 +1300,8 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 
 <p>Gets the default log level. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The log level that limits <a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga3588dded50cc324ab6f84da2f328bd8e" title="Sets the default log level.">eina_log_level_set()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga3588dded50cc324ab6f84da2f328bd8e" title="Sets the default log level.">eina_log_level_set()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1315,15 +1323,16 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <p>Sets the default log level. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">level</td><td>The log level.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>The log level.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function sets the log level <code>level</code>. It is used in <a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>this is initially set to envvar EINA_LOG_LEVEL by <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a>.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga91a8e7d7cfd25939b64589212d391c38" title="Gets the default log level.">eina_log_level_get()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#ga91a8e7d7cfd25939b64589212d391c38" title="Gets the default log level.">eina_log_level_get()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_log_01_8c-example.html#a2">eina_log_01.c</a>, and <a class="el" href="eina_log_02_8c-example.html#a4">eina_log_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gac5ce77a36dc70b40f8d6708135829917"></a><!-- doxytag: member="eina_log.h::eina_log_main_thread_check" ref="gac5ce77a36dc70b40f8d6708135829917" args="(void)" -->
@@ -1343,8 +1352,8 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 
 <p>Checks if current thread is the main thread. </p>
 <p>If there is no thread support (compiled with --disable-pthreads) or threads were not enabled, then <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> is returned. The only case where <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> is returned is when threads were successfully enabled but the current thread is not the one that called eina_log_threads_init() (the main thread).</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the current thread is the one that called eina_log_threads_init(), otherwise <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if the current thread is the one that called eina_log_threads_init(), otherwise <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1407,19 +1416,19 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <dl class="note"><dt><b>Note:</b></dt><dd>Usually you'll not use this function directly but the helper macros <a class="el" href="group__Eina__Log__Group.html#ga00e2a10370282673064d2bd3579b463c">EINA_LOG()</a>, <a class="el" href="group__Eina__Log__Group.html#ga50e2b86707c08c89e49759cb31b7b91c">EINA_LOG_DOM_CRIT()</a>, <a class="el" href="group__Eina__Log__Group.html#ga5b50827f35399f9ff87f5d9d817c764a">EINA_LOG_CRIT()</a> and so on. See eina_log.h</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">domain</td><td>Logging domain to use or <code>EINA_LOG_DOMAIN_GLOBAL</code> if you registered none. It is recommended that modules and applications have their own logging domain. </td></tr>
-    <tr><td class="paramname">level</td><td>Message level, those with level greater than user specified value (<a class="el" href="group__Eina__Log__Group.html#ga3588dded50cc324ab6f84da2f328bd8e" title="Sets the default log level.">eina_log_level_set()</a> or environment variables EINA_LOG_LEVEL, EINA_LOG_LEVELS) will be ignored. </td></tr>
-    <tr><td class="paramname">file</td><td>Filename that originated the call, must <b>not</b> be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">function</td><td>Function that originated the call, must <b>not</b> be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">line</td><td>Originating line in <em>file</em>. </td></tr>
-    <tr><td class="paramname">fmt</td><td>Printf-like format to use. Should not provide trailing '<br/>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>Logging domain to use or <code>EINA_LOG_DOMAIN_GLOBAL</code> if you registered none. It is recommended that modules and applications have their own logging domain. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Message level, those with level greater than user specified value (<a class="el" href="group__Eina__Log__Group.html#ga3588dded50cc324ab6f84da2f328bd8e" title="Sets the default log level.">eina_log_level_set()</a> or environment variables EINA_LOG_LEVEL, EINA_LOG_LEVELS) will be ignored. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Filename that originated the call, must <b>not</b> be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">function</td><td>Function that originated the call, must <b>not</b> be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>Originating line in <em>file</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>Printf-like format to use. Should not provide trailing '<br/>
 ' as it is automatically included. </td></tr>
-    <tr><td class="paramname">...</td><td>Variadic args.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">...</td><td>Variadic args.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>MT: This function may be called from different threads if <a class="el" href="group__Eina__Log__Group.html#ga2b7f1556ccee03f1351a1ff0a059ecfa">eina_log_threads_enable()</a> was called before.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.4 </dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>MT: This function may be called from different threads if <a class="el" href="group__Eina__Log__Group.html#ga2b7f1556ccee03f1351a1ff0a059ecfa">eina_log_threads_enable()</a> was called before. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1492,7 +1501,7 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
     <tr><td class="paramname">file</td><td>The file which is logged. </td></tr>
     <tr><td class="paramname">fnc</td><td>The function which is logged. </td></tr>
     <tr><td class="paramname">line</td><td>The line which is logged. </td></tr>
-    <tr><td class="paramname">fmt</td><td>The ouptut format to use. </td></tr>
+    <tr><td class="paramname">fmt</td><td>The output format to use. </td></tr>
     <tr><td class="paramname">data</td><td>The file which will store the output (as a FILE *). </td></tr>
     <tr><td class="paramname">args</td><td>The arguments needed by the format.</td></tr>
   </table>
@@ -1501,8 +1510,8 @@ On windows, both <em>fp</em> and <em>color</em> is converted automatically.</dd>
 <p>This method will never output color.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>MT: If threads are enabled, this function is called within locks. </dd>
 <dd>
-MT: Threads different from main thread will have thread id appended to domain name.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+MT: Threads different from main thread will have thread id appended to domain name. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1567,17 +1576,26 @@ MT: Threads different from main thread will have thread id appended to domain na
 </div>
 <div class="memdoc">
 
-<p>Alternative logging method, this will output to systemd journal. </p>
+<p>Alternative logging function, this outputs to the system log. </p>
+<p>This function never gives color as the output.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">d</td><td>The domain. </td></tr>
-    <tr><td class="paramname">level</td><td>Not used. </td></tr>
-    <tr><td class="paramname">file</td><td>The file which is logged. </td></tr>
-    <tr><td class="paramname">fnc</td><td>The function which is logged. </td></tr>
-    <tr><td class="paramname">line</td><td>The line which is logged. </td></tr>
-    <tr><td class="paramname">fmt</td><td>The ouptut format to use. </td></tr>
-    <tr><td class="paramname">data</td><td>The file which will store the output (as a FILE *). </td></tr>
-    <tr><td class="paramname">args</td><td>The arguments needed by the format.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">d</td><td>The domain </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Not used </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file that is logged </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fnc</td><td>The function that is logged </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>The line that is logged </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The output format to use </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Not Used </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>The arguments needed by the format Alternative logging method, this will output to systemd journal.</td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">d</td><td>The domain. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">level</td><td>Not used. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">file</td><td>The file which is logged. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">fnc</td><td>The function which is logged. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">line</td><td>The line which is logged. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">fmt</td><td>The output format to use. </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">data</td><td>The file which will store the output (as a FILE *). </td></tr>
+    <tr><td class="paramdir"></td><td class="paramname">args</td><td>The arguments needed by the format.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1585,8 +1603,8 @@ MT: Threads different from main thread will have thread id appended to domain na
 <dl class="note"><dt><b>Note:</b></dt><dd>If systemd journal is not there it will display error on stderr. </dd>
 <dd>
 If the process has been started by systemd this will be the default logging method.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1617,16 +1635,16 @@ If the process has been started by systemd this will be the default logging meth
 <p>Sets logging method to use.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">cb</td><td>The callback to call when printing a log. </td></tr>
-    <tr><td class="paramname">data</td><td>The data to pass to the callback.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cb</td><td>The callback to call when printing a log. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The data to pass to the callback.</td></tr>
   </table>
   </dd>
 </dl>
 <p>By default, <a class="el" href="group__Eina__Log__Group.html#ga38af538700301b2aa201e92837ca9c46" title="Default logging method, this will output to standard error stream.">eina_log_print_cb_stderr()</a> is used.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>MT: Safe to call from any thread.</dd>
 <dd>
-MT: Given function <em>cb</em> will be called protected by mutex. This means you're safe from other calls but you should never call <a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a>, directly or indirectly.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+MT: Given function <em>cb</em> will be called protected by mutex. This means you're safe from other calls but you should never call <a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a>, directly or indirectly. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_log_03_8c-example.html#a5">eina_log_03.c</a>.</dd>
 </dl>
 </div>
@@ -1700,19 +1718,18 @@ MT: Given function <em>cb</em> will be called protected by mutex. This means you
     <tr><td class="paramname">file</td><td>The file which is logged. </td></tr>
     <tr><td class="paramname">fnc</td><td>The function which is logged. </td></tr>
     <tr><td class="paramname">line</td><td>The line which is logged. </td></tr>
-    <tr><td class="paramname">fmt</td><td>The ouptut format to use. </td></tr>
+    <tr><td class="paramname">fmt</td><td>The output format to use. </td></tr>
     <tr><td class="paramname">data</td><td>Not used. </td></tr>
     <tr><td class="paramname">args</td><td>The arguments needed by the format.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This method will colorize output based on domain provided color and message logging level.</p>
-<p>To disable color, set environment variable EINA_LOG_COLOR_DISABLE=1. To enable color, even if directing to a file or when using a non-supported color terminal, use EINA_LOG_COLOR_DISABLE=0. If EINA_LOG_COLOR_DISABLE is unset (or -1), then Eina will disable color if terminal ($TERM) is unsupported or if redirecting to a file.</p>
-<p>. Similarly, to disable file and line information, set EINA_LOG_FILE_DISABLE=1 or EINA_LOG_FUNCTION_DISABLE=1 to avoid function name in output. It is not acceptable to have both EINA_LOG_FILE_DISABLE and EINA_LOG_FUNCTION_DISABLE at the same time, in this case just EINA_LOG_FUNCTION_DISABLE will be considered and file information will be printed anyways.</p>
+<p>To disable color, set environment variable EINA_LOG_COLOR_DISABLE=1. To enable color, even if directing to a file or when using a non-supported color terminal, use EINA_LOG_COLOR_DISABLE=0. If EINA_LOG_COLOR_DISABLE is unset (or -1), then Eina will disable color if terminal ($TERM) is unsupported or if redirecting to a file. Similarly, to disable file and line information, set EINA_LOG_FILE_DISABLE=1 or EINA_LOG_FUNCTION_DISABLE=1 to avoid function name in output. It is not acceptable to have both EINA_LOG_FILE_DISABLE and EINA_LOG_FUNCTION_DISABLE at the same time, in this case just EINA_LOG_FUNCTION_DISABLE will be considered and file information will be printed anyways.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>MT: If threads are enabled, this function is called within locks. </dd>
 <dd>
-MT: Threads different from main thread will have thread id appended to domain name.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+MT: Threads different from main thread will have thread id appended to domain name. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1785,7 +1802,7 @@ MT: Threads different from main thread will have thread id appended to domain na
     <tr><td class="paramname">file</td><td>The file which is logged. </td></tr>
     <tr><td class="paramname">fnc</td><td>The function which is logged. </td></tr>
     <tr><td class="paramname">line</td><td>The line which is logged. </td></tr>
-    <tr><td class="paramname">fmt</td><td>The ouptut format to use. </td></tr>
+    <tr><td class="paramname">fmt</td><td>The output format to use. </td></tr>
     <tr><td class="paramname">data</td><td>Not used. </td></tr>
     <tr><td class="paramname">args</td><td>The arguments needed by the format.</td></tr>
   </table>
@@ -1794,87 +1811,8 @@ MT: Threads different from main thread will have thread id appended to domain na
 <p>This method will colorize output based on domain provided color and message logging level. To disable color, set environment variable EINA_LOG_COLOR_DISABLE=1. Similarly, to disable file and line information, set EINA_LOG_FILE_DISABLE=1 or EINA_LOG_FUNCTION_DISABLE=1 to avoid function name in output. It is not acceptable to have both EINA_LOG_FILE_DISABLE and EINA_LOG_FUNCTION_DISABLE at the same time, in this case just EINA_LOG_FUNCTION_DISABLE will be considered and file information will be printed anyways.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>MT: If threads are enabled, this function is called within locks. </dd>
 <dd>
-MT: Threads different from main thread will have thread id appended to domain name.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga2174d66ed735f236582f5bb947c58ad9"></a><!-- doxytag: member="eina_log.h::eina_log_print_cb_syslog" ref="ga2174d66ed735f236582f5bb947c58ad9" args="(const Eina_Log_Domain *d, Eina_Log_Level level, const char *file, const char *fnc, int line, const char *fmt, void *data, va_list args)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="group__Eina__Log__Group.html#ga2174d66ed735f236582f5bb947c58ad9">eina_log_print_cb_syslog</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Eina__Log__Group.html#ga3e8bc7f3b9aa9140d1e5b91baf08ebe8">Eina_Log_Domain</a> *&#160;</td>
-          <td class="paramname"><em>d</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Log__Group.html#ga5c0cd3a8463b76bb855805b70f58c7dd">Eina_Log_Level</a>&#160;</td>
-          <td class="paramname"><em>level</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>fnc</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>line</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>fmt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">va_list&#160;</td>
-          <td class="paramname"><em>args</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Alternative logging function, this outputs to the system log. </p>
-<p>This function never gives color as the output.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">d</td><td>The domain </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Not used </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>The file that is logged </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fnc</td><td>The function that is logged </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>The line that is logged </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The ouptut format to use </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Not Used </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>The arguments needed by the format </td></tr>
-  </table>
-  </dd>
-</dl>
+MT: Threads different from main thread will have thread id appended to domain name. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1896,8 +1834,8 @@ MT: Threads different from main thread will have thread id appended to domain na
 <p>There is no disable option on purpose, if it is enabled, there is no way back until you call the last <a class="el" href="group__Eina__Main__Group.html#ga2c8b4020427108a30c44707af22c99d3" title="Shuts down the Eina library.">eina_shutdown()</a>.</p>
 <p>There is no function to retrieve if threads are enabled as one is not supposed to know this from outside.</p>
 <p>After this call is executed at least once, if Eina was compiled with threads support then logging will lock around debug messages and threads that are not the main thread will have its identifier printed.</p>
-<p>The main thread is considered the thread where the first <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a> was called.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>The main thread is considered the thread where the first <a class="el" href="group__Eina__Main__Group.html#gafee4bfc0e509b6ffed6598edf6f4b3de" title="Initializes the Eina library.">eina_init()</a> was called. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1935,9 +1873,9 @@ MT: Threads different from main thread will have thread id appended to domain na
 <p>Starts or stops the timing of a phase. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">domain</td><td>The domain. </td></tr>
-    <tr><td class="paramname">state</td><td>State indicating if we are starting or stopping a phase. </td></tr>
-    <tr><td class="paramname">phase</td><td>The name of the phase to be used in the log.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>The domain. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">state</td><td>State indicating if we are starting or stopping a phase. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">phase</td><td>The name of the phase to be used in the log.</td></tr>
   </table>
   </dd>
 </dl>
@@ -1946,8 +1884,8 @@ MT: Threads different from main thread will have thread id appended to domain na
 If you change the name of the phase, it is assumed that the previous phase has stopped. </dd>
 <dd>
 The phase name should be available for all the life of the timing. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -2010,49 +1948,51 @@ The phase name should be available for all the life of the timing. </dd></dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>Usually you'll not use this function directly but the helper macros <a class="el" href="group__Eina__Log__Group.html#ga00e2a10370282673064d2bd3579b463c">EINA_LOG()</a>, <a class="el" href="group__Eina__Log__Group.html#ga50e2b86707c08c89e49759cb31b7b91c">EINA_LOG_DOM_CRIT()</a>, <a class="el" href="group__Eina__Log__Group.html#ga5b50827f35399f9ff87f5d9d817c764a">EINA_LOG_CRIT()</a> and so on. See eina_log.h</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">domain</td><td>Logging domain to use or <code>EINA_LOG_DOMAIN_GLOBAL</code> if you registered none. It is recommended that modules and applications have their own logging domain. </td></tr>
-    <tr><td class="paramname">level</td><td>Message level, those with level greater than user specified value (<a class="el" href="group__Eina__Log__Group.html#ga3588dded50cc324ab6f84da2f328bd8e" title="Sets the default log level.">eina_log_level_set()</a> or environment variables EINA_LOG_LEVEL, EINA_LOG_LEVELS) will be ignored. </td></tr>
-    <tr><td class="paramname">file</td><td>Filename that originated the call, must <b>not</b> be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">fnc</td><td>Function that originated the call, must <b>not</b> be <code>NULL</code>. </td></tr>
-    <tr><td class="paramname">line</td><td>Originating line in <em>file</em>. </td></tr>
-    <tr><td class="paramname">fmt</td><td>Printf-like format to use. Should not provide trailing '<br/>
+    <tr><td class="paramdir">[in]</td><td class="paramname">domain</td><td>Logging domain to use or <code>EINA_LOG_DOMAIN_GLOBAL</code> if you registered none. It is recommended that modules and applications have their own logging domain. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">level</td><td>Message level, those with level greater than user specified value (<a class="el" href="group__Eina__Log__Group.html#ga3588dded50cc324ab6f84da2f328bd8e" title="Sets the default log level.">eina_log_level_set()</a> or environment variables EINA_LOG_LEVEL, EINA_LOG_LEVELS) will be ignored. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">file</td><td>Filename that originated the call, must <b>not</b> be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fnc</td><td>Function that originated the call, must <b>not</b> be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>Originating line in <em>file</em>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>Printf-like format to use. Should not provide trailing '<br/>
 ' as it is automatically included. </td></tr>
-    <tr><td class="paramname">args</td><td>The arguments needed by the format.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>The arguments needed by the format.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="note"><dt><b>Note:</b></dt><dd>MT: this function may be called from different threads if <a class="el" href="group__Eina__Log__Group.html#ga2b7f1556ccee03f1351a1ff0a059ecfa">eina_log_threads_enable()</a> was called before.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a></dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Log__Group.html#gacfaa1654ef8376b9fc741a611d9a15c2" title="Prints out log message using given domain and level.">eina_log_print()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
 <hr/><h2>Variable Documentation</h2>
-<a class="anchor" id="gae6f969b21b4b371519f8ab4705eb2fa4"></a><!-- doxytag: member="eina_log.h::_eina_log_state_init" ref="gae6f969b21b4b371519f8ab4705eb2fa4" args="" -->
+<a class="anchor" id="ga1ca2677482690721c72321ff0fc14973"></a><!-- doxytag: member="eina_log.h::_eina_log_state_init" ref="ga1ca2677482690721c72321ff0fc14973" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* <a class="el" href="group__Eina__Log__Group.html#gae6f969b21b4b371519f8ab4705eb2fa4">_eina_log_state_init</a></td>
+          <td class="memname">const char * <a class="el" href="group__Eina__Log__Group.html#ga1ca2677482690721c72321ff0fc14973">_eina_log_state_init</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
-<p>String that indicates the log system is initializing.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>String that indicates the log system is initializing. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga18925c475ddee5bb69f8f58c7ba7abf6"></a><!-- doxytag: member="eina_log.h::_eina_log_state_shutdown" ref="ga18925c475ddee5bb69f8f58c7ba7abf6" args="" -->
+<a class="anchor" id="ga1e7a4d48261d22d66934e22d784c7862"></a><!-- doxytag: member="eina_log.h::_eina_log_state_shutdown" ref="ga1e7a4d48261d22d66934e22d784c7862" args="" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* <a class="el" href="group__Eina__Log__Group.html#ga18925c475ddee5bb69f8f58c7ba7abf6">_eina_log_state_shutdown</a></td>
+          <td class="memname">const char * <a class="el" href="group__Eina__Log__Group.html#ga1e7a4d48261d22d66934e22d784c7862">_eina_log_state_shutdown</a></td>
         </tr>
       </table>
 </div>
 <div class="memdoc">
+<p>String that indicates the log system is shutting down. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1)</dd></dl>
 <p>String that indicates the log system is shutting down.</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
 
@@ -2068,8 +2008,8 @@ The phase name should be available for all the life of the timing. </dd></dl>
       </table>
 </div>
 <div class="memdoc">
-<p>EINA_LOG_DOMAIN_GLOBAL is the general purpose log domain to be used, it is always registered and available everywhere.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
+<p>EINA_LOG_DOMAIN_GLOBAL is the general purpose log domain to be used, it is always registered and available everywhere. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

@@ -106,7 +106,7 @@ cmp(<span class="keyword">const</span> <span class="keywordtype">void</span> *a,
 </pre></div></p>
 <p>We then create the array much like we did on <a class="el" href="eina_inarray_example_01.html">Eina inline array usage</a> : <div class="fragment"><pre class="fragment">   iarr = <a class="code" href="group__Eina__Inline__Array__Group.html#ga38a116a1355055b470c31bb4f633e53b" title="Creates a new inline array.">eina_inarray_new</a>(<span class="keyword">sizeof</span>(<span class="keywordtype">int</span>), 0);
 </pre></div></p>
-<p>We then add element using eina_inarray_insert and print. Then remove that element and add again using eina_inarray_insert_sorted and prints. This shows the 2 different positions the element gets added. Then searches an element in the unsorted array using eina_inarray_search, then sorts the array and then searches the same element using eina_inarray_search_sorted. <div class="fragment"><pre class="fragment">
+<p>We then add an element using eina_inarray_insert and print. Then remove that element and add it again using eina_inarray_insert_sorted and print. This shows the 2 different positions the element gets added. Then search for an element in the unsorted array using eina_inarray_search, then sorts the array and then searches the same element using eina_inarray_search_sorted. <div class="fragment"><pre class="fragment">
    a = 1;
    <a class="code" href="group__Eina__Inline__Array__Group.html#ga52922638db5729e9c83caa0b5b29d6dd" title="Copies the data as the last member of the array.">eina_inarray_push</a>(iarr, &amp;a);
    a = 9;

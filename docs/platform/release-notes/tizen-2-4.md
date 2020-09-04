@@ -1,10 +1,11 @@
 # Tizen 2.4
 
-Release Date: Oct 30, 2015
+Release date: Oct. 30, 2015
 
 The Tizen 2.4 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/native API set, necessary to develop future Tizen compliant solutions.
 
-#### Release Details
+
+## Release Details
 
 - [Getting source code](http://review.tizen.org/git/) (Tizen 2.4 source code is in the **tizen_2.4** branch.)
 - [Getting binaries and images](http://download.tizen.org/releases/2.4/)
@@ -59,8 +60,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - If the WYSIWYG editor of the Native UI Builder for Windows runs over 12 hours, your computer slows down because of the editor's high memory usage. To solve the problem, restart the Tizen IDE.
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an Intelligent Input Bus (IBus) bug. When the issue occurs, restart the ibus-daemon by entering the ibus-daemon –drx command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from:
-    - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
+  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. 
     - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
@@ -125,8 +125,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - The Tizen Store currently does not accept a wearable circle app which is developed by the Native UI Builder because some blacklist API set are used in the Builder. This issue will be solved at upcoming release.
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an Intelligent Input Bus (IBus) bug. When the issue occurs, restart the ibus-daemon by entering the ibus-daemon –drx command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from:
-    - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
+  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. 
     - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
@@ -203,8 +202,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 - Emulator
 
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to a bug of Intelligent Input Bus (IBus). When the issue occurs, restart the ibus-daemon by entering the ibus-daemon –drx command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides. Check the prerequisites for the Tizen Emulator from:
-    - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
+  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides.
     - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select **High Speed NVIDIA Processor** as **Preferred Graphics processor** in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is out-of-date, the Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparently.
@@ -369,7 +367,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Installer and Update Manager
   - Some errors in the update command of the 2.4 rev1 and rev2 CLI Installer have been found. If you use the 2.4 rev1 or rev2 CLI Installer, you fail to update your Tizen SDK. To solve the problem, CLI installer patch files are released. Download the patch at the *download location* and do the following: Open the terminal or command line, and go to the location where the downloaded patch file exists. Move the patch file to the location where the SDK is installed. At the prompt, type **update-manager-cli_2.4_patch update_{OS}_{bit}.{bin|exe}** to install the patch.
-  - You can also upgrade your CLI Installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tools/download). If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK’s location when they are working. When you run the dynamic analyzer on Mac OS X, the SDK Update Notification does not appear even though there are available SDK updates. If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
+  - You can also upgrade your CLI Installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tizen-studio/download). If there is a multibyte character in the Tizen SDK installation path, some development packages have a difficulty in finding the installed SDK’s location when they are working. When you run the dynamic analyzer on Mac OS X, the SDK Update Notification does not appear even though there are available SDK updates. If the SDK Update Notification appears when you start the Tizen IDE or Emulator on Mac OS X, a terminal (shell.exec) icon can appear on the dock for a few seconds.
 
 
 - Native IDE
@@ -384,7 +382,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to an Intelligent Input Bus (IBus) bug. When the issue occurs, restart the ibus-daemon by entering the **ibus-daemon –drx** command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator from [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk). If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel. On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
+  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor. Check the prerequisites for the Tizen Emulator. If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel. On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can sometimes appear transparent.
   - On Windows, depending on your OS theme (such as Non-Aero themes and Windows XP themes), a display surface can be erased for a while if the Emulator window is covered with another window. If you click the Emulator window, the display surface runs correctly again.
   - On Windows, if a ‘failed to allocate memory’ error occurred while executing the Emulator, try the following:
@@ -472,7 +470,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 **Known Issues**
 
 - Installer and Update Manager
-  -  The update command of the 2.4 rev1 and rev2 CLI installer has some errors. If you use the 2.4 rev1 or rev2 CLI installer, the Tizen SDK update fails.  To solve the problem, download [CLI installer patch files](https://download.tizen.org/sdk/patches/), and do the following (or upgrade your CLI installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tools/download)):
+  -  The update command of the 2.4 rev1 and rev2 CLI installer has some errors. If you use the 2.4 rev1 or rev2 CLI installer, the Tizen SDK update fails.  To solve the problem, download CLI installer patch files, and do the following (or upgrade your CLI installer to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tizen-studio/download)):
     - Open the terminal or command line, and go to the location where you have downloaded the patch file.
     - Move the patch file to the location where the SDK is installed.
     - At the prompt, enter the update-manager-cli_2.4_patch update_{OS}_{bit}.{bin|exe} command to install the patch.
@@ -491,8 +489,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to a bug of Intelligent Input Bus (IBus). When the issue occurs, restart the ibus-daemon by entering the ibus-daemon –drx command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides. Check the prerequisites for the Tizen Emulator from:
-    - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
+  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides.
     - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can appear transparently sometimes.
@@ -596,7 +593,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 **Known Issues**
 
 - Installer and Update Manager
-  - The update command of the 2.4 rev1 and rev2 CLI Update Manager has some errors. If you use the 2.4 rev1 or rev2 CLI Update Manager, the Tizen SDK update fails.  To solve the problem, use the CLI Update Manager patch files. Download the patch at the *download location*  and do the following (or upgrade your CLI Update Manager to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tools/download).). For detailed information, see the [CLI Installer Patch Guide](https://developer.tizen.org/community/tip-tech/patch-cli-installer).
+  - The update command of the 2.4 rev1 and rev2 CLI Update Manager has some errors. If you use the 2.4 rev1 or rev2 CLI Update Manager, the Tizen SDK update fails.  To solve the problem, use the CLI Update Manager patch files. Download the patch at the *download location*  and do the following (or upgrade your CLI Update Manager to the 2.4 rev3 at the [Tizen SDK Download page](https://developer.tizen.org/development/tizen-studio/download).). For detailed information, see the [CLI Installer Patch Guide](https://developer.tizen.org/community/tip-tech/patch-cli-installer).
     - Open the terminal or command line (with Administrator privileges on Windows), and go to the location where you have downloaded the patch file.
     - Move the patch file to the location where the SDK is installed.
     - At the prompt, enter the **update-manager-cli_2.4_patch_{OS}{bit}.{bin|exe}** command to install the patch.
@@ -613,8 +610,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 
 - Emulator
   - Ubuntu sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to a bug of Intelligent Input Bus (IBus). When the issue occurs, restart the ibus-daemon by entering the ibus-daemon –drx command at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
-  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides. Check the prerequisites for the Tizen Emulator from:
-    - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
+  - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides.
     - If the host machine is using Nvidia Optimus™ technology on either Ubuntu or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu 14.04, a shortcut menu can appear transparently sometimes.
@@ -746,8 +742,6 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
 - Emulator
   - Ubuntu™ sometimes stops responding for a few seconds after closing the Emulator Manager. This issue is related to a bug of Intelligent Input Bus (IBus). When the issue occurs, restart the ibus-daemon by typing **ibus-daemon –drx** at the command prompt, and use another framework, such as uim and fcitx, for multilingual input.
   - To use the Tizen Emulator, install an Intel VTx supported by the CPU, and the latest version of the graphic card driver provided by the vendor.
-    - Check the prerequisites for the Tizen Emulator from:
-      [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
     - If the host machine is using the Nvidia Optimus™ technology on either Ubuntu™ or Windows, you must set the Tizen Emulator to run with your Nvidia graphics card. If you use Ubuntu™, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). If you use Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu™, if the graphics driver is outdated, your Ubuntu™ desktop session can be occasionally logged out when launching the Emulator Manager, or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade to the latest graphics driver.
   - On Ubuntu™ 14.04, the shortcut menu can sometimes appear transparently.
@@ -849,8 +843,7 @@ The Tizen 2.4 release provides developers with the Tizen kernel, device drivers,
   - Generating the res.xml file in Multi-Packaged projects is not available.
   - When you import some projects generated from the Tizen 2.3 Rev2 SDK, the importing can take some time.
 - Emulator
-  - To use the Tizen Emulator, you must install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides. Check the prerequisites for the Tizen Emulator from:
-    - [https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk](https://developer.tizen.org/downloads/sdk/installing-sdk/prerequisites-tizen-sdk).
+  - To use the Tizen Emulator, you must install an Intel VTx supported by the CPU, and the latest version of the graphic card driver which the vendor provides.
     - If the host machine is using Nvidia Optimus™ technology on either Ubuntu™ or Windows, set the Tizen Emulator to run with your Nvidia graphics card. In case of Ubuntu™, check the bumblebee project ([https://wiki.ubuntu.com/Bumblebee](https://wiki.ubuntu.com/Bumblebee)). In case of Windows, select "High Speed NVIDIA Processor" as "Preferred Graphics processor" in the Nvidia control panel.
     - On Ubuntu™, if the graphics driver is out-of-date, your Ubuntu desktop session can be occasionally logged out when launching the Emulator Manager. Or the Emulator skin can be drawn improperly. Check the prerequisites and upgrade the latest graphics driver.
   - On Ubuntu™ 14.04, the shortcut menu can sometimes appear transparently.

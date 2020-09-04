@@ -74,7 +74,7 @@ different launch types:
         operation, URI, or MIME type) is not used to select an
         application for an explicit launch.
     -   If the `Operation` property of a
-        [Tizen.Applications.AppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html)
+        [Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
         instance is set to `AppControlOperations.Default`, the
         application ID must be set. Otherwise the
         `ArgumentException` occurs.
@@ -107,7 +107,7 @@ different launch types:
 
 To launch an application with the application control, you must create a
 launch request. You must create an instance of the
-[Tizen.Applications.AppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html)
+[Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
 class, and add the conditions for selecting the application to be
 launched. You can add the following information to the instance:
 
@@ -117,7 +117,7 @@ launched. You can add the following information to the instance:
 	> The operation name format is
     `http://tizen.org/appcontrol/operation/<verb>`. You can also use an
     instance of the
-    [Tizen.Applications.AppControlOperations](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControlOperations.html) class.
+    [Tizen.Applications.AppControlOperations](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControlOperations.html) class.
 
     The operation is mandatory information for sending the
     launch request.
@@ -134,7 +134,7 @@ launched. You can add the following information to the instance:
 The following example shows how to create an explicit launch request
 which launches an application explicitly by setting the `ApplicationId`
 property of the
-[Tizen.Applications.AppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html)
+[Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
 class instance:
 
 ```
@@ -145,6 +145,7 @@ appcontrol.ApplicationId = "org.tizen.TestApp";
 
 AppControl.SendLaunchRequest(appcontrol);
 ```
+If you want to launch an AppControl asynchronously, use SendLaunchRequestAsync().
 
 <a name="implicit"></a>
 ### Implicit Launch Request
@@ -394,9 +395,9 @@ application:
 
     The reason the application was launched is contained in an instance
     of the
-    [Tizen.Applications.ReceivedAppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ReceivedAppControl.html)
+    [Tizen.Applications.ReceivedAppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ReceivedAppControl.html)
     class, which is derived from the
-    [Tizen.Applications.AppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html) class.
+    [Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html) class.
     The application is always responsible for checking the content of
     the `Tizen.Applications.ReceivedAppControl` instance and
     responding appropriately. The content of the
@@ -452,9 +453,9 @@ public void LaunchRequestResultTest()
 ```
 
 The results are delivered in an instance of the
-[Tizen.Applications.AppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html)
+[Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
 instance with extra data. For some cases, the
-[Tizen.Applications.AppControlData](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControlData.html)
+[Tizen.Applications.AppControlData](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControlData.html)
 provides predefined extra data keys. If the key you need is not
 predefined, you can create your own key. However, the customized key
 must be shared between the caller and callee applications.
@@ -583,7 +584,7 @@ To enable your application to use the application control functionality:
     ```
 
 2. To use the methods and data types of the
-    [Tizen.Applications](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.html)
+    [Tizen.Applications](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html)
     namespace, include it in your application:
 
     ```
@@ -603,7 +604,7 @@ parameters:
     ```
 
 2. When the instance of the
-    [Tizen.Applications.AppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.html)
+    [Tizen.Applications.AppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.html)
     class is created, set the operation and MIME type. In this example,
     the application control launches an application which has the
     `AppControlOperations.View` operation and the `image/jpeg`
@@ -620,7 +621,7 @@ parameters:
 
 3. Add extra data to the `Tizen.Applications.AppControl` instance by
     using the `ExtraData` property and the `Add()` method of the
-    [Tizen.Applications.AppControl.ExtraDataCollection](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AppControl.ExtraDataCollection.html) class.
+    [Tizen.Applications.AppControl.ExtraDataCollection](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AppControl.ExtraDataCollection.html) class.
     In the following example, a message is added as extra data:
 
     ```
@@ -636,7 +637,7 @@ parameters:
 
 5. In the launched application, read the extra data added to the
     application control by using the `ExtraData` property of the
-    [Tizen.Applications.ReceivedAppControl](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.ReceivedAppControl.html)
+    [Tizen.Applications.ReceivedAppControl](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.ReceivedAppControl.html)
     class instance and the `Get()` method of the
     `Tizen.Applications.ExtraDataCollection` class. The same property
     and method can be used in the original application to read the reply

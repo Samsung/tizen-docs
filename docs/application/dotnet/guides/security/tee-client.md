@@ -24,13 +24,13 @@ The main features of the Tizen.Security.TEEC namespace include:
 
 To enable your application to use the TEE communication functionality:
 
-1.  To make your application visible in the Tizen Store only for devices that support TEE communication, the application must specify the following feature in the `tizen-manifest.xml` file:
+1.  To make your application visible in Tizen Store only for devices that support TEE communication, the application must specify the following feature in the `tizen-manifest.xml` file:
 
     ```
     <feature name="http://tizen.org/feature/security.tee"/>
     ```
 
-    You can also check whether a device supports the Tizen.Security.TEEC namespace by using the `TryGetValue()` method of the [Tizen.System.Information](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Information.html) class and, accordingly, enabling or disabling the code requiring the namespace:
+    You can also check whether a device supports the Tizen.Security.TEEC namespace by using the `TryGetValue()` method of the [Tizen.System.Information](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Information.html) class and, accordingly, enabling or disabling the code requiring the namespace:
 
     ```
     const string TEEC_FEATURE_KEY = "http://tizen.org/feature/security.tee";
@@ -46,13 +46,13 @@ To enable your application to use the TEE communication functionality:
 	> In TV applications, you can test the TEE communication functionality on an emulator only. Most target devices do not currently support this feature.
 
 
-2.  To use the methods and properties of the [Tizen.Security.TEEC](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.html) namespace, include it in your application:
+2.  To use the methods and properties of the [Tizen.Security.TEEC](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.html) namespace, include it in your application:
 
     ```
     using Tizen.Security.TEEC;
     ```
 
-3.  Initialize a new TEEC context by creating an instance of the [Tizen.Security.TEEC.Context](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.Context.html) class:
+3.  Initialize a new TEEC context by creating an instance of the [Tizen.Security.TEEC.Context](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.Context.html) class:
 
     ```
     Context ctx = new Context(null);
@@ -69,7 +69,7 @@ To enable your application to use the TEE communication functionality:
 
 To communicate between applications, you must connect a client application to a trusted application by creating a session:
 
-1.  Open a session with the `OpenSession()` method of the [Tizen.Security.TEEC.Context](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.Context.html) class, which returns the session as a new instance of the [Tizen.Security.TEEC.Session](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.Session.html) class.
+1.  Open a session with the `OpenSession()` method of the [Tizen.Security.TEEC.Context](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.Context.html) class, which returns the session as a new instance of the [Tizen.Security.TEEC.Session](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.Session.html) class.
 
     ```
     Guid ta_uuid = new Guid("  "); /// Trusted application GUID
@@ -96,7 +96,7 @@ After opening a session with a trusted application, a client application can exe
 
 To send function call commands:
 
--   To send a command for invoking a function without parameters, use the `InvokeCommand()` method of the [Tizen.Security.TEEC.Session](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.Session.html) class, with the first parameter identifying the function to be executed by the trusted application:
+-   To send a command for invoking a function without parameters, use the `InvokeCommand()` method of the [Tizen.Security.TEEC.Session](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.Session.html) class, with the first parameter identifying the function to be executed by the trusted application:
 
     ```
     try
@@ -110,7 +110,7 @@ To send function call commands:
     ```
 
 -   To send a command for invoking a function with simple integer parameters:
-    1.  Create the parameters as new instances of the [Tizen.Security.TEEC.Value](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.Value.html) class:
+    1.  Create the parameters as new instances of the [Tizen.Security.TEEC.Value](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.Value.html) class:
 
         ```
         try
@@ -119,7 +119,7 @@ To send function call commands:
             Value p2 = new Value(10, 200, TEFValueType.InOut);
         ```
 
-    2.  Send the command to the trusted application with the `InvokeCommand()` method of the `Tizen.Security.TEEC.Session` class. The second parameter is a new instance of the [Tizen.Security.TEEC.Parameter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.Parameter.html) class containing the 2 integer parameter values.
+    2.  Send the command to the trusted application with the `InvokeCommand()` method of the `Tizen.Security.TEEC.Session` class. The second parameter is a new instance of the [Tizen.Security.TEEC.Parameter](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.Parameter.html) class containing the 2 integer parameter values.
 
         ```
             ses.InvokeCommand(1, new Parameter[] {p1, p2});
@@ -131,7 +131,7 @@ To send function call commands:
         ```
 
 -   To send a command for invoking a function with a local memory reference as a parameter:
-    1.  Create a temporary memory reference as a new instance of the [Tizen.Security.TEEC.TempMemoryReference](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.TempMemoryReference.html) class:
+    1.  Create a temporary memory reference as a new instance of the [Tizen.Security.TEEC.TempMemoryReference](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.TempMemoryReference.html) class:
 
         ```
         try
@@ -157,7 +157,7 @@ To send function call commands:
 To share a memory block between a client application and a trusted application:
 
 -   To send a function call command to the trusted application, including an allocated shared memory reference:
-    1.  Allocate a new memory block as shared memory with the `AllocateSharedMemory()` method of the [Tizen.Security.TEEC.Context](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.Context.html) class, which returns the block as a new instance of the [Tizen.Security.TEEC.SharedMemory](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.SharedMemory.html) class:
+    1.  Allocate a new memory block as shared memory with the `AllocateSharedMemory()` method of the [Tizen.Security.TEEC.Context](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.Context.html) class, which returns the block as a new instance of the [Tizen.Security.TEEC.SharedMemory](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.SharedMemory.html) class:
 
         ```
         try
@@ -165,7 +165,7 @@ To share a memory block between a client application and a trusted application:
             SharedMemory shm = ctx.AllocateSharedMemory(1024, SharedMemoryFlags.InOut);
         ```
 
-    2.  Register a memory reference based on the shared memory block by creating a new instance of the [Tizen.Security.TEEC.RegisteredMemoryReference](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.RegisteredMemoryReference.html) class, and send the function call command to the trusted application with the `InvokeCommand()` method of the [Tizen.Security.TEEC.Session](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.Session.html) class. The registered memory reference is passed in a new instance of the [Tizen.Security.TEEC.Parameter](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.TEEC.Parameter.html) class.
+    2.  Register a memory reference based on the shared memory block by creating a new instance of the [Tizen.Security.TEEC.RegisteredMemoryReference](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.RegisteredMemoryReference.html) class, and send the function call command to the trusted application with the `InvokeCommand()` method of the [Tizen.Security.TEEC.Session](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.Session.html) class. The registered memory reference is passed in a new instance of the [Tizen.Security.TEEC.Parameter](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.TEEC.Parameter.html) class.
 
         ```
             RegisteredMemoryReference p1 = new RegisteredMemoryReference(shm, 1024, 0, RegisteredMemoryReference.InOut);

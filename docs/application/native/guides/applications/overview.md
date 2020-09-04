@@ -16,9 +16,13 @@ Tizen provides various application models to allow you to create applications ta
 
   The service application is a Tizen native application without a graphical user interface that runs in the background. They can be very useful in performing activities (such as getting sensor data in the background) that need to run periodically or continuously, but do not require any user intervention.
 
+- [Component Based Applications](component-based-app.md)
+
+  The component based application provides a way to implement multiple model applications. It means you can provide multiple service components and multiple frame components in one application process. The frame component has a window and a lifecycle to manage user interfaces. The service component does not have a window and runs in the background. Every registered component can create multiple instances.
+
 ## Native Application Life-Cycle
 
-The Tizen native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](../../api/mobile/latest/group__CAPI__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APPLICATION__MODULE.html) applications). It provides functions to manage the main event loop, the application state change events, and basic system events.
+The Tizen Native application model handles application life-cycle and system events. Tizen native application life-cycle is handled by the Application API (in [mobile](../../api/mobile/latest/group__CAPI__APPLICATION__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__APPLICATION__MODULE.html) applications). It provides functions to manage the main event loop, the application state change events, and basic system events.
 
 Tizen supports both UI applications (which have a graphical user interface) and service applications (which have no graphical user interface). The UI and service applications can be packaged together, if necessary; however, a combined application package must contain only one UI application, while it can have several service applications.
 
@@ -43,6 +47,10 @@ When your application becomes visible again, the `app_resume_cb()` callback is i
 - Another application requests your application to run (for example, the Task Navigator, which shows all running applications and lets the user select any application to run).
 - All applications on top of your application in the window stack finish.
 - An alarm is triggered for your application, bringing it to the front and hiding other applications.
+
+> **Note**
+>
+> From Tizen 5.5, you can get the display state by using the `app_get_display_state()` function when the `app_resume_cb()` callback or the `app_pause_cb()` callback is invoked.
 
 When your application starts exiting, the `app_terminate_cb()` callback is invoked. Your application can start the termination process, when:
 

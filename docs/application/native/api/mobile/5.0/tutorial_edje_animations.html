@@ -114,74 +114,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
    <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>))
      {
-        fprintf(stdout, commands);
+        printf(commands);
         <span class="keywordflow">return</span>;
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;plus&quot;</span>))
      {
         frametime *= 2.0;
-        fprintf(stdout, <span class="stringliteral">&quot;Increasing frametime to: %f\n&quot;</span>, frametime);
+        printf(<span class="stringliteral">&quot;Increasing frametime to: %f\n&quot;</span>, frametime);
         <a class="code" href="group__Edje__Object__Animation.html#gac9b19ee918546740c0144904393a1acd" title="Sets edje transitions&#39; frame time.">edje_frametime_set</a>(frametime);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;minus&quot;</span>))
      {
         frametime /= 2.0;
-        fprintf(stdout, <span class="stringliteral">&quot;Decreasing frametime to: %f\n&quot;</span>, frametime);
+        printf(<span class="stringliteral">&quot;Decreasing frametime to: %f\n&quot;</span>, frametime);
         <a class="code" href="group__Edje__Object__Animation.html#gac9b19ee918546740c0144904393a1acd" title="Sets edje transitions&#39; frame time.">edje_frametime_set</a>(frametime);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;equal&quot;</span>))
      {
         ft = <a class="code" href="group__Edje__Object__Animation.html#gad9593e50d1d5bc847e9b34b104c83935" title="Gets edje transitions&#39; frame time.">edje_frametime_get</a>();
-        fprintf(stdout, <span class="stringliteral">&quot;Frametime: %f\n&quot;</span>, ft);
-        <span class="keywordflow">if</span> (<a class="code" href="group__Edje__Object.html#ga0c66b4247ac3d6fd69ec05a96ea00c6d" title="Gets the Edje object&#39;s state.">edje_object_play_get</a>(obj))
-          fprintf(stdout, <span class="stringliteral">&quot;Object is playing\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;Frametime: %f\n&quot;</span>, ft);
+        <span class="keywordflow">if</span> (edje_object_play_get(obj))
+          printf(<span class="stringliteral">&quot;Object is playing\n&quot;</span>);
         <span class="keywordflow">else</span>
-          fprintf(stdout, <span class="stringliteral">&quot;Object was paused\n&quot;</span>);
-        <span class="keywordflow">if</span> (<a class="code" href="group__Edje__Object.html#gacf9a2fb49190ec228c29ed00742697e3" title="Gets the Edje object&#39;s animation state.">edje_object_animation_get</a>(obj))
-          fprintf(stdout, <span class="stringliteral">&quot;Animation is running\n&quot;</span>);
+          printf(<span class="stringliteral">&quot;Object was paused\n&quot;</span>);
+        <span class="keywordflow">if</span> (edje_object_animation_get(obj))
+          printf(<span class="stringliteral">&quot;Animation is running\n&quot;</span>);
         <span class="keywordflow">else</span>
-          fprintf(stdout, <span class="stringliteral">&quot;Animation was stopped\n&quot;</span>);
+          printf(<span class="stringliteral">&quot;Animation was stopped\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;s&quot;</span>))
      {
-        <a class="code" href="group__Edje__Object.html#ga2665239d834d301f8d5ad9ce6ecd5451" title="Sets the Edje object to playing or paused states.">edje_object_play_set</a>(obj, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-        fprintf(stdout, <span class="stringliteral">&quot;Pausing the object\n&quot;</span>);
+        edje_object_play_set(obj, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+        printf(<span class="stringliteral">&quot;Pausing the object\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;p&quot;</span>))
      {
-        <a class="code" href="group__Edje__Object.html#ga2665239d834d301f8d5ad9ce6ecd5451" title="Sets the Edje object to playing or paused states.">edje_object_play_set</a>(obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-        fprintf(stdout, <span class="stringliteral">&quot;Playing the object\n&quot;</span>);
+        edje_object_play_set(obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+        printf(<span class="stringliteral">&quot;Playing the object\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;f&quot;</span>))
-       fprintf(stdout, <span class="stringliteral">&quot;Freezing object. Count: %d\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga2c14c98f4ad3d9cbaa27b30013d10a13" title="Freezes the Edje object.">edje_object_freeze</a>(obj));
+       printf(<span class="stringliteral">&quot;Freezing object. Count: %d\n&quot;</span>, edje_object_freeze(obj));
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;t&quot;</span>))
-       fprintf(stdout, <span class="stringliteral">&quot;Thawing object. Count: %d\n&quot;</span>, <a class="code" href="group__Edje__Object.html#gace22e3f346e8b7225d4e1a2bacab3e5a" title="Thaws the Edje object.">edje_object_thaw</a>(obj));
+       printf(<span class="stringliteral">&quot;Thawing object. Count: %d\n&quot;</span>, edje_object_thaw(obj));
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;F&quot;</span>))
      {
         <a class="code" href="group__Edje__Object__Animation.html#ga8f4779b06ca82ab279cecfafe4bf6149" title="Freezes Edje objects.">edje_freeze</a>();
-        fprintf(stdout, <span class="stringliteral">&quot;Freezing all objects\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;Freezing all objects\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;T&quot;</span>))
      {
         <a class="code" href="group__Edje__Object__Animation.html#ga1963a864ac582582780dcbf3db3a4e45" title="Thaws Edje objects.">edje_thaw</a>();
-        fprintf(stdout, <span class="stringliteral">&quot;Thawing all objects\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;Thawing all objects\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;a&quot;</span>))
      {
-        <a class="code" href="group__Edje__Object.html#ga878b146a6f6a3a79185892173fcb6ea6" title="Sets the object&#39;s animation state.">edje_object_animation_set</a>(obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-        fprintf(stdout, <span class="stringliteral">&quot;Starting the animation in the Edje object\n&quot;</span>);
+        edje_object_animation_set(obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+        printf(<span class="stringliteral">&quot;Starting the animation in the Edje object\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;A&quot;</span>))
      {
-        <a class="code" href="group__Edje__Object.html#ga878b146a6f6a3a79185892173fcb6ea6" title="Sets the object&#39;s animation state.">edje_object_animation_set</a>(obj, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-        fprintf(stdout, <span class="stringliteral">&quot;Stopping the animation in the Edje object\n&quot;</span>);
+        edje_object_animation_set(obj, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+        printf(<span class="stringliteral">&quot;Stopping the animation in the Edje object\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;Escape&quot;</span>))
      <a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
    <span class="keywordflow">else</span>
      {
         printf(<span class="stringliteral">&quot;unhandled key: %s\n&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
-        fprintf(stdout, commands);
+        printf(commands);
      }
 </pre></div> </p>
 <dl class="note"><dt><b>Note:</b></dt><dd>The actions for the keys 'f' and 'F' will have the same effect in our example, just because there is only one object in the running program, The same happens with the keys 't' and 'T'.</dd></dl>
@@ -249,8 +249,8 @@ _on_canvas_resize(Ecore_Evas *ee)
    bg = <a class="code" href="group__Ecore__Evas__Group.html#ga170cb06bdaaf631bd0dd0f80f5173549" title="Retrieves user data associated with an Ecore_Evas.">ecore_evas_data_get</a>(ee, <span class="stringliteral">&quot;background&quot;</span>);
    edje_obj = <a class="code" href="group__Ecore__Evas__Group.html#ga170cb06bdaaf631bd0dd0f80f5173549" title="Retrieves user data associated with an Ecore_Evas.">ecore_evas_data_get</a>(ee, <span class="stringliteral">&quot;edje_obj&quot;</span>);
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, w, h);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, w, h);
+   evas_object_resize(bg, w, h);
+   evas_object_resize(edje_obj, w, h);
 }
 
 <span class="keyword">static</span> <span class="keywordtype">void</span>
@@ -263,74 +263,74 @@ _on_key_down(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="
 
    <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>))
      {
-        fprintf(stdout, commands);
+        printf(commands);
         <span class="keywordflow">return</span>;
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;plus&quot;</span>))
      {
         frametime *= 2.0;
-        fprintf(stdout, <span class="stringliteral">&quot;Increasing frametime to: %f\n&quot;</span>, frametime);
+        printf(<span class="stringliteral">&quot;Increasing frametime to: %f\n&quot;</span>, frametime);
         <a class="code" href="group__Edje__Object__Animation.html#gac9b19ee918546740c0144904393a1acd" title="Sets edje transitions&#39; frame time.">edje_frametime_set</a>(frametime);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;minus&quot;</span>))
      {
         frametime /= 2.0;
-        fprintf(stdout, <span class="stringliteral">&quot;Decreasing frametime to: %f\n&quot;</span>, frametime);
+        printf(<span class="stringliteral">&quot;Decreasing frametime to: %f\n&quot;</span>, frametime);
         <a class="code" href="group__Edje__Object__Animation.html#gac9b19ee918546740c0144904393a1acd" title="Sets edje transitions&#39; frame time.">edje_frametime_set</a>(frametime);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;equal&quot;</span>))
      {
         ft = <a class="code" href="group__Edje__Object__Animation.html#gad9593e50d1d5bc847e9b34b104c83935" title="Gets edje transitions&#39; frame time.">edje_frametime_get</a>();
-        fprintf(stdout, <span class="stringliteral">&quot;Frametime: %f\n&quot;</span>, ft);
-        <span class="keywordflow">if</span> (<a class="code" href="group__Edje__Object.html#ga0c66b4247ac3d6fd69ec05a96ea00c6d" title="Gets the Edje object&#39;s state.">edje_object_play_get</a>(obj))
-          fprintf(stdout, <span class="stringliteral">&quot;Object is playing\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;Frametime: %f\n&quot;</span>, ft);
+        <span class="keywordflow">if</span> (edje_object_play_get(obj))
+          printf(<span class="stringliteral">&quot;Object is playing\n&quot;</span>);
         <span class="keywordflow">else</span>
-          fprintf(stdout, <span class="stringliteral">&quot;Object was paused\n&quot;</span>);
-        <span class="keywordflow">if</span> (<a class="code" href="group__Edje__Object.html#gacf9a2fb49190ec228c29ed00742697e3" title="Gets the Edje object&#39;s animation state.">edje_object_animation_get</a>(obj))
-          fprintf(stdout, <span class="stringliteral">&quot;Animation is running\n&quot;</span>);
+          printf(<span class="stringliteral">&quot;Object was paused\n&quot;</span>);
+        <span class="keywordflow">if</span> (edje_object_animation_get(obj))
+          printf(<span class="stringliteral">&quot;Animation is running\n&quot;</span>);
         <span class="keywordflow">else</span>
-          fprintf(stdout, <span class="stringliteral">&quot;Animation was stopped\n&quot;</span>);
+          printf(<span class="stringliteral">&quot;Animation was stopped\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;s&quot;</span>))
      {
-        <a class="code" href="group__Edje__Object.html#ga2665239d834d301f8d5ad9ce6ecd5451" title="Sets the Edje object to playing or paused states.">edje_object_play_set</a>(obj, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-        fprintf(stdout, <span class="stringliteral">&quot;Pausing the object\n&quot;</span>);
+        edje_object_play_set(obj, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+        printf(<span class="stringliteral">&quot;Pausing the object\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;p&quot;</span>))
      {
-        <a class="code" href="group__Edje__Object.html#ga2665239d834d301f8d5ad9ce6ecd5451" title="Sets the Edje object to playing or paused states.">edje_object_play_set</a>(obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-        fprintf(stdout, <span class="stringliteral">&quot;Playing the object\n&quot;</span>);
+        edje_object_play_set(obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+        printf(<span class="stringliteral">&quot;Playing the object\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;f&quot;</span>))
-       fprintf(stdout, <span class="stringliteral">&quot;Freezing object. Count: %d\n&quot;</span>, <a class="code" href="group__Edje__Object.html#ga2c14c98f4ad3d9cbaa27b30013d10a13" title="Freezes the Edje object.">edje_object_freeze</a>(obj));
+       printf(<span class="stringliteral">&quot;Freezing object. Count: %d\n&quot;</span>, edje_object_freeze(obj));
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;t&quot;</span>))
-       fprintf(stdout, <span class="stringliteral">&quot;Thawing object. Count: %d\n&quot;</span>, <a class="code" href="group__Edje__Object.html#gace22e3f346e8b7225d4e1a2bacab3e5a" title="Thaws the Edje object.">edje_object_thaw</a>(obj));
+       printf(<span class="stringliteral">&quot;Thawing object. Count: %d\n&quot;</span>, edje_object_thaw(obj));
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;F&quot;</span>))
      {
         <a class="code" href="group__Edje__Object__Animation.html#ga8f4779b06ca82ab279cecfafe4bf6149" title="Freezes Edje objects.">edje_freeze</a>();
-        fprintf(stdout, <span class="stringliteral">&quot;Freezing all objects\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;Freezing all objects\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;T&quot;</span>))
      {
         <a class="code" href="group__Edje__Object__Animation.html#ga1963a864ac582582780dcbf3db3a4e45" title="Thaws Edje objects.">edje_thaw</a>();
-        fprintf(stdout, <span class="stringliteral">&quot;Thawing all objects\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;Thawing all objects\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;a&quot;</span>))
      {
-        <a class="code" href="group__Edje__Object.html#ga878b146a6f6a3a79185892173fcb6ea6" title="Sets the object&#39;s animation state.">edje_object_animation_set</a>(obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
-        fprintf(stdout, <span class="stringliteral">&quot;Starting the animation in the Edje object\n&quot;</span>);
+        edje_object_animation_set(obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+        printf(<span class="stringliteral">&quot;Starting the animation in the Edje object\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;A&quot;</span>))
      {
-        <a class="code" href="group__Edje__Object.html#ga878b146a6f6a3a79185892173fcb6ea6" title="Sets the object&#39;s animation state.">edje_object_animation_set</a>(obj, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
-        fprintf(stdout, <span class="stringliteral">&quot;Stopping the animation in the Edje object\n&quot;</span>);
+        edje_object_animation_set(obj, <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+        printf(<span class="stringliteral">&quot;Stopping the animation in the Edje object\n&quot;</span>);
      }
    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;Escape&quot;</span>))
      <a class="code" href="group__Ecore__Main__Loop__Group.html#ga95cf8e97dff0716433c2c5474d606a98">ecore_main_loop_quit</a>();
    <span class="keywordflow">else</span>
      {
         printf(<span class="stringliteral">&quot;unhandled key: %s\n&quot;</span>, ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
-        fprintf(stdout, commands);
+        printf(commands);
      }
 }
 
@@ -351,7 +351,7 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!ee) <span class="keywordflow">goto</span> shutdown_edje;
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga2f3f0d28733a6a6f75066f6f2d96472f" title="Sets a callback for Ecore_Evas delete request events.">ecore_evas_callback_delete_request_set</a>(ee, _on_delete_cb);
@@ -361,25 +361,25 @@ main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keyword
    evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(ee);
 
    bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   evas_object_move(bg, 0, 0); <span class="comment">/* at canvas&#39; origin */</span>
+   evas_object_resize(bg, WIDTH, HEIGHT); <span class="comment">/* covers full canvas */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bg);
    <a class="code" href="group__Ecore__Evas__Group.html#ga17e4c86ab1f47cc8e6d6286e3250785e" title="Stores user data in an Ecore_Evas structure.">ecore_evas_data_set</a>(ee, <span class="stringliteral">&quot;background&quot;</span>, bg);
 
    edje_obj = edje_object_add(evas);
 
    edje_object_file_set(edje_obj, edje_file, <span class="stringliteral">&quot;animations_group&quot;</span>);
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje_obj, 0, 0);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje_obj, WIDTH, HEIGHT);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
+   evas_object_move(edje_obj, 0, 0);
+   evas_object_resize(edje_obj, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje_obj);
    <a class="code" href="group__Ecore__Evas__Group.html#ga17e4c86ab1f47cc8e6d6286e3250785e" title="Stores user data in an Ecore_Evas structure.">ecore_evas_data_set</a>(ee, <span class="stringliteral">&quot;edje_obj&quot;</span>, edje_obj);
 
-   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>,
+   <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(edje_obj, EVAS_CALLBACK_KEY_DOWN,
                                   _on_key_down, NULL);
    evas_object_focus_set(edje_obj, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
 
-   fprintf(stdout, commands);
+   printf(commands);
 
    <a class="code" href="group__Ecore__Evas__Group.html#gaaea54d6b6ab85ac2f3355052d04e487e" title="Shows an Ecore_Evas&#39; window.">ecore_evas_show</a>(ee);
 

@@ -29,6 +29,10 @@ The main App Control API features are:
 
   You can [set the launch mode](#group) when launching an application through an application control. The launch mode determines whether the application is launched in its own group, or as a sub application within an existing group.
 
+- Handling application control actions
+
+  You can [handle each application control action](#action) when getting a launch request.
+
 You can take advantage of the Tizen [base application functionalities](#common) through the application control feature.
 
 
@@ -107,6 +111,11 @@ else
 
 app_control_destroy(app_control);
 ```
+> **Note**
+>
+> The following APIs that obtain a reply as a result were added to return the result:
+> - `app_control_send_launch_request_async()` : This API is available since Tizen 5.0, and it asynchronously launches application controls.
+> - `app_control_send_launch_request_sync()` : This API is available since Tizen 5.5, and it synchronously launches application controls.
 
 <a name="implicit"></a>
 ### Implicit Launch Request
@@ -442,7 +451,7 @@ app_control_result(app_control_h request, app_control_h reply, app_control_resul
 <a name="export_appcontrol"></a>
 ## Application Control Export
 
-You can allow other applications to launch your application and use your application features through application controls by exporting your application control functionalities. To allow other applications to launch your application implicitly without the application ID, specify your application control information in the Tizen Studio.
+You can allow other applications to launch your application and use your application features through application controls by exporting your application control functionalities. To allow other applications to launch your application implicitly without the application ID, specify your application control information in Tizen Studio.
 
 **Figure: Exporting app control**
 
@@ -462,7 +471,7 @@ You can define privileges to restrict your application from launching. To launch
 > - In the MIME type, you can use two types of wildcards: `image/*` and `*/*`.
 > - In the URI, a more complex pattern of wildcards with similar semantics as the standard `glob()` function is available: '\*' matches an arbitrary, possibly empty, string, and '?' matches an arbitrary character. Unlike in the `glob()` function, the '/' character can be matched by the wildcards. There are no [...] character ranges, and the wildcards '\*' and '?' cannot be escaped to include them literally in a pattern.
 
-You can specify the application control information for your application in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in the Tizen Studio.
+You can specify the application control information for your application in the [application project settings](../../tutorials/process/setting-properties.md#manifest) in Tizen Studio.
 
 <a name="group"></a>
 ## Application Group Management
@@ -658,6 +667,120 @@ create_base_gui(appdata_s *ad)
        /* Handle the launch request */
    }
    ```
+
+<a name="action"></a>
+## Handling Application Control Actions
+
+You can define and handle each application control action:
+
+- Defining the application control action
+
+  From Tizen 5.5, the `id` attribute is added on the `<app-control>` element. You can define the name of the application control action using the `id` attribute of the `<app-control>` element, for example:
+  ```
+  <ui-application appid="org.tizen.hello" exec="uiapp" hw-acceleration="on" launch_mode="single" multiple="false" nodisplay="false" taskmanage="true" type="capp">
+    <label>UI Application</label>
+    <icon>hello.png</icon>
+    <app-control id="dial">
+      <operation name="http://tizen.org/appcontrol/operation/dial"/>
+      <mime name="*"/>
+    </app-control>
+    <app-control id="dial-for-excel">
+      <operation name="http://tizen.org/appcontrol/operation/dial"/>
+      <mime name="application/vnd.ms-excel"/>
+    </app-control>
+  </ui-application>
+  ```
+- Handling each application control action
+
+  You can handle each application control action using `app_control_add_action_handler()`. The `app_control_action_cb()` callback function will be invoked if you register the action handler using `app_control_add_action_handler()`.
+
+   > **Note**
+   >
+   > If a matched action exists when an implicit launch request is received, `app_control_action_cb()` and `app_control_cb()` callback functions are called sequentially.
+
+
+To register the application control action handle based on the content use following code:
+
+```
+#include <app.h>
+#include <dlog.h>
+
+#define LOG_TAG "MY_ACTION"
+
+static bool
+app_create_cb(void *user_data)
+{
+    return true;
+}
+
+static void
+dial_action_cb(const char *action, app_control_h app_control, void *user_data)
+{
+    /* Handle the action */
+}
+
+static void
+dial_for_excel_action_cb(const char *action, app_control_h app_control, void *user_data)
+{
+    /* Handle the action */
+}
+
+static void
+app_control_cb(app_control_h app_control, void *user_data)
+{
+    /* Handle the launch request */
+}
+
+static void
+app_resume_cb(void *user_data)
+{
+}
+
+static void
+app_pause_cb(void *user_data)
+{
+}
+
+static void
+app_terminate_cb(void *user_data)
+{
+}
+
+int main(int argc, char **argv)
+{
+    int ret;
+    struct appdata ad;
+    app_control_action_h dial_action;
+    app_control_action_h dial_for_excel_action;
+    ui_app_lifecycle_callback_s event_callback;
+
+    memset(&ad, 0x0, sizeof(struct appdata));
+
+    event_callback.create = app_create_cb;
+    event_callback.app_control = app_control_cb;
+    event_callback.pause = app_pause_cb;
+    event_callback.resume = app_resume_cb;
+    event_callback.terminate = app_terminate_cb;
+
+    ret = app_control_add_action_handler("dial", dial_action_cb, &ad, &dial_action);
+    if (ret != APP_CONTROL_ERROR_NONE) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "Failed to add action handler");
+        return -1;
+    }
+
+    ret = app_control_add_action_handler("dial_for_excel, dial_for_excel_action_cb, &ad, &dial_for_excel_action);
+    if (ret != APP_CONTROL_ERROR_NONE) {
+        dlog_print(DLOG_ERROR, LOG_TAG, "Failed to add action handler");
+        app_control_remove_action_handler(dial_action);
+        return -1;
+    }
+
+    ret = ui_app_main(argc, argv, &event_callback, &ad);
+    app_control_remove_action_handler(dial_for_excel_action);
+    app_control_remove_action_handler(dial_action);
+    return ret;
+}
+```
 
 <a name="common"></a>
 ## Common Application Controls

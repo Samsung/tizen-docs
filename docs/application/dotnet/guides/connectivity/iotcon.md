@@ -35,7 +35,7 @@ The main features of the Tizen.Network.IoTConnectivity namespace include:
 
 To enable your application to use the IoT functionality:
 
-1.  To use the [Tizen.Network.IoTConnectivity](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Network.IoTConnectivity](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.html) namespace, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -50,7 +50,7 @@ To enable your application to use the IoT functionality:
     using Tizen.Network.IoTConnectivity;
     ```
 
-3. To initialize IoT connectivity, use the `Initialize()` method of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class:
+3. To initialize IoT connectivity, use the `Initialize()` method of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class:
 
     ```
     string datPathClient = "/opt/usr/home/owner/share/res/iotcon-test-svr-db-client.dat";
@@ -70,7 +70,7 @@ To enable your application to use the IoT functionality:
 
 To create and register resources:
 
-1.  Create the resource types by creating a new instance of the [Tizen.Network.IoTConnectivity.ResourceTypes](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.ResourceTypes.html) class.
+1.  Create the resource types by creating a new instance of the [Tizen.Network.IoTConnectivity.ResourceTypes](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.ResourceTypes.html) class.
 
     In the following example, a door resource type is added:
 
@@ -78,7 +78,7 @@ To create and register resources:
     ResourceTypes types = new ResourceTypes(new List<string>() {"oic.iot.door"});
     ```
 
-2. Register the door resource by calling the `DoorResource()` constructor which is a user-defined child class of the [Tizen.Network.IoTConnectivity.Resource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.Resource.html) abstract class:
+2. Register the door resource by calling the `DoorResource()` constructor which is a user-defined child class of the [Tizen.Network.IoTConnectivity.Resource](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.Resource.html) abstract class:
 
     ```
     public class DoorResource : Resource
@@ -111,7 +111,7 @@ To create and register resources:
 
 To find resources:
 
-1.  To find a resource, call the `StartFindingResource()` method of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class:
+1.  To find a resource, call the `StartFindingResource()` method of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class:
 
     ```
     int RequestId = -1;
@@ -152,8 +152,8 @@ To find resources:
 
 To send GET requests to a server:
 
-1.  On the client side, [find resources](#scenario_2) and retrieve the remote resource handle using an event handler registered for the `ResourceFound` event of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class.
-2. Send the GET request to the server using the `GetAsync()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class:
+1.  On the client side, [find resources](#scenario_2) and retrieve the remote resource handle using an event handler registered for the `ResourceFound` event of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class.
+2. Send the GET request to the server using the `GetAsync()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class:
 
     ```
     if (outArgs != null)
@@ -217,8 +217,8 @@ To send GET requests to a server:
 
 To send PUT requests to a server:
 
-1.  On the client side, [find resources](#scenario_2) and retrieve the remote resource handle using an event handler registered for the `ResourceFound` event of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class.
-2. Send the PUT request to the server using the `PutAsync()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class.
+1.  On the client side, [find resources](#scenario_2) and retrieve the remote resource handle using an event handler registered for the `ResourceFound` event of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class.
+2. Send the PUT request to the server using the `PutAsync()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class.
 
     First create the representation and attributes, and set the desired attribute values, and then send the representation using the `PutAsync()` method.
 
@@ -320,8 +320,8 @@ To monitor the changes in a resource:
     }
     ```
 
-2. On the client side, [find resources](#scenario_2) and retrieve the remote resource handle using an event handler registered for the `ResourceFound` event of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class.
-3. On the client side, call the `StartObserving()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class. On the server side, your observing request is handled as adding a new observer.
+2. On the client side, [find resources](#scenario_2) and retrieve the remote resource handle using an event handler registered for the `ResourceFound` event of the [Tizen.Network.IoTConnectivity.IoTConnectivityClientManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.IoTConnectivityClientManager.html) class.
+3. On the client side, call the `StartObserving()` method of the [Tizen.Network.IoTConnectivity.RemoteResource](https://samsung.github.io/TizenFX/latest/api/Tizen.Network.IoTConnectivity.RemoteResource.html) class. On the server side, your observing request is handled as adding a new observer.
 
     Now whenever a resource changes on the server side, the client receives the information through an event handler registered for the `ObserverNotified` event of the `Tizen.Network.IoTConnectivity.RemoteResource` class.
 

@@ -122,9 +122,9 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Fp__Group.html#gab91a33e2ffc81b7f1774dbb8ddaab98b">eina_f32p32_fracc_get</a> (<a class="el" href="group__Eina__Fp__Group.html#ga5264584bb5c6d81dd71d36f9e4e517f1">Eina_F32p32</a> v)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the absolute value of the integer part of and Eina_F32p32 floating point number.  <a href="#gab91a33e2ffc81b7f1774dbb8ddaab98b"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Fp__Group.html#ga5264584bb5c6d81dd71d36f9e4e517f1">Eina_F32p32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Fp__Group.html#ga53527ba326447f6d8fdbe3b01fbf52d9">eina_f32p32_cos</a> (<a class="el" href="group__Eina__Fp__Group.html#ga5264584bb5c6d81dd71d36f9e4e517f1">Eina_F32p32</a> a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the cosinus of a floating point number.  <a href="#ga53527ba326447f6d8fdbe3b01fbf52d9"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the cosine of a floating point number.  <a href="#ga53527ba326447f6d8fdbe3b01fbf52d9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Fp__Group.html#ga5264584bb5c6d81dd71d36f9e4e517f1">Eina_F32p32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Fp__Group.html#ga101221cea434840fc2bd5e7083785ca0">eina_f32p32_sin</a> (<a class="el" href="group__Eina__Fp__Group.html#ga5264584bb5c6d81dd71d36f9e4e517f1">Eina_F32p32</a> a)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the sinus of a floating point number.  <a href="#ga101221cea434840fc2bd5e7083785ca0"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the sine of a floating point number.  <a href="#ga101221cea434840fc2bd5e7083785ca0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static <a class="el" href="group__Eina__Fp__Group.html#gad39780115c81512495fd39a60b9f317c">Eina_F16p16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Fp__Group.html#ga4e11feaa26bc99ce7842326b55a87477">eina_f16p16_int_from</a> (int32_t v)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new Eina_F16p316 floating point number from standard 32-bit integer.  <a href="#ga4e11feaa26bc99ce7842326b55a87477"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Fp__Group.html#ga632f8e744cd4f4dcaaa3d144e5c850b7">eina_f16p16_int_to</a> (<a class="el" href="group__Eina__Fp__Group.html#gad39780115c81512495fd39a60b9f317c">Eina_F16p16</a> v)</td></tr>
@@ -247,7 +247,7 @@ Defines</h2></td></tr>
 <p>Gets the absolute value of an Eina_F32p32 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The floating point number </td></tr>
   </table>
   </dd>
 </dl>
@@ -328,8 +328,8 @@ Defines</h2></td></tr>
 <p>Calculates the sum of two Eina_F16p16 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first number </td></tr>
-    <tr><td class="paramname">b</td><td>The second number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The second number </td></tr>
   </table>
   </dd>
 </dl>
@@ -365,8 +365,8 @@ Defines</h2></td></tr>
 <p>Calculates the division of two Eina_F16p16 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The numerator number </td></tr>
-    <tr><td class="paramname">b</td><td>The denominator number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The numerator number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The denominator number </td></tr>
   </table>
   </dd>
 </dl>
@@ -392,7 +392,7 @@ Defines</h2></td></tr>
 <p>Creates a new Eina_F16p16 floating point number from standard double. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Double value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Double value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -418,7 +418,7 @@ Defines</h2></td></tr>
 <p>Creates a new standard double from Eina_F16p16 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Eina_F16p16 value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Eina_F16p16 value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -444,7 +444,7 @@ Defines</h2></td></tr>
 <p>Creates a new Eina_F16p16 floating point number from standard float. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Float value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Float value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -470,7 +470,7 @@ Defines</h2></td></tr>
 <p>Creates a new standard float from Eina_F16p16 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Eina_F16p16 value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Eina_F16p16 value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -496,7 +496,7 @@ Defines</h2></td></tr>
 <p>Gets the absolute value of the integer part of and Eina_F16p16 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>The floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>The floating point number </td></tr>
   </table>
   </dd>
 </dl>
@@ -522,7 +522,7 @@ Defines</h2></td></tr>
 <p>Creates a new Eina_F16p316 floating point number from standard 32-bit integer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>32-bit integer value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>32-bit integer value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -548,7 +548,7 @@ Defines</h2></td></tr>
 <p>Creates a new standard 32-bit integer from Eina_F16p16 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Eina_F16p16 value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Eina_F16p16 value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -584,8 +584,8 @@ Defines</h2></td></tr>
 <p>Calculates the multiplication of two Eina_F16p16 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first number </td></tr>
-    <tr><td class="paramname">b</td><td>The second number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The second number </td></tr>
   </table>
   </dd>
 </dl>
@@ -621,8 +621,8 @@ Defines</h2></td></tr>
 <p>Calculates the scale multiplication of one Eina_F16p16 floating point number with an integer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The Eina_F16p16 number </td></tr>
-    <tr><td class="paramname">b</td><td>The integer value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The Eina_F16p16 number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The integer value </td></tr>
   </table>
   </dd>
 </dl>
@@ -648,7 +648,7 @@ Defines</h2></td></tr>
 <p>Calculates the square root of an Eina_F16p16 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The number to calculate the square root from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The number to calculate the square root from </td></tr>
   </table>
   </dd>
 </dl>
@@ -684,8 +684,8 @@ Defines</h2></td></tr>
 <p>Calculates the subtraction of two Eina_F16p16 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first number </td></tr>
-    <tr><td class="paramname">b</td><td>The subtracted number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The subtracted number </td></tr>
   </table>
   </dd>
 </dl>
@@ -711,7 +711,7 @@ Defines</h2></td></tr>
 <p>Converts an Eina_F16p16 floating point number into Eina_F32p32 format. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The Eina_F16p16 floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The Eina_F16p16 floating point number </td></tr>
   </table>
   </dd>
 </dl>
@@ -737,7 +737,7 @@ Defines</h2></td></tr>
 <p>Converts an Eina_F16p16 floating point number into Eina_F8p16 format. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The Eina_F16p16 floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The Eina_F16p16 floating point number </td></tr>
   </table>
   </dd>
 </dl>
@@ -773,8 +773,8 @@ Defines</h2></td></tr>
 <p>Calculates the sum of two Eina_F32p32 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first number </td></tr>
-    <tr><td class="paramname">b</td><td>The second number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The second number </td></tr>
   </table>
   </dd>
 </dl>
@@ -797,15 +797,15 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Calculates the cosinus of a floating point number. </p>
+<p>Calculates the cosine of a floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The angle in radians to calculate the cosinus from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The angle in radians to calculate the cosine from. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The cosinus value of the angle <code>a</code> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The cosine of the angle <code>a</code> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -837,8 +837,8 @@ Defines</h2></td></tr>
 <p>Calculates the division of two Eina_F32p32 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The numerator number </td></tr>
-    <tr><td class="paramname">b</td><td>The denominator number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The numerator number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The denominator number </td></tr>
   </table>
   </dd>
 </dl>
@@ -864,7 +864,7 @@ Defines</h2></td></tr>
 <p>Creates a new Eina_F32p32 floating point number from standard double. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Double value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Double value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -890,7 +890,7 @@ Defines</h2></td></tr>
 <p>Creates a new standard double from Eina_F32p32 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Eina_F32p32 value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Eina_F32p32 value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -916,7 +916,7 @@ Defines</h2></td></tr>
 <p>Gets the absolute value of the integer part of and Eina_F32p32 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>The floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>The floating point number </td></tr>
   </table>
   </dd>
 </dl>
@@ -942,7 +942,7 @@ Defines</h2></td></tr>
 <p>Creates a new Eina_F32p32 floating point number from standard 32-bit integer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>32-bit integer value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>32-bit integer value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -968,7 +968,7 @@ Defines</h2></td></tr>
 <p>Creates a new standard 32-bit integer from Eina_F32p32 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Eina_F32p32 value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Eina_F32p32 value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -1004,8 +1004,8 @@ Defines</h2></td></tr>
 <p>Calculates the multiplication of two Eina_F32p32 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first number </td></tr>
-    <tr><td class="paramname">b</td><td>The second number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The second number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1042,8 +1042,8 @@ Defines</h2></td></tr>
 <p>Calculates the scale multiplication of one Eina_F32p32 floating point number with an integer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The Eina_F32p32 number </td></tr>
-    <tr><td class="paramname">b</td><td>The integer value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The Eina_F32p32 number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The integer value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1066,15 +1066,15 @@ Defines</h2></td></tr>
 </div>
 <div class="memdoc">
 
-<p>Calculates the sinus of a floating point number. </p>
+<p>Calculates the sine of a floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The angle in radians to calculate the sinus from. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The angle in radians to calculate the sine from. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The cosinus value of the angle <code>a</code> </dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The cosine of the angle <code>a</code> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1096,7 +1096,7 @@ Defines</h2></td></tr>
 <p>Calculates the square root of an Eina_F32p32 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The number to calculate the square root from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The number to calculate the square root from </td></tr>
   </table>
   </dd>
 </dl>
@@ -1132,8 +1132,8 @@ Defines</h2></td></tr>
 <p>Calculates the subtraction of two Eina_F32p32 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first number </td></tr>
-    <tr><td class="paramname">b</td><td>The subtracted number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The subtracted number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1159,7 +1159,7 @@ Defines</h2></td></tr>
 <p>Converts an Eina_F32p32 floating point number into Eina_F16p16 format. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The Eina_F32p32 floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The Eina_F32p32 floating point number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1185,7 +1185,7 @@ Defines</h2></td></tr>
 <p>Converts an Eina_F32p32 floating point number into Eina_F8p24 format. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The Eina_F32p32 floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The Eina_F32p32 floating point number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1221,8 +1221,8 @@ Defines</h2></td></tr>
 <p>Calculates the sum of two Eina_F8p24 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first number </td></tr>
-    <tr><td class="paramname">b</td><td>The second number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The second number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1258,8 +1258,8 @@ Defines</h2></td></tr>
 <p>Calculates the division of two Eina_F8p24 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The numerator number </td></tr>
-    <tr><td class="paramname">b</td><td>The denominator number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The numerator number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The denominator number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1285,7 +1285,7 @@ Defines</h2></td></tr>
 <p>Creates a new Eina_F8p24 floating point number from standard float. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Float value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Float value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -1311,7 +1311,7 @@ Defines</h2></td></tr>
 <p>Create a new standard float from Eina_F8p24 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Eina_F8p24 value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Eina_F8p24 value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -1337,7 +1337,7 @@ Defines</h2></td></tr>
 <p>Gets the absolute value of the integer part of and Eina_F8p24 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>The floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>The floating point number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1363,7 +1363,7 @@ Defines</h2></td></tr>
 <p>Creates a new Eina_F16p316 floating point number from standard 32-bit integer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>32-bit integer value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>32-bit integer value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -1389,7 +1389,7 @@ Defines</h2></td></tr>
 <p>Creates a new standard 32-bit integer from Eina_F8p24 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">v</td><td>Eina_F8p24 value to convert </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">v</td><td>Eina_F8p24 value to convert </td></tr>
   </table>
   </dd>
 </dl>
@@ -1425,8 +1425,8 @@ Defines</h2></td></tr>
 <p>Calculates the multiplication of two Eina_F8p24 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first number </td></tr>
-    <tr><td class="paramname">b</td><td>The second number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The second number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1462,8 +1462,8 @@ Defines</h2></td></tr>
 <p>Calculates the scale multiplication of one Eina_F8p24 floating point number with an integer. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The Eina_F16p16 number </td></tr>
-    <tr><td class="paramname">b</td><td>The integer value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The Eina_F16p16 number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The integer value </td></tr>
   </table>
   </dd>
 </dl>
@@ -1489,7 +1489,7 @@ Defines</h2></td></tr>
 <p>Calculates the square root of an Eina_F8p24 floating point number. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The number to calculate the square root from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The number to calculate the square root from </td></tr>
   </table>
   </dd>
 </dl>
@@ -1525,8 +1525,8 @@ Defines</h2></td></tr>
 <p>Calculates the subtraction of two Eina_F8p24 floating point numbers. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The first number </td></tr>
-    <tr><td class="paramname">b</td><td>The subtracted number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The first number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">b</td><td>The subtracted number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1552,7 +1552,7 @@ Defines</h2></td></tr>
 <p>Converts an Eina_F8p24 floating point number into Eina_F16p16 format. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The Eina_F8p24 floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The Eina_F8p24 floating point number </td></tr>
   </table>
   </dd>
 </dl>
@@ -1578,7 +1578,7 @@ Defines</h2></td></tr>
 <p>Converts an Eina_F8p24 floating point number into Eina_F32p32 format. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>The Eina_F8p24 floating point number </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">a</td><td>The Eina_F8p24 floating point number </td></tr>
   </table>
   </dd>
 </dl>

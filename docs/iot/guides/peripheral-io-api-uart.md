@@ -43,20 +43,14 @@ To open and close a handle:
 1.  To open a UART handle, use the `peripheral_uart_open()` function:
 
     ```
-    int port = 4; /* ARTIK 530 : UART0 */
+    int port = 0;
     peripheral_uart_h uart_h;
     peripheral_uart_open(port, &uart_h);
     ```
 
     The `port` parameter required for this function must be set according to the following tables.
 
-    **Table: ARTIK 530**
-
-    | Pin name |  | Port (parameter 1) |
-    | -------- | ---------| ---- |
-    | UART0_RX | UART0_TX | 4    |
-
-    **Table: Raspberry Pi 3**
+    **Table: Raspberry Pi 3 and Raspberry Pi 4**
 
     | Pin name | | Port (parameter 1) |
     | -------- | ---------| ---- |

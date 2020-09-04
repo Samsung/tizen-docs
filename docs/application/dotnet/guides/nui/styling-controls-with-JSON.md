@@ -9,14 +9,14 @@ The examples in this topic illustrate the styling of a push button control.
 
 Styling is inherited. This means that styling a parent automatically affects its child, unless overridden.
 
-The following table describes the style properties of the [Tizen.NUI.BaseComponents.View](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.View.html) class that automatically affect a push button, as it is a child of the view.
+The following table describes the style properties of the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class that automatically affect a push button, as it is a child of the view.
 
 **Table: View style properties affecting a push button**
 
 | Name                     | Type                     | Description              |
 |----------------|--------------------|----------------|
-| `HeightResizePolicy`     | `string`                 | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation) |
-| `WidthResizePolicy`      | `string`                 | See [Size Negotiation](creating-custom-view-controls.md#sizenegotiation) |
+| `HeightResizePolicy`     | `string`                 | See [Size Negotiation](customview.md#sizenegotiation) |
+| `WidthResizePolicy`      | `string`                 | See [Size Negotiation](customview.md#sizenegotiation) |
 | `SizeModeFactor`         | `vector3`                | Factor used to calculate the view size<br><br> **Note**<br> This property is used only when `ResizePolicyType` is set to `ResizePolicyType.SizeRelativeToParent` or `ResizePolicyType.SizeFixedOffsetFromParent`.<br> The view's size is accordingly set by  multiplying the view size by this factor, or by adding the factor to the view size.           |
 | `MinimumSize`            | `Size2D`                 | Minimum size a view can  be assigned in size negotiation  |
 | `MaximumSize`            | `Size2D`                 | Maximum size a view can  be assigned in size negotiation              |

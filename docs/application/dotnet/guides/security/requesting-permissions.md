@@ -21,9 +21,9 @@ For a list of privacy-related privileges, see [Security and API Privileges](../.
 
 To enable your application to use the privacy-related permissions functionality:
 
-1.  To use the methods and properties of the [Tizen.Security](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.html) namespace, include it in your application:
+1.  To use the methods and properties of the [Tizen.Security](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.html) namespace, include it in your application:
 
-    ```
+    ```csharp
     using Tizen.Security;
     ```
 
@@ -39,9 +39,9 @@ To enable your application to use the privacy-related permissions functionality:
 ## Requesting Permissions
 To check whether an application has permission to use a privilege, and to request permission if required:
 
-1.  To check whether an application has permission to use a particular privilege, use the `CheckPermission()` method of the [Tizen.Security.PrivacyPrivilegeManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.PrivacyPrivilegeManager.html) class:
+1.  To check whether an application has permission to use a particular privilege, use the `CheckPermission()` method of the [Tizen.Security.PrivacyPrivilegeManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.html) class:
 
-    ```
+    ```csharp
     const string cameraPrivilege = "http://tizen.org/privilege/camera";
 
     void CheckAndRequestCameraPermission()
@@ -51,13 +51,13 @@ To check whether an application has permission to use a privilege, and to reques
             CheckResult result = PrivacyPrivilegeManager.CheckPermission(cameraPrivilege);
     ```
 
-    The result of the call is returned as a value of the [Tizen.Security.CheckResult](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.CheckResult.html) enumeration.
+    The result of the call is returned as a value of the [Tizen.Security.CheckResult](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.CheckResult.html) enumeration.
 
 2.  React to the permission check appropriately:
 
     -   If the result value is `Allow`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
 
-        ```
+        ```csharp
                 switch (result)
                 {
                     case CheckResult.Allow:
@@ -67,7 +67,7 @@ To check whether an application has permission to use a privilege, and to reques
 
     -   If the result value is `Deny`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any method that involves the privilege results in an error.
 
-        ```
+        ```csharp
                     case CheckResult.Deny:
                         /// Show a message and terminate the application
                         break;
@@ -77,14 +77,14 @@ To check whether an application has permission to use a privilege, and to reques
 
         The dialog box asking for user permission is shown only if the `RequestPermission()` method does not throw an exception.
 
-        ```
+        ```csharp
                     case CheckResult.Ask:
                         PrivacyPrivilegeManager.RequestPermission(cameraPrivilege);
                         break;
                 }
         ```
 
-    ```
+    ```csharp
         }
         catch (Exception e)
         {
@@ -93,13 +93,13 @@ To check whether an application has permission to use a privilege, and to reques
     }
     ```
 
-3.  <a name="handler"></a>If you need to request user permission, handle the user decision within an event handler registered for the `ResponseFetched` event of the [Tizen.Security.PrivacyPrivilegeManager.ResponseContext](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.PrivacyPrivilegeManager.ResponseContext.html) class.
+3.  <a name="handler"></a>If you need to request user permission, handle the user decision within an event handler registered for the `ResponseFetched` event of the [Tizen.Security.PrivacyPrivilegeManager.ResponseContext](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.PrivacyPrivilegeManager.ResponseContext.html) class.
 
-    The user decision is returned in the event handler as the `result` property of the [Tizen.Security.RequestResponseEventArgs](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.RequestResponseEventArgs.html) class.
+    The user decision is returned in the event handler as the `result` property of the [Tizen.Security.RequestResponseEventArgs](https://samsung.github.io/TizenFX/latest/api/Tizen.Security.RequestResponseEventArgs.html) class.
 
     Make sure the event handler is registered before calling the `RequestPermission()` method of the `Tizen.Security.PrivacyPrivilegeManager` class. For a Xamarin.Forms application, the best place to register the event handler is the `Xamarin.Forms.Application.OnStart()` life-cycle method.
 
-    ```
+    ```csharp
     private void SetupPPMHandler(string privilege)
     {
         PrivacyPrivilegeManager.ResponseContext context = null;
@@ -141,6 +141,91 @@ To check whether an application has permission to use a privilege, and to reques
     -   If the user decision is `DenyOnce`, the decision is not definitive. In this case, access to protected functionality is still prohibited. This decision can be interpreted as a cancel action on behalf of the user, indicating that the user is not sure what the purpose of the request is. Therefore, consider providing some additional information to explain why the permission is required.
 
     If the decision is definitive, any subsequent `RequestPermission()` calls result in an immediate response with an appropriate result: `AllowForever` or `DenyForever`. However, the user can change the status of privacy-related privileges later by modifying the privacy settings on the device. For this reason, the application must always check the status of privacy-related privileges before using protected functionality.
+
+## Requesting Multiple Permissions
+
+This section describes how to check and request multiple privileges in a single API call.
+
+> **Note**
+>
+> Multiple privileges in a single API call are supported from Tizen 5.5.
+
+To check whether an application has permission to use a privilege, and to request permission if required:
+
+1. To verify whether an application has permission to use privileges, use `CheckPermissions()`:
+
+      ```csharp
+        string[] privileges = new [] {"http://tizen.org/privilege/account.read",
+                                      "http://tizen.org/privilege/alarm"};
+        CheckResult[] results = PrivacyPrivilegeManager.CheckPermissions(privileges).ToArray();
+      ```
+
+   The results of the call is stored in `CheckResult` array.
+
+2. React to the permissions check appropriately:
+
+      ```csharp
+        List<string> privilegesWithAskStatus = new List<string>();
+        try {
+            for (int iterator = 0; iterator &lt; results.Length; ++iterator)
+            {
+      ```
+   -   If the result value is `Allow`, the application is allowed to perform operations related to the privilege. For example, the application can enable additional UI elements or functionalities.
+         ```csharp
+                switch (results[iterator])
+                {
+                case CheckResult.Allow:
+                    // Privilege can be used
+                    break;
+         ```
+
+   -   If the result value is `Deny`, the application is not allowed to perform operations related to the privilege. Any attempt to use such functionality without the user's consent fails. Usually, this means that invoking any method that involves the privilege results in an error.
+         ```csharp
+                case CheckResult.Deny:
+                    // Privilege can't be used
+                    break;
+         ```
+
+   -   If the result value is `Ask`, the application must request permission from the user with the `RequestPermissions()` method, which displays a dialog box. When the user makes a decision, the answers are returned as
+  [Tizen.Security.RequestMultipleResponseEventArgs](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Security.RequestMultipleResponseEventArgs.html).
+
+         ```csharp
+                case CheckResult.Ask:
+                    // User permission request required
+                    privilegesWithAskStatus.Add(privileges[iterator]);
+                    break;
+                }
+         ```
+	  ```csharp
+            }
+            RequestMultipleResponseEventArgs request;
+            request = await PrivacyPrivilegeManager.RequestPermissions(privilegesWithAskStatus);
+
+            if (request.Cause == CallCause.Error)
+            {
+                // handle errors
+            }
+
+            foreach (PermissionRequestResponse response in request.Responses)
+            {
+                // PermissionRequestResponse contains Privilege name and RequestResult
+                switch (response.result)
+                {
+                    case RequestResult.AllowForever:
+                        /// Update UI and start accessing protected functionality
+                        break;
+                    case RequestResult.DenyForever:
+                        /// Show a message and terminate the application
+                        break;
+                    case RequestResult.DenyOnce:
+                        /// Show a message with explanation
+                        break;
+                }
+            }
+        } catch (Exception e) {
+            // handle exceptions
+        }
+      ```
 
 > **Note**
 >

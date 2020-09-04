@@ -69,7 +69,7 @@ for TD:
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/SQLite.NET.Sample" target="_blank"><strong>(W) SQLite.Net.Sample</strong></a></p>
 			<p>This sample application demonstrates how to create and connect to an SQLite database and use it in Tizen .Net application.</p>
-			<p>This application uses <a href="https://samsung.github.io/TizenFX/API5/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.<br>
+			<p>This application uses <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.<br>
 			<ul>
 				<li>Create and connect to an SQLite database</li>
 				<li>Create and modify a DB table</li>
@@ -98,7 +98,7 @@ for TD:
 			<p><img alt="" height="180" src="media/wweatherapp.png" width="180" /></p>
 			</td>
 			<td>
-			<p><strong>(W) Weather</strong> [In progress]</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Weather" target="_blank"><strong>(W) Weather</strong></a></p>
 			<p>This sample application demonstrates how to obtain the data provided by the RESTful API using <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a> and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			</td>
 		</tr>

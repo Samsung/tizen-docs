@@ -28,13 +28,13 @@ To control volume levels, the application has to request permission by adding th
 
 You can manage the volume level of a specific audio type. You can set and get a volume level and a maximum volume level of a particular audio type.
 
-Normally, if there is an active output stream, the `VolumeController.CurrentPlaybackType` property of the [Tizen.Multimedia.AudioManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioManager.html) class returns the stream audio type, and if not, it returns `AudioVolumeType.None`.
+Normally, if there is an active output stream, the `VolumeController.CurrentPlaybackType` property of the [Tizen.Multimedia.AudioManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioManager.html) class returns the stream audio type, and if not, it returns `AudioVolumeType.None`.
 
 To control the volume of your application:
 
 -   To receive a notification whenever the volume changes, define and register an event handler for the `VolumeController.Changed` event of the `Tizen.Multimedia.AudioManager` class:
 
-    ```
+    ```csharp
     void OnVolumeChanged(object sender, VolumeChangedEventArgs args)
     {
         Tizen.Log.Info("AudioManager", $"{args.Type} volume changed to {args.Level}");
@@ -47,7 +47,7 @@ To control the volume of your application:
 
 -   To retrieve the current and maximum volumes for a specific audio type, use the `VolumeController.Level` and `VolumeController.MaxLevel` properties of the `Tizen.Multimedia.AudioManager` class:
 
-    ```
+    ```csharp
     var type = AudioVolumeType.Media;
 
     var curVol = AudioManager.VolumeController.Level[type];
@@ -59,7 +59,7 @@ To control the volume of your application:
 
     In the following example, a value is received from application UI slider, with which the user sets the volume level.
 
-    ```
+    ```csharp
     var type = AudioVolumeType.Media;
     int value;
 
@@ -77,13 +77,13 @@ The audio behavior of your application must change depending on the audio device
 To query audio device information:
 
 -   To access device information:
-    1.  Retrieve the list of the currently connected audio devices with the `GetConnectedDevices()` method of the [Tizen.Multimedia.AudioManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioManager.html) class:
+    1.  Retrieve the list of the currently connected audio devices with the `GetConnectedDevices()` method of the [Tizen.Multimedia.AudioManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioManager.html) class:
 
-        ```
+        ```csharp
         IEnumerable<AudioDevice> connectedDevices = AudioManager.GetConnectedDevices();
         ```
 
-    2.  Retrieve the device information from the [Tizen.Multimedia.AudioDevice](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.AudioDevice.html) class, which has the following properties:
+    2.  Retrieve the device information from the [Tizen.Multimedia.AudioDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioDevice.html) class, which has the following properties:
         -   `Type`: Device type
         -   `IoDirection`: Device IO direction
         -   `Id`: Device ID
@@ -93,7 +93,7 @@ To query audio device information:
 -   To get a notification when the audio device connection or state changes, add event handlers for the `DeviceConnectionChanged` and `DeviceRunningChanged` events of the `Tizen.Multimedia.AudioManager` class:
     -   To receive a notification whenever the device connection state changes:
 
-        ```
+        ```csharp
         void OnDeviceConnectionChanged(object sender, AudioDeviceConnectionChangedEventArgs args)
         {
             if (args.IsConnected)
@@ -117,7 +117,7 @@ To query audio device information:
 
     -   To receive a notification whenever the device state changes:
 
-        ```
+        ```csharp
         void OnDeviceRunningChanged(object sender, AudioDeviceRunningChangedEventArgs args)
         {
             if (args.Device.Type == AudioDeviceType.BluetoothMedia)
@@ -137,11 +137,51 @@ To query audio device information:
         ```
 
 
-        > **Note**   
-		> The initial running state of the connected device is `false`, which means the connected device is not running.
+        > **Note**
+        >
+        > The initial running state of the connected device is `false`, which means the connected device is not running.
 
+-   To utilize additional functionality for USB audio type and output direction device, use the [Tizen.Multimedia.AudioDevice](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.AudioDevice.html) class:
+    -   To get the device of USB audio type and output direction:
+        ```csharp
+        AudioDevice usbOutputDevice = null;
+        foreach(AudioDevice d in AudioManager.GetConnectedDevices())
+        {
+            if (d.Type == AudioDeviceType.UsbAudio && d.IoDirection == AudioDeviceIoDirection.Output)
+            {
+                usbOutputDevice = d;
+                break;
+            }
+        }
+        ```
 
+    -   To get the supported sample formats and to set the specific sample format:
 
+        1.  Retrieve the list of the currently supported sample formats with the `GetSupportedSampleFormats()` method:
+
+            ```csharp
+            IEnumerable<AudioSampleFormat> supportedFormats = usbOutputDevice.GetSupportedSampleFormats();
+            ```
+
+        2.  Select one of the supported sample formats, then set it with the `SetSampleFormat()` method:
+
+            ```csharp
+            usbOutputDevice.SetSampleFormat(AudioSampleFormat.S16LE);
+            ```
+
+    -   To get the supported sample rates and to set the specific sample rate:
+
+        1.  Retrieve the list of the currently supported sample rates with the `GetSupportedSampleRates()` method:
+
+            ```csharp
+            IEnumerable<uint> supportedRates = usbOutputDevice.GetSupportedSampleRates();
+            ```
+
+        2.  Select one of the supported sample rates, then set it with the `SetSampleRate()` method:
+
+            ```csharp
+            usbOutputDevice.SetSampleRate(48000);
+            ```
 ## Related Information
-* Dependencies
+- Dependencies
   -   Tizen 4.0 and Higher

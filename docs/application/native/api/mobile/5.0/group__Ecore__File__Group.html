@@ -162,6 +162,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the monitoring of the given path.  <a href="#ga36214769a9ef953f4d2ddcef0259a651"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#gad9cd6de3ba67d076627b3fb13b995864">ecore_file_monitor_path_get</a> (<a class="el" href="group__Ecore__File__Group.html#ga4fdec59d561b66134827381ec5105cf2">Ecore_File_Monitor</a> *em)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the monitored path.  <a href="#gad9cd6de3ba67d076627b3fb13b995864"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#ga0b979b4dc509a159f087136743e8fc74">ecore_file_path_dir_exists</a> (const char *in_dir)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given directory is in PATH.  <a href="#ga0b979b4dc509a159f087136743e8fc74"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#ga0826230d24ff7834c9c10f1cbc82c2ed">ecore_file_app_installed</a> (const char *exe)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given application is installed.  <a href="#ga0826230d24ff7834c9c10f1cbc82c2ed"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#gaa1ef311d3d165fd2a7acad50d5fceda6">ecore_file_app_list</a> (void)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a list of all the applications installed on the system.  <a href="#gaa1ef311d3d165fd2a7acad50d5fceda6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#ga3ec2d36d0e56daf214199fd2e2307caa">ecore_file_download</a> (const char *url, const char *dst, <a class="el" href="group__Ecore__File__Group.html#ga71ca51b9726d274b1b750b021fdb8730">Ecore_File_Download_Completion_Cb</a> completion_cb, <a class="el" href="group__Ecore__File__Group.html#ga829dc96dbd2cb2bda6d2e8308b3fa24b">Ecore_File_Download_Progress_Cb</a> progress_cb, void *data, <a class="el" href="group__Ecore__File__Group.html#gac13ffcf33aa05a26d8cd36b22918a8b9">Ecore_File_Download_Job</a> **job_ret)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Downloads the given url to the given destination.  <a href="#ga3ec2d36d0e56daf214199fd2e2307caa"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#ga79099348cfad7e1da8158470f058db15">ecore_file_download_full</a> (const char *url, const char *dst, <a class="el" href="group__Ecore__File__Group.html#ga71ca51b9726d274b1b750b021fdb8730">Ecore_File_Download_Completion_Cb</a> completion_cb, <a class="el" href="group__Ecore__File__Group.html#ga829dc96dbd2cb2bda6d2e8308b3fa24b">Ecore_File_Download_Progress_Cb</a> progress_cb, void *data, <a class="el" href="group__Ecore__File__Group.html#gac13ffcf33aa05a26d8cd36b22918a8b9">Ecore_File_Download_Job</a> **job_ret, <a class="el" href="group__Eina__Hash__Group.html#ga9a89d7d3ee260d3a60572ebf651b07e0">Eina_Hash</a> *headers)</td></tr>
@@ -169,7 +175,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#ga70a16572e7a68d86fc73b2832ee61f40">ecore_file_download_abort_all</a> (void)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Aborts all downloads.  <a href="#ga70a16572e7a68d86fc73b2832ee61f40"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#gaab33a141bc148f306f4023df3f106ab9">ecore_file_download_abort</a> (<a class="el" href="group__Ecore__File__Group.html#gac13ffcf33aa05a26d8cd36b22918a8b9">Ecore_File_Download_Job</a> *job)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Aborts the given download job and call the completion_cb callbck with a status of 1 (error).  <a href="#gaab33a141bc148f306f4023df3f106ab9"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Aborts the given download job and call the completion_cb callback with a status of 1 (error).  <a href="#gaab33a141bc148f306f4023df3f106ab9"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__File__Group.html#gab1aa4e6a7be639e47be2c0a10be7124e">ecore_file_download_protocol_available</a> (const char *protocol)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given protocol is available.  <a href="#gab1aa4e6a7be639e47be2c0a10be7124e"></a><br/></td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
@@ -342,8 +348,58 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>The executable from <code>app</code> as a newly allocated string. Arguments are removed and escape characters are handled. If <code>app</code> is <code>NULL</code>, or on failure, the function returns <code>NULL</code>. When not needed anymore, the returned value must be freed.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The executable from <code>app</code> as a newly allocated string. Arguments are removed and escape characters are handled. If <code>app</code> is <code>NULL</code>, or on failure, the function returns <code>NULL</code>. When not needed anymore, the returned value must be freed. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0826230d24ff7834c9c10f1cbc82c2ed"></a><!-- doxytag: member="Ecore_File.h::ecore_file_app_installed" ref="ga0826230d24ff7834c9c10f1cbc82c2ed" args="(const char *exe)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__File__Group.html#ga0826230d24ff7834c9c10f1cbc82c2ed">ecore_file_app_installed</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>exe</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks if the given application is installed. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">exe</td><td>The name of the application </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the <code>exe</code> is in PATH and is executable, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<p>This function checks if <code>exe</code> exists in PATH and is executable. If <code>exe</code> is <code>NULL</code> or is not executable, the function returns <code>EINA_FALSE</code>, otherwise it returns <code>EINA_TRUE</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa1ef311d3d165fd2a7acad50d5fceda6"></a><!-- doxytag: member="Ecore_File.h::ecore_file_app_list" ref="gaa1ef311d3d165fd2a7acad50d5fceda6" args="(void)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__List__Group.html#ga3295e1210efea1fb0fd6acbf3cbc1f29">Eina_List</a>* <a class="el" href="group__Ecore__File__Group.html#gaa1ef311d3d165fd2a7acad50d5fceda6">ecore_file_app_list</a> </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a list of all the applications installed on the system. </p>
+<dl class="return"><dt><b>Returns:</b></dt><dd>An Eina_List containing all the executable files in the system.</dd></dl>
+<p>This function returns a list of allocated strings of all the executable files. If no files are found, the function returns <code>NULL</code>. When not needed anymore, the element of the list must be freed. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -370,8 +426,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the <code>file</code> can be executed, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function returns <code>EINA_TRUE</code> if <code>file</code> can be executed, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns <code>EINA_TRUE</code> if <code>file</code> can be executed, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -398,8 +454,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the <code>file</code> is readable, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function returns <code>EINA_TRUE</code> if <code>file</code> can be read, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns <code>EINA_TRUE</code> if <code>file</code> can be read, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -426,8 +482,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the <code>file</code> is writable, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function returns <code>EINA_TRUE</code> if <code>file</code> can be written, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns <code>EINA_TRUE</code> if <code>file</code> can be written, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -465,8 +521,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function copies <code>src</code> to <code>dst</code>. If the absolute path name of <code>src</code> and <code>dst</code> can not be computed, or if they are equal, or if the copy fails, the function returns <code>EINA_FALSE</code>, otherwise it returns <code>EINA_TRUE</code>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function copies <code>src</code> to <code>dst</code>. If the absolute path name of <code>src</code> and <code>dst</code> can not be computed, or if they are equal, or if the copy fails, the function returns <code>EINA_FALSE</code>, otherwise it returns <code>EINA_TRUE</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -493,8 +549,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The directory name.</dd></dl>
-<p>This function returns the directory where <code>file</code> resides as anewly allocated string. If <code>file</code> is <code>NULL</code> or on error, this function returns <code>NULL</code>. When not needed anymore, the returned value must be freed.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns the directory where <code>file</code> resides as newly allocated string. If <code>file</code> is <code>NULL</code> or on error, this function returns <code>NULL</code>. When not needed anymore, the returned value must be freed. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -521,8 +577,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>1</code> if directory is empty, <code>0</code> if it has at least one file, or <code>-1</code> in case of errors.</dd></dl>
-<p>This functions checks if <code>dir</code> is empty. The '.' and '..' files will be ignored. If <code>dir</code> is empty, 1 is returned, if it contains at least one file, <code>0</code> is returned. On failure, <code>-1</code> is returned.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This functions checks if <code>dir</code> is empty. The '.' and '..' files will be ignored. If <code>dir</code> is empty, 1 is returned, if it contains at least one file, <code>0</code> is returned. On failure, <code>-1</code> is returned. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -588,8 +644,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the download start or <code>EINA_FALSE</code> on failure.</dd></dl>
-<p>This function starts the download of the URL <code>url</code> and saves it to <code>dst</code>. <code>url</code> must provide the protocol, including '<a href="http://',">http://',</a> '<a href="ftp://'">ftp://'</a> or '<a href="file://'">file://'</a>. Ecore_File must be compiled with CURL to download using http and ftp protocols. If <code>dst</code> is ill-formed, or if it already exists, the function returns <code>EINA_FALSE</code>. When the download is complete, the callback <code>completion_cb</code> is called and <code>data</code> is passed to it. The <code>status</code> parameter of <code>completion_cb</code> will be filled with the status of the download (200, 404,...). The <code>progress_cb</code> is called during the download operation, each time a packet is received or when CURL wants. It can be used to display the percentage of the downloaded file. Return 0 from this callback, if provided, to continue the operation or anything else to abort the download. The only operations that can be aborted are those with protocol 'http' or 'ftp'. In that case <code>job_ret</code> can be passed to <a class="el" href="group__Ecore__File__Group.html#gaab33a141bc148f306f4023df3f106ab9" title="Aborts the given download job and call the completion_cb callbck with a status of 1 (error)...">ecore_file_download_abort()</a> to abort that download job. Similarly <a class="el" href="group__Ecore__File__Group.html#ga70a16572e7a68d86fc73b2832ee61f40" title="Aborts all downloads.">ecore_file_download_abort_all()</a> can be used to abort all download operations. This function returns <code>EINA_TRUE</code> if the download starts, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function starts the download of the URL <code>url</code> and saves it to <code>dst</code>. <code>url</code> must provide the protocol, including 'http://', 'ftp://' or 'file://'. Ecore_File must be compiled with CURL to download using http and ftp protocols. If <code>dst</code> is ill-formed, or if it already exists, the function returns <code>EINA_FALSE</code>. When the download is complete, the callback <code>completion_cb</code> is called and <code>data</code> is passed to it. The <code>status</code> parameter of <code>completion_cb</code> will be filled with the status of the download (200, 404,...). The <code>progress_cb</code> is called during the download operation, each time a packet is received or when CURL wants. It can be used to display the percentage of the downloaded file. Return 0 from this callback, if provided, to continue the operation or anything else to abort the download. The only operations that can be aborted are those with protocol 'http' or 'ftp'. In that case <code>job_ret</code> can be passed to <a class="el" href="group__Ecore__File__Group.html#gaab33a141bc148f306f4023df3f106ab9" title="Aborts the given download job and call the completion_cb callback with a status of 1 (error)...">ecore_file_download_abort()</a> to abort that download job. Similarly <a class="el" href="group__Ecore__File__Group.html#ga70a16572e7a68d86fc73b2832ee61f40" title="Aborts all downloads.">ecore_file_download_abort_all()</a> can be used to abort all download operations. This function returns <code>EINA_TRUE</code> if the download starts, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -608,15 +664,15 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
 </div>
 <div class="memdoc">
 
-<p>Aborts the given download job and call the completion_cb callbck with a status of 1 (error). </p>
+<p>Aborts the given download job and call the completion_cb callback with a status of 1 (error). </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">job</td><td>The download job to abort.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This function aborts a download operation started by <a class="el" href="group__Ecore__File__Group.html#ga3ec2d36d0e56daf214199fd2e2307caa" title="Downloads the given url to the given destination.">ecore_file_download()</a>. <code>job</code> is the <a class="el" href="group__Ecore__File__Group.html#gac13ffcf33aa05a26d8cd36b22918a8b9">Ecore_File_Download_Job</a> structure filled by <a class="el" href="group__Ecore__File__Group.html#ga3ec2d36d0e56daf214199fd2e2307caa" title="Downloads the given url to the given destination.">ecore_file_download()</a>. If it is <code>NULL</code>, this function does nothing. To abort all the currently downloading operations, call <a class="el" href="group__Ecore__File__Group.html#ga70a16572e7a68d86fc73b2832ee61f40" title="Aborts all downloads.">ecore_file_download_abort_all()</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function aborts a download operation started by <a class="el" href="group__Ecore__File__Group.html#ga3ec2d36d0e56daf214199fd2e2307caa" title="Downloads the given url to the given destination.">ecore_file_download()</a>. <code>job</code> is the <a class="el" href="group__Ecore__File__Group.html#gac13ffcf33aa05a26d8cd36b22918a8b9">Ecore_File_Download_Job</a> structure filled by <a class="el" href="group__Ecore__File__Group.html#ga3ec2d36d0e56daf214199fd2e2307caa" title="Downloads the given url to the given destination.">ecore_file_download()</a>. If it is <code>NULL</code>, this function does nothing. To abort all the currently downloading operations, call <a class="el" href="group__Ecore__File__Group.html#ga70a16572e7a68d86fc73b2832ee61f40" title="Aborts all downloads.">ecore_file_download_abort_all()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -636,8 +692,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
 <div class="memdoc">
 
 <p>Aborts all downloads. </p>
-<p>This function aborts all the downloads that have been started by <a class="el" href="group__Ecore__File__Group.html#ga3ec2d36d0e56daf214199fd2e2307caa" title="Downloads the given url to the given destination.">ecore_file_download()</a>. It loops over the started downloads and call <a class="el" href="group__Ecore__File__Group.html#gaab33a141bc148f306f4023df3f106ab9" title="Aborts the given download job and call the completion_cb callbck with a status of 1 (error)...">ecore_file_download_abort()</a> for each of them. To abort only one specific download operation, call <a class="el" href="group__Ecore__File__Group.html#gaab33a141bc148f306f4023df3f106ab9" title="Aborts the given download job and call the completion_cb callbck with a status of 1 (error)...">ecore_file_download_abort()</a>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function aborts all the downloads that have been started by <a class="el" href="group__Ecore__File__Group.html#ga3ec2d36d0e56daf214199fd2e2307caa" title="Downloads the given url to the given destination.">ecore_file_download()</a>. It loops over the started downloads and call <a class="el" href="group__Ecore__File__Group.html#gaab33a141bc148f306f4023df3f106ab9" title="Aborts the given download job and call the completion_cb callback with a status of 1 (error)...">ecore_file_download_abort()</a> for each of them. To abort only one specific download operation, call <a class="el" href="group__Ecore__File__Group.html#gaab33a141bc148f306f4023df3f106ab9" title="Aborts the given download job and call the completion_cb callback with a status of 1 (error)...">ecore_file_download_abort()</a>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -709,8 +765,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the download start or <code>EINA_FALSE</code> on failure.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the download start or <code>EINA_FALSE</code> on failure. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -737,8 +793,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if protocol is handled, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function returns <code>EINA_TRUE</code> if <code>protocol</code> is supported, <code>EINA_FALSE</code> otherwise. <code>protocol</code> can be '<a href="http://',">http://',</a> '<a href="ftp://'">ftp://'</a> or '<a href="file://'">file://'</a>. Ecore_FILE must be compiled with CURL to handle http and ftp protocols.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns <code>EINA_TRUE</code> if <code>protocol</code> is supported, <code>EINA_FALSE</code> otherwise. <code>protocol</code> can be 'http://', 'ftp://' or 'file://'. Ecore_FILE must be compiled with CURL to handle http and ftp protocols. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -765,8 +821,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The file name with special characters escaped.</dd></dl>
-<p>This function adds the escape sequence ('\') to the given file name and returns the result as a newly allocated string. If the length of the returned string is longer than PATH_MAX, or on failure, <code>NULL</code> is returned. When not needed anymore, the returned value must be freed.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function adds the escape sequence ('\') to the given file name and returns the result as a newly allocated string. If the length of the returned string is longer than PATH_MAX, or on failure, <code>NULL</code> is returned. When not needed anymore, the returned value must be freed. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -793,9 +849,10 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the <code>file</code> exists, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function returns <code>EINA_TRUE</code> if <code>file</code> exists on local filesystem, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
+<p>This function returns <code>EINA_TRUE</code> if <code>file</code> exists on local filesystem, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="theme_example_01_8c-example.html#a6">theme_example_01.c</a>, <a class="el" href="theme_example_02_8c-example.html#a5">theme_example_02.c</a>, and <a class="el" href="web_example_02_8c-example.html#a15">web_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="gafad5d39bed1366aa07939a8717a94cd2"></a><!-- doxytag: member="Ecore_File.h::ecore_file_file_get" ref="gafad5d39bed1366aa07939a8717a94cd2" args="(const char *path)" -->
@@ -821,8 +878,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The file name.</dd></dl>
-<p>This function returns the file name of <code>path</code>. If <code>path</code> is <code>NULL</code>, the functions returns <code>NULL</code>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns the file name of <code>path</code>. If <code>path</code> is <code>NULL</code>, the functions returns <code>NULL</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -844,8 +901,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
 <p>Initializes the Ecore_File library. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>1</code> or greater on success, otherwise <code>0</code> on error.</dd></dl>
 <p>This function sets up Ecore_File and the services it will use (monitoring, downloading, PATH related feature). It returns 0 on failure, otherwise it returns the number of times it has already been called.</p>
-<p>When Ecore_File is not used anymore, call <a class="el" href="group__Ecore__File__Group.html#ga84c7dfd9b05f82aa93d5ec773d4e2bb5" title="Shuts down the Ecore_File library.">ecore_file_shutdown()</a> to shut down the Ecore_File library.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>When Ecore_File is not used anymore, call <a class="el" href="group__Ecore__File__Group.html#ga84c7dfd9b05f82aa93d5ec773d4e2bb5" title="Shuts down the Ecore_File library.">ecore_file_shutdown()</a> to shut down the Ecore_File library. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -872,8 +929,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the file exists and is a directory, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function returns <code>EINA_TRUE</code> if <code>file</code> exists exists and is a directory on local filesystem, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns <code>EINA_TRUE</code> if <code>file</code> exists exists and is a directory on local filesystem, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -900,8 +957,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Return an Eina_List containing all the files in the directory; on failure it returns NULL.</dd></dl>
-<p>This function returns a list of allocated strings of all the files and directories contained in <code>dir</code>. The list will be sorted with strcoll as compare function. That means that you may want to set the current locale for the category LC_COLLATE with setlocale(). For more information see the manual pages of strcoll and setlocale. The list will not contain the directory entries for '.' and '..'. On failure, <code>NULL</code> is returned. When not needed anymore, the list elements must be freed.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns a list of allocated strings of all the files and directories contained in <code>dir</code>. The list will be sorted with strcoll as compare function. That means that you may want to set the current locale for the category LC_COLLATE with setlocale(). For more information see the manual pages of strcoll and setlocale. The list will not contain the directory entries for '.' and '..'. On failure, <code>NULL</code> is returned. When not needed anymore, the list elements must be freed. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -928,8 +985,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on successful creation, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function creates the directory <code>dir</code>, with the mode S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH on UNIX (mode is unsued on Windows). On success, it returns <code>EINA_TRUE</code>, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function creates the directory <code>dir</code>, with the mode S_IRUSR | S_IWUSR | S_IXUSR | S_IRGRP | S_IXGRP | S_IROTH | S_IXOTH on UNIX (mode is unused on Windows). On success, it returns <code>EINA_TRUE</code>, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -956,8 +1013,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of successful directories created, -1 if dirs is <code>NULL</code>.</dd></dl>
-<p>This function creates all the directories that are in the null terminated array <code>dirs</code>. The function loops over the directories and call <a class="el" href="group__Ecore__File__Group.html#ga47b139a5eca16a93a963f730ec319954" title="Creates a new directory.">ecore_file_mkdir()</a>. This function returns -1 if <code>dirs</code> is <code>NULL</code>, otherwise if returns the number of successfully created directories.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function creates all the directories that are in the null terminated array <code>dirs</code>. The function loops over the directories and call <a class="el" href="group__Ecore__File__Group.html#ga47b139a5eca16a93a963f730ec319954" title="Creates a new directory.">ecore_file_mkdir()</a>. This function returns -1 if <code>dirs</code> is <code>NULL</code>, otherwise if returns the number of successfully created directories. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -984,8 +1041,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function creates <code>path</code> and all the subdirectories it contains. The separator is '/' or '\'. If <code>path</code> exists, this function returns <code>EINA_TRUE</code> immediately. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function creates <code>path</code> and all the subdirectories it contains. The separator is '/' or '\'. If <code>path</code> exists, this function returns <code>EINA_TRUE</code> immediately. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1012,8 +1069,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of successful paths created, <code>-1</code> if paths is NULL.</dd></dl>
-<p>This function creates all the directories that are in the null terminated array <code>paths</code>. The function loops over the directories and call <a class="el" href="group__Ecore__File__Group.html#gae44d8c6a3756c8948e5bf32846069e85" title="Creates a complete path.">ecore_file_mkpath()</a>, hence on Windows, '\' must be replaced by '/' before calling that function. This function returns -1 if <code>paths</code> is <code>NULL</code>. Otherwise if returns the number of successfully created directories.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function creates all the directories that are in the null terminated array <code>paths</code>. The function loops over the directories and call <a class="el" href="group__Ecore__File__Group.html#gae44d8c6a3756c8948e5bf32846069e85" title="Creates a complete path.">ecore_file_mkpath()</a>, hence on Windows, '\' must be replaced by '/' before calling that function. This function returns -1 if <code>paths</code> is <code>NULL</code>. Otherwise if returns the number of successfully created directories. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1051,8 +1108,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of successful directories created, <code>-1</code> on failure.</dd></dl>
-<p>This function creates all the directories that are in the null terminated array <code>subdirs</code> in the <code>base</code> directory. If <code>base</code> does not exist, it will be created. The function loops over the directories and call <a class="el" href="group__Ecore__File__Group.html#ga47b139a5eca16a93a963f730ec319954" title="Creates a new directory.">ecore_file_mkdir()</a>. The whole path of the directories must exist. So if base/a/b/c wants to be created, <code>subdirs</code> must contain "a", "a/b" and "a/b/c", in that order. This function returns -1 if <code>subdirs</code> or <code>base</code> are <code>NULL</code>, or if <code>base</code> is empty ("\0"). It returns 0 is <code>base</code> is not a directory or invalid, or if it can't be created. Otherwise if returns the number of successfully created directories.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function creates all the directories that are in the null terminated array <code>subdirs</code> in the <code>base</code> directory. If <code>base</code> does not exist, it will be created. The function loops over the directories and call <a class="el" href="group__Ecore__File__Group.html#ga47b139a5eca16a93a963f730ec319954" title="Creates a new directory.">ecore_file_mkdir()</a>. The whole path of the directories must exist. So if base/a/b/c wants to be created, <code>subdirs</code> must contain "a", "a/b" and "a/b/c", in that order. This function returns -1 if <code>subdirs</code> or <code>base</code> are <code>NULL</code>, or if <code>base</code> is empty ("\0"). It returns 0 is <code>base</code> is not a directory or invalid, or if it can't be created. Otherwise if returns the number of successfully created directories. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1079,8 +1136,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Return the time of the last data modification, or <code>0</code> on failure.</dd></dl>
-<p>This function returns the time of the last modification of <code>file</code>. On failure, it returns 0.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns the time of the last modification of <code>file</code>. On failure, it returns 0. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1125,8 +1182,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An Ecore_File_Monitor pointer or NULL on failure.</dd></dl>
-<p>This function monitors <code>path</code>. If <code>path</code> is <code>NULL</code>, or is an empty string, or none of the notify methods (Inotify, Windows notification or polling) is available, or if <code>path</code> does not exist the function returns <code>NULL</code>. Otherwise, it returns a newly allocated Ecore_File_Monitor object and the monitoring begins. When one of the Ecore_File_Event event is notified, <code>func</code> is called and <code>data</code> is passed to <code>func.Call</code> <a class="el" href="group__Ecore__File__Group.html#ga36214769a9ef953f4d2ddcef0259a651" title="Stops the monitoring of the given path.">ecore_file_monitor_del()</a> to stop the monitoring.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function monitors <code>path</code>. If <code>path</code> is <code>NULL</code>, or is an empty string, or none of the notify methods (Inotify, Windows notification or polling) is available, or if <code>path</code> does not exist the function returns <code>NULL</code>. Otherwise, it returns a newly allocated Ecore_File_Monitor object and the monitoring begins. When one of the Ecore_File_Event event is notified, <code>func</code> is called and <code>data</code> is passed to <code>func.Call</code> <a class="el" href="group__Ecore__File__Group.html#ga36214769a9ef953f4d2ddcef0259a651" title="Stops the monitoring of the given path.">ecore_file_monitor_del()</a> to stop the monitoring. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1152,8 +1209,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </table>
   </dd>
 </dl>
-<p>This function stops the the monitoring of the path that has been monitored by <a class="el" href="group__Ecore__File__Group.html#ga7feb1be67c2588b075bea2da9b8cc15c" title="Monitors the given path using inotify, Windows notification, or polling.">ecore_file_monitor_add()</a>. <code>em</code> must be the value returned by <a class="el" href="group__Ecore__File__Group.html#ga7feb1be67c2588b075bea2da9b8cc15c" title="Monitors the given path using inotify, Windows notification, or polling.">ecore_file_monitor_add()</a>. If <code>em</code> is <code>NULL</code>, or none of the notify methods (Inotify, Windows notification or polling) is availablethis function does nothing.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function stops the the monitoring of the path that has been monitored by <a class="el" href="group__Ecore__File__Group.html#ga7feb1be67c2588b075bea2da9b8cc15c" title="Monitors the given path using inotify, Windows notification, or polling.">ecore_file_monitor_add()</a>. <code>em</code> must be the value returned by <a class="el" href="group__Ecore__File__Group.html#ga7feb1be67c2588b075bea2da9b8cc15c" title="Monitors the given path using inotify, Windows notification, or polling.">ecore_file_monitor_add()</a>. If <code>em</code> is <code>NULL</code>, or none of the notify methods (Inotify, Windows notification or polling) is available this function does nothing. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1180,8 +1237,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The path that is monitored by <code>em</code>.</dd></dl>
-<p>This function returns the monitored path that has been monitored by <a class="el" href="group__Ecore__File__Group.html#ga7feb1be67c2588b075bea2da9b8cc15c" title="Monitors the given path using inotify, Windows notification, or polling.">ecore_file_monitor_add()</a>. <code>em</code> must be the value returned by <a class="el" href="group__Ecore__File__Group.html#ga7feb1be67c2588b075bea2da9b8cc15c" title="Monitors the given path using inotify, Windows notification, or polling.">ecore_file_monitor_add()</a>. If <code>em</code> is <code>NULL</code>, the function returns <code>NULL</code>.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns the monitored path that has been monitored by <a class="el" href="group__Ecore__File__Group.html#ga7feb1be67c2588b075bea2da9b8cc15c" title="Monitors the given path using inotify, Windows notification, or polling.">ecore_file_monitor_add()</a>. <code>em</code> must be the value returned by <a class="el" href="group__Ecore__File__Group.html#ga7feb1be67c2588b075bea2da9b8cc15c" title="Monitors the given path using inotify, Windows notification, or polling.">ecore_file_monitor_add()</a>. If <code>em</code> is <code>NULL</code>, the function returns <code>NULL</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1219,8 +1276,36 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function moves <code>src</code> to <code>dst</code>. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function moves <code>src</code> to <code>dst</code>. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0b979b4dc509a159f087136743e8fc74"></a><!-- doxytag: member="Ecore_File.h::ecore_file_path_dir_exists" ref="ga0b979b4dc509a159f087136743e8fc74" args="(const char *in_dir)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__File__Group.html#ga0b979b4dc509a159f087136743e8fc74">ecore_file_path_dir_exists</a> </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>in_dir</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Checks if the given directory is in PATH. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in_dir</td><td>The name of the directory to search in PATH. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the directory exist in PATH, <code>EINA_FALSE</code> otherwise.</dd></dl>
+<p>This function checks if <code>in_dir</code> is in the environment variable PATH. If <code>in_dir</code> is <code>NULL</code>, or if PATH is empty, or <code>in_dir</code> is not in PATH, the function returns <code>EINA_FALSE</code>, otherwise it returns <code>EINA_TRUE</code>. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1247,8 +1332,9 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The path pointed by link or NULL.</dd></dl>
-<p>This function returns the path pointed by <code>link</code> as a newly allocated string. This function does not work on Windows. On failure, the function returns <code>NULL</code>. When not needed anymore, the returned value must be freed.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns the path pointed by <code>link</code> as a newly allocated string. On failure, the function returns <code>NULL</code>. When not needed anymore, the returned value must be freed.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>On windows, this function always returns <code>NULL</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1275,9 +1361,10 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The canonicalized absolute pathname or an empty string on failure.</dd></dl>
-<p>This function returns the absolute path name of <code>file</code> as a newly allocated string. If <code>file</code> is <code>NULL</code>, or on error, this function returns an empty string. Otherwise, it returns the absolute path name. When not needed anymore, the returned value must be freed.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
-
+<p>This function returns the absolute path name of <code>file</code> as a newly allocated string. If <code>file</code> is <code>NULL</code>, or on error, this function returns an empty string. Otherwise, it returns the absolute path name. When not needed anymore, the returned value must be freed. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="web_example_02_8c-example.html#a16">web_example_02.c</a>.</dd>
+</dl>
 </div>
 </div>
 <a class="anchor" id="ga88faf2752ca0dc3f42d7ca2d77a54ed6"></a><!-- doxytag: member="Ecore_File.h::ecore_file_recursive_rm" ref="ga88faf2752ca0dc3f42d7ca2d77a54ed6" args="(const char *dir)" -->
@@ -1303,8 +1390,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function delete <code>dir</code> and all its contents. If <code>dir</code> is a link only the link is removed. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function delete <code>dir</code> and all its contents. If <code>dir</code> is a link only the link is removed. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1331,8 +1418,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function removes <code>file</code>. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function removes <code>file</code>. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1359,8 +1446,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function deletes <code>dir</code>. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function deletes <code>dir</code>. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1381,8 +1468,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
 
 <p>Shuts down the Ecore_File library. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>0</code> when the library is completely shut down, <code>1</code> or greater otherwise.</dd></dl>
-<p>This function shuts down the Ecore_File library. It returns 0 when it has been called the same number of times than <a class="el" href="group__Ecore__File__Group.html#ga875ad3fcfb2d1bda8fbce21d097cbcfb" title="Initializes the Ecore_File library.">ecore_file_init()</a>. In that case it shuts down all the services it uses.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function shuts down the Ecore_File library. It returns 0 when it has been called the same number of times than <a class="el" href="group__Ecore__File__Group.html#ga875ad3fcfb2d1bda8fbce21d097cbcfb" title="Initializes the Ecore_File library.">ecore_file_init()</a>. In that case it shuts down all the services it uses. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1409,8 +1496,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Return the size of the file in bytes, or <code>0</code> on failure.</dd></dl>
-<p>This function returns the size of <code>file</code> in bytes. On failure, it returns 0.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function returns the size of <code>file</code> in bytes. On failure, it returns 0. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1437,8 +1524,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A newly allocated string with the extension stripped out, or <code>NULL</code> on errors.</dd></dl>
-<p>This function removes the extension from <code>path</code> and returns the result as a newly allocated string. If <code>path</code> is <code>NULL</code>, or on failure, the function returns <code>NULL</code>. When not needed anymore, the returned value must be freed.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function removes the extension from <code>path</code> and returns the result as a newly allocated string. If <code>path</code> is <code>NULL</code>, or on failure, the function returns <code>NULL</code>. When not needed anymore, the returned value must be freed. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1476,8 +1563,9 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function create the symbolic link <code>dest</code> of <code>src</code>. This function does not work on Windows. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function creates the symbolic link <code>dest</code> of <code>src</code>. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>On windows, this function always returns <code>EINA_FALSE</code>. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1504,8 +1592,8 @@ _Ecore_File_Download_Job&#160;</td><td class="memItemRight" valign="bottom"><a c
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</dd></dl>
-<p>This function deletes <code>file</code>. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise.</p>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>This function deletes <code>file</code>. It returns <code>EINA_TRUE</code> on success, <code>EINA_FALSE</code> otherwise. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

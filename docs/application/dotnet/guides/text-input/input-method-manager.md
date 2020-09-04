@@ -30,7 +30,7 @@ The main features of the Tizen.Uix.InputMethodManager namespace include:
 
 To enable your application to use the input method management functionality:
 
-1.  To use the [Tizen.Uix.InputMethodManager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.InputMethodManager.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Uix.InputMethodManager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethodManager.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -47,7 +47,7 @@ To enable your application to use the input method management functionality:
 <a name="list"></a>
 ## Showing the IME List
 
-To launch the IME list menu to show the installed IMEs, use the `ShowIMEList()` method of the [Tizen.Uix.InputMethodManager.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.InputMethodManager.Manager.html) class:
+To launch the IME list menu to show the installed IMEs, use the `ShowIMEList()` method of the [Tizen.Uix.InputMethodManager.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class:
 
 ```
 void ShowImeList()
@@ -66,7 +66,7 @@ void ShowImeList()
 <a name="selector"></a>
 ## Showing the IME Selector
 
-To launch the IME selector menu to allow the user to select the default keyboard, use the `ShowIMESelector()` method of the [Tizen.Uix.InputMethodManager.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.InputMethodManager.Manager.html) class:
+To launch the IME selector menu to allow the user to select the default keyboard, use the `ShowIMESelector()` method of the [Tizen.Uix.InputMethodManager.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class:
 
 ```
 void ShowImeSelector()
@@ -87,7 +87,7 @@ void ShowImeSelector()
 
 To check whether a specific IME is enabled, to check the current default keyboard, or to get the number of enabled (usable) IMEs:
 
--   To check whether a specific IME is enabled, use the `IsIMEEnabled()` method of the [Tizen.Uix.InputMethodManager.Manager](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Uix.InputMethodManager.Manager.html) class. As a parameter, use the application ID of the IME whose status you want to check.
+-   To check whether a specific IME is enabled, use the `IsIMEEnabled()` method of the [Tizen.Uix.InputMethodManager.Manager](https://samsung.github.io/TizenFX/latest/api/Tizen.Uix.InputMethodManager.Manager.html) class. As a parameter, use the application ID of the IME whose status you want to check.
 
     ```
     bool IsImeEnabled(string appId)

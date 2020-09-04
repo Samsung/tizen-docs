@@ -2,16 +2,21 @@
 
 The Tizen Compliance Specification is the definitive set of requirements for software and hardware to create compliant Tizen devices. This document is the basis for Tizen Compliance Tests and eventual Tizen Compliance certification:
 
-- The following specification is the official version for the Tizen mobile profile 2.4 devices:
+- The following specification is the official version for Tizen Mobile profile 2.4 devices:
 
   [Tizen 2.4 Compliance Specification for Mobile Profile](media/tizen-2.4-compliance-specification-for-mobile-profile-v1.0.pdf) ![PDF icon](media/application-pdf.png)
 
-- The following specification is the official version for Tizen wearable profile 2.3.1 devices:
+- The following specification is the official version for Tizen Wearable profile 2.3.1 devices:
 
   [Tizen 2.3.1 Compliance Specification for Wearable Profile](media/tizen-2.3.1-compliance-specification-for-wearable-profile-v1.0.pdf) ![PDF icon](media/application-pdf.png)
+
 - The following specification is the official version for Tizen TV profile 2.4 devices:
 
   [Tizen 2.4 Compliance Specification for TV Profile](media/tizen-2.4-compliance-specification-for-tv-profile-v1.0.pdf) ![PDF icon](media/application-pdf.png)
+
+- The following specification is the beta version for Tizen TV profile 5.5 devices:
+
+  [Tizen 5.5 Compliance Specification for TV Profile](media/tizen-5.5-compliance-specification-for-tv-profile-v0.96beta2.pdf) ![PDF icon](media/application-pdf.png)
 
 - The following specification is the official version for Tizen IVI profile 3.0 devices:
 

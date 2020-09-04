@@ -90,7 +90,92 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">flip_example_01.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><pre class="fragment"></pre></div> </div><!-- contents -->
+<div class="fragment"><pre class="fragment"><span class="comment">//Compile with:</span>
+<span class="comment">//gcc -o flip_example_01 flip_example_01.c -g `pkg-config --cflags --libs elementary`</span>
+
+<span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+
+<span class="keyword">static</span> <span class="keywordtype">void</span> _change_interaction(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info);
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc <a name="a0"></a><a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *rect, *rect2, *flip, *radio, *radio2, *radio3;
+
+   <a name="a1"></a><a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a name="a2"></a><a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;flip&quot;</span>, <span class="stringliteral">&quot;Flip&quot;</span>);
+   <a name="a3"></a><a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a name="a4"></a><a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   rect = <a name="a5"></a><a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
+   evas_object_resize(rect, 150, 150);
+   <a name="a6"></a><a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(rect, 0, 0, 255, 255);
+   <a name="a7"></a><a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rect);
+
+   rect2 = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(evas_object_evas_get(win));
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(rect2, 0, 255, 0, 255);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(rect2);
+
+   flip = <a name="a8"></a><a class="code" href="group__Elm__Flip.html#ga938d30627914e0c9460b075ecf7212bc" title="Add a new flip to the parent.">elm_flip_add</a>(win);
+   <a name="a9"></a><a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(flip, <span class="stringliteral">&quot;front&quot;</span>, rect);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(flip, <span class="stringliteral">&quot;back&quot;</span>, rect2);
+   evas_object_resize(flip, 150, 150);
+   evas_object_move(flip, 10, 10);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(flip);
+
+   elm_flip_interaction_set(flip, ELM_FLIP_INTERACTION_PAGE);
+   elm_flip_interaction_direction_enabled_set(flip, ELM_FLIP_DIRECTION_UP, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_flip_interaction_direction_enabled_set(flip, ELM_FLIP_DIRECTION_DOWN, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_flip_interaction_direction_enabled_set(flip, ELM_FLIP_DIRECTION_LEFT, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_flip_interaction_direction_enabled_set(flip, ELM_FLIP_DIRECTION_RIGHT, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   elm_flip_interaction_direction_hitsize_set(flip, ELM_FLIP_DIRECTION_UP, 1);
+   elm_flip_interaction_direction_hitsize_set(flip, ELM_FLIP_DIRECTION_DOWN, 1);
+   elm_flip_interaction_direction_hitsize_set(flip, ELM_FLIP_DIRECTION_LEFT, 1);
+   elm_flip_interaction_direction_hitsize_set(flip, ELM_FLIP_DIRECTION_RIGHT, 1);
+
+   radio = <a name="a10"></a><a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_object_text_set(radio, <span class="stringliteral">&quot;page&quot;</span>);
+   <a name="a11"></a><a class="code" href="group__Elm__Radio.html#ga7e41ff1e8ad492f99f44efdbcc1fa1cc" title="Set the value of the radio group.">elm_radio_value_set</a>(radio, ELM_FLIP_INTERACTION_PAGE);
+   elm_radio_state_value_set(radio, ELM_FLIP_INTERACTION_PAGE);
+   evas_object_resize(radio, 55, 30);
+   evas_object_move(radio, 10, 160);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(radio);
+   <a name="a12"></a><a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(radio, <span class="stringliteral">&quot;changed&quot;</span>, _change_interaction, flip);
+
+   radio2 = <a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_object_text_set(radio2, <span class="stringliteral">&quot;cube&quot;</span>);
+   elm_radio_state_value_set(radio2, ELM_FLIP_INTERACTION_CUBE);
+   elm_radio_group_add(radio2, radio);
+   evas_object_resize(radio2, 55, 30);
+   evas_object_move(radio2, 75, 160);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(radio2);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(radio2, <span class="stringliteral">&quot;changed&quot;</span>, _change_interaction, flip);
+
+   radio3 = <a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_object_text_set(radio3, <span class="stringliteral">&quot;rotate&quot;</span>);
+   elm_radio_state_value_set(radio3, ELM_FLIP_INTERACTION_ROTATE);
+   elm_radio_group_add(radio3, radio);
+   evas_object_resize(radio3, 55, 30);
+   evas_object_move(radio3, 140, 160);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(radio3);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(radio3, <span class="stringliteral">&quot;changed&quot;</span>, _change_interaction, flip);
+
+   evas_object_resize(win, 200, 200);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a name="a13"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a name="a14"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+
+static <span class="keywordtype">void</span>
+_change_interaction(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   elm_flip_interaction_set(data, elm_radio_state_value_get(obj));
+   elm_flip_go(data, ELM_FLIP_ROTATE_XZ_CENTER_AXIS);
+}
+</pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>
   <div id="nav-path" class="navpath">

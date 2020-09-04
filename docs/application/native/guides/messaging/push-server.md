@@ -2,7 +2,7 @@
 
 You can push events from an application server to your application on a Tizen device. If the message sending fails for any reason, an error code identifying the failure reason is returned. You can use the [error code](#error_codes) to determine how to handle the failure.
 
-The Push API is optional for the Tizen wearable profile, which means that it may not be supported on all wearable devices.
+The Push API is optional for the Tizen Wearable profile, which means that it may not be supported on all wearable devices.
 
 The main features of the Push API for the server developers include:
 

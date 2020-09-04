@@ -65,7 +65,8 @@ The `<head>` contains the following subelements:
 - `<title>`: Defines the title of the document.
 - `<meta>`: Defines information, such as encoding, creator, and keywords of the document.
   > **Note**  
-  > The [viewport element](http://www.w3.org/TR/css-device-adapt/#the-viewport-rule), which sets the screen area, is included in the meta information.
+  > The [viewport element](https://www.w3.org/TR/css-device-adapt/#atviewport-rule), which sets the screen area, is included in the meta information.
+
 - `<style>`, `<link>`: Sets the styles of the document.
 - `<script>`, `<noscript>`: Adds functions to the document.
 

@@ -16,7 +16,7 @@ The main features of the Tizen.Location namespace include:
 <a name="service"></a>
 ## Location Service
 
-The [Tizen.Location](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.html) namespace provides the current location using the location sources specified in the [Tizen.Location.LocationType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.LocationType.html) enumeration. You can [use the location service](#start) to manage location information in various ways:
+The [Tizen.Location](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.html) namespace provides the current location using the location sources specified in the [Tizen.Location.LocationType](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration. You can [use the location service](#start) to manage location information in various ways:
 
 -   Get the user's current location
 
@@ -42,13 +42,13 @@ Asynchronous location-related updates and region monitoring notifications are im
 
 You can use the location state and updates as follows:
 
--   If the location service is working correctly, [Tizen.Location.ServiceState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.ServiceState.html) is set to `Enabled`. The device can receive notifications about location change events only in this service state.
+-   If the location service is working correctly, [Tizen.Location.ServiceState](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.ServiceState.html) is set to `Enabled`. The device can receive notifications about location change events only in this service state.
 -   If the location service is unable to run on the requested device due to weak radio reception, the location service state is set to `Disabled`. If this situation persists for a longer period, stop the service and try again later, to conserve the device battery.
 
 <a name="method"></a>
 ## Location Types
 
-The [Tizen.Location.LocationType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.LocationType.html) enumeration is used to specify the desired quality of service of the [Tizen.Location.Location](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Location.html) instance. For example, a location-based weather forecast application can require only very basic information to distinguish a city or a neighborhood, while a GPS navigation application can require the highest quality level to pinpoint a map location. Selecting the appropriate quality level not only helps to run the system efficiently, but also leads to a good user experience.
+The [Tizen.Location.LocationType](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration is used to specify the desired quality of service of the [Tizen.Location.Location](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Location.html) instance. For example, a location-based weather forecast application can require only very basic information to distinguish a city or a neighborhood, while a GPS navigation application can require the highest quality level to pinpoint a map location. Selecting the appropriate quality level not only helps to run the system efficiently, but also leads to a good user experience.
 
 Using the `Tizen.Location.LocationType` enumeration allows your application to specify the following location positioning system types:
 
@@ -59,7 +59,7 @@ Using the `Tizen.Location.LocationType` enumeration allows your application to s
 
 ## Prerequisites
 
-To use the [Tizen.Location](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
+To use the [Tizen.Location](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.html) namespace, the application has to request permission by adding the following privilege to the `tizen-manifest.xml` file:
 
 ```
 <privileges>
@@ -72,9 +72,9 @@ To use the [Tizen.Location](https://developer.tizen.org/dev-guide/csapi/api/Tize
 
 To start the location service:
 
-1.  Create a [Tizen.Location.Locator](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Locator.html) instance with a specific value for its `LocationType` property before you use the location service.
+1.  Create a [Tizen.Location.Locator](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Locator.html) instance with a specific value for its `LocationType` property before you use the location service.
 
-    In this example, GPS is used as the source of the position data. You can use other values of the [Tizen.Location.LocationType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.LocationType.html) enumeration for hybrid and WPS sources.
+    In this example, GPS is used as the source of the position data. You can use other values of the [Tizen.Location.LocationType](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.LocationType.html) enumeration for hybrid and WPS sources.
 
     ```
     Tizen.Location.Locator locator;
@@ -144,7 +144,7 @@ To synchronously retrieve the current location of the device:
 <a name="update"></a>
 ## Getting Location Events
 
-You can get a notification of the device position being updated by using an event handler for the `LocationChanged` event of the [Tizen.Location.Locator](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Locator.html) class. The event handler is invoked periodically, receiving the device's current position with every call. You can use the event handler to retrieve the device position (given as coordinates) and convert it to the corresponding address.
+You can get a notification of the device position being updated by using an event handler for the `LocationChanged` event of the [Tizen.Location.Locator](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Locator.html) class. The event handler is invoked periodically, receiving the device's current position with every call. You can use the event handler to retrieve the device position (given as coordinates) and convert it to the corresponding address.
 
 To use the location change event handler:
 
@@ -178,7 +178,7 @@ You can retrieve and update information about a satellite visible to the device.
 
 To retrieve satellite information:
 
-1.  Register an event handler for the `SatelliteStatusUpdated` event of the [Tizen.Location.GpsSatellite](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.GpsSatellite.html) class:
+1.  Register an event handler for the `SatelliteStatusUpdated` event of the [Tizen.Location.GpsSatellite](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.GpsSatellite.html) class:
 
     ```
     satellite.Interval = 3;
@@ -226,7 +226,7 @@ To use a location boundary:
     PolygonBoundary polygon = new PolygonBoundary(list);
     ```
 
-    When a circular bound is needed, use the [Tizen.Location.CircleBoundary](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.CircleBoundary.html) class.
+    When a circular bound is needed, use the [Tizen.Location.CircleBoundary](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.CircleBoundary.html) class.
 
 2.  To get notifications when the user enters or exits the defined perimeter, register an event handler:
 
@@ -234,7 +234,7 @@ To use a location boundary:
     locator.ZoneChanged += ZoneChangedHandler;
     ```
 
-    Implement the event handler for the `ZoneChanged` event of the [Tizen.Location.Locator](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Location.Locator.html) class:
+    Implement the event handler for the `ZoneChanged` event of the [Tizen.Location.Locator](https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Locator.html) class:
 
     ```
     void ZoneChangedHandler(Object sender, ZoneChangedEventArgs e)

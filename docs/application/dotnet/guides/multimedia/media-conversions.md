@@ -21,7 +21,7 @@ The main features of the Tizen.Multimedia.MediaCodec namespace include:
 
 To prepare the media codecs:
 
-1.  Create an instance of the [Tizen.Multimedia.MediaCodec.MediaCodec](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaCodec.MediaCodec.html) class:
+1.  Create an instance of the [Tizen.Multimedia.MediaCodec.MediaCodec](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaCodec.MediaCodec.html) class:
 
     ```
     var mediaCodec = new MediaCodec();
@@ -80,7 +80,7 @@ To prepare the media codecs:
 
 To create a media packet and fill it with data:
 
-1.  Create an instance of the [Tizen.Multimedia.MediaPacket](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaPacket.html) class:
+1.  Create an instance of the [Tizen.Multimedia.MediaPacket](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaPacket.html) class:
 
     ```
     var format = new AudioMediaFormat(MediaFormatAudioMimeType.Pcm, 2, 48000, 16, 128000);
@@ -111,13 +111,13 @@ After [preparing the media codec](#PrepareCodec) and [filling the media packet w
 
 To run the media codec loop:
 
-1.  Prepare the media codec using the `Prepare()` method of the [Tizen.Multimedia.MediaCodec.MediaCodec](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaCodec.MediaCodec.html) class:
+1.  Prepare the media codec using the `Prepare()` method of the [Tizen.Multimedia.MediaCodec.MediaCodec](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaCodec.MediaCodec.html) class:
 
     ```
     mediaCodec.Prepare();
     ```
 
-2.  Set the media packet buffer flag using the `BufferFlags` property of the [Tizen.Multimedia.MediaPacket](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Multimedia.MediaPacket.html) class:
+2.  Set the media packet buffer flag using the `BufferFlags` property of the [Tizen.Multimedia.MediaPacket](https://samsung.github.io/TizenFX/latest/api/Tizen.Multimedia.MediaPacket.html) class:
 
     ```
     /// If the MediaPacket contains codec-specific data, such as SPS or PPS for H.264, set the CodecConfig flag

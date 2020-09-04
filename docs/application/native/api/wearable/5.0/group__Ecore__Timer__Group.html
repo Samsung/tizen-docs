@@ -112,9 +112,6 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Timer__Group.html#gaf7d0f56778f5614c63a69d4cfbee7b3d">ecore_timer_precision_set</a> (double precision)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the precision to be used by timer infrastructure.  <a href="#gaf7d0f56778f5614c63a69d4cfbee7b3d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Timer__Group.html#ga9ba51cdf9b709138dec62586721387dd">ecore_timer_dump</a> (void)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Timer__Group.html#gaf96ffb609956658ec038e54bd39f46f0">Ecore_Timer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a> (double in, <a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a> func, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Ecore__Timer__Group.html#gaf96ffb609956658ec038e54bd39f46f0">Ecore_Timer</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Timer__Group.html#ga51932ae74cf76de4f736322f65d8d475">ecore_timer_loop_add</a> (double in, <a class="el" href="group__Ecore__Main__Loop__Group.html#ga8a36ef1ac24bfa317a7826617264e530">Ecore_Task_Cb</a> func, const void *data)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Timer__Group.html#gaba2b599c7aabe3ab664dc3d47f62a33a">ecore_timer_del</a> (<a class="el" href="group__Ecore__Timer__Group.html#gaf96ffb609956658ec038e54bd39f46f0">Ecore_Timer</a> *timer)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef Eo&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Ecore__Timer__Group.html#gaf96ffb609956658ec038e54bd39f46f0">Ecore_Timer</a></td></tr>
@@ -176,9 +173,9 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A timer object on success, <code>NULL</code> on failure.</dd></dl>
 <p>This function adds a timer and returns its handle on success and <code>NULL</code> on failure. The function <code>func</code> will be called every <code>in</code> seconds. The function will be passed the <code>data</code> pointer as its parameter.</p>
-<p>When the timer <code>func</code> is called, it must return a value of either <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>) or <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>). If it returns <code>1</code>, it will be called again at the next tick, or if it returns <code>0</code> it will be deleted automatically making any references/handles for it invalid.</p>
+<p>When the timer <code>func</code> is called, it must return a value of either <code>1</code> (or <code>ECORE_CALLBACK_RENEW</code>) or <code>0</code> (or <code>ECORE_CALLBACK_CANCEL</code>). If it returns <code>1</code>, it will be called again at the next tick, or if it returns <code>0</code> it will be deleted automatically making any references/handles for it invalid. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a10">ecore_animator_example.c</a>, <a class="el" href="ecore_exe_example_8c-example.html#a18">ecore_exe_example.c</a>, <a class="el" href="ecore_fd_handler_example_8c-example.html#a11">ecore_fd_handler_example.c</a>, <a class="el" href="ecore_idler_example_8c-example.html#a15">ecore_idler_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a48">ecore_thread_example.c</a>, <a class="el" href="ecore_time_functions_example_8c-example.html#a7">ecore_time_functions_example.c</a>, <a class="el" href="ecore_timer_example_8c-example.html#a5">ecore_timer_example.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a27">eina_tiler_01.c</a>, and <a class="el" href="evas-events_8c-example.html#a12">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_animator_example_8c-example.html#a10">ecore_animator_example.c</a>, <a class="el" href="ecore_exe_example_8c-example.html#a12">ecore_exe_example.c</a>, <a class="el" href="ecore_fd_handler_example_8c-example.html#a11">ecore_fd_handler_example.c</a>, <a class="el" href="ecore_idler_example_8c-example.html#a15">ecore_idler_example.c</a>, <a class="el" href="ecore_thread_example_8c-example.html#a46">ecore_thread_example.c</a>, <a class="el" href="ecore_time_functions_example_8c-example.html#a7">ecore_time_functions_example.c</a>, <a class="el" href="ecore_timer_example_8c-example.html#a7">ecore_timer_example.c</a>, <a class="el" href="eina_tiler_01_8c-example.html#a23">eina_tiler_01.c</a>, <a class="el" href="evas-events_8c-example.html#a12">evas-events.c</a>, <a class="el" href="inwin_example_8c-example.html#a24">inwin_example.c</a>, <a class="el" href="map_example_01_8c-example.html#a21">map_example_01.c</a>, <a class="el" href="map_example_02_8c-example.html#a40">map_example_02.c</a>, <a class="el" href="map_example_03_8c-example.html#a33">map_example_03.c</a>, <a class="el" href="prefs_example_01_8c-example.html#a19">prefs_example_01.c</a>, <a class="el" href="prefs_example_02_8c-example.html#a20">prefs_example_02.c</a>, and <a class="el" href="progressbar_example_8c-example.html#a7">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -204,9 +201,9 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The data pointer set for the timer when <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a> was called. <code>NULL</code> is returned if the function is unsuccessful.</dd></dl>
-<p>Note: <code>timer</code> must be a valid handle. If the timer function has already returned <code>0</code>, the handle is no longer valid (and does not need to be delete).</p>
+<p>Note: <code>timer</code> must be a valid handle. If the timer function has already returned <code>0</code>, the handle is no longer valid (and does not need to be delete). </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_example_8c-example.html#a14">ecore_fd_handler_example.c</a>, <a class="el" href="ecore_idler_example_8c-example.html#a5">ecore_idler_example.c</a>, <a class="el" href="ecore_timer_example_8c-example.html#a4">ecore_timer_example.c</a>, and <a class="el" href="evas-events_8c-example.html#a11">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_fd_handler_example_8c-example.html#a14">ecore_fd_handler_example.c</a>, <a class="el" href="ecore_idler_example_8c-example.html#a5">ecore_idler_example.c</a>, <a class="el" href="ecore_timer_example_8c-example.html#a6">ecore_timer_example.c</a>, <a class="el" href="evas-events_8c-example.html#a11">evas-events.c</a>, and <a class="el" href="progressbar_example_8c-example.html#a9">progressbar_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -226,8 +223,59 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 <p>This function returns a human readable text-based log for Ecore_Timer events.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A heap allocated string, or NULL. It MUST be freed manually by the caller using `free`.</dd></dl>
-<p>It only contains an useful implementation if EFL is built in debug build profile, but it's safe to call it for any build profile.</p>
+<p>It only contains an useful implementation if EFL is built in debug build profile, but it's safe to call it for any build profile. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9fb759297c1c828cafe5c3ccc1a2614b"></a><!-- doxytag: member="Ecore_Legacy.h::ecore_timer_freeze" ref="ga9fb759297c1c828cafe5c3ccc1a2614b" args="(Ecore_Timer *timer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Timer__Group.html#ga9fb759297c1c828cafe5c3ccc1a2614b">ecore_timer_freeze</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Timer__Group.html#gaf96ffb609956658ec038e54bd39f46f0">Ecore_Timer</a> *&#160;</td>
+          <td class="paramname"><em>timer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Pauses a running timer.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timer</td><td>The timer to be paused.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The timer callback won't be called while the timer is paused. The remaining time until the timer expires will be saved, so the timer can be resumed with that same remaining time to expire, instead of expiring instantly. Use <a class="el" href="group__Ecore__Timer__Group.html#gaa026b898456329411d043f36170ad644" title="Resumes a frozen (paused) timer.">ecore_timer_thaw()</a> to resume it.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Nothing happens if the timer was already paused.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Timer__Group.html#gaa026b898456329411d043f36170ad644" title="Resumes a frozen (paused) timer.">ecore_timer_thaw()</a> </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_timer_example_8c-example.html#a4">ecore_timer_example.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gaffb46c42b8d85ab8f2beac1a402c005b"></a><!-- doxytag: member="Ecore_Legacy.h::ecore_timer_freeze_get" ref="gaffb46c42b8d85ab8f2beac1a402c005b" args="(Ecore_Timer *timer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Ecore__Timer__Group.html#gaffb46c42b8d85ab8f2beac1a402c005b">ecore_timer_freeze_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Timer__Group.html#gaf96ffb609956658ec038e54bd39f46f0">Ecore_Timer</a> *&#160;</td>
+          <td class="paramname"><em>timer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Return whether the timer is freezing. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0</dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>True if the timer object is freezed, false otherwise.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Timer__Group.html#ga9fb759297c1c828cafe5c3ccc1a2614b">ecore_timer_freeze()</a>, <a class="el" href="group__Ecore__Timer__Group.html#gaa026b898456329411d043f36170ad644" title="Resumes a frozen (paused) timer.">ecore_timer_thaw()</a> </dd></dl>
 
 </div>
 </div>
@@ -271,7 +319,7 @@ Typedefs</h2></td></tr>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A timer object on success, <code>NULL</code> on failure.</dd></dl>
-<p>This is the same as <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add()</a>, but "now" is the time from <a class="el" href="group__Ecore__Time__Group.html#gab53d952cc4c2f3ed032d535b307c43bd">ecore_loop_time_get()</a> not <a class="el" href="group__Ecore__Time__Group.html#ga98f2439b5d3e7114a75bfe2f0c22c4e9">ecore_time_get()</a> as <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add()</a> uses. See <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add()</a> for more details.</p>
+<p>This is the same as <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add()</a>, but "now" is the time from <a class="el" href="group__Ecore__Time__Group.html#gab53d952cc4c2f3ed032d535b307c43bd">ecore_loop_time_get()</a> not <a class="el" href="group__Ecore__Time__Group.html#ga98f2439b5d3e7114a75bfe2f0c22c4e9">ecore_time_get()</a> as <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add()</a> uses. See <a class="el" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add()</a> for more details. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -292,7 +340,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 <p>Retrieves the current precision used by timer infrastructure. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Current precision. </dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Timer__Group.html#gaf7d0f56778f5614c63a69d4cfbee7b3d" title="Sets the precision to be used by timer infrastructure.">ecore_timer_precision_set()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Timer__Group.html#gaf7d0f56778f5614c63a69d4cfbee7b3d" title="Sets the precision to be used by timer infrastructure.">ecore_timer_precision_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -322,9 +370,38 @@ Typedefs</h2></td></tr>
 <p>This sets the precision for <b>all</b> timers. The precision determines how much of an difference from the requested interval is acceptable. One common reason to use this function is to <b>increase</b> the allowed timeout and thus <b>decrease</b> precision of the timers, this is because less precise the timers result in the system waking up less often and thus consuming less resources.</p>
 <p>Be aware that kernel may delay delivery even further, these delays are always possible due other tasks having higher priorities or other scheduler policies.</p>
 <p>Example: We have 2 timers, one that expires in a 2.0s and another that expires in 2.1s, if precision is 0.1s, then the Ecore will request for the next expire to happen in 2.1s and not 2.0s and another one of 0.1 as it would before.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Ecore is smart enough to see if there are timers in the precision range, if it does not, in our example if no second timer in (T + precision) existed, then it would use the minimum timeout.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Ecore is smart enough to see if there are timers in the precision range, if it does not, in our example if no second timer in (T + precision) existed, then it would use the minimum timeout. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_timer_example_8c-example.html#a6">ecore_timer_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_timer_example_8c-example.html#a8">ecore_timer_example.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gaa026b898456329411d043f36170ad644"></a><!-- doxytag: member="Ecore_Legacy.h::ecore_timer_thaw" ref="gaa026b898456329411d043f36170ad644" args="(Ecore_Timer *timer)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Ecore__Timer__Group.html#gaa026b898456329411d043f36170ad644">ecore_timer_thaw</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Ecore__Timer__Group.html#gaf96ffb609956658ec038e54bd39f46f0">Ecore_Timer</a> *&#160;</td>
+          <td class="paramname"><em>timer</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Resumes a frozen (paused) timer. </p>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>The timer will be resumed from its previous relative position in time. That means, if it had X seconds remaining until expire when it was paused, it will be started now with those same X seconds remaining to expire again. But notice that the interval time won't be touched by this call or by <a class="el" href="group__Ecore__Timer__Group.html#ga9fb759297c1c828cafe5c3ccc1a2614b">ecore_timer_freeze()</a>.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">timer</td><td>The timer to be resumed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Timer__Group.html#ga9fb759297c1c828cafe5c3ccc1a2614b">ecore_timer_freeze()</a> </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_timer_example_8c-example.html#a5">ecore_timer_example.c</a>.</dd>
 </dl>
 </div>
 </div>

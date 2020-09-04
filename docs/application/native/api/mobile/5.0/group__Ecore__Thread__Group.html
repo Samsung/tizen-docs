@@ -208,9 +208,9 @@ Typedefs</h2></td></tr>
 <p>Gets the number of active threads running jobs.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of active threads running jobs</dd></dl>
 <p>This returns the number of threads currently running jobs of any type through the Ecore_Thread API.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>Jobs started through the <a class="el" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run()</a> function with the <code>try_no_queue</code> parameter set to <code>EINA_TRUE</code> will not be accounted for in the return of this function unless the thread creation fails and it falls back to using one from the pool.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>Jobs started through the <a class="el" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run()</a> function with the <code>try_no_queue</code> parameter set to <code>EINA_TRUE</code> will not be accounted for in the return of this function unless the thread creation fails and it falls back to using one from the pool. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a18">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a20">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -231,9 +231,9 @@ Typedefs</h2></td></tr>
 <p>Gets the number of threads available for running tasks.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The number of available threads</dd></dl>
 <p>Same as doing <a class="el" href="group__Ecore__Thread__Group.html#gabad7972818b7fb1346ae7a098cd47220">ecore_thread_max_get()</a> - <a class="el" href="group__Ecore__Thread__Group.html#gad7a28588dc26d6af8b6db8abc3ef37ce">ecore_thread_active_get()</a>.</p>
-<p>This function may return a negative number only in the case the user changed the maximum number of running threads while other tasks are running.</p>
+<p>This function may return a negative number only in the case the user changed the maximum number of running threads while other tasks are running. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a22">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a24">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -267,11 +267,16 @@ Typedefs</h2></td></tr>
 <li>The function returns after requesting to be rescheduled with <a class="el" href="group__Ecore__Thread__Group.html#gadf825c1a58f06bba2a304d025bed3185">ecore_thread_reschedule()</a>. </li>
 <li>The function is prepared to leave early by checking if <a class="el" href="group__Ecore__Thread__Group.html#ga792471a7ed00718b71d58b791ddbd08d">ecore_thread_check()</a> returns <code>EINA_TRUE</code>.</li>
 </ul>
+<ul>
+<li>The function marks the thread as cancellable using eina_thread_cancellable_set(), allowing the thread to be terminated at explicit cancellation points defined with eina_thread_cancel_checkpoint() or with syscalls mentioned at man:pthreads(7). This allows blocking operations such as network or disk access to be stopped without polling <a class="el" href="group__Ecore__Thread__Group.html#ga792471a7ed00718b71d58b791ddbd08d">ecore_thread_check()</a>. Note that a cancelled thread may leak resources if no cleanup function is registered with <a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31" title="Attempts to cancel a running thread.">EINA_THREAD_CLEANUP_PUSH()</a>. Consider running such code using eina_thread_cancellable_run().</li>
+</ul>
 <p>The user function can cancel itself by calling <a class="el" href="group__Ecore__Thread__Group.html#gae9b9b20e1ed53c62c51617b55aed2511">ecore_thread_cancel()</a>, but it should always use the <a class="el" href="group__Ecore__Thread__Group.html#ga0c2e1f8d562ccf80ecc0009ada72496f">Ecore_Thread</a> handle passed to it and never share it with the main loop thread by means of shared user data or any other way.</p>
 <p><code>thread</code> will be freed and should not be used again if this function returns <code>EINA_TRUE</code> or after the <code>func_cancel</code> callback returns.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga792471a7ed00718b71d58b791ddbd08d">ecore_thread_check()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga792471a7ed00718b71d58b791ddbd08d">ecore_thread_check()</a> </dd>
+<dd>
+eina_thread_cancellable_run() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a4">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a4">ecore_thread_example.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a3">efl_thread_5.c</a>, and <a class="el" href="efl_thread_6_8c-example.html#a15">efl_thread_6.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -299,9 +304,9 @@ Typedefs</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the thread is pending cancellation, <code>EINA_FALSE</code> if it is not.</dd></dl>
 <p>This function can be called both in the main loop or in the running thread.</p>
 <p>When <a class="el" href="group__Ecore__Thread__Group.html#gae9b9b20e1ed53c62c51617b55aed2511">ecore_thread_cancel()</a> is called on an already running task, the thread is marked as pending cancellation. This function returns <code>EINA_TRUE</code> if this mark is set for the given <code>thread</code> and can be used from the main loop thread to check if a still active thread has been cancelled, or from the user function running in the thread to check if it should stop doing what it's doing and return early, effectively cancelling the task.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#gae9b9b20e1ed53c62c51617b55aed2511">ecore_thread_cancel()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#gae9b9b20e1ed53c62c51617b55aed2511">ecore_thread_cancel()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a7">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a7">ecore_thread_example.c</a>, <a class="el" href="efl_thread_5_8c-example.html#a2">efl_thread_5.c</a>, and <a class="el" href="efl_thread_6_8c-example.html#a1">efl_thread_6.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -341,9 +346,9 @@ Typedefs</h2></td></tr>
 <p>You should use this function only in the <code>func_heavy</code> call.</p>
 <p>Only the address to <code>msg_data</code> will be sent and once this function returns <code>EINA_TRUE</code>, the job running in the thread should never touch the contents of it again. The data sent should be malloc()'ed or something similar, as long as it's not memory local to the thread that risks being overwritten or deleted once it goes out of scope or the thread finishes.</p>
 <p>Care must be taken that <code>msg_data</code> is properly freed in the <code>func_notify</code> callback set when creating the thread.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a12">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a17">ecore_thread_example.c</a>, and <a class="el" href="efl_thread_5_8c-example.html#a1">efl_thread_5.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -420,9 +425,9 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#gadf825c1a58f06bba2a304d025bed3185">ecore_thread_reschedule()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a46">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a44">ecore_thread_example.c</a>, and <a class="el" href="efl_thread_5_8c-example.html#a13">efl_thread_5.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -468,7 +473,7 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname">key</td><td>The name under which the data will be stored </td></tr>
     <tr><td class="paramname">value</td><td>The data to add </td></tr>
     <tr><td class="paramname">cb</td><td>Function to free the data when removed from the hash </td></tr>
-    <tr><td class="paramname">direct</td><td>If <code>true</code>, this will not copy the key string (like <a class="el" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string. key.">eina_hash_direct_add()</a>) </td></tr>
+    <tr><td class="paramname">direct</td><td>If <code>true</code>, this will not copy the key string (like <a class="el" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string.">eina_hash_direct_add()</a>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -482,7 +487,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#gace0bfd51f1dceef9d66f620bcffccabd">ecore_thread_global_data_set()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#ga011eeb2f99aaa950089ddc6ea989da29">ecore_thread_global_data_find()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#ga011eeb2f99aaa950089ddc6ea989da29">ecore_thread_global_data_find()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a43">ecore_thread_example.c</a>.</dd>
 </dl>
@@ -513,9 +518,9 @@ Typedefs</h2></td></tr>
 <p>If there's any data stored associated with <code>key</code> in the global hash, this function will remove it from it and return <code>EINA_TRUE</code>. If no data exists or an error occurs, it returns <code>EINA_FALSE</code>.</p>
 <p>If the data was added to the hash with a free function, then it will also be freed after removing it from the hash, otherwise it requires to be manually freed by the user, which means that if no other reference to it exists before calling this function, it will result in a memory leak.</p>
 <p>Note, also, that freeing data that other threads may be using will result in a crash, so appropriate care must be taken by the application when that possibility exists.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a13">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a18">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -545,9 +550,9 @@ Typedefs</h2></td></tr>
 <p>Keep in mind that the data returned may be used by more than one thread at the same time and no reference counting is done on it by Ecore. Freeing the data or modifying its contents may require additional precautions to be considered, depending on the application's design.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#ga910b00728b8b0201677f7a09e8d44896">ecore_thread_global_data_wait()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#ga910b00728b8b0201677f7a09e8d44896">ecore_thread_global_data_wait()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a10">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a11">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -597,7 +602,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#ga8e53feb974331550744cbc2e40dc9132">ecore_thread_global_data_del()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#ga011eeb2f99aaa950089ddc6ea989da29">ecore_thread_global_data_find()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#ga011eeb2f99aaa950089ddc6ea989da29">ecore_thread_global_data_find()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -641,7 +646,7 @@ Typedefs</h2></td></tr>
 <p>Keep in mind that the data returned may be used by more than one thread at the same time and no reference counting is done on it by Ecore. Freeing the data or modifying its contents may require additional precautions to be considered, depending on the application's design.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga4e9de7492f8400e19ddd157d8cc21811">ecore_thread_global_data_add()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#ga011eeb2f99aaa950089ddc6ea989da29">ecore_thread_global_data_find()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#ga011eeb2f99aaa950089ddc6ea989da29">ecore_thread_global_data_find()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -695,7 +700,7 @@ Typedefs</h2></td></tr>
     <tr><td class="paramname">key</td><td>The name under which the data will be stored </td></tr>
     <tr><td class="paramname">value</td><td>The data to add </td></tr>
     <tr><td class="paramname">cb</td><td>Function to free the data when removed from the hash </td></tr>
-    <tr><td class="paramname">direct</td><td>If <code>true</code>, this will not copy the key string (like <a class="el" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string. key.">eina_hash_direct_add()</a>) </td></tr>
+    <tr><td class="paramname">direct</td><td>If <code>true</code>, this will not copy the key string (like <a class="el" href="group__Eina__Hash__Group.html#ga50aa7d4303e5efbe8dc7f593b59b9f63" title="Adds an entry to the given hash table without duplicating the string.">eina_hash_direct_add()</a>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -718,7 +723,7 @@ Typedefs</h2></td></tr>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#ga1a937d674f1a20162b31b95d0ed100ad">ecore_thread_local_data_find()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#gad3c1d51a24772b885b26486be86c2779">ecore_thread_local_data_del()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#gad3c1d51a24772b885b26486be86c2779">ecore_thread_local_data_del()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a5">ecore_thread_example.c</a>.</dd>
 </dl>
@@ -760,7 +765,7 @@ Typedefs</h2></td></tr>
 <p>If there's any data stored associated with <code>key</code> in the global hash, this function will remove it from it and return <code>EINA_TRUE</code>. If no data exists or an error occurs, it returns <code>EINA_FALSE</code>.</p>
 <p>If the data was added to the hash with a free function, then it will also be freed after removing it from the hash, otherwise it requires to be manually freed by the user, which means that if no other reference to it exists before calling this function, it will result in a memory leak.</p>
 <p>This function, and all of the others in the <code>ecore_thread_local_data</code> family of functions, can only be called within the worker function running in the thread. Do not call them from the main loop or from a thread other than the one represented by <code>thread</code>.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga6878f550a9bcc8002c0c709b4b4dca66">ecore_thread_local_data_add()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga6878f550a9bcc8002c0c709b4b4dca66">ecore_thread_local_data_add()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a8">ecore_thread_example.c</a>.</dd>
 </dl>
@@ -803,7 +808,7 @@ Typedefs</h2></td></tr>
 <p>This function, and all of the others in the <code>ecore_thread_local_data</code> family of functions, can only be called within the worker function running in the thread. Do not call them from the main loop or from a thread other than the one represented by <code>thread</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#ga6878f550a9bcc8002c0c709b4b4dca66">ecore_thread_local_data_add()</a> </dd>
 <dd>
-ecore_thread_local_data_wait()</dd></dl>
+ecore_thread_local_data_wait() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a3">ecore_thread_example.c</a>.</dd>
 </dl>
@@ -863,7 +868,7 @@ ecore_thread_local_data_wait()</dd></dl>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#gad3c1d51a24772b885b26486be86c2779">ecore_thread_local_data_del()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#ga1a937d674f1a20162b31b95d0ed100ad">ecore_thread_local_data_find()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#ga1a937d674f1a20162b31b95d0ed100ad">ecore_thread_local_data_find()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -885,10 +890,10 @@ ecore_thread_local_data_wait()</dd></dl>
 <p>Gets the maximum number of threads that can run simultaneously.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Max possible number of Ecore_Thread's running concurrently</dd></dl>
 <p>This returns the maximum number of Ecore_Thread's that may be running at the same time. If this number is reached, new jobs started by either <a class="el" href="group__Ecore__Thread__Group.html#gaac9c9933ef0a90ba86f8fd0247e9c7ef">ecore_thread_run()</a> or <a class="el" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run()</a> will be added to the respective pending queue until one of the running threads finishes its task and becomes available to run a new one.</p>
-<p>By default, this will be the number of available CPUs for the running program (as returned by <a class="el" href="group__Eina__Cpu__Group.html#gae6dcd314fd7f6f3db07d918f8d58109e" title="Gets the current number of processors.">eina_cpu_count()</a>), or 1 if this value could not be fetched.</p>
+<p>By default, this will be the proportional to the number of CPU cores found, and will be at least 1 so at least 1 worker can run through the quque of work to do.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#ga4324944541abf9f84861690b4ff66e18">ecore_thread_max_reset()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#ga4324944541abf9f84861690b4ff66e18">ecore_thread_max_reset()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a40">ecore_thread_example.c</a>.</dd>
 </dl>
@@ -912,7 +917,7 @@ ecore_thread_local_data_wait()</dd></dl>
 <p>This resets the value returned by <a class="el" href="group__Ecore__Thread__Group.html#gabad7972818b7fb1346ae7a098cd47220">ecore_thread_max_get()</a> back to its default.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#gabad7972818b7fb1346ae7a098cd47220">ecore_thread_max_get()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
@@ -938,10 +943,10 @@ ecore_thread_local_data_wait()</dd></dl>
   </table>
   </dd>
 </dl>
-<p>This sets a new value for the maximum number of concurrently running Ecore_Thread's. It <b>must</b> an integer between 1 and (16 * <code>x</code>), where <code>x</code> is the number for CPUs available.</p>
+<p>This sets a new value for the maximum number of concurrently running Ecore_Thread's. It <b>must</b> an interger of at least 1 and may be limited to a reasonable value as to not overload the system too much with too many workers. This limit may change based on the number of CPU cores detected.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Ecore__Thread__Group.html#gabad7972818b7fb1346ae7a098cd47220">ecore_thread_max_get()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#ga4324944541abf9f84861690b4ff66e18">ecore_thread_max_reset()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#ga4324944541abf9f84861690b4ff66e18">ecore_thread_max_reset()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a42">ecore_thread_example.c</a>.</dd>
 </dl>
@@ -963,9 +968,9 @@ ecore_thread_local_data_wait()</dd></dl>
 <div class="memdoc">
 <p>Gets the number of feedback jobs waiting for a thread to run.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of pending threads running "feedback" jobs</dd></dl>
-<p>This returns the number of tasks started with <a class="el" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run()</a> that are pending, waiting for a thread to become available to run them.</p>
+<p>This returns the number of tasks started with <a class="el" href="group__Ecore__Thread__Group.html#ga4bde6b50e177f26ab5b2688aa99e3878">ecore_thread_feedback_run()</a> that are pending, waiting for a thread to become available to run them. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a20">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a22">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -985,9 +990,9 @@ ecore_thread_local_data_wait()</dd></dl>
 <div class="memdoc">
 <p>Gets the number of short jobs waiting for a thread to run.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of pending threads running "short" jobs</dd></dl>
-<p>This returns the number of tasks started with <a class="el" href="group__Ecore__Thread__Group.html#gaac9c9933ef0a90ba86f8fd0247e9c7ef">ecore_thread_run()</a> that are pending, waiting for a thread to become available to run them.</p>
+<p>This returns the number of tasks started with <a class="el" href="group__Ecore__Thread__Group.html#gaac9c9933ef0a90ba86f8fd0247e9c7ef">ecore_thread_run()</a> that are pending, waiting for a thread to become available to run them. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a21">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a23">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1007,9 +1012,9 @@ ecore_thread_local_data_wait()</dd></dl>
 <div class="memdoc">
 <p>Gets the total number of pending jobs.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>Number of pending threads running jobs</dd></dl>
-<p>Same as the sum of <a class="el" href="group__Ecore__Thread__Group.html#ga3e32f650cfe811e69bba7825c71b9070">ecore_thread_pending_get()</a> and <a class="el" href="group__Ecore__Thread__Group.html#gaa5c56445198f7b03c1f080039499689a">ecore_thread_pending_feedback_get()</a>.</p>
+<p>Same as the sum of <a class="el" href="group__Ecore__Thread__Group.html#ga3e32f650cfe811e69bba7825c71b9070">ecore_thread_pending_get()</a> and <a class="el" href="group__Ecore__Thread__Group.html#gaa5c56445198f7b03c1f080039499689a">ecore_thread_pending_feedback_get()</a>. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a19">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a21">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1038,9 +1043,9 @@ ecore_thread_local_data_wait()</dd></dl>
 <p>This function should be called only from the same function represented by <code>thread</code>.</p>
 <p>Calling this function will mark the thread for a reschedule, so as soon as it returns, it will be added to the end of the list of pending tasks. If no other tasks are waiting or there are sufficient threads available, the rescheduled task will be launched again immediately.</p>
 <p>This should never return <code>EINA_FALSE</code>, unless it was called from the wrong thread or with the wrong arguments.</p>
-<p>The <code>func_end</code> callback set when the thread is created will not be called until the function in the thread returns without being rescheduled. Similarly, if the <code>thread</code> is cancelled, the reschedule will not take effect.</p>
+<p>The <code>func_end</code> callback set when the thread is created will not be called until the function in the thread returns without being rescheduled. Similarly, if the <code>thread</code> is cancelled, the reschedule will not take effect. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a16">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a19">ecore_thread_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1104,9 +1109,9 @@ ecore_thread_local_data_wait()</dd></dl>
 <dd>
 <a class="el" href="group__Ecore__Thread__Group.html#gadf825c1a58f06bba2a304d025bed3185">ecore_thread_reschedule()</a> </dd>
 <dd>
-<a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a></dd></dl>
+<a class="el" href="group__Ecore__Thread__Group.html#gaaf965a46e0cc12857883806812af7693">ecore_thread_max_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a47">ecore_thread_example.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a45">ecore_thread_example.c</a>, and <a class="el" href="efl_thread_6_8c-example.html#a10">efl_thread_6.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1144,8 +1149,8 @@ ecore_thread_local_data_wait()</dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if the thread execution is over.</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if the thread execution is over. </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

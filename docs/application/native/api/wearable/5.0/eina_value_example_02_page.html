@@ -156,24 +156,24 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
    <span class="keywordflow">if</span> (v-&gt;<a class="code" href="struct__Eina__Value.html#a1fd07b3214c901eec252a786cca47239">type</a> != <a class="code" href="group__Eina__Value__Group.html#ga8147143699c5f5a686415090080d3f9e">EINA_VALUE_TYPE_STRUCT</a>)
      <span class="keywordflow">return</span>;
 
-   <a class="code" href="group__Eina__Value__Struct__Group.html#ga476aa64a399aba776fa14f2fb065b268" title="Sets the generic value in an struct member.">eina_value_struct_set</a>(v, <span class="stringliteral">&quot;param1&quot;</span>, rand());
-   <a class="code" href="group__Eina__Value__Struct__Group.html#ga476aa64a399aba776fa14f2fb065b268" title="Sets the generic value in an struct member.">eina_value_struct_set</a>(v, <span class="stringliteral">&quot;param2&quot;</span>, rand() % 256);
-   <a class="code" href="group__Eina__Value__Struct__Group.html#ga476aa64a399aba776fa14f2fb065b268" title="Sets the generic value in an struct member.">eina_value_struct_set</a>(v, <span class="stringliteral">&quot;param3&quot;</span>, rand());
+   <a class="code" href="group__Eina__Value__Struct__Group.html#ga476aa64a399aba776fa14f2fb065b268" title="Sets the generic value in a struct member.">eina_value_struct_set</a>(v, <span class="stringliteral">&quot;param1&quot;</span>, rand());
+   <a class="code" href="group__Eina__Value__Struct__Group.html#ga476aa64a399aba776fa14f2fb065b268" title="Sets the generic value in a struct member.">eina_value_struct_set</a>(v, <span class="stringliteral">&quot;param2&quot;</span>, rand() % 256);
+   <a class="code" href="group__Eina__Value__Struct__Group.html#ga476aa64a399aba776fa14f2fb065b268" title="Sets the generic value in a struct member.">eina_value_struct_set</a>(v, <span class="stringliteral">&quot;param3&quot;</span>, rand());
 }
 </pre></div> </p>
-<dl class="note"><dt><b>Note:</b></dt><dd>While using <a class="el" href="group__Eina__Value__Struct__Group.html#ga476aa64a399aba776fa14f2fb065b268" title="Sets the generic value in an struct member.">eina_value_struct_set()</a> with an in-existing parameter causes no error, it does return <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, to notify it was not possible to set the value. This could be used to determine that we're handling a V1 struct and take some action based on that.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>While using <a class="el" href="group__Eina__Value__Struct__Group.html#ga476aa64a399aba776fa14f2fb065b268" title="Sets the generic value in a struct member.">eina_value_struct_set()</a> with an in-existing parameter causes no error, it does return <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>, to notify it was not possible to set the value. This could be used to determine that we're handling a V1 struct and take some action based on that.</dd></dl>
 <p>The next thing is to do is see what a function that uses the values of the struct looks like. We'll again be very simplistic in our usage, we'll just print the values, but a real world case, might send these values to another process use them to open a network/database connection or anything else. Since all versions of the struct have <code>param1</code> and <code>param2</code> we'll unconditionally use them: <div class="fragment"><pre class="fragment">
 <span class="keywordtype">void</span> my_struct_use(<a class="code" href="struct__Eina__Value.html">Eina_Value</a> *params)
 {
    <span class="keywordtype">int</span> p1, p3;
    <span class="keywordtype">char</span> p2;
 
-   <a class="code" href="group__Eina__Value__Struct__Group.html#ga07a7cc420f03a247dffe4d13ce1ad6c5" title="Gets the generic value from an struct member.">eina_value_struct_get</a>(params, <span class="stringliteral">&quot;param1&quot;</span>, &amp;p1);
-   <a class="code" href="group__Eina__Value__Struct__Group.html#ga07a7cc420f03a247dffe4d13ce1ad6c5" title="Gets the generic value from an struct member.">eina_value_struct_get</a>(params, <span class="stringliteral">&quot;param2&quot;</span>, &amp;p2);
+   <a class="code" href="group__Eina__Value__Struct__Group.html#ga07a7cc420f03a247dffe4d13ce1ad6c5" title="Gets the generic value from a struct member.">eina_value_struct_get</a>(params, <span class="stringliteral">&quot;param1&quot;</span>, &amp;p1);
+   <a class="code" href="group__Eina__Value__Struct__Group.html#ga07a7cc420f03a247dffe4d13ce1ad6c5" title="Gets the generic value from a struct member.">eina_value_struct_get</a>(params, <span class="stringliteral">&quot;param2&quot;</span>, &amp;p2);
    printf(<span class="stringliteral">&quot;param1: %d\nparam2: %c\n&quot;</span>, p1, p2);
 </pre></div></p>
 <p>The next step is to conditionally use <code>param3</code>, which can fortunately be done in the same step in which we get it's value: <div class="fragment"><pre class="fragment">
-   <span class="keywordflow">if</span> (<a class="code" href="group__Eina__Value__Struct__Group.html#ga07a7cc420f03a247dffe4d13ce1ad6c5" title="Gets the generic value from an struct member.">eina_value_struct_get</a>(params, <span class="stringliteral">&quot;param3&quot;</span>, &amp;p3))
+   <span class="keywordflow">if</span> (<a class="code" href="group__Eina__Value__Struct__Group.html#ga07a7cc420f03a247dffe4d13ce1ad6c5" title="Gets the generic value from a struct member.">eina_value_struct_get</a>(params, <span class="stringliteral">&quot;param3&quot;</span>, &amp;p3))
      printf(<span class="stringliteral">&quot;param3: %d\n&quot;</span>, p3);
 }
 </pre></div></p>

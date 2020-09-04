@@ -104,7 +104,7 @@ Overview</h2>
 <h2><a class="anchor" id="WEBVIEW_SMART_OBJECT"></a>
 Smart object</h2>
 <p>It is Chromium main smart object. This object provides view related APIs of Chromium to EFL object.<br/>
- The following signals (see <a class="el" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a>) are emitted: </p>
+ The following signals (see <a class="el" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add()</a>) are emitted: </p>
 <table class="doxtable">
 <tr>
 <th>Signals  </th><th>Type  </th><th>Description   </th></tr>
@@ -323,8 +323,6 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Enables/disables if the scripts can open new windows.  <a href="#ga11020755e28890a85525565d58a12f27"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga0fe3b76bfc817ce4e0050065d61bbfc1">ewk_settings_scripts_can_open_windows_get</a> (const <a class="el" href="group__WEBVIEW.html#gaf1bb1543b164021a2ef7891242d6021e">Ewk_Settings</a> *settings)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the scripts can open new windows.  <a href="#ga0fe3b76bfc817ce4e0050065d61bbfc1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#gaf16e678500d2e930bdd512298d86da4c">ewk_settings_viewport_meta_tag_set</a> (<a class="el" href="group__WEBVIEW.html#gaf1bb1543b164021a2ef7891242d6021e">Ewk_Settings</a> *settings, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> enable)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#gaf40d55af65429897ddc7ffaecaa0ac04">ewk_settings_viewport_meta_tag_get</a> (const <a class="el" href="group__WEBVIEW.html#gaf1bb1543b164021a2ef7891242d6021e">Ewk_Settings</a> *settings)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#gaa40a901ceb07bd86f74e3bfacecca152">ewk_view_visibility_set</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, <a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> enable)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Request to set the current page's visibility.  <a href="#gaa40a901ceb07bd86f74e3bfacecca152"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#gaca7c72f1c3a978418216cdf8fd091baa">ewk_view_orientation_send</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, int orientation)</td></tr>
@@ -367,7 +365,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests to set the user agent string.  <a href="#ga99a9003f865791e69ffc9611872970c0"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga1e31ba3d5aac2347cb41345a56377518">ewk_view_user_agent_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the user agent string.  <a href="#ga1e31ba3d5aac2347cb41345a56377518"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga48fffebe16f56c1fd9d95c17b6735097">ewk_view_contents_size_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *width, <a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *height)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga48fffebe16f56c1fd9d95c17b6735097">ewk_view_contents_size_get</a> (const <a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, Evas_Coord *width, Evas_Coord *height)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the last known content's size.  <a href="#ga48fffebe16f56c1fd9d95c17b6735097"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga0b6cc39a80fbbb7440ace5a406ee6eb9">ewk_view_script_execute</a> (<a class="el" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o, const char *script, <a class="el" href="group__WEBVIEW.html#ga5337cd670493dbff950526ecfdfd1504">Ewk_View_Script_Execute_Cb</a> callback, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Requests the execution of the given script.  <a href="#ga0b6cc39a80fbbb7440ace5a406ee6eb9"></a><br/></td></tr>
@@ -417,9 +415,6 @@ _Ewk_Back_Forward_List_Item&#160;</td><td class="memItemRight" valign="bottom"><
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type that creates a type name for Ewk_Cache_Model.  <a href="#gaf6e0b8432d5eb67142bd623ca35d89b3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39">Ewk_Context_Intercept_Request_Callback</a> )(<a class="el" href="group__WEBVIEW.html#gaac6ffb270458510e11804e9b1ec2e448">Ewk_Context</a> *ewk_context, <a class="el" href="group__WEBVIEW.html#gab8da8e1375dbc93ecfa702efc1dd5102">Ewk_Intercept_Request</a> *intercept_request, void *user_data)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback for intercept request feature.  <a href="#gae484b204d142e0d117326e5683194f39"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top">typedef <br class="typebreak"/>
-<a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39">Ewk_Context_Intercept_Request_Callback</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga4eba4de692d37f3bde9df94fc0b70d09">Ewk_Context_Intercept_Request_Cancel_Callback</a></td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets Ewk_Context_Intercept_Request_Cancel_Callback.  <a href="#ga4eba4de692d37f3bde9df94fc0b70d09"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga8cd331039f889096f04e35b2230ed2ec">Ewk_Context_Menu_Item_Tag</a></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure type that creates a type name for Ewk_Context_Menu_Item_Tag.  <a href="#ga8cd331039f889096f04e35b2230ed2ec"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Ewk_Context_Menu&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__WEBVIEW.html#ga1ebc92afff582d4daf4dfe8d628528ae">Ewk_Context_Menu</a></td></tr>
@@ -576,32 +571,6 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a class="anchor" id="ga4eba4de692d37f3bde9df94fc0b70d09"></a><!-- doxytag: member="ewk_context.h::Ewk_Context_Intercept_Request_Cancel_Callback" ref="ga4eba4de692d37f3bde9df94fc0b70d09" args="" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef <a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39">Ewk_Context_Intercept_Request_Callback</a> <a class="el" href="group__WEBVIEW.html#ga4eba4de692d37f3bde9df94fc0b70d09">Ewk_Context_Intercept_Request_Cancel_Callback</a></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-
-<p>Sets Ewk_Context_Intercept_Request_Cancel_Callback. </p>
-<p>Sets Ewk_Context_Intercept_Request_Cancel_Callback to give a chance to notify intercept resource request to client when url request is cancelled.</p>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd>Pass NULL pointer as <em>callback</em> to reset current callback.</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ewk_context</td><td>Ewk_Context object to intercept requests </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">callback</td><td>New callback, NULL resets current callback </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">user_data</td><td>User data passed to <em>callback</em> </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__WEBVIEW.html#gae484b204d142e0d117326e5683194f39" title="Callback for intercept request feature.">Ewk_Context_Intercept_Request_Callback</a> </dd></dl>
 
 </div>
 </div>
@@ -4611,68 +4580,6 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
 
 </div>
 </div>
-<a class="anchor" id="gaf40d55af65429897ddc7ffaecaa0ac04"></a><!-- doxytag: member="ewk_settings.h::ewk_settings_viewport_meta_tag_get" ref="gaf40d55af65429897ddc7ffaecaa0ac04" args="(const Ewk_Settings *settings)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__WEBVIEW.html#gaf40d55af65429897ddc7ffaecaa0ac04">ewk_settings_viewport_meta_tag_get</a> </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__WEBVIEW.html#gaf1bb1543b164021a2ef7891242d6021e">Ewk_Settings</a> *&#160;</td>
-          <td class="paramname"><em>settings</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Returns whether the viewport meta tag is enabled.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">settings</td><td>settings object</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if the viewport meta tag is enabled <code>EINA_FALSE</code> if not or on failure </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="gaf16e678500d2e930bdd512298d86da4c"></a><!-- doxytag: member="ewk_settings.h::ewk_settings_viewport_meta_tag_set" ref="gaf16e678500d2e930bdd512298d86da4c" args="(Ewk_Settings *settings, Eina_Bool enable)" -->
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__WEBVIEW.html#gaf16e678500d2e930bdd512298d86da4c">ewk_settings_viewport_meta_tag_set</a> </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="group__WEBVIEW.html#gaf1bb1543b164021a2ef7891242d6021e">Ewk_Settings</a> *&#160;</td>
-          <td class="paramname"><em>settings</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
-          <td class="paramname"><em>enable</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div>
-<div class="memdoc">
-<p>Enables/disables the viewport meta tag.</p>
-<p>By default, the viewport meta tag is enabled on mobile and wearable, but it is disabled on TV.</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">settings</td><td>settings object </td></tr>
-    <tr><td class="paramname">enable</td><td><code>EINA_TRUE</code> to enable the viewport meta tag <code>EINA_FALSE</code> to disable</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> on success or <code>EINA_FALSE</code> on failure </dd></dl>
-
-</div>
-</div>
 <a class="anchor" id="ga4be475e583d442b05d30b3decf7fb397"></a><!-- doxytag: member="ewk_main.h::ewk_shutdown" ref="ga4be475e583d442b05d30b3decf7fb397" args="(void)" -->
 <div class="memitem">
 <div class="memproto">
@@ -4878,13 +4785,13 @@ _Ewk_View_Request_Manifest&#160;</td><td class="memItemRight" valign="bottom"><a
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>width</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__Evas.html#ga2453e92182bad3b0e0d84e5aff433b07">Evas_Coord</a> *&#160;</td>
+          <td class="paramtype">Evas_Coord *&#160;</td>
           <td class="paramname"><em>height</em>&#160;</td>
         </tr>
         <tr>

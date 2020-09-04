@@ -1,6 +1,6 @@
 # Debugging Applications
 
-Debugging your application enables you to understand its flow of control. With the Tizen Studio, you can use various [application debugging methods](#application-debugging-methods). However, remember that the best way to debug an application is to not make bugs in the first place, so learn how to [prevent bugs by using logs](#debugging-with-logs).
+Debugging your application enables you to understand its flow of control. With Tizen Studio, you can use various [application debugging methods](#application-debugging-methods). However, remember that the best way to debug an application is to not make bugs in the first place, so learn how to [prevent bugs by using logs](#debugging-with-logs).
 
 The debugging environment uses [GDB](http://www.gnu.org/software/gdb/gdb.html) (GNU Debugger) for debugging with the emulator and a target device. GDB can debug both locally and [remotely](#remote-debugging). To ease the debugging process, you can set [break points](#break-points), step in, step out, and step over break points, and watch variables to track the changes in their values in the **Debug** view.
 
@@ -55,7 +55,7 @@ To debug an application that is already running on the emulator or a device:
 <a name="remote"></a>
 ## Remote Debugging
 
-The Tizen Studio supports remote debugging. Remote debugging is used to debug the OS Kernel or a system which cannot support local debugging. Remote debugging requires a "GDB client" on the host side and a "GDB server" on the target side. Both sides must be connected by serial or TCP/IP communication.
+Tizen Studio supports remote debugging. Remote debugging is used to debug the OS Kernel or a system which cannot support local debugging. Remote debugging requires a "GDB client" on the host side and a "GDB server" on the target side. Both sides must be connected by serial or TCP/IP communication.
 
 **Figure: Remote debugging**
 
@@ -344,7 +344,7 @@ A watch point suspends the execution of a program at the location where the expr
 
 To add a watch point:
 
-1. In the **Variables**, **Outline**, or [Expressions](#expressions) view, right-click a variable, and select **Add Watchpoint (C/C++)**.
+1. In the **Variables**, **Outline**, or [Expressions](#expressions-view) view, right-click a variable, and select **Add Watchpoint (C/C++)**.
 2. Define the details and click **OK**.
 
 **Figure: Watch point details**
@@ -390,7 +390,7 @@ To debug your application on the emulator:
 
    If many active emulator instances are connected, select the emulator to run the application from the dialog box.
 
-3. The debug messages are displayed in the Tizen Studio **Console** view. To see the GDB console, in the **Console** view, click the **Display Selected Console** button and select the option containing **gdb**. With the GDB console, you can also execute GDB commands.
+3. The debug messages are displayed in Tizen Studio **Console** view. To see the GDB console, in the **Console** view, click the **Display Selected Console** button and select the option containing **gdb**. With the GDB console, you can also execute GDB commands.
 
    To display verbose GDB output in the GDB console:
 
@@ -400,11 +400,11 @@ To debug your application on the emulator:
 
 4. Use the application in the emulator as you would on a target device.
 
-   While the application is running, the Tizen Studio [Log view](../../../tizen-studio/common-tools/log-view.md) shows the log, debug, and exception messages from the methods defined in the log macros.
+   While the application is running, Tizen Studio [Log view](../../../tizen-studio/common-tools/log-view.md) shows the log, debug, and exception messages from the methods defined in the log macros.
 
 5. To stop debugging, do one of the following:
 
-   - In the Tizen Studio, in the **Console** or **Debug** view, click the **Terminate** button. If the application execution is not suspended before you click the **Terminate** button, touch an arbitrary control on the screen or press a hard key on the emulator after clicking **Terminate**.
+   - In Tizen Studio, in the **Console** or **Debug** view, click the **Terminate** button. If the application execution is not suspended before you click the **Terminate** button, touch an arbitrary control on the screen or press a hard key on the emulator after clicking **Terminate**.
    - On the emulator, press the **End** key.
 
 After debugging, run your application again to check its functionality and to ensure that the bugs detected during the debugging process are fixed.
@@ -417,7 +417,7 @@ You can utilize additional features for application development and debugging by
 
 > **Note**
 >
-> The developer options are currently supported on the Tizen 2.3.2 wearable emulator only.
+> The developer options are currently supported on the Tizen 2.3.2 Wearable Emulator only.
 
 The developer options allow you to make the pixel ratio visible on the screen:
 

@@ -26,7 +26,7 @@ for TD:
 			<td><img alt="" height="267" src="media/m13geofence.png" width="150"/></td>
 			<td>
 			<p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Mobile/Geofence" target="_blank"><strong>(M) Geofence</strong></a></p>
-			<p>This sample application demonstrates how to use the geofence using <a href="https://samsung.github.io/TizenFX/API5/api/Tizen.Location.Geofence.html" target="_blank">Tizen.Location.Geofence</a>.</p>
+			<p>This sample application demonstrates how to use the geofence using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Location.Geofence.html" target="_blank">Tizen.Location.Geofence</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -59,11 +59,20 @@ for TD:
 	<tbody>
 		<tr>
 			<td>
+			<p><img alt="" height="180" src="media/w68findplace.png" width="180" /></p>
+			</td>
+			<td>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/FindPlace" target="_blank"><strong>(W) FindPlace</strong></a></p>
+			<p>This sample application demonstrates how to search for places within a specified area using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a> and how to create a circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
 			<p><img alt="" height="180" src="media/w56geocoding.png" width="180" /></p>
 			</td>
 			<td>
                         <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/Geocoding" target="_blank"><strong>(W) Geocoding</strong></a></p>
-			<p>This sample application demonstrates how to translate an address to its geographical location using <a href="https://samsung.github.io/TizenFX/API5/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
+			<p>This sample application demonstrates how to translate an address to its geographical location using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -98,8 +107,17 @@ for TD:
 			<p><img alt="" height="180" src="media/w57reversegeocoding.png" width="180" /></p>
 			</td>
 			<td>
-                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ReverseGeocoding" target="_blank"><strong>(W) ReverseGeocoding</strong></a></p>
-			<p>This sample application demonstrates how to get the address of a selected geographical location using <a href="https://samsung.github.io/TizenFX/API5/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
+                       <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/ReverseGeocoding" target="_blank"><strong>(W) ReverseGeocoding</strong></a></p>
+			<p>This sample application demonstrates how to get the address of a selected geographical location using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<p><img alt="" height="180" src="media/w77routing.png" width="180" /></p>
+			</td>
+			<td>
+                       <p><strong>(W) Routing</strong> [In progress]</p>
+			<p>This sample application demonstrates how to use <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Maps.html" target="_blank">Tizen.Maps</a>.</p>
 			</td>
 		</tr>
 	</tbody>

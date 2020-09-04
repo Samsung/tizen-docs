@@ -92,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
 <p>Convenience smart object that packs children under a regular grid layout, using their virtual grid location and size to determine children's positions inside the grid object's area.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.1 </dd></dl>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="gabf7f9b301f039564a21143e4b13c2313"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_grid_add" ref="gabf7f9b301f039564a21143e4b13c2313" args="(Evas *evas)" -->
 <div class="memitem">
@@ -110,7 +110,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="memdoc">
 <p>Create a new grid.</p>
 <p>It's set to a virtual size of 1x1 by default and add children with evas_object_grid_pack(). </p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5e8c38ebf10afcf038b6058028a88539"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_grid_mirrored_get" ref="ga5e8c38ebf10afcf038b6058028a88539" args="(const Eo *obj)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Object__Grid.html#ga5e8c38ebf10afcf038b6058028a88539">evas_object_grid_mirrored_get</a> </td>
+          <td>(</td>
+          <td class="paramtype">const Eo *&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the mirrored mode of the grid. </p>
+<p>See also <a class="el" href="group__Evas__Object__Grid.html#ga768e272352c7b135677f268b6e03e638">evas_object_grid_mirrored_set</a></p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> if mirrored mode is set, <code>false</code> otherwise</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga768e272352c7b135677f268b6e03e638"></a><!-- doxytag: member="Evas_Legacy.h::evas_object_grid_mirrored_set" ref="ga768e272352c7b135677f268b6e03e638" args="(Eo *obj, Eina_Bool mirrored)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="group__Evas__Object__Grid.html#ga768e272352c7b135677f268b6e03e638">evas_object_grid_mirrored_set</a> </td>
+          <td>(</td>
+          <td class="paramtype">Eo *&#160;</td>
+          <td class="paramname"><em>obj</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td>
+          <td class="paramname"><em>mirrored</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Sets the mirrored mode of the grid. In mirrored mode the grid items go from right to left instead of left to right. That is, 0,0 is top right, not to left. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mirrored</td><td><code>true</code> if mirrored mode is set, <code>false</code> otherwise</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -139,8 +206,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The new textgrid object.</dd></dl>
 <p>This function adds a new textgrid object to the Evas <code>e</code> and returns the object.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -186,11 +253,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">font_name</td><td>The font (family) name. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">font_size</td><td>The font size, in points.</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">font_size</td><td>The font size, in points. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -236,11 +303,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">font_name</td><td>The font (family) name. </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">font_size</td><td>The font size, in points.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">font_size</td><td>The font size, in points. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -267,8 +334,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a class="el" href="group__Evas__Object__Grid.html#ga7b44c3404882bac275a71396696e5458" title="Set the font family and size on a given textgrid object.">evas_object_textgrid_font_set()</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Object__Grid.html#ga3a5ff60355253d80e6964940adbfd710" title="Set the font (source) file to be used on a given textgrid object.">evas_object_textgrid_font_source_set()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -307,11 +374,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">font_source</td><td>The font file's path.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">font_source</td><td>The font file's path. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

@@ -92,16 +92,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>This example shows how one can send and receive signals to/from the layout, and what to do when the layout theme has its size changed. The full source code for this example can be found at <a class="el" href="layout_example_03_c.html">layout_example_03.c</a>.</p>
 <p>In this exmaple we will use another group from the same layout theme file used in <a class="el" href="layout_example_01.html">Layout - Content, Table and Box</a>. Its instantiation and loading happens in the following lines:</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment">   layout = <a class="code" href="group__Elm__Layout.html#gaca5aee4ad4d92c68f13d1080c70baf8b">elm_layout_add</a>(win);
+   evas_object_size_hint_weight_set(layout, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, layout);
+   snprintf(buf, <span class="keyword">sizeof</span>(buf), <span class="stringliteral">&quot;%s/examples/layout_example.edj&quot;</span>, <a class="code" href="group__Elm__App.html#ga92a09dbf88cc1ca3eab51c51dea589d0">elm_app_data_dir_get</a>());
+   <a class="code" href="group__Elm__Layout.html#ga8d1105463d52787a7b0ca8d7402cd3ea">elm_layout_file_set</a>(layout, buf, <span class="stringliteral">&quot;example/mylayout3&quot;</span>);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(layout);
+</pre></div></p>
 <p>This time we register a callback to be called whenever we receive a signal after the end of the animation that happens in this layout:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   <a class="code" href="group__Elm__General.html#ga6f9574b798efcd454afdac6f2904f633">elm_object_signal_callback_add</a>(layout, <span class="stringliteral">&quot;size,changed&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, _size_changed_cb, layout);
+</pre></div></p>
 <p>We also add a button that will send signals to the layout:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
+<p><div class="fragment"><pre class="fragment">
+   <span class="comment">// Setting title</span>
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *title = <a class="code" href="group__Elm__Layout.html#ga29b7c0fb4a44526c76154782bc4e3b8e" title="Get the edje data from the given layout.">elm_layout_data_get</a>(layout, <span class="stringliteral">&quot;title&quot;</span>);
+   <span class="keywordflow">if</span> (title)
+     {
+        <a class="code" href="group__Elm__Win.html#ga0e0b613ac6b5d1e0e71f2ec17e80cb07" title="Sets the shaped state of a window.">elm_win_title_set</a>(win, title);
+        <a class="code" href="group__Elm__General.html#ga9c088563c442670796564d2e5158f154">elm_object_part_text_set</a>(layout, TITLE, title);
+     }
+
+   btn = <a class="code" href="group__Elm__Button.html#ga0021b9d86d822367035843ed18bc6ea9">elm_button_add</a>(win);
+   elm_object_text_set(btn, <span class="stringliteral">&quot;Enlarge me!&quot;</span>);
+   evas_object_size_hint_weight_set(btn, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(btn, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(layout, SWALLOW, btn);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(btn, <span class="stringliteral">&quot;clicked&quot;</span>, _swallow_btn_cb, layout);
+</pre></div></p>
 <p>The callback for this button will check what type of signal it should send, and then emit it. The code for this callback follows:</p>
- <div class="fragment"><pre class="fragment"></pre></div></p>
+ <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> _btn_large = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
+
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_swallow_btn_cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *btn, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *layout = data;
+
+   <span class="keywordflow">if</span> (_btn_large == <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>)
+     {
+        _btn_large = <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>;
+        <a class="code" href="group__Elm__General.html#ga1beada7edf5d714c0dba5459bcc993fc">elm_object_signal_emit</a>(layout, <span class="stringliteral">&quot;button,enlarge&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);
+        elm_object_text_set(btn, <span class="stringliteral">&quot;Reduce me!&quot;</span>);
+     }
+   <span class="keywordflow">else</span>
+     {
+        _btn_large = <a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>;
+        <a class="code" href="group__Elm__General.html#ga1beada7edf5d714c0dba5459bcc993fc">elm_object_signal_emit</a>(layout, <span class="stringliteral">&quot;button,reduce&quot;</span>, <span class="stringliteral">&quot;&quot;</span>);
+        elm_object_text_set(btn, <span class="stringliteral">&quot;Enlarge me!&quot;</span>);
+     }
+}
+</pre></div></p>
 <p>As we said before, we are receiving a signal whenever the animation started by the button click ends. This is the callback for that signal:</p>
-<p><div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Notice from this callback that the <a class="el" href="group__Elm__Layout.html#ga6c608599edc9ef84866c0ea50f9e2101" title="Eval sizing.">elm_layout_sizing_eval()</a> function must be called if we want our widget to update its size after the layout theme having changed its minimum size. This happens because the animation specified in the theme increases the size of the content area to a value higher than the widget size, thus requiring more space. But the elementary layout widget has no way to know this, thus needing the <a class="el" href="group__Elm__Layout.html#ga6c608599edc9ef84866c0ea50f9e2101" title="Eval sizing.">elm_layout_sizing_eval()</a> to be called on the layout, informing that this size has changed.</p>
+<p><div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_size_changed_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *layout, <span class="keyword">const</span> <span class="keywordtype">char</span> *emission EINA_UNUSED, <span class="keyword">const</span> <span class="keywordtype">char</span> *source EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *edje;
+   Evas_Coord w, h;
+
+   <a class="code" href="group__Elm__Layout.html#ga706284d5508c9ef6ee23e93d072dbb8d" title="Eval sizing.">elm_layout_sizing_eval</a>(layout);
+   edje = <a class="code" href="group__Elm__Layout.html#gac16e9590a879f644aa5c3bf87c28b03e" title="Get the edje layout.">elm_layout_edje_get</a>(layout);
+   edje_object_size_min_calc(edje, &amp;w, &amp;h);
+   printf(<span class="stringliteral">&quot;Minimum size for this theme: %dx%d\n&quot;</span>, w, h);
+}
+</pre></div></p>
+<p>Notice from this callback that the <a class="el" href="group__Elm__Layout.html#ga706284d5508c9ef6ee23e93d072dbb8d" title="Eval sizing.">elm_layout_sizing_eval()</a> function must be called if we want our widget to update its size after the layout theme having changed its minimum size. This happens because the animation specified in the theme increases the size of the content area to a value higher than the widget size, thus requiring more space. But the elementary layout widget has no way to know this, thus needing the <a class="el" href="group__Elm__Layout.html#ga706284d5508c9ef6ee23e93d072dbb8d" title="Eval sizing.">elm_layout_sizing_eval()</a> to be called on the layout, informing that this size has changed.</p>
 <p>A screenshot of this example can be seen on:</p>
 <div class="image">
 <img src="layout_example_03.png" alt="layout_example_03.png"/>

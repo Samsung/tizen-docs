@@ -1,6 +1,6 @@
 # Native API Reference
 
-Tizen Native API is carefully selected and tightly managed APIs from the Tizen native subsystems. The Native API is divided into dozens of API modules; each module represents a logically similar set of submodule APIs, which can be grouped into the same category.
+Tizen Native API is carefully selected and tightly managed APIs from the Tizen Native subsystems. The Native API is divided into dozens of API modules; each module represents a logically similar set of submodule APIs, which can be grouped into the same category.
 
 Tizen Native APIs supports mobile and wearable devices. They contain somewhat different modules. For more information, see API Reference for <a href="mobile/latest/index.html" target="_blank">mobile</a> or <a href="wearable/latest/index.html" target="_blank">wearable</a>.
 
@@ -8,16 +8,16 @@ Tizen Native APIs supports mobile and wearable devices. They contain somewhat di
 
 To be able to use an API, you need to include a header in which API is defined. You can find required headers in API reference as illustrated below:
 
-Figure:Required Header
+**Figure: Required Header**
 
 ![Required Header](media/required_header.png)
 
 
 ## Related Feature
 
-Some of the Tizen native APIs require features to prevent your application from being shown in the application list on the Tizen store. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
+Some of the Tizen Native APIs require features to prevent your application from being shown in the application list on Tizen Store. If related Feature is included in API reference as shown below and your application uses that feature, then you need to declare the feature in the tizen-manifest.xml file. For more information, see Application Filtering.
 
-Figure:Related Feature
+**Figure: Related Feature**
 
 ![Related Feature](media/related_feature.png)
 
@@ -26,7 +26,7 @@ Figure:Related Feature
 
 In the function documentation for each module, the functions are described using a unified structure, illustrated in the below example.
 
-Figure:Reference Structure
+**Figure: Reference Structure**
 
 ![Reference Structure](media/function_structure.png)
 
@@ -38,7 +38,7 @@ Some of Tizen Native API functions require adding appropriate privileges (define
 
 For example, see the "Privilege:" section in the following picture:
 
-Figure:Privilege
+**Figure: Privilege**
 
 ![Privilege](media/native_privilege.png)
 
@@ -47,6 +47,7 @@ Figure:Privilege
 <ul>
 <li>Mobile
   <ul>
+    <li><a href="mobile/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="mobile/5.0/index.html" target="_blank">5.0</a></li>
     <li><a href="mobile/4.0/index.html" target="_blank">4.0</a></li>
     <li><a href="mobile/3.0/index.html" target="_blank">3.0</a></li>
@@ -58,6 +59,7 @@ Figure:Privilege
 
 <li>Wearable
   <ul>
+    <li><a href="wearable/5.5/index.html" target="_blank">5.5</a></li>
     <li><a href="wearable/5.0/index.html" target="_blank">5.0</a></li>
     <li><a href="wearable/4.0/index.html" target="_blank">4.0</a></li>
     <li><a href="wearable/3.0/index.html" target="_blank">3.0</a></li>

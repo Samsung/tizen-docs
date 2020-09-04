@@ -99,6 +99,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__File__Cipher__Group.html#ga6a906518f0cd8757d6da4939a5333bd2">eet_read_cipher</a> (<a class="el" href="group__Eet__File__Group.html#ga8d9779184a9870c1a225f1f40c76e8a7">Eet_File</a> *ef, const char *name, int *size_ret, const char *cipher_key)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a specified entry from an eet file and return data using a cipher.  <a href="#ga6a906518f0cd8757d6da4939a5333bd2"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__File__Cipher__Group.html#gae50a9aa0c2ecd8ded184893da69f894c">eet_write_cipher</a> (<a class="el" href="group__Eet__File__Group.html#ga8d9779184a9870c1a225f1f40c76e8a7">Eet_File</a> *ef, const char *name, const void *data, int size, int compress, const char *cipher_key)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a specified entry to an eet file handle using a cipher.  <a href="#gae50a9aa0c2ecd8ded184893da69f894c"></a><br/></td></tr>
 </table>
@@ -139,6 +140,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
+
 <p>Reads a specified entry from an eet file and return data using a cipher. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
@@ -153,8 +155,8 @@ Functions</h2></td></tr>
 <p>This function finds an entry in the eet file that is stored under the name specified, and returns that data, decompressed, if successful. NULL is returned if the lookup fails or if memory errors are encountered. It is the job of the calling program to call free() on the returned data. The number of bytes in the returned data chunk are placed in size_ret.</p>
 <p>If the eet file handle is not valid NULL is returned and size_ret is filled with <code>0</code>.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Group.html#gac2deb318cef4b1980639548289cc37bd" title="Reads a specified entry from an eet file and return data.">eet_read()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>
@@ -225,8 +227,8 @@ Functions</h2></td></tr>
 <p>Name, and data must not be NULL, and size must be &gt; 0. If these conditions are not met, 0 will be returned.</p>
 <p>The data will be copied (and optionally compressed) in ram, pending a flush to disk (it will stay in ram till the eet file handle is closed though).</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eet__File__Group.html#ga03363cbb7fe7c2c47e69d679ad0cca5c" title="Write a specified entry to an eet file handle.">eet_write()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.0.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.0.0</dd></dl>
+<p>3.0 </p>
 
 </div>
 </div>

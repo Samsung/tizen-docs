@@ -88,14 +88,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#define-members">Defines</a>  </div>
   <div class="headertitle">
 <div class="title">Thread</div>  </div>
 <div class="ingroups"><a class="el" href="group__Eina__Tools__Group.html">Tools</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>Abstracts platform threads, providing an uniform API. It's modelled after POSIX THREADS (pthreads), on Linux they are almost 1:1 mapping.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Lock__Group.html">Lock</a> for mutex/locking abstraction.</dd></dl>
+<p>Abstracts platform threads, providing a uniform API. It's modeled after POSIX THREADS (pthreads), on Linux they are almost 1:1 mapping.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>Eina_Lock_Group for mutex/locking abstraction.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -115,7 +116,122 @@ Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Thread__Group.html#ga1e85dc4b7b825ef36a5ae9d8b710523a">Eina_Thread</a></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Thread__Group.html#ga4621fcf4fac930dc7f781240bc9dfb26">Eina_Thread_Cb</a> )(void *data, <a class="el" href="group__Eina__Thread__Group.html#ga1e85dc4b7b825ef36a5ae9d8b710523a">Eina_Thread</a> t)</td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef enum _Eina_Thread_Priority&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Thread__Group.html#ga240e6f04f3d6a051f2b16d0c2403cfc8">Eina_Thread_Priority</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Thread__Group.html#ga117083fbebdb7789f41e57315f6b8a59">Eina_Thread_Cancellable_Run_Cb</a> )(void *data)</td></tr>
+<tr><td colspan="2"><h2><a name="define-members"></a>
+Defines</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31">EINA_THREAD_CLEANUP_PUSH</a>(cleanup, data)&#160;&#160;&#160;pthread_cleanup_push(cleanup, data)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Attempts to cancel a running thread.  <a href="#gacbfb74a9554f86829a021b6074ef9b31"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Thread__Group.html#gad33b7c1ec50b300be47e53832ff70b90">EINA_THREAD_CLEANUP_POP</a>(exec_cleanup)&#160;&#160;&#160;pthread_cleanup_pop(exec_cleanup)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Pops a cleanup function to be executed when the thread is canceled.  <a href="#gad33b7c1ec50b300be47e53832ff70b90"></a><br/></td></tr>
 </table>
+<hr/><h2>Define Documentation</h2>
+<a class="anchor" id="gad33b7c1ec50b300be47e53832ff70b90"></a><!-- doxytag: member="eina_thread.h::EINA_THREAD_CLEANUP_POP" ref="gad33b7c1ec50b300be47e53832ff70b90" args="(exec_cleanup)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Thread__Group.html#gad33b7c1ec50b300be47e53832ff70b90">EINA_THREAD_CLEANUP_POP</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">exec_cleanup</td><td>)</td>
+          <td>&#160;&#160;&#160;pthread_cleanup_pop(exec_cleanup)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Pops a cleanup function to be executed when the thread is canceled. </p>
+<p>This macro will remove a previously pushed cleanup function, thus if the thread is canceled with eina_thread_cancel() and the thread was previously marked as cancellable with eina_thread_cancellable_set(), that cleanup won't be executed anymore.</p>
+<p>It <b>must</b> be paired with <a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31" title="Attempts to cancel a running thread.">EINA_THREAD_CLEANUP_PUSH()</a> in the same code block as they will expand to do {} while ()!</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>If the block within <a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31" title="Attempts to cancel a running thread.">EINA_THREAD_CLEANUP_PUSH()</a> and <a class="el" href="group__Eina__Thread__Group.html#gad33b7c1ec50b300be47e53832ff70b90" title="Pops a cleanup function to be executed when the thread is canceled.">EINA_THREAD_CLEANUP_POP()</a> returns, the cleanup callback will <b>not</b> be executed even if exec_cleanup is EINA_TRUE! To avoid problems prefer to use eina_thread_cancellable_run()!</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">exec_cleanup</td><td>if EINA_TRUE, the function registered with <a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31" title="Attempts to cancel a running thread.">EINA_THREAD_CLEANUP_PUSH()</a> will be executed.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>eina_thread_cancellable_run()</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gacbfb74a9554f86829a021b6074ef9b31"></a><!-- doxytag: member="eina_thread.h::EINA_THREAD_CLEANUP_PUSH" ref="gacbfb74a9554f86829a021b6074ef9b31" args="(cleanup, data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define <a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31">EINA_THREAD_CLEANUP_PUSH</a></td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">cleanup, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">data&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;pthread_cleanup_push(cleanup, data)</td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Attempts to cancel a running thread. </p>
+<p>This function sends a cancellation request to the thread, however that request is only fulfilled if the thread is cancellable (eina_thread_cancellable_set() with EINA_TRUE as first parameter) and it will wait for a cancellation point, be eina_thread_cancel_checkpoint() or some syscall as defined in man:pthreads(7).</p>
+<p>A thread that was canceled will return EINA_THREAD_JOIN_CANCELED when <a class="el" href="group__Eina__Thread__Group.html#ga8f0b8fa727aa899cd88e9d2909f8a588" title="Joins a currently running thread, waiting until it finishes.">eina_thread_join()</a> is called.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>Thread to cancel.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>EINA_FALSE if thread was not running, EINA_TRUE otherwise. Note that if a thread is not cancellable and it is running, this function will return EINA_TRUE!</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Enables or disables if the current thread can be canceled.</dd></dl>
+<p>By default <a class="el" href="group__Eina__Thread__Group.html#gaac5a08be9aabf19e56de715f6a9e8af5" title="Creates a new thread, setting its priority and affinity.">eina_thread_create()</a> will return a thread with cancellation disabled. One can enable the cancellation by using EINA_TRUE in <em>cancellable</em>.</p>
+<p>Eina threads follow pthread_setcanceltype() PTHREAD_CANCEL_DEFERRED, that is, the actual termination will wait for a cancellation point, usually a syscall defined in man:pthreads(7) or an explicit cancellation point defined with eina_thread_cancel_checkpoint().</p>
+<p>In order to provide cleanup around critical blocks use <a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31" title="Attempts to cancel a running thread.">EINA_THREAD_CLEANUP_PUSH()</a> and <a class="el" href="group__Eina__Thread__Group.html#gad33b7c1ec50b300be47e53832ff70b90" title="Pops a cleanup function to be executed when the thread is canceled.">EINA_THREAD_CLEANUP_POP()</a> macros (which maps to pthread_cleanup_push() and pthread_cleanup_pop()), or the helper function eina_thread_cancellable_run() which does the pair for you.</p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cancellable</td><td>If EINA_TRUE, this thread will be accept cancellation requests. If EINA_FALSE -- the default, it will ignore cancellation requests. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">was_cancellable</td><td>If non-NULL, will return the previous state, shall you want to restore.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if it succeeds in setting the cancellable state or EINA_FALSE otherwise.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>eina_thread_cancel_checkpoint() </dd>
+<dd>
+<a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31" title="Attempts to cancel a running thread.">EINA_THREAD_CLEANUP_PUSH()</a> </dd>
+<dd>
+<a class="el" href="group__Eina__Thread__Group.html#gad33b7c1ec50b300be47e53832ff70b90" title="Pops a cleanup function to be executed when the thread is canceled.">EINA_THREAD_CLEANUP_POP()</a> </dd>
+<dd>
+eina_thread_cancellable_run() </dd>
+<dd>
+eina_thread_cancel()</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 If the current thread is cancellable, this introduces a cancellation check point. Otherwise it's a no-operation.</dd></dl>
+<p>Eina threads follow pthread_setcanceltype() PTHREAD_CANCEL_DEFERRED, that is, the actual termination will wait for a cancellation point, usually a syscall defined in man:pthreads(7) or an explicit cancellation point defined with this function.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd>eina_thread_cancel_checkpoint()</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19</dd></dl>
+<p>Pushes a cleanup function to be executed when the thread is canceled.</p>
+<p>This macro will schedule a function cleanup(data) to be executed if the thread is canceled with eina_thread_cancel() and the thread was previously marked as cancellable with eina_thread_cancellable_set().</p>
+<p>It <b>must</b> be paired with <a class="el" href="group__Eina__Thread__Group.html#gad33b7c1ec50b300be47e53832ff70b90" title="Pops a cleanup function to be executed when the thread is canceled.">EINA_THREAD_CLEANUP_POP()</a> in the same code block as they will expand to do {} while ()!</p>
+<p>The cleanup function may also be executed if <a class="el" href="group__Eina__Thread__Group.html#gad33b7c1ec50b300be47e53832ff70b90" title="Pops a cleanup function to be executed when the thread is canceled.">EINA_THREAD_CLEANUP_POP(EINA_TRUE)</a> is used.</p>
+<dl class="note"><dt><b>Note:</b></dt><dd>If the block within <a class="el" href="group__Eina__Thread__Group.html#gacbfb74a9554f86829a021b6074ef9b31" title="Attempts to cancel a running thread.">EINA_THREAD_CLEANUP_PUSH()</a> and <a class="el" href="group__Eina__Thread__Group.html#gad33b7c1ec50b300be47e53832ff70b90" title="Pops a cleanup function to be executed when the thread is canceled.">EINA_THREAD_CLEANUP_POP()</a> returns, the cleanup callback will <b>not</b> be executed! To avoid problems prefer to use eina_thread_cancellable_run()!</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cleanup</td><td>The function to execute on cancellation. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>The context to give to cleanup function.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>eina_thread_cancellable_run()</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
+
+</div>
+</div>
 <hr/><h2>Typedef Documentation</h2>
 <a class="anchor" id="ga1e85dc4b7b825ef36a5ae9d8b710523a"></a><!-- doxytag: member="eina_thread.h::Eina_Thread" ref="ga1e85dc4b7b825ef36a5ae9d8b710523a" args="" -->
 <div class="memitem">
@@ -128,6 +244,21 @@ Typedefs</h2></td></tr>
 </div>
 <div class="memdoc">
 <p>Type for a generic thread. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga117083fbebdb7789f41e57315f6b8a59"></a><!-- doxytag: member="eina_thread.h::Eina_Thread_Cancellable_Run_Cb" ref="ga117083fbebdb7789f41e57315f6b8a59" args=")(void *data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eina__Thread__Group.html#ga117083fbebdb7789f41e57315f6b8a59">Eina_Thread_Cancellable_Run_Cb</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Type for the definition of a cancellable callback to run.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
 
 </div>
 </div>
@@ -207,16 +338,16 @@ Typedefs</h2></td></tr>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">t</td><td>where to return the thread identifier. Must <b>not</b> be <code>NULL</code>. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">prio</td><td>thread priority to use, usually EINA_THREAD_BACKGROUND </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">affinity</td><td>thread affinity to use. To not set affinity use <code>-1</code>. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">func</td><td>function to run in the thread. Must <b>not</b> be <code>NULL</code>. </td></tr>
-    <tr><td class="paramdir"></td><td class="paramname">data</td><td>context data to provide to <em>func</em> as first argument. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">prio</td><td>thread priority to use, usually EINA_THREAD_BACKGROUND </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">affinity</td><td>thread affinity to use. To not set affinity use <code>-1</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">func</td><td>function to run in the thread. Must <b>not</b> be <code>NULL</code>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>context data to provide to <em>func</em> as first argument. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if thread was created, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on errors. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -248,14 +379,14 @@ Typedefs</h2></td></tr>
 <p>Checks if two thread identifiers are the same. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">t1</td><td>first thread identifier to compare. </td></tr>
-    <tr><td class="paramname">t2</td><td>second thread identifier to compare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">t1</td><td>first thread identifier to compare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">t2</td><td>second thread identifier to compare. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if they are equal, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -278,13 +409,13 @@ Typedefs</h2></td></tr>
 <p>This function will block the current thread until <em>t</em> finishes. The returned value is the one returned by <em>t</em> <code>func()</code> and may be <code>NULL</code> on errors. See <a class="el" href="group__Eina__Error__Group.html">Error</a> to identify problems.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">t</td><td>thread identifier to wait. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>thread identifier to wait. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd>value returned by <em>t</em> creation function <code>func()</code> or <code>NULL</code> on errors. Check error with <a class="el" href="group__Eina__Error__Group.html">Error</a>. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>value returned by <em>t</em> creation function <code>func()</code> or <code>NULL</code> on errors. Check error with <a class="el" href="group__Eina__Error__Group.html">Error</a>. If the thread was canceled, it will return EINA_THREAD_JOIN_CANCELED. </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -317,14 +448,14 @@ Typedefs</h2></td></tr>
 <p>This maps to the pthread_setname_np() GNU extension or similar if available. The name may be limited in size (possibly 16 characters including the null byte terminator). This is useful for debugging to name a thread so external tools can display a meaningful name attached to the thread.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">t</td><td>thread to set the name of </td></tr>
-    <tr><td class="paramname">name</td><td>a string to name the thread - this cannot be NULL </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">t</td><td>thread to set the name of </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>a string to name the thread - this cannot be NULL </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>EINA_TRUE if it succeeds in setting the name or EINA_FALSE otherwise. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.16 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -345,8 +476,27 @@ Typedefs</h2></td></tr>
 
 <p>Returns identifier of the current thread. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>identifier of current thread. </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
+<hr/><h2>Variable Documentation</h2>
+<a class="anchor" id="gaca6773079b92837bd301c2976575c399"></a><!-- doxytag: member="eina_thread.h::EINA_THREAD_JOIN_CANCELED" ref="gaca6773079b92837bd301c2976575c399" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const void* <a class="el" href="group__Eina__Thread__Group.html#gaca6773079b92837bd301c2976575c399">EINA_THREAD_JOIN_CANCELED</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>The return value of <a class="el" href="group__Eina__Thread__Group.html#ga8f0b8fa727aa899cd88e9d2909f8a588" title="Joins a currently running thread, waiting until it finishes.">eina_thread_join()</a> if it was canceled with eina_thread_cancel(). </p>
+<p>A thread must be explicitly flagged as cancellable with eina_thread_cancellable_set(), by default it's not and this value shouldn't be returned.</p>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Thread__Group.html#ga8f0b8fa727aa899cd88e9d2909f8a588" title="Joins a currently running thread, waiting until it finishes.">eina_thread_join()</a></dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 </dd></dl>
 
 </div>
 </div>

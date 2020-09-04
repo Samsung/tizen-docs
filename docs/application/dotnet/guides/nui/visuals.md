@@ -26,7 +26,7 @@ To create a visual:
 
     You can use property maps in two ways:
 
-    -   Use a specific `xxxProperty` structure for the visual, such as [Tizen.NUI.ColorVisualProperty](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.ColorVisualProperty.html), which specifies the properties for that visual type.
+    -   Use a specific `xxxProperty` structure for the visual, such as [Tizen.NUI.ColorVisualProperty](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ColorVisualProperty.html), which specifies the properties for that visual type.
     -   Use the `xxxVisual` [visual maps](#visualmap), such as `ColorVisual`.
 
 2.  Add other required property values to the property map.
@@ -36,7 +36,7 @@ To create a visual:
 
 3.  Create the visual in a *factory* using the property map.
 
-    Visuals are created using the methods of the [Tizen.NUI.VisualFactory](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.VisualFactory.html) class:
+    Visuals are created using the methods of the [Tizen.NUI.VisualFactory](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualFactory.html) class:
 
     ```
     _colorVisual = VisualFactory.Instance.CreateVisual(colorVisual);
@@ -44,13 +44,13 @@ To create a visual:
 
 4.  Register the visual.
 
-    Visuals must be registered with a unique property index, which is used for direct access to the visual. The index is used to link a view to a visual. Registering the visual also enables additional functionality, such as connecting the visual to the window. The `RegisterVisual()` method of the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class stores the visual handle within the UI component.
+    Visuals must be registered with a unique property index, which is used for direct access to the visual. The index is used to link a view to a visual. Registering the visual also enables additional functionality, such as connecting the visual to the window. The `RegisterVisual()` method of the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class stores the visual handle within the UI component.
 
     ```
     RegisterVisual(ColorVisualPropertyIndex, _colorVisual);
     ```
 
-    The visuals example in this topic use property registration based on a fixed property index range. The NUI code base has been modified to perform property registration based on automatic index generation. For more information, see the [Managing Properties](creating-custom-view-controls.md#properties).
+    The visuals example in this topic use property registration based on a fixed property index range. The NUI code base has been modified to perform property registration based on automatic index generation. For more information, see the [Managing Properties](customview.md#properties).
 
 5.  Set the depth index.
 
@@ -71,7 +71,7 @@ textView.Background = textVisual;
 ```
 
 <a name="addvisual"></a>
-The `AddVisual()` method of the `Tizen.NUI.BaseComponents.VisualView` class is an example of a method that creates a visual inherently. For example, to add a visual to a view, create an instance of the [Tizen.NUI.BaseComponents.VisualView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.VisualView.html) class, which is derived from the [Tizen.NUI.BaseComponents.CustomView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.CustomView.html) class, and use the `AddVisual()` method to [add a gradient visual to it](#gradientusage):
+The `AddVisual()` method of the `Tizen.NUI.BaseComponents.VisualView` class is an example of a method that creates a visual inherently. For example, to add a visual to a view, create an instance of the [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) class, which is derived from the [Tizen.NUI.BaseComponents.CustomView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.CustomView.html) class, and use the `AddVisual()` method to [add a gradient visual to it](#gradientusage):
 
 ```
 /// Create new visual view and gradient visual instances
@@ -92,13 +92,13 @@ _visualView.AddVisual("gradientVisual1", gradientVisualMap1);
 <a name="visualmap"></a>
 ## Using Visual Maps
 
-You can both create visuals and position, and then resize them within a control, using classes inherited from the [Tizen.NUI.VisualMap](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.VisualMap.html) class, which is a base class for visuals. The class encapsulates various visual properties, such as the size, offset, depth index, shader, mix color, and opacity. It also contains the transform map for the visual and provides a custom `Shader` property.
+You can both create visuals and position, and then resize them within a control, using classes inherited from the [Tizen.NUI.VisualMap](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualMap.html) class, which is a base class for visuals. The class encapsulates various visual properties, such as the size, offset, depth index, shader, mix color, and opacity. It also contains the transform map for the visual and provides a custom `Shader` property.
 
 To use visual maps follow the steps:
 
 -   You can create a property map for a visual using a `Tizen.NUI.VisualMap`-inherited class.
 
-    The following example illustrats part of the [Tizen.NUI.ColorVisual](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.ColorVisual.html) class, which defines a color visual property map:
+    The following example illustrats part of the [Tizen.NUI.ColorVisual](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.ColorVisual.html) class, which defines a color visual property map:
 
     ```
     public class ColorVisual : VisualMap
@@ -139,9 +139,9 @@ To use visual maps follow the steps:
 
 -   You can position and resize visuals within a control using a visual transform property map.
 
-    The [Tizen.NUI.VisualTransformPropertyType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.VisualTransformPropertyType.html) enumeration lists the transformation properties that can be defined, such as the following:
+    The [Tizen.NUI.VisualTransformPropertyType](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.VisualTransformPropertyType.html) enumeration lists the transformation properties that can be defined, such as the following:
 
-    -   The origin and anchor points: By default, they are set to the center of the control or you can specify a different alignment using the [Tizen.NUI.Visual.AlignType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.Visual.AlignType.html) enumeration values.
+    -   The origin and anchor points: By default, they are set to the center of the control or you can specify a different alignment using the [Tizen.NUI.Visual.AlignType](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.Visual.AlignType.html) enumeration values.
     -   The offset and size: By default, they are defined relative to the control size, but can also be defined as a number of pixels by specifying the offset and size policies. For example, if the `OffsetPolicy` value is `[RELATIVE, RELATIVE]` and the `SizePolicy` value is `[ABSOLUTE, ABSOLUTE]`, a visual with an `Offset` value of (0, 0.25) and a `Size` of (20, 20) is positioned at 25% above the center of the control and the size is 20 x 20 pixels.
 
     The following example configures a visual transform to resize an image visual to 40 x 40 pixels and center it at the beginning of the control, with a 10 pixel horizontal offset:
@@ -283,7 +283,7 @@ The `SpreadMethod` property indicates what happens if the gradient starts or end
 <a name="gradientusage"></a>
 **Usage:**
 
-The following example illustrates how to [add a gradient visual](#addvisual) to a [Tizen.NUI.BaseComponents.VisualView](https://developer.tizen.org/dev-guide/csapi/api/Tizen.NUI.BaseComponents.VisualView.html) class instance. The instance is a custom view, and the visual is created with the `AddVisual()` method:
+The following example illustrates how to [add a gradient visual](#addvisual) to a [Tizen.NUI.BaseComponents.VisualView](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.VisualView.html) class instance. The instance is a custom view, and the visual is created with the `AddVisual()` method:
 
 ```
 /// Radial

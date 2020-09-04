@@ -1,11 +1,26 @@
-# Tizen 5.0 Public M2 Release Notes
+# Tizen 5.0 Public M2
 
-Release date: Oct. 31, 2018
+Release date: Oct. 30, 2018
+
+The Tizen 5.0 Public M2 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Native/Web/TizenFX APIs.
 
 
-## System (Kernel and System framework)
+## Release Details
 
-### New and changed features
+- [Getting source code](http://review.tizen.org/git/) (Tizen 5.0 M2 source codes are under **tizen_5.0** branch.)
+
+- Getting binaries and images
+  - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20180928.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20180928.1/)
+  - Mobile(Fridge) / Wearable / TV /  IOT : [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20181024.1/images/)
+
+- [How to flash to a device](../developing/flashing.md)
+
+
+## Release Notes
+
+### System (Kernel and System framework)
+
+#### New and changed features
 
 - New API set and features
   - D-Bus
@@ -36,7 +51,7 @@ Release date: Oct. 31, 2018
   - Dlog
     - A new testsuite including unit and stress tests has been developed.
 
-### Fixes
+#### Fixes
 
 - Systemd 
   - CVE-2018-1049 has been patched. 
@@ -47,16 +62,16 @@ Release date: Oct. 31, 2018
   - Race condition problems in TCT and libraries have been fixed.
 
 
-## System (IoT System)
+### System (IoT System)
 
-### New and changed features
+#### New and changed features
 
 - Debugging tools have been enhanced to obtain stability and reliability quickly during development, the tools help to reduce product development period for bringing up new devices:
   - Mini Coredump has been provided by reducing unnecessary sections from default coredump for transmitting through network and for reducing truncated coredumps by sudden process cleanup.
   - Linux based callstack symbol resolution tools have been provided to integrate into CI/CD infrastructure.
   - Thread based self watchdog system (except of systemd based watchdog) has been added.
 - The SW upgrade has been enhanced to apply on more devices such as headless device:
-  - For small company that does not have SW upgrade infra, SW upgrade infra has been provided on basis of Samsung Smartthings DeviceManager (https://console.smartthingsdm.com). Now, it is available on Beta services.
+  - For small company that does not have SW upgrade infra, SW upgrade infra has been provided on basis of Samsung Smartthings DeviceManager. Now, it is available on Beta services.
   - Remote update control for updating headless device has been provided. The OCF based update protocol and reference agents have been provided. In addition, remote update control framework has been provided to support several devices. The framework provides update control API set and update control plugins. The default plugin is available on the Tizen IoT homepage.
   - For secure update, generic template for binary signing/verification has been provided. Default binary signer and verifier are available on the Tizen IoT homepage.
 - Low Memory Management for headless devices has been enhanced:
@@ -66,14 +81,14 @@ Release date: Oct. 31, 2018
   - File-based swap and Zswap-based swap has been added.
   - Early memory reclaiming (to swap) feature has been added.
 
-### Fixes
+#### Fixes
 
 - The bug that does not deliver low memory notification through event system has been fixed for headless devices.
 
 
-## System (Base)
+### System (Base)
 
-### New and changed features
+#### New and changed features
 
 - Upgraded the following open source libraries:
   - icu (60.2)
@@ -91,9 +106,9 @@ Release date: Oct. 31, 2018
   - Locale Display Names
 
 
-## Application framework
+### Application framework
 
-### New and changed features
+#### New and changed features
 
 - Tizen Interface Definition Language (TIDL), rpc-port
   - rpc-port is now available in the wearable profile.
@@ -106,9 +121,9 @@ Release date: Oct. 31, 2018
   - Minicontrol API is now available in the wearable profile.
 
 
-## Window System
+### Window System
 
-### New and changed features
+#### New and changed features
 
 - Wayland
   - The open source wayland has been upgraded to the 1.15.0 version.
@@ -177,7 +192,7 @@ Release date: Oct. 31, 2018
   - Added support for VK_KHR_incremental_present.
   - Added support for using OldSwapchain.
 
-### Fixes
+#### Fixes
 
 - Enlightenment (Display Server)
   - Many code defects detected by the static analysis tool have been fixed.
@@ -185,13 +200,13 @@ Release date: Oct. 31, 2018
   - Fixed unwanted focus set to a window that is specified as 'focus_skip_set' when it is mapped.
 
 
-## Graphics Engine
+### Graphics Engine
 
-### New and changed features
+#### New and changed features
 
 - DALi (3D UI Toolkit)
   - Actor and Renderer
-    - Support for notification to inform Actor’s children order change has been added.
+    - Support for notification to inform Actor's children order change has been added.
     - Support for changing rendering behavior has been added.
     - A mechanism to specify a callback on every frame has been added.
     - A CULLED property has been added to Actor.
@@ -221,7 +236,7 @@ Release date: Oct. 31, 2018
     - Auxiliary Hint.
     - Focus Skip.
 
-### Fixes
+#### Fixes
 
 - DALi (3D UI Toolkit)
   - Actor and Renderer
@@ -246,9 +261,9 @@ Release date: Oct. 31, 2018
   - Bug in pause or resume in multi-windows is fixed.
 
 
-## UI framework
+### UI framework
 
-### New and changed features
+#### New and changed features
 
 - EFL
   - Version 1.20 is upgraded to 1.21.
@@ -263,15 +278,15 @@ Release date: Oct. 31, 2018
   - Added API set, which has platform privileges to support voice panel app. 
   - Added Service Framework API set, which sends and receives data for supporting specific engine (For example, Bixby 2.0).
 
-### Fixes
+#### Fixes
 
 - Fixed bugs.
 - Clip Board History Manager (CBHM) is now working properly.
 
 
-## Multimedia framework
+### Multimedia framework
 
-### New and changed features
+#### New and changed features
 
 - Common
   - Tizen Allocator and Bufferpool has been added.
@@ -307,9 +322,9 @@ Release date: Oct. 31, 2018
   - Deep Neural Network (DNN) module has been enabled. 
 
 
-## Network and Connectivity
+### Network and Connectivity
 
-### New and changed features
+#### New and changed features
 
 - Network Monitoring
   - Added intelligent-network-monitoring API set.
@@ -353,9 +368,9 @@ Release date: Oct. 31, 2018
     - Added support for Multi-path TCP functions.
 
 
-## Security
+### Security
 
-### New and changed features
+#### New and changed features
 
 - Security-manager
   - DB recovery logic has been added.
@@ -377,9 +392,9 @@ Release date: Oct. 31, 2018
     - Security-manager, Cynara, and Privilege
 
 
-## Service framework
+### Service framework
 
-### Fixes
+#### Fixes
 
 - Account-Manager 
   - Fixed D-Bus policies.
@@ -404,30 +419,30 @@ Release date: Oct. 31, 2018
   - Fixed potential defect.
 
 
-## Web framework
+### Web framework
 
-### New and changed features
+#### New and changed features
 
 - Added feature of App control with URI scheme.
   - Similar to android chrome intent.
-  - Launches Tizen native app implicitly or explicitly using [app-control:// ].
+  - Launches Tizen Native app implicitly or explicitly using [app-control:// ].
   - Supports fallback URL.
 - Implemented alternative TBM back-end for web page rendering.
-  - By setting chromium-efl’s layout, the result can be rendered to memory surface.
+  - By setting chromium-efl's layout, the result can be rendered to memory surface.
   - Using the path, WebView can be merged with given UI framework.
 
 
-## Lightweight Web Solution
+### Lightweight Web Solution
 
-### New and changed features
+#### New and changed features
 
 - Added lightweight WebView support for Bixby Capsule Viewer on TV.
 - Added lightweight WebView support for DALi (NUI).
 
 
-## Tizen .NET
+### Tizen .NET
 
-### New and changed features
+#### New and changed features
 
 - .NET Core (Runtime)
   - Coreclr version 2.1.1 is upgraded to 2.1.4.
@@ -459,15 +474,15 @@ Release date: Oct. 31, 2018
   - Added new NUI API set for KeyboardRepeatInfo and TextPredition.
   - Added the change of NUI API set for ChildAdded, ChildRemoved, PropertySet events and properties of TableView.CellPosition.
 
-### Known Issues
+#### Known Issues
 
 - Xamarin.Forms
-  - For more information on the list of limitations, see [here](https://developer.tizen.org/development/api-reference/.net-application/current-xamarin.forms-limitations).
+  - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).
 
 
-## Experimental
+### Experimental
 
-### New and changed features
+#### New and changed features
 
 - nnfw: Neural Network Runtime (Experimental Release)
   - Android NN API compatible (currently supports 25/37 operators).

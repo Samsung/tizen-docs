@@ -87,17 +87,22 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div id="doc-content">
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">Key Input Functions</div>  </div>
-<div class="ingroups"><a class="el" href="group__Evas__Canvas.html">Canvas Functions</a></div></div><!--header-->
+<div class="ingroups"><a class="el" href="group__Evas__Utils.html">General Utilities</a> &#124; <a class="el" href="group__Evas__Canvas.html">Canvas Functions</a></div></div><!--header-->
 <div class="contents">
 <hr/><a name="details" id="details"></a><h2> </h2>
-<p>Functions which feed key events to the canvas.</p>
+<p>Get language direction.</p>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.20 Reinitialize language from the environment.</dd></dl>
+<p>The locale can change while a process is running. This call tells evas to reload the locale from the environment like it does on start.</p>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.18</dd></dl>
+<p>Functions that feed key events to the canvas.</p>
 <p>As explained in intro_not_evas, Evas is <b>not</b> aware of input systems at all. Then, the user, if using it crudely (<a class="el" href="group__Evas__Canvas.html#ga67e8eb17d2a676bfdfb8794fc5f72bc0">evas_new()</a>), will have to feed it with input events, so that it can react somehow. If, however, the user creates a canvas by means of the Ecore_Evas wrapper, it will automatically bind the chosen display engine's input events to the canvas, for you.</p>
 <p>This group presents the functions dealing with the feeding of key events to the canvas. On most of them, one has to reference a given key by a name (<code>keyname</code> argument). Those are <b>platform dependent</b> symbolic names for the keys. Sometimes you'll get the right <code>keyname</code> by simply using an ASCII value of the key name, but it won't be like that always.</p>
 <p>Typical platforms are Linux frame buffer (Ecore_FB) and X server (Ecore_X) when using Evas with Ecore and Ecore_Evas. Please refer to your display engine's documentation when using evas through an Ecore helper wrapper when you need the <code>keyname</code>s.</p>
-<p>Example:  <div class="fragment"><pre class="fragment">   mods = <a class="code" href="group__Evas__Canvas.html#ga4a5730766f69f91a4bfb37568d620676" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(evas);
+<p>Example:  <div class="fragment"><pre class="fragment">   mods = <a class="code" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(evas);
    <span class="keywordflow">if</span> (<a class="code" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a>(mods, <span class="stringliteral">&quot;Control&quot;</span>) &amp;&amp;
        (strcmp(ev-&gt;key, <span class="stringliteral">&quot;o&quot;</span>) == 0)) <span class="comment">/* add an obscured</span>
 <span class="comment">                                        * rectangle to the middle</span>
@@ -108,18 +113,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a> (const <a class="el" href="group__Evas.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *m, const char *keyname)</td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Keys.html#ga08080dfe3ad50c85f4965b9063bfd7de">evas_key_lock_is_set</a> (const <a class="el" href="group__Evas.html#ga791323b644ee831ead4c5d25552a0fd8">Evas_Lock</a> *l, const char *keyname)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a> (const <a class="el" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *m, const char *keyname)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Keys.html#ga08080dfe3ad50c85f4965b9063bfd7de">evas_key_lock_is_set</a> (const <a class="el" href="group__Evas__Keys.html#ga791323b644ee831ead4c5d25552a0fd8">Evas_Lock</a> *l, const char *keyname)</td></tr>
+<tr><td colspan="2"><h2><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct _Evas_Lock&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Keys.html#ga791323b644ee831ead4c5d25552a0fd8">Evas_Lock</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef struct _Evas_Modifier&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">typedef unsigned long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__Keys.html#ga111c7333a7d49e44698bd19dd5bc9059">Evas_Modifier_Mask</a></td></tr>
 </table>
+<hr/><h2>Typedef Documentation</h2>
+<a class="anchor" id="ga791323b644ee831ead4c5d25552a0fd8"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Lock" ref="ga791323b644ee831ead4c5d25552a0fd8" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct _Evas_Lock <a class="el" href="group__Evas__Keys.html#ga791323b644ee831ead4c5d25552a0fd8">Evas_Lock</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>An opaque type containing information on which lock keys are registered in an Evas canvas. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga198d0b10861c1da456004688d3443e96"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Modifier" ref="ga198d0b10861c1da456004688d3443e96" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct _Evas_Modifier <a class="el" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>An opaque type containing information on which modifier keys are registered in an Evas canvas. </p>
+
+</div>
+</div>
+<a class="anchor" id="ga111c7333a7d49e44698bd19dd5bc9059"></a><!-- doxytag: member="Evas_Legacy.h::Evas_Modifier_Mask" ref="ga111c7333a7d49e44698bd19dd5bc9059" args="" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef unsigned long long <a class="el" href="group__Evas__Keys.html#ga111c7333a7d49e44698bd19dd5bc9059">Evas_Modifier_Mask</a></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>A bitmask of modifier keys.</p>
+<p>See <a class="el" href="group__Evas__Canvas.html#ga668f8e34ce152d130f37b6b903db3ee2" title="Creates a bit mask from the keyname modifier key. Values returned from different calls to it may be O...">evas_key_modifier_mask_get()</a> for the keyname to bit conversion. </p>
+
+</div>
+</div>
 <hr/><h2>Function Documentation</h2>
-<a class="anchor" id="ga08080dfe3ad50c85f4965b9063bfd7de"></a><!-- doxytag: member="Evas_Common.h::evas_key_lock_is_set" ref="ga08080dfe3ad50c85f4965b9063bfd7de" args="(const Evas_Lock *l, const char *keyname)" -->
+<a class="anchor" id="ga08080dfe3ad50c85f4965b9063bfd7de"></a><!-- doxytag: member="Evas_Legacy.h::evas_key_lock_is_set" ref="ga08080dfe3ad50c85f4965b9063bfd7de" args="(const Evas_Lock *l, const char *keyname)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Keys.html#ga08080dfe3ad50c85f4965b9063bfd7de">evas_key_lock_is_set</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas.html#ga791323b644ee831ead4c5d25552a0fd8">Evas_Lock</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Keys.html#ga791323b644ee831ead4c5d25552a0fd8">Evas_Lock</a> *&#160;</td>
           <td class="paramname"><em>l</em>, </td>
         </tr>
         <tr>
@@ -136,36 +190,67 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Checks the state of a given lock key, at the time of the call. If the lock is set, such as caps lock, this function returns <code>Eina_True</code>.</p>
+<p>Checks the state of a given modifier key of a given seat, at the time of the call. If the modifier is set, such as shift being pressed, this function returns <code>Eina_True</code>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">l</td><td>The current locks set, as returned by <a class="el" href="group__Evas__Canvas.html#ga7c9ce33480c629dc05b49f6e51fd3018" title="Returns a handle to the list of lock keys registered in the canvas e.">evas_key_lock_get()</a>. </td></tr>
+    <tr><td class="paramname">m</td><td>The current modifiers set, as returned by <a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get()</a>. </td></tr>
+    <tr><td class="paramname">keyname</td><td>The name of the modifier key to check status for. </td></tr>
+    <tr><td class="paramname">seat</td><td>The seat to check if the lock is set. Use <code>NULL</code> for the default seat.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd><code>Eina_True</code> if the modifier key named <code>keyname</code> is on, <code>Eina_False</code> otherwise.</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7" title="Enables or turns on programmatically the lock key with name keyname for a give seat.">evas_key_modifier_add</a> </dd>
+<dd>
+<a class="el" href="group__Evas__Canvas.html#ga2aec6e8faa55052bc5cf67c3052d7e0b" title="Removes the keyname key from the current list of modifier keys on canvas e.">evas_key_modifier_del</a> </dd>
+<dd>
+<a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a> </dd>
+<dd>
+<a class="el" href="group__Evas__Canvas.html#ga6ccfb047d185e898b81d7a6b01138a32" title="Enables or turns on programmatically the modifier key with name keyname for the default seat...">evas_key_modifier_on</a> </dd>
+<dd>
+<a class="el" href="group__Evas__Canvas.html#gab3d15ba07954691c14f1bb5e944fffd9" title="Disables or turns off programmatically the modifier key with name keyname for the default seat...">evas_key_modifier_off</a> </dd>
+<dd>
+evas_seat_key_modifier_on </dd>
+<dd>
+evas_seat_key_modifier_off </dd>
+<dd>
+<a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a> </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Checks the state of a given lock key of the default seat, at the time of the call. If the lock is set, such as caps lock, this function returns <code>Eina_True</code>.</dd></dl>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">l</td><td>The current locks set, as returned by <a class="el" href="group__Evas__Canvas.html#gab896e54f904562f291dc6f3acb5c45bc" title="Returns a handle to the list of lock keys registered in the canvas e.">evas_key_lock_get()</a>. </td></tr>
     <tr><td class="paramname">keyname</td><td>The name of the lock key to check status for.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>Eina_True</code> if the <code>keyname</code> lock key is set, <code>Eina_False</code> otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga7c9ce33480c629dc05b49f6e51fd3018" title="Returns a handle to the list of lock keys registered in the canvas e.">evas_key_lock_get</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#gab896e54f904562f291dc6f3acb5c45bc" title="Returns a handle to the list of lock keys registered in the canvas e.">evas_key_lock_get</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Canvas.html#gaf7f5cf543d1fe34e20388afcd87d4bb5" title="Adds the keyname key to the current list of lock keys.">evas_key_lock_add</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Canvas.html#ga1e109d368419210118d93c4e183d3362" title="Removes the keyname key from the current list of lock keys on canvas e.">evas_key_lock_del</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Canvas.html#gaa3be09f53833c49b354963d7c0130b31" title="Enables or turns on programmatically the lock key with name keyname.">evas_key_lock_on</a> </dd>
+<a class="el" href="group__Evas__Canvas.html#gaa3be09f53833c49b354963d7c0130b31" title="Enables or turns on programmatically the lock key with name keyname for the default seat...">evas_key_lock_on</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Canvas.html#ga60aa3223bbe2853a43cb842758707373" title="Disables or turns off programmatically the lock key with name keyname.">evas_key_lock_off</a></dd></dl>
+<a class="el" href="group__Evas__Canvas.html#ga60aa3223bbe2853a43cb842758707373" title="Disables or turns off programmatically the lock key with name keyname for the default seat...">evas_key_lock_off</a> </dd>
+<dd>
+evas_seat_key_lock_on </dd>
+<dd>
+evas_seat_key_lock_off </dd>
+<dd>
+evas_seat_key_lock_is_set </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
 
 </div>
 </div>
-<a class="anchor" id="ga6cc24a5ea4b39b84c7a3e617de3db261"></a><!-- doxytag: member="Evas_Common.h::evas_key_modifier_is_set" ref="ga6cc24a5ea4b39b84c7a3e617de3db261" args="(const Evas_Modifier *m, const char *keyname)" -->
+<a class="anchor" id="ga6cc24a5ea4b39b84c7a3e617de3db261"></a><!-- doxytag: member="Evas_Legacy.h::evas_key_modifier_is_set" ref="ga6cc24a5ea4b39b84c7a3e617de3db261" args="(const Evas_Modifier *m, const char *keyname)" -->
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> <a class="el" href="group__Evas__Keys.html#ga6cc24a5ea4b39b84c7a3e617de3db261">evas_key_modifier_is_set</a> </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="group__Evas.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *&#160;</td>
+          <td class="paramtype">const <a class="el" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *&#160;</td>
           <td class="paramname"><em>m</em>, </td>
         </tr>
         <tr>
@@ -182,26 +267,28 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Checks the state of a given modifier key, at the time of the call. If the modifier is set, such as shift being pressed, this function returns <code>Eina_True</code>.</p>
+<p>Checks the state of a given modifier of the default seat, at the time of the call. If the modifier is set, such as shift being pressed, this function returns <code>Eina_True</code>.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">m</td><td>The current modifiers set, as returned by <a class="el" href="group__Evas__Canvas.html#ga4a5730766f69f91a4bfb37568d620676" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get()</a>. </td></tr>
+    <tr><td class="paramname">m</td><td>The current modifiers set, as returned by <a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get()</a>. </td></tr>
     <tr><td class="paramname">keyname</td><td>The name of the modifier key to check status for.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>Eina_True</code> if the modifier key named <code>keyname</code> is on, <code>Eina_False</code> otherwise.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7" title="Adds the keyname key to the current list of modifier keys.">evas_key_modifier_add</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Canvas.html#ga8204eab45ed56d57f34d8020b52a63a7" title="Enables or turns on programmatically the lock key with name keyname for a give seat.">evas_key_modifier_add</a> </dd>
 <dd>
 <a class="el" href="group__Evas__Canvas.html#ga2aec6e8faa55052bc5cf67c3052d7e0b" title="Removes the keyname key from the current list of modifier keys on canvas e.">evas_key_modifier_del</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Canvas.html#ga4a5730766f69f91a4bfb37568d620676" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a> </dd>
+<a class="el" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Canvas.html#ga6ccfb047d185e898b81d7a6b01138a32" title="Enables or turns on programmatically the modifier key with name keyname.">evas_key_modifier_on</a> </dd>
+<a class="el" href="group__Evas__Canvas.html#ga6ccfb047d185e898b81d7a6b01138a32" title="Enables or turns on programmatically the modifier key with name keyname for the default seat...">evas_key_modifier_on</a> </dd>
 <dd>
-<a class="el" href="group__Evas__Canvas.html#gab3d15ba07954691c14f1bb5e944fffd9" title="Disables or turns off programmatically the modifier key with name keyname.">evas_key_modifier_off</a></dd></dl>
+<a class="el" href="group__Evas__Canvas.html#gab3d15ba07954691c14f1bb5e944fffd9" title="Disables or turns off programmatically the modifier key with name keyname for the default seat...">evas_key_modifier_off</a> </dd>
+<dd>
+evas_seat_key_modifier_is_set </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a51">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a17">edje-box2.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a5">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a17">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a19">evas-events.c</a>, and <a class="el" href="evas-hints_8c-example.html#a11">evas-hints.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_imf_example_8c-example.html#a52">ecore_imf_example.c</a>, <a class="el" href="edje-box2_8c-example.html#a15">edje-box2.c</a>, <a class="el" href="evas-aspect-hints_8c-example.html#a4">evas-aspect-hints.c</a>, <a class="el" href="evas-box_8c-example.html#a15">evas-box.c</a>, <a class="el" href="evas-events_8c-example.html#a18">evas-events.c</a>, <a class="el" href="evas-hints_8c-example.html#a7">evas-hints.c</a>, and <a class="el" href="web_example_02_8c-example.html#a20">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>

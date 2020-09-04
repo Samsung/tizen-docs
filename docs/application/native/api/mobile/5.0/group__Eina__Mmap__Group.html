@@ -122,8 +122,8 @@ Functions</h2></td></tr>
 <p>Gets the enabled state of mmap safety. </p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The safety state (<a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if enabled)</dd></dl>
 <p>This returns the mmap safety state set by <a class="el" href="group__Eina__Mmap__Group.html#ga3452104185eaee1f8d9acab09561e037" title="Enables or disables safe mmaped IO handling.">eina_mmap_safety_enabled_set()</a>. See <a class="el" href="group__Eina__Mmap__Group.html#ga3452104185eaee1f8d9acab09561e037" title="Enables or disables safe mmaped IO handling.">eina_mmap_safety_enabled_set()</a> for more information.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -145,16 +145,16 @@ Functions</h2></td></tr>
 <p>Enables or disables safe mmaped IO handling. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">enabled</td><td>The enabled state (to enable, pass <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">enabled</td><td>The enabled state (to enable, pass <a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> on success, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> on failure.</dd></dl>
 <p>This enables (if possible on your platform) a signal handler for SIGBUS, that replaces the "bad page" with a page of 0's (from /dev/zero) if a SIGBUS occurs. This allows for safe mmap() of files that may truncate or from files on devices with IO errors. Normally these cases will result in a SIGBUS being delivered (and termination of your process), but when "mmap safety" is enabled, this will not occur. Instead a page of bytes of the value 0 will replace the "bad page", allowing the process to continue and allow its own parsing error detection to safely abort the operation without the process falling apart.</p>
 <p>If you disable mmap safety, the SIGBUS handler will be restored to its default handler. Note that <a class="el" href="group__Eina__File__Group.html#gaa039d89641ecc12e5e77b08379334f27" title="Maps all the files to a buffer.">eina_file_map_all()</a> and <a class="el" href="group__Eina__File__Group.html#gae13a7ed65213eec685273a5dea800ac3" title="Maps a part of the file.">eina_file_map_new()</a> will automatically enable mmap safety as they provide an mmaped file IO layer, and rely on mmap to not fail for any part of the file.</p>
-<p>If you set up your own SIGBUS handler, then this will effectively disable the safe mmap handling and make you liable to crashes on IO to or from such "damaged files" that would take down your process.</p>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<p>If you set up your own SIGBUS handler, then this will effectively disable the safe mmap handling and make you liable to crashing on IO to or from such "damaged files" that would take down your process.</p>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.1.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>

@@ -41,7 +41,7 @@ The main features of the device control include:
 
 To enable your application to use the attached device control functionality:
 
-1.  To use the [Tizen.System.Display](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Display.html), [Tizen.System.Led](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Led.html), and [Tizen.System.Vibrator](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Vibrator.html) classes, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.System.Display](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Display.html), [Tizen.System.Led](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Led.html), and [Tizen.System.Vibrator](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Vibrator.html) classes, the application has to request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -54,7 +54,7 @@ To enable your application to use the attached device control functionality:
     </privileges>
     ```
 
-2.  To use the methods and properties of the [Tizen.System](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.html) namespace classes, include the namespace in your application:
+2.  To use the methods and properties of the [Tizen.System](https://samsung.github.io/TizenFX/latest/api/Tizen.System.html) namespace classes, include the namespace in your application:
 
     ```
     using Tizen.System;
@@ -62,9 +62,10 @@ To enable your application to use the attached device control functionality:
 
 ## Retrieving Battery Information
 
+<a name="battery"></a>
 To retrieve battery information:
 
--   Get the battery charge percentage with the `Percent` property of the [Tizen.System.Battery](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Battery.html) class.
+-   Get the battery charge percentage with the `Percent` property of the [Tizen.System.Battery](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Battery.html) class.
 
     The property contains the current battery charge percentage as an integer value from 0 to 100 that indicates the remaining battery charge as a percentage of the maximum level.
 
@@ -84,7 +85,7 @@ To retrieve battery information:
 
 -   Get the current battery level with the `Level` property.
 
-    The property contains the device battery level as a value of the [Tizen.System.BatteryLevelStatus](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.BatteryLevelStatus.html) enumeration.
+    The property contains the device battery level as a value of the [Tizen.System.BatteryLevelStatus](https://samsung.github.io/TizenFX/latest/api/Tizen.System.BatteryLevelStatus.html) enumeration.
 
     ```
     BatteryLevelStatus status;
@@ -96,7 +97,7 @@ To retrieve battery information:
 
 To retrieve and set display properties:
 
--   Get the number of display devices with the `NumberOfDisplays` property of the [Tizen.System.Display](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Display.html) class:
+-   Get the number of display devices with the `NumberOfDisplays` property of the [Tizen.System.Display](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Display.html) class:
 
     ```
     int num;
@@ -123,7 +124,7 @@ To retrieve and set display properties:
 
 -   Get and set the display state with the `State` property.
 
-    The property contains the display state as a value of the [Tizen.System.DisplayState](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.DisplayState.html) enumeration.
+    The property contains the display state as a value of the [Tizen.System.DisplayState](https://samsung.github.io/TizenFX/latest/api/Tizen.System.DisplayState.html) enumeration.
 
     ```
     DisplayState state;
@@ -136,7 +137,7 @@ To retrieve and set display properties:
 
 To control haptic devices:
 
--   Get the number of haptic devices with the `NumberOfVibrators` property of the [Tizen.System.Vibrator](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Vibrator.html) class:
+-   Get the number of haptic devices with the `NumberOfVibrators` property of the [Tizen.System.Vibrator](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Vibrator.html) class:
 
     ```
     int num;
@@ -159,7 +160,7 @@ To control haptic devices:
 
 To control an IR device:
 
-1.  Determine whether IR is available on the device using the `IsAvailable` property of the [Tizen.System.IR](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.IR.html) class:
+1.  Determine whether IR is available on the device using the `IsAvailable` property of the [Tizen.System.IR](https://samsung.github.io/TizenFX/latest/api/Tizen.System.IR.html) class:
 
     ```
     bool test;
@@ -179,7 +180,7 @@ To control an IR device:
 ## Controlling LED Devices
 To control LEDs on the device:
 
--   Get the maximum brightness value of a camera flash LED with the `MaxBrightness` property of the [Tizen.System.Led](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Led.html) class:
+-   Get the maximum brightness value of a camera flash LED with the `MaxBrightness` property of the [Tizen.System.Led](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Led.html) class:
 
     ```
     int test;
@@ -216,9 +217,9 @@ To control LEDs on the device:
 
 To lock and unlock the CPU state:
 
--   Lock the power state with the `RequestLock()` method of the [Tizen.System.Power](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Power.html) class.
+-   Lock the power state with the `RequestLock()` method of the [Tizen.System.Power](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Power.html) class.
 
-    The method locks the given PowerLock of the [Tizen.System.PowerLock](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.PowerLock.html) enumeration for a specified time. After the given time (in milliseconds), the lock is unlocked. If the process is destroyed, every lock is removed.
+    The method locks the given PowerLock of the [Tizen.System.PowerLock](https://samsung.github.io/TizenFX/latest/api/Tizen.System.PowerLock.html) enumeration for a specified time. After the given time (in milliseconds), the lock is unlocked. If the process is destroyed, every lock is removed.
 
     ```
     Power.RequestLock(PowerLock.Cpu, 2000);
@@ -235,10 +236,10 @@ To lock and unlock the CPU state:
 
 To monitor device changes, use event handlers registered to the following events:
 
--   `LevelChanged` and `PercentChanged` events in the [Tizen.System.Battery](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Battery.html) class are called when the battery level and charge percentage change.
--   `ChargingStateChanged` event in the [Tizen.System.Battery](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Battery.html) class is called when the charger is connected or disconnected.
--   `StateChanged` event in the [Tizen.System.Display](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Display.html) class is called when the device display state changes.
--   `BrightnessChanged` event in the [Tizen.System.Led](https://developer.tizen.org/dev-guide/csapi/api/Tizen.System.Led.html) class is called when LED brightness changes.
+-   `LevelChanged` and `PercentChanged` events in the [Tizen.System.Battery](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Battery.html) class are called when the battery level and charge percentage change.
+-   `ChargingStateChanged` event in the [Tizen.System.Battery](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Battery.html) class is called when the charger is connected or disconnected.
+-   `StateChanged` event in the [Tizen.System.Display](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Display.html) class is called when the device display state changes.
+-   `BrightnessChanged` event in the [Tizen.System.Led](https://samsung.github.io/TizenFX/latest/api/Tizen.System.Led.html) class is called when LED brightness changes.
 
 To manage device display status change events:
 

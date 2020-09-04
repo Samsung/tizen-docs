@@ -28,7 +28,7 @@ The main features of the Input Method API include:
 
   The IME application must implement the `ime_app_main()` function. It is the main entry point, in which you can [register event callback functions](#callback) and call the `ime_run()` function to start the main loop.
 
-  During its life-cycle, the IME application can receive a number of events from the Tizen input service framework through the callback functions. You must register the mandatory `create()`, `terminate()`, `show()`, and `hide()` callbacks. Other callbacks can be registered as required by the specific IME application.
+  During its life-cycle, the IME application can receive a number of events from the Tizen Input Service framework through the callback functions. You must register the mandatory `create()`, `terminate()`, `show()`, and `hide()` callbacks. Other callbacks can be registered as required by the specific IME application.
 
 - Showing and hiding the keyboard
 

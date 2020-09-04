@@ -9,10 +9,6 @@ The control of system software version includes:
 The update procedure and the server might be different according to the platform developer.
 Therefore, this API just offers general functions for update, and platform developers must develop the application using Update Control API properly.
 
-> **Note**
->
-> As a default, the update agent works with [SmartThings Device Manager](https://console.smartthingsdm.com/) is available.
-
 ## Prerequisites
 
 To enable your application to use the update control functionality:
@@ -61,13 +57,15 @@ if (error_code != UPDATE_CONTROL_ERROR_NONE)
 If the newer version of platform is available, the correct value and type for `UPDATE_CONTROL_PROPERTY_UPDATE_AVAILABLE` that depends on the platform developer will be set. The application can get the this value through the `update_control_get_property()` function:
 ```cpp
 int error_code;
-bool is_available;
+bool* is_available;
 
-error_code = update_control_get_property(UPDATE_CONTROL_PROPERTY_UPDATE_AVAILABLE, (void **)&is_available);
+error_code = update_control_get_property(UPDATE_CONTROL_PROPERTY_UPDATE_AVAILABLE, (void **)(&is_available));
 if (error_code == UPDATE_CONTROL_ERROR_NONE) {
-  if (is_available)
+  if (*is_available)
     // New version platform is available
     ...
+
+  free(is_available);
 }
 ```
 

@@ -1,11 +1,29 @@
-# Tizen 5.0 Public M1 Release Notes
+# Tizen 5.0 Public M1
 
-Release date: May. 31, 2018
+Release date: May 31, 2018
+
+The Tizen 5.0 Public M1 release provides developers with the Tizen kernel, device drivers, middleware subsystems, and Web/Native/C# APIs.
 
 
-## System (Kernel and System framework)
+## Release Details
 
-### New and changed features
+- [Getting source code](http://review.tizen.org/git/)(Tizen 5.0 M1 source codes are under **tizen_5.0** branch.)
+
+- Getting binaries and images
+  - Base: [http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20180518.1/](http://download.tizen.org/releases/milestone/tizen/base/tizen-base_20180518.1/)
+  - Mobile(Fridge): [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/mobile-wayland-armv7l-tm1/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/mobile-wayland-armv7l-tm1/)
+  - Wearable: [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/wearable-wayland-armv7l-tw2/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/wearable-wayland-armv7l-tw2/)
+  - TV: [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/tv-wayland-armv7l-odroidu3/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/tv-wayland-armv7l-odroidu3/)
+  - IOT: [http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/iot-headless-2parts-armv7l-artik530_710/](http://download.tizen.org/releases/milestone/tizen/unified/tizen-unified_20180528.1/images/standard/iot-headless-2parts-armv7l-artik530_710/)
+
+- [How to flash to a device](../developing/flashing.md)
+
+
+## Release Notes
+
+### System (Kernel and System framework)
+
+#### New and changed features
 
 - Security improvement on D-Bus
   - Default deny is applied to D-Bus/Cynara conf files.
@@ -28,7 +46,7 @@ Release date: May. 31, 2018
   - Usb-host
     - C# TCT is improved.
 
-### Fixes
+#### Fixes
 
 - Deviced
   - Developed safe unmount on writable partitions.
@@ -37,14 +55,14 @@ Release date: May. 31, 2018
 - Dlog
   - Crash or blocking issues are fixed.
 
-### Known Issues
+#### Known Issues
 
 - dbus-glib (deprecated library) is being removed.
 
 
-## System (Base)
+### System (Base)
 
-### New and changed features
+#### New and changed features
 
 - Upgraded the following open source libraries:
   - augeas (1.10.1)
@@ -85,15 +103,15 @@ Release date: May. 31, 2018
     - system_settings_add_changed_cb()
     - system_settings_remove_changed_cb()
 
-### Fixes
+#### Fixes
 
 - upstream/json-c
   - The libjson package name has been changed to libjson4.
 
 
-## Application framework
+### Application framework
 
-### New and changed features
+#### New and changed features
 
 - TIDL (Tizen Interface Definition Language), rpc-port
   - Introduced a new app rpc-port to app IPC mechanism.
@@ -101,7 +119,7 @@ Release date: May. 31, 2018
   - Applications can expose RPC style service interface to other applications with TIDL.
   - Native code is generated from the TIDL with tidlc compiler.
   - C, C++, C# languages are supported.
-  - tidlc compiler will be released along with the Tizen Studio.
+  - tidlc compiler will be released along with Tizen Studio.
 - Watchface complication framework and stylize editable feature support:
   - Applications can provide custom complication data with the new watchface complication provider API.
   - Watchface applications can receive data from the complication providers.
@@ -109,14 +127,14 @@ Release date: May. 31, 2018
 - Widget framework refactoring:
   - Screen connector library is rewritten in object-oriented design.
 - Package Manager
-  - Added API for changing applications’ icon.
+  - Added API for changing applications' icon.
   - Changed some enum values for fixing errata.
   - Added new enum value for extended storage.
 
 
-## Window system
+### Window system
 
-### New and changed features
+#### New and changed features
 
 - Wayland
   - Upgraded the opensource wayland to version 1.14.0.
@@ -180,7 +198,7 @@ Release date: May. 31, 2018
     - Added the SPIRV-Tools package.
     - Added the SPIRV-Headers package.
 
-### Fixes
+#### Fixes
 
 - Enlightenment wayland display server
   - Fixed attempting to flush window buffer for the keyboard window.
@@ -189,9 +207,9 @@ Release date: May. 31, 2018
   - Fixed many code defects detected by the static analysis tool.
 
 
-## Graphics engine
+### Graphics engine
 
-### New and changed features
+#### New and changed features
 
 - DALi (3D UI Toolkit)
   - Common
@@ -227,7 +245,7 @@ Release date: May. 31, 2018
 - Evas Render Engine
   - Support tbm gl/sw rendering engine for EFL 1.20.
 
-### Fixes
+#### Fixes
 
 - DALi (3D UI Toolkit)
   - Loading of compressed texture formats bug is fixed.
@@ -236,16 +254,16 @@ Release date: May. 31, 2018
   - Bug of glGetString in EvasGL is fixed.
   - Resource leak in evas engines is fixed.
 
-### Known Issues
+#### Known Issues
 - DALi (3D UI Toolkit)
   - Indicator is not working properly.
 - Evas Render Engine
   - Multiple EvasGL Images are not working properly.
 
 
-## UI framework
+### UI framework
  
-### New and changed features
+#### New and changed features
 
 - EFL
   - Version 1.16 is upgraded to 1.20.
@@ -275,29 +293,29 @@ Release date: May. 31, 2018
   - Added TTS API for repeat function.
   - Added new APIs for supporting third party voice control engine.
 
-### Fixes
+#### Fixes
 - Fixed bugs.
 - Added Thread-safety check.
 - Improved evas rendering performance.
 - Stabilized evas rendering mechanism.
 
-### Known Issues
+#### Known Issues
 - CBHM (Clip Board History Manager) is not work properly.
 - Ector supports only basic functionalities compared to Cairo.
 - SVG morphing animation supports only in EDC.
 - Elementary focus manager is disabled (Legacy focus mechanism is applied).
 
 
-## Multimedia framework
+### Multimedia framework
 
-### New and changed features
+#### New and changed features
 
 - Media Player
   - Added support for spherical video playback.
   - Added support for ReplayGain.
   - Removed session based audio API.
   - Pre-condition of setting ROI area API is changed.
-  - The “player_set_display()” must be called in the main thread of application by restriction of upgraded EFL.
+  - The "player_set_display()" must be called in the main thread of application by restriction of upgraded EFL.
 - MediaCodec
   - Added H/W resource management.
   - Added the error enum for resource conflict.
@@ -309,18 +327,18 @@ Release date: May. 31, 2018
   - Increase the maximum camera number.(2 -> 10)
   - Added new APIs for hue.
   - A display ROI area can be set before display mode is set as ROI mode.
-  - The “camera_set_display()” must be called in main thread of application by restriction of upgraded EFL.
+  - The "camera_set_display()” must be called in main thread of application by restriction of upgraded EFL.
   - Added a dependency of libmm-display-interface.
     - Removed the dependencies of display related packages.
-    - “libmm-display”  must be included in platform binary to use display related APIs.
-  - New package is added to separate camera API test program from “capi-media-camera” package.
-    - “capi-media-camera-tool” must be installed to use “camera_test”.
+    - "libmm-display"  must be included in platform binary to use display related APIs.
+  - New package is added to separate camera API test program from "capi-media-camera" package.
+    - "capi-media-camera-tool” must be installed to use "camera_test".
 - Recorder
   - A related feature is changed.
-    - As-Is: <http://tizen.org/feature/camera>, <http://tizen.org/feature/microphone>
-    - To-Be: <http://tizen.org/feature/media.audio_recording>, <http://tizen.org/feature/media.video_recording>
+    - As-Is: `<http://tizen.org/feature/camera>`, `<http://tizen.org/feature/microphone>`
+    - To-Be: `<http://tizen.org/feature/media.audio_recording>`, `<http://tizen.org/feature/media.video_recording>`
   - New package is added to separate recorder API test program from capi-media-recorder package.
-    - “capi-media-recorder-tool” must be installed to use “recorder_test”.
+    - "capi-media-recorder-tool" must be installed to use "recorder_test".
 - Media Content
   - Added synchronous thumbnail creation API and old asynchronous API is deprecated.
   - Added support for contents moving among the internal, SD Card and USB Storage.
@@ -341,9 +359,9 @@ Release date: May. 31, 2018
   - Pulseaudio 5.0 -> 11.1
 
 
-## Network and connectivity
+### Network and connectivity
 
-### New and changed features
+#### New and changed features
 
 - Network Firewall
   - Added support for in-bound/out-bound rule management.
@@ -388,7 +406,7 @@ Release date: May. 31, 2018
   - curl: 7.53.1 to 7.59.
   - bluez: 5.43 to 5.48.
 
-### Fixes
+#### Fixes
 
 - Data Network
   - Removed a GDBus dependency in network related UGs (for example, ug-wifi-efl, ug-wifi-direct, download-manager).
@@ -396,9 +414,9 @@ Release date: May. 31, 2018
   - IoTivity is stabilized in multi-thread programming.
 
 
-## Security
+### Security
 
-### New and changed features
+#### New and changed features
 
 - Security Event Collector
   - Added support for kernel level audit.
@@ -410,14 +428,14 @@ Release date: May. 31, 2018
   - Provide basic guides for developers.
 
 
-## Service framework
+### Service framework
 
-### New and changed features
+#### New and changed features
 
 - Account
   - Account module is added in TV profile.
 
-### Fixes
+#### Fixes
 
 - Phonenumber-util
   - Fixed D-Bus policies.
@@ -451,9 +469,9 @@ Release date: May. 31, 2018
   - Fixed memory leak and potential defects.
 
 
-## Web framework
+### Web framework
 
-### New and changed features
+#### New and changed features
 
 - Web engine
   - Applying latest open source chromium(blink) : from M56 to M63
@@ -462,9 +480,9 @@ Release date: May. 31, 2018
     - Web performance enhancement (V8 : ES 6 performance enhancement, Web Assembly default enabling)
 
 
-## Tizen .NET
+### Tizen .NET
 
-### New and changed features
+#### New and changed features
 
 - .NET Runtime
   - Merged memory optimization patches.
@@ -489,15 +507,15 @@ Release date: May. 31, 2018
   - Tizen.Security.Privilege.GetPrivacyPrivilegeStatus() is deprecated.
   - Added 360 videos support in Tizen.Multimedia.Player.
 
-### Known Issues
+#### Known Issues
 
 - Xamarin.Forms
   - For more information on the list of limitations, see [here](../../application/dotnet/api/xamarin-forms-limitations.md).
 
 
-## Experimental
+### Experimental
 
-### New and changed features
+#### New and changed features
 
 - nnfw: Neural Network Runtime (Experimental Release)
   - CPU/GPU acceleration support based on ACL(Arm Compute Library) (currently there are six operators).

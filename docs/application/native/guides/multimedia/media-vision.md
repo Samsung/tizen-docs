@@ -17,6 +17,10 @@ You can use the following visual detection and recognition features in your nati
 
   You can extract features of an image object and recognize it from specific images. You can also track the image object within the camera preview stream.
 
+- [Image Classification](image-classification.md)
+
+  You can classify an image that belongs to corresponding labels.
+
 ## Related Information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile

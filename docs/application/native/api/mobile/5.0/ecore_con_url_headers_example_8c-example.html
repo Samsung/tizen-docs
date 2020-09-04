@@ -134,13 +134,13 @@ _url_complete_cb(<span class="keywordtype">void</span> *data <a class="code" hre
 <span class="keywordtype">int</span>
 main(<span class="keywordtype">int</span> argc, const <span class="keywordtype">char</span> *argv[])
 {
-   <a class="code" href="group__Ecore__Con__Url__Group.html#gad928193ae403bd05c1ce5ba48a1d52ea">Ecore_Con_Url</a> *ec_url = NULL;
-   <span class="keyword">const</span> <span class="keywordtype">char</span> *type;
+   <a name="_a12"></a><a class="code" href="struct__Ecore__Con__Url.html">Ecore_Con_Url</a> *ec_url = NULL;
+   <span class="keyword">const</span> <span class="keywordtype">char</span> *type, *post_data = <span class="stringliteral">&quot;&quot;</span>;
    <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a> r;
 
    <span class="keywordflow">if</span> (argc &lt; 3)
      {
-        printf(<span class="stringliteral">&quot;need at least two parameters: &lt; POST|GET &gt;  &lt;url1&gt;\n&quot;</span>);
+        printf(<span class="stringliteral">&quot;need at least two parameters: &lt; POST|GET &gt;  &lt;url1&gt; [post-data]\n&quot;</span>);
         <span class="keywordflow">return</span> -1;
      }
 
@@ -152,35 +152,37 @@ main(<span class="keywordtype">int</span> argc, const <span class="keywordtype">
         <span class="keywordflow">return</span> -1;
      }
 
-   <a name="a12"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
-   <a name="a13"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init</a>();
-   <a name="a14"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga47ad809433853db53742f3fd5ce89ac9" title="Initializes the Ecore_Con_Url library.">ecore_con_url_init</a>();
+   <span class="keywordflow">if</span> (argc &gt; 3) post_data = argv[3];
+
+   <a name="a13"></a><a class="code" href="group__Ecore__Init__Group.html#ga77757609684a2c922dc5ec398274751b">ecore_init</a>();
+   <a name="a14"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#gab4ed9a3c2132b73373a63c7f63cd0c51" title="Initializes the Ecore_Con library.">ecore_con_init</a>();
+   <a name="a15"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga47ad809433853db53742f3fd5ce89ac9" title="Initializes the Ecore_Con_Url library.">ecore_con_url_init</a>();
 
    <span class="comment">// check if requests are being pipelined, and set them if not:</span>
-   <span class="keywordflow">if</span> (!<a name="a15"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga6eb93b3af907011d216a9b9e78d43f8d" title="Is HTTP 1.1 pipelining enable ?">ecore_con_url_pipeline_get</a>())
-     <a name="a16"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga97c9bfa9ffefccc7ed0016202aeefd75" title="Enables or disable HTTP 1.1 pipelining.">ecore_con_url_pipeline_set</a>(EINA_TRUE);
+   <span class="keywordflow">if</span> (!<a name="a16"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga6eb93b3af907011d216a9b9e78d43f8d" title="Is HTTP 1.1 pipelining enable ?">ecore_con_url_pipeline_get</a>())
+     <a name="a17"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga97c9bfa9ffefccc7ed0016202aeefd75" title="Enables or disable HTTP 1.1 pipelining.">ecore_con_url_pipeline_set</a>(EINA_TRUE);
 
-   ec_url = <a name="a17"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gac64aa0a045c1f0eb46c7489ec2456d09" title="Creates a custom connection object.">ecore_con_url_custom_new</a>(argv[2], type);
+   ec_url = <a name="a18"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gac64aa0a045c1f0eb46c7489ec2456d09" title="Creates a custom connection object.">ecore_con_url_custom_new</a>(argv[2], type);
    <span class="keywordflow">if</span> (!ec_url)
      {
         printf(<span class="stringliteral">&quot;error when creating ecore con url object.\n&quot;</span>);
         <span class="keywordflow">goto</span> end;
      }
 
-   <a name="a18"></a><a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a19"></a><a class="code" href="group__Ecore__Con__Events__Group.html#gae7b3a53ead72f458acc53b107ddcaeed">ECORE_CON_EVENT_URL_DATA</a>, _url_data_cb, NULL);
-   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a20"></a><a class="code" href="group__Ecore__Con__Events__Group.html#gadd78afe6a12c9bcb6bc57a1a96913f64">ECORE_CON_EVENT_URL_COMPLETE</a>, _url_complete_cb, NULL);
+   <a name="a19"></a><a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a20"></a><a class="code" href="group__Ecore__Con__Events__Group.html#gae7b3a53ead72f458acc53b107ddcaeed">ECORE_CON_EVENT_URL_DATA</a>, _url_data_cb, NULL);
+   <a class="code" href="group__Ecore__Event__Group.html#gae75b0b1b2c50e73b8e42afc628b00a62" title="Adds an event handler.">ecore_event_handler_add</a>(<a name="a21"></a><a class="code" href="group__Ecore__Con__Events__Group.html#gadd78afe6a12c9bcb6bc57a1a96913f64">ECORE_CON_EVENT_URL_COMPLETE</a>, _url_complete_cb, NULL);
 
-   <a name="a21"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gadc647289df759b5f79faae4103b11220" title="Adds an additional header to the request connection object.">ecore_con_url_additional_header_add</a>(ec_url, <span class="stringliteral">&quot;User-Agent&quot;</span>, <span class="stringliteral">&quot;blablabla&quot;</span>);
-   <a name="a22"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gaab445a7f2fc6cdd7c2c147b0466a7022" title="Toggles libcurl&#39;s verbose output.">ecore_con_url_verbose_set</a>(ec_url, EINA_TRUE);
+   <a name="a22"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gadc647289df759b5f79faae4103b11220" title="Adds an additional header to the request connection object.">ecore_con_url_additional_header_add</a>(ec_url, <span class="stringliteral">&quot;User-Agent&quot;</span>, <span class="stringliteral">&quot;blablabla&quot;</span>);
+   <a name="a23"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gaab445a7f2fc6cdd7c2c147b0466a7022" title="Toggles libcurl&#39;s verbose output.">ecore_con_url_verbose_set</a>(ec_url, EINA_TRUE);
 
-   <a name="a23"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga589cf505a02b190be56530c34cad7cee" title="Sets url_con to use http auth, with given username and password, &quot;safely&quot; or not.">ecore_con_url_httpauth_set</a>(ec_url, <span class="stringliteral">&quot;user&quot;</span>, <span class="stringliteral">&quot;password&quot;</span>, <a name="a24"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
+   <a name="a24"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga589cf505a02b190be56530c34cad7cee" title="Sets url_con to use http auth, with given username and password, &quot;safely&quot; or not.">ecore_con_url_httpauth_set</a>(ec_url, <span class="stringliteral">&quot;user&quot;</span>, <span class="stringliteral">&quot;password&quot;</span>, <a name="a25"></a><a class="code" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a>);
 
-   <a name="a25"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga3196f2a5ccc1fe4889cca5419b2d664c" title="Sets whether HTTP requests should be conditional, dependent on modification time.">ecore_con_url_time</a>(ec_url, <a name="a26"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gga7fd1cb32a295b11143fb1660dc8bcd6bad3aba66e3ab06bb1c66942641a0b2d29">ECORE_CON_URL_TIME_IFMODSINCE</a>, 0);
+   <a name="a26"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga3196f2a5ccc1fe4889cca5419b2d664c" title="Sets whether HTTP requests should be conditional, dependent on modification time.">ecore_con_url_time</a>(ec_url, <a name="a27"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gga7fd1cb32a295b11143fb1660dc8bcd6bad3aba66e3ab06bb1c66942641a0b2d29">ECORE_CON_URL_TIME_IFMODSINCE</a>, 0);
 
    <span class="keywordflow">if</span> (!strcmp(type, <span class="stringliteral">&quot;GET&quot;</span>))
-     r = <a name="a27"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get</a>(ec_url);
+     r = <a name="a28"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga25474c61332fa89a0db7e572c4519bdb" title="Sends a get request.">ecore_con_url_get</a>(ec_url);
    <span class="keywordflow">else</span>
-     r = <a name="a28"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post</a>(ec_url, NULL, 0, NULL);
+     r = <a name="a29"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga1af4c5abb4423c84380df28e2bde8ae6" title="Sends a post request.">ecore_con_url_post</a>(ec_url, post_data, strlen(post_data), NULL);
 
    <span class="keywordflow">if</span> (!r)
      {
@@ -188,14 +190,14 @@ main(<span class="keywordtype">int</span> argc, const <span class="keywordtype">
         <span class="keywordflow">goto</span> free_ec_url;
      }
 
-   <a name="a29"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a30"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
 
 free_ec_url:
-   <a name="a30"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga276545b915a8adf226e9407165e09173" title="Destroys an Ecore_Con_Url connection object.">ecore_con_url_free</a>(ec_url);
+   <a name="a31"></a><a class="code" href="group__Ecore__Con__Url__Group.html#ga276545b915a8adf226e9407165e09173" title="Destroys an Ecore_Con_Url connection object.">ecore_con_url_free</a>(ec_url);
 end:
-   <a name="a31"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gad2a823bd44d0bd0c1960842cca90bcbf" title="Shuts down the Ecore_Con_Url library.">ecore_con_url_shutdown</a>();
-   <a name="a32"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#ga8187590df065383594b3e7f67abbc512" title="Shuts down the Ecore_Con library.">ecore_con_shutdown</a>();
-   <a name="a33"></a><a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
+   <a name="a32"></a><a class="code" href="group__Ecore__Con__Url__Group.html#gad2a823bd44d0bd0c1960842cca90bcbf" title="Shuts down the Ecore_Con_Url library.">ecore_con_url_shutdown</a>();
+   <a name="a33"></a><a class="code" href="group__Ecore__Con__Lib__Group.html#ga8187590df065383594b3e7f67abbc512" title="Shuts down the Ecore_Con library.">ecore_con_shutdown</a>();
+   <a name="a34"></a><a class="code" href="group__Ecore__Init__Group.html#ga768298b932f18d7e7593a447493e5cde">ecore_shutdown</a>();
 
    <span class="keywordflow">return</span> 0;
 }

@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>Bluetooth API</title>
+<meta data-version="2.3.2" data-profile="wearable">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::Bluetooth">
- <div class="supported-platforms"><img class="wearable-optional" title="Optional, Not supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="wearable-optional" title="Optional, Not supported by Tizen Wearable emulator" src="wearable_s_w_optional.png"></div>
 <div class="title"><h1>Bluetooth API</h1></div>
 <div class="brief">
  The Bluetooth API defines interfaces and methods to manage Bluetooth.
@@ -37,7 +38,7 @@ Advertise for remote devices (including Bluetooth LE devices)          </li>
 Act as a GATT client (Generic Attribute Profile client)          </li>
         </ul>
         <p>
-For more information on the Bluetooth features, see <a href="https://developer.tizen.org/development/guides/web-application/connectivity-and-wireless/bluetooth">Bluetooth Guide</a>.
+For more information on the Bluetooth features, see <a href="/application/web/guides/connectivity/bluetooth">Bluetooth Guide</a>.
         </p>
        </div>
 <p><span class="version">Since: </span>
@@ -389,7 +390,7 @@ For more information on the Bluetooth features, see <a href="https://developer.t
 <div class="typedef" id="BluetoothUUID">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothUUID"></a><h3>1.2. BluetoothUUID</h3>
 <div class="brief">
- The UUID of a Bluetooth service.
+ The UUID of a Bluetooth object.
           </div>
 <pre class="webidl prettyprint">  typedef DOMString BluetoothUUID;</pre>
 <p><span class="version">Since: </span>
@@ -470,9 +471,9 @@ STREAMING - corresponds to streaming bluetooth health channel type.            <
 <div class="description">
           <ul>
             <li>
-ADVERTISE - the advertising packet             </li>
+ADVERTISE - the advertising packet            </li>
             <li>
-SCAN_RESPONSE- the scan response packet             </li>
+SCAN_RESPONSE- the scan response packet            </li>
           </ul>
          </div>
 </div>
@@ -488,9 +489,9 @@ SCAN_RESPONSE- the scan response packet             </li>
 <div class="description">
           <ul>
             <li>
-STARTED - advertising has started             </li>
+STARTED - advertising has started            </li>
             <li>
-STOPPED - advertising has stopped             </li>
+STOPPED - advertising has stopped            </li>
           </ul>
          </div>
 </div>
@@ -508,9 +509,9 @@ STOPPED - advertising has stopped             </li>
             <li>
 BALANCED- Balanced advertising mode            </li>
             <li>
-LOW_LATENCY- Low latency advertising mode             </li>
+LOW_LATENCY- Low latency advertising mode            </li>
             <li>
-LOW_ENERGY - Low energy advertising mode             </li>
+LOW_ENERGY - Low energy advertising mode            </li>
           </ul>
          </div>
 </div>
@@ -563,10 +564,13 @@ The <em>tizen.bluetooth</em> object allows access to the Bluetooth API.
 <div class="constructors">
 <h4 id="BluetoothLEServiceData::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">BluetoothLEServiceData(DOMString uuid, DOMString data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("11e5", "0x1811");
 </pre>
 </div>
 </dl>
@@ -576,28 +580,28 @@ var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
 <ul>
 <li class="attribute" id="BluetoothLEServiceData::uuid">
 <span class="attrName"><span class="type">BluetoothUUID </span><span class="name">uuid</span></span><div class="brief">
- The 16 bit UUID of service data
+ The 16-bit UUID of service data.
             </div>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
-service.uuid = "f236-41a4";
+var service = new tizen.BluetoothLEServiceData("11e5", "0x1811");
+service.uuid = "f23641a4";
 </pre>
 </div>
 </li>
 <li class="attribute" id="BluetoothLEServiceData::data">
 <span class="attrName"><span class="type">DOMString </span><span class="name">data</span></span><div class="brief">
- The service data of the Bluetooth LE device
+ The service data of the Bluetooth LE device.
             </div>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a serviceData. */
-var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("11e5", "0x1811");
 service.data = "0x1815";
 </pre>
 </div>
@@ -621,10 +625,13 @@ service.data = "0x1815";
 <div class="constructors">
 <h4 id="BluetoothLEManufacturerData::constructor">Constructors</h4>
 <dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (DOMString, DOMString)</span></b></code>
+</dt>
 <pre class="webidl prettyprint">BluetoothLEManufacturerData(DOMString id, DOMString data);</pre>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a manufacturerData. */
-var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
+var manufacturer = new tizen.BluetoothLEManufacturerData("127", "0x0057");
 </pre>
 </div>
 </dl>
@@ -641,7 +648,7 @@ var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a manufacturerData. */
-var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
+var manufacturer = new tizen.BluetoothLEManufacturerData("127", "0x0057");
 manufacturer.id = "129";
 </pre>
 </div>
@@ -670,7 +677,7 @@ See also, <a href="#BluetoothLEDevice::manufacturerData">usage of BluetoothLEMan
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* Creates a manufacturerData. */
-var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
+var manufacturer = new tizen.BluetoothLEManufacturerData("127", "0x0057");
 manufacturer.data = "0x0059";
 </pre>
 </div>
@@ -704,8 +711,8 @@ This dictionary is used as an input parameter of the BluetoothLEAdvertiseData co
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertData =
 {
   includeName: false,
-  uuids: ["f236-41a4"],
-  solicitationuuids: ["5857-4d3f"],
+  uuids: ["41a4"],
+  solicitationuuids: ["58574d3f"],
   appearance: 192,
   includeTxPowerLevel: false
 };
@@ -740,8 +747,8 @@ This represents the data to be advertised as well as the scan response data for 
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertData =
 {
   includeName: false,
-  uuids: ["f236-41a4"],
-  solicitationuuids: ["5857-4d3f"],
+  uuids: ["41a4"],
+  solicitationuuids: ["58574d3f"],
   appearance: 192,
   includeTxPowerLevel: false
 };
@@ -750,7 +757,12 @@ var advertise = new tizen.BluetoothLEAdvertiseData(advertData);
 </div>
 <div class="constructors">
 <h4 id="BluetoothLEAdvertiseData::constructor">Constructors</h4>
-<dl><pre class="webidl prettyprint">BluetoothLEAdvertiseData(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init);</pre></dl>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (<a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>?)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">BluetoothLEAdvertiseData(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init);</pre>
+</dl>
 </div>
 <div class="attributes">
 <h4>Attributes</h4>
@@ -772,28 +784,28 @@ advertise.includeName = true;
 <li class="attribute" id="BluetoothLEAdvertiseData::uuids">
 <span class="attrName"><span class="type">BluetoothUUID[]
                       </span><span class="name">uuids</span><span class="optional"> [nullable]</span></span><div class="brief">
- The service UUID for advertise or scan response data.
+ The service UUIDs for advertise or scan response data.
             </div>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-advertise.uuids = ["180d"];
+advertise.uuids = ["180d", "7cae86d2-a021-11ea-bb37-0242ac130002"];
 </pre>
 </div>
 </li>
 <li class="attribute" id="BluetoothLEAdvertiseData::solicitationuuids">
 <span class="attrName"><span class="type">BluetoothLESolicitationUUID[]
                       </span><span class="name">solicitationuuids</span><span class="optional"> [nullable]</span></span><div class="brief">
- The service solicitation UUID for advertise or scan response data.
+ The service solicitation UUIDs for advertise or scan response data.
             </div>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-advertise.solicitationuuids = ["180f"];
+advertise.solicitationuuids = ["180f", "7cae86d2-a021-11ea-bb37-0242ac130002"];
 </pre>
 </div>
 </li>
@@ -803,7 +815,7 @@ advertise.solicitationuuids = ["180f"];
             </div>
 <div class="description">
             <p>
-See the <a href="https://developer.bluetooth.org/gatt/characteristics/Pages/CharacteristicViewer.aspx?u=org.bluetooth.characteristic.gap.appearance.xml">list of appearance codes</a> for sample values.
+See the <a href="https://www.bluetooth.com/wp-content/uploads/Sitecore-Media-Library/Gatt/Xml/Characteristics/org.bluetooth.characteristic.gap.appearance.xml">list of appearance codes</a> for sample values.
             </p>
            </div>
 <p><span class="version">Since: </span>
@@ -838,7 +850,7 @@ advertise.includeTxPowerLevel = true;
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-var service = new tizen.BluetoothLEServiceData("c500-11e5", "0x1811");
+var service = new tizen.BluetoothLEServiceData("11e5", "0x1811");
 advertise.serviceData = service;
 </pre>
 </div>
@@ -852,8 +864,8 @@ advertise.serviceData = service;
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
-var manufacture = new tizen.BluetoothLEManufacturerData("127", "0x0057");
-advertise.manufacturerData = manufacture;
+var manufacturer = new tizen.BluetoothLEManufacturerData("127", "0x0057");
+advertise.manufacturerData = manufacturer;
 </pre>
 </div>
 </li>
@@ -942,9 +954,8 @@ advertise.manufacturerData = manufacture;
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothAdapter:
-                  </span>
- The local <em>BluetoothAdapter </em>object.
+<span class="return">BluetoothAdapter:</span>
+ The local <em>BluetoothAdapter</em> object.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -994,9 +1005,8 @@ catch (err)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothLEAdapter:
-                  </span>
- The local <em>BluetoothLEAdapter </em>object.
+<span class="return">BluetoothLEAdapter:</span>
+ The local <em>BluetoothLEAdapter</em> object.
               </ul>
 </div>
 <div class="exceptionlist">
@@ -1175,13 +1185,13 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError: If any of the input parameters contain an invalid value.              </li>
+InvalidValuesError: If any of the input parameters contain an invalid value.              </li>
               <li>
- ServiceNotAvailableError: If a Bluetooth device is turned off.               </li>
+ServiceNotAvailableError: If a Bluetooth device is turned off.              </li>
               <li>
- UnknownError: In any other error case.               </li>
+UnknownError: In any other error case.              </li>
               <li>
- NotSupportedError: If a device doesn't allow a Tizen Web application to change the name of the local Bluetooth adapter.               </li>
+NotSupportedError: If a device doesn't allow a Tizen Web application to change the name of the local Bluetooth adapter.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1377,23 +1387,23 @@ This method initiates the device discovery process. Depending on the progress of
               <li>
 <em>BluetoothDiscoverDevicesSuccessCallback.onstarted()</em> - when a discovery process starts successfully.              </li>
               <li>
-<em>BluetoothDiscoverDevicesSuccessCallback.ondevicefound() </em>- when any device is found in the process and this method is invoked with the device information. If no device is found, this method will never be invoked.              </li>
+<em>BluetoothDiscoverDevicesSuccessCallback.ondevicefound()</em> - when any device is found in the process and this method is invoked with the device information. If no device is found, this method will never be invoked.              </li>
               <li>
 <em>BluetoothDiscoverDevicesSuccessCallback.ondevicedisappeared()</em> - when a device goes out of proximity and this method is invoked with the address of the device.              </li>
               <li>
 <em>BluetoothDiscoverDevicesSuccessCallback.onfinished()</em> - when a discovery process is completed.              </li>
             </ul>
             <p>
-A discovery process can be canceled anytime, by calling <em>stopDiscovery() </em>on the <em>BluetoothAdapter</em>.
+A discovery process can be canceled anytime, by calling <em>stopDiscovery()</em> on the <em>BluetoothAdapter</em>.
             </p>
             <p>
 The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1536,9 +1546,9 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1709,9 +1719,9 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1837,11 +1847,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- NotFoundError - If there is no device with the given address              </li>
+NotFoundError - If there is no device with the given address              </li>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1918,11 +1928,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- NotFoundError - If there is no device with the given address              </li>
+NotFoundError - If there is no device with the given address              </li>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -1998,11 +2008,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- NotFoundError - If there is no device with the given address              </li>
+NotFoundError - If there is no device with the given address              </li>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2076,7 +2086,7 @@ adapter.getDevice(deviceAddress, gotDevice, function(e)
 <div class="brief">
  Registers a service record in the device service record database with the specified <em>uuid</em>, <em>name</em>.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerRFCOMMServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, DOMString name, <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a> successCallback,
                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -2098,11 +2108,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- InvalidValuesError - If any of the input parameters contain an invalid value              </li>
+InvalidValuesError - If any of the input parameters contain an invalid value              </li>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2176,6 +2186,7 @@ function chatServiceSuccessCb(recordHandler)
 
 function publishChatService()
 {
+  /* Only RFCOMM services with 128-bit UUIDs can be registered */
   var CHAT_SERVICE_UUID = "5BCE9431-6C75-32AB-AFE0-2EC108A30860";
   adapter.registerRFCOMMServiceByUUID(CHAT_SERVICE_UUID, "Chat service", chatServiceSuccessCb,
       /* Error handler. */
@@ -2229,8 +2240,7 @@ function unregisterChatService()
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothProfileHandler:
-                  </span>
+<span class="return">BluetoothProfileHandler:</span>
  Represents the Bluetooth profile handle.
               </ul>
 </div>
@@ -2310,16 +2320,16 @@ Scanning and Advertising for remote devices            </li>
             </p>
 <div class="description">
             <p>
-There is no time limit for the bluetooth Low Energy scanning process. It can be canceled only by calling the <em>stopScan() </em> method in the <em>BluetoothLEAdapter</em> interface.
+There is no time limit for the bluetooth Low Energy scanning process. It can be canceled only by calling the <em>stopScan()</em> method in the <em>BluetoothLEAdapter</em> interface.
             </p>
             <p>
 The <em>ErrorCallback</em> will be launched in the following situations:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs.              </li>
+UnknownError - If any other error occurs.              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2414,24 +2424,24 @@ adapter.startScan(function onsuccess(device)
 <div class="brief">
  Starts advertising for Low Energy Devices.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void startAdvertise(<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType, 
-                    <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void startAdvertise(<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType,
+                    <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                     optional <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>? mode, optional boolean? connectable);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
             </p>
 <div class="description">
             <p>
-A advertising process can be canceled anytime, by calling <em>stopAdvertise() </em>on the <em>BluetoothLEAdapter</em>.
+A advertising process can be canceled anytime, by calling <em>stopAdvertise()</em> on the <em>BluetoothLEAdapter</em>.
             </p>
             <p>
 The <em>ErrorCallback</em> will be launched in the following situations:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2489,9 +2499,9 @@ The <em>ErrorCallback</em> will be launched in the following situations:
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
-var battery_svc_uuid_16 = "180f";  /* Service UUID, 16-bit UUID is supported (e.g. 180f). */
+var battery_svc_uuid_16 = "180f";  /* 16-bit service UUIDs are supported (e.g. 180f). */
 var heart_rate_svc_uuid_16 =
-    "180d";  /* Service solicitation UUID, 16-bit UUID is supported (e.g. 180d). */
+    "180d";  /* Service solicitation UUID, 16-bit UUID are supported (e.g. 180d). */
 var advertiseOptions =
 {
   includeName: true,          /* Whether the device name should be included. */
@@ -2548,9 +2558,9 @@ adapter.startAdvertise(advertiseData, "ADVERTISE",
         </div>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
-var battery_svc_uuid_16 = "180f";  /* Service UUID, 16-bit UUID is supported (e.g. 180f). */
+var battery_svc_uuid_16 = "180f";  /* 16-bit service UUIDs are supported (e.g. 180f). */
 var heart_rate_svc_uuid_16 =
-    "180d";  /* Service solicitation UUID, 16-bit UUID is supported (e.g. 180d). */
+    "180d";  /* Service solicitation UUID, 16-bit UUIDs are supported (e.g. 180d). */
 var advertiseOptions =
 {
   includeName: true,          /* Whether the device name should be included. */
@@ -2612,6 +2622,9 @@ adapter.startScan(function onsuccess(device)
             </div>
 <p><span class="version">Since: </span>
  2.3.1
+            </p>
+<p><span class="remark">Remark: </span>
+ <em>uuid</em> is set to <var>"0xFFFF"</var>, if the value cannot be retrieved.
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service = device.getService(device.uuids[0]);
@@ -2789,7 +2802,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2879,7 +2892,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -2991,8 +3004,7 @@ adapter.startScan(function onsuccess(device)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watchID to be used to unregister the listener.
               </ul>
 </div>
@@ -3103,7 +3115,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -3194,7 +3206,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -3474,13 +3486,13 @@ A <em>BluetoothDevice</em> object can be retrieved using one of the following AP
           </p>
           <ul>
             <li>
- BluetoothAdapter.getDevice()            </li>
+BluetoothAdapter.getDevice()            </li>
             <li>
- BluetoothAdapter.getKnownDevices()             </li>
+BluetoothAdapter.getKnownDevices()            </li>
             <li>
- BluetoothAdapter.discoverDevices()             </li>
+BluetoothAdapter.discoverDevices()            </li>
             <li>
- BluetoothAdapter.createBonding()             </li>
+BluetoothAdapter.createBonding()            </li>
           </ul>
          </div>
 <div class="attributes">
@@ -3592,7 +3604,7 @@ adapter.getDevice("11:22:33:44:55:66", function(device)
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">BluetoothUUID[]
                       </span><span class="name">uuids</span></span><div class="brief">
- The list of 128 bit service UUIDs available on this remote device.
+ The list of 128-bit service UUIDs available on this remote device.
             </div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -3638,7 +3650,7 @@ adapter.getDevice("11:22:33:44:55:66", function(device)
 <div class="brief">
  Connects to a specified service identified by <em>uuid</em> on this remote device.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void connectToServiceByUUID(<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback,
                             optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -3652,11 +3664,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- NotFoundError - If there is no service with the specified <em>uuid</em>              </li>
+NotFoundError - If there is no service with the specified <em>uuid</em>              </li>
               <li>
- InvalidValuesError - If any of the input parameters contain an invalid value              </li>
+InvalidValuesError - If any of the input parameters contain an invalid value              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -3670,7 +3682,7 @@ The ErrorCallback is launched with these error types:
 <ul>
           <li class="param">
 <span class="name">uuid</span>:
-            128 bit unique identifier, which specifies the service on the remote device.
+            128-bit unique identifier, which specifies the service on the remote device.
                 </li>
           <li class="param">
 <span class="name">successCallback</span>:
@@ -3841,7 +3853,7 @@ A <em>BluetoothLEDevice</em> object can be retrieved by using one of the followi
           </p>
           <ul>
             <li>
- BluetoothLEAdapter.startScan()            </li>
+BluetoothLEAdapter.startScan()            </li>
           </ul>
          </div>
 <div class="attributes">
@@ -3977,6 +3989,9 @@ adapter.startScan(function onsuccess(device)
 <p><span class="version">Since: </span>
  2.3.1
             </p>
+<p><span class="remark">Remark: </span>
+ Service data is found only when its <a href="#BluetoothLEServiceData::uuid">BluetoothLEServiceData::uuid</a> is 16-bit.
+            </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
 adapter.startScan(function onsuccess(device)
@@ -4061,7 +4076,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -4135,7 +4150,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -4232,8 +4247,7 @@ adapter.startScan(onDeviceFound, onerror);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">BluetoothGATTService:
-                  </span>
+<span class="return">BluetoothGATTService:</span>
  Retrieved service for the given UUID.
               </ul>
 </div>
@@ -4305,8 +4319,7 @@ adapter.startScan(onDeviceFound, onerror);
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">long:
-                  </span>
+<span class="return">long:</span>
  The watchID to be used to unregister the listener.
               </ul>
 </div>
@@ -4532,8 +4545,7 @@ By default, this attribute is set to null.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  The number of bytes actually sent.
               </ul>
 </div>
@@ -4678,8 +4690,7 @@ This method should be called only in the <em>BluetoothSocket.onmessage</em> hand
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">byte[]:
-                  </span>
+<span class="return">byte[]:</span>
  The sequence of bytes successfully read.
               </ul>
 </div>
@@ -4916,7 +4927,7 @@ else
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothClass {
     readonly attribute octet major;
     readonly attribute octet minor;
-    readonly attribute unsigned short [] services;
+    readonly attribute unsigned short[] services;
     boolean hasService(unsigned short service) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -4927,15 +4938,15 @@ else
 Bluetooth device class describes the characteristics and capabilities of a device.
           </p>
           <p>
-Bluetooth CoD is a 24 bit integer created by the union of three components:
+Bluetooth CoD is a 24-bit integer created by the union of three components:
           </p>
           <ul>
             <li>
-Exactly one <b>Major Device Class </b>(bits 8-12 of CoD) - This is the highest level of granularity for defining a Bluetooth Device.            </li>
+Exactly one <b>Major Device Class</b> (bits 8-12 of CoD) - This is the highest level of granularity for defining a Bluetooth Device.            </li>
             <li>
-Exactly one <b>Minor Device Class </b>(bits 2-7 of CoD) - This is to be interpreted only in the context of the Major Device Class. Thus, the meaning of these bits may change, depending on the value of "Major Device Class".             </li>
+Exactly one <b>Minor Device Class</b> (bits 2-7 of CoD) - This is to be interpreted only in the context of the Major Device Class. Thus, the meaning of these bits may change, depending on the value of "Major Device Class".            </li>
             <li>
-Zero or more <b>Major Service Classes </b>(bits 13-23) - Represents the services supported by the device.            </li>
+Zero or more <b>Major Service Classes</b> (bits 13-23) - Represents the services supported by the device.            </li>
           </ul>
           <p>
 The Major and Minor classes are intended to define a general family of devices with which any particular implementation wishes to be associated.
@@ -5046,8 +5057,7 @@ values.
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">boolean:
-                  </span>
+<span class="return">boolean:</span>
  <var>true</var>, if given service exists in the <em>services</em>.
               </ul>
 </div>
@@ -5330,7 +5340,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -5490,7 +5500,7 @@ The BluetoothHealthProfileHandler object is created by <em>BluetoothAdapter.getB
 <div class="brief">
  Registers an application for the Sink role.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerSinkApplication(unsigned short dataType, DOMString name, <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a> successCallback,
                              optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5501,9 +5511,9 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -5572,7 +5582,7 @@ healthProfileHandler.registerSinkApplication(
 <div class="brief">
  Connects to the health device which acts as the Source role.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application, 
+<div class="synopsis"><pre class="signature prettyprint">void connectToSource(<a href="#BluetoothDevice">BluetoothDevice</a> peer, <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a> application,
                      <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.3.1
@@ -5583,11 +5593,11 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- InvalidValuesError - If any of the input parameters contain an invalid value              </li>
+InvalidValuesError - If any of the input parameters contain an invalid value              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -5779,9 +5789,9 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
- ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
+ServiceNotAvailableError - If a Bluetooth device is turned off              </li>
               <li>
- UnknownError - If any other error occurs              </li>
+UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -6050,8 +6060,7 @@ healthProfileHandler.registerSinkApplication(
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">unsigned long:
-                  </span>
+<span class="return">unsigned long:</span>
  Number of bytes actually sent.
               </ul>
 </div>
@@ -6746,7 +6755,9 @@ After that, this device is no longer visible.
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -6772,23 +6783,32 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
 <li class="feature">http://tizen.org/feature/network.bluetooth.le</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module Bluetooth {
   typedef DOMString BluetoothAddress;
   typedef DOMString BluetoothUUID;
+  typedef DOMString BluetoothLESolicitationUUID;
   enum BluetoothSocketState { "CLOSED", "OPEN" };
   enum BluetoothProfileType { "HEALTH" };
   enum BluetoothHealthChannelType { "RELIABLE", "STREAMING" };
-  typedef DOMString BluetoothLESolicitationUUID;
   enum BluetoothAdvertisePacketType { "ADVERTISE", "SCAN_RESPONSE" };
   enum BluetoothAdvertisingState { "STARTED", "STOPPED" };
   enum BluetoothAdvertisingMode { "BALANCED", "LOW_LATENCY", "LOW_ENERGY" };
+  dictionary BluetoothLEAdvertiseDataInit {
+    boolean? includeName;
+    <a href="#BluetoothUUID">BluetoothUUID</a>[]? uuids;
+    <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
+    unsigned long? appearance;
+    boolean? includeTxPowerLevel;
+    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
+    <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
+  };
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BluetoothManagerObject">BluetoothManagerObject</a>;
   [NoInterfaceObject] interface BluetoothManagerObject {
     readonly attribute <a href="#BluetoothManager">BluetoothManager</a> bluetooth;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BluetoothManagerObject">BluetoothManagerObject</a>;
   [Constructor(DOMString uuid, DOMString data)]
   interface BluetoothLEServiceData {
     attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
@@ -6798,15 +6818,6 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   interface BluetoothLEManufacturerData {
     attribute DOMString id;
     attribute DOMString data;
-  };
-  dictionary BluetoothLEAdvertiseDataInit {
-    boolean? includeName;
-    <a href="#BluetoothUUID">BluetoothUUID</a>[]? uuids;
-    <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
-    unsigned long? appearance;
-    boolean? includeTxPowerLevel;
-    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
-    <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
   };
   [Constructor(optional <a href="#BluetoothLEAdvertiseDataInit">BluetoothLEAdvertiseDataInit</a>? init)]
   interface BluetoothLEAdvertiseData {
@@ -6935,7 +6946,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   [NoInterfaceObject] interface BluetoothClass {
     readonly attribute octet major;
     readonly attribute octet minor;
-    readonly attribute unsigned short [] services;
+    readonly attribute unsigned short[] services;
     boolean hasService(unsigned short service) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothClassDeviceMajor {

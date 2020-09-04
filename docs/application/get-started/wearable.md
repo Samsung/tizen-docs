@@ -1,60 +1,48 @@
-# Get Started for Wearable
+# Get Started with Tizen Wearable Applications
+Tizen targets to provide a robust development environment to explore the future of innovative smart wearable application development.
+For wearable devices, Tizen supports three primary application types, .NET, Web, and Native applications.
 
-The Get Started Tutorial teaches you how to create basic Tizen applications for wearable device, especially smart watches.
+## .NET Applications
+You can create rich applications in C# using the .NET framework benefits that contribute to secure and efficient application development.
 
-The Tizen supports three primary application types for wearable devices:
-
--   [.NET application](#net-application) is a new way to develop applications for the Tizen operating system using C# language.
-
--   [Native application](#native-application) is developed using C language. Developer can use the dozens of native API modules that cover a large range of capabilities such as camera, GPS, and accelerometer in addition to more advanced system settings and functionality.
-
--   [Web application](#web-application) is a Web site stored on your device and built using Web-native languages, such as HTML5, CSS, and JavaScript. The Web application uses the Tizen Web Framework to interact with the native subsystems.
-
-## .NET Application
-
-The following guide demonstrates how to create and run a basic Tizen .NET application:
-
+To begin your Tizen .NET application development journey, use the following quick start guides:
 -   [Wearable .NET application](../dotnet/get-started/wearable/first-app.md)
+-   [Wearable XAML application](../dotnet/get-started/wearable/first-xaml-app.md)
 
-    A wearable application is targeted to run on a smart watch. The applications can be optimized for the smaller screen.
+Ensure that you have installed the latest version of [Visual Studio Tools for Tizen](https://marketplace.visualstudio.com/items?itemName=tizen.VSToolsforTizen).
 
-First, ensure that you have installed the latest version of Visual Studio Tools for Tizen. <a href="https://marketplace.visualstudio.com/items?itemName=tizen.VisualStudioToolsforTizen" target="_blank"><img src="media/ic_docs_download.png"><Strong> Download Visual Studio Tools for Tizen</strong>.</a>
+Explore more about the Tizen wearable .NET application development:
+-   [Tutorials](../dotnet/tutorials/overview.md)
+-   [Guides](../dotnet/guides/overview.md)
+-   [API reference ](../dotnet/api/overview.md)
 
-## Native Application
+## Web Applications
+You can create rich Web applications that consist of HTML, JavaScript, and CSS that are combined in a package.
 
-You can create various native applications to run on smart watches. Tizen Studio supports a few project templates, which automatically create basic functionalities for applications.
-
-The following guide demonstrates how to create and run your first  native application with the project templates:
-
--   [Wearable native application](../native/get-started/wearable/first-app.md)
-
-    A wearable application is targeted to run on smart watches, and can be optimized for the smaller screen.
-
--   [Wearable native watch application](../native/get-started/wearable-watch/first-app-watch.md)
-
-    A wearable watch application is a customized watch face that can be shown as the device home screen.
-
--   [Wearable native widget application](../native/get-started/wearable-widget/first-app-widget.md)
-
-    A wearable widget application is a small application that can be shown by specific UI applications (such as the home screen).
-
-## Web Application
-
-You can create various Web applications to run on smart watches. Tizen Studio supports a few project templates, which automatically create basic functionalities for applications.
-
-The following guide demonstrates how to create and run your first Web application with the project templates:
-
+To begin your Tizen Web application development journey, use the following quick start guides:
 -   [Wearable Web application](../web/get-started/wearable/first-app.md)
-
-    A wearable application is targeted to run on smart watches, and can be optimized for the smaller screen.
-
 -   [Wearable Web watch application](../web/get-started/wearable-watch/first-app-watch.md)
-
-    A wearable watch application is a customized watch face that can be shown as the device home screen.
-
 -   [Wearable Web widget application](../web/get-started/wearable-widget/first-app-widget.md)
 
-    A wearable widget application is a small application that can be shown by specific UI applications (such as the home screen).
+Ensure that you have installed the latest version of [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download).
 
-First, ensure that you have installed the latest version of Tizen Studio. <a href="https://developer.tizen.org/development/tizen-studio/download" target="_blank"><img src="media/ic_docs_download.png"><strong>Download Tizen Studio</strong>.</a>
+Explore more about the Tizen wearable Web application development:
+-   [Tutorials](../web/tutorials/overview.md)
+-   [Guides](../web/guides/index.md)
+-   [API reference](../web/api/index.md)
+
+## Native Applications
+You can create rich applications in C with device-specific features, advanced system settings, and additional functionalities.
+
+To begin your Tizen Native application development journey, use the following quick start guides:
+-   [Wearable Native application](../native/get-started/wearable/first-app.md)
+-   [Wearable Native watch application](../native/get-started/wearable-watch/first-app-watch.md)
+-   [Wearable Native widget application](../native/get-started/wearable-widget/first-app-widget.md)
+
+Ensure that you have installed the latest version of [Tizen Studio](https://developer.tizen.org/development/tizen-studio/download).
+
+Explore more about the Tizen wearable Native application development:
+-   [Tutorials](../native/tutorials/overview.md)
+-   [Guides](../native/guides/index.md)
+-   [API reference](../native/api/overview.md)
 

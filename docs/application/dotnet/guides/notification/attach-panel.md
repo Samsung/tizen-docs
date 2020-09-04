@@ -65,7 +65,7 @@ The following figure explains the content types. From left to right: images, cam
 
 This section explains, how you can enable your application to use the attach panel functionality:
 
-1.  To use the [Tizen.Applications.AttachPanel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AttachPanel.html) namespace, the application must request permission by adding the following privileges to the `tizen-manifest.xml` file:
+1.  To use the [Tizen.Applications.AttachPanel](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.html) namespace, the application must request permission by adding the following privileges to the `tizen-manifest.xml` file:
 
     ```
     <privileges>
@@ -94,7 +94,7 @@ This section explains, how you can enable your application to use the attach pan
     using Tizen.Applications.AttachPanel;
     ```
 	
-4.  To create an attach panel instance, an [ElmSharp.Conformant](https://developer.tizen.org/dev-guide/csapi/api/ElmSharp.Conformant.html) instance is required. To create the instance, follow any of the step mentioned:
+4.  To create an attach panel instance, an [ElmSharp.Conformant](https://samsung.github.io/TizenFX/latest/api/ElmSharp.Conformant.html) instance is required. To create the instance, follow any of the step mentioned:
     -   For Tizen platform conformant, see [Get the Tizen platform conformant](#getConformant).
     -   Create a conformant, into which you can add the attach panel later:
 
@@ -119,7 +119,7 @@ This section explains, how you can enable your application to use the attach pan
 ## Create an Attach Panel
 
 
-1.  Create an attach panel using the [Tizen.Applications.AttachPanel.AttachPanel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AttachPanel.AttachPanel.html) class.
+1.  Create an attach panel using the [Tizen.Applications.AttachPanel.AttachPanel](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel.html) class.
 
     When the attach panel is created, the state is hidden by default. To show the created panel, use the `Show()` method of the `Tizen.Applications.AttachPanel.AttachPanel` class.
 
@@ -137,7 +137,7 @@ This section explains, how you can enable your application to use the attach pan
     }
     ```
 
-2.  Select the type of content for the attach panel. Add content categories using the AddCategory() method, based on the type of content. The available content categories are defined in the [Tizen.Applications.AttachPanel.ContentCategory](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AttachPanel.ContentCategory.html) enumeration.
+2.  Select the type of content for the attach panel. Add content categories using the AddCategory() method, based on the type of content. The available content categories are defined in the [Tizen.Applications.AttachPanel.ContentCategory](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.ContentCategory.html) enumeration.
 
     The content categories in the **More** tab are shown in the frequency of recently used and alphabetical sequence.
 
@@ -171,11 +171,11 @@ This section explains, how you can enable your application to use the attach pan
 
     -   To access the data that you select in the called application, register the `ResultCallback` event of the `Tizen.Applications.AttachPanel.AttachPanel` class and define an event handler for it.
 
-        Select and confirm the content category to trigger the event. In the event handler, you can retrieve the selected items from the `Result.ExtraData` property of the [Tizen.Applications.AttachPanel.ResultEventArgs](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AttachPanel.ResultEventArgs.html) class.
+        Select and confirm the content category to trigger the event. In the event handler, you can retrieve the selected items from the `Result.ExtraData` property of the [Tizen.Applications.AttachPanel.ResultEventArgs](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.ResultEventArgs.html) class.
 
     -   To monitor published events from the panel side, register the `EventChanged` event of the `Tizen.Applications.AttachPanel.AttachPanel` class and define an event handler for it.
 
-        Publish the reserved events (defined in the [Tizen.Applications.AttachPanel.EventType](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AttachPanel.EventType.html) enumeration) from the panel side to trigger the event.
+        Publish the reserved events (defined in the [Tizen.Applications.AttachPanel.EventType](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.EventType.html) enumeration) from the panel side to trigger the event.
 
     ```
     private void AttachPanelResultCallback(object sender, ResultEventArgs e)
@@ -350,7 +350,7 @@ To create an attach panel in Xamarin, use the custom renderers:
 
 <a name="manage"></a>
 ## Manage an Attach Panel
-To manage an attach panel content, you can set extra data to a previously added content category using a bundle. Use the `SetExtraData()` method of the [Tizen.Applications.AttachPanel.AttachPanel](https://developer.tizen.org/dev-guide/csapi/api/Tizen.Applications.AttachPanel.AttachPanel.html) class.
+To manage an attach panel content, you can set extra data to a previously added content category using a bundle. Use the `SetExtraData()` method of the [Tizen.Applications.AttachPanel.AttachPanel](https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.AttachPanel.AttachPanel.html) class.
 
 The following are the extra data supported by the attach panel:
 -   `http://tizen.org/appcontrol/data/total_count`: Total count of selected items in the Images category

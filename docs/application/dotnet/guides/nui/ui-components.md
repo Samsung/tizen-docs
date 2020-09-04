@@ -4,7 +4,7 @@ UI components are interactive components for layout and scrolling the user inter
 
 **Figure: UI components**
 
-![UI components](./media/ui_controls.png)
+![UI components](./media/button.png) ![UI components](./media/popup.png)
 
 
 The following table lists the available UI components:
@@ -13,15 +13,19 @@ The following table lists the available UI components:
 
 | Control                              | Description                              | Related classes                          |
 | ------------------------------------ | ---------------------------------------- | ---------------------------------------- |
-| [Buttons](./button.md)               | The Button class is a base class for different kinds of buttons. | `Button`, `PushButton`, `CheckBoxButton`, `RadioButton`, `ToggleButton` |
+| [Button](./nui-components/Button.md) | A button that can set action when user select it. | `Button`                |
 | [FlexContainer](./flexcontainer.md)  | A FlexContainer implements a subset of the flexbox spec. | `FlexContainer`              |
 | [ImageView](./imageview.md)          | An image view is a class for displaying an image resource.   | `ImageView`                   |
-| [ScrollView](./scrollview.md)        | A scroll view contains views that can be scrolled manually. | `ScrollView`, `Scrollable`, `ScrollViewEffect`, `ScrollViewPagePathEffect` |
-| [Slider](./slider.md)                | A slider that indicates a modifiable value within a specific range. | `Slider`                   |
+| [Loading](./nui-components/Loading.md) | A loading is used to give information about the ongoing operations. | `Loading`                |
+| [Popup](./nui-components/Popup.md) | A popup is used as a popup window. | `Popup`                |
+| [Progress](./nui-components/Progress.md) | A progress is used to show the ongoing status using a long narrow bar. | `Progress`                |
+| [Scrollbar](./nui-components/Scrollbar.md) | A scrollbar is used to show the range of content. | `ScrollBar`                |
+| [Slider](./nui-components/Slider.md) | A slider that indicates a modifiable value within a specific range. | `Slider`                   |
+| [Switch](./nui-components/Switch.md) | A switch that can be used as a selector. | `Switch`                |
+| [Tab](./nui-components/Tab.md) | A tab is easy to explore and switch between different views. | `Tab`                |
 | [TableView](./tableview.md)          | A table view that can align child actors in a grid like layout. | `TableView`             |
-| [TextLabel](./textlabel.md)          | A text label that renders a short text string. | `TextLabel`                |
-| [TextField](./textfield.md)          | A text field that provides a single line editable text. | `TextField`                 |
-| [TextEditor](./texteditor.md)        | A text editor that provides a multi line editable text. | `TextEditor`                |
+| [Text](./text.md)                    | A text that renders a short text string and provides a editable text. | `TextLabel`, `TextField`, `TextEditor`  |
+| [Toast](./nui-components/Toast.md) | A toast is used to provide simple messages. | `Toast`                |
 | [VideoView](./videoview.md)          | A video view that controls and displays video playback. | `VideoView`                 |
 
 The base class for the components is `View`. This class can also be used to create your own custom UI components. For more information on the view class, see [View](./view.md). In this UI Components guide, both the terms **control** and **component** are used to refer to a UI component.

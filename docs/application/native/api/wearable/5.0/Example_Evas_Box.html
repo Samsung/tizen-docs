@@ -92,15 +92,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><p>In this example, we demonstrate the use of Evas box objects. We cover changing boxes' layouts (with a custom layout, besides the ones provided by Evas), box padding and alignment influence on the layouts, insertion and removal of box items.</p>
 <p>The interesting part of the code starts, naturally, when we add a box object to the canvas. Just after it, we place five rectangles, with random colors, inside of it. Those rectangles get a minimum size hint of 50 pixels on each axis, which will be respected by most of the box's possible layouts:  <div class="fragment"><pre class="fragment">   d.box = <a class="code" href="group__Evas__Object__Box.html#gad413687e53adcbb70ced91d4a4218b45">evas_object_box_add</a>(d.evas);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.box);
 
    <span class="keywordflow">for</span> (i = 1; i &lt;= 5; i++)
      {
         o = last = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
-        <a class="code" href="group__Evas__Object__Group__Size__Hints.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(o, 50, 50);
-        <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
+        evas_object_size_hint_min_set(o, 50, 50);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
           o, rand() % 256, rand() % 256, rand() % 256, 255);
-        <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
         <span class="keywordflow">if</span> (!evas_object_box_append(d.box, o))
           {
@@ -116,13 +116,13 @@ _canvas_resize_cb(Ecore_Evas *ee)
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
+   evas_object_resize(d.bg, w, h);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.box, (w / 4), (h / 4));
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.box, (w / 2), (h / 2));
+   evas_object_move(d.box, (w / 4), (h / 4));
+   evas_object_resize(d.box, (w / 2), (h / 2));
 
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.border, (w / 4) - 2, (h / 4) - 2);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.border, (w / 2) + 4, (h / 2) + 4);
+   evas_object_move(d.border, (w / 4) - 2, (h / 4) - 2);
+   evas_object_resize(d.border, (w / 2) + 4, (h / 2) + 4);
 }
 </pre></div></p>
 <p>Again, one interacts with this program by means of key commands:  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *commands = \
@@ -171,11 +171,11 @@ _canvas_resize_cb(Ecore_Evas *ee)
         pos = atoi(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
         children = <a class="code" href="group__Evas__Object__Box.html#ga245f7f1824ec1033c6b1d0c2312fed9e">evas_object_box_children_get</a>(d.box);
 
-        obj = <a class="code" href="group__Eina__List__Group.html#ga4bd18d6ffc9920cd904bb7769f2fad8e" title="Gets the nth member&#39;s data pointer in a list.">eina_list_nth</a>(children, pos);
+        obj = <a class="code" href="group__Eina__List__Group.html#ga4bd18d6ffc9920cd904bb7769f2fad8e" title="Gets the nth member&#39;s data pointer in a list, or NULL on error.">eina_list_nth</a>(children, pos);
         <span class="keywordflow">if</span> (!obj) <span class="keywordflow">goto</span> list_free;
 
         ret = evas_object_box_remove_at(d.box, pos);
-        <span class="keywordflow">if</span> (ret) <a class="code" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
+        <span class="keywordflow">if</span> (ret) <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
 
 list_free:
         <a class="code" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free</a>(children);
@@ -198,9 +198,9 @@ _new_rectangle_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o;
 
    o = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(e);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, 10, 10);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 0, 255, 0, 255);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+   evas_object_resize(o, 10, 10);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 0, 255, 0, 255);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
    <span class="keywordflow">return</span> o;
 }
@@ -214,7 +214,8 @@ _new_rectangle_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
      {
         evas_object_box_layout_set(d.box, _custom_layout, NULL, NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>, <span class="stringliteral">&quot;CUSTOM&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;CUSTOM&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 </pre></div>  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <span class="keywordtype">void</span> <span class="comment">/* custom &#39;diagonal&#39; layout */</span>
@@ -228,7 +229,7 @@ _custom_layout(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1
    <a class="code" href="struct__Eina__List.html">Eina_List</a> *l;
    <a class="code" href="struct__Evas__Object__Box__Option.html">Evas_Object_Box_Option</a> *opt;
 
-   <a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
    count = <a class="code" href="group__Eina__List__Group.html#ga301729054a498a2df09a5f1dd760697e" title="Gets the count of the number of items in a list.">eina_list_count</a>(p-&gt;children);
    ww = w / (count ? : 1);
    hh = h / (count ? : 1);
@@ -239,7 +240,7 @@ _custom_layout(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1
    yy = y;
    <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(p-&gt;children, l, opt)
      {
-        <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(opt-&gt;<a class="code" href="struct__Evas__Object__Box__Option.html#af01dd3e815a84ac6c7cbfbd3a6dbc148">obj</a>, xx, yy);
+        evas_object_move(opt-&gt;<a class="code" href="struct__Evas__Object__Box__Option.html#af01dd3e815a84ac6c7cbfbd3a6dbc148">obj</a>, xx, yy);
         xx += ww;
         yy += hh;
      }
@@ -287,14 +288,14 @@ _custom_layout(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1
   <span class="stringliteral">&quot;\tShift + NUMBER - remove the child object at that position in the box\n&quot;</span>
   <span class="stringliteral">&quot;\th - print help\n&quot;</span>;
 
-<span class="keyword">struct </span>exemple_data
+<span class="keyword">struct </span>example_data
 {
    Ecore_Evas  *ee;
    <a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6bc43e3b640a6d37f73043">Evas</a>        *evas;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *bg, *box, *border;
 };
 
-<span class="keyword">static</span> <span class="keyword">struct </span>exemple_data d;
+<span class="keyword">static</span> <span class="keyword">struct </span>example_data d;
 
 <span class="keyword">static</span> <span class="keywordtype">void</span> <span class="comment">/* custom &#39;diagonal&#39; layout */</span>
 _custom_layout(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a>          *o,
@@ -307,7 +308,7 @@ _custom_layout(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1
    <a class="code" href="struct__Eina__List.html">Eina_List</a> *l;
    <a class="code" href="struct__Evas__Object__Box__Option.html">Evas_Object_Box_Option</a> *opt;
 
-   <a class="code" href="group__Evas__Font__Group.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga6f52fab1a96dc58c85ee481d84bac871">evas_object_geometry_get</a>(o, &amp;x, &amp;y, &amp;w, &amp;h);
    count = <a class="code" href="group__Eina__List__Group.html#ga301729054a498a2df09a5f1dd760697e" title="Gets the count of the number of items in a list.">eina_list_count</a>(p-&gt;children);
    ww = w / (count ? : 1);
    hh = h / (count ? : 1);
@@ -318,7 +319,7 @@ _custom_layout(<a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1
    yy = y;
    <a class="code" href="group__Eina__List__Group.html#gad02f746a08ee0b12b7ed66d4bc0d71d8" title="Definition for the macro to iterate over a list.">EINA_LIST_FOREACH</a>(p-&gt;children, l, opt)
      {
-        <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(opt-&gt;<a class="code" href="struct__Evas__Object__Box__Option.html#af01dd3e815a84ac6c7cbfbd3a6dbc148">obj</a>, xx, yy);
+        evas_object_move(opt-&gt;<a class="code" href="struct__Evas__Object__Box__Option.html#af01dd3e815a84ac6c7cbfbd3a6dbc148">obj</a>, xx, yy);
         xx += ww;
         yy += hh;
      }
@@ -330,9 +331,9 @@ _new_rectangle_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *o;
 
    o = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(e);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(o, 10, 10);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 0, 255, 0, 255);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+   evas_object_resize(o, 10, 10);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(o, 0, 255, 0, 255);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
    <span class="keywordflow">return</span> o;
 }
@@ -346,11 +347,11 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
             <span class="keywordtype">void</span>        *einfo)
 {
    <a class="code" href="struct__Evas__Event__Key__Down.html">Evas_Event_Key_Down</a> *ev = einfo;
-   <span class="keyword">const</span> <a class="code" href="group__Evas.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *mods = <a class="code" href="group__Evas__Canvas.html#ga4a5730766f69f91a4bfb37568d620676" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(evas);
+   <span class="keyword">const</span> <a class="code" href="group__Evas__Keys.html#ga198d0b10861c1da456004688d3443e96">Evas_Modifier</a> *mods = <a class="code" href="group__Evas__Canvas.html#gaad42bb4caa43c1cfef4096f6ac2b99ec" title="Returns a handle to the list of modifier keys registered in the canvas e.">evas_key_modifier_get</a>(evas);
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;h&quot;</span>) == 0) <span class="comment">/* print help */</span>
      {
-        fprintf(stdout, <span class="stringliteral">&quot;%s&quot;</span>,  commands);
+        printf(<span class="stringliteral">&quot;%s&quot;</span>,  commands);
         <span class="keywordflow">return</span>;
      }
 
@@ -364,11 +365,11 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
         pos = atoi(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
         children = <a class="code" href="group__Evas__Object__Box.html#ga245f7f1824ec1033c6b1d0c2312fed9e">evas_object_box_children_get</a>(d.box);
 
-        obj = <a class="code" href="group__Eina__List__Group.html#ga4bd18d6ffc9920cd904bb7769f2fad8e" title="Gets the nth member&#39;s data pointer in a list.">eina_list_nth</a>(children, pos);
+        obj = <a class="code" href="group__Eina__List__Group.html#ga4bd18d6ffc9920cd904bb7769f2fad8e" title="Gets the nth member&#39;s data pointer in a list, or NULL on error.">eina_list_nth</a>(children, pos);
         <span class="keywordflow">if</span> (!obj) <span class="keywordflow">goto</span> list_free;
 
         ret = evas_object_box_remove_at(d.box, pos);
-        <span class="keywordflow">if</span> (ret) <a class="code" href="group__Evas__Font__Group.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
+        <span class="keywordflow">if</span> (ret) <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
 
 list_free:
         <a class="code" href="group__Eina__List__Group.html#ga608bd2fbf06293a1b794648990703ab4" title="Frees an entire list and all the nodes, ignoring the data contained.">eina_list_free</a>(children);
@@ -403,8 +404,8 @@ list_free:
 
         evas_object_box_align_set(d.box, h, v);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying new alignment values (%.1f, %.1f)&quot;</span>
-                        <span class="stringliteral">&quot; on the box\n&quot;</span>, h, v);
+        printf(<span class="stringliteral">&quot;Applying new alignment values (%.1f, %.1f) on the box\n&quot;</span>,
+               h, v);
         <span class="keywordflow">return</span>;
      }
 
@@ -421,8 +422,8 @@ list_free:
 
         evas_object_box_padding_set(d.box, h, v);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying new padding values (%d, %d)&quot;</span>
-                        <span class="stringliteral">&quot; on the box\n&quot;</span>, h, v);
+        printf(<span class="stringliteral">&quot;Applying new padding values (%d, %d) on the box\n&quot;</span>,
+               h, v);
         <span class="keywordflow">return</span>;
      }
 
@@ -431,7 +432,8 @@ list_free:
         evas_object_box_layout_set(
           d.box, evas_object_box_layout_horizontal, NULL, NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>, <span class="stringliteral">&quot;horizontal&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;horizontal&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 
@@ -440,7 +442,8 @@ list_free:
         evas_object_box_layout_set(
           d.box, evas_object_box_layout_vertical, NULL, NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>, <span class="stringliteral">&quot;vertical&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;vertical&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 
@@ -450,8 +453,8 @@ list_free:
           d.box, evas_object_box_layout_homogeneous_horizontal, NULL,
           NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
-                <span class="stringliteral">&quot;horizontal homogeneous&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;horizontal homogeneous&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 
@@ -460,8 +463,8 @@ list_free:
         evas_object_box_layout_set(
           d.box, evas_object_box_layout_homogeneous_vertical, NULL, NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
-                <span class="stringliteral">&quot;vertical homogeneous&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;vertical homogeneous&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 
@@ -471,8 +474,8 @@ list_free:
           d.box, evas_object_box_layout_homogeneous_max_size_horizontal,
           NULL, NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
-                <span class="stringliteral">&quot;horizontal maximum size homogeneous&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;horizontal maximum size homogeneous&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 
@@ -482,8 +485,8 @@ list_free:
           d.box, evas_object_box_layout_homogeneous_max_size_vertical,
           NULL, NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
-                <span class="stringliteral">&quot;vertical maximum size homogeneous&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;vertical maximum size homogeneous&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 
@@ -492,7 +495,8 @@ list_free:
         evas_object_box_layout_set(
           d.box, evas_object_box_layout_flow_horizontal, NULL, NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>, <span class="stringliteral">&quot;horizontal flow&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;horizontal flow&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 
@@ -501,7 +505,8 @@ list_free:
         evas_object_box_layout_set(
           d.box, evas_object_box_layout_flow_vertical, NULL, NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>, <span class="stringliteral">&quot;vertical flow&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;vertical flow&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 
@@ -510,7 +515,8 @@ list_free:
         evas_object_box_layout_set(
           d.box, evas_object_box_layout_stack, NULL, NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>, <span class="stringliteral">&quot;stack&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;stack&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 
@@ -518,7 +524,8 @@ list_free:
      {
         evas_object_box_layout_set(d.box, _custom_layout, NULL, NULL);
 
-        fprintf(stdout, <span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>, <span class="stringliteral">&quot;CUSTOM&quot;</span>);
+        printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
+               <span class="stringliteral">&quot;CUSTOM&quot;</span>);
         <span class="keywordflow">return</span>;
      }
 }
@@ -536,13 +543,13 @@ _canvas_resize_cb(Ecore_Evas *ee)
 
    <a class="code" href="group__Ecore__Evas__Group.html#ga73a19ff229ddec5e2c98ab81718008ee" title="Gets the geometry of an Ecore_Evas.">ecore_evas_geometry_get</a>(ee, NULL, NULL, &amp;w, &amp;h);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.bg, w, h);
+   evas_object_resize(d.bg, w, h);
 
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.box, (w / 4), (h / 4));
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.box, (w / 2), (h / 2));
+   evas_object_move(d.box, (w / 4), (h / 4));
+   evas_object_resize(d.box, (w / 2), (h / 2));
 
-   <a class="code" href="group__Evas__Font__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(d.border, (w / 4) - 2, (h / 4) - 2);
-   <a class="code" href="group__Evas__Font__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(d.border, (w / 2) + 4, (h / 2) + 4);
+   evas_object_move(d.border, (w / 4) - 2, (h / 4) - 2);
+   evas_object_resize(d.border, (w / 2) + 4, (h / 2) + 4);
 }
 
 <span class="keywordtype">int</span>
@@ -558,7 +565,7 @@ main(<span class="keywordtype">void</span>)
 
    <span class="comment">/* this will give you a window with an Evas canvas under the first</span>
 <span class="comment">    * engine available */</span>
-   d.ee = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   d.ee = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!d.ee)
      <span class="keywordflow">goto</span> panic;
 
@@ -569,23 +576,23 @@ main(<span class="keywordtype">void</span>)
    d.evas = <a class="code" href="group__Ecore__Evas__Group.html#ga21b6108d757f0aea6c4126d59cfb8826" title="Gets an Ecore_Evas&#39;s Evas.">ecore_evas_get</a>(d.ee);
 
    d.bg = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
-   <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.bg, 255, 255, 255, 255); <span class="comment">/* white bg */</span>
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.bg);
 
-   evas_object_focus_set(d.bg, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_focus_set(d.bg, EINA_TRUE);
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
-     d.bg, <a class="code" href="group__Evas.html#ggad64cde0da38a60e7cb7905b3ab216968a336b86bad4f145f84c155e4922335584">EVAS_CALLBACK_KEY_DOWN</a>, _on_keydown, NULL);
+     d.bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
 
    d.box = <a class="code" href="group__Evas__Object__Box.html#gad413687e53adcbb70ced91d4a4218b45">evas_object_box_add</a>(d.evas);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.box);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.box);
 
    <span class="keywordflow">for</span> (i = 1; i &lt;= 5; i++)
      {
         o = last = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.evas);
-        <a class="code" href="group__Evas__Object__Group__Size__Hints.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(o, 50, 50);
-        <a class="code" href="group__Evas__Font__Group.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
+        evas_object_size_hint_min_set(o, 50, 50);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(
           o, rand() % 256, rand() % 256, rand() % 256, 255);
-        <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
+        <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
         <span class="keywordflow">if</span> (!evas_object_box_append(d.box, o))
           {
@@ -597,13 +604,13 @@ main(<span class="keywordtype">void</span>)
    <span class="comment">/* this is a border around the box, container of the rectangles we</span>
 <span class="comment">    * are going to experiment with. this way you can see how the</span>
 <span class="comment">    * container relates to the children */</span>
-   d.border = <a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.evas);
-   <a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.border, border_img_path, NULL);
+   d.border = evas_object_image_filled_add(d.evas);
+   evas_object_image_file_set(d.border, border_img_path, NULL);
    evas_object_image_border_set(d.border, 2, 2, 2, 2);
    evas_object_image_border_center_fill_set(d.border, EVAS_BORDER_FILL_NONE);
-   <a class="code" href="group__Evas__Font__Group.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
 
-   fprintf(stdout, <span class="stringliteral">&quot;%s&quot;</span>, commands);
+   printf(<span class="stringliteral">&quot;%s&quot;</span>, commands);
 
    _canvas_resize_cb(d.ee);
    <a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
@@ -615,8 +622,8 @@ error:
    <span class="keywordflow">return</span> -1;
 
 panic:
-   fprintf(stderr, <span class="stringliteral">&quot;You got to have at least one evas engine built and linked&quot;</span>
-                   <span class="stringliteral">&quot; up to ecore-evas for this example to run properly.\n&quot;</span>);
+   fprintf(stderr, <span class="stringliteral">&quot;error: Requires at least one Evas engine built and linked&quot;</span>
+                   <span class="stringliteral">&quot; to ecore-evas for this example to run properly.\n&quot;</span>);
    <span class="keywordflow">return</span> -2;
 }
 

@@ -1,127 +1,45 @@
-# Animation Types
+# Advanced Animation Methods
 
-NUI supports key frame and path animation.
-
-[Key Frame Animation](#1)<br>
-[Path Animation](#2)<br>
-
-<a name="1"></a>
-## Key Frame Animation
-
-NUI provides support for animating between several different values or key frames.
-Key frame takes the progress value between 0.0f and 1.0f (0 and 100%) from the `keyFrames.Add` property and portrays the value of the property when the animation reaches to the progress value.
-You can create several key frames:
-
-```
-KeyFrames _keyFrames = new KeyFrames();
-_keyFrames.Add(0.0f, new Size(0.0f, 0.0f, 0.0f));
-_keyFrames.Add(0.3f, new Size(window.Size.Width * 0.7f, window.Size.Height * 0.7f, 0.0f));
-_keyFrames.Add(1.0f, new Size(window.Size));
-
-KeyFrames keyFrames = KeyFrames::New();
-keyFrames.Add( 0.0f, Vector3( 10.0f, 10.0f, 10.0f ) );
-keyFrames.Add( 0.7f, Vector3( 200.0f, 200.0f, 200.0f ) );
-keyFrames.Add( 1.0f, Vector3( 100.0f, 100.0f, 100.0f ) );
-```
-
-Next, you can add the key frames to your animation:
-
-```
-_animation.AnimateBetween(_imageView, "Size", _keyFrames, 4000, 6000, Animation.Interpolation.Linear);
-```
-
-When you play the animation, NUI animates the position of `view1` between the specified key frames. `view1` animates from (10.0f, 10.0f, 10.0f) to (200.0f, 200.0f, 200.0f) for 70% of the animation time, and spends the remaining time animating back to (100.0f, 100.0f, 100.0f).
-
-The advantage of specifying a key frame at 0% is that regardless of the position of `view1`, it starts from (10.0f, 10.0f, 10.0f). If `AnimateTo()` is used, then the start position is the current position of `view1`.
-
-The following comprehensive example of using key frame is taken from `FocusEffect.cs`:
-
-```
-focusData.ImageItem.Size = new Size(100.0f, 100.0f, 0.0f);
-parentItem.Add(focusData.ImageItem);
-
-Size targetSize = focusData.TargetSize;
-Size initSize = focusData.InitSize;
-
-KeyFrames keyFrames = new KeyFrames();
-
-keyFrames.Add(0.0f, initSize);
-keyFrames.Add(focusData.KeyFrameStart, initSize);
-keyFrames.Add(focusData.KeyFrameEnd, targetSize);
-
-// For halo add an extra key frame to shrink it (in 20% of time after it has finished)
-if (focusData.Name == "halo")
-{
-   keyFrames.Add(focusData.KeyFrameEnd + 0.2f, initSize);
-}
-
-_animation.AnimateBetween(focusData.ImageItem, "Size", keyFrames, Animation.Interpolation.Linear, new AlphaFunction(AlphaFunction.BuiltinFunctions.EaseOutSine));
-```
-
-<a name="2"></a>
 ## Path Animation
 
-The `Path` class can be used to animate the position and orientation of actors. (a three-dimentional parametric curve)
+The `Path` class is a three-dimensional parametric curve that is used to animate the position and orientation of actors.
 
-The black points are the points where the 'dali' logo travels. The red points are the control points which express the curvature of the path on the black points.
+The `Path` consists of several points and each adjacent pair of points becomes a segment of the path. Each segment can be curved by adding control points to it.
 
-**Figure: Path animation**
+In the following example, the P1, P2 and P3 form the path where the blue circle travels. The C1 and C2 are the control points for a first segment `[P1-P2]`, where C3 and C4 are for a second segment `[P2-P3]`. The control points express the curvature of the path.
 
-![Path animation](./media/path_animation.png)
+<div style="text-align:center;width:100%;"><img src="./media/path.svg" /></div>
 
-The following code presents the black points:
+To generate the `Path` object, use the following code:
 
-```
+```csharp
 Path path = new Path();
-path.AddPoint(new Vector3( 50.0f, 10.0f, 0.0f ));
-path.AddPoint(new Vector3( 90.0f, 50.0f, 0.0f ));
-path.AddPoint(new Vector3( 10.0f, 90.0f, 0.0f ));
+
+// Path Points
+path.AddPoint(new Position(0, 100));   // P1
+path.AddPoint(new Position(100, 100)); // P2
+path.AddPoint(new Position(200, 100)); // P3
+
+// Control Points for a first segment
+path.AddControlPoint(new Position(40, 20)); // C1
+path.AddControlPoint(new Position(60, 20)); // C2
+
+// Control Points for a second segment
+path.AddControlPoint(new Position(140, 180)); // C3
+path.AddControlPoint(new Position(160, 180)); // C4
 ```
 
-The control points can be added manually using `AddControlPoint`. The `Path` class auto-generates the control points:
+To animate `View` along this path, use the following function:
 
-```
-path.GenerateControlPoints( 0.25f );
-```
-Here 0.25f represents the curvature of the path you require.
+```csharp
+Animation animation = new Animation(3000/*duration*/);
 
-To animate `view1` along this path, use the following function:
+animation.AnimatePath(view, path, Vector3.Zero);
 
-```
-_animation.AnimatePath( view1, path, Vector3::ZERO );
-```
-
-The third parameter is the forward vector (in a local space coordinate system) that is oriented with the path's tangent direction.
-
-Another example:
-
-```
-// Black points
-Position position0 = new Position(200.0f, 200.0f, 0.0f);
-Position position1 = new Position(300.0f, 300.0f, 0.0f);
-Position position2 = new Position(400.0f, 400.0f, 0.0f);
-
-Path path = new Path();
-path.AddPoint(position0);
-path.AddPoint(position1);
-path.AddPoint(position2);
-
-// Control points for first segment
-path.AddControlPoint(new Vector3(39.0f, 90.0f, 0.0f));
-path.AddControlPoint(new Vector3(56.0f, 119.0f, 0.0f));
-
-// Control points for second segment
-path.AddControlPoint(new Vector3(78.0f, 120.0f, 0.0f));
-path.AddControlPoint(new Vector3(93.0f, 104.0f, 0.0f));
-
-Animation animation = new Animation();
-animation.AnimatePath(view, path, Vector3.XAxis, 0, 5000, new AlphaFunction(AlphaFunction.BuiltinFunctions.Linear)); // X Axis
 animation.Play();
 ```
 
-> **Note**
->
-> `AnimatePath()` invokes `Animate`.
+The third parameter is the forward vector in a local space coordinate system and is oriented with the tangent direction of the path.
 
 ## Related Information
 - Dependencies

@@ -4,10 +4,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <link rel="stylesheet" type="text/css" href="../../../scripts/tizen.css" media="screen">
 <script type="text/javascript" src="../../../scripts/snippet.js"></script><title>TVInputDevice API</title>
+<meta data-version="5.0" data-profile="tv">
 </head>
 <body id="page-content" onload="prettyPrint()">
 <div class="api" id="::TVInputDevice">
- <div class="supported-platforms"><img class="tv-optional emulator" title="Optional, Supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
+<div class="supported-platforms"><img class="tv-optional emulator" title="Optional, Supported by Tizen Tv emulator" src="tv_s_w_optional.png"></div>
 <div class="title"><h1>TVInputDevice API</h1></div>
 <div class="brief">
  The TV Input Device API provides functions to subscribe key events of the input device.
@@ -91,6 +92,9 @@ An application can handle device dependent key events after registration.
  Name which identifies the key
           </div>
 <pre class="webidl prettyprint">  typedef DOMString InputDeviceKeyName;</pre>
+<p><span class="version">Since: </span>
+ 2.3
+          </p>
 <div class="description">
           <p>
 Name of the key may be, for example:
@@ -286,8 +290,7 @@ window.addEventListener("keydown", function(keyEvent)
 <div class="returntype">
 <p><span class="return">Return value:</span></p>
 <ul>
-<span class="return">InputDeviceKey:
-                  </span>
+<span class="return">InputDeviceKey<span class="optional"> [nullable]</span>:</span>
  InputDeviceKey InputDeviceKey object for the given key name, or null if the key is not supported.
               </ul>
 </div>
@@ -425,7 +428,7 @@ for (i = 0; i &lt; keys.length; i++)
 <div class="brief">
  Registers a batch of input device keys to receive DOM keyboard events when any of them is pressed or released.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void registerKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                       optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -511,7 +514,7 @@ tizen.tvinputdevice.registerKeyBatch(keys, successCB, errorCB);
 <div class="brief">
  Unregisters a batch of input device keys.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, 
+<div class="synopsis"><pre class="signature prettyprint">void unregisterKeyBatch(<a href="#InputDeviceKeyName">InputDeviceKeyName</a>[] keyNames, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  2.4
@@ -589,7 +592,9 @@ tizen.tvinputdevice.unregisterKeyBatch(keys, successCB, errorCB);
 </div>
 <h2 id="api-features">3. Related Feature</h2>
 <div id="def-api-features" class="def-api-features">
-        Method <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a> can be used in application runtime to check whether this API is supported.
+            Method
+            <a href="systeminfo.html#SystemInfo::getCapability">tizen.systeminfo.getCapability()</a>
+         can be used in application runtime to check whether this API is supported.
                     <div class="def-api-feature">
 <p><div class="description">
             <p>
@@ -599,15 +604,15 @@ To guarantee the running of this application on a device with a TV input device 
 <li class="feature">http://tizen.org/feature/tv.inputdevice</li>
 </div>
 <p></p>
-                    For more information, see <a href="https://developer.tizen.org/development/training/web-application/understanding-tizen-programming/application-filtering">Application Filtering.</a>
+                    For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
 <h2 id="full-webidl">4. Full WebIDL</h2>
 <pre class="webidl prettyprint">module TVInputDevice {
   typedef DOMString InputDeviceKeyName;
+  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInputDeviceManagerObject">TVInputDeviceManagerObject</a>;
   [NoInterfaceObject] interface TVInputDeviceManagerObject {
     readonly attribute <a href="#TVInputDeviceManager">TVInputDeviceManager</a> tvinputdevice;
   };
-  <a href="tizen.html#Tizen">Tizen</a> implements <a href="#TVInputDeviceManagerObject">TVInputDeviceManagerObject</a>;
   [NoInterfaceObject] interface InputDeviceKey {
     readonly attribute <a href="#InputDeviceKeyName">InputDeviceKeyName</a> name;
     readonly attribute long code;

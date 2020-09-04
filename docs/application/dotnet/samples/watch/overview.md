@@ -56,8 +56,8 @@ for TD:
 		<tr>
 			<td><img alt="" height="180" src="media/w63analogwatch.png" width="180"/></td>
 			<td>
-                        <p><strong>(W) AnalogWatch</strong> [In progress]</p>
-			<p>This sample application demonstrates how to create a watchface for the wearable device using ElmSharp and how to use <a href="https://samsung.github.io/TizenFX/API5/api/Tizen.Applications.Badge.html" target="_blank">Tizen.Applications.Badge</a>.</p>
+                        <p><a href="https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/Wearable/AnalogWatch" target="_blank"><strong>(W) AnalogWatch</strong></a></p>
+			<p>This sample application demonstrates how to create a watchface for the wearable device using ElmSharp and how to use <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Badge.html" target="_blank">Tizen.Applications.Badge</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -89,7 +89,7 @@ for TD:
 			<td><img alt="" height="180" src="media/w43pulsometersdc.png" width="180"/></td>
 			<td>
                         <p><strong>(W) PulsometerSDC</strong> [In progress]</p>
-			<p>This sample application demonstrates how to measure the heart rate using <a href="https://samsung.github.io/TizenFX/API5/api/Tizen.Sensor.HeartRateMonitor.html" target="_blank">Tizen.Sensor.HeartRateMonitor</a>.</p>
+			<p>This sample application demonstrates how to measure the heart rate using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Sensor.HeartRateMonitor.html" target="_blank">Tizen.Sensor.HeartRateMonitor</a>.</p>
 			</td>
 		</tr>
 		<tr>
@@ -97,7 +97,7 @@ for TD:
 			<td>
                         <p><strong>(W) WatchFaceSDC</strong> [In progress]</p>
 			<p>This sample application demonstrates how to create watch face app using Xamarin Forms.</p>
-                        <p>Additionally, it shows how to extend functionality of the app by displaying battery related properties on the watch face. <a href="https://samsung.github.io/TizenFX/API5/api/Tizen.System.Battery.html" target="_blank">Tizen.System.Battery</a> provides data for extending the functionality.</p>
+                        <p>Additionally, it shows how to extend functionality of the app by displaying battery related properties on the watch face. <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.System.Battery.html" target="_blank">Tizen.System.Battery</a> provides data for extending the functionality.</p>
 			</td>
 		</tr>
 		<tr>

@@ -91,16 +91,100 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>In this example we will create 4 radio buttons, three of them in a group and another one not in the group. We will also have the radios in the group change the value of a variable directly and have then print it when the value changes. The fourth button is in the example just to make clear that radios outside the group don't affect the group.</p>
-<p>We'll start with the usual includes: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And move right to declaring a static variable(the one whose value the radios will change): <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We now need to have a window and all that good stuff to be able to place our radios in: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And now we create a radio button, since this is the first button in our group we set the group to be the radio(so we can set the other radios in the same group). We also set the state value of this radio to 1 and the value pointer to <code>val</code>, since val is <code>1</code> this has the additional effect of setting the radio value to <code>1</code>. For this radio we choose the default home icon: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>To check that our radio buttons are working we'll add a callback to the "changed" signal of the radio: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>The creation of our second radio button is almost identical, the 2 differences worth noting are, the value of this radio 2 and that we add this radio to the group of the first radio: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>For our third callback we'll omit the icon and set the value to 3, we'll also add it to the group of the first radio: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>Our fourth callback has a value of 4, no icon and most relevantly is not a member of the same group as the other radios: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>We finally run the main loop: <div class="fragment"><pre class="fragment"></pre></div></p>
-<p>And the last detail in our example is the callback that prints <code>val</code> so that we can see that the radios are indeed changing its value: <div class="fragment"><pre class="fragment"></pre></div></p>
+<p>We'll start with the usual includes: <div class="fragment"><pre class="fragment"><span class="preprocessor">#include &lt;Elementary.h&gt;</span>
+</pre></div></p>
+<p>And move right to declaring a static variable(the one whose value the radios will change): <div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">int</span> val = 1;
+</pre></div></p>
+<p>We now need to have a window and all that good stuff to be able to place our radios in: <div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">void</span> _cb(<span class="keywordtype">void</span> *data, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj, <span class="keywordtype">void</span> *event_info);
+
+EAPI_MAIN <span class="keywordtype">int</span>
+elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="keywordtype">char</span> **argv EINA_UNUSED)
+{
+   <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *bx, *radio, *group, *ic;
+
+   <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(ELM_POLICY_QUIT, ELM_POLICY_QUIT_LAST_WINDOW_CLOSED);
+
+   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;radio&quot;</span>, <span class="stringliteral">&quot;Radio&quot;</span>);
+   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+
+   bx = <a class="code" href="group__Elm__Box.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
+   <a class="code" href="group__Elm__Box.html#ga447f790a64a49b477019938dc3d5c3ff" title="Set the horizontal orientation.">elm_box_horizontal_set</a>(bx, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+   evas_object_size_hint_weight_set(bx, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, bx);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(bx);
+</pre></div></p>
+<p>And now we create a radio button, since this is the first button in our group we set the group to be the radio(so we can set the other radios in the same group). We also set the state value of this radio to 1 and the value pointer to <code>val</code>, since val is <code>1</code> this has the additional effect of setting the radio value to <code>1</code>. For this radio we choose the default home icon: <div class="fragment"><pre class="fragment">
+   group = radio = <a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_object_text_set(radio, <span class="stringliteral">&quot;Radio 1&quot;</span>);
+   elm_radio_state_value_set(radio, 1);
+   elm_radio_value_pointer_set(radio, &amp;val);
+   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;home&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(radio, <span class="stringliteral">&quot;icon&quot;</span>, ic);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, radio);
+   evas_object_size_hint_weight_set(radio, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(radio, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(radio);
+</pre></div></p>
+<p>To check that our radio buttons are working we'll add a callback to the "changed" signal of the radio: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(radio, <span class="stringliteral">&quot;changed&quot;</span>, _cb, NULL);
+</pre></div></p>
+<p>The creation of our second radio button is almost identical, the 2 differences worth noting are, the value of this radio 2 and that we add this radio to the group of the first radio: <div class="fragment"><pre class="fragment">
+   radio = <a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_object_text_set(radio, <span class="stringliteral">&quot;Radio 2&quot;</span>);
+   elm_radio_state_value_set(radio, 2);
+   elm_radio_value_pointer_set(radio, &amp;val);
+   elm_radio_group_add(radio, group);
+   ic = <a class="code" href="group__Elm__Icon.html#ga5739728c1209f90422cf65a778a16502">elm_icon_add</a>(win);
+   <a class="code" href="group__Elm__Icon.html#gab764b4c6c90543f254c013eff6a6db66" title="Set the icon by icon standards names.">elm_icon_standard_set</a>(ic, <span class="stringliteral">&quot;file&quot;</span>);
+   <a class="code" href="group__Elm__General.html#ga0531ec8867c72def7c780601764ca642">elm_object_part_content_set</a>(radio, <span class="stringliteral">&quot;icon&quot;</span>, ic);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, radio);
+   evas_object_size_hint_weight_set(radio, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(radio, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(radio);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(radio, <span class="stringliteral">&quot;changed&quot;</span>, _cb, NULL);
+</pre></div></p>
+<p>For our third callback we'll omit the icon and set the value to 3, we'll also add it to the group of the first radio: <div class="fragment"><pre class="fragment">
+   radio = <a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_object_text_set(radio, <span class="stringliteral">&quot;Radio 3&quot;</span>);
+   elm_radio_state_value_set(radio, 3);
+   elm_radio_value_pointer_set(radio, &amp;val);
+   elm_radio_group_add(radio, group);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, radio);
+   evas_object_size_hint_weight_set(radio, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(radio, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(radio);
+   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(radio, <span class="stringliteral">&quot;changed&quot;</span>, _cb, NULL);
+</pre></div></p>
+<p>Our fourth callback has a value of 4, no icon and most relevantly is not a member of the same group as the other radios: <div class="fragment"><pre class="fragment">
+   radio = <a class="code" href="group__Elm__Radio.html#gab905f905e9a90883d482035e457fc7ef" title="Add a new radio to the parent.">elm_radio_add</a>(win);
+   elm_object_text_set(radio, <span class="stringliteral">&quot;Radio 4&quot;</span>);
+   elm_radio_state_value_set(radio, 4);
+   elm_radio_value_pointer_set(radio, &amp;val);
+   elm_radio_group_add(radio, group);
+   <a class="code" href="group__Elm__Box.html#ga66a10dd861578521af2ab7b8c2ca65c5" title="Add an object at the end of the pack list.">elm_box_pack_end</a>(bx, radio);
+   evas_object_size_hint_weight_set(radio, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   evas_object_size_hint_align_set(radio, EVAS_HINT_FILL, EVAS_HINT_FILL);
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(radio);
+</pre></div></p>
+<p>We finally run the main loop: <div class="fragment"><pre class="fragment">   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(radio, <span class="stringliteral">&quot;changed&quot;</span>, _cb, NULL);
+
+   <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
+
+   <a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+
+   <span class="keywordflow">return</span> 0;
+}
+<a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+</pre></div></p>
+<p>And the last detail in our example is the callback that prints <code>val</code> so that we can see that the radios are indeed changing its value: <div class="fragment"><pre class="fragment">
+<span class="keyword">static</span> <span class="keywordtype">void</span>
+_cb(<span class="keywordtype">void</span> *data EINA_UNUSED, <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *obj EINA_UNUSED, <span class="keywordtype">void</span> *event_info EINA_UNUSED)
+{
+   printf(<span class="stringliteral">&quot;val is now: %d\n&quot;</span>, val);
+}
+</pre></div></p>
 <p>The example will look like this:</p>
 <div class="image">
 <img src="screenshots/radio_example_01.png" alt="radio_example_01.png"/>

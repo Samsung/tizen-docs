@@ -100,11 +100,7 @@ Required Header</h2>
 <p>#include &lt;runtime_info.h&gt;</p>
 <h2><a class="anchor" id="CAPI_SYSTEM_RUNTIME_INFO_MODULE_OVERVIEW"></a>
 Overview</h2>
-<p>The Runtime Information API provides functions to obtain runtime information, containing miscellaneous system preference. The Runtime Information available is stored in key/value pairs, where there may be different data types for the value. The <a class="el" href="group__CAPI__SYSTEM__RUNTIME__INFO__MODULE.html#gad4ee4f3e033640a73e4ebbdcaac7b14b" title="Registers a change event callback for given runtime information key.">runtime_info_set_changed_cb()</a> registers a callback function for a particular key, which will be invoked by the System Service if the state matching that key changes.</p>
-<p>Copyright (c) 2011 - 2015 Samsung Electronics Co., Ltd All Rights Reserved</p>
-<p>Licensed under the Apache License, Version 2.0 (the License); you may not use this file except in compliance with the License. You may obtain a copy of the License at</p>
-<p><a href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a></p>
-<p>Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an AS IS BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License. </p>
+<p>The Runtime Information API provides functions to obtain runtime information, containing miscellaneous system preference. The Runtime Information available is stored in key/value pairs, where there may be different data types for the value. The <a class="el" href="group__CAPI__SYSTEM__RUNTIME__INFO__MODULE.html#gad4ee4f3e033640a73e4ebbdcaac7b14b" title="Registers a change event callback for given runtime information key.">runtime_info_set_changed_cb()</a> registers a callback function for a particular key, which will be invoked by the System Service if the state matching that key changes. </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -315,6 +311,8 @@ Typedefs</h2></td></tr>
 
 <p>Enumeration for keys for runtime information. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>~10000 : public key <br/>
+ 10001~ : product specific key </dd></dl>
 <dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
 <tr><td valign="top"><em><a class="anchor" id="gga63fc9a9e3a05a0023c949723f6159b1bacea3567bb18820632aa74d759c1a6598"></a><!-- doxytag: member="RUNTIME_INFO_KEY_BLUETOOTH_ENABLED" ref="gga63fc9a9e3a05a0023c949723f6159b1bacea3567bb18820632aa74d759c1a6598" args="" -->RUNTIME_INFO_KEY_BLUETOOTH_ENABLED</em>&nbsp;</td><td>
 <p>Indicates whether Bluetooth is enabled. </p>

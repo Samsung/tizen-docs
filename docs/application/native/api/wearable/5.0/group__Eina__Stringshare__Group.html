@@ -196,16 +196,16 @@ Typedefs</h2></td></tr>
 <p>Retrieves an instance of a string for use in a program. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The NULL-terminated string to retrieve an instance of. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The NULL-terminated string to retrieve an instance of. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the string on success, <code>NULL</code> on failure.</dd></dl>
 <p>This function retrieves an instance of <code>str</code>. If <code>str</code> is <code>NULL</code>, then <code>NULL</code> is returned. If <code>str</code> is already stored, it is just returned and its reference counter is increased. Otherwise a duplicated string of <code>str</code> is returned.</p>
 <p>The string <code>str</code> must be NULL terminated ('\0') and its full length will be used. To use part of the string or non-null terminated, use <a class="el" href="group__Eina__Stringshare__Group.html#gabe8ecf4121011cb792f36ecd8c44e470" title="Retrieves an instance of a string with a specific size for use in a program.">eina_stringshare_add_length()</a> instead.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#gabe8ecf4121011cb792f36ecd8c44e470" title="Retrieves an instance of a string with a specific size for use in a program.">eina_stringshare_add_length()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#gabe8ecf4121011cb792f36ecd8c44e470" title="Retrieves an instance of a string with a specific size for use in a program.">eina_stringshare_add_length()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_02_8c-example.html#a4">eina_hash_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a3">eina_list_04.c</a>, and <a class="el" href="eina_stringshare_01_8c-example.html#a7">eina_stringshare_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_hash_02_8c-example.html#a4">eina_hash_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a3">eina_list_04.c</a>, <a class="el" href="eina_stringshare_01_8c-example.html#a7">eina_stringshare_01.c</a>, and <a class="el" href="gengrid_example_8c-example.html#a14">gengrid_example.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -237,15 +237,15 @@ Typedefs</h2></td></tr>
 <p>Retrieves an instance of a string with a specific size for use in a program. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The string to retrieve an instance of. </td></tr>
-    <tr><td class="paramname">slen</td><td>The string size (&lt;= strlen(str)). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The string to retrieve an instance of. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">slen</td><td>The string size (&lt;= strlen(str)). </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the string on success, <code>NULL</code> on failure.</dd></dl>
 <p>This function retrieves an instance of <code>str</code>. If <code>str</code> is <code>NULL</code>, then <code>NULL</code> is returned. If <code>str</code> is already stored, it is just returned and its reference counter is increased. Otherwise a duplicated string of <code>str</code> is returned.</p>
 <p>This function does not check string size, but uses the exact given size. This can be used to share_common part of a larger buffer or substring.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd>eina_share_common_add()</dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd>eina_share_common_add() </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_stringshare_01_8c-example.html#a2">eina_stringshare_01.c</a>.</dd>
 </dl>
@@ -269,14 +269,14 @@ Typedefs</h2></td></tr>
 <p>Notes that the given string has lost an instance. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>String the given string.</td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">str</td><td>String the given string.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This function decreases the reference counter associated to <code>str</code> if it exists. If that counter reaches 0, the memory associated to <code>str</code> is freed. If <code>str</code> is <code>NULL</code>, the function returns immediately.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>If the given pointer is not shared, bad things will happen, likely a segmentation fault.</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If the given pointer is not shared, bad things will happen, likely a segmentation fault. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_file_01_8c-example.html#a8">eina_file_01.c</a>, <a class="el" href="eina_hash_02_8c-example.html#a0">eina_hash_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a10">eina_list_04.c</a>, and <a class="el" href="eina_stringshare_01_8c-example.html#a4">eina_stringshare_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a14">ecore_thread_example.c</a>, <a class="el" href="eina_file_01_8c-example.html#a8">eina_file_01.c</a>, <a class="el" href="eina_hash_02_8c-example.html#a0">eina_hash_02.c</a>, <a class="el" href="eina_list_04_8c-example.html#a10">eina_list_04.c</a>, <a class="el" href="eina_stringshare_01_8c-example.html#a4">eina_stringshare_01.c</a>, <a class="el" href="gengrid_example_8c-example.html#a32">gengrid_example.c</a>, and <a class="el" href="web_example_02_8c-example.html#a18">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -296,7 +296,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>Dumps the contents of the share_common. </p>
-<p>This function dumps all strings in the share_common to stdout with a DDD: prefix per line and a memory usage summary.</p>
+<p>This function dumps all strings in the share_common to stdout with a DDD: prefix per line and a memory usage summary. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -335,15 +335,15 @@ Typedefs</h2></td></tr>
 <p>Retrieves an instance of a string for use in a program from a format string with size limitation. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">len</td><td>The length of the format string to use </td></tr>
-    <tr><td class="paramname">fmt</td><td>The format string to retrieve an instance of. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>The length of the format string to use </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The format string to retrieve an instance of. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the string on success, <code>NULL</code> on failure.</dd></dl>
 <p>This function retrieves an instance of <code>fmt</code> limited by <code>len</code>. If <code>fmt</code> is <code>NULL</code> or <code>len</code> is &lt; 1, then <code>NULL</code> is returned. If the resulting string is already stored, it is returned and its reference counter is increased. Otherwise a duplicated string is returned.</p>
 <p><code>len</code> length of the format string will be used. To use the entire format string, use <a class="el" href="group__Eina__Stringshare__Group.html#ga8424580f5de46fea4ccd18cef3a402f7" title="Retrieves an instance of a string for use in a program from a format string.">eina_stringshare_printf()</a> instead.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#ga8424580f5de46fea4ccd18cef3a402f7" title="Retrieves an instance of a string for use in a program from a format string.">eina_stringshare_printf()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#ga8424580f5de46fea4ccd18cef3a402f7" title="Retrieves an instance of a string for use in a program from a format string.">eina_stringshare_printf()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_stringshare_01_8c-example.html#a6">eina_stringshare_01.c</a>.</dd>
 </dl>
@@ -377,14 +377,14 @@ Typedefs</h2></td></tr>
 <p>Retrieves an instance of a string for use in a program from a format string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">fmt</td><td>The NULL-terminated format string to retrieve an instance of. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The NULL-terminated format string to retrieve an instance of. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the string on success, <code>NULL</code> on failure.</dd></dl>
 <p>This function retrieves an instance of <code>fmt</code>. If <code>fmt</code> is <code>NULL</code>, then <code>NULL</code> is returned. If <code>fmt</code> is already stored, it is just returned and its reference counter is increased. Otherwise a duplicated string is returned.</p>
 <p>The format string <code>fmt</code> must be NULL-terminated ('\0') and its full length will be used. To use part of the format string or non-null terminated, use <a class="el" href="group__Eina__Stringshare__Group.html#ga5940b3549d3b756b5388e8374078742b" title="Retrieves an instance of a string for use in a program from a format string with size limitation...">eina_stringshare_nprintf()</a> instead.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#ga5940b3549d3b756b5388e8374078742b" title="Retrieves an instance of a string for use in a program from a format string with size limitation...">eina_stringshare_nprintf()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#ga5940b3549d3b756b5388e8374078742b" title="Retrieves an instance of a string for use in a program from a format string with size limitation...">eina_stringshare_nprintf()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_stringshare_01_8c-example.html#a5">eina_stringshare_01.c</a>.</dd>
 </dl>
@@ -407,15 +407,15 @@ Typedefs</h2></td></tr>
 <p>Increment references of the given shared string.</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The shared string. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">str</td><td>The shared string. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the string on success, <code>NULL</code> on failure.</dd></dl>
 <p>This is similar to eina_share_common_add(), but it's faster since it will avoid lookups if possible, but on the down side it requires the parameter to be shared string. In other words, it must be the return of a previous call to one of the stringshare functions.</p>
-<p>There is no unref since this is the work of eina_share_common_del().</p>
+<p>There is no unref since this is the work of eina_share_common_del(). </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_stringshare_01_8c-example.html#a8">eina_stringshare_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_stringshare_01_8c-example.html#a8">eina_stringshare_01.c</a>, and <a class="el" href="web_example_02_8c-example.html#a17">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -437,15 +437,15 @@ Typedefs</h2></td></tr>
 <p>Notes that the given string <b>must</b> be shared. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>The shared string to know the length. It is safe to give <code>NULL</code>, in that case <code>0</code> is returned. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>The shared string to know the length. It is safe to give <code>NULL</code>, in that case <code>0</code> is returned. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The length of a shared string.</dd></dl>
 <p>This function is a cheap way to known the length of a shared string.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>If the given pointer is not shared, bad things will happen, likely a segmentation fault. If in doubt, try strlen().</dd></dl>
+<dl class="note"><dt><b>Note:</b></dt><dd>If the given pointer is not shared, bad things will happen, likely a segmentation fault. If in doubt, try strlen(). </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="eina_stringshare_01_8c-example.html#a3">eina_stringshare_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="ecore_thread_example_8c-example.html#a15">ecore_thread_example.c</a>, and <a class="el" href="eina_stringshare_01_8c-example.html#a3">eina_stringshare_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -477,15 +477,15 @@ Typedefs</h2></td></tr>
 <p>Retrieves an instance of a string for use in a program from a format string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">fmt</td><td>The NULL-terminated format string to retrieve an instance of. </td></tr>
-    <tr><td class="paramname">args</td><td>The va_args for <code>fmt</code> </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fmt</td><td>The NULL-terminated format string to retrieve an instance of. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">args</td><td>The va_args for <code>fmt</code> </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to an instance of the string on success, <code>NULL</code> on failure.</dd></dl>
 <p>This function retrieves an instance of <code>fmt</code> with <code>args</code>. If <code>fmt</code> is <code>NULL</code>, then <code>NULL</code> is returned. If <code>fmt</code> with <code>args</code> is already stored, it is just returned and its reference counter is increased. Otherwise a duplicated string is returned.</p>
 <p>The format string <code>fmt</code> must be NULL-terminated ('\0') and its full length will be used. To use part of the format string or non-null terminated, use <a class="el" href="group__Eina__Stringshare__Group.html#ga5940b3549d3b756b5388e8374078742b" title="Retrieves an instance of a string for use in a program from a format string with size limitation...">eina_stringshare_nprintf()</a> instead.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#ga5940b3549d3b756b5388e8374078742b" title="Retrieves an instance of a string for use in a program from a format string with size limitation...">eina_stringshare_nprintf()</a></dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#ga5940b3549d3b756b5388e8374078742b" title="Retrieves an instance of a string for use in a program from a format string with size limitation...">eina_stringshare_nprintf()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -508,13 +508,13 @@ Typedefs</h2></td></tr>
 <p>Adds a new temporary string based on the input string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>This is the input stringthat is copied into the temp string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>This is the input string that is copied into the temp string. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the tmp string that is a standard C string.</dd></dl>
 <p>When you add a temporary string (tmpstr) it is expected to have a very short lifespan, and at any one time only a few of these are intended to exist. This is not intended for longer term storage of strings. The intended use is the ability to safely pass strings as return values from functions directly into parameters of new functions and then have the string be cleaned up automatically by the caller.</p>
-<p>If <code>str</code> is NULL, or no memory space exists to store the tmpstr, then NULL will be returned, otherwise a valid string pointer will be returned that you can treat as any other C string (eg strdup(tmpstr) or printf("%s\n", tmpstr) etc.). This string should be considered read-only and immutable, and when you are done with the string you should delete it with <a class="el" href="group__Eina__Stringshare__Group.html#ga9b921f0d5d8e20ab1186bd4d0784f33e" title="Deletes the temporary string if it is one, or ignore it if it is not.">eina_tmpstr_del()</a>.</p>
+<p>If <code>str</code> is NULL, or no memory space exists to store the tmpstr, then NULL will be returned, otherwise a valid string pointer will be returned that you can treat as any other C string (e.g. strdup(tmpstr) or printf("%s\n", tmpstr) etc.). This string should be considered read-only and immutable, and when you are done with the string you should delete it with <a class="el" href="group__Eina__Stringshare__Group.html#ga9b921f0d5d8e20ab1186bd4d0784f33e" title="Deletes the temporary string if it is one, or ignore it if it is not.">eina_tmpstr_del()</a>.</p>
 <p>Example usage:</p>
 <div class="fragment"><pre class="fragment"> <a class="code" href="group__Eina__Stringshare__Group.html#gae8d53f367d5da5acfd19af6c235831d5">Eina_Tmpstr</a> *my_homedir(<span class="keywordtype">void</span>) {
    <span class="keywordflow">return</span> <a class="code" href="group__Eina__Stringshare__Group.html#ga8464dc2fee12160b261ca130bcf160f8" title="Adds a new temporary string based on the input string.">eina_tmpstr_add</a>(<a class="code" href="group__Eina__Tools__Group.html#gaaa4c9c9269f1cc1508ca0a785dec8c1c" title="Returns the content of the environment referred by HOME on this system.">eina_environment_home_get</a>());
@@ -531,7 +531,7 @@ Typedefs</h2></td></tr>
 </pre></div><dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#ga9b921f0d5d8e20ab1186bd4d0784f33e" title="Deletes the temporary string if it is one, or ignore it if it is not.">eina_tmpstr_del()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Stringshare__Group.html#ga7f19819d1c6acdb814f57e9b853eacdb" title="Adds a new temporary string based on the input string and length.">eina_tmpstr_add_length()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -564,19 +564,19 @@ Typedefs</h2></td></tr>
 <p>Adds a new temporary string based on the input string and length. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>This is the input string that is copied into the temp string. </td></tr>
-    <tr><td class="paramname">length</td><td>This is the maximum length and the allocated length of the temp string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">str</td><td>This is the input string that is copied into the temp string. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>This is the maximum length and the allocated length of the temp string. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A pointer to the tmp string that is a standard C string.</dd></dl>
 <p>When you add a temporary string (tmpstr) it is expected to have a very short lifespan, and at any one time only a few of these are intended to exist. This is not intended for longer term storage of strings. The intended use is the ability to safely pass strings as return values from functions directly into parameters of new functions and then have the string be cleaned up automatically by the caller.</p>
-<p>If <code>str</code> is NULL, or no memory space exists to store the tmpstr, then NULL will be returned, otherwise a valid string pointer will be returned that you can treat as any other C string (eg strdup(tmpstr) or printf("%s\n", tmpstr) etc.). This string should be considered read-only and immutable, and when you are done with the string you should delete it with <a class="el" href="group__Eina__Stringshare__Group.html#ga9b921f0d5d8e20ab1186bd4d0784f33e" title="Deletes the temporary string if it is one, or ignore it if it is not.">eina_tmpstr_del()</a>.</p>
+<p>If <code>str</code> is NULL, or no memory space exists to store the tmpstr, then NULL will be returned, otherwise a valid string pointer will be returned that you can treat as any other C string (e.g. strdup(tmpstr) or printf("%s\n", tmpstr) etc.). This string should be considered read-only and immutable, and when you are done with the string you should delete it with <a class="el" href="group__Eina__Stringshare__Group.html#ga9b921f0d5d8e20ab1186bd4d0784f33e" title="Deletes the temporary string if it is one, or ignore it if it is not.">eina_tmpstr_del()</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>If the length is greater than the actual string, but still '\0' terminated, there won't be any crash and the string will be correct, but eina_tmpstr_len will return an erroneous length. So if you want to have the correct length always call eina_tmpstr_add_length with length == strlen(str). </dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#ga9b921f0d5d8e20ab1186bd4d0784f33e" title="Deletes the temporary string if it is one, or ignore it if it is not.">eina_tmpstr_del()</a> </dd>
 <dd>
 <a class="el" href="group__Eina__Stringshare__Group.html#ga8464dc2fee12160b261ca130bcf160f8" title="Adds a new temporary string based on the input string.">eina_tmpstr_add()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -599,13 +599,13 @@ Typedefs</h2></td></tr>
 <p>Deletes the temporary string if it is one, or ignore it if it is not. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">tmpstr</td><td>This is any C string pointer, but if it is a tmp string it is freed.</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmpstr</td><td>This is any C string pointer, but if it is a tmp string it is freed.</td></tr>
   </table>
   </dd>
 </dl>
 <p>This will delete the given temporary string <code>tmpstr</code> if it is a valid temporary string, or otherwise it will ignore it and do nothing so this can be used safely with non-temporary strings.</p>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#ga8464dc2fee12160b261ca130bcf160f8" title="Adds a new temporary string based on the input string.">eina_tmpstr_add()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>
@@ -628,13 +628,13 @@ Typedefs</h2></td></tr>
 <p>Returns the length of a temporary string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">tmpstr</td><td>This is any C string pointer, but if it is a tmp string it will return the length faster. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">tmpstr</td><td>This is any C string pointer, but if it is a tmp string it will return the length faster. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The length of the string.</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14.0</dd></dl>
-<dl class="user"><dt><b>Since :</b></dt><dd>3.0 </dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.14.0 </dd></dl>
+<dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -654,7 +654,7 @@ Typedefs</h2></td></tr>
 <div class="memdoc">
 
 <p>**Deprecated** Return the length of a temporary string including the '\0'. </p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000202">Deprecated:</a></b></dt><dd></dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000204">Deprecated:</a></b></dt><dd></dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">tmpstr</td><td>This is any C string pointer, but if it is a tmp string it will return the length faster. </td></tr>
@@ -663,7 +663,7 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The length of the string including the '\0'</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Stringshare__Group.html#ga6cfd6696bd021ad4619d020d12a7df77" title="Returns the length of a temporary string.">eina_tmpstr_len()</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0</dd></dl>
+<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8.0 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
 </div>

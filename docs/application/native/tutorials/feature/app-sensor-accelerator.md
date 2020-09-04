@@ -10,7 +10,7 @@ you need to know whether the device supports the accelerator sensor.
 
 To determine whether the accelerator sensor is supported on the device:
 
-1.  Create a new project in the Tizen Studio with the **Basic UI**
+1.  Create a new project in Tizen Studio with the **Basic UI**
     template, and specify the project name as **SensorAccelerator**.
 
     For more information on how to create a project, see Creating a
@@ -197,23 +197,22 @@ shake the device, and displays the acceleration value on the screen:
         -   The `sensor_create_listener()` function creates an
             event listener. Passing a sensor handle to the first
             parameter returns a listener object to the second parameter.
-        -   The `sensor_listener_set_event_cb()` function specifies a
+        -   The `sensor_listener_set_events_cb()` function specifies a
             callback function to the listener. The parameters follow
-            this order: event listener, interval (in milliseconds),
-            callback function name, and user data.
+            this order: event listener, callback function name, and user data.
         -   The `sensor_listener_start()` function starts the listener.
 
     ```c++
     static void
-    _new_sensor_value(sensor_h sensor, sensor_event_s *sensor_data, void *user_data)
+    _new_sensor_value(sensor_h sensor, sensor_event_s events[], int events_count, void *user_data)
     {
-        if (sensor_data->value_count < 3)
+        if (events[0].value_count < 3)
             return;
         char buf[PATH_MAX];
         appdata_s *ad = (appdata_s*)user_data;
 
         sprintf(buf, "Value -X : %0.1f / Y : %0.1f / Z : %0.1f",
-                sensor_data->values[0], sensor_data->values[1], sensor_data->values[2]);
+                events[0].values[0], events[0].values[1], events[0].values[2]);
         elm_object_text_set(ad->label1, buf);
     }
 
@@ -223,7 +222,8 @@ shake the device, and displays the acceleration value on the screen:
         sensor_error_e err = SENSOR_ERROR_NONE;
         sensor_get_default_sensor(SENSOR_ACCELEROMETER, &sensor_info.sensor);
         err = sensor_create_listener(sensor_info.sensor, &sensor_info.sensor_listener);
-        sensor_listener_set_event_cb(sensor_info.sensor_listener, 100, _new_sensor_value, ad);
+        sensor_listener_set_interval(sensor_info.sensor_listener, 100);
+        sensor_listener_set_events_cb(sensor_info.sensor_listener, _new_sensor_value, ad);
         sensor_listener_start(sensor_info.sensor_listener);
     }
     ```

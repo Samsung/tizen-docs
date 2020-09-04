@@ -164,7 +164,7 @@ You can set the horizontal and vertical align property with the `evas_object_siz
 
 The Tizen platform provides a complex graphical design and layout library called Edje, which provides an abstraction layer between the application code and the interface. You can use Edje in your Tizen applications to create visual elements and control the application layout, look, and feel.
 
-Internally, Edje holds a geometry state machine and a state graph that defines, for example, what is visible, where, at what size, and with what colors. These details are described to Edje using an EDC file. The file can be manually produced with the `Edje_cc` tool by taking a text file (`.edc` file) and "compiling" an output `.edj` file that contains the state graph information, images, and any other needed data. The Tizen Studio complies the EDJ file from the EDC file automatically when you build the application.
+Internally, Edje holds a geometry state machine and a state graph that defines, for example, what is visible, where, at what size, and with what colors. These details are described to Edje using an EDC file. The file can be manually produced with the `Edje_cc` tool by taking a text file (`.edc` file) and "compiling" an output `.edj` file that contains the state graph information, images, and any other needed data. Tizen Studio complies the EDJ file from the EDC file automatically when you build the application.
 
 While creating the EDC file, you set specific element properties to control the scalable behavior of the UI. Before creating a scalable UI using Edje, you must be familiar with various scalability properties and part types described in the following sections.
 
