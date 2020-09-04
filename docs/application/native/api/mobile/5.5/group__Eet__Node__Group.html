@@ -136,6 +136,12 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new struct node.  <a href="#gaeb12c0ea9551e40a7166b749c6c6bfe8"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#ga41236f188c82063c2a4adee126ba98a3">eet_node_struct_child_new</a> (const char *parent, <a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *child)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new struct child node.  <a href="#ga41236f188c82063c2a4adee126ba98a3"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#ga3dbdf6a6c1e9be11b903b95fcb3be252">eet_node_children_get</a> (<a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *node)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a node's child nodes.  <a href="#ga3dbdf6a6c1e9be11b903b95fcb3be252"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#ga9ebb3d45b6eee155c9031b64201b1741">eet_node_next_get</a> (<a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *node)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the next node in a list of nodes.  <a href="#ga9ebb3d45b6eee155c9031b64201b1741"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#gabd9282be2f899ac21876d6129bd5f531">eet_node_parent_get</a> (<a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *node)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the parent node of a node.  <a href="#gabd9282be2f899ac21876d6129bd5f531"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#gae1ee40b2cffcf61ab79779aa2acc4c49">eet_node_list_append</a> (<a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *parent, const char *name, <a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *child)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Appends a "list" node TODO FIX ME.  <a href="#gae1ee40b2cffcf61ab79779aa2acc4c49"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#ga288c8f031e59340d2a38740288cabdfc">eet_node_struct_append</a> (<a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *parent, const char *name, <a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *child)</td></tr>
@@ -144,6 +150,10 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a hash node.  <a href="#ga96581eb1c0c5303b00638e74c0c32cf6"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#gafcf18cb3b30d20b1391598e677fa6824">eet_node_dump</a> (<a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *n, int dumplevel, Eet_Dump_Callback dumpfunc, void *dumpdata)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Dumps a node from an eet encoded data structure into ascii text.  <a href="#gafcf18cb3b30d20b1391598e677fa6824"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#gab1f3ad67f72e0eeeb7239609fb79dcb4">eet_node_type_get</a> (<a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *node)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of a node.  <a href="#gab1f3ad67f72e0eeeb7239609fb79dcb4"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eet__Node__Group.html#gad2239505c961d41fd54ad0c8640d9cfd">Eet_Node_Data</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#gad70ba5eaa74e807745519e9dfefe230f">eet_node_value_get</a> (<a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *node)</td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the node's data.  <a href="#gad70ba5eaa74e807745519e9dfefe230f"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#gaf1432bbde4fd35dc39178582975ce730">eet_node_del</a> (<a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *n)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given node.  <a href="#gaf1432bbde4fd35dc39178582975ce730"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#gaeba60eb09d9611a68b3f3cd1471df4c0">eet_data_node_encode_cipher</a> (<a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *node, const char *cipher_key, int *size_ret)</td></tr>
@@ -154,6 +164,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a node data from an eet file and decodes it using a cipher.  <a href="#gaec398d7219c5cf7165c7b282bd8a2892"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#ga6692d1528e5ae4a08a0ddd00a572cfdb">eet_data_node_write_cipher</a> (<a class="el" href="group__Eet__File__Group.html#ga8d9779184a9870c1a225f1f40c76e8a7">Eet_File</a> *ef, const char *name, const char *cipher_key, <a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *node, int compress)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes node data to the named key in an eet file using a cipher.  <a href="#ga6692d1528e5ae4a08a0ddd00a572cfdb"></a><br/></td></tr>
+<tr><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#ga2d139db21f5749c33e421a5f9755c2a2">eet_node_walk</a> (void *parent, const char *name, <a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *root, <a class="el" href="struct__Eet__Node__Walk.html">Eet_Node_Walk</a> *cb, void *user_data)</td></tr>
 <tr><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">typedef struct _Eet_Node&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a></td></tr>
@@ -462,6 +473,33 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new character node.</dd></dl>
 <p>3.0 </p>
+
+</div>
+</div>
+<a class="anchor" id="ga3dbdf6a6c1e9be11b903b95fcb3be252"></a><!-- doxytag: member="Eet.h::eet_node_children_get" ref="ga3dbdf6a6c1e9be11b903b95fcb3be252" args="(Eet_Node *node)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a>* <a class="el" href="group__Eet__Node__Group.html#ga3dbdf6a6c1e9be11b903b95fcb3be252">eet_node_children_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets a node's child nodes. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>The node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The first child node which contains a pointer to the next child node and the parent. </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.5  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -911,6 +949,33 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="ga9ebb3d45b6eee155c9031b64201b1741"></a><!-- doxytag: member="Eet.h::eet_node_next_get" ref="ga9ebb3d45b6eee155c9031b64201b1741" args="(Eet_Node *node)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a>* <a class="el" href="group__Eet__Node__Group.html#ga9ebb3d45b6eee155c9031b64201b1741">eet_node_next_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the next node in a list of nodes. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>The node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>A node which contains a pointer to the next child node and the parent. </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.5  3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga5393376d33ec0c1f05463067cc581ff8"></a><!-- doxytag: member="Eet.h::eet_node_null_new" ref="ga5393376d33ec0c1f05463067cc581ff8" args="(const char *name)" -->
 <div class="memitem">
 <div class="memproto">
@@ -935,6 +1000,33 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new empty node.</dd></dl>
 <p>3.0 </p>
+
+</div>
+</div>
+<a class="anchor" id="gabd9282be2f899ac21876d6129bd5f531"></a><!-- doxytag: member="Eet.h::eet_node_parent_get" ref="gabd9282be2f899ac21876d6129bd5f531" args="(Eet_Node *node)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a>* <a class="el" href="group__Eet__Node__Group.html#gabd9282be2f899ac21876d6129bd5f531">eet_node_parent_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Gets the parent node of a node. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>The node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The parent node of <code>node</code> </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.5  3.0f(2.3.1) </dd></dl>
 
 </div>
 </div>
@@ -1135,6 +1227,33 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gab1f3ad67f72e0eeeb7239609fb79dcb4"></a><!-- doxytag: member="Eet.h::eet_node_type_get" ref="gab1f3ad67f72e0eeeb7239609fb79dcb4" args="(Eet_Node *node)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="group__Eet__Node__Group.html#gab1f3ad67f72e0eeeb7239609fb79dcb4">eet_node_type_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the type of a node. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>The node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The node's type (EET_T_$TYPE) </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.5  3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga92691a15c750bbca8b8be45ed549c80e"></a><!-- doxytag: member="Eet.h::eet_node_unsigned_char_new" ref="ga92691a15c750bbca8b8be45ed549c80e" args="(const char *name, unsigned char uc)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1287,6 +1406,33 @@ Typedefs</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="gad70ba5eaa74e807745519e9dfefe230f"></a><!-- doxytag: member="Eet.h::eet_node_value_get" ref="gad70ba5eaa74e807745519e9dfefe230f" args="(Eet_Node *node)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__Eet__Node__Group.html#gad2239505c961d41fd54ad0c8640d9cfd">Eet_Node_Data</a>* <a class="el" href="group__Eet__Node__Group.html#gad70ba5eaa74e807745519e9dfefe230f">eet_node_value_get</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+
+<p>Returns the node's data. </p>
+<dl class="params"><dt><b>Parameters:</b></dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>The node </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="return"><dt><b>Returns:</b></dt><dd>The data contained in the node </dd></dl>
+<dl class="since"><dt><b>Since:</b></dt><dd>1.5  3.0f(2.3.1) </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ga805b8882b91c671c93cda9974fb636a0"></a><!-- doxytag: member="Eet.h::eet_node_var_array_new" ref="ga805b8882b91c671c93cda9974fb636a0" args="(const char *name, Eina_List *nodes)" -->
 <div class="memitem">
 <div class="memproto">
@@ -1322,6 +1468,52 @@ Typedefs</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>A new variable array node.</dd></dl>
 <p>3.0 </p>
+
+</div>
+</div>
+<a class="anchor" id="ga2d139db21f5749c33e421a5f9755c2a2"></a><!-- doxytag: member="Eet.h::eet_node_walk" ref="ga2d139db21f5749c33e421a5f9755c2a2" args="(void *parent, const char *name, Eet_Node *root, Eet_Node_Walk *cb, void *user_data)" -->
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* <a class="el" href="group__Eet__Node__Group.html#ga2d139db21f5749c33e421a5f9755c2a2">eet_node_walk</a> </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>parent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a> *&#160;</td>
+          <td class="paramname"><em>root</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct__Eet__Node__Walk.html">Eet_Node_Walk</a> *&#160;</td>
+          <td class="paramname"><em>cb</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>user_data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Walks trees of <a class="el" href="group__Eet__Node__Group.html#gaf589647d3f0fb3e3d03a5c42cd23f51c">Eet_Node</a>.  3.0f(2.3.1) </p>
 
 </div>
 </div>

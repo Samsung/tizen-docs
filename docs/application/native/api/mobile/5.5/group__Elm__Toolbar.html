@@ -98,9 +98,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="toolbar_inheritance_tree.png" alt="toolbar_inheritance_tree.png"/>
 </div>
  <div class="image">
-<img src="img/widget/toolbar/preview-00.png" alt="preview-00.png"/>
-</div>
- <div class="image">
 <img src="toolbar.png" alt="toolbar.png"/>
 </div>
  <p>A toolbar is a widget that displays a list of items inside a box. It can be scrollable, show a menu with items that don't fit to toolbar size or even crop them.</p>
@@ -1076,7 +1073,7 @@ Defines</h2></td></tr>
 <p>Control the item displaying mode of a given toolbar widget <code>obj</code>. </p>
 <p>The toolbar won't scroll under #ELM_TOOLBAR_SHRINK_NONE mode, but it will enforce a minimum size, so that all the items will fit inside it. It won't scroll and won't show the items that don't fit under #ELM_TOOLBAR_SHRINK_HIDE mode. Finally, it'll scroll under #ELM_TOOLBAR_SHRINK_SCROLL mode, and it will create a button to aggregate items which didn't fit with the #ELM_TOOLBAR_SHRINK_MENU mode.</p>
 <p>If shrink mode is changed, Toolbar will send one of the following signal to each item for informing the current shrink mode. "elm,state,shrink,default" "elm,state,shrink,hide" "elm,state,shrink,scroll" "elm,state,shrink,menu" "elm,state,shrink,expand"</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>This function's behavior will clash with those of <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a>, so use either one of them, but not both.</dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This function's behavior will clash with those of <a class="el" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a>, so use either one of them, but not both.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object.</td></tr>
@@ -1115,7 +1112,7 @@ Defines</h2></td></tr>
 <p>Control the item displaying mode of a given toolbar widget <code>obj</code>. </p>
 <p>The toolbar won't scroll under #ELM_TOOLBAR_SHRINK_NONE mode, but it will enforce a minimum size, so that all the items will fit inside it. It won't scroll and won't show the items that don't fit under #ELM_TOOLBAR_SHRINK_HIDE mode. Finally, it'll scroll under #ELM_TOOLBAR_SHRINK_SCROLL mode, and it will create a button to aggregate items which didn't fit with the #ELM_TOOLBAR_SHRINK_MENU mode.</p>
 <p>If shrink mode is changed, Toolbar will send one of the following signal to each item for informing the current shrink mode. "elm,state,shrink,default" "elm,state,shrink,hide" "elm,state,shrink,scroll" "elm,state,shrink,menu" "elm,state,shrink,expand"</p>
-<dl class="warning"><dt><b>Warning:</b></dt><dd>This function's behavior will clash with those of <a class="el" href="group__Elm__Scroller.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a>, so use either one of them, but not both.</dd></dl>
+<dl class="warning"><dt><b>Warning:</b></dt><dd>This function's behavior will clash with those of <a class="el" href="group__Elm__Scroller__Group.html#ga4105c0d6adca64ed3d38e7e4116b09e4" title="Set the scrollbar visibility policy.">elm_scroller_policy_set()</a>, so use either one of them, but not both.</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">obj</td><td>The object. </td></tr>
@@ -1216,7 +1213,7 @@ Defines</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd>a new toolbar widget handle or <code>NULL</code>, on errors.</dd></dl>
 <p>This function inserts a new toolbar widget on the canvas. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="toolbar_example_01_8c-example.html#a11">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a12">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a11">toolbar_example_03.c</a>, and <a class="el" href="web_example_02_8c-example.html#a36">web_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="toolbar_example_01_8c-example.html#a13">toolbar_example_01.c</a>, <a class="el" href="toolbar_example_02_8c-example.html#a14">toolbar_example_02.c</a>, <a class="el" href="toolbar_example_03_8c-example.html#a13">toolbar_example_03.c</a>, and <a class="el" href="web_example_02_8c-example.html#a47">web_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>

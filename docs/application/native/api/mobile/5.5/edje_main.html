@@ -164,18 +164,18 @@ Introductory Example</h2>
 {
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *edje;
 
-   edje = edje_object_add(canvas);
+   edje = <a class="code" href="group__Edje__Object__Group.html#ga2fb20b8db9d2c4384cca17e2f7637c40" title="Instantiates a new Edje object.">edje_object_add</a>(canvas);
    <span class="keywordflow">if</span> (!edje)
      {
         <a class="code" href="group__Eina__Log__Group.html#ga5b50827f35399f9ff87f5d9d817c764a">EINA_LOG_CRIT</a>(<span class="stringliteral">&quot;could not create edje object!&quot;</span>);
         <span class="keywordflow">return</span> NULL;
      }
 
-   <span class="keywordflow">if</span> (!edje_object_file_set(edje, PACKAGE_DATA_DIR<span class="stringliteral">&quot;/edje_example.edj&quot;</span>,
+   <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Group.html#gaec1edd24b5bd8e82823759a8dddc1996" title="Sets the EDJ file (and group within it) to load an Edje object&#39;s contents from.">edje_object_file_set</a>(edje, PACKAGE_DATA_DIR<span class="stringliteral">&quot;/edje_example.edj&quot;</span>,
                              <span class="stringliteral">&quot;my_group&quot;</span>))
      {
-        <span class="keywordtype">int</span> err = edje_object_load_error_get(edje);
-        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = edje_load_error_str(err);
+        <span class="keywordtype">int</span> err = <a class="code" href="group__Edje__Object__Group.html#ga4d244ed455a48b9cbf286b6d8b802df3" title="Gets the (last) file loading error for a given Edje object.">edje_object_load_error_get</a>(edje);
+        <span class="keyword">const</span> <span class="keywordtype">char</span> *errmsg = <a class="code" href="group__Edje__Object__Group.html#ga034465c2de4ab495802da20f332c386e" title="Converts the given Edje file load error code into a string describing it in English.">edje_load_error_str</a>(err);
         <a class="code" href="group__Eina__Log__Group.html#ga2e33caeeeb6051526c01b7fea4d6c91b">EINA_LOG_ERR</a>(<span class="stringliteral">&quot;could not load &#39;my_group&#39; from edje_example.edj: %s&quot;</span>,
                      errmsg);
 
@@ -185,15 +185,15 @@ Introductory Example</h2>
 
    <span class="keywordflow">if</span> (text)
      {
-        <span class="keywordflow">if</span> (!edje_object_part_text_set(edje, <span class="stringliteral">&quot;text&quot;</span>, text))
+        <span class="keywordflow">if</span> (!<a class="code" href="group__Edje__Object__Part.html#gafd2241781aedc44a0f4cdc63bb029784" title="Sets a given text to an Edje object TEXT or TEXTBLOCK parts.">edje_object_part_text_set</a>(edje, <span class="stringliteral">&quot;text&quot;</span>, text))
           {
              <a class="code" href="group__Eina__Log__Group.html#ga21c44f66537533db16ee8f475ae2ae70">EINA_LOG_WARN</a>(<span class="stringliteral">&quot;could not set the text. &quot;</span>
                            <span class="stringliteral">&quot;Maybe part &#39;text&#39; does not exist?&quot;</span>);
           }
      }
 
-   evas_object_move(edje, 0, 0);
-   evas_object_resize(edje, WIDTH, HEIGHT);
+   <a class="code" href="group__Evas__Object__Group.html#ga02da8091bbac768b8e86c7b74b2a94f9">evas_object_move</a>(edje, 0, 0);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(edje, WIDTH, HEIGHT);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(edje);
    <span class="keywordflow">return</span> edje;
 }
@@ -208,7 +208,7 @@ Introductory Example</h2>
    <a class="code" href="group__Ecore__Evas__Group.html#gad36db3002bbf891d28af0d6b22dda1b5" title="Inits the Ecore_Evas system.">ecore_evas_init</a>();
    <a class="code" href="group__Edje__General__Group.html#ga1c9c6594f38023c29fbfb2d0c8c675db" title="Initializes the Edje library.">edje_init</a>();
 
-   window = <a class="code" href="group__Ecore__Evas__Group.html#gac3d6e2809d0c8811fc9958de24b68167" title="Creates a new Ecore_Evas based on engine name and common parameters.">ecore_evas_new</a>(NULL, 0, 0, WIDTH, HEIGHT, NULL);
+   window = ecore_evas_new(NULL, 0, 0, WIDTH, HEIGHT, NULL);
    <span class="keywordflow">if</span> (!window)
      {
         <a class="code" href="group__Eina__Log__Group.html#ga5b50827f35399f9ff87f5d9d817c764a">EINA_LOG_CRIT</a>(<span class="stringliteral">&quot;could not create window.&quot;</span>);
