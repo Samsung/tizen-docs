@@ -174,6 +174,127 @@ If you need to stop the data stream or select the data flow with multiple stream
     pipe.Start();
     ```
 
+## Custom Filter
+
+For your convenience, NNStreamer provides an interface for processing the tensor data with the `custom-easy` framework. After registering the user-defined callback method with the input and the output tensor information, NNStreamer can manipulate tensor data in the pipeline without an independent shared object. Since the callback method works as **filter** in the pipeline, it is named as `Custom Filter`.
+
+Note that the Custom Filter on the dotnet layer shows relatively lower performance than those of the native layer because of marshaling and unmarshalling between the dotnet and native layer. If your application is mission-critical, then use the native Custom Filter.
+
+1. Define Custom Filter and register it.
+
+    Before you use the Custom Filter in the pipeline, you have to register the Custom Filter with input and output tensor information, and its name:
+
+    ```C#
+    /* Define the Custom Filter method */
+    private TensorsData InvokePassThrough(TensorsData inData)
+    {
+        /* Just Pass through without modification */
+        return inData;
+    }
+
+    ...
+
+    /* Define input and output tensor information */
+    TensorsInfo in_info = new TensorsInfo();
+    in_info.AddTensorInfo(TensorType.UInt8, new int[4] { 4, 1, 1, 1 });
+
+    TensorsInfo out_info = new TensorsInfo();
+    out_info.AddTensorInfo(TensorType.UInt8, new int[4] { 4, 1, 1, 1 });
+
+    /* Register the Custom Filter with the name 'custom-passthrough' */
+    CustomFilter customFilter = CustomFilter.Create("custom-passthrough", in_info, out_info, InvokePassThrough);
+    ```
+
+2. Construct a pipeline with Custom Filter.
+
+    After registering the Custom Filter, you can use it when constructing the pipeline:
+
+    ```C#
+    /* framework is 'custom-easy' and registered name is used */
+    string desc = "appsrc name=srcx ! other/tensor,dimension=(string)4:1:1:1,type=(string)uint8,framerate=(fraction)0/1 ! " +
+                    "tensor_filter framework=custom-easy model=" + customFilter.Name + " ! tensor_sink name=sinkx";
+
+    /* Construct a pipeline and get the source node */
+    var pipeline = new Pipeline(desc);
+    var src_node = pipeline.GetSource("srcx");
+
+    /* Make an input data */
+    var buffer_in = new byte[] { 1, 2, 3, 4 };
+    var in_data = in_info.GetTensorsData();
+    in_data.SetTensorData(0, buffer_in);
+
+    /* Start the pipeline and feed an input data */
+    pipeline.Start();
+    src_node.Input(in_data);
+    ```
+
+## Get and Set the property of a node
+
+All elements in the pipeline have specific properties and can be manipulated to control the operation of a pipeline. To get and set the property value, you have to get the element node in the pipeline by calling `GetNormal()` method:
+
+```C#
+string desc = "videotestsrc name=vsrc is-live=true ! videoconvert ! videoscale name=vscale ! " +
+              "video/x-raw,format=RGBx,width=224,height=224,framerate=60/1 ! tensor_converter ! " +
+              "valve name=valvex ! input-selector name=is01 ! tensor_sink name=sinkx";
+
+/* Construct the pipeline */
+var pipeline = new Pipeline(desc);
+
+/* Get the videoscale node */
+var vscale_node = pipeline.GetNormal("vscale");
+```
+
+After getting the node, you can set and get the value of the specific property:
+
+```C#
+/* Set the value of the property 'sharpness' */
+vscale_node.SetValue("sharpness", 0.72);
+
+/* Get the value of the property 'sharpness' */
+double retSharpness;
+vscale_node.GetValue("sharpness", out retSharpness);
+
+/* Get the value of the property 'sharpness' with generic method */
+retSharpness = vscale_node.GetValue<double>("sharpness");
+```
+
+To figure out the property information of the target element, you can run `gst-inspect-1.0` command on your device as follows:
+```text
+$ gst-inspect-1.0 videoscale
+...
+Element Properties:
+  name                : The name of the object
+                        flags: readable, writable
+                        String. Default: "videoscale0"
+  parent              : The parent of the object
+                        flags: readable, writable
+                        Object of type "GstObject"
+  qos                 : Handle Quality-of-Service events
+                        flags: readable, writable
+                        Boolean. Default: true
+  method              : method
+                        flags: readable, writable
+                        Enum "GstVideoScaleMethod" Default: 1, "bilinear"
+                           (0): nearest-neighbour - Nearest Neighbour
+                           (1): bilinear         - Bilinear (2-tap)
+                           (2): 4-tap            - 4-tap Sinc
+                           (3): lanczos          - Lanczos
+                           (4): bilinear2        - Bilinear (multi-tap)
+                           (5): sinc             - Sinc (multi-tap)
+                           (6): hermite          - Hermite (multi-tap)
+                           (7): spline           - Spline (multi-tap)
+                           (8): catrom           - Catmull-Rom (multi-tap)
+                           (9): mitchell         - Mitchell (multi-tap)
+  add-borders         : Add black borders if necessary to keep the display aspect ratio
+                        flags: readable, writable
+                        Boolean. Default: true
+  sharpness           : Sharpness of filter
+                        flags: readable, writable
+                        Double. Range:             0.5 -             1.5 Default:               1
+  ...
+```
+
+
 ## Related information
 - Dependencies
   - Tizen 6.0 and Higher
