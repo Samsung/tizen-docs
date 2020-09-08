@@ -52,19 +52,19 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 <li>
                     1.3. <a href="#PedometerStepStatus">PedometerStepStatus</a>
 </li>
-<li>
+<li class="deprecated">
                     1.4. <a href="#ActivityRecognitionType">ActivityRecognitionType</a>
 </li>
-<li>
+<li class="deprecated">
                     1.5. <a href="#ActivityAccuracy">ActivityAccuracy</a>
 </li>
 <li>
                     1.6. <a href="#SleepStatus">SleepStatus</a>
 </li>
-<li>
+<li class="deprecated">
                     1.7. <a href="#GestureType">GestureType</a>
 </li>
-<li>
+<li class="deprecated">
                     1.8. <a href="#GestureEvent">GestureEvent</a>
 </li>
 </ul>
@@ -100,7 +100,7 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 </li>
 <li>2.15. <a href="#HumanActivityMonitorOption">HumanActivityMonitorOption</a>
 </li>
-<li>2.16. <a href="#HumanActivityRecognitionData">HumanActivityRecognitionData</a>
+<li class="deprecated">2.16. <a href="#HumanActivityRecognitionData">HumanActivityRecognitionData</a>
 </li>
 <li>2.17. <a href="#HumanActivityRecorderData">HumanActivityRecorderData</a>
 </li>
@@ -112,7 +112,7 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 </li>
 <li>2.21. <a href="#HumanActivityRecorderPressureData">HumanActivityRecorderPressureData</a>
 </li>
-<li>2.22. <a href="#GestureData">GestureData</a>
+<li class="deprecated">2.22. <a href="#GestureData">GestureData</a>
 </li>
 <li class="deprecated">2.23. <a href="#StressMonitorDataRange">StressMonitorDataRange</a>
 </li>
@@ -120,7 +120,7 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 </li>
 <li>2.25. <a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a>
 </li>
-<li>2.26. <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a>
+<li class="deprecated">2.26. <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a>
 </li>
 <li class="deprecated">2.27. <a href="#StressMonitorCallback">StressMonitorCallback</a>
 </li>
@@ -151,14 +151,9 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 <div>void <a href="#HumanActivityMonitorManager::stop">stop</a> (<a href="#HumanActivityType">HumanActivityType</a> type)</div>
 <div>void <a href="#HumanActivityMonitorManager::setAccumulativePedometerListener">setAccumulativePedometerListener</a> (<a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> changeCallback)</div>
 <div>void <a href="#HumanActivityMonitorManager::unsetAccumulativePedometerListener">unsetAccumulativePedometerListener</a> ()</div>
-<div>long <a href="#HumanActivityMonitorManager::addActivityRecognitionListener">addActivityRecognitionListener</a> (<a href="#ActivityRecognitionType">ActivityRecognitionType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>void <a href="#HumanActivityMonitorManager::removeActivityRecognitionListener">removeActivityRecognitionListener</a> (long listenerId, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#HumanActivityMonitorManager::startRecorder">startRecorder</a> (<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, optional <a href="#HumanActivityRecorderOption">HumanActivityRecorderOption</a> option)</div>
 <div>void <a href="#HumanActivityMonitorManager::stopRecorder">stopRecorder</a> (<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type)</div>
 <div>void <a href="#HumanActivityMonitorManager::readRecorderData">readRecorderData</a> (<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, <a href="#HumanActivityRecorderQuery">HumanActivityRecorderQuery</a>? query, <a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
-<div>boolean <a href="#HumanActivityMonitorManager::isGestureSupported">isGestureSupported</a> (<a href="#GestureType">GestureType</a> type)</div>
-<div>long <a href="#HumanActivityMonitorManager::addGestureRecognitionListener">addGestureRecognitionListener</a> (<a href="#GestureType">GestureType</a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional boolean? alwaysOn)</div>
-<div>void <a href="#HumanActivityMonitorManager::removeGestureRecognitionListener">removeGestureRecognitionListener</a> (long watchId)</div>
 </td>
 </tr>
 <tr>
@@ -210,10 +205,6 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 <td></td>
 </tr>
 <tr>
-<td><a href="#HumanActivityRecognitionData">HumanActivityRecognitionData</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="#HumanActivityRecorderData">HumanActivityRecorderData</a></td>
 <td></td>
 </tr>
@@ -234,20 +225,12 @@ For more information about how to use Human Activity Monitor API, see <a href="/
 <td></td>
 </tr>
 <tr>
-<td><a href="#GestureData">GestureData</a></td>
-<td></td>
-</tr>
-<tr>
 <td><a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a></td>
 <td><div>void <a href="#HumanActivityMonitorSuccessCallback::onsuccess">onsuccess</a> (optional <a href="#HumanActivityData">HumanActivityData</a>? humanactivitydata)</div></td>
 </tr>
 <tr>
 <td><a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a></td>
 <td><div>void <a href="#HumanActivityReadRecorderSuccessCallback::onsuccess">onsuccess</a> (<a href="#HumanActivityRecorderData">HumanActivityRecorderData</a>[] humanactivitydata)</div></td>
-</tr>
-<tr>
-<td><a href="#GestureRecognitionCallback">GestureRecognitionCallback</a></td>
-<td><div>void <a href="#GestureRecognitionCallback::onsuccess">onsuccess</a> (<a href="#GestureData">GestureData</a> data)</div></td>
 </tr>
 </tbody>
 </table>
@@ -341,12 +324,15 @@ UNKNOWN - The user's movement type is uncertain            </li>
  <em>UNKNOWN</em> is supported since Tizen 3.0
           </p>
 </div>
-<div class="enum" id="ActivityRecognitionType">
+<div class="enum deprecated" id="ActivityRecognitionType">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::ActivityRecognitionType"></a><h3>1.4. ActivityRecognitionType</h3>
 <div class="brief">
  Specifies the supported activity recognition types.
           </div>
-<pre class="webidl prettyprint">  enum ActivityRecognitionType { "STATIONARY", "WALKING", "RUNNING", "IN_VEHICLE" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum ActivityRecognitionType { "STATIONARY", "WALKING", "RUNNING", "IN_VEHICLE" };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -366,12 +352,15 @@ IN_VEHICLE - The in-vehicle activity recognition type            </li>
           </ul>
          </div>
 </div>
-<div class="enum" id="ActivityAccuracy">
+<div class="enum deprecated" id="ActivityAccuracy">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::ActivityAccuracy"></a><h3>1.5. ActivityAccuracy</h3>
 <div class="brief">
  Specified the degree of the accuracy.
           </div>
-<pre class="webidl prettyprint">  enum ActivityAccuracy { "LOW", "MEDIUM", "HIGH" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum ActivityAccuracy { "LOW", "MEDIUM", "HIGH" };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -424,13 +413,16 @@ Timestamp: 1456735296123
 </pre>
 </div>
 </div>
-<div class="enum" id="GestureType">
+<div class="enum deprecated" id="GestureType">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureType"></a><h3>1.7. GestureType</h3>
 <div class="brief">
  Specifies the gesture types.
           </div>
-<pre class="webidl prettyprint">  enum GestureType { "GESTURE_DOUBLE_TAP", "GESTURE_MOVE_TO_EAR", "GESTURE_NO_MOVE", "GESTURE_PICK_UP", "GESTURE_SHAKE", "GESTURE_SNAP",
-    "GESTURE_TILT", "GESTURE_TURN_FACE_DOWN", "GESTURE_WRIST_UP" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum GestureType { "GESTURE_DOUBLE_TAP", "GESTURE_MOVE_TO_EAR", "GESTURE_NO_MOVE", "GESTURE_PICK_UP", "GESTURE_SHAKE", "GESTURE_SNAP",
+    "GESTURE_TILT", "GESTURE_TURN_FACE_DOWN", "GESTURE_WRIST_UP" };</span></pre>
 <p><span class="version">Since: </span>
  4.0
           </p>
@@ -457,13 +449,16 @@ GESTURE_WRIST_UP - The wearable device is moved and faced up            </li>
           </ul>
          </div>
 </div>
-<div class="enum" id="GestureEvent">
+<div class="enum deprecated" id="GestureEvent">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureEvent"></a><h3>1.8. GestureEvent</h3>
 <div class="brief">
  Specifies the gesture events.
           </div>
-<pre class="webidl prettyprint">  enum GestureEvent { "GESTURE_EVENT_DETECTED", "GESTURE_SHAKE_DETECTED", "GESTURE_SHAKE_FINISHED", "GESTURE_SNAP_X_NEGATIVE",
-    "GESTURE_SNAP_X_POSITIVE", "GESTURE_SNAP_Y_NEGATIVE", "GESTURE_SNAP_Y_POSITIVE", "GESTURE_SNAP_Z_NEGATIVE", "GESTURE_SNAP_Z_POSITIVE" };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  enum GestureEvent { "GESTURE_EVENT_DETECTED", "GESTURE_SHAKE_DETECTED", "GESTURE_SHAKE_FINISHED", "GESTURE_SNAP_X_NEGATIVE",
+    "GESTURE_SNAP_X_POSITIVE", "GESTURE_SNAP_Y_NEGATIVE", "GESTURE_SNAP_Y_POSITIVE", "GESTURE_SNAP_Z_NEGATIVE", "GESTURE_SNAP_Z_POSITIVE" };</span></pre>
 <p><span class="version">Since: </span>
  4.0
           </p>
@@ -532,19 +527,19 @@ The <em>tizen.humanactivitymonitor</em> object allows access to the human activi
     void stop(<a href="#HumanActivityType">HumanActivityType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setAccumulativePedometerListener(<a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetAccumulativePedometerListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addActivityRecognitionListener(<a href="#ActivityRecognitionType">ActivityRecognitionType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> listener,
+<span class="nocode deprecated">    long addActivityRecognitionListener(<a href="#ActivityRecognitionType">ActivityRecognitionType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> listener,
                                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeActivityRecognitionListener(long listenerId, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
-    void startRecorder(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, optional <a href="#HumanActivityRecorderOption">HumanActivityRecorderOption</a> option) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void removeActivityRecognitionListener(long listenerId, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
+</span>    void startRecorder(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, optional <a href="#HumanActivityRecorderOption">HumanActivityRecorderOption</a> option) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopRecorder(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void readRecorderData(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, <a href="#HumanActivityRecorderQuery">HumanActivityRecorderQuery</a>? query,
                           <a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    boolean isGestureSupported(<a href="#GestureType">GestureType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addGestureRecognitionListener(<a href="#GestureType">GestureType</a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
+<span class="nocode deprecated">    boolean isGestureSupported(<a href="#GestureType">GestureType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    long addGestureRecognitionListener(<a href="#GestureType">GestureType</a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                                        optional boolean? alwaysOn) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeGestureRecognitionListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-<span class="nocode deprecated">    long addStressMonitorChangeListener(<a href="#StressMonitorDataRange">StressMonitorDataRange</a>[] ranges, <a href="#StressMonitorCallback">StressMonitorCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    void removeGestureRecognitionListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+</span><span class="nocode deprecated">    long addStressMonitorChangeListener(<a href="#StressMonitorDataRange">StressMonitorDataRange</a>[] ranges, <a href="#StressMonitorCallback">StressMonitorCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 </span><span class="nocode deprecated">    void removeStressMonitorChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
 </span>  };</pre>
 <p><span class="version">Since: </span>
@@ -943,13 +938,16 @@ Calling this function has no effect if listener is not set.
 </pre>
 </div>
 </dd>
-<dt class="method" id="HumanActivityMonitorManager::addActivityRecognitionListener">
+<dt class="deprecated method" id="HumanActivityMonitorManager::addActivityRecognitionListener">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::addActivityRecognitionListener"></a><code><b><span class="methodName">addActivityRecognitionListener</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Registers a listener that is to be called when the activity is recognized.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">long addActivityRecognitionListener(<a href="#ActivityRecognitionType">ActivityRecognitionType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> listener,
                                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
@@ -1031,13 +1029,16 @@ accuracy: MEDIUM
 </pre>
 </div>
 </dd>
-<dt class="method" id="HumanActivityMonitorManager::removeActivityRecognitionListener">
+<dt class="deprecated method" id="HumanActivityMonitorManager::removeActivityRecognitionListener">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::removeActivityRecognitionListener"></a><code><b><span class="methodName">removeActivityRecognitionListener</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Unsubscribes from receiving notifications when the activity is recognized.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void removeActivityRecognitionListener(long listenerId, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
 <p><span class="version">Since: </span>
  3.0
@@ -1335,13 +1336,16 @@ calories: 24.83
 </pre>
 </div>
 </dd>
-<dt class="method" id="HumanActivityMonitorManager::isGestureSupported">
+<dt class="deprecated method" id="HumanActivityMonitorManager::isGestureSupported">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::isGestureSupported"></a><code><b><span class="methodName">isGestureSupported</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Checks if gesture type is supported on a device.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">boolean isGestureSupported(<a href="#GestureType">GestureType</a> type);</pre></div>
 <p><span class="version">Since: </span>
  4.0
@@ -1396,13 +1400,16 @@ catch (error)
 </pre>
 </div>
 </dd>
-<dt class="method" id="HumanActivityMonitorManager::addGestureRecognitionListener">
+<dt class="deprecated method" id="HumanActivityMonitorManager::addGestureRecognitionListener">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::addGestureRecognitionListener"></a><code><b><span class="methodName">addGestureRecognitionListener</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Adds a listener to be invoked when given gesture type is detected.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">long addGestureRecognitionListener(<a href="#GestureType">GestureType</a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                                    optional boolean? alwaysOn);</pre></div>
 <p><span class="version">Since: </span>
@@ -1490,13 +1497,16 @@ Received GESTURE_SHAKE_DETECTED event on Thu Sep 01 2016 14:33:56 GMT+0200 (CEST
 </pre>
 </div>
 </dd>
-<dt class="method" id="HumanActivityMonitorManager::removeGestureRecognitionListener">
+<dt class="deprecated method" id="HumanActivityMonitorManager::removeGestureRecognitionListener">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityMonitorManager::removeGestureRecognitionListener"></a><code><b><span class="methodName">removeGestureRecognitionListener</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Removes listener with the given id.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void removeGestureRecognitionListener(long watchId);</pre></div>
 <p><span class="version">Since: </span>
  4.0
@@ -2622,16 +2632,19 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
 </dl>
 </div>
 </div>
-<div class="interface" id="HumanActivityRecognitionData">
+<div class="interface deprecated" id="HumanActivityRecognitionData">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::HumanActivityRecognitionData"></a><h3>2.16. HumanActivityRecognitionData</h3>
 <div class="brief">
  The HumanActivityRecognitionData interface represents a activity recognition data.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface HumanActivityRecognitionData : <a href="#HumanActivityData">HumanActivityData</a> {
-    readonly attribute <a href="#ActivityRecognitionType">ActivityRecognitionType</a> type;
-    readonly attribute long timestamp;
-    readonly attribute <a href="#ActivityAccuracy">ActivityAccuracy</a> accuracy;
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface HumanActivityRecognitionData : <a href="#HumanActivityData">HumanActivityData</a> {
+<span class="nocode deprecated">    readonly attribute <a href="#ActivityRecognitionType">ActivityRecognitionType</a> type;
+</span><span class="nocode deprecated">    readonly attribute long timestamp;
+</span><span class="nocode deprecated">    readonly attribute <a href="#ActivityAccuracy">ActivityAccuracy</a> accuracy;
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  3.0
           </p>
@@ -2639,29 +2652,38 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
       <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="HumanActivityRecognitionData::type">
+<li class="attribute deprecated" id="HumanActivityRecognitionData::type">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ActivityRecognitionType </span><span class="name">type</span></span><div class="brief">
  The type of activity.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <p><span class="version">Since: </span>
  3.0
             </p>
 </li>
-<li class="attribute" id="HumanActivityRecognitionData::timestamp">
+<li class="attribute deprecated" id="HumanActivityRecognitionData::timestamp">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">long </span><span class="name">timestamp</span></span><div class="brief">
  The time when the activity is recognized. Epoch time in seconds.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <p><span class="version">Since: </span>
  3.0
             </p>
 </li>
-<li class="attribute" id="HumanActivityRecognitionData::accuracy">
+<li class="attribute deprecated" id="HumanActivityRecognitionData::accuracy">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">ActivityAccuracy </span><span class="name">accuracy</span></span><div class="brief">
  The degree of accuracy.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <p><span class="version">Since: </span>
  3.0
             </p>
@@ -2869,65 +2891,83 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
 </ul>
 </div>
 </div>
-<div class="interface" id="GestureData">
+<div class="interface deprecated" id="GestureData">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureData"></a><h3>2.22. GestureData</h3>
 <div class="brief">
  The GestureData interface represents detected gesture information.
           </div>
-<pre class="webidl prettyprint">  [NoInterfaceObject] interface GestureData {
-    readonly attribute <a href="#GestureType">GestureType</a> type;
-    readonly attribute <a href="#GestureEvent">GestureEvent</a> event;
-    readonly attribute long timestamp;
-    readonly attribute double? x;
-    readonly attribute double? y;
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [NoInterfaceObject] interface GestureData {
+<span class="nocode deprecated">    readonly attribute <a href="#GestureType">GestureType</a> type;
+</span><span class="nocode deprecated">    readonly attribute <a href="#GestureEvent">GestureEvent</a> event;
+</span><span class="nocode deprecated">    readonly attribute long timestamp;
+</span><span class="nocode deprecated">    readonly attribute double? x;
+</span><span class="nocode deprecated">    readonly attribute double? y;
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  4.0
           </p>
 <div class="attributes">
 <h4>Attributes</h4>
 <ul>
-<li class="attribute" id="GestureData::type">
+<li class="attribute deprecated" id="GestureData::type">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">GestureType </span><span class="name">type</span></span><div class="brief">
  Identifier of gesture type.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <p><span class="version">Since: </span>
  4.0
             </p>
 </li>
-<li class="attribute" id="GestureData::event">
+<li class="attribute deprecated" id="GestureData::event">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">GestureEvent </span><span class="name">event</span></span><div class="brief">
  Event type related to the detected gesture.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <p><span class="version">Since: </span>
  4.0
             </p>
 </li>
-<li class="attribute" id="GestureData::timestamp">
+<li class="attribute deprecated" id="GestureData::timestamp">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">long </span><span class="name">timestamp</span></span><div class="brief">
  Time when gesture was detected. Epoch time in seconds.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <p><span class="version">Since: </span>
  4.0
             </p>
 </li>
-<li class="attribute" id="GestureData::x">
+<li class="attribute deprecated" id="GestureData::x">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">x</span><span class="optional"> [nullable]</span></span><div class="brief">
  Tilt degree on X-axis. It is used only for <em>GESTURE_TILT</em> type. For other gesture types it is set to null.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <p><span class="version">Since: </span>
  4.0
             </p>
 </li>
-<li class="attribute" id="GestureData::y">
+<li class="attribute deprecated" id="GestureData::y">
 <span class="attrName"><span class="readonly">                readonly
 </span><span class="type">double </span><span class="name">y</span><span class="optional"> [nullable]</span></span><div class="brief">
  Tilt degree on Y-axis. It is used only for <em>GESTURE_TILT</em> type. For other gesture types it is set to null.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <p><span class="version">Since: </span>
  4.0
             </p>
@@ -3078,27 +3118,33 @@ It's a <a href="https://www.researchgate.net/publication/313837778_Microcontroll
 </dl>
 </div>
 </div>
-<div class="interface" id="GestureRecognitionCallback">
+<div class="interface deprecated" id="GestureRecognitionCallback">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureRecognitionCallback"></a><h3>2.26. GestureRecognitionCallback</h3>
 <div class="brief">
  The GestureRecognitionCallback describes a callback for the addGestureRecognitionListener() method.
           </div>
-<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface GestureRecognitionCallback {
-    void onsuccess(<a href="#GestureData">GestureData</a> data);
-  };</pre>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+          </p>
+<pre class="webidl prettyprint"><span class="nocode deprecated">  [Callback=FunctionOnly, NoInterfaceObject] interface GestureRecognitionCallback {
+<span class="nocode deprecated">    void onsuccess(<a href="#GestureData">GestureData</a> data);
+</span>  };</span></pre>
 <p><span class="version">Since: </span>
  4.0
           </p>
 <div class="methods">
 <h4>Methods</h4>
 <dl>
-<dt class="method" id="GestureRecognitionCallback::onsuccess">
+<dt class="deprecated method" id="GestureRecognitionCallback::onsuccess">
 <a class="backward-compatibility-anchor" name="::HumanActivityMonitor::GestureRecognitionCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
 </dt>
-<dd>
+<dd class="deprecated">
 <div class="brief">
  Called when a gesture is detected.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since Tizen 6.0.
+            </p>
 <div class="synopsis"><pre class="signature prettyprint">void onsuccess(<a href="#GestureData">GestureData</a> data);</pre></div>
 <p><span class="version">Since: </span>
  4.0
@@ -3257,13 +3303,7 @@ This feature is deprecated since Tizen 5.5.
   enum HumanActivityType { "PEDOMETER", "HRM", "GPS", "SLEEP_MONITOR", "SLEEP_DETECTOR" };
   enum HumanActivityRecorderType { "PEDOMETER", "HRM", "SLEEP_MONITOR", "PRESSURE" };
   enum PedometerStepStatus { "NOT_MOVING", "WALKING", "RUNNING", "UNKNOWN" };
-  enum ActivityRecognitionType { "STATIONARY", "WALKING", "RUNNING", "IN_VEHICLE" };
-  enum ActivityAccuracy { "LOW", "MEDIUM", "HIGH" };
   enum SleepStatus { "ASLEEP", "AWAKE", "UNKNOWN" };
-  enum GestureType { "GESTURE_DOUBLE_TAP", "GESTURE_MOVE_TO_EAR", "GESTURE_NO_MOVE", "GESTURE_PICK_UP", "GESTURE_SHAKE", "GESTURE_SNAP",
-    "GESTURE_TILT", "GESTURE_TURN_FACE_DOWN", "GESTURE_WRIST_UP" };
-  enum GestureEvent { "GESTURE_EVENT_DETECTED", "GESTURE_SHAKE_DETECTED", "GESTURE_SHAKE_FINISHED", "GESTURE_SNAP_X_NEGATIVE",
-    "GESTURE_SNAP_X_POSITIVE", "GESTURE_SNAP_Y_NEGATIVE", "GESTURE_SNAP_Y_POSITIVE", "GESTURE_SNAP_Z_NEGATIVE", "GESTURE_SNAP_Z_POSITIVE" };
   dictionary HumanActivityRecorderOption {
     long interval;
     long retentionPeriod;
@@ -3290,18 +3330,11 @@ This feature is deprecated since Tizen 5.5.
     void stop(<a href="#HumanActivityType">HumanActivityType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void setAccumulativePedometerListener(<a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> changeCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void unsetAccumulativePedometerListener() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addActivityRecognitionListener(<a href="#ActivityRecognitionType">ActivityRecognitionType</a> type, <a href="#HumanActivityMonitorSuccessCallback">HumanActivityMonitorSuccessCallback</a> listener,
-                                        optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeActivityRecognitionListener(long listenerId, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);
     void startRecorder(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, optional <a href="#HumanActivityRecorderOption">HumanActivityRecorderOption</a> option) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopRecorder(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void readRecorderData(<a href="#HumanActivityRecorderType">HumanActivityRecorderType</a> type, <a href="#HumanActivityRecorderQuery">HumanActivityRecorderQuery</a>? query,
                           <a href="#HumanActivityReadRecorderSuccessCallback">HumanActivityReadRecorderSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                           raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    boolean isGestureSupported(<a href="#GestureType">GestureType</a> type) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addGestureRecognitionListener(<a href="#GestureType">GestureType</a> type, <a href="#GestureRecognitionCallback">GestureRecognitionCallback</a> listener, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
-                                       optional boolean? alwaysOn) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    void removeGestureRecognitionListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface StepDifference {
     readonly attribute long stepCountDifference;
@@ -3358,11 +3391,6 @@ This feature is deprecated since Tizen 5.5.
   [NoInterfaceObject] interface HumanActivitySleepDetectorData : <a href="#HumanActivityData">HumanActivityData</a> {
     readonly attribute <a href="#SleepStatus">SleepStatus</a> status;
   };
-  [NoInterfaceObject] interface HumanActivityRecognitionData : <a href="#HumanActivityData">HumanActivityData</a> {
-    readonly attribute <a href="#ActivityRecognitionType">ActivityRecognitionType</a> type;
-    readonly attribute long timestamp;
-    readonly attribute <a href="#ActivityAccuracy">ActivityAccuracy</a> accuracy;
-  };
   [NoInterfaceObject] interface HumanActivityRecorderData {
     readonly attribute long startTime;
     readonly attribute long endTime;
@@ -3385,21 +3413,11 @@ This feature is deprecated since Tizen 5.5.
     readonly attribute double? min;
     readonly attribute double? average;
   };
-  [NoInterfaceObject] interface GestureData {
-    readonly attribute <a href="#GestureType">GestureType</a> type;
-    readonly attribute <a href="#GestureEvent">GestureEvent</a> event;
-    readonly attribute long timestamp;
-    readonly attribute double? x;
-    readonly attribute double? y;
-  };
   [Callback=FunctionOnly, NoInterfaceObject] interface HumanActivityMonitorSuccessCallback {
     void onsuccess(optional <a href="#HumanActivityData">HumanActivityData</a>? humanactivitydata);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface HumanActivityReadRecorderSuccessCallback {
     void onsuccess(<a href="#HumanActivityRecorderData">HumanActivityRecorderData</a>[] humanactivitydata);
-  };
-  [Callback=FunctionOnly, NoInterfaceObject] interface GestureRecognitionCallback {
-    void onsuccess(<a href="#GestureData">GestureData</a> data);
   };
 };</pre>
 </div>
