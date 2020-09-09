@@ -22,9 +22,9 @@ tableView.Focusable = true;
 tableView.PivotPoint = PivotPoint.Center;
 tableView.Size2D = new Size2D( 300, 300 );
 
-for( int row = 0; row < 4; ++row )
+for( uint row = 0; row < 4; ++row )
 {
-  for( int col = 0; col < 4; ++col )
+  for( uint col = 0; col < 4; ++col )
   {
     TextLabel textLabel = new TextLabel();
     textLabel.Focusable = true;
