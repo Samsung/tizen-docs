@@ -77,8 +77,8 @@ The following example code specifies the font properties:
 label.FontFamily = "FreeSerif";
 
 PropertyMap fontStyle = new PropertyMap();
-fontStyle.Add("weight", new PropertyValue(FontWeightType.Bold));
-fontStyle.Add("slant", new PropertyValue(FontSlantType.Italic));
+fontStyle.Add("weight", new PropertyValue("bold"));
+fontStyle.Add("slant", new PropertyValue("italic"));
 label.FontStyle = fontStyle;
 label.PointSize = 12.0f;
 ```
