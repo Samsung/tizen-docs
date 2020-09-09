@@ -77,8 +77,8 @@ The following example code specifies the font properties:
 label.FontFamily = "FreeSerif";
 
 PropertyMap fontStyle = new PropertyMap();
-fontStyle.Add("weight", new PropertyValue(FontWeightType.Bold));
-fontStyle.Add("slant", new PropertyValue(FontSlantType.Italic));
+fontStyle.Add("weight", new PropertyValue("bold"));
+fontStyle.Add("slant", new PropertyValue("italic"));
 label.FontStyle = fontStyle;
 label.PointSize = 12.0f;
 ```
@@ -203,7 +203,7 @@ To use the text-decoration, set the applicable property:
 -   To add a drop shadow to the text, set the `Shadow` property:
 
     ```csharp
-    window.BackgroundColor(Color.Blue);
+    window.BackgroundColor = Color.Blue;
 
     label1.Text = "Text with Shadow";
     PropertyMap shadow = new PropertyMap();
@@ -373,18 +373,16 @@ The following example illustrates the creation of a `TextField` object:
 ```csharp
 Window window = Window.Instance;
 TextField field = new TextField();
-PropertyMap propertyMap = new PropertyMap();
-propertyMap.Add("placeholderText", new PropertyValue("Unknown Name"));
-propertyMap.Add("placeholderTextFocused", new PropertyValue("Enter Name."));
-field.Placeholder = propertyMap;
+field.BackgroundColor = Color.White;
+field.PlaceholderText = "Unknown Name";
+field.PlaceholderTextFocused = "Enter Name";
 window.Add(field);
 ```
 
 When the `TextField` is tapped, it automatically gets the keyboard focus. Key events correspond to entering the text. Additionally, the placeholder text is removed as soon as the text is entered. The text entered can be retrieved by using the `TEXT` property:
 
 ```csharp
-Property::Value fieldText = field.GetProperty( TextField::Property::TEXT );
-std::string fieldTextString = fieldText.Get< std::string >();
+string fieldTextString = field.Text;
 ```
 
 <a name="textField3"></a>

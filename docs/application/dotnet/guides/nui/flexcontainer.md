@@ -54,13 +54,15 @@ The following example shows how to create a gallery-like flexbox layout using th
     flexContainer.Add(toolBar);
     ```
 
-4.  To make the buttons and title display horizontally, but vertically aligned to the center of the toolbar, set the toolbar flex direction to **row** and its `AlignItems` property to **center**:
+4.  To make the buttons and title display horizontally, but vertically aligned to the center of the toolbar with equal spaces between them, set the toolbar flex direction to **row**, its `AlignItems` property to **center** and `JustifyContent` property to **spaceBetween**:
 
     ```
     /// Display toolbar items horizontally
     toolBar.FlexDirection = FlexContainer.FlexDirectionType.Row;
     /// Align toolbar items vertically center
     toolBar.AlignItems = FlexContainer.Alignment.AlignCenter;
+    /// Create equal empty spaces between children
+    toolBar.JustifyContent = FlexContainer.Justification.JustifySpaceBetween;
     ```
 
 5.  Use the toolbar's `Flex` property to make the toolbar and the main content share the height of the main container, so that the toolbar occupies 10 percent of the vertical space and the content occupies the remainder:
@@ -122,8 +124,6 @@ The following example shows how to create a gallery-like flexbox layout using th
     title.HeightResizePolicy = ResizePolicyType.UseNaturalSize;
     title.HorizontalAlignment = HorizontalAlignment.Center;
     title.VerticalAlignment = VerticalAlignment.Center;
-    /// Occupy all remaining space in the toolbar
-    title.Flex = 1.0f;
     /// Set a 10-pixel margin around the title
     title.FlexMargin = new Vector4(10.0f, 10.0f, 10.0f, 10.0f);
     toolBar.Add(title);
