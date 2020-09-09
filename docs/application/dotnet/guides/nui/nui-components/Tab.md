@@ -14,13 +14,12 @@ To create a tab using property, follow these steps:
 1. Create Tab using the default constructor:
 
     ```cs
-    utilityBasicTab = new Tab();
+    Tab utilityBasicTab = new Tab();
     ```
 
 2. Set the tab property:
 
     ```cs
-    utilityBasicTab.IsSelectable = true;
     utilityBasicTab.Size = new Size(700, 108);
     utilityBasicTab.Position = new Position(100, 300);
     utilityBasicTab.BackgroundColor = new Color(1.0f, 1.0f, 1.0f, 0.5f);
@@ -28,15 +27,14 @@ To create a tab using property, follow these steps:
     utilityBasicTab.ItemSpace = 40;
     utilityBasicTab.Space = new Extents(56, 56, 1, 0);
     utilityBasicTab.UnderLineSize = new Size(1, 3);
-    utilityBasicTab.UnderLineBackgroundColor = color[0];
-    utilityBasicTab.PointSize = 25;
+    utilityBasicTab.UnderLineBackgroundColor = Color.White;
+    utilityBasicTab.PointSize = 15;
     utilityBasicTab.TextColorSelector = new ColorSelector
     {
         Normal = Color.Black,
-        Selected = color[0],
+        Selected = Color.White,
     };
-    utilityBasicTab.ItemChangedEvent += TabItemChangedEvent;
-    root.Add(tab);
+    Window.Instance.Add(utilityBasicTab);
 
     for (int i = 0; i < 3; i++)
     {

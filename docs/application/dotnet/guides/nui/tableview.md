@@ -26,7 +26,7 @@ for( uint row = 0; row < 4; ++row )
 {
   for( uint col = 0; col < 4; ++col )
   {
-    TextLabel textLabel = new TextLabel();
+    TextLabel textLabel = new TextLabel(row + "." + col);
     textLabel.Focusable = true;
     textLabel.BackgroundColor = Color.White;
     tableView.AddChild( textLabel, new TableView.CellPosition(row, col));
