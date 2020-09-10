@@ -177,9 +177,10 @@ application package.
 | `http://tizen.org/feature/led`           | Specify this key, if the application requires the LED feature. | 2.4   |
 | `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature for using the [Human Activity Monitor](../api/latest/device_api/mobile/tizen/humanactivitymonitor.html) (GPS Type) API. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 2.2.1 |
-| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP). | 2.3   |
+| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [Media Key](../api/latest/device_api/mobile/tizen/mediakey.html) API. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth Low Energy feature (BLE). | 2.3   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Low Energy GATT Client feature. | 4.0   |
 | `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the Internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
 | `http://tizen.org/feature/network.nfc`   | Specify this key, if the application requires the use of any API that, in turn, requires the Near Field Communication (NFC) feature. | 2.2.1 |
 | `http://tizen.org/feature/network.nfc.card_emulation` | Specify this key, if the application requires the NFC card emulation feature. | 2.3   |
@@ -260,6 +261,7 @@ Tizen 4.0.
 | `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [Media Key](../api/latest/device_api/wearable/tizen/mediakey.html) API. | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 2.3   |
 | `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth Low Energy feature (BLE). | 2.3   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Low Energy GATT Client feature. | 4.0   |
 | `http://tizen.org/feature/network.net_proxy` | Specify this key, if the application requires the net-proxy feature for the Internet connection. A net-proxy feature for a device acts as an intermediary between client (network service customer) and server (network service provider). | 3.0   |
 | `http://tizen.org/feature/network.nfc`   | Specify this key, if the application requires the use of any API that, in turn, requires the Near Field Communication (NFC) feature. | 2.2.1 |
 | `http://tizen.org/feature/network.nfc.card_emulation` | Specify this key, if the application requires the NFC card emulation feature. | 2.3   |
