@@ -13,6 +13,10 @@ You can use the following device settings and systems features in your native ap
 
   You can control external output devices, allowing you to display the application screen on a separate device. You can manage the presentation mode, receive information and notifications from the device, and set the attributes for the external output.
 
+- [Diagnostics](diagnostics.md)
+
+  You can access the diagnotic data of the applications. You can retrieve, for example, crash report or custom diagnostic data that cannot be placed in logs due to their format or size.
+
 - [Runtime Information](runtime.md)
 
   You can access information about the application runtime environment. You can retrieve, for example, memory or storage information in your application, such as allocated and available amounts.
