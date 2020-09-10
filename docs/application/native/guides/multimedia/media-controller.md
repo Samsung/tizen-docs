@@ -1174,21 +1174,21 @@ The following table lists all the result code attributes that the client and ser
 | Attribute                               | Description                                             |
 |-----------------------------------------|---------------------------------------------------------|
 | **Result code**                         |                                                         |
-| `MC_RESULT_CODE_SUCCESS`                | The command or the event has been successfully completed. |
-| `MC_RESULT_CODE_ALREADY_DONE`           | The command or the event had already been completed. |
-| `MC_RESULT_CODE_ABORTED`                | The command or the event is aborted by some external event (e.g. aborted play command by incoming call). |
-| `MC_RESULT_CODE_DENIED`                 | The command or the event is denied due to application policy (e.g. cannot rewind in recording). |
-| `MC_RESULT_CODE_NOT_SUPPORTED`          | The command or the event is not supported. |
-| `MC_RESULT_CODE_INVALID`                | The command or the event is out of supported range or the limit is reached. |
-| `MC_RESULT_CODE_TIMEOUT`                | Timeout has occurred.             |
-| `MC_RESULT_CODE_APP_FAILED`             | The application has failed.       |
-| `MC_RESULT_CODE_NO_MEDIA`               | The command or the event has failed because there is no media. |
-| `MC_RESULT_CODE_NO_AUDIO_OUTPUT_DEVICE` | The command or the event has failed because there is no audio output device. |
-| `MC_RESULT_CODE_NO_PEER`                | The command or the event has failed because there is no peer. |
-| `MC_RESULT_CODE_NETWORK_FAILED`         | The network has failed.           |
-| `MC_RESULT_CODE_NO_ACCOUNT`             | The application needs to have an account to which it's logged in. |
-| `MC_RESULT_CODE_LOGIN_FAILED`           | The application could not log in. |
-| `MC_RESULT_CODE_UNKNOWN`                | Unknown error.                    |
+| `MC_RESULT_CODE_SUCCESS`                | The command or the event has been successfully completed |
+| `MC_RESULT_CODE_ALREADY_DONE`           | The command or the event had already been completed |
+| `MC_RESULT_CODE_ABORTED`                | The command or the event is aborted by some external event (e.g. aborted play command by incoming call) |
+| `MC_RESULT_CODE_DENIED`                 | The command or the event is denied due to application policy (e.g. cannot rewind in recording) |
+| `MC_RESULT_CODE_NOT_SUPPORTED`          | The command or the event is not supported |
+| `MC_RESULT_CODE_INVALID`                | The command or the event is out of supported range or the limit is reached |
+| `MC_RESULT_CODE_TIMEOUT`                | Timeout has occurred             |
+| `MC_RESULT_CODE_APP_FAILED`             | The application has failed       |
+| `MC_RESULT_CODE_NO_MEDIA`               | The command or the event has failed because there is no media |
+| `MC_RESULT_CODE_NO_AUDIO_OUTPUT_DEVICE` | The command or the event has failed because there is no audio output device |
+| `MC_RESULT_CODE_NO_PEER`                | The command or the event has failed because there is no peer |
+| `MC_RESULT_CODE_NETWORK_FAILED`         | The network has failed           |
+| `MC_RESULT_CODE_NO_ACCOUNT`             | The application needs to have an account to which it's logged in |
+| `MC_RESULT_CODE_LOGIN_FAILED`           | The application could not log in |
+| `MC_RESULT_CODE_UNKNOWN`                | Unknown error                    |
 
 > [!NOTE]
 > These attributes support Tizen 6.0 and Higher for Mobile and Wearable.
