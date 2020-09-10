@@ -2636,7 +2636,7 @@ adapter.stopAdvertise();
 <div class="interface" id="BluetoothGATTService">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTService"></a><h3>2.9. BluetoothGATTService</h3>
 <div class="brief">
- Bluetooth Low Energy Service. The service can be retrieved with BluetoothLEDevice.getService().
+ Bluetooth Low Energy service. The service can be retrieved with BluetoothLEDevice::getService().
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTService {
     readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
@@ -3147,7 +3147,7 @@ Calling this function has no effect if there is no listener with given id.
 <div class="interface" id="BluetoothGATTDescriptor">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTDescriptor"></a><h3>2.11. BluetoothGATTDescriptor</h3>
 <div class="brief">
- Bluetooth Low Energy Descriptor.
+ Bluetooth Low Energy descriptor.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTDescriptor {
     void readValue(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -3177,7 +3177,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
-UnknownError - If any other error occurs              </li>
+ UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -7018,6 +7018,14 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
             </p>
            </div></p>
 <li class="feature">http://tizen.org/feature/network.bluetooth.le</li>
+</div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the Bluetooth Low Energy application runs on a device with Bluetooth Low Energy GATT Client feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.bluetooth.le.gatt.client</li>
 </div>
 <p></p>
                     For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
