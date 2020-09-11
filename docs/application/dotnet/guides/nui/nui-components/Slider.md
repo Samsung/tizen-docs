@@ -164,11 +164,11 @@ When you change the Slider state as change focus or disable a Slider, the Slider
 
 ```cs
 Slider slider = new Slider();
-slider.StateChangedEvent += OnStateChanged;
+slider.ControlStateChangedEvent += OnStateChanged;
 ```
 
 ```cs
-private void OnStateChanged(object sender, Slider.StateChangedArgs args)
+private void OnStateChanged(object sender, Control.ControlStateChangedEventArgs e)
 {
     // Do something in response to state change
 }

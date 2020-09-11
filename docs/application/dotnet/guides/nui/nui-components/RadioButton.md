@@ -63,11 +63,11 @@ When you change the radio button state to focus or disable, the radio button ins
 
 ```cs
 RadioButton button = new RadioButton();
-button.StateChangedEvent += OnStateChange;
+button.ControlStateChangedEvent += OnStateChange;
 ```
 
 ```cs
-private void OnStateChange(object sender, Button.StateChangeEventArgs e)
+private void OnStateChange(object sender, Control.ControlStateChangedEventArgs e)
 {
     // Do something in response to state change
 }

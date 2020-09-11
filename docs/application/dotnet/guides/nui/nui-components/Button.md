@@ -160,11 +160,11 @@ When you change the Button state to focus or disable, the Button instance receiv
 
 ```cs
 Button button = new Button();
-button.StateChangedEvent += OnStateChange;
+button.ControlStateChangedEvent += OnStateChange;
 ```
 
 ```cs
-private void OnStateChange(object sender, Button.StateChangeEventArgs e)
+private void OnStateChange(object sender, Control.ControlStateChangedEventArgs e)
 {
     // Do something in response to state change
 }
