@@ -335,6 +335,11 @@ Tizen 4.0.
 
 | Feature key                              | Description                              | Since |
 | ---------------------------------------- | ---------------------------------------- | ----- |
+| `http://tizen.org/feature/network.bluetooth` | Specify this key, if the application requires the Bluetooth feature. | 6.0 |
+| `http://tizen.org/feature/network.bluetooth.audio.media` | Specify this key, if the application requires the Bluetooth Advanced Audio feature (A2DP) feature for using the [Media Key](../api/latest/device_api/tv/tizen/mediakey.html) API. | 6.0   |
+| `http://tizen.org/feature/network.bluetooth.health` | Specify this key, if the application requires the Bluetooth Health feature (HDP). | 6.0   |
+| `http://tizen.org/feature/network.bluetooth.le` | Specify this key, if the application requires the Bluetooth Low Energy feature (BLE). | 6.0   |
+| `http://tizen.org/feature/network.bluetooth.le.gatt.client` | Specify this key, if the application requires the Bluetooth Low Energy GATT Client feature. | 6.0   |
 | `http://tizen.org/feature/display`       | Specify this key, if the application requires the display feature. | 5.5   |
 | `http://tizen.org/feature/display.state` | Specify this key, if the application requires System Device API to control display state. | 5.0   |
 | `http://tizen.org/feature/storage.external` | Specify this key, if the application requires the external storage feature. | 5.5   |
