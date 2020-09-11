@@ -155,7 +155,7 @@ Functions</h2></td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to a static, null-terminated string describing some aspect of Evas GL.  <a href="#ga46f06b7d4cd079a2fefe660fd1803943"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__GL.html#gac703a7f3596976104ab393408cf5ac39">Evas_GL_Func</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__GL.html#ga5b6e0dd030469751b00ac76e5a2f9ec1">evas_gl_proc_address_get</a> (<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, const char *name)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a extension function from OpenGL or the Evas_GL glue layer.  <a href="#ga5b6e0dd030469751b00ac76e5a2f9ec1"></a><br/></td></tr>
-<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__GL.html#gae7830648b7ac1e33e055c4df0063bd8c">evas_gl_native_surface_get</a> (<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, <a class="el" href="group__Evas__GL.html#ga3c2530dd88bd600cccb5dc0840fc837c">Evas_GL_Surface</a> *surf, <a class="el" href="struct__Evas__Native__Surface.html">Evas_Native_Surface</a> *ns)</td></tr>
+<tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__GL.html#gae7830648b7ac1e33e055c4df0063bd8c">evas_gl_native_surface_get</a> (<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl, <a class="el" href="group__Evas__GL.html#ga3c2530dd88bd600cccb5dc0840fc837c">Evas_GL_Surface</a> *surf, <a class="el" href="group__Evas__Object__Image.html#gae4bceb930876e98c9ae3c2b9e3df4ed2">Evas_Native_Surface</a> *ns)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills in the Native Surface information from a given Evas GL surface.  <a href="#gae7830648b7ac1e33e055c4df0063bd8c"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Evas__GL.html#gac033b6a97f0f913986ef69a4ae63d8c1">Evas_GL_API</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Evas__GL.html#gafb3bfac073afb5d6bb6d7c4b35df7bb2">evas_gl_api_get</a> (<a class="el" href="group__Evas__GL.html#ga490f9a8e413b19a927ab75385355424f">Evas_GL</a> *evas_gl)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the API for rendering using OpenGL.  <a href="#gafb3bfac073afb5d6bb6d7c4b35df7bb2"></a><br/></td></tr>
@@ -1075,7 +1075,7 @@ Evas GL does not specify exactly which error codes will be returned in which cir
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="struct__Evas__Native__Surface.html">Evas_Native_Surface</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="group__Evas__Object__Image.html#gae4bceb930876e98c9ae3c2b9e3df4ed2">Evas_Native_Surface</a> *&#160;</td>
           <td class="paramname"><em>ns</em>&#160;</td>
         </tr>
         <tr>
@@ -1098,7 +1098,7 @@ Evas GL does not specify exactly which error codes will be returned in which cir
   </dd>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>EINA_TRUE</code> if successful, otherwise <code>EINA_FALSE</code> if not</dd></dl>
-<p>This function can be called to later set this native surface as source of an Evas Object Image. Please refer to evas_object_image_native_surface_set.</p>
+<p>This function can be called to later set this native surface as source of an Evas Object Image. Please refer to <a class="el" href="group__Evas__Object__Image.html#gaabe0ddc5e656d6c09f9f4dd85f981279">evas_object_image_native_surface_set</a>.</p>
 <dl class="warning"><dt><b>Warning:</b></dt><dd>Applications should not rely on the information set in <code>ns</code> since its properties are internal to Evas and are not meant to be tampered with in any way or form from outside Evas. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 

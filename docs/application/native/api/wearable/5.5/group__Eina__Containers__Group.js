@@ -7,6 +7,7 @@ var group__Eina__Containers__Group =
     [ "Inline Array", "group__Eina__Inline__Array__Group.html", null ],
     [ "Inline List", "group__Eina__Inline__List__Group.html", null ],
     [ "List", "group__Eina__List__Group.html", null ],
+    [ "Quaternion", "group__Eina__Quaternion__Group.html", null ],
     [ "Red-Black tree", "group__Eina__Rbtree__Group.html", null ],
     [ "Safe Pointer", "group__Eina__Safepointer__Group.html", null ],
     [ "Sparse Matrix", "group__Eina__Matrixsparse__Group.html", null ],

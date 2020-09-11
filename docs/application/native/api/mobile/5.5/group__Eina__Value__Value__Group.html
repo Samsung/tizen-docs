@@ -122,7 +122,7 @@ Functions</h2></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Value__Group.html#ga86f91748c90652df59e3ef38bf54949d">eina_value_convert</a> (const <a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *value, <a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *convert)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts one value to another type.  <a href="#ga86f91748c90652df59e3ef38bf54949d"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3">eina_value_to_string</a> (const <a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *value)</td></tr>
-<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts one value to Eina_Binbuf.  <a href="#ga8f34b6d6639654dd88cd197c9def78a3"></a><br/></td></tr>
+<tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts value to string.  <a href="#ga8f34b6d6639654dd88cd197c9def78a3"></a><br/></td></tr>
 <tr><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="group__Eina__Value__Group.html#gaab67ab8bcd0624280c5276044b07e0d2">Eina_Value_Type</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__Eina__Value__Value__Group.html#gad16e8065d5d90cdd37e8c219cfcd281e">eina_value_type_get</a> (const <a class="el" href="group__Eina__Value__Group.html#ga7985e8af6e956ae31b381bf829173cc0">Eina_Value</a> *value)</td></tr>
 <tr><td class="mdescLeft">&#160;</td><td class="mdescRight">Queries value type.  <a href="#gad16e8065d5d90cdd37e8c219cfcd281e"></a><br/></td></tr>
 </table>
@@ -201,7 +201,7 @@ Functions</h2></td></tr>
 <dl class="return"><dt><b>Returns:</b></dt><dd><a class="el" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a> if converted, <a class="el" href="group__Eina__Types__Group.html#ga1feb115f8e9913e806e090d9bd5a7301">EINA_FALSE</a> otherwise.</dd></dl>
 <p>Converts one value to another trying first <em>value</em> type <code>convert_to()</code> function. If unsuccessful, tries using <code>convert_from()</code> function in <em>convert</em>.</p>
 <p>Conversion functions are type defined, and the basic types can convert between themselves, but conversion is strict! That is, if converting from negative value to unsigned type, it will fail. It also fails on value overflow.</p>
-<p>It is recommended that all types implement at least convert to string, used by <a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string()</a>.</p>
+<p>It is recommended that all types implement at least convert to string, used by <a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts value to string.">eina_value_to_string()</a>.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>Both objects must have <a class="el" href="group__Eina__Value__Value__Group.html#gab5c6558b1b8be2ad597d71a765cbf5f6" title="Initializes generic value storage.">eina_value_setup()</a> called on them beforehand!</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.2 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
@@ -755,20 +755,7 @@ for hash member see <a class="el" href="group__Eina__Value__Hash__Group.html#ga9
 </div>
 <div class="memdoc">
 
-<p>Converts one value to Eina_Binbuf. </p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in,out]</td><td class="paramname">value</td><td>Source value object. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="return"><dt><b>Returns:</b></dt><dd><code>NULL</code> if it failed to get a memory content, a valid Eina_Binbuf otherwise.</dd></dl>
-<p>Converts one value to EINA_TYPE_VALUE_BLOB if necessary by calling <code><a class="el" href="group__Eina__Value__Value__Group.html#ga86f91748c90652df59e3ef38bf54949d" title="Converts one value to another type.">eina_value_convert()</a></code> function.</p>
-<dl class="note"><dt><b>Note:</b></dt><dd>You are responsible for destroying the Eina_Binbuf returned.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Eina__Value__Value__Group.html#ga8f34b6d6639654dd88cd197c9def78a3" title="Converts one value to Eina_Binbuf.">eina_value_to_string()</a> </dd>
-<dd>
-<a class="el" href="group__Eina__Value__Value__Group.html#ga86f91748c90652df59e3ef38bf54949d" title="Converts one value to another type.">eina_value_convert()</a></dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.20 Converts value to string.</dd></dl>
+<p>Converts value to string. </p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>value object. </td></tr>

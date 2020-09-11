@@ -153,18 +153,18 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *win, *prefs, *notify, *label;
    <a class="code" href="struct__Elm__Prefs__Data.html">Elm_Prefs_Data</a> *prefs_data;
 
-   win = <a class="code" href="group__Elm__Win.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;prefs&quot;</span>, <span class="stringliteral">&quot;Prefs Example 01&quot;</span>);
+   win = <a class="code" href="group__Elm__Win__Group.html#gac75d7752662fab73d6420706ce5be996">elm_win_util_standard_add</a>(<span class="stringliteral">&quot;prefs&quot;</span>, <span class="stringliteral">&quot;Prefs Example 01&quot;</span>);
    <a class="code" href="group__Elm__General.html#ga7a05f37fd3a019da5e26c5fc91fcd937">elm_policy_set</a>(<a class="code" href="group__Elm__General.html#ggaa16f3378ecdbf660fa378402e3c5a0a9a02fadb6faada04b19d0fa42c11a8d32a">ELM_POLICY_QUIT</a>, <a class="code" href="group__Elm__General.html#gga46af37e6ac2c406321060be827117196abbe0962d88ae12afe1a173da881f56cd">ELM_POLICY_QUIT_LAST_WINDOW_CLOSED</a>);
-   <a class="code" href="group__Elm__Win.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, EINA_TRUE);
+   <a class="code" href="group__Elm__Win__Group.html#ga9a16a2f8c9fd5b6e9203ed9dcb53ea8b" title="Sets the window&#39;s autodel state.">elm_win_autodel_set</a>(win, EINA_TRUE);
 
    prefs = elm_prefs_add(win);
-   evas_object_size_hint_weight_set(prefs, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-   <a class="code" href="group__Elm__Win.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, prefs);
+   <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(prefs, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Elm__Win__Group.html#ga505d6bd217e5ee01e82b548ec35986eb" title="Adds subobj as a resize object of window obj.">elm_win_resize_object_add</a>(win, prefs);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(prefs);
 
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,saved&quot;</span>, _page_saved_cb, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,loaded&quot;</span>, _page_loaded_cb, NULL);
-   <a class="code" href="group__Evas__Canvas.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;item,changed&quot;</span>, _item_changed_cb, win);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,saved&quot;</span>, _page_saved_cb, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;page,loaded&quot;</span>, _page_loaded_cb, NULL);
+   <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(prefs, <span class="stringliteral">&quot;item,changed&quot;</span>, _item_changed_cb, win);
 
    elm_prefs_autosave_set(prefs, EINA_TRUE);
 
@@ -174,20 +174,20 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    elm_prefs_file_set(prefs, <span class="stringliteral">&quot;prefs_example_01.epb&quot;</span>, NULL);
    elm_prefs_data_set(prefs, prefs_data);
 
-   label = <a class="code" href="group__Elm__Label.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
+   label = <a class="code" href="group__Elm__Label__Group.html#ga01e161a300e3ee6f7a13a44505724e03" title="Add a new label to the parent.">elm_label_add</a>(win);
    elm_object_text_set(label, <span class="stringliteral">&quot;Setting Values Programmatically&quot;</span>);
-   evas_object_size_hint_align_set(label, 0.5, 0.5);
+   <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(label, 0.5, 0.5);
 
-   notify = <a class="code" href="group__Elm__Notify.html#ga3b3eb10c622de79e55539aeb84e538a3" title="Add a new notify to the parent.">elm_notify_add</a>(win);
-   elm_notify_align_set(notify, 0.5, 1);
-   elm_notify_timeout_set(notify, 2);
+   notify = <a class="code" href="group__Elm__Notify__Group.html#ga3b3eb10c622de79e55539aeb84e538a3" title="Add a new notify to the parent.">elm_notify_add</a>(win);
+   <a class="code" href="group__Elm__Notify__Group.html#ga5ae77afb4efaeae7952268ca7aac89d1" title="Set the alignment of the notify object.">elm_notify_align_set</a>(notify, 0.5, 1);
+   <a class="code" href="group__Elm__Notify__Group.html#gafdefb215afc5707a10482207acbacc32" title="Set the time interval after which the notify window is going to be hidden.">elm_notify_timeout_set</a>(notify, 2);
    elm_object_content_set(notify, label);
-   evas_object_size_hint_weight_set(notify, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+   <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(notify, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(notify);
 
    <a class="code" href="group__Evas__Object__Group__Extras.html#ga70134a7068c9bff4107a761abe0a2ad4">evas_object_data_set</a>(notify, <span class="stringliteral">&quot;prefs_data&quot;</span>, prefs_data);
 
-   evas_object_resize(win, 320, 320);
+   <a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 320, 320);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
    <a class="code" href="group__Ecore__Timer__Group.html#ga7b9cb9d24ecebfdbb957436e2e669402">ecore_timer_add</a>(5.0, _elm_prefs_data_change, notify);

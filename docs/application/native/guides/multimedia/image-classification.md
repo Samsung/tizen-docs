@@ -210,7 +210,7 @@ To classify an image:
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 5.5 and Higher for Mobile
   - Tizen 5.5 and Higher for Wearable

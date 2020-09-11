@@ -98,15 +98,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <img src="layout_inheritance_tree.png" alt="layout_inheritance_tree.png"/>
 </div>
  <div class="image">
-<img src="img/widget/layout/preview-00.png" alt="preview-00.png"/>
-</div>
- <div class="image">
 <img src="layout-predefined.png" alt="layout-predefined.png"/>
 </div>
  <p>A Layout is a direct realization of elm-layout-class.</p>
 <p>This is a container widget that takes a standard Edje design file and wraps it very thinly in a widget.</p>
 <p>An Edje design (theme) file has a very wide range of possibilities to describe the behavior of elements forming a layout. Check out the Edje documentation and the EDC reference to get more information about what can be done with Edje.</p>
-<p>Just like <a class="el" href="group__Elm__List.html">List</a>, <a class="el" href="group__Elm__Box.html">Box</a>, and other container widgets, any object added to the Layout will become its child, meaning that it will be deleted if the Layout is deleted, moved if the Layout is moved, and so on.</p>
+<p>Just like Elm_List, Elm_Box, and other container widgets, any object added to the Layout will become its child, meaning that it will be deleted if the Layout is deleted, moved if the Layout is moved, and so on.</p>
 <p>The layout widget may contain as many parts/children as described in its theme file. Some of these children can have special types, such as content holder ones (swallow spots), boxes or tables. These are parts meant to contain others. For instance, objects can be added to different table parts by specifying the respective table part names. The same is valid for swallows and boxes.</p>
 <p>The objects added as children of a layout will behave as described in the part description where they were added. There are 3 possible types of parts where a child can be added:</p>
 <h2><a class="anchor" id="secContent"></a>
@@ -120,9 +117,9 @@ Content (@c SWALLOW part)</h2>
 </div>
  <h2><a class="anchor" id="secBox"></a>
 Box (@c BOX part)</h2>
-<p>An Edje <code>BOX</code> part is very similar to the Elementary <a class="el" href="group__Elm__Box.html">Box</a> widget. It allows one to add objects to the box and have them distributed along its area, accordingly to the specified <code>layout</code> property (now by <code>layout</code> we mean the chosen layouting design of the Box, not the layout widget itself).</p>
-<p>A similar effect for having a box with its position, size and other things controlled by the layout theme would be to create an Elementary <a class="el" href="group__Elm__Box.html">Box</a> widget and add it as content in a <code>SWALLOW</code> part.</p>
-<p>The main difference to that, by using the layout box instead, is that its behavior, like layouting format, padding, align, etc., will <b>all be controlled by the theme</b>. This means, for example, that a signal could be sent to the layout's theme (with <a class="el" href="group__Elm__Layout.html#gaa39b36a49850270dd692ce135b2979f3" title="Send a (Edje) signal to a given layout widget&#39;s underlying Edje object.">elm_layout_signal_emit()</a>) and the signal be handled by changing the box's padding, or alignment, or both. Using the Elementary <a class="el" href="group__Elm__Box.html">Box</a> widget is not necessarily harder or easier, it just depends on the circumstances and requirements.</p>
+<p>An Edje <code>BOX</code> part is very similar to the Elementary Elm_Box widget. It allows one to add objects to the box and have them distributed along its area, accordingly to the specified <code>layout</code> property (now by <code>layout</code> we mean the chosen layouting design of the Box, not the layout widget itself).</p>
+<p>A similar effect for having a box with its position, size and other things controlled by the layout theme would be to create an Elementary Elm_Box widget and add it as content in a <code>SWALLOW</code> part.</p>
+<p>The main difference to that, by using the layout box instead, is that its behavior, like layouting format, padding, align, etc., will <b>all be controlled by the theme</b>. This means, for example, that a signal could be sent to the layout's theme (with <a class="el" href="group__Elm__Layout.html#gaa39b36a49850270dd692ce135b2979f3" title="Send a (Edje) signal to a given layout widget&#39;s underlying Edje object.">elm_layout_signal_emit()</a>) and the signal be handled by changing the box's padding, or alignment, or both. Using the Elementary Elm_Box widget is not necessarily harder or easier, it just depends on the circumstances and requirements.</p>
 <p>The layout box can be used through the <code>elm_layout_box_*</code> set of functions.</p>
 <p>The following picture demonstrates a Layout widget with many child objects added to its <code>BOX</code> part:</p>
 <div class="image">
@@ -130,8 +127,8 @@ Box (@c BOX part)</h2>
 </div>
  <h2><a class="anchor" id="secTable"></a>
 Table (@c TABLE part)</h2>
-<p>Just like the <a class="el" href="group__Elm__Layout.html#secBox">Box (<code>BOX</code> part)</a>, the layout table is very similar to the Elementary <a class="el" href="group__Elm__Table.html">Table</a> widget. It allows one to add objects to the table by specifying the row and column where the object should be added, and any column or row span, if necessary.</p>
-<p>Again, we could have this design by adding a <a class="el" href="group__Elm__Table.html">Table</a> widget to a <code>SWALLOW</code> part, using <a class="el" href="group__Elm__Layout.html#gae232373336d38945ddf4f7557f28964a">elm_layout_content_set()</a>. The same difference happens here when choosing to use the layout table (a <code>TABLE</code> part) instead of the <a class="el" href="group__Elm__Table.html">Table</a> in a <code>SWALLOW</code> part. It's just a matter of convenience.</p>
+<p>Just like the <a class="el" href="group__Elm__Layout.html#secBox">Box (<code>BOX</code> part)</a>, the layout table is very similar to the Elementary Elm_Table widget. It allows one to add objects to the table by specifying the row and column where the object should be added, and any column or row span, if necessary.</p>
+<p>Again, we could have this design by adding a Elm_Table widget to a <code>SWALLOW</code> part, using <a class="el" href="group__Elm__Layout.html#gae232373336d38945ddf4f7557f28964a">elm_layout_content_set()</a>. The same difference happens here when choosing to use the layout table (a <code>TABLE</code> part) instead of the Elm_Table in a <code>SWALLOW</code> part. It's just a matter of convenience.</p>
 <p>The layout table can be used through the <code>elm_layout_table_*</code> set of functions.</p>
 <p>The following picture demonstrates a layout widget with many child objects added to its <code>TABLE</code> part:</p>
 <div class="image">
@@ -378,7 +375,7 @@ Defines</h2></td></tr>
 <dd>
 <a class="el" href="group__Elm__Layout.html#ga8f28efed82872f5c57a61db5c81d4eb3" title="Set the edje group from the elementary theme that will be used as layout.">elm_layout_theme_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a4">entry_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a18">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a9">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a12">layout_example_03.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a14">prefs_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a6">entry_example.c</a>, <a class="el" href="layout_example_01_8c-example.html#a20">layout_example_01.c</a>, <a class="el" href="layout_example_02_8c-example.html#a9">layout_example_02.c</a>, <a class="el" href="layout_example_03_8c-example.html#a13">layout_example_03.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a16">prefs_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -472,7 +469,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a28">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a30">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -523,7 +520,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a5">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a7">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -567,7 +564,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a29">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a31">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -655,7 +652,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a10">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a12">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -850,7 +847,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>The edje data string. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a22">layout_example_01.c</a>, and <a class="el" href="layout_example_03_8c-example.html#a18">layout_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a24">layout_example_01.c</a>, and <a class="el" href="layout_example_03_8c-example.html#a20">layout_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -870,11 +867,11 @@ Defines</h2></td></tr>
 <div class="memdoc">
 
 <p>Get the edje layout. </p>
-<p>This returns the edje object. It is not expected to be used to then swallow objects via edje_object_part_swallow for example. Use <a class="el" href="group__Elm__Layout.html#gae232373336d38945ddf4f7557f28964a">elm_layout_content_set</a> instead so child object handling and sizing is done properly.</p>
+<p>This returns the edje object. It is not expected to be used to then swallow objects via <a class="el" href="group__Edje__Object__Part.html#ga97d1419f89bff20ba971e47c78641271">edje_object_part_swallow</a> for example. Use <a class="el" href="group__Elm__Layout.html#gae232373336d38945ddf4f7557f28964a">elm_layout_content_set</a> instead so child object handling and sizing is done properly.</p>
 <dl class="note"><dt><b>Note:</b></dt><dd>This function should only be used if you really need to call some low level Edje function on this edje object. All the common stuff (setting text, emitting signals, hooking callbacks to signals, etc.) can be done with proper elementary functions.</dd></dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd>An Evas_Object with the edje layout settings loaded <a class="el" href="group__Elm__Layout.html#ga8d1105463d52787a7b0ca8d7402cd3ea">elm_layout_file_set</a>. </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="codegen_example_8c-example.html#a4">codegen_example.c</a>, <a class="el" href="layout_example_03_8c-example.html#a5">layout_example_03.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a5">prefs_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="codegen_example_8c-example.html#a4">codegen_example.c</a>, <a class="el" href="layout_example_03_8c-example.html#a5">layout_example_03.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a6">prefs_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1021,7 +1018,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a21">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a15">layout_example_03.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a15">prefs_example_03.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a23">layout_example_01.c</a>, <a class="el" href="layout_example_03_8c-example.html#a17">layout_example_03.c</a>, and <a class="el" href="prefs_example_03_8c-example.html#a17">prefs_example_03.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1614,7 +1611,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a8">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a10">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1688,7 +1685,7 @@ Defines</h2></td></tr>
   </dd>
 </dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a27">layout_example_01.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="layout_example_01_8c-example.html#a29">layout_example_01.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1891,7 +1888,7 @@ Defines</h2></td></tr>
 </dl>
 <dl class="return"><dt><b>Returns:</b></dt><dd><code>true</code> on success, <code>false</code> otherwise </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a5">entry_example.c</a>, and <a class="el" href="layout_example_02_8c-example.html#a11">layout_example_02.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="entry_example_8c-example.html#a7">entry_example.c</a>, and <a class="el" href="layout_example_02_8c-example.html#a12">layout_example_02.c</a>.</dd>
 </dl>
 </div>
 </div>

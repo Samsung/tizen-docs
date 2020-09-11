@@ -1409,6 +1409,7 @@ The screen mirroring state should be <a class="el" href="group__CAPI__MEDIA__SCR
 <p>Pass window handle created by application and surface type(x11/evas). </p>
 <p>This function will use handle created by the application to set the overlay &amp; display on the surface passed by the application</p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.4</dd></dl>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>This function must be called in main thread of application. Otherwise, it will return <a class="el" href="group__CAPI__MEDIA__SCREEN__MIRRORING__MODULE.html#gga41a761c3be4712a6b592a8b51c544c2ea7f837ed3c297fc139c144f5e2e890369">SCMIRRORING_ERROR_INVALID_OPERATION</a> by internal restriction. (since tizen 5.0)</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">scmirroring_sink</td><td>The handle to the screen mirroring sink </td></tr>

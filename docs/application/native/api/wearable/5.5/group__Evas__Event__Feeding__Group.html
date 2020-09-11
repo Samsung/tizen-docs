@@ -211,7 +211,7 @@ evas_device_add_full </dd></dl>
   </dd>
 </dl>
 <p>This sets the "primary" class of device (a broad thing like mouse, keyboard, touch, pen etc.).</p>
-<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000325">Deprecated:</a></b></dt><dd>The class of a device can not be changed after creation.</dd></dl>
+<dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000323">Deprecated:</a></b></dt><dd>The class of a device can not be changed after creation.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.8 </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>3.0f(2.3.1) </dd></dl>
 
@@ -231,23 +231,7 @@ evas_device_add_full </dd></dl>
       </table>
 </div>
 <div class="memdoc">
-<p>Add a new device type</p>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">e</td><td>The canvas to create the device node for. </td></tr>
-    <tr><td class="paramname">name</td><td>The name of the device. </td></tr>
-    <tr><td class="paramname">desc</td><td>The description of the device. </td></tr>
-    <tr><td class="paramname">parent_dev</td><td>The parent device. </td></tr>
-    <tr><td class="paramname">emulation_dev</td><td>The source device. </td></tr>
-    <tr><td class="paramname">clas</td><td>The device class. </td></tr>
-    <tr><td class="paramname">sub_class</td><td>The device subclass.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Adds a new device node to the given canvas <code>e</code>. All devices created as part of the canvas <code>e</code> will automatically be deleted when the canvas is freed.</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the device node created or NULL if an error occurred.</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Evas__Event__Feeding__Group.html#ga73e1616a2b3cfd3c165a8dcca162eaaf">evas_device_del</a> </dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Delete a new device type</dd></dl>
+<p>Delete a new device type</p>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramname">dev</td><td>The device node you want to delete.</td></tr>
@@ -504,7 +488,7 @@ evas_device_add_full </dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.19 Get a device by its seat id</dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
-    <tr><td class="paramname">e</td><td>The canvas to find the device on </td></tr>
+    <tr><td class="paramname">eo_e</td><td>The canvas to find the device on </td></tr>
     <tr><td class="paramname">id</td><td>The seat id of the device.</td></tr>
   </table>
   </dd>
@@ -1832,7 +1816,7 @@ evas_device_add_full </dd></dl>
 };
 </pre></div>  <div class="fragment"><pre class="fragment"><span class="comment">/* let&#39;s have our events back */</span>
 <span class="keyword">static</span> <a class="code" href="group__Eina__Types__Group.html#ga3fe0caf72e93b1bab1ca8ee3ccf3f226">Eina_Bool</a>
-_thaw_cb(<span class="keywordtype">void</span> *data <a class="code" href="group__Eina__Types__Group.html#ga82d751be730f849719ca292f9558be87">EINA_UNUSED</a>)
+_thaw_cb(<span class="keywordtype">void</span> *data EINA_UNUSED)
 {
    printf(<span class="stringliteral">&quot;Canvas was frozen %d times, now thawing.\n&quot;</span>,
           <a class="code" href="group__Evas__Event__Feeding__Group.html#gaca66af7f9b72ddbd63104d59c1fdf894">evas_event_freeze_get</a>(d.canvas));
@@ -1843,7 +1827,7 @@ _thaw_cb(<span class="keywordtype">void</span> *data <a class="code" href="group
 <p>See the full <a class="el" href="Example_Evas_Events.html">example</a>.</p>
 <p>If you run that example, you'll see the canvas ignoring all input events for 3 seconds, when the "f" key is pressed. In a more realistic code we would be freezing while a toolkit or Edje was doing some UI changes, thawing it back afterwards. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a17">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a20">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1874,7 +1858,7 @@ _thaw_cb(<span class="keywordtype">void</span> *data <a class="code" href="group
 
  <span class="keywordflow">while</span> (<a class="code" href="group__Evas__Event__Feeding__Group.html#gaca66af7f9b72ddbd63104d59c1fdf894">evas_event_freeze_get</a>(evas) &gt; 0) <a class="code" href="group__Evas__Event__Feeding__Group.html#ga376918c56c3dc588a059da7fe8629b70">evas_event_thaw</a>(evas);
 </pre></div> <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a6">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a8">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -2298,7 +2282,7 @@ _thaw_cb(<span class="keywordtype">void</span> *data <a class="code" href="group
 <p>This will thaw out a canvas after a matching <a class="el" href="group__Evas__Event__Feeding__Group.html#ga4f6046343eab8b062e5509d984100ec8">evas_event_freeze()</a> call. If this call completely thaws out a canvas, i.e., there's no other unbalanced call to <a class="el" href="group__Evas__Event__Feeding__Group.html#ga4f6046343eab8b062e5509d984100ec8">evas_event_freeze()</a>, events will start to be processed again, but any "missed" events will <b>not</b> be evaluated.</p>
 <p>See <a class="el" href="group__Evas__Event__Feeding__Group.html#ga4f6046343eab8b062e5509d984100ec8">evas_event_freeze()</a> for an example. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a7">evas-events.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="evas-events_8c-example.html#a9">evas-events.c</a>.</dd>
 </dl>
 </div>
 </div>

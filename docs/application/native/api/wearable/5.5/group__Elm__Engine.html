@@ -255,7 +255,7 @@ Functions</h2></td></tr>
 <p>Full examples include:</p>
 <p>"gl", - try to use OpenGL "hw:depth:stencil", - use HW acceleration with default depth and stencil buffers "opengl:depth24:stencil8:msaa_mid" - use OpenGL with 24-bit depth, 8-bit stencil and a medium number of MSAA samples in the backbuffer.</p>
 <p>This takes precedence over engine preferences set with <a class="el" href="group__Elm__Engine.html#ga4e860a14f77f1dadbf8c83197cd2491f" title="Set Elementary&#39;s preferred rendering engine for use.">elm_config_preferred_engine_set()</a>.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Engine.html#ga2b9d7e5e9e0422ce9484ffaacf8effc4">elm_config_accel_preference_override_set()</a></dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.10 </dd></dl>
@@ -556,7 +556,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>Note that it will take effect only to Elementary windows created after this is called.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> </dd></dl>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> </dd></dl>
 <dl class="deprecated"><dt><b><a class="el" href="deprecated.html#_deprecated000205">Deprecated:</a></b></dt><dd>use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> + <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a> </dd></dl>
 <dl class="user"><dt><b>Since :</b></dt><dd>2.3.1 </dd></dl>
 
@@ -730,7 +730,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <p>Note that it will take effect only to Elementary windows created after this is called. This overrides the engine set by configuration at application startup. Note that it is a hint and may not be honored. It is rare to explicitly ask for an engine (likely need is the buffer engine and not much more), so use <a class="el" href="group__Elm__Engine.html#ga6caa0c699f327b240de4427a8d8ed00d" title="Get Elementary&#39;s preferred engine to use.">elm_config_accel_preference_get()</a> and <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a> normally.</p>
-<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> </dd>
+<dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Win__Group.html#gad127cc5ae04689c4f2c5b633056d0ac8">elm_win_add()</a> </dd>
 <dd>
 <a class="el" href="group__Elm__Engine.html#ga5bffe9d8bd36424943aa8d20ac148027" title="Set Elementary&#39;s acceleration preferences for new windows.">elm_config_accel_preference_set()</a> </dd>
 <dd>
@@ -753,19 +753,7 @@ Functions</h2></td></tr>
       </table>
 </div>
 <div class="memdoc">
-<p>Get access mode</p>
-<dl class="return"><dt><b>Returns:</b></dt><dd>the access mode bouncing state</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>elm_config_access_set() Set access mode</dd></dl>
-<dl class="params"><dt><b>Parameters:</b></dt><dd>
-  <table class="params">
-    <tr><td class="paramname">is_access</td><td>If <code>EINA_TRUE</code>, enables access mode</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="note"><dt><b>Note:</b></dt><dd>Elementary objects may have information (e.g. label on the elm_button) to be read. This information is read by access module when an object receives EVAS_CALLBACK_MOUSE_IN event</dd></dl>
-<dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
-<dl class="see"><dt><b>See also:</b></dt><dd>elm_config_access_get() Get whether selection should be cleared when entry widget is unfocused.</dd></dl>
+<p>Get whether selection should be cleared when entry widget is unfocused.</p>
 <dl class="return"><dt><b>Returns:</b></dt><dd>if the selection would be cleared on unfocus.</dd></dl>
 <dl class="user"><dt><b>Since (EFL) :</b></dt><dd>1.7</dd></dl>
 <dl class="see"><dt><b>See also:</b></dt><dd><a class="el" href="group__Elm__Engine.html#gad53f7f8a081e692ef55c18d6f53deadd">elm_config_selection_unfocused_clear_set()</a> </dd></dl>
