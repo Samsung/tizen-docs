@@ -18,17 +18,14 @@ The following table lists the available UI components:
 | [FlexContainer](./flexcontainer.md)  | A FlexContainer implements a subset of the flexbox spec. | `FlexContainer`              |
 | [ImageView](./imageview.md)          | An image view is a class for displaying an image resource.   | `ImageView`                   |
 | [Loading](./nui-components/Loading.md) | A loading is used to give information about the ongoing operations. | `Loading`                |
-| [Popup](./nui-components/Popup.md) | A popup is used as a popup window. | `Popup`                |
 | [Progress](./nui-components/Progress.md) | A progress is used to show the ongoing status using a long narrow bar. | `Progress`                |
 | [RadioButton](./nui-components/RadioButton.md) | A RadioButton that can set selected or unselected status when user selects it. | `RadioButton`                |
 | [Slider](./nui-components/Slider.md) | A slider that indicates a modifiable value within a specific range. | `Slider`                   |
 | [Switch](./nui-components/Switch.md) | A switch that can be used as a selector. | `Switch`                |
-| [Tab](./nui-components/Tab.md) | A tab is easy to explore and switch between different views. | `Tab`                |
 | [TableView](./tableview.md)          | A table view that can align child actors in a grid like layout. | `TableView`             |
 | [TextEditor](./texteditor.md)        | A text editor that provides a multi line editable text. | `TextEditor`                |
 | [TextField](./textfield.md)          | A text field that provides a single line editable text. | `TextField`                 |
 | [TextLabel](./textlabel.md)          | A text label that renders a short text string. | `TextLabel`                |
-| [Toast](./nui-components/Toast.md) | A toast is used to provide simple messages. | `Toast`                |
 | [VideoView](./videoview.md)          | A video view that controls and displays video playback. | `VideoView`                 |
 
 The base class for the components is `View`. This class can also be used to create your own custom UI components. For more information on the view class, see [View](./view.md). In this UI Components guide, both the terms **control** and **component** are used to refer to a UI component.
