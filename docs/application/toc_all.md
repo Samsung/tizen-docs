@@ -947,6 +947,7 @@
 #### [Overview](/application/native/guides/device/overview.md)
 #### [Attached Devices](/application/native/guides/device/attached-devices.md)
 #### [External Output Devices](/application/native/guides/device/ext-output.md)
+#### [Diagnostics](/application/native/guides/device/diagnostics.md)
 #### [Runtime Information](/application/native/guides/device/runtime.md)
 #### [System Information](/application/native/guides/device/system.md)
 #### [System Settings](/application/native/guides/device/settings.md)
