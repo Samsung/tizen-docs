@@ -63,7 +63,7 @@ the applications you want.
   You can [send a search command](#sending-and-processing-a-search-command) to the server from the client side, and then process the command on the server side.
 
   > [!NOTE]
-  > This feature supports Tizen 5.0 and Higher for Mobile and Wearable.
+  > This feature supports Tizen 5.0 and Higher.
 
 - Updating and retrieving abilities
 
@@ -74,7 +74,7 @@ the applications you want.
   When the server supports abilities, then the media controller clients can send commands to the server.
   
   > [!NOTE]
-  > This feature supports Tizen 5.5 and Higher for Mobile and Wearable.
+  > This feature supports Tizen 5.5 and Higher.
   
 ## Prerequisites
 
@@ -991,9 +991,9 @@ The following table lists all the server state attributes the client can receive
 | `MC_PLAYBACK_STATE_MOVING_TO_PREVIOUS` | Playback state of moving to previous media (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 | `MC_PLAYBACK_STATE_FAST_FORWARDING` | Playback state of fast forwarding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 | `MC_PLAYBACK_STATE_REWINDING`       | Playback state of rewinding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
-| `MC_PLAYBACK_STATE_CONNECTING`  | Connecting (Tizen 6.0 and Higher)         |
-| `MC_PLAYBACK_STATE_BUFFERING`   | Buffering (Tizen 6.0 and Higher)          |
-| `MC_PLAYBACK_STATE_ERROR`       | Error  (Tizen 6.0 and Higher)             |
+| `MC_PLAYBACK_STATE_CONNECTING`  | Playback state of connecting (Tizen 6.0 and Higher)         |
+| `MC_PLAYBACK_STATE_BUFFERING`   | Playback state of buffering (Tizen 6.0 and Higher)          |
+| `MC_PLAYBACK_STATE_ERROR`       | Playback state of error  (Tizen 6.0 and Higher)             |
 
 ## Media Controller Playback Action Attributes
 
@@ -1091,7 +1091,7 @@ The following table lists all the content type attributes that the server can re
 | `MC_CONTENT_TYPE_UNDECIDED`      | Content type is not decided              |
 
 > [!NOTE]
-> These attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.0 and Higher.
 
 ## Media Controller Search Category Attributes
 
@@ -1110,7 +1110,7 @@ The following table lists all the search category attributes that the server can
 | `MC_SEARCH_TPO`                  | Search by Time Place Occasion            |
 
 > [!NOTE]
-> These attributes support Tizen 5.0 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.0 and Higher.
 
 ## Media Controller Display Mode Attributes
 
@@ -1127,7 +1127,7 @@ The following table lists all the display mode attributes that the client can re
 | `MC_DISPLAY_MODE_CROPPED_FULL`   | Display mode is cropped fullscreen       |
 
 > [!NOTE]
-> These attributes support Tizen 5.5 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.5 and Higher.
 
 ## Media Controller Display Rotation Attributes
 
@@ -1144,7 +1144,7 @@ The following table lists all the display rotation attributes that the client ca
 | `MC_DISPLAY_ROTATION_270`        | Display is rotated 270 degrees           |
 
 > [!NOTE]
-> These attributes support Tizen 5.5 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.5 and Higher.
 
 ## Media Controller Ability Attributes
 
@@ -1163,7 +1163,7 @@ The following table lists all the search category attributes that the server can
 | `MC_ABILITY_SEARCH`              | Ability for search                       |
 
 > [!NOTE]
-> These attributes support Tizen 5.5 and Higher for Mobile and Wearable.
+> These attributes support Tizen 5.5 and Higher.
 
 ## Media Controller Result Code Attributes
 
@@ -1191,7 +1191,7 @@ The following table lists all the result code attributes that the client and ser
 | `MC_RESULT_CODE_UNKNOWN`                | Unknown error                    |
 
 > [!NOTE]
-> These attributes support Tizen 6.0 and Higher for Mobile and Wearable.
+> These attributes support Tizen 6.0 and Higher.
 
 ## Related Information
 - Dependencies
