@@ -993,7 +993,7 @@ The following table lists all the server state attributes the client can receive
 | `MC_PLAYBACK_STATE_REWINDING`       | Playback state of rewinding (Tizen 4.0 and Higher for Mobile and Tizen 5.0 and Higher for Wearable) |
 | `MC_PLAYBACK_STATE_CONNECTING`  | Playback state of connecting (Tizen 6.0 and Higher)         |
 | `MC_PLAYBACK_STATE_BUFFERING`   | Playback state of buffering (Tizen 6.0 and Higher)          |
-| `MC_PLAYBACK_STATE_ERROR`       | Playback state of error  (Tizen 6.0 and Higher)             |
+| `MC_PLAYBACK_STATE_ERROR`       | Playback state of error (Tizen 6.0 and Higher)             |
 
 ## Media Controller Playback Action Attributes
 
