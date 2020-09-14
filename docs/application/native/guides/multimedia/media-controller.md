@@ -1005,8 +1005,8 @@ The following table lists all the playback action attributes the client can send
 |----------------------------------|------------------------------------------|
 | **Playback actions**             |                                          |
 | `MC_PLAYBACK_ACTION_PLAY`        | Playback action of play                  |
-| `MC_PLAYBACK_ACTION_PAUSED`      | Playback action of pause                 |
-| `MC_PLAYBACK_ACTION_STOPPED`     | Playback action of stop                  |
+| `MC_PLAYBACK_ACTION_PAUSE`       | Playback action of pause                 |
+| `MC_PLAYBACK_ACTION_STOP`        | Playback action of stop                  |
 | `MC_PLAYBACK_ACTION_NEXT`        | Playback action of moving to next media  |
 | `MC_PLAYBACK_ACTION_PREV`        | Playback action of moving to previous media |
 | `MC_PLAYBACK_ACTION_FAST_FORWARD` | Playback action of fast forward         |
@@ -1072,7 +1072,7 @@ The following table lists all the playlist update mode attributes the client can
 |----------------------------------|------------------------------------------|
 | **Playlist update modes**        |                                          |
 | `MC_PLAYLIST_UPDATED`            | Create or updated playlist               |
-| `MC_PLAYBACK_REMOVED`            | Remove playlist                          |
+| `MC_PLAYLIST_REMOVED`            | Remove playlist                          |
 
 
 ## Media Controller Content Type Attributes
@@ -1176,8 +1176,8 @@ The following table lists all the result code attributes that the client and ser
 | **Result code**                         |                                                         |
 | `MC_RESULT_CODE_SUCCESS`                | The command or the event has completed successfully |
 | `MC_RESULT_CODE_ALREADY_DONE`           | The command or the event had executed previously |
-| `MC_RESULT_CODE_ABORTED`                | The command or the event is aborted by some external event (e.g. aborted play command by incoming call) |
-| `MC_RESULT_CODE_DENIED`                 | The command or the event is denied due to application policy (e.g. cannot rewind in recording) |
+| `MC_RESULT_CODE_ABORTED`                | The command or the event is aborted by some external event (for example aborted play command by incoming call) |
+| `MC_RESULT_CODE_DENIED`                 | The command or the event is denied due to application policy (for example cannot rewind in recording) |
 | `MC_RESULT_CODE_NOT_SUPPORTED`          | The command or the event is not supported |
 | `MC_RESULT_CODE_INVALID`                | The command or the event is out of supported range or has reached the limit |
 | `MC_RESULT_CODE_TIMEOUT`                | Timeout has occurred             |
