@@ -33,6 +33,7 @@ To obtain the information, query a feature or system key.
    - [Content](#content)
    - [Contextual trigger](#trigger)
    - [Database](#database)
+   - [Diagnostics](#diagnostics)
    - [Download](#download)
    - [FIDO](#fido)
    - [FM radio](#fmradio)
@@ -245,6 +246,15 @@ The following table lists the database feature keys:
 | Key                                      | Type   | Description                              |
 |------------------------------------------|--------|------------------------------------------|
 | `http://tizen.org/feature/database.encryption` | `bool` | The platform returns `true` for this key, if the device supports database encryption. |
+
+The following table lists the diagnostics feature keys:
+
+<a name="diagnostics"></a>
+**Table: Diagnostics feature keys**
+
+| Key                                      | Type   | Description                              |
+|------------------------------------------|--------|------------------------------------------|
+| `http://tizen.org/feature/diagnotics` | `bool` | The platform returns `true` for this key, if the device supports diagnotics feature. |
 
 The following table lists the download feature keys:
 
