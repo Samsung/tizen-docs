@@ -1175,9 +1175,9 @@ The following table lists all the result code attributes that the client and ser
 |-----------------------------------------|---------------------------------------------------------|
 | **Result code**                         |                                                         |
 | `MC_RESULT_CODE_SUCCESS`                | The command or the event has completed successfully |
-| `MC_RESULT_CODE_ALREADY_DONE`           | The command or the event had executed previously |
-| `MC_RESULT_CODE_ABORTED`                | The command or the event is aborted by some external event (for example aborted play command by incoming call) |
-| `MC_RESULT_CODE_DENIED`                 | The command or the event is denied due to application policy (for example cannot rewind in recording) |
+| `MC_RESULT_CODE_ALREADY_DONE`           | The command or the event has executed previously |
+| `MC_RESULT_CODE_ABORTED`                | The command or the event is aborted by some external event (for example, aborted play command by incoming call) |
+| `MC_RESULT_CODE_DENIED`                 | The command or the event is denied due to application policy (for example, cannot rewind in recording) |
 | `MC_RESULT_CODE_NOT_SUPPORTED`          | The command or the event is not supported |
 | `MC_RESULT_CODE_INVALID`                | The command or the event is out of supported range or has reached the limit |
 | `MC_RESULT_CODE_TIMEOUT`                | Timeout has occurred             |
