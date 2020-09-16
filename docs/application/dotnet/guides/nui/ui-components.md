@@ -18,6 +18,7 @@ The following table lists the available UI components:
 | [FlexContainer](./flexcontainer.md)  | A FlexContainer implements a subset of the flexbox spec. | `FlexContainer`              |
 | [ImageView](./imageview.md)          | An image view is a class for displaying an image resource.   | `ImageView`                   |
 | [Loading](./nui-components/Loading.md) | A loading is used to give information about the ongoing operations. | `Loading`                |
+| [Pagination](./nui-components/Pagination.md) | A Pagination is used to show the number of pages available and the currently active page. | `Pagination`                |
 | [Progress](./nui-components/Progress.md) | A progress is used to show the ongoing status using a long narrow bar. | `Progress`                |
 | [RadioButton](./nui-components/RadioButton.md) | A RadioButton that can set selected or unselected status when user selects it. | `RadioButton`                |
 | [Slider](./nui-components/Slider.md) | A slider that indicates a modifiable value within a specific range. | `Slider`                   |
