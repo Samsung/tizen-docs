@@ -2,7 +2,7 @@
 
 Pagination is a common component supporting multiple pages. It shows the number of pages available and the currently active page.
 
-![Pagination](./media/Pagination.PNG)
+![Pagination](./media/Pagination.png)
 
 ## Create with property
 
@@ -38,7 +38,7 @@ To create a Pagination using property, follow these steps:
 
 Following output is generated when the Pagination is created using property:
 
-![Pagination1](./media/Pagination1.PNG)
+![Pagination1](./media/Pagination1.png)
 
 ## Create with style
 
@@ -73,7 +73,7 @@ To create a Pagination using style, follow these steps:
 
 Following output is generated when the Pagination is created using style:
 
-![Pagination2](./media/Pagination2.PNG)
+![Pagination2](./media/Pagination2.png)
 
 ## Create with defined styles
 
@@ -121,7 +121,7 @@ You can define a style based on the user experience (UX) and then use this style
 
 Following output is generated when the Pagination is created using the defined style:
 
-![Pagination2](./media/Pagination2.PNG)
+![Pagination2](./media/Pagination2.png)
 
 ## Responding to window key event
 
