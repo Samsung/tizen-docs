@@ -125,8 +125,7 @@ Following output is generated when the Pagination is created using the defined s
 
 ## Responding to window key event
 
-When you press "left", the currently active page will change to previous page.
-When you press "right", the currently active page will change to next page.
+When you press left, the currently active page changes to the previous page. When you press right, the currently active page changes to the next page.
 You can declare the window key event as follows:
 
 ```cs
@@ -157,7 +156,7 @@ private void Window_KeyEvent(object sender, Window.KeyEventArgs e)
 }
 ```
 
-## Related Information
+## Related information
 
 - Dependencies
   -   Tizen 6.0 and Higher
