@@ -859,6 +859,7 @@
 ##### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
 ##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
+##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
 #### [Media Playback](/application/native/guides/multimedia/media-playback.md)
 #### [Media Recording](/application/native/guides/multimedia/media-recording.md)
 #### [Media Controller](/application/native/guides/multimedia/media-controller.md)
