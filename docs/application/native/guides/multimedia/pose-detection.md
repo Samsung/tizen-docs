@@ -1,20 +1,20 @@
 # Pose Detection
 
-Pose Detection is new feature of Media Vision Inference API since Tizen 6.0. It can provides landmarks detection. In addition, it defines landmarks and parts of a human body and provides to detect a human pose with an motion capture (MoCap) file which a user can create or edit with tools.
+Pose Detection is a new feature of Media Vision Inference API since Tizen 6.0. This feature provides landmark detection. Besides, it defines landmarks and parts of a human body to help detect a human pose with motion capture (MoCap) file, which you can create or edit using various tools.
 
 ## Background
 
-Tizen defines a human body pose landmarks and body parts as following figure.
+In Tizen, a human body pose landmarks and body parts are defined as follows:
 
 **Figure: Definition of human body pose landmarks and body parts**
 
 ![Body pose](./media/mediavision_pose_tizen_def.png)
 
-Pose landmark detection models are available in open model zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models) or public github site such as [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile). Those models provide different landmark information such as the number of landmarks and locations. To use them correctly, you have to map those information to landmarks based on the definition. For example, following is a [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile) which provides 14 landmarks:
+The Pose landmark detection models are available in Open Model Zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models) or public GitHub site such as [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile). The public pose models provide landmark information, such as the number of landmarks and locations. To use them correctly, you must map the information to landmarks based on the definition. For example, you can use the [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile), which provides 14 landmarks as follows:
 
 ![Body pose](./media/mediavision_pose_public_model_def.png),
 
-In this model, `-1` means that there is no landmarks. Using this landmark information you can create a mapping file. Following is an example of mapping file you can create with name `pose_mapping.txt`:
+In this model, `-1` denotes that there is no landmarks. Using this landmark information, you can create a mapping file. Suppose you create a mapping file with the name `pose_mapping.txt,` then you can populate the `pose_mapping.txt` file as follows:
 
 ```
 1
@@ -35,9 +35,9 @@ In this model, `-1` means that there is no landmarks. Using this landmark inform
 14
 ```
 
-`1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at the 3rd denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the 4th denotes that the 3rd landmark of the model corresponds to the 4th, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. You can know how it works with following table.
+`1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at the 3rd denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the 4th denotes that the 3rd landmark of the model corresponds to the 4th, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. The following table shows how the public model works.
 
-**Table: Example of how  [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile) to map the definition**
+**Table: Example of how  [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile) maps to the definition**
 
 | Value | Defintion | pose_mapping.txt |
 | - | - | - |
@@ -59,11 +59,11 @@ In this model, `-1` means that there is no landmarks. Using this landmark inform
 | 16 | MV_INFERENCE_HUMAN_POSE_LEFT_ANKLE | 14 |
 
 
-Motion capture file (MoCap) includes the movements of objects or a person. There are various MoCap formats, but well-known BVH (BioVision Hierarchy) file is supported in Media Vision. BVH file has Hierarchy structure to provide landmark information with landmarks' name and the structure can be changed. It means that landmarks information is different from the definition. To use them correctly, you have to map those information to landmarks based on the definition. For example, an [example](/media/mediavision_pose_bvh_sample.bvh) BVH file describes a squat pose in the following image with 15 landmarks. It starts with hips and ends with left foot.
+Motion capture file (MoCap) includes the movements of objects or a person. There are various MoCap formats, but a well-known BVH (BioVision Hierarchy) file is supported in Media Vision. BVH file has Hierarchy structure to provide landmark information with landmarks' name, and the structure can be changed. It means that landmarks information is different from the definition. To use them correctly, you have to map the information to the landmarks based on the definition. For example, the [BVH file](/media/mediavision_pose_bvh_sample.bvh) describes a squat pose as follows:
 
 ![Body pose](./media/mediavision_pose_bvh_sample.png)
 
-You can create a mapping file, named of `mocap_mapping.txt` as following.
+The example starts with hips and ends with left foot with 15 landmrks. You can create a mapping file named `mocap_mapping.txt` as follows:
 
 ```
 Hips,10
@@ -99,7 +99,7 @@ To enable your application to use the media vision inference functionality:
    /* Preview images for image tracking */
    #include <camera.h>
    ```
-2. Create a structure to store the global data.
+2. Create a structure to store global data.
 
    For pose detection , use the following `imagedata_s` structure:
 
@@ -114,7 +114,7 @@ To enable your application to use the media vision inference functionality:
    static imagedata_s imagedata;
    ```
 
-## Detect Human Pose
+## Detect human pose
 
 To detect human pose from an image:
 
@@ -135,7 +135,7 @@ To detect human pose from an image:
 
     <img src="./media/mediavision_pose_sample_sumo.png" width=300>
 
-   In the following example, `sample.jpg` is the image which a person gets a squat pose and  is in the `<OwnDataPath>` folder.
+   In the following example image `sample.jpg`, a person is shown in a squat pose, and the image is in the `<OwnDataPath>` folder.
    The `<OwnDataPath>` refers to your own data path:
 
    ```c
@@ -179,14 +179,14 @@ To detect human pose from an image:
    free(dataBuffer);
    dataBuffer = NULL;
    ```
-3. To detect landmark of pose from the `sample.jpg`, create a `g_inference` media vision inference handle:
+3. To detect landmark of the pose from the `sample.jpg` image, create a `g_inference` media vision inference handle:
 
    ```c
    error_code = mv_inference_create(&imagedata.g_inference);
    if (error_code != MEDIA_VISION_ERROR_NONE)
        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
    ```
-4. Configure `g_engine_config` with a body pose model data and its mapping file. In the following example, TensorFlow Lite model is used and `data.tflite` and its mapping file `data_mapping.txt` are in `<OwnDataPath>`. Model data is available in open model zoo such as [hosted model zoo](https://www.tensorflow.org/lite/guide/hosted_models#floating_point_models) or [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile). Suppose model data and its mapping file in [Background](#background):
+4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt` are used as the same ones described in [Background](#background) and they are in `<OwnDataPath>`:
 
     ```c
     #define MODEL_DATA "OwnDataPath/data.tflite"
@@ -195,54 +195,53 @@ To detect human pose from an image:
     char *inputNodeName = "image";
     char *outputNodeName[] = { "output" };
 
-    mv_engine_config_h handle;
-    error_code = mv_create_engine_config(&handle);
+    error_code = mv_create_engine_config(&imagedata.g_engine_config);
 
-    error_code = mv_engine_config_set_string_attribute(handle,
+    error_code = mv_engine_config_set_string_attribute(imagedata.g_engine_config,
     MV_INFERENCE_MODEL_WEIGHT_FILE_PATH,
     MODEL_DATA);
 
-    error_code = mv_engine_config_set_string_attribute(handle,
+    error_code = mv_engine_config_set_string_attribute(imagedata.g_engine_config,
     MV_INFERENCE_INPUT_DATA_TYPE,
     MV_INFERENCE_DATA_FLOAT32);
 
-    error_code = mv_engine_config_set_string_attribute(handle,
+    error_code = mv_engine_config_set_string_attribute(imagedata.g_engine_config,
     MV_INFERENCE_MODEL_USER_FILE_PATH,
     MODEL_MAPPING_FILE);
 
-    error_code = mv_engine_config_set_double_attribute(handle,
+    error_code = mv_engine_config_set_double_attribute(imagedata.g_engine_config,
     MV_INFERENCE_MODEL_MEAN_VALUE,
     0.0);
 
-    error_code = mv_engine_config_set_double_attribute(handle,
+    error_code = mv_engine_config_set_double_attribute(imagedata.g_engine_config,
     MV_INFERENCE_MODEL_STD_VALUE,
     1.0);
 
-    error_code = mv_engine_config_set_int_attribute(handle,
+    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
     MV_INFERENCE_BACKEND_TYPE,
     MV_INFERENCE_BACKEND_TFLITE);
 
-    error_code = mv_engine_config_set_int_attribute(handle,
+    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
     MV_INFERENCE_BACKEND_TYPE,
     MV_INFERENCE_TARGET_CPU);
 
-    error_code = mv_engine_config_set_int_attribute(handle,
+    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
     MV_INFERENCE_INPUT_TENSOR_WIDTH,
     192);
 
-    error_code = mv_engine_config_set_int_attribute(handle,
+    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
     MV_INFERENCE_INPUT_TENSOR_HEIGHT,
     192);
 
-    error_code = mv_engine_config_set_int_attribute(handle,
+    error_code = mv_engine_config_set_int_attribute(imagedata.g_engine_config,
     MV_INFERENCE_INPUT_TENSOR_CHANNELS,
     3);
 
-    error_code = mv_engine_config_set_string_attribute(handle,
+    error_code = mv_engine_config_set_string_attribute(imagedata.g_engine_config,
     MV_INFERENCE_INPUT_NODE_NAME,
     inputNodeName);
 
-    error_code = mv_engine_config_set_array_string_attribute(handle,
+    error_code = mv_engine_config_set_array_string_attribute(imagedata.g_engine_config,
     MV_INFERENCE_OUTPUT_NODE_NAMES,
     outputNodeName, 1);
     ```
@@ -273,7 +272,7 @@ To detect human pose from an image:
       dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
       ```
 
-8. Set `mocap.bvh` and its mapping file `mocap_mapping.txt` to `g_pose` handle to compare and detect pose. Suppose MoCap file and its mapping file in [Background](#background):
+8. Suppose that MoCap BVH file `mocap.bvh` and its mapping file `mocap_mapping.txt` are used as the same ones described in [Background](#background) and they are in `<OwnDataPath>`. Then, set them to `g_pose` handle to compare and detect the pose:
 
     ```c
     #define MOCAP_DATA "OwnDataPath/mocap.bvh"
@@ -291,7 +290,7 @@ To detect human pose from an image:
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-    `mv_inference_pose_landmark_detect()` invokes `_on_pose_landmark_detected_cb()` callback.
+    The `mv_inference_pose_landmark_detect()` invokes the `_on_pose_landmark_detected_cb()` callback.
     The following callback example shows how to detect pose from the detected landmark:
 
     ```c
@@ -316,7 +315,7 @@ To detect human pose from an image:
     }
     ```
 
-10. After the detetion is complete, destroy the source, engine configuration, the inference, and the pose handles using `mv_destroy_source()`, `mv_destroy_engine_config()`, `mv_inference_destroy()`, and `mv_pose_destroy()`:
+10. After the detection is complete, destroy the source, engine configuration, the inference, and the pose handles using `mv_destroy_source()`, `mv_destroy_engine_config()`, `mv_inference_destroy()`, and `mv_pose_destroy()`:
 
     ```c
     error_code = mv_destroy_source(imagedata.g_source);
