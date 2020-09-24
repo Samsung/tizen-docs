@@ -1,4 +1,4 @@
-﻿# Tizen 6.0 Public M2 Release Notes
+﻿# Tizen 6.0 Public M2
 
 Release date: Oct. 15, 2020
 
@@ -10,19 +10,19 @@ Release date: Oct. 15, 2020
 #### New and changed features
 
 - Kernel upgrade
-  - Kernel for Raspberry Pi 4 has been upgraded to version 5.4y.
+  - Kernel for Raspberry Pi 4 has been upgraded to version 5.4.50.
 - 64Bit Kernel and Boot Support
-  - 64Bit supported Kernel and Boot for Raspberry Pi 4
+  - 64Bit Kernel and Boot for Raspberry Pi 4 has been supported.
 - Lightweight KSM
-  - Reference implementation of lightweight version of Kernel Samepage Merging (LKSM) in Raspberry PI 4 Kernel and resourced extension with LKSM
+  - Reference lightweight version of Kernel Samepage Merging (LKSM) in Raspberry PI 4 Kernel and resourced extension with LKSM has been implemented.
 - System management
   - Runtime storage verification with dm-verity has been developed.
   - Systemd has been optimized for better boot performance.
 - D-Bus
-  - Algorithms for D-Bus policy check have been improved for reducing dbus call latency.
+  - Algorithms for D-Bus policy check have been improved for reducing the D-Bus call latency.
   - D-Bus implementation on public API set has been optimized.
 - Logger
-  - QoS feature has been developed for fairly limiting and fully utilizing log usage.
+  - QoS feature has been developed for limiting and fully utilizing log usage.
   - Deduplication feature has been developed for preventing repeated logs.
   - CPU usage on dlog_logger has been optimized with added configurations.
 - Device and resource management
@@ -39,7 +39,7 @@ Release date: Oct. 15, 2020
   - Emergency mode has been fixed to remove wrong service dependencies.
 
 
-### System (System Reliability & OS Upgrade)
+### System (System Reliability and OS Upgrade)
 
 #### New and changed features
 
@@ -48,8 +48,8 @@ Release date: Oct. 15, 2020
 - Removable storage-based update/recovery has been supported. 
 - Update result API has been enhanced.
 - Diagnostics API, which can be used to retrieve diagnostic information from the system like system crash, has been added.
-- Ability to resolve callstack from updatable applications has been added.
-- Size-reduced coredumps for C# programs have been added.
+- Ability to resolve Callstack from updatable applications has been added.
+- Core dumps with reduced size for C# programs have been added.
 
 
 ### System (Base)
@@ -83,11 +83,11 @@ Release date: Oct. 15, 2020
     - Tools have been provided to install multiple packages at once.
 - Tizen Theme Manager
   - Getting resources
-    - The API set for obtaining related resources path using a specific resource key has been provided.
+    - The API set for obtaining related resource path using a specific resource key has been provided.
   - Theme changed event
     - The API set for receiving the changed event from the app when changing the settings has been provided.
   - Theme overlay
-    - Overlay function between default theme and selected theme has been provided.
+    - Overlay function between the default theme and the selected theme has been provided.
 
 
 ### Window and Interaction
@@ -95,20 +95,20 @@ Release date: Oct. 15, 2020
 #### New and changed features
 
 - Interaction
-  - Gesture FW & engine
+  - Gesture FW and engine
     - The API set to receive the event for hand gesture has been supported.
     - Gesture Framework for managing multi gesture clients and engines has been supported.
     - The service app for default gesture engine has been supported.
     - Support for on-demand daemon launch has been added.
 - Enlightenment Wayland display server
-  - Display Compatibility for the Legacy Widget Application has been added. Legacy Widget applications can display on the screen of which size is different from the one of application without the modification.
+  - Display Compatibility for the Legacy Widget application has been added. Without any modification, Legacy Widget applications can be viewed on different screen sizes than that it was originally designed for.
 - Ecore Buffer
   - The ecore-buffer and ecore-buffer-queue API set has been deprecated.
 - Tizen-ws-shell
-  - A new enumeration has been added to support a new type of quickpanel service.
+  - A new enumeration has been added to support a new type of Quickpanel service.
 - Quickpanel C# Support
-  - C# API set for quickpanel client and service has been added. (Tizen.NUI.WindowSystem.Shell)
-- The libds API set that can be used to create and configure wayland-based display server has been newly added.
+  - C# API set for Quickpanel client and service has been added (Tizen.NUI.WindowSystem.Shell).
+- The libds API set used to create and configure Wayland-based display server has been newly added.
 
 
 ### Graphics Engine
@@ -116,7 +116,7 @@ Release date: Oct. 15, 2020
 #### New and changed features
 
 - DALi (3D UI Toolkit)
-  - All API set of DALi has been deprecated. NUI (DALi C# layer) replaces DALi API set.
+  - API set of DALi has been deprecated. DALi API set has been replaced with NUI (DALi C# layer).
 - NUI
   - Common
     - Throwing an exception has been added when some methods are used in worker threads.
@@ -133,7 +133,7 @@ Release date: Oct. 15, 2020
 
 - NUI
   - View
-    - The size bug of the View has been fixed when setting the size and animating the size are used at the same time.
+    - The View size-related bug has been fixed when setting and animating the size are used at the same time.
     - A PropertyNotification bug has been fixed.
     - Some bugs of GaussianBlurVies have been fixed.
     - Some bugs of TextLabels have been fixed.
@@ -175,20 +175,20 @@ Release date: Oct. 15, 2020
     - media_streamer_webrtc_node_unset_message_cb
 - Image Util
   - Support for WebP has been added.
-  - Support for encoding for GIF and WebP animation has been added.
+  - Support for encoding GIF and WebP animation has been added.
   - Support for ARGB and GBRA for PNG encoding has been added.
 - Metadata Editor
   - Support for WAV, FLAC, and OGG has been added.
 - Media Controller
   - Result codes for command have been added.
-  - Three Playback states have been added. (Connection, Buffering, and Error)
+  - Three Playback states Connection, Buffering, and Error have been added.
 - Media Vision
   - New enumerations for human pose landmark and body part have been added.
-  - API set to detect pose landmark, i.e., human body pose, has been added.
+  - API set to detect pose landmarks, such as the human body pose has been added.
 - Recorder
   - API set to decide video frame encoding has been added.
   - Support for video scaling has been added.
-    - It is only for single video stream supported device.
+    - Video scaling is only for a single video stream supported device.
 
 
 ### Network and Connectivity
@@ -196,8 +196,8 @@ Release date: Oct. 15, 2020
 #### New and changed features
 
 - Connection API
-  - Following API set to require new partner level privilege has been changed.
-    - New privilege: http://tizen.org/privilege/network.route
+  - Following API set has been changed to require new partner level privilege.
+    - New privilege: `http://tizen.org/privilege/network.route`
     - Privilege level: partner
     - Affected API set
       - connection_add_route
@@ -207,21 +207,21 @@ Release date: Oct. 15, 2020
       - connection_add_route_entry
       - connection_remove_route_entry
 - Bluetooth mesh network
-  - Bluetooth framework has been extended to support Bluetooth mesh network standard.
+  - Bluetooth framework has been extended to support the Bluetooth mesh network standards.
     - Platform API for Bluetooth mesh network features has been added.
     - Open source bluez module has been upgraded to support Bluetooth mesh network.
     - Tizen Bluetooth framework has been extended to control bluez’s mesh daemon.
-  - Tizen devices will be able to do Bluetooth mesh network provisioning and control devices like smart blubs, which support Bluetooth mesh network standard.
+  - Bluetooth mesh network provisioning and controlling devices like smart bulbs, which support Bluetooth mesh network standards has been added.
 - Wi-Fi multiple interface support
   - Network modules have been extended to support devices with multiple Wi-Fi network interfaces.
-    - connman and net-config have been extended to identify a specific Wi-Fi network interface for its operations like scan and connect.
-    - Platform API for specifying Wi-Fi network interface for each operation has been added for connection and wifi-manager API.
-  - Public connection and wifi-manager API are backward compatible by introducing a concept of default Wi-Fi network interface.
-- UWB (Ultra wideband) ranging
+    - connman and net-config have been extended to identify a specific Wi-Fi network interface for operations like scan and connect.
+    - Platform API for specifying the Wi-Fi network interface for each operation has been added for connection and Wi-Fi Manager API.
+  - Public connection and Wi-Fi Manager API is backward compatible by introducing a concept of default Wi-Fi network interface.
+- Ultra wideband (UWB) ranging
   - Platform API for UWB has been added.
   - UWB manager daemon has been added.
-  - It has been tested with Decawave’s dwm1001 module on RPI4.
-  - Devices with UWB modules will be able to measure distance between them.
+  - UWB manager daemon has been tested with Decawave’s dwm1001 module on RPI 4.
+  - Devices with UWB modules have been enabled to measure the distance between them.
 
 
 ### Security
@@ -249,16 +249,16 @@ Release date: Oct. 15, 2020
     - Support for checking on edge with tolerance for rectangle has been added.
 - Battery-Monitor Framework
   - Support for resetting battery dump data has been added.
-  - Support for dumping application id with event of battery dump has been added.
+  - Support for dumping application ID with the event of battery dump has been added.
 - Context Framework
   - Motion API has been deprecated.
 
 #### Fixes
 
 - Context Framework
-  - Fix for potential security vulnerability has been added.
+  - A potential security vulnerability has been fixed.
 - Location Framework
-  - Precision improvement in getting distance between two locations has been added.
+  - The precision in getting distance between two locations has been improved.
 
 
 ### Web framework
@@ -268,14 +268,13 @@ Release date: Oct. 15, 2020
 - Web engine
   - Feature support
     - Support for OffscreenCanvas has been added: OffscreenCanvas enables canvas rendering apart from the main thread.
-  - Feature change/fix
-    - Strict MIME type for module scripts: Loading module script from the local file feature has been removed.
-    - App control URL bug fix: appcontrol:// scheme now able to launch application from encoded URL.
+  - Strict MIME type for module scripts
+    - Loading module script from the local file feature has been removed.
 - Web runtime
-  - Device API has been added for wrt-service.
-  - Web server and web server has been added as a wrt-service built-in module.
+  - Device API for wrt-service has been added.
+  - Web server has been added as a wrt-service built-in module.
   - WRT.js API management policy has been added.
-    - API has been changed from generic js to type script.
+    - API has been changed from generic js to TypeScript.
     - API compatibility checker has been added.
 
 #### Fixes
@@ -284,6 +283,8 @@ Release date: Oct. 15, 2020
   - The problem of autofill operation in major web site has been improved.
 - Stability enhancement
   - Unexpected random crash while clean up sequence has been fixed.
+- App control URL bug
+  - appcontrol://  scheme is now able to launch application from encoded URL.
 
 
 ### Lightweight Web Solution
@@ -301,7 +302,7 @@ Release date: Oct. 15, 2020
     - Object.fromEntries
     - String.prototype.trimStart
     - String.prototype.trimEnd
-  - Following features' syntax has been updated.
+  - The syntax of the following features has been updated.
     - Optional catch binding parameters
     - Allowing U+2028 (LINE SEPARATOR) and U+2029 (PARAGRAPH SEPARATOR) in string literals
   - Array.prototype.sort has been updated due to the specification change.
@@ -309,7 +310,7 @@ Release date: Oct. 15, 2020
 - Performance and Memory Optimization
   - JS Engine
     - Debugger core features have been updated.
-    - Lazy AtomicString initialization for memory/performance has been optimized.
+    - Lazy AtomicString initialization for memory and performance has been optimized.
     - Vector extension logic has been improved.
 
 #### Fixes
@@ -346,7 +347,7 @@ Release date: Oct. 15, 2020
   - Tizen.MachineLearning
     - Custom filter class has been added.
   - Tizen.Multimedia
-    - Setter/Getter for volume recording has been added to AudioIO.
+    - Setter and Getter for volume recording has been added to AudioIO.
     - Result code and playback state have been added to MediaController.
     - New RequestCommand for async has been added to MediaController.
     - New barcode types have been added to Vision.
@@ -364,7 +365,7 @@ Release date: Oct. 15, 2020
   - "{package}-configure-dump.rpm" in binutils, glibc, and gcc have been provided with “dump_configure“ macro.
 - Build with armv8-a machine option has been added.
 - ASan has been enabled.
-  - Automated build, test with JIRA reporting process have been established.
+  - Automated build, test with JIRA reporting process has been established.
   - Libasansi feature for .NET ASan has been back-ported from Tizen 5.5.
 
 #### Fixes
@@ -376,32 +377,32 @@ Release date: Oct. 15, 2020
 
 #### New and changed features
 
-- ML/Training API (new)
-  - The ability to update and train deep neural networks on Tizen devices has been added.
-  - The ML/Training API allows application developers to describe their own neural network models and train the models or to re-train pre-trained models in run-time.
-- ML/Inference API update
+- Machine Learning Training API (new)
+  - The ability to update and train deep Neural Networks on Tizen devices has been added.
+  - The Machine Learning Training API allows application developers to describe their own Neural Network models and train the models or to re-train pre-trained models in runtime.
+- Machine Learning Inference API update
   - The ability to use various hardware accelerators with Single API has been added.
-  - The ability to fine-tune each element of a pipeline in run-time has been added.
+  - The ability to fine-tune each element of a pipeline in runtime has been added.
   - The latency overheads of Single API have been reduced.
 - NNStreamer update
   - NNStreamer has been upgraded from 1.5.2 to 1.6.0.
   - AI acceleration hardware support has been added.
-    - ML API may utilize Verisicon-Vivante and Qualcomm-SNPE in addition to previously supported hardware.
-      - You may need to download and install additional adaptors from tizen.org for these additional hardware supports.
+    - Machine Learning API can utilize Verisicon-Vivante and Qualcomm-SNPE in addition to previously supported hardware.
+      - You may need to download and install additional adaptors from tizen.org to support additional hardware.
   - The ability to import stream data from or export stream data to Flatbuffers and Protobuffers has been added for distributed or remote pipelines.
-  - The ability to implement and insert tensor-converters for custom data types in run-time has been added.
+  - The ability to implement and insert tensor-converters for custom data types in runtime has been added.
 - NNTrainer (new)
-  - NNTrainer has been added to allow on-device neural network training, which mainly targets transfer learning mechanisms with a few simple layers.
+  - NNTrainer has been added to allow on-device Neural Network training, which mainly targets transfer learning mechanisms with a few simple layers.
   - NNTrainer provides various weight initializers, optimizers, activation functions, and loss functions.
-  - Neural network models may be constructed by applications in run-time or may be loaded from a model file along with pre-trained weight values. The trained weight values can be saved and loaded later.
-  - Data set for training may be generated by application in run-time or may be fetched from a filesystem.
+  - Neural Network models can be constructed by applications in runtime or can be loaded from a model file along with pre-trained weight values. Trained weight values can be saved and loaded later.
+  - Data set for training can be generated by the application in runtime or can be fetched from a filesystem.
 - NNFW Runtime (ONE Runtime) update
   - NNFW Runtime has been upgraded from 1.4.0 to 1.9.0.
   - The ability to install extensions to provide customized performance optimization has been added.
 
 #### Fixes
 
-- ML/Inference API
+- Machine Learning Inference API
   - Incorrect error codes have been fixed.
-  - The edge-TPU and Movidius-X run-time issues have been fixed.
+  - The edge-TPU and Movidius-X runtime issues have been fixed.
 
