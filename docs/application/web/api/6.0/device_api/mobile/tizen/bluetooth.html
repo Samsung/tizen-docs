@@ -389,7 +389,7 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <div>void <a href="#BluetoothLEDevice::removeConnectStateChangeListener">removeConnectStateChangeListener</a> (long watchID)</div>
 <div>unsigned long <a href="#BluetoothLEDevice::getAttMtu">getAttMtu</a> ()</div>
 <div>void <a href="#BluetoothLEDevice::requestAttMtuChange">requestAttMtuChange</a> (unsigned long newAttMtu)</div>
-<div>long <a href="#BluetoothLEDevice::addAttMtuChangeListener">addAttMtuChangeListener</a> ( callback)</div>
+<div>long <a href="#BluetoothLEDevice::addAttMtuChangeListener">addAttMtuChangeListener</a> (<a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback)</div>
 <div>void <a href="#BluetoothLEDevice::removeAttMtuChangeListener">removeAttMtuChangeListener</a> (long watchId)</div>
 </td>
 </tr>
@@ -6463,7 +6463,7 @@ else
     void removeConnectStateChangeListener(long watchID);
     unsigned long getAttMtu() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void requestAttMtuChange(unsigned long newAttMtu) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addAttMtuChangeListener( callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addAttMtuChangeListener(<a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeAttMtuChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
@@ -7368,7 +7368,7 @@ ATT MTU changed to: 64
 <div class="brief">
  Registers a listener to be called when ATT MTU value is changed.
             </div>
-<div class="synopsis"><pre class="signature prettyprint">long addAttMtuChangeListener( callback);</pre></div>
+<div class="synopsis"><pre class="signature prettyprint">long addAttMtuChangeListener(<a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback);</pre></div>
 <p><span class="version">Since: </span>
  6.0
             </p>
@@ -10236,7 +10236,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     void removeConnectStateChangeListener(long watchID);
     unsigned long getAttMtu() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void requestAttMtuChange(unsigned long newAttMtu) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
-    long addAttMtuChangeListener( callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addAttMtuChangeListener(<a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeAttMtuChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothSocket {
