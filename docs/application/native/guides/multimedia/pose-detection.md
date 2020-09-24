@@ -1,10 +1,10 @@
 # Pose Detection
 
-Pose Detection is a new feature of Media Vision Inference API since Tizen 6.0. This feature provides landmark detection. Besides, it defines landmarks and parts of a human body to help detect a human pose with motion capture (MoCap) file, which you can create or edit using various tools.
+Pose Detection is a new feature of Media Vision Inference API since Tizen 6.0. This feature provides landmark detection. Besides, it defines landmarks and parts of a human body to help detect a human pose with Motion Capture (MoCap) file, which you can create or edit using various tools.
 
 ## Background
 
-In Tizen, a human body pose landmarks and body parts are defined as follows:
+In Tizen, human body pose landmarks and body parts are defined as follows:
 
 **Figure: Definition of human body pose landmarks and body parts**
 
@@ -14,7 +14,7 @@ The Pose landmark detection models are available in Open Model Zoo such as [host
 
 ![Body pose](./media/mediavision_pose_public_model_def.png),
 
-In this model, `-1` denotes that there is no landmarks. Using this landmark information, you can create a mapping file. Suppose you create a mapping file with the name `pose_mapping.txt,` then you can populate the `pose_mapping.txt` file as follows:
+In this model, `-1` denotes that there are no landmarks. Using this landmark information, you can create a mapping file. Suppose you create a mapping file with the name `pose_mapping.txt,` then you can populate the `pose_mapping.txt` file as follows:
 
 ```
 1
@@ -35,7 +35,7 @@ In this model, `-1` denotes that there is no landmarks. Using this landmark info
 14
 ```
 
-`1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at the 3rd denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the 4th denotes that the 3rd landmark of the model corresponds to the 4th, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. The following table shows how the public model works.
+`1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at the 3rd denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the 4th denotes that the 3rd landmark of the model corresponds to the 4th, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. The following table shows how the public model works:
 
 **Table: Example of how  [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile) maps to the definition**
 
@@ -59,7 +59,7 @@ In this model, `-1` denotes that there is no landmarks. Using this landmark info
 | 16 | MV_INFERENCE_HUMAN_POSE_LEFT_ANKLE | 14 |
 
 
-Motion capture file (MoCap) includes the movements of objects or a person. There are various MoCap formats, but a well-known BVH (BioVision Hierarchy) file is supported in Media Vision. BVH file has Hierarchy structure to provide landmark information with landmarks' name, and the structure can be changed. It means that landmarks information is different from the definition. To use them correctly, you have to map the information to the landmarks based on the definition. For example, the [BVH file](/media/mediavision_pose_bvh_sample.bvh) describes a squat pose as follows:
+MoCap file includes the movements of objects or a person. There are various MoCap formats, but a well-known BioVision Hierarchy (BVH) file is supported in Media Vision. BVH file has a hierarchy structure to provide landmark information with landmarks name, and the structure can be changed. It means that landmarks information is different from the definition. To use the BVH file correctly, you have to map the information to the landmarks based on the definitions. For example, the [BVH file](./media/mediavision_pose_bvh_sample.bvh) describes a squat pose as follows:
 
 ![Body pose](./media/mediavision_pose_bvh_sample.png)
 
@@ -82,6 +82,7 @@ RightUpLeg,11
 RightLowLeg,12
 RightFoot,13
 ```
+If there is no mapped landmark, you don't need to list it. For example, index 3 is missing. It means that, in this bvh file, the 3rd definition, `MV_INFERENCE_HUMAN_POSE_THORAX`, is not defined and not used.
 
 ## Prerequisites
 
@@ -101,7 +102,7 @@ To enable your application to use the media vision inference functionality:
    ```
 2. Create a structure to store global data.
 
-   For pose detection , use the following `imagedata_s` structure:
+   For pose detection, use the following `imagedata_s` structure:
 
    ```c
    struct _imagedata_s {
@@ -131,11 +132,12 @@ To detect human pose from an image:
    if (error_code != MEDIA_VISION_ERROR_NONE)
        dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
    ```
-2. Decode the image file and fill the `g_source` handle with the decoded raw data.
-
-    <img src="./media/mediavision_pose_sample_sumo.png" width=300>
+2. Decode the image file and fill the `g_source` handle with the decoded raw data:
 
    In the following example image `sample.jpg`, a person is shown in a squat pose, and the image is in the `<OwnDataPath>` folder.
+
+   <img alt="sample.jpg" src="./media/mediavision_pose_sample_sumo.png" width=300>
+
    The `<OwnDataPath>` refers to your own data path:
 
    ```c
@@ -186,7 +188,7 @@ To detect human pose from an image:
    if (error_code != MEDIA_VISION_ERROR_NONE)
        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
    ```
-4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt` are used as the same ones described in [Background](#background) and they are in `<OwnDataPath>`:
+4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt`, which are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`:
 
     ```c
     #define MODEL_DATA "OwnDataPath/data.tflite"
@@ -244,6 +246,8 @@ To detect human pose from an image:
     error_code = mv_engine_config_set_array_string_attribute(imagedata.g_engine_config,
     MV_INFERENCE_OUTPUT_NODE_NAMES,
     outputNodeName, 1);
+
+    // For the simplicity, all error check codes are omitted.
     ```
 
     For more information on the configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH`, see Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications).
@@ -262,7 +266,7 @@ To detect human pose from an image:
     error_code = mv_inference_prepare(imagedata.g_inference);
     if (error_code != MEDIA_VISION_ERROR_NONE)
       dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-      ```
+    ```
 
 7. To detect pose, create `g_pose` media vision pose handle:
 
@@ -270,9 +274,9 @@ To detect human pose from an image:
     error_code = mv_pose_create(&imagedata.g_pose);
     if (error_code != MEDIA_VISION_ERROR_NONE)
       dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
-      ```
+    ```
 
-8. Suppose that MoCap BVH file `mocap.bvh` and its mapping file `mocap_mapping.txt` are used as the same ones described in [Background](#background) and they are in `<OwnDataPath>`. Then, set them to `g_pose` handle to compare and detect the pose:
+8. Suppose that MoCap BVH file `mocap.bvh` and its mapping file `mocap_mapping.txt`, which are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`. Then, set the files to `g_pose` handle for comparing and detecting the pose:
 
     ```c
     #define MOCAP_DATA "OwnDataPath/mocap.bvh"
@@ -336,7 +340,7 @@ To detect human pose from an image:
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-## Related Information
+## Related information
 
 - Dependencies
   - Tizen 6.0 and Higher for Mobile
