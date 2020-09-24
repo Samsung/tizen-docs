@@ -6,64 +6,89 @@ This feature is supported in mobile and wearable applications only.
 
 The main features of the Bluetooth API include:
 
-- Managing the local Bluetooth adapter   
+- Managing the local Bluetooth adapter
 
   You can [enable and disable the local Bluetooth adapter](#managing-the-local-bluetooth-adapter), and change the device name for it.
 
-- Discovering devices   
+- Discovering devices
 
   You can [discover other Bluetooth devices](#discovering-bluetooth-devices).
 
-- Creating a bond with a Bluetooth device   
+- Creating a bond with a Bluetooth device
 
   You can [create a bond](#creating-a-bond-with-a-bluetooth-device) with another device retrieved through the discovery process. Bonding allows the 2 devices to establish a connection.
 
-- Connecting to and exchanging data with a Bluetooth device   
+- Connecting to and exchanging data with a Bluetooth device
 
   You can [connect to and exchange data with a remote Bluetooth device](#connecting-to-and-exchanging-data-with-a-bluetooth-device).
 
 The main Bluetooth (4.0) Low Energy features include:
 
-- Managing the local Bluetooth adapter     
+- Managing the local Bluetooth adapter
 
   The [Bluetooth adapter management](#managing-the-local-bluetooth-adapter) is performed the same way as in the regular Bluetooth API.
 
-- Discovering Bluetooth Low Energy devices     
+- Discovering Bluetooth Low Energy devices
 
   You can [discover Bluetooth Low Energy devices](#discovering-bluetooth-low-energy-devices) in range. Through the discovery process, you can obtain basic information about available remote devices, such as their names and provided services.
 
-- Managing the advertising options     
+- Managing the advertising options
 
   You can [manage advertising](#managing-the-advertising-options) to control how your device announces itself to other Bluetooth Low Energy devices for discovery.
 
-- Connecting to a Bluetooth Low Energy device     
+- Connecting to a Bluetooth Low Energy device
 
   You can [connect to a remote Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device). When connected, you can access services and characteristics of the remote device.
 
-- Receiving notifications on connection state changes     
+- Receiving notifications on connection state changes
 
   You can [monitor the connection state](#receiving-notifications-on-connection-state-changes) to detect when the connection to the remote device is lost.
 
-- Retrieving Bluetooth GATT services     
+- Retrieving Bluetooth GATT services
 
   You can [retrieve information about Bluetooth GATT services](#retrieving-bluetooth-gatt-services) provided by the remote device.
 
   Every GATT service defines characteristics it includes. By knowing the service, you know what features the Bluetooth device exposes.
 
-- Accessing the Bluetooth GATT characteristic value     
+- Accessing the Bluetooth GATT characteristic value
 
   You can [read and write the Bluetooth GATT characteristic value](#accessing-the-bluetooth-gatt-characteristic-value).
 
   Characteristics allows you to monitor and sometimes control remote Bluetooth Low Energy devices. For example, a sensor reading can be exposed by the sensor device as a Bluetooth GATT characteristic.
 
-- Receiving notifications on characteristic value changes     
+- Receiving notifications on characteristic value changes
 
   You can [monitor a characteristic value](#receiving-notifications-on-characteristic-value-changes) to detect any changes, for example, in sensor readings and battery level.
 
-- Accessing the Bluetooth GATT descriptor value     
+- Accessing the Bluetooth GATT descriptor value
 
   You can [read and write the Bluetooth GATT descriptor value](#accessing-the-bluetooth-gatt-descriptor-value).
 
+<!-- TODO #00:
+      - add/remove remote connections state listener
+      - check if remote device is connected
+      - get ATT MTU of remote device
+      - request change of ATT MTU of remote device
+      - add/remove ATT MTU change listener on remote device
+      - create gatt server
+         - start/stop the server
+         - get connection ATT MTU
+      - create server service
+      - register services
+      - unregister services ("all together" or "one by one")
+      - create characteristic of server service
+         - set callbacks for read/write value change requests
+      - create descriptor of server service's characteristic
+         - set callbacks for read/write value change requests
+ -->
+
+<!-- END #00 -->
+
+
+<!-- TODO #01:
+      + add feature: http://tizen.org/feature/network.bluetooth.le.gatt.server
+      + check if there are some missing features in section
+ -->
 ## Prerequisites
 
 To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/application.html) and [wearable](../../api/latest/device_api/wearable/tizen/application.html) applications) and Bluetooth (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html) applications) APIs, the application has to request permission by adding the following privileges to the `config.xml` file:
@@ -72,6 +97,7 @@ To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/app
 <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
 <tizen:privilege name="http://tizen.org/privilege/bluetooth"/>
 ```
+<!-- END #01 -->
 
 ## Managing the Local Bluetooth Adapter
 
@@ -160,7 +186,12 @@ To use the Bluetooth functionality of the device, you must switch the Bluetooth 
    adapter.setName(chatServerName);
    ```
 
-## Discovering Bluetooth Devices
+## Managing remote devices
+
+<!-- TODO #02
+      - write about method isConnected()
+ -->
+### Discovering Bluetooth Devices
 
 The device discovery process can retrieve multiple types of Bluetooth devices, such as printers, mobile phones, and headphones. To find the kind of devices you want to communicate with, the `BluetoothClass` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothClass) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothClass) applications) is used to define characteristics and capabilities of a Bluetooth device. The `BluetoothClassDeviceMajor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothClassDeviceMajor) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothClassDeviceMajor) applications) and `BluetoothClassDeviceMinor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothClassDeviceMinor) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothClassDeviceMinor) applications) specify the identifiers for major and minor Class of Device (CoD).
 
@@ -190,7 +221,7 @@ To search for remote devices and get the known devices:
    adapter.discoverDevices(discoverDevicesSuccessCallback, null);
    ```
 
-   > **Note**  
+   > **Note**
    > To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
 
 3. To retrieve known devices (which have been previously paired or searched for), use the `getKnownDevices()` method.
@@ -207,7 +238,9 @@ To search for remote devices and get the known devices:
    adapter.getKnownDevices(onGotDevices);
    ```
 
-## Creating a Bond with a Bluetooth Device
+<!-- END #02 -->
+
+### Creating a Bond with a Bluetooth Device
 
 To create a bond with a Bluetooth device:
 
@@ -231,7 +264,7 @@ To create a bond with a Bluetooth device:
    adapter.createBonding('35:F4:59:D1:7A:03', onBondingSuccessCallback, onErrorCallback);
    ```
 
-   > **Note**  
+   > **Note**
    > The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAddress) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods.
 
 3. To end the bond with a remote device, use the `destroyBonding()` method:
@@ -240,7 +273,7 @@ To create a bond with a Bluetooth device:
    adapter.destroyBonding('35:F4:59:D1:7A:03');
    ```
 
-## Connecting to and Exchanging Data with a Bluetooth Device
+### Connecting to and Exchanging Data with a Bluetooth Device
 
 When you attempt to open a connection to another device, a Service Discovery Protocol (SDP) look-up is performed on the device, and the protocol and channel to be used for the connection are determined. If a connection is established and the socket is opened successfully, a `BluetoothSocket` instance (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothSocket) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothSocket) applications) with an open state is returned. The socket is subsequently used for exchanging data between the connected devices.
 
@@ -258,7 +291,7 @@ To connect to services provided by a server device to the client devices:
    adapter.registerRFCOMMServiceByUUID(serviceUUID, 'My service');
    ```
 
-   > **Note**  
+   > **Note**
    > For P2P communication between 2 instances of the same application, the UUID can be hard-coded in your application. To retrieve the UUID of a Bluetooth device, use the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) applications). The object has an array of UUIDs available for the device.
 
    When the service has been successfully registered, the `BluetoothServiceSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothServiceSuccessCallback) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothServiceSuccessCallback) applications) is triggered.
@@ -295,11 +328,14 @@ To connect to services provided by a server device to the client devices:
 
    When an incoming message is received from the peer device, the `onmessage` event handler in the `BluetoothSocket` interface is triggered.
 
-## Discovering Bluetooth Low Energy Devices
+<!-- TODO #03:
+      - write about method isConnected()
+ -->
+### Discovering Bluetooth Low Energy Devices
 
 To search for remote Bluetooth devices:
 
-1. Define a scan event handler by implementing the `BluetoothLEScanCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEScanCallback) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEScanCallback) applications).  
+1. Define a scan event handler by implementing the `BluetoothLEScanCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEScanCallback) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEScanCallback) applications).
     The callback is invoked when a remote device has been detected.
 
    ```
@@ -308,7 +344,7 @@ To search for remote Bluetooth devices:
    }
    ```
 
-   > **Note**  
+   > **Note**
    > To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
 
 2. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager) applications):
@@ -329,44 +365,9 @@ To search for remote Bluetooth devices:
    adapter.stopScan();
    ```
 
-## Managing the Advertising Options
+<!-- END #03 -->
 
-The Bluetooth Low Energy technology allows a device to broadcast some information without a connection between devices. The Bluetooth Low Energy API provides methods to control this advertising (broadcasting).
-
-To control what information is advertised by the device:
-
-1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager) applications):
-
-   ```
-   var adapter = tizen.bluetooth.getLEAdapter();
-   ```
-
-2. Set up options and start advertising with the `startAdvertise()` method of the `BluetoothLEAdapter` interface:
-
-   ```
-   var advertiseData = new tizen.BluetoothLEAdvertiseData({
-       includeName: true,
-       serviceuuids: ['180f'] /* 180F is 16bit Battery Service UUID */
-   });
-   var connectable = true;
-
-   adapter.startAdvertise(advertiseData, 'ADVERTISE', function onstate(state) {
-       console.log('Advertising configured: ' + state);
-   }, function(error) {
-       console.log('startAdvertise() failed: ' + error.message);
-   }, 'LOW_LATENCY', connectable);
-   ```
-
-   > **Note**  
-   > To learn how to make your mobile device visible to other Bluetooth devices, see [Managing the Local Bluetooth Adapter](#managing-the-local-bluetooth-adapter).
-
-3. To disable the advertising, use the `stopAdvertise()` method of the `BluetoothLEAdapter` interface:
-
-   ```
-   adapter.stopAdvertise();
-   ```
-
-## Connecting to a Bluetooth Low Energy Device
+### Connecting to a Bluetooth Low Energy Device
 
 To connect to other Bluetooth Low Energy devices:
 
@@ -419,7 +420,7 @@ To connect to other Bluetooth Low Energy devices:
    remoteDevice.disconnect();
    ```
 
-## Receiving Notifications on Connection State Changes
+### Receiving Notifications on Connection State Changes
 
 To receive notifications whenever the device connection is established or lost:
 
@@ -476,7 +477,7 @@ To receive notifications whenever the device connection is established or lost:
    remoteDevice.removeConnectStateChangeListener(watchId);
    ```
 
-## Retrieving Bluetooth GATT Services
+### Retrieving Bluetooth GATT Services
 
 To retrieve a list of GATT services (Generic Attribute) provided by a remote device:
 
@@ -525,7 +526,7 @@ To retrieve a list of GATT services (Generic Attribute) provided by a remote dev
    console.log('Services length ' + services.length);
    ```
 
-## Accessing the Bluetooth GATT Characteristic Value
+### Accessing the Bluetooth GATT Characteristic Value
 
 To read and write a value of the Bluetooth characteristic:
 
@@ -589,7 +590,7 @@ To read and write a value of the Bluetooth characteristic:
    property.writeValue(newValue, writeSuccess, writeFail);
    ```
 
-## Receiving Notifications on Characteristic Value Changes
+### Receiving Notifications on Characteristic Value Changes
 
 To monitor changes in a Bluetooth characteristic:
 
@@ -633,7 +634,7 @@ To monitor changes in a Bluetooth characteristic:
    property.removeValueChangeListener(watchId);
    ```
 
-## Accessing the Bluetooth GATT Descriptor Value
+### Accessing the Bluetooth GATT Descriptor Value
 
 To read and write a value of the Bluetooth descriptor:
 
@@ -696,9 +697,123 @@ To read and write a value of the Bluetooth descriptor:
 
    descriptor.writeValue(newValue, writeSuccess, writeFail);
    ```
+<!-- TODO #04
+      - write about getAttMtu()
+      - write about requestAttMtuChange()
+ -->
+### Accessing the ATT MTU of connected device
+<!-- END #04 -->
 
+<!-- TODO #05
+      - write about addAttMtuChangeListener()
+      - write about removeAttMtuChangeListener()
+ -->
+### Receiving Notifications on ATT MTU changes
+<!-- END #05 -->
+
+
+## Managing the local GATT server
+
+<!-- TODO #06
+      - write about start()
+ -->
+### Start the server
+<!-- END #06 -->
+
+<!-- TODO #07
+      - write about stop()
+ -->
+### Stop the server
+<!-- END #07 -->
+
+<!-- TODO #08
+      - write about addConnectStateChangeListener()
+      - write about removeConnectStateChangeListener()
+ -->
+### Receiving notifications on server's Connection State changes
+<!-- END #08 -->
+
+<!-- TODO #09
+      - write about getConnectionMtu()
+ -->
+### Accessing connection's ATT MTU
+<!-- END #09 -->
+
+<!-- TODO #10
+      - write about registerService()
+ -->
+### Registering services
+<!-- END #10 -->
+
+<!-- TODO #11
+      - write about unregisterAllServices()
+      - write about BluetoothGATTServerService::unregister()
+ -->
+### Unregistering services
+<!-- END #11 -->
+
+<!-- TODO #12
+      - write about setReadValueRequestCallback() for characteristic
+      - write about setWriteValueRequestCallback() for characteristic
+ -->
+### Managing characteristics of server service
+<!-- END #12 -->
+
+<!-- TODO #13
+      - write about setReadValueRequestCallback() for descriptor
+      - write about setWriteValueRequestCallback() for descriptor
+ -->
+### Managing descriptors of server service's characteristic
+<!-- END #13 -->
+
+### Managing the Advertising Options
+
+The Bluetooth Low Energy technology allows a device to broadcast some information without a connection between devices. The Bluetooth Low Energy API provides methods to control this advertising (broadcasting).
+
+To control what information is advertised by the device:
+
+1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager) and [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager) applications):
+
+   ```
+   var adapter = tizen.bluetooth.getLEAdapter();
+   ```
+
+2. Set up options and start advertising with the `startAdvertise()` method of the `BluetoothLEAdapter` interface:
+
+   ```
+   var advertiseData = new tizen.BluetoothLEAdvertiseData({
+       includeName: true,
+       serviceuuids: ['180f'] /* 180F is 16bit Battery Service UUID */
+   });
+   var connectable = true;
+
+   adapter.startAdvertise(advertiseData, 'ADVERTISE', function onstate(state) {
+       console.log('Advertising configured: ' + state);
+   }, function(error) {
+       console.log('startAdvertise() failed: ' + error.message);
+   }, 'LOW_LATENCY', connectable);
+   ```
+
+   > **Note**
+   > To learn how to make your mobile device visible to other Bluetooth devices, see [Managing the Local Bluetooth Adapter](#managing-the-local-bluetooth-adapter).
+
+3. To disable the advertising, use the `stopAdvertise()` method of the `BluetoothLEAdapter` interface:
+
+   ```
+   adapter.stopAdvertise();
+   ```
+<!-- TODO #14
+      - write about toByteArray()
+	   - write about toDOMString()
+	   - write about toUint8Array()
+	   - write about uuidTo128bit()
+	   - write about uuidToShortestPossible()
+	   - write about uuidsEqual()
+ -->
+## Useful methods
+<!-- END #14 -->
 
 ## Related information
-* Dependencies   
+* Dependencies
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
