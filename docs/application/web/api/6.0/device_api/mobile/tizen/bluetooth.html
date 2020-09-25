@@ -32,6 +32,8 @@ Registers a service (RFCOMM) on a local device, which can be consumed by remote 
 Advertise for remote devices (including Bluetooth LE devices)          </li>
           <li>
 Act as a GATT client (Generic Attribute Profile client)          </li>
+          <li>
+Configure the local GATT server (Generic Attribute Profile)          </li>
         </ul>
         <p>
 For more information on the Bluetooth features, see <a href="/application/web/guides/connectivity/bluetooth">Bluetooth Guide</a>.
@@ -73,6 +75,15 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <li>
                     1.10. <a href="#Bytes">Bytes</a>
 </li>
+<li>
+                    1.11. <a href="#BluetoothGATTServiceVariant">BluetoothGATTServiceVariant</a>
+</li>
+<li>
+                    1.12. <a href="#BluetoothGATTCharacteristicVariant">BluetoothGATTCharacteristicVariant</a>
+</li>
+<li>
+                    1.13. <a href="#BluetoothGATTDescriptorVariant">BluetoothGATTDescriptorVariant</a>
+</li>
 </ul>
 </li>
 <li>2. <a href="#interfaces-section">Interfaces</a><ul class="toc">
@@ -94,59 +105,83 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 </li>
 <li>2.9. <a href="#BluetoothGATTService">BluetoothGATTService</a>
 </li>
-<li>2.10. <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a>
+<li>2.10. <a href="#BluetoothGATTServerServiceInit">BluetoothGATTServerServiceInit</a>
 </li>
-<li>2.11. <a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a>
+<li>2.11. <a href="#BluetoothGATTServerService">BluetoothGATTServerService</a>
 </li>
-<li>2.12. <a href="#BluetoothLEScanCallback">BluetoothLEScanCallback</a>
+<li>2.12. <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a>
 </li>
-<li>2.13. <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a>
+<li>2.13. <a href="#BluetoothGATTServerCharacteristicInit">BluetoothGATTServerCharacteristicInit</a>
 </li>
-<li>2.14. <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>
+<li>2.14. <a href="#BluetoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a>
 </li>
-<li>2.15. <a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a>
+<li>2.15. <a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a>
 </li>
-<li>2.16. <a href="#BluetoothDevice">BluetoothDevice</a>
+<li>2.16. <a href="#BluetoothGATTServerDescriptorInit">BluetoothGATTServerDescriptorInit</a>
 </li>
-<li>2.17. <a href="#BluetoothLEDevice">BluetoothLEDevice</a>
+<li>2.17. <a href="#BluetoothGATTServerDescriptor">BluetoothGATTServerDescriptor</a>
 </li>
-<li>2.18. <a href="#BluetoothSocket">BluetoothSocket</a>
+<li>2.18. <a href="#BluetoothGATTServer">BluetoothGATTServer</a>
 </li>
-<li>2.19. <a href="#BluetoothClass">BluetoothClass</a>
+<li>2.19. <a href="#BluetoothLEScanCallback">BluetoothLEScanCallback</a>
 </li>
-<li>2.20. <a href="#BluetoothClassDeviceMajor">BluetoothClassDeviceMajor</a>
+<li>2.20. <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a>
 </li>
-<li>2.21. <a href="#BluetoothClassDeviceMinor">BluetoothClassDeviceMinor</a>
+<li>2.21. <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>
 </li>
-<li>2.22. <a href="#BluetoothClassDeviceService">BluetoothClassDeviceService</a>
+<li>2.22. <a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a>
 </li>
-<li>2.23. <a href="#BluetoothServiceHandler">BluetoothServiceHandler</a>
+<li>2.23. <a href="#GATTRequestReply">GATTRequestReply</a>
 </li>
-<li class="deprecated">2.24. <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a>
+<li>2.24. <a href="#ReadValueRequestCallback">ReadValueRequestCallback</a>
 </li>
-<li class="deprecated">2.25. <a href="#BluetoothHealthProfileHandler">BluetoothHealthProfileHandler</a>
+<li>2.25. <a href="#WriteValueRequestCallback">WriteValueRequestCallback</a>
 </li>
-<li class="deprecated">2.26. <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a>
+<li>2.26. <a href="#NotificationCallback">NotificationCallback</a>
 </li>
-<li class="deprecated">2.27. <a href="#BluetoothHealthChannel">BluetoothHealthChannel</a>
+<li>2.27. <a href="#ConnectionMtuCallback">ConnectionMtuCallback</a>
 </li>
-<li>2.28. <a href="#BluetoothAdapterChangeCallback">BluetoothAdapterChangeCallback</a>
+<li>2.28. <a href="#BluetoothDevice">BluetoothDevice</a>
 </li>
-<li>2.29. <a href="#BluetoothDeviceSuccessCallback">BluetoothDeviceSuccessCallback</a>
+<li>2.29. <a href="#BluetoothLEDevice">BluetoothLEDevice</a>
 </li>
-<li>2.30. <a href="#BluetoothDeviceArraySuccessCallback">BluetoothDeviceArraySuccessCallback</a>
+<li>2.30. <a href="#BluetoothSocket">BluetoothSocket</a>
 </li>
-<li>2.31. <a href="#BluetoothDiscoverDevicesSuccessCallback">BluetoothDiscoverDevicesSuccessCallback</a>
+<li>2.31. <a href="#BluetoothClass">BluetoothClass</a>
 </li>
-<li>2.32. <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a>
+<li>2.32. <a href="#BluetoothClassDeviceMajor">BluetoothClassDeviceMajor</a>
 </li>
-<li>2.33. <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a>
+<li>2.33. <a href="#BluetoothClassDeviceMinor">BluetoothClassDeviceMinor</a>
 </li>
-<li class="deprecated">2.34. <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a>
+<li>2.34. <a href="#BluetoothClassDeviceService">BluetoothClassDeviceService</a>
 </li>
-<li class="deprecated">2.35. <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a>
+<li>2.35. <a href="#BluetoothServiceHandler">BluetoothServiceHandler</a>
 </li>
-<li class="deprecated">2.36. <a href="#BluetoothHealthChannelChangeCallback">BluetoothHealthChannelChangeCallback</a>
+<li class="deprecated">2.36. <a href="#BluetoothProfileHandler">BluetoothProfileHandler</a>
+</li>
+<li class="deprecated">2.37. <a href="#BluetoothHealthProfileHandler">BluetoothHealthProfileHandler</a>
+</li>
+<li class="deprecated">2.38. <a href="#BluetoothHealthApplication">BluetoothHealthApplication</a>
+</li>
+<li class="deprecated">2.39. <a href="#BluetoothHealthChannel">BluetoothHealthChannel</a>
+</li>
+<li>2.40. <a href="#BluetoothAdapterChangeCallback">BluetoothAdapterChangeCallback</a>
+</li>
+<li>2.41. <a href="#BluetoothDeviceSuccessCallback">BluetoothDeviceSuccessCallback</a>
+</li>
+<li>2.42. <a href="#BluetoothDeviceArraySuccessCallback">BluetoothDeviceArraySuccessCallback</a>
+</li>
+<li>2.43. <a href="#BluetoothDiscoverDevicesSuccessCallback">BluetoothDiscoverDevicesSuccessCallback</a>
+</li>
+<li>2.44. <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a>
+</li>
+<li>2.45. <a href="#BluetoothServiceSuccessCallback">BluetoothServiceSuccessCallback</a>
+</li>
+<li class="deprecated">2.46. <a href="#BluetoothHealthApplicationSuccessCallback">BluetoothHealthApplicationSuccessCallback</a>
+</li>
+<li class="deprecated">2.47. <a href="#BluetoothHealthChannelSuccessCallback">BluetoothHealthChannelSuccessCallback</a>
+</li>
+<li class="deprecated">2.48. <a href="#BluetoothHealthChannelChangeCallback">BluetoothHealthChannelChangeCallback</a>
 </li>
 </ul>
 </li>
@@ -190,6 +225,8 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <a href="#BluetoothAdapter">BluetoothAdapter</a> <a href="#BluetoothManager::getDefaultAdapter">getDefaultAdapter</a> ()</div>
 <div>
 <a href="#BluetoothLEAdapter">BluetoothLEAdapter</a> <a href="#BluetoothManager::getLEAdapter">getLEAdapter</a> ()</div>
+<div>
+<a href="#BluetoothGATTServer">BluetoothGATTServer</a> <a href="#BluetoothManager::getGATTServer">getGATTServer</a> ()</div>
 <div>byte[] <a href="#BluetoothManager::toByteArray">toByteArray</a> (<a href="#Bytes">Bytes</a> data)</div>
 <div>DOMString <a href="#BluetoothManager::toDOMString">toDOMString</a> (<a href="#Bytes">Bytes</a> data)</div>
 <div>
@@ -221,13 +258,24 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <td>
 <div>void <a href="#BluetoothLEAdapter::startScan">startScan</a> (<a href="#BluetoothLEScanCallback">BluetoothLEScanCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#BluetoothLEAdapter::stopScan">stopScan</a> ()</div>
+<div>boolean <a href="#BluetoothLEAdapter::isScanning">isScanning</a> ()</div>
 <div>void <a href="#BluetoothLEAdapter::startAdvertise">startAdvertise</a> (<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType, <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>? mode, optional boolean? connectable)</div>
 <div>void <a href="#BluetoothLEAdapter::stopAdvertise">stopAdvertise</a> ()</div>
+<div>long <a href="#BluetoothLEAdapter::addConnectStateChangeListener">addConnectStateChangeListener</a> (<a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a> listener)</div>
+<div>void <a href="#BluetoothLEAdapter::removeConnectStateChangeListener">removeConnectStateChangeListener</a> (long watchID)</div>
 </td>
 </tr>
 <tr>
 <td><a href="#BluetoothGATTService">BluetoothGATTService</a></td>
 <td></td>
+</tr>
+<tr>
+<td><a href="#BluetoothGATTServerServiceInit">BluetoothGATTServerServiceInit</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#BluetoothGATTServerService">BluetoothGATTServerService</a></td>
+<td><div>void <a href="#BluetoothGATTServerService::unregister">unregister</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
 </tr>
 <tr>
 <td><a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a></td>
@@ -239,10 +287,43 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 </td>
 </tr>
 <tr>
+<td><a href="#BluetoothGATTServerCharacteristicInit">BluetoothGATTServerCharacteristicInit</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#BluetoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a></td>
+<td>
+<div>void <a href="#BluetoothGATTServerCharacteristic::notifyAboutValueChange">notifyAboutValueChange</a> (<a href="#Bytes">Bytes</a> value, <a href="#BluetoothAddress">BluetoothAddress</a>? clientAddress, optional <a href="#NotificationCallback">NotificationCallback</a>? notificationCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothGATTServerCharacteristic::setReadValueRequestCallback">setReadValueRequestCallback</a> (<a href="#ReadValueRequestCallback">ReadValueRequestCallback</a> readValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback)</div>
+<div>void <a href="#BluetoothGATTServerCharacteristic::setWriteValueRequestCallback">setWriteValueRequestCallback</a> (<a href="#WriteValueRequestCallback">WriteValueRequestCallback</a> writeValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback)</div>
+</td>
+</tr>
+<tr>
 <td><a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a></td>
 <td>
 <div>void <a href="#BluetoothGATTDescriptor::readValue">readValue</a> (<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#BluetoothGATTDescriptor::writeValue">writeValue</a> (<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#BluetoothGATTServerDescriptorInit">BluetoothGATTServerDescriptorInit</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#BluetoothGATTServerDescriptor">BluetoothGATTServerDescriptor</a></td>
+<td>
+<div>void <a href="#BluetoothGATTServerDescriptor::setReadValueRequestCallback">setReadValueRequestCallback</a> (<a href="#ReadValueRequestCallback">ReadValueRequestCallback</a> readValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback)</div>
+<div>void <a href="#BluetoothGATTServerDescriptor::setWriteValueRequestCallback">setWriteValueRequestCallback</a> (<a href="#WriteValueRequestCallback">WriteValueRequestCallback</a> writeValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#BluetoothGATTServer">BluetoothGATTServer</a></td>
+<td>
+<div>void <a href="#BluetoothGATTServer::start">start</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothGATTServer::stop">stop</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothGATTServer::registerService">registerService</a> (<a href="#BluetoothGATTServerServiceInit">BluetoothGATTServerServiceInit</a> service, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothGATTServer::unregisterAllServices">unregisterAllServices</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>void <a href="#BluetoothGATTServer::getConnectionMtu">getConnectionMtu</a> (<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, <a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 </td>
 </tr>
 <tr>
@@ -265,6 +346,32 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <td><div>void <a href="#ReadValueSuccessCallback::onread">onread</a> (byte[] value)</div></td>
 </tr>
 <tr>
+<td><a href="#GATTRequestReply">GATTRequestReply</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#ReadValueRequestCallback">ReadValueRequestCallback</a></td>
+<td><div>
+<a href="#GATTRequestReply">GATTRequestReply</a>? <a href="#ReadValueRequestCallback::onreadrequest">onreadrequest</a> (<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, long offset)</div></td>
+</tr>
+<tr>
+<td><a href="#WriteValueRequestCallback">WriteValueRequestCallback</a></td>
+<td><div>
+<a href="#GATTRequestReply">GATTRequestReply</a>? <a href="#WriteValueRequestCallback::onwriterequest">onwriterequest</a> (<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, byte[] value, long offset, boolean replyRequired)</div></td>
+</tr>
+<tr>
+<td><a href="#NotificationCallback">NotificationCallback</a></td>
+<td>
+<div>void <a href="#NotificationCallback::onnotificationsuccess">onnotificationsuccess</a> (<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress)</div>
+<div>void <a href="#NotificationCallback::onnotificationfail">onnotificationfail</a> (<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, <a href="tizen.html#WebAPIException">WebAPIException</a> error)</div>
+<div>void <a href="#NotificationCallback::onnotificationfinish">onnotificationfinish</a> (<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress)</div>
+</td>
+</tr>
+<tr>
+<td><a href="#ConnectionMtuCallback">ConnectionMtuCallback</a></td>
+<td><div>void <a href="#ConnectionMtuCallback::onsuccess">onsuccess</a> (long mtu)</div></td>
+</tr>
+<tr>
 <td><a href="#BluetoothDevice">BluetoothDevice</a></td>
 <td><div>void <a href="#BluetoothDevice::connectToServiceByUUID">connectToServiceByUUID</a> (<a href="#BluetoothUUID">BluetoothUUID</a> uuid, <a href="#BluetoothSocketSuccessCallback">BluetoothSocketSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div></td>
 </tr>
@@ -273,12 +380,17 @@ For more information on the Bluetooth features, see <a href="/application/web/gu
 <td>
 <div>void <a href="#BluetoothLEDevice::connect">connect</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
 <div>void <a href="#BluetoothLEDevice::disconnect">disconnect</a> (optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)</div>
+<div>boolean <a href="#BluetoothLEDevice::isConnected">isConnected</a> ()</div>
 <div>
 <a href="#BluetoothGATTService">BluetoothGATTService</a> <a href="#BluetoothLEDevice::getService">getService</a> (<a href="#BluetoothUUID">BluetoothUUID</a> uuid)</div>
 <div>
 <a href="#BluetoothUUID">BluetoothUUID</a>[] <a href="#BluetoothLEDevice::getServiceAllUuids">getServiceAllUuids</a> ()</div>
 <div>long <a href="#BluetoothLEDevice::addConnectStateChangeListener">addConnectStateChangeListener</a> (<a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a> listener)</div>
 <div>void <a href="#BluetoothLEDevice::removeConnectStateChangeListener">removeConnectStateChangeListener</a> (long watchID)</div>
+<div>unsigned long <a href="#BluetoothLEDevice::getAttMtu">getAttMtu</a> ()</div>
+<div>void <a href="#BluetoothLEDevice::requestAttMtuChange">requestAttMtuChange</a> (unsigned long newAttMtu)</div>
+<div>long <a href="#BluetoothLEDevice::addAttMtuChangeListener">addAttMtuChangeListener</a> (<a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback)</div>
+<div>void <a href="#BluetoothLEDevice::removeAttMtuChangeListener">removeAttMtuChangeListener</a> (long watchId)</div>
 </td>
 </tr>
 <tr>
@@ -524,6 +636,36 @@ LOW_ENERGY - Low energy advertising mode            </li>
  1.0
           </p>
 </div>
+<div class="typedef" id="BluetoothGATTServiceVariant">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServiceVariant"></a><h3>1.11. BluetoothGATTServiceVariant</h3>
+<div class="brief">
+ The type of objects which are either <a href="#BluetoothGATTService">BluetoothGATTService</a> or <a href="#BluetoothGATTServerService">BluetoothGATTServerService</a>, depending on the context in which they appear.
+          </div>
+<pre class="webidl prettyprint">  typedef (<a href="#BluetoothGATTService">BluetoothGATTService</a> or <a href="#BluetoothGATTServerService">BluetoothGATTServerService</a>) BluetoothGATTServiceVariant;</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+</div>
+<div class="typedef" id="BluetoothGATTCharacteristicVariant">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTCharacteristicVariant"></a><h3>1.12. BluetoothGATTCharacteristicVariant</h3>
+<div class="brief">
+ The type of objects which are either <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a> or <a href="#BluetoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a>, depending on the context in which they appear.
+          </div>
+<pre class="webidl prettyprint">  typedef (<a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a> or <a href="#BluetoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a>) BluetoothGATTCharacteristicVariant;</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+</div>
+<div class="typedef" id="BluetoothGATTDescriptorVariant">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTDescriptorVariant"></a><h3>1.13. BluetoothGATTDescriptorVariant</h3>
+<div class="brief">
+ The type of objects which are either <a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a> or <a href="#BluetoothGATTServerDescriptor">BluetoothGATTServerDescriptor</a>, depending on the context in which they appear.
+          </div>
+<pre class="webidl prettyprint">  typedef (<a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a> or <a href="#BluetoothGATTServerDescriptor">BluetoothGATTServerDescriptor</a>) BluetoothGATTDescriptorVariant;</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+</div>
 </div>
 <div class="interfaces" id="interfaces-section">
 <h2>2. Interfaces</h2>
@@ -705,7 +847,7 @@ manufacturer.data = "0x0059";
     <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
     unsigned long? appearance;
     boolean? includeTxPowerLevel;
-    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
+    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>[]? servicesData;
     <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
   };</pre>
 <p><span class="version">Since: </span>
@@ -740,8 +882,9 @@ This dictionary is used as an input parameter of the BluetoothLEAdvertiseData co
     attribute <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
     attribute unsigned long? appearance;
     attribute boolean? includeTxPowerLevel;
-    attribute <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
-    attribute <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
+    attribute <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>[]? servicesData;
+<span class="nocode deprecated">    attribute <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
+</span>    attribute <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -876,15 +1019,38 @@ advertise.includeTxPowerLevel = true;
 </pre>
 </div>
 </li>
-<li class="attribute" id="BluetoothLEAdvertiseData::serviceData">
+<li class="attribute" id="BluetoothLEAdvertiseData::servicesData">
+<span class="attrName"><span class="type">BluetoothLEServiceData[]
+                      </span><span class="name">servicesData</span><span class="optional"> [nullable]</span></span><div class="brief">
+ The array of objects representing service data for advertise.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<p><span class="remark">Remark: </span>
+ Only 16-bit <a href="#BluetoothLEServiceData::uuid">BluetoothLEServiceData::uuid</a> values can be advertised. Duplicated <em>uuid</em> values in <em>servicesData</em> are not allowed for advertising.
+            </p>
+<p><span class="remark">Remark: </span>
+ If this attribute is in neither <var>null</var> nor <var>undefined</var>, the value of deprecated <a href="#BluetoothLEAdvertiseData::serviceData">BluetoothLEAdvertiseData::serviceData</a> attribute is ignored.
+            </p>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
+
+var firstService = new tizen.BluetoothLEServiceData("11e5", "0x1811");
+var secondService = new tizen.BluetoothLEServiceData("a5e8", "0x1815");
+advertise.servicesData = [firstService, secondService];
+</pre>
+</div>
+</li>
+<li class="attribute deprecated" id="BluetoothLEAdvertiseData::serviceData">
 <span class="attrName"><span class="type">BluetoothLEServiceData </span><span class="name">serviceData</span><span class="optional"> [nullable]</span></span><div class="brief">
  The service data for advertise or scan response data.
             </div>
+<p class="deprecated"><b>Deprecated.</b>
+ Deprecated since 6.0. Instead, use <a href="bluetooth.html#BluetoothLEAdvertiseData::servicesData">BluetoothLEAdvertiseData::servicesData</a>.
+            </p>
 <p><span class="version">Since: </span>
  2.3.1
-            </p>
-<p><span class="remark">Remark: </span>
- Only 16-bit <a href="#BluetoothLEServiceData::uuid">BluetoothLEServiceData::uuid</a> values can be advertised.
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var advertise = new tizen.BluetoothLEAdvertiseData();
@@ -922,6 +1088,7 @@ advertise.manufacturerData = manufacturer;
     readonly attribute <a href="#BluetoothClassDeviceService">BluetoothClassDeviceService</a> deviceService;
     <a href="#BluetoothAdapter">BluetoothAdapter</a> getDefaultAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BluetoothLEAdapter">BluetoothLEAdapter</a> getLEAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#BluetoothGATTServer">BluetoothGATTServer</a> getGATTServer() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     byte[] toByteArray(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString toDOMString(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> toUint8Array(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -1090,6 +1257,50 @@ catch (err)
 {
   console.log(err.name + ": " + err.message);
 }
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothManager::getGATTServer">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothManager::getGATTServer"></a><code><b><span class="methodName">getGATTServer</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the BluetoothGATTServer object, which allows starting, stopping the local GATT server, and configuring its services.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#BluetoothGATTServer">BluetoothGATTServer</a> getGATTServer();</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">BluetoothGATTServer:</span>
+ The <a href="#BluetoothGATTServer">BluetoothGATTServer</a> interface to the local GATT server.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the feature is not supported.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var server = tizen.bluetooth.getGATTServer();
 </pre>
 </div>
 </dd>
@@ -2672,10 +2883,13 @@ else
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothLEAdapter {
     void startScan(<a href="#BluetoothLEScanCallback">BluetoothLEScanCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopScan() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean isScanning() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void startAdvertise(<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType,
                         <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                         optional <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>? mode, optional boolean? connectable) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopAdvertise() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addConnectStateChangeListener(<a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeConnectStateChangeListener(long watchID);
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -2802,6 +3016,56 @@ adapter.startScan(function onsuccess(device)
 </pre>
 </div>
 </dd>
+<dt class="method" id="BluetoothLEAdapter::isScanning">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEAdapter::isScanning"></a><code><b><span class="methodName">isScanning</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks if scanning for Bluetooth Low Energy devices is currently in progress.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean isScanning();</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">boolean:</span>
+ <var>true</var>, if the Bluetooth Low Energy Adapter has a scan in progress, <var>false</var> otherwise.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type NotSupportedError, if the device does not support this functionality.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
+var scanningStarted = adapter.isScanning();
+console.log("Scanning status: " + scanningStarted);
+if (!scanningStarted)
+{
+  adapter.startScan(function onsuccess(device)
+  {
+    console.log("Scanning status: " + adapter.isScanning());
+    adapter.stopScan();
+  });
+}
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Scanning status: false
+Scanning status: true
+</pre>
+</div>
+</dd>
 <dt class="method" id="BluetoothLEAdapter::startAdvertise">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEAdapter::startAdvertise"></a><code><b><span class="methodName">startAdvertise</span></b></code>
 </dt>
@@ -2880,6 +3144,9 @@ UnknownError - If any other error occurs              </li>
                 </p></li>
 <li class="list"><p>
  with error type QuotaExceededError, if any input attribute is not compatible with the maximum data size for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type InvalidValuesError, if advertising services data contains duplicated UUIDs. 
                 </p></li>
 <li class="list"><p>
  with error type InvalidStateError, if device is currently in progress of advertising, if the local Bluetooth le adapter is currently not enabled.
@@ -2981,19 +3248,149 @@ adapter.stopAdvertise();
 </pre>
 </div>
 </dd>
+<dt class="method" id="BluetoothLEAdapter::addConnectStateChangeListener">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEAdapter::addConnectStateChangeListener"></a><code><b><span class="methodName">addConnectStateChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a listener that is called whenever a GATT connection with another device is established or terminated.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addConnectStateChangeListener(<a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a> listener);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>, registered with this function, is called in the following cases:
+            </p>
+            <ul>
+              <li>
+When the connection between a remote client and a local GATT server is established or terminated.              </li>
+              <li>
+When the connection between a local client and a remote GATT server is established or terminated.              </li>
+            </ul>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">listener</span>:
+ A listener function called when the connection state changes.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:</span>
+ The watchID to be used to unregister the listener.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* This application is running the local GATT Server and does not connect to remote GATT servers. */
+/* To be able to notify connected clients about characteristic values' changes, it saves their data. */
+var connectedClients = [];
+
+function onConnected(device)
+{
+  console.log("A client connected: " + device.address);
+  connectedClients.push(device);
+}
+
+function onDisconnected(device)
+{
+  console.log("A client disconnected: " + device.address);
+  connectedClients = connectedClients.filter(function(connectedClient)
+  {
+    return connectedClient.address !== device.address;
+  });
+}
+
+tizen.bluetooth.getLEAdapter().addConnectStateChangeListener(
+    {onconnected: onConnected, ondisconnected: onDisconnected});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>A client connected: 6A:33:B1:17:D4:81
+A client connected: 4B:1F:DD:35:41:19
+A client connected: CC:D4:11:E5:72:4B
+A client disconnected: 6A:33:B1:17:D4:81
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothLEAdapter::removeConnectStateChangeListener">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEAdapter::removeConnectStateChangeListener"></a><code><b><span class="methodName">removeConnectStateChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters a listener called whenever a GATT connection with another device is established or terminated.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeConnectStateChangeListener(long watchID);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+This function unregisters a <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a> registered with <a href="#BluetoothLEAdapter::addConnectStateChangeListener">BluetoothLEAdapter.addConnectStateChangeListener()</a> method.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchID</span>:
+ The watchID identifier returned by <a href="#BluetoothLEAdapter::addConnectStateChangeListener">BluetoothGATTServer.addConnectStateChangeListener()</a> method.
+                </li>
+        </ul>
+</div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* This application is running the local GATT Server and does not connect to remote GATT servers. */
+function onConnected(device)
+{
+  console.log("A client connected: " + device.address);
+}
+
+function onDisconnected(device)
+{
+  console.log("A client disconnected: " + device.address);
+}
+
+/* Save watchId to be able to remove the listener later */
+var watchId = tizen.bluetooth.getLEAdapter().addConnectStateChangeListener(
+    {onconnected: onConnected, ondisconnected: onDisconnected});
+
+/* A little later, the listener is no longer needed, and can be removed with */
+/* removeConnectStateChangeListener(watchId) method */
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>A client connected: 6A:33:B1:17:D4:81
+A client connected: 4B:1F:DD:35:41:19
+A client connected: CC:D4:11:E5:72:4B
+A client disconnected: 6A:33:B1:17:D4:81
+</pre>
+</div>
+</dd>
 </dl>
 </div>
 </div>
 <div class="interface" id="BluetoothGATTService">
 <a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTService"></a><h3>2.9. BluetoothGATTService</h3>
 <div class="brief">
- Bluetooth Low Energy Service. The service can be retrieved with BluetoothLEDevice.getService().
+ Bluetooth Low Energy service. The service can be retrieved with BluetoothLEDevice::getService().
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTService {
 <span class="nocode deprecated">    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
 </span>    readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? serviceUuid;
-    readonly attribute <a href="#BluetoothGATTService">BluetoothGATTService</a>[] services;
-    readonly attribute <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a>[] characteristics;
+    readonly attribute <a href="#BluetoothGATTServiceVariant">BluetoothGATTServiceVariant</a>[] services;
+    readonly attribute <a href="#BluetoothGATTCharacteristicVariant">BluetoothGATTCharacteristicVariant</a>[] characteristics;
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -3063,12 +3460,15 @@ else
 </li>
 <li class="attribute" id="BluetoothGATTService::services">
 <span class="attrName"><span class="readonly">                readonly
-</span><span class="type">BluetoothGATTService[]
+</span><span class="type">BluetoothGATTServiceVariant[]
                       </span><span class="name">services</span></span><div class="brief">
  A list of services included in this service.
             </div>
 <p><span class="version">Since: </span>
  2.3.1
+            </p>
+<p><span class="remark">Remark: </span>
+ It can be either type <a href="#BluetoothGATTService">BluetoothGATTService</a> for services retrieved from remote GATT servers or type <a href="#BluetoothGATTServerService">BluetoothGATTServerService</a> for services retrieved from the local GATT server.
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service = device.getService(device.uuids[0]);
@@ -3081,12 +3481,15 @@ for (var i = 0; i &lt; service.services.length; ++i)
 </li>
 <li class="attribute" id="BluetoothGATTService::characteristics">
 <span class="attrName"><span class="readonly">                readonly
-</span><span class="type">BluetoothGATTCharacteristic[]
+</span><span class="type">BluetoothGATTCharacteristicVariant[]
                       </span><span class="name">characteristics</span></span><div class="brief">
  A list of characteristics in this service.
             </div>
 <p><span class="version">Since: </span>
  2.3.1
+            </p>
+<p><span class="remark">Remark: </span>
+ It can be either type <a href="#BluetoothGATTCharacteristic">BluetoothGATTCha racteristic</a> for characteristics retrieved from services of remote GATT servers or type <a href="#Blu%20etoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a> for characteristics retrieved from services of local GATT server.
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var service = device.getService(device.uuids[0]);
@@ -3100,13 +3503,154 @@ for (var i = 0; i &lt; service.characteristics.length; ++i)
 </ul>
 </div>
 </div>
+<div class="dictionary" id="BluetoothGATTServerServiceInit">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerServiceInit"></a><h3>2.10. BluetoothGATTServerServiceInit</h3>
+<div class="brief">
+ A dictionary for specifying GATT service parameters.
+          </div>
+<pre class="webidl prettyprint">  dictionary BluetoothGATTServerServiceInit {
+    <a href="#BluetoothUUID">BluetoothUUID</a> serviceUuid;
+    boolean isPrimary = true;
+    <a href="#BluetoothGATTServerServiceInit">BluetoothGATTServerServiceInit</a>[]? includedServices = null;
+    <a href="#BluetoothGATTServerCharacteristicInit">BluetoothGATTServerCharacteristicInit</a>[]? characteristics = null;
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<div class="description">
+          <p>
+This dictionary defines the GATT services to be registered to the local GATT server.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* serviceA and serviceB are objects of type BluetoothGATTServerServiceInit. */
+/* hrmCharacteristic is a BluetoothGATTServerCharacteristicInit object. */
+var serviceParameters =
+{
+  serviceUuid: "4b102e75",
+  isPrimary: true,
+  includedServices: [serviceA, serviceB],
+  characteristics: [hrmCharacteristic]
+};
+</pre>
+</div>
+</div>
+<div class="interface" id="BluetoothGATTServerService">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerService"></a><h3>2.11. BluetoothGATTServerService</h3>
+<div class="brief">
+ The class representing a Bluetooth GATT service provided by the local GATT server.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTServerService : <a href="#BluetoothGATTService">BluetoothGATTService</a> {
+    readonly attribute boolean isPrimary;
+    void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+        
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul><li class="attribute" id="BluetoothGATTServerService::isPrimary">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isPrimary</span></span><div class="brief">
+ Flag indicating whether the service is primary or secondary.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li></ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="BluetoothGATTServerService::unregister">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerService::unregister"></a><code><b><span class="methodName">unregister</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters the service and all its characteristics from the local GATT server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidStateError - If the service cannot be unregistered in the current state of the GATT server.              </li>
+              <li>
+ AbortError - If any other error occurs              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<p><span class="remark">Remark: </span>
+ GATT services included in other GATT services cannot be unregistered.
+            </p>
+<p><span class="remark">Remark: </span>
+ If this method is called for the only GATT service, currently registered in the local running GATT server, the server stops running.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when the service is successfully unregistered from the local GATT server.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called in case of failure.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* The service has been registered in the GATT server for a while. Now it is no longer needed. */
+function onsuccess()
+{
+  console.log("Service unregistered");
+}
+
+function onerror(error)
+{
+  console.log("Failed to unregister service: " + error.message);
+}
+
+tizen.bluetooth.getGATTServer().services[0].unregister(onsuccess, onerror);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 <div class="interface" id="BluetoothGATTCharacteristic">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTCharacteristic"></a><h3>2.10. BluetoothGATTCharacteristic</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTCharacteristic"></a><h3>2.12. BluetoothGATTCharacteristic</h3>
 <div class="brief">
  A characteristic provided by Bluetooth Low Energy service.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTCharacteristic {
-    readonly attribute <a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a>[] descriptors;
+    readonly attribute <a href="#BluetoothGATTDescriptorVariant">BluetoothGATTDescriptorVariant</a>[] descriptors;
     readonly attribute boolean isBroadcast;
     readonly attribute boolean hasExtendedProperties;
     readonly attribute boolean isNotify;
@@ -3130,12 +3674,15 @@ for (var i = 0; i &lt; service.characteristics.length; ++i)
 <ul>
 <li class="attribute" id="BluetoothGATTCharacteristic::descriptors">
 <span class="attrName"><span class="readonly">                readonly
-</span><span class="type">BluetoothGATTDescriptor[]
+</span><span class="type">BluetoothGATTDescriptorVariant[]
                       </span><span class="name">descriptors</span></span><div class="brief">
  A list of descriptors in this characteristic.
             </div>
 <p><span class="version">Since: </span>
  2.3.1
+            </p>
+<p><span class="remark">Remark: </span>
+ The type of this field is <a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a> for descriptors of characteristics retrieved from services of remote GATT servers and <a href="#BluetoothGATTServerDescriptor">BluetoothGATTServerDescriptor</a> for descriptors of characteristics retrieved from the services of local GATT server.
             </p>
 </li>
 <li class="attribute" id="BluetoothGATTCharacteristic::isBroadcast">
@@ -3253,6 +3800,9 @@ UnknownError - If any other error occurs              </li>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
+<p><span class="remark">Remark: </span>
+ <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -3277,6 +3827,9 @@ UnknownError - If any other error occurs              </li>
                 </p></li>
 <li class="list"><p>
  with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the method is called for <a href="#BluetoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a>.
                 </p></li>
 </ul>
 </li></ul>
@@ -3343,6 +3896,9 @@ UnknownError - If any other error occurs              </li>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
+<p><span class="remark">Remark: </span>
+ <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -3371,6 +3927,9 @@ UnknownError - If any other error occurs              </li>
                 </p></li>
 <li class="list"><p>
  with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the method is called for <a href="#BluetoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a>.
                 </p></li>
 </ul>
 </li></ul>
@@ -3434,6 +3993,9 @@ adapter.startScan(function onsuccess(device)
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
+<p><span class="remark">Remark: </span>
+ <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -3452,9 +4014,14 @@ adapter.startScan(function onsuccess(device)
 </div>
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
-          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
  with error type SecurityError, if the application does not have the privilege to call this method.
-                </p></li></ul>
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the method is called for <a href="#BluetoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a>.
+                </p></li>
+</ul>
 </li></ul>
         </div>
 <div class="example">
@@ -3511,6 +4078,9 @@ Calling this function has no effect if there is no listener with given id.
 <p><span class="remark">Remark: </span>
  Example of using can be find at <a href="bluetooth.html#BluetoothGATTCharacteristic::addValueChangeListener">addValueChangeListener</a> code example.
             </p>
+<p><span class="remark">Remark: </span>
+ Value change listeners cannot be registered and thus unregistered for <a href="bluetooth.html#BluetoothGATTServerCharacteristic">BluetothGATTServerCharacteristic</a> objects. An attempt to remove value change listener for such an object will result in no operation.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -3524,10 +4094,476 @@ Calling this function has no effect if there is no listener with given id.
 </dl>
 </div>
 </div>
-<div class="interface" id="BluetoothGATTDescriptor">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTDescriptor"></a><h3>2.11. BluetoothGATTDescriptor</h3>
+<div class="dictionary" id="BluetoothGATTServerCharacteristicInit">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerCharacteristicInit"></a><h3>2.13. BluetoothGATTServerCharacteristicInit</h3>
 <div class="brief">
- Bluetooth Low Energy Descriptor.
+ A dictionary for specifying GATT characteristic parameters.
+          </div>
+<pre class="webidl prettyprint">  dictionary BluetoothGATTServerCharacteristicInit {
+    <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
+    <a href="#BluetoothGATTServerDescriptorInit">BluetoothGATTServerDescriptorInit</a>[]? descriptors = null;
+    boolean isBroadcast = false;
+    boolean hasExtendedProperties = false;
+    boolean isNotify = false;
+    boolean isIndication = false;
+    boolean isReadable = false;
+    boolean isSignedWrite = false;
+    boolean isWritable = false;
+    boolean isWriteNoResponse = false;
+    boolean readPermission = false;
+    boolean writePermission = false;
+    boolean encryptedReadPermission = false;
+    boolean encryptedWritePermission = false;
+    boolean encryptedSignedReadPermission = false;
+    boolean encryptedSignedWritePermission = false;
+    <a href="#ReadValueRequestCallback">ReadValueRequestCallback</a>? readValueRequestCallback = null;
+    <a href="tizen.html#SuccessCallback">SuccessCallback</a>? readValueSendResponseSuccessCallback = null;
+    <a href="tizen.html#ErrorCallback">ErrorCallback</a>? readValueSendResponseErrorCallback = null;
+    <a href="#WriteValueRequestCallback">WriteValueRequestCallback</a>? writeValueRequestCallback = null;
+    <a href="tizen.html#SuccessCallback">SuccessCallback</a>? writeValueSendResponseSuccessCallback = null;
+    <a href="tizen.html#ErrorCallback">ErrorCallback</a>? writeValueSendResponseErrorCallback = null;
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<div class="description">
+          <p>
+This dictionary is used as a definition of a characteristic to be registered in a service of the local GATT server.<br><em>readValueRequestCallback</em> and <em>writeValueRequestCallback</em> are callbacks called when a client reads or writes the value of the characteristic respectively. They can be set or replaced with another functions, after registering the service containing the characteristic, with <a href="#BluetoothGATTServerCharacteristic::setReadValueRequestCallback">BluetoothGATTServerCharacteristic.setReadValueRequestCallback()</a> and <a href="#BluetoothGATTServerCharacteristic::setWriteValueRequestCallback">BluetoothGATTServerCharacteristic.setWriteValueRequestCallback()</a>.<br><em>readValueSendResponseSuccessCallback</em> and <em>writeValueSendResponseSuccessCallback</em> are success callbacks called when a response sent from <em>readValueRequestCallback</em> or <em>writeValueRequestCallback</em> reaches client. They can be set or replaced with another functions, after registering the service containing the characteristic, with <a href="#BluetoothGATTServerCharacteristic::setReadValueRequestCallback">BluetoothGATTServerCharacteristic.setReadValueRequestCallback()</a> and <a href="#BluetoothGATTServerCharacteristic::setWriteValueRequestCallback">BluetoothGATTServerCharacteristic.setWriteValueRequestCallback()</a>.<br><em>readValueSendResponseErrorCallback</em> and <em>writeValueSendResponseErrorCallback</em> are error callbacks called when an attempt to send a response to a client from <em>readValueRequestCallback</em> or <em>writeValueRequestCallback</em> fails. They can be set or replaced with another functions, after registering the service containing the characteristic, with <a href="#BluetoothGATTServerCharacteristic::setReadValueRequestCallback">BluetoothGATTServerCharacteristic.setReadValueRequestCallback()</a> and <a href="#BluetoothGATTServerCharacteristic::setWriteValueRequestCallback">BluetoothGATTServerCharacteristic.setWriteValueRequestCallback()</a>.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* nameDescriptor, placeDescriptor are BluetoothGATTServerDescriptorInit objects */
+/* readValueCallback, writeValueCallback are read/write request callbacks */
+/* readValueSendResponseSuccessCallback and writeValueSendResponseSuccessCallback */
+/* are success callbacks */
+/* and writeValueSendResponseErrorCallback and readValueSendResponseErrorCallback */
+/* are error callbacks */
+var characteristicParameters =
+{
+  uuid: "0180",
+  descriptors: [nameDescriptor, placeDescriptor],
+  /* Characteristic's properties */
+  isBroadcast: false,
+  hasExtendedProperties: false,
+  isNotify: false,
+  isIndication: false,
+  isReadable: true,
+  isSignedWrite: false,
+  isWritable: true,
+  isWriteNoResponse: false,
+  /* Characteristic's permissions */
+  readPermission: true,
+  writePermission: true,
+  encryptedReadPermission: false,
+  encryptedWritePermission: false,
+  encryptedSignedReadPermission: false,
+  encryptedSignedWritePermission: false,
+  readValueRequestCallback: readValueCallback,
+  readValueSendResponseSuccessCallback: readValueSendResponseSuccessCallback,
+  readValueSendResponseErrorCallback: readValueSendResponseErrorCallback,
+  writeValueRequestCallback: writeValueCallback,
+  writeValueSendResponseSuccessCallback: writeValueSendResponseSuccessCallback,
+  writeValueSendResponseErrorCallback: writeValueSendResponseErrorCallback
+};
+</pre>
+</div>
+</div>
+<div class="interface" id="BluetoothGATTServerCharacteristic">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerCharacteristic"></a><h3>2.14. BluetoothGATTServerCharacteristic</h3>
+<div class="brief">
+ A subclass representing GATT characteristic used to construct a service of the local Bluetooth GATT server.
+It extends <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a> with permissions and methods implementing interactions of the characteristic with remote clients.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTServerCharacteristic : <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a> {
+    readonly attribute boolean readPermission;
+    readonly attribute boolean writePermission;
+    readonly attribute boolean encryptedReadPermission;
+    readonly attribute boolean encryptedWritePermission;
+    readonly attribute boolean encryptedSignedReadPermission;
+    readonly attribute boolean encryptedSignedWritePermission;
+    void notifyAboutValueChange(<a href="#Bytes">Bytes</a> value, <a href="#BluetoothAddress">BluetoothAddress</a>? clientAddress, optional <a href="#NotificationCallback">NotificationCallback</a>? notificationCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setReadValueRequestCallback(<a href="#ReadValueRequestCallback">ReadValueRequestCallback</a> readValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setWriteValueRequestCallback(<a href="#WriteValueRequestCallback">WriteValueRequestCallback</a> writeValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+        
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="BluetoothGATTServerCharacteristic::readPermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">readPermission</span></span><div class="brief">
+ Indicates if clients have the permission to read the value of the characteristic.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServerCharacteristic::writePermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">writePermission</span></span><div class="brief">
+ Indicates if clients have the permission to write the value of the characteristic.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServerCharacteristic::encryptedReadPermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">encryptedReadPermission</span></span><div class="brief">
+ Indicates if clients have the permission to read the value of the characteristic through encrypted connections.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServerCharacteristic::encryptedWritePermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">encryptedWritePermission</span></span><div class="brief">
+ Indicates if clients have the permission to write the value of the characteristic through encrypted connections.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServerCharacteristic::encryptedSignedReadPermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">encryptedSignedReadPermission</span></span><div class="brief">
+ Indicates if clients have the permission to perform signed reads of the characteristic's value.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServerCharacteristic::encryptedSignedWritePermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">encryptedSignedWritePermission</span></span><div class="brief">
+ Indicates if clients have the permission to perform signed writes of the characteristic's value.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="BluetoothGATTServerCharacteristic::notifyAboutValueChange">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerCharacteristic::notifyAboutValueChange"></a><code><b><span class="methodName">notifyAboutValueChange</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Notifies the clients of the local GATT server of the changes in the characteristic.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void notifyAboutValueChange(<a href="#Bytes">Bytes</a> value, <a href="#BluetoothAddress">BluetoothAddress</a>? clientAddress, optional <a href="#NotificationCallback">NotificationCallback</a>? notificationCallback,
+                            optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+This function sends a BLE notification or indication about a change of characteristic's value to clients that registered for it. If a particular client is specified, only he gets the update.
+Otherwise it is sent to all clients connected to the local GATT server, who registered for the updates.<br>            </p>
+            <p>
+Clients can only register for characteristic's notifications or indications, if the characteristic defines a Client Characteristic Configuration Descriptor (CCCD), as described in the Bluetooth standard.
+CCCD has to be defined as any other descriptor, using <a href="#BluetoothGATTServerDescriptorInit">BluetoothGATTServerDescriptorInit</a>.
+            </p>
+           </div>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidValuesError - If any of the parameters is invalid.              </li>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<p><span class="remark">Remark: </span>
+ To notify the clients the service with current characteristic must be registered (see <a href="#BluetoothGATTServer::registerService">BluetoothGATTServer::registerService()</a>) and available for clients (see <a href="#BluetoothGATTServer::start">BluetoothGATTServer::start()</a>).
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">value</span>:
+                The new value of the characteristic.
+                </li>
+          <li class="param">
+<span class="name">clientAddress</span><span class="optional"> [nullable]</span>:
+        The address of the client to be notified about the value change. If a <em>null</em> is passed, all clients will be notified.
+                </li>
+          <li class="param">
+<span class="name">notificationCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The callback called for each attempt of a client notification.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+        Callback function that is called in case of failure of sending notification.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* this example assumes that the local gatt server with at least one service which has at least one */
+/* characteristic already exists */
+var callback =
+{
+  onnotificationsuccess: function(clientAddress)
+  {
+    console.log(clientAddress + " notified about change.");
+  },
+  onnotificationfail: function(clientAddress, error)
+  {
+    console.error("Couldn't notify " + clientAddress + " about change:" + error.name);
+  },
+  onnotificationfinish: function(clientAddress)
+  {
+    console.log("Finished notifying about change.");
+  }
+};
+
+function errorCallback(error)
+{
+  console.error("Failed to notify about value change: " + error.name + ": " + error.message);
+}
+
+server.services[0].characteristics[0].notifyAboutValueChange("1234", null, callback, errorCallback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothGATTServerCharacteristic::setReadValueRequestCallback">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerCharacteristic::setReadValueRequestCallback"></a><code><b><span class="methodName">setReadValueRequestCallback</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers the callback called when a client reads the value of the characteristic from the local GATT server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setReadValueRequestCallback(<a href="#ReadValueRequestCallback">ReadValueRequestCallback</a> readValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The callback, registered with this function, is called when a remote client requests to read the value of the characteristic.
+The server can respond to such requests by returning a <a href="#GATTRequestReply">GATTRequestReply</a> object from the callback.
+If <a href="#ReadValueRequestCallback">ReadValueRequestCallback</a> for the characteristic is not registered, or it does not return a <a href="#GATTRequestReply">GATTRequestReply</a>, clients will not be able to get the value of this characteristic.<br>            </p>
+            <p>
+A callback set with this function overwrites any previously set <a href="#ReadValueRequestCallback">ReadValueRequestCallback</a>.
+            </p>
+            <p>
+The <em>errorCallback</em> will be launched in the following situations:
+            </p>
+            <ul>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+            <p>
+The <em>sendResponseErrorCallback</em> will be launched in the following situations:
+            </p>
+            <ul>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ InvalidValuesError - If <em>GATTRequestReply::statusCode</em> or <em>GATTRequestReply::data</em> is invalid.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">readValueRequestCallback</span>:
+ The callback called when a client reads the value of the characteristic.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when the readValueRequestCallback is registered successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called in case of failure of readValueRequestCallback registration.
+                </li>
+          <li class="param">
+<span class="name">sendResponseSuccessCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when responses returned from readValueRequestCallbacks are sent successfully.
+                </li>
+          <li class="param">
+<span class="name">sendResponseErrorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when  responses returned from readValueRequestCallbacks are not sent due to an error.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* this example assumes that the local gatt server with at least one service which has at least one */
+/* characteristic already exists */
+var callback = function(clientAddress, offset)
+{
+  console.log(clientAddress + " requested to read characteristic's value with offset: " + offset);
+  return new tizen.GATTRequestReply(0, "0x1234");
+};
+
+server.services[0].characteristics[0].setReadValueRequestCallback(callback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothGATTServerCharacteristic::setWriteValueRequestCallback">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerCharacteristic::setWriteValueRequestCallback"></a><code><b><span class="methodName">setWriteValueRequestCallback</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers the callback called when a client writes the value of the characteristic of the local GATT server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setWriteValueRequestCallback(<a href="#WriteValueRequestCallback">WriteValueRequestCallback</a> writeValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The callback, registered with this function, is called when a remote client requests to write the value of the characteristic.
+The server can respond to such requests by returning a <a href="#GATTRequestReply">GATTRequestReply</a> object from the callback.
+If <a href="#WriteValueRequestCallback">WriteValueRequestCallback</a> for the characteristic is not registered, or it does not return a <a href="#GATTRequestReply">GATTRequestReply</a>, clients will not be able to get the value of this characteristic.<br>            </p>
+            <p>
+A callback set with this function overwrites any previously set <a href="#WriteValueRequestCallback">WriteValueRequestCallback</a>.
+            </p>
+            <p>
+The <em>errorCallback</em> will be launched in the following situations:
+            </p>
+            <ul>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+            <p>
+The <em>sendResponseErrorCallback</em> will be launched in the following situations:
+            </p>
+            <ul>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ InvalidValuesError - If <em>GATTRequestReply::statusCode</em>.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">writeValueRequestCallback</span>:
+ The callback called when a client writes the value of the characteristic.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when the writeValueRequestCallback is registered successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called in case of failure of writeValueRequestCallback registration.
+                </li>
+          <li class="param">
+<span class="name">sendResponseSuccessCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when responses returned from writeValueRequestCallbacks are sent successfully.
+                </li>
+          <li class="param">
+<span class="name">sendResponseErrorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when  responses returned from writeValueRequestCallbacks are not sent due to an error.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* this example assumes that the local gatt server with at least one service which has at least one */
+/* characteristic already exists */
+var callback = function(clientAddress, value, offset, replyRequired)
+{
+  console.log(clientAddress + " requested to write characteristic's value: " + value +
+              " with offset: " + offset);
+  return replyRequired ? new tizen.GATTRequestReply(0, "0x1234") : null;
+};
+
+server.services[0].characteristics[0].setWriteValueRequestCallback(callback);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="BluetoothGATTDescriptor">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTDescriptor"></a><h3>2.15. BluetoothGATTDescriptor</h3>
+<div class="brief">
+ Bluetooth Low Energy descriptor.
           </div>
 <pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTDescriptor {
     readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? uuid;
@@ -3573,7 +4609,7 @@ The ErrorCallback is launched with these error types:
             </p>
             <ul>
               <li>
-UnknownError - If any other error occurs              </li>
+ UnknownError - If any other error occurs              </li>
             </ul>
            </div>
 <p><span class="privilegelevel">Privilege level: </span>
@@ -3581,6 +4617,9 @@ UnknownError - If any other error occurs              </li>
             </p>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
+            </p>
+<p><span class="remark">Remark: </span>
+ <a href="bluetooth.html#BluetoothGATTServerDescriptor">BluetothGATTServerDescriptor</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
             </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
@@ -3606,6 +4645,9 @@ UnknownError - If any other error occurs              </li>
                 </p></li>
 <li class="list"><p>
  with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the method is called for <a href="#BluetoothGATTServerDescriptor">BluetoothGATTServerDescriptor</a>.
                 </p></li>
 </ul>
 </li></ul>
@@ -3673,6 +4715,9 @@ UnknownError - If any other error occurs              </li>
 <p><span class="privilege">Privilege: </span>
  http://tizen.org/privilege/bluetooth
             </p>
+<p><span class="remark">Remark: </span>
+ <a href="bluetooth.html#BluetoothGATTServerDescriptor">BluetothGATTServerDescriptor</a> objects do not support this function. An attempt to call it for such an object will result in an exception.
+            </p>
 <div class="parameters">
 <p><span class="param">Parameters:</span></p>
 <ul>
@@ -3701,6 +4746,9 @@ UnknownError - If any other error occurs              </li>
                 </p></li>
 <li class="list"><p>
  with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type NotSupportedError, if the method is called for <a href="#BluetoothGATTServerDescriptor">BluetoothGATTServerDescriptor</a>.
                 </p></li>
 </ul>
 </li></ul>
@@ -3751,8 +4799,818 @@ adapter.startScan(function onsuccess(device)
 </dl>
 </div>
 </div>
+<div class="dictionary" id="BluetoothGATTServerDescriptorInit">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerDescriptorInit"></a><h3>2.16. BluetoothGATTServerDescriptorInit</h3>
+<div class="brief">
+ A dictionary for specifying GATT descriptor parameters.
+          </div>
+<pre class="webidl prettyprint">  dictionary BluetoothGATTServerDescriptorInit {
+    <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
+    boolean readPermission = false;
+    boolean writePermission = false;
+    boolean encryptedReadPermission = false;
+    boolean encryptedWritePermission = false;
+    boolean encryptedSignedReadPermission = false;
+    boolean encryptedSignedWritePermission = false;
+    <a href="#ReadValueRequestCallback">ReadValueRequestCallback</a>? readValueRequestCallback = null;
+    <a href="tizen.html#SuccessCallback">SuccessCallback</a>? readValueSendResponseSuccessCallback = null;
+    <a href="tizen.html#ErrorCallback">ErrorCallback</a>? readValueSendResponseErrorCallback = null;
+    <a href="#WriteValueRequestCallback">WriteValueRequestCallback</a>? writeValueRequestCallback = null;
+    <a href="tizen.html#SuccessCallback">SuccessCallback</a>? writeValueSendResponseSuccessCallback = null;
+    <a href="tizen.html#ErrorCallback">ErrorCallback</a>? writeValueSendResponseErrorCallback = null;
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<div class="description">
+          <p>
+This dictionary is used as a definition of a descriptor to be registered in a characteristic of the local GATT server.<br><em>readValueRequestCallback</em> and <em>writeValueRequestCallback</em> are callbacks called when a client reads or writes the value of the descriptor respectively. They can be set or replaced with another functions after registering the service containing the descriptor with <a href="#BluetoothGATTServerDescriptor::setReadValueRequestCallback">BluetoothGATTServerDescriptor.setReadValueRequestCallback()</a> and <a href="#BluetoothGATTServerDescriptor::setWriteValueRequestCallback">BluetoothGATTServerDescriptor.setWriteValueRequestCallback()</a>.<br><em>readValueSendResponseSuccessCallback</em> and <em>writeValueSendResponseSuccessCallback</em> are success callbacks called when a response sent from <em>readValueRequestCallback</em> or <em>writeValueRequestCallback</em> reaches client. They can be set or replaced with another functions, after registering the service containing the characteristic, with <a href="#BluetoothGATTServerDescriptor::setReadValueRequestCallback">BluetoothGATTServerDescriptor.setReadValueRequestCallback()</a> and <a href="#BluetoothGATTServerDescriptor::setWriteValueRequestCallback">BluetoothGATTServerDescriptor.setWriteValueRequestCallback()</a>.<br><em>readValueSendResponseErrorCallback</em> and <em>writeValueSendResponseErrorCallback</em> are error callbacks called when an attempt to send a response to a client from <em>readValueRequestCallback</em> or <em>writeValueRequestCallback</em> fails. They can be set or replaced with another functions, after registering the service containing the characteristic, with <a href="#BluetoothGATTServerDescriptor::setReadValueRequestCallback">BluetoothGATTServerDescriptor.setReadValueRequestCallback()</a> and <a href="#BluetoothGATTServerDescriptor::setWriteValueRequestCallback">BluetoothGATTServerDescriptor.setWriteValueRequestCallback()</a>.
+          </p>
+         </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* readValueCallback, writeValueCallback are read/write request callbacks */
+/* readValueSendResponseSuccessCallback and writeValueSendResponseSuccessCallback are success */
+/* callbacks */
+/* and writeValueSendResponseErrorCallback and readValueSendResponseErrorCallback are error */
+/* callbacks */
+var descriptorProperties =
+{
+  uuid: "0180",
+  /* Descriptor's permissions */
+  readPermission: true,
+  writePermission: true,
+  encryptedReadPermission: false,
+  encryptedWritePermission: false,
+  encryptedSignedReadPermission: false,
+  encryptedSignedWritePermission: false,
+  /* Read/write value callbacks */
+  readValueRequestCallback: readValueCallback,
+  readValueSendResponseSuccessCallback: readValueSendResponseSuccessCallback,
+  readValueSendResponseErrorCallback: readValueSendResponseErrorCallback,
+  writeValueRequestCallback: writeValueCallback,
+  writeValueSendResponseSuccessCallback: writeValueSendResponseSuccessCallback,
+  writeValueSendResponseErrorCallback: writeValueSendResponseErrorCallback
+};
+</pre>
+</div>
+</div>
+<div class="interface" id="BluetoothGATTServerDescriptor">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerDescriptor"></a><h3>2.17. BluetoothGATTServerDescriptor</h3>
+<div class="brief">
+ A subclass representing GATT descriptors of characteristics registered in services of the local server.
+It extends <a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a> with permissions and methods implementing interactions of the descriptor with remote clients.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTServerDescriptor : <a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a> {
+    readonly attribute boolean readPermission;
+    readonly attribute boolean writePermission;
+    readonly attribute boolean encryptedReadPermission;
+    readonly attribute boolean encryptedWritePermission;
+    readonly attribute boolean encryptedSignedReadPermission;
+    readonly attribute boolean encryptedSignedWritePermission;
+    void setReadValueRequestCallback(<a href="#ReadValueRequestCallback">ReadValueRequestCallback</a> readValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setWriteValueRequestCallback(<a href="#WriteValueRequestCallback">WriteValueRequestCallback</a> writeValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+        
+      <div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="BluetoothGATTServerDescriptor::readPermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">readPermission</span></span><div class="brief">
+ Indicates if clients have the permission to read the value of the descriptor.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServerDescriptor::writePermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">writePermission</span></span><div class="brief">
+ Indicates if clients have the permission to write the value of the descriptor.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServerDescriptor::encryptedReadPermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">encryptedReadPermission</span></span><div class="brief">
+ Indicates if clients have the permission to read the value of the descriptor through encrypted connections.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServerDescriptor::encryptedWritePermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">encryptedWritePermission</span></span><div class="brief">
+ Indicates if clients have the permission to write the value of the descriptor through encrypted connections.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServerDescriptor::encryptedSignedReadPermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">encryptedSignedReadPermission</span></span><div class="brief">
+ Indicates if clients have the permission to perform signed reads of the charactersitic's value.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServerDescriptor::encryptedSignedWritePermission">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">encryptedSignedWritePermission</span></span><div class="brief">
+ Indicates if clients have the permission to perform signed writes of the charactersitic's value.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="BluetoothGATTServerDescriptor::setReadValueRequestCallback">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerDescriptor::setReadValueRequestCallback"></a><code><b><span class="methodName">setReadValueRequestCallback</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers the callback called when a client reads the value of the descriptor from the local GATT server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setReadValueRequestCallback(<a href="#ReadValueRequestCallback">ReadValueRequestCallback</a> readValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                 optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The callback, registered with this function, is called when a remote client requests to read the value of the descriptor.
+The server can respond to such requests by returning a <a href="#GATTRequestReply">GATTRequestReply</a> object from the callback.
+If <a href="#ReadValueRequestCallback">ReadValueRequestCallback</a> for the descriptor is not registered, or it does not return a <a href="#GATTRequestReply">GATTRequestReply</a>, clients will not be able to get the value of this descriptor.<br>            </p>
+            <p>
+A callback set with this function overwrites any previously set <a href="#ReadValueRequestCallback">ReadValueRequestCallback</a>.
+            </p>
+            <p>
+The <em>errorCallback</em> will be launched in the following situations:
+            </p>
+            <ul>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+            <p>
+The <em>sendResponseErrorCallback</em> will be launched in the following situations:
+            </p>
+            <ul>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ InvalidValuesError - If <em>GATTRequestReply::statusCode</em> or <em>GATTRequestReply::data</em> is invalid.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">readValueRequestCallback</span>:
+ The callback called when a client reads the value of the descriptor.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when the readValueRequestCallback is registered successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called in case of failure of readValueRequestCallback registration.
+                </li>
+          <li class="param">
+<span class="name">sendResponseSuccessCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when responses returned from readValueRequestCallbacks are sent successfully.
+                </li>
+          <li class="param">
+<span class="name">sendResponseErrorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when  responses returned from readValueRequestCallbacks are not sent due to an error.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* this example assumes that the local gatt server with at least one service which has at least one */
+/* characteristic with at least one descriptor already exists */
+var callback = function(clientAddress, offset)
+{
+  console.log(clientAddress + " requested to read characteristic's value with offset: " + offset);
+  return new tizen.GATTRequestReply(0, "0x1234");
+};
+server.services[0].characteristics[0].descriptors[0].setReadValueRequestCallback(callback);
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothGATTServerDescriptor::setWriteValueRequestCallback">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServerDescriptor::setWriteValueRequestCallback"></a><code><b><span class="methodName">setWriteValueRequestCallback</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers the callback called when a remote client writes the value of the descriptor from the local GATT server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void setWriteValueRequestCallback(<a href="#WriteValueRequestCallback">WriteValueRequestCallback</a> writeValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                  optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The callback, registered with this function, is called when a remote client requests to write the value of the descriptor.
+The server can respond to such requests by returning a <a href="#GATTRequestReply">GATTRequestReply</a> object from the callback.
+If <a href="#WriteValueRequestCallback">WriteValueRequestCallback</a> for the descriptor is not registered, or it does not return a <a href="#GATTRequestReply">GATTRequestReply</a>, clients will not be able to get the value of this descriptor.<br>            </p>
+            <p>
+A callback set with this function overwrites any previously set <a href="#WriteValueRequestCallback">WriteValueRequestCallback</a>.
+            </p>
+            <p>
+The <em>errorCallback</em> will be launched in the following situations:
+            </p>
+            <ul>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+            <p>
+The <em>sendResponseErrorCallback</em> will be launched in the following situations:
+            </p>
+            <ul>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ InvalidValuesError - If <em>GATTRequestReply::statusCode</em>.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">writeValueRequestCallback</span>:
+ The callback called when a client writes the value of the descriptor.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when the writeValueRequestCallback is registered successfully.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called in case of failure of writeValueRequestCallback registration.
+                </li>
+          <li class="param">
+<span class="name">sendResponseSuccessCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when responses returned from writeValueRequestCallbacks are sent successfully.
+                </li>
+          <li class="param">
+<span class="name">sendResponseErrorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called when  responses returned from writeValueRequestCallbacks are not sent due to an error.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* this example assumes that the local gatt server with at least one service which has at least one */
+/* characteristic with at least one descriptor already exists */
+var callback = function(clientAddress, value, offset, replyRequired)
+{
+  console.log(clientAddress + " requested to write characteristic's value: " + value +
+              " with offset: " + offset);
+  return replyRequired ? new tizen.GATTRequestReply(0, "0x1234") : null;
+};
+server.services[0].characteristics[0].descriptors[0].setWriteValueRequestCallback(callback);
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="BluetoothGATTServer">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServer"></a><h3>2.18. BluetoothGATTServer</h3>
+<div class="brief">
+ The BluetoothGATTServer interface provides access to control the local GATT server: starting and stopping it, registering and unregistering local GATT services, and getting the ATT MTU (Attribute Protocol Maximum Transmission Unit) values.
+          </div>
+<pre class="webidl prettyprint">  [NoInterfaceObject] interface BluetoothGATTServer {
+    readonly attribute boolean isRunning;
+    readonly attribute <a href="#BluetoothGATTServerService">BluetoothGATTServerService</a>[] services;
+    void start(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void stop(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void registerService(<a href="#BluetoothGATTServerServiceInit">BluetoothGATTServerServiceInit</a> service, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterAllServices(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                               raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getConnectionMtu(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, <a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="BluetoothGATTServer::isRunning">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">boolean </span><span class="name">isRunning</span></span><div class="brief">
+ The flag indicating if remote GATT clients can currently connect to the server, exposing services defined in <a href="#BluetoothGATTServer::services">BluetoothGATTServer::services</a>. It is toggled on <a href="#BluetoothGATTServer::start">start()</a> and <a href="#BluetoothGATTServer::stop">stop()</a> calls.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="BluetoothGATTServer::services">
+<span class="attrName"><span class="readonly">                readonly
+</span><span class="type">BluetoothGATTServerService[]
+                      </span><span class="name">services</span></span><div class="brief">
+ The list of GATT services hosted on this server.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+</ul>
+</div>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="BluetoothGATTServer::start">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServer::start"></a><code><b><span class="methodName">start</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Starts the local GATT server. After it starts, it can conduct GATT server operations. Also, the remote clients can discover and use the services provided by the local Bluetooth GATT Server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void start(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> will be launched in the following situations:
+            </p>
+            <ul>
+              <li>
+ InvalidStateError - If the server is already running.              </li>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Called when the server is started.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidStateError, if the Bluetooth adapter is not enabled.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var onSuccess = function()
+{
+  console.log("Server started successfully!");
+};
+
+var onError = function(e)
+{
+  console.error("Server didn't start, error: " + e);
+};
+
+var server = tizen.bluetooth.getGATTServer();
+
+server.start(onSuccess, onError);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Server started successfully!
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothGATTServer::stop">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServer::stop"></a><code><b><span class="methodName">stop</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Stops GATT server operation.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void stop(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+After the stop, remote clients will not be able to discover the local GATT server's services.
+            </p>
+            <p>
+The <em>ErrorCallback</em> will be launched in the following situations:
+            </p>
+            <ul>
+              <li>
+ InvalidStateError - If the server is not running.              </li>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Called when the server is stopped.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidStateError, if the Bluetooth adapter is not enabled.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+<li class="list"><p>
+ with error type AbortError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* this example assumes that local gatt server already exists and it is started */
+var onSuccess = function()
+{
+  console.log("Server stopped successfully!");
+};
+
+var onError = function(e)
+{
+  console.error("Server didn't stop, error: " + e);
+};
+
+server.stop(onSuccess, onError);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Server stopped successfully!
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothGATTServer::registerService">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServer::registerService"></a><code><b><span class="methodName">registerService</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a primary service in the local GATT server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void registerService(<a href="#BluetoothGATTServerServiceInit">BluetoothGATTServerServiceInit</a> service, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The service is available for clients after <a href="#BluetoothGATTServer::start">BluetoothGATTServer::start()</a> call.
+            </p>
+           </div>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidStateError - If the service cannot be registered in the current state of the server.              </li>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ InvalidValuesError - If any of the input parameters contains an invalid value              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<p><span class="remark">Remark: </span>
+ Services can only be registered before starting server.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">service</span>:
+ The definition of a service to be registered in the local GATT server.
+                </li>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Called when the local GATT server's services are successfully registered.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ The method to invoke when an error occurs.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidStateError, if the Bluetooth adapter is not enabled.
+                </p></li>
+<li class="list"><p>
+ with error type TypeMismatchError, if any input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var gattService = {serviceUuid: "0955", isPrimary: false, services: [], characteristics: []};
+
+var successCB = function()
+{
+  console.log("Service successfully registered!");
+};
+
+var errorCB = function(e)
+{
+  console.log("Service not registered, error: " + e);
+};
+
+var server = tizen.bluetooth.getGATTServer();
+
+server.registerService(gattService, successCB, errorCB);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Service successfully registered!
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothGATTServer::unregisterAllServices">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServer::unregisterAllServices"></a><code><b><span class="methodName">unregisterAllServices</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters all services from the local GATT server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void unregisterAllServices(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+This method unregisters all services and all their characteristics from the local GATT server.
+            </p>
+           </div>
+<div class="description">
+            <p>
+The ErrorCallback is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidStateError - If the service cannot be unregistered in the current state of the GATT server.              </li>
+              <li>
+ AbortError - If any other error occurs              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<p><span class="remark">Remark: </span>
+ Currently running local GATT server is stopped after calling this method.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">successCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when services are successfully unregistered from the local GATT server.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+   Callback function that is called in case of failure.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* this example assumes that the local gatt server already exists */
+var successCB = function()
+{
+  console.log("Services successfully unregistered!");
+};
+
+var errorCB = function(e)
+{
+  console.log("Services not unregistered, error: " + e);
+};
+
+server.unregisterAllServices(successCB, errorCB);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Services successfully unregistered!
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothGATTServer::getConnectionMtu">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothGATTServer::getConnectionMtu"></a><code><b><span class="methodName">getConnectionMtu</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the ATT MTU for the connection with a client.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void getConnectionMtu(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, <a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The <em>ErrorCallback</em> is launched with these error types:
+            </p>
+            <ul>
+              <li>
+ InvalidStateError - If the server is not running.              </li>
+              <li>
+ NotSupportedError - If the feature is not supported.              </li>
+              <li>
+ AbortError - If any other error occurs.              </li>
+            </ul>
+           </div>
+<p><span class="privilegelevel">Privilege level: </span>
+ public
+            </p>
+<p><span class="privilege">Privilege: </span>
+ http://tizen.org/privilege/bluetooth
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">clientAddress</span>:
+ MAC address of the client, for connection with whom the MTU is to be retrieved.
+                </li>
+          <li class="param">
+<span class="name">callback</span>:
+ Callback functions that are called when the connection state changes.
+                </li>
+          <li class="param">
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>
+</li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
+                </p></li>
+<li class="list"><p>
+ with error type SecurityError, if the application does not have the privilege to call this method.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">/* this example assumes that the local gatt server already exists */
+var successCB = function(mtu)
+{
+  console.log("ATT MTU value is: " + mtu);
+};
+
+var errorCB = function(e)
+{
+  console.log("Cannot retrieve the ATT MTU, error: " + e);
+};
+
+server.getConnectionMtu("058d", successCB, errorCB);
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>ATT MTU value is: 123
+</pre>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 <div class="interface" id="BluetoothLEScanCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEScanCallback"></a><h3>2.12. BluetoothLEScanCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEScanCallback"></a><h3>2.19. BluetoothLEScanCallback</h3>
 <div class="brief">
  Bluetooth scanning process interface that defines the success callback for <em>BluetoothLEAdapter.startScan()</em>          </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothLEScanCallback {
@@ -3792,7 +5650,7 @@ adapter.startScan(function onsuccess(device)
 </div>
 </div>
 <div class="interface" id="BluetoothLEAdvertiseCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEAdvertiseCallback"></a><h3>2.13. BluetoothLEAdvertiseCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEAdvertiseCallback"></a><h3>2.20. BluetoothLEAdvertiseCallback</h3>
 <div class="brief">
  Bluetooth advertising process interface that defines the success callback for <em>BluetoothLEAdapter.startAdvertise()</em>          </div>
 <pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothLEAdvertiseCallback {
@@ -3832,7 +5690,7 @@ adapter.startScan(function onsuccess(device)
 </div>
 </div>
 <div class="interface" id="BluetoothLEConnectChangeCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEConnectChangeCallback"></a><h3>2.14. BluetoothLEConnectChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEConnectChangeCallback"></a><h3>2.21. BluetoothLEConnectChangeCallback</h3>
 <div class="brief">
  Bluetooth LE connecting process interface that defines callbacks for getting notified about changes of connect to a specific LE based service on a remote Bluetooth LE device.
           </div>
@@ -3877,7 +5735,7 @@ adapter.startScan(function onsuccess(device)
 </div>
 </div>
 <div class="interface" id="ReadValueSuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::ReadValueSuccessCallback"></a><h3>2.15. ReadValueSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::ReadValueSuccessCallback"></a><h3>2.22. ReadValueSuccessCallback</h3>
 <div class="brief">
  The ReadValueSuccessCallback interface implements the callback for
 <a href="#BluetoothGATTCharacteristic::readValue">BluetoothGATTCharacteristic.readValue()</a> and
@@ -3919,8 +5777,307 @@ adapter.startScan(function onsuccess(device)
 </dl>
 </div>
 </div>
+<div class="interface" id="GATTRequestReply">
+<a class="backward-compatibility-anchor" name="::Bluetooth::GATTRequestReply"></a><h3>2.23. GATTRequestReply</h3>
+<div class="brief">
+ Representation of the local GATT server's response to request read/write to characteristic/descriptor.
+          </div>
+<pre class="webidl prettyprint">  [Constructor(long statusCode = 0, optional <a href="#Bytes">Bytes</a> data)]
+  interface GATTRequestReply {
+    attribute long statusCode;
+    attribute <a href="#Bytes">Bytes</a>? data;
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<div class="constructors">
+<h4 id="GATTRequestReply::constructor">Constructors</h4>
+<dl>
+<dt class="method" id="">
+<a class="backward-compatibility-anchor" name=""></a><code><b><span class="methodName">Constructor (long, <a href="#Bytes">Bytes</a>)</span></b></code>
+</dt>
+<pre class="webidl prettyprint">GATTRequestReply(long statusCode = 0, optional <a href="#Bytes">Bytes</a> data);</pre>
+</dl>
+</div>
+<div class="attributes">
+<h4>Attributes</h4>
+<ul>
+<li class="attribute" id="GATTRequestReply::statusCode">
+<span class="attrName"><span class="type">long </span><span class="name">statusCode</span></span><div class="brief">
+ Reply status code.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+<li class="attribute" id="GATTRequestReply::data">
+<span class="attrName"><span class="type">Bytes </span><span class="name">data</span><span class="optional"> [nullable]</span></span><div class="brief">
+ Response data. It is only relevant for read value requests. It will be ignored in replies to write requests and thus can be uninitialized in such replies.
+            </div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+</li>
+</ul>
+</div>
+</div>
+<div class="interface" id="ReadValueRequestCallback">
+<a class="backward-compatibility-anchor" name="::Bluetooth::ReadValueRequestCallback"></a><h3>2.24. ReadValueRequestCallback</h3>
+<div class="brief">
+ The ReadValueRequestCallback interface implements the callback for
+<em>BluetoothGATTServerCharacteristicInit.readValueRequestCallback()</em>,
+<a href="#BluetoothGATTServerCharacteristic::setReadValueRequestCallback">BluetoothGATTServerCharacteristic.setReadValueRequestCallback()</a>,
+<em>BluetoothGATTServerDescriptorInit.readValueRequestCallback()</em> and
+<a href="#BluetoothGATTServerDescriptor::setReadValueRequestCallback">BluetoothGATTServerDescriptor.setReadValueRequestCallback()</a>.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ReadValueRequestCallback {
+    <a href="#GATTRequestReply">GATTRequestReply</a>? onreadrequest(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, long offset);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<p><span class="remark">Remark: </span>
+ Example of using can be found at <a href="#BluetoothGATTServerCharacteristic::setReadValueRequestCallback">BluetoothGATTServerCharacteristic.setReadValueRequestCallback()</a> and <a href="#BluetoothGATTServerDescriptor::setReadValueRequestCallback">BluetoothGATTServerDescriptor.setReadValueRequestCallback()</a> code examples.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ReadValueRequestCallback::onreadrequest">
+<a class="backward-compatibility-anchor" name="::Bluetooth::ReadValueRequestCallback::onreadrequest"></a><code><b><span class="methodName">onreadrequest</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a client makes a read request for GATT characteristic to the connected local GATT server.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#GATTRequestReply">GATTRequestReply</a>? onreadrequest(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, long offset);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The server should reply to requests by returning a <a href="#GATTRequestReply">GATTRequestReply</a> object with requested data and a proper status code.
+If the callback does not return a <a href="#GATTRequestReply">GATTRequestReply</a>, the client will not receive a response.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">clientAddress</span>:
+ MAC address of the client that requested the value read of the GATT entity.
+                </li>
+          <li class="param">
+<span class="name">offset</span>:
+ The offset given for the value of characteristic to read.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">GATTRequestReply<span class="optional"> [nullable]</span>:</span>
+ <em>GATTRequestReply</em> object with a status code and requested data.
+              </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="WriteValueRequestCallback">
+<a class="backward-compatibility-anchor" name="::Bluetooth::WriteValueRequestCallback"></a><h3>2.25. WriteValueRequestCallback</h3>
+<div class="brief">
+ The WriteValueRequestCallback interface implements the callback for
+<em>BluetoothGATTServerCharacteristicInit.writeValueRequestCallback()</em>,
+<a href="#BluetoothGATTServerCharacteristic::setWriteValueRequestCallback">BluetoothGATTServerCharacteristic.setWriteValueRequestCallback()</a>,
+<em>BluetoothGATTServerDescriptorInit.writeValueRequestCallback()</em> and
+<a href="#BluetoothGATTServerDescriptor::setWriteValueRequestCallback">BluetoothGATTServerDescriptor.setWriteValueRequestCallback()</a>.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface WriteValueRequestCallback {
+    <a href="#GATTRequestReply">GATTRequestReply</a>? onwriterequest(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, byte[] value, long offset, boolean replyRequired);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<p><span class="remark">Remark: </span>
+ Example of using can be found at <a href="#BluetoothGATTServerCharacteristic::setWriteValueRequestCallback">BluetoothGATTServerCharacteristic.setWriteValueRequestCallback()</a> and <a href="#BluetoothGATTServerDescriptor::setWriteValueRequestCallback">BluetoothGATTServerDescriptor.setWriteValueRequestCallback()</a> code examples.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="WriteValueRequestCallback::onwriterequest">
+<a class="backward-compatibility-anchor" name="::Bluetooth::WriteValueRequestCallback::onwriterequest"></a><code><b><span class="methodName">onwriterequest</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when a client connected to the local GATT server requests characteristic's value write.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint"><a href="#GATTRequestReply">GATTRequestReply</a>? onwriterequest(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, byte[] value, long offset, boolean replyRequired);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="description">
+            <p>
+The server should reply to requests by returning a <a href="#GATTRequestReply">GATTRequestReply</a> object with a status code.
+If the callback does not return a <a href="#GATTRequestReply">GATTRequestReply</a>, the client will not receive a response.
+            </p>
+           </div>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">clientAddress</span>:
+ MAC address of the client that requested the value write of the GATT entity.
+                </li>
+          <li class="param">
+<span class="name">value</span>:
+ Value to be written to the GATT entity.
+                </li>
+          <li class="param">
+<span class="name">offset</span>:
+ Offset from which the value is to be written.
+                </li>
+          <li class="param">
+<span class="name">replyRequired</span>:
+ Flag indicating whether the client requested an answer to the request. If it's false, the client preforms the <em>write without response</em> operation defined in Bluetooth Core Specification.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="NotificationCallback">
+<a class="backward-compatibility-anchor" name="::Bluetooth::NotificationCallback"></a><h3>2.26. NotificationCallback</h3>
+<div class="brief">
+ The NotificationCallback interface implements the success callback for <a href="#BluetoothGATTServerCharacteristic::notifyAboutValueChange">BluetoothGATTServerCharacteristic.notifyAboutValueChange()</a>.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface NotificationCallback {
+    void onnotificationsuccess(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress);
+    void onnotificationfail(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, <a href="tizen.html#WebAPIException">WebAPIException</a> error);
+    void onnotificationfinish(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<p><span class="remark">Remark: </span>
+ Example of using can be found at <a href="#BluetoothGATTServerCharacteristic::notifyAboutValueChange">BluetoothGATTServerCharacteristic.notifyAboutValueChange()</a> code examples.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="NotificationCallback::onnotificationsuccess">
+<a class="backward-compatibility-anchor" name="::Bluetooth::NotificationCallback::onnotificationsuccess"></a><code><b><span class="methodName">onnotificationsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the local GATT server successfully notifies a client of a characteristic's value change.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onnotificationsuccess(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">clientAddress</span>:
+ MAC address of the client that was notified.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="NotificationCallback::onnotificationfail">
+<a class="backward-compatibility-anchor" name="::Bluetooth::NotificationCallback::onnotificationfail"></a><code><b><span class="methodName">onnotificationfail</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the local GATT server fails to notify a client of a characteristic's value change.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onnotificationfail(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, <a href="tizen.html#WebAPIException">WebAPIException</a> error);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">clientAddress</span>:
+ MAC address of the client that was notified.
+                </li>
+          <li class="param">
+<span class="name">error</span>:
+ The error type and an error message from Tizen's Bluetooth LE stack.
+                </li>
+        </ul>
+</div>
+</dd>
+<dt class="method" id="NotificationCallback::onnotificationfinish">
+<a class="backward-compatibility-anchor" name="::Bluetooth::NotificationCallback::onnotificationfinish"></a><code><b><span class="methodName">onnotificationfinish</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the last of all client notifications was sent.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onnotificationfinish(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">clientAddress</span>:
+ MAC address of the last client that was notified.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="interface" id="ConnectionMtuCallback">
+<a class="backward-compatibility-anchor" name="::Bluetooth::ConnectionMtuCallback"></a><h3>2.27. ConnectionMtuCallback</h3>
+<div class="brief">
+ The ConnectionMtuCallback interface implements the callback for <a href="#BluetoothGATTServer::getConnectionMtu">BluetoothGATTServer.getConnectionMtU()</a>.
+          </div>
+<pre class="webidl prettyprint">  [Callback=FunctionOnly, NoInterfaceObject] interface ConnectionMtuCallback {
+    void onsuccess(long mtu);
+  };</pre>
+<p><span class="version">Since: </span>
+ 6.0
+          </p>
+<p><span class="remark">Remark: </span>
+ Example of using can be found at <a href="#BluetoothGATTServer::getConnectionMtu">BluetoothGATTServer.getConnectionMtu()</a> code example.
+          </p>
+<div class="methods">
+<h4>Methods</h4>
+<dl>
+<dt class="method" id="ConnectionMtuCallback::onsuccess">
+<a class="backward-compatibility-anchor" name="::Bluetooth::ConnectionMtuCallback::onsuccess"></a><code><b><span class="methodName">onsuccess</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Called when the requested ATT MTU size for a connection is ready.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void onsuccess(long mtu);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">mtu</span>:
+ The requested ATT MTU value for the connection with another Bluetooth LE device.
+                </li>
+        </ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 <div class="interface" id="BluetoothDevice">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDevice"></a><h3>2.16. BluetoothDevice</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDevice"></a><h3>2.28. BluetoothDevice</h3>
 <div class="brief">
  The BluetoothDevice interface represents a remote Bluetooth device.
           </div>
@@ -4283,7 +6440,7 @@ else
 </div>
 </div>
 <div class="interface" id="BluetoothLEDevice">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEDevice"></a><h3>2.17. BluetoothLEDevice</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEDevice"></a><h3>2.29. BluetoothLEDevice</h3>
 <div class="brief">
  The BluetoothLEDevice interface represents a remote Bluetooth LE device.
           </div>
@@ -4296,13 +6453,18 @@ else
     readonly attribute <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
     readonly attribute <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>[]? serviceData;
     readonly attribute <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
-    readonly attribute long rssi;
+    readonly attribute long? rssi;
     void connect(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void disconnect(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean isConnected() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BluetoothGATTService">BluetoothGATTService</a> getService(<a href="#BluetoothUUID">BluetoothUUID</a> uuid) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BluetoothUUID">BluetoothUUID</a>[] getServiceAllUuids() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addConnectStateChangeListener(<a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeConnectStateChangeListener(long watchID);
+    unsigned long getAttMtu() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void requestAttMtuChange(unsigned long newAttMtu) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addAttMtuChangeListener(<a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeAttMtuChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };</pre>
 <p><span class="version">Since: </span>
  2.3.1
@@ -4314,6 +6476,8 @@ A <em>BluetoothLEDevice</em> object can be retrieved by using one of the followi
           <ul>
             <li>
 BluetoothLEAdapter.startScan()            </li>
+            <li>
+BluetoothLEConnectChangeCallback() passed to BluetoothGATTServer.registerClientConnectedCallback()            </li>
           </ul>
          </div>
 <div class="attributes">
@@ -4344,6 +6508,9 @@ adapter.startScan(function onsuccess(device)
 <p><span class="version">Since: </span>
  2.3.1
             </p>
+<p><span class="remark">Remark: </span>
+ This value will be set to <em>null</em>, if the object is obtained from <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>.
+            </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
 adapter.startScan(function onsuccess(device)
@@ -4366,6 +6533,9 @@ It represents the current transmit power level in dBm, and the level ranges from
 <p><span class="version">Since: </span>
  2.3.1
             </p>
+<p><span class="remark">Remark: </span>
+ This value will be set to <em>null</em>, if the object is obtained from <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>.
+            </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
 adapter.startScan(function onsuccess(device)
@@ -4382,6 +6552,9 @@ adapter.startScan(function onsuccess(device)
             </div>
 <p><span class="version">Since: </span>
  2.3.1
+            </p>
+<p><span class="remark">Remark: </span>
+ This value will be set to <em>null</em>, if the object is obtained from <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>.
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
@@ -4400,6 +6573,9 @@ adapter.startScan(function onsuccess(device)
             </div>
 <p><span class="version">Since: </span>
  2.3.1
+            </p>
+<p><span class="remark">Remark: </span>
+ This value will be set to <em>null</em>, if the object is obtained from <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>.
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
@@ -4424,6 +6600,9 @@ adapter.startScan(function onsuccess(device)
             </div>
 <p><span class="version">Since: </span>
  2.3.1
+            </p>
+<p><span class="remark">Remark: </span>
+ This value will be set to <em>null</em>, if the object is obtained from <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>.
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
@@ -4452,6 +6631,9 @@ adapter.startScan(function onsuccess(device)
 <p><span class="remark">Remark: </span>
  On devices prior to Tizen 6.0, service data is found only when its <a href="#BluetoothLEServiceData::uuid">BluetoothLEServiceData::uuid</a> is 16-bit. Finding service data with 128-bit <a href="#BluetoothLEServiceData::uuid">BluetoothLEServiceData::uuid</a> is supported since Tizen 6.0.
             </p>
+<p><span class="remark">Remark: </span>
+ This value will be set to <em>null</em>, if the object is obtained from <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>.
+            </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
 adapter.startScan(function onsuccess(device)
@@ -4474,6 +6656,9 @@ adapter.startScan(function onsuccess(device)
             </div>
 <p><span class="version">Since: </span>
  2.3.1
+            </p>
+<p><span class="remark">Remark: </span>
+ This value will be set to <em>null</em>, if the object is obtained from <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>.
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
@@ -4513,7 +6698,7 @@ Found device, manufacturerData: {"id":"127","data":"DEADC0DE"}
 </li>
 <li class="attribute" id="BluetoothLEDevice::rssi">
 <span class="attrName"><span class="readonly">                readonly
-</span><span class="type">long </span><span class="name">rssi</span></span><div class="brief">
+</span><span class="type">long </span><span class="name">rssi</span><span class="optional"> [nullable]</span></span><div class="brief">
  The received signal strength indicator in dBm (decibel-milliwatts) units.
             </div>
 <div class="description">
@@ -4523,6 +6708,9 @@ The signal strength depends on distance (between the device and the beacon) and 
            </div>
 <p><span class="version">Since: </span>
  3.0
+            </p>
+<p><span class="remark">Remark: </span>
+ Since Tizen 6.0, this value can be a <em>null</em>, but only if the object is obtained from <a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a>.
             </p>
 <div class="example">
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var adapter = tizen.bluetooth.getLEAdapter();
@@ -4703,6 +6891,67 @@ function onDeviceFound(device)
 
 var adapter = tizen.bluetooth.getLEAdapter();
 adapter.startScan(onDeviceFound, onerror);
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothLEDevice::isConnected">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEDevice::isConnected"></a><code><b><span class="methodName">isConnected</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Checks if Bluetooth Low Energy device is currently connected.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">boolean isConnected();</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">boolean:</span>
+ <var>true</var> if the device is currently connected, <var>false</var> otherwise.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dev;
+
+function onerror(e)
+{
+  console.log("Failed to connect to device: " + e.message);
+}
+
+function onconnected()
+{
+  console.log("Connected to device: " + dev.isConnected());
+}
+
+var adapter = tizen.bluetooth.getLEAdapter();
+adapter.startScan(function onsuccess(device)
+{
+  if (device.address == "11:22:33:44:55:66")
+  {
+    adapter.stopScan();
+    dev = device;
+    var connected = dev.isConnected();
+    console.log("Found device: " + device.name + ", connected: " + connected);
+    if (!connected)
+    {
+      device.connect(onconnected, onerror);
+    }
+  }
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Found device: TestDevice, connected: false
+Connected to device: true
 </pre>
 </div>
 </dd>
@@ -4887,7 +7136,7 @@ Services length 2
 <div class="exceptionlist">
 <p><span class="except">Exceptions:</span></p>
           <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
- with error type UnknownError, if any other error occurs.
+ with error type TypeMismatchError, if the input parameter is not compatible with the expected type for that parameter.
                 </p></li></ul>
 </li></ul>
         </div>
@@ -4984,11 +7233,282 @@ adapter.startScan(onDeviceFound, onerror);
 </pre>
 </div>
 </dd>
+<dt class="method" id="BluetoothLEDevice::getAttMtu">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEDevice::getAttMtu"></a><code><b><span class="methodName">getAttMtu</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Gets the current value of Attribute Protocol(ATT) Maximum Transmission Unit(MTU) from the connected device.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">unsigned long getAttMtu();</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">unsigned long:</span>
+ Current ATT MTU value.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type InvalidStateError, if the remote device is not connected.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dev;
+
+function onerror(e)
+{
+  console.log("Failed to connect to device: " + e.message);
+}
+
+function onconnected()
+{
+  console.log("Connected to device, ATT MTU: " + dev.getAttMtu());
+}
+
+var adapter = tizen.bluetooth.getLEAdapter();
+adapter.startScan(function onsuccess(device)
+{
+  if (device.address == "11:22:33:44:55:66")
+  {
+    dev = device;
+    console.log("Found device: " + device.name);
+    device.connect(onconnected, onerror);
+  }
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Found device: TestDevice
+Connected to device, ATT MTU: 23
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothLEDevice::requestAttMtuChange">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEDevice::requestAttMtuChange"></a><code><b><span class="methodName">requestAttMtuChange</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Requests the GATT server to change the Attribute Protocol (ATT) Maximum Transmission Unit (MTU) value.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void requestAttMtuChange(unsigned long newAttMtu);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<p><span class="remark">Remark: </span>
+ ATT MTU value is determined between two connected devices and change will be successful only if both devices support the given value of ATT MTU.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">newAttMtu</span>:
+ The new ATT MTU value, that will be sent to GATT server.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function proccessDevice(device)
+{
+  function onConnected()
+  {
+    var attMtu = device.getAttMtu();
+    console.log("Initial ATT MTU value: " + attMtu);
+    watchID = device.addAttMtuChangeListener(function(value)
+    {
+      console.log("ATT MTU changed to: " + value);
+      device.removeAttMtuChangeListener(watchID);
+      device.disconnect();
+    });
+    device.requestAttMtuChange(64);
+  }
+  device.connect(onConnected);
+}
+
+var adapter = tizen.bluetooth.getLEAdapter();
+adapter.startScan(function onsuccess(device)
+{
+  if (device.address == "11:22:33:44:55:66")
+  {
+    console.log("Found device: " + device.name);
+    adapter.stopScan();
+    proccessDevice(device);
+  }
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Found device: TestDevice
+Initial ATT MTU value: 31
+ATT MTU changed to: 64
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothLEDevice::addAttMtuChangeListener">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEDevice::addAttMtuChangeListener"></a><code><b><span class="methodName">addAttMtuChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Registers a listener to be called when ATT MTU value is changed.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">long addAttMtuChangeListener(<a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<p><span class="remark">Remark: </span>
+ ATT MTU value is determined between two connected devices and change takes place after both devices agrees to new value, both connected devices can initiate the ATT MTU value change by sending the request.
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">callback</span>:
+ Listener function that is called when the connection's ATT MTU changes.
+                </li>
+        </ul>
+</div>
+<div class="returntype">
+<p><span class="return">Return value:</span></p>
+<ul>
+<span class="return">long:</span>
+ The watchID to be used to unregister the listener.
+              </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul>
+<li class="list"><p>
+ with error type TypeMismatchError, if an input attribute is not compatible with the expected type for this attribute.
+                </p></li>
+<li class="list"><p>
+ with error type UnknownError, if any other error occurs.
+                </p></li>
+</ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function proccessDevice(device)
+{
+  function onConnected()
+  {
+    var attMtu = device.getAttMtu();
+    console.log("Initial ATT MTU value: " + attMtu);
+    watchID = device.addAttMtuChangeListener(function(value)
+    {
+      console.log("ATT MTU changed to: " + value);
+      device.removeAttMtuChangeListener(watchID);
+      device.disconnect();
+    });
+    device.requestAttMtuChange(64);
+  }
+  device.connect(onConnected);
+}
+
+var adapter = tizen.bluetooth.getLEAdapter();
+adapter.startScan(function onsuccess(device)
+{
+  if (device.address == "11:22:33:44:55:66")
+  {
+    console.log("Found device: " + device.name);
+    adapter.stopScan();
+    proccessDevice(device);
+  }
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Found device: TestDevice
+Initial ATT MTU value: 31
+ATT MTU changed to: 64
+</pre>
+</div>
+</dd>
+<dt class="method" id="BluetoothLEDevice::removeAttMtuChangeListener">
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothLEDevice::removeAttMtuChangeListener"></a><code><b><span class="methodName">removeAttMtuChangeListener</span></b></code>
+</dt>
+<dd>
+<div class="brief">
+ Unregisters the ATT MTU value change listener.
+            </div>
+<div class="synopsis"><pre class="signature prettyprint">void removeAttMtuChangeListener(long watchId);</pre></div>
+<p><span class="version">Since: </span>
+ 6.0
+            </p>
+<div class="parameters">
+<p><span class="param">Parameters:</span></p>
+<ul>
+          <li class="param">
+<span class="name">watchId</span>:
+ The watchID identifier returned by the addAttMtuChangeListener() method.
+                </li>
+        </ul>
+</div>
+<div class="exceptionlist">
+<p><span class="except">Exceptions:</span></p>
+          <ul class="exception"><li>WebAPIException<ul><li class="list"><p>
+ with error type UnknownError, if any error occurs.
+                </p></li></ul>
+</li></ul>
+        </div>
+<div class="example">
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">function proccessDevice(device)
+{
+  function onConnected()
+  {
+    var attMtu = device.getAttMtu();
+    console.log("Initial ATT MTU value: " + attMtu);
+    watchID = device.addAttMtuChangeListener(function(value)
+    {
+      console.log("ATT MTU changed to: " + value);
+      device.removeAttMtuChangeListener(watchID);
+      device.disconnect();
+    });
+    device.requestAttMtuChange(64);
+  }
+  device.connect(onConnected);
+}
+
+var adapter = tizen.bluetooth.getLEAdapter();
+adapter.startScan(function onsuccess(device)
+{
+  if (device.address == "11:22:33:44:55:66")
+  {
+    console.log("Found device: " + device.name);
+    adapter.stopScan();
+    proccessDevice(device);
+  }
+});
+</pre>
+</div>
+<div class="output">
+<span class="title"><p>Output example:</p></span><pre>Found device: TestDevice
+Initial ATT MTU value: 31
+ATT MTU changed to: 64
+</pre>
+</div>
+</dd>
 </dl>
 </div>
 </div>
 <div class="interface" id="BluetoothSocket">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothSocket"></a><h3>2.18. BluetoothSocket</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothSocket"></a><h3>2.30. BluetoothSocket</h3>
 <div class="brief">
  The BluetoothSocket interface represents the Bluetooth socket.
           </div>
@@ -5481,7 +8001,7 @@ else
 </div>
 </div>
 <div class="interface" id="BluetoothClass">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothClass"></a><h3>2.19. BluetoothClass</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothClass"></a><h3>2.31. BluetoothClass</h3>
 <div class="brief">
  The BluetoothClass interface represents Bluetooth Class of Device/Service(CoD).
           </div>
@@ -5658,7 +8178,7 @@ adapter.getDevice("12:34:56:78:9A:BC",
 </div>
 </div>
 <div class="interface" id="BluetoothClassDeviceMajor">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothClassDeviceMajor"></a><h3>2.20. BluetoothClassDeviceMajor</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothClassDeviceMajor"></a><h3>2.32. BluetoothClassDeviceMajor</h3>
 <div class="brief">
  The BluetoothClassDeviceMajor interface holds the identifiers for major device classes of Bluetooth CoD.
           </div>
@@ -5680,7 +8200,7 @@ adapter.getDevice("12:34:56:78:9A:BC",
           </p>
 </div>
 <div class="interface" id="BluetoothClassDeviceMinor">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothClassDeviceMinor"></a><h3>2.21. BluetoothClassDeviceMinor</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothClassDeviceMinor"></a><h3>2.33. BluetoothClassDeviceMinor</h3>
 <div class="brief">
  The BluetoothClassDeviceMinor interface holds the identifiers for minor device classes of Bluetooth CoD.
           </div>
@@ -5763,7 +8283,7 @@ adapter.getDevice("12:34:56:78:9A:BC",
           </p>
 </div>
 <div class="interface" id="BluetoothClassDeviceService">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothClassDeviceService"></a><h3>2.22. BluetoothClassDeviceService</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothClassDeviceService"></a><h3>2.34. BluetoothClassDeviceService</h3>
 <div class="brief">
  The BluetoothClassDeviceService interface holds identifiers for the major service classes of Bluetooth CoD.
           </div>
@@ -5783,7 +8303,7 @@ adapter.getDevice("12:34:56:78:9A:BC",
           </p>
 </div>
 <div class="interface" id="BluetoothServiceHandler">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothServiceHandler"></a><h3>2.23. BluetoothServiceHandler</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothServiceHandler"></a><h3>2.35. BluetoothServiceHandler</h3>
 <div class="brief">
  The BluetoothServiceHandler interface provides methods to handle Bluetooth service.
           </div>
@@ -5995,7 +8515,7 @@ function unRegisterChatService()
 </div>
 </div>
 <div class="interface deprecated" id="BluetoothProfileHandler">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothProfileHandler"></a><h3>2.24. BluetoothProfileHandler</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothProfileHandler"></a><h3>2.36. BluetoothProfileHandler</h3>
 <div class="brief">
  The BluetoothProfileHandler interface represents the Bluetooth profile handler.
           </div>
@@ -6041,7 +8561,7 @@ else
 </div>
 </div>
 <div class="interface deprecated" id="BluetoothHealthProfileHandler">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthProfileHandler"></a><h3>2.25. BluetoothHealthProfileHandler</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthProfileHandler"></a><h3>2.37. BluetoothHealthProfileHandler</h3>
 <div class="brief">
  This interface represents the handler of Bluetooth health device profile.
 The BluetoothHealthProfileHandler object is created by <em>BluetoothAdapter.getBluetoothProfileHandler()</em>.
@@ -6260,7 +8780,7 @@ healthProfileHandler.registerSinkApplication(
 </div>
 </div>
 <div class="interface deprecated" id="BluetoothHealthApplication">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthApplication"></a><h3>2.26. BluetoothHealthApplication</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthApplication"></a><h3>2.38. BluetoothHealthApplication</h3>
 <div class="brief">
  The BluetoothHealthApplication interface represents the Bluetooth health application.
           </div>
@@ -6479,7 +8999,7 @@ function stopSink()
 </div>
 </div>
 <div class="interface deprecated" id="BluetoothHealthChannel">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannel"></a><h3>2.27. BluetoothHealthChannel</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannel"></a><h3>2.39. BluetoothHealthChannel</h3>
 <div class="brief">
  The BluetoothHealthChannel interface represents the Bluetooth health channel.
           </div>
@@ -6886,7 +9406,7 @@ healthProfileHandler.registerSinkApplication(
 </div>
 </div>
 <div class="interface" id="BluetoothAdapterChangeCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAdapterChangeCallback"></a><h3>2.28. BluetoothAdapterChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothAdapterChangeCallback"></a><h3>2.40. BluetoothAdapterChangeCallback</h3>
 <div class="brief">
  The BluetoothAdapterChangeCallback interface specifies a set of methods to be invoked when the changes of Bluetooth adapter occur.
           </div>
@@ -6971,7 +9491,7 @@ healthProfileHandler.registerSinkApplication(
 </div>
 </div>
 <div class="interface" id="BluetoothDeviceSuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDeviceSuccessCallback"></a><h3>2.29. BluetoothDeviceSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDeviceSuccessCallback"></a><h3>2.41. BluetoothDeviceSuccessCallback</h3>
 <div class="brief">
  The BluetoothDeviceSuccessCallback interface implements the success callback <a href="#BluetoothAdapter::getDevice">BluetoothAdapter.getDevice()</a> and <a href="#BluetoothAdapter::createBonding">BluetoothAdapter.createBonding()</a>.
           </div>
@@ -7012,7 +9532,7 @@ healthProfileHandler.registerSinkApplication(
 </div>
 </div>
 <div class="interface" id="BluetoothDeviceArraySuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDeviceArraySuccessCallback"></a><h3>2.30. BluetoothDeviceArraySuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDeviceArraySuccessCallback"></a><h3>2.42. BluetoothDeviceArraySuccessCallback</h3>
 <div class="brief">
  The BluetoothDeviceArraySuccessCallback interface that defines the success callback for <a href="#BluetoothAdapter::getKnownDevices">BluetoothAdapter.getKnownDevices()</a>.
           </div>
@@ -7054,7 +9574,7 @@ Each element is a BluetoothDevice.
 </div>
 </div>
 <div class="interface" id="BluetoothDiscoverDevicesSuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDiscoverDevicesSuccessCallback"></a><h3>2.31. BluetoothDiscoverDevicesSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothDiscoverDevicesSuccessCallback"></a><h3>2.43. BluetoothDiscoverDevicesSuccessCallback</h3>
 <div class="brief">
  The BluetoothDiscoverDevicesSuccessCallback interface that defines the success callback for <a href="#BluetoothAdapter::discoverDevices">BluetoothAdapter.discoverDevices()</a>.
           </div>
@@ -7153,7 +9673,7 @@ After that, this device is no longer visible.
 </div>
 </div>
 <div class="interface" id="BluetoothSocketSuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothSocketSuccessCallback"></a><h3>2.32. BluetoothSocketSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothSocketSuccessCallback"></a><h3>2.44. BluetoothSocketSuccessCallback</h3>
 <div class="brief">
  The BluetoothSocketSuccessCallback interface that defines the success method for <a href="#BluetoothDevice::connectToServiceByUUID">BluetoothDevice.connectToServiceByUUID()</a>.
           </div>
@@ -7194,7 +9714,7 @@ After that, this device is no longer visible.
 </div>
 </div>
 <div class="interface" id="BluetoothServiceSuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothServiceSuccessCallback"></a><h3>2.33. BluetoothServiceSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothServiceSuccessCallback"></a><h3>2.45. BluetoothServiceSuccessCallback</h3>
 <div class="brief">
  The BluetoothServiceSuccessCallback interface implements the success callback for <a href="#BluetoothAdapter::registerRFCOMMServiceByUUID">BluetoothAdapter.registerRFCOMMServiceByUUID()</a>.
           </div>
@@ -7235,7 +9755,7 @@ After that, this device is no longer visible.
 </div>
 </div>
 <div class="interface deprecated" id="BluetoothHealthApplicationSuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthApplicationSuccessCallback"></a><h3>2.34. BluetoothHealthApplicationSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthApplicationSuccessCallback"></a><h3>2.46. BluetoothHealthApplicationSuccessCallback</h3>
 <div class="brief">
  The BluetoothHealthApplicationSuccessCallback interface that defines the success method for <a href="#BluetoothHealthProfileHandler::registerSinkApplication">BluetoothHealthProfileHandler.registerSinkApplication()</a>.
           </div>
@@ -7282,7 +9802,7 @@ After that, this device is no longer visible.
 </div>
 </div>
 <div class="interface deprecated" id="BluetoothHealthChannelSuccessCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelSuccessCallback"></a><h3>2.35. BluetoothHealthChannelSuccessCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelSuccessCallback"></a><h3>2.47. BluetoothHealthChannelSuccessCallback</h3>
 <div class="brief">
  The BluetoothHealthChannelSuccessCallback interface that defines the success method for <a href="#BluetoothHealthProfileHandler::connectToSource">BluetoothHealthProfileHandler.connectToSource()</a> and the event callback for <a href="#BluetoothHealthApplication::onconnect">BluetoothHealthApplication.onconnect()</a>.
           </div>
@@ -7329,7 +9849,7 @@ After that, this device is no longer visible.
 </div>
 </div>
 <div class="interface deprecated" id="BluetoothHealthChannelChangeCallback">
-<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelChangeCallback"></a><h3>2.36. BluetoothHealthChannelChangeCallback</h3>
+<a class="backward-compatibility-anchor" name="::Bluetooth::BluetoothHealthChannelChangeCallback"></a><h3>2.48. BluetoothHealthChannelChangeCallback</h3>
 <div class="brief">
  The BluetoothHealthChannelChangeCallback interface specifies a set of methods to be invoked when the changes of heath channel occur.
           </div>
@@ -7429,6 +9949,14 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
            </div></p>
 <li class="feature">http://tizen.org/feature/network.bluetooth.le.gatt.client</li>
 </div>
+<div class="def-api-feature">
+<p><div class="description">
+            <p>
+To guarantee that the Bluetooth Low Energy application runs on a device with Bluetooth Low Energy GATT Server feature, declare the following feature requirements in the config file:
+            </p>
+           </div></p>
+<li class="feature">http://tizen.org/feature/network.bluetooth.le.gatt.server</li>
+</div>
 <p></p>
                     For more information, see <a href="/application/web/tutorials/app-filtering">Application Filtering.</a>
 </div>
@@ -7438,6 +9966,9 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   typedef DOMString BluetoothUUID;
   typedef DOMString BluetoothLESolicitationUUID;
   typedef (byte[] or DOMString or <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a>) Bytes;
+  typedef (<a href="#BluetoothGATTService">BluetoothGATTService</a> or <a href="#BluetoothGATTServerService">BluetoothGATTServerService</a>) BluetoothGATTServiceVariant;
+  typedef (<a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a> or <a href="#BluetoothGATTServerCharacteristic">BluetoothGATTServerCharacteristic</a>) BluetoothGATTCharacteristicVariant;
+  typedef (<a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a> or <a href="#BluetoothGATTServerDescriptor">BluetoothGATTServerDescriptor</a>) BluetoothGATTDescriptorVariant;
   enum BluetoothSocketState { "CLOSED", "OPEN" };
   enum BluetoothAdvertisePacketType { "ADVERTISE", "SCAN_RESPONSE" };
   enum BluetoothAdvertisingState { "STARTED", "STOPPED" };
@@ -7448,8 +9979,53 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
     unsigned long? appearance;
     boolean? includeTxPowerLevel;
-    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
+    <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>[]? servicesData;
     <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
+  };
+  dictionary BluetoothGATTServerServiceInit {
+    <a href="#BluetoothUUID">BluetoothUUID</a> serviceUuid;
+    boolean isPrimary = true;
+    <a href="#BluetoothGATTServerServiceInit">BluetoothGATTServerServiceInit</a>[]? includedServices = null;
+    <a href="#BluetoothGATTServerCharacteristicInit">BluetoothGATTServerCharacteristicInit</a>[]? characteristics = null;
+  };
+  dictionary BluetoothGATTServerCharacteristicInit {
+    <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
+    <a href="#BluetoothGATTServerDescriptorInit">BluetoothGATTServerDescriptorInit</a>[]? descriptors = null;
+    boolean isBroadcast = false;
+    boolean hasExtendedProperties = false;
+    boolean isNotify = false;
+    boolean isIndication = false;
+    boolean isReadable = false;
+    boolean isSignedWrite = false;
+    boolean isWritable = false;
+    boolean isWriteNoResponse = false;
+    boolean readPermission = false;
+    boolean writePermission = false;
+    boolean encryptedReadPermission = false;
+    boolean encryptedWritePermission = false;
+    boolean encryptedSignedReadPermission = false;
+    boolean encryptedSignedWritePermission = false;
+    <a href="#ReadValueRequestCallback">ReadValueRequestCallback</a>? readValueRequestCallback = null;
+    <a href="tizen.html#SuccessCallback">SuccessCallback</a>? readValueSendResponseSuccessCallback = null;
+    <a href="tizen.html#ErrorCallback">ErrorCallback</a>? readValueSendResponseErrorCallback = null;
+    <a href="#WriteValueRequestCallback">WriteValueRequestCallback</a>? writeValueRequestCallback = null;
+    <a href="tizen.html#SuccessCallback">SuccessCallback</a>? writeValueSendResponseSuccessCallback = null;
+    <a href="tizen.html#ErrorCallback">ErrorCallback</a>? writeValueSendResponseErrorCallback = null;
+  };
+  dictionary BluetoothGATTServerDescriptorInit {
+    <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
+    boolean readPermission = false;
+    boolean writePermission = false;
+    boolean encryptedReadPermission = false;
+    boolean encryptedWritePermission = false;
+    boolean encryptedSignedReadPermission = false;
+    boolean encryptedSignedWritePermission = false;
+    <a href="#ReadValueRequestCallback">ReadValueRequestCallback</a>? readValueRequestCallback = null;
+    <a href="tizen.html#SuccessCallback">SuccessCallback</a>? readValueSendResponseSuccessCallback = null;
+    <a href="tizen.html#ErrorCallback">ErrorCallback</a>? readValueSendResponseErrorCallback = null;
+    <a href="#WriteValueRequestCallback">WriteValueRequestCallback</a>? writeValueRequestCallback = null;
+    <a href="tizen.html#SuccessCallback">SuccessCallback</a>? writeValueSendResponseSuccessCallback = null;
+    <a href="tizen.html#ErrorCallback">ErrorCallback</a>? writeValueSendResponseErrorCallback = null;
   };
   <a href="tizen.html#Tizen">Tizen</a> implements <a href="#BluetoothManagerObject">BluetoothManagerObject</a>;
   [NoInterfaceObject] interface BluetoothManagerObject {
@@ -7472,7 +10048,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     attribute <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
     attribute unsigned long? appearance;
     attribute boolean? includeTxPowerLevel;
-    attribute <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>? serviceData;
+    attribute <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>[]? servicesData;
     attribute <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
   };
   [NoInterfaceObject] interface BluetoothManager {
@@ -7482,6 +10058,7 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     readonly attribute <a href="#BluetoothClassDeviceService">BluetoothClassDeviceService</a> deviceService;
     <a href="#BluetoothAdapter">BluetoothAdapter</a> getDefaultAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BluetoothLEAdapter">BluetoothLEAdapter</a> getLEAdapter() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    <a href="#BluetoothGATTServer">BluetoothGATTServer</a> getGATTServer() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     byte[] toByteArray(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     DOMString toDOMString(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="https://www.ecma-international.org/ecma-262/6.0/#sec-uint8array">Uint8Array</a> toUint8Array(<a href="#Bytes">Bytes</a> data) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
@@ -7515,18 +10092,25 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   [NoInterfaceObject] interface BluetoothLEAdapter {
     void startScan(<a href="#BluetoothLEScanCallback">BluetoothLEScanCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopScan() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean isScanning() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void startAdvertise(<a href="#BluetoothLEAdvertiseData">BluetoothLEAdvertiseData</a> advertiseData, <a href="#BluetoothAdvertisePacketType">BluetoothAdvertisePacketType</a> packetType,
                         <a href="#BluetoothLEAdvertiseCallback">BluetoothLEAdvertiseCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback,
                         optional <a href="#BluetoothAdvertisingMode">BluetoothAdvertisingMode</a>? mode, optional boolean? connectable) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void stopAdvertise() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addConnectStateChangeListener(<a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeConnectStateChangeListener(long watchID);
   };
   [NoInterfaceObject] interface BluetoothGATTService {
     readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? serviceUuid;
-    readonly attribute <a href="#BluetoothGATTService">BluetoothGATTService</a>[] services;
-    readonly attribute <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a>[] characteristics;
+    readonly attribute <a href="#BluetoothGATTServiceVariant">BluetoothGATTServiceVariant</a>[] services;
+    readonly attribute <a href="#BluetoothGATTCharacteristicVariant">BluetoothGATTCharacteristicVariant</a>[] characteristics;
+  };
+  [NoInterfaceObject] interface BluetoothGATTServerService : <a href="#BluetoothGATTService">BluetoothGATTService</a> {
+    readonly attribute boolean isPrimary;
+    void unregister(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothGATTCharacteristic {
-    readonly attribute <a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a>[] descriptors;
+    readonly attribute <a href="#BluetoothGATTDescriptorVariant">BluetoothGATTDescriptorVariant</a>[] descriptors;
     readonly attribute boolean isBroadcast;
     readonly attribute boolean hasExtendedProperties;
     readonly attribute boolean isNotify;
@@ -7542,11 +10126,53 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     long addValueChangeListener(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeValueChangeListener(long watchID);
   };
+  [NoInterfaceObject] interface BluetoothGATTServerCharacteristic : <a href="#BluetoothGATTCharacteristic">BluetoothGATTCharacteristic</a> {
+    readonly attribute boolean readPermission;
+    readonly attribute boolean writePermission;
+    readonly attribute boolean encryptedReadPermission;
+    readonly attribute boolean encryptedWritePermission;
+    readonly attribute boolean encryptedSignedReadPermission;
+    readonly attribute boolean encryptedSignedWritePermission;
+    void notifyAboutValueChange(<a href="#Bytes">Bytes</a> value, <a href="#BluetoothAddress">BluetoothAddress</a>? clientAddress, optional <a href="#NotificationCallback">NotificationCallback</a>? notificationCallback,
+                                optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setReadValueRequestCallback(<a href="#ReadValueRequestCallback">ReadValueRequestCallback</a> readValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setWriteValueRequestCallback(<a href="#WriteValueRequestCallback">WriteValueRequestCallback</a> writeValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
   [NoInterfaceObject] interface BluetoothGATTDescriptor {
     readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a>? uuid;
     void readValue(<a href="#ReadValueSuccessCallback">ReadValueSuccessCallback</a> successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void writeValue(<a href="#Bytes">Bytes</a> value, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
                     raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface BluetoothGATTServerDescriptor : <a href="#BluetoothGATTDescriptor">BluetoothGATTDescriptor</a> {
+    readonly attribute boolean readPermission;
+    readonly attribute boolean writePermission;
+    readonly attribute boolean encryptedReadPermission;
+    readonly attribute boolean encryptedWritePermission;
+    readonly attribute boolean encryptedSignedReadPermission;
+    readonly attribute boolean encryptedSignedWritePermission;
+    void setReadValueRequestCallback(<a href="#ReadValueRequestCallback">ReadValueRequestCallback</a> readValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                     optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void setWriteValueRequestCallback(<a href="#WriteValueRequestCallback">WriteValueRequestCallback</a> writeValueRequestCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? sendResponseSuccessCallback,
+                                      optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? sendResponseErrorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+  };
+  [NoInterfaceObject] interface BluetoothGATTServer {
+    readonly attribute boolean isRunning;
+    readonly attribute <a href="#BluetoothGATTServerService">BluetoothGATTServerService</a>[] services;
+    void start(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void stop(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void registerService(<a href="#BluetoothGATTServerServiceInit">BluetoothGATTServerServiceInit</a> service, optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback,
+                         optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void unregisterAllServices(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                               raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void getConnectionMtu(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, <a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback)
+                          raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface BluetoothLEScanCallback {
     void onsuccess(<a href="#BluetoothLEDevice">BluetoothLEDevice</a> device);
@@ -7560,6 +10186,25 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
   };
   [Callback=FunctionOnly, NoInterfaceObject] interface ReadValueSuccessCallback {
     void onread(byte[] value);
+  };
+  [Constructor(long statusCode = 0, optional <a href="#Bytes">Bytes</a> data)]
+  interface GATTRequestReply {
+    attribute long statusCode;
+    attribute <a href="#Bytes">Bytes</a>? data;
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface ReadValueRequestCallback {
+    <a href="#GATTRequestReply">GATTRequestReply</a>? onreadrequest(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, long offset);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface WriteValueRequestCallback {
+    <a href="#GATTRequestReply">GATTRequestReply</a>? onwriterequest(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, byte[] value, long offset, boolean replyRequired);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface NotificationCallback {
+    void onnotificationsuccess(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress);
+    void onnotificationfail(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress, <a href="tizen.html#WebAPIException">WebAPIException</a> error);
+    void onnotificationfinish(<a href="#BluetoothAddress">BluetoothAddress</a> clientAddress);
+  };
+  [Callback=FunctionOnly, NoInterfaceObject] interface ConnectionMtuCallback {
+    void onsuccess(long mtu);
   };
   [NoInterfaceObject] interface BluetoothDevice {
     readonly attribute DOMString name;
@@ -7581,13 +10226,18 @@ To guarantee that the Bluetooth Low Energy application runs on a device with Blu
     readonly attribute <a href="#BluetoothLESolicitationUUID">BluetoothLESolicitationUUID</a>[]? solicitationuuids;
     readonly attribute <a href="#BluetoothLEServiceData">BluetoothLEServiceData</a>[]? serviceData;
     readonly attribute <a href="#BluetoothLEManufacturerData">BluetoothLEManufacturerData</a>? manufacturerData;
-    readonly attribute long rssi;
+    readonly attribute long? rssi;
     void connect(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void disconnect(optional <a href="tizen.html#SuccessCallback">SuccessCallback</a>? successCallback, optional <a href="tizen.html#ErrorCallback">ErrorCallback</a>? errorCallback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    boolean isConnected() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BluetoothGATTService">BluetoothGATTService</a> getService(<a href="#BluetoothUUID">BluetoothUUID</a> uuid) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     <a href="#BluetoothUUID">BluetoothUUID</a>[] getServiceAllUuids() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     long addConnectStateChangeListener(<a href="#BluetoothLEConnectChangeCallback">BluetoothLEConnectChangeCallback</a> listener) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
     void removeConnectStateChangeListener(long watchID);
+    unsigned long getAttMtu() raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void requestAttMtuChange(unsigned long newAttMtu) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    long addAttMtuChangeListener(<a href="#ConnectionMtuCallback">ConnectionMtuCallback</a> callback) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
+    void removeAttMtuChangeListener(long watchId) raises(<a href="tizen.html#WebAPIException">WebAPIException</a>);
   };
   [NoInterfaceObject] interface BluetoothSocket {
     readonly attribute <a href="#BluetoothUUID">BluetoothUUID</a> uuid;
