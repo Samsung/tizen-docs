@@ -25,7 +25,7 @@ To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/app
 	   - write about uuidToShortestPossible()
 	   - write about uuidsEqual()
  -->
-## Handling uuids and binary data in Bluetooth API
+## Handling UUIDs and binary data in Bluetooth API
 <!-- END #01 -->
 
 ## The main features of the Bluetooth API include:
@@ -771,7 +771,7 @@ To read and write a value of the Bluetooth descriptor:
 <!-- TODO #14
       - write about notifyAboutValueChange()
  -->
-### Sending notifications to the clients about characteristic's value changes
+### Sending notifications about characteristic's value changes to the clients
 <!-- END #14 -->
 
 <!-- TODO #15
