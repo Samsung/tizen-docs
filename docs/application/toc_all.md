@@ -93,6 +93,9 @@
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 #### [Resources](/application/dotnet/guides/nui/resources.md)
+#### Window System
+##### [Overview](/application/dotnet/guides/nui/tizenshell.md)
+##### [Quickpanel Client](/application/dotnet/guides/nui/quickpanelclient.md)
 
 ### OpenTK
 #### [Overview](/application/dotnet/guides/opentk/overview.md)
