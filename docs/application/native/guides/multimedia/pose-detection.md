@@ -35,9 +35,9 @@ In this model, `-1` denotes that there are no landmarks. Using this landmark inf
 14
 ```
 
-`1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at the 3rd denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the 4th denotes that the 3rd landmark of the model corresponds to the 4th, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. The following table shows how the public model works:
+`1` denotes that the first landmark of the model corresponds to the first definition,  `MV_INFERENCE_HUMAN_POSE_HEAD`. `-1` at third position denotes that there is no corresponding landmark `MV_INFERENCE_HUMAN_POSE_THORAX`. `3` at the fourth position denotes that the third landmark of the model corresponds to the fourth, `MV_INFERENCE_HUMAN_POSE_RIGHT_SHOULDER`. The following table shows how the public model works:
 
-**Table: Example of how  [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile) maps to the definition**
+**Table: Example of how  [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile) maps to the definitions**
 
 | Value | Defintion | pose_mapping.txt |
 | - | - | - |
@@ -59,7 +59,7 @@ In this model, `-1` denotes that there are no landmarks. Using this landmark inf
 | 16 | MV_INFERENCE_HUMAN_POSE_LEFT_ANKLE | 14 |
 
 
-MoCap file includes the movements of objects or a person. There are various MoCap formats, but a well-known BioVision Hierarchy (BVH) file is supported in Media Vision. BVH file has a hierarchy structure to provide landmark information with landmarks name, and the structure can be changed. It means that landmarks information is different from the definition. To use the BVH file correctly, you have to map the information to the landmarks based on the definitions. For example, the [BVH file](./media/mediavision_pose_bvh_sample.bvh) describes a squat pose as follows:
+The MoCap file includes the movements of objects or a person. There are various MoCap formats, but a well-known BioVision Hierarchy (BVH) file is supported in Media Vision. BVH file has a hierarchy structure to provide landmark information with landmarks' names, and the structure can be changed. It means that landmark information is different from the definition. To use the BVH file correctly, you have to map the information to the landmarks based on the definitions. For example, the [BVH file](./media/mediavision_pose_bvh_sample.bvh) describes a squat pose as follows:
 
 ![Body pose](./media/mediavision_pose_bvh_sample.png)
 
@@ -82,7 +82,7 @@ RightUpLeg,11
 RightLowLeg,12
 RightFoot,13
 ```
-If there is no mapped landmark, you don't need to list it. For example, index 3 is missing. It means that, in this bvh file, the 3rd definition, `MV_INFERENCE_HUMAN_POSE_THORAX`, is not defined and not used.
+If there is no mapped landmark, you don't need to list it. For example, index 3 is missing. It means that, in this BVH file, the third definition, `MV_INFERENCE_HUMAN_POSE_THORAX` is not defined and not used.
 
 ## Prerequisites
 
@@ -188,7 +188,8 @@ To detect human pose from an image:
    if (error_code != MEDIA_VISION_ERROR_NONE)
        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
    ```
-4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt`, which are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`:
+4. Configure `g_engine_config` with a body pose model data and its mapping file. Suppose that model data `data.tflite` and its mapping file `data_mapping.txt`, which are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`.
+In the following example, all error check codes are omitted for the simplicity:
 
     ```c
     #define MODEL_DATA "OwnDataPath/data.tflite"
@@ -246,8 +247,6 @@ To detect human pose from an image:
     error_code = mv_engine_config_set_array_string_attribute(imagedata.g_engine_config,
     MV_INFERENCE_OUTPUT_NODE_NAMES,
     outputNodeName, 1);
-
-    // For the simplicity, all error check codes are omitted.
     ```
 
     For more information on the configuration attributes such as `MV_INFERENCE_MODEL_WEIGHT_FILE_PATH`, see Media Vision Inference API (in [mobile](../../api/mobile/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) and [wearable](../../api/wearable/latest/group__CAPI__MEDIA__VISION__INFERENCE__MODULE.html) applications).
