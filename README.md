@@ -13,7 +13,7 @@ All files under ./docs/ are hosted on the [Tizen Docs site](https://docs.tizen.o
 
 ## NOTE
 
-To contribute, see the [Contributing Guide](CONTRIBUTING.md) and the [issues list](https://github.com/Samsung/tizen-docs/issues).
+To contribute,Feel free to see the [Contributing Guide](CONTRIBUTING.md) and the [issues list](https://github.com/Samsung/tizen-docs/issues).
 
 Please take a look at the following instructions before starting.
 
