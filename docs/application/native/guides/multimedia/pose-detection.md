@@ -39,7 +39,7 @@ In this model, `-1` denotes that there are no landmarks. Using this landmark inf
 
 **Table: Example of how  [public pose model](https://github.com/tyoungroy/PoseEstimationForMobile) maps to the definitions**
 
-| Value | Defintion | pose_mapping.txt |
+| Value | Definition | pose_mapping.txt |
 | - | - | - |
 | 1 | MV_INFERENCE_HUMAN_POSE_HEAD | 1 |
 | 2 | MV_INFERENCE_HUMAN_POSE_NECK | 2 |
@@ -63,7 +63,7 @@ The MoCap file includes the movements of objects or a person. There are various 
 
 ![Body pose](./media/mediavision_pose_bvh_sample.png)
 
-The example starts with hips and ends with left foot with 15 landmrks. You can create a mapping file named `mocap_mapping.txt` as follows:
+The example starts with hips and ends with the left foot with 15 landmarks. You can create a mapping file named `mocap_mapping.txt` as follows:
 
 ```
 Hips,10
@@ -82,7 +82,7 @@ RightUpLeg,11
 RightLowLeg,12
 RightFoot,13
 ```
-If there is no mapped landmark, you don't need to list it. For example, index 3 is missing. It means that, in this BVH file, the third definition, `MV_INFERENCE_HUMAN_POSE_THORAX` is not defined and not used.
+If there is no mapped landmark, you don't need to list it. For example, index three is missing. It means that, in this BVH file, the third definition, `MV_INFERENCE_HUMAN_POSE_THORAX` is not defined and not used.
 
 ## Prerequisites
 
@@ -132,9 +132,8 @@ To detect human pose from an image:
    if (error_code != MEDIA_VISION_ERROR_NONE)
        dlog_print(DLOG_ERROR, LOG_TAG, "error code= %d", error_code);
    ```
-2. Decode the image file and fill the `g_source` handle with the decoded raw data:
-
-   In the following example image `sample.jpg`, a person is shown in a squat pose, and the image is in the `<OwnDataPath>` folder.
+2. Decode the image file and fill the `g_source` handle with the decoded raw data.
+   In the following example image `sample.jpg`, a person is shown in a squat pose, and the image is in the `<OwnDataPath>` folder:
 
    <img alt="sample.jpg" src="./media/mediavision_pose_sample_sumo.png" width=300>
 
@@ -275,7 +274,7 @@ In the following example, all error check codes are omitted for the simplicity:
       dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
     ```
 
-8. Suppose that MoCap BVH file `mocap.bvh` and its mapping file `mocap_mapping.txt`, which are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`. Then, set the files to `g_pose` handle for comparing and detecting the pose:
+8. Suppose that the MoCap BVH file `mocap.bvh` and its mapping file `mocap_mapping.txt`, that are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`. Then, set the files to `g_pose` handle for comparing and detecting the pose:
 
     ```c
     #define MOCAP_DATA "OwnDataPath/mocap.bvh"
