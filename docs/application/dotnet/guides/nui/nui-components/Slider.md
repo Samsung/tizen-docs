@@ -7,6 +7,17 @@ Using a slider you can adjust the steps or strength of settings, such as brightn
 
 ![Slider](./media/slider.png) ![Slider](./media/slider2.png)
 
+> [!NOTE]
+> ScrollBar is deprecated in API8 and will be removed in API10.
+
+## Add namespace using
+ScrollBar is defined in namespace Tizen.NUI.Components.
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with Property
 
 To create a slider using property, follow these steps:
