@@ -5,7 +5,6 @@ A popup can be created using property.
 
 ![PopupProperty](./media/PopupProperty.PNG)
 
-
 > [!NOTE]
 > Popup is deprecated in API8 and will be removed in API10.
 
