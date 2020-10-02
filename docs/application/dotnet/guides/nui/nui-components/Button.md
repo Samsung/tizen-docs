@@ -4,7 +4,7 @@ A button can either contain a text or an icon, and can be created using property
 
 ![Button](./media/Button.PNG)
 
-## Add namespace using directive
+## Add namespace using
 Button is defined in namespace Tizen.NUI.Components.
 
 ```cs
