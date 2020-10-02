@@ -11,7 +11,7 @@ Following are the instances where loading is used:
 ![Loading](./media/loading.png)
 
 ## Add namespace using
-Button is defined in namespace Tizen.NUI.Components.
+Loading is defined in namespace Tizen.NUI.Components.
 
 ```cs
 using Tizen.NUI;
