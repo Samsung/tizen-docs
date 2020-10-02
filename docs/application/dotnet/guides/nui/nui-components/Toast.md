@@ -8,6 +8,17 @@ You can use a toast to provide simple messages when the user does not need to ma
 ![Toast](./media/toast.png)
 
 
+> [!NOTE]
+> Toast is deprecated in API8 and will be removed in API10.
+
+## Add namespace using
+Toast is defined in namespace Tizen.NUI.Components.
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with Property
 
 To create a toast using property, follow these steps:
