@@ -38,7 +38,7 @@ To create a toast using property, follow these steps:
     utilityBasicToast.Background = nvisual.OutputVisualMap;
     utilityBasicToast.Position = new Position(50, 350);
     utilityBasicToast.Size = new Size(512, 132);
-    utilityBasicToast.Message = "null parameter";;
+    utilityBasicToast.Message = "null parameter";
     utilityBasicToast.PointSize = 15;
     utilityBasicToast.TextColor = Color.White;
     utilityBasicToast.TextPadding = new Extents(96, 96, 38, 38);
