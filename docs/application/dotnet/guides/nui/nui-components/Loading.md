@@ -10,6 +10,14 @@ Following are the instances where loading is used:
 
 ![Loading](./media/loading.png)
 
+## Add namespace using
+Button is defined in namespace Tizen.NUI.Components.
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with Property
 
 To create a loading using property, follow these steps:
