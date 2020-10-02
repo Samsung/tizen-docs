@@ -9,6 +9,17 @@ When entering the screen consists of list, the vertical or horizontal scroll bar
 
 ![CreateWithProperties](./media/scrollbar_properties.PNG)
 
+> [!NOTE]
+> ScrollBar is deprecated in API8 and will be removed in API10.
+
+## Add namespace using
+ScrollBar is defined in namespace Tizen.NUI.Components.
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with Property
 
 To create a scrollbar using property, follow these steps:
