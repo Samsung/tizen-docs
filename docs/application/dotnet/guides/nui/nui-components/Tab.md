@@ -7,6 +7,17 @@ You can handle a tab by adding, inserting, or deleting a TabItem. A tab can cont
 
 ![Tab](./media/tab.png) ![Tab](./media/tab2.png)
 
+> [!NOTE]
+> Tab is deprecated in API8 and will be removed in API10.
+
+## Add namespace using
+Tab is defined in namespace Tizen.NUI.Components.
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with property
 
 To create a tab using property, follow these steps:
