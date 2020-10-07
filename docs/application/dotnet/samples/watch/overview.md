@@ -48,8 +48,8 @@ for TD:
 			To use the ambient mode, you must enable it in the application settings. Launch <strong>Settings</strong> > <strong>Watch faces and styles</strong> > <strong>Watch always on</strong> > enable it. After screen timeout, the wearable device turns into ambient mode. In addition, the ambient mode activates only if you are wearing the watch on your wrist.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Ambient_Analog_Watch" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/Watch/Ambient_Watch" target="_blank">Web version</a></li>
+				<li><a href="/development/sample/native/Watch/Ambient_Analog_Watch" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/web/Watch/Ambient_Watch" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -68,8 +68,8 @@ for TD:
             This sample application includes the watch and stopwatch functionality.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Chronograph_Watch" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/Watch/Chronograph_Watch" target="_blank">Web version</a></li>
+				<li><a href="/development/sample/native/Watch/Chronograph_Watchs" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/web/Watch/Chronograph_Watch" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -80,8 +80,8 @@ for TD:
 			<p>This sample application demonstrates how to create a circular watch face, which consists of moving hands. It also demonstrates how to use watch face API using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Classic_Watch" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/Watch/Classic_Watch" target="_blank">Web version</a></li>
+				<li><a href="/development/sample/native/Watch/Classic_Watch" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/web/Watch/Classic_Watch" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -108,8 +108,8 @@ for TD:
 			You can get detailed information from <a href="https://github.com/Samsung/Tizen-CSharp-Samples/blob/master/Wearable/WeatherWatch" target="_blank"><strong>readme file</strong> of WeatherWatch</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/Watch/Weather_Watch" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/Watch/Weather_Watch" target="_blank">Web version</a></li>
+				<li><a href="/development/sample/native/Watch/Weather_Watch" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/web/Watch/Weather_Watch" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
