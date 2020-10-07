@@ -855,6 +855,7 @@
 #### [Image Editing](/application/native/guides/multimedia/image-edit.md)
 #### [Thumbnail Images](/application/native/guides/multimedia/thumbnail-images.md)
 #### Visual Detection and Recognition
+##### [Overview](/application/native/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
 ##### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
