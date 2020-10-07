@@ -88,8 +88,8 @@ for TD:
 			<p>The sample requires network connection (for example, Wi-Fi) at runtime.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Voice_Memo" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/UI/Voice_Memo_UI" target="_blank">Web version</a></li>
+				<li><a href="/development/sample/native/UI/(Circle)_Voice_Memo" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/web/UI/Voice_Memo_UI" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
