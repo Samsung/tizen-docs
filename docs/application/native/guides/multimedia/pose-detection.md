@@ -14,7 +14,7 @@ The Pose landmark detection models are available in Open Model Zoo such as [host
 
 ![Body pose](./media/mediavision_pose_public_model_def.png),
 
-In this model, `-1` denotes that there are no landmarks. Using this landmark information, you can create a mapping file. Suppose you create a mapping file with the name `pose_mapping.txt,` then you can populate the `pose_mapping.txt` file as follows:
+In this model, `-1` denotes that there are no landmarks. Using this landmark information, you can create a mapping file. Suppose you create a mapping file with the name `pose_mapping.txt`, then you can populate the `pose_mapping.txt` file as follows:
 
 ```
 1
@@ -151,7 +151,7 @@ To detect human pose from an image:
    if (error_code != IMAGE_UTIL_ERROR_NONE)
        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
-   error_code = image_util_decode_set_input_path(imageDecoder, "/<OwnDataPath>/sample.jpg");
+   error_code = image_util_decode_set_input_path(imageDecoder, "<OwnDataPath>/sample.jpg");
    if (error_code != IMAGE_UTIL_ERROR_NONE)
        dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
 
@@ -191,8 +191,8 @@ To detect human pose from an image:
 In the following example, all error check codes are omitted for the simplicity:
 
     ```c
-    #define MODEL_DATA "OwnDataPath/data.tflite"
-    #define MODEL_MAPPING_FILE "OwnDataPath/data_mapping.txt"
+    #define MODEL_DATA "<OwnDataPath>/data.tflite"
+    #define MODEL_MAPPING_FILE "<OwnDataPath>/data_mapping.txt"
 
     char *inputNodeName = "image";
     char *outputNodeName[] = { "output" };
@@ -277,8 +277,8 @@ In the following example, all error check codes are omitted for the simplicity:
 8. Suppose that the MoCap BVH file `mocap.bvh` and its mapping file `mocap_mapping.txt`, that are described in the [Background](#background) section, are applied and the files are stored in `<OwnDataPath>`. Then, set the files to `g_pose` handle for comparing and detecting the pose:
 
     ```c
-    #define MOCAP_DATA "OwnDataPath/mocap.bvh"
-    #define MOCAP_MAPPING_FILE  "OwnDataPath/mocap_mapping.txt"
+    #define MOCAP_DATA "<OwnDataPath>/mocap.bvh"
+    #define MOCAP_MAPPING_FILE  "<OwnDataPath>/mocap_mapping.txt"
     error_code = mv_pose_set_from_file(imagedata.g_pose, MOCAP_DATA, MOCAP_MAPPING_FILE);
     if (error_code != MEDIA_VISION_ERROR_NONE)
         dlog_print(DLOG_ERROR, LOG_TAG, "error code = %d", error_code);
