@@ -1036,8 +1036,8 @@
 ## Set up
 
 ### Install
-#### [Prerequisites](/application/tizen-studio/setup/prerequisites.md)
-#### [Install Tizen Studio](/application/tizen-studio/setup/install-sdk.md)
+#### [Overview](/application/tizen-studio/setup/install-sdk.md)
+#### [Installation](/application/tizen-studio/setup/install.md)
 #### [Update Tizen Studio](/application/tizen-studio/setup/update-sdk.md)
 #### [Hardware Accelerated Execution Manager](/application/tizen-studio/setup/hardware-accelerated-execution-manager.md)
 ### [Configure the Package Manager](/application/tizen-studio/setup/advanced-configuration.md)
