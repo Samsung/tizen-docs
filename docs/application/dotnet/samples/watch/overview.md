@@ -68,7 +68,7 @@ for TD:
             This sample application includes the watch and stopwatch functionality.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="/development/sample/native/Watch/Chronograph_Watchs" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/native/Watch/Chronograph_Watch" target="_blank">Native version</a></li>
 				<li><a href="/development/sample/web/Watch/Chronograph_Watch" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
