@@ -15,7 +15,6 @@ The following table lists the available UI components:
 | ------------------------------------ | ---------------------------------------- | ---------------------------------------- |
 | [Button](./nui-components/Button.md) | A button that can set action when user select it. | `Button`                |
 | [CheckBox](./nui-components/CheckBox.md) | A CheckBox that can set selected or unselected status when user selects it. | `CheckBox`                |
-| [FlexContainer](./flexcontainer.md)  | A FlexContainer implements a subset of the flexbox spec. | `FlexContainer`              |
 | [ImageView](./imageview.md)          | An image view is a class for displaying an image resource.   | `ImageView`                   |
 | [Loading](./nui-components/Loading.md) | A loading is used to give information about the ongoing operations. | `Loading`                |
 | [Pagination](./nui-components/Pagination.md) | A Pagination is used to show the number of pages available and the currently active page. | `Pagination`                |
