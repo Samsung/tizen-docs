@@ -74,7 +74,6 @@
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
 ##### [CustomView](/application/dotnet/guides/nui/customview.md)
-##### [FlexContainer](/application/dotnet/guides/nui/flexcontainer.md)
 ##### [ImageView](/application/dotnet/guides/nui/imageview.md)
 ##### [TableView](/application/dotnet/guides/nui/tableview.md)
 ##### [TextLabel](/application/dotnet/guides/nui/textlabel.md)
