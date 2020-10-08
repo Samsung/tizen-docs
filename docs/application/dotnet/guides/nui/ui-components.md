@@ -17,6 +17,7 @@ The following table lists the available UI components:
 | [FlexContainer](./flexcontainer.md)  | A FlexContainer implements a subset of the flexbox spec. | `FlexContainer`              |
 | [ImageView](./imageview.md)          | An image view is a class for displaying an image resource.   | `ImageView`                   |
 | [Loading](./nui-components/Loading.md) | A loading is used to give information about the ongoing operations. | `Loading`                |
+| [LottieAnimationView](./nui-components/LottieAnimationView.md) | A LottieAnimationView is used to show a vector animation. | `LottieAnimationView`                |
 | [Popup](./nui-components/Popup.md) | A popup is used as a popup window. | `Popup`                |
 | [Progress](./nui-components/Progress.md) | A progress is used to show the ongoing status using a long narrow bar. | `Progress`                |
 | [Scrollbar](./nui-components/Scrollbar.md) | A scrollbar is used to show the range of content. | `ScrollBar`                |
