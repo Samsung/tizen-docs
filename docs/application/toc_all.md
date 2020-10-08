@@ -93,6 +93,7 @@
 ##### [VideoView](/application/dotnet/guides/nui/videoview.md)
 ##### [Button](/application/dotnet/guides/nui/nui-components/Button.md)
 ##### [Loading](/application/dotnet/guides/nui/nui-components/Loading.md)
+##### [LottieAnimationView](/application/dotnet/guides/nui/nui-components/LottieAnimationView.md)
 ##### [Popup](/application/dotnet/guides/nui/nui-components/Popup.md)
 ##### [Progress](/application/dotnet/guides/nui/nui-components/Progress.md)
 ##### [Scrollbar](/application/dotnet/guides/nui/nui-components/Scrollbar.md)
