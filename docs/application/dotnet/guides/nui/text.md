@@ -150,6 +150,16 @@ To align the text in a text label:
 
 
 
+### UTF16 or UTF32 character encoding
+
+The text property can accept UTF16 or UTF32 character encoding:
+
+```
+TextLabel title = new TextLabel();
+title.Text = "\U0001f601";      //UTF-32
+title.Text += "\ud83d\ude01";   //UTF-16
+```
+
 <a name="decorations"></a>
 ### Use Decorations for TextLabel
 
@@ -341,6 +351,27 @@ The following markup elements are currently supported:
     ```
 
 
+
+### Use Markup to represent encoded characters
+
+Markup text is not allowed to contain some characters unless they are representing tags or entities such as "<", ">" or "&". To include these characters as a part of the text, user should use reserved entities like `&lt;`, `&gt;` or `&amp;`, The following example uses reserved entities:
+
+```
+TextLabel label = new TextLabel();
+label.EnableMarkup = true;
+label.Text = "&lt;&gt;"; //less-than greater-than
+```
+
+Markup text can include character with UTF32 representation as entities contain decimal or hexadecimal values.
+To represent decimal value, user can use : `&#` + `utf32_decimal_value` + `;`
+To represent hexadecimal value, user can use : `&#x` + `utf32_hexadecimal_value` + `;`
+The following example uses UTF32 entities:
+
+```
+TextLabel label = new TextLabel();
+label.EnableMarkup = true;
+label.Text = "&#9786; &#x263a;"; //smile-face smile-face
+```
 
 <a name="textField"></a>
 ## TextField
