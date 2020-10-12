@@ -239,10 +239,11 @@ The following list defines Tizen Native API. The list describes the API modules 
 
 - **UIX**
 
-  The UIX API module contains submodule APIs for managing sound data, such as voice commands.
+  The UIX API module contains submodule APIs for handling input method, recognizing gestures, and managing sound data, such as voice commands.
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
+  | Gesture               | Provides functions for recognizing hand gestures from input sensor data. | [wearable](../api/wearable/latest/group__CAPI__UIX__GESTURE__MODULE.html) (since 6.0) | [Gesture](text-input/capi-ui-gesture.md) |
   | Input Method          | Provides functions for starting the IME application life-cycle, for interacting with the current UI state of the IME, and getting attributes and events. | [mobile](../api/mobile/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html) (since 2.4), [wearable](../api/wearable/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html) (since 3.0) | [Input Method](text-input/input-method.md)  |
   | Input Method Manager  | Provides functions for launching the input method editor (IME) list and selector settings. | [mobile](../api/mobile/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) (since 2.4), [wearable](../api/wearable/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) (since 3.0) | [Input Method](text-input/input-method.md)  |
   | Multi assistance      | Provides functions for supporting users to use several assistants. | [mobile](../api/mobile/latest/group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html) (since 5.0), [wearable](../api/wearable/latest/group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html) (since 5.0) | [Input Method](text-input/input-method.md)  |
