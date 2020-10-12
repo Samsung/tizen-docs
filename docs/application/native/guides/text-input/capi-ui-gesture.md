@@ -48,7 +48,7 @@ Using Gesture, you can:
 
 To enable your application to use the Gesture functionality in [wearable](../../api/wearable/latest/group__CAPI__UIX__GESTURE__MODULE.html) applications, include the `<gesture.h>` header file in your application:
 
-    ```
+    ```c
     #include <gesture.h>
     ```
 
@@ -63,7 +63,7 @@ This daemon and your application communicate as the server and the client.
 
    The Gesture handle is used in other Gesture functions as a parameter:
 
-    ```
+    ```c
     void
     create_gesture_handle()
     {
@@ -77,7 +77,7 @@ This daemon and your application communicate as the server and the client.
 
 2. When you no longer need the Gesture library, destroy the Gesture handle using the `hand_gesture_destroy()` function:
 
-    ```
+    ```c
     void
     destroy_gesture_handle(hand_gesture_h gesture_h)
     {
@@ -101,7 +101,7 @@ You can get the following information about the Gesture:
    If the Gesture engine service is changed to support more gesture types, you can check more supported gesture types using `hand_gesture_is_supported_type()`.
    The candidates of the gesture types are defined in the `gesture_common.h` header file as the enumerations of `hand_gesture_type_e`.
 
-    ```
+    ```c
     void
     is_supported_gesture_type(hand_gesture_h gesture_h, hand_gesture_type_e gesture_type, bool* is_supported)
     {
@@ -116,7 +116,7 @@ You can get the following information about the Gesture:
 
    You can get the application ID and name of the current Gesture engine service using `hand_gesture_get_engine_info()` function.
 
-    ```
+    ```c
     void
     get_info(hand_gesture_h gesture_h)
     {
@@ -135,7 +135,7 @@ You can get the following information about the Gesture:
 
 You can select an option to detect hand gestures continuously or not. If you would like to make the application detect hand gestures continuously, set the option as `HAND_GESTURE_OPTION_ALWAYS_ON` using `hand_gesture_set_option()` function.
 
-    ```
+    ```c
     void
     set_option(hand_gesture_h gesture_h)
     {
@@ -161,7 +161,7 @@ The enum values, as well as the parameter details, for the callback parameters a
    >
    > Please set the error callback function before calling `hand_gesture_start_recognition()`.
 
-    ```
+    ```c
     /* Callback */
     void
     error_cb(hand_gesture_h gesture_h, hand_gesture_error_e reason, const char* msg, void* user_data)
@@ -208,7 +208,7 @@ The enum values, as well as the parameter details, for the callback parameters a
    When the callback function is invoked, you can handle the recognition results by corresponding to some operations.
    For example, when `HAND_GESTURE_WRIST_UP` is occurred, you can turn on the screen of the wearable device.
 
-    ```
+    ```c
     void
     recognition_cb(hand_gesture_h gesture_h, hand_gesture_type_e gesture, double timestamp, hand_gesture_error_e error, void* user_data)
     {
@@ -232,7 +232,7 @@ The enum values, as well as the parameter details, for the callback parameters a
 
 2. To stop recognizing the gesture, use the `hand_gesture_stop_recognition()` function.
 
-    ```
+    ```c
     void
     stop_recognition(hand_gesture_h gesture_h)
     {
@@ -241,6 +241,7 @@ The enum values, as well as the parameter details, for the callback parameters a
         if (HAND_GESTURE_ERROR_NONE != ret)
             /* Error handling */
     }
+    ```
 
 
 ## Related Information
