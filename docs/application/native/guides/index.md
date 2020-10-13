@@ -239,7 +239,7 @@ The following list defines Tizen Native API. The list describes the API modules 
 
 - **UIX**
 
-  The UIX API module contains submodule APIs for handling input method, recognizing gestures, and managing sound data, such as voice commands.
+  The UIX API module contains submodule APIs for handling input method, recognizing gestures, and managing sound data such as voice commands.
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
