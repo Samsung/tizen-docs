@@ -994,6 +994,55 @@ server.getConnectionMtu(clientAddress, connectionMtuCB, errorCB);
       - write about registerService()
  -->
 ### Registering services
+To register a GATT service in the local server:
+
+1. Define the init data of the service and all of its components:
+
+   ```
+   var descriptorInitData = {
+     uuid: 'abcd'
+     /* Define more attributes, if needed */
+   };
+
+   var characteristicInitData = {
+     uuid: '9876',
+     descriptors: [descriptorInitData]
+     /* Define more attributes, if needed */
+   };
+
+   var includedServiceInitData = {
+     serviceUuid: '5678',
+     isPrimary: true
+   };
+
+   var serviceInitData = {
+     serviceUuid: '1234',
+     includedServices: [includedServiceInitData],
+     characteristics: [characteristicInitData],
+     isPrimary: true
+   };
+   ```
+
+2. Register the service in the local server:
+
+   ```
+   function successCallback() {
+     console.log('Service registered successfully');
+   }
+
+   function errorCallback(error) {
+     console.log('Registering GATT service failed: ' + error.message);
+   }
+
+   var server = tizen.bluetooth.getGATTServer();
+   server.registerService(serviceInitData, successCallback, errorCallback);
+   ```
+   > **Note**
+   > The service will be unregistered from the server when:
+   > - service's `unregister()` method is called,
+   > - server's `unregisterAllServices()` method is called,
+   > - application is reloaded,
+   > - application is closed.
 <!-- END #12 -->
 
 <!-- TODO #13
@@ -1001,12 +1050,158 @@ server.getConnectionMtu(clientAddress, connectionMtuCB, errorCB);
       - write about BluetoothGATTServerService::unregister()
  -->
 ### Unregistering services
+GATT services can be unregistered either one at a time or all at once.
+
+To unregister a single service from the local GATT server:
+
+1. Choose the service to be unregistered:
+   ```
+   var server = tizen.bluetooth.getGATTServer();
+   var serviceToBeUnregistered = server.services[3]; 
+   ```
+
+2. Call `unregister()` method:
+   ```
+   function successCallback() {
+     console.log('Service unregistered successfully');
+   }
+
+   function errorCallback(error) {
+     console.log('Unregistering GATT service failed: ' + error.message);
+   }
+
+   serviceToBeUnregistered.unregister(successCallback, errorCallback);
+   ```
+   > **Note**
+   > After `unregister()` is called for the last registered service, the server is stopped.
+   > If new services are then registered, server's `start()` method has to be
+   > called to make them visible to clients.
+
+To unregister all services from the local GATT server at once, call server's
+`unregisterAllServices()` method:
+
+   ```
+   function successCallback() {
+     console.log('All services unregistered successfully');
+   }
+
+   function errorCallback(error) {
+     console.log('Unregistering all GATT services failed: ' + error.message);
+   }
+
+   var server = tizen.bluetooth.getGATTServer();
+   server.unregisterAllServices(successCallback, errorCallback);
+   ```
+   > **Note**
+   > After the calling `unregisterAllServices()`, the server is stopped.
+   > If new services are then registered, server's `start()` method has to be
+   > called to make them visible to clients.
 <!-- END #13 -->
 
 <!-- TODO #14
       - write about notifyAboutValueChange()
  -->
 ### Sending notifications about characteristic's value changes to the clients
+GATT clients connected to the server running on the local device can register for updates of its characteristics' values.
+The server can send two types of such updates - _notifications_ and _indications_.
+They differ in that, clients receiving indications have to acknowledge them - i.e. send a message back to the server, telling that they received the new value. Clients do not acknowledge notifications.
+
+Notifications and indications are not enabled in characteristics by default.
+To enable notifications or indications in a characteristic:
+
+1. Set its `isNotify` or `isIndication` property:
+
+   ```
+   var notificationEnabledCharacteristicInitData = {
+     uuid: '1234',
+     isNotify: true // or set isIndication to enable indications
+     /* Define more attributes, if needed */
+   };
+   ```
+2. The characteristic requires a special kind of descriptor, called _Client Characteristic Configuration Descriptor_ (CCCD).
+For more details about CCCD, refer to the _Bluetooth Core Specification_, available at [bluetooth.com](https://bluetooth.com).
+To define a CCCD and add it to the characteristic:
+
+   ```
+   /* Set the exact UUID, properties and permissions as below */
+   var cccdInitData = {
+     uuid: '2902',  // "2902" UUID is reserved for CCCDs
+     isReadable: true,
+     isWritable: true,
+     readPermission: true,
+     writePermission: true
+   };
+
+   notificationEnabledCharacteristicInitData.descriptors = [cccdInitData];
+   ```
+3. The characteristic can be now added to a service:
+
+   ```
+   var serviceInitData = {
+     serviceUuid: '1234',
+     characteristics: [notificationEnabledCharacteristicInitData]
+   };
+   ```
+`notificationEnabledCharacteristicInitData` is now ready to be added to a service that will [be registered in a local GATT server](#registering-services).
+
+To update clients on characteristic's value change after registering the service:
+
+1. Define a `NotificationCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#NotificationCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#NotificationCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#NotificationCallback) applications):
+
+   ```
+   var notificationCallback = {
+     onnotificationsuccess: function(clientAddress) {
+       /*
+        * When sending a notification, this callback will be called when the
+        * notification is sent from the server to the client addressed
+        * by clientAddress.
+        *
+        * When sending an indication, this callback will be called when the
+        * acknowledgement from the client addressed by clientAddress
+        * is received.
+        */
+     },
+     onnotificationfail: function(clientAddress, error) {
+       /*
+        * This callback will be called when something goes wrong in the
+        * process of sending a notification/indication to the client
+        * addressed by clientAddress or receiving the acknowledgement
+        * from that client.
+        */
+     },
+     onnotificationfinish: function(clientAddress) {
+       /*
+        * This callback will be called when the process of sending notifications
+        * or indications is finished.
+        * clientAddress is the address of the last client updated on the change
+        * of the value.
+        */
+     }
+   };
+   ```
+
+2. Send the notification:
+
+   ```
+   // Choose the characteristic, that has changed its value
+   var characteristic = server.services[0].characteristics[0];
+   var newValue = '55';
+
+   function errorCallback(error) {
+     console.log('Sending notification failed: ' + error.message);
+   }
+
+   /*
+    * Only one client will be updated on the change.
+    * To simultaneously update all the clients, that subscribed for
+    * notifications/indications, set targetClient to null.
+    */
+   var targetClient = '12:34:56:78:90:ab';
+
+   characteristic.notifyAboutValueChange(newValue, targetClient,
+                                         notificationCallback, errorCallback);
+   ```
+The notification is sent and `notificationCallback`'s members will be called soon.
 <!-- END #14 -->
 
 <!-- TODO #15
