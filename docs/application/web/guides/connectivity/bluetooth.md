@@ -1211,6 +1211,137 @@ The notification is sent and `notificationCallback`'s members will be called soo
       - write about setWriteValueRequestCallback() for descriptor
  -->
 ### Responding to read and write value requests from server clients
+
+In order to react and respond to the read and write value requests from a client connected to the server running on the device, the callback functions need to be set on the characteristics or on the descriptors.
+
+To set a callback function for read or write value request on a characteristic or a descriptor:
+
+1. Prepare a GATT service containing at least one characteristic or a characteristic with at least one descriptor, that can be read or written:
+   ```
+   var exampleDescriptor = {
+      uuid: "0155",
+      readPermission: true,
+      writePermission: true
+   };
+
+   var exampleCharacteristic = {
+      uuid: "0180",
+      descriptors: [exampleDescriptor],
+      isReadable: true,
+      isWritable: true,
+      readPermission: true,
+      writePermission: true
+   };
+
+   var gattService = {
+      serviceUuid: "0955",
+      isPrimary: true,
+      includedServices: [],
+      characteristics: [exampleCharacteristic]
+   };
+   ```
+
+2. Register the service:
+   ```
+   var registerServiceSuccesCB = function() {
+      console.log("Service successfully registered!");
+   };
+
+   var registerServiceErrorCB = function(error) {
+      console.log("Service not registered, error: " + error.name + "; " + error.message);
+   };
+
+   var server = tizen.bluetooth.getGATTServer();
+
+   server.registerService(gattService, registerServiceSuccesCB, registerServiceErrorCB);
+   ```
+
+3. Start the GATT server:
+   ```
+   var serverStartSuccessCB = function() {
+      console.log("Server started successfully!");
+   };
+
+   var serverStartErrorCB = function(error) {
+      console.error("Server didn't start, error: " + error.name + "; " + error.message);
+   };
+
+   server.start(serverStartSuccessCB, serverStartErrorCB);
+   ```
+
+4. Optional callbacks that are used by the functions that set the callbacks to the read value requests and the write value requests should be defined:
+   ```
+   var setCallbackSuccessCB() {
+      console.log("Callback set successfully!");
+   };
+
+   var setCallbackErrorCB = function(error) {
+      console.error("Callback is not set correctly, error: " + error.name + "; " + error.message);
+   };
+
+   var sendResponseSuccessCB() {
+      console.log("Response sent successfully!");
+   };
+
+   var sendResponseErrorCB = function(error) {
+      console.error("Response send failure, error: " + error.name + "; " + error.message);
+   };
+   ```
+
+5. To register the callback called when a client reads the value of the characteristic from the local GATT server, create the callback function and pass it as an argument to the `setReadValueRequestCallback():
+   ```
+   var characteristicReadRequestCallback = function(clientAddress, offset) {
+      console.log(clientAddress + " requested to read characteristic's value with offset: " + offset);
+      return new tizen.GATTRequestReply(0, "0x1234");
+   };
+   server.services[0].characteristics[0].setReadValueRequestCallback(characteristicReadRequestCallback, setCallbackSuccessCB, setCallbackErrorCB, sendResponseSuccessCB, sendResponseErrorCB);
+   ```
+
+   > **Note**
+   > A callback set with `setReadValueRequestCallback()` function overwrites any previously set `ReadValueRequestCallback` on this characteristic.
+
+6. To register the callback called when a client writes a value of the characteristic of the local GATT server, create the callback function and pass it as an argument to the `setWriteValueRequestCallback()` method called on the characteristic object.
+   ```
+   var characteristicWriteRequestCallback = function(clientAddress, value, offset, replyRequired) {
+      console.log(clientAddress + " requested to write characteristic's value: " + value +
+                  " with offset: " + offset);
+      return replyRequired ? new tizen.GATTRequestReply(0) : null;
+   };
+
+   server.services[0].characteristics[0].setWriteValueRequestCallback(characteristicWriteRequestCallback, setCallbackSuccessCB, setCallbackErrorCB, sendResponseSuccessCB, sendResponseErrorCB);
+   ```
+
+   > **Note**
+   > A callback set with `setWriteValueRequestCallback()` function overwrites any previously set `WriteValueRequestCallback` on this characteristic.
+
+7. To register the callback called when a client reads the value of the descriptor from the local GATT server, create the callback function and pass it as an argument to the `setReadValueRequestCallback()` method called on the descriptor object.
+   ```
+   var descriptorReadRequestCallback = function(clientAddress, offset) {
+      console.log(clientAddress + " requested to read descriptor's value with offset: " + offset);
+      return new tizen.GATTRequestReply(0, "0x1234");
+   };
+   server.services[0].characteristics[0].descriptors[0].setReadValueRequestCallback(characteristicReadRequestCallback, setCallbackSuccessCB, setCallbackErrorCB, sendResponseSuccessCB, sendResponseErrorCB);
+   ```
+
+   > **Note**
+   > A callback set with `setReadValueRequestCallback()` function overwrites any previously set `ReadValueRequestCallback` on this descriptor.
+
+8. To register the callback called when a client writes a value of the descriptor of the local GATT server, create the callback function and pass it as an argument to the `setWriteValueRequestCallback()` method called on the descriptor object.
+   ```
+   var descriptorWriteRequestCallback = function(clientAddress, value, offset, replyRequired) {
+      console.log(clientAddress + " requested to write descriptor's value: " + value +
+                  " with offset: " + offset);
+      return replyRequired ? new tizen.GATTRequestReply(0) : null;
+   };
+
+   server.services[0].characteristics[0].descriptors[0].setWriteValueRequestCallback(descriptorWriteRequestCallback, setCallbackSuccessCB, setCallbackErrorCB, sendResponseSuccessCB, sendResponseErrorCB);
+   ```
+
+   > **Note**
+   > A callback set with `setWriteValueRequestCallback()` function overwrites any previously set `WriteValueRequestCallback` on this descriptor.
+
+> **Note**
+> The callbacks described here can also be registered by putting them in `BluetoothGATTServerCharacteristicInit` or `BluetoothGATTServerDescriptorInit`.
 <!-- END #15 -->
 
 ### Managing the Advertising Options
