@@ -813,6 +813,21 @@ To read and write a value of the Bluetooth descriptor:
       - write about requestAttMtuChange()
  -->
 ### Accessing the ATT MTU of connected device
+
+To get the ATT MTU value or request change of the ATT MTU value:
+
+1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
+2. If the `device` has been connected call `getAttMtu()` function on the `device` object to get current ATT MTU value:
+   ```
+   var attMtu = device.getAttMtu();
+   ```
+3. If the `device` has been connected call `requestAttMtuChange()` function on the `device` object to request a change of the ATT MTU value. Pass desired ATT MTU value as an argument:
+   ```
+   var newAttMtuValue = 64;
+   device.requestAttMtuChange(newAttMtuValue);
+   ```
+   > **Note**
+   > After calling `requestAttMtuChange()` function ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
 <!-- END #06 -->
 
 <!-- TODO #07
@@ -820,6 +835,34 @@ To read and write a value of the Bluetooth descriptor:
       - write about removeAttMtuChangeListener()
  -->
 ### Receiving Notifications on ATT MTU changes
+
+To recieve notifications on ATT MTU value changes:
+
+1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
+2. If the `device` has been connected call `addAttMtuChangeListener()` function providing as a parameter the callback function to be called on each change of the ATT MTU value:
+   ```
+   function attMtuChangeCallback(newAttMtuValue) {
+      console.log("ATT MTU value has changed to: " + newAttMtuValue);
+   }
+   var listenerId = device.addAttMtuChangeListener(attMtuChangeCallback);
+   ```
+   The `listenerId` value stores an identifier of the listener, which is needed to remove the listener.
+3. After setting up the listener with `addAttMtuChangeListener()` function, the callback can be invoked by changing the ATT MTU value:
+   ```
+   var newAttMtuValue = 50;
+   device.requestAttMtuChange(newAttMtuValue);
+   ```
+   The change of ATT MTU value will trigger the callback function.
+   > **Note**
+   > After calling `requestAttMtuChange()` function ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
+
+When a listener monitoring the ATT MTU value changes is no longer needed, you can remove it:
+
+4. Call `removeAttMtuChangeListener()` providing the identifier of the listener you want to remove.
+   ```
+   device.removeAttMtuChangeListener(listenerId);
+   ```
+   After removing of the listener, changes of the ATT MTU value will no longer trigger the callback function.
 <!-- END #07 -->
 
 
