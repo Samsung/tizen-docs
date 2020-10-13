@@ -26,20 +26,19 @@ The main features of the Gesture API include:
 <a name="basic_gesture"></a>
 ## Basic Gesture processes
 
-There are processes you should follow in order to get the recognized gesture. Using Gesture, you can:
+To get the recognized gesture, you must follow the following processes:
 
 1. [Create a handle](#create_destroy) and register a error callback function.
-  - Create a Gesture handle, which is used for distinguishing your application from other applications that are also using Gesture.
-  - To get notifications about errors, [register callback functions](#set).
+   - Create a Gesture handle, which is used for distinguishing your application from other applications that are also using Gesture.
+   - To get notifications about errors, [register callback functions](#set).
 2. [Check the supported gesture type](#info_gesture).
-  - Check the gesture type which can be recognized by the gesture service.
+   - Check the gesture type which can be recognized by the gesture service.
 3. [Set an option](#set_option) for gesture recognition.
-  - Set an option to select always-on mode or not.
+   - Set an option to select always-on mode or not.
 4. [Start the gesture recognition](#start_stop) and [register a callback function](#callback) for recognition results.
-  - Start recognizing the gesture.
-  - To get the recognition result.
+   - Start recognizing the gesture and to get the recognition result.
 5. Stop the gesture recognition.
-  - Stop recognizing the gesture.
+   - Stop recognizing the gesture.
 6. Destroy the handle.
 
 
@@ -53,7 +52,7 @@ To enable your application to use the Gesture functionality in [wearable](../../
 
 
 <a name="create_destroy"></a>
-## Create and Destroy handle
+## Create and destroy handle
 
 When your application creates a handle by the Gesture API, the Gesture daemon is invoked and connected for background work.
 This daemon and your application communicate as the server and the client.
@@ -74,7 +73,7 @@ This daemon and your application communicate as the server and the client.
     }
     ```
 
-2. When you no longer need the Gesture library, destroy the Gesture handle using the `hand_gesture_destroy()`:
+2. When you no longer need the Gesture library, destroy the Gesture handle using `hand_gesture_destroy()`:
 
     ```c
     void
@@ -147,7 +146,7 @@ You can select an option to detect hand gestures continuously or not. If you wan
 
 
 <a name="callback"></a>
-## Set and Unset callbacks
+## Set and unset callbacks
 
 The Gesture provides two types of callbacks for getting error and gesture recognition result.
 The enum values, as well as the parameter details, for the callback parameters are defined in the `gesture.h` and `gesture_common.h` header files.
@@ -196,7 +195,7 @@ The enum values, as well as the parameter details, for the callback parameters a
 
 
 <a name="start_stop"></a>
-## Start and Stop recognizing Gesture
+## Start and stop recognizing Gesture
 
 1. To start recognizing the gesture, use `hand_gesture_start_recognition()`.
 
