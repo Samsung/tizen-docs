@@ -2,7 +2,7 @@
 
 You can use Bluetooth functionalities in your application, such as managing the local Bluetooth adapter, bonding, and exchanging data between Bluetooth-enabled devices. The Bluetooth standard provides a peer-to-peer (P2P) data exchange functionality over short distance between compliant devices.
 
-<!-- TODO #00:
+<!-- TODO #00: features are for application filtering, not related with privileges and not mentioned at most of guides
       + add feature: http://tizen.org/feature/network.bluetooth.le.gatt.server
       + check if there are some missing features in section
  -->
@@ -26,6 +26,99 @@ To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/app
 	   - write about uuidsEqual()
  -->
 ## Handling UUIDs and binary data in Bluetooth API
+
+### Handling UUIDs
+According to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/), UUIDs used to represent Bluetooth objects can take 3 forms:
+
+   * 128-bit representation: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", where each 'X' stands for a hexadecimal digit.  
+   For example: "198d3a9c-e21a-4f72-a48b-39a6bad7e583".
+   * 32-bit representation: "D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>D<sub>5</sub>D<sub>6</sub>D<sub>7</sub>D<sub>8</sub>", equivalent to "D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>D<sub>5</sub>D<sub>6</sub>D<sub>7</sub>D<sub>8</sub>-0000-1000-8000-00805F9B34FB", where D<sub>1</sub>..D<sub>8</sub> stand for hexadecimal digits.  
+   For example: "e72ad71b".
+   * 16-bit representation: "D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>", equivalent to "0000D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>-0000-1000-8000-00805F9B34FB", where D<sub>1</sub>..D<sub>4</sub> stand for hexadecimal digits.  
+   For example: "d182".
+
+Unless stated otherwise, each function taking a UUID as a parameter will accept any of the 3 forms and make appropriate conversions.  
+Unless stated otherwise, each UUID returned from a function and each UUID attribute of an object may be a 16-bit, 32-bit or 128-bit UUID.
+Bluetooth API functions are case-insensitive with regard to UUIDs - lowercase (abcdef) and uppercase (ABCDEF) characters are recognized as valid hexadecimal digits.
+
+The 128-bit UUID that is the base for UUIDs having 16-bit or 32-bit equivalents is defined available through the API in `BluetoothManager` as `BASE_UUID`.
+
+`BluetoothManager` methods to manipulate UUIDs:
+
+   * `uuidTo128bit()`
+      ```
+      var uuidFrom16bits = tizen.bluetooth.uuidTo128bit("1234");
+      var uuidFrom32bits = tizen.bluetooth.uuidTo128bit("ab5690ef");
+      var uuidFrom128bits = tizen.bluetooth.uuidTo128bit("abcdef01-2345-6789-abcd-ef0123456789");
+      ```
+
+      uuidFrom16bits is equal to "00001234-0000-1000-8000-00805f9b34fb"  
+      uuidFrom32bits is equal to "ab5690ef-0000-1000-8000-00805f9b34fb"  
+      uuidFrom128bits is equal to "abcdef01-2345-6789-abcd-ef0123456789"
+
+   * `uuidToShortestPossible()`
+      ```
+      var from16Bit = tizen.bluetooth.uuidToShortestPossible("1234");
+      var from32Bit = tizen.bluetooth.uuidToShortestPossible("0000acdf");
+      var from128BitFirst = tizen.bluetooth.uuidToShortestPossible("ab5690ef-0000-1000-8000-00805F9B34FB");
+      var from128BitSecond = tizen.bluetooth.uuidToShortestPossible("abcdef01-2345-6789-abcd-ef0123456789");
+      ```
+
+      from16Bit is equal to "1234"  
+      from32Bit is equal to "acdf"  
+      from128BitFirst is equal to "ab5690ef"  
+      from128BitSecond is equal to "abcdef01-2345-6789-abcd-ef0123456789"
+
+   * `uuidsEqual()`
+      ```
+      var first = tizen.bluetooth.uuidsEqual("1234", "00001234");
+      var second = tizen.bluetooth.uuidsEqual("ab5690ef", "ab5690ef-0000-1000-8000-00805F9B34FB");
+      var third = tizen.bluetooth.uuidsEqual("abcdef01-2345-6789-abcd-ef0123456789", "abcdef01");
+      ```
+
+      Both `first` and `second` are `true`. `third` is false.
+
+### Handling binary data
+The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary data. It can be either a *byte[]* or a *DOMString* or a *Uint8Array*.
+
+`BluetoothManager` methods to manipulate binary data:
+   * `toByteArray()`
+      ```
+      var dataInt8Array = new Int8Array([24, 177]);
+      var dataUint8Array = new Uint8Array([24, 177]);
+      var dataString = "0x18b1";
+
+      var first = tizen.bluetooth.toByteArray(dataInt8Array);
+      var second = tizen.bluetooth.toByteArray(dataUint8Array);
+      var third = tizen.bluetooth.toByteArray(dataString);
+      ```
+      `first`, `second` and `third` variables are equal arrays.
+
+   * `toDOMString()`
+      ```
+      var dataInt8Array = new Int8Array([24, 177]);
+      var dataUint8Array = new Uint8Array([24, 177]);
+      var dataString = "0x18b1";
+
+      var first = tizen.bluetooth.toDOMString(dataInt8Array);
+      var second = tizen.bluetooth.toDOMString(dataUint8Array);
+      var third = tizen.bluetooth.toDOMString(dataString);
+      ```
+      `first`, `second` and `third` variables are equal arrays.
+
+   * `toUint8Array()`
+      ```
+      var dataInt8Array = new Int8Array([24, 177]);
+      var dataUint8Array = new Uint8Array([24, 177]);
+      var dataString = "0x18b1";
+
+      var first = tizen.bluetooth.toUint8Array(dataInt8Array);
+      var second = tizen.bluetooth.toUint8Array(dataUint8Array);
+      var third = tizen.bluetooth.toUint8Array(dataString);
+      ```
+      `first`, `second` and `third` variables are equal.
+
+
 <!-- END #01 -->
 
 ## The main features of the Bluetooth API include:
@@ -370,7 +463,7 @@ To search for remote Bluetooth devices:
 
 
 <!-- TODO #03:
-      - write about method isConnected()
+      - write about method isConnected() DONE
  -->
 ### Connecting to a Bluetooth Low Energy Device
 
@@ -394,9 +487,9 @@ To connect to other Bluetooth Low Energy devices:
    }
    ```
 
-3. Define a callback for the scan operation that connects to a found device and stops the scan.
+3. Define a callback for the scan operation that connects to a not connected found device and stops the scan.
 
-   Within the callback request, establish a connection with the found device using the `connect()` method of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
+   Within the callback request, check if the found device is connected and establish a connection with the not connected device using the `isConnected()` and `connect()` methods of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
 
    ```
    var remoteDevice = null;
@@ -404,9 +497,10 @@ To connect to other Bluetooth Low Energy devices:
    function onDeviceFound(device) {
        if (remoteDevice === null) {
            remoteDevice = device;
-           console.log('Found device ' + device.name + '. Connecting...');
-
-           device.connect(connectSuccess, connectFail);
+           if (!device.isConnected()) {
+              console.log('Found not connected device ' + device.name + '. Connecting...');
+              device.connect(connectSuccess, connectFail);
+           }
        }
 
        adapter.stopScan();
