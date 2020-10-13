@@ -46,9 +46,9 @@ To get the recognized gesture, you must follow the following processes:
 
 To enable your application to use the Gesture functionality in [wearable](../../api/wearable/latest/group__CAPI__UIX__GESTURE__MODULE.html) applications, include the `<gesture.h>` header file in your application:
 
-    ```c
-    #include <gesture.h>
-    ```
+```c
+#include <gesture.h>
+```
 
 
 <a name="create_destroy"></a>
@@ -128,21 +128,22 @@ You can get the following information about Gesture:
     }
     ```
 
+
 <a name="set_option"></a>
 ## Set option
 
 You can select an option to detect hand gestures continuously or not. If you want to make the application detect hand gestures continuously, set the option as `HAND_GESTURE_OPTION_ALWAYS_ON` using `hand_gesture_set_option()`:
 
-    ```c
-    void
-    set_option(hand_gesture_h gesture_h)
-    {
-        int ret;
-        ret = hand_gesture_set_option(gesture_h, HAND_GESTURE_OPTION_ALWAYS_ON);
-        if (HAND_GESTURE_ERROR_NONE != ret)
-            /* Error handling */
-    }
-    ```
+```c
+void
+set_option(hand_gesture_h gesture_h)
+{
+    int ret;
+    ret = hand_gesture_set_option(gesture_h, HAND_GESTURE_OPTION_ALWAYS_ON);
+    if (HAND_GESTURE_ERROR_NONE != ret)
+        /* Error handling */
+}
+```
 
 
 <a name="callback"></a>
