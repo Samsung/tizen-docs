@@ -2,10 +2,6 @@
 
 You can use Bluetooth functionalities in your application, such as managing the local Bluetooth adapter, bonding, and exchanging data between Bluetooth-enabled devices. The Bluetooth standard provides a peer-to-peer (P2P) data exchange functionality over short distance between compliant devices.
 
-<!-- TODO #00: features are for application filtering, not related with privileges and not mentioned at most of guides
-      + add feature: http://tizen.org/feature/network.bluetooth.le.gatt.server
-      + check if there are some missing features in section
- -->
 ## Prerequisites
 
 To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/application.html), [wearable](../../api/latest/device_api/wearable/tizen/application.html) and [tv](../../api/latest/device_api/tv/tizen/application.html applications) and Bluetooth (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html) applications) APIs, the application has to request permission by adding the following privileges to the `config.xml` file:
@@ -14,17 +10,6 @@ To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/app
 <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
 <tizen:privilege name="http://tizen.org/privilege/bluetooth"/>
 ```
-<!-- END #00 -->
-
-<!-- TODO #01
-      - write about handling UUIDs, binary data
-      - write about toByteArray()
-	   - write about toDOMString()
-	   - write about toUint8Array()
-	   - write about uuidTo128bit()
-	   - write about uuidToShortestPossible()
-	   - write about uuidsEqual()
- -->
 ## Handling UUIDs and binary data in Bluetooth API
 
 ### Handling UUIDs
@@ -119,7 +104,6 @@ The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary
       `first`, `second` and `third` variables are equal.
 
 
-<!-- END #01 -->
 
 ## The main features of the Bluetooth API include:
 
@@ -180,27 +164,6 @@ The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary
 - Accessing the Bluetooth GATT descriptor value
 
   You can [read and write the Bluetooth GATT descriptor value](#accessing-the-bluetooth-gatt-descriptor-value).
-
-<!-- TODO #02:
-      - add/remove remote connections state listener
-      - check if remote device is connected
-      - get ATT MTU of remote device
-      - request change of ATT MTU of remote device
-      - add/remove ATT MTU change listener on remote device
-      - create gatt server
-         - start/stop the server
-         - get connection ATT MTU
-      - create server service
-      - register services
-      - unregister services ("all together" or "one by one")
-      - create characteristic of server service
-         - set callbacks for read/write value change requests
-      - create descriptor of server service's characteristic
-         - set callbacks for read/write value change requests
- -->
-
-<!-- END #02 -->
-
 
 ## Managing the Local Bluetooth Adapter
 
@@ -461,10 +424,6 @@ To search for remote Bluetooth devices:
    adapter.stopScan();
    ```
 
-
-<!-- TODO #03:
-      - write about method isConnected() DONE
- -->
 ### Connecting to a Bluetooth Low Energy Device
 
 To connect to other Bluetooth Low Energy devices:
@@ -518,8 +477,6 @@ To connect to other Bluetooth Low Energy devices:
    ```
    remoteDevice.disconnect();
    ```
-
-<!-- END #03 -->
 
 ### Receiving Notifications on Connection State Changes
 
@@ -627,9 +584,6 @@ To retrieve a list of GATT services (Generic Attribute) provided by a remote dev
    console.log('Services length ' + services.length);
    ```
 
-<!-- TODO #04
-      - write about uuid field in characteristic
- -->
 ### Accessing the Bluetooth GATT Characteristic Value
 
 To read and write a value of the Bluetooth characteristic:
@@ -694,7 +648,6 @@ To read and write a value of the Bluetooth characteristic:
 
    property.writeValue(newValue, writeSuccess, writeFail);
    ```
-<!-- END #04 -->
 
 ### Receiving Notifications on Characteristic Value Changes
 
@@ -740,9 +693,6 @@ To monitor changes in a Bluetooth characteristic:
    property.removeValueChangeListener(watchId);
    ```
 
-<!-- TODO #05
-      - write about uuid field in descriptor
- -->
 ### Accessing the Bluetooth GATT Descriptor Value
 
 To read and write a value of the Bluetooth descriptor:
@@ -806,12 +756,7 @@ To read and write a value of the Bluetooth descriptor:
 
    descriptor.writeValue(newValue, writeSuccess, writeFail);
    ```
-<!-- END #05 -->
 
-<!-- TODO #06
-      - write about getAttMtu()
-      - write about requestAttMtuChange()
- -->
 ### Accessing the ATT MTU of connected device
 
 To get the ATT MTU value or request change of the ATT MTU value:
@@ -828,12 +773,7 @@ To get the ATT MTU value or request change of the ATT MTU value:
    ```
    > **Note**
    > After calling `requestAttMtuChange()` function ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
-<!-- END #06 -->
 
-<!-- TODO #07
-      - write about addAttMtuChangeListener()
-      - write about removeAttMtuChangeListener()
- -->
 ### Receiving Notifications on ATT MTU changes
 
 To recieve notifications on ATT MTU value changes:
@@ -863,14 +803,9 @@ When a listener monitoring the ATT MTU value changes is no longer needed, you ca
    device.removeAttMtuChangeListener(listenerId);
    ```
    After removing of the listener, changes of the ATT MTU value will no longer trigger the callback function.
-<!-- END #07 -->
-
 
 ## Managing the local GATT server
 
-<!-- TODO #08
-      - write about start()
- -->
 ### Start the server
 
 To start the local GATT server:
@@ -895,11 +830,6 @@ var onError = function(error) {
 server.start(onSuccess, onError);
 ```
 
-<!-- END #08 -->
-
-<!-- TODO #09
-      - write about stop()
- -->
 ### Stop the server
 
 To stop the local GATT server:
@@ -923,12 +853,7 @@ var onError = function(error) {
 
 server.stop(onSuccess, onError);
 ```
-<!-- END #09 -->
 
-<!-- TODO #10
-      - write about addConnectStateChangeListener()
-      - write about removeConnectStateChangeListener()
- -->
 ### Receiving notifications on server's connection state changes
 
 To receive notifications whenever a remote connection with the local server is established or lost:
@@ -960,11 +885,7 @@ The `watchId` value stores an identifier of the listener, which is needed to rem
 ```
 adapter.removeConnectStateChangeListener(watchId);
 ```
-<!-- END #10 -->
 
-<!-- TODO #11
-      - write about getConnectionMtu()
- -->
 ### Accessing connection's ATT MTU
 
 To get the value of connection's ATT MTU value:
@@ -988,11 +909,7 @@ var clientAddress = "12:34:56:78:90:ab";
 var server = tizen.bluetooth.getGATTServer();
 server.getConnectionMtu(clientAddress, connectionMtuCB, errorCB);
 ```
-<!-- END #11 -->
 
-<!-- TODO #12
-      - write about registerService()
- -->
 ### Registering services
 To register a GATT service in the local server:
 
@@ -1043,12 +960,7 @@ To register a GATT service in the local server:
    > - server's `unregisterAllServices()` method is called,
    > - application is reloaded,
    > - application is closed.
-<!-- END #12 -->
 
-<!-- TODO #13
-      - write about unregisterAllServices()
-      - write about BluetoothGATTServerService::unregister()
- -->
 ### Unregistering services
 GATT services can be unregistered either one at a time or all at once.
 
@@ -1096,11 +1008,7 @@ To unregister all services from the local GATT server at once, call server's
    > After the calling `unregisterAllServices()`, the server is stopped.
    > If new services are then registered, server's `start()` method has to be
    > called to make them visible to clients.
-<!-- END #13 -->
 
-<!-- TODO #14
-      - write about notifyAboutValueChange()
- -->
 ### Sending notifications about characteristic's value changes to the clients
 GATT clients connected to the server running on the local device can register for updates of its characteristics' values.
 The server can send two types of such updates - _notifications_ and _indications_.
@@ -1202,14 +1110,7 @@ To update clients on characteristic's value change after registering the service
                                          notificationCallback, errorCallback);
    ```
 The notification is sent and `notificationCallback`'s members will be called soon.
-<!-- END #14 -->
 
-<!-- TODO #15
-      - write about setReadValueRequestCallback() for characteristic
-      - write about setWriteValueRequestCallback() for characteristic
-      - write about setReadValueRequestCallback() for descriptor
-      - write about setWriteValueRequestCallback() for descriptor
- -->
 ### Responding to read and write value requests from server clients
 
 In order to react and respond to the read and write value requests from a client connected to the server running on the device, the callback functions need to be set on the characteristics or on the descriptors.
@@ -1342,7 +1243,6 @@ To set a callback function for read or write value request on a characteristic o
 
 > **Note**
 > The callbacks described here can also be registered by putting them in `BluetoothGATTServerCharacteristicInit` or `BluetoothGATTServerDescriptorInit`.
-<!-- END #15 -->
 
 ### Managing the Advertising Options
 
