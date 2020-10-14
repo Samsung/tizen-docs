@@ -79,7 +79,7 @@ To reorder layers a set of API listed below can be used:
  - RaiseToTop(): move layer to the top of the layers stack. 
 
 ### Examples 
-- Floating buttons above of the other application content. 
+ - Floating buttons above other application's content. 
 - Custom popups or floating views. 
 - Custom menus
 
