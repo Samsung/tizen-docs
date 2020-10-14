@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 {
    <a class="code" href="struct__Eina__List.html">Eina_List</a> *transitions;
    <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> *box;
-   <a class="code" href="group__Evas__Object__Box.html#gad3ef5177a00dcda0c08c86287419d5b5">Evas_Object_Box_Layout</a> last_layout;
+   <a class="code" href="group__Evas__Object__Box__Group.html#gad3ef5177a00dcda0c08c86287419d5b5">Evas_Object_Box_Layout</a> last_layout;
 } Transitions_Data;
 </pre></div></p>
 <p>The box starts with three buttons, clicking on any of them will take it out of the box without deleting the object. There are also two more buttons outside, one to add an object to the box and the other to clear it. This is all to show how you can interact with the items in the box, add things and even remove them, while the transitions occur.</p>
@@ -143,7 +143,7 @@ _test_box_transition_change(<span class="keywordtype">void</span> *data)
 {
    Transitions_Data *tdata = data;
    <a class="code" href="group__Elm__Box__Group.html#ga9cd35aa22988c800aa981f25ada92ced">Elm_Box_Transition</a> *layout_data;
-   <a class="code" href="group__Evas__Object__Box.html#gad3ef5177a00dcda0c08c86287419d5b5">Evas_Object_Box_Layout</a> next_layout;
+   <a class="code" href="group__Evas__Object__Box__Group.html#gad3ef5177a00dcda0c08c86287419d5b5">Evas_Object_Box_Layout</a> next_layout;
 
    <span class="keywordflow">if</span> (!data) <span class="keywordflow">return</span>;
    next_layout = <a class="code" href="group__Eina__List__Group.html#gaec845f0bfb16a14e8d7f0cd508ca7e9c" title="Gets the list node data member.">eina_list_data_get</a>(tdata-&gt;transitions);
@@ -159,27 +159,27 @@ _test_box_transition_change(<span class="keywordtype">void</span> *data)
 }
 </pre></div></p>
 <p>The main function doesn't have anything special. Creation of box, initial buttons and some callback setting. The only part worth mentioning is the initialization of our application data. <div class="fragment"><pre class="fragment">   tdata.box = bx;
-   tdata.last_layout = evas_object_box_layout_horizontal;
+   tdata.last_layout = <a class="code" href="group__Evas__Object__Box__Group.html#gaf401f035c1feb35edc13c25eca38406d" title="Layout function which sets the box o to a (basic) horizontal box.">evas_object_box_layout_horizontal</a>;
    tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
-                                        evas_object_box_layout_vertical);
+                                        <a class="code" href="group__Evas__Object__Box__Group.html#ga13a820d1cdb6c8c7ce09242972250382" title="Layout function which sets the box o to a (basic) vertical box.">evas_object_box_layout_vertical</a>);
    tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
-                                        evas_object_box_layout_horizontal);
+                                        <a class="code" href="group__Evas__Object__Box__Group.html#gaf401f035c1feb35edc13c25eca38406d" title="Layout function which sets the box o to a (basic) horizontal box.">evas_object_box_layout_horizontal</a>);
    tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
-                                        evas_object_box_layout_stack);
+                                        <a class="code" href="group__Evas__Object__Box__Group.html#ga706063486f74d20e5dd429d4832ae3e0" title="Layout function which sets the box o to a stacking box.">evas_object_box_layout_stack</a>);
 </pre></div></p>
 <p>We have a simple static variable, set the box, the first layout we are using as last and create the list with the different functions to go through.</p>
 <p>And in the end, we set the first layout and call the same function we went through before to start the run of transitions. <div class="fragment"><pre class="fragment">   tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
-                                        evas_object_box_layout_homogeneous_vertical);
+                                        <a class="code" href="group__Evas__Object__Box__Group.html#gaa7f25201d011d6936722c8295fb67e2a" title="Layout function which sets the box o to a homogeneous vertical box.">evas_object_box_layout_homogeneous_vertical</a>);
    tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
-                                        evas_object_box_layout_homogeneous_horizontal);
+                                        <a class="code" href="group__Evas__Object__Box__Group.html#ga51ec9d25baebdc79349e736fe0f5c071" title="Layout function which sets the box o to a homogeneous horizontal box.">evas_object_box_layout_homogeneous_horizontal</a>);
    tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
-                                        evas_object_box_layout_flow_vertical);
+                                        <a class="code" href="group__Evas__Object__Box__Group.html#gaa0e54623366bb7e00ae82b79e77a9869" title="Layout function which sets the box o to a flow vertical box.">evas_object_box_layout_flow_vertical</a>);
    tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
-                                        evas_object_box_layout_flow_horizontal);
+                                        <a class="code" href="group__Evas__Object__Box__Group.html#gaee7b64febd1ab0d8963901393cdc2aa3" title="Layout function which sets the box o to a flow horizontal box.">evas_object_box_layout_flow_horizontal</a>);
    tdata.transitions = <a class="code" href="group__Eina__List__Group.html#ga92ec14d1a1040a361c4d8cd0ab7b0ecc" title="Appends the given data to the given linked list.">eina_list_append</a>(tdata.transitions,
-                                        evas_object_box_layout_stack);
+                                        <a class="code" href="group__Evas__Object__Box__Group.html#ga706063486f74d20e5dd429d4832ae3e0" title="Layout function which sets the box o to a stacking box.">evas_object_box_layout_stack</a>);
 
-   <a class="code" href="group__Elm__Box__Group.html#ga964ff6e51c328ed9e9a64c73f9e2a21f" title="Set the layout defining function to be used by the box.">elm_box_layout_set</a>(bx, evas_object_box_layout_horizontal, NULL, NULL);
+   <a class="code" href="group__Elm__Box__Group.html#ga964ff6e51c328ed9e9a64c73f9e2a21f" title="Set the layout defining function to be used by the box.">elm_box_layout_set</a>(bx, <a class="code" href="group__Evas__Object__Box__Group.html#gaf401f035c1feb35edc13c25eca38406d" title="Layout function which sets the box o to a (basic) horizontal box.">evas_object_box_layout_horizontal</a>, NULL, NULL);
    _test_box_transition_change(&amp;tdata);
 </pre></div></p>
 <p>For the full code, follow <a class="el" href="box_example_02_8c-example.html">here</a>. </p>

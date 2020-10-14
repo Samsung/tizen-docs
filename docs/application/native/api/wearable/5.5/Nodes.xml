@@ -4147,7 +4147,7 @@
                 </Subnodes>
                </Node>
                <Node>
-                <Name>Navifram</Name>
+                <Name>Naviframe</Name>
                 <Path>group__Elm__Naviframe__Group.html</Path>
                 <Subnodes>
                 </Subnodes>
@@ -4560,7 +4560,7 @@
                 <Subnodes>
                  <Node>
                   <Name>Box Smart Object</Name>
-                  <Path>group__Evas__Object__Box.html</Path>
+                  <Path>group__Evas__Object__Box__Group.html</Path>
                   <Subnodes>
                   </Subnodes>
                  </Node>

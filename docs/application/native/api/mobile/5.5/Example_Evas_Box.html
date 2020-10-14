@@ -91,7 +91,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>In this example, we demonstrate the use of Evas box objects. We cover changing boxes' layouts (with a custom layout, besides the ones provided by Evas), box padding and alignment influence on the layouts, insertion and removal of box items.</p>
-<p>The interesting part of the code starts, naturally, when we add a box object to the canvas. Just after it, we place five rectangles, with random colors, inside of it. Those rectangles get a minimum size hint of 50 pixels on each axis, which will be respected by most of the box's possible layouts:  <div class="fragment"><pre class="fragment">   d.box = <a class="code" href="group__Evas__Object__Box.html#gad413687e53adcbb70ced91d4a4218b45">evas_object_box_add</a>(d.evas);
+<p>The interesting part of the code starts, naturally, when we add a box object to the canvas. Just after it, we place five rectangles, with random colors, inside of it. Those rectangles get a minimum size hint of 50 pixels on each axis, which will be respected by most of the box's possible layouts:  <div class="fragment"><pre class="fragment">   d.box = <a class="code" href="group__Evas__Object__Box__Group.html#gad413687e53adcbb70ced91d4a4218b45">evas_object_box_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.box);
 
    <span class="keywordflow">for</span> (i = 1; i &lt;= 5; i++)
@@ -102,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
           o, rand() % 256, rand() % 256, rand() % 256, 255);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-        <span class="keywordflow">if</span> (!evas_object_box_append(d.box, o))
+        <span class="keywordflow">if</span> (!<a class="code" href="group__Evas__Object__Box__Group.html#ga556d509a9c1547fb601d84292353ad20" title="Append a new child object to the given box object o.">evas_object_box_append</a>(d.box, o))
           {
              fprintf(stderr, <span class="stringliteral">&quot;Error appending child object on the box!\n&quot;</span>);
              <span class="keywordflow">goto</span> error;
@@ -169,12 +169,12 @@ _canvas_resize_cb(Ecore_Evas *ee)
         <a class="code" href="struct__Eina__List.html">Eina_List</a> *children;
 
         pos = atoi(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
-        children = <a class="code" href="group__Evas__Object__Box.html#ga245f7f1824ec1033c6b1d0c2312fed9e">evas_object_box_children_get</a>(d.box);
+        children = <a class="code" href="group__Evas__Object__Box__Group.html#ga245f7f1824ec1033c6b1d0c2312fed9e">evas_object_box_children_get</a>(d.box);
 
         obj = <a class="code" href="group__Eina__List__Group.html#ga4bd18d6ffc9920cd904bb7769f2fad8e" title="Gets the nth member&#39;s data pointer in a list, or NULL on error.">eina_list_nth</a>(children, pos);
         <span class="keywordflow">if</span> (!obj) <span class="keywordflow">goto</span> list_free;
 
-        ret = evas_object_box_remove_at(d.box, pos);
+        ret = <a class="code" href="group__Evas__Object__Box__Group.html#ga536c0aca8dc13edcea948e296902ad3f" title="Remove an object, bound to a given position in a box object, unparenting it again.">evas_object_box_remove_at</a>(d.box, pos);
         <span class="keywordflow">if</span> (ret) <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
 
 list_free:
@@ -188,8 +188,8 @@ list_free:
         <span class="keywordtype">int</span> pos;
         pos = atoi(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
         o_ = _new_rectangle_add(d.evas);
-        <span class="keywordflow">if</span> (!evas_object_box_insert_at(d.box, o_, pos))
-          evas_object_box_append(d.box, o_);
+        <span class="keywordflow">if</span> (!<a class="code" href="group__Evas__Object__Box__Group.html#ga6fc2fc458b37e1e330f5ce2947dcc0c6" title="Insert a new child object at a given position, in a given box object o.">evas_object_box_insert_at</a>(d.box, o_, pos))
+          <a class="code" href="group__Evas__Object__Box__Group.html#ga556d509a9c1547fb601d84292353ad20" title="Append a new child object to the given box object o.">evas_object_box_append</a>(d.box, o_);
         <span class="keywordflow">return</span>;
      }
 </pre></div>  <div class="fragment"><pre class="fragment"><span class="keyword">static</span> <a class="code" href="group__Evas__Object__Group.html#ga9e19e6dd1f517a0ba437c0114d3e7c97">Evas_Object</a> * <span class="comment">/* new rectangle to be put in the box */</span>
@@ -204,7 +204,7 @@ _new_rectangle_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
 
    <span class="keywordflow">return</span> o;
 }
-</pre></div> In that code, we exemplify <a class="el" href="group__Evas__Object__Box.html#ga245f7f1824ec1033c6b1d0c2312fed9e">evas_object_box_children_get()</a>, to fetch a child element at an exact position. After the element removal from the box (leaving it unparented again), we delete it and free that list. The code inserting a new rectangle, there, is straightforward.</p>
+</pre></div> In that code, we exemplify <a class="el" href="group__Evas__Object__Box__Group.html#ga245f7f1824ec1033c6b1d0c2312fed9e">evas_object_box_children_get()</a>, to fetch a child element at an exact position. After the element removal from the box (leaving it unparented again), we delete it and free that list. The code inserting a new rectangle, there, is straightforward.</p>
 <p>Try the <code>'6'</code> key for the vertical equivalent of the last shown layout. Then, comes the <b>flow</b> layout, triggered by the <code>'7'</code> key. We make our box small to demonstrate the effect on the items layouting:</p>
 <div class="image">
 <img src="evas-box-example-04.png" alt="evas-box-example-04.png"/>
@@ -212,7 +212,7 @@ _new_rectangle_add(<a class="code" href="group__Evas__Canvas.html#ga5ff87cc4ce6b
   <p>The next two numerical commands are for the vertical equivalent of the last and the stack one, respectively. Try them out to get their looks.</p>
 <p>The last numerical key, <code>'0'</code>, shows the effect of a <b>custom</b> layout on the box. We wrote one that would split the width and height of the box equally and, then, place the items in the cells in the diagonal:  <div class="fragment"><pre class="fragment">   <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;0&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(d.box, _custom_layout, NULL, NULL);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(d.box, _custom_layout, NULL, NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
                <span class="stringliteral">&quot;CUSTOM&quot;</span>);
@@ -363,12 +363,12 @@ _on_keydown(<span class="keywordtype">void</span>        *data EINA_UNUSED,
         <a class="code" href="struct__Eina__List.html">Eina_List</a> *children;
 
         pos = atoi(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
-        children = <a class="code" href="group__Evas__Object__Box.html#ga245f7f1824ec1033c6b1d0c2312fed9e">evas_object_box_children_get</a>(d.box);
+        children = <a class="code" href="group__Evas__Object__Box__Group.html#ga245f7f1824ec1033c6b1d0c2312fed9e">evas_object_box_children_get</a>(d.box);
 
         obj = <a class="code" href="group__Eina__List__Group.html#ga4bd18d6ffc9920cd904bb7769f2fad8e" title="Gets the nth member&#39;s data pointer in a list, or NULL on error.">eina_list_nth</a>(children, pos);
         <span class="keywordflow">if</span> (!obj) <span class="keywordflow">goto</span> list_free;
 
-        ret = evas_object_box_remove_at(d.box, pos);
+        ret = <a class="code" href="group__Evas__Object__Box__Group.html#ga536c0aca8dc13edcea948e296902ad3f" title="Remove an object, bound to a given position in a box object, unparenting it again.">evas_object_box_remove_at</a>(d.box, pos);
         <span class="keywordflow">if</span> (ret) <a class="code" href="group__Evas__Object__Group__Basic.html#ga7e7a625dab7a3890532aa13b43117076">evas_object_del</a>(obj);
 
 list_free:
@@ -382,8 +382,8 @@ list_free:
         <span class="keywordtype">int</span> pos;
         pos = atoi(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>);
         o_ = _new_rectangle_add(d.evas);
-        <span class="keywordflow">if</span> (!evas_object_box_insert_at(d.box, o_, pos))
-          evas_object_box_append(d.box, o_);
+        <span class="keywordflow">if</span> (!<a class="code" href="group__Evas__Object__Box__Group.html#ga6fc2fc458b37e1e330f5ce2947dcc0c6" title="Insert a new child object at a given position, in a given box object o.">evas_object_box_insert_at</a>(d.box, o_, pos))
+          <a class="code" href="group__Evas__Object__Box__Group.html#ga556d509a9c1547fb601d84292353ad20" title="Append a new child object to the given box object o.">evas_object_box_append</a>(d.box, o_);
         <span class="keywordflow">return</span>;
      }
 
@@ -391,7 +391,7 @@ list_free:
      {
         <span class="keywordtype">double</span> h, v;
 
-        evas_object_box_align_get(d.box, &amp;h, &amp;v);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga2268fc83fcc44a302decfed6e6f0609f" title="Get the alignment of the whole bounding box of contents, for a given box object.">evas_object_box_align_get</a>(d.box, &amp;h, &amp;v);
 
         <span class="keywordflow">if</span> (h == 0.5)
           h = v = 1.0;
@@ -402,7 +402,7 @@ list_free:
         <span class="keywordflow">else</span> <span class="keywordflow">if</span> (h == 0.0)
           h = v = 0.5;
 
-        evas_object_box_align_set(d.box, h, v);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1bd35982753a324470705e950412c292" title="Set the alignment of the whole bounding box of contents, for a given box object.">evas_object_box_align_set</a>(d.box, h, v);
 
         printf(<span class="stringliteral">&quot;Applying new alignment values (%.1f, %.1f) on the box\n&quot;</span>,
                h, v);
@@ -413,14 +413,14 @@ list_free:
      {
         <span class="keywordtype">int</span> h, v;
 
-        evas_object_box_padding_get(d.box, &amp;h, &amp;v);
+        <a class="code" href="group__Evas__Object__Box__Group.html#gacde423cb94977b74039c8149d776cbd1" title="Get the (space) padding between cells set for a given box object.">evas_object_box_padding_get</a>(d.box, &amp;h, &amp;v);
 
         <span class="keywordflow">if</span> (h == 0)
           h = v = 50;
         <span class="keywordflow">else</span>
           h = v = 0;
 
-        evas_object_box_padding_set(d.box, h, v);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga18131adf6ebbedc936736f50c70cc93e" title="Set the (space) padding between cells set for a given box object.">evas_object_box_padding_set</a>(d.box, h, v);
 
         printf(<span class="stringliteral">&quot;Applying new padding values (%d, %d) on the box\n&quot;</span>,
                h, v);
@@ -429,8 +429,8 @@ list_free:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;1&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(
-          d.box, evas_object_box_layout_horizontal, NULL, NULL);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(
+          d.box, <a class="code" href="group__Evas__Object__Box__Group.html#gaf401f035c1feb35edc13c25eca38406d" title="Layout function which sets the box o to a (basic) horizontal box.">evas_object_box_layout_horizontal</a>, NULL, NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
                <span class="stringliteral">&quot;horizontal&quot;</span>);
@@ -439,8 +439,8 @@ list_free:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;2&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(
-          d.box, evas_object_box_layout_vertical, NULL, NULL);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(
+          d.box, <a class="code" href="group__Evas__Object__Box__Group.html#ga13a820d1cdb6c8c7ce09242972250382" title="Layout function which sets the box o to a (basic) vertical box.">evas_object_box_layout_vertical</a>, NULL, NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
                <span class="stringliteral">&quot;vertical&quot;</span>);
@@ -449,8 +449,8 @@ list_free:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;3&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(
-          d.box, evas_object_box_layout_homogeneous_horizontal, NULL,
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(
+          d.box, <a class="code" href="group__Evas__Object__Box__Group.html#ga51ec9d25baebdc79349e736fe0f5c071" title="Layout function which sets the box o to a homogeneous horizontal box.">evas_object_box_layout_homogeneous_horizontal</a>, NULL,
           NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
@@ -460,8 +460,8 @@ list_free:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;4&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(
-          d.box, evas_object_box_layout_homogeneous_vertical, NULL, NULL);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(
+          d.box, <a class="code" href="group__Evas__Object__Box__Group.html#gaa7f25201d011d6936722c8295fb67e2a" title="Layout function which sets the box o to a homogeneous vertical box.">evas_object_box_layout_homogeneous_vertical</a>, NULL, NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
                <span class="stringliteral">&quot;vertical homogeneous&quot;</span>);
@@ -470,8 +470,8 @@ list_free:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;5&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(
-          d.box, evas_object_box_layout_homogeneous_max_size_horizontal,
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(
+          d.box, <a class="code" href="group__Evas__Object__Box__Group.html#ga5dc92b32dc8a70f486a7f78b2fa73642" title="Layout function which sets the box o to a maximum size, homogeneous horizontal box.">evas_object_box_layout_homogeneous_max_size_horizontal</a>,
           NULL, NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
@@ -481,8 +481,8 @@ list_free:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;6&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(
-          d.box, evas_object_box_layout_homogeneous_max_size_vertical,
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(
+          d.box, <a class="code" href="group__Evas__Object__Box__Group.html#gacb6cb96877d6650ede3fe405381a7bc6" title="Layout function which sets the box o to a maximum size, homogeneous vertical box.">evas_object_box_layout_homogeneous_max_size_vertical</a>,
           NULL, NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
@@ -492,8 +492,8 @@ list_free:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;7&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(
-          d.box, evas_object_box_layout_flow_horizontal, NULL, NULL);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(
+          d.box, <a class="code" href="group__Evas__Object__Box__Group.html#gaee7b64febd1ab0d8963901393cdc2aa3" title="Layout function which sets the box o to a flow horizontal box.">evas_object_box_layout_flow_horizontal</a>, NULL, NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
                <span class="stringliteral">&quot;horizontal flow&quot;</span>);
@@ -502,8 +502,8 @@ list_free:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;8&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(
-          d.box, evas_object_box_layout_flow_vertical, NULL, NULL);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(
+          d.box, <a class="code" href="group__Evas__Object__Box__Group.html#gaa0e54623366bb7e00ae82b79e77a9869" title="Layout function which sets the box o to a flow vertical box.">evas_object_box_layout_flow_vertical</a>, NULL, NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
                <span class="stringliteral">&quot;vertical flow&quot;</span>);
@@ -512,8 +512,8 @@ list_free:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;9&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(
-          d.box, evas_object_box_layout_stack, NULL, NULL);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(
+          d.box, <a class="code" href="group__Evas__Object__Box__Group.html#ga706063486f74d20e5dd429d4832ae3e0" title="Layout function which sets the box o to a stacking box.">evas_object_box_layout_stack</a>, NULL, NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
                <span class="stringliteral">&quot;stack&quot;</span>);
@@ -522,7 +522,7 @@ list_free:
 
    <span class="keywordflow">if</span> (strcmp(ev-&gt;<a class="code" href="struct__Evas__Event__Key__Down.html#a70473bba88a1afaee180a54150513824">key</a>, <span class="stringliteral">&quot;0&quot;</span>) == 0)
      {
-        evas_object_box_layout_set(d.box, _custom_layout, NULL, NULL);
+        <a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(d.box, _custom_layout, NULL, NULL);
 
         printf(<span class="stringliteral">&quot;Applying &#39;%s&#39; layout on the box\n&quot;</span>,
                <span class="stringliteral">&quot;CUSTOM&quot;</span>);
@@ -583,7 +583,7 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="group__Evas__Object__Group__Events.html#ga23be30ac5cdfb780f1ff82e9108ec26b">evas_object_event_callback_add</a>(
      d.bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
 
-   d.box = <a class="code" href="group__Evas__Object__Box.html#gad413687e53adcbb70ced91d4a4218b45">evas_object_box_add</a>(d.evas);
+   d.box = <a class="code" href="group__Evas__Object__Box__Group.html#gad413687e53adcbb70ced91d4a4218b45">evas_object_box_add</a>(d.evas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.box);
 
    <span class="keywordflow">for</span> (i = 1; i &lt;= 5; i++)
@@ -594,7 +594,7 @@ main(<span class="keywordtype">void</span>)
           o, rand() % 256, rand() % 256, rand() % 256, 255);
         <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(o);
 
-        <span class="keywordflow">if</span> (!evas_object_box_append(d.box, o))
+        <span class="keywordflow">if</span> (!<a class="code" href="group__Evas__Object__Box__Group.html#ga556d509a9c1547fb601d84292353ad20" title="Append a new child object to the given box object o.">evas_object_box_append</a>(d.box, o))
           {
              fprintf(stderr, <span class="stringliteral">&quot;Error appending child object on the box!\n&quot;</span>);
              <span class="keywordflow">goto</span> error;
