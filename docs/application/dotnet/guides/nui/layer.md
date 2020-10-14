@@ -81,7 +81,7 @@ To reorder layers a set of API listed below can be used:
 ### Examples 
  - Floating buttons above other application's content. 
 - Custom popups or floating views. 
-- Custom menus
+- Custom menus. 
 
 ### LayerUI
 
