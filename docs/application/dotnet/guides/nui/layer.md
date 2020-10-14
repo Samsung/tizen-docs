@@ -68,7 +68,7 @@ window.AddLayer(ly1);
 //ly1.Depth = 2;
 ```
 
-Renderer draws layers and its content from the layers with lowest depth at the beginning. In result a layer and its content with higher depth value will be drawn at the top of the stack.
+The renderer draws layers and its content from the layers with the lowest depth at the beginning. As a result, a layer and its content with a higher depth value are drawn at the top of the stack.
 
 To reorder layers a set of API listed below can be used: 
  - Lower(): decrements *Depth* parameter
