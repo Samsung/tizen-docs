@@ -51,7 +51,7 @@ layer2.Add(imageView2);
 
 ### Re-ordering layers
 
-By default root layer obtained from the Window instance has a *Depth* field value equal to 0, the same as a newly created layer. Only adding a layer to the window using api *window.AddLayer()* set *Depth* value as it is shown on code example below
+The default root layer obtained from the Window instance has a **Depth** field value of 0, which is the same as for a newly created layer. You can add a layer to the window using `window.AddLayer()` API and set the  **Depth** value as shown in the following code example: 
 
 ```
 Window window = Window.Instance;
