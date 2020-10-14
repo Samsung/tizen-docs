@@ -401,6 +401,22 @@ The following example illustrates text alignment:
 field.HorizontalAlignment = HorizontalAlignment.Begin;
 ```
 
+### Use Input Properties in TextField
+
+To change the text settings for new input text, you can use the Input properties of the [Tizen.NUI.BaseComponents.TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class, such as `InputColor`, `InputPointSize`, and so on.
+
+To use these properties there are some specific conditions. For instance, you can use these properties either when the `TextChanged` event occurs or when the `Clicked` event of button occurs.
+
+The following example illustrates how to use the `InputColor` property in a `TextField`:
+
+```csharp
+TextField field = new TextField();
+field.TextColor =
+field.TextChanged += (obj, e) => {
+    e.TextField.InputColor = Color.Yellow;
+};
+```
+
 <a name="textField4"></a>
 ### TextField Properties
 
