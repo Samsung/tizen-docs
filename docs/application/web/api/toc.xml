@@ -1844,7 +1844,7 @@
 								<topic label="Smart Functions" href="group__Evas__Smart__Group.html">
 								</topic>
 								<topic label="Smart Object Functions" href="group__Evas__Smart__Object__Group.html">
-									<topic label="Box Smart Object" href="group__Evas__Object__Box.html">
+									<topic label="Box Smart Object" href="group__Evas__Object__Box__Group.html">
 									</topic>
 									<topic label="Clipped Smart Object" href="group__Evas__Smart__Object__Clipped.html">
 									</topic>
@@ -3775,7 +3775,7 @@
 								<topic label="Smart Functions" href="group__Evas__Smart__Group.html">
 								</topic>
 								<topic label="Smart Object Functions" href="group__Evas__Smart__Object__Group.html">
-									<topic label="Box Smart Object" href="group__Evas__Object__Box.html">
+									<topic label="Box Smart Object" href="group__Evas__Object__Box__Group.html">
 									</topic>
 									<topic label="Clipped Smart Object" href="group__Evas__Smart__Object__Clipped.html">
 									</topic>
