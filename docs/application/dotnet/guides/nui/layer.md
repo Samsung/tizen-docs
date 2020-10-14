@@ -72,11 +72,11 @@ The renderer draws layers and its content from the layers with the lowest depth 
 
 To reorder layers, the following API set can be used: 
  - Lower(): decrements the **Depth** parameter 
- - LowerToBottom(): sets *Depth* parameter to 0. It reorders other layers, and increments root layer *Depth*
- - MoveAbove(Layer l): moves a layer *Depth* directly above the giver layer
- - MoveBelow(Layer l): similar to *MoveAbove()* 
- - Raise(): increments a layer *Depth*
- - RaiseToTop(): move layer to the top of the layers stack. 
+ - `LowerToBottom()`: sets the **Depth** parameter to 0. It reorders other layers, and increments the root layer **Depth**
+ - `MoveAbove(Layer l)`: moves the layer **Depth** directly above the giver layer
+ - `MoveBelow(Layer l`)`:  functions similar to `MoveAbove()` API 
+ - `Raise()`: increments the layer **Depth** parameter
+ - `RaiseToTop()`: moves the layer to the top of the layers stack 
 
 ### Examples 
  - Floating buttons above other application's content. 
