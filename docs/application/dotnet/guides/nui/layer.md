@@ -74,7 +74,7 @@ To reorder layers, the following API set can be used:
  - Lower(): decrements the **Depth** parameter 
  - `LowerToBottom()`: sets the **Depth** parameter to 0. It reorders other layers, and increments the root layer **Depth**
  - `MoveAbove(Layer l)`: moves the layer **Depth** directly above the giver layer
- - `MoveBelow(Layer l`)`:  functions similar to `MoveAbove()` API 
+ - `MoveBelow(Layer l)`:  functions similar to `MoveAbove()` API
  - `Raise()`: increments the layer **Depth** parameter
  - `RaiseToTop()`: moves the layer to the top of the layers stack 
 
