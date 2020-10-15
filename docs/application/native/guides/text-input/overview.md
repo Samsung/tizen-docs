@@ -21,7 +21,7 @@ You can use the following text input, gesture and voice features in your native 
 
   You can create an Autofill manager application that shows installed Autofill service and switches to the selected Autofill service.
 
-- [Gesture](capi-ui-gesture.md)
+- [Gesture](capi-ui-gesture.md) **in wearable applications only**
 
   You can recognize hand gestures from input sensor data.
 
