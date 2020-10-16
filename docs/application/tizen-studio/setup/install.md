@@ -76,7 +76,7 @@ This page walks you through the default installation of Tizen Studio. Follow the
     width: 33%; }
     .tabs .tab-3 [type="radio"] + div {
       width: 300%;
-      margin-left: 0; }
+      margin-left: -200; }
     .tabs .tab-3 [type="radio"]:checked + div {
       margin-left: 0%; }
     .tabs .tab-3:last-child [type="radio"] + div {
