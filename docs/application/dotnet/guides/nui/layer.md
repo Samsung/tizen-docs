@@ -51,7 +51,7 @@ layer2.Add(imageView2);
 
 ### Re-ordering layers
 
-The default root layer obtained from the Window instance has a **Depth** field value of 0, which is the same as for a newly created layer. You can add a layer to the window using `window.AddLayer()` API and set the  **Depth** value as shown in the following code example: 
+The default root layer obtained from the Window instance has a **Depth** field value of 0, which is the same as for a newly created layer. Adding a layer to the window using `window.AddLayer()` API increase the Depth value as shown in the following code example:
 
 ```
 Window window = Window.Instance;
@@ -73,15 +73,15 @@ The renderer draws layers and its content from the layers with the lowest depth 
 To reorder layers, the following API set can be used: 
  - `Lower()`: decrements the **Depth** parameter 
  - `LowerToBottom()`: sets the **Depth** parameter to 0. It reorders other layers, and increments the root layer **Depth**
- - `MoveAbove(Layer l)`: moves the layer **Depth** directly above the giver layer
- - `MoveBelow(Layer l)`:  functions similar to `MoveAbove()` API
+ - `MoveAbove(<layer name>)`: moves the layer **Depth** directly above the given layer
+ - `MoveBelow(<layer name>)`:  functions similar to `MoveAbove()` API
  - `Raise()`: increments the layer **Depth** parameter
  - `RaiseToTop()`: moves the layer to the top of the layers stack 
 
 ### Examples 
  - Floating buttons above other application's content. 
-- Custom popups or floating views. 
-- Custom menus. 
+ - Custom popups or floating views. 
+ - Custom menus. 
 
 ### LayerUI
 
