@@ -2,18 +2,82 @@
 
 You can use Bluetooth functionalities in your application, such as managing the local Bluetooth adapter, bonding, and exchanging data between Bluetooth-enabled devices. The Bluetooth standard provides a peer-to-peer (P2P) data exchange functionality over short distance between compliant devices.
 
+## Main features of Bluetooth API
+
+The main features of the Bluetooth API include:
+
+- Manage the local Bluetooth adapter
+
+  You can [enable and disable the local Bluetooth adapter](#manage-the-local-bluetooth-adapter), and change the device name for it.
+
+- Discover devices
+
+  You can [discover other Bluetooth devices](#discovere-bluetooth-devices).
+
+- Create a bond with a Bluetooth device
+
+  You can [create a bond](#create-a-bond-with-a-bluetooth-device) with another device retrieved through the discovery process. Bonding allows the 2 devices to establish a connection.
+
+- Connect to and exchange data with a Bluetooth device
+
+  You can [connect to and exchange data with a remote Bluetooth device](#connect-to-and-exchange-data-with-a-bluetooth-device).
+
+The main Bluetooth (4.0) Low Energy features include:
+
+- Manage the local Bluetooth adapter
+
+  The [Bluetooth adapter management](#manage-the-local-bluetooth-adapter) is performed the same way as in the regular Bluetooth API.
+
+- Discover Bluetooth Low Energy devices
+
+  You can [discover Bluetooth Low Energy devices](#discover-bluetooth-low-energy-devices) in range. Through the discovery process, you can obtain basic information about available remote devices, such as their names and provided services.
+
+- Manage the advertise options
+
+  You can [manage advertise](#manage-the-advertise-options) to control how your device announces itself to other Bluetooth Low Energy devices for discovery.
+
+- Connect to a Bluetooth Low Energy device
+
+  You can [connect to a remote Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device). When connected, you can access services and characteristics of the remote device.
+
+- Receive notifications on connection state changes
+
+  You can [monitor the connection state](#receive-notifications-on-connection-state-changes) to detect when the connection to the remote device is lost.
+
+- Retrieve Bluetooth GATT services
+
+  You can [retrieve information about Bluetooth GATT services](#retrieve-bluetooth-gatt-services) provided by the remote device.
+
+  Every GATT service defines characteristics it includes. By knowing the service, you know what features the Bluetooth device exposes.
+
+- Access the Bluetooth GATT characteristic value
+
+  You can [read and write the Bluetooth GATT characteristic value](#access-the-bluetooth-gatt-characteristic-value).
+
+  Characteristics allows you to monitor and sometimes control remote Bluetooth Low Energy devices. For example, a sensor reading can be exposed by the sensor device as a Bluetooth GATT characteristic.
+
+- Receive notifications on characteristic value changes
+
+  You can [monitor a characteristic value](#receive-notifications-on-characteristic-value-changes) to detect any changes, for example, in sensor readings and battery level.
+
+- Access the Bluetooth GATT descriptor value
+
+  You can [read and write the Bluetooth GATT descriptor value](#access-the-bluetooth-gatt-descriptor-value).
+
 ## Prerequisites
 
-To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/application.html), [wearable](../../api/latest/device_api/wearable/tizen/application.html) and [tv](../../api/latest/device_api/tv/tizen/application.html applications) and Bluetooth (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html) applications) APIs, the application has to request permission by adding the following privileges to the `config.xml` file:
+To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/application.html), [wearable](../../api/latest/device_api/wearable/tizen/application.html), and [tv](../../api/latest/device_api/tv/tizen/application.html) applications) and Bluetooth (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html) applications) APIs, the application has to request permission by adding the following privileges to the `config.xml` file:
 
 ```
 <tizen:privilege name="http://tizen.org/privilege/application.launch"/>
 <tizen:privilege name="http://tizen.org/privilege/bluetooth"/>
 ```
-## Handling UUIDs and binary data in Bluetooth API
+## Handle UUIDs and binary data
 
-### Handling UUIDs
-According to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/), UUIDs used to represent Bluetooth objects can take 3 forms:
+With Bluetooth API, you can handle UUIDs and binary data.
+
+### Handle UUIDs
+According to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/), UUIDs that are used to represent Bluetooth objects can take the following 3 forms:
 
    * 128-bit representation: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", where each 'X' stands for a hexadecimal digit.  
    For example: "198d3a9c-e21a-4f72-a48b-39a6bad7e583".
@@ -22,15 +86,16 @@ According to the [Bluetooth Core Specification](https://www.bluetooth.com/specif
    * 16-bit representation: "D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>", equivalent to "0000D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>-0000-1000-8000-00805F9B34FB", where D<sub>1</sub>..D<sub>4</sub> stand for hexadecimal digits.  
    For example: "d182".
 
-Unless stated otherwise, each function taking a UUID as a parameter will accept any of the 3 forms and make appropriate conversions.  
-Unless stated otherwise, each UUID returned from a function and each UUID attribute of an object may be a 16-bit, 32-bit or 128-bit UUID.
-Bluetooth API functions are case-insensitive with regard to UUIDs - lowercase (abcdef) and uppercase (ABCDEF) characters are recognized as valid hexadecimal digits.
+Functions taking UUIDs as parameters accept any of these three forms and make appropriate conversions.
+Each UUID returned from a function and each UUID attribute of an object may be a 16-bit, 32-bit or 128-bit UUID.
+All exceptions to these rules are noted in the API reference for [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html) devices.
+Bluetooth API functions are case-insensitive with regard to UUIDs. Lowercase (abcdef) and uppercase (ABCDEF) characters are recognized as valid hexadecimal digits.
 
 The 128-bit UUID that is the base for UUIDs having 16-bit or 32-bit equivalents is defined available through the API in `BluetoothManager` as `BASE_UUID`.
 
 `BluetoothManager` methods to manipulate UUIDs:
 
-   * `uuidTo128bit()`
+   - `uuidTo128bit()` converts a UUID to its 128-bit equivalent
       ```
       var uuidFrom16bits = tizen.bluetooth.uuidTo128bit("1234");
       var uuidFrom32bits = tizen.bluetooth.uuidTo128bit("ab5690ef");
@@ -41,7 +106,7 @@ The 128-bit UUID that is the base for UUIDs having 16-bit or 32-bit equivalents 
       uuidFrom32bits is equal to "ab5690ef-0000-1000-8000-00805f9b34fb"  
       uuidFrom128bits is equal to "abcdef01-2345-6789-abcd-ef0123456789"
 
-   * `uuidToShortestPossible()`
+   - `uuidToShortestPossible()` converts a UUID to its shortest possible equivalent
       ```
       var from16Bit = tizen.bluetooth.uuidToShortestPossible("1234");
       var from32Bit = tizen.bluetooth.uuidToShortestPossible("0000acdf");
@@ -54,7 +119,7 @@ The 128-bit UUID that is the base for UUIDs having 16-bit or 32-bit equivalents 
       from128BitFirst is equal to "ab5690ef"  
       from128BitSecond is equal to "abcdef01-2345-6789-abcd-ef0123456789"
 
-   * `uuidsEqual()`
+   - `uuidsEqual()` tests if two UUIDs have a single common equivalent UUID
       ```
       var first = tizen.bluetooth.uuidsEqual("1234", "00001234");
       var second = tizen.bluetooth.uuidsEqual("ab5690ef", "ab5690ef-0000-1000-8000-00805F9B34FB");
@@ -63,11 +128,11 @@ The 128-bit UUID that is the base for UUIDs having 16-bit or 32-bit equivalents 
 
       Both `first` and `second` are `true`. `third` is false.
 
-### Handling binary data
-The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary data. It can be either a *byte[]* or a *DOMString* or a *Uint8Array*.
+### Handle binary data
+The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary data. It can be either a `byte[]` or a `DOMString` or a `Uint8Array`.
 
 `BluetoothManager` methods to manipulate binary data:
-   * `toByteArray()`
+   - `toByteArray()` converts a variable from any of the `Bytes` types to `byte[]`
       ```
       var dataInt8Array = new Int8Array([24, 177]);
       var dataUint8Array = new Uint8Array([24, 177]);
@@ -79,7 +144,7 @@ The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary
       ```
       `first`, `second` and `third` variables are equal arrays.
 
-   * `toDOMString()`
+   - `toDOMString()` converts a variable from any of the `Bytes` types to `DOMString`
       ```
       var dataInt8Array = new Int8Array([24, 177]);
       var dataUint8Array = new Uint8Array([24, 177]);
@@ -91,7 +156,7 @@ The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary
       ```
       `first`, `second` and `third` variables are equal arrays.
 
-   * `toUint8Array()`
+   - `toUint8Array()` converts a variable from any of the `Bytes` types to `Uint8Array`
       ```
       var dataInt8Array = new Int8Array([24, 177]);
       var dataUint8Array = new Uint8Array([24, 177]);
@@ -103,71 +168,9 @@ The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary
       ```
       `first`, `second` and `third` variables are equal.
 
+## Manage the Local Bluetooth Adapter
 
-
-## The main features of the Bluetooth API include:
-
-- Managing the local Bluetooth adapter
-
-  You can [enable and disable the local Bluetooth adapter](#managing-the-local-bluetooth-adapter), and change the device name for it.
-
-- Discovering devices
-
-  You can [discover other Bluetooth devices](#discovering-bluetooth-devices).
-
-- Creating a bond with a Bluetooth device
-
-  You can [create a bond](#creating-a-bond-with-a-bluetooth-device) with another device retrieved through the discovery process. Bonding allows the 2 devices to establish a connection.
-
-- Connecting to and exchanging data with a Bluetooth device
-
-  You can [connect to and exchange data with a remote Bluetooth device](#connecting-to-and-exchanging-data-with-a-bluetooth-device).
-
-## The main Bluetooth (4.0) Low Energy features include:
-
-- Managing the local Bluetooth adapter
-
-  The [Bluetooth adapter management](#managing-the-local-bluetooth-adapter) is performed the same way as in the regular Bluetooth API.
-
-- Discovering Bluetooth Low Energy devices
-
-  You can [discover Bluetooth Low Energy devices](#discovering-bluetooth-low-energy-devices) in range. Through the discovery process, you can obtain basic information about available remote devices, such as their names and provided services.
-
-- Managing the advertising options
-
-  You can [manage advertising](#managing-the-advertising-options) to control how your device announces itself to other Bluetooth Low Energy devices for discovery.
-
-- Connecting to a Bluetooth Low Energy device
-
-  You can [connect to a remote Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device). When connected, you can access services and characteristics of the remote device.
-
-- Receiving notifications on connection state changes
-
-  You can [monitor the connection state](#receiving-notifications-on-connection-state-changes) to detect when the connection to the remote device is lost.
-
-- Retrieving Bluetooth GATT services
-
-  You can [retrieve information about Bluetooth GATT services](#retrieving-bluetooth-gatt-services) provided by the remote device.
-
-  Every GATT service defines characteristics it includes. By knowing the service, you know what features the Bluetooth device exposes.
-
-- Accessing the Bluetooth GATT characteristic value
-
-  You can [read and write the Bluetooth GATT characteristic value](#accessing-the-bluetooth-gatt-characteristic-value).
-
-  Characteristics allows you to monitor and sometimes control remote Bluetooth Low Energy devices. For example, a sensor reading can be exposed by the sensor device as a Bluetooth GATT characteristic.
-
-- Receiving notifications on characteristic value changes
-
-  You can [monitor a characteristic value](#receiving-notifications-on-characteristic-value-changes) to detect any changes, for example, in sensor readings and battery level.
-
-- Accessing the Bluetooth GATT descriptor value
-
-  You can [read and write the Bluetooth GATT descriptor value](#accessing-the-bluetooth-gatt-descriptor-value).
-
-## Managing the Local Bluetooth Adapter
-
-You can enable or disable the local Bluetooth adapter, and set the device name using the system-provided service through the `ApplicationControl` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl) and [tv](../../api/latest/device_api/tv/tizen/application.html#ApplicationControl) applications).
+You can enable or disable the local Bluetooth adapter, and set the device name using the system-provided service through the `ApplicationControl` interface (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl), and [tv](../../api/latest/device_api/tv/tizen/application.html#ApplicationControl) applications).
 
 To use the Bluetooth functionality of the device, you must switch the Bluetooth adapter on. The Bluetooth API does not provide a method to enable or disable the Bluetooth adapter of the device directly. When Bluetooth is required, you must request the built-in Settings application on the device to let the user enable or disable Bluetooth.
 
@@ -175,7 +178,7 @@ To use the Bluetooth functionality of the device, you must switch the Bluetooth 
 
 ![Bluetooth setting screen](./media/bluetooth_onoff.png)
 
-1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method and prepare the `ApplicationControl` object (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl) and [tv](../../api/latest/device_api/tv/tizen/application.html#ApplicationControl) applications) to request the Bluetooth switching operation:
+1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method and prepare the `ApplicationControl` object (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControl), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControl), and [tv](../../api/latest/device_api/tv/tizen/application.html#ApplicationControl) applications) to request the Bluetooth switching operation:
 
    ```
    var bluetoothSwitchAppControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/edit', null, 'application/x-bluetooth-on-off');
@@ -193,7 +196,7 @@ To use the Bluetooth functionality of the device, you must switch the Bluetooth 
    }
    ```
 
-3. Define the reply callback of the application control which implements the `ApplicationControlDataArrayReplyCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControlDataArrayReplyCallback), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControlDataArrayReplyCallback) and [tv](../../api/latest/device_api/tv/tizen/application.html#ApplicationControlDataArrayReplyCallback) applications):
+3. Define the reply callback of the application control which implements the `ApplicationControlDataArrayReplyCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/application.html#ApplicationControlDataArrayReplyCallback), [wearable](../../api/latest/device_api/wearable/tizen/application.html#ApplicationControlDataArrayReplyCallback), and [tv](../../api/latest/device_api/tv/tizen/application.html#ApplicationControlDataArrayReplyCallback) applications):
 
    ```
    var serviceReply = {
@@ -246,23 +249,23 @@ To use the Bluetooth functionality of the device, you must switch the Bluetooth 
 
 6. Set a friendly name for the device using the `setName()` method.
 
-   The name helps to recognize the device in a list of [retrieved devices](#discovering-bluetooth-devices).
+   The name helps to recognize the device in a list of [retrieved devices](#discover-bluetooth-devices).
 
    ```
    adapter.setName(chatServerName);
    ```
 
-## Managing remote devices
+## Manage remote devices
 
-### Discovering Bluetooth Devices
+### Discover Bluetooth devices
 
-The device discovery process can retrieve multiple types of Bluetooth devices, such as printers, mobile phones, and headphones. To find the kind of devices you want to communicate with, the `BluetoothClass` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothClass), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothClass) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothClass) applications) is used to define characteristics and capabilities of a Bluetooth device. The `BluetoothClassDeviceMajor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothClassDeviceMajor), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothClassDeviceMajor) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothClassDeviceMajor) applications) and `BluetoothClassDeviceMinor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothClassDeviceMinor), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothClassDeviceMinor) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothClassDeviceMinor) applications) specify the identifiers for major and minor Class of Device (CoD).
+The device discovery process can retrieve multiple types of Bluetooth devices, such as printers, mobile phones, and headphones. To find the kind of devices you want to communicate with, the `BluetoothClass` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothClass), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothClass), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothClass) applications) is used to define characteristics and capabilities of a Bluetooth device. The `BluetoothClassDeviceMajor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothClassDeviceMajor), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothClassDeviceMajor), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothClassDeviceMajor) applications), and `BluetoothClassDeviceMinor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothClassDeviceMinor), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothClassDeviceMinor), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothClassDeviceMinor) applications) specify the identifiers for major and minor Class of Device (CoD).
 
 You can also retrieve the known devices which were bonded or found in a prior discovery process.
 
 To search for remote devices and get the known devices:
 
-1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
+1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
 
    ```
    var adapter = tizen.bluetooth.getDefaultAdapter();
@@ -270,7 +273,7 @@ To search for remote devices and get the known devices:
 
 2. To search for remote devices, use the `discoverDevices()` method.
 
-   The results of the search are returned in the `BluetoothDiscoverDevicesSuccessCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback) applications).
+   The results of the search are returned in the `BluetoothDiscoverDevicesSuccessCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback) applications).
 
    ```
    var discoverDevicesSuccessCallback = {
@@ -284,12 +287,12 @@ To search for remote devices and get the known devices:
    adapter.discoverDevices(discoverDevicesSuccessCallback, null);
    ```
 
-   > **Note**
+   > [!NOTE]
    > To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
 
 3. To retrieve known devices (which have been previously paired or searched for), use the `getKnownDevices()` method.
 
-   The results of the search are returned in the `BluetoothDeviceArraySuccessCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback) applications).
+   The results of the search are returned in the `BluetoothDeviceArraySuccessCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback) applications).
 
    ```
    /* When a known device is found */
@@ -301,11 +304,11 @@ To search for remote devices and get the known devices:
    adapter.getKnownDevices(onGotDevices);
    ```
 
-### Creating a Bond with a Bluetooth Device
+### Create a bond with a Bluetooth device
 
 To create a bond with a Bluetooth device:
 
-1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
+1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
 
    ```
    var adapter = tizen.bluetooth.getDefaultAdapter();
@@ -325,8 +328,8 @@ To create a bond with a Bluetooth device:
    adapter.createBonding('35:F4:59:D1:7A:03', onBondingSuccessCallback, onErrorCallback);
    ```
 
-   > **Note**
-   > The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAddress), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAddress) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods.
+   > [!NOTE]
+   > The MAC address of the Bluetooth device is a `BluetoothAddress` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAddress), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAddress), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAddress) applications). You can get the MAC address of the peer device from the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDevice) applications), which is returned in the success callback of the `BluetoothAdapter`'s `getKnownDevices()` and `discoverDevices()` methods.
 
 3. To end the bond with a remote device, use the `destroyBonding()` method:
 
@@ -334,15 +337,15 @@ To create a bond with a Bluetooth device:
    adapter.destroyBonding('35:F4:59:D1:7A:03');
    ```
 
-### Connecting to and Exchanging Data with a Bluetooth Device
+### Connect to and exchange data with a Bluetooth device
 
-When you attempt to open a connection to another device, a Service Discovery Protocol (SDP) look-up is performed on the device, and the protocol and channel to be used for the connection are determined. If a connection is established and the socket is opened successfully, a `BluetoothSocket` instance (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothSocket), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothSocket) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothSocket) applications) with an open state is returned. The socket is subsequently used for exchanging data between the connected devices.
+When you attempt to open a connection to another device, a Service Discovery Protocol (SDP) look-up is performed on the device, and the protocol and channel to be used for the connection are determined. If a connection is established and the socket is opened successfully, a `BluetoothSocket` instance (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothSocket), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothSocket), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothSocket) applications) with an open state is returned. The socket is subsequently used for exchanging data between the connected devices.
 
 The Radio Frequency Communication (RFCOMM) is a set of transport protocols which allows multiple simultaneous connections to a device. If a device allows other devices to use its functionalities through this kind of connection, it is said to provide a service and it is called a server device. The devices that request the service are called client devices.
 
 To connect to services provided by a server device to the client devices:
 
-1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
+1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
 
    `var adapter = tizen.bluetooth.getDefaultAdapter();`
 
@@ -352,12 +355,12 @@ To connect to services provided by a server device to the client devices:
    adapter.registerRFCOMMServiceByUUID(serviceUUID, 'My service');
    ```
 
-   > **Note**
-   > For P2P communication between 2 instances of the same application, the UUID can be hard-coded in your application. To retrieve the UUID of a Bluetooth device, use the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDevice) applications). The object has an array of UUIDs available for the device.
+   > [!NOTE]
+   > For P2P communication between 2 instances of the same application, the UUID can be hard-coded in your application. To retrieve the UUID of a Bluetooth device, use the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDevice) applications). The object has an array of UUIDs available for the device.
 
-   When the service has been successfully registered, the `BluetoothServiceSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothServiceSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothServiceSuccessCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothServiceSuccessCallback) applications) is triggered.
+   When the service has been successfully registered, the `BluetoothServiceSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothServiceSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothServiceSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothServiceSuccessCallback) applications) is triggered.
 
-3. Before establishing a connection, your device must be bonded with a peer device. For more information, see [Creating a Bond with a Bluetooth Device](#creating-a-bond-with-a-bluetooth-device).
+3. Before establishing a connection, your device must be bonded with a peer device. For more information, see [Create a Bond with a Bluetooth Device](#create-a-bond-with-a-bluetooth-device).
 
 4. To connect to the server device, use the `connectToServiceByUUID()` method on the client device:
 
@@ -370,7 +373,7 @@ To connect to services provided by a server device to the client devices:
    });
    ```
 
-   When a connection between 2 devices is established, the `BluetoothSocketSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothSocketSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothSocketSuccessCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothSocketSuccessCallback) applications) on the client device and the `onconnect` event handler in the `BluetoothServiceHandler` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothServiceHandler), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothServiceHandler) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothServiceHandler) applications) on the server device are triggered.
+   When a connection between 2 devices is established, the `BluetoothSocketSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothSocketSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothSocketSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothSocketSuccessCallback) applications) on the client device and the `onconnect` event handler in the `BluetoothServiceHandler` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothServiceHandler), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothServiceHandler), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothServiceHandler) applications) on the server device are triggered.
 
 5. To send data to the peer device, use the `writeData()` method:
 
@@ -390,11 +393,11 @@ To connect to services provided by a server device to the client devices:
    When an incoming message is received from the peer device, the `onmessage` event handler in the `BluetoothSocket` interface is triggered.
 
 
-### Discovering Bluetooth Low Energy Devices
+### Discover Bluetooth Low Energy devices
 
 To search for remote Bluetooth devices:
 
-1. Define a scan event handler by implementing the `BluetoothLEScanCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEScanCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEScanCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEScanCallback) applications).
+1. Define a scan event handler by implementing the `BluetoothLEScanCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEScanCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEScanCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEScanCallback) applications).
     The callback is invoked when a remote device has been detected.
 
    ```
@@ -403,10 +406,10 @@ To search for remote Bluetooth devices:
    }
    ```
 
-   > **Note**
+   > [!NOTE]
    > To allow other Bluetooth devices to find your device, you must set the device to be visible through the system settings.
 
-2. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
+2. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
    ```
    var adapter = tizen.bluetooth.getLEAdapter();
@@ -424,11 +427,11 @@ To search for remote Bluetooth devices:
    adapter.stopScan();
    ```
 
-### Connecting to a Bluetooth Low Energy Device
+### Connect to a Bluetooth Low Energy device
 
 To connect to other Bluetooth Low Energy devices:
 
-1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
+1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
    ```
    var adapter = tizen.bluetooth.getLEAdapter();
@@ -448,7 +451,7 @@ To connect to other Bluetooth Low Energy devices:
 
 3. Define a callback for the scan operation that connects to a not connected found device and stops the scan.
 
-   Within the callback request, check if the found device is connected and establish a connection with the not connected device using the `isConnected()` and `connect()` methods of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
+   Within the callback request, check if the found device is connected and establish a connection with the not connected device using the `isConnected()` and `connect()` methods of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
 
    ```
    var remoteDevice = null;
@@ -478,17 +481,17 @@ To connect to other Bluetooth Low Energy devices:
    remoteDevice.disconnect();
    ```
 
-### Receiving Notifications on Connection State Changes
+### Receive notifications on connection state changes
 
 To receive notifications whenever the device connection is established or lost:
 
-1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
+1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
    ```
    var adapter = tizen.bluetooth.getLEAdapter();
    ```
 
-2. Define a connection state change listener by implementing the `BluetoothLEConnectChangeCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEConnectChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEConnectChangeCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEConnectChangeCallback) applications):
+2. Define a connection state change listener by implementing the `BluetoothLEConnectChangeCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEConnectChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEConnectChangeCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEConnectChangeCallback) applications):
 
    ```
    var connectionListener = {
@@ -503,7 +506,7 @@ To receive notifications whenever the device connection is established or lost:
 
 3. Define a callback for the scan operation that connects to a found device and stops the scan.
 
-   Within the callback, register a connection state change listener using the `addConnectStateChangeListener()` method of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
+   Within the callback, register a connection state change listener using the `addConnectStateChangeListener()` method of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
 
    ```
    var remoteDevice = null;
@@ -535,13 +538,13 @@ To receive notifications whenever the device connection is established or lost:
    remoteDevice.removeConnectStateChangeListener(watchId);
    ```
 
-### Retrieving Bluetooth GATT Services
+### Retrieve Bluetooth GATT services
 
 To retrieve a list of GATT services (Generic Attribute) provided by a remote device:
 
-1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
+1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
 
-2. Define a connection state change listener by implementing the `BluetoothLEConnectChangeCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEConnectChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEConnectChangeCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEConnectChangeCallback) applications):
+2. Define a connection state change listener by implementing the `BluetoothLEConnectChangeCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEConnectChangeCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEConnectChangeCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEConnectChangeCallback) applications):
 
    ```
    function showGATTService(service, indent) {
@@ -558,7 +561,7 @@ To retrieve a list of GATT services (Generic Attribute) provided by a remote dev
    }
    ```
 
-3. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
+3. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
 
    ```
    var serviceUUIDs = remoteDevice.uuids;
@@ -584,13 +587,13 @@ To retrieve a list of GATT services (Generic Attribute) provided by a remote dev
    console.log('Services length ' + services.length);
    ```
 
-### Accessing the Bluetooth GATT Characteristic Value
+### Access the Bluetooth GATT characteristic value
 
 To read and write a value of the Bluetooth characteristic:
 
-1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
+1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
 
-2. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
+2. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
 
    ```
    var serviceUUIDs = remoteDevice.uuids;
@@ -602,14 +605,13 @@ To read and write a value of the Bluetooth characteristic:
    var gattService = remoteDevice.getService(serviceUUIDs[0]);
    ```
 
-4. Select an interesting characteristic from the `characteristics` attribute of the `BluetoothGATTService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTService), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTService) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTService) applications). The characteristic may be selected by the `uuid` attribute:
+4. Select an interesting characteristic from the `characteristics` attribute of the `BluetoothGATTService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTService), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTService), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTService) applications). The characteristic may be selected by the `uuid` attribute:
 
    ```
    var property = gattService.characteristics.find(characteristic => characteristic.uuid === "abcd");
-
    ```
 
-5. Define a callback implementing the `ReadValueSuccessCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#ReadValueSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#ReadValueSuccessCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#ReadValueSuccessCallback) applications), which receives the value of the characteristic:
+5. Define a callback implementing the `ReadValueSuccessCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#ReadValueSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#ReadValueSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#ReadValueSuccessCallback) applications), which receives the value of the characteristic:
 
    ```
    function readSuccess(value) {
@@ -621,7 +623,7 @@ To read and write a value of the Bluetooth characteristic:
    }
    ```
 
-6. To retrieve the GATT characteristic value, use the `readValue()` method of the `BluetoothGATTCharacteristic` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTCharacteristic), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTCharacteristic) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTCharacteristic) applications):
+6. To retrieve the GATT characteristic value, use the `readValue()` method of the `BluetoothGATTCharacteristic` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTCharacteristic), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTCharacteristic), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTCharacteristic) applications):
 
    ```
    if (!property.isReadable) {
@@ -649,13 +651,13 @@ To read and write a value of the Bluetooth characteristic:
    property.writeValue(newValue, writeSuccess, writeFail);
    ```
 
-### Receiving Notifications on Characteristic Value Changes
+### Receive notifications on characteristic value changes
 
 To monitor changes in a Bluetooth characteristic:
 
-1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
+1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
 
-2. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
+2. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
 
    ```
    var serviceUUIDs = remoteDevice.uuids;
@@ -667,13 +669,13 @@ To monitor changes in a Bluetooth characteristic:
    var gattService = remoteDevice.getService(serviceUUIDs[0]);
    ```
 
-4. Select an interesting characteristic from the `characteristics` attribute of the `BluetoothGATTService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTService), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTService) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTService) applications). In this example, the first characteristic is used:
+4. Select an interesting characteristic from the `characteristics` attribute of the `BluetoothGATTService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTService), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTService), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTService) applications). In this example, the first characteristic is used:
 
    ```
    var property = gattService.characteristics[0];
    ```
 
-5. Define a callback implementing the `ReadValueSuccessCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#ReadValueSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#ReadValueSuccessCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#ReadValueSuccessCallback) applications), which receives the value of the characteristic every time the value changes:
+5. Define a callback implementing the `ReadValueSuccessCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#ReadValueSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#ReadValueSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#ReadValueSuccessCallback) applications), which receives the value of the characteristic every time the value changes:
 
    ```
    function onValueChange(value) {
@@ -681,7 +683,7 @@ To monitor changes in a Bluetooth characteristic:
    }
    ```
 
-6. Register a value change listener using the `addValueChangeListener()` method of the `BluetoothGATTCharacteristic` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTCharacteristic), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTCharacteristic) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTCharacteristic) applications):
+6. Register a value change listener using the `addValueChangeListener()` method of the `BluetoothGATTCharacteristic` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTCharacteristic), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTCharacteristic), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTCharacteristic) applications):
 
    ```
    var watchId = property.addValueChangeListener(onValueChange);
@@ -693,13 +695,13 @@ To monitor changes in a Bluetooth characteristic:
    property.removeValueChangeListener(watchId);
    ```
 
-### Accessing the Bluetooth GATT Descriptor Value
+### Access the Bluetooth GATT descriptor value
 
 To read and write a value of the Bluetooth descriptor:
 
-1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
+1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
 
-2. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
+2. Retrieve a list of GATT service UUIDs from the `uuids` attribute of the `BluetoothLEDevice` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEDevice) applications):
 
    ```
    var serviceUUIDs = remoteDevice.uuids;
@@ -711,19 +713,19 @@ To read and write a value of the Bluetooth descriptor:
    var gattService = remoteDevice.getService(serviceUUIDs[0]);
    ```
 
-4. Select an interesting characteristic from the `characteristics` attribute of the `BluetoothGATTService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTService), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTService) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTService) applications). The characteristic may be selected by the `uuid` attribute:
+4. Select an interesting characteristic from the `characteristics` attribute of the `BluetoothGATTService` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTService), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTService), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTService) applications). The characteristic may be selected by the `uuid` attribute:
 
    ```
    var characteristic = gattService.characteristics.find(characteristic => characteristic.uuid === "abcd");
    ```
 
-5. Select an interesting descriptor from the `descriptors` attribute of the `BluetoothGATTCharacteristic` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTCharacteristic), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTCharacteristic) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTCharacteristic) applications). The descriptor may be selected by the `uuid` attribute:
+5. Select an interesting descriptor from the `descriptors` attribute of the `BluetoothGATTCharacteristic` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTCharacteristic), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTCharacteristic), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTCharacteristic) applications). The descriptor may be selected by the `uuid` attribute:
 
    ```
    var descriptor = characteristic.descriptors.find(descriptor => descriptor.uuid === "dcba");
    ```
 
-6. Define a callback implementing the `ReadValueSuccessCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#ReadValueSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#ReadValueSuccessCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#ReadValueSuccessCallback) applications), which receives the value of the descriptor:
+6. Define a callback implementing the `ReadValueSuccessCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#ReadValueSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#ReadValueSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#ReadValueSuccessCallback) applications), which receives the value of the descriptor:
 
    ```
    function readSuccess(value) {
@@ -735,7 +737,7 @@ To read and write a value of the Bluetooth descriptor:
    }
    ```
 
-7. To retrieve the GATT descriptor value, use the `readValue()` method of the `BluetoothGATTDescriptor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTDescriptor), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTDescriptor) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTDescriptor) applications):
+7. To retrieve the GATT descriptor value, use the `readValue()` method of the `BluetoothGATTDescriptor` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTDescriptor), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTDescriptor), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTDescriptor) applications):
 
    ```
    descriptor.readValue(readSuccess, readFail);
@@ -757,29 +759,29 @@ To read and write a value of the Bluetooth descriptor:
    descriptor.writeValue(newValue, writeSuccess, writeFail);
    ```
 
-### Accessing the ATT MTU of connected device
+### Access the ATT MTU of connected device
 
-To get the ATT MTU value or request change of the ATT MTU value:
+To get the ATT MTU value or request change of the ATT MTU value, follow these steps:
 
-1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
-2. If the `device` has been connected call `getAttMtu()` function on the `device` object to get current ATT MTU value:
+1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
+2. If the `device` has been connected call `getAttMtu()` on the `device` object to get current ATT MTU value:
    ```
    var attMtu = device.getAttMtu();
    ```
-3. If the `device` has been connected call `requestAttMtuChange()` function on the `device` object to request a change of the ATT MTU value. Pass desired ATT MTU value as an argument:
+3. If the `device` is connected, call `requestAttMtuChange()` on the `device` object to request a change of the ATT MTU value. Pass desired ATT MTU value as an argument:
    ```
    var newAttMtuValue = 64;
    device.requestAttMtuChange(newAttMtuValue);
    ```
-   > **Note**
+   > [!NOTE]
    > After calling `requestAttMtuChange()` function ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
 
-### Receiving Notifications on ATT MTU changes
+### Receive notifications on ATT MTU changes
 
 To recieve notifications on ATT MTU value changes:
 
-1. [Connect to a Bluetooth Low Energy device](#connecting-to-a-bluetooth-low-energy-device).
-2. If the `device` has been connected call `addAttMtuChangeListener()` function providing as a parameter the callback function to be called on each change of the ATT MTU value:
+1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
+2. If the `device` is connected, call `addAttMtuChangeListener()` providing as a parameter the callback function to be called on each change of the ATT MTU value:
    ```
    function attMtuChangeCallback(newAttMtuValue) {
       console.log("ATT MTU value has changed to: " + newAttMtuValue);
@@ -793,124 +795,122 @@ To recieve notifications on ATT MTU value changes:
    device.requestAttMtuChange(newAttMtuValue);
    ```
    The change of ATT MTU value will trigger the callback function.
-   > **Note**
+   > [!NOTE]
    > After calling `requestAttMtuChange()` function ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
 
-When a listener monitoring the ATT MTU value changes is no longer needed, you can remove it:
-
-4. Call `removeAttMtuChangeListener()` providing the identifier of the listener you want to remove.
+4. When a listener monitoring the ATT MTU value changes is no longer needed, you can remove it. To do this, call `removeAttMtuChangeListener()` providing the identifier of the listener you want to remove.
    ```
    device.removeAttMtuChangeListener(listenerId);
    ```
    After removing of the listener, changes of the ATT MTU value will no longer trigger the callback function.
 
-## Managing the local GATT server
+## Manage the local GATT server
 
 ### Start the server
 
 To start the local GATT server:
 
-1. Retrieve `BluetoothGATTServer` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer) applications) with `getGATTServer()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
+1. Retrieve `BluetoothGATTServer` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer) applications) with `getGATTServer()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
-```
-var server = tizen.bluetooth.getGATTServer();
-```
+   ```
+   var server = tizen.bluetooth.getGATTServer();
+   ```
 
-2. Set up callbacks and start the local GATT server with `start()` method of `BluetoothGATTServer` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer) applications) interface:
+2. Set up callbacks and start the local GATT server with `start()` method of `BluetoothGATTServer` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer) applications) interface:
 
-```
-var onSuccess = function() {
-   console.log("Server started successfully");
-};
+   ```
+   var onSuccess = function() {
+      console.log("Server started successfully");
+   };
 
-var onError = function(error) {
-   console.error("Failed to start the server, error: " + error.message);
-};
+   var onError = function(error) {
+      console.error("Failed to start the server, error: " + error.message);
+   };
 
-server.start(onSuccess, onError);
-```
+   server.start(onSuccess, onError);
+   ```
 
 ### Stop the server
 
 To stop the local GATT server:
 
-1. Retrieve `BluetoothGATTServer` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer) applications) with `getGATTServer()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
+1. Retrieve `BluetoothGATTServer` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer) applications) with `getGATTServer()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
-```
-var server = tizen.bluetooth.getGATTServer();
-```
+   ```
+   var server = tizen.bluetooth.getGATTServer();
+   ```
 
-2. Set up callbacks and stop the local GATT server with `stop()` method of `BluetoothGATTServer` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer) applications) interface:
+2. Set up callbacks and stop the local GATT server with `stop()` method of `BluetoothGATTServer` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer) applications) interface:
 
-```
-var onSuccess = function() {
-   console.log("Server stopped successfully");
-};
+   ```
+   var onSuccess = function() {
+      console.log("Server stopped successfully");
+   };
 
-var onError = function(error) {
-   console.error("Failed to stop the server, error: " + error.message);
-};
+   var onError = function(error) {
+      console.error("Failed to stop the server, error: " + error.message);
+   };
 
-server.stop(onSuccess, onError);
-```
+   server.stop(onSuccess, onError);
+   ```
 
-### Receiving notifications on server's connection state changes
+### Receive notifications on server's connection state changes
 
 To receive notifications whenever a remote connection with the local server is established or lost:
 
 1. Define `BluetoothLEConnectChangeCallback`:
 
-```
-var connectChangeCallback = {
-   onconnected: function(device) {
-      console.log("A client connected: " + device.address);
-   },
-   ondisconnected: function(device) {
-      console.log("A client disconnected: " + device.address);
-   }
-};
-```
+   ```
+   var connectChangeCallback = {
+      onconnected: function(device) {
+         console.log("A client connected: " + device.address);
+      },
+      ondisconnected: function(device) {
+         console.log("A client disconnected: " + device.address);
+      }
+   };
+   ```
 
-2. Add the defined callback with `addConnectStateChangeListener()` method (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter::addConnectStateChangeListener), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter::addConnectStateChangeListener) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter::addConnectStateChangeListener) applications):
+2. Add the defined callback with `addConnectStateChangeListener()` method (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter::addConnectStateChangeListener), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter::addConnectStateChangeListener), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter::addConnectStateChangeListener) applications):
 
-```
-var adapter = tizen.bluetooth.getLEAdapter();
-var watchId = adapter.addConnectStateChangeListener(connectChangeCallback);
-```
+   ```
+   var adapter = tizen.bluetooth.getLEAdapter();
+   var watchId = adapter.addConnectStateChangeListener(connectChangeCallback);
+   ```
 
 The `watchId` value stores an identifier of the listener, which is needed to remove the listener.
 
 3. When a listener monitoring the connection changes is no longer needed, it can be removed:
 
-```
-adapter.removeConnectStateChangeListener(watchId);
-```
+   ```
+   adapter.removeConnectStateChangeListener(watchId);
+   ```
 
-### Accessing connection's ATT MTU
+### Access connection's ATT MTU
 
 To get the value of connection's ATT MTU value:
 
 1. Define the `ConnectionMtuCallback` and (optionally) the error callback:
 
-```
-var connectionMtuCB = function(mtu) {
-   console.log("The ATT MTU value: " + mtu);
-};
+   ```
+   var connectionMtuCB = function(mtu) {
+      console.log("The ATT MTU value: " + mtu);
+   };
 
-var errorCB = function(error) {
-   console.log("Cannot retrieve ATT MTU value, error: " + error.message);
-};
-```
+   var errorCB = function(error) {
+      console.log("Cannot retrieve ATT MTU value, error: " + error.message);
+   };
+   ```
 
-2. Select proper remote client's address and get the value of ATT MTU with `getConnectionMtu()` method (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer::getConnectionMtu), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer::getConnectionMtu) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer::getConnectionMtu) applications):
+2. Select proper remote client's address and get the value of ATT MTU with `getConnectionMtu()` method (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothGATTServer::getConnectionMtu), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothGATTServer::getConnectionMtu), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothGATTServer::getConnectionMtu) applications):
 
-```
-var clientAddress = "12:34:56:78:90:ab";
-var server = tizen.bluetooth.getGATTServer();
-server.getConnectionMtu(clientAddress, connectionMtuCB, errorCB);
-```
+   ```
+   var clientAddress = "12:34:56:78:90:ab";
+   var server = tizen.bluetooth.getGATTServer();
+   server.getConnectionMtu(clientAddress, connectionMtuCB, errorCB);
+   ```
 
-### Registering services
+### Register services
 To register a GATT service in the local server:
 
 1. Define the init data of the service and all of its components:
@@ -954,14 +954,14 @@ To register a GATT service in the local server:
    var server = tizen.bluetooth.getGATTServer();
    server.registerService(serviceInitData, successCallback, errorCallback);
    ```
-   > **Note**
+   > [!NOTE]
    > The service will be unregistered from the server when:
    > - service's `unregister()` method is called,
    > - server's `unregisterAllServices()` method is called,
    > - application is reloaded,
    > - application is closed.
 
-### Unregistering services
+### Unregister services
 GATT services can be unregistered either one at a time or all at once.
 
 To unregister a single service from the local GATT server:
@@ -984,7 +984,7 @@ To unregister a single service from the local GATT server:
 
    serviceToBeUnregistered.unregister(successCallback, errorCallback);
    ```
-   > **Note**
+   > [!NOTE]
    > After `unregister()` is called for the last registered service, the server is stopped.
    > If new services are then registered, server's `start()` method has to be
    > called to make them visible to clients.
@@ -1004,12 +1004,12 @@ To unregister all services from the local GATT server at once, call server's
    var server = tizen.bluetooth.getGATTServer();
    server.unregisterAllServices(successCallback, errorCallback);
    ```
-   > **Note**
+   > [!NOTE]
    > After the calling `unregisterAllServices()`, the server is stopped.
    > If new services are then registered, server's `start()` method has to be
    > called to make them visible to clients.
 
-### Sending notifications about characteristic's value changes to the clients
+### Send notifications about characteristic's value changes to the clients
 GATT clients connected to the server running on the local device can register for updates of its characteristics' values.
 The server can send two types of such updates - _notifications_ and _indications_.
 They differ in that, clients receiving indications have to acknowledge them - i.e. send a message back to the server, telling that they received the new value. Clients do not acknowledge notifications.
@@ -1050,11 +1050,11 @@ To define a CCCD and add it to the characteristic:
      characteristics: [notificationEnabledCharacteristicInitData]
    };
    ```
-`notificationEnabledCharacteristicInitData` is now ready to be added to a service that will [be registered in a local GATT server](#registering-services).
+`notificationEnabledCharacteristicInitData` is now ready to be added to a service that will [be registered in a local GATT server](#register-services).
 
 To update clients on characteristic's value change after registering the service:
 
-1. Define a `NotificationCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#NotificationCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#NotificationCallback) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#NotificationCallback) applications):
+1. Define a `NotificationCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#NotificationCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#NotificationCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#NotificationCallback) applications):
 
    ```
    var notificationCallback = {
@@ -1111,7 +1111,7 @@ To update clients on characteristic's value change after registering the service
    ```
 The notification is sent and `notificationCallback`'s members will be called soon.
 
-### Responding to read and write value requests from server clients
+### Respond to read and write value requests from server clients
 
 In order to react and respond to the read and write value requests from a client connected to the server running on the device, the callback functions need to be set on the characteristics or on the descriptors.
 
@@ -1189,7 +1189,7 @@ To set a callback function for read or write value request on a characteristic o
    };
    ```
 
-5. To register the callback called when a client reads the value of the characteristic from the local GATT server, create the callback function and pass it as an argument to the `setReadValueRequestCallback():
+5. To register the callback called when a client reads the value of the characteristic from the local GATT server, create the callback function and pass it as an argument to the `setReadValueRequestCallback()`:
    ```
    var characteristicReadRequestCallback = function(clientAddress, offset) {
       console.log(clientAddress + " requested to read characteristic's value with offset: " + offset);
@@ -1198,7 +1198,7 @@ To set a callback function for read or write value request on a characteristic o
    server.services[0].characteristics[0].setReadValueRequestCallback(characteristicReadRequestCallback, setCallbackSuccessCB, setCallbackErrorCB, sendResponseSuccessCB, sendResponseErrorCB);
    ```
 
-   > **Note**
+   > [!NOTE]
    > A callback set with `setReadValueRequestCallback()` function overwrites any previously set `ReadValueRequestCallback` on this characteristic.
 
 6. To register the callback called when a client writes a value of the characteristic of the local GATT server, create the callback function and pass it as an argument to the `setWriteValueRequestCallback()` method called on the characteristic object.
@@ -1212,7 +1212,7 @@ To set a callback function for read or write value request on a characteristic o
    server.services[0].characteristics[0].setWriteValueRequestCallback(characteristicWriteRequestCallback, setCallbackSuccessCB, setCallbackErrorCB, sendResponseSuccessCB, sendResponseErrorCB);
    ```
 
-   > **Note**
+   > [!NOTE]
    > A callback set with `setWriteValueRequestCallback()` function overwrites any previously set `WriteValueRequestCallback` on this characteristic.
 
 7. To register the callback called when a client reads the value of the descriptor from the local GATT server, create the callback function and pass it as an argument to the `setReadValueRequestCallback()` method called on the descriptor object.
@@ -1221,10 +1221,10 @@ To set a callback function for read or write value request on a characteristic o
       console.log(clientAddress + " requested to read descriptor's value with offset: " + offset);
       return new tizen.GATTRequestReply(0, "0x1234");
    };
-   server.services[0].characteristics[0].descriptors[0].setReadValueRequestCallback(characteristicReadRequestCallback, setCallbackSuccessCB, setCallbackErrorCB, sendResponseSuccessCB, sendResponseErrorCB);
+   server.services[0].characteristics[0].descriptors[0].setReadValueRequestCallback(descriptorReadRequestCallback, setCallbackSuccessCB, setCallbackErrorCB, sendResponseSuccessCB, sendResponseErrorCB);
    ```
 
-   > **Note**
+   > [!NOTE]
    > A callback set with `setReadValueRequestCallback()` function overwrites any previously set `ReadValueRequestCallback` on this descriptor.
 
 8. To register the callback called when a client writes a value of the descriptor of the local GATT server, create the callback function and pass it as an argument to the `setWriteValueRequestCallback()` method called on the descriptor object.
@@ -1238,19 +1238,19 @@ To set a callback function for read or write value request on a characteristic o
    server.services[0].characteristics[0].descriptors[0].setWriteValueRequestCallback(descriptorWriteRequestCallback, setCallbackSuccessCB, setCallbackErrorCB, sendResponseSuccessCB, sendResponseErrorCB);
    ```
 
-   > **Note**
+   > [!NOTE]
    > A callback set with `setWriteValueRequestCallback()` function overwrites any previously set `WriteValueRequestCallback` on this descriptor.
 
-> **Note**
-> The callbacks described here can also be registered by putting them in `BluetoothGATTServerCharacteristicInit` or `BluetoothGATTServerDescriptorInit`.
+   > [!NOTE]
+   > The callbacks described here can also be registered by putting them in `BluetoothGATTServerCharacteristicInit` or `BluetoothGATTServerDescriptorInit`.
 
-### Managing the Advertising Options
+### Manage the Advertise Options
 
 The Bluetooth Low Energy technology allows a device to broadcast some information without a connection between devices. The Bluetooth Low Energy API provides methods to control this advertising (broadcasting).
 
 To control what information is advertised by the device:
 
-1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager) and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
+1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
 
    ```
    var adapter = tizen.bluetooth.getLEAdapter();
@@ -1272,8 +1272,8 @@ To control what information is advertised by the device:
    }, 'LOW_LATENCY', connectable);
    ```
 
-   > **Note**
-   > To learn how to make your mobile device visible to other Bluetooth devices, see [Managing the Local Bluetooth Adapter](#managing-the-local-bluetooth-adapter).
+   > [!NOTE]
+   > To learn how to make your mobile device visible to other Bluetooth devices, see [Manage the Local Bluetooth Adapter](#manage-the-local-bluetooth-adapter).
 
 3. To disable the advertising, use the `stopAdvertise()` method of the `BluetoothLEAdapter` interface:
 
@@ -1282,6 +1282,7 @@ To control what information is advertised by the device:
    ```
 
 ## Related information
-* Dependencies
+- Dependencies
    - Tizen 2.4 and Higher for Mobile
    - Tizen 2.3.1 and Higher for Wearable
+   - Tizen 6.0 and Higher for TV
