@@ -1354,15 +1354,20 @@ The string may start without or with one of below prefixes:
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataInt8Array = new Int8Array([-21, 31]);
 var dataUint8Array = new Uint8Array([240, 129]);
 var dataString = "0x18b1";
-console.log("converted from Int8Array: " + tizen.bluetooth.toByteArray(dataInt8Array));
-console.log("converted from Uint8Array: " + tizen.bluetooth.toByteArray(dataUint8Array));
-console.log("converted from DOMString: " + tizen.bluetooth.toByteArray(dataString));
+
+var fromInt8Array = tizen.bluetooth.toByteArray(dataInt8Array);
+var fromUint8Array = tizen.bluetooth.toByteArray(dataUint8Array);
+var fromString = tizen.bluetooth.toByteArray(dataString);
+
+console.log("converted from Int8Array: " + JSON.stringify(fromInt8Array));
+console.log("converted from Uint8Array: " + JSON.stringify(fromUint8Array));
+console.log("converted from DOMString: " + JSON.stringify(fromString));
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>converted from Int8Array: Int8Array(2) [-21, 31]
-converted from Uint8Array: Int8Array(2) [-16, -127]
-converted from DOMString: Int8Array(2) [24, -79]
+<span class="title"><p>Output example:</p></span><pre>converted from Int8Array: [235, 31]
+converted from Uint8Array: [240, 129]
+converted from DOMString: [244, 177]
 </pre>
 </div>
 </dd>
@@ -1466,15 +1471,20 @@ The string may start without or with one of below prefixes:
 <span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var dataInt8Array = new Int8Array([-21, 31]);
 var dataUint8Array = new Uint8Array([240, 129]);
 var dataString = "0x18b1";
-console.log("converted from Int8Array: " + tizen.bluetooth.toUint8Array(dataInt8Array));
-console.log("converted from Uint8Array: " + tizen.bluetooth.toUint8Array(dataUint8Array));
-console.log("converted from DOMString: " + tizen.bluetooth.toUint8Array(dataString));
+
+var fromInt8Array = tizen.bluetooth.toUint8Array(dataInt8Array);
+var fromUint8Array = tizen.bluetooth.toUint8Array(dataUint8Array);
+var fromString = tizen.bluetooth.toUint8Array(dataString);
+
+console.log("converted from Int8Array: " + JSON.stringify(fromInt8Array));
+console.log("converted from Uint8Array: " + JSON.stringify(fromUint8Array));
+console.log("converted from DOMString: " + JSON.stringify(fromString));
 </pre>
 </div>
 <div class="output">
-<span class="title"><p>Output example:</p></span><pre>converted from Int8Array: Uint8Array(2) [235, 31]
-converted from Uint8Array: Uint8Array(2) [240, 129]
-converted from DOMString: Uint8Array(2) [24, 177]
+<span class="title"><p>Output example:</p></span><pre>converted from Int8Array: {"0":235, "1":31}
+converted from Uint8Array: {"0":240, "1":129}
+converted from DOMString: {"0":24, "1":177}
 </pre>
 </div>
 </dd>
@@ -1513,9 +1523,13 @@ converted from DOMString: Uint8Array(2) [24, 177]
 </li></ul>
         </div>
 <div class="example">
-<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">tizen.bluetooth.uuidTo128bit("1234");
-tizen.bluetooth.uuidTo128bit("ab5690ef");
-tizen.bluetooth.uuidTo128bit("abcdef01-2345-6789-abcd-ef0123456789");
+<span class="example"><p>Code example:</p></span><pre name="code" class="examplecode prettyprint">var uuidFrom16bits = tizen.bluetooth.uuidTo128bit("1234");
+var uuidFrom32bits = tizen.bluetooth.uuidTo128bit("ab5690ef");
+var uuidFrom128bits = tizen.bluetooth.uuidTo128bit("abcdef01-2345-6789-abcd-ef0123456789");
+
+console.log(uuidFrom16bits);
+console.log(uuidFrom32bits);
+console.log(uuidFrom128bits);
 </pre>
 </div>
 <div class="output">
@@ -4495,7 +4509,7 @@ The <em>sendResponseErrorCallback</em> will be launched in the following situati
               <li>
  NotSupportedError - If the feature is not supported.              </li>
               <li>
- InvalidValuesError - If <em>GATTRequestReply::statusCode</em>.              </li>
+ InvalidValuesError - If <em>GATTRequestReply::statusCode</em> or <em>GATTRequestReply::data</em> is invalid.              </li>
               <li>
  AbortError - If any other error occurs.              </li>
             </ul>
@@ -5074,7 +5088,7 @@ The <em>sendResponseErrorCallback</em> will be launched in the following situati
               <li>
  NotSupportedError - If the feature is not supported.              </li>
               <li>
- InvalidValuesError - If <em>GATTRequestReply::statusCode</em>.              </li>
+ InvalidValuesError - If <em>GATTRequestReply::statusCode</em> or <em>GATTRequestReply::data</em> is invalid.              </li>
               <li>
  AbortError - If any other error occurs.              </li>
             </ul>
@@ -5127,7 +5141,7 @@ The <em>sendResponseErrorCallback</em> will be launched in the following situati
 /* characteristic with at least one descriptor already exists */
 var callback = function(clientAddress, value, offset, replyRequired)
 {
-  console.log(clientAddress + " requested to write characteristic's value: " + value +
+  console.log(clientAddress + " requested to write descriptor's value: " + value +
               " with offset: " + offset);
   return replyRequired ? new tizen.GATTRequestReply(0, "0x1234") : null;
 };
@@ -5570,8 +5584,9 @@ The <em>ErrorCallback</em> is launched with these error types:
  Callback functions that are called when the connection state changes.
                 </li>
           <li class="param">
-<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>
-</li>
+<span class="name">errorCallback</span><span class="optional"> [optional]</span><span class="optional"> [nullable]</span>:
+ Callback function that is called when getting MTU of a connection fails.
+                </li>
         </ul>
 </div>
 <div class="exceptionlist">
@@ -5598,7 +5613,7 @@ var errorCB = function(e)
   console.log("Cannot retrieve the ATT MTU, error: " + e);
 };
 
-server.getConnectionMtu("058d", successCB, errorCB);
+server.getConnectionMtu("12:34:56:78:90:ab", successCB, errorCB);
 </pre>
 </div>
 <div class="output">
