@@ -26,6 +26,8 @@
 ## [Creating Tizen Images with MIC](/platform/developing/creating.md)
 ## [Flashing an Image to Device](/platform/developing/flashing.md)
 ## [Development Tips](/platform/developing/tips.md)
+## [Flashing an Image to RPI](/platform/developing/flashing-rpi.md)
+
 
 # Porting
 ## [Overview](/platform/porting/overview.md)
