@@ -9,10 +9,10 @@
 - IDE
   - Tizen 6.0 platform support has been added.
   - Battery Historian tool has been added to help analyze the battery usage.
-  - Tizen Core new CLI support for Tizen 6.0 Native applications has been added
-  - Toochain has been updated to GCC 9.2 and LLVM 10
-  - Support for MacOS Catalina, Ubuntu 18.04 and Ubuntu 20.04 has been added
-  - Support for aarch64 architecture on IOT 6.0 extension for rpi4 has been added
+  - Tizen Core new CLI support for Tizen 6.0 Native applications has been added.
+  - Toochain has been updated to GCC 9.2 and LLVM 10.
+  - Support for MacOS Catalina, Ubuntu 18.04 and Ubuntu 20.04 has been added.
+  - Support for aarch64 architecture on IOT 6.0 extension for rpi4 has been added.
 
 ### Deprecated
   - Tizen RT will be deprecated starting Tizen Studio 4.1
