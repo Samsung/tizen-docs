@@ -6,13 +6,17 @@ You can use Bluetooth functionalities in your application, such as managing the 
 
 The main features of the Bluetooth API include:
 
+- Handle UUIDs and binary data
+
+  You can [convert UUIDs and binary data between equivalent formats and compare UUIDs in different formats](#handle-uuids-and-binary-data).
+
 - Manage the local Bluetooth adapter
 
   You can [enable and disable the local Bluetooth adapter](#manage-the-local-bluetooth-adapter), and change the device name for it.
 
 - Discover devices
 
-  You can [discover other Bluetooth devices](#discovere-bluetooth-devices).
+  You can [discover other Bluetooth devices](#discover-bluetooth-devices).
 
 - Create a bond with a Bluetooth device
 
@@ -54,7 +58,7 @@ The main Bluetooth (4.0) Low Energy features include:
 
   You can [read and write the Bluetooth GATT characteristic value](#access-the-bluetooth-gatt-characteristic-value).
 
-  Characteristics allows you to monitor and sometimes control remote Bluetooth Low Energy devices. For example, a sensor reading can be exposed by the sensor device as a Bluetooth GATT characteristic.
+  Characteristic allows you to monitor and sometimes control remote Bluetooth Low Energy devices. For example, a sensor reading can be exposed by the sensor device as a Bluetooth GATT characteristic.
 
 - Receive notifications on characteristic value changes
 
@@ -63,6 +67,38 @@ The main Bluetooth (4.0) Low Energy features include:
 - Access the Bluetooth GATT descriptor value
 
   You can [read and write the Bluetooth GATT descriptor value](#access-the-bluetooth-gatt-descriptor-value).
+
+- Monitor ATT MTU of a connection with a remote GATT server
+
+  You can [read the current value of connection's ATT MTU](#access-the-att-mtu-of-connected-device) and [register a listener to receive information about its changes](#receive-notifications-on-att-mtu-changes).
+
+- Start and stop the local GATT server
+
+  You can [start](#start-the-server) and [stop](#stop-the-server) exposing services registered in the local GATT server.
+
+- Receive notifications on GATT connection state changes
+
+  You can [register a listener to monitor GATT connection changes](#receive-notifications-on-connection-state-changes).
+
+- Check ATT MTU of a connection with a remote GATT client
+
+  You can [read ATT MTU of a connection with a remote client](#access-connections-att-mtu).
+
+- Manage services in the local GATT server
+
+  You can [register](#register-services) and [unregister](#unregister-services) services in the local GATT server.
+
+- Notify remote GATT clients about changes of characteristic's value
+
+  You can [send notifications and indications about changes of characteristic's value](#send-notifications-about-characteristics-value-changes-to-the-clients) to remote GATT clients.
+
+- Enable reading and writing values of characteristics and descriptors registered in the local GATT server
+
+  You can [register callbacks to respond to read and write value requests from server clients](#respond-to-read-and-write-value-requests-from-server-clients).
+
+- Manage advertising options
+
+  You can [set up GATT advertising](#manage-the-advertise-options) in the local BLE adapter.
 
 ## Prerequisites
 
@@ -778,7 +814,7 @@ To get the ATT MTU value or request change of the ATT MTU value, follow these st
 
 ### Receive notifications on ATT MTU changes
 
-To recieve notifications on ATT MTU value changes:
+To receive notifications on ATT MTU value changes:
 
 1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
 2. If the `device` is connected, call `addAttMtuChangeListener()` providing as a parameter the callback function to be called on each change of the ATT MTU value:
@@ -854,19 +890,19 @@ To stop the local GATT server:
    server.stop(onSuccess, onError);
    ```
 
-### Receive notifications on server's connection state changes
+### Receive notifications on GATT connection state changes
 
-To receive notifications whenever a remote connection with the local server is established or lost:
+To receive notifications whenever a GATT connection with the device is established or lost:
 
 1. Define `BluetoothLEConnectChangeCallback`:
 
    ```
    var connectChangeCallback = {
       onconnected: function(device) {
-         console.log("A client connected: " + device.address);
+         console.log("A device connected: " + device.address);
       },
       ondisconnected: function(device) {
-         console.log("A client disconnected: " + device.address);
+         console.log("A device disconnected: " + device.address);
       }
    };
    ```
@@ -1065,7 +1101,7 @@ To update clients on characteristic's value change after registering the service
         * by clientAddress.
         *
         * When sending an indication, this callback will be called when the
-        * acknowledgement from the client addressed by clientAddress
+        * acknowledgment from the client addressed by clientAddress
         * is received.
         */
      },
@@ -1073,7 +1109,7 @@ To update clients on characteristic's value change after registering the service
        /*
         * This callback will be called when something goes wrong in the
         * process of sending a notification/indication to the client
-        * addressed by clientAddress or receiving the acknowledgement
+        * addressed by clientAddress or receiving the acknowledgment
         * from that client.
         */
      },
@@ -1244,7 +1280,7 @@ To set a callback function for read or write value request on a characteristic o
    > [!NOTE]
    > The callbacks described here can also be registered by putting them in `BluetoothGATTServerCharacteristicInit` or `BluetoothGATTServerDescriptorInit`.
 
-### Manage the Advertise Options
+### Manage the advertise options
 
 The Bluetooth Low Energy technology allows a device to broadcast some information without a connection between devices. The Bluetooth Low Energy API provides methods to control this advertising (broadcasting).
 
