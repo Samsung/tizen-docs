@@ -36,10 +36,6 @@ The main Bluetooth (4.0) Low Energy features include:
 
   You can [discover Bluetooth Low Energy devices](#discover-bluetooth-low-energy-devices) in range. Through the discovery process, you can obtain basic information about available remote devices, such as their names and provided services.
 
-- Manage the advertise options
-
-  You can [manage advertise](#manage-the-advertise-options) to control how your device announces itself to other Bluetooth Low Energy devices for discovery.
-
 - Connect to a Bluetooth Low Energy device
 
   You can [connect to a remote Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device). When connected, you can access services and characteristics of the remote device.
@@ -72,6 +68,10 @@ The main Bluetooth (4.0) Low Energy features include:
 
   You can [read the current value of connection's ATT MTU](#access-the-att-mtu-of-connected-device) and [register a listener to receive information about its changes](#receive-notifications-on-att-mtu-changes).
 
+- Manage the advertise options
+
+  You can [manage advertise](#manage-the-advertise-options) to control how your device announces itself to other Bluetooth Low Energy devices for discovery.
+
 - Start and stop the local GATT server
 
   You can [start](#start-the-server) and [stop](#stop-the-server) exposing services registered in the local GATT server.
@@ -95,10 +95,6 @@ The main Bluetooth (4.0) Low Energy features include:
 - Enable reading and writing values of characteristics and descriptors registered in the local GATT server
 
   You can [register callbacks to respond to read and write value requests from server clients](#respond-to-read-and-write-value-requests-from-server-clients).
-
-- Manage advertising options
-
-  You can [set up GATT advertising](#manage-the-advertise-options) in the local BLE adapter.
 
 ## Prerequisites
 
@@ -840,6 +836,43 @@ To receive notifications on ATT MTU value changes:
    ```
    After removing of the listener, changes of the ATT MTU value will no longer trigger the callback function.
 
+### Manage the advertise options
+
+The Bluetooth Low Energy technology allows a device to broadcast some information without a connection between devices. The Bluetooth Low Energy API provides methods to control this advertising (broadcasting).
+
+To control what information is advertised by the device:
+
+1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
+
+   ```
+   var adapter = tizen.bluetooth.getLEAdapter();
+   ```
+
+2. Set up options and start advertising with the `startAdvertise()` method of the `BluetoothLEAdapter` interface:
+
+   ```
+   var advertiseData = new tizen.BluetoothLEAdvertiseData({
+       includeName: true,
+       serviceuuids: ['180f'] /* 180F is 16bit Battery Service UUID */
+   });
+   var connectable = true;
+
+   adapter.startAdvertise(advertiseData, 'ADVERTISE', function onstate(state) {
+       console.log('Advertising configured: ' + state);
+   }, function(error) {
+       console.log('startAdvertise() failed: ' + error.message);
+   }, 'LOW_LATENCY', connectable);
+   ```
+
+   > [!NOTE]
+   > To learn how to make your mobile device visible to other Bluetooth devices, see [Manage the Local Bluetooth Adapter](#manage-the-local-bluetooth-adapter).
+
+3. To disable the advertising, use the `stopAdvertise()` method of the `BluetoothLEAdapter` interface:
+
+   ```
+   adapter.stopAdvertise();
+   ```
+
 ## Manage the local GATT server
 
 ### Start the server
@@ -1280,42 +1313,6 @@ To set a callback function for read or write value request on a characteristic o
    > [!NOTE]
    > The callbacks described here can also be registered by putting them in `BluetoothGATTServerCharacteristicInit` or `BluetoothGATTServerDescriptorInit`.
 
-### Manage the advertise options
-
-The Bluetooth Low Energy technology allows a device to broadcast some information without a connection between devices. The Bluetooth Low Energy API provides methods to control this advertising (broadcasting).
-
-To control what information is advertised by the device:
-
-1. Retrieve a `BluetoothLEAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEAdapter) applications) with the `getLEAdapter()` method of the `BluetoothManager` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothManager), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothManager), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothManager) applications):
-
-   ```
-   var adapter = tizen.bluetooth.getLEAdapter();
-   ```
-
-2. Set up options and start advertising with the `startAdvertise()` method of the `BluetoothLEAdapter` interface:
-
-   ```
-   var advertiseData = new tizen.BluetoothLEAdvertiseData({
-       includeName: true,
-       serviceuuids: ['180f'] /* 180F is 16bit Battery Service UUID */
-   });
-   var connectable = true;
-
-   adapter.startAdvertise(advertiseData, 'ADVERTISE', function onstate(state) {
-       console.log('Advertising configured: ' + state);
-   }, function(error) {
-       console.log('startAdvertise() failed: ' + error.message);
-   }, 'LOW_LATENCY', connectable);
-   ```
-
-   > [!NOTE]
-   > To learn how to make your mobile device visible to other Bluetooth devices, see [Manage the Local Bluetooth Adapter](#manage-the-local-bluetooth-adapter).
-
-3. To disable the advertising, use the `stopAdvertise()` method of the `BluetoothLEAdapter` interface:
-
-   ```
-   adapter.stopAdvertise();
-   ```
 
 ## Related information
 - Dependencies
