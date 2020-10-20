@@ -487,14 +487,14 @@ To flash the SD card for Raspberry Pi 3 (or 4) without IoT setup Manager:
 	
 		```
         $ sudo ./sd_fusing_rpi3.sh -d <SD card device node> --format
-        $ sudo ./sd_fusing_rpi3.sh -b <Boot Image name> <Platform Image name>
+        $ sudo ./sd_fusing_rpi3.sh -d <SD card device node> -b <Boot Image path> <Platform Image path>
         ```
 		
 		For example:
 		
 		```
         $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb
-        $ sudo ./sd_fusing_rpi3.sh -b tizen-unified_20201007.2_iot-boot-armv7l-rpi3.tar.gz tizen-unified_20201007.2_iot-headed-3parts-armv7l-rpi.tar.gz
+        $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb -b tizen-unified_20201007.2_iot-boot-armv7l-rpi3.tar.gz tizen-unified_20201007.2_iot-headed-3parts-armv7l-rpi.tar.gz
         ```
 
 3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Setting up Raspberry Pi 3 or 4](#setting-up-raspberry-pi-3-or-4).
