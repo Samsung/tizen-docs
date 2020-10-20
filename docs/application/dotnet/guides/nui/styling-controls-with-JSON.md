@@ -230,9 +230,9 @@ You can implement transitions in two ways:
     ]
     ```
 
-## Apply json style
+## Apply JSON style
 
-Style can be applied on runtime using **StyleManager** api at is shown on example below. 
+Style can be applied at runtime using the **StyleManager** API, as shown in the following example code:
 
 ```
 using Tizen.NUI.Components;
@@ -248,7 +248,8 @@ testButton.SetStyleName("CustomButton");
 
 ## Handle theme change
 
-It is possible to observe whether the used theme was changed using `Tizen.NUI.StyleManager.Get().StyleChanged` event. If there is a need to perform the action when the new theme is loaded, you can use the example below.
+It is possible to observe whether the used theme was changed using the `Tizen.NUI.StyleManager.Get().StyleChanged` event. If there is a need to perform the action when the new theme is loaded, you can use the following example code:
+
 
 ```
 Tizen.NUI.StyleManager.Get().StyleChanged += OnStyleChange
