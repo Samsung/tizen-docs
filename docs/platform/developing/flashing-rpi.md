@@ -29,9 +29,7 @@ IoT Setup Manager helps you to easily install Tizen on your IoT device using you
 |Division	|Ubuntu	|Windows	|
 |:---:		|:---:	|:---:		|
 |Headless	|Yes	|No			|
-|:---:		|:---:	|:---:		|
 |Headed 32bit|Yes	|Yes		|
-|:---:		|:---:	|:---:		|
 |Headed 64bit|Yes	|No			|
 
 In windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. (While using Headless and Headed 64 bit image, RPMs cannot be installed through IOT setup manager because rootsfs.img is of BTRFS type file.)
@@ -43,28 +41,28 @@ You must have the supported binary images in your computer. You can download the
 (Please click on the file with largest size to download the image file)
 
 -	RPI3 Headless 64 bit:
-		Boot Image: 	[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi3/)
-		Platform Image:	[tizen-unified_XXXX_iot-headless-2parts-armv7l-btrfs-rootfs-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headless-2parts-armv7l-btrfs-rootfs-rpi/)
+        - Boot Image: 	[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi3/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headless-2parts-armv7l-btrfs-rootfs-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headless-2parts-armv7l-btrfs-rootfs-rpi/)
 		
 -	RPI3 Headed 64 bit:	
-		Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi3/)
-		Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-aarch64-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-aarch64-rpi/)
+        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi3/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-aarch64-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-aarch64-rpi/)
 		
 -	RPI4 Headless 64 bit:
-		Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi4/)
-		Platform Image:	[tizen-unified_XXXX_iot-headless-2parts-armv7l-btrfs-rootfs-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headless-2parts-armv7l-btrfs-rootfs-rpi/)
+        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi4/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headless-2parts-armv7l-btrfs-rootfs-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headless-2parts-armv7l-btrfs-rootfs-rpi/)
 		
 -	RPI4 Headed 64 bit:
-		Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi4/)
-		Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-aarch64-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-aarch64-rpi/)
+        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi4/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-aarch64-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-aarch64-rpi/)
 		
 -	RPI3 Headed 32 bit:
-		Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi3/)
-		Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-armv7l-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-armv7l-rpi/)
+        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi3/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-armv7l-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-armv7l-rpi/)
 		
 -	RPI4 Headed 32 bit:
-		Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi4/)
-		Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-armv7l-rpi.tar.gz]( http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-armv7l-rpi/)
+        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi4/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-armv7l-rpi.tar.gz]( http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-armv7l-rpi/)
 
 ### Launch IoT Setup Manager
 
