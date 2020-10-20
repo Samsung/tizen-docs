@@ -14,7 +14,7 @@
   - Support for MacOS Catalina, Ubuntu 18.04 and Ubuntu 20.04 has been added
   - Support for aarch64 architecture on IOT 6.0 extension for rpi4 has been added
 
-### Deprecation Notice
+### Deprecated
   - Tizen RT will be deprecated starting Tizen Studio 4.1
   - Bridge Networking support in emulators will be deprecated in future Tizen Studio releases.
   
