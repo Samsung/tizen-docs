@@ -16,7 +16,7 @@
 
 ### Deprecated
    - Tizen RT will be deprecated from Tizen Studio 4.1.
-  - Bridge Networking support in emulators will be deprecated in future Tizen Studio releases.
+   - Bridge Networking support in emulators will be deprecated in future Tizen Studio releases.
   
 ### Known Issues
 
