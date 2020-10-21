@@ -17,6 +17,7 @@ The following table lists the available UI components:
 | [CheckBox](./nui-components/CheckBox.md) | A CheckBox that can set selected or unselected status when user selects it. | `CheckBox`                |
 | [ImageView](./imageview.md)          | An image view is a class for displaying an image resource.   | `ImageView`                   |
 | [Loading](./nui-components/Loading.md) | A loading is used to give information about the ongoing operations. | `Loading`                |
+| [Notification](./nui-components/Notification.md) | A notification is used to pop-up a notification window with a content view. | `Notification`                |
 | [Pagination](./nui-components/Pagination.md) | A Pagination is used to show the number of pages available and the currently active page. | `Pagination`                |
 | [Progress](./nui-components/Progress.md) | A progress is used to show the ongoing status using a long narrow bar. | `Progress`                |
 | [RadioButton](./nui-components/RadioButton.md) | A RadioButton that can set selected or unselected status when user selects it. | `RadioButton`                |
