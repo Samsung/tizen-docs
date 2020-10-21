@@ -41,17 +41,17 @@ Following output is generated when a radio button is created using style:
 ![RadioButton2](./media/RadioButton2.png)
 
 
-## Responding to ClickEvent
-When you click a radio button, the radio button instance receives a click event.
-You can declare the click event handler as follows:
+## Responding to Clicked
+When you click a radio button, the radio button instance receives a clicked event.
+You can declare the clicked event handler as follows:
 
 ```cs
 RadioButton button = new RadioButton();
-button.ClickEvent += OnClick;
+button.Clicked += OnClicked;
 ```
 
 ```cs
-private void OnClick(object sender, Button.ClickEventArgs e)
+private void OnClicked(object sender, ClickedEventArgs e)
 {
     // Do something in response to RadioButton click
 }

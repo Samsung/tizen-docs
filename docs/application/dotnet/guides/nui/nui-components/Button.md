@@ -136,18 +136,18 @@ Following output is generated when the Button is created using the defined style
 
 ![ButtonProperty](./media/ButtonProperty.PNG)
 
-## Responding to ClickEvent
+## Responding to Clicked
 
-When you click a Button, the Button instance receives a click event.
-You can declare the click event handler as follows:
+When you click a Button, the Button instance receives a clicked event.
+You can declare the clicked event handler as follows:
 
 ```cs
 Button button = new Button();
-button.ClickEvent += OnClick;
+button.Clicked += OnClicked;
 ```
 
 ```cs
-private void OnClick(object sender, Button.ClickEventArgs e)
+private void OnClicked(object sender, ClickedEventArgs e)
 {
     // Do something in response to button click
 }
