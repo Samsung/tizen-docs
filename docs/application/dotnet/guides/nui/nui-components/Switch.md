@@ -170,20 +170,20 @@ Following output is generated when the Switch is created using the defined style
 
 ![SwitchProperty](./media/SwitchProperty.PNG)
 
-## Responding to SelectedEvent
+## Responding to SelectedChanged
 
 When you click the Switch, the popup instance receives a selected event.
 You can declare the event handler as follows:
 
 ```cs
 Switch switchControl = new Switch();
-switchControl.SelectedEvent += OnSelected;
+switchControl.SelectedChanged += OnSelectedChanged;
 ```
 
 ```cs
-private void OnSelected(object sender, Switch.SelectEventArgs e)
+private void OnSelectedChanged(object sender, SelectedChangedEventArgs e)
 {
-    //Do something when user select the Switch
+    //Do something when user selects or unselects the Switch
 }
 ```
 
