@@ -20,7 +20,7 @@ The main features of the Bluetooth API include:
 
 - Create a bond with a Bluetooth device
 
-  You can [create a bond](#create-a-bond-with-a-bluetooth-device) with another device retrieved through the discovery process. Bonding allows the 2 devices to establish a connection.
+  You can [create a bond](#create-a-bond-with-a-bluetooth-device) with another device retrieved through the discovery process. Bonding allows the two devices to establish a connection.
 
 - Connect to and exchange data with a Bluetooth device
 
@@ -78,7 +78,7 @@ The main Bluetooth (4.0) Low Energy features include:
 
 - Receive notifications on GATT connection state changes
 
-  You can [register a listener to monitor GATT connection changes](#receive-notifications-on-connection-state-changes).
+  You can [register a listener to monitor GATT connection changes](#receive-notifications-on-gatt-connection-state-changes).
 
 - Check ATT MTU of a connection with a remote GATT client
 
@@ -109,13 +109,13 @@ To use the Application (in [mobile](../../api/latest/device_api/mobile/tizen/app
 With Bluetooth API, you can handle UUIDs and binary data.
 
 ### Handle UUIDs
-According to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/), UUIDs that are used to represent Bluetooth objects can take the following 3 forms:
+According to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/), UUIDs that are used to represent Bluetooth objects can take the following three forms:
 
-   * 128-bit representation: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", where each 'X' stands for a hexadecimal digit.  
+   - 128-bit representation: "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX", where each 'X' stands for a hexadecimal digit.
    For example: "198d3a9c-e21a-4f72-a48b-39a6bad7e583".
-   * 32-bit representation: "D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>D<sub>5</sub>D<sub>6</sub>D<sub>7</sub>D<sub>8</sub>", equivalent to "D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>D<sub>5</sub>D<sub>6</sub>D<sub>7</sub>D<sub>8</sub>-0000-1000-8000-00805F9B34FB", where D<sub>1</sub>..D<sub>8</sub> stand for hexadecimal digits.  
+   - 32-bit representation: "D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>D<sub>5</sub>D<sub>6</sub>D<sub>7</sub>D<sub>8</sub>", equivalent to "D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>D<sub>5</sub>D<sub>6</sub>D<sub>7</sub>D<sub>8</sub>-0000-1000-8000-00805F9B34FB", where D<sub>1</sub>..D<sub>8</sub> stand for hexadecimal digits.
    For example: "e72ad71b".
-   * 16-bit representation: "D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>", equivalent to "0000D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>-0000-1000-8000-00805F9B34FB", where D<sub>1</sub>..D<sub>4</sub> stand for hexadecimal digits.  
+   - 16-bit representation: "D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>", equivalent to "0000D<sub>1</sub>D<sub>2</sub>D<sub>3</sub>D<sub>4</sub>-0000-1000-8000-00805F9B34FB", where D<sub>1</sub>..D<sub>4</sub> stand for hexadecimal digits.
    For example: "d182".
 
 Functions taking UUIDs as parameters accept any of these three forms and make appropriate conversions.
@@ -127,18 +127,18 @@ The 128-bit UUID that is the base for UUIDs having 16-bit or 32-bit equivalents 
 
 `BluetoothManager` methods to manipulate UUIDs:
 
-   - `uuidTo128bit()` converts a UUID to its 128-bit equivalent
+   - `uuidTo128bit()` converts a UUID to its 128-bit equivalent:
       ```
       var uuidFrom16bits = tizen.bluetooth.uuidTo128bit("1234");
       var uuidFrom32bits = tizen.bluetooth.uuidTo128bit("ab5690ef");
       var uuidFrom128bits = tizen.bluetooth.uuidTo128bit("abcdef01-2345-6789-abcd-ef0123456789");
       ```
 
-      uuidFrom16bits is equal to "00001234-0000-1000-8000-00805f9b34fb"  
-      uuidFrom32bits is equal to "ab5690ef-0000-1000-8000-00805f9b34fb"  
+      uuidFrom16bits is equal to "00001234-0000-1000-8000-00805f9b34fb"
+      uuidFrom32bits is equal to "ab5690ef-0000-1000-8000-00805f9b34fb"
       uuidFrom128bits is equal to "abcdef01-2345-6789-abcd-ef0123456789"
 
-   - `uuidToShortestPossible()` converts a UUID to its shortest possible equivalent
+   - `uuidToShortestPossible()` converts a UUID to its shortest possible equivalent:
       ```
       var from16Bit = tizen.bluetooth.uuidToShortestPossible("1234");
       var from32Bit = tizen.bluetooth.uuidToShortestPossible("0000acdf");
@@ -146,25 +146,25 @@ The 128-bit UUID that is the base for UUIDs having 16-bit or 32-bit equivalents 
       var from128BitSecond = tizen.bluetooth.uuidToShortestPossible("abcdef01-2345-6789-abcd-ef0123456789");
       ```
 
-      from16Bit is equal to "1234"  
-      from32Bit is equal to "acdf"  
-      from128BitFirst is equal to "ab5690ef"  
+      from16Bit is equal to "1234"
+      from32Bit is equal to "acdf"
+      from128BitFirst is equal to "ab5690ef"
       from128BitSecond is equal to "abcdef01-2345-6789-abcd-ef0123456789"
 
-   - `uuidsEqual()` tests if two UUIDs have a single common equivalent UUID
+   - `uuidsEqual()` tests if two UUIDs have a single common equivalent UUID:
       ```
       var first = tizen.bluetooth.uuidsEqual("1234", "00001234");
       var second = tizen.bluetooth.uuidsEqual("ab5690ef", "ab5690ef-0000-1000-8000-00805F9B34FB");
       var third = tizen.bluetooth.uuidsEqual("abcdef01-2345-6789-abcd-ef0123456789", "abcdef01");
       ```
 
-      Both `first` and `second` are `true`. `third` is false.
+      Both `first`, and `second` are `true`. `third` is false.
 
 ### Handle binary data
 The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary data. It can be either a `byte[]` or a `DOMString` or a `Uint8Array`.
 
 `BluetoothManager` methods to manipulate binary data:
-   - `toByteArray()` converts a variable from any of the `Bytes` types to `byte[]`
+   - `toByteArray()` converts a variable from any of the `Bytes` types to `byte[]`:
       ```
       var dataInt8Array = new Int8Array([24, 177]);
       var dataUint8Array = new Uint8Array([24, 177]);
@@ -174,9 +174,9 @@ The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary
       var second = tizen.bluetooth.toByteArray(dataUint8Array);
       var third = tizen.bluetooth.toByteArray(dataString);
       ```
-      `first`, `second` and `third` variables are equal arrays.
+      `first`, `second`, and `third` variables are equal arrays.
 
-   - `toDOMString()` converts a variable from any of the `Bytes` types to `DOMString`
+   - `toDOMString()` converts a variable from any of the `Bytes` types to `DOMString`:
       ```
       var dataInt8Array = new Int8Array([24, 177]);
       var dataUint8Array = new Uint8Array([24, 177]);
@@ -186,9 +186,9 @@ The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary
       var second = tizen.bluetooth.toDOMString(dataUint8Array);
       var third = tizen.bluetooth.toDOMString(dataString);
       ```
-      `first`, `second` and `third` variables are equal arrays.
+      `first`, `second`, and `third` variables are equal arrays.
 
-   - `toUint8Array()` converts a variable from any of the `Bytes` types to `Uint8Array`
+   - `toUint8Array()` converts a variable from any of the `Bytes` types to `Uint8Array`:
       ```
       var dataInt8Array = new Int8Array([24, 177]);
       var dataUint8Array = new Uint8Array([24, 177]);
@@ -198,7 +198,7 @@ The `Bytes` type, that aggregates all types in Bluetooth API used to pass binary
       var second = tizen.bluetooth.toUint8Array(dataUint8Array);
       var third = tizen.bluetooth.toUint8Array(dataString);
       ```
-      `first`, `second` and `third` variables are equal.
+      `first`, `second`, and `third` variables are equal.
 
 ## Manage the Local Bluetooth Adapter
 
@@ -279,9 +279,7 @@ To use the Bluetooth functionality of the device, you must switch the Bluetooth 
    tizen.application.launchAppControl(bluetoothVisibilityAppControl, null, null, launchVisibilityError, serviceVisibilityReply);
    ```
 
-6. Set a friendly name for the device using the `setName()` method.
-
-   The name helps to recognize the device in a list of [retrieved devices](#discover-bluetooth-devices).
+6. Set a friendly name for the device using the `setName()` method. The name helps to recognize the device in a list of [retrieved devices](#discover-bluetooth-devices).
 
    ```
    adapter.setName(chatServerName);
@@ -379,7 +377,9 @@ To connect to services provided by a server device to the client devices:
 
 1. Retrieve a `BluetoothAdapter` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothAdapter), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothAdapter), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothAdapter) applications) with the `getDefaultAdapter()` method:
 
-   `var adapter = tizen.bluetooth.getDefaultAdapter();`
+   ```
+   var adapter = tizen.bluetooth.getDefaultAdapter();
+   ```
 
 2. To register a service and allow client devices to connect to it, use the `registerRFCOMMServiceByUUID()` method on the server device:
 
@@ -388,7 +388,7 @@ To connect to services provided by a server device to the client devices:
    ```
 
    > [!NOTE]
-   > For P2P communication between 2 instances of the same application, the UUID can be hard-coded in your application. To retrieve the UUID of a Bluetooth device, use the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDevice) applications). The object has an array of UUIDs available for the device.
+   > For P2P communication between two instances of the same application, the UUID can be hard-coded in your application. To retrieve the UUID of a Bluetooth device, use the `BluetoothDevice` object (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDevice), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDevice), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDevice) applications). The object has an array of UUIDs available for the device.
 
    When the service has been successfully registered, the `BluetoothServiceSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothServiceSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothServiceSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothServiceSuccessCallback) applications) is triggered.
 
@@ -405,7 +405,7 @@ To connect to services provided by a server device to the client devices:
    });
    ```
 
-   When a connection between 2 devices is established, the `BluetoothSocketSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothSocketSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothSocketSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothSocketSuccessCallback) applications) on the client device and the `onconnect` event handler in the `BluetoothServiceHandler` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothServiceHandler), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothServiceHandler), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothServiceHandler) applications) on the server device are triggered.
+   When a connection between two devices is established, the `BluetoothSocketSuccessCallback` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothSocketSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothSocketSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothSocketSuccessCallback) applications) on the client device and the `onconnect` event handler in the `BluetoothServiceHandler` interface (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothServiceHandler), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothServiceHandler), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothServiceHandler) applications) on the server device are triggered.
 
 5. To send data to the peer device, use the `writeData()` method:
 
@@ -806,14 +806,14 @@ To get the ATT MTU value or request change of the ATT MTU value, follow these st
    device.requestAttMtuChange(newAttMtuValue);
    ```
    > [!NOTE]
-   > After calling `requestAttMtuChange()` function ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
+   > After calling `requestAttMtuChange()` ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
 
 ### Receive notifications on ATT MTU changes
 
 To receive notifications on ATT MTU value changes:
 
 1. [Connect to a Bluetooth Low Energy device](#connect-to-a-bluetooth-low-energy-device).
-2. If the `device` is connected, call `addAttMtuChangeListener()` providing as a parameter the callback function to be called on each change of the ATT MTU value:
+2. If the `device` is connected, call `addAttMtuChangeListener()` providing as a parameter the callback to be called on each change of the ATT MTU value:
    ```
    function attMtuChangeCallback(newAttMtuValue) {
       console.log("ATT MTU value has changed to: " + newAttMtuValue);
@@ -821,20 +821,20 @@ To receive notifications on ATT MTU value changes:
    var listenerId = device.addAttMtuChangeListener(attMtuChangeCallback);
    ```
    The `listenerId` value stores an identifier of the listener, which is needed to remove the listener.
-3. After setting up the listener with `addAttMtuChangeListener()` function, the callback can be invoked by changing the ATT MTU value:
+3. After setting up the listener with `addAttMtuChangeListener()`, the callback can be invoked by changing the ATT MTU value:
    ```
    var newAttMtuValue = 50;
    device.requestAttMtuChange(newAttMtuValue);
    ```
-   The change of ATT MTU value will trigger the callback function.
+   The change of ATT MTU value will trigger the callback.
    > [!NOTE]
-   > After calling `requestAttMtuChange()` function ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
+   > After calling `requestAttMtuChange()` ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
 
 4. When a listener monitoring the ATT MTU value changes is no longer needed, you can remove it. To do this, call `removeAttMtuChangeListener()` providing the identifier of the listener you want to remove.
    ```
    device.removeAttMtuChangeListener(listenerId);
    ```
-   After removing of the listener, changes of the ATT MTU value will no longer trigger the callback function.
+   After removing of the listener, changes of the ATT MTU value will no longer trigger the callback.
 
 ### Manage the advertise options
 
@@ -947,7 +947,7 @@ To receive notifications whenever a GATT connection with the device is establish
    var watchId = adapter.addConnectStateChangeListener(connectChangeCallback);
    ```
 
-The `watchId` value stores an identifier of the listener, which is needed to remove the listener.
+   The `watchId` value stores an identifier of the listener, which is needed to remove the listener.
 
 3. When a listener monitoring the connection changes is no longer needed, it can be removed:
 
@@ -1038,7 +1038,7 @@ To unregister a single service from the local GATT server:
 1. Choose the service to be unregistered:
    ```
    var server = tizen.bluetooth.getGATTServer();
-   var serviceToBeUnregistered = server.services[3]; 
+   var serviceToBeUnregistered = server.services[3];
    ```
 
 2. Call `unregister()` method:
@@ -1080,8 +1080,8 @@ To unregister all services from the local GATT server at once, call server's
 
 ### Send notifications about characteristic's value changes to the clients
 GATT clients connected to the server running on the local device can register for updates of its characteristics' values.
-The server can send two types of such updates - _notifications_ and _indications_.
-They differ in that, clients receiving indications have to acknowledge them - i.e. send a message back to the server, telling that they received the new value. Clients do not acknowledge notifications.
+The server can send two types of such updates - `notifications` and `indications`.
+The difference in notifications and indications is that the clients receiving indications have to acknowledge them. This means that the clients must send a message back to the server, telling that they received the new value. Clients do not acknowledge notifications.
 
 Notifications and indications are not enabled in characteristics by default.
 To enable notifications or indications in a characteristic:
@@ -1095,8 +1095,8 @@ To enable notifications or indications in a characteristic:
      /* Define more attributes, if needed */
    };
    ```
-2. The characteristic requires a special kind of descriptor, called _Client Characteristic Configuration Descriptor_ (CCCD).
-For more details about CCCD, refer to the _Bluetooth Core Specification_, available at [bluetooth.com](https://bluetooth.com).
+2. The characteristic requires a special kind of descriptor, Client Characteristic Configuration Descriptor (CCCD).
+For more details about CCCD, see [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
 To define a CCCD and add it to the characteristic:
 
    ```
@@ -1182,9 +1182,9 @@ The notification is sent and `notificationCallback`'s members will be called soo
 
 ### Respond to read and write value requests from server clients
 
-In order to react and respond to the read and write value requests from a client connected to the server running on the device, the callback functions need to be set on the characteristics or on the descriptors.
+In order to react and respond to the read and write value requests from a client connected to the server running on the device, the callbacks need to be set on the characteristics or on the descriptors.
 
-To set a callback function for read or write value request on a characteristic or a descriptor:
+To set a callback for read or write value request on a characteristic or a descriptor:
 
 1. Prepare a GATT service containing at least one characteristic or a characteristic with at least one descriptor, that can be read or written:
    ```
@@ -1258,7 +1258,7 @@ To set a callback function for read or write value request on a characteristic o
    };
    ```
 
-5. To register the callback called when a client reads the value of the characteristic from the local GATT server, create the callback function and pass it as an argument to the `setReadValueRequestCallback()`:
+5. To register the callback called when a client reads the value of the characteristic from the local GATT server, create the callback and pass it as an argument to `setReadValueRequestCallback()`:
    ```
    var characteristicReadRequestCallback = function(clientAddress, offset) {
       console.log(clientAddress + " requested to read characteristic's value with offset: " + offset);
@@ -1268,9 +1268,9 @@ To set a callback function for read or write value request on a characteristic o
    ```
 
    > [!NOTE]
-   > A callback set with `setReadValueRequestCallback()` function overwrites any previously set `ReadValueRequestCallback` on this characteristic.
+   > A callback set with `setReadValueRequestCallback()` overwrites any previously set `ReadValueRequestCallback` on this characteristic.
 
-6. To register the callback called when a client writes a value of the characteristic of the local GATT server, create the callback function and pass it as an argument to the `setWriteValueRequestCallback()` method called on the characteristic object.
+6. To register the callback called when a client writes a value of the characteristic of the local GATT server, create the callback and pass it as an argument to `setWriteValueRequestCallback()` method called on the characteristic object.
    ```
    var characteristicWriteRequestCallback = function(clientAddress, value, offset, replyRequired) {
       console.log(clientAddress + " requested to write characteristic's value: " + value +
@@ -1282,9 +1282,9 @@ To set a callback function for read or write value request on a characteristic o
    ```
 
    > [!NOTE]
-   > A callback set with `setWriteValueRequestCallback()` function overwrites any previously set `WriteValueRequestCallback` on this characteristic.
+   > A callback set with `setWriteValueRequestCallback()` overwrites any previously set `WriteValueRequestCallback` on this characteristic.
 
-7. To register the callback called when a client reads the value of the descriptor from the local GATT server, create the callback function and pass it as an argument to the `setReadValueRequestCallback()` method called on the descriptor object.
+7. To register the callback called when a client reads the value of the descriptor from the local GATT server, create the callback and pass it as an argument to the `setReadValueRequestCallback()` method called on the descriptor object.
    ```
    var descriptorReadRequestCallback = function(clientAddress, offset) {
       console.log(clientAddress + " requested to read descriptor's value with offset: " + offset);
@@ -1294,9 +1294,9 @@ To set a callback function for read or write value request on a characteristic o
    ```
 
    > [!NOTE]
-   > A callback set with `setReadValueRequestCallback()` function overwrites any previously set `ReadValueRequestCallback` on this descriptor.
+   > A callback set with `setReadValueRequestCallback()` overwrites any previously set `ReadValueRequestCallback` on this descriptor.
 
-8. To register the callback called when a client writes a value of the descriptor of the local GATT server, create the callback function and pass it as an argument to the `setWriteValueRequestCallback()` method called on the descriptor object.
+8. To register the callback called when a client writes a value of the descriptor of the local GATT server, create the callback and pass it as an argument to the `setWriteValueRequestCallback()` method called on the descriptor object.
    ```
    var descriptorWriteRequestCallback = function(clientAddress, value, offset, replyRequired) {
       console.log(clientAddress + " requested to write descriptor's value: " + value +
@@ -1308,7 +1308,7 @@ To set a callback function for read or write value request on a characteristic o
    ```
 
    > [!NOTE]
-   > A callback set with `setWriteValueRequestCallback()` function overwrites any previously set `WriteValueRequestCallback` on this descriptor.
+   > A callback set with `setWriteValueRequestCallback()` overwrites any previously set `WriteValueRequestCallback` on this descriptor.
 
    > [!NOTE]
    > The callbacks described here can also be registered by putting them in `BluetoothGATTServerCharacteristicInit` or `BluetoothGATTServerDescriptorInit`.
