@@ -41,17 +41,17 @@ Following output is generated when a checkbox is created using style:
 ![CheckBox2](./media/CheckBox2.png)
 
 
-## Responding to ClickEvent
-When you click a CheckBox, the CheckBox instance receives a click event.
-You can declare the click event handler as follows:
+## Responding to Clicked
+When you click a CheckBox, the CheckBox instance receives a clicked event.
+You can declare the clicked event handler as follows:
 
 ```cs
 CheckBox ck = new CheckBox();
-ck.ClickEvent += OnClick;
+ck.Clicked += OnClicked;
 ```
 
 ```cs
-private void OnClick(object sender, Button.ClickEventArgs e)
+private void OnClicked(object sender, ClickedEventArgs e)
 {
     // Do something in response to CheckBox click
 }
