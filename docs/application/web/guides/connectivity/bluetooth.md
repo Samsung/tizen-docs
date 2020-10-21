@@ -258,7 +258,7 @@ To use the Bluetooth functionality of the device, you must switch the Bluetooth 
    }
    ```
 
-5. To display the Bluetooth visibility switch, use the `application/x-bluetooth-visibility` MIME option. Bluetooth visibility means that the device is discoverable by other Bluetooth devices.
+5. To display the Bluetooth visibility switch, use the `application/x-bluetooth-visibility` MIME option. Bluetooth visibility means that the device is discoverable by other Bluetooth devices:
 
    ```
    var bluetoothVisibilityAppControl = new tizen.ApplicationControl('http://tizen.org/appcontrol/operation/edit', null, 'application/x-bluetooth-visibility');
@@ -279,7 +279,7 @@ To use the Bluetooth functionality of the device, you must switch the Bluetooth 
    tizen.application.launchAppControl(bluetoothVisibilityAppControl, null, null, launchVisibilityError, serviceVisibilityReply);
    ```
 
-6. Set a friendly name for the device using the `setName()` method. The name helps to recognize the device in a list of [retrieved devices](#discover-bluetooth-devices).
+6. Set a friendly name for the device using the `setName()` method. The name helps to recognize the device in a list of [retrieved devices](#discover-bluetooth-devices):
 
    ```
    adapter.setName(chatServerName);
@@ -303,7 +303,7 @@ To search for remote devices and get the known devices:
 
 2. To search for remote devices, use the `discoverDevices()` method.
 
-   The results of the search are returned in the `BluetoothDiscoverDevicesSuccessCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback) applications).
+   The results of the search are returned in the `BluetoothDiscoverDevicesSuccessCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDiscoverDevicesSuccessCallback) applications):
 
    ```
    var discoverDevicesSuccessCallback = {
@@ -322,7 +322,7 @@ To search for remote devices and get the known devices:
 
 3. To retrieve known devices (which have been previously paired or searched for), use the `getKnownDevices()` method.
 
-   The results of the search are returned in the `BluetoothDeviceArraySuccessCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback) applications).
+   The results of the search are returned in the `BluetoothDeviceArraySuccessCallback` (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothDeviceArraySuccessCallback) applications):
 
    ```
    /* When a known device is found */
@@ -430,7 +430,7 @@ To connect to services provided by a server device to the client devices:
 To search for remote Bluetooth devices:
 
 1. Define a scan event handler by implementing the `BluetoothLEScanCallback` callback (in [mobile](../../api/latest/device_api/mobile/tizen/bluetooth.html#BluetoothLEScanCallback), [wearable](../../api/latest/device_api/wearable/tizen/bluetooth.html#BluetoothLEScanCallback), and [tv](../../api/latest/device_api/tv/tizen/bluetooth.html#BluetoothLEScanCallback) applications).
-    The callback is invoked when a remote device has been detected.
+    The callback is invoked when a remote device has been detected:
 
    ```
    function successcallback(device) {
@@ -830,7 +830,7 @@ To receive notifications on ATT MTU value changes:
    > [!NOTE]
    > After calling `requestAttMtuChange()` ATT MTU value change should be accepted if both devices support new ATT MTU value according to the [Bluetooth Core Specification](https://www.bluetooth.com/specifications/bluetooth-core-specification/).
 
-4. When a listener monitoring the ATT MTU value changes is no longer needed, you can remove it. To do this, call `removeAttMtuChangeListener()` providing the identifier of the listener you want to remove.
+4. When a listener monitoring the ATT MTU value changes is no longer needed, you can remove it. To do this, call `removeAttMtuChangeListener()` providing the identifier of the listener you want to remove:
    ```
    device.removeAttMtuChangeListener(listenerId);
    ```
@@ -1270,7 +1270,7 @@ To set a callback for read or write value request on a characteristic or a descr
    > [!NOTE]
    > A callback set with `setReadValueRequestCallback()` overwrites any previously set `ReadValueRequestCallback` on this characteristic.
 
-6. To register the callback called when a client writes a value of the characteristic of the local GATT server, create the callback and pass it as an argument to `setWriteValueRequestCallback()` method called on the characteristic object.
+6. To register the callback called when a client writes a value of the characteristic of the local GATT server, create the callback and pass it as an argument to `setWriteValueRequestCallback()` method called on the characteristic object:
    ```
    var characteristicWriteRequestCallback = function(clientAddress, value, offset, replyRequired) {
       console.log(clientAddress + " requested to write characteristic's value: " + value +
@@ -1284,7 +1284,7 @@ To set a callback for read or write value request on a characteristic or a descr
    > [!NOTE]
    > A callback set with `setWriteValueRequestCallback()` overwrites any previously set `WriteValueRequestCallback` on this characteristic.
 
-7. To register the callback called when a client reads the value of the descriptor from the local GATT server, create the callback and pass it as an argument to the `setReadValueRequestCallback()` method called on the descriptor object.
+7. To register the callback called when a client reads the value of the descriptor from the local GATT server, create the callback and pass it as an argument to the `setReadValueRequestCallback()` method called on the descriptor object:
    ```
    var descriptorReadRequestCallback = function(clientAddress, offset) {
       console.log(clientAddress + " requested to read descriptor's value with offset: " + offset);
@@ -1296,7 +1296,7 @@ To set a callback for read or write value request on a characteristic or a descr
    > [!NOTE]
    > A callback set with `setReadValueRequestCallback()` overwrites any previously set `ReadValueRequestCallback` on this descriptor.
 
-8. To register the callback called when a client writes a value of the descriptor of the local GATT server, create the callback and pass it as an argument to the `setWriteValueRequestCallback()` method called on the descriptor object.
+8. To register the callback called when a client writes a value of the descriptor of the local GATT server, create the callback and pass it as an argument to the `setWriteValueRequestCallback()` method called on the descriptor object:
    ```
    var descriptorWriteRequestCallback = function(clientAddress, value, offset, replyRequired) {
       console.log(clientAddress + " requested to write descriptor's value: " + value +
