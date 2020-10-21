@@ -20,6 +20,7 @@ The following table lists the available UI components:
 | [Pagination](./nui-components/Pagination.md) | A Pagination is used to show the number of pages available and the currently active page. | `Pagination`                |
 | [Progress](./nui-components/Progress.md) | A progress is used to show the ongoing status using a long narrow bar. | `Progress`                |
 | [RadioButton](./nui-components/RadioButton.md) | A RadioButton that can set selected or unselected status when user selects it. | `RadioButton`                |
+| [ScrollableBase](./nui-components/ScrollableBase.md) | A ScrollableBase that can support scrolling. | `ScrollableBase`                   |
 | [Slider](./nui-components/Slider.md) | A slider that indicates a modifiable value within a specific range. | `Slider`                   |
 | [Switch](./nui-components/Switch.md) | A switch that can be used as a selector. | `Switch`                |
 | [TableView](./tableview.md)          | A table view that can align child actors in a grid like layout. | `TableView`             |
