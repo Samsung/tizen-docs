@@ -88,6 +88,7 @@
 ##### [RadioButton](/application/dotnet/guides/nui/nui-components/RadioButton.md)
 ##### [Slider](/application/dotnet/guides/nui/nui-components/Slider.md)
 ##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
+##### [Notification](/application/dotnet/guides/nui/nui-components/Notification.md)
 #### Animation
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
