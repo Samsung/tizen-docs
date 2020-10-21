@@ -140,18 +140,18 @@ Following output is generated when the Slider is created using the defined style
 
 ![Slider](./media/slider.gif)
 
-## Responding to ValueChangedEvent
+## Responding to ValueChanged
 
 When you touch or pan a Slider, the Slider instance receives a value changed event.
 You can declare the value changed event handler as follows:
 
 ```cs
 Slider slider = new Slider();
-slider.ValueChangedEvent += OnValueChanged;
+slider.ValueChanged += OnValueChanged;
 ```
 
 ```cs
-private void OnValueChanged(object sender, Slider.ValueChangedArgs args)
+private void OnValueChanged(object sender, SliderValueChangedEventArgs args)
 {
     // Do something in response to Slider click
 }
@@ -174,17 +174,17 @@ private void OnStateChanged(object sender, Control.ControlStateChangedEventArgs 
 }
 ```
 
-## Responding to SlidingFinishedEvent
+## Responding to SlidingFinished
 
 As you finish a touch or a pan operate on a Slider, the Slider instance receives a slide finished event. You can declare the slide finished event handler as follows:
 
 ```cs
 Slider slider = new Slider();
-slider.SlidingFinishedEvent += OnSlidingFinished;
+slider.SlidingFinished += OnSlidingFinished;
 ```
 
 ```cs
-private void OnSlidingFinished(object sender, Slider.SlidingFinishedArgs args)
+private void OnSlidingFinished(object sender, SliderSlidingFinishedEventArgs args)
 {
     // Do something in response to slide finished
 }
