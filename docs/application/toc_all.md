@@ -86,6 +86,7 @@
 ##### [Pagination](/application/dotnet/guides/nui/nui-components/Pagination.md)
 ##### [Progress](/application/dotnet/guides/nui/nui-components/Progress.md)
 ##### [RadioButton](/application/dotnet/guides/nui/nui-components/RadioButton.md)
+##### [ScrollableBase](/application/dotnet/guides/nui/nui-components/ScrollableBase.md)
 ##### [Slider](/application/dotnet/guides/nui/nui-components/Slider.md)
 ##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
 ##### [Notification](/application/dotnet/guides/nui/nui-components/Notification.md)
