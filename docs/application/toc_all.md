@@ -99,6 +99,7 @@
 ##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
 ##### [Tab](/application/dotnet/guides/nui/nui-components/Tab.md)
 ##### [Toast](/application/dotnet/guides/nui/nui-components/Toast.md)
+##### [Notification](/application/dotnet/guides/nui/nui-components/Notification.md)
 #### Animation
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)

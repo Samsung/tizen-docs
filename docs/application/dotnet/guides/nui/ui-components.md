@@ -26,6 +26,7 @@ The following table lists the available UI components:
 | [TableView](./tableview.md)          | A table view that can align child actors in a grid like layout. | `TableView`             |
 | [Text](./text.md)                    | A text that renders a short text string and provides a editable text. | `TextLabel`, `TextField`, `TextEditor`  |
 | [Toast](./nui-components/Toast.md) | A toast is used to provide simple messages. | `Toast`                |
+| [Notification](./Notification.md)  | A Notification is help to raise a notification window with a content View. | `Notification`         |
 | [VideoView](./videoview.md)          | A video view that controls and displays video playback. | `VideoView`                 |
 
 The base class for the components is `View`. This class can also be used to create your own custom UI components. For more information on the view class, see [View](./view.md). In this UI Components guide, both the terms **control** and **component** are used to refer to a UI component.
