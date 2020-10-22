@@ -1,13 +1,13 @@
 # ScrollableBase
 
-ScrollableBase is a common component which support scrolling. Several views can be added to ScrollableBase.
-User can use mouse or finger to drag it on the touch screen.
+ScrollableBase is a common component that supports scrolling. You can add several views to the ScrollableBase component.
+You can use a mouse or finger on the touch screen to drag a ScrollableBase component.
 
 ![ScrollableBase](./media/ScrollableBase.png)
 
 ## Create with property
 
-To create a ScrollableBase using property, follow these steps:
+To create a ScrollableBase using various properties, follow these steps:
 
 1. Create ScrollableBase using the default constructor:
 
@@ -50,10 +50,10 @@ Following output is generated when the ScrollableBase is created using property:
 
 ![ScrollableBaseProperty](./media/ScrollableBase.png)
 
-## Responding to scroll drag events
+## Scroll drag events responses
 
-When you drag a ScrollableBase, the ScrollableBase instance receives a scroll drag started event.
-And after you stop dragging, the ScrollableBase instance receives a scroll drag ended event.
+When a ScrollableBase is dragged, the ScrollableBase instance receives a scroll drag start event.
+When the ScrollBase dragging is stopped, the ScrollableBase instance receives a scroll drag ended event.
 You can declare the events handlers as follows:
 
 ```cs
@@ -74,11 +74,11 @@ private void ScrollDragEnded(object sender, ScrollEventArgs e)
 }
 ```
 
-Following output is generated when the ScrollableBase is being dragged:
+The following output is generated when the ScrollableBase is dragged:
 
 ![ScrollableBaseDrag](./media/ScrollableBase.gif)
 
-## Related Information
+## Related information
 
 - Dependencies
   -   Tizen 6.0 and Higher
