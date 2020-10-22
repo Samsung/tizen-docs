@@ -354,7 +354,7 @@ The following markup elements are currently supported:
 
 ### Use Markup to represent encoded characters
 
-Markup text is not allowed to contain some characters unless they are representing tags or entities such as "<", ">" or "&". To include these characters as a part of the text, user should use reserved entities like `&lt;`, `&gt;` or `&amp;`, The following example uses reserved entities:
+Markup text is not allowed to contain some characters unless they are representing tags or entities such as "<", ">" or "&". To include these characters as a part of the text, you must use reserved entities such as `&lt;`, `&gt;`, or `&amp;`. The following example uses reserved entities:
 
 ```
 TextLabel label = new TextLabel();
