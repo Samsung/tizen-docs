@@ -370,7 +370,8 @@ The following example uses UTF32 entities:
 ```
 TextLabel label = new TextLabel();
 label.EnableMarkup = true;
-label.Text = "&#9786; &#x263a;"; //smile-face smile-face
+label.Text = "&#9786; &#x263a;"; //smile-face
+
 ```
 
 <a name="textField"></a>
