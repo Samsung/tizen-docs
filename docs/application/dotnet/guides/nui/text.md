@@ -363,8 +363,8 @@ label.Text = "&lt;&gt;"; //less-than greater-than
 ```
 
 Markup text can include character with UTF32 representation as entities contain decimal or hexadecimal values.
-To represent decimal value, user can use : `&#` + `utf32_decimal_value` + `;`
-To represent hexadecimal value, user can use : `&#x` + `utf32_hexadecimal_value` + `;`
+To represent decimal value, you can use: `&#` + `utf32_decimal_value` + `;`
+To represent hexadecimal value, you can use: `&#x` + `utf32_hexadecimal_value` + `;`
 The following example uses UTF32 entities:
 
 ```
