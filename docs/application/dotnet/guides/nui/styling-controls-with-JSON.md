@@ -232,7 +232,7 @@ You can implement transitions in two ways:
 
 ## Apply JSON style
 
-To apply Style on runtime, use StyleManager as the following code:
+To apply Style at runtime, use the **StyleManager** class as follows:
 
 ```
 using Tizen.NUI.Components;
@@ -248,7 +248,7 @@ testButton.SetStyleName("CustomButton");
 
 ## Change theme
 
-To get a notification when the used theme is changed, you can register an event handler for the `StyleChanged` event as the following code:
+To get a notification when the current theme is changed, register an event handler for the `StyleChanged` event as follows:
 
 
 ```
