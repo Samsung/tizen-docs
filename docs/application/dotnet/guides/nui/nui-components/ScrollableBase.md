@@ -11,13 +11,13 @@ To create a ScrollableBase using various properties, follow these steps:
 
 1. Create ScrollableBase using the default constructor:
 
-    ```cs
+    ```csharp
     ScrollableBase scrollableBase = new ScrollableBase();
     ```
 
 2. Set the ScrollableBase property:
 
-    ```cs
+    ```csharp
     scrollableBase.Size = new Size(400, 300);
     scrollableBase.ScrollingDirection = ScrollableBase.Direction.Vertical;
     root.Add(scrollableBase);
@@ -25,7 +25,7 @@ To create a ScrollableBase using various properties, follow these steps:
 
 3. Add child views for ScrollableBase:
 
-    ```cs
+    ```csharp
     items = new View[5];
     for (int i = 0; i < 5; i++)
     {
@@ -56,13 +56,13 @@ When a ScrollableBase is dragged, the ScrollableBase instance receives a scroll 
 When the ScrollBase dragging is stopped, the ScrollableBase instance receives a scroll drag ended event.
 You can declare the events handlers as follows:
 
-```cs
+```csharp
 ScrollableBase scrollableBase = new ScrollableBase();
 scrollableBase.ScrollDragStarted += ScrollDragStarted;
 scrollableBase.ScrollDragEnded += ScrollDragEnded;
 ```
 
-```cs
+```csharp
 private void ScrollDragStarted(object sender, ScrollEventArgs e)
 {
     // Do something in response to scroll drag started
