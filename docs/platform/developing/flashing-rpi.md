@@ -1,5 +1,15 @@
 # Flashing an Image to RPI
 
+## Supported systems
+
+|Division	|Ubuntu	|Windows	|
+|:---:		|:---:	|:---:		|
+|Headless 32bit|Yes	|No			|
+|Headed 32bit|Yes	|Yes		|
+|Headed 64bit|Yes	|No			|
+
+In windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. (While using Headed 64 bit image and Headless 32bit image, RPMs cannot be installed through IOT setup manager because rootsfs.img is of BTRFS type file.)
+
 ## Installing Tizen Studio
 
 If you have already installed Tizen Studio 3.7 (or 4.0) and installed the **6.0 Mobile** profile for the **Main SDK** and the **IoT Setup Manager**, **IoT-Headed-6.0** and **IoT-Headless-6.0** profiles for the **Extension SDK**, you can skip this section.
@@ -9,11 +19,11 @@ Otherwise, to install Tizen Studio and the required profiles for IoT development
 1.  Download and install the correct version of Tizen Studio 3.7 (or 4.0) for your operating system from [Tizen developer site](https://developer.tizen.org/development/tizen-studio/download){:target="_blank"}.
 2.  Open the **Tizen Studio Package Manager**, select the **Main SDK** tab, and install the **6.0 Mobile** profile:
 
-    ![Install the mobile profile](media/package_manager_mobile_5.0.png)
+    ![Install the mobile profile](media/package_manager_mobile.PNG)
 
 3.  Select the **Extension SDK** tab and **Extras**. **Extras** includes **IoT Setup Manager** and **IoT-Headless-6.0** profiles:
 
-    ![Install the headless profile](media/package_manager_iot_5.0.png)
+    ![Install the headless profile](media/package_manager_iot.png)
 
     > **Note**
     >
@@ -24,15 +34,6 @@ Otherwise, to install Tizen Studio and the required profiles for IoT development
 
 IoT Setup Manager helps you to easily install Tizen on your IoT device using your computer. It helps to get your device running and connected to the local network. After your device is connected to the local network, you can start developing and testing the Tizen IoT applications.
 
-## Supported systems
-
-|Division	|Ubuntu	|Windows	|
-|:---:		|:---:	|:---:		|
-|Headless	|Yes	|No			|
-|Headed 32bit|Yes	|Yes		|
-|Headed 64bit|Yes	|No			|
-
-In windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. (While using Headless and Headed 64 bit image, RPMs cannot be installed through IOT setup manager because rootsfs.img is of BTRFS type file.)
 
 ### Prerequisites
 
@@ -40,29 +41,29 @@ You must have the supported binary images in your computer. You can download the
 
 (Please click on the file with largest size to download the image file)
 
--	RPI3 Headless 64 bit:
-        - Boot Image: 	[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi3/)
-        - Platform Image:	[tizen-unified_XXXX_iot-headless-2parts-armv7l-btrfs-rootfs-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headless-2parts-armv7l-btrfs-rootfs-rpi/)
+-	RPI3 Headless 32 bit:
+        - Boot Image: 	[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-boot-armv7l-rpi3/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headless-2parts-armv7l-btrfs-rootfs-rpi.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-headless-2parts-armv7l-btrfs-rootfs-rpi/)
 		
--	RPI3 Headed 64 bit:	
-        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi3/)
-        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-aarch64-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-aarch64-rpi/)
+-	RPI3 Headed 32 bit:	
+        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-boot-armv7l-rpi3/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-aarch64-rpi.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-headed-3parts-armv7l-rpi/)
 		
--	RPI4 Headless 64 bit:
-        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi4/)
-        - Platform Image:	[tizen-unified_XXXX_iot-headless-2parts-armv7l-btrfs-rootfs-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headless-2parts-armv7l-btrfs-rootfs-rpi/)
-		
--	RPI4 Headed 64 bit:
-        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi4/)
-        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-aarch64-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-aarch64-rpi/)
-		
--	RPI3 Headed 32 bit:
-        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi3.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi3/)
-        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-armv7l-rpi.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-armv7l-rpi/)
+-	RPI4 Headless 32 bit:
+        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-boot-armv7l-rpi4/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headless-2parts-armv7l-btrfs-rootfs-rpi.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-headless-2parts-armv7l-btrfs-rootfs-rpi/)
 		
 -	RPI4 Headed 32 bit:
-        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-boot-armv7l-rpi4/)
-        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-armv7l-rpi.tar.gz]( http://download.tizen.org/snapshots/tizen/unified/latest/images/standard/iot-headed-3parts-armv7l-rpi/)
+        - Boot Image:		[tizen-unified_XXXX_iot-boot-armv7l-rpi4.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-boot-armv7l-rpi4/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-aarch64-rpi.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-headed-3parts-armv7l-rpi/)
+		
+-	RPI3 Headed 64 bit:
+        - Boot Image:		[tizen-unified_XXXX_iot-boot-arm64-rpi3.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-boot-arm64-rpi3/)
+        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-armv7l-rpi.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-headed-3parts-aarch64-rpi/ )
+		
+-	RPI4 Headed 64 bit:
+        - Boot Image:		[tizen-unified_XXXX_iot-boot-arm64-rpi4.tar.gz](http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-boot-arm64-rpi4/ )
+        - Platform Image:	[tizen-unified_XXXX_iot-headed-3parts-armv7l-rpi.tar.gz]( http://download.tizen.org/releases/milestone/tizen/6.0-unified/latest/images/standard/iot-headed-3parts-aarch64-rpi/ )
 
 ### Launch IoT Setup Manager
 
@@ -95,17 +96,18 @@ To flash Tizen on your SD card using the IoT Setup Manager:
 1.  Create a profile:
     1.  Click **Create** to create a profile. The **Edit Profile** window appears.
 
-        ![IoT Setup Manager Edit](media/ism_edit_rpi3.png)
+        ![IoT Setup Manager Edit](media/ism_edit_rpi4_headed.PNG)
 
     2.  Provide the required information such as target, local paths to boot and platform image, and so on.
 
-       -   Profile name: Enter a profile name, for example, RPI3_Headless
-       -   Target: RPI3_HEADLESS
+       -   Profile name: Enter a profile name, for example, Rpi4_Headed_Profile
+       -   Target: RPI4_HEADED
        -   Boot image or platform image: The local paths of the boot and platform images, which you download from [Prerequisites](#prerequisites).
-       -   ROM bundles: 
+       -   RPM bundles: 
             - Add the bundle directory to the Bundles panel.
+            - Use this to install wifi-plugin. Download using [Installing Drivers](#installing-drivers). Unzip and add path to 32 bit rpm or 64 bit rpm according to image to install.
             - Leave blank if no rpm installation required.
-       -   WiFi: Clear
+       -   WiFi: Enter id and password to connect to wifi. (Wifi-plugin installation is required)
        -   Ethernet:
             -   IP: 192.168.1.11
             -   Gateway: 192.168.1.2
@@ -373,19 +375,19 @@ The IoT Setup Manager view contains the following fields:
 
 If you want to modify the exist profile, select **Edit**.
 
-![IoT Setup Manager Edit](media/ism_edit_rpi3.png)
+![IoT Setup Manager Edit](media/ism_edit_rpi4_headed.PNG)
 
 The IoT Setup Manager edit view contains the following fields:
 
 -   **Profile name**
 
-    Specify a profile name, for example, RPI3-headless.
+    Specify a profile name, for example, Rpi4_Headed_Profile.
 
 -   **Target**
 
     Select the board and image type from the drop-down list.
 
-    -   RPI3_HEADLESS: SD-card-bootable headless image for Raspberry Pi 3 board.
+    -   RPI4_HEADED: SD-card-bootable headed image for Raspberry Pi 4 board.
 
 -   **Boot image**
 
