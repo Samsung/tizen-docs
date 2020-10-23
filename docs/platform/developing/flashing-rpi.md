@@ -96,7 +96,7 @@ To flash Tizen on your SD card using the IoT Setup Manager:
 1.  Create a profile:
     1.  Click **Create** to create a profile. The **Edit Profile** window appears.
 
-        ![IoT Setup Manager Edit](media/ism_edit_rpi4_headed.PNG)
+        ![IoT Setup Manager Edit](media/ism_edit_rpi4_headed.png)
 
     2.  Provide the required information such as target, local paths to boot and platform image, and so on.
 
@@ -375,7 +375,7 @@ The IoT Setup Manager view contains the following fields:
 
 If you want to modify the exist profile, select **Edit**.
 
-![IoT Setup Manager Edit](media/ism_edit_rpi4_headed.PNG)
+![IoT Setup Manager Edit](media/ism_edit_rpi4_headed.png)
 
 The IoT Setup Manager edit view contains the following fields:
 
