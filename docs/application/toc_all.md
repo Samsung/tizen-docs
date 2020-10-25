@@ -949,7 +949,7 @@
 #### [Activity Recognition](/application/native/guides/location-sensors/activity.md)
 #### [Gesture Recognition](/application/native/guides/location-sensors/gesture.md)
 
-### Text Input, Gesture and Voice
+### Text Input, Gesture, and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
 #### [Input Method](/application/native/guides/text-input/input-method.md)
 #### [Autofill](/application/native/guides/text-input/autofill.md)

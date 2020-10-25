@@ -195,7 +195,7 @@ The enum values, as well as the parameter details, for the callback parameters a
 
   When the hand gesture is recognized, the recognized result is delivered through `hand_gesture_recognition_cb()`.
 
-  You can [set the recognition result callback function using `hand_gesture_start_recognition()`](#start_stop).
+  You can [set the recognition result callback function](#start_stop) using `hand_gesture_start_recognition()`.
 
 
 <a name="start_stop"></a>
