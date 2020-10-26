@@ -243,7 +243,7 @@ Tizen.NUI.StyleManager.Get().ApplyTheme(DirectoryInfo.Resource + "/styles/theme.
 
 //Create button object
 Button testButton = new Button();
-testButton.SetStyleName("CustomButton");
+testButton.SetStyleName("PushButton");
 ```
 
 ## Change theme
