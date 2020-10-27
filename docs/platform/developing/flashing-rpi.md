@@ -139,13 +139,13 @@ During installation, the Package Manager creates shortcuts for IoT Setup Manager
 -   Windows, go to **Start Menu > Programs > Tizen Studio > Tools > IoT Setup Manager**.
 -   Ubuntu, go to **Dash (equivalent to Start Menu) > Applications > IoT Setup Manager**.
 
+    ![IoT Setup Manager Main](media/setup_manager_main_window.png)
+
 ### Flash SD Card using IoT Setup Manager
 
 To flash Tizen on your SD card using the IoT Setup Manager:
 
 Profiles are an easy way to store image paths and network configuration information. After you save a profile, you can use it to flash your SD Card instead of specifying all information again.
-
-        ![IoT Setup Manager Main](media/setup_manager_main_window.png)
 
 1.  Create a profile:
     1.  Click **Create** to create a profile. The **Edit Profile** window appears.
