@@ -163,6 +163,7 @@ The following tables show the available requirements for an application package.
 | `http://tizen.org/feature/network.wifi.tdls` | Specify this key, if the application requires the Wi-Fi Tunneled Direct Link Setup (TDLS). | 3.0   |
 | `http://tizen.org/feature/nlp` | Specify this key, if the application requires the Natural Language Processing (NLP) API. | 5.0 |
 | `http://tizen.org/feature/oauth2` | Specify this key, if the application requires the OAuth 2.0 protocol feature. | 4.0 |
+| `http://tizen.org/feature/opengles.surfaceless_context` | Specify this key, if the application requires the EGL extension of Surfaceless Context for OpenGL&reg; ES. | 6.0   |
 | `http://tizen.org/feature/opengles.version.1_1` | Specify this key, if the application requires OpenGL&reg; ES version 1.1 at minimum. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
 | `http://tizen.org/feature/opengles.version.2_0` | Specify this key, if the application requires OpenGL&reg; ES version 2.0. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.2.1 |
 | `http://tizen.org/feature/opengles.version.3_0` | Specify this key, if the application requires OpenGL&reg; ES version 3.0. You can specify at most 1 OpenGL&reg; ES version. If you specify multiple versions, only the highest one is considered. | 2.4   |
