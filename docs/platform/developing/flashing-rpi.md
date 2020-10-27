@@ -1,6 +1,6 @@
 # Flashing an Image to RPI
 
-##Introduction
+## Introduction
 
 This topic describes how to flash Tizen on SD card with or without IoT Setup Manager and setting up Raspberry Pi 3 or 4.
 
@@ -12,7 +12,8 @@ This topic describes how to flash Tizen on SD card with or without IoT Setup Man
 |Headed 32-bit|Yes	|Yes		|
 |Headed 64-bit|Yes	|No			|
 
-In windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. (While using Headed 64 bit image and Headless 32bit image, RPMs cannot be installed through IOT setup manager because rootsfs.img is of BTRFS type file.)
+    > **Note**
+    > In windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. (While using Headed 64 bit image and Headless 32bit image, RPMs cannot be installed through IOT setup manager because rootsfs.img is of BTRFS type file.)
 
 ## Prerequisites
 
@@ -27,7 +28,7 @@ IoT Setup Manager supports the following operating systems:
 
 IoT Setup Manager requires Java Runtime Environment (JRE) version 1.8 or later to be installed on your computer.
 
-> [!NOTE]
+> **Note**
 >
 > You must only have the Oracle JRE installed on your computer.
 
@@ -62,7 +63,8 @@ You must have the supported binary images in your computer. You can download the
 
 -   To Download images visit [Downloads](http://download.tizen.org/releases/milestone/tizen)
 -   Then go to 6.0-unified (or "unified" whichever is present) -> latest -> images -> standard.
--   For different devices or profiles download as follows:
+-   For different devices or profiles download the compressed file from:
+
     -	RPI3 Headless 32 bit:
         -   Boot Image: iot-boot-armv7l-rpi3/
         -   Platform Image:	iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
@@ -89,28 +91,23 @@ You must have the supported binary images in your computer. You can download the
 		
 ## Install Tizen Studio
 
-> [!NOTE]
+> **NOTE**
 > You can skip this section, if you have already installed latest Tizen Studio 4.0 version and installed the **6.0 Mobile** profile for the **Main SDK** and the **IoT Setup Manager**, **IoT-Headed-6.0** and **IoT-Headless-6.0** profiles for the **Extension SDK**.
 
 To install Tizen Studio and the required profiles for IoT development, follow these steps:
 
 1.  Download and install Tizen Studio 4.0 for your operating system from [Tizen developer site](https://developer.tizen.org/development/tizen-studio/download){:target="_blank"}.
-
-### Installing IoT Setup Manager
-
-To install the IoT Setup Manager using the Package Manager available in Tizen Studio:
-
-1.  Open Tizen Studio and go to **Tools > Package Manager**.
-2.  Click **Extension SDK** and verify whether the IoT Setup Manager appears in the list of available packages.
-3.  Click **install** for **IoT Setup Manager** to install the IoT Setup Manager Extension.
+2.  Open Tizen Studio and go to **Tools > Package Manager**.
+3.  Click **Extension SDK** and verify whether the IoT Setup Manager appears in the list of available packages.
+4.  Click **install** for **IoT Setup Manager** to install the IoT Setup Manager Extension.
 
     ![Install the headless profile](media/package_manager_iot.png)
 	
-4.  Click **Main SDK** tab, and install the **6.0 Mobile** profile:
+5.  Click **Main SDK** tab, and install the **6.0 Mobile** profile:
 
     ![Install the mobile profile](media/package_manager_mobile.PNG)
 	
-    > [!Note]
+    > **Note**
     >
     > **Extension SDK** should be updated to the latest version.
 
@@ -141,17 +138,13 @@ During installation, the Package Manager creates shortcuts for IoT Setup Manager
 -   Windows, go to **Start Menu > Programs > Tizen Studio > Tools > IoT Setup Manager**.
 -   Ubuntu, go to **Dash (equivalent to Start Menu) > Applications > IoT Setup Manager**.
 
-
-    ![IoT Setup Manager Main](media/iot_setup_manager_main_window.png)
-
-
 ### Flash SD Card using IoT Setup Manager
 
 To flash Tizen on your SD card using the IoT Setup Manager:
 
 Profiles are an easy way to store image paths and network configuration information. After you save a profile, you can use it to flash your SD Card instead of specifying all information again.
 
-![IoT Setup Manager Main](media/iot_setup_manager_main_window.png)
+        ![IoT Setup Manager Main](media/iot_setup_manager_main_window.png)
 
 1.  Create a profile:
     1.  Click **Create** to create a profile. The **Edit Profile** window appears.
@@ -181,7 +174,7 @@ Profiles are an easy way to store image paths and network configuration informat
     1.  Insert your SD Card into your computer.
     2.  Select the appropriate SD Card from the drop-down list. For Example, `/dev/sdx` on Ubuntu and `F:` on Windows.
 
-        > [!NOTE]
+        > **Note**
         >
         > Currently, the USB SD card reader is only supported. The internal PC SD slot is not supported.
         > Also, if the **Select Drive** does not show anything, detach and insert the SD card again into the computer, or close and restart IOT Setup Manager.
@@ -216,7 +209,7 @@ To configure the Raspberry Pi board:
 
         To use the PL2303, connect the Raspberry Pi TXD0 pin (pin 8) to RXD on the UART board, RXD0 (pin 10) to TXD on the UART board, and the ground (pin 6) to GND on the UART board, and set the jumper switch to 3.3V (pin 1).
 
-        > [!NOTE]
+        > **Note**
         >
         > Before using a UART-to-USB dongle, familiarize yourself with any hardware limitations it has by visiting the manufacturer's website.
 
@@ -279,7 +272,7 @@ To configure the Raspberry Pi board:
 3.  For the SDB connection:
     1.  Connect the host computer to the Pi through an Ethernet cable.
 
-        > [!NOTE]
+        > **Note**
         >
         > If Ethernet ports are not available in the host computer or the Pi, you can also use an `Ethernet-to-USB` dongle.
 
@@ -329,7 +322,7 @@ To configure the Raspberry Pi board:
 
 6.  Enter the `sdb help` command in the Linux shell (Linux) or Command window (Windows) of the host computer, for more information.
 
-    > [!NOTE]
+    > **Note**
     >
     > `sdb` execution file is available in the `tools` sub-directory of the directory where Tizen Studio is installed.
 
@@ -376,7 +369,7 @@ To flash the SD card for Raspberry Pi 3 (or 4) without IoT setup Manager:
 2.  Flash the SD card to ensure it is ready to be used for Tizen:
     1.  Insert an SD card to the Linux computer and verify its device node.
 
-        > [!Note]
+        > **Note**
         >
         > To verify the device node:
         >
@@ -441,7 +434,7 @@ To flash the SD card for Raspberry Pi 3 (or 4) without IoT setup Manager:
 
 3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Setting up Raspberry Pi 3 or 4](#setting-up-raspberry-pi-3-or-4).
 
-    > [!Note]
+    > **Note**
     >
     > Repeat `sdb connect 192.168.1.11` in the Linux shell (Linux) or the command window (Windows) whenever you power cycle the device, in order to reconnect the SDB tool.
 
