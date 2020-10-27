@@ -1023,6 +1023,7 @@
 ### [Overview](/application/native/api/overview.md)
 
 ### Wearable
+#### [6.0](/application/native/api/wearable/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/wearable/5.5/index.html){:target="_blank"}
 #### [5.0](/application/native/api/wearable/5.0/index.html){:target="_blank"}
 #### [4.0](/application/native/api/wearable/4.0/index.html){:target="_blank"}
@@ -1030,6 +1031,7 @@
 #### [2.3.2](/application/native/api/wearable/2.3.2/index.html){:target="_blank"}
 
 ### Mobile
+#### [6.0](/application/native/api/mobile/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/mobile/5.5/index.html){:target="_blank"}
 #### [5.0](/application/native/api/mobile/5.0/index.html){:target="_blank"}
 #### [4.0](/application/native/api/mobile/4.0/index.html){:target="_blank"}
