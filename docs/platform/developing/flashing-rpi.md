@@ -13,6 +13,7 @@ This topic describes how to flash Tizen on SD card with or without IoT Setup Man
 |Headed 64-bit|Yes	|No			|
 
     > **Note**
+    >
     > In windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. (While using Headed 64 bit image and Headless 32bit image, RPMs cannot be installed through IOT setup manager because rootsfs.img is of BTRFS type file.)
 
 ## Prerequisites
@@ -144,7 +145,7 @@ To flash Tizen on your SD card using the IoT Setup Manager:
 
 Profiles are an easy way to store image paths and network configuration information. After you save a profile, you can use it to flash your SD Card instead of specifying all information again.
 
-        ![IoT Setup Manager Main](media/iot_setup_manager_main_window.png)
+        ![IoT Setup Manager Main](media/setup_manager_main_window.png)
 
 1.  Create a profile:
     1.  Click **Create** to create a profile. The **Edit Profile** window appears.
