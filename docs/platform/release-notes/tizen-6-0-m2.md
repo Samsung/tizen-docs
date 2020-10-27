@@ -1,6 +1,6 @@
 # Tizen 6.0 Public M2
 
-Release date: Oct. 31, 2020
+Release date: Oct. 27, 2020
 
 
 ## Release Notes
