@@ -73,6 +73,7 @@
 ### NUI
 #### [Overview](/application/dotnet/guides/nui/overview.md)
 #### [Layer](/application/dotnet/guides/nui/layer.md)
+#### [Window](/application/dotnet/guides/nui/window.md)
 #### Layouts
 ##### [Overview](/application/dotnet/guides/nui/layouts.md)
 ##### [Linear Layout](/application/dotnet/guides/nui/linear-layout.md)
@@ -85,16 +86,20 @@
 ##### [Visuals](/application/dotnet/guides/nui/visuals.md)
 ##### [View](/application/dotnet/guides/nui/view.md)
 ##### [CustomView](/application/dotnet/guides/nui/customview.md)
-##### [FlexContainer](/application/dotnet/guides/nui/flexcontainer.md)
 ##### [ImageView](/application/dotnet/guides/nui/imageview.md)
 ##### [TableView](/application/dotnet/guides/nui/tableview.md)
 ##### [Text](/application/dotnet/guides/nui/text.md)
 ##### [VideoView](/application/dotnet/guides/nui/videoview.md)
 ##### [Button](/application/dotnet/guides/nui/nui-components/Button.md)
+##### [CheckBox](/application/dotnet/guides/nui/nui-components/CheckBox.md)
 ##### [Loading](/application/dotnet/guides/nui/nui-components/Loading.md)
+##### [LottieAnimationView](/application/dotnet/guides/nui/nui-components/LottieAnimationView.md)
+##### [Notification](/application/dotnet/guides/nui/nui-components/Notification.md)
+##### [Pagination](/application/dotnet/guides/nui/nui-components/Pagination.md)
 ##### [Popup](/application/dotnet/guides/nui/nui-components/Popup.md)
 ##### [Progress](/application/dotnet/guides/nui/nui-components/Progress.md)
-##### [Scrollbar](/application/dotnet/guides/nui/nui-components/Scrollbar.md)
+##### [RadioButton](/application/dotnet/guides/nui/nui-components/RadioButton.md)
+##### [ScrollableBase](/application/dotnet/guides/nui/nui-components/ScrollableBase.md)
 ##### [Slider](/application/dotnet/guides/nui/nui-components/Slider.md)
 ##### [Switch](/application/dotnet/guides/nui/nui-components/Switch.md)
 ##### [Tab](/application/dotnet/guides/nui/nui-components/Tab.md)
@@ -103,6 +108,9 @@
 ##### [Overview](/application/dotnet/guides/nui/animation.md)
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 #### [Resources](/application/dotnet/guides/nui/resources.md)
+#### Window System
+##### [Overview](/application/dotnet/guides/nui/tizenshell.md)
+##### [Quickpanel Client](/application/dotnet/guides/nui/quickpanelclient.md)
 #### XAML
 ##### [XAML Support for Tizen.NUI](/application/dotnet/guides/nui/xaml/xaml-support-for-tizen-nui.md)
 ##### [Layout Define Example](/application/dotnet/guides/nui/xaml/layout-define-example.md)
@@ -164,6 +172,7 @@
 ### Machine Learning
 #### [Overview](/application/dotnet/guides/machine-learning/overview.md)
 #### [Single Shot](/application/dotnet/guides/machine-learning/singleshot.md)
+#### [Pipeline](/application/dotnet/guides/machine-learning/pipeline.md)
 
 ### Messaging
 #### [Overview](/application/dotnet/guides/messaging/overview.md)
@@ -215,7 +224,7 @@
 #### [Overview](/application/dotnet/guides/security/overview.md)
 #### [Secure Key Management](/application/dotnet/guides/security/secure-repository.md)
 #### [Privilege Information](/application/dotnet/guides/security/privilege.md)
-#### [Privacy-related Permissions](/application/dotnet/guides/security/requesting-permissions.md)
+#### [Privacy-related Permissions](/application/dotnet/guides/security/privacy-related-permissions.md)
 #### [TEE Communication](/application/dotnet/guides/security/tee-client.md)
 #### [Device Policy Management](/application/dotnet/guides/security/dpm.md)
 
@@ -292,7 +301,7 @@
 #### UI Application
 ##### [Watch Application](/application/web/guides/applications/watch-app.md)
 ##### [Widget Application](/application/web/guides/applications/web-widget.md)
-#### [Web Service](/application/web/guides/applications/service-app.md)
+#### [Service Application](/application/web/guides/applications/service-app.md)
 #### [Web Application Addon](/application/web/guides/applications/addon.md)
 
 ### Application Management
@@ -355,8 +364,9 @@
 ### [Alarms](/application/web/guides/alarm/alarms.md)
 
 ### Media and Camera
-#### [Ovierview](/application/web/guides/multimedia/overview.md)
+#### [Overview](/application/web/guides/multimedia/overview.md)
 #### [JPEG File EXIF Information](/application/web/guides/multimedia/jpeg-exif.md)
+#### [Metadata](/application/web/guides/multimedia/metadata.md)
 #### [Audio Management](/application/web/guides/multimedia/audio.md)
 #### [Audio Latency](/application/web/guides/multimedia/player-util.md)
 #### [Media Controller](/application/web/guides/multimedia/media-controller.md)
@@ -393,7 +403,6 @@
 ### Personal Data
 #### [Overview](/application/web/guides/personal/personal.md)
 #### [Account Management](/application/web/guides/personal/account.md)
-#### [Bookmarks](/application/web/guides/personal/bookmarks.md)
 #### [Calendar](/application/web/guides/personal/calendar.md)
 #### [Call History](/application/web/guides/personal/call-history.md)
 #### [Contacts](/application/web/guides/personal/contacts.md)
@@ -609,7 +618,6 @@
 ###### [Overview](/application/native/guides/applications/dali-app.md)
 ###### [Basic UI Application](/application/native/guides/applications/dali-basic-app.md)
 ###### [Watch Application](/application/native/guides/applications/dali-watch-app.md)
-###### [Widget Application](/application/native/guides/applications/dali-widget-app.md)
 #### [Service Applications](/application/native/guides/applications/service-app.md)
 #### [Component Based Applications](/application/native/guides/applications/component-based-app.md)
 
@@ -815,6 +823,7 @@
 ###### [Overview](/application/native/guides/ui/dali/dali-rendering.md)
 ###### [Shape Drawing](/application/native/guides/ui/dali/rendering-tutorial.md)
 ###### [SVG Rendering](/application/native/guides/ui/dali/svg-rendering.md)
+##### [Capture](/application/native/guides/ui/dali/capture.md)
 ##### Background Knowledge
 ###### [Handle/Body Pattern](/application/native/guides/ui/dali/handle.md)
 ###### [Properties](/application/native/guides/ui/dali/properties.md)
@@ -866,6 +875,7 @@
 ### Machine Learning
 #### [Overview](/application/native/guides/machine-learning/overview.md)
 #### [Machine Learning Inference](/application/native/guides/machine-learning/machine-learning-inference.md)
+#### [Machine Learning Training](/application/native/guides/machine-learning/machine-learning-training.md)
 
 ### Multimedia
 #### [Overview](/application/native/guides/multimedia/overview.md)
@@ -874,10 +884,12 @@
 #### [Image Editing](/application/native/guides/multimedia/image-edit.md)
 #### [Thumbnail Images](/application/native/guides/multimedia/thumbnail-images.md)
 #### Visual Detection and Recognition
+##### [Overview](/application/native/guides/multimedia/media-vision.md)
 ##### [Barcode Detection and Generation](/application/native/guides/multimedia/image-barcode.md)
 ##### [Face Detection, Recognition, and Tracking](/application/native/guides/multimedia/face-detection.md)
 ##### [Image Recognition and Tracking](/application/native/guides/multimedia/image-recognition.md)
 ##### [Image Classification](/application/native/guides/multimedia/image-classification.md)
+##### [Pose Detection](/application/native/guides/multimedia/pose-detection.md)
 #### [Media Playback](/application/native/guides/multimedia/media-playback.md)
 #### [Media Recording](/application/native/guides/multimedia/media-recording.md)
 #### [Media Controller](/application/native/guides/multimedia/media-controller.md)
@@ -937,12 +949,13 @@
 #### [Activity Recognition](/application/native/guides/location-sensors/activity.md)
 #### [Gesture Recognition](/application/native/guides/location-sensors/gesture.md)
 
-### Text Input and Voice
+### Text Input, Gesture, and Voice
 #### [Overview](/application/native/guides/text-input/overview.md)
 #### [Input Method](/application/native/guides/text-input/input-method.md)
 #### [Autofill](/application/native/guides/text-input/autofill.md)
 #### [Autofill Service](/application/native/guides/text-input/autofill-service.md)
 #### [Autofill Manager](/application/native/guides/text-input/autofill-manager.md)
+#### [Gesture](/application/native/guides/text-input/capi-ui-gesture.md)
 #### [Speech-to-text](/application/native/guides/text-input/stt.md)
 #### [Text-to-speech](/application/native/guides/text-input/tts.md)
 #### [Voice Control](/application/native/guides/text-input/voice-control.md)
@@ -970,6 +983,7 @@
 #### [Overview](/application/native/guides/device/overview.md)
 #### [Attached Devices](/application/native/guides/device/attached-devices.md)
 #### [External Output Devices](/application/native/guides/device/ext-output.md)
+#### [Diagnostics](/application/native/guides/device/diagnostics.md)
 #### [Runtime Information](/application/native/guides/device/runtime.md)
 #### [System Information](/application/native/guides/device/system.md)
 #### [System Settings](/application/native/guides/device/settings.md)

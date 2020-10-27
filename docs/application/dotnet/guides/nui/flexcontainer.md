@@ -10,8 +10,10 @@ The following figure illustrates flex container terminology and alignment axes, 
 
 ![Flex container terminology](media/flex-container.jpg)
 
-<a name="layoutexample"></a>
-## Creating a Flexbox Layout
+> [!NOTE]
+> Use FlexLayout instead of FlexContainer class. FlexContainer class is deprecated since Tizen 6.0 and will be supported for the subsequent two releases only.
+
+## Creating a Flexbox layout
 
 The following example shows how to create a gallery-like flexbox layout using the [Tizen.NUI.BaseComponents.FlexContainer](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.FlexContainer.html) object.
 
@@ -19,9 +21,17 @@ The following example shows how to create a gallery-like flexbox layout using th
 
 ![Flex container example](media/flexbox-demo.jpg)
 
-1.  Create a flex container as the whole view and set its resize policy to fill its parent (the window):
+1.  Add the following namespaces:
 
+    ```csharp
+    using Tizen.NUI;
+    using Tizen.NUI.BaseComponents;
+    using Tizen.NUI.UIComponents;
     ```
+
+2.  Create a flex container as the whole view by setting the resize policy to fill the window:
+
+    ```csharp
     /// Create the main flex container
     FlexContainer flexContainer = new FlexContainer();
     flexContainer.ParentOrigin = ParentOrigin.TopLeft;
@@ -34,16 +44,16 @@ The following example shows how to create a gallery-like flexbox layout using th
     Window.Instance.Add(flexContainer);
     ```
 
-2.  To make the toolbar and main content display vertically, set the flex direction of the main container to **column**:
+3.  To make the toolbar and main content display vertically, set the flex direction of the main container to **column**:
 
-    ```
+    ```csharp
     /// Display toolbar and content vertically
     flexContainer.FlexDirection = FlexContainer.FlexDirectionType.Column;
     ```
 
-3.  Create a new flex container as the toolbar and add it to the main container. Because the flex direction in the main container is **column**, the toolbar is placed at the top.
+4.  Create a new flex container as the toolbar and add it to the main container. Since the flex direction in the main container is set to **column**, the toolbar is placed at the top:
 
-    ```
+    ```csharp
     /// Create the toolbar
     FlexContainer toolBar = new FlexContainer();
     toolBar.ParentOrigin = ParentOrigin.TopLeft;
@@ -54,27 +64,21 @@ The following example shows how to create a gallery-like flexbox layout using th
     flexContainer.Add(toolBar);
     ```
 
-4.  To make the buttons and title display horizontally, but vertically aligned to the center of the toolbar, set the toolbar flex direction to **row** and its `AlignItems` property to **center**:
+5.  Change the display of toolbar by setting the `FlexDirection` property to **row**, `AlignItems` property to **center**, and `JustifyContent` property to **spaceBetween**. It displays buttons and title horizontally with vertical alignment to the center of the toolbar and having equal space between them.:
 
-    ```
+    ```csharp
     /// Display toolbar items horizontally
     toolBar.FlexDirection = FlexContainer.FlexDirectionType.Row;
     /// Align toolbar items vertically center
     toolBar.AlignItems = FlexContainer.Alignment.AlignCenter;
+    /// Create equal empty spaces between children
+    toolBar.JustifyContent = FlexContainer.Justification.JustifySpaceBetween;
     ```
 
-5.  Use the toolbar's `Flex` property to make the toolbar and the main content share the height of the main container, so that the toolbar occupies 10 percent of the vertical space and the content occupies the remainder:
 
-    ```
-    /// Occupy 10 percent of available space on the cross axis
-    toolBar.Flex = 0.1f;
-    ```
+6.  To display the image, create the content area by adding a third flex container at the bottom of the main container. Show the image in the center of the content area container by centering the item horizontally and vertically inside the area:
 
-6.  To display the image, create the content area by adding a third flex container at the bottom of the main container.
-
-    Show the image in the center of the content area container by centering the item horizontally and vertically inside the area.
-
-    ```
+    ```csharp
     /// Create the content area
     FlexContainer content = new FlexContainer();
     content.ParentOrigin = ParentOrigin.TopLeft;
@@ -85,19 +89,26 @@ The following example shows how to create a gallery-like flexbox layout using th
     content.JustifyContent = FlexContainer.Justification.JustifyCenter;
     /// Align items vertically center
     content.AlignItems = FlexContainer.Alignment.AlignCenter;
-    /// Occupy 90 percent of available space on the cross axis
-    content.Flex = 0.9f;
     /// Add the content area to the main container
     flexContainer.Add(content);
     ```
 
-7.  Add items to the toolbar.
+7.  Use `Flex` property of the `FlexContainer` class to specify the area to be occupied within the main container. Since the main container displays items vertically, its height is shared between the toolbar and the content. Setting `toolbar.Flex` to 0.1 and `content.Flex` to 0.9 means that `toolbar` will occupy 10% of vertical space and `content` will occupy 90% of vertical space of the main container. The width of the items will be equal to the width of the main container:
+
+    ```csharp
+    /// Occupy 10 percent of available space on the cross axis
+    toolBar.Flex = 0.1f;
+    /// Occupy 90 percent of available space on the cross axis
+    content.Flex = 0.9f;
+    ``` 
+
+8.  Add items to the toolbar.
 
     The toolbar has 1 button on the left, 1 button on the right, and a title in the center. To keep the title in the center, make the title flexible so that it automatically takes all remaining horizontal space. To make the layout look nicer, also add some space around the items.
 
-    Creating the toolbar with a flex container allows you to keep the toolbar layout consistent, even as it expands or reduces in size based on screen size and orientation.
+    Creating the toolbar with a flex container allows you to keep the toolbar layout consistent, even as it expands or reduces in size based on screen size and orientation:
 
-    ```
+    ```csharp
     /// Add a button to the left of the toolbar
     PushButton prevButton = new PushButton();
     prevButton.ParentOrigin = ParentOrigin.TopLeft;
@@ -122,8 +133,6 @@ The following example shows how to create a gallery-like flexbox layout using th
     title.HeightResizePolicy = ResizePolicyType.UseNaturalSize;
     title.HorizontalAlignment = HorizontalAlignment.Center;
     title.VerticalAlignment = VerticalAlignment.Center;
-    /// Occupy all remaining space in the toolbar
-    title.Flex = 1.0f;
     /// Set a 10-pixel margin around the title
     title.FlexMargin = new Vector4(10.0f, 10.0f, 10.0f, 10.0f);
     toolBar.Add(title);
@@ -145,24 +154,23 @@ The following example shows how to create a gallery-like flexbox layout using th
     nextButton.Label = labelMap2;
     ```
 
-8.  Add the image to the content area:
+9.  Add the image to the content area:
 
-    ```
+    ```csharp
     /// Add an image to the center of the content area
-    ImageView imageView = new ImageView("image.jpg");
+    ImageView imageView = new ImageView(DirectoryInfo.Resource + "image.png");
     imageView.ParentOrigin = ParentOrigin.TopLeft;
     imageView.PivotPoint = PivotPoint.TopLeft;
     content.Add(imageView);
     ```
 
-<a name="properties"></a>
-## Modifying FlexContainer Properties
+## Modifying FlexContainer properties
 
 You can modify the flex container appearance and behavior through the following properties:
 
 -   `ContentDirection`
 
-    This property specifies the primary direction in which content is ordered along a line.
+    This property specifies the primary direction in which content is ordered along a line:
 
     **Figure: ContentDirection LTR**
 
@@ -182,14 +190,14 @@ You can modify the flex container appearance and behavior through the following 
 
     **Usage:**
 
-    ```
+    ```csharp
     FlexContainer flexContainer = new FlexContainer();
     flexContainer.ContentDirection = FlexContainer.ContentDirectionType.RTL;
     ```
 
 -   `FlexDirection`
 
-    This property specifies the main axis direction along which flex items are placed.
+    This property specifies the main axis direction along which flex items are placed. The default property is `Column`:
 
     **Figure: FlexDirection**
 
@@ -206,14 +214,14 @@ You can modify the flex container appearance and behavior through the following 
 
     **Usage:**
 
-    ```
+    ```csharp
     FlexContainer flexContainer = new FlexContainer();
     flexContainer.FlexDirection = FlexContainer.FlexDirectionType.RowReverse;
     ```
 
 -   `FlexWrap`
 
-    This property specifies whether the flex items must wrap if there is not enough room for them on 1 flex line.
+    This property specifies whether the flex items must wrap if there is not enough room for them on 1 flex line:
 
     **Figure: FlexWrap**
 
@@ -228,14 +236,14 @@ You can modify the flex container appearance and behavior through the following 
 
     **Usage:**
 
-    ```
+    ```csharp
     FlexContainer flexContainer = new FlexContainer();
     flexContainer.FlexWrap = FlexContainer.WrapType.NoWrap;
     ```
 
 -   `JustifyContent`
 
-    This property specifies the alignment for flex items, when they do not use all available space on the main axis.
+    This property specifies the alignment for flex items when all the available space on the main axis is not used:
 
     **Figure: JustifyContent**
 
@@ -253,14 +261,14 @@ You can modify the flex container appearance and behavior through the following 
 
     **Usage:**
 
-    ```
+    ```csharp
     FlexContainer flexContainer = new FlexContainer();
     flexContainer.JustifyContent = FlexContainer.Justification.JustifySpaceBetween;
     ```
 
 -   `AlignItems`
 
-    This property specifies the alignment for flex items when they do not use all the available space on the cross axis.
+    This property specifies the alignment for flex items when all the available space on the cross axis is not used:
 
     **Figure: AlignItems**
 
@@ -278,14 +286,14 @@ You can modify the flex container appearance and behavior through the following 
 
     **Usage:**
 
-    ```
+    ```csharp
     FlexContainer flexContainer = new FlexContainer();
     flexContainer.AlignItems = FlexContainer.Alignment.AlignFlexStart;
     ```
 
 -   `AlignContent`
 
-    This property specifies the alignment for flex lines when they do not use all the available space on the cross axis. It is only valid when there are multiple lines.
+    This property specifies the alignment for flex lines when all the available space on the cross axis is not used. It is only valid when there are multiple lines:
 
     **Figure: AlignContent**
 
@@ -303,13 +311,12 @@ You can modify the flex container appearance and behavior through the following 
 
     **Usage:**
 
-    ```
+    ```csharp
     FlexContainer flexContainer = new FlexContainer();
     flexContainer.AlignContent = FlexContainer.Alignment.AlignFlexEnd;
     ```
 
-<a name="childproperty"></a>
-## Modifying FlexItem Properties
+## Modifying FlexItem properties
 
 Flex items have non-animatable properties, which are registered dynamically to each child before it is added to the flex container. Once the item is added to the container, these values cannot be changed. These properties determine the item's placement inside the flex container.
 
@@ -317,35 +324,43 @@ You can modify the flex item placement through the following properties:
 
 -   `Flex`
 
-    By default, items in a flex container are not flexible. To make an item flexible, so that it alters its width and height to occupy a specified proportion of free space in the flex container, you can set the item's `Flex` property. If all items in the flex container use this pattern, their sizes are proportional to the specified flex factor. If you have specified a minimum size for the item, using the `MinimumSize()` method of the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class, the item cannot become smaller than the minimum.
+    By default, items in a flex container are not flexible. To make an item flexible, so that it alters its width and height to occupy a specified proportion of free space in the flex container, you can set the item's `Flex` property. If all items in the flex container use this pattern, their sizes are proportional to the specified flex factor. If you have specified a minimum size for the item, using the `MinimumSize()` method of the [Tizen.NUI.BaseComponents.View](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.View.html) class, the item cannot become smaller than the minimum:
 
     **Figure: Flex**
 
-    ![Flex](media/flex.jpg)
+    ![Flex](media/flex.png)
 
     To create a layout with the proportions shown in the above figure:
 
-    ```
+    ```csharp
     /// Create the flex container
     FlexContainer flexContainer = new FlexContainer();
 
-    /// Place items horizontally
-    flexContainer.FlexDirection = FlexContainer.FlexDirectionType.Row;
+    /// Resize flex container to window size
+    flexContainer.WidthResizePolicy = ResizePolicyType.FillToParent;
+    flexContainer.HeightResizePolicy = ResizePolicyType.FillToParent;
+
+    /// Add the container to the window
+    Window.Instance.Add(flexContainer);
 
     /// Create flex items and set their proportions
     View item1 = new View();
+    item1.BackgroundColor = Color.Red;
     item1.Flex = 1.0f;
     flexContainer.Add(item1);
 
     View item2 = new View();
+    item2.BackgroundColor = Color.Green;
     item2.Flex = 3.0f;
     flexContainer.Add(item2);
 
     View item3 = new View();
+    item3.BackgroundColor = Color.Blue;
     item3.Flex = 1.0f;
     flexContainer.Add(item3);
 
     View item4 = new View();
+    item4.BackgroundColor = Color.Yellow;
     item4.Flex = 2.0f;
     flexContainer.Add(item4);
 
@@ -354,10 +369,9 @@ You can modify the flex item placement through the following properties:
     flexContainer.Add(item5);
     ```
 
-<a name="align-self"></a>
 -   `AlignSelf`
 
-    This property specifies how the item aligns along the cross axis. If the `AlignSelf` property is set, it overrides the default alignment defined by the container's `AlignItems` property.
+    This property specifies how the item aligns along the cross axis. If the `AlignSelf` property is set, it overrides the default alignment defined by the container's `AlignItems` property:
 
     **Figure: AlignSelf**
 
@@ -365,33 +379,47 @@ You can modify the flex item placement through the following properties:
 
     To create the item alignment shown in the above figure:
 
-    ```
+    ```csharp
     /// Create the flex container
     FlexContainer flexContainer = new FlexContainer();
 
-    /// Lay out the items horizontally
-    flexContainer.FlexDirection = FlexContainer.FlexDirectionType.Row;
-
     /// Set the default alignment along the cross axis to the beginning of the container
     flexContainer.AlignItems = FlexContainer.Alignment.AlignFlexStart;
+    flexContainer.WidthResizePolicy = ResizePolicyType.FillToParent;
+    flexContainer.HeightResizePolicy = ResizePolicyType.FillToParent;
+    flexContainer.FlexDirection = FlexContainer.FlexDirectionType.Row;
+    Window.Instance.Add(flexContainer);
 
     /// Create flex items and add them to the flex container
     View item1 = new View();
+
     /// Align item1 to the center of the container
-    item1.AlignSelf = FlexContainer.Alignment.AlignCenter;
+    item1.AlignSelf = (int)FlexContainer.Alignment.AlignCenter;
+    item1.Size2D = new Size2D(150, 150);
+    item1.BackgroundColor = Color.Red;
     flexContainer.Add(item1);
 
     View item2 = new View();
+
     /// Align item2 to the beginning of the container based on the default alignment
+    item2.Size2D = new Size2D(150, 150);
+    item2.BackgroundColor = Color.Green;
     flexContainer.Add(item2);
 
     View item3 = new View();
+
     /// Align item3 to the bottom of the container
-    item3.AlignSelf = FlexContainer.Alignment.AlignFlexEnd;
+    item3.AlignSelf = (int)FlexContainer.Alignment.AlignFlexEnd;
+    item3.Size2D = new Size2D(150, 150);
+    item3.BackgroundColor = Color.Blue;
     flexContainer.Add(item3);
 
     View item4 = new View();
+
     /// Align item4 to the beginning of the container based on the default alignment
+    item4.AlignSelf = (int)FlexContainer.Alignment.AlignFlexStart;
+    item4.Size2D = new Size2D(150, 150);
+    item4.BackgroundColor = Color.Magenta;
     flexContainer.Add(item4);
     ```
 
@@ -404,7 +432,7 @@ You can modify the flex item placement through the following properties:
     -   Border: Border around the padding and content
     -   Margin: Space outside the border
 
-    In NUI, the total size of the flex item includes the content size, padding, and border. The flex margin specifies the space around the flex item.
+    In NUI, the total size of the flex item includes the content size, padding, and border. The flex margin specifies the space around the flex item:
 
     **Figure: FlexMargin**
 
@@ -412,20 +440,23 @@ You can modify the flex item placement through the following properties:
 
     To add space around an item:
 
-    ```
+    ```csharp
     /// Create the flex container
     FlexContainer flexContainer = new FlexContainer();
+    Window.Instance.Add(flexContainer);
 
     /// Create a flex item
     View item = new View();
 
     /// Add a margin around the item
     item.FlexMargin = new Vector4(10.0f, 10.0f, 10.0f, 10.0f);
-
-    /// Add the item to the container
+    item.Size2D = new Size2D(200, 200);
+    item.BackgroundColor = Color.Red;
     flexContainer.Add(item);
     ```
 
-## Related Information
+## Related information 
+- Example
+  - [FlexContainer Sample](https://github.com/Samsung/Tizen-CSharp-Samples/blob/master/TV/FlexContainerSample)
 - Dependencies
   -   Tizen 4.0 and Higher

@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<script type="text/javascript" src="../snippet.js"></script>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<link href="../styles.css" rel="StyleSheet" type="text/css">
+	<link href="../snippet.css" rel="StyleSheet" type="text/css">
+	<title>Interactive 3D</title>
+</head>
+<body onload="prettyPrint()" id="content">
+
+
+<h1>Interactive 3D</h1>
+
+<p>The interactive 3D component allows you to load and control a 3D model freely.</p>
+
+<img src="../../images/mobile_interactive3D.png" width="15%">
+<br>
+<button
+	onclick="
+		if (navigator.userAgent.toLowerCase().indexOf('chrome') == -1) {
+			alert('Chrome Browser required')
+		} else
+			window.open('https://code.tizen.org/demos?path=1.1%2Fexamples%2Fmobile%2FUIComponents%2Fcomponents%2Finteractive%2Finteractive3D%2Findex.html', '_blank')"
+>Use example</button>
+
+<table class="note">
+	<tbody>
+		<tr>
+			<th class="note">Note</th>
+		</tr>
+		<tr>
+			<td class="note">This component is supported since Tizen 5.5.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Table of Contents</h2>
+
+<ol class="toc">
+
+		<li><a href="#default-selectors-interactive3D-mobile">Default Selectors</a></li>
+
+		<li><a href="#html-examples-interactive3D-mobile">HTML Examples</a></li>
+
+		<li><a href="#options-for-widget-interactive3D-mobile">Options</a></li>
+
+</ol>
+
+<h2><a id="default-selectors-interactive3D-mobile"></a>Default Selectors</h2>
+
+<p>By default, all <code>&lt;div&gt;</code> elements with the <code>class=&quot;ui-i3d&quot;</code> attribute are displayed as interactive 3D.</p>
+
+<h2><a id="html-examples-interactive3D-mobile"></a>HTML Examples</h2>
+
+<ul>
+
+<li>
+
+<p>To use Interactive 3D, you must import <code>tau.i3d.js</code> along with <code>tau.js</code>.<br>
+To create a interactive 3D using the <code>class</code> attribute, use the following code:</p>
+
+<pre class="prettyprint">
+    &lt;div class=&quot;ui-i3d&quot;&gt;
+      width=&quot;320&quot;
+      height=&quot;240&quot;
+      position=&quot;0 0 0&quot;
+      scale=&quot;50 50 50&quot;
+      rotation=&quot;0 -90 0&quot;
+      light=&quot;0xbbbbbb 0x000000 2&quot;
+      controls
+      autoplay
+      src=&quot;assets/Duck.gltf&quot;
+    &lt;/div&gt;
+</pre>
+
+</li>
+
+</ul>
+
+<h2><a id="options-for-widget-interactive3D-mobile"></a>Options</h2>
+
+	<h3>Summary</h3>
+
+	<table>
+		<tbody>
+		<tr>
+			<th>Option</th>
+			<th>Input type</th>
+			<th>Default value</th>
+			<th>Description</th>
+		</tr>
+
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">src</span></td>
+				<td class="option">string</td>
+				<td class="option">""</td>
+				<td class="option">A string containing the path/URL of the file to be loaded. Supported formats are fbx, gltf, and obj.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">width</span></td>
+				<td class="option">string</td>
+				<td class="option">"400"</td>
+				<td class="option">Set the interactive 3D width in pixels.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">height</span></td>
+				<td class="option">string</td>
+				<td class="option">"300"</td>
+				<td class="option">Set the interactive 3D height in pixels.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">position</span></td>
+				<td class="option">string</td>
+				<td class="option">"0 0 0"</td>
+				<td class="option">Set the interactive 3D local position(x, y, z).</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">scale</span></td>
+				<td class="option">string</td>
+				<td class="option">"1 1 1"</td>
+				<td class="option">Set the interactive 3D local scale(x, y, z).</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">rotation</span></td>
+				<td class="option">string</td>
+				<td class="option">"0 0 0"</td>
+				<td class="option">Set the interactive 3D local rotation in radians(x, y, z).</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">light</span></td>
+				<td class="option">string</td>
+				<td class="option">"0xffffff 0xffffff 1"</td>
+				<td class="option">A light source positioned directly above the scene(skyColor, groundColor, intensity).</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">controls</span></td>
+				<td class="option"></td>
+				<td class="option"></td>
+				<td class="option">Obrit controls allow the camera to orbit around a target.</td>
+			</tr>
+
+			<tr>
+				<td class="option"><span style="font-family: Courier New,Courier,monospace">autoplay</span></td>
+				<td class="option"></td>
+				<td class="option"></td>
+				<td class="option">Play animations of the model automatically.</td>
+			</tr>
+
+		</tbody>
+	</table>
+
+<div id="footer">
+	<hr size="1">
+	<font size="1">Except as noted, this content - excluding the Code Examples - is licensed under <a
+			href="http://creativecommons.org/licenses/by/3.0/legalcode" target="_blank">Creative Commons Attribution
+		3.0</a> and all of the Code Examples contained herein are licensed under <a
+			href="https://www.tizen.org/bsd-3-clause-license" target="_blank">BSD-3-Clause</a>.<br>For details, see the
+		<a href="https://www.tizen.org/content-license" target="_blank">Content License</a>.</font>
+</div>
+</body>
+</html>

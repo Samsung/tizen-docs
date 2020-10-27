@@ -762,7 +762,7 @@ var NAVTREEINDEX =
 "group__Evas__Keys.html":[1,14,2,6,4,0,0],
 "group__Evas__Smart__Group.html":[1,14,2,6,5],
 "group__Evas__Smart__Object__Group.html":[1,14,2,6,6],
-"group__Evas__Object__Box.html":[1,14,2,6,6,0],
+"group__Evas__Object__Box__Group.html":[1,14,2,6,6,0],
 "group__Evas__Smart__Object__Clipped.html":[1,14,2,6,6,1],
 "group__Evas__Object__Grid__Group.html":[1,14,2,6,6,2],
 "group__Evas__Object__Table__Group.html":[1,14,2,6,6,3],

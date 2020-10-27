@@ -412,18 +412,18 @@ main(<span class="keywordtype">void</span>)
      d.bg, EVAS_CALLBACK_KEY_DOWN, _on_keydown, NULL);
 
    <span class="comment">/* Evas box with vertical layout */</span>
-   d.box = <a name="a32"></a><a class="code" href="group__Evas__Object__Box.html#gad413687e53adcbb70ced91d4a4218b45">evas_object_box_add</a>(d.canvas);
-   evas_object_box_layout_set(
-     d.box, evas_object_box_layout_vertical, NULL, NULL);
+   d.box = <a name="a32"></a><a class="code" href="group__Evas__Object__Box__Group.html#gad413687e53adcbb70ced91d4a4218b45">evas_object_box_add</a>(d.canvas);
+   <a name="a33"></a><a class="code" href="group__Evas__Object__Box__Group.html#ga1208fa9c5229f69d65a72d9364a72bb0" title="Set a new layouting function to a given box object.">evas_object_box_layout_set</a>(
+     d.box, <a name="a34"></a><a class="code" href="group__Evas__Object__Box__Group.html#ga13a820d1cdb6c8c7ce09242972250382" title="Layout function which sets the box o to a (basic) vertical box.">evas_object_box_layout_vertical</a>, NULL, NULL);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.box);
 
    <span class="comment">/* this is a border around the box, container of the rectangles we</span>
 <span class="comment">    * are going to experiment with (changing some size hints). this</span>
 <span class="comment">    * way you can see how the container relates to the children */</span>
-   d.border = <a name="a33"></a><a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
-   <a name="a34"></a><a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.border, border_img_path, NULL);
-   <a name="a35"></a><a class="code" href="group__Evas__Object__Image.html#gace5efad74de9f87cd996b2a34b3ea591" title="Dimensions of this image&#39;s border, a region that does not scale with the center area.">evas_object_image_border_set</a>(d.border, 3, 3, 3, 3);
-   <a name="a36"></a><a class="code" href="group__Evas__Object__Image.html#ga1f134668dedc8ad855c3af28fd2df8f6" title="Specifies how the center part of the object (not the borders) should be drawn when EFL is rendering i...">evas_object_image_border_center_fill_set</a>(d.border, <a name="a37"></a><a class="code" href="group__Evas__Object__Image.html#gga9f789224285e646309b7dd81a2401910a2ad856ac6aab5e2659c3a584a37aec70">EVAS_BORDER_FILL_NONE</a>);
+   d.border = <a name="a35"></a><a class="code" href="group__Evas__Object__Image.html#ga0e8cb83d31d02bf583c75925b7cd14d7">evas_object_image_filled_add</a>(d.canvas);
+   <a name="a36"></a><a class="code" href="group__Evas__Object__Image.html#gac27fd0ceabe5f56607b7a86d71577df1">evas_object_image_file_set</a>(d.border, border_img_path, NULL);
+   <a name="a37"></a><a class="code" href="group__Evas__Object__Image.html#gace5efad74de9f87cd996b2a34b3ea591" title="Dimensions of this image&#39;s border, a region that does not scale with the center area.">evas_object_image_border_set</a>(d.border, 3, 3, 3, 3);
+   <a name="a38"></a><a class="code" href="group__Evas__Object__Image.html#ga1f134668dedc8ad855c3af28fd2df8f6" title="Specifies how the center part of the object (not the borders) should be drawn when EFL is rendering i...">evas_object_image_border_center_fill_set</a>(d.border, <a name="a39"></a><a class="code" href="group__Evas__Object__Image.html#gga9f789224285e646309b7dd81a2401910a2ad856ac6aab5e2659c3a584a37aec70">EVAS_BORDER_FILL_NONE</a>);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.border);
 
    d.t_rect = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
@@ -432,7 +432,7 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="group__Evas__Object__Group.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(
           d.t_rect, d.t_data.min_ptr-&gt;w, d.t_data.min_ptr-&gt;h);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.t_rect);
-   evas_object_box_append(d.box, d.t_rect);
+   <a name="a40"></a><a class="code" href="group__Evas__Object__Box__Group.html#ga556d509a9c1547fb601d84292353ad20" title="Append a new child object to the given box object o.">evas_object_box_append</a>(d.box, d.t_rect);
 
    d.b_rect = <a class="code" href="group__Evas__Object__Rectangle.html#ga4d80fc32ad1cac28428cebd65d746751">evas_object_rectangle_add</a>(d.canvas);
    <a class="code" href="group__Evas__Object__Group__Basic.html#gae34bdcfd7f5100151f6ea8ef4a392949">evas_object_color_set</a>(d.b_rect, 0, 255, 0, 255);
@@ -440,13 +440,13 @@ main(<span class="keywordtype">void</span>)
    <a class="code" href="group__Evas__Object__Group.html#ga3014f5c9dfbdc6c7af41a27826e50e57" title="Sets the hints for an object&#39;s minimum size.">evas_object_size_hint_min_set</a>(
           d.b_rect, d.b_data.min_ptr-&gt;w, d.b_data.min_ptr-&gt;h);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(d.b_rect);
-   evas_object_box_append(d.box, d.b_rect);
+   <a class="code" href="group__Evas__Object__Box__Group.html#ga556d509a9c1547fb601d84292353ad20" title="Append a new child object to the given box object o.">evas_object_box_append</a>(d.box, d.b_rect);
 
    _canvas_resize_cb(d.ee);
 
    printf(commands);
-   <a name="a38"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
-   <a name="a39"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
+   <a name="a41"></a><a class="code" href="group__Ecore__Main__Loop__Group.html#gaf103b9f668bb3e4fed12e52c6180132d">ecore_main_loop_begin</a>();
+   <a name="a42"></a><a class="code" href="group__Ecore__Evas__Group.html#gab1a47c09b475148c037c0a3d68644fa4" title="Shuts down the Ecore_Evas system.">ecore_evas_shutdown</a>();
    <span class="keywordflow">return</span> 0;
 
 error:

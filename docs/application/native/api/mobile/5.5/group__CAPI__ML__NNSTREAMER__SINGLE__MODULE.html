@@ -123,7 +123,7 @@ Related Features</h2>
 <p>It is recommended to probe features in your application for reliability.<br/>
  You can check if a device supports the related features for this function by using <a class="el" href="group__CAPI__SYSTEM__SYSTEM__INFO__MODULE.html">System Information</a>, thereby controlling the procedure of your application.<br/>
  To ensure your application is only running on the device with specific features, please define the features in your manifest file using the manifest editor in the SDK.<br/>
- For example, your application accesses to the camera device, then you have to add '<a href="http://tizen.org/privilege/camera'">http://tizen.org/privilege/camera'</a> into the manifest of your application.<br/>
+ For example, your application accesses to the camera device, then you have to add 'http://tizen.org/privilege/camera' into the manifest of your application.<br/>
  More details on featuring your application can be found from <a href="https://docs.tizen.org/application/tizen-studio/native-tools/manifest-text-editor#feature-element"><b>Feature Element</b>. </a> </p>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="func-members"></a>
@@ -400,9 +400,9 @@ Typedefs</h2></td></tr>
 <p>Opens an ML model and returns the instance as a handle. </p>
 <p>Even if the model has flexible input data dimensions, input data frames of an instance of a model should share the same dimension. </p>
 <dl class="user"><dt><b>Since :</b></dt><dd>5.5 </dd></dl>
-<dl class="remark"><dt><b>Remarks:</b></dt><dd><a href="http://tizen.org/privilege/mediastorage">http://tizen.org/privilege/mediastorage</a> is needed if <em>model</em> is relevant to media storage. </dd>
+<dl class="remark"><dt><b>Remarks:</b></dt><dd>http://tizen.org/privilege/mediastorage is needed if <em>model</em> is relevant to media storage. </dd>
 <dd>
-<a href="http://tizen.org/privilege/externalstorage">http://tizen.org/privilege/externalstorage</a> is needed if <em>model</em> is relevant to external storage. </dd></dl>
+http://tizen.org/privilege/externalstorage is needed if <em>model</em> is relevant to external storage. </dd></dl>
 <dl class="params"><dt><b>Parameters:</b></dt><dd>
   <table class="params">
     <tr><td class="paramdir">[out]</td><td class="paramname">single</td><td>This is the model handle opened. Users are required to close the given instance with <a class="el" href="group__CAPI__ML__NNSTREAMER__SINGLE__MODULE.html#ga4387f8dbcef5912015941670e2fc54ae" title="Closes the opened model handle.">ml_single_close()</a>. </td></tr>
