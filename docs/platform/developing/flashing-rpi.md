@@ -12,9 +12,9 @@ This topic describes how to flash Tizen on SD card with or without IoT Setup Man
 |Headed 32-bit|Yes	|Yes		|
 |Headed 64-bit|Yes	|No			|
 
-    > **Note**
-    >
-    > In windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. (While using Headed 64 bit image and Headless 32bit image, RPMs cannot be installed through IOT setup manager because rootsfs.img is of BTRFS type file.)
+> **Note**
+>
+> In windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. (While using Headed 64 bit image and Headless 32bit image, RPMs cannot be installed through IOT setup manager because rootsfs.img is of BTRFS type file.)
 
 ## Prerequisites
 
@@ -92,12 +92,13 @@ You must have the supported binary images in your computer. You can download the
 		
 ## Install Tizen Studio
 
-> **NOTE**
+> **Note**
+>
 > You can skip this section, if you have already installed latest Tizen Studio 4.0 version and installed the **6.0 Mobile** profile for the **Main SDK** and the **IoT Setup Manager**, **IoT-Headed-6.0** and **IoT-Headless-6.0** profiles for the **Extension SDK**.
 
 To install Tizen Studio and the required profiles for IoT development, follow these steps:
 
-1.  Download and install Tizen Studio 4.0 for your operating system from [Tizen developer site](https://developer.tizen.org/development/tizen-studio/download){:target="_blank"}.
+1.  Download and install Tizen Studio 4.0 for your operating system from [Tizen developer site](https://developer.tizen.org/development/tizen-studio/download)
 2.  Open Tizen Studio and go to **Tools > Package Manager**.
 3.  Click **Extension SDK** and verify whether the IoT Setup Manager appears in the list of available packages.
 4.  Click **install** for **IoT Setup Manager** to install the IoT Setup Manager Extension.
