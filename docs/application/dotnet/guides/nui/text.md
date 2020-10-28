@@ -358,14 +358,13 @@ For text decorations, the `TextLabel` class provides several properties. All the
 <a name="textField"></a>
 ## TextField
 
-The `TextField` class provides a control that allows single line editable text field.
+The [TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class provides a control that allows single line editable text field.
 
 **Figure: TextField**
 
 ![TextField](./media/textfield.png)
 
 
-<a name="textField1"></a>
 ### TextField Events
 
 The following table lists the basic signals provided by the `TextField` class:
@@ -376,7 +375,6 @@ The following table lists the basic signals provided by the `TextField` class:
 | `TextChanged`       | Emitted when the text changes.              |
 | `MaxLengthReached`  | Emitted when the inserted text exceeds the maximum character limit. |
 
-<a name="textField2"></a>
 ### Create TextField
 
 Before the text is entered, the `TextField` class displays a placeholder text. An alternative placeholder is displayed when `TextField` gets the keyboard focus. For example, the `TextField` that is used to enter a username initially displays the text `Unknown Name` and then the text `Enter Name`, when the cursor is visible.
@@ -398,7 +396,6 @@ When the `TextField` is tapped, it automatically gets the keyboard focus. Key ev
 string fieldTextString = field.Text;
 ```
 
-<a name="textField3"></a>
 ### Align Text in TextField
 
 The `TextField` class displays a single line of text that scrolls in either of the following case:
@@ -416,7 +413,7 @@ field.HorizontalAlignment = HorizontalAlignment.Begin;
 
 ### Use Input Properties in TextField
 
-To change the text settings for new input text, you can use the Input properties of the [Tizen.NUI.BaseComponents.TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class, such as `InputColor`, `InputPointSize`, and so on.
+To change the text settings for new input text, you can use the Input properties of the `TextField` class, such as `InputColor`, `InputPointSize`, and so on.
 
 To use these properties there are some specific conditions. For instance, you can use these properties either when the `TextChanged` event occurs or when the `Clicked` event of button occurs.
 
@@ -424,20 +421,18 @@ The following example illustrates how to use the `InputColor` property in a `Tex
 
 ```csharp
 TextField field = new TextField();
-field.TextColor =
 field.TextChanged += (obj, e) => {
     e.TextField.InputColor = Color.Yellow;
 };
 ```
 
-<a name="textField4"></a>
 ### TextField Properties
 
 To change the look and feel of the text and text related elements, use the `TextField` properties.
 
 ### Use Decorations for TextField
 
-For text decorations, the following [Tizen.NUI.BaseComponents.TextField](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextField.html) class properties are available. All properties are editable and none of them are animatable:
+For text decorations, the following `TextField` class properties are available. All properties are editable and none of them are animatable:
 
 
 | Property                           | Type        | Description                              |
@@ -499,7 +494,7 @@ For text decorations, the following [Tizen.NUI.BaseComponents.TextField](https:/
 <a name="textEditor"></a>
 ## TextEditor
 
-The `TextEditor` class provides a control that allows multi-line text editing. It is similar to the [TextField](#textField) control, where different formatting can be applied to different parts of the text. For example, you can change the font color, font style, point size, and font family.
+The [TextEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextEditor.html) class provides a control that allows multi-line text editing. It is similar to the [TextField](#textField) control, where different formatting can be applied to different parts of the text. For example, you can change the font color, font style, point size, and font family.
 
 The `TextEditor` also supports markup, and text can be scrolled vertically within it.
 
@@ -507,7 +502,6 @@ The `TextEditor` also supports markup, and text can be scrolled vertically withi
 
 ![TextEditor](./media/dali_texteditor.png)
 
-<a name="textEditor1"></a>
 ### TextEditor Events
 
 The following table lists the basic signals provided by the `TextEditor` class:
@@ -518,30 +512,27 @@ The following table lists the basic signals provided by the `TextEditor` class:
 | `TextChanged`        | Emitted when the text changes.           |
 | `ScrollStateChanged` | Emitted when TextEditor scrolling is started or finished. |
 
-<a name="textEditor2"></a>
 ### Create TextEditor
 
 The following example shows how to create a `TextEditor` object:
 
 ```csharp
-// Create a TextEditor instance
-Window window = Window.Instance;
-TextEditor editor = new TextEditor();
-editor.Position2D = new Position2D(10, 700);
-editor.Size2D = new Size2D(400, 90);
-editor.BackgroundColor = Color.Red;
-editor.PointSize = 20;
-editor.TextColor = Color.White;
-editor.Text = "This is a multiline text.\n I can write several lines.\n"
-window.Add(editor);
+    // Create a TextEditor instance
+    TextEditor editor = new TextEditor();
+    editor.Position2D = new Position2D(10, 10);
+    editor.Size2D = new Size2D(400, 400);
+    editor.BackgroundColor = Color.Red;
+    editor.PointSize = 10;
+    editor.TextColor = Color.White;
+    editor.Text = "This is a multiline text.\n I can write several lines.\n";
+    Window.Instance.Add(editor);
 ```
 
-<a name="textEditor3"></a>
 ### TextEditor Properties
 
 You can modify the `TextEditor` appearance and behavior using its properties.
 
-The following table lists the available [Tizen.NUI.BaseComponents.TextEditor](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextEditor.html) properties:
+The following table lists the available `TextEditor` properties:
 
 
 | Property                           | Type        | Description                              |
@@ -600,5 +591,7 @@ The following table lists the available [Tizen.NUI.BaseComponents.TextEditor](ht
 
 
 ## Related Information
+- Examples
+  - [TvTextSample](https://github.com/Samsung/Tizen-CSharp-Samples/tree/master/TV/TextSample)
 - Dependencies
   -   Tizen 4.0 and Higher
