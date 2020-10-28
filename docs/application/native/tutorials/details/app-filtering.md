@@ -183,6 +183,9 @@ package:
 | `http://tizen.org/feature/location.geofence` | Specify this key, if the application requires the geofence feature. | 2.4   |
 | `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/location.wps`  | Specify this key, if the application requires the Wi-Fi-based Positioning System (WPS) feature. | 2.2.1 |
+| `http://tizen.org/feature/machine_learning`          | Specify this key, if the application requires the machine learning feature including neural networks technologies. | 5.5 |
+| `http://tizen.org/feature/machine_learning.inference`          | Specify this key, if the application requires the inference feature based on machine learning algorithm. | 5.5 |
+| `http://tizen.org/feature/machine_learning.training`          | Specify this key, if the application requires the training feature based on machine learning algorithm. | 6.0 |
 | `http://tizen.org/feature/maps`          | Specify this key, if the application requires the map service feature. | 2.3.2 |
 | `http://tizen.org/feature/media.audio_recording`    | Specify this key, if the application requires the audio recording feature. | 2.3 |
 | `http://tizen.org/feature/media.video_recording`    | Specify this key, if the application requires the video recording feature. | 2.3 |
@@ -372,6 +375,9 @@ Reference](../../api/overview.md).
 | `http://tizen.org/feature/location.batch` | Specify this key, if the application requires the location tracking with a position batch information feature. | 2.3   |
 | `http://tizen.org/feature/location.gps`  | Specify this key, if the application requires the Global Positioning System (GPS) feature. | 2.2.1 |
 | `http://tizen.org/feature/location.wps`  | Specify this key, if the application requires the Wi-Fi-based Positioning System (WPS) feature. | 2.2.1 |
+| `http://tizen.org/feature/machine_learning`          | Specify this key, if the application requires the machine learning feature including neural networks technologies. | 5.5 |
+| `http://tizen.org/feature/machine_learning.inference`          | Specify this key, if the application requires the inference feature based on machine learning algorithm. | 5.5 |
+| `http://tizen.org/feature/machine_learning.training`          | Specify this key, if the application requires the training feature based on machine learning algorithm. | 6.0 |
 | `http://tizen.org/feature/maps`          | Specify this key, if the application requires the map service feature. | 2.3.2 |
 | `http://tizen.org/feature/media.audio_recording`    | Specify this key, if the application requires the audio recording feature. | 2.3 |
 | `http://tizen.org/feature/media.video_recording`    | Specify this key, if the application requires the video recording feature. | 2.3 |

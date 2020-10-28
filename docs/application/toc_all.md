@@ -392,7 +392,6 @@
 #### [Overview](/application/web/guides/sensors/sensors.md)
 #### [Human Activity Monitor](/application/web/guides/sensors/ham.md)
 #### [Device Sensors](/application/web/guides/sensors/device-sensors.md)
-#### [Gesture Recognition](/application/web/guides/sensors/ham-gesture.md)
 
 ### Text Input
 #### [Overview](/application/web/guides/text-input/text-input.md)
