@@ -137,4 +137,4 @@ To compare the bug report files, follow these steps:
 ## Related Information
 
 - Dependencies  
-  - Tizen Studio 3.8 and Higher
+  - Tizen Studio 4.0 and Higher
