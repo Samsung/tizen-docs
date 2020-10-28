@@ -70,5 +70,18 @@ For example, see the "Privilege:" section in the following picture:
     <li><a href="https://developer.tizen.org/development/api-references/native-application?redirect=https://developer.tizen.org/dev-guide/2.3/org.tizen.native.wearable.apireference/index.html" target="api">2.3</a><strong>  You can see 2.3 on Tizen developer site(https://developer.tizen.org).</strong></li>
   </ul>
 </li>
-
+<li>Iot-Headed
+  <ul>
+    <li><a href="iot-headed/5.5/index.html" target="_blank">5.5</a></li>
+    <li><a href="iot-headed/5.0/index.html" target="_blank">5.0</a></li>
+    <li><a href="iot-headed/4.0/index.html" target="_blank">4.0</a></li>
+  </ul>
+</li>
+<li>Iot-Headless
+  <ul>
+    <li><a href="iot-headless/5.5/index.html" target="_blank">5.5</a></li>
+    <li><a href="iot-headless/5.0/index.html" target="_blank">5.0</a></li>
+    <li><a href="iot-headless/4.0/index.html" target="_blank">4.0</a></li>
+  </ul>
+</li>
 </ul>
