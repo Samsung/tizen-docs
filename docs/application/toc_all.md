@@ -197,6 +197,7 @@
 #### [Speech-to-text](/application/dotnet/guides/text-input/stt.md)
 #### [Text-to-speech](/application/dotnet/guides/text-input/tts.md)
 #### [Voice Control](/application/dotnet/guides/text-input/voice-control.md)
+#### [Voice Control Manager](/application/dotnet/guides/text-input/voice-control-manager.md)
 
 ### Personal Data
 #### [Overview](/application/dotnet/guides/personal/overview.md)
