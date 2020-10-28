@@ -25,26 +25,6 @@ IoT Setup Manager supports the following operating systems:
 -   Windows 7 and later (64 and 32 bit)
 -   Ubuntu 14.04 LTS and later (64 and 32 bit)
 
-### Environment
-
-IoT Setup Manager requires Java Runtime Environment (JRE) version 1.8 or later to be installed on your computer.
-
-> **Note**
->
-> You must only have the Oracle JRE installed on your computer.
-
-
-Verify whether JRE is installed on your computer. To do so, open the shell terminal in Ubuntu or the command-line prompt in Windows and run the following commands:
-
-```
-$ java -version
-java version "1.8.0_112"
-Java(TM) SE Runtime Environment (build 1.8.0_112-b15)
-Java HotSpot(TM) 64-Bit Server VM (build 25.112-b15, mixed mode)
-```
-
-If JRE is installed, the output is similar for both Ubuntu and Windows. If `Java(TM) SE Runtime Environment` does not appear in the output or if an error occurs, then this implies, JRE is not installed on your computer.
-
 ### Ubuntu Tools
 
 If you are using Ubuntu, the following packages must be installed in addition to the IoT Setup Manager:
