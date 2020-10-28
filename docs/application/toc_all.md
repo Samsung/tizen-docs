@@ -106,7 +106,10 @@
 ##### [Animation Types](/application/dotnet/guides/nui/animation-types.md)
 #### [Resources](/application/dotnet/guides/nui/resources.md)
 #### XAML
+##### [Overview](/application/dotnet/guides/nui/xaml/xaml-overview.md)
+##### [Get Started with NUI XAML](/application/dotnet/guides/nui/xaml/get-started-xaml.md)
 ##### [XAML Support for Tizen.NUI](/application/dotnet/guides/nui/xaml/xaml-support-for-tizen-nui.md)
+##### [Define UI Components in XAML](/application/dotnet/guides/nui/xaml/ui-component-in-xaml.md)
 ##### [Layout Define Example](/application/dotnet/guides/nui/xaml/layout-define-example.md)
 
 ### OpenTK
