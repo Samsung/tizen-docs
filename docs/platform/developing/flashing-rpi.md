@@ -74,7 +74,7 @@ You must have the supported binary images in your computer. You can download the
 
 > **Note**
 >
-> You can skip this section, if you have already installed latest Tizen Studio 4.0 version and installed the **6.0 Mobile** profile for the **Main SDK** and the **IoT Setup Manager**, **IoT-Headed-6.0** and **IoT-Headless-6.0** profiles for the **Extension SDK**.
+> You can skip this section, if you have already installed latest Tizen Studio 4.0 and installed the **6.0 Mobile** profile for the **Main SDK** and the **IoT Setup Manager**, **IoT-Headed-6.0** and **IoT-Headless-6.0** profiles for the **Extension SDK**.
 
 To install Tizen Studio and the required profiles for IoT development, follow these steps:
 
