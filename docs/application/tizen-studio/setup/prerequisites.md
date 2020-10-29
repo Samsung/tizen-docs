@@ -146,7 +146,7 @@ The following table lists the CPU, screen resolution, graphic card, driver, and 
 <td>Check and install the necessary drivers in the <strong>Control Panel &gt; System and Security &gt; Windows Update</strong>.</td>
 <td>-</td>
 <td>For more information on driver upgrades, see the <a href="https://help.ubuntu.com/community/BinaryDriverHowto/" target="_blank">Ubuntu Web site</a>. Check and install the necessary drivers in the <strong>System Settings &gt; Software &amp; Updates &gt; Additional Drivers</strong>.</p>
-<p>In 16.04 and 18.04, the Intel driver version must be 8.0.1 or higher.</p>
+<p>The Intel driver version must be 8.0.1 or higher.</p>
 </td>
 </tr>
 <tr>

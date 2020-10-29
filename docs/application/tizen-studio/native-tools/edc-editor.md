@@ -1,5 +1,8 @@
 # Designing UIs with the EDC Editor
 
+> [!NOTE]
+> This function is deprecated from Tizen 5.0.
+
 The EDC Editor is an EDC (Edje Data Collections) script editor tool that supports text editing and previewing functions for the EDC source code.
 
 When your application requires real-time changeable layouts, for example, animations, you can write the layout designs using an EDC script, compile it into an EDJ format file, and import it into your application using a UI layout component. You can also write simple and complex design layouts using the EDC script with the EDC Editor. The EDC Editor makes it easier to write the EDC script code and faster to finish your work. If you are not familiar with EDC programming and need more information, see [Layouting with EDC](../../native/guides/ui/efl/learn-edc-intro.md).
