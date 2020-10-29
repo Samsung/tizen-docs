@@ -20,6 +20,7 @@ Tizen is built to work on diverse devices, and profiles are defined accordingly.
 - [Wearable](profiles/wearable.md)
 - [TV](profiles/tv.md)
 - [Mobile](profiles/mobile.md)
+- [IoT](profiles/iot.md)
 
 The features of each profile provide product-optimized functionality and performance.
 
