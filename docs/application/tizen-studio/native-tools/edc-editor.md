@@ -1,7 +1,7 @@
 # Designing UIs with the EDC Editor
 
 > [!NOTE]
-> This function is deprecated from Tizen 5.0.
+> This EDC Editor is deprecated from Tizen 5.0.
 
 The EDC Editor is an EDC (Edje Data Collections) script editor tool that supports text editing and previewing functions for the EDC source code.
 

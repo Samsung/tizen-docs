@@ -1,7 +1,7 @@
 # Building UIs with Components
 
 > [!NOTE]
-> This function is deprecated from Tizen 5.0.
+> This UI Builder is deprecated from Tizen 5.0.
 
 The Tizen Native UI Builder is a graphical user interface builder tool that simplifies the creation of Tizen native application UIs by allowing you to arrange UI components using drag-and-drop operations. You can also create [customized UI components](custom-ui-component.md) for application-specific purposes.
 
