@@ -51,10 +51,8 @@ The following table lists the supported operating systems and hardware requireme
 <th rowspan="2">OS</th>
 <th>Version</th>
 <td>10</td>
-<td>10.13 (High Sierra)</p>
-<p>10.12 (Sierra)</p>
-</td>
-<td>18.04/16.04</td>
+<td>10.15 (Catalina)</td>
+<td>20.04/18.04</td>
 </tr>
 <tr>
 <th>Bit</th>
