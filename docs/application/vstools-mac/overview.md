@@ -8,7 +8,7 @@ To work with Visual Studio for Mac Extension for Tizen, your computer must have:
 
 - At least 5.6 GB of available disk space
 - macOS Mojave version 10.14 (Community, Professional, and Enterprise)
-- Visual Studio 2019 for Mac version 8.2 and higher (Community, Professional, and Enterprise)
+- Visual Studio 2019 for Mac version 8.6 and higher (Community, Professional, and Enterprise)
 - Java Development Kit (JDK)
 
   > [!NOTE]
