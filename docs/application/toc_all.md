@@ -197,6 +197,7 @@
 #### [Speech-to-text](/application/dotnet/guides/text-input/stt.md)
 #### [Text-to-speech](/application/dotnet/guides/text-input/tts.md)
 #### [Voice Control](/application/dotnet/guides/text-input/voice-control.md)
+#### [Voice Control Manager](/application/dotnet/guides/text-input/voice-control-manager.md)
 
 ### Personal Data
 #### [Overview](/application/dotnet/guides/personal/overview.md)
@@ -392,7 +393,6 @@
 #### [Overview](/application/web/guides/sensors/sensors.md)
 #### [Human Activity Monitor](/application/web/guides/sensors/ham.md)
 #### [Device Sensors](/application/web/guides/sensors/device-sensors.md)
-#### [Gesture Recognition](/application/web/guides/sensors/ham-gesture.md)
 
 ### Text Input
 #### [Overview](/application/web/guides/text-input/text-input.md)
@@ -1023,6 +1023,7 @@
 ### [Overview](/application/native/api/overview.md)
 
 ### Wearable
+#### [6.0](/application/native/api/wearable/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/wearable/5.5/index.html){:target="_blank"}
 #### [5.0](/application/native/api/wearable/5.0/index.html){:target="_blank"}
 #### [4.0](/application/native/api/wearable/4.0/index.html){:target="_blank"}
@@ -1030,6 +1031,7 @@
 #### [2.3.2](/application/native/api/wearable/2.3.2/index.html){:target="_blank"}
 
 ### Mobile
+#### [6.0](/application/native/api/mobile/6.0/index.html){:target="_blank"}
 #### [5.5](/application/native/api/mobile/5.5/index.html){:target="_blank"}
 #### [5.0](/application/native/api/mobile/5.0/index.html){:target="_blank"}
 #### [4.0](/application/native/api/mobile/4.0/index.html){:target="_blank"}
@@ -1108,6 +1110,7 @@
 #### [T-trace](/application/tizen-studio/native-tools/t-trace.md)
 #### [Address Sanitizer](/application/tizen-studio/native-tools/address-sanitizer.md)
 #### [Code Coverage](/application/tizen-studio/native-tools/code-coverage.md)
+#### [Battery Historian](/application/tizen-studio/native-tools/batt-historian.md)
 
 ### Run and Test Your App
 #### [Overview](/application/tizen-studio/native-tools/running-testing.md)
@@ -1200,6 +1203,7 @@
 #### [Debug the Project](/application/tizen-studio/rt-ide/get-started/debug.md)
 
 ## Release Notes
+### [4.0 (Oct 29, 2020)](/application/tizen-studio/release-notes/4-0-release-notes.md)
 ### [3.7 (Apr 6, 2020)](/application/tizen-studio/release-notes/3-7-release-notes.md)
 ### [3.6 (Dec 10, 2019)](/application/tizen-studio/release-notes/3-6-release-notes.md)
 ### [3.5 (Oct 31, 2019)](/application/tizen-studio/release-notes/3-5-release-notes.md)
