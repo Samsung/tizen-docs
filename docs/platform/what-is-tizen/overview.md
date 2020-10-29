@@ -53,7 +53,7 @@ Since 2012, Tizen has been expanding as smart gadgets have become generalized an
 
 - Mobile phones: Samsung Z series (Z1, Z2, Z3, Z4)
 - Tablets: DIGMA Plane 8501 3G
-- Wearables: Samsung Galaxy Watch series (Galaxy Watch, Galaxy Watch Active, Galaxy Watch Active 2), Gear series (Gear 2, Gear 2 Neo, Gear S, Gear S2, Gear S3)
+- Wearables: Samsung Galaxy Watch series (Galaxy Watch, Galaxy Watch Active, Galaxy Watch Active2, Galaxy Watch3), Gear series (Gear 2, Gear 2 Neo, Gear S, Gear S2, Gear S3)
 - Smart TVs: Samsung SUHD, UHD, LED TVs
 - Cameras: Samsung NX-series, Gear 360
 - Smart appliances: Samsung Family Hub Fridge
@@ -69,13 +69,6 @@ To facilitate developing Tizen applications, [Tizen Studio](/application/tizen-s
 
 ![Tizen Studio tools](media/about_tizen_3.png)
 
-## Application Marketplace
-
-As a platform, Tizen provides the foundation for many different applications and services, which lead to rich user experiences and new business opportunities. For easy access and reliable trade of applications, efficient distribution channels are necessary for both users and developers. [Tizen Store](http://www.tizenstore.com/) is a marketplace of Tizen applications, where users can find useful applications and developers can distribute their valuable creations. It provides various application categories, such as All Games, Education, Entertainment, Kids, Finance, Lifestyle, and Social Networking. Users can download applications of their choice and enrich their experiences with the Tizen devices. Application developers can monetize or share their applications for free in the marketplace.
-
-**Figure: Tizen Store**
-
-![Tizen Store](media/about_tizen_4.png)
 
 ## Versions
 
