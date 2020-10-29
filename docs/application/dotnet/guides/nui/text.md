@@ -1,3 +1,7 @@
+---
+keyword: text, property, character, style, TextLabel, font, label, TextField, String, PropertyMap, input, json, TextEditor, StyleManager, encoding
+---
+
 # Text
 
 There are three Text components to display and edit text on the screen:
@@ -11,7 +15,7 @@ There are three Text components to display and edit text on the screen:
 <a name="textLabel"></a>
 ## TextLabel
 
-The [TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) is a class that displays a short text string. `Tizen.NUI.BaseComponents` namespace contains the class.
+[TextLabel](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.BaseComponents.TextLabel.html) is a class that displays a short text string. The `Tizen.NUI.BaseComponents` namespace contains the class.
 
 The `TextLabel` class is lightweight, non-editable, and do not respond to user input. Text labels support multiple languages and scripts including right-to-left scripts such as Arabic. For more information on how to display a text using a text label, see [NUI Hello World Tutorial](../../get-started/nui/quickstart.md).
 
@@ -24,12 +28,12 @@ The `TextLabel` class is lightweight, non-editable, and do not respond to user i
 
 To create a text label:
 
-1.  Create an instance of the `TextLabel` class and define the label text as a parameter. To make text visible set `TextColor` property to `Color.White`:
+1.  Create an instance of the `TextLabel` class and define the label text as a parameter. To make text visible, set the `TextColor` property to `Color.White`:
 
     ```csharp
-        TextLabel label = new TextLabel("Hello World");
-        label.TextColor = Color.White;
-        Window.Instance.Add(label);
+    TextLabel label = new TextLabel("Hello World");
+    label.TextColor = Color.White;
+    Window.Instance.Add(label);
     ```
 
     You can also create the `TextLabel` class instance separately and define the label text by setting its `Text` property:
@@ -97,7 +101,7 @@ If no font is specified, default styles are used, and a suitable font for displa
 
 Setting a font size programmatically is not ideal for applications that support multiple screen resolutions, and for platforms that support multiple logical font sizes. In addition, making systemwide changes to your font settings override the font sizes that have been programmatically set.
 
-A more flexible approach is to prepare various JSON stylesheets and request a different style for each platform. To change the font style for standard text controls, create `theme.json` file in resources directory and use the following JSON syntax:
+A more flexible approach is to prepare various JSON stylesheets and request a different style for each platform. To change the font style for standard text controls, create the `theme.json` file in the resources directory and use the following JSON syntax:
 
 ```csharp
 {
@@ -116,13 +120,13 @@ A more flexible approach is to prepare various JSON stylesheets and request a di
 }
 ```
 
-The [StyleManager](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.StyleManager.html) provide `ApplyTheme` method, where path to stylesheet is passed. Since stylesheet is loaded, `CustomLabel` style can be used on created label by `SetStyleName` method of `TextLabel`:
+[StyleManager](https://samsung.github.io/TizenFX/latest/api/Tizen.NUI.StyleManager.html) provides the `ApplyTheme` method, where path to stylesheet is passed. Since stylesheet is loaded, `CustomLabel` style can be used on the created label by using the `SetStyleName` method of `TextLabel`:
 
 ```csharp
-    Tizen.NUI.StyleManager.Get().ApplyTheme(DirectoryInfo.Resource + "/theme.json");
-    TextLabel label = new TextLabel("Hello World");
-    label.SetStyleName("CustomLabel");
-    Window.Instance.Add(label);
+Tizen.NUI.StyleManager.Get().ApplyTheme(DirectoryInfo.Resource + "/theme.json");
+TextLabel label = new TextLabel("Hello World");
+label.SetStyleName("CustomLabel");
+Window.Instance.Add(label);
 ```
 
 However, the same `pointSize` is unlikely to be suitable for all text controls in an application. To define custom styles for existing controls, set a style name for each case, and provide a style override in a JSON stylesheet.
@@ -164,6 +168,8 @@ TextLabel title = new TextLabel();
 title.Text = "\U0001f601";      //UTF-32
 title.Text += "\ud83d\ude01";   //UTF-16
 ```
+
+### Use Decorations for TextLabel
 
 To use the text-decoration, set the applicable property:
 
@@ -324,7 +330,7 @@ label.Text = "&#9786; &#x263a;"; //smile-face
 ```
 
 
-### Use Decorations for TextLabel
+### TextLabel Properties
 
 For text decorations, the `TextLabel` class provides several properties. All the properties are editable and none of them are animatable:
 
@@ -510,22 +516,22 @@ The following table lists the basic signals provided by the `TextEditor` class:
 | Input signal         | Description                              |
 | -------------------- | ---------------------------------------- |
 | `TextChanged`        | Emitted when the text changes.           |
-| `ScrollStateChanged` | Emitted when TextEditor scrolling is started or finished. |
+| `ScrollStateChanged` | Emitted when `TextEditor` scrolling is started or finished. |
 
 ### Create TextEditor
 
 The following example shows how to create a `TextEditor` object:
 
 ```csharp
-    // Create a TextEditor instance
-    TextEditor editor = new TextEditor();
-    editor.Position2D = new Position2D(10, 10);
-    editor.Size2D = new Size2D(400, 400);
-    editor.BackgroundColor = Color.Red;
-    editor.PointSize = 10;
-    editor.TextColor = Color.White;
-    editor.Text = "This is a multiline text.\n I can write several lines.\n";
-    Window.Instance.Add(editor);
+// Create a TextEditor instance
+TextEditor editor = new TextEditor();
+editor.Position2D = new Position2D(10, 10);
+editor.Size2D = new Size2D(400, 400);
+editor.BackgroundColor = Color.Red;
+editor.PointSize = 10;
+editor.TextColor = Color.White;
+editor.Text = "This is a multiline text.\n I can write several lines.\n";
+Window.Instance.Add(editor);
 ```
 
 ### TextEditor Properties
