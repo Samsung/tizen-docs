@@ -34,7 +34,7 @@ You can see the Wearable design guidelines on [SAMSUNG Developers site](https://
 
 ## Tizen wearable devices
 
-From the Samsung Gear 2 Neo to the current Gear S3, all wearable devices have their own characteristics that boast their functionalities. Each also has their own design language that harnesses their functionality.
+All wearable devices have their own characteristics that boast their functionalities. Each also has their own design language that harnesses their functionality.
 For more information on developing a Samsung Gear application, go to [SAMSUNG GALAXY WATCH](http://developer.samsung.com/gear){:target="_blank"}.
 
 **Figure: Wearable Samsung Galaxy Watch devices**
