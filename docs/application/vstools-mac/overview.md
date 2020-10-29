@@ -7,7 +7,7 @@ Visual Studio for Mac Extension for Tizen is an extension, which enables you to 
 To work with Visual Studio for Mac Extension for Tizen, your computer must have:
 
 - At least 5.6 GB of available disk space
-- macOS Mojave version 10.14 (Community, Professional, and Enterprise)
+- macOS Catalina version 10.15 (Community, Professional, and Enterprise)
 - Visual Studio 2019 for Mac version 8.6 and higher (Community, Professional, and Enterprise)
 - Java Development Kit (JDK)
 
@@ -25,11 +25,11 @@ To install Visual Studio for Mac Extension for Tizen:
 2. In the **Extension Manager** dialog that appears, click **Gallery**.
 
 	![Extension Manager](media/install-extension2.png)
-   
+
 3. To get the latest extensions, click **Refresh**.
 
 	![Browse Extension](media/install-extension3.png)
-	
+
 4. After the extension list is refreshed, expand **IDE extensions**, select **Visual Studio for Mac Extension for Tizen**, and click **Install**.
 
 	![Install Popup](media/install-extension4.png)
@@ -37,15 +37,15 @@ To install Visual Studio for Mac Extension for Tizen:
 
 5. In the **VisualStudio** dialog that appears, click **Install**.
 
-    ![Install Popup2](media/install-extension6.png) 
+    ![Install Popup2](media/install-extension6.png)
 
-   The extension is installed. 
-   
+   The extension is installed.
+
    > [!NOTE]
    > To complete the installation, restart the IDE.
-   
+
    After successful installation, **Tizen** appears in the project wizard.
-   
+
    ![Project Wizard](media/install-extension7.png)
 
 ## Install Tizen Baseline SDK
@@ -61,7 +61,7 @@ After installing the Visual Studio Mac Extension for Tizen, you must set up the 
 
 1. In the Visual Studio Mac IDE menu, go to **Tools > Tizen > Tizen Package Manager**.
 2. Select **Install new Tizen SDK**.
-  
+
    ![Select new installation](media/howtoinstall-installwizard1.png)
 
 3. Read the license document and click **I Agree**.
@@ -83,7 +83,7 @@ After installing the Visual Studio Mac Extension for Tizen, you must set up the 
    ![Tool installation](media/howtoinstall-installwizard6.png)
 
 <a name="configure-an-existing-tizen-baseline-sdk"></a>
-### Configure an Existing Tizen Baseline SDK 
+### Configure an Existing Tizen Baseline SDK
 
 You can also use Tizen Package Manager to configure the Tizen Baseline SDK path and each tool path directly:
 
@@ -97,10 +97,10 @@ You can also use Tizen Package Manager to configure the Tizen Baseline SDK path 
   3. Enter the root directory of your existing Tizen Baseline SDK installation and click **OK**.
 
      ![Baseline SDK Install](media/howtoinstall-installwizard8.png)
-	 
+
      The Tizen Baseline SDK is installed automatically.
 
-     > [!NOTE]  
+     > [!NOTE]
      > If the installer gives a warning about your Tizen Studio version being too low, update the Tizen Baseline SDK by using the Tizen Package Manager after setting the tool path.
 
 - To set up each tool path directly:
@@ -115,7 +115,7 @@ You can also use Tizen Package Manager to configure the Tizen Baseline SDK path 
 
 ## Troubleshoot
 
-If you encounter any issue with the installation, verify whether the Tizen Baseline SDK is installed correctly. 
+If you encounter any issue with the installation, verify whether the Tizen Baseline SDK is installed correctly.
 
 To verify that, go to **Project > Solution Options > Tizen > Tools** and verify the tool path.
 
