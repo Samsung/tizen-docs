@@ -111,7 +111,7 @@ video {
 
 This section explains the process to download and install Tizen Studio on your development hardware.
 
-To have optimal installation experience, follow these steps chronologically:
+To have optimal installation experience, follow these steps:
 
 1. System prerequisites
    - Hardware requirements
@@ -170,7 +170,7 @@ To launch the installer, follow these steps:
 1. Double click **web-ide_Tizen_Studio_x.x_windows-64.exe** file.
    
    > [!NOTE] 
-   >**x.x** represents the latest version of Tizen Studio, for example: web-ide_Tizen_Studio_**3.7**_windows-64.exe.
+   >**x.x** represents the latest version of Tizen Studio, for example: web-ide_Tizen_Studio_**4.0**_windows-64.exe.
 
 2. Click **Accept**.
    
@@ -205,7 +205,7 @@ To launch the installer, follow these steps:
 
 ## Verify Installation   
 
-   To verify whether the installation is successful or not, click **Tizen Studio icon**. Tizen Studio startup window must appear.
+   To verify whether the installation is successful or not, click **Tizen Studio icon**. Tizen Studio IDE window must appear.
   </div>
 </div>
 
@@ -218,7 +218,7 @@ To launch the installer, follow these steps:
 
 This page guides you with downloading and installing Tizen Studio on your development hardware. 
 
-To have the optimal installation experience, follow these steps chronologically:
+To have the optimal installation experience, follow these steps:
 
 1. System prerequisites
    - Hardware requirements
@@ -262,7 +262,7 @@ Ensure that the following system prerequisites are met:
   </tr>
   <tr>
     <td width=190x>Version</td>
-    <td width=520px>16.04/ 14.04/ 18.04</td>
+    <td width=520px>16.04/ 14.04/ 18.04/ 20.04</td>
   </tr>
   <tr>
     <td>Bit</td>
@@ -307,7 +307,7 @@ To launch the installer, follow these steps:
   - `./web-ide_Tizen_Studio_x.x_ubuntu-64.bin` 
   >Note:
   >
-  >**x.x** represents the latest version of Tizen Studio, for example:  web-ide_Tizen_Studio_**3.7**_ubuntu-64.bin.
+  >**x.x** represents the latest version of Tizen Studio, for example:  web-ide_Tizen_Studio_**4.0**_ubuntu-64.bin.
 
 2. Click **Accept**
    
@@ -336,7 +336,7 @@ To launch the installer, follow these steps:
 
 ## Verify Installation
    
-To verify whether the installation is successful or not, click **Tizen Studio icon**. Tizen Studio startup window must appear.
+To verify whether the installation is successful or not, click **Tizen Studio icon**. Tizen Studio IDE window must appear.
 
   </div>
 </div>
@@ -351,7 +351,7 @@ To verify whether the installation is successful or not, click **Tizen Studio ic
 
 This page explains the process to download and install Tizen Studio on your development hardware. 
 
-To have the optimal installation experience, follow these steps chronologically:
+To have the optimal installation experience, follow these steps:
 
 - System prerequisites
    - Hardware requirements
@@ -445,7 +445,7 @@ To launch the installer, follow these steps:
 1. Double click on the downloaded installer file **web-ide_Tizen_Studio_x.x-64.dmg**.
    
    > [!NOTE]
-   >**x.x** represents the latest version of Tizen Studio, for example:web-ide_Tizen_Studio_**3.7**-64.dmg.
+   >**x.x** represents the latest version of Tizen Studio, for example:web-ide_Tizen_Studio_**4.0**-64.dmg.
 
 2. Click **Accept**.
    
@@ -474,9 +474,7 @@ To launch the installer, follow these steps:
 
 ## Verify Installation
 
-To verify whether the installation is successful or not, click **Tizen Studio icon**. 
-
-Tizen Studio startup window must appear.
+To verify whether the installation is successful or not, click **Tizen Studio icon**. Tizen Studio IDE window must appear.
 
 
 
