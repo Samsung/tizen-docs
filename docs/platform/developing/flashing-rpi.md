@@ -40,34 +40,34 @@ sudo apt-get install <package-name>
 
 You must have the supported binary images in your computer. You can download the binary images from:
 
-1.    To Download images visit [Downloads](http://download.tizen.org/releases/milestone/tizen)
-2.    Then go to 6.0-unified (or "unified" whichever is present) -> latest -> images -> standard.
-3.    For different devices or profiles download the compressed file from:
+1.   To Download images visit [Downloads](http://download.tizen.org/releases/milestone/tizen)
+2.   Then go to 6.0-unified (or "unified" whichever is present) -> latest -> images -> standard.
+3.   For different devices or profiles download the compressed file from:
 
-         a.    RPI3 Headless 32-bit:
-               i.     Boot Image: iot-boot-armv7l-rpi3/
-               ii.    Platform Image:	iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
-	
-         b.    RPI3 Headed 32-bit:
-               i.     Boot Image:	iot-boot-armv7l-rpi3/
-               ii.    Platform Image: iot-headed-3parts-armv7l-rpi/
-	
-         c.    RPI4 Headless 32-bit:
-               i.     Boot Image: iot-boot-armv7l-rpi4/
-               ii.    Platform Image: iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
-	
-         d.    RPI4 Headed 32-bit:
-               i.     Boot Image: iot-boot-armv7l-rpi4/
-               ii.    Platform Image: iot-headed-3parts-armv7l-rpi/
-	
-         e.    RPI3 Headed 64-bit:
-               i.     Boot Image:	iot-boot-arm64-rpi3/
-               ii.    Platform Image:	iot-headed-3parts-aarch64-rpi/
-	
-         f.    RPI4 Headed 64-bit:
-               i.     Boot Image:	iot-boot-arm64-rpi4/
-               ii.    Platform Image:	iot-headed-3parts-aarch64-rpi/
-		
+     a.   RPI3 Headless 32-bit:
+          i.    Boot Image: iot-boot-armv7l-rpi3/
+          ii.   Platform Image:	iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
+
+     b.   RPI3 Headed 32-bit:
+          i.    Boot Image:	iot-boot-armv7l-rpi3/
+          ii.   Platform Image: iot-headed-3parts-armv7l-rpi/
+
+     c.   RPI4 Headless 32-bit:
+          i.    Boot Image: iot-boot-armv7l-rpi4/
+          ii.   Platform Image: iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
+
+     d.   RPI4 Headed 32-bit:
+          i.    Boot Image: iot-boot-armv7l-rpi4/
+          ii.   Platform Image: iot-headed-3parts-armv7l-rpi/
+
+     e.   RPI3 Headed 64-bit:
+          i.    Boot Image:	iot-boot-arm64-rpi3/
+          ii.   Platform Image:	iot-headed-3parts-aarch64-rpi/
+
+     f.   RPI4 Headed 64-bit:
+          i.    Boot Image:	iot-boot-arm64-rpi4/
+          ii.   Platform Image:	iot-headed-3parts-aarch64-rpi/
+
 ## Install tizen studio
 
 >    [!NOTE]
@@ -129,7 +129,7 @@ Profiles are an easy way to store image paths and network configuration informat
 1. Create a profile:
       a. Click **Create** to create a profile. The **Edit Profile** window appears.
 
-         ![IoT Setup Manager Edit](media/ism_edit_rpi4_headed.png)
+      ![IoT Setup Manager Edit](media/ism_edit_rpi4_headed.png)
 
       b. Provide the required information such as target, local paths to boot and platform image, and so on.
 
