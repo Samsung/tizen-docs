@@ -12,7 +12,7 @@ This topic describes how to flash Tizen on SD card with or without IoT Setup Man
 
 >    [!NOTE]
 >
->    In windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. (While using Headed 64-bit image and Headless 32-bit image, RPMs cannot be installed through IOT setup manager because rootsfs.img is of BTRFS type file.)
+>    In windows, only EXT4 type file of rootfs.img is supported to flash rpm bundles. (While using Headed 64-bit image and Headless 32-bit image, RPMs cannot be installed through IoT setup manager because rootsfs.img is of BTRFS type file.)
 
 ## Prerequisites
 
@@ -40,33 +40,33 @@ sudo apt-get install <package-name>
 
 You must have the supported binary images in your computer. You can download the binary images from:
 
-1.   To Download images visit [Downloads](http://download.tizen.org/releases/milestone/tizen)
-2.   Click on 6.0-unified (or "unified" whichever is present) > latest > images > standard.
+1.   To Download images visit [Downloads](http://download.tizen.org/releases/milestone/tizen).
+2.   Click on **6.0-unified (or "unified" whichever is present) > latest > images > standard**.
 3.   For different devices or profiles download the compressed file from:
 
      1.   RPI3 Headless 32-bit:
-          1.    Boot Image: iot-boot-armv7l-rpi3/
-          2.   Platform Image:	iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
+          1.   Boot Image: iot-boot-armv7l-rpi3/
+          2.   Platform Image: iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
 
      2.   RPI3 Headed 32-bit:
-          1.    Boot Image:	iot-boot-armv7l-rpi3/
+          1.   Boot Image: iot-boot-armv7l-rpi3/
           2.   Platform Image: iot-headed-3parts-armv7l-rpi/
 
      3.   RPI4 Headless 32-bit:
-          1.    Boot Image: iot-boot-armv7l-rpi4/
+          1.   Boot Image: iot-boot-armv7l-rpi4/
           2.   Platform Image: iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
 
      4.   RPI4 Headed 32-bit:
-          1.    Boot Image: iot-boot-armv7l-rpi4/
+          1.   Boot Image: iot-boot-armv7l-rpi4/
           2.   Platform Image: iot-headed-3parts-armv7l-rpi/
 
      5.   RPI3 Headed 64-bit:
-          1.    Boot Image:	iot-boot-arm64-rpi3/
-          2.   Platform Image:	iot-headed-3parts-aarch64-rpi/
+          1.   Boot Image: iot-boot-arm64-rpi3/
+          2.   Platform Image: iot-headed-3parts-aarch64-rpi/
 
      6.   RPI4 Headed 64-bit:
-          1.    Boot Image:	iot-boot-arm64-rpi4/
-          2.   Platform Image:	iot-headed-3parts-aarch64-rpi/
+          1.   Boot Image: iot-boot-arm64-rpi4/
+          2.   Platform Image: iot-headed-3parts-aarch64-rpi/
 
 ## Install tizen studio
 
@@ -90,7 +90,6 @@ To install Tizen Studio and the required profiles for IoT development, follow th
     >    [!NOTE]
     >
     >    **Extension SDK** should be updated to the latest version.
-
 
 ## Flash tizen images with IoT setup manager
 
@@ -137,7 +136,7 @@ Profiles are an easy way to store image paths and network configuration informat
          4.   **Platform image**: Browse for the Tizen Platform image available on your hard drive. You must select proper images depending on the board. For more information, see [Downlaod Guide](#download-binaries).
          5.   **RPM bundles**: 
               -   Add the bundle directory to the Bundles panel.
-              -   Use this to install Wi-Fi plugin. Download using [Installing Drivers](#installing-drivers). Unzip and add path to 32-bit rpm or 64-bit rpm according to image to install.
+              -   Use this to install Wi-Fi plugin. Download using [Install Drivers](#install-drivers). Unzip and add path to 32-bit rpm or 64-bit rpm according to image to install.
               -   Leave blank if no rpm installation required.
          6.   **WiFi**: Enter the SSID and password to connect automatically to Wi-Fi. (Wi-Fi plugin installation is required). If Wi-Fi or ethernet is not required, you can clear the respective check box.
          7.   **Ethernet**:
@@ -174,9 +173,104 @@ Profiles are an easy way to store image paths and network configuration informat
     2.  Select your SD Card.
     3.  Click **Burn**.
 
+## Flash through command line
+
+You can also flash the SD card through command-line in Linux computer instead of using IoT Setup Manager.
+To flash the SD card for Raspberry Pi 3 (or 4) without IoT setup Manager:
+
+1.  Complete the following prerequisites:
+    1.  Install the `pv` package in the Linux computer:
+
+        ```
+        $ sudo apt-get install pv
+        ```
+
+    2.  Ensure that you have an SD card of 8 GB or more.
+    3.  Verify whether the binary image files are in your computer. .
+    4.  Fusing-script for Raspberry Pi 3 (fusing script is same for RPI3 and RPI4):
+
+        ```
+        $ wget https://git.tizen.org/cgit/platform/kernel/u-boot/plain/scripts/tizen/sd_fusing_rpi3.sh?h=tizen --output-document=sd_fusing_rpi3.sh
+        $ chmod 755 sd_fusing_rpi3.sh
+        ```
+
+2.  Flash the SD card to ensure it is ready to be used for Tizen:
+    1.  Insert an SD card to the Linux computer and verify its device node.
+
+        >    [!NOTE]
+        >
+        >    To verify the device node:
+        >
+        >    1.  Run the following command before inserting the SD card into the Linux computer:
+        >
+        >        ```
+        >        $ ls -al /dev/sd*
+        >
+        >        ```
+        >
+        >        For example:
+        >
+        >        ```
+        >        $ ls -al /dev/sd*
+        >        brw-rw---- 1 root disk 8, 0  9 18 09:08 /dev/sda
+        >        brw-rw---- 1 root disk 8, 1  9 18 09:08 /dev/sda1
+        >        brw-rw---- 1 root disk 8, 2  9 18 09:08 /dev/sda2
+        >        brw-rw---- 1 root disk 8, 5  9 18 09:08 /dev/sda5
+        >        ```
+        >
+        >    2.  Insert the SD card and type the same command again:
+        >
+        >        ```
+        >        $ ls -al /dev/sd*
+        >
+        >        ```
+        >
+        >        For example:
+        >
+        >        ```
+        >        $ ls -al /dev/sd*
+        >        brw-rw---- 1 root disk 8,  0  9 18 09:08 /dev/sda
+        >        brw-rw---- 1 root disk 8,  1  9 18 09:08 /dev/sda1
+        >        brw-rw---- 1 root disk 8,  2  9 18 09:08 /dev/sda2
+        >        brw-rw---- 1 root disk 8,  5  9 18 09:08 /dev/sda5
+        >        brw-rw---- 1 root disk 8, 16  9 22 14:59 /dev/sdb
+        >        brw-rw---- 1 root disk 8, 17  9 22 14:59 /dev/sdb1
+        >        brw-rw---- 1 root disk 8, 18  9 22 14:59 /dev/sdb2
+        >        brw-rw---- 1 root disk 8, 19  9 22 14:59 /dev/sdb3
+        >        brw-rw---- 1 root disk 8, 20  9 22 14:59 /dev/sdb4
+        >        brw-rw---- 1 root disk 8, 21  9 22 14:59 /dev/sdb5
+        >        brw-rw---- 1 root disk 8, 22  9 22 14:59 /dev/sdb6
+        >        brw-rw---- 1 root disk 8, 23  9 22 14:59 /dev/sdb7
+        >        ```
+        >
+        >        The new `sdX` node (where X is a letter) is the device node for the SD card.
+        >
+        >        In this example, the device node for the SD card is `sdb`.
+
+	2.  [Download](#download-binaries) compatible boot and platform image according to target device.
+	3.  Run the following commands:
+
+        ```
+        $ sudo ./sd_fusing_rpi3.sh -d <SD card device node> --format
+        $ sudo ./sd_fusing_rpi3.sh -d <SD card device node> -b <Boot Image path> <Platform Image path>
+        ```
+
+        For example:
+
+        ```
+        $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb
+        $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb -b tizen-unified_20201007.2_iot-boot-armv7l-rpi3.tar.gz tizen-unified_20201007.2_iot-headed-3parts-armv7l-rpi.tar.gz
+        ```
+
+3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Setting up Raspberry Pi 3 or 4](#setting-up-raspberry-pi-3-or-4).
+
+    >    [!NOTE]
+    >
+    >    Repeat `sdb connect 192.168.1.11` in the Linux shell (Linux) or the command window (Windows) whenever you power cycle the device, in order to reconnect the SDB tool.
+
 ## Setting up Raspberry Pi 3 or 4
 
-### Connecting the board to the PC
+### Connect the board to the PC
 
 To configure the Raspberry Pi board:
 
@@ -247,11 +341,11 @@ To configure the Raspberry Pi board:
             ```
 
 3.  For the SDB connection:
-    1.  Connect the host computer to the Pi through an Ethernet cable.
+    1.  Connect the host computer to the Raspberry Pi through an Ethernet cable.
 
         >    [!NOTE]
         >
-        >    If Ethernet ports are not available in the host computer or the Pi, you can also use an `Ethernet-to-USB` dongle.
+        >    If Ethernet ports are not available in the host computer or the Raspberry Pi, you can also use an `Ethernet-to-USB` dongle.
 
     2.  Set a new network interface in the host computer as shown in the following figures. This is a one time activity:
 
@@ -271,7 +365,7 @@ To configure the Raspberry Pi board:
     ifconfig
     ```
 
-    If the IP address for eth0 is 192.168.1.11, go to step 5. If not, set an IP address for the SDB connection in the serial shell of the Pi using the `ifconfig` command:
+    If the IP address for eth0 is 192.168.1.11, go to step 5. If not, set an IP address for the SDB connection in the serial shell of the Raspberry Pi using the `ifconfig` command:
 
     ```
     ifconfig eth0 192.168.1.11
@@ -304,9 +398,9 @@ To configure the Raspberry Pi board:
     >    `sdb` execution file is available in the `tools` sub-directory of the directory where Tizen Studio is installed.
 
 
-### Installing drivers
+### Install drivers
 
-1.  Connect Smart Development Bridge (SDB) as described in [Connecting the board to the PC](#connecting-the-board-to-the-pc).
+1.  Connect Smart Development Bridge (SDB) as described in [Connect the board to the PC](#connect-the-board-to-the-pc).
 2.  Install the connectivity drivers for each board:
     -   **Raspberry Pi 3/4**
         1.  Download the plugin zip file from the **Raspberry Pi 3/4(6.0) Plugin** section at <http://developer.samsung.com/tizendevice/firmware> and follow the instructions.
@@ -322,100 +416,6 @@ To configure the Raspberry Pi board:
             ```
             > install_with_SDB.bat
             ```
-## Flashing through command line
-
-You can also flash the SD card through command-line in Linux computer instead of using IoT Setup Manager.
-To flash the SD card for Raspberry Pi 3 (or 4) without IoT setup Manager:
-
-1.  Complete the following prerequisites:
-    1.  Install the `pv` package in the Linux computer:
-
-        ```
-        $ sudo apt-get install pv
-        ```
-
-    2.  Ensure that you have an SD card of 8 GB or more.
-    3.  Verify whether the binary image files are in your computer. .
-    4.  Fusing-script for Raspberry Pi 3 (fusing script is same for RPI3 and RPI4):
-
-        ```
-        $ wget https://git.tizen.org/cgit/platform/kernel/u-boot/plain/scripts/tizen/sd_fusing_rpi3.sh?h=tizen --output-document=sd_fusing_rpi3.sh
-        $ chmod 755 sd_fusing_rpi3.sh
-        ```
-
-2.  Flash the SD card to ensure it is ready to be used for Tizen:
-    1.  Insert an SD card to the Linux computer and verify its device node.
-
-        >    [!NOTE]
-        >
-        >    To verify the device node:
-        >
-        >    1.  Run the following command before inserting the SD card into the Linux computer:
-        >
-        >        ```
-        >        $ ls -al /dev/sd*
-        >
-        >        ```
-        >
-        >        For example:
-        >
-        >        ```
-        >        $ ls -al /dev/sd*
-        >        brw-rw---- 1 root disk 8, 0  9 18 09:08 /dev/sda
-        >        brw-rw---- 1 root disk 8, 1  9 18 09:08 /dev/sda1
-        >        brw-rw---- 1 root disk 8, 2  9 18 09:08 /dev/sda2
-        >        brw-rw---- 1 root disk 8, 5  9 18 09:08 /dev/sda5
-        >        ```
-        >
-        >    2.  Insert the SD card and type the same command again:
-        >   
-        >        ```
-        >        $ ls -al /dev/sd*
-        >
-        >        ```
-        >
-        >        For example:
-        >
-        >        ```
-        >        $ ls -al /dev/sd*
-        >        brw-rw---- 1 root disk 8,  0  9 18 09:08 /dev/sda
-        >        brw-rw---- 1 root disk 8,  1  9 18 09:08 /dev/sda1
-        >        brw-rw---- 1 root disk 8,  2  9 18 09:08 /dev/sda2
-        >        brw-rw---- 1 root disk 8,  5  9 18 09:08 /dev/sda5
-        >        brw-rw---- 1 root disk 8, 16  9 22 14:59 /dev/sdb
-        >        brw-rw---- 1 root disk 8, 17  9 22 14:59 /dev/sdb1
-        >        brw-rw---- 1 root disk 8, 18  9 22 14:59 /dev/sdb2
-        >        brw-rw---- 1 root disk 8, 19  9 22 14:59 /dev/sdb3
-        >        brw-rw---- 1 root disk 8, 20  9 22 14:59 /dev/sdb4
-        >        brw-rw---- 1 root disk 8, 21  9 22 14:59 /dev/sdb5
-        >        brw-rw---- 1 root disk 8, 22  9 22 14:59 /dev/sdb6
-        >        brw-rw---- 1 root disk 8, 23  9 22 14:59 /dev/sdb7
-        >        ```
-        >
-        >        The new `sdX` node (where X is a letter) is the device node for the SD card.
-        >
-        >        In this example, the device node for the SD card is `sdb`.
-
-	2.  [Download](#download-binaries) compatible boot and platform image according to target device.
-	3.  Run the following commands:
-	
-        ```
-        $ sudo ./sd_fusing_rpi3.sh -d <SD card device node> --format
-        $ sudo ./sd_fusing_rpi3.sh -d <SD card device node> -b <Boot Image path> <Platform Image path>
-        ```
-		
-        For example:
-		
-        ```
-        $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb
-        $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb -b tizen-unified_20201007.2_iot-boot-armv7l-rpi3.tar.gz tizen-unified_20201007.2_iot-headed-3parts-armv7l-rpi.tar.gz
-        ```
-
-3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Setting up Raspberry Pi 3 or 4](#setting-up-raspberry-pi-3-or-4).
-
-    >    [!NOTE]
-    >
-    >    Repeat `sdb connect 192.168.1.11` in the Linux shell (Linux) or the command window (Windows) whenever you power cycle the device, in order to reconnect the SDB tool.
 
 ## Setting up Wi-Fi
 
