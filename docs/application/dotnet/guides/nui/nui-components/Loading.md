@@ -11,6 +11,14 @@ Following are the instances where Loading is used:
 
 ![Loading](./media/loading.png)
 
+## Add namespace
+To implement loading, include `Tizen.NUI.Components` namespace in your application:
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with property
 
 To create a Loading using property, follow these steps:

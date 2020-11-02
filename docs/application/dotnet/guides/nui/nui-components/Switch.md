@@ -4,6 +4,14 @@ Switch is a common component that can be used as a selector.
 
 ![SwitchProperty](./media/SwitchProperty.PNG)
 
+## Add namespace
+To implement switch, include `Tizen.NUI.Components` namespace in your application:
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with property
 
 To create a Switch using property, follow these steps:
