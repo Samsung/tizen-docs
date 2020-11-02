@@ -5,6 +5,14 @@ A Button can either contain a text or an icon, and can be created using property
 
 ![Button](./media/Button.PNG)
 
+## Add namespace
+To implement button, include `Tizen.NUI.Components` namespace in your application:
+
+```cs
+using Tizen.NUI;
+using Tizen.NUI.Components;
+```
+
 ## Create with property
 
 To create a Button using property, follow these steps:
