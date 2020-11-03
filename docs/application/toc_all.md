@@ -673,6 +673,7 @@
 ####### [Datetime](/application/native/guides/ui/efl/wearable/component-datetime.md)
 ####### [Entry](/application/native/guides/ui/efl/wearable/component-entry.md)
 ####### [Genlist](/application/native/guides/ui/efl/wearable/component-genlist.md)
+####### [Gengrid](/application/native/guides/ui/efl/wearable/component-gengrid.md)
 ####### [GLView](/application/native/guides/ui/efl/wearable/component-glview.md)
 ####### [Icon](/application/native/guides/ui/efl/wearable/component-icon.md)
 ####### [Image](/application/native/guides/ui/efl/wearable/component-image.md)
