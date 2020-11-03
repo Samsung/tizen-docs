@@ -1,6 +1,6 @@
 # Gengrid
 
-The gengrid UI component is based on the same idea as [genlist](component-genlist.md). It aims to display objects on a grid layout and render only the visible ones. For more information, see the [Gengrid](../../../../api/mobile/latest/group__Elm__Gengrid__Group.html) API.
+The gengrid UI component is based on the same idea as [genlist](component-genlist.md). It aims to display objects on a grid layout and render only the visible ones. For more information, see the [Gengrid](../../../../api/wearable/latest/group__Elm__Gengrid__Group.html) API.
 
 To save memory and speed up processing when many items exist, the gengrid uses the concept of "realization" when managing items. It means that a gengrid item creates its text and content (realizes) when the user scrolls the grid and the item shows up on the screen, and frees them (unrealizes) when the item is scrolled out of the screen. To enable the item realization, you must create and fill an `Elm_Gengrid_Item_Class` structure (gengrid item class) that informs the gengrid component which callbacks to call when an item is created or deleted. When the item is created, the text and content are retrieved by calling the `text_get` and `content_get` functions defined in the gengrid item class.
 
@@ -149,23 +149,13 @@ To manage the items:
 
 ## Styles
 
-A gengrid item can have 0 or more texts, 0 or more contents, and 0 or more boolean states. The number of texts and contents depends on the Edje item theme style used for the gengrid items. In the `default` Tizen gengrid item theme style, the items can have 2 content parts that can be set with the `elm.swallow.icon` and `elm.swallow.end` part names.
+A gengrid item can have 0 or more texts, 0 or more contents, and 0 or more boolean states. The number of texts and contents depends on the Edje item theme style used for the gengrid items. In the `default` Tizen gengrid item theme style, the items can have 1 content parts that can be set with the `elm.swallow.icon` part names.
 
 The following gengrid styles and related item styles are supported:
 
 - `default`
   - `default`
-  - `type1` (identical to the `default` style in Tizen 2.4)
-  - `type2`
-- `popup`
-  - `default`
 
-To use the `popup` gengrid style with the `default` item style:
-
-```
-elm_object_style_set(gengrid, "popup");
-gic->item_style = "default";
-```
 
 **Figure: Gengrid styles**
 
@@ -177,9 +167,8 @@ The following table provides more information on the available gengrid item styl
 
 | Style                                    | Sample                                   | Text part  | Swallow part                        |
 |------------------------------------------|------------------------------------------|------------|-------------------------------------|
-| `elm/gengrid/item/default/default`<br> `elm/gengrid/item/type1/default` | ![elm/gengrid/item/default/default](./media/gengrid_default.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
-| `elm/gengrid/item/type2/default`         | ![elm/gengrid/item/type2/default](./media/gengrid_default_type2.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
-| `elm/gengrid/item/default/popup`         | ![elm/gengrid/item/default/popup](./media/gengrid_popup.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
+| `elm/gengrid/item/default/default` | ![elm/gengrid/item/default/default](./media/gengrid_default.png) | | `elm.swallow.icon` |
+
 
 ## Callbacks
 
@@ -230,4 +219,4 @@ You can register callback functions connected to the following signals for a gen
 
 ## Related Information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 6.0 and Higher for Wearable
