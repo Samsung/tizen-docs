@@ -64,11 +64,42 @@ Before starting, make sure the following prerequisites are met:
 
 To install and use Native TCT:
 
-1. Download the Native TCT, TBT, and EFL-UTC packages.
-1. Follow the User Guide PDF in each projects' folder to set up the host and the target, and then run Native TCT.  
-The TCT manager runs all the TCT TCs and shows test results automatically.
-1. Install Native TBT onto the target and run manual test cases step by step.
-1. Install Native EFL-UTC onto the target and run automated test cases.
+- Download the Native TCT, TBT, and EFL-UTC packages.
+- Follow the User Guide PDF in each projects' folder to set up the host and the target, and then run Native TCT.  
+  The TCT manager runs all the TCT TCs and shows test results automatically.
+- Install Native TBT onto the target and run manual test cases step by step.
+- Install Native EFL-UTC onto the target and run automated test cases.
+
+## Csharp TCT
+
+CSharp TCT is a set of tools and test cases to test the CSharp requirements defined in the Tizen Compliance Specification (TCS). It includes:
+
+-	CSharp TCT covers CSharp Apis, App Control, Network, Privilege, Resource, Device Capability features.
+-	CSharp TCT Manager is a GUI tool that runs on the host machine, managing the whole testing procedure, from plan to test report, supporting both automated and manual C# testing
+-	TCT package includes Unit Test Case automation and manual
+-	CSharp TCT Manual Test template tool is used to test behavior and events of hardware and software features in interactive mode.
+-	User guide documents and installation scripts.
+
+**Figure: CSharp TCT workflow**
+
+![CSharp TCT workflow](media/csharptct-workflow.png)
+
+### Using CSharp TCT
+
+Before starting, make sure the following prerequisites are met:
+
+-	Host machine is a linux OS which use version from 12.04
+-	The target device is installed with a Tizen image and is bootable.
+-	The host and the target device supports the sdb commands.
+-	Make a USB connection between the target and the host.
+
+To install and use CSharp TCT:
+
+- Download the C# tct to the host machine.
+- Un-tar the C# tct under your work folder on the host machine.
+- Follow the User Guide PDF in each projects’ folder to set up the host and the target, and then run C# tct.
+- The tct manager runs all the tct testcases and shows test results automatically.
+- Use C# TCT Manual Test template tool on a target device to run manual test cases step by step
 
 ## TCT Report Submission
 
@@ -79,6 +110,8 @@ TCT will generate following test reports:
 - Native TCT Test Report
 - Native TBT Test Report
 - Native EFL Test Report
+- CSharp TCT Test Report
+- CSharp TCT Behavior Test Report
 
 Follow the [Compliance Program Steps](compliance-program.md) to submit the test reports above.
 
