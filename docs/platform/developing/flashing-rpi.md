@@ -43,45 +43,47 @@ You must have the supported binary images in your computer. To download the bina
 2. Select **6.0-unified (or "unified" whichever is present) > latest > images > standard**.
 3. Download the compressed file for different devices or profiles from:
 
-     1.   RPI3 Headless 32-bit:
-          1.   Boot Image: iot-boot-armv7l-rpi3/
-          2.   Platform Image: iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
+     -   RPI3 Headless 32-bit:
+          -   Boot Image: iot-boot-armv7l-rpi3/
+          -   Platform Image: iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
 
-     2.   RPI3 Headed 32-bit:
-          1.   Boot Image: iot-boot-armv7l-rpi3/
-          2.   Platform Image: iot-headed-3parts-armv7l-rpi/
+     -   RPI3 Headed 32-bit:
+          -   Boot Image: iot-boot-armv7l-rpi3/
+          -   Platform Image: iot-headed-3parts-armv7l-rpi/
 
-     3.   RPI4 Headless 32-bit:
-          1.   Boot Image: iot-boot-armv7l-rpi4/
-          2.   Platform Image: iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
+     -   RPI4 Headless 32-bit:
+          -   Boot Image: iot-boot-armv7l-rpi4/
+          -   Platform Image: iot-headless-2parts-armv7l-btrfs-rootfs-rpi/
 
-     4.   RPI4 Headed 32-bit:
-          1.   Boot Image: iot-boot-armv7l-rpi4/
-          2.   Platform Image: iot-headed-3parts-armv7l-rpi/
+     -   RPI4 Headed 32-bit:
+          -   Boot Image: iot-boot-armv7l-rpi4/
+          -   Platform Image: iot-headed-3parts-armv7l-rpi/
 
-     5.   RPI3 Headed 64-bit:
-          1.   Boot Image: iot-boot-arm64-rpi3/
-          2.   Platform Image: iot-headed-3parts-aarch64-rpi/
+     -   RPI3 Headed 64-bit:
+          -   Boot Image: iot-boot-arm64-rpi3/
+          -   Platform Image: iot-headed-3parts-aarch64-rpi/
 
-     6.   RPI4 Headed 64-bit:
-          1.   Boot Image: iot-boot-arm64-rpi4/
-          2.   Platform Image: iot-headed-3parts-aarch64-rpi/
+     -   RPI4 Headed 64-bit:
+          -   Boot Image: iot-boot-arm64-rpi4/
+          -   Platform Image: iot-headed-3parts-aarch64-rpi/
 
 ## Install Tizen Studio
 
 > [!NOTE]
-> You can skip this section, if you have already installed latest Tizen Studio 4.0 and installed the **6.0 Mobile** profile for the **Main SDK** and the **IoT Setup Manager**, **IoT-Headed-6.0** and **IoT-Headless-6.0** profiles for the **Extension SDK**.
+> You can skip this section, if you have already installed Tizen Studio 4.0 or higher and installed the **6.0 Mobile** profile for the **Main SDK** and the **IoT Setup Manager**, **IoT-Headed-6.0** and **IoT-Headless-6.0** profiles for the **Extension SDK**.
 
 To install Tizen Studio and the required profiles for IoT development, follow these steps:
 
-1.  Download and install Tizen Studio 4.0 for your operating system from [Tizen developer site](https://developer.tizen.org/development/tizen-studio/download).
+1.  Download and install Tizen Studio 4.0 or higher for your operating system from [Tizen developer site](https://developer.tizen.org/development/tizen-studio/download).
 2.  Open Tizen Studio and go to **Tools > Package Manager**.
 3.  Click **Extension SDK** and verify whether the IoT Setup Manager appears in the list of available packages.
 4.  Click **install** for **IoT Setup Manager** to install the IoT Setup Manager Extension.
 
     ![Install the headless profile](media/package_manager_iot.png)
 	
-5.  Click **Main SDK** tab, and install the **6.0 Mobile** profile:
+5.  Scroll to find **IoT-Headed-6.0** and **IoT-Headless-6.0**, click **install**.
+
+6.  Click **Main SDK** tab, and install the **6.0 Mobile** profile:
 
     ![Install the mobile profile](media/package_manager_mobile.PNG)
 	
@@ -101,73 +103,117 @@ You can launch the IoT Setup Manager with or without using Tizen Studio:
 From Tizen Studio, you can launch the IoT Setup Manager in the following two ways:
 
 -   On the menu bar, go to **IoT > IoT Setup Manager**.
--   On the toolbar, click the IoT Setup Manager icon as shown in the following image:
-
-    ![IoT Setup Manager menu path](media/tizen_studio_ism.png)
+-   On the toolbar, click the **IoT Setup Manager** icon ![ISM icon](media/iot_setup_manager_icon.png).
+-   IoT Setup Manager window appears.
 
 #### Launch without using Tizen Studio
 
-During installation, the Package Manager creates shortcuts for IoT Setup Manager, which are used to launch the IoT Setup Manager as a standalone application. To launch the IoT Setup Manager for:
+During installation, the Package Manager creates shortcuts for IoT Setup Manager, which are used to launch the IoT Setup Manager as a standalone application. To launch the IoT Setup Manager follow:
 
 -   Windows, go to **Start Menu > Programs > Tizen Studio > Tools > IoT Setup Manager**.
 -   Ubuntu, go to **Dash (equivalent to Start Menu) > Applications > IoT Setup Manager**.
+-   IoT Setup Manager window appears.
 
-    ![IoT Setup Manager Main](media/setup_manager_main_window.png)
+#### The IoT Setup Manager view contains the following fields
 
-### Flash SD card using IoT Setup Manager
+![IoT Setup Manager Main](media/setup_manager_main_window.png)
 
-To flash Tizen on your SD card using the IoT Setup Manager:
+-   **Select burning profile**
+    
+    You can select one of the available profiles from the **Select burning profile** drop-down list, to avoid creating or modifying profiles every time. Additionally, you can copy the flashing profile to the Manager directory. This enables the application to recognize the profile on the next start.
 
-Profiles are an easy way to store image paths and network configuration information. After you save a profile, you can use it to flash your SD Card instead of specifying all information again.
+-   **Create**
+     
+    To create a new flashing profile. For more information see, [edit profile window](#the-edit-profile-window-contains-the-following-fields)
 
-1.  Create a profile:
-    1.   Click **Create** to create a profile. The **Edit Profile** window appears.
-      
-         ![IoT Setup Manager Edit](media/ism_edit_rpi4_headed.png)
-
-    2.   Provide the required information such as target, local paths to boot and platform image, and so on.
-
-         1.   **Profile name**: Enter a profile name, for example, Rpi4_Headed_Profile.
-         2.   **Target**: Select the board and image type from the drop-down list. For example, RPI4_HEADED.
-         3.   **Boot image**: Browse for the Tizen Boot image available on your hard drive. You must select proper images depending on the board. For more information, see [Downlaod Guide](#download-binaries).
-         4.   **Platform image**: Browse for the Tizen Platform image available on your hard drive. You must select proper images depending on the board. For more information, see [Downlaod Guide](#download-binaries).
-         5.   **RPM bundles**: 
-              -   Add the bundle directory to the Bundles panel.
-              -   Use this to install Wi-Fi plugin. Download using [Install Drivers](#install-drivers). Unzip and add path to 32-bit rpm or 64-bit rpm according to image to install.
-              -   Leave blank if no rpm installation required.
-         6.   **WiFi**: Enter the SSID and password to connect automatically to Wi-Fi. (Wi-Fi plugin installation is required). If Wi-Fi or ethernet is not required, you can clear the respective check box.
-         7.   **Ethernet**:
-              -   **IP**: 192.168.1.11
-              -   **Gateway**: 192.168.1.2
-              -   **Subnet**: 255.255.255.0
-              -   **Primary DNS Server**: 127.0.0.1
-
-     3. Click **OK** to save.
-
-2. Select the SD card on which you want to burn Tizen:
-      1. Insert your SD Card into your computer.
-      2. Select the appropriate SD Card from the drop-down list. For example, `/dev/sdx` on Ubuntu and `F:` on Windows.
-
-      > [!NOTE]
-      > Currently, the USB SD card reader is only supported. The internal PC SD slot is not supported.
-      > Also, if the **Select Drive** does not show anything, detach and insert the SD card again into the computer, or close and restart IoT Setup Manager.
-
-3. Burn Tizen on your SD Card:
-      1. Click **Burn** to burn Tizen to your SD Card. This takes about two minutes to complete and you may have to enter your supervisor password, which is required to access the SD card.
+-   **Edit**
+    
+    To modify the existing profile. For more information see, [edit profile window](#the-edit-profile-window-contains-the-following-fields)
 	
-#### Precaution while flashing image
+-   **Delete**
+    
+    To delete an existing profile.
 
--   While creating or editing a profile, ensure that the boot images, platform images, and the RPMs (if selected) match the target device.
--   Ensure that there are no white spaces in the boot image, platform image, and the RPM folder paths.
--   Place RPMs in a separate directory, which does not contain any other files or directories and select the directory path for creating the profile.
+-   **Select Drive**
+    
+    Insert an SD card and wait until it appears in the drop-down list.
 
-#### IoT Setup Manager features
+-   **Burn**
+    
+    Click Burn and wait until the flashing routine is finished. This may take few minutes and you may have to enter your supervisor password, which is required to access the SD card.
 
--   **Saved Profiles:** You can save and retrieve the configuration profiles for easy flashing.
--   **Three Steps Flashing:**
-    1.  Select the profile.
-    2.  Select your SD Card.
-    3.  Click **Burn**.
+#### Steps to flash SD card using IoT Setup Manager
+
+To flash Tizen on your SD card using the IoT Setup Manager, follow these steps:
+
+1.   Select profile from the dropdown list.
+2.   Select SD card from the dropdown list.
+3.   Click **Burn** to burn Tizen to your SD Card.
+
+     > [!NOTE]
+     > Currently, the USB SD card reader is only supported. The internal PC SD slot is not supported.
+     > Also, if the **Select Drive** does not show anything, detach and insert the SD card again into the computer, or close and restart IoT Setup Manager.
+
+#### The edit profile window contains the following fields
+
+![ISM edit profile page](media/ism_edit_rpi4_headed.png)
+
+-   **Profile name**
+    
+    You can enter name for different profiles so that it can be recognised and used later on.
+
+-   **Target**
+    
+    You can select different target devices from the dropdown list. It depends on the RPI board and the image you want to flash into it.
+
+-   **Boot image**
+    
+    Downlaod proper boot image according on target device. For more information, see [Downlaod Guide](#download-binaries).
+	
+-   **Platform image**
+    
+    Downlaod proper platform image according on target device. For more information, see [Downlaod Guide](#download-binaries).
+
+-   **RPM bundles**
+    
+    To install RPMs in target device you can specify path to the directory that contains all the required RPMs. You can leave it blank if no RPM in require. You can use this to install Wi-Fi plugins.
+
+-   **WiFi**
+     
+    You can enter SSID and password to automatically connect target device to Wi-Fi upon startup (Wi-Fi plugin installation is required). Download Wi-Fi plugins using [Install Drivers](#install-drivers). Unzip the downloaded file and use 32-bit rpm or 64-bit rpm according to image to install. If Wi-Fi is not required, clear the Wi-Fi check box.
+
+-   **Ethernet**
+    
+    You can enter the ethernet (static) details to automatically connect target device to the local network after startup. If you do not want to set up the network, clear the **Ethernet** check box.
+	-   **IP**: 192.168.1.11
+    -   **Gateway**: 192.168.1.2
+    -   **Subnet**: 255.255.255.0
+    -   **Primary DNS Server**: 127.0.0.1
+
+-   **Ok**
+    
+    To save the profile, click this button.
+	
+-   **Cancel**
+    
+    To discard changes in profile, click this button.
+
+    > [!NOTE]
+    > - While creating or editing a profile, ensure that the boot images, platform images, and the RPMs (if selected) match the target device.
+    > - Ensure that there are no white spaces in the boot image, platform image, and the RPM folder paths.
+    > - Place RPMs in a separate directory, which does not contain any other files or directories and select the directory path for creating the profile.
+	
+#### Steps to create or edit a profile
+
+To edit of create a profile, follow these steps:
+
+1.   Enter a name for the new profile. For example, Rpi4_Headed_Profile.
+2.   Select target device. For example, RPI4_HEADED.
+3.   Browse through system files and folders to specify path to downloaded boot image.
+4.   Browse through system files and folders to specify path to downloaded platform image.
+5.   Specify path to RPMs directory if required.
+6.   Select either **Wi-Fi** or **Ethernet** check box to connect to respective network. If not required you can clear both check boxes.
+7.   Click **Ok** to save the profile.
 
 ## Flash through command line
 
@@ -200,7 +246,6 @@ To flash the SD card for Raspberry Pi 3 (or 4) without IoT Setup Manager:
         >
         >     ```
         >     $ ls -al /dev/sd*
-        >
         >     ```
         >
         >     For example:
@@ -217,7 +262,6 @@ To flash the SD card for Raspberry Pi 3 (or 4) without IoT Setup Manager:
         >
         >     ```
         >     $ ls -al /dev/sd*
-        >
         >     ```
         >
         >     For example:
