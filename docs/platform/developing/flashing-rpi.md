@@ -90,7 +90,7 @@ To install Tizen Studio and the required profiles for IoT development, follow th
     > [!NOTE]
     > **Extension SDK** must be updated to the latest version.
 
-## Flash tizen images with IoT Setup Manager
+## Flash Tizen images with IoT Setup Manager
 
 IoT Setup Manager helps you to easily install Tizen on your IoT device using your computer. It helps to get your device running and connected to the local network. After your device is connected to the local network, you can start developing and testing the Tizen IoT applications.
 
@@ -103,8 +103,11 @@ You can launch the IoT Setup Manager with or without using Tizen Studio:
 From Tizen Studio, you can launch the IoT Setup Manager in the following two ways:
 
 -   On the menu bar, go to **IoT > IoT Setup Manager**.
--   On the toolbar, click the **IoT Setup Manager** icon ![ISM icon](media/iot_setup_manager_icon.png).
--   IoT Setup Manager window appears.
+-   On the toolbar, click the **IoT Setup Manager** icon (![ISM icon](media/iot_setup_manager_icon.png)) as shown in the following image.
+
+    ![IoT Setup Manager menu path](media/tizen_studio_ism.png)
+    
+IoT Setup Manager window appears.
 
 #### Launch without using Tizen Studio
 
@@ -112,9 +115,10 @@ During installation, the Package Manager creates shortcuts for IoT Setup Manager
 
 -   Windows, go to **Start Menu > Programs > Tizen Studio > Tools > IoT Setup Manager**.
 -   Ubuntu, go to **Dash (equivalent to Start Menu) > Applications > IoT Setup Manager**.
--   IoT Setup Manager window appears.
 
-#### The IoT Setup Manager view contains the following fields
+IoT Setup Manager window appears.
+
+### The IoT Setup Manager view contains the following fields
 
 ![IoT Setup Manager Main](media/setup_manager_main_window.png)
 
@@ -154,7 +158,7 @@ To flash Tizen on your SD card using the IoT Setup Manager, follow these steps:
      > Currently, the USB SD card reader is only supported. The internal PC SD slot is not supported.
      > Also, if the **Select Drive** does not show anything, detach and insert the SD card again into the computer, or close and restart IoT Setup Manager.
 
-#### The edit profile window contains the following fields
+### The edit profile window contains the following fields
 
 ![ISM edit profile page](media/ism_edit_rpi4_headed.png)
 
