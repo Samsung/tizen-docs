@@ -8,7 +8,7 @@ TCT consists of the Web TCT and the Native TCT, which include test suites and to
 
 Web TCT is a set of tools and test suites to test the Web requirements defined in the Tizen Compliance Specification. It includes:
 
-- Web Test Suites cover Tizen Web APIs, Tizen Web Runtime, Web UI Framework, and device capability features.
+- Web Test Suites cover Tizen Web Device APIs, Tizen Advanced UI Framework, W3C/HTML5 and Supplementaries and device capability features.
 - Web TCT Manager is a GUI tool that runs on the host machine, managing the whole testing procedure, from plan to test report, supporting both automated and manual Web testing.
 - Web TCT Behavior Test tool is used to test behavior of hardware and software features in interactive mode.
 - Web TCT Shell is a lightweight console tool that runs on the host machine, allowing users to debug single failed test cases or trigger TCT testing with an existing test plan. Web TCT Shell is an optional tool.
