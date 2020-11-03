@@ -42,7 +42,7 @@ To add any control you want, edit the XamlPage.xaml file:
 ![XAMLFile](./media/xaml-page-xaml-file.PNG)
 
 XAML uses the `xmlns` XML attribute for namespace declarations.
-This article introduces the XAML namespace syntax, and demonstrates how to decalre a XAML namespace to access a type.
+This article introduces the XAML namespace syntax and demonstrates how to declare a XAML namespace to access a type.
 
 In this sample, the `TextLabel` element is added, and the `Text`, `PointSize`, `TextColor`, and other properties are set.
 
@@ -226,4 +226,3 @@ namespace XamlSamples
 
 When you compile and run this program, the `TextLabel` element will appear on the window.
 For more information, see [Layout Define Example](./layout-define-example.md).
-
