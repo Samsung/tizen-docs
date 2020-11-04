@@ -19,8 +19,8 @@ This topic describes how to flash Tizen on SD card with or without IoT Setup Man
 
 IoT Setup Manager supports the following operating systems:
 
--   Windows 7 and later (64-bit and 32-bit)
--   Ubuntu 14.04 LTS and later (64-bit and 32-bit)
+-   Windows 10
+-   Ubuntu 18.04 LTS and later
 
 ### Ubuntu tools
 
@@ -118,9 +118,11 @@ During installation, the Package Manager creates shortcuts for IoT Setup Manager
 
 IoT Setup Manager window appears.
 
-### The IoT Setup Manager view contains the following fields
+###  IoT setup manager features
 
 ![IoT Setup Manager Main](media/setup_manager_main_window.png)
+
+The IoT Setup Manager view contains the following fields:
 
 -   **Select burning profile**
     
@@ -146,7 +148,7 @@ IoT Setup Manager window appears.
     
     Click Burn and wait until the flashing routine is finished. This may take few minutes and you may have to enter your supervisor password, which is required to access the SD card.
 
-#### Steps to flash SD card using IoT Setup Manager
+#### Flash SD card using IoT Setup Manager
 
 To flash Tizen on your SD card using the IoT Setup Manager, follow these steps:
 
@@ -158,9 +160,11 @@ To flash Tizen on your SD card using the IoT Setup Manager, follow these steps:
      > Currently, the USB SD card reader is only supported. The internal PC SD slot is not supported.
      > Also, if the **Select Drive** does not show anything, detach and insert the SD card again into the computer, or close and restart IoT Setup Manager.
 
-### The edit profile window contains the following fields
+### Edit profile window fields
 
 ![ISM edit profile page](media/ism_edit_rpi4_headed.png)
+
+The edit profile window contains the following fields:
 
 -   **Profile name**
     
@@ -207,7 +211,7 @@ To flash Tizen on your SD card using the IoT Setup Manager, follow these steps:
     > - Ensure that there are no white spaces in the boot image, platform image, and the RPM folder paths.
     > - Place RPMs in a separate directory, which does not contain any other files or directories and select the directory path for creating the profile.
 	
-#### Steps to create or edit a profile
+#### Create or edit a profile
 
 To edit of create a profile, follow these steps:
 
@@ -310,7 +314,7 @@ To flash the SD card for Raspberry Pi 3 (or 4) without IoT Setup Manager:
     > [!NOTE]
     > Repeat `sdb connect 192.168.1.11` in the Linux shell (Linux) or the command window (Windows) whenever you power cycle the device, in order to reconnect the SDB tool.
 
-## Setting up Raspberry Pi 3 or 4
+## Set up Raspberry Pi 3 or 4
 
 ### Connect the board to the PC
 
@@ -456,7 +460,7 @@ To configure the Raspberry Pi board:
             > install_with_SDB.bat
             ```
 
-## Setting up Wi-Fi
+## Set up Wi-Fi
 
 This section is not applicable if you want to connect your device to the SmartThings Cloud. In case of SmartThings devices, the device enables SoftAP mode during setup, therefore, you need not switch to Wi-Fi separately.
 
