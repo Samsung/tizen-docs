@@ -67,7 +67,7 @@ To use a gengrid component in your application:
 
    4. Define the `del` function.
 
-      This function is called when the gengrid item is deleted. It deletes any data that has been allocated at the item's creation.
+      This function is called when the gengrid item is deleted. It deletes any data that has been allocated at the item's creation:
 
       ```
       static void
