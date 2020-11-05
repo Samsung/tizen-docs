@@ -1,7 +1,7 @@
 # TEE Communication
 
 
-You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment. To implement TEE communication, you can use the libteec API, which is based on the GlobalPlatform® [TEE Client API](https://www.globalplatform.org/specificationsdevice.asp).
+You can create secure communications by executing your application in a trusted execution environment (TEE), and communicating with other applications within that environment. To implement TEE communication, you can use the libteec API, which is based on the GlobalPlatform® [TEE Client API](https://www.globalplatform.org/specs-library).
 
 You can run applications in 2 environments: a rich world (like Linux) with client applications (CA) and a secure world with trusted applications (TA).
 
