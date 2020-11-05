@@ -138,7 +138,8 @@ To manage the items:
 
 - Select or disable items.
 
-  To manually select an item, use the `elm_gengrid_item_selected_set()` function. To select multiple items, you must enable the multi-selection mode:
+  To manually select an item, use `elm_gengrid_item_selected_set()`. To select multiple items, you must enable the multi-selection mode:
+
 
   ```
   elm_gengrid_multi_select_set(gengrid, EINA_TRUE);
