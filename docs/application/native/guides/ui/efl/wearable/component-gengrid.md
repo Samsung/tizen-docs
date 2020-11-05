@@ -20,7 +20,7 @@ To use a gengrid component in your application:
 
    1. Create a gengrid item class with the `elm_gengrid_item_class_new()` function, set a style to the item class, and register the callback functions.
 
-      The gengrid item class must be freed manually with `elm_gengrid_item_class_free()` function after all items are appended.
+      The gengrid item class must be freed manually with `elm_gengrid_item_class_free()`  after all items are appended:
 
       ```
       Elm_Gengrid_Item_Class *itc = elm_gengrid_item_class_new();
