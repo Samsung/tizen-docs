@@ -173,7 +173,7 @@ The following table provides more information on the available gengrid item styl
 
 ## Callbacks
 
-You can register callback functions connected to the following signals for a gengrid object.
+You can register callback functions connected to the following signals for a gengrid object:
 
 **Table: Gengrid callback signals**
 
