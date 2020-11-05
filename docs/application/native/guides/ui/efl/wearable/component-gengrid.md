@@ -48,7 +48,7 @@ To use a gengrid component in your application:
 
    3. Define the `content_get` function.
 
-      The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the gengrid on its deletion or when the item is unrealized.
+      The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the gengrid on its deletion or when the item is unrealized:
 
       ```
       static Evas_Object*
