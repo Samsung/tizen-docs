@@ -77,7 +77,7 @@ To use a gengrid component in your application:
       }
       ```
 
-3. Append items to the gengrid with the `elm_gengrid_item_append()` function.
+3. Append items to the gengrid with the `elm_gengrid_item_append()` function:
 
    ```
    elm_gengrid_item_append(gengrid, /* Gengrid object */
