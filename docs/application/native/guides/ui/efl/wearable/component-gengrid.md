@@ -163,7 +163,7 @@ The following gengrid styles and related item styles are supported:
 
 ![Gengrid styles](./media/gengrid_styles.png)
 
-The following table provides more information on the available gengrid item styles.
+The following table provides more information on the available gengrid item styles:
 
 **Table: Gengrid item styles**
 
