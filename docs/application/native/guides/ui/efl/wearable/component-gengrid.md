@@ -99,7 +99,7 @@ To use a gengrid component in your application:
    }
    ```
 
-### Managing Gengrid Items
+### Manage Gengrid items 
 
 To manage the items:
 
