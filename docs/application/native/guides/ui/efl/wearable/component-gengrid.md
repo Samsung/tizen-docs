@@ -89,7 +89,7 @@ To use a gengrid component in your application:
 
 4. Register the [callback](#callbacks) functions for the gengrid and its items.
 
-   The following example shows how to define a callback for when the gengrid item is selected:
+   The following example shows how to define a callback when the gengrid item is selected:
 
    ```
    static void
