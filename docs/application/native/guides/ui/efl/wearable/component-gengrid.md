@@ -147,7 +147,7 @@ To manage the items:
 
   To retrieve the selected item, use `elm_gengrid_selected_item_get()`. When the multi-selection mode is enabled, you can retrieve the selected items with the `elm_gengrid_selected_items_get()`, which returns a list of all selected items.
 
-  To disable an item manually, use the `elm_object_item_disabled_set()` function.
+  To disable an item manually, use `elm_object_item_disabled_set()`.
 
 ## Styles
 
