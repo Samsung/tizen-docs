@@ -33,7 +33,7 @@ To use a gengrid component in your application:
 
    2. Define the `text_get` function.
 
-      When a gengrid item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically. Do not free it manually.
+      When a gengrid item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically and thus manual intervention is not needed. 
 
       ```
       static char*
