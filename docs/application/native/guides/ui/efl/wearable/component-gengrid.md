@@ -128,7 +128,7 @@ To manage the items:
 
 - Update items.
 
-  If the content of an item changes, use the `elm_gengrid_item_update()` function for the gengrid to update the item. The gengrid re-realizes the item and calls the functions in the `_Elm_Gengrid_Item_Class` class for it.
+  If the content of an item changes, use `elm_gengrid_item_update()`  for the gengrid to update the item. The gengrid re-realizes the item and calls the functions in the `_Elm_Gengrid_Item_Class` class for it.
 
   You can also use the `elm_gengrid_item_fields_update()` function to update only specific parts:
 
