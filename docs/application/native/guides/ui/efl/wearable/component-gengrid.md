@@ -112,7 +112,7 @@ To manage the items:
 
 - Set the orientation.
 
-  A gengrid can display its items using a horizontal or vertical layout. In the horizontal layout, the items are displayed in columns from top to bottom, starting a new column when the space for the current column is filled. In the vertical layout, items are set in rows from left to right. By default, the vertical layout is used. To set the horizontal layout:
+  A gengrid can display its items using a horizontal or vertical layout. In the horizontal layout, the items are displayed in columns from top to bottom, starting a new column when the space for the current column is filled. In the vertical layout, items are set in rows from left to right. By default, the vertical layout is used. You can set the horizontal layout as follows: 
 
   ```
   elm_gengrid_horizontal_set(gengrid, EINA_TRUE);
