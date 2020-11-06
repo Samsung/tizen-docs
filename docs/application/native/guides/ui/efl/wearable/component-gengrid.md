@@ -217,6 +217,6 @@ You can register callback functions connected to the following signals for a gen
 > [!Note]
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
-## Related Information
+## Related information
 - Dependencies
   - Tizen 6.0 and Higher for Wearable
