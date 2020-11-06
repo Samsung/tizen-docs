@@ -4,7 +4,7 @@ The gengrid UI component is based on the same idea as [genlist](component-genlis
 
 To save memory and speed up processing when many items exist, the gengrid uses the concept of "realization" when managing items. It means that a gengrid item creates its text and content (realizes) when the user scrolls the grid and the item shows up on the screen, and frees them (unrealizes) when the item is scrolled out of the screen. To enable the item realization, you must create and fill an `Elm_Gengrid_Item_Class` structure (gengrid item class) that informs the gengrid component which callbacks to call when an item is created or deleted. When the item is created, the text and content are retrieved by calling the `text_get` and `content_get` functions defined in the gengrid item class.
 
-## Basic Usage
+## Basic usage
 
 To use a gengrid component in your application:
 
