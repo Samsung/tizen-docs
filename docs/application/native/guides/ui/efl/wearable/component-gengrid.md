@@ -120,7 +120,7 @@ To manage the items:
 
 - Delete items and clear the grid:
 
-  - To delete a single gengrid item, use the `elm_object_item_del()`.
+  - To delete a single gengrid item, use `elm_object_item_del()`.
   - To clear the grid and delete all items, use `elm_gengrid_clear()`.
 
   If a gengrid object is deleted by `evas_object_del()`, all items are deleted automatically. On item deletion, the `del()` in the item class is called.
