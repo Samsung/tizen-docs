@@ -105,7 +105,7 @@ To manage the items:
 
 - Add items:
 
-  - To add an item to the end of the grid, `elm_gengrid_item_append()`.
+  - To add an item to the end of the grid, use `elm_gengrid_item_append()`.
   - To add an item to the beginning of the grid, use `elm_gengrid_item_prepend()`.
   - To insert an item before the indicated item, use `elm_gengrid_item_insert_before()`.
   - To insert an item after the indicated item, use `elm_gengrid_item_insert_after()`.
