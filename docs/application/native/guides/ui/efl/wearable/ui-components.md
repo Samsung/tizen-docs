@@ -15,8 +15,8 @@ The wearable UI components are designed to allow the user to interact with small
 | Navigation elements   | [Index](./component-index.md) | The  index component provides an index for quick access to another group of UI  items. |
 | Presentation views    | [Win](./component-win.md) | The  win component is the root window component often used in an application. It  allows you to create some content in it, and it is handled by the window  manager. |
 | Presentation  views   | [Background](./component-background.md) | The  background component can be used to set a solid background decoration to a  window or a container object. It works like an image, but has some  background-specific properties, such as setting it to a tiled, centered,  scaled, or stretched mode. |
-| Presentation  views   | [Genlist](./component-genlist.md) | The  genlist component displays a scrollable list of items. It can hold a lot of  items while still being fast and memory-efficient (since only the visible  items are allocated memory). |
-| Presentation views   | [Gengrid](./component-gengrid.md) | The  gengrid component displays objects on a grid layout and renders only the  visible objects. |
+| Presentation views   | [Gengrid](./component-gengrid.md) | The gengrid component displays objects on a grid layout and renders only the visible objects. |
+| Presentation views   | [Genlist](./component-genlist.md) | The genlist component displays a scrollable list of items. It can hold a lot of items while still being fast and memory-efficient (since only the visible items are allocated memory). |
 | Presentation  views   | [List](./component-list.md) | The  list component is a very simple list for managing a small number of items. If  you need to manage a lot of items, use the genlist component instead. |
 | Presentation  views   | [Label](./component-label.md) | The  label component displays text with simple HTML-like markup. |
 | Presentation  views   | [Image](./component-image.md) | The  image component can load and display an image from a file or memory. |
