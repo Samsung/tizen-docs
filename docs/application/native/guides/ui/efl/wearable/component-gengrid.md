@@ -169,7 +169,7 @@ The following table provides more information on the available gengrid item styl
 
 | Style                                    | Sample                                   | Text part  | Swallow part                        |
 |------------------------------------------|------------------------------------------|------------|-------------------------------------|
-| `elm/gengrid/item/default/default` | ![elm/gengrid/item/default/default](./media/gengrid_default.png) | | `elm.swallow.icon` |
+| `elm/gengrid/item/default/default` | ![elm/gengrid/item/default/default](./media/gengrid_default.png) | Not Supported | `elm.swallow.icon` |
 
 
 ## Callbacks
