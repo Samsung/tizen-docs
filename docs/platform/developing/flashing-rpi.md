@@ -130,11 +130,11 @@ The IoT Setup Manager view contains the following fields:
 
 -   **Create**
      
-    To create a new flashing profile. For more information see, [edit profile window](#edit-profile-window-fields)
+    To create a new flashing profile. For more information see, [edit profile window](#edit-profile-window-fields).
 
 -   **Edit**
     
-    To modify the existing profile. For more information see, [edit profile window](#edit-profile-window-fields)
+    To modify the existing profile. For more information see, [edit profile window](#edit-profile-window-fields).
 	
 -   **Delete**
     
@@ -309,7 +309,7 @@ To flash the SD card for Raspberry Pi 3 (or 4) without IoT Setup Manager:
         $ sudo ./sd_fusing_rpi3.sh -d /dev/sdb -b tizen-unified_20201007.2_iot-boot-armv7l-rpi3.tar.gz tizen-unified_20201007.2_iot-headed-3parts-armv7l-rpi.tar.gz
         ```
 
-3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Setting up Raspberry Pi 3 or 4](#setting-up-raspberry-pi-3-or-4).
+3.  Open the Smart Development Bridge (SDB) connection. For more information, see [Set up Raspberry Pi 3 or 4](#set-up-raspberry-pi-3-or-4).
 
     > [!NOTE]
     > Repeat `sdb connect 192.168.1.11` in the Linux shell (Linux) or the command window (Windows) whenever you power cycle the device, in order to reconnect the SDB tool.
