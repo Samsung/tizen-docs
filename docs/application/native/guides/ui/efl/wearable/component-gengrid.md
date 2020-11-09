@@ -211,10 +211,10 @@ You can register callback functions connected to the following signals for a gen
 | `item,reorder,anim,start` | The reorder animation starts.            |        -                                  |
 | `item,reorder,anim,stop`  | The reorder animation stops.             |   -                                       |
 
-> [!Note]
+> [!NOTE]
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> [!Note]
+> [!NOTE]
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
 ## Related information
