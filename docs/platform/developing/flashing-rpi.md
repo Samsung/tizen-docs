@@ -130,11 +130,11 @@ The IoT Setup Manager view contains the following fields:
 
 -   **Create**
      
-    To create a new flashing profile. For more information see, [edit profile window](#the-edit-profile-window-contains-the-following-fields)
+    To create a new flashing profile. For more information see, [edit profile window](#edit-profile-window-fields)
 
 -   **Edit**
     
-    To modify the existing profile. For more information see, [edit profile window](#the-edit-profile-window-contains-the-following-fields)
+    To modify the existing profile. For more information see, [edit profile window](#edit-profile-window-fields)
 	
 -   **Delete**
     
