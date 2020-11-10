@@ -641,6 +641,7 @@
 #### [RPC Port](/application/native/guides/app-management/rpc-port.md)
 #### [TIDL](/application/native/guides/app-management/tidl.md)
 #### [Sticker](/application/native/guides/app-management/sticker.md)
+#### [Widget Service](/application/native/guides/app-management/widget-service.md)
 #### [Widget Viewer](/application/native/guides/app-management/widget-viewer.md)
 
 ### User Interface
