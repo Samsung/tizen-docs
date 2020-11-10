@@ -123,8 +123,8 @@ You can use security functionalities, such as storing and recalling private data
 </tr>
 <tr>
 <td>Social</td>
-<td>These APIs contain classes and interfaces that enable you to manage bookmark, calendar, call history, contact, and data synchronization features.<br>
-You can manage the Tizen Web browser bookmark list, calendar events and tasks, call history, and address books and contacts on a device, and you can synchronize device data, such as contacts and calendar events, with the OMA DS server.
+<td>These APIs contain classes and interfaces that enable you to manage calendar, call history, contact, and data synchronization features.<br>
+You can manage calendar events and tasks, call history, and address books and contacts on a device, and you can synchronize device data, such as contacts and calendar events, with the OMA DS server.
 </td>
 <td>
 

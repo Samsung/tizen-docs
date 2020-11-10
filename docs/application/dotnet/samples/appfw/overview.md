@@ -50,7 +50,7 @@ for TD:
 			<p>This sample application demonstrates how to manage the application badge counter using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a>.</p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/Badges" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/native/AppFW/Badges" target="_blank">Native version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -68,7 +68,7 @@ for TD:
 			<p>This sample application demonstrates how to store and retrieve application specific data and preferences using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.Preference.html" target="_blank">Tizen.Applications.Preference</a>.</p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/Preference" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/native/AppFW/Preference" target="_blank">Native version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -86,8 +86,8 @@ for TD:
 			<p>This sample application demonstrates how to create and manage several alarms and save the alarm data. It also demonstrates how to create an application using Xamarin.Forms and <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/UI/%28Circle%29_Alarm" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/UI/Alarm_UI" target="_blank">Web version</a></li>
+				<li><a href="/development/sample/native/UI/%28Circle%29_Alarm" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/web/UI/Alarm_UI" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -108,8 +108,8 @@ for TD:
 			</ul></p>
 			<p>In addition, there are similar native and web sample applications.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/Application_control" target="_blank">Native version</a></li>
-				<li><a href="https://developer.tizen.org/development/sample/web/Application/App_Control" target="_blank">Web version</a>
+				<li><a href="/development/sample/native/AppFW/Application_control" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/web/Application/App_Control" target="_blank">Web version</a>
 			</li></p>
 			</td>
 		</tr>
@@ -125,7 +125,7 @@ for TD:
 			</ul></p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/App-common" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/native/AppFW/App-common" target="_blank">Native version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -136,7 +136,7 @@ for TD:
 			<p>This sample application demonstrates how to manage badge counter of the application using <a href="https://samsung.github.io/TizenFX/latest/api/Tizen.Applications.html" target="_blank">Tizen.Applications</a> and how to create circular UI using <a href="https://samsung.github.io/Tizen.CircularUI/api/index.html" target="_blank">Tizen.Wearable.CircularUI</a>.</p>
 			<p>In addition, there is similar web sample application.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/web/Application/Badges" target="_blank">Web version</a></li>
+				<li><a href="/development/sample/web/Application/Badges" target="_blank">Web version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -171,7 +171,7 @@ for TD:
 			</ul></p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/%28Tutorial%29_Message_Port" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/native/AppFW/%28Tutorial%29_Message_Port" target="_blank">Native version</a></li>
 			</ul></p>
 			</td>
 		</tr>
@@ -195,7 +195,7 @@ for TD:
 			</ul></p>
 			<p>In addition, there is similar native sample application.<br>
 			<ul>
-				<li><a href="https://developer.tizen.org/development/sample/native/AppFW/%28Tutorial%29_Service_Application" target="_blank">Native version</a></li>
+				<li><a href="/development/sample/native/AppFW/%28Tutorial%29_Service_Application" target="_blank">Native version</a></li>
 			</ul></p>
 			<table>
 				<tbody>
@@ -205,11 +205,11 @@ for TD:
 				</tr>
 				<tr>
 					<td>Native</td>
-					<td><a href="https://developer.tizen.org/development/guides/native-application/application-management/applications/service-application" target="_blank">Service Application</a></td>
+					<td><a href="../../../native/guides/applications/service-app.md" target="_blank">Service Application</a></td>
 				</tr>
 				<tr>
 					<td>Web</td>
-					<td><a href="https://developer.tizen.org/development/guides/web-application/application-management/applications/service-application" target="_blank">Service Application</a></td>
+					<td><a href="../../../web/guides/applications/service-app.md" target="_blank">Service Application</a></td>
 				</tr>
 				</tbody>
 			</table>

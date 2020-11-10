@@ -53,7 +53,7 @@ var group__Elementary =
     [ "Mapbuf", "group__Elm__Mapbuf__Group.html", null ],
     [ "Mirroring", "group__Elm__Mirroring.html", null ],
     [ "Multibuttonentry", "group__Multibuttonentry.html", null ],
-    [ "Navifram", "group__Elm__Naviframe__Group.html", null ],
+    [ "Naviframe", "group__Elm__Naviframe__Group.html", null ],
     [ "Notify", "group__Elm__Notify__Group.html", null ],
     [ "Panel", "group__Elm__Panel__Group.html", null ],
     [ "Panes", "group__Elm__Panes.html", null ],

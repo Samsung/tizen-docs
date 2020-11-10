@@ -369,7 +369,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(list);
 
    fbox = <a class="code" href="group__Elm__Box__Group.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   <a name="a46"></a><a class="code" href="group__Elm__Box__Group.html#ga964ff6e51c328ed9e9a64c73f9e2a21f" title="Set the layout defining function to be used by the box.">elm_box_layout_set</a>(fbox, evas_object_box_layout_flow_horizontal,
+   <a name="a46"></a><a class="code" href="group__Elm__Box__Group.html#ga964ff6e51c328ed9e9a64c73f9e2a21f" title="Set the layout defining function to be used by the box.">elm_box_layout_set</a>(fbox, <a name="a47"></a><a class="code" href="group__Evas__Object__Box__Group.html#gaee7b64febd1ab0d8963901393cdc2aa3" title="Layout function which sets the box o to a flow horizontal box.">evas_object_box_layout_flow_horizontal</a>,
                       NULL, NULL);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(fbox, EVAS_HINT_EXPAND, 0);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(fbox, EVAS_HINT_FILL, EVAS_HINT_FILL);
@@ -398,9 +398,9 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
           {
              glg = gli = <a class="code" href="group__Elm__Genlist__Group.html#ga845c3e247cd8eae4114f98d59f42be2f" title="Append a new item in a given genlist widget.">elm_genlist_item_append</a>(list, _itc_group,
                                                  (<span class="keywordtype">void</span> *)(uintptr_t)nitems++, NULL,
-                                                 <a name="a47"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fab550cc33a1898eaf9fdbdc5162d66fd0">ELM_GENLIST_ITEM_GROUP</a>,
+                                                 <a name="a48"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gga9727d3b92987319ac981247bc196bd0fab550cc33a1898eaf9fdbdc5162d66fd0">ELM_GENLIST_ITEM_GROUP</a>,
                                                  _item_sel_cb, NULL);
-             <a name="a48"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gac9f8157c9634d50edbf230b2df88b94a" title="Get the item&#39;s decorate mode.">elm_genlist_item_select_mode_set</a>(gli, <a name="a49"></a><a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fab95b864e82ab60a0be5de0869568ed40">ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY</a>);
+             <a name="a49"></a><a class="code" href="group__Elm__Genlist__Item__Group.html#gac9f8157c9634d50edbf230b2df88b94a" title="Get the item&#39;s decorate mode.">elm_genlist_item_select_mode_set</a>(gli, <a name="a50"></a><a class="code" href="group__Elm__General.html#gga8e4aa5aa238e472f33813babfff0d56fab95b864e82ab60a0be5de0869568ed40">ELM_OBJECT_SELECT_MODE_DISPLAY_ONLY</a>);
           }
         <span class="keywordflow">else</span>
           {
@@ -413,7 +413,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
         <span class="keywordflow">switch</span> (i)
           {
            <span class="keywordflow">case</span> 3:
-              <a name="a50"></a><a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(gli, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
+              <a name="a51"></a><a class="code" href="group__Elm__General.html#ga1d4c8d3c83ed9408eaa35d605adbd7d2" title="Control the disabled state of a widget item.">elm_object_item_disabled_set</a>(gli, <a class="code" href="group__Eina__Types__Group.html#ga05c12dacc8b4058994df842b41be85fc">EINA_TRUE</a>);
               <span class="keywordflow">break</span>;
            <span class="keywordflow">case</span> 50:
               <a class="code" href="group__Evas__Smart__Object__Group.html#ga18a8b179f94d21b2b09e19db11741061">evas_object_smart_callback_add</a>(
@@ -435,14 +435,14 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
           }
      }
 
-   <a name="a51"></a><a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 420, 320);
+   <a name="a52"></a><a class="code" href="group__Evas__Object__Group.html#ga21e8604c0e4a93e469bff4bd069e82b5">evas_object_resize</a>(win, 420, 320);
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(win);
 
-   <a name="a52"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
+   <a name="a53"></a><a class="code" href="group__Elm__General.html#gadf2553f83e6b0b9c7fbe054019a664a1">elm_run</a>();
 
    <span class="keywordflow">return</span> 0;
 }
-<a name="a53"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
+<a name="a54"></a><a class="code" href="group__Elm__General.html#ga50fe52d513f7e89c9c770afd76de7ad9">ELM_MAIN</a>()
 </pre></div> </div><!-- contents -->
 </div><!-- contents -->
 </div>

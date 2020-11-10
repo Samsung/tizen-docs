@@ -235,15 +235,15 @@ The following list defines Tizen Native API. The list describes the API modules 
   | SDL                       | Provides a low level hardware abstraction layer to computer multimedia hardware components. It manages video, audio, input devices, threads, and timers. | [mobile](../api/mobile/latest/group__OPENSRC__SDL__FRAMEWORK.html) (since 3.0), [wearable](../api/wearable/latest/group__OPENSRC__SDL__FRAMEWORK.html) (since 3.0) | [SDL](graphics/sdl.md)   |
   | TBM Surface               | Provides functions for the graphics buffer.  | [mobile](../api/mobile/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html), [wearable](../api/wearable/latest/group__CAPI__UI__TBM__SURFACE__MODULE.html) | [Graphic Buffer and Surface](graphics/graphic-buffer.md) |
   | Tizen Window System Shell            | Allows you to communicate with the window manager.   | [mobile](../api/mobile/latest/group__TIZEN__WS__SHELL__MODULE.html) (since 3.0), [wearable](../api/wearable/latest/group__TIZEN__WS__SHELL__MODULE.html) (since 3.0) | [Tizen Window System Shell](ui/tizen-ws-shell/index.md) |
-  | UI View Manager           | Provides functions for application view management.  | [mobile](../api/mobile/latest/group__CAPI__UI__VIEWMGR__MODULE.html) (since 3.0) |  |
   | Vulkan                    | Provides functions for rendering 3D and 2D graphics in embedded systems. | [mobile](../api/mobile/latest/group__OPENSRC__VULKAN__FRAMEWORK.html) (since 3.0), [wearable](../api/wearable/latest/group__OPENSRC__VULKAN__FRAMEWORK.html) (since 3.0) | [Vulkan](graphics/vulkan.md)     |
 
 - **UIX**
 
-  The UIX API module contains submodule APIs for managing sound data, such as voice commands.
+  The UIX API module contains submodule APIs for handling input method, recognizing gestures, and managing sound data such as voice commands.
 
   | API submodule | Functionality                                    | API reference | Guide   |
   | ------------- | ------------------------------------------------ | ------------- | ------- |
+  | Gesture               | Provides functions for recognizing hand gestures from input sensor data. | [wearable](../api/wearable/latest/group__CAPI__UIX__GESTURE__MODULE.html) (since 6.0) | [Gesture](text-input/capi-ui-gesture.md) |
   | Input Method          | Provides functions for starting the IME application life-cycle, for interacting with the current UI state of the IME, and getting attributes and events. | [mobile](../api/mobile/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html) (since 2.4), [wearable](../api/wearable/latest/group__CAPI__UIX__INPUTMETHOD__MODULE.html) (since 3.0) | [Input Method](text-input/input-method.md)  |
   | Input Method Manager  | Provides functions for launching the input method editor (IME) list and selector settings. | [mobile](../api/mobile/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) (since 2.4), [wearable](../api/wearable/latest/group__CAPI__UIX__INPUTMETHOD__MANAGER__MODULE.html) (since 3.0) | [Input Method](text-input/input-method.md)  |
   | Multi assistance      | Provides functions for supporting users to use several assistants. | [mobile](../api/mobile/latest/group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html) (since 5.0), [wearable](../api/wearable/latest/group__CAPI__UIX__MULTI__ASSISTANT__MODULE.html) (since 5.0) | [Input Method](text-input/input-method.md)  |

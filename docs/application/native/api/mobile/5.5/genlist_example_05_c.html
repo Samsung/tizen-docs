@@ -450,7 +450,7 @@ elm_main(<span class="keywordtype">int</span> argc EINA_UNUSED, <span class="key
    <a class="code" href="group__Evas__Object__Group__Basic.html#ga9cbc13661584e49fb9d9cdab514a1eeb">evas_object_show</a>(list);
 
    fbox = <a class="code" href="group__Elm__Box__Group.html#ga3d0998b60ada633bacfa8869a921cfd7">elm_box_add</a>(win);
-   <a class="code" href="group__Elm__Box__Group.html#ga964ff6e51c328ed9e9a64c73f9e2a21f" title="Set the layout defining function to be used by the box.">elm_box_layout_set</a>(fbox, evas_object_box_layout_flow_horizontal,
+   <a class="code" href="group__Elm__Box__Group.html#ga964ff6e51c328ed9e9a64c73f9e2a21f" title="Set the layout defining function to be used by the box.">elm_box_layout_set</a>(fbox, <a class="code" href="group__Evas__Object__Box__Group.html#gaee7b64febd1ab0d8963901393cdc2aa3" title="Layout function which sets the box o to a flow horizontal box.">evas_object_box_layout_flow_horizontal</a>,
                       NULL, NULL);
    <a class="code" href="group__Evas__Object__Group.html#ga2af897b00f32bebf08705929276386f5" title="Sets the hints for an object&#39;s weight.">evas_object_size_hint_weight_set</a>(fbox, EVAS_HINT_EXPAND, 0);
    <a class="code" href="group__Evas__Object__Group.html#ga44b67b368e5cda723129c2852bd81ead" title="Sets the hints for an object&#39;s alignment.">evas_object_size_hint_align_set</a>(fbox, EVAS_HINT_FILL, EVAS_HINT_FILL);
