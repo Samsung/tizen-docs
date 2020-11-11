@@ -1,10 +1,10 @@
 # Gengrid
 
-The gengrid UI component is based on the same idea as [genlist](component-genlist.md). It aims to display objects on a grid layout and render only the visible ones. For more information, see the [Gengrid](../../../../api/mobile/latest/group__Elm__Gengrid__Group.html) API.
+The gengrid UI component is based on the same idea as [genlist](component-genlist.md). It aims to display objects on a grid layout and render only the visible ones. For more information, see the [Gengrid](../../../../api/wearable/latest/group__Elm__Gengrid__Group.html) API.
 
 To save memory and speed up processing when many items exist, the gengrid uses the concept of "realization" when managing items. It means that a gengrid item creates its text and content (realizes) when the user scrolls the grid and the item shows up on the screen, and frees them (unrealizes) when the item is scrolled out of the screen. To enable the item realization, you must create and fill an `Elm_Gengrid_Item_Class` structure (gengrid item class) that informs the gengrid component which callbacks to call when an item is created or deleted. When the item is created, the text and content are retrieved by calling the `text_get` and `content_get` functions defined in the gengrid item class.
 
-## Basic Usage
+## Basic usage
 
 To use a gengrid component in your application:
 
@@ -20,7 +20,7 @@ To use a gengrid component in your application:
 
    1. Create a gengrid item class with the `elm_gengrid_item_class_new()` function, set a style to the item class, and register the callback functions.
 
-      The gengrid item class must be freed manually with `elm_gengrid_item_class_free()` function after all items are appended.
+      The gengrid item class must be freed manually with `elm_gengrid_item_class_free()`  after all items are appended:
 
       ```
       Elm_Gengrid_Item_Class *itc = elm_gengrid_item_class_new();
@@ -33,7 +33,7 @@ To use a gengrid component in your application:
 
    2. Define the `text_get` function.
 
-      When a gengrid item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically. Do not free it manually.
+      When a gengrid item becomes realized, the `text_get` function is called repeatedly for all text parts in that item. After the text is set to the part, it is freed automatically and thus manual intervention is not needed:
 
       ```
       static char*
@@ -48,7 +48,7 @@ To use a gengrid component in your application:
 
    3. Define the `content_get` function.
 
-      The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the gengrid on its deletion or when the item is unrealized.
+      The `content_get` function is called repeatedly for all swallow parts in the item. It must return a valid object handle to be set, or `NULL` when no content is desired. The object is deleted by the gengrid on its deletion or when the item is unrealized:
 
       ```
       static Evas_Object*
@@ -67,7 +67,7 @@ To use a gengrid component in your application:
 
    4. Define the `del` function.
 
-      This function is called when the gengrid item is deleted. It deletes any data that has been allocated at the item's creation.
+      This function is called when the gengrid item is deleted. It deletes any data that has been allocated at the item's creation:
 
       ```
       static void
@@ -77,7 +77,7 @@ To use a gengrid component in your application:
       }
       ```
 
-3. Append items to the gengrid with the `elm_gengrid_item_append()` function.
+3. Append items to the gengrid with the `elm_gengrid_item_append()` function:
 
    ```
    elm_gengrid_item_append(gengrid, /* Gengrid object */
@@ -89,7 +89,7 @@ To use a gengrid component in your application:
 
 4. Register the [callback](#callbacks) functions for the gengrid and its items.
 
-   The following example shows how to define a callback for when the gengrid item is selected:
+   The following example shows how to define a callback when the gengrid item is selected:
 
    ```
    static void
@@ -99,20 +99,20 @@ To use a gengrid component in your application:
    }
    ```
 
-### Managing Gengrid Items
+### Manage Gengrid items 
 
 To manage the items:
 
 - Add items:
 
-  - To add an item to the end of the grid, use the `elm_gengrid_item_append()` function.
-  - To add an item to the beginning of the grid, use the similar `elm_gengrid_item_prepend()` function.
-  - To insert an item before the indicated item, use the `elm_gengrid_item_insert_before()` function.
-  - To insert an item after the indicated item, use the `elm_gengrid_item_insert_after()` function.
+  - To add an item to the end of the grid, use `elm_gengrid_item_append()`.
+  - To add an item to the beginning of the grid, use `elm_gengrid_item_prepend()`.
+  - To insert an item before the indicated item, use `elm_gengrid_item_insert_before()`.
+  - To insert an item after the indicated item, use `elm_gengrid_item_insert_after()`.
 
 - Set the orientation.
 
-  A gengrid can display its items using a horizontal or vertical layout. In the horizontal layout, the items are displayed in columns from top to bottom, starting a new column when the space for the current column is filled. In the vertical layout, items are set in rows from left to right. By default, the vertical layout is used. To set the horizontal layout:
+  A gengrid can display its items using a horizontal or vertical layout. In the horizontal layout, the items are displayed in columns from top to bottom, starting a new column when the space for the current column is filled. In the vertical layout, items are set in rows from left to right. By default, the vertical layout is used. You can set the horizontal layout as follows: 
 
   ```
   elm_gengrid_horizontal_set(gengrid, EINA_TRUE);
@@ -120,16 +120,17 @@ To manage the items:
 
 - Delete items and clear the grid:
 
-  - To delete a single gengrid item, use the `elm_object_item_del()` function.
-  - To clear the grid and delete all items, use the `elm_gengrid_clear()` function.
+  - To delete a single gengrid item, use `elm_object_item_del()`.
+  - To clear the grid and delete all items, use `elm_gengrid_clear()`.
 
-  If a gengrid object is deleted by the `evas_object_del()` function, all items are deleted automatically. On item deletion, the `del()` function in the item class is called.
+  If a gengrid object is deleted by `evas_object_del()`, all items are deleted automatically. On item deletion, the `del()` in the item class is called.
+
 
 - Update items.
 
-  If the content of an item changes, use the `elm_gengrid_item_update()` function for the gengrid to update the item. The gengrid re-realizes the item and calls the functions in the `_Elm_Gengrid_Item_Class` class for it.
+  If the content of an item changes, use `elm_gengrid_item_update()` for the gengrid to update the item. The gengrid re-realizes the item and calls the functions in the `_Elm_Gengrid_Item_Class` class for it.
 
-  You can also use the `elm_gengrid_item_fields_update()` function to update only specific parts:
+  You can also use `elm_gengrid_item_fields_update()` to update only specific parts:
 
   - `ELM_GENGRID_ITEM_FIELD_TEXT`
   - `ELM_GENGRID_ITEM_FIELD_CONTENT`
@@ -137,53 +138,43 @@ To manage the items:
 
 - Select or disable items.
 
-  To manually select an item, use the `elm_gengrid_item_selected_set()` function. To select multiple items, you must enable the multi-selection mode:
+  To manually select an item, use `elm_gengrid_item_selected_set()`. To select multiple items, you must enable the multi-selection mode as follows:
+
 
   ```
   elm_gengrid_multi_select_set(gengrid, EINA_TRUE);
   ```
 
-  To retrieve the selected item, use the `elm_gengrid_selected_item_get()` function. When the multi-selection mode is enabled, you can retrieve the selected items with the `elm_gengrid_selected_items_get()` function, which returns a list of all selected items.
+  To retrieve the selected item, use `elm_gengrid_selected_item_get()`. When the multi-selection mode is enabled, you can retrieve the selected items with the `elm_gengrid_selected_items_get()`, which returns a list of all selected items.
 
-  To disable an item manually, use the `elm_object_item_disabled_set()` function.
+  To disable an item manually, use `elm_object_item_disabled_set()`.
 
 ## Styles
 
-A gengrid item can have 0 or more texts, 0 or more contents, and 0 or more boolean states. The number of texts and contents depends on the Edje item theme style used for the gengrid items. In the `default` Tizen gengrid item theme style, the items can have 2 content parts that can be set with the `elm.swallow.icon` and `elm.swallow.end` part names.
+A gengrid item can have 0 or more texts, 0 or more contents, and 0 or more boolean states. The number of texts and contents depends on the Edje item theme style used for the gengrid items. In the `default` Tizen gengrid item theme style, the items can have 1 content parts that can be set with the `elm.swallow.icon` part names.
 
 The following gengrid styles and related item styles are supported:
 
 - `default`
   - `default`
-  - `type1` (identical to the `default` style in Tizen 2.4)
-  - `type2`
-- `popup`
-  - `default`
 
-To use the `popup` gengrid style with the `default` item style:
-
-```
-elm_object_style_set(gengrid, "popup");
-gic->item_style = "default";
-```
 
 **Figure: Gengrid styles**
 
 ![Gengrid styles](./media/gengrid_styles.png)
 
-The following table provides more information on the available gengrid item styles.
+The following table provides more information on the available gengrid item styles:
 
 **Table: Gengrid item styles**
 
 | Style                                    | Sample                                   | Text part  | Swallow part                        |
 |------------------------------------------|------------------------------------------|------------|-------------------------------------|
-| `elm/gengrid/item/default/default`<br> `elm/gengrid/item/type1/default` | ![elm/gengrid/item/default/default](./media/gengrid_default.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
-| `elm/gengrid/item/type2/default`         | ![elm/gengrid/item/type2/default](./media/gengrid_default_type2.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
-| `elm/gengrid/item/default/popup`         | ![elm/gengrid/item/default/popup](./media/gengrid_popup.png) | `elm.text` | `elm.swallow.icon`<br>`elm.swallow.end` |
+| `elm/gengrid/item/default/default` | ![elm/gengrid/item/default/default](./media/gengrid_default.png) | Not Supported | `elm.swallow.icon` |
+
 
 ## Callbacks
 
-You can register callback functions connected to the following signals for a gengrid object.
+You can register callback functions connected to the following signals for a gengrid object:
 
 **Table: Gengrid callback signals**
 
@@ -220,14 +211,12 @@ You can register callback functions connected to the following signals for a gen
 | `item,reorder,anim,start` | The reorder animation starts.            |        -                                  |
 | `item,reorder,anim,stop`  | The reorder animation stops.             |   -                                       |
 
-> **Note**
->
+> [!NOTE]
 > The signal list in the API reference can be more extensive, but only the above signals are actually supported in Tizen.
 
-> **Note**
->
+> [!NOTE]
 > Except as noted, this content is licensed under [LGPLv2.1+](http://opensource.org/licenses/LGPL-2.1).
 
-## Related Information
+## Related information
 - Dependencies
-  - Tizen 2.4 and Higher for Mobile
+  - Tizen 6.0 and Higher for Wearable
