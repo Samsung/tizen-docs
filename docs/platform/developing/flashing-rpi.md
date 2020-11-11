@@ -209,6 +209,7 @@ The edit profile window contains the following fields:
     > [!NOTE]
     > - While creating or editing a profile, ensure that the boot images, platform images, and the RPMs (if selected) match the target device.
     > - Ensure that there are no white spaces in the boot image, platform image, and the RPM folder paths.
+    > - In case of Ubuntu, ensure that the profile name, boot image, platform image and RPM bundles fields are specified only in English language.
     > - Place RPMs in a separate directory, which does not contain any other files or directories and select the directory path for creating the profile.
 	
 #### Create or edit a profile
