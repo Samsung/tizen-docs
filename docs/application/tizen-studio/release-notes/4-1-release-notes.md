@@ -58,4 +58,3 @@
   - The Dynamic Analyzer cannot show lifecycle information for Web applications.
   - Widget applications cannot be profiled with the Dynamic Analyzer. They are hidden in the application list on the toolbar for all Tizen platforms, except Tizen 2.3.2.
   - The Dynamic Analyzer sometimes gets stuck which is caused by an internal security checking program.
-  - Right Click on Profiling window does not work in Mac OS.
