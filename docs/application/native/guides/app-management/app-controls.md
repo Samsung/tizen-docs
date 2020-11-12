@@ -33,6 +33,10 @@ The main App Control API features are:
 
   You can [handle each application control action](#action) when getting a launch request.
 
+- Handling application control Uniform Resource Identifier (URI)
+
+  You can [handle application control URI](#URI).
+
 You can take advantage of the Tizen [base application functionalities](#common) through the application control feature.
 
 
@@ -808,7 +812,49 @@ The following common application controls are available:
 - [Voice Recorder](common-appcontrols.md#voice-recorder)
 - [VPN Service](common-appcontrols.md#vpn-service)
 
-## Related Information
+<a name="URI"></a>
+## Application Control URI
+
+> [!NOTE]
+> Application Control URI is supported since Tizen 5.5.
+
+[Application Control URIs](../../api/mobile/5.5/group__CAPI__APP__CONTROL__URI__MODULE.html) provide functions to set, get, and build URI data that conforms to [RFC 3986](https://tools.ietf.org/html/rfc3986).
+
+- Syntax
+
+   URI = scheme:[//authority]path[?query][#fragment] <br/>
+   authority = [userinfo@]host[:port]
+
+  **Figure: URI Syntax**
+
+  ![URI Syntax](./media/app_control_uri_syntax.png)
+
+  The URI table for the example link **https://john.doe@www.example.com:123/forum/questions/?tag=networking&order=newest#top** is as follows:
+
+  |           |                                 |
+  |-----------|---------------------------------|
+  | Scheme    | `https` |
+  | Authority | `//john.doe@www.example.com:123` |
+  | Path      | `/forum/questions/` |
+  | Query     | `tag=networking` <br/> `order=newest` |
+  | Fragment  | `top` |
+
+- The Application Control URI builder example is as follows:
+```c
+    app_control_uri_builder_h builder;
+    app_control_uri_builder_create(&builder);
+
+    app_control_uri_builder_set_scheme(builder, "https");
+    app_control_uri_builder_set_authority(builder, "//john.doe@www.example.com:123");
+    app_control_uri_builder_set_path(builder, "/forum/questions/");
+    app_control_uri_builder_set_fragment(builder, "top");
+    app_control_uri_builder_add_query(builder, "tag", "networking");
+    app_control_uri_builder_add_query(builder, "order", "newest");
+
+    app_control_uri_builder_build(builder, &uri);
+```
+
+## Related information
 - Dependencies
   - Tizen 2.4 and Higher for Mobile
   - Tizen 2.3.1 and Higher for Wearable
