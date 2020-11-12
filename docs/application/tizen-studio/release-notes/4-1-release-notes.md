@@ -12,7 +12,7 @@
   - Tizen Core new CLI support for Tizen 6.0 Native applications has been added.
   - Toolchain has been updated to GCC 9.2 and LLVM 10.
   - Support for macOS Catalina, Ubuntu 18.04, and Ubuntu 20.04 has been added.
-  - Support for aarch64 architecture on IoT 6.0 extension for RPi4 has been added.
+  - Support for AArch64 architecture on IoT 6.0 extension for RPi4 has been added.
 
 ### Deprecated
    - Tizen RT has been deprecated from Tizen Studio 4.1.
